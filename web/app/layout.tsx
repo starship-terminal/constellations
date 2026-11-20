@@ -3,6 +3,7 @@ import { Rail } from "@/components/Rail";
 import { ToastProvider } from "@/components/Toast";
 import { LightboxProvider } from "@/components/Lightbox";
 import { ChatProvider, ChatDrawer } from "@/components/Chat";
+import { ThemeBoot } from "@/components/ThemeBoot";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -19,6 +20,9 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
+  // Also in the bare shell Next sends for a notFound() before the stylesheet
+  // loads, so the canvas starts in the OS scheme instead of white.
+  colorScheme: "light dark",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#fafafa" },
     { media: "(prefers-color-scheme: dark)", color: "#0c0d10" },
@@ -40,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <ThemeBoot />
         <ToastProvider>
           <LightboxProvider>
             <ChatProvider>

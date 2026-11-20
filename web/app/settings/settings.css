@@ -6,3 +6,5 @@
   background: var(--field-bg); color: var(--text); padding: 0 9px; font: inherit;
 }
 .st-actions { margin-top: 16px; }
+
+#model-provider { scroll-margin-top: 20px; }
