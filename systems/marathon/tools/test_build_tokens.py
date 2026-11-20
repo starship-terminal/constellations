@@ -70,5 +70,36 @@ class Tokens(unittest.TestCase):
         build_tokens.check("core.elevation.ring", "shadow", ring["$value"])
 
 
+class IconRefs(unittest.TestCase):
+    """capture/svg_refs.mjs names the ids icons.mjs keeps; a <use> target must be among them."""
+
+    FIXTURE = (
+        '<svg xmlns="http://www.w3.org/2000/svg"><defs><path id="glyph" d="M0 0h8v8z"/>'
+        '<linearGradient id="fade"/><path id="legacy" d="M1 1z"/><clipPath id="unused"/></defs>'
+        '<use href="#glyph"/><use xlink:href=\'#legacy\'/><rect fill="url(#fade)"/>'
+        '<g style="mask: url(&quot;#m1&quot;)"/><a href="https://example.com/#nope"/></svg>'
+    )
+
+    def refs(self, html):
+        import json
+        import shutil
+        import subprocess
+        node = shutil.which("node")
+        if not node:
+            self.skipTest("node is not installed")
+        mod = (ROOT / "tools" / "capture" / "svg_refs.mjs").as_uri()
+        js = f"import {{ fragmentRefs }} from {json.dumps(mod)}; console.log(JSON.stringify([...fragmentRefs(process.argv[1])].sort()))"
+        out = subprocess.run([node, "--input-type=module", "-e", js, html], capture_output=True, text=True, check=True)
+        return json.loads(out.stdout)
+
+    def test_use_href_and_xlink_href_targets_are_kept(self):
+        self.assertEqual(self.refs(self.FIXTURE), ["fade", "glyph", "legacy", "m1"])
+
+    def test_unreferenced_and_external_ids_are_not(self):
+        got = self.refs(self.FIXTURE)
+        self.assertNotIn("unused", got)
+        self.assertNotIn("nope", got)
+
+
 if __name__ == "__main__":
     unittest.main()
