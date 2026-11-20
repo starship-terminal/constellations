@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Render style-guide.html from tokens.json. Light only: no dark set was measured."""
+import html
 import json
 import pathlib
 import re
@@ -59,8 +60,9 @@ for name, token in flat(T["core"]):
         continue
     v = token["$value"]
     type_rows.append(
-        f'<p class="type" style="font: {v["fontWeight"]} {v["fontSize"]}/{v["lineHeight"]} {v["fontFamily"]};'
-        f'letter-spacing:{v["letterSpacing"]}">{name} · SSENSE</p>'
+        # The family is an alias ({font.family.favorit}): resolve it to its custom property.
+        f'<p class="type" style="font: {alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])};'
+        f'letter-spacing:{alias(v["letterSpacing"])}">{name} · SSENSE</p>'
     )
 
 html = f"""<!doctype html>
