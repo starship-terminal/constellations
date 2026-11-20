@@ -1,0 +1,524 @@
+{
+  "apac-home": {
+    "url": "https://grow.google/intl/en_sg/",
+    "unread": [],
+    "states": {
+      "cta": {
+        "text": "View all tools",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(32, 33, 36)",
+        "borderRadius": "48px",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "fontFamily": "\"Google Sans\"",
+        "lineHeight": "24px",
+        "padding": "12px 24px",
+        "height": 50,
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "outline": "rgb(255, 255, 255) none 0px"
+      },
+      "link": {
+        "text": "Start you checkup now",
+        "color": "rgb(26, 115, 232)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderRadius": "4px",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "fontFamily": "\"Google Sans\"",
+        "lineHeight": "24px",
+        "padding": "0px 1px",
+        "height": 26,
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "outline": "rgb(26, 115, 232) none 0px"
+      },
+      "h1": {
+        "text": "Hello, what can we help you with?",
+        "color": "rgb(32, 33, 36)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderRadius": "0px",
+        "fontSize": "60px",
+        "fontWeight": "400",
+        "fontFamily": "\"Google Sans\"",
+        "lineHeight": "72px",
+        "padding": "0px",
+        "height": 144,
+        "border": "0px none rgb(32, 33, 36)",
+        "boxShadow": "none",
+        "outline": "rgb(32, 33, 36) none 0px"
+      },
+      "p": null,
+      "body": {
+        "color": "rgb(32, 33, 36)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "font": "\"Google Sans Text\", Arial, Helvetica, sans-serif"
+      },
+      "top": [
+        [
+          "color rgb(32, 33, 36)",
+          642
+        ],
+        [
+          "color rgb(95, 99, 104)",
+          47
+        ],
+        [
+          "bg rgb(255, 255, 255)",
+          13
+        ],
+        [
+          "color rgb(26, 115, 232)",
+          13
+        ],
+        [
+          "color rgb(0, 0, 0)",
+          10
+        ],
+        [
+          "bg rgb(0, 0, 0)",
+          8
+        ],
+        [
+          "bg rgb(248, 249, 250)",
+          7
+        ],
+        [
+          "color rgb(255, 255, 255)",
+          6
+        ],
+        [
+          "bg rgb(32, 33, 36)",
+          3
+        ],
+        [
+          "color rgb(66, 133, 244)",
+          2
+        ],
+        [
+          "bg rgb(232, 234, 237)",
+          2
+        ],
+        [
+          "bg rgba(0, 0, 0, 0.8)",
+          1
+        ],
+        [
+          "bg rgba(32, 33, 36, 0.8)",
+          1
+        ],
+        [
+          "bg rgba(32, 33, 36, 0.9)",
+          1
+        ],
+        [
+          "bg rgba(32, 33, 36, 0.75)",
+          1
+        ],
+        [
+          "bg rgb(230, 244, 234)",
+          1
+        ],
+        [
+          "bg rgb(232, 240, 254)",
+          1
+        ]
+      ],
+      "themeColor": null,
+      "manifest": null
+    },
+    "hover": {
+      "text": "Redeem Google AI Pro",
+      "color": "rgb(32, 33, 36)",
+      "backgroundColor": "rgb(248, 249, 250)",
+      "boxShadow": "none",
+      "outline": "rgb(32, 33, 36) none 0px"
+    },
+    "focus": {
+      "tag": "A",
+      "text": "Redeem Google AI Pro",
+      "outline": "rgb(32, 33, 36) none 0px",
+      "outlineOffset": "1px",
+      "boxShadow": "rgba(26, 115, 232, 0.996) 0px 0px 0px 1.99214px",
+      "backgroundColor": "rgb(248, 249, 250)"
+    },
+    "darkSample": "rgb(255, 255, 255) / rgb(32, 33, 36)",
+    "sheetCount": 3
+  },
+  "us-certificates": {
+    "url": "https://grow.google/certificates",
+    "unread": [],
+    "states": {
+      "cta": {
+        "text": "Learn more",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(49, 134, 255)",
+        "borderRadius": "48px",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "fontFamily": "\"Google Sans Flex\"",
+        "lineHeight": "24px",
+        "padding": "12px 12px 12px 16px",
+        "height": 50,
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "outline": "rgb(255, 255, 255) none 0px"
+      },
+      "link": {
+        "text": "Terms apply.",
+        "color": "rgb(49, 134, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderRadius": "4px",
+        "fontSize": "18px",
+        "fontWeight": "400",
+        "fontFamily": "\"Google Sans Flex\"",
+        "lineHeight": "28px",
+        "padding": "0px",
+        "height": 22,
+        "border": "0px none rgb(49, 134, 255)",
+        "boxShadow": "none",
+        "outline": "rgb(49, 134, 255) none 0px"
+      },
+      "h1": {
+        "text": "Job-ready skills you can put to work",
+        "color": "rgb(32, 33, 36)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderRadius": "0px",
+        "fontSize": "48px",
+        "fontWeight": "400",
+        "fontFamily": "\"Google Sans Flex\"",
+        "lineHeight": "56px",
+        "padding": "0px",
+        "height": 112,
+        "border": "0px none rgb(32, 33, 36)",
+        "boxShadow": "none",
+        "outline": "rgb(32, 33, 36) none 0px"
+      },
+      "p": {
+        "text": "Jump to Content",
+        "color": "rgb(60, 64, 67)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderRadius": "0px",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "fontFamily": "\"Google Sans Flex\"",
+        "lineHeight": "24px",
+        "padding": "0px",
+        "height": 24,
+        "border": "0px none rgb(60, 64, 67)",
+        "boxShadow": "none",
+        "outline": "rgb(60, 64, 67) none 0px"
+      },
+      "body": {
+        "color": "rgb(32, 33, 36)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "font": "\"Google Sans Flex\", Arial, Helvetica, sans-serif"
+      },
+      "top": [
+        [
+          "color rgb(32, 33, 36)",
+          2339
+        ],
+        [
+          "color rgb(60, 64, 67)",
+          263
+        ],
+        [
+          "color rgb(49, 134, 255)",
+          90
+        ],
+        [
+          "bg rgb(239, 242, 247)",
+          51
+        ],
+        [
+          "bg rgb(255, 255, 255)",
+          26
+        ],
+        [
+          "color rgb(95, 99, 104)",
+          24
+        ],
+        [
+          "color rgb(255, 255, 255)",
+          24
+        ],
+        [
+          "color rgb(128, 128, 128)",
+          21
+        ],
+        [
+          "color rgb(51, 110, 243)",
+          13
+        ],
+        [
+          "color rgb(127, 156, 255)",
+          10
+        ],
+        [
+          "bg rgb(49, 134, 255)",
+          9
+        ],
+        [
+          "color rgb(241, 243, 244)",
+          4
+        ],
+        [
+          "bg rgba(0, 0, 0, 0.4)",
+          2
+        ],
+        [
+          "bg rgb(220, 241, 255)",
+          2
+        ],
+        [
+          "color rgb(0, 0, 0)",
+          2
+        ],
+        [
+          "color rgb(26, 115, 232)",
+          1
+        ],
+        [
+          "bg rgb(31, 59, 155)",
+          1
+        ],
+        [
+          "color rgb(197, 34, 31)",
+          1
+        ],
+        [
+          "color rgb(246, 161, 0)",
+          1
+        ],
+        [
+          "color rgb(0, 175, 87)",
+          1
+        ],
+        [
+          "bg rgb(32, 33, 36)",
+          1
+        ],
+        [
+          "bg rgba(32, 33, 36, 0.9)",
+          1
+        ],
+        [
+          "bg rgba(32, 33, 36, 0.75)",
+          1
+        ],
+        [
+          "color rgb(154, 160, 166)",
+          1
+        ]
+      ],
+      "themeColor": null,
+      "manifest": null
+    },
+    "hover": {
+      "text": "Enroll now",
+      "color": "rgb(49, 134, 255)",
+      "backgroundColor": "rgba(26, 115, 232, 0.04)",
+      "boxShadow": "none",
+      "outline": "rgb(49, 134, 255) none 0px"
+    },
+    "focus": {
+      "tag": "A",
+      "text": "Enroll now",
+      "outline": "rgba(0, 0, 0, 0) solid 2px",
+      "outlineOffset": "1px",
+      "boxShadow": "none",
+      "backgroundColor": "rgba(26, 115, 232, 0.04)"
+    },
+    "darkSample": "rgb(255, 255, 255) / rgb(32, 33, 36)",
+    "sheetCount": 4
+  },
+  "us-cert-data": {
+    "url": "https://grow.google/certificates/data-analytics/",
+    "unread": [],
+    "states": {
+      "cta": {
+        "text": "Enroll now",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(49, 134, 255)",
+        "borderRadius": "48px",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "fontFamily": "\"Google Sans Flex\"",
+        "lineHeight": "24px",
+        "padding": "12px 24px",
+        "height": 50,
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "outline": "rgb(255, 255, 255) none 0px"
+      },
+      "link": {
+        "text": "Terms apply",
+        "color": "rgb(49, 134, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderRadius": "4px",
+        "fontSize": "18px",
+        "fontWeight": "400",
+        "fontFamily": "\"Google Sans Flex\"",
+        "lineHeight": "28px",
+        "padding": "0px",
+        "height": 22,
+        "border": "0px none rgb(49, 134, 255)",
+        "boxShadow": "none",
+        "outline": "rgb(49, 134, 255) none 0px"
+      },
+      "h1": {
+        "text": "Google Data Analytics Certificate",
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderRadius": "0px",
+        "fontSize": "60px",
+        "fontWeight": "400",
+        "fontFamily": "\"Google Sans Flex\"",
+        "lineHeight": "72px",
+        "padding": "0px",
+        "height": 144,
+        "border": "0px none rgb(255, 255, 255)",
+        "boxShadow": "none",
+        "outline": "rgb(255, 255, 255) none 0px"
+      },
+      "p": {
+        "text": "Jump to Content",
+        "color": "rgb(60, 64, 67)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderRadius": "0px",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "fontFamily": "\"Google Sans Flex\"",
+        "lineHeight": "24px",
+        "padding": "0px",
+        "height": 24,
+        "border": "0px none rgb(60, 64, 67)",
+        "boxShadow": "none",
+        "outline": "rgb(60, 64, 67) none 0px"
+      },
+      "body": {
+        "color": "rgb(32, 33, 36)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "font": "\"Google Sans Flex\", Arial, Helvetica, sans-serif"
+      },
+      "top": [
+        [
+          "color rgb(32, 33, 36)",
+          2531
+        ],
+        [
+          "color rgb(60, 64, 67)",
+          392
+        ],
+        [
+          "bg rgb(239, 242, 247)",
+          48
+        ],
+        [
+          "color rgb(255, 255, 255)",
+          46
+        ],
+        [
+          "color rgb(128, 128, 128)",
+          21
+        ],
+        [
+          "color rgb(95, 99, 104)",
+          20
+        ],
+        [
+          "color rgb(49, 134, 255)",
+          19
+        ],
+        [
+          "bg rgb(255, 255, 255)",
+          18
+        ],
+        [
+          "color rgb(51, 110, 243)",
+          12
+        ],
+        [
+          "bg rgb(49, 134, 255)",
+          11
+        ],
+        [
+          "color rgb(25, 103, 210)",
+          10
+        ],
+        [
+          "bg rgb(220, 241, 255)",
+          6
+        ],
+        [
+          "bg rgb(246, 255, 240)",
+          5
+        ],
+        [
+          "color rgb(26, 115, 232)",
+          4
+        ],
+        [
+          "bg rgb(248, 249, 250)",
+          3
+        ],
+        [
+          "bg rgba(0, 0, 0, 0.4)",
+          2
+        ],
+        [
+          "bg rgb(239, 239, 239)",
+          2
+        ],
+        [
+          "color rgb(0, 175, 87)",
+          2
+        ],
+        [
+          "bg rgba(255, 255, 255, 0.62)",
+          2
+        ],
+        [
+          "color rgb(0, 0, 0)",
+          2
+        ],
+        [
+          "bg rgb(31, 59, 155)",
+          1
+        ],
+        [
+          "bg rgb(24, 25, 29)",
+          1
+        ],
+        [
+          "bg rgb(210, 227, 252)",
+          1
+        ],
+        [
+          "bg rgba(32, 33, 36, 0.9)",
+          1
+        ]
+      ],
+      "themeColor": null,
+      "manifest": null
+    },
+    "hover": {
+      "text": "Enroll now",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(49, 134, 255)",
+      "boxShadow": "none",
+      "outline": "rgb(255, 255, 255) none 0px"
+    },
+    "focus": {
+      "tag": "BODY",
+      "text": "Jump to Content Career Certificates AI T",
+      "outline": "rgb(32, 33, 36) none 0px",
+      "outlineOffset": "0px",
+      "boxShadow": "none",
+      "backgroundColor": "rgb(255, 255, 255)"
+    },
+    "darkSample": "rgb(255, 255, 255) / rgb(32, 33, 36)",
+    "sheetCount": 6
+  }
+}

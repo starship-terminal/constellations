@@ -1,0 +1,37 @@
+{
+  "slug": "grow-google",
+  "reviewedAt": "2026-11-21",
+  "signedInSurface": false,
+  "reason": "No account sign-in on the public site. https://grow.google/ redirects to https://grow.google/intl/ALL_sg/ (Singapore skills marketing). https://grow.google/intl/en/ is a 404. No password field, OAuth button, or robot check appeared.",
+  "loginWall": null,
+  "notFollowed": [
+    "https://myaccount.google.com/security-checkup (linked as Start you checkup now; account surface, not opened)",
+    "https://policies.google.com/privacy",
+    "https://policies.google.com/terms"
+  ],
+  "publicScreensReached": [
+    "https://grow.google/intl/ALL_sg/",
+    "https://grow.google/intl/en_sg/",
+    "https://grow.google/intl/en_sg/majulah-ai/",
+    "https://grow.google/intl/en_sg/skillsignitionsg/",
+    "https://grow.google/intl/en_sg/stories/",
+    "https://grow.google/intl/en_sg/aira-challenge/",
+    "https://grow.google/intl/en_sg/use-tools/",
+    "https://grow.google/intl/en_sg/learn-skills/",
+    "https://grow.google/intl/en_sg/gemini-report/",
+    "https://grow.google/intl/en_sg/redeem-google-ai-pro/",
+    "https://grow.google/intl/en_sg/ai-professional/",
+    "https://grow.google/intl/en_sg/healthcare-professionals/",
+    "https://grow.google/intl/en_sg/ai-essentials/",
+    "https://grow.google/intl/en_sg/ai-challenge/",
+    "https://grow.google/certificates",
+    "https://grow.google/certificates/data-analytics/",
+    "https://grow.google/ai",
+    "https://grow.google/stories/",
+    "https://grow.google/grow-your-career/",
+    "https://grow.google/grow-your-career/articles/what-is-vibe-coding/",
+    "https://grow.google/employers/",
+    "https://grow.google/sitemap",
+    "https://grow.google/intl/en/"
+  ]
+}
