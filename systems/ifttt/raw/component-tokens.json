@@ -465,14 +465,14 @@
    "family": {
     "brand": {
      "type": "fontFamily",
-     "value": "\"Museo Sans Rounded\", museo-sans-rounded, ui-sans-serif, system-ui, sans-serif",
-     "source": "@font-face in the site's sheets (raw/css-vars.json fonts): 'Museo Sans Rounded' weights 300/500/700/900 + italics, served from web-assets.ifttt.com — the name is evidence, the font file is not shipped",
+     "value": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+     "source": "computed fontFamily of site-header default (raw/components-computed.json), verbatim; 'Museo Sans Rounded' weights 300/500/700/900 + italics are declared by @font-face in the site's sheets, served from web-assets.ifttt.com — the name is evidence, the font file is not shipped",
      "description": "the brand face — every weight the site ships"
     },
     "fallback": {
      "type": "fontFamily",
      "value": "ui-sans-serif, system-ui, sans-serif",
-     "source": "the system fallback the guide renders in (Museo Sans Rounded is proprietary)",
+     "source": "Reconstruction — entered by hand at capture time: a hand-written fallback stack for consumers without the licensed face; nothing on the site declares it",
      "description": "fallback for consumers without the licensed face"
     }
    }

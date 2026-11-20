@@ -122,7 +122,8 @@ def norm_lit(c):
 # Measured off the painted components: the leaf's "source" is the element
 # and state it was read from, never the stylesheet guess.
 C_PATH = RAW / "components-computed.json"
-C = json.loads(C_PATH.read_text()).get("components", {}) if C_PATH.exists() else {}
+# Required: without it every measured token would drop silently.
+C = json.loads(C_PATH.read_text())["components"]
 
 
 def style_of(comp, state, prop):
@@ -430,11 +431,15 @@ typ("explore-service-chip", "typography.serviceChip", "a service chip label")
 # --------------------------------------------------------- font faces
 # Museo Sans Rounded is proprietary and never shipped: name + role from
 # the @font-face harvest and the measured stacks.
-lit('"Museo Sans Rounded", museo-sans-rounded, ui-sans-serif, system-ui, sans-serif', "fontFamily",
-    "@font-face in the site's sheets (raw/css-vars.json fonts): 'Museo Sans Rounded' weights 300/500/700/900 + italics, served from web-assets.ifttt.com — the name is evidence, the font file is not shipped",
+_st = C["site-header"]["states"]["default"]
+_brand = (_st.get("textStyle") or {}).get("fontFamily") or _st["style"]["fontFamily"]
+if "Museo Sans Rounded" not in _brand:
+    raise ValueError(f"site-header: computed fontFamily {_brand!r} does not name Museo Sans Rounded")
+lit(_brand, "fontFamily",
+    "computed fontFamily of site-header default (raw/components-computed.json), verbatim; 'Museo Sans Rounded' weights 300/500/700/900 + italics are declared by @font-face in the site's sheets, served from web-assets.ifttt.com — the name is evidence, the font file is not shipped",
     "core", "font.family.brand", desc="the brand face — every weight the site ships")
 lit('ui-sans-serif, system-ui, sans-serif', "fontFamily",
-    "the system fallback the guide renders in (Museo Sans Rounded is proprietary)",
+    "Reconstruction — entered by hand at capture time: a hand-written fallback stack for consumers without the licensed face; nothing on the site declares it",
     "core", "font.family.fallback", desc="fallback for consumers without the licensed face")
 
 (RAW / "component-tokens.json").write_text(json.dumps(TREE, indent=1, ensure_ascii=False) + "\n")

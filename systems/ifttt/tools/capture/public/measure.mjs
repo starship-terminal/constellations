@@ -126,8 +126,9 @@ async function pressOn(loc) {
     await loc.evaluate((el) => el.setAttribute('data-press-target', '1')).catch(() => {});
     const { result } = await cdp.send('Runtime.evaluate', { expression: `document.querySelector('[data-press-target]')`, returnByValue: false }).catch(() => ({}));
     if (result && result.objectId) {
-      const { node } = await cdp.send('DOM.requestNode', { objectId: result.objectId }).catch(() => ({}));
-      nodeId = node ? node.nodeId : null;
+      // DOM.requestNode returns { nodeId } (2026-11 audit; not run since)
+      const req = await cdp.send('DOM.requestNode', { objectId: result.objectId }).catch(() => ({}));
+      nodeId = req.nodeId || null;
     }
     await loc.evaluate((el) => el.removeAttribute('data-press-target')).catch(() => {});
   }
@@ -506,7 +507,13 @@ for (const [key, g] of Object.entries(GROUPS)) {
     return found.slice(0, 30);
   }).catch(() => []);
 
-  for (const spec of g.specs) {
+  for (let spec of g.specs) {
+    // One key per page: a key another page already holds a reading for gets
+    // this group's prefix (service-back-button), so DETAIL's three pages no
+    // longer overwrite one another. Start a full recapture from an empty file.
+    // (Edited in the 2026-11 audit; not run since.)
+    const held = out.components[spec.key];
+    if (held && held.page && held.page !== g.page) spec = { ...spec, key: `${key}-${spec.key}` };
     const comp = out.components[spec.key] ??= {};
     comp.group = spec.group;
     comp.title = spec.title;
