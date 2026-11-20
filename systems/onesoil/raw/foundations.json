@@ -1,0 +1,14 @@
+{
+  "captured": "2026-11-21",
+  "url": "https://onesoil.ai/en",
+  "theme": "light only",
+  "widths": [
+    1440,
+    390
+  ],
+  "font": "geologica, geologica Fallback, system-ui, sans-serif",
+  "sampled": {
+    "ink-hover": "#2b2b2b",
+    "accent-hover": "#3bb56f"
+  }
+}

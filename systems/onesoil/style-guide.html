@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OneSoil style guide</title>
+<style>
+:root {
+  --color-page: #f6f4ef;
+  --color-ink: #151515;
+  --color-body: #171717;
+  --color-muted: #6d6351;
+  --color-white: #ffffff;
+  --color-accent: #27ae60;
+  --color-accent-text: #1e9852;
+  --color-accent-hover: #3bb56f;
+  --color-ink-hover: #2b2b2b;
+  --color-focus: #005fcc;
+  --color-field: #f6f4ef;
+  --color-field-focus: #ffffff;
+  --color-chip-selected: #ede8e2;
+  --color-hairline: rgba(109, 99, 81, 0.2);
+  --color-nav-selected: rgba(21, 21, 21, 0.05);
+  --color-menu-card: rgba(21, 21, 21, 0.05);
+  --color-menu-card-hover: rgba(21, 21, 21, 0.1);
+  --font-family-geologica: geologica, "geologica Fallback", system-ui, sans-serif;
+  --font-family-help: "Noto Sans", "Noto Sans Fallback";
+  --font-weight-regular: 400;
+  --font-weight-light: 300;
+  --font-size-body: 16px;
+  --font-size-field: 18px;
+  --font-size-display: 72px;
+  --font-line-height-body: 24px;
+  --font-line-height-display: 75.6px;
+  --font-line-height-field: 25.2px;
+  --font-letter-spacing-display: -2.88px;
+  --radius-pill: 9999px;
+  --radius-header: 40px;
+  --radius-card: 16px;
+  --radius-audience: 24px;
+  --radius-field: 13px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --size-button: 48px;
+  --size-submit: 40px;
+  --size-chip: 34px;
+  --size-field: 53.1875px;
+  --size-menu-card: 120px;
+  --border-default: var(--color-hairline);
+  --border-focus: var(--color-focus);
+  --duration-fast: 150ms;
+  --easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --layout-desktop: 1440px;
+  --layout-phone: 390px;
+  --layout-header-bar: 1392px;
+  --background-page: var(--color-page);
+  --background-surface: var(--color-white);
+  --background-raised: var(--color-field);
+  --background-overlay: var(--color-white);
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-muted);
+  --text-on-accent: var(--color-white);
+  --text-link: var(--color-muted);
+  --text-accent: var(--color-accent-text);
+  --action-primary: var(--color-ink);
+  --action-primary-hover: var(--color-ink-hover);
+  --action-accent: var(--color-accent);
+  --action-accent-hover: var(--color-accent-hover);
+  --action-pressed: var(--color-ink-hover);
+  --status-success: var(--color-accent);
+  --status-info: var(--color-focus);
+  --focus-ring: var(--color-focus);
+  --focus-width: var(--border-focus);
+  --focus-offset: 2px;
+  --component-button-primary-bg: var(--color-ink);
+  --component-button-primary-text: var(--color-white);
+  --component-button-accent-bg: var(--color-accent);
+  --component-button-accent-text: var(--color-white);
+  --component-field-bg: var(--color-field);
+  --component-field-text: var(--color-ink);
+  --component-field-radius: var(--radius-field);
+  --component-button-height: var(--size-button);
+  --component-button-radius: var(--radius-pill);
+  color-scheme: light;
+  --sg-sans: var(--font-family-geologica);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-page); color: var(--color-ink); font: 400 16px/24px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 64px; }
+h1 { font-weight: 400; font-size: 48px; line-height: 1.05; letter-spacing: -0.04em; margin: 0 0 8px; }
+h1 span { color: var(--color-accent-text); }
+h2 { font-weight: 400; font-size: 28px; margin: 40px 0 12px; }
+p { max-width: 68ch; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.swatch { width: 72px; height: 48px; border-radius: 12px; border: 1px solid rgba(21,21,21,0.12); }
+.btn { display: inline-flex; align-items: center; height: var(--size-button); padding: 12px 16px; border-radius: var(--radius-pill); color: var(--color-white); text-decoration: none; background: var(--action-primary); }
+.btn.accent { background: var(--action-accent); }
+.field { display: block; width: 320px; height: var(--size-field); padding: 12px; border-radius: var(--radius-field); border: 2px solid transparent; background: var(--color-field); color: var(--color-ink); font: inherit; }
+.chip { display: inline-flex; align-items: center; height: var(--size-chip); padding: 8px 16px; border-radius: var(--radius-pill); border: 1px solid var(--color-hairline); background: var(--color-white); }
+.chip.on { background: var(--color-chip-selected); }
+.card { width: 180px; height: 120px; border-radius: var(--radius-card); background: var(--color-menu-card); display: flex; align-items: flex-end; padding: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Economic efficiency for agrifood, <span>made easy</span></h1>
+<p>Rendered from tokens.json. Light only. OneSoil's public site does not ship a dark theme.</p>
+<h2>Colour</h2>
+<div class="row">
+<div class="swatch" style="background:var(--color-page)"></div>
+<div class="swatch" style="background:var(--color-ink)"></div>
+<div class="swatch" style="background:var(--color-accent)"></div>
+<div class="swatch" style="background:var(--color-accent-text)"></div>
+<div class="swatch" style="background:var(--color-muted)"></div>
+<div class="swatch" style="background:var(--color-focus)"></div>
+</div>
+<h2>Buttons</h2>
+<div class="row">
+<a class="btn" href="#buttons">Schedule a demo</a>
+<a class="btn accent" href="#buttons">Try Free</a>
+<span class="chip">Agronomist</span>
+<span class="chip on">Agronomist</span>
+</div>
+<h2>Field</h2>
+<input class="field" placeholder="Your full name" readonly>
+<div class="card">OneSoil Platform</div>
+</div>
+</body>
+</html>
