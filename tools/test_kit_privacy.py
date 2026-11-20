@@ -259,6 +259,56 @@ def js_block(path, start, end):
     return "\n".join(lines[i:j + 1])
 
 
+@unittest.skipIf(NODE is None, "node is not on PATH")
+class ConsoleScrub(unittest.TestCase):
+    """Package captures commit their logs (raw/*.log), and a Playwright error quotes the locator it failed on
+    and, on navigation, the page URL. Each capture script that prints such errors runs here in a scratch copy of
+    the kit, with a stub Playwright whose launch throws an error carrying two queries, and must print the
+    message without them."""
+    SCRIPTS = ["icons.mjs", "layout.mjs", "motion-probe.mjs", "public/measure.mjs", "public/public.mjs", "signed-in/measure.mjs"]
+
+    def test_every_script_prints_errors_without_their_queries(self):
+        for rel in self.SCRIPTS:
+            with self.subTest(script=rel), tempfile.TemporaryDirectory() as d:
+                d = Path(d)
+                capture = d / "pkg/tools/capture"
+                shutil.copytree(HERE / "kit/capture", capture, ignore=shutil.ignore_patterns("test_*", "native"))
+                stub = d / "playwright-stub.mjs"
+                stub.write_text("const launch = async () => { throw new Error(\"page.goto: net::ERR_FAILED at "
+                                "https://cdn.example.test/a.png?token=SECRET1 waiting for locator('img[src=\\\"/b.png?sig=SECRET2\\\"]')\"); };\n"
+                                "export const chromium = { launch, connectOverCDP: launch };\nexport default { chromium };\n")
+                snaps = d / "snaps"
+                snaps.mkdir()
+                (snaps / "home-dark.html").write_text("<html><head><style>:root{--a:1px}</style></head><body></body></html>")
+                # every page copy the signed-in specs name, with the metadata snapshot.js writes beside it
+                labels = set(re.findall(r"snap: '([^']+)'", (HERE / "kit/capture/signed-in/measure.mjs").read_text())) | {"home-dark"}
+                for label in labels:
+                    (snaps / f"{label}.html").write_text("<html><body></body></html>")
+                    (snaps / f"{label}.json").write_text('{"url": "https://x.test/", "w": 1440, "h": 900}')
+                env = {**os.environ, "PLAYWRIGHT": stub.as_uri(), "KIT_EXAMPLE": "1", "SNAPS": str(snaps), "RAW": str(d / "raw"),
+                       "HOME": str(d / "home"), "USERPROFILE": str(d / "home")}
+                res = subprocess.run([NODE, str(capture / rel)], capture_output=True, text=True, cwd=d, timeout=60, env=env)
+                out = res.stdout + res.stderr
+                self.assertNotEqual(res.returncode, 0, out[-1500:])
+                self.assertIn("cdn.example.test/a.png", out, out[-1500:])   # the error was printed
+                for secret in ("SECRET1", "SECRET2", "token=", "sig="):
+                    self.assertNotIn(secret, out, out[-1500:])
+
+    def test_scrub_console_cleans_strings_and_errors(self):
+        mod = (HERE / "kit/capture/no-query.mjs").as_uri()
+        script = (f"import({json.dumps(mod)}).then(({{ scrubConsole }}) => {{ scrubConsole();"
+                  "console.log('failed', 'img[src=\"/a?sig=S1\"]', 3); console.error(new Error('at /b?token=S2'));"
+                  "console.warn('ok /c'); })")
+        res = subprocess.run([NODE, "-e", script], capture_output=True, text=True, timeout=30)
+        self.assertEqual(res.returncode, 0, res.stderr)
+        out = res.stdout + res.stderr
+        self.assertIn('failed img[src="/a"] 3', res.stdout)
+        self.assertIn("at /b", res.stderr)
+        self.assertIn("ok /c", res.stderr)
+        self.assertNotIn("S1", out)
+        self.assertNotIn("S2", out)
+
+
 class PackageCaptureScripts(unittest.TestCase):
     """Python only, so it runs without node."""
 
