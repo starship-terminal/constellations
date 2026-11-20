@@ -1,5 +1,6 @@
 """Check the Relume tokens against the readings this capture wrote."""
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -46,6 +47,32 @@ class Tokens(unittest.TestCase):
         walk(TOKENS["core"], "core")
         walk(TOKENS["light"], "light")
         self.assertEqual(missing, [])
+
+    def test_style_guide_colours_are_tokens(self):
+        # style-guide.html is hand-written (no builder here can run, see the README), so nothing
+        # regenerates it from tokens.json: every colour it declares must still be a token value.
+        values = set()
+
+        def walk(node):
+            if isinstance(node, dict) and "$value" in node:
+                if node.get("$type") == "color":
+                    values.add(str(node["$value"]).lower())
+            elif isinstance(node, dict):
+                for key, child in node.items():
+                    if not key.startswith("$"):
+                        walk(child)
+
+        walk(TOKENS)
+        html = (ROOT / "style-guide.html").read_text()
+        root = re.search(r":root \{(.*?)\}", html, re.S).group(1)
+        # Every custom property on :root, whatever its form: a colour written as rgb() or a name
+        # must not slip past the check, so anything that is not a hex is a failure.
+        declared = re.findall(r"--([\w-]+):\s*([^;]+);", root)
+        self.assertTrue(declared)
+        for name, value in declared:
+            with self.subTest(var=name):
+                self.assertRegex(value.strip(), r"^#[0-9a-fA-F]+$")
+                self.assertIn(value.strip().lower(), values)
 
     def test_no_dark_theme(self):
         self.assertNotIn("dark", TOKENS)

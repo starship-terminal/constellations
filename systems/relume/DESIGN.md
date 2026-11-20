@@ -217,6 +217,8 @@ The pricing page shows dollar amounts. Those are prices, not colour or type toke
 
 Geist Variable and Geist are commercial faces. The tokens name them. The style guide falls back to Arial.
 
+[tokens.json](tokens.json) and [style-guide.html](style-guide.html) are maintained by hand, and no builder in this package reproduces them. The capture read the page into the files in [raw/](raw) and typed the tokens from those readings. The builders under [tools/](tools) (`build_tokens.py`, `build_style_guide.py`, `style-guide.template.html`, `motion.py`) are the kit's copies of another product's example and were never adapted: `build_tokens.py` needs `raw/css-vars.json` and `raw/component-tokens.json`, and `build_style_guide.py` needs an `icons/` folder, and this package has neither. `tools/test_build_tokens.py` checks the tokens against the readings, and checks that every colour the style guide declares is a token value. A change to a value goes into both files by hand, or waits for a recapture through the kit's pipeline.
+
 ### Do and don't (from README.md)
 
 - **Use magenta only for the primary action.** "Start for free", "Generate Website", and login "Continue" are `#ff00f4` with white labels. [button-primary-default.png](components/crops/button-primary-default.png)
