@@ -3421,7 +3421,7 @@
       "description": "Project Management For Creatives",
       "status": "pending",
       "package": null,
-      "notes": "https://onmarathon.com/ is an archive. https://onmarathon.com/sign-in redirects back to the archive homepage with no login form.",
+      "notes": "https://onmarathon.com/ is an archive. https://onmarathon.com/sign-in redirects back to the archive homepage with no login form. Public walk 2026-11-21: /, /for-agencies, /pricing, /demo, and /curated loaded. Sign In and Register redirect home with no form. The demo scheduler was not filled. Public package in PR 1503 at d17c705ed. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 10
