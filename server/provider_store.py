@@ -5,10 +5,15 @@ either is the one both use.
 
 Where: $DESIGN_SYSTEMS_CONFIG_DIR/provider.db, default
 ~/.config/design-systems/provider.db, outside the checkout. The folder is
-created 0700 and the database file 0600 (SQLite gives its -wal and -shm files
-the same mode). Every change is one SQL statement, so SQLite's own locking,
-which a crashed process never leaves behind, makes each one atomic across both
-servers: a model-only save applies only while the row still holds the key and
+created 0700 and the database file 0600. It uses the rollback journal
+(journal_mode DELETE), not the WAL the stack conventions default to: with
+secure_delete on, a replaced or removed key is overwritten in place and the
+journal is deleted at commit, so no copy of an old key survives in a -wal file
+that an open reader could keep from being checkpointed. Writes are rare and
+the table has one row, so WAL's concurrency buys nothing here.
+
+Every change is one SQL statement, so SQLite's own locking, which a crashed
+process never leaves behind, makes each one atomic across both servers: a model-only save applies only while the row still holds the key and
 endpoint it read, a migration only inserts into an empty table, and an
 unchecked key only replaces a row holding the same key.
 
@@ -46,7 +51,23 @@ _HEADER = re.compile(r"[A-Za-z0-9-]{1,64}")
 
 
 class StoreError(Exception):
-    """The saved file exists but cannot be used. Never carries its text."""
+    """The saved provider exists but cannot be used. Never carries its text.
+    `damaged` is set only when SQLite said the file is not a database or is
+    corrupt: only then may a remove or a checked save delete it. A busy lock,
+    a full disk or a permission error must never cost a working provider."""
+    damaged = False
+
+
+_SQLITE_CORRUPT = 11
+_SQLITE_NOTADB = 26
+
+
+def _store_error(message: str, cause: BaseException | None = None) -> StoreError:
+    err = StoreError(message)
+    code = getattr(cause, "sqlite_errorcode", None)
+    if isinstance(code, int):
+        err.damaged = (code & 0xFF) in (_SQLITE_CORRUPT, _SQLITE_NOTADB)
+    return err
 
 
 class BadRequest(Exception):
@@ -89,8 +110,8 @@ def _db(create: bool):
     makes the folder (0700) and the file (0600) first. Any other failure (a
     permission change, a damaged file) is a StoreError, never "nothing saved",
     so the env key cannot quietly take over. secure_delete overwrites a
-    replaced or removed key's bytes, and a checkpoint after the work keeps no
-    copy in the -wal file."""
+    replaced or removed key's bytes in place, and the rollback journal is
+    deleted at commit (see the module notes on journal_mode)."""
     path = provider_file()
     try:
         if create:
@@ -109,21 +130,20 @@ def _db(create: bool):
         raise StoreError("The saved provider file cannot be read.") from None
     try:
         conn = sqlite3.connect(path, timeout=5, isolation_level=None)
-    except sqlite3.Error:
-        raise StoreError("The saved provider file cannot be read.") from None
+    except sqlite3.Error as e:
+        raise _store_error("The saved provider file cannot be read.", e) from None
     try:
         try:
             conn.execute("PRAGMA busy_timeout = 5000")
             conn.execute("PRAGMA secure_delete = ON")
-            conn.execute("PRAGMA journal_mode = WAL")
+            conn.execute("PRAGMA journal_mode = DELETE")
             conn.execute(SCHEMA)
-        except sqlite3.Error:
-            raise StoreError("The saved provider file cannot be read.") from None
+        except sqlite3.Error as e:
+            raise _store_error("The saved provider file cannot be read.", e) from None
         try:
             yield conn
-            conn.execute("PRAGMA wal_checkpoint(TRUNCATE)")
-        except sqlite3.Error:
-            raise StoreError("The saved provider file cannot be used.") from None
+        except sqlite3.Error as e:
+            raise _store_error("The saved provider file cannot be used.", e) from None
     finally:
         conn.close()
 
@@ -166,8 +186,8 @@ def save_provider(cfg: dict, mode: str) -> bool:
             return conn.execute(SAVE_SQL[mode], _values(cfg)).rowcount > 0
     try:
         return attempt()
-    except StoreError:
-        if mode != "replace":
+    except StoreError as e:
+        if mode != "replace" or not e.damaged:
             raise
         _discard_files()
         return attempt()
@@ -188,14 +208,16 @@ def update_model(seen: dict, model: str, name: str) -> bool:
 
 
 def remove() -> bool:
-    """Delete the saved provider. True when there was one. A damaged file that
-    cannot be opened is deleted outright, so Remove always recovers."""
+    """Delete the saved provider. True when there was one. A file SQLite calls
+    damaged is deleted outright, so Remove recovers from it."""
     try:
         with _db(False) as conn:
             if conn is None:
                 return False
             return conn.execute("DELETE FROM provider WHERE id = 1").rowcount > 0
-    except StoreError:
+    except StoreError as e:
+        if not e.damaged:
+            raise
         try:
             _discard_files()
         except OSError:

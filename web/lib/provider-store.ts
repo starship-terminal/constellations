@@ -7,9 +7,12 @@
 // Where: $DESIGN_SYSTEMS_CONFIG_DIR/provider.db, default
 // ~/.config/design-systems/provider.db. Outside the checkout, so no key can
 // be committed; tests point the variable at a throwaway folder. The folder is
-// created 0700 and the database file 0600 (SQLite gives its -wal and -shm
-// files the same mode). secure_delete and a checkpoint after every write keep a
-// replaced or removed key's bytes out of both files.
+// created 0700 and the database file 0600. It uses the rollback journal
+// (journal_mode DELETE), not the WAL the stack conventions default to: with
+// secure_delete on, a replaced or removed key is overwritten in place and the
+// journal file is deleted at commit, so no copy of an old key survives in a
+// -wal file that a reader could keep from being checkpointed. Writes are rare
+// and the table has one row, so WAL's concurrency buys nothing here.
 //
 // Why SQLite for one row: every change is a single statement, so SQLite's
 // own locking (released when a process dies, so a crash never leaves a lock
@@ -36,6 +39,21 @@ export type SavedProvider = PublicProvider & { api: string; base_url: string; mo
 
 export class StoreError extends Error {
   // The saved provider exists but cannot be used. Never carries its contents.
+  /** SQLite said the file is not a database or is corrupt. Only then may a
+      remove or a checked save delete it; a busy lock, a full disk or a
+      permission error must never cost a working provider. */
+  damaged = false;
+}
+
+/** SQLite's primary result codes for a file that is not a usable database. */
+const SQLITE_CORRUPT = 11;
+const SQLITE_NOTADB = 26;
+
+function storeError(message: string, cause: unknown): StoreError {
+  const err = new StoreError(message);
+  const code = (cause as { errcode?: unknown } | null)?.errcode;
+  if (typeof code === "number") err.damaged = [SQLITE_CORRUPT, SQLITE_NOTADB].includes(code & 0xff);
+  return err;
 }
 
 export function configDir(): string {
@@ -86,26 +104,23 @@ async function open(create: boolean): Promise<DatabaseSync | null> {
     db = new DatabaseSync(file);
     db.exec("PRAGMA busy_timeout = 5000");
     db.exec("PRAGMA secure_delete = ON");
-    db.exec("PRAGMA journal_mode = WAL");
+    db.exec("PRAGMA journal_mode = DELETE");
     db.exec(SCHEMA);
     return db;
-  } catch {
+  } catch (e) {
     try {
       db?.close();
     } catch {}
-    throw new StoreError("The saved provider file cannot be read.");
+    throw storeError("The saved provider file cannot be read.", e);
   }
 }
 
-/** Run `fn`, then fold the write-ahead log back into the file and empty it,
-    so no copy of an old key stays in the -wal file, and close. */
 function run<T>(db: DatabaseSync, fn: () => T): T {
   try {
-    const out = fn();
-    db.exec("PRAGMA wal_checkpoint(TRUNCATE)");
-    return out;
-  } catch {
-    throw new StoreError("The saved provider file cannot be used.");
+    return fn();
+  } catch (e) {
+    if (e instanceof StoreError) throw e;
+    throw storeError("The saved provider file cannot be used.", e);
   } finally {
     db.close();
   }
@@ -169,9 +184,10 @@ export async function saveProvider(cfg: SavedProvider, mode: "replace" | "create
   try {
     return await attempt();
   } catch (e) {
-    // A checked key may replace a damaged file outright; the other modes
-    // must not, since they only write when they can see what is there.
-    if (!(e instanceof StoreError) || mode !== "replace") throw e;
+    // A checked key may replace a file SQLite calls damaged; the other modes
+    // must not, since they only write when they can see what is there, and
+    // no other failure (busy, disk full) is a reason to delete anything.
+    if (!(e instanceof StoreError) || !e.damaged || mode !== "replace") throw e;
     await discardFiles();
     return attempt();
   }
@@ -197,15 +213,15 @@ export async function updateModel(seen: SavedProvider, model: string, name: stri
 }
 
 /** Delete the saved provider. True when there was one. The row is deleted
-    with secure_delete on, so its bytes are overwritten; a damaged file that
-    cannot be opened is deleted outright, so Remove always recovers. */
+    with secure_delete on, so its bytes are overwritten; a file SQLite calls
+    damaged is deleted outright, so Remove recovers from it. */
 export async function removeSaved(): Promise<boolean> {
   try {
     const db = await open(false);
     if (!db) return false;
     return run(db, () => Number(db.prepare("DELETE FROM provider WHERE id = 1").run().changes) > 0);
   } catch (e) {
-    if (!(e instanceof StoreError)) throw e;
+    if (!(e instanceof StoreError) || !e.damaged) throw e;
     try {
       await discardFiles();
     } catch {

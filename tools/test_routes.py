@@ -696,6 +696,21 @@ class ProviderKeyTest(TempConfig):
         h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2, "migrate": True})
         self.assertFalse(h.json()["ok"])
 
+    def test_a_busy_database_is_never_deleted(self):
+        import sqlite3
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        other = sqlite3.connect(self.config / "provider.db", isolation_level=None)
+        other.execute("BEGIN EXCLUSIVE")
+        try:
+            h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2})
+            self.assertEqual(h.status, 500)
+            h = self.call("delete", "/api/provider")
+            self.assertEqual(h.status, 500)
+        finally:
+            other.execute("ROLLBACK")
+            other.close()
+        self.assertEqual(self.saved()["api_key"], KEY)
+
     def test_an_unreadable_folder_is_reported_not_replaced_by_env(self):
         self.chat.env_cfg = {"api": "anthropic", "api_key": ENV_KEY, "model": "env"}
         self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
