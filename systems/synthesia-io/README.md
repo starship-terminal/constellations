@@ -111,4 +111,4 @@ python3 tools/build_tokens.py
 python3 tools/catalog.py design-md synthesia-io
 ```
 
-Capture order, if rerun: `tools/capture/probe.mjs` writes `raw/css-vars.json`, `raw/login-wall.json`, `raw/pricing.json`, `raw/book-demo-fields.json` and `raw/states.json`; `tools/capture/harvest.mjs` writes `raw/measurements.json`, `raw/capture-log.json`, `raw/harvest-css-vars.json` and `raw/harvest-login-wall.json`. Each raw file has one writer.
+Capture order, if rerun: `tools/capture/probe.mjs` writes `raw/css-vars.json`, `raw/login-wall.json`, `raw/pricing.json`, `raw/book-demo-fields.json` and `raw/states.json`; `tools/capture/harvest.mjs` writes `raw/measurements.json`, `raw/capture-log.json`, `raw/harvest-css-vars.json` and `raw/harvest-login-wall.json`. Each raw file has one writer. The kit's `tools/capture/vars.mjs`, an unadapted Claude copy that also wrote `raw/css-vars.json` in a shape `build_tokens.py` cannot read, is removed, so each raw file has one writer.

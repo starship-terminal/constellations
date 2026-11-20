@@ -24,8 +24,9 @@ class Tokens(unittest.TestCase):
                     continue
                 if "$value" in value:
                     yield f"{path}.{key}", value
-                else:
-                    yield from walk(value, f"{path}.{key}")
+                # A token can hold child tokens (core.color.base.dark.opacity-10, hover states),
+                # so keep walking its non-$ keys too.
+                yield from walk(value, f"{path}.{key}")
         for name in ("core", "light"):
             for path, token in walk(tokens[name], name):
                 with self.subTest(token=path):
