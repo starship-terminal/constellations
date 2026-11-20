@@ -43,6 +43,16 @@ COMP = C["components"]
 R = {n: v.get("value", v.get("raw")) for s in ("site", "app") for n, v in V["resolved"][s].items()}
 
 
+# A named row whose reading is missing is recorded here instead of being
+# dropped silently; the build stops on any gap not listed in KNOWN_GAPS (at the
+# end), and listed ones are written to raw/component-tokens.json `_gaps`.
+GAPS = []
+
+
+def gap(what):
+    GAPS.append(what)
+
+
 def descend(root, parts):
     node = root
     for p in parts[:-1]:
@@ -92,8 +102,12 @@ def stprop(comp, state, prop):
     """`styleProp`, `textStyle.prop`, `paint.N.prop` (the Nth painted child
     layer) or `ancestors.N.prop`, or the special `ringShadow`: the colour of
     the `0 0 0 Npx` ring layer in the element's own boxShadow (the product's
-    focus ring is a spread shadow, not an outline)."""
-    d = COMP[comp]["states"][state]
+    focus ring is a spread shadow, not an outline). A component flagged
+    missing or recaptureMissed is refused here, as st() refuses it."""
+    c = COMP[comp]
+    if c.get("missing") or c.get("recaptureMissed"):
+        raise KeyError(comp)
+    d = c["states"][state]
     if prop == "ringShadow":
         sh = d.get("style", {}).get("boxShadow", "") or ""
         for layer in re.split(r",(?![^(]*\))", sh):
@@ -155,7 +169,7 @@ collect(SPEC["core"].setdefault("color", {}), "color.")
 def role(path, comp, state, prop, desc):
     v = norm_color(stprop(comp, state, prop))
     if not v or v == "transparent":
-        return
+        return gap(f"dark.{path}: {comp} {state} {prop} is empty")
     target = BY_VALUE.get(v)
     leaf = {"type": "color", "description": desc}
     if target:
@@ -191,7 +205,7 @@ for path, comp, state, prop, desc in [
     try:
         role(path, comp, state, prop, desc)
     except KeyError:
-        pass
+        gap(f"dark.{path}: no {comp} {state} {prop} reading")
 
 # -------------------------------------------------- type scale and the grid
 
@@ -253,13 +267,14 @@ for comp, state, key, prop, desc in [
                          "description": desc}
             continue
         if not v or v == "transparent":
+            gap(f"measured.{key}: {comp} {state} {prop} is empty")
             continue
         ty = "color" if re.match(r"rgba?\(|#", str(v)) else "dimension"
         meas[key] = {"value": norm_color(v) if ty == "color" else v, "type": ty,
                      "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)",
                      "description": desc}
     except KeyError:
-        pass
+        gap(f"measured.{key}: no {comp} {state} {prop} reading")
 
 # font.family.* as first-class tokens (the stacks measured on the page and
 # the app): the marketing face, and the app's own apercuProRegular /
@@ -299,8 +314,10 @@ for comp, state, key, desc in [
                 "value": layers, "type": "shadow",
                 "source": f"computed boxShadow of {comp} {state} (raw/components-computed.json)",
                 "description": desc}
+        else:
+            gap(f"shadow.{key}: {comp} {state} has no outer shadow layer")
     except KeyError:
-        pass
+        gap(f"shadow.{key}: no {comp} {state} reading")
 
 # radius scale (measured; the bundle names the two button variants
 # border-radius-basic (12px) and border-radius-full (100px))
@@ -319,26 +336,69 @@ for comp, state, key, prop, desc in [
                 "value": v.split()[0] if " " in str(v) else v, "type": "dimension",
                 "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)",
                 "description": desc}
+        else:
+            gap(f"radius.{key}: {comp} {state} {prop} is empty")
     except KeyError:
-        pass
+        gap(f"radius.{key}: no {comp} {state} reading")
 
 # motion: buttons transition background-color + border-color 0.2s ease;
-# the player's sheets slide in/out 0.3s on the declared cubic-beziers.
+# the player's sheets slide in/out 0.3s on the declared cubic-beziers. Each
+# value is read from the reading its source cites.
+def one(listed, what):
+    """The single value a comma list repeats (`0.2s, 0.2s` -> `0.2s`)."""
+    vals = {x.strip() for x in re.split(r",(?![^(]*\))", listed or "") if x.strip()}
+    if len(vals) != 1:
+        raise SystemExit(f"{what}: expected one repeated value, got {listed!r}")
+    return vals.pop()
+
+
+def sheet_animation(selector):
+    """(duration, easing) of a recorded animation rule (raw/components-computed.json _meta.sheets)."""
+    for rules in C["_meta"].get("sheets", {}).values():
+        for r in rules:
+            if r.get("selector") == selector and r.get("animation"):
+                m = re.match(r"([\d.]+m?s)\s+(cubic-bezier\([^)]*\)|[a-z-]+)", r["animation"])
+                if m:
+                    return m.group(1), m.group(2)
+    raise SystemExit(f"no recorded animation for {selector}")
+
+
+def gradient(css, alias=None):
+    """Stops of a linear-gradient(...) as DTCG stops; 8-digit hex kept as rgba()."""
+    stops = []
+    for m in re.finditer(r"(rgba?\([^)]*\)|#[0-9a-fA-F]{3,8})\s+([\d.]+)%", css):
+        col = norm_color(m.group(1))
+        if re.fullmatch(r"#[0-9a-f]{8}", col):
+            r, g, b, a = (int(col[i:i + 2], 16) for i in (1, 3, 5, 7))
+            col = "#%02x%02x%02x" % (r, g, b) if a == 255 else f"rgba({r}, {g}, {b}, {'%g' % round(a / 255, 3)})"
+        stops.append({"color": (alias or {}).get(col, col), "position": float(m.group(2)) / 100})
+    if not stops:
+        raise SystemExit(f"no gradient stops in {css!r}")
+    for s_ in stops:
+        if s_["position"] == int(s_["position"]):
+            s_["position"] = int(s_["position"])
+    return stops
+
+
+_btn = st("btn-signin", "default")
+_in, _out = sheet_animation(".slide-in-out-enter"), sheet_animation(".slide-in-out-exit")
+if _in[0] != _out[0]:
+    raise SystemExit(f"the sheet's enter and exit durations differ: {_in[0]} / {_out[0]}")
 dur = SPEC["core"].setdefault("duration", {})
-dur["hover"] = {"value": "0.2s", "type": "duration",
+dur["hover"] = {"value": one(_btn["transitionDuration"], "duration.hover"), "type": "duration",
                 "source": "computed transitionDuration of btn-signin default (raw/components-computed.json)",
                 "description": "The 200ms background/border transition on every button and accordion row."}
-dur["sheet"] = {"value": "0.3s", "type": "duration",
+dur["sheet"] = {"value": _in[0], "type": "duration",
                 "source": "declared slide-in-out/slide-out transition in the app bundle's CSSOM (raw/components-computed.json _meta.sheets)",
                 "description": "The 300ms slide of the timer sheet and the mobile menu."}
 ease = SPEC["core"].setdefault("easing", {})
-ease["standard"] = {"value": "ease", "type": "cubicBezier",
+ease["standard"] = {"value": one(_btn["transitionTimingFunction"], "easing.standard"), "type": "cubicBezier",
                     "source": "computed transitionTimingFunction of btn-signin default (raw/components-computed.json)",
                     "description": "Plain ease on the hover transitions."}
-ease["sheetIn"] = {"value": "cubic-bezier(0.25, 0.46, 0.45, 0.94)", "type": "cubicBezier",
+ease["sheetIn"] = {"value": _in[1], "type": "cubicBezier",
                    "source": "declared .slide-in-out-enter animation in the app bundle's CSSOM (raw/components-computed.json _meta.sheets)",
                    "description": "The sheet's entrance bezier."}
-ease["sheetOut"] = {"value": "cubic-bezier(0.55, 0.085, 0.68, 0.53)", "type": "cubicBezier",
+ease["sheetOut"] = {"value": _out[1], "type": "cubicBezier",
                     "source": "declared .slide-in-out-exit animation in the app bundle's CSSOM (raw/components-computed.json _meta.sheets)",
                     "description": "The sheet's exit bezier."}
 
@@ -346,14 +406,12 @@ ease["sheetOut"] = {"value": "cubic-bezier(0.55, 0.085, 0.68, 0.53)", "type": "c
 # --color-gradient-1 var is the similar #181818 -> transparent fade).
 SPEC["core"]["gradient"] = {
     "headerScrim": {"type": "gradient",
-                    "value": [{"color": "{color.neutral.black}", "position": 0},
-                              {"color": "rgba(0, 0, 0, 0.65)", "position": 0.5},
-                              {"color": "rgba(0, 0, 0, 0)", "position": 1}],
+                    "value": gradient(st("header", "default")["backgroundImage"],
+                                      {norm_color(R["--color-black"]): "{color.neutral.black}"}),
                     "source": "computed backgroundImage of header default (raw/components-computed.json)",
                     "description": "The fade the fixed header paints over scrolled content."},
     "declaredScrim": {"type": "gradient",
-                      "value": [{"color": "#181818", "position": 0},
-                                {"color": "rgba(0, 0, 0, 0)", "position": 1}],
+                      "value": gradient(R["--color-gradient-1"]),
                       "source": "declared --color-gradient-1 on :root (raw/css-vars.json); where it mounts was not identified on the captured routes",
                       "description": "The bundle's #181818-to-transparent fade."},
 }
@@ -395,6 +453,7 @@ for key, cname, state, prop, desc in [
         else:
             v = stprop(cname, state, prop.replace("style.", ""))
         if not v:
+            gap(f"component.{key}: {cname} {state} {prop} is empty")
             continue
         node = comp
         parts = key.split(".")
@@ -404,7 +463,15 @@ for key, cname, state, prop, desc in [
                            "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)",
                            "description": desc}
     except (KeyError, IndexError):
-        pass
+        gap(f"component.{key}: no {cname} {state} {prop} reading")
+
+# Rows missing from the committed readings, kept visible in `_gaps`.
+KNOWN_GAPS = set()
+_new = [g for g in GAPS if g not in KNOWN_GAPS]
+if _new:
+    raise SystemExit("missing readings for named token rows (recapture, or list them in KNOWN_GAPS):\n  " + "\n  ".join(_new))
+if GAPS:
+    SPEC["_gaps"] = GAPS
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1, ensure_ascii=False) + "\n")
 
