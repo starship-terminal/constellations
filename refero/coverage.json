@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 460,
-    "system_domains": 449,
-    "matched_domains": 409,
-    "missing_domains": 24,
+    "system_packages": 459,
+    "system_domains": 448,
+    "matched_domains": 408,
+    "missing_domains": 25,
     "system_domains_absent_from_catalog": 40
   },
   "matched": {
@@ -6038,23 +6038,6 @@
         }
       ]
     },
-    "tome.app": {
-      "catalog": [
-        {
-          "name": "Tome",
-          "domain": "tome.app",
-          "id": 290
-        }
-      ],
-      "pkgs": [
-        {
-          "slug": "tome",
-          "name": "Tome",
-          "url": "https://tome.app/",
-          "name_match": true
-        }
-      ]
-    },
     "trip.com": {
       "catalog": [
         {
@@ -7176,6 +7159,13 @@
         "name": "The Athletic",
         "domain": "theathletic.com",
         "id": 55
+      }
+    ],
+    "tome.app": [
+      {
+        "name": "Tome",
+        "domain": "tome.app",
+        "id": 290
       }
     ],
     "travelperk.com": [

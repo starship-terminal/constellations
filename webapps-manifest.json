@@ -5912,9 +5912,9 @@
         290
       ],
       "description": "Polished & Professional AI Presentations",
-      "status": "captured",
-      "package": "systems/tome",
-      "notes": "",
+      "status": "uncapturable",
+      "package": null,
+      "notes": "Captured 2026-11-19 as systems/tome, which held only the host's 404 page: https://tome.app/ and /login both returned the 404 and no product surface was served. The owner had the package deleted on 2026-11-21; nothing of the product remains to capture.",
       "login-extracted": "not-started",
       "batch": 19
     },
