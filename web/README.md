@@ -17,12 +17,14 @@ lives in the browser:
    key is replaced: save a new one and it swaps in only once it passes. An
    endpoint with no model list cannot check a key, so such a key is saved
    only when no other key is saved, and the page says it was not checked.
-3. The server writes the provider to
-   `$DESIGN_SYSTEMS_CONFIG_DIR/provider.json`, default
-   `~/.config/design-systems/provider.json`: outside the checkout, folder
-   mode 0700, file mode 0600, written through a temporary file and a rename.
-   Every save and removal holds a lock (a `provider.lock` folder beside the
-   file) shared by both servers, so they never interleave.
+3. The server writes the provider to a one-row SQLite database,
+   `$DESIGN_SYSTEMS_CONFIG_DIR/provider.db`, default
+   `~/.config/design-systems/provider.db`: outside the checkout, folder mode
+   0700, file mode 0600 (SQLite's `-wal` and `-shm` files take the same
+   mode). Every change is one statement, so SQLite's own locking makes it
+   atomic across both servers, and a crashed process never leaves a lock
+   behind. A model change applies only while the saved key and endpoint are
+   the ones the page was editing.
 4. No answer carries the key. `GET /api/provider` and `GET /api/status` say
    only where it comes from, shown on the page as a badge: saved on the
    server, from the server environment, or no key.
@@ -78,8 +80,10 @@ These steps are for the owner; nothing in this repo contacts the host.
    volume at that folder and set `DESIGN_SYSTEMS_CONFIG_DIR` to the mount
    point; otherwise a saved key is lost when the container is recreated.
 3. Make sure the folder belongs to the user the units run as. The app
-   creates it 0700 and the file 0600 itself; an existing folder keeps its
-   mode, so check it is not readable by others.
+   creates it 0700 and the database 0600 itself; an existing folder keeps its
+   mode, so check it is not readable by others. Keep it on a local disk, not
+   a network share: the database uses SQLite's WAL mode. Back it up, if at
+   all, with `sqlite3 provider.db ".backup <copy>"`, never `cp`.
 4. Restart the API unit once after this change deploys: `server/api.py`
    itself changed (it now passes `DELETE /api/provider` to the routes), and
    only the route modules reload per request. The gallery unit picks the

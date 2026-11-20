@@ -30,9 +30,9 @@ import {
   publicView,
   redact,
   removeSaved,
+  saveProvider,
   StoreError,
-  withLock,
-  writeSaved,
+  updateModel,
   type PublicProvider,
   type SavedProvider,
 } from "./provider-store.ts";
@@ -238,10 +238,12 @@ export const handleTest = (body: unknown, listModels: ListModels): Promise<ApiRe
   });
 
 const EXISTING = "The server already has a saved provider, so it kept that one.";
+const UNCHECKED =
+  "This endpoint has no model list, so the new key could not be checked and the saved key was kept. Remove the saved key first to save this one unchecked.";
 
 /** Save the provider. A new key is tested first and saved only when the test
     passes; with no key, only the model and label of the saved provider change.
-    The read-compare-write runs under the store's lock. */
+    Each write is one statement in the store, atomic across both servers. */
 export const handleSave = (body: unknown, listModels: ListModels): Promise<ApiResult> =>
   guarded(async () => {
     const s = parse(body);
@@ -251,49 +253,41 @@ export const handleSave = (body: unknown, listModels: ListModels): Promise<ApiRe
       // A migration that cannot be saved is not worth a provider call.
       if (s.migrate && (await loadSaved().catch(() => null)))
         return { status: 200, body: { ok: false, saved: false, existing: true, error: EXISTING } };
-      // The network call stays outside the lock; the write happens under it.
       const r = await test(cfg, listModels);
       if (!r.ok) return { status: 200, body: { ...r, ok: false, saved: false } };
-      const refused = await withLock(async () => {
-        const saved = await loadSaved().catch((e) => {
-          if (e instanceof StoreError) return null;
-          throw e;
-        });
-        if (s.migrate && saved) return EXISTING;
-        if (!r.verified && saved && saved.api_key !== cfg.api_key)
-          return "This endpoint has no model list, so the new key could not be checked and the saved key was kept. Remove the saved key first to save this one unchecked.";
-        await writeSaved(cfg);
-        return null;
-      });
-      if (refused === EXISTING) return { status: 200, body: { ok: false, saved: false, existing: true, error: EXISTING } };
-      if (refused) return { status: 200, body: { ok: false, saved: false, error: refused } };
+      // One statement decides and writes, so a concurrent save or removal on
+      // either server cannot slip in between: a migration only fills an empty
+      // slot, and a key the provider could not check only replaces itself.
+      const written = await saveProvider(cfg, s.migrate ? "create" : r.verified ? "replace" : "same-key");
+      if (!written && s.migrate)
+        return { status: 200, body: { ok: false, saved: false, existing: true, error: EXISTING } };
+      if (!written) return { status: 200, body: { ok: false, saved: false, error: UNCHECKED } };
       return {
         status: 200,
         body: { ok: true, saved: true, verified: !!r.verified, models: r.models ?? [], ...(await providerState()) },
       };
     }
     if (s.migrate) return { status: 400, body: { ok: false, error: "Nothing to move: no key was sent." } };
-    const outcome = await withLock(async (): Promise<ApiResult | null> => {
-      let saved: SavedProvider | null;
-      try {
-        saved = await loadSaved();
-      } catch (e) {
-        if (e instanceof StoreError) return { status: 400, body: { ok: false, error: `${e.message} Remove it and save a key again.` } };
-        throw e;
-      }
-      if (!saved) return { status: 400, body: { ok: false, error: "Enter an API key to save." } };
-      if (!sameEndpoint(saved, s))
-        return { status: 400, body: { ok: false, error: "Changing the endpoint needs the API key again." } };
-      await writeSaved({ ...saved, model: s.model, name: s.name || undefined });
-      return null;
-    });
-    if (outcome) return outcome;
+    let saved: SavedProvider | null;
+    try {
+      saved = await loadSaved();
+    } catch (e) {
+      if (e instanceof StoreError) return { status: 400, body: { ok: false, error: `${e.message} Remove it and save a key again.` } };
+      throw e;
+    }
+    if (!saved) return { status: 400, body: { ok: false, error: "Enter an API key to save." } };
+    if (!sameEndpoint(saved, s))
+      return { status: 400, body: { ok: false, error: "Changing the endpoint needs the API key again." } };
+    // Applies only while the row still holds the key and endpoint just read,
+    // so it can never write back a key another request removed or replaced.
+    if (!(await updateModel(saved, s.model, s.name)))
+      return { status: 409, body: { ok: false, error: "The saved provider changed meanwhile; reload and try again." } };
     return { status: 200, body: { ok: true, saved: true, ...(await providerState()) } };
   });
 
 export const handleRemove = (): Promise<ApiResult> =>
   guarded(async () => {
-    const removed = await withLock(removeSaved);
+    const removed = await removeSaved();
     return { status: 200, body: { ok: true, removed, ...(await providerState()) } };
   });
 

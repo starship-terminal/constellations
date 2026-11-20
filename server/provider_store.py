@@ -3,10 +3,14 @@
 the gallery's copy of the same rules over the same file, so a key saved in
 either is the one both use.
 
-Where: $DESIGN_SYSTEMS_CONFIG_DIR/provider.json, default
-~/.config/design-systems/provider.json, outside the checkout. The folder is
-created 0700 and the file written 0600 through a temporary file and a rename,
-so a reader never sees half a key and a rotation swaps keys in one step.
+Where: $DESIGN_SYSTEMS_CONFIG_DIR/provider.db, default
+~/.config/design-systems/provider.db, outside the checkout. The folder is
+created 0700 and the database file 0600 (SQLite gives its -wal and -shm files
+the same mode). Every change is one SQL statement, so SQLite's own locking,
+which a crashed process never leaves behind, makes each one atomic across both
+servers: a model-only save applies only while the row still holds the key and
+endpoint it read, a migration only inserts into an empty table, and an
+unchecked key only replaces a row holding the same key.
 
 The rules:
 - A key reaches the server once, is tested with one cheap call (the model
@@ -22,23 +26,17 @@ The rules:
 - A key the provider never checked (an endpoint with no model list) never
   replaces a saved one, and a one-time migration from a browser (migrate:
   true) never replaces any saved provider.
-- Every read-compare-write runs under locked().
 """
 from __future__ import annotations
 
 import contextlib
-import json
 import os
 import re
-import shutil
-import socket
-import tempfile
-import time
-import uuid
+import sqlite3
 from pathlib import Path
 
 CONFIG_DIR_ENV = "DESIGN_SYSTEMS_CONFIG_DIR"
-FILE_NAME = "provider.json"
+FILE_NAME = "provider.db"
 PUBLIC_FIELDS = ("api", "base_url", "key_header", "models_url", "model", "name")
 ENDPOINT_FIELDS = ("api", "base_url", "key_header", "models_url")
 DEFAULT_BASE_URL = {"anthropic": "https://api.anthropic.com", "openai": "https://api.openai.com/v1"}
@@ -64,161 +62,107 @@ def provider_file() -> Path:
     return config_dir() / FILE_NAME
 
 
-def load() -> dict | None:
-    """The saved provider, None when nothing is saved; StoreError when the
-    file is there but unusable."""
-    try:
-        text = provider_file().read_text(encoding="utf-8")
-    except FileNotFoundError:
-        return None
-    except (OSError, UnicodeDecodeError):
-        raise StoreError("The saved provider file cannot be read.") from None
-    try:
-        raw = json.loads(text)
-    except ValueError:
-        raise StoreError("The saved provider file is not valid JSON.") from None
-    if not isinstance(raw, dict):
-        raise StoreError("The saved provider file is not an object.")
-    out = {k: raw[k] for k in (*PUBLIC_FIELDS, "api_key") if isinstance(raw.get(k), str) and raw[k]}
-    if not all(out.get(k) for k in ("api_key", "api", "base_url", "model")):
-        raise StoreError("The saved provider file is missing its key, endpoint or model.")
-    return out
-
-
-def save(cfg: dict) -> None:
-    """Write the provider (key included) in one atomic step, mode 0600."""
-    folder = config_dir()
-    folder.mkdir(parents=True, exist_ok=True, mode=0o700)
-    out = {k: cfg[k] for k in (*PUBLIC_FIELDS, "api_key") if isinstance(cfg.get(k), str) and cfg[k]}
-    fd, tmp = tempfile.mkstemp(prefix=f".{FILE_NAME}.", suffix=".tmp", dir=folder)
-    try:
-        os.fchmod(fd, 0o600)
-        with os.fdopen(fd, "w", encoding="utf-8") as fh:
-            fh.write(json.dumps(out, indent=2) + "\n")
-            fh.flush()
-            os.fsync(fh.fileno())
-        os.replace(tmp, provider_file())
-    except BaseException:
-        Path(tmp).unlink(missing_ok=True)
-        raise
-
-
-LOCK_NAME = "provider.lock"
-OWNER = "owner"
-LOCK_WAIT = 5.0
-LOCK_STALE = 30.0
-CLAIM_KEEP = 24 * 3600.0
-
-
-def _lock_identity(lock: Path):
-    """(id, owner, age) of the lock folder, None when it is gone. The id is the
-    holder's token, or before it has written one, the folder's mtime."""
-    try:
-        st = lock.stat()
-    except OSError:
-        return None
-    owner = None
-    try:
-        o = json.loads((lock / OWNER).read_text())
-        if isinstance(o, dict) and isinstance(o.get("token"), str):
-            owner = o
-    except (OSError, ValueError):
-        pass
-    # Whole milliseconds, as the web store names a missing owner, so both
-    # servers race for the same claim folder.
-    ident = owner["token"] if owner else f"none-{st.st_mtime_ns // 1_000_000}"
-    return ident, owner, time.time() - st.st_mtime
-
-
-def _alive(pid: int) -> bool:
-    try:
-        os.kill(pid, 0)
-        return True
-    except PermissionError:
-        return True
-    except OSError:
-        return False
-
-
-def _stale(owner, age: float) -> bool:
-    """A crashed holder's lock: its holder ran on this host and that process is
-    gone, or (another host or container, where the pid means nothing here)
-    it is older than 30 s."""
-    if owner and owner.get("host") == socket.gethostname() and isinstance(owner.get("pid"), int):
-        return not _alive(owner["pid"])
-    return age > LOCK_STALE
+# The same schema web/lib/provider-store.ts creates.
+SCHEMA = """CREATE TABLE IF NOT EXISTS provider (
+  id INTEGER PRIMARY KEY CHECK (id = 1),
+  api TEXT NOT NULL,
+  base_url TEXT NOT NULL,
+  key_header TEXT NOT NULL DEFAULT '',
+  models_url TEXT NOT NULL DEFAULT '',
+  model TEXT NOT NULL,
+  name TEXT NOT NULL DEFAULT '',
+  api_key TEXT NOT NULL
+)"""
+COLUMNS = ("api", "base_url", "key_header", "models_url", "model", "name", "api_key")
+_UPDATE = ", ".join(f"{c} = excluded.{c}" for c in COLUMNS)
+_INSERT = f"INSERT INTO provider (id, {', '.join(COLUMNS)}) VALUES (1, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(id) DO "
+SAVE_SQL = {
+    "create": _INSERT + "NOTHING",
+    "same-key": _INSERT + f"UPDATE SET {_UPDATE} WHERE provider.api_key = excluded.api_key",
+    "replace": _INSERT + f"UPDATE SET {_UPDATE}",
+}
 
 
 @contextlib.contextmanager
-def locked():
-    """Hold the store's lock: a folder beside provider.json that mkdir creates
-    atomically, the same one web/lib/provider-store.ts takes, so saves,
-    replacements and removals from either server never interleave.
-
-    The holder writes its token, pid and host into the folder and removes it
-    only while its own token is there. A crashed holder's lock is broken by
-    exactly one waiter: each must first create a claim folder named after that
-    holder's token, which mkdir lets only one of them do, and the winner
-    removes the lock only if it still holds that token. Claim folders are
-    swept after a day."""
-    folder = config_dir()
-    folder.mkdir(parents=True, exist_ok=True, mode=0o700)
-    lock = folder / LOCK_NAME
-    token = uuid.uuid4().hex
-    start = time.monotonic()
-    while True:
-        try:
-            lock.mkdir(mode=0o700)
-            try:
-                (lock / OWNER).write_text(json.dumps(
-                    {"token": token, "pid": os.getpid(), "host": socket.gethostname()}))
-            except OSError:
-                shutil.rmtree(lock, ignore_errors=True)
-                raise StoreError("The provider store cannot be locked.") from None
-            break
-        except FileExistsError:
-            pass
-        except OSError:
-            raise StoreError("The provider store cannot be locked.") from None
-        held = _lock_identity(lock)
-        if held and _stale(held[1], held[2]):
-            claim = folder / (LOCK_NAME + ".claim-" + re.sub(r"[^A-Za-z0-9.-]", "_", held[0]))
-            try:
-                claim.mkdir(mode=0o700)
-                won = True
-            except OSError:
-                won = False
-            if won:
-                again = _lock_identity(lock)
-                if again and again[0] == held[0]:
-                    shutil.rmtree(lock, ignore_errors=True)
-                continue
-        if time.monotonic() - start > LOCK_WAIT:
-            raise StoreError("The provider store is busy; try again.")
-        time.sleep(0.05)
+def _db(create: bool):
+    """The open database, or None when none exists (nothing saved). `create`
+    makes the folder (0700) and the file (0600) first."""
+    path = provider_file()
+    if create:
+        config_dir().mkdir(parents=True, exist_ok=True, mode=0o700)
+        fd = os.open(path, os.O_CREAT | os.O_RDWR, 0o600)
+        os.close(fd)
+        os.chmod(path, 0o600)
+    elif not path.exists():
+        yield None
+        return
     try:
-        yield
+        conn = sqlite3.connect(path, timeout=5, isolation_level=None)
+    except sqlite3.Error:
+        raise StoreError("The saved provider file cannot be read.") from None
+    try:
+        try:
+            conn.execute("PRAGMA busy_timeout = 5000")
+            conn.execute("PRAGMA journal_mode = WAL")
+            conn.execute(SCHEMA)
+        except sqlite3.Error:
+            raise StoreError("The saved provider file cannot be read.") from None
+        try:
+            yield conn
+        except sqlite3.Error:
+            raise StoreError("The saved provider file cannot be used.") from None
     finally:
-        mine = _lock_identity(lock)
-        if mine and mine[0] == token:
-            shutil.rmtree(lock, ignore_errors=True)
-        for p in folder.glob(LOCK_NAME + ".claim-*"):
-            try:
-                if time.time() - p.stat().st_mtime > CLAIM_KEEP:
-                    shutil.rmtree(p, ignore_errors=True)
-            except OSError:
-                pass
+        conn.close()
+
+
+def load() -> dict | None:
+    """The saved provider, None when nothing is saved; StoreError when the
+    database is there but unusable."""
+    with _db(False) as conn:
+        if conn is None:
+            return None
+        row = conn.execute(f"SELECT {', '.join(COLUMNS)} FROM provider WHERE id = 1").fetchone()
+    if row is None:
+        return None
+    out = {k: v for k, v in zip(COLUMNS, row) if isinstance(v, str) and v}
+    if not all(out.get(k) for k in ("api_key", "api", "base_url", "model")):
+        raise StoreError("The saved provider is missing its key, endpoint or model.")
+    return out
+
+
+def _values(cfg: dict) -> tuple:
+    return tuple(cfg.get(c) or "" for c in COLUMNS)
+
+
+def save_provider(cfg: dict, mode: str) -> bool:
+    """Write the provider in one statement. `mode`: "replace" always (a key the
+    provider checked); "create" only when none is saved (a migration from a
+    browser); "same-key" only when none is saved or it holds this same key (a
+    key the provider could not check). True when the row was written."""
+    with _db(True) as conn:
+        return conn.execute(SAVE_SQL[mode], _values(cfg)).rowcount > 0
+
+
+def update_model(seen: dict, model: str, name: str) -> bool:
+    """Change the model and label only while the row still holds exactly the
+    key and endpoint in `seen`. False when it changed or went away."""
+    with _db(False) as conn:
+        if conn is None:
+            return False
+        cur = conn.execute(
+            "UPDATE provider SET model = ?, name = ? WHERE id = 1 AND api_key = ? AND api = ? "
+            "AND base_url = ? AND key_header = ? AND models_url = ?",
+            (model, name, seen.get("api_key") or "", seen.get("api") or "", seen.get("base_url") or "",
+             seen.get("key_header") or "", seen.get("models_url") or ""))
+        return cur.rowcount > 0
 
 
 def remove() -> bool:
     """Delete the saved provider. True when there was one."""
-    try:
-        provider_file().unlink()
-        return True
-    except FileNotFoundError:
-        return False
-    except OSError:
-        raise StoreError("The saved provider file cannot be removed.") from None
+    with _db(False) as conn:
+        if conn is None:
+            return False
+        return conn.execute("DELETE FROM provider WHERE id = 1").rowcount > 0
 
 
 def public(cfg: dict | None) -> dict | None:

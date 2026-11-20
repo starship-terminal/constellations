@@ -1,22 +1,28 @@
 // The chat's model provider, held server-side. The browser submits a key
 // once (Settings > Model provider); the server tests it, writes it here and
-// never sends it back. server/provider_store.py reads and writes the same file
-// with the same rules, so the gallery and the home server's Python /api/
-// share one saved provider.
+// never sends it back. server/provider_store.py reads and writes the same
+// database with the same statements, so the gallery and the home server's
+// Python /api/ share one saved provider.
 //
-// Where: $DESIGN_SYSTEMS_CONFIG_DIR/provider.json, default
-// ~/.config/design-systems/provider.json. Outside the checkout, so no key
-// can be committed; tests point the variable at a throwaway folder. The
-// folder is created 0700 and the file is written 0600, through a temporary
-// file and a rename, so a reader never sees half a key and a rotation swaps
-// the old key for the new one in one step.
-import { randomUUID } from "node:crypto";
+// Where: $DESIGN_SYSTEMS_CONFIG_DIR/provider.db, default
+// ~/.config/design-systems/provider.db. Outside the checkout, so no key can
+// be committed; tests point the variable at a throwaway folder. The folder is
+// created 0700 and the database file 0600 (SQLite gives its -wal and -shm
+// files the same mode).
+//
+// Why SQLite for one row: every change is a single statement, so SQLite's
+// own locking (released when a process dies, so a crash never leaves a lock
+// behind) makes each one atomic across both servers' processes. A model-only
+// save only applies while the row still holds the key and endpoint it read
+// (compare and swap), a migration only inserts when no row exists, and an
+// unchecked key only replaces a row that holds the same key.
 import { promises as fs } from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import type { DatabaseSync } from "node:sqlite";
 
 export const CONFIG_DIR_ENV = "DESIGN_SYSTEMS_CONFIG_DIR";
-export const FILE_NAME = "provider.json";
+export const FILE_NAME = "provider.db";
 
 /** The provider fields that are safe to show: everything but the key. */
 export const PUBLIC_FIELDS = ["api", "base_url", "key_header", "models_url", "model", "name"] as const;
@@ -28,7 +34,7 @@ export type PublicProvider = Partial<Record<(typeof PUBLIC_FIELDS)[number], stri
 export type SavedProvider = PublicProvider & { api: string; base_url: string; model: string; api_key: string };
 
 export class StoreError extends Error {
-  // The saved file exists but cannot be used. Never carries the file's text.
+  // The saved provider exists but cannot be used. Never carries its contents.
 }
 
 export function configDir(): string {
@@ -38,189 +44,132 @@ export function configDir(): string {
 
 export const providerFile = (): string => path.join(configDir(), FILE_NAME);
 
-const isObj = (v: unknown): v is Record<string, unknown> => typeof v === "object" && v !== null && !Array.isArray(v);
+// The same schema server/provider_store.py creates.
+const SCHEMA = `CREATE TABLE IF NOT EXISTS provider (
+  id INTEGER PRIMARY KEY CHECK (id = 1),
+  api TEXT NOT NULL,
+  base_url TEXT NOT NULL,
+  key_header TEXT NOT NULL DEFAULT '',
+  models_url TEXT NOT NULL DEFAULT '',
+  model TEXT NOT NULL,
+  name TEXT NOT NULL DEFAULT '',
+  api_key TEXT NOT NULL
+)`;
 
-/** The saved provider, or null when none is saved. Throws StoreError when the
-    file is there but unreadable or malformed: that is a broken saved key, and
-    the env key must not quietly stand in for it. */
-export async function loadSaved(): Promise<SavedProvider | null> {
-  let text: string;
+const COLUMNS = "api, base_url, key_header, models_url, model, name, api_key";
+
+/** Open the database, or null when none has been created (nothing saved).
+    `create` makes the folder (0700) and the file (0600) first. node:sqlite is
+    loaded here, not at import, so nothing else in the app depends on it. */
+async function open(create: boolean): Promise<DatabaseSync | null> {
+  const file = providerFile();
+  if (create) {
+    await fs.mkdir(configDir(), { recursive: true, mode: 0o700 });
+    const fh = await fs.open(file, "a", 0o600);
+    await fh.close();
+    await fs.chmod(file, 0o600);
+  } else {
+    try {
+      await fs.access(file);
+    } catch {
+      return null;
+    }
+  }
   try {
-    text = await fs.readFile(providerFile(), "utf8");
-  } catch (e) {
-    if ((e as NodeJS.ErrnoException).code === "ENOENT") return null;
+    const { DatabaseSync } = await import("node:sqlite");
+    const db = new DatabaseSync(file);
+    db.exec("PRAGMA busy_timeout = 5000");
+    db.exec("PRAGMA journal_mode = WAL");
+    db.exec(SCHEMA);
+    return db;
+  } catch {
     throw new StoreError("The saved provider file cannot be read.");
   }
-  let raw: unknown;
+}
+
+function run<T>(db: DatabaseSync, fn: () => T): T {
   try {
-    raw = JSON.parse(text);
+    return fn();
   } catch {
-    throw new StoreError("The saved provider file is not valid JSON.");
+    throw new StoreError("The saved provider file cannot be used.");
+  } finally {
+    db.close();
   }
-  if (!isObj(raw)) throw new StoreError("The saved provider file is not an object.");
+}
+
+const rowToProvider = (row: Record<string, unknown> | undefined): SavedProvider | null => {
+  if (!row) return null;
   const out: Record<string, string> = {};
-  for (const k of [...PUBLIC_FIELDS, "api_key"]) if (typeof raw[k] === "string" && raw[k]) out[k] = raw[k] as string;
+  for (const k of [...PUBLIC_FIELDS, "api_key"]) if (typeof row[k] === "string" && row[k]) out[k] = row[k] as string;
   if (!out.api_key || !out.api || !out.base_url || !out.model)
-    throw new StoreError("The saved provider file is missing its key, endpoint or model.");
+    throw new StoreError("The saved provider is missing its key, endpoint or model.");
   return out as SavedProvider;
-}
-
-/** Write the provider (key included) in one atomic step, mode 0600. A
-    failure anywhere removes the temporary file, so no stray copy of the key
-    is left beside provider.json. */
-export async function writeSaved(cfg: SavedProvider): Promise<void> {
-  const dir = configDir();
-  await fs.mkdir(dir, { recursive: true, mode: 0o700 });
-  const out: Record<string, string> = {};
-  for (const k of [...PUBLIC_FIELDS, "api_key"] as const) {
-    const v = cfg[k];
-    if (typeof v === "string" && v) out[k] = v;
-  }
-  const tmp = path.join(dir, `.${FILE_NAME}.${process.pid}.${Date.now()}.${Math.random().toString(36).slice(2)}.tmp`);
-  try {
-    const fh = await fs.open(tmp, "wx", 0o600);
-    try {
-      await fh.writeFile(JSON.stringify(out, null, 2) + "\n");
-      await fh.sync();
-    } finally {
-      await fh.close();
-    }
-    await fs.chmod(tmp, 0o600);
-    await fs.rename(tmp, providerFile());
-  } catch (e) {
-    await fs.rm(tmp, { force: true });
-    throw e;
-  }
-}
-
-export const LOCK_NAME = "provider.lock";
-const OWNER = "owner";
-const LOCK_WAIT_MS = 5000;
-const LOCK_STALE_MS = 30000;
-const CLAIM_KEEP_MS = 24 * 3600 * 1000;
-
-interface LockOwner {
-  token: string;
-  pid: number;
-  host: string;
-}
-
-/** Who holds the lock folder: its owner file, or, before the holder has
-    written one, an identity made from the folder's mtime. Null when the
-    folder is gone. */
-async function lockIdentity(lock: string): Promise<{ id: string; owner: LockOwner | null; ageMs: number } | null> {
-  let st;
-  try {
-    st = await fs.stat(lock);
-  } catch {
-    return null;
-  }
-  let owner: LockOwner | null = null;
-  try {
-    const o = JSON.parse(await fs.readFile(path.join(lock, OWNER), "utf8"));
-    if (o && typeof o.token === "string") owner = o;
-  } catch {}
-  // Whole milliseconds, as server/provider_store.py names a missing owner, so
-  // both servers race for the same claim folder.
-  return { id: owner ? owner.token : `none-${Math.floor(st.mtimeMs)}`, owner, ageMs: Date.now() - st.mtimeMs };
-}
-
-const alive = (pid: number): boolean => {
-  try {
-    process.kill(pid, 0);
-    return true;
-  } catch (e) {
-    return (e as NodeJS.ErrnoException).code === "EPERM";
-  }
 };
 
-/** A lock is a crashed holder's when its holder ran on this host and that
-    process is gone, or (another host or container, where the pid means
-    nothing here) when it is older than 30 s. */
-const stale = (l: { owner: LockOwner | null; ageMs: number }): boolean =>
-  l.owner && l.owner.host === os.hostname() && Number.isInteger(l.owner.pid)
-    ? !alive(l.owner.pid)
-    : l.ageMs > LOCK_STALE_MS;
+const values = (cfg: SavedProvider): string[] => [
+  cfg.api,
+  cfg.base_url,
+  cfg.key_header ?? "",
+  cfg.models_url ?? "",
+  cfg.model,
+  cfg.name ?? "",
+  cfg.api_key,
+];
 
-/** Run `fn` holding the store's lock: a folder beside provider.json that
-    mkdir creates atomically, the same one server/provider_store.py takes, so
-    a save, a replacement and a removal from either server never interleave
-    (a model-only save cannot write back a key another request just removed).
-
-    The holder writes its token, pid and host into the folder and removes
-    the folder only while its own token is in it. A crashed holder's lock is
-    broken by exactly one waiter: each must first create a claim folder named
-    after that holder's token, which mkdir lets only one of them do, and the
-    winner removes the lock only if it still holds that token. A waiter that
-    saw the same stale lock later finds the claim taken, so it can never
-    remove the next holder's lock. Claim folders are swept after a day. */
-export async function withLock<T>(fn: () => Promise<T>): Promise<T> {
-  const dir = configDir();
-  await fs.mkdir(dir, { recursive: true, mode: 0o700 });
-  const lock = path.join(dir, LOCK_NAME);
-  const token = randomUUID();
-  const start = Date.now();
-  for (;;) {
-    try {
-      await fs.mkdir(lock, { mode: 0o700 });
-      const me: LockOwner = { token, pid: process.pid, host: os.hostname() };
-      try {
-        await fs.writeFile(path.join(lock, OWNER), JSON.stringify(me));
-      } catch {
-        await fs.rm(lock, { recursive: true, force: true });
-        throw new StoreError("The provider store cannot be locked.");
-      }
-      break;
-    } catch (e) {
-      if (e instanceof StoreError) throw e;
-      if ((e as NodeJS.ErrnoException).code !== "EEXIST") throw new StoreError("The provider store cannot be locked.");
-    }
-    const held = await lockIdentity(lock);
-    if (held && stale(held)) {
-      const claim = `${lock}.claim-${held.id.replace(/[^A-Za-z0-9.-]/g, "_")}`;
-      let won = false;
-      try {
-        await fs.mkdir(claim, { mode: 0o700 });
-        won = true;
-      } catch {}
-      if (won) {
-        const again = await lockIdentity(lock);
-        if (again && again.id === held.id) await fs.rm(lock, { recursive: true, force: true });
-        continue;
-      }
-    }
-    if (Date.now() - start > LOCK_WAIT_MS) throw new StoreError("The provider store is busy; try again.");
-    await new Promise((r) => setTimeout(r, 50));
-  }
-  try {
-    return await fn();
-  } finally {
-    const mine = await lockIdentity(lock);
-    if (mine && mine.id === token) await fs.rm(lock, { recursive: true, force: true });
-    await sweepClaims(dir);
-  }
+/** The saved provider, or null when none is saved. Throws StoreError when
+    the database is there but unusable: that is a broken saved key, and the
+    env key must not quietly stand in for it. */
+export async function loadSaved(): Promise<SavedProvider | null> {
+  const db = await open(false);
+  if (!db) return null;
+  const row = run(db, () => db.prepare(`SELECT ${COLUMNS} FROM provider WHERE id = 1`).get() as Record<string, unknown> | undefined);
+  return rowToProvider(row);
 }
 
-async function sweepClaims(dir: string): Promise<void> {
-  try {
-    for (const name of await fs.readdir(dir)) {
-      if (!name.startsWith(`${LOCK_NAME}.claim-`)) continue;
-      const p = path.join(dir, name);
-      const st = await fs.stat(p).catch(() => null);
-      if (st && Date.now() - st.mtimeMs > CLAIM_KEEP_MS) await fs.rm(p, { recursive: true, force: true });
-    }
-  } catch {}
+/** How a save may treat a provider that is already saved:
+    - "replace": always (a key the provider checked);
+    - "create": only when none is saved (a migration from a browser);
+    - "same-key": only when none is saved or it holds this same key (a key
+      the provider could not check must not replace a different one).
+    Returns whether the row was written. One statement, so it is atomic. */
+export async function saveProvider(cfg: SavedProvider, mode: "replace" | "create" | "same-key"): Promise<boolean> {
+  const db = (await open(true))!;
+  const placeholders = "1, ?, ?, ?, ?, ?, ?, ?";
+  const update =
+    "api = excluded.api, base_url = excluded.base_url, key_header = excluded.key_header, models_url = excluded.models_url, model = excluded.model, name = excluded.name, api_key = excluded.api_key";
+  const sql =
+    mode === "create"
+      ? `INSERT INTO provider (id, ${COLUMNS}) VALUES (${placeholders}) ON CONFLICT(id) DO NOTHING`
+      : mode === "same-key"
+        ? `INSERT INTO provider (id, ${COLUMNS}) VALUES (${placeholders}) ON CONFLICT(id) DO UPDATE SET ${update} WHERE provider.api_key = excluded.api_key`
+        : `INSERT INTO provider (id, ${COLUMNS}) VALUES (${placeholders}) ON CONFLICT(id) DO UPDATE SET ${update}`;
+  return run(db, () => Number(db.prepare(sql).run(...values(cfg)).changes) > 0);
+}
+
+/** Change the model and label of the saved provider, only while it still
+    holds exactly the key and endpoint `seen` (what the caller read). Returns
+    false when it changed or was removed meanwhile; nothing is written then. */
+export async function updateModel(seen: SavedProvider, model: string, name: string): Promise<boolean> {
+  const db = await open(false);
+  if (!db) return false;
+  return run(
+    db,
+    () =>
+      Number(
+        db
+          .prepare(
+            "UPDATE provider SET model = ?, name = ? WHERE id = 1 AND api_key = ? AND api = ? AND base_url = ? AND key_header = ? AND models_url = ?",
+          )
+          .run(model, name, seen.api_key, seen.api, seen.base_url, seen.key_header ?? "", seen.models_url ?? "").changes,
+      ) > 0,
+  );
 }
 
 /** Delete the saved provider. True when there was one. */
 export async function removeSaved(): Promise<boolean> {
-  try {
-    await fs.unlink(providerFile());
-    return true;
-  } catch (e) {
-    if ((e as NodeJS.ErrnoException).code === "ENOENT") return false;
-    throw new StoreError("The saved provider file cannot be removed.");
-  }
+  const db = await open(false);
+  if (!db) return false;
+  return run(db, () => Number(db.prepare("DELETE FROM provider WHERE id = 1").run().changes) > 0);
 }
 
 /** The fields of a provider that may leave the server. */
