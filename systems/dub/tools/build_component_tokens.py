@@ -316,7 +316,7 @@ for key, comp, state, prop, desc in [
     # divider layer from the sidebar's painted children
     if key == "white-10":
         v = next((p["bg"] for p in C[comp]["states"][state].get("paint", [])
-                  if p.get("bg") and "0.999994" in p["bg"] and "/ 0.1" in p["bg"]), v)
+                  if p.get("bg") and "sidebar-nav-group-divider" in (p.get("node") or "")), v)
     if v and v != "transparent" and v != "rgba(0, 0, 0, 0)":
         wash[key] = {"value": norm_color(v), "type": "color",
                      "source": (f"painted layer under {comp} {state}" if prop == "paint"
@@ -815,7 +815,7 @@ for key, cname, state, prop, desc in [
     ("register-card.width", "register-card", "default", "width", "The 384px register card."),
     ("plan-card.width", "plan-card", "default", "width", "The shared pricing panel width (~1062px)."),
     ("demo-panel.width", "demo-panel", "default", "width", "The hero product-demo panel width (~882px)."),
-    ("nav-dropdown.width", "nav-dropdown", "default", "width", "The mega-menu panel width (~319px)."),
+    ("nav-dropdown.width", "nav-dropdown", "default", "width", "Width of one card inside the Product mega-menu (~319px), not of the panel."),
     ("mobile-nav-item.height", "m-nav-item", "default", "height", "Mobile menu item height (24px)."),
     ("faq-trigger.height", "faq-trigger", "default", "height", "The 56px FAQ accordion row."),
 ]:
@@ -827,6 +827,34 @@ for key, cname, state, prop, desc in [
         node[parts[-1]] = {"type": "dimension", "value": st(cname, state)[prop],
                            "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)",
                            "description": desc}
+
+# Readings that cannot be taken at face value, named on every leaf that cites
+# them. recaptureMissed: a later run did not find the component and the capture
+# kept the earlier run's states. WRONG: the selector caught another element (the
+# README's What to distrust lists these; each needs a recapture).
+FLAGGED = {k: c["recaptureMissed"] for k, c in C.items() if c.get("recaptureMissed")}
+WRONG = {
+    "plan-price": "the selector caught the price row's wrapper, whose first text is \"/month\", not the price figure",
+    "nav-dropdown": "the selector caught one card inside the Product mega-menu, not the panel",
+}
+
+
+def note_flagged(node):
+    if isinstance(node, dict):
+        src = node.get("source")
+        if isinstance(src, str):
+            for k, run in FLAGGED.items():
+                if re.search(rf"(?<![\w-]){re.escape(k)}(?![\w-])", src) and f"{k} was not found" not in src:
+                    node["source"] = src = (src + f"; {k} was not found by the {run} re-run (recaptureMissed),"
+                                            " so this is the reading kept from the earlier run")
+            for k, what in WRONG.items():
+                if re.search(rf"(?<![\w-]){re.escape(k)}(?![\w-])", src) and f"{k}: read from the wrong element" not in src:
+                    node["source"] = src = src + f"; {k}: read from the wrong element ({what}); recapture needed"
+        for v in node.values():
+            note_flagged(v)
+
+
+note_flagged(SPEC)
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1, ensure_ascii=False) + "\n")
 

@@ -64,14 +64,16 @@ for (const g of groups) {
     W('');
     W(`${c.title}.${c.desc ? ' ' + c.desc : ''}`);
     W('');
-    const states = Object.keys(c.states);
-    W(`Page: ${c.page}. Selector: \`${esc(c.selector)}\`. States: ${states.join(', ')}.`);
+    const states = Object.keys(c.states || {}); // a withdrawn entry keeps no states
+    W(`Page: ${c.page}. Selector: \`${esc(c.selector)}\`. States: ${states.join(', ') || 'none'}.`);
     W('');
-    if (c.missing) { W('Not found on the page at capture time.'); continue; }
+    if (c.missing) { W(c.note ? c.note[0].toUpperCase() + c.note.slice(1) : 'Not found on the page at capture time.'); continue; }
     const rows = {};
     for (const st of states) {
       const v = c.states[st];
       if (v.error) { rows.Error = rows.Error || {}; rows.Error[st] = v.error; continue; }
+      // a focus-visible state where keyboard focus never landed: older runs saved the element at rest
+      if (v.skipped || v.via === 'focus failed') { (rows.Skipped ||= {})[st] = v.skipped || 'focus failed: keyboard focus did not reach the element'; continue; }
       if (!v.style || !v.rect) { // a note entry (e.g. pdp_url) carries no computed style
         (rows.Note ||= {})[st] = v.text || v.via || '';
         continue;

@@ -804,7 +804,7 @@
     "action": {
      "value": "#ffffff",
      "type": "color",
-     "source": "computed color of nav-cta / hero-cta labels (raw/components-computed.json)",
+     "source": "computed color of nav-cta default (raw/components-computed.json)",
      "description": "White labels on the purple and black fills."
     }
    },
@@ -916,8 +916,8 @@
     "action": {
      "value": "#ffffff",
      "type": "color",
-     "source": "computed colors of footer-link / social-icon over the dark chrome (raw/components-computed.json)",
-     "description": "White labels on the action fill."
+     "source": "computed color of nav-cta default (raw/components-computed.json)",
+     "description": "White labels on the action fill; the dark footer carries no action, so this is the header action's label ink."
     }
    }
   },

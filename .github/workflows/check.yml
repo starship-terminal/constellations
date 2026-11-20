@@ -15,6 +15,11 @@ permissions:
   contents: read
 jobs:
   check:
+    # Audit fix branches (audit2/*) are not tested one by one: each fix is
+    # reviewed on its own pull request and then lands in a train branch
+    # (audit2/train-*), whose single run here is the gate. Skipping them keeps
+    # hundreds of small pull requests from filling the account's Actions queue.
+    if: github.event_name != 'pull_request' || !startsWith(github.head_ref, 'audit2/') || startsWith(github.head_ref, 'audit2/train-')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -41,6 +46,8 @@ jobs:
         run: pip install -r requirements.txt -r tools/requirements-capture.txt
       - run: make test
   docs:
+    # Skips audit fix branches; see the note on the first job.
+    if: github.event_name != 'pull_request' || !startsWith(github.head_ref, 'audit2/') || startsWith(github.head_ref, 'audit2/train-')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
