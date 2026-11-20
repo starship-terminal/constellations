@@ -271,6 +271,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **`app-sidebar` was read with the rail collapsed.** Its default and dark readings are 64px wide, the collapsed rail the "Toggle Sidebar" press leaves behind; the open rail is 232px in the other chrome readings. The measure script never pressed the toggle back, so components read after it on the same page saw the collapsed layout, and components after the /pro FAQ's `opened` state saw the answer open. The script now restores both toggles (not run); these readings need a recapture.
+- **Focus rings in components.md.** Before 2026-11-20 the builder mapped every `oklab()` to grey by its lightness, so the 50% blue focus ring `oklab(0.561988 -0.023436 -0.238834 / 0.5)` read `rgba(143, 143, 143, 0.5)`. It now converts OKLab fully: `rgba(41, 98, 255, 0.5)`, the `#2962ff` ring at half opacity.
 - **/login and everything behind it**: the auth wall was never crossed — the dashboard, editor, settings and the onboarding submit are boundaries, not captures. The "Sign in" / "Start your blog" / "Get Pro" links were measured, never followed.
 - **engineering.hashnode.com** (429), **help./docs./blog./api./support./changelog./weekly.** subdomains (NXDOMAIN or unreachable) and **status.hashnode.com** (a Better Stack page, not the product): blocked boundaries; nothing on those surfaces was captured.
 - **The blog engine's own theme button**: pressed headless it produced no repaint and no menu, so blog `dark` states and `th-*-dark-*` shots come from emulated `prefers-color-scheme` — honest evidence of the engine's OS-preference path, not of the button.

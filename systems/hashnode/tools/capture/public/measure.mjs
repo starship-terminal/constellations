@@ -160,7 +160,8 @@ const CHROME = [
     desc: 'The sidebar footer control that collapses the rail — a local UI toggle. "opened" is its own press (the rail collapsed), restored afterwards.',
     sel: 'button (text Toggle Sidebar)', find: async (p) => await domFind(p, /toggle sidebar/i, { sel: 'button', tag: 'st', minW: 40 }), states: ['default', 'hover',
       { name: 'opened', via: 'the "Toggle Sidebar" button\'s own press (sidebar collapsed; pressed again to restore)',
-        fn: async (loc) => { await loc.click({ timeout: 4000 }).catch(() => {}); await page.waitForTimeout(900); } },
+        fn: async (loc) => { await loc.click({ timeout: 4000 }).catch(() => {}); await page.waitForTimeout(900); },
+        restore: async (loc) => { await loc.click({ timeout: 4000 }).catch(() => {}); await page.waitForTimeout(900); } },
     ] },
   { key: 'app-search-button', group: 'App chrome', title: 'Search button (Ctrl K)',
     desc: 'The sidebar "Search" menu-button carrying the ⌘K hint; opens the command search dialog.',
@@ -275,7 +276,7 @@ const PRO = [
       { name: 'opened', via: 'the question row\'s own press (answer visible; pressed again to close)', fn: async (loc) => {
         await loc.click({ timeout: 4000 }).catch(() => {});
         await page.waitForTimeout(700);
-      } },
+      }, restore: async (loc) => { await loc.click({ timeout: 4000 }).catch(() => {}); await page.waitForTimeout(700); } },
     ] },
 ];
 
@@ -570,6 +571,9 @@ for (const [key, g] of Object.entries(GROUPS)) {
         v.run = new Date().toISOString();
         comp.states[name] = v;
         log(' ', spec.key, name, 'ok');
+        // A toggled state puts the page back before the next reading: without it every later
+        // component was measured in the toggled layout (the collapsed sidebar, an open FAQ row).
+        if (st && typeof st === 'object' && st.restore) await st.restore(readLoc);
       } catch (e) {
         // A failed rerun records the error beside the last good reading, not
         // over it — a good saved state outlives a transient failure.
