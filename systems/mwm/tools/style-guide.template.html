@@ -56,11 +56,15 @@ code { font-family: var(--font-family-mono); font-size: 12px; color: var(--color
 const TOKENS = /*TOKENS*/null;
 const box = document.getElementById('swatches');
 const colors = (TOKENS.dark && TOKENS.dark.color) || {};
+// The builder inlines a slim tree: each token is {v, t, s} (value, type, source), not DTCG $value/$type.
 for (const [name, token] of Object.entries(colors)) {
-  if (!token.$value) continue;
+  if (!token || token.t !== 'color') continue;
   const d = document.createElement('div');
   d.className = 'sw';
-  d.innerHTML = '<i style="background:' + token.$value + '"></i><b>' + name + '</b><span>' + token.$value + '</span>';
+  const i = document.createElement('i'); i.style.background = token.v;
+  const b = document.createElement('b'); b.textContent = name;
+  const span = document.createElement('span'); span.textContent = token.v;
+  d.append(i, b, span);
   box.appendChild(d);
 }
 </script>

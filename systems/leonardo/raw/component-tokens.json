@@ -364,17 +364,17 @@
     "display": {
      "value": "leoSans, sans-serif",
      "type": "fontFamily",
-     "source": "measured mkt-h1 textStyle font-family"
+     "source": "measured mkt-h1 textStyle font-family: measured 'leoSans, \"leoSans Fallback\", sans-serif'; next/font placeholder face dropped"
     },
     "app-display": {
      "value": "leoRenaisans, sans-serif",
      "type": "fontFamily",
-     "source": "measured app-h1 wrapper font-family"
+     "source": "measured app-h1 wrapper font-family: measured 'leoRenaisans, \"leoRenaisans Fallback\"'; next/font placeholder face dropped; sans-serif is a hand-written fallback, not in the measured stack"
     },
     "marketing": {
      "value": "leoSans, sans-serif",
      "type": "fontFamily",
-     "source": "measured api-h1 textStyle font-family"
+     "source": "measured api-h1 textStyle font-family: measured 'leoSans, \"leoSans Fallback\"'; next/font placeholder face dropped; sans-serif is a hand-written fallback, not in the measured stack"
     }
    },
    "size": {
@@ -595,150 +595,6 @@
  },
  "light": {
   "color": {
-   "page": {
-    "var": "--background",
-    "type": "color"
-   },
-   "foreground": {
-    "var": "--foreground",
-    "type": "color"
-   },
-   "surface": {
-    "var": "--color-panel",
-    "type": "color"
-   },
-   "raised": {
-    "var": "--primary",
-    "type": "color"
-   },
-   "overlay": {
-    "var": "--popover",
-    "type": "color"
-   },
-   "scrim": {
-    "var": "--input",
-    "type": "color"
-   },
-   "text": {
-    "primary": {
-     "var": "--foreground",
-     "type": "color"
-    },
-    "secondary": {
-     "var": "--secondary-foreground",
-     "type": "color"
-    },
-    "muted": {
-     "var": "--muted-foreground",
-     "type": "color"
-    },
-    "disabled": {
-     "var": "--disabled-foreground",
-     "type": "color"
-    },
-    "on": {
-     "accent": {
-      "var": "--primary-brand-foreground",
-      "type": "color"
-     }
-    },
-    "link": {
-     "var": "--color-primary-brand-light",
-     "type": "color"
-    }
-   },
-   "border": {
-    "base": {
-     "var": "--border-secondary",
-     "type": "color"
-    },
-    "strong": {
-     "var": "--border-primary",
-     "type": "color"
-    },
-    "focus": {
-     "var": "--ring",
-     "type": "color"
-    }
-   },
-   "accent": {
-    "base": {
-     "var": "--accent-brand",
-     "type": "color"
-    },
-    "hover": {
-     "var": "--primary-brand-light",
-     "type": "color"
-    },
-    "pressed": {
-     "var": "--primary-brand-strong",
-     "type": "color"
-    }
-   },
-   "card": {
-    "base": {
-     "var": "--card",
-     "type": "color"
-    },
-    "foreground": {
-     "var": "--card-foreground",
-     "type": "color"
-    }
-   },
-   "sidebar": {
-    "base": {
-     "var": "--sidebar-accent",
-     "type": "color"
-    },
-    "foreground": {
-     "var": "--sidebar-foreground",
-     "type": "color"
-    },
-    "border": {
-     "var": "--sidebar-border",
-     "type": "color"
-    }
-   },
-   "positive": {
-    "foreground": {
-     "var": "--positive-foreground",
-     "type": "color"
-    }
-   },
-   "negative": {
-    "foreground": {
-     "var": "--negative-foreground",
-     "type": "color"
-    }
-   },
-   "warning": {
-    "foreground": {
-     "var": "--warning-foreground",
-     "type": "color"
-    }
-   },
-   "info": {
-    "var": "--border-notification",
-    "type": "color"
-   },
-   "status": {
-    "positive": {
-     "var": "--positive",
-     "type": "color"
-    },
-    "negative": {
-     "var": "--negative",
-     "type": "color"
-    },
-    "warning": {
-     "var": "--warning",
-     "type": "color"
-    },
-    "danger": {
-     "var": "--destructive",
-     "type": "color"
-    }
-   },
    "docs": {
     "page": {
      "base": {

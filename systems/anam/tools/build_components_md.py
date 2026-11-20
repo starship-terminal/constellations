@@ -80,13 +80,22 @@ def colour(c, tokens=True):
         tok = BY_COLOR.get(v) if tokens else None
         return f"{v} `{tok}`" if tok else v
 
-    c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
-               lambda m: label(norm(*(round(float(x) * 255) for x in m.group(1, 2, 3)), m.group(4))), c)
-    c = re.sub(r"oklab\(([-\d.e]+) ([-\d.e]+) ([-\d.e]+)(?: / ([\d.]+))?\)",
-               lambda m: label(norm(*oklab_rgb(float(m.group(1)), float(m.group(2)), float(m.group(3))), m.group(4))), c)
-    c = re.sub(r"(?<!ok)lab\(([-\d.e]+) ([-\d.e]+) ([-\d.e]+)(?: / ([\d.]+))?\)",
-               lambda m: label(norm(*lab_rgb(float(m.group(1)), float(m.group(2)), float(m.group(3))), m.group(4))), c)
-    return re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
+    # one pass over every spelling, so a colour converted from color(srgb), oklab() or lab() is
+    # never re-matched as rgba() and labelled a second time
+    def sub(m):
+        g = m.groups()
+        if g[0] is not None:
+            return label(norm(*(round(float(x) * 255) for x in g[0:3]), g[3]))
+        if g[4] is not None:
+            return label(norm(*oklab_rgb(*(float(x) for x in g[4:7])), g[7]))
+        if g[8] is not None:
+            return label(norm(*lab_rgb(*(float(x) for x in g[8:11])), g[11]))
+        return label(norm(*g[12:15], g[15]))
+
+    return re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)"
+                  r"|oklab\(([-\d.e]+) ([-\d.e]+) ([-\d.e]+)(?: / ([\d.]+))?\)"
+                  r"|(?<!ok)lab\(([-\d.e]+) ([-\d.e]+) ([-\d.e]+)(?: / ([\d.]+))?\)"
+                  r"|rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", sub, c)
 
 
 def sides(t, r, b, l):
