@@ -86,7 +86,6 @@ spacing:
   "3": "12px"
   "4": "16px"
   "5": "20px"
-  "6": "24px"
   "8": "32px"
   "10": "40px"
   nav: "64px"
@@ -142,7 +141,7 @@ saveeFont is the UI face, with "saveeFont Fallback" and Savee in the stack. Body
 
 ## Layout
 
-Spacing from `core.spacing`: `unit` 4px, `2` 8px, `3` 12px, `4` 16px, `5` 20px, `6` 24px, `8` 32px, `10` 40px, `nav` 64px, `navToken` 100px, `page` 33px.
+Spacing from `core.spacing`: `unit` 4px, `2` 8px, `3` 12px, `4` 16px, `5` 20px, `8` 32px, `10` 40px, `nav` 64px, `navToken` 100px, `page` 33px.
 
 ## Elevation & Depth
 
