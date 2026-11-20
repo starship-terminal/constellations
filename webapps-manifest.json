@@ -623,9 +623,9 @@
       "description": "Delivers business and markets news, data, analysis, and video to the world",
       "status": "captured",
       "package": "systems/bloomberg",
-      "notes": "https://www.bloomberg.com/account/login stopped on Are you a robot. No email field was reached. The user signed in. Product not walked.",
+      "notes": "https://www.bloomberg.com/asia loaded My Account, then a reload returned Are you a robot. Not retried. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "captcha",
       "batch": 2
     },
     {
