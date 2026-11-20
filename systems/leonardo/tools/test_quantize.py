@@ -4,6 +4,7 @@ import json
 import pathlib
 import tempfile
 import unittest
+from unittest import mock
 
 from PIL import Image
 
@@ -12,14 +13,14 @@ HERE = pathlib.Path(__file__).resolve().parent
 
 class QuantizeCoverageTest(unittest.TestCase):
     def stitch(self, raw):
-        # The script reads argv and stitches on import. Each call gets a fresh module.
-        import sys
+        # The script reads argv and stitches on import. Each call gets a fresh
+        # module, and argv is patched only for the import, then restored.
         out = raw.parent / "screenshots"
-        sys.argv = ["quantize.py", str(raw), str(out)]
         name = "leonardo_quantize_" + str(id(raw))
         spec = importlib.util.spec_from_file_location(name, HERE / "capture" / "quantize.py")
         mod = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(mod)
+        with mock.patch("sys.argv", ["quantize.py", str(raw), str(out)]):
+            spec.loader.exec_module(mod)
         return mod
 
     def test_partial_tiles_are_not_stitched(self):

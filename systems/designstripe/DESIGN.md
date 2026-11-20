@@ -152,3 +152,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Do paint the footer in ink.** The sitemap footer is the one dark block: `#2c2c26` fill with cream/white mono links. See [m-footer](components/crops/m-footer-default.png).
 - **Don't style the signed-in product from this package.** The design agents, account asset downloads and every post-waitlist surface were never reached; dark is declared in CSS but never painted signed out.
 - **Don't invent a form.** /contact paints copy, not a form; the waitlist CTAs were never pressed — no validation, error or success state exists in this capture.
+
+### Known gaps (from README.md)
+
+- `post-para`: the first visible article `<p>` was the one-line subtitle ("Plus tips to achieve it"), not a body paragraph. `core.font.size.measured.body` cites it and says so. `tools/capture/public/measure.mjs` now asks for a paragraph of more than 80 characters (edited, not run); recapture needed.
+- `hero-h1` and `feature-acc` default: the 2026-11-14 re-read timed out, and the capture kept the earlier reading beside the `rerunError` under the new run date; the reading's own date was not recorded. The tokens read from them (`light.text.black`, `light.text.on-dark`, `core.motion.control`) say so.
+- `feature-acc` opened is recorded `via: held open by an earlier toggle`, but nothing was toggled: the first accordion row is expanded at rest, so its opened reading repeats the default. The capture script now records that (edited, not run).

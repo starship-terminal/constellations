@@ -5,6 +5,7 @@ import sys
 import unittest
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import build_tokens  # noqa: E402
 import token_checks  # noqa: E402
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
@@ -12,6 +13,10 @@ T = json.loads((HERE / "tokens.json").read_text())
 
 
 class TokensTest(unittest.TestCase):
+    def test_committed_tokens_match_builder(self):
+        # build() returns the document without writing tokens.json or anything under raw/.
+        self.assertEqual(T, build_tokens.build())
+
     def test_no_dead_aliases(self):
         self.assertEqual(token_checks.alias_errors(T["core"], T["light"]), [])
 

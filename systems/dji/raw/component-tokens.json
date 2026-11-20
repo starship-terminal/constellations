@@ -81,7 +81,7 @@
           "body": {
             "value": "16px",
             "type": "fontSize",
-            "source": "computed fontSize of co-lede default (raw/components-computed.json)",
+            "source": "computed fontSize of co-lede default (raw/components-computed.json); co-lede caught the unsupported-browser notice in a modal box, not the company lede (read from the wrong element; recapture needed)",
             "description": "The 16px body and spec-line size."
           },
           "eyebrow": {
@@ -846,7 +846,7 @@
       "hairline": {
         "value": "{black.divider}",
         "type": "color",
-        "source": "the declared --divider of .light-theme sections (raw/css-vars.json); matches declared --black-divider",
+        "source": "declared --black-divider, which .light-theme sections assign to --divider (raw/css-vars.json); matches declared --black-divider",
         "description": "The black@6% hairline of .light-theme dividers (declared --divider)."
       }
     },
@@ -962,7 +962,7 @@
       "page": {
         "value": "{white.default}",
         "type": "color",
-        "source": "the painted field of /sg, /camera-drones, /support (screenshots/drones-default.png); matches declared --white; matches declared --white",
+        "source": "declared --white (raw/css-vars.json resolved.light); no computed reading of the page field (seen in screenshots/drones-default.png); matches declared --white",
         "description": "The white field the .light-theme sections paint (matches --white)."
       }
     },
@@ -976,7 +976,7 @@
       "muted": {
         "value": "{black.secondary}",
         "type": "color",
-        "source": "computed color of co-lede default (raw/components-computed.json); matches declared --black-secondary",
+        "source": "computed color of co-lede default (raw/components-computed.json); matches declared --black-secondary; co-lede caught the unsupported-browser notice in a modal box, not the company lede (read from the wrong element; recapture needed)",
         "description": "The black@65% muted ink on secondary text (matches --black-secondary)."
       },
       "nav-ink": {
