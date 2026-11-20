@@ -112,6 +112,7 @@ Nothing was signed into, bought or submitted: the login panel was captured as a 
 - **"Show all filters" is real but hidden.** `filter-toggle` is recorded missing: the button exists in the DOM at 0x0 at 1440 wide — a smaller-viewport affordance, not absent.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
 - **The collection page is truncated by design.** The 31,333px full-page shot is the shooter's eight-chunk cap; the grid past it is a documented boundary.
+- **`text-field` filled was typed with the default `name@example.com`**, not a first name: the capture put its `fillText` where it was ignored. The script now passes it as an option (not run since); the reading stands as labelled by its `via`.
 
 ## Fonts
 

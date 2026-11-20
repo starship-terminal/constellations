@@ -140,6 +140,9 @@ async function measure(key, state, target, opts = {}) {
 }
 
 async function S(key, target, list, meta = {}, opts = {}) {
+  // meta is the entry's description only; an option placed here (fillText, cropLoc,
+  // noToggle...) would be silently ignored, so refuse it
+  for (const k of Object.keys(meta)) if (!['group', 'title', 'desc', 'sel'].includes(k)) throw new Error(`S(${key}): '${k}' is an option; pass it in opts`);
   const prev = out.components[key];
   const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
@@ -270,7 +273,7 @@ async function home() {
   await S('logo', q('header a[href="/"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Logo', sel: 'header a[href="/"]' }, { noScroll: true });
   await S('nav-link', q('header a').filter({ hasText: /Pricing|Blog|Changelog/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Nav link', sel: 'header a' }, { noScroll: true });
   await S('nav-trigger', q('button.nav-menu-trigger').filter({ visible: true }).first(), B4, { group: g, title: 'Nav dropdown', desc: 'A nav-menu-trigger in the header; opens a flyout.', sel: 'button.nav-menu-trigger' }, { noScroll: true });
-  await S('nav-trigger-open', q('button.nav-menu-trigger').filter({ visible: true }).first(), ['opened'], { group: g, title: 'Nav dropdown, open', desc: 'After its own toggle; the opened flyout shows in the crop.', sel: 'button.nav-menu-trigger', cropLoc: q('header').first() }, { noScroll: true });
+  await S('nav-trigger-open', q('button.nav-menu-trigger').filter({ visible: true }).first(), ['opened'], { group: g, title: 'Nav dropdown, open', desc: 'After its own toggle; the opened flyout shows in the crop.', sel: 'button.nav-menu-trigger' }, { noScroll: true, cropLoc: q('header').first() });
   await S('menu-button', q('button[aria-label="Open menu"]').filter({ visible: true }).first(), B4, { group: g, title: 'Menu button', desc: 'The round icon button that opens the site menu.', sel: 'button[aria-label="Open menu"]' }, { noScroll: true });
   await S('cta-demo', q('a[href^="/demo"]').filter({ visible: true }).first(), B4, { group: g, title: 'Book a demo CTA', desc: 'The header CTA; links to the demo form, measured never followed.', sel: 'a[href^="/demo"]' }, { noScroll: true });
   const h = G.home;
@@ -302,7 +305,7 @@ async function toolsPages() {
   await sheetsFor('script-timer');
   const g = G.tools;
   await S('timer-display', q('[class*="timer" i], [role="timer"], time, output').filter({ visible: true }).first(), ['default'], { group: g, title: 'Timer display', desc: 'The script timer readout on the public tool page.', sel: 'timer element' }, { noScroll: true });
-  await S('timer-field', q('textarea').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Script field', desc: 'The paste-your-script textarea; filled with sample text and cleared, never submitted.', sel: 'textarea', fillText: 'A hero drags three frames onto the board.' });
+  await S('timer-field', q('textarea').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Script field', desc: 'The paste-your-script textarea; filled with sample text and cleared, never submitted.', sel: 'textarea' }, { fillText: 'A hero drags three frames onto the board.' });
   await S('timer-toggle', q('button[aria-pressed]').filter({ visible: true }).first(), B4, { group: g, title: 'Timer toggle', desc: 'An aria-pressed option toggle on the timer.', sel: 'button[aria-pressed]' });
   save();
 }
@@ -319,7 +322,7 @@ async function forms() {
   if (!(await newPage('signup', { url: BASE + '/signup', wait: 9000 }))) return;
   const g = G.forms;
   await S('signup-form', q('form').filter({ visible: true }).first(), ['default'], { group: g, title: 'Signup form', desc: 'The public signup card; fields focused/filled only, never submitted.', sel: 'form' }, { noScroll: true });
-  await S('signup-field', q('form input').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Signup field', sel: 'form input', fillText: 'name@example.com' }, { noScroll: true });
+  await S('signup-field', q('form input').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Signup field', sel: 'form input' }, { noScroll: true, fillText: 'name@example.com' });
   await S('signup-submit', q('form button[type="submit"], form button').filter({ visible: true }).first(), ['default'], { group: g, title: 'Signup submit', desc: 'The form submit; measured at rest, never pressed.', sel: 'form submit' }, { noScroll: true });
   if (!(await newPage('login', { url: BASE + '/login', wait: 7000 }))) { save(); return; }
   await S('login-form', q('form').filter({ visible: true }).first(), ['default'], { group: g, title: 'Login form', desc: 'The login card; never used.', sel: 'form' }, { noScroll: true });

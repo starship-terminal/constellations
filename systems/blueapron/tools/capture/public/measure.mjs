@@ -142,6 +142,9 @@ async function measure(key, state, target, opts = {}) {
 }
 
 async function S(key, target, list, meta = {}, opts = {}) {
+  // meta is the entry's description only; an option placed here (fillText, cropLoc,
+  // noToggle...) would be silently ignored, so refuse it
+  for (const k of Object.keys(meta)) if (!['group', 'title', 'desc', 'sel'].includes(k)) throw new Error(`S(${key}): '${k}' is an option; pass it in opts`);
   const prev = out.components[key];
   const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
@@ -277,7 +280,7 @@ async function home() {
   await S('cart-icon', q('.floating-cart, .header-actions [class*="cart" i], a[href="/cart"]').filter({ visible: true }).first(), B4, { group: g, title: 'Cart icon', desc: 'The Squarespace commerce cart control (the cart stays empty).', sel: '.floating-cart / .icon--cart' }, { noScroll: true });
   // --- blog list ---
   const h = G.home;
-  await S('search-field', q('.sqs-block-search input, input.search-input, input[type="search"]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: h, title: 'Search field', desc: 'The blog search input; focused and filled with sample text that was deleted, never submitted.', sel: '.sqs-block-search input', fillText: 'dinner ideas' }, { noScroll: true });
+  await S('search-field', q('.sqs-block-search input, input.search-input, input[type="search"]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: h, title: 'Search field', desc: 'The blog search input; focused and filled with sample text that was deleted, never submitted.', sel: '.sqs-block-search input' }, { noScroll: true, fillText: 'dinner ideas' });
   await S('search-button', q('.sqs-block-search button, [class*="search" i] button[type="submit"], .sqs-search-ui-button-wrapper button').filter({ visible: true }).first(), B4, { group: h, title: 'Search button', desc: 'The search submit; measured at rest, never pressed (it would run a search).', sel: '.sqs-block-search button' }, { noScroll: true });
   await S('blog-card', q('.blog-item').filter({ visible: true }).first(), ['default'], { group: h, title: 'Blog card', desc: 'One post summary in the masonry list: image, categories, title, excerpt, meta.', sel: '.blog-item' });
   await S('card-image', q('.blog-item .blog-image-wrapper').filter({ visible: true }).first(), ['default'], { group: h, title: 'Card image', desc: 'The post thumbnail frame.', sel: '.blog-item .blog-image-wrapper' });
@@ -318,7 +321,7 @@ async function article() {
   await S('article-pager', pg.first(), B4, { group: g, title: 'Article pager', desc: 'The older/newer guide pager under the article.', sel: '.item-pagination-link' });
   const tog = q('.blog-item-comments-toggle-wrapper, [class*="comments-toggle"]').filter({ visible: true }).first();
   await S('comments-toggle', tog, B4, { group: g, title: 'Comments toggle', desc: 'The comments header; a UI toggle measured in all states.', sel: '.blog-item-comments-toggle-wrapper' });
-  await S('comments-open', tog, ['opened'], { group: g, title: 'Comments toggle, open', desc: 'After its own toggle; the opened comments list shows in the crop of the comments area.', sel: '.blog-item-comments-toggle-wrapper', cropLoc: q('.blog-item-comments').first() });
+  await S('comments-open', tog, ['opened'], { group: g, title: 'Comments toggle, open', desc: 'After its own toggle; the opened comments list shows in the crop of the comments area.', sel: '.blog-item-comments-toggle-wrapper' }, { cropLoc: q('.blog-item-comments').first() });
   // The captured guide ends at the older/newer pager — no related grid on
   // this article template.
   save();
@@ -359,7 +362,7 @@ async function mobile() {
   await S('m-header', q('header').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile header', sel: 'header at 390' }, { noScroll: true });
   const menu = q('.header-burger-btn, button[class*="burger" i], .header-menu-toggle').filter({ visible: true }).first();
   await S('m-menu-button', menu, B4, { group: g, title: 'Burger button', desc: 'The hamburger that opens the mobile menu.', sel: '.header-burger-btn' }, { noScroll: true });
-  await S('m-menu-open', menu, ['opened'], { group: g, title: 'Mobile menu, open', desc: 'The burger after its own toggle; the opened menu overlay shows in the crop of the whole menu panel.', sel: '.header-burger-btn', cropLoc: q('.header-menu').first() }, { noScroll: true });
+  await S('m-menu-open', menu, ['opened'], { group: g, title: 'Mobile menu, open', desc: 'The burger after its own toggle; the opened menu overlay shows in the crop of the whole menu panel.', sel: '.header-burger-btn' }, { noScroll: true, cropLoc: q('.header-menu').first() });
   // The menu is still open after m-menu-open's own toggle: read a nav item
   // while it is held open — the items mount only while the overlay is up, and
   // clicking the burger again would close it, so no further toggle here.
