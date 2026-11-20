@@ -4987,9 +4987,9 @@
       "description": "Crypto Solutions for Business",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: Customer Login at https://home.ripple.com/ opens Auth0 with email and password. Password not submitted. Cookie banner denied.",
+      "notes": "Email probe: Customer Login at https://home.ripple.com/ opens Auth0 with email and password. Password not submitted. Cookie banner denied. Public walk 2026-11-21: header Products, Use Cases, Customers, Insights, and Company open mega menus. Search opens an empty dialog. Language switches the locale. The phone menu lists the same groups. Footer Customer Login stops at Auth0. docs.ripple.com, xrpl.org, and legal.rail.io are boundaries. Cookie banner was hidden, not clicked. Password was not submitted. No form was submitted. Signed-in payments app was not captured. Public package in PR 1564 at d222a81ea89a. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 15
     },
     {
