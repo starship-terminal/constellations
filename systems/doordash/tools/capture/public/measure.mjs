@@ -78,10 +78,12 @@ async function newPage(key, { mobile = false, wait = 9000, promo = 'close', url 
   await open(page, url || BASE + URLS[key], { wait, promo });
   if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); liveCtx = null; return false; }
   // A Wayback replay can serve the HTML without the product's stylesheets: then every reading is the
-  // browser's default (Times 16px, link blue). Require the prism type face on some text before
-  // measuring; the careers site is a separate WordPress stack and is checked for any web font.
-  const styled = await page.evaluate((careers) => [...document.querySelectorAll('h1, h2, p, span, a, button')].slice(0, 600)
-    .some((el) => (careers ? !/^"?Times/.test(getComputedStyle(el).fontFamily) : /DD Norms/.test(getComputedStyle(el).fontFamily))), /^car/.test(key)).catch(() => false);
+  // browser's default (Times 16px, link blue; a native button would read the UA sans). Require the
+  // site's own face on some text before measuring: DD Norms on the prism pages, TT Norms Pro on the
+  // careers WordPress theme.
+  const face = /^car/.test(key) ? 'tt norms pro' : 'dd norms';
+  const styled = await page.evaluate((f) => [...document.querySelectorAll('h1, h2, p, span, a, button')].slice(0, 600)
+    .some((el) => getComputedStyle(el).fontFamily.toLowerCase().includes(f)), face).catch(() => false);
   if (!styled) { log('  UNSTYLED', key, '(the archived stylesheets did not apply; recorded as a failed page)'); failedPages.add(key); await page.close(); await ctx.close(); liveCtx = null; return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   return true;
