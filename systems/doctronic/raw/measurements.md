@@ -536,7 +536,7 @@ Page: home. Selector: `[class*="_arrow"]`. States: default, hover, focus-visible
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `testimonial-arrow-default.png`, `testimonial-arrow-hover.png`, `testimonial-arrow-focus-visible.png`, `testimonial-arrow-pressed.png`.
+Crops: `testimonial-arrow-default.png`, `testimonial-arrow-hover.png`, `testimonial-arrow-pressed.png`.
 
 #### watch-button
 
@@ -674,7 +674,7 @@ Page: home. Selector: `[class*="_condensedButton"]`. States: default, hover, foc
 | Error | - | locator.hover: Element is outside of the viewport Call log:   - waiting for locator('[class*="_condensedButton"]').first().or(locator('[data-m-mark="__none__"]')).visible().first().visible().first()   | = | = |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `condensed-button-default.png`, `condensed-button-focus-visible.png`, `condensed-button-pressed.png`.
+Crops: `condensed-button-default.png`, `condensed-button-pressed.png`.
 
 #### footer
 

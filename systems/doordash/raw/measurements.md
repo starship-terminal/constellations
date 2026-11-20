@@ -268,7 +268,7 @@ Page: dashpass. Selector: `[data-testid=NotificationBell]`. States: default, hov
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `bell-btn-default.png`, `bell-btn-hover.png`, `bell-btn-focus-visible.png`, `bell-btn-pressed.png`.
+Crops: `bell-btn-default.png`, `bell-btn-hover.png`, `bell-btn-pressed.png`.
 
 #### hero-band
 
@@ -691,7 +691,7 @@ Page: home. Selector: `[role=tab][data-testid$=-selected]`. States: default, hov
 | Cursor | - | pointer | = | pointer |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `tab-selected-default.png`, `tab-selected-hover.png`, `tab-selected-focus-visible.png`, `tab-selected-pressed.png`.
+Crops: `tab-selected-default.png`, `tab-selected-hover.png`, `tab-selected-pressed.png`.
 
 #### tab-idle
 
@@ -718,7 +718,7 @@ Page: home. Selector: `[role=tab][data-testid$=-not-selected]`. States: default,
 | Cursor | - | pointer | = | pointer |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `tab-idle-default.png`, `tab-idle-hover.png`, `tab-idle-focus-visible.png`, `tab-idle-pressed.png`.
+Crops: `tab-idle-default.png`, `tab-idle-hover.png`, `tab-idle-pressed.png`.
 
 #### dir-link
 
@@ -846,7 +846,7 @@ Page: food-delivery. Selector: `city link`. States: default, hover, focus-visibl
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `city-link-default.png`, `city-link-hover.png`, `city-link-focus-visible.png`, `city-link-pressed.png`.
+Crops: `city-link-default.png`, `city-link-hover.png`, `city-link-pressed.png`.
 
 #### fd-faq
 
@@ -1408,7 +1408,7 @@ Page: store. Selector: `CreateGroupCartModalButton`. States: default, hover, foc
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `group-order-default.png`, `group-order-hover.png`, `group-order-focus-visible.png`, `group-order-pressed.png`.
+Crops: `group-order-default.png`, `group-order-hover.png`, `group-order-pressed.png`.
 
 #### search-input
 
@@ -1805,7 +1805,7 @@ Page: mobile. Selector: `identity button at 390`. States: default, hover, focus-
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `m-identity-btn-default.png`, `m-identity-btn-hover.png`, `m-identity-btn-focus-visible.png`, `m-identity-btn-pressed.png`.
+Crops: `m-identity-btn-default.png`, `m-identity-btn-hover.png`, `m-identity-btn-pressed.png`.
 
 #### m-hero
 

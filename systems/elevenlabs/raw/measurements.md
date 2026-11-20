@@ -455,7 +455,7 @@ Page: home. Selector: `button[aria-label*=preview]`. States: default, hover, foc
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `voice-play-default.png`, `voice-play-hover.png`, `voice-play-focus-visible.png`, `voice-play-pressed.png`.
+Crops: `voice-play-default.png`, `voice-play-hover.png`, `voice-play-pressed.png`.
 
 #### voice-prev
 
@@ -623,7 +623,7 @@ Page: home. Selector: `Play button`. States: default, hover, focus-visible, pres
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `tts-play-default.png`, `tts-play-hover.png`, `tts-play-focus-visible.png`, `tts-play-pressed.png`.
+Crops: `tts-play-default.png`, `tts-play-hover.png`, `tts-play-pressed.png`.
 
 #### learn-more
 
