@@ -539,14 +539,6 @@ async function bookservices() {
   save();
 }
 
-async function bookflow() {
-  // Booking flow: a boundary, not a page. Reaching /book means selecting a service and pressing
-  // "BOOK n SERVICE" on a real business's live booking site, which starts a booking for that business;
-  // the capture stops at the bar and measures it at rest (bk-book-btn). The committed bk-steps, bk-cal,
-  // bk-day and bk-next readings were taken past that step (README, What to distrust).
-  log('  bookflow: boundary, not entered (a real business\'s booking flow)');
-}
-
 async function mobile() {
   if (!(await newPage('mobile', { mobile: true, url: BASE + '/' }))) return;
   await chrome('mobile');
@@ -569,7 +561,12 @@ out._meta.tool = 'tools/capture/public/measure.mjs';
 const { browser, context: ctx0 } = await launch();
 context = ctx0;
 const pages = process.argv.slice(2);
-const plan = { home, pricing, feature, demo, login, signup, forgot, bookhome, bookservices, bookflow, mobile };
+// Booking flow (/book): a boundary, not a page. Reaching it means selecting a service and pressing
+// "BOOK n SERVICE" on a real business's live booking site, which starts a booking for that business;
+// the capture stops at the bar and measures it at rest (bk-book-btn). It is not in the plan, so it never
+// counts as a finished page and the committed bk-steps, bk-cal, bk-day and bk-next readings (taken past
+// that step, README What to distrust) are kept as evidence, never pruned.
+const plan = { home, pricing, feature, demo, login, signup, forgot, bookhome, bookservices, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
 const finishedPages = new Set();
 try {
