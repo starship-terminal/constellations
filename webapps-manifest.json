@@ -3455,7 +3455,7 @@
       "description": "It’s the ultimate reading client for the open web",
       "status": "captured",
       "package": "systems/matter",
-      "notes": "public signed-out marketing, a public article, docs, and the reader sign-in card. The reader app sits behind sign-in and was not reached. Subscribe, OAuth, and checkout were not submitted. The user signed in. Product not walked.",
+      "notes": "public signed-out marketing, a public article, docs, and the reader sign-in card. The reader app sits behind sign-in and was not reached. Subscribe, OAuth, and checkout were not submitted. The user signed in. Product not walked. Signed-in walk: preview tools were not available, so the reader was not opened. Session not checked. Skipped this pass.",
       "login-extracted": "not-started",
       "login-probe": "signed-in",
       "batch": 10
