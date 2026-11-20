@@ -708,9 +708,9 @@
       "description": "For Creators and Artists",
       "status": "captured",
       "package": "systems/buymeacoffee",
-      "notes": "https://buymeacoffee.com/login asks for email and password, or Google, Facebook, Apple, or Twitter. No code was sent.",
+      "notes": "https://buymeacoffee.com/login asks for email and password, or Google, Facebook, Apple, or Twitter. No code was sent. Public walk 2026-11-21: header opened FAQ, Wall of love, an Apps menu, a Resources menu, a search modal, and creator pages. Footer opened About, Help Center, and legal pages. Log in and Sign up stop at a wall and were not entered. No form was submitted. Public package in PR 1528 at a2914f17d. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 3
     },
     {
