@@ -20,12 +20,13 @@
 // dropdowns, the gig page's package tabs and FAQ accordion — and the fields
 // (hero search, join, login) are typed into and cleared, never submitted.
 // Join, Sign in, Continue, Contact me, Continue-with-* and every CTA are
-// measured, never followed. PerimeterX's press&hold is driven automatically
-// (never answered by hand); the UserWay widget and any consent layer are
-// hidden, never answered.
+// measured, never followed. A PerimeterX challenge is a boundary: it is
+// never pressed or held, and a challenged page is logged as BLOCKED and left
+// out. The UserWay widget and any consent layer are hidden, never answered.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, LOGIN_URL, JOIN_URL, M, launch, launchBrowser, patch, seedPx, savePx, open, closePromo, isChallenged, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { safeUrl } from '../safe-url.mjs';
+import { BASE, LOGIN_URL, JOIN_URL, M, launch, launchBrowser, patch, open, closePromo, isChallenged, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -58,11 +59,11 @@ async function blocked() {
 async function newPage(key, { mobile = false, wait = 9000, promo = 'close', url = null } = {}) {
   current = key;
   const b = context.browser();
-  // PerimeterX challenges each fresh context, so keep one context per
-  // viewport and navigate between pages inside it (one press&hold clearance
-  // serves them all); a context is recreated only when a page arrives
-  // challenged, and the page retried a few times on the new one.
-  for (let tries = 0; tries < 4; tries++) {
+  // Keep one context per viewport and navigate between pages inside it. Bot
+  // check: recorded as a boundary, not bypassed: a page that arrives
+  // challenged is logged as BLOCKED and recorded as a failed page, with no
+  // retry on fresh contexts and no clearance cookie saved or replayed.
+  for (let tries = 0; tries < 1; tries++) {
     if (!liveCtx || liveCtx.__mobile !== mobile) {
       if (liveCtx) await liveCtx.close().catch(() => {});
       const ctx = liveCtx = await b.newContext(mobile
@@ -70,7 +71,6 @@ async function newPage(key, { mobile = false, wait = 9000, promo = 'close', url 
         : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
       ctx.__mobile = mobile;
       await patch(ctx);
-      await seedPx(ctx);
       page = await ctx.newPage();
       cdp = await ctx.newCDPSession(page);
       await cdp.send('DOM.enable');
@@ -78,14 +78,13 @@ async function newPage(key, { mobile = false, wait = 9000, promo = 'close', url 
       page.setDefaultTimeout(8000);
     }
     log('open', key, mobile ? '(mobile)' : '');
-    await open(page, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
-    if (!(await blocked())) {
+    const opened = await open(page, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
+    if (opened && !(await blocked())) {
       finishedPages.add(key);
-      await savePx(liveCtx);
       await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
       return true;
     }
-    log('  BLOCKED', key, tries < 3 ? '- fresh context' : '');
+    log('  BLOCKED (bot check, boundary)', key);
     if (liveCtx) await liveCtx.close().catch(() => {});
     liveCtx = null;
   }
@@ -147,7 +146,7 @@ async function forcePseudo(loc, classes) {
 
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
-  Object.assign(c, { page: current, run, url: URLS[current] && (URLS[current].startsWith('http') ? URLS[current] : BASE + URLS[current]) }, meta);
+  Object.assign(c, { page: current, run, url: URLS[current] && safeUrl(URLS[current].startsWith('http') ? URLS[current] : BASE + URLS[current]) }, meta);
   touched.add(key);
   c.states ??= {};
   return c;
@@ -326,7 +325,6 @@ async function reducedMotion(key, sel) {
     const b = context.browser();
     const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US', reducedMotion: 'reduce' });
     await patch(ctx);
-    await seedPx(ctx);
     const p = await ctx.newPage();
     await p.goto(URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key], { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
     await p.waitForTimeout(8000);
@@ -545,7 +543,8 @@ async function search() {
   }).catch(() => ({}));
   if (gig) gigPath = gig;
   if (seller) sellerPath = seller;
-  out._meta.gigPage = { gig, seller, note: 'the first gig card on /search/gigs?query=logo%20design — a live public gig and its seller profile, loaded directly' };
+  // Recorded through safeUrl: a scraped href can carry a query or a tracking id.
+  out._meta.gigPage = { gig: gig && safeUrl(BASE + gig), seller: seller && safeUrl(BASE + seller), note: 'the first gig card on /search/gigs?query=logo%20design — a live public gig and its seller profile, loaded directly' };
   save();
 }
 

@@ -344,3 +344,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Do theme for real.** The sidebar pill cycles System -> Light -> Dark and every surface repaints — dark is `#161617` field, `#1c1c1f` cards, `#fdfdff` ink, rgba(255,255,255,0.08) hairlines. See [home dark](screenshots/home-dark-default.png).
 - **Don't style the signed-in product from this package.** Voting, commenting, submitting and settings were never reached — the vote and comment controls gate on sign-in and were never pressed.
 - **Don't invent a form flow.** The Clerk fields were focused and filled but never submitted — no validation, error or success state exists in this capture.
+
+### Known gaps (from README.md)
+
+- `feed-compact`, `post-headline`, `post-vote`, `post-comment`, `post-avatars`, `post-sources`: each `focus-visible` reading is `via: focus failed`. The capture opened the Trending sort dropdown (`feed-trending` opened) and never closed it, so the open menu held keyboard focus for every later home component. components.md lists them as focus not capturable; their focus look was never read, and they need a recapture. `tools/capture/public/measure.mjs` now closes an opened toggle before the next state (edited, not run).
