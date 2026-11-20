@@ -3054,9 +3054,9 @@
       "description": "Generative AI Platform for Images, Art & Video",
       "status": "captured",
       "package": null,
-      "notes": "https://leonardo.ai/login is page not found. https://app.leonardo.ai/auth/login asks for email and password, or Canva, Apple, Google, or Microsoft. No code was sent.",
+      "notes": "https://leonardo.ai/login is page not found. https://app.leonardo.ai/auth/login asks for email and password, or Canva, Apple, Google, or Microsoft. No code was sent. Public walk 2026-11-21: header menus opened feature, industry, business, and learn pages. Log in stops at https://app.leonardo.ai/auth/login and was not entered. No form was submitted. Public package in PR 1511 at 1240412a1. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 9
     },
     {
