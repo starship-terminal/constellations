@@ -1,4 +1,4 @@
-"""The tokens match the colours and lengths that were measured."""
+"""tokens.json holds the measured action, text, type, radius and login control values."""
 import json
 import unittest
 from pathlib import Path
@@ -16,7 +16,7 @@ def resolve(tokens, value):
 
 
 class Tokens(unittest.TestCase):
-    def test_action_and_type_match_the_readings(self):
+    def test_action_and_type_values(self):
         tokens = json.loads((ROOT / "tokens.json").read_text())
         self.assertEqual(resolve(tokens, tokens["light"]["background"]["action"]["$value"]), "#beff50")
         self.assertEqual(resolve(tokens, tokens["light"]["text"]["primary"]["$value"]), "#14140f")

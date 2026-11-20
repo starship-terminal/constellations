@@ -1,4 +1,4 @@
-"""The token builder writes the colours and lengths that were measured."""
+"""tokens.json holds the action, text, type, radius and field values that were measured."""
 import json
 import unittest
 from pathlib import Path
@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 class Tokens(unittest.TestCase):
-    def test_action_and_type_match_the_readings(self):
+    def test_action_and_type_values(self):
         tokens = json.loads((ROOT / "tokens.json").read_text())
         self.assertEqual(tokens["light"]["background"]["action"]["$value"], "{color.accent}")
         self.assertEqual(tokens["core"]["color"]["accent"]["$value"], "#0062e3")

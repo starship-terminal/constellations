@@ -1,4 +1,4 @@
-"""Shop tokens keep the measured public page and the login Continue colour."""
+"""Shop tokens keep the page, surface, action, text, border, button and poster values, light only."""
 import json
 import pathlib
 import unittest

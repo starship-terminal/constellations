@@ -1,4 +1,4 @@
-"""tokens.json matches raw/foundations.json. Run from this tools/ folder."""
+"""tokens.json coral matches raw/foundations.json, and the coral button and hero values and a coral source are present."""
 import json
 import pathlib
 import unittest
@@ -6,7 +6,7 @@ import unittest
 HERE = pathlib.Path(__file__).resolve().parent.parent
 
 
-class BuildTokensTest(unittest.TestCase):
+class TokensTest(unittest.TestCase):
     def test_coral_matches_raw(self):
         raw = json.loads((HERE / "raw" / "foundations.json").read_text())
         tokens = json.loads((HERE / "tokens.json").read_text())
