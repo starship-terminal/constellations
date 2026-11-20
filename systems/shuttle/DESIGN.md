@@ -17,14 +17,14 @@ colors:
   surface-panel: "#262626"
   text-primary: "#ffffff"
   text-secondary: "#d4d4d4"
-  text-muted: "#ebebf5"
+  text-muted: "#ebebf599"
   text-faint: "#737373"
   text-onAccent: "#ffffff"
   text-onInverse: "#000000"
   accent: "#0077ff"
   link: "#0984ff"
   border-default: "#2c2c2e"
-  border-hairline: "#ffffff"
+  border-hairline: "#ffffff33"
   border-pro: "#007aff"
   component-button-bg: "#0077ff"
   component-button-text: "#ffffff"
@@ -158,7 +158,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The CSS viewport was 1169, not 1440 and not 390. Do not treat these readings as a 1440 or 390 capture. `:root` declares a light palette (`--color-background: #f9f9f9`, `--color-label: #000000ff`). Those values were not the computed theme. They are listed in [raw/foundations.json](raw/foundations.json) and are not a token set. `--color-label2` is `#ebebf599`. Painted secondary text is `rgba(235, 235, 245, 0.6)`. The token stores `#ebebf5` and the alpha stays in [components.md](components.md). `--color-link` computed to `#0984ffff` and was not the colour of a painted link. Marketing demos on the about page show names and email addresses. Those strings are not copied into this package. Screenshot folders are empty on purpose. Mona Sans is linked at weight 800 and no measured element used it.
+The CSS viewport was 1169, not 1440 and not 390. Do not treat these readings as a 1440 or 390 capture. `:root` declares a light palette (`--color-background: #f9f9f9`, `--color-label: #000000ff`). Those values were not the computed theme. They are listed in [raw/foundations.json](raw/foundations.json) and are not a token set. `--color-label2` is `#ebebf599`. Painted secondary text is `rgba(235, 235, 245, 0.6)`. The token `dark.text.muted` stores it with the alpha, `#ebebf599`, and the pricing hairline `dark.border.hairline` stores `rgba(255, 255, 255, 0.2)` as `#ffffff33`. `--color-link` computed to `#0984ffff` and was not the colour of a painted link. Marketing demos on the about page show names and email addresses. Those strings are not copied into this package. Screenshot folders are empty on purpose. Mona Sans is linked at weight 800 and no measured element used it.
 
 ### Do and don't (from README.md)
 
