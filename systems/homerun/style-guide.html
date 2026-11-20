@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homerun style guide</title>
+<style>
+:root {
+  --color-blue-300: #eef2ff;
+  --color-blue-400: #c9d5fd;
+  --color-blue-500: #4f75fe;
+  --color-blue-600: #254cda;
+  --color-blue-700: #0b247f;
+  --color-brown-100: #a3a2a2;
+  --color-brown-200: #736b6b;
+  --color-brown-300: #4a3e3e;
+  --color-brown-400: #382d2d;
+  --color-brown-500: #2d2323;
+  --color-brown-600: #1f1818;
+  --color-brown-700: #131313;
+  --color-beige-400: #faf9f7;
+  --color-beige-500: #f5f3ef;
+  --color-beige-600: #edebe7;
+  --color-beige-700: #e3e1dd;
+  --color-beige-800: #dbd9d5;
+  --color-white: #ffffff;
+  --color-red: #f23540;
+  --color-green: #00b16b;
+  --color-orange: #f7841f;
+  --color-yellow: #ffbb00;
+  --color-lilac: #bda3fa;
+  --color-coffee-50: #f9f7f7;
+  --color-coffee-100: #f1efef;
+  --color-coffee-200: #e6e2e2;
+  --color-coffee-300: #d5cccc;
+  --color-coffee-500: #988686;
+  --color-coffee-600: #8a7878;
+  --color-coffee-800: #605454;
+  --color-coffee-900: #534949;
+  --color-coffee-950: #2a2525;
+  --color-hr-500: #00c275;
+  --color-hr-700: #113428;
+  --color-hr-800: #172923;
+  --font-family-display: "GT Walsheim", sans-serif;
+  --font-family-sans: "GT America", sans-serif;
+  --typography-display: 900 64px/64px var(--font-family-display);
+  --typography-nav: 400 16px/22px var(--font-family-sans);
+  --radius-button: 12px;
+  --radius-nav: 10px;
+  --space-button-x: 16px;
+  --space-button-y: 4px;
+  --space-nav: 12px;
+  --size-button-height: 40px;
+  --size-field-height: 50px;
+  --size-header: 90px;
+  --background-page: var(--color-white);
+  --background-surface: var(--color-beige-500);
+  --background-muted: var(--color-beige-400);
+  --background-inverse: var(--color-brown-500);
+  --text-primary: var(--color-brown-400);
+  --text-body: var(--color-brown-300);
+  --text-muted: var(--color-brown-200);
+  --text-on-accent: var(--color-white);
+  --text-link: var(--color-blue-500);
+  --border-default: var(--color-coffee-200);
+  --border-strong: var(--color-brown-300);
+  --accent-default: var(--color-blue-500);
+  --accent-hover: #264ddb;
+  --accent-on: var(--color-white);
+  --status-danger: var(--color-red);
+  --status-success: var(--color-green);
+  --status-warning: var(--color-orange);
+  --status-info: var(--color-blue-500);
+  --focus-ring: #005fcc;
+  --button-secondary: var(--color-brown-500);
+  --button-secondary-hover: #4a3e3e;
+  --button-ghost-hover: rgba(245, 243, 239, 0.984);
+  color-scheme: light;
+  --sg-sans: "GT America", ui-sans-serif, system-ui, sans-serif;
+  --sg-display: "GT Walsheim", "GT America", ui-sans-serif, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --page: var(--background-page);
+  --surface: var(--background-surface);
+  --text: var(--text-primary);
+  --muted: var(--text-muted);
+  --accent: var(--accent-default);
+  --border: var(--border-default);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/22px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header.top { position: sticky; top: 0; background: var(--page); border-bottom: 1px solid var(--border); }
+header.top .in { max-width: 1080px; margin: 0 auto; padding: 16px 24px; display: flex; gap: 16px; align-items: baseline; }
+header.top h1 { margin: 0; font: 900 22px/1 var(--sg-display); }
+header.top nav { display: flex; gap: 14px; }
+header.top nav a { color: var(--text-body); text-decoration: none; }
+h2 { font: 900 32px/1 var(--sg-display); margin: 40px 0 12px; }
+p.lead { max-width: 68ch; color: var(--text-body); }
+.pal { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: center; }
+.sw i { width: 40px; height: 40px; border-radius: 8px; border: 1px solid var(--border); display: block; }
+.sw b { font: 600 12px/1.3 var(--sg-mono); display: block; }
+.sw span { font-size: 12px; color: var(--muted); }
+.btn { display: inline-flex; align-items: center; height: var(--size-button-height); padding: var(--space-button-y) var(--space-button-x); border-radius: var(--radius-button); background: var(--accent); color: var(--accent-on); text-decoration: none; border: 0; }
+.btn.sec { background: var(--button-secondary); }
+.btn.ghost { background: transparent; color: var(--text-body); border-radius: var(--radius-nav); }
+.field { height: var(--size-field-height, 50px); border: 0; border-radius: 30px; background: rgba(45, 35, 35, 0.1); padding: 8px 20px; font: 400 18px/26px var(--sg-sans); color: var(--text-primary); }
+.note { font-size: 13px; color: var(--muted); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+  <h1>Homerun</h1>
+  <nav>
+    <a href="#colour">Colour</a>
+    <a href="#type">Type</a>
+    <a href="#components">Components</a>
+  </nav>
+</div></header>
+<div class="wrap">
+  <p class="lead">Public marketing site, one light theme. Values come from tokens.json. GT America and GT Walsheim are not loaded here, so the page falls back to the system sans.</p>
+  <h2 id="colour">Colour</h2>
+  <div class="pal" id="swatches"></div>
+  <h2 id="type">Type</h2>
+  <p style="font: 900 64px/64px var(--sg-display); margin: 0;">Beautiful HR tools</p>
+  <p class="note">Display is 64/64 weight 900. Nav is 16/22 weight 400.</p>
+  <h2 id="components">Components</h2>
+  <p>
+    <a class="btn" href="#components">Start free trial</a>
+    <a class="btn sec" href="#components">Book a demo</a>
+    <a class="btn ghost" href="#components">Organise your hiring</a>
+  </p>
+  <p><input class="field" placeholder="Email" readonly aria-label="Email example, not a form"></p>
+  <p class="note">Pressed states on links were not captured. Focus on the marketing site is the browser ring rgb(0, 95, 204). No dark theme was published.</p>
+  <h2>Tokens</h2>
+  <table id="tokens"></table>
+</div>
+<script>
+const TOKENS = {"core":{"color":{"blue-300":{"v":"#eef2ff","t":"color","s":"Measured css-var --_updated-colors-v2---primary--blue-300 on :root, www.homerun.co 2026-11-21"},"blue-400":{"v":"#c9d5fd","t":"color","s":"Measured css-var --_updated-colors-v2---primary--blue-400 on :root, www.homerun.co 2026-11-21"},"blue-500":{"v":"#4f75fe","t":"color","s":"Measured css-var --_updated-colors-v2---primary--blue-500 on :root, www.homerun.co 2026-11-21"},"blue-600":{"v":"#254cda","t":"color","s":"Measured css-var --_updated-colors-v2---primary--blue-600 on :root, www.homerun.co 2026-11-21"},"blue-700":{"v":"#0b247f","t":"color","s":"Measured css-var --_updated-colors-v2---primary--blue-700 on :root, www.homerun.co 2026-11-21"},"brown-100":{"v":"#a3a2a2","t":"color","s":"Measured css-var --_updated-colors-v2---primary--brown-100 on :root, www.homerun.co 2026-11-21"},"brown-200":{"v":"#736b6b","t":"color","s":"Measured css-var --_updated-colors-v2---primary--brown-200 on :root, www.homerun.co 2026-11-21"},"brown-300":{"v":"#4a3e3e","t":"color","s":"Measured css-var --_updated-colors-v2---primary--brown-300 on :root, www.homerun.co 2026-11-21"},"brown-400":{"v":"#382d2d","t":"color","s":"Measured css-var --_updated-colors-v2---primary--brown-400 on :root, www.homerun.co 2026-11-21"},"brown-500":{"v":"#2d2323","t":"color","s":"Measured css-var --_updated-colors-v2---primary--brown-500 on :root, www.homerun.co 2026-11-21"},"brown-600":{"v":"#1f1818","t":"color","s":"Measured css-var --_updated-colors-v2---primary--brown-600 on :root, www.homerun.co 2026-11-21"},"brown-700":{"v":"#131313","t":"color","s":"Measured css-var --_updated-colors-v2---primary--brown-700 on :root, www.homerun.co 2026-11-21"},"beige-400":{"v":"#faf9f7","t":"color","s":"Measured css-var --_updated-colors-v2---primary--beige-400 on :root, www.homerun.co 2026-11-21"},"beige-500":{"v":"#f5f3ef","t":"color","s":"Measured css-var --_updated-colors-v2---primary--beige-500 on :root, www.homerun.co 2026-11-21"},"beige-600":{"v":"#edebe7","t":"color","s":"Measured css-var --_updated-colors-v2---primary--beige-600 on :root, www.homerun.co 2026-11-21"},"beige-700":{"v":"#e3e1dd","t":"color","s":"Measured css-var --_updated-colors-v2---primary--beige-700 on :root, www.homerun.co 2026-11-21"},"beige-800":{"v":"#dbd9d5","t":"color","s":"Measured css-var --_updated-colors-v2---primary--beige-800 on :root, www.homerun.co 2026-11-21"},"white":{"v":"#ffffff","t":"color","s":"Measured css-var --_updated-colors-v2---primary--white on :root, www.homerun.co 2026-11-21"},"red":{"v":"#f23540","t":"color","s":"Measured css-var --_updated-colors-v2---secondary--red on :root, www.homerun.co 2026-11-21"},"green":{"v":"#00b16b","t":"color","s":"Measured css-var --_updated-colors-v2---secondary--green on :root, www.homerun.co 2026-11-21"},"orange":{"v":"#f7841f","t":"color","s":"Measured css-var --_updated-colors-v2---secondary--orange on :root, www.homerun.co 2026-11-21"},"yellow":{"v":"#ffbb00","t":"color","s":"Measured css-var --_updated-colors-v2---secondary--yellow on :root, www.homerun.co 2026-11-21"},"lilac":{"v":"#bda3fa","t":"color","s":"Measured css-var --_updated-colors-v2---secondary--lilac on :root, www.homerun.co 2026-11-21"},"coffee-50":{"v":"#f9f7f7","t":"color","s":"Measured css-var --coffee-50 on :root, www.homerun.co 2026-11-21"},"coffee-100":{"v":"#f1efef","t":"color","s":"Measured css-var --coffee-100 on :root, www.homerun.co 2026-11-21"},"coffee-200":{"v":"#e6e2e2","t":"color","s":"Measured css-var --coffee-200 on :root, www.homerun.co 2026-11-21"},"coffee-300":{"v":"#d5cccc","t":"color","s":"Measured css-var --coffee-300 on :root, www.homerun.co 2026-11-21"},"coffee-500":{"v":"#988686","t":"color","s":"Measured css-var --coffee-500 on :root, www.homerun.co 2026-11-21"},"coffee-600":{"v":"#8a7878","t":"color","s":"Measured css-var --coffee-600 on :root, www.homerun.co 2026-11-21"},"coffee-800":{"v":"#605454","t":"color","s":"Measured css-var --coffee-800 on :root, www.homerun.co 2026-11-21"},"coffee-900":{"v":"#534949","t":"color","s":"Measured css-var --coffee-900 on :root, www.homerun.co 2026-11-21"},"coffee-950":{"v":"#2a2525","t":"color","s":"Measured css-var --coffee-950 on :root, www.homerun.co 2026-11-21"},"hr-500":{"v":"#00c275","t":"color","s":"Measured css-var --hr--500 on :root, www.homerun.co 2026-11-21"},"hr-700":{"v":"#113428","t":"color","s":"Measured css-var --hr--700 on :root, www.homerun.co 2026-11-21"},"hr-800":{"v":"#172923","t":"color","s":"Measured css-var --hr--800 on :root, www.homerun.co 2026-11-21"}},"font":{"family":{"display":{"v":"\"GT Walsheim\", sans-serif","t":"fontFamily","s":"Measured computed fontFamily on h1, www.homerun.co home, 1440x900"},"sans":{"v":"\"GT America\", sans-serif","t":"fontFamily","s":"Measured computed fontFamily on nav link, www.homerun.co home, 1440x900"}}},"typography":{"display":{"v":{"fontFamily":"{font.family.display}","fontSize":"64px","fontWeight":900,"lineHeight":"64px"},"t":"typography","s":"Measured computed style on h1, www.homerun.co home"},"nav":{"v":{"fontFamily":"{font.family.sans}","fontSize":"16px","fontWeight":400,"lineHeight":"22px"},"t":"typography","s":"Measured computed style on nav link Organise your hiring"}},"radius":{"button":{"v":"12px","t":"dimension","s":"Measured borderRadius on Start free trial link"},"nav":{"v":"10px","t":"dimension","s":"Measured borderRadius on nav link"}},"space":{"button-x":{"v":"16px","t":"dimension","s":"Measured paddingLeft on Start free trial"},"button-y":{"v":"4px","t":"dimension","s":"Measured paddingTop on Start free trial"},"nav":{"v":"12px","t":"dimension","s":"Measured paddingTop on nav link"}},"size":{"button-height":{"v":"40px","t":"dimension","s":"Measured bounding height of Start free trial, 1440x900"},"field-height":{"v":"50px","t":"dimension","s":"Measured bounding height of a public email field"},"header":{"v":"90px","t":"dimension","s":"Measured header height, www.homerun.co home, 1440x900"}}},"light":{"background":{"page":{"v":"{color.white}","t":"color","s":"Measured body background rgb(255,255,255) matches --_updated-colors-v2---primary--white"},"surface":{"v":"{color.beige-500}","t":"color","s":"Declared --beige-500 / --_updated-colors-v2---primary--beige-500, the bone surface used in cards"},"muted":{"v":"{color.beige-400}","t":"color","s":"Declared beige-400, the lightest page wash"},"inverse":{"v":"{color.brown-500}","t":"color","s":"Measured Book a demo background rgb(45, 35, 35) matches brown-500 / coffee-black #2d2323"}},"text":{"primary":{"v":"{color.brown-400}","t":"color","s":"Measured h1 color rgb(56, 45, 45) matches --brown--brown-400 / brown-400"},"body":{"v":"{color.brown-300}","t":"color","s":"Measured body and nav color rgb(74, 62, 62) matches --dim-grey-2 / brown-300"},"muted":{"v":"{color.brown-200}","t":"color","s":"Declared brown-200 #736b6b, the quieter brown step"},"on-accent":{"v":"{color.white}","t":"color","s":"Measured Start free trial text rgb(255, 255, 255)"},"link":{"v":"{color.blue-500}","t":"color","s":"Primary actions use blue-500; dedicated link colour not separately tokenised by the site"}},"border":{"default":{"v":"{color.coffee-200}","t":"color","s":"Declared --coffee-200 #e6e2e2, the light divider brown"},"strong":{"v":"{color.brown-300}","t":"color","s":"Body ink used as a strong edge where a keyline matches text"}},"accent":{"default":{"v":"{color.blue-500}","t":"color","s":"Measured Start free trial background rgb(79, 117, 254) matches --royal-blue / blue-500 #4f75fe"},"hover":{"v":"#264ddb","t":"color","s":"Measured backgroundColor on Start free trial :hover"},"on":{"v":"{color.white}","t":"color","s":"Measured text on the blue trial button"}},"status":{"danger":{"v":"{color.red}","t":"color","s":"Declared --_updated-colors-v2---secondary--red. Not observed as a form error."},"success":{"v":"{color.green}","t":"color","s":"Declared --_updated-colors-v2---secondary--green. Not observed as a toast."},"warning":{"v":"{color.orange}","t":"color","s":"Declared --_updated-colors-v2---secondary--orange."},"info":{"v":"{color.blue-500}","t":"color","s":"Declared blue-500. No separate info role was painted."}},"focus":{"ring":{"v":"#005fcc","t":"color","s":"Measured outline on Start free trial focus-visible: rgb(0, 95, 204) auto 1px. Browser default ring, not a site token."}},"button":{"secondary":{"v":"{color.brown-500}","t":"color","s":"Measured Book a demo background rgb(45, 35, 35)"},"secondary-hover":{"v":"#4a3e3e","t":"color","s":"Measured Book a demo :hover background, matches brown-300"},"ghost-hover":{"v":"rgba(245, 243, 239, 0.984)","t":"color","s":"Measured nav link :hover background, beige-500 at about 98%"}}},"dark":{}};
+const root = document.documentElement;
+function cssName(path) { return "--" + path.replaceAll(".", "-").replace(/[^a-zA-Z0-9-]/g, "-"); }
+function val(v) {
+  if (typeof v === "string") return v.replace(/\{([^{}]+)\}/g, (_, p) => `var(${cssName(p)})`);
+  return String(v);
+}
+const rows = [];
+function walk(node, prefix) {
+  for (const [k, t] of Object.entries(node || {})) {
+    if (!t || typeof t !== "object" || !("v" in t)) { walk(t, prefix + k + "."); continue; }
+    rows.push([prefix + k, t]);
+  }
+}
+walk(TOKENS.core, "core.");
+walk(TOKENS.light, "light.");
+const sw = document.getElementById("swatches");
+const table = document.getElementById("tokens");
+for (const [path, t] of rows) {
+  if (t.t === "color") {
+    const d = document.createElement("div");
+    d.className = "sw";
+    d.innerHTML = `<i style="background:${val(t.v)}"></i><div><b>${path}</b><span>${t.v}</span></div>`;
+    sw.appendChild(d);
+  }
+  const tr = document.createElement("tr");
+  tr.innerHTML = `<td><code>${path}</code></td><td>${t.t}</td><td>${t.v}</td><td>${t.s}</td>`;
+  table.appendChild(tr);
+}
+</script>
+</body>
+</html>
