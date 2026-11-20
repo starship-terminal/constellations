@@ -4,123 +4,351 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pinterest style guide</title>
-<meta name="description" content="Pinterest public signed-out tokens, rendered from tokens.json.">
 <style>
 :root {
-  --page: #ffffff;
-  --surface: #ffffff;
-  --subtle: #f6f6f3;
-  --secondary: #e5e5e0;
-  --action: #e60023;
-  --action-hover: #cc001f;
-  --action-pressed: #b2001b;
-  --inverse: #000000;
-  --text: #000000;
-  --text-secondary: #211922;
-  --subtle-text: #62625b;
-  --disabled: #91918c;
-  --on-action: #ffffff;
-  --link: #2b48d4;
-  --stroke: #91918c;
-  --decorative: #c8c8c1;
-  --focus: #435ee5;
-  --error: #b60c0c;
-  --success: #097239;
-  --warning: #b24700;
-  --info: #435ee5;
-  --radius-card: 8px;
-  --radius-field: 12px;
-  --radius-button: 16px;
-  --font: "Pin Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --palette-blue-100: #dbe1ff;
+  --palette-blue-200: #92a4ff;
+  --palette-blue-300: #677eee;
+  --palette-blue-400: #435ee5;
+  --palette-blue-50: #ebeeff;
+  --palette-blue-500: #2b48d4;
+  --palette-blue-600: #273eb0;
+  --palette-blue-700: #17287d;
+  --palette-blue-800: #0d1645;
+  --palette-grayscale-0: #ffffff;
+  --palette-grayscale-100: #e5e5e0;
+  --palette-grayscale-150: #c8c8c1;
+  --palette-grayscale-200: #91918c;
+  --palette-grayscale-25: #fbfbf9;
+  --palette-grayscale-250: #74746c;
+  --palette-grayscale-300: #62625b;
+  --palette-grayscale-350: #494943;
+  --palette-grayscale-400: #33332e;
+  --palette-grayscale-450: #242421;
+  --palette-grayscale-475: #181816;
+  --palette-grayscale-50: #f6f6f3;
+  --palette-grayscale-500: #000000;
+  --palette-green-100: #c7f0da;
+  --palette-green-200: #83ddad;
+  --palette-green-300: #2db46c;
+  --palette-green-400: #068440;
+  --palette-green-50: #e3f7ec;
+  --palette-green-500: #097239;
+  --palette-green-600: #07552b;
+  --palette-green-700: #103c25;
+  --palette-green-800: #081c11;
+  --palette-orange-100: #ffe0cc;
+  --palette-orange-200: #ffb380;
+  --palette-orange-300: #fe9752;
+  --palette-orange-400: #db5b06;
+  --palette-orange-50: #ffede0;
+  --palette-orange-500: #b24700;
+  --palette-orange-600: #943b00;
+  --palette-orange-700: #5c2500;
+  --palette-orange-800: #291000;
+  --palette-brand-pinterest: #e60023;
+  --palette-purple-100: #fbdfff;
+  --palette-purple-200: #ef9ff9;
+  --palette-purple-300: #d271df;
+  --palette-purple-400: #b331c4;
+  --palette-purple-50: #fdebff;
+  --palette-purple-500: #91289f;
+  --palette-purple-600: #7a2286;
+  --palette-purple-700: #51005c;
+  --palette-purple-800: #2d0033;
+  --palette-red-100: #ffd7d7;
+  --palette-red-200: #ff8f8f;
+  --palette-red-300: #f84f4f;
+  --palette-red-400: #dd0e0e;
+  --palette-red-50: #ffebeb;
+  --palette-red-500: #b60c0c;
+  --palette-red-600: #900909;
+  --palette-red-700: #6b0000;
+  --palette-red-800: #3d0000;
+  --space-0: 0px;
+  --space-25: 1px;
+  --space-50: 2px;
+  --space-100: 4px;
+  --space-150: 6px;
+  --space-200: 8px;
+  --space-250: 10px;
+  --space-300: 12px;
+  --space-350: 14px;
+  --space-400: 16px;
+  --space-500: 20px;
+  --space-600: 24px;
+  --space-700: 28px;
+  --space-800: 32px;
+  --space-900: 36px;
+  --space-1000: 40px;
+  --space-1100: 44px;
+  --space-1200: 48px;
+  --space-1300: 52px;
+  --space-1400: 56px;
+  --space-1500: 60px;
+  --space-1600: 64px;
+  --radius-0: 0px;
+  --radius-100: 4px;
+  --radius-150: 6px;
+  --radius-200: 8px;
+  --radius-300: 12px;
+  --radius-400: 16px;
+  --radius-500: 20px;
+  --radius-600: 24px;
+  --radius-700: 28px;
+  --radius-800: 32px;
+  --radius-pill: 999px;
+  --elevation-none: 0px 0px 0px 0px hsla(0,0%,100%,0);
+  --elevation-surface: 0px 0.5px 3px 0px rgba(0,0,0,.2);
+  --elevation-raised: 0px 1.5px 6px 0px rgba(0,0,0,.2);
+  --elevation-floating: 0px 3px 12px 0px rgba(0,0,0,.2);
+  --motion-duration-0: 0ms;
+  --motion-duration-50: 50ms;
+  --motion-duration-100: 100ms;
+  --motion-duration-150: 150ms;
+  --motion-duration-200: 200ms;
+  --motion-duration-300: 300ms;
+  --motion-duration-400: 400ms;
+  --motion-duration-500: 500ms;
+  --motion-duration-600: 600ms;
+  --motion-duration-700: 700ms;
+  --motion-duration-800: 800ms;
+  --motion-duration-900: 900ms;
+  --motion-duration-1000: 1000ms;
+  --motion-easing-linear: cubic-bezier(0,0,1,1);
+  --motion-easing-ease-in: cubic-bezier(0.3,0,0.8,0.15);
+  --motion-easing-ease-out: cubic-bezier(0.05,0.7,0.1,1);
+  --motion-easing-ease-in-out: cubic-bezier(0.8,0,0.2,1);
+  --font-family: Pin Sans, -apple-system, system-ui, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, "Apple Color Emoji", Segoe UI Emoji, Segoe UI Symbol, sans-serif;
+  --font-size-display-700: 36px;
+  --font-size-display-800: 48px;
+  --font-size-display-900: 60px;
+  --font-size-display-1000: 72px;
+  --font-size-heading-200: 14px;
+  --font-size-heading-300: 16px;
+  --font-size-heading-400: 20px;
+  --font-size-heading-500: 24px;
+  --font-size-heading-600: 28px;
+  --font-size-heading-700: 36px;
+  --font-size-ui-100: 12px;
+  --font-size-ui-200: 14px;
+  --font-size-ui-300: 16px;
+  --font-size-ui-400: 20px;
+  --font-size-body-100: 12px;
+  --font-size-body-200: 14px;
+  --font-size-body-300: 16px;
+  --font-size-body-400: 20px;
+  --font-size-compact-100: 12px;
+  --font-weight-display-700: 900;
+  --font-weight-display-800: 900;
+  --font-weight-display-900: 900;
+  --font-weight-display-1000: 900;
+  --font-weight-heading-200: 700;
+  --font-weight-heading-300: 700;
+  --font-weight-heading-400: 700;
+  --font-weight-heading-500: 700;
+  --font-weight-heading-600: 700;
+  --font-weight-heading-700: 700;
+  --font-weight-ui-100: 500;
+  --font-weight-ui-200: 500;
+  --font-weight-ui-300: 500;
+  --font-weight-ui-400: 500;
+  --font-weight-body-100-default: 400;
+  --font-weight-body-100-emphasis: 700;
+  --font-weight-body-200-default: 400;
+  --font-weight-body-200-emphasis: 700;
+  --font-weight-body-300-default: 400;
+  --font-weight-body-300-emphasis: 700;
+  --font-weight-body-400-default: 400;
+  --font-weight-body-400-emphasis: 700;
+  --font-weight-compact-100-default: 400;
+  --font-weight-compact-100-emphasis: 700;
+  --font-lineHeight-display-700: 1.1;
+  --font-lineHeight-display-800: 1.1;
+  --font-lineHeight-display-900: 1.1;
+  --font-lineHeight-display-1000: 1.1;
+  --font-lineHeight-heading-200: 1.4;
+  --font-lineHeight-heading-300: 1.4;
+  --font-lineHeight-heading-400: 1.2;
+  --font-lineHeight-heading-500: 1.1;
+  --font-lineHeight-heading-600: 1.1;
+  --font-lineHeight-heading-700: 1.1;
+  --font-lineHeight-ui-100: 1.3;
+  --font-lineHeight-ui-200: 1.2;
+  --font-lineHeight-ui-300: 1.2;
+  --font-lineHeight-ui-400: 1.2;
+  --font-lineHeight-body-100: 1.5;
+  --font-lineHeight-body-200: 1.4;
+  --font-lineHeight-body-300: 1.4;
+  --font-lineHeight-body-400: 1.4;
+  --font-lineHeight-compact-100: 1.2;
+  --typography-display: 900 48px/1.1 Pin Sans;
+  --typography-heading-1: 700 36px/1.1 Pin Sans;
+  --typography-heading-2: 700 28px/1.1 Pin Sans;
+  --typography-heading-3: 700 24px/1.1 Pin Sans;
+  --typography-heading-4: 700 20px/1.2 Pin Sans;
+  --typography-body: 400 16px/1.4 Pin Sans;
+  --typography-label: 500 14px/1.2 Pin Sans;
+  --typography-caption: 400 12px/1.5 Pin Sans;
+  --component-button-primary-default: var(--palette-brand-pinterest);
+  --component-button-primary-hover: #cc001f;
+  --component-button-primary-pressed: #b2001b;
+  --component-button-primary-text: var(--palette-grayscale-0);
+  --component-button-secondary-default: var(--palette-grayscale-100);
+  --component-button-secondary-hover: #dadad3;
+  --component-button-secondary-pressed: #cecec5;
+  --component-button-secondary-text: var(--palette-grayscale-500);
+  --component-button-tertiary-default: var(--palette-grayscale-0);
+  --component-button-tertiary-hover: var(--palette-grayscale-50);
+  --component-button-tertiary-pressed: #efefeb;
+  --component-button-tertiary-text: var(--palette-grayscale-500);
+  --component-button-radius-sm: 8px;
+  --component-button-radius-md: 12px;
+  --component-button-radius-lg: 16px;
+  --background-page: var(--palette-grayscale-0);
+  --background-surface: var(--palette-grayscale-100);
+  --background-raised: var(--palette-grayscale-0);
+  --background-subtle: var(--palette-grayscale-50);
+  --background-inverse: var(--palette-grayscale-500);
+  --background-disabled: var(--palette-grayscale-100);
+  --background-accent: var(--palette-brand-pinterest);
+  --background-accent-hover: #cc001f;
+  --background-accent-pressed: #b2001b;
+  --background-scrim: hsla(60,2%,45%,.4);
+  --text-primary: var(--palette-grayscale-500);
+  --text-secondary: var(--palette-grayscale-300);
+  --text-disabled: var(--palette-grayscale-200);
+  --text-on-accent: var(--palette-grayscale-0);
+  --text-link: var(--palette-blue-500);
+  --text-inverse: var(--palette-grayscale-0);
+  --border-default: var(--palette-grayscale-150);
+  --border-strong: var(--palette-grayscale-200);
+  --border-focus: var(--palette-blue-400);
+  --border-focus-inner: var(--palette-grayscale-0);
+  --status-success-fill: var(--palette-green-500);
+  --status-success-text: var(--palette-green-500);
+  --status-success-border: var(--palette-green-400);
+  --status-success-weak: var(--palette-green-50);
+  --status-warning-fill: var(--palette-orange-500);
+  --status-warning-text: var(--palette-orange-500);
+  --status-warning-border: var(--palette-orange-400);
+  --status-warning-weak: var(--palette-orange-50);
+  --status-error-fill: var(--palette-red-500);
+  --status-error-text: var(--palette-red-500);
+  --status-error-border: var(--palette-red-400);
+  --status-error-weak: var(--palette-red-50);
+  --status-info-fill: var(--palette-blue-400);
+  --status-info-text: var(--palette-blue-500);
+  --status-info-border: var(--palette-blue-400);
+  --status-info-weak: var(--palette-blue-50);
   color-scheme: light;
+  --sg-sans: "Pin Sans", -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, sans-serif;
+}
+[data-mode="dark"] {
+  --background-page: var(--palette-grayscale-500);
+  --background-surface: var(--palette-grayscale-450);
+  --background-raised: var(--palette-grayscale-400);
+  --background-subtle: var(--palette-grayscale-400);
+  --background-accent: var(--palette-brand-pinterest);
+  --background-accent-hover: #cc001f;
+  --background-accent-pressed: #b2001b;
+  --text-primary: var(--palette-grayscale-0);
+  --text-secondary: var(--palette-grayscale-150);
+  --text-disabled: var(--palette-grayscale-200);
+  --text-on-accent: var(--palette-grayscale-0);
+  --text-link: var(--palette-blue-200);
+  --border-default: var(--palette-grayscale-350);
+  --border-strong: var(--palette-grayscale-200);
+  --border-focus: var(--palette-blue-200);
+  --status-success-fill: var(--palette-green-500);
+  --status-success-text: var(--palette-green-500);
+  --status-success-border: var(--palette-green-400);
+  --status-success-weak: var(--palette-green-50);
+  --status-warning-fill: var(--palette-orange-500);
+  --status-warning-text: var(--palette-orange-500);
+  --status-warning-border: var(--palette-orange-400);
+  --status-warning-weak: var(--palette-orange-50);
+  --status-error-fill: var(--palette-red-500);
+  --status-error-text: var(--palette-red-500);
+  --status-error-border: var(--palette-red-400);
+  --status-error-weak: var(--palette-red-50);
+  --status-info-fill: var(--palette-blue-400);
+  --status-info-text: var(--palette-blue-500);
+  --status-info-border: var(--palette-blue-400);
+  --status-info-weak: var(--palette-blue-50);
+  color-scheme: dark;
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--page); color: var(--text); font: 400 14px/1.4 var(--font); }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 16px/1.4 var(--sg-sans); }
 .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
-h1 { font: 900 48px/1.1 var(--font); letter-spacing: -0.5px; margin: 0 0 8px; }
-h2 { font: 700 28px/1.1 var(--font); letter-spacing: -0.5px; margin: 40px 0 12px; }
-p { color: var(--text-secondary); max-width: 70ch; }
-.note { font-size: 12px; color: var(--subtle-text); }
+header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+h1 { font-size: 28px; line-height: 1.1; font-weight: 700; margin: 0; }
+h2 { font-size: 20px; margin: 36px 0 12px; }
+.switch { margin-left: auto; font-size: 14px; }
 .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
-.sw { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: center; }
-.sw i { width: 40px; height: 40px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--decorative); display: block; }
-.sw b { display: block; font-size: 12px; }
-.sw span { font-size: 12px; color: var(--subtle-text); }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 8px 16px; border: 0; border-radius: 16px; font: 400 12px/1 var(--font); cursor: pointer; }
-.btn.primary { background: var(--action); color: var(--on-action); }
-.btn.secondary { background: var(--secondary); color: var(--text); }
-.field { width: min(402px, 100%); }
-.field label { display: block; font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
-.field input { width: 100%; height: 56px; border: 1px solid var(--stroke); border-radius: 12px; padding: 16px 11px; font: 400 16px/1.4 var(--font); background: transparent; color: var(--text); }
-.field input::placeholder { color: #757575; }
-.search { height: 48px; border-radius: 12px; background: var(--secondary); display: flex; align-items: center; padding: 0 16px; color: var(--subtle-text); max-width: 619px; }
-.card { width: 180px; border-radius: 8px; overflow: hidden; background: var(--subtle); }
-.card .art { height: 120px; background: var(--secondary); }
-.card p { margin: 8px; font-size: 16px; font-weight: 700; color: var(--text); }
-.footer { margin-top: 24px; background: var(--inverse); color: var(--on-action); padding: 24px; border-radius: 8px; }
-.footer a { color: var(--link); text-decoration: none; font-weight: 500; }
-.bar { height: 80px; display: flex; align-items: center; gap: 8px; }
-.typerow { padding: 12px 0; border-bottom: 1px solid var(--decorative); }
+.swatch { width: 72px; height: 48px; border-radius: 8px; border: 1px solid var(--border-default); }
+.cap { font-size: 12px; color: var(--text-secondary); }
+.btn-primary { background: var(--background-accent); color: var(--text-on-accent); border: 0; border-radius: 16px; height: 48px; padding: 0 16px; font: 700 16px/1.2 var(--sg-sans); }
+.btn-secondary { background: var(--background-surface); color: var(--text-primary); border: 0; border-radius: 16px; height: 48px; padding: 0 16px; font: 700 16px/1.2 var(--sg-sans); }
+.search { background: var(--background-surface); color: var(--text-secondary); border-radius: 999px; height: 48px; padding: 0 16px; display: flex; align-items: center; min-width: 280px; }
+.card { background: var(--background-raised); border-radius: 16px; padding: 16px; box-shadow: var(--elevation-floating); max-width: 280px; }
+.note { color: var(--text-secondary); max-width: 70ch; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border-default); }
 </style>
 </head>
 <body>
 <div class="wrap">
+<header>
   <h1>Pinterest</h1>
-  <p>Public signed-out chrome, measured on 19 November 2026. Values come from Gestalt custom properties on the homepage and from computed styles. Pin Sans is not loaded here, so the system face stands in.</p>
-  <p class="note">Dark theme was not on the page. Screenshot frames were unavailable, so this page is the specimen.</p>
-
-  <h2>Colour</h2>
-  <div class="swatches">
-    <div class="sw"><i style="background:#ffffff"></i><div><b>page</b><span>#ffffff</span></div></div>
-    <div class="sw"><i style="background:#f6f6f3"></i><div><b>subtle</b><span>#f6f6f3</span></div></div>
-    <div class="sw"><i style="background:#e5e5e0"></i><div><b>secondary</b><span>#e5e5e0</span></div></div>
-    <div class="sw"><i style="background:#e60023"></i><div><b>action</b><span>#e60023</span></div></div>
-    <div class="sw"><i style="background:#cc001f"></i><div><b>action hover</b><span>#cc001f</span></div></div>
-    <div class="sw"><i style="background:#b2001b"></i><div><b>action pressed</b><span>#b2001b</span></div></div>
-    <div class="sw"><i style="background:#000000"></i><div><b>text</b><span>#000000</span></div></div>
-    <div class="sw"><i style="background:#211922"></i><div><b>chrome text</b><span>#211922</span></div></div>
-    <div class="sw"><i style="background:#62625b"></i><div><b>subtle text</b><span>#62625b</span></div></div>
-    <div class="sw"><i style="background:#2b48d4"></i><div><b>link</b><span>#2b48d4</span></div></div>
-    <div class="sw"><i style="background:#91918c"></i><div><b>stroke</b><span>#91918c</span></div></div>
-    <div class="sw"><i style="background:#435ee5"></i><div><b>focus</b><span>#435ee5</span></div></div>
-    <div class="sw"><i style="background:#b60c0c"></i><div><b>error</b><span>#b60c0c</span></div></div>
-    <div class="sw"><i style="background:#097239"></i><div><b>success</b><span>#097239</span></div></div>
-    <div class="sw"><i style="background:#b24700"></i><div><b>warning</b><span>#b24700</span></div></div>
-  </div>
-
-  <h2>Type</h2>
-  <div class="typerow" style="font:900 48px/1.1 var(--font);letter-spacing:-0.5px">Create the life you love on Pinterest</div>
-  <div class="typerow" style="font:700 28px/1.1 var(--font);letter-spacing:-0.5px">Welcome to Pinterest</div>
-  <div class="typerow" style="font:400 16px/1.4 var(--font)">Search for easy dinners, fashion, etc.</div>
-  <div class="typerow" style="font:400 12px/1.5 var(--font);color:#211922">Email</div>
-
-  <h2>Chrome</h2>
-  <div class="bar">
-    <strong style="font-size:18px;letter-spacing:-0.3px">Pinterest</strong>
-    <span style="padding:8px 16px">Explore</span>
-    <div class="search" style="flex:1">Search for easy dinners, fashion, etc.</div>
-    <button class="btn primary">Log in</button>
-    <button class="btn secondary">Sign up</button>
-  </div>
-
-  <h2>Signup wall</h2>
-  <p>Recorded, not submitted. Birthday and Google continue were on the page and were left alone.</p>
-  <div class="field">
-    <label>Email</label>
-    <input type="email" placeholder="Enter your email" readonly>
-  </div>
-  <div class="field" style="margin-top:12px">
-    <label>Password</label>
-    <input type="text" placeholder="Create a password" readonly>
-  </div>
-  <div style="margin-top:16px"><button class="btn primary">Continue</button></div>
-
-  <h2>Card</h2>
-  <div class="card"><div class="art"></div><p>Holiday mocktails</p></div>
-
-  <h2>Footer</h2>
-  <div class="footer">Get the app <a href="#policy">Privacy Policy</a></div>
+  <label class="switch"><input type="checkbox" id="theme"> Declared dark</label>
+</header>
+<p class="note">Values come from tokens.json, read from www.pinterest.com signed out on 2026-11-21. The public site paints light. The dark toggle applies declared inverse tokens. It is not a theme the site shipped on these pages.</p>
+<h2>Colour</h2>
+<div class="row" id="swatches"></div>
+<h2>Type</h2>
+<p style="font-size:48px;font-weight:900;line-height:1.1;margin:0">Create the life you love</p>
+<p class="cap">display, Pin Sans 48 / 900. The face is not loaded here, so the system sans stands in.</p>
+<p style="font-size:16px">Body 16 / 400. Search for easy dinners, fashion, etc.</p>
+<h2>Controls</h2>
+<div class="row">
+  <button class="btn-primary">Join Pinterest for free</button>
+  <button class="btn-secondary">I already have an account</button>
+  <div class="search">Search for easy dinners, fashion, etc.</div>
 </div>
+<h2>Card</h2>
+<div class="card">
+  <div style="height:120px;border-radius:16px;background:var(--background-subtle)"></div>
+  <p style="font-weight:700;margin:12px 0 4px">Featured board</p>
+  <p class="cap">57 Pins</p>
+</div>
+<h2>Tokens</h2>
+<table id="tokens"></table>
+</div>
+<script>
+const TOKENS = {"core":{"palette":{"blue":{"100":{"v":"#dbe1ff","t":"color"},"200":{"v":"#92a4ff","t":"color"},"300":{"v":"#677eee","t":"color"},"400":{"v":"#435ee5","t":"color"},"50":{"v":"#ebeeff","t":"color"},"500":{"v":"#2b48d4","t":"color"},"600":{"v":"#273eb0","t":"color"},"700":{"v":"#17287d","t":"color"},"800":{"v":"#0d1645","t":"color"}},"grayscale":{"0":{"v":"#ffffff","t":"color"},"100":{"v":"#e5e5e0","t":"color"},"150":{"v":"#c8c8c1","t":"color"},"200":{"v":"#91918c","t":"color"},"25":{"v":"#fbfbf9","t":"color"},"250":{"v":"#74746c","t":"color"},"300":{"v":"#62625b","t":"color"},"350":{"v":"#494943","t":"color"},"400":{"v":"#33332e","t":"color"},"450":{"v":"#242421","t":"color"},"475":{"v":"#181816","t":"color"},"50":{"v":"#f6f6f3","t":"color"},"500":{"v":"#000000","t":"color"}},"green":{"100":{"v":"#c7f0da","t":"color"},"200":{"v":"#83ddad","t":"color"},"300":{"v":"#2db46c","t":"color"},"400":{"v":"#068440","t":"color"},"50":{"v":"#e3f7ec","t":"color"},"500":{"v":"#097239","t":"color"},"600":{"v":"#07552b","t":"color"},"700":{"v":"#103c25","t":"color"},"800":{"v":"#081c11","t":"color"}},"orange":{"100":{"v":"#ffe0cc","t":"color"},"200":{"v":"#ffb380","t":"color"},"300":{"v":"#fe9752","t":"color"},"400":{"v":"#db5b06","t":"color"},"50":{"v":"#ffede0","t":"color"},"500":{"v":"#b24700","t":"color"},"600":{"v":"#943b00","t":"color"},"700":{"v":"#5c2500","t":"color"},"800":{"v":"#291000","t":"color"}},"brand":{"pinterest":{"v":"#e60023","t":"color"}},"purple":{"100":{"v":"#fbdfff","t":"color"},"200":{"v":"#ef9ff9","t":"color"},"300":{"v":"#d271df","t":"color"},"400":{"v":"#b331c4","t":"color"},"50":{"v":"#fdebff","t":"color"},"500":{"v":"#91289f","t":"color"},"600":{"v":"#7a2286","t":"color"},"700":{"v":"#51005c","t":"color"},"800":{"v":"#2d0033","t":"color"}},"red":{"100":{"v":"#ffd7d7","t":"color"},"200":{"v":"#ff8f8f","t":"color"},"300":{"v":"#f84f4f","t":"color"},"400":{"v":"#dd0e0e","t":"color"},"50":{"v":"#ffebeb","t":"color"},"500":{"v":"#b60c0c","t":"color"},"600":{"v":"#900909","t":"color"},"700":{"v":"#6b0000","t":"color"},"800":{"v":"#3d0000","t":"color"}}},"space":{"0":{"v":"0px","t":"dimension"},"25":{"v":"1px","t":"dimension"},"50":{"v":"2px","t":"dimension"},"100":{"v":"4px","t":"dimension"},"150":{"v":"6px","t":"dimension"},"200":{"v":"8px","t":"dimension"},"250":{"v":"10px","t":"dimension"},"300":{"v":"12px","t":"dimension"},"350":{"v":"14px","t":"dimension"},"400":{"v":"16px","t":"dimension"},"500":{"v":"20px","t":"dimension"},"600":{"v":"24px","t":"dimension"},"700":{"v":"28px","t":"dimension"},"800":{"v":"32px","t":"dimension"},"900":{"v":"36px","t":"dimension"},"1000":{"v":"40px","t":"dimension"},"1100":{"v":"44px","t":"dimension"},"1200":{"v":"48px","t":"dimension"},"1300":{"v":"52px","t":"dimension"},"1400":{"v":"56px","t":"dimension"},"1500":{"v":"60px","t":"dimension"},"1600":{"v":"64px","t":"dimension"}},"radius":{"0":{"v":"0px","t":"dimension"},"100":{"v":"4px","t":"dimension"},"150":{"v":"6px","t":"dimension"},"200":{"v":"8px","t":"dimension"},"300":{"v":"12px","t":"dimension"},"400":{"v":"16px","t":"dimension"},"500":{"v":"20px","t":"dimension"},"600":{"v":"24px","t":"dimension"},"700":{"v":"28px","t":"dimension"},"800":{"v":"32px","t":"dimension"},"pill":{"v":"999px","t":"dimension"}},"elevation":{"none":{"v":"0px 0px 0px 0px hsla(0,0%,100%,0)","t":"shadow"},"surface":{"v":"0px 0.5px 3px 0px rgba(0,0,0,.2)","t":"shadow"},"raised":{"v":"0px 1.5px 6px 0px rgba(0,0,0,.2)","t":"shadow"},"floating":{"v":"0px 3px 12px 0px rgba(0,0,0,.2)","t":"shadow"}},"motion":{"duration":{"0":{"v":"0ms","t":"other"},"50":{"v":"50ms","t":"other"},"100":{"v":"100ms","t":"other"},"150":{"v":"150ms","t":"other"},"200":{"v":"200ms","t":"other"},"300":{"v":"300ms","t":"other"},"400":{"v":"400ms","t":"other"},"500":{"v":"500ms","t":"other"},"600":{"v":"600ms","t":"other"},"700":{"v":"700ms","t":"other"},"800":{"v":"800ms","t":"other"},"900":{"v":"900ms","t":"other"},"1000":{"v":"1000ms","t":"other"}},"easing":{"linear":{"v":"cubic-bezier(0,0,1,1)","t":"other"},"ease-in":{"v":"cubic-bezier(0.3,0,0.8,0.15)","t":"other"},"ease-out":{"v":"cubic-bezier(0.05,0.7,0.1,1)","t":"other"},"ease-in-out":{"v":"cubic-bezier(0.8,0,0.2,1)","t":"other"}}},"font":{"family":{"v":"Pin Sans, -apple-system, system-ui, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, \"Apple Color Emoji\", Segoe UI Emoji, Segoe UI Symbol, sans-serif","t":"other"},"size":{"display-700":{"v":"36px","t":"dimension"},"display-800":{"v":"48px","t":"dimension"},"display-900":{"v":"60px","t":"dimension"},"display-1000":{"v":"72px","t":"dimension"},"heading-200":{"v":"14px","t":"dimension"},"heading-300":{"v":"16px","t":"dimension"},"heading-400":{"v":"20px","t":"dimension"},"heading-500":{"v":"24px","t":"dimension"},"heading-600":{"v":"28px","t":"dimension"},"heading-700":{"v":"36px","t":"dimension"},"ui-100":{"v":"12px","t":"dimension"},"ui-200":{"v":"14px","t":"dimension"},"ui-300":{"v":"16px","t":"dimension"},"ui-400":{"v":"20px","t":"dimension"},"body-100":{"v":"12px","t":"dimension"},"body-200":{"v":"14px","t":"dimension"},"body-300":{"v":"16px","t":"dimension"},"body-400":{"v":"20px","t":"dimension"},"compact-100":{"v":"12px","t":"dimension"}},"weight":{"display-700":{"v":"900","t":"other"},"display-800":{"v":"900","t":"other"},"display-900":{"v":"900","t":"other"},"display-1000":{"v":"900","t":"other"},"heading-200":{"v":"700","t":"other"},"heading-300":{"v":"700","t":"other"},"heading-400":{"v":"700","t":"other"},"heading-500":{"v":"700","t":"other"},"heading-600":{"v":"700","t":"other"},"heading-700":{"v":"700","t":"other"},"ui-100":{"v":"500","t":"other"},"ui-200":{"v":"500","t":"other"},"ui-300":{"v":"500","t":"other"},"ui-400":{"v":"500","t":"other"},"body-100-default":{"v":"400","t":"other"},"body-100-emphasis":{"v":"700","t":"other"},"body-200-default":{"v":"400","t":"other"},"body-200-emphasis":{"v":"700","t":"other"},"body-300-default":{"v":"400","t":"other"},"body-300-emphasis":{"v":"700","t":"other"},"body-400-default":{"v":"400","t":"other"},"body-400-emphasis":{"v":"700","t":"other"},"compact-100-default":{"v":"400","t":"other"},"compact-100-emphasis":{"v":"700","t":"other"}},"lineHeight":{"display-700":{"v":"1.1","t":"other"},"display-800":{"v":"1.1","t":"other"},"display-900":{"v":"1.1","t":"other"},"display-1000":{"v":"1.1","t":"other"},"heading-200":{"v":"1.4","t":"other"},"heading-300":{"v":"1.4","t":"other"},"heading-400":{"v":"1.2","t":"other"},"heading-500":{"v":"1.1","t":"other"},"heading-600":{"v":"1.1","t":"other"},"heading-700":{"v":"1.1","t":"other"},"ui-100":{"v":"1.3","t":"other"},"ui-200":{"v":"1.2","t":"other"},"ui-300":{"v":"1.2","t":"other"},"ui-400":{"v":"1.2","t":"other"},"body-100":{"v":"1.5","t":"other"},"body-200":{"v":"1.4","t":"other"},"body-300":{"v":"1.4","t":"other"},"body-400":{"v":"1.4","t":"other"},"compact-100":{"v":"1.2","t":"other"}}},"typography":{"display":{"v":{"fontFamily":"Pin Sans","fontSize":"48px","fontWeight":"900","lineHeight":"1.1"},"t":"typography"},"heading-1":{"v":{"fontFamily":"Pin Sans","fontSize":"36px","fontWeight":"700","lineHeight":"1.1"},"t":"typography"},"heading-2":{"v":{"fontFamily":"Pin Sans","fontSize":"28px","fontWeight":"700","lineHeight":"1.1"},"t":"typography"},"heading-3":{"v":{"fontFamily":"Pin Sans","fontSize":"24px","fontWeight":"700","lineHeight":"1.1"},"t":"typography"},"heading-4":{"v":{"fontFamily":"Pin Sans","fontSize":"20px","fontWeight":"700","lineHeight":"1.2"},"t":"typography"},"body":{"v":{"fontFamily":"Pin Sans","fontSize":"16px","fontWeight":"400","lineHeight":"1.4"},"t":"typography"},"label":{"v":{"fontFamily":"Pin Sans","fontSize":"14px","fontWeight":"500","lineHeight":"1.2"},"t":"typography"},"caption":{"v":{"fontFamily":"Pin Sans","fontSize":"12px","fontWeight":"400","lineHeight":"1.5"},"t":"typography"}},"component":{"button":{"primary":{"default":{"v":"{palette.brand.pinterest}","t":"color"},"hover":{"v":"#cc001f","t":"color"},"pressed":{"v":"#b2001b","t":"color"},"text":{"v":"{palette.grayscale.0}","t":"color"}},"secondary":{"default":{"v":"{palette.grayscale.100}","t":"color"},"hover":{"v":"#dadad3","t":"color"},"pressed":{"v":"#cecec5","t":"color"},"text":{"v":"{palette.grayscale.500}","t":"color"}},"tertiary":{"default":{"v":"{palette.grayscale.0}","t":"color"},"hover":{"v":"{palette.grayscale.50}","t":"color"},"pressed":{"v":"#efefeb","t":"color"},"text":{"v":"{palette.grayscale.500}","t":"color"}},"radius":{"sm":{"v":"8px","t":"dimension"},"md":{"v":"12px","t":"dimension"},"lg":{"v":"16px","t":"dimension"}}}}},"light":{"background":{"page":{"v":"{palette.grayscale.0}","t":"color"},"surface":{"v":"{palette.grayscale.100}","t":"color"},"raised":{"v":"{palette.grayscale.0}","t":"color"},"subtle":{"v":"{palette.grayscale.50}","t":"color"},"inverse":{"v":"{palette.grayscale.500}","t":"color"},"disabled":{"v":"{palette.grayscale.100}","t":"color"},"accent":{"v":"{palette.brand.pinterest}","t":"color"},"accent-hover":{"v":"#cc001f","t":"color"},"accent-pressed":{"v":"#b2001b","t":"color"},"scrim":{"v":"hsla(60,2%,45%,.4)","t":"color"}},"text":{"primary":{"v":"{palette.grayscale.500}","t":"color"},"secondary":{"v":"{palette.grayscale.300}","t":"color"},"disabled":{"v":"{palette.grayscale.200}","t":"color"},"on-accent":{"v":"{palette.grayscale.0}","t":"color"},"link":{"v":"{palette.blue.500}","t":"color"},"inverse":{"v":"{palette.grayscale.0}","t":"color"}},"border":{"default":{"v":"{palette.grayscale.150}","t":"color"},"strong":{"v":"{palette.grayscale.200}","t":"color"},"focus":{"v":"{palette.blue.400}","t":"color"},"focus-inner":{"v":"{palette.grayscale.0}","t":"color"}},"status":{"success":{"fill":{"v":"{palette.green.500}","t":"color"},"text":{"v":"{palette.green.500}","t":"color"},"border":{"v":"{palette.green.400}","t":"color"},"weak":{"v":"{palette.green.50}","t":"color"}},"warning":{"fill":{"v":"{palette.orange.500}","t":"color"},"text":{"v":"{palette.orange.500}","t":"color"},"border":{"v":"{palette.orange.400}","t":"color"},"weak":{"v":"{palette.orange.50}","t":"color"}},"error":{"fill":{"v":"{palette.red.500}","t":"color"},"text":{"v":"{palette.red.500}","t":"color"},"border":{"v":"{palette.red.400}","t":"color"},"weak":{"v":"{palette.red.50}","t":"color"}},"info":{"fill":{"v":"{palette.blue.400}","t":"color"},"text":{"v":"{palette.blue.500}","t":"color"},"border":{"v":"{palette.blue.400}","t":"color"},"weak":{"v":"{palette.blue.50}","t":"color"}}}},"dark":{"background":{"page":{"v":"{palette.grayscale.500}","t":"color"},"surface":{"v":"{palette.grayscale.450}","t":"color"},"raised":{"v":"{palette.grayscale.400}","t":"color"},"subtle":{"v":"{palette.grayscale.400}","t":"color"},"accent":{"v":"{palette.brand.pinterest}","t":"color"},"accent-hover":{"v":"#cc001f","t":"color"},"accent-pressed":{"v":"#b2001b","t":"color"}},"text":{"primary":{"v":"{palette.grayscale.0}","t":"color"},"secondary":{"v":"{palette.grayscale.150}","t":"color"},"disabled":{"v":"{palette.grayscale.200}","t":"color"},"on-accent":{"v":"{palette.grayscale.0}","t":"color"},"link":{"v":"{palette.blue.200}","t":"color"}},"border":{"default":{"v":"{palette.grayscale.350}","t":"color"},"strong":{"v":"{palette.grayscale.200}","t":"color"},"focus":{"v":"{palette.blue.200}","t":"color"}},"status":{"success":{"fill":{"v":"{palette.green.500}","t":"color"},"text":{"v":"{palette.green.500}","t":"color"},"border":{"v":"{palette.green.400}","t":"color"},"weak":{"v":"{palette.green.50}","t":"color"}},"warning":{"fill":{"v":"{palette.orange.500}","t":"color"},"text":{"v":"{palette.orange.500}","t":"color"},"border":{"v":"{palette.orange.400}","t":"color"},"weak":{"v":"{palette.orange.50}","t":"color"}},"error":{"fill":{"v":"{palette.red.500}","t":"color"},"text":{"v":"{palette.red.500}","t":"color"},"border":{"v":"{palette.red.400}","t":"color"},"weak":{"v":"{palette.red.50}","t":"color"}},"info":{"fill":{"v":"{palette.blue.400}","t":"color"},"text":{"v":"{palette.blue.500}","t":"color"},"border":{"v":"{palette.blue.400}","t":"color"},"weak":{"v":"{palette.blue.50}","t":"color"}}}}};
+document.getElementById("theme").addEventListener("change", (e) => {
+  document.documentElement.dataset.mode = e.target.checked ? "dark" : "light";
+});
+const roles = ["background-page","background-surface","background-accent","text-primary","text-secondary","border-default"];
+const host = document.getElementById("swatches");
+for (const id of roles) {
+  const el = document.createElement("div");
+  el.innerHTML = `<div class="swatch" style="background:var(--${id})"></div><div class="cap">${id}</div>`;
+  host.appendChild(el);
+}
+const table = document.getElementById("tokens");
+function rows(node, prefix) {
+  for (const [k, v] of Object.entries(node || {})) {
+    if (v && v.v !== undefined) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td><code>${prefix}${k}</code></td><td>${typeof v.v === "object" ? JSON.stringify(v.v) : v.v}</td><td>${v.t}</td>`;
+      table.appendChild(tr);
+    } else if (v && typeof v === "object") rows(v, prefix + k + ".");
+  }
+}
+rows(TOKENS.light, "light.");
+rows(TOKENS.core.typography, "typography.");
+</script>
 </body>
 </html>
