@@ -15,7 +15,7 @@ The marketing site paints ink (#191e49) on cream (#fcfafa), with one magenta acc
 | [patterns.md](patterns.md) | How the shell, pricing calculator, feature pages and walls fit together. |
 | [components/](components/) | 61 element crops in `crops/`, named `{component}-{state}.png`. |
 | icons/ | Not present. Marketing icons are brand artwork and are not extracted (docs/RIGHTS.md). |
-| [screenshots/](screenshots/) | 72 page captures, `{page}-light-{state}.png`. Phone shots use a `mobile-` prefix. |
+| [screenshots/](screenshots/) | 62 page captures, `{page}-light-{state}.png`. Phone shots use a `mobile-` prefix. |
 | [raw/](raw/) | `components-computed.json`, `css-vars.json`. Full-colour shots stay outside the repo at `~/.design-systems/mangomint/raw-shots/`. |
 | [site-tree.md](site-tree.md) | Which control opens which page, menu, dialog, or wall. Written before the screenshots. |
 | [tools/](tools/) | Capture scripts and the builders. See Rebuild. |

@@ -81,7 +81,7 @@ Control: button `aria-label="Toggle the navigation"`. Opens a full-height drawer
 
 | Control | Opens |
 |---|---|
-| WATCH A VIDEO TOUR (button, class `videoSelectionButton`) | Intended video dialog. In headless Chromium the dialog did not mount (no iframe, no dialog role). Recorded as not captured. |
+| WATCH A VIDEO TOUR (button, class `videoSelectionButton`) | A dialog titled "Which best describes your business?" with 12 business-type choices and a Watch video button. Shot: `screenshots/home-light-video-tour.png`. No type was selected and Watch video was not pressed. That choice is a survey step, so the video itself was not reached. |
 | Carousel tabs: CALENDAR, AI RECEPTIONIST, ONLINE BOOKING, SALES & POS, PHONE, MARKETING (and matching Slide 0–5 buttons) | Switches the hero product demo on the same page. Public demo, not the signed-in app. |
 | Wistia buttons (customer names and studio names) | Intended testimonial video popover. Not opened: third-party player, and several labels include a person's name. |
 | Try it now | https://www.mangomint.com/trial/ |
