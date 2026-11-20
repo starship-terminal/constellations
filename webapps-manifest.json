@@ -2646,9 +2646,9 @@
       "description": "The world's most realistic & expressive voice AI",
       "status": "pending",
       "package": null,
-      "notes": "https://app.hume.ai/log-in asks for email and password, or Google or Apple. No code was sent.",
+      "notes": "https://app.hume.ai/log-in asks for email and password, or Google or Apple. No code was sent. Public walk 2026-11-21: announcement and Products opened the five product pages. Solutions opened Model Builders and Agent Builders. Benchmarks opened /benchmark. Resources opened docs, blog, research, publications, about, careers, and the latest post. Talk to Hume opened /contact-form. See a Demo opened an email dialog that was not submitted. VoiceEQ and Prism loaded publicly and are not in the menu. Log in stops at https://app.hume.ai/log-in and https://platform.hume.ai. Both were not entered. No form was submitted. Public package already on main. Site tree added in PR 1532 at 476d5738972. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 8
     },
     {
