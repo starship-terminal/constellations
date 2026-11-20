@@ -81,6 +81,23 @@ class RebuildTest(unittest.TestCase):
         labelled = [p for p, t in leaves(tokens) if str(t.get("$extensions", {}).get("source", "")).startswith(HAND)]
         self.assertEqual(sorted(labelled), sorted(hand))
 
+    def test_accent_follows_the_measured_cta(self):
+        tokens = json.loads((PKG / "tokens.json").read_text())
+        for theme in ("light", "dark"):
+            self.assertEqual(tokens[theme]["accent"]["default"]["$value"], "{background.action}", theme)
+
+    def test_build_refuses_a_layout_without_the_app_readings(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            copy = pathlib.Path(tmp) / "pkg"
+            shutil.copytree(PKG, copy, ignore=shutil.ignore_patterns("__pycache__"))
+            layout = copy / "raw" / "layout.json"
+            data = json.loads(layout.read_text())
+            del data["pages"]["app-inbox-1440"]
+            layout.write_text(json.dumps(data))
+            run = subprocess.run([sys.executable, str(copy / "tools" / "build_tokens.py")], capture_output=True, text=True)
+            self.assertNotEqual(run.returncode, 0)
+            self.assertIn("pages.app-inbox-1440", run.stderr)
+
 
 if __name__ == "__main__":
     unittest.main()

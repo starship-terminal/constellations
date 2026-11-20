@@ -14,7 +14,9 @@ const [workspace, token] = fs.readFileSync(AUTH, 'utf8').trim().split('\n');
 const SPACE = `https://lemni.com/s/${workspace}`;
 const OUT = path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { _meta: {}, components: {} };
-out._meta = { ...out._meta, read: new Date().toLocaleDateString('en-CA'), product: 'Lemni', route: 'public-web+signed-in-free' };
+const TODAY = new Date().toLocaleDateString('en-CA');
+// _meta.read is the date of the latest run; each component's own `read` says when it was measured.
+out._meta = { ...out._meta, read: TODAY, product: 'Lemni', route: 'public-web+signed-in-free' };
 out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
@@ -79,7 +81,9 @@ async function forcePseudo(loc, classes) {
 }
 
 function comp(key, meta) {
-  out.components[key] = { page: current, url: meta.url, states: {}, ...meta };
+  // Each component carries the date it was read, so a partial run that leaves
+  // other components untouched does not pass their readings off as today's.
+  out.components[key] = { page: current, url: meta.url, read: TODAY, states: {}, ...meta };
   return out.components[key];
 }
 

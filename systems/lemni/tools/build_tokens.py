@@ -93,6 +93,13 @@ core = {}
 
 LAYOUT = json.loads((RAW / "layout.json").read_text())["pages"]
 
+
+def layout_page(name):
+    """A page reading in raw/layout.json; refuse to build without it."""
+    if name not in LAYOUT:
+        raise SystemExit(f"raw/layout.json has no pages.{name}: tools/capture/layout.mjs keeps the readings it does not take, so restore this one from git rather than rebuilding without it")
+    return LAYOUT[name]
+
 # Values with no raw reading behind them: typed in at capture time. They are kept
 # (the style guide and the Do and don't use them) but labelled as reconstructions.
 RECON = "Reconstruction: entered by hand at capture time; no raw reading holds this value"
@@ -120,7 +127,7 @@ def color_of(key, state, prop):
 
 
 def body_bg(page):
-    return norm_color(LAYOUT[page]["bodyBg"]), f"measured document.body backgroundColor in raw/layout.json pages.{page}"
+    return norm_color(layout_page(page)["bodyBg"]), f"measured document.body backgroundColor in raw/layout.json pages.{page}"
 
 
 # Palette. Steps are the colours the pages actually paint, named by role.
@@ -282,15 +289,15 @@ pairs = {
     "text.link": ((color_of("pricing-title", "default", "text.color")[0], "the current nav item is black, not a blue link"), color_of("nav-continue", "default", "text.color")),
     "border.stroke": (("rgba(0, 0, 0, 0.05)", "declared --border-color #0000000d on a light hairline preset"), ("rgba(255, 255, 255, 0.1)", "declared --border-color #ffffff1a on a dark hairline preset")),
     "border.focus": (("#000000", "keyboard focus on the light bar does not paint a separate ring; the current item is black"), ("#e3e8ff", "keyboard focus on the dark bar does not paint a separate ring")),
-    "accent.default": (("#000000", "the light CTA is black, not a hue"), ("rgba(0, 0, 0, 0.8)", "the dark CTA is a glass black pill")),
+    "accent.default": (("{background.action}", "alias of background.action: the light CTA fill (plan-cta), black, not a hue"), ("{background.action}", "alias of background.action: the dark CTA fill (hero-continue), a glass black pill")),
 }
 for path, ((lv, ls), (dv, ds)) in pairs.items():
     parts = path.split(".")
-    put(light, parts, tok(lv if lv.startswith("rgba") or lv.startswith("#") else norm_color(lv), "color", ls))
-    put(dark, parts, tok(dv if dv.startswith("rgba") or dv.startswith("#") else norm_color(dv), "color", ds))
+    put(light, parts, tok(lv if lv.startswith(("rgba", "#", "{")) else norm_color(lv), "color", ls))
+    put(dark, parts, tok(dv if dv.startswith(("rgba", "#", "{")) else norm_color(dv), "color", ds))
 
-put(light, ["background", "sidebar"], tok(norm_color(LAYOUT["app-inbox-1440"]["sidebar"]["bg"]), "color", "measured workplace sidebar backgroundColor in raw/layout.json pages.app-inbox-1440 (/s/XXXXX/inbox)"))
-put(light, ["background", "overlay"], tok(norm_color(LAYOUT["app-settings-1440"]["overlay"]["bg"]), "color", "measured workplace settings overlay in raw/layout.json pages.app-settings-1440 (/s/XXXXX/inbox?workspaceSettings=members)"))
+put(light, ["background", "sidebar"], tok(norm_color(layout_page("app-inbox-1440")["sidebar"]["bg"]), "color", "measured workplace sidebar backgroundColor in raw/layout.json pages.app-inbox-1440 (/s/XXXXX/inbox)"))
+put(light, ["background", "overlay"], tok(norm_color(layout_page("app-settings-1440")["overlay"]["bg"]), "color", "measured workplace settings overlay in raw/layout.json pages.app-settings-1440 (/s/XXXXX/inbox?workspaceSettings=members)"))
 _v, _s = color_of("app-add-webpage", "default", "text.color")
 put(light, ["text", "disabled"], tok(_v, "color", _s))
 light["$description"] = "The light theme pricing, docs, blog, company, brand, changelog, support, privacy, the sign-in shell and the signed-in free product paint. Ground #f6f6f8, ink black, CTA a black pill. App controls use 8px radius."

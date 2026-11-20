@@ -43,7 +43,12 @@ const pages = [
 ];
 
 const browser = await chromium.launch();
-const out = { readAt: new Date().toLocaleDateString('en-CA'), pages: {} };
+const TODAY = new Date().toLocaleDateString('en-CA');
+// Keep the pages this script does not read (the signed-in app-inbox-1440 and
+// app-settings-1440 readings build_tokens.py needs) and the date each was read.
+const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { pages: {} };
+const out = { readAt: TODAY, pages: { ...(prev.pages || {}) } };
+for (const [k, v] of Object.entries(out.pages)) if (v && !v.readAt && prev.readAt) v.readAt = prev.readAt;
 for (const [key, url, mobile] of pages) {
   const ctx = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
@@ -54,7 +59,7 @@ for (const [key, url, mobile] of pages) {
   if (await clearChallenge(page, { tries: 5, step: 1000 })) {
     await page.waitForTimeout(2500);
     await closePromo(page);
-    out.pages[key] = await page.evaluate(reader);
+    out.pages[key] = { ...(await page.evaluate(reader)), readAt: TODAY };
     console.log(key, out.pages[key].bodyBg, 'nav', out.pages[key].nav && out.pages[key].nav.h, 'h1', out.pages[key].h1 && out.pages[key].h1.text);
   } else console.log('blocked', key);
   await ctx.close();
