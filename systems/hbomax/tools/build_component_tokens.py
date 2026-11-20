@@ -253,8 +253,11 @@ for comp, state, key, prop, desc in [
             meas[key] = {"value": v, "type": "color",
                          "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)",
                          "description": desc}
+        else:
+            err = C[comp]["states"][state].get("error")
+            GAPS.append(f"dark.measured.{key} ({comp} {state}: {'the reading is an error' if err else 'transparent or empty'})")
     except KeyError:
-        pass
+        GAPS.append(f"dark.measured.{key} ({comp} {state}: not captured)")
 
 # ------------------------------------------------------------------ component
 
