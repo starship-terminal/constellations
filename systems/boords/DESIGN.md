@@ -107,6 +107,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **One theme only.** The site paints light everywhere; the dark footer is a section style. `tokens.json` ships no dark set.
 - **The tokens are measured, not declared.** boords.com compiles Tailwind to classes; only a few component-scoped vars exist. Every token cites the measurement it came from — that is the honest provenance.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
+- **Some states were taken without their options.** The capture put `fillText` and `cropLoc` where they were ignored, so `timer-field` filled was typed with the default `name@example.com` rather than a script line, and the `nav-trigger-open` crop shows only the trigger, not the opened flyout. The script now passes them as options (not run since); the readings stand as labelled by their `via`.
 
 ### Do and don't (from README.md)
 

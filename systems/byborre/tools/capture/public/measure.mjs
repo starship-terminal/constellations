@@ -148,6 +148,9 @@ async function measure(key, state, target, opts = {}) {
 }
 
 async function S(key, target, list, meta = {}, opts = {}) {
+  // meta is the entry's description only; an option placed here (fillText, cropLoc,
+  // noToggle...) would be silently ignored, so refuse it
+  for (const k of Object.keys(meta)) if (!['group', 'title', 'desc', 'sel'].includes(k)) throw new Error(`S(${key}): '${k}' is an option; pass it in opts`);
   const prev = out.components[key];
   const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
@@ -395,7 +398,7 @@ async function contact() {
   await sheetsFor('contact');
   const g = G.contact;
   await S('contact-title', q('h1').filter({ hasText: /Contact us|create together/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Contact title', desc: 'The "Contact us" heading.', sel: 'h1' }, { noScroll: true });
-  await S('text-field', q('input[name="firstname"]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Text field', desc: 'The First-name input; focused and given sample text that was deleted again — nothing sent.', sel: 'input[name=firstname]', fillText: 'Kai' });
+  await S('text-field', q('input[name="firstname"]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Text field', desc: 'The First-name input; focused and given sample text that was deleted again — nothing sent.', sel: 'input[name=firstname]' }, { fillText: 'Sample' });
   await S('email-field', q('input[name="email"]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Email field', desc: 'The Email input on the contact form; focused only.', sel: 'input[name=email]' });
   await S('select-field', q('select[name="inquiry"], select').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Select', desc: 'The inquiry-type select; focused only, never changed.', sel: 'select[name=inquiry]' });
   await S('text-area', q('textarea[name="project_description"], textarea').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Text area', desc: 'The project-description textarea; focused only, never typed into.', sel: 'textarea' });

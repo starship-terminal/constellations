@@ -142,6 +142,9 @@ async function measure(key, state, target, opts = {}) {
 }
 
 async function S(key, target, list, meta = {}, opts = {}) {
+  // meta is the entry's description only; an option placed here (fillText, cropLoc,
+  // noToggle...) would be silently ignored, so refuse it
+  for (const k of Object.keys(meta)) if (!['group', 'title', 'desc', 'sel'].includes(k)) throw new Error(`S(${key}): '${k}' is an option; pass it in opts`);
   const prev = out.components[key];
   const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
@@ -280,7 +283,7 @@ async function home() {
   await S('utility-bar', q('nav.bb-that').first(), ['default'], { group: g, title: 'Utility bar', desc: 'The thin top strip: "Bloomberg the Company & Its Products", Terminal demo, Anywhere login, customer support.', sel: 'nav.bb-that' }, { noScroll: true });
   const util = q('button, a').filter({ hasText: /Bloomberg the Company/i }).first();
   await S('utility-toggle', util, B4, { group: g, title: 'Company sitemap toggle', desc: 'Opens the "Bloomberg the Company & Its Products" sitemap dropdown.', sel: 'button:has-text("Bloomberg the Company")' }, { noScroll: true });
-  await S('utility-toggle-open', util, ['opened'], { group: g, title: 'Company sitemap, open', desc: 'The toggle after its own press; the dropdown shows in the crop of the opened panel.', sel: 'button:has-text("Bloomberg the Company")', noToggle: false }, { noScroll: true, cropLoc: q('nav.bb-that').first(), allowLink: true });
+  await S('utility-toggle-open', util, ['opened'], { group: g, title: 'Company sitemap, open', desc: 'The toggle after its own press; the dropdown shows in the crop of the opened panel.', sel: 'button:has-text("Bloomberg the Company")' }, { noScroll: true, cropLoc: q('nav.bb-that').first() });
   await page.keyboard.press('Escape'); await page.waitForTimeout(500);
   await S('logo-bar', q('[class*="nav-ui-LogoBar__bar"]').first(), ['default'], { group: g, title: 'Logo bar', desc: 'The black bar: wordmark, Sign In, Subscribe, search.', sel: '[class*="nav-ui-LogoBar__bar"]' }, { noScroll: true });
   await S('logo', q('a[class*="nav-ui-Logo__logo"]').first(), ['default'], { group: g, title: 'Logo', sel: 'a[class*="nav-ui-Logo__logo"]' }, { noScroll: true });
