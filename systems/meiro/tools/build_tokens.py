@@ -158,8 +158,8 @@ core = {
         "button-hero": dim("56px", "hero Get started button height on meiro.cc"),
         "app-control": dim("50px", "email button and input height on app.meiro.cc/login"),
         "app-card": dim("520px", "sign-in card width on app.meiro.cc/login at 1440"),
-        "content": dim("1080px", "plan row width worked out from three measured 332px plan cards plus their gaps on meiro.cc/pricing (raw/states.json); the row itself was not read",
-                       evidence="Derived"),
+        "content": dim("1080px", HAND + "A content width chosen for the plan row. The three 332px plan cards in raw/states.json start at x 144, 554 and 964, a 1152px span, so 1080px is not derived from them",
+                       evidence="Reconstruction"),
     },
     "border": {
         "field": dim("1px", "email input border width on app.meiro.cc/forgot-password"),
@@ -250,6 +250,11 @@ def leaves(node, path=""):
             yield from leaves(v, here)
 
 
+CHANNEL = r"\s*\d{1,3}\s*"
+COLOR = (r"#[0-9a-f]{6}([0-9a-f]{2})?"
+         rf"|rgb\({CHANNEL},{CHANNEL},{CHANNEL}\)|rgba\({CHANNEL},{CHANNEL},{CHANNEL},\s*(0|1|0?\.\d+)\s*\)")
+
+
 def check(doc):
     """The kit's guards: every alias resolves (dark first, then core), every leaf has a source
     and an evidence label, and dimensions and colours have DTCG shapes. Raises before writing."""
@@ -268,11 +273,12 @@ def check(doc):
                     if ref not in local and ref not in core_names:
                         raise SystemExit(f"{setname}.{path}: alias {{{ref}}} resolves to nothing")
             v = tok["$value"]
-            if isinstance(v, str) and not v.startswith("{"):
-                if tok["$type"] == "dimension" and not re.fullmatch(r"-?\d*\.?\d+(px|rem)", v):
-                    raise SystemExit(f"{setname}.{path}: dimension {v!r}")
-                if tok["$type"] == "color" and not re.fullmatch(r"#[0-9a-f]{6}([0-9a-f]{2})?|rgba?\([^)]*\)", v):
-                    raise SystemExit(f"{setname}.{path}: colour {v!r}")
+            if isinstance(v, str) and v.startswith("{"):
+                continue
+            if tok["$type"] == "dimension" and not (isinstance(v, str) and re.fullmatch(r"-?\d*\.?\d+(px|rem)", v)):
+                raise SystemExit(f"{setname}.{path}: dimension {v!r}")
+            if tok["$type"] == "color" and not (isinstance(v, str) and re.fullmatch(COLOR, v)):
+                raise SystemExit(f"{setname}.{path}: colour {v!r}")
 
 
 check(doc)
