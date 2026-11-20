@@ -298,7 +298,7 @@
     "system": {
      "value": "Arial, Helvetica, sans-serif",
      "type": "fontFamily",
-     "source": "the fallback tail of the measured fontFamily stack",
+     "source": "the fallback tail of the measured fontFamily of hero-h1 default on grow.google's US edition (raw/components-computed.json)",
      "description": "The fallback tail the flex stack declares."
     }
    },
@@ -364,7 +364,7 @@
      "fontSize": "28px",
      "fontWeight": 400,
      "lineHeight": "36px",
-     "letterSpacing": "normal"
+     "letterSpacing": "0px"
     },
     "type": "typography",
     "source": "measured typography of h2 default on grow.google's US edition (raw/components-computed.json): Google Sans Flex 28px/36px 400, ls normal",
@@ -400,7 +400,7 @@
      "fontSize": "14px",
      "fontWeight": 400,
      "lineHeight": "21px",
-     "letterSpacing": "normal"
+     "letterSpacing": "0px"
     },
     "type": "typography",
     "source": "measured typography of body-p default on grow.google's US edition (raw/components-computed.json): Google Sans Flex 14px/21px 400, ls normal",
@@ -559,10 +559,10 @@
    },
    "page": {
     "x": {
-     "value": "0px",
+     "value": "72px",
      "type": "dimension",
-     "source": "measured content-column inset (72px) at 1440 on grow.google's US edition (raw/components-computed.json)",
-     "description": "The 72px page inset: content starts at x=72 on a 1440 canvas (the 1296px column)."
+     "source": "measured rect.x (the content-column inset at 1440) of card default on grow.google's US edition (raw/components-computed.json)",
+     "description": "The page inset: the announcement card, the video teaser and the FAQ rows all start at x=72 on a 1440 canvas (the 1296px column)."
     }
    }
   },
@@ -875,15 +875,16 @@
   },
   "banner": {
    "bg": {
-    "value": "#ffffff",
+    "value": "rgba(0, 0, 0, 0)",
     "type": "color",
-    "source": "measured backgroundColor of promo-banner default on grow.google's US edition (raw/components-computed.json)"
+    "source": "measured backgroundColor of promo-banner default on grow.google's US edition (raw/components-computed.json)",
+    "description": "The promo paragraph itself paints nothing (transparent); the bar's fill is on an ancestor the capture did not measure, so it is not recorded (recapture needed, see the README's gaps)."
    },
    "link": {
-    "value": "#3186ff",
+    "value": "#ffffff",
     "type": "color",
     "source": "measured color of promo-banner default on grow.google's US edition (raw/components-computed.json)",
-    "description": "The promo copy colour; the Enroll now tail is a filled pill."
+    "description": "The promo copy colour: white type on the bar's fill (the fill itself was not measured)."
    }
   },
   "tab": {
@@ -1040,11 +1041,6 @@
     }
    },
    "banner": {
-    "bg": {
-     "value": "{banner.bg}",
-     "type": "color",
-     "source": "alias to the measured promo banner paint"
-    },
     "height": {
      "value": "{geometry.banner.height}",
      "type": "dimension",
