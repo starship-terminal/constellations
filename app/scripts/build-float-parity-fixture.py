@@ -52,6 +52,11 @@ TOKENS = {
             "$value": {"colorSpace": "srgb", "components": [1.0, 0.5, 0.0], "alpha": 1.0},
             "$type": "color",
         },
+        # 0.3 and 0.7 land on .5 after * 255; round() takes the even side.
+        "half": {
+            "$value": {"colorSpace": "srgb", "components": [0.3, 0.7, 0.5], "alpha": 0.3},
+            "$type": "color",
+        },
     }
 }
 # Written with the spellings a real file uses, which json.dumps would normalise.
@@ -66,6 +71,10 @@ TOKENS_TEXT = """{
     "legacy": {"value": 2.0, "type": "number"},
     "wash": {
       "$value": {"colorSpace": "srgb", "components": [1.0, 0.5, 0.0], "alpha": 1.0},
+      "$type": "color"
+    },
+    "half": {
+      "$value": {"colorSpace": "srgb", "components": [0.3, 0.7, 0.5], "alpha": 0.3},
       "$type": "color"
     }
   }

@@ -4,15 +4,21 @@
   "font": {
    "family": {
     "sans": {
-     "value": "booton, \"Booton VF\", sans-serif",
+     "value": "booton, \"booton Fallback\", system-ui, Roboto, Arial, sans-serif",
      "type": "fontFamily",
-     "source": "computed fontFamily of nav-link, signup-cta, pr-card, st-prose, site-footer (raw/components-computed.json); the auth card reads 'Booton VF'",
-     "description": "Booton — UI, body copy, nav, buttons and every form control."
+     "source": "computed fontFamily of nav-link, signup-cta, flow-tab, pr-toggle (raw/components-computed.json); pr-card, pr-cta, site-footer and st-prose compute the same stack with Tailwind's fallback list repeated after it",
+     "description": "Booton — UI, body copy, nav, buttons and every form control on descript.com."
+    },
+    "auth": {
+     "value": "\"Booton VF\", system-ui, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of au-email, au-email-btn, au-google, au-password, au-sso (raw/components-computed.json)",
+     "description": "Booton VF — the auth card on web.descript.com names the variable face instead of booton."
     },
     "label": {
-     "value": "brett, \"brett Fallback\", sans-serif",
+     "value": "brett, \"brett Fallback\", system-ui, Roboto, Arial, sans-serif",
      "type": "fontFamily",
-     "source": "computed fontFamily of hero-eyebrow, pr-eyebrow (raw/components-computed.json)",
+     "source": "computed fontFamily of hero-eyebrow, pr-eyebrow, m-eyebrow (raw/components-computed.json)",
      "description": "Brett — the small uppercase eyebrow labels."
     },
     "display": {

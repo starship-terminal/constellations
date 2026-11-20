@@ -22,7 +22,10 @@ SCRIPTS = [KIT] + COPIES
 # designmodo judges a sheet by the tiles' own recorded dimensionCheck and writes a failing sidecar for a
 # tile it cannot vouch for, instead of none; that is deliberate, so its tests expect "fail" where the rest expect no file.
 RECORDED = [s for s in SCRIPTS if "recorded checks" in s.read_text()]
-UNMEASURED_NONE = [s for s in SCRIPTS if "def check_tiles" not in s.read_text() and s not in RECORDED]
+# Copies that refuse an incomplete or unmeasured tile set outright (the kit's check_tiles, and the
+# package copies that carried it first); the rest write no sidecar for a set they cannot vouch for.
+CHECKED = [s for s in SCRIPTS if "def check_tiles" in s.read_text()]
+UNMEASURED_NONE = [s for s in SCRIPTS if s not in CHECKED and s not in RECORDED]
 
 
 def sidecar(name, w, h, y=0, dpr=1):
@@ -73,8 +76,16 @@ class QuantizeSidecarTest(unittest.TestCase):
                 (self.raw / f"long.part{i}.png.capture.json").write_text(json.dumps(meta))
             y += h
 
+    def run_refused(self):
+        done = subprocess.run([sys.executable, str(self.script), str(self.raw)], capture_output=True, text=True)
+        self.assertNotEqual(done.returncode, 0, "an incomplete tile set was stitched")
+        self.assertIn("quantize:", done.stderr)
+        self.assertFalse((self.pkg / "screenshots" / "long.png").exists())
+        return done.stderr
+
     def each(self, body, scripts=SCRIPTS):
         """Run body() once per script, each in a fresh scratch package, reporting each script apart."""
+        self.assertTrue(scripts, "the filter that picks these scripts matched none")
         for source in scripts:
             with self.subTest(script=str(source.relative_to(ROOT))):
                 shutil.rmtree(self.tmp.name, ignore_errors=True)
@@ -189,6 +200,45 @@ class QuantizeSidecarTest(unittest.TestCase):
                 f.unlink()
             self.assertFalse((self.run_quantize() / "long.png.capture.json").exists())
         self.each(body, UNMEASURED_NONE)
+
+    def test_the_script_groups_are_what_the_tests_assume(self):
+        self.assertIn(KIT, CHECKED)
+        self.assertEqual(len(RECORDED), 1, RECORDED)
+        self.assertTrue(UNMEASURED_NONE)
+
+    def test_an_incomplete_tile_set_is_refused(self):
+        # A run that lost a tile used to publish the tiles that survived as a shorter sheet marked pass.
+        def missing_sidecar():
+            self.tiles((6, 4)); (self.raw / "long.part1.png.capture.json").unlink()
+            self.assertIn("no .capture.json", self.run_refused())
+
+        def gap_in_the_run():
+            self.tiles((6, 4, 5)); (self.raw / "long.part1.png").unlink(); (self.raw / "long.part1.png.capture.json").unlink()
+            self.assertIn("not a contiguous run", self.run_refused())
+
+        def failed_tile():
+            self.tiles((6, 4))
+            meta = json.loads((self.raw / "long.part1.png.capture.json").read_text())
+            meta["dimensionCheck"] = {"status": "fail", "error": "png 8x3, expected 8x4"}
+            (self.raw / "long.part1.png.capture.json").write_text(json.dumps(meta))
+            self.assertIn("own dimension check", self.run_refused())
+
+        def clips_do_not_join():
+            self.tiles((6, 4))
+            meta = json.loads((self.raw / "long.part1.png.capture.json").read_text())
+            meta["capture"]["clip"]["y"] = 9
+            (self.raw / "long.part1.png.capture.json").write_text(json.dumps(meta))
+            self.assertIn("butt-join", self.run_refused())
+
+        def short_of_the_page():
+            self.tiles((6, 4), doc_h=30)   # the document was 30px; 10px of it was tiled
+            self.assertIn("intended", self.run_refused())
+
+        # The kit only: package copies that carried a check first refuse in their own ways, and some
+        # miss a case (listed for the package wave); each is ported from the kit, then can join.
+        for case in (missing_sidecar, gap_in_the_run, failed_tile, clips_do_not_join, short_of_the_page):
+            with self.subTest(case=case.__name__):
+                self.each(case, [KIT])
 
 
 if __name__ == "__main__":

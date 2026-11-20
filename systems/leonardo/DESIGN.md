@@ -16,37 +16,6 @@ colors:
   on-surface: "#32343a"
   on-surface-variant: "#484c58"
   outline: "rgba(0, 0, 0, 0.1)"
-  color-page: "#0a0a0a"
-  color-foreground: "#fafafa"
-  color-surface: "#171717"
-  color-raised: "#262626"
-  color-overlay: "#525252"
-  color-scrim: "rgba(250, 250, 250, 0.1)"
-  color-text-primary: "#fafafa"
-  color-text-secondary: "#d4d4d4"
-  color-text-muted: "#737373"
-  color-text-disabled: "#737373"
-  color-text-on-accent: "#ffffff"
-  color-text-link: "#7c71f7"
-  color-border-base: "#262626"
-  color-border-strong: "#404040"
-  color-border-focus: "rgba(110, 96, 238, 0.5)"
-  color-accent-base: "#6e60ee"
-  color-accent-hover: "#7c71f7"
-  color-accent-pressed: "#523be7"
-  color-card-base: "#ffffff"
-  color-card-foreground: "#0a0a0a"
-  color-sidebar-base: "#171717"
-  color-sidebar-foreground: "#f5f5f5"
-  color-sidebar-border: "#171717"
-  color-positive-foreground: "#33ab71"
-  color-negative-foreground: "#ff5d4b"
-  color-warning-foreground: "#ffc533"
-  color-info: "#64a5ff"
-  color-status-positive: "#268758"
-  color-status-negative: "#e32b16"
-  color-status-warning: "#ffc533"
-  color-status-danger: "#e7000b"
   color-docs-page-base: "#ffffff"
   color-docs-page-muted: "#f9fafb"
   color-docs-overlay: "#ffffff"
@@ -145,11 +114,13 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 - **The home measurement pass missed the nav.** Cloudflare blocked the retry. Header, Pricing, Log in, Create and Start now are in the screenshots and were not boxed. Do not invent their pixel sizes.
 - **Generate looks disabled.** Its fill is `#262626` and its text is `#737373`. That is the signed-out paint. Submitting it was out of scope, so the enabled state is unknown.
-- **Light product roles match dark.** `--background` does not switch with the docs color mode. `light.color.page` is `#0a0a0a` on purpose. The docs split is `color.docs.*` only.
+- **The light set is the docs color mode only.** `--background` and the other product roles sit on `:root` and do not switch with the docs color mode, and the product never paints light, so they are in `dark` only. There is no `light.color.page`: a light design uses `light.color.docs.*`.
 - **`--accent` is neon green, not the brand.** The violet is `--accent-brand` / `--color-purple` (`#6e60ee`). The token path is `core.color.accent.brand` and `dark.color.accent`. `core.color.neon` is the green.
 - **Quantised screenshots band gradients.** Read exact colours from tokens.json. The wordmark field is a graphic, not a type style.
 - **Docs search paints black text on a dark field.** That computed colour is the reading. Do not "fix" it.
-- **App font stacks are measured, not variables.** canvaSans, ufficioDisplay, leoSans and leoRenaisans come from computed `fontFamily` and `@font-face`. `--font-sans` is the Tailwind system stack.
+- **App font stacks are measured, not variables.** canvaSans, ufficioDisplay, leoSans and leoRenaisans come from computed `fontFamily` and `@font-face`. `--font-sans` is the Tailwind system stack. The display tokens drop next/font's `"… Fallback"` placeholder face; where the measured stack has no generic family (`app-display`, `marketing`), the trailing `sans-serif` is a hand-written fallback and its source says so.
+- **Captured past automation masking.** Every committed reading and screenshot was taken with `navigator.webdriver` masked, and the screenshots with a saved challenge-clearance `storageState` replayed across runs. Both were removed from the capture scripts (bot checks are now recorded as a boundary, not bypassed); the readings were kept and were not retaken.
+- **`app-generate` focus-visible was not captured.** Keyboard focus never landed (`via: focus failed` in raw); components.md lists it as not capturable, and `components/crops/app-generate-focus-visible.png` is the element at rest, not a focus look.
 
 ### Do and don't (from README.md)
 

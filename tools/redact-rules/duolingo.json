@@ -4,7 +4,8 @@
   "net": true,
   "emails": true,
   "email_allow": [
-   "@example\\.(com|org)$",
+   "@example\\.com$",
+   "@example\\.org$",
    "@duolingo\\.com$"
   ],
   "boost": [

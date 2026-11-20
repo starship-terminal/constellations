@@ -177,9 +177,11 @@ class BuildTest(unittest.TestCase):
         (cls.docs / "scorecard" / "linear.md").write_text("# Linear\n\nBack to [the docs](../PACKAGE.md).\n")
         cls.out = Path(cls.tmp.name) / "site"
         with mock.patch.object(sitegen, "DOCS", cls.docs), mock.patch.object(sitegen, "OUT", cls.out), \
+             mock.patch.object(sitegen.scorecard, "load", wraps=sitegen.scorecard.load) as load, \
              mock.patch("sys.stdout"):
             cls.pages = sitegen.pages()
             sitegen.build()
+        cls.loads = load.call_count
 
     @classmethod
     def tearDownClass(cls):
@@ -211,6 +213,22 @@ class BuildTest(unittest.TestCase):
             if page.src.exists():
                 self.assertIn(f"{page.url}index.html", files)
         self.assertTrue({"settings/index.html", "404.html"} <= files)
+
+    def test_the_404_page_resolves_its_links_from_the_site_root(self):
+        head = (self.out / "404.html").read_text().split("</head>")[0]
+        self.assertIn('<base href="/">', head)
+        self.assertLess(head.index('<base href="/">'), head.index("stylesheet"))
+        self.assertNotIn("document.write", head)
+
+    def test_the_scorecard_snapshots_are_parsed_once(self):
+        # load() parses every snapshot; per page that is hundreds of MB per page.
+        self.assertEqual(self.loads, 1)
+
+    def test_the_scorecard_rail_lists_the_newest_audit(self):
+        html = (self.out / "scorecard" / "linear" / "index.html").read_text()
+        newest = sitegen.newest_audit()
+        first = sitegen.scorecard.ranked(newest["systems"])[0]
+        self.assertIn(f'href="../../scorecard/systems/{first["slug"]}/"', html)
 
     def test_nested_scorecard_links_are_rewritten(self):
         html = (self.out / "scorecard" / "linear" / "index.html").read_text()

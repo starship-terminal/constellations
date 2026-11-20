@@ -2950,19 +2950,23 @@ select {
   top: 26px;
   z-index: 45;
 }
+/* html[data-sidebar] is set before paint by sidebarInitScript and kept in
+   step by the toggle, so a collapsed sidebar never opens on load. */
 @media (min-width: 761px) {
-  .sidebar-collapsed {
+  :is(.sidebar-collapsed, html[data-sidebar="collapsed"] .app-shell) {
     --sidebar-width: 0px;
   }
-  .sidebar-collapsed .sidebar {
+  :is(.sidebar-collapsed, html[data-sidebar="collapsed"] .app-shell) .sidebar {
     transform: translateX(-100%);
     width: 270px;
     visibility: hidden;
   }
-  .sidebar-collapsed .desktop-sidebar-toggle {
+  :is(.sidebar-collapsed, html[data-sidebar="collapsed"] .app-shell)
+    .desktop-sidebar-toggle {
     left: 12px;
   }
-  .sidebar-collapsed .main-content {
+  :is(.sidebar-collapsed, html[data-sidebar="collapsed"] .app-shell)
+    .main-content {
     --app-content-top-inset: 32px;
     padding-top: var(--app-content-top-inset);
   }

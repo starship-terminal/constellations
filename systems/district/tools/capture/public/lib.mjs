@@ -163,6 +163,41 @@ export const PROPS = [
 // Reads the computed style of the element, its ::before/::after if they paint
 // anything, the rect, the painted layers in its subtree, a focus ring or fill
 // painted by an ancestor, the first text node's type, and the first svg icon.
+// District names a city it picked for the visitor in the top bar's location line and measures every
+// venue card's distance from it; together they say where the capture ran. learnPlace reads that line
+// (the top bar's lines before its "For you" tab) on each page, and scrubPlace masks those words and
+// every distance in recorded text (styleOf masks distances in the page, before it shortens the text).
+// "Under 10 km", a filter chip's own label, is kept. measure.mjs refuses to save until the line was
+// found once, so a changed top bar can never write the city unmasked.
+export const PLACE_WORDS = new Map();   // word -> its mask: the first line is the city, the rest the state
+
+export async function learnPlace(page) {
+  const words = await page.evaluate(() => {
+    const bar = [...document.querySelectorAll('header, nav, div')].reverse()
+      .find((el) => el.querySelector('a[href="/movies/"]') && /\bfor you\b/i.test(el.innerText || ''));
+    const lines = (bar?.innerText || '').split('\n').map((x) => x.trim()).filter(Boolean);
+    const i = lines.findIndex((x) => /^for you$/i.test(x));
+    return i > 0 && i <= 3 ? lines.slice(0, i) : [];
+  }).catch(() => []);
+  words.forEach((w, i) => { if (w.length > 1 && !PLACE_WORDS.has(w)) PLACE_WORDS.set(w, i ? '[state]' : '[city]'); });
+  return words.length > 0;
+}
+
+export function scrubPlace(value) {
+  if (typeof value === 'string') {
+    let t = value.replace(/(?<!Under )\b\d+(?:\.\d+)?\s?km\b/g, '[distance]');
+    for (const [w, mask] of PLACE_WORDS) {
+      t = t.split(w).join(mask);
+      // Recorded text is cut to a fixed length, which can leave a place word's first letters at the end.
+      for (let k = w.length - 1; k >= 4; k--) if (t.endsWith(w.slice(0, k))) { t = t.slice(0, -k) + mask; break; }
+    }
+    return t;
+  }
+  if (Array.isArray(value)) return value.map(scrubPlace);
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, scrubPlace(v)]));
+  return value;
+}
+
 export async function styleOf(locator) {
   return locator.evaluate((el, props) => {
     const cls = (n) => [...n.classList].map((c) => String(c)).filter((c) => c && !/^x[0-9a-z]{5,8}$/.test(c));
@@ -179,7 +214,7 @@ export async function styleOf(locator) {
     const out = {
       tag: el.tagName.toLowerCase(),
       classes: cls(el).slice(0, 4).join(' '),
-      text: (el.innerText || el.getAttribute('aria-label') || el.getAttribute('placeholder') || '').trim().replace(/\s+/g, ' ').slice(0, 80),
+      text: (el.innerText || el.getAttribute('aria-label') || el.getAttribute('placeholder') || '').trim().replace(/\s+/g, ' ').replace(/(?<!Under )\b\d+(?:\.\d+)?\s?km\b/g, '[distance]').slice(0, 80),   // distances masked before the cut (scrubPlace)
       rect: { x: +r.x.toFixed(1), y: +r.y.toFixed(1), w: +r.width.toFixed(2), h: +r.height.toFixed(2) },
       style: pick(cs),
     };
@@ -233,7 +268,7 @@ export async function styleOf(locator) {
     if (tn && tn.parentElement !== el) {
       const t = tn.parentElement;
       const tc = getComputedStyle(t);
-      out.textStyle = { node: t.tagName.toLowerCase() + cls(t).slice(0, 2).map((x) => '.' + x).join(''), text: tn.textContent.trim().slice(0, 40), fontFamily: tc.fontFamily, fontSize: tc.fontSize, lineHeight: tc.lineHeight, fontWeight: tc.fontWeight, letterSpacing: tc.letterSpacing, color: tc.color, textDecorationLine: tc.textDecorationLine, textTransform: tc.textTransform };
+      out.textStyle = { node: t.tagName.toLowerCase() + cls(t).slice(0, 2).map((x) => '.' + x).join(''), text: tn.textContent.trim().replace(/(?<!Under )\b\d+(?:\.\d+)?\s?km\b/g, '[distance]').slice(0, 40), fontFamily: tc.fontFamily, fontSize: tc.fontSize, lineHeight: tc.lineHeight, fontWeight: tc.fontWeight, letterSpacing: tc.letterSpacing, color: tc.color, textDecorationLine: tc.textDecorationLine, textTransform: tc.textTransform };
     }
     if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
       const ph = getComputedStyle(el, '::placeholder');

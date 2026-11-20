@@ -14,7 +14,8 @@ export function agentSnippets(origin: string): AgentSnippet[] {
     { label: "MCP URL", text: `${base}/api/mcp` },
     { label: "Claude", text: `claude mcp add --transport http design-systems ${base}/api/mcp` },
     { label: "swe", text: `swe mcp add design-systems --url=${base}/api/mcp` },
-    { label: "Codex", text: `[mcp_servers.design-systems] url = "${base}/api/mcp"` },
+    // A TOML table header and its key must sit on separate lines.
+    { label: "Codex", text: `[mcp_servers.design-systems]\nurl = "${base}/api/mcp"` },
     { label: "OpenCode", text: `"design-systems": { "type": "remote", "url": "${base}/api/mcp" }` },
   ];
 }

@@ -15,7 +15,7 @@ Public signed-out marketing and login chrome for Netflix, captured 2026-11-19 fr
 | [screenshots/](screenshots/) | One labeled placeholder. The preview browser returned no frames |
 | [components/](components/) | Empty crops, same reason |
 | [raw/](raw/) | Computed styles, Hawkins custom properties, viewport |
-| [tools/](tools/) | Builders and the copied capture kit |
+| [tools/](tools/) | Builders and their test. `capture/signed-in/` holds only the kit's page-copy privacy guards (`snapshot.js`, `unsnap.py`, `signed-params.json`); the values were read in a preview browser, not by a capture script |
 
 ## Brief
 

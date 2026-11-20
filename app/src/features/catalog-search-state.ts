@@ -1,6 +1,6 @@
 import type { LibraryItem } from "@/contracts/library";
 import type { TaxonomyGroup } from "@/contracts/taxonomy";
-import { matchesCategory } from "@/contracts/categories";
+import { matchesCategory, UNCATEGORISED } from "@/contracts/categories";
 
 export function pickerGroups(
   groups: readonly TaxonomyGroup[],
@@ -24,6 +24,7 @@ export function legacyCategoryLabels(
   query: string,
 ) {
   if (!query) return "";
+  if (query === UNCATEGORISED) return "Uncategorised";
   return (
     [
       ...new Set(

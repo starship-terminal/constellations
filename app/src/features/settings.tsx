@@ -47,7 +47,7 @@ const tabs = [
   { id: "ai", label: "AI", icon: Sparkles },
   { id: "agents", label: "Agents", icon: Bot },
 ] as const;
-type SettingsTab = (typeof tabs)[number]["id"];
+export type SettingsTab = (typeof tabs)[number]["id"];
 export function SettingsPage() {
   return (
     <Suspense
@@ -79,12 +79,56 @@ function agentLines(origin: string) {
   ];
 }
 
+/** Resolves false when the browser refuses the clipboard (an insecure
+ * origin, a denied permission) instead of rejecting unhandled. */
+export async function copyText(text: string): Promise<boolean> {
+  try {
+    if (!navigator.clipboard) return false;
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export type CopyState = { label: string; ok: boolean } | undefined;
+/** What a Copy button says: "Copied" or "Copy failed" for two seconds after
+ * a click, restarted by another click, and nothing while detached. */
+export function copyFeedback(
+  show: (state: CopyState) => void,
+  write: (text: string) => Promise<boolean> = copyText,
+) {
+  let reset: ReturnType<typeof setTimeout> | undefined;
+  let live = true;
+  return {
+    async copy(label: string, text: string) {
+      const ok = await write(text);
+      if (!live) return;
+      clearTimeout(reset);
+      show({ label, ok });
+      reset = setTimeout(() => show(undefined), 2000);
+    },
+    // React may detach and attach an effect again (Strict Mode does).
+    attach() {
+      live = true;
+    },
+    detach() {
+      live = false;
+      clearTimeout(reset);
+    },
+  };
+}
+
 function AgentSettings() {
   const [origin, setOrigin] = useState("");
-  const [copied, setCopied] = useState("");
+  const [copied, setCopied] = useState<CopyState>();
+  const [feedback] = useState(() => copyFeedback(setCopied));
   useEffect(() => {
     setOrigin(window.location.origin);
-  }, []);
+    feedback.attach();
+    return () => feedback.detach();
+  }, [feedback]);
+  const copy = feedback.copy;
   return (
     <section className="settings-section">
       <div className="settings-section-label">
@@ -102,15 +146,12 @@ function AgentSettings() {
           <div className="settings-field" key={line.label}>
             <span>{line.label}</span>
             <code>{line.text}</code>
-            <button
-              type="button"
-              onClick={() => {
-                navigator.clipboard.writeText(line.text).then(() => {
-                  setCopied(line.label);
-                });
-              }}
-            >
-              {copied === line.label ? "Copied" : "Copy"}
+            <button type="button" onClick={() => copy(line.label, line.text)}>
+              {copied?.label === line.label
+                ? copied.ok
+                  ? "Copied"
+                  : "Copy failed"
+                : "Copy"}
             </button>
           </div>
         ))}
@@ -211,46 +252,7 @@ function SettingsContent() {
           Your research, connected to the model you choose.
         </p>
       </header>
-      <div
-        className="settings-tabs"
-        role="tablist"
-        aria-label="Settings sections"
-      >
-        {tabs.map((choice, index) => (
-          <button
-            key={choice.id}
-            id={`settings-tab-${choice.id}`}
-            role="tab"
-            type="button"
-            aria-selected={tab === choice.id}
-            aria-controls={`settings-panel-${choice.id}`}
-            tabIndex={tab === choice.id ? 0 : -1}
-            onClick={() => selectTab(choice.id)}
-            onKeyDown={(event) => {
-              const nextIndex =
-                event.key === "ArrowRight"
-                  ? (index + 1) % tabs.length
-                  : event.key === "ArrowLeft"
-                    ? (index - 1 + tabs.length) % tabs.length
-                    : event.key === "Home"
-                      ? 0
-                      : event.key === "End"
-                        ? tabs.length - 1
-                        : -1;
-              if (nextIndex >= 0) {
-                event.preventDefault();
-                selectTab(tabs[nextIndex].id);
-                document
-                  .getElementById(`settings-tab-${tabs[nextIndex].id}`)
-                  ?.focus();
-              }
-            }}
-          >
-            <choice.icon size={15} />
-            {choice.label}
-          </button>
-        ))}
-      </div>
+      <SettingsTabList tab={tab} onSelect={selectTab} />
       <div
         role="tabpanel"
         id={`settings-panel-${tab}`}
@@ -436,6 +438,60 @@ function SettingsContent() {
             )
           ))}
       </div>
+    </div>
+  );
+}
+
+/** Only the selected tab has a panel in the page, so only it names one. */
+export function SettingsTabList({
+  tab,
+  onSelect,
+}: {
+  tab: SettingsTab;
+  onSelect: (id: SettingsTab) => void;
+}) {
+  return (
+    <div
+      className="settings-tabs"
+      role="tablist"
+      aria-label="Settings sections"
+    >
+      {tabs.map((choice, index) => (
+        <button
+          key={choice.id}
+          id={`settings-tab-${choice.id}`}
+          role="tab"
+          type="button"
+          aria-selected={tab === choice.id}
+          aria-controls={
+            tab === choice.id ? `settings-panel-${choice.id}` : undefined
+          }
+          tabIndex={tab === choice.id ? 0 : -1}
+          onClick={() => onSelect(choice.id)}
+          onKeyDown={(event) => {
+            const nextIndex =
+              event.key === "ArrowRight"
+                ? (index + 1) % tabs.length
+                : event.key === "ArrowLeft"
+                  ? (index - 1 + tabs.length) % tabs.length
+                  : event.key === "Home"
+                    ? 0
+                    : event.key === "End"
+                      ? tabs.length - 1
+                      : -1;
+            if (nextIndex >= 0) {
+              event.preventDefault();
+              onSelect(tabs[nextIndex].id);
+              document
+                .getElementById(`settings-tab-${tabs[nextIndex].id}`)
+                ?.focus();
+            }
+          }}
+        >
+          <choice.icon size={15} />
+          {choice.label}
+        </button>
+      ))}
     </div>
   );
 }
