@@ -7061,9 +7061,9 @@
       "description": "Food, Delivery & Reviews",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.yelp.com/login never loaded a form.",
+      "notes": "Email probe: https://www.yelp.com/login never loaded a form. Public walk 2026-11-21: homepage, login, and a search URL returned HTTP 403 with a DataDome captcha iframe. blog.yelp.com returned CloudFront HTTP 403. Nothing clicked. No package. Skipped this pass.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "captcha",
       "batch": 21
     },
     {
