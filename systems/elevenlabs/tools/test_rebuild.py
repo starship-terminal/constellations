@@ -53,6 +53,11 @@ class RebuildTest(unittest.TestCase):
             (cap / "public").mkdir(parents=True)
             shutil.copy2(PKG / "tools" / "capture" / "css-colour.mjs", cap / "css-colour.mjs")
             shutil.copy2(MEASUREMENTS, cap / "public" / "build-measurements.mjs")
+        # The copy starts without the outputs, so each comparison reads a freshly written file
+        # and a builder that stops writing fails the test instead of passing on the committed copy.
+        for rel in OUTPUTS + ("raw/measurements.md",):
+            if (root / rel).exists():
+                (root / rel).unlink()
         for b in BUILDERS:
             subprocess.run([sys.executable, str(root / "tools" / b)], cwd=root, check=True, capture_output=True)
         cls.built = json.loads((root / "tokens.json").read_text())
@@ -64,7 +69,8 @@ class RebuildTest(unittest.TestCase):
 
     def test_committed_output_matches_rebuild(self):
         for rel in OUTPUTS:
-            if (PKG / rel).exists() and (self.root / rel).exists():
+            if (PKG / rel).exists():
+                self.assertTrue((self.root / rel).exists(), f"{rel} was not rebuilt")
                 self.assertEqual((PKG / rel).read_text(), (self.root / rel).read_text(), rel)
 
     @unittest.skipUnless(NODE and MEASUREMENTS.exists(), "needs node")
