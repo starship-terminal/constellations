@@ -54,6 +54,21 @@ class RebuildTest(unittest.TestCase):
         self.assertTrue((self.copy / out).exists(), f"{out} was not rebuilt")
         self.assertEqual((self.copy / out).read_bytes(), (PKG / out).read_bytes())
 
+    @unittest.skipUnless(NODE, "node is not installed")
+    def test_failed_focus_is_skipped_in_measurements(self):
+        # The kit's not-captured rule: a focus-visible reading taken where focus never landed is the
+        # element at rest, so it is marked Skipped and its crop is not listed.
+        import json
+        raw = json.loads((PKG / "raw" / "components-computed.json").read_text())["components"]
+        failed = [k for k, c in raw.items() if (c["states"].get("focus-visible") or {}).get("via") == "focus failed"]
+        self.assertTrue(failed)
+        text = (self.copy / "raw" / "measurements.md").read_text()
+        for k in failed:
+            with self.subTest(component=k):
+                self.assertNotIn(f"`{k}-focus-visible.png`", text)
+                section = text.split(f"#### {k}\n", 1)[1].split("\n#### ", 1)[0]
+                self.assertIn("| Skipped |", section)
+
 
 if __name__ == "__main__":
     unittest.main()

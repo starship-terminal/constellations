@@ -253,23 +253,24 @@ Page: explore. Selector: `header search input`. States: default, hover, focus-vi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 456 x 56 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 3.35544e+07px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 8px 0px | = | = | = |
-| Outline | none | = | = | = |
-| Font | cosmosOracle 16px/24px 500 | = | = | = |
-| Letter spacing | -0.32px | = | = | = |
-| Colour | #0d0d0d | = | = | = |
-| Text node | span: cosmosOracle 14px/19.6px 400, #9a9796, ls -2% | span: cosmosOracle 14px/19.6px 400, #6e6a69, ls -2% | = | = |
-| Transition | width 0.5s cubic-bezier(0.22, 1, 0.36, 1) | = | = | = |
-| Icon | 20 x 20, colour #9a9796 | = | = | = |
-| Painted layers | div.pointer-events-auto.flex 456.0x56.0 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 8px 0px; div.relative.-mr-[0.5px] 456.5x56.0 bg #fcfbfa border T:1px solid oklch(0.1591 0.00000406586 none / 0.12) / R:1px solid oklch(0.1591 0.00000406586 none / 0.12) / B:1px solid oklch(0.1591 0.00000406586 none / 0.12) / L:1px solid oklch(0.1591 0.00000406586 none / 0.12) r 3.35544e+07px shadow #ffffff @ 0.7 0px 1px 1.5px 0px inset, #000000 @ 0.03 0px -1px 1.5px 0px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; span.truncate.Yd-VhW_searchPlaceholder 165.3x19.6 image linear-gradient(90deg, #000000 @ 0 calc(50% - 54px), #0d0d0d, #000000 @ 0 calc(50% + 54px) | div.pointer-events-auto.flex 456.0x56.0 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 8px 0px; div.relative.-mr-[0.5px] 456.5x56.0 bg #f9f8f8 border T:1px solid oklch(0.1591 0.00000406586 none / 0.12) / R:1px solid oklch(0.1591 0.00000406586 none / 0.12) / B:1px solid oklch(0.1591 0.00000406586 none / 0.12) / L:1px solid oklch(0.1591 0.00000406586 none / 0.12) r 3.35544e+07px shadow #ffffff @ 0.7 0px 1px 1.5px 0px inset, #000000 @ 0.03 0px -1px 1.5px 0px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; span.truncate.Yd-VhW_searchPlaceholder 165.3x19.6 image linear-gradient(90deg, #000000 @ 0 calc(50% - 54px), #0d0d0d, #000000 @ 0 calc(50% + 54px) | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 456 x 56 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 3.35544e+07px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 8px 0px | = | - | = |
+| Outline | none | = | - | = |
+| Font | cosmosOracle 16px/24px 500 | = | - | = |
+| Letter spacing | -0.32px | = | - | = |
+| Colour | #0d0d0d | = | - | = |
+| Text node | span: cosmosOracle 14px/19.6px 400, #9a9796, ls -2% | span: cosmosOracle 14px/19.6px 400, #6e6a69, ls -2% | - | = |
+| Transition | width 0.5s cubic-bezier(0.22, 1, 0.36, 1) | = | - | = |
+| Icon | 20 x 20, colour #9a9796 | = | - | = |
+| Painted layers | div.pointer-events-auto.flex 456.0x56.0 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 8px 0px; div.relative.-mr-[0.5px] 456.5x56.0 bg #fcfbfa border T:1px solid oklch(0.1591 0.00000406586 none / 0.12) / R:1px solid oklch(0.1591 0.00000406586 none / 0.12) / B:1px solid oklch(0.1591 0.00000406586 none / 0.12) / L:1px solid oklch(0.1591 0.00000406586 none / 0.12) r 3.35544e+07px shadow #ffffff @ 0.7 0px 1px 1.5px 0px inset, #000000 @ 0.03 0px -1px 1.5px 0px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; span.truncate.Yd-VhW_searchPlaceholder 165.3x19.6 image linear-gradient(90deg, #000000 @ 0 calc(50% - 54px), #0d0d0d, #000000 @ 0 calc(50% + 54px) | div.pointer-events-auto.flex 456.0x56.0 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 8px 0px; div.relative.-mr-[0.5px] 456.5x56.0 bg #f9f8f8 border T:1px solid oklch(0.1591 0.00000406586 none / 0.12) / R:1px solid oklch(0.1591 0.00000406586 none / 0.12) / B:1px solid oklch(0.1591 0.00000406586 none / 0.12) / L:1px solid oklch(0.1591 0.00000406586 none / 0.12) r 3.35544e+07px shadow #ffffff @ 0.7 0px 1px 1.5px 0px inset, #000000 @ 0.03 0px -1px 1.5px 0px inset, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; span.truncate.Yd-VhW_searchPlaceholder 165.3x19.6 image linear-gradient(90deg, #000000 @ 0 calc(50% - 54px), #0d0d0d, #000000 @ 0 calc(50% + 54px) | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `search-pill-default.png`, `search-pill-hover.png`, `search-pill-focus-visible.png`, `search-pill-pressed.png`.
+Crops: `search-pill-default.png`, `search-pill-hover.png`, `search-pill-pressed.png`.
 
 #### cat-tab
 
@@ -509,21 +510,22 @@ Page: login. Selector: `Next button`. States: default, enabled, focus-visible, p
 
 | Property | default | enabled | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 344 x 56 | = | = | = |
-| Padding | 16px 24px | = | = | = |
-| Gap | normal 4px | = | = | = |
-| Border | 1px solid #000000 @ 0 | = | = | = |
-| Radius | 3.35544e+07px | = | = | = |
-| Background | #f2f1f0 | #0d0d0d | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | cosmosOracle 14px/21px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #9a9796 | #ffffff | = | = |
-| Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Cursor | default | pointer | = | = |
-| Painted layers | button.relative.inline-flex 344.0x56.0 bg #f2f1f0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 3.35544e+07px | button.relative.inline-flex 344.0x56.0 bg #0d0d0d border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 3.35544e+07px | = | = |
-| How | at rest | both fields typed (name@example.com, sample-pass), never submitted | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 344 x 56 | = | - | = |
+| Padding | 16px 24px | = | - | = |
+| Gap | normal 4px | = | - | = |
+| Border | 1px solid #000000 @ 0 | = | - | = |
+| Radius | 3.35544e+07px | = | - | = |
+| Background | #f2f1f0 | #0d0d0d | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | cosmosOracle 14px/21px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #9a9796 | #ffffff | - | = |
+| Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | - | = |
+| Cursor | default | pointer | - | = |
+| Painted layers | button.relative.inline-flex 344.0x56.0 bg #f2f1f0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 3.35544e+07px | button.relative.inline-flex 344.0x56.0 bg #0d0d0d border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 3.35544e+07px | - | = |
+| How | at rest | both fields typed (name@example.com, sample-pass), never submitted | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: none.
 
