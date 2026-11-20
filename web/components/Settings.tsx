@@ -10,6 +10,7 @@ import { PROVIDER_NOTICE_KEY, readSavedPaths } from "@/components/storage";
 import { PROVIDER_EVENT } from "@/components/Chat";
 import { setCollapsed, setTheme, usePrefs, type Theme } from "@/components/prefs";
 import { agentSnippets } from "@/lib/agent-snippets";
+import { scrollBehavior } from "@/components/motion";
 import { SnippetCopyButton } from "@/components/CopyButton";
 import { TABS, tabForKey, tabFromHash, type TabId } from "@/components/settings-tabs";
 
@@ -391,6 +392,11 @@ export function Settings({ stats }: { stats: SettingsStats }) {
       mq.removeEventListener("change", onMq);
     };
   }, []);
+
+  useEffect(() => {
+    // On a phone the list is one sideways row: keep the open tab in view.
+    if (narrow) tabRefs.current[tab]?.scrollIntoView({ block: "nearest", inline: "nearest", behavior: scrollBehavior() });
+  }, [tab, narrow]);
 
   const select = (t: TabId, focus = false) => {
     setTab(t);
