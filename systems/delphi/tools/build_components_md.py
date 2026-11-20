@@ -75,6 +75,20 @@ def _oklch_to_rgb(L, C, H):
     return _oklab_to_rgb(L, C * math.cos(math.radians(H)), C * math.sin(math.radians(H)))
 
 
+def _lab_to_rgb(L, A, B):
+    # CIELAB D50 -> sRGB (digg's builder, same matrix); the matrix emits linear
+    # sRGB, which _srgb_byte expects.
+    fy = (L + 16) / 116
+    fx, fz = fy + A / 500, fy - B / 200
+    eps, kap = 216 / 24389, 24389 / 27
+    f = lambda t: t ** 3 if t ** 3 > eps else (116 * t - 16) / kap
+    X, Y, Z = 0.96422 * f(fx), f(fy), 0.82521 * f(fz)
+    r = 3.1338561 * X - 1.6168667 * Y - 0.4906146 * Z
+    g = -0.9787684 * X + 1.9161415 * Y + 0.033454 * Z
+    b = 0.0719453 * X - 0.2289914 * Y + 1.4052427 * Z
+    return _srgb_byte(r), _srgb_byte(g), _srgb_byte(b)
+
+
 def norm(r, g, b, a=None):
     if a is None or float(a) == 1:
         return "#%02x%02x%02x" % (int(r), int(g), int(b))
@@ -94,9 +108,14 @@ def colour(c, tokens=True):
                                    (float(m.group(4).rstrip('%')) / (100 if '%' in m.group(4) else 1)) if m.group(4) else None)), c)
     c = re.sub(r"oklab\(([\d.]+) (-?[\d.]+) (-?[\d.]+)(?: / ([\d.]+))?\)",
                lambda m: label(norm(*_oklab_to_rgb(float(m.group(1)), float(m.group(2)), float(m.group(3))), m.group(4))), c)
+    # lab() was left unconverted (and unlabelled); no committed reading holds one today
+    c = re.sub(r"(?<![a-z])lab\(([\d.]+)[ ,]+(-?[\d.]+)[ ,]+(-?[\d.]+)(?: ?/ ?([\d.]+%?))?\)",
+               lambda m: label(norm(*_lab_to_rgb(float(m.group(1)), float(m.group(2)), float(m.group(3))),
+                                   (float(m.group(4).rstrip('%')) / (100 if '%' in m.group(4) else 1)) if m.group(4) else None)), c)
     c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
                lambda m: label(norm(*(round(float(x) * 255) for x in m.group(1, 2, 3)), m.group(4))), c)
-    return re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
+    # an rgba() the conversions above already emitted carries its label: skip it, or it is labelled twice
+    return re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)(?! `)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
 
 
 def sides(t, r, b, l):
