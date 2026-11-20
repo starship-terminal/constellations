@@ -15,7 +15,7 @@ Desktop CSS viewport was 1169x731 at devicePixelRatio 2. Phone type was computed
 | [patterns.md](patterns.md) | Home, pricing, login, and docs. |
 | [screenshots/](screenshots/) | Empty. The preview browser did not produce frames. |
 | [raw/](raw/) | [measured.json](raw/measured.json). |
-| [tools/](tools/) | The copied kit plus [test_measured.py](tools/test_measured.py). |
+| [tools/](tools/) | The copied kit plus [test_measured.py](tools/test_measured.py). The unadapted kit builders and capture routes for other products were removed in the 2026-11 audit; the generic capture helpers remain. |
 
 ## Brief
 

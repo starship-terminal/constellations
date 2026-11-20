@@ -12,7 +12,7 @@ Pixso is a collaborative UI and UX design tool. This package records the public 
 | [patterns.md](patterns.md) | How the home, product, pricing and login pages are built |
 | [raw/capture.json](raw/capture.json) | The pages, viewport and the screenshot failure |
 | [icon.png](icon.png) | 128 px PNG from the site favicon (`favicon2-94712c33544afd45.ico`), scaled up from 32 px |
-| [tools/](tools/) | The shared capture kit, copied in and not adapted for a rebuild. The tokens were written from live computed styles |
+| [tools/](tools/) | The shared capture kit, copied in and not adapted for a rebuild. The tokens were written from live computed styles. The unadapted kit builders and capture routes for other products were removed in the 2026-11 audit; the generic capture helpers remain. |
 
 ## Brief
 
@@ -141,7 +141,7 @@ Figtree is the marketing family (weights 400, 500, 600 and 700 loaded). Outfit i
 python3 tools/catalog.py design-md pixso
 ```
 
-There is no product mapping in `tools/build_tokens.py`. The tokens were written from the live readings in [raw/capture.json](raw/capture.json). Re-read the pages before changing a value.
+There is no token builder. The tokens were written from the live readings in [raw/capture.json](raw/capture.json). Re-read the pages before changing a value.
 
 ## What was not entered
 

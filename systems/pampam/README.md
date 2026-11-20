@@ -17,7 +17,7 @@ PamPam (pampam.city) is a public map maker. The capture covers the marketing hom
 | [icons/](icons/) | The header wordmark SVG, with [INDEX.tsv](icons/INDEX.tsv). |
 | [screenshots/](screenshots/) | Quantised page shots, desktop and phone. |
 | [raw/](raw/) | `readings.json`, the computed values the tokens came from. |
-| [tools/](tools/) | The capture kit, copied in and not adapted. Tokens were written from the live readings. |
+| [tools/](tools/) | The capture kit, copied in and not adapted. Tokens were written from the live readings. The unadapted kit builders and capture routes for other products were removed in the 2026-11 audit; the generic capture helpers remain. |
 
 ## Brief
 
