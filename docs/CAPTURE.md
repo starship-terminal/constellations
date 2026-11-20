@@ -399,6 +399,20 @@ package with a rules file needs no `--rules` to pass. `--rules <file>` loads
 that file instead. `apply` always needs `--rules`, because it edits images in
 place.
 
+`apply` changes only the pixels inside the regions it paints, so the image
+stays the evidence it was apart from the mask. A file with nothing to paint is
+not rewritten. An edited PNG keeps its mode, its palette and tRNS, and every
+other chunk (colour profile, pHYs, text) byte for byte. A palette image keeps
+every untouched pixel's index and paints with the nearest existing palette
+entry, alpha included. The palette is never grown or reordered, so when it has
+no entry close to a fill colour, `apply` uses the nearest one and prints how
+many pixels that hit; look at those images. RGB, RGBA and grey images are
+painted in their own mode, and alpha inside a region is filled like the
+colour. Before replacing a file, `apply` decodes the written copy and stops
+with the file unchanged if any pixel or alpha value outside the painted
+regions differs. It will not edit a JPEG (lossy), a 16-bit PNG or an animated
+PNG: it names each one, writes nothing to it and exits 1.
+
 A rules file (see [manus.json](../tools/redact-rules/manus.json) and
 [notebooklm.json](../tools/redact-rules/notebooklm.json); duolingo.json and
 coursera.json show the net-first style) lists pixel

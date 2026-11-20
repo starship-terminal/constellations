@@ -64,8 +64,18 @@ rectangle touches something bright, such as a modal's edge); "pixelate:N" averag
 photographs, where a flat fill would look like a hole. N below 16 is refused: a pixelated title is
 still a title.
 
-Every output is requantized to 256 colours with the call the kit's quantize.py makes (median cut, no
-dither), so untouched pixels keep their exact colour and the files stay small. A pattern that spans
+`apply` changes only the pixels inside the regions it paints (the rectangles and the padded OCR
+boxes); a file with nothing painted is never rewritten, so it stays byte-identical. An edited PNG
+keeps its mode and every chunk but IHDR and IDAT byte for byte (PLTE, tRNS, iCCP, gAMA, pHYs, text),
+and is written with Pillow's optimize setting. A palette image keeps every untouched pixel's index;
+a painted pixel takes the nearest existing palette entry, over RGB and, when the file has tRNS,
+alpha too. The palette is never grown or reordered: when it holds no entry within NEAR of a fill
+colour, the nearest one is used and `apply` says how many pixels that hit. An RGB, RGBA, grey or
+grey-alpha image is painted in its own mode, alpha included (inside a region alpha is filled like
+the colour, so a glyph drawn in alpha alone is hidden too). Before replacing a file, `apply` decodes
+the written copy and stops, leaving the file unchanged, if any pixel or alpha value outside the
+painted regions, or any other chunk, differs. A file it cannot rewrite that way (a JPEG, which is
+lossy; a 16-bit or animated PNG) is named and left alone, and `apply` exits 1. A pattern that spans
 two OCR lines is reported, not painted; add a rectangle for it.
 """
 import argparse
@@ -75,6 +85,7 @@ import io
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -299,7 +310,7 @@ def fill_solid(a, x0, y0, x1, y1):
     px = a[Y0:Y1, X0:X1][mask]
     if len(px) == 0:
         return
-    vals, counts = np.unique(px.reshape(-1, 3), axis=0, return_counts=True)
+    vals, counts = np.unique(px.reshape(-1, a.shape[2]), axis=0, return_counts=True)
     a[y0:y1, x0:x1] = vals[counts.argmax()]
 
 
@@ -308,7 +319,7 @@ def pixelate(a, x0, y0, x1, y1, n):
     h, w = block.shape[:2]
     ph, pw = -h % n, -w % n
     padded = np.pad(block, ((0, ph), (0, pw), (0, 0)), mode="edge")
-    small = padded.reshape(padded.shape[0] // n, n, padded.shape[1] // n, n, 3).mean(axis=(1, 3))
+    small = padded.reshape(padded.shape[0] // n, n, padded.shape[1] // n, n, a.shape[2]).mean(axis=(1, 3))
     big = np.repeat(np.repeat(small, n, axis=0), n, axis=1)[:h, :w]
     a[y0:y1, x0:x1] = np.rint(big).astype(np.uint8)
 
@@ -651,8 +662,189 @@ def open_rgb(f):
 
 
 def save_256(im, f):
-    """The kit's quantize.py call: sRGB, 256 colours, median cut, no dither."""
+    """The kit's quantize.py call: sRGB, 256 colours, median cut, no dither. For a builder writing a
+    new image (clerk's ingest_evidence.py); `apply` never uses it, because it rewrites every pixel."""
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(f, optimize=True)
+
+
+# ---------------------------------------------------------------- editing in place
+
+class NotEditable(Exception):
+    """An image `apply` cannot rewrite without changing pixels outside the regions it paints."""
+
+
+PNG_MAGIC = b"\x89PNG\r\n\x1a\n"
+PNG_MODES = {0: "L", 2: "RGB", 3: "P", 4: "LA", 6: "RGBA"}    # IHDR colour type -> Pillow mode
+PIXEL_CHUNKS = (b"IHDR", b"IDAT")       # the only chunks a rewrite replaces; every other is copied
+ANIMATION_CHUNKS = (b"acTL", b"fcTL", b"fdAT")
+NEAR = 24                               # a palette entry this far off (RGB, plus alpha) is reported
+
+
+def png_chunks(data):
+    """([(type, whole chunk bytes)], bytes after IEND) of a PNG file."""
+    if data.startswith(b"\xff\xd8"):
+        raise NotEditable("a JPEG is lossy, so rewriting it would change every pixel")
+    if not data.startswith(PNG_MAGIC):
+        raise NotEditable("not a PNG file; apply rewrites PNGs only")
+    out, i = [], len(PNG_MAGIC)
+    while i + 12 <= len(data):
+        end = i + 12 + int.from_bytes(data[i:i + 4], "big")
+        if end > len(data):
+            raise NotEditable("a PNG chunk runs past the end of the file")
+        out.append((data[i + 4:i + 8], data[i:end]))
+        i = end
+        if out[-1][0] == b"IEND":
+            break
+    if not out or out[0][0] != b"IHDR" or out[-1][0] != b"IEND":
+        raise NotEditable("not a well-formed PNG (no IHDR first or no IEND)")
+    return out, data[i:]
+
+
+def _work_from(mode, arr):
+    """The array the fills paint, from a Pillow array of `mode` (not P): RGB, or RGBA where the
+    file has an alpha channel; grey is spread over three equal channels."""
+    if mode == "L":
+        return np.repeat(arr[..., None], 3, axis=2)
+    if mode == "LA":
+        return np.stack([arr[..., 0]] * 3 + [arr[..., 1]], axis=2)
+    return arr.copy()
+
+
+class Native:
+    """One PNG as `apply` edits it in place. `work` is what the fills read and write: RGB, or RGBA
+    when the file carries alpha (an alpha channel, or a tRNS chunk on a palette). A palette file
+    keeps its indices (`idx`) and its palette (`lut`, read from PLTE and tRNS themselves). `kept` is
+    every chunk but IHDR and IDAT, byte for byte, with anything after IEND: a rewrite copies it."""
+
+    def __init__(self, data):
+        chunks, self.tail = png_chunks(data)
+        self.data, self.chunks = data, chunks
+        ihdr = chunks[0][1]
+        depth, ctype = ihdr[16], ihdr[17]
+        if any(k in ANIMATION_CHUNKS for k, _ in chunks):
+            raise NotEditable("an animated PNG: a rewrite would keep only its first frame")
+        if ctype not in PNG_MODES:
+            raise NotEditable(f"PNG colour type {ctype} is not one apply rewrites")
+        if ctype != 3 and depth != 8:
+            raise NotEditable(f"{depth}-bit samples: Pillow decodes them to 8 bits, so a rewrite would change every pixel")
+        with Image.open(io.BytesIO(data)) as im:
+            im.load()
+            self.mode, self.size = im.mode, im.size
+            if self.mode != PNG_MODES[ctype]:
+                raise NotEditable(f"Pillow reads it as {im.mode}, not {PNG_MODES[ctype]}")
+            arr = np.array(im)
+        self.kept = [raw for k, raw in chunks if k not in PIXEL_CHUNKS] + [self.tail]
+        self.idx = self.lut = None
+        if self.mode != "P":
+            self.work = _work_from(self.mode, arr)
+            return
+        body = {k: raw[8:-4] for k, raw in reversed(chunks)}          # the first chunk of each type
+        if b"PLTE" not in body:
+            raise NotEditable("a palette PNG without a PLTE chunk")
+        pal = np.frombuffer(body[b"PLTE"][:len(body[b"PLTE"]) // 3 * 3], np.uint8).reshape(-1, 3)
+        if arr.size and int(arr.max()) >= len(pal):
+            raise NotEditable("a palette index beyond the PLTE entries")
+        if b"tRNS" in body:
+            alpha = np.full(len(pal), 255, np.uint8)
+            t = np.frombuffer(body[b"tRNS"], np.uint8)[:len(pal)]
+            alpha[:len(t)] = t
+            pal = np.concatenate([pal, alpha[:, None]], axis=1)
+        self.idx, self.lut = arr, pal
+        self.work = pal[arr]
+
+    def alpha(self):
+        """Alpha of every pixel as Pillow composes it (tRNS, an alpha channel, or 255)."""
+        with Image.open(io.BytesIO(self.data)) as im:
+            return np.array(im.convert("RGBA"))[..., 3]
+
+    def encode(self, work, painted):
+        """(PNG bytes, the array a decode must give back, painted pixels with no palette entry
+        within NEAR, the largest distance to the entry used). The bytes and the array are None when no
+        pixel changes, which a palette file can do even though a fill wrote new colours: `far` still counts.
+
+        A palette file keeps every index outside `painted`, and every painted pixel whose colour the
+        fill left alone; any other painted pixel takes the nearest existing entry (squared distance
+        over RGB, and alpha when the file has tRNS). The palette is never grown or reordered, so a
+        fill colour it has no close entry for comes out as the nearest one, and `far` says how many."""
+        far, dmax = 0, 0.0
+        if self.mode == "P":
+            idx = self.idx.copy()
+            sel = painted & (work != self.work).any(axis=2)
+            if sel.any():
+                uniq, inv = np.unique(work[sel].astype(np.int32), axis=0, return_inverse=True)
+                pal = self.lut.astype(np.int32)
+                best, dist = np.empty(len(uniq), np.intp), np.empty(len(uniq))
+                for s in range(0, len(uniq), 4096):
+                    d = ((uniq[s:s + 4096, None, :] - pal[None]) ** 2).sum(axis=2)
+                    best[s:s + 4096], dist[s:s + 4096] = d.argmin(axis=1), np.sqrt(d.min(axis=1))
+                inv = inv.reshape(-1)
+                idx[sel] = best[inv]
+                far, dmax = int((dist[inv] > NEAR).sum()), float(dist.max())
+            if np.array_equal(idx, self.idx):
+                return None, None, far, dmax
+            im = Image.frombytes("P", self.size, np.ascontiguousarray(idx, np.uint8).tobytes())
+            im.putpalette(np.ascontiguousarray(self.lut[:, :3]).tobytes())
+            intended = idx
+        else:
+            if np.array_equal(work, self.work):
+                return None, None, 0, 0.0
+            arr = work[..., 0] if self.mode == "L" else work[..., [0, 3]] if self.mode == "LA" else work
+            im = Image.fromarray(np.ascontiguousarray(arr, np.uint8))
+            intended = _work_from(self.mode, np.asarray(arr))
+        buf = io.BytesIO()
+        im.save(buf, format="PNG", optimize=True)
+        new, _ = png_chunks(buf.getvalue())
+        out, placed = [PNG_MAGIC], False
+        for k, raw in self.chunks:                       # the original layout, new pixel data
+            if k == b"IHDR":
+                out += [raw for k2, raw in new if k2 == b"IHDR"]
+            elif k == b"IDAT":
+                if not placed:
+                    out += [raw for k2, raw in new if k2 == b"IDAT"]
+                    placed = True
+            else:
+                out.append(raw)
+        return b"".join(out) + self.tail, intended, far, dmax
+
+
+def edit_problem(before, after, painted, intended):
+    """Why the PNG bytes `after` are not `before` with only the `painted` pixels changed into
+    `intended` (indices for a palette file, else the work array), or None."""
+    a, b = Native(before), Native(after)
+    keep = ~painted
+    if (a.mode, a.size) != (b.mode, b.size):
+        return f"mode or size changed ({a.mode} {a.size} to {b.mode} {b.size})"
+    if a.kept != b.kept:
+        return "a chunk other than the pixel data changed (palette, tRNS or metadata)"
+    if a.mode == "P" and not (np.array_equal(a.lut, b.lut) and np.array_equal(a.idx[keep], b.idx[keep])):
+        return "the palette, or an index outside the painted regions, changed"
+    if not np.array_equal(a.work[keep], b.work[keep]):
+        return f"{int((a.work != b.work).any(axis=-1)[keep].sum())} pixels outside the painted regions changed"
+    if not np.array_equal(a.alpha()[keep], b.alpha()[keep]):
+        return "alpha outside the painted regions changed"
+    if not np.array_equal(b.idx if b.mode == "P" else b.work, intended):
+        return "the written pixels are not the painted ones"
+    return None
+
+
+def write_in_place(f, before, after, painted, intended):
+    """Write the PNG bytes `after` over f, but only once a decode of the written copy proves that
+    nothing outside `painted` changed, alpha included; otherwise stop with the file untouched."""
+    fd, tmp = tempfile.mkstemp(dir=f.parent, prefix=f".{f.name}.", suffix=".tmp")
+    try:
+        with os.fdopen(fd, "wb") as fh:
+            fh.write(after)
+        try:
+            problem = edit_problem(before, Path(tmp).read_bytes(), painted, intended)
+        except NotEditable as e:
+            problem = f"the written copy does not read back ({e})"
+        if problem:
+            sys.exit(f"{f}: refusing to write it: {problem}. The file is unchanged; this is a bug in redact_images.py")
+        shutil.copymode(f, tmp)
+        os.replace(tmp, f)
+    finally:
+        if os.path.exists(tmp):
+            os.unlink(tmp)
 
 
 def cmd_apply(args):
@@ -664,7 +856,7 @@ def cmd_apply(args):
     ocr_cfg["email_allow"] = allow + load_email_allow(args.patterns)
     global_keep = [re.compile(k, re.I) for k in ocr_cfg.get("keep", [])]
     only = args.only
-    deleted, edited, flagged = set(), 0, []
+    deleted, edited, flagged, refused = set(), 0, [], []
 
     for g in rules.get("delete", []):
         deleted.update(pkg.glob(g))
@@ -676,36 +868,61 @@ def cmd_apply(args):
         rel = f.relative_to(pkg).as_posix()
         if f in deleted or (only and not any(fnmatch.fnmatch(rel, g) for g in only)):
             continue
-        im = open_rgb(f)
-        rects, regions = rules_for(rules, rel, im.size)
-        a = np.array(im)
+        before = f.read_bytes()
+        try:
+            src, why = Native(before), None
+            a = src.work.copy()
+        except NotEditable as e:              # still read, so a file that needs an edit is named
+            src, why = None, str(e)
+            a = np.array(open_rgb(f))
+        h, w = a.shape[:2]
+        rects, regions = rules_for(rules, rel, (w, h))
         orig = a.copy()
+        painted = np.zeros((h, w), bool)      # every pixel a fill wrote; nothing else may change
         for r in rects:
             paint(a, r)
+            painted[r[1]:r[3], r[0]:r[2]] = True
         boxes, wrapped = [], False
         if regions or (ocr_cfg.get("net", True) and (patterns or ocr_cfg.get("emails", True))):
-            reads = [ocr_words(Image.fromarray(a))]
+            seen = Image.fromarray(np.ascontiguousarray(a[..., :3]))      # what open_rgb gave before
+            reads = [ocr_words(seen)]
             if any(fnmatch.fnmatch(rel, g) for g in ocr_cfg.get("boost", [])):
-                reads.append(ocr_words(Image.fromarray(a), boost=True))
+                reads.append(ocr_words(seen, boost=True))
             boxes = [b for words in reads for b in region_boxes(words, regions, global_keep)]
             if ocr_cfg.get("net", True):
                 found, wrapped = ocr_hits(patterns, ocr_cfg, reads)
                 boxes += found
         covered = np.zeros(a.shape[:2], bool)       # union of the painted boxes, so overlaps count once
         for x0, y0, x1, y1 in boxes:
-            r = (max(0, x0 - PAD), max(0, y0 - PAD), min(im.width, x1 + PAD), min(im.height, y1 + PAD), "rows")
+            r = (max(0, x0 - PAD), max(0, y0 - PAD), min(w, x1 + PAD), min(h, y1 + PAD), "rows")
             covered[r[1]:r[3], r[0]:r[2]] = True
             paint(a, r)
+        painted |= covered
         if boxes and "components/crops/" in rel and covered.mean() >= ocr_cfg.get("delete_if_covered", 0.3):
             deleted.add(f)
             continue
         if wrapped:
             flagged.append(rel)
-        if not np.array_equal(a, orig):
+        if np.array_equal(a, orig):
+            continue
+        if why:
+            refused.append(rel)
+            print(f"cannot edit {rel} in place: {why}", flush=True)
+            continue
+        out, intended, far, dmax = src.encode(a, painted)
+        if out is not None:
             edited += 1
             print(("would edit " if args.dry_run else "edited ") + rel, flush=True)
-            if not args.dry_run:
-                save_256(Image.fromarray(a), f)
+        elif far:                             # the fill mapped back to the pixels' own entries
+            print(f"unchanged {rel}: every painted pixel mapped back to its own palette entry, so the "
+                  "region may still show what it was meant to hide", flush=True)
+        if far:
+            print(f"   {far} painted pixels have no palette entry within {NEAR} of the fill; painted with the "
+                  f"nearest entry (up to {dmax:.0f} off). The palette is never grown; look at the result", flush=True)
+        if out is None:
+            continue
+        if not args.dry_run:
+            write_in_place(f, before, out, painted, intended)
 
     # A delete glob ("../x", a symlinked folder) must never reach a file outside the package.
     # unlink removes the directory entry, so the folder holding it is what must sit in the package
@@ -722,6 +939,12 @@ def cmd_apply(args):
     print(f"{edited} edited, {len(deleted)} deleted, {len(flagged)} with a pattern spanning lines (add rectangles):")
     for rel in flagged:
         print("  ", rel)
+    if refused:
+        print(f"{len(refused)} images need an edit apply cannot make in place (named above); nothing was written "
+              "to them. Convert each to an 8-bit PNG in its own commit, then run apply again:")
+        for rel in refused:
+            print("  ", rel)
+        return 1
     return 0
 
 
