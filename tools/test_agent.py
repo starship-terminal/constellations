@@ -140,6 +140,21 @@ class CatalogCacheTest(unittest.TestCase):
                 path.write_text(json.dumps({"systems": [{"slug": "a"}, {"slug": "b"}]}))
                 self.assertEqual([s["slug"] for s in library._catalog()["systems"]], ["a", "b"])
 
+    def test_repeated_searches_parse_once(self):
+        # search_styles ranks with catalog.find, which must use the cached parse too.
+        real = library.catalog.load_catalog
+        calls = []
+
+        def counted():
+            calls.append(1)
+            return real()
+        with mock.patch.object(library.catalog, "_library_cache", None, create=True), \
+                mock.patch.object(library.catalog, "load_catalog", counted):
+            first = library.search_styles("dark dense", store="systems")
+            for _ in range(3):
+                self.assertEqual(library.search_styles("dark dense", store="systems"), first)
+        self.assertEqual(len(calls), 1)
+
     def test_concurrent_requests_parse_once(self):
         import tempfile
         import threading
