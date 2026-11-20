@@ -413,6 +413,30 @@ describe("a key in a URL field", () => {
     assert.equal(await loadSaved(), null);
   });
 
+  it("is refused for every shared case, decoding %XX as Python does", async () => {
+    const spec = JSON.parse(await fs.readFile(path.join(ROOT, "server", "provider-key-url-cases.json"), "utf8"));
+    const key: string = spec.key;
+    // Every character Python's quote(safe="") encodes, upper case hex.
+    const upper = [...new TextEncoder().encode(key)]
+      .map((b) => (/[A-Za-z0-9_.~-]/.test(String.fromCharCode(b)) ? String.fromCharCode(b) : `%${b.toString(16).toUpperCase().padStart(2, "0")}`))
+      .join("");
+    const lower = upper.replace(/%[0-9A-F]{2}/g, (m) => m.toLowerCase());
+    assert.notEqual(upper, lower);
+    for (const c of spec.cases as Record<string, string>[]) {
+      const fields: Record<string, string> = {};
+      for (const [k, v] of Object.entries(c))
+        if (k !== "expect") fields[k] = v.replaceAll("<KEY_UPPER>", upper).replaceAll("<KEY_LOWER>", lower).replaceAll("<KEY>", key);
+      const r = await handleSave({ ...GOOD, ...fields, api_key: key }, okModels);
+      if (c.expect === "refuse") {
+        assert.equal(r.status, 400, JSON.stringify(fields));
+        assert.match(String(r.body.error), /API key field only/);
+      } else {
+        assert.deepEqual([r.status, r.body.ok], [200, true], JSON.stringify(fields));
+      }
+      assert.ok(!JSON.stringify(r.body).includes(key));
+    }
+  });
+
   it("is redacted from the public fields if it was saved some other way", async () => {
     await saveProvider({ ...GOOD, base_url: `https://models.example/v1?key=${KEY}`, api_key: KEY }, "replace");
     const got = await handleGet();

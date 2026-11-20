@@ -134,14 +134,32 @@ const FIELDS = ["api", "base_url", "key_header", "models_url", "model", "name", 
 
 const URL_KEY = "Put the API key in the API key field only, not in the base URL, models URL, label or model.";
 
+/** `value` with each %XX sequence decoded on its own, either case of hex,
+    as UTF-8 with bad bytes replaced; a stray % is left as it is. This is what
+    Python's urllib.parse.unquote does, so both servers read a URL field the
+    same way (decodeURIComponent instead throws on a stray % and would leave
+    the whole value undecoded). */
+export function percentDecode(value: string): string {
+  const enc = new TextEncoder();
+  const bytes: number[] = [];
+  for (let i = 0; i < value.length; ) {
+    const hex = value.slice(i + 1, i + 3);
+    if (value[i] === "%" && /^[0-9a-fA-F]{2}$/.test(hex)) {
+      bytes.push(parseInt(hex, 16));
+      i += 3;
+    } else {
+      const ch = String.fromCodePoint(value.codePointAt(i)!);
+      bytes.push(...enc.encode(ch));
+      i += ch.length;
+    }
+  }
+  return new TextDecoder().decode(new Uint8Array(bytes));
+}
+
 /** Whether `value` holds `key`, as typed or percent-encoded. */
 function carriesText(value: string, key: string): boolean {
   if (!value || key.length < 4) return false;
-  let decoded = value;
-  try {
-    decoded = decodeURIComponent(value);
-  } catch {}
-  return value.includes(key) || decoded.includes(key) || value.includes(encodeURIComponent(key));
+  return value.includes(key) || percentDecode(value).includes(key);
 }
 
 /** Validate and normalise a posted provider object. Throws BadRequest with a
