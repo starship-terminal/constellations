@@ -149,24 +149,41 @@ for name, alias in (("--18bniqv", "ink"), ("--1cripqf", "inverse")):
 # @font-face declarations in css-vars.json (futura-pt book 400, demi 500,
 # bold 700; FuturaStd 400/700). fw 900 is what the browser computes on
 # nav-tab/load-more — the heaviest Futura face available.
-body_ff = C["pdp-price"]["states"]["default"]["style"].get("fontFamily", "")
+
+
+def ff(comp):
+    """The computed fontFamily of a component's default state, as raw records it."""
+    v = C[comp]["states"]["default"]["style"].get("fontFamily")
+    if not v:
+        raise KeyError(f"{comp}: no computed fontFamily in raw/components-computed.json")
+    return v
+
+
+def fw(*comps):
+    """The computed fontWeight every named component's default state shares."""
+    vals = {C[c]["states"]["default"]["style"]["fontWeight"] for c in comps}
+    if len(vals) != 1:
+        raise ValueError(f"{comps}: fontWeight readings differ: {sorted(vals)}")
+    return vals.pop()
+
+
 SPEC["core"]["font"] = {
     "family": {
-        "primary": {"value": body_ff or "futura-pt, Tahoma, Geneva, Verdana, sans-serif",
+        "primary": {"value": ff("pdp-price"),
                     "type": "fontFamily",
                     "source": "computed fontFamily of pdp-price (raw/components-computed.json); faces futura-pt 400/500/700 + FuturaStd 400/700 in css-vars.json",
                     "description": "Futura PT everywhere — the ASOS face."},
-        "legacy": {"value": "FuturaStd, \"Futura Std\", Arial, sans-serif",
+        "legacy": {"value": ff("promo-strip"),
                    "type": "fontFamily",
                    "source": "computed fontFamily of promo-strip/promo-tab (raw/components-computed.json)",
-                   "description": "The older FuturaStd stack on promo furniture."},
+                   "description": "The promo furniture's stack, with \"Futura Std\" second."},
     },
     "weight": {
-        "regular": {"value": "400", "type": "fontWeight", "source": "computed fontWeight of body copy (pdp-title, tiles)"},
+        "regular": {"value": fw("pdp-title"), "type": "fontWeight", "source": "computed fontWeight of body copy (pdp-title)"},
         "demi": {"value": "500", "type": "fontWeight", "source": "futura-pt demi @font-face in css-vars.json"},
-        "semibold": {"value": "600", "type": "fontWeight", "source": "computed fontWeight of continue-button"},
-        "bold": {"value": "700", "type": "fontWeight", "source": "computed fontWeight of add-to-bag/promo-tab"},
-        "heavy": {"value": "900", "type": "fontWeight", "source": "computed fontWeight of nav-tab/load-more/m-nav-link"},
+        "semibold": {"value": fw("continue-button"), "type": "fontWeight", "source": "computed fontWeight of continue-button"},
+        "bold": {"value": fw("add-to-bag", "promo-tab"), "type": "fontWeight", "source": "computed fontWeight of add-to-bag/promo-tab"},
+        "heavy": {"value": fw("nav-tab", "load-more", "m-nav-link"), "type": "fontWeight", "source": "computed fontWeight of nav-tab/load-more/m-nav-link"},
     },
     "size": {},
     "tracking": {},
