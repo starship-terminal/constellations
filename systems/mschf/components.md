@@ -57,4 +57,4 @@ Not present on the public index.
 - No pressed style beyond the forced `:active`, which matches rest.
 - The logo button has no accessible name and its click does nothing visible.
 - `section.subscription` (`#40aaff`) is declared and not mounted.
-- store.mschf.com is a separate Shopify theme (white page, Courier, Nunito Sans, Assistant) and is not this system.
+- store.mschf.com is a separate Shopify theme (white page, Arial body, Courier prices, Assistant in the Dawn token declarations, blue pill sold-out button `#6ec2ff`) and is not this system. Its public pages are screenshotted under `screenshots/store-*` and mapped in [site-tree.md](site-tree.md).
