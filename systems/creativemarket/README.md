@@ -90,14 +90,14 @@ A Rails storefront with a Vue island layer, painted under `data-theme="legacy"` 
 | [DESIGN.md](DESIGN.md) | the generated one-theme export |
 | [icon.png](icon.png) | the Creative Market app icon, 128px (Git LFS) |
 | [components/](components) | `crops/` — quantized state crops at 2x |
-| [screenshots/](screenshots) | 17 quantized captures (desktop 1440, mobile 390@2x, full-page bounded at 8 chunks) |
+| [screenshots/](screenshots) | 17 public quantized captures, plus 3 signed-in desktop shots (account menu, purchases, profile) |
 | [raw/](raw) | `css-vars.json` (the cross-origin var harvest), `components-computed.json`, `component-tokens.json`, `measurements.md` |
 | [tools/](tools) | the builders and capture scripts that produced this package |
 
 ## Boundaries
 
 - **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
-- The signed-in account — dashboard, purchases, downloads, checkout, the sell studio — was never reached. /sign-in is a username/password card; the username field was filled with a placeholder and cleared, Log In never pressed.
+- A later signed-in pass (2026-11-20, T3 preview, already signed in) opened the account menu, My purchases (empty) and My profile. Settings redirects to /account/unauthorized-device. The shop menu, messages, notifications, collections, likes and a 390-wide pass were not screenshotted: the preview stopped producing frames. Nothing was purchased, published or submitted. The public /sign-in card is unchanged: Log In was never pressed in that earlier capture.
 - Add to cart, Buy now, the license radios, the bundle checkboxes, every membership CTA and Save 25% were measured, never followed; nothing entered the cart.
 - The CookieYes consent banner and the "Licensing Questions? Let's Chat!" launcher were hidden via the overlay hider, never answered.
 - The nav dropdowns (FONTS, TEMPLATES, MORE, All Categories facet) were never opened.
