@@ -12,7 +12,11 @@ const OUT = path.join(RAW, 'components-computed.json');
 // Start from the committed readings and replace each component this run reaches, so a page that
 // fails part way keeps the earlier readings of every later component.
 const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { components: {} };
-const out = { _meta: { product: 'Monarch Money', captured: new Date().toLocaleDateString('en-CA'), route: 'public-web' }, components: prev.components || {} };
+// _meta.captured moves to today only once a component is read again, and each component records its
+// own read date, so a failed run cannot give earlier readings a new date.
+const today = new Date().toLocaleDateString('en-CA');
+const out = { _meta: { ...(prev._meta || {}), product: 'Monarch Money', route: 'public-web' }, components: prev.components || {} };
+if (!out._meta.captured) out._meta.captured = today;
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 
@@ -69,7 +73,8 @@ async function measure(key, state, loc, via) {
 }
 
 async function S(key, loc, states, meta) {
-  out.components[key] = { title: meta.title, group: meta.group, desc: meta.desc, page: current, states: {} };
+  out.components[key] = { title: meta.title, group: meta.group, desc: meta.desc, page: current, read: today, states: {} };
+  out._meta.captured = today;
   const target = loc.filter({ visible: true }).first();
   if (!(await target.count())) {
     out.components[key].missing = true;

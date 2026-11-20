@@ -143,7 +143,8 @@ const typeScale = await page.evaluate(() => {
   // The probe takes the theme classes of the page's cs_tidigit wrapper; without one the read stops
   // with a plain message instead of a TypeError.
   const wrapper = document.querySelector('[class*="cs_tidigit"]');
-  if (!wrapper) return { error: 'no cs_tidigit wrapper on the page' };
+  // Throw, so page.evaluate rejects and the run stops before it writes over the saved readings.
+  if (!wrapper) throw new Error('no cs_tidigit wrapper on the page; the type probe has nothing to copy');
   host.className = wrapper.className;
   host.style.cssText = 'position:absolute;left:-9999px;top:0';
   document.body.appendChild(host);
