@@ -277,6 +277,8 @@ The login label computed colour was `rgb(108, 108, 107)`. `--hop-neutral-text-we
 
 Screenshots are absent. Do not treat [style-guide.html](style-guide.html) as a capture of the page.
 
+`raw/computed.json` holds the capture's metadata, not the element styles. Every token whose source is an element's computed style (the page, card and field fills, the nav colour, component heights and paddings, the pricing-card shadow, the 0.4s footer transition, the button easing) is labelled Reconstruction: typed in by hand at capture time. The custom properties from the two `:root` dumps are Measured. The heading styles (`display`, `h1` to `h5`) and the `.button` fill, text and radius come from stylesheet rules raw/ does not keep, and a token that aliases a hand-entered value is labelled the same way.
+
 Two marketing custom properties in the dump have a `<deleted|...>` suffix in the name (`--_typography---paragraph-lg--bottom-margin` and `--_typography---paragraph-xl--bottom-margin`). They were not used as tokens.
 
 ### Do and don't (from README.md)
