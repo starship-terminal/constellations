@@ -56,13 +56,13 @@ describe("migrateStoredProvider", () => {
 
   it("sends a stored key to the server once, then deletes it", async () => {
     store.set("ds-provider", JSON.stringify(old));
-    const sent: Record<string, string>[] = [];
+    const sent: Record<string, string | boolean>[] = [];
     const note = await migrateStoredProvider(async (b) => {
       sent.push(b);
       assert.ok(store.has("ds-provider"), "deleted only after the save answered");
       return { ok: true };
     });
-    assert.deepEqual(sent, [old]);
+    assert.deepEqual(sent, [{ migrate: true, ...old }]);
     assert.equal(store.has("ds-provider"), false);
     assert.match(String(note), /^Moved the API key/);
     assert.ok(!String(note).includes(KEY));
@@ -85,6 +85,26 @@ describe("migrateStoredProvider", () => {
     });
     assert.equal(store.has("ds-provider"), false);
     assert.match(String(note), /no answer from the server/);
+  });
+
+  it("keeps the server's own key when it already has one, and says so", async () => {
+    store.set("ds-provider", JSON.stringify(old));
+    const note = await migrateStoredProvider(async () => ({ ok: false, existing: true, error: "kept" }));
+    assert.equal(store.has("ds-provider"), false);
+    assert.match(String(note), /already has its own saved key/);
+  });
+
+  it("runs once for calls that overlap", async () => {
+    store.set("ds-provider", JSON.stringify(old));
+    let calls = 0;
+    const save = async () => {
+      calls++;
+      await new Promise((r) => setTimeout(r, 10));
+      return { ok: true };
+    };
+    const [a, b] = await Promise.all([migrateStoredProvider(save), migrateStoredProvider(save)]);
+    assert.equal(calls, 1);
+    assert.equal(a, b);
   });
 
   it("drops a leftover value with no key silently, and does nothing when there is none", async () => {

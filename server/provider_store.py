@@ -19,13 +19,20 @@ The rules:
 - A saved key only goes to the endpoint it was saved with; changing the API,
   base URL, key header or models URL needs the key again.
 - Every error text passes through redact() with the keys in play.
+- A key the provider never checked (an endpoint with no model list) never
+  replaces a saved one, and a one-time migration from a browser (migrate:
+  true) never replaces any saved provider.
+- Every read-compare-write runs under locked().
 """
 from __future__ import annotations
 
+import contextlib
 import json
 import os
 import re
+import shutil
 import tempfile
+import time
 from pathlib import Path
 
 CONFIG_DIR_ENV = "DESIGN_SYSTEMS_CONFIG_DIR"
@@ -94,6 +101,44 @@ def save(cfg: dict) -> None:
         raise
 
 
+LOCK_NAME = "provider.lock"
+LOCK_WAIT = 5.0
+LOCK_STALE = 30.0
+
+
+@contextlib.contextmanager
+def locked():
+    """Hold the store's lock: a folder beside provider.json that mkdir creates
+    atomically, the same one web/lib/provider-store.ts takes, so saves,
+    replacements and removals from either server never interleave. A lock
+    older than 30 s is a crashed holder's and is broken."""
+    folder = config_dir()
+    folder.mkdir(parents=True, exist_ok=True, mode=0o700)
+    lock = folder / LOCK_NAME
+    start = time.monotonic()
+    while True:
+        try:
+            lock.mkdir(mode=0o700)
+            break
+        except FileExistsError:
+            try:
+                age = time.time() - lock.stat().st_mtime
+            except OSError:
+                age = 0.0
+            if age > LOCK_STALE:
+                shutil.rmtree(lock, ignore_errors=True)
+                continue
+            if time.monotonic() - start > LOCK_WAIT:
+                raise StoreError("The provider store is busy; try again.") from None
+            time.sleep(0.05)
+        except OSError:
+            raise StoreError("The provider store cannot be locked.") from None
+    try:
+        yield
+    finally:
+        shutil.rmtree(lock, ignore_errors=True)
+
+
 def remove() -> bool:
     """Delete the saved provider. True when there was one."""
     try:
@@ -124,7 +169,9 @@ def parse(body) -> dict:
     """Validate and normalise a posted provider object."""
     if not isinstance(body, dict):
         raise BadRequest("Send a JSON object.")
-    s = {}
+    if body.get("migrate") is not None and not isinstance(body.get("migrate"), bool):
+        raise BadRequest("migrate must be true or false.")
+    s = {"migrate": body.get("migrate") is True}
     for k in (*PUBLIC_FIELDS, "api_key"):
         v = body.get(k)
         if v is None:
@@ -149,11 +196,23 @@ def parse(body) -> dict:
     return s
 
 
+def default_header(api: str) -> str:
+    """The header a key goes in when none is named: chat.py's rule."""
+    return "x-api-key" if api == "anthropic" else "authorization"
+
+
 def _endpoint(p: dict) -> tuple:
+    """Where a key goes, normalised: a blank key header is its API's default."""
+    api = (p.get("api") or "").strip() or "openai"
     out = []
     for k in ENDPOINT_FIELDS:
         v = (p.get(k) or "").strip()
-        out.append(v.lower() if k == "key_header" else v if k == "api" else v.rstrip("/"))
+        if k == "api":
+            out.append(api)
+        elif k == "key_header":
+            out.append((v or default_header(api)).lower())
+        else:
+            out.append(v.rstrip("/"))
     return tuple(out)
 
 

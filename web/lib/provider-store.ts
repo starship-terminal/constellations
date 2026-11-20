@@ -64,7 +64,9 @@ export async function loadSaved(): Promise<SavedProvider | null> {
   return out as SavedProvider;
 }
 
-/** Write the provider (key included) in one atomic step, mode 0600. */
+/** Write the provider (key included) in one atomic step, mode 0600. A
+    failure anywhere removes the temporary file, so no stray copy of the key
+    is left beside provider.json. */
 export async function writeSaved(cfg: SavedProvider): Promise<void> {
   const dir = configDir();
   await fs.mkdir(dir, { recursive: true, mode: 0o700 });
@@ -74,20 +76,55 @@ export async function writeSaved(cfg: SavedProvider): Promise<void> {
     if (typeof v === "string" && v) out[k] = v;
   }
   const tmp = path.join(dir, `.${FILE_NAME}.${process.pid}.${Date.now()}.${Math.random().toString(36).slice(2)}.tmp`);
-  const fh = await fs.open(tmp, "wx", 0o600);
   try {
-    await fh.writeFile(JSON.stringify(out, null, 2) + "\n");
-    await fh.sync();
-  } finally {
-    await fh.close();
-  }
-  try {
-    // A umask cannot widen 0600, but an existing file's mode is not ours to trust.
+    const fh = await fs.open(tmp, "wx", 0o600);
+    try {
+      await fh.writeFile(JSON.stringify(out, null, 2) + "\n");
+      await fh.sync();
+    } finally {
+      await fh.close();
+    }
     await fs.chmod(tmp, 0o600);
     await fs.rename(tmp, providerFile());
   } catch (e) {
     await fs.rm(tmp, { force: true });
     throw e;
+  }
+}
+
+export const LOCK_NAME = "provider.lock";
+const LOCK_WAIT_MS = 5000;
+const LOCK_STALE_MS = 30000;
+
+/** Run `fn` holding the store's lock: a folder beside provider.json that
+    mkdir creates atomically, the same one server/provider_store.py takes, so
+    a save, a replacement and a removal from either server never interleave
+    (a model-only save cannot write back a key another request just removed).
+    A lock older than 30 s is a crashed holder's and is broken. */
+export async function withLock<T>(fn: () => Promise<T>): Promise<T> {
+  const dir = configDir();
+  await fs.mkdir(dir, { recursive: true, mode: 0o700 });
+  const lock = path.join(dir, LOCK_NAME);
+  const start = Date.now();
+  for (;;) {
+    try {
+      await fs.mkdir(lock, { mode: 0o700 });
+      break;
+    } catch (e) {
+      if ((e as NodeJS.ErrnoException).code !== "EEXIST") throw new StoreError("The provider store cannot be locked.");
+      const age = await fs.stat(lock).then((st) => Date.now() - st.mtimeMs, () => 0);
+      if (age > LOCK_STALE_MS) {
+        await fs.rm(lock, { recursive: true, force: true });
+        continue;
+      }
+      if (Date.now() - start > LOCK_WAIT_MS) throw new StoreError("The provider store is busy; try again.");
+      await new Promise((r) => setTimeout(r, 50));
+    }
+  }
+  try {
+    return await fn();
+  } finally {
+    await fs.rm(lock, { recursive: true, force: true });
   }
 }
 

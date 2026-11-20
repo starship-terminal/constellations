@@ -428,11 +428,14 @@ class KeyChat(FakeChat):
     def __init__(self, fail=False, **kw):
         super().__init__(**kw)
         self.fail = fail
+        self.no_list = False
 
     def list_models(self, cfg):
         self.calls.append(("list_models", cfg))
         if self.raise_:
             raise self.raise_
+        if self.no_list:
+            return {"ok": True, "models": [], "note": "no model list at this endpoint; type the model name"}
         if self.fail:
             return {"ok": False, "error": f"https://models.example/v1/models answered HTTP 401 for {cfg['api_key']}"}
         return {"ok": True, "models": [{"id": "m1", "label": "Model one"}]}
@@ -598,6 +601,55 @@ class ProviderKeyTest(TempConfig):
         h = self.call("post", "/api/chat", {"messages": []})
         self.assertIn("[redacted]", h.json()["error"])
         self.assert_no_key()
+
+    def test_a_migration_never_replaces_a_saved_provider(self):
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2, "migrate": True})
+        self.assertEqual((h.json()["ok"], h.json()["existing"]), (False, True))
+        self.assertEqual(self.saved()["api_key"], KEY)
+        self.call("delete", "/api/provider")
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2, "migrate": True})
+        self.assertTrue(h.json()["ok"])
+        self.assertEqual(self.call("post", "/api/provider", {**GOOD, "migrate": "yes"}).status, 400)
+        self.assert_no_key()
+
+    def test_an_unchecked_key_never_replaces_a_working_one(self):
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        self.chat.no_list = True
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2})
+        self.assertFalse(h.json()["ok"])
+        self.assertIn("could not be checked", h.json()["error"])
+        self.assertEqual(self.saved()["api_key"], KEY)
+        self.call("delete", "/api/provider")
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2})
+        self.assertEqual((h.json()["ok"], h.json()["verified"]), (True, False))
+        self.assert_no_key()
+
+    def test_a_blank_key_header_is_its_apis_default(self):
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        h = self.call("post", "/api/provider", {**GOOD, "key_header": "Authorization", "model": "m3"})
+        self.assertEqual(h.status, 200)
+        self.assertTrue(self.store.same_endpoint({"api": "anthropic"}, {"api": "anthropic", "key_header": "x-api-key"}))
+        self.assertFalse(self.store.same_endpoint({"api": "openai"}, {"api": "openai", "key_header": "x-api-key"}))
+
+    def test_the_lock_serialises_writers_and_breaks_a_stale_one(self):
+        import threading
+        import time
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        order = []
+        with self.store.locked():
+            t = threading.Thread(target=lambda: (self.call("delete", "/api/provider"), order.append("delete")))
+            t.start()
+            time.sleep(0.2)
+            order.append("released")
+        t.join(5)
+        self.assertEqual(order, ["released", "delete"])
+        self.assertFalse((self.config / self.store.LOCK_NAME).exists())
+        lock = self.config / self.store.LOCK_NAME
+        lock.mkdir()
+        os.utime(lock, (time.time() - 60, time.time() - 60))
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        self.assertEqual(h.json()["ok"], True)
 
     def test_delete_is_only_the_provider_route(self):
         handled, h = _send(self.routes, "delete", "/api/mcp")

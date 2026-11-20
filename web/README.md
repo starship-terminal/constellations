@@ -14,11 +14,15 @@ lives in the browser:
 1. The page sends the key once, to `POST /api/provider`.
 2. The server tests it with one model-list call. A key that fails is not
    saved, and the previous key, if any, keeps working. That is also how a
-   key is replaced: save a new one and it swaps in only once it passes.
+   key is replaced: save a new one and it swaps in only once it passes. An
+   endpoint with no model list cannot check a key, so such a key is saved
+   only when no other key is saved, and the page says it was not checked.
 3. The server writes the provider to
    `$DESIGN_SYSTEMS_CONFIG_DIR/provider.json`, default
    `~/.config/design-systems/provider.json`: outside the checkout, folder
    mode 0700, file mode 0600, written through a temporary file and a rename.
+   Every save and removal holds a lock (a `provider.lock` folder beside the
+   file) shared by both servers, so they never interleave.
 4. No answer carries the key. `GET /api/provider` and `GET /api/status` say
    only where it comes from, shown on the page as a badge: saved on the
    server, from the server environment, or no key.
@@ -35,9 +39,11 @@ lives in the browser:
 
 An older version stored the whole provider, key included, in the browser's
 `localStorage` under `ds-provider`. On the first page load after the update
-the app sends that key to the save route, deletes the browser copy whether
-or not the server kept it, and says which happened (a toast, then a note on
-Settings).
+the app sends that key to the save route as a migration, which the server
+accepts only when it has no provider saved yet, so an old browser never
+replaces a newer key. The page deletes the browser copy whether or not the
+server kept it, and says which happened (a toast, then a note on Settings).
+Tabs take turns, and the other open tabs pick up the change.
 
 The logic lives in [lib/provider-api.ts](lib/provider-api.ts) and
 [lib/provider-store.ts](lib/provider-store.ts), tested by

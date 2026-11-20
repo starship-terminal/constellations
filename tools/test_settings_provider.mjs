@@ -100,6 +100,7 @@ test("with a server it moves an old browser key to the server once, then deletes
   const posts = requests.filter((r) => r.method === "POST");
   assert.equal(posts.length, 1);
   assert.equal(posts[0].body.api_key, KEY);
+  assert.equal(posts[0].body.migrate, true, "a migration never replaces a saved provider");
   assert.equal(store.has("ds-provider"), false);
   assert.deepEqual(writes, []);
   assert.match(els["pf-notice"].textContent, /^Moved the API key/);
@@ -115,6 +116,14 @@ test("a refused move still deletes the browser copy and never quotes the key", a
   assert.equal(store.has("ds-provider"), false);
   assert.match(els["pf-notice"].textContent, /^Deleted the API key/);
   assert.ok(!els["pf-notice"].textContent.includes(KEY));
+});
+
+test("a server that already has a key keeps it, and the page says so", async () => {
+  const { els, store } = await run(legacy, (url, method) =>
+    method === "POST" ? { ok: false, existing: true, error: "kept" } : { ok: true, source: "saved", provider: { api: "openai", model: "m" } },
+  );
+  assert.equal(store.has("ds-provider"), false);
+  assert.match(els["pf-notice"].textContent, /already has its own saved key/);
 });
 
 test("saving posts the typed key to the server and keeps no copy", async () => {
