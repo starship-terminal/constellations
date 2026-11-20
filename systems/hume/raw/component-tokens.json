@@ -177,39 +177,38 @@
     },
     "japanese": {
      "type": "fontFamily",
-     "value": "\"M PLUS 1\", sans-serif",
-     "source": "@font-face in www.hume.ai's sheets (raw/css-vars.json fonts): 'M PLUS 1' covers Japanese text",
-     "description": "the Japanese face"
+     "var": "--font-japanese",
+     "surface": "www"
     },
     "body": {
      "type": "fontFamily",
-     "value": "\"Inter\", system-ui, sans-serif",
-     "source": "@font-face in www.hume.ai's sheets (raw/css-vars.json fonts): 'Inter' is the open-licensed body/UI face",
-     "description": "the body/UI face on www.hume.ai"
+     "value": "Inter, system-ui, sans-serif",
+     "source": "computed fontFamily of site-nav default on www.hume.ai/ (raw/components-computed.json); Inter is declared by @font-face in www.hume.ai's sheets",
+     "description": "the body/UI face on www.hume.ai (open-licensed)"
     },
     "display": {
      "type": "fontFamily",
      "value": "\"Martina Plantijn\", Georgia, serif",
-     "source": "@font-face in www.hume.ai's sheets (raw/css-vars.json fonts): 'Martina Plantijn' is a licensed display serif — the name is evidence, the font file is not shipped",
-     "description": "the serif display face — pull-quotes and accents"
+     "source": "computed fontFamily of hero-headline default on www.hume.ai/ (raw/components-computed.json); Martina Plantijn is declared by @font-face in www.hume.ai's sheets",
+     "description": "the serif display face — a licensed face, not shipped"
     },
     "monoWww": {
      "type": "fontFamily",
      "value": "\"PP Fraktion Mono\", ui-monospace, monospace",
-     "source": "@font-face in www.hume.ai's sheets (raw/css-vars.json fonts): 'PP Fraktion Mono' is licensed — the name is evidence, the font file is not shipped",
-     "description": "the code face on www.hume.ai"
+     "source": "computed fontFamily of player-card default on www.hume.ai/ (raw/components-computed.json); PP Fraktion Mono is declared by @font-face in www.hume.ai's sheets",
+     "description": "the code face on www.hume.ai — licensed, not shipped"
     },
     "docs": {
      "type": "fontFamily",
-     "value": "'Fellix', 'Fellix Fallback', ui-sans-serif, system-ui, sans-serif",
-     "source": "@font-face in dev.hume.ai's sheets (raw/css-vars.json fonts): 'Fellix' is a licensed face on the docs, demo and app — the name is evidence, the font file is not shipped",
-     "description": "the docs/app body face"
+     "value": "Fellix, \"Fellix Fallback\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+     "source": "computed fontFamily of docs-side-link default on dev.hume.ai/audio-decisions/docs/overview (raw/components-computed.json); Fellix is declared by @font-face in dev.hume.ai's sheets",
+     "description": "the docs/app body face — licensed, not shipped"
     },
     "code": {
      "type": "fontFamily",
-     "value": "'Fraktion', ui-monospace, SFMono-Regular, Menlo, monospace",
-     "source": "@font-face in dev.hume.ai's sheets (raw/css-vars.json fonts): 'Fraktion' is a licensed mono — the name is evidence, the font file is not shipped",
-     "description": "the docs code face"
+     "value": "Fraktion, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+     "source": "computed fontFamily of docs-code-block default on dev.hume.ai/audio-decisions/docs/overview (raw/components-computed.json); Fraktion is declared by @font-face in dev.hume.ai's sheets",
+     "description": "the docs code face — licensed, not shipped"
     }
    }
   },
@@ -310,6 +309,11 @@
     "value": "#44403c",
     "source": "literal in www.hume.ai's stylesheets (raw/css-vars.json palette, 8 declarations; e.g. .border-gray-700; .border-gray-700; .border-gray-700)"
    },
+   "pab1123": {
+    "type": "color",
+    "value": "rgba(30, 30, 29, 0.25)",
+    "source": "literal in www.hume.ai's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. .border-black\\/25; .border-black\\/25; .border-black\\/25)"
+   },
    "pf0efed": {
     "type": "color",
     "value": "#f0efed",
@@ -350,6 +354,11 @@
     "value": "rgba(255, 255, 255, 0.72)",
     "source": "literal in www.hume.ai's stylesheets (raw/css-vars.json palette, 5 declarations; e.g. ; ; )"
    },
+   "pab2599": {
+    "type": "color",
+    "value": "rgba(58, 62, 68, 0.3)",
+    "source": "literal in www.hume.ai's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .border-\\[\\#3a3e44\\]\\/30; .border-\\[\\#3a3e44\\]\\/30; .border-\\[\\#3a3e44\\]\\/30)"
+   },
    "p303438": {
     "type": "color",
     "value": "#303438",
@@ -375,6 +384,16 @@
     "value": "rgba(249, 156, 0, 0.3)",
     "source": "literal in www.hume.ai's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .border-amber-500\\/30; .border-amber-500\\/30; .border-amber-500\\/30)"
    },
+   "pab1123x": {
+    "type": "color",
+    "value": "rgba(30, 30, 29, 0.05)",
+    "source": "literal in www.hume.ai's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .border-black\\/5; .border-black\\/5; .border-black\\/5)"
+   },
+   "pab1123xx": {
+    "type": "color",
+    "value": "rgba(30, 30, 29, 0.1)",
+    "source": "literal in www.hume.ai's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .border-black\\/10; .border-black\\/10; .border-black\\/10)"
+   },
    "pba4812": {
     "type": "color",
     "value": "rgba(48, 128, 255, 0.2)",
@@ -384,6 +403,11 @@
     "type": "color",
     "value": "#ece9e5",
     "source": "literal in www.hume.ai's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .border-frame; .border-frame; .border-frame)"
+   },
+   "pab5978": {
+    "type": "color",
+    "value": "rgba(155, 134, 200, 0.6)",
+    "source": "literal in www.hume.ai's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .border-lavender-500\\/60; .border-lavender-500\\/60; .border-lavender-500\\/60)"
    },
    "pba2541": {
     "type": "color",
@@ -415,6 +439,16 @@
     "value": "rgba(98, 116, 142, 0.2)",
     "source": "literal in www.hume.ai's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .border-slate-500\\/20; .border-slate-500\\/20; .border-slate-500\\/20)"
    },
+   "pab3646": {
+    "type": "color",
+    "value": "rgba(52, 82, 170, 0.4)",
+    "source": "literal in www.hume.ai's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .border-spectrum-blue\\/40; .border-spectrum-blue\\/40; .border-spectrum-blue\\/40)"
+   },
+   "pab6138": {
+    "type": "color",
+    "value": "rgba(70, 164, 145, 0.4)",
+    "source": "literal in www.hume.ai's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .border-spectrum-coral\\/40; .border-spectrum-coral\\/40; .border-spectrum-coral\\/40)"
+   },
    "pba0186": {
     "type": "color",
     "value": "rgba(0, 186, 167, 0.2)",
@@ -434,6 +468,11 @@
     "type": "color",
     "value": "#333333",
     "source": "literal in www.hume.ai's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .hover\\:bg-\\[\\#333\\]:hover; .css-190syip .rs-collapsed-chip; .css-1l2xjr1)"
+   },
+   "pab9249": {
+    "type": "color",
+    "value": "rgba(236, 233, 229, 0.05)",
+    "source": "literal in www.hume.ai's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .on-dark\\:border-frame\\/5:where(.on-dark, .on-dark *); .on-dark\\:border-frame\\/5:where(.on-dark, .on-dark *); .on-dark\\:border-frame\\/5:where(.on-dark, .on-dark *))"
    },
    "pba2552xxxxxxx": {
     "type": "color",
@@ -504,6 +543,11 @@
     "type": "color",
     "value": "#1976d2",
     "source": "literal in dev.hume.ai's stylesheets (raw/css-vars.json palette, 6 declarations; e.g. :where([data-fern-style=\"color:#1976D2;--shiki-dark:#F78C6C\"]); :where([data-fern-style=\"color:#1976D2;--shiki-dark:#F78C6C\"]); :where([data-fern-style=\"color:#1976D2;--shiki-dark:#F78C6C\"]))"
+   },
+   "p101828": {
+    "type": "color",
+    "value": "#101828",
+    "source": "literal in dev.hume.ai's stylesheets (raw/css-vars.json palette, 6 declarations; e.g. ._page_12a8n_2; ._heading_12a8n_2; ._row_12a8n_2)"
    },
    "paaaaaa": {
     "type": "color",

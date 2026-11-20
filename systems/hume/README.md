@@ -33,6 +33,7 @@ hume.ai is worth a capture because the product line pivoted from EVI/Octave TTS 
 
 ## What to distrust
 
+- **Font stacks and palette literals were rebuilt in the 2026-11 audit.** The five `core.font.family.*` stacks were hand-written with extra fallbacks; they are now the computed stack of an element that paints each face, verbatim (`body` is `Inter, system-ui, sans-serif`). `font.family.japanese` is again the declared `--font-japanese` value (a hand-written stack had overwritten it). Nine lab()/oklch() palette literals that the builder dropped are now tokens, converted to sRGB.
 - **The signed-in product and the demo playground** are the product's own boundaries: app.hume.ai past /log-in and the demo.hume.ai workspace were never entered. The gate and log-in cards are the honest signed-out evidence.
 - **EVI and Octave TTS are gone from the public web**: the pivot to the Audio Decision Model / VoiceEQ line retired every public EVI surface — demo.hume.ai/evi answers 404. No EVI demo, waveform or mic-permission surface exists to capture; none is claimed.
 - **The /explore explorer is a canvas**: its visualisation is captured as pixels but its internal structure is not DOM — no values are invented for it.
@@ -160,7 +161,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #7fb8ef `core.accent.blue` | #ffffff `dark.docs.accent.default` |
 | border | #e7e5e4 `light.docs.color.borderDefault` | #44403b `dark.docs.color.borderDefault` |
 
-Fonts: `core.font.family.sans` is Inter, then 2 fallbacks; `core.font.family.serif` is Martina Plantijn, then 2 fallbacks; `core.font.family.docs` is Fellix, then 4 fallbacks; `core.font.family.code` is Fraktion, then 4 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 11 type styles (`core.typography`), no radius steps under `core.radius`, no spacing steps under `core.spacing`.
+Fonts: `core.font.family.sans` is Inter, then 2 fallbacks; `core.font.family.serif` is Martina Plantijn, then 2 fallbacks; `core.font.family.docs` is Fellix, then 8 fallbacks; `core.font.family.code` is Fraktion, then 8 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 11 type styles (`core.typography`), no radius steps under `core.radius`, no spacing steps under `core.spacing`.
 
 ### Using components
 
