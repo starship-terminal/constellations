@@ -6245,9 +6245,9 @@
       "description": "Fitness studio software",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://time2book.me/login Continue with Google signed in and opened a create-profile screen. Profile not filled. Product not walked.",
+      "notes": "Email probe: https://time2book.me/login Continue with Google signed in and opened a create-profile screen. Profile not filled. Product not walked. Signed-in walk: https://time2book.me/login is a sign-in wall (Apple, Google, Facebook, email). Session was not present. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 19
     },
     {
