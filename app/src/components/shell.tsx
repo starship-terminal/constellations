@@ -21,6 +21,7 @@ import {
   ArchiveRestore,
 } from "lucide-react";
 import { api, Modal } from "./shared";
+import { createRecentGuard } from "./recent-guard";
 export function Mark() {
   return (
     <>
@@ -118,6 +119,7 @@ interface Conversation {
   archived?: boolean;
 }
 const SIDEBAR_KEY = "studio-sidebar-collapsed";
+const RECENT_RELOAD_MS = 1000;
 /** Runs before paint, like the theme script: a collapsed sidebar is laid out
  * collapsed from the first frame instead of opening and then closing. */
 export const sidebarInitScript = `(function(){try{
@@ -159,10 +161,17 @@ export function AppShell({ children }: { children: ReactNode }) {
     [historyFailed, setHistoryFailed] = useState(false);
   // Only the newest history request may update the list or its failure state.
   const historyRequest = useRef(0);
+  // A tab switch fires focus and visibilitychange together, and the first
+  // focus can land right after mount: only one of them may fetch.
+  const recent = useRef(createRecentGuard(RECENT_RELOAD_MS));
   function reloadWhenShown() {
-    if (document.visibilityState === "visible") reload();
+    if (document.visibilityState === "visible") reloadIfStale();
+  }
+  function reloadIfStale() {
+    if (!recent.current.fresh()) reload();
   }
   function reload() {
+    recent.current.mark();
     const request = ++historyRequest.current;
     api("/api/conversations")
       .then((d) => {
@@ -182,11 +191,11 @@ export function AppShell({ children }: { children: ReactNode }) {
     reload();
     window.addEventListener("research-history", reload);
     document.addEventListener("visibilitychange", reloadWhenShown);
-    window.addEventListener("focus", reload);
+    window.addEventListener("focus", reloadIfStale);
     return () => {
       window.removeEventListener("research-history", reload);
       document.removeEventListener("visibilitychange", reloadWhenShown);
-      window.removeEventListener("focus", reload);
+      window.removeEventListener("focus", reloadIfStale);
     };
   }, []);
   useEffect(() => {
