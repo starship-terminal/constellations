@@ -114,7 +114,7 @@ core = {
         "size": {
             "nav": dim("14px", "computed font-size of SIGN UP and GET STARTED (raw/nav.json)", "Nav actions."),
             "body-2": dim("15px", S_VARS + " --body2-font-size; also field text", "Fields and nav triggers."),
-            "body": dim("16px", "computed font-size of body (raw/nav.json)", "Body."),
+            "body": dim("16px", "derived: raw/ holds no reading of body itself; the nav header, which inherits the body face, computes 16px (raw/nav.json header)", "Body."),
             "body-1": dim("18px", S_VARS + " --body1-font-size; filled CTA", "Filled CTA and footer links."),
             "hero-phone": dim("50px", "computed font-size of h1 at 390px (raw/harvest.json mobile-home)", "Hero title on the phone width."),
             "course": dim("60px", "computed font-size of h1 on /learn-english-online (raw/harvest.json)", "Course-page title."),
@@ -126,7 +126,7 @@ core = {
         "display": text_style("{core.font.family.display}", "70px", 700, "70px", "computed h1 on / at 1440 (raw/harvest.json)", "Home hero title."),
         "display-phone": text_style("{core.font.family.display}", "50px", 700, "50px", "computed h1 at 390 (raw/harvest.json)", "Home hero title at 390. Letter-spacing measured -1px."),
         "section": text_style("{core.font.family.display}", "24px", 400, "24px", "computed h2 on / (preview evaluate)", "Section titles, including the FAQ summary."),
-        "body": text_style("{core.font.family.ui}", "16px", 400, "26px", "computed font-size of body (raw/nav.json); the 26px line height is " + HAND + " (--body1-line-height, declared at 18px; body itself computes 16px/normal)", "Default body. Line-height token uses the declared body1 step."),
+        "body": text_style("{core.font.family.ui}", "16px", 400, "26px", "derived: raw/ holds no reading of body itself; the nav header, which inherits the body face, computes manrope 16px 400 (raw/nav.json header). The 26px line height is " + HAND + " (--body1-line-height, declared at 18px; body itself computes 16px/normal)", "Default body. Line-height token uses the declared body1 step."),
         "body-lg": text_style("{core.font.family.ui}", "24px", 400, "34px", "manrope 24px 400 in raw/harvest.json fonts; the 34px line height of p.hero_section_concept5__description__ZIW-SC is " + HAND, "Hero lede."),
         "nav": text_style("{core.font.family.display}", "15px", 400, "18px", "computed button.navigation_list__navmenu_trigger (preview evaluate)", "Nav triggers."),
         "button": text_style("{core.font.family.display}", "18px", 700, "18px", "computed TRY NOW (preview evaluate): 18px/700, line-height 18px, letter-spacing 0.72px, uppercase", "Filled CTA."),
