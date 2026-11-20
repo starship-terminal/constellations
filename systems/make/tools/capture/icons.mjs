@@ -55,7 +55,8 @@ const seen = new Map();
 const failed = [];
 const page = await ctx.newPage();
 for (const url of pages) {
-  const ok = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 50000 }).then(() => true, () => false);
+  // goto resolves for an HTTP error page too: only a 2xx or 3xx response counts as loaded.
+  const ok = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 50000 }).then((r) => !!r && r.status() < 400, () => false);
   if (!ok) { failed.push(url); console.error('page failed', url); continue; }
   await page.waitForTimeout(1500);
   await hideConsent(page);

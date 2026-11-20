@@ -10,10 +10,14 @@ const OUT = path.join(RAW, 'components-computed.json');
 // Start from the committed readings and replace only what this run reads, so a page that fails
 // part way keeps the earlier readings of every later component instead of dropping them.
 const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { components: {} };
+// _meta.captured keeps the earlier date until a component is read again, and each component
+// carries its own read date, so a partial run never makes retained readings look fresh.
+const today = new Date().toLocaleDateString('en-CA');
 const out = {
-  _meta: { product: 'Make', captured: new Date().toLocaleDateString('en-CA'), route: 'public-web', theme: 'light' },
+  _meta: { ...(prev._meta || {}), product: 'Make', route: 'public-web', theme: 'light' },
   components: prev.components || {},
 };
+if (!out._meta.captured) out._meta.captured = today;
 const done = new Set();
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
@@ -65,7 +69,7 @@ async function forcePseudo(loc, classes) {
 
 async function record(key, state, loc, meta, via) {
   // A component this run reaches is rewritten from scratch; one it never reaches keeps its reading.
-  if (!done.has(key)) { out.components[key] = { states: {}, ...meta, url: current }; done.add(key); }
+  if (!done.has(key)) { out.components[key] = { states: {}, ...meta, url: current, read: today }; done.add(key); out._meta.captured = today; }
   const c = out.components[key];
   try {
     await centre(loc);
@@ -82,7 +86,7 @@ async function record(key, state, loc, meta, via) {
 
 async function states(key, loc, list, meta) {
   const target = loc.filter({ visible: true }).first();
-  if (!(await target.count())) { log(' ! missing', key); out.components[key] = { missing: true, ...meta, url: current, states: {} }; done.add(key); return; }
+  if (!(await target.count())) { log(' ! missing', key); out.components[key] = { missing: true, ...meta, url: current, read: today, states: {} }; done.add(key); out._meta.captured = today; return; }
   for (const st of list) {
     await reset();
     let undo, via = 'at rest';
@@ -92,7 +96,7 @@ async function states(key, loc, list, meta) {
       if (via === 'focus failed') {
         // Keyboard focus never reached the element, so a reading now would be the element at rest
         // saved as its focus. Record the miss instead, as the kit does.
-        if (!done.has(key)) { out.components[key] = { states: {}, ...meta, url: current }; done.add(key); }
+        if (!done.has(key)) { out.components[key] = { states: {}, ...meta, url: current, read: today }; done.add(key); out._meta.captured = today; }
         out.components[key].states[st] = { skipped: 'focus failed: keyboard focus did not reach the element', via };
         log('  -', key, st, 'skipped: focus failed');
         continue;
