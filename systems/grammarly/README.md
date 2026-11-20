@@ -12,7 +12,7 @@ Grammarly's marketing site is a Next.js app on two layered token systems: the le
 | [style-guide.html](style-guide.html) | One self-contained page rendering every token and the rebuilt components (nav bar, buttons, field, tags, plan card) with a toggle between the painted light theme and the declared dark values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per measured component (57) with crops, the shared values (focus rings, motion, layout grids, card shapes), the icon index and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the shared shell and flyout nav, the plans grid, the free checker two-column tool, the contact-sales form, sign-in, and the tools' secondary nav |
-| [components/crops/](components/crops) | 136 element screenshots, `{component}-{state}.png`, at 2x |
+| [components/crops/](components/crops) | 135 element screenshots, `{component}-{state}.png`, at 2x |
 | [icons/](icons) | 38 inline SVGs lifted from the pages, named by role in INDEX.tsv, `currentColor` where the site drew them so |
 | [screenshots/](screenshots) | 57 full-page and state captures `{page}-light-{state}.png` (256-colour; full colour stays in scratch), each with a `.capture.json` sidecar carrying provenance |
 | [raw/](raw) | The readings every value traces to: css-vars.json (every declaration, resolved per theme and viewport), components-computed.json, measurements.md, layout.json, motion.json |
