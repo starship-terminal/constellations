@@ -6,6 +6,7 @@ Every value is copied from a computed style or a declared rule recorded on
 colour that was not on the page. A missing reading stays out of the file.
 """
 import json
+import re
 import pathlib
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -18,8 +19,24 @@ def src(where):
     return {"evidence": "Measured", "capture": CAPTURE, "where": where}
 
 
+def hexcolor(value):
+    """rgb()/rgba() as the computed style reports it -> lower-case #rrggbb, or #rrggbbaa when the
+    alpha is below 1. A value that is already hex is lower-cased; anything else is refused."""
+    v = value.strip().lower()
+    if re.fullmatch(r"#[0-9a-f]{6}([0-9a-f]{2})?", v):
+        return v
+    m = re.fullmatch(r"rgba?\(\s*(\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\s*\)", v)
+    if not m:
+        raise ValueError(f"not a colour: {value!r}")
+    out = "#%02x%02x%02x" % tuple(int(x) for x in m.groups()[:3])
+    if m.group(4) is not None and float(m.group(4)) < 1:
+        out += "%02x" % int(float(m.group(4)) * 255 + 0.5)
+    return out
+
+
 def color(value, where):
-    return {"$type": "color", "$value": value, "$extensions": {"source": src(where)}}
+    """The value is normalised to hex; raw/readings.json keeps the reading as the browser wrote it."""
+    return {"$type": "color", "$value": hexcolor(value), "$extensions": {"source": src(where)}}
 
 
 def dim(value, where):

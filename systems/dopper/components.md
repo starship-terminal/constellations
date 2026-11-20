@@ -45,7 +45,7 @@ Screenshots are named `{page}-{theme}-state.png`: every captured surface paints 
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 18 components were given a real keyboard focus. 18 draw an outline ring: `nav-link` (1px auto #005fcc `measured.focus-ring`, offset 1px), `bag-button` (1px auto #005fcc `measured.focus-ring`, offset 1px), `btn-dark` (1px auto #005fcc `measured.focus-ring`, offset 1px), `btn-outline` (1px auto #005fcc `measured.focus-ring`, offset 1px), `collection-tab` (1px auto #005fcc `measured.focus-ring`, offset 0px), `flyout-card` (1px auto #005fcc `measured.focus-ring`, offset 0px), `shop-nav-link` (2px solid #000f2e `color.deep_sea.default`, offset 4px), `shop-hero-button` (2px solid #000f2e `color.deep_sea.default`, offset 4px), `filters-button` (2px solid #000f2e `color.deep_sea.default`, offset 4px), `filter-swatch` (on a child: 2px solid rgb(0, 15, 46) offset 4px), `filter-close` (2px solid #000f2e `color.deep_sea.default`, offset 4px), `add-to-cart` (2px solid #000f2e `color.deep_sea.default`, offset 4px), `cart-cta` (2px solid #000f2e `color.deep_sea.default`, offset 4px), `login-button` (2px solid #000f2e `color.deep_sea.default`, offset 4px), `login-link` (2px solid #000f2e `color.deep_sea.default`, offset 4px), `create-button` (2px solid #000f2e `color.deep_sea.default`, offset 4px), `m-burger` (1px auto #005fcc `measured.focus-ring`, offset 0px), `m-menu-pill` (1px auto #005fcc `measured.focus-ring`, offset 1px).
+**Focus.** 14 components were given a real keyboard focus. 14 draw an outline ring: `bag-button` (1px auto #005fcc `measured.focus-ring`, offset 1px), `btn-dark` (1px auto #005fcc `measured.focus-ring`, offset 1px), `btn-outline` (1px auto #005fcc `measured.focus-ring`, offset 1px), `collection-tab` (1px auto #005fcc `measured.focus-ring`, offset 0px), `shop-nav-link` (2px solid #000f2e `color.deep_sea.default`, offset 4px), `shop-hero-button` (2px solid #000f2e `color.deep_sea.default`, offset 4px), `filters-button` (2px solid #000f2e `color.deep_sea.default`, offset 4px), `filter-swatch` (on a child: 2px solid rgb(0, 15, 46) offset 4px), `filter-close` (2px solid #000f2e `color.deep_sea.default`, offset 4px), `add-to-cart` (2px solid #000f2e `color.deep_sea.default`, offset 4px), `cart-cta` (2px solid #000f2e `color.deep_sea.default`, offset 4px), `login-button` (2px solid #000f2e `color.deep_sea.default`, offset 4px), `login-link` (2px solid #000f2e `color.deep_sea.default`, offset 4px), `create-button` (2px solid #000f2e `color.deep_sea.default`, offset 4px). Focus could not be captured on 5 more (keyboard focus never landed on them, so their readings are left out): `nav-trigger`, `nav-link`, `m-burger`, `m-nav-item`, `m-menu-pill`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -53,12 +53,11 @@ Values that apply across entries, from the measurement files.
 
 | Duration | Easing | Property | Where |
 |---|---|---|---|
-| 0.1s | `ease-in-out` | all | m-filter-radio |
 | 0.2s | `ease-in-out` | all | login-checkbox |
 | 0.25s | `linear` | background | btn-outline |
 | 0.3s | `ease` | color, opacity | m-nav-item, nav-link, nav-trigger |
 | 0.3s | `linear` | opacity | newsletter-input |
-| 0.4s | `cubic-bezier(0.83, 0, 0.17, 1)` | opacity | collection-tab, flyout-card |
+| 0.4s | `cubic-bezier(0.83, 0, 0.17, 1)` | opacity | collection-tab |
 | 0.4s | `ease` | opacity | m-menu-pill |
 | 0.7s | `ease` | transform | m-menu-pill, m-nav-item |
 
@@ -113,9 +112,10 @@ A right-side header link (Impact report). Read as `nav-link` on the home page.
 |---|---|
 | default | size 101.91 x 20.8; background transparent; text Gilroy 16/20.8 500, #000f2e `color.deep_sea.default`; transition color 0.3s ease |
 | hover | text Gilroy 16/20.8 500, #0067e5 `color.darkBlue.default` |
-| focus-visible | outline 1px auto #005fcc `measured.focus-ring`, offset 1px; layers a.nav-link.light 101.9x20.8 1px auto rgb(0, 95, 204) offset 1px |
 
-![Nav link default](components/crops/nav-link-default.png) ![Nav link hover](components/crops/nav-link-hover.png) ![Nav link focus-visible](components/crops/nav-link-focus-visible.png)
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`; the via was later rewritten by hand, not re-measured), so its focus look is uncaptured — not measured as absent.
+
+![Nav link default](components/crops/nav-link-default.png) ![Nav link hover](components/crops/nav-link-hover.png)
 
 #### Bag button
 The shopping-bag icon button, right end of the header (light-blue circle); links to the cart, never followed. Read as `bag-button` on the home page.
@@ -129,18 +129,21 @@ The shopping-bag icon button, right end of the header (light-blue circle); links
 
 #### Mega-menu
 The yellow Bottle flyout (tab pills across the top, feature columns, CTAs and a product photo). Read as `flyout` on the home page.
+
 **Note:** Misidentified: the stored states are the static 'Explore our solutions' section (the tabsVariation cards carry the same copy as the menu). The opened Bottle mega-menu was screenshotted (screenshots/home-light-menu.png) but not measured; the selector is now scoped to the opened panel and a re-measure is queued.
 
 Not on the page when it was captured.
 
 #### Flyout tab
 A pill tab across the top of the opened menu (Bottle active on yellow). Read as `flyout-tab` on the home page.
+
 **Note:** Misidentified: the stored states are the static 'Explore our solutions' section (the tabsVariation cards carry the same copy as the menu). The opened Bottle mega-menu was screenshotted (screenshots/home-light-menu.png) but not measured; the selector is now scoped to the opened panel and a re-measure is queued.
 
 Not on the page when it was captured.
 
 #### Flyout card
 An option card inside the flyout carousel ("Bottle — A range of reusable bottles…"). Read as `flyout-card` on the home page.
+
 **Note:** Misidentified: the stored states are the static 'Explore our solutions' section (the tabsVariation cards carry the same copy as the menu). The opened Bottle mega-menu was screenshotted (screenshots/home-light-menu.png) but not measured; the selector is now scoped to the opened panel and a re-measure is queued.
 
 Not on the page when it was captured.
@@ -418,6 +421,8 @@ The /checkout/cart empty state: "Your cart" display, the darkBlue-3 continue-sho
 #### Empty cart
 The empty-basket block: "Be my hero" illustration, copy and a Back to shop CTA. A filled cart was not exercised (nothing is added). Read as `cart-empty` on the cart page.
 
+**Known wrong; recapture needed.** The reading is the 1440 x 80 "Your cart" h1, not the empty-basket block; the 2026-11-13 run did not find the block and kept these states (recaptureMissed).
+
 **Values (default).** size 1440 x 80; background transparent; text Dopper 80/80 400, #0067e5 `color.darkBlue.default`.
 
 ![Empty cart default](components/crops/cart-empty-default.png)
@@ -564,9 +569,10 @@ The sand-circle hamburger opening the full-screen menu. Read as `m-burger` on th
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover) | size 45 x 45; padding 15px; background transparent; text Arial 13.33/normal 400, #000000 `color.neutral.ink`; icon 51 x 51, #000000 `color.neutral.ink` |
-| focus-visible | outline 1px auto #005fcc `measured.focus-ring`, offset 0px; layers button.menuToggle 45.0x45.0 1px auto rgb(0, 95, 204) offset 0px |
 
-![Burger button default](components/crops/m-burger-default.png) ![Burger button hover](components/crops/m-burger-hover.png) ![Burger button focus-visible](components/crops/m-burger-focus-visible.png)
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`; the via was later rewritten by hand, not re-measured), so its focus look is uncaptured — not measured as absent.
+
+![Burger button default](components/crops/m-burger-default.png) ![Burger button hover](components/crops/m-burger-hover.png)
 
 #### Mobile display
 The hero h1 at 390. Read as `m-hero` on the home page at 390 wide.
@@ -601,9 +607,10 @@ An outline pill inside the menu (Impact report / Find a Store). Read as `m-menu-
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover) | size 194.64 x 54; padding 14px 31px; border 2px solid #f6ecc8 `color.sand.default`; radius 20px; background transparent; text Gilroy 20/22 700, #f6ecc8 `color.sand.default`; transition opacity 0.4s ease, transform 0.7s ease |
-| focus-visible | outline 1px auto #005fcc `measured.focus-ring`, offset 1px |
 
-![Mobile menu pill default](components/crops/m-menu-pill-default.png) ![Mobile menu pill hover](components/crops/m-menu-pill-hover.png) ![Mobile menu pill focus-visible](components/crops/m-menu-pill-focus-visible.png)
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`; the via was later rewritten by hand, not re-measured), so its focus look is uncaptured — not measured as absent.
+
+![Mobile menu pill default](components/crops/m-menu-pill-default.png) ![Mobile menu pill hover](components/crops/m-menu-pill-hover.png)
 
 #### Filter sheet (mobile)
 The opened filter overlay at 390: Collection/Size radios, Colour swatches, × close. Read as `m-filter-sheet` on the category (PLP) page at 390 wide.
@@ -616,6 +623,7 @@ Child layers that carry the look: div 32x32 background #f0f0f0 image linear-grad
 
 #### Mobile filter row
 A radio row in the mobile filter sheet. Read as `m-filter-radio` on the category (PLP) page at 390 wide.
+
 **Note:** Misidentified: the stored state is the product link 'Insulated (350 ml) - Pine Green', not a filter option row. The row search is now scoped to the marked sheet and a re-measure is queued.
 
 Not on the page when it was captured.

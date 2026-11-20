@@ -102,7 +102,13 @@ Spacing from `core.spacing`: `unit` 0.25rem, `1` 0.25rem, `2` 0.5rem, `3` 0.75re
 
 ## Elevation & Depth
 
-No shadow tokens were captured; depth comes from surface colours and borders. See [style-guide.html](style-guide.html).
+Shadows, resolved to CSS:
+
+| Token | box-shadow |
+|---|---|
+| `core.elevation.sm` | `0px 1px 3px 0px rgba(0, 0, 0, 0.102), 0px 1px 2px -1px rgba(0, 0, 0, 0.102)` |
+| `core.elevation.md` | `0px 4px 6px -1px rgba(0, 0, 0, 0.102), 0px 2px 4px -2px rgba(0, 0, 0, 0.102)` |
+| `core.elevation.lg` | `0px 10px 15px -3px rgba(0, 0, 0, 0.102), 0px 4px 6px -4px rgba(0, 0, 0, 0.102)` |
 
 ## Shapes
 
@@ -125,6 +131,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 ### What to distrust (from README.md)
 
 - Screenshots are 256-colour PNGs. Read colours from tokens, not from the images.
+- The committed readings and screenshots were taken with `navigator.webdriver` hidden by the capture scripts (`public/lib.mjs`, `public/public.mjs`, `vars.mjs`). The mask has been removed from them (2026-11 audit); a bot check is now a boundary, not something to get past.
+- The font weight of each `core.typography` role was typed in by hand at capture time, as the Tailwind step the role appears to use. No element's weight was read for it, so those tokens are labelled Reconstruction.
+- The Download tab entry in [components.md](components.md) was written by hand from [animation-light-download-tab.png](screenshots/animation-light-download-tab.png). No values were read for it.
 - The dark set was not painted by the public site. It is the stylesheet's `.dark` block.
 - Pricing plan buttons (blue `#0077bb`, teal `#017a71`, ink) are measured component colours. They are not the teal `--primary` token.
 - Hover on the teal control computes `oklab(... / 0.9)`. That alpha form is in the component readings. The token keeps the resting `--primary`.

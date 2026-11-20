@@ -141,21 +141,26 @@ STATUS = [
 
 core = {}
 # fonts
-def font_stack(name, fallback):
-    raw = getv("light", name)
+def need(theme, name):
+    """A declared value the token cites. A missing reading fails the build: a literal default
+    under a css-var source would read as measured."""
+    raw = getv(theme, name)
     if not raw:
-        return fallback
-    return raw.replace('\\"', '"')
+        raise SystemExit(f"{name} missing from raw/css-vars.json resolved.{theme}")
+    return raw
 
-put(core, ["font", "family", "sans"], tok(
-    font_stack("--font-sans", '"Inter LF", "Inter", sans-serif'), "fontFamily",
-    "css-var --font-sans on :root"))
-put(core, ["font", "family", "display"], tok(
-    font_stack("--font-dm", '"DM Sans LF", "DM Sans", sans-serif'), "fontFamily",
-    "css-var --font-dm on :root"))
-put(core, ["font", "family", "mono"], tok(
-    font_stack("--font-code", "Menlo, Monaco, Consolas, monospace"), "fontFamily",
-    "css-var --font-code on :root"))
+
+def rem(v):
+    """'.25rem' -> '0.25rem': a DTCG dimension is a number and a unit."""
+    return "0" + v if v.startswith(".") else v
+
+
+def font_stack(name):
+    return need("light", name).replace('\\"', '"')
+
+put(core, ["font", "family", "sans"], tok(font_stack("--font-sans"), "fontFamily", "css-var --font-sans on :root"))
+put(core, ["font", "family", "display"], tok(font_stack("--font-dm"), "fontFamily", "css-var --font-dm on :root"))
+put(core, ["font", "family", "mono"], tok(font_stack("--font-code"), "fontFamily", "css-var --font-code on :root"))
 
 # type scale from Tailwind --text-* (declared, not measured per element)
 TYPE = [
@@ -174,23 +179,22 @@ for role, name, weight in TYPE:
     if not size:
         continue
     put(core, ["typography", role, "fontFamily"], tok("{font.family.sans}", "fontFamily", "css-var --font-sans; body computed Inter LF"))
-    put(core, ["typography", role, "fontSize"], tok(size if size.endswith(("rem", "px")) else size + "rem", "dimension", f"css-var {name} on :root"))
-    put(core, ["typography", role, "fontWeight"], tok(int(weight), "fontWeight", "Tailwind font-weight step used by this role on the marketing site; weight not isolated per heading"))
+    put(core, ["typography", role, "fontSize"], tok(rem(size) if size.endswith(("rem", "px")) else rem(size) + "rem", "dimension", f"css-var {name} on :root"))
+    # The weight per role was typed in by hand at capture time; no element was read for it.
+    put(core, ["typography", role, "fontWeight"], tok(int(weight), "fontWeight", "Reconstruction: entered by hand at capture time as the Tailwind font-weight step this role appears to use; no element's weight was read for it"))
     if lh and re.fullmatch(r"[\d.]+", lh):
         put(core, ["typography", role, "lineHeight"], tok(float(lh) if "." in lh else int(lh), "number", f"css-var {name}--line-height on :root"))
 
 # spacing: Tailwind --spacing is 0.25rem
-spacing = getv("light", "--spacing") or "0.25rem"
-put(core, ["spacing", "unit"], tok(spacing if spacing.startswith(".") is False else "0" + spacing if spacing.startswith(".") else spacing, "dimension", "css-var --spacing on :root (Tailwind spacing unit)"))
-if core["spacing"]["unit"]["$value"].startswith("."):
-    core["spacing"]["unit"]["$value"] = "0" + core["spacing"]["unit"]["$value"]
+spacing = rem(need("light", "--spacing"))
+put(core, ["spacing", "unit"], tok(spacing, "dimension", "css-var --spacing on :root (Tailwind spacing unit)"))
+unit = re.fullmatch(r"([\d.]+)rem", spacing)
+if not unit:
+    raise SystemExit(f"--spacing is not a rem length: {spacing!r}")
 for step, mult in (("1", 1), ("2", 2), ("3", 3), ("4", 4), ("6", 6), ("8", 8)):
-    # 0.25rem * n
-    put(core, ["spacing", step], tok(f"{0.25 * mult:g}rem", "dimension", "css-var --spacing multiplied by the Tailwind step; declared unit 0.25rem"))
+    put(core, ["spacing", step], tok(f"{float(unit.group(1)) * mult:g}rem", "dimension", f"derived: css-var --spacing ({spacing}) multiplied by the Tailwind step {mult}"))
 
-radius = getv("light", "--radius") or "0.5rem"
-if radius.startswith("."):
-    radius = "0" + radius
+radius = rem(need("light", "--radius"))
 put(core, ["radius", "md"], tok(radius, "dimension", "css-var --radius on :root"))
 # --radius-sm is calc(var(--radius) - 4px). That is not one length, so it is not a token.
 # DTCG dimension must be one length. Use the computed px form from the browser if present.
@@ -202,75 +206,65 @@ for name, key in (("--radius-lg", "lg"), ("--radius-xl", "xl"), ("--radius-2xl",
         val = raw if not raw.startswith(".") else "0" + raw
         put(core, ["radius", key], tok(val, "dimension", f"css-var {name} on :root"))
 
-# elevation from --shadow-sm / md / lg (hex, already sRGB)
-def shadow_token(name):
-    raw = getv("light", name)
-    if not raw:
-        return None
-    return tok(raw, "shadow", f"css-var {name} on :root; stored as the authored shadow string")
+# elevation from --shadow-sm / md / lg
+LENGTH = re.compile(r"-?(?:\d+\.?\d*|\.\d+)(?:px|rem|em)|-?0")
 
-# shadow type in this kit expects layer objects. Keep elevation as strings under a note
-# by using the color of the shadow is hard. Skip DTCG shadow layers; record the authored
-# string is not a valid shadow type. Omit elevation tokens that are not layer objects.
-# Record the first shadow colour as a colour token instead? Better: parse simple shadows.
 
-def parse_shadow(raw):
-    # "0 1px 2px 0 #0000000d" or two layers separated by comma at depth 0
-    layers = []
-    parts = []
-    depth = 0
-    cur = ""
+def split_top(raw, sep):
+    """Split at sep outside parentheses."""
+    parts, depth, cur = [], 0, ""
     for ch in raw:
-        if ch == "(":
-            depth += 1
-        elif ch == ")":
-            depth -= 1
-        if ch == "," and depth == 0:
+        depth += ch == "("
+        depth -= ch == ")"
+        if ch == sep and depth == 0:
             parts.append(cur.strip())
             cur = ""
         else:
             cur += ch
     if cur.strip():
         parts.append(cur.strip())
-    for part in parts:
-        m = re.search(r"(#[0-9a-fA-F]{3,8})", part)
-        if not m:
-            return None
-        col = color(m.group(1))
-        nums = re.findall(r"-?[\d.]+px", part)
-        if len(nums) < 2:
-            return None
-        # A negative length is a spread the DTCG dimension check rejects.
-        # Drop the layer rather than rewrite the authored shadow.
-        if any(n.startswith("-") for n in nums):
-            return None
-        while len(nums) < 4:
-            nums.append("0px")
-        layers.append({
-            "color": col,
-            "offsetX": nums[0],
-            "offsetY": nums[1],
-            "blur": nums[2],
-            "spread": nums[3],
-        })
+    return parts
+
+
+def parse_shadow(raw):
+    """Every layer of a CSS box-shadow as a DTCG shadow layer. Keeps inset wherever the keyword
+    sits, takes unitless 0 and negative lengths as written, and raises on anything else."""
+    layers = []
+    for part in split_top(raw, ","):
+        inset, col, nums = False, None, []
+        for word in split_top(part, " "):
+            if word == "inset":
+                inset = True
+            elif LENGTH.fullmatch(word):
+                nums.append("0px" if word in ("0", "-0") else word)
+            elif col is None:
+                col = color(word)
+            else:
+                raise ValueError(f"shadow layer not understood: {part!r}")
+        if col is None or not 2 <= len(nums) <= 4:
+            raise ValueError(f"shadow layer not understood: {part!r}")
+        nums += ["0px"] * (4 - len(nums))
+        layer = {"color": col, "offsetX": nums[0], "offsetY": nums[1], "blur": nums[2], "spread": nums[3]}
+        if inset:
+            layer["inset"] = True
+        layers.append(layer)
     return layers
 
 for key, name in (("sm", "--shadow-sm"), ("md", "--shadow-md"), ("lg", "--shadow-lg")):
-    raw = getv("light", name)
-    layers = parse_shadow(raw) if raw else None
-    if layers:
-        put(core, ["elevation", key], tok(layers, "shadow", f"css-var {name} on :root"))
+    put(core, ["elevation", key], tok(parse_shadow(need("light", name)), "shadow", f"css-var {name} on :root"))
 
-# motion: Tailwind default durations if declared
-for key, name in (("fast", "--animation-delay-75"), ("base", "--animation-delay-150"), ("slow", "--animation-delay-300")):
-    raw = getv("light", name)
-    if not raw:
-        continue
-    m = re.fullmatch(r"([\d.]+)(m?s)", raw.strip())
+# motion: the declared default transition duration, and Tailwind's animation-delay steps as delays
+def ms(raw):
+    m = re.fullmatch(r"(\d*\.?\d+)(m?s)", raw.strip())
     if not m:
-        continue
-    n = float(m.group(1)) * (1 if m.group(2) == "ms" else 1000)
-    put(core, ["motion", "duration", key], tok(("%g" % round(n, 3)) + "ms", "duration", f"css-var {name} on :root (Tailwind animation-delay step, used as a duration reading of the declared timing scale)"))
+        raise SystemExit(f"not a time: {raw!r}")
+    return ("%g" % round(float(m.group(1)) * (1 if m.group(2) == "ms" else 1000), 3)) + "ms"
+
+put(core, ["motion", "duration", "base"], tok(ms(need("light", "--default-transition-duration")), "duration",
+    "css-var --default-transition-duration on :root (Tailwind default transition duration)"))
+for key, name in (("fast", "--animation-delay-75"), ("base", "--animation-delay-150"), ("slow", "--animation-delay-300")):
+    put(core, ["motion", "delay", key], tok(ms(need("light", name)), "duration",
+        f"css-var {name} on :root (Tailwind animation-delay step: a delay before an animation starts, not a transition duration)"))
 
 # No product easing token was isolated. Do not fill one from Tailwind's default.
 
@@ -379,8 +373,8 @@ doc = {
     "light": light,
     "dark": dark,
     "$themes": [
-        {"id": "light", "name": "Light", "selectedTokenSets": {"core": "enabled", "light": "enabled"}},
-        {"id": "dark", "name": "Dark (declared, not painted)", "selectedTokenSets": {"core": "enabled", "dark": "enabled"}},
+        {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}},
+        {"id": "dark", "name": "Dark (declared, not painted)", "selectedTokenSets": {"core": "source", "dark": "enabled"}},
     ],
 }
 

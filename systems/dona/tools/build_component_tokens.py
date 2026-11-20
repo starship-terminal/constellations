@@ -80,6 +80,9 @@ def emit(root, name, leaf):
     node[last] = leaf
 
 
+TYPED = "Reconstruction: entered by hand at capture time from a probe never written to raw/; no reading in raw/ holds it"
+
+
 def st(comp, state):
     return C[comp]["states"][state]["style"]
 
@@ -261,9 +264,11 @@ if "muted" in neutral:
 if "placeholder" in neutral:
     emit(light, "--text-placeholder", {"value": "{color.neutral.placeholder}", "type": "color",
                                        "source": ALIAS, "description": "The email field's placeholder."})
-emit(light, "--text-inverse", {"value": "#ffffff", "type": "color",
-                               "source": "computed color of try-cta default (raw/components-computed.json)",
-                               "description": "White labels on the blue and ink buttons."})
+# Like every other measured leaf here, a reading the capture could not take is left out.
+if have("try-cta", "default", "color"):
+    emit(light, "--text-inverse", {"value": norm_color(st("try-cta", "default")["color"]), "type": "color",
+                                   "source": "computed color of try-cta default (raw/components-computed.json)",
+                                   "description": "White labels on the blue and ink buttons."})
 if "paper" in neutral:
     emit(light, "--surface-page", {"value": "{color.neutral.paper}", "type": "color",
                                    "source": ALIAS, "description": "The white page and banner field."})
@@ -339,8 +344,10 @@ for key, comp, state, prop, bag, ty, desc in [
     if v:
         if ty == "fontWeight":
             v = int(v)
+        own = st(comp, state).get(prop)
+        node = (C[comp]["states"][state].get("textStyle") or {}).get("node")
         bag[key] = {"type": ty, "value": v,
-                    "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)",
+                    "source": f"computed {prop} of {comp} {state}" + (f" first text node ({node})" if str(v) != str(own) else "") + " (raw/components-computed.json)",
                     "description": desc}
 
 # ---------------------------------------------------------- radius, extras
@@ -352,23 +359,26 @@ for key, comp, state, prop, desc in [
     ("banner", "cookie-banner", "default", "borderTopLeftRadius", "The 40px cookie-banner radius."),
     ("chip", "social-link", "default", "borderTopLeftRadius", "The 14px social-chip radius."),
     ("avatar", "team-avatar", "default", "borderTopLeftRadius", "The 12px team-avatar radius."),
-    ("swoosh", None, "default", None, "The 75% border-radius that turns the blue ::before layers into elliptical swooshes behind feature tiles and the newsletter field."),
 ]:
-    if comp is None:
-        try:
-            v = C["newsletter"]["states"]["default"]["::before"]["borderRadius"]
-            radius[key] = {"value": v, "type": "dimension",
-                           "source": "computed borderRadius of the newsletter form's ::before swoosh (raw/components-computed.json)",
-                           "description": desc}
-        except KeyError:
-            pass
-    elif have(comp, state, prop):
+    if have(comp, state, prop):
         radius[key] = {"value": st(comp, state)[prop], "type": "dimension",
                        "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)",
                        "description": desc}
-radius["round"] = {"value": "50%", "type": "dimension",
-                   "source": "computed borderTopLeftRadius of modal-close default (raw/components-computed.json)",
-                   "description": "The 50% circle on the modal close button."}
+# Percentage radii are not DTCG dimensions (one px or rem length), so they are listed under
+# core.$extensions.notTokenised with their readings instead of being typed as dimensions.
+SPEC["core"]["_notTokenised"] = []
+try:
+    SPEC["core"]["_notTokenised"].append(
+        {"name": "radius.swoosh", "value": C["newsletter"]["states"]["default"]["::before"]["borderRadius"],
+         "source": "computed borderRadius of the newsletter form's ::before swoosh (raw/components-computed.json)",
+         "why": "a percentage of the box: the 75% radius that turns the blue ::before layers into elliptical swooshes behind feature tiles and the newsletter field"})
+except KeyError:
+    pass
+if have("modal-close", "default", "borderTopLeftRadius"):
+    SPEC["core"]["_notTokenised"].append(
+        {"name": "radius.round", "value": st("modal-close", "default")["borderTopLeftRadius"],
+         "source": "computed borderTopLeftRadius of modal-close default (raw/components-computed.json)",
+         "why": "a percentage of the box: the 50% circle on the modal close button"})
 
 shadow = SPEC["core"].setdefault("shadow", {})
 for key, comp, state, desc in [
@@ -386,7 +396,8 @@ for key, comp, state, desc in [
             layers = shadow_layers(sh)
             if layers:
                 shadow[key] = {"value": layers, "type": "shadow",
-                               "source": f"computed boxShadow of {comp} {state} (raw/components-computed.json)",
+                               "source": f"computed boxShadow of {comp} {state} (raw/components-computed.json)"
+                               + ("; the marked node sat offscreen on the 390 pass and its crop caught body text, so this is not confirmed as the banner; recapture needed" if comp == "m-cookie-banner" else ""),
                                "description": desc}
     except KeyError:
         pass
@@ -474,20 +485,33 @@ try:
                                   "description": "The custom out-quint-like reveal easing."}
 except KeyError:
     pass
-ease["standard"] = {"value": "ease", "type": "cubicBezier",
-                    "source": "computed transitionTimingFunction of cookie-accept default (raw/components-computed.json)",
-                    "description": "The plain ease every 150ms hover transition uses."}
+# One easing per transitioned property; split between whole functions, never inside cubic-bezier().
+_tf = set(re.findall(r"cubic-bezier\([^)]*\)|steps\([^)]*\)|[a-z-]+", st("cookie-accept", "default")["transitionTimingFunction"])) if have("cookie-accept", "default", "transitionTimingFunction") else set()
+if len(_tf) > 1:
+    raise ValueError(f"cookie-accept transitions use several easings: {_tf}")
+if _tf:
+    ease["standard"] = {"value": _tf.pop(), "type": "cubicBezier",
+                        "source": "computed transitionTimingFunction of cookie-accept default (raw/components-computed.json)",
+                        "description": "The plain ease every 150ms hover transition uses."}
 
 # ------------------------------------------------------------- spacing/layout
 
 layout = SPEC["core"].setdefault("layout", {})
-for key, val, src, desc in [
-    ("container", "1140px", "computed maxWidth of Container__Wrapper (measured during the capture probes; the header/feature/newsletter bars share it)", "The 1140px content container."),
-    ("content", "1100px", "computed width of the header/newsletter wrappers inside the 1140px container with 20px gutters (raw/components-computed.json)", "The 1100px measure the bars actually paint."),
-    ("gutter", "20px", "computed paddingLeft/Right of Container__Wrapper (capture probes)", "The 20px side gutter inside the container."),
-    ("grid-gap", "32px", "computed columnGap/rowGap of the pages__Grid feature grid (capture probes)", "The 32px gap in the two-column feature grid."),
+# The container, gutter and grid gap came from capture probes whose readings were never written
+# to raw/; they are kept, labelled as entered by hand. The content measure is a reading.
+for key, val, why, desc in [
+    ("container", "1140px", "the maxWidth of Container__Wrapper", "The 1140px content container."),
+    ("gutter", "20px", "the paddingLeft/Right of Container__Wrapper", "The 20px side gutter inside the container."),
+    ("grid-gap", "32px", "the columnGap/rowGap of the pages__Grid feature grid", "The 32px gap in the two-column feature grid."),
 ]:
-    layout[key] = {"value": val, "type": "dimension", "source": src, "description": desc}
+    layout[key] = {"value": val, "type": "dimension", "source": f"{TYPED} ({why})", "description": desc}
+_bars = [c for c in ("header", "newsletter") if have(c, "default", "width")]
+if len({st(c, "default")["width"] for c in _bars}) > 1:
+    raise ValueError("header and newsletter no longer paint one measure")
+if _bars:
+    layout["content"] = {"value": st(_bars[0], "default")["width"], "type": "dimension",
+                         "source": "computed width of " + " and ".join(f"{c} default" for c in _bars) + " (raw/components-computed.json)",
+                         "description": "The 1100px measure the bars actually paint."}
 
 sp = SPEC["core"].setdefault("spacing", {})
 for key, comp, state, prop, desc in [

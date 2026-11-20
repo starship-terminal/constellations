@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Render style-guide.html from tokens.json. Deterministic. Light theme only."""
+import html
 import json
 import pathlib
 
@@ -37,11 +38,13 @@ def type_rows():
         v = token["$value"]
         family = val(v["fontFamily"][1:-1]) if isinstance(v["fontFamily"], str) and v["fontFamily"].startswith("{") else v["fontFamily"]
         stack = ", ".join(family)
+        # Escaped, so a quoted family ("Rivian Sans") cannot close the style attribute.
+        e = lambda x: html.escape(str(x), quote=True)
         rows.append(
-            f'<div class="ty" style="font-family:{stack};font-size:{v["fontSize"]};'
-            f'font-weight:{v["fontWeight"]};line-height:{v["lineHeight"]};'
-            f'letter-spacing:{v.get("letterSpacing", "normal")}">'
-            f"<code>core.typography.{name}</code> Electric adventure. {v['fontSize']} / {v['lineHeight']}</div>"
+            f'<div class="ty" style="font-family:{e(stack)};font-size:{e(v["fontSize"])};'
+            f'font-weight:{e(v["fontWeight"])};line-height:{e(v["lineHeight"])};'
+            f'letter-spacing:{e(v.get("letterSpacing", "normal"))}">'
+            f"<code>core.typography.{e(name)}</code> Electric adventure. {e(v['fontSize'])} / {e(v['lineHeight'])}</div>"
         )
     return "\n".join(rows)
 

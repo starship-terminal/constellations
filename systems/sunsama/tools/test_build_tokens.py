@@ -1,4 +1,4 @@
-"""Check that tokens.json only holds values this capture measured."""
+"""tokens.json keeps the measured page and accent colours, and every token carries a source label."""
 import json
 import unittest
 from pathlib import Path
@@ -15,7 +15,7 @@ class Tokens(unittest.TestCase):
         self.assertNotIn("dark", self.data)
         self.assertEqual(self.data["$themes"][0]["id"], "light")
 
-    def test_page_and_accent_are_measured(self):
+    def test_page_and_accent_values(self):
         light = self.data["light"]["color"]
         self.assertEqual(light["page"]["$value"], "#ffffff")
         self.assertEqual(light["accent"]["$value"], "#ff891c")

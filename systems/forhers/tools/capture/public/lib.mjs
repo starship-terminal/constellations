@@ -124,7 +124,9 @@ export function servePages(pagesDir, assetsDir) {
     const send = (file) => {
       fs.readFile(file, (e, data) => {
         if (e) { res.writeHead(404); res.end('nope'); return; }
-        res.writeHead(200, { 'content-type': types[path.extname(file).toLowerCase()] || 'application/octet-stream', 'cache-control': 'no-store' });
+        // script-src 'none': nothing in an archived copy may run, whatever the
+        // rewrite in prepare-pages.mjs missed (2026-11 audit; not run since)
+        res.writeHead(200, { 'content-type': types[path.extname(file).toLowerCase()] || 'application/octet-stream', 'cache-control': 'no-store', 'content-security-policy': "script-src 'none'; object-src 'none'" });
         res.end(data);
       });
     };

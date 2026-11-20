@@ -71,10 +71,15 @@ def norm_color(v):
     raise ValueError("not a colour: " + v)
 
 
-# em is a dimension the tracking scale keeps on purpose: letter-spacing
-# declared in em must scale with the text it sits on (DESIGN.md allows
-# px, rem and em for the same reason).
-DIM = re.compile(r"-?\d+(\.\d+)?(px|rem|em)")
+class NotTokenised(Exception):
+    """A value DTCG cannot hold under its type; listed in the set's $extensions.notTokenised."""
+
+
+# A DTCG dimension holds px or rem. The declared em tracking (which scales with
+# the text it sits on) has no DTCG form, so it is listed under notTokenised with
+# its value instead of being published as a dimension strict consumers reject.
+DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
+EM = re.compile(r"-?(\d+(\.\d+)?|\.\d+)em")
 
 
 def check(path, ty, val):
@@ -82,7 +87,7 @@ def check(path, ty, val):
     if isinstance(val, str) and val.startswith("{"):
         return
     if ty == "dimension" and not DIM.fullmatch(str(val)):
-        raise ValueError(f"{path}: dimension must be one px, rem or em length, got {val!r}")
+        raise ValueError(f"{path}: dimension must be one px or rem length, got {val!r}")
     if ty == "color":
         norm_color(val) if not str(val).startswith("{") else None
     if ty == "shadow":
@@ -144,6 +149,8 @@ def leaf(path, spec, theme):
             val = "%gpx" % val
         elif isinstance(val, str) and re.fullmatch(r"-?\d+(\.\d+)?", val.strip()):
             val = val.strip() + "px"
+        elif isinstance(val, str) and EM.fullmatch(val.strip()):
+            raise NotTokenised("an em length, relative to the element's own font size; a DTCG dimension holds px or rem")
     check(path, ty, val)
     t = {"$value": val, "$type": ty, "$extensions": {"source": src}}
     if spec.get("description"):
@@ -155,21 +162,45 @@ def leaf(path, spec, theme):
     return t
 
 
-def build(node, theme, path=""):
-    if isinstance(node, dict) and "type" in node and ("value" in node or "var" in node):
+def is_leaf(node):
+    return isinstance(node, dict) and "type" in node and ("value" in node or "var" in node)
+
+
+def build(node, theme, path="", skipped=None):
+    """The DTCG tree for a spec subtree. A leaf whose value DTCG cannot hold is left out and
+    recorded in `skipped` (the set's $extensions.notTokenised) with its value and why."""
+    if is_leaf(node):
         return leaf(path, node, theme)
     if isinstance(node, dict) and "$value" in node:
         return node  # already a DTCG leaf (typography composites)
-    return {k: build(v, theme, f"{path}.{k}" if path else k) for k, v in node.items() if not k.startswith("_")}
+    out = {}
+    for k, v in node.items():
+        if k.startswith("_"):
+            continue
+        p = f"{path}.{k}" if path else k
+        try:
+            sub = build(v, theme, p, skipped)
+        except NotTokenised as e:
+            raw = DECL[v.get("resolve", theme)].get(v["var"]) if "var" in v else v["value"]
+            skipped.append({"name": p, "value": raw, "source": f"css-var {v['var']}" if "var" in v else v["source"],
+                            "why": str(e)})
+            continue
+        if sub or not v or is_leaf(v):  # a group left empty only by skipped leaves is dropped
+            out[k] = sub
+    return out
 
 
-core = build(SPEC["core"], "light")  # scales are theme-independent
-light = build(SPEC["light"], "light")
-dark = build(SPEC["dark"], "dark")
+SKIPPED = {"core": [], "light": [], "dark": []}
+core = build(SPEC["core"], "light", skipped=SKIPPED["core"])  # scales are theme-independent
+light = build(SPEC["light"], "light", skipped=SKIPPED["light"])
+dark = build(SPEC["dark"], "dark", skipped=SKIPPED["dark"])
 # The component tokens live in their own top-level spec tree; they are
 # geometry and type readings (theme-independent), exported under
 # light.component.* to keep the usual set layout.
-light["component"] = build(SPEC["component"], "light")
+light["component"] = build(SPEC["component"], "light", "component", SKIPPED["light"])
+for name, tree in (("core", core), ("light", light), ("dark", dark)):
+    if SKIPPED[name]:
+        tree["$extensions"] = {"notTokenised": SKIPPED[name]}
 
 
 # every alias must point at a token that exists

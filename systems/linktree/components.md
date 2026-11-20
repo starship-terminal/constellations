@@ -327,10 +327,12 @@ The primary continue button. Measured, never pressed. Read as `login-continue` o
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 480 x 56; padding 0px 20px; radius 9999px; background #e5e4e1; text Link Sans Product 16/24 500, rgba(4, 4, 3, 0.18); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default (same: hover) | size 480 x 56; padding 0px 20px; radius 9999px; background #e5e4e1; text Link Sans Product 16/24 500, rgba(4, 4, 3, 0.18); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | pressed | size 470.4 x 54.88; transform scale(0.98) |
 
-![Continue default](components/crops/login-continue-default.png) ![Continue hover](components/crops/login-continue-hover.png) ![Continue focus-visible](components/crops/login-continue-focus-visible.png) ![Continue pressed](components/crops/login-continue-pressed.png)
+Focus could not be captured: keyboard focus never landed on this element, so `focus-visible` is the element at rest and is left out of the table.
+
+![Continue default](components/crops/login-continue-default.png) ![Continue hover](components/crops/login-continue-hover.png) ![Continue pressed](components/crops/login-continue-pressed.png)
 
 #### Continue with Google
 The Google button on the signed-out wall. Measured, never pressed. Read as `login-google` on the the signed-out login wall page.

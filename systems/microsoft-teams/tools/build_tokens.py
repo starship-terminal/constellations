@@ -193,5 +193,6 @@ doc = {
 }
 
 text = json.dumps(doc, indent=1) + "\n"
-(HERE / "tokens.json").write_text(text)
-print("wrote", HERE / "tokens.json", "bytes", len(text))
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(text)
+    print("wrote", HERE / "tokens.json", "bytes", len(text))

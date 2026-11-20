@@ -58,7 +58,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | text | #0b1215 `light.color.ink-soft` |
 | muted | #394649 `light.color.muted` |
 | accent | #55da9b `light.color.accent` |
-| border | #dcdce1 `light.color.border` |
+| border | #dcdee1 `light.color.border` |
 
 Fonts: `core.font.family.sans` is GT Walsheim Pro, then 7 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 15 type styles (`core.typography`), 3 radius steps (`core.radius`), 15 spacing steps (`core.space`).
 

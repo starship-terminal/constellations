@@ -31,7 +31,7 @@ export const M = (name) => name;
 
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // Automation is not hidden: no navigator.webdriver mask (bot check: recorded as a boundary, not bypassed).
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }
@@ -107,11 +107,13 @@ export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up =
   return ok ? page.locator(`[data-m-mark="${tag}"]`) : page.locator('[data-m-mark="__none__"]');
 }
 
+// Returns false when a bot check never cleared; a navigation error is thrown, not swallowed.
 export async function open(page, url, { wait = 4000, promo = 'close' } = {}) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-  await clearChallenge(page);
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
+  if (!(await clearChallenge(page))) return false;
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
+  return true;
 }
 
 export const PROPS = [

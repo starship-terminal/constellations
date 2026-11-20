@@ -92,7 +92,7 @@ export const PROPS = [
 export async function styleOf(locator) {
   return locator.evaluate((el, props) => {
     const noUrl = (v) => (typeof v === 'string'
-      ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)')
+      ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)')
       : v);
     const cs = getComputedStyle(el);
     const out = {};
@@ -129,5 +129,5 @@ q.save(${JSON.stringify(file)}, optimize=True)
 }
 
 export const noUrl = (v) => (typeof v === 'string'
-  ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)')
+  ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)')
   : v);

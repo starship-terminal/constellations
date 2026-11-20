@@ -112,20 +112,22 @@ th { color: var(--textBody); font-weight: 500; }
 </main>
 <script>
 const TOKENS = /*TOKENS*/null;
-const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
 const cssv = (path) => "--" + path.replace(/[^a-zA-Z0-9-]/g, "-");
-const flat = (node, prefix = "") => Object.entries(node || {}).flatMap(([k, v]) => (v && v.t ? [[prefix + k, v]] : flat(v, prefix + k + ".")));
+// Recurse into objects only: a token straight under a group (core.color.white) would otherwise recurse
+// through its value string character by character until the stack overflows.
+const flat = (node, prefix = "") => Object.entries(node || {}).flatMap(([k, v]) => (v && v.t ? [[prefix + k, v]] : (v && typeof v === "object" ? flat(v, prefix + k + ".") : [])));
 const pal = document.getElementById("palette");
 for (const [group, node] of Object.entries((TOKENS.core && TOKENS.core.color) || {})) {
-  const steps = flat(node);
+  const steps = node && node.t ? [["", node]] : flat(node);  // a single colour, or a ramp
   if (!steps.length || steps[0][1].t !== "color") continue;
   const box = document.createElement("div");
   box.className = "ramp";
   box.innerHTML = `<h3>${esc(group)}</h3><div class="row"></div>`;
   const row = box.querySelector(".row");
   for (const [k, t] of steps) {
-    const name = `color-${group}-${k}`.replace(/\./g, "-");
-    row.insertAdjacentHTML("beforeend", `<div class="sw" title="${esc(t.s)}"><i style="background:var(${cssv(name)})"></i><b>${esc(k)}</b><span>${esc(t.v)}</span></div>`);
+    const name = (k ? `color-${group}-${k}` : `color-${group}`).replace(/\./g, "-");
+    row.insertAdjacentHTML("beforeend", `<div class="sw" title="${esc(t.s)}"><i style="background:var(${cssv(name)})"></i><b>${esc(k || group)}</b><span>${esc(t.v)}</span></div>`);
   }
   pal.appendChild(box);
 }

@@ -17,7 +17,7 @@ const ROUTES = ['/', '/pricing', '/free-animations', '/free-animation/loading-an
 
 const { browser } = await launch({ dpr: 1 });
 const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA, locale: 'en-US' });
-await context.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+// Automation is not hidden: no navigator.webdriver mask (bot check: recorded as a boundary, not bypassed).
 const page = await context.newPage();
 const bodies = new Map();
 page.on('response', async (r) => {

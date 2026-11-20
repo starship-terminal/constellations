@@ -72,15 +72,17 @@ for (const g of groups) {
     for (const st of states) {
       const v = c.states[st];
       if (v.error) { rows.Error = rows.Error || {}; rows.Error[st] = v.error; continue; }
+      // a focus-visible state where keyboard focus never landed: the run saved the element at rest
+      if (v.skipped || v.via === 'focus failed') { (rows.Skipped ||= {})[st] = v.skipped || 'focus failed: keyboard focus did not reach the element'; continue; }
       for (const [p, val] of Object.entries(props(v))) (rows[p] ||= {})[st] = val;
     }
     W(`| Property | ${states.join(' | ')} |`);
     W(`|---|${states.map(() => '---').join('|')}|`);
     for (const [p, vals] of Object.entries(rows)) {
       const first = vals[states[0]];
-      W(`| ${p} | ${states.map((st, i) => (i && vals[st] === first && p !== 'How' ? '=' : esc(vals[st] ?? '-'))).join(' | ')} |`);
+      W(`| ${p} | ${states.map((st, i) => (i && vals[st] !== undefined && vals[st] === first && p !== 'How' ? '=' : esc(vals[st] ?? '-'))).join(' | ')} |`);
     }
-    const crops = states.map((st) => c.states[st].crop).filter(Boolean).map((f) => '`' + path.basename(f) + '`');
+    const crops = states.filter((st) => !(c.states[st].skipped || c.states[st].via === 'focus failed')).map((st) => c.states[st].crop).filter(Boolean).map((f) => '`' + path.basename(f) + '`');
     W('');
     W(crops.length ? `Crops: ${crops.join(', ')}.` : 'Crops: none.');
   }

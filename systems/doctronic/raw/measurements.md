@@ -519,21 +519,22 @@ Page: home. Selector: `[class*="_arrow"]`. States: default, hover, focus-visible
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 32 x 32 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 100px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | -apple-system 16px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #1b1b18 @ 0.3 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | not-allowed | = | = | = |
-| Icon | 24 x 24, colour #797972 | = | = | = |
-| ::after | 44px x 44px, absolute, bg #000000 @ 0, radius 0px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 32 x 32 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 100px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | -apple-system 16px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #1b1b18 @ 0.3 | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | not-allowed | = | - | = |
+| Icon | 24 x 24, colour #797972 | = | - | = |
+| ::after | 44px x 44px, absolute, bg #000000 @ 0, radius 0px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `testimonial-arrow-default.png`, `testimonial-arrow-hover.png`, `testimonial-arrow-focus-visible.png`, `testimonial-arrow-pressed.png`.
 
@@ -653,24 +654,25 @@ Page: home. Selector: `[class*="_condensedButton"]`. States: default, hover, foc
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 48 x 48 | - | = | = |
-| Padding | 0px | - | = | = |
-| Border | none | - | = | = |
-| Radius | 52px | - | = | = |
-| Background | transparent | - | = | = |
-| Box shadow | none | - | = | = |
-| Outline | none | - | = | = |
-| Font | -apple-system 16px/normal 400 | - | = | = |
-| Letter spacing | normal | - | = | = |
-| Colour | #1b1b18 | - | = | = |
-| Transition | none | - | = | = |
-| Cursor | pointer | - | = | = |
-| Icon | 24 x 24, colour #ffffff | - | = | 22.8 x 22.8, colour #ffffff |
-| ::before | 48px x 48px, absolute, bg #000000 @ 0, radius 0px | - | = | = |
-| Painted layers | span.content 48.0x48.0 bg #2463eb r 52px shadow #2463eb @ 0.39 0px 4px 7px 0px; span.shimmer 48.0x48.0 image linear-gradient(105deg, #000000 @ 0 20%, #fdfdf7 @ 0.18 50%, #000000 @ 0 80%) r 52px | - | = | span.content 45.6x45.6 bg #1e3fae r 52px; span.shimmer 45.6x45.6 image linear-gradient(105deg, #000000 @ 0 20%, #fdfdf7 @ 0.18 50%, #000000 @ 0 80%) r 52px |
-| Ancestor paint | 1 up form.condensedForm bg #fdfdf7 shadow #000000 @ 0.1 0px 5px 32px 0px | - | = | = |
-| How | at rest | - | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 48 x 48 | - | - | = |
+| Padding | 0px | - | - | = |
+| Border | none | - | - | = |
+| Radius | 52px | - | - | = |
+| Background | transparent | - | - | = |
+| Box shadow | none | - | - | = |
+| Outline | none | - | - | = |
+| Font | -apple-system 16px/normal 400 | - | - | = |
+| Letter spacing | normal | - | - | = |
+| Colour | #1b1b18 | - | - | = |
+| Transition | none | - | - | = |
+| Cursor | pointer | - | - | = |
+| Icon | 24 x 24, colour #ffffff | - | - | 22.8 x 22.8, colour #ffffff |
+| ::before | 48px x 48px, absolute, bg #000000 @ 0, radius 0px | - | - | = |
+| Painted layers | span.content 48.0x48.0 bg #2463eb r 52px shadow #2463eb @ 0.39 0px 4px 7px 0px; span.shimmer 48.0x48.0 image linear-gradient(105deg, #000000 @ 0 20%, #fdfdf7 @ 0.18 50%, #000000 @ 0 80%) r 52px | - | - | span.content 45.6x45.6 bg #1e3fae r 52px; span.shimmer 45.6x45.6 image linear-gradient(105deg, #000000 @ 0 20%, #fdfdf7 @ 0.18 50%, #000000 @ 0 80%) r 52px |
+| Ancestor paint | 1 up form.condensedForm bg #fdfdf7 shadow #000000 @ 0.1 0px 5px 32px 0px | - | - | = |
+| How | at rest | - | - | CDP forcePseudoState :active:hover |
 | Error | - | locator.hover: Element is outside of the viewport Call log:   - waiting for locator('[class*="_condensedButton"]').first().or(locator('[data-m-mark="__none__"]')).visible().first().visible().first()   | = | = |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `condensed-button-default.png`, `condensed-button-focus-visible.png`, `condensed-button-pressed.png`.
 

@@ -70,6 +70,7 @@ typography:
     fontSize: "12px"
     fontWeight: 500
     lineHeight: "13.2px"
+    letterSpacing: "0px"
   button:
     fontFamily: "Clarkson"
     fontSize: "21px"
@@ -80,6 +81,7 @@ typography:
     fontFamily: "Clarkson"
     fontSize: "18.72px"
     fontWeight: 500
+    letterSpacing: "0px"
 components:
   header:
     height: "97px"

@@ -663,19 +663,20 @@ Page: showcase. Selector: `showcase category chip`. States: default, hover, focu
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 35 x 20 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter Variable 14px/20px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 35 x 20 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter Variable 14px/20px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `showcase-chip-default.png`, `showcase-chip-hover.png`, `showcase-chip-focus-visible.png`, `showcase-chip-pressed.png`.
 
@@ -740,19 +741,20 @@ Page: showcase. Selector: `card Read more`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 37.38 x 10 | 41.16 x 11.01 | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 14px/20px 600 | = | = | = |
-| Letter spacing | -0.14px | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 37.38 x 10 | 41.16 x 11.01 | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 14px/20px 600 | = | - | = |
+| Letter spacing | -0.14px | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `read-more-default.png`, `read-more-hover.png`, `read-more-focus-visible.png`, `read-more-pressed.png`.
 
@@ -1192,20 +1194,21 @@ Page: help-center. Selector: `help "Search…" field container`. States: default
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 640 x 52 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | sans-serif 12px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | p.framer-text.framer-styles-preset-1ugvs47: Inter 14px/20px 400, #404040 @ 0.48 | = | = | = |
-| Transition | none | = | = | = |
-| Painted layers | div.framer-6tgDK.framer-siwSQ 640.0x52.0 bg #7c7c7c @ 0.08 r 32px; div.framer-i4x7f7 15.0x15.0 image url(data:…)%22></path></svg>") | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 640 x 52 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | sans-serif 12px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | p.framer-text.framer-styles-preset-1ugvs47: Inter 14px/20px 400, #404040 @ 0.48 | = | - | = |
+| Transition | none | = | - | = |
+| Painted layers | div.framer-6tgDK.framer-siwSQ 640.0x52.0 bg #7c7c7c @ 0.08 r 32px; div.framer-i4x7f7 15.0x15.0 image url(data:…)%22></path></svg>") | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `help-search-default.png`, `help-search-hover.png`, `help-search-focus-visible.png`, `help-search-pressed.png`.
 

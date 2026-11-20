@@ -6,7 +6,10 @@ player (tidal.com) and the public login chrome (login.tidal.com/authorize),
 through the T3 preview browser's DOM. Headless Playwright was blocked, and
 the preview browser did not paint screenshots, so every colour, type size,
 radius and spacing step here is a computed style or a resolved custom
-property, not a pixel sample.
+property, not a pixel sample. Those values were typed in from the inspector:
+raw/readings.json holds only the capture's metadata (pages, viewports, theme,
+what was not entered), so a value read that way is labelled Reconstruction,
+entered by hand at capture time, and a value worked out from one stays Derived.
 
 A token is an alias when the product's own variable resolved to the same
 colour. Sizes stay in px as the browser computed them. Every token carries
@@ -25,7 +28,15 @@ LOGIN = "https://login.tidal.com/authorize"
 CAPTURE = "2026-11-19, signed out, prefers-color-scheme dark, preview viewport"
 
 
+HAND = ("Entered by hand at capture time from the preview inspector; raw/readings.json holds the "
+        "capture's metadata, not this reading. ")
+
+
 def src(evidence, where, note):
+    # raw/readings.json records pages, viewports and what was not entered, but no style or custom
+    # property value, so a value read in the inspector and typed in here is a hand entry.
+    if evidence == "Measured":
+        evidence, note = "Reconstruction", HAND + note
     return {"$extensions": {"source": {
         "evidence": evidence,
         "capture": f"{CAPTURE}; {where}",
@@ -342,10 +353,20 @@ def build():
         "$metadata": {"tokenSetOrder": ["core", "dark"]},
     }
     check(doc)
-    (PKG / "tokens.json").write_text(json.dumps(doc, indent=1, ensure_ascii=False) + "\n")
+    return doc
+
+
+def render(doc):
+    """tokens.json's exact text."""
+    return json.dumps(doc, indent=1, ensure_ascii=False) + "\n"
+
+
+def main():
+    doc = build()
+    (PKG / "tokens.json").write_text(render(doc))
     n = sum(1 for _ in walk(doc["core"])) + sum(1 for _ in walk(doc["dark"]))
     print(f"tokens.json: {n} tokens")
 
 
 if __name__ == "__main__":
-    build()
+    main()

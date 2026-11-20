@@ -152,7 +152,7 @@ function styleOf(el, props) {
   const short = (n) => n.tagName.toLowerCase() + cls(n).split(/\s+/).filter((c) => c && !c.includes('[') && !c.includes(':')).slice(0, 3).map((c) => '.' + c).join('');
   // A url() in a computed value (a background photo, a cursor) can be a signed or per-account URL:
   // recorded as url(…), only data: and #fragment references kept.
-  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const pick = (cs) => { const o = {}; for (const p of props) o[p] = noUrl(cs[p]); return o; };
   const cs = getComputedStyle(el);
   const r = el.getBoundingClientRect();

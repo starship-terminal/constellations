@@ -64,7 +64,15 @@ def block(setname):
     """A set's custom properties; a set the product lacks renders as nothing."""
     if setname not in T:
         return ""
-    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]) if css_val(n, t) is not None)
+    lines = []
+    for n, t in flat(T[setname]):
+        if css_val(n, t) is None:
+            continue
+        lines.append(f"  {cssname(n)}: {css_val(n, t)};")
+        # The font shorthand cannot carry tracking, so a type style's letter spacing is its own property.
+        if t["$type"] == "typography" and "letterSpacing" in t["$value"]:
+            lines.append(f"  {cssname(n)}-tracking: {alias(t['$value']['letterSpacing'])};")
+    return "\n".join(lines)
 
 
 # a core name and a themed name must not land on the same custom property

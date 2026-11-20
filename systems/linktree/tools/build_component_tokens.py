@@ -72,6 +72,53 @@ def measured(comp, state, prop, ty, desc, text=False):
     return val(v, ty, f"computed {prop} of {comp} {state}", desc)
 
 
+def split_shadow(v):
+    """Split a computed box-shadow on its top-level commas (rgb() holds commas too)."""
+    out, depth, cur = [], 0, ""
+    for ch in v or "":
+        depth += ch == "("
+        depth -= ch == ")"
+        if ch == "," and depth == 0:
+            out.append(cur.strip())
+            cur = ""
+        else:
+            cur += ch
+    if cur.strip():
+        out.append(cur.strip())
+    return out
+
+
+def painted_ring(sty):
+    """(colour, how) of the focus ring a state really paints: a drawn outline
+    (style neither none nor auto, width above 0, colour not transparent), else
+    the outermost visible box-shadow layer with a spread. An `auto` outline is
+    the browser's own ring, whose colour the computed style does not report as
+    painted, and nav-link's outline is none/0px (it shows focus as a fill), so
+    its outlineColor is not a ring. Raises when nothing is painted."""
+    if sty.get("outlineStyle", "none") not in ("none", "auto") and float(sty.get("outlineWidth", "0px")[:-2] or 0) > 0 \
+            and not re.fullmatch(r"rgba\(\s*\d+,\s*\d+,\s*\d+,\s*0\s*\)", sty.get("outlineColor", "")):
+        return sty["outlineColor"], f"outline {sty['outlineWidth']} {sty['outlineStyle']}"
+    ring = None
+    for layer in split_shadow(sty.get("boxShadow", "none")):
+        m = re.match(r"^(rgba?\([^)]*\))\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(\s+inset)?$", layer)
+        if not m or m.group(6) or float(m.group(5)) <= 0:
+            continue
+        if re.fullmatch(r"rgba\(\s*\d+,\s*\d+,\s*\d+,\s*0\s*\)", m.group(1)):
+            continue
+        ring = (m.group(1), f"box-shadow {m.group(5)}px spread")
+    if ring:
+        return ring
+    raise KeyError("no painted focus ring")
+
+
+def focus_ring(comp, desc):
+    s = st(comp, "focus-visible")
+    if s.get("via") == "focus failed" or s.get("skipped"):
+        raise KeyError(f"{comp} focus-visible was not captured")
+    colour, how = painted_ring(s["style"])
+    return val(colour, "color", f"computed focus ring ({how}, outermost layer) of {comp} focus-visible", desc)
+
+
 def cssvar(name, ty, desc):
     node = RL.get(name)
     if not node or "value" not in node:
@@ -109,7 +156,7 @@ light["muted"] = measured("profile-badge", "default", "color", "color", "Verifie
 light["accent"] = measured("hero-title", "default", "color", "color", "Hero title colour", text=True)
 light["border"] = measured("login-field", "default", "borderTopColor", "color", "Login field border")
 light["link"] = measured("footer-link", "default", "color", "color", "Footer link ink", text=True)
-light["focus"] = measured("nav-link", "focus-visible", "outlineColor", "color", "Keyboard focus outline on the Pricing nav link")
+light["focus"] = focus_ring("nav-login", "Keyboard focus ring on the Log in link (the Sign up pill, hero and claim buttons draw the same ring)")
 
 # Page ground: body was white in recon. If footer is the only filled surface we
 # also record the signup pill as the ink button.

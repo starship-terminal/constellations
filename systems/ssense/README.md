@@ -34,12 +34,12 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 
 | Role | light |
 |---|---|
-| page | rgb(255, 255, 255) `light.background.page` |
-| surface | rgb(255, 255, 255) `light.background.surface` |
-| text | rgb(0, 0, 0) `light.text.primary` |
-| muted | rgb(136, 136, 136) `light.text.muted` |
-| accent | rgb(0, 0, 0) `light.background.action` |
-| border | rgb(182, 182, 182) `light.border.stroke` |
+| page | #ffffff `light.background.page` |
+| surface | #ffffff `light.background.surface` |
+| text | #000000 `light.text.primary` |
+| muted | #888888 `light.text.muted` |
+| accent | #000000 `light.background.action` |
+| border | #b6b6b6 `light.border.stroke` |
 
 Fonts: `core.font.family.favorit` is Favorit SSENSE Inter, with no fallback; `core.font.family.times-now` is JHA Times Now, with no fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 12 type styles (`core.typography`), 2 radius steps (`core.radius`), 9 spacing steps (`core.spacing`).
 
@@ -53,7 +53,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | light | 21.00:1 pass | 21.00:1 pass | 3.54:1 fail | 3.54:1 fail |
 
-2 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.focus.outline` rgb(229, 151, 0).
+2 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.focus.outline` #e59700.
 
 <!-- brief:end -->
 

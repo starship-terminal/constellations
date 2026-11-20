@@ -47,7 +47,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #00f575 `dark.accent` |
 | border | rgba(255, 255, 255, 0.08) `dark.border` |
 
-Fonts: `core.font.family.sans` is Doppler Repro, then 2 fallbacks; `core.font.family.mono` is Doppler Repro Mono, then 2 fallbacks; `core.font.family.inter` is Inter, then 2 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 8 radius steps (`core.radius`), no spacing steps under `core.spacing`.
+Fonts: `core.font.family.sans` is __DopplerRepro_a18e76, then 2 fallbacks; `core.font.family.mono` is __DopplerReproMono_e3cbb4, then 2 fallbacks; `core.font.family.inter` is __Inter_516c7b, then 2 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 8 radius steps (`core.radius`), no spacing steps under `core.spacing`.
 
 ### Using components
 
@@ -106,6 +106,8 @@ Nothing was sent, signed into, booked or bought. The only presses were local UI 
 - **Computed `color` vs painted text.** Component text is reported from the first text node (`textStyle`), and chip/card fills from painted descendants (`paint`) — a filter chip's own `background-color` is transparent; its `#2d2734` lives on an inner span.
 - **A real keyboard focus is a UA ring.** Focus-visible draws Chromium's `auto` outline (`rgb(0, 95, 204)`), not a designed ring; `dark.focus` records it as measured.
 - **`component.*` tokens are measured**, not site variables.
+- **Font stacks are the hashed names the browser reads.** `core.font.family.*` now carry the computed `fontFamily` (`__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76, sans-serif` and so on), which is what `@font-face` declares; the earlier tidied names ("'Doppler Repro'") were typed and no stylesheet declares them.
+- **Two readings need a recapture.** `hero-cta` is an outlined "Start for Free" link, not the green hero CTA (its 45px height still feeds `dark.component.control.heightButton`, which says so); `agents-cta` was not found by the last run and its kept states feed `dark.component.control.gap` (`recaptureMissed`).
 - **Pressed states are forced.** `:active` was applied with DevTools, so anything a real mousedown would add is unmeasured.
 - **Quantised screenshots.** `screenshots/` and `components/crops/` are 256-colour PNGs; read exact colours from tokens or the raw JSON.
 - **The dashboard mock-ups are imagery.** The product screenshots and the "Take a self-guided tour" affordance visible in several shots are baked into the marketing artwork, not DOM controls; the real workspace lives behind sign-in.
