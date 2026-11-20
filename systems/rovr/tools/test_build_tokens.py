@@ -17,5 +17,29 @@ class TokensTest(unittest.TestCase):
         self.assertIn("source", tree["dark"]["color"]["primary"]["$extensions"])
 
 
+    def test_dangling_alias_fails(self):
+        tree = json.loads(TOKENS.read_text())
+        tree["dark"]["color"]["background"]["$value"] = "{color.nothing}"
+        with self.assertRaises(KeyError):
+            build_tokens.check(tree)
+
+    def test_dark_alias_cannot_reach_light_only_names(self):
+        tree = json.loads(TOKENS.read_text())
+        tree["light"]["color"]["only-light"] = {"$value": "#ffffff", "$type": "color", "$extensions": {"source": "test"}}
+        tree["dark"]["color"]["background"]["$value"] = "{color.only-light}"
+        with self.assertRaises(KeyError):
+            build_tokens.check(tree)
+
+    def test_missing_source_fails(self):
+        tree = json.loads(TOKENS.read_text())
+        del tree["dark"]["color"]["brand"]["$extensions"]
+        with self.assertRaises(ValueError):
+            build_tokens.check(tree)
+
+    def test_guide_keeps_decimal_points(self):
+        html = (TOKENS.parent / "style-guide.html").read_text()
+        self.assertNotRegex(html, r":\s*-?\d+-\d+px;")
+
+
 if __name__ == "__main__":
     unittest.main()
