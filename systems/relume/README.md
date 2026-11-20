@@ -141,4 +141,4 @@ python3 tools/package_tests.py relume
 python3 tools/catalog.py design-md relume
 ```
 
-The kit under [tools/](tools/) is the copied starting point. This capture measured the live page in the preview browser and in headless Chrome, and did not run the kit's Playwright pipeline to rebuild tokens.
+The kit under [tools/](tools/) is the copied starting point. This capture measured the live page in the preview browser and in headless Chrome, and did not run the kit's Playwright pipeline to rebuild tokens. [tokens.json](tokens.json) is written by hand from the readings in [raw/](raw). `tools/build_tokens.py` is the copied kit builder and cannot run here: it reads `raw/css-vars.json` and `raw/component-tokens.json`, which this package does not have. The package test checks the tokens against the readings, and every token, aliases included, carries a source.

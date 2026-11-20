@@ -244,21 +244,22 @@ def aliases(value):
 
 
 def check(tree):
-    names = {}
+    """Every token has a source, and every alias resolves in its own set or core, as the catalog
+    Resolver does. The old check also let a dark alias resolve against light-only names."""
+    count = 0
     for setname in ("core", "light", "dark"):
         if setname not in tree:
             continue
         local = dict(tokens_of(tree["core"]))
         local.update(dict(tokens_of(tree[setname])))
         for name, token in tokens_of(tree[setname]):
+            count += 1
             if "source" not in token.get("$extensions", {}):
                 raise ValueError(f"{setname}.{name} has no source")
             for alias in aliases(token["$value"]):
-                if alias not in local and alias not in names:
-                    # aliases in a semantic set point at core or at that set
-                    raise KeyError(f"{setname}.{name}: alias {{{alias}}} points at nothing")
-        names.update(local)
-    return len(names)
+                if alias not in local:
+                    raise KeyError(f"{setname}.{name}: alias {{{alias}}} points at nothing in core or {setname}")
+    return count
 
 
 def main():
