@@ -33,6 +33,17 @@ class TokensTest(unittest.TestCase):
         self.assertEqual(tokens["core"]["color"]["named"]["ink"]["$extensions"]["source"]["evidence"], "Reconstruction")
         self.assertEqual(tokens["core"]["color"]["named"]["brand"]["$extensions"]["source"]["evidence"], "Measured")
 
+    def test_declared_values_match_in_a_common_form(self):
+        canon = load_builder().canon
+        self.assertEqual(canon([0.19, 1, 0.22, 1]), canon("cubic-bezier(.19, 1, .22, 1)"))
+        self.assertEqual(canon("Inter, sans-serif"), canon('"Inter", sans-serif'))
+        self.assertNotEqual(canon([0.19, 1, 0.22, 1]), canon("cubic-bezier(.2, 1, .22, 1)"))
+        tokens = json.loads(TOKENS.read_text())
+        for path in (("fontFamily", "primary"), ("fontFamily", "secondary"),
+                     ("easing", "transition-01"), ("easing", "transition-timing")):
+            with self.subTest(token=".".join(path)):
+                self.assertEqual(tokens["core"][path[0]][path[1]]["$extensions"]["source"]["evidence"], "Measured")
+
     def test_alias_resolves_in_its_own_set_then_core(self):
         module = load_builder()
         tokens = json.loads(TOKENS.read_text())

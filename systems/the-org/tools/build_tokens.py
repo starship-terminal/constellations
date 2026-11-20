@@ -363,6 +363,24 @@ def component_tokens():
     }
 
 
+def canon(value):
+    """One comparable spelling for a token value and a declared CSS value: lower case, no spaces or
+    quotes, a cubic-bezier() and a 4-number list both as "cubic-bezier(a,b,c,d)", numbers without
+    trailing zeros. So [0.4, 0, 0.2, 1] matches cubic-bezier(.4, 0, .2, 1) and "Inter", sans-serif
+    matches the declaration's own quoting."""
+    def num(x):
+        f = float(x)
+        return ("%g" % f)
+    if isinstance(value, list) and len(value) == 4 and all(isinstance(x, (int, float)) for x in value):
+        return "cubic-bezier(%s)" % ",".join(num(x) for x in value)
+    text = value if isinstance(value, str) else json.dumps(value)
+    text = text.lower().replace(" ", "").replace('"', "").replace("'", "")
+    m = re.fullmatch(r"cubic-bezier\(([^)]*)\)", text)
+    if m:
+        return "cubic-bezier(%s)" % ",".join(num(x) for x in m.group(1).split(","))
+    return text
+
+
 def label_hand_entries(tokens):
     """raw/components.json holds no per-element reading (its note says they stayed in the capture
     notes), so a value is Measured only when the custom property its source names is declared with
@@ -371,10 +389,11 @@ def label_hand_entries(tokens):
 
     def backed(node):
         detail = node["$extensions"]["source"].get("detail", "")
-        value = json.dumps(node["$value"]).lower().replace(" ", "")
+        value = canon(node["$value"])
         for name in re.findall(r"--[A-Za-z0-9_-]+", detail):
             for row in declared.get(name, []):
-                if row["val"].lower().replace(" ", "") in value or value.strip('"') == row["val"].lower().replace(" ", ""):
+                raw = canon(row["val"])
+                if raw in value or value == raw:
                     return True
         return False
 
