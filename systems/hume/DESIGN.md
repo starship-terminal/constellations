@@ -941,6 +941,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Font stacks and palette literals were rebuilt in the 2026-11 audit.** The five `core.font.family.*` stacks were hand-written with extra fallbacks; they are now the computed stack of an element that paints each face, verbatim (`body` is `Inter, system-ui, sans-serif`). `font.family.japanese` is again the declared `--font-japanese` value (a hand-written stack had overwritten it). Nine lab()/oklch() palette literals that the builder dropped are now tokens, converted to sRGB.
 - **The signed-in product and the demo playground** are the product's own boundaries: app.hume.ai past /log-in and the demo.hume.ai workspace were never entered. The gate and log-in cards are the honest signed-out evidence.
 - **EVI and Octave TTS are gone from the public web**: the pivot to the Audio Decision Model / VoiceEQ line retired every public EVI surface — demo.hume.ai/evi answers 404. No EVI demo, waveform or mic-permission surface exists to capture; none is claimed.
 - **The /explore explorer is a canvas**: its visualisation is captured as pixels but its internal structure is not DOM — no values are invented for it.
