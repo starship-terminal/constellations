@@ -1,0 +1,53 @@
+"""Every committed output must rebuild from the package's inputs, byte for byte.
+
+The builders run on a temporary copy of the package with the outputs removed first, so a builder
+that writes nothing, or a committed file that went stale (raw/measurements.md was once written from
+an earlier components-computed.json, with another route list and no crops), fails here. Nothing
+committed is rewritten.
+"""
+import pathlib
+import shutil
+import subprocess
+import sys
+import tempfile
+import unittest
+
+PKG = pathlib.Path(__file__).resolve().parent.parent
+BUILDERS = ["build_component_tokens.py", "build_tokens.py", "build_style_guide.py", "build_components_md.py"]
+OUTPUTS = ["raw/component-tokens.json", "tokens.json", "style-guide.html", "components.md"]
+NODE = shutil.which("node")
+
+
+class RebuildTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.TemporaryDirectory()
+        cls.copy = pathlib.Path(cls.tmp.name) / "pkg"
+        shutil.copytree(PKG, cls.copy, ignore=shutil.ignore_patterns("__pycache__"))
+        for out in OUTPUTS + ["raw/measurements.md"]:
+            (cls.copy / out).unlink()
+        if NODE:
+            subprocess.run([NODE, str(cls.copy / "tools" / "capture" / "public" / "build-measurements.mjs")],
+                           check=True, capture_output=True, cwd=cls.copy)
+        for b in BUILDERS:
+            subprocess.run([sys.executable, str(cls.copy / "tools" / b)], check=True, capture_output=True, cwd=cls.copy)
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.tmp.cleanup()
+
+    def test_outputs_match_committed(self):
+        for out in OUTPUTS:
+            with self.subTest(out=out):
+                self.assertTrue((self.copy / out).exists(), f"{out} was not rebuilt")
+                self.assertEqual((self.copy / out).read_bytes(), (PKG / out).read_bytes())
+
+    @unittest.skipUnless(NODE, "node is not installed")
+    def test_measurements_match_committed(self):
+        out = "raw/measurements.md"
+        self.assertTrue((self.copy / out).exists(), f"{out} was not rebuilt")
+        self.assertEqual((self.copy / out).read_bytes(), (PKG / out).read_bytes())
+
+
+if __name__ == "__main__":
+    unittest.main()
