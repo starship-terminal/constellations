@@ -1,0 +1,25 @@
+{
+  "_note": "Pixel rectangles for systems/arcsearch (812 x 1780 iPhone Mirroring captures). Coordinates only. YouTube channels and pages are public catalog content and stay; the commenter's letter avatar on the YouTube comments teaser is another person's avatar and is painted out with the card colour (2026-11-21).",
+  "families": [
+    {
+      "name": "YouTube comments teaser: commenter avatar, page at rest",
+      "files": ["screenshots/light/01-launch-search-focused-pinned.png", "screenshots/light/02-search-typed-suggestions.png", "screenshots/light/18-search-sheet-pinned-rows.png", "screenshots/light/19-longpress-favorite-menu.png", "screenshots/dark/18-search-sheet-pinned-rows.png", "screenshots/dark/19-longpress-favorite-menu.png"],
+      "rects": [[84, 986, 140, 1042, "solid"]]
+    },
+    {
+      "name": "YouTube comments teaser: commenter avatar, dark page tab",
+      "files": ["screenshots/dark/11-page-youtube-tab.png", "screenshots/dark/14-find-bar-focused.png", "screenshots/dark/15-find-bar-typed-match.png", "screenshots/dark/16-find-bar-no-results.png"],
+      "rects": [[66, 1030, 128, 1092, "solid"]]
+    },
+    {
+      "name": "YouTube comments teaser on a tab card: commenter avatar, dark",
+      "files": ["screenshots/dark/04-tab-switcher-cards.png"],
+      "rects": [[214, 976, 258, 1020, "solid"]]
+    },
+    {
+      "name": "YouTube comments teaser on a tab card: commenter avatar, light",
+      "files": ["screenshots/light/04-tab-switcher-cards.png"],
+      "rects": [[646, 966, 700, 1024, "solid"]]
+    }
+  ]
+}

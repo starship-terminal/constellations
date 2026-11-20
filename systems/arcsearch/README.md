@@ -128,6 +128,7 @@ Scale steps (spacing, radii, rounded sizes) are Derived from the readings named 
 - **The neutral list is a list.** `core.color.neutral` holds every grey the two themes use, sorted and numbered by order. It is not a published ramp.
 - **No switch off, no pressed, disabled or error states, no motion, no keyboard, no dialogs.** Every switch in Arc's settings is on and none was changed, the captures are stills made with clicks, and iPhone Mirroring hides the software keyboard.
 - **Screenshots are 256-colour PNGs.** Flat UI colours survive exactly; glass and gradients band visibly. Read values from tokens.json.
+- **A blank slot on the YouTube comments teaser is a mask.** The commenter's letter avatar beside "Comments" on the YouTube page and its tab cards was painted out with the card colour on 2026-11-21 ([arcsearch.json](../../tools/redact-rules/arcsearch.json)), because it is another person's avatar; the channel, video and page content stay.
 
 ## Fonts
 
