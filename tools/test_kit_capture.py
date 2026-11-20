@@ -188,6 +188,32 @@ class IconPaint(unittest.TestCase):
         self.assertIn('fill="currentColor"', path)
         self.assertIn('stroke="#ff0000"', path)
 
+    def test_a_width_set_inside_leaves_the_stroke_colour_to_the_use(self):
+        # Train 25's review: a group that set only stroke-width counted as permission to copy the stroke
+        # colour too, so the sheet's red stroke was written where the <use> supplies blue
+        page = ("<svg width='0' height='0' style='position:absolute;stroke:#ff0000'><symbol id='s' viewBox='0 0 24 24'>"
+                "<g style='stroke-width:2px'><path d='M2 12h20'/></g></symbol></svg>"
+                "<button aria-label='Go'><svg width='24' height='24' fill='none' stroke='#0000ff'><use href='#s'/></svg></button>")
+        (html,) = self.collect(page)
+        (path,) = re.findall(r"<path[^>]*>", html)
+        self.assertIn('stroke-width="2"', path)
+        self.assertNotIn("stroke=", path.replace("stroke-width=", ""))   # the colour still comes from the <use>
+
+    def test_a_group_fill_equal_to_the_sheets_default_is_kept(self):
+        # Train 25's review: a group that sets the hidden sheet's default fill on purpose (black, by style or
+        # by class) looked like inherited paint, its paths got no fill, and the cleanup dropped the group's
+        # style, so under <svg fill="none"> the parts disappeared
+        page = ("<style>.ink{fill:#000000}</style>"
+                "<svg width='0' height='0' style='position:absolute'><symbol id='s' viewBox='0 0 24 24'>"
+                "<g style='fill:#000000'><path d='M0 0h4v4z'/></g><g class='ink'><path d='M5 5h4v4z'/></g>"
+                "<path d='M9 9h1v1z'/></symbol></svg>"
+                "<button aria-label='Go' style='color:#333333'><svg width='24' height='24' fill='none'><use href='#s'/></svg></button>")
+        (html,) = self.collect(page)
+        styled, classed, plain = re.findall(r"<path[^>]*>", html)
+        self.assertIn('fill="#000000"', styled)
+        self.assertIn('fill="#000000"', classed)
+        self.assertNotIn("fill=", plain)   # nothing inside sets it, so the <use>'s fill="none" applies
+
     def test_an_icon_drawn_from_another_files_sprite_is_left_out(self):
         # finding 20-8: <use href="/icons/sprite.svg#x"> draws nothing in the saved file, so it was saved blank
         page = ("<svg width='0' height='0' style='position:absolute'><symbol id='s' viewBox='0 0 24 24'><path d='M0 0h24v24z'/></symbol></svg>"
