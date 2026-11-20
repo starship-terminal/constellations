@@ -20,7 +20,7 @@ Outchat's marketing site is a Ycode page. Display and UI type are **Aeonik Regul
 | [screenshots/](screenshots) | `{page}-{theme}-{state}.png` from the local replay at 1440x900 and 390x844 |
 | [icons/](icons) | Archived favicon SVG and [INDEX.tsv](icons/INDEX.tsv). The wordmark SVG was not recoverable |
 | [raw/](raw) | Computed readings, resolved app colours, and the motion pass |
-| [tools/](tools) | The capture kit and [test_tokens.py](tools/test_tokens.py) |
+| [tools/](tools) | [test_tokens.py](tools/test_tokens.py). `capture/signed-in/` holds only the kit's page-copy privacy guards (`snapshot.js`, `unsnap.py`, `signed-params.json`); no kit capture script took these readings |
 
 ## Brief
 
