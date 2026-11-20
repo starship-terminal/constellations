@@ -143,7 +143,7 @@ async function measure(key, state, target, opts = {}) {
     const prev = c.states[state];
     if (prev && prev.style) {
       prev.rerunError = String(e.message || e).slice(0, 200);
-      if (opts.earlierRun) { prev.read = opts.earlierRun; prev.rerunOn = run; }
+      if (opts.earlierRun) { prev.read ??= opts.earlierRun; prev.rerunOn = run; } // a second failure keeps the first date
     }
     else c.states[state] = { error: String(e.message || e).slice(0, 200) };
     log('  !', key, state, String(e.message).slice(0, 120));
@@ -214,7 +214,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
         // comp() already stamped this run's date on the component; pin the
         // retained reading to the run that actually captured it so an old
         // measurement is never republished as a new one.
-        if (keep) { prev.read = keep.run; prev.rerunOn = run; }
+        if (keep) { prev.read ??= keep.run; prev.rerunOn = run; } // a second failure keeps the first date
       }
       else out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
       log('  !', key, st, String(e.message).slice(0, 120));
