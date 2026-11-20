@@ -294,6 +294,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 The dark set is declared, not painted. `prefers-color-scheme` was dark in the browser and the marketing pages still painted light content surfaces. Button hover and pressed colours are stylesheet declarations (`--theme-background-color-button-*`); those states were not held. The help h1 size (`81.83px`) is a computed reading at 1169px and is not a token step. Spotify's `#1ed760` Connect button is a partner colour. There are no screenshots: the preview browser returned "The browser is not producing screenshot frames".
 
+Only two component readings were saved: `raw/declared-tokens.json` holds the Sign in button (`light.component.button-glass`) and the price pill (`light.component.price`) under `computed`. The other component tokens were read in the preview and typed in, so they are labelled Reconstruction, entered by hand at capture time. `light.component.field` mixes two elements: its white fill and 20px radius come from the Help textarea wrap, and its 46px height from the home search wrap (translucent, 100px radius). Recapture needed: read one field in full and save it to raw/.
+
 ### Do and don't (from README.md)
 
 - **Brand coral is the accent, ink is the action.** The wordmark, suggestion chips and Help chat button are `#ff5b49`. Primary actions such as Get updates are black on white, radius 8px.
