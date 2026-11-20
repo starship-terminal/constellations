@@ -8,23 +8,36 @@ TOKENS = pathlib.Path(__file__).resolve().parent.parent / "tokens.json"
 ALIAS = re.compile(r"\{([^}]+)\}")
 
 
-def flatten(node, prefix=""):
+def tokens_in(node, prefix=""):
     out = {}
     if not isinstance(node, dict):
         return out
     if "$value" in node:
-        out[prefix] = node["$value"]
+        out[prefix] = node
         return out
     for key, value in node.items():
         if key.startswith("$"):
             continue
         path = f"{prefix}.{key}" if prefix else key
-        out.update(flatten(value, path))
+        out.update(tokens_in(value, path))
     return out
 
 
+def flatten(node):
+    return {path: tok["$value"] for path, tok in tokens_in(node).items()}
+
+
 class TokenTest(unittest.TestCase):
-    def test_aliases_resolve_and_sources_exist(self):
+    def test_every_token_has_a_source(self):
+        data = json.loads(TOKENS.read_text())
+        missing = [
+            path
+            for path, tok in tokens_in(data).items()
+            if not str((tok.get("$extensions") or {}).get("source", "")).strip()
+        ]
+        self.assertEqual(missing, [])
+
+    def test_aliases_resolve(self):
         data = json.loads(TOKENS.read_text())
         flat = flatten(data)
         self.assertIn("light.background.page", flat)
@@ -41,4 +54,3 @@ class TokenTest(unittest.TestCase):
             if not any(c in flat for c in (f"{set_name}.{ref}", f"core.{ref}", ref)):
                 missing.append(f"{path} -> {ref}")
         self.assertEqual(missing, [])
-        self.assertTrue(data["light"]["background"]["page"]["$extensions"]["source"])

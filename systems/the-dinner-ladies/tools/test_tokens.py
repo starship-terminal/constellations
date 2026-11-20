@@ -47,13 +47,13 @@ class TokenReadings(unittest.TestCase):
         self.assertEqual(value(self.tokens, "core.color.brand.grey"), "#dbe7ef")
         self.assertEqual(value(self.tokens, "light.action.selected"), "{core.color.brand.grey}")
 
-    def test_every_token_has_a_source_or_an_alias(self):
+    def test_every_token_has_a_source(self):
         missing = []
 
         def walk(node, path):
             if isinstance(node, dict) and "$value" in node:
                 ext = node.get("$extensions") or {}
-                if "source" not in ext and not str(node["$value"]).startswith("{"):
+                if not ext.get("source"):
                     missing.append(path)
             elif isinstance(node, dict):
                 for key, child in node.items():
