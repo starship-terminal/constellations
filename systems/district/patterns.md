@@ -4,7 +4,7 @@ How the measured components combine on district.in. Read with [components.md](co
 
 ## The app shell
 
-Every public page carries the same sticky top bar (`nv-bar`, 1440x75): the District wordmark left, the location line (the city and state District detected for the visitor; masked in raw/ as `[city]` `[state]`), a centered category tab row (For you, Dining, Movies, Events, Comedy, Stores, Activities, Play — 84x36 pills, 9999px radius), and a 28x28 search affordance plus avatar at right. A black@8% hairline (`--color-border-subtle`) separates the bar from the page. The active tab is a `#eae5ff` (`--color-purple-100`) fill with a `#231268` (`--color-text-accent-purple`) 14px semibold label; inactive tabs are transparent with `#545459` (`--color-text-secondary`) ink. Tabs are real links — navigation, not JS state.
+Every public page carries the same sticky top bar (`nv-bar`, 1440x75): the District wordmark left, the location line (the city and state District detected for the visitor; masked in raw/ as `[city]` `[state]`, and painted out of the screenshots and crops), a centered category tab row (For you, Dining, Movies, Events, Comedy, Stores, Activities, Play — 84x36 pills, 9999px radius), and a 28x28 search affordance plus avatar at right. A black@8% hairline (`--color-border-subtle`) separates the bar from the page. The active tab is a `#eae5ff` (`--color-purple-100`) fill with a `#231268` (`--color-text-accent-purple`) 14px semibold label; inactive tabs are transparent with `#545459` (`--color-text-secondary`) ink. Tabs are real links — navigation, not JS state.
 
 The page field below is `#ffffff` (`--color-background-primary`) with `#131316` (`--color-text-primary`) ink, ending in a `#1e1e20` (`--color-grey-800`) sitemap footer with help/contact links.
 
@@ -15,7 +15,7 @@ The home feed is a stack of headed rails:
 - **Section heading** — a bold display line ("Top Hindi movies near you", "Artists in your District") above each rail.
 - **Movie rail** — 197x348 poster cards (`mc-card`): rounded artwork over a 16px semibold title (`mc-title`), then a certificate chip + language line ("U | Hindi", "UA13+ | Hindi").
 - **Artist rail** — 190x222 circular headshot cards (`ar-card`) with the artist's name underneath, linking to `/events/<slug>/artist`.
-- **Venue rail** — 236x325 venue/event cards (`ev-card`): image, name, distance and address lines.
+- **Venue rail** — 236x325 venue/event cards (`ev-card`): image, name, distance and address lines (the distance is painted out of the images: it measures from the visitor's location).
 
 Rails scroll horizontally (snap-x) with a carousel arrow at the rail edge.
 
