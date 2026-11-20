@@ -6347,9 +6347,9 @@
       "description": "Real Estate Listings, Homes For Sale, Housing Data",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.trulia.com/login showed email and password. Continue with Google is a frame that opens a new tab, and the popup did not open. Password not submitted.",
+      "notes": "Email probe: https://www.trulia.com/login showed email and password. Continue with Google is a frame that opens a new tab, and the popup did not open. Password not submitted. Public walk 2026-11-21: header Buy stays on the homepage. Rent opens /rent/ and Post A Rental. Mortgage opens an overview and seven tools. Saved Homes, Saved Searches, and Sign up or Log in open the same login dialog. The Main Menu drawer repeats those sections plus Neighborhoods, Blog, and Help. Hero Buy/Rent/Sold tabs stay on the page. Login dialog was recorded and not submitted. Google and Apple were not clicked. Some routes hit a press-and-hold wall and were not screenshotted. Listing pages were mapped and not screenshotted. No email was typed. No form was submitted. Signed-in account was not captured. Public package in PR 1594 at 330d4af0ec82. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 19
     },
     {
