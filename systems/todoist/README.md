@@ -10,7 +10,7 @@ Account type: signed out. Themes: light only. Width measured: 1169 CSS pixels, h
 | [icon.png](icon.png) | 128 px PNG from the site's 32 px favicon at `/static/favicon-32x32.png`, scaled with nearest neighbour. |
 | [DESIGN.md](DESIGN.md) | Generated from tokens.json by `python3 tools/catalog.py design-md todoist`. |
 | [tokens.json](tokens.json) | W3C DTCG tokens. `core` holds type, radius, spacing and a few sizes. `light` holds colour roles. Every leaf has `$extensions.source`. |
-| [style-guide.html](style-guide.html) | A single light page that paints the token colours and the two buttons. |
+| [style-guide.html](style-guide.html) | A single light page that paints the token colours and the two buttons. `tools/build_style_guide.py` refreshes its token table and button fill from tokens.json. |
 | [components.md](components.md) | Button, link, text field and card, with the states that were read. |
 | [patterns.md](patterns.md) | Home, pricing, login and the signup boundary. |
 | [raw/](raw/) | `readings.json`: computed styles and the custom properties the tokens came from. |

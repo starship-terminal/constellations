@@ -39,5 +39,19 @@ class Check(unittest.TestCase):
         self.assertTrue(any("evidence label" in p for p in self.broken("#121212", "guessed")))
 
 
+    def test_captured_rgb_value_is_accepted(self):
+        t = copy.deepcopy(TOKENS)
+        t["core"]["color"]["search-ink"]["$value"] = "rgb(51, 51, 51)"
+        self.assertEqual(build_tokens.problems(t, RAW), [])
+
+    def test_alias_through_another_set_is_not_a_loop(self):
+        # light.color.ink -> {core.color.zz-ref} -> {color.ink}, which resolves in core to core.color.ink.
+        t = copy.deepcopy(TOKENS)
+        t["core"]["color"]["zz-ref"] = {"$type": "color", "$value": "{color.ink}",
+                                        "$extensions": {"source": {"evidence": "Derived"}}}
+        t.setdefault("light", {}).setdefault("color", {})["ink"] = {
+            "$type": "color", "$value": "{core.color.zz-ref}", "$extensions": {"source": {"evidence": "Derived"}}}
+        self.assertEqual(build_tokens.problems(t, RAW), [])
+
 if __name__ == "__main__":
     unittest.main()

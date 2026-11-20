@@ -41,6 +41,15 @@ def norm(h):
     return "#" + h
 
 
+def colour(text):
+    """A hex, rgb() or rgba() value in the one form raw_colours() uses; anything else lower-cased."""
+    t = text.strip().lower()
+    if t.startswith("#"):
+        return norm(t)
+    found = raw_colours([t])
+    return found.pop() if len(found) == 1 else t
+
+
 def raw_colours(raw_texts):
     seen = set()
     for text in raw_texts:
@@ -74,19 +83,30 @@ def lookup(tree, dotted):
     return node if isinstance(node, dict) and "$value" in node else None
 
 
-def follow(tokens, setname, ref, chain):
-    if ref in chain:
+def find(tokens, setname, ref):
+    """The full path a reference resolves to: its own set, then core, then the root (the
+    Resolver's order), or None."""
+    for prefix in (f"{setname}.", "core.", ""):
+        full = prefix + ref
+        if lookup(tokens, full) is not None:
+            return full
+    return None
+
+
+def follow(tokens, path, ref, chain):
+    """Follow ref from the token at full path `path`; each hop resolves from the target's own set
+    and the chain holds full paths, so only a true loop is a cycle."""
+    full = find(tokens, path.split(".", 1)[0], ref)
+    if full is None:
+        return f"dead alias {{{ref}}}"
+    if full in chain:
         return f"alias cycle at {{{ref}}}"
-    for scope in (tokens.get(setname, {}), tokens.get("core", {}), tokens):
-        tok = lookup(scope, ref)
-        if tok is not None:
-            for text in strings(tok["$value"]):
-                for nxt in re.findall(r"\{([^{}]+)\}", text):
-                    err = follow(tokens, setname, nxt, chain | {ref})
-                    if err:
-                        return err
-            return None
-    return f"dead alias {{{ref}}}"
+    for text in strings(lookup(tokens, full)["$value"]):
+        for nxt in re.findall(r"\{([^{}]+)\}", text):
+            err = follow(tokens, full, nxt, chain | {full})
+            if err:
+                return err
+    return None
 
 
 def problems(tokens, raw_texts):
@@ -99,16 +119,14 @@ def problems(tokens, raw_texts):
             out.append(f"{path}: no source")
         elif label not in LABELS:
             out.append(f"{path}: evidence label {label!r} is not one docs/EVIDENCE.md uses")
-        setname = path.split(".", 1)[0]
-        leaf = path.split(".", 1)[1] if "." in path else path
         for text in strings(tok["$value"]):
             for ref in re.findall(r"\{([^{}]+)\}", text):
-                err = follow(tokens, setname, ref, {leaf})
+                err = follow(tokens, path, ref, {path})
                 if err:
                     out.append(f"{path}: {err}")
         v = tok["$value"]
         if (tok.get("$type") == "color" and isinstance(v, str) and not v.startswith("{")
-                and label != "Reconstruction" and norm(v) not in seen):
+                and label != "Reconstruction" and colour(v) not in seen):
             out.append(f"{path}: {v} is in no raw/ reading")
     return out
 
