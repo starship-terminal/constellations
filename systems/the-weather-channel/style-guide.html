@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Weather Channel style guide</title>
+<style>
+:root {
+  --page: #fff;
+  --surface: #fff;
+  --text: #252422;
+  --muted: #676767;
+  --accent: #3a61cc;
+  --border: #cdcdcd;
+  --on-accent: #fff;
+  --ink: #252422;
+  --sans: Inter, "Inter Fallback", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sans); }
+main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+h1 { font-size: 24px; font-weight: 800; margin: 0 0 8px; }
+h2 { font-size: 18px; font-weight: 700; margin: 32px 0 12px; }
+p { color: var(--muted); max-width: 62ch; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 140px; }
+.swatch i { display: block; height: 56px; border-radius: 10px; border: 1px solid var(--border); }
+.swatch span { display: block; font-size: 12px; margin-top: 6px; }
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.pill { height: 40px; padding: 0 14px; border-radius: 9999px; border: 0; background: transparent; color: var(--text); font: 500 14px/16px var(--sans); }
+.sign { height: 40px; padding: 0 16px; border-radius: 8px; border: 0; background: var(--ink); color: white; font: 600 14px/16px var(--sans); }
+.nav { display: flex; flex-direction: column; width: 200px; gap: 4px; }
+.nav a { height: 32px; border-radius: 10px; padding: 0 12px; display: flex; align-items: center; color: var(--text); text-decoration: none; font: 500 14px/16px var(--sans); }
+.nav a.on { background: var(--accent); color: var(--on-accent); }
+.dialog { width: 280px; border-radius: 16px; background: var(--surface); box-shadow: 0 12px 32px rgba(37, 36, 34, 0.2); padding: 16px; border: 1px solid var(--border); }
+.chip { height: 32px; border-radius: 9999px; padding: 0 12px; border: 0; font: 700 14px/16px var(--sans); background: #f2f2f2; color: var(--text); }
+.chip.on { background: var(--ink); color: white; }
+</style>
+</head>
+<body>
+<main>
+  <h1>The Weather Channel</h1>
+  <p>Public news chrome, measured 2026-11-21. One theme. Values come from tokens.json.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:#fff"></i><span>page #fff</span></div>
+    <div class="swatch"><i style="background:#fff"></i><span>surface #fff</span></div>
+    <div class="swatch"><i style="background:#252422"></i><span>text #252422</span></div>
+    <div class="swatch"><i style="background:#676767"></i><span>muted #676767</span></div>
+    <div class="swatch"><i style="background:#3a61cc"></i><span>accent #3a61cc</span></div>
+    <div class="swatch"><i style="background:#cdcdcd"></i><span>border #cdcdcd</span></div>
+  </div>
+  <h2>Header controls</h2>
+  <div class="row">
+    <button class="pill">Settings</button>
+    <button class="pill">Sign in</button>
+    <button class="sign">Sign in</button>
+  </div>
+  <h2>Sidebar</h2>
+  <nav class="nav">
+    <a>Today</a>
+    <a class="on">Top Stories</a>
+    <a>Severe Weather</a>
+  </nav>
+  <h2>Settings dialog</h2>
+  <div class="dialog">
+    <strong>Units</strong>
+    <div class="row" style="margin-top:12px">
+      <button class="chip on">°F</button>
+      <button class="chip">°C</button>
+      <button class="chip">Hybrid</button>
+    </div>
+  </div>
+</main>
+</body>
+</html>
