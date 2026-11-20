@@ -150,6 +150,42 @@ class RebuildTest(unittest.TestCase):
         entry = md.split("Read as `billing-yearly`", 1)[1].split("\n#### ", 1)[0]
         self.assertNotIn("focus-visible", entry.split("**Focus not capturable.**", 1)[0])
 
+    def run_on_changed_copy(self, change):
+        """Run the token builder on a temp copy whose raw files `change` edits;
+        return the result and whether the spec file was left as it was."""
+        with tempfile.TemporaryDirectory() as d:
+            root = pathlib.Path(d)
+            shutil.copytree(PKG / "tools", root / "tools", ignore=shutil.ignore_patterns("capture", "__pycache__"))
+            shutil.copytree(PKG / "raw", root / "raw")
+            change(root / "raw")
+            before = (root / "raw" / "component-tokens.json").read_text()
+            r = subprocess.run([sys.executable, str(root / "tools" / "build_component_tokens.py")], cwd=root, capture_output=True, text=True)
+            return r, (root / "raw" / "component-tokens.json").read_text() == before
+
+    @staticmethod
+    def edit(path, fn):
+        j = json.loads(path.read_text())
+        fn(j)
+        path.write_text(json.dumps(j))
+
+    def test_missing_reading_stops_the_build(self):
+        drop_var = lambda raw: self.edit(raw / "css-vars.json", lambda j: j["resolved"]["dark"].pop("--radius-base"))
+        drop_comp = lambda raw: self.edit(raw / "components-computed.json", lambda j: j["components"].pop("asset-thumb"))
+        for name, change in (("declared var", drop_var), ("component", drop_comp)):
+            r, kept = self.run_on_changed_copy(change)
+            self.assertNotEqual(r.returncode, 0, name)
+            self.assertIn("missing readings", r.stderr, name)
+            self.assertTrue(kept, name)
+
+    def test_disagreeing_readings_stop_the_build(self):
+        def change(raw):
+            self.edit(raw / "components-computed.json",
+                      lambda j: j["components"]["edu-cta"]["states"]["default"]["style"].update(backgroundColor="rgb(1, 2, 3)"))
+        r, kept = self.run_on_changed_copy(change)
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("disagree", r.stderr)
+        self.assertTrue(kept)
+
     def test_no_named_row_was_dropped(self):
         self.assertNotIn("_gaps", self.spec)
 
