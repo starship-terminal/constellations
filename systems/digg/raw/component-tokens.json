@@ -16,15 +16,15 @@
           "description": "roobert — the TLDR story prose at 18px medium."
         },
         "mono": {
-          "value": "vt323, \"vt323 Fallback\", monospace",
+          "value": "\"vt323\", \"vt323 Fallback\"",
           "type": "fontFamily",
-          "source": "declared @font-face in the site stylesheet (raw/css-vars.json); the retro bitmap face of the vote-odometer digits",
+          "source": "declared --font-vt323 in the site stylesheet (raw/css-vars.json); the retro bitmap face of the vote-odometer digits",
           "description": "vt323 — the pixel-style mono the odometer counts are drawn in."
         },
         "typeset": {
-          "value": "ibmPlexSans, \"ibmPlexSans Fallback\", sans-serif",
+          "value": "\"ibmPlexSans\", \"ibmPlexSans Fallback\"",
           "type": "fontFamily",
-          "source": "declared @font-face in the site stylesheet (raw/css-vars.json); not exercised on any measured public component",
+          "source": "declared --font-ibm-plex in the site stylesheet (raw/css-vars.json); not exercised on any measured public component",
           "description": "ibmPlexSans — the declared typeset/prose face."
         }
       },
@@ -629,7 +629,7 @@
           }
         ],
         "type": "shadow",
-        "source": "computed boxShadow of lg-email default (raw/components-computed.json)",
+        "source": "computed boxShadow of lg-email default, transparent ring placeholders left out (raw/components-computed.json)",
         "description": "The auth field's 0 1px 2px rgba(0,0,0,0.05) shadow (shadow-xs)."
       }
     },
@@ -2007,7 +2007,7 @@
       "rank-one": {
         "value": "{rank.one.default}",
         "type": "color",
-        "source": "the declared --rank-one role, verified in the contributors rail (raw/css-vars.json + screenshots/home-light-default.png); matches declared --rank-one",
+        "source": "declared --rank-one (raw/css-vars.json resolved.light); no measured component paints it; matches declared --rank-one",
         "description": "The #e37b4c orange of the #1 contributor rank (declared --rank-one)."
       }
     },
