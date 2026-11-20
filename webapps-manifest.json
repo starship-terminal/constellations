@@ -5565,9 +5565,9 @@
       "description": "Make music online",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.soundtrap.com/login shows email and password, or Google, Apple, Facebook, or a Microsoft school account. Password not submitted.",
+      "notes": "Email probe: https://www.soundtrap.com/login shows email and password, or Google, Apple, Facebook, or a Microsoft school account. Password not submitted. Public walk 2026-11-21: / redirects to /musicmakers. Header opens Features, Education, Blog, and Pricing. Phone Open navigation menu opens the same links. Get started for free opens a dialog. Login and signup are walls. Footer language menu lists 12 locales. Google, Apple, Facebook, and Microsoft were not clicked. No email was typed. No form was submitted. Signup showed a Cloudflare check that was not solved. Signed-in studio was not captured. Public package refresh in PR 1582 at 2cfb4f4f84d7. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 17
     },
     {
@@ -6007,7 +6007,7 @@
       "description": "Electric Cars, Solar & Clean Energy",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://auth.tesla.com sign-in accepted the capture inbox and asked for a password. Password not submitted. No Google button.",
+      "notes": "Email probe: https://auth.tesla.com sign-in accepted the capture inbox and asked for a password. Password not submitted. No Google button. Public walk 2026-11-21: the site did not load. Akamai returned Access Denied for the homepage and the auth host before any page rendered. No package. Session not checked. Skipped this pass.",
       "login-extracted": "not-started",
       "login-probe": "password",
       "batch": 18
