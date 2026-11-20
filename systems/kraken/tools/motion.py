@@ -39,8 +39,9 @@ def parse_time(s):
 
 
 def ms_str(n):
-    """200.0 -> '200ms', 0.5 -> '0.5ms'."""
-    return "%gms" % round(float(n), 3)
+    """200.0 -> '200ms', 0.5 -> '0.5ms', 6e8 -> '600000000ms': fixed decimals, never an exponent (%g
+    wrote '6e+08ms', which is no CSS time and no token name)."""
+    return ("%.3f" % round(float(n), 3)).rstrip("0").rstrip(".") + "ms"
 
 
 def ms_key(n):
@@ -101,6 +102,15 @@ def easing_key(s):
     if b:
         return "bezier-" + "-".join(_num(x).replace(".", "_").replace("-", "m") for x in b)
     return None
+
+
+def why_not_bezier(e):
+    """Why an easing that is not a keyword or cubic-bezier() goes to notTokenised."""
+    if re.match(r"(steps|linear)\(", e):
+        return "an easing DTCG's cubicBezier cannot carry (steps() or a linear() curve)"
+    if "var(" in e:
+        return "an unresolved var() reference: the easing it computes to was not read"
+    return "not an easing curve (a CSS-wide keyword such as unset, or a value the probe could not read)"
 
 
 def slug(s):
@@ -247,14 +257,14 @@ def build(raw):
                                "Custom property %s, declared on %s." % (name, v.get("selector", ":root")))
             ekey.setdefault(e, key)
         else:
-            not_tokenised.append({"name": name, "value": e, "why": "an easing DTCG's cubicBezier cannot carry (steps() or a linear() curve)"})
+            not_tokenised.append({"name": name, "value": e, "why": why_not_bezier(e)})
     for e in sorted(set(t["easing"]) | set(t["declared_easing"])):
         if e in ekey or not e:
             continue
         b = easing_bezier(e)
         uses = t["easing"].get(e, 0)
         if b is None:
-            not_tokenised.append({"name": "motion easing " + e, "value": e, "why": "an easing DTCG's cubicBezier cannot carry (steps() or a linear() curve)", "uses": uses})
+            not_tokenised.append({"name": "motion easing " + e, "value": e, "why": why_not_bezier(e), "uses": uses})
             continue
         derived = e in KEYWORDS
         key = uniq(eused, easing_key(e))

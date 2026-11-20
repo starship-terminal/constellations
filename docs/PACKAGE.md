@@ -211,5 +211,6 @@ from one of two rules the export cannot satisfy without inventing data:
    it) and merge the grades with `python3 tools/grade.py --write --review
    <slug>=<grades.json>`. That writes its Health section and its row in the
    root README's catalog table.
-6. Keep anything private out of the folder: account names, chat titles,
-   signed URLs, raw DOM copies ([RIGHTS.md](RIGHTS.md)).
+6. Mask what [AGENTS.md](../AGENTS.md) bans before it enters the folder
+   (other people's names and avatars, credentials, contact details), and
+   keep signed URLs and raw DOM copies out ([CAPTURE.md](CAPTURE.md)).

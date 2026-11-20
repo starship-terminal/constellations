@@ -84,7 +84,7 @@ Page: home. Selector: `.nav_menu_link "Platform"`. States: default, hover, focus
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-item-default.png`, `nav-item-hover.png`, `nav-item-focus-visible.png`, `nav-item-pressed.png`.
+Crops: `nav-item-default.png`, `nav-item-hover.png`, `nav-item-pressed.png`.
 
 #### nav-link
 
