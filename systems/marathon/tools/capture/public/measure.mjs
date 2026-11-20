@@ -7,6 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, launch, open, styleOf, RAW, CROPS, PROPS } from './lib.mjs';
+import { safeUrl } from '../safe-url.mjs';
 
 fs.mkdirSync(RAW, { recursive: true });
 fs.mkdirSync(CROPS, { recursive: true });
@@ -14,10 +15,21 @@ fs.mkdirSync(CROPS, { recursive: true });
 const out = { _meta: { product: 'Marathon', base: BASE, captured: new Date().toISOString() }, components: {} };
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
+// One DevTools session per page, reused by every press on it (a new one per call was never detached).
+const sessions = new WeakMap();
+async function session(page) {
+  if (!sessions.has(page)) {
+    const cdp = await page.context().newCDPSession(page);
+    await cdp.send('DOM.enable');
+    await cdp.send('CSS.enable');
+    sessions.set(page, cdp);
+  }
+  return sessions.get(page);
+}
+
 async function forcePseudo(page, loc, classes) {
-  const cdp = await page.context().newCDPSession(page);
-  await cdp.send('DOM.enable');
-  await cdp.send('CSS.enable');
+  const cdp = await session(page);
+  await page.evaluate(() => document.querySelectorAll('[data-m-force]').forEach((n) => n.removeAttribute('data-m-force')));
   await loc.evaluate((el) => el.setAttribute('data-m-force', '1'));
   const { root } = await cdp.send('DOM.getDocument', { depth: 0 });
   const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: '[data-m-force]' });
@@ -43,7 +55,7 @@ async function record(page, name, state, loc, extra = {}) {
   await page.waitForTimeout(200);
   const reading = await styleOf(target);
   reading.via = extra.via || 'rest';
-  reading.url = page.url();
+  reading.url = safeUrl(page.url());
   reading.width = page.viewportSize()?.width;
   out.components[name] ??= {};
   out.components[name][state] = reading;
@@ -62,7 +74,17 @@ async function record(page, name, state, loc, extra = {}) {
   log('  ', name, state, reading.rect.w + 'x' + reading.rect.h, reading.style.backgroundColor, reading.style.color);
 }
 
+// Pointer to a corner and focus dropped before every state, as the kit's S() does. Before, the
+// pointer stayed on the element from the hover reading through pressed and focus-visible, so the
+// focus-visible readings were hover and focus mixed.
+async function rest(page) {
+  await page.mouse.move(2, 2).catch(() => {});
+  await page.evaluate(() => document.activeElement && document.activeElement.blur && document.activeElement.blur()).catch(() => {});
+  await page.waitForTimeout(150);
+}
+
 async function states(page, name, loc) {
+  await rest(page);
   if (!(await loc.count())) {
     await record(page, name, 'default', loc, { via: 'rest' });
     return;
@@ -71,18 +93,25 @@ async function states(page, name, loc) {
   await loc.first().hover().catch(() => {});
   await page.waitForTimeout(350);
   await record(page, name, 'hover', loc, { via: 'mouse hover' });
+  await rest(page);
   const release = await forcePseudo(page, loc.first(), ['hover', 'active']);
   await record(page, name, 'pressed', loc, { via: 'CDP forcePseudoState active+hover; no click' });
   await release();
+  await rest(page);
   await loc.first().focus().catch(() => {});
   await page.keyboard.press('Shift+Tab').catch(() => {});
   await page.keyboard.press('Tab').catch(() => {});
   await page.waitForTimeout(200);
   const focused = await loc.first().evaluate((el) => document.activeElement === el || el.contains(document.activeElement)).catch(() => false);
-  await record(page, name, 'focus-visible', loc, { via: focused ? 'Shift+Tab, Tab' : 'focus failed' });
-  await page.evaluate(() => document.activeElement && document.activeElement.blur && document.activeElement.blur());
-  await page.mouse.move(2, 2);
-  await page.waitForTimeout(150);
+  if (focused) await record(page, name, 'focus-visible', loc, { via: 'Shift+Tab, Tab' });
+  else {
+    // Keyboard focus never reached the element, so a reading now would be the element at rest
+    // saved as its focus. Record the miss instead, as the kit does.
+    out.components[name] ??= {};
+    out.components[name]['focus-visible'] = { skipped: 'focus failed: keyboard focus did not reach the element', via: 'focus failed' };
+    log('  -', name, 'focus-visible skipped: focus failed');
+  }
+  await rest(page);
 }
 
 async function run() {

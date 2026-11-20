@@ -29,6 +29,16 @@ function collect() {
     });
     c.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
     for (const a of ['id', 'class', 'focusable', 'aria-hidden', 'aria-labelledby', 'style', 'data-testid']) c.removeAttribute(a);
+    // The kit's child sanitiser: ids nothing references, classes, inline styles and raster <image>
+    // go, and so do scripts, event handlers and any href or src that is not a fragment.
+    const refs = new Set([...c.outerHTML.matchAll(/url\(#([^)]+)\)/g)].map((m) => m[1].replace(/&quot;|"/g, '')));
+    c.querySelectorAll('[id],[class],[style]').forEach((e) => { if (!refs.has(e.id)) e.removeAttribute('id'); e.removeAttribute('class'); if (e.tagName !== 'mask') e.removeAttribute('style'); });
+    c.querySelectorAll('image, script, foreignObject').forEach((e) => e.remove());
+    for (const e of [c, ...c.querySelectorAll('*')]) {
+      for (const a of [...e.attributes]) {
+        if (/^on/i.test(a.name) || (/^(href|xlink:href|src)$/i.test(a.name) && !a.value.startsWith('#'))) e.removeAttribute(a.name);
+      }
+    }
     if (!c.hasAttribute('viewBox')) c.setAttribute('viewBox', `0 0 ${Math.round(r.width)} ${Math.round(r.height)}`);
     c.setAttribute('width', Math.round(r.width));
     c.setAttribute('height', Math.round(r.height));
@@ -56,6 +66,8 @@ async function grab(p, tag) {
 const b = await chromium.launch();
 const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA });
 const p = await ctx.newPage();
+// A page that fails to load throws here, before icons/ is touched: the old set is replaced only
+// after every page was collected.
 for (const path of ['/', '/for-agencies', '/pricing', '/demo', '/curated']) {
   await p.goto(BASE + path, { waitUntil: 'domcontentloaded', timeout: 60000 });
   await hideConsent(p);

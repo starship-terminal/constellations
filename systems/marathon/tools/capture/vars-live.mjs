@@ -1,7 +1,7 @@
 // Read Marathon's custom properties from the live public CSSOM and write raw/css-vars.json.
-// PRODUCT (adapt): onmarathon.com ships one stylesheet. :root declares the light shadcn
-// set, then a second :root block declares the dark set. html.light is the live class
-// (computed values match the first block). The dark block is recorded and resolved on a
+// PRODUCT (adapt): onmarathon.com ships one stylesheet. :root and .light declare the light
+// shadcn set; .dark and a :root inside @media (prefers-color-scheme: dark) declare the dark
+// set. html.light is the live class. The dark block is recorded and resolved on a
 // probe with html.dark, and labelled as declared, not painted on a public page.
 //
 //   PLAYWRIGHT=... node tools/capture/vars-live.mjs
@@ -62,10 +62,14 @@ const harvested = await page.evaluate(() => {
   return { rules, fonts, errors, computed, title: document.title };
 });
 
-// Split the two :root blocks. The live html.light class matches the first.
+// Light is the top-level :root plus .light (the live html class). Dark is .dark plus the :root
+// inside @media (prefers-color-scheme: dark). The old split took "the second top-level :root",
+// but the dark :root sits inside the media rule, so darkDeclared came out empty.
 const rootRules = harvested.rules.filter((r) => r.selector === ':root' && !r.context.length);
-const lightDecl = rootRules[0] ? rootRules[0].properties : {};
-const darkDecl = rootRules[1] ? rootRules[1].properties : {};
+const merge = (rules) => Object.assign({}, ...rules.map((r) => r.properties));
+const lightDecl = merge(harvested.rules.filter((r) => (r.selector === ':root' && !r.context.length) || (r.selector === '.light' && !r.context.length)));
+const darkDecl = merge(harvested.rules.filter((r) => (r.selector === '.dark' && !r.context.length)
+  || (r.selector === ':root' && r.context.length === 1 && /prefers-color-scheme:\s*dark/.test(r.context[0]))));
 
 const sheetsCss = await page.evaluate(() => {
   const out = [];
