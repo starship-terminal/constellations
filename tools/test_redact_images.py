@@ -2,6 +2,7 @@
 import contextlib
 import io
 import json
+import os
 import re
 import shutil
 import sys
@@ -18,6 +19,43 @@ try:
     import redact_images as R
 except ImportError:  # the Makefile needs only python3; this tool needs Pillow and numpy
     R = None
+
+
+def need_tesseract(test):
+    """Skip a test that runs the real tesseract when it is not on PATH, except in CI (the CI
+    environment variable is set): the Check workflow installs it, so there a missing binary fails
+    instead of skipping, and `check` cannot stop reading real images in CI without anyone noticing."""
+    if shutil.which("tesseract") is None:
+        if os.environ.get("CI"):
+            test.fail("tesseract is not on PATH in CI; .github/workflows/check.yml installs tesseract-ocr")
+        test.skipTest("tesseract is not on PATH")
+
+
+class NeedTesseract(unittest.TestCase):
+    """The real-OCR test skips on a machine without tesseract and fails in CI without it."""
+
+    def outcome(self, env):
+        from unittest import mock
+        with mock.patch.object(shutil, "which", return_value=None), mock.patch.dict(os.environ, env, clear=True):
+            try:
+                need_tesseract(self)
+            except unittest.SkipTest:
+                return "skip"
+            except self.failureException as e:
+                self.assertIn("check.yml", str(e))
+                return "fail"
+        return "run"
+
+    def test_skips_off_ci_and_fails_in_ci(self):
+        self.assertEqual(self.outcome({}), "skip")
+        self.assertEqual(self.outcome({"CI": ""}), "skip")
+        self.assertEqual(self.outcome({"CI": "true"}), "fail")
+
+    def test_runs_when_tesseract_is_on_path(self):
+        from unittest import mock
+        with mock.patch.object(shutil, "which", return_value="/usr/bin/tesseract"), \
+             mock.patch.dict(os.environ, {"CI": "true"}):
+            need_tesseract(self)                     # neither skips nor fails
 
 
 @unittest.skipIf(R is None, "Pillow and numpy are not installed")
@@ -132,9 +170,9 @@ class Commands(unittest.TestCase):
         self.assertEqual(sizes[-1], (1440, 400))
         self.assertEqual([R.ocr_scale(w) for w in (390, 499, 500, 999, 1000)], [3, 3, 2, 2, 1])
 
-    @unittest.skipIf(shutil.which("tesseract") is None, "tesseract is not on PATH")
     def test_small_text_in_a_tall_capture_is_read(self):
         from PIL import ImageDraw, ImageFont
+        need_tesseract(self)
         im = Image.new("RGB", (390, 2000), "white")                # 9px text: read only when enlarged
         ImageDraw.Draw(im).text((10, 1500), "someone@private.test", fill="black", font=ImageFont.load_default(size=9))
         words = R.ocr_words(im)
