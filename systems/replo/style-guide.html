@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Replo style guide</title>
+<meta name="description" content="Replo public marketing tokens, rendered from tokens.json.">
+<style>
+:root {
+  --color-brand-cream: #f5fad9;
+  --color-brand-ink: #f5fad9;
+  --color-brand-ink-muted: rgba(245, 250, 217, 0.7);
+  --color-brand-ink-faint: rgba(245, 250, 217, 0.5);
+  --color-brand-button: #eef5c5;
+  --color-brand-button-fg: #121212;
+  --color-brand-panel: #0f1010;
+  --color-brand-surface-card: #0b0b0b;
+  --color-brand-surface-glass: #161616;
+  --color-brand-black: #000000;
+  --color-brand-white: #ffffff;
+  --color-brand-accent-blue: #5b9dff;
+  --color-brand-accent-green: #b7feae;
+  --color-brand-accent-magenta: #ef196e;
+  --color-brand-accent-pink: #ffb3c3;
+  --color-brand-accent-purple: #8b32a8;
+  --font-family-sans: archivo, "archivo Fallback", Arial, sans-serif;
+  --font-family-display: archivo, "archivo Fallback", Arial, sans-serif;
+  --font-size-body: 16px;
+  --font-size-display: 56px;
+  --font-size-nav: 14px;
+  --font-size-button: 14px;
+  --font-weight-body: 400;
+  --font-weight-display: 500;
+  --font-line-height-body: 24px;
+  --font-line-height-display: 59.36px;
+  --radius-pill: 9999px;
+  --radius-control: 10px;
+  --spacing-button-x: 16px;
+  --spacing-nav-x: 12px;
+  --spacing-nav-y: 8px;
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --primary: #171717;
+  --primary-foreground: #fafafa;
+  --secondary: #f5f5f5;
+  --muted: #737373;
+  --destructive: #e40014;
+  --border: #e5e5e5;
+  --ring: #a1a1a1;
+  color-scheme: light;
+  --sg-sans: "archivo", Arial, sans-serif;
+}
+[data-mode="dark"] {
+  --page: #000000;
+  --surface: #0b0b0b;
+  --raised: #161616;
+  --panel: #0f1010;
+  --text: #f5fad9;
+  --muted: rgba(245, 250, 217, 0.7);
+  --faint: rgba(245, 250, 217, 0.5);
+  --accent: #eef5c5;
+  --accent-text: #121212;
+  --border: rgba(245, 250, 217, 0.24);
+  --focus: #a1a1a1;
+  --destructive: #ff6568;
+  --component-control-height: 36px;
+  --component-control-radius: var(--core-radius-pill);
+  --component-header-height: 60px;
+  --component-type-display: 56px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #f5fad9); background: var(--page, #000); }
+main { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 500 40px/1.1 var(--sg-sans); margin: 0 0 8px; }
+h2 { font: 500 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #f5fad9); margin: 40px 0 12px; }
+.lead { max-width: 62ch; color: var(--muted, rgba(245,250,217,.7)); }
+.row { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 48px; border-radius: 8px; border: 1px solid rgba(245,250,217,.24); }
+.sw b, .sw span { display: block; font: 400 11px/1.4 ui-monospace, monospace; }
+.sw span { opacity: .7; }
+.btn { display: inline-flex; align-items: center; height: 36px; padding: 0 16px; border-radius: 9999px; font-size: 14px; text-decoration: none; }
+.btn.primary { background: var(--accent, #eef5c5); color: var(--accent-text, #121212); }
+.btn.ghost { background: var(--page, #000); color: var(--text, #f5fad9); border: 1px solid var(--border, rgba(245,250,217,.24)); }
+.hero { font: 500 56px/1.06 var(--sg-sans); max-width: 16ch; margin: 24px 0; }
+nav.bar { display: flex; gap: 16px; align-items: center; height: 60px; font-size: 14px; }
+.toggle { margin-top: 24px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Replo</h1>
+  <p class="lead">Public marketing surface, one dark theme. Values come from tokens.json. The light set is the stylesheet's declared :root, which the marketing pages do not paint.</p>
+  <button class="btn ghost toggle" type="button" id="theme">Show declared light tokens</button>
+  <h2>Painted roles</h2>
+  <div class="row" id="roles"></div>
+  <h2>Brand</h2>
+  <div class="row" id="brand"></div>
+  <nav class="bar"><span>Product</span><span>Solutions</span><span>Pricing</span><a class="btn ghost" href="#">Book a demo</a><a class="btn primary" href="#">Start for free</a></nav>
+  <p class="hero">The website builder that learns what sells</p>
+  <h2>Type</h2>
+  <p>Body 16 / 24. Display 56 / 59. Nav and buttons 14.</p>
+</main>
+<script>
+const T = {"core":{"color":{"brand":{"cream":{"v":"#f5fad9","t":"color","s":"css-var --color-replo-cream (raw/css-vars.json, resolved on the home-page probe)"},"ink":{"v":"#f5fad9","t":"color","s":"css-var --color-ink (raw/css-vars.json, resolved on the home-page probe)"},"ink-muted":{"v":"rgba(245, 250, 217, 0.7)","t":"color","s":"css-var --color-ink-muted (raw/css-vars.json, resolved on the home-page probe)"},"ink-faint":{"v":"rgba(245, 250, 217, 0.5)","t":"color","s":"css-var --color-ink-faint (raw/css-vars.json, resolved on the home-page probe)"},"button":{"v":"#eef5c5","t":"color","s":"css-var --color-replo-button (raw/css-vars.json, resolved on the home-page probe)"},"button-fg":{"v":"#121212","t":"color","s":"css-var --color-replo-button-fg (raw/css-vars.json, resolved on the home-page probe)"},"panel":{"v":"#0f1010","t":"color","s":"css-var --color-replo-panel (raw/css-vars.json, resolved on the home-page probe)"},"surface-card":{"v":"#0b0b0b","t":"color","s":"css-var --color-surface-card (raw/css-vars.json, resolved on the home-page probe)"},"surface-glass":{"v":"#161616","t":"color","s":"css-var --color-surface-glass (raw/css-vars.json, resolved on the home-page probe)"},"black":{"v":"#000000","t":"color","s":"css-var --color-black (raw/css-vars.json, resolved on the home-page probe)"},"white":{"v":"#ffffff","t":"color","s":"css-var --color-white (raw/css-vars.json, resolved on the home-page probe)"},"accent-blue":{"v":"#5b9dff","t":"color","s":"css-var --color-accent-blue (raw/css-vars.json, resolved on the home-page probe)"},"accent-green":{"v":"#b7feae","t":"color","s":"css-var --color-accent-green (raw/css-vars.json, resolved on the home-page probe)"},"accent-magenta":{"v":"#ef196e","t":"color","s":"css-var --color-accent-magenta (raw/css-vars.json, resolved on the home-page probe)"},"accent-pink":{"v":"#ffb3c3","t":"color","s":"css-var --color-accent-pink (raw/css-vars.json, resolved on the home-page probe)"},"accent-purple":{"v":"#8b32a8","t":"color","s":"css-var --color-accent-purple (raw/css-vars.json, resolved on the home-page probe)"}}},"font":{"family":{"sans":{"v":"archivo, \"archivo Fallback\", Arial, sans-serif","t":"fontFamily","s":"measured computed fontFamily of body on https://www.replo.app/ at 1440x900 (raw/live.json)"},"display":{"v":"archivo, \"archivo Fallback\", Arial, sans-serif","t":"fontFamily","s":"measured computed fontFamily of h1 on https://www.replo.app/ at 1440x900 (raw/live.json)"}},"size":{"body":{"v":"16px","t":"dimension","s":"measured computed fontSize of body on https://www.replo.app/ at 1440x900 (raw/live.json)"},"display":{"v":"56px","t":"dimension","s":"measured computed fontSize of h1 on https://www.replo.app/ at 1440x900 (raw/live.json)"},"nav":{"v":"14px","t":"dimension","s":"measured computed fontSize of Product button on https://www.replo.app/ at 1440x900 (raw/live.json)"},"button":{"v":"14px","t":"dimension","s":"measured computed fontSize of Start for free on https://www.replo.app/ at 1440x900 (raw/live.json)"}},"weight":{"body":{"v":400,"t":"number","s":"measured computed fontWeight of body on https://www.replo.app/ at 1440x900 (raw/live.json)"},"display":{"v":500,"t":"number","s":"measured computed fontWeight of h1 on https://www.replo.app/ at 1440x900 (raw/live.json)"}},"line-height":{"body":{"v":"24px","t":"dimension","s":"measured computed lineHeight of body on https://www.replo.app/ at 1440x900 (raw/live.json)"},"display":{"v":"59.36px","t":"dimension","s":"measured computed lineHeight of h1 on https://www.replo.app/ at 1440x900 (raw/live.json)"}}},"radius":{"pill":{"v":"9999px","t":"dimension","s":"measured computed borderRadius of Start for free on https://www.replo.app/ at 1440x900 (raw/live.json)"},"control":{"v":"10px","t":"dimension","s":"derived from --radius .625rem at a 16px root (raw/css-vars.json :root --radius)"}},"spacing":{"button-x":{"v":"16px","t":"dimension","s":"measured computed paddingLeft of Start for free on https://www.replo.app/ at 1440x900 (raw/live.json)"},"nav-x":{"v":"12px","t":"dimension","s":"measured computed paddingLeft of Product button on https://www.replo.app/ at 1440x900 (raw/live.json)"},"nav-y":{"v":"8px","t":"dimension","s":"measured computed paddingTop of Product button on https://www.replo.app/ at 1440x900 (raw/live.json)"}}},"light":{"background":{"v":"#ffffff","t":"color","s":"declared :root custom property in the marketing stylesheet (raw/css-vars.json). The public pages do not apply this set: html has no .dark class and body paints #000000."},"foreground":{"v":"#0a0a0a","t":"color","s":"declared :root custom property in the marketing stylesheet (raw/css-vars.json). The public pages do not apply this set: html has no .dark class and body paints #000000."},"card":{"v":"#ffffff","t":"color","s":"declared :root custom property in the marketing stylesheet (raw/css-vars.json). The public pages do not apply this set: html has no .dark class and body paints #000000."},"primary":{"v":"#171717","t":"color","s":"declared :root custom property in the marketing stylesheet (raw/css-vars.json). The public pages do not apply this set: html has no .dark class and body paints #000000."},"primary-foreground":{"v":"#fafafa","t":"color","s":"declared :root custom property in the marketing stylesheet (raw/css-vars.json). The public pages do not apply this set: html has no .dark class and body paints #000000."},"secondary":{"v":"#f5f5f5","t":"color","s":"declared :root custom property in the marketing stylesheet (raw/css-vars.json). The public pages do not apply this set: html has no .dark class and body paints #000000."},"muted":{"v":"#737373","t":"color","s":"declared :root custom property in the marketing stylesheet (raw/css-vars.json). The public pages do not apply this set: html has no .dark class and body paints #000000."},"destructive":{"v":"#e40014","t":"color","s":"declared :root custom property in the marketing stylesheet (raw/css-vars.json). The public pages do not apply this set: html has no .dark class and body paints #000000."},"border":{"v":"#e5e5e5","t":"color","s":"declared :root custom property in the marketing stylesheet (raw/css-vars.json). The public pages do not apply this set: html has no .dark class and body paints #000000."},"ring":{"v":"#a1a1a1","t":"color","s":"declared :root custom property in the marketing stylesheet (raw/css-vars.json). The public pages do not apply this set: html has no .dark class and body paints #000000."}},"dark":{"page":{"v":"#000000","t":"color","s":"measured computed backgroundColor of body on https://www.replo.app/ at 1440x900 (raw/live.json); matches css-var --color-black"},"surface":{"v":"#0b0b0b","t":"color","s":"css-var --color-surface-card (raw/css-vars.json, resolved on the home-page probe)"},"raised":{"v":"#161616","t":"color","s":"css-var --color-surface-glass (raw/css-vars.json, resolved on the home-page probe)"},"panel":{"v":"#0f1010","t":"color","s":"css-var --color-replo-panel (raw/css-vars.json, resolved on the home-page probe)"},"text":{"v":"#f5fad9","t":"color","s":"measured computed color of body on https://www.replo.app/ at 1440x900 (raw/live.json); matches css-var --color-ink"},"muted":{"v":"rgba(245, 250, 217, 0.7)","t":"color","s":"css-var --color-ink-muted (raw/css-vars.json, resolved on the home-page probe)"},"faint":{"v":"rgba(245, 250, 217, 0.5)","t":"color","s":"css-var --color-ink-faint (raw/css-vars.json, resolved on the home-page probe)"},"accent":{"v":"#eef5c5","t":"color","s":"css-var --color-replo-button (raw/css-vars.json, resolved on the home-page probe); painted on Start for free as rgb(245, 250, 217)"},"accent-text":{"v":"#121212","t":"color","s":"css-var --color-replo-button-fg (raw/css-vars.json, resolved on the home-page probe); painted on Start for free as rgb(18, 18, 18)"},"border":{"v":"rgba(245, 250, 217, 0.24)","t":"color","s":"measured computed borderTopColor of Book a demo on https://www.replo.app/ at 1440x900 (raw/live.json)"},"focus":{"v":"#a1a1a1","t":"color","s":"declared --ring on :root (raw/css-vars.json). Not observed as a painted ring on the marketing controls."},"destructive":{"v":"#ff6568","t":"color","s":"declared --destructive on .dark (raw/css-vars.json). Not observed painted on the public marketing pages."},"component":{"control":{"height":{"v":"36px","t":"dimension","s":"measured computed height of Start for free on https://www.replo.app/ at 1440x900 (raw/live.json)"},"radius":{"v":"{core.radius.pill}","t":"dimension","s":"alias of the painted pill radius"}},"header":{"height":{"v":"60px","t":"dimension","s":"measured computed height of header on https://www.replo.app/ at 1440x900 (raw/live.json)"}},"type":{"display":{"v":"56px","t":"dimension","s":"measured computed fontSize of h1 on https://www.replo.app/ at 1440x900 (raw/live.json)"}}}}};
+const roles = document.getElementById("roles");
+const brand = document.getElementById("brand");
+function swatch(parent, name, value) {
+  const d = document.createElement("div");
+  d.className = "sw";
+  d.innerHTML = "<i></i><b></b><span></span>";
+  d.querySelector("i").style.background = value;
+  d.querySelector("b").textContent = name;
+  d.querySelector("span").textContent = value;
+  parent.appendChild(d);
+}
+function paint(mode) {
+  roles.innerHTML = "";
+  const set = T[mode] || {};
+  for (const [k, v] of Object.entries(set)) {
+    if (v && v.t === "color") swatch(roles, k, v.v);
+  }
+}
+brand.innerHTML = "";
+const colors = (T.core && T.core.color && T.core.color.brand) || {};
+for (const [k, v] of Object.entries(colors)) swatch(brand, k, v.v);
+let mode = "dark";
+paint(mode);
+document.getElementById("theme").onclick = () => {
+  mode = mode === "dark" ? "light" : "dark";
+  document.documentElement.dataset.mode = mode;
+  document.getElementById("theme").textContent = mode === "dark" ? "Show declared light tokens" : "Show painted dark tokens";
+  paint(mode);
+};
+</script>
+</body>
+</html>
