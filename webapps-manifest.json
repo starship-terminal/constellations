@@ -6738,9 +6738,9 @@
       "description": "Better than your bank",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://my.wealthsimple.com/app/login showed email and password. Password not submitted. No Google button.",
+      "notes": "Email probe: https://my.wealthsimple.com/app/login showed email and password. Password not submitted. No Google button. Public walk 2026-11-21: header groups open mega menus. Credit card is a page. Log in opens the email and password wall. Get started opens signup. Phone uses an Open navigation drawer. Search opens a dialog. Footer covers company, legal, help, newsroom, and shop. No email was typed. No form was submitted. Signed-in app was not captured. Public package refresh in PR 1598 at 0ee0bae2934f. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 20
     },
     {
