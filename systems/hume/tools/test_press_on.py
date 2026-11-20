@@ -44,6 +44,15 @@ class PressOnTest(unittest.TestCase):
         self.assertNotIn("DOM.getNodeForLocation", [m for m, _ in out["calls"]])
         self.assertEqual(out["attrs"], {})  # the marker is removed again
 
+    def test_unresolved_target_throws(self):
+        js = (HARNESS % FN).replace("return { result: { objectId: el.attrs['data-press-target'] ? 'obj-el' : 'obj-none' } };", "return { result: {} };")
+        js = js.replace("pressOn(loc).then((id) => console.log(JSON.stringify({ id, calls, attrs: el.attrs })));",
+                        "pressOn(loc).then(() => console.log(JSON.stringify({ threw: false, attrs: el.attrs })), (e) => console.log(JSON.stringify({ threw: true, forced: calls.some(([m]) => m === 'CSS.forcePseudoState'), attrs: el.attrs })));")
+        out = json.loads(subprocess.run(["node", "-e", js], capture_output=True, text=True, check=True).stdout)
+        self.assertTrue(out["threw"])
+        self.assertFalse(out["forced"])
+        self.assertEqual(out["attrs"], {})
+
 
 if __name__ == "__main__":
     unittest.main()
