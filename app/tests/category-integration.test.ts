@@ -4,10 +4,13 @@ import { withReferenceCategories } from "@/server/taxonomy/library";
 import {
   categorySeedGaps,
   matchesCategory,
+  UNCATEGORISED,
   type CatalogCategoryRow,
   type CuratedCategory,
 } from "@/contracts/categories";
 import { queryScreens } from "@/server/sources/screens";
+import { platformSearch } from "@/features/catalog-search-state";
+import { taxonomyGroups } from "@/contracts/taxonomy";
 import assignments from "@/data/system-categories.json";
 import catalog from "../../catalog.json";
 import { libraryItem, tempStore } from "./helpers";
@@ -87,12 +90,16 @@ describe("database categories across apps and screens", () => {
     );
   });
   it("keeps each existing package reachable through its former category link", async () => {
-    const seeded = new Set(assignments.map((entry) => entry.referenceId));
-    const rows = catalogRows().filter((row) =>
-      seeded.has(`systems:${row.slug}`),
-    );
+    // Every catalog package, curated or not: one the seed never curated
+    // keeps its catalog category, so its old link still finds it.
+    const rows = catalogRows();
     const references = await withReferenceCategories(
-      rows.map((row) => item(row.slug, row.platform)),
+      rows.map((row) =>
+        libraryItem(row.slug, {
+          platform: row.platform,
+          category: row.category ?? "",
+        }),
+      ),
     );
     for (const row of rows) {
       const reference = references.find(
@@ -103,6 +110,68 @@ describe("database categories across apps and screens", () => {
         `${row.slug}: ${row.category ?? ""}`,
       ).toBe(true);
     }
+  });
+  it("lists a package the seed never curated as uncategorised, not under no filter at all", async () => {
+    const seeded = new Set(assignments.map((entry) => entry.referenceId));
+    const uncurated = catalogRows().find(
+      (row) => !seeded.has(`systems:${row.slug}`) && row.category,
+    );
+    expect(uncurated).toBeDefined();
+    const { store } = await tempStore("category-uncurated-");
+    const [reference, curated] = await withReferenceCategories(
+      [
+        libraryItem(uncurated!.slug, { category: uncurated!.category }),
+        item("linear"),
+      ],
+      store,
+    );
+    expect(reference.category).toBe(uncurated!.category);
+    expect(reference.categoryIds).toBeUndefined();
+    expect(matchesCategory(reference, uncurated!.category!)).toBe(true);
+    expect(matchesCategory(reference, UNCATEGORISED)).toBe(true);
+    expect(matchesCategory(curated, UNCATEGORISED)).toBe(false);
+    // A curated package the user cleared shows no category, and lists as
+    // uncategorised too.
+    await store.assignReferenceCategories(
+      "systems:linear",
+      "web-categories",
+      [],
+    );
+    const [cleared] = await withReferenceCategories([item("linear")], store);
+    expect(cleared.category).toBe("");
+    expect(cleared.categoryIds).toEqual([]);
+    expect(matchesCategory(cleared, UNCATEGORISED)).toBe(true);
+  });
+  it("keeps an uncurated package under its category when a platform switch rewrites the link", async () => {
+    const seeded = new Set(assignments.map((entry) => entry.referenceId));
+    const finance = catalogRows().find(
+      (row) =>
+        !seeded.has(`systems:${row.slug}`) &&
+        row.category === "finance" &&
+        row.platform === "web",
+    );
+    expect(finance).toBeDefined();
+    const [reference] = await withReferenceCategories([
+      libraryItem(finance!.slug, { category: "finance" }),
+    ]);
+    const rewritten = platformSearch(
+      new URLSearchParams("category=finance"),
+      "web",
+      taxonomyGroups,
+      [],
+    ).get("category")!;
+    expect(rewritten).toBe("web-categories:finance");
+    expect(matchesCategory(reference, "finance")).toBe(true);
+    expect(matchesCategory(reference, rewritten)).toBe(true);
+    // A link naming several labels is never rewritten, so a package with
+    // only that catalog category is not spread across those labels' terms.
+    const productivity = libraryItem("uncurated-planner", {
+      category: "productivity",
+    });
+    expect(matchesCategory(productivity, "productivity")).toBe(true);
+    expect(
+      matchesCategory(productivity, "web-categories:development-tools"),
+    ).toBe(false);
   });
   it("hydrates from SQLite and shares the same assignments with screen filters", async () => {
     // Edit a private store: the shared one feeds the other tests in this file.

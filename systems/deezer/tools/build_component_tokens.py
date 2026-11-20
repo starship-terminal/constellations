@@ -388,6 +388,11 @@ def semcolor(raw, src, desc, theme="light"):
     return lit(value, "color", src + (f"; matches declared {alias}" if alias else ""), desc)
 
 
+def layer(comp, state, node):
+    """The background of the first painted layer of comp/state whose node starts with `node`."""
+    return next(pl["bg"] for pl in C[comp]["states"][state]["paint"] if pl.get("bg") and pl.get("node", "").startswith(node))
+
+
 for root, theme, key, comp, state, prop, group, desc in [
     (sem, "light", "page", "hero-h1", "default", "_body-bg", "background",
      "The white field the home hero paints."),
@@ -433,21 +438,25 @@ for root, theme, key, comp, state, prop, group, desc in [
      "The #29282d billing-toggle track on the offers band."),
 ]:
     try:
+        # Paint layers are picked by the element that paints them, never by the
+        # colour they are expected to have.
         if prop == "_paint":
-            raw = next(pl["bg"] for pl in C[comp]["states"][state]["paint"] if pl.get("bg") == "rgb(253, 252, 254)")
-            src = f"painted card fill inside {comp} {state} (raw/components-computed.json)"
+            raw = layer(comp, state, "div.unlogged-card")
+            src = f"painted div.unlogged-card fill inside {comp} {state} (raw/components-computed.json)"
         elif prop == "_paint-chip":
-            raw = next(pl["bg"] for pl in C[comp]["states"][state]["paint"] if pl.get("bg") == "rgb(235, 231, 238)")
-            src = f"painted chip fill inside {comp} {state} (raw/components-computed.json)"
+            raw = layer(comp, state, "span.unlogged-card-tag")
+            src = f"painted span.unlogged-card-tag chip fill inside {comp} {state} (raw/components-computed.json)"
         elif prop == "_paint-banner":
-            raw = next(pl["bg"] for pl in C[comp]["states"][state]["paint"] if pl.get("bg") == "rgb(234, 209, 255)")
-            src = f"painted banner fill inside {comp} {state} (raw/components-computed.json)"
+            raw = layer(comp, state, "div.css-18x5i1s")
+            src = f"painted banner fill (the first div.css-18x5i1s layer) inside {comp} {state} (raw/components-computed.json)"
         elif prop == "_paint-canvas":
-            raw = next(pl["bg"] for pl in C[comp]["states"][state]["paint"] if pl.get("bg") == "rgb(15, 13, 19)")
-            src = f"painted canvas inside {comp} {state} (raw/components-computed.json)"
+            raw = layer(comp, state, "ul.nav.burger-menu-content")
+            src = f"painted ul.burger-menu-content canvas inside {comp} {state} (raw/components-computed.json)"
         elif prop == "_body-bg":
+            # No measured element reports the page field: a screenshot sample.
             raw = "#ffffff"
-            src = "the home hero paints a white field behind the display copy (screenshots/home-light-*.png)"
+            src = ("sampled, not measured: the white field behind the home hero read off screenshots/home-light-*.png; "
+                   "no computed reading of the page field")
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
@@ -551,6 +560,26 @@ for name, cname, state, prop, ty_, desc in [
                          ty_, f"measured {prop} of {cname} {state} (raw/components-computed.json)", desc)
     except KeyError:
         pass
+
+# A component the last run could not find keeps its earlier states (measure.mjs marks it
+# recaptureMissed and keeps the first run's page/run/url). Say so on every token read from it,
+# so a kept reading never ships as if the latest run had confirmed it.
+FLAGGED = {k: v["recaptureMissed"] for k, v in C.items() if v.get("recaptureMissed")}
+
+
+def note_flagged(node):
+    if isinstance(node, dict):
+        src = node.get("source")
+        if isinstance(src, str):
+            for k, missed in FLAGGED.items():
+                if re.search(rf"(?<![\w-]){re.escape(k)}(?![\w-])", src) and f"{k} was not found" not in src:
+                    node["source"] = src = (src + f"; {k} was not found by the {missed} re-run (recaptureMissed),"
+                                            " so this is the reading kept from the earlier run")
+        for v in node.values():
+            note_flagged(v)
+
+
+note_flagged(SPEC)
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
 print("component-tokens.json:", {k: len(v) for k, v in SPEC.items() if k != "_about"})

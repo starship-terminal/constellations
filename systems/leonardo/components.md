@@ -60,7 +60,7 @@ Values that apply across entries, from the measurement files.
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
 | [Learn card](#learn-card) | 590.39 x 598.11 | - | - | transparent | none | 0 |
-| [Continue with Canva](#continue-with-canva) | 240.5 x 32.5 | - | 9.75px | rgba(255, 255, 255, 0.1) `color.docs.border.base` `color.docs.border.base` | none | 6.5px 13px |
+| [Continue with Canva](#continue-with-canva) | 240.5 x 32.5 | - | 9.75px | rgba(255, 255, 255, 0.1) `color.docs.border.base` | none | 6.5px 13px |
 | [Generate button](#generate-button) | 97.28 x 32.5 | - | 13000px | #262626 `color.hover` | none | 6.5px 19.5px |
 
 ## Components
@@ -211,8 +211,8 @@ An aspect-ratio chip on the signed-out composer. Measured at rest. Not selected,
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 66.03 x 32.5; padding 6.5px 13px; radius 13000px; background rgba(255, 255, 255, 0.1) `color.docs.border.base` `color.docs.border.base`; text canvaSans 13/19.5 500, #d4d4d4 `color.text.secondary`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16.25 x 16.25, #d4d4d4 `color.text.secondary` |
-| hover | background rgba(255, 255, 255, 0.2) `color.docs.border.strong` `color.docs.border.strong` |
+| default | size 66.03 x 32.5; padding 6.5px 13px; radius 13000px; background rgba(255, 255, 255, 0.1) `color.docs.border.base`; text canvaSans 13/19.5 500, #d4d4d4 `color.text.secondary`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16.25 x 16.25, #d4d4d4 `color.text.secondary` |
+| hover | background rgba(255, 255, 255, 0.2) `color.docs.border.strong` |
 | focus-visible | shadow rgba(110, 96, 238, 0.5) 0px 0px 0px 3px |
 | pressed | background rgba(23, 23, 23, 0.8) |
 
@@ -264,8 +264,8 @@ An OAuth button. Measured at rest. Never followed. Read as `li-canva` on the log
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 240.5 x 32.5; padding 6.5px 13px; radius 9.75px; background rgba(255, 255, 255, 0.1) `color.docs.border.base` `color.docs.border.base`; text canvaSans 13/19.5 500, #d4d4d4 `color.text.secondary`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16.25 x 16.25, #ffffff `color.white` |
-| hover | background rgba(255, 255, 255, 0.2) `color.docs.border.strong` `color.docs.border.strong` |
+| default | size 240.5 x 32.5; padding 6.5px 13px; radius 9.75px; background rgba(255, 255, 255, 0.1) `color.docs.border.base`; text canvaSans 13/19.5 500, #d4d4d4 `color.text.secondary`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16.25 x 16.25, #ffffff `color.white` |
+| hover | background rgba(255, 255, 255, 0.2) `color.docs.border.strong` |
 | focus-visible | shadow rgba(110, 96, 238, 0.5) 0px 0px 0px 3px |
 | pressed | background rgba(23, 23, 23, 0.8) |
 
@@ -276,8 +276,8 @@ An OAuth button. Measured at rest. Never followed. Read as `li-google` on the lo
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 240.5 x 32.5; padding 6.5px 13px; radius 9.75px; background rgba(255, 255, 255, 0.1) `color.docs.border.base` `color.docs.border.base`; text canvaSans 13/19.5 500, #d4d4d4 `color.text.secondary`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16.25 x 16.25, #d4d4d4 `color.text.secondary` |
-| hover | background rgba(255, 255, 255, 0.2) `color.docs.border.strong` `color.docs.border.strong` |
+| default | size 240.5 x 32.5; padding 6.5px 13px; radius 9.75px; background rgba(255, 255, 255, 0.1) `color.docs.border.base`; text canvaSans 13/19.5 500, #d4d4d4 `color.text.secondary`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16.25 x 16.25, #d4d4d4 `color.text.secondary` |
+| hover | background rgba(255, 255, 255, 0.2) `color.docs.border.strong` |
 | focus-visible | shadow rgba(110, 96, 238, 0.5) 0px 0px 0px 3px |
 | pressed | background rgba(23, 23, 23, 0.8) |
 
@@ -288,8 +288,8 @@ The email path control. Measured. Not clicked, so the email form was not submitt
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 240.5 x 32.5; padding 6.5px 13px; radius 9.75px; background rgba(255, 255, 255, 0.1) `color.docs.border.base` `color.docs.border.base`; text canvaSans 13/19.5 500, #d4d4d4 `color.text.secondary`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16.25 x 16.25, #d4d4d4 `color.text.secondary` |
-| hover | background rgba(255, 255, 255, 0.2) `color.docs.border.strong` `color.docs.border.strong` |
+| default | size 240.5 x 32.5; padding 6.5px 13px; radius 9.75px; background rgba(255, 255, 255, 0.1) `color.docs.border.base`; text canvaSans 13/19.5 500, #d4d4d4 `color.text.secondary`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16.25 x 16.25, #d4d4d4 `color.text.secondary` |
+| hover | background rgba(255, 255, 255, 0.2) `color.docs.border.strong` |
 | focus-visible | shadow rgba(110, 96, 238, 0.5) 0px 0px 0px 3px |
 | pressed | background rgba(23, 23, 23, 0.8) |
 

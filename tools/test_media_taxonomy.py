@@ -65,140 +65,81 @@ class FontEvidenceTest(unittest.TestCase):
         self.assertEqual(fonts, ["web-fonts:inter"])
 
 
-class BaseTreeFilesTest(unittest.TestCase):
-    def test_non_ascii_capture_name_stays_unquoted(self):
-        raw = b"systems/cafe/screenshots/caf\xc3\xa9-dark.png\0systems/cafe/screenshots/plain.png\0"
-        with mock.patch.dict(os.environ, {"GITHUB_BASE_REF": "main"}), \
-                mock.patch.object(taxonomy.subprocess, "run", return_value=mock.Mock(stdout=raw)):
-            files = taxonomy._base_tree_files()
-        self.assertEqual(files, {
-            "systems/cafe/screenshots/café-dark.png",
-            "systems/cafe/screenshots/plain.png",
-        })
-
-
 class SeedLagTest(unittest.TestCase):
-    """matches_base accepts a seed that predates packages already on main."""
+    """On a pull request the seed may leave out packages the merge adds, and is
+    otherwise re-derived from the merge's catalog and files, never trusted from
+    the branch."""
 
     def system(self, slug):
         return {"slug": slug, "name": slug.title(), "platform": "web",
                 "tokens": f"systems/{slug}/tokens.json", "preview": {}}
 
-    def images(self, system, folder, exts):
-        shots = {
-            "old": ["systems/old/screenshots/home.png"],
-            "newer": ["systems/newer/screenshots/pricing.png"],
-            "added": ["systems/added/screenshots/login.png"],
-        }
-        if folder != "screenshots":
-            return []
-        return [{"path": path} for path in shots.get(system["slug"], [])]
-
     def setUp(self):
-        self.old = self.system("old")
-        self.newer = self.system("newer")
-        self.added = self.system("added")
-        self.base = {"systems": [self.old, self.newer]}
-        self.head = {"systems": [self.old, self.newer, self.added]}
-        self.files = {
-            "systems/old/screenshots/home.png",
-            "systems/newer/screenshots/pricing.png",
+        self.shots = {
+            "old": ["systems/old/screenshots/home.png"],
+            "newer": ["systems/newer/screenshots/pricing.png"],   # landed on main after the branch started
+            "added": ["systems/added/screenshots/login.png"],     # this pull request's
         }
+        self.old, self.newer, self.added = self.system("old"), self.system("newer"), self.system("added")
+        self.base = [self.old, self.newer]
+        self.branch = [self.old, self.added]
+        self.head = [self.old, self.newer, self.added]
 
-    def prior_seed(self, systems):
+    def images(self, system, folder, exts):
+        return [{"path": p} for p in self.shots.get(system["slug"], [])] if folder == "screenshots" else []
+
+    def seed(self, systems):
         catalog = taxonomy.catalog
         with mock.patch.object(catalog, "load_catalog", return_value={"systems": systems}), \
                 mock.patch.object(catalog, "fonts", return_value=[]), \
                 mock.patch.object(catalog, "list_images", side_effect=self.images):
             return taxonomy.build()
 
-    def matches(self, head, committed, files=None, base_ref="main",
-                branch_seed=None, branch_catalog=None, head_sha="refs/pr-head",
-                script_changed=False, script_matches_branch=True):
+    def matches(self, committed, head=None, base=None, branch=None, env=None, fail=False):
+        env = {"GITHUB_BASE_REF": "main", "GITHUB_HEAD_SHA": "refs/pr-head"} if env is None else env
         catalog = taxonomy.catalog
-        shown = json.dumps(self.base)
-        listed = b"\0".join(path.encode() for path in (files if files is not None else self.files)) + b"\0"
+        refs = {"origin/main": base or self.base, "refs/pr-head": branch or self.branch}
 
-        def fake_run(args, **kwargs):
-            if args[:2] == ["git", "show"] and args[2].endswith(":catalog.json"):
-                payload = branch_catalog if args[2].startswith(head_sha) and branch_catalog else shown
-                return mock.Mock(stdout=payload, returncode=0)
-            if args[:2] == ["git", "show"] and args[2].endswith(":app/src/data/media-taxonomy.json"):
-                if branch_seed is None:
-                    raise subprocess.CalledProcessError(1, args)
-                return mock.Mock(stdout=json.dumps(branch_seed), returncode=0)
-            if args[:2] == ["git", "show"]:
-                return mock.Mock(stdout=shown, returncode=0)
-            if args[:2] == ["git", "ls-tree"]:
-                return mock.Mock(stdout=listed, returncode=0)
-            if args[:2] == ["git", "diff"]:
-                changed = "app/scripts/build-media-taxonomy.py\n" if script_changed else ""
-                return mock.Mock(stdout=changed, returncode=0)
-            if args[:2] == ["git", "rev-parse"]:
-                blob = "branch\n" if args[2].startswith(head_sha) else (
-                    "branch\n" if script_matches_branch else "merge\n")
-                return mock.Mock(stdout=blob, returncode=0)
-            raise AssertionError(args)
+        def run(args, **kwargs):
+            if fail:
+                raise catalog.subprocess.CalledProcessError(128, args)
+            ref, _, path = args[-1].partition(":")
+            assert args[:2] == ["git", "show"] and path == "catalog.json", args
+            return mock.Mock(stdout=json.dumps({"systems": refs[ref]}), returncode=0)
 
-        env = {"GITHUB_BASE_REF": base_ref, "GITHUB_HEAD_SHA": head_sha} if base_ref else {}
-        with mock.patch.dict(os.environ, env, clear=False), \
-                mock.patch.object(taxonomy.subprocess, "run", fake_run), \
-                mock.patch.object(catalog, "load_catalog", return_value=head), \
+        with mock.patch.dict(os.environ, env, clear=True), \
+                mock.patch.object(catalog.subprocess, "run", run), \
+                mock.patch.object(catalog, "load_catalog", return_value={"systems": head or self.head}), \
                 mock.patch.object(catalog, "fonts", return_value=[]), \
                 mock.patch.object(catalog, "list_images", side_effect=self.images):
-            if not base_ref:
-                os.environ.pop("GITHUB_BASE_REF", None)
-            return taxonomy.matches_base({"packages": head["systems"]}, committed)
+            return taxonomy.matches_base(taxonomy.build(), committed)
 
-    def test_an_older_seed_is_accepted(self):
-        self.assertTrue(self.matches(self.head, self.prior_seed([self.old])))
+    def test_a_seed_that_lags_main_or_this_pull_request_is_accepted(self):
+        for subset in ([self.old], [self.old, self.added], [self.old, self.newer]):
+            self.assertTrue(self.matches(self.seed(subset)), [s["slug"] for s in subset])
 
-    def test_a_seed_matching_the_branch_head_is_accepted_when_main_moved(self):
-        seed = self.prior_seed([self.old])
-        branch = {"systems": [self.old, self.added]}
-        self.assertTrue(self.matches(
-            self.head, seed, branch_seed=seed, branch_catalog=json.dumps(branch)))
+    def test_a_hand_edited_seed_is_rejected_even_when_the_branch_carries_it(self):
+        edited = self.seed(self.branch)
+        edited["assignments"] = edited["assignments"][:-1]
+        self.assertFalse(self.matches(edited))
 
-    def test_a_script_that_matches_the_branch_is_accepted(self):
-        # The branch seed differs, so the shortcut does not return early.
-        # The merge copy of the script matches the branch, so a base-only
-        # script change is not a capture edit.
-        self.assertTrue(self.matches(
-            self.head, self.prior_seed([self.old]),
-            branch_seed={"packages": []}, script_changed=True,
-            script_matches_branch=True))
+    def test_an_existing_package_with_new_images_and_no_rebuild_is_rejected(self):
+        committed = self.seed([self.old])
+        self.shots["old"] = self.shots["old"] + ["systems/old/screenshots/settings.png"]
+        self.assertFalse(self.matches(committed))
 
-    def test_a_script_that_differs_from_the_branch_is_rejected(self):
-        self.assertFalse(self.matches(
-            self.head, self.prior_seed([self.old]),
-            branch_seed={"packages": []}, script_changed=True,
-            script_matches_branch=False))
+    def test_leaving_out_a_package_the_branch_and_main_share_is_rejected(self):
+        self.assertFalse(self.matches(self.seed([self.added])))
 
-    def test_a_seed_that_differs_from_the_branch_head_is_rejected(self):
-        seed = self.prior_seed([self.old])
-        seed["coverage"] = "hand edited"
-        branch = {"systems": [self.old, self.added]}
-        self.assertFalse(self.matches(
-            self.head, seed, branch_seed=self.prior_seed([self.old]),
-            branch_catalog=json.dumps(branch)))
+    def test_a_removed_package_still_named_is_rejected(self):
+        head, branch = [self.newer, self.added], [self.added]
+        self.assertFalse(self.matches(self.seed(self.base), head=head, branch=branch))
+        self.assertTrue(self.matches(self.seed([self.added]), head=head, branch=branch))
 
-    def test_changed_generated_content_is_rejected(self):
-        seed = self.prior_seed([self.old])
-        seed["coverage"] = "hand edited"
-        self.assertFalse(self.matches(self.head, seed))
-
-    def test_an_edited_existing_row_is_rejected(self):
-        head = json.loads(json.dumps(self.head))
-        head["systems"][0]["name"] = "Old edited"
-        self.assertFalse(self.matches(head, self.prior_seed([self.old])))
-
-    def test_a_removed_named_image_is_rejected(self):
-        seed = self.prior_seed([self.old, self.added])
-        files = set(self.files)
-        self.assertFalse(self.matches(self.head, seed, files=files))
-
-    def test_without_a_pull_request_base_the_exemption_does_not_apply(self):
-        self.assertFalse(self.matches(self.head, self.prior_seed([self.old]), base_ref=None))
+    def test_no_pull_request_or_an_unreadable_ref_keeps_the_exact_rule(self):
+        prior = self.seed([self.old])
+        self.assertFalse(self.matches(prior, env={}))
+        self.assertFalse(self.matches(prior, fail=True))
 
 
 if __name__ == "__main__":

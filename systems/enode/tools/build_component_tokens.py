@@ -71,6 +71,64 @@ SPEC = {"_about": (
     "core": {}, "light": {}, "dark": {}, "component": {}}
 
 
+# A named row whose reading is missing is recorded here instead of being
+# dropped silently; the build stops on any gap not listed in KNOWN_GAPS (at the
+# end), and listed ones are written to raw/component-tokens.json `_gaps`.
+GAPS = []
+
+
+def gap(what):
+    GAPS.append(what)
+
+
+def split_shadow(v):
+    """Top-level comma split of a computed box-shadow list."""
+    return [x.strip() for x in re.split(r",\s*(?![^()]*\))", v or "") if x.strip()]
+
+
+def painted_ring(sty):
+    """(colour, how) of the focus ring a state really paints: a drawn outline
+    (style not none or auto, width above 0), else the outermost visible
+    box-shadow layer with a spread. An outline colour under outline-style none
+    is the inactive default, not a ring, so it is never returned."""
+    if sty.get("outlineStyle", "none") not in ("none", "auto") and float(sty.get("outlineWidth", "0px")[:-2] or 0) > 0 \
+            and sty.get("outlineColor") != "rgba(0, 0, 0, 0)":
+        return sty["outlineColor"], f"outline {sty['outlineWidth']} {sty['outlineStyle']}"
+    ring = None
+    for layer in split_shadow(sty.get("boxShadow", "none")):
+        m = re.match(r"^(rgba?\([^)]*\))\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(\s+inset)?$", layer)
+        if not m or m.group(6) or float(m.group(5)) <= 0 or re.fullmatch(r"rgba\(\s*\d+,\s*\d+,\s*\d+,\s*0\s*\)", m.group(1)):
+            continue
+        ring = (m.group(1), f"box-shadow {m.group(5)}px spread")
+    if ring:
+        return ring
+    raise KeyError("no painted ring")
+
+
+def _list(v):
+    """A computed comma list, split only at commas outside parentheses."""
+    return [x.strip() for x in re.split(r",(?![^()]*\))", v or "") if x.strip()]
+
+
+def transition(s):
+    """The computed transition lists as one valid shorthand: CSS repeats the
+    duration/easing/delay lists to the length of transition-property, so each
+    property is paired with its own entry by index. A 0s entry is kept (it
+    can override an earlier `all`); only a list that is 0s throughout means
+    no transition."""
+    props = _list(s.get("transitionProperty") or "all")
+    durs = _list(s.get("transitionDuration") or "0s")
+    eases = _list(s.get("transitionTimingFunction") or "ease")
+    delays = _list(s.get("transitionDelay") or "0s")
+    if all(d in ("0s", "0ms") for d in durs):
+        return ""
+    parts = []
+    for i, p in enumerate(props):
+        d, e, dl = durs[i % len(durs)], eases[i % len(eases)], delays[i % len(delays)]
+        parts.append(" ".join([p, d, e] + ([dl] if dl not in ("0s", "0ms") else [])))
+    return ", ".join(parts)
+
+
 def st(comp, state):
     return C[comp]["states"][state]["style"]
 
@@ -291,7 +349,7 @@ MOBILE_MEASURED = {}
 try:
     MOBILE_MEASURED["masthead"] = st("m-hero-h1", "default")["fontSize"]
 except KeyError:
-    pass
+    gap("mobile masthead: no m-hero-h1 default fontSize reading")
 sizes = SPEC["core"].setdefault("font", {}).setdefault("size", {})
 for name in sorted(k for k in R if re.fullmatch(r"--text-[a-z0-9]+(-[a-z0-9]+)*", k)):
     key = name[len("--text-"):]
@@ -475,7 +533,10 @@ for root, theme, key, comp, state, prop, group, desc in [
      "The white text on the dark CTA pill."),
     (sem, "light", "cta-outline", "hero-cta2", "default", "insetShadowColor", "border",
      "The translucent inset ring of the 'Explore our platform' secondary pill — a 1px inset shadow; its border-width is 0."),
-    (sem, "light", "focus-ring", "nav-menu-btn", "focus-visible", "outlineColor", "border",
+    # Read from nav-link, whose focus-visible paints a 2px solid outline:
+    # nav-menu-btn's focus-visible outline is none/0px with no shadow, so its
+    # outlineColor was never painted.
+    (sem, "light", "focus-ring", "nav-link", "focus-visible", "_ring", "border",
      "The brand-green keyboard focus ring (focus-visible:outline-control-focus-ring)."),
     (sem, "light", "stat-ink", "stat-card", "default", "color", "text",
      "The stat-card figure ink."),
@@ -490,6 +551,11 @@ for root, theme, key, comp, state, prop, group, desc in [
             # wrapper; the kit's first-text-node reading is the painted ink.
             raw = ts(comp, state, "color")
             src = f"computed color of {comp} {state} — the first text node's reading where the kit recorded one (raw/components-computed.json)"
+        elif prop == "_ring":
+            if C[comp]["states"][state].get("via") == "focus failed":
+                raise KeyError("focus failed")
+            raw, how = painted_ring(st(comp, state))
+            src = f"computed focus ring ({how}) of {comp} {state} (raw/components-computed.json)"
         elif prop == "insetShadowColor":
             raw = inset_shadow_color(comp, state)
             src = f"the inset box-shadow layer painted on {comp} {state} (raw/components-computed.json)"
@@ -500,7 +566,7 @@ for root, theme, key, comp, state, prop, group, desc in [
             raise KeyError(prop)
         root.setdefault(group, {})[key] = semcolor(raw, src, desc, theme)
     except KeyError:
-        pass
+        gap(f"{theme}.{group}.{key}: no {comp} {state} {prop} reading")
 
 # The mint page field: <html> sets --color-page-background:var(--color-brand-75)
 # inline, so the whole light page paints brand-75 rather than
@@ -518,7 +584,7 @@ if declared("--color-brand-75") is not None:
 
 size_alias = {}
 for name in sorted(k for k in R if re.fullmatch(r"--text-[a-z0-9]+(-[a-z0-9]+)*", k)):
-    size_alias.setdefault(R[name], f"font.size.{name[len('--text-'):]}")
+    size_alias.setdefault(R[name], (f"font.size.{name[len('--text-'):]}", name))
 measured_size = {}
 for key, comp, state, desc in [
     ("masthead", "hero-h1", "default", "The 68px hero masthead — aliases --text-masthead."),
@@ -529,11 +595,11 @@ for key, comp, state, desc in [
         src = f"computed fontSize of {comp} {state} (raw/components-computed.json)"
         alias = size_alias.get(raw)
         SPEC["core"].setdefault("font", {}).setdefault("size", {}).setdefault("measured", {})[key] = lit(
-            f"{{{alias}}}" if alias else raw, "dimension",
-            src + (f"; matches declared --text-{key}" if alias else ""), desc)
+            f"{{{alias[0]}}}" if alias else raw, "dimension",
+            src + (f"; matches declared {alias[1]}" if alias else ""), desc)
         measured_size[key] = raw
     except KeyError:
-        pass
+        gap(f"font.size.measured.{key}: no {comp} {state} fontSize reading")
 
 # ------------------------------------------------------------------ shape
 
@@ -557,25 +623,24 @@ for key, comp, state, prop, desc in [
         else:
             radii[key] = lit(v, "dimension" if re.fullmatch(r"[0-9.]+(px|rem)", v or "") else "other", src, desc)
     except KeyError:
-        pass
+        gap(f"radius.{key}: no {comp} {state} {prop} reading")
 
 # ------------------------------------------------------------------ motion
 
 mo = SPEC["core"].setdefault("motion", {})
 try:
-    s = st("nav-cta", "default")
-    dur, ease = s.get("transitionDuration"), s.get("transitionTimingFunction")
-    if dur and dur != "0s":
-        # A CSS transition list pairs every comma entry with its own timing:
-        # appending one duration after the whole property list would leave the
-        # earlier entries at the 0s default.
-        props = [p.strip() for p in s.get("transitionProperty", "all").split(",") if p.strip()]
-        val = ", ".join(f"{p} {dur} {ease or ''}".strip() for p in props)
+    # Each property paired with its own duration/easing by index: appending
+    # the whole duration/easing lists after every property gives an invalid
+    # shorthand once either list has more than one entry.
+    val = transition(st("nav-cta", "default"))
+    if val:
         mo["control"] = lit(val, "other",
             "computed transition of nav-cta default (raw/components-computed.json); the declared --default-transition-duration/.4-0-.2-1 pair",
             "The 0.15s transition on pills and controls.")
+    else:
+        gap("motion.control: nav-cta default has no transition")
 except KeyError:
-    pass
+    gap("motion.control: no nav-cta default reading")
 
 # ------------------------------------------------------------- components
 
@@ -603,7 +668,7 @@ for name, cname, state, prop, ty_, desc in [
         comp[name] = lit(("%g" % v) + "px" if isinstance(v, (int, float)) else str(v) + "px",
                          ty_, f"measured {prop} of {cname} {state} (raw/components-computed.json)", desc)
     except KeyError:
-        pass
+        gap(f"component.{name}: no {cname} {state} {prop} reading")
 
 # The platform login is a separate app outside the marketing token layer;
 # its measured values are kept as literals, honestly labelled.
@@ -628,7 +693,15 @@ for name, cname, state, prop, ty_, desc in [
             login[name] = semcolor(st(cname, state)[prop],
                 f"computed {prop} of {cname} {state} on platform.enode.com/login (raw/components-computed.json)", desc)
     except KeyError:
-        pass
+        gap(f"component.login.{name}: no {cname} {state} {prop} reading")
+
+# Rows missing from the committed readings, kept visible in `_gaps`.
+KNOWN_GAPS = set()
+_new = [g for g in GAPS if g not in KNOWN_GAPS]
+if _new:
+    raise SystemExit("missing readings for named token rows (recapture, or list them in KNOWN_GAPS):\n  " + "\n  ".join(_new))
+if GAPS:
+    SPEC["_gaps"] = GAPS
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
 print("component-tokens.json:", {k: len(v) for k, v in SPEC.items() if k != "_about"})

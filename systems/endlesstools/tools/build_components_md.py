@@ -148,7 +148,10 @@ ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow",
 
 
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    # A state whose capture failed (via: "focus failed": the element would not
+    # hold a real keyboard focus) is not a captured state: it is reported
+    # separately so a failed attempt never reads as a measured absence of a ring.
+    states = [s for s in c["states"] if "style" in c["states"][s] and c["states"][s].get("via") != "focus failed"]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -292,17 +295,53 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
-foc = []
+def _alpha(c):
+    m = re.fullmatch(r"rgba\([^,]+,[^,]+,[^,]+,\s*([\d.]+)\)", (c or "").strip())
+    return float(m.group(1)) if m else 1.0
+
+
+# Each focus-visible state is sorted by what it really paints. A failed focus
+# is not a reading; an `auto` outline is the browser's own ring (its reported
+# colour is the UA default); a transparent outline passes the width/style test
+# but draws nothing.
+foc = {"painted": [], "auto": [], "transparent": [], "border": [], "none": [], "failed": []}
 for k, c in C.items():
     st = c["states"].get("focus-visible")
     if not st or "style" not in st:
         continue
+    if st.get("via") == "focus failed":
+        foc["failed"].append(f"`{k}`")
+        continue
     s = st["style"]
-    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
-    foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
-with_ring = [f"`{k}` ({r})" for k, r in foc if r]
-without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} controls were given a real keyboard focus. On the marketing page the ring is the browser's own — a 1px `#005fcc` auto outline at 1px offset on links and buttons that show one: {', '.join(with_ring) if with_ring else 'none'}. On the app host every focus-visible control keeps Tailwind's global preset (`outline: 2px solid transparent; outline-offset: 2px`) and signals focus by swapping its border to grey-1 instead; the controls that draw no ring are {', '.join(without) if without else 'none'}.")
+    base = next((v["style"] for v in c["states"].values() if "style" in v), s)
+    drawn = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
+    border = any(s[f"border{d}Color"] != base[f"border{d}Color"] or s[f"border{d}Width"] != base[f"border{d}Width"]
+                 for d in ("Top", "Right", "Bottom", "Left"))
+    if drawn and s["outlineStyle"] == "auto":
+        foc["auto"].append(f"`{k}` (offset {s['outlineOffset']})")
+    elif drawn and _alpha(s["outlineColor"]) > 0:
+        foc["painted"].append(f"`{k}` ({s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']})")
+    elif border:
+        foc["border"].append(f"`{k}`")
+    elif drawn:
+        foc["transparent"].append(f"`{k}`")
+    else:
+        foc["none"].append(f"`{k}`")
+n = sum(len(v) for k, v in foc.items() if k != "failed")
+parts = [f"**Focus.** {n} controls were given a real keyboard focus."]
+if foc["auto"]:
+    parts.append(f"{len(foc['auto'])} show the browser's own ring, a 1px `auto` outline (Chrome reports its colour as #005fcc `accent.focus`, the UA default, which the product does not paint): {', '.join(foc['auto'])}.")
+if foc["painted"]:
+    parts.append(f"{len(foc['painted'])} draw an outline ring: {', '.join(foc['painted'])}.")
+if foc["border"]:
+    parts.append(f"{len(foc['border'])} change their border: {', '.join(foc['border'])}.")
+if foc["transparent"]:
+    parts.append(f"{len(foc['transparent'])} keep Tailwind's preset `outline: 2px solid transparent` and show no measured change, so a keyboard user sees no ring: {', '.join(foc['transparent'])}.")
+if foc["none"]:
+    parts.append(f"{len(foc['none'])} show no measured change: {', '.join(foc['none'])}.")
+if foc["failed"]:
+    parts.append(f"Focus could not be captured on {', '.join(foc['failed'])} (keyboard focus did not reach the element), so its look is unknown, not absent.")
+W(" ".join(parts))
 W()
 W("**Pressed.** Pressed states were forced with DevTools (`:active:hover`), so no button was ever clicked through. Pressed paints the same colour as hover on every control — the page's own press cue is `active:scale-95` (a 0.95 shrink) declared in the sheets, which a forced pseudo-state does not show.")
 W()
@@ -384,6 +423,7 @@ for g in groups:
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
+        failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
         rows, states = state_rows(c)
         if len(states) == 1 and rows:
             W(f"**Values ({states[0]}).** {fmt(rows[0][1])}.")
@@ -393,6 +433,9 @@ for g in groups:
             W("|---|---|")
             for lab, d in rows:
                 W(f"| {lab} | {fmt(d)} |")
+            W()
+        if failed:
+            W(f"**Focus not capturable.** A real keyboard focus could not be held on this element ({', '.join(f'`{s}`' for s in failed)} recorded `via: focus failed`), so its focus look is uncaptured, not measured as absent.")
             W()
         cl = child_layers(c)
         if cl:

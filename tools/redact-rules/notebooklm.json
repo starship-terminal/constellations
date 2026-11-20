@@ -4,8 +4,8 @@
   "net": true,
   "emails": true,
   "email_allow": [
-   "@example\\.(com|org)$",
-   "\\.example$"
+   "@example\\.com$",
+   "@example\\.org$"
   ],
   "keep": [
    "^\\W*(Sources|Chat|Studio|Title|Created|Role|Owner|Settings|PRO|All|Discover|Collections|My notebooks|Most recent|Featured|Create new|Create notebook|App|Next|Save|Copy link|Cancel|Delete|Rename|Share|Remove|Edit|Reports?|Quiz|Flashcards|Infographic|Mind Map|Data Table|Slide Deck|Audio|Video|New!?|Try it|Add note|Add sources|Select all|Source guide|Restricted|Anyone with the link)\\W*$",

@@ -212,7 +212,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Cross-origin embeds.** The Vimeo player (`video-embed`) and the Marketo sales form (`form-embed`) are measured as element boxes only; their contents are unreachable and nothing inside them is claimed.
 - **The consent card.** The OneTrust "We use cookies" card renders in a closed shadow root; it is suppressed for captures (seeded consent cookie + a geometric sweep), so it has no measurements — it is chrome of the consent vendor, not of the design system.
 - **`--knox-*` variables that resolve to nothing.** Some Knox names (e.g. button hover/pressed fills) are unset on this site; only resolved values made it into tokens.
-- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or `raw/full/`.
+- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from the tokens.
 
 ### Do and don't (from README.md)
 

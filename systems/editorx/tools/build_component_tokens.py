@@ -192,14 +192,14 @@ for key, comp, state, desc in [
 # semantic layer. Var-referenced where a variable resolves the same value.
 
 brand = SPEC["core"].setdefault("color", {}).setdefault("brand", {})
-for key, comp, state, prop, want, desc in [
-    ("studio-purple", "nav-cta", "default", "backgroundColor", "#3910ed",
+for key, comp, state, prop, desc in [
+    ("studio-purple", "nav-cta", "default", "backgroundColor",
      "The Wix Studio purple #3910ed: the header Start Creating and the hero 'Start creating' pill."),
-    ("lime", "cta-band", "default", "backgroundColor", "#deff00",
+    ("lime", "cta-band", "default", "backgroundColor",
      "The Wix Studio lime #deff00 the closing CTA band paints."),
-    ("link", "pricing-refresh", "default", "color", "#116dff",
+    ("link", "pricing-refresh", "default", "color",
      "The #116dff link blue (the pricing error pane's Refresh)."),
-    ("link-hover", "pricing-refresh", "hover", "color", "#0f62e6",
+    ("link-hover", "pricing-refresh", "hover", "color",
      "The #0f62e6 hover step on the link blue."),
 ]:
     try:
@@ -330,9 +330,9 @@ for name, target, desc in [
     if bag and root_key in bag:
         emit(light, name, {"value": "{" + target + "}", "type": "color",
                            "source": ALIAS, "description": desc})
-    elif root_bag is None:
-        emit(light, name, {"value": target, "type": "color",
-                           "source": "computed color of nav-cta / hero-cta labels (raw/components-computed.json)",
+    elif root_bag is None:  # --text-on-action: the header action's label ink, read
+        emit(light, name, {"value": norm_color(st("nav-cta", "default")["color"]), "type": "color",
+                           "source": "computed color of nav-cta default (raw/components-computed.json)",
                            "description": desc})
 
 dark = SPEC["dark"]
@@ -344,11 +344,14 @@ for name, target, desc in [
     ("--border", "{color.neutral.footer-ink}", "The 1px #f6f6f6 ring the footer's 50%-radius social buttons carry."),
     ("--border-divider", "{color.neutral.footer-divider}", "The #848280 hairline inside the footer."),
     ("--action-primary", "{color.brand.studio-purple}", "The #3910ed action fill; the dark footer carries no action of its own, the role is kept for completeness."),
-    ("--text-on-action", "#ffffff", "White labels on the action fill."),
+    ("--text-on-action", None, "White labels on the action fill; the dark footer carries no action, so this is the header action's label ink."),
 ]:
-    emit(dark, name, {"value": target, "type": "color",
-                      "source": ALIAS if target.startswith("{") else "computed colors of footer-link / social-icon over the dark chrome (raw/components-computed.json)",
-                      "description": desc})
+    if target is None:
+        emit(dark, name, {"value": norm_color(st("nav-cta", "default")["color"]), "type": "color",
+                          "source": "computed color of nav-cta default (raw/components-computed.json)",
+                          "description": desc})
+        continue
+    emit(dark, name, {"value": target, "type": "color", "source": ALIAS, "description": desc})
 
 # ------------------------------------------------------------- type scale
 

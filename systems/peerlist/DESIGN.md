@@ -8,26 +8,26 @@ omitted:
   - section: "components"
     reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
-  primary: "rgb(0 170 69)"
-  neutral: "rgb(255 255 255)"
-  surface: "rgb(255 255 255)"
-  on-surface: "rgb(0 0 0)"
-  on-surface-variant: "rgb(51 65 85)"
-  outline: "rgb(226 232 240)"
-  page: "rgb(255 255 255)"
-  surface-muted: "rgb(248 249 251)"
-  text: "rgb(0 0 0)"
-  text-strong: "rgb(13 13 13)"
-  muted: "rgb(51 65 85)"
-  placeholder: "rgb(203 213 225)"
-  accent: "rgb(0 170 69)"
-  accent-border: "rgb(30 135 75)"
-  on-accent: "rgb(255 255 255)"
-  action: "rgb(15 23 42)"
-  on-action: "rgb(255 255 255)"
-  border: "rgb(226 232 240)"
-  field-border: "rgb(203 213 225)"
-  danger: "rgb(235 87 87)"
+  primary: "#00aa45"
+  neutral: "#ffffff"
+  surface: "#ffffff"
+  on-surface: "#000000"
+  on-surface-variant: "#334155"
+  outline: "#e2e8f0"
+  page: "#ffffff"
+  surface-muted: "#f8f9fb"
+  text: "#000000"
+  text-strong: "#0d0d0d"
+  muted: "#334155"
+  placeholder: "#cbd5e1"
+  accent: "#00aa45"
+  accent-border: "#1e874b"
+  on-accent: "#ffffff"
+  action: "#0f172a"
+  on-action: "#ffffff"
+  border: "#e2e8f0"
+  field-border: "#cbd5e1"
+  danger: "#eb5757"
 typography:
   body:
     fontFamily: "Geist"
@@ -133,12 +133,12 @@ Public signed-out surfaces of [peerlist.io](https://peerlist.io/), captured on 1
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (rgb(0 170 69)):** `light.accent`
-- **neutral (rgb(255 255 255)):** `light.page`
-- **surface (rgb(255 255 255)):** `light.surface`
-- **on-surface (rgb(0 0 0)):** `light.text`
-- **on-surface-variant (rgb(51 65 85)):** `light.muted`
-- **outline (rgb(226 232 240)):** `light.border`
+- **primary (#00aa45):** `light.accent`
+- **neutral (#ffffff):** `light.page`
+- **surface (#ffffff):** `light.surface`
+- **on-surface (#000000):** `light.text`
+- **on-surface-variant (#334155):** `light.muted`
+- **outline (#e2e8f0):** `light.border`
 
 ## Typography
 

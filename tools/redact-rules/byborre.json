@@ -1,10 +1,17 @@
 {
- "_note": "Rules for systems/byborre. A fully public signed-out capture: the only private-adjacent text is BYBORRE's own published contact details — the @byborre.com addresses (annamaria@, sales@) are product-published and allowed, and the contact page's +31 phone number is painted wherever it renders (the person-card crop and the contact page shots). The phone in raw/components-computed.json is masked by the capture lib ([phone]).",
+ "_note": "Rules for systems/byborre. A fully public signed-out capture. BYBORRE's published sales inbox is allowed by its exact address. The contact page's person cards show a named staff member's direct work email address and phone number: the email is painted out of the person-card crop (one family below) and the phone wherever it renders. raw/components-computed.json records both masked ([email], [phone]) by the capture lib's styleOf.",
  "ocr": {
   "emails": true,
   "email_allow": [
-   "@byborre\\.com$"
+   "^sales@byborre\\.com$"
   ]
  },
- "families": []
+ "families": [
+  {
+   "name": "person-card staff email",
+   "files": ["components/crops/person-card-default.png"],
+   "size": [[604, 336]],
+   "rects": [[10, 212, 470, 264, "rows"]]
+  }
+ ]
 }

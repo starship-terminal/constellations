@@ -55,7 +55,7 @@ how it was captured. The `extract-style` skill in the quiver-hub
    reviewed grades against the platform rubric as described in [AGENTS.md](../AGENTS.md),
    then rerun the checks after writing those grades. This review is not
    optional: the package is not done until `tools/grade.py --write --review`
-   has written its grades, and every criterion that cannot grade `yes`
+   has written its grades, and every criterion that cannot grade `meets`
    carries a written justification in the grades file.
 9. **Clean up when it merges.** `git worktree remove` the capture worktree,
    delete `~/.design-systems/<slug>/`, and delete the merged branch.
@@ -77,7 +77,7 @@ interpreter `PYTHON`/`python3` resolves to.
 
 | Dependency | Needed by |
 |---|---|
-| Pillow (`pillow`) | `capture/quantize.py` and its per-package copies, `crops.py`, `srgb.py`, `shot.py`, `store.py`, the inline `python3 -c "from PIL import …"` quantize calls in the `.mjs` scripts, `tools/make_icons.py`, `tools/redact_images.py`, linear's `build_guide.py`/`build_library.py`, polaris's `build_vectors.py`, and `tools/catalog.py` gallery thumbnails (macOS `sips` is used instead when present; with neither, thumbs fall back to the full-size screenshot and `build` warns once) |
+| Pillow (`pillow`) | `capture/quantize.py` and its per-package copies, `crops.py`, the package-only `srgb.py` (brilliant), `shot.py` (duolingo) and `store.py` (researchrabbit), the inline `python3 -c "from PIL import …"` quantize calls in the `.mjs` scripts, `tools/make_icons.py`, `tools/redact_images.py`, linear's `build_guide.py`/`build_library.py`, polaris's `build_vectors.py`, and `tools/catalog.py` gallery thumbnails (macOS `sips` is used instead when present; with neither, thumbs fall back to the full-size screenshot and `build` warns once) |
 | numpy (`numpy`) | `tools/redact_images.py` (also needs `tesseract` on PATH) |
 | markdown (`markdown`) | `tools/site.py`, linear's `build_guide.py` |
 | fontTools + Brotli (`fonttools[woff]`) | polaris's `build_vectors.py` (text measurement; widths drift across versions; Brotli decodes `inter.woff2` to TTF) |

@@ -16,10 +16,14 @@
 // out). The cookie consent island is hidden, never answered; Talk to Skylar / Talk to Cartesia
 // live-agent calls are never started; the Playground sign-in card is never filled or submitted.
 import fs from 'fs';
+import path from 'node:path';
+import os from 'node:os';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE, PLAY, DOCS } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour shots stay outside the repo (docs/PACKAGE.md): quantize.py writes the
+// committed screenshots/ from this scratch folder.
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'cartesia', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);

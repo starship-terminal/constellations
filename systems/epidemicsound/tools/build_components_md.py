@@ -190,13 +190,23 @@ def props(v):
 ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers"]
 
 
+def gone(c, st):
+    """A non-default state whose box is 0x0 while the default's is not: the
+    element left the layout in that state, so its style is not the state's
+    look (the track rows swap the cover button out on hover)."""
+    r = (c["states"][st].get("rect") or {})
+    d = (c["states"].get("default") or {}).get("rect") or {}
+    return st != "default" and r.get("w") == 0 and r.get("h") == 0 and (d.get("w") or d.get("h"))
+
+
 def state_rows(c):
     # A state whose capture failed (e.g. via: "focus failed" — the element would
     # not hold a real keyboard focus) is not a captured state: it is reported
     # separately so a failed attempt can never read as a measured absence of a
     # focus ring.
     use_theme(c)
-    states = [s for s in c["states"] if "style" in c["states"][s] and c["states"][s].get("via") != "focus failed"]
+    states = [s for s in c["states"] if "style" in c["states"][s] and c["states"][s].get("via") != "focus failed"
+              and not gone(c, s)]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -250,6 +260,13 @@ def child_layers(c):
 
 
 # --------------------------------------------------------------------------- page and group text
+
+# Entries whose selector caught another element. The readings stay as
+# evidence of what was read; the entry says so (README, What to distrust).
+WRONG_ELEMENT = {
+    "plan-price": "These readings are an empty 688 x 384 div far down the pricing page (y 6525), not a plan's price line: the `main, section, div` union with `.last()` matched it. Recapture needed.",
+    "su-submit": "These readings are the \"Continue with Google\" link, not the registration form's submit: the `a.button` alternative matched it first. Recapture needed.",
+}
 
 PAGE_NAME = {"home": "home", "pricing": "pricing", "genre": "genre", "sfx": "sound-effects category", "login": "login", "signup": "signup", "mobile": "genre"}
 
@@ -460,7 +477,14 @@ for g in groups:
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
-        failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
+        if k in WRONG_ELEMENT:
+            W(f"**Wrong element.** {WRONG_ELEMENT[k]}")
+            W()
+        failed = [s for s, v in c["states"].items() if v.get("via") == "focus failed"]
+        # Old runs saved the 0x0 style; the fixed capture saves { skipped } with
+        # no style. Both are named here (a failed focus is named above).
+        off = [s for s, v in c["states"].items()
+               if ("style" in v and gone(c, s)) or (v.get("skipped") and v.get("via") != "focus failed")]
         rows, states = state_rows(c)
         if len(states) == 1 and rows:
             W(f"**Values ({states[0]}).** {fmt(rows[0][1])}.")
@@ -473,6 +497,9 @@ for g in groups:
             W()
         if failed:
             W(f"**Focus not capturable.** A real keyboard focus could not be held on this element ({', '.join(f'`{s}`' for s in failed)} recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.")
+            W()
+        if off:
+            W(f"**Not a reading.** In {', '.join(f'`{s}`' for s in off)} this element's box is 0 x 0 (it leaves the layout), so that state's look is on its container, not measured here.")
             W()
         cl = child_layers(c)
         if cl:

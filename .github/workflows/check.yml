@@ -13,8 +13,21 @@ on:
   pull_request:
 permissions:
   contents: read
+# A new push to a pull request replaces the run still queued or running for
+# its older commit, so only the newest commit holds a runner. Nothing waits on
+# the older result: the checks that count are the ones on the head commit.
+# Pushes to main each get a group of their own (the commit SHA), so no run on
+# main is ever cancelled or held back by a later merge.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   check:
+    # Audit fix branches (audit2/*) are not tested one by one: each fix is
+    # reviewed on its own pull request and then lands in a train branch
+    # (audit2/train-*), whose single run here is the gate. Skipping them keeps
+    # hundreds of small pull requests from filling the account's Actions queue.
+    if: github.event_name != 'pull_request' || !startsWith(github.head_ref, 'audit2/') || startsWith(github.head_ref, 'audit2/train-')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -41,6 +54,8 @@ jobs:
         run: pip install -r requirements.txt -r tools/requirements-capture.txt
       - run: make test
   docs:
+    # Skips audit fix branches; see the note on the first job.
+    if: github.event_name != 'pull_request' || !startsWith(github.head_ref, 'audit2/') || startsWith(github.head_ref, 'audit2/train-')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7

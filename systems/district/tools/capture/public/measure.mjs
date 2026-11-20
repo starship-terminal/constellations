@@ -6,14 +6,18 @@
 // html[data-theme=dark] pass measures the real dark declarations.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE, learnPlace, scrubPlace, PLACE_WORDS } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
 out._meta ??= {};
 out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
-const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
+// No city or distance is ever written (lib.mjs): until a page's location line was read, nothing is saved.
+const save = () => {
+  if (!PLACE_WORDS.size) { console.error('not saving: the location line was never found, so the city could not be masked'); process.exitCode = 1; return; }
+  fs.writeFileSync(OUT, JSON.stringify(scrubPlace(out), null, 1) + '\n');
+};
 const ARTIST = '/events/samay-raina/artist';
 const TICKETS = '/events/all-stars-live-apr12-2026-buy-tickets';
 const URLS = { home: '/', homeDark: '/', movies: '/movies/', events: '/events/', comedy: '/events/comedy', artist: ARTIST, tickets: TICKETS, mobile: '/movies/' };
@@ -52,6 +56,7 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   await open(page, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
   if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
+  if (!(await learnPlace(page)) && !PLACE_WORDS.size) log('  ! location line not found on', key, '- nothing is saved until it is');
   return true;
 }
 
@@ -66,7 +71,7 @@ async function chrome(key) {
       if (cs.position !== 'fixed' && cs.position !== 'sticky') continue;
       const r = el.getBoundingClientRect();
       if (r.width < 40 || r.height < 10) continue;
-      seen.push({ node: el.tagName.toLowerCase() + '.' + String(el.className).split(' ')[0].slice(0, 60), z: cs.zIndex, pos: cs.position, rect: `${r.width | 0}x${r.height | 0}@${r.x | 0},${r.y | 0}`, text: (el.innerText || '').slice(0, 40).replace(/\n/g, '|') });
+      seen.push({ node: el.tagName.toLowerCase() + '.' + String(el.className).split(' ')[0].slice(0, 60), z: cs.zIndex, pos: cs.position, rect: `${r.width | 0}x${r.height | 0}@${r.x | 0},${r.y | 0}`, text: (el.innerText || '').replace(/(?<!Under )\b\d+(?:\.\d+)?\s?km\b/g, '[distance]').slice(0, 40).replace(/\n/g, '|') });
     }
     return seen.sort((a, b) => (parseInt(b.z) || 0) - (parseInt(a.z) || 0)).slice(0, 20);
   }).catch(() => []);
@@ -115,6 +120,23 @@ function comp(key, meta) {
   return c;
 }
 
+// A failed re-read must not erase an earlier successful one: keep the saved
+// style and record the failed attempt beside it. comp() has already stamped
+// this run's date on the component, so the kept state is pinned to the run
+// that actually read it (its own run stamp, else the component's earlier run)
+// and an old reading is never republished as a new one.
+function keepEarlier(c, state, e, earlierRun) {
+  const err = String(e.message || e).slice(0, 200);
+  const prev = c.states[state];
+  if (prev && prev.style) {
+    // A state that already carried a rerunError before read was recorded is
+    // from an unknown earlier run: its date stays unknown (null).
+    if (prev.read === undefined) prev.read = prev.rerunError ? null : (prev.run || earlierRun);
+    prev.rerunError = err;
+    prev.rerunOn = run;
+  } else c.states[state] = { error: err };
+}
+
 async function measure(key, state, target, opts = {}) {
   const loc = target.and(page.locator(':visible')).first();
   const c = out.components[key];
@@ -130,11 +152,7 @@ async function measure(key, state, target, opts = {}) {
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
-    // A failed re-read must not erase an earlier successful one: keep the
-    // saved style and record the failed attempt beside it.
-    const prev = c.states[state];
-    if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
-    else c.states[state] = { error: String(e.message || e).slice(0, 200) };
+    keepEarlier(c, state, e, opts.earlierRun);
     log('  !', key, state, String(e.message).slice(0, 120));
   }
 }
@@ -187,19 +205,37 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'held open by an earlier toggle';
-        else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
+        else {
+          await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle';
+          undo = () => closeOpened(key, loc, opts);
+        }
       } else via = via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      await measure(key, st, loc, { ...opts, via, earlierRun: keep?.run });
     } catch (e) {
-      const prev = out.components[key].states[st];
-      if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
-      else out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
+      keepEarlier(out.components[key], st, e, keep?.run);
       log('  !', key, st, String(e.message).slice(0, 120));
     }
     if (undo) await undo().catch(() => {});
     if (opts.after?.[st]) await opts.after[st](loc).catch(() => {});
   }
   await reset();
+}
+
+// Closes what an `opened` state opened. An open dropdown or menu keeps focus
+// and covers the page, so every later focus-visible reading would come back
+// 'focus failed'. Escape first, then the trigger again; if the trigger still
+// reports aria-expanded="true" the miss is recorded on the opened state so
+// the later readings on this page can be checked.
+async function closeOpened(key, loc, opts) {
+  const expanded = () => loc.evaluate((el) => el.getAttribute('aria-expanded')).catch(() => null);
+  await page.keyboard.press('Escape').catch(() => {});
+  await page.waitForTimeout(400);
+  if ((await expanded()) === 'true') { await toggle(loc, { allowLink: opts.allowLink }).catch(() => {}); await page.waitForTimeout(600); }
+  if ((await expanded()) === 'true') {
+    const st = out.components[key].states.opened;
+    if (st) st.closeFailed = 'aria-expanded still "true" after Escape and a second toggle';
+    log('  ! opened state did not close', key);
+  }
 }
 
 // Clicks a UI toggle (dropdown, menu, sheet trigger). Refuses a submit button
@@ -213,6 +249,31 @@ async function toggle(loc, { allowLink = false } = {}) {
 }
 
 const q = (sel) => page.locator(sel);
+
+// The first element matching `sel` that sits inside the viewport. Carousels
+// keep off-screen slide titles "visible" to Playwright (x < 0), and the first
+// visible h1/h2 was a slide title, not the listing heading (mv-h1, ev-h1,
+// cm-h1 in the 2026-11 run).
+async function onScreen(sel) {
+  await page.evaluate((s) => {
+    document.querySelectorAll('[data-m-onscreen]').forEach((n) => n.removeAttribute('data-m-onscreen'));
+    const el = [...document.querySelectorAll(s)].find((e) => {
+      const r = e.getBoundingClientRect();
+      const shown = e.checkVisibility ? e.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true }) : true;
+      return shown && r.width > 0 && r.height > 0 && r.left >= 0 && r.right <= innerWidth && r.bottom > 0 && r.top < innerHeight;
+    });
+    if (el) el.setAttribute('data-m-onscreen', '1');
+  }, sel);
+  return q('[data-m-onscreen]');
+}
+
+// Whether the page paints dark: a dark, fully opaque body background (a
+// translucent one shows the page behind it). Checking the attribute the
+// script itself just set would always pass.
+const paintsDark = () => page.evaluate(() => {
+  const [r, g, b, a = 1] = (getComputedStyle(document.body).backgroundColor.match(/[\d.]+/g) || []).map(Number);
+  return a === 1 && (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255 < 0.25;
+}).catch(() => false);
 const B4 = ['default', 'hover', 'focus-visible', 'pressed'];
 // Elements inside scroll-driven reveals flicker in and out of :visible while
 // the reveal animates; giving the page a beat after centre() lets the locator
@@ -295,9 +356,11 @@ async function home() {
 async function homeDark() {
   if (!(await newPage('homeDark', { url: BASE + '/' }))) return;
   await sheetsFor('homeDark');
-  const ok = await page.evaluate(() => { document.documentElement.setAttribute('data-theme', 'dark'); return document.documentElement.getAttribute('data-theme'); });
-  if (ok !== 'dark') { log('  ! dark attribute did not apply'); }
+  await page.evaluate(() => document.documentElement.setAttribute('data-theme', 'dark'));
   await page.waitForTimeout(1500);
+  // A dark pass that did not paint dark must not write dark-named readings
+  // from light values: the page counts as failed, so earlier readings stay.
+  if (!(await paintsDark())) { log('  ! data-theme=dark did not paint a dark body; homeDark skipped'); failedPages.add('homeDark'); return; }
   const g = G.dark;
   await S('dk-body', q('body'), ['default'], { group: g, title: 'Dark body', desc: 'The page background with data-theme=dark applied — the real dark surface the DDS declares.', sel: 'body[data-theme=dark]' }, { noScroll: true });
   await S('dk-nav', q('header, nav, div').filter({ has: page.locator('a[href="/movies/"]') }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Dark nav', desc: 'The top nav under the dark theme.', sel: 'dark header' }, { noScroll: true });
@@ -310,7 +373,7 @@ async function movies() {
   await sheetsFor('movies');
   await chrome('movies');
   const g = G.listing;
-  await S('mv-h1', q('h1, h2, h3').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Movies heading', desc: 'The "Movies in <city>" listing heading.', sel: 'movies h1' }, { noScroll: true });
+  await S('mv-h1', await onScreen('h1, h2, h3'), ['default'], { group: g, title: 'Movies heading', desc: 'The "Movies in <city>" listing heading.', sel: 'movies h1' }, { noScroll: true });
   await S('mv-chip', q('a, button, div, span').filter({ hasText: /^(hindi|english|tamil|telugu|2d|imax|u|ua13|a)$/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Filter chip', desc: 'A language/format filter chip on the listing; measured, never toggled.', sel: 'filter chip' }, { noScroll: true });
   await S('mv-card', q('a[href*="movie-tickets-MV"]').and(page.locator(':visible')).first(), ['default', 'hover'], { group: G.cards, title: 'Listing movie card', desc: 'A movie card on the listing grid; hover measured, never followed.', sel: 'a[href*=movie-tickets-MV]' });
   await S('mv-cert', q('a[href*="movie-tickets-MV"]').first().locator('div, span, p').filter({ hasText: /^(u|ua13\+|a)$/i }).and(page.locator(':visible')).first(), ['default'], { group: G.cards, title: 'Certificate badge', desc: 'The censor-certificate chip on a movie card (U / UA13+ / A).', sel: 'cert chip' });
@@ -322,7 +385,7 @@ async function events() {
   await sheetsFor('events');
   await chrome('events');
   const g = G.listing;
-  await S('ev-h1', q('h1, h2').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Events heading', desc: 'The events listing heading.', sel: 'events h1' }, { noScroll: true });
+  await S('ev-h1', await onScreen('h1, h2'), ['default'], { group: g, title: 'Events heading', desc: 'The events listing heading.', sel: 'events h1' }, { noScroll: true });
   await S('ev-listcard', q('a[href$="/venue-guide"]').and(page.locator(':visible')).first(), ['default', 'hover'], { group: G.cards, title: 'Listing event card', desc: 'An event card on the listing; hover measured, never followed.', sel: 'a[href$=/venue-guide]' });
   await S('ev-price', await domFind(page, /₹\s*\d/i, { sel: 'span, p, div', tag: 'evp', minW: 20, minH: 8 }), ['default'], { group: G.cards, title: 'Event price', desc: 'A "₹1499 onwards" price line on an event card.', sel: 'price text' });
   save();
@@ -333,8 +396,8 @@ async function comedy() {
   await sheetsFor('comedy');
   await chrome('comedy');
   const g = G.listing;
-  await S('cm-h1', q('h1, h2').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Comedy heading', desc: 'The comedy events listing heading.', sel: 'comedy h1' }, { noScroll: true });
-  await S('cm-filter', q('a, button, div').filter({ hasText: /^(date|price|city|sort)/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Filter control', desc: 'A listing filter control; measured, never opened.', sel: 'filter' }, { noScroll: true });
+  await S('cm-h1', await onScreen('h1, h2'), ['default'], { group: g, title: 'Comedy heading', desc: 'The comedy events listing heading.', sel: 'comedy h1' }, { noScroll: true });
+  await S('cm-filter', q('a, button, [role="button"]').filter({ hasText: /^\s*(date|price|city|sort by)\s*$/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Filter control', desc: 'A listing filter control; measured, never opened.', sel: 'filter' }, { noScroll: true });
   save();
 }
 
@@ -345,7 +408,7 @@ async function artist() {
   const g = G.detail;
   await S('at-h1', q('span.dds-text-3xl, h1, h2, h3').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Artist name', desc: 'The artist page display name.', sel: 'artist h1' }, { noScroll: true });
   await S('at-show', q('a[href*="buy-tickets"], a[href*="/events/"]').and(page.locator(':visible')).first(), ['default', 'hover'], { group: g, title: 'Show card', desc: 'An upcoming-show card on the artist page; hover measured, never followed.', sel: 'show card' });
-  await S('at-book', q('a, button').filter({ hasText: /book|tickets|rs\.|₹/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Book CTA', desc: 'The booking link on the artist page — the show card itself navigates to the ticket page; measured at every paintable state, never followed — booking gates on the Zomato account.', sel: 'booking card-link' }, { noScroll: true });
+  await S('at-book', q('a, button').filter({ hasText: /^\s*(book( now| tickets)?|buy tickets)\s*$/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Book CTA', desc: 'The booking link on the artist page — the show card itself navigates to the ticket page; measured at every paintable state, never followed — booking gates on the Zomato account.', sel: 'booking card-link' }, { noScroll: true });
   save();
 }
 

@@ -742,7 +742,7 @@
    "focus-ring": {
     "value": "{color.brand.accent}",
     "type": "color",
-    "source": "computed focus-visible border/ring colour of nav-cta, send-btn, field-name == --ring (raw/components-computed.json)",
+    "source": "computed focus-visible borderTopColor of nav-signin, nav-cta, send-btn == --ring (raw/components-computed.json)",
     "description": "The keyboard focus ring: the accent sky #01bcff as a 3px 30% ring plus an accent border."
    },
    "focus-ring-width": {
@@ -1816,8 +1816,8 @@
    "size": {
     "type": "dimension",
     "value": "36px",
-    "source": "computed height of composer-send default (raw/components-computed.json)",
-    "description": "The 36px square icon button (send, mobile menu)."
+    "source": "computed height of m-menu-button default (raw/components-computed.json)",
+    "description": "The 36px square icon button (the phone-width Menu button)."
    },
    "size-sm": {
     "type": "dimension",
