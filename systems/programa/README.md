@@ -9,7 +9,7 @@ Surfaces: home, pricing, features, and contact on programa.design, plus login an
 | [README.md](README.md) | This file |
 | [icon.png](icon.png) | 128px PNG from https://programa.design/images/favicon.png |
 | [DESIGN.md](DESIGN.md) | Generated from tokens.json |
-| [tokens.json](tokens.json) | Marketing and signed-out app tokens; the 27 whose reading raw/ does not hold are labelled Reconstruction |
+| [tokens.json](tokens.json) | Marketing and signed-out app tokens; the 32 whose reading raw/ does not hold are labelled Reconstruction |
 | [style-guide.html](style-guide.html) | Swatches, type, and buttons from those tokens |
 | [components.md](components.md) | Components that were on the captured pages |
 | [patterns.md](patterns.md) | The captured pages |
@@ -80,7 +80,7 @@ The first preview viewport was 1169 by 731, devicePixelRatio 2, visualViewport s
 
 ## What to distrust
 
-raw/ keeps the root custom properties and the capture notes, not every computed style read in the preview browser. 27 tokens carry a value no raw file holds: the CTA and app text colours, several rings and borders, the Inter faces, a few type sizes and control sizes, and the switch duration. They are labelled Reconstruction, entered by hand at capture time, and each source names the missing value. A recapture should save those readings.
+raw/ keeps the root custom properties and the capture notes, not every computed style read in the preview browser. 32 tokens carry a value no raw file holds: the CTA and app text colours, several rings and borders, six computed box-shadows, the Inter faces, a few type sizes and control sizes, and the switch duration. They are labelled Reconstruction, entered by hand at capture time, and each source names the missing value. A recapture should save those readings.
 
 The hero h1 computed line-height is 64px on an 80px font-size. That is the value `getComputedStyle` returned. The screenshots show the headline wrapping onto two lines, so the used line box is taller than that number.
 

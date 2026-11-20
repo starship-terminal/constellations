@@ -2,8 +2,9 @@
 
 forms() turns one raw string into every normalised form a token could hold: the whole string,
 the string without quotes, a font stack's first family, each colour as lower-case hex (from #rgb,
-#rgba, rgb(), rgba() or color(srgb ...), rounded half up as a browser paints), each px or ms
-length with a leading zero restored, and each time in s as ms. reading_forms() collects them over
+#rgba, rgb(), rgba(), color(srgb ...) or a bare r,g,b channel triplet, rounded half up as a
+browser paints), each px or ms length with a leading zero restored, each time in s as ms, and
+each cubic-bezier(). reading_forms() collects them over
 every raw/*.json file. missing() lists a token's literal values that no reading holds.
 """
 import json
@@ -50,7 +51,17 @@ def forms(text):
         out.add(_num(float(m.group(1)) * 1000) + "ms")
     for m in re.finditer(r"-?\d*\.?\d+", low):
         out.add(_num(m.group(0)))
+    # channel-only triplets such as --bs-link-color-rgb: 26,26,26
+    m = re.fullmatch(r"(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})", low)
+    if m:
+        out.add(_hex(*m.groups()))
+    for m in re.finditer(r"cubic-bezier\(([^)]*)\)", low):
+        out.add(_bezier(m.group(1).split(",")))
     return out
+
+
+def _bezier(numbers):
+    return "cubic-bezier(" + ",".join(_num(n) for n in numbers) + ")"
 
 
 def reading_forms(raw_dir):
@@ -72,14 +83,24 @@ def reading_forms(raw_dir):
 
 
 def literal_values(token):
+    """Every literal a token carries: a font stack's first family, a cubicBezier list as one
+    cubic-bezier(), each field of a composite, and each field of each layer in a list (shadows)."""
     value = token["$value"]
     if token.get("$type") == "fontFamily":
         return [re.sub(r"[\"']", "", str(value).split(",")[0]).strip()]
-    if isinstance(value, dict):
-        return [str(v) for v in value.values() if not str(v).startswith("{")]
-    if isinstance(value, list) or (isinstance(value, str) and value.startswith("{")):
-        return []
-    return [str(value)]
+    if token.get("$type") == "cubicBezier" and isinstance(value, list):
+        return [_bezier(value)]
+
+    def parts(v):
+        if isinstance(v, dict):
+            return [x for item in v.values() for x in parts(item)]
+        if isinstance(v, list):
+            return [x for item in v for x in parts(item)]
+        if isinstance(v, bool) or (isinstance(v, str) and v.startswith("{")):
+            return []
+        return [str(v)]
+
+    return parts(value)
 
 
 def missing(token, seen):
@@ -90,6 +111,10 @@ def missing(token, seen):
         m = re.fullmatch(r"(-?\d*\.?\d+)(px|ms)?", low)
         if m:
             cands.add(_num(m.group(1)) + (m.group(2) or ""))
+        if re.match(r"(#|rgba?\(|color\()", low):
+            # a colour token in any spelling: compare its hex forms, so rgba(255, 255, 255, 0.5)
+            # and #ffffff80 are the same value
+            cands |= {f for f in forms(low) if f.startswith("#")}
         if not cands & seen:
             out.append(value)
     return out

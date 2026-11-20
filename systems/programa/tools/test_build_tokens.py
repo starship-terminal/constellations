@@ -16,6 +16,16 @@ class Tokens(unittest.TestCase):
         self.assertEqual(raw_check.missing({"$type": "color", "$value": "#fcfda1"}, seen), ["#fcfda1"])
         self.assertEqual(raw_check.missing({"$type": "color", "$value": "#ffffff00"}, seen), [])  # --color-alpha-white-0 #fff0
         self.assertEqual(raw_check.missing({"$type": "dimension", "$value": "-0.2px"}, seen), [])  # declared -.2px
+        # --bs-link-color-rgb is saved as the channels 26,26,26
+        self.assertEqual(raw_check.missing({"$type": "color", "$value": "#1a1a1a"}, seen), [])
+        # one colour, two spellings
+        self.assertEqual(raw_check.missing({"$type": "color", "$value": "rgba(255, 255, 255, 0.5)"}, {"#ffffff80"}), [])
+        self.assertEqual(raw_check.missing({"$type": "color", "$value": "#ffffff80"}, raw_check.forms("rgba(255, 255, 255, 0.5)")), [])
+        # a shadow list is checked layer by layer, and an easing list as its cubic-bezier()
+        shadow = {"$type": "shadow", "$value": [{"color": "#fcfda1", "offsetX": "0px", "inset": True}]}
+        self.assertEqual(raw_check.missing(shadow, seen), ["#fcfda1"])
+        self.assertEqual(raw_check.missing({"$type": "cubicBezier", "$value": [0.4, 0, 0.2, 1]}, seen), [])
+        self.assertEqual(raw_check.missing({"$type": "cubicBezier", "$value": [0.1, 0.2, 0.3, 0.4]}, seen), ["cubic-bezier(0.1,0.2,0.3,0.4)"])
 
 
 if __name__ == "__main__":
