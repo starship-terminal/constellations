@@ -9,14 +9,17 @@
 // page truncates at 8 chunks and the log records the boundary. Nothing is sent, bought or signed
 // into: the only presses are local UI toggles — the Products nav flyout, the hero product tabs,
 // the pricing billing dropdown and the mobile navigation menu — plus the home playground's own
-// textarea and Play button (the public demo the page ships signed out; if it gates on an account
-// the shot records the gate). The Cookiebot consent layer is hidden, never answered; /app
+// textarea (sample text typed, never sent). Its Play is shot at rest, never pressed: a press asks
+// the server to generate speech. The Cookiebot consent layer is hidden, never answered; /app
 // redirects to /app/sign-in and the workspace behind it is never reached.
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour shots stay outside the repo (the kit's default); quantize.py writes screenshots/.
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'elevenlabs', 'raw-shots') + '/';
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
@@ -63,9 +66,9 @@ async function openFlyout(p, S) {
   await wait(p, 600);
 }
 
-// The signed-out playground on the home page: click its own textarea, type a
-// word, then press its own Play — the public demo's affordance. If generation
-// needs an account the gate is what the shot records.
+// The signed-out playground on the home page: click its own textarea and type a
+// word. Play is not pressed (server-side generation: recorded as a boundary, not
+// crossed); the second shot shows the filled field with Play at rest.
 async function playground(p, S) {
   const ta = p.locator('textarea').filter({ visible: true }).first();
   if (!(await ta.count())) return;
@@ -75,9 +78,7 @@ async function playground(p, S) {
   await ta.click({ timeout: 4000 }).catch(() => {});
   await p.keyboard.type('a small test', { delay: 12 });
   await wait(p, 500);
-  const play = p.locator('button').filter({ hasText: /^\s*Play\s*$/ }).filter({ visible: true }).first();
-  if (await play.count()) { await clickEl(play, 4000); await wait(p, 5000); }
-  await S.view('playground-play');
+  await S.view('playground-filled');
 }
 
 const desktop = {

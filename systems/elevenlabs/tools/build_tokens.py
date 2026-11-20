@@ -36,7 +36,11 @@ SPEC = json.loads((RAW / "component-tokens.json").read_text())
 # probe document once light (:root) and once dark (html.dark), so
 # DECL[theme][name] is what the browser paints in that theme. A name declared
 # only on :root resolves the same in both.
-DECL = {t: {n: v.get("value", v["raw"]) for n, v in V["resolved"].get(t, V["resolved"].get("light", {})).items()} for t in ("light", "dark")}
+DECL = {t: {n: v.get("value", v["raw"]) for n, v in vals.items()} for t, vals in V["resolved"].items()}
+# The capture resolved light only. A dark spec with no dark resolution would otherwise
+# publish light values as dark: stop instead.
+if SPEC.get("dark") and "dark" not in DECL:
+    raise SystemExit("raw/component-tokens.json has a dark set but raw/css-vars.json resolved no dark theme")
 
 
 def norm_color(v):
