@@ -22,7 +22,6 @@ colors:
   color-text-on-accent: "#ffffff"
   color-border-default: "#dedede"
   color-border-input: "#ebebeb"
-  color-border-focus: "#e59700"
   color-action-fill: "#2c2c2c"
   color-action-fill-hover: "#eee"
   color-status-info: "#dff3ff"
@@ -72,18 +71,22 @@ typography:
     lineHeight: 1.2
     letterSpacing: "-0.0131em"
   body:
+    fontFamily: "Switzer"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.5
   body-lg:
+    fontFamily: "Switzer"
     fontSize: "18px"
     fontWeight: 400
     lineHeight: 1.5
   label:
+    fontFamily: "Switzer"
     fontSize: "14px"
     fontWeight: 540
     lineHeight: 1.43
   caption:
+    fontFamily: "Switzer"
     fontSize: "12px"
     fontWeight: 600
     lineHeight: 1.33
@@ -165,7 +168,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Typography
 
-9 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Basier Circle.
+9 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Basier Circle, Switzer.
 
 ### Fonts (from README.md)
 
@@ -205,6 +208,10 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 ### What to distrust (from README.md)
 
 There are no screenshots. The preview browser returned "The browser is not producing screenshot frames". Do not treat a missing image as a measured layout.
+
+Only the `--color-*` custom properties were saved, in [raw/css-vars.json](raw/css-vars.json). Every other value (type, radius, spacing, sizes, shadows, motion, the component values) and each role's mapping onto a colour step was typed into the builder from live readings that were not saved, so tokens.json labels them Reconstruction. A recapture should save those readings to raw/.
+
+The focused Log in button reported `outline-color` #e59700, Chromium's default focus-ring colour, with `outline-style: none`: no ring was painted, so the package publishes no focus token.
 
 Hover classes (`group-hocus/button:bg-gray-25`, `shadow-lg`) were read from the class list, not from a live `:hover`. The forced dark pass left the h1 navy. A live Dark appearance in the editor was not applied.
 
