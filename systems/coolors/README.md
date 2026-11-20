@@ -15,7 +15,7 @@ The account is `kaichen@agentmail.to`, created in the T3 preview tab and confirm
 | [patterns.md](patterns.md) | Homepage, generator and explore. |
 | [screenshots/](screenshots/) | [generate-light-desktop.png](screenshots/generate-light-desktop.png) is the signed-in generator. [generate-light-terms.png](screenshots/generate-light-terms.png) is the terms modal over the same generator. [home-blocked-challenge.png](screenshots/home-blocked-challenge.png) is the headless Cloudflare interstitial, kept so the block record stays honest. |
 | [raw/](raw/) | [measured.json](raw/measured.json) and [block.json](raw/block.json). |
-| [tools/](tools/) | The copied kit. [test_measured.py](tools/test_measured.py) checks the measured record. |
+| [tools/](tools/) | [build_style_guide.py](tools/build_style_guide.py) and the tests: [test_measured.py](tools/test_measured.py) checks the measured record. The unadapted kit copy was deleted in the 2026-11 audit |
 
 ## Brief
 

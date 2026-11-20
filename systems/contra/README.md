@@ -16,7 +16,7 @@ Surfaces: home, payments, partners, challenges, and the log-in page. Themes: lig
 | [components/](components/) | Two button crops |
 | [screenshots/](screenshots/) | Six page screenshots |
 | [raw/](raw/) | Computed-style readings and the capture note |
-| [tools/](tools/) | Capture kit copy and the token checker |
+| [tools/](tools/) | The token builder and its test |
 
 ## Brief
 
@@ -143,4 +143,4 @@ python3 systems/contra/tools/build_tokens.py
 python3 tools/catalog.py design-md contra
 ```
 
-The shared kit is copied under `tools/capture/` and `tools/`. The checker that this package runs is `tools/build_tokens.py`.
+The readings were taken in a preview tab and headless Chrome as [raw/capture-note.md](raw/capture-note.md) describes, not with the kit's capture scripts. The unadapted kit copy that sat under `tools/` (Gauth and ChatGPT examples, never pointed at contra.com) was deleted in the 2026-11 audit; `tools/build_tokens.py` is the only builder this package runs.
