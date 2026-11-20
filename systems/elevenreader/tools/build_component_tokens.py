@@ -73,6 +73,8 @@ def descend(root, parts):
 
 def emit(root, name, leaf):
     node, last = descend(root, name[2:].split("-"))
+    if node.get(last) is not None:  # two variables landing on one path: never drop one silently
+        raise SystemExit(f"{name}: token path already holds a leaf")
     node[last] = leaf
 
 
@@ -118,16 +120,19 @@ def have(comp, state, prop=None):
 
 
 def shadow_layers(spec):
-    """Parse 'rgba(...) x y blur sp, ...' into DTCG shadow layers, dropping fully transparent no-ops."""
+    """Parse 'rgba(...) x y blur sp [inset], ...' into DTCG shadow layers, dropping fully transparent no-ops."""
     out = []
     for m in re.finditer(
-            r"(rgba?\(\s*[\d.]+,?\s*[\d.]+,?\s*[\d.]+(?:,?\s*[\d.]+)?\)|#[0-9a-fA-F]{3,8})\s+"
-            r"(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(?:\s+(-?[\d.]+)px)?", spec or ""):
-        col, x, y, bl, sp = m.groups()
+            r"(inset\s+)?(rgba?\(\s*[\d.]+,?\s*[\d.]+,?\s*[\d.]+(?:,?\s*[\d.]+)?\)|#[0-9a-fA-F]{3,8})\s+"
+            r"(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(?:\s+(-?[\d.]+)px)?(\s+inset)?", spec or ""):
+        ins1, col, x, y, bl, sp, ins2 = m.groups()
         if col.startswith("rgba") and col.rstrip(")").endswith(", 0"):
             continue  # the rgba(0,0,0,0) placeholders Tailwind emits
-        out.append({"color": norm_color(col), "offsetX": f"{x}px", "offsetY": f"{y}px",
-                    "blur": f"{bl}px", "spread": f"{sp or 0}px"})
+        layer = {"color": norm_color(col), "offsetX": f"{x}px", "offsetY": f"{y}px",
+                 "blur": f"{bl}px", "spread": f"{sp or 0}px"}
+        if ins1 or ins2:  # an inner shadow stays inner
+            layer["inset"] = True
+        out.append(layer)
     return out
 
 

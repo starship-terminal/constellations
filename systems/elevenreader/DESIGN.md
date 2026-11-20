@@ -671,6 +671,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Dark is declared, not painted.** The `.dark` scope inverts the `--themed-*` triplets (white→black, neutral ramp flipped, focus-ring to white), but no public page applies it. `dark.*` in tokens.json is a real token scope with real values; it is not a captured surface.
 - **The f-* scale declares 700 where the paint reads 375-400.** The Waldenburg headings' computed weight is the book face (400, sometimes reported 375); the declared `--f-heading-*-font-weight` says 700. Copy the painted weight for a faithful look.
 - **The accent blue is declared but barely painted.** `--color-accent` `#4680fd` exists in the token layer; the marketing surface is black/white/neutral — don't flood a mock with blue.
+- **Two summaries were read with their `<details>` open.** `faq-summary` and `m-footer-summary` were measured right after `faq-item` and `m-footer-col` opened the same `<details>` for their `open` state and left it open, so their states are of an open item labelled default (and `m-footer-summary`'s keyboard focus failed). `measure.mjs` now closes the item after the `open` reading (edited, not run); both entries need a recapture.
 - **Quantised screenshots.** `screenshots/` and `components/crops/` are 256-colour PNGs; read exact colours from tokens or the raw files.
 - **No standalone icon set.** The wordmark, SSO glyphs, chevrons and footer arrows appear in crops and screenshots but were not lifted as an icon library; icon.png is the site favicon-derived mark.
 
