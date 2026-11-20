@@ -148,6 +148,25 @@ def _number(x):
     return isinstance(x, (int, float)) and not isinstance(x, bool)
 
 
+PCT = re.compile(r"\d*\.?\d+%")
+
+
+def _line_height(path, val, named):
+    """A typography lineHeight is a unitless number, one px or rem length, or a
+    percentage, or an alias to a number or dimension token; anything else would
+    reach tokens.json and the guide's CSS font rule as an invalid value."""
+    if _is_alias(val):
+        target = named.get(val[1:-1])
+        if target is None:
+            raise KeyError(f"{path}: alias {val} points at nothing")
+        if target["$type"] not in ("number", "dimension"):
+            raise TypeError(f"{path}: alias {val} is a {target['$type']}, not a number or dimension")
+        return
+    if _number(val) or isinstance(val, str) and (DIM.fullmatch(val) or PCT.fullmatch(val)):
+        return
+    raise ValueError(f"{path}: lineHeight must be a number, a px or rem length or a percentage, got {val!r}")
+
+
 for _set, _tree, _named in (("core", core, _core_named), ("light", light, _light_named)):
     for _n, _t in tokens_of(_tree):
         _p, _ty, _v = f"{_set}.{_n}", _t["$type"], _t["$value"]
@@ -157,6 +176,8 @@ for _set, _tree, _named in (("core", core, _core_named), ("light", light, _light
             for _k, _sub in COMPOSITE.items():
                 if _k in _v:
                     _typed(f"{_p}.{_k}", _sub, _v[_k], _named)
+            if "lineHeight" in _v:
+                _line_height(f"{_p}.lineHeight", _v["lineHeight"], _named)
         elif _ty == "shadow":
             for _layer in _v:
                 for _k in ("offsetX", "offsetY", "blur", "spread"):

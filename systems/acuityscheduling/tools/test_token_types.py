@@ -102,5 +102,29 @@ class TokenTypesTest(unittest.TestCase):
         self.assertNotEqual(run.returncode, 0)
         self.assertIn("gradient position", run.stderr)
 
+    def test_bad_line_height_is_refused(self):
+        def mutate(spec):
+            first_typography(spec)["lineHeight"] = "big"
+        run, _ = self.build(mutate)
+        self.assertNotEqual(run.returncode, 0)
+        self.assertIn("lineHeight", run.stderr)
+
+    def test_line_height_alias_must_be_a_number_or_dimension(self):
+        def mutate(spec):
+            first_typography(spec)["lineHeight"] = "{" + first_path(spec["core"], "color") + "}"
+        run, _ = self.build(mutate)
+        self.assertNotEqual(run.returncode, 0)
+        self.assertIn("lineHeight", run.stderr)
+        self.assertIn("is a color", run.stderr)
+
+    def test_line_height_forms_are_accepted(self):
+        for good in (1.5, "150%", "24px"):
+            with self.subTest(lineHeight=good):
+                def mutate(spec, good=good):
+                    first_typography(spec)["lineHeight"] = good
+                run, built = self.build(mutate)
+                self.assertEqual(run.returncode, 0, run.stderr)
+
+
 if __name__ == "__main__":
     unittest.main()
