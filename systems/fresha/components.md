@@ -52,14 +52,15 @@ Screenshots are named `{page}-light-{state}.png`; the partner sign-in also has `
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 27 components were given a real keyboard focus. 20 draw a visible ring.
+**Focus.** 25 components were given a real keyboard focus. 20 draw a visible ring.
 - ::before shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px, radius 999px (opacity 0 to 1): `shell-login-link`, `shell-business-link`, `shell-menu-button`, `shell-getapp-button`, `search-button`, `carousel-button`, `back-button`, `auth-back`, `auth-continue`, `sso-button`, `book-now`, `gallery-button`, `service-book-button`.
 - ::before shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px (opacity 0 to 1): `language-button`, `m-menu-button`.
 - ::before shadow #ffffff 0px 0px 0px 2px, radius 999px (opacity 0 to 1): `partner-continue`, `partner-sso`.
 - ::before shadow #ffffff 0px 0px 0px 2px inset; border 2px solid #0d0d0d `colors.background.primary`, radius 8px (opacity 0 to 1): `venue-tab`.
 - outline 1px auto #101010, offset 0px: `info-icon`.
 - outline 2px solid #0d0d0d `colors.background.primary`, offset 2px: `lp-map-button`.
-The rest draw none — most declare only a 2px transparent outline that stays invisible: `chooser-card`, `booking-add-button`, `booking-continue`, `plan-cta`, `nav-flyout-button`, `b2b-cta`, `watch-button`.
+The rest draw none — most declare only a 2px transparent outline that stays invisible: `booking-add-button`, `plan-cta`, `nav-flyout-button`, `b2b-cta`, `watch-button`.
+Focus could not be captured on 2: keyboard focus never reached them (or they took focus without matching :focus-visible), so their focus look is unknown, not absent: `chooser-card`, `booking-continue`.
 
 **Pressed.** Measured by forcing :active through DevTools. Fresha's solid buttons (the auth/partner Continue, the B2B CTAs, the map button) shrink slightly on press (the B2B CTA goes from 180x48 to about 173x46); the text buttons barely change.
 
@@ -337,9 +338,9 @@ One of the two chooser cards on /user-flow ("Fresha for customers", "Fresha for 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 368 x 42; background transparent; text Roobert 16/22 500, #0d0d0d `colors.background.primary` |
+| default (same: hover) | size 368 x 42; background transparent; text Roobert 16/22 500, #0d0d0d `colors.background.primary` |
 
-![Customer/professional card default](components/crops/chooser-card-default.png) ![Customer/professional card hover](components/crops/chooser-card-hover.png) ![Customer/professional card focus-visible](components/crops/chooser-card-focus-visible.png)
+![Customer/professional card default](components/crops/chooser-card-default.png) ![Customer/professional card hover](components/crops/chooser-card-hover.png)
 
 #### Language button
 The "English (US)" locale picker on the chooser. Measured; not opened (opening it may navigate). Read as `language-button` on the user-flow shell page.
@@ -662,11 +663,11 @@ The wizard's step button — grey while the cart is empty, dark once a service i
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 380 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/22 600, #ffffff `colors.background.base`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| default (same: hover, pressed) | size 380 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/22 600, #ffffff `colors.background.base`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
 
 Child layers that carry the look: button 380x48 radius 999px; button::before 380pxx48px radius 999px shadow #ffffff `colors.background.base` 0px 0px 0px 2px, #0d0d0d `colors.background.primary` 0px 0px 0px 4px; div 380x48 background #0d0d0d `colors.background.primary` border 1px #0d0d0d `colors.background.primary` radius 999px.
 
-![Continue button default](components/crops/booking-continue-default.png) ![Continue button hover](components/crops/booking-continue-hover.png) ![Continue button focus-visible](components/crops/booking-continue-focus-visible.png) ![Continue button pressed](components/crops/booking-continue-pressed.png)
+![Continue button default](components/crops/booking-continue-default.png) ![Continue button hover](components/crops/booking-continue-hover.png) ![Continue button pressed](components/crops/booking-continue-pressed.png)
 
 ### For-business marketing
 

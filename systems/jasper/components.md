@@ -40,7 +40,8 @@ Consent overlays (`#cookieBanner`, `#transcend-consent-manager`) and the Qualifi
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 17 components were given a real keyboard focus. 13 draw a ring: `nav-link` (2px solid #00063d `swatch.blue-800`, offset 3px), `nav-login` (2px solid #00063d `swatch.blue-800`, offset 3px), `nav-cta` (2px solid #00063d `swatch.blue-800`, offset 3px), `nav-secondary` (2px solid #00063d `swatch.blue-800`, offset 3px), `menu-link` (2px solid #00063d `swatch.blue-800`, offset 3px), `hero-cta` (2px solid #00063d `swatch.blue-800`, offset 3px), `hero-secondary` (2px solid #00063d `swatch.blue-800`, offset 3px), `platform-cta` (2px solid #00063d `swatch.blue-800`, offset 3px), `price-cta` (2px solid #00063d `swatch.blue-800`, offset 3px), `brand-download` (2px solid #00063d `swatch.blue-800`, offset 3px), `demo-submit` (1px auto #0462cd, offset 0px), `footer-link` (2px solid #00063d `swatch.blue-800`, offset 3px), `m-nav-item` (2px solid #00063d `swatch.blue-800`, offset 3px). The other 4 draw none: `nav-item`, `login-submit`, `login-google`, `login-signup`.
+**Focus.** 16 components were given a real keyboard focus. 13 draw a ring: `nav-link` (2px solid #00063d `swatch.blue-800`, offset 3px), `nav-login` (2px solid #00063d `swatch.blue-800`, offset 3px), `nav-cta` (2px solid #00063d `swatch.blue-800`, offset 3px), `nav-secondary` (2px solid #00063d `swatch.blue-800`, offset 3px), `menu-link` (2px solid #00063d `swatch.blue-800`, offset 3px), `hero-cta` (2px solid #00063d `swatch.blue-800`, offset 3px), `hero-secondary` (2px solid #00063d `swatch.blue-800`, offset 3px), `platform-cta` (2px solid #00063d `swatch.blue-800`, offset 3px), `price-cta` (2px solid #00063d `swatch.blue-800`, offset 3px), `brand-download` (2px solid #00063d `swatch.blue-800`, offset 3px), `demo-submit` (1px auto #0462cd, offset 0px), `footer-link` (2px solid #00063d `swatch.blue-800`, offset 3px), `m-nav-item` (2px solid #00063d `swatch.blue-800`, offset 3px). The other 3 draw none: `login-submit`, `login-google`, `login-signup`.
+Focus could not be captured on 1: keyboard focus never reached them (or they took focus without matching :focus-visible), so their focus look is unknown, not absent: `nav-item`.
 
 **Pressed.** Pressed was forced with DevTools `:active:hover` on the measured controls. Read the state row for the colour change. Jasper's primary button moves from flame `#fa4028` to `#801a10` on hover.
 
@@ -89,11 +90,11 @@ A header menu item (Platform). Hover opens its dropdown. Measured, never followe
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 85.69 x 28.17; padding 8px 12px; background transparent; text ABC ROM 16/22.4 450, #00063d `swatch.blue-800` |
+| default (same: hover, pressed) | size 85.69 x 28.17; padding 8px 12px; background transparent; text ABC ROM 16/22.4 450, #00063d `swatch.blue-800` |
 
 Child layers that carry the look: div 9.9x28.2 background #ceebff `swatch.blue-300`; div 65.9x28.2 background #ceebff `swatch.blue-300`; div 9.9x28.2 background #ceebff `swatch.blue-300`.
 
-![Nav item default](components/crops/nav-item-default.png) ![Nav item hover](components/crops/nav-item-hover.png) ![Nav item focus-visible](components/crops/nav-item-focus-visible.png) ![Nav item pressed](components/crops/nav-item-pressed.png)
+![Nav item default](components/crops/nav-item-default.png) ![Nav item hover](components/crops/nav-item-hover.png) ![Nav item pressed](components/crops/nav-item-pressed.png)
 
 #### Nav link
 The Pricing header link. Read as `nav-link` on the Home page.
