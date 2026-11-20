@@ -5,8 +5,9 @@
     "emails": true,
     "email_allow": [
       "@helloivy\\.co$",
-      "@helloivy\\.co?\\w*$",
-      "@example\\.com$"
+      "@example\\.com$",
+      "@helloivy\\.coprivacy$",
+      "@helloivy\\.c$"
     ]
   }
 }

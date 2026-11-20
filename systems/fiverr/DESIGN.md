@@ -107,3 +107,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 5. **Don't invent a dark theme.** The hero band and the search form's `dark` class are component skins inside the single light theme. See [hero-search](components/crops/hero-search-default.png).
 6. **Don't infer values from the hashed `--_<id>` stylesheet vars.** They are atomic utilities with no semantic names; every token is a measured computed style. See [raw/css-vars.json](raw/css-vars.json) and [mkt-header](components/crops/mkt-header-default.png).
 7. **Don't treat the PerimeterX gate or localized pricing as defects.** Press&hold is the site's edge protection, and "From S$xx" is the live localized price. See [search-light-default](screenshots/search-light-default.png).
+
+### What to distrust (from README.md)
+
+- **Readings taken past a bot check.** Every committed screenshot, crop, [raw/components-computed.json](raw/components-computed.json) reading and the [raw/css-vars.json](raw/css-vars.json) harvest was taken by an earlier version of the capture scripts that held PerimeterX's press-and-hold button automatically, replayed the clearance cookies in later contexts and hid automation (a `navigator.webdriver` mask and the `AutomationControlled` flag). That code was removed on 2026-11-20. The values are the live pages as served, but a recapture with the current scripts stops wherever the challenge appears and records those pages as gaps.

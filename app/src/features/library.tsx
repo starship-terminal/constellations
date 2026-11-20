@@ -13,12 +13,13 @@ import {
   PanelTop,
   Plus,
   RefreshCw,
+  CircleDashed,
   Smartphone,
   X,
 } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import type { LibraryItem } from "@/contracts/library";
-import { matchesCategory } from "@/contracts/categories";
+import { matchesCategory, UNCATEGORISED } from "@/contracts/categories";
 import type { TaxonomyGroup } from "@/contracts/taxonomy";
 import { CategoryIcon } from "./category-icon";
 import {
@@ -402,6 +403,23 @@ function LibraryContent() {
                   </button>
                 );
               })}
+              {/* Packages the category seed has not curated yet stay findable. */}
+              {scoped.some((item) => !item.categoryIds?.length) && (
+                <button
+                  className={
+                    category === UNCATEGORISED ? styles.categoryActive : ""
+                  }
+                  aria-pressed={category === UNCATEGORISED}
+                  onClick={() =>
+                    updateFilters({
+                      category: category === UNCATEGORISED ? "" : UNCATEGORISED,
+                    })
+                  }
+                >
+                  <CircleDashed size={18} aria-hidden="true" />
+                  Uncategorised
+                </button>
+              )}
             </nav>
           </>
         )}

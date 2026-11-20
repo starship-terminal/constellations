@@ -4,19 +4,22 @@
   "emails": true,
   "email_allow": [
    "@getfernand\\.com$",
-   "@getfemand\\w*\\.\\w+$",
-   "@getiernan\\w*\\.\\w+$",
-   "@fernand\\w*\\.\\w+$",
-   "@yourapp\\w*\\.\\w+$",
    "@piedpiper\\.com$",
    "@bachmanity\\.com$",
-   "@nathotdog\\w*\\.\\w+$",
    "@hooli\\.xyz$",
-   "@trescor?\\w*\\.?\\w*$",
    "@seo-wizards\\.biz$",
-   "@example\\.(com|org|inc)$",
+   "@example\\.com$",
+   "@example\\.inc$",
+   "@example\\.org$",
    "@everyone$",
-   "@here$"
+   "@here$",
+   "@getfemand\\.com$",
+   "@getiemana\\.com$",
+   "@yourapp\\.com$",
+   "@nathotdog\\.com$",
+   "@trescomas\\.com$",
+   "@tescomas\\.com$",
+   "@bachnanity\\.com$"
   ]
  },
  "families": []

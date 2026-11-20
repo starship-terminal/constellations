@@ -3,11 +3,9 @@
  "ocr": {
   "emails": true,
   "email_allow": [
-   "@fable\\.(co|com)$",
-   "@fable\\w*\\.\\w+$",
-   "example\\.com$",
-   "name@",
-   "you@"
+   "@fable\\.co$",
+   "@fable\\.com$",
+   "@example\\.com$"
   ]
  },
  "families": []

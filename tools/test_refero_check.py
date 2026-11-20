@@ -203,8 +203,22 @@ class ReferoCheckTest(unittest.TestCase):
                       refero_check.check(self.refero))
 
 
+def git_router(base, branch, fail=False):
+    """A stand-in for subprocess.run that answers `git show <ref>:catalog.json` by
+    ref, as the Check workflow's fetched origin/main and refs/pr-head do."""
+    def run(args, **kwargs):
+        if fail:
+            raise refero_check.catalog.subprocess.CalledProcessError(128, args)
+        ref, _, path = args[-1].partition(":")
+        assert args[:2] == ["git", "show"] and path == "catalog.json", args
+        rows = {"origin/main": base, "refs/pr-head": branch}[ref]
+        return mock.Mock(stdout=json.dumps({"systems": rows}), returncode=0)
+    return run
+
+
 class CoverageLagTest(unittest.TestCase):
-    """coverage_matches_base accepts a file that predates packages on main."""
+    """On a pull request coverage.json may leave out packages the merge adds, and is
+    otherwise re-derived from the merge's catalog, never trusted from the branch."""
 
     def setUp(self):
         self.directory = {"web_sites": [
@@ -214,174 +228,86 @@ class CoverageLagTest(unittest.TestCase):
         ], "ios_apps": []}
         self.alpha = {"slug": "alpha", "name": "Alpha", "url": "https://alpha.example"}
         self.beta = {"slug": "beta", "name": "Beta", "url": "https://beta.example"}
-        self.newer = {"slug": "newer", "name": "Newer", "url": "https://newer.example"}
-        self.added = {"slug": "added", "name": "Added", "url": "https://added.example"}
-        self.base = {"systems": [self.alpha, self.beta, self.newer]}
-        self.head = {"systems": [self.alpha, self.beta, self.newer, self.added]}
-        self.prior = refero_check.coverage_mod.build(
-            self.directory, {"systems": [self.alpha, self.beta]})
+        self.newer = {"slug": "newer", "name": "Newer", "url": "https://newer.example"}  # landed on main later
+        self.added = {"slug": "added", "name": "Added", "url": "https://added.example"}  # this pull request's
+        self.base = [self.alpha, self.beta, self.newer]
+        self.branch = [self.alpha, self.beta, self.added]
+        self.head = [self.alpha, self.beta, self.newer, self.added]
 
-    def matches(self, head, actual, base_ref="main", branch_catalog=None):
-        env = {"GITHUB_BASE_REF": base_ref, "GITHUB_HEAD_SHA": "refs/pr-head"} if base_ref else {}
-        shown = json.dumps(self.base)
-        branch_shown = json.dumps(branch_catalog or self.base)
+    def build(self, rows):
+        return refero_check.coverage_mod.build(self.directory, {"systems": rows})
 
-        def fake_run(args, **kwargs):
-            self.assertIn("catalog.json", args[-1])
-            payload = branch_shown if args[-1].startswith("refs/pr-head") else shown
-            return unittest.mock.Mock(stdout=payload, returncode=0)
-
-        with unittest.mock.patch.dict(os.environ, env, clear=False), \
-                unittest.mock.patch.object(refero_check.subprocess, "run", fake_run):
-            if not base_ref:
-                os.environ.pop("GITHUB_BASE_REF", None)
-            expected = refero_check.coverage_mod.build(self.directory, head)
+    def matches(self, actual, head=None, base=None, branch=None, env=None, fail=False):
+        env = {"GITHUB_BASE_REF": "main", "GITHUB_HEAD_SHA": "refs/pr-head"} if env is None else env
+        head_catalog = {"systems": head or self.head}
+        run = git_router(base or self.base, branch or self.branch, fail)
+        with mock.patch.dict(os.environ, env, clear=True), \
+                mock.patch.object(refero_check.catalog.subprocess, "run", run):
             return refero_check.coverage_matches_base(
-                self.directory, head, actual, expected)
+                self.directory, head_catalog, actual, self.build(head_catalog["systems"]))
 
-    def test_an_older_derivation_is_accepted(self):
-        self.assertTrue(self.matches(self.head, self.prior))
+    def test_a_file_that_lags_main_or_this_pull_request_is_accepted(self):
+        for subset in ([self.alpha, self.beta], [self.alpha, self.beta, self.added],
+                       [self.alpha, self.beta, self.newer]):
+            self.assertTrue(self.matches(self.build(subset)), [s["slug"] for s in subset])
 
-    def test_a_checker_only_pull_request_may_lag_main(self):
-        # The branch tip carries a package the merge catalog does not,
-        # so the branch-seed shortcut does not return early. The file
-        # still matches the packages it names.
-        extra = {"slug": "only-on-branch", "name": "Only", "url": "https://only.example"}
-        branch = {"systems": list(self.base["systems"]) + [extra]}
-        self.assertTrue(self.matches(self.base, self.prior, branch_catalog=branch))
+    def test_hand_edits_are_rejected_without_any_domain_moving(self):
+        # The branch's own regenerated file, edited by hand. No domain moves between
+        # matched and missing, so only a whole-file comparison catches these.
+        regenerated = self.build(self.branch)
+        for edit in (lambda d: d["totals"].__setitem__("system_packages", 99),
+                     lambda d: d["totals"].__setitem__("catalog_entries", 999),
+                     lambda d: d.__setitem__("about", "hand written"),
+                     lambda d: d["matched"]["alpha.example"]["catalog"][0].__setitem__("name", "Renamed"),
+                     lambda d: d["missing"].pop("newer.example"),
+                     # A fake row in a second group for a domain another group holds.
+                     lambda d: d["matched"].__setitem__("newer.example", {"catalog": [], "pkgs": []}),
+                     lambda d: d.__setitem__("note", "extra top-level field")):
+            edited = json.loads(json.dumps(regenerated))
+            edit(edited)
+            self.assertFalse(self.matches(edited))
 
-    def test_a_checker_only_file_that_matches_the_merge_is_not_a_lag(self):
-        # The file matches the merge, so the early lag check must leave it
-        # for the add-only return. That return rejects a checker-only pull
-        # request whose file is simply current.
-        current = refero_check.coverage_mod.build(self.directory, self.base)
-        self.assertFalse(self.matches(self.base, current))
+    def test_leaving_out_a_package_the_branch_and_main_share_is_rejected(self):
+        self.assertFalse(self.matches(self.build([self.alpha, self.added])))
 
-    def test_a_hand_edited_file_is_rejected(self):
-        edited = json.loads(json.dumps(self.prior))
-        edited["totals"]["system_packages"] = 1
-        self.assertFalse(self.matches(self.head, edited))
-
-    def test_the_same_rows_in_another_order_are_accepted(self):
-        shared = {"slug": "shared", "name": "Shared", "url": "https://alpha.example"}
-        other = {"slug": "other", "name": "Other", "url": "https://alpha.example"}
-        first = refero_check.coverage_mod.build(
-            self.directory, {"systems": [self.alpha, shared]})
-        second = refero_check.coverage_mod.build(
-            self.directory, {"systems": [other, self.alpha]})
-        # Two packages on one domain. Reverse that package list. Dictionary
-        # key order is not the difference this exemption exists for.
-        dom = "alpha.example"
-        bucket = next(key for key in ("matched", "missing") if first.get(key, {}).get(dom))
-        pkgs = first[bucket][dom]["pkgs"]
-        self.assertGreaterEqual(len(pkgs), 2)
-        flipped = json.loads(json.dumps(first))
-        flipped[bucket][dom]["pkgs"] = list(reversed(pkgs))
-        self.assertNotEqual(first, flipped)
-        self.assertTrue(refero_check.coverage_same_rows(first, flipped))
-        self.assertTrue(refero_check.coverage_same_rows(first, second) or first != second)
-
-    def test_a_changed_package_field_is_rejected(self):
-        edited = json.loads(json.dumps(self.prior))
-        for key in ("matched", "missing", "systems_absent_from_catalog"):
-            row = next(iter((edited.get(key) or {}).values()), None)
-            if not row:
-                continue
-            pkgs = row if isinstance(row, list) else row.get("pkgs")
-            if pkgs:
-                pkgs[0]["name"] = "Renamed"
-                break
-        self.assertFalse(refero_check.coverage_same_rows(self.prior, edited))
-
-    def test_a_changed_total_is_rejected(self):
-        edited = json.loads(json.dumps(self.prior))
-        edited["totals"]["matched_domains"] = 0
-        self.assertFalse(refero_check.coverage_same_rows(self.prior, edited))
-
-    def test_a_changed_domain_row_is_rejected(self):
-        edited = json.loads(json.dumps(self.prior))
-        for key in ("matched", "missing"):
-            if edited.get(key):
-                dom = next(iter(edited[key]))
-                edited[key][dom]["pkgs"] = [{"slug": "other", "name": "Other"}]
-                break
-        self.assertFalse(refero_check.coverage_same_rows(self.prior, edited))
+    def test_a_removed_package_still_named_is_rejected(self):
+        # This pull request removes beta and adds added, keeping the base file.
+        head, branch = [self.alpha, self.newer, self.added], [self.alpha, self.added]
+        self.assertFalse(self.matches(self.build(self.base), head=head, branch=branch))
+        self.assertTrue(self.matches(self.build([self.alpha, self.added]), head=head, branch=branch))
 
     def test_an_edited_existing_row_is_rejected(self):
-        head = json.loads(json.dumps(self.head))
-        head["systems"][0]["name"] = "Alpha edited"
-        self.assertFalse(self.matches(head, self.prior))
+        edited = json.loads(json.dumps(self.head))
+        edited[0]["name"] = "Alpha edited"
+        self.assertFalse(self.matches(self.build([self.alpha, self.beta]), head=edited))
 
-    def test_without_a_pull_request_base_the_exemption_does_not_apply(self):
-        self.assertFalse(self.matches(self.head, self.prior, base_ref=None))
+    def test_no_pull_request_or_an_unreadable_ref_keeps_the_exact_rule(self):
+        prior = self.build([self.alpha, self.beta])
+        self.assertFalse(self.matches(prior, env={}))
+        self.assertFalse(self.matches(prior, env={"GITHUB_BASE_REF": "main"}))
+        self.assertFalse(self.matches(prior, fail=True))
+        self.assertFalse(self.matches(prior, base=[{"name": "no slug"}]))
 
 
-class PriorCoverageTest(unittest.TestCase):
-    def catalog(self, rows):
-        return {"systems": rows}
+class CoverageSameRowsTest(unittest.TestCase):
+    def setUp(self):
+        CoverageLagTest.setUp(self)
+        self.prior = refero_check.coverage_mod.build(self.directory, {"systems": [self.alpha, self.beta]})
 
-    def test_a_branch_behind_main_keeps_the_base_derivation(self):
-        directory = {"web_sites": [
-            {"name": "Old", "domain": "old.example", "id": "1"},
-            {"name": "Later", "domain": "later.example", "id": "2"},
-        ], "ios_apps": []}
-        old = {"slug": "old", "name": "Old", "url": "https://old.example"}
-        later = {"slug": "later", "name": "Later", "url": "https://later.example"}
-        added = {"slug": "added", "name": "Added", "url": "https://added.example"}
-        base = self.catalog([old, later])
-        head = self.catalog([old, added])
-        actual = refero_check.coverage_mod.build(directory, base)
-        expected = refero_check.coverage_mod.build(directory, head)
-        with mock.patch.object(refero_check, "base_catalog", return_value=base):
-            self.assertTrue(refero_check.coverage_matches_base(
-                directory, head, actual, expected))
-            edited = self.catalog([{**old, "name": "Renamed"}, added])
-            self.assertFalse(refero_check.coverage_matches_base(
-                directory, edited, actual, expected))
-            self.assertFalse(refero_check.coverage_matches_base(
-                directory, base, actual, expected))
+    def test_the_same_rows_in_another_order_are_equal(self):
+        shared = {"slug": "shared", "name": "Shared", "url": "https://alpha.example"}
+        first = refero_check.coverage_mod.build(self.directory, {"systems": [self.alpha, shared]})
+        reordered = refero_check.coverage_mod.build(self.directory, {"systems": [shared, self.alpha]})
+        self.assertNotEqual(first, reordered)
+        self.assertTrue(refero_check.coverage_same_rows(first, reordered))
 
-    def test_regenerated_coverage_keeps_the_added_package(self):
-        directory = {"web_sites": [
-            {"name": "Shared", "domain": "shared.example", "id": "1"},
-        ], "ios_apps": []}
-        first = {"slug": "first", "name": "First", "url": "https://shared.example"}
-        added = {"slug": "added", "name": "Added", "url": "https://shared.example"}
-        later = {"slug": "later", "name": "Later", "url": "https://shared.example"}
-        base = self.catalog([first, later])
-        head = self.catalog([first, added])
-        actual = refero_check.coverage_mod.build(directory, head)
-        expected = refero_check.coverage_mod.build(directory, base)
-        with mock.patch.object(refero_check, "base_catalog", return_value=base):
-            self.assertTrue(refero_check.coverage_matches_base(
-                directory, head, actual, expected))
-            stranger = {"slug": "stranger", "name": "Stranger",
-                        "url": "https://shared.example"}
-            foreign = refero_check.coverage_mod.build(
-                directory, self.catalog([first, stranger]))
-            self.assertFalse(refero_check.coverage_matches_base(
-                directory, head, foreign, expected))
-
-    def test_a_regenerated_file_matches_the_branch_tip(self):
-        directory = {"web_sites": [
-            {"name": "Old", "domain": "old.example", "id": "1"},
-            {"name": "Later", "domain": "later.example", "id": "2"},
-        ], "ios_apps": []}
-        old = {"slug": "old", "name": "Old", "url": "https://old.example"}
-        later = {"slug": "later", "name": "Later", "url": "https://later.example"}
-        branch = {"old": old}
-        head = self.catalog([old, later])
-        actual = refero_check.coverage_mod.build(directory, self.catalog([old]))
-        expected = refero_check.coverage_mod.build(directory, head)
-        with mock.patch.object(refero_check, "base_catalog", return_value=head), \
-                mock.patch.object(refero_check, "branch_catalog", return_value=branch):
-            self.assertTrue(refero_check.coverage_matches_base(
-                directory, head, actual, expected))
-        renamed = {"old": {**old, "name": "Renamed"}}
-        with mock.patch.object(refero_check, "base_catalog", return_value=head), \
-                mock.patch.object(refero_check, "branch_catalog", return_value=renamed):
-            self.assertFalse(refero_check.coverage_matches_base(
-                directory, head, actual, expected))
+    def test_a_changed_package_field_total_or_row_differs(self):
+        for edit in (lambda d: d["matched"]["alpha.example"]["pkgs"][0].__setitem__("name", "Renamed"),
+                     lambda d: d["totals"].__setitem__("matched_domains", 0),
+                     lambda d: d["matched"]["alpha.example"].__setitem__("pkgs", [{"slug": "other"}])):
+            edited = json.loads(json.dumps(self.prior))
+            edit(edited)
+            self.assertFalse(refero_check.coverage_same_rows(self.prior, edited))
 
 
 if __name__ == "__main__":

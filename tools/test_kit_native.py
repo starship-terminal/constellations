@@ -124,6 +124,50 @@ class ShotTest(unittest.TestCase):
         self.assertEqual(self.shot("4242"), (0, ["screencapture", "sips"]))
 
 
+GROKBOT = NATIVE.parent.parent.parent.parent / "systems" / "grokbot"
+
+
+@unittest.skipUnless((GROKBOT / "tokens.json").is_file(), "the grokbot package is not checked out")
+class KitNativeOneTheme(unittest.TestCase):
+    """The kit's native style-guide and components builders on Grok Bot's tokens with one theme removed:
+    build_tokens.check allows a one-theme app, and both builders indexed data["dark"] unconditionally."""
+
+    def build(self, drop):
+        import json
+        with tempfile.TemporaryDirectory() as d:
+            pkg = pathlib.Path(d)
+            (pkg / "tools").mkdir()
+            for f in ("build_style_guide.py", "build_components_md.py"):
+                shutil.copy(NATIVE.parent.parent / "native" / f, pkg / "tools" / f)
+            tok = json.loads((GROKBOT / "tokens.json").read_text())
+            tok.pop(drop)
+            (pkg / "tokens.json").write_text(json.dumps(tok))
+            shutil.copytree(GROKBOT / "components" / "crops", pkg / "components" / "crops")
+            if drop == "dark":   # a light-only app's crops all carry -light
+                for f in (pkg / "components" / "crops").glob("*.png"):
+                    if not f.stem.endswith("-light"):
+                        light = f.with_name(f.stem + "-light.png")
+                        f.replace(light) if not light.exists() else f.unlink()
+            env = dict(os.environ, KIT_EXAMPLE="1")
+            for f in ("build_style_guide.py", "build_components_md.py"):
+                done = subprocess.run([sys.executable, str(pkg / "tools" / f)], capture_output=True, text=True, env=env)
+                self.assertEqual(done.returncode, 0, (f, done.stderr[-1500:]))
+            return (pkg / "style-guide.html").read_text(), (pkg / "components.md").read_text()
+
+    def test_a_light_only_app_builds(self):
+        html, md = self.build("dark")
+        self.assertIn('data-theme="light"', html)
+        self.assertNotIn('data-set-theme="dark"', html)   # no toggle with one theme
+        self.assertNotIn(":root[data-theme=\"dark\"]", html)
+        self.assertIn("(light)](components/crops/", md)
+
+    def test_a_dark_only_app_builds(self):
+        html, md = self.build("light")
+        self.assertIn('<html lang="en" data-theme="dark">', html)
+        self.assertIn(':root,:root[data-theme="dark"]{color-scheme:dark;', html)
+        self.assertNotIn("<th>Light</th>", html)
+
+
 class KitNativeBuilderTests(unittest.TestCase):
     """tools/kit/native carries its own tests (test_build_tokens.py, test_measure.py), which a package
     copies with the builders. `unittest discover -s tools` does not reach them (the folder is no
@@ -140,6 +184,7 @@ class KitNativeBuilderTests(unittest.TestCase):
         self.assertTrue(ran and int(ran[-1].split()[1]) > 0, done.stderr[-500:])
         for name in names:   # every file's tests were found
             self.assertIn(f"({name[:-3]}.", done.stderr, name)
+
 
 if __name__ == "__main__":
     unittest.main()

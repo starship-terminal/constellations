@@ -135,6 +135,21 @@ function comp(key, meta) {
   return c;
 }
 
+// A failed re-read must not erase an earlier successful one: keep the saved
+// style and record the failed attempt beside it. comp() has already stamped
+// this run's date on the component, so the kept state is pinned to the run
+// that actually read it (its own run stamp, else the component's earlier run)
+// and an old reading is never republished as a new one.
+function keepEarlier(c, state, e, earlierRun) {
+  const err = String(e.message || e).slice(0, 200);
+  const prev = c.states[state];
+  if (prev && prev.style) {
+    prev.rerunError = err;
+    prev.read ??= prev.run || earlierRun; // a second failed re-read keeps the first date
+    prev.rerunOn = run;
+  } else c.states[state] = { error: err };
+}
+
 async function measure(key, state, target, opts = {}) {
   const loc = target.and(page.locator(':visible')).first();
   const c = out.components[key];
@@ -150,11 +165,7 @@ async function measure(key, state, target, opts = {}) {
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
-    // A failed re-read must not erase an earlier successful one: keep the
-    // saved style and record the failed attempt beside it.
-    const prev = c.states[state];
-    if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
-    else c.states[state] = { error: String(e.message || e).slice(0, 200) };
+    keepEarlier(c, state, e, opts.earlierRun);
     log('  !', key, state, String(e.message).slice(0, 120));
   }
 }
@@ -207,19 +218,37 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'held open by an earlier toggle';
-        else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
+        else {
+          await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle';
+          undo = () => closeOpened(key, loc, opts);
+        }
       } else via = via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      await measure(key, st, loc, { ...opts, via, earlierRun: keep?.run });
     } catch (e) {
-      const prev = out.components[key].states[st];
-      if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
-      else out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
+      keepEarlier(out.components[key], st, e, keep?.run);
       log('  !', key, st, String(e.message).slice(0, 120));
     }
     if (undo) await undo().catch(() => {});
     if (opts.after?.[st]) await opts.after[st](loc).catch(() => {});
   }
   await reset();
+}
+
+// Closes what an `opened` state opened. An open dropdown or menu keeps focus
+// and covers the page, so every later focus-visible reading would come back
+// 'focus failed'. Escape first, then the trigger again; if the trigger still
+// reports aria-expanded="true" the miss is recorded on the opened state so
+// the later readings on this page can be checked.
+async function closeOpened(key, loc, opts) {
+  const expanded = () => loc.evaluate((el) => el.getAttribute('aria-expanded')).catch(() => null);
+  await page.keyboard.press('Escape').catch(() => {});
+  await page.waitForTimeout(400);
+  if ((await expanded()) === 'true') { await toggle(loc, { allowLink: opts.allowLink }).catch(() => {}); await page.waitForTimeout(600); }
+  if ((await expanded()) === 'true') {
+    const st = out.components[key].states.opened;
+    if (st) st.closeFailed = 'aria-expanded still "true" after Escape and a second toggle';
+    log('  ! opened state did not close', key);
+  }
 }
 
 // Clicks a UI toggle (dropdown, menu, sheet trigger). Refuses a submit button

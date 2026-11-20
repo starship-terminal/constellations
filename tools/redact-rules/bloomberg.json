@@ -3,9 +3,11 @@
  "ocr": {
   "emails": true,
   "email_allow": [
-   "@bloomberg\\.(com|net)$",
+   "@bloomberg\\.com$",
+   "@bloomberg\\.net$",
    "@bloomberglaw\\.com$",
-   "@example\\.(com|org)$"
+   "@example\\.com$",
+   "@example\\.org$"
   ]
  },
  "families": []

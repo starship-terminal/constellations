@@ -5,7 +5,7 @@ another project.
 
 ## What this is
 
-A private library of design styles captured from real products. Browsed through
+A library of design styles captured from real products. Browsed through
 the Next.js apps in web/ (the gallery) and app/ (the newer research app)
 locally, and published as a static docs site. Two stores of styles:
 
@@ -36,7 +36,7 @@ in the web/ app, and app/ covers the same stores plus research;
 ```
 catalog.json            index of every systems/ package: slug, platform, tags,
                         goodFor, preview paths, capture provenance
-systems/<slug>/         the packages (210). Standard parts:
+systems/<slug>/         the packages, one per product. Standard parts:
   README.md               Brief (generated) + what was captured + Health (generated)
   tokens.json             every value, evidence-labelled
   DESIGN.md               generated export, one theme, no provenance
@@ -315,8 +315,9 @@ illustrations or brand colours into something that ships
   `systems/`, screenshots or the gallery, and never commit `.env` (it holds
   API keys).
 - **Only credentials and personally identifiable data are masked.** The
-  owner agreed on 2026-10-23 that these may show in screenshots and crops,
-  because the repository stays private:
+  owner agreed on 2026-10-23 that these may show in screenshots and crops.
+  The repository has been public since 2026-11-20, and the owner is reviewing
+  this rule. What may show:
   - the owner's own account profile (name, email, handle, avatar,
     initials), their chat, document and project text, and their time zone;
   - other people's names, usernames and profile pictures as the app shows
@@ -348,8 +349,9 @@ illustrations or brand colours into something that ships
   one exists (its `email_allow` and `wrap_ignore`) and prints which file it
   used; `--rules` picks another. `apply` does not guess: it edits images in
   place, so it still needs `--rules`.
-- **Do not make this repository public**, and do not push it anywhere but
-  its private GitHub remote.
+- **The repository is public** on GitHub at
+  `starship-terminal/constellations` (its `origin`). Do not push it
+  anywhere else.
 - Run Python as `python3`.
 
 ## Checks before a commit
@@ -383,7 +385,7 @@ git lfs status
 ```
 
 ```bash
-git ls-files -s | awk '$1=="100644"' | cut -f2 | grep -Ei '\.(png|jpe?g|gif|webp|zip|gz|woff2?|ttf|otf|fig|ico|mp4|mov)$' | xargs -I{} sh -c 'git check-attr filter -- "{}" | grep -q "filter: lfs" || echo "not in LFS: {}"'
+git ls-files -s | awk '$1=="100644"' | cut -f2 | grep -Ei '\.(png|jpe?g|gif|webp|avif|zip|gz|woff2?|ttf|otf|fig|pdf|ico|db|mp4|mov)$' | xargs -I{} sh -c 'git check-attr filter -- "{}" | grep -q "filter: lfs" || echo "not in LFS: {}"'
 ```
 
 ## CI

@@ -5,7 +5,8 @@
   "email_allow": [
    "@hearst\\.com$",
    "@hearst\\.com\\.$",
-   "@example\\.(com|org)$",
+   "@example\\.com$",
+   "@example\\.org$",
    "@esquire\\.com$"
   ]
  },

@@ -228,7 +228,11 @@ export function researchTools(
               type: "text" as const,
               text: JSON.stringify({
                 ...output,
-                visualEvidence: image ? "image-supplied" : "text-only",
+                visualEvidence: image
+                  ? "image-supplied"
+                  : output.visualEvidence === "image-earlier"
+                    ? "image-earlier"
+                    : "text-only",
               }),
             },
             ...(image
@@ -259,7 +263,10 @@ export function researchTools(
         "Read one reference and its recorded evidence. Inspect before citing. Screenshot access is reported explicitly.",
       inputSchema: z.object({ referenceId: z.string().max(160) }),
       toModelOutput: async ({ output }) => {
-        const image = await referenceImage(output.reference);
+        const image =
+          output.visualEvidence === "image-supplied"
+            ? await referenceImage(output.reference)
+            : null;
         const bounded = {
           kind: output.kind,
           citation: output.citation,
@@ -282,7 +289,9 @@ export function researchTools(
           },
           visualEvidence: image
             ? "One captured image supplied below."
-            : "Text evidence only; no image supplied.",
+            : output.visualEvidence === "image-earlier"
+              ? "A captured image was supplied in an earlier turn; it is not repeated."
+              : "Text evidence only; no image supplied.",
         };
         return {
           type: "content",
@@ -327,9 +336,41 @@ export function researchTools(
   };
 }
 
+// History images the model gets again: the most recent ones, for follow-up
+// questions about them. Every older inspect or view would otherwise attach
+// its screenshot to every later turn, so image tokens grew with the chat.
+export const HISTORY_IMAGES = 2;
 // Preserve the durable raw UI message history. Only completed, relevant tool parts
 // go back to the model; cancellation can leave incomplete tool calls in the store.
 export function modelHistory(
+  messages: UIMessage[],
+  excludedIds: string[],
+): UIMessage[] {
+  return capHistoryImages(relevantHistory(messages, excludedIds));
+}
+function capHistoryImages(messages: UIMessage[]): UIMessage[] {
+  const capped = messages.map((message) => ({
+    ...message,
+    parts: [...message.parts],
+  }));
+  let kept = 0;
+  for (let m = capped.length - 1; m >= 0; m--) {
+    const parts = capped[m].parts;
+    for (let i = parts.length - 1; i >= 0; i--) {
+      const p = parts[i] as unknown as {
+        output?: { visualEvidence?: string };
+      };
+      if (p.output?.visualEvidence !== "image-supplied") continue;
+      if (kept++ < HISTORY_IMAGES) continue;
+      parts[i] = {
+        ...parts[i],
+        output: { ...p.output, visualEvidence: "image-earlier" },
+      } as (typeof parts)[number];
+    }
+  }
+  return capped;
+}
+function relevantHistory(
   messages: UIMessage[],
   excludedIds: string[],
 ): UIMessage[] {
