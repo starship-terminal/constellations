@@ -108,7 +108,8 @@ class BuilderTest(unittest.TestCase):
         self.assertEqual(p("0px 2px 4px -1px rgb(0, 0, 0)")[0]["spread"], "-1px")
 
     def test_an_unreadable_layer_refuses_the_build(self):
-        for bad in ("rgb(0, 0, 0) 4px 4px, 1px 1px var(--x)", "4px 4px 0px", "none"):
+        for bad in ("rgb(0, 0, 0) 4px 4px, 1px 1px var(--x)", "4px 4px 0px", "none",
+                    "rgb(0, 0, 0) 1px2px", "#12345 4px 4px", "inset inset 0 0 0 1px #000"):
             with self.assertRaises(ValueError, msg=bad):
                 self.b.parse_shadow(bad)
 

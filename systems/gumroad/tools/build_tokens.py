@@ -143,25 +143,30 @@ def check(path, ty, val):
                 raise ValueError(f"{path}: gradient position {stop['position']!r}")
 
 
-SHADOW_COLOUR = re.compile(r"rgba?\([^)]*\)|#[0-9a-fA-F]{3,8}\b")
-SHADOW_LENGTH = re.compile(r"-?(?:\d+(?:\.\d+)?|\.\d+)(?:px|rem)|-?0(?:\.0+)?(?![\w.])")
+SHADOW_COLOUR = re.compile(r"rgba?\([^()]*\)|#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})")
+SHADOW_LENGTH = re.compile(r"-?(?:\d+(?:\.\d+)?|\.\d+)(?:px|rem)|-?0(?:\.0+)?")
 
 
 def parse_shadow(val, path=""):
     """A box-shadow list as DTCG layers. Top-level commas split layers (commas inside rgb() stay whole); each
-    layer takes `inset` anywhere, one colour, and two to four lengths (blur and spread default to 0px, a
-    unitless 0 is 0px). Anything else in a layer, or a layer with no colour, refuses the build: a layer that
-    cannot be read is never dropped or given a guessed colour."""
+    layer is whole space-separated pieces: at most one `inset`, exactly one colour (rgb()/rgba() or a 3, 4, 6
+    or 8 digit hex), and two to four lengths (blur and spread default to 0px, a unitless 0 is 0px). Each piece
+    must match as a whole, so `1px2px` or `#12345` refuses the build: a layer that cannot be read is never
+    dropped, split into invented lengths or given a guessed colour."""
     layers = []
     for part in re.split(r",\s*(?![^(]*\))", val.strip()):
-        rest = part.strip()
-        inset = bool(re.search(r"(?<![\w-])inset(?![\w-])", rest))
-        rest = re.sub(r"(?<![\w-])inset(?![\w-])", " ", rest)
-        colours = SHADOW_COLOUR.findall(rest)
-        rest = SHADOW_COLOUR.sub(" ", rest)
-        lengths = SHADOW_LENGTH.findall(rest)
-        rest = SHADOW_LENGTH.sub(" ", rest)
-        if rest.strip() or len(colours) != 1 or not 2 <= len(lengths) <= 4:
+        pieces = re.findall(r"[^\s(]+\([^)]*\)|\S+", part.strip())
+        inset, colours, lengths = 0, [], []
+        for x in pieces:
+            if x == "inset":
+                inset += 1
+            elif SHADOW_COLOUR.fullmatch(x):
+                colours.append(x)
+            elif SHADOW_LENGTH.fullmatch(x):
+                lengths.append(x)
+            else:
+                raise ValueError(f"{path}: cannot read box-shadow layer {part!r} (piece {x!r})")
+        if inset > 1 or len(colours) != 1 or not 2 <= len(lengths) <= 4:
             raise ValueError(f"{path}: cannot read box-shadow layer {part!r}")
         lengths = [x if x.endswith(("px", "rem")) else "0px" for x in lengths] + ["0px"] * (4 - len(lengths))
         layer = {"color": norm_color(colours[0]), "offsetX": lengths[0], "offsetY": lengths[1],

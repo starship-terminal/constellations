@@ -82,10 +82,17 @@ async function pressOn(loc) {
   if (!b) return null;
   // Force the component's own node: the topmost node at its centre (DOM.getNodeForLocation) is a text span or
   // an svg, whose :active never triggers the component's own :active rule.
-  await loc.evaluate((el) => el.setAttribute('data-m-press', '1'));
-  const { root } = await cdp.send('DOM.getDocument', { depth: 0 });
-  const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: '[data-m-press]' });
-  await loc.evaluate((el) => el.removeAttribute('data-m-press'));
+  // Clear any marker a failed earlier press left, mark this control, and always unmark it,
+  // so a later press can never find a stale marker first and force the wrong control.
+  await page.evaluate(() => document.querySelectorAll('[data-m-press]').forEach((el) => el.removeAttribute('data-m-press')));
+  let nodeId;
+  try {
+    await loc.evaluate((el) => el.setAttribute('data-m-press', '1'));
+    const { root } = await cdp.send('DOM.getDocument', { depth: 0 });
+    ({ nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: '[data-m-press]' }));
+  } finally {
+    await loc.evaluate((el) => el.removeAttribute('data-m-press')).catch(() => {});
+  }
   if (!nodeId) return null;
   await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: ['active', 'hover'] });
   await page.waitForTimeout(400);
