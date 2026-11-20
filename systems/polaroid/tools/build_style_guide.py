@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Render style-guide.html from tokens.json. Deterministic. Light theme only."""
+import html as htmllib
 import json
 import pathlib
 
@@ -34,7 +35,7 @@ def type_rows():
     for name, token in T["core"]["typography"].items():
         v = token["$value"]
         family = val(v["fontFamily"][1:-1])
-        stack = ", ".join(family)
+        stack = htmllib.escape(", ".join(family), quote=True)
         ls = v.get("letterSpacing", "normal")
         rows.append(
             f'<div class="ty" style="font-family:{stack};font-size:{v["fontSize"]};'
