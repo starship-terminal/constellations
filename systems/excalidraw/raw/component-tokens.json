@@ -159,13 +159,13 @@
       "family": {
         "display": {
           "description": "The hand-drawn face: welcome logo and default canvas handwriting.",
-          "source": "measured .welcome-screen-center__logo font-family + the served @font-face for Excalifont (raw/css-vars.json fonts)",
+          "source": "computed fontFamily of welcome-logo default (raw/components-computed.json)",
           "type": "fontFamily",
-          "value": "\"Excalifont\", \"Xiaolai\", \"Comic Sans MS\", cursive"
+          "value": "Excalifont, Xiaolai"
         },
         "mono": {
           "description": "The monospace face for code elements and keybindings.",
-          "source": "measured canvas code-text / shortcut rendering (Cascadia is a served @font-face)",
+          "source": "Reconstruction: entered by hand at capture time; no measured element or @font-face in raw/ holds it",
           "type": "fontFamily",
           "value": "\"Cascadia\", ui-monospace, monospace"
         },
@@ -757,7 +757,7 @@
         },
         "promo": {
           "description": "The Excalidraw+ promo accent (declared = primary).",
-          "source": "css-var --color-promo (declared as var(--color-brand-default) and kept as an alias)",
+          "source": "css-var --color-promo (declared as var(--color-primary) and kept as an alias)",
           "type": "color",
           "value": "{color.brand.default}"
         },
@@ -826,7 +826,7 @@
       "icon": {
         "fill": {
           "description": "Icon ink (declared = on-surface).",
-          "source": "css-var --icon-fill-color (declared as var(--color-text-primary) and kept as an alias)",
+          "source": "css-var --icon-fill-color (declared as var(--color-on-surface) and kept as an alias)",
           "type": "color",
           "value": "{color.text.primary}"
         },
@@ -864,7 +864,7 @@
       "logo": {
         "icon": {
           "description": "The logo glyph (declared = primary).",
-          "source": "css-var --color-logo-icon (declared as var(--color-brand-default) and kept as an alias)",
+          "source": "css-var --color-logo-icon (declared as var(--color-primary) and kept as an alias)",
           "type": "color",
           "value": "{color.brand.default}"
         },
@@ -1137,7 +1137,7 @@
         },
         "label": {
           "description": "Field label ink.",
-          "source": "css-var --ExcTextField--label-color (declared as var(--color-text-primary) and kept as an alias)",
+          "source": "css-var --ExcTextField--label-color (declared as var(--color-on-surface) and kept as an alias)",
           "type": "color",
           "value": "{color.text.primary}"
         },
@@ -1157,13 +1157,13 @@
           "var": "--ExcTextField--readonly--border"
         },
         "readonly-text": {
-          "source": "css-var --ExcTextField--readonly--color (declared as var(--color-text-primary) and kept as an alias)",
+          "source": "css-var --ExcTextField--readonly--color (declared as var(--color-on-surface) and kept as an alias)",
           "type": "color",
           "value": "{color.text.primary}"
         },
         "text": {
           "description": "Field ink (= on-surface).",
-          "source": "css-var --ExcTextField--color (declared as var(--color-text-primary) and kept as an alias)",
+          "source": "css-var --ExcTextField--color (declared as var(--color-on-surface) and kept as an alias)",
           "type": "color",
           "value": "{color.text.primary}"
         }
@@ -1217,7 +1217,7 @@
         },
         "choice-off-text": {
           "description": "Unselected segment ink (= primary).",
-          "source": "css-var --RadioGroup-choice-color-off (declared as var(--color-brand-default) and kept as an alias)",
+          "source": "css-var --RadioGroup-choice-color-off (declared as var(--color-primary) and kept as an alias)",
           "type": "color",
           "value": "{color.brand.default}"
         },
@@ -1249,15 +1249,13 @@
       },
       "scrollbar": {
         "thumb": {
-          "description": "Scrollbar thumb (= button-gray-2).",
-          "source": "css-var --scrollbar-thumb (declared as var(--control-button-gray-2) and kept as an alias)",
+          "description": "Scrollbar thumb (light declares it as button-gray-2; dark declares its own value).",
           "type": "color",
-          "value": "{control.button.gray-2}"
+          "var": "--scrollbar-thumb"
         },
         "thumb-hover": {
-          "source": "css-var --scrollbar-thumb-hover (declared as var(--control-button-gray-3) and kept as an alias)",
           "type": "color",
-          "value": "{control.button.gray-3}"
+          "var": "--scrollbar-thumb-hover"
         }
       },
       "sidebar": {
@@ -1301,7 +1299,7 @@
         },
         "thumb": {
           "description": "Switch thumb (= on-surface).",
-          "source": "css-var --Switch-thumb-background (declared as var(--color-text-primary) and kept as an alias)",
+          "source": "css-var --Switch-thumb-background (declared as var(--color-on-surface) and kept as an alias)",
           "type": "color",
           "value": "{color.text.primary}"
         },
@@ -1431,7 +1429,7 @@
         },
         "promo": {
           "description": "The Excalidraw+ promo accent (declared = primary).",
-          "source": "css-var --color-promo (declared as var(--color-brand-default) and kept as an alias)",
+          "source": "css-var --color-promo (declared as var(--color-primary) and kept as an alias)",
           "type": "color",
           "value": "{color.brand.default}"
         },
@@ -1500,7 +1498,7 @@
       "icon": {
         "fill": {
           "description": "Icon ink (declared = on-surface).",
-          "source": "css-var --icon-fill-color (declared as var(--color-text-primary) and kept as an alias)",
+          "source": "css-var --icon-fill-color (declared as var(--color-on-surface) and kept as an alias)",
           "type": "color",
           "value": "{color.text.primary}"
         },
@@ -1538,7 +1536,7 @@
       "logo": {
         "icon": {
           "description": "The logo glyph (declared = primary).",
-          "source": "css-var --color-logo-icon (declared as var(--color-brand-default) and kept as an alias)",
+          "source": "css-var --color-logo-icon (declared as var(--color-primary) and kept as an alias)",
           "type": "color",
           "value": "{color.brand.default}"
         },
@@ -1811,7 +1809,7 @@
         },
         "label": {
           "description": "Field label ink.",
-          "source": "css-var --ExcTextField--label-color (declared as var(--color-text-primary) and kept as an alias)",
+          "source": "css-var --ExcTextField--label-color (declared as var(--color-on-surface) and kept as an alias)",
           "type": "color",
           "value": "{color.text.primary}"
         },
@@ -1831,13 +1829,13 @@
           "var": "--ExcTextField--readonly--border"
         },
         "readonly-text": {
-          "source": "css-var --ExcTextField--readonly--color (declared as var(--color-text-primary) and kept as an alias)",
+          "source": "css-var --ExcTextField--readonly--color (declared as var(--color-on-surface) and kept as an alias)",
           "type": "color",
           "value": "{color.text.primary}"
         },
         "text": {
           "description": "Field ink (= on-surface).",
-          "source": "css-var --ExcTextField--color (declared as var(--color-text-primary) and kept as an alias)",
+          "source": "css-var --ExcTextField--color (declared as var(--color-on-surface) and kept as an alias)",
           "type": "color",
           "value": "{color.text.primary}"
         }
@@ -1891,7 +1889,7 @@
         },
         "choice-off-text": {
           "description": "Unselected segment ink (= primary).",
-          "source": "css-var --RadioGroup-choice-color-off (declared as var(--color-brand-default) and kept as an alias)",
+          "source": "css-var --RadioGroup-choice-color-off (declared as var(--color-primary) and kept as an alias)",
           "type": "color",
           "value": "{color.brand.default}"
         },
@@ -1923,13 +1921,13 @@
       },
       "scrollbar": {
         "thumb": {
-          "description": "Scrollbar thumb (= button-gray-2).",
-          "source": "css-var --scrollbar-thumb (declared as var(--control-button-gray-2) and kept as an alias)",
+          "description": "Scrollbar thumb (light declares it as button-gray-2; dark declares its own value).",
+          "source": "css-var --scrollbar-thumb (declared as var(--button-gray-2) and kept as an alias)",
           "type": "color",
           "value": "{control.button.gray-2}"
         },
         "thumb-hover": {
-          "source": "css-var --scrollbar-thumb-hover (declared as var(--control-button-gray-3) and kept as an alias)",
+          "source": "css-var --scrollbar-thumb-hover (declared as var(--button-gray-3) and kept as an alias)",
           "type": "color",
           "value": "{control.button.gray-3}"
         }
@@ -1975,7 +1973,7 @@
         },
         "thumb": {
           "description": "Switch thumb (= on-surface).",
-          "source": "css-var --Switch-thumb-background (declared as var(--color-text-primary) and kept as an alias)",
+          "source": "css-var --Switch-thumb-background (declared as var(--color-on-surface) and kept as an alias)",
           "type": "color",
           "value": "{color.text.primary}"
         },

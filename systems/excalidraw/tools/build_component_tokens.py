@@ -31,7 +31,8 @@ import re
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
 V = json.loads((RAW / "css-vars.json").read_text())
-C = json.loads((RAW / "components-computed.json").read_text()) if (RAW / "components-computed.json").exists() else {"components": {}}
+# Required: without the readings every measured token would vanish and the build would still pass.
+C = json.loads((RAW / "components-computed.json").read_text())
 RL = V["resolved"]["light"]
 RD = V["resolved"]["dark"]
 
@@ -47,9 +48,22 @@ def L(var, ty="color", desc=None):
     return {"type": ty, "var": var, **({"description": desc} if desc else {})}
 
 
-def A(target, var, desc=None):
-    """A leaf that keeps the stylesheet's own var() alias."""
-    return {"type": "color", "value": "{" + target + "}", "source": f"css-var {var} (declared as var(--{target.replace('.', '-')}) and kept as an alias)", **({"description": desc} if desc else {})}
+def declared(var, theme):
+    """The stylesheet's own declaration of var in a theme: the .excalidraw.theme--dark rule for
+    dark when it overrides var, else the .excalidraw rule (raw/css-vars.json "theme")."""
+    rules = {}
+    for r in V["theme"]:
+        if r["selector"] in (".excalidraw", ".excalidraw.theme--dark") and not r["context"] and var in r["properties"]:
+            rules[r["selector"]] = r["properties"][var].strip()
+    return rules.get(".excalidraw.theme--dark") if theme == "dark" and ".excalidraw.theme--dark" in rules else rules.get(".excalidraw")
+
+
+def A(target, target_var, var, theme, desc=None):
+    """A leaf that keeps the stylesheet's own var() alias, but only where this theme's declaration
+    of var is var(target_var); otherwise the leaf names the resolved variable."""
+    if declared(var, theme) != f"var({target_var})":
+        return L(var, desc=desc)
+    return {"type": "color", "value": "{" + target + "}", "source": f"css-var {var} (declared as var({target_var}) and kept as an alias)", **({"description": desc} if desc else {})}
 
 
 def M(value, source, ty, desc=None):
@@ -85,11 +99,13 @@ for s in (10, 20, 30, 40, 50, 60, 70, 80, 85, 90, 100):
 # from the served @font-face rules and the computed fontFamily of canvas text
 # (the welcome logo is the hand-drawn face).
 core["font"]["family"]["ui"] = {**L("--ui-font", "fontFamily", "The declared UI stack — Assistant over the system sanses."), "source": "css-var --ui-font"}
-core["font"]["family"]["display"] = M('"Excalifont", "Xiaolai", "Comic Sans MS", cursive',
-                                      'measured .welcome-screen-center__logo font-family + the served @font-face for Excalifont (raw/css-vars.json fonts)',
+core["font"]["family"]["display"] = M(style("welcome-logo", "fontFamily"),
+                                      "computed fontFamily of welcome-logo default (raw/components-computed.json)",
                                       "fontFamily", "The hand-drawn face: welcome logo and default canvas handwriting.")
+# No reading holds a monospace stack: no measured element computes Cascadia and raw/css-vars.json
+# has no @font-face for it. The value was entered by hand at capture time.
 core["font"]["family"]["mono"] = M('"Cascadia", ui-monospace, monospace',
-                                    'measured canvas code-text / shortcut rendering (Cascadia is a served @font-face)',
+                                    "Reconstruction: entered by hand at capture time; no measured element or @font-face in raw/ holds it",
                                     "fontFamily", "The monospace face for code elements and keybindings.")
 
 # Measured type scale: sizes read off the real controls.
@@ -308,7 +324,7 @@ THEMED = [
     ("control.switch.disabled", "--Switch-disabled-color", "color.border.outline", None),
     ("control.switch.disabled-border", "--Switch-disabled-border", "color.border.outline-variant", None),
     ("control.switch.disabled-toggled", "--Switch-disabled-toggled-background", "color.border.outline-variant", None),
-    ("control.scrollbar.thumb", "--scrollbar-thumb", "control.button.gray-2", "Scrollbar thumb (= button-gray-2)."),
+    ("control.scrollbar.thumb", "--scrollbar-thumb", "control.button.gray-2", "Scrollbar thumb (light declares it as button-gray-2; dark declares its own value)."),
     ("control.scrollbar.thumb-hover", "--scrollbar-thumb-hover", "control.button.gray-3", None),
     ("control.export.preview-border", "--ImageExportModal-preview-border", None, "The export preview pane edge."),
     ("control.userlist.hint-bg", "--userlist-hint-bg-color", None, "Collaborator list hint surface."),
@@ -327,12 +343,13 @@ def insert(tree, path, leaf):
     node[parts[-1]] = leaf
 
 
+VAR_OF = {path: var for path, var, _, _ in THEMED}
 light, dark = {}, {}
 for path, var, alias, desc in THEMED:
     for tree, theme in ((light, "light"), (dark, "dark")):
         if not has(var, theme):
             continue
-        leaf = A(alias, var, desc) if alias else L(var, desc=desc)
+        leaf = A(alias, VAR_OF[alias], var, theme, desc) if alias else L(var, desc=desc)
         insert(tree, path, leaf)
 
 # ---------------------------------------------------------------- component geometry
