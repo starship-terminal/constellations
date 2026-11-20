@@ -3882,9 +3882,9 @@
       "description": "Marketing Strategies for Small Businesses",
       "status": "pending",
       "package": null,
-      "notes": "https://app.thenavia.com/ Sign In opens https://accounts.thenavia.com/sign-in with email or username and password, or Facebook, Google, or passkey. Password not submitted. Cookie banner rejected.",
+      "notes": "https://app.thenavia.com/ Sign In opens https://accounts.thenavia.com/sign-in with email or username and password, or Facebook, Google, or passkey. Password not submitted. Cookie banner rejected. Public walk 2026-11-21: home nav stays on-page except Resources (/blog) and Get started (app wall). The phone menu is an overlay. Feature rows toggle in place. Blog paginates to page 4. Contact, privacy, terms, and do-not-sell are public. Cookie banner and preferences open on first paint. The app wall was recorded and not passed. Facebook, Google, and passkey were not opened. No form was submitted. www.app.thenavia.com does not resolve. Public package in PR 1543 at f778f11097de. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 12
     },
     {
