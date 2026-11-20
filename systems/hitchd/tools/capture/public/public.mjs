@@ -46,7 +46,7 @@ class Shooter {
   // sidecar's expected size (css x dpr-at-eval-time) can disagree with the
   // PNG while the PNG itself is the right 2x capture — log the mismatch and
   // keep the shot rather than aborting the page.
-  async view(name) { await closePromo(this.p); try { await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested); } catch (e) { if (!/dimension mismatch/.test(e.message)) throw e; log('  !', name, 'dimension mismatch (PNG kept)'); } this.count++; log('  shot', name); }
+  async view(name) { await closePromo(this.p); await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested); /* a dimension mismatch fails the shot (2026-11 audit) */ this.count++; log('  shot', name); }
   async full(name = 'full') {
     const p = this.p;
     await closePromo(p);
@@ -63,7 +63,7 @@ class Shooter {
     const hCap = Math.min(H, MAXH);
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
     const opts = (extra) => ({ path: extra, scale: 'css', timeout: 120000 });
-    const snap = async (o) => { try { await screenshotWithMetadata(p, o, this.requested); } catch (e) { if (!/dimension mismatch/.test(e.message)) throw e; log('  !', o.path.split('/').pop(), 'dimension mismatch (PNG kept)'); } };
+    const snap = (o) => screenshotWithMetadata(p, o, this.requested); /* a dimension mismatch fails the shot (2026-11 audit) */
     // a manifest tells quantize.py how many tiles the page owed: a tile that
     // times out leaves a shortened part set, and without the intended count a
     // partial sheet could stitch and pass as complete

@@ -6,11 +6,12 @@
 <title>Hitchd style guide</title>
 <meta name="description" content="Hitchd design tokens and the signed-out public surfaces' components, rendered from tokens.json with measured values.">
 <style>
-/* The faces are hitchd.com's own woff2 files, linked not vendored (the site
-   closes 31 December 2026 — when the URLs die the stacks below fall back to
-   the named generics, which is the intended graceful degradation). */
-@font-face { font-display: swap; font-family: "Inter Variable"; font-style: normal; font-weight: 100 900; src: url(https://www.hitchd.com/fonts/InterVariable.woff2) format("woff2"); }
-@font-face { font-display: swap; font-family: "DDNR"; font-style: normal; font-weight: 100 900; src: url(https://www.hitchd.com/fonts/DDNR.woff2) format("woff2"); }
+/* The faces load from this package's own gitignored fonts/ folder when a
+   local copy exists, never from hitchd.com: opening the guide must send no
+   request to the captured company, and DDNR is proprietary (docs/RIGHTS.md).
+   Without the files the stacks fall back to the named generics. */
+@font-face { font-display: swap; font-family: "Inter Variable"; font-style: normal; font-weight: 100 900; src: url(fonts/InterVariable.woff2) format("woff2"); }
+@font-face { font-display: swap; font-family: "DDNR"; font-style: normal; font-weight: 100 900; src: url(fonts/DDNR.woff2) format("woff2"); }
 :root {
   --palette-ink: #111212;
   --palette-cream: #f6f3ef;

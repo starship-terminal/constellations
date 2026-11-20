@@ -77,6 +77,51 @@ SPEC = {"_about": (
     "core": {}, "light": {}, "dark": {}, "component": {}}
 
 
+
+def gradient_stops(body):
+    """The colour stops of a linear-gradient() body after its angle, split on
+    top-level commas only (rgb(), oklab() keep their commas) and keeping an
+    explicit stop position; stops without one are spread evenly, as CSS does
+    between known neighbours (2026-11 audit, finding 14-29)."""
+    parts, depth, cur = [], 0, ""
+    for ch in body:
+        depth += ch == "("
+        depth -= ch == ")"
+        if ch == "," and depth == 0:
+            parts.append(cur.strip()); cur = ""
+        else:
+            cur += ch
+    parts.append(cur.strip())
+    stops = []
+    for p in parts:
+        m = re.fullmatch(r"(.+?\)|#[0-9a-fA-F]{3,8}|[a-z]+)(?:\s+(-?[\d.]+)%)?", p)
+        if not m:
+            raise ValueError(f"unreadable gradient stop {p!r}")
+        stops.append([m.group(1), None if m.group(2) is None else float(m.group(2)) / 100])
+    if stops[0][1] is None:
+        stops[0][1] = 0.0
+    if stops[-1][1] is None:
+        stops[-1][1] = 1.0
+    # CSS: a position smaller than an earlier one is moved up to it, before
+    # the missing positions are spread
+    top = float("-inf")
+    for st in stops:
+        if st[1] is not None:
+            st[1] = max(st[1], top)
+            top = st[1]
+    i = 0
+    while i < len(stops):
+        if stops[i][1] is None:
+            j = i
+            while stops[j][1] is None:
+                j += 1
+            a, b = stops[i - 1][1], stops[j][1]
+            for k in range(i, j):
+                stops[k][1] = a + (b - a) * (k - i + 1) / (j - i + 1)
+            i = j
+        i += 1
+    return [(c, round(pos, 4)) for c, pos in stops]
+
 def st(comp, state):
     return C[comp]["states"][state]["style"]
 
@@ -621,10 +666,8 @@ try:
     bgi = st("login-submit", "default")["backgroundImage"]
     m = re.fullmatch(r"linear-gradient\((-?[\d.]+)deg,\s*(.+)\)", bgi.strip())
     if m:
-        cols = [c.strip() for c in re.split(r",(?![^(]*\))", m.group(2))]
         login["submit-gradient"] = {
-            "$value": [{"color": norm_color(col), "position": round(i / (len(cols) - 1), 4)}
-                       for i, col in enumerate(cols)],
+            "$value": [{"color": norm_color(col), "position": pos} for col, pos in gradient_stops(m.group(2))],
             "$type": "gradient",
             "$extensions": {
                 "source": "computed backgroundImage of login-submit default on app.feedhive.com (raw/components-computed.json)",

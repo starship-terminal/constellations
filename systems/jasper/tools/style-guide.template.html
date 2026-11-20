@@ -77,7 +77,6 @@ function paint() {
 }
 document.getElementById("mode").onclick = () => {
   const on = document.documentElement.getAttribute("data-mode") === "dark";
-  document.documentElement.toggleAttribute ? null : null;
   if (on) document.documentElement.removeAttribute("data-mode");
   else document.documentElement.setAttribute("data-mode", "dark");
   paint();
