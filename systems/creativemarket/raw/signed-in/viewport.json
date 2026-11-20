@@ -1,0 +1,45 @@
+{
+  "harness": "T3 Code preview",
+  "profile": "default",
+  "signedIn": true,
+  "theme": "data-theme=legacy",
+  "colorScheme": "normal",
+  "desktop": {
+    "requested": {"width": 1440, "height": 900},
+    "measured": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2,
+      "visualViewport": {"width": 1440, "height": 900, "scale": 1}
+    },
+    "png": {"width": 2880, "height": 1800},
+    "note": "preview_resize reported a 1280x800 layout viewport while window.innerWidth stayed 1440. The saved PNGs are 2880x1800, matching the measured CSS viewport at devicePixelRatio 2."
+  },
+  "narrow": {
+    "requested": {"width": 390, "height": 844},
+    "measured": null,
+    "note": "not captured: preview_snapshot stopped producing frames before a phone resize"
+  },
+  "accountMenu": [
+    "My profile",
+    "My purchases",
+    "My collections",
+    "My likes",
+    "Messages",
+    "Notifications",
+    "Shop updates",
+    "Settings",
+    "Log out"
+  ],
+  "shopMenuInDomNotPainted": [
+    "Shop profiles",
+    "Dashboard",
+    "Sales",
+    "Payouts & taxes",
+    "Products",
+    "Add a new product",
+    "Marketing tools",
+    "Discounts",
+    "Settings"
+  ]
+}

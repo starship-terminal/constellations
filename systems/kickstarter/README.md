@@ -17,6 +17,7 @@ Kickstarter ships a real token layer, KDS: `--kds-color-*`, `--kds-elevation-*`,
 | [screenshots/](screenshots) | `{page}-light-{state}.png`. Desktop 1440 x 900 at 1x. `mobile-*` at 390 wide, 2x. `-full` pages are capped at eight chunks |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json), [components-computed.json](raw/components-computed.json), [motion.json](raw/motion.json) |
 | [tools/](tools) | Builders and the adapted capture kit |
+| [login-review.json](login-review.json) | Signed-in walk on 2026-11-20: nav, settings, create, screens, gaps, and what was not submitted |
 
 ## Do and don't
 
@@ -61,7 +62,7 @@ Fonts: `core.font.family.sans` is Inter, then 1 fallback. Scales, counted as [DE
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 77 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 78 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -163,6 +164,11 @@ Inter, loaded from Google Fonts (`fonts.googleapis.com`, weights 100–900, opti
 | Dark theme | not present | One light theme |
 | Desktop 1440 | captured | Sidecars record innerWidth 1440 |
 | Phone 390 | captured | `mobile-*` shots, deviceScaleFactor 2 |
+| Signed-in shell | captured | [recommendations-light-signed-in.png](screenshots/recommendations-light-signed-in.png), [login-review.json](login-review.json) |
+| Signed-in settings | captured | [settings-account-light-default.png](screenshots/settings-account-light-default.png), [settings-notifications-light-default.png](screenshots/settings-notifications-light-default.png). Payment methods and shipping address not opened |
+| Signed-in empty states | captured | Saved projects, messages, activity, following, profile backed list |
+| Switch | captured signed-in | Notification rows, left off. Not flipped |
+| Create a project | captured, not submitted | [start-project-light-step1.png](screenshots/start-project-light-step1.png). Step 1 of 3. Next not clicked |
 
 ## Rebuild
 
@@ -176,3 +182,27 @@ python3 tools/build_style_guide.py
 ```
 
 Run from `systems/kickstarter`. Scratch stays in `~/.design-systems/kickstarter/`.
+
+## Signed-in review
+
+Walked on 2026-11-20 in the T3 preview, default profile, already signed in. The account menu offered Profile, Saved projects, Recommended for you, Following, Settings, Messages, Activity, and Log out. No login wall and no robot check. Desktop CSS viewport was 1440 x 900 at devicePixelRatio 2 (PNG 2880 x 1800). Phone CSS viewport was 390 x 844 at devicePixelRatio 2 (PNG 780 x 1688). The Transcend consent card was hidden with CSS. Confirm and Accept all were not clicked.
+
+| Screen | File |
+|---|---|
+| Recommendations, account menu open | [recommendations-light-signed-in.png](screenshots/recommendations-light-signed-in.png) |
+| Settings, Account | [settings-account-light-default.png](screenshots/settings-account-light-default.png) |
+| Saved projects, empty | [saved-projects-light-empty.png](screenshots/saved-projects-light-empty.png) |
+| Profile, backed empty | [profile-light-empty.png](screenshots/profile-light-empty.png) |
+| Messages, inbox empty | [messages-light-empty.png](screenshots/messages-light-empty.png) |
+| Activity, empty | [activity-light-empty.png](screenshots/activity-light-empty.png) |
+| Settings, Notifications | [settings-notifications-light-default.png](screenshots/settings-notifications-light-default.png) |
+| Start a project, step 1 of 3 | [start-project-light-step1.png](screenshots/start-project-light-step1.png) |
+| Following, empty | [following-light-empty.png](screenshots/following-light-empty.png) |
+| Recommendations, phone | [recommendations-light-phone.png](screenshots/recommendations-light-phone.png) |
+| Account menu, phone | [account-menu-light-phone.png](screenshots/account-menu-light-phone.png) |
+| Settings, Account, phone | [settings-account-light-phone.png](screenshots/settings-account-light-phone.png) |
+| Account menu crop | [menu-account-open.png](components/crops/menu-account-open.png) |
+
+The email field on Settings was replaced in the page with `name@example.com` before the screenshot. The account was not saved. The recommendations location filter listed a saved city. Those radio labels were painted out of the screenshot before commit. Payment methods and shipping address were not opened. Create stopped at step 1. Next was disabled and was not clicked, so no project was created. Notification switches were left off. Log out was not clicked. The full list is [login-review.json](login-review.json).
+
+Signed-in controls that the public capture did not show: a switch row (notifications, off), an account menu, an empty saved-projects state, an empty inbox, and a blue primary button (Get started, `#2752ff`, the same blue as links). The public KDS tokens still hold the colour roles. These screenshots are layout evidence, not a second token set.

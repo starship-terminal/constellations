@@ -15,8 +15,9 @@ The reason Expedia is worth a capture: it is the reference implementation of the
 | [components.md](components.md) | The discovery list, one entry per component (57, 116 states) written in tokens with crops of the real product, the shared values (focus, motion, card shapes), and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the global header, the multi-product search card and its panels, the re-themed marketing bands, deal carousels, the results rail+cards split, the property card anatomy, the mobile shell |
 | [components/crops/](components/crops) | 115 element screenshots, `{component}-{state}.png`, at 2x |
-| [screenshots/](screenshots) | 16 `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 1x, `mobile-*` shots 390 x 844 at 2x; `-full` shots are whole pages; `home-i-*` is the hydrated home |
+| [screenshots/](screenshots) | 16 public `{page}-light-{state}.png` captures plus 12 signed-in `signed-in-*.png` shots. Public desktop shots are 1440 x 900 at 1x, `mobile-*` shots 390 x 844 at 2x. Signed-in shots are the live account at measured 1440 x 900 and 390 x 844, both at 2x |
 | [raw/](raw) | The unprocessed readings: every custom property the stylesheets declare with the theme-context resolution (`css-vars.json`), per-component computed styles (`components-computed.json`, `measurements.md`), the token tree the builders read (`component-tokens.json`), page geometry (`layout.json`, `pages.md`) |
+| [login-review.json](login-review.json) | Signed-in walk: nav, settings, and create that were opened, the screenshot for each, the gaps, and what was not submitted. The manifest flip is deferred |
 | [tools/](tools) | The builders and the capture kit. See [Rebuild](#rebuild) |
 
 ## Brief
@@ -119,7 +120,9 @@ State mechanics: `hover` is a real pointer hover, `focus-visible` a real keyboar
 
 Captured: the home page (hero, multi-product search card with all three field panels open, marketing band, deal carousels, sign-in card, Shop travel menu, footer), a hotel results page (compact search form, stay-type tabs, sort pill, filter rail with map card, property cards in full), and both at 390 wide, plus the hydrated calendar, travellers and destination states. See the Discovery list in [components.md](components.md) and [raw/pages.md](raw/pages.md).
 
-Not captured: anything behind sign-in (trips, account, member pricing, checkout, booking), any submitted search or applied filter/sort, flights/cars/packages/things-to-do/cruises result pages, the map view, and empty/error/loading states (the archived pages ship populated only). The live site itself is unreachable to automation — see the 429 note above.
+Signed-in walk, 2026-11-20, from an already signed-in Blue-tier account in the in-app preview (measured CSS viewport 1440 x 900 at 2x, and 390 x 844 at 2x). The account is empty. Opened read-only: account home, trips (booked empty), communications, rewards, coupons, reviews, help, notifications, credits, and the create-a-trip sheet (closed without Save). Phone-width copies of account home and trips are `signed-in-*-narrow.png`. The review is [login-review.json](login-review.json). `catalog.json` and the manifest flip are deferred.
+
+Still not captured: profile fields, security settings, payment methods, the messages tab, a submitted trip search, checkout, booking, member pricing on a results page, and any populated booking or save. List of favorites redirects to Trips Saved for this empty account. Public gaps that remain: applied filter/sort, flights/cars/packages/things-to-do/cruises result pages, and the map view. The public capture's 429 note still applies to automated requests.
 
 ## Do and don't
 
