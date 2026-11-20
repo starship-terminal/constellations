@@ -25,9 +25,19 @@ class TokensTest(unittest.TestCase):
         with self.assertRaises(SystemExit):
             build_tokens.check(bad)
 
-    def test_card_shadow_keeps_both_layers(self):
-        self.assertEqual(len(T["light"]["shadow"]["card"]["$value"]), 2)
-        self.assertIn("0px 0px 0.5px 0px", R["signin"]["card"]["boxShadow"])
+    def test_card_shadow_matches_both_layers_of_the_reading(self):
+        """Each token layer equals the matching layer of the saved computed box-shadow, read here
+        independently of the builder: colour as #rrggbbaa, then x, y, blur and spread."""
+        import re
+        layers = []
+        for m in re.finditer(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\) ([^ ,]+) ([^ ,]+) ([^ ,]+) ([^ ,]+)",
+                             R["signin"]["card"]["boxShadow"]):
+            r, g, b, a, x, y, blur, spread = m.groups()
+            alpha = float(a) if a is not None else 1.0
+            colour = "#%02x%02x%02x" % (int(r), int(g), int(b)) + ("%02x" % int(alpha * 255 + 0.5) if alpha < 1 else "")
+            layers.append({"color": colour, "offsetX": x, "offsetY": y, "blur": blur, "spread": spread})
+        self.assertEqual(len(layers), 2)
+        self.assertEqual(T["light"]["shadow"]["card"]["$value"], layers)
 
     def test_lemon_is_the_measured_fill(self):
         self.assertEqual(T["light"]["color"]["marketing"]["lemon"]["$value"], "#f7ff9e")
