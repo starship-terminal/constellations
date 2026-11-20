@@ -77,6 +77,7 @@ async function forcePseudo(loc, classes) {
 async function record(key, state, loc, meta, via) {
   const c = (out.components[key] ??= { states: {}, ...meta, url: current });
   Object.assign(c, meta, { url: current });
+  delete c.missing;   // found now: a missing flag seeded from the committed readings must not hide this reading
   c.states ??= {};
   try {
     await centre(loc);
@@ -100,6 +101,9 @@ async function states(key, loc, list, meta) {
     out.components[key] = { missing: true, ...meta, url: current, states: {} };
     return;
   }
+  // Found: start this component afresh, so neither an old missing flag nor states this run no longer
+  // reads survive from the committed file.
+  out.components[key] = { states: {}, ...meta, url: current };
   for (const st of list) {
     await reset();
     let undo;
