@@ -48,6 +48,14 @@ class DotenvIsolationTest(unittest.TestCase):
             self.assertEqual(chat._env.load_env(DOTENV_KEYS + ("DESIGN_SYSTEMS_PROVIDER_HOSTS",), env_file=env), [])
         self.assertFalse(any("from-dotenv" in os.environ.get(k, "") for k in DOTENV_KEYS))
 
+    def test_a_dotenv_is_not_even_opened_when_every_key_is_pinned(self):
+        # Bytes no locale decodes: reading the file at all would raise.
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            env = Path(d) / ".env"
+            env.write_bytes(b"\xff\xfe\x00 not text")
+            self.assertEqual(chat._env.load_env(DOTENV_KEYS + ("DESIGN_SYSTEMS_PROVIDER_HOSTS",), env_file=env), [])
+
 
 class SearchTest(unittest.TestCase):
     def test_systems_hits(self):
