@@ -85,6 +85,7 @@ Nothing was neutralised except a menu that a later navigation left open. Those s
 
 - The Features menu radius and shadow are not in the tokens. The DOM walk landed on a transparent wrapper. The crop shows the white list; do not invent a radius from it.
 - `#0373e9` is a pixel sample of the contact-us link, not a computed style.
+- [tokens.json](tokens.json) and [components.md](components.md) were written by hand from [raw/measurements.md](raw/measurements.md); no builder regenerates them from a measurement file, so a recapture must update them by hand. `tools/build_tokens.py` checks that every token has a source and that every colour labelled Measured is in raw/. Two colours are not: `core.color.green-deep` (`#103928`) and `core.color.muted` (`#5e5e5e`) were read on the home page but not saved, and are labelled Reconstruction, entered by hand at capture time.
 - Hover on Download did not change the fill. Do not invent a hover green.
 - The dark footer and the privacy hero are surfaces inside the one light theme. The `dark` token set is empty on purpose.
 - Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json), not from a photo in a screenshot.
