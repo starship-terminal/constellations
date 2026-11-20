@@ -3,8 +3,8 @@
 // directory has no node_modules of its own.
 import fs from 'node:fs';
 import path from 'node:path';
-import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { quantizeCrop } from '../crop.mjs';
 
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 export const { chromium } = pw.default ?? pw;
@@ -228,14 +228,9 @@ export async function centre(locator) {
   await locator.page().waitForTimeout(350);
 }
 
-// 256 colours, and a crop larger than about 1.2 megapixels (a whole sidebar or
-// section at 2x) is halved, so the folder stays small.
+// 256 colours, halved past the shared size rule (../crop.mjs, the same on every route).
 export function quantize(file) {
-  execFileSync(PYTHON, [
-    '-c',
-    'import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert("RGB")\nif im.width*im.height>1200000: im=im.resize((im.width//2, im.height//2), Image.LANCZOS)\nim.quantize(256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(f, optimize=True)',
-    file,
-  ]);
+  return quantizeCrop(file, PYTHON);
 }
 
 export function slug(s) {

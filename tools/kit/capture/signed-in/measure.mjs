@@ -27,9 +27,9 @@
 // file is aborted.
 import fs from 'node:fs';
 import path from 'node:path';
-import { execFileSync } from 'node:child_process';
 import { chromium, REF, RAW, CROPS, SNAPS, SCROLL, PYTHON, metaOf, newContext, openSnap, setLight } from './lib.mjs';
 import { safeUrl } from '../safe-url.mjs';
+import { quantizeCrop } from '../crop.mjs';
 
 if (!SNAPS) { console.error('SNAPS=<snapshot dir> is required'); process.exit(2); }
 const OUT = path.join(RAW, 'components-computed.json');
@@ -338,7 +338,7 @@ async function measureSnap(browser, label, specs, out) {
     if (clip.width < 1 || clip.height < 1) throw new Error('off screen');
     const file = path.join(CROPS, `${name}.png`);
     await page.screenshot({ path: file, clip, animations: 'allow' });
-    execFileSync(PYTHON, ['-c', 'import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert("RGB")\nif im.width>1600: im=im.resize((im.width//2, im.height//2), Image.LANCZOS)\nim.quantize(256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(f, optimize=True)', file]);
+    quantizeCrop(file, PYTHON);   // 256 colours, halved past the shared size rule (../crop.mjs)
     return path.relative(REF, file);
   };
 
