@@ -57,9 +57,11 @@ typography:
     fontFamily: "Libre Baskerville"
     fontSize: "32px"
     fontWeight: 400
-    lineHeight: "42px"
+    lineHeight: "41.6px"
 rounded:
   none: "0px"
+  sm: "2px"
+  md: "5px"
 spacing:
   "1": "4px"
   "2": "8px"
@@ -117,7 +119,7 @@ Captured 2026-11-18, signed out (every captured surface is public; sign-in, regi
 
 A token set and component reference for Literal.club's public signed-out site. Read from literal.club on 2026-11-18, signed out, in a real Chrome window (CDP) at 1440 x 900 and 390 x 844. Surfaces: home, Explore, one public book (`/book/the-midnight-library-mrpx0`), one public profile (`/kikimeower`), the sign-in and register cards, and the public pages for press, legal, privacy, terms, supporter, guides, developers, contact, the iPhone app, changelog, the tracker pitch, the club pitch, about, and the Goodreads import pitch.
 
-Literal ships a custom-property layer: `--text*`, `--ui*`, `--accent*`, and a 4px `--size-1` through `--size-40` scale. Light is `:root, :root.light`. Dark is `:root.dark` and `:root:not(.light)`, and it resolves when `prefers-color-scheme` is dark. No public theme toggle was found. Body type is Inter. Display type is Libre Baskerville. Measured controls are square.
+Literal ships a custom-property layer: `--text*`, `--ui*`, `--accent*`, and a 4px `--size-1` through `--size-40` scale. Light is `:root, :root.light`. Dark is `:root.dark` and `:root:not(.light)`, and it resolves when `prefers-color-scheme` is dark. No public theme toggle was found. Body type is Inter. Display type is Libre Baskerville. Header controls are square; buttons round their corners only slightly (2px and 5px).
 
 ## Colors
 
@@ -136,7 +138,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ### Fonts (from README.md)
 
-Inter (400, 500, 600) for UI, and Libre Baskerville (400, 700, italic) for display. Both load from the site's font CSS. The token stacks are `Inter, sans-serif` and `Libre Baskerville, Georgia, serif`. Literal does not publish a webfont licence on the captured pages. Fall back to the system sans and Georgia when those families are not available.
+Inter (400, 500, 600) for UI, and Libre Baskerville (400, 700, italic) for display. Both load from the site's font CSS. The token stacks are the measured `Inter, sans-serif` and `"Libre Baskerville", Georgia, serif`. Literal does not publish a webfont licence on the captured pages. Fall back to the system sans and Georgia when those families are not available.
 
 ## Layout
 
@@ -148,7 +150,7 @@ No shadow tokens were captured; depth comes from surface colours and borders. Se
 
 ## Shapes
 
-Corner radii from `core.radius`: `none` 0px.
+Corner radii from `core.radius`: `none` 0px, `sm` 2px, `md` 5px.
 
 ## Components
 
@@ -168,7 +170,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 1. **Do keep the page warm-white and the action green.** Light page is `#ffffff` (`light.ui.overlayBackground`). Body text is `#444340` (`light.text.primary`). Join and the sign-in submit are `#278458` (`light.accent.primary`). See [home-light-default](screenshots/home-light-default.png) and [signin-submit-default](components/crops/signin-submit-default.png).
 2. **Do set display type in Libre Baskerville and UI type in Inter.** The home hero is 40px serif. Body is 14px Inter. See [hero-title-default](components/crops/hero-title-default.png).
-3. **Do keep controls square.** Header Join, the sign-in submit, and Want to read measure `0px` radius (`core.radius.none`). See [nav-join-default](components/crops/nav-join-default.png).
+3. **Do keep corners tight.** Header Join is square, `0px` (`core.radius.none`). The sign-in submit, Sign in with Apple, Follow and Like round to `2px` (`core.radius.sm`), and Join for free and the App Store badge to `5px` (`core.radius.md`). Want to read is a split button: only its left corners round, to 4px. See [nav-join-default](components/crops/nav-join-default.png) and [signin-submit-default](components/crops/signin-submit-default.png).
 4. **Do use the 4px size scale.** `--size-1` is 4px and the steps run to `--size-40` at 160px (`core.spacing.1` through `core.spacing.40`). See [raw/css-vars.json](raw/css-vars.json).
 5. **Do paint dark from the product's own dark set.** Text becomes `#f9f9f9` and the green becomes `#33bb7a` with black label text. See [home-dark-default](screenshots/home-dark-default.png).
 6. **Don't invent a theme toggle.** None was found. Dark was read by emulating `prefers-color-scheme: dark`, which selects the live `:root.dark` rules. See [raw/css-vars.json](raw/css-vars.json).
@@ -180,7 +182,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Named gradients (`--sunny`, `--barbie`, `--grassy`, and the rest) are gradients, not colour roles, and are not in `tokens.json`. `--uiBackdrop` in dark is `hsl()`, and it is left in the raw file.
 - The product CSS declares `--uiBaseight` and `--uiBoxight` (missing an `l`). Those names are not republished as tokens.
 - `--avatarRadius` is `40%`. The profile avatar measured 130px. A percentage is not a px dimension, so it is not a radius token. `core.radius.none` is the measured control radius, `0px`.
-- Type roles are computed sizes (hero, sign-in heading, book title, body), not a declared type-token group. The spacing scale is the declared `--size-*` list.
+- Type roles are computed sizes (hero, sign-in heading, book title), not a declared type-token group. `core.typography.body` (14px / 20px / 400) was entered by hand at capture time and is labelled Reconstruction: no raw reading holds the body element, and inherited Inter text measures a 20.3px line height. The spacing scale is the declared `--size-*` list.
 - Screenshots are 256-colour PNGs. Read colours from tokens, not from the images.
 - Focus-visible on some green buttons flips the label toward `#444340` while the fill stays green. That is the computed value. It is recorded as measured.
+- Every committed reading and screenshot was taken past Cloudflare's managed challenge, in a Chrome window where it had cleared on its own (see How the values were read). A recapture under the current scripts stops at a challenge instead.
 - The developers full page is a long stitch (eight chunks). It is a bound, not the entire document if the page is longer.
