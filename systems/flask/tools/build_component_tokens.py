@@ -337,6 +337,59 @@ def semcolor(raw, src, desc):
     return lit(value, "color", src + (f"; matches declared {alias}" if alias else ""), desc)
 
 
+TRANSPARENT = re.compile(r"transparent|rgba\(\s*\d+,\s*\d+,\s*\d+,\s*0(\.0+)?\s*\)")
+SIDES = {"to top": "0deg", "to right": "90deg", "to bottom": "180deg", "to left": "270deg"}
+
+
+def split_top(v):
+    out, depth, cur = [], 0, ""
+    for ch in v:
+        depth += ch == "("
+        depth -= ch == ")"
+        if ch == "," and depth == 0:
+            out.append(cur.strip())
+            cur = ""
+        else:
+            cur += ch
+    return out + [cur.strip()]
+
+
+def gradient_of(comp, state):
+    """The element's own linear-gradient backgroundImage as a DTCG gradient, or None."""
+    img = st(comp, state).get("backgroundImage") or ""
+    m = re.fullmatch(r"linear-gradient\((.*)\)", img.strip())
+    if not m:
+        return None
+    parts = split_top(m.group(1))
+    angle = "180deg"
+    if parts[0] in SIDES or re.fullmatch(r"-?[\d.]+deg", parts[0]):
+        angle = SIDES.get(parts[0], parts[0])
+        parts = parts[1:]
+    stops = []
+    for i, part in enumerate(parts):
+        mm = re.fullmatch(r"(rgba?\([^)]*\))\s*(?:([\d.]+)%)?", part)
+        if not mm:
+            raise ValueError(f"{comp} {state}: gradient stop {part!r}")
+        pos = float(mm.group(2)) / 100 if mm.group(2) else i / max(1, len(parts) - 1)
+        stops.append({"color": norm_color(mm.group(1)), "position": round(pos, 4)})
+    return {"value": stops, "type": "gradient", "angle": angle,
+            "source": f"computed backgroundImage of {comp} {state} ({img}); its backgroundColor reads transparent (raw/components-computed.json)"}
+
+
+def painted_ring(comp, state):
+    """The focus ring as painted: the outline when it has a style and a width, else the first
+    box-shadow layer that draws a solid spread ring (Tailwind's ring utilities)."""
+    s = st(comp, state)
+    if s.get("outlineStyle") not in (None, "none", "auto") and s.get("outlineWidth", "0px") not in ("0px", "0"):
+        return s["outlineColor"], f"computed outlineColor of {comp} {state} (raw/components-computed.json)"
+    for layer in split_top(s.get("boxShadow") or ""):
+        mm = re.fullmatch(r"(rgba?\([^)]*\))\s+0px\s+0px\s+0px\s+([\d.]+)px(\s+inset)?", layer)
+        if mm and float(mm.group(2)) > 0 and not TRANSPARENT.fullmatch(norm_color(mm.group(1))):
+            return mm.group(1), (f"computed boxShadow ring of {comp} {state} ({mm.group(2)}px spread; the outline is "
+                                 f"{s.get('outlineStyle')} {s.get('outlineWidth')}) (raw/components-computed.json)")
+    raise KeyError(f"{comp} {state}: no painted ring")
+
+
 sem = dark
 for key, comp, state, prop, group, desc in [
     ("ink", "hero-h1", "default", "color", "text",
@@ -396,6 +449,15 @@ for key, comp, state, prop, group, desc in [
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
         if raw in (None, ""):
             raise KeyError(prop)
+        if prop == "outlineColor":
+            raw, src = painted_ring(comp, state)
+        if prop == "backgroundColor" and TRANSPARENT.fullmatch(norm_color(raw)):
+            # A transparent reading paints nothing: the fill is a gradient on the same element
+            # (the light brand-grey button face), or there is no fill to commit.
+            grad = gradient_of(comp, state)
+            if grad:
+                sem.setdefault(group, {})[key] = grad | {"description": desc}
+            continue
         sem.setdefault(group, {})[key] = semcolor(raw, src, desc)
     except KeyError:
         pass
@@ -502,5 +564,6 @@ for name, cname, state, prop, ty_, desc in [
     except KeyError:
         pass
 
-(RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
-print("component-tokens.json:", {k: len(v) for k, v in SPEC.items() if k != "_about"})
+if __name__ == "__main__":
+    (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
+    print("component-tokens.json:", {k: len(v) for k, v in SPEC.items() if k != "_about"})

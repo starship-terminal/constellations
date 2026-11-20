@@ -134,10 +134,13 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   // flask.do paints one theme: the dark set is the palette, resolved under
   // the body's .dark scope.
   for (const [setname, label] of [['dark', 'the dark roles — the only theme the site ships']]) {
-    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    // gradient roles (the CTA faces) swatch too: their custom property holds
+    // the whole linear-gradient(), and the value line lists the stops
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => (t.t === 'color' || t.t === 'gradient') && !n.startsWith('component'));
     if (!roles.length) continue;
     h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    const shown = (t) => t.t === 'gradient' && Array.isArray(t.v) ? t.v.map((s) => `${s.color} ${Math.round(s.position * 100)}%`).join(', ') : t.v;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(shown(t))}</div></div></div>`;
     h += '</div>';
   }
   $('#roles-out').innerHTML = h;
