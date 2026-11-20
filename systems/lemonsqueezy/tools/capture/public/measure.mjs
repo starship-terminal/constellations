@@ -11,7 +11,10 @@ import { BASE, DOCS, AUTH, launch, open, hideConsent, styleOf, crop, centre, RAW
 
 const OUT = path.join(RAW, 'components-computed.json');
 fs.mkdirSync(RAW, { recursive: true });
-const out = { _meta: { captured: '2026-11-18', product: 'Lemon Squeezy', route: 'public-web' }, components: {} };
+// Start from the committed readings so a run that fails part-way never drops a component it did
+// not reach (measure-gated.mjs adds its entries to the same file).
+const prior = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { components: {} };
+const out = { _meta: { ...prior._meta, captured: new Date().toLocaleDateString('en-CA'), product: 'Lemon Squeezy', route: 'public-web' }, components: { ...prior.components } };
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 
@@ -75,12 +78,17 @@ async function measure(key, state, loc, opts = {}) {
     c.states[state] = { ...s, crop: file, via: opts.via };
     log('  ', key, state, Math.round(s.rect.w) + 'x' + Math.round(s.rect.h), s.style.backgroundColor, s.style.color);
   } catch (e) {
-    c.states[state] = { error: String(e.message || e).slice(0, 200) };
+    // A failed re-read keeps the committed reading and notes the failure beside it.
+    const prior = c.states[state];
+    c.states[state] = prior && !prior.error
+      ? { ...prior, recaptureError: String(e.message || e).slice(0, 200) }
+      : { error: String(e.message || e).slice(0, 200) };
     log('  !', key, state, String(e.message).slice(0, 140));
   }
 }
 
 function comp(key, meta) {
+  const prev = out.components[key];
   out.components[key] = {
     page: current,
     url: meta.url,
@@ -88,7 +96,7 @@ function comp(key, meta) {
     group: meta.group,
     desc: meta.desc,
     selector: meta.sel,
-    states: {},
+    states: { ...(prev?.states || {}) },
   };
 }
 
@@ -96,7 +104,8 @@ async function S(key, target, list, meta, opts = {}) {
   comp(key, meta);
   const loc = target.filter({ visible: true }).first();
   if (!(await loc.count())) {
-    out.components[key].missing = true;
+    if (Object.keys(out.components[key].states).length) out.components[key].recaptureMissed = new Date().toLocaleDateString('en-CA');
+    else out.components[key].missing = true;
     log('  ! missing', key);
     return;
   }

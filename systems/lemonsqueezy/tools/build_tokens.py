@@ -7,6 +7,11 @@ Sources, read on 2026-11-18:
 
 The marketing site declares one light palette. A --dark-mode-bg-lighter name
 exists and is unused on the captured pages, so there is no dark set.
+Every dimension, type role and component colour that a measured element holds
+is read from raw/ through measured(), which stops the build when the reading is
+missing. The few values no capture measured (the home h1, .text-size-xlarge,
+the hero paragraph, the medium label, the code role and the nav scrim) were
+entered by hand at capture time and carry the Reconstruction label.
 Deterministic: same inputs, same bytes.
 """
 import json
@@ -75,7 +80,27 @@ def num(value, source, ty="number"):
 
 def measured(comp, state, prop):
     st = C["components"][comp]["states"][state]
+    if st.get("error") or prop not in (st.get("style") or {}):
+        raise SystemExit(f"no reading of {prop} on {comp}/{state}")
     return st["style"][prop], f"computed {prop} on {comp}/{state} ({st.get('classes', '')}), {C['components'][comp]['url']}"
+
+
+def mdim(comp, prop, state="default", note=""):
+    """A dimension read from the component's computed style, never typed in."""
+    value, source = measured(comp, state, prop)
+    return dim(value, source + (note and "; " + note))
+
+
+def mcolor(comp, prop, state="default"):
+    value, source = measured(comp, state, prop)
+    return color(comp, value=value, source=source)
+
+
+HAND = "Reconstruction: entered by hand at capture time; no raw reading holds this value"
+
+
+def hand(note):
+    return HAND + "; " + note
 
 
 def ramp(prefix, steps):
@@ -86,6 +111,23 @@ def ramp(prefix, steps):
             raise KeyError(var)
         out[step] = color(step, var=var)
     return out
+
+
+def ms(comp):
+    value, source = measured(comp, "default", "transitionDuration")
+    m = re.fullmatch(r"([\d.]+)(m?s)", value.split(",")[0].strip())
+    if not m:
+        raise SystemExit(f"{comp} transitionDuration not understood: {value}")
+    n = float(m.group(1)) * (1 if m.group(2) == "ms" else 1000)
+    return "%gms" % n, source
+
+
+def bezier(comp, points):
+    value, source = measured(comp, "default", "transitionTimingFunction")
+    want = "cubic-bezier(%s)" % ", ".join("%g" % p for p in points)
+    if value.split(",  ")[0].strip() != want and not value.startswith(want):
+        raise SystemExit(f"{comp} timing function is {value}, not {want}")
+    return source
 
 
 core = {
@@ -178,14 +220,8 @@ core = {
     },
     "font": {
         "family": {
-            "display": font_family(
-                '"Circularpro book", sans-serif',
-                "computed font-family on h1.heading-xxlarge, www.lemonsqueezy.com, 2026-11-18",
-            ),
-            "sans": font_family(
-                "Inter, sans-serif",
-                "computed font-family on body and .nav_button, www.lemonsqueezy.com, 2026-11-18",
-            ),
+            "display": font_family(*measured("price-card", "default", "fontFamily")),
+            "sans": font_family(*measured("nav-button", "default", "fontFamily")),
             "mono": font_family(
                 "Jetbrainsmono, ui-monospace, monospace",
                 "@font-face Jetbrainsmono in the Webflow stylesheet (raw/css-vars.json fonts)",
@@ -194,28 +230,28 @@ core = {
     },
     "typography": {},
     "radius": {
-        "pill": dim("40px", "computed border-radius on .nav_button and .button-primary"),
-        "control": dim("8px", "computed border-radius on auth input.form-input and button.btn-primary"),
-        "docs": dim("8px", "computed border-radius on docs sidebar row"),
-        "none": dim("0px", "computed border-radius on .banner"),
+        "pill": mdim("nav-button", "borderTopLeftRadius"),
+        "control": mdim("login-email", "borderTopLeftRadius"),
+        "docs": mdim("docs-nav", "borderTopLeftRadius"),
+        "none": mdim("banner", "borderTopLeftRadius"),
     },
     "space": {
-        "1": dim("4px", "docs sidebar row padding-top, docs.lemonsqueezy.com"),
-        "2": dim("8px", "computed padding-top on .nav_button"),
-        "3": dim("12px", "docs sidebar row padding-right"),
-        "4": dim("16px", "computed padding-left on auth input.form-input"),
-        "5": dim("20px", "computed padding-left on .nav_button"),
-        "6": dim("24px", "body line-height step used as a spacing unit on the marketing nav"),
-        "8": dim("32px", "4px base times 8, the step the nav and docs rows sit on"),
-        "10": dim("40px", "computed height of .nav_button"),
+        "1": mdim("docs-nav", "paddingTop"),
+        "2": mdim("nav-button", "paddingTop"),
+        "3": mdim("docs-nav", "paddingRight"),
+        "4": mdim("login-email", "paddingLeft"),
+        "5": mdim("nav-button", "paddingLeft"),
+        "6": dim(*(lambda v, s: (v, "Derived: " + s + "; a line-height reused as a spacing step, not a measured gap"))(*measured("nav-button", "default", "lineHeight"))),
+        "8": mdim("nav-link", "paddingTop"),
+        "10": mdim("nav-button", "height"),
     },
     "size": {
-        "nav-button": dim("40px", "computed height on .nav_button"),
-        "field": dim("40px", "computed height on auth input[type=email]"),
-        "submit": dim("48px", "computed height on button.btn-primary"),
-        "orchid": dim("46px", "computed height on .button-primary-small"),
-        "icon-button": dim("40px", "computed height on .w-nav-button at 390"),
-        "checkbox": dim("16px", "computed height on the remember-me checkbox"),
+        "nav-button": mdim("nav-button", "height"),
+        "field": mdim("login-email", "height"),
+        "submit": mdim("login-submit", "height"),
+        "orchid": mdim("button-orchid", "height"),
+        "icon-button": mdim("menu-button", "height", note="mobile home at 390"),
+        "checkbox": mdim("login-remember", "height"),
     },
     "stroke": {
         "hairline": dim("1px", "auth field inset ring is 1px (computed box-shadow spread)"),
@@ -223,8 +259,8 @@ core = {
     },
     "motion": {
         "duration": {
-            "fast": num("100ms", "computed transition-duration 0.1s on .nav_button and .button-primary", "duration"),
-            "docs": num("150ms", "computed transition-duration 0.15s on the docs sidebar row", "duration"),
+            "fast": num(*ms("nav-button"), "duration"),
+            "docs": num(*ms("docs-nav"), "duration"),
         },
         "easing": {
             "ease": {
@@ -235,13 +271,20 @@ core = {
             "standard": {
                 "$value": [0.4, 0, 0.2, 1],
                 "$type": "cubicBezier",
-                "$extensions": {"source": "computed cubic-bezier(0.4, 0, 0.2, 1) on the docs sidebar row"},
+                "$extensions": {"source": bezier("docs-nav", [0.4, 0, 0.2, 1])},
             },
         },
     },
 }
 
-TYPE_SRC = "computed on www.lemonsqueezy.com home, 2026-11-18"
+def mtypo(family, comp, state="default"):
+    """A type role read from one measured element."""
+    st = C["components"][comp]["states"][state]["style"]
+    _, source = measured(comp, state, "fontSize")
+    tracking = st["letterSpacing"]
+    return typo(family, st["fontSize"], int(st["fontWeight"]), st["lineHeight"],
+                "0px" if tracking == "normal" else tracking, source.replace("computed fontSize", "computed type"))
+
 
 def typo(family, size, weight, line, tracking, source):
     return {
@@ -257,14 +300,14 @@ def typo(family, size, weight, line, tracking, source):
     }
 
 core["typography"] = {
-    "display": typo("{font.family.display}", "80px", 400, "80px", "-3.2px", TYPE_SRC + " h1.heading-xxlarge"),
-    "heading": typo("{font.family.display}", "56px", 400, "63.84px", "-1.68px", TYPE_SRC + " FAQ h2"),
-    "title": typo("{font.family.display}", "26px", 400, "31.72px", "-0.52px", TYPE_SRC + " .text-size-xlarge"),
-    "body": typo("{font.family.sans}", "18px", 400, "30.6px", "0px", TYPE_SRC + " hero paragraph"),
-    "body-strong": typo("{font.family.sans}", "15px", 500, "24px", "-0.15px", "computed on .nav_button"),
-    "label": typo("{font.family.sans}", "14px", 500, "22.4px", "0px", TYPE_SRC + " .text-size-small.text-weight-medium"),
-    "caption": typo("{font.family.sans}", "14px", 400, "22.4px", "0px", TYPE_SRC + " .text-size-small"),
-    "code": typo("{font.family.mono}", "14px", 400, "22.4px", "0px", "@font-face Jetbrainsmono; size matches the caption step, not a measured code block"),
+    "display": typo("{font.family.display}", "80px", 400, "80px", "-3.2px", hand("the home h1.heading-xxlarge, which no capture measured")),
+    "heading": mtypo("{font.family.display}", "price-card"),
+    "title": typo("{font.family.display}", "26px", 400, "31.72px", "-0.52px", hand(".text-size-xlarge on the home page, which no capture measured")),
+    "body": typo("{font.family.sans}", "18px", 400, "30.6px", "0px", hand("the home hero paragraph, which no capture measured")),
+    "body-strong": mtypo("{font.family.sans}", "nav-button"),
+    "label": typo("{font.family.sans}", "14px", 500, "22.4px", "0px", hand(".text-size-small.text-weight-medium, which no capture measured")),
+    "caption": mtypo("{font.family.sans}", "footer-link"),
+    "code": typo("{font.family.mono}", "14px", 400, "22.4px", "0px", hand("the @font-face Jetbrainsmono family at the caption size; no code block was measured")),
 }
 
 light = {
@@ -275,12 +318,12 @@ light = {
         "footer": color("footer", var="--purple-600", source="footer_component.background-color-blue paints --purple-600; confirmed on the home screenshot"),
         "raised": color("raised", var="--grey-50"),
         "overlay": color("overlay", var="--purple-600"),
-        "scrim": color("scrim", value="rgba(18, 18, 23, 0.4)", source="Derived from --black-2 at 40% for the mobile nav overlay; the menu itself paints --purple-600"),
+        "scrim": color("scrim", value="rgba(18, 18, 23, 0.4)", source=hand("--black-2 at 40% for a mobile nav overlay; the menu itself paints --purple-600")),
     },
     "text": {
         "primary": color("primary", var="--black-2"),
         "secondary": color("secondary", var="--gray-500"),
-        "muted": color("muted", value="rgba(255, 255, 255, 0.6)", source="computed color on .nav_link at rest"),
+        "muted": mcolor("nav-link", "color"),
         "on-accent": color("on-accent", var="--white-900"),
         "on-hero": color("on-hero", var="--white-900"),
         "link": color("link", var="--purple-500"),
@@ -292,7 +335,7 @@ light = {
         "focus": color("focus", var="--purple-500"),
     },
     "accent": color("accent", var="--purple-500"),
-    "accent-hover": color("accent-hover", value="#7e59ed", source="computed background-color on button.btn-primary:hover, auth.lemonsqueezy.com/login"),
+    "accent-hover": mcolor("login-submit", "backgroundColor", "hover"),
     "accent-pressed": color("accent-pressed", var="--purple-700"),
     "status": {
         "success": color("success", var="--green-500"),
@@ -307,12 +350,12 @@ light = {
     "component": {
         "button-bg": color("button-bg", var="--button-primary-light"),
         "button-text": color("button-text", var="--black-2"),
-        "button-radius": dim("40px", "computed border-radius on .button-primary"),
-        "button-height": dim("40px", "computed height on .nav_button"),
+        "button-radius": mdim("button-primary", "borderTopLeftRadius"),
+        "button-height": mdim("nav-button", "height"),
         "field-bg": color("field-bg", var="--white-900"),
-        "field-text": color("field-text", value="#25252d", source="computed color on auth input[type=email]"),
-        "field-radius": dim("8px", "computed border-radius on auth input.form-input"),
-        "field-height": dim("40px", "computed height on auth input[type=email]"),
+        "field-text": mcolor("login-email", "color"),
+        "field-radius": mdim("login-email", "borderTopLeftRadius"),
+        "field-height": mdim("login-email", "height"),
     },
 }
 
