@@ -704,6 +704,22 @@ class ProviderKeyTest(TempConfig):
         self.call("post", "/api/provider", {**GOOD, "api_key": KEY2})
         self.assertEqual((self.config / "provider.db").stat().st_mode & 0o777, 0o600)
 
+    def test_a_damaged_file_is_recognised_without_error_codes(self):
+        # Python before 3.11 gives sqlite3 errors no sqlite_errorcode; the
+        # store then reads SQLite's message text.
+        self.config.mkdir(parents=True)
+        db = self.config / "provider.db"
+        db.write_text(("damaged %s " % KEY) * 300)
+        with mock.patch.object(self.store, "_error_code", lambda cause: None):
+            h = self.call("delete", "/api/provider")
+            self.assertEqual((h.status, h.json()["removed"]), (200, True))
+            self.assertFalse(db.exists())
+            # A busy lock's text is not damage: it is still never deleted.
+            busy = self.store._store_error("x", __import__("sqlite3").OperationalError("database is locked"))
+            self.assertFalse(busy.damaged)
+            malformed = self.store._store_error("x", __import__("sqlite3").DatabaseError("database disk image is malformed"))
+            self.assertTrue(malformed.damaged)
+
     def test_a_busy_database_is_never_deleted(self):
         import sqlite3
         self.call("post", "/api/provider", {**GOOD, "api_key": KEY})

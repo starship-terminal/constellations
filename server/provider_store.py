@@ -63,11 +63,25 @@ _SQLITE_CORRUPT = 11
 _SQLITE_NOTADB = 26
 
 
+# SQLite's own text for those two codes, for Pythons before 3.11, where
+# sqlite3 errors carry no sqlite_errorcode.
+_DAMAGED_TEXT = ("file is not a database", "database disk image is malformed")
+
+
+def _error_code(cause: BaseException | None):
+    """SQLite's result code on an error (Python 3.11 and later), else None."""
+    code = getattr(cause, "sqlite_errorcode", None)
+    return code if isinstance(code, int) else None
+
+
 def _store_error(message: str, cause: BaseException | None = None) -> StoreError:
     err = StoreError(message)
-    code = getattr(cause, "sqlite_errorcode", None)
-    if isinstance(code, int):
+    code = _error_code(cause)
+    if code is not None:
         err.damaged = (code & 0xFF) in (_SQLITE_CORRUPT, _SQLITE_NOTADB)
+    elif isinstance(cause, sqlite3.DatabaseError):
+        text = str(cause).lower()
+        err.damaged = any(t in text for t in _DAMAGED_TEXT)
     return err
 
 
