@@ -4681,9 +4681,9 @@
       "description": "Interior Design Project Management Software",
       "status": "pending",
       "package": null,
-      "notes": "https://app.programa.design/login asks for email and password, or Google, Trimble, or Xero. Password not submitted.",
+      "notes": "https://app.programa.design/login asks for email and password, or Google, Trimble, or Xero. Password not submitted. Public walk 2026-11-21: the header logo returns home. Features, Solutions, and Learn open menus. Pricing opens /pricing. Log in opens app.programa.design/login. Start free opens /register and that branch stops. On a phone, Open menu expands the same sections. The footer links to features, suppliers, about, blog, editorial, legal pages, and external careers, help, and social hosts. The sitemap listed 441 paths, mostly blog and editorial articles. Google, Trimble, and Xero were not clicked. No email was typed. No form was submitted. Public package in PR 1558 at 0f258288e55e. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 14
     },
     {
