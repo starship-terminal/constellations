@@ -436,13 +436,39 @@ RAW_TEXT = re.sub(r"\s+", "", (HERE / "raw" / "readings.json").read_text().lower
 HAND_NOTE = "Entered by hand at capture time; raw/readings.json holds no reading of this value."
 
 
+
+def _colours(text):
+    """Every colour written in raw/, as (r, g, b, alpha): rgb()/rgba() with commas, spaces or a slash
+    alpha, and #rgb/#rrggbb/#rrggbbaa."""
+    out = []
+    for m in re.finditer(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)\s*(?:[,/]\s*(\d*\.?\d+)(%?))?\s*\)", text):
+        a = 1.0 if m.group(4) is None else float(m.group(4)) / (100 if m.group(5) else 1)
+        out.append((int(m.group(1)), int(m.group(2)), int(m.group(3)), a))
+    for m in re.finditer(r"#([0-9a-f]{8}|[0-9a-f]{6}|[0-9a-f]{3})(?![0-9a-z])", text):
+        out.append(_hex(m.group(0)))
+    return out
+
+
+def _hex(value):
+    h = value.lstrip("#")
+    if len(h) == 3:
+        h = "".join(c * 2 for c in h)
+    return (int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16), int(h[6:8], 16) / 255 if len(h) == 8 else 1.0)
+
+
+RAW_COLOURS = _colours((HERE / "raw" / "readings.json").read_text().lower())
+
+
+def colour_in_raw(value):
+    """A hex colour is backed only by a raw colour with the same channels and the same opacity."""
+    r, g, b, a = _hex(value)
+    return any((r, g, b) == c[:3] and abs(a - c[3]) <= 0.01 for c in RAW_COLOURS)
+
 def in_raw(value):
     v = str(value).strip().lower()
     forms = {v.replace(" ", "")}
-    m = re.fullmatch(r"#([0-9a-f]{6})([0-9a-f]{2})?", v)
-    if m:
-        r, g, b = (int(m.group(1)[i:i + 2], 16) for i in (0, 2, 4))
-        forms |= {f"rgb({r},{g},{b})", f"rgba({r},{g},{b},"}
+    if re.fullmatch(r"#[0-9a-f]{6}([0-9a-f]{2})?", v):
+        return colour_in_raw(v)
     m = re.fullmatch(r"(\d*\.?\d+)ms", v)
     if m:
         forms.add(f"{float(m.group(1)) / 1000:g}s")

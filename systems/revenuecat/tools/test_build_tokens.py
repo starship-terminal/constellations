@@ -50,5 +50,22 @@ class BuildTokensTest(unittest.TestCase):
         self.assertEqual(missing, [])
 
 
+
+class MatcherTest(unittest.TestCase):
+    """The colour matcher on fixed inputs: opacity has to match as well as the channels."""
+
+    def setUp(self):
+        self.saved = list(build_tokens.RAW_COLOURS)
+
+    def tearDown(self):
+        build_tokens.RAW_COLOURS[:] = self.saved
+
+    def test_opacity_must_match(self):
+        build_tokens.RAW_COLOURS[:] = build_tokens._colours("rgba(0, 0, 0, 0) rgb(20, 22, 27) #778aff80")
+        self.assertFalse(build_tokens.colour_in_raw("#000000"))
+        self.assertTrue(build_tokens.colour_in_raw("#14161b"))
+        self.assertFalse(build_tokens.colour_in_raw("#778aff"))
+        self.assertTrue(build_tokens.colour_in_raw("#778aff80"))
+
 if __name__ == "__main__":
     unittest.main()
