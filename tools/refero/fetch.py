@@ -377,12 +377,10 @@ def fetch_one(uuid):
     return uuid, url, result, design_md, style_name(result, page), extract_media(page)
 
 
-def write_atomic(path, text):
-    """Write text to path via a sibling .tmp file and rename, so a crash can
-    never leave a truncated file behind."""
-    tmp = path.with_name(path.name + ".tmp")
-    tmp.write_text(text)
-    os.replace(tmp, path)
+# A unique temp file and a rename, so a crash never leaves a truncated file
+# and two processes writing one file (classify and backfill both write
+# meta.json) cannot rename each other's half-written copy.
+write_atomic = refero_dump.write_atomic
 
 
 def style_dir(slug, old_slug=None):

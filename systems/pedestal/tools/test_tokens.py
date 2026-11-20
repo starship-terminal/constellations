@@ -24,6 +24,12 @@ def walk(node, prefix=""):
             yield from walk(value, path)
 
 
+def hex_of(rgb):
+    """rgb(250, 250, 250) as #fafafa."""
+    parts = [int(n) for n in rgb[rgb.index("(") + 1:rgb.index(")")].split(",")[:3]]
+    return "#{:02x}{:02x}{:02x}".format(*parts)
+
+
 class TokenTest(unittest.TestCase):
     def test_every_token_names_a_source(self):
         missing = [path for path, token in walk(TOKENS["core"]) if "source" not in token.get("$extensions", {})]
@@ -31,11 +37,11 @@ class TokenTest(unittest.TestCase):
         self.assertEqual(missing, [])
 
     def test_page_and_action_match_the_computed_styles(self):
-        self.assertEqual(TOKENS["light"]["background"]["page"]["$value"], "#fafafa")
-        self.assertEqual(TOKENS["light"]["background"]["action"]["$value"], "#0a4afd")
-        self.assertEqual(TOKENS["light"]["text"]["primary"]["$value"], "#212121")
-        self.assertEqual(READINGS["body"]["backgroundColor"], "rgb(250, 250, 250)")
-        self.assertEqual(READINGS["components"]["primaryButton"]["background"], "rgb(10, 74, 253)")
+        # Each token against its own reading, not against a literal typed here.
+        self.assertEqual(TOKENS["light"]["background"]["page"]["$value"], hex_of(READINGS["body"]["backgroundColor"]))
+        self.assertEqual(TOKENS["light"]["background"]["action"]["$value"],
+                         hex_of(READINGS["components"]["primaryButton"]["background"]))
+        self.assertEqual(TOKENS["light"]["text"]["primary"]["$value"], hex_of(READINGS["body"]["color"]))
 
     def test_light_only(self):
         self.assertNotIn("dark", TOKENS)

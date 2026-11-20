@@ -15,38 +15,79 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import catalog  # noqa: E402
 
 
-class ManifestTest(unittest.TestCase):
-    SYSTEMS = [{"slug": "alpha", "url": "https://www.alpha.example"}, {"slug": "beta", "url": "https://app.beta.example"}]
+class UntestedHelpersTest(unittest.TestCase):
+    """latest_scores, list_images' preview.exclude, the thumbnail cache, and repo_file's
+    guard outside a git checkout."""
 
-    def manifest(self, *apps, totals=None):
-        apps = list(apps)
-        batches = max((a.get("batch", 1) for a in apps), default=0)
-        return {"totals": totals or {"apps": len(apps), "batches": batches}, "apps": apps}
+    def test_latest_scores_counts_grades_and_keeps_failing_contrast(self):
+        criteria = {"criteria": [{"id": "F15"}, {"id": "C1"}, {"id": "V1"}]}
+        audits = [{"date": "2026-01-01", "systems": [{"slug": "x", "grades": {}}]},
+                  {"date": "2026-01-02", "systems": [
+                      {"slug": "x", "grades": {"F15": {"grade": "partly", "evidence": "Script: 3.9:1 muted"},
+                                               "C1": {"grade": "meets", "evidence": "e"},
+                                               "V1": {"grade": "na", "evidence": "e"}}},
+                      {"slug": "y", "grades": {"F15": {"grade": "meets", "evidence": "Script: ok"}}}]}]
+        import scorecard
+        with mock.patch.object(scorecard, "load", return_value=(criteria, audits)), \
+                mock.patch.object(scorecard, "check", return_value=[]):
+            out = catalog.latest_scores()
+        self.assertEqual(out["x"]["meets"], 1)
+        self.assertEqual(out["x"]["partly"], 1)
+        self.assertEqual((out["x"]["applicable"], out["x"]["date"]), (2, "2026-01-02"))
+        self.assertEqual(out["x"]["contrast"], "3.9:1 muted")
+        self.assertIsNone(out["y"]["contrast"])
 
-    def app(self, domain, status, package=None, batch=1):
-        return {"domain": domain, "status": status, "package": package, "batch": batch}
+    def test_latest_scores_exits_on_malformed_audit_data(self):
+        import scorecard
+        with mock.patch.object(scorecard, "load", return_value=({"criteria": []}, [{"date": "d", "systems": []}])), \
+                mock.patch.object(scorecard, "check", return_value=["d: a systems entry is not an object"]), \
+                self.assertRaises(SystemExit) as e:
+            catalog.latest_scores()
+        self.assertIn("scorecard data problems", str(e.exception))
 
-    def test_a_consistent_manifest_is_clean(self):
-        m = self.manifest(self.app("alpha.example", "captured", "systems/alpha"),
-                          self.app("gamma.example", "pending", batch=2))
-        self.assertEqual(catalog.manifest_problems(m, self.SYSTEMS), [])
+    def test_list_images_skips_excluded_folders(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for rel in ("screenshots/home.png", "screenshots/drafts/old.png", "screenshots/draftsman.png"):
+                (root / "systems/x" / rel).parent.mkdir(parents=True, exist_ok=True)
+                (root / "systems/x" / rel).write_bytes(b"")
+            system = {"slug": "x", "preview": {"exclude": ["drafts/"]}}
+            with mock.patch.object(catalog, "ROOT", root):
+                paths = [i["path"] for i in catalog.list_images(system, "screenshots", {".png"})]
+        self.assertEqual(paths, ["systems/x/screenshots/draftsman.png", "systems/x/screenshots/home.png"])
 
-    def test_a_bare_slug_is_not_a_package_path(self):
-        m = self.manifest(self.app("alpha.example", "captured", "alpha"))
-        self.assertEqual(len(catalog.manifest_problems(m, self.SYSTEMS)), 1)
+    def test_a_truncated_cached_thumbnail_is_not_kept(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            src, dst = Path(tmp) / "s.png", Path(tmp) / "t.jpg"
+            src.write_bytes(b"png")
+            dst.write_bytes(b"\xff\xd8 half a jpeg")
+            self.assertFalse(catalog._thumb_ok(dst))
+            made = []
+            with mock.patch.object(catalog, "_thumb_backend", return_value="sips"), \
+                    mock.patch.object(catalog.subprocess, "run",
+                                      side_effect=lambda *a, **k: made.append(a) or mock.Mock(returncode=0)):
+                catalog._make_thumb(src, dst)
+            self.assertEqual(len(made), 1)  # regenerated despite the newer mtime
 
-    def test_each_kind_of_drift_is_named(self):
-        m = self.manifest(self.app("alpha.example", "captured"),                     # no package
-                          self.app("beta.example", "pending"),                       # beta is captured
-                          self.app("gamma.example", "uncapturable", "systems/gamma"),  # package without capture
-                          totals={"apps": 9, "batches": 4})
-        problems = catalog.manifest_problems(m, self.SYSTEMS)
-        self.assertEqual(len(problems), 5, problems)
-        self.assertIn("alpha.example: captured, but its package None is not a systems/<slug> in catalog.json", problems[0])
-        self.assertIn("beta.example: status 'pending', but catalog.json already has systems/beta", problems[1])
-        self.assertIn("gamma.example: status 'uncapturable' with package 'systems/gamma'", problems[2])
-        self.assertIn("totals.apps is 9, the file lists 3", problems[3])
-        self.assertIn("totals.batches is 4, the highest batch is 1", problems[4])
+    def test_a_complete_newer_thumbnail_short_circuits(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            src, dst = Path(tmp) / "s.png", Path(tmp) / "t.jpg"
+            src.write_bytes(b"png")
+            dst.write_bytes(b"\xff\xd8 jpeg \xff\xd9")
+            self.assertTrue(catalog._thumb_ok(dst))
+            with mock.patch.object(catalog, "_thumb_backend", side_effect=AssertionError("regenerated")):
+                self.assertTrue(catalog._make_thumb(src, dst))
+
+    def test_outside_a_git_checkout_only_fonts_are_refused(self):
+        # Pinned as it is: a copied tree without .git serves files git would ignore.
+        # Whether that should fail closed is an open decision, not this test's.
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp).resolve()
+            (root / "systems/x/fonts").mkdir(parents=True)
+            (root / "systems/x/dumps").mkdir(parents=True)
+            with mock.patch.object(catalog, "ROOT", root):
+                self.assertTrue(catalog._ignored_or_private(root / "systems/x/fonts/a.woff2"))
+                self.assertFalse(catalog._ignored_or_private(root / "systems/x/dumps/page.html"))
 
 
 class ResolverTest(unittest.TestCase):
@@ -979,6 +1020,22 @@ class ReferoBuildTest(unittest.TestCase):
     """build_refero emits refero/index.json plus one refero/style/<slug>.json per
     style, from a refero/ tree built in a temporary repository."""
 
+    MEDIA_BASE = "https://media.example.test"
+
+    def setUp(self):
+        # media_base() reads DESIGN_SYSTEMS_MEDIA_BASE, loading it from the repo's .env
+        # into os.environ for the rest of the process. Pin it, and keep the .env out.
+        patches = [mock.patch.dict(catalog.os.environ, {"DESIGN_SYSTEMS_MEDIA_BASE": self.MEDIA_BASE}),
+                   mock.patch.object(catalog.refero_media, "load_env", lambda *a, **k: None)]
+        for patch in patches:
+            patch.start()
+            self.addCleanup(patch.stop)
+
+    def test_the_index_and_styles_carry_the_configured_media_base(self):
+        index, styles = self.build([("alpha", self.ALPHA, {})])
+        self.assertEqual(index["mediaBase"], self.MEDIA_BASE)
+        self.assertEqual(styles["alpha"]["mediaBase"], self.MEDIA_BASE)
+
     def make(self, root, slug, meta, ds, docs=True):
         folder = root / "refero" / slug
         folder.mkdir(parents=True)
@@ -1412,6 +1469,40 @@ class EnvTest(unittest.TestCase):
         self.assertEqual(seen[0]["OMP_THREAD_LIMIT"], "1")
         self.assertNotIn("ANTHROPIC_API_KEY", seen[0])
         self.assertNotIn("R2_SECRET_ACCESS_KEY", seen[0])
+
+
+class ManifestTest(unittest.TestCase):
+    SYSTEMS = [{"slug": "alpha", "url": "https://www.alpha.example"}, {"slug": "beta", "url": "https://app.beta.example"}]
+
+    def manifest(self, *apps, totals=None):
+        apps = list(apps)
+        batches = max((a.get("batch", 1) for a in apps), default=0)
+        return {"totals": totals or {"apps": len(apps), "batches": batches}, "apps": apps}
+
+    def app(self, domain, status, package=None, batch=1):
+        return {"domain": domain, "status": status, "package": package, "batch": batch}
+
+    def test_a_consistent_manifest_is_clean(self):
+        m = self.manifest(self.app("alpha.example", "captured", "systems/alpha"),
+                          self.app("gamma.example", "pending", batch=2))
+        self.assertEqual(catalog.manifest_problems(m, self.SYSTEMS), [])
+
+    def test_a_bare_slug_is_not_a_package_path(self):
+        m = self.manifest(self.app("alpha.example", "captured", "alpha"))
+        self.assertEqual(len(catalog.manifest_problems(m, self.SYSTEMS)), 1)
+
+    def test_each_kind_of_drift_is_named(self):
+        m = self.manifest(self.app("alpha.example", "captured"),                     # no package
+                          self.app("beta.example", "pending"),                       # beta is captured
+                          self.app("gamma.example", "uncapturable", "systems/gamma"),  # package without capture
+                          totals={"apps": 9, "batches": 4})
+        problems = catalog.manifest_problems(m, self.SYSTEMS)
+        self.assertEqual(len(problems), 5, problems)
+        self.assertIn("alpha.example: captured, but its package None is not a systems/<slug> in catalog.json", problems[0])
+        self.assertIn("beta.example: status 'pending', but catalog.json already has systems/beta", problems[1])
+        self.assertIn("gamma.example: status 'uncapturable' with package 'systems/gamma'", problems[2])
+        self.assertIn("totals.apps is 9, the file lists 3", problems[3])
+        self.assertIn("totals.batches is 4, the highest batch is 1", problems[4])
 
 
 if __name__ == "__main__":

@@ -4,15 +4,48 @@
 # thumbnails fall back to the screenshot paths, which the build does not read.
 name: Web
 on:
+  # tools/catalog.py build reads the catalog, the packages, the refero store and
+  # tools/refero/refero_media.py; the app reads systems/, scorecard/ and docs/ at
+  # build and request time, and web/lib/request-guard.test.ts reads the shared
+  # server/front-door-cases.json. A change to any of them can break the job.
   pull_request:
-    paths: ['web/**', 'tools/catalog.py', 'catalog.json', '.github/workflows/web.yml']
+    paths:
+      - 'web/**'
+      - '.github/workflows/web.yml'
+      - 'catalog.json'
+      - 'tools/catalog.py'
+      - 'tools/refero/refero_media.py'
+      - 'refero/**'
+      - 'systems/**'
+      - 'scorecard/**'
+      - 'docs/**'
+      - 'server/front-door-cases.json'
   push:
     branches: [main]
-    paths: ['web/**', 'tools/catalog.py', 'catalog.json', '.github/workflows/web.yml']
+    paths:
+      - 'web/**'
+      - '.github/workflows/web.yml'
+      - 'catalog.json'
+      - 'tools/catalog.py'
+      - 'tools/refero/refero_media.py'
+      - 'refero/**'
+      - 'systems/**'
+      - 'scorecard/**'
+      - 'docs/**'
+      - 'server/front-door-cases.json'
 permissions:
   contents: read
+# Replaces a pull request's older run on a new push; see the note in check.yml.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   web:
+    # Audit fix branches (audit2/*) are not tested one by one: each fix is
+    # reviewed on its own pull request and then lands in a train branch
+    # (audit2/train-*), whose single run here is the gate. Skipping them keeps
+    # hundreds of small pull requests from filling the account's Actions queue.
+    if: github.event_name != 'pull_request' || !startsWith(github.head_ref, 'audit2/') || startsWith(github.head_ref, 'audit2/train-')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7

@@ -3,6 +3,7 @@ every POST/GET answer. A stub handler stands in for http.server and a fake
 chat module stands in for chat.py, so no socket opens and no provider is called.
 Run with `make test`."""
 import contextlib
+import os
 import importlib.util
 import io
 import json
@@ -10,6 +11,7 @@ import tempfile
 import types
 import unittest
 from pathlib import Path
+from unittest import mock
 
 SERVER = Path(__file__).resolve().parent.parent / "server"
 
@@ -155,6 +157,49 @@ class BodyTest(unittest.TestCase):
     def test_non_objects_and_bad_bytes_read_nothing(self):
         for raw in (b"not json", b"[1, 2]", b'"text"', b"\xff\xfe{}"):
             self.assertIsNone(self.body(raw), raw)
+
+
+class FrontDoorCasesTest(unittest.TestCase):
+    """server/front-door-cases.json: the Host cases web/proxy.ts runs too
+    (web/lib/request-guard.test.ts), so the two front doors agree."""
+
+    def test_shared_host_cases(self):
+        routes = _routes()
+        cases = json.loads((SERVER / "front-door-cases.json").read_text())
+        with mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_ALLOWED_HOSTS": cases["allowedHosts"]}):
+            for c in cases["hosts"]:
+                h = types.SimpleNamespace(headers={"host": c["host"]})
+                self.assertEqual(routes._host_ok(h), c["allowed"], c["host"])
+
+    def test_forwarded_host_does_not_widen_the_allowlist(self):
+        # Only Host is checked: X-Forwarded-Host is the client's own claim.
+        routes = _routes()
+        with mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_ALLOWED_HOSTS": ""}):
+            h = types.SimpleNamespace(headers={"host": "evil.test", "x-forwarded-host": "127.0.0.1"})
+            self.assertFalse(routes._host_ok(h))
+
+
+class BaseUrlTest(unittest.TestCase):
+    """_base_url's result lands inside BASE="..." in the install.sh piped to
+    sh, so anything beyond host characters falls back to the bind address."""
+
+    def base(self, **headers):
+        h = Handler("/api/install.sh", headers={"host": "designs.test", **headers})
+        h.server.server_address = ("127.0.0.9", 8190)  # the fallback, distinct from any Host
+        return _routes()._base_url(h)
+
+    def test_plain_hosts_are_used(self):
+        self.assertEqual(self.base(host="box.tail1.ts.net:8108"), "http://box.tail1.ts.net:8108")
+        self.assertEqual(self.base(**{"x-forwarded-host": "a.test, b.test", "x-forwarded-proto": "https"}),
+                         "https://a.test")
+        self.assertEqual(self.base(host="[::1]:8800"), "http://[::1]:8800")
+
+    def test_shell_characters_fall_back_to_the_bind_address(self):
+        for headers in ({"host": "x.test`id`"}, {"host": "x.test$(id)"}, {"host": 'x.test";id;"'},
+                        {"host": "x.test'"}, {"host": "x.test\\"}, {"host": "x.test id"},
+                        {"x-forwarded-host": "x.test;id"},
+                        {"x-forwarded-proto": "ftp"}, {"x-forwarded-proto": "https$(id)"}):
+            self.assertEqual(self.base(**headers), "http://127.0.0.9:8190", headers)
 
 
 class GuardTest(unittest.TestCase):

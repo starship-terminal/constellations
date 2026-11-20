@@ -38,13 +38,15 @@ scorecard: ## Validate the scorecard's audit data
 grade: ## Re-grade the scripted criteria into a new audit snapshot, then rewrite every README's Health section
 	@$(PYTHON) tools/grade.py --write && $(PYTHON) tools/scorecard.py --check
 
+# Every gate runs even after an earlier one fails, so one run reports every problem; the
+# target then fails, naming each gate that failed.
 check: ## Validate catalog.json, the refero stores, and login-extracted; fail on a stale Brief, DESIGN.md, scorecard or Health section
-	@$(PYTHON) tools/catalog.py check
-	@$(PYTHON) tools/refero/check.py
-	@$(PYTHON) tools/brief.py --check
-	@$(PYTHON) tools/grade.py --check
-	@$(PYTHON) tools/gated.py --check
-	@$(PYTHON) tools/login_extracted.py --check
+	@failed=""; \
+	for gate in "tools/catalog.py check" "tools/refero/check.py" "tools/brief.py --check" \
+	            "tools/grade.py --check" "tools/gated.py --check" "tools/login_extracted.py --check"; do \
+		$(PYTHON) $$gate || failed="$$failed  $$gate;"; \
+	done; \
+	if [ -n "$$failed" ]; then echo "make check: failed:$$failed" >&2; exit 1; fi
 
 brief: ## Rewrite every package README's Brief from its catalog entry, tokens and README
 	@$(PYTHON) tools/brief.py
@@ -61,7 +63,7 @@ refero-dump: ## Rewrite refero/.dump/ (the text dump git merges) from refero/ref
 refero-db: ## Rebuild refero/refero.db from refero/.dump/ (after merging the dump), then rewrite the dump canonically
 	@$(PYTHON) tools/refero/dump.py load
 
-test: ## Run the tools' tests, then every package's own tests (systems/*/tools/test_*.py)
+test: ## Run the tools' tests, then every package's own tests (every test_*.py and test_*.mjs under systems/<slug>/)
 	@$(PYTHON) -m unittest discover -s tools -p 'test_*.py'
 	@$(PYTHON) tools/package_tests.py
 

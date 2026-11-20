@@ -113,6 +113,8 @@ The homepage hero rotates. One reading showed "Your money treated right" at 84 p
 
 The phone home full-page stitch ([mobile-home-light-full.png](screenshots/mobile-home-light-full.png)) is 780 x 23340 after tile stitching. The raw full-page PNG was 780 x 9340 against an expected 780 x 9352, so the stitch is not a clean 390 CSS-pixel page. Use the viewport shot [mobile-home-light-default.png](screenshots/mobile-home-light-default.png) for the 390 layout.
 
+Known wrong, recapture needed (the pk-k recapture tracking issue, 2026-11 audit): `sign-in-button`, `primary-button`, `ink-button` and `icon-button` have a `pressed` reading equal to their default. `forcePseudo()` in `tools/capture/public/measure.mjs` never cleared the marker it set on the first pressed element (the nav link), so every later forced `:active` landed there. The script is fixed by edit and was not run. `nav-link` and `icon-button` `focus-visible` are `focus failed` readings of the element at rest, not a focus look.
+
 Dark tokens are declared, not painted on these public pages. Status colours (`--colors-bg-negative`, warning, positive) are declared. This capture did not see them as filled status chips with text and border.
 
 Search overlay text in [home-light-search.png](screenshots/home-light-search.png) is the placeholder "Search for any product or brand" plus suggestion rows. A query was not submitted. The filled search crop may still show the placeholder.

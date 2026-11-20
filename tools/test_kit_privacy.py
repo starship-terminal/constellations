@@ -40,16 +40,35 @@ SIGNED = [
     "https://app.example.test/cb?code=abc",
     "https://app.example.test/cb?id_token=abc",
     "https://proxy.example.test/?u=https%3A%2F%2Fx%2Fy.png%3Ftoken%3Dabc",
+    "https://maps.example.test/embed?q=x&key=AIzaFAKEKEY",
+    "https://api.example.test/v1?api_key=abc", "https://api.example.test/v1?apikey=abc",
+    "https://app.example.test/cb?oauth_token=abc", "https://app.example.test/x?auth_token=abc",
+    "https://app.example.test/x?csrf_token=abc", "https://app.example.test/x#jwt=abc",
+    "https://app.example.test/x?session=abc", "https://app.example.test/x?client_secret=abc",
+    "https://cdn.example.test/v.mp4?hdnts=exp=1~acl=x", "https://cdn.example.test/v.mp4?__token__=abc",
+    "https://api.example.test/v1?api-key=abc", "https://api.example.test/v1?access_key=abc",
+    "https://app.example.test/x?session_id=abc", "https://app.example.test/x?sessionid=abc",
+    "https://cdn.example.test/v.mp4?hmac=abc", "https://app.example.test/x?xsrf_token=abc",
+    "https://app.example.test/x?session_token=abc", "https://api.example.test/v1?api_token=abc",
+    "https://acct.example.test/c/f.png?sas_token=abc",
+    "https://app.example.test/cb?refresh_token=abc", "https://app.example.test/x?auth=abc",
 ]
 PLAIN = [
     "https://example.test/page?unit=7",
     "https://example.test/a?tokenizer=1&sigma=2&codec=h264",
+    "https://example.test/a?keyword=x&monkey=1&sessions=3&jwtx=1",
     "https://example.test/docs#tokens",
     "color:#fff",
 ]
 
 
 class SharedList(unittest.TestCase):
+    def test_every_listed_name_has_a_signed_example(self):
+        # so dropping a name from the list cannot pass silently
+        spec = json.loads((SIGNED_IN / "signed-params.json").read_text())
+        for name in spec["params"]:
+            self.assertTrue(any(re.search(r"(?:[?&#]|%3F|%26|%23)(?:amp;)?" + re.escape(name) + r"(?:=|%3D)", u) for u in SIGNED), name)
+
     def test_every_reader_flags_the_same_urls(self):
         for u in SIGNED:
             self.assertTrue(catalog.SIGNED_URL.search(u), u)
@@ -83,6 +102,26 @@ class SharedList(unittest.TestCase):
                 else:
                     self.assertIn("LEAK", res.stderr)
                     self.assertNotIn("Jane", res.stderr)
+
+    def test_unsnap_refuses_a_missing_snapshot_and_a_label_that_is_a_path(self):
+        with tempfile.TemporaryDirectory() as d:
+            redact = Path(d) / "r.json"
+            redact.write_text(json.dumps({"replace": [["Jane Doe", "gi", "A User"]]}))
+            out = Path(d) / "out"
+            for body, why in [("not a snapshot", "no SNAPSTART"),
+                              ("SNAPSTART" + json.dumps({"label": "Jane Doe/../x", "url": "https://x/"}) + "SNAPMETA<p>ok</p>SNAPEND", "not a plain name"),
+                              ("SNAPSTART" + json.dumps({"label": "../escaped", "url": "https://x/"}) + "SNAPMETA<p>ok</p>SNAPEND", "not a plain name"),
+                              ("SNAPSTART" + json.dumps({"label": "a/b", "url": "https://x/"}) + "SNAPMETA<p>ok</p>SNAPEND", "not a plain name"),
+                              ("SNAPSTART" + json.dumps({"label": "..", "url": "https://x/"}) + "SNAPMETA<p>ok</p>SNAPEND", "not a plain name")]:
+                snap = Path(d) / "snap.txt"
+                snap.write_text(body)
+                res = subprocess.run([sys.executable, str(SIGNED_IN / "unsnap.py"), str(snap), str(out)],
+                                     capture_output=True, text=True, env={**os.environ, "SNAP_REDACT": str(redact)})
+                self.assertNotEqual(res.returncode, 0, body)
+                self.assertIn(why, res.stderr, body)
+                self.assertNotIn("Traceback", res.stderr)
+                self.assertNotIn("Jane", res.stderr)   # a refused label is never echoed
+            self.assertFalse((Path(d) / "escaped.html").exists())
 
     def test_unsnap_finds_an_accented_name_in_the_metadata(self):
         with tempfile.TemporaryDirectory() as d:
@@ -522,14 +561,28 @@ console.log(JSON.stringify(out));
 
 
 
-@unittest.skipIf(NODE is None or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
+@unittest.skipIf(NODE is None, "node is not on PATH")
 class RawShotsStayOutOfTheRepo(unittest.TestCase):
     def test_public_capture_needs_a_scratch_dir_outside_a_package(self):
+        # A copy of the capture tree in a scratch package, with a stand-in Playwright whose launch throws:
+        # if the RAW guard ever regressed, this fails without opening a browser, reaching the network or
+        # writing into the checkout. So it needs no Playwright and runs in CI too.
         env = {k: v for k, v in os.environ.items() if k != "RAW"}
-        res = subprocess.run([NODE, str(HERE / "kit/capture/public/public.mjs")], capture_output=True, text=True,
-                             timeout=60, env={**env, "PLAYWRIGHT": PLAYWRIGHT})
-        self.assertEqual(res.returncode, 2, res.stderr)
-        self.assertIn("set RAW=", res.stderr)
+        with tempfile.TemporaryDirectory() as d:
+            capture = Path(d) / "pkg" / "tools" / "capture"
+            shutil.copytree(HERE / "kit/capture", capture, ignore=shutil.ignore_patterns("test_*", "native"))
+            stub = Path(d) / "playwright-stub.mjs"
+            stub.write_text("const launch = () => { throw new Error('stub Playwright: no browser in this test'); };\n"
+                            "export const chromium = { launch, connectOverCDP: launch };\nexport default { chromium };\n")
+            res = subprocess.run([NODE, str(capture / "public/public.mjs")], capture_output=True, text=True, cwd=d,
+                                 timeout=60, env={**env, "PLAYWRIGHT": stub.as_uri(), "KIT_EXAMPLE": "1",
+                                                  "HOME": str(Path(d) / "home"), "USERPROFILE": str(Path(d) / "home")})
+            self.assertEqual(res.returncode, 2, res.stderr)
+            self.assertIn("set RAW=", res.stderr)
+            self.assertNotIn("stub Playwright", res.stderr)
+            self.assertEqual(sorted(p.name for p in (Path(d) / "pkg").iterdir()), ["tools"])   # nothing written
+            # a regressed guard would default to ~/.design-systems/<slug>/raw-shots: HOME points in here
+            self.assertFalse((Path(d) / "home").exists())
         src = (HERE / "kit/capture/public/public.mjs").read_text()
         self.assertIn("'.design-systems', path.basename(PKG), 'raw-shots'", src)
         self.assertNotIn("raw/full/", src)

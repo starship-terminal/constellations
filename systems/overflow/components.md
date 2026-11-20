@@ -14,7 +14,7 @@ Primary marketing button. Black fill, white text, 8px radius, 1px black border.
 | hero | `.intro-section a.btn-primary` | height `{size.button-hero}` (56px), padding 19px 24px, 16px |
 | hover | declared `.btn-primary:hover` | background stays `#000`, `transform: translateY(-2px)` over 0.4s. Computed hover of the header button did not change colour |
 | focus | declared `.btn-primary:focus` | same fill as default |
-| focus-visible | forced on the header button | outline 1px `{focus.outline}` (`#005fcc`), offset `{focus.offset}` |
+| focus-visible | forced on the header button | outline 1px `{focus.outline}` (`#005fcc`), offset `{focus.offset}`: `outline-style: auto`, Chromium's default ring. Overflow sets no focus colour, so this is the browser's, not a brand value |
 | pressed | not captured | no `:active` rule in the marketing sheet; a press was not held |
 
 Secondary cookie button `button.btn-secondary.btn-xs`: fill `{background.action-secondary}` (`#f0f0f2`), text black, radius 8px, padding 8px 12px, 15px weight 550. Declared hover fills `#e8e8ea` and lifts 2px.

@@ -127,6 +127,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json). The promo bar is a campaign strip (Black Friday, code BF20 on this capture date) and will change. Graphik is a commercial face and is not in this package. The 128 px icon is the 32 px favicon scaled up. Hover and pressed on marketing links often share the resting colour. The workspace empty states are a new free account; they are not a designed "zero data" marketing mock. Theme customisation is behind Upgrade.
 
+Seven marketing values were typed in by hand from `main.css` at capture time and no file in raw/ holds them, so tokens.json labels them Reconstruction: `light.background.page` `#ffffff`, `light.background.sand` `#f8f6f4`, `light.text.secondary` `#707070`, `light.text.promo-gold` `#ffdc4d`, `light.border.stroke` `#e5e5e5`, `light.border.field` `#dcdcdc`, and `core.font.weight.black` 900 (Graphik Black is declared in `@font-face`; no element paints it).
+
 ### Do and don't (from README.md)
 
 1. **Do keep the page white and the action coral.** `#ed553b` is the one warm fill. Ink buttons stay `#1d1c1d`. See [cta-coral](components/crops/cta-coral-default.png).

@@ -713,6 +713,8 @@ www.epicgames.com/site: the OpenSans marketing home with its giant product tiles
 #### Product tile
 A giant product tile (UNREAL ENGINE / FORTNITE / ROCKET LEAGUE / STORE) with its EXPLORE action on the OpenSans marketing home; measured, never followed. Read as `w-tile` on the marketing home page.
 
+**Known-wrong reading.** The carousel rotated between states, so each state read a different tile (default UNREAL ENGINE, hover and focus-visible FORTNITE, pressed ROCKET LEAGUE): the state rows compare different elements. Only the default row describes one tile. Recapture needed.
+
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 480 x 868.5; background transparent; text Inter_Bold 53.2/46.55 600, #ffffff `color.background.fill.strong.default`; layers a.btn.btn-primary 137.0x32.0 T:1px solid rgb(255, 255, 255) / R:1px solid rgb(255, 255, 255) / B:1px solid rgb(255, 255, 255) / L:1px solid rgb(255, 255, 255) rgba(0, 0, 0, 0.2) 2px 2px 2px 0px |
@@ -783,6 +785,8 @@ The "Server status" indicator, top right; measured never followed. Read as `h-st
 #### Chat launcher
 The round chat button bottom right; measured, never pressed. Read as `h-chat` on the support centre page.
 
+**Known-wrong reading.** These readings are the "Back to top" button, not the chat launcher: `button:has(svg)` with `.last()` matched it. Recapture needed.
+
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 150.09 x 48; padding 12px 20px; radius 8px; background rgba(255, 255, 255, 0.15) `color.background.fill.disabled.primary`; text Inter 14/21 400, #ffffff `color.background.fill.strong.default` |
@@ -798,6 +802,8 @@ The store at 390 x 844 at 2x: the condensed nav, hamburger and drawer, mobile he
 
 #### Hamburger
 The mobile menu button; measured, the drawer itself is captured in screenshots. Read as `m-hamburger` on the Discover page at 390 wide.
+
+**Known-wrong reading.** These readings are the "Epic Ecosystem Dropdown" button, not the mobile menu button: the selector's `button:has(svg)` fallback matched it first. Recapture needed.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
