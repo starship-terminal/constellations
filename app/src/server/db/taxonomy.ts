@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import type { Client, Transaction } from "@libsql/client";
 import { packageTopUps } from "./package-top-ups";
 import type {
@@ -84,6 +85,8 @@ export async function seedMediaTaxonomy(tx: Transaction) {
 export async function seedNewCuratedCategories(
   tx: Transaction,
   onlyReferences?: ReadonlySet<string>,
+  /** "<referenceId>\0<groupId>" keys; others are skipped. */
+  onlyKeys?: ReadonlySet<string>,
 ) {
   const { taxonomySnapshots } = await import("@/contracts/taxonomy");
   const { default: assignments } =
@@ -105,6 +108,11 @@ export async function seedNewCuratedCategories(
     // user cleared on an older package: those references are skipped before
     // the empty-assignment check can read them as "never labelled".
     if (onlyReferences && !onlyReferences.has(assignment.referenceId)) continue;
+    if (
+      onlyKeys &&
+      !onlyKeys.has(`${assignment.referenceId}\u0000${assignment.groupId}`)
+    )
+      continue;
     const group = taxonomySnapshots
       .flatMap((snapshot) => snapshot.groups)
       .find((candidate) => candidate.id === assignment.groupId);
@@ -242,16 +250,21 @@ async function recordLedger(
  * no rows was cleared by the user and must stay cleared.
  *
  * - A store opened below v8 has just run the v6-v8 top-ups, which offer the
- *   whole current seed: every key is offered.
+ *   whole seed.
  * - Otherwise: the packages in the seed when v8 shipped (seed-before-v9.json)
  *   and every package a v9-v43 top-up names (packageTopUps).
  * - Any other package (one that merged without a migration) reached the store
  *   only if it was created after the package landed. Rows are the evidence:
- *   a package with rows in a seed was offered it, so its empty keys there are
- *   cleared choices. A package with none is offered by topUpSeeds.
+ *   a package with category or media rows was offered both seeds, so its
+ *   empty keys are cleared choices. A package with none is offered by
+ *   topUpSeeds.
+ *
+ * In every case only keys that existed when v44 was introduced
+ * (seed-keys-v44.json) count; one added later is left for topUpSeeds.
  */
 export async function backfillSeedLedger(tx: Transaction, openedAt: number) {
   const { default: before } = await import("@/data/seed-before-v9.json");
+  const { default: frozen } = await import("@/data/seed-keys-v44.json");
   const { default: categories } = await import("@/data/system-categories.json");
   const { default: media } = await import("@/data/media-taxonomy.json");
   const offered = new Set([
@@ -259,20 +272,22 @@ export async function backfillSeedLedger(tx: Transaction, openedAt: number) {
     ...packageTopUps.flatMap((step) => step.references),
   ]);
   const everything = openedAt < 8;
-  const categorised = new Set(
+  // Rows of either kind show the store was offered the package's seeds: they
+  // arrived together, so a cleared category group beside kept media labels
+  // (or the reverse) is a cleared choice.
+  const evidence = new Set(
     (
       await tx.execute(
-        "SELECT DISTINCT c.reference_id,t.group_id FROM reference_categories c JOIN taxonomy_terms t ON t.id=c.term_id",
-      )
-    ).rows.map((row) => `${row.reference_id}\u0000${row.group_id}`),
-  );
-  const labelled = new Set(
-    (
-      await tx.execute(
-        "SELECT DISTINCT reference_id FROM media_term_assignments",
+        "SELECT reference_id FROM reference_categories UNION SELECT reference_id FROM media_term_assignments",
       )
     ).rows.map((row) => String(row.reference_id)),
   );
+  const wasOffered = (referenceId: string) =>
+    everything || offered.has(referenceId) || evidence.has(referenceId);
+  // Only keys that existed when the ledger was introduced: a group or a
+  // screenshot a later release adds was never offered and stays to offer.
+  const knownCategories = new Set(frozen.categoryKeys);
+  const knownMedia = new Set(frozen.mediaKeys.match(/.{8}/g));
   await recordLedger(
     tx,
     "category_seed_ledger",
@@ -280,9 +295,8 @@ export async function backfillSeedLedger(tx: Transaction, openedAt: number) {
     categories
       .filter(
         (row) =>
-          everything ||
-          offered.has(row.referenceId) ||
-          categorised.has(`${row.referenceId}\u0000${row.groupId}`),
+          knownCategories.has(`${row.referenceId} ${row.groupId}`) &&
+          wasOffered(row.referenceId),
       )
       .map((row) => [row.referenceId, row.groupId] as const),
   );
@@ -293,12 +307,19 @@ export async function backfillSeedLedger(tx: Transaction, openedAt: number) {
     media.assignments
       .filter(
         (row) =>
-          everything ||
-          offered.has(row.referenceId) ||
-          labelled.has(row.referenceId),
+          knownMedia.has(mediaKey(row.referenceId, row.mediaId)) &&
+          wasOffered(row.referenceId),
       )
       .map((row) => [row.referenceId, row.mediaId] as const),
   );
+}
+
+/** The 8-hex-digit key seed-keys-v44.json lists a media pair under. */
+export function mediaKey(referenceId: string, mediaId: string) {
+  return createHash("sha256")
+    .update(`${referenceId}\u0000${mediaId}`)
+    .digest("hex")
+    .slice(0, 8);
 }
 
 /**
@@ -313,23 +334,22 @@ export async function topUpSeeds(tx: Transaction) {
     ).rows.map((row) => `${row.reference_id}\u0000${row.group_id}`),
   );
   const { default: categories } = await import("@/data/system-categories.json");
-  const newCategories = new Set(
-    categories
-      .filter(
-        (row) =>
-          !offeredCategories.has(`${row.referenceId}\u0000${row.groupId}`),
-      )
-      .map((row) => row.referenceId),
+  // Only the unseen (reference, group) keys: a group the seed adds later
+  // must not bring back a cleared group the same package was offered.
+  const unseen = categories.filter(
+    (row) => !offeredCategories.has(`${row.referenceId}\u0000${row.groupId}`),
   );
-  if (newCategories.size) {
-    await seedNewCuratedCategories(tx, newCategories);
+  if (unseen.length) {
+    await seedNewCuratedCategories(
+      tx,
+      new Set(unseen.map((row) => row.referenceId)),
+      new Set(unseen.map((row) => `${row.referenceId}\u0000${row.groupId}`)),
+    );
     await recordLedger(
       tx,
       "category_seed_ledger",
       "group_id",
-      categories
-        .filter((row) => newCategories.has(row.referenceId))
-        .map((row) => [row.referenceId, row.groupId] as const),
+      unseen.map((row) => [row.referenceId, row.groupId] as const),
     );
   }
   const offeredMedia = new Set(

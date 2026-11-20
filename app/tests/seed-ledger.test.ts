@@ -286,3 +286,30 @@ test("a package that merged without a migration keeps a media label the user cle
   expect(figma.length).toBeGreaterThan(0);
   expect(figma.some((row) => row.mediaId === pair.mediaId)).toBe(false);
 }, 120_000);
+
+test.each(["reference_categories", "media_term_assignments"])(
+  "a package with no migration keeps its cleared %s cleared when its other labels remain",
+  async (table) => {
+    const { dir, store } = await open();
+    // Figma merged without a migration: only its rows show a v43 store had it.
+    await store.client.execute({
+      sql: `DELETE FROM ${table} WHERE reference_id='systems:figma'`,
+      args: [],
+    });
+    await store.client.execute("DROP TABLE category_seed_ledger");
+    await store.client.execute("DROP TABLE media_seed_ledger");
+    await store.client.execute("PRAGMA user_version=43");
+    close(store);
+    const { store: migrated } = await open(dir);
+    const categories = await categoryRows(migrated, "systems:figma");
+    const media = await mediaRows(migrated, "systems:figma");
+    if (table === "reference_categories") {
+      expect(categories).toEqual([]);
+      expect(media.length).toBeGreaterThan(0);
+    } else {
+      expect(media).toEqual([]);
+      expect(categories.length).toBeGreaterThan(0);
+    }
+  },
+  120_000,
+);
