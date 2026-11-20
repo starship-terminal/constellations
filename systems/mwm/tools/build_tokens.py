@@ -93,11 +93,10 @@ def put(tree, path, token):
 def take_color(tree, group, name, raw, source):
     if raw in ("transparent", "none", ""):
         return False
-    try:
-        put(tree, [group, name], tok(color(raw), "color", source + "; " + name))
-        return True
-    except ValueError:
-        return False
+    # A value that does not parse fails the build: dropping it silently would leave the role out
+    # of tokens.json with nothing to say a reading was lost.
+    put(tree, [group, name], tok(color(raw), "color", source + "; " + name))
+    return True
 
 
 def resolved(block):
@@ -248,7 +247,10 @@ put(dark, ["color", "topbar"], tok(
 put(dark, ["color", "lede"], tok(
     "rgba(255, 255, 255, 0.7)", "color", "Measured. .mwm-hero-copy p computed color"))
 put(dark, ["color", "focus"], tok(
-    "#005fcc", "color", "Measured. .mwm-product-nav-item :focus-visible computed outline-color, rgb(0, 95, 204)"))
+    "#005fcc", "color", "Observed. Chromium's default focus ring, not an MWM colour: .mwm-product-nav-item, button-primary "
+    "and button-secondary :focus-visible compute outline 'rgb(0, 95, 204) auto 1px' (raw/components.json), the "
+    "browser's -webkit-focus-ring-color with outline-style auto. The marketing site styles no ring of its own; "
+    "console's own ring is console.focus-ring."))
 put(dark, ["color", "chip"], tok(
     "rgba(255, 255, 255, 0.05)", "color", "Measured. prompt chip computed background-color"))
 put(dark, ["color", "prompt-border"], tok(
@@ -303,7 +305,8 @@ doc = {
     "$themes": [{"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}}],
 }
 
-out = HERE / "tokens.json"
-text = json.dumps(doc, indent=1) + "\n"
-out.write_text(text)
-print("wrote", out, "bytes", len(text))
+if __name__ == "__main__":
+    out = HERE / "tokens.json"
+    text = json.dumps(doc, indent=1) + "\n"
+    out.write_text(text)
+    print("wrote", out, "bytes", len(text))

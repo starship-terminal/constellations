@@ -123,7 +123,9 @@ def colour(c, tokens=True):
                                    (float(m.group(4).rstrip('%')) / (100 if '%' in m.group(4) else 1)) if m.group(4) else None)), c)
     c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
                lambda m: label(norm(*(round(float(x) * 255) for x in m.group(1, 2, 3)), m.group(4))), c)
-    return re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
+    # The substitutions above already labelled what they converted; a value
+    # followed by its ` `token` ` label is not labelled twice.
+    return re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)(?! `)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
 
 
 def sides(t, r, b, l):

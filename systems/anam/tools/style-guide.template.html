@@ -141,13 +141,15 @@ table.t td.src { color: var(--text-tertiary); font-size: 12px; }
 .an-doccard b { font: 600 16px/24px var(--sg-sans); color: var(--text-warm-900, var(--text-default)); }
 .an-doccard p { margin: 4px 0 0; font: 400 14px/22px var(--sg-sans); color: var(--text-warm-secondary); }
 .an-method { display: inline-block; padding: 2px 6px; border-radius: var(--radius-sm); background: rgba(29, 78, 216, 0.12); color: var(--color-method-blue); font: 700 8.8px/11px var(--sg-sans); letter-spacing: .04em; }
-.an-code { font: 500 14px/24px var(--sg-mono); background: var(--surface); border-radius: var(--radius-sm); padding: 1px 5px; color: #1e3a5f; }
+.an-code { font: 500 14px/24px var(--sg-mono); background: var(--surface); border-radius: var(--radius-sm); padding: 1px 5px; color: var(--text-default); }
 .an-codeblock { font: 400 14px/24px var(--sg-mono); background: var(--color-neutral-950); color: var(--color-neutral-300); border-radius: var(--radius-md); padding: 14px 16px; }
 
 /* form */
 .an-label { font: 500 14px/20px var(--sg-sans); color: var(--text-default); margin-bottom: 6px; display: block; }
-/* measured on the live form: an unbordered #f5f5f5 field at 11px, an orange 50px pill submit */
-.an-input { width: min(420px, 100%); height: 46.5px; border: 0; border-radius: 11px; padding: 0 14px; font: 400 15px/22px var(--sg-sans); background: #f5f5f5; color: var(--text-default); }
+/* measured on the live form: an unbordered #f5f5f5 field at 11px with #0a0a0a text (form-input),
+   an orange 50px pill submit. The demo form paints light only, so the field keeps its measured
+   pair in both themes rather than taking the dark theme's light text onto a light field. */
+.an-input { width: min(420px, 100%); height: 46.5px; border: 0; border-radius: 11px; padding: 0 14px; font: 400 15px/22px var(--sg-sans); background: #f5f5f5; color: #0a0a0a; }
 .an-input.filled { background: #eee; }
 .an-submit { width: min(420px, 100%); height: 52.5px; border-radius: 50px; background: var(--accent); color: #fff; font: 500 15px/22px var(--sg-sans); border: 0; }
 
@@ -294,7 +296,7 @@ table.t td.src { color: var(--text-tertiary); font-size: 12px; }
 
   <h3 class="sub">Demo request form</h3>
   <div class="states">
-    <div class="cell"><span class="an-label">Work email</span><span class="an-input" style="display:flex;align-items:center;color:var(--text-tertiary)">you@company.com</span><span class="cap">input 420x46.5, hairline border, radius 12</span></div>
+    <div class="cell"><span class="an-label">Work email</span><span class="an-input" style="display:flex;align-items:center">you@company.com</span><span class="cap">input 420x46.5, hairline border, radius 12</span></div>
     <div class="cell"><span class="an-label">&nbsp;</span><span class="an-submit" style="display:flex;align-items:center;justify-content:center">Get a demo</span><span class="cap">submit 420x52.5, black fill</span></div>
   </div>
 
