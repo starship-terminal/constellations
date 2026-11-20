@@ -1,6 +1,137 @@
 {
-  "_note": "No rectangles: nothing in substack is masked.",
-  "families": [],
+  "_note": "Pixel rectangles for systems/substack (812x1780 screenshots, dark and light share the layout). They hide other people: subscribers' avatars, names and handles on Activity and the profile, suggested people in search, a person named in a note, and chat message sender names. Publications, their authors and podcast hosts are catalog content and stay; so does the owner's profile.",
+  "families": [
+    {
+      "name": "search suggested people: two avatars and names",
+      "files": [
+        "screenshots/*/08-search-focused-chips-trending.png"
+      ],
+      "rects": [
+        [
+          50,
+          396,
+          362,
+          566,
+          "solid"
+        ]
+      ]
+    },
+    {
+      "name": "activity: subscribers' avatars, names, handles and bio; a person named in a note",
+      "files": [
+        "screenshots/*/12-activity-feed-primary-secondary-buttons.png"
+      ],
+      "rects": [
+        [
+          122,
+          388,
+          198,
+          464,
+          "solid"
+        ],
+        [
+          124,
+          468,
+          202,
+          506,
+          "solid"
+        ],
+        [
+          124,
+          515,
+          274,
+          552,
+          "solid"
+        ],
+        [
+          122,
+          584,
+          198,
+          660,
+          "solid"
+        ],
+        [
+          124,
+          663,
+          308,
+          703,
+          "solid"
+        ],
+        [
+          124,
+          750,
+          300,
+          785,
+          "solid"
+        ],
+        [
+          122,
+          818,
+          198,
+          894,
+          "solid"
+        ],
+        [
+          124,
+          897,
+          268,
+          938,
+          "solid"
+        ],
+        [
+          124,
+          984,
+          752,
+          1058,
+          "solid"
+        ],
+        [
+          250,
+          1220,
+          410,
+          1258,
+          "solid"
+        ]
+      ]
+    },
+    {
+      "name": "profile: subscribers' avatars beside the subscriber count",
+      "files": [
+        "screenshots/*/13-profile-share-edit-tabs-note.png"
+      ],
+      "rects": [
+        [
+          40,
+          672,
+          128,
+          728,
+          "solid"
+        ]
+      ]
+    },
+    {
+      "name": "chat list: message sender names",
+      "files": [
+        "screenshots/*/18-chat-list-warning-banner-unread.png"
+      ],
+      "rects": [
+        [
+          188,
+          1585,
+          434,
+          1615,
+          "rows"
+        ],
+        [
+          188,
+          1728,
+          356,
+          1762,
+          "solid"
+        ]
+      ]
+    }
+  ],
   "ocr": {
     "email_allow": [
       "^etuned@gmail\\.com$"
