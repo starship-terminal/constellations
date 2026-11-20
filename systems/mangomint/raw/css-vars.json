@@ -1,0 +1,304 @@
+{
+  "varCount": 44,
+  "uniqueNames": [
+    "--y",
+    "--angle",
+    "--modal-close-right",
+    "--modal-close-top",
+    "--modal-close-right-mobile",
+    "--modal-close-top-mobile",
+    "--gradient-color-1",
+    "--gradient-color-2",
+    "--gradient-color-3",
+    "--gradient-color-4",
+    "--gradient-start",
+    "--gradient-middle",
+    "--gradient-end",
+    "--modal-aspect",
+    "--digit-line",
+    "--digit-box",
+    "--digit-track",
+    "--pill-w",
+    "--pill-h",
+    "--logo-height",
+    "--logo-width",
+    "--offset",
+    "--row-height",
+    "--img-height",
+    "--img-width",
+    "--section-gap",
+    "--transitionDelay",
+    "--delay",
+    "--mira-flow",
+    "--width",
+    "--gutter",
+    "--logo-bottom",
+    "--row-pad",
+    "--intro-height",
+    "--peek",
+    "--swoosh-stop-1",
+    "--swoosh-stop-2",
+    "--swoosh-stop-3",
+    "--swoosh-stop-4",
+    "--transition",
+    "--delay1",
+    "--delay2",
+    "--globalDelay",
+    "--btnDelay",
+    "--textShift",
+    "--introShift",
+    "--slideUp",
+    "--scale",
+    "--bg"
+  ],
+  "vars": [
+    {
+      "sel": ".hamburgerMenu-module--burger--9ffc4 span > span",
+      "media": "",
+      "props": {
+        "--y": "6px",
+        "--angle": "45deg"
+      }
+    },
+    {
+      "sel": ".hamburgerMenu-module--burger--9ffc4 span > span:last-child",
+      "media": "",
+      "props": {
+        "--y": "-6px",
+        "--angle": "-45deg"
+      }
+    },
+    {
+      "sel": ".referralModal-module--modalCloseButton--4efe2",
+      "media": "",
+      "props": {
+        "--modal-close-right": "15px",
+        "--modal-close-top": "15px",
+        "--modal-close-right-mobile": "10px",
+        "--modal-close-top-mobile": "10px"
+      }
+    },
+    {
+      "sel": ".videoModal-module--modalCloseTourSelector--95965",
+      "media": "",
+      "props": {
+        "--modal-close-right": "15px",
+        "--modal-close-top": "15px",
+        "--modal-close-right-mobile": "10px",
+        "--modal-close-top-mobile": "10px"
+      }
+    },
+    {
+      "sel": ".scrollClipWrapper-module--clipWrapper--de1f9",
+      "media": "",
+      "props": {
+        "--gradient-start": "#191e49",
+        "--gradient-middle": "#474f7b",
+        "--gradient-end": "#191e49"
+      }
+    },
+    {
+      "sel": ".scrollClipWrapper-module--clipWrapper--de1f9",
+      "media": "(max-width: 1099.98px)",
+      "props": {
+        "--gradient-middle": "#474f7b"
+      }
+    },
+    {
+      "sel": ".footer-module--footer--ac64d",
+      "media": "",
+      "props": {
+        "--section-gap": "40px"
+      }
+    },
+    {
+      "sel": ".footer-module--footer--ac64d",
+      "media": "(min-width: 576px)",
+      "props": {
+        "--section-gap": "20px"
+      }
+    },
+    {
+      "sel": ".footer-module--footer--ac64d",
+      "media": "(min-width: 1100px)",
+      "props": {
+        "--section-gap": "40px"
+      }
+    },
+    {
+      "sel": ".navbar-module--header--ca8c3 .navbar-module--navbar--55017 .navbar-module--rightnav--29a23 .navbar-",
+      "media": "(max-width: 991.98px)",
+      "props": {
+        "--y": "8px"
+      }
+    },
+    {
+      "sel": ".navbar-module--header--ca8c3 .navbar-module--navbar--55017 .navbar-module--rightnav--29a23 .navbar-",
+      "media": "(max-width: 991.98px)",
+      "props": {
+        "--y": "-8px"
+      }
+    },
+    {
+      "sel": ".desktopNavbarItems-module--navbarDesktop--7e678 .desktopNavbarItems-module--navbarItems--c758b",
+      "media": "",
+      "props": {
+        "--transitionDelay": "0s",
+        "--delay": "0s"
+      }
+    },
+    {
+      "sel": ".desktopNavbarItems-module--navbarDesktop--7e678 .desktopNavbarItems-module--navbarItems--c758b:has(",
+      "media": "",
+      "props": {
+        "--transitionDelay": "0.2s"
+      }
+    },
+    {
+      "sel": ".desktopNavbarItems-module--navbarDesktop--7e678 .desktopNavbarItems-module--navbarItems--c758b:has(",
+      "media": "",
+      "props": {
+        "--delay": "0.2s"
+      }
+    },
+    {
+      "sel": "",
+      "media": "",
+      "props": {
+        "--mira-flow": "1"
+      }
+    },
+    {
+      "sel": "",
+      "media": "",
+      "props": {
+        "--mira-flow": "0"
+      }
+    },
+    {
+      "sel": ".lpCompetitorSection-module--heroGlow--64a47",
+      "media": "",
+      "props": {
+        "--width": "max(100vw,1440px)"
+      }
+    },
+    {
+      "sel": ".lpCompetitorSection-module--heroGlow--64a47",
+      "media": "(max-width: 767.98px)",
+      "props": {
+        "--width": "100vw"
+      }
+    },
+    {
+      "sel": ".threeCompanyCards-module--company--44f45",
+      "media": "(min-width: 768px) and (max-width: 1199.98px)",
+      "props": {
+        "--peek": "calc(100cqw/2 - 50%)"
+      }
+    },
+    {
+      "sel": ".dMBeautifulPageHeader-module--swoosh--6667d",
+      "media": "",
+      "props": {
+        "--swoosh-stop-1": "#a0a9fc",
+        "--swoosh-stop-2": "#c098f5",
+        "--swoosh-stop-3": "#faa4cd",
+        "--swoosh-stop-4": "#ffc9a3"
+      }
+    },
+    {
+      "sel": ".why-mangomint-module--body--f20c4",
+      "media": "",
+      "props": {
+        "--transition": "0.3s"
+      }
+    },
+    {
+      "sel": "",
+      "media": "",
+      "props": {
+        "--angle": "360deg"
+      }
+    },
+    {
+      "sel": ".trialWelcomeAnimation-module--demoModeIntro--0a122",
+      "media": "",
+      "props": {
+        "--angle": "0deg",
+        "--delay1": "1.75s",
+        "--delay2": "10.5s",
+        "--globalDelay": "0.5s",
+        "--btnDelay": "calc(5.25s - var(--globalDelay))",
+        "--textShift": "40px",
+        "--introShift": "72.5px"
+      }
+    },
+    {
+      "sel": ".trialWelcomeAnimation-module--complete--1e8bf div, .trialWelcomeAnimation-module--complete--1e8bf s",
+      "media": "",
+      "props": {
+        "--slideUp": "0",
+        "--scale": "1"
+      }
+    },
+    {
+      "sel": ".trialWelcomeAnimation-module--wrapper--c09ef",
+      "media": "",
+      "props": {
+        "--bg": "linear-gradient(90deg,#191e49,#191e49)"
+      }
+    },
+    {
+      "sel": ".trialWelcomeAnimation-module--wrapper--c09ef .trialWelcomeAnimation-module--slide--51361.trialWelco",
+      "media": "",
+      "props": {
+        "--bg": "linear-gradient(90deg,#a171df,#d95bbe 50%,#ff9c42)"
+      }
+    },
+    {
+      "sel": ".trialWelcomeAnimation-module--wrapper--c09ef .trialWelcomeAnimation-module--slide--51361.trialWelco",
+      "media": "",
+      "props": {
+        "--bg": "linear-gradient(90deg,#191e49,#191e49)"
+      }
+    },
+    {
+      "sel": ".trialWelcomeAnimation-module--wrapper--c09ef .trialWelcomeAnimation-module--slide--51361.trialWelco",
+      "media": "",
+      "props": {
+        "--bg": "linear-gradient(90deg,#a171df,#d95bbe 50%,#ff9c42)"
+      }
+    },
+    {
+      "sel": "h2.trialWelcomeAnimation-module--text--aa35a > span:first-of-type",
+      "media": "",
+      "props": {
+        "--bg": "linear-gradient(90deg,#a171df,#d95bbe 50%,#ff9c42)"
+      }
+    }
+  ],
+  "fonts": [
+    {
+      "family": "tt-commons-pro",
+      "weight": "100 900",
+      "style": "normal"
+    },
+    {
+      "family": "tt-commons-mono",
+      "weight": "500",
+      "style": "normal"
+    },
+    {
+      "family": "pp-editorial-old",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "geist",
+      "weight": "100 900",
+      "style": "normal"
+    }
+  ],
+  "headerBg": "rgba(0, 0, 0, 0)",
+  "headerH": 80
+}
