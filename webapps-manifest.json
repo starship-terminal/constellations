@@ -5820,9 +5820,9 @@
       "description": "AI Music Generator",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://suno.com/sign-in email path said sign-in is not approved for this address. Phone path not used. Google sign-in completed in the capture browser. A birthday screen appeared and was not filled. Product not walked.",
+      "notes": "Email probe: https://suno.com/sign-in email path said sign-in is not approved for this address. Phone path not used. Google sign-in completed in the capture browser. A birthday screen appeared and was not filled. Product not walked. Public walk 2026-11-21: session was signed out. No birthday screen. Public site and logged-out shell in PR 1483 at 50d68da61. Settings, library, studio, and generate stay behind sign-in. Skipped the signed-in product this pass.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 17
     },
     {
