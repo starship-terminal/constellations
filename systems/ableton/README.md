@@ -105,6 +105,7 @@ The cookie overlay (`#biscuits-overlay`) is hidden by CSS for the clean captures
 - **Hover reads "same" on most controls by design.** Ableton's `abl-button`s genuinely do not restyle on hover (verified on the crop pairs); the entries are not missing a state.
 - **The register form's `ul` paints `#ffc2ca`** in the child-layers note: that is the password-strength meter's track, not the form's background.
 - **`trial-edition-card` and `pack-card` were read from the wrong elements.** `trial-edition-card` is the 720 x 655 hero column of /trial and `pack-card` is the 1440 x 348 page banner of /packs, not a single edition panel or Pack tile. Both need a recapture. `packs-green` now cites only `packs-title`, which holds the same value.
+- **`hero-cta` has no keyboard-focus reading.** Its selector matched the `<p class="homepage-teaser__cta">` around the "See what's new" link, and keyboard focus never reached it (the raw state says `focus failed`), so the stored focus-visible style is the element at rest. The builders leave that state out of components.md and raw/measurements.md, and the focus summary lists it as not captured. It needs a recapture that focuses the link itself.
 
 ## Fonts
 
