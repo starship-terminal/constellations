@@ -95,8 +95,20 @@ def props(v):
 ORDER = ["size", "padding", "border", "radius", "background", "shadow", "outline", "text", "transition", "placeholder"]
 
 
+def focus_not_captured(v):
+    """A focus-visible reading taken where keyboard focus never landed (measure.mjs's kbFocus returned
+    "focus failed"), a skipped state, or one that did not match :focus-visible. Its style is the element
+    at rest, so it is left out of every table and tally and listed as "focus could not be captured"
+    (ported from the kit's builder, 2026-11 audit D4)."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
+
+def measured(v):
+    return "style" in v and not focus_not_captured(v)
+
+
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    states = [s for s in c["states"] if measured(c["states"][s])]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -220,10 +232,12 @@ W()
 W("## Shared values")
 W()
 TRANSPARENT = re.compile(r"(rgba\(\d+, \d+, \d+, 0\)|oklch\(0 0 0 / 0\))$")
-foc = []
+foc, unfocused = [], []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if not st or "style" not in st:
+    if st and focus_not_captured(st):
+        unfocused.append(f"`{k}`")
+    if not st or not measured(st):
         continue
     s = st["style"]
     base = (c["states"].get("default") or {}).get("style") or {}
@@ -241,6 +255,8 @@ line = f"**Focus.** {len(foc)} components were given a real keyboard focus. "
 line += (f"{len(with_ring)} show a visible focus state: {', '.join(with_ring)}." if with_ring else "None shows a visible focus state.")
 if without:
     line += f" The other {len(without)} show no change a keyboard user can see: {', '.join(without)}."
+if unfocused:
+    line += f" Focus could not be captured on {len(unfocused)} more (keyboard focus never landed on them, so their readings are left out): {', '.join(unfocused)}."
 W(line)
 W()
 W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active). Get started, Continue, OAuth and plan CTAs were never given a real press that would sign in or submit.")

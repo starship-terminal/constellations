@@ -28,8 +28,10 @@ await page.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 90000 });
 await page.waitForTimeout(6000);
 // all sheets read via CSSOM (the chunks are same-origin, so every rule is readable)
 const sheets = await page.evaluate(() => [...document.styleSheets].map((s, i) => {
-  try { return { name: s.href || 'inline-' + i, media: s.media.mediaText || '', css: [...s.cssRules].map((r) => r.cssText).join('\n') }; }
-  catch { return { name: s.href || 'sheet-' + i, media: '', css: '', unreadable: true }; }
+  // A sheet's name keeps no query or fragment (deploy ids, cache keys).
+  const name = s.href ? s.href.split(/[?#]/)[0] : null;
+  try { return { name: name || 'inline-' + i, media: s.media.mediaText || '', css: [...s.cssRules].map((r) => r.cssText).join('\n') }; }
+  catch { return { name: name || 'sheet-' + i, media: '', css: '', unreadable: true }; }
 }));
 await page.close();
 

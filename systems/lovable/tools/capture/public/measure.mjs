@@ -40,8 +40,8 @@ async function newPage(key, { mobile = false, wait = 3500 } = {}) {
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, URLS[key], { wait });
-  const blocked = await page.evaluate(() => /just a moment|verify you are human/i.test(document.title + (document.body.innerText || '').slice(0, 200))).catch(() => true);
+  const cleared = await open(page, URLS[key], { wait }).catch((e) => { log('  open failed', key, String(e.message || e).slice(0, 120)); return false; });
+  const blocked = !cleared || await page.evaluate(() => /just a moment|verify you are human/i.test(document.title + (document.body.innerText || '').slice(0, 200))).catch(() => true);
   if (blocked) { log('  BLOCKED', key); await page.close(); await ctx.close(); return false; }
   opened.add(key);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
@@ -259,13 +259,27 @@ const arg = (process.argv[2] || 'all').split(',').filter(Boolean);
 const { browser, context: root } = await launch();
 context = root;
 const want = (k) => arg.includes('all') || arg.includes(k);
+// Pages opened by a section that ran to the end. Only their components and states can be pruned: a
+// section that failed part-way keeps its earlier readings, since what it did not reach is not known
+// to be gone (the kit's prune, restored in the 2026-11 audit).
+const finishedPages = new Set();
+async function section(fn) {
+  const before = new Set(opened);
+  await fn();
+  for (const p of opened) if (!before.has(p)) finishedPages.add(p);
+}
 try {
-  if (want('home')) await home();
-  if (want('pricing')) await pricing();
-  if (want('login')) await login();
-  if (want('docs')) await docs();
-  if (want('mobile')) await mobile();
+  if (want('home')) await section(home);
+  if (want('pricing')) await section(pricing);
+  if (want('login')) await section(login);
+  if (want('docs')) await section(docs);
+  if (want('mobile')) await section(mobile);
 } finally {
+  for (const [key, c] of Object.entries(out.components)) if (finishedPages.has(c.page) && !touched.has(key)) { delete out.components[key]; log('dropped stale', key); }
+  for (const [key, c] of Object.entries(out.components)) {
+    if (!finishedPages.has(c.page) || !listed.has(key)) continue;
+    for (const st of Object.keys(c.states || {})) if (!listed.get(key).has(st)) { delete c.states[st]; log('dropped stale state', key, st); }
+  }
   save();
   await browser.close();
 }

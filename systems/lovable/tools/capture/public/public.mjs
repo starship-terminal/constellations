@@ -7,11 +7,12 @@
 // Desktop 1440x900 at 1x, mobile 390x844 at 2x. Nothing is sent, signed into,
 // purchased or submitted. Consent overlays are hidden, never clicked.
 import fs from 'fs';
+import os from 'node:os';
 import path from 'node:path';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE, DOCS } from './lib.mjs';
 
-const RAW = process.env.RAW || path.join(process.env.HOME || '', '.design-systems', 'lovable', 'raw-shots');
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'lovable', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
