@@ -2,6 +2,7 @@
 sidecar (grep stitched_sidecar). A plain capture's .capture.json is copied; a stitched image's is rebuilt
 from its tiles with a fresh dimensionCheck. Each script is copied into a throwaway package tree and run as
 a subprocess, so the committed screenshots/ is never touched. Needs Pillow; skipped without it."""
+import hashlib
 import json
 import pathlib
 import shutil
@@ -17,8 +18,21 @@ except ImportError:  # pragma: no cover
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 KIT = ROOT / "tools" / "kit" / "capture" / "quantize.py"
+
+def distinct(paths):
+    """One script per distinct body: byte-identical copies behave identically, and every run is a
+    subprocess (about 3,000 per make test when each of 400 copies ran), so each body is tested once."""
+    seen, out = set(), []
+    for p in paths:
+        h = hashlib.sha1(p.read_bytes()).hexdigest()
+        if h not in seen:
+            seen.add(h)
+            out.append(p)
+    return out
+
+
 COPIES = sorted(p for p in ROOT.glob("systems/*/tools/capture/quantize.py") if "def stitched_sidecar" in p.read_text())
-SCRIPTS = [KIT] + COPIES
+SCRIPTS = distinct([KIT] + COPIES)
 # designmodo judges a sheet by the tiles' own recorded dimensionCheck and writes a failing sidecar for a
 # tile it cannot vouch for, instead of none; that is deliberate, so its tests expect "fail" where the rest expect no file.
 RECORDED = [s for s in SCRIPTS if "recorded checks" in s.read_text()]

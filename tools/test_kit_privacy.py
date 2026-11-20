@@ -561,14 +561,28 @@ console.log(JSON.stringify(out));
 
 
 
-@unittest.skipIf(NODE is None or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
+@unittest.skipIf(NODE is None, "node is not on PATH")
 class RawShotsStayOutOfTheRepo(unittest.TestCase):
     def test_public_capture_needs_a_scratch_dir_outside_a_package(self):
+        # A copy of the capture tree in a scratch package, with a stand-in Playwright whose launch throws:
+        # if the RAW guard ever regressed, this fails without opening a browser, reaching the network or
+        # writing into the checkout. So it needs no Playwright and runs in CI too.
         env = {k: v for k, v in os.environ.items() if k != "RAW"}
-        res = subprocess.run([NODE, str(HERE / "kit/capture/public/public.mjs")], capture_output=True, text=True,
-                             timeout=60, env={**env, "PLAYWRIGHT": PLAYWRIGHT})
-        self.assertEqual(res.returncode, 2, res.stderr)
-        self.assertIn("set RAW=", res.stderr)
+        with tempfile.TemporaryDirectory() as d:
+            capture = Path(d) / "pkg" / "tools" / "capture"
+            shutil.copytree(HERE / "kit/capture", capture, ignore=shutil.ignore_patterns("test_*", "native"))
+            stub = Path(d) / "playwright-stub.mjs"
+            stub.write_text("const launch = () => { throw new Error('stub Playwright: no browser in this test'); };\n"
+                            "export const chromium = { launch, connectOverCDP: launch };\nexport default { chromium };\n")
+            res = subprocess.run([NODE, str(capture / "public/public.mjs")], capture_output=True, text=True, cwd=d,
+                                 timeout=60, env={**env, "PLAYWRIGHT": stub.as_uri(), "KIT_EXAMPLE": "1",
+                                                  "HOME": str(Path(d) / "home"), "USERPROFILE": str(Path(d) / "home")})
+            self.assertEqual(res.returncode, 2, res.stderr)
+            self.assertIn("set RAW=", res.stderr)
+            self.assertNotIn("stub Playwright", res.stderr)
+            self.assertEqual(sorted(p.name for p in (Path(d) / "pkg").iterdir()), ["tools"])   # nothing written
+            # a regressed guard would default to ~/.design-systems/<slug>/raw-shots: HOME points in here
+            self.assertFalse((Path(d) / "home").exists())
         src = (HERE / "kit/capture/public/public.mjs").read_text()
         self.assertIn("'.design-systems', path.basename(PKG), 'raw-shots'", src)
         self.assertNotIn("raw/full/", src)
