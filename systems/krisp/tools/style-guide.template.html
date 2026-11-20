@@ -32,13 +32,13 @@ h2 { font: 600 22px/28px var(--sg-sans); margin: 36px 0 12px; }
 .sw span { font-weight: 400; color: var(--text-muted, #757585); }
 .btn { display: inline-flex; align-items: center; height: var(--size-button-sm, 36px); padding: 0 20px; border-radius: var(--radius-sm, 8px); font: 600 14px/20px var(--sg-sans); text-decoration: none; }
 .btn.primary { background: var(--action-primary, #614efa); color: var(--text-on-accent, #fff); }
-.btn.dark { background: var(--action-inverse, #131032); color: #fff; }
+.btn.dark { background: var(--action-inverse, #131032); color: var(--background-page, #fff); } /* page colour on the inverse fill reads in both sets */
 .card { width: 280px; padding: 24px; border-radius: var(--radius-lg, 16px); border: 1px solid var(--border-default, #e7e7ea); background: var(--background-surface, #fff); }
 .card.hi { border: 2px solid var(--border-highlight, #614efa); }
-.card .price { font: 700 40px/48px var(--sg-sans); color: var(--text-price, #232040); margin: 8px 0; }
+.card .price { font: 700 40px/48px var(--sg-sans); color: var(--text-price, var(--text-primary, #232040)); margin: 8px 0; }
 .toggle { display: inline-flex; gap: 4px; padding: 4px; border-radius: var(--radius-pill, 999px); background: var(--background-muted, #f4f4f5); }
 .toggle span { padding: 6px 14px; border-radius: var(--radius-pill, 999px); font: 600 14px/20px var(--sg-sans); }
-.toggle .on { background: #fff; }
+.toggle .on { background: var(--background-surface, #fff); }
 table { border-collapse: collapse; width: 100%; font-size: 14px; }
 td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border-default, #e7e7ea); vertical-align: top; }
 th { color: var(--text-muted, #757585); font-weight: 600; }

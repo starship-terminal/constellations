@@ -183,7 +183,7 @@ light = {
         "menu": tok(
             [{"color": "rgba(27, 30, 33, 0.16)", "offsetX": "0px", "offsetY": "16px", "blur": "32px", "spread": "2px"}],
             "shadow",
-            hand("Typed from the declared .button.btn--dropdown .dropdown .dropdown_inner box-shadow, krisp-v4 2026-11-18. Plan cards and the page have no shadow."),
+            "computed box-shadow of div.dropdown_inner, a painted layer of get-krisp default (raw/components-computed.json), declared on .button.btn--dropdown .dropdown .dropdown_inner in krisp-v4, 2026-11-18. Plan cards and the page have no shadow.",
         ),
     },
     "component": {
