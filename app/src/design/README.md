@@ -6,6 +6,11 @@ background roles, radius values, and micro-interaction/video durations from
 `systems/refero-design/tokens.json`. Secondary text and border contrast are Studio
 adjustments. Dialog and insertion timings are app choices, labelled in the file.
 
+The theme choice is System, Dark or Light, stored in `localStorage` under
+`studio-theme`. With no stored choice the app is on System: it follows
+`prefers-color-scheme`, and an inline script in the layout sets `data-theme`
+before first paint. A stored Dark or Light wins over the system setting.
+
 The app uses Georgia and a system sans-serif stack from the system instead of captured proprietary
 fonts. Studio's mark is original, and interface icons come from Lucide. Captured
 product icons and screenshots identify references inside the private library.

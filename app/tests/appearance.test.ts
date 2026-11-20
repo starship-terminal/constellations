@@ -35,10 +35,21 @@ describe("themeInitScript", () => {
     expect(run("system", false)).toBe("light");
     expect(run("system", true)).toBe("dark");
   });
-  it("falls back to dark for a missing, unknown or unreadable value", () => {
-    expect(run(null)).toBe("dark");
-    expect(run("sepia")).toBe("dark");
-    expect(run("light", false, true)).toBe("dark");
+  it("follows the system when nothing is stored", () => {
+    expect(run(null, false)).toBe("light");
+    expect(run(null, true)).toBe("dark");
+  });
+  it("treats an unknown value as no choice", () => {
+    expect(run("sepia", false)).toBe("light");
+    expect(run("sepia", true)).toBe("dark");
+  });
+  it("lets a stored Dark or Light win over the system", () => {
+    expect(run("dark", false)).toBe("dark");
+    expect(run("light", true)).toBe("light");
+  });
+  it("follows the system when storage is unreadable", () => {
+    expect(run("light", false, true)).toBe("light");
+    expect(run("light", true, true)).toBe("dark");
   });
 });
 
