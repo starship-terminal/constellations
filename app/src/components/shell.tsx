@@ -21,7 +21,7 @@ import {
   ArchiveRestore,
 } from "lucide-react";
 import { api, Modal } from "./shared";
-import { createRecentGuard } from "./recent-guard";
+import { createInFlightGuard } from "./recent-guard";
 export function Mark() {
   return (
     <>
@@ -119,7 +119,6 @@ interface Conversation {
   archived?: boolean;
 }
 const SIDEBAR_KEY = "studio-sidebar-collapsed";
-const RECENT_RELOAD_MS = 1000;
 /** Runs before paint, like the theme script: a collapsed sidebar is laid out
  * collapsed from the first frame instead of opening and then closing. */
 export const sidebarInitScript = `(function(){try{
@@ -162,17 +161,18 @@ export function AppShell({ children }: { children: ReactNode }) {
   // Only the newest history request may update the list or its failure state.
   const historyRequest = useRef(0);
   // A tab switch fires focus and visibilitychange together, and the first
-  // focus can land right after mount: only one of them may fetch.
-  const recent = useRef(createRecentGuard(RECENT_RELOAD_MS));
+  // focus can land while the mount fetch is still running: those join the
+  // fetch already in flight. Once it settles, the next event fetches again.
+  const inFlight = useRef(createInFlightGuard());
   function reloadWhenShown() {
-    if (document.visibilityState === "visible") reloadIfStale();
+    if (document.visibilityState === "visible") reloadIfIdle();
   }
-  function reloadIfStale() {
-    if (!recent.current.fresh()) reload();
+  function reloadIfIdle() {
+    if (!inFlight.current.busy()) reload();
   }
   function reload() {
-    recent.current.mark();
     const request = ++historyRequest.current;
+    const done = inFlight.current.start();
     api("/api/conversations")
       .then((d) => {
         if (request !== historyRequest.current) return;
@@ -181,7 +181,8 @@ export function AppShell({ children }: { children: ReactNode }) {
       })
       .catch(() => {
         if (request === historyRequest.current) setHistoryFailed(true);
-      });
+      })
+      .finally(done);
   }
   // Pages that change research dispatch "research-history"; moving between
   // pages changes nothing, so it does not refetch. Research created or
@@ -191,11 +192,11 @@ export function AppShell({ children }: { children: ReactNode }) {
     reload();
     window.addEventListener("research-history", reload);
     document.addEventListener("visibilitychange", reloadWhenShown);
-    window.addEventListener("focus", reloadIfStale);
+    window.addEventListener("focus", reloadIfIdle);
     return () => {
       window.removeEventListener("research-history", reload);
       document.removeEventListener("visibilitychange", reloadWhenShown);
-      window.removeEventListener("focus", reloadIfStale);
+      window.removeEventListener("focus", reloadIfIdle);
     };
   }, []);
   useEffect(() => {
