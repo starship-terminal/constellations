@@ -242,6 +242,8 @@ The "Creator" plan heading (es-subheading-l) over a plan column. Read as `plan-n
 #### Plan price line
 The price line inside a plan column. Read as `plan-price` on the pricing page.
 
+**Wrong element.** These readings are an empty 688 x 384 div far down the pricing page (y 6525), not a plan's price line: the `main, section, div` union with `.last()` matched it. Recapture needed.
+
 **Values (default).** size 688 x 384; padding 24px; background transparent; text Inter 16/24 500, rgba(0, 0, 0, 0.6) `color.icon.secondary`.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
@@ -317,8 +319,9 @@ A row's album-cover play button; measured, never pressed (signed-out playback is
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: pressed) | size 56 x 56; radius 4px; background #6b6b6b; text Inter 16/18.4 400, #ffffff `color.brand.white` |
-| hover | size 0 x 0 |
 | focus-visible | outline 1px auto #101010, offset 0px |
+
+**Not a reading.** In `hover` this element's box is 0 x 0 (it leaves the layout), so that state's look is on its container, not measured here.
 
 ![Track play button default](components/crops/track-play-default.png) ![Track play button focus-visible](components/crops/track-play-focus-visible.png) ![Track play button pressed](components/crops/track-play-pressed.png)
 
@@ -410,8 +413,9 @@ An SFX row's play button; measured, never pressed. As on the genre list, row hov
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: pressed) | size 56 x 56; radius 4px; background #6b6b6b; text Inter 16/18.4 400, #ffffff `color.brand.white` |
-| hover | size 0 x 0 |
 | focus-visible | outline 1px auto #101010, offset 0px |
+
+**Not a reading.** In `hover` this element's box is 0 x 0 (it leaves the layout), so that state's look is on its container, not measured here.
 
 ![SFX play button default](components/crops/sfx-play-default.png) ![SFX play button focus-visible](components/crops/sfx-play-focus-visible.png) ![SFX play button pressed](components/crops/sfx-play-pressed.png)
 
@@ -567,6 +571,8 @@ A registration form input; focused and typed into then cleared — never submitt
 
 #### Signup submit
 The registration form's submit action; its states were measured but it was never clicked — nothing was submitted. Read as `su-submit` on the signup page.
+
+**Wrong element.** These readings are the "Continue with Google" link, not the registration form's submit: the `a.button` alternative matched it first. Recapture needed.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
