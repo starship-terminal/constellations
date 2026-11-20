@@ -44,6 +44,9 @@ class RebuildTest(unittest.TestCase):
         self.assertNotIn(".ds-input", text)
         if PKG.name != "awwwards":
             self.assertNotIn("Awwwards wordmark", text)
+        # avnier's builders were adapted from asos's; none of its consent, bot-wall or host text applies.
+        for word in ("asos", "onetrust", "akamai"):
+            self.assertNotIn(word, text.lower())
 
 
 if __name__ == "__main__":
