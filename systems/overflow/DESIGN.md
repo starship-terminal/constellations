@@ -483,6 +483,12 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+The forced focus-visible outline is `outline-style: auto` in `rgb(0, 95, 204)`: Chromium's default focus ring. Overflow sets no focus colour, so `core.color.focus-ring` and `light.focus.*` are labelled Observed and are not a brand value to copy.
+
+Five marketing values have no reading in raw/: the h3 eyebrow colour `#acacbc`, the `.btn-secondary` fill `#f0f0f2`, and the `section`, `card-title` and `eyebrow` type styles. They are labelled Reconstruction (typed in by hand at capture time).
+
+The cookie banner was dismissed with its Required only choice before the readings; every marketing reading was taken after that click.
+
 The hero wash has no CSS `background-image` on the section or its ancestors. Its stops are not in the tokens.
 
 `font-weight: 550` is the computed value of `.btn`. It is not a standard weight.
