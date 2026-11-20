@@ -3156,9 +3156,9 @@
       "description": "Lightweight, scalable animations for your websites and apps",
       "status": "pending",
       "package": null,
-      "notes": "https://lottiefiles.com/login is 404. https://accounts.lottiefiles.com/login asks for organization email and password. Password not submitted.",
+      "notes": "https://lottiefiles.com/login is 404. https://accounts.lottiefiles.com/login asks for organization email and password. Password not submitted. Public walk 2026-11-21: header menus opened Products, Integrations, Tools, Customers, and Learn. Search opened a dialog. Log in stops at https://login.lottiefiles.com/login. Sign up stops at https://login.lottiefiles.com/register. Those branches were not entered. No form was submitted. Public package in PR 1513 at c7ca2ac68. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 10
     },
     {
