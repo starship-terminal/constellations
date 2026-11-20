@@ -2,6 +2,7 @@
 import crypto from 'crypto';
 import fs from 'fs';
 import { chromium, UA, BASE, APP, HELP, hideConsent } from './public/lib.mjs';
+import { replaceSet } from './replace-set.mjs';
 
 const OUT = new URL('../../icons/', import.meta.url).pathname;
 fs.mkdirSync(OUT, { recursive: true });
@@ -65,15 +66,16 @@ if (failed.length) {
   console.error('not written, pages failed:\n  ' + failed.join('\n  '));
   process.exit(1);
 }
-for (const f of fs.readdirSync(OUT)) if (f.endsWith('.svg')) fs.unlinkSync(OUT + f);
 const rows = ['file\trole\tpages'];
+const files = new Map();
 let i = 0;
 for (const [hash, rec] of seen) {
   const slug = (rec.label || 'icon').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 32) || 'icon';
   const name = `${slug}-${hash}.svg`;
-  fs.writeFileSync(OUT + name, rec.markup);
+  files.set(name, rec.markup);
   rows.push(`${name}\t${rec.label}\t${rec.pages.length}`);
   i++;
 }
-fs.writeFileSync(OUT + 'INDEX.tsv', rows.join('\n') + '\n');
+// Written to a scratch folder first; icons/ changes only once every file is written.
+replaceSet(OUT, files, rows.join('\n') + '\n');
 console.log('icons', i);
