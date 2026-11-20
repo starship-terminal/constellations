@@ -315,6 +315,15 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
+def _alpha(c):
+    """The alpha of a computed colour (rgba(), color(srgb ... / a) or transparent); 1 when opaque."""
+    c = (c or "").strip()
+    if c == "transparent":
+        return 0.0
+    m = re.search(r"rgba\([^)]*?,\s*([\d.]+)\s*\)|color\([^)]*/\s*([\d.]+)\s*\)", c)
+    return float(m.group(1) or m.group(2)) if m else 1.0
+
+
 foc = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
@@ -322,11 +331,12 @@ for k, c in C.items():
         continue
     s = st["style"]
     base = next((v["style"] for v in c["states"].values() if "style" in v), s)
-    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
+    # a transparent outline (a focus-visible reset that keeps a 2px slot) is not a ring
+    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0 and _alpha(s["outlineColor"]) > 0
     # A ring painted on a child layer instead of the wrapper: offer buttons
     # draw 1px dotted outlines on their inner anchor while the wrapper's own
     # outline stays none. Those states must count as ringed too.
-    child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline")), None)
+    child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline") and _alpha(re.sub(r"^[\d.]+px \w+ | offset .*$", "", n["outline"])) > 0), None)
     shadow = s["boxShadow"] != base["boxShadow"] and s["boxShadow"] != "none"
     border = any(
         s[f"border{d}{p}"] != base[f"border{d}{p}"]
