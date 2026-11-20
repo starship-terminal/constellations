@@ -352,7 +352,7 @@ async function product() {
   }
   const c = G.cart;
   const dr = await domFind(page, /CART/, { sel: '.z-takeover', tag: 'cdr', leaf: false, minW: 300, minH: 300 });
-  await S('cart-drawer', dr, ['open'], { group: c, title: 'Cart drawer', desc: 'The right-hand .z-takeover drawer after Add to Cart: CART heading, free-shipping meter, item rows, upsell carousel, subtotal and the checkout buttons. Never checked out.', sel: '.z-takeover cart' }, { noScroll: true });
+  await S('cart-drawer', dr, ['open'], { group: c, title: 'Cart drawer', desc: 'The right-hand .z-takeover drawer opened from the header cart button, with an empty cart: the CART heading and whatever the empty state shows. Add to Cart is never pressed, so no item rows, subtotal or checkout buttons.', sel: '.z-takeover cart' }, { noScroll: true });
   await S('cart-qty', await domFind(page, /^[+−-]$/, { sel: '.z-takeover button', tag: 'qty' }), ['default'], { group: c, title: 'Quantity stepper', desc: 'The +/- stepper on a cart row.', sel: 'qty button' }, { noScroll: true });
   await S('cart-upsell-card', await domFind(page, /Add\+/, { sel: '.z-takeover a, .z-takeover button', tag: 'ups', up: 'li, [class*="card" i], [class*="upsell" i], [class*="item" i]' }), ['default'], { group: c, title: 'Upsell card', desc: 'RECOMMENDED FOR YOU carousel cards with a size select and an "Add+" link.', sel: '.cart-upsells' }, { noScroll: true });
   // the checkout bar may sit outside the .z-takeover scroll root or inside a
