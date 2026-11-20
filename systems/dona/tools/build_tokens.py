@@ -211,7 +211,8 @@ tokens = {
 
 
 def count(d):
-    return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
+    """Tokens in a set; the set's $extensions (the notTokenised list) is not a token."""
+    return sum(count(v) for k, v in d.items() if k != "$extensions") if isinstance(d, dict) and "$value" not in d else 1
 
 
 print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})

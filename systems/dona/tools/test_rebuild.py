@@ -93,5 +93,22 @@ class RebuildTest(unittest.TestCase):
         entry = built.split("#### logo\n")[1].split("\n#### ")[0]
         self.assertIn("| Skipped |", entry)
 
+    def test_incomplete_capture_still_builds(self):
+        # A missing component or a function-valued easing must not stop the rebuild.
+        with tempfile.TemporaryDirectory() as d:
+            root = pathlib.Path(d)
+            shutil.copytree(PKG / "tools", root / "tools", ignore=shutil.ignore_patterns("capture", "__pycache__"))
+            shutil.copytree(PKG / "raw", root / "raw")
+            f = root / "raw" / "components-computed.json"
+            j = json.loads(f.read_text())
+            j["components"]["modal-close"] = {"missing": True, "states": {}, "page": "home", "title": "x", "group": "x"}
+            j["components"]["cookie-accept"]["states"]["default"]["style"]["transitionTimingFunction"] = "cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1)"
+            f.write_text(json.dumps(j))
+            for b in ("build_component_tokens.py", "build_tokens.py"):
+                subprocess.run([sys.executable, str(root / "tools" / b)], cwd=root, check=True, capture_output=True)
+            out = json.loads((root / "tokens.json").read_text())
+            self.assertEqual(out["core"]["easing"]["standard"]["$value"], [0.4, 0, 0.2, 1])
+            self.assertNotIn("radius.round", [e["name"] for e in out["core"]["$extensions"]["notTokenised"]])
+
 if __name__ == "__main__":
     unittest.main()
