@@ -1,0 +1,1867 @@
+{
+  "capturedAt": "2026-11-20T21:38:51.066Z",
+  "themes": {
+    "lightDecls": {
+      "--gray-00": "255 255 255",
+      "--gray-25": "248 249 251",
+      "--gray-50": "248 250 252",
+      "--gray-100": "241 245 249",
+      "--gray-200": "226 232 240",
+      "--gray-300": "203 213 225",
+      "--gray-400": "148 163 184",
+      "--gray-500": "100 116 139",
+      "--gray-600": "71 85 105",
+      "--gray-700": "51 65 85",
+      "--gray-800": "30 41 59",
+      "--gray-900": "15 23 42",
+      "--gray-1k": "13 13 13",
+      "--border": "var(--gray-200)",
+      "--shadow-5": "0px 1px 1px -0.5px rgba(0,0,0,0.03),0px 3px 3px -1.5px rgba(0,0,0,0.03)",
+      "--shadow-10": "0px 3px 3px -1.5px rgba(0,0,0,0.03),0px 6px 6px -3px rgba(0,0,0,0.03),0px 12px 12px -6px rgba(0,0,0,0.03)",
+      "--shadow-15": "0px 3px 3px -1.5px rgba(0,0,0,0.08),0px 6px 6px -3px rgba(0,0,0,0.08),0px 12px 12px -6px rgba(0,0,0,0.08),0px 24px 24px -12px rgba(0,0,0,0.08)",
+      "--shadow-focus": "0px 0px 0px 4px #e1e4e880",
+      "--chart-1": "47,128,237"
+    },
+    "darkDecls": {
+      "--gray-00": "23 23 23",
+      "--gray-25": "30 30 30",
+      "--gray-50": "38 38 38",
+      "--gray-100": "51 51 51",
+      "--gray-200": "64 64 64",
+      "--gray-300": "82 82 82",
+      "--gray-400": "115 115 115",
+      "--gray-500": "138 138 138",
+      "--gray-600": "163 163 163",
+      "--gray-700": "212 212 212",
+      "--gray-800": "229 229 229",
+      "--gray-900": "245 245 245",
+      "--gray-1k": "250 250 250",
+      "--border": "var(--gray-100)",
+      "--shadow-5": "0px 1px 1px -0.5px rgba(0,0,0,0.1),0px 3px 3px -1.5px rgba(0,0,0,0.3)",
+      "--shadow-10": "0px 4px 4px 0px rgba(0,0,0,0.25),0px 1px 1px -0.5px rgba(0,0,0,0.1),0px 6px 6px 0px rgba(0,0,0,0.1)",
+      "--shadow-15": "0px 3px 3px -1.5px rgba(0,0,0,0.1),0px 6px 6px -3px rgba(0,0,0,0.3),0px 12px 12px -6px rgba(0,0,0,0.15)",
+      "--shadow-focus": "0px 0px 0px 4px rgb(38,38,38)",
+      "--chart-1": "47,128,237",
+      "--chart-2": "160 60% 45%",
+      "--chart-3": "30 80% 55%",
+      "--chart-4": "280 65% 60%",
+      "--chart-5": "340 75% 55%"
+    },
+    "resolvedLight": {
+      "--gray-00": "255 255 255",
+      "--gray-25": "248 249 251",
+      "--gray-50": "248 250 252",
+      "--gray-100": "241 245 249",
+      "--gray-200": "226 232 240",
+      "--gray-300": "203 213 225",
+      "--gray-400": "148 163 184",
+      "--gray-500": "100 116 139",
+      "--gray-600": "71 85 105",
+      "--gray-700": "51 65 85",
+      "--gray-800": "30 41 59",
+      "--gray-900": "15 23 42",
+      "--gray-1k": "13 13 13",
+      "--border": "226 232 240",
+      "--shadow-5": "0px 1px 1px -0.5px rgba(0,0,0,0.03),0px 3px 3px -1.5px rgba(0,0,0,0.03)",
+      "--shadow-10": "0px 3px 3px -1.5px rgba(0,0,0,0.03),0px 6px 6px -3px rgba(0,0,0,0.03),0px 12px 12px -6px rgba(0,0,0,0.03)",
+      "--shadow-15": "0px 3px 3px -1.5px rgba(0,0,0,0.08),0px 6px 6px -3px rgba(0,0,0,0.08),0px 12px 12px -6px rgba(0,0,0,0.08),0px 24px 24px -12px rgba(0,0,0,0.08)",
+      "--shadow-focus": "0px 0px 0px 4px #e1e4e880",
+      "--chart-1": "47,128,237"
+    },
+    "resolvedDark": {
+      "--gray-00": "23 23 23",
+      "--gray-25": "30 30 30",
+      "--gray-50": "38 38 38",
+      "--gray-100": "51 51 51",
+      "--gray-200": "64 64 64",
+      "--gray-300": "82 82 82",
+      "--gray-400": "115 115 115",
+      "--gray-500": "138 138 138",
+      "--gray-600": "163 163 163",
+      "--gray-700": "212 212 212",
+      "--gray-800": "229 229 229",
+      "--gray-900": "245 245 245",
+      "--gray-1k": "250 250 250",
+      "--border": "51 51 51",
+      "--shadow-5": "0px 1px 1px -0.5px rgba(0,0,0,0.1),0px 3px 3px -1.5px rgba(0,0,0,0.3)",
+      "--shadow-10": "0px 4px 4px 0px rgba(0,0,0,0.25),0px 1px 1px -0.5px rgba(0,0,0,0.1),0px 6px 6px 0px rgba(0,0,0,0.1)",
+      "--shadow-15": "0px 3px 3px -1.5px rgba(0,0,0,0.1),0px 6px 6px -3px rgba(0,0,0,0.3),0px 12px 12px -6px rgba(0,0,0,0.15)",
+      "--shadow-focus": "0px 0px 0px 4px rgb(38,38,38)",
+      "--chart-1": "47,128,237"
+    },
+    "fontFaces": [
+      {
+        "family": "Geist",
+        "weight": "300",
+        "style": "normal"
+      },
+      {
+        "family": "Geist",
+        "weight": "400",
+        "style": "normal"
+      },
+      {
+        "family": "Geist",
+        "weight": "500",
+        "style": "normal"
+      },
+      {
+        "family": "Geist",
+        "weight": "600",
+        "style": "normal"
+      },
+      {
+        "family": "Geist",
+        "weight": "700",
+        "style": "normal"
+      },
+      {
+        "family": "Geist",
+        "weight": "800",
+        "style": "normal"
+      },
+      {
+        "family": "Geist",
+        "weight": "900",
+        "style": "normal"
+      },
+      {
+        "family": "Geist Fallback",
+        "weight": "",
+        "style": ""
+      },
+      {
+        "family": "Geist Mono",
+        "weight": "100 900",
+        "style": "normal"
+      },
+      {
+        "family": "Geist Mono Fallback",
+        "weight": "",
+        "style": ""
+      },
+      {
+        "family": "instrument",
+        "weight": "400",
+        "style": "normal"
+      },
+      {
+        "family": "instrument Fallback",
+        "weight": "",
+        "style": ""
+      },
+      {
+        "family": "departureMono",
+        "weight": "400",
+        "style": "normal"
+      },
+      {
+        "family": "departureMono Fallback",
+        "weight": "",
+        "style": ""
+      },
+      {
+        "family": "cooperLtBT",
+        "weight": "400",
+        "style": "normal"
+      },
+      {
+        "family": "cooperLtBT Fallback",
+        "weight": "",
+        "style": ""
+      },
+      {
+        "family": "Libre Baskerville",
+        "weight": "400",
+        "style": "normal"
+      },
+      {
+        "family": "Libre Baskerville Fallback",
+        "weight": "",
+        "style": ""
+      },
+      {
+        "family": "Staatliches",
+        "weight": "400",
+        "style": "normal"
+      },
+      {
+        "family": "Staatliches Fallback",
+        "weight": "",
+        "style": ""
+      },
+      {
+        "family": "Roboto",
+        "weight": "400",
+        "style": "normal"
+      },
+      {
+        "family": "Roboto Fallback",
+        "weight": "",
+        "style": ""
+      }
+    ],
+    "utilityColours": {
+      ".border-blue-400": {
+        "bg": "",
+        "color": "",
+        "border": "rgb(47 128 237/var(--tw-border-opacity))"
+      },
+      ".border-blue-figmaBlue": {
+        "bg": "",
+        "color": "",
+        "border": "rgb(27 134 255/var(--tw-border-opacity))"
+      },
+      ".border-green": {
+        "bg": "",
+        "color": "",
+        "border": "rgb(0 170 69/var(--tw-border-opacity))"
+      },
+      ".border-green-00": {
+        "bg": "",
+        "color": "",
+        "border": "rgb(227 245 234/var(--tw-border-opacity))"
+      },
+      ".border-green-100": {
+        "bg": "",
+        "color": "",
+        "border": "rgb(111 207 151/var(--tw-border-opacity))"
+      },
+      ".border-green-200": {
+        "bg": "",
+        "color": "",
+        "border": "rgb(82 192 120/var(--tw-border-opacity))"
+      },
+      ".border-green-300": {
+        "bg": "",
+        "color": "",
+        "border": "rgb(0 170 69/var(--tw-border-opacity))"
+      },
+      ".border-green-500": {
+        "bg": "",
+        "color": "",
+        "border": "rgb(30 135 75/var(--tw-border-opacity))"
+      },
+      ".border-green-800": {
+        "bg": "",
+        "color": "",
+        "border": "rgb(1 83 0/var(--tw-border-opacity))"
+      },
+      ".border-red-00": {
+        "bg": "",
+        "color": "",
+        "border": "rgb(255 234 234/var(--tw-border-opacity))"
+      },
+      ".border-red-200": {
+        "bg": "",
+        "color": "",
+        "border": "rgb(244 121 116/var(--tw-border-opacity))"
+      },
+      ".border-red-300": {
+        "bg": "",
+        "color": "",
+        "border": "rgb(235 87 87/var(--tw-border-opacity))"
+      },
+      ".border-red-600": {
+        "bg": "",
+        "color": "",
+        "border": "rgb(194 13 13/var(--tw-border-opacity))"
+      },
+      ".border-yellow, .border-yellow-400": {
+        "bg": "",
+        "color": "",
+        "border": "rgb(250 204 21/var(--tw-border-opacity))"
+      },
+      ".\\!bg-green-300": {
+        "bg": "rgb(0 170 69/var(--tw-bg-opacity))",
+        "color": "",
+        "border": ""
+      },
+      ".bg-blue-00": {
+        "bg": "rgb(243 249 252/var(--tw-bg-opacity))",
+        "color": "",
+        "border": ""
+      },
+      ".bg-blue-100": {
+        "bg": "rgb(183 217 241/var(--tw-bg-opacity))",
+        "color": "",
+        "border": ""
+      },
+      ".bg-blue-300": {
+        "bg": "rgb(45 156 219/var(--tw-bg-opacity))",
+        "color": "",
+        "border": ""
+      },
+      ".bg-blue-400": {
+        "bg": "rgb(47 128 237/var(--tw-bg-opacity))",
+        "color": "",
+        "border": ""
+      },
+      ".bg-blue-50": {
+        "bg": "rgb(224 238 248/var(--tw-bg-opacity))",
+        "color": "",
+        "border": ""
+      },
+      ".bg-green": {
+        "bg": "rgb(0 170 69/var(--tw-bg-opacity))",
+        "color": "",
+        "border": ""
+      },
+      ".bg-green-00": {
+        "bg": "rgb(227 245 234/var(--tw-bg-opacity))",
+        "color": "",
+        "border": ""
+      },
+      ".bg-green-100": {
+        "bg": "rgb(111 207 151/var(--tw-bg-opacity))",
+        "color": "",
+        "border": ""
+      },
+      ".bg-green-300": {
+        "bg": "rgb(0 170 69/var(--tw-bg-opacity))",
+        "color": "",
+        "border": ""
+      },
+      ".bg-green-400": {
+        "bg": "rgb(33 150 83/var(--tw-bg-opacity))",
+        "color": "",
+        "border": ""
+      },
+      ".bg-green-50": {
+        "bg": "rgb(171 225 191/var(--tw-bg-opacity))",
+        "color": "",
+        "border": ""
+      },
+      ".bg-green-500": {
+        "bg": "rgb(30 135 75/var(--tw-bg-opacity))",
+        "color": "",
+        "border": ""
+      },
+      ".bg-orange-00": {
+        "bg": "rgb(250 248 246/var(--tw-bg-opacity))",
+        "color": "",
+        "border": ""
+      },
+      ".bg-orange-50": {
+        "bg": "rgb(255 247 237/var(--tw-bg-opacity))",
+        "color": "",
+        "border": ""
+      },
+      ".bg-orange-500\\/20": {
+        "bg": "rgba(249, 115, 22, 0.2)",
+        "color": "",
+        "border": ""
+      },
+      ".bg-red-00": {
+        "bg": "rgb(255 234 234/var(--tw-bg-opacity))",
+        "color": "",
+        "border": ""
+      },
+      ".bg-red-300": {
+        "bg": "rgb(235 87 87/var(--tw-bg-opacity))",
+        "color": "",
+        "border": ""
+      },
+      ".bg-red-300\\/20": {
+        "bg": "rgba(235, 87, 87, 0.2)",
+        "color": "",
+        "border": ""
+      },
+      ".bg-red-300\\/60": {
+        "bg": "rgba(235, 87, 87, 0.6)",
+        "color": "",
+        "border": ""
+      },
+      ".bg-red-50": {
+        "bg": "rgb(255 199 196/var(--tw-bg-opacity))",
+        "color": "",
+        "border": ""
+      },
+      ".bg-yellow-100\\/30": {
+        "bg": "rgba(254, 249, 195, 0.3)",
+        "color": "",
+        "border": ""
+      },
+      ".text-blue-300": {
+        "bg": "",
+        "color": "rgb(45 156 219/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-blue-400": {
+        "bg": "",
+        "color": "rgb(47 128 237/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-blue-800": {
+        "bg": "",
+        "color": "rgb(12 71 194/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-green": {
+        "bg": "",
+        "color": "rgb(0 170 69/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-green-100": {
+        "bg": "",
+        "color": "rgb(111 207 151/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-green-200": {
+        "bg": "",
+        "color": "rgb(82 192 120/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-green-300": {
+        "bg": "",
+        "color": "rgb(0 170 69/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-green-400": {
+        "bg": "",
+        "color": "rgb(33 150 83/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-green-500": {
+        "bg": "",
+        "color": "rgb(30 135 75/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-green-600": {
+        "bg": "",
+        "color": "rgb(0 111 0/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-green-800": {
+        "bg": "",
+        "color": "rgb(1 83 0/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-orange-400": {
+        "bg": "",
+        "color": "rgb(251 146 60/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-orange-500": {
+        "bg": "",
+        "color": "rgb(249 115 22/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-orange-700": {
+        "bg": "",
+        "color": "rgb(194 65 12/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-purple-dark": {
+        "bg": "",
+        "color": "rgb(162 89 255/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-red-200": {
+        "bg": "",
+        "color": "rgb(244 121 116/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-red-300": {
+        "bg": "",
+        "color": "rgb(235 87 87/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-red-400": {
+        "bg": "",
+        "color": "rgb(224 50 45/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-red-500": {
+        "bg": "",
+        "color": "rgb(216 0 0/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-red-600": {
+        "bg": "",
+        "color": "rgb(194 13 13/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-red-700": {
+        "bg": "",
+        "color": "rgb(169 2 16/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-red-800": {
+        "bg": "",
+        "color": "rgb(148 0 0/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-yellow-200": {
+        "bg": "",
+        "color": "rgb(254 240 138/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-yellow-600": {
+        "bg": "",
+        "color": "rgb(202 138 4/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-yellow-700": {
+        "bg": "",
+        "color": "rgb(161 98 7/var(--tw-text-opacity))",
+        "border": ""
+      },
+      ".text-yellow-800": {
+        "bg": "",
+        "color": "rgb(133 77 14/var(--tw-text-opacity))",
+        "border": ""
+      }
+    },
+    "bodyFont": "Geist, sans-serif",
+    "htmlClass": "light"
+  },
+  "pages": {
+    "home": {
+      "url": "/",
+      "title": "Peerlist | The Professional Network for builders to show and tell!",
+      "login-link": {
+        "tag": "A",
+        "text": "Log in",
+        "rect": {
+          "x": 791,
+          "y": 12,
+          "w": 74,
+          "h": 32
+        },
+        "className": "  flex items-center font-semibold border transition-all ease-in duration-75 whitespace-nowrap text-center select-none disabled:shadow-none d",
+        "display": "flex",
+        "position": "static",
+        "boxSizing": "border-box",
+        "width": "74.3047px",
+        "height": "32px",
+        "minHeight": "auto",
+        "paddingTop": "6px",
+        "paddingRight": "16px",
+        "paddingBottom": "6px",
+        "paddingLeft": "16px",
+        "gap": "normal 4px",
+        "borderRadius": "12px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(226, 232, 240)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(13, 13, 13)",
+        "fontFamily": "Geist, \"Geist Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "lineHeight": "20px",
+        "letterSpacing": "normal",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.03) 0px 1px 1px -0.5px, rgba(0, 0, 0, 0.03) 0px 3px 3px -1.5px",
+        "outline": "rgb(13, 13, 13) none 0px",
+        "opacity": "1",
+        "textDecorationLine": "none"
+      },
+      "signup-link": {
+        "tag": "A",
+        "text": "Create Profile",
+        "rect": {
+          "x": 874,
+          "y": 12,
+          "w": 126,
+          "h": 32
+        },
+        "className": "whitespace-nowrap  flex items-center font-semibold border transition-all ease-in duration-75 whitespace-nowrap text-center select-none disab",
+        "display": "flex",
+        "position": "static",
+        "boxSizing": "border-box",
+        "width": "126.211px",
+        "height": "32px",
+        "minHeight": "auto",
+        "paddingTop": "6px",
+        "paddingRight": "16px",
+        "paddingBottom": "6px",
+        "paddingLeft": "16px",
+        "gap": "normal 4px",
+        "borderRadius": "12px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(30, 135, 75)",
+        "backgroundColor": "rgb(0, 170, 69)",
+        "color": "rgb(255, 255, 255)",
+        "fontFamily": "Geist, \"Geist Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "lineHeight": "20px",
+        "letterSpacing": "normal",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.03) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.03) 0px 6px 6px -3px, rgba(0, 0, 0, 0.03) 0px 12px 12px -6px",
+        "outline": "rgb(255, 255, 255) none 0px",
+        "opacity": "1",
+        "textDecorationLine": "none"
+      },
+      "nav-scroll": {
+        "tag": "A",
+        "text": "Scroll",
+        "rect": {
+          "x": 582,
+          "y": 11,
+          "w": 56,
+          "h": 34
+        },
+        "className": "capitalize font-medium relative text-sm py-1.5 px-2 transition-all ease-in-out border border-transparent rounded-3xl hover:underline duratio",
+        "display": "block",
+        "position": "relative",
+        "boxSizing": "border-box",
+        "width": "55.9453px",
+        "height": "34px",
+        "minHeight": "auto",
+        "paddingTop": "6px",
+        "paddingRight": "8px",
+        "paddingBottom": "6px",
+        "paddingLeft": "8px",
+        "gap": "normal",
+        "borderRadius": "24px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgba(0, 0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Geist, \"Geist Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "lineHeight": "20px",
+        "letterSpacing": "normal",
+        "boxShadow": "none",
+        "outline": "rgb(0, 0, 0) none 0px",
+        "opacity": "1",
+        "textDecorationLine": "none"
+      },
+      "submit": {
+        "tag": "BUTTON",
+        "text": "Submit",
+        "rect": {
+          "x": 894,
+          "y": 452,
+          "w": 32,
+          "h": 32
+        },
+        "className": "bg-green border-none hover:bg-green hover:shadow-focus-border hover:shadow-green-00 justify-center shrink-0 flex items-center font-semibold ",
+        "display": "flex",
+        "position": "static",
+        "boxSizing": "border-box",
+        "width": "32px",
+        "height": "32px",
+        "minHeight": "auto",
+        "paddingTop": "6px",
+        "paddingRight": "0px",
+        "paddingBottom": "6px",
+        "paddingLeft": "0px",
+        "gap": "normal 4px",
+        "borderRadius": "12px",
+        "borderTopWidth": "0px",
+        "borderTopStyle": "none",
+        "borderTopColor": "rgb(13, 13, 13)",
+        "backgroundColor": "rgb(15, 23, 42)",
+        "color": "rgb(255, 255, 255)",
+        "fontFamily": "Geist, \"Geist Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "lineHeight": "20px",
+        "letterSpacing": "normal",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "outline": "rgb(255, 255, 255) none 0px",
+        "opacity": "0.5",
+        "textDecorationLine": "none"
+      },
+      "username": {
+        "tag": "INPUT",
+        "text": "",
+        "rect": {
+          "x": 644,
+          "y": 454,
+          "w": 242,
+          "h": 28
+        },
+        "className": "w-full outline-none font-normal w-full outline-none placeholder:text-gray-300 placeholder:font-normal lg:text-xl text-lg text-gray-1k",
+        "display": "inline-block",
+        "position": "static",
+        "boxSizing": "border-box",
+        "width": "241.719px",
+        "height": "28px",
+        "minHeight": "0px",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "gap": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(226, 232, 240)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(13, 13, 13)",
+        "fontFamily": "Geist, \"Geist Fallback\"",
+        "fontSize": "20px",
+        "fontWeight": "400",
+        "lineHeight": "28px",
+        "letterSpacing": "normal",
+        "boxShadow": "none",
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "opacity": "1",
+        "textDecorationLine": "none"
+      },
+      "play": {
+        "tag": "BUTTON",
+        "text": "Play",
+        "rect": {
+          "x": 676,
+          "y": 1293,
+          "w": 79,
+          "h": 32
+        },
+        "className": "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  flex items-center font-semibold border transition-all ease-in duration-75 white",
+        "display": "flex",
+        "position": "absolute",
+        "boxSizing": "border-box",
+        "width": "79.1172px",
+        "height": "32px",
+        "minHeight": "0px",
+        "paddingTop": "6px",
+        "paddingRight": "16px",
+        "paddingBottom": "6px",
+        "paddingLeft": "16px",
+        "gap": "normal 4px",
+        "borderRadius": "12px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(13, 13, 13)",
+        "backgroundColor": "rgb(15, 23, 42)",
+        "color": "rgb(255, 255, 255)",
+        "fontFamily": "Geist, \"Geist Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "lineHeight": "20px",
+        "letterSpacing": "normal",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.03) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.03) 0px 6px 6px -3px, rgba(0, 0, 0, 0.03) 0px 12px 12px -6px",
+        "outline": "rgb(255, 255, 255) none 0px",
+        "opacity": "1",
+        "textDecorationLine": "none"
+      },
+      "h1": {
+        "tag": "H1",
+        "text": "The Professional Network for builders to show & tell!",
+        "rect": {
+          "x": 500,
+          "y": 212,
+          "w": 431,
+          "h": 115
+        },
+        "className": "font-instrument text-center !leading-120 sm:text-5xl text-4xl",
+        "display": "block",
+        "position": "static",
+        "boxSizing": "border-box",
+        "width": "431.328px",
+        "height": "115.203px",
+        "minHeight": "auto",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "gap": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(226, 232, 240)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "instrument, \"instrument Fallback\"",
+        "fontSize": "48px",
+        "fontWeight": "400",
+        "lineHeight": "57.6px",
+        "letterSpacing": "normal",
+        "boxShadow": "none",
+        "outline": "rgb(0, 0, 0) none 0px",
+        "opacity": "1",
+        "textDecorationLine": "none"
+      },
+      "_type": {
+        "h1": {
+          "tag": "H1",
+          "text": "The Professional Network for builders to show & tell!",
+          "rect": {
+            "x": 500,
+            "y": 212,
+            "w": 431,
+            "h": 115
+          },
+          "className": "font-instrument text-center !leading-120 sm:text-5xl text-4xl",
+          "display": "block",
+          "position": "static",
+          "boxSizing": "border-box",
+          "width": "431.328px",
+          "height": "115.203px",
+          "minHeight": "auto",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "normal",
+          "borderRadius": "0px",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "solid",
+          "borderTopColor": "rgb(226, 232, 240)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(0, 0, 0)",
+          "fontFamily": "instrument, \"instrument Fallback\"",
+          "fontSize": "48px",
+          "fontWeight": "400",
+          "lineHeight": "57.6px",
+          "letterSpacing": "normal",
+          "boxShadow": "none",
+          "outline": "rgb(0, 0, 0) none 0px",
+          "opacity": "1",
+          "textDecorationLine": "none"
+        },
+        "h2": {
+          "tag": "H2",
+          "text": "Showcase your work, launch projects, find jobs, and connect ",
+          "rect": {
+            "x": 504,
+            "y": 343,
+            "w": 424,
+            "h": 56
+          },
+          "className": "text-gray-700 font-normal text-lg text-center px-4 sm:px-0 mob:mx-0 -mx-4",
+          "display": "block",
+          "position": "static",
+          "boxSizing": "border-box",
+          "width": "423.93px",
+          "height": "56px",
+          "minHeight": "auto",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "normal",
+          "borderRadius": "0px",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "solid",
+          "borderTopColor": "rgb(226, 232, 240)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(51, 65, 85)",
+          "fontFamily": "Geist, \"Geist Fallback\"",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "lineHeight": "28px",
+          "letterSpacing": "normal",
+          "boxShadow": "none",
+          "outline": "rgb(51, 65, 85) none 0px",
+          "opacity": "1",
+          "textDecorationLine": "none"
+        },
+        "h3": {
+          "tag": "H3",
+          "text": "Your most meaningful work profile!",
+          "rect": {
+            "x": 432,
+            "y": 985,
+            "w": 418,
+            "h": 28
+          },
+          "className": "text-gray-1k font-semibold text-xl ",
+          "display": "block",
+          "position": "static",
+          "boxSizing": "border-box",
+          "width": "417.789px",
+          "height": "28px",
+          "minHeight": "auto",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "normal",
+          "borderRadius": "0px",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "solid",
+          "borderTopColor": "rgb(226, 232, 240)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(13, 13, 13)",
+          "fontFamily": "Geist, \"Geist Fallback\"",
+          "fontSize": "20px",
+          "fontWeight": "600",
+          "lineHeight": "28px",
+          "letterSpacing": "normal",
+          "boxShadow": "none",
+          "outline": "rgb(13, 13, 13) none 0px",
+          "opacity": "1",
+          "textDecorationLine": "none"
+        },
+        "p": {
+          "tag": "P",
+          "text": "\ud83c\udf89 NEW:",
+          "rect": {
+            "x": 597,
+            "y": 144,
+            "w": 54,
+            "h": 20
+          },
+          "className": "text-gray-00 font-semibold text-sm leading-5 uppercase",
+          "display": "block",
+          "position": "static",
+          "boxSizing": "border-box",
+          "width": "54px",
+          "height": "20px",
+          "minHeight": "auto",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "normal",
+          "borderRadius": "0px",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "solid",
+          "borderTopColor": "rgb(226, 232, 240)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(255, 255, 255)",
+          "fontFamily": "Geist, \"Geist Fallback\"",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "20px",
+          "letterSpacing": "normal",
+          "boxShadow": "none",
+          "outline": "rgb(255, 255, 255) none 0px",
+          "opacity": "1",
+          "textDecorationLine": "none"
+        },
+        "a": {
+          "tag": "A",
+          "text": "",
+          "rect": {
+            "x": 432,
+            "y": 12,
+            "w": 124,
+            "h": 32
+          },
+          "className": "outline-none",
+          "display": "block",
+          "position": "static",
+          "boxSizing": "border-box",
+          "width": "124px",
+          "height": "31.8516px",
+          "minHeight": "auto",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "normal",
+          "borderRadius": "0px",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "solid",
+          "borderTopColor": "rgb(226, 232, 240)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(0, 0, 0)",
+          "fontFamily": "Geist, \"Geist Fallback\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "boxShadow": "none",
+          "outline": "rgba(0, 0, 0, 0) solid 2px",
+          "opacity": "1",
+          "textDecorationLine": "none"
+        },
+        "small": null
+      }
+    },
+    "scroll": {
+      "url": "/scroll",
+      "title": "Scroll | Discover and connect with professionals",
+      "post": {
+        "tag": "BUTTON",
+        "text": "Post",
+        "rect": {
+          "x": 878,
+          "y": 120,
+          "w": 65,
+          "h": 32
+        },
+        "className": "  flex items-center font-semibold border transition-all ease-in duration-75 whitespace-nowrap text-center select-none disabled:shadow-none d",
+        "display": "flex",
+        "position": "static",
+        "boxSizing": "border-box",
+        "width": "64.5547px",
+        "height": "32px",
+        "minHeight": "auto",
+        "paddingTop": "6px",
+        "paddingRight": "16px",
+        "paddingBottom": "6px",
+        "paddingLeft": "16px",
+        "gap": "normal 4px",
+        "borderRadius": "12px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(30, 135, 75)",
+        "backgroundColor": "rgb(0, 170, 69)",
+        "color": "rgb(255, 255, 255)",
+        "fontFamily": "Geist, \"Geist Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "lineHeight": "20px",
+        "letterSpacing": "normal",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.03) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.03) 0px 6px 6px -3px, rgba(0, 0, 0, 0.03) 0px 12px 12px -6px",
+        "outline": "rgb(255, 255, 255) none 0px",
+        "opacity": "1",
+        "textDecorationLine": "none"
+      },
+      "upvote": null,
+      "theme": {
+        "tag": "BUTTON",
+        "text": "Change System theme",
+        "rect": {
+          "x": 279,
+          "y": 853,
+          "w": 24,
+          "h": 24
+        },
+        "className": " justify-center shrink-0 flex items-center font-semibold border transition-all ease-in duration-75 whitespace-nowrap text-center select-none",
+        "display": "flex",
+        "position": "static",
+        "boxSizing": "border-box",
+        "width": "24px",
+        "height": "24px",
+        "minHeight": "0px",
+        "paddingTop": "4px",
+        "paddingRight": "0px",
+        "paddingBottom": "4px",
+        "paddingLeft": "0px",
+        "gap": "normal 4px",
+        "borderRadius": "8px",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(226, 232, 240)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(13, 13, 13)",
+        "fontFamily": "Geist, \"Geist Fallback\"",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "lineHeight": "16px",
+        "letterSpacing": "normal",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.03) 0px 1px 1px -0.5px, rgba(0, 0, 0, 0.03) 0px 3px 3px -1.5px",
+        "outline": "rgb(13, 13, 13) none 0px",
+        "opacity": "1",
+        "textDecorationLine": "none"
+      },
+      "nav": {
+        "tag": "A",
+        "text": "",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "className": "outline-none",
+        "display": "block",
+        "position": "static",
+        "boxSizing": "border-box",
+        "width": "auto",
+        "height": "auto",
+        "minHeight": "0px",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "gap": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(226, 232, 240)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "fontFamily": "Geist, \"Geist Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "boxShadow": "none",
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "opacity": "1",
+        "textDecorationLine": "none"
+      },
+      "h1": {
+        "tag": "H1",
+        "text": "Scroll",
+        "rect": {
+          "x": 352,
+          "y": 17,
+          "w": 45,
+          "h": 22
+        },
+        "className": "text-base text-gray-1k font-semibold ",
+        "display": "block",
+        "position": "static",
+        "boxSizing": "border-box",
+        "width": "44.7969px",
+        "height": "22px",
+        "minHeight": "0px",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "gap": "normal",
+        "borderRadius": "0px",
+        "borderTopWidth": "0px",
+        "borderTopStyle": "solid",
+        "borderTopColor": "rgb(226, 232, 240)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(13, 13, 13)",
+        "fontFamily": "Geist, \"Geist Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "lineHeight": "22px",
+        "letterSpacing": "normal",
+        "boxShadow": "none",
+        "outline": "rgb(13, 13, 13) none 0px",
+        "opacity": "1",
+        "textDecorationLine": "none"
+      },
+      "_type": {
+        "h1": {
+          "tag": "H1",
+          "text": "Scroll",
+          "rect": {
+            "x": 352,
+            "y": 17,
+            "w": 45,
+            "h": 22
+          },
+          "className": "text-base text-gray-1k font-semibold ",
+          "display": "block",
+          "position": "static",
+          "boxSizing": "border-box",
+          "width": "44.7969px",
+          "height": "22px",
+          "minHeight": "0px",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "normal",
+          "borderRadius": "0px",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "solid",
+          "borderTopColor": "rgb(226, 232, 240)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(13, 13, 13)",
+          "fontFamily": "Geist, \"Geist Fallback\"",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "lineHeight": "22px",
+          "letterSpacing": "normal",
+          "boxShadow": "none",
+          "outline": "rgb(13, 13, 13) none 0px",
+          "opacity": "1",
+          "textDecorationLine": "none"
+        },
+        "h2": null,
+        "h3": {
+          "tag": "H3",
+          "text": "vivek purswani",
+          "rect": {
+            "x": 400,
+            "y": 211,
+            "w": 101,
+            "h": 20
+          },
+          "className": "text-gray-1k font-semibold text-sm hover:underline transition",
+          "display": "block",
+          "position": "static",
+          "boxSizing": "border-box",
+          "width": "100.672px",
+          "height": "20px",
+          "minHeight": "auto",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "normal",
+          "borderRadius": "0px",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "solid",
+          "borderTopColor": "rgb(226, 232, 240)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(13, 13, 13)",
+          "fontFamily": "Geist, \"Geist Fallback\"",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "20px",
+          "letterSpacing": "normal",
+          "boxShadow": "none",
+          "outline": "rgb(13, 13, 13) none 0px",
+          "opacity": "1",
+          "textDecorationLine": "none"
+        },
+        "p": {
+          "tag": "P",
+          "text": "\u00a9 2026 Peerlist, Inc.",
+          "rect": {
+            "x": 116,
+            "y": 877,
+            "w": 187,
+            "h": 15
+          },
+          "className": "text-gray-500 dark:text-gray-600 font-normal text-[10px] text-gray",
+          "display": "block",
+          "position": "static",
+          "boxSizing": "border-box",
+          "width": "187px",
+          "height": "15px",
+          "minHeight": "auto",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "normal",
+          "borderRadius": "0px",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "solid",
+          "borderTopColor": "rgb(226, 232, 240)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(100, 116, 139)",
+          "fontFamily": "Geist, \"Geist Fallback\"",
+          "fontSize": "10px",
+          "fontWeight": "400",
+          "lineHeight": "15px",
+          "letterSpacing": "normal",
+          "boxShadow": "none",
+          "outline": "rgb(100, 116, 139) none 0px",
+          "opacity": "1",
+          "textDecorationLine": "none"
+        },
+        "a": {
+          "tag": "A",
+          "text": "",
+          "rect": {
+            "x": 116,
+            "y": 12,
+            "w": 211,
+            "h": 32
+          },
+          "className": "",
+          "display": "inline",
+          "position": "static",
+          "boxSizing": "border-box",
+          "width": "auto",
+          "height": "auto",
+          "minHeight": "0px",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "gap": "normal",
+          "borderRadius": "0px",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "solid",
+          "borderTopColor": "rgb(226, 232, 240)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(0, 0, 0)",
+          "fontFamily": "Geist, \"Geist Fallback\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "boxShadow": "none",
+          "outline": "rgb(0, 0, 0) none 0px",
+          "opacity": "1",
+          "textDecorationLine": "none"
+        },
+        "small": null
+      }
+    },
+    "search": {
+      "input": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(226, 232, 240)",
+        "borderRadius": "0px",
+        "fontSize": "14px",
+        "height": 20,
+        "paddingLeft": "0px",
+        "boxShadow": "none",
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "placeholder": "Search people"
+      },
+      "tabs": [
+        {
+          "text": "People",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(255, 255, 255)",
+          "fontWeight": "600",
+          "borderBottomColor": "rgb(226, 232, 240)",
+          "borderBottomWidth": "0px"
+        },
+        {
+          "text": "Projects",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(13, 13, 13)",
+          "fontWeight": "600",
+          "borderBottomColor": "rgb(226, 232, 240)",
+          "borderBottomWidth": "0px"
+        },
+        {
+          "text": "Jobs",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(13, 13, 13)",
+          "fontWeight": "600",
+          "borderBottomColor": "rgb(226, 232, 240)",
+          "borderBottomWidth": "0px"
+        },
+        {
+          "text": "Posts",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(13, 13, 13)",
+          "fontWeight": "600",
+          "borderBottomColor": "rgb(226, 232, 240)",
+          "borderBottomWidth": "0px"
+        },
+        {
+          "text": "People",
+          "backgroundColor": "rgb(15, 23, 42)",
+          "color": "rgb(255, 255, 255)",
+          "fontWeight": "600",
+          "borderBottomColor": "rgb(13, 13, 13)",
+          "borderBottomWidth": "1px"
+        }
+      ],
+      "focus": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "borderTopColor": "rgb(226, 232, 240)"
+      }
+    },
+    "login": {
+      "google": {
+        "text": "Continue with Google",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(13, 13, 13)",
+        "borderRadius": "16px",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "height": 40,
+        "borderTopColor": "rgb(226, 232, 240)",
+        "paddingLeft": "24px"
+      },
+      "login": {
+        "text": "Login",
+        "backgroundColor": "rgb(15, 23, 42)",
+        "color": "rgb(255, 255, 255)",
+        "borderRadius": "16px",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "height": 40,
+        "borderTopColor": "rgb(13, 13, 13)",
+        "paddingLeft": "24px"
+      },
+      "email": {
+        "text": "",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(13, 13, 13)",
+        "borderRadius": "8px",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "height": 32,
+        "borderTopColor": "rgb(203, 213, 225)",
+        "paddingLeft": "8px"
+      },
+      "password": {
+        "text": "",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(13, 13, 13)",
+        "borderRadius": "8px",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "height": 32,
+        "borderTopColor": "rgb(226, 232, 240)",
+        "paddingLeft": "8px"
+      },
+      "h": "Scroll Jobs Launchpad Log in Create Profile Welcome back! Login to your account. Continue with Google or continue with email Email Password Forgot Password? Login Don\u2019t have a Peer"
+    },
+    "jobs": {
+      "row": {
+        "text": "Software Engineer, ML Workload Platform at Cohere ",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "height": 72,
+        "borderTopColor": "rgb(226, 232, 240)",
+        "paddingTop": "16px",
+        "paddingLeft": "24px"
+      },
+      "chip": {
+        "text": "Remote jobs",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "height": 20,
+        "borderTopColor": "rgb(226, 232, 240)",
+        "paddingTop": "0px",
+        "paddingLeft": "0px"
+      },
+      "h1": {
+        "text": "All Jobs",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(13, 13, 13)",
+        "borderRadius": "0px",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "height": 22,
+        "borderTopColor": "rgb(226, 232, 240)",
+        "paddingTop": "0px",
+        "paddingLeft": "0px"
+      }
+    },
+    "launchpad": {
+      "launch": {
+        "text": "Launch",
+        "backgroundColor": "rgb(227, 245, 234)",
+        "color": "rgb(33, 150, 83)",
+        "borderRadius": "12px",
+        "fontSize": "14px",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.03) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.03) 0px 6px 6px -3px, rgba(0, 0, 0, 0.03) 0px 12px 12px -6px",
+        "borderTopColor": "rgb(111, 207, 151)",
+        "height": 32,
+        "width": 97
+      },
+      "follow": {
+        "text": "Follow",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(47, 128, 237)",
+        "borderRadius": "0px",
+        "fontSize": "12px",
+        "boxShadow": "none",
+        "borderTopColor": "rgb(226, 232, 240)",
+        "height": 16,
+        "width": 39
+      },
+      "card": {
+        "text": "#1 Denker AI on Windows and iPhone Point",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "fontSize": "16px",
+        "boxShadow": "none",
+        "borderTopColor": "rgb(226, 232, 240)",
+        "height": 64,
+        "width": 544
+      },
+      "h1": {
+        "text": "Launchpad",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(13, 13, 13)",
+        "borderRadius": "0px",
+        "fontSize": "16px",
+        "boxShadow": "none",
+        "borderTopColor": "rgb(226, 232, 240)",
+        "height": 22,
+        "width": 85
+      }
+    },
+    "ads": {
+      "book": {
+        "text": "Book \u2014 from $29",
+        "backgroundColor": "rgb(15, 23, 42)",
+        "color": "rgb(255, 255, 255)",
+        "borderRadius": "12px",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "height": 32,
+        "paddingLeft": "16px",
+        "borderTopColor": "rgb(13, 13, 13)"
+      },
+      "preview": {
+        "text": "Preview",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(13, 13, 13)",
+        "borderRadius": "8px",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "height": 24,
+        "paddingLeft": "12px",
+        "borderTopColor": "rgba(0, 0, 0, 0)"
+      },
+      "h1": {
+        "text": "Where 300k developers & designers discov",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderRadius": "0px",
+        "fontSize": "48px",
+        "fontWeight": "400",
+        "height": 96,
+        "paddingLeft": "0px",
+        "borderTopColor": "rgb(226, 232, 240)"
+      }
+    }
+  },
+  "states": {
+    "scroll": {
+      "base": {
+        "upvote": null,
+        "link": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(0, 0, 0)",
+          "borderTopColor": "rgb(226, 232, 240)",
+          "boxShadow": "none",
+          "outline": "rgb(0, 0, 0) none 0px",
+          "borderRadius": "0px",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "paddingTop": "10px",
+          "paddingLeft": "0px",
+          "height": "auto",
+          "text": "Jobs"
+        },
+        "post": {
+          "backgroundColor": "rgb(0, 170, 69)",
+          "color": "rgb(255, 255, 255)",
+          "borderTopColor": "rgb(30, 135, 75)",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.03) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.03) 0px 6px 6px -3px, rgba(0, 0, 0, 0.03) 0px 12px 12px -6px",
+          "outline": "rgb(255, 255, 255) none 0px",
+          "borderRadius": "12px",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "paddingTop": "6px",
+          "paddingLeft": "16px",
+          "height": "32px",
+          "text": "Post"
+        },
+        "theme": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(13, 13, 13)",
+          "borderTopColor": "rgb(226, 232, 240)",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.03) 0px 1px 1px -0.5px, rgba(0, 0, 0, 0.03) 0px 3px 3px -1.5px",
+          "outline": "rgb(13, 13, 13) none 0px",
+          "borderRadius": "8px",
+          "fontSize": "12px",
+          "fontWeight": "600",
+          "paddingTop": "4px",
+          "paddingLeft": "0px",
+          "height": "24px",
+          "text": ""
+        }
+      },
+      "focused": {
+        "upvote": null
+      }
+    },
+    "hover": {
+      "upvote": null,
+      "jobs": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "boxShadow": "none",
+        "borderTopColor": "rgb(226, 232, 240)"
+      },
+      "post": {
+        "backgroundColor": "rgb(0, 170, 69)",
+        "color": "rgb(255, 255, 255)",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 3px 3px -1.5px, rgba(0, 0, 0, 0.08) 0px 6px 6px -3px, rgba(0, 0, 0, 0.08) 0px 12px 12px -6px, rgba(0, 0, 0, 0.08) 0px 24px 24px -12px",
+        "borderTopColor": "rgb(0, 111, 0)"
+      }
+    }
+  },
+  "motion": {
+    "reduced": [],
+    "durationSample": [
+      "0.3s",
+      "1s",
+      "0s",
+      "0.5s",
+      "2s",
+      "0.6s",
+      "0.2s",
+      "0.15s",
+      "0.1s",
+      "0.7s",
+      "75ms",
+      "250ms",
+      "0.25s",
+      "400ms",
+      "0.4s",
+      "1.5s",
+      "0.28s",
+      "0.35s",
+      "0.8s",
+      "1.3s",
+      "1.4s",
+      "0.65s",
+      "0.218s"
+    ]
+  },
+  "extra": {
+    "homeType": {
+      "h1": {
+        "text": "The Professional Network for builders to show & te",
+        "fontFamily": "instrument, \"instrument Fallback\"",
+        "fontSize": "48px",
+        "fontWeight": "400",
+        "lineHeight": "57.6px",
+        "letterSpacing": "normal",
+        "color": "rgb(0, 0, 0)"
+      },
+      "heroButtons": [
+        {
+          "text": "Showcase your work,",
+          "fontFamily": "Geist, \"Geist Fallback\"",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "lineHeight": "28px",
+          "letterSpacing": "normal",
+          "color": "rgb(51, 65, 85)"
+        },
+        {
+          "text": "launch projects,",
+          "fontFamily": "Geist, \"Geist Fallback\"",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "lineHeight": "28px",
+          "letterSpacing": "normal",
+          "color": "rgb(51, 65, 85)"
+        },
+        {
+          "text": "find jobs,",
+          "fontFamily": "Geist, \"Geist Fallback\"",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "lineHeight": "28px",
+          "letterSpacing": "normal",
+          "color": "rgb(51, 65, 85)"
+        }
+      ],
+      "submit": {
+        "bg": "rgb(15, 23, 42)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "h": 32,
+        "fs": "14px",
+        "fw": "600",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "border": "rgb(13, 13, 13)"
+      },
+      "input": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(13, 13, 13)",
+        "radius": "0px",
+        "h": 28,
+        "fs": "20px",
+        "border": "rgb(226, 232, 240)",
+        "ph": "username"
+      },
+      "faq": null
+    },
+    "submitHover": {
+      "bg": "rgb(15, 23, 42)",
+      "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+      "border": "rgb(13, 13, 13)"
+    },
+    "scroll": {
+      "aside": [
+        {
+          "text": "",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(0, 0, 0)",
+          "radius": "0px",
+          "fs": "16px",
+          "fw": "400",
+          "h": 32,
+          "w": 211,
+          "border": "rgb(226, 232, 240)",
+          "shadow": "none",
+          "pad": "0px 0px"
+        },
+        {
+          "text": "Scroll",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(0, 0, 0)",
+          "radius": "0px",
+          "fs": "16px",
+          "fw": "400",
+          "h": 44,
+          "w": 187,
+          "border": "rgb(0, 170, 69)",
+          "shadow": "none",
+          "pad": "10px 0px"
+        },
+        {
+          "text": "Launchpad",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(0, 0, 0)",
+          "radius": "0px",
+          "fs": "16px",
+          "fw": "400",
+          "h": 44,
+          "w": 187,
+          "border": "rgb(226, 232, 240)",
+          "shadow": "none",
+          "pad": "10px 0px"
+        },
+        {
+          "text": "Jobs",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(0, 0, 0)",
+          "radius": "0px",
+          "fs": "16px",
+          "fw": "400",
+          "h": 44,
+          "w": 187,
+          "border": "rgb(226, 232, 240)",
+          "shadow": "none",
+          "pad": "10px 0px"
+        },
+        {
+          "text": "Search",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(0, 0, 0)",
+          "radius": "0px",
+          "fs": "16px",
+          "fw": "400",
+          "h": 44,
+          "w": 187,
+          "border": "rgb(226, 232, 240)",
+          "shadow": "none",
+          "pad": "10px 0px"
+        },
+        {
+          "text": "Blog",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(0, 0, 0)",
+          "radius": "0px",
+          "fs": "16px",
+          "fw": "400",
+          "h": 44,
+          "w": 187,
+          "border": "rgb(226, 232, 240)",
+          "shadow": "none",
+          "pad": "10px 0px"
+        }
+      ],
+      "avatar": {
+        "w": 124,
+        "h": 32,
+        "radius": "0px"
+      },
+      "badge": {
+        "text": "TRENDING",
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "radius": "0px 12px 12px 0px",
+        "fs": "16px",
+        "fw": "400",
+        "h": 34,
+        "w": 93,
+        "border": "rgba(0, 0, 0, 0)",
+        "shadow": "none",
+        "pad": "0px 16px"
+      }
+    },
+    "blog": {
+      "h1": {
+        "text": "Designer Commentary: Peerlist Dark Mode",
+        "font": "Geist, \"Geist Fallback\"",
+        "fs": "36px",
+        "fw": "600",
+        "lh": "40px",
+        "color": "rgb(0, 0, 0)"
+      },
+      "p": {
+        "text": "The behind the scenes of bringing our mo",
+        "font": "Geist, \"Geist Fallback\"",
+        "fs": "18px",
+        "fw": "400",
+        "lh": "28px",
+        "color": "rgb(100, 116, 139)"
+      },
+      "a": {
+        "text": "JAY KADAM",
+        "font": "Geist, \"Geist Fallback\"",
+        "fs": "16px",
+        "fw": "400",
+        "lh": "24px",
+        "color": "rgb(0, 0, 0)"
+      }
+    },
+    "layout": {
+      "inner": 1440,
+      "regions": [
+        {
+          "tag": "NAV",
+          "x": 0,
+          "w": 0,
+          "h": 0,
+          "bg": "rgba(0, 0, 0, 0)",
+          "border": "rgb(226, 232, 240)"
+        },
+        {
+          "tag": "ASIDE",
+          "x": 967,
+          "w": 348,
+          "h": 0,
+          "bg": "rgb(255, 255, 255)",
+          "border": "rgb(226, 232, 240)"
+        }
+      ]
+    },
+    "icons": {
+      "count": 46,
+      "sample": [
+        {
+          "w": "24",
+          "h": "24",
+          "view": "0 0 24 24",
+          "label": ""
+        },
+        {
+          "w": "24",
+          "h": "24",
+          "view": "0 0 24 24",
+          "label": ""
+        },
+        {
+          "w": "24",
+          "h": "24",
+          "view": "0 0 24 24",
+          "label": ""
+        },
+        {
+          "w": "24",
+          "h": "24",
+          "view": "0 0 24 24",
+          "label": ""
+        },
+        {
+          "w": "24",
+          "h": "24",
+          "view": "0 0 24 24",
+          "label": ""
+        },
+        {
+          "w": "24",
+          "h": "24",
+          "view": "0 0 24 24",
+          "label": ""
+        },
+        {
+          "w": "24",
+          "h": "24",
+          "view": "0 0 24 24",
+          "label": ""
+        },
+        {
+          "w": "24",
+          "h": "24",
+          "view": "0 0 24 24",
+          "label": ""
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peerlist style guide</title>
+<style>
+:root {
+  --page: #ffffff;
+  --text: #0d0d0d;
+  --muted: #64748b;
+  --accent: #00aa45;
+  --border: #e2e8f0;
+  --ink: #0d0d0d;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px Geist, ui-sans-serif, system-ui, sans-serif; }
+main { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font-family: Georgia, "Iowan Old Style", serif; font-weight: 400; font-size: 40px; line-height: 1.2; }
+h2 { margin-top: 36px; font-size: 14px; letter-spacing: 0; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 120px; }
+.sw i { display: block; height: 56px; border-radius: 12px; border: 1px solid #e2e8f0; }
+.sw b, .sw code, .sw small { display: block; font-size: 12px; }
+.sw code, .sw small { color: var(--muted); }
+.btn { display: inline-flex; align-items: center; height: 32px; padding: 6px 16px; border-radius: 12px; font-size: 14px; font-weight: 600; border: 1px solid transparent; }
+.btn.accent { background: #00aa45; color: #fff; border-color: #1e874b; }
+.btn.ink { background: #0f172a; color: #fff; border-radius: 16px; height: 40px; padding: 0 24px; }
+.btn.quiet { background: #fff; color: #0d0d0d; border-color: #e2e8f0; }
+.card { border: 1px solid #e2e8f0; border-radius: 16px; padding: 16px; max-width: 360px; box-shadow: 0 1px 1px -0.5px rgba(0,0,0,.03), 0 3px 3px -1.5px rgba(0,0,0,.03); }
+label { display: block; font-size: 14px; font-weight: 600; margin: 12px 0 4px; }
+input { width: 100%; height: 32px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 8px; font: inherit; }
+p.note { color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Peerlist</h1>
+<p class="note">Rendered from tokens.json. Geist and Instrument are not loaded here; the display face falls back to Georgia. Values are the measured ones.</p>
+<h2>Controls</h2>
+<p>
+  <span class="btn accent">Post</span>
+  <span class="btn quiet">Log in</span>
+  <span class="btn ink">Login</span>
+</p>
+<div class="card">
+  <label>Email</label>
+  <input placeholder="" disabled>
+  <label>Password</label>
+  <input disabled>
+</div>
+<h2>Gray ramp (light declarations)</h2>
+<div class="row"><div class="sw"><i style="background:#ffffff"></i><b>00</b><code>#ffffff</code><small>core.color.gray.00</small></div><div class="sw"><i style="background:#f8f9fb"></i><b>25</b><code>#f8f9fb</code><small>core.color.gray.25</small></div><div class="sw"><i style="background:#f8fafc"></i><b>50</b><code>#f8fafc</code><small>core.color.gray.50</small></div><div class="sw"><i style="background:#f1f5f9"></i><b>100</b><code>#f1f5f9</code><small>core.color.gray.100</small></div><div class="sw"><i style="background:#e2e8f0"></i><b>200</b><code>#e2e8f0</code><small>core.color.gray.200</small></div><div class="sw"><i style="background:#cbd5e1"></i><b>300</b><code>#cbd5e1</code><small>core.color.gray.300</small></div><div class="sw"><i style="background:#94a3b8"></i><b>400</b><code>#94a3b8</code><small>core.color.gray.400</small></div><div class="sw"><i style="background:#64748b"></i><b>500</b><code>#64748b</code><small>core.color.gray.500</small></div><div class="sw"><i style="background:#475569"></i><b>600</b><code>#475569</code><small>core.color.gray.600</small></div><div class="sw"><i style="background:#334155"></i><b>700</b><code>#334155</code><small>core.color.gray.700</small></div><div class="sw"><i style="background:#1e293b"></i><b>800</b><code>#1e293b</code><small>core.color.gray.800</small></div><div class="sw"><i style="background:#0f172a"></i><b>900</b><code>#0f172a</code><small>core.color.gray.900</small></div><div class="sw"><i style="background:#0d0d0d"></i><b>1k</b><code>#0d0d0d</code><small>core.color.gray.1k</small></div></div>
+<h2>Green ramp</h2>
+<div class="row"><div class="sw"><i style="background:#e3f5ea"></i><b>00</b><code>#e3f5ea</code><small>core.color.green.00</small></div><div class="sw"><i style="background:#abe1bf"></i><b>50</b><code>#abe1bf</code><small>core.color.green.50</small></div><div class="sw"><i style="background:#6fcf97"></i><b>100</b><code>#6fcf97</code><small>core.color.green.100</small></div><div class="sw"><i style="background:#52c078"></i><b>200</b><code>#52c078</code><small>core.color.green.200</small></div><div class="sw"><i style="background:#00aa45"></i><b>300</b><code>#00aa45</code><small>core.color.green.300</small></div><div class="sw"><i style="background:#219653"></i><b>400</b><code>#219653</code><small>core.color.green.400</small></div><div class="sw"><i style="background:#1e874b"></i><b>500</b><code>#1e874b</code><small>core.color.green.500</small></div><div class="sw"><i style="background:#006f00"></i><b>600</b><code>#006f00</code><small>core.color.green.600</small></div><div class="sw"><i style="background:#015300"></i><b>800</b><code>#015300</code><small>core.color.green.800</small></div></div>
+<h2>light</h2><div class='row'><div class="sw"><i style="background:#ffffff"></i><b>page</b><code>#ffffff</code><small>light.color.page</small></div><div class="sw"><i style="background:#f8f9fb"></i><b>surface</b><code>#f8f9fb</code><small>light.color.surface</small></div><div class="sw"><i style="background:#f8fafc"></i><b>raised</b><code>#f8fafc</code><small>light.color.raised</small></div><div class="sw"><i style="background:#0d0d0d"></i><b>text</b><code>#0d0d0d</code><small>light.color.text.primary</small></div><div class="sw"><i style="background:#64748b"></i><b>muted</b><code>#64748b</code><small>light.color.text.muted</small></div><div class="sw"><i style="background:#00aa45"></i><b>accent</b><code>#00aa45</code><small>light.color.accent.default</small></div><div class="sw"><i style="background:#e2e8f0"></i><b>border</b><code>#e2e8f0</code><small>light.color.border.default</small></div><div class="sw"><i style="background:#eb5757"></i><b>danger</b><code>#eb5757</code><small>light.color.status.danger</small></div><div class="sw"><i style="background:#2f80ed"></i><b>info</b><code>#2f80ed</code><small>light.color.status.info</small></div></div><h2>dark</h2><div class='row'><div class="sw"><i style="background:#171717"></i><b>page</b><code>#171717</code><small>dark.color.page</small></div><div class="sw"><i style="background:#1e1e1e"></i><b>surface</b><code>#1e1e1e</code><small>dark.color.surface</small></div><div class="sw"><i style="background:#262626"></i><b>raised</b><code>#262626</code><small>dark.color.raised</small></div><div class="sw"><i style="background:#fafafa"></i><b>text</b><code>#fafafa</code><small>dark.color.text.primary</small></div><div class="sw"><i style="background:#8a8a8a"></i><b>muted</b><code>#8a8a8a</code><small>dark.color.text.muted</small></div><div class="sw"><i style="background:#00aa45"></i><b>accent</b><code>#00aa45</code><small>dark.color.accent.default</small></div><div class="sw"><i style="background:#333333"></i><b>border</b><code>#333333</code><small>dark.color.border.default</small></div><div class="sw"><i style="background:#eb5757"></i><b>danger</b><code>#eb5757</code><small>dark.color.status.danger</small></div><div class="sw"><i style="background:#2f80ed"></i><b>info</b><code>#2f80ed</code><small>dark.color.status.info</small></div></div>
+</main>
+</body>
+</html>
