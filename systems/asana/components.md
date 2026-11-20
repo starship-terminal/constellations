@@ -429,7 +429,7 @@ No standalone SVG icon set was lifted on this pass; the icons in the crops and s
 
 ### Pages
 
-- **Anything that sends, submits or signs in.** No form was submitted, no prompt was sent, no account was created. The contact-sales .ds-input fields were focused and one sample value typed and deleted, never submitted.
+- **Anything that sends, submits or signs in.** No form was submitted, no prompt was sent, no account was created. Fields clicked into (and, where a `filled` state exists, typed into and cleared), never submitted: `gate-field`, `sales-field`.
 
 ### States
 

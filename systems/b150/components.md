@@ -66,7 +66,7 @@ Values that apply across entries, from the measurement files.
 The header (wordmark, VIBEATHON/EVENTS/JOBS/MARKETPLACE/TALENT/FREE RESOURCES nav, LOGIN, SIGN UP).
 
 #### Header
-The top bar: wordmark, VIBEATHON/EVENTS/JOBS/MARKETPLACE/TALENT/FREE RESOURCES nav, LOGIN, SIGN UP. Read as `header` on the the home page page.
+The top bar: wordmark, VIBEATHON/EVENTS/JOBS/MARKETPLACE/TALENT/FREE RESOURCES nav, LOGIN, SIGN UP. Read as `header` on the home page.
 
 **Values (default).** size 1440 x 65; background transparent; text Fragment Mono 10/13.33 700, #a3b2af; icon 30 x 10, #fffdf6 `color.neutral.light`; layers a.label.ml-1 79.4x40.0 rgb(255, 255, 255) T:1px solid rgb(230, 227, 221) / R:1px solid rgb(230, 227, 221) / B:1px solid rgb(230, 227, 221) / L:1px solid rgb(230, 227, 221) 3.35544e+07px; div.border-t.border-rule 0.0x0.0 rgb(242, 239, 233) T:1px solid rgb(230, 227, 221); a.label.mt-3 0.0x0.0 rgb(255, 255, 255) T:1px solid rgb(230, 227, 221) / R:1px solid rgb(230, 227, 221) / B:1px solid rgb(230, 22.
 
@@ -75,14 +75,14 @@ Child layers that carry the look: a 79.4x40 background #ffffff `color.neutral.wh
 ![Header default](components/crops/header-default.png)
 
 #### Logo
-The wordmark link back to /. Read as `logo` on the the home page page.
+The wordmark link back to /. Read as `logo` on the home page.
 
 **Values (default).** size 30 x 10; background transparent; text Geist Variable 10/15 500, #fffdf6 `color.neutral.light`; icon 30 x 10, #fffdf6 `color.neutral.light`.
 
 ![Logo default](components/crops/logo-default.png)
 
 #### Nav link
-A top-level nav link (EVENTS). Measured, never followed. Read as `nav-item` on the the home page page.
+A top-level nav link (EVENTS). Measured, never followed. Read as `nav-item` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -94,7 +94,7 @@ A top-level nav link (EVENTS). Measured, never followed. Read as `nav-item` on t
 ![Nav link default](components/crops/nav-item-default.png) ![Nav link hover](components/crops/nav-item-hover.png) ![Nav link focus-visible](components/crops/nav-item-focus-visible.png) ![Nav link pressed](components/crops/nav-item-pressed.png)
 
 #### Login link
-LOGIN in the header, pointing at app.b150.ai — the app gate rate-limits; measured, never followed. Read as `login-link` on the the home page page.
+LOGIN in the header, pointing at app.b150.ai — the app gate rate-limits; measured, never followed. Read as `login-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -106,7 +106,7 @@ LOGIN in the header, pointing at app.b150.ai — the app gate rate-limits; measu
 ![Login link default](components/crops/login-link-default.png) ![Login link hover](components/crops/login-link-hover.png) ![Login link focus-visible](components/crops/login-link-focus-visible.png) ![Login link pressed](components/crops/login-link-pressed.png)
 
 #### Sign Up button
-The SIGN UP pill to app.b150.ai/auth/signup. Measured, never followed. Read as `signup-btn` on the the home page page.
+The SIGN UP pill to app.b150.ai/auth/signup. Measured, never followed. Read as `signup-btn` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -122,14 +122,14 @@ The SIGN UP pill to app.b150.ai/auth/signup. Measured, never followed. Read as `
 The hero — "Don't wait for the future. Build it." — and the sections below it.
 
 #### Hero heading
-"Don't wait for the future. Build it." Read as `hero` on the the home page page.
+"Don't wait for the future. Build it." Read as `hero` on the home page.
 
 **Values (default).** size 740 x 335.86; background transparent; text Geist Variable 120/111.96 400, #f7f5f1 `color.neutral.cream`.
 
 ![Hero heading default](components/crops/hero-default.png)
 
 #### Hero CTA
-JOIN THE BETA — the primary call-to-action. Measured, never followed. Read as `hero-cta` on the the home page page.
+JOIN THE BETA — the primary call-to-action. Measured, never followed. Read as `hero-cta` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -141,7 +141,7 @@ JOIN THE BETA — the primary call-to-action. Measured, never followed. Read as 
 ![Hero CTA default](components/crops/hero-cta-default.png) ![Hero CTA hover](components/crops/hero-cta-hover.png) ![Hero CTA focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero CTA pressed](components/crops/hero-cta-pressed.png)
 
 #### Home section
-A content section below the hero. Read as `home-section` on the the home page page.
+A content section below the hero. Read as `home-section` on the home page.
 
 **Values (default).** size 1440 x 968.98; padding 80px 0px; background #f2efe9 `color.neutral.paper`; text Fragment Mono 10/12 400, #1f1915 `color.neutral.ink`; icon 15 x 15, #1f1915 `color.neutral.ink`.
 
@@ -152,21 +152,21 @@ A content section below the hero. Read as `home-section` on the the home page pa
 The /vibeathon event surface.
 
 #### Vibeathon title
-Read as `vibe-title` on the the vibeathon page page.
+Read as `vibe-title` on the vibeathon page.
 
 **Values (default).** size 1220 x 439.61; background transparent; text Geist Variable 96/87.93 500, #1f1915 `color.neutral.ink`; icon 100 x 100, #fa725a `color.accent.coral`.
 
 ![Vibeathon title default](components/crops/vibe-title-default.png)
 
 #### Vibeathon block
-The first card/section on the vibeathon page. Read as `vibe-card` on the the vibeathon page page.
+The first card/section on the vibeathon page. Read as `vibe-card` on the vibeathon page.
 
 **Values (default).** size 1440 x 920.61; padding 103px 0px 80px 0px; background #f2efe9 `color.neutral.paper`; text Fragment Mono 10/12 400, #1f1915 `color.neutral.ink`; icon 15 x 15, #1f1915 `color.neutral.ink`.
 
 ![Vibeathon block default](components/crops/vibe-card-default.png)
 
 #### Vibeathon CTA
-The first call-to-action on /vibeathon. Measured, never followed. Read as `vibe-cta` on the the vibeathon page page.
+The first call-to-action on /vibeathon. Measured, never followed. Read as `vibe-cta` on the vibeathon page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -180,14 +180,14 @@ The first call-to-action on /vibeathon. Measured, never followed. Read as `vibe-
 The /talent directory surface and its cards.
 
 #### Talent title
-Read as `talent-title` on the the talent page page.
+Read as `talent-title` on the talent page.
 
 **Values (default).** size 740 x 334.78; background transparent; text Geist Variable 120/111.6 400, #f7f5f1 `color.neutral.cream`.
 
 ![Talent title default](components/crops/talent-title-default.png)
 
 #### Talent card
-A talent/profile card on the talent surface. Measured, never followed. Read as `talent-card` on the the talent page page.
+A talent/profile card on the talent surface. Measured, never followed. Read as `talent-card` on the talent page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -196,7 +196,7 @@ A talent/profile card on the talent surface. Measured, never followed. Read as `
 ![Talent card default](components/crops/talent-card-default.png) ![Talent card hover](components/crops/talent-card-hover.png)
 
 #### Talent CTA
-The first call-to-action on /talent. Measured, never followed. Read as `talent-cta` on the the talent page page.
+The first call-to-action on /talent. Measured, never followed. Read as `talent-cta` on the talent page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -212,14 +212,14 @@ The first call-to-action on /talent. Measured, never followed. Read as `talent-c
 The /free-resources cards.
 
 #### Resources title
-Read as `res-title` on the the free-resources page page.
+Read as `res-title` on the free-resources page.
 
 **Values (default).** size 1220 x 263.77; background transparent; text Geist Variable 96/87.93 500, #1f1915 `color.neutral.ink`.
 
 ![Resources title default](components/crops/res-title-default.png)
 
 #### Resource card
-A free-resource card. Measured, never followed. Read as `res-card` on the the free-resources page page.
+A free-resource card. Measured, never followed. Read as `res-card` on the free-resources page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -234,14 +234,14 @@ Child layers that carry the look: div 412.8x493 border 1px solid #e6e3dd `color.
 The /about founder letter.
 
 #### About title
-Read as `about-title` on the the about page page.
+Read as `about-title` on the about page.
 
 **Values (default).** size 1220 x 263.77; background transparent; text Geist Variable 96/87.93 500, #1f1915 `color.neutral.ink`.
 
 ![About title default](components/crops/about-title-default.png)
 
 #### About body
-A body-copy block on /about. Read as `about-body` on the the about page page.
+A body-copy block on /about. Read as `about-body` on the about page.
 
 **Values (default).** size 800 x 540; background transparent; text Geist Variable 32/36 500, #1f1915 `color.neutral.ink`; transition opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1), transform 0.9s cubic-bezier(0.25, 1, 0.5, 1).
 
@@ -252,14 +252,14 @@ A body-copy block on /about. Read as `about-body` on the the about page page.
 The /contact form; measured and focused, never submitted.
 
 #### Contact title
-Read as `contact-title` on the the contact page page.
+Read as `contact-title` on the contact page.
 
 **Values (default).** size 300.13 x 111.95; background transparent; text Geist Variable 120/111.96 400, #1f1915 `color.neutral.ink`; transition opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1), transform 0.9s cubic-bezier(0.25, 1, 0.5, 1).
 
 ![Contact title default](components/crops/contact-title-default.png)
 
 #### Contact field
-A contact form field; focused only, never submitted. Read as `contact-input` on the the contact page page.
+A contact form field; focused only, never submitted. Read as `contact-input` on the contact page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -269,7 +269,7 @@ A contact form field; focused only, never submitted. Read as `contact-input` on 
 ![Contact field default](components/crops/contact-input-default.png) ![Contact field focused](components/crops/contact-input-focused.png)
 
 #### Contact button
-The submit; measured except a real press — the form was never submitted. Read as `contact-button` on the the contact page page.
+The submit; measured except a real press — the form was never submitted. Read as `contact-button` on the contact page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -280,7 +280,7 @@ The submit; measured except a real press — the form was never submitted. Read 
 ![Contact button default](components/crops/contact-button-default.png) ![Contact button hover](components/crops/contact-button-hover.png) ![Contact button focus-visible](components/crops/contact-button-focus-visible.png)
 
 #### Contact email field
-The email input; focused only, never submitted. Read as `contact-email` on the the contact page page.
+The email input; focused only, never submitted. Read as `contact-email` on the contact page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -294,14 +294,14 @@ The email input; focused only, never submitted. Read as `contact-email` on the t
 The near-black page footer and its links.
 
 #### Footer
-Read as `footer` on the the home page page.
+Read as `footer` on the home page.
 
 **Values (default).** size 1440 x 1063.78; padding 0px 0px 48px 0px; background #000000 `color.neutral.black`; text Geist Variable 12/20.4 400, #fffdf6 `color.neutral.light`; icon 30 x 10, #fffdf6 `color.neutral.light`.
 
 ![Footer default](components/crops/footer-default.png)
 
 #### Footer link
-Read as `footer-link` on the the home page page.
+Read as `footer-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -317,7 +317,7 @@ Read as `footer-link` on the the home page page.
 The same surface at phone width, with the menu layer open.
 
 #### Mobile header
-Read as `m-header` on the the home page page at 390 wide.
+Read as `m-header` on the home page at 390 wide.
 
 **Values (default).** size 390 x 65; background transparent; text Geist Variable 10/15 500, #1f1915 `color.neutral.ink`; icon 30 x 10, #1f1915 `color.neutral.ink`; layers a.label.ml-1 0.0x0.0 rgb(255, 255, 255) T:1px solid rgb(230, 227, 221) / R:1px solid rgb(230, 227, 221) / B:1px solid rgb(230, 227, 221) / L:1px solid rgb(230, 227, 221) 3.35544e+07px; div.border-t.border-rule 0.0x0.0 rgb(242, 239, 233) T:1px solid rgb(230, 227, 221); a.label.mt-3 0.0x0.0 rgb(255, 255, 255) T:1px solid rgb(230, 227, 221) / R:1px solid rgb(230, 227, 221) / B:1px solid rgb(230, 227,.
 
@@ -326,7 +326,7 @@ Child layers that carry the look: a 0x0 background #ffffff `color.neutral.white`
 ![Mobile header default](components/crops/m-header-default.png)
 
 #### Mobile menu button
-Read as `m-menu-button` on the the home page page at 390 wide.
+Read as `m-menu-button` on the home page at 390 wide.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -336,21 +336,21 @@ Read as `m-menu-button` on the the home page page at 390 wide.
 ![Mobile menu button default](components/crops/m-menu-button-default.png) ![Mobile menu button hover](components/crops/m-menu-button-hover.png) ![Mobile menu button focus-visible](components/crops/m-menu-button-focus-visible.png) ![Mobile menu button pressed](components/crops/m-menu-button-pressed.png)
 
 #### Mobile menu, open
-The menu button after its own toggle; the crop is the open menu layer. Read as `m-menu-open` on the the home page page at 390 wide.
+The menu button after its own toggle; the crop is the open menu layer. Read as `m-menu-open` on the home page at 390 wide.
 
 **Values (opened).** size 40 x 40; background transparent; text Geist Variable 10/15 500, #1f1915 `color.neutral.ink`.
 
 ![Mobile menu, open opened](components/crops/m-menu-open-opened.png)
 
 #### Mobile nav link
-A row inside the opened menu. Read as `m-nav-link` on the the home page page at 390 wide.
+A row inside the opened menu. Read as `m-nav-link` on the home page at 390 wide.
 
 **Values (default).** size 358 x 29.33; padding 8px 0px; background transparent; text Fragment Mono 10/13.33 700, #9ea4a8.
 
 ![Mobile nav link default](components/crops/m-nav-link-default.png)
 
 #### Mobile CTA
-A JOIN/SIGN UP button on mobile. Read as `m-cta` on the the home page page at 390 wide.
+A JOIN/SIGN UP button on mobile. Read as `m-cta` on the home page at 390 wide.
 
 **Values (default).** size 79.38 x 40; padding 0px 16px; border 1px solid #e6e3dd `color.neutral.rule`; radius 3.35544e+07px; background #ffffff `color.neutral.white`; text Fragment Mono 10/13.33 400, #1f1915 `color.neutral.ink`.
 
@@ -389,9 +389,9 @@ The site paints one theme on every captured route; a `.dark` probe resolves ever
 
 ### Screenshots
 
-- Winning-site thumbnails, nominee artwork and the Awwwards wordmark in the screenshots are third-party/site content. The site detail captured is whichever `/websites/` card first had open voting at run time (recorded as `site_url` in components-computed.json); another run may land on a different entry.
+- Photography, partner logos and event artwork in the screenshots are B150's and its partners' content.
 - Screenshots are stored as 256-colour PNGs; read exact colours from the tokens or the raw files.
 
 ### Content left out
 
-- Winning-site thumbnails and nominee artwork are the entrants' content; only the frames and components were measured.
+- Photography, partner logos and event artwork are the site's content; only the frames and components were measured.
