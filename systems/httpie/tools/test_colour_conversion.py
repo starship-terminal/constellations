@@ -33,5 +33,17 @@ class OklabTest(unittest.TestCase):
         self.assertEqual(f("oklch(0.5 0 0)"), "#636363")
 
 
+class ChromaticOklchTest(unittest.TestCase):
+    """oklch() goes through its hue: the blue focus ring written as oklch()
+    gives the same colour as its oklab() spelling, in both converters."""
+
+    def test_blue_ring_as_oklch(self):
+        import math
+        L, a, b = 0.561988, -0.023436, -0.238834
+        C, h = math.hypot(a, b), math.degrees(math.atan2(b, a)) % 360
+        for f in (load("build_components_md.py", "_lab_okl"), load("build_tokens.py", "norm_color")):
+            self.assertEqual(f(f"oklch({L} {C:.6f} {h:.4f} / 0.5)"), "rgba(41, 98, 255, 0.5)")
+
+
 if __name__ == "__main__":
     unittest.main()
