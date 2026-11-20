@@ -12,8 +12,15 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class BuildTokens(unittest.TestCase):
+    def test_committed_tokens_match_build(self):
+        # build() works in memory; only main() writes, so a mismatch never rewrites tokens.json.
+        self.assertEqual(json.loads((ROOT / "tokens.json").read_text()), json.loads(json.dumps(build_tokens.build())))
+
+    def test_ua_focus_ring_is_not_labelled_a_reading(self):
+        ring = json.loads((ROOT / "tokens.json").read_text())["marketing"]["focus"]["ring"]
+        self.assertTrue(ring["$extensions"]["source"].startswith("Observed."))
+
     def test_writes_measured_blue_and_page(self):
-        build_tokens.main()
         doc = json.loads((ROOT / "tokens.json").read_text())
         self.assertEqual(doc["core"]["color"]["blue"]["$value"], "#0988f0")
         self.assertEqual(doc["marketing"]["background"]["page"]["$value"], "#9a9a9a")
