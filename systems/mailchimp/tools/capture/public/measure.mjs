@@ -59,7 +59,11 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
+  // open() throws on a failed navigation or a challenge that never clears; treat it like BLOCKED, so
+  // the page's committed readings are kept rather than replaced with the interstitial.
+  const opened = await open(page, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo })
+    .then(() => true, (e) => { log('  OPEN FAILED', key, String(e.message).slice(0, 100)); return false; });
+  if (!opened) { failedPages.add(key); await page.close(); await ctx.close(); return false; }
   if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   return true;
