@@ -1,0 +1,353 @@
+{
+ "_note": "Other people's names and photos in the signed-in Luma captures (owner's decision, 2026-11-21, for the public repo): individual event hosts, people who sent invites, chat partners and message senders. Organisations hosting public events, event covers, the owner's own profile and chats stay. Filled with the row background; crops are re-cut by tools/crops.py.",
+ "families": [
+  {
+   "name": "home: hosts of three invited events",
+   "files": [
+    "screenshots/dark/01-home-your-events-calendars.png",
+    "screenshots/light/01-home-your-events-calendars.png"
+   ],
+   "rects": [
+    [
+     234,
+     368,
+     416,
+     408
+    ],
+    [
+     234,
+     587,
+     367,
+     620
+    ],
+    [
+     234,
+     837,
+     465,
+     877
+    ]
+   ]
+  },
+  {
+   "name": "home scrolled, dark: event hosts (one under the blurred header, one below the tab bar)",
+   "files": [
+    "screenshots/dark/02-home-scrolled-header-blur-picked.png"
+   ],
+   "rects": [
+    [
+     276,
+     90,
+     365,
+     120
+    ],
+    [
+     234,
+     342,
+     465,
+     376
+    ],
+    [
+     234,
+     1397,
+     759,
+     1437
+    ],
+    [
+     234,
+     1711,
+     705,
+     1745
+    ]
+   ]
+  },
+  {
+   "name": "home scrolled, light: event hosts (one under the blurred header)",
+   "files": [
+    "screenshots/light/02-home-scrolled-header-blur-picked.png"
+   ],
+   "rects": [
+    [
+     280,
+     188,
+     352,
+     220
+    ],
+    [
+     234,
+     437,
+     465,
+     478
+    ],
+    [
+     234,
+     1498,
+     758,
+     1537
+    ]
+   ]
+  },
+  {
+   "name": "picked for you, dark: event hosts",
+   "files": [
+    "screenshots/dark/03-home-picked-date-sections.png",
+    "screenshots/dark/04-nearby-popup-menu.png"
+   ],
+   "rects": [
+    [
+     234,
+     797,
+     759,
+     837
+    ],
+    [
+     234,
+     1106,
+     705,
+     1146
+    ]
+   ]
+  },
+  {
+   "name": "picked for you, light: event hosts",
+   "files": [
+    "screenshots/light/03-home-picked-date-sections.png",
+    "screenshots/light/04-nearby-popup-menu.png"
+   ],
+   "rects": [
+    [
+     234,
+     898,
+     758,
+     937
+    ],
+    [
+     234,
+     1206,
+     705,
+     1245
+    ]
+   ]
+  },
+  {
+   "name": "discover: an event's hosts",
+   "files": [
+    "screenshots/dark/09-discover-popular-category-chips.png",
+    "screenshots/light/09-discover-popular-category-chips.png"
+   ],
+   "rects": [
+    [
+     234,
+     880,
+     602,
+     919
+    ]
+   ]
+  },
+  {
+   "name": "discover scrolled, light: an event's hosts",
+   "files": [
+    "screenshots/light/10-discover-cities-featured-calendars.png"
+   ],
+   "rects": [
+    [
+     234,
+     281,
+     602,
+     319
+    ]
+   ]
+  },
+  {
+   "name": "category page: an event's hosts",
+   "files": [
+    "screenshots/dark/11-category-page-subscribe-badges.png"
+   ],
+   "rects": [
+    [
+     234,
+     1039,
+     734,
+     1079
+    ]
+   ]
+  },
+  {
+   "name": "category page, light: an event's hosts",
+   "files": [
+    "screenshots/light/11-category-page-subscribe-badges.png"
+   ],
+   "rects": [
+    [
+     234,
+     1040,
+     747,
+     1082
+    ]
+   ]
+  },
+  {
+   "name": "search results: an event's hosts",
+   "files": [
+    "screenshots/dark/13-search-typed-results-waitlist-badge.png",
+    "screenshots/light/13-search-typed-results-waitlist-badge.png"
+   ],
+   "rects": [
+    [
+     234,
+     434,
+     560,
+     474
+    ]
+   ]
+  },
+  {
+   "name": "notifications: two people who sent invites (name, photo) and one seen through the tab bar",
+   "files": [
+    "screenshots/dark/17-notifications-list-unread-tint.png",
+    "screenshots/light/17-notifications-list-unread-tint.png"
+   ],
+   "rects": [
+    [
+     52,
+     590,
+     100,
+     682,
+     "solid"
+    ],
+    [
+     100,
+     590,
+     138,
+     634,
+     "solid"
+    ],
+    [
+     150,
+     602,
+     296,
+     640
+    ],
+    [
+     52,
+     800,
+     100,
+     892,
+     "solid"
+    ],
+    [
+     100,
+     800,
+     138,
+     844,
+     "solid"
+    ],
+    [
+     150,
+     812,
+     312,
+     852
+    ],
+    [
+     52,
+     1598,
+     100,
+     1692,
+     "solid"
+    ],
+    [
+     100,
+     1598,
+     138,
+     1640,
+     "solid"
+    ],
+    [
+     440,
+     1612,
+     552,
+     1652
+    ]
+   ]
+  },
+  {
+   "name": "chat list: a person's chat (name, photo) and a name in a preview",
+   "files": [
+    "screenshots/dark/28-chat-list-unread-dot.png",
+    "screenshots/light/28-chat-list-unread-dot.png"
+   ],
+   "rects": [
+    [
+     52,
+     848,
+     150,
+     948
+    ],
+    [
+     165,
+     856,
+     330,
+     895
+    ],
+    [
+     282,
+     634,
+     404,
+     670
+    ]
+   ]
+  },
+  {
+   "name": "event chat: a sender's name and photo",
+   "files": [
+    "screenshots/dark/29-chat-thread-image-bubble-composer.png",
+    "screenshots/light/29-chat-thread-image-bubble-composer.png",
+    "screenshots/dark/30-chat-composer-typed-send-enabled.png",
+    "screenshots/light/30-chat-composer-typed-send-enabled.png"
+   ],
+   "rects": [
+    [
+     118,
+     828,
+     170,
+     864
+    ],
+    [
+     28,
+     1516,
+     86,
+     1574
+    ]
+   ]
+  },
+  {
+   "name": "your events: hosts of three invited events",
+   "files": [
+    "screenshots/dark/31-your-events-segmented-upcoming-soldout-badge.png",
+    "screenshots/light/31-your-events-segmented-upcoming-soldout-badge.png"
+   ],
+   "rects": [
+    [
+     234,
+     361,
+     416,
+     401
+    ],
+    [
+     234,
+     579,
+     367,
+     617
+    ],
+    [
+     234,
+     835,
+     465,
+     869
+    ]
+   ]
+  }
+ ],
+ "ocr": {
+  "net": false
+ }
+}

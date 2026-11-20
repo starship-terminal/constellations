@@ -115,7 +115,7 @@ def build():
         "title1": "Family", "title2": "Discover", "aboutHeading": "Back with our main stage event.",
         "placeholderLarge": "Event Name", "title3": "Your Events", "headline": "Mahjong After Dark: Spooky Edition",
         "navTitle": "Notifications", "body": "Account Settings", "callout": "Yesterday, 19:00 GMT-7",
-        "subhead": "Spice King", "caption": "Invited", "pill": "US$15", "tab": "Discover"}
+        "subhead": "Host name", "caption": "Invited", "pill": "US$15", "tab": "Discover"}
     type_rows = "".join('<tr><th scope="row"><code>%s</code><span class="desc">%s</span></th><td class="meta">%s, %s%s</td>'
                         '<td><span class="type-%s">%s</span></td></tr>'
                         % (esc(".".join(p)), esc(t["$description"]), esc(t["$value"]["fontSize"]), esc(t["$value"]["fontWeight"]),
@@ -131,7 +131,7 @@ def build():
    <div class="nav"><span class="av"></span><span class="type-title2 grow">Discover</span><span class="glass pair"><span>+</span><span>&#9675;</span></span></div>
    <div class="type-title3">Your Events <span class="ter">&#8250;</span></div>
    <div class="erow"><span class="thumb"><span class="badge type-caption">Invited</span></span>
-    <div class="etext"><div class="type-subhead sec">Spice King <span class="pill price type-pill">US$15</span></div><div class="type-headline">Fri/Sat Gamenight</div><div class="type-callout sec">Yesterday, 19:00 GMT-7</div></div></div>
+    <div class="etext"><div class="type-subhead sec">Host name <span class="pill price type-pill">US$15</span></div><div class="type-headline">Fri/Sat Gamenight</div><div class="type-callout sec">Yesterday, 19:00 GMT-7</div></div></div>
    <div class="erow"><span class="thumb"></span>
     <div class="etext"><div class="type-subhead sec">Emergent <span class="pill sold type-pill">Sold Out</span></div><div class="type-headline">Emergent: VibeCon SF 2026</div><div class="type-callout sec">08:00 GMT-7</div></div></div>
    <div class="type-navTitle date">Today <span class="ter">/ Saturday</span></div>

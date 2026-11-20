@@ -194,7 +194,7 @@ def core():
         "navTitle": ty("type.navTitle", "semibold", None, "Nav titles (Notifications, Settings), date sections ('Today'), chat row titles.", ("type.dateSection", "type.chatTitle")),
         "body": ty("type.body", "regular", None, "Settings rows, grouped section headers (grey), menu items.", ("type.sectionHeader",)),
         "callout": ty("type.meta", "regular", lines("lines.body"), "Event meta lines (time, place), category descriptions, notifications (on a " + lines("lines.notification") + " line).", ("type.description",)),
-        "subhead": ty("type.host", "regular", None, "Host lines above an event title ('Emergent', 'Spice King')."),
+        "subhead": ty("type.host", "regular", None, "Host lines above an event title ('Emergent', 'TEDxSingapore')."),
         "caption": ty("type.caption", "medium", None, "Badge labels ('Invited'), action tile labels ('Register'), thread timestamps and footnotes under cards.", ("type.button", "type.timestamp", "type.footnote")),
         "pill": ty("type.pill", "semibold", None, "Price and status pill labels (US$15, Sold Out, Near Capacity)."),
         "tab": ty("type.tab", "medium", None, "Tab bar labels."),

@@ -1,0 +1,12 @@
+{
+ "_note": "Other people's names and profile photos in the signed-in Grab captures (owner's decision, 2026-11-21, for the public repo): a reviewer on a merchant page and two posters in the Moments feed. Merchants, restaurants and post photos stay. Addresses and the maps were masked at capture time (tools/masks.json). Filled with the background around them.",
+ "families": [
+  {"name": "merchant page: a reviewer's name and photo",
+   "files": ["screenshots/light/08-merchant-page-tabs-voucher-buy.png"],
+   "rects": [[80, 1622, 226, 1662]]},
+  {"name": "moments feed: two posters' names and photos",
+   "files": ["screenshots/light/13-moments-feed-tabs-chips-tooltip.png"],
+   "rects": [[434, 1136, 592, 1174, "solid"], [64, 1210, 170, 1262]]}
+ ],
+ "ocr": {"net": false}
+}
