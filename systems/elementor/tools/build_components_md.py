@@ -82,6 +82,18 @@ def zero_size(p):
     return sz.startswith("0.0x0.0") or sz in ("0x0", "0pxx0px")
 
 
+def focus_not_captured(v):
+    """A state whose reading is not what its name says: a skipped one, or a focus-visible reading
+    taken where keyboard focus never landed (kbFocus returned "focus failed") or where the element
+    took focus but did not match :focus-visible. Its style is the element at rest, so it is left out
+    of every table and tally and listed as "focus could not be captured" (the kit's rule)."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
+
+def measured(v):
+    return "style" in v and not focus_not_captured(v)
+
+
 def child_ring(v):
     """A focus ring painted by a visible descendant — keyboard focus can land
     on a child (the mobile item's dropdown button) instead of the wrapper."""
@@ -184,7 +196,7 @@ ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow",
 
 
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    states = [s for s in c["states"] if measured(c["states"][s])]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -213,7 +225,7 @@ def fmt(d):
 
 
 def child_layers(c):
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
@@ -333,7 +345,7 @@ for k, c in C.items():
     st = c["states"].get("focus-visible")
     if not st:
         continue
-    if "style" not in st:
+    if focus_not_captured(st) or "style" not in st:
         # A failed focus attempt is its own record — never a no-ring reading.
         failed_focus.append(k)
         continue
@@ -360,7 +372,7 @@ W("|---|---|---|---|")
 mot = {}
 for k, c in C.items():
     for st in c["states"].values():
-        if "style" not in st:
+        if not measured(st):
             continue
         s = st["style"]
         if s["transitionDuration"] in ("0s", ""):
@@ -394,7 +406,7 @@ for k in ["nav-dropdown", "card", "plan-card", "faq-item", "faq-answer", "field-
     c = C.get(k)
     if not c or c.get("missing"):
         continue
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if st is None:
         continue
     p = props(st)
