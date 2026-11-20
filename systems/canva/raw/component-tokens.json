@@ -500,7 +500,7 @@
    "page": {
     "value": "#16171d",
     "type": "color",
-    "source": "resolved .theme.dark surface value (raw/css-vars.json)",
+    "source": "Reconstruction: entered by hand at capture time as the .theme.dark surface; raw/css-vars.json resolves no variable to it",
     "description": "The darkest surface the .dark layer declares; the hero band itself is a gradient media layer, not a flat fill — see patterns.md."
    }
   },
