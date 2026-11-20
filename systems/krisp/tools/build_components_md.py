@@ -8,6 +8,11 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+
+
+def cell(v):
+    """Table-cell text: a "|" or a newline in captured text (an error message) would break the row."""
+    return " ".join(str(v).split("\n")).replace("|", "\\|")
 RAW = ROOT / "raw" / "components-computed.json"
 lines = ["# Krisp components", "", "Public marketing components measured on krisp.ai on 2026-11-18, signed out.", ""]
 if not RAW.exists():
@@ -38,12 +43,12 @@ else:
         lines.append("|---|---|---|---|---|")
         for state, s in (comp.get("states") or {}).items():
             if s.get("error"):
-                lines.append(f"| {state} | error | | | {s['error'][:80]} |")
+                lines.append(f"| {cell(state)} | error | | | {cell(s['error'][:80])} |")
                 continue
             style = s.get("style") or {}
             rect = s.get("rect") or {}
             size = f"{rect.get('w', '')}×{rect.get('h', '')}"
-            lines.append(f"| {state} | {size} | {style.get('backgroundColor', '')} | {style.get('color', '')} | {style.get('borderTopLeftRadius', '')} |")
+            lines.append(f"| {cell(state)} | {size} | {cell(style.get('backgroundColor', ''))} | {cell(style.get('color', ''))} | {cell(style.get('borderTopLeftRadius', ''))} |")
         lines.append("")
 lines += [
     "## Gaps",
