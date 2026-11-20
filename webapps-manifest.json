@@ -4851,9 +4851,9 @@
       "description": "Websites designed & built faster with AI",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.relume.ai/app/login shows email and password, or Google or SSO. Password not submitted.",
+      "notes": "Email probe: https://www.relume.ai/app/login shows email and password, or Google or SSO. Password not submitted. Public walk 2026-11-21: relume.io redirects to relume.ai. The Products menu opens Publish, Studio, Export, MCP, React Library, and What's New. The theme button sets body.p-theme-dark. The phone menu is the same nav. Login, signup, Google, and SSO are walls. Password was not submitted. No email was typed. No form was submitted. Public package in PR 1559 at 590c982959b4. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 15
     },
     {
