@@ -63,6 +63,8 @@ Empty bodies (400, -32600) and bodies that are not UTF-8 or not JSON (400, -3270
 
 Refero's recorded vocabulary is seeded into the app's SQLite database by migration v4. Web and iOS category headers read `/api/taxonomy` and preserve the original platform-specific labels and order, including categories with no local captures. App-owned assignments retag measured systems without rewriting captured token evidence. See [category migration](docs/category-migration.md) for mapping rationale. JSON files are versioned seed inputs; SQLite owns runtime vocabulary and assignments. Reopening the app preserves manual assignment changes. Seed rows added later (a new package in `system-categories.json` or `media-taxonomy.json`) reach an existing database on its next open: a seed ledger records which packages and media each database has been offered, so no per-package migration is needed and a label the user cleared is never restored.
 
+When a package leaves the library, the regenerated seed files drop it, and the next open removes what the seed gave it, in the same transaction as the rest of the open: its curated category and media labels, and the ledger keys that held only those labels, so the package is seeded afresh if it comes back. Only keys in the ledger of a reference neither seed file names are touched. A category the user set by hand stays, and so does a cleared label's ledger key, so either choice survives the package's return. Collections, notes, saved media and conversations that name the package are never changed; they show the entry as no longer available. Reopening removes nothing more.
+
 ## Docs
 
 - [Private deployment](docs/DEPLOYMENT.md): staging, backups, cutover and rollback.
