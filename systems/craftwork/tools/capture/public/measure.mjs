@@ -9,8 +9,9 @@
 // build-measurements.mjs.
 //
 // craftwork.design is a Next.js app on Tailwind utilities with a :root
-// --background-*/--text-icons-*/--stroke-* semantic layer; it paints both
-// themes via the nav's local theme toggle (measured, never persisted).
+// --background-*/--text-icons-*/--stroke-* semantic layer; the nav's local
+// theme toggle paints a dark theme too, but no spec here toggles it: every
+// reading is the light theme.
 // Specs select by role, aria-label, text or structure (utility classes are
 // too dense to name). The OTP login card at /login is measured but Send
 // code is never pressed; Pro purchase and checkout are never used. The
@@ -364,7 +365,6 @@ async function catalog() {
     } else {
       await S('library-row', q('a').filter({ hasText: /\|\d+|\d+$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Library row', desc: 'A component-library row in the left list ("Smooth UI | 231"). The page\'s only h1 ("Components, 1,224") is a 1x1 accessibility heading.', sel: 'library list row' });
     }
-    await S(key + '-filter', q('input').filter({ visible: true }).first(), ['default', 'focus-visible', 'filled'], { group: g, title: 'Filter field', desc: 'A catalog filter/search input; measured in place, never submitted.', sel: 'catalog input' });
     await lazyLoad();
     await page.evaluate(() => {
       const imgs = [...document.querySelectorAll('img')].filter((im) => { const r = im.getBoundingClientRect(); return r.width > 140 && r.height > 100 && r.y > 60; });
@@ -372,6 +372,9 @@ async function catalog() {
       if (im) { let el = im.closest('a') || im.parentElement; while (el && (el.getBoundingClientRect().height < 140 || el.getBoundingClientRect().width < 150) && el.parentElement && el.tagName !== 'MAIN') el = el.parentElement; if (el) el.setAttribute('data-m-mark', 'catcard'); }
     });
     await S(key + '-card', q('[data-m-mark="catcard"]').filter({ visible: true }).first(), B4, { group: g, title: 'Catalog card', desc: 'An asset card in the catalog grid; measured, never followed.', sel: 'catalog asset card' });
+    // The filter last: its filled state is undone with select-all and Backspace, which does not bring the
+    // results back, so a card read after it was the "No Products Found" empty state.
+    await S(key + '-filter', q('input').filter({ visible: true }).first(), ['default', 'focus-visible', 'filled'], { group: g, title: 'Filter field', desc: 'A catalog filter/search input; measured in place, never submitted.', sel: 'catalog input' });
     if (key === 'components') await chrome('components');
   }
 }
@@ -418,7 +421,7 @@ async function mobile() {
 
 run = new Date().toISOString().slice(0, 10);
 out._meta.read = run;
-out._meta.viewport = '1440 x 900 (mobile group 390 x 844); craftwork.design paints light and dark via the nav theme toggle';
+out._meta.viewport = '1440 x 900 (mobile group 390 x 844); light theme only (the nav theme toggle is not used by this script)';
 out._meta.tool = 'tools/capture/public/measure.mjs';
 const { browser, context: ctx0 } = await launch();
 context = ctx0;

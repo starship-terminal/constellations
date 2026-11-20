@@ -66,8 +66,17 @@ const desktop = {
       if (await t.count()) {
         await clickEl(t); await wait(p, 1600);
         await closePromo(p);
-        await screenshotWithMetadata(p, { path: `${RAW}/home-dark-default.png`, sanitizedSourceUrl: S.sourceUrl }, S.requested);
-        S.count++; log('  shot dark-default');
+        // Shoot only what painted: the root must carry data-theme="dark" and the body a dark ground,
+        // or a failed toggle is written as a light page named -dark.
+        const dark = await p.evaluate(() => {
+          const m = getComputedStyle(document.body).backgroundColor.match(/\d+(\.\d+)?/g) || [255, 255, 255];
+          const [r, g, b] = m.map(Number);
+          return document.documentElement.getAttribute('data-theme') === 'dark' && 0.2126 * r + 0.7152 * g + 0.0722 * b < 80;
+        });
+        if (dark) {
+          await screenshotWithMetadata(p, { path: `${RAW}/home-dark-default.png`, sanitizedSourceUrl: S.sourceUrl }, S.requested);
+          S.count++; log('  shot dark-default');
+        } else log('  ! the theme toggle did not paint dark; no dark shot');
         await clickEl(t); await wait(p, 1200);
       }
     });
