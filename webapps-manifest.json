@@ -2425,9 +2425,9 @@
       "description": "Earn your first dollar online with Gumroad",
       "status": "pending",
       "package": null,
-      "notes": "https://gumroad.com/login asks for email and password, or Apple, Google, X, Stripe, or a passkey. No code was sent.",
+      "notes": "https://gumroad.com/login asks for email and password, or Apple, Google, X, Stripe, or a passkey. No code was sent. Public walk 2026-11-21: marketing header opened Discover, Blog, Pricing, Features, About, and Gumclaw. Home chips opened category pages. Discover category names opened subcategory dialogs. Sort tabs, filters, and product cards stayed public. The phone hamburger opened an in-page menu. Log in stops at https://gumroad.com/login. Start selling stops at https://gumroad.com/signup. Follow, checkout, and settings were not entered. No form was submitted. Public package in PR 1514 at 97f424aff. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 8
     },
     {
