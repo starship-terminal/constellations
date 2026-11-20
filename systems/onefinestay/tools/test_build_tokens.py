@@ -1,14 +1,22 @@
 #!/usr/bin/env python3
-"""The Onefinestay token file still matches the readings the builder encodes."""
+"""The Onefinestay token file is what build_tokens.build() makes and matches the readings it encodes.
+
+The build runs in memory; nothing here writes tokens.json."""
 import json
 import pathlib
+import sys
 import unittest
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 TOKENS = json.loads((HERE / "tokens.json").read_text())
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import build_tokens  # noqa: E402
 
 
 class Tokens(unittest.TestCase):
+    def test_committed_file_is_what_the_builder_makes(self):
+        self.assertEqual(TOKENS, build_tokens.build())
+
     def test_coral_search_and_rust_booking_stay_apart(self):
         self.assertEqual(TOKENS["light"]["accent"]["$value"], "#ff8065")
         self.assertEqual(TOKENS["light"]["brand"]["900"]["$value"], "#c84908")
