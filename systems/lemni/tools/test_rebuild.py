@@ -86,6 +86,12 @@ class RebuildTest(unittest.TestCase):
         for theme in ("light", "dark"):
             self.assertEqual(tokens[theme]["accent"]["default"]["$value"], "{background.action}", theme)
 
+    def test_capture_date_moves_only_on_a_reading(self):
+        for rel in ("capture/public/measure.mjs", "capture/signed-in/measure-app.mjs"):
+            src = (PKG / "tools" / rel).read_text()
+            self.assertIn("read: (out._meta && out._meta.read) || TODAY, lastAttempt: TODAY", src, rel)
+            self.assertIn("via: opts.via, read: TODAY };\n    out._meta.read = TODAY;", src, rel)
+
     def test_build_refuses_a_layout_without_the_app_readings(self):
         with tempfile.TemporaryDirectory() as tmp:
             copy = pathlib.Path(tmp) / "pkg"

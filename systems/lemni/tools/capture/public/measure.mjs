@@ -21,8 +21,10 @@ fs.mkdirSync(RAW, { recursive: true });
 const ONLY = (process.argv[2] || '').split(',').filter(Boolean);
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { _meta: {}, components: {} };
 const TODAY = new Date().toLocaleDateString('en-CA');
-// _meta.read is the date of the latest run; each component's own `read` says when it was measured.
-out._meta = { ...out._meta, read: TODAY, product: 'Lemni', route: 'public-web' };
+// _meta.read keeps the earlier date until this run reads a state, so a rerun that
+// fails throughout never redates old readings; _meta.lastAttempt is this run's date.
+// Each component and state also carries its own `read` date.
+out._meta = { ...out._meta, read: (out._meta && out._meta.read) || TODAY, lastAttempt: TODAY, product: 'Lemni', route: 'public-web' };
 out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
@@ -97,7 +99,8 @@ async function measure(key, state, loc, opts = {}) {
       try { file = await crop(page, loc, `${key}-${state}`, opts.pad ?? 10); }
       catch (e) { s.cropError = String(e.message || e).slice(0, 140); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    c.states[state] = { ...s, crop: file, via: opts.via, read: TODAY };
+    out._meta.read = TODAY; // a reading succeeded in this run
     log('  ', key, state, s.rect.w + 'x' + s.rect.h, s.textStyle && s.textStyle.color);
   } catch (e) {
     c.states[state] = { error: String(e.message || e).slice(0, 200) };
