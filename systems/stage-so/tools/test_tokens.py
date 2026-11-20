@@ -26,12 +26,29 @@ def raw_colours(package):
     return seen
 
 
+def colour_form(value):
+    """A literal colour (hex, rgb() or rgba()) in the form raw_colours() uses; anything else as written."""
+    v = value.strip().lower()
+    if v.startswith("#"):
+        h = v[1:]
+        h = "".join(c * 2 for c in h) if len(h) in (3, 4) else h
+        return "#" + (h[:6] if len(h) == 8 and h.endswith("ff") else h)
+    m = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+))?\s*\)", v)
+    if not m:
+        return v
+    h = "#%02x%02x%02x" % tuple(int(x) for x in m.groups()[:3])
+    if m.group(4) and float(m.group(4)) < 1:
+        h += "%02x" % int(float(m.group(4)) * 255 + 0.5)
+    return h
+
+
 def literal_colours(node, path=""):
-    """(path, value, source) for every colour token with a literal value, in every set and group."""
+    """(path, value, source) for every colour token with a literal (non-alias) value, in every set
+    and group; hex, rgb() and rgba() all come back in raw_colours()'s form."""
     if isinstance(node, dict) and "$value" in node:
         v = node["$value"]
-        if node.get("$type") == "color" and isinstance(v, str) and v.startswith("#"):
-            yield path, v.lower(), (node.get("$extensions") or {}).get("source", "")
+        if node.get("$type") == "color" and isinstance(v, str) and not v.strip().startswith("{"):
+            yield path, colour_form(v), (node.get("$extensions") or {}).get("source", "")
         return
     if isinstance(node, dict):
         for k, child in node.items():
@@ -42,6 +59,13 @@ def literal_colours(node, path=""):
 
 
 class Tokens(unittest.TestCase):
+    def test_unrecorded_rgba_colour_is_caught(self):
+        tree = {"core": {"zz": {"$type": "color", "$value": "rgba(1, 2, 3, 0.5)",
+                                "$extensions": {"source": "Measured: test"}}}}
+        found = list(literal_colours(tree))
+        self.assertEqual(found[0][1], "#01020380")
+        self.assertNotIn(found[0][1], raw_colours(ROOT))
+
     def test_literal_colours_are_in_raw(self):
         """Every literal colour, in every set and nested group, is a colour some raw/ file holds,
         unless its source says it was entered by hand (Reconstruction)."""

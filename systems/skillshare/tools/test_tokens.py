@@ -24,12 +24,29 @@ def raw_colours(package):
     return seen
 
 
+def colour_form(value):
+    """A literal colour (hex, rgb() or rgba()) in the form raw_colours() uses; anything else as written."""
+    v = value.strip().lower()
+    if v.startswith("#"):
+        h = v[1:]
+        h = "".join(c * 2 for c in h) if len(h) in (3, 4) else h
+        return "#" + (h[:6] if len(h) == 8 and h.endswith("ff") else h)
+    m = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+))?\s*\)", v)
+    if not m:
+        return v
+    h = "#%02x%02x%02x" % tuple(int(x) for x in m.groups()[:3])
+    if m.group(4) and float(m.group(4)) < 1:
+        h += "%02x" % int(float(m.group(4)) * 255 + 0.5)
+    return h
+
+
 def literal_colours(node, path=""):
-    """(path, value, source) for every colour token with a literal value, in every set and group."""
+    """(path, value, source) for every colour token with a literal (non-alias) value, in every set
+    and group; hex, rgb() and rgba() all come back in raw_colours()'s form."""
     if isinstance(node, dict) and "$value" in node:
         v = node["$value"]
-        if node.get("$type") == "color" and isinstance(v, str) and v.startswith("#"):
-            yield path, v.lower(), (node.get("$extensions") or {}).get("source", "")
+        if node.get("$type") == "color" and isinstance(v, str) and not v.strip().startswith("{"):
+            yield path, colour_form(v), (node.get("$extensions") or {}).get("source", "")
         return
     if isinstance(node, dict):
         for k, child in node.items():
@@ -46,6 +63,13 @@ class Tokens(unittest.TestCase):
     def test_accent_is_measured_mint(self):
         self.assertEqual(T["light"]["color"]["accent"]["$value"], "#55da9b")
         self.assertEqual(T["light"]["color"]["link"]["$value"], "#5620c1")
+
+    def test_unrecorded_rgba_colour_is_caught(self):
+        tree = {"core": {"zz": {"$type": "color", "$value": "rgba(1, 2, 3, 0.5)",
+                                "$extensions": {"source": "Measured: test"}}}}
+        found = list(literal_colours(tree))
+        self.assertEqual(found[0][1], "#01020380")
+        self.assertNotIn(found[0][1], raw_colours(HERE))
 
     def test_literal_colours_are_in_raw(self):
         """Every literal colour, in every set and nested group, is a colour some raw/ file holds,
@@ -141,26 +165,29 @@ def _alias_target(flat, path, ref):
 
 
 def dead_aliases(tree):
-    """Aliases that point at nothing, at themselves, or round a cycle."""
+    """Aliases that point at nothing, at themselves, or round a cycle. Every reference inside a
+    target's value (a string, or any string in a list or object) is followed, with the chain of
+    token paths walked so far, so a cycle through a list or composite value is found too."""
     flat = _alias_leaves(tree)
     bad = []
+
+    def walk(start, ref, cur_path, chain):
+        target = _alias_target(flat, cur_path, ref)
+        if target is None:
+            return f"{start}: {{{ref}}} points at nothing"
+        if target in chain:
+            return f"{start}: {{{ref}}} loops back on itself"
+        for nxt in _alias_refs(flat[target]["$value"]):
+            err = walk(start, nxt, target, chain | {target})
+            if err:
+                return err
+        return None
+
     for path, node in flat.items():
         for ref in _alias_refs(node["$value"]):
-            seen, cur_path, cur_ref = {path}, path, ref
-            while True:
-                target = _alias_target(flat, cur_path, cur_ref)
-                if target is None:
-                    bad.append(f"{path}: {{{ref}}} points at nothing")
-                    break
-                if target in seen:
-                    bad.append(f"{path}: {{{ref}}} loops back on itself")
-                    break
-                seen.add(target)
-                value = flat[target]["$value"]
-                whole = _ALIAS.fullmatch(value) if isinstance(value, str) else None
-                if not whole:
-                    break
-                cur_path, cur_ref = target, whole.group(1)
+            err = walk(path, ref, path, {path})
+            if err:
+                bad.append(err)
     return bad
 
 
@@ -185,6 +212,11 @@ class AliasesResolveTest(unittest.TestCase):
                          "b": {"$value": "{c}", "$type": "color"},
                          "c": {"$value": "{b}", "$type": "color"}}}
         self.assertEqual(len(dead_aliases(tree)), 3)
+
+    def test_cycle_through_list_values_fails(self):
+        tree = {"core": {"a": {"$value": ["{b}"], "$type": "fontFamily"},
+                         "b": {"$value": ["{a}"], "$type": "fontFamily"}}}
+        self.assertEqual(len(dead_aliases(tree)), 2)
 
     def test_alias_resolves_in_own_set_then_core_then_root(self):
         tree = {"core": {"x": {"$value": "#111111", "$type": "color"}},

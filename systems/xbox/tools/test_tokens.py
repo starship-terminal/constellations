@@ -94,26 +94,29 @@ def _alias_target(flat, path, ref):
 
 
 def dead_aliases(tree):
-    """Aliases that point at nothing, at themselves, or round a cycle."""
+    """Aliases that point at nothing, at themselves, or round a cycle. Every reference inside a
+    target's value (a string, or any string in a list or object) is followed, with the chain of
+    token paths walked so far, so a cycle through a list or composite value is found too."""
     flat = _alias_leaves(tree)
     bad = []
+
+    def walk(start, ref, cur_path, chain):
+        target = _alias_target(flat, cur_path, ref)
+        if target is None:
+            return f"{start}: {{{ref}}} points at nothing"
+        if target in chain:
+            return f"{start}: {{{ref}}} loops back on itself"
+        for nxt in _alias_refs(flat[target]["$value"]):
+            err = walk(start, nxt, target, chain | {target})
+            if err:
+                return err
+        return None
+
     for path, node in flat.items():
         for ref in _alias_refs(node["$value"]):
-            seen, cur_path, cur_ref = {path}, path, ref
-            while True:
-                target = _alias_target(flat, cur_path, cur_ref)
-                if target is None:
-                    bad.append(f"{path}: {{{ref}}} points at nothing")
-                    break
-                if target in seen:
-                    bad.append(f"{path}: {{{ref}}} loops back on itself")
-                    break
-                seen.add(target)
-                value = flat[target]["$value"]
-                whole = _ALIAS.fullmatch(value) if isinstance(value, str) else None
-                if not whole:
-                    break
-                cur_path, cur_ref = target, whole.group(1)
+            err = walk(path, ref, path, {path})
+            if err:
+                bad.append(err)
     return bad
 
 
@@ -138,6 +141,11 @@ class AliasesResolveTest(unittest.TestCase):
                          "b": {"$value": "{c}", "$type": "color"},
                          "c": {"$value": "{b}", "$type": "color"}}}
         self.assertEqual(len(dead_aliases(tree)), 3)
+
+    def test_cycle_through_list_values_fails(self):
+        tree = {"core": {"a": {"$value": ["{b}"], "$type": "fontFamily"},
+                         "b": {"$value": ["{a}"], "$type": "fontFamily"}}}
+        self.assertEqual(len(dead_aliases(tree)), 2)
 
     def test_alias_resolves_in_own_set_then_core_then_root(self):
         tree = {"core": {"x": {"$value": "#111111", "$type": "color"}},
