@@ -3285,9 +3285,9 @@
       "description": "Building visual AI to expand human imagination and capabilities",
       "status": "pending",
       "package": null,
-      "notes": "Sign in opens https://auth.lumalabs.ai/ email continue, then a password field, or Google, Apple, passkey, or email code. Password not submitted and email code not requested.",
+      "notes": "Sign in opens https://auth.lumalabs.ai/ email continue, then a password field, or Google, Apple, passkey, or email code. Password not submitted and email code not requested. Public walk 2026-11-21: home nav opened PRODUCT, PRICING, API, ENTERPRISE, MCP, NEWS, and JOIN US as pages. Phone Open menu opened the same links in a sheet. Prompt chips filled the home field and were not submitted. FAQ rows expanded in place. Monthly/Yearly and Ray3.2/Uni-1.1 are local tabs. Sign In and Try for free stop at https://app.lumalabs.ai/ which redirects to https://auth.lumalabs.ai/sign-up. That wall was not entered. No form was submitted. Public package in PR 1533 at d5aded42c28b. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 10
     },
     {
