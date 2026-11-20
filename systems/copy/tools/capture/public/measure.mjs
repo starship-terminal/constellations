@@ -28,6 +28,7 @@ const save = () => { fs.mkdirSync(RAW, { recursive: true }); fs.writeFileSync(OU
 const URLS = { home: '/', pricing: '/prices', contact: '/contact-us', login: 'https://app.copy.ai/login' };
 let page, cdp, current, context, run, liveCtx;
 const touched = new Set();
+const earlierRun = new WeakMap();  // component -> the run its states were measured in before this one
 const listed = new Map();
 // Routes blocked this run: components last measured on them keep their
 // earlier readings instead of being pruned below (a blocked pass must never
@@ -129,7 +130,11 @@ function comp(key, meta) {
 function keepOrFail(c, state, e) {
   const msg = String(e.message || e).slice(0, 200);
   const prev = c.states[state];
-  c.states[state] = prev && !prev.error ? { ...prev, recaptureError: msg } : { error: msg };
+  // a kept reading keeps the run it was measured in (comp() has already stamped this run on c),
+  // and the failed retry is recorded beside it with its own date
+  c.states[state] = prev && !prev.error
+    ? { ...prev, run: prev.run || earlierRun.get(c) || c.run, recaptureError: msg, recaptureRun: run }
+    : { error: msg, run };
 }
 
 async function measure(key, state, target, opts = {}) {
@@ -143,7 +148,7 @@ async function measure(key, state, target, opts = {}) {
         file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    c.states[state] = { ...s, crop: file, via: opts.via, run };  // each state names the run that measured it
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
@@ -154,6 +159,7 @@ async function measure(key, state, target, opts = {}) {
 
 async function S(key, target, list, meta = {}, opts = {}) {
   const prev = out.components[key];
+  if (prev) earlierRun.set(prev, prev.run);  // before comp() stamps this run
   const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   if (!listed.has(key)) listed.set(key, new Set());
