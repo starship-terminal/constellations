@@ -109,7 +109,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--role-border, #000); padding
 <script>
 const TOK = /*TOKENS*/null;
 const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const esc = (s) => (s !== null && typeof s === 'object' ? JSON.stringify(s) : String(s)).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
 const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
 
@@ -143,7 +143,7 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.ease || {}, 'ease.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.animation || {}, 'animation.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  for (const [n, t] of flat(TOK.core.animation || {}, 'animation.')) m += `<div><b>${esc(n)}</b> <span>${esc((typeof t.v === 'object' ? JSON.stringify(t.v) : String(t.v)).slice(0, 90))}</span></div>`;
   for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.zIndex || {}, 'zIndex.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.opacity || {}, 'opacity.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
@@ -152,7 +152,7 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
     const misc = flat((TOK[setname] || {}).misc || {}, setname + '.misc.');
     if (!misc.length) continue;
     m += `<div style="grid-column:1/-1;opacity:.6;margin-top:8px"><b>${setname} misc</b></div>`;
-    for (const [n, t] of misc) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+    for (const [n, t] of misc) m += `<div><b>${esc(n)}</b> <span>${esc((typeof t.v === 'object' ? JSON.stringify(t.v) : String(t.v)).slice(0, 90))}</span></div>`;
   }
   $('#spacing-out').innerHTML = m;
 })();

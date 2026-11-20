@@ -80,12 +80,16 @@ async function kbFocus(loc) {
 async function pressOn(loc) {
   const b = await loc.boundingBox();
   if (!b) return null;
-  await cdp.send('DOM.getDocument').catch(() => {});
-  const { backendNodeId } = await cdp.send('DOM.getNodeForLocation', { x: Math.round(b.x + b.width / 2), y: Math.round(b.y + b.height / 2) });
-  const { nodeIds } = await cdp.send('DOM.pushNodesByBackendIdsToFrontend', { backendNodeIds: [backendNodeId] });
-  await cdp.send('CSS.forcePseudoState', { nodeId: nodeIds[0], forcedPseudoClasses: ['active', 'hover'] });
+  // Force the component's own node: the topmost node at its centre (DOM.getNodeForLocation) is a text span or
+  // an svg, whose :active never triggers the component's own :active rule.
+  await loc.evaluate((el) => el.setAttribute('data-m-press', '1'));
+  const { root } = await cdp.send('DOM.getDocument', { depth: 0 });
+  const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: '[data-m-press]' });
+  await loc.evaluate((el) => el.removeAttribute('data-m-press'));
+  if (!nodeId) return null;
+  await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: ['active', 'hover'] });
   await page.waitForTimeout(400);
-  return nodeIds[0];
+  return nodeId;
 }
 const pressOff = (id) => id == null ? null : cdp.send('CSS.forcePseudoState', { nodeId: id, forcedPseudoClasses: [] }).catch(() => {});
 
@@ -276,7 +280,9 @@ const GROUPS = {
   home: { page: 'home', specs: HOME },
   login: { page: 'login', specs: LOGIN },
   product: { page: 'product', specs: PRODUCT },
-  checkout: { page: 'checkout', specs: CHECKOUT },
+  // checkout: a boundary, not a page. CHECKOUT_URL opens a checkout session for a real product (a
+  // server-side cart), so it is no longer visited; the committed checkout-* readings were taken past that
+  // step (README, What to distrust). CHECKOUT stays as the record of what was measured.
   mobile: { page: 'discover', mobile: true, specs: MOBILE },
 };
 

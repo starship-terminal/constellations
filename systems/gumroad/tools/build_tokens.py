@@ -143,6 +143,35 @@ def check(path, ty, val):
                 raise ValueError(f"{path}: gradient position {stop['position']!r}")
 
 
+SHADOW_COLOUR = re.compile(r"rgba?\([^)]*\)|#[0-9a-fA-F]{3,8}\b")
+SHADOW_LENGTH = re.compile(r"-?(?:\d+(?:\.\d+)?|\.\d+)(?:px|rem)|-?0(?:\.0+)?(?![\w.])")
+
+
+def parse_shadow(val, path=""):
+    """A box-shadow list as DTCG layers. Top-level commas split layers (commas inside rgb() stay whole); each
+    layer takes `inset` anywhere, one colour, and two to four lengths (blur and spread default to 0px, a
+    unitless 0 is 0px). Anything else in a layer, or a layer with no colour, refuses the build: a layer that
+    cannot be read is never dropped or given a guessed colour."""
+    layers = []
+    for part in re.split(r",\s*(?![^(]*\))", val.strip()):
+        rest = part.strip()
+        inset = bool(re.search(r"(?<![\w-])inset(?![\w-])", rest))
+        rest = re.sub(r"(?<![\w-])inset(?![\w-])", " ", rest)
+        colours = SHADOW_COLOUR.findall(rest)
+        rest = SHADOW_COLOUR.sub(" ", rest)
+        lengths = SHADOW_LENGTH.findall(rest)
+        rest = SHADOW_LENGTH.sub(" ", rest)
+        if rest.strip() or len(colours) != 1 or not 2 <= len(lengths) <= 4:
+            raise ValueError(f"{path}: cannot read box-shadow layer {part!r}")
+        lengths = [x if x.endswith(("px", "rem")) else "0px" for x in lengths] + ["0px"] * (4 - len(lengths))
+        layer = {"color": norm_color(colours[0]), "offsetX": lengths[0], "offsetY": lengths[1],
+                 "blur": lengths[2], "spread": lengths[3]}
+        if inset:
+            layer["inset"] = True
+        layers.append(layer)
+    return layers
+
+
 def leaf(path, spec, theme):
     ty = spec["type"]
     if "var" in spec:
@@ -166,26 +195,7 @@ def leaf(path, spec, theme):
             val = {"ease": [.25, .1, .25, 1], "ease-in": [.42, 0, 1, 1], "ease-out": [0, 0, .58, 1],
                    "ease-in-out": [.42, 0, .58, 1], "linear": [0, 0, 1, 1]}[val.strip()]
     if ty == "shadow" and isinstance(val, str):
-        # A computed shorthand ("rgb(0, 0, 0) 4px 4px 0px 0px") becomes the
-        # DTCG layer object. Top-level commas split layers (commas inside
-        # rgb() stay whole).
-        layers = []
-        for part in re.split(r",\s*(?![^(]*\))", val.strip()):
-            m = re.search(
-                r"(rgba?\([^)]*\)|#[0-9a-fA-F]{3,8})?\s*"
-                r"(-?[\d.]+(?:px|rem))\s+(-?[\d.]+(?:px|rem))\s+(-?[\d.]+(?:px|rem))\s+(-?[\d.]+(?:px|rem))\s*(inset)?",
-                part)
-            if not m:
-                break
-            layers.append({
-                "color": norm_color(m.group(1)) if m.group(1) else "#000000",
-                "offsetX": m.group(2), "offsetY": m.group(3),
-                "blur": m.group(4), "spread": m.group(5),
-            })
-            if m.group(6):
-                layers[-1]["inset"] = True
-        if layers:
-            val = layers
+        val = parse_shadow(val, path)
     if ty in ("fontWeight", "number") and isinstance(val, str):
         m = re.fullmatch(r"calc\((-?\d*\.?\d+)\s*/\s*(-?\d*\.?\d+)\)", val)
         if m:  # Tailwind v4 emits line-heights as calc(a/b) ratios
@@ -292,11 +302,12 @@ tokens = {
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
 }
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
 
 
 def count(d):
     return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
 
 
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
+    print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})

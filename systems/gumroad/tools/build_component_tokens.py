@@ -283,6 +283,9 @@ for n in sorted(declared):
 
 # ------------------------------------------------- measured component tokens
 C_PATH = RAW / "components-computed.json"
+if not C_PATH.exists():
+    # The measured section is required: without the file every measured token would vanish silently.
+    raise SystemExit("build_component_tokens: raw/components-computed.json is missing")
 if C_PATH.exists():
     C = json.loads(C_PATH.read_text()).get("components", {})
 
