@@ -12,15 +12,18 @@ import { BASE, AUTH, REPORT, launch, open, styleOf, crop, centre, RAW, hideConse
 fs.mkdirSync(RAW, { recursive: true });
 fs.mkdirSync(path.join(RAW, '..', 'components', 'crops'), { recursive: true });
 const OUT = path.join(RAW, 'components-computed.json');
+// Start from the committed readings and merge into them, so a run that dies on one page leaves every
+// other component as it was (the kit's approach) instead of a file missing every later component.
+const previous = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
 const out = {
   _meta: {
     product: 'Maze',
-    captured: '2026-11-18',
+    captured: new Date().toLocaleDateString('en-CA'),  // the local run date
     route: 'public-web',
     theme: 'light',
     note: 'Signed out. CookieYes and OneTrust hidden, never clicked. Login fields focused and filled with a sample string, then cleared. Nothing submitted. No study started.',
   },
-  components: {},
+  components: { ...(previous.components || {}) },
 };
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');

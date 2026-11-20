@@ -133,10 +133,12 @@ core = {
 }
 
 login_bg, login_fg, login_font, login_size, login_radius = measured_bg("login-submit")
-if login_bg and login_bg.startswith("rgb"):
-    core["color"]["action"] = color("#0568fd", f"{M}: Log in submit backgroundColor {login_bg}")
-else:
-    core["color"]["action"] = color("#0568fd", f"{M}: Log in submit painted rgb(5, 104, 253) on auth.maze.co")
+# The action colour is the measured Log in fill; a missing or translucent reading fails the build
+# instead of falling back to a typed literal under the same Measured source.
+_m = re.fullmatch(r"rgba?\(\s*(\d+),\s*(\d+),\s*(\d+)\s*(?:,\s*1\s*)?\)", login_bg or "")
+if not _m:
+    raise SystemExit(f"login-submit backgroundColor is not an opaque rgb() reading: {login_bg!r}")
+core["color"]["action"] = color("#%02x%02x%02x" % tuple(int(x) for x in _m.groups()), f"{M}: Log in submit backgroundColor {login_bg}")
 
 light = {
     "page": color("{color.neutral.100}", f"{S}: marketing ground is the warm neutral 100"),
