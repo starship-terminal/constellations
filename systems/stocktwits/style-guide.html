@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Stocktwits style guide</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  body { margin: 0; background: #ffffff; color: #000000; font: 400 16px/24px "Source Sans 3", sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+  h1 { font-size: 28px; margin: 0 0 8px; }
+  h2 { font-size: 20px; margin: 32px 0 12px; }
+  p { color: #8e8e93; max-width: 68ch; }
+  .row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .sw { width: 140px; }
+  .sw i { display: block; height: 56px; border-radius: 8px; border: 1px solid #e5e5ea; }
+  .sw span { display: block; font-size: 12px; margin-top: 6px; }
+  button, .btn { font: 600 15px/1 "Source Sans 3", sans-serif; border-radius: 9999px; height: 40px; padding: 0 20px; border: 1px solid transparent; }
+  .primary { background: #000000; color: #fff; }
+  .secondary { background: #fff; color: #000000; border-color: #e5e5ea; }
+  .disabled { background: #d1d1d6; color: #fff; }
+  .bull { background: #e0f7ef; color: #000000; }
+  .bear { background: #fbe6e3; color: #000000; }
+  input { font: 400 16px/24px "Source Sans 3", sans-serif; background: #f2f2f7; border: 0; border-radius: 8px; height: 40px; padding: 8px 12px; width: 280px; }
+  a { color: #1b66e7; }
+  .up { color: #128760; }
+  .down { color: #dd331d; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  td, th { text-align: left; padding: 8px; border-bottom: 1px solid #e5e5ea; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Stocktwits</h1>
+  <p>Rendered from tokens.json. Light only. Source Sans 3 is the measured UI face. Values that were not read are absent.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:#ffffff"></i><span>page #ffffff</span></div>
+    <div class="sw"><i style="background:#f2f2f7"></i><span>surface #f2f2f7</span></div>
+    <div class="sw"><i style="background:#000000"></i><span>text #000000</span></div>
+    <div class="sw"><i style="background:#8e8e93"></i><span>muted #8e8e93</span></div>
+    <div class="sw"><i style="background:#000000"></i><span>accent #000000</span></div>
+    <div class="sw"><i style="background:#e5e5ea"></i><span>border #e5e5ea</span></div>
+    <div class="sw"><i style="background:#1b66e7"></i><span>link #1b66e7</span></div>
+    <div class="sw"><i style="background:#128760"></i><span>up #128760</span></div>
+    <div class="sw"><i style="background:#dd331d"></i><span>down #dd331d</span></div>
+  </div>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="primary">Sign Up</button>
+    <button class="secondary">Log In</button>
+    <button class="disabled" disabled>Log In</button>
+    <button class="bull">Bullish</button>
+    <button class="bear">Bearish</button>
+  </div>
+  <h2>Field</h2>
+  <input placeholder="Email or Username" readonly>
+  <h2>Type</h2>
+  <p style="color:#000000; font-size:20px; font-weight:700; line-height:28px">Log In</p>
+  <p style="color:#000000">Body at 16px. <a href="#">Inline link</a>. <span class="up">+1.41%</span> <span class="down">-6.41%</span></p>
+  <h2>Tokens</h2>
+  <table>
+    <tr><th>Token</th><th>Value</th></tr>
+    <tr><td>core.font.family.ui</td><td>Source Sans 3</td></tr>
+    <tr><td>core.radius.pill</td><td>9999px</td></tr>
+    <tr><td>core.radius.field</td><td>8px</td></tr>
+    <tr><td>core.size.button-md</td><td>40px</td></tr>
+  </table>
+</main>
+</body>
+</html>
