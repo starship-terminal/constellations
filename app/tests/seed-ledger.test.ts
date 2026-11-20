@@ -8,7 +8,8 @@ import {
   type ResearchStore,
 } from "@/server/db";
 import mediaSeed from "@/data/media-taxonomy.json";
-import frozen from "@/data/seed-ledger-v43.json";
+import before from "@/data/seed-before-v9.json";
+import { packageTopUps } from "@/server/db/package-top-ups";
 
 const stores: ResearchStore[] = [];
 const directories: string[] = [];
@@ -29,8 +30,14 @@ afterEach(async () => {
     await rm(dir, { recursive: true, force: true });
 });
 
-const offeredByV43 = new Set(frozen.references);
-// Seed rows for packages that landed after migration v43 shipped.
+// What migrations v1-v43 offered every store at v43: the seed when v8 shipped
+// and the packages the v9-v43 top-ups name.
+const offeredByV43 = new Set([
+  ...before.references,
+  ...packageTopUps.flatMap((step) => step.references),
+]);
+// Seed rows for packages no migration offered: ones that merged without a
+// migration before v44, and ones added since.
 const laterRows = mediaSeed.assignments.filter(
   (row) => !offeredByV43.has(row.referenceId),
 );
@@ -56,11 +63,14 @@ async function categoryRows(store: ResearchStore, referenceId: string) {
   );
 }
 
-test("the frozen v43 list names packages the seed still holds, and later packages exist", () => {
+test("every package a migration offered is still in the seed, and later packages exist", () => {
   const seeded = new Set(mediaSeed.assignments.map((row) => row.referenceId));
-  expect(frozen.references.length).toBe(212);
-  expect(frozen.references.every((id) => seeded.has(id))).toBe(true);
+  expect(before.references.length).toBe(145);
+  expect([...offeredByV43].filter((id) => !seeded.has(id))).toEqual([]);
   expect(laterReferences.length).toBeGreaterThan(0);
+  // Merged without a migration before v44, so only rows can show a store had it.
+  expect(laterReferences).toContain("systems:figma");
+  expect(laterReferences).not.toContain("systems:intercom");
 });
 
 test("a v43 store with user rows gains the packages seeded since, and keeps its own state and cleared labels", async () => {
@@ -120,14 +130,6 @@ test("a v43 store with user rows gains the packages seeded since, and keeps its 
   expect(arrived.length).toBe(before + laterTermCount);
   const labelled = new Set(arrived.map((row) => row.referenceId));
   expect(laterReferences.filter((id) => !labelled.has(id))).toEqual([]);
-  // Intercom's migration was renumbered below v43 after v43 first shipped,
-  // so a store already at v43 skipped it: the ledger still delivers it.
-  expect(laterReferences).toContain("systems:intercom");
-  expect(
-    (await migrated.listReferenceCategoryDetails(["systems:intercom"])).map(
-      (row) => row.label,
-    ),
-  ).toEqual(["Business", "Communication Tools"]);
   // Cleared labels stay cleared.
   expect(await mediaRows(migrated, "systems:digg")).toEqual([]);
   expect(await categoryRows(migrated, "systems:digg")).toEqual([]);
@@ -226,3 +228,61 @@ test("an empty manual category choice is never overridden by a seed row that arr
   const { store: reopened } = await open(dir);
   expect(await categoryRows(reopened, "systems:dub")).toEqual([]);
 });
+
+// Each of v40-v43 added packages. A store at that version that cleared them
+// (and the ones the earlier of these versions added) gets nothing back.
+const addedFrom40 = packageTopUps.filter((step) => step.version >= 40);
+test.each([40, 41, 42, 43])(
+  "a version-%i store keeps cleared the packages v40 up to it added",
+  async (at) => {
+    const { dir, store } = await open();
+    const cleared = addedFrom40
+      .filter((step) => step.version <= at)
+      .flatMap((step) => step.references);
+    expect(cleared.length).toBeGreaterThan(0);
+    for (const table of ["media_term_assignments", "reference_categories"])
+      await store.client.execute({
+        sql: `DELETE FROM ${table} WHERE reference_id IN (SELECT value FROM json_each(?))`,
+        args: [JSON.stringify(cleared)],
+      });
+    await store.client.execute("DROP TABLE category_seed_ledger");
+    await store.client.execute("DROP TABLE media_seed_ledger");
+    await store.client.execute(`PRAGMA user_version=${at}`);
+    close(store);
+    const { store: migrated } = await open(dir);
+    expect(await version(migrated)).toBe(RESEARCH_DB_VERSION);
+    const media = await migrated.listMediaTermAssignments();
+    const categories = await migrated.listReferenceCategories();
+    for (const referenceId of cleared) {
+      expect(
+        media.filter((row) => row.referenceId === referenceId),
+        referenceId,
+      ).toEqual([]);
+      expect(
+        categories.filter((row) => row.referenceId === referenceId),
+        referenceId,
+      ).toEqual([]);
+    }
+  },
+  120_000,
+);
+
+test("a package that merged without a migration keeps a media label the user cleared", async () => {
+  const { dir, store } = await open();
+  // A v43 store created after Figma landed was offered it with the full seed.
+  const pair = mediaSeed.assignments.find(
+    (row) => row.referenceId === "systems:figma",
+  )!;
+  await store.client.execute({
+    sql: "DELETE FROM media_term_assignments WHERE reference_id=? AND media_id=?",
+    args: [pair.referenceId, pair.mediaId],
+  });
+  await store.client.execute("DROP TABLE category_seed_ledger");
+  await store.client.execute("DROP TABLE media_seed_ledger");
+  await store.client.execute("PRAGMA user_version=43");
+  close(store);
+  const { store: migrated } = await open(dir);
+  const figma = await mediaRows(migrated, "systems:figma");
+  expect(figma.length).toBeGreaterThan(0);
+  expect(figma.some((row) => row.mediaId === pair.mediaId)).toBe(false);
+}, 120_000);
