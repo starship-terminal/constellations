@@ -315,9 +315,12 @@ for comp, state, key, prop, desc in [
     except KeyError:
         pass
 
-# The nav submenu's Fluent shadow (the surface's one painted elevation —
-# Fluent declares shadow2..shadow64; the dropdown's measured shadow is kept
-# verbatim because Fluent ships several near-identical steps).
+# The surface's one tokenised painted elevation (Fluent declares shadow2..shadow64,
+# several near-identical steps, so the measured shadow is kept verbatim). The first
+# component in this list that paints a shadow supplies it, and the token is named for
+# that component: on this capture the nav dropdown paints none, so the feature card's
+# shadow is the one read, and it is light.shadow.card, not a menu shadow.
+SHADOW_ROLE = {"nav-submenu": "menu", "feature-card": "card", "faq-item": "faq"}
 for _cname in ("nav-submenu", "feature-card", "faq-item"):
     try:
         _sh = stprop(_cname, "default", "boxShadow") or ""
@@ -335,7 +338,7 @@ for _cname in ("nav-submenu", "feature-card", "faq-item"):
                                 "spread": m.group(5) + "px"})
                 if m.group(6):
                     _layers[-1]["inset"] = True
-            SPEC["light"]["shadow"] = {"menu": {
+            SPEC["light"]["shadow"] = {SHADOW_ROLE[_cname]: {
                 "type": "shadow", "value": _layers,
                 "source": f"computed boxShadow of {_cname} default (raw/components-computed.json)",
                 "description": f"The {_cname}'s drop shadow — the surface's painted elevation."}}

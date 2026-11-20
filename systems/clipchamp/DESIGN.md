@@ -89,7 +89,7 @@ Shadows, resolved to CSS:
 
 | Token | box-shadow |
 |---|---|
-| `light.shadow.menu` | `0px 4px 8px 0px rgba(28, 28, 40, 0.1), 0px 0px 2px 0px rgba(28, 28, 40, 0.1)` |
+| `light.shadow.card` | `0px 4px 8px 0px rgba(28, 28, 40, 0.1), 0px 0px 2px 0px rgba(28, 28, 40, 0.1)` |
 
 ## Shapes
 
