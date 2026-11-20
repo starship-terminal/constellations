@@ -50,7 +50,10 @@ W('# Component measurements');
 W('');
 // The routes come from the readings themselves; the browser and the overlays hidden are lib.mjs's
 // (headless Chrome; the Axeptio consent layer and the shipping-country popup, never answered).
-const ROUTES = [...new Set(Object.values(J.components).map((c) => c.url).filter(Boolean).map((u) => { try { const x = new URL(u); return x.host + x.pathname; } catch { return u; } }))].sort();
+// The product page's own URL is not on its entries (they carry the collection route it was reached
+// from); pdp_url records the path the run followed, kept here without its query.
+const PDP = J.components.pdp_url?.states?.default?.text;
+const ROUTES = [...new Set([...Object.values(J.components).map((c) => c.url), PDP && new URL(PDP, 'https://avnier.com').href].filter(Boolean).map((u) => { try { const x = new URL(u); return x.host + x.pathname; } catch { return u; } }))].sort();
 W(`Computed styles read from avnier.com on ${J._meta.read} by \`tools/capture/public/measure.mjs\`, signed out, in headless Chrome at 1440 x 900 (the Mobile group at 390 x 844) in the site's one light theme, across ${ROUTES.map((r) => '`' + r + '`').join(', ')}, with the Axeptio consent layer and the shipping-country popup hidden (never answered), and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
 W('');
 W('States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.');
@@ -106,7 +109,7 @@ W('');
 // The other hosts come from the sheet list vars.mjs recorded (raw/css-vars.json), never typed in.
 const OTHER_HOSTS = [...new Set(JSON.parse(fs.readFileSync(path.join(REF, 'raw', 'css-vars.json'), 'utf8')).sheets
   .map((s) => (/^https?:\/\/([^/]+)/.exec(s) || [])[1]).filter((h) => h && h !== 'avnier.com'))].sort();
-W(`This list is what the CSSOM could read on each page. The Shopify theme's own sheets and its inline \`<style>\` blocks are served from avnier.com and readable; \`measure.mjs\` skips any sheet the CSSOM refuses as cross-origin, which can include the ${OTHER_HOSTS.length} served from other hosts (${OTHER_HOSTS.map((h) => '`' + h + '`').join(', ')}; see [css-vars.json](css-vars.json)). The per-state Transition rows above are computed values and cover every rule.`);
+W(`This list is what the CSSOM could read on each page. The Shopify theme's own sheets and its inline \`<style>\` blocks are served from avnier.com and readable; \`measure.mjs\` skips any sheet the CSSOM refuses as cross-origin, which can include the ${OTHER_HOSTS.length} served from other hosts (${OTHER_HOSTS.map((h) => '`' + h + '`').join(', ')}; see [css-vars.json](css-vars.json)). The per-state Transition rows above are computed values: they include a rule from an unreadable sheet only where it applies to a measured element in a measured state.`);
 for (const [pg, list] of Object.entries(J._meta.sheets || {}).sort()) {
   const uniq = [...new Map(list.filter((t) => t.transition).map((t) => [t.transition, t])).values()].slice(0, 12);
   W('');
