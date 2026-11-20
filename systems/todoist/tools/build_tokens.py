@@ -235,7 +235,10 @@ def light():
                 "background": color("{background.action}", "alias of the home hero CTA fill"),
                 "text": color("{text.on-action}", "alias of the home hero CTA text"),
                 "radius": tok("{radius.xl}", "dimension", "home hero Start for free painted border-radius 15px"),
-                "padding": tok("12px 16px", "dimension", SRC_COMPUTED + "; home hero Start for free padding"),
+                "padding": {  # computed shorthand 12px 16px, one px length per axis
+                    "block": tok("12px", "dimension", SRC_COMPUTED + "; home hero Start for free padding 12px 16px"),
+                    "inline": tok("16px", "dimension", SRC_COMPUTED + "; home hero Start for free padding 12px 16px"),
+                },
                 "height": tok("{size.button-xl}", "dimension", "home hero Start for free height"),
             },
             "button-secondary": {

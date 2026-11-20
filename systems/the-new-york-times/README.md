@@ -45,7 +45,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #121212 `light.background.action` |
 | border | #dfdfdf `light.border.stroke` |
 
-Fonts: `core.font.family.cheltenham` is nyt-cheltenham, then 6 fallbacks; `core.font.family.franklin` is nyt-franklin, then 3 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 9 type styles (`core.typography`), 5 radius steps (`core.radius`), 7 spacing steps (`core.spacing`).
+Fonts: `core.font.family.cheltenham` is nyt-cheltenham, then 6 fallbacks; `core.font.family.franklin` is nyt-franklin, then 3 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 9 type styles (`core.typography`), 6 radius steps (`core.radius`), 7 spacing steps (`core.spacing`).
 
 ### Using components
 
