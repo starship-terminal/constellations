@@ -4,7 +4,8 @@
   "emails": true,
   "email_allow": [
    "@glossgenius\\.com$",
-   "@example\\.(com|org)$"
+   "@example\\.com$",
+   "@example\\.org$"
   ]
  },
  "families": []

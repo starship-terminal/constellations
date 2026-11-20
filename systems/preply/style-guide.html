@@ -256,6 +256,17 @@ walk(TOKENS.core.typography, "typography", []).forEach(([path, tok]) => {
   sample.style.marginLeft = "12px";
   typeHost.appendChild(row);
 });
+// Radius and space: the core radius and space steps, or a note when none was measured.
+const spaceHost = document.getElementById("space");
+const steps = [...walk(TOKENS.core.radius, "radius", []), ...walk(TOKENS.core.space, "space", [])];
+if (!steps.length) spaceHost.textContent = "None measured.";
+steps.forEach(([path, tok]) => {
+  const row = document.createElement("div");
+  row.innerHTML = "<code></code> <span></span>";
+  row.querySelector("code").textContent = path;
+  row.querySelector("span").textContent = String(tok.v);
+  spaceHost.appendChild(row);
+});
 </script>
 </body>
 </html>

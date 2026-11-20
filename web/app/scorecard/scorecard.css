@@ -4,8 +4,6 @@
 /* Layer / section heading on the criteria, changelog and report pages. */
 .sc-layer {
   font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
   color: var(--faint);
   font-weight: 600;
   margin: 30px 0 10px;
@@ -47,8 +45,7 @@
   color: var(--faint); margin-right: 9px;
 }
 .sc-opt {
-  display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 0.04em;
-  text-transform: uppercase; color: var(--partly);
+  display: inline-block; font-size: 10px; font-weight: 500; color: var(--partly);
   border: 1px solid color-mix(in srgb, var(--partly) 40%, transparent);
   border-radius: 999px; padding: 1px 8px; margin-left: 9px; vertical-align: 2px;
 }
@@ -68,7 +65,7 @@
   border-bottom: 1px solid var(--line);
 }
 .sc-table thead th {
-  font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em;
+  font-size: 10.5px;
   color: var(--faint); font-weight: 600;
 }
 .sc-table tbody tr:last-child td { border-bottom: 0; }

@@ -4,9 +4,10 @@
 //   node build-measurements.mjs
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { hex } from '../css-colour.mjs';
 
-const REF = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..', '..');
+const REF = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 const J = JSON.parse(fs.readFileSync(path.join(REF, 'raw', 'components-computed.json'), 'utf8'));
 
 const sides = (t, r, b, l) => (t === r && r === b && b === l ? t : t === b && r === l ? `${t} ${r}` : `${t} ${r} ${b} ${l}`);
@@ -73,6 +74,8 @@ for (const g of groups) {
     for (const st of states) {
       const v = c.states[st];
       if (v.error) { rows.Error = rows.Error || {}; rows.Error[st] = v.error; continue; }
+      // a focus-visible state where keyboard focus never landed: older runs saved the element at rest
+      if (v.skipped || v.via === 'focus failed') { (rows.Skipped ||= {})[st] = v.skipped || 'focus failed: keyboard focus did not reach the element'; continue; }
       for (const [p, val] of Object.entries(props(v))) (rows[p] ||= {})[st] = val;
     }
     W(`| Property | ${states.join(' | ')} |`);

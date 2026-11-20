@@ -18,7 +18,7 @@ The page is white (`#ffffff`). Text and the buy button are `#151515`. The announ
 | [icons/](icons) | The header wordmark SVG, named in [icons/INDEX.tsv](icons/INDEX.tsv) |
 | [screenshots/](screenshots) | `{page}-light-{state}.png`. Desktop 1440 x 900 at 1x. `home-light-mobile` at 390 CSS pixels, 2x |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json) and [components-computed.json](raw/components-computed.json) |
-| [tools/](tools) | Builders and the copied capture kit |
+| [tools/](tools) | Builders, their test, and the generic capture helpers copied from the kit. The kit's unadapted examples for other products (builders, capture routes) were removed in the 2026-11 audit |
 
 ## Do and don't
 
@@ -55,7 +55,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | page | #ffffff `light.page` |
 | surface | #e9e9e9 `light.surface` |
 | text | #151515 `light.text` |
-| muted | #e9e9e9 `light.muted` |
+| muted | #151515 `light.muted` |
 | accent | #151515 `light.accent` |
 | border | #151515 `light.border` |
 
@@ -69,9 +69,9 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 
 | Theme | text on page | text on surface | muted on page | muted on surface |
 |---|---|---|---|---|
-| light | 18.26:1 pass | 15.04:1 pass | 1.21:1 fail | 1.00:1 fail |
+| light | 18.26:1 pass | 15.04:1 pass | 18.26:1 pass | 15.04:1 pass |
 
-2 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus: no focus tokens (no token path contains "focus").
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus: no focus tokens (no token path contains "focus").
 
 <!-- brief:end -->
 
@@ -93,7 +93,7 @@ The T3 preview browser returned "The browser is not producing screenshot frames"
 
 ## What to distrust
 
-`light.muted` is `#e9e9e9`, the same grey as `light.surface` (`--color-grey-200`). No separate muted text colour was computed. The catalog requires a muted swatch, so the grey fill is reused. Do not treat it as secondary text.
+`light.muted` is `#151515`, the computed colour of the email field label. Polaroid sets its secondary text (the field label, the header nav) in the same ink as body text, so the muted role equals `light.text`. The grey `--color-grey-200` (`#e9e9e9`) is `light.surface`, a fill; it is not a text colour.
 
 The outline button's hover is a declared rule (black fill, white label), not a live hover. A synthetic mouseover did not change the fill, and Playwright's hover was intercepted by the nav.
 
@@ -115,22 +115,22 @@ Real Head Demibold (`REAL_HEADER_OFFC_DEMIBOLD`, weight 600) is the title face. 
 
 | Item | Status |
 |---|---|
-| Colour roles | Captured. Page, surface, text, accent, border, promo, nav active, error, highlight. Muted text is a gap; the muted swatch reuses the grey surface. |
-| Type | Captured for display, hero, title, nav, price, body, and button. Saol Text is declared only. |
+| Colour roles | Captured. Page, surface, text, muted, accent, border, promo, nav active, error, highlight. Muted text is the body ink; the store has no lighter text colour. |
+| Type | Captured for display, hero, title, nav, body, and button. The price style was not read; `core.typography.price` is a Reconstruction that repeats the nav style. Saol Text is declared only. |
 | Spacing, radii, borders | Captured from `--page-margin`, control padding, and computed radius. Radius is 0 except the Product Finder pill. |
 | Elevation | Header, buttons, and cards computed `box-shadow: none`. No shadow token. |
-| Motion | Declared durations and two cubic beziers. Reduce verdict not run. |
+| Motion | Declared durations and the standard cubic bezier, read from the stylesheets. The card easing (`core.motion.easing-card`) was entered by hand; raw/ does not list it. Reduce verdict not run. |
 | Button | Captured. Shop Bundles, Get Inspired, Continue, Add to Bag, all default. Hover declared, not cropped. |
-| Icon button | Search is 20px. States not cropped. |
+| Icon button | Search is 20px, entered by hand at capture time; raw/ holds no reading of it (`core.control.search-size` is a Reconstruction). States not cropped. |
 | Link | Header nav captured, including the red current item. |
 | Text field | Email field captured, default and focus. Not submitted. |
 | Text area, select, checkbox, radio, switch | Not present on the captured pages. The region picker is a native select inside a closed dialog. |
 | Tabs, menu, tooltip, dialog, toast | Not captured. The cookie dialog was dismissed. The mega-menu was not opened. |
-| Card | Grey card and Bundle Savings tag captured. Card hover is declared, not measured. |
+| Card | Grey card and Bundle Savings tag captured. Card hover (`light.card-hover`) was worked out by hand from a declared color-mix that raw/ does not hold, not measured. |
 | Badge | Bundle Savings captured. The red New tag was not isolated. |
 | List row, table, avatar | Not present. |
 | Form error, empty, loading, destructive confirm | Not shown. Continue and Add to Bag were not submitted. |
-| Search | The search icon was measured. The search panel was not opened. |
+| Search | The search icon size was entered by hand; raw/ holds no reading of it. The search panel was not opened. |
 | Themes | One light theme on the page. Dark is declared and not shown. |
 | Widths | Desktop 1440 and phone 390. |
 

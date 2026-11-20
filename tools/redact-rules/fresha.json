@@ -5,9 +5,10 @@
   "email_allow": [
    "@fresha\\.com$",
    "@fresha\\.io$",
-   "@example\\.(com|org|net|inc)$",
-   "@gmail\\.com$",
-   "@mail\\.com$",
+   "@example\\.com$",
+   "@example\\.inc$",
+   "@example\\.net$",
+   "@example\\.org$",
    "@everyone$",
    "@here$"
   ]

@@ -2,6 +2,7 @@
 // Dimension checks do not prove popup contents or a DOM-to-image crop mapping.
 import fs from 'node:fs';
 import path from 'node:path';
+import { safeUrl } from './safe-url.mjs';
 
 export function pngDimensions(bytes) {
   if (bytes.length < 33 || !bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])) || bytes.readUInt32BE(8) !== 13 ||
@@ -22,8 +23,9 @@ export async function screenshotWithMetadata(page, options, requested = {}) {
     schemaVersion: 1,
     capturedAt,
     screenshot: path.basename(options.path),
-    // Never read page.url(): it can contain a signed URL or an account ID.
-    sanitizedSourceUrl: requested.sanitizedSourceUrl ?? null,
+    // Never read page.url(): it can contain a signed URL or an account ID. A URL the caller passes goes
+    // through safeUrl too (origin and route words only), so passing page.url() records no query or id.
+    sanitizedSourceUrl: requested.sanitizedSourceUrl == null ? null : safeUrl(requested.sanitizedSourceUrl),
     requested: { viewport: requested.viewport ?? null, deviceScaleFactor: requested.deviceScaleFactor ?? null },
     configuredViewport: null,
     actual: null,

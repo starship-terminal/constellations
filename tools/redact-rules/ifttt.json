@@ -8,7 +8,8 @@
       "@gdpr-rep\\.com$",
       "@acme\\.com$",
       "@aacme\\.com$",
-      "@example\\.(com|org)$"
+      "@example\\.com$",
+      "@example\\.org$"
     ]
   }
 }

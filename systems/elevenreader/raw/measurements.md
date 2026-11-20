@@ -1841,21 +1841,22 @@ Page: mobile. Selector: `button[aria-label="Open menu"]`. States: default, hover
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 40 x 40 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 9999px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | 2px solid #000000 @ 0 offset 2px | = | = | = |
-| Font | Inter 14px/15.4px 700 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.3s cubic-bezier(0.31, 0.325, 0, 0.92) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 24 x 24, colour #000000 | = | = | = |
-| Painted layers | button.inline-flex.items-center 40.0x40.0 r 9999px outline 2px solid #000000 @ 0 offset 2px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 40 x 40 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 9999px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | 2px solid #000000 @ 0 offset 2px | = | - | = |
+| Font | Inter 14px/15.4px 700 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.3s cubic-bezier(0.31, 0.325, 0, 0.92) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 24 x 24, colour #000000 | = | - | = |
+| Painted layers | button.inline-flex.items-center 40.0x40.0 r 9999px outline 2px solid #000000 @ 0 offset 2px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `m-menu-button-default.png`, `m-menu-button-hover.png`, `m-menu-button-focus-visible.png`, `m-menu-button-pressed.png`.
 
@@ -1970,23 +1971,24 @@ Page: mobile. Selector: `footer summary at 390`. States: default, hover, focus-v
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 350 x 24 | = | = | = |
-| Padding | 4px 0px | = | = | = |
-| Gap | 12px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 12px/13.2px 700 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.3s cubic-bezier(0.31, 0.325, 0, 0.92) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 0 x 0, colour #000000 | = | = | = |
-| ::before | 358px x 32px, absolute, bg #000000 @ 0, radius 24px | = | = | = |
-| Painted layers | summary::before.effect-color.effect-focus-before 358pxx32px border T:2px solid #000000 / R:2px solid #000000 / B:2px solid #000000 / L:2px solid #000000 r 24px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 350 x 24 | = | - | = |
+| Padding | 4px 0px | = | - | = |
+| Gap | 12px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 12px/13.2px 700 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.3s cubic-bezier(0.31, 0.325, 0, 0.92) | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 0 x 0, colour #000000 | = | - | = |
+| ::before | 358px x 32px, absolute, bg #000000 @ 0, radius 24px | = | - | = |
+| Painted layers | summary::before.effect-color.effect-focus-before 358pxx32px border T:2px solid #000000 / R:2px solid #000000 / B:2px solid #000000 / L:2px solid #000000 r 24px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `m-footer-summary-default.png`, `m-footer-summary-hover.png`, `m-footer-summary-focus-visible.png`, `m-footer-summary-pressed.png`.
 

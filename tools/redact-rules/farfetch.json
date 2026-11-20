@@ -3,8 +3,10 @@
  "ocr": {
   "emails": true,
   "email_allow": [
-   "@example\\.(com|org)$",
-   "@farfetch\\.(com|net)$",
+   "@example\\.com$",
+   "@example\\.org$",
+   "@farfetch\\.com$",
+   "@farfetch\\.net$",
    "@archive\\.org$"
   ]
  },
