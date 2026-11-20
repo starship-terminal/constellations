@@ -295,6 +295,7 @@ light = {
                                    "; button-continue-default paints 28px on its 56px height"),
                 "height": read_dim("button-primary-default", "height", "Header primary height.", "; the header Sign up"),
                 "height-lg": read_dim("button-continue-default", "height", "Auth primary height.", "; the login Continue"),
+                "radius-lg": read_dim("button-continue-default", "borderTopLeftRadius", "The 56px Continue's corner: half its height, a pill.", "; the login Continue"),
             },
             "secondary": {
                 "background": {"$value": "{color.page}", "$type": "color", "$extensions": {"source": "alias of page"}},
