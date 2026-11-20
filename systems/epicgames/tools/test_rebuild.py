@@ -133,6 +133,29 @@ class RebuildTest(unittest.TestCase):
         comp = (PKG / "components.md").read_text()
         self.assertIn("**Known-wrong reading.**", comp.split("Read as `m-hamburger`", 1)[1].split("\n#### ", 1)[0])
 
+    def test_style_free_skipped_focus_is_still_named(self):
+        """The fixed capture saves a failed focus as { skipped, via } with no
+        style: both readers must still name it, not drop it."""
+        with tempfile.TemporaryDirectory() as d:
+            root = pathlib.Path(d)
+            shutil.copytree(PKG / "tools", root / "tools", ignore=shutil.ignore_patterns("__pycache__"))
+            shutil.copytree(PKG / "raw", root / "raw")
+            shutil.copy(PKG / "tokens.json", root / "tokens.json")
+            for sub in ("screenshots", "components/crops"):
+                (root / sub).mkdir(parents=True)
+            f = root / "raw" / "components-computed.json"
+            j = json.loads(f.read_text())
+            j["components"]["store-tab"]["states"]["focus-visible"] = {
+                "skipped": "focus failed: keyboard focus did not reach the element", "via": "focus failed"}
+            f.write_text(json.dumps(j))
+            subprocess.run([sys.executable, str(root / "tools" / "build_components_md.py")], cwd=root, check=True, capture_output=True)
+            subprocess.run(["node", str(root / "tools" / "capture" / "public" / "build-measurements.mjs")], cwd=root, check=True, capture_output=True)
+            entry = (root / "components.md").read_text().split("Read as `store-tab`", 1)[1].split("\n#### ", 1)[0]
+            self.assertIn("**Focus not capturable.**", entry)
+            meas = (root / "raw" / "measurements.md").read_text().split("#### store-tab\n", 1)[1].split("\n#### ", 1)[0]
+            self.assertIn("| Skipped |", meas)
+            self.assertNotIn("| Note |", meas)
+
 
 if __name__ == "__main__":
     unittest.main()

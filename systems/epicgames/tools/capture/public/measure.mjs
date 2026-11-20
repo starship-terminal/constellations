@@ -45,6 +45,9 @@ const listed = new Map();
 // their earlier readings instead of being pruned below (a blocked pass must
 // never erase evidence).
 const failedPages = new Set();
+// Pages whose function ran to the end this run: only their components may
+// lose states a spec no longer lists (a crash mid-page must not prune).
+const completedPages = new Set();
 
 async function blocked() {
   return page.evaluate(() => {
@@ -568,7 +571,7 @@ out._meta.note = 'public signed-out capture; nothing bought, submitted or signed
 browser = await chromium.launch({ args: LAUNCH_ARGS });
 for (const k of Object.keys(ALL)) {
   if (wanted.length && !wanted.includes(k)) continue;
-  try { await ALL[k](); } catch (e) { log('PAGE FAILED', k, String(e.message).slice(0, 140)); }
+  try { await ALL[k](); if (!failedPages.has(k)) completedPages.add(k); } catch (e) { log('PAGE FAILED', k, String(e.message).slice(0, 140)); }
 }
 await reducedMotion('discover', 'a[class*="slideLink" i]');
 await reducedMotion('product', 'button');
@@ -585,7 +588,7 @@ for (const [k, c] of Object.entries(out.components)) {
   // States a spec no longer lists are pruned only after their page finished
   // this run, so a blocked or partial run never drops evidence.
   const want = listed.get(k);
-  if (want && touched.has(k) && !failedPages.has(c.page)) {
+  if (want && touched.has(k) && completedPages.has(c.page)) {
     for (const st of Object.keys(c.states || {})) if (!want.has(st)) delete c.states[st];
   }
 }

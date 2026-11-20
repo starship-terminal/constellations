@@ -441,7 +441,9 @@ for g in groups:
         if k in WRONG_ELEMENT:
             W(f"**Known-wrong reading.** {WRONG_ELEMENT[k]}")
             W()
-        failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
+        # Old runs saved a failed focus with the resting style; new runs save
+        # { skipped, via } with no style. Both are named here.
+        failed = [s for s, v in c["states"].items() if v.get("via") == "focus failed" or v.get("skipped")]
         rows, states = state_rows(c)
         if len(states) == 1 and rows:
             W(f"**Values ({states[0]}).** {fmt(rows[0][1])}.")
