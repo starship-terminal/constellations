@@ -39,7 +39,7 @@ Screenshots are named `{page}-{state}.png`: there is no theme toggle signed out 
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 15 components were given a real keyboard focus. 7 draw an outline ring: `mk-nav-download` (2px solid #ffffff `always.white`, offset -2px), `mk-nav-login` (2px solid #5865f2 `ansi.bright.blue`, offset 4px), `dl-cta` (1px solid #5865f2 `ansi.bright.blue`, offset 1px), `nt-cta` (2px solid #5865f2 `ansi.bright.blue`, offset 4px), `ds-tab` (2px solid #6aa8f4 `color.blue.new.30`, offset 2px), `ds-tab-all` (2px solid #6aa8f4 `color.blue.new.30`, offset 2px), `sv-share` (2px solid #6aa8f4 `color.blue.new.30`, offset 2px). The other 8 show no measured change: `mk-cta-download`, `mk-cta-open`, `sv-join`, `sv-chip`, `lg-submit`, `lg-forgot`, `lg-register`, `rg-submit`.
+**Focus.** 15 components were given a real keyboard focus. 7 draw an outline ring: `mk-nav-download` (2px solid #ffffff `background.surface.high`, offset -2px), `mk-nav-login` (2px solid #5865f2 `badge.expressive.background`, offset 4px), `dl-cta` (1px solid #5865f2 `badge.expressive.background`, offset 1px), `nt-cta` (2px solid #5865f2 `badge.expressive.background`, offset 4px), `ds-tab` (2px solid #6aa8f4 `color.blue.new.30`, offset 2px), `ds-tab-all` (2px solid #6aa8f4 `color.blue.new.30`, offset 2px), `sv-share` (2px solid #6aa8f4 `color.blue.new.30`, offset 2px). The other 8 show no measured change: `mk-cta-download`, `mk-cta-open`, `sv-join`, `sv-chip`, `lg-submit`, `lg-forgot`, `lg-register`, `rg-submit`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -71,9 +71,9 @@ The marketing top bar and footer (Ggsans, the Webflow build): the fixed nav with
 #### Marketing nav
 The fixed marketing top bar — Discord wordmark, section links, Log In pill. Read as `mk-nav` on the marketing home page.
 
-**Values (default).** size 1440 x 80; background transparent; text Abcgintodiscord 16/22 500, #000000 `ansi.black`; icon 16 x 16, #ffffff `always.white`; layers a.skip-link.w-inline-block 205.0x48.0 #35ed7e `brand.gradient.green.default` 12px; div.nav_dd_content-wr.isnew 0.0x0.0 #5865f2 `ansi.bright.blue` 40px; div.nav_dd_content-wr.isnew 0.0x0.0 #5865f2 `ansi.bright.blue` 40px; div.nav_dd_link-group.is_2025 0.0x0.0 R:1px solid rgba(255, 255, 255, 0.1); div.nav_dd_content-wr.isnew 0.0x0.0 #5865f2 `ansi.bright.blue` 40px; div.nav_dd_content-wr.isnew 0.0x0..
+**Values (default).** size 1440 x 80; background transparent; text Abcgintodiscord 16/22 500, #000000 `badge.inverted.background`; icon 16 x 16, #ffffff `background.surface.high`; layers a.skip-link.w-inline-block 205.0x48.0 #35ed7e `color.illo.green.40` 12px; div.nav_dd_content-wr.isnew 0.0x0.0 #5865f2 `badge.expressive.background` 40px; div.nav_dd_content-wr.isnew 0.0x0.0 #5865f2 `badge.expressive.background` 40px; div.nav_dd_link-group.is_2025 0.0x0.0 R:1px solid rgba(255, 255, 255, 0.1); div.nav_dd_content-wr.isnew 0.0x0.0 #5865f2 `badge.expressive.background` 40px; div.nav_dd.
 
-Child layers that carry the look: a 205x48 background #35ed7e `brand.gradient.green.default` radius 12px; div 0x0 background #5865f2 `ansi.bright.blue` radius 40px; div 0x0 background #5865f2 `ansi.bright.blue` radius 40px.
+Child layers that carry the look: a 205x48 background #35ed7e `color.illo.green.40` radius 12px; div 0x0 background #5865f2 `badge.expressive.background` radius 40px; div 0x0 background #5865f2 `badge.expressive.background` radius 40px.
 
 ![Marketing nav default](components/crops/mk-nav-default.png)
 
@@ -82,10 +82,10 @@ The Download nav link; measured, never followed. Read as `mk-nav-download` on th
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 110 x 39.2; padding 10px 16px; radius 12px; background transparent; text Abcgintodiscord 16/19.2 500, #ffffff `always.white`; transition font-variation-settings 0.4s ease |
-| hover | background #5865f2 `ansi.bright.blue` |
-| focus-visible | radius 1px; outline 2px solid #ffffff `always.white`, offset -2px; layers a.nav_link 110.0x39.2 2px solid #ffffff `always.white` offset -2px 1px |
-| pressed | background #5865f2 `ansi.bright.blue` |
+| default | size 110 x 39.2; padding 10px 16px; radius 12px; background transparent; text Abcgintodiscord 16/19.2 500, #ffffff `background.surface.high`; transition font-variation-settings 0.4s ease |
+| hover | background #5865f2 `badge.expressive.background` |
+| focus-visible | radius 1px; outline 2px solid #ffffff `background.surface.high`, offset -2px; layers a.nav_link 110.0x39.2 2px solid #ffffff `background.surface.high` offset -2px 1px |
+| pressed | background #5865f2 `badge.expressive.background` |
 
 ![Nav link default](components/crops/mk-nav-download-default.png) ![Nav link hover](components/crops/mk-nav-download-hover.png) ![Nav link focus-visible](components/crops/mk-nav-download-focus-visible.png) ![Nav link pressed](components/crops/mk-nav-download-pressed.png)
 
@@ -94,12 +94,12 @@ The Discover nav dropdown trigger; measured, never opened through. Read as `mk-n
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 117 x 39.2; background transparent; text Abcgintodiscord 16/19.2 500, #ffffff `always.white`; icon 16 x 16, #ffffff `always.white`; layers div.nav_dd_content-wr.isnew 0.0x0.0 #5865f2 `ansi.bright.blue` 40px |
-| hover | layers div.nav_dd_trigger.w-dropdown-toggle 117.0x39.2 #5865f2 `ansi.bright.blue` 12px; div.nav_dd_content-wr.isnew 203.0x167.2 #5865f2 `ansi.bright.blue` 40px |
+| default (same: pressed) | size 117 x 39.2; background transparent; text Abcgintodiscord 16/19.2 500, #ffffff `background.surface.high`; icon 16 x 16, #ffffff `background.surface.high`; layers div.nav_dd_content-wr.isnew 0.0x0.0 #5865f2 `badge.expressive.background` 40px |
+| hover | layers div.nav_dd_trigger.w-dropdown-toggle 117.0x39.2 #5865f2 `badge.expressive.background` 12px; div.nav_dd_content-wr.isnew 203.0x167.2 #5865f2 `badge.expressive.background` 40px |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
-Child layers that carry the look: div 0x0 background #5865f2 `ansi.bright.blue` radius 40px.
+Child layers that carry the look: div 0x0 background #5865f2 `badge.expressive.background` radius 40px.
 
 ![Nav dropdown default](components/crops/mk-nav-drop-default.png) ![Nav dropdown hover](components/crops/mk-nav-drop-hover.png) ![Nav dropdown pressed](components/crops/mk-nav-drop-pressed.png)
 
@@ -108,9 +108,9 @@ The white Log In pill in the nav; measured, never followed. Read as `mk-nav-logi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 80.5 x 39.19; padding 10px 16px; radius 16px; background #ffffff `always.white`; text Abcgintodiscord 16/19.2 500, #000000 `ansi.black`; transition background-color 0.25s ease |
+| default | size 80.5 x 39.19; padding 10px 16px; radius 16px; background #ffffff `background.surface.high`; text Abcgintodiscord 16/19.2 500, #000000 `badge.inverted.background`; transition background-color 0.25s ease |
 | hover | background #c7c8ce `color.plum.6` |
-| focus-visible | radius 1px; outline 2px solid #5865f2 `ansi.bright.blue`, offset 4px |
+| focus-visible | radius 1px; outline 2px solid #5865f2 `badge.expressive.background`, offset 4px |
 | pressed | background #c7c8ce `color.plum.6` |
 
 ![Nav Log In default](components/crops/mk-nav-login-default.png) ![Nav Log In hover](components/crops/mk-nav-login-hover.png) ![Nav Log In focus-visible](components/crops/mk-nav-login-focus-visible.png) ![Nav Log In pressed](components/crops/mk-nav-login-pressed.png)
@@ -122,14 +122,14 @@ The home hero: the giant Ggsans display headline over the blurple gradient, the 
 #### Hero display
 "GROUP CHAT THAT’S ALL FUN & GAMES" — the hero display headline in Ggsans. Read as `mk-h1` on the marketing home page.
 
-**Values (default).** size 491.19 x 144; background transparent; text Abcgintodiscordnord 56/48 700, #ffffff `always.white`.
+**Values (default).** size 491.19 x 144; background transparent; text Abcgintodiscordnord 56/48 700, #ffffff `background.surface.high`.
 
 ![Hero display default](components/crops/mk-h1-default.png)
 
 #### Hero lede
 The hero supporting paragraph. Read as `mk-lede` on the marketing home page.
 
-**Values (default).** size 491.19 x 104; background transparent; text Abcgintodiscord 20/26 400, #ffffff `always.white`.
+**Values (default).** size 491.19 x 104; background transparent; text Abcgintodiscord 20/26 400, #ffffff `background.surface.high`.
 
 ![Hero lede default](components/crops/mk-lede-default.png)
 
@@ -138,7 +138,7 @@ The "Download for …" white button; hover/focus measured, never followed (it wo
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 262.5 x 65; padding 15px 24px; radius 12px; background #ffffff `always.white`; text Abcgintodiscord 20/26 400, #23272a `not.quite.black.default`; transition all 0.3s ease; icon 24 x 24, #23272a `not.quite.black.default` |
+| default (same: focus-visible) | size 262.5 x 65; padding 15px 24px; radius 12px; background #ffffff `background.surface.high`; text Abcgintodiscord 20/26 400, #23272a `not.quite.black.default`; transition all 0.3s ease; icon 24 x 24, #23272a `not.quite.black.default` |
 | hover, pressed | background #c7c8ce `color.plum.6`; shadow rgba(0, 0, 0, 0.2) 0px 8px 15px 0px |
 
 ![Hero primary CTA default](components/crops/mk-cta-download-default.png) ![Hero primary CTA hover](components/crops/mk-cta-download-hover.png) ![Hero primary CTA focus-visible](components/crops/mk-cta-download-focus-visible.png) ![Hero primary CTA pressed](components/crops/mk-cta-download-pressed.png)
@@ -148,7 +148,7 @@ The "Open Discord in your browser" brand-fill button; measured, never followed. 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 324 x 65; padding 19.5px 24px; radius 12px; background #5865f2 `ansi.bright.blue`; text Abcgintodiscord 20/26 400, #ffffff `always.white`; transition none 0.2s ease-in-out; layers ::after transparent 0px none 0 |
+| default (same: focus-visible) | size 324 x 65; padding 19.5px 24px; radius 12px; background #5865f2 `badge.expressive.background`; text Abcgintodiscord 20/26 400, #ffffff `background.surface.high`; transition none 0.2s ease-in-out; layers ::after transparent 0px none 0 |
 | hover, pressed | layers ::after transparent 0px none 1 |
 
 ![Hero secondary CTA default](components/crops/mk-cta-open-default.png) ![Hero secondary CTA hover](components/crops/mk-cta-open-hover.png) ![Hero secondary CTA focus-visible](components/crops/mk-cta-open-focus-visible.png) ![Hero secondary CTA pressed](components/crops/mk-cta-open-pressed.png)
@@ -160,7 +160,7 @@ The /download and /nitro pages: light marketing surfaces with their own headings
 #### Download heading
 "Download Discord wherever you hang out" — the download page heading. Read as `dl-h1` on the download page.
 
-**Values (default).** size 924 x 194.39; background transparent; text Abcgintodiscordnord 72/64.8 700, #ffffff `always.white`.
+**Values (default).** size 924 x 194.39; background transparent; text Abcgintodiscordnord 72/64.8 700, #ffffff `background.surface.high`.
 
 ![Download heading default](components/crops/dl-h1-default.png)
 
@@ -169,22 +169,22 @@ A platform download button; measured, never followed. Read as `dl-cta` on the do
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 228.5 x 48; padding 15px 24px 14px 24px; radius 12px; background transparent; text ABC Ginto Normal 16/20.8 500, #ffffff `always.white`; transition all 0.3s ease, background-color 0.4s ease; icon 20 x 20, #ffffff `always.white` |
-| focus-visible | outline 1px solid #5865f2 `ansi.bright.blue`, offset 1px; layers a.btn.download-button 228.5x48.0 1px solid #5865f2 `ansi.bright.blue` offset 1px 12px |
+| default (same: hover, pressed) | size 228.5 x 48; padding 15px 24px 14px 24px; radius 12px; background transparent; text ABC Ginto Normal 16/20.8 500, #ffffff `background.surface.high`; transition all 0.3s ease, background-color 0.4s ease; icon 20 x 20, #ffffff `background.surface.high` |
+| focus-visible | outline 1px solid #5865f2 `badge.expressive.background`, offset 1px; layers a.btn.download-button 228.5x48.0 1px solid #5865f2 `badge.expressive.background` offset 1px 12px |
 
 ![Download CTA default](components/crops/dl-cta-default.png) ![Download CTA hover](components/crops/dl-cta-hover.png) ![Download CTA focus-visible](components/crops/dl-cta-focus-visible.png) ![Download CTA pressed](components/crops/dl-cta-pressed.png)
 
 #### Nitro heading
 "UNLOCK A WORLD OF PERKS WITH NITRO" — the Nitro page display heading. Read as `nt-h1` on the nitro page.
 
-**Values (default).** size 788 x 194.39; background transparent; text Abcgintodiscordnord 72/64.8 700, #ffffff `always.white`.
+**Values (default).** size 788 x 194.39; background transparent; text Abcgintodiscordnord 72/64.8 700, #ffffff `background.surface.high`.
 
 ![Nitro heading default](components/crops/nt-h1-default.png)
 
 #### Nitro plan card
 A Nitro plan/perk card on the marketing page. Read as `nt-card` on the nitro page.
 
-**Values (default).** size 590 x 683.38; padding 32px 32px 56px 32px; radius 96px; background #1a1a1e `background.card`; shadow rgba(69, 42, 124, 0.1) 0px 2px 32px 0px; text Abcgintodiscordnord 36/36 700, #ffffff `always.white`.
+**Values (default).** size 590 x 683.38; padding 32px 32px 56px 32px; radius 96px; background #1a1a1e `background.card`; shadow rgba(69, 42, 124, 0.1) 0px 2px 32px 0px; text Abcgintodiscordnord 36/36 700, #ffffff `background.surface.high`.
 
 ![Nitro plan card default](components/crops/nt-card-default.png)
 
@@ -193,9 +193,9 @@ A Nitro subscribe button; measured, never followed. Read as `nt-cta` on the nitr
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 121 x 48; padding 14.4px 24px 13.6px 24px; radius 12px; background #ffffff `always.white`; text Abcgintodiscord 16/20.8 500, #000000 `ansi.black`; transition background-color 0.4s ease |
+| default | size 121 x 48; padding 14.4px 24px 13.6px 24px; radius 12px; background #ffffff `background.surface.high`; text Abcgintodiscord 16/20.8 500, #000000 `badge.inverted.background`; transition background-color 0.4s ease |
 | hover | background #c7c8ce `color.plum.6` |
-| focus-visible | radius 1px; background #c7c8ce `color.plum.6`; outline 2px solid #5865f2 `ansi.bright.blue`, offset 4px |
+| focus-visible | radius 1px; background #c7c8ce `color.plum.6`; outline 2px solid #5865f2 `badge.expressive.background`, offset 4px |
 | pressed | background #c7c8ce `color.plum.6` |
 
 ![Nitro CTA default](components/crops/nt-cta-default.png) ![Nitro CTA hover](components/crops/nt-cta-hover.png) ![Nitro CTA focus-visible](components/crops/nt-cta-focus-visible.png) ![Nitro CTA pressed](components/crops/nt-cta-pressed.png)
@@ -207,14 +207,14 @@ The /servers discovery page — app surface painted .theme-dark.theme-darker: th
 #### Discovery heading
 "DISCOVERABLE SERVERS" — the display-lg heading on the app discovery page (painted under .theme-dark.theme-darker). Read as `ds-h1` on the server discovery page.
 
-**Values (default).** size 1440 x 56; padding 0px 8px; background transparent; text ABC Ginto Discord Nord 56/56 700, #ffffff `always.white`.
+**Values (default).** size 1440 x 56; padding 0px 8px; background transparent; text ABC Ginto Discord Nord 56/56 700, #ffffff `badge.expressive.background`.
 
 ![Discovery heading default](components/crops/ds-h1-default.png)
 
 #### Search box
 The "Search servers for games and interests" field wrapper on discovery. Read as `ds-search` on the server discovery page.
 
-**Values (default).** size 640 x 64; background transparent; text gg sans 12/16 400, #ffffff `always.white`; icon 24 x 24, #ffffff `always.white`; layers div.searchBox__7pJSN.searchBarContainer__J-bNz 640.0x64.0 rgba(255, 255, 255, 0.12) `color.opacity.white.12` T:1px solid transparent / R:1px solid transparent / B:1px solid transparent / L:1px solid transparent 12px.
+**Values (default).** size 640 x 64; background transparent; text gg sans 12/16 400, #ffffff `badge.expressive.background`; icon 24 x 24, #ffffff `badge.expressive.background`; layers div.searchBox__7pJSN.searchBarContainer__J-bNz 640.0x64.0 rgba(255, 255, 255, 0.12) `color.opacity.white.12` T:1px solid transparent / R:1px solid transparent / B:1px solid transparent / L:1px solid transparent 12px.
 
 Child layers that carry the look: div 640x64 background rgba(255, 255, 255, 0.12) `color.opacity.white.12` border 1px solid transparent radius 12px.
 
@@ -225,7 +225,7 @@ The discovery search input; the filled state types "fortnite" then deletes it �
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 570 x 32; radius 3px; background transparent; text gg sans 16/16 400, #ffffff `always.white`; transition border-color 0.2s ease-in-out; placeholder rgba(255, 255, 255, 0.75) |
+| default (same: focused) | size 570 x 32; radius 3px; background transparent; text gg sans 16/16 400, #ffffff `badge.expressive.background`; transition border-color 0.2s ease-in-out; placeholder rgba(255, 255, 255, 0.75) |
 | filled | size 419.61 x 32 |
 
 ![Search input default](components/crops/ds-search-input-default.png) ![Search input focused](components/crops/ds-search-input-focused.png) ![Search input filled](components/crops/ds-search-input-filled.png)
@@ -235,7 +235,7 @@ A category filter pill (Gaming) — a real link to /servers/gaming; measured, ne
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 146.13 x 57.03; padding 16px 24px; border 1px solid transparent; radius 12px; background transparent; text gg sans 24/23.04 500, #ffffff `always.white`; opacity 0.5; icon 16 x 16, #ffffff `always.white` |
+| default | size 146.13 x 57.03; padding 16px 24px; border 1px solid transparent; radius 12px; background transparent; text gg sans 24/23.04 500, #ffffff `badge.expressive.background`; opacity 0.5; icon 16 x 16, #ffffff `badge.expressive.background` |
 | hover | opacity none |
 | focus-visible | outline 2px solid #6aa8f4 `color.blue.new.30`, offset 2px; opacity none |
 | pressed | opacity none |
@@ -247,7 +247,7 @@ The "All" category pill — the selected state of the filter row. Read as `ds-ta
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 96.56 x 57.03; padding 16px 24px; border 1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle`; radius 12px; background rgba(151, 151, 159, 0.16) `background.mod.normal`; text gg sans 24/23.04 500, #ffffff `always.white`; icon 16 x 16, #ffffff `always.white`; layers ::before transparent 0px none 1 |
+| default (same: hover, pressed) | size 96.56 x 57.03; padding 16px 24px; border 1px solid rgba(151, 151, 159, 0.12) `app.frame.border`; radius 12px; background rgba(151, 151, 159, 0.16) `color.opacity.16`; text gg sans 24/23.04 500, #ffffff `badge.expressive.background`; icon 16 x 16, #ffffff `badge.expressive.background`; layers ::before transparent 0px none 1 |
 | focus-visible | outline 2px solid #6aa8f4 `color.blue.new.30`, offset 2px |
 
 ![Category pill (All) default](components/crops/ds-tab-all-default.png) ![Category pill (All) hover](components/crops/ds-tab-all-hover.png) ![Category pill (All) focus-visible](components/crops/ds-tab-all-focus-visible.png) ![Category pill (All) pressed](components/crops/ds-tab-all-pressed.png)
@@ -255,14 +255,14 @@ The "All" category pill — the selected state of the filter row. Read as `ds-ta
 #### Category heading
 The Gaming category discovery page heading. Read as `gs-h1` on the gaming discovery page.
 
-**Values (default).** size 1440 x 56; padding 0px 8px; background transparent; text ABC Ginto Discord Nord 56/56 700, #ffffff `always.white`.
+**Values (default).** size 1440 x 56; padding 0px 8px; background transparent; text ABC Ginto Discord Nord 56/56 700, #ffffff `badge.expressive.background`.
 
 ![Category heading default](components/crops/gs-h1-default.png)
 
 #### Category pill (selected)
 The Gaming pill on /servers/gaming — the painted selected state. Read as `gs-tab-gaming` on the gaming discovery page.
 
-**Values (default).** size 146.13 x 57.03; padding 16px 24px; border 1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle`; radius 12px; background rgba(151, 151, 159, 0.16) `background.mod.normal`; text gg sans 24/23.04 500, #ffffff `always.white`; icon 16 x 16, #ffffff `always.white`; layers ::before transparent 0px none 1.
+**Values (default).** size 146.13 x 57.03; padding 16px 24px; border 1px solid rgba(151, 151, 159, 0.12) `app.frame.border`; radius 12px; background rgba(151, 151, 159, 0.16) `color.opacity.16`; text gg sans 24/23.04 500, #ffffff `badge.expressive.background`; icon 16 x 16, #ffffff `badge.expressive.background`; layers ::before transparent 0px none 1.
 
 ![Category pill (selected) default](components/crops/gs-tab-gaming-default.png)
 
@@ -275,10 +275,10 @@ A discoverable-server card — banner art, icon, name, verified badge, descripti
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 322 x 362; background transparent; text gg sans 20/24 600, #fbfbfb `badge.secondary.text`; icon 16 x 16, #23a559; layers article.guildItemContainer_OnY3sU 322.0x362.0 #202024 `background.base.low` T:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` / R:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` / B:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` / L:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` 8px; div.listIconContainer_OnY3sU 59.7x59.7 #202024 `background.base.l |
+| default | size 322 x 362; background transparent; text gg sans 20/24 600, #fbfbfb `badge.secondary.text`; icon 16 x 16, #23a559; layers article.guildItemContainer_OnY3sU 322.0x362.0 #202024 `background.base.low` T:1px solid rgba(151, 151, 159, 0.12) `app.frame.border` / R:1px solid rgba(151, 151, 159, 0.12) `app.frame.border` / B:1px solid rgba(151, 151, 159, 0.12) `app.frame.border` / L:1px solid rgba(151, 151, 159, 0.12) `app.frame.border` 8px; div.listIconContainer_OnY3sU 59.7x59.7 #202024 `background.base.low` 12.7893px; div.d |
 | hover | layers article.guildItemContainer_OnY3sU 322.0x362.0 #242429 `background.surface.high` T:1px solid rgba(151, 151, 159, 0.44) `color.opacity.44` / R:1px solid rgba(151, 151, 159, 0.44) `color.opacity.44` / B:1px solid rgba(151, 151, 159, 0.44) `color.opacity.44` / L:1px solid rgba(151, 151, 159, 0.44) `color.opacity.44` rgba(0, 0, 0, 0.14) 0px 1px 4px 0px 8px; div.listIconContainer_OnY3sU 59.7x59.7 #24242 |
 
-Child layers that carry the look: article 322x362 background #202024 `background.base.low` border 1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` radius 8px; div 59.7x59.7 background #202024 `background.base.low` radius 12.7893px; div 8x8 background #43b581 `mint.green` radius 50%.
+Child layers that carry the look: article 322x362 background #202024 `background.base.low` border 1px solid rgba(151, 151, 159, 0.12) `app.frame.border` radius 8px; div 59.7x59.7 background #202024 `background.base.low` radius 12.7893px; div 8x8 background #43b581 `mint.green` radius 50%.
 
 ![Server card default](components/crops/sc-card-default.png) ![Server card hover](components/crops/sc-card-hover.png)
 
@@ -317,14 +317,14 @@ The server detail page banner art. Read as `sv-banner` on the server detail page
 #### Server name
 The server title with the verified badge — display type. Read as `sv-name` on the server detail page.
 
-**Values (default).** size 264 x 32.19; background transparent; text ABC Ginto Discord Nord 28/32.2 700, #ffffff `always.white`; icon 24 x 24, #23a559.
+**Values (default).** size 264 x 32.19; background transparent; text ABC Ginto Discord Nord 28/32.2 700, #ffffff `badge.expressive.background`; icon 24 x 24, #23a559.
 
 ![Server name default](components/crops/sv-name-default.png)
 
 #### Member counts
 The "N Online · N Members" line under the name. Read as `sv-members` on the server detail page.
 
-**Values (default).** size 89 x 18.19; background transparent; text gg sans 14/18.2 500, #96979e `chart.neutral`.
+**Values (default).** size 89 x 18.19; background transparent; text gg sans 14/18.2 500, #96979e `color.neutral.29`.
 
 ![Member counts default](components/crops/sv-members-default.png)
 
@@ -333,8 +333,8 @@ The brand-fill "Join the Conversation" button; hover/focus measured, never follo
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 320 x 48; padding 0px 24px; radius 12px; background #5865f2 `ansi.bright.blue`; text gg sans 16/20.8 500, #ffffff `always.white`; transition background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out |
-| hover | background #4752c4 `button.outline.brand.border.active` |
+| default (same: focus-visible) | size 320 x 48; padding 0px 24px; radius 12px; background #5865f2 `color.blurple.50`; text gg sans 16/20.8 500, #ffffff `badge.expressive.background`; transition background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out |
+| hover | background #4752c4 `color.brand.560` |
 
 ![Join CTA default](components/crops/sv-join-default.png) ![Join CTA hover](components/crops/sv-join-hover.png) ![Join CTA focus-visible](components/crops/sv-join-focus-visible.png)
 
@@ -353,7 +353,7 @@ A category chip in the detail sidebar; measured, never followed. Read as `sv-chi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 122 x 38; padding 10px 16px; radius 10px; background rgba(151, 151, 159, 0.12) `background.mod.subtle`; text gg sans 14/18 500, #efeff1 `color.neutral.5` |
+| default (same: hover, focus-visible, pressed) | size 122 x 38; padding 10px 16px; radius 10px; background rgba(151, 151, 159, 0.12) `app.frame.border`; text gg sans 14/18 500, #efeff1 `color.neutral.5` |
 
 ![Category chip default](components/crops/sv-chip-default.png) ![Category chip hover](components/crops/sv-chip-hover.png) ![Category chip focus-visible](components/crops/sv-chip-focus-visible.png) ![Category chip pressed](components/crops/sv-chip-pressed.png)
 
@@ -405,8 +405,8 @@ The brand-fill Log In submit; hover/focus measured, never pressed — it would s
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 416 x 40; border 1px solid rgba(255, 255, 255, 0.08) `badge.critical.border`; radius 8px; background #5865f2 `ansi.bright.blue`; text gg sans 16/20 500, #ffffff `always.white`; transition background-color 0.05s ease-in, color 0.05s ease-in, border-color 0.05s ease-in, opacity 0.05s ease-in |
-| hover | background #4452bb `checkbox.background.selected.hover`; transition background-color 0.15s ease-out, color 0.15s ease-out, border-color 0.15s ease-out, opacity 0.15s ease-out |
+| default (same: focus-visible) | size 416 x 40; border 1px solid rgba(255, 255, 255, 0.08) `color.opacity.white.8`; radius 8px; background #5865f2 `color.blurple.50`; text gg sans 16/20 500, #ffffff `badge.expressive.background`; transition background-color 0.05s ease-in, color 0.05s ease-in, border-color 0.05s ease-in, opacity 0.05s ease-in |
+| hover | background #4452bb `color.blurple.60`; transition background-color 0.15s ease-out, color 0.15s ease-out, border-color 0.15s ease-out, opacity 0.15s ease-out |
 
 ![Log In button default](components/crops/lg-submit-default.png) ![Log In button hover](components/crops/lg-submit-hover.png) ![Log In button focus-visible](components/crops/lg-submit-focus-visible.png)
 
@@ -431,9 +431,9 @@ The "Need an account? Register" link; measured, never followed. Read as `lg-regi
 #### QR panel
 The "Log in with QR Code" panel on the card’s right. Read as `lg-qr` on the login page.
 
-**Values (default).** size 240 x 322; background transparent; text gg sans 24/32 600, #fbfbfb `badge.secondary.text`; layers div.qrCodeContainer_d4-PpI.qrCode_FDXpbQ 176.0x176.0 #ffffff `always.white` 4px.
+**Values (default).** size 240 x 322; background transparent; text gg sans 24/32 600, #fbfbfb `badge.secondary.text`; layers div.qrCodeContainer_d4-PpI.qrCode_FDXpbQ 176.0x176.0 #ffffff `badge.expressive.background` 4px.
 
-Child layers that carry the look: div 176x176 background #ffffff `always.white` radius 4px.
+Child layers that carry the look: div 176x176 background #ffffff `badge.expressive.background` radius 4px.
 
 ![QR panel default](components/crops/lg-qr-default.png)
 
@@ -458,8 +458,8 @@ The Create Account submit; hover/focus measured, never pressed. Read as `rg-subm
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 416 x 40; border 1px solid rgba(255, 255, 255, 0.08) `badge.critical.border`; radius 8px; background #5865f2 `ansi.bright.blue`; text gg sans 16/20 500, #ffffff `always.white`; transition background-color 0.05s ease-in, color 0.05s ease-in, border-color 0.05s ease-in, opacity 0.05s ease-in |
-| hover | background #4452bb `checkbox.background.selected.hover`; transition background-color 0.15s ease-out, color 0.15s ease-out, border-color 0.15s ease-out, opacity 0.15s ease-out |
+| default (same: focus-visible) | size 416 x 40; border 1px solid rgba(255, 255, 255, 0.08) `color.opacity.white.8`; radius 8px; background #5865f2 `color.blurple.50`; text gg sans 16/20 500, #ffffff `badge.expressive.background`; transition background-color 0.05s ease-in, color 0.05s ease-in, border-color 0.05s ease-in, opacity 0.05s ease-in |
+| hover | background #4452bb `color.blurple.60`; transition background-color 0.15s ease-out, color 0.15s ease-out, border-color 0.15s ease-out, opacity 0.15s ease-out |
 
 ![Create Account default](components/crops/rg-submit-default.png) ![Create Account hover](components/crops/rg-submit-hover.png) ![Create Account focus-visible](components/crops/rg-submit-focus-visible.png)
 
@@ -470,32 +470,32 @@ The phone surface at 390 wide: the marketing bar, discovery heading, search and 
 #### Mobile nav
 The phone marketing bar over discovery. Read as `m-bar` on the server discovery page at 390 wide.
 
-**Values (default).** size 342 x 64; background transparent; text ABC Ginto Discord 16/18.4 400, #ffffff `always.white`; layers a.button_vOYBES.overlayFocusRing_vOYBES 0.0x0.0 #ffffff `always.white` 12px; button.menuIcon__mQgbA 40.0x40.0 rgba(255, 255, 255, 0.1) 14px.
+**Values (default).** size 342 x 64; background transparent; text ABC Ginto Discord 16/18.4 400, #ffffff `background.surface.high`; layers a.button_vOYBES.overlayFocusRing_vOYBES 0.0x0.0 #ffffff `background.surface.high` 12px; button.menuIcon__mQgbA 40.0x40.0 rgba(255, 255, 255, 0.1) 14px.
 
-Child layers that carry the look: a 0x0 background #ffffff `always.white` radius 12px; button 40x40 background rgba(255, 255, 255, 0.1) radius 14px.
+Child layers that carry the look: a 0x0 background #ffffff `background.surface.high` radius 12px; button 40x40 background rgba(255, 255, 255, 0.1) radius 14px.
 
 ![Mobile nav default](components/crops/m-bar-default.png)
 
 #### Mobile heading
 The DISCOVERABLE SERVERS display at 390px. Read as `m-h1` on the server discovery page at 390 wide.
 
-**Values (default).** size 390 x 62.41; padding 0px 8px; background transparent; text ABC Ginto Discord Nord 31.2/31.2 700, #ffffff `always.white`.
+**Values (default).** size 390 x 62.41; padding 0px 8px; background transparent; text ABC Ginto Discord Nord 31.2/31.2 700, #ffffff `background.surface.high`.
 
 ![Mobile heading default](components/crops/m-h1-default.png)
 
 #### Mobile search
 The discovery search field at 390px. Read as `m-search` on the server discovery page at 390 wide.
 
-**Values (default).** size 358 x 64; padding 12px 16px; border 1px solid transparent; radius 12px; background rgba(255, 255, 255, 0.12) `color.opacity.white.12`; text gg sans 12/16 400, #ffffff `always.white`; icon 24 x 24, #ffffff `always.white`.
+**Values (default).** size 358 x 64; padding 12px 16px; border 1px solid transparent; radius 12px; background rgba(255, 255, 255, 0.12) `color.opacity.white.12`; text gg sans 12/16 400, #ffffff `badge.expressive.background`; icon 24 x 24, #ffffff `badge.expressive.background`.
 
 ![Mobile search default](components/crops/m-search-default.png)
 
 #### Mobile server card
 A server card at 390px. Read as `m-card` on the server discovery page at 390 wide.
 
-**Values (default).** size 358 x 380; background transparent; text gg sans 20/24 600, #fbfbfb `badge.secondary.text`; icon 16 x 16, #23a559; layers article.guildItemContainer_OnY3sU 358.0x380.0 #202024 `background.base.low` T:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` / R:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` / B:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` / L:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` 8px; div.listIconContainer_OnY3sU 66.4x66.4 #202024 `background.base.l.
+**Values (default).** size 358 x 380; background transparent; text gg sans 20/24 600, #fbfbfb `badge.secondary.text`; icon 16 x 16, #23a559; layers article.guildItemContainer_OnY3sU 358.0x380.0 #202024 `background.base.low` T:1px solid rgba(151, 151, 159, 0.12) `app.frame.border` / R:1px solid rgba(151, 151, 159, 0.12) `app.frame.border` / B:1px solid rgba(151, 151, 159, 0.12) `app.frame.border` / L:1px solid rgba(151, 151, 159, 0.12) `app.frame.border` 8px; div.listIconContainer_OnY3sU 66.4x66.4 #202024 `background.base.low` 14.2281px; div.d.
 
-Child layers that carry the look: article 358x380 background #202024 `background.base.low` border 1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` radius 8px; div 66.4x66.4 background #202024 `background.base.low` radius 14.2281px; div 8x8 background #43b581 `mint.green` radius 50%.
+Child layers that carry the look: article 358x380 background #202024 `background.base.low` border 1px solid rgba(151, 151, 159, 0.12) `app.frame.border` radius 8px; div 66.4x66.4 background #202024 `background.base.low` radius 14.2281px; div 8x8 background #43b581 `mint.green` radius 50%.
 
 ![Mobile server card default](components/crops/m-card-default.png)
 

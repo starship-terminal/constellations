@@ -71,6 +71,22 @@ class RebuildTest(unittest.TestCase):
         md = (self.root / "components.md").read_text()
         self.assertEqual(re.findall(r"`([a-z0-9.-]+)` `\1`", md), [])
 
+    def test_a_colour_name_means_that_colour_in_every_theme(self):
+        # One name map serves light and dark components, so a theme name printed after a colour
+        # must hold that colour in every theme that defines it (dark d-signup text is #ffffff,
+        # which light background.card holds but dark background.card does not).
+        import re
+        T = json.loads((PKG / "tokens.json").read_text())
+        held = {}
+        for s in ("core", "light", "dark"):
+            for n, t in flat(T.get(s, {})):
+                if isinstance(t["$value"], str) and t["$value"].startswith("#"):
+                    held.setdefault(n, {})[s] = t["$value"].lower()
+        md = (self.root / "components.md").read_text()
+        for hexv, name in re.findall(r"(#[0-9a-f]{6}) `([^`]+)`", md):
+            for s, v in held.get(name, {}).items():
+                self.assertEqual(v, hexv, f"{hexv} named {name}, which is {v} in {s}")
+
 
 if __name__ == "__main__":
     unittest.main()

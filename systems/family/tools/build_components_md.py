@@ -47,10 +47,19 @@ def _resolve_alias(value, node, depth=0):
 
 
 BY_COLOR = {}
-for _set in ("core", "light", "dark") if "dark" in T else ("core", "light"):
+# Theme names first, core as the fallback: a colour a theme role shares with a core
+# scale step is named by the role it plays. One map serves light and dark components
+# alike, so a theme name is used only where it means the same colour in every theme
+# that defines it; otherwise the theme-independent core name is used.
+_THEMES = [s for s in ("light", "dark") if s in T]
+_VAL = {s: {n: _resolve_alias(t["$value"], T[s]) for n, t in flat(T[s]) if t["$type"] == "color"} for s in _THEMES}
+for _set in _THEMES + ["core"]:
     for n, t in flat(T[_set]):
         if t["$type"] == "color":
-            BY_COLOR.setdefault(_resolve_alias(t["$value"], T[_set]), n)
+            v = _resolve_alias(t["$value"], T[_set])
+            if _set != "core" and any(_VAL[o].get(n, v) != v for o in _THEMES):
+                continue
+            BY_COLOR.setdefault(v, n)
 
 
 def _srgb_byte(x):

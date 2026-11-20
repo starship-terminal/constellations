@@ -50,7 +50,9 @@ def flat(node, prefix=""):
 
 
 BY_COLOR = {}
-for setname in ("core", "light", "dark"):
+# Theme names first, core as the fallback: a colour a theme role shares with a core
+# scale step is named by the role it plays in that theme.
+for setname in ("light", "dark", "core"):
     node = T.get(setname) or {}
     for n, t in flat(node):
         if isinstance(t, dict) and t.get("$type") == "color" and isinstance(t.get("$value"), str):

@@ -111,7 +111,7 @@ The Developers dropdown trigger; hover opens the ConnectKit/Family card menu —
 #### Nav dropdown
 The Developers dropdown panel (ConnectKit and Family cards); opened by hovering the trigger. Read as `nav-dropdown` on the home page.
 
-**Values (default).** size 316 x 135; padding 4px; radius 8px; background #ffffff `color.overlay.color`; shadow rgba(0, 0, 0, 0.1) 0px 3px 16px 0px; text Inter 15/22 500, #121212 `color.logo.color`; transition opacity 0.1s ease, transform 0.1s ease; transform matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1); icon 23 x 28, color(display-p3 0.203922 0.203922 0.2); layers ::before rgba(0, 0, 0, 0) 0px none 1.
+**Values (default).** size 316 x 135; padding 4px; radius 8px; background #ffffff `color.overlay.color`; shadow rgba(0, 0, 0, 0.1) 0px 3px 16px 0px; text Inter 15/22 500, #121212 `text.kicker`; transition opacity 0.1s ease, transform 0.1s ease; transform matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1); icon 23 x 28, color(display-p3 0.203922 0.203922 0.2); layers ::before rgba(0, 0, 0, 0) 0px none 1.
 
 ![Nav dropdown default](components/crops/nav-dropdown-default.png)
 
@@ -142,7 +142,7 @@ The beige Log In pill in the header, inside a link to app.family.co; measured, n
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, pressed) | size 70.47 x 32; background transparent; text Inter 15/normal 500, #121212 `color.logo.color`; transition all 0.2s ease-out; layers button.Button__Container-sc-1jjqbrw-0.hACioR 70.5x32.0 #f6f4ef `action.beige` 32px |
+| default (same: focus-visible, pressed) | size 70.47 x 32; background transparent; text Inter 15/normal 500, #121212 `text.kicker`; transition all 0.2s ease-out; layers button.Button__Container-sc-1jjqbrw-0.hACioR 70.5x32.0 #f6f4ef `action.beige` 32px |
 | hover | layers button.Button__Container-sc-1jjqbrw-0.hACioR 70.5x32.0 #eae6dd 32px |
 
 Child layers that carry the look: button 70.5x32 background #f6f4ef `action.beige` radius 32px.
@@ -154,8 +154,8 @@ The near-black Get Started pill; measured, never pressed (it starts the download
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 109.02 x 32; padding 0px 14px; radius 32px; background #171717 `color.overlay.background`; text Inter 15/normal 500, #ffffff `color.overlay.color`; transition background-color 0.1s ease |
-| hover, pressed | background #121212 `color.logo.color` |
+| default (same: focus-visible) | size 109.02 x 32; padding 0px 14px; radius 32px; background #171717 `border.field-border`; text Inter 15/normal 500, #ffffff `color.overlay.color`; transition background-color 0.1s ease |
+| hover, pressed | background #121212 `text.kicker` |
 
 ![Get Started button default](components/crops/getstarted-btn-default.png) ![Get Started button hover](components/crops/getstarted-btn-hover.png) ![Get Started button focus-visible](components/crops/getstarted-btn-focus-visible.png) ![Get Started button pressed](components/crops/getstarted-btn-pressed.png)
 
@@ -182,8 +182,8 @@ The "Download on iOS" pill; measured, never followed (it goes to the App Store).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 209.7 x 48; padding 0px 24px 0px 22px; radius 32px; background #171717 `color.overlay.background`; text Inter 17/17 500, #ffffff `color.overlay.color`; transition background-color 0.1s ease; icon 16 x 20, #ffffff `color.overlay.color` |
-| hover, pressed | background #121212 `color.logo.color` |
+| default (same: focus-visible) | size 209.7 x 48; padding 0px 24px 0px 22px; radius 32px; background #171717 `border.field-border`; text Inter 17/17 500, #ffffff `color.overlay.color`; transition background-color 0.1s ease; icon 16 x 20, #ffffff `color.overlay.color` |
+| hover, pressed | background #121212 `text.kicker` |
 
 ![Download CTA default](components/crops/download-cta-default.png) ![Download CTA hover](components/crops/download-cta-hover.png) ![Download CTA focus-visible](components/crops/download-cta-focus-visible.png) ![Download CTA pressed](components/crops/download-cta-pressed.png)
 
@@ -192,7 +192,7 @@ The "Watch the Video" action beside the download pill; measured, never pressed. 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 199.7 x 48; padding 0px 20px 0px 19px; radius 32px; background #f6f4ef `action.beige`; text Inter 17/17 500, #121212 `color.logo.color`; transition background-color 0.1s ease; icon 18 x 20, #121212 `color.logo.color` |
+| default | size 199.7 x 48; padding 0px 20px 0px 19px; radius 32px; background #f6f4ef `action.beige`; text Inter 17/17 500, #121212 `text.kicker`; transition background-color 0.1s ease; icon 18 x 20, #121212 `text.kicker` |
 | hover, pressed | background #eae6dd |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
@@ -202,14 +202,14 @@ The "Watch the Video" action beside the download pill; measured, never pressed. 
 #### Section heading
 A marketing section heading ("Explore Ethereum in a whole new way."). Read as `feature-h2` on the home page.
 
-**Values (default).** size 1024 x 48; background transparent; text Family 44/48 500, #121212 `color.logo.color`.
+**Values (default).** size 1024 x 48; background transparent; text Family 44/48 500, #121212 `text.kicker`.
 
 ![Section heading default](components/crops/feature-h2-default.png)
 
 #### Feature label
 A feature label in the intro grid (Easy / Secure / Fast / Powerful / Fun). Read as `feature-label` on the home page.
 
-**Values (default).** size 38.13 x 26; background transparent; text Inter 17/26 600, #121212 `color.logo.color`.
+**Values (default).** size 38.13 x 26; background transparent; text Inter 17/26 600, #121212 `text.kicker`.
 
 ![Feature label default](components/crops/feature-label-default.png)
 
@@ -225,7 +225,7 @@ A "Watch the demo" button under a feature; opens the video overlay — measured,
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 314.69 x 68; padding 12px 32px 12px 12px; radius 12px; background transparent; shadow color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 0px inset; text Inter 15/22 500, #121212 `color.logo.color`; transition box-shadow 0.1s ease; icon 26 x 28, color(display-p3 0.286275 0.266667 0.25098); layers button.WatchDemo__Container-sc-1kj9jjo-0.dIaiHi 314.7x68.0 color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 0px inset 12px; div.WatchDemo__ImageContainer-sc-1kj9jjo-1.dKfigb 78.0x44.0 color(display-p3 0.94902 0.941176 0.929412) 4px; div::before.sc-gsFSXq.kakWLo 78pxx43.875px #fbfaf9 `color.beige.default` 8px |
+| default | size 314.69 x 68; padding 12px 32px 12px 12px; radius 12px; background transparent; shadow color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 0px inset; text Inter 15/22 500, #121212 `text.kicker`; transition box-shadow 0.1s ease; icon 26 x 28, color(display-p3 0.286275 0.266667 0.25098); layers button.WatchDemo__Container-sc-1kj9jjo-0.dIaiHi 314.7x68.0 color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 0px inset 12px; div.WatchDemo__ImageContainer-sc-1kj9jjo-1.dKfigb 78.0x44.0 color(display-p3 0.94902 0.941176 0.929412) 4px; div::before.sc-gsFSXq.kakWLo 78pxx43.875px #fbfaf9 `color.beige.default` 8px |
 | hover | shadow color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 1px inset; layers button.WatchDemo__Container-sc-1kj9jjo-0.dIaiHi 314.7x68.0 color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 1px inset 12px; div.WatchDemo__ImageContainer-sc-1kj9jjo-1.dKfigb 78.0x44.0 color(display-p3 0.94902 0.941176 0.929412) 4px; div::before.sc-gsFSXq.kakWLo 78pxx43.875px #fbfaf9 `color.beige.default` 8px |
 | focus-visible | shadow color(display-p3 0.517647 0.509804 0.505882) 0px 0px 0px 2px inset; layers button.WatchDemo__Container-sc-1kj9jjo-0.dIaiHi 314.7x68.0 color(display-p3 0.517647 0.509804 0.505882) 0px 0px 0px 2px inset 12px; div.WatchDemo__ImageContainer-sc-1kj9jjo-1.dKfigb 78.0x44.0 color(display-p3 0.94902 0.941176 0.929412) 4px; div::before.sc-gsFSXq.kakWLo 78pxx43.875px #fbfaf9 `color.beige.default` 8px |
 | pressed | shadow color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 1px inset; layers button.WatchDemo__Container-sc-1kj9jjo-0.dIaiHi 314.7x68.0 color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 1px inset 12px; div.WatchDemo__ImageContainer-sc-1kj9jjo-1.dKfigb 78.0x44.0 color(display-p3 0.94902 0.941176 0.929412) 4px; div::before.sc-gsFSXq.kakWLo 78pxx43.875px #fbfaf9 `color.beige.default` 8px |
@@ -251,14 +251,14 @@ A feature tag ("Send & Receive", "WalletConnect Enabled") beside a section. Read
 #### Feature section heading
 A feature section heading ("Send, receive, swap. All in one place."). Read as `section-h3` on the home page.
 
-**Values (default).** size 1024 x 96; background transparent; text Family 44/48 500, #121212 `color.logo.color`.
+**Values (default).** size 1024 x 96; background transparent; text Family 44/48 500, #121212 `text.kicker`.
 
 ![Feature section heading default](components/crops/section-h3-default.png)
 
 #### FAQ item
 A collapsible question/answer item in the home FAQ ("Is Family safe?"). Read as `faq-item` on the home page.
 
-**Values (default).** size 512 x 56; padding 0px 0px 28px 0px; border B: 1px solid color(display-p3 0.94902 0.941176 0.929412); background transparent; text Inter 19/27 500, #121212 `color.logo.color`; layers div.Item__StyledCollapsableItem-sc-bjycf3-2.egfBPj 512.0x56.0 B:1px solid color(display-p3 0.94902 0.941176 0.929412); div 14.0x2.0 color(display-p3 1 0.32549 0.0627451) 2px; div 2.0x14.0 color(display-p3 1 0.32549 0.0627451) 2px; a::after 132.266pxx2px #1a88f8 2px.
+**Values (default).** size 512 x 56; padding 0px 0px 28px 0px; border B: 1px solid color(display-p3 0.94902 0.941176 0.929412); background transparent; text Inter 19/27 500, #121212 `text.kicker`; layers div.Item__StyledCollapsableItem-sc-bjycf3-2.egfBPj 512.0x56.0 B:1px solid color(display-p3 0.94902 0.941176 0.929412); div 14.0x2.0 color(display-p3 1 0.32549 0.0627451) 2px; div 2.0x14.0 color(display-p3 1 0.32549 0.0627451) 2px; a::after 132.266pxx2px #1a88f8 2px.
 
 Child layers that carry the look: div 512x56 border 1px solid color(display-p3 0.94902 0.941176 0.929412); div 14x2 background color(display-p3 1 0.32549 0.0627451) radius 2px; div 2x14 background color(display-p3 1 0.32549 0.0627451) radius 2px.
 
@@ -295,23 +295,23 @@ The public Aave Account login on app.family.co: the welcome heading, the Email o
 #### Login card
 The Aave Account login card on app.family.co — the container holding the welcome text and the field; at rest, never submitted. Read as `login-card` on the app login page.
 
-**Values (default).** size 380 x 284; background transparent; text inter 18/19 600, #222222 `color.body.color.default`; icon 58 x 30, #222222 `color.body.color.default`; layers div.styles-module-scss-module__EkH3Mq__inputContainer 380.0x48.0 #f6f7f9 `color.input.background.default` rgba(0, 0, 0, 0) 0px 0px 0px 1px inset 14px.
+**Values (default).** size 380 x 284; background transparent; text inter 18/19 600, #222222; icon 58 x 30, #222222; layers div.styles-module-scss-module__EkH3Mq__inputContainer 380.0x48.0 #f6f7f9 `background.field` rgba(0, 0, 0, 0) 0px 0px 0px 1px inset 14px.
 
-Child layers that carry the look: div 380x48 background #f6f7f9 `color.input.background.default` radius 14px shadow transparent 0px 0px 0px 1px inset.
+Child layers that carry the look: div 380x48 background #f6f7f9 `background.field` radius 14px shadow transparent 0px 0px 0px 1px inset.
 
 ![Login card default](components/crops/login-card-default.png)
 
 #### Login title
 "Welcome to Aave Account" — the login heading (Family Accounts is now Aave Account). Read as `login-h1` on the app login page.
 
-**Values (default).** size 380 x 19; background transparent; text inter 18/19 600, #222222 `color.body.color.default`.
+**Values (default).** size 380 x 19; background transparent; text inter 18/19 600, #222222.
 
 ![Login title default](components/crops/login-h1-default.png)
 
 #### Login subline
 "Log in or sign up to get started. We’ll create an account if you don’t have one yet." Read as `login-sub` on the app login page.
 
-**Values (default).** size 380 x 19; background transparent; text inter 16/19 400, rgba(23, 23, 23, 0.5) `color.body.color.muted`.
+**Values (default).** size 380 x 19; background transparent; text inter 16/19 400, rgba(23, 23, 23, 0.5).
 
 ![Login subline default](components/crops/login-sub-default.png)
 
@@ -320,7 +320,7 @@ The "Email or Phone Number" login field; typed into then cleared, never submitte
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused, filled) | size 380 x 48; padding 15px 16.96px; background transparent; text inter 16/18 500, #171717 `color.overlay.background`; transition opacity 0.3s ease; placeholder rgba(23, 23, 23, 0.2) `color.input.placeholder` |
+| default (same: focused, filled) | size 380 x 48; padding 15px 16.96px; background transparent; text inter 16/18 500, #171717 `border.field-border`; transition opacity 0.3s ease; placeholder rgba(23, 23, 23, 0.2) |
 
 ![Email/phone field default](components/crops/login-field-default.png) ![Email/phone field focused](components/crops/login-field-focused.png) ![Email/phone field filled](components/crops/login-field-filled.png)
 
@@ -341,7 +341,7 @@ A footer link on the login page (Developers / Privacy / Terms); measured, never 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 69.7 x 16; background transparent; text inter 13/normal 400, rgba(23, 23, 23, 0.5) `color.body.color.muted`; transition color 0.1s ease |
+| default | size 69.7 x 16; background transparent; text inter 13/normal 400, rgba(23, 23, 23, 0.5); transition color 0.1s ease |
 | hover | text inter 13/normal 400, #111111 |
 | focus-visible | outline 2px solid rgba(0, 122, 255, 0.5) `color.focus.color`, offset 1px; layers a 69.7x16.0 2px solid rgba(0, 122, 255, 0.5) offset 1px |
 | pressed | text inter 13/normal 400, #111111 |
@@ -369,7 +369,7 @@ Child layers that carry the look: a 1024x280 border 1px solid color(display-p3 0
 #### Blog title
 The "Blog" page title. Read as `blog-h1` on the blog page.
 
-**Values (default).** size 88.63 x 48; background transparent; text Family 44/48 500, #121212 `color.logo.color`.
+**Values (default).** size 88.63 x 48; background transparent; text Family 44/48 500, #121212 `text.kicker`.
 
 ![Blog title default](components/crops/blog-h1-default.png)
 
@@ -396,14 +396,14 @@ Child layers that carry the look: span 0x0 background color(display-p3 0.517647 
 #### Article title
 The blog article title ("The Crypto Wallet Problem – Why We Created Family Accounts"). Read as `post-h1` on the blog post page.
 
-**Values (default).** size 732 x 96; background transparent; text Family 44/48 500, #121212 `color.logo.color`.
+**Values (default).** size 732 x 96; background transparent; text Family 44/48 500, #121212 `text.kicker`.
 
 ![Article title default](components/crops/post-h1-default.png)
 
 #### Article subheading
 An H2 subheading inside the article. Read as `post-h2` on the blog post page.
 
-**Values (default).** size 732 x 27; background transparent; text Inter 19/27 500, #121212 `color.logo.color`.
+**Values (default).** size 732 x 27; background transparent; text Inter 19/27 500, #121212 `text.kicker`.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -431,7 +431,7 @@ The /changelog page: filter buttons and dated entry bodies.
 #### Changelog title
 The "Changelog" page title. Read as `cl-h1` on the changelog page.
 
-**Values (default).** size 222.91 x 48; background transparent; text Family 44/48 500, #121212 `color.logo.color`.
+**Values (default).** size 222.91 x 48; background transparent; text Family 44/48 500, #121212 `text.kicker`.
 
 ![Changelog title default](components/crops/cl-h1-default.png)
 
@@ -449,7 +449,7 @@ A filter button on /changelog (All / ConnectKit); measured, never pressed. Read 
 #### Entry heading
 A changelog entry heading ("Updated"). Read as `cl-entry` on the changelog page.
 
-**Values (default).** size 732 x 34; padding 0px 0px 8px 0px; background transparent; text Inter 17/26 600, #121212 `color.logo.color`.
+**Values (default).** size 732 x 34; padding 0px 0px 8px 0px; background transparent; text Inter 17/26 600, #121212 `text.kicker`.
 
 ![Entry heading default](components/crops/cl-entry-default.png)
 
@@ -467,7 +467,7 @@ The /support index — the search field (typed into and cleared, never submitted
 #### Support title
 The "Help & Support" page title. Read as `sup-h1` on the support page.
 
-**Values (default).** size 300.11 x 48; background transparent; text Family 44/48 500, #121212 `color.logo.color`.
+**Values (default).** size 300.11 x 48; background transparent; text Family 44/48 500, #121212 `text.kicker`.
 
 ![Support title default](components/crops/sup-h1-default.png)
 
@@ -497,21 +497,21 @@ A help-article link; measured, never followed. Read as `sup-article-link` on the
 |---|---|
 | default (same: hover) | size 224 x 29.92; padding 10px 0px; radius 8px; background transparent; text Inter 14/22 400, #848281 `color.body.muted`; transition all 0.08s ease-out |
 | focus-visible | text Inter 14/22 500, #4e5360; transition all 0.18s ease-out |
-| pressed | text Inter 14/22 500, #121212 `color.logo.color` |
+| pressed | text Inter 14/22 500, #121212 `text.kicker` |
 
 ![Article link default](components/crops/sup-article-link-default.png) ![Article link hover](components/crops/sup-article-link-hover.png) ![Article link focus-visible](components/crops/sup-article-link-focus-visible.png) ![Article link pressed](components/crops/sup-article-link-pressed.png)
 
 #### Article title
 The help-article title ("Import a wallet from MetaMask"). Read as `art-h1` on the support article page.
 
-**Values (default).** size 620.86 x 48; background transparent; text Family 44/48 500, #121212 `color.logo.color`.
+**Values (default).** size 620.86 x 48; background transparent; text Family 44/48 500, #121212 `text.kicker`.
 
 ![Article title default](components/crops/art-h1-default.png)
 
 #### Article heading
 A "How to" section heading inside the help article. Read as `art-h2` on the support article page.
 
-**Values (default).** size 704 x 27; background transparent; text Inter 19/27 500, #121212 `color.logo.color`.
+**Values (default).** size 704 x 27; background transparent; text Inter 19/27 500, #121212 `text.kicker`.
 
 ![Article heading default](components/crops/art-h2-default.png)
 
@@ -529,14 +529,14 @@ A related-category/article link beside the article; measured, never followed. Re
 |---|---|
 | default (same: hover) | size 224 x 29.92; padding 10px 0px; radius 8px; background transparent; text Inter 14/22 400, #848281 `color.body.muted`; transition all 0.08s ease-out |
 | focus-visible | text Inter 14/22 500, #4e5360; transition all 0.18s ease-out |
-| pressed | text Inter 14/22 500, #121212 `color.logo.color` |
+| pressed | text Inter 14/22 500, #121212 `text.kicker` |
 
 ![Side-nav link default](components/crops/art-side-link-default.png) ![Side-nav link hover](components/crops/art-side-link-hover.png) ![Side-nav link focus-visible](components/crops/art-side-link-focus-visible.png) ![Side-nav link pressed](components/crops/art-side-link-pressed.png)
 
 #### FAQs title
 The "FAQs" page title. Read as `faq-h1` on the FAQs page.
 
-**Values (default).** size 104.63 x 48; background transparent; text Family 44/48 500, #121212 `color.logo.color`.
+**Values (default).** size 104.63 x 48; background transparent; text Family 44/48 500, #121212 `text.kicker`.
 
 ![FAQs title default](components/crops/faq-h1-default.png)
 
@@ -547,7 +547,7 @@ The public docs: /docs, /docs/connectkit and /docs/family-account.
 #### Legal title
 The "Legal" page title. Read as `legal-h1` on the legal page.
 
-**Values (default).** size 109.28 x 48; background transparent; text Family 44/48 500, #121212 `color.logo.color`.
+**Values (default).** size 109.28 x 48; background transparent; text Family 44/48 500, #121212 `text.kicker`.
 
 ![Legal title default](components/crops/legal-h1-default.png)
 
@@ -597,7 +597,7 @@ A docs action button ("Stay Updated" / "Contact Us"); measured, never pressed. R
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: focus-visible, pressed) | size 116 x 32; background transparent; text Inter 14/22 500, #ffffff `color.overlay.color`; transition all 0.2s ease-out; layers button.sc-dAlyuH.DTESE 116.0x32.0 #343433 `color.marketing.primary` rgba(0, 0, 0, 0) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px 6px |
-| hover | layers button.sc-dAlyuH.DTESE 116.0x32.0 #171717 `color.overlay.background` rgba(0, 0, 0, 0) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px 6px |
+| hover | layers button.sc-dAlyuH.DTESE 116.0x32.0 #171717 `border.field-border` rgba(0, 0, 0, 0) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px 6px |
 
 Child layers that carry the look: button 116x32 background #343433 `color.marketing.primary` radius 6px shadow transparent 0px 0px 0px 1px inset, transparent 0px 0px 0px 0px.
 
@@ -644,15 +644,15 @@ The "Download on iOS" pill on the phone hero; measured, never followed. Read as 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 209.7 x 48; padding 0px 24px 0px 22px; radius 32px; background #171717 `color.overlay.background`; text Inter 17/17 500, #ffffff `color.overlay.color`; transition background-color 0.1s ease; icon 16 x 20, #ffffff `color.overlay.color` |
-| hover, pressed | background #121212 `color.logo.color` |
+| default (same: focus-visible) | size 209.7 x 48; padding 0px 24px 0px 22px; radius 32px; background #171717 `border.field-border`; text Inter 17/17 500, #ffffff `color.overlay.color`; transition background-color 0.1s ease; icon 16 x 20, #ffffff `color.overlay.color` |
+| hover, pressed | background #121212 `text.kicker` |
 
 ![Mobile download CTA default](components/crops/m-download-default.png) ![Mobile download CTA hover](components/crops/m-download-hover.png) ![Mobile download CTA focus-visible](components/crops/m-download-focus-visible.png) ![Mobile download CTA pressed](components/crops/m-download-pressed.png)
 
 #### Mobile FAQ item
 A collapsible FAQ item at 390 wide. Read as `m-faq-item` on the home page at 390 wide.
 
-**Values (default).** size 342 x 56; padding 0px 0px 28px 0px; border B: 1px solid color(display-p3 0.94902 0.941176 0.929412); background transparent; text Inter 19/27 500, #121212 `color.logo.color`; layers div.Item__StyledCollapsableItem-sc-bjycf3-2.egfBPj 342.0x56.0 B:1px solid color(display-p3 0.94902 0.941176 0.929412); div 14.0x2.0 color(display-p3 1 0.32549 0.0627451) 2px; div 2.0x14.0 color(display-p3 1 0.32549 0.0627451) 2px; a::after 132.266pxx2px #1a88f8 2px.
+**Values (default).** size 342 x 56; padding 0px 0px 28px 0px; border B: 1px solid color(display-p3 0.94902 0.941176 0.929412); background transparent; text Inter 19/27 500, #121212 `text.kicker`; layers div.Item__StyledCollapsableItem-sc-bjycf3-2.egfBPj 342.0x56.0 B:1px solid color(display-p3 0.94902 0.941176 0.929412); div 14.0x2.0 color(display-p3 1 0.32549 0.0627451) 2px; div 2.0x14.0 color(display-p3 1 0.32549 0.0627451) 2px; a::after 132.266pxx2px #1a88f8 2px.
 
 Child layers that carry the look: div 342x56 border 1px solid color(display-p3 0.94902 0.941176 0.929412); div 14x2 background color(display-p3 1 0.32549 0.0627451) radius 2px; div 2x14 background color(display-p3 1 0.32549 0.0627451) radius 2px.
 
@@ -661,7 +661,7 @@ Child layers that carry the look: div 342x56 border 1px solid color(display-p3 0
 #### Mobile footer
 The phone footer. Read as `m-footer` on the home page at 390 wide.
 
-**Values (default).** size 342 x 504.88; padding 24px 0px 48px 0px; background transparent; text Inter 13/18 500, #121212 `color.logo.color`; icon 16 x 16, #e4e4e4.
+**Values (default).** size 342 x 504.88; padding 24px 0px 48px 0px; background transparent; text Inter 13/18 500, #121212 `text.kicker`; icon 16 x 16, #e4e4e4.
 
 ![Mobile footer default](components/crops/m-footer-default.png)
 
@@ -672,7 +672,7 @@ The sitemap footer on the long-scroll surfaces.
 #### Site footer
 The sitemap footer (Developers / Resources / Company, © 2026). Read as `site-footer` on the home page.
 
-**Values (default).** size 1024 x 316; padding 68px 0px 96px 0px; background transparent; text Inter 13/18 500, #121212 `color.logo.color`; icon 60 x 62, color(display-p3 0.517647 0.509804 0.505882).
+**Values (default).** size 1024 x 316; padding 68px 0px 96px 0px; background transparent; text Inter 13/18 500, #121212 `text.kicker`; icon 60 x 62, color(display-p3 0.517647 0.509804 0.505882).
 
 ![Site footer default](components/crops/site-footer-default.png)
 
