@@ -631,4 +631,4 @@ await browser.close();
 save();
 const all = SPECS.map((sp) => out.components[sp.key]);
 const states = all.flatMap((c) => Object.values(c.states));
-log(`${all.length} components, ${states.length} states (${states.filter((s) => s.error).length} errors, ${states.filter((s) => s.skipped).length} skipped)`);
+log(`${all.length} components, ${states.length} states (${states.filter((s) => s.error).length} errors, ${states.filter((s) => s.skipped).length} skipped, ${states.filter((s) => s.recaptureError).length} kept from an earlier run because this rerun failed)`);
