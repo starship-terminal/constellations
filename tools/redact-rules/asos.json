@@ -1,0 +1,32 @@
+{
+ "_note": "Rules for systems/asos. The product page's customer reviews show no reviewer names, but one review carries the reviewer's own photos of themselves; those photo tiles are pixelated. The signed-in screens show only the owner's own profile. Coordinates only; no private value is held here. name@example.com is the placeholder typed into the public sign-in email field for the filled-state crop.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "^name@example\\.com$"
+  ]
+ },
+ "families": [
+  {
+   "name": "product page, customer review photo tiles",
+   "files": [
+    "screenshots/pdp-light-full.png"
+   ],
+   "size": [
+    [
+     1440,
+     5124
+    ]
+   ],
+   "rects": [
+    [
+     822,
+     3710,
+     1187,
+     3831,
+     "pixelate:32"
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+ "_note": "Rules for systems/doordash. The signed-in profile shot shows the owner's own name and email, which stay. The phone-number field value was only blurred at capture time, and a blurred short digit string can be matched back by rendering candidates, so the value is painted out with a flat fill. Coordinates only; no private value is held here.",
+ "families": [
+  {
+   "name": "profile form, phone number field value",
+   "files": ["screenshots/signed-in-profile-desktop.png"],
+   "size": [[2880, 1800]],
+   "rects": [[1995, 696, 2200, 756, "rows"]]
+  }
+ ]
+}
