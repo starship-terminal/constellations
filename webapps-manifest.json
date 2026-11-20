@@ -5633,9 +5633,9 @@
       "description": "Solutions For Your Small, Medium & Large Business",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://app.squareup.com/login shows email or phone and a password, or a passkey. Password not submitted.",
+      "notes": "Email probe: https://app.squareup.com/login shows email or phone and a password, or a passkey. Password not submitted. Public walk 2026-11-21: Business types, Products, and What's new open menus. Hardware, Pricing, and Support are pages. Cart is an empty popover. Sign up and Log in are auth walls. Log in stops at https://app.squareup.com/login. Phone menu inner categories were not opened. Cookie dialog was hidden, not clicked. No email or phone was typed. Passkey was not used. No form was submitted. Signed-in app was not captured. Public package refresh in PR 1580 at ef5adb10b325. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 17
     },
     {
