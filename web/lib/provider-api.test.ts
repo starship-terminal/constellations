@@ -18,7 +18,7 @@ import {
   resolveProvider,
   type ListModels,
 } from "./provider-api.ts";
-import { CONFIG_DIR_ENV, providerFile } from "./provider-store.ts";
+import { CONFIG_DIR_ENV, LOCK_NAME, providerFile, withLock } from "./provider-store.ts";
 
 const KEY = "sk-test-0123456789abcdef";
 const KEY2 = "sk-test-rotated-fedcba9876";
@@ -159,6 +159,81 @@ describe("saving a key", () => {
     assert.equal(broken.status, 500);
     assert.ok(!everything(broken.body).includes(KEY));
     assert.ok(logged.length > 0);
+  });
+});
+
+describe("review fixes", () => {
+  const noList: ListModels = async (cfg) => {
+    calls.push({ api_key: cfg.api_key, base_url: cfg.base_url });
+    return { ok: true, models: [], note: "no model list at this endpoint; type the model name" };
+  };
+
+  it("a migration never replaces a saved provider", async () => {
+    await handleSave({ ...GOOD, api_key: KEY }, okModels);
+    const r = await handleSave({ ...GOOD, api_key: KEY2, migrate: true }, okModels);
+    assert.deepEqual([r.body.ok, r.body.existing], [false, true]);
+    assert.equal((await savedFile()).api_key, KEY);
+    assert.ok(!everything(r.body).includes(KEY2));
+  });
+
+  it("a migration saves when nothing is saved, and needs a key", async () => {
+    const r = await handleSave({ ...GOOD, api_key: KEY, migrate: true }, okModels);
+    assert.equal(r.body.ok, true);
+    assert.equal((await savedFile()).api_key, KEY);
+    assert.equal((await handleSave({ ...GOOD, migrate: true }, okModels)).status, 400);
+    assert.equal((await handleSave({ ...GOOD, api_key: KEY, migrate: "yes" }, okModels)).status, 400);
+  });
+
+  it("an unchecked key (no model list) never replaces a working one", async () => {
+    await handleSave({ ...GOOD, api_key: KEY }, okModels);
+    const r = await handleSave({ ...GOOD, api_key: KEY2 }, noList);
+    assert.equal(r.body.ok, false);
+    assert.match(String(r.body.error), /could not be checked/);
+    assert.equal((await savedFile()).api_key, KEY);
+    // With nothing saved it may be saved, flagged as unchecked.
+    await handleRemove();
+    const first = await handleSave({ ...GOOD, api_key: KEY2 }, noList);
+    assert.deepEqual([first.body.ok, first.body.verified], [true, false]);
+  });
+
+  it("treats a blank key header as its API's default", async () => {
+    await handleSave({ ...GOOD, api_key: KEY }, okModels);
+    const r = await handleSave({ ...GOOD, key_header: "Authorization", model: "m3" }, okModels);
+    assert.equal(r.status, 200);
+    process.env.ANTHROPIC_API_KEY = ENV_KEY;
+    await handleRemove();
+    const env = await handleTest({ api: "anthropic", base_url: "https://api.anthropic.com", key_header: "x-api-key" }, okModels);
+    assert.equal(env.body.ok, true);
+  });
+
+  it("serialises store writes through the lock", async () => {
+    await handleSave({ ...GOOD, api_key: KEY }, okModels);
+    const order: string[] = [];
+    // Hold the lock while a model-only save and a removal queue behind it.
+    const held = withLock(async () => {
+      order.push("held");
+      await new Promise((r) => setTimeout(r, 120));
+      order.push("released");
+    });
+    await new Promise((r) => setTimeout(r, 10));
+    const save = handleSave({ ...GOOD, model: "m9" }, okModels).then(() => order.push("save"));
+    await held;
+    await save;
+    const remove = await handleRemove();
+    assert.deepEqual(order, ["held", "released", "save"]);
+    assert.equal(remove.body.removed, true);
+    await assert.rejects(fs.stat(path.join(dir, "config", LOCK_NAME)));
+  });
+
+  it("leaves no temporary copy of the key when a write fails", async () => {
+    await fs.mkdir(path.join(dir, "config"), { recursive: true });
+    // provider.json as a folder: the rename onto it fails after the temp file is written.
+    await fs.mkdir(providerFile());
+    await fs.writeFile(path.join(providerFile(), "x"), "");
+    const r = await handleSave({ ...GOOD, api_key: KEY }, okModels);
+    assert.equal(r.status, 500);
+    const left = await fs.readdir(path.join(dir, "config"));
+    assert.ok(left.every((f) => !f.endsWith(".tmp")), left.join(","));
   });
 });
 

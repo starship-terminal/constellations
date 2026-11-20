@@ -62,15 +62,32 @@ export const useChat = () => useContext(Ctx);
     saves or removes it, or the one-time move of a browser-stored key ran). */
 export const PROVIDER_EVENT = "ds-provider-change";
 
+const CHANNEL = "ds-provider";
+
+/** Tell this tab (PROVIDER_EVENT) and the app's other tabs (a
+    BroadcastChannel carrying no data) that the server-held provider changed. */
+export function announceProviderChange(): void {
+  window.dispatchEvent(new Event(PROVIDER_EVENT));
+  try {
+    const ch = new BroadcastChannel(CHANNEL);
+    ch.postMessage("changed");
+    ch.close();
+  } catch {}
+}
+
 /** POST a provider to the server's save route; the reply never holds the key. */
-export async function saveProvider(body: Record<string, string>): Promise<{ ok: boolean; error?: string }> {
+export async function saveProvider(body: Record<string, string | boolean>): Promise<{ ok: boolean; existing?: boolean; error?: string }> {
   const r = await fetch("/api/provider", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
   });
   const d = await r.json().catch(() => null);
-  return { ok: !!d?.ok, error: typeof d?.error === "string" ? d.error : r.ok ? undefined : `HTTP ${r.status}` };
+  return {
+    ok: !!d?.ok,
+    existing: d?.existing === true,
+    error: typeof d?.error === "string" ? d.error : r.ok ? undefined : `HTTP ${r.status}`,
+  };
 }
 
 // The history the model sees: each question with the markdown answer it got.
@@ -107,6 +124,17 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         .catch(() => {});
     sync();
     window.addEventListener(PROVIDER_EVENT, sync);
+    // Another tab saved or removed the key: refresh here too, and let this
+    // tab's Settings know. Coming back to the tab refreshes as well.
+    let ch: BroadcastChannel | null = null;
+    try {
+      ch = new BroadcastChannel(CHANNEL);
+      ch.onmessage = () => window.dispatchEvent(new Event(PROVIDER_EVENT));
+    } catch {}
+    const onVisible = () => {
+      if (document.visibilityState === "visible") sync();
+    };
+    document.addEventListener("visibilitychange", onVisible);
     // An older version kept the key in localStorage: move it to the server
     // once and delete the browser copy, then say so.
     migrateStoredProvider(saveProvider).then((notice) => {
@@ -115,9 +143,13 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         sessionStorage.setItem(PROVIDER_NOTICE_KEY, notice);
       } catch {}
       toast(notice, 9000);
-      window.dispatchEvent(new Event(PROVIDER_EVENT));
+      announceProviderChange();
     });
-    return () => window.removeEventListener(PROVIDER_EVENT, sync);
+    return () => {
+      window.removeEventListener(PROVIDER_EVENT, sync);
+      document.removeEventListener("visibilitychange", onVisible);
+      ch?.close();
+    };
   }, [toast]);
   const open = useCallback((d?: string) => {
     setIsOpen(true);

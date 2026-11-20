@@ -256,7 +256,8 @@ SETTINGS_BODY = """<h1>Settings</h1>
       send('POST', 'provider', body()).then(function (d) {
         if (!d.ok) { setStatus('Not saved. ' + (d.error || 'The server refused it.'), true); return; }
         show(d); key.value = ''; verified = sig(); relock();
-        setStatus('Saved on the server: ' + TEMPLATES[current].label + ' · ' + model.value.trim());
+        setStatus('Saved on the server: ' + TEMPLATES[current].label + ' · ' + model.value.trim() +
+          (d.verified === false ? '. This endpoint has no model list, so the key itself was not checked.' : ''));
       }).catch(function () { setStatus('No answer from the server.', true); });
     };
     el('pf-clear').onclick = function () {
@@ -274,7 +275,9 @@ SETTINGS_BODY = """<h1>Settings</h1>
     // then delete the browser copy whether or not the server kept it.
     function migrate() {
       if (!hadKey) { drop(); return Promise.resolve(); }
-      var b = { api_key: legacy.api_key };
+      // migrate: the server saves it only when it has no provider yet, so an
+      // old browser never replaces a newer key.
+      var b = { api_key: legacy.api_key, migrate: true };
       ['name', 'api', 'base_url', 'key_header', 'models_url', 'model'].forEach(function (k) {
         if (typeof legacy[k] === 'string' && legacy[k]) b[k] = legacy[k];
       });
@@ -282,6 +285,7 @@ SETTINGS_BODY = """<h1>Settings</h1>
         .then(function (d) {
           drop();
           notice(d.ok ? 'Moved the API key this browser had saved to the server. This browser no longer stores it.'
+            : d.existing ? 'Deleted the API key this browser had saved. The server already has its own saved key, so it kept that one.'
             : 'Deleted the API key this browser had saved. The server did not keep it (' +
               String(d.error || 'it did not say why').split(legacy.api_key).join('[redacted]') + '), so enter it again below.');
         });

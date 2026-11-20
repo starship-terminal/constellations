@@ -7,7 +7,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLightbox } from "@/components/Lightbox";
 import { PROVIDER_NOTICE_KEY, readSavedPaths } from "@/components/storage";
-import { PROVIDER_EVENT } from "@/components/Chat";
+import { announceProviderChange, PROVIDER_EVENT } from "@/components/Chat";
 import { setCollapsed, setTheme, usePrefs, type Theme } from "@/components/prefs";
 import { agentSnippets } from "@/lib/agent-snippets";
 import { scrollBehavior } from "@/components/motion";
@@ -84,13 +84,17 @@ function ProviderPanel() {
   const [warn, setWarn] = useState(false);
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState("");
+  // Set by any edit to the form. A state reply that lands after the reader
+  // has typed (a slow first load, another tab's change) updates the badge
+  // but never overwrites the fields.
+  const edited = useRef(false);
 
   const load = useCallback(async (fill: boolean) => {
     try {
       const d = (await postJson("/api/provider", "GET")) as unknown as ProviderState | null;
       if (!d || typeof d.source !== "string") throw new Error();
       setState(d);
-      if (fill) setCfg(fromState(d));
+      if (fill && !edited.current) setCfg(fromState(d));
       if (d.error) {
         setWarn(true);
         setStatus(d.error);
@@ -120,8 +124,10 @@ function ProviderPanel() {
   }, [load]);
 
   const onField =
-    (k: keyof Cfg) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
+    (k: keyof Cfg) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+      edited.current = true;
       setCfg((c) => ({ ...c, [k]: e.target.value }));
+    };
 
   const body = () => {
     const out: Record<string, string> = { api: cfg.api, base_url: cfg.base_url.trim(), model: cfg.model.trim() };
@@ -179,8 +185,12 @@ function ProviderPanel() {
         setState(d as unknown as ProviderState);
         // The key field empties: the server has it now and never returns it.
         setCfg((c) => ({ ...c, api_key: "" }));
-        setStatus(`Saved on the server: ${cfg.name.trim() || cfg.api} · ${cfg.model.trim()}`);
-        window.dispatchEvent(new Event(PROVIDER_EVENT));
+        edited.current = false;
+        setStatus(
+          `Saved on the server: ${cfg.name.trim() || cfg.api} · ${cfg.model.trim()}` +
+            (d.verified === false ? ". This endpoint has no model list, so the key itself was not checked." : ""),
+        );
+        announceProviderChange();
       } else {
         setWarn(true);
         setStatus(`Not saved. ${typeof d?.error === "string" ? d.error : "The server refused it."}`);
@@ -199,6 +209,7 @@ function ProviderPanel() {
       if (d?.ok) {
         setState(d as unknown as ProviderState);
         setCfg(EMPTY);
+        edited.current = false;
         setModels([]);
         setWarn(false);
         setStatus(
@@ -206,7 +217,7 @@ function ProviderPanel() {
             ? "Removed the saved key. The chat now uses the server's environment key."
             : "Removed the saved key.",
         );
-        window.dispatchEvent(new Event(PROVIDER_EVENT));
+        announceProviderChange();
       } else {
         setWarn(true);
         setStatus(typeof d?.error === "string" ? d.error : "Could not remove the saved key.");

@@ -32,15 +32,36 @@ export const PROVIDER_NOTICE_KEY = "ds-provider-notice";
 
 export interface SaveReply {
   ok: boolean;
+  /** The server already had a saved provider and kept it. */
+  existing?: boolean;
   error?: string;
 }
 
+let inflight: Promise<string | null> | null = null;
+
 /** Move a key an older version left in localStorage to the server, once.
-    `save` posts the provider to POST /api/provider. The browser copy is
-    deleted whether or not the server kept it, and the returned message says
-    which happened; null when there was nothing to move. A leftover value
-    without a key is deleted silently. */
-export async function migrateStoredProvider(save: (body: Record<string, string>) => Promise<SaveReply>): Promise<string | null> {
+    `save` posts the provider to POST /api/provider with `migrate: true`, which
+    the server only saves when it has no provider yet, so an old browser never
+    replaces a newer key. The browser copy is deleted whether or not the
+    server kept it, and the returned message says which happened; null when
+    there was nothing to move. A leftover value without a key is deleted
+    silently. Calls in one page share one run (React runs a mount effect
+    twice in development), and tabs take turns through a Web Lock where the
+    browser has one, each reading localStorage again once it holds it. */
+export function migrateStoredProvider(save: (body: Record<string, string | boolean>) => Promise<SaveReply>): Promise<string | null> {
+  if (inflight) return inflight;
+  const run = () => migrateOnce(save);
+  const locks = typeof navigator !== "undefined" ? (navigator as Navigator & { locks?: LockManager }).locks : undefined;
+  const p: Promise<string | null> = (locks ? (locks.request("ds-provider-migration", run) as unknown as Promise<string | null>) : run()).finally(
+    () => {
+      inflight = null;
+    },
+  );
+  inflight = p;
+  return p;
+}
+
+async function migrateOnce(save: (body: Record<string, string | boolean>) => Promise<SaveReply>): Promise<string | null> {
   let raw: string | null = null;
   try {
     raw = localStorage.getItem(LEGACY_PROVIDER_KEY);
@@ -59,7 +80,7 @@ export async function migrateStoredProvider(save: (body: Record<string, string>)
     return null;
   }
   const key = p.api_key;
-  const body: Record<string, string> = {};
+  const body: Record<string, string | boolean> = { migrate: true };
   for (const k of ["api", "base_url", "key_header", "models_url", "model", "name"]) if (p[k]) body[k] = p[k];
   body.api_key = key;
   let reply: SaveReply;
@@ -71,6 +92,8 @@ export async function migrateStoredProvider(save: (body: Record<string, string>)
     drop();
   }
   if (reply.ok) return "Moved the API key this browser had saved to the server. This browser no longer stores it.";
+  if (reply.existing)
+    return "Deleted the API key this browser had saved. The server already has its own saved key, so it kept that one.";
   const why = (reply.error || "it did not say why").split(key).join("[redacted]");
   return `Deleted the API key this browser had saved. The server did not keep it (${why}), so enter it again in Settings > Model provider.`;
 }

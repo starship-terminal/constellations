@@ -337,7 +337,9 @@ def _list_models(chat, store, cfg: dict) -> dict:
         r = chat.list_models(cfg) or {}
     except chat.ProviderError as e:
         return {"ok": False, "error": store.redact(str(e), key)}
-    out = {"ok": bool(r.get("ok"))}
+    # An endpoint with no model list answers ok with a note: the field unlocks
+    # for typing, but the key itself was never checked.
+    out = {"ok": bool(r.get("ok")), "verified": bool(r.get("ok")) and not r.get("note")}
     if isinstance(r.get("models"), list):
         out["models"] = r["models"]
     for k in ("note", "error"):
@@ -379,6 +381,11 @@ def _provider_test(handler, chat, store) -> None:
         _reply(handler, 500, {"ok": False, "error": "internal error"})
 
 
+_EXISTING = "The server already has a saved provider, so it kept that one."
+_UNCHECKED = ("This endpoint has no model list, so the new key could not be checked and the saved "
+              "key was kept. Remove the saved key first to save this one unchecked.")
+
+
 def _provider_save(handler, chat, store) -> None:
     body = _body(handler)
     if not body:
@@ -393,31 +400,47 @@ def _provider_save(handler, chat, store) -> None:
             return
         if key:
             cfg = store.to_cfg(s, key)
+            # The network call stays outside the lock; the write happens under it.
             r = _list_models(chat, store, cfg)
             if not r["ok"]:
                 _reply(handler, 200, {**r, "saved": False})
                 return
-            store.save(cfg)
-            _reply(handler, 200, {"ok": True, "saved": True, "models": r.get("models", []),
-                                  **store.state(_env_cfg(chat))})
+            with store.locked():
+                try:
+                    saved = store.load()
+                except store.StoreError:
+                    saved = None
+                if s["migrate"] and saved:
+                    _reply(handler, 200, {"ok": False, "saved": False, "existing": True, "error": _EXISTING})
+                    return
+                if not r["verified"] and saved and saved.get("api_key") != key:
+                    _reply(handler, 200, {"ok": False, "saved": False, "error": _UNCHECKED})
+                    return
+                store.save(cfg)
+            _reply(handler, 200, {"ok": True, "saved": True, "verified": r["verified"],
+                                  "models": r.get("models", []), **store.state(_env_cfg(chat))})
             return
-        try:
-            saved = store.load()
-        except store.StoreError as e:
-            _reply(handler, 400, {"ok": False, "error": f"{e} Remove it and save a key again."})
+        if s["migrate"]:
+            _reply(handler, 400, {"ok": False, "error": "nothing to move: no key was sent"})
             return
-        if not saved:
-            _reply(handler, 400, {"ok": False, "error": "enter an API key to save"})
-            return
-        if not store.same_endpoint(saved, s):
-            _reply(handler, 400, {"ok": False, "error": "changing the endpoint needs the API key again"})
-            return
-        saved["model"] = s["model"]
-        if s["name"]:
-            saved["name"] = s["name"]
-        else:
-            saved.pop("name", None)
-        store.save(saved)
+        with store.locked():
+            try:
+                saved = store.load()
+            except store.StoreError as e:
+                _reply(handler, 400, {"ok": False, "error": f"{e} Remove it and save a key again."})
+                return
+            if not saved:
+                _reply(handler, 400, {"ok": False, "error": "enter an API key to save"})
+                return
+            if not store.same_endpoint(saved, s):
+                _reply(handler, 400, {"ok": False, "error": "changing the endpoint needs the API key again"})
+                return
+            saved["model"] = s["model"]
+            if s["name"]:
+                saved["name"] = s["name"]
+            else:
+                saved.pop("name", None)
+            store.save(saved)
         _reply(handler, 200, {"ok": True, "saved": True, **store.state(_env_cfg(chat))})
     except store.BadRequest as e:
         _reply(handler, 400, {"ok": False, "error": str(e)})
@@ -440,7 +463,8 @@ def handle_delete(handler) -> bool:
     chat = _load("chat")
     store = _load("provider_store")
     try:
-        removed = store.remove()
+        with store.locked():
+            removed = store.remove()
     except store.StoreError as e:
         _reply(handler, 500, {"ok": False, "error": str(e)})
         return True

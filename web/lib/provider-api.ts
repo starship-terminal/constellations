@@ -31,6 +31,7 @@ import {
   redact,
   removeSaved,
   StoreError,
+  withLock,
   writeSaved,
   type PublicProvider,
   type SavedProvider,
@@ -40,6 +41,10 @@ export type KeySource = "saved" | "env" | "none";
 
 export interface ModelsResult {
   ok: boolean;
+  /** The provider accepted the key: it answered the model list. An endpoint
+      with no model list (404 or 405) is `ok` so a model name can be typed,
+      but the key was never checked, so `verified` is false. */
+  verified?: boolean;
   models?: { id: string; label: string }[];
   note?: string;
   error?: string;
@@ -111,6 +116,9 @@ export async function resolveProvider(): Promise<{ cfg: SavedProvider | null; so
 // ---------------------------------------------------------------- input
 
 interface Submitted {
+  /** A one-time move of a key an older page kept in the browser: saved only
+      when nothing is saved yet, never replacing the server's provider. */
+  migrate: boolean;
   api: string;
   base_url: string;
   key_header: string;
@@ -129,6 +137,7 @@ const FIELDS = ["api", "base_url", "key_header", "models_url", "model", "name", 
 function parse(body: unknown): Submitted {
   if (typeof body !== "object" || body === null || Array.isArray(body)) throw new BadRequest("Send a JSON object.");
   const b = body as Record<string, unknown>;
+  if (b.migrate !== undefined && typeof b.migrate !== "boolean") throw new BadRequest("migrate must be true or false.");
   const s: Record<string, string> = {};
   for (const k of FIELDS) {
     const v = b[k];
@@ -143,6 +152,7 @@ function parse(body: unknown): Submitted {
   if (s.key_header && !/^[A-Za-z0-9-]{1,64}$/.test(s.key_header)) throw new BadRequest("Key header must be a header name.");
   if (s.model.length > 160 || s.name.length > 80) throw new BadRequest("Model or label is too long.");
   return {
+    migrate: b.migrate === true,
     api,
     base_url: baseUrlOf({ api, base_url: s.base_url }).replace(/\/+$/, ""),
     key_header: s.key_header.toLowerCase(),
@@ -153,13 +163,22 @@ function parse(body: unknown): Submitted {
   };
 }
 
-const endpointOf = (p: PublicProvider): string =>
-  JSON.stringify(
+/** The header a provider sends its key in when none is named: chat.ts's rule. */
+const defaultHeader = (api: string) => (api === "anthropic" ? "x-api-key" : "authorization");
+
+/** Where a key goes, normalised: a blank key header is its API's default, so
+    a provider saved without one matches the same endpoint named explicitly. */
+const endpointOf = (p: PublicProvider): string => {
+  const api = (p.api ?? "").trim() || "openai";
+  return JSON.stringify(
     ENDPOINT_FIELDS.map((k) => {
       const v = (p[k] ?? "").trim();
-      return k === "key_header" ? v.toLowerCase() : k === "api" ? v : v.replace(/\/+$/, "");
+      if (k === "api") return api;
+      if (k === "key_header") return (v || defaultHeader(api)).toLowerCase();
+      return v.replace(/\/+$/, "");
     }),
   );
+};
 
 const sameEndpoint = (a: PublicProvider, b: PublicProvider) => endpointOf(a) === endpointOf(b);
 
@@ -178,7 +197,7 @@ async function test(cfg: SavedProvider, listModels: ListModels): Promise<ModelsR
   } catch (e) {
     r = { ok: false, error: e instanceof Error ? e.message : "Test failed." };
   }
-  const out: ModelsResult = { ok: !!r.ok };
+  const out: ModelsResult = { ok: !!r.ok, verified: !!r.ok && !r.note };
   if (Array.isArray(r.models)) out.models = r.models;
   if (r.note) out.note = redact(String(r.note), cfg.api_key);
   if (r.error) out.error = redact(String(r.error), cfg.api_key);
@@ -218,36 +237,60 @@ export const handleTest = (body: unknown, listModels: ListModels): Promise<ApiRe
     return { status: 200, body: { ...(await test({ ...held.cfg, model: s.model || held.cfg.model }, listModels)) } };
   });
 
+const EXISTING = "The server already has a saved provider, so it kept that one.";
+
 /** Save the provider. A new key is tested first and saved only when the test
-    passes; with no key, only the model and label of the saved provider change. */
+    passes; with no key, only the model and label of the saved provider change.
+    The read-compare-write runs under the store's lock. */
 export const handleSave = (body: unknown, listModels: ListModels): Promise<ApiResult> =>
   guarded(async () => {
     const s = parse(body);
     if (!s.model) return { status: 400, body: { ok: false, error: "Pick a model before saving." } };
     if (s.api_key) {
       const cfg = toCfg(s, s.api_key);
+      // The network call stays outside the lock; the write happens under it.
       const r = await test(cfg, listModels);
       if (!r.ok) return { status: 200, body: { ...r, ok: false, saved: false } };
-      await writeSaved(cfg);
-      return { status: 200, body: { ok: true, saved: true, models: r.models ?? [], ...(await providerState()) } };
+      const refused = await withLock(async () => {
+        const saved = await loadSaved().catch((e) => {
+          if (e instanceof StoreError) return null;
+          throw e;
+        });
+        if (s.migrate && saved) return EXISTING;
+        if (!r.verified && saved && saved.api_key !== cfg.api_key)
+          return "This endpoint has no model list, so the new key could not be checked and the saved key was kept. Remove the saved key first to save this one unchecked.";
+        await writeSaved(cfg);
+        return null;
+      });
+      if (refused === EXISTING) return { status: 200, body: { ok: false, saved: false, existing: true, error: EXISTING } };
+      if (refused) return { status: 200, body: { ok: false, saved: false, error: refused } };
+      return {
+        status: 200,
+        body: { ok: true, saved: true, verified: !!r.verified, models: r.models ?? [], ...(await providerState()) },
+      };
     }
-    let saved: SavedProvider | null;
-    try {
-      saved = await loadSaved();
-    } catch (e) {
-      if (e instanceof StoreError) return { status: 400, body: { ok: false, error: `${e.message} Remove it and save a key again.` } };
-      throw e;
-    }
-    if (!saved) return { status: 400, body: { ok: false, error: "Enter an API key to save." } };
-    if (!sameEndpoint(saved, s))
-      return { status: 400, body: { ok: false, error: "Changing the endpoint needs the API key again." } };
-    await writeSaved({ ...saved, model: s.model, name: s.name || undefined });
+    if (s.migrate) return { status: 400, body: { ok: false, error: "Nothing to move: no key was sent." } };
+    const outcome = await withLock(async (): Promise<ApiResult | null> => {
+      let saved: SavedProvider | null;
+      try {
+        saved = await loadSaved();
+      } catch (e) {
+        if (e instanceof StoreError) return { status: 400, body: { ok: false, error: `${e.message} Remove it and save a key again.` } };
+        throw e;
+      }
+      if (!saved) return { status: 400, body: { ok: false, error: "Enter an API key to save." } };
+      if (!sameEndpoint(saved, s))
+        return { status: 400, body: { ok: false, error: "Changing the endpoint needs the API key again." } };
+      await writeSaved({ ...saved, model: s.model, name: s.name || undefined });
+      return null;
+    });
+    if (outcome) return outcome;
     return { status: 200, body: { ok: true, saved: true, ...(await providerState()) } };
   });
 
 export const handleRemove = (): Promise<ApiResult> =>
   guarded(async () => {
-    const removed = await removeSaved();
+    const removed = await withLock(removeSaved);
     return { status: 200, body: { ok: true, removed, ...(await providerState()) } };
   });
 
