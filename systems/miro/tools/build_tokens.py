@@ -185,7 +185,7 @@ doc = {
         "motion": {
             "duration": {
                 "fast": token("150ms", "duration", SRC_TW + " --tw-default-transition-duration, .15s."),
-                "cookie": token("250ms", "duration", "Reconstruction. Read from the wrong element: the OneTrust Accept All Cookies button is the consent banner, not Miro; no file in raw/ holds it; recapture needed. Capture note: transition 0.25s."),
+                "cookie": token("250ms", "duration", "Reconstruction. Read from the wrong element: the OneTrust Accept All Cookies button is the consent banner, not Miro; recapture needed from a Miro control. The reading is raw/components-computed.json pages.home.cookieBanner.accept.transition, background, color 0.25s ease."),
             },
             "easing": {
                 "standard": token([0.4, 0, 0.2, 1], "cubicBezier", SRC_TW + " --tw-ease-in-out."),
