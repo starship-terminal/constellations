@@ -1,0 +1,4699 @@
+{
+ "read": "2026-11-21",
+ "url": "https://sg.trip.com/?locale=en-sg",
+ "note": "Declared custom properties read from the CSSOM of the public homepage in headed Chrome. Five cross-origin sheets were unreadable to the CSSOM and are not in this file. No dark theme is declared.",
+ "declCount": 931,
+ "resolvedCount": 926,
+ "unreadableSheets": 5,
+ "decls": {
+  "--poi-card-border-radius": {
+   "raw": "12px",
+   "sel": ".poi-wrapper"
+  },
+  "--card-border-radius": {
+   "raw": "12px",
+   "sel": ".trans-wrapper"
+  },
+  "--coreColorTripBestBrown": {
+   "raw": "#673114",
+   "sel": ":root"
+  },
+  "--coreColorTripBestGoldB32": {
+   "raw": "rgba(255,226,200,0.32)",
+   "sel": ":root"
+  },
+  "--coreFontSizeT36": {
+   "raw": "36px",
+   "sel": ":root"
+  },
+  "--coreFontSizeT22": {
+   "raw": "22px",
+   "sel": ":root"
+  },
+  "--coreFontSizeT56": {
+   "raw": "56px",
+   "sel": ":root"
+  },
+  "--coreFontSizeT48": {
+   "raw": "48px",
+   "sel": ":root"
+  },
+  "--coreFontSizeT30": {
+   "raw": "30px",
+   "sel": ":root"
+  },
+  "--coreFontSizeT64": {
+   "raw": "64px",
+   "sel": ":root"
+  },
+  "--coreFontSizeT44": {
+   "raw": "44px",
+   "sel": ":root"
+  },
+  "--coreFontSizeT40": {
+   "raw": "40px",
+   "sel": ":root"
+  },
+  "--coreFontSizeT26": {
+   "raw": "26px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT64": {
+   "raw": "76px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT30": {
+   "raw": "40px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT26": {
+   "raw": "36px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT36": {
+   "raw": "48px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT56": {
+   "raw": "68px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT28Paragraph": {
+   "raw": "44px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT48": {
+   "raw": "60px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT30Paragraph": {
+   "raw": "46px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT40": {
+   "raw": "52px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT44": {
+   "raw": "56px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT22": {
+   "raw": "32px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeSubtitle1": {
+   "raw": "36px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeBody3Paragraph": {
+   "raw": "28px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeCaption2Paragraph": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeBody1": {
+   "raw": "32px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeBody2": {
+   "raw": "30px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeLabel1": {
+   "raw": "22px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeCaption1": {
+   "raw": "26px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeBody3": {
+   "raw": "28px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeLabel2": {
+   "raw": "22px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeBody2Paragraph": {
+   "raw": "30px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeCaption1Paragraph": {
+   "raw": "26px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeCaption2": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightSubtitle1": {
+   "raw": "48px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightCaption1Paragraph": {
+   "raw": "36px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightCaption2Paragraph": {
+   "raw": "34px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightBody2": {
+   "raw": "40px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightLabel2": {
+   "raw": "32px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightBody1": {
+   "raw": "42px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightBody2Paragraph": {
+   "raw": "46px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightLabel1": {
+   "raw": "32px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightBody3Paragraph": {
+   "raw": "44px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightBody3": {
+   "raw": "36px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightCaption1": {
+   "raw": "36px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightCaption2": {
+   "raw": "34px",
+   "sel": ":root"
+  },
+  "--smtcTypographyCaption1": {
+   "raw": "400 26px/36px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographyLabel2": {
+   "raw": "400 22px/32px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographyBody2": {
+   "raw": "400 30px/40px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographyBody3": {
+   "raw": "400 28px/36px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographyBody3Paragraph": {
+   "raw": "400 28px/44px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographyCaption1Paragraph": {
+   "raw": "400 26px/36px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographyLabel1": {
+   "raw": "400 22px/32px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographyBody1": {
+   "raw": "400 32px/42px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographyBody2Paragraph": {
+   "raw": "400 30px/46px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographySubtitle1": {
+   "raw": "400 36px/48px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographyCaption2": {
+   "raw": "400 24px/34px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographyCaption2Paragraph": {
+   "raw": "400 24px/34px sans-serif",
+   "sel": ":root"
+  },
+  "--coreBorderRadiusM": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--coreBorderRadiusS": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--coreBorderRadiusL": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--coreBorderRadiusNone": {
+   "raw": "0px",
+   "sel": ":root"
+  },
+  "--coreBorderRadiusFull": {
+   "raw": "999px",
+   "sel": ":root"
+  },
+  "--coreBorderRadiusXs": {
+   "raw": "2px",
+   "sel": ":root"
+  },
+  "--coreBorderWidthDivider": {
+   "raw": "0.5px",
+   "sel": ":root"
+  },
+  "--coreBorderWidthDefault": {
+   "raw": "1px",
+   "sel": ":root"
+  },
+  "--coreColorBlue1": {
+   "raw": "#f1f5ff",
+   "sel": ":root"
+  },
+  "--coreColorBlue2": {
+   "raw": "#e5edff",
+   "sel": ":root"
+  },
+  "--coreColorBlue3": {
+   "raw": "#c6d7ff",
+   "sel": ":root"
+  },
+  "--coreColorBlue4": {
+   "raw": "#9fbdff",
+   "sel": ":root"
+  },
+  "--coreColorBlue5": {
+   "raw": "#7099ff",
+   "sel": ":root"
+  },
+  "--coreColorBlue6": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--coreColorBlue7": {
+   "raw": "#173cd2",
+   "sel": ":root"
+  },
+  "--coreColorBlue8": {
+   "raw": "#0920a0",
+   "sel": ":root"
+  },
+  "--coreColorBlue9": {
+   "raw": "#041172",
+   "sel": ":root"
+  },
+  "--coreColorBlue10": {
+   "raw": "#07143c",
+   "sel": ":root"
+  },
+  "--coreColorBlue5A32": {
+   "raw": "rgba(112,153,255,0.32)",
+   "sel": ":root"
+  },
+  "--coreColorBlue5A8": {
+   "raw": "rgba(112,153,255,0.08)",
+   "sel": ":root"
+  },
+  "--coreColorBrandBlue": {
+   "raw": "#2346ff",
+   "sel": ":root"
+  },
+  "--coreColorBrandYellow": {
+   "raw": "#ffb400",
+   "sel": ":root"
+  },
+  "--coreColorCyan1": {
+   "raw": "#edfafb",
+   "sel": ":root"
+  },
+  "--coreColorCyan2": {
+   "raw": "#d3f6fa",
+   "sel": ":root"
+  },
+  "--coreColorCyan3": {
+   "raw": "#a9e4ea",
+   "sel": ":root"
+  },
+  "--coreColorCyan4": {
+   "raw": "#65d0dd",
+   "sel": ":root"
+  },
+  "--coreColorCyan5": {
+   "raw": "#27b2c1",
+   "sel": ":root"
+  },
+  "--coreColorCyan6": {
+   "raw": "#047c88",
+   "sel": ":root"
+  },
+  "--coreColorCyan7": {
+   "raw": "#015e67",
+   "sel": ":root"
+  },
+  "--coreColorCyan8": {
+   "raw": "#00434a",
+   "sel": ":root"
+  },
+  "--coreColorCyan9": {
+   "raw": "#002d32",
+   "sel": ":root"
+  },
+  "--coreColorCyan10": {
+   "raw": "#021d20",
+   "sel": ":root"
+  },
+  "--coreColorCyan5A8": {
+   "raw": "rgba(39,178,193,0.08)",
+   "sel": ":root"
+  },
+  "--coreColorCyan5A32": {
+   "raw": "rgba(39,178,193,0.32)",
+   "sel": ":root"
+  },
+  "--coreColorNeutral1": {
+   "raw": "#f6f7fa",
+   "sel": ":root"
+  },
+  "--coreColorNeutral2": {
+   "raw": "#ebedf1",
+   "sel": ":root"
+  },
+  "--coreColorNeutral3": {
+   "raw": "#d4d7de",
+   "sel": ":root"
+  },
+  "--coreColorNeutral4": {
+   "raw": "#b9bec7",
+   "sel": ":root"
+  },
+  "--coreColorNeutral5": {
+   "raw": "#989eab",
+   "sel": ":root"
+  },
+  "--coreColorNeutral6": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--coreColorNeutral7": {
+   "raw": "#4f5563",
+   "sel": ":root"
+  },
+  "--coreColorNeutral8": {
+   "raw": "#373d4a",
+   "sel": ":root"
+  },
+  "--coreColorNeutral9": {
+   "raw": "#1f242e",
+   "sel": ":root"
+  },
+  "--coreColorNeutral10": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--coreColorNeutralBlack": {
+   "raw": "#000",
+   "sel": ":root"
+  },
+  "--coreColorNeutralWhite": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--coreColorNeutral6A16": {
+   "raw": "rgba(111,118,133,0.16)",
+   "sel": ":root"
+  },
+  "--coreColorNeutralBlackA16": {
+   "raw": "rgba(0,0,0,0.16)",
+   "sel": ":root"
+  },
+  "--coreColorNeutralBlackA64": {
+   "raw": "rgba(0,0,0,0.64)",
+   "sel": ":root"
+  },
+  "--coreColorNeutral5A8": {
+   "raw": "rgba(152,158,171,0.08)",
+   "sel": ":root"
+  },
+  "--coreColorNeutral5A16": {
+   "raw": "rgba(152,158,171,0.16)",
+   "sel": ":root"
+  },
+  "--coreColorNeutral5A32": {
+   "raw": "rgba(152,158,171,0.32)",
+   "sel": ":root"
+  },
+  "--coreColorNeutralWhiteA16": {
+   "raw": "hsla(0,0%,100%,0.16)",
+   "sel": ":root"
+  },
+  "--coreColorNeutralWhiteA96": {
+   "raw": "hsla(0,0%,100%,0.96)",
+   "sel": ":root"
+  },
+  "--coreColorNeutralWhiteA40": {
+   "raw": "hsla(0,0%,100%,0.4)",
+   "sel": ":root"
+  },
+  "--coreColorNeutralBlackA80": {
+   "raw": "rgba(0,0,0,0.8)",
+   "sel": ":root"
+  },
+  "--coreColorOrange1": {
+   "raw": "#fdf5f2",
+   "sel": ":root"
+  },
+  "--coreColorOrange2": {
+   "raw": "#ffe7dc",
+   "sel": ":root"
+  },
+  "--coreColorOrange3": {
+   "raw": "#ffcab0",
+   "sel": ":root"
+  },
+  "--coreColorOrange4": {
+   "raw": "#fea484",
+   "sel": ":root"
+  },
+  "--coreColorOrange5": {
+   "raw": "#ed784e",
+   "sel": ":root"
+  },
+  "--coreColorOrange6": {
+   "raw": "#c74401",
+   "sel": ":root"
+  },
+  "--coreColorOrange7": {
+   "raw": "#8b3717",
+   "sel": ":root"
+  },
+  "--coreColorOrange8": {
+   "raw": "#62240c",
+   "sel": ":root"
+  },
+  "--coreColorOrange9": {
+   "raw": "#431706",
+   "sel": ":root"
+  },
+  "--coreColorOrange10": {
+   "raw": "#2d0d03",
+   "sel": ":root"
+  },
+  "--coreColorOrange5A8": {
+   "raw": "rgba(237,120,78,0.08)",
+   "sel": ":root"
+  },
+  "--coreColorOrange5A32": {
+   "raw": "rgba(237,120,78,0.32)",
+   "sel": ":root"
+  },
+  "--coreColorPink1": {
+   "raw": "#fff3f6",
+   "sel": ":root"
+  },
+  "--coreColorPink2": {
+   "raw": "#fee6e9",
+   "sel": ":root"
+  },
+  "--coreColorPink3": {
+   "raw": "#fcc8d0",
+   "sel": ":root"
+  },
+  "--coreColorPink4": {
+   "raw": "#fd9eb0",
+   "sel": ":root"
+  },
+  "--coreColorPink5": {
+   "raw": "#f56789",
+   "sel": ":root"
+  },
+  "--coreColorPink6": {
+   "raw": "#d81e60",
+   "sel": ":root"
+  },
+  "--coreColorPink7": {
+   "raw": "#9f0042",
+   "sel": ":root"
+  },
+  "--coreColorPink8": {
+   "raw": "#6d0b2d",
+   "sel": ":root"
+  },
+  "--coreColorPink9": {
+   "raw": "#4b051d",
+   "sel": ":root"
+  },
+  "--coreColorPink10": {
+   "raw": "#271015",
+   "sel": ":root"
+  },
+  "--coreColorPink5A8": {
+   "raw": "rgba(245,103,137,0.08)",
+   "sel": ":root"
+  },
+  "--coreColorPink5A32": {
+   "raw": "rgba(245,103,137,0.32)",
+   "sel": ":root"
+  },
+  "--coreColorRed1": {
+   "raw": "#fff4f2",
+   "sel": ":root"
+  },
+  "--coreColorRed2": {
+   "raw": "#ffe6e3",
+   "sel": ":root"
+  },
+  "--coreColorRed3": {
+   "raw": "#ffc8c0",
+   "sel": ":root"
+  },
+  "--coreColorRed4": {
+   "raw": "#fda297",
+   "sel": ":root"
+  },
+  "--coreColorRed5": {
+   "raw": "#f86c61",
+   "sel": ":root"
+  },
+  "--coreColorRed6": {
+   "raw": "#d02c2a",
+   "sel": ":root"
+  },
+  "--coreColorRed7": {
+   "raw": "#9c1b1b",
+   "sel": ":root"
+  },
+  "--coreColorRed8": {
+   "raw": "#6e0f10",
+   "sel": ":root"
+  },
+  "--coreColorRed9": {
+   "raw": "#4c0808",
+   "sel": ":root"
+  },
+  "--coreColorRed10": {
+   "raw": "#330404",
+   "sel": ":root"
+  },
+  "--coreColorRed5A8": {
+   "raw": "rgba(248,108,97,0.08)",
+   "sel": ":root"
+  },
+  "--coreColorRed5A32": {
+   "raw": "rgba(248,108,97,0.32)",
+   "sel": ":root"
+  },
+  "--coreFontFamilyMono": {
+   "raw": "\"Trip Geom TF\"",
+   "sel": ":root"
+  },
+  "--coreFontFamilySans": {
+   "raw": "\"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--coreFontSize10": {
+   "raw": "32px",
+   "sel": ":root"
+  },
+  "--coreFontSize11": {
+   "raw": "40px",
+   "sel": ":root"
+  },
+  "--coreFontSize12": {
+   "raw": "45px",
+   "sel": ":root"
+  },
+  "--coreFontSize13": {
+   "raw": "51px",
+   "sel": ":root"
+  },
+  "--coreFontSize05": {
+   "raw": "18px",
+   "sel": ":root"
+  },
+  "--coreFontSize07": {
+   "raw": "22px",
+   "sel": ":root"
+  },
+  "--coreFontSize03": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--coreFontSize02": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--coreFontSize08": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--coreFontSize03old": {
+   "raw": "13px",
+   "sel": ":root"
+  },
+  "--coreFontSize04": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--coreFontSize06": {
+   "raw": "20px",
+   "sel": ":root"
+  },
+  "--coreFontSize09": {
+   "raw": "28px",
+   "sel": ":root"
+  },
+  "--coreFontSize01": {
+   "raw": "11px",
+   "sel": ":root"
+  },
+  "--coreLineHeightS": {
+   "raw": "1.25",
+   "sel": ":root"
+  },
+  "--coreLineHeightM": {
+   "raw": "1.5",
+   "sel": ":root"
+  },
+  "--corePurple1": {
+   "raw": "#f5f6ff",
+   "sel": ":root"
+  },
+  "--corePurple2": {
+   "raw": "#eaebff",
+   "sel": ":root"
+  },
+  "--corePurple3": {
+   "raw": "#d2d4fa",
+   "sel": ":root"
+  },
+  "--corePurple4": {
+   "raw": "#b5b5fd",
+   "sel": ":root"
+  },
+  "--corePurple5": {
+   "raw": "#948dff",
+   "sel": ":root"
+  },
+  "--corePurple6": {
+   "raw": "#6d4df8",
+   "sel": ":root"
+  },
+  "--corePurple7": {
+   "raw": "#5127cc",
+   "sel": ":root"
+  },
+  "--corePurple8": {
+   "raw": "#39079b",
+   "sel": ":root"
+  },
+  "--corePurple9": {
+   "raw": "#26016e",
+   "sel": ":root"
+  },
+  "--corePurple10": {
+   "raw": "#160f3b",
+   "sel": ":root"
+  },
+  "--corePurple5A8": {
+   "raw": "rgba(148,141,255,0.08)",
+   "sel": ":root"
+  },
+  "--corePurple5A32": {
+   "raw": "rgba(148,141,255,0.32)",
+   "sel": ":root"
+  },
+  "--coreSpacingNone": {
+   "raw": "0.1px",
+   "sel": ":root"
+  },
+  "--coreSpacingXxxs": {
+   "raw": "2px",
+   "sel": ":root"
+  },
+  "--coreSpacingXxs": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--coreSpacingXs": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--coreSpacingS": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--coreSpacingM": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--coreSpacingL": {
+   "raw": "20px",
+   "sel": ":root"
+  },
+  "--coreSpacingXl": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--coreSpacingXxl": {
+   "raw": "32px",
+   "sel": ":root"
+  },
+  "--coreSpacingNegativeXxs": {
+   "raw": "-4px",
+   "sel": ":root"
+  },
+  "--coreSpacingNegativeXs": {
+   "raw": "-8px",
+   "sel": ":root"
+  },
+  "--coreSpacingNegativeS": {
+   "raw": "-12px",
+   "sel": ":root"
+  },
+  "--coreSpacingNegativeM": {
+   "raw": "-16px",
+   "sel": ":root"
+  },
+  "--coreSpacingNegativeXl": {
+   "raw": "-24px",
+   "sel": ":root"
+  },
+  "--coreTripBestBrown": {
+   "raw": "#673114",
+   "sel": ":root"
+  },
+  "--coreTripBestGoldA32": {
+   "raw": "rgba(255,226,200,0.32)",
+   "sel": ":root"
+  },
+  "--coreTripBestBrownDark": {
+   "raw": "#f4c498",
+   "sel": ":root"
+  },
+  "--coreTripBestGoldA16Dark": {
+   "raw": "rgba(235,221,209,0.16)",
+   "sel": ":root"
+  },
+  "--coreYellow1": {
+   "raw": "#fff7eb",
+   "sel": ":root"
+  },
+  "--coreYellow2": {
+   "raw": "#fcebc8",
+   "sel": ":root"
+  },
+  "--coreYellow3": {
+   "raw": "#f2d396",
+   "sel": ":root"
+  },
+  "--coreYellow4": {
+   "raw": "#e3b757",
+   "sel": ":root"
+  },
+  "--coreYellow5": {
+   "raw": "#c79512",
+   "sel": ":root"
+  },
+  "--coreYellow6": {
+   "raw": "#966a00",
+   "sel": ":root"
+  },
+  "--coreYellow7": {
+   "raw": "#704f00",
+   "sel": ":root"
+  },
+  "--coreYellow8": {
+   "raw": "#4d3600",
+   "sel": ":root"
+  },
+  "--coreYellow9": {
+   "raw": "#352200",
+   "sel": ":root"
+  },
+  "--coreYellow10": {
+   "raw": "#231601",
+   "sel": ":root"
+  },
+  "--coreYellow5A8": {
+   "raw": "rgba(199,149,18,0.08)",
+   "sel": ":root"
+  },
+  "--coreYellow5A32": {
+   "raw": "rgba(199,149,18,0.32)",
+   "sel": ":root"
+  },
+  "--smtcBodyXs": {
+   "raw": "400 11px/125% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcBodyS": {
+   "raw": "400 12px/150% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcBodyM": {
+   "raw": "400 14px/150% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcBodyL": {
+   "raw": "400 16px/150% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcColorBgSurfaceActive": {
+   "raw": "#f6f7fa",
+   "sel": ":root"
+  },
+  "--smtcColorBgContainer": {
+   "raw": "#f6f7fa",
+   "sel": ":root"
+  },
+  "--smtcColorBgContainerActive": {
+   "raw": "#ebedf1",
+   "sel": ":root"
+  },
+  "--smtcColorBgDisable": {
+   "raw": "#b9bec7",
+   "sel": ":root"
+  },
+  "--smtcColorBgPopover": {
+   "raw": "rgba(0,0,0,0.8)",
+   "sel": ":root"
+  },
+  "--smtcColorBgSkeleton": {
+   "raw": "rgba(111,118,133,0.16)",
+   "sel": ":root"
+  },
+  "--smtcColorBgBrand": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--smtcColorBgBrandActive": {
+   "raw": "#173cd2",
+   "sel": ":root"
+  },
+  "--smtcColorBgBrandTinted": {
+   "raw": "#f1f5ff",
+   "sel": ":root"
+  },
+  "--smtcColorBgRate": {
+   "raw": "#173cd2",
+   "sel": ":root"
+  },
+  "--smtcColorBgPositive": {
+   "raw": "#047c88",
+   "sel": ":root"
+  },
+  "--smtcColorBgPositiveActive": {
+   "raw": "#015e67",
+   "sel": ":root"
+  },
+  "--smtcColorBgPositiveTinted": {
+   "raw": "#edfafb",
+   "sel": ":root"
+  },
+  "--smtcColorBgWarning": {
+   "raw": "#c74401",
+   "sel": ":root"
+  },
+  "--smtcColorBgWarningActive": {
+   "raw": "#8b3717",
+   "sel": ":root"
+  },
+  "--smtcColorBgWarningTinted": {
+   "raw": "#fdf5f2",
+   "sel": ":root"
+  },
+  "--smtcColorBgAlert": {
+   "raw": "#d02c2a",
+   "sel": ":root"
+  },
+  "--smtcColorBgAlertActive": {
+   "raw": "#9c1b1b",
+   "sel": ":root"
+  },
+  "--smtcColorBgAlertTinted": {
+   "raw": "#fff4f2",
+   "sel": ":root"
+  },
+  "--smtcColorBgPopular": {
+   "raw": "#d02c2a",
+   "sel": ":root"
+  },
+  "--smtcColorBgDiscount": {
+   "raw": "#d81e60",
+   "sel": ":root"
+  },
+  "--smtcColorBgDiscountTinted": {
+   "raw": "#fff3f6",
+   "sel": ":root"
+  },
+  "--smtcColorBgFavorite": {
+   "raw": "#d81e60",
+   "sel": ":root"
+  },
+  "--smtcColorBgFavoriteActive": {
+   "raw": "#9f0042",
+   "sel": ":root"
+  },
+  "--smtcColorBgFavoriteTinted": {
+   "raw": "#fff3f6",
+   "sel": ":root"
+  },
+  "--smtcColorBgMarketing": {
+   "raw": "#6d4df8",
+   "sel": ":root"
+  },
+  "--smtcColorBgMarketingTinted": {
+   "raw": "#f5f6ff",
+   "sel": ":root"
+  },
+  "--smtcColorBgTripBestTinted": {
+   "raw": "rgba(255,226,200,0.32)",
+   "sel": ":root"
+  },
+  "--smtcColorBgHotelStar": {
+   "raw": "#ffb400",
+   "sel": ":root"
+  },
+  "--smtcColorBgCoinsTinted": {
+   "raw": "#fff7eb",
+   "sel": ":root"
+  },
+  "--smtcColorBorderBrandTinted": {
+   "raw": "#c6d7ff",
+   "sel": ":root"
+  },
+  "--smtcColorBorderDiscountTinted": {
+   "raw": "#fcc8d0",
+   "sel": ":root"
+  },
+  "--smtcColorBorderWarningTinted": {
+   "raw": "#ffcab0",
+   "sel": ":root"
+  },
+  "--smtcColorBorderPositiveTinted": {
+   "raw": "#a9e4ea",
+   "sel": ":root"
+  },
+  "--smtcColorBorderAlertTinted": {
+   "raw": "#ffc8c0",
+   "sel": ":root"
+  },
+  "--smtcColorBorderInversed": {
+   "raw": "#f6f7fa",
+   "sel": ":root"
+  },
+  "--smtcColorBorderAlert": {
+   "raw": "#d02c2a",
+   "sel": ":root"
+  },
+  "--smtcColorBorderDefault": {
+   "raw": "#d4d7de",
+   "sel": ":root"
+  },
+  "--smtcColorBorderPrimary": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--smtcColorBorderBrandFocused": {
+   "raw": "#0920a0",
+   "sel": ":root"
+  },
+  "--smtcColorBorderMarketingTinted": {
+   "raw": "#d2d4fa",
+   "sel": ":root"
+  },
+  "--smtcColorTextAlert": {
+   "raw": "#d02c2a",
+   "sel": ":root"
+  },
+  "--smtcColorTextPositive": {
+   "raw": "#047c88",
+   "sel": ":root"
+  },
+  "--smtcColorTextDisable": {
+   "raw": "#b9bec7",
+   "sel": ":root"
+  },
+  "--smtcColorTextInversed": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--smtcColorTextBrandActive": {
+   "raw": "#173cd2",
+   "sel": ":root"
+  },
+  "--smtcColorTextAlertActive": {
+   "raw": "#9c1b1b",
+   "sel": ":root"
+  },
+  "--smtcColorTextPopular": {
+   "raw": "#d02c2a",
+   "sel": ":root"
+  },
+  "--smtcDisplayS": {
+   "raw": "700 40px/125% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcDisplayM": {
+   "raw": "700 45px/125% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcDisplayL": {
+   "raw": "700 51px/125% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcFontSizeBodySizeXs": {
+   "raw": "11px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeBodySizeS": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeBodySizeM": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeBodySizeL": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeHeadingSizeXs": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeHeadingSizeS": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeHeadingSizeM": {
+   "raw": "18px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeHeadingSizeL": {
+   "raw": "20px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeHeadingSizeXl": {
+   "raw": "22px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeHeadingSize2Xl": {
+   "raw": "28px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeHeadingSize3Xl": {
+   "raw": "32px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeDisplaySizeS": {
+   "raw": "40px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeDisplaySizeM": {
+   "raw": "45px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeDisplaySizeL": {
+   "raw": "51px",
+   "sel": ":root"
+  },
+  "--smtcFontWeightBodyWeight": {
+   "raw": "400",
+   "sel": ":root"
+  },
+  "--smtcFontWeightBodyWeightEmphasized": {
+   "raw": "500",
+   "sel": ":root"
+  },
+  "--smtcFontWeightHeadingWeight": {
+   "raw": "700",
+   "sel": ":root"
+  },
+  "--smtcFontWeightDisplayWeight": {
+   "raw": "700",
+   "sel": ":root"
+  },
+  "--smtcTypographyBodyEmphasizedXs": {
+   "raw": "500 11px/125% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcTypographyBodyEmphasizedS": {
+   "raw": "500 12px/150% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcTypographyBodyEmphasizedM": {
+   "raw": "500 14px/150% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcTypographyBodyEmphasizedL": {
+   "raw": "500 16px/150% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcTypographyHeadingXs": {
+   "raw": "700 14px/125% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcTypographyHeadingS": {
+   "raw": "700 16px/125% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcTypographyHeadingM": {
+   "raw": "700 18px/125% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcTypographyHeadingL": {
+   "raw": "700 20px/125% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcTypographyHeadingXl": {
+   "raw": "700 22px/125% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcTypographyHeading2Xl": {
+   "raw": "700 28px/125% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcTypographyHeading3Xl": {
+   "raw": "700 32px/125% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcTypographyResidualS": {
+   "raw": "400 13px/150% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcTypographyResidualM": {
+   "raw": "500 18px/125% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcTypographyResidualL": {
+   "raw": "500 20px/125% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcTypographyResidualSEmphasized": {
+   "raw": "500 13px/150% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcTypographyResidualXl": {
+   "raw": "500 22px/125% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcTypographyResidual2Xl": {
+   "raw": "500 24px/125% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--smtcTypographyResidual2XlStrong": {
+   "raw": "700 24px/125% \"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--compBadgeDefaultHeight": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--compBadgeDefaultNumberMinWidth": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compBadgeDefaultBorderRadius": {
+   "raw": "999px",
+   "sel": ":root"
+  },
+  "--compBadgeDefaultBackgroundColor": {
+   "raw": "#c74401",
+   "sel": ":root"
+  },
+  "--compBadgeRibbonPaddingHorizontal": {
+   "raw": "2px",
+   "sel": ":root"
+  },
+  "--compCheckboxCheckedCardBackgroundColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compCheckboxUncheckedCardBoderColor": {
+   "raw": "#d4d7de",
+   "sel": ":root"
+  },
+  "--compCheckboxUncheckedCardBackgroundColor": {
+   "raw": "#f6f7fa",
+   "sel": ":root"
+  },
+  "--compCheckboxUncheckedCardColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compCheckboxUncheckedErrorColor": {
+   "raw": "#d02c2a",
+   "sel": ":root"
+  },
+  "--compDialogContentCustomizeHeight": {
+   "raw": "400px",
+   "sel": ":root"
+  },
+  "--compDialogContentPaddingTop": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compDialogContentPaddingTopWithClose": {
+   "raw": "36px",
+   "sel": ":root"
+  },
+  "--compDialogContentCustomizeWidth": {
+   "raw": "327px",
+   "sel": ":root"
+  },
+  "--compDialogContentPaddingLeft": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compDialogContentPaddingRight": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compDialogContentPaddingBottom": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compDialogContentIconCloseColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compDialogContentIconCloseFontSize": {
+   "raw": "20px",
+   "sel": ":root"
+  },
+  "--compDialogContentIconCloseRight": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compDialogContentIconCloseTop": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compDialogContentImageCustomizeHeight": {
+   "raw": "328px",
+   "sel": ":root"
+  },
+  "--compDialogContentImageCustomizeWidth": {
+   "raw": "259px",
+   "sel": ":root"
+  },
+  "--compEmptyBtnPadding": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--compEmptyBtnBackgroundColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compEmptyBtnGap": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--compEmptyBtnFontSize": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compEmptyBtnColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compEmptyBtnHeight": {
+   "raw": "48px",
+   "sel": ":root"
+  },
+  "--compEmptyBtnMarginTop": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compEmptyBtnBorderRadius": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compEmptyHzBtnMarginTop": {
+   "raw": "13px",
+   "sel": ":root"
+  },
+  "--compEmptyHzBtnFontSize": {
+   "raw": "13px",
+   "sel": ":root"
+  },
+  "--compEmptyHzBtnHeight": {
+   "raw": "32px",
+   "sel": ":root"
+  },
+  "--compEmptySTitleLineHeight": {
+   "raw": "23px",
+   "sel": ":root"
+  },
+  "--compEmptySImgSize": {
+   "raw": "120px",
+   "sel": ":root"
+  },
+  "--compEmptySDescFontSize": {
+   "raw": "18px",
+   "sel": ":root"
+  },
+  "--compEmptySDescLineHeight": {
+   "raw": "22px",
+   "sel": ":root"
+  },
+  "--compEmptySTitleFontSize": {
+   "raw": "20px",
+   "sel": ":root"
+  },
+  "--compEmptySDescMarginTop": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--compEmptySecondaryBtnBorderColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compEmptySecondaryBtnColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compEmptySecondaryBtnBorderWidth": {
+   "raw": "0.5px",
+   "sel": ":root"
+  },
+  "--compEmptySecondaryBtnBackgroundColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compIconColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compIconSize": {
+   "raw": "20px",
+   "sel": ":root"
+  },
+  "--compImageBackgroundColor": {
+   "raw": "#f6f7fa",
+   "sel": ":root"
+  },
+  "--compLoadingClosableButtonClickSize": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compLoadingFullScreenMaskColor": {
+   "raw": "rgba(0,0,0,0.64)",
+   "sel": ":root"
+  },
+  "--compModalMaskColor": {
+   "raw": "rgba(0,0,0,0.64)",
+   "sel": ":root"
+  },
+  "--compRadioCheckedCardBackgroundColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compRadioUncheckedCardBackgroundColorLinear": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compRadioUncheckedCardBackgroundColor": {
+   "raw": "#f6f7fa",
+   "sel": ":root"
+  },
+  "--compRadioUncheckedCardColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compScreenViewBackgroundColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compScreenViewHeaderBorderColor": {
+   "raw": "#d4d7de",
+   "sel": ":root"
+  },
+  "--compScreenViewIconColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compTextAreaBgColorWhite": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compTextinputDisabledBgColor": {
+   "raw": "#f6f7fa",
+   "sel": ":root"
+  },
+  "--compTextinputDisabledBorderColor": {
+   "raw": "#d4d7de",
+   "sel": ":root"
+  },
+  "--compTextinputDisabledTextColor": {
+   "raw": "#b9bec7",
+   "sel": ":root"
+  },
+  "--compTextinputInputColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compTextinputInputIconColor": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--compTextinputTitleBackgroundColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compTextinputTitleFocusColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compTextinputWrapperBorderColor": {
+   "raw": "#d4d7de",
+   "sel": ":root"
+  },
+  "--compTextinputWrapperBorderColorFocus": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compToastBackgroundColor": {
+   "raw": "rgba(0,0,0,0.64)",
+   "sel": ":root"
+  },
+  "--compToastBorderRadius": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--compToastPadding": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--compTooltipCloseColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compTooltipMFontSize": {
+   "raw": "13px",
+   "sel": ":root"
+  },
+  "--compTooltipMPaddingVertical": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compTooltipMLineHeight": {
+   "raw": "18px",
+   "sel": ":root"
+  },
+  "--compTooltipMPaddingHorizontal": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compTooltipSPaddingHorizontal": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compTooltipSPaddingVertical": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compTooltipSFontSize": {
+   "raw": "13px",
+   "sel": ":root"
+  },
+  "--compTooltipSLineHeight": {
+   "raw": "18px",
+   "sel": ":root"
+  },
+  "--coreBorderRadius0": {
+   "raw": "0px",
+   "sel": ":root"
+  },
+  "--coreBorderRadius4": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--coreBorderRadius8": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--coreBorderRadius16": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--coreBorderRadius24": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--coreBorderRadius32": {
+   "raw": "32px",
+   "sel": ":root"
+  },
+  "--coreBorderRadiusRound": {
+   "raw": "9999px",
+   "sel": ":root"
+  },
+  "--coreBorderWidth1": {
+   "raw": "1px",
+   "sel": ":root"
+  },
+  "--coreBorderWidth2": {
+   "raw": "2px",
+   "sel": ":root"
+  },
+  "--coreBorderWidth4": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--coreColorSecondaryBlack": {
+   "raw": "#4f5563",
+   "sel": ":root"
+  },
+  "--coreColorContentWhite": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--coreColorBlueC8": {
+   "raw": "#f1f5ff",
+   "sel": ":root"
+  },
+  "--coreColorOrangeB32": {
+   "raw": "#ffcab0",
+   "sel": ":root"
+  },
+  "--coreColorRed": {
+   "raw": "#d02c2a",
+   "sel": ":root"
+  },
+  "--coreColorRedC8": {
+   "raw": "#fff4f2",
+   "sel": ":root"
+  },
+  "--coreColorTripBest": {
+   "raw": "#673114",
+   "sel": ":root"
+  },
+  "--coreColorTransparent": {
+   "raw": "transparent",
+   "sel": ":root"
+  },
+  "--coreColorTertiaryBlack": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--coreColorQuaternaryGray": {
+   "raw": "#ebedf1",
+   "sel": ":root"
+  },
+  "--coreColorBrandingBlue": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--coreColorTertiaryGray": {
+   "raw": "#d4d7de",
+   "sel": ":root"
+  },
+  "--coreColorBrandingOrange": {
+   "raw": "#ffb400",
+   "sel": ":root"
+  },
+  "--coreColorBlueB32": {
+   "raw": "#c6d7ff",
+   "sel": ":root"
+  },
+  "--coreColorCyanText": {
+   "raw": "#047c88",
+   "sel": ":root"
+  },
+  "--coreColorBlack": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--coreColorGray": {
+   "raw": "#b9bec7",
+   "sel": ":root"
+  },
+  "--coreColorSecondaryGray": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--coreColorWhite": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--coreColorOrange": {
+   "raw": "#c74401",
+   "sel": ":root"
+  },
+  "--coreColorPinkC8": {
+   "raw": "#fff3f6",
+   "sel": ":root"
+  },
+  "--coreColorTripBlue": {
+   "raw": "#2346ff",
+   "sel": ":root"
+  },
+  "--coreColorOrangeText": {
+   "raw": "#c74401",
+   "sel": ":root"
+  },
+  "--coreColorRedText": {
+   "raw": "#d02c2a",
+   "sel": ":root"
+  },
+  "--coreColorCyanB32": {
+   "raw": "#a9e4ea",
+   "sel": ":root"
+  },
+  "--coreColorScrim": {
+   "raw": "rgba(0,0,0,0.64)",
+   "sel": ":root"
+  },
+  "--coreColorCyan": {
+   "raw": "#047c88",
+   "sel": ":root"
+  },
+  "--coreColorPink": {
+   "raw": "#d81e60",
+   "sel": ":root"
+  },
+  "--coreColorPinkText": {
+   "raw": "#d81e60",
+   "sel": ":root"
+  },
+  "--coreColorOrangeC8": {
+   "raw": "#fdf5f2",
+   "sel": ":root"
+  },
+  "--coreColorRedB32": {
+   "raw": "#ffc8c0",
+   "sel": ":root"
+  },
+  "--coreColorBlueRate": {
+   "raw": "#173cd2",
+   "sel": ":root"
+  },
+  "--coreColorPurpleB32": {
+   "raw": "#d2d4fa",
+   "sel": ":root"
+  },
+  "--coreColorPurpleC8": {
+   "raw": "#f5f6ff",
+   "sel": ":root"
+  },
+  "--coreColorCyanC8": {
+   "raw": "#edfafb",
+   "sel": ":root"
+  },
+  "--coreColorPurple": {
+   "raw": "#6d4df8",
+   "sel": ":root"
+  },
+  "--coreColorTripCoins": {
+   "raw": "#966a00",
+   "sel": ":root"
+  },
+  "--coreColorFifthGray": {
+   "raw": "#f6f7fa",
+   "sel": ":root"
+  },
+  "--coreColorPurpleText": {
+   "raw": "#6d4df8",
+   "sel": ":root"
+  },
+  "--coreColorPlaceholderGray": {
+   "raw": "rgba(111,118,133,0.16)",
+   "sel": ":root"
+  },
+  "--coreColorPinkB32": {
+   "raw": "#fcc8d0",
+   "sel": ":root"
+  },
+  "--coreColorSecondaryContentWhite": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--coreFontFamilyTripGeom": {
+   "raw": "\"Trip Geom\"",
+   "sel": ":root"
+  },
+  "--coreFontFamilyTripGeomTf": {
+   "raw": "\"Trip Geom TF\"",
+   "sel": ":root"
+  },
+  "--coreFontSizeT24": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--coreFontSizeT28": {
+   "raw": "28px",
+   "sel": ":root"
+  },
+  "--coreFontSizeT20": {
+   "raw": "20px",
+   "sel": ":root"
+  },
+  "--coreFontSizeT18": {
+   "raw": "18px",
+   "sel": ":root"
+  },
+  "--coreFontSizeT32": {
+   "raw": "32px",
+   "sel": ":root"
+  },
+  "--coreFontSizeT16": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--coreFontSizeT14": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--coreFontSizeT12": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--coreFontWeightRegular": {
+   "raw": "400",
+   "sel": ":root"
+  },
+  "--coreFontWeightBold": {
+   "raw": "700",
+   "sel": ":root"
+  },
+  "--coreFontWeightMedium": {
+   "raw": "500",
+   "sel": ":root"
+  },
+  "--coreIconfontAddCircular": {
+   "raw": "\"e000\"",
+   "sel": ":root"
+  },
+  "--coreIconfontCheck": {
+   "raw": "\"e530\"",
+   "sel": ":root"
+  },
+  "--coreIconfontChecked": {
+   "raw": "\"f05ca\"",
+   "sel": ":root"
+  },
+  "--coreIconfontCheckSolid": {
+   "raw": "\"eced\"",
+   "sel": ":root"
+  },
+  "--coreIconfontClearSolid": {
+   "raw": "\"e003\"",
+   "sel": ":root"
+  },
+  "--coreIconfontDefault": {
+   "raw": "\"ee4f\"",
+   "sel": ":root"
+  },
+  "--coreIconfontForwardRight": {
+   "raw": "\"e008\"",
+   "sel": ":root"
+  },
+  "--coreIconfontSelectedLine": {
+   "raw": "\"e001\"",
+   "sel": ":root"
+  },
+  "--coreIconfontSelectedSolid": {
+   "raw": "\"ed1e\"",
+   "sel": ":root"
+  },
+  "--coreIconfontWarningLine": {
+   "raw": "\"eb51\"",
+   "sel": ":root"
+  },
+  "--coreLineHeightT24": {
+   "raw": "30px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT32": {
+   "raw": "38px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT18": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT28": {
+   "raw": "34px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT20": {
+   "raw": "26px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT16": {
+   "raw": "22px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT14Title": {
+   "raw": "18px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT14Body": {
+   "raw": "22px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT12Caption": {
+   "raw": "18px",
+   "sel": ":root"
+  },
+  "--coreLineHeightT12Tag": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--coreSpacing0": {
+   "raw": "0px",
+   "sel": ":root"
+  },
+  "--coreSpacing4": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--coreSpacing8": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--coreSpacing12": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--coreSpacing16": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--coreSpacing24": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--coreSpacing32": {
+   "raw": "32px",
+   "sel": ":root"
+  },
+  "--coreSpacing40": {
+   "raw": "40px",
+   "sel": ":root"
+  },
+  "--coreSpacing48": {
+   "raw": "48px",
+   "sel": ":root"
+  },
+  "--coreSpacing56": {
+   "raw": "56px",
+   "sel": ":root"
+  },
+  "--coreSpacing64": {
+   "raw": "64px",
+   "sel": ":root"
+  },
+  "--coreSpacing80": {
+   "raw": "80px",
+   "sel": ":root"
+  },
+  "--smtcColorBgBrandFilled": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--smtcColorBgPage": {
+   "raw": "#ebedf1",
+   "sel": ":root"
+  },
+  "--smtcColorBgBrandTintedLow": {
+   "raw": "#f1f5ff",
+   "sel": ":root"
+  },
+  "--smtcColorBgNoticeTintedLow": {
+   "raw": "#fdf5f2",
+   "sel": ":root"
+  },
+  "--smtcColorBgSurfaceSecondary": {
+   "raw": "#f6f7fa",
+   "sel": ":root"
+  },
+  "--smtcColorBgBrandTintedHigh": {
+   "raw": "#f1f5ff",
+   "sel": ":root"
+  },
+  "--smtcColorBgSurface": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--smtcColorBgNoticeTintedHigh": {
+   "raw": "#fdf5f2",
+   "sel": ":root"
+  },
+  "--smtcColorBgTransparent": {
+   "raw": "transparent",
+   "sel": ":root"
+  },
+  "--smtcColorBgNoticeFilled": {
+   "raw": "#c74401",
+   "sel": ":root"
+  },
+  "--smtcColorBgDiscountFilled": {
+   "raw": "#d81e60",
+   "sel": ":root"
+  },
+  "--smtcColorBgDisabledTinted": {
+   "raw": "#f6f7fa",
+   "sel": ":root"
+  },
+  "--smtcColorBgSuccessFilled": {
+   "raw": "#047c88",
+   "sel": ":root"
+  },
+  "--smtcColorBgRateFilled": {
+   "raw": "#173cd2",
+   "sel": ":root"
+  },
+  "--smtcColorBgScrim": {
+   "raw": "rgba(0,0,0,0.64)",
+   "sel": ":root"
+  },
+  "--smtcColorBgDisabledFilled": {
+   "raw": "#b9bec7",
+   "sel": ":root"
+  },
+  "--smtcColorBgDiscountTintedHigh": {
+   "raw": "#fff3f6",
+   "sel": ":root"
+  },
+  "--smtcColorBgDiscountTintedLow": {
+   "raw": "#fff3f6",
+   "sel": ":root"
+  },
+  "--smtcColorBgSuccessTintedHigh": {
+   "raw": "#edfafb",
+   "sel": ":root"
+  },
+  "--smtcColorBgSuccessTintedLow": {
+   "raw": "#edfafb",
+   "sel": ":root"
+  },
+  "--smtcColorBorderTransparent": {
+   "raw": "transparent",
+   "sel": ":root"
+  },
+  "--smtcColorBorderBrandBold": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--smtcColorBorderBrand": {
+   "raw": "#c6d7ff",
+   "sel": ":root"
+  },
+  "--smtcColorBorderSuccess": {
+   "raw": "#a9e4ea",
+   "sel": ":root"
+  },
+  "--smtcColorBorderDisabled": {
+   "raw": "#b9bec7",
+   "sel": ":root"
+  },
+  "--smtcColorBorderEncourage": {
+   "raw": "#a9e4ea",
+   "sel": ":root"
+  },
+  "--smtcColorBorderError": {
+   "raw": "#ffc8c0",
+   "sel": ":root"
+  },
+  "--smtcColorBorderNotice": {
+   "raw": "#ffcab0",
+   "sel": ":root"
+  },
+  "--smtcColorBorderDiscount": {
+   "raw": "#fcc8d0",
+   "sel": ":root"
+  },
+  "--smtcColorDividerForm": {
+   "raw": "#d4d7de",
+   "sel": ":root"
+  },
+  "--smtcColorDividerInfo": {
+   "raw": "#d4d7de",
+   "sel": ":root"
+  },
+  "--smtcColorTextContentWhite": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--smtcColorTextPlaceholder": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--smtcColorTextPlaceholderOnBg": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--smtcColorTextBrand": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--smtcColorTextSecondary": {
+   "raw": "#4f5563",
+   "sel": ":root"
+  },
+  "--smtcColorTextNotice": {
+   "raw": "#c74401",
+   "sel": ":root"
+  },
+  "--smtcColorTextFavorite": {
+   "raw": "#d81e60",
+   "sel": ":root"
+  },
+  "--smtcColorTextMarketing": {
+   "raw": "#6d4df8",
+   "sel": ":root"
+  },
+  "--smtcColorTextDisabled": {
+   "raw": "#b9bec7",
+   "sel": ":root"
+  },
+  "--smtcColorTextEncourage": {
+   "raw": "#047c88",
+   "sel": ":root"
+  },
+  "--smtcColorTextPrimary": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--smtcColorTextSuccess": {
+   "raw": "#047c88",
+   "sel": ":root"
+  },
+  "--smtcColorTextTripBest": {
+   "raw": "#673114",
+   "sel": ":root"
+  },
+  "--smtcColorTextTertiary": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--smtcColorTextRate": {
+   "raw": "#173cd2",
+   "sel": ":root"
+  },
+  "--smtcColorTextDiscount": {
+   "raw": "#d81e60",
+   "sel": ":root"
+  },
+  "--smtcColorTextWarning": {
+   "raw": "#d02c2a",
+   "sel": ":root"
+  },
+  "--smtcColorTextCoins": {
+   "raw": "#966a00",
+   "sel": ":root"
+  },
+  "--smtcColorTextWhite": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--smtcFontSizeTitle1": {
+   "raw": "18px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeBody": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeLabel": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeCaption": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeHead2": {
+   "raw": "28px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeTitle2": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeHead1": {
+   "raw": "32px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeHead3": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeSubhead": {
+   "raw": "20px",
+   "sel": ":root"
+  },
+  "--smtcFontSizeTitle3": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightHead2": {
+   "raw": "34px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightTitle1": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightBody": {
+   "raw": "22px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightLabel": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightTitle2": {
+   "raw": "22px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightHead1": {
+   "raw": "38px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightCaption": {
+   "raw": "18px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightHead3": {
+   "raw": "30px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightTitle3": {
+   "raw": "18px",
+   "sel": ":root"
+  },
+  "--smtcLineHeightSubhead": {
+   "raw": "26px",
+   "sel": ":root"
+  },
+  "--smtcTypographyCaption": {
+   "raw": "400 12px/18px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographyHead2": {
+   "raw": "400 28px/34px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographyTitle1": {
+   "raw": "400 18px/24px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographyLabel": {
+   "raw": "400 12px/16px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographyTitle2": {
+   "raw": "400 16px/22px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographyBody": {
+   "raw": "400 14px/22px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographyHead1": {
+   "raw": "400 32px/38px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographyHead3": {
+   "raw": "400 24px/30px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographySubhead": {
+   "raw": "400 20px/26px sans-serif",
+   "sel": ":root"
+  },
+  "--smtcTypographyTitle3": {
+   "raw": "400 14px/18px sans-serif",
+   "sel": ":root"
+  },
+  "--compBadgeDotBackgroundColor": {
+   "raw": "#c74401",
+   "sel": ":root"
+  },
+  "--compBadgeDotFontSize": {
+   "raw": "22px",
+   "sel": ":root"
+  },
+  "--compBadgeDotLineHeight": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compBadgeDotBorderColor": {
+   "raw": "transparent",
+   "sel": ":root"
+  },
+  "--compBadgeDotNumberBorderRadius": {
+   "raw": "32px",
+   "sel": ":root"
+  },
+  "--compBadgeDotBorderRadius": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compBadgeDotBorderWidth": {
+   "raw": "1px",
+   "sel": ":root"
+  },
+  "--compBadgeDotSize": {
+   "raw": "6px",
+   "sel": ":root"
+  },
+  "--compBadgeDotHeight": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compBadgeDotPaddingHorizontal": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--compBadgeDotNumberMinWidth": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compBadgeRibbonColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compBadgeRibbonLineHeight": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compBadgeRibbonFontWeight": {
+   "raw": "700",
+   "sel": ":root"
+  },
+  "--compBadgeRibbonFontSize": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--compBadgeRibbonBackgroundColor": {
+   "raw": "#d02c2a",
+   "sel": ":root"
+  },
+  "--compBadgeRibbonHeight": {
+   "raw": "20px",
+   "sel": ":root"
+  },
+  "--compBadgeRibbonBorderRadius": {
+   "raw": "2px",
+   "sel": ":root"
+  },
+  "--compBadgeRibbonDiscountColor": {
+   "raw": "#d81e60",
+   "sel": ":root"
+  },
+  "--compBadgeRibbonNoticeColor": {
+   "raw": "#c74401",
+   "sel": ":root"
+  },
+  "--compBadgeRibbonSuccessColor": {
+   "raw": "#047c88",
+   "sel": ":root"
+  },
+  "--compButtonDisabledFilledColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compButtonDisabledFilledBorderColor": {
+   "raw": "transparent",
+   "sel": ":root"
+  },
+  "--compButtonDisabledFilledBackgroundColor": {
+   "raw": "#b9bec7",
+   "sel": ":root"
+  },
+  "--compButtonDisabledOutlinedBackgroundColor": {
+   "raw": "transparent",
+   "sel": ":root"
+  },
+  "--compButtonDisabledOutlinedColor": {
+   "raw": "#b9bec7",
+   "sel": ":root"
+  },
+  "--compButtonDisabledOutlinedBorderColor": {
+   "raw": "#b9bec7",
+   "sel": ":root"
+  },
+  "--compButtonLMinWidth": {
+   "raw": "74px",
+   "sel": ":root"
+  },
+  "--compButtonLMaxWidth": {
+   "raw": "100%",
+   "sel": ":root"
+  },
+  "--compButtonLFontSize": {
+   "raw": "18px",
+   "sel": ":root"
+  },
+  "--compButtonLFontWeight": {
+   "raw": "700",
+   "sel": ":root"
+  },
+  "--compButtonLHeight": {
+   "raw": "56px",
+   "sel": ":root"
+  },
+  "--compButtonLLineHeight": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compButtonLBorderWidth": {
+   "raw": "1px",
+   "sel": ":root"
+  },
+  "--compButtonLBorderRadius": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--compButtonMBorderWidth": {
+   "raw": "1px",
+   "sel": ":root"
+  },
+  "--compButtonMMaxWidth": {
+   "raw": "100%",
+   "sel": ":root"
+  },
+  "--compButtonMMinWidth": {
+   "raw": "70px",
+   "sel": ":root"
+  },
+  "--compButtonMHeight": {
+   "raw": "38px",
+   "sel": ":root"
+  },
+  "--compButtonMBorderRadius": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--compButtonMLineHeight": {
+   "raw": "22px",
+   "sel": ":root"
+  },
+  "--compButtonMFontWeight": {
+   "raw": "500",
+   "sel": ":root"
+  },
+  "--compButtonMFontSize": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compButtonNormalColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compButtonNormalBorderColor": {
+   "raw": "transparent",
+   "sel": ":root"
+  },
+  "--compButtonNormalBackgroundColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compButtonPayBackgroundColor": {
+   "raw": "#c74401",
+   "sel": ":root"
+  },
+  "--compButtonPayColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compButtonPayBorderColor": {
+   "raw": "transparent",
+   "sel": ":root"
+  },
+  "--compButtonPrimaryLinearEnd": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compButtonPrimaryLinearStart": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compButtonPrimaryColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compButtonPrimaryBorderColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compButtonPrimaryBackgroundColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compButtonSLineHeight": {
+   "raw": "18px",
+   "sel": ":root"
+  },
+  "--compButtonSFontSize": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--compButtonSMinWidth": {
+   "raw": "64px",
+   "sel": ":root"
+  },
+  "--compButtonSFontWeight": {
+   "raw": "400",
+   "sel": ":root"
+  },
+  "--compButtonSBorderWidth": {
+   "raw": "1px",
+   "sel": ":root"
+  },
+  "--compButtonSMaxWidth": {
+   "raw": "100%",
+   "sel": ":root"
+  },
+  "--compButtonSBorderRadius": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--compButtonSHeight": {
+   "raw": "34px",
+   "sel": ":root"
+  },
+  "--compButtonSecondaryBackgroundColor": {
+   "raw": "transparent",
+   "sel": ":root"
+  },
+  "--compButtonSecondaryColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compButtonSecondaryBorderColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compButtonTertiaryBackgroundColor": {
+   "raw": "transparent",
+   "sel": ":root"
+  },
+  "--compButtonTertiaryColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compButtonTertiaryBorderColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compCardBackgroundColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compCardLBorderRadius": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compCardBorderRadius": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compCardSBorderRadius": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--compCheckboxHeight": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compCheckboxWidth": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compCheckboxFontSize": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--compCheckboxGap": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compCheckboxCheckedColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compCheckboxCheckedDisabledColor": {
+   "raw": "#c6d7ff",
+   "sel": ":root"
+  },
+  "--compCheckboxUncheckedColor": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--compCheckboxUncheckedDisabledBorderColor": {
+   "raw": "#d4d7de",
+   "sel": ":root"
+  },
+  "--compCheckboxUncheckedDisabledBackgroundColor": {
+   "raw": "#f6f7fa",
+   "sel": ":root"
+  },
+  "--compCheckboxUncheckedErrorError": {
+   "raw": "#d02c2a",
+   "sel": ":root"
+  },
+  "--compCheckboxUncheckedNormalBackgroundColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compCheckboxUncheckedSecondaryColor": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--compDialogPaddingLeft": {
+   "raw": "48px",
+   "sel": ":root"
+  },
+  "--compDialogPaddingRight": {
+   "raw": "48px",
+   "sel": ":root"
+  },
+  "--compDialogWidth": {
+   "raw": "100%",
+   "sel": ":root"
+  },
+  "--compDialogIconSize": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compDialogCloseSize": {
+   "raw": "20px",
+   "sel": ":root"
+  },
+  "--compDialogCloseRight": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compDialogCloseTop": {
+   "raw": "27px",
+   "sel": ":root"
+  },
+  "--compDialogCloseSoftColor": {
+   "raw": "#b9bec7",
+   "sel": ":root"
+  },
+  "--compDialogCloseColor": {
+   "raw": "#4f5563",
+   "sel": ":root"
+  },
+  "--compDialogContentBackgroundColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compDialogContentBorderRadius": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compDialogContentPadding": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compDialogContentButtonsWidth": {
+   "raw": "100%",
+   "sel": ":root"
+  },
+  "--compDialogContentButtonsItem2LastMarginLeft": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compDialogContentButtonsItemWidth": {
+   "raw": "100%",
+   "sel": ":root"
+  },
+  "--compDialogContentButtonsItemMarginBottom": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compDialogContentContentColor": {
+   "raw": "#4f5563",
+   "sel": ":root"
+  },
+  "--compDialogContentContentLetterSpacing": {
+   "raw": "-0.23px",
+   "sel": ":root"
+  },
+  "--compDialogContentContentMarginBottom": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compDialogContentContentFontSize": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--compDialogContentContentFontWeight": {
+   "raw": "400",
+   "sel": ":root"
+  },
+  "--compDialogContentContentLineHeight": {
+   "raw": "22px",
+   "sel": ":root"
+  },
+  "--compDialogContentIconSuccessColor": {
+   "raw": "#047c88",
+   "sel": ":root"
+  },
+  "--compDialogContentIconInfoColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compDialogContentIconFailedColor": {
+   "raw": "#d02c2a",
+   "sel": ":root"
+  },
+  "--compDialogContentIconWarningColor": {
+   "raw": "#c74401",
+   "sel": ":root"
+  },
+  "--compDialogContentIconSize": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compDialogContentImageWidth": {
+   "raw": "100%",
+   "sel": ":root"
+  },
+  "--compDialogContentImageHeight": {
+   "raw": "232px",
+   "sel": ":root"
+  },
+  "--compDialogContentImageMarginBottom": {
+   "raw": "38px",
+   "sel": ":root"
+  },
+  "--compDialogContentTitleFontSize": {
+   "raw": "20px",
+   "sel": ":root"
+  },
+  "--compDialogContentTitleFontWeight": {
+   "raw": "500",
+   "sel": ":root"
+  },
+  "--compDialogContentTitleLineHeight": {
+   "raw": "26px",
+   "sel": ":root"
+  },
+  "--compDialogContentTitleLetterSpacing": {
+   "raw": "0.72px",
+   "sel": ":root"
+  },
+  "--compDialogContentTitleColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compDialogContentTitleMarginBottom": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compDialogContentTypeLineHeight": {
+   "raw": "84px",
+   "sel": ":root"
+  },
+  "--compDialogContentTypeFontSize": {
+   "raw": "72px",
+   "sel": ":root"
+  },
+  "--compDialogContentTypeColor": {
+   "raw": "#ff6f00",
+   "sel": ":root"
+  },
+  "--compDialogContentTypeMarginBottom": {
+   "raw": "38px",
+   "sel": ":root"
+  },
+  "--compDialogCustomizeContainerMarginTop": {
+   "raw": "100px",
+   "sel": ":root"
+  },
+  "--compDialogCustomizeContainerFontSize": {
+   "raw": "64px",
+   "sel": ":root"
+  },
+  "--compDialogCustomizeContainerPaddingRight": {
+   "raw": "48px",
+   "sel": ":root"
+  },
+  "--compDialogCustomizeContainerColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compDialogCustomizeContainerPaddingLeft": {
+   "raw": "48px",
+   "sel": ":root"
+  },
+  "--compDialogSizeSmall": {
+   "raw": "474px",
+   "sel": ":root"
+  },
+  "--compDialogSizeNormal": {
+   "raw": "670px",
+   "sel": ":root"
+  },
+  "--compDialogSizeLarge": {
+   "raw": "1062px",
+   "sel": ":root"
+  },
+  "--compEmptyImgSize": {
+   "raw": "200px",
+   "sel": ":root"
+  },
+  "--compEmptyGap": {
+   "raw": "32px",
+   "sel": ":root"
+  },
+  "--compEmptyPadding": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compEmptyBtnsMargin": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compEmptyBtnsGap": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compEmptyBtnsMaxWidth": {
+   "raw": "400px",
+   "sel": ":root"
+  },
+  "--compEmptyDescMarginTop": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compEmptyDescFontSize": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--compEmptyDescLineHeight": {
+   "raw": "22px",
+   "sel": ":root"
+  },
+  "--compEmptyDescColor": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--compEmptyDescMaxWidth": {
+   "raw": "524px",
+   "sel": ":root"
+  },
+  "--compEmptyHzPaddingLeftRight": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compEmptyHzImgSize": {
+   "raw": "160px",
+   "sel": ":root"
+  },
+  "--compEmptyHzPaddingTopBottom": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compEmptyHzGap": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compEmptyHzBtnsMaxWidth": {
+   "raw": "500px",
+   "sel": ":root"
+  },
+  "--compEmptyHzDescFontSize": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--compEmptyHzDescMarginTop": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compEmptyHzTitleFontSize": {
+   "raw": "18px",
+   "sel": ":root"
+  },
+  "--compEmptyHzTitleMarginTop": {
+   "raw": "0px",
+   "sel": ":root"
+  },
+  "--compEmptyHzTitleLineHeight": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compEmptyHzTitleColor": {
+   "raw": "#4f5563",
+   "sel": ":root"
+  },
+  "--compEmptyTitleColor": {
+   "raw": "#4f5563",
+   "sel": ":root"
+  },
+  "--compEmptyTitleFontWeight": {
+   "raw": "700",
+   "sel": ":root"
+  },
+  "--compEmptyTitleFontSize": {
+   "raw": "18px",
+   "sel": ":root"
+  },
+  "--compEmptyTitleLineHeight": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compEmptyTitleMaxWidth": {
+   "raw": "524px",
+   "sel": ":root"
+  },
+  "--compLoadingClosableTextColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compLoadingClosableBorderRadius": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compLoadingClosableImgSize": {
+   "raw": "200px",
+   "sel": ":root"
+  },
+  "--compLoadingClosableButtonPositionRight": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--compLoadingClosableButtonSize": {
+   "raw": "22px",
+   "sel": ":root"
+  },
+  "--compLoadingClosableButtonOpacity": {
+   "raw": "1",
+   "sel": ":root"
+  },
+  "--compLoadingClosableButtonColor": {
+   "raw": "#ced2d9",
+   "sel": ":root"
+  },
+  "--compLoadingClosableButtonPositionTop": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--compLoadingFullScreenImgSize": {
+   "raw": "136px",
+   "sel": ":root"
+  },
+  "--compLoadingFullScreenSubTextSize": {
+   "raw": "26px",
+   "sel": ":root"
+  },
+  "--compLoadingFullScreenSubTextColor": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--compLoadingFullScreenTextColor": {
+   "raw": "#4f5563",
+   "sel": ":root"
+  },
+  "--compLoadingFullScreenTextMarginTop": {
+   "raw": "32px",
+   "sel": ":root"
+  },
+  "--compLoadingFullScreenTextFontSize": {
+   "raw": "30px",
+   "sel": ":root"
+  },
+  "--compLoadingImgSize": {
+   "raw": "42px",
+   "sel": ":root"
+  },
+  "--compLoadingTitleFontSize": {
+   "raw": "26px",
+   "sel": ":root"
+  },
+  "--compLoadingTitleColor": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--compNavbarBackgroundColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compNavbarBackIconColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compNavbarBackIconFontSize": {
+   "raw": "48px",
+   "sel": ":root"
+  },
+  "--compNavbarContainerHeight": {
+   "raw": "112px",
+   "sel": ":root"
+  },
+  "--compNavbarContainerIosHeightHeight": {
+   "raw": "88px",
+   "sel": ":root"
+  },
+  "--compNavbarSecondTitleFontSize": {
+   "raw": "30px",
+   "sel": ":root"
+  },
+  "--compNavbarSubTitleFontSize": {
+   "raw": "26px",
+   "sel": ":root"
+  },
+  "--compNavbarSubTitleColor": {
+   "raw": "#4f5563",
+   "sel": ":root"
+  },
+  "--compNavbarTitleFontSize": {
+   "raw": "36px",
+   "sel": ":root"
+  },
+  "--compNavbarTitleFontWeight": {
+   "raw": "500",
+   "sel": ":root"
+  },
+  "--compNavbarTitleColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compPaybarContainerBackgroundColor": {
+   "raw": "#f6f7fa",
+   "sel": ":root"
+  },
+  "--compPaybarContainerPaddingBottom": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compPaybarContainerPaddingLeft": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compPaybarContainerPaddingRight": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compPaybarContainerPaddingTop": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compPaybarDetailColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compPaybarDetailFontSize": {
+   "raw": "26px",
+   "sel": ":root"
+  },
+  "--compPaybarSubtitleColor": {
+   "raw": "#4f5563",
+   "sel": ":root"
+  },
+  "--compPaybarSubtitleFontSize": {
+   "raw": "26px",
+   "sel": ":root"
+  },
+  "--compPaybarTitleMaxWidth": {
+   "raw": "416px",
+   "sel": ":root"
+  },
+  "--compPaybarTitleColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compPaybarTitleFontSize": {
+   "raw": "36px",
+   "sel": ":root"
+  },
+  "--compPaybarTitleFontWeight": {
+   "raw": "500",
+   "sel": ":root"
+  },
+  "--compPaybarTitlePrefixFontWeight": {
+   "raw": "500",
+   "sel": ":root"
+  },
+  "--compPaybarTitlePrefixFontSize": {
+   "raw": "30px",
+   "sel": ":root"
+  },
+  "--compPopoverPadding": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compPopoverBgColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compPopoverFontSize": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--compPopoverMinWidth": {
+   "raw": "132px",
+   "sel": ":root"
+  },
+  "--compPopoverMaxWidth": {
+   "raw": "670px",
+   "sel": ":root"
+  },
+  "--compPopoverRadius": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--compPopoverTextColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compPopoverArrowOffset": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compRadioWidth": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compRadioHeight": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compRadioFontSize": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--compRadioGap": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compRadioCheckedColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compRadioCheckedDisabledColor": {
+   "raw": "#c6d7ff",
+   "sel": ":root"
+  },
+  "--compRadioUncheckedColor": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--compRadioUncheckedDisabledColor": {
+   "raw": "#d4d7de",
+   "sel": ":root"
+  },
+  "--compRadioUncheckedDisabledBackgroundColor": {
+   "raw": "#f6f7fa",
+   "sel": ":root"
+  },
+  "--compScreenViewFontWeight": {
+   "raw": "500",
+   "sel": ":root"
+  },
+  "--compScreenViewLetterSpacing": {
+   "raw": "-0.82px",
+   "sel": ":root"
+  },
+  "--compScreenViewColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compScreenViewLineHeight": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compSkeletonBackgroundColor": {
+   "raw": "rgba(111,118,133,0.16)",
+   "sel": ":root"
+  },
+  "--compSkeletonCardBackgroundColor": {
+   "raw": "#f6f7fa",
+   "sel": ":root"
+  },
+  "--compSkeletonCardChildBgColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compSliderLabelFontWeight": {
+   "raw": "400",
+   "sel": ":root"
+  },
+  "--compSliderLabelFontSize": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--compSliderLabelColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compSliderThumbBorderWidth": {
+   "raw": "0px",
+   "sel": ":root"
+  },
+  "--compSliderThumbBackgroundColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compSliderThumbBorderColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compSliderThumbDisabledBgColor": {
+   "raw": "#b9bec7",
+   "sel": ":root"
+  },
+  "--compSliderTipBorderRadius": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compSliderTipFontSize": {
+   "raw": "20px",
+   "sel": ":root"
+  },
+  "--compSliderTipColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compSliderTipBackgroundColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compSliderTipHeight": {
+   "raw": "35px",
+   "sel": ":root"
+  },
+  "--compSliderTrackColor": {
+   "raw": "#b9bec7",
+   "sel": ":root"
+  },
+  "--compSliderTrackSelectColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compSliderTrackDisabledColor": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--compStepperFontSize": {
+   "raw": "24px",
+   "sel": ":root"
+  },
+  "--compStepperGap": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compStepperContentFontSize": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--compStepperContentLineHeight": {
+   "raw": "22px",
+   "sel": ":root"
+  },
+  "--compStepperContentFontWeight": {
+   "raw": "400",
+   "sel": ":root"
+  },
+  "--compStepperContentColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compStepperContentWidth": {
+   "raw": "18px",
+   "sel": ":root"
+  },
+  "--compStepperOperationDisabledColor": {
+   "raw": "#b9bec7",
+   "sel": ":root"
+  },
+  "--compStepperOperationColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compSwitchWidth": {
+   "raw": "50px",
+   "sel": ":root"
+  },
+  "--compSwitchBorderWidth": {
+   "raw": "2px",
+   "sel": ":root"
+  },
+  "--compSwitchBorderColor": {
+   "raw": "#d4d7de",
+   "sel": ":root"
+  },
+  "--compSwitchHeight": {
+   "raw": "30px",
+   "sel": ":root"
+  },
+  "--compSwitchBackgroundColor": {
+   "raw": "#d4d7de",
+   "sel": ":root"
+  },
+  "--compSwitchAndroidBorderWidth": {
+   "raw": "1px",
+   "sel": ":root"
+  },
+  "--compSwitchAndroidHeight": {
+   "raw": "28px",
+   "sel": ":root"
+  },
+  "--compSwitchAndroidBackgroundColor": {
+   "raw": "#d4d7de",
+   "sel": ":root"
+  },
+  "--compSwitchAndroidBorderColor": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--compSwitchAndroidWidth": {
+   "raw": "68px",
+   "sel": ":root"
+  },
+  "--compSwitchAndroidCircleWidth": {
+   "raw": "40px",
+   "sel": ":root"
+  },
+  "--compSwitchCheckedColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compSwitchCircleWidth": {
+   "raw": "26px",
+   "sel": ":root"
+  },
+  "--compSwitchDisabledBackgroundColor": {
+   "raw": "transparent",
+   "sel": ":root"
+  },
+  "--compSwitchSHeight": {
+   "raw": "48px",
+   "sel": ":root"
+  },
+  "--compSwitchSWidth": {
+   "raw": "80px",
+   "sel": ":root"
+  },
+  "--compSwitchSBorderWidth": {
+   "raw": "2px",
+   "sel": ":root"
+  },
+  "--compSwitchSCircleWidth": {
+   "raw": "44px",
+   "sel": ":root"
+  },
+  "--compTabsBackgroundColor": {
+   "raw": "#f6f7fa",
+   "sel": ":root"
+  },
+  "--compTabsActiveColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compTabsInactiveColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compTabsIndicatorHeight": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--compTabsIndicatorBorderRadius": {
+   "raw": "2px",
+   "sel": ":root"
+  },
+  "--compTabsItemMaxWidth": {
+   "raw": "280px",
+   "sel": ":root"
+  },
+  "--compTabsItemLineHeight": {
+   "raw": "22px",
+   "sel": ":root"
+  },
+  "--compTabsItemFontSize": {
+   "raw": "30px",
+   "sel": ":root"
+  },
+  "--compTabsItemFontWeight": {
+   "raw": "500",
+   "sel": ":root"
+  },
+  "--compTabsItemMarginBottom": {
+   "raw": "25px",
+   "sel": ":root"
+  },
+  "--compTabsItemMarginTop": {
+   "raw": "25px",
+   "sel": ":root"
+  },
+  "--compTagBorderWidth": {
+   "raw": "1px",
+   "sel": ":root"
+  },
+  "--compTagBorderRadius": {
+   "raw": "2px",
+   "sel": ":root"
+  },
+  "--compTagBasicColor": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--compTagBrandColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compTagDisableColor": {
+   "raw": "#b9bec7",
+   "sel": ":root"
+  },
+  "--compTagDiscountBorderColor": {
+   "raw": "#d81e60",
+   "sel": ":root"
+  },
+  "--compTagDiscountColor": {
+   "raw": "#d81e60",
+   "sel": ":root"
+  },
+  "--compTagDiscountTransparentBgColor": {
+   "raw": "#fff3f6",
+   "sel": ":root"
+  },
+  "--compTagDiscountLinearBorderColor": {
+   "raw": "#fcc8d0",
+   "sel": ":root"
+  },
+  "--compTagIconWidth": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--compTagIconHeight": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--compTagIconMarginRight": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--compTagLHeight": {
+   "raw": "20px",
+   "sel": ":root"
+  },
+  "--compTagLFontSize": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--compTagLPaddingLeft": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--compTagLPaddingRight": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--compTagLLineHeight": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--compTagMHeight": {
+   "raw": "20px",
+   "sel": ":root"
+  },
+  "--compTagMFontSize": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--compTagMPaddingRight": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--compTagMPaddingLeft": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--compTagMLineHeight": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--compTagNoticeBorderColor": {
+   "raw": "#c74401",
+   "sel": ":root"
+  },
+  "--compTagNoticeColor": {
+   "raw": "#c74401",
+   "sel": ":root"
+  },
+  "--compTagNoticeTransparentBgColor": {
+   "raw": "#fdf5f2",
+   "sel": ":root"
+  },
+  "--compTagNoticeLinearBorderColor": {
+   "raw": "#ffcab0",
+   "sel": ":root"
+  },
+  "--compTagSFontSize": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--compTagSPaddingRight": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--compTagSPaddingLeft": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--compTagSHeight": {
+   "raw": "20px",
+   "sel": ":root"
+  },
+  "--compTagSLineHeight": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--compTagSuccessColor": {
+   "raw": "#047c88",
+   "sel": ":root"
+  },
+  "--compTagSuccessBorderColor": {
+   "raw": "#047c88",
+   "sel": ":root"
+  },
+  "--compTagSuccessSolidTextColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compTagSuccessTransparentBgColor": {
+   "raw": "#edfafb",
+   "sel": ":root"
+  },
+  "--compTagSuccessLinearBorderColor": {
+   "raw": "#a9e4ea",
+   "sel": ":root"
+  },
+  "--compTextAreaBackgroundColor": {
+   "raw": "#f6f7fa",
+   "sel": ":root"
+  },
+  "--compTextAreaPadding": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--compTextAreaInputColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compTextAreaInputFontSize": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compTextAreaInputHeight": {
+   "raw": "114px",
+   "sel": ":root"
+  },
+  "--compTextAreaInputPlaceHolderColor": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--compTextAreaInputPaddingLeft": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--compTextAreaInputPaddingTop": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compTextAreaInputBorderColorFocus": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compTextAreaInputBorderColor": {
+   "raw": "#d4d7de",
+   "sel": ":root"
+  },
+  "--compTextAreaTipsCountColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compTextAreaTipsCountErrorColor": {
+   "raw": "#d02c2a",
+   "sel": ":root"
+  },
+  "--compTextAreaTipsCountFontSize": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--compTextAreaTipsCountGap": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compTextAreaTipsCountMarginTop": {
+   "raw": "4px",
+   "sel": ":root"
+  },
+  "--compTextinputBackgroundColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compTextinputColor": {
+   "raw": "#d4d7de",
+   "sel": ":root"
+  },
+  "--compTextinputErrorStatusTipsFontSize": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--compTextinputErrorColor": {
+   "raw": "#d02c2a",
+   "sel": ":root"
+  },
+  "--compTextinputFocusColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compTextinputInputFontSize": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compTextinputInputPlaceHolderColor": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--compTextinputTitleFontSize": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--compTextinputTitleColor": {
+   "raw": "#6f7685",
+   "sel": ":root"
+  },
+  "--compTipsBackgroundColor": {
+   "raw": "#f1f5ff",
+   "sel": ":root"
+  },
+  "--compTipsColor": {
+   "raw": "#0f294d",
+   "sel": ":root"
+  },
+  "--compTipsFontSize": {
+   "raw": "14px",
+   "sel": ":root"
+  },
+  "--compTipsButtonBorderRadius": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compTipsButtonColor": {
+   "raw": "#2c61fe",
+   "sel": ":root"
+  },
+  "--compTipsErrorColor": {
+   "raw": "#f5594a",
+   "sel": ":root"
+  },
+  "--compTipsErrorBackgroundColor": {
+   "raw": "rgba(245,89,74,0.08)",
+   "sel": ":root"
+  },
+  "--compTipsErrorBorder": {
+   "raw": "rgba(245,89,74,0.1)",
+   "sel": ":root"
+  },
+  "--compTipsNormalBackgroundColor": {
+   "raw": "#fff",
+   "sel": ":root"
+  },
+  "--compTipsWarningColor": {
+   "raw": "#c74401",
+   "sel": ":root"
+  },
+  "--compTipsWarningBorder": {
+   "raw": "#c74401",
+   "sel": ":root"
+  },
+  "--compTipsWarningBackgroundColor": {
+   "raw": "#fdf5f2",
+   "sel": ":root"
+  },
+  "--compTipsWeakColor": {
+   "raw": "#4f5563",
+   "sel": ":root"
+  },
+  "--compTipsWeakBackgroundColor": {
+   "raw": "#f6f7fa",
+   "sel": ":root"
+  },
+  "--compTooltipBackgroundColor": {
+   "raw": "#121826",
+   "sel": ":root"
+  },
+  "--compTooltipLPaddingHorizontal": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compTooltipLPaddingVertical": {
+   "raw": "8px",
+   "sel": ":root"
+  },
+  "--compTooltipLLineHeight": {
+   "raw": "16px",
+   "sel": ":root"
+  },
+  "--compTooltipLFontSize": {
+   "raw": "12px",
+   "sel": ":root"
+  },
+  "--trip-font-family": {
+   "raw": "\"Trip Geom, BlinkMacSystemFont, -apple-system, Roboto, Helvetica, Arial, sans-serif\"",
+   "sel": ":root"
+  },
+  "--trip-font-family-zh-hk": {
+   "raw": "\"Trip Geom, Microsoft Jhenghei, PingFang HK, STHeitiTC-Light, tahoma, arial, sans-serif\"",
+   "sel": ":root"
+  },
+  "--trip-font-family-zh-tw": {
+   "raw": "\"Trip Geom, Microsoft Jhenghei, PingFang TC, STHeitiTC-Light, tahoma, arial, sans-serif\"",
+   "sel": ":root"
+  },
+  "--trip-font-family-ko-kr": {
+   "raw": "\"Trip Geom, Noto sans KR, Apple SD Gothic Neo, \ub9d1\uc740 \uace0\ub515, Malgun Gothic, tahoma, arial, sans-serif\"",
+   "sel": ":root"
+  },
+  "--trip-font-family-ja-jp": {
+   "raw": "\"Trip Geom, SF Pro JP, Hiragino Kaku Gothic Pro, \u30d2\u30e9\u30ae\u30ce\u89d2\u30b4 Pro W3, Meiryo UI, Meiryo, MS PGothic, Helvetica, Osaka, Tahoma,",
+   "sel": ":root"
+  },
+  "--trip-font-family-vi-vn": {
+   "raw": "\"BlinkMacSystemFont, -apple-system, Roboto, Helvetica, Arial, sans-serif\"",
+   "sel": ":root"
+  },
+  "--trip-font-family-th-th": {
+   "raw": "\"Trip Geom, Noto Sans Thai, Kanit, Sarabun, sans-serif\"",
+   "sel": ":root"
+  },
+  "--smtcTypographyBodyL": {
+   "raw": "400 16px/160% var(--trip-font-family-zh-hk)",
+   "sel": "[lang=\"zh-HK\"] body"
+  },
+  "--smtcTypographyBodyM": {
+   "raw": "400 14px/160% var(--trip-font-family-zh-hk)",
+   "sel": "[lang=\"zh-HK\"] body"
+  },
+  "--smtcTypographyBodyS": {
+   "raw": "400 12px/160% var(--trip-font-family-zh-hk)",
+   "sel": "[lang=\"zh-HK\"] body"
+  },
+  "--smtcTypographyBodyXs": {
+   "raw": "400 11px/135% var(--trip-font-family-zh-hk)",
+   "sel": "[lang=\"zh-HK\"] body"
+  },
+  "--smtcTypographyDiaplayL": {
+   "raw": "700 51px/135% var(--trip-font-family-zh-hk)",
+   "sel": "[lang=\"zh-HK\"] body"
+  },
+  "--smtcTypographyDiaplayM": {
+   "raw": "700 45px/135% var(--trip-font-family-zh-hk)",
+   "sel": "[lang=\"zh-HK\"] body"
+  },
+  "--smtcTypographyDiaplayS": {
+   "raw": "700 40px/135% var(--trip-font-family-zh-hk)",
+   "sel": "[lang=\"zh-HK\"] body"
+  }
+ },
+ "resolved": {
+  "--coreColorTripBestBrown": "#673114",
+  "--coreColorTripBestGoldB32": "rgba(255,226,200,0.32)",
+  "--coreFontSizeT36": "36px",
+  "--coreFontSizeT22": "22px",
+  "--coreFontSizeT56": "56px",
+  "--coreFontSizeT48": "48px",
+  "--coreFontSizeT30": "30px",
+  "--coreFontSizeT64": "64px",
+  "--coreFontSizeT44": "44px",
+  "--coreFontSizeT40": "40px",
+  "--coreFontSizeT26": "26px",
+  "--coreLineHeightT64": "76px",
+  "--coreLineHeightT30": "40px",
+  "--coreLineHeightT26": "36px",
+  "--coreLineHeightT36": "48px",
+  "--coreLineHeightT56": "68px",
+  "--coreLineHeightT28Paragraph": "44px",
+  "--coreLineHeightT48": "60px",
+  "--coreLineHeightT30Paragraph": "46px",
+  "--coreLineHeightT40": "52px",
+  "--coreLineHeightT44": "56px",
+  "--coreLineHeightT22": "32px",
+  "--smtcFontSizeSubtitle1": "36px",
+  "--smtcFontSizeBody3Paragraph": "28px",
+  "--smtcFontSizeCaption2Paragraph": "24px",
+  "--smtcFontSizeBody1": "32px",
+  "--smtcFontSizeBody2": "30px",
+  "--smtcFontSizeLabel1": "22px",
+  "--smtcFontSizeCaption1": "26px",
+  "--smtcFontSizeBody3": "28px",
+  "--smtcFontSizeLabel2": "22px",
+  "--smtcFontSizeBody2Paragraph": "30px",
+  "--smtcFontSizeCaption1Paragraph": "26px",
+  "--smtcFontSizeCaption2": "24px",
+  "--smtcLineHeightSubtitle1": "48px",
+  "--smtcLineHeightCaption1Paragraph": "36px",
+  "--smtcLineHeightCaption2Paragraph": "34px",
+  "--smtcLineHeightBody2": "40px",
+  "--smtcLineHeightLabel2": "32px",
+  "--smtcLineHeightBody1": "42px",
+  "--smtcLineHeightBody2Paragraph": "46px",
+  "--smtcLineHeightLabel1": "32px",
+  "--smtcLineHeightBody3Paragraph": "44px",
+  "--smtcLineHeightBody3": "36px",
+  "--smtcLineHeightCaption1": "36px",
+  "--smtcLineHeightCaption2": "34px",
+  "--smtcTypographyCaption1": "400 26px/36px sans-serif",
+  "--smtcTypographyLabel2": "400 22px/32px sans-serif",
+  "--smtcTypographyBody2": "400 30px/40px sans-serif",
+  "--smtcTypographyBody3": "400 28px/36px sans-serif",
+  "--smtcTypographyBody3Paragraph": "400 28px/44px sans-serif",
+  "--smtcTypographyCaption1Paragraph": "400 26px/36px sans-serif",
+  "--smtcTypographyLabel1": "400 22px/32px sans-serif",
+  "--smtcTypographyBody1": "400 32px/42px sans-serif",
+  "--smtcTypographyBody2Paragraph": "400 30px/46px sans-serif",
+  "--smtcTypographySubtitle1": "400 36px/48px sans-serif",
+  "--smtcTypographyCaption2": "400 24px/34px sans-serif",
+  "--smtcTypographyCaption2Paragraph": "400 24px/34px sans-serif",
+  "--coreBorderRadiusM": "8px",
+  "--coreBorderRadiusS": "4px",
+  "--coreBorderRadiusL": "12px",
+  "--coreBorderRadiusNone": "0px",
+  "--coreBorderRadiusFull": "999px",
+  "--coreBorderRadiusXs": "2px",
+  "--coreBorderWidthDivider": "0.5px",
+  "--coreBorderWidthDefault": "1px",
+  "--coreColorBlue1": "#f1f5ff",
+  "--coreColorBlue2": "#e5edff",
+  "--coreColorBlue3": "#c6d7ff",
+  "--coreColorBlue4": "#9fbdff",
+  "--coreColorBlue5": "#7099ff",
+  "--coreColorBlue6": "#2c61fe",
+  "--coreColorBlue7": "#173cd2",
+  "--coreColorBlue8": "#0920a0",
+  "--coreColorBlue9": "#041172",
+  "--coreColorBlue10": "#07143c",
+  "--coreColorBlue5A32": "rgba(112,153,255,0.32)",
+  "--coreColorBlue5A8": "rgba(112,153,255,0.08)",
+  "--coreColorBrandBlue": "#2346ff",
+  "--coreColorBrandYellow": "#ffb400",
+  "--coreColorCyan1": "#edfafb",
+  "--coreColorCyan2": "#d3f6fa",
+  "--coreColorCyan3": "#a9e4ea",
+  "--coreColorCyan4": "#65d0dd",
+  "--coreColorCyan5": "#27b2c1",
+  "--coreColorCyan6": "#047c88",
+  "--coreColorCyan7": "#015e67",
+  "--coreColorCyan8": "#00434a",
+  "--coreColorCyan9": "#002d32",
+  "--coreColorCyan10": "#021d20",
+  "--coreColorCyan5A8": "rgba(39,178,193,0.08)",
+  "--coreColorCyan5A32": "rgba(39,178,193,0.32)",
+  "--coreColorNeutral1": "#f6f7fa",
+  "--coreColorNeutral2": "#ebedf1",
+  "--coreColorNeutral3": "#e5e7eb",
+  "--coreColorNeutral4": "#b9bec7",
+  "--coreColorNeutral5": "#989eab",
+  "--coreColorNeutral6": "#6f7685",
+  "--coreColorNeutral7": "#4f5563",
+  "--coreColorNeutral8": "#373d4a",
+  "--coreColorNeutral9": "#1f242e",
+  "--coreColorNeutral10": "#121826",
+  "--coreColorNeutralBlack": "#000",
+  "--coreColorNeutralWhite": "#fff",
+  "--coreColorNeutral6A16": "hsla(221,9%,48%,0.16)",
+  "--coreColorNeutralBlackA16": "rgba(0,0,0,0.16)",
+  "--coreColorNeutralBlackA64": "rgba(0,0,0,0.64)",
+  "--coreColorNeutral5A8": "rgba(152,158,171,0.08)",
+  "--coreColorNeutral5A16": "rgba(152,158,171,0.16)",
+  "--coreColorNeutral5A32": "rgba(152,158,171,0.32)",
+  "--coreColorNeutralWhiteA16": "hsla(0,0%,100%,0.16)",
+  "--coreColorNeutralWhiteA96": "hsla(0,0%,100%,0.96)",
+  "--coreColorNeutralWhiteA40": "hsla(0,0%,100%,0.4)",
+  "--coreColorNeutralBlackA80": "rgba(0,0,0,0.8)",
+  "--coreColorOrange1": "#fdf5f2",
+  "--coreColorOrange2": "#ffe7dc",
+  "--coreColorOrange3": "#ffcab0",
+  "--coreColorOrange4": "#fea484",
+  "--coreColorOrange5": "#ed784e",
+  "--coreColorOrange6": "#c74401",
+  "--coreColorOrange7": "#8b3717",
+  "--coreColorOrange8": "#62240c",
+  "--coreColorOrange9": "#431706",
+  "--coreColorOrange10": "#2d0d03",
+  "--coreColorOrange5A8": "rgba(237,120,78,0.08)",
+  "--coreColorOrange5A32": "rgba(237,120,78,0.32)",
+  "--coreColorPink1": "#fff3f6",
+  "--coreColorPink2": "#fee6e9",
+  "--coreColorPink3": "#fcc8d0",
+  "--coreColorPink4": "#fd9eb0",
+  "--coreColorPink5": "#f56789",
+  "--coreColorPink6": "#d81e60",
+  "--coreColorPink7": "#9f0042",
+  "--coreColorPink8": "#6d0b2d",
+  "--coreColorPink9": "#4b051d",
+  "--coreColorPink10": "#271015",
+  "--coreColorPink5A8": "rgba(245,103,137,0.08)",
+  "--coreColorPink5A32": "rgba(245,103,137,0.32)",
+  "--coreColorRed1": "#fff4f2",
+  "--coreColorRed2": "#ffe6e3",
+  "--coreColorRed3": "#ffc8c0",
+  "--coreColorRed4": "#fda297",
+  "--coreColorRed5": "#f86c61",
+  "--coreColorRed6": "#d02c2a",
+  "--coreColorRed7": "#9c1b1b",
+  "--coreColorRed8": "#6e0f10",
+  "--coreColorRed9": "#4c0808",
+  "--coreColorRed10": "#330404",
+  "--coreColorRed5A8": "hsla(4,92%,68%,0.08)",
+  "--coreColorRed5A32": "hsla(4,92%,68%,0.32)",
+  "--coreFontFamilyMono": "\"Trip Geom TF\"",
+  "--coreFontFamilySans": "\"Trip Geom\"",
+  "--coreFontSize10": "32px",
+  "--coreFontSize11": "40px",
+  "--coreFontSize12": "45px",
+  "--coreFontSize13": "51px",
+  "--coreFontSize05": "18px",
+  "--coreFontSize07": "22px",
+  "--coreFontSize03": "14px",
+  "--coreFontSize02": "12px",
+  "--coreFontSize08": "24px",
+  "--coreFontSize03old": "13px",
+  "--coreFontSize04": "16px",
+  "--coreFontSize06": "20px",
+  "--coreFontSize09": "28px",
+  "--coreFontSize01": "11px",
+  "--coreLineHeightS": "1.25",
+  "--coreLineHeightM": "1.5",
+  "--corePurple1": "#f5f6ff",
+  "--corePurple2": "#eaebff",
+  "--corePurple3": "#d2d4fa",
+  "--corePurple4": "#b5b5fd",
+  "--corePurple5": "#948dff",
+  "--corePurple6": "#6d4df8",
+  "--corePurple7": "#5127cc",
+  "--corePurple8": "#39079b",
+  "--corePurple9": "#26016e",
+  "--corePurple10": "#160f3b",
+  "--corePurple5A8": "rgba(148,141,255,0.08)",
+  "--corePurple5A32": "rgba(148,141,255,0.32)",
+  "--coreSpacingNone": "0.1px",
+  "--coreSpacingXxxs": "2px",
+  "--coreSpacingXxs": "4px",
+  "--coreSpacingXs": "8px",
+  "--coreSpacingS": "12px",
+  "--coreSpacingM": "16px",
+  "--coreSpacingL": "20px",
+  "--coreSpacingXl": "24px",
+  "--coreSpacingXxl": "32px",
+  "--coreSpacingNegativeXxs": "-4px",
+  "--coreSpacingNegativeXs": "-8px",
+  "--coreSpacingNegativeS": "-12px",
+  "--coreSpacingNegativeM": "-16px",
+  "--coreSpacingNegativeXl": "-24px",
+  "--coreTripBestBrown": "#673114",
+  "--coreTripBestGoldA32": "rgba(255,226,200,0.32)",
+  "--coreTripBestBrownDark": "#f4c498",
+  "--coreTripBestGoldA16Dark": "rgba(235,221,209,0.16)",
+  "--coreYellow1": "#fff7eb",
+  "--coreYellow2": "#fcebc8",
+  "--coreYellow3": "#f2d396",
+  "--coreYellow4": "#e3b757",
+  "--coreYellow5": "#c79512",
+  "--coreYellow6": "#966a00",
+  "--coreYellow7": "#704f00",
+  "--coreYellow8": "#4d3600",
+  "--coreYellow9": "#352200",
+  "--coreYellow10": "#231601",
+  "--coreYellow5A8": "rgba(199,149,18,0.08)",
+  "--coreYellow5A32": "rgba(199,149,18,0.32)",
+  "--smtcBodyXs": "400 11px/125% \"Trip Geom\"",
+  "--smtcBodyS": "400 12px/150% \"Trip Geom\"",
+  "--smtcBodyM": "400 14px/150% \"Trip Geom\"",
+  "--smtcBodyL": "400 16px/150% \"Trip Geom\"",
+  "--smtcColorBgSurfaceActive": "#f6f7fa",
+  "--smtcColorBgContainer": "#f6f7fa",
+  "--smtcColorBgContainerActive": "#ebedf1",
+  "--smtcColorBgDisable": "#b9bec7",
+  "--smtcColorBgPopover": "rgba(0,0,0,0.8)",
+  "--smtcColorBgSkeleton": "hsla(221,9%,48%,0.16)",
+  "--smtcColorBgBrand": "#2c61fe",
+  "--smtcColorBgBrandActive": "#173cd2",
+  "--smtcColorBgBrandTinted": "#f1f5ff",
+  "--smtcColorBgRate": "#173cd2",
+  "--smtcColorBgPositive": "#047c88",
+  "--smtcColorBgPositiveActive": "#015e67",
+  "--smtcColorBgPositiveTinted": "#edfafb",
+  "--smtcColorBgWarning": "#c74401",
+  "--smtcColorBgWarningActive": "#8b3717",
+  "--smtcColorBgWarningTinted": "#fdf5f2",
+  "--smtcColorBgAlert": "#d02c2a",
+  "--smtcColorBgAlertActive": "#9c1b1b",
+  "--smtcColorBgAlertTinted": "#fff4f2",
+  "--smtcColorBgPopular": "#d02c2a",
+  "--smtcColorBgDiscount": "#d81e60",
+  "--smtcColorBgDiscountTinted": "#fff3f6",
+  "--smtcColorBgFavorite": "#d81e60",
+  "--smtcColorBgFavoriteActive": "#9f0042",
+  "--smtcColorBgFavoriteTinted": "#fff3f6",
+  "--smtcColorBgMarketing": "#6d4df8",
+  "--smtcColorBgMarketingTinted": "#f5f6ff",
+  "--smtcColorBgTripBestTinted": "rgba(255,226,200,0.32)",
+  "--smtcColorBgHotelStar": "#ffb400",
+  "--smtcColorBgCoinsTinted": "#fff7eb",
+  "--smtcColorBorderBrandTinted": "#c6d7ff",
+  "--smtcColorBorderDiscountTinted": "#fcc8d0",
+  "--smtcColorBorderWarningTinted": "#ffcab0",
+  "--smtcColorBorderPositiveTinted": "#a9e4ea",
+  "--smtcColorBorderAlertTinted": "#ffc8c0",
+  "--smtcColorBorderInversed": "#f6f7fa",
+  "--smtcColorBorderAlert": "#d02c2a",
+  "--smtcColorBorderDefault": "#e5e7eb",
+  "--smtcColorBorderPrimary": "#121826",
+  "--smtcColorBorderBrandFocused": "#0920a0",
+  "--smtcColorBorderMarketingTinted": "#d2d4fa",
+  "--smtcColorTextAlert": "#d02c2a",
+  "--smtcColorTextPositive": "#047c88",
+  "--smtcColorTextDisable": "#b9bec7",
+  "--smtcColorTextInversed": "#fff",
+  "--smtcColorTextBrandActive": "#173cd2",
+  "--smtcColorTextAlertActive": "#9c1b1b",
+  "--smtcColorTextPopular": "#d02c2a",
+  "--smtcDisplayS": "700 40px/125% \"Trip Geom\"",
+  "--smtcDisplayM": "700 45px/125% \"Trip Geom\"",
+  "--smtcDisplayL": "700 51px/125% \"Trip Geom\"",
+  "--smtcFontSizeBodySizeXs": "11px",
+  "--smtcFontSizeBodySizeS": "12px",
+  "--smtcFontSizeBodySizeM": "14px",
+  "--smtcFontSizeBodySizeL": "16px",
+  "--smtcFontSizeHeadingSizeXs": "14px",
+  "--smtcFontSizeHeadingSizeS": "16px",
+  "--smtcFontSizeHeadingSizeM": "18px",
+  "--smtcFontSizeHeadingSizeL": "20px",
+  "--smtcFontSizeHeadingSizeXl": "22px",
+  "--smtcFontSizeHeadingSize2Xl": "28px",
+  "--smtcFontSizeHeadingSize3Xl": "32px",
+  "--smtcFontSizeDisplaySizeS": "40px",
+  "--smtcFontSizeDisplaySizeM": "45px",
+  "--smtcFontSizeDisplaySizeL": "51px",
+  "--smtcFontWeightBodyWeight": "400",
+  "--smtcFontWeightBodyWeightEmphasized": "500",
+  "--smtcFontWeightHeadingWeight": "700",
+  "--smtcFontWeightDisplayWeight": "700",
+  "--smtcTypographyBodyEmphasizedXs": "500 11px/13.75px sans-serif",
+  "--smtcTypographyBodyEmphasizedS": "500 12px/18px sans-serif",
+  "--smtcTypographyBodyEmphasizedM": "500 14px/21px sans-serif",
+  "--smtcTypographyBodyEmphasizedL": "500 16px/24px sans-serif",
+  "--smtcTypographyHeadingXs": "700 14px/125% \"Trip Geom\"",
+  "--smtcTypographyHeadingS": "700 16px/125% \"Trip Geom\"",
+  "--smtcTypographyHeadingM": "700 18px/125% \"Trip Geom\"",
+  "--smtcTypographyHeadingL": "700 20px/125% \"Trip Geom\"",
+  "--smtcTypographyHeadingXl": "700 22px/125% \"Trip Geom\"",
+  "--smtcTypographyHeading2Xl": "700 28px/125% \"Trip Geom\"",
+  "--smtcTypographyHeading3Xl": "700 32px/125% \"Trip Geom\"",
+  "--smtcTypographyResidualS": "400 13px/19.5px sans-serif",
+  "--smtcTypographyResidualM": "500 18px/125% \"Trip Geom\"",
+  "--smtcTypographyResidualL": "500 20px/125% \"Trip Geom\"",
+  "--smtcTypographyResidualSEmphasized": "500 13px/19.5px sans-serif",
+  "--smtcTypographyResidualXl": "500 22px/125% \"Trip Geom\"",
+  "--smtcTypographyResidual2Xl": "500 24px/125% \"Trip Geom\"",
+  "--smtcTypographyResidual2XlStrong": "700 24px/125% \"Trip Geom\"",
+  "--compBadgeDefaultHeight": "14px",
+  "--compBadgeDefaultNumberMinWidth": "16px",
+  "--compBadgeDefaultBorderRadius": "999px",
+  "--compBadgeDefaultBackgroundColor": "#c74401",
+  "--compBadgeRibbonPaddingHorizontal": "2px",
+  "--compCheckboxCheckedCardBackgroundColor": "#2c61fe",
+  "--compCheckboxUncheckedCardBoderColor": "#d4d7de",
+  "--compCheckboxUncheckedCardBackgroundColor": "#f6f7fa",
+  "--compCheckboxUncheckedCardColor": "#121826",
+  "--compCheckboxUncheckedErrorColor": "#d02c2a",
+  "--compDialogContentCustomizeHeight": "400px",
+  "--compDialogContentPaddingTop": "24px",
+  "--compDialogContentPaddingTopWithClose": "36px",
+  "--compDialogContentCustomizeWidth": "327px",
+  "--compDialogContentPaddingLeft": "24px",
+  "--compDialogContentPaddingRight": "24px",
+  "--compDialogContentPaddingBottom": "16px",
+  "--compDialogContentIconCloseColor": "#121826",
+  "--compDialogContentIconCloseFontSize": "20px",
+  "--compDialogContentIconCloseRight": "8px",
+  "--compDialogContentIconCloseTop": "8px",
+  "--compDialogContentImageCustomizeHeight": "328px",
+  "--compDialogContentImageCustomizeWidth": "259px",
+  "--compEmptyBtnPadding": "12px",
+  "--compEmptyBtnBackgroundColor": "#2c61fe",
+  "--compEmptyBtnGap": "12px",
+  "--compEmptyBtnFontSize": "16px",
+  "--compEmptyBtnColor": "#fff",
+  "--compEmptyBtnHeight": "48px",
+  "--compEmptyBtnMarginTop": "16px",
+  "--compEmptyBtnBorderRadius": "8px",
+  "--compEmptyHzBtnMarginTop": "13px",
+  "--compEmptyHzBtnFontSize": "13px",
+  "--compEmptyHzBtnHeight": "32px",
+  "--compEmptySTitleLineHeight": "23px",
+  "--compEmptySImgSize": "120px",
+  "--compEmptySDescFontSize": "18px",
+  "--compEmptySDescLineHeight": "22px",
+  "--compEmptySTitleFontSize": "20px",
+  "--compEmptySDescMarginTop": "4px",
+  "--compEmptySecondaryBtnBorderColor": "#2c61fe",
+  "--compEmptySecondaryBtnColor": "#2c61fe",
+  "--compEmptySecondaryBtnBorderWidth": "0.5px",
+  "--compEmptySecondaryBtnBackgroundColor": "#fff",
+  "--compIconColor": "#121826",
+  "--compIconSize": "20px",
+  "--compImageBackgroundColor": "#f6f7fa",
+  "--compLoadingClosableButtonClickSize": "24px",
+  "--compLoadingFullScreenMaskColor": "rgba(0,0,0,0.64)",
+  "--compModalMaskColor": "rgba(0,0,0,0.64)",
+  "--compRadioCheckedCardBackgroundColor": "#2c61fe",
+  "--compRadioUncheckedCardBackgroundColorLinear": "#fff",
+  "--compRadioUncheckedCardBackgroundColor": "#f6f7fa",
+  "--compRadioUncheckedCardColor": "#121826",
+  "--compScreenViewBackgroundColor": "#fff",
+  "--compScreenViewHeaderBorderColor": "#d4d7de",
+  "--compScreenViewIconColor": "#121826",
+  "--compTextAreaBgColorWhite": "#fff",
+  "--compTextinputDisabledBgColor": "#f6f7fa",
+  "--compTextinputDisabledBorderColor": "#d4d7de",
+  "--compTextinputDisabledTextColor": "#b9bec7",
+  "--compTextinputInputColor": "#121826",
+  "--compTextinputInputIconColor": "#6f7685",
+  "--compTextinputTitleBackgroundColor": "#fff",
+  "--compTextinputTitleFocusColor": "#2c61fe",
+  "--compTextinputWrapperBorderColor": "#d4d7de",
+  "--compTextinputWrapperBorderColorFocus": "#2c61fe",
+  "--compToastBackgroundColor": "rgba(0,0,0,0.64)",
+  "--compToastBorderRadius": "4px",
+  "--compToastPadding": "12px",
+  "--compTooltipCloseColor": "#fff",
+  "--compTooltipMFontSize": "13px",
+  "--compTooltipMPaddingVertical": "8px",
+  "--compTooltipMLineHeight": "18px",
+  "--compTooltipMPaddingHorizontal": "8px",
+  "--compTooltipSPaddingHorizontal": "8px",
+  "--compTooltipSPaddingVertical": "8px",
+  "--compTooltipSFontSize": "13px",
+  "--compTooltipSLineHeight": "18px",
+  "--coreBorderRadius0": "0px",
+  "--coreBorderRadius4": "4px",
+  "--coreBorderRadius8": "8px",
+  "--coreBorderRadius16": "16px",
+  "--coreBorderRadius24": "24px",
+  "--coreBorderRadius32": "32px",
+  "--coreBorderRadiusRound": "9999px",
+  "--coreBorderWidth1": "1px",
+  "--coreBorderWidth2": "2px",
+  "--coreBorderWidth4": "4px",
+  "--coreColorSecondaryBlack": "#4f5563",
+  "--coreColorContentWhite": "#fff",
+  "--coreColorBlueC8": "#f1f5ff",
+  "--coreColorOrangeB32": "#ffcab0",
+  "--coreColorRed": "#d02c2a",
+  "--coreColorRedC8": "#fff4f2",
+  "--coreColorTripBest": "#673114",
+  "--coreColorTransparent": "transparent",
+  "--coreColorTertiaryBlack": "#6f7685",
+  "--coreColorQuaternaryGray": "#ebedf1",
+  "--coreColorBrandingBlue": "#2c61fe",
+  "--coreColorTertiaryGray": "#d4d7de",
+  "--coreColorBrandingOrange": "#ffb400",
+  "--coreColorBlueB32": "#c6d7ff",
+  "--coreColorCyanText": "#047c88",
+  "--coreColorBlack": "#121826",
+  "--coreColorGray": "#b9bec7",
+  "--coreColorSecondaryGray": "#6f7685",
+  "--coreColorWhite": "#fff",
+  "--coreColorOrange": "#c74401",
+  "--coreColorPinkC8": "#fff3f6",
+  "--coreColorTripBlue": "#2346ff",
+  "--coreColorOrangeText": "#c74401",
+  "--coreColorRedText": "#d02c2a",
+  "--coreColorCyanB32": "#a9e4ea",
+  "--coreColorScrim": "rgba(0,0,0,0.64)",
+  "--coreColorCyan": "#047c88",
+  "--coreColorPink": "#d81e60",
+  "--coreColorPinkText": "#d81e60",
+  "--coreColorOrangeC8": "#fdf5f2",
+  "--coreColorRedB32": "#ffc8c0",
+  "--coreColorBlueRate": "#173cd2",
+  "--coreColorPurpleB32": "#d2d4fa",
+  "--coreColorPurpleC8": "#f5f6ff",
+  "--coreColorCyanC8": "#edfafb",
+  "--coreColorPurple": "#6d4df8",
+  "--coreColorTripCoins": "#966a00",
+  "--coreColorFifthGray": "#f6f7fa",
+  "--coreColorPurpleText": "#6d4df8",
+  "--coreColorPlaceholderGray": "hsla(221,9%,48%,0.16)",
+  "--coreColorPinkB32": "#fcc8d0",
+  "--coreColorSecondaryContentWhite": "#fff",
+  "--coreFontFamilyTripGeom": "\"Trip Geom\"",
+  "--coreFontFamilyTripGeomTf": "\"Trip Geom TF\"",
+  "--coreFontSizeT24": "24px",
+  "--coreFontSizeT28": "28px",
+  "--coreFontSizeT20": "20px",
+  "--coreFontSizeT18": "18px",
+  "--coreFontSizeT32": "32px",
+  "--coreFontSizeT16": "16px",
+  "--coreFontSizeT14": "14px",
+  "--coreFontSizeT12": "12px",
+  "--coreFontWeightRegular": "400",
+  "--coreFontWeightBold": "700",
+  "--coreFontWeightMedium": "500",
+  "--coreIconfontAddCircular": "\"e000\"",
+  "--coreIconfontCheck": "\"f17c6\"",
+  "--coreIconfontChecked": "\"f05ca\"",
+  "--coreIconfontCheckSolid": "\"eced\"",
+  "--coreIconfontClearSolid": "\"e003\"",
+  "--coreIconfontDefault": "\"ee4f\"",
+  "--coreIconfontForwardRight": "\"e008\"",
+  "--coreIconfontSelectedLine": "\"e001\"",
+  "--coreIconfontSelectedSolid": "\"ed1e\"",
+  "--coreIconfontWarningLine": "\"eb51\"",
+  "--coreLineHeightT24": "30px",
+  "--coreLineHeightT32": "38px",
+  "--coreLineHeightT18": "24px",
+  "--coreLineHeightT28": "34px",
+  "--coreLineHeightT20": "26px",
+  "--coreLineHeightT16": "22px",
+  "--coreLineHeightT14Title": "18px",
+  "--coreLineHeightT14Body": "22px",
+  "--coreLineHeightT12Caption": "18px",
+  "--coreLineHeightT12Tag": "16px",
+  "--coreSpacing0": "0px",
+  "--coreSpacing4": "4px",
+  "--coreSpacing8": "8px",
+  "--coreSpacing12": "12px",
+  "--coreSpacing16": "16px",
+  "--coreSpacing24": "24px",
+  "--coreSpacing32": "32px",
+  "--coreSpacing40": "40px",
+  "--coreSpacing48": "48px",
+  "--coreSpacing56": "56px",
+  "--coreSpacing64": "64px",
+  "--coreSpacing80": "80px",
+  "--smtcColorBgBrandFilled": "#2c61fe",
+  "--smtcColorBgPage": "#ebedf1",
+  "--smtcColorBgBrandTintedLow": "#f1f5ff",
+  "--smtcColorBgNoticeTintedLow": "#fdf5f2",
+  "--smtcColorBgSurfaceSecondary": "#f6f7fa",
+  "--smtcColorBgBrandTintedHigh": "#f1f5ff",
+  "--smtcColorBgSurface": "#fff",
+  "--smtcColorBgNoticeTintedHigh": "#fdf5f2",
+  "--smtcColorBgTransparent": "transparent",
+  "--smtcColorBgNoticeFilled": "#c74401",
+  "--smtcColorBgDiscountFilled": "#d81e60",
+  "--smtcColorBgDisabledTinted": "#f6f7fa",
+  "--smtcColorBgSuccessFilled": "#047c88",
+  "--smtcColorBgRateFilled": "#173cd2",
+  "--smtcColorBgScrim": "rgba(0,0,0,0.64)",
+  "--smtcColorBgDisabledFilled": "#b9bec7",
+  "--smtcColorBgDiscountTintedHigh": "#fff3f6",
+  "--smtcColorBgDiscountTintedLow": "#fff3f6",
+  "--smtcColorBgSuccessTintedHigh": "#edfafb",
+  "--smtcColorBgSuccessTintedLow": "#edfafb",
+  "--smtcColorBorderTransparent": "hsla(0,0%,100%,0)",
+  "--smtcColorBorderBrandBold": "#2c61fe",
+  "--smtcColorBorderBrand": "#2c61fe",
+  "--smtcColorBorderSuccess": "#a9e4ea",
+  "--smtcColorBorderDisabled": "#d4d7de",
+  "--smtcColorBorderEncourage": "#a9e4ea",
+  "--smtcColorBorderError": "#ffc8c0",
+  "--smtcColorBorderNotice": "#ffcab0",
+  "--smtcColorBorderDiscount": "#fcc8d0",
+  "--smtcColorDividerForm": "#d4d7de",
+  "--smtcColorDividerInfo": "#d4d7de",
+  "--smtcColorTextContentWhite": "#fff",
+  "--smtcColorTextPlaceholder": "#6f7685",
+  "--smtcColorTextPlaceholderOnBg": "#6f7685",
+  "--smtcColorTextBrand": "#2c61fe",
+  "--smtcColorTextSecondary": "#4f5563",
+  "--smtcColorTextNotice": "#c74401",
+  "--smtcColorTextFavorite": "#d81e60",
+  "--smtcColorTextMarketing": "#6d4df8",
+  "--smtcColorTextDisabled": "#b9bec7",
+  "--smtcColorTextEncourage": "#047c88",
+  "--smtcColorTextPrimary": "#121826",
+  "--smtcColorTextSuccess": "#047c88",
+  "--smtcColorTextTripBest": "#673114",
+  "--smtcColorTextTertiary": "#6f7685",
+  "--smtcColorTextRate": "#173cd2",
+  "--smtcColorTextDiscount": "#d81e60",
+  "--smtcColorTextWarning": "#c74401",
+  "--smtcColorTextCoins": "#966a00",
+  "--smtcColorTextWhite": "#fff",
+  "--smtcFontSizeTitle1": "18px",
+  "--smtcFontSizeBody": "14px",
+  "--smtcFontSizeLabel": "12px",
+  "--smtcFontSizeCaption": "12px",
+  "--smtcFontSizeHead2": "28px",
+  "--smtcFontSizeTitle2": "16px",
+  "--smtcFontSizeHead1": "32px",
+  "--smtcFontSizeHead3": "24px",
+  "--smtcFontSizeSubhead": "20px",
+  "--smtcFontSizeTitle3": "14px",
+  "--smtcLineHeightHead2": "34px",
+  "--smtcLineHeightTitle1": "24px",
+  "--smtcLineHeightBody": "22px",
+  "--smtcLineHeightLabel": "16px",
+  "--smtcLineHeightTitle2": "22px",
+  "--smtcLineHeightHead1": "38px",
+  "--smtcLineHeightCaption": "18px",
+  "--smtcLineHeightHead3": "30px",
+  "--smtcLineHeightTitle3": "18px",
+  "--smtcLineHeightSubhead": "26px",
+  "--smtcTypographyCaption": "400 12px/18px sans-serif",
+  "--smtcTypographyHead2": "400 28px/34px sans-serif",
+  "--smtcTypographyTitle1": "400 18px/24px sans-serif",
+  "--smtcTypographyLabel": "400 12px/16px sans-serif",
+  "--smtcTypographyTitle2": "400 16px/22px sans-serif",
+  "--smtcTypographyBody": "400 14px/22px sans-serif",
+  "--smtcTypographyHead1": "400 32px/38px sans-serif",
+  "--smtcTypographyHead3": "400 24px/30px sans-serif",
+  "--smtcTypographySubhead": "400 20px/26px sans-serif",
+  "--smtcTypographyTitle3": "400 14px/18px sans-serif",
+  "--compBadgeDotBackgroundColor": "#c74401",
+  "--compBadgeDotFontSize": "22px",
+  "--compBadgeDotLineHeight": "16px",
+  "--compBadgeDotBorderColor": "transparent",
+  "--compBadgeDotNumberBorderRadius": "32px",
+  "--compBadgeDotBorderRadius": "16px",
+  "--compBadgeDotBorderWidth": "1px",
+  "--compBadgeDotSize": "6px",
+  "--compBadgeDotHeight": "16px",
+  "--compBadgeDotPaddingHorizontal": "4px",
+  "--compBadgeDotNumberMinWidth": "16px",
+  "--compBadgeRibbonColor": "#fff",
+  "--compBadgeRibbonLineHeight": "16px",
+  "--compBadgeRibbonFontWeight": "700",
+  "--compBadgeRibbonFontSize": "12px",
+  "--compBadgeRibbonBackgroundColor": "#d02c2a",
+  "--compBadgeRibbonHeight": "20px",
+  "--compBadgeRibbonBorderRadius": "2px",
+  "--compBadgeRibbonDiscountColor": "#d81e60",
+  "--compBadgeRibbonNoticeColor": "#c74401",
+  "--compBadgeRibbonSuccessColor": "#047c88",
+  "--compButtonDisabledFilledColor": "#fff",
+  "--compButtonDisabledFilledBorderColor": "transparent",
+  "--compButtonDisabledFilledBackgroundColor": "#b9bec7",
+  "--compButtonDisabledOutlinedBackgroundColor": "transparent",
+  "--compButtonDisabledOutlinedColor": "#b9bec7",
+  "--compButtonDisabledOutlinedBorderColor": "#b9bec7",
+  "--compButtonLMinWidth": "74px",
+  "--compButtonLMaxWidth": "100%",
+  "--compButtonLFontSize": "18px",
+  "--compButtonLFontWeight": "700",
+  "--compButtonLHeight": "56px",
+  "--compButtonLLineHeight": "24px",
+  "--compButtonLBorderWidth": "1px",
+  "--compButtonLBorderRadius": "4px",
+  "--compButtonMBorderWidth": "1px",
+  "--compButtonMMaxWidth": "100%",
+  "--compButtonMMinWidth": "70px",
+  "--compButtonMHeight": "38px",
+  "--compButtonMBorderRadius": "4px",
+  "--compButtonMLineHeight": "22px",
+  "--compButtonMFontWeight": "500",
+  "--compButtonMFontSize": "16px",
+  "--compButtonNormalColor": "#fff",
+  "--compButtonNormalBorderColor": "transparent",
+  "--compButtonNormalBackgroundColor": "#2c61fe",
+  "--compButtonPayBackgroundColor": "#c74401",
+  "--compButtonPayColor": "#fff",
+  "--compButtonPayBorderColor": "transparent",
+  "--compButtonPrimaryLinearEnd": "#2c61fe",
+  "--compButtonPrimaryLinearStart": "#2c61fe",
+  "--compButtonPrimaryColor": "#fff",
+  "--compButtonPrimaryBorderColor": "#2c61fe",
+  "--compButtonPrimaryBackgroundColor": "#2c61fe",
+  "--compButtonSLineHeight": "18px",
+  "--compButtonSFontSize": "14px",
+  "--compButtonSMinWidth": "64px",
+  "--compButtonSFontWeight": "400",
+  "--compButtonSBorderWidth": "1px",
+  "--compButtonSMaxWidth": "100%",
+  "--compButtonSBorderRadius": "4px",
+  "--compButtonSHeight": "34px",
+  "--compButtonSecondaryBackgroundColor": "transparent",
+  "--compButtonSecondaryColor": "#2c61fe",
+  "--compButtonSecondaryBorderColor": "#2c61fe",
+  "--compButtonTertiaryBackgroundColor": "transparent",
+  "--compButtonTertiaryColor": "#2c61fe",
+  "--compButtonTertiaryBorderColor": "#2c61fe",
+  "--compCardBackgroundColor": "#fff",
+  "--compCardLBorderRadius": "24px",
+  "--compCardBorderRadius": "8px",
+  "--compCardSBorderRadius": "4px",
+  "--compCheckboxHeight": "16px",
+  "--compCheckboxWidth": "16px",
+  "--compCheckboxFontSize": "12px",
+  "--compCheckboxGap": "8px",
+  "--compCheckboxCheckedColor": "#2c61fe",
+  "--compCheckboxCheckedDisabledColor": "#c6d7ff",
+  "--compCheckboxUncheckedColor": "#6f7685",
+  "--compCheckboxUncheckedDisabledBorderColor": "#d4d7de",
+  "--compCheckboxUncheckedDisabledBackgroundColor": "#f6f7fa",
+  "--compCheckboxUncheckedErrorError": "#d02c2a",
+  "--compCheckboxUncheckedNormalBackgroundColor": "#121826",
+  "--compCheckboxUncheckedSecondaryColor": "#6f7685",
+  "--compDialogPaddingLeft": "48px",
+  "--compDialogPaddingRight": "48px",
+  "--compDialogWidth": "100%",
+  "--compDialogIconSize": "24px",
+  "--compDialogCloseSize": "20px",
+  "--compDialogCloseRight": "24px",
+  "--compDialogCloseTop": "27px",
+  "--compDialogCloseSoftColor": "#b9bec7",
+  "--compDialogCloseColor": "#4f5563",
+  "--compDialogContentBackgroundColor": "#fff",
+  "--compDialogContentBorderRadius": "8px",
+  "--compDialogContentPadding": "24px",
+  "--compDialogContentButtonsWidth": "100%",
+  "--compDialogContentButtonsItem2LastMarginLeft": "24px",
+  "--compDialogContentButtonsItemWidth": "100%",
+  "--compDialogContentButtonsItemMarginBottom": "24px",
+  "--compDialogContentContentColor": "#4f5563",
+  "--compDialogContentContentLetterSpacing": "-0.23px",
+  "--compDialogContentContentMarginBottom": "24px",
+  "--compDialogContentContentFontSize": "14px",
+  "--compDialogContentContentFontWeight": "400",
+  "--compDialogContentContentLineHeight": "22px",
+  "--compDialogContentIconSuccessColor": "#047c88",
+  "--compDialogContentIconInfoColor": "#2c61fe",
+  "--compDialogContentIconFailedColor": "#d02c2a",
+  "--compDialogContentIconWarningColor": "#c74401",
+  "--compDialogContentIconSize": "24px",
+  "--compDialogContentImageWidth": "100%",
+  "--compDialogContentImageHeight": "232px",
+  "--compDialogContentImageMarginBottom": "38px",
+  "--compDialogContentTitleFontSize": "20px",
+  "--compDialogContentTitleFontWeight": "500",
+  "--compDialogContentTitleLineHeight": "26px",
+  "--compDialogContentTitleLetterSpacing": "0.72px",
+  "--compDialogContentTitleColor": "#121826",
+  "--compDialogContentTitleMarginBottom": "16px",
+  "--compDialogContentTypeLineHeight": "84px",
+  "--compDialogContentTypeFontSize": "72px",
+  "--compDialogContentTypeColor": "#ff6f00",
+  "--compDialogContentTypeMarginBottom": "38px",
+  "--compDialogCustomizeContainerMarginTop": "100px",
+  "--compDialogCustomizeContainerFontSize": "64px",
+  "--compDialogCustomizeContainerPaddingRight": "48px",
+  "--compDialogCustomizeContainerColor": "#fff",
+  "--compDialogCustomizeContainerPaddingLeft": "48px",
+  "--compDialogSizeSmall": "474px",
+  "--compDialogSizeNormal": "670px",
+  "--compDialogSizeLarge": "1062px",
+  "--compEmptyImgSize": "200px",
+  "--compEmptyGap": "32px",
+  "--compEmptyPadding": "24px",
+  "--compEmptyBtnsMargin": "24px",
+  "--compEmptyBtnsGap": "24px",
+  "--compEmptyBtnsMaxWidth": "400px",
+  "--compEmptyDescMarginTop": "8px",
+  "--compEmptyDescFontSize": "14px",
+  "--compEmptyDescLineHeight": "22px",
+  "--compEmptyDescColor": "#6f7685",
+  "--compEmptyDescMaxWidth": "524px",
+  "--compEmptyHzPaddingLeftRight": "24px",
+  "--compEmptyHzImgSize": "160px",
+  "--compEmptyHzPaddingTopBottom": "24px",
+  "--compEmptyHzGap": "24px",
+  "--compEmptyHzBtnsMaxWidth": "500px",
+  "--compEmptyHzDescFontSize": "14px",
+  "--compEmptyHzDescMarginTop": "8px",
+  "--compEmptyHzTitleFontSize": "18px",
+  "--compEmptyHzTitleMarginTop": "0px",
+  "--compEmptyHzTitleLineHeight": "24px",
+  "--compEmptyHzTitleColor": "#4f5563",
+  "--compEmptyTitleColor": "#4f5563",
+  "--compEmptyTitleFontWeight": "700",
+  "--compEmptyTitleFontSize": "18px",
+  "--compEmptyTitleLineHeight": "24px",
+  "--compEmptyTitleMaxWidth": "524px",
+  "--compLoadingClosableTextColor": "#fff",
+  "--compLoadingClosableBorderRadius": "16px",
+  "--compLoadingClosableImgSize": "200px",
+  "--compLoadingClosableButtonPositionRight": "12px",
+  "--compLoadingClosableButtonSize": "22px",
+  "--compLoadingClosableButtonOpacity": "1",
+  "--compLoadingClosableButtonColor": "#ced2d9",
+  "--compLoadingClosableButtonPositionTop": "12px",
+  "--compLoadingFullScreenImgSize": "136px",
+  "--compLoadingFullScreenSubTextSize": "26px",
+  "--compLoadingFullScreenSubTextColor": "#6f7685",
+  "--compLoadingFullScreenTextColor": "#4f5563",
+  "--compLoadingFullScreenTextMarginTop": "32px",
+  "--compLoadingFullScreenTextFontSize": "30px",
+  "--compLoadingImgSize": "42px",
+  "--compLoadingTitleFontSize": "26px",
+  "--compLoadingTitleColor": "#6f7685",
+  "--compNavbarBackgroundColor": "#fff",
+  "--compNavbarBackIconColor": "#121826",
+  "--compNavbarBackIconFontSize": "48px",
+  "--compNavbarContainerHeight": "112px",
+  "--compNavbarContainerIosHeightHeight": "88px",
+  "--compNavbarSecondTitleFontSize": "30px",
+  "--compNavbarSubTitleFontSize": "26px",
+  "--compNavbarSubTitleColor": "#4f5563",
+  "--compNavbarTitleFontSize": "36px",
+  "--compNavbarTitleFontWeight": "500",
+  "--compNavbarTitleColor": "#121826",
+  "--compPaybarContainerBackgroundColor": "#f6f7fa",
+  "--compPaybarContainerPaddingBottom": "24px",
+  "--compPaybarContainerPaddingLeft": "24px",
+  "--compPaybarContainerPaddingRight": "24px",
+  "--compPaybarContainerPaddingTop": "24px",
+  "--compPaybarDetailColor": "#121826",
+  "--compPaybarDetailFontSize": "26px",
+  "--compPaybarSubtitleColor": "#4f5563",
+  "--compPaybarSubtitleFontSize": "26px",
+  "--compPaybarTitleMaxWidth": "416px",
+  "--compPaybarTitleColor": "#2c61fe",
+  "--compPaybarTitleFontSize": "36px",
+  "--compPaybarTitleFontWeight": "500",
+  "--compPaybarTitlePrefixFontWeight": "500",
+  "--compPaybarTitlePrefixFontSize": "30px",
+  "--compPopoverPadding": "16px",
+  "--compPopoverBgColor": "#fff",
+  "--compPopoverFontSize": "14px",
+  "--compPopoverMinWidth": "132px",
+  "--compPopoverMaxWidth": "670px",
+  "--compPopoverRadius": "4px",
+  "--compPopoverTextColor": "#121826",
+  "--compPopoverArrowOffset": "16px",
+  "--compRadioWidth": "16px",
+  "--compRadioHeight": "16px",
+  "--compRadioFontSize": "12px",
+  "--compRadioGap": "8px",
+  "--compRadioCheckedColor": "#2c61fe",
+  "--compRadioCheckedDisabledColor": "#c6d7ff",
+  "--compRadioUncheckedColor": "#6f7685",
+  "--compRadioUncheckedDisabledColor": "#d4d7de",
+  "--compRadioUncheckedDisabledBackgroundColor": "#f6f7fa",
+  "--compScreenViewFontWeight": "500",
+  "--compScreenViewLetterSpacing": "-0.82px",
+  "--compScreenViewColor": "#121826",
+  "--compScreenViewLineHeight": "24px",
+  "--compSkeletonBackgroundColor": "rgba(111,118,133,0.16)",
+  "--compSkeletonCardBackgroundColor": "#f6f7fa",
+  "--compSkeletonCardChildBgColor": "#fff",
+  "--compSliderLabelFontWeight": "400",
+  "--compSliderLabelFontSize": "12px",
+  "--compSliderLabelColor": "#121826",
+  "--compSliderThumbBorderWidth": "0px",
+  "--compSliderThumbBackgroundColor": "#fff",
+  "--compSliderThumbBorderColor": "#2c61fe",
+  "--compSliderThumbDisabledBgColor": "#b9bec7",
+  "--compSliderTipBorderRadius": "8px",
+  "--compSliderTipFontSize": "20px",
+  "--compSliderTipColor": "#fff",
+  "--compSliderTipBackgroundColor": "#121826",
+  "--compSliderTipHeight": "35px",
+  "--compSliderTrackColor": "#b9bec7",
+  "--compSliderTrackSelectColor": "#121826",
+  "--compSliderTrackDisabledColor": "#6f7685",
+  "--compStepperFontSize": "24px",
+  "--compStepperGap": "8px",
+  "--compStepperContentFontSize": "14px",
+  "--compStepperContentLineHeight": "22px",
+  "--compStepperContentFontWeight": "400",
+  "--compStepperContentColor": "#121826",
+  "--compStepperContentWidth": "18px",
+  "--compStepperOperationDisabledColor": "#b9bec7",
+  "--compStepperOperationColor": "#2c61fe",
+  "--compSwitchWidth": "50px",
+  "--compSwitchBorderWidth": "2px",
+  "--compSwitchBorderColor": "#d4d7de",
+  "--compSwitchHeight": "30px",
+  "--compSwitchBackgroundColor": "#d4d7de",
+  "--compSwitchAndroidBorderWidth": "1px",
+  "--compSwitchAndroidHeight": "28px",
+  "--compSwitchAndroidBackgroundColor": "#d4d7de",
+  "--compSwitchAndroidBorderColor": "#6f7685",
+  "--compSwitchAndroidWidth": "68px",
+  "--compSwitchAndroidCircleWidth": "40px",
+  "--compSwitchCheckedColor": "#2c61fe",
+  "--compSwitchCircleWidth": "26px",
+  "--compSwitchDisabledBackgroundColor": "transparent",
+  "--compSwitchSHeight": "48px",
+  "--compSwitchSWidth": "80px",
+  "--compSwitchSBorderWidth": "2px",
+  "--compSwitchSCircleWidth": "44px",
+  "--compTabsBackgroundColor": "#f6f7fa",
+  "--compTabsActiveColor": "#2c61fe",
+  "--compTabsInactiveColor": "#121826",
+  "--compTabsIndicatorHeight": "4px",
+  "--compTabsIndicatorBorderRadius": "2px",
+  "--compTabsItemMaxWidth": "280px",
+  "--compTabsItemLineHeight": "22px",
+  "--compTabsItemFontSize": "30px",
+  "--compTabsItemFontWeight": "500",
+  "--compTabsItemMarginBottom": "25px",
+  "--compTabsItemMarginTop": "25px",
+  "--compTagBorderWidth": "1px",
+  "--compTagBorderRadius": "2px",
+  "--compTagBasicColor": "#6f7685",
+  "--compTagBrandColor": "#2c61fe",
+  "--compTagDisableColor": "#b9bec7",
+  "--compTagDiscountBorderColor": "#d81e60",
+  "--compTagDiscountColor": "#d81e60",
+  "--compTagDiscountTransparentBgColor": "#fff3f6",
+  "--compTagDiscountLinearBorderColor": "#fcc8d0",
+  "--compTagIconWidth": "14px",
+  "--compTagIconHeight": "14px",
+  "--compTagIconMarginRight": "4px",
+  "--compTagLHeight": "20px",
+  "--compTagLFontSize": "12px",
+  "--compTagLPaddingLeft": "4px",
+  "--compTagLPaddingRight": "4px",
+  "--compTagLLineHeight": "14px",
+  "--compTagMHeight": "20px",
+  "--compTagMFontSize": "12px",
+  "--compTagMPaddingRight": "4px",
+  "--compTagMPaddingLeft": "4px",
+  "--compTagMLineHeight": "14px",
+  "--compTagNoticeBorderColor": "#c74401",
+  "--compTagNoticeColor": "#c74401",
+  "--compTagNoticeTransparentBgColor": "#fdf5f2",
+  "--compTagNoticeLinearBorderColor": "#ffcab0",
+  "--compTagSFontSize": "12px",
+  "--compTagSPaddingRight": "4px",
+  "--compTagSPaddingLeft": "4px",
+  "--compTagSHeight": "20px",
+  "--compTagSLineHeight": "14px",
+  "--compTagSuccessColor": "#047c88",
+  "--compTagSuccessBorderColor": "#047c88",
+  "--compTagSuccessSolidTextColor": "#fff",
+  "--compTagSuccessTransparentBgColor": "#edfafb",
+  "--compTagSuccessLinearBorderColor": "#a9e4ea",
+  "--compTextAreaBackgroundColor": "#f6f7fa",
+  "--compTextAreaPadding": "12px",
+  "--compTextAreaInputColor": "#121826",
+  "--compTextAreaInputFontSize": "16px",
+  "--compTextAreaInputHeight": "114px",
+  "--compTextAreaInputPlaceHolderColor": "#6f7685",
+  "--compTextAreaInputPaddingLeft": "12px",
+  "--compTextAreaInputPaddingTop": "16px",
+  "--compTextAreaInputBorderColorFocus": "#2c61fe",
+  "--compTextAreaInputBorderColor": "#d4d7de",
+  "--compTextAreaTipsCountColor": "#121826",
+  "--compTextAreaTipsCountErrorColor": "#d02c2a",
+  "--compTextAreaTipsCountFontSize": "14px",
+  "--compTextAreaTipsCountGap": "8px",
+  "--compTextAreaTipsCountMarginTop": "4px",
+  "--compTextinputBackgroundColor": "#fff",
+  "--compTextinputColor": "#d4d7de",
+  "--compTextinputErrorStatusTipsFontSize": "14px",
+  "--compTextinputErrorColor": "#d02c2a",
+  "--compTextinputFocusColor": "#2c61fe",
+  "--compTextinputInputFontSize": "16px",
+  "--compTextinputInputPlaceHolderColor": "#6f7685",
+  "--compTextinputTitleFontSize": "12px",
+  "--compTextinputTitleColor": "#6f7685",
+  "--compTipsBackgroundColor": "#f1f5ff",
+  "--compTipsColor": "#0f294d",
+  "--compTipsFontSize": "14px",
+  "--compTipsButtonBorderRadius": "8px",
+  "--compTipsButtonColor": "#2c61fe",
+  "--compTipsErrorColor": "#f5594a",
+  "--compTipsErrorBackgroundColor": "rgba(245,89,74,0.08)",
+  "--compTipsErrorBorder": "rgba(245,89,74,0.1)",
+  "--compTipsNormalBackgroundColor": "#fff",
+  "--compTipsWarningColor": "#c74401",
+  "--compTipsWarningBorder": "#c74401",
+  "--compTipsWarningBackgroundColor": "#fdf5f2",
+  "--compTipsWeakColor": "#4f5563",
+  "--compTipsWeakBackgroundColor": "#f6f7fa",
+  "--compTooltipBackgroundColor": "#121826",
+  "--compTooltipLPaddingHorizontal": "8px",
+  "--compTooltipLPaddingVertical": "8px",
+  "--compTooltipLLineHeight": "16px",
+  "--compTooltipLFontSize": "12px",
+  "--trip-font-family": "\"Trip Geom, BlinkMacSystemFont, -apple-system, Roboto, Helvetica, Arial, sans-serif\"",
+  "--trip-font-family-zh-hk": "\"Trip Geom, Microsoft Jhenghei, PingFang HK, STHeitiTC-Light, tahoma, arial, sans-serif\"",
+  "--trip-font-family-zh-tw": "\"Trip Geom, Microsoft Jhenghei, PingFang TC, STHeitiTC-Light, tahoma, arial, sans-serif\"",
+  "--trip-font-family-ko-kr": "\"Trip Geom, Noto sans KR, Apple SD Gothic Neo, \ub9d1\uc740 \uace0\ub515, Malgun Gothic, tahoma, arial, sans-serif\"",
+  "--trip-font-family-ja-jp": "\"Trip Geom, SF Pro JP, Hiragino Kaku Gothic Pro, \u30d2\u30e9\u30ae\u30ce\u89d2\u30b4 Pro W3, Meiryo UI, Meiryo, MS PGothic, Helvetica, Osaka, Tahoma,",
+  "--trip-font-family-vi-vn": "\"BlinkMacSystemFont, -apple-system, Roboto, Helvetica, Arial, sans-serif\"",
+  "--trip-font-family-th-th": "\"Trip Geom, Noto Sans Thai, Kanit, Sarabun, sans-serif\"",
+  "--smtcTypographyBodyL": "400 16px/24px sans-serif",
+  "--smtcTypographyBodyM": "400 14px/21px sans-serif",
+  "--smtcTypographyBodyS": "400 12px/18px sans-serif",
+  "--smtcTypographyBodyXs": "400 11px/13.75px sans-serif"
+ },
+ "fonts": [
+  {
+   "family": "fi",
+   "weight": "",
+   "style": ""
+  },
+  {
+   "family": "trip-flight-seo",
+   "weight": "",
+   "style": ""
+  },
+  {
+   "family": "fi",
+   "weight": "",
+   "style": ""
+  },
+  {
+   "family": "fi",
+   "weight": "",
+   "style": ""
+  },
+  {
+   "family": "\"Trip Geom\"",
+   "weight": "700",
+   "style": ""
+  },
+  {
+   "family": "\"Trip Geom\"",
+   "weight": "500",
+   "style": ""
+  },
+  {
+   "family": "\"Trip Geom\"",
+   "weight": "400",
+   "style": ""
+  }
+ ]
+}
