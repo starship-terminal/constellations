@@ -82,12 +82,22 @@ async function kbFocus(loc) {
 async function pressOn(loc) {
   const b = await loc.boundingBox();
   if (!b) return null;
-  await cdp.send('DOM.getDocument').catch(() => {});
-  const { backendNodeId } = await cdp.send('DOM.getNodeForLocation', { x: Math.round(b.x + b.width / 2), y: Math.round(b.y + b.height / 2) });
-  const { nodeIds } = await cdp.send('DOM.pushNodesByBackendIdsToFrontend', { backendNodeIds: [backendNodeId] });
-  await cdp.send('CSS.forcePseudoState', { nodeId: nodeIds[0], forcedPseudoClasses: ['active', 'hover'] });
+  // Force the component's own node. The topmost node at its centre (DOM.getNodeForLocation) is a
+  // text span or an svg, whose :active never triggers the component's own :active rule. Any marker a
+  // failed earlier press left is cleared first, and this one is always removed.
+  await page.evaluate(() => document.querySelectorAll('[data-m-press]').forEach((el) => el.removeAttribute('data-m-press')));
+  let nodeId;
+  try {
+    await loc.evaluate((el) => el.setAttribute('data-m-press', '1'));
+    const { root } = await cdp.send('DOM.getDocument', { depth: 0 });
+    ({ nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: '[data-m-press]' }));
+  } finally {
+    await loc.evaluate((el) => el.removeAttribute('data-m-press')).catch(() => {});
+  }
+  if (!nodeId) return null;
+  await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: ['active', 'hover'] });
   await page.waitForTimeout(400);
-  return nodeIds[0];
+  return nodeId;
 }
 const pressOff = (id) => id == null ? null : cdp.send('CSS.forcePseudoState', { nodeId: id, forcedPseudoClasses: [] }).catch(() => {});
 
