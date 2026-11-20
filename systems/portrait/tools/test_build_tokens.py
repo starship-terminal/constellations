@@ -45,13 +45,20 @@ class Tokens(unittest.TestCase):
         self.assertEqual(TOKENS["light"]["color"]["bg"]["page"]["$value"], "{color.gray.10}")
 
     def test_every_alias_resolves_set_first(self):
-        # The catalog resolves an alias in the token's own set first, then in core.
+        # The catalog resolves an alias in the token's own set first, then in core, and follows the
+        # chain to a final value: a dangling alias, a self alias or a loop (a -> b -> a) all fail.
+        def final(set_name, ref, trail):
+            if ref in trail:
+                self.fail(f"alias loop: {' -> '.join(trail + [ref])}")
+            hit = lookup(TOKENS[set_name], ref) or lookup(TOKENS["core"], ref)
+            self.assertIsNotNone(hit, f"{' -> '.join(trail + [ref])} resolves to nothing")
+            for nxt in refs(hit["$value"]):
+                final(set_name, nxt, trail + [ref])
+
         for set_name in ("core", "light", "dark"):
             for path, token in leaves(TOKENS[set_name]):
                 for ref in refs(token["$value"]):
-                    hit = lookup(TOKENS[set_name], ref) or lookup(TOKENS["core"], ref)
-                    self.assertIsNotNone(hit, f"{set_name}.{path} -> {ref}")
-                    self.assertIsNot(hit, token, f"{set_name}.{path} points at itself")
+                    final(set_name, ref, ["{" + path + "}"])
 
     def test_every_token_has_a_type_a_source_and_an_evidence_label(self):
         for set_name in ("core", "light", "dark"):
