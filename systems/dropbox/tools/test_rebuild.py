@@ -53,9 +53,16 @@ class RebuildTest(unittest.TestCase):
             (cap / "public").mkdir(parents=True)
             shutil.copy2(PKG / "tools" / "capture" / "css-colour.mjs", cap / "css-colour.mjs")
             shutil.copy2(MEASUREMENTS, cap / "public" / "build-measurements.mjs")
+        # The copy starts without the outputs, so each comparison reads a freshly written file.
+        cls.expected = [rel for rel in OUTPUTS + ("raw/measurements.md",) if (PKG / rel).exists()]
+        for rel in cls.expected:
+            (root / rel).unlink()
         for b in BUILDERS:
             subprocess.run([sys.executable, str(root / "tools" / b)], cwd=root, check=True, capture_output=True)
         cls.built = json.loads((root / "tokens.json").read_text())
+        if NODE and MEASUREMENTS.exists():
+            subprocess.run([NODE, str(root / "tools" / "capture" / "public" / "build-measurements.mjs")],
+                           cwd=root, check=True, capture_output=True)
         cls.C = json.loads((PKG / "raw" / "components-computed.json").read_text())["components"]
 
     @classmethod
@@ -63,14 +70,14 @@ class RebuildTest(unittest.TestCase):
         cls.tmp.cleanup()
 
     def test_committed_output_matches_rebuild(self):
-        for rel in OUTPUTS:
-            if (PKG / rel).exists() and (self.root / rel).exists():
-                self.assertEqual((PKG / rel).read_text(), (self.root / rel).read_text(), rel)
+        for rel in self.expected:
+            if rel == "raw/measurements.md" and not NODE:
+                continue
+            self.assertTrue((self.root / rel).exists(), f"{rel} was not rebuilt")
+            self.assertEqual((PKG / rel).read_text(), (self.root / rel).read_text(), rel)
 
     @unittest.skipUnless(NODE and MEASUREMENTS.exists(), "needs node")
     def test_measurements_match_rebuild(self):
-        subprocess.run([NODE, str(self.root / "tools" / "capture" / "public" / "build-measurements.mjs")],
-                       cwd=self.root, check=True, capture_output=True)
         rel = "raw/measurements.md"
         self.assertEqual((PKG / rel).read_text(), (self.root / rel).read_text(), rel)
 
@@ -98,6 +105,32 @@ class RebuildTest(unittest.TestCase):
             if key.startswith("measured-") and not str(v["$value"]).startswith("{"):
                 ramp = {x["$value"] for k, x in sizes.items() if isinstance(x, dict) and not k.startswith("measured-")}
                 self.assertNotIn(v["$value"], ramp, key)
+
+    def _tokens_with_shadow(self, value):
+        """Rebuild a temp copy whose floating shadow var resolves to `value`."""
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        root = pathlib.Path(tmp.name) / "pkg"
+        shutil.copytree(self.root, root)
+        raw = root / "raw" / "css-vars.json"
+        V = json.loads(raw.read_text())
+        V["resolved"]["light"]["--dig-utilities__boxshadow__floating"]["value"] = value
+        raw.write_text(json.dumps(V))
+        r = subprocess.run([sys.executable, str(root / "tools" / "build_component_tokens.py")], cwd=root, capture_output=True, text=True)
+        spec = json.loads((root / "raw" / "component-tokens.json").read_text()) if r.returncode == 0 else None
+        return r, spec
+
+    def test_unreadable_shadow_layer_stops_the_build(self):
+        # 13-18: findall skipped a layer it could not read; the build must stop instead.
+        r, _ = self._tokens_with_shadow("rgba(0, 0, 0, 0.04) 0px 10px 40px 20px, color(srgb 0 0 0) 0px 1px 2px")
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("shadow layer not understood", r.stderr)
+
+    def test_inset_is_read_before_or_after_the_colour(self):
+        r, spec = self._tokens_with_shadow("inset rgb(1, 2, 3) 0px 1px 2px 0px, rgb(4, 5, 6) 0px 2px 4px 0px inset")
+        self.assertEqual(r.returncode, 0, r.stderr)
+        layers = spec["light"]["shadow"]["floating"]["value"]
+        self.assertEqual([(l["color"], l["inset"]) for l in layers], [("#010203", True), ("#040506", True)])
 
     def test_social_icon_is_marked_wrong(self):
         md = (PKG / "components.md").read_text()
