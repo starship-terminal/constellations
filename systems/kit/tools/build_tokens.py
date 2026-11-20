@@ -226,6 +226,9 @@ if (RAW / "motion.json").exists():
     sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
     import motion
     core["motion"], _motion_not = motion.build(json.loads((RAW / "motion.json").read_text()))
+    # What DTCG cannot carry (steps(), unresolved var() easings) is kept, as the kit does.
+    if _motion_not:
+        core["$extensions"] = {"notTokenised": _motion_not}
 
 tokens = {
     "core": core,
