@@ -18,7 +18,9 @@ ROOT = Path(__file__).resolve().parent.parent
 os.chdir(ROOT)
 J = json.load(open("raw/components-computed.json"))
 C = J["components"]
-LAYOUT = json.load(open("raw/layout.json"))
+# raw/layout.json is optional: the grid table below reads it when a public layout reader wrote one
+# (keyed page@width, with grids and a main box); the kit ships no such reader.
+LAYOUT = json.load(open("raw/layout.json")) if Path("raw/layout.json").exists() else {}
 T = json.load(open("tokens.json"))
 
 # --------------------------------------------------------------------------- colours and tokens
@@ -287,7 +289,7 @@ W("How to read an entry:")
 W()
 W("- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.")
 W("- The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
-W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
+W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x, or halved to 1x when wider than 1600 px or over 1.2 megapixels). Screenshots are in [screenshots/](screenshots).")
 W()
 W("## Discovery list")
 W()
@@ -375,25 +377,32 @@ def dur_ms(d):
 for (d, e), (ps, ks) in sorted(mot.items(), key=lambda kv: (dur_ms(kv[0][0]), kv[0][1])):
     W(f"| {d} | `{e}` | {', '.join(sorted(ps))} | {', '.join(sorted(ks)[:8])}{' and more' if len(ks) > 8 else ''} |")
 W()
-W("**Layout grid.** Read on each page at each width ([raw/layout.json](raw/layout.json)).")
-W()
-W("| Page | 1440 | 1920 | 1024 | 390 |")
-W("|---|---|---|---|---|")
-
-
 def grid_of(key):
+    """One cell of the grid table: the content box and the first grid, or '-' for what was not read
+    (a page or width missing, a reading without a main box or grids)."""
     v = LAYOUT.get(key)
     if not v:
         return "-"
-    g = v["grids"][0] if v["grids"] else None
+    grids = v.get("grids") or []
+    g = grids[0] if grids else None
     cols = re.sub(r"(\d+\.\d)\d*px", r"\1", g["cols"]).replace("px", "") if g else ""
-    main = f"content x {v['main']['x']}, {v['main']['w']} wide" if v["main"]["w"] else "content full width"
-    return f"{main}; grid {cols} gap {g['colGap']}" if g else main
+    box = v.get("main")
+    main = (f"content x {box['x']}, {box['w']} wide" if box.get("w") else "content full width") if box else None
+    if g:
+        return f"{main + '; ' if main else ''}grid {cols} gap {g['colGap']}"
+    return main or "-"
 
 
-for page in ["home", "academy-science", "academy-math", "unit", "lesson-math", "atlas"]:
-    W(f"| {page} | " + " | ".join(grid_of(f"{page}@{w}") for w in (1440, 1920, 1024, 390)) + " |")
-W()
+# PRODUCT (adapt): the pages and widths the layout table compares.
+GRID_PAGES, GRID_WIDTHS = ["home", "academy-science", "academy-math", "unit", "lesson-math", "atlas"], (1440, 1920, 1024, 390)
+if any(f"{p}@{w}" in LAYOUT for p in GRID_PAGES for w in GRID_WIDTHS):
+    W("**Layout grid.** Read on each page at each width ([raw/layout.json](raw/layout.json)).")
+    W()
+    W("| Page | " + " | ".join(str(w) for w in GRID_WIDTHS) + " |")
+    W("|---|" + "---|" * len(GRID_WIDTHS))
+    for page in GRID_PAGES:
+        W(f"| {page} | " + " | ".join(grid_of(f"{page}@{w}") for w in GRID_WIDTHS) + " |")
+    W()
 W("**Card shapes.** Default-state values; the entries hold the states.")
 W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")

@@ -23,6 +23,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, M, launch, open, closePromo, openStory, styleOf, crop, centre, RAW, REF, CROPS } from './lib.mjs';
 import { safeUrl } from '../safe-url.mjs';
+import { pruneStale } from '../readings.mjs';
 import { pin, unpin, prefer } from './pin.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
@@ -33,7 +34,11 @@ out.components ??= {};
 // an earlier run's entries, if their page is not rerun, lose any query they were recorded with
 for (const c of Object.values(out.components)) if (c.url) c.url = safeUrl(c.url);
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
-const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
+// Every recorded string is written through noEmails, whatever recorded it: styleOf masks its own text,
+// but an attribute (aria-label="Switch to ..."), a selector or an error message can carry an address too.
+const EMAIL = /[\w.+%-]+@[\w-]+(?:\.[\w-]+)+/g;
+const noEmails = (k, v) => (typeof v === 'string' ? v.replace(EMAIL, '<email>') : v);
+const save = () => fs.writeFileSync(OUT, JSON.stringify(out, noEmails, 1) + '\n');
 
 const URLS = {
   home: '/',
@@ -644,13 +649,9 @@ for (const k of want) {
   save();
   await l.browser.close();
 }
-// a component a page no longer produces is dropped, so a re-run cannot leave stale entries; a page that
-// failed partway keeps its earlier entries, since what it did not reach is not known to be gone
-for (const [key, c] of Object.entries(out.components)) if (done.has(c.run) && !touched.has(key)) { delete out.components[key]; log('dropped stale', key); }
-// the same for states: a state an earlier run recorded that this finished run's spec no longer lists goes
-for (const [key, c] of Object.entries(out.components)) {
-  if (!done.has(c.run) || !listed.has(key)) continue;
-  for (const st of Object.keys(c.states || {})) if (!listed.get(key).has(st)) { delete c.states[st]; log('dropped stale state', key, st); }
-}
+// a component a finished page no longer produces is dropped, and so is a state its spec no longer
+// lists, so a re-run cannot leave stale entries; a page that failed partway keeps its earlier entries,
+// since what it did not reach is not known to be gone (readings.mjs)
+for (const d of pruneStale(out.components, { done, touched, listed })) log('dropped stale', d);
 save();
 log('done ->', OUT);

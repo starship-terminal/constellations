@@ -248,9 +248,26 @@ class QuantizeSidecarTest(unittest.TestCase):
             self.tiles((6, 4), doc_h=30)   # the document was 30px; 10px of it was tiled
             self.assertIn("intended", self.run_refused())
 
+        def first_tile_never_wrote():
+            # screenshotWithMetadata threw on part0: only its failed sidecar is left, and the previous
+            # run's stitched long.png still sits in raw/, so a PNG-only scan stitched nothing and published it.
+            self.tiles((6, 4))
+            meta = json.loads((self.raw / "long.part0.png.capture.json").read_text())
+            meta["dimensionCheck"] = {"status": "fail", "error": "screenshot threw"}
+            (self.raw / "long.part0.png.capture.json").write_text(json.dumps(meta))
+            (self.raw / "long.part0.png").unlink()
+            (self.raw / "long.part1.png").unlink(); (self.raw / "long.part1.png.capture.json").unlink()
+            Image.new("RGB", (8, 10)).save(self.raw / "long.png")
+            self.assertIn("long.part0.png: the tile never wrote its PNG (its sidecar records 'fail')", self.run_refused())
+
+        def last_tile_never_wrote():
+            self.tiles((6, 4)); (self.raw / "long.part1.png").unlink()   # no document height to fall short of
+            self.assertIn("long.part1.png: the tile never wrote its PNG", self.run_refused())
+
         # The kit only: package copies that carried a check first refuse in their own ways, and some
         # miss a case (listed for the package wave); each is ported from the kit, then can join.
-        for case in (missing_sidecar, gap_in_the_run, failed_tile, clips_do_not_join, short_of_the_page):
+        for case in (missing_sidecar, gap_in_the_run, failed_tile, clips_do_not_join, short_of_the_page,
+                     first_tile_never_wrote, last_tile_never_wrote):
             with self.subTest(case=case.__name__):
                 self.each(case, [KIT])
 
