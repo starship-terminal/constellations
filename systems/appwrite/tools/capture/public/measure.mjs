@@ -104,6 +104,9 @@ async function forcePseudo(loc, classes) {
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
   Object.assign(c, meta);
+  // the page that owns the entry, even when its element is missing: stale-entry
+  // cleanup (pageDone) needs it; found() restamps page/run/url on a real reading
+  c.page ??= current;
   touched.add(key);
   c.states ??= {};
   return c;
