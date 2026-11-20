@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Prime Video style guide</title>
+<style>
+:root {
+  color-scheme: dark;
+  --font-family-base: Amazon Ember, Amazon Arabic Ember, Arial, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-heavy: 900;
+  --typography-display: 700 50px/56px var(--font-family-base);
+  --typography-heading: 700 32px/36px var(--font-family-base);
+  --typography-synopsis: 500 18px/25px var(--font-family-base);
+  --typography-body: 400 14px/20px var(--font-family-base);
+  --typography-nav: 500 16px/20px var(--font-family-base);
+  --typography-button: 500 16px/20px var(--font-family-base);
+  --typography-buttonLarge: 500 20px/23px var(--font-family-base);
+  --typography-label: 400 20px/24px var(--font-family-base);
+  --radius-control: 8px;
+  --radius-chip: 180px;
+  --radius-card: 12px;
+  --radius-poster: 8px;
+  --radius-dialog: 24px;
+  --radius-iconButton: 10000px;
+  --space-buttonPadY: 8px;
+  --space-chipPadX: 16px;
+  --space-navPadX: 51px;
+  --space-searchPadLeft: 16px;
+  --size-navHeight: 66px;
+  --size-joinHeight: 42px;
+  --size-heroButtonHeight: 62px;
+  --size-chipHeight: 39px;
+  --size-iconButton: 48px;
+  --size-searchHeight: 74px;
+  --size-focusRing: 2px;
+  --border-card: 1px;
+  --border-iconButton: 3px;
+  --fable-icon-size-100: 22px;
+  --fable-icon-size-110: 24px;
+  --fable-icon-size-150: 33px;
+  --fable-icon-size-200: 44px;
+  --fable-dialog-radius: 24px;
+  --fable-badge-height-200: 22px;
+  --color-bg-page: #00050D;
+  --color-bg-nav: #00050D;
+  --color-bg-search: #33373D;
+  --color-bg-card: rgba(23, 25, 28, 0.8);
+  --color-bg-dialog: #00050D;
+  --color-bg-iconButton: rgba(0, 5, 13, 0.4);
+  --color-bg-chipSelected: #FFFFFF;
+  --color-bg-buttonInverse: #FFFFFF;
+  --color-text-primary: #FFFFFF;
+  --color-text-onAccent: #FFFFFF;
+  --color-text-onInverse: #00050D;
+  --color-text-muted: #999999;
+  --color-text-chipSelected: #33373D;
+  --color-accent-default: rgba(26, 152, 255, 0.8);
+  --color-accent-hover: #1A98FF;
+  --color-accent-pressed: #1A98FF;
+  --color-border-card: #66696E;
+  --color-border-iconButton: rgba(255, 255, 255, 0.35);
+  --color-border-focus: #F1F1F1;
+  --color-shadow-accent: rgba(26, 152, 255, 0.2);
+  --shadow-accent: 0px -4px 16px 0px rgba(26, 152, 255, 0.2);
+  --shadow-accentHover: 0px -4px 28px 0px rgba(26, 152, 255, 0.5);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-bg-page); color: var(--color-text-primary); font: 400 14px/20px var(--font-family-base); }
+main { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: var(--typography-display); margin: 0 0 8px; }
+h2 { font: var(--typography-heading); margin: 40px 0 12px; }
+p { color: var(--color-text-muted); max-width: 68ch; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: center; }
+.sw i { width: 40px; height: 40px; border-radius: 8px; display: block; box-shadow: inset 0 0 0 1px var(--color-border-card); }
+.sw code { display: block; font-size: 12px; }
+.sw span { color: var(--color-text-muted); font-size: 12px; }
+.ty { margin: 8px 0; }
+.row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin: 16px 0; }
+.btn { display: inline-flex; align-items: center; height: var(--size-joinHeight); padding: 0 14px; border-radius: var(--radius-control); background: var(--color-accent-default); color: var(--color-text-onAccent); font: var(--typography-button); letter-spacing: 0.64px; box-shadow: var(--shadow-accent); }
+.btn.inv { height: var(--size-heroButtonHeight); background: var(--color-bg-buttonInverse); color: var(--color-text-onInverse); box-shadow: none; font: var(--typography-buttonLarge); }
+.chip { display: inline-flex; align-items: center; height: var(--size-chipHeight); padding: 0 var(--space-chipPadX); border-radius: var(--radius-chip); background: var(--color-bg-chipSelected); color: var(--color-text-chipSelected); font-weight: 500; }
+.field { width: 280px; height: 42px; border-radius: var(--radius-control); background: var(--color-bg-search); color: var(--color-text-primary); padding: 0 16px; display: flex; align-items: center; }
+.card { width: 280px; padding: 16px; border-radius: var(--radius-card); background: var(--color-bg-card); border: 1px solid var(--color-border-card); }
+.dialog { width: 320px; padding: 20px; border-radius: var(--radius-dialog); background: var(--color-bg-dialog); }
+</style>
+</head>
+<body>
+<main>
+<h1>Prime Video</h1>
+<p>Rendered from tokens.json. Dark only. Amazon Ember is not loaded; the family falls back to Arial, then the system sans.</p>
+<h2>Colour</h2>
+<div class="swatches"><div class="sw"><i style="background:#00050D"></i><div><code>bg.page</code><span>#00050D</span></div></div>
+<div class="sw"><i style="background:#00050D"></i><div><code>bg.nav</code><span>#00050D</span></div></div>
+<div class="sw"><i style="background:#33373D"></i><div><code>bg.search</code><span>#33373D</span></div></div>
+<div class="sw"><i style="background:rgba(23, 25, 28, 0.8)"></i><div><code>bg.card</code><span>rgba(23, 25, 28, 0.8)</span></div></div>
+<div class="sw"><i style="background:#00050D"></i><div><code>bg.dialog</code><span>#00050D</span></div></div>
+<div class="sw"><i style="background:rgba(0, 5, 13, 0.4)"></i><div><code>bg.iconButton</code><span>rgba(0, 5, 13, 0.4)</span></div></div>
+<div class="sw"><i style="background:#FFFFFF"></i><div><code>bg.chipSelected</code><span>#FFFFFF</span></div></div>
+<div class="sw"><i style="background:#FFFFFF"></i><div><code>bg.buttonInverse</code><span>#FFFFFF</span></div></div>
+<div class="sw"><i style="background:#FFFFFF"></i><div><code>text.primary</code><span>#FFFFFF</span></div></div>
+<div class="sw"><i style="background:#FFFFFF"></i><div><code>text.onAccent</code><span>#FFFFFF</span></div></div>
+<div class="sw"><i style="background:#00050D"></i><div><code>text.onInverse</code><span>#00050D</span></div></div>
+<div class="sw"><i style="background:#999999"></i><div><code>text.muted</code><span>#999999</span></div></div>
+<div class="sw"><i style="background:#33373D"></i><div><code>text.chipSelected</code><span>#33373D</span></div></div>
+<div class="sw"><i style="background:rgba(26, 152, 255, 0.8)"></i><div><code>accent.default</code><span>rgba(26, 152, 255, 0.8)</span></div></div>
+<div class="sw"><i style="background:#1A98FF"></i><div><code>accent.hover</code><span>#1A98FF</span></div></div>
+<div class="sw"><i style="background:#1A98FF"></i><div><code>accent.pressed</code><span>#1A98FF</span></div></div>
+<div class="sw"><i style="background:#66696E"></i><div><code>border.card</code><span>#66696E</span></div></div>
+<div class="sw"><i style="background:rgba(255, 255, 255, 0.35)"></i><div><code>border.iconButton</code><span>rgba(255, 255, 255, 0.35)</span></div></div>
+<div class="sw"><i style="background:#F1F1F1"></i><div><code>border.focus</code><span>#F1F1F1</span></div></div>
+<div class="sw"><i style="background:rgba(26, 152, 255, 0.2)"></i><div><code>shadow.accent</code><span>rgba(26, 152, 255, 0.2)</span></div></div></div>
+<h2>Type</h2>
+<div class="ty" style="font:700 50px/56px var(--font-family-base)"><b>display</b> 50px / 56px / 700</div>
+<div class="ty" style="font:700 32px/36px var(--font-family-base)"><b>heading</b> 32px / 36px / 700</div>
+<div class="ty" style="font:500 18px/25px var(--font-family-base)"><b>synopsis</b> 18px / 25px / 500</div>
+<div class="ty" style="font:400 14px/20px var(--font-family-base)"><b>body</b> 14px / 20px / 400</div>
+<div class="ty" style="font:500 16px/20px var(--font-family-base)"><b>nav</b> 16px / 20px / 500</div>
+<div class="ty" style="font:500 16px/20px var(--font-family-base)"><b>button</b> 16px / 20px / 500</div>
+<div class="ty" style="font:500 20px/23px var(--font-family-base)"><b>buttonLarge</b> 20px / 23px / 500</div>
+<div class="ty" style="font:400 20px/24px var(--font-family-base)"><b>label</b> 20px / 24px / 400</div>
+<h2>Controls</h2>
+<div class="row">
+  <span class="btn">Join Prime</span>
+  <span class="btn inv">Prime Member? Sign in</span>
+  <span class="chip">All</span>
+</div>
+<div class="row">
+  <div class="field">Search</div>
+</div>
+<div class="row">
+  <div class="card"><strong>Content advisory</strong><p>Muted body on a raised card.</p></div>
+  <div class="dialog"><strong>Share</strong><p>Dialog radius 24px, page fill.</p></div>
+</div>
+</main>
+</body>
+</html>
