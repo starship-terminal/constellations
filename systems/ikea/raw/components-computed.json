@@ -1,0 +1,669 @@
+{
+  "_meta": {
+    "product": "IKEA Singapore",
+    "captured": "2026-11-21",
+    "source": "computed styles on www.ikea.com/sg/en public pages, signed out",
+    "theme": "light",
+    "widths": [
+      1440
+    ]
+  },
+  "components": {
+    "nav-link": {
+      "page": "home",
+      "url": "https://www.ikea.com/sg/en/",
+      "states": {
+        "default": {
+          "color": "rgb(72, 72, 72)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(72, 72, 72)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.994px",
+          "letterSpacing": "normal",
+          "paddingTop": "12px",
+          "paddingRight": "16px",
+          "paddingBottom": "12px",
+          "paddingLeft": "16px",
+          "height": "45.9844px",
+          "width": "93.8281px",
+          "boxShadow": "none",
+          "outline": "rgb(72, 72, 72) none 0px",
+          "textTransform": "none",
+          "_box": {
+            "x": 186.359375,
+            "y": 70,
+            "w": 93.828125,
+            "h": 45.984375
+          }
+        },
+        "hover": {
+          "color": "rgb(17, 17, 17)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(17, 17, 17)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.994px",
+          "letterSpacing": "normal",
+          "paddingTop": "12px",
+          "paddingRight": "16px",
+          "paddingBottom": "12px",
+          "paddingLeft": "16px",
+          "height": "45.9844px",
+          "width": "93.8281px",
+          "boxShadow": "none",
+          "outline": "rgb(17, 17, 17) none 0px",
+          "textTransform": "none",
+          "_box": {
+            "x": 186.359375,
+            "y": 70,
+            "w": 93.828125,
+            "h": 45.984375
+          }
+        },
+        "focus-visible": {
+          "color": "rgb(17, 17, 17)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(17, 17, 17)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.994px",
+          "letterSpacing": "normal",
+          "paddingTop": "12px",
+          "paddingRight": "16px",
+          "paddingBottom": "12px",
+          "paddingLeft": "16px",
+          "height": "45.9844px",
+          "width": "93.8281px",
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 4px",
+          "outline": "rgb(17, 17, 17) solid 2px",
+          "textTransform": "none",
+          "_box": {
+            "x": 186.359375,
+            "y": 70,
+            "w": 93.828125,
+            "h": 45.984375
+          }
+        }
+      }
+    },
+    "search-field": {
+      "page": "home",
+      "url": "https://www.ikea.com/sg/en/",
+      "states": {
+        "default": {
+          "color": "rgb(17, 17, 17)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(17, 17, 17)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "20px",
+          "letterSpacing": "-0.0535714px",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "48px",
+          "height": "48px",
+          "width": "276.562px",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 48px inset",
+          "outline": "rgb(17, 17, 17) none 0px",
+          "textTransform": "none",
+          "_box": {
+            "x": 697.453125,
+            "y": 69,
+            "w": 276.5625,
+            "h": 48
+          }
+        },
+        "hover": {
+          "color": "rgb(17, 17, 17)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(17, 17, 17)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "20px",
+          "letterSpacing": "-0.0535714px",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "48px",
+          "height": "48px",
+          "width": "276.562px",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 48px inset",
+          "outline": "rgb(17, 17, 17) none 0px",
+          "textTransform": "none",
+          "_box": {
+            "x": 697.453125,
+            "y": 69,
+            "w": 276.5625,
+            "h": 48
+          }
+        },
+        "focus-visible": {
+          "color": "rgb(17, 17, 17)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(17, 17, 17)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "20px",
+          "letterSpacing": "-0.0535714px",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "48px",
+          "height": "48px",
+          "width": "276.562px",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 48px inset",
+          "outline": "rgb(17, 17, 17) none 0px",
+          "textTransform": "none",
+          "_box": {
+            "x": 697.453125,
+            "y": 69,
+            "w": 276.5625,
+            "h": 48
+          }
+        }
+      }
+    },
+    "header-icon": {
+      "page": "home",
+      "url": "https://www.ikea.com/sg/en/",
+      "states": {
+        "default": {
+          "color": "rgb(17, 17, 17)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(17, 17, 17)",
+          "borderTopWidth": "0px",
+          "borderRadius": "64px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.994px",
+          "letterSpacing": "normal",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "height": "40px",
+          "width": "40px",
+          "boxShadow": "none",
+          "outline": "rgb(17, 17, 17) none 0px",
+          "textTransform": "none",
+          "_box": {
+            "x": 1352,
+            "y": 73,
+            "w": 40,
+            "h": 40
+          }
+        },
+        "hover": {
+          "color": "rgb(17, 17, 17)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(17, 17, 17)",
+          "borderTopWidth": "0px",
+          "borderRadius": "64px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.994px",
+          "letterSpacing": "normal",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "height": "40px",
+          "width": "40px",
+          "boxShadow": "none",
+          "outline": "rgb(17, 17, 17) none 0px",
+          "textTransform": "none",
+          "_box": {
+            "x": 1352,
+            "y": 73,
+            "w": 40,
+            "h": 40
+          }
+        },
+        "focus-visible": {
+          "color": "rgb(17, 17, 17)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(17, 17, 17)",
+          "borderTopWidth": "0px",
+          "borderRadius": "64px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.994px",
+          "letterSpacing": "normal",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "height": "40px",
+          "width": "40px",
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 4px",
+          "outline": "rgb(17, 17, 17) solid 2px",
+          "textTransform": "none",
+          "_box": {
+            "x": 1352,
+            "y": 73,
+            "w": 40,
+            "h": 40
+          }
+        }
+      }
+    },
+    "login-link": {
+      "page": "home",
+      "url": "https://www.ikea.com/sg/en/",
+      "states": {
+        "default": {
+          "color": "rgb(17, 17, 17)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(17, 17, 17)",
+          "borderTopWidth": "0px",
+          "borderRadius": "64px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.994px",
+          "letterSpacing": "normal",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "height": "40px",
+          "width": "221.984px",
+          "boxShadow": "none",
+          "outline": "rgb(17, 17, 17) none 0px",
+          "textTransform": "none",
+          "_box": {
+            "x": 1026.015625,
+            "y": 73,
+            "w": 221.984375,
+            "h": 40
+          }
+        },
+        "hover": {
+          "color": "rgb(17, 17, 17)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(17, 17, 17)",
+          "borderTopWidth": "0px",
+          "borderRadius": "64px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.994px",
+          "letterSpacing": "normal",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "height": "40px",
+          "width": "221.984px",
+          "boxShadow": "none",
+          "outline": "rgb(17, 17, 17) none 0px",
+          "textTransform": "none",
+          "_box": {
+            "x": 1026.015625,
+            "y": 73,
+            "w": 221.984375,
+            "h": 40
+          }
+        },
+        "focus-visible": {
+          "color": "rgb(17, 17, 17)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(17, 17, 17)",
+          "borderTopWidth": "0px",
+          "borderRadius": "64px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.994px",
+          "letterSpacing": "normal",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "height": "40px",
+          "width": "221.984px",
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 4px",
+          "outline": "rgb(17, 17, 17) solid 2px",
+          "textTransform": "none",
+          "_box": {
+            "x": 1026.015625,
+            "y": 73,
+            "w": 221.984375,
+            "h": 40
+          }
+        }
+      }
+    },
+    "category-card": {
+      "page": "home",
+      "url": "https://www.ikea.com/sg/en/",
+      "states": {
+        "default": {
+          "color": "rgb(72, 72, 72)",
+          "backgroundColor": "rgb(245, 245, 245)",
+          "borderTopColor": "rgba(0, 0, 0, 0)",
+          "borderTopWidth": "1px",
+          "borderRadius": "4px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.994px",
+          "letterSpacing": "normal",
+          "paddingTop": "8px",
+          "paddingRight": "0px",
+          "paddingBottom": "8px",
+          "paddingLeft": "0px",
+          "height": "173px",
+          "width": "150px",
+          "boxShadow": "none",
+          "outline": "rgb(72, 72, 72) none 0px",
+          "textTransform": "none",
+          "_box": {
+            "x": 218,
+            "y": 162,
+            "w": 150,
+            "h": 173
+          }
+        },
+        "hover": {
+          "color": "rgb(17, 17, 17)",
+          "backgroundColor": "rgb(245, 245, 245)",
+          "borderTopColor": "rgb(17, 17, 17)",
+          "borderTopWidth": "1px",
+          "borderRadius": "4px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.994px",
+          "letterSpacing": "normal",
+          "paddingTop": "8px",
+          "paddingRight": "0px",
+          "paddingBottom": "8px",
+          "paddingLeft": "0px",
+          "height": "173px",
+          "width": "150px",
+          "boxShadow": "none",
+          "outline": "rgb(17, 17, 17) none 0px",
+          "textTransform": "none",
+          "_box": {
+            "x": 218,
+            "y": 162,
+            "w": 150,
+            "h": 173
+          }
+        },
+        "focus-visible": {
+          "color": "rgb(17, 17, 17)",
+          "backgroundColor": "rgb(245, 245, 245)",
+          "borderTopColor": "rgb(17, 17, 17)",
+          "borderTopWidth": "1px",
+          "borderRadius": "4px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21.994px",
+          "letterSpacing": "normal",
+          "paddingTop": "8px",
+          "paddingRight": "0px",
+          "paddingBottom": "8px",
+          "paddingLeft": "0px",
+          "height": "173px",
+          "width": "150px",
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 4px",
+          "outline": "rgb(17, 17, 17) solid 2px",
+          "textTransform": "none",
+          "_box": {
+            "x": 218,
+            "y": 162,
+            "w": 150,
+            "h": 173
+          }
+        }
+      }
+    },
+    "primary-cta": {
+      "page": "home",
+      "url": "https://www.ikea.com/sg/en/",
+      "states": {}
+    },
+    "filter-button": {
+      "page": "plp",
+      "missing": true,
+      "states": {}
+    },
+    "product-card": {
+      "page": "plp",
+      "url": "https://www.ikea.com/sg/en/cat/sofas-armchairs-700640/",
+      "states": {
+        "default": {
+          "color": "rgb(72, 72, 72)",
+          "backgroundColor": "rgba(17, 17, 17, 0.48)",
+          "borderTopColor": "rgba(223, 223, 223, 0.48)",
+          "borderTopWidth": "2px",
+          "borderRadius": "64px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "7px",
+          "letterSpacing": "normal",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "height": "32px",
+          "width": "32px",
+          "boxShadow": "none",
+          "outline": "rgb(72, 72, 72) none 0px",
+          "textTransform": "none",
+          "_box": {
+            "x": 186.85975646972656,
+            "y": 568.9534912109375,
+            "w": 31.967987060546875,
+            "h": 31.968017578125
+          }
+        },
+        "hover": {
+          "color": "rgb(17, 17, 17)",
+          "backgroundColor": "rgba(17, 17, 17, 0.75)",
+          "borderTopColor": "rgba(223, 223, 223, 0.75)",
+          "borderTopWidth": "2px",
+          "borderRadius": "64px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "7px",
+          "letterSpacing": "normal",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "height": "32px",
+          "width": "32px",
+          "boxShadow": "none",
+          "outline": "rgb(17, 17, 17) none 0px",
+          "textTransform": "none",
+          "_box": {
+            "x": 186.85975646972656,
+            "y": 568.9534912109375,
+            "w": 31.967987060546875,
+            "h": 31.968017578125
+          }
+        },
+        "focus-visible": {
+          "color": "rgb(17, 17, 17)",
+          "backgroundColor": "rgba(17, 17, 17, 0.64)",
+          "borderTopColor": "rgba(223, 223, 223, 0.5)",
+          "borderTopWidth": "2px",
+          "borderRadius": "64px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "7px",
+          "letterSpacing": "normal",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "height": "32px",
+          "width": "32px",
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 4px",
+          "outline": "rgb(17, 17, 17) solid 2px",
+          "textTransform": "none",
+          "_box": {
+            "x": 184.95350646972656,
+            "y": 228.54725646972656,
+            "w": 31.967987060546875,
+            "h": 31.968002319335938
+          }
+        }
+      }
+    },
+    "sort-control": {
+      "page": "plp",
+      "missing": true,
+      "states": {}
+    },
+    "add-to-bag": {
+      "page": "pdp",
+      "url": "https://www.ikea.com/sg/en/p/vinterfint-artificial-christmas-tree-in-outdoor-green-60636381/",
+      "states": {
+        "default": {
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "0px",
+          "borderRadius": "64px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "height": "56px",
+          "width": "374.641px",
+          "boxShadow": "none",
+          "outline": "rgb(255, 255, 255) none 0px",
+          "textTransform": "none",
+          "_box": {
+            "x": 1017.359375,
+            "y": 461.125,
+            "w": 374.640625,
+            "h": 56
+          }
+        },
+        "hover": {
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "0px",
+          "borderRadius": "64px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "height": "56px",
+          "width": "374.641px",
+          "boxShadow": "none",
+          "outline": "rgb(255, 255, 255) none 0px",
+          "textTransform": "none",
+          "_box": {
+            "x": 1017.359375,
+            "y": 461.125,
+            "w": 374.640625,
+            "h": 56
+          }
+        },
+        "focus-visible": {
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "0px",
+          "borderRadius": "64px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "height": "56px",
+          "width": "374.641px",
+          "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 4px",
+          "outline": "rgb(17, 17, 17) solid 2px",
+          "textTransform": "none",
+          "_box": {
+            "x": 1017.359375,
+            "y": 461.125,
+            "w": 374.640625,
+            "h": 56
+          }
+        }
+      }
+    },
+    "price": {
+      "page": "pdp",
+      "states": {
+        "default": {
+          "color": "rgb(72, 72, 72)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(72, 72, 72)",
+          "borderTopWidth": "0px",
+          "borderRadius": "0px",
+          "fontFamily": "\"Omani Rial\", \"Emirati Dirham\", \"Saudi Riyal\", \"Noto IKEA\", \"Noto Sans JP\", \"Noto Sans KR\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans\", Roboto, \"Open Sans\", system-ui, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "21px",
+          "letterSpacing": "normal",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "height": "112.797px",
+          "width": "371.094px",
+          "boxShadow": "none",
+          "outline": "rgb(72, 72, 72) none 0px",
+          "textTransform": "none",
+          "_box": {
+            "x": 886,
+            "y": 238.828125,
+            "w": 371.09375,
+            "h": 112.796875
+          }
+        }
+      }
+    }
+  }
+}

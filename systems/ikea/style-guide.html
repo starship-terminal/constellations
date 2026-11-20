@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IKEA style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #f5f5f5;
+    --text: #111111;
+    --muted: #767676;
+    --body: #484848;
+    --line: #dfdfdf;
+    --ink: #111111;
+    --yellow: #ffdb00;
+    --blue: #0058a3;
+    --danger: #e00751;
+    --success: #0a8a00;
+    --warning: #f26a2f;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 14px/20px "Noto Sans", system-ui, sans-serif; }
+  header { background: #111; color: #fff; padding: 12px 24px; display: flex; gap: 16px; align-items: center; }
+  header strong { color: var(--yellow); }
+  main { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+  h1 { font-size: 40px; line-height: 50px; margin: 0 0 8px; }
+  h2 { margin: 40px 0 12px; font-size: 24px; }
+  p { color: var(--body); max-width: 68ch; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+  .sw { display: grid; grid-template-columns: 48px 1fr; gap: 10px; align-items: center; }
+  .sw i { width: 48px; height: 48px; border: 1px solid var(--line); display: block; }
+  .sw b { display: block; font-size: 12px; }
+  .sw span { color: var(--muted); font-size: 12px; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  button.primary, a.primary { background: #111; color: #fff; border: 0; border-radius: 64px; padding: 12px 24px; font: 700 14px/20px inherit; }
+  button.secondary { background: #fff; color: #111; border: 1px solid #111; border-radius: 64px; padding: 12px 24px; font: 700 14px/20px inherit; }
+  button.blue { background: var(--blue); color: #fff; border: 0; border-radius: 64px; padding: 12px 24px; font: 700 14px/20px inherit; }
+  input { border: 1px solid #929292; border-radius: 4px; padding: 12px; font: inherit; min-width: 240px; }
+  .tile { background: var(--surface); width: 140px; height: 120px; display: grid; place-items: end center; padding: 8px; font-size: 12px; text-align: center; }
+  .note { font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header><strong>IKEA</strong> <span>Singapore public storefront, light theme only</span></header>
+<main>
+  <h1>IKEA</h1>
+  <p>Values come from <code>tokens.json</code>, read from <code>--colour-*</code> on the public Singapore site. This page is a specimen, not a screenshot.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#ffffff"></i><div><b>page</b><span>#ffffff</span></div></div>
+    <div class="sw"><i style="background:#f5f5f5"></i><div><b>surface</b><span>#f5f5f5</span></div></div>
+    <div class="sw"><i style="background:#111111"></i><div><b>text</b><span>#111111</span></div></div>
+    <div class="sw"><i style="background:#484848"></i><div><b>body</b><span>#484848</span></div></div>
+    <div class="sw"><i style="background:#767676"></i><div><b>muted</b><span>#767676</span></div></div>
+    <div class="sw"><i style="background:#dfdfdf"></i><div><b>border</b><span>#dfdfdf</span></div></div>
+    <div class="sw"><i style="background:#ffdb00"></i><div><b>yellow</b><span>#ffdb00</span></div></div>
+    <div class="sw"><i style="background:#0058a3"></i><div><b>blue</b><span>#0058a3</span></div></div>
+    <div class="sw"><i style="background:#0a8a00"></i><div><b>success</b><span>#0a8a00</span></div></div>
+    <div class="sw"><i style="background:#f26a2f"></i><div><b>warning</b><span>#f26a2f</span></div></div>
+    <div class="sw"><i style="background:#e00751"></i><div><b>danger</b><span>#e00751</span></div></div>
+    <div class="sw"><i style="background:#cc0008"></i><div><b>lower price</b><span>#cc0008</span></div></div>
+  </div>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="primary">Log in</button>
+    <button class="secondary">Create account</button>
+    <button class="blue">Emphasised</button>
+    <input placeholder="What are you looking for?" aria-label="Search">
+    <div class="tile">Category tile</div>
+  </div>
+  <p class="note">Pill radius and field radius were not declared as custom properties. The pills here follow the login buttons visible in the capture. Focus ring width is Not captured.</p>
+</main>
+</body>
+</html>
