@@ -11,6 +11,13 @@ COMP = json.loads((HERE / "raw" / "components-computed.json").read_text())
 
 
 class BuildTokens(unittest.TestCase):
+    def test_committed_file_matches_builder(self):
+        # The builder run in memory reproduces the committed file byte for byte.
+        import sys
+        sys.path.insert(0, str(HERE / "tools"))
+        import build_tokens
+        self.assertEqual((HERE / "tokens.json").read_text(), build_tokens.render())
+
     def test_page_is_the_measured_body(self):
         self.assertEqual(TOKENS["dark"]["page"]["$value"], COMP["home"]["body"]["backgroundColor"])
 

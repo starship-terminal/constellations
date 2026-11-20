@@ -45,11 +45,10 @@ class Tokens(unittest.TestCase):
     def test_search_height_is_the_measured_field(self):
         self.assertEqual(value("light", "component", "search", "height"), "33px")
 
-    def test_every_color_has_a_source(self):
+    def test_every_token_has_a_source(self):
         def walk(node):
             if isinstance(node, dict) and "$value" in node:
-                if node.get("$type") == "color":
-                    self.assertIn("source", node.get("$extensions", {}))
+                self.assertTrue(node.get("$extensions", {}).get("source"), node)
             elif isinstance(node, dict):
                 for k, v in node.items():
                     if not k.startswith("$"):
