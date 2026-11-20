@@ -2,6 +2,7 @@
 emitted-vs-consumed contract between the refero JSON the tools write and what
 the app (web/) reads. Run with `make test`."""
 import json
+import os
 import re
 import sqlite3
 import sys
@@ -495,6 +496,41 @@ CONTRACT_BETA = {"slug": "beta", "name": "Beta"}
 CONTRACT_BETA_DS = {"description": "d2"}
 
 
+MEDIA_BASE = "https://media.example.test"
+
+
+class MediaBaseTest(unittest.TestCase):
+    """refero_media.media_base(): the environment wins, else the default bucket."""
+
+    def test_the_environment_wins_and_an_empty_value_means_the_site_itself(self):
+        with mock.patch.object(refero_media, "load_env", return_value=[]):
+            for value in (MEDIA_BASE, ""):
+                with mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_MEDIA_BASE": value}):
+                    self.assertEqual(refero_media.media_base(), value)
+
+    def test_unset_falls_back_to_the_default_bucket(self):
+        env = {k: v for k, v in os.environ.items() if k != "DESIGN_SYSTEMS_MEDIA_BASE"}
+        with mock.patch.object(refero_media, "load_env", return_value=[]), \
+                mock.patch.dict(os.environ, env, clear=True):
+            self.assertTrue(refero_media.media_base().startswith("https://"))
+
+    def test_load_env_reads_only_the_named_keys_and_never_overrides(self):
+        with tempfile.TemporaryDirectory() as d:
+            env_file = Path(d) / ".env"
+            env_file.write_text("DESIGN_SYSTEMS_MEDIA_BASE=https://from-file.test\n"
+                                "export OTHER_KEY='x'\nSITE_PASSWORD=never\n")
+            clean = {k: v for k, v in os.environ.items()
+                     if k not in ("DESIGN_SYSTEMS_MEDIA_BASE", "OTHER_KEY", "SITE_PASSWORD")}
+            with mock.patch.dict(os.environ, clean, clear=True):
+                self.assertEqual(refero_media.load_env(("DESIGN_SYSTEMS_MEDIA_BASE", "OTHER_KEY"),
+                                                       env_file), ["DESIGN_SYSTEMS_MEDIA_BASE", "OTHER_KEY"])
+                self.assertEqual(os.environ["OTHER_KEY"], "x")
+                self.assertNotIn("SITE_PASSWORD", os.environ)
+                os.environ["DESIGN_SYSTEMS_MEDIA_BASE"] = "https://already.test"
+                refero_media.load_env(("DESIGN_SYSTEMS_MEDIA_BASE",), env_file)
+                self.assertEqual(os.environ["DESIGN_SYSTEMS_MEDIA_BASE"], "https://already.test")
+
+
 class ReferoEmitContractTest(unittest.TestCase):
     """build_refero's output pinned against fixed key sets and what the app
     actually reads (the web/ TypeScript interfaces and field accesses)."""
@@ -511,8 +547,15 @@ class ReferoEmitContractTest(unittest.TestCase):
             (folder / "meta.json").write_text(json.dumps(meta))
             (folder / "design-system.json").write_text(json.dumps(ds))
             (folder / "DESIGN.md").write_text("# D\n")
+        # build_refero reads the media base through its own copy of refero_media (catalog.py
+        # loads it by location, so it is not the `refero_media` imported here), whose media_base()
+        # copies DESIGN_SYSTEMS_MEDIA_BASE from the repo's .env into os.environ. Pin the
+        # value and skip the .env, so the output does not depend on the machine and
+        # nothing leaks into the rest of the test run.
         with mock.patch.object(catalog, "ROOT", root), \
-                mock.patch.object(catalog, "DATA", cls.site):
+                mock.patch.object(catalog, "DATA", cls.site), \
+                mock.patch.object(catalog.refero_media, "load_env", return_value=[]) as cls.load_env, \
+                mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_MEDIA_BASE": MEDIA_BASE}):
             out = catalog.build_refero()
         cls.index = json.loads(out.read_text())
         cls.entity = json.loads(
@@ -523,6 +566,11 @@ class ReferoEmitContractTest(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         cls.tmp.cleanup()
+
+    def test_the_media_base_comes_from_the_environment(self):
+        self.assertEqual(self.index["mediaBase"], MEDIA_BASE)
+        self.load_env.assert_called_with(("DESIGN_SYSTEMS_MEDIA_BASE",))
+        self.assertNotEqual(os.environ.get("DESIGN_SYSTEMS_MEDIA_BASE"), MEDIA_BASE)  # restored
 
     def test_emitted_key_sets_are_fixed(self):
         self.assertEqual(set(self.index), INDEX_KEYS)
