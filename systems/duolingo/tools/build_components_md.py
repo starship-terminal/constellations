@@ -81,7 +81,7 @@ L.append('''- **Log-in and sign-up flow:** the onboarding questions were capture
 - **Tablet range 700 to 1159px:** captured on 2026-10-17 at 1000px ([learn-light-tablet](screenshots/learn-light-tablet.png)): the 88px icon-only sidebar and both columns.
 - **Screenshot vs dump mismatches:** some dark lesson and leaderboard screenshots were retaken during a second lesson while their dumps come from the first, and `leaderboard-dark-mobile` differs too. The component crops from those were offset and checked by eye. See `SHOT_MISMATCH` in the product spec.
 - **Pressed / active states:** a static dump cannot hold a mouse press, so every pressed value comes from CSS `:active` rules.
-- **Personal data:** the email field in the four `settings-profile-*` screenshots is blurred. Other users' names and avatars appear in leaderboard, profile and search captures as they did on screen.
+- **Personal data:** the email field in the four `settings-profile-*` screenshots is blurred. Other learners' names and avatars are painted out or pixelated in the leaderboard, profile, friend-streak and search captures; the own profile and the Duolingo account stay.
 ''')
 tg=re.search(r'^## Gaps\n(.*)',tnotes,re.M|re.S)
 L.append('### Tokens\n'); L.append((tg.group(1).strip() if tg else '')+'\n')

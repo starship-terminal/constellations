@@ -10,7 +10,7 @@ How to read an entry:
 - A colour, shadow, radius, padding, gap or control height is its value followed by the [tokens.json](tokens.json) token with the same value (`{palette.grey.primary}`, `{elevation.menu}`, `{radius.lg}`, `{spacing.2}`, `{size.control-md}`), when there is one; a colour names the light-set role for what it paints (`{background.surface}` for a fill, `{text.default}` for text, `{border.default}` for a border; these live in the light set) and falls back to the palette token when no role has that value; an entry's own `component.*` token (by name: `component.toast` for the toast, `component.tooltip` for the graph tooltip, `component.menu-separator` for a menu's rule) is named first for its fill, so a token is only chosen by value when the component has none of its own. Collection colours (`palette.ugc.*`) stay palette tokens because the user picks them per collection. Text is written family size/line-height weight, then its colour, for example `Plus Jakarta Sans 14/21 400, #000000 {palette.base.black}`, and is read from the first text node inside the component.
 - The state table has one row per element or snapshot state read at rest. A hover, focus-visible or pressed row lists only what changes from the row above it; a state with the same values is named in the row's label, for example "default (same: hover)". Hover is a real mouse hover, focus-visible a real keyboard focus and pressed the mouse held down (2026-10-17 pages only); where a snapshot state could not be reached it says so.
 - "Parts" lists the pieces inside the component, with sizes and offsets measured from the component's corner.
-- Crops are images of the component read from the rendered snapshot, in [components/crops/](components/crops) (445 files, named `{component}-{state}.png`, at 2x, 256 colours). A crop wider than 1600px was halved. A state that paints the same pixels as its default has no file of its own. Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the rendered snapshot, in [components/crops/](components/crops) (438 files, named `{component}-{state}.png`, at 2x, 256 colours). A crop wider than 1600px was halved. A state that paints the same pixels as its default has no file of its own. Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -163,7 +163,7 @@ Values that apply across entries, from the measurement file. Counts are componen
 | 350ms | `ease` | opacity, transform | AnimatedContainer__Container |
 | 500ms | `ease` | max-height, transform, width | FilterableSearchActions__Chevron, Navigation__AnimatedWidth, `drawer` |
 
-**Focus.** Real keyboard focus was given to every component that could take it. 62 draw an outline ring, in 3 styles: 1px auto #b0edf0 `{action.focus-ring}`, offset 0px on `account-menu`, `autosave-button`, `button-link`, `button-primary`, `button-secondary` and more; 1px auto #005fcc `{border.focus-browser}`, offset 1px on `empty-state-link`, `home-guide-card`, `inspector-title`, `nav-logo`, `nav-tab`; 1px auto #005fcc `{border.focus-browser}`, offset 0px on `note-composer`. 1 change something other than an outline: `slider`. 14 could not take focus (a div, or disabled): `citation-box`, `drawer-search-button`, `graph-legend-item`, `inspector-authors`, `inspector-nav`, `layout-reset`, `layout-tab`, `library-list-row`, `list-pager`, `recent-search-row`, `selection-bar`, `selection-tick`, `table-header`, `table-row`.
+**Focus.** Real keyboard focus was given to every component that could take it. 62 draw an outline ring, in 3 styles: 1px auto #b0edf0 `{action.focus-ring}`, offset 0px on `account-menu`, `autosave-button`, `button-link`, `button-primary`, `button-secondary` and more; 1px auto #005fcc `{border.focus-browser}`, offset 1px on `empty-state-link`, `home-guide-card`, `inspector-title`, `nav-logo`, `nav-tab`; 1px auto #005fcc `{border.focus-browser}`, offset 0px on `note-composer`. 1 change something other than an outline: `slider`. Focus could not be captured on 14 more (not focusable, or focused without matching :focus-visible), left out of the tally: `citation-box`, `drawer-search-button`, `graph-legend-item`, `inspector-authors`, `inspector-nav`, `layout-reset`, `layout-tab`, `library-list-row`, `list-pager`, `recent-search-row`, `selection-bar`, `selection-tick`, `table-header`, `table-row`.
 
 **Hover.** 71 hovered states differ from their rest state in computed style and 60 do not (they change something drawn on the canvas, or nothing). Background changes on hover, most common first:
 
@@ -617,7 +617,7 @@ One legend chip. Hovering shows a help cursor and a white fill; the tooltip itse
 | results (as the first row, except) | size 73.22 x 20 |
 | results, hover | background #ffffff `{background.surface}` |
 
-- Not measured: references cannot take keyboard focus.
+- Not measured: focus could not be captured on references (not focusable, or focused without matching :focus-visible).
 
 Authored state rules (from the page's CSS): `.x:hover { background-color: white; }`.
 
@@ -837,11 +837,11 @@ Previous and next chevrons around a "1 - 20 of 686" label at the foot of the lis
 | next, hover | background rgba(0, 0, 0, 0.05) `{action.quiet}` |
 | next, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 
-- Not measured: prev cannot take keyboard focus.
+- Not measured: focus could not be captured on prev (not focusable, or focused without matching :focus-visible).
 
 Authored state rules (from the page's CSS): `button:focus, input:focus { outline-color: var(--turq-50); }`; `.x:hover { background-color: rgba(0, 0, 0, 0.05); }`.
 
-![List pager prev](components/crops/list-pager-prev.png) ![List pager prev-hover](components/crops/list-pager-prev-hover.png) ![List pager prev-focus-visible](components/crops/list-pager-prev-focus-visible.png) ![List pager next](components/crops/list-pager-next.png) ![List pager next-hover](components/crops/list-pager-next-hover.png) ![List pager next-focus-visible](components/crops/list-pager-next-focus-visible.png)
+![List pager prev](components/crops/list-pager-prev.png) ![List pager prev-hover](components/crops/list-pager-prev-hover.png) ![List pager next](components/crops/list-pager-next.png) ![List pager next-hover](components/crops/list-pager-next-hover.png) ![List pager next-focus-visible](components/crops/list-pager-next-focus-visible.png)
 
 #### List scrollbar
 Custom 12px scrollbar track with a thumb; visible on hover in the list. Read as `list-scrollbar` on the search split view (hovering a list card).
@@ -1008,7 +1008,7 @@ Grey pill button at the right of the drawer summary. Read as `drawer-search-butt
 
 **Values (default).** size 71.41 x 37 (height `{size.field}`); padding 8px 12px `{spacing.2} {spacing.3}`; radius 48px `{radius.pill}`; background #e8e7f6 `{action.accent-soft}`; text Plus Jakarta Sans 14/14 600, #000000 `{text.default}`; opacity 0.6.
 
-- Not measured: the component cannot take keyboard focus.
+- Not measured: focus could not be captured on the component (not focusable, or focused without matching :focus-visible).
 
 Authored state rules (from the page's CSS): `button:focus, input:focus { outline-color: var(--turq-50); }`.
 
@@ -1047,7 +1047,7 @@ Previous and next article arrows with a count. Read as `inspector-nav` on the se
 | default | size 145.2 x 33; padding 2px; gap 4px `{spacing.1}`; radius 48px `{radius.pill}`; background #f2f2f2 `{action.control}`; text Plus Jakarta Sans 14/14 400, #000000 `{text.default}` |
 | item (same: hover) | size 58.72 x 29; padding 4px 8px `{spacing.1} {spacing.2}`; radius 48px `{radius.pill}`; background #ffffff `{background.surface}`; text Plus Jakarta Sans 14/14 400, #000000 `{text.default}`; cursor pointer |
 
-- Not measured: item cannot take keyboard focus.
+- Not measured: focus could not be captured on item (not focusable, or focused without matching :focus-visible).
 
 Parts:
 
@@ -1151,7 +1151,7 @@ Authors as inline buttons; the rest collapse into a "+13" button. Read as `inspe
 | more (same: hover) | size 39.38 x 26; padding 4px `{spacing.1}`; radius 4px `{radius.sm}`; background rgba(0, 0, 0, 0.05) `{action.quiet}`; text Plus Jakarta Sans 12/18 400, #201d1d `{text.primary}`; cursor pointer |
 | more, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 
-- Not measured: author cannot take keyboard focus.
+- Not measured: focus could not be captured on author (not focusable, or focused without matching :focus-visible).
 
 Child layers that carry the look: button 39.4x26 background rgba(0, 0, 0, 0.05) `{action.quiet}` radius 4px.
 
@@ -1164,7 +1164,7 @@ Parts:
 
 Authored state rules (from the page's CSS): `button:focus, input:focus { outline-color: var(--turq-50); }`; `.x:hover { background-color: var(--lavender-25); z-index: 1; }`; `.x:disabled:hover { border-color: transparent; background-color: rgba(0, 0, 0, 0.05); }`.
 
-![Author chips default](components/crops/inspector-authors-default.png) ![Author chips author](components/crops/inspector-authors-author.png) ![Author chips author-hover](components/crops/inspector-authors-author-hover.png) ![Author chips author-focus-visible](components/crops/inspector-authors-author-focus-visible.png) ![Author chips more](components/crops/inspector-authors-more.png) ![Author chips more-focus-visible](components/crops/inspector-authors-more-focus-visible.png)
+![Author chips default](components/crops/inspector-authors-default.png) ![Author chips author](components/crops/inspector-authors-author.png) ![Author chips author-hover](components/crops/inspector-authors-author-hover.png) ![Author chips more](components/crops/inspector-authors-more.png) ![Author chips more-focus-visible](components/crops/inspector-authors-more-focus-visible.png)
 
 #### Add to library row
 A "Library" label with the Collection and Reading List buttons. Read as `inspector-library-row` on the search map view (a node inspected).
@@ -1289,8 +1289,8 @@ One tab, current and not current. Read as `layout-tab` on the search map view (l
 | other (as the first row, except) | size 49.39 x 27; background transparent; text Plus Jakarta Sans 14/14 400, #000000 `{text.default}` |
 | other, hover | opacity 0.8 |
 
-- Not measured: current cannot take keyboard focus.
-- Not measured: other cannot take keyboard focus.
+- Not measured: focus could not be captured on current (not focusable, or focused without matching :focus-visible).
+- Not measured: focus could not be captured on other (not focusable, or focused without matching :focus-visible).
 
 Parts:
 
@@ -1298,7 +1298,7 @@ Parts:
 
 Authored state rules (from the page's CSS): `.x:hover { opacity: 0.8; }`.
 
-![Layout tab current](components/crops/layout-tab-current.png) ![Layout tab current-hover](components/crops/layout-tab-current-hover.png) ![Layout tab current-focus-visible](components/crops/layout-tab-current-focus-visible.png) ![Layout tab other](components/crops/layout-tab-other.png) ![Layout tab other-hover](components/crops/layout-tab-other-hover.png) ![Layout tab other-focus-visible](components/crops/layout-tab-other-focus-visible.png)
+![Layout tab current](components/crops/layout-tab-current.png) ![Layout tab current-hover](components/crops/layout-tab-current-hover.png) ![Layout tab other](components/crops/layout-tab-other.png) ![Layout tab other-hover](components/crops/layout-tab-other-hover.png)
 
 #### Layout panel close button
 X at the top right of the panel. Read as `layout-close` on the search map view (layout settings, X Axis).
@@ -1384,7 +1384,7 @@ Plain text button at the foot of the layout panel. Read as `layout-reset` on the
 | default | size 129.23 x 29; padding 4px 8px `{spacing.1} {spacing.2}`; radius 4px `{radius.sm}`; background transparent; text Plus Jakarta Sans 14/21 500, #000000 `{text.default}`; opacity 0.4 |
 | hover | background rgba(0, 0, 0, 0.05) `{action.quiet}` |
 
-- Not measured: the component cannot take keyboard focus.
+- Not measured: focus could not be captured on the component (not focusable, or focused without matching :focus-visible).
 
 Authored state rules (from the page's CSS): `button:focus, input:focus { outline-color: var(--turq-50); }`; `.x:hover { background-color: rgba(0, 0, 0, 0.05); }`.
 
@@ -1413,7 +1413,7 @@ A fixed list entry with an icon, a name and a count badge. Read as `library-list
 | reading-list (same: hover) (same as the first row) | same values |
 | all-articles-current (same: pressed) (as the first row, except) | shadow #000000 0px 0px 0px 1px inset (`{elevation.ring-strong}`); text Plus Jakarta Sans 14/14 600, #000000 `{text.default}` |
 
-- Not measured: recently-found cannot take keyboard focus.
+- Not measured: focus could not be captured on recently-found (not focusable, or focused without matching :focus-visible).
 
 Parts:
 
@@ -1543,7 +1543,7 @@ A row under the header: Select all at the left, then Reading, Delete, Save, Expo
 | action-enabled (same: hover, pressed) | size 74.42 x 26; padding 4px 8px `{spacing.1} {spacing.2}`; gap 4px `{spacing.1}`; radius 24px `{radius.chip}`; background transparent; text Plus Jakarta Sans 12/18 500, #000000 `{text.default}`; cursor pointer; icon 16 x 16, #000000 `{text.default}` |
 | action-enabled, focus-visible | outline 1px auto #b0edf0 `{action.focus-ring}`, offset 0px |
 
-- Not measured: action cannot take keyboard focus.
+- Not measured: focus could not be captured on action (not focusable, or focused without matching :focus-visible).
 
 Parts:
 
@@ -1557,7 +1557,7 @@ Parts:
 
 Authored state rules (from the page's CSS): `button:focus, input:focus { outline-color: var(--turq-50); }`; `.x:hover { background-color: rgba(255, 255, 255, 0.5); }`.
 
-![Selection bar default](components/crops/selection-bar-default.png) ![Selection bar select-all](components/crops/selection-bar-select-all.png) ![Selection bar select-all-hover](components/crops/selection-bar-select-all-hover.png) ![Selection bar select-all-focus-visible](components/crops/selection-bar-select-all-focus-visible.png) ![Selection bar action](components/crops/selection-bar-action.png) ![Selection bar action-focus-visible](components/crops/selection-bar-action-focus-visible.png) ![Selection bar select-all-pressed](components/crops/selection-bar-select-all-pressed.png) ![Selection bar one-selected](components/crops/selection-bar-one-selected.png) ![Selection bar action-enabled](components/crops/selection-bar-action-enabled.png)
+![Selection bar default](components/crops/selection-bar-default.png) ![Selection bar select-all](components/crops/selection-bar-select-all.png) ![Selection bar select-all-hover](components/crops/selection-bar-select-all-hover.png) ![Selection bar select-all-focus-visible](components/crops/selection-bar-select-all-focus-visible.png) ![Selection bar action](components/crops/selection-bar-action.png) ![Selection bar select-all-pressed](components/crops/selection-bar-select-all-pressed.png) ![Selection bar one-selected](components/crops/selection-bar-one-selected.png) ![Selection bar action-enabled](components/crops/selection-bar-action-enabled.png)
 
 #### Library filter bar
 Grey row inside the list card: "Showing 9 Articles" at the left, then sort, filter, search and the four view buttons at the right. Read as `filter-bar` on the library map view, library list view.
@@ -2043,7 +2043,7 @@ The click-to-copy box in Cite Article: the citation in 12px monospace on a pale 
 | hover, pressed | background #e9f5fe `{component.citation-box}` |
 | copied (as the first row, except) | background #e9f5fe `{component.citation-box}` |
 
-- Not measured: the component cannot take keyboard focus.
+- Not measured: focus could not be captured on the component (not focusable, or focused without matching :focus-visible).
 
 Parts:
 
@@ -2191,7 +2191,7 @@ The 20px circle at the top right of a result card. Selecting it fills it black w
 | unselected (same: hover, pressed) | size 20 x 20; background transparent; text Plus Jakarta Sans 14/21 400, #000000 `{text.default}`; cursor pointer; icon 18 x 18, #000000 `{text.default}` |
 | selected (same as the first row) | same values |
 
-- Not measured: unselected cannot take keyboard focus.
+- Not measured: focus could not be captured on unselected (not focusable, or focused without matching :focus-visible).
 
 ![Selection circle unselected](components/crops/selection-tick-unselected.png) ![Selection circle unselected-hover](components/crops/selection-tick-unselected-hover.png) ![Selection circle unselected-pressed](components/crops/selection-tick-unselected-pressed.png) ![Selection circle selected](components/crops/selection-tick-selected.png)
 
@@ -2265,11 +2265,11 @@ A sortable column title; Label carries the up chevron. Read as `table-header` on
 | default | size 120 x 30; padding 6px 3px; gap 4px `{spacing.1}`; background transparent; text Plus Jakarta Sans 14/14 600, #000000 `{text.default}`; cursor pointer; icon 14 x 14, #686d79 `{text.secondary}` |
 | hover, pressed | background rgba(0, 0, 0, 0.05) `{action.quiet}` |
 
-- Not measured: the component cannot take keyboard focus.
+- Not measured: focus could not be captured on the component (not focusable, or focused without matching :focus-visible).
 
 Authored state rules (from the page's CSS): `.x:hover { background-color: rgba(0, 0, 0, 0.05); }`.
 
-![Table header cell default](components/crops/table-header-default.png) ![Table header cell hover](components/crops/table-header-hover.png) ![Table header cell focus-visible](components/crops/table-header-focus-visible.png) ![Table header cell pressed](components/crops/table-header-pressed.png)
+![Table header cell default](components/crops/table-header-default.png) ![Table header cell hover](components/crops/table-header-hover.png) ![Table header cell pressed](components/crops/table-header-pressed.png)
 
 #### Table row
 One article per 29px row. Read as `table-row` on the library, All Articles in table view.
@@ -2279,7 +2279,7 @@ One article per 29px row. Read as `table-row` on the library, All Articles in ta
 | default | size 1126 x 29; padding 0px 4px `{spacing.0} {spacing.1}`; background #ffffff `{background.surface}`; text Plus Jakarta Sans 14/21 500, #000000 `{text.default}`; icon 14 x 14, #000000 `{text.default}` |
 | hover, pressed | background #eef0f1 `{component.table-row-hover}` |
 
-- Not measured: the component cannot take keyboard focus.
+- Not measured: focus could not be captured on the component (not focusable, or focused without matching :focus-visible).
 
 Authored state rules (from the page's CSS): `.x:hover { background-color: var(--grey-bg2); }`.
 
@@ -2293,7 +2293,7 @@ One past search on the Search start page: the inputs as chips, the date in 12px 
 | default | size 1316 x 92; radius 8px `{radius.lg}`; background #ffffff `{background.surface}`; text Plus Jakarta Sans 14/14 400, #000000 `{text.default}`; icon 14 x 14, #000000 `{text.default}` |
 | hover, pressed | shadow #000000 0px 0px 0px 1px inset (`{elevation.ring-strong}`) |
 
-- Not measured: the component cannot take keyboard focus.
+- Not measured: focus could not be captured on the component (not focusable, or focused without matching :focus-visible).
 
 Parts:
 
@@ -2302,7 +2302,7 @@ Parts:
 
 Authored state rules (from the page's CSS): `.x:hover { box-shadow: black 0px 0px 0px 1px inset; }`.
 
-![Recent search row default](components/crops/recent-search-row-default.png) ![Recent search row hover](components/crops/recent-search-row-hover.png) ![Recent search row focus-visible](components/crops/recent-search-row-focus-visible.png) ![Recent search row pressed](components/crops/recent-search-row-pressed.png)
+![Recent search row default](components/crops/recent-search-row-default.png) ![Recent search row hover](components/crops/recent-search-row-hover.png) ![Recent search row pressed](components/crops/recent-search-row-pressed.png)
 
 ### Empty states
 

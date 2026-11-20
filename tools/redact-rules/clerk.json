@@ -16,6 +16,56 @@
         [99, 1272, 367, 1296, "solid"],
         [99, 1357, 367, 1381, "solid"]
       ]
+    },
+    {
+      "name": "Other users' avatars and names in the users table, dark desktop (2026-11-21; dates and the table chrome stay)",
+      "files": ["screenshots/users-dark-desktop.png", "screenshots/users-columns-menu-dark-desktop.png"],
+      "rects": [
+        [180, 470, 237, 1300, "pixelate:16"],
+        [237, 470, 400, 1300]
+      ]
+    },
+    {
+      "name": "Other users' avatars and names in the users table, light desktop",
+      "files": ["screenshots/users-light-desktop.png"],
+      "rects": [
+        [44, 470, 98, 1300, "pixelate:16"],
+        [98, 470, 300, 1300]
+      ]
+    },
+    {
+      "name": "Other users' avatars and names in the overview's users table, also behind the application switcher",
+      "files": ["screenshots/overview-dark-desktop.png", "screenshots/application-switcher-dark-desktop.png"],
+      "rects": [
+        [180, 595, 237, 1425, "pixelate:16"],
+        [237, 595, 420, 1425]
+      ]
+    },
+    {
+      "name": "Other users' avatars and names behind the create-user dialog, blurred and unblurred rows",
+      "files": ["screenshots/create-user-dialog-dark-desktop.png", "screenshots/country-select-menu-dark-desktop.png"],
+      "rects": [
+        [180, 470, 237, 1300, "pixelate:16"],
+        [237, 470, 478, 1300]
+      ]
+    },
+    {
+      "name": "Other users' avatars and names in the mobile users table",
+      "files": ["screenshots/users-dark-mobile.png"],
+      "rects": [
+        [46, 555, 98, 1385, "pixelate:16"],
+        [98, 555, 232, 1385, "solid"]
+      ]
+    },
+    {
+      "name": "Workspace team: the two other members' avatars and names; the row marked You stays",
+      "files": ["screenshots/workspace-team-dark-desktop.png"],
+      "rects": [
+        [100, 395, 147, 445, "pixelate:16"],
+        [150, 400, 300, 445],
+        [100, 558, 147, 605, "pixelate:16"],
+        [150, 560, 300, 605]
+      ]
     }
   ],
   "ocr": {

@@ -1858,7 +1858,7 @@ Page: mobile. Selector: `button[aria-label="Open menu"]`. States: default, hover
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `m-menu-button-default.png`, `m-menu-button-hover.png`, `m-menu-button-focus-visible.png`, `m-menu-button-pressed.png`.
+Crops: `m-menu-button-default.png`, `m-menu-button-hover.png`, `m-menu-button-pressed.png`.
 
 #### m-menu-open
 
@@ -1990,7 +1990,7 @@ Page: mobile. Selector: `footer summary at 390`. States: default, hover, focus-v
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `m-footer-summary-default.png`, `m-footer-summary-hover.png`, `m-footer-summary-focus-visible.png`, `m-footer-summary-pressed.png`.
+Crops: `m-footer-summary-default.png`, `m-footer-summary-hover.png`, `m-footer-summary-pressed.png`.
 
 ## Transitions declared in the readable stylesheets
 

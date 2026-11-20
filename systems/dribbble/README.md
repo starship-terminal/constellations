@@ -12,7 +12,7 @@ Dribbble is worth a capture because the signed-out page is the shopfront of the 
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values (the dark set is shown as the ink-surface swatches it is — there is no product dark mode to toggle) |
 | [components.md](components.md) | The discovery list of every captured page, one entry per component (87, 245 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the header, the hero and search strip, the shots feed and sign-up wall, the shot detail, the profile and directory, jobs/search/stories, the auth split layout, the footer, mobile |
-| [components/crops/](components/crops) | 245 element screenshots, `{component}-{state}.png` at 2x |
+| [components/crops/](components/crops) | 242 element screenshots, `{component}-{state}.png` at 2x |
 | [screenshots/](screenshots) | 26 `{page}-{theme}-{state}.png` captures, 256-colour PNGs. Desktop 1440 x 900, `-full` whole pages bounded at eight chunks, `home-light-menu` the Explore dropdown, `mobile-*` the 390px phone pass including the opened menu |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (997 harvested CSS rules and 30 font faces, resolved light and dark scopes), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
@@ -51,7 +51,7 @@ Fonts: `core.font.family.sans` is Mona Sans, then 4 fallbacks; `core.font.face.s
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 245 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 242 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 

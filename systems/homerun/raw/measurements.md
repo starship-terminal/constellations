@@ -1300,7 +1300,7 @@ Page: careers. Selector: `a.social-icon-btn`. States: default, hover, focus-visi
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `careers-share-focus-visible.png`, `careers-share-pressed.png`.
+Crops: `careers-share-pressed.png`.
 
 #### careers-all-jobs
 
@@ -1327,7 +1327,7 @@ Page: careers. Selector: `a.btn-all-jobs`. States: default, hover, focus-visible
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `careers-all-jobs-default.png`, `careers-all-jobs-hover.png`, `careers-all-jobs-focus-visible.png`, `careers-all-jobs-pressed.png`.
+Crops: `careers-all-jobs-default.png`, `careers-all-jobs-hover.png`, `careers-all-jobs-pressed.png`.
 
 #### careers-filter
 

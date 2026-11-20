@@ -74,7 +74,7 @@ Page: /sg/en. Selector: `a (text Sign In)`. States: default, hover, focus-visibl
 | How | resting state | mouse hover over the element | - | CDP CSS.forcePseudoState(:active:hover) — no real press |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `header-signin-default.png`, `header-signin-hover.png`, `header-signin-focus-visible.png`, `header-signin-pressed.png`.
+Crops: `header-signin-default.png`, `header-signin-hover.png`, `header-signin-pressed.png`.
 
 ### Hero
 
@@ -132,7 +132,7 @@ Page: /sg/en. Selector: `a (text Start Subscription/Subscribe/Sign Up)`. States:
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Error | - | = | = | cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location |
 
-Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`.
+Crops: `hero-cta-default.png`, `hero-cta-hover.png`.
 
 #### hero-next
 
@@ -284,7 +284,7 @@ Page: /sg/en. Selector: `button/a (text Choose/Select/Continue)`. States: defaul
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Error | - | = | = | cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location |
 
-Crops: `plan-choose-default.png`, `plan-choose-hover.png`, `plan-choose-focus-visible.png`.
+Crops: `plan-choose-default.png`, `plan-choose-hover.png`.
 
 ### FAQ
 
@@ -341,7 +341,7 @@ Page: /sg/en. Selector: `.max-section-faq button, [class*="faq" i] button`. Stat
 | How | resting state | mouse hover over the element | - | the item's own press — the answer expanded |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `faq-item-default.png`, `faq-item-hover.png`, `faq-item-focus-visible.png`, `faq-item-opened.png`.
+Crops: `faq-item-default.png`, `faq-item-hover.png`, `faq-item-opened.png`.
 
 ### Content rails
 
@@ -377,7 +377,7 @@ Page: /sg/en. Selector: `main a[href*="/show/"], main a[href*="/movie/"]`. State
 | How | resting state | mouse hover over the element | - |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element |
 
-Crops: `rail-card-default.png`, `rail-card-hover.png`, `rail-card-focus-visible.png`.
+Crops: `rail-card-default.png`, `rail-card-hover.png`.
 
 #### browse-rail-section
 
@@ -432,7 +432,7 @@ Page: /sg/en/movies. Selector: `main a[href*="/show/"], main a[href*="/movie/"]`
 | How | resting state | mouse hover over the element | - |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element |
 
-Crops: `browse-rail-card-default.png`, `browse-rail-card-hover.png`, `browse-rail-card-focus-visible.png`.
+Crops: `browse-rail-card-default.png`, `browse-rail-card-hover.png`.
 
 ### Footer
 
@@ -595,7 +595,7 @@ Page: /sg/en/show/e6e7bad9-d48d-4434-b334-7c651ffc4bdf. Selector: `a (text Start
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Error | - | = | = | cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location |
 
-Crops: `detail-cta-default.png`, `detail-cta-hover.png`, `detail-cta-focus-visible.png`.
+Crops: `detail-cta-default.png`, `detail-cta-hover.png`.
 
 #### movie-detail-hero
 
@@ -684,7 +684,7 @@ Page: /sg/en/movie/710798da-f811-40be-9ed9-3a7443e36278. Selector: `a (text Star
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Error | - | = | = | cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location |
 
-Crops: `movie-detail-cta-default.png`, `movie-detail-cta-hover.png`, `movie-detail-cta-focus-visible.png`.
+Crops: `movie-detail-cta-default.png`, `movie-detail-cta-hover.png`.
 
 ### Cookie consent
 

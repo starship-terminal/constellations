@@ -301,22 +301,23 @@ Page: home. Selector: `Send me free research`. States: default, hover, focus-vis
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 184.84 x 40 | = | = | 151.58 x 21 |
-| Padding | 9.6px 16px | = | = | 1px 6px |
-| Border | 1px solid #dedfe1 | = | = | 2px outset #767676 @ 0.3 |
-| Radius | 0px 2px 2px 0px | = | = | 0px |
-| Background | #dedfe1 | = | = | #efefef @ 0.3 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 14px/18.2px 400 | = | = | Arial 13.3333px/normal 400 |
-| Letter spacing | normal | = | = | = |
-| Colour | #808080 | = | = | #101010 @ 0.3 |
-| Transition | all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) | = | = | none |
-| Cursor | not-allowed | = | = | default |
-| Painted layers | button.style-module-scss-module__NRs3BG__button.style-module-scss-module__NRs3BG__secondary 184.8x40.0 bg #dedfe1 border T:1px solid #dedfe1 / R:1px solid #dedfe1 / B:1px solid #dedfe1 / L:1px solid #dedfe1 r 0px 2px 2px 0px | = | = | button.style-module-scss-module__NRs3BG__button.style-module-scss-module__NRs3BG__secondary 151.6x21.0 bg #efefef @ 0.3 border T:2px outset #767676 @ 0.3 / R:2px outset #767676 @ 0.3 / B:2px outset #767676 @ 0.3 / L:2px outset #767676 @ 0.3 |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 184.84 x 40 | = | - | 151.58 x 21 |
+| Padding | 9.6px 16px | = | - | 1px 6px |
+| Border | 1px solid #dedfe1 | = | - | 2px outset #767676 @ 0.3 |
+| Radius | 0px 2px 2px 0px | = | - | 0px |
+| Background | #dedfe1 | = | - | #efefef @ 0.3 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 14px/18.2px 400 | = | - | Arial 13.3333px/normal 400 |
+| Letter spacing | normal | = | - | = |
+| Colour | #808080 | = | - | #101010 @ 0.3 |
+| Transition | all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) | = | - | none |
+| Cursor | not-allowed | = | - | default |
+| Painted layers | button.style-module-scss-module__NRs3BG__button.style-module-scss-module__NRs3BG__secondary 184.8x40.0 bg #dedfe1 border T:1px solid #dedfe1 / R:1px solid #dedfe1 / B:1px solid #dedfe1 / L:1px solid #dedfe1 r 0px 2px 2px 0px | = | - | button.style-module-scss-module__NRs3BG__button.style-module-scss-module__NRs3BG__secondary 151.6x21.0 bg #efefef @ 0.3 border T:2px outset #767676 @ 0.3 / R:2px outset #767676 @ 0.3 / B:2px outset #767676 @ 0.3 / L:2px outset #767676 @ 0.3 |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `newsletter-btn-default.png`, `newsletter-btn-hover.png`, `newsletter-btn-focus-visible.png`, `newsletter-btn-pressed.png`.
+Crops: `newsletter-btn-default.png`, `newsletter-btn-hover.png`, `newsletter-btn-pressed.png`.
 
 #### privacy-btn
 
@@ -559,22 +560,23 @@ Page: contact. Selector: `Send me free research`. States: default, hover, focus-
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 184.84 x 40 | = | = | = |
-| Padding | 9.6px 16px | = | = | = |
-| Border | 1px solid #dedfe1 | = | = | 1px solid #f7f8fa |
-| Radius | 0px 2px 2px 0px | = | = | = |
-| Background | #dedfe1 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 14px/18.2px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #808080 | = | = | = |
-| Transition | all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) | = | = | = |
-| Cursor | not-allowed | = | = | = |
-| Painted layers | button.style-module-scss-module__NRs3BG__button.style-module-scss-module__NRs3BG__secondary 184.8x40.0 bg #dedfe1 border T:1px solid #dedfe1 / R:1px solid #dedfe1 / B:1px solid #dedfe1 / L:1px solid #dedfe1 r 0px 2px 2px 0px | = | = | button.style-module-scss-module__NRs3BG__button.style-module-scss-module__NRs3BG__secondary 184.8x40.0 bg #dedfe1 border T:1px solid #f7f8fa / R:1px solid #f7f8fa / B:1px solid #f7f8fa / L:1px solid #f7f8fa r 0px 2px 2px 0px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 184.84 x 40 | = | - | = |
+| Padding | 9.6px 16px | = | - | = |
+| Border | 1px solid #dedfe1 | = | - | 1px solid #f7f8fa |
+| Radius | 0px 2px 2px 0px | = | - | = |
+| Background | #dedfe1 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 14px/18.2px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #808080 | = | - | = |
+| Transition | all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) | = | - | = |
+| Cursor | not-allowed | = | - | = |
+| Painted layers | button.style-module-scss-module__NRs3BG__button.style-module-scss-module__NRs3BG__secondary 184.8x40.0 bg #dedfe1 border T:1px solid #dedfe1 / R:1px solid #dedfe1 / B:1px solid #dedfe1 / L:1px solid #dedfe1 r 0px 2px 2px 0px | = | - | button.style-module-scss-module__NRs3BG__button.style-module-scss-module__NRs3BG__secondary 184.8x40.0 bg #dedfe1 border T:1px solid #f7f8fa / R:1px solid #f7f8fa / B:1px solid #f7f8fa / L:1px solid #f7f8fa r 0px 2px 2px 0px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `contact-subscribe-btn-default.png`, `contact-subscribe-btn-hover.png`, `contact-subscribe-btn-focus-visible.png`, `contact-subscribe-btn-pressed.png`.
+Crops: `contact-subscribe-btn-default.png`, `contact-subscribe-btn-hover.png`, `contact-subscribe-btn-pressed.png`.
 
 ### Research publication (Ghost)
 
@@ -790,20 +792,21 @@ Page: research-article. Selector: `article tag link`. States: default, hover, fo
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 0 x 0 | - | = | = |
-| Padding | 10px 12px | - | = | = |
-| Border | none | - | = | = |
-| Radius | 0px | - | = | = |
-| Background | transparent | - | = | = |
-| Box shadow | none | - | = | = |
-| Outline | none | - | = | = |
-| Font | Inter 16px/24px 500 | - | = | = |
-| Letter spacing | normal | - | = | = |
-| Colour | #08090a | - | = | = |
-| Transition | none | - | = | = |
-| Cursor | pointer | - | = | = |
-| How | at rest | - | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 0 x 0 | - | - | = |
+| Padding | 10px 12px | - | - | = |
+| Border | none | - | - | = |
+| Radius | 0px | - | - | = |
+| Background | transparent | - | - | = |
+| Box shadow | none | - | - | = |
+| Outline | none | - | - | = |
+| Font | Inter 16px/24px 500 | - | - | = |
+| Letter spacing | normal | - | - | = |
+| Colour | #08090a | - | - | = |
+| Transition | none | - | - | = |
+| Cursor | pointer | - | - | = |
+| How | at rest | - | - | CDP forcePseudoState :active:hover |
 | Error | - | locator.hover: Element is not visible Call log:   - waiting for locator('article a[href*="/tag/"], a[href*="/tag/"]').first().first().first()     - locator resolved to <a class="" href="https://resear | = | = |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: none.
 

@@ -140,7 +140,7 @@ Page: home. Selector: `Header__LogoLink svg`. States: default, hover, focus-visi
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `logo-default.png`, `logo-hover.png`, `logo-focus-visible.png`, `logo-pressed.png`.
+Crops: `logo-default.png`, `logo-hover.png`, `logo-pressed.png`.
 
 #### nav-about
 
@@ -651,7 +651,7 @@ Page: about. Selector: `about__Box`. States: default, hover, focus-visible, pres
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `team-card-default.png`, `team-card-hover.png`, `team-card-focus-visible.png`, `team-card-pressed.png`.
+Crops: `team-card-default.png`, `team-card-hover.png`, `team-card-pressed.png`.
 
 #### team-avatar
 

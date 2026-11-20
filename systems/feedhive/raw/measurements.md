@@ -1046,7 +1046,7 @@ Page: tools-bio. Selector: `bio Generate bios`. States: default, hover, focus-vi
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `bio-submit-default.png`, `bio-submit-hover.png`, `bio-submit-focus-visible.png`, `bio-submit-pressed.png`.
+Crops: `bio-submit-default.png`, `bio-submit-hover.png`, `bio-submit-pressed.png`.
 
 ### App sign-in (Chakra)
 

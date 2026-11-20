@@ -7,7 +7,7 @@ Sonarworks makes speaker and headphone calibration software. This package covers
 | [README.md](README.md) | This file |
 | [icon.png](icon.png) | 128px mark, redrawn from the header SVG because the site declared no favicon link |
 | [DESIGN.md](DESIGN.md) | Generated from [tokens.json](tokens.json) |
-| [tokens.json](tokens.json) | DTCG tokens from the computed styles |
+| [tokens.json](tokens.json) | DTCG tokens, entered by hand from computed styles read at capture time; the readings were not kept |
 | [style-guide.html](style-guide.html) | The colours, type and controls |
 | [components.md](components.md) | Component inventory |
 | [patterns.md](patterns.md) | Home, product, sale, login and signup |
@@ -78,7 +78,9 @@ The T3 preview browser opened https://www.sonarworks.com/ in its own tab. `previ
 
 ## What to distrust
 
-Secondary text `#96999c` on the white page is 2.86:1. On the black nav it is 7.33:1. Disabled text `#636669` on `#d8d9da` is 4.08:1. Those are the measured colours. The icon is a redraw of the header mark on a black square, not a file the site served. Highlight colours other than trial blue and sale yellow were declared in CSS and not seen painted, except green as a class name on the product page. The error border was not shown. "Inter var" on the account pages and "Inter" on the marketing pages are both loaded as Inter. The 1169px width is the live viewport, not a requested 1440. Phone type (`.text-mobile-lg`, 32/40) was probed, not shown, because the viewport was wide. CookieScript uses Open Sans and is not a product font. No dark theme was measured.
+**Every value is a hand entry.** [raw/](raw) holds no value readings: [raw/readings.json](raw/readings.json) and [raw/viewport.json](raw/viewport.json) record the pages, the viewport and why the screenshot tool failed. The tokens were typed in at capture time from readings that were never saved. On 2026-11-21 the 58 tokens labelled Measured (47), Declared (9) or Derived (2) were relabelled Reconstruction ("entered by hand at capture time; no raw/ file holds this reading"), with the original wording kept after it; the 10 component tokens already carried that label. No value changed. A recapture that writes the readings into raw/ is needed before any of them can be called measured, and `tools/test_tokens.py` fails if a token claims a reading raw/ does not hold.
+
+Secondary text `#96999c` on the white page is 2.86:1. On the black nav it is 7.33:1. Disabled text `#636669` on `#d8d9da` is 4.08:1. Those are the colours read at capture time. The icon is a redraw of the header mark on a black square, not a file the site served. Highlight colours other than trial blue and sale yellow were declared in CSS and not seen painted, except green as a class name on the product page. The error border was not shown. "Inter var" on the account pages and "Inter" on the marketing pages are both loaded as Inter. The 1169px width is the live viewport, not a requested 1440. Phone type (`.text-mobile-lg`, 32/40) was probed, not shown, because the viewport was wide. CookieScript uses Open Sans and is not a product font. No dark theme was measured.
 
 ## Fonts
 
@@ -88,7 +90,7 @@ Inter, loaded from fonts.googleapis.com as `Inter:400,500,600,700,900`. The mark
 
 | Item | Status |
 |---|---|
-| Colour, type, radius, spacing, borders | Captured from computed styles, in [tokens.json](tokens.json) |
+| Colour, type, radius, spacing, borders | Entered by hand from computed styles read at capture time, in [tokens.json](tokens.json); no reading kept in raw/ |
 | Elevation | No box-shadow on the measured controls. `.shadow-lg` computes to a Tailwind shadow and was not used on these pages. |
 | Motion | `.transition` is 150ms `cubic-bezier(0.4, 0, 0.2, 1)`. The mobile menu is 300ms ease. Spin is 1s linear. No `prefers-reduced-motion` rule was found. The probe was not run under reduce. |
 | Button, link, text field, FAQ row, badge | Measured. See [components.md](components.md) |
@@ -110,7 +112,7 @@ Inter, loaded from fonts.googleapis.com as `Inter:400,500,600,700,900`. The mark
 
 ## Rebuild
 
-Tokens were written from the live readings in [raw/readings.json](raw/readings.json). The kit builder was not adapted, because the site has no root custom-property system to parse.
+Tokens were typed in by hand from live readings that were not saved; [raw/readings.json](raw/readings.json) records only the pages and the viewport. The kit builder was not adapted, because the site has no root custom-property system to parse.
 
 ```bash
 python3 tools/catalog.py design-md sonarworks

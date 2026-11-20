@@ -12,7 +12,7 @@ ElevenMusic ("Studio-grade. Fully licensed.") is worth a capture because it is a
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (99, ~300 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the app shell, the composer, the shelves, the player bar, the auth wall, the footer, the mobile stack |
-| [components/crops/](components/crops) | ~299 element screenshots, `{component}-{state}.png` |
+| [components/crops/](components/crops) | ~294 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 41 `{page}-{theme}-{state}.png` captures, each with a `.capture.json` sidecar recording the actual browser width, scale and dimension check. Desktop 1440 x 900 at 1x, `-full` whole pages at 1x (the inner scroller expanded; two over-tall pages are tiled `*.part0/.part1`), `mobile-*` phone shots at 2x, `*-menu/-search/-options/-playing` the transient states |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — the shadcn-style semantic layer resolved per theme, and the @font-face faces), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
@@ -51,7 +51,7 @@ Fonts: `core.font.family.sans` is Inter, then 1 fallback; `core.font.family.disp
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 299 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 294 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 

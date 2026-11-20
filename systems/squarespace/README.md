@@ -7,7 +7,7 @@ Squarespace's public marketing site and signed-out login chrome, captured 2026-1
 | [README.md](README.md) | This file |
 | [icon.png](icon.png) | 128px icon from the apple-touch-icon |
 | [DESIGN.md](DESIGN.md) | Generated from tokens.json |
-| [tokens.json](tokens.json) | Measured colour, type, radius, space, and motion |
+| [tokens.json](tokens.json) | Colour, type, radius, space, and motion, entered by hand from computed styles read at capture time; four colours have a reading in raw/ |
 | [style-guide.html](style-guide.html) | Token specimens |
 | [components.md](components.md) | Signed-out controls and their crops |
 | [patterns.md](patterns.md) | Page patterns and screenshots |
@@ -72,7 +72,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | light | 21.00:1 pass | 21.00:1 pass | 5.74:1 pass | 5.74:1 pass |
 
-4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.color.focus` #0e0e0e.
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.color.focus` #0e0e0e (Reconstruction, not measured).
 
 <!-- brief:end -->
 
@@ -83,6 +83,8 @@ Computed styles were read in the T3 preview tab on the home page (innerWidth 116
 The preview browser returned "The browser is not producing screenshot frames", so screenshots and crops are from headless Chromium on pages that loaded with HTTP 200 and no Cloudflare challenge. Hover on Get Started is from a real mouse hover in the preview tab.
 
 ## What to distrust
+
+**Most values are hand entries.** [raw/readings.json](raw/readings.json) records the viewports, the pages and seven notes, and the notes hold four colour readings: the Get Started hover (`#dddddd`), the login error text (`#c32d38`), and the settled plan CTA and its text (`#000000`, `#ffffff`). Those four tokens keep their Measured label. The other 80 tokens were labelled Measured at capture with no reading kept, and on 2026-11-21 they were relabelled Reconstruction ("entered by hand at capture time; no raw/ file holds this reading"), with the original wording kept after it. No value changed. A recapture that writes computed-style readings into raw/ is needed to measure them, and `tools/test_tokens.py` fails if any other token claims a reading.
 
 Screenshots are 256-colour. Read colours from tokens.json and raw/, not from the PNGs. The home hero photograph will band.
 
@@ -104,9 +106,9 @@ Clarkson is the marketing and login face. It is proprietary and is not in this p
 
 | Item | Status |
 |---|---|
-| Colour, light | Captured. [tokens.json](tokens.json) |
+| Colour, light | Captured. [tokens.json](tokens.json). Four colours have a reading in raw/; the rest are hand entries |
 | Colour, dark | Not present. A dark-mode favicon is linked and the marketing pages stayed light |
-| Type | Captured from computed styles. Clarkson is not bundled |
+| Type | Entered by hand from computed styles; no reading kept. Clarkson is not bundled |
 | Space, radius, controls | Captured from the header, pricing cards, and login fields |
 | Elevation | Pricing card shadow and the templates search shadow. Marketing buttons had none |
 | Motion | CTA and header durations and easings from computed transitions. Reduced motion was not emulated |

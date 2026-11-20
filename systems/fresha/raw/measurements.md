@@ -598,7 +598,7 @@ Page: userflow. Selector: `a:has-text("Fresha for customers")`. States: default,
 | How | at rest | mouse hover | - |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element |
 
-Crops: `chooser-card-default.png`, `chooser-card-hover.png`, `chooser-card-focus-visible.png`.
+Crops: `chooser-card-default.png`, `chooser-card-hover.png`.
 
 #### language-button
 
@@ -1421,7 +1421,7 @@ Page: booking. Selector: `button "Continue"`. States: default, hover, focus-visi
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `booking-continue-default.png`, `booking-continue-hover.png`, `booking-continue-focus-visible.png`, `booking-continue-pressed.png`.
+Crops: `booking-continue-default.png`, `booking-continue-hover.png`, `booking-continue-pressed.png`.
 
 ### For-business marketing
 

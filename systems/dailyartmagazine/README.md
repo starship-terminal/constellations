@@ -12,7 +12,7 @@ DailyArt Magazine is worth a capture because a WordPress art-history magazine pa
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (71, 151 states) with crops and values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the dark nav + mega-menu chrome, the dark hero, the feed cards, the newsletter forms and modal, the article column, contact/search, the footer, mobile |
-| [components/crops/](components/crops) | 148 element screenshots, `{component}-{state}.png` |
+| [components/crops/](components/crops) | 147 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 20 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x; `-full` whole pages at CSS scale (the desktop article stitches to 1440 x 16,452, the phone article to 390 x 17,733); `mobile-*` viewport shots are 2x captures of the 390 x 844 viewport (780 x 1,688 px), plus the toggled states: home mega-menu and mobile menu |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — only stock WordPress presets resolve), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
@@ -51,7 +51,7 @@ Fonts: `core.font.family.display` is RoslindaleCondensed, then 1 fallback; `core
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 148 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 147 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 

@@ -112,7 +112,7 @@ Page: home. Selector: `.HeaderMenuItem_root Solutions`. States: default, hover, 
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | held open by an earlier toggle |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
-Crops: `nav-menu-btn-default.png`, `nav-menu-btn-hover.png`, `nav-menu-btn-focus-visible.png`, `nav-menu-btn-pressed.png`, `nav-menu-btn-opened.png`.
+Crops: `nav-menu-btn-default.png`, `nav-menu-btn-hover.png`, `nav-menu-btn-pressed.png`, `nav-menu-btn-opened.png`.
 
 #### nav-panel
 
@@ -814,7 +814,7 @@ Page: signup. Selector: `Create workspace`. States: default, hover, focus-visibl
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | typed into the prompt to enable the submit (cleared afterwards, never pressed) |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
-Crops: `su-submit-default.png`, `su-submit-hover.png`, `su-submit-focus-visible.png`, `su-submit-pressed.png`, `su-submit-enabled.png`.
+Crops: `su-submit-default.png`, `su-submit-hover.png`, `su-submit-pressed.png`, `su-submit-enabled.png`.
 
 #### su-premade
 
@@ -1143,7 +1143,7 @@ Page: mobile. Selector: `.HeaderMainMenu_sandwichBtn`. States: default, hover, f
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | held open by an earlier toggle |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
-Crops: `m-menu-btn-default.png`, `m-menu-btn-hover.png`, `m-menu-btn-focus-visible.png`, `m-menu-btn-pressed.png`, `m-menu-btn-opened.png`.
+Crops: `m-menu-btn-default.png`, `m-menu-btn-hover.png`, `m-menu-btn-pressed.png`, `m-menu-btn-opened.png`.
 
 #### m-drawer
 

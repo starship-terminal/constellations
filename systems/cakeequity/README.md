@@ -12,7 +12,7 @@ Cake is worth a capture because a startup-equity product paints an unusually con
 | [style-guide.html](style-guide.html) | One page that renders every token and the main surfaces with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (44, 97 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the navbar, the hero, the dark band, pricing, blog/demo, the hosted login, the footer, mobile |
-| [components/crops/](components/crops) | 97 element screenshots, `{component}-{state}.png` |
+| [components/crops/](components/crops) | 96 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 21 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages (both mobile `-full`s are part-stitched), `mobile-*` phone shots, `home-light-menu`/`mobile-home-light-menu` the opened menus, `pricing-light-quarterly` the toggled billing tab, `home-light-faq-open` the expanded accordion |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — cakeequity.com declares a real `--blackberry--*`/`--plum--*` token layer; the ~30 `<deleted\|variable-*>` names are vendored-library leftovers), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
@@ -51,7 +51,7 @@ Fonts: `core.font.family.display` is Exposure Light, then 2 fallbacks; `core.fon
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 97 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 96 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 

@@ -1,6 +1,6 @@
 # Maze design reference
 
-Tokens and component notes for Maze (maze.co), captured **2026-11-18**. Desktop is 1440×900. Phone is 390×844. One light theme. Public routes: `/`, `/pricing/`, `/platform/`, `/platform/ux-reporting/`, `/customers/`, `/demo/`, `/resources/user-research-report/`, `auth.maze.co/login`, and the published sample report at `app.maze.co/report/Banking-App-Usability-Test/3pvvlrkzmvlpob/intro`. Signed out the whole time. No study was started. No form was submitted. No purchase.
+Tokens and component notes for Maze (maze.co), captured **2026-11-18**. Desktop is 1440×900. Phone is 390×844. One light theme. Public routes: `/`, `/pricing/`, `/platform/`, `/platform/ux-reporting/`, `/customers/`, `/demo/`, `/resources/user-research-report/`, `auth.maze.co/login`, and the published sample report at `app.maze.co/report/[share-link]`. Signed out the whole time. No study was started. No form was submitted. No purchase.
 
 Maze marketing is Next.js and Tailwind v4. Colour is an oklch custom-property palette on `:root` (`--color-neutral-*`, `--color-blue-*`, lime, cyan, purple, red, yellow). Display is Phonic, self-hosted. Auth and the report paint Inter and a blue action, `rgb(5, 104, 253)`.
 

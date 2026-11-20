@@ -57,7 +57,7 @@ Page: discover. Selector: `nav Sign in`. States: default, hover, focus-visible, 
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-signin-default.png`, `nav-signin-hover.png`, `nav-signin-focus-visible.png`, `nav-signin-pressed.png`.
+Crops: `nav-signin-default.png`, `nav-signin-hover.png`, `nav-signin-pressed.png`.
 
 #### nav-download
 
@@ -85,7 +85,7 @@ Page: discover. Selector: `nav Download`. States: default, hover, focus-visible,
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-download-default.png`, `nav-download-hover.png`, `nav-download-focus-visible.png`, `nav-download-pressed.png`.
+Crops: `nav-download-default.png`, `nav-download-hover.png`, `nav-download-pressed.png`.
 
 #### nav-distribute
 
@@ -113,7 +113,7 @@ Page: discover. Selector: `nav Distribute`. States: default, hover, focus-visibl
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-distribute-default.png`, `nav-distribute-hover.png`, `nav-distribute-focus-visible.png`, `nav-distribute-pressed.png`.
+Crops: `nav-distribute-default.png`, `nav-distribute-hover.png`, `nav-distribute-pressed.png`.
 
 #### nav-locale
 
@@ -139,7 +139,7 @@ Page: discover. Selector: `nav globe`. States: default, hover, focus-visible, pr
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-locale-default.png`, `nav-locale-hover.png`, `nav-locale-focus-visible.png`, `nav-locale-pressed.png`.
+Crops: `nav-locale-default.png`, `nav-locale-hover.png`, `nav-locale-pressed.png`.
 
 #### m-egs-nav
 
@@ -885,7 +885,7 @@ Page: product. Selector: `subnav Overview`. States: default, hover, focus-visibl
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `p-subnav-default.png`, `p-subnav-hover.png`, `p-subnav-focus-visible.png`, `p-subnav-pressed.png`.
+Crops: `p-subnav-default.png`, `p-subnav-hover.png`, `p-subnav-pressed.png`.
 
 #### p-stage-next
 
@@ -1840,7 +1840,7 @@ Page: help. Selector: `chat bubble`. States: default, hover, focus-visible, pres
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `h-chat-default.png`, `h-chat-hover.png`, `h-chat-focus-visible.png`, `h-chat-pressed.png`.
+Crops: `h-chat-default.png`, `h-chat-hover.png`, `h-chat-pressed.png`.
 
 ### Mobile (390 wide)
 
@@ -1869,7 +1869,7 @@ Page: mobile. Selector: `mobile menu button`. States: default, hover, focus-visi
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `m-hamburger-default.png`, `m-hamburger-hover.png`, `m-hamburger-focus-visible.png`, `m-hamburger-pressed.png`.
+Crops: `m-hamburger-default.png`, `m-hamburger-hover.png`, `m-hamburger-pressed.png`.
 
 #### m-hero
 

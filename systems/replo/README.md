@@ -17,7 +17,7 @@ The marketing pages paint one dark theme: black page, cream text (`#f5fad9`), Ar
 | [icons/](icons/) | A wordmark crop and an index. No SVG set was extracted |
 | [screenshots/](screenshots/) | Nine viewport shots: home, menu, pricing, monthly, contact, customers, 404, and two phone shots |
 | [raw/](raw/) | The readings the tokens come from |
-| [tools/](tools/) | The kit copy. This capture was measured live, not rebuilt by the kit scripts |
+| [tools/](tools/) | The kit copy. This capture was measured live, not rebuilt by the kit scripts. The unadapted kit builders (`build/`, the `native/` builders and `capture/signed-in/build-measurements.mjs`) were removed in the 2026-11 audit; the capture helpers remain. |
 
 ## Brief
 

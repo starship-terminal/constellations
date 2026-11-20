@@ -567,7 +567,7 @@
    "source": "computed outlineColor of nav-cta focus-visible (raw/components-computed.json)"
   },
   "shadow": {
-   "menu": {
+   "card": {
     "type": "shadow",
     "value": [
      {

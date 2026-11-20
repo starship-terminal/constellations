@@ -18,7 +18,7 @@ Nothing was typed, submitted, or signed into. The trial email field and the logi
 | [icons/](icons) | `INDEX.tsv` only. The wordmark was not extracted. |
 | [screenshots/](screenshots) | Six quantised PNGs: home, price, free-trial, features, and a 404 at 1440 x 900, plus home at 390 x 844. Each has a `.capture.json` sidecar. |
 | [raw/](raw) | `components-computed.json`, `css-vars.json`, `login-computed.json`, `motion.json`. |
-| [tools/](tools) | The capture kit copied from `tools/kit`, plus the builders. The kit was not adapted into a full rebuild of this package. Tokens were written from the readings. |
+| [tools/](tools) | The capture kit copied from `tools/kit`, plus [tools/test_tokens.py](tools/test_tokens.py). `tokens.json` has no builder: it was written from the readings in [raw/](raw). The kit's unadapted `build_tokens.py` and `motion.py` were removed in the 2026-11 audit. |
 
 ## Brief
 
@@ -126,4 +126,4 @@ python3 tools/catalog.py design-md wrike
 python3 tools/package_tests.py wrike
 ```
 
-Tokens were written from [raw/](raw/). The kit builders in [tools/](tools/) still expect the Claude-shaped dumps they shipped with, so they are not the rebuild path for this package.
+`tokens.json` has no builder. It was written from the readings in [raw/](raw/): `components-computed.json`, `css-vars.json`, `login-computed.json` and `motion.json`. The kit's `build_tokens.py` and `motion.py`, copied in unadapted and never run (they expect the Claude-shaped dumps they shipped with, `raw/component-tokens.json` among them), were removed in the 2026-11 audit.

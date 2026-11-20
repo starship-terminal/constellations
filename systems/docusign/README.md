@@ -12,7 +12,7 @@ Docusign is worth a capture because its public face is three surfaces with one v
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (73, 209 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the two-bar chrome, the violet hero, the generator, the storefront, the sign-in card, footer, mobile |
-| [components/crops/](components/crops) | 209 element screenshots, `{component}-{state}.png` |
+| [components/crops/](components/crops) | 206 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 27 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages (mobile pages stitched from 2 chunks), `mobile-*` phone shots, `home-light-menu`/`mobile-home-light-menu` the opened menus, `esignature-light-modal` the video dialog, `signgen-light-type` the Type mode, `pricing-light-monthly` the toggled billing state |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — the `--ds-*`, `--dxp-*` and assistant layers plus every Emotion sheet; vendor sheets binned separately), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
@@ -50,7 +50,7 @@ Fonts: `core.font.family.sans` is DSIndigo, then 3 fallbacks; `core.font.family.
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 209 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 206 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 

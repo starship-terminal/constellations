@@ -16,7 +16,7 @@ Kickstarter ships a real token layer, KDS: `--kds-color-*`, `--kds-elevation-*`,
 | [icons/](icons) | 21 SVG symbols from the in-page sprite, named in [icons/INDEX.tsv](icons/INDEX.tsv) |
 | [screenshots/](screenshots) | `{page}-light-{state}.png`. Desktop 1440 x 900 at 1x. `mobile-*` at 390 wide, 2x. `-full` pages are capped at eight chunks |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json), [components-computed.json](raw/components-computed.json), [motion.json](raw/motion.json) |
-| [tools/](tools) | Builders and the adapted capture kit |
+| [tools/](tools) | Builders and the adapted capture kit. `build_tokens.py` writes `core.motion` itself from [raw/motion.json](raw/motion.json) and [raw/css-vars.json](raw/css-vars.json); the kit's unadapted `motion.py`, which no builder imported, was removed in the 2026-11 audit |
 | [login-review.json](login-review.json) | Signed-in walk on 2026-11-20: nav, settings, create, screens, gaps, and what was not submitted |
 
 ## Do and don't
@@ -62,7 +62,7 @@ Fonts: `core.font.family.sans` is Inter, then 1 fallback. Scales, counted as [DE
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 78 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 76 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 

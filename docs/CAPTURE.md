@@ -240,9 +240,10 @@ package was made this way and its README shows the evidence labels to use.
    sizes, padding and radii (exact for sizes, Derived for radii). Font
    family is usually not determinable; mark it Not captured.
 5. **Mask what [AGENTS.md](../AGENTS.md) still bans before anything enters
-   the package.** Names, avatars, chat text and published content may stay;
-   a password, a code, a phone number, an address or another person's
-   email may not. A native capture is pixels, so `scan` cannot see any of it.
+   the package.** The owner's own profile and chat text and the content
+   the product publishes may stay; another user's name, username or
+   avatar, a password, a code, a phone number, an address or another
+   person's email may not. A native capture is pixels, so `scan` cannot see any of it.
    Look at every capture and paint those regions over with `sample.py mask
    shot.png X,Y,W,H ...`, which fills each box with the surface colour
    around it. Sample values first, mask second, then quantise.
@@ -398,6 +399,20 @@ package with a rules file needs no `--rules` to pass. `--rules <file>` loads
 that file instead. `apply` always needs `--rules`, because it edits images in
 place.
 
+`apply` changes only the pixels inside the regions it paints, so the image
+stays the evidence it was apart from the mask. A file with nothing to paint is
+not rewritten. An edited PNG keeps its mode, its palette and tRNS, and every
+other chunk (colour profile, pHYs, text) byte for byte. A palette image keeps
+every untouched pixel's index and paints with the nearest existing palette
+entry, alpha included. The palette is never grown or reordered, so when it has
+no entry close to a fill colour, `apply` uses the nearest one and prints how
+many pixels that hit; look at those images. RGB, RGBA and grey images are
+painted in their own mode, and alpha inside a region is filled like the
+colour. Before replacing a file, `apply` decodes the written copy and stops
+with the file unchanged if any pixel or alpha value outside the painted
+regions differs. It will not edit a JPEG (lossy), a 16-bit PNG or an animated
+PNG: it names each one, writes nothing to it and exits 1.
+
 A rules file (see [manus.json](../tools/redact-rules/manus.json) and
 [notebooklm.json](../tools/redact-rules/notebooklm.json); duolingo.json and
 coursera.json show the net-first style) lists pixel
@@ -410,9 +425,10 @@ images. Look at a contact sheet of every family after an `apply`: OCR does not
 read text that is dimmed behind a modal unless the rules say to boost it, and a
 pattern file only knows the strings it was given.
 
-Follow the current policy in [AGENTS.md](../AGENTS.md): other people's names
-and profile pictures may stay, but their email and other contact details may
-not. Add only banned literals to a local pattern file; leave out anything
+Follow the current policy in [AGENTS.md](../AGENTS.md): other people's names,
+usernames and avatars are masked, and so are their email and other contact
+details. OCR finds a name only when a pattern file lists it and never sees an
+avatar, so give each one a rectangle. Add only banned literals to a local pattern file; leave out anything
 that is also a UI word or a number (a gem total, the product's own name), or
 the net paints it everywhere. Text typed
 into a focused input is not read by OCR, so give it a rectangle. A `rows` rectangle
@@ -468,9 +484,10 @@ Hygiene:
 - Real DTCG types: a `dimension` is one px or rem length.
 - Write new captures first and prune old outputs only after a complete run.
 - Follow [AGENTS.md](../AGENTS.md) when deciding what to mask. The owner's
-  own profile, chat and document titles may stay; mask credentials and the
-  personally identifiable data listed there, including other people's
-  contact details. Keep raw page copies and redaction lists outside git.
+  own profile, chat and document titles may stay; mask other people's
+  names, usernames and avatars, credentials, and the personally
+  identifiable data listed there, including other people's contact
+  details. Keep raw page copies and redaction lists outside git.
 
 ## A quicker, shallower path
 

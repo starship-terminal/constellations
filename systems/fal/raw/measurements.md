@@ -916,7 +916,7 @@ Page: model. Selector: `Back to Gallery`. States: default, hover, focus-visible,
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `mp-back-default.png`, `mp-back-hover.png`, `mp-back-focus-visible.png`, `mp-back-pressed.png`.
+Crops: `mp-back-default.png`, `mp-back-hover.png`, `mp-back-pressed.png`.
 
 #### mp-h1
 

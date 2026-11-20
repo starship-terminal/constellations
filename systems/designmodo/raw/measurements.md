@@ -563,7 +563,7 @@ Page: app. Selector: `+ Create`. States: default, hover, focus-visible, pressed.
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `create-split-default.png`, `create-split-hover.png`, `create-split-focus-visible.png`, `create-split-pressed.png`.
+Crops: `create-split-default.png`, `create-split-hover.png`, `create-split-pressed.png`.
 
 #### sidebar
 
@@ -615,7 +615,7 @@ Page: app. Selector: `Templates nav`. States: default, hover, focus-visible, pre
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `side-templates-default.png`, `side-templates-hover.png`, `side-templates-focus-visible.png`, `side-templates-pressed.png`.
+Crops: `side-templates-default.png`, `side-templates-hover.png`, `side-templates-pressed.png`.
 
 #### new-badge
 
@@ -668,7 +668,7 @@ Page: app. Selector: `Industry filter`. States: default, hover, focus-visible, p
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `filter-industry-default.png`, `filter-industry-hover.png`, `filter-industry-focus-visible.png`, `filter-industry-pressed.png`.
+Crops: `filter-industry-default.png`, `filter-industry-hover.png`, `filter-industry-pressed.png`.
 
 #### create-blank
 
@@ -696,7 +696,7 @@ Page: app. Selector: `Create Blank Template`. States: default, hover, focus-visi
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `create-blank-hover.png`, `create-blank-focus-visible.png`, `create-blank-pressed.png`.
+Crops: `create-blank-hover.png`, `create-blank-pressed.png`.
 
 #### genai-card
 
@@ -724,7 +724,7 @@ Page: app. Selector: `Generate with AI`. States: default, hover, focus-visible, 
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `genai-card-default.png`, `genai-card-hover.png`, `genai-card-focus-visible.png`, `genai-card-pressed.png`.
+Crops: `genai-card-default.png`, `genai-card-hover.png`, `genai-card-pressed.png`.
 
 #### tpl-card
 
@@ -833,7 +833,7 @@ Page: pricing. Selector: `Yearly Monthly`. States: default, hover, focus-visible
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `billing-toggle-default.png`, `billing-toggle-hover.png`, `billing-toggle-focus-visible.png`, `billing-toggle-pressed.png`.
+Crops: `billing-toggle-default.png`, `billing-toggle-hover.png`, `billing-toggle-pressed.png`.
 
 #### plan-card
 

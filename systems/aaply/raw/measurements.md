@@ -725,7 +725,7 @@ Page: pricing. Selector: `compare link`. States: default, hover, focus-visible, 
 | How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `compare-cta-default.png`, `compare-cta-hover.png`, `compare-cta-focus-visible.png`, `compare-cta-pressed.png`.
+Crops: `compare-cta-default.png`, `compare-cta-hover.png`, `compare-cta-pressed.png`.
 
 #### feature-table
 

@@ -12,7 +12,7 @@ Excalidraw is fully usable without an account — the whole captured surface is 
 | [style-guide.html](style-guide.html) | One self-contained page that renders every token and the main components (the tool island, menus, the theme radio, switches, swatches, the export dialog, both sidebars, the welcome sheet and the phone bar) with the real values, states side by side, in both themes |
 | [components.md](components.md) | The discovery list of every view, one entry per component (76) written in tokens with crops of the real product, the shared values (focus, pressed, motion, card shapes), and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the floating-Islands canvas chrome, the main menu, the properties and library sidebars, the dialogs, the dark theme and the mobile fold |
-| [components/crops/](components/crops) | 167 element screenshots, `{component}-{state}.png`, at 2x |
+| [components/crops/](components/crops) | 163 element screenshots, `{component}-{state}.png`, at 2x |
 | [screenshots/](screenshots) | 22 `editor-{theme}-{state}.png` captures. Desktop shots are 1440 x 900 at 1x; `mobile-*` shots are 390 wide at 2x. Light and dark sets cover the welcome screen, menus, the more-tools and zoom dropdowns, both sidebars, the export/shortcuts/command-palette dialogs and find-on-canvas |
 | [raw/](raw) | The unprocessed readings: every custom property the stylesheet declares resolved per theme (`css-vars.json`, 191 names), per-component computed styles (`components-computed.json`, and `measurements.md` built from it), and the token tree the builder reads (`component-tokens.json`). The unquantised screenshot originals and their `.capture.json` sidecars stay outside the repository in `~/.design-systems/excalidraw/raw-shots/` |
 | [tools/](tools) | The builders and the capture kit. See Rebuild |
@@ -51,7 +51,7 @@ Fonts: `core.font.family.ui` is Assistant, then 8 fallbacks; `core.font.family.d
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 167 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 163 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
