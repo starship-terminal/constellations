@@ -200,7 +200,7 @@ python3 -m unittest discover -s tools
 git status --short .
 ```
 
-`tools/capture/quantize.py <raw-shots>` and `tools/crops.py` (both need Pillow) rewrite `screenshots/` and `components/crops/`. The raw shots are unmasked, so after `quantize.py` and before `crops.py`, mask the screenshots again from the repository root: `python3 tools/redact_images.py apply systems/notion-ios --rules tools/redact-rules/notion-ios.json --only 'screenshots/*'`, then put each edited file back on its quantised palette and transparency outside the masked boxes, because `apply` requantises the whole image without alpha. `crops.py` cuts the crops from the masked screenshots. A rebuild that changes nothing proves the outputs still match their inputs. From the repository root, `make design-md` regenerates DESIGN.md and the Brief.
+`tools/capture/quantize.py <raw-shots>` and `tools/crops.py` (both need Pillow) rewrite `screenshots/` and `components/crops/`. The raw shots are unmasked, so after `quantize.py` and before `crops.py`, mask the screenshots again from the repository root: `python3 tools/redact_images.py apply systems/notion-ios --rules tools/redact-rules/notion-ios.json --only 'screenshots/*'`. `apply` keeps each image's palette, its transparency and every pixel outside the boxes. `crops.py` cuts the crops from the masked screenshots. A rebuild that changes nothing proves the outputs still match their inputs. From the repository root, `make design-md` regenerates DESIGN.md and the Brief.
 
 ## Use in SwiftUI and Figma
 
