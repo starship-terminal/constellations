@@ -131,7 +131,9 @@ for (const surface of SURFACES) {
 if (!perSurface.size) { console.log('no surface loaded; css-vars.json not written'); await browser.close(); process.exit(2); }
 
 // ---- harvest: every rule with --* declarations, per surface ----
-const probe = await browser.newPage();
+// The probe carries the 1440 x 900 viewport the surfaces load at: viewport-relative values
+// resolve against it (a bare newPage() would size them for 1280 x 720).
+const probe = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 const allRules = [];
 const allFonts = [];
 const allErrors = [];
@@ -238,7 +240,7 @@ for (const { pass, surface, cls } of PASSES) {
       }
       else return { unparsed: c };
       a = Math.round(a * 1000) / 1000;
-      return a === 1 ? '#' + rgb.map((v) => v.toString(16).padStart(2, '0')) : `rgba(${rgb.join(', ')}, ${a})`;
+      return a === 1 ? '#' + rgb.map((v) => v.toString(16).padStart(2, '0')).join('') : `rgba(${rgb.join(', ')}, ${a})`;
     };
     const out = {};
     const host = document.documentElement;

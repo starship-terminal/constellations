@@ -211,11 +211,22 @@ def is_colorish(v):
     return bool(COLOR_V.fullmatch(str(v).strip()))
 
 
+def viewport_note(name):
+    """vars.mjs resolved viewport-relative values on a default 1280 x 720 probe page while its
+    note says 1440 x 900; say so on any token built from one."""
+    for entry in V.get("resolved", {}).values():
+        e = entry.get(name)
+        if isinstance(e, dict) and "viewport-relative" in str(e.get("note", "")):
+            return (f"; viewport-relative (declared {e.get('raw')}), resolved on a 1280 x 720 probe page, "
+                    "not the 1440 x 900 capture viewport: recapture needed")
+    return ""
+
+
 def decl(name, ty="dimension", bag=A):
     v = bag[name]
     if ty == "dimension" and not re.fullmatch(r"-?\d+(\.\d+)?(px|rem)", str(v).strip()):
         ty = "other"
-    return lit(v, ty, f"{DECL_SRC}: {name}", f"The declared `{name}`.")
+    return lit(v, ty, f"{DECL_SRC}: {name}{viewport_note(name)}", f"The declared `{name}`.")
 
 
 def decl_color(name, bag=A):
@@ -573,7 +584,7 @@ for key, comp, state, desc in [
         raw = st(comp, state)["fontSize"]
         src = f"computed fontSize of {comp} {state} (raw/components-computed.json)"
         alias = size_alias.get(raw)
-        ty[key] = lit(f"{{{alias[0]}}}" if alias else raw, "fontSize",
+        ty[key] = lit(f"{{{alias[0]}}}" if alias else raw, "dimension",
                       src + (f"; matches declared {alias[1]}" if alias else ""), desc)
     except KeyError:
         pass
