@@ -109,10 +109,41 @@ def problems(tokens, readings):
                 err = resolve(tokens, setname, ref, set())
                 if err:
                     out.append(f"{path}: {err}")
-        if tok.get("$type") == "color" and isinstance(v, str) and not v.startswith("{"):
-            if norm(v) not in seen:
-                out.append(f"{path}: {v} is in no reading in raw/readings.json")
+        for literal in literal_colours(tok):
+            if colour_form(literal) not in seen:
+                out.append(f"{path}: {literal} is in no reading in raw/readings.json")
     return out
+
+
+def colour_form(value):
+    """A token's literal colour (hex, rgb() or rgba()) in the same form colours_in() gives readings."""
+    v = value.strip().lower()
+    if v.startswith("#"):
+        return norm(v)
+    if v in KEYWORDS:
+        return KEYWORDS[v]
+    m = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+%?))?\s*\)", v)
+    if not m:
+        return v
+    h = "#%02x%02x%02x" % tuple(int(x) for x in m.groups()[:3])
+    a = m.group(4)
+    if a is not None:
+        alpha = float(a[:-1]) / 100 if a.endswith("%") else float(a)
+        if alpha < 1:
+            h += "%02x" % int(alpha * 255 + 0.5)
+    return h
+
+
+def literal_colours(tok):
+    """The non-alias colour strings a token holds: a colour's value, or each layer's colour in a shadow."""
+    v = tok["$value"]
+    if tok.get("$type") == "color":
+        layers = [v]
+    elif tok.get("$type") == "shadow":
+        layers = [layer.get("color") for layer in (v if isinstance(v, list) else [v]) if isinstance(layer, dict)]
+    else:
+        layers = []
+    return [c for c in layers if isinstance(c, str) and not c.strip().startswith("{")]
 
 
 def main():

@@ -40,6 +40,16 @@ class Check(unittest.TestCase):
         t["core"]["palette"]["zz-test"] = {"$value": "#5727e7", "$type": "color", "$extensions": {"source": "guessed"}}
         self.assertTrue(any("not Measured or Derived" in p for p in build_tokens.problems(t, READINGS)))
 
+    def test_recorded_rgb_and_rgba_token_values_are_accepted(self):
+        self.assertEqual(self.broken(**{"$value": "rgb(87, 39, 231)"}), [])        # #5727e7
+        self.assertEqual(self.broken(**{"$value": "rgba(27, 27, 32, 0.3)"}), [])   # #1b1b204d
+        self.assertEqual(self.broken(**{"$value": "rgb(0, 0, 0)"}), [])            # #000000
+
+    def test_unrecorded_shadow_colour_is_refused(self):
+        t = copy.deepcopy(TOKENS)
+        t["light"]["shadow"]["tab"]["$value"]["color"] = "#123457"
+        self.assertTrue(any("light.shadow.tab" in p and "in no reading" in p for p in build_tokens.problems(t, READINGS)))
+
     def test_rgba_alpha_rounds_half_up(self):
         self.assertIn("#1b1b204d", build_tokens.colours_in("rgba(27, 27, 32, 0.3)"))
 
