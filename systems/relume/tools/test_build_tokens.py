@@ -74,6 +74,24 @@ class Tokens(unittest.TestCase):
                 self.assertRegex(value.strip(), r"^#[0-9a-fA-F]+$")
                 self.assertIn(value.strip().lower(), values)
 
+        # The page also repeats colours outside :root: inline swatch styles, their hex labels and
+        # other rules (a border written as rgba()). Every colour literal anywhere in the file must
+        # be a token value too, so a stale swatch fails. rgb()/rgba() are compared as hex; hsl()
+        # is not used here and fails, so it cannot slip past.
+        def as_hex(m):
+            r, g, b, a = m.group(1, 2, 3, 4)
+            out = "#%02x%02x%02x" % (int(r), int(g), int(b))
+            return out if a is None or float(a) == 1 else out + "%02x" % round(float(a) * 255)
+
+        body = html.replace(root, "")
+        literals = re.findall(r"#[0-9a-fA-F]{3,8}\b", body)
+        literals += [as_hex(m) for m in re.finditer(r"rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)", body)]
+        self.assertGreaterEqual(len(literals), 20)
+        for value in literals:
+            with self.subTest(literal=value):
+                self.assertIn(value.lower(), values)
+        self.assertNotRegex(body, r"hsla?\(")
+
     def test_no_dark_theme(self):
         self.assertNotIn("dark", TOKENS)
         self.assertEqual([t["id"] for t in TOKENS["$themes"]], ["light"])
