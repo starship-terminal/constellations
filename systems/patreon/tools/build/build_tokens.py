@@ -7,7 +7,8 @@ It checks every token: each value must appear in raw/computed.json once both are
 normalised (hex, rgb(), rgba(), color(srgb ...), seconds to ms, quotes dropped), a font
 stack's first family must be the one read, and every alias must resolve. A value no
 reading holds is allowed only when its token's capture text says it was entered by hand
-at capture time. A handful of key roles are also pinned to the exact reading.
+at capture time: a Reconstruction token, or one part listed in HAND_PARTS. Aliases are followed
+to a final value, so a loop fails. A handful of key roles are also pinned to the exact reading.
 """
 import json
 import math
@@ -19,6 +20,10 @@ HERE = pathlib.Path(__file__).resolve().parents[2]  # systems/patreon (this file
 TOKENS = json.loads((HERE / "tokens.json").read_text())
 RAW = json.loads((HERE / "raw" / "computed.json").read_text())
 HAND = "entered by hand at capture time"
+# Parts of an otherwise measured token that were entered by hand; only these are exempt.
+HAND_PARTS = {
+    "core.typography.nav": {"lineHeight"},  # 13.5px is desktop1440.navButton fontSize; 20.25px was typed
+}
 
 
 def _hex(r, g, b, a=None):
@@ -44,6 +49,8 @@ def forms(text):
     out.update(m.group(0) for m in re.finditer(r"#[0-9a-f]{6,8}\b", low))
     out.update(m.group(0) for m in re.finditer(r"-?[\d.]+(?:px|ms)\b", low))
     out.update(f"{float(m.group(1)) * 1000:g}ms" for m in re.finditer(r"(-?[\d.]+)s\b", low))
+    for m in re.finditer(r"cubic-bezier\(([^)]*)\)", low):
+        out.add("cubic-bezier" + repr(tuple(float(n) for n in m.group(1).split(","))))
     return out
 
 
@@ -83,21 +90,46 @@ def lookup(set_name, ref):
     return None
 
 
+def alias_problem(set_name, ref, trail):
+    """Follow an alias to a final value, set-first like the catalog: None, or what is wrong."""
+    if ref in trail:
+        return "alias loop " + " -> ".join(trail + [ref])
+    node = lookup(set_name, ref)
+    if node is None:
+        return f"alias {ref} resolves to nothing"
+    value = node["$value"]
+    nxt = [value] if isinstance(value, str) else list(value.values()) if isinstance(value, dict) else []
+    for v in nxt:
+        if isinstance(v, str) and v.startswith("{"):
+            found = alias_problem(set_name, v, trail + [ref])
+            if found:
+                return found
+    return None
+
+
 def capture(token):
     src = token.get("$extensions", {}).get("source", {})
     return src.get("capture", "") if isinstance(src, dict) else str(src)
 
 
-def values(token):
-    """The literal values a token carries, with a font stack reduced to its first family."""
+def values(token, skip=()):
+    """The literal values a token carries: a font stack as its first family, a cubicBezier list as
+    the cubic-bezier() it was read as, and a composite's parts other than those in `skip`."""
     value = token["$value"]
     if token["$type"] == "fontFamily":
         return [str(value).split(",")[0].strip()]
+    if token["$type"] == "cubicBezier" and isinstance(value, list):
+        return ["cubic-bezier" + repr(tuple(float(n) for n in value))]
     if isinstance(value, dict):
-        return [str(v) for v in value.values() if not str(v).startswith("{")]
+        return [str(v) for k, v in value.items() if k not in skip and not str(v).startswith("{")]
     if isinstance(value, list) or (isinstance(value, str) and value.startswith("{")):
         return []
     return [str(value)]
+
+
+def evidence(token):
+    src = token.get("$extensions", {}).get("source", {})
+    return src.get("evidence", "") if isinstance(src, dict) else ""
 
 
 def check():
@@ -110,11 +142,15 @@ def check():
             refs = [token["$value"]] if isinstance(token["$value"], str) else (
                 list(token["$value"].values()) if isinstance(token["$value"], dict) else [])
             for ref in refs:
-                if isinstance(ref, str) and ref.startswith("{") and lookup(set_name, ref) is None:
-                    problems.append(f"{name}: alias {ref} resolves to nothing")
-            if HAND in capture(token):
+                if isinstance(ref, str) and ref.startswith("{"):
+                    found = alias_problem(set_name, ref, ["{" + path + "}"])
+                    if found:
+                        problems.append(f"{name}: {found}")
+            if evidence(token) == "Reconstruction":
+                if HAND not in capture(token):
+                    problems.append(f"{name}: Reconstruction without saying it was {HAND}")
                 continue
-            for value in values(token):
+            for value in values(token, HAND_PARTS.get(name, ())):
                 low = value.lower()
                 if not ({low, re.sub(r"[\"']", "", low)} & seen):
                     problems.append(f"{name}: {value} is in no reading in raw/computed.json")

@@ -17,14 +17,34 @@ class TokenTest(unittest.TestCase):
         # tools/build/build_tokens.py checks every token against raw/computed.json; it writes nothing.
         self.assertEqual(CHECK.check(), [])
 
-    def test_check_catches_a_value_with_no_reading(self):
-        token = CHECK.TOKENS["core"]["color"]["primary"]
-        saved = token["$value"]
+    def edited(self, path, value):
+        """check()'s problems with one token's $value replaced, restored afterwards."""
+        node = CHECK.TOKENS
+        for part in path[:-1]:
+            node = node[part]
+        saved = node[path[-1]]["$value"]
         try:
-            token["$value"] = "#123456"
-            self.assertTrue(any("#123456" in p for p in CHECK.check()))
+            node[path[-1]]["$value"] = value
+            return CHECK.check()
         finally:
-            token["$value"] = saved
+            node[path[-1]]["$value"] = saved
+
+    def test_check_catches_values_no_pin_covers(self):
+        # core.color.nprogress, the easing, the measured nav size and the login font have no exact
+        # pin, so only the all-token loop can catch these.
+        cases = [
+            (("core", "color", "nprogress"), "#123456", "core.color.nprogress"),
+            (("core", "motion", "easing"), [0.111, 0.222, 0.333, 0.444], "core.motion.easing"),
+            (("core", "font", "family", "login"), "Unrecorded Family, Arial", "core.font.family.login"),
+        ]
+        for path, value, name in cases:
+            self.assertTrue(any(p.startswith(name + ":") for p in self.edited(path, value)), name)
+        nav = dict(CHECK.TOKENS["core"]["typography"]["nav"]["$value"], fontSize="987px")
+        self.assertTrue(any(p.startswith("core.typography.nav:") for p in self.edited(("core", "typography", "nav"), nav)))
+
+    def test_check_catches_an_alias_loop(self):
+        problems = self.edited(("light", "color", "page"), "{color.page}")
+        self.assertTrue(any(p.startswith("light.color.page:") and "loop" in p for p in problems), problems)
 
     def test_primary_matches_reading(self):
         self.assertEqual(TOKENS["core"]["color"]["primary"]["$value"], RAW["resolved"]["--color-primary"])
