@@ -117,7 +117,7 @@ const binOf = (r) => {
 for (const r of result.rules) r.bin = binOf(r);
 const names = (bin) => [...new Set(result.rules.filter((r) => r.bin === bin).flatMap((r) => Object.keys(r.properties)))].sort();
 const out = {
-  readAt: '2026-11-18',
+  readAt: new Date().toLocaleDateString('en-CA'),
   source: 'stylesheet bodies from live signed-out loads of withjulienne.com /, /discover, a public recipe, /team, /privacy-policy and /signup. Resolved on a probe document carrying those sheets, once as html.js.light and once as html.js.dark, at 1440x900.',
   sheets: sheets.map(([n, t]) => `${String(n).slice(0, 90)} (${t.length} bytes)`),
   counts: { rules: result.rules.length, fonts: result.fonts.length, names: { app: names('app').length, utility: names('utility').length } },
