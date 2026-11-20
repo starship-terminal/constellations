@@ -921,20 +921,21 @@ Page: app-player. Selector: `ButtonMode-module button`. States: default, hover, 
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 56 x 56 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | apercuProRegular 16px/0px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | opacity 0.25s linear | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 56 x 56, colour #ffffff | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 56 x 56 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | apercuProRegular 16px/0px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | opacity 0.25s linear | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 56 x 56, colour #ffffff | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `button-mode-default.png`, `button-mode-hover.png`, `button-mode-focus-visible.png`, `button-mode-pressed.png`.
 

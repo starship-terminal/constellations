@@ -191,10 +191,18 @@ def paint_sig(v):
 def paint_diff(cur, base):
     """Describe the painted layers that changed vs the base state, by node. A
     layer that only exists in this state is listed with its attributes."""
-    bmap = {p[0]: p[1:] for p in base}
+    # Siblings can share a node label (two `div.x` layers), so layers pair by
+    # (label, nth occurrence): keyed on the label alone, the second sibling
+    # overwrote the first and a state compared against the wrong element.
+    def keyed(layers):
+        seen = {}
+        for p in layers:
+            seen[p[0]] = seen.get(p[0], -1) + 1
+            yield (p[0], seen[p[0]]), p
+    bmap = {k: p[1:] for k, p in keyed(base)}
     out = []
-    for node, *vals in cur:
-        old = bmap.get(node)
+    for k, (node, *vals) in keyed(cur):
+        old = bmap.get(k)
         fields = ("size", "bg", "bgImage", "border", "radius", "shadow", "outline")
         bits = []
         if old is None:
@@ -219,7 +227,9 @@ def paint_diff(cur, base):
 
 
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    # A state whose keyboard focus failed (via: "focus failed") holds the
+    # element at rest, not its focus: it is reported apart, never as a reading.
+    states = [s for s in c["states"] if "style" in c["states"][s] and "failed" not in str(c["states"][s].get("via", ""))]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -500,6 +510,7 @@ for g in groups:
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
+        failed_states = [s for s, v in c["states"].items() if "style" in v and "failed" in str(v.get("via", ""))]
         rows, states = state_rows(c)
         if len(states) == 1 and rows:
             W(f"**Values ({states[0]}).** {fmt(rows[0][1])}.")
@@ -509,6 +520,9 @@ for g in groups:
             W("|---|---|")
             for lab, d in rows:
                 W(f"| {lab} | {fmt(d)} |")
+            W()
+        if failed_states:
+            W(f"**Focus not capturable.** A real keyboard focus could not be held on this element ({', '.join(f'`{s}`' for s in failed_states)} recorded `via: focus failed`), so its focus look is uncaptured, not measured as absent.")
             W()
         cl = child_layers(c)
         if cl:
