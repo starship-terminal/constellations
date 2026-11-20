@@ -1,6 +1,7 @@
 """Rork tokens match the computed readings."""
 
 import json
+import pathlib
 import unittest
 from pathlib import Path
 
@@ -30,6 +31,27 @@ class Tokens(unittest.TestCase):
 
     def test_body_size(self):
         self.assertEqual(self.tokens["core"]["fontSize"]["body"]["$value"], "16px")
+
+class Sources(unittest.TestCase):
+    """EVIDENCE.md makes a source mandatory on every token."""
+
+    def test_every_token_has_a_source(self):
+        doc = json.loads((pathlib.Path(__file__).resolve().parent.parent / "tokens.json").read_text())
+        missing = []
+
+        def walk(node, path):
+            if isinstance(node, dict) and "$value" in node:
+                if not (node.get("$extensions") or {}).get("source"):
+                    missing.append(path)
+            elif isinstance(node, dict):
+                for k, v in node.items():
+                    if not k.startswith("$"):
+                        walk(v, f"{path}.{k}" if path else k)
+
+        for name, tree in doc.items():
+            if not name.startswith("$"):
+                walk(tree, name)
+        self.assertEqual(missing, [])
 
 
 if __name__ == "__main__":

@@ -45,6 +45,22 @@ class Tokens(unittest.TestCase):
         self.assertEqual(TOKENS["core"]["typography"]["hero"]["$value"]["fontSize"], "64px")
         self.assertEqual(TOKENS["core"]["motion"]["duration"]["fast"]["$value"], "150ms")
 
+class Sources(unittest.TestCase):
+    def test_every_token_has_a_source(self):
+        missing = []
+
+        def walk(node, path):
+            if isinstance(node, dict) and "$value" in node:
+                if not (node.get("$extensions") or {}).get("source"):
+                    missing.append(path)
+            elif isinstance(node, dict):
+                for k, v in node.items():
+                    if not k.startswith("$"):
+                        walk(v, f"{path}.{k}" if path else k)
+
+        for name in ("core", "light", "dark"):
+            walk(TOKENS[name], name)
+        self.assertEqual(missing, [])
 
 if __name__ == "__main__":
     unittest.main()
