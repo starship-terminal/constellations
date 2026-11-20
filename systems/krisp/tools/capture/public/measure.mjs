@@ -95,7 +95,9 @@ async function forcePseudo(loc, classes) {
 
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
-  Object.assign(c, { page: current, run, url: safeUrl(BASE + (URLS[current] || '')), ...meta });
+  // The page the reading was taken on, as the browser reports it (the not-found key is a
+  // route that 404s), not the URL the spec asked for.
+  Object.assign(c, { page: current, run, url: safeUrl(page && !page.isClosed() ? page.url() : BASE + (URLS[current] || '')), ...meta });
   touched.add(key);
   c.states ??= {};
   return c;
@@ -178,7 +180,8 @@ async function shell() {
   await S('sign-in', q('header .nav_action_link, header a[href*="login"]').first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Sign in link', desc: 'Text link to app.krisp.ai/login. Measured, never followed.', sel: '.nav_action_link' }, { noScroll: true });
   await S('book-demo', q('header .btn--dark').first(), B4, { group: g, title: 'Book a demo button', desc: 'Near-black pill in the header. The control is a div.button wrapping a link to /contact-sales/. Measured, never followed.', sel: '.btn--dark' }, { noScroll: true });
   await S('get-krisp', q('header .btn--primary').first(), B4, { group: g, title: 'Get Krisp button', desc: 'Indigo primary pill. Opens a download menu on the marketing site; the menu was opened for the opened state and the sign-up link was not followed.', sel: '.btn--primary' }, { noScroll: true });
-  await page.locator('header .btn--primary').first().click().catch(() => {});
+  // Get Krisp is on the NEVER list: hovering opens its download menu without pressing the link.
+  await page.locator('header .btn--primary').first().hover().catch(() => {});
   await page.waitForTimeout(500);
   await S('get-krisp-menu', q('header .btn--primary').first().locator('xpath=ancestor::*[contains(@class,"dropdown") or contains(@class,"menu")][1]').first(), ['opened'], { group: g, title: 'Get Krisp menu', desc: 'The download menu under Get Krisp, if the click revealed one.', sel: '.btn--dropdown' }, { noScroll: true, noReset: true });
   await page.keyboard.press('Escape').catch(() => {});
@@ -221,10 +224,10 @@ async function content() {
   }
 }
 
+let mobileBrowser;
 async function mobile() {
   await context.close();
-  ({ context } = await launch({ mobile: true }));
-  await context.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  ({ context, browser: mobileBrowser } = await launch({ mobile: true }));
   await newPage('home', { mobile: true });
   await S('mobile-header', q('header.new'), ['default'], { group: G.mobile, title: 'Mobile header', sel: 'header.new' }, { noScroll: true });
   const burger = q('header .burger, .burger').first();
@@ -234,21 +237,21 @@ async function mobile() {
 
 const want = new Set((process.argv[2] || '').split(',').filter(Boolean));
 const jobs = { shell, pricing, product, content, mobile };
-run = new Date().toISOString();
+run = new Date().toLocaleDateString('en-CA');   // the local run date
 const launched = await launch({ width: 1440, height: 900 });
 context = launched.context;
-await context.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
 try {
   for (const [name, fn] of Object.entries(jobs)) {
     if (want.size && !want.has(name)) continue;
     await fn();
     save();
   }
-  out._meta.capturedAt = run;
+  out._meta.capturedAt = new Date().toISOString();
   out._meta.viewport = { desktop: '1440x900', mobile: '390x844' };
   save();
   log('wrote', OUT, 'components', Object.keys(out.components).length);
 } finally {
   await context.close().catch(() => {});
   await launched.browser.close().catch(() => {});
+  if (mobileBrowser) await mobileBrowser.close().catch(() => {});
 }

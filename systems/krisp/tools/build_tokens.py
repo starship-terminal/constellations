@@ -20,12 +20,17 @@ RAW = HERE / "raw"
 sys.path.insert(0, str(HERE / "tools"))
 import motion as motion_mod  # noqa: E402
 
-FOUND = json.loads((RAW / "foundation.json").read_text()) if (RAW / "foundation.json").exists() else {}
 MOTION = json.loads((RAW / "motion.json").read_text()) if (RAW / "motion.json").exists() else None
 
 
 def tok(value, ty, source):
     return {"$value": value, "$type": ty, "$extensions": {"source": source}}
+
+
+# docs/EVIDENCE.md: a value typed into the builder with no reading in raw/ is a Reconstruction.
+# The stylesheet harvest these were typed from (raw/foundation.json) was never committed.
+def hand(source):
+    return "Reconstruction: entered by hand at capture time; no reading in raw/ holds it (the stylesheet harvest it was typed from was not committed). " + source
 
 
 def color(value, source):
@@ -63,14 +68,14 @@ core = {
             "0": color("#ffffff", S_WHITE),
             "100": color("#f4f4f5", S_MUTED_BG),
             "200": color("#e7e7ea", S_HAIR),
-            "300": color("#d8d8d8", "declared border rgb(216, 216, 216), 42 rules in krisp-v4 CSS 2026-11-18"),
+            "300": color("#d8d8d8", hand("Typed from a declared border rgb(216, 216, 216), 42 rules in krisp-v4 CSS 2026-11-18.")),
         },
         "coral": {
             "500": color("#fe6257", "declared .button.btn--secondary a { background-color: rgb(254, 98, 87) }, krisp-v4 2026-11-18"),
-            "600": color("#f75246", "declared .button.btn--secondary a:hover { background-color: rgb(247, 82, 70) }, krisp-v4 2026-11-18"),
+            "600": color("#f75246", hand("Typed from the declared .button.btn--secondary a:hover { background-color: rgb(247, 82, 70) }, krisp-v4 2026-11-18.")),
         },
         "green": {
-            "500": color("#68b631", "declared rgb(104, 182, 49) in krisp-v4 (status / save chip), stylesheet harvest 2026-11-18"),
+            "500": color("#68b631", hand("Typed from rgb(104, 182, 49) in krisp-v4 (status / save chip), stylesheet harvest 2026-11-18.")),
         },
         "red": {
             "500": color("#eb3a41", "declared rgb(235, 58, 65) in krisp-v4, stylesheet harvest 2026-11-18"),
@@ -80,7 +85,7 @@ core = {
         "sans": tok(
             '"Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
             "fontFamily",
-            "computed h1 font-family \"Plus Jakarta Sans\"; @font-face files under /wp-content/themes/krisp-v4/fonts/Jakarta/, krisp.ai 2026-11-18",
+            "computed h1 font-family \"Plus Jakarta Sans\" (raw/components-computed.json); the fallbacks after it were added by hand at capture time. @font-face files under /wp-content/themes/krisp-v4/fonts/Jakarta/, krisp.ai 2026-11-18",
         ),
         "app": tok(
             "Inter, Arial, Helvetica, sans-serif",
@@ -93,7 +98,7 @@ core = {
         "medium": tok(500, "fontWeight", "@font-face PlusJakartaSans-Medium, theme CSS 2026-11-18"),
         "semibold": tok(600, "fontWeight", "computed h1 font-weight 600 and button face font-weight 600, krisp.ai 2026-11-18"),
         "bold": tok(700, "fontWeight", "computed .price font-weight 700 and pricing h1 font-weight 700, krisp.ai/pricing/ 2026-11-18"),
-        "extrabold": tok(800, "fontWeight", "@font-face PlusJakartaSans-ExtraBold, theme CSS 2026-11-18"),
+        "extrabold": tok(800, "fontWeight", hand("Typed from the @font-face PlusJakartaSans-ExtraBold, theme CSS 2026-11-18; no element paints 800.")),
     },
     "fontSize": {
         "caption": dim("12px", "declared .button.btn--dropdown .dropdown .dropdown_inner .item .desc font-size 12px, krisp-v4 2026-11-18"),
@@ -141,36 +146,36 @@ core = {
 
 light = {
     "background": {
-        "page": color("{core.color.neutral.0}", S_PAGE + "; alias of core.color.neutral.0"),
-        "surface": color("{core.color.neutral.0}", "computed .plan_holder background rgb(255, 255, 255), krisp.ai/pricing/ 2026-11-18"),
-        "muted": color("{core.color.neutral.100}", S_MUTED_BG),
-        "inverse": color("{core.color.ink.900}", "computed .button.btn--dark a background rgb(19, 16, 50), krisp.ai 2026-11-18"),
+        "page": color("{color.neutral.0}", S_PAGE + "; alias of core.color.neutral.0"),
+        "surface": color("{color.neutral.0}", "computed .plan_holder background rgb(255, 255, 255), krisp.ai/pricing/ 2026-11-18"),
+        "muted": color("{color.neutral.100}", S_MUTED_BG),
+        "inverse": color("{color.ink.900}", "computed .button.btn--dark a background rgb(19, 16, 50), krisp.ai 2026-11-18"),
     },
     "text": {
-        "primary": color("{core.color.ink.900}", S_INK),
-        "secondary": color("{core.color.ink.800}", S_INK_2),
-        "muted": color("#757585", "declared rgb(117, 117, 133) in krisp-v4 stylesheet harvest 2026-11-18"),
-        "on-accent": color("{core.color.neutral.0}", S_WHITE),
-        "link": color("{core.color.indigo.500}", "404 page link 'Krisp.ai' paints the indigo; header text links stay ink. krisp.ai/download/ 2026-11-18."),
-        "disabled": color("#757585", "declared rgb(117, 117, 133) in krisp-v4 stylesheet harvest 2026-11-18; recorded as the disabled text role because no disabled control was painted on the public pages."),
-        "price": color("{core.color.ink.700}", S_PRICE),
+        "primary": color("{color.ink.900}", S_INK),
+        "secondary": color("{color.ink.800}", S_INK_2),
+        "muted": color("#757585", hand("Typed from rgb(117, 117, 133) in the krisp-v4 stylesheet harvest 2026-11-18.")),
+        "on-accent": color("{color.neutral.0}", S_WHITE),
+        "link": color("{color.indigo.500}", "404 page link 'Krisp.ai' paints the indigo; header text links stay ink. krisp.ai/download/ 2026-11-18."),
+        "disabled": color("#757585", hand("Typed from rgb(117, 117, 133) in the krisp-v4 stylesheet harvest 2026-11-18; recorded as the disabled text role because no disabled control was painted on the public pages.")),
+        "price": color("{color.ink.700}", S_PRICE),
     },
     "border": {
-        "default": color("{core.color.neutral.200}", S_HAIR),
-        "strong": color("{core.color.ink.900}", "computed .btn--outline border 2px rgb(19, 16, 50), krisp.ai 2026-11-18"),
-        "focus": color("{core.color.indigo.500}", "no designed focus ring was declared on the public buttons; the accent is recorded as the nearest focus colour, not a measured outline."),
-        "highlight": color("{core.color.indigo.500}", "computed .plan_holder.highlighted border 2px rgb(97, 78, 250), krisp.ai/pricing/ 2026-11-18"),
+        "default": color("{color.neutral.200}", S_HAIR),
+        "strong": color("{color.ink.900}", "computed .btn--outline border 2px rgb(19, 16, 50), krisp.ai 2026-11-18"),
+        "focus": color("{color.indigo.500}", "no designed focus ring was declared on the public buttons; the accent is recorded as the nearest focus colour, not a measured outline."),
+        "highlight": color("{color.indigo.500}", "computed .plan_holder.highlighted border 2px rgb(97, 78, 250), krisp.ai/pricing/ 2026-11-18"),
     },
     "action": {
-        "primary": color("{core.color.indigo.500}", S_PRIMARY),
-        "primary-hover": color("{core.color.indigo.600}", S_PRIMARY_HOVER),
-        "inverse": color("{core.color.ink.900}", "computed .button.btn--dark a background, krisp.ai 2026-11-18"),
-        "inverse-hover": color("#23232e", "declared #hero.vt_api_hero .button.btn--dark a:hover background rgb(35, 35, 46), krisp-v4 2026-11-18"),
-        "secondary": color("{core.color.coral.500}", "declared .button.btn--secondary a background, krisp-v4 2026-11-18"),
+        "primary": color("{color.indigo.500}", S_PRIMARY),
+        "primary-hover": color("{color.indigo.600}", S_PRIMARY_HOVER),
+        "inverse": color("{color.ink.900}", "computed .button.btn--dark a background, krisp.ai 2026-11-18"),
+        "inverse-hover": color("#23232e", hand("Typed from the declared #hero.vt_api_hero .button.btn--dark a:hover background rgb(35, 35, 46), krisp-v4 2026-11-18.")),
+        "secondary": color("{color.coral.500}", "declared .button.btn--secondary a background, krisp-v4 2026-11-18"),
     },
     "status": {
-        "success": color("{core.color.green.500}", "stylesheet harvest rgb(104, 182, 49), krisp-v4 2026-11-18. A single hue on the marketing site."),
-        "danger": color("{core.color.red.500}", "stylesheet harvest rgb(235, 58, 65), krisp-v4 2026-11-18. A single hue on the marketing site. The app's fill/text/border triples are in the dark set."),
+        "success": color("{color.green.500}", "stylesheet harvest rgb(104, 182, 49), krisp-v4 2026-11-18. A single hue on the marketing site."),
+        "danger": color("{color.red.500}", "stylesheet harvest rgb(235, 58, 65), krisp-v4 2026-11-18. A single hue on the marketing site. The app's fill/text/border triples are in the dark set."),
         "warning": color("#fe6257", "app custom property --warning on app.krisp.ai 2026-11-18; marketing coral. Not a fill/text/border triple on the public site."),
         "info": color("#038ce2", "app --background-information-dark-1 on app.krisp.ai light 2026-11-18"),
     },
@@ -178,16 +183,16 @@ light = {
         "menu": tok(
             [{"color": "rgba(27, 30, 33, 0.16)", "offsetX": "0px", "offsetY": "16px", "blur": "32px", "spread": "2px"}],
             "shadow",
-            "declared .button.btn--dropdown .dropdown .dropdown_inner box-shadow, krisp-v4 2026-11-18. The only measured elevation. Plan cards and the page have no shadow.",
+            hand("Typed from the declared .button.btn--dropdown .dropdown .dropdown_inner box-shadow, krisp-v4 2026-11-18. Plan cards and the page have no shadow."),
         ),
     },
     "component": {
-        "button-primary-bg": color("{light.action.primary}", S_PRIMARY),
-        "button-primary-text": color("{light.text.on-accent}", S_WHITE),
-        "button-primary-radius": dim("{core.radius.sm}", "computed .btn--primary a border-radius 8px"),
-        "button-dark-bg": color("{light.action.inverse}", "computed .btn--dark a background"),
-        "plan-card-radius": dim("{core.radius.lg}", "computed .plan_holder border-radius 16px"),
-        "plan-card-border": color("{light.border.default}", S_HAIR),
+        "button-primary-bg": color("{action.primary}", S_PRIMARY),
+        "button-primary-text": color("{text.on-accent}", S_WHITE),
+        "button-primary-radius": dim("{radius.sm}", "computed .btn--primary a border-radius 8px"),
+        "button-dark-bg": color("{action.inverse}", "computed .btn--dark a background"),
+        "plan-card-radius": dim("{radius.lg}", "computed .plan_holder border-radius 16px"),
+        "plan-card-border": color("{border.default}", S_HAIR),
     },
 }
 
@@ -254,6 +259,8 @@ doc = {
 
 if MOTION:
     core["motion"], _motion_nt = motion_mod.build(MOTION)
+    if _motion_nt:  # what DTCG cannot carry is kept, as the kit does
+        core["$extensions"] = {"notTokenised": _motion_nt}
 
 (HERE / "tokens.json").write_text(json.dumps(doc, indent=1) + "\n")
 print("wrote", HERE / "tokens.json")
