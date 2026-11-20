@@ -5837,9 +5837,9 @@
       "description": "Make work-life balance a reality",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://app.sunsama.com/login shows email and password, or Google, Outlook, or SSO. Password not submitted.",
+      "notes": "Email probe: https://app.sunsama.com/login shows email and password, or Google, Outlook, or SSO. Password not submitted. Public walk 2026-11-21: header opens Features, Integrations, Pricing, Love, About, and Blog. Phone menu opens the same links. Homepage assistant pill opens an in-page dialog. Login stops at app.sunsama.com/login. Start for Free stops at /start/signup. Google, Outlook, and SSO were not clicked. No email was typed. No form was submitted. Signed-in app was not captured. Public package refresh in PR 1587 at 5b6e32f4429f. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 17
     },
     {
@@ -5854,9 +5854,9 @@
       "description": "Create a websites with Notion",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://app.super.so/login shows email and password, or Google, Apple, or a passkey. Password not submitted.",
+      "notes": "Email probe: https://app.super.so/login shows email and password, or Google, Apple, or a passkey. Password not submitted. Public walk 2026-11-21: header opens Use cases, Showcase, Templates, Features, Pricing, and Blog. Phone hamburger opens the same list in a drawer. Sign in and Get started free stop at the app wall. Those walls were recorded and not filled. Google, Apple, and passkey were not clicked. No email was typed. No form was submitted. Signed-in app was not captured. Public package refresh in PR 1586 at e0367c3c7c0a. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 17
     },
     {
@@ -6109,9 +6109,9 @@
       "description": "Explore the world's biggest network of public org charts",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://theorg.com/login showed email and password. Continue with Google returned to the public homepage without an account surface. Password not submitted.",
+      "notes": "Email probe: https://theorg.com/login showed email and password. Continue with Google returned to the public homepage without an account surface. Password not submitted. Public walk 2026-11-21: Platform and Enrich open dialogs. Pricing, marketing, explore, companies, people index, iterate, and two org charts are public. Login, signup, forgot-password, SSO, and /prospect stop at walls and those branches stopped. Phone width opens a sheet from an unnamed header button. Contact, do-not-sell, terms, privacy, and one company page were mapped and not screenshotted because they show an email. Person pages stayed on a verify interstitial and were not screenshotted. Contact sales was not filled. Google was not clicked. No email was typed. No form was submitted. Signed-in app was not captured. Public package refresh in PR 1588 at 738524a3576a. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 18
     },
     {
