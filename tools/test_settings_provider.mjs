@@ -16,7 +16,8 @@ const KEY = "sk-old-browser-key-1234567";
 class El {
   constructor(id) {
     this.id = id;
-    this.hidden = false;
+    // The form starts hidden, as in the page's markup.
+    this.hidden = id === "pf";
     this.value = "";
     this.textContent = "";
     this.placeholder = "";
@@ -162,14 +163,31 @@ test("a save reply that lands after the form changed leaves the newer edits alon
   for (let i = 0; i < 10; i++) await new Promise((r) => setImmediate(r));
   els["pf-save"].onclick();
   for (let i = 0; i < 5; i++) await new Promise((r) => setImmediate(r));
+  // Remove waits for the save, so a Remove cannot be undone by it.
+  assert.deepEqual([els["pf-save"].disabled, els["pf-clear"].disabled], [true, true]);
   // The reader types another key while the save is in flight.
   els["pf-key"].value = NEWER;
   release();
   for (let i = 0; i < 10; i++) await new Promise((r) => setImmediate(r));
   assert.equal(els["pf-key"].value, NEWER, "the newer key is not erased");
+  assert.deepEqual([els["pf-save"].disabled, els["pf-clear"].disabled], [false, false]);
   assert.equal(els["pf-badge"].textContent, "Saved on the server");
   assert.match(els["pf-status"].textContent, /The form has changed since/);
   assert.ok(!els["pf-status"].textContent.includes(NEWER) && !els["pf-status"].textContent.includes(KEY));
+});
+
+test("the form stays hidden until a slow migration and the read after it have filled it", async () => {
+  let release;
+  const held = new Promise((r) => (release = r));
+  const { els } = await run(legacy, (url, method, body) => {
+    if (method === "POST") return held.then(() => ({ ok: true, source: "saved", provider: { api: body.api, base_url: body.base_url, model: body.model } }));
+    return { ok: true, source: "none", configured: false, provider: null };
+  });
+  assert.equal(els.pf.hidden, true, "nothing to type into while the move is in flight");
+  release();
+  for (let i = 0; i < 20; i++) await new Promise((r) => setImmediate(r));
+  assert.equal(els.pf.hidden, false, "shown once filled");
+  assert.equal(els["pf-badge"].textContent, "No key");
 });
 
 test("a server that does not answer keeps the old browser key and never posts it", async () => {

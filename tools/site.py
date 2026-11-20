@@ -252,10 +252,14 @@ SETTINGS_BODY = """<h1>Settings</h1>
     // The whole form as it would be sent, to tell whether it changed while a
     // save was in flight.
     var formSig = function () { return JSON.stringify([current, sig(), model.value]); };
+    // Save and Remove wait for each other: with both enabled, a Remove that
+    // finished first would be undone by the save still being tested.
+    var pending = function (on) { el('pf-save').disabled = on; el('pf-clear').disabled = on; };
     el('pf-save').onclick = function () {
       if (!verified || verified !== sig()) { setStatus('Test the connection before saving.', true); return; }
       if (!model.value.trim()) { setStatus('Pick a model first.', true); return; }
       setStatus('Saving…');
+      pending(true);
       var submitted = formSig(), label = TEMPLATES[current].label + ' · ' + model.value.trim();
       send('POST', 'provider', body()).then(function (d) {
         if (!d.ok) { setStatus('Not saved. ' + (d.error || 'The server refused it.'), true); return; }
@@ -269,14 +273,17 @@ SETTINGS_BODY = """<h1>Settings</h1>
         }
         key.value = ''; verified = sig(); relock();
         setStatus('Saved on the server: ' + label + note);
-      }).catch(function () { setStatus('No answer from the server.', true); });
+      }).catch(function () { setStatus('No answer from the server.', true); })
+        .finally(function () { pending(false); });
     };
     el('pf-clear').onclick = function () {
+      pending(true);
       send('DELETE', 'provider').then(function (d) {
         if (!d.ok) { setStatus(d.error || 'Could not remove the saved key.', true); return; }
         show(d); fill(d);
         setStatus(d.source === 'env' ? 'Removed the saved key. The chat now uses the server environment key.' : 'Removed the saved key.');
-      }).catch(function () { setStatus('No answer from the server.', true); });
+      }).catch(function () { setStatus('No answer from the server.', true); })
+        .finally(function () { pending(false); });
     };
     var legacy = null;
     try { legacy = JSON.parse(localStorage.getItem(LEGACY) || 'null'); } catch (e) { legacy = null; }
@@ -328,8 +335,12 @@ SETTINGS_BODY = """<h1>Settings</h1>
                            function () { return { status: r.status, d: null }; });
     }, function () { return { status: 0, d: null }; }).then(function (res) {
       if (res.d && typeof res.d.source === 'string') {
-        form.hidden = false;
-        return migrate().then(function () { return send('GET', 'provider'); }).then(function (d2) { show(d2); fill(d2); });
+        // The form shows only once it is filled, so nothing the reader types
+        // can be replaced by a fill that lands after a slow migration.
+        return migrate().then(function () { return send('GET', 'provider'); })
+          .then(function (d2) { show(d2); fill(d2); },
+                function () { show(res.d); fill(res.d); setStatus('No answer from the server.', true); })
+          .then(function () { form.hidden = false; });
       }
       form.hidden = true; off.hidden = false;
       if (res.status !== 404) {
