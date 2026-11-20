@@ -41,5 +41,40 @@ class RebuildTest(unittest.TestCase):
         self.assertEqual(t["light"]["accent-cta"]["$value"], "{color.cta.orange}")
 
 
+def load_parse_shadow():
+    """parse_shadow and the helpers it calls, taken from build_tokens.py without running the build
+    (the module writes tokens.json at import): every function, the regex constants, the imports."""
+    import ast
+    import re as _re
+    src = (PKG / "tools" / "build_tokens.py").read_text()
+    tree = ast.parse(src)
+    keep = [n for n in tree.body
+            if isinstance(n, (ast.Import, ast.ImportFrom, ast.FunctionDef))
+            or (isinstance(n, ast.Assign) and isinstance(n.value, ast.Call)
+                and getattr(n.value.func, "attr", "") == "compile")]
+    ns = {"re": _re}
+    exec(compile(ast.Module(body=keep, type_ignores=[]), "build_tokens.py", "exec"), ns)
+    return ns["parse_shadow"]
+
+
+class ParseShadowTest(unittest.TestCase):
+    parse = staticmethod(load_parse_shadow())
+
+    def test_inset_at_either_end(self):
+        for v in ("inset 0px 1px 2px 0px rgba(0, 0, 0, 0.1)", "rgba(0, 0, 0, 0.1) 0px 1px 2px 0px inset"):
+            with self.subTest(v=v):
+                self.assertEqual(self.parse(v), [{"offsetX": "0px", "offsetY": "1px", "blur": "2px", "spread": "0px",
+                                                  "color": "rgba(0, 0, 0, 0.1)", "inset": True}])
+
+    def test_unitless_zero(self):
+        self.assertEqual(self.parse("0 1px 2px rgba(15,15,15,.05)")[0]["offsetX"], "0px")
+
+    def test_unreadable_layers_are_refused(self):
+        for v in ("0px 1px 2px", "1px rgba(0,0,0,.1)", "0px 1px 2px 3px 4px rgba(0,0,0,.1)", "0px 1px 2px wide rgba(0,0,0,.1)"):
+            with self.subTest(v=v):
+                with self.assertRaises(ValueError):
+                    self.parse(v)
+
+
 if __name__ == "__main__":
     unittest.main()
