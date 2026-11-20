@@ -23,6 +23,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, M, launch, open, closePromo, openStory, styleOf, crop, centre, RAW, REF, CROPS } from './lib.mjs';
 import { safeUrl } from '../safe-url.mjs';
+import { pin, unpin, prefer } from './pin.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -141,17 +142,34 @@ async function measure(key, state, target, opts = {}) {
 const FILL = 'What is the derivative of x squared?';
 
 // Records the listed states of one component. meta: title, group, desc, sel.
+// Every state is read from the one element `target` finds first (pinned, see pin.mjs), found again by
+// the selector only if the page replaced it. A spec that opens something (opts.open, or a `before`
+// that reaches a state) has it closed afterwards with opts.close, or Escape, so the next component is
+// read at rest; opts.keepOpen leaves it open for specs that read inside it and close it themselves.
 async function S(key, target, list, meta = {}, opts = {}) {
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   if (!listed.has(key)) listed.set(key, new Set());
   for (const st of list) listed.get(key).add(st);
   delete out.components[key].missing;
   if (opts.open) { await reset(); await opts.open(); }
-  const loc = target.filter({ visible: true }).first();
-  if (!(await loc.count())) { log('  ! missing', key); out.components[key].missing = true; return; }
+  let loc = await pin(page, target, key);
+  if (!loc) { log('  ! missing', key); out.components[key].missing = true; await close(opts); return; }
+  // The pinned node, or, when the page has replaced it, the one the selector finds now (pinned in
+  // turn). The last good locator is kept while nothing matches, so a later state can still find it.
+  let replaced = false;
+  const live = async (st) => {
+    if (await loc.count()) return loc;
+    replaced = true;
+    const again = await pin(page, target, key);
+    if (!again) throw new Error('the element left the page');
+    log('  ~', key, st, 'element replaced, found again by its selector');
+    return (loc = again);
+  };
   for (const st of list) {
     let undo, via;
+    replaced = false;
     try {
+      await live(st);
       if (!opts.noReset) await reset();
       if (!opts.noScroll) await centre(loc);
       if (opts.before?.[st]) via = await opts.before[st](loc);
@@ -185,7 +203,10 @@ async function S(key, target, list, meta = {}, opts = {}) {
         if (old && old.startsWith(CROPS + path.sep)) fs.rmSync(old, { force: true });
         out.components[key].states[st] = { skipped: 'focus failed: keyboard focus did not reach the element', via };
         log('  -', key, st, 'skipped: focus failed');
-      } else await measure(key, st, loc, { ...opts, via });
+      } else {
+        const now = await live(st);   // opening, focus or hover may have replaced it
+        await measure(key, st, now, { ...opts, via: replaced ? `${via}; the page replaced the element, read from the one its selector finds now` : via });
+      }
     } catch (e) {
       out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
       log('  !', key, st, String(e.message).slice(0, 120));
@@ -193,7 +214,16 @@ async function S(key, target, list, meta = {}, opts = {}) {
     if (undo) await undo().catch(() => {});
     if (opts.after?.[st]) await opts.after[st](loc).catch(() => {});
   }
+  await unpin(page, key).catch(() => {});
+  await close(opts);
   await reset();
+}
+
+// Closes what a spec opened (see S), unless it asked to keep it open.
+async function close(opts) {
+  if (opts.keepOpen || !(opts.open || opts.before)) return;
+  await (opts.close ? opts.close() : page.keyboard.press('Escape')).catch(() => {});
+  await page.waitForTimeout(400);
 }
 
 const q = (sel) => page.locator(sel);
@@ -322,7 +352,7 @@ async function academy() {
   await page.close();
 
   await newPage('my');
-  await S('my-empty', q(M('catalog_emptyState')).first().or(q('main').locator('img').first().locator('xpath=../..')), ['default'], { group: g, title: 'My Course empty state', desc: 'A fan of three course cards, a 20px 600 title, a grey line and a dark Create button.', sel: M('catalog_emptyState') });
+  await S('my-empty', await prefer(q(M('catalog_emptyState')), q('main').locator('img').first().locator('xpath=../..')), ['default'], { group: g, title: 'My Course empty state', desc: 'A fan of three course cards, a 20px 600 title, a grey line and a dark Create button.', sel: M('catalog_emptyState') });
   const create = page.getByRole('button', { name: 'Create', exact: true });
   await S('create-button', create, B4, { group: g, title: 'Create button (empty state)', desc: 'The dark primary button: #21252e, radius 12, 44px, white 16/22.4 500. Hover lightens it to #333943; pressed also scales it to 0.98. Measured, never pressed.', sel: 'button "Create"' });
   await page.close();
@@ -398,7 +428,7 @@ async function science() {
   await page.screenshot({ path: '/dev/null' }).catch(() => {});
   // settings popover
   await S('settings-popover', page.getByRole('dialog').filter({ hasText: 'Narration' }).first(), ['opened'], { group: g, title: 'Settings popover', desc: 'Speed, Narration and Captions switches, a Zoom stepper and Export PDF (not pressed): a white card with a 1px #f2f2f2 border, radius 24 and a 0 8 14 shadow at 9%.', sel: 'role=dialog (Settings)' }, {
-    noScroll: true, noReset: true,
+    noScroll: true, noReset: true, keepOpen: true,
     open: async () => { await page.getByRole('button', { name: 'Settings' }).click(); await page.waitForTimeout(1000); },
     before: { opened: async () => 'Settings pressed (opens a menu)' },
   });
@@ -476,7 +506,7 @@ async function math() {
   await S('speed-button', page.getByRole('button', { name: /Playback speed/ }), ['default', 'hover'], { group: g, title: 'Speed button', sel: 'button "Playback speed"' }, { noScroll: true });
   await S('player-frame', q(M('shared_playerFrame')).first(), ['default'], { group: g, title: 'Slide frame', desc: 'The white radius-32 frame the slide plays in, title in Playfair Display.', sel: M('shared_playerFrame') }, { noScroll: true });
   await S('chapters-panel', q('aside' + M('pgc_panel')), ['opened'], { group: g, title: 'Chapters panel', desc: 'Opened from the list button at the top right: a white panel of chapter rows, the current one tinted.', sel: 'aside' + M('pgc_panel') }, {
-    noScroll: true, noReset: true,
+    noScroll: true, noReset: true, keepOpen: true,
     open: async () => { await page.getByRole('button', { name: 'Open lesson chapters' }).click(); await page.waitForTimeout(1200); },
     before: { opened: async () => 'Open lesson chapters pressed (opens a panel)' },
   });
@@ -499,7 +529,7 @@ async function history() {
   await S('chapter-pill', q(M('lesson_chapterPillUpcoming')).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Chapter pill, upcoming', desc: 'An upcoming chapter: a 32px pill at 4% ink with its number at 25% ink; hover doubles both.', sel: M('lesson_chapterPillUpcoming') }, { noScroll: true });
   await S('play-button', q(M('lesson_mediaControlButton')).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Play button', desc: 'A 60px disc, white at 82%, with a 0 8 28 navy shadow and a black play glyph. Not pressed.', sel: M('lesson_mediaControlButton') }, { noScroll: true });
   await S('chapter-panel', q('aside' + M('lesson_chapterPanel')), ['opened'], { group: g, title: 'Chapter panel', desc: 'A 400px white panel from the right edge, radius 28 on the leading corners, a -8 0 40 shadow: each chapter with a number, a 600 name and a two-line description; the current chapter is pink #fff0f3 with red text.', sel: 'aside' + M('lesson_chapterPanel') }, {
-    noScroll: true, noReset: true,
+    noScroll: true, noReset: true, keepOpen: true,
     open: async () => { await q(M('lesson_chapterMenuButton')).first().click(); await page.waitForTimeout(1200); },
     before: { opened: async () => 'chapters button pressed (opens a panel)' },
   });
@@ -590,7 +620,7 @@ async function mobile() {
   if (menu) {
     await S('m-menu-button', q('[data-m="m-menu"]'), ['default'], { group: g, title: 'Mobile menu button', sel: 'top bar menu button' }, { noScroll: true });
   }
-  await S('m-question-box', q(M('m_search-input-container')).or(q(M('pc_search-input-container'))).or(q('textarea, input[type=text]').first()).first(), ['default'], { group: g, title: 'Mobile question field', sel: 'question field' });
+  await S('m-question-box', await prefer(q(M('m_search-input-container')), q(M('pc_search-input-container')), q('textarea, input[type=text]')), ['default'], { group: g, title: 'Mobile question field', sel: 'question field' });
   const banner = await page.evaluate(() => { const o = [...document.querySelectorAll('a, button, div')].find((e) => (e.innerText || '').trim() === 'Open' && e.getBoundingClientRect().top > 700); if (!o) return false; let n = o; while (n && n.getBoundingClientRect().width < 380) n = n.parentElement; n.setAttribute('data-m', 'm-banner'); return true; });
   if (banner) await S('m-app-banner', q('[data-m="m-banner"]'), ['default'], { group: g, title: 'App banner (mobile)', desc: 'A bottom banner with the app icon, rating and an Open pill. Open was not pressed.', sel: 'bottom app banner' }, { noScroll: true });
   await page.close();
