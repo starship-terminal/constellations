@@ -2,7 +2,7 @@
 // pages. Run with `pnpm test`.
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { cardFav, cardImg, cardVideo, cdnUrl, faviconFor, host, localMedia } from "./refero-media.ts";
+import { cardFav, cardImg, cardVideo, cdnUrl, host, localMedia } from "./refero-media.ts";
 import type { ReferoCard, ReferoIndex } from "@/lib/refero";
 
 const index: ReferoIndex = { version: 1, cdn: "https://cdn.example/", mediaBase: "https://media.example", styles: [] };
@@ -62,21 +62,6 @@ describe("cdnUrl", () => {
   });
 });
 
-describe("faviconFor", () => {
-  it("asks gstatic for the quoted https host", () => {
-    const url = faviconFor("https://www.acme.example/x");
-    assert.ok(url?.includes("url=https%3A%2F%2Facme.example&size=128"));
-  });
-
-  it("asks for the host alone when the source has a query and no path", () => {
-    assert.ok(faviconFor("https://acme.example?ref=x")?.includes("url=https%3A%2F%2Facme.example&size=128"));
-  });
-
-  it("is null without a source", () => {
-    assert.equal(faviconFor(null), null);
-  });
-});
-
 describe("card media pairs", () => {
   it("cardImg uses shots for an s card and posters for a p card", () => {
     assert.equal(cardImg(index, card).local, "https://media.example/refero-media/shots/acme%20corp.jpg");
@@ -90,8 +75,16 @@ describe("card media pairs", () => {
 
   it("cardFav and cardVideo point at their own folders", () => {
     assert.equal(cardFav(index, card).local, "https://media.example/refero-media/favicons/acme%20corp.png");
-    assert.ok(cardFav(index, card).remote?.includes("acme.example"));
+    assert.equal(cardFav(index, card).remote, null);
     assert.equal(cardVideo(index, card).local, "https://media.example/refero-media/videos/acme%20corp.mp4");
     assert.equal(cardVideo(index, card).remote, "https://other.example/v.mp4");
+  });
+});
+
+describe("favicons", () => {
+  it("never name a favicon service, so browsing a style tells no third party", () => {
+    const pair = cardFav(index, { ...card, src: "acme.example" });
+    assert.equal(pair.remote, null);
+    assert.ok(!JSON.stringify(pair).includes("gstatic"));
   });
 });

@@ -13,7 +13,7 @@ package already has; nothing in it is written by hand:
 | Principles | The bold lead of each rule in the README's "Do and don't" list (its first sentence when it has none), read as tools/grade.py's K2 check reads it |
 | Using tokens | The catalog's preview swatches and fonts, resolved in the tokens file, for every theme palette tools/grade.py checks; then the scale counts DESIGN.md holds |
 | Using components | Which of components.md, patterns.md, components/crops/ and style-guide.html exist, with the number of crop images |
-| Accessibility | The same contrast pairs tools/grade.py's F15 check measures, then the token paths that name focus |
+| Accessibility | The same contrast pairs tools/grade.py's F15 check measures, then the token paths that name focus, each with its docs/EVIDENCE.md label when that says it was not measured |
 
 `make brief` writes it, `make design-md` runs this first, and `make check` runs
 `--check`. The section never reaches DESIGN.md, which copies README sections by heading
@@ -24,6 +24,7 @@ Standard library only.
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import re
 import sys
@@ -151,8 +152,53 @@ def _pair(row: dict | None) -> str:
     return f"{row['ratio']:.2f}:1 {row['status']}"
 
 
+# docs/EVIDENCE.md's labels. A focus token labelled one of NOT_MEASURED is named
+# with its label, so a sampled, reconstructed or uncaptured focus value is never
+# read as a measurement. Derived values are worked out from measured ones, so
+# they are listed plainly like Measured and unlabelled tokens.
+LABELS = ("Measured", "Derived", "Sampled", "Observed", "Reconstruction", "Not captured")
+NOT_MEASURED = ("Sampled", "Observed", "Reconstruction", "Not captured")
+
+
+def token_objects(tokens: dict) -> dict[str, dict]:
+    """Map catalog.flatten's dotted paths to their token objects, by the same walk, so a
+    key that itself holds a dot (`input.error.focus`) lands on the same path."""
+    found: dict[str, dict] = {}
+
+    def walk(node, path):
+        if not isinstance(node, dict):
+            return
+        if "$value" in node or ("value" in node and not isinstance(node["value"], dict)):
+            found[".".join(path)] = node
+            return
+        for key, child in node.items():
+            if not key.startswith("$"):
+                walk(child, path + [key])
+
+    walk(tokens, [])
+    return found
+
+
+def evidence(token) -> str | None:
+    """The docs/EVIDENCE.md label a token carries: `$extensions.source.evidence`,
+    `$extensions.evidence`, or a `$extensions.source` sentence that opens with a
+    label ("Reconstruction: entered by hand ..."). None when it names none."""
+    ext = token.get("$extensions") if isinstance(token, dict) else None
+    if not isinstance(ext, dict):
+        return None
+    src = ext.get("source")
+    for raw in (src.get("evidence") if isinstance(src, dict) else None, ext.get("evidence"),
+                src if isinstance(src, str) else None):
+        if isinstance(raw, str):
+            for label in LABELS:
+                if re.match(re.escape(label) + r"\b", raw.strip(), re.I):
+                    return label
+    return None
+
+
 def focus_tokens(system: dict, theme: str | None) -> str:
     res = catalog.resolver_for(system["tokens"])
+    tokens = token_objects(json.loads((ROOT / system["tokens"]).read_text()))
     # A base token (`shadow.focus`, `focusRing.width`) before a variant of it (`shadow.focus-danger`).
     variant = lambda p: bool(re.search(r"focus[a-z]*[-_][a-z]", p.split(".")[-1], re.I))
     paths = sorted((p for p in res.flat if "focus" in p.lower()),
@@ -164,7 +210,8 @@ def focus_tokens(system: dict, theme: str | None) -> str:
         raw = res.final(path)
         if (raw is None or catalog._unresolved(raw)) and theme:
             raw = res.final(path, theme=theme)
-        shown.append(f"`{path}` {_value(raw)}")
+        label = evidence(tokens.get(path))
+        shown.append(f"`{path}` {_value(raw)}" + (f" ({label}, not measured)" if label in NOT_MEASURED else ""))
     return "Focus tokens: " + "; ".join(shown) + "."
 
 

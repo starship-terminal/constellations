@@ -65,12 +65,24 @@ class CssColour(unittest.TestCase):
 NODE_RUN_ELSEWHERE = {"test_screenshot.mjs": "test_capture_screenshot.py", "test_motion.mjs": "test_kit_motion.py"}
 
 
+TAP_OK = re.compile(r"^(\s*)ok \d+ - (.*?)(?: # (SKIP|TODO)\b.*)?$")
+TAP_TYPE = re.compile(r"^\s*type: '(\w+)'")
+
+
 def node_tests_ran(f):
-    """Run one node test file with the TAP reporter: (exit code, output, the names of the tests that ran). A
-    file that registers no test is still reported as one passing test, named after the file, so that one
-    is not counted."""
+    """Run one node test file with the TAP reporter: (exit code, output, the names of the tests that ran).
+    Counted: a passing entry of type 'test', at any depth (inside a describe too). Not counted: a skipped or
+    todo test, a suite (type 'suite', empty or not), and the one entry node prints, named after the file,
+    for a file that registers no test."""
     res = subprocess.run([NODE, "--test", "--test-reporter=tap", str(f)], capture_output=True, text=True, timeout=120)
-    names = [m for m in re.findall(r"(?m)^ok \d+ - (.+)$", res.stdout) if m.strip() != str(f)]
+    lines, names = res.stdout.splitlines(), []
+    for i, line in enumerate(lines):
+        m = TAP_OK.match(line)
+        if not m or m.group(3) or m.group(2).strip() == str(f):
+            continue
+        kind = next((t.group(1) for t in map(TAP_TYPE.match, lines[i + 1:i + 8]) if t), None)
+        if kind == "test":
+            names.append(m.group(2).strip())
     return res.returncode, res.stdout + res.stderr, names
 
 
@@ -97,6 +109,18 @@ class KitNodeTests(unittest.TestCase):
             one.write_text("import test from 'node:test';\ntest('one', () => {});\n")
             self.assertEqual(node_tests_ran(empty)[2], [])
             self.assertEqual(node_tests_ran(one)[2], ["one"])
+
+    def test_skipped_and_todo_tests_and_suites_are_not_counted_as_run(self):
+        # Train 25's review of PR 1351: a skipped or todo test, or an empty describe, still counted
+        with tempfile.TemporaryDirectory() as d:
+            only_skips = Path(d) / "test_skips.mjs"
+            only_skips.write_text("import { test, describe } from 'node:test';\n"
+                                  "test('s', { skip: true }, () => {});\ntest.todo('t');\ndescribe('empty suite', () => {});\n")
+            mixed = Path(d) / "test_mixed.mjs"
+            mixed.write_text("import { test, describe } from 'node:test';\n"
+                             "test('s', { skip: true }, () => {});\ndescribe('suite', () => { test('inner', () => {}); });\n")
+            self.assertEqual(node_tests_ran(only_skips)[2], [])
+            self.assertEqual(node_tests_ran(mixed)[2], ["inner"])
 
     def test_every_kit_node_test_file_has_a_runner(self):
         # the ones left out above are run by their own wrapper, which must exist and name the file

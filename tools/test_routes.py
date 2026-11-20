@@ -15,6 +15,19 @@ from unittest import mock
 
 SERVER = Path(__file__).resolve().parent.parent / "server"
 
+# routes.py's host guard reads DESIGN_SYSTEMS_ALLOWED_HOSTS from os.environ, which a
+# shell or an earlier load of the repo's .env could fill. Pin it empty for the module,
+# so GuardTest and the rest see only loopback and the hosts a test sets itself.
+_ENV = mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_ALLOWED_HOSTS": ""})
+
+
+def setUpModule():
+    _ENV.start()
+
+
+def tearDownModule():
+    _ENV.stop()
+
 
 def _routes():
     spec = importlib.util.spec_from_file_location("routes_under_test", SERVER / "routes.py")
@@ -221,6 +234,9 @@ class GuardTest(unittest.TestCase):
     def test_same_origin_passes(self):
         handled, h = _post(self.routes, "/api/nope", {}, headers={"origin": "http://127.0.0.1:8800"})
         self.assertEqual(h.status, 404)
+
+    def test_the_allowlist_is_pinned_empty_for_these_tests(self):
+        self.assertEqual(os.environ.get("DESIGN_SYSTEMS_ALLOWED_HOSTS"), "")
 
     def test_unknown_host_is_refused_on_get(self):
         h = Handler("/api/status", headers={"host": "rebound.example"})

@@ -648,10 +648,11 @@ class ReferoEmitContractTest(unittest.TestCase):
             r"(\w+):", re.search(r"const MEDIA_KINDS[^=]*= \{(.*?)\}", WEB_SRC, re.S).group(1)))
         self.assertEqual((literals | route_kinds) - set(refero_media.KINDS), set())
 
-    def test_the_emitted_favicon_remote_is_the_mirrored_url(self):
-        self.assertEqual(
-            self.entity["media"]["favicon"]["remote"],
-            refero_media.favicon_url(CONTRACT_META["source_url"]))
+    def test_the_emitted_favicon_is_the_mirrored_file_with_no_remote(self):
+        # A remote favicon-service URL would let the service see which styles are browsed.
+        self.assertEqual(self.entity["media"]["favicon"],
+                         {"local": refero_media.local_path("favicons", self.entity["slug"]), "remote": None})
+        self.assertNotIn("gstatic", json.dumps(self.entity) + json.dumps(self.index))
 
 
 class MetaCatalogContractTest(unittest.TestCase):

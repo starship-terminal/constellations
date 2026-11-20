@@ -1192,8 +1192,8 @@ class ReferoBuildTest(unittest.TestCase):
         self.assertEqual(alpha["media"]["detail_poster"],
                          {"local": "/refero-media/detail-posters/alpha.jpg",
                           "remote": "https://img/dp.jpg"})
-        self.assertIn("url=https%3A%2F%2Fwww.alpha.example.com", alpha["media"]["favicon"]["remote"])
-        self.assertEqual(alpha["media"]["favicon"]["local"], "/refero-media/favicons/alpha.png")
+        # No favicon-service remote: only the file the host-side mirror fetched.
+        self.assertEqual(alpha["media"]["favicon"], {"local": "/refero-media/favicons/alpha.png", "remote": None})
         self.assertEqual(alpha["docs"]["design_md"], "# Designed\n")
         self.assertEqual(alpha["docs"]["tokens_json"], "{}")
         # `ds` carries only what the page renders; the rest of the upstream
