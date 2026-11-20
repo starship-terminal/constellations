@@ -1,25 +1,35 @@
-# Components
+# Coolors components
 
-Measured in the attached T3 preview browser on 2026-11-18, signed in as `kaichen@agentmail.to`. Desktop CSS viewport 1169x731. Values are computed styles, recorded in [raw/measured.json](raw/measured.json).
+Measured on the signed-in Coolors page on 2026-11-20, theme `light`, desktop CSS viewport 1440x900 at devicePixelRatio 2. Phone CSS viewport was 390x844. Values are `getComputedStyle` readings in [raw/components-computed.json](raw/components-computed.json).
 
-| Component | State | Evidence |
-|---|---|---|
-| Button, primary | default | `a.btn.btn--primary.btn--m`. Fill `#2563eb`, label `#ffffff`, 16px weight 600, height 46, radius 10px, padding 0 21px. Text "Start the Generator" on the homepage. The same fill paints "I accept" and "Let's go!". |
-| Button, gray | default | `a.btn.btn--gray.btn--m`. Fill `rgba(0, 0, 0, 0.06)`, label `#000000`, same size as primary. Text "Explore 10M+ Palettes". |
-| Button, header | default | `a.btn.btn--s.btn--transparent`. Height 36, radius 8px, 15px weight 500, label `#000000`. Text "Tools". |
-| Button, Go Pro | default | `a.btn.btn--accent-transparent.btn--s`. Same size as header. Label `#ec4899`. |
-| Icon button | default | Generator toolbar icons are 36px square `a.btn.btn--s.btn--icon.btn--transparent`, 14px weight 500. |
-| Avatar | signed in | Header swaps Sign in and Sign up for a 36px circle with the initial K after email confirmation. |
-| Text field | confirm | `#passcode_code`, placeholder "Enter the code", height 46, width 332 in the confirm modal. Signup fields are `#modal-signup_name`, `#modal-signup_email`, `#modal-signup_password`. |
-| Search field | explore | Placeholder "Search with colors, topics, styles or hex values...", 16px, height 39, at 390px. |
-| Dialog | terms, hello | `.modal_element` is white, radius 14px, ring `rgba(0, 0, 0, 0.07) 0 0 0 1px`. Primary action is the 46px blue button. |
-| Generator column | default | `.generator_color` is 234 by 615 at 1169px. Hex is `.generator_color_hex`, 30px weight 600, letter-spacing 0.9px. Name is `.generator_color_color-info`, 11.2px weight 600, letter-spacing 0.448px. Ink is white or black against the column. |
-| Palette card | explore, 390px | `.palette-card` about 330 by 150, side inset 30. Swatch row is 104px tall. Title sits under the swatches with a like count. |
-| Tooltip | hover | "View color info" appears on a generator column control. Black pill, white label. Not measured beyond the screenshot. |
+## Button
+
+Header and generator toolbar buttons are `a.btn.btn--s`. Height 36px, radius 8px, padding 0 12px, Inter 15px weight 500.
+
+| Variant | Fill | Label | Where |
+|---|---|---|---|
+| transparent | rgba(0, 0, 0, 0) | rgb(0, 0, 0) | Tools, View, Export, Save |
+| selected | rgba(23, 89, 232, 0.1) | rgb(18, 71, 186) | open toolbar popover |
+| go pro | rgba(0, 0, 0, 0) | rgb(236, 72, 153) | header Go Pro |
+| primary | rgb(37, 99, 235) | rgb(255, 255, 255) | account page primary |
+| icon | transparent | ink | 36x36 toolbar icons |
+
+## Header
+
+Height 60px. Fill rgb(255, 255, 255). Shadow `rgba(0, 0, 0, 0.07) 0px 1px 0px 0px`. Logo at the left, Tools, Go Pro, and the avatar at the right when signed in. Sign in and Sign up are `display: none`.
+
+## Generator column
+
+Desktop columns are 288px by 784px (`.generator_color_background`). The hex is Inter 30px weight 600, tracking 0.9px. Ink flips between white and black against the column. Phone columns stack at 390x146, and the hex chip is 16px weight 600 with a 10px radius.
+
+## Text input
+
+Account text fields are 46px tall, radius 10px, padding 0px 14px, 15px. Focus border is `#3b82f6` (`--input-focus-border`). Error border is `#ef4444`.
+
+## Display type
+
+The account page h1 is Inter 70px weight 800, tracking -2.45px, line-height 77px, color rgb(10, 10, 10).
 
 ## Gaps
 
-- Pro checkout, saved palettes and account settings were not entered.
-- No dark theme was on screen.
-- Crops were not cut. The page screenshots are the evidence.
-- Focus, disabled, error and loading states were not measured.
+No focus ring was painted on the controls that were measured. Checkbox, switch, toast, table, and menu rows were not opened as their own screens. Dark theme was not switched on, because the theme control sits in the account menu and writes a preference.

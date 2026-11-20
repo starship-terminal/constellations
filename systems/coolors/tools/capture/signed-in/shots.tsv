@@ -1,0 +1,3 @@
+# label	render flags: "full" adds a whole-page shot; scroll=<px>, scroll=max or scroll=auto sets the tallest inner scroller outside <nav> (px from its top, its end, or the first rendered turn)
+# One row per page copy, named <page>-<theme>-<state>, for example home-dark-menu-open.
+# Take copies in dark: render-all.sh renders a -dark copy in both themes. A copy in any other theme renders once.
