@@ -5191,9 +5191,9 @@
       "description": "Official Online Store",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://ysl.com/login returned Access Denied before a form. Not retried.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 16
     },
     {
@@ -5208,9 +5208,9 @@
       "description": "Unlocking knowledge with AI | Sana",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://sana.ai/login emailed a one-time code to the capture inbox. Code not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 16
     },
     {
@@ -5225,9 +5225,9 @@
       "description": "The best way to save and share inspiration",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://savee.com/login/ stopped on a human check before a form. Not retried.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 16
     },
     {
@@ -5242,9 +5242,9 @@
       "description": "Scheduling Software Everyone Will Love",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://savvycal.com/login shows email and password, or Google, Microsoft, or Fastmail. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 16
     },
     {
@@ -5259,9 +5259,9 @@
       "description": "Reliable AI Systems for Critical Decisions",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://dashboard.scale.com/login shows email and password, or Google or GitHub. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 16
     },
     {
@@ -5276,9 +5276,9 @@
       "description": "Student Accommodation at Scape",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.scape.com/ is a student-housing site with no sign-in. /login is 404. Cookie banner rejected.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 16
     },
     {
@@ -5293,9 +5293,9 @@
       "description": "Web's largest event ticket search engine",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://seatgeek.com/login returned 403 before a form. Not retried.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 16
     },
     {
@@ -5310,9 +5310,9 @@
       "description": "Whole Body Health Starts in the Gut",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://seed.com/login email step then showed a password field, or Google or Facebook. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 16
     },
     {
@@ -5327,9 +5327,9 @@
       "description": "Build an employee incentive plan that motivates your team to act like owners",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://app.sharewillow.com/login shows email and password, or phone. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 16
     },
     {
@@ -5344,9 +5344,9 @@
       "description": "Shop from top brands, earn exclusive rewards, and track your packages all in one place",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://shop.app/accounts/login sent a code to the capture inbox. Code not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 16
     },
     {
@@ -5361,9 +5361,9 @@
       "description": "The global commerce platform",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://accounts.shopify.com/lookup shows email and password, or passkey, Google, Apple, Facebook, or WhatsApp. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 16
     },
     {
@@ -5378,9 +5378,9 @@
       "description": "Your files. Your rules.",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://shuttle.zip/login Next sent the capture inbox to a signup form asking for a name and legal agreement. Not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 16
     },
     {
@@ -5395,9 +5395,9 @@
       "description": "Design, collaborate, prototype and handoff",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.sketch.com/signin/ shows email and password, or Apple, Google, or SSO. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 16
     },
     {
@@ -5412,9 +5412,9 @@
       "description": "Private, encrypted, secure email ",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://skiff.com/ says Skiff joined Notion and services were sunset. No sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 16
     },
     {
@@ -5429,9 +5429,9 @@
       "description": "Online Classes for Creatives",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.skillshare.com/en/login email step opened Auth0 with email and password, or Google, Facebook, or Apple. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 16
     },
     {
@@ -5446,9 +5446,9 @@
       "description": " Compare Cheap Flights & Book Airline Tickets ",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.skyscanner.com/login stopped on a person-or-robot check before a form. Not retried.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 16
     },
     {
@@ -5463,9 +5463,9 @@
       "description": "Knowledge Base & Wiki Software",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://slab.com/login/ asks for a workspace subdomain before email. Subdomain not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 16
     },
     {
@@ -5480,9 +5480,9 @@
       "description": "One platform for your team and your work",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://slack.com/signin and https://app.slack.com/get-started email Continue stayed on loading and did not send a code. Google, Microsoft, and Apple were not used.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 16
     },
     {
@@ -5497,9 +5497,9 @@
       "description": "Where remote teams make decisions and share knowledge",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://slite.com/organization/select emailed a workspace link to the capture inbox. Link not opened. Workspace URL not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 16
     },
     {
@@ -5514,9 +5514,9 @@
       "description": "World-leading speaker & headphone calibration software",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.sonarworks.com/account/login shows email and password, or Facebook, Google, or Apple. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 16
     },
     {
