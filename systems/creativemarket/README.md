@@ -93,6 +93,7 @@ A Rails storefront with a Vue island layer, painted under `data-theme="legacy"` 
 | [screenshots/](screenshots) | 17 public quantized captures, plus 3 signed-in desktop shots (account menu, purchases, profile) |
 | [raw/](raw) | `css-vars.json` (the cross-origin var harvest), `components-computed.json`, `component-tokens.json`, `measurements.md` |
 | [tools/](tools) | the builders and capture scripts that produced this package |
+| [login-review.json](login-review.json) | the signed-in walk: account menu, purchases, profile, and the gaps |
 
 ## Boundaries
 
