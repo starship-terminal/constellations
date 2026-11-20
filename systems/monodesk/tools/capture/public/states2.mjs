@@ -71,24 +71,6 @@ async function crop(el, name, pad = 10) {
   });
 }
 
-async function force(el, states) {
-  const handle = await el.elementHandle();
-  const objectId = handle._remoteObject?.objectId || (await cdp.send('Runtime.evaluate', { expression: '0' }), null);
-  // Playwright stores the object id on the handle after a CDP session is attached via page.
-  let oid = handle._objectId;
-  if (!oid) {
-    // fallback: query via DOM
-    return null;
-  }
-  try {
-    const req = await cdp.send('DOM.requestNode', { objectId: oid });
-    await cdp.send('CSS.forcePseudoState', { nodeId: req.nodeId, forcedPseudoClasses: states });
-    return async () => cdp.send('CSS.forcePseudoState', { nodeId: req.nodeId, forcedPseudoClasses: [] }).catch(() => {});
-  } catch (e) {
-    return null;
-  }
-}
-
 async function record(name, el) {
   const s = clean(await styleOf(el));
   await crop(el, name);
