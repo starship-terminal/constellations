@@ -4936,9 +4936,9 @@
       "description": "Build internal tools, remarkably fast",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://login.retool.com/auth/login shows email and password, or Google, or a login link. Login link not requested. Password not submitted.",
+      "notes": "Email probe: https://login.retool.com/auth/login shows email and password, or Google, or a login link. Login link not requested. Password not submitted. Public walk 2026-11-21: Solution, Audience, and Resources open desktop menus. The phone Open navigation button opens the same three groups. Homepage dialogs are Starter prompts, Import code, Build with AI agents, and Ask AI. Sign in stops at login.retool.com. Start for free stops at the signup wall. Google was not clicked. Demo, waitlist, and newsletter forms were not submitted. Docs, community, university, trust, status, and social links stop at the origin change. Audience desktop menu click timed out, so that menu has no frame. Phone covers home, pricing, use cases, app gallery, enterprise, integrations, templates, blog, customers, about, demo, and sitemap. Other product pages are desktop only. Signed-in app, form submit, error, loading, and the light theme were not captured. No email was typed. No form was submitted. Public package refresh in PR 1561 at 6a34b0e33194. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 15
     },
     {
