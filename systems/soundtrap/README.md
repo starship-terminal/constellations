@@ -16,7 +16,7 @@ The preview browser did not produce screenshot frames, so this package has no pa
 | [patterns.md](patterns.md) | How the marketing shell, login, and pricing pages combine |
 | [icons/](icons/) | The header waveform mark and the favicon SVG, named in [icons/INDEX.tsv](icons/INDEX.tsv) |
 | [raw/](raw/) | The readings: custom properties, theme sets, computed components, motion notes, capture log |
-| [tools/](tools/) | The capture kit copied from `tools/kit`, plus [tools/test_tokens.py](tools/test_tokens.py) |
+| [tools/](tools/) | The capture kit copied from `tools/kit`, plus [tools/test_tokens.py](tools/test_tokens.py). `tokens.json` has no builder: it was written from the readings in [raw/](raw/). The kit's unadapted `build_tokens.py` and `motion.py` were removed in the 2026-11 audit |
 
 ## Brief
 
@@ -115,4 +115,4 @@ Matter, a variable face (weight 100 to 1000, plus an oblique), loaded from `stat
 python3 tools/catalog.py design-md soundtrap
 ```
 
-Tokens were written from the readings in [raw/](raw/). The kit builders under [tools/](tools/) expect a different raw shape (a signed-in app dump) and were not run. Re-read the live pages before changing a value.
+`tokens.json` has no builder. It was written from the readings in [raw/](raw/): `theme-sets.json`, `set-colors.json`, `css-vars.json`, `components-computed.json`, `motion.json` and `capture.json`. The kit's `build_tokens.py` and `motion.py`, copied in unadapted and never run (they expect a signed-in app dump with `raw/component-tokens.json`), were removed in the 2026-11 audit. Re-read the live pages before changing a value.
