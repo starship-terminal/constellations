@@ -16,6 +16,8 @@
 }
 [data-mode="dark"] {
 /*DARK*/
+  /* the app's dark set has no price role; without this the light price ink stays on dark cards */
+  --text-price: var(--text-primary);
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
