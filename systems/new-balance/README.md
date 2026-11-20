@@ -16,7 +16,7 @@ The storefront is a Salesforce Commerce Cloud site (`Sites-NBUK-Site`) on a whit
 | [patterns.md](patterns.md) | How the header, home, listing, product, help and login pages are built |
 | [icons/](icons) | The header wordmark as SVG, plus [INDEX.tsv](icons/INDEX.tsv). Other header icons are a sprite and were not extracted |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json) and [components-computed.json](raw/components-computed.json) |
-| [tools/](tools) | `build_tokens.py` checks the token file. `build_style_guide.py` writes the style guide. `test_build_tokens.py` checks aliases |
+| [tools/](tools) | `build_tokens.py` checks the hand-written token file: aliases, sources, hex colours, and that every Measured colour, length and font stack is in raw/. `build_style_guide.py` writes the style guide. `test_build_tokens.py` runs those checks and their failure cases |
 
 ## Brief
 
