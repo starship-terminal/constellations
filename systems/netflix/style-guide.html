@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Netflix public style guide</title>
+<style>
+body { margin: 0; background: #000; color: #fff; font: 400 16px/24px "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+h1 { font-size: 32px; margin: 0 0 8px; }
+h2 { font-size: 24px; font-weight: 500; margin: 32px 0 12px; }
+p { color: rgba(255,255,255,.7); max-width: 68ch; }
+.row { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; }
+.swatch { width: 72px; height: 72px; border-radius: 4px; }
+.cap { font-size: 12px; margin-top: 6px; color: rgba(255,255,255,.7); }
+button.cta { background: #e50914; color: #fff; border: 0; border-radius: 4px; height: 56px; padding: 0 24px; font: 500 24px/24px "Helvetica Neue", sans-serif; }
+button.sm { height: 32px; font-size: 14px; padding: 0 16px; }
+.field { height: 56px; width: 280px; border-radius: 4px; border: 1px solid rgba(128,128,128,.7); background: rgba(22,22,22,.7); color: #fff; padding: 0 16px; font: 16px/24px "Helvetica Neue", sans-serif; }
+.card { width: 160px; height: 220px; border-radius: 8px; background: #232323; }
+.faq { background: #2d2d2d; color: #fff; padding: 24px; width: 100%; text-align: left; border: 0; font: 400 24px/1.2 "Helvetica Neue", sans-serif; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Netflix public surface</h1>
+<p>Rendered from measured computed styles on the public marketing pages. Netflix Sans is proprietary and is not loaded.</p>
+<h2>Colour</h2>
+<div class="row">
+  <div><div class="swatch" style="background:#000"></div><div class="cap">page #000000</div></div>
+  <div><div class="swatch" style="background:#e50914"></div><div class="cap">accent #e50914</div></div>
+  <div><div class="swatch" style="background:#c11119"></div><div class="cap">hover #c11119</div></div>
+  <div><div class="swatch" style="background:#2d2d2d"></div><div class="cap">faq #2d2d2d</div></div>
+  <div><div class="swatch" style="background:#232323"></div><div class="cap">card #232323</div></div>
+  <div><div class="swatch" style="background:#161616"></div><div class="cap">dialog #161616</div></div>
+  <div><div class="swatch" style="background:#fff"></div><div class="cap">text #ffffff</div></div>
+</div>
+<h2>Controls</h2>
+<div class="row">
+  <button class="cta">Get Started</button>
+  <button class="cta sm">Sign In</button>
+  <input class="field" placeholder="Email address" readonly>
+</div>
+<h2>Type</h2>
+<p style="color:#fff;font-size:56px;line-height:70px;font-weight:700;margin:0">Unlimited films, series and more</p>
+<h2>FAQ row and card</h2>
+<button class="faq">What is Netflix?</button>
+<div class="card" style="margin-top:16px"></div>
+</div>
+</body>
+</html>
