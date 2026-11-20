@@ -21,6 +21,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, M, launch, open, closePromo, domFind, styleOf, crop, centre, RAW } from './lib.mjs';
+import { prefer } from './pin.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -142,7 +143,8 @@ async function S(key, target, list, meta = {}, opts = {}) {
   for (const st of list) listed.get(key).add(st);
   delete out.components[key].missing;
   if (opts.open) { await reset(); await opts.open(); }
-  const loc = target.filter({ visible: true }).first();
+  // A target that only exists once opts.open has run is passed as a function and resolved here.
+  const loc = (typeof target === 'function' ? await target() : target).filter({ visible: true }).first();
   if (!(await loc.count())) { log('  ! missing', key); out.components[key].missing = true; return; }
   for (const st of list) {
     let undo, via;
@@ -186,11 +188,8 @@ async function S(key, target, list, meta = {}, opts = {}) {
 const q = (sel) => page.locator(sel);
 const B4 = ['default', 'hover', 'focus-visible', 'pressed'];
 // Locator.or() is a union resolved in DOM order: `preferred.or(fallback)` picks whichever node comes
-// first in the document, so a fallback earlier in the DOM wins over a preferred match. orElse() takes
-// the preferred locator when it matches and the fallback only when it does not.
-async function orElse(preferred, fallback) {
-  return (await preferred.count().catch(() => 0)) ? preferred : fallback;
-}
+// first in the document, so a fallback earlier in the DOM wins over a preferred match. prefer()
+// (pin.mjs) takes the first candidate with a visible match, in the order given.
 
 // Transitions and animations declared in every readable sheet, by selector.
 async function sheetsFor(key) {
@@ -229,15 +228,15 @@ async function home() {
   const g = G.shell;
   // The top bar is a div (class _header _marketingHeader), not a <header> tag:
   // wordmark link, Log in (secondary), Sign up (primary) and the menu button.
-  const header = q(M('marketingHeader')).first().or(q(M('header')).first()).or(q('header').first());
+  const header = await prefer(q(M('marketingHeader')).first(), q(M('header')).first(), q('header').first());
   await S('header', header, ['default'], { group: g, title: 'Marketing top bar', desc: 'The bar over the home page: wordmark, Log in, Sign up and the menu button that opens the site-menu drawer.', sel: M('marketingHeader') }, { noScroll: true });
-  await S('signup-button', header.getByRole('button', { name: /sign up/i }).first().or(header.locator('a,button').filter({ hasText: /sign up/i }).first()), B4, { group: g, title: 'Sign up button', desc: 'The dark pill at the right of the top bar. Measured, never pressed.', sel: 'top bar "Sign up"' }, { noScroll: true });
-  await S('login-button', header.getByRole('button', { name: /log in/i }).first().or(header.locator('a,button').filter({ hasText: /log in/i }).first()), B4, { group: g, title: 'Log in button', desc: 'The quiet secondary button beside Sign up. Measured, never pressed.', sel: 'top bar "Log in"' }, { noScroll: true });
-  const menuBtn = q(M('expandHitArea')).first().or(header.locator('button[aria-label]').first()).or(header.locator('button').last());
+  await S('signup-button', await prefer(header.getByRole('button', { name: /sign up/i }).first(), header.locator('a,button').filter({ hasText: /sign up/i }).first()), B4, { group: g, title: 'Sign up button', desc: 'The dark pill at the right of the top bar. Measured, never pressed.', sel: 'top bar "Sign up"' }, { noScroll: true });
+  await S('login-button', await prefer(header.getByRole('button', { name: /log in/i }).first(), header.locator('a,button').filter({ hasText: /log in/i }).first()), B4, { group: g, title: 'Log in button', desc: 'The quiet secondary button beside Sign up. Measured, never pressed.', sel: 'top bar "Log in"' }, { noScroll: true });
+  const menuBtn = await prefer(q(M('expandHitArea')).first(), header.locator('button[aria-label]').first(), header.locator('button').last());
   await S('menu-button', menuBtn, B4, { group: g, title: 'Site-menu button', desc: 'aria-label "open sidebar": opens the site-menu drawer. The drawer was opened and measured below, then dismissed with Escape.', sel: M('expandHitArea') }, { noScroll: true });
-  await S('logo', await orElse(header.locator('a[href="/"]').first(), q(M('logo')).first()), ['default'], { group: g, title: 'Wordmark', sel: 'top bar home link' }, { noScroll: true });
+  await S('logo', await prefer(header.locator('a[href="/"]').first(), q(M('logo')).first()), ['default'], { group: g, title: 'Wordmark', sel: 'top bar home link' }, { noScroll: true });
   // The site-menu drawer — opened by the header's own "open sidebar" button.
-  await S('menu-drawer', q('section[class*="_dialog"]').first().or(q('[role="dialog"]').first()), ['default'], { group: g, title: 'Site-menu drawer', desc: 'The left drawer the menu button opens: Dashboard links (New chat, Explore, Health record, Health information), then a Company group (About us, Careers, Partnerships, …).', sel: 'section[class*="_dialog"]' }, { noScroll: true, open: async () => { const b2 = menuBtn.filter({ visible: true }).first(); await b2.click({ timeout: 4000 }).catch(() => b2.evaluate((el) => el.click())); await page.waitForTimeout(1400); } });
+  await S('menu-drawer', () => prefer(q('section[class*="_dialog"]').first(), q('[role="dialog"]').first()), ['default'], { group: g, title: 'Site-menu drawer', desc: 'The left drawer the menu button opens: Dashboard links (New chat, Explore, Health record, Health information), then a Company group (About us, Careers, Partnerships, …).', sel: 'section[class*="_dialog"]' }, { noScroll: true, open: async () => { const b2 = menuBtn.filter({ visible: true }).first(); await b2.click({ timeout: 4000 }).catch(() => b2.evaluate((el) => el.click())); await page.waitForTimeout(1400); } });
   await S('menu-item', q(`${M('menuItem')}:not(${M('menuItemButton')})`).first(), B4, { group: g, title: 'Menu drawer item', desc: 'A row in the site-menu drawer. Measured while the drawer was open; links were never followed.', sel: M('menuItem') }, { noScroll: true });
   await S('menu-item-expand', q(M('menuItemButton')).first(), ['default', 'hover'], { group: g, title: 'Menu drawer expandable', desc: 'A submenu row (About Chat / Health information) with a chevron. Measured, never expanded.', sel: M('menuItemButton') }, { noScroll: true });
   await page.keyboard.press('Escape');
@@ -247,34 +246,34 @@ async function home() {
   // The hero band is the smallest ancestor of the textarea that also holds
   // an h1 (the first h1 in the DOM is the wordmark inside the top bar, so the
   // anchor must be the textarea itself).
-  const heroTa = q('textarea[placeholder*="symptom" i]').first().or(q('textarea[placeholder]').first());
+  const heroTa = await prefer(q('textarea[placeholder*="symptom" i]').first(), q('textarea[placeholder]').first());
   const heroEl = heroTa.locator('xpath=ancestor::*[.//h1][1]');
   await S('hero', heroEl, ['default'], { group: h, title: 'Home hero', desc: 'The first band: the Fraunces display headline, the "What brings you in?" prompt and the chat input card.', sel: 'textarea ancestor holding h1' });
-  await S('hero-title', heroEl.locator('h1').first().or(q('h1').filter({ hasText: /doctronic/i }).last()), ['default'], { group: h, title: 'Hero headline', desc: '"Hi, I\'m Doctronic" in the Fraunces display face with the dashed underline.', sel: 'hero h1' });
-  await S('anon-label', q(M('anonymousLabel')).first().or(await domFind(page, /^anonymous$/i, { sel: 'span,div,button', tag: 'm-anon', leaf: true })), ['default'], { group: h, title: 'Anonymous label', desc: 'The "Anonymous" session badge inside the chat field.', sel: '"Anonymous" badge' });
-  await S('hero-input-card', q(M('inputContainer')).first().or(q(M('heroInputWrapper'))).or(q(M('inputCard'))).or(heroTa.locator('xpath=ancestor::*[self::div or self::form][position()<=3]').last()), ['default', 'hover'], { group: h, title: 'Hero chat field', desc: 'The input card the page is built around: raised white surface, soft border, the textarea and the Start chat button. Measured, never submitted.', sel: M('inputContainer') });
+  await S('hero-title', await prefer(heroEl.locator('h1').first(), q('h1').filter({ hasText: /doctronic/i }).last()), ['default'], { group: h, title: 'Hero headline', desc: '"Hi, I\'m Doctronic" in the Fraunces display face with the dashed underline.', sel: 'hero h1' });
+  await S('anon-label', await prefer(q(M('anonymousLabel')).first(), await domFind(page, /^anonymous$/i, { sel: 'span,div,button', tag: 'm-anon', leaf: true })), ['default'], { group: h, title: 'Anonymous label', desc: 'The "Anonymous" session badge inside the chat field.', sel: '"Anonymous" badge' });
+  await S('hero-input-card', await prefer(q(M('inputContainer')).first(), q(M('heroInputWrapper')), q(M('inputCard')), heroTa.locator('xpath=ancestor::*[self::div or self::form][position()<=3]').last()), ['default', 'hover'], { group: h, title: 'Hero chat field', desc: 'The input card the page is built around: raised white surface, soft border, the textarea and the Start chat button. Measured, never submitted.', sel: M('inputContainer') });
   await S('hero-textarea', heroTa, ['default', 'focused', 'filled'], { group: h, title: 'Hero textarea', desc: '"Describe symptom or ask any health questions…" — text was typed and deleted; nothing was sent.', sel: 'textarea' }, { fillText: 'I have a headache since this morning' });
-  await S('start-chat-button', q(M('submitButton')).first().or(await domFind(page, /^start chat$/i, { tag: 'm-sc' })), B4, { group: h, title: 'Start chat button', desc: 'The accent-blue submit control. Measured, never pressed — pressing would start a chat.', sel: M('submitButton') });
-  await S('brings-pill', q(M('pill')).first().or(await domFind(page, /what brings you in/i, { sel: 'span,p,div', tag: 'm-pill', leaf: true })), ['default'], { group: h, title: '"What brings you in?" pill', sel: M('pill') });
-  await S('hipaa-badge', q(M('hipaaBadge')).first().or(await domFind(page, /hipaa/i, { sel: 'span,div,a', tag: 'm-hipaa', leaf: true })), ['default'], { group: h, title: 'HIPAA badge', sel: M('hipaaBadge') });
-  await S('feature-card', await orElse(q(M('featureCardBlock')).first(), q(M('card')).filter({ hasNot: q('blockquote') }).first()), ['default', 'hover'], { group: h, title: 'Feature card', sel: M('featureCardBlock') });
-  await S('pricing-card', q(M('card')).filter({ hasText: /\$\s?\d/ }).first().or(q(M('cardWrapper')).filter({ hasText: /\$\s?\d/ }).first()), ['default'], { group: h, title: 'Pricing card', desc: 'The plan card with the $ price and the highlighted callout.', sel: M('card') + ' with $' });
-  await S('price', q(M('price')).first().or(q(M('pricingHighlight')).first()), ['default'], { group: h, title: 'Price figure', sel: M('price') });
-  await S('testimonial-arrow', q(M('arrow')).first().or(q(M('arrowsWrapper')).locator('button').first()), B4, { group: h, title: 'Testimonial arrow', sel: M('arrow') });
-  await S('watch-button', q(M('secondary')).filter({ hasText: /watch/i }).first().or(await domFind(page, /^watch/i, { tag: 'm-watch' })), B4, { group: h, title: 'Watch testimonial button', desc: 'Measured, never pressed.', sel: M('secondary') + ' "Watch…"' });
+  await S('start-chat-button', await prefer(q(M('submitButton')).first(), await domFind(page, /^start chat$/i, { tag: 'm-sc' })), B4, { group: h, title: 'Start chat button', desc: 'The accent-blue submit control. Measured, never pressed — pressing would start a chat.', sel: M('submitButton') });
+  await S('brings-pill', await prefer(q(M('pill')).first(), await domFind(page, /what brings you in/i, { sel: 'span,p,div', tag: 'm-pill', leaf: true })), ['default'], { group: h, title: '"What brings you in?" pill', sel: M('pill') });
+  await S('hipaa-badge', await prefer(q(M('hipaaBadge')).first(), await domFind(page, /hipaa/i, { sel: 'span,div,a', tag: 'm-hipaa', leaf: true })), ['default'], { group: h, title: 'HIPAA badge', sel: M('hipaaBadge') });
+  await S('feature-card', await prefer(q(M('featureCardBlock')).first(), q(M('card')).filter({ hasNot: q('blockquote') }).first()), ['default', 'hover'], { group: h, title: 'Feature card', sel: M('featureCardBlock') });
+  await S('pricing-card', await prefer(q(M('card')).filter({ hasText: /\$\s?\d/ }).first(), q(M('cardWrapper')).filter({ hasText: /\$\s?\d/ }).first()), ['default'], { group: h, title: 'Pricing card', desc: 'The plan card with the $ price and the highlighted callout.', sel: M('card') + ' with $' });
+  await S('price', await prefer(q(M('price')).first(), q(M('pricingHighlight')).first()), ['default'], { group: h, title: 'Price figure', sel: M('price') });
+  await S('testimonial-arrow', await prefer(q(M('arrow')).first(), q(M('arrowsWrapper')).locator('button').first()), B4, { group: h, title: 'Testimonial arrow', sel: M('arrow') });
+  await S('watch-button', await prefer(q(M('secondary')).filter({ hasText: /watch/i }).first(), await domFind(page, /^watch/i, { tag: 'm-watch' })), B4, { group: h, title: 'Watch testimonial button', desc: 'Measured, never pressed.', sel: M('secondary') + ' "Watch…"' });
   await S('oath-band', q(M('oathSection')).first(), ['default'], { group: h, title: 'Hippocratic oath band', sel: M('oathSection') });
-  await S('quote-card', q(M('quote')).first().or(q(M('card')).filter({ hasText: /"/ }).first()), ['default'], { group: h, title: 'Testimonial card', sel: M('quote') });
+  await S('quote-card', await prefer(q(M('quote')).first(), q(M('card')).filter({ hasText: /"/ }).first()), ['default'], { group: h, title: 'Testimonial card', sel: M('quote') });
   await S('rating-group', q(M('ratingGroup')).first(), ['default'], { group: h, title: 'Trustpilot rating block', sel: M('ratingGroup') });
   await S('condensed-form', q(M('condensedForm')).first(), ['default'], { group: h, title: 'Condensed chat form', desc: 'The slim repeat of the chat field near the footer: one textarea and a Get started button.', sel: M('condensedForm') });
-  await S('condensed-button', q(M('condensedButton')).first().or(await domFind(page, /^get started$/i, { tag: 'm-gs' })), B4, { group: h, title: 'Get started button', desc: 'Measured, never pressed.', sel: M('condensedButton') });
-  await S('pause-control', q('button[aria-label*="pause" i]').first().or(q('button[aria-label*="animation" i]')).or(q('button[aria-label*="motion" i]')), B4, { group: h, title: 'Animation pause control', desc: 'The round control pinned bottom-right that pauses the page\'s motion. Measured, never pressed.', sel: 'button[aria-label*="pause"]' }, { noScroll: true });
+  await S('condensed-button', await prefer(q(M('condensedButton')).first(), await domFind(page, /^get started$/i, { tag: 'm-gs' })), B4, { group: h, title: 'Get started button', desc: 'Measured, never pressed.', sel: M('condensedButton') });
+  await S('pause-control', await prefer(q('button[aria-label*="pause" i]').first(), q('button[aria-label*="animation" i]'), q('button[aria-label*="motion" i]')), B4, { group: h, title: 'Animation pause control', desc: 'The round control pinned bottom-right that pauses the page\'s motion. Measured, never pressed.', sel: 'button[aria-label*="pause"]' }, { noScroll: true });
   // The page footer is the LAST footer element; earlier <footer>s are card
   // footers inside sections.
-  const pageFooter = q('footer').last().or(q(M('footer')).last());
+  const pageFooter = await prefer(q('footer').last(), q(M('footer')).last());
   await S('footer', pageFooter, ['default'], { group: h, title: 'Footer', desc: 'The deep page footer: link columns, legal row and the "Made in" note.', sel: 'last footer' });
-  await S('footer-social-icon', pageFooter.locator('a').filter({ hasText: /privacy|terms/i }).first().or(pageFooter.locator('a').first()), B4, { group: h, title: 'Footer social icon link', desc: 'An aria-labelled icon link in the footer\'s social row (e.g. "Doctronic on Instagram"). Measured, never followed.', sel: 'footer a' });
+  await S('footer-social-icon', await prefer(pageFooter.locator('a').filter({ hasText: / on (instagram|x|twitter|linkedin|facebook|tiktok|youtube)\b/i }).first(), pageFooter.locator('a').first()), B4, { group: h, title: 'Footer social icon link', desc: 'An aria-labelled icon link in the footer\'s social row (e.g. "Doctronic on Instagram"). Measured, never followed.', sel: 'footer a' });
   await S('footer-legal-link', await domFind(page, /privacy policy|terms of service/i, { sel: 'footer a, footer button, footer [role="link"]', tag: 'm-fll' }), B4, { group: h, title: 'Footer legal link', desc: 'Privacy Policy / Terms of Service in the legal row. Measured, never followed.', sel: 'footer legal link' });
-  await S('footer-legal', q(M('legal')).first().or(q(M('legalText')).first()), ['default'], { group: h, title: 'Legal line', sel: M('legal') });
+  await S('footer-legal', await prefer(q(M('legal')).first(), q(M('legalText')).first()), ['default'], { group: h, title: 'Legal line', sel: M('legal') });
 }
 
 // ---------- chat (/chat/) ----------
@@ -284,32 +283,32 @@ async function chat() {
   await sheetsFor('chat');
   const g = G.chat;
   await S('chat-sidebar', q(M('sidebar')).first(), ['default'], { group: g, title: 'Chat sidebar (collapsed)', desc: 'The left rail as a signed-out visitor first sees it: collapsed to the logo and toggle.', sel: M('sidebar') }, { noScroll: true });
-  const toggleB = page.getByRole('button', { name: /expand sidebar|collapse sidebar/i }).first().or(q(M('toggleButton')));
+  const toggleB = await prefer(page.getByRole('button', { name: /expand sidebar|collapse sidebar/i }).first(), q(M('toggleButton')));
   await S('sidebar-toggle', toggleB, B4, { group: g, title: 'Sidebar expand button', sel: 'button "Expand sidebar"' }, { noScroll: true });
   // Expand the drawer — the sidebar's own toggle, a local presentation state.
   await toggleB.click().catch(() => {});
   await page.waitForTimeout(900);
   await S('chat-sidebar-open', q(M('sidebar')).first(), ['default'], { group: g, title: 'Chat sidebar (expanded)', desc: 'Opened with the sidebar\'s own Expand button: New chat highlighted at the top, Health record / Appointments / Prescriptions below, then Sign up and Log in pinned at the bottom.', sel: M('sidebar') + ' expanded' }, { noScroll: true });
-  await S('nav-link-current', q(M('wrapper')).filter({ hasText: /new chat/i }).first().or(q('a[class*="_highlighted"]')), ['default'], { group: g, title: 'Sidebar link, current', desc: 'New chat: the highlighted row in the expanded rail.', sel: M('wrapper') + ' highlighted' }, { noScroll: true });
-  await S('nav-link', await orElse(q(M('wrapper')).filter({ hasText: /health record/i }).first(), q(M('wrapper')).filter({ hasNotText: /new chat/i }).first()), B4, { group: g, title: 'Sidebar link', sel: M('wrapper') }, { noScroll: true });
+  await S('nav-link-current', await prefer(q(M('wrapper')).filter({ hasText: /new chat/i }).first(), q('a[class*="_highlighted"]')), ['default'], { group: g, title: 'Sidebar link, current', desc: 'New chat: the highlighted row in the expanded rail.', sel: M('wrapper') + ' highlighted' }, { noScroll: true });
+  await S('nav-link', await prefer(q(M('wrapper')).filter({ hasText: /health record/i }).first(), q(M('wrapper')).filter({ hasNotText: /new chat/i }).first()), B4, { group: g, title: 'Sidebar link', sel: M('wrapper') }, { noScroll: true });
   await S('signup-free', page.getByRole('button', { name: /sign up for free/i }).first(), B4, { group: g, title: 'Sign up for free button', desc: 'The blue primary button pinned at the bottom of the expanded rail. Measured, never pressed.', sel: 'button "Sign up for free"' }, { noScroll: true });
-  await S('sidebar-login', q(M('sidebar')).getByRole('button', { name: /log in/i }).first().or(page.getByRole('button', { name: /^log in$/i }).first()), B4, { group: g, title: 'Sidebar log in button', desc: 'The secondary button beside Sign up for free. Measured, never pressed.', sel: 'button "Log in"' }, { noScroll: true });
-  await S('anon-badge', q(M('badgeButton')).first().or(page.getByRole('button', { name: /anonymous/i })), ['default', 'hover'], { group: g, title: 'Anonymous badge', desc: 'The "Anonymous" session chip. Pressing it is a sign-in path, so it was hovered and measured only.', sel: M('badgeButton') }, { noScroll: true });
+  await S('sidebar-login', await prefer(q(M('sidebar')).getByRole('button', { name: /log in/i }).first(), page.getByRole('button', { name: /^log in$/i }).first()), B4, { group: g, title: 'Sidebar log in button', desc: 'The secondary button beside Sign up for free. Measured, never pressed.', sel: 'button "Log in"' }, { noScroll: true });
+  await S('anon-badge', await prefer(q(M('badgeButton')).first(), page.getByRole('button', { name: /anonymous/i })), ['default', 'hover'], { group: g, title: 'Anonymous badge', desc: 'The "Anonymous" session chip. Pressing it is a sign-in path, so it was hovered and measured only.', sel: M('badgeButton') }, { noScroll: true });
   await S('support-link', q('a[href^="mailto:"]').first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Support mail link', sel: 'a[href^="mailto:"]' }, { noScroll: true });
   // The legal row's anchors are picked by destination, never by position:
   // the footer's first <a> is the support@ mailto (already support-link).
-  await S('legal-link', q(M('footer')).locator('a[href*="privacy" i], a[href*="terms" i]').first().or(await domFind(page, /terms of service|privacy policy/i, { sel: 'footer a, [class*="_footer"] a', tag: 'm-tos' })), B4, { group: g, title: 'Legal link', desc: 'The Terms of Service / Privacy Policy link in the chat footer. Measured, never followed.', sel: 'footer a[href*="privacy"|"terms"]' }, { noScroll: true });
+  await S('legal-link', await prefer(q(M('footer')).locator('a[href*="privacy" i], a[href*="terms" i]').first(), await domFind(page, /terms of service|privacy policy/i, { sel: 'footer a, [class*="_footer"] a', tag: 'm-tos' })), B4, { group: g, title: 'Legal link', desc: 'The Terms of Service / Privacy Policy link in the chat footer. Measured, never followed.', sel: 'footer a[href*="privacy"|"terms"]' }, { noScroll: true });
   await S('recent-chats', await domFind(page, /view recent chats/i, { tag: 'm-recent' }), ['default', 'hover'], { group: g, title: 'View recent chats', desc: 'Link to the (signed-in) chat list; measured only.', sel: '"View recent chats"' }, { noScroll: true });
 
-  await S('chat-hero', await orElse(q('h1').filter({ hasText: /chat for free/i }).first().locator('xpath=ancestor::*[.//textarea][1]'), q('main').first()), ['default'], { group: g, title: 'Chat hero', desc: 'The centered empty-state: the Fraunces greeting and the large input card.', sel: 'h1 ancestor holding textarea' });
-  await S('chat-greeting', q('main h1').first().or(q('h1').first()).or(q(M('display40')).first()), ['default'], { group: g, title: 'Chat greeting', sel: 'h1' });
+  await S('chat-hero', await prefer(q('h1').filter({ hasText: /chat for free/i }).first().locator('xpath=ancestor::*[.//textarea][1]'), q('main').first()), ['default'], { group: g, title: 'Chat hero', desc: 'The centered empty-state: the Fraunces greeting and the large input card.', sel: 'h1 ancestor holding textarea' });
+  await S('chat-greeting', await prefer(q('main h1').first(), q('h1').first(), q(M('display40')).first()), ['default'], { group: g, title: 'Chat greeting', sel: 'h1' });
   // The painted card is the <form> itself; the _inputCard match higher up is
   // the transparent .wrapper.chatInput that also carries the disclaimer line.
-  await S('input-card', await orElse(q('form[class*="_inputCard"]').first(), q(M('inputCard'))), ['default', 'hover'], { group: g, title: 'Chat input card', desc: 'The large raised card holding the textarea and the round Send button; expands when focused.', sel: 'form[class*="_inputCard"]' });
+  await S('input-card', await prefer(q('form[class*="_inputCard"]').first(), q(M('inputCard'))), ['default', 'hover'], { group: g, title: 'Chat input card', desc: 'The large raised card holding the textarea and the round Send button; expands when focused.', sel: 'form[class*="_inputCard"]' });
   await S('chat-textarea', q('textarea[placeholder]').first(), ['default', 'focused', 'filled'], { group: g, title: 'Chat textarea', desc: '"Ask a question about your health…" — text was typed and deleted, Enter never pressed.', sel: 'textarea' }, { fillText: 'I have a headache since this morning' });
-  await S('send-button', page.getByRole('button', { name: /send message/i }).first().or(q(M('submitButton'))), B4, { group: g, title: 'Send message button', desc: 'The condensed dark submit control inside the card. Measured, never pressed — pressing would send a message.', sel: M('submitButton') });
+  await S('send-button', await prefer(page.getByRole('button', { name: /send message/i }).first(), q(M('submitButton'))), B4, { group: g, title: 'Send message button', desc: 'The condensed dark submit control inside the card. Measured, never pressed — pressing would send a message.', sel: M('submitButton') });
   await S('starter', q(M('starter')).first(), B4, { group: g, title: 'Starter chip', desc: '"Check my symptoms" — a conversation starter under the card. Measured, never pressed.', sel: M('starter') });
-  await S('disclaimer', q(M('disclaimer')).first().or(await domFind(page, /not a substitute|doctronic is not/i, { sel: 'p,div,span', tag: 'm-disc', leaf: true })), ['default'], { group: g, title: 'Medical disclaimer', sel: M('disclaimer') });
+  await S('disclaimer', await prefer(q(M('disclaimer')).first(), await domFind(page, /not a substitute|doctronic is not/i, { sel: 'p,div,span', tag: 'm-disc', leaf: true })), ['default'], { group: g, title: 'Medical disclaimer', sel: M('disclaimer') });
   await page.close();
 }
 
@@ -320,13 +319,13 @@ async function signin() {
   const g = G.overlay;
   // [role="dialog"] is the transparent inner section; the card that paints the
   // surface (24px radius, raised canvas, the lg shadow) is its div.modal parent.
-  const dlg = await orElse(q('div[class*="_modal"]').first(), await orElse(q('[role="dialog"]').first(), q(M('dialog')).first()));
+  const dlg = await prefer(q('div[class*="_modal"]').first(), q('[role="dialog"]').first(), q(M('dialog')).first());
   await S('signin-dialog', dlg, ['default'], { group: g, title: 'Sign-in dialog', desc: 'Reached by the public ?modal=signin URL: a centered raised card over a dimmed page. Nothing inside it was pressed.', sel: 'div[class*="_modal"] (the [role="dialog"] card\'s painted parent)' }, { noScroll: true });
   await S('signin-title', dlg.locator('h1, h2, [class*="display"], [class*="heading"]').first(), ['default'], { group: g, title: 'Sign-in title', sel: 'dialog heading' }, { noScroll: true });
-  await S('email-login-button', dlg.getByRole('button', { name: /log in with email|email/i }).first().or(dlg.locator(M('primary')).first()), B4, { group: g, title: 'Log in with email button', desc: 'The primary action inside the dialog. Measured, never pressed.', sel: 'dialog button "Log in with email"' }, { noScroll: true });
-  await S('oauth-button', dlg.getByRole('button', { name: /continue with|google|apple/i }).first().or(dlg.locator(M('secondary')).first()), B4, { group: g, title: 'OAuth button', desc: 'A Continue-with provider button. Measured, never pressed.', sel: 'dialog OAuth button' }, { noScroll: true });
-  await S('create-account-link', dlg.getByRole('link', { name: /create an account|sign up/i }).first().or(dlg.getByRole('button', { name: /create an account/i })), B4, { group: g, title: 'Create an account link', desc: 'Measured, never followed.', sel: 'dialog "Create an account"' }, { noScroll: true });
-  await S('dialog-close', dlg.getByRole('button', { name: /close|dismiss/i }).first().or(dlg.locator(M('close')).first()), B4, { group: g, title: 'Dialog close button', sel: 'dialog close button' }, { noScroll: true });
+  await S('email-login-button', await prefer(dlg.getByRole('button', { name: /log in with email|email/i }).first(), dlg.locator(M('primary')).first()), B4, { group: g, title: 'Log in with email button', desc: 'The primary action inside the dialog. Measured, never pressed.', sel: 'dialog button "Log in with email"' }, { noScroll: true });
+  await S('oauth-button', await prefer(dlg.getByRole('button', { name: /continue with|google|apple/i }).first(), dlg.locator(M('secondary')).first()), B4, { group: g, title: 'OAuth button', desc: 'A Continue-with provider button. Measured, never pressed.', sel: 'dialog OAuth button' }, { noScroll: true });
+  await S('create-account-link', await prefer(dlg.getByRole('link', { name: /create an account|sign up/i }).first(), dlg.getByRole('button', { name: /create an account/i })), B4, { group: g, title: 'Create an account link', desc: 'Measured, never followed.', sel: 'dialog "Create an account"' }, { noScroll: true });
+  await S('dialog-close', await prefer(dlg.getByRole('button', { name: /close|dismiss/i }).first(), dlg.locator(M('close')).first()), B4, { group: g, title: 'Dialog close button', sel: 'dialog close button' }, { noScroll: true });
   out._meta.signinBackdrop = await page.evaluate(() => {
     const d = document.querySelector('[role="dialog"]');
     const res = [];
@@ -344,11 +343,11 @@ async function signin() {
 async function symptom() {
   await newPage('symptom', { wait: 8000 });
   const g = G.symptom;
-  await S('symptom-title', q('main h1').first().or(q('h1').first()), ['default'], { group: g, title: 'Symptom-checker headline', desc: '"…your private and personal AI symptom checker" in the Fraunces display face.', sel: 'h1' });
+  await S('symptom-title', await prefer(q('main h1').first(), q('h1').first()), ['default'], { group: g, title: 'Symptom-checker headline', desc: '"…your private and personal AI symptom checker" in the Fraunces display face.', sel: 'h1' });
   const ta = q('textarea[placeholder]').first();
-  await S('symptom-input-card', ta.locator('xpath=ancestor::*[self::div or self::form][position()<=3]').last().or(ta), ['default', 'hover'], { group: g, title: 'Symptom input card', desc: 'The raised card holding the symptoms textarea and the Check button.', sel: 'textarea ancestor card' });
+  await S('symptom-input-card', await prefer(ta.locator('xpath=ancestor::*[self::div or self::form][position()<=3]').last(), ta), ['default', 'hover'], { group: g, title: 'Symptom input card', desc: 'The raised card holding the symptoms textarea and the Check button.', sel: 'textarea ancestor card' });
   await S('symptom-textarea', ta, ['default', 'focused', 'filled'], { group: g, title: 'Symptoms textarea', desc: '"Describe your symptoms…" — text was typed and deleted, never submitted.', sel: 'textarea' }, { fillText: 'I have a headache since this morning' });
-  await S('check-button', page.getByRole('button', { name: /check my symptoms/i }).first().or(await domFind(page, /check my symptoms/i, { tag: 'm-chk' })), B4, { group: g, title: 'Check My Symptoms button', desc: 'Measured, never pressed — pressing would submit symptoms.', sel: '"Check My Symptoms"' });
+  await S('check-button', await prefer(page.getByRole('button', { name: /check my symptoms/i }).first(), await domFind(page, /check my symptoms/i, { tag: 'm-chk' })), B4, { group: g, title: 'Check My Symptoms button', desc: 'Measured, never pressed — pressing would submit symptoms.', sel: '"Check My Symptoms"' });
   await S('brings-pill', await domFind(page, /what brings you in/i, { sel: 'span,p,div,a,button', tag: 'm-pill2', leaf: true }), ['default'], { group: g, title: '"What brings you in?" pill', sel: '"What brings you in?"' });
   await page.close();
 }
@@ -359,28 +358,28 @@ async function marketingChrome(g) {
   // Content pages (blog, telehealth, …) carry the link-row top bar: wordmark,
   // About/FAQ/Blog/Online Treatment/Wall of Love/LegitScript and the
   // "Try Doctronic For Free" pill. It may be a <header> or a _header div.
-  const header = q('header').first().or(q(M('marketingHeader')).first()).or(q(M('header')).first());
+  const header = await prefer(q('header').first(), q(M('marketingHeader')).first(), q(M('header')).first());
   await S('mkt-header', header, ['default'], { group: g, title: 'Marketing top bar', desc: 'The pill-link bar shared by the content pages: wordmark, About/FAQ/Blog/Online Treatment/Wall of Love, "Try Doctronic For Free" and Sign up.', sel: 'header' }, { noScroll: true });
-  await S('mkt-nav-pill', header.locator('a').filter({ hasText: /^Blog$/ }).first().or(header.locator('a').nth(2)), B4, { group: g, title: 'Marketing pill link', sel: 'header a' }, { noScroll: true });
-  await S('try-button', header.locator('a').filter({ hasText: /try doctronic/i }).first().or(await domFind(page, /try doctronic for free/i, { tag: 'm-try' })), B4, { group: g, title: 'Try Doctronic button', desc: 'The dark rounded-full CTA link in the top bar. Measured, never followed.', sel: 'header a "Try Doctronic For Free"' }, { noScroll: true });
-  await S('mkt-signup', header.getByRole('button', { name: /sign up/i }).first().or(header.locator('a').filter({ hasText: /sign up/i }).first()), B4, { group: g, title: 'Marketing sign up', desc: 'Measured, never pressed.', sel: 'header "Sign up"' }, { noScroll: true });
+  await S('mkt-nav-pill', await prefer(header.locator('a').filter({ hasText: /^Blog$/ }).first(), header.locator('a').nth(2)), B4, { group: g, title: 'Marketing pill link', sel: 'header a' }, { noScroll: true });
+  await S('try-button', await prefer(header.locator('a').filter({ hasText: /try doctronic/i }).first(), await domFind(page, /try doctronic for free/i, { tag: 'm-try' })), B4, { group: g, title: 'Try Doctronic button', desc: 'The dark rounded-full CTA link in the top bar. Measured, never followed.', sel: 'header a "Try Doctronic For Free"' }, { noScroll: true });
+  await S('mkt-signup', await prefer(header.getByRole('button', { name: /sign up/i }).first(), header.locator('a').filter({ hasText: /sign up/i }).first()), B4, { group: g, title: 'Marketing sign up', desc: 'Measured, never pressed.', sel: 'header "Sign up"' }, { noScroll: true });
   const mFooter = q('footer').last();
   await S('mkt-footer', mFooter, ['default'], { group: g, title: 'Marketing footer', desc: 'The link-column footer shared by the content pages.', sel: 'last footer' });
-  await S('mkt-footer-link', mFooter.locator('a').filter({ hasText: /privacy|terms/i }).first().or(mFooter.locator('a').first()), B4, { group: g, title: 'Marketing footer link', desc: 'A link in the content-page footer (a social icon link if the legal row has no text links). Measured, never followed.', sel: 'footer a' });
+  await S('mkt-footer-link', await prefer(mFooter.locator('a').filter({ hasText: /privacy|terms/i }).first(), mFooter.locator('a').first()), B4, { group: g, title: 'Marketing footer link', desc: 'A link in the content-page footer (a social icon link if the legal row has no text links). Measured, never followed.', sel: 'footer a' });
 }
 
 async function blog() {
   await newPage('blog', { wait: 8000 });
   const g = G.content;
   await marketingChrome(g);
-  await S('blog-title', q('main h1').first().or(q('h1').first()), ['default'], { group: g, title: 'Blog title', sel: 'h1' });
-  await S('blog-search', q('input[type="search"]').first().or(q('input[placeholder*="earch" i]')), ['default', 'focused', 'filled'], { group: g, title: 'Blog search field', desc: 'Text was typed and deleted; search was never submitted.', sel: 'input[type="search"]' }, { fillText: 'prescription' });
+  await S('blog-title', await prefer(q('main h1').first(), q('h1').first()), ['default'], { group: g, title: 'Blog title', sel: 'h1' });
+  await S('blog-search', await prefer(q('input[type="search"]').first(), q('input[placeholder*="earch" i]')), ['default', 'focused', 'filled'], { group: g, title: 'Blog search field', desc: 'Text was typed and deleted; search was never submitted.', sel: 'input[type="search"]' }, { fillText: 'prescription' });
   // Article cards are Tailwind divs (rounded-[14px] border) with a gradient
   // thumbnail; category chips are rounded-full links above the grid.
-  const card = q('main a').filter({ has: q('h3') }).first().or(q('main [class*="rounded-[14px]"]').first());
-  await S('category-chip', q('main a[class*="rounded-full"]').filter({ hasText: /allergies|medicine|health/i }).first().or(q('main a[class*="rounded-full"]').first()), B4, { group: g, title: 'Category chip', desc: 'A tinted pill filtering the article grid ("Allergies", "Mental Health", …). Measured, never followed.', sel: 'main a.rounded-full' });
+  const card = await prefer(q('main a').filter({ has: q('h3') }).first(), q('main [class*="rounded-[14px]"]').first());
+  await S('category-chip', await prefer(q('main a[class*="rounded-full"]').filter({ hasText: /allergies|medicine|health/i }).first(), q('main a[class*="rounded-full"]').first()), B4, { group: g, title: 'Category chip', desc: 'A tinted pill filtering the article grid ("Allergies", "Mental Health", …). Measured, never followed.', sel: 'main a.rounded-full' });
   await S('article-card', card, ['default', 'hover', 'focus-visible'], { group: g, title: 'Article card', desc: 'A post card: gradient thumbnail with a centred glyph, category/date line and title; the whole card is one link.', sel: 'main [class*="rounded-[14px]"]' });
-  await S('article-card-title', card.locator('h2, h3').first().or(card.locator('[class*="font-"], p').last()), ['default'], { group: g, title: 'Article card title', sel: 'card title' }, { crop: false });
+  await S('article-card-title', await prefer(card.locator('h2, h3').first(), card.locator('[class*="font-"], p').last()), ['default'], { group: g, title: 'Article card title', sel: 'card title' }, { crop: false });
   await S('body-h2', q('main h2').first(), ['default'], { group: g, title: 'Content h2', sel: 'h2' });
   await page.close();
 }
@@ -388,9 +387,9 @@ async function blog() {
 async function telehealth() {
   await newPage('telehealth', { wait: 8000 });
   const g = G.content;
-  await S('telehealth-title', q('main h1').first().or(q('h1').first()), ['default'], { group: g, title: 'Telehealth headline', sel: 'h1' });
-  await S('telehealth-lede', q('main h1').locator('xpath=following::*[self::p or self::div][1]').first().or(q('main p').first()), ['default'], { group: g, title: 'Telehealth lede', sel: 'first p after h1' }, { crop: false });
-  await S('telehealth-cta', (await domFind(page, /get started|start (a |your )?(visit|chat)|talk to|see (a |the )?doctor|try doctronic/i, { sel: 'main a, main button', tag: 'm-cta', leaf: true })).or(await domFind(page, /try doctronic for free/i, { tag: 'm-cta2' })), B4, { group: g, title: 'Telehealth CTA', desc: 'The page\'s primary call to action — the dark "Try Doctronic For Free" pill shared with the top bar. Measured, never pressed.', sel: 'first CTA in main' });
+  await S('telehealth-title', await prefer(q('main h1').first(), q('h1').first()), ['default'], { group: g, title: 'Telehealth headline', sel: 'h1' });
+  await S('telehealth-lede', await prefer(q('main h1').locator('xpath=following::*[self::p or self::div][1]').first(), q('main p').first()), ['default'], { group: g, title: 'Telehealth lede', sel: 'first p after h1' }, { crop: false });
+  await S('telehealth-cta', await prefer(await domFind(page, /get started|start (a |your )?(visit|chat)|talk to|see (a |the )?doctor|try doctronic/i, { sel: 'main a, main button', tag: 'm-cta', leaf: true }), await domFind(page, /try doctronic for free/i, { tag: 'm-cta2' })), B4, { group: g, title: 'Telehealth CTA', desc: 'The page\'s primary call to action — the dark "Try Doctronic For Free" pill shared with the top bar. Measured, never pressed.', sel: 'first CTA in main' });
   await S('step-block', q('main h2').first(), ['default'], { group: g, title: 'Telehealth section heading', sel: 'h2' });
   await page.close();
 }
@@ -398,11 +397,11 @@ async function telehealth() {
 async function authors() {
   await newPage('authors', { wait: 8000 });
   const g = G.content;
-  await S('authors-title', q('main h1').first().or(q('h1').first()), ['default'], { group: g, title: 'Authors headline', sel: 'h1' });
+  await S('authors-title', await prefer(q('main h1').first(), q('h1').first()), ['default'], { group: g, title: 'Authors headline', sel: 'h1' });
   // Author cards are <li> rows in the reviewers grid (the first <li> in main
   // is a breadcrumb, so the portrait is the discriminant); the whole card is
   // one "group" link holding the portrait.
-  const card = q('main li').filter({ has: q('img') }).first().or(q('main a').filter({ has: q('img') }).first());
+  const card = await prefer(q('main li').filter({ has: q('img') }).first(), q('main a').filter({ has: q('img') }).first());
   await S('author-card', card, ['default', 'hover'], { group: g, title: 'Author card', desc: 'A reviewer card: portrait, name and medical credential line, with a "View profile" link.', sel: 'main li' });
   await page.close();
 }
@@ -410,9 +409,9 @@ async function authors() {
 async function resource() {
   await newPage('resource', { wait: 8000 });
   const g = G.content;
-  await S('resource-title', q('main h1').first().or(q('h1').first()), ['default'], { group: g, title: 'Resource center headline', sel: 'h1' });
+  await S('resource-title', await prefer(q('main h1').first(), q('h1').first()), ['default'], { group: g, title: 'Resource center headline', sel: 'h1' });
   // /resource-center/ is one long prose sheet (a white rounded-2xl card).
-  const sheet = q('main [class*="prose"]').first().or(q('main [class*="rounded-2xl"]').first());
+  const sheet = await prefer(q('main [class*="prose"]').first(), q('main [class*="rounded-2xl"]').first());
   await S('resource-sheet', sheet, ['default'], { group: g, title: 'Resource article sheet', desc: 'The long-form white card the Resource Center is typeset into.', sel: 'main [class*="prose"]' });
   await S('body-copy', q('main p').first(), ['default'], { group: g, title: 'Body copy', sel: 'main p' }, { crop: false });
   await page.close();
@@ -421,9 +420,9 @@ async function resource() {
 async function wall() {
   await newPage('wall', { wait: 8000 });
   const g = G.content;
-  await S('wall-title', q('main h1').first().or(q('h1').first()), ['default'], { group: g, title: 'Wall of Love headline', sel: 'h1' });
+  await S('wall-title', await prefer(q('main h1').first(), q('h1').first()), ['default'], { group: g, title: 'Wall of Love headline', sel: 'h1' });
   // Review cards are .break-inside-avoid tiles in a CSS-columns masonry.
-  const card = q('main [class*="break-inside-avoid"]').first().or(q('main [class*="rounded-[24px]"]').first());
+  const card = await prefer(q('main [class*="break-inside-avoid"]').first(), q('main [class*="rounded-[24px]"]').first());
   await S('love-card', card, ['default', 'hover'], { group: g, title: 'Testimonial card', desc: 'A review card on the Wall of Love: avatar, first name, quote and the Love/Reply footer row.', sel: 'main [class*="break-inside-avoid"]' });
   await page.close();
 }
@@ -434,16 +433,16 @@ async function dark() {
   await newPage('dark');
   const g = G.dark;
   out._meta.darkApplied = await page.evaluate(() => ({ theme: document.documentElement.getAttribute('data-theme'), bg: getComputedStyle(document.body).backgroundColor }));
-  const dHeader = q(M('marketingHeader')).first().or(q(M('header')).first()).or(q('header').first());
+  const dHeader = await prefer(q(M('marketingHeader')).first(), q(M('header')).first(), q('header').first());
   await S('d-header', dHeader, ['default'], { group: g, title: 'Top bar, dark', desc: 'The same bar under data-theme="dark": sunken dark ground, light text.', sel: M('marketingHeader') }, { noScroll: true });
-  await S('d-signup-button', dHeader.getByRole('button', { name: /sign up/i }).first().or(dHeader.locator('a,button').filter({ hasText: /sign up/i }).first()), B4, { group: g, title: 'Sign up button, dark', sel: 'top bar "Sign up"' }, { noScroll: true });
+  await S('d-signup-button', await prefer(dHeader.getByRole('button', { name: /sign up/i }).first(), dHeader.locator('a,button').filter({ hasText: /sign up/i }).first()), B4, { group: g, title: 'Sign up button, dark', sel: 'top bar "Sign up"' }, { noScroll: true });
   const dHero = q('textarea[placeholder]').first().locator('xpath=ancestor::*[.//h1][1]');
   await S('d-hero', dHero, ['default'], { group: g, title: 'Hero, dark', sel: 'textarea ancestor holding h1' });
-  await S('d-hero-title', dHero.locator('h1').first().or(q('h1').filter({ hasText: /doctronic/i }).last()), ['default'], { group: g, title: 'Hero headline, dark', sel: 'hero h1' });
-  await S('d-input-card', q(M('inputContainer')).first().or(q(M('heroInputWrapper'))).or(q(M('inputCard'))), ['default'], { group: g, title: 'Chat field, dark', sel: M('inputContainer') });
-  await S('d-start-button', q(M('submitButton')).first().or(await domFind(page, /^start chat$/i, { tag: 'm-dsc' })), ['default'], { group: g, title: 'Start chat button, dark', sel: M('submitButton') });
-  await S('d-pill', q(M('pill')).first().or(await domFind(page, /what brings you in/i, { sel: 'span,p,div', tag: 'm-dpill', leaf: true })), ['default'], { group: g, title: 'Prompt pill, dark', sel: M('pill') });
-  await S('d-footer', q('footer').last().or(q(M('footer')).last()), ['default'], { group: g, title: 'Footer, dark', sel: 'last footer' });
+  await S('d-hero-title', await prefer(dHero.locator('h1').first(), q('h1').filter({ hasText: /doctronic/i }).last()), ['default'], { group: g, title: 'Hero headline, dark', sel: 'hero h1' });
+  await S('d-input-card', await prefer(q(M('inputContainer')).first(), q(M('heroInputWrapper')), q(M('inputCard'))), ['default'], { group: g, title: 'Chat field, dark', sel: M('inputContainer') });
+  await S('d-start-button', await prefer(q(M('submitButton')).first(), await domFind(page, /^start chat$/i, { tag: 'm-dsc' })), ['default'], { group: g, title: 'Start chat button, dark', sel: M('submitButton') });
+  await S('d-pill', await prefer(q(M('pill')).first(), await domFind(page, /what brings you in/i, { sel: 'span,p,div', tag: 'm-dpill', leaf: true })), ['default'], { group: g, title: 'Prompt pill, dark', sel: M('pill') });
+  await S('d-footer', await prefer(q('footer').last(), q(M('footer')).last()), ['default'], { group: g, title: 'Footer, dark', sel: 'last footer' });
   await page.close();
 }
 
@@ -452,19 +451,19 @@ async function dark() {
 async function mobile() {
   const g = G.mobile;
   await newPage('home', { mobile: true });
-  const header = q(M('marketingHeader')).first().or(q(M('header')).first()).or(q('header').first());
+  const header = await prefer(q(M('marketingHeader')).first(), q(M('header')).first(), q('header').first());
   await S('m-header', header, ['default'], { group: g, title: 'Top bar (mobile)', desc: 'The 390px header: wordmark, Sign up and the menu button (Log in is dropped at this width).', sel: M('marketingHeader') }, { noScroll: true });
-  await S('m-menu-button', q(M('expandHitArea')).first().or(header.locator('button[aria-label]').first()).or(header.locator('button').last()), ['default'], { group: g, title: 'Mobile menu button', sel: 'menu button' }, { noScroll: true });
+  await S('m-menu-button', await prefer(q(M('expandHitArea')).first(), header.locator('button[aria-label]').first(), header.locator('button').last()), ['default'], { group: g, title: 'Mobile menu button', sel: 'menu button' }, { noScroll: true });
   const mHero = q('textarea[placeholder]').first().locator('xpath=ancestor::*[.//h1][1]');
   await S('m-hero', mHero, ['default'], { group: g, title: 'Hero (mobile)', sel: 'textarea ancestor holding h1' });
-  await S('m-hero-title', mHero.locator('h1').first().or(q('h1').filter({ hasText: /doctronic/i }).last()), ['default'], { group: g, title: 'Hero headline (mobile)', sel: 'hero h1' });
-  await S('m-input-card', q(M('inputContainer')).first().or(q(M('heroInputWrapper'))).or(q(M('inputCard'))), ['default'], { group: g, title: 'Chat field (mobile)', sel: M('inputContainer') });
-  await S('m-start-button', q(M('submitButton')).first().or(await domFind(page, /^start chat$/i, { tag: 'm-msb' })), ['default'], { group: g, title: 'Start chat button (mobile)', sel: M('submitButton') });
-  await S('m-footer', q('footer').last().or(q(M('footer')).last()), ['default'], { group: g, title: 'Footer (mobile)', sel: 'last footer' });
+  await S('m-hero-title', await prefer(mHero.locator('h1').first(), q('h1').filter({ hasText: /doctronic/i }).last()), ['default'], { group: g, title: 'Hero headline (mobile)', sel: 'hero h1' });
+  await S('m-input-card', await prefer(q(M('inputContainer')).first(), q(M('heroInputWrapper')), q(M('inputCard'))), ['default'], { group: g, title: 'Chat field (mobile)', sel: M('inputContainer') });
+  await S('m-start-button', await prefer(q(M('submitButton')).first(), await domFind(page, /^start chat$/i, { tag: 'm-msb' })), ['default'], { group: g, title: 'Start chat button (mobile)', sel: M('submitButton') });
+  await S('m-footer', await prefer(q('footer').last(), q(M('footer')).last()), ['default'], { group: g, title: 'Footer (mobile)', sel: 'last footer' });
   await page.close();
   await newPage('chat', { mobile: true, wait: 8000 });
-  await S('m-chat-header', q(M('mobileHeader')).first().or(q(M('header')).first().or(q('header').first())), ['default'], { group: g, title: 'Chat top bar (mobile)', sel: M('mobileHeader') }, { noScroll: true });
-  await S('m-input-card-chat', q('form[class*="_inputCard"]').first().or(q(M('inputCard'))), ['default'], { group: g, title: 'Chat input card (mobile)', sel: 'form[class*="_inputCard"]' });
+  await S('m-chat-header', await prefer(q(M('mobileHeader')).first(), q(M('header')).first(), q('header').first()), ['default'], { group: g, title: 'Chat top bar (mobile)', sel: M('mobileHeader') }, { noScroll: true });
+  await S('m-input-card-chat', await prefer(q('form[class*="_inputCard"]').first(), q(M('inputCard'))), ['default'], { group: g, title: 'Chat input card (mobile)', sel: 'form[class*="_inputCard"]' });
   await S('m-starter', q(M('starter')).first(), ['default'], { group: g, title: 'Starter chip (mobile)', sel: M('starter') });
   await page.close();
 }
