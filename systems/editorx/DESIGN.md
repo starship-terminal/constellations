@@ -152,6 +152,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Display sizes are spx-scaled, not fixed.** font-size tracks the viewport through `--theme-spx-ratio`: 80.25px hero and 157.5px design display are the 1440px readings (34.5px hero at 390). Treat the numbers as proportional.
 - **The hero pill's anchor reads unstyled-link colours.** Its own `color` computes rgb(0,0,238) default / rgb(255,0,0) pressed — browser link-state quirks of the anchor; the label inside paints white, and the purple fill lives on a child layer whose hover reading caught mid-transition at alpha 0.
 - **Unstyled containers read fallback fonts.** Thunderbolt leaves wrappers at Arial/Times; the text nodes inside carry Madefor. Type tokens cite the text-node readings (`textStyle`), not the wrapper's.
+- **`logo` is the wrong element.** Its selector's `nav a` fallback matched the "Pricing" nav link first, so the `logo` entry in components.md holds that link's values, not the wordmark's. No token reads it. The selector is fixed in `measure.mjs` (edited, not run); the entry needs a recapture.
 - **Quantised screenshots.** `screenshots/` and `components/crops/` are 256-colour PNGs; read exact colours from tokens or the raw files.
 
 ### Do and don't (from README.md)

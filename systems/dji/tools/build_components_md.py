@@ -57,11 +57,20 @@ for _set in ("core", "light", "dark"):
             else:
                 BY_COLOR[_set].setdefault(v, n)
 
-# Which theme each component's readings were painted in. App surfaces paint
-# .theme-dark.theme-darker; marketing chrome paints .theme-light. Set per
-# component in the render loop and read by colour().
-_DARK_GROUPS = {"Server discovery", "Server card", "Server detail", "Sign-in / register"}
-_DARK_COMPONENTS = {"m-search", "m-card"}
+# Which theme each component's readings were painted in. dji.com scopes its
+# theme to sections (.light-theme / .dark-theme), and the readings do not
+# record the section class, so a component counts as dark when the token
+# builder reads a dark role from it (raw/component-tokens.json, dark set).
+# Set per component in the render loop and read by colour().
+def _cited(node):
+    if isinstance(node, dict):
+        if isinstance(node.get("source"), str):
+            yield from re.findall(r"(?:computed|painted) \w+ of ([\w-]+) ", node["source"])
+        for v in node.values():
+            yield from _cited(v)
+
+
+_DARK_COMPONENTS = set(_cited(json.load(open("raw/component-tokens.json")).get("dark", {})))
 _THEME = "light"
 
 
@@ -493,7 +502,7 @@ for g in groups:
     for k, c in C.items():
         if c.get("group") != g:
             continue
-        _THEME = "dark" if (g in _DARK_GROUPS or k in _DARK_COMPONENTS) else "light"
+        _THEME = "dark" if k in _DARK_COMPONENTS else "light"
         W()
         W(f"#### {c['title']}")
         desc = (c.get("desc") or "").strip()

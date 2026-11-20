@@ -455,7 +455,7 @@ The left navigation tree on the Mintlify docs (section groups, page links, POST/
 
 **Values (default).** size 288 x 788; background transparent; text Inter 14/24 600, #1e1916 `neutral.900`.
 
-Child layers that carry the look: div 256x32 image linear-gradient(in oklab, #ffffff `white` 0%, transparent 100%); a 256x36 background rgba(255, 98, 0, 0.1) `brand.tint-strong` `brand.tint-strong` radius 12px; span 32.1x15 background rgba(96, 165, 250, 0.2) radius 6px.
+Child layers that carry the look: div 256x32 image linear-gradient(in oklab, #ffffff `white` 0%, transparent 100%); a 256x36 background rgba(255, 98, 0, 0.1) `brand.tint-strong` radius 12px; span 32.1x15 background rgba(96, 165, 250, 0.2) radius 6px.
 
 ![Docs sidebar default](components/crops/docs-sidebar-default.png)
 
@@ -473,7 +473,7 @@ The link for the open page, in its selected style. Read as `docs-nav-active` on 
 
 **Values (default).** size 256 x 36; background transparent; text Inter 14/24 400, #ff6200 `brand.500`.
 
-Child layers that carry the look: a 256x36 background rgba(255, 98, 0, 0.1) `brand.tint-strong` `brand.tint-strong` radius 12px.
+Child layers that carry the look: a 256x36 background rgba(255, 98, 0, 0.1) `brand.tint-strong` radius 12px.
 
 ![Sidebar link, current page default](components/crops/docs-nav-active-default.png)
 
@@ -613,7 +613,7 @@ Read as `docs-dark-sidebar` on the anam.ai docs, dark theme page.
 
 **Values (default).** size 288 x 788; background transparent; text Inter 14/24 600, #e6e1de `neutral.200`; icon 16 x 16, #ff6200 `brand.500`.
 
-Child layers that carry the look: div 256x32 image linear-gradient(in oklab, #000000 `black` 0%, transparent 100%); a 256x36 background rgba(255, 98, 0, 0.1) `brand.tint-strong` `brand.tint-strong` radius 12px; svg 16x16 background #ff6200 `brand.500`.
+Child layers that carry the look: div 256x32 image linear-gradient(in oklab, #000000 `black` 0%, transparent 100%); a 256x36 background rgba(255, 98, 0, 0.1) `brand.tint-strong` radius 12px; svg 16x16 background #ff6200 `brand.500`.
 
 ![Sidebar, dark default](components/crops/docs-dark-sidebar-default.png)
 
