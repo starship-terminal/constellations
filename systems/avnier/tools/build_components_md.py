@@ -294,7 +294,7 @@ W()
 W("| State | Where | How it was reached | Captured |")
 W("|---|---|---|---|")
 OVER = [
-    ("OneTrust consent dialog", "every page, on load", "captured as it arrives, then hidden (never answered: no Accept/Reject/Save is ever clicked)", "[home-light-consent](screenshots/home-light-consent.png)"),
+    ("Axeptio consent layer and shipping-country popup", "every page, on load", "the country popup captured as it arrives, then both hidden (never answered: no Accept/Reject is ever clicked)", "[home-light-consent](screenshots/home-light-consent.png)"),
     ("Category mega-menu", "category nav, shop grid", "the first nav button hovered; the flyout shows in the crop", "[nav-flyout](#category-flyout-panel), [nav-mega](#category-flyout-open)"),
     ("PDP size select", "product page", "a size option picked then restored; never added to bag", "[size-select-picked](components/crops/size-select-picked.png), [size-select](#size-select)"),
     ("PDP accordion", "product page", "a disclosure row's own toggle", "[pdp-accordion-open-opened](components/crops/pdp-accordion-open-opened.png), [pdp-accordion](#pdp-accordion)"),
@@ -455,7 +455,7 @@ W("- **Checkout and anything behind sign-in.** No item was added to the cart, so
 W("- **Anything that buys, sends or joins.** No product was added to the bag, no form was submitted (the login email was typed into and cleared), no search was run, no account was created, no consent choice was made.")
 W("- **The mega-menu columns, the account dropdown and the filter/sort panels** were opened or hovered but their innards were not measured beyond the first link.")
 W("- **The home page's category nav** stays `display:none` on `/` — it is measured on the shop grid, where the row is visible, and the home screenshot records the nav-less layout as served.")
-W("- **Headless access.** Akamai answers headless Chromium and headless Chrome with `403 Access Denied`; the whole capture ran in headed Chrome (channel `chrome`). That is a transport boundary, not a page one.")
+W("- **Headless access.** avnier.com serves headless Chrome (channel `chrome`) a 200, so the whole capture ran headless; a challenge page, had one appeared, was waited out, never bypassed.")
 W()
 W("### States")
 W()
@@ -465,7 +465,11 @@ W("- **Disabled, error and loading states** were not seen on the public surface.
 W()
 W("### Themes")
 W()
-W("The site paints one light theme on every captured route; a `.dark` probe resolves every custom property identically. The only themed sheets are vendor — OneTrust's `--ot-*` (consent UI) and Swiper's `--swiper-*` — recorded in [raw/css-vars.json](raw/css-vars.json) and never tokenised. No dark or reduced-contrast mode is offered.")
+# The vendor families, counted from the vendor bin of raw/css-vars.json (Loloyal's loyalty widget is
+# --ll-*, with its own .ll-dark-mode; Swiper's carousel is --swiper-*).
+VENDOR_NAMES = sorted({n for r in json.load(open("raw/css-vars.json"))["vendor"] for n in (r.get("properties") or {}) if n.startswith("--")})
+VENDOR_FAMILIES = sorted({re.match(r"--[a-z]+", n).group(0) for n in VENDOR_NAMES})
+W(f"The site paints one light theme on every captured route; a `.dark` probe resolves every custom property identically. The vendor custom properties ({', '.join(f'`{f}-*`' for f in VENDOR_FAMILIES)}, {len(VENDOR_NAMES)} names: Loloyal's loyalty widget, which carries its own `.ll-dark-mode`, and Swiper's carousel) are recorded in [raw/css-vars.json](raw/css-vars.json) and never tokenised. No dark or reduced-contrast mode is offered.")
 W()
 W("### Fonts")
 W()
