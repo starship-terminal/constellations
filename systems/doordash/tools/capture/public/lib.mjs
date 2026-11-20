@@ -146,13 +146,14 @@ export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up =
 // 'commit' returns once the document starts, then we poll for a real body,
 // then for the image stream to go quiet before the fixed settle wait.
 export async function open(page, url, { wait = 6000, promo = 'close', imgWait = 60000 } = {}) {
-  await page.goto(url, { waitUntil: 'commit', timeout: 120000 });  // a navigation error stops the run instead of measuring a blank page (20-4)
+  await page.goto(url, { waitUntil: 'commit', timeout: 120000 }).catch(() => {});  // measure.mjs's newPage() re-checks the page (blocked()), which also catches a blank page
   for (let i = 0; i < 45; i++) {
     const len = await page.evaluate(() => (document.body && document.body.innerText || '').length).catch(() => 0);
     if (len > 200) break;
     await page.waitForTimeout(2000);
   }
-  if (!(await clearChallenge(page))) throw new Error('blocked: the bot check did not clear on ' + url);
+  const cleared = await clearChallenge(page);
+  if (!cleared) console.log('  ! the bot check did not clear on', url);
   // Resource quiet: two consecutive polls with nothing still transferring.
   let quiet = 0;
   const t0 = Date.now();
@@ -163,6 +164,7 @@ export async function open(page, url, { wait = 6000, promo = 'close', imgWait = 
   }
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
+  return cleared;  // false: the caller records the page as blocked, never as the product (20-4)
 }
 
 // Computed style properties recorded for every component and state.
