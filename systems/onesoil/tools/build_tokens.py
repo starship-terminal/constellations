@@ -3,7 +3,10 @@
 
 The marketing tokens were written from live computed styles on 2026-11-19.
 This script does not invent values. It checks the committed file and exits
-0 when every token has a source and every alias resolves.
+0 when every token has a source, every alias resolves, and every token
+labelled Measured carries a colour, px length and duration that a raw/ reading
+holds (check_against_raw). tokens.json is written by hand, so that last check
+is what ties it to the readings.
 """
 import json
 import pathlib
@@ -72,9 +75,41 @@ def check(doc):
             raise CheckError("light and dark keys differ")
 
 
+def raw_values():
+    """The colours (#rrggbb), px lengths and durations raw/ holds."""
+    text = "\n".join(p.read_text() for p in sorted((PKG / "raw").glob("*.json")))
+    colours = {"#%02x%02x%02x" % tuple(int(x) for x in m) for m in re.findall(r"rgba?\((\d+),\s*(\d+),\s*(\d+)", text)}
+    for h in re.findall(r"#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})\b", text):
+        colours.add("#" + (h if len(h) == 6 else "".join(c * 2 for c in h)).lower())
+    lengths = set(re.findall(r"-?\d+(?:\.\d+)?px", text)) | {f"{n}px" for n in re.findall(r'": (\d+)[,}\s]', text)}
+    times = set(re.findall(r"\d*\.?\d+m?s\b", text))
+    return colours, lengths, times
+
+
+def check_against_raw(doc):
+    """Refuse a token labelled Measured whose literal colour, px length or duration is in no raw/ reading."""
+    colours, lengths, times = raw_values()
+    for name in [n for n in ("core", "light", "dark") if n in doc]:
+        for path, token in walk(doc[name]):
+            if token["$extensions"]["source"].get("evidence") != "Measured":
+                continue
+            where = name + "." + ".".join(path)
+            value = token["$value"]
+            for item in (value.values() if isinstance(value, dict) else [value]):
+                item = str(item)
+                if re.fullmatch(r"#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?", item) and item[:7].lower() not in colours:
+                    raise CheckError(f"{where}: Measured colour {item} is in no raw/ reading")
+                if re.fullmatch(r"-?\d+(\.\d+)?px", item) and item not in lengths:
+                    raise CheckError(f"{where}: Measured length {item} is in no raw/ reading")
+                ms = re.fullmatch(r"(\d+(?:\.\d+)?)ms", item)
+                if ms and not ({item, f"{float(ms.group(1)) / 1000:g}s", f"{float(ms.group(1)) / 1000:g}s".lstrip("0")} & times):
+                    raise CheckError(f"{where}: Measured duration {item} is in no raw/ reading")
+
+
 def main():
     doc = json.loads(TOKENS.read_text())
     check(doc)
+    check_against_raw(doc)
     count = sum(1 for name in ("core", "light", "dark") if name in doc for _ in walk(doc[name]))
     print(f"tokens.json: {count} tokens ok")
 
