@@ -630,11 +630,16 @@ for key, comp, state, prop, group, prefer, desc in [
 ]:
     try:
         if prop == "_page":
-            raw = "#ffffff"
-            src = "the painted field of /sg, /camera-drones, /support (screenshots/drones-default.png); matches declared --white"
+            # No measured element reports the page field; read the declared white
+            # the pages paint, not a screenshot pixel.
+            raw = R["--white"]
+            src = ("declared --white (raw/css-vars.json resolved.light); no computed reading of the page field "
+                   "(seen in screenshots/drones-default.png)")
         elif prop == "_hairline":
-            raw = "rgba(0, 0, 0, 0.06)"
-            src = "the declared --divider of .light-theme sections (raw/css-vars.json)"
+            # .light-theme sets --divider: var(--black-divider) (raw/css-vars.json app bin);
+            # the :root --divider resolves to the dark theme's white@12%.
+            raw = R["--black-divider"]
+            src = "declared --black-divider, which .light-theme sections assign to --divider (raw/css-vars.json)"
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
@@ -770,6 +775,29 @@ for name, cname, state, prop, ty_, desc in [
                          ty_, f"measured {prop} of {cname} {state} (raw/components-computed.json)", desc)
     except KeyError:
         pass
+
+# co-lede's selector caught the "browser not supported" notice in a modal box,
+# not the company page lede (the README's Known gaps; measure.mjs is fixed by
+# edit, not yet re-run). Every token read from it says so.
+# Flagged only while the reading is that notice, so a good recapture clears it.
+WRONG_ELEMENT = {k: what for k, what, bad in [
+    ("co-lede", "the unsupported-browser notice in a modal box, not the company lede",
+     lambda c: "no longer supported" in (c["states"]["default"].get("text") or "")),
+] if k in C and bad(C[k])}
+
+
+def note_wrong(node):
+    if isinstance(node, dict):
+        src = node.get("source")
+        if isinstance(src, str):
+            for k, what in WRONG_ELEMENT.items():
+                if re.search(rf"(?<![\w-]){re.escape(k)}(?![\w-])", src) and "read from the wrong element" not in src:
+                    node["source"] = src = src + f"; {k} caught {what} (read from the wrong element; recapture needed)"
+        for v in node.values():
+            note_wrong(v)
+
+
+note_wrong(SPEC)
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
 print("component-tokens.json:", {k: len(v) for k, v in SPEC.items() if k != "_about"})

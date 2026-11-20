@@ -10,12 +10,11 @@
 // tiles, which quantize.py stitches back together; an unbounded page
 // truncates at 8 chunks and the log records the boundary.
 //
-// PerimeterX gates every fresh client with a full-page "It needs a human
-// touch" challenge whose PRESS & HOLD widget mounts in a nested iframe;
-// clearChallenge() drives the hold the way a visitor would (scripted, never
-// answered by hand) and the clearance cookies are cached in the scratch dir
-// for later contexts. Run under xvfb-run: real Chrome is launched headed,
-// which is what cleared the hold on this machine.
+// PerimeterX can gate a fresh client with a full-page "It needs a human
+// touch" challenge (a PRESS & HOLD widget). Bot check: recorded as a
+// boundary, not bypassed: clearChallenge() only waits, and a page that stays
+// challenged is logged as BLOCKED and skipped. No clearance cookie is saved
+// or replayed. Run under xvfb-run to launch real Chrome headed.
 //
 // Nothing is sent, bought or signed into: the only presses are local UI
 // toggles — the "Sidebar menu" drawer button, the home hero search field
@@ -31,7 +30,7 @@ import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { closePromo, clearChallenge, seedPx, savePx, patch, launchBrowser, chromium, UA, UA_MOBILE, BASE, LOGIN_URL, JOIN_URL } from './lib.mjs';
+import { closePromo, clearChallenge, patch, launchBrowser, chromium, UA, UA_MOBILE, BASE, LOGIN_URL, JOIN_URL } from './lib.mjs';
 
 // Full-colour shots are working files, never committed: by default they go outside the repository,
 // to ~/.design-systems/<slug>/raw-shots for a package's copy at systems/<slug>/tools/capture/public/.
@@ -186,14 +185,12 @@ for (const { k, mob } of runs) {
   const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
   const ctx = await b.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US' });
   await patch(ctx);
-  await seedPx(ctx);
   const p = await ctx.newPage();
   log(name, url);
   const S = new Shooter(p, `${name}-${spec.theme}`, vw, vh, dpr, url);
   try {
     await p.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-    if (!(await clearChallenge(p))) { log('  BLOCKED challenge', url); await ctx.close(); continue; }
-    await savePx(ctx);
+    if (!(await clearChallenge(p))) { log('  BLOCKED challenge (boundary, not bypassed)', url); await ctx.close(); continue; }
     await wait(p, spec.wait || 8000);
     await spec.run(p, S);
     if (k === 'search' && !mob) {

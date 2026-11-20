@@ -221,8 +221,9 @@ def search_styles(query: str, store: str = "all", platform: str | None = None,
     wanted = "mobile" if platform == "ios" else platform
     if store in ("all", "systems"):
         # One catalog read per call, not one per hit.
-        by_slug = {s["slug"]: s for s in _catalog()["systems"]}
-        for hit in catalog.find(words):
+        parsed = _catalog()
+        by_slug = {s["slug"]: s for s in parsed["systems"]}
+        for hit in catalog.find(words, parsed):
             e = by_slug.get(hit["slug"])
             if e is None:
                 continue

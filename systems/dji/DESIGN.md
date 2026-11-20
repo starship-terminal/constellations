@@ -203,3 +203,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Don't read colours off the screenshots; they are 256-colour PNGs.
 - Don't copy the product's logo, icons, illustrations or brand colours into something that ships. Borrow structure and proportions.
 - Don't edit this file; it is regenerated from the tokens.
+
+### Known gaps (from README.md)
+
+- `co-lede`: the first visible `<p>` on /company was the "Internet Explorer is no longer supported" notice in a modal box, not the company lede. `light.text.muted` and `core.font.size.measured.body` cite it and say so (the colour matches the declared `--black-secondary`, but the reading is not the lede). `tools/capture/public/measure.mjs` now skips the modal notice (edited, not run); recapture needed.
+- `m-menu` hover: the 2026-11-15 re-read timed out and the capture kept an earlier reading beside the `rerunError`, under the component's new run date. The reading's own date was not recorded. measure.mjs now pins a kept reading to its own run.

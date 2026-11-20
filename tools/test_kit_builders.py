@@ -60,7 +60,8 @@ PUBLIC = {
                          "states": {"default": state(via="at rest"), "focus-visible": state(via="Shift+Tab, Tab")}},
         # an older run's shape: the element at rest saved under focus-visible
         "old-link": {"title": "Old link", "group": "Links", "page": "home",
-                     "states": {"default": state(via="at rest"), "focus-visible": state({"backgroundColor": "rgb(1, 2, 3)"}, via="focus failed")}},
+                     "states": {"default": state(via="at rest"), "focus-visible": state({"backgroundColor": "rgb(1, 2, 3)"}, via="focus failed",
+                                                             crop="components/crops/old-link-focus-visible.png")}},
         # what measure.mjs records now
         "new-link": {"title": "New link", "group": "Links", "page": "home",
                      "states": {"default": state(via="at rest"), "focus-visible": {"skipped": "focus failed: keyboard focus did not reach the element", "via": "focus failed"}}},
@@ -137,13 +138,32 @@ class MeasurementBuilders(unittest.TestCase):
         old = md.split("#### old-link", 1)[1].split("####", 1)[0]
         self.assertIn("| Skipped | - | focus failed: keyboard focus did not reach the element |", old)
         self.assertNotIn("#010203", old)
+        self.assertNotIn("old-link-focus-visible.png", old)   # no crop presents it as a captured focus
         new = md.split("#### new-link", 1)[1].split("####", 1)[0]
         self.assertIn("| Skipped | - | focus failed: keyboard focus did not reach the element |", new)
+
+    def test_public_measurements_skip_focus_without_focus_visible(self):
+        computed = json.loads(json.dumps(PUBLIC))
+        computed["components"]["ring-button"]["states"]["focus-visible"].update(
+            focus={"ok": True, "matches": False}, crop="components/crops/ring-button-focus-visible.png")
+        with tempfile.TemporaryDirectory() as d:
+            md = self.run_builder(d, "public", computed)
+        ring = md.split("#### ring-button", 1)[1].split("####", 1)[0]
+        self.assertIn("| Skipped | - | focused without matching :focus-visible, so no keyboard-focus reading |", ring)
+        self.assertNotIn("#0000ff", ring)
+        self.assertNotIn("ring-button-focus-visible.png", ring)
 
     def test_signed_in_measurements_count_focus_without_focus_visible_apart(self):
         with tempfile.TemporaryDirectory() as d:
             md = self.run_builder(d, "signed-in", SIGNED_IN)
         self.assertIn("- **Focus-visible, dark** (1 focused states; focus could not be captured on 2 more): outline 2px solid #0000ff offset 2px (1).", md)
+        # the same states are left out of the measured count, the component tables and the crop list
+        self.assertIn("3 components, 6 states (4 measured, 2 skipped, 0 not found).", md)
+        row = md.split("#### plain-row", 1)[1].split("####", 1)[0]
+        self.assertIn("| Skipped | - | focused without matching :focus-visible, so no keyboard-focus reading |", row)
+        self.assertNotIn("| How | at rest | keyboard |", row)
+        self.assertNotIn("plain-row-focus-visible.png", row)
+        self.assertIn("Crops: none.", row)
 
 
 if __name__ == "__main__":

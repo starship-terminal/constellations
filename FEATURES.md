@@ -1,5 +1,5 @@
 # Features
-A private library of design styles captured from real products, made of evidence-labelled `systems/` packages and a lower-confidence refero snapshot, browsed through two Next.js apps and read by coding agents over MCP and the `ds` CLI.
+A library of design styles captured from real products, made of evidence-labelled `systems/` packages and a lower-confidence refero snapshot, browsed through two Next.js apps and read by coding agents over MCP and the `ds` CLI.
 
 Status describes implementation in this checkout, not a live QA pass or release guarantee. Command placeholders such as `<slug>` must be replaced; bracketed arguments are optional.
 
@@ -103,7 +103,7 @@ Status describes implementation in this checkout, not a live QA pass or release 
 - **Redeploy button**: on the self-hosted docs site, trigger a redeploy from the footer and see when it last deployed. Status: implemented. Surface: web. Entry point: `docs/assets/redeploy.js`, `GET|POST /api/redeploy` (`scripts/deploy_trigger.py`). Tests: `tools/test_deploy_trigger.py`.
 
 ## Deployment
-- **Home-server deployment**: pull the private checkout and invoke the host-owned `~/services/design-systems/bin/deploy.sh`, directly or through a systemd user job; the external script determines the deployment steps. Status: implemented. Surface: job. Entry point: `scripts/redeploy.sh`, `scripts/deploy_trigger.py`. Tests: `tools/test_deploy_trigger.py`.
+- **Home-server deployment**: pull the checkout and invoke the host-owned `~/services/design-systems/bin/deploy.sh`, directly or through a systemd user job; the external script determines the deployment steps. Status: implemented. Surface: job. Entry point: `scripts/redeploy.sh`, `scripts/deploy_trigger.py`. Tests: `tools/test_deploy_trigger.py`.
 - **Studio private deployment**: stage, activate, install or update the Studio app as a private systemd user service. Status: implemented. Surface: job. Entry point: `scripts/studio-deploy.sh stage|activate|install|update`, `app/docs/DEPLOYMENT.md`. Tests: none.
 
 ## CI checks
