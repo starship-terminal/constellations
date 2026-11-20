@@ -45,7 +45,7 @@ Screenshots are named `{page}-{theme}-state.png`: every captured surface paints 
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 40 components were given a real keyboard focus. 38 draw an outline ring: `logo` (2px solid #4c00ff `color.cobalt`, offset 2px), `nav-trigger` (2px solid #4c00ff `color.cobalt`, offset 2px), `nav-link` (2px solid #4c00ff `color.cobalt`, offset 2px), `nav-contact` (2px solid #4c00ff `color.cobalt`, offset 2px), `nav-buy` (2px solid #4c00ff `color.cobalt`, offset 2px), `nav-cta` (2px solid #4c00ff `color.cobalt`, offset 2px), `nav-search` (2px solid #cbc2ff `color.mist`, offset 2px), `login-link` (2px solid #cbc2ff `color.mist`, offset 2px), `menu-link` (2px solid #4c00ff `color.cobalt`, offset 2px), `hero-cta` (2px solid #ffffff `color.white`, offset 2px), `hero-link` (2px solid #4c00ff `color.cobalt`, offset 2px), `hero-checkbox` (on a child: 1px auto rgb(0, 95, 204) offset 2px), `hero-country` (on a child: 1px auto rgb(0, 95, 204) offset 0px), `blog-card` (2px solid #4c00ff `color.cobalt`, offset 2px), `e-cta` (2px solid #4c00ff `color.cobalt`, offset 2px), `video-expand` (2px solid #4c00ff `color.cobalt`, offset 2px), `faq-button` (2px solid #4c00ff `color.cobalt`, offset 0px), `trial-checkbox` (on a child: 1px auto rgb(0, 95, 204) offset 2px), `trial-cta` (2px solid #4c00ff `color.cobalt`, offset 2px), `help-button` (2px solid #4c00ff `color.cobalt`, offset 2px), `sg-tab-draw` (1px auto #005fcc `color.focus-auto`, offset 0px), `sg-tab-type` (1px auto #005fcc `color.focus-auto`, offset 0px), `sg-font` (1px auto #005fcc `color.focus-auto`, offset 0px), `filter-button` (2px solid #4c00ff `color.cobalt`, offset 2px), `story-card` (2px solid #4c00ff `color.cobalt`, offset 2px), `ec-billing-annual` (1px auto #005fcc `color.focus-auto`, offset 0px), `ec-billing-monthly` (1px auto #005fcc `color.focus-auto`, offset 0px), `buy-now` (2px solid transparent, offset 2px), `contact-sales` (2px solid transparent, offset 2px), `feature-row` (1px auto #005fcc `color.focus-auto`, offset 0px), `see-all` (2px solid transparent, offset 2px), `auth-next` (2px solid #130032 `color.inkwell`, offset 2px), `auth-lang` (2px solid #130032 `color.inkwell`, offset 2px), `auth-signup` (2px solid #130032 `color.inkwell`, offset 2px), `footer-link` (2px solid #4c00ff `color.cobalt`, offset 2px), `m-menu-button` (1px auto #005fcc `color.focus-auto`, offset 0px), `m-nav-item` (2px solid #4c00ff `color.cobalt`, offset 2px), `m-cta` (2px solid #4c00ff `color.cobalt`, offset 2px). 1 draw a focus ring as a shadow instead: `sg-color`. 1 change only their border: `locale-button`.
+**Focus.** 40 components were given a real keyboard focus. 35 draw an outline ring: `logo` (2px solid #4c00ff `color.cobalt`, offset 2px), `nav-trigger` (2px solid #4c00ff `color.cobalt`, offset 2px), `nav-link` (2px solid #4c00ff `color.cobalt`, offset 2px), `nav-contact` (2px solid #4c00ff `color.cobalt`, offset 2px), `nav-buy` (2px solid #4c00ff `color.cobalt`, offset 2px), `nav-cta` (2px solid #4c00ff `color.cobalt`, offset 2px), `nav-search` (2px solid #cbc2ff `color.mist`, offset 2px), `login-link` (2px solid #cbc2ff `color.mist`, offset 2px), `menu-link` (2px solid #4c00ff `color.cobalt`, offset 2px), `hero-cta` (2px solid #ffffff `color.white`, offset 2px), `hero-link` (2px solid #4c00ff `color.cobalt`, offset 2px), `hero-checkbox` (on a child: 1px auto rgb(0, 95, 204) offset 2px), `hero-country` (on a child: 1px auto rgb(0, 95, 204) offset 0px), `blog-card` (2px solid #4c00ff `color.cobalt`, offset 2px), `e-cta` (2px solid #4c00ff `color.cobalt`, offset 2px), `video-expand` (2px solid #4c00ff `color.cobalt`, offset 2px), `faq-button` (2px solid #4c00ff `color.cobalt`, offset 0px), `trial-checkbox` (on a child: 1px auto rgb(0, 95, 204) offset 2px), `trial-cta` (2px solid #4c00ff `color.cobalt`, offset 2px), `help-button` (2px solid #4c00ff `color.cobalt`, offset 2px), `sg-tab-draw` (1px auto #005fcc `color.focus-auto`, offset 0px), `sg-tab-type` (1px auto #005fcc `color.focus-auto`, offset 0px), `sg-font` (1px auto #005fcc `color.focus-auto`, offset 0px), `filter-button` (2px solid #4c00ff `color.cobalt`, offset 2px), `story-card` (2px solid #4c00ff `color.cobalt`, offset 2px), `ec-billing-annual` (1px auto #005fcc `color.focus-auto`, offset 0px), `ec-billing-monthly` (1px auto #005fcc `color.focus-auto`, offset 0px), `feature-row` (1px auto #005fcc `color.focus-auto`, offset 0px), `auth-next` (2px solid #130032 `color.inkwell`, offset 2px), `auth-lang` (2px solid #130032 `color.inkwell`, offset 2px), `auth-signup` (2px solid #130032 `color.inkwell`, offset 2px), `footer-link` (2px solid #4c00ff `color.cobalt`, offset 2px), `m-menu-button` (1px auto #005fcc `color.focus-auto`, offset 0px), `m-nav-item` (2px solid #4c00ff `color.cobalt`, offset 2px), `m-cta` (2px solid #4c00ff `color.cobalt`, offset 2px). 4 draw a focus ring as a shadow instead: `sg-color`, `buy-now`, `contact-sales`, `see-all`. 1 change only their border: `locale-button`. Focus could not be captured on 3 more (keyboard focus never landed on them, so their readings are left out): `assistant`, `sg-clear`, `sg-download`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -102,7 +102,7 @@ The Docusign wordmark anchor (aria-label "Docusign"). Read as `logo` on the home
 |---|---|
 | default (same: hover) | size 132 x 26.55; radius 4px; background transparent; text DSIndigo 16/24 500, #0000ee; layers div::after.css-1ra4uzk.e1tasy2f1 0pxx1px rgb(76, 0, 255) |
 | focus-visible | outline 2px solid #4c00ff `color.cobalt`, offset 2px; layers a.css-dmyhku.e1tasy2f0 132.0x26.5 2px solid rgb(76, 0, 255) offset 2px 4px; div::after.css-1ra4uzk.e1tasy2f1 0pxx1px rgb(76, 0, 255) |
-| pressed | text DSIndigo 16/24 500, #ff0000 `color.error`; layers div::after.css-1ra4uzk.e1tasy2f1 0pxx1px rgb(19, 0, 50) |
+| pressed | text DSIndigo 16/24 500, #ff0000; layers div::after.css-1ra4uzk.e1tasy2f1 0pxx1px rgb(19, 0, 50) |
 
 Child layers that carry the look: div::after 0pxx1px background #4c00ff `color.cobalt`.
 
@@ -511,7 +511,7 @@ The signature preview surface in Draw mode. Read as `sg-canvas` on the signature
 ![Signature canvas default](components/crops/sg-canvas-default.png)
 
 #### Colour swatch
-A signature colour swatch button (Cobalt); toggled, which re-inks the preview. Read as `sg-color` on the signature generator page.
+A signature colour swatch button (Cobalt), read at rest, hovered, focused and pressed; never selected here. Read as `sg-color` on the signature generator page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -639,7 +639,7 @@ The Annual half of the billing-period toggle. Read as `ec-billing-annual` on the
 ![Annual toggle default](components/crops/ec-billing-annual-default.png) ![Annual toggle hover](components/crops/ec-billing-annual-hover.png) ![Annual toggle focus-visible](components/crops/ec-billing-annual-focus-visible.png) ![Annual toggle pressed](components/crops/ec-billing-annual-pressed.png)
 
 #### Monthly toggle
-The Monthly half of the billing toggle; its own click re-priced the cards (the monthly shot). Read as `ec-billing-monthly` on the pricing storefront page.
+The Monthly half of the billing toggle, read unselected; the monthly screenshot comes from the screenshot pass. Read as `ec-billing-monthly` on the pricing storefront page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -694,7 +694,7 @@ The enterprise plan's Contact-Sales action; measured never followed. Read as `co
 ![Contact-sales CTA default](components/crops/contact-sales-default.png) ![Contact-sales CTA hover](components/crops/contact-sales-hover.png) ![Contact-sales CTA focus-visible](components/crops/contact-sales-focus-visible.png) ![Contact-sales CTA pressed](components/crops/contact-sales-pressed.png)
 
 #### Feature row
-An expandable feature row on a plan card; toggled open once. Read as `feature-row` on the pricing storefront page.
+An expandable feature row on a plan card, read at rest, hovered, focused and pressed; never expanded here. Read as `feature-row` on the pricing storefront page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
