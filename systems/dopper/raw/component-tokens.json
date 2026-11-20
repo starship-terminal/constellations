@@ -511,8 +511,8 @@
    "card": {
     "var": "--sand-2",
     "type": "color",
-    "source": "computed paint:a.link.social.bg of footer default (raw/components-computed.json); css-var --sand-2 resolved light (raw/css-vars.json)",
-    "description": "The sand-2 card field (the footer's social chips paint it)."
+    "source": "css-var --sand-2 resolved light (raw/css-vars.json)",
+    "description": "The sand-2 card field (declared; no captured visible surface paints it)."
    },
    "band": {
     "var": "--darkBlue-3",

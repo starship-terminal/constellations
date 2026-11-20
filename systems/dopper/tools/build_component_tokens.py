@@ -103,7 +103,9 @@ def colour_at(comp, state, where):
         raw = (v.get("::before") or {}).get(where.split(".", 1)[1])
     elif where.startswith("paint:"):
         frag, field = where[6:].rsplit(".", 1)
-        layer = next((n for n in v.get("paint") or [] if frag in (n.get("node") or "")), None)
+        # a painted layer only counts when it has a size: a 0 x 0 node paints nothing visible
+        layer = next((n for n in v.get("paint") or [] if frag in (n.get("node") or "")
+                      and not re.match(r"0(\.0+)?(px)?x", n.get("size") or "0x")), None)
         raw = (layer or {}).get(field)
         if raw and field in ("border", "outline"):
             raw = re.search(r"rgba?\([^)]*\)", raw).group(0)
@@ -258,8 +260,8 @@ def role(name, target, desc, source=None, readings=()):
 
 role("--surface-page", "#fcfaf2", "The #fcfaf2 cream page field (sand-3/--white).",
      readings=[("shop-header", "default", "backgroundColor"), ("newsletter-input", "default", "backgroundColor")])
-role("--surface-card", "#f9f3df", "The sand-2 card field (the footer's social chips paint it).",
-     readings=[("footer", "default", "paint:a.link.social.bg")])
+# The only #f9f3df readings are the footer's social chips, which read 0 x 0: declared --sand-2 alone.
+role("--surface-card", "#f9f3df", "The sand-2 card field (declared; no captured visible surface paints it).")
 role("--surface-band", "#cce2ff", "The darkBlue-3 light-blue band: the PLP filter sheet, the cart strip, the New Customers card.",
      readings=[("new-card", "default", "backgroundColor"), ("cart-strip", "default", "backgroundColor")])
 # The opened Bottle mega-menu was screenshotted, not measured (the stored flyout reading is a

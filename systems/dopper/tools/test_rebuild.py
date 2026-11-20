@@ -64,7 +64,7 @@ class RebuildTest(unittest.TestCase):
     def test_roles_name_readings_that_hold_them(self):
         self.assertIn("btn-outline focus-visible", self.tok["light.focus.ring.default"]["$extensions"]["source"])
         self.assertNotIn("btn-outline", self.tok["light.border.ink"]["$extensions"]["source"])
-        for p in ("light.text.muted", "light.action.warm", "light.surface.menu.default"):
+        for p in ("light.text.muted", "light.action.warm", "light.surface.menu.default", "light.surface.card"):
             self.assertNotIn("computed", self.tok[p]["$extensions"]["source"], p)
 
     def test_flagged_entries_reach_no_tally(self):
