@@ -58,6 +58,28 @@ class RebuildTest(unittest.TestCase):
             if leaf.get("$type") == "color":
                 self.assertFalse(str(leaf["$value"]).startswith("oklab("), path)
 
+    def test_oklab_colour_converts_to_srgb(self):
+        """No committed colour token is oklab, so feed build_tokens.py two oklab leaves: the auth
+        button's 90% hover shade (raw/components-computed.json au-email-btn hover) and an opaque white."""
+        root = pathlib.Path(self.tmp.name) / "oklab"
+        shutil.copytree(self.root / "tools", root / "tools")
+        shutil.copytree(self.root / "raw", root / "raw")
+        spec_path = root / "raw" / "component-tokens.json"
+        spec = json.loads(spec_path.read_text())
+        hover = self.C["au-email-btn"]["states"]["hover"]["style"]["backgroundColor"]
+        self.assertTrue(hover.startswith("oklab("), hover)
+        spec["core"]["test-oklab"] = {
+            "hover": {"value": hover, "type": "color", "source": "test", "description": "test"},
+            "white": {"value": "oklab(0.999994 0.0000455678 0.0000200868)", "type": "color", "source": "test", "description": "test"},
+        }
+        spec_path.write_text(json.dumps(spec))
+        subprocess.run([sys.executable, str(root / "tools" / "build_tokens.py")], cwd=root, check=True, capture_output=True)
+        got = json.loads((root / "tokens.json").read_text())["core"]["test-oklab"]
+        self.assertEqual(got["hover"]["$value"], "rgba(63, 42, 50, 0.9)")
+        self.assertEqual(got["hover"]["$extensions"]["authored"], hover)
+        self.assertEqual(got["white"]["$value"], "#ffffff")
+        self.assertEqual(got["white"]["$extensions"]["authored"], "oklab(0.999994 0.0000455678 0.0000200868)")
+
 
 if __name__ == "__main__":
     unittest.main()
