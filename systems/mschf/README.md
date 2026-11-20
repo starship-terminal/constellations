@@ -146,7 +146,7 @@ python3 tools/build_tokens.py
 python3 tools/build_style_guide.py
 ```
 
-`build_components_md.py` is the kit's Claude builder and is not the writer for this package. [components.md](components.md) is written from the readings by hand.
+[components.md](components.md) is written from the readings by hand. The kit's unadapted Claude components builder was removed in the 2026-11 audit.
 
 ## Surfaces
 

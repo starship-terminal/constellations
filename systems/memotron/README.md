@@ -143,4 +143,4 @@ python3 tools/build_memotron.py
 python3 tools/build_style_guide.py
 ```
 
-`build_tokens.py` in this folder is the kit's Claude builder and does not read these files. `build_memotron.py` is the one that writes tokens.json, components.md and patterns.md.
+`build_memotron.py` writes tokens.json, components.md and patterns.md. The kit's unadapted Claude token builder was removed in the 2026-11 audit.
