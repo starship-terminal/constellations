@@ -686,8 +686,10 @@ class ProviderKeyTest(TempConfig):
         self.config.mkdir(parents=True)
         db = self.config / "provider.db"
         db.write_text(("damaged %s " % KEY) * 300)
+        (self.config / "provider.db-journal").write_text("old key %s" % KEY)
         h = self.call("delete", "/api/provider")
         self.assertEqual((h.status, h.json()["removed"], h.json()["source"]), (200, True, "none"))
+        self.assertEqual(list(self.config.iterdir()), [])
         db.write_text(("damaged %s " % KEY) * 300)
         h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2})
         self.assertTrue(h.json()["ok"])

@@ -88,9 +88,16 @@ async function open(create: boolean): Promise<DatabaseSync | null> {
   try {
     if (create) {
       await fs.mkdir(configDir(), { recursive: true, mode: 0o700 });
-      const fh = await fs.open(file, "a", 0o600);
-      await fh.close();
-      await fs.chmod(file, 0o600);
+      // Create the file 0600 only when it is new. Opening and closing an
+      // existing database outside SQLite would drop the POSIX locks another
+      // connection in this process holds on it.
+      try {
+        const fh = await fs.open(file, "wx", 0o600);
+        await fh.close();
+        await fs.chmod(file, 0o600);
+      } catch (e) {
+        if ((e as NodeJS.ErrnoException).code !== "EEXIST") throw e;
+      }
     } else {
       await fs.access(file);
     }
@@ -129,7 +136,7 @@ function run<T>(db: DatabaseSync, fn: () => T): T {
 /** Delete the database and its side files: the way out of a damaged one. */
 async function discardFiles(): Promise<void> {
   const file = providerFile();
-  for (const f of [file, `${file}-wal`, `${file}-shm`]) await fs.rm(f, { force: true });
+  for (const f of [file, `${file}-journal`, `${file}-wal`, `${file}-shm`]) await fs.rm(f, { force: true });
 }
 
 const rowToProvider = (row: Record<string, unknown> | undefined): SavedProvider | null => {

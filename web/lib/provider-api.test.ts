@@ -253,9 +253,11 @@ describe("recovery and key bytes", () => {
   it("Remove and a checked replacement recover a damaged file", async () => {
     await fs.mkdir(path.join(dir, "config"), { recursive: true });
     await fs.writeFile(providerFile(), `damaged ${KEY} `.repeat(300));
+    await fs.writeFile(`${providerFile()}-journal`, `old key ${KEY}`);
     assert.equal((await providerState()).configured, false);
     const removed = await handleRemove();
     assert.deepEqual([removed.status, removed.body.removed, removed.body.source], [200, true, "none"]);
+    assert.deepEqual(await fs.readdir(path.join(dir, "config")), []);
     await fs.writeFile(providerFile(), `damaged ${KEY} `.repeat(300));
     const saved = await handleSave({ ...GOOD, api_key: KEY2 }, okModels);
     assert.equal(saved.body.ok, true);
