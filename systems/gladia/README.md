@@ -13,7 +13,7 @@ Gladia is worth a capture because its marketing site declares a real token layer
 | [style-guide.html](style-guide.html) | One page that renders every token and drawn mocks of the glass navbar, mega-menu, pricing grid and auth card, dark and light. |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (58, 132 states) with crops and values, and the Gaps. |
 | [patterns.md](patterns.md) | How the components combine: the glass navbar and mega-menu, the hero, the pricing grid and calculator, the demo-request form, docs chrome and theme, the auth shell, mobile, motion and focus, and the theme architecture. |
-| [components/crops/](components/crops) | 109 element crops at 2x, named `{component}-{state}.png`. |
+| [components/crops/](components/crops) | 118 element crops at 2x, named `{component}-{state}.png`. |
 | [icons/](icons) | 54 product icons collected as SVG from the live pages, with `INDEX.tsv` naming each by role. |
 | [screenshots/](screenshots) | 81 quantised `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x; `-full` whole pages at CSS scale bounded at eight chunks; `mobile-*` shots at 390 x 844 @2x; `home-dark-menu-*` the five mega-menus open; `pricing-dark-toggle-realtime` the Real-time pricing mode; `docs-*-theme-dark` the docs' own dark preference. |
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the stylesheet harvest — 77 rules, 5 @font-face, 226 resolved custom properties per probe across `:root`, `.light-mode` and `.section--white` scopes), `layout.json` (multi-width layout probes), `motion.json` (the animation probe), `component-tokens.json` (the token-tree spec). |
@@ -54,7 +54,7 @@ Fonts: `core.font.family.sans` is Suisse Intl, then 3 fallbacks; `core.font.fami
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 120 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 118 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
