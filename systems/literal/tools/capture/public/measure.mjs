@@ -2,7 +2,9 @@
 //
 //   PLAYWRIGHT=... CDP=http://127.0.0.1:9339 node measure.mjs [home,signin,book,profile,explore,mobile]
 //
-// Attaches to the real Chrome that cleared Cloudflare. Consent is hidden.
+// Attaches over CDP to a Chrome started with a throwaway profile (see lib.mjs);
+// every page opens in a fresh context. A Cloudflare challenge is a boundary:
+// the page is skipped, never solved. Consent is hidden.
 // Sign in, Join, Continue, Apple, Want to read, Follow, Like and Comment
 // are measured, never activated. Email and password are not typed into.
 import fs from 'node:fs';
@@ -18,7 +20,7 @@ const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { _meta: {}, components: {} };
 out._meta ??= {};
 out.components ??= {};
-const RUN = '2026-11-18';
+const RUN = new Date().toLocaleDateString('en-CA');
 const BOOK = '/book/the-midnight-library-mrpx0';
 const PROFILE = '/kikimeower';
 
@@ -27,15 +29,15 @@ let page, cdp, current, theme = 'light';
 
 async function go(key, url, { mobile = false, colorScheme = 'light' } = {}) {
   if (page) await page.close().catch(() => {});
-  page = await newPage({ context: browser.contexts()[0], width: mobile ? 390 : 1440, height: mobile ? 844 : 900, colorScheme });
+  page = await newPage({ browser, width: mobile ? 390 : 1440, height: mobile ? 844 : 900, colorScheme });
   cdp = await page.context().newCDPSession(page);
   await cdp.send('DOM.enable');
   await cdp.send('CSS.enable');
   current = key;
   theme = colorScheme;
   log('open', key, colorScheme, url);
+  // open() throws when a bot check is still showing: recorded as a boundary, not bypassed.
   const ok = await open(page, url.startsWith('http') ? url : BASE + url, { wait: 1200 });
-  if (!ok) log('  CHALLENGE', key);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
   return ok;
 }
@@ -119,7 +121,11 @@ async function S(key, loc, states, meta) {
       delete c.missing;
       log('  ', key, st, `${s.rect.w}x${s.rect.h}`, s.style?.backgroundColor, s.style?.color);
     } catch (e) {
-      c.states[st] = { error: String(e.message || e).slice(0, 180) };
+      // Keep an earlier good reading and say the rerun failed, rather than
+      // writing the error over it.
+      const msg = String(e.message || e).slice(0, 180);
+      const prev = c.states[st];
+      c.states[st] = prev && !prev.error ? { ...prev, recaptureError: msg, recaptureRun: RUN } : { error: msg };
       log('  !', key, st, String(e.message).slice(0, 120));
     }
     if (undo) await undo().catch(() => {});
@@ -268,13 +274,11 @@ out._meta = {
   viewport: '1440x900 desktop, 390x844 mobile',
   note: 'Signed out. Sign in, Join, Continue, Apple, Want to read, Follow, Like and Comment were measured and never activated. Email and password were not typed into. Dark is prefers-color-scheme, not a clicked toggle.',
 };
-await home();
-await signin();
-await book();
-await profile();
-await explore();
-await mobile();
-await dark();
+// One page that fails (a bot check left showing, a missing control) is logged
+// and skipped; the others still run and are saved.
+for (const run of [home, signin, book, profile, explore, mobile, dark]) {
+  try { await run(); } catch (e) { log('PAGE FAILED', run.name, String(e.message || e).split('\n')[0]); }
+}
 fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 log('wrote', OUT, Object.keys(out.components).length, 'components');
 if (page) await page.close().catch(() => {});

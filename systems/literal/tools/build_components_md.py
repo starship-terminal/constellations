@@ -24,11 +24,19 @@ def flat(node, prefix=""):
             yield from flat(v, prefix + k + ".")
 
 
-BY_COLOR = {}
+# One colour map per theme: a dark row is labelled from the dark set, a light
+# row from the light set, so a value both sets hold names the theme it was read in.
+BY_COLOR = {"light": {}, "dark": {}}
 for theme in ("light", "dark"):
     for name, tok in flat(T[theme]):
         if tok.get("$type") == "color":
-            BY_COLOR.setdefault(tok["$value"].lower(), f"{theme}.{name}")
+            BY_COLOR[theme].setdefault(tok["$value"].lower(), f"{theme}.{name}")
+
+
+def theme_of(comp):
+    """The theme a component was read in, from its recorded theme or page."""
+    t = comp.get("theme") or ("dark" if str(comp.get("page", "")).endswith("-dark") else "light")
+    return "dark" if t == "dark" else "light"
 
 
 def hex_of(css):
@@ -44,9 +52,9 @@ def hex_of(css):
     return "rgba(%d, %d, %d, %g)" % (r, g, b, round(float(a), 3))
 
 
-def colour(css):
+def colour(css, theme="light"):
     h = hex_of(css)
-    tok = BY_COLOR.get(h.lower())
+    tok = BY_COLOR[theme].get(h.lower())
     return f"{h} `{tok}`" if tok else h
 
 
@@ -73,19 +81,21 @@ GROUPS = [
 ]
 
 
-def state_line(name, state, data):
+def state_line(name, state, data, theme="light"):
     style = data.get("style", {})
     bits = [f"**{state}**"]
     if data.get("rect"):
         bits.append(box(data["rect"]))
     if style.get("backgroundColor") and style["backgroundColor"] != "rgba(0, 0, 0, 0)":
-        bits.append("bg " + colour(style["backgroundColor"]))
+        bits.append("bg " + colour(style["backgroundColor"], theme))
     if style.get("color"):
-        bits.append("text " + colour(style["color"]))
+        bits.append("text " + colour(style["color"], theme))
     if style.get("fontSize"):
         bits.append(f"{style.get('fontSize')} / {style.get('fontWeight')} {style.get('fontFamily', '').split(',')[0]}")
-    if style.get("borderRadius") and style["borderRadius"] not in ("0px", "0px 0px 0px 0px"):
-        bits.append("radius " + style["borderRadius"])
+    # The capture records radius as the four corner longhands, never the shorthand.
+    corners = [style.get(k) for k in ("borderTopLeftRadius", "borderTopRightRadius", "borderBottomRightRadius", "borderBottomLeftRadius")]
+    if any(c and c != "0px" for c in corners):
+        bits.append("radius " + (corners[0] if len(set(corners)) == 1 else " ".join(corners)))
     crop = ROOT / "components" / "crops" / f"{name}-{state}.png"
     shot = f"[{name}-{state}](components/crops/{name}-{state}.png)" if crop.exists() else "no crop"
     return f"- {shot}: " + "; ".join(bits)
@@ -111,7 +121,7 @@ for title, names in GROUPS:
         lines.append(f"### {name}")
         lines.append("")
         for state, data in comp.get("states", {}).items():
-            lines.append(state_line(name, state, data))
+            lines.append(state_line(name, state, data, theme_of(comp)))
         lines.append("")
 
 lines += [

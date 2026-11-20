@@ -83,8 +83,9 @@ const browser = await chromium.launch();
 const pages = {};
 try {
   if (SNAPS) {
-    // The signed-in route's own opener (lib.mjs reads SNAPS when it loads, so import it after the check).
-    const lib = await import('./signed-in/lib.mjs');
+    // Literal was captured on the public route only; the kit's signed-in opener is not part of this package.
+    throw new Error('SNAPS is set, but this package has no signed-in route (tools/capture/signed-in/ is not shipped)');
+    const lib = null;
     const labels = fs.readdirSync(SNAPS).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5)).filter((l) => fs.existsSync(path.join(SNAPS, `${l}.html`))).sort();
     for (const label of labels) {
       const meta = lib.metaOf(label);

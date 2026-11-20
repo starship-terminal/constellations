@@ -3,8 +3,9 @@
 //   PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs \
 //     CDP=http://127.0.0.1:9339 node public.mjs [page,page,...]
 //
-// Attaches to a real Chrome that already cleared Cloudflare. The Turnstile
-// checkbox is never clicked. Consent is hidden, never answered. Sign in,
+// Attaches over CDP to a Chrome started with a throwaway profile (see lib.mjs);
+// every page opens in a fresh context. A Cloudflare challenge is a boundary:
+// open() throws and the page is skipped, never solved or clicked. Consent is hidden, never answered. Sign in,
 // Join, Continue, Sign in with Apple, Want to read, Like and Comment are
 // never activated. The email and password fields are not typed into.
 import fs from 'node:fs';
@@ -131,14 +132,13 @@ async function runSet(specs, { mobile: mob, theme }) {
     const pageName = (mob ? 'mobile-' : '') + k;
     if (pageArg.length && !pageArg.includes(name) && !pageArg.includes(pageName) && !pageArg.includes(k)) continue;
     const spec = specs[k];
-    const page = await newPage({ context: browser.contexts()[0], width: vw, height: vh, colorScheme: theme });
+    const page = await newPage({ browser, width: vw, height: vh, colorScheme: theme });
     log(name, theme);
     const prefix = `${(mob ? 'mobile-' : '') + k}-${theme}`;
     const S = new Shooter(page, prefix, vw, vh, dpr, theme);
     try {
-      const ok = await open(page, BASE + spec.path, { wait: spec.wait || 1400 });
-      if (!ok) log('  CHALLENGE', name);
-      else await spec.run(page, S);
+      await open(page, BASE + spec.path, { wait: spec.wait || 1400 });
+      await spec.run(page, S);
     } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
     total += S.count;
     await page.close().catch(() => {});
