@@ -28,7 +28,9 @@ lines = ["# LottieFiles components", "",
 
 for key in sorted(C):
     comp = C[key]
-    if key in HAND:
+    usable = [v for v in comp.get("states", {}).values() if not v.get("error")]
+    if key in HAND and (comp.get("missing") or not usable):
+        # only while the capture has no reading of its own; a later reading replaces the hand text
         title, paras = HAND[key]
         lines += [f"## {title}", ""]
         for para in paras:

@@ -30,8 +30,13 @@ def run(builder, raw=None, extra=("screenshots", "components", "tokens.json")):
     return proc, root
 
 
+SCRATCH = []
+
+
 def scratch_raw(edit):
-    d = pathlib.Path(tempfile.mkdtemp()) / "raw"
+    top = tempfile.mkdtemp()
+    SCRATCH.append(top)
+    d = pathlib.Path(top) / "raw"
     shutil.copytree(PKG / "raw", d)
     v = json.loads((d / "css-vars.json").read_text())
     edit(v["resolved"]["light"])
@@ -41,8 +46,9 @@ def scratch_raw(edit):
 
 class Builders(unittest.TestCase):
     def tearDown(self):
-        for root in getattr(self, "roots", []):
+        for root in getattr(self, "roots", []) + SCRATCH:
             shutil.rmtree(root, ignore_errors=True)
+        SCRATCH.clear()
 
     def build(self, builder, **kw):
         proc, root = run(builder, **kw)
@@ -83,12 +89,32 @@ class Builders(unittest.TestCase):
         self.assertNotEqual(proc.returncode, 0)
         self.assertIn("--font-sans missing", proc.stderr)
 
-    def test_style_guide_script_reads_the_slim_tree(self):
-        html = (PKG / "style-guide.html").read_text()
-        script = html.split("<script>", 1)[1]
-        self.assertNotIn("$value", script)
-        self.assertIn("t.v", script)
+    def test_style_guide_renders_tokens_in_both_themes(self):
+        # Runs the page's script under a small DOM stand-in and counts what it writes.
+        if not shutil.which("node"):
+            self.skipTest("node is not installed")
+        proc = subprocess.run(["node", "-e", RENDER, str(PKG / "style-guide.html")], capture_output=True, text=True)
+        self.assertEqual(proc.returncode, 0, proc.stderr)
+        counts = json.loads(proc.stdout)
+        for mode in ("light", "dark"):
+            self.assertGreater(counts[mode]["swatches"], 10, counts)
+            self.assertGreater(counts[mode]["rows"], 40, counts)
 
+
+RENDER = r"""
+const fs = require('fs');
+const html = fs.readFileSync(process.argv[1], 'utf8');
+const script = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map((m) => m[1]).join('\n');
+const els = {}; let onTheme = null;
+const el = (id) => (els[id] ??= { innerHTML: '', attrs: {}, addEventListener(t, f) { if (id === 'theme') onTheme = f; },
+  setAttribute(k, v) { this.attrs[k] = v; }, getAttribute(k) { return this.attrs[k] ?? null; } });
+global.document = { documentElement: el('html'), getElementById: el };
+new Function(script)();
+const count = () => ({ swatches: (els.pal.innerHTML.match(/class="sw"/g) || []).length, rows: (els.tokens.innerHTML.match(/<tr>/g) || []).length - 1 });
+const light = count();
+onTheme({ target: { checked: true } });
+console.log(JSON.stringify({ light, dark: count() }));
+"""
 
 if __name__ == "__main__":
     unittest.main()
