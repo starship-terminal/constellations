@@ -6,3 +6,7 @@
   background: var(--field-bg); color: var(--text); padding: 0 9px; font: inherit;
 }
 .st-actions { margin-top: 16px; }
+
+#model-provider { scroll-margin-top: 20px; }
+/* Below 900px a 52px fixed top bar covers the first screen edge. */
+@media (max-width: 899px) { #model-provider { scroll-margin-top: 72px; } }

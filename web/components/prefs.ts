@@ -57,6 +57,19 @@ export function setTheme(t: Theme) {
   window.dispatchEvent(new Event(EVENT));
 }
 
+/** Apply the stored theme and sidebar fold when the document has none yet.
+    layout.tsx's inline script does this before paint; it does not run when
+    Next falls back to client rendering the root layout (a notFound() from a
+    dynamic route does), and React never executes a script it renders itself.
+    A no-op when the script already ran. */
+export function bootPrefs() {
+  const d = document.documentElement;
+  if (!d.dataset.theme) d.dataset.theme = stored() === "system" ? systemTheme() : stored();
+  try {
+    if (localStorage.getItem("ds-nav") === "collapsed") d.dataset.nav = "collapsed";
+  } catch {}
+}
+
 export function setCollapsed(c: boolean) {
   applyNav(c);
   try {
