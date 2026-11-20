@@ -153,13 +153,17 @@ function styleOf(el, props) {
   // A url() in a computed value (a background photo, a cursor) can be a signed or per-account URL:
   // recorded as url(…), only data: and #fragment references kept.
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+  // An email address in recorded text (a field's placeholder showing a product's inbox, a label naming
+  // an account) is recorded as <email>, so no address reaches the package.
+  const noEmail = (v) => (typeof v === 'string' ? v.replace(/[\w.+%-]+@[\w-]+(?:\.[\w-]+)+/g, '<email>') : v);
   const pick = (cs) => { const o = {}; for (const p of props) o[p] = noUrl(cs[p]); return o; };
   const cs = getComputedStyle(el);
   const r = el.getBoundingClientRect();
   const out = {
     tag: el.tagName.toLowerCase(),
     classes: cls(el).slice(0, 700),
-    text: (el.innerText || el.getAttribute('aria-label') || el.getAttribute('placeholder') || '').trim().replace(/\s+/g, ' ').slice(0, 80),
+    // a field's placeholder is not its text: it is recorded under placeholder.text below
+    text: noEmail((el.innerText || el.getAttribute('aria-label') || '').trim().replace(/\s+/g, ' ')).slice(0, 80),
     rect: { x: +r.x.toFixed(1), y: +r.y.toFixed(1), w: +r.width.toFixed(2), h: +r.height.toFixed(2) },
     style: pick(cs),
   };
@@ -204,17 +208,17 @@ function styleOf(el, props) {
   if (tn && tn.parentElement !== el) {
     const t = tn.parentElement;
     const tc = getComputedStyle(t);
-    out.textStyle = { node: short(t), text: tn.textContent.trim().slice(0, 40), fontFamily: tc.fontFamily, fontSize: tc.fontSize, lineHeight: tc.lineHeight, fontWeight: tc.fontWeight, letterSpacing: tc.letterSpacing, color: tc.color, textDecorationLine: tc.textDecorationLine, textTransform: tc.textTransform };
+    out.textStyle = { node: short(t), text: noEmail(tn.textContent.trim()).slice(0, 40), fontFamily: tc.fontFamily, fontSize: tc.fontSize, lineHeight: tc.lineHeight, fontWeight: tc.fontWeight, letterSpacing: tc.letterSpacing, color: tc.color, textDecorationLine: tc.textDecorationLine, textTransform: tc.textTransform };
   }
   if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.querySelector('input')) {
     const f = el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' ? el : el.querySelector('input');
     const ph = getComputedStyle(f, '::placeholder');
-    out.placeholder = { text: f.getAttribute('placeholder'), color: ph.color, opacity: ph.opacity, fontSize: ph.fontSize, lineHeight: ph.lineHeight };
+    out.placeholder = { text: noEmail(f.getAttribute('placeholder')), color: ph.color, opacity: ph.opacity, fontSize: ph.fontSize, lineHeight: ph.lineHeight };
   }
   const pp = el.querySelector('[contenteditable=true] p[data-placeholder], [contenteditable=true] p.is-editor-empty') || (el.matches('p[data-placeholder]') ? el : null);
   if (pp) {
     const b = getComputedStyle(pp, '::before');
-    out.placeholder = { text: pp.getAttribute('data-placeholder') || noUrl(b.content).slice(0, 80), color: b.color, opacity: b.opacity, fontSize: b.fontSize, lineHeight: b.lineHeight, float: b.cssFloat, height: b.height };
+    out.placeholder = { text: noEmail(pp.getAttribute('data-placeholder') || noUrl(b.content)).slice(0, 80), color: b.color, opacity: b.opacity, fontSize: b.fontSize, lineHeight: b.lineHeight, float: b.cssFloat, height: b.height };
   }
   const svg = el.tagName.toLowerCase() === 'svg' ? el : [...el.querySelectorAll('svg')].find((s) => s.getBoundingClientRect().width > 1);
   if (svg) {

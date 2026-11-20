@@ -37,7 +37,7 @@ function props(v) {
   if (s.opacity !== '1') o.Opacity = s.opacity;
   if (s.cursor && s.cursor !== 'auto') o.Cursor = s.cursor;
   if (v.icon) o.Icon = `${v.icon.w} x ${v.icon.h}, colour ${hex(v.icon.color)}${v.icon.fill && v.icon.fill !== 'none' && hex(v.icon.fill) !== hex(v.icon.color) ? ', fill ' + hex(v.icon.fill) : ''}`;
-  if (v.placeholder) o.Placeholder = `${hex(v.placeholder.color)}, opacity ${v.placeholder.opacity}`;
+  if (v.placeholder) o.Placeholder = `${v.placeholder.text ? `"${esc(v.placeholder.text).slice(0, 40)}" ` : ''}${hex(v.placeholder.color)}, opacity ${v.placeholder.opacity}`;
   for (const pe of ['::before', '::after']) if (v[pe]) o[pe] = `${v[pe].width} x ${v[pe].height}, ${v[pe].position}, bg ${hex(v[pe].backgroundColor)}${v[pe].backgroundImage && v[pe].backgroundImage !== 'none' ? ' ' + hex(v[pe].backgroundImage).slice(0, 120) : ''}, radius ${v[pe].borderRadius}${v[pe].boxShadow !== 'none' ? ', shadow ' + hex(v[pe].boxShadow) : ''}`;
   if (v.paint) o['Painted layers'] = v.paint.slice(0, 6).map((p) => [p.node, p.size, p.bg && 'bg ' + hex(p.bg), p.bgImage && 'image ' + hex(p.bgImage).slice(0, 90), p.border && 'border ' + hex(p.border), p.radius && 'r ' + p.radius, p.shadow && 'shadow ' + hex(p.shadow), p.outline && 'outline ' + hex(p.outline)].filter(Boolean).join(' ')).join('; ');
   if (v.ancestors) o['Ancestor paint'] = v.ancestors.map((a) => `${a.up} up ${a.node}${a.bg !== 'rgba(0, 0, 0, 0)' ? ' bg ' + hex(a.bg) : ''}${a.shadow ? ' shadow ' + hex(a.shadow) : ''}${a.outline ? ' outline ' + hex(a.outline) : ''}`).join('; ');
