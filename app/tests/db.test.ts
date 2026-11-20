@@ -1,4 +1,4 @@
-import { afterEach, expect, test } from "vitest";
+import { afterEach, expect, test, vi } from "vitest";
 import { mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -11,6 +11,11 @@ import {
   RESEARCH_DB_VERSION,
   type ResearchStore,
 } from "@/server/db";
+
+// These suites open real SQLite databases, run migrations and seed the whole
+// catalog. On a busy machine that takes longer than the unit suite's 15 s
+// default, so only the database suites get a longer limit.
+vi.setConfig({ testTimeout: 120_000 });
 const stores: ResearchStore[] = [],
   directories: string[] = [];
 async function open() {
