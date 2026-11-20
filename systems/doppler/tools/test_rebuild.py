@@ -83,5 +83,49 @@ class RebuildTest(unittest.TestCase):
         built = (root / "raw" / "measurements.md").read_text()
         self.assertEqual((PKG / "raw" / "measurements.md").read_text(), built)
 
+    def rebuild_with(self, edit_utilities=None, edit_components=None):
+        d = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, d)
+        root = pathlib.Path(d)
+        shutil.copytree(PKG / "tools", root / "tools", ignore=shutil.ignore_patterns("__pycache__"))
+        shutil.copytree(PKG / "raw", root / "raw")
+        for d_ in ("screenshots", "components/crops"):
+            (root / d_).mkdir(parents=True)
+        for name, edit in (("utility-classes.json", edit_utilities), ("components-computed.json", edit_components)):
+            if edit:
+                f = root / "raw" / name
+                j = json.loads(f.read_text())
+                edit(j)
+                f.write_text(json.dumps(j))
+        for b in ("build_component_tokens.py", "build_tokens.py", "build_components_md.py"):
+            subprocess.run([sys.executable, str(root / "tools" / b)], cwd=root, check=True, capture_output=True)
+        return root
+
+    def test_tailwind_opacity_reaches_tokens_json(self):
+        def half(j):
+            for r in j["classes"]:
+                if r["selector"] == ".bg-warm-black":
+                    r["properties"]["background-color"] = "rgb(28 22 36/var(--tw-bg-opacity,0.5))"
+        root = self.rebuild_with(edit_utilities=half)
+        out = json.loads((root / "tokens.json").read_text())
+        self.assertEqual(out["core"]["color"]["warm"]["black"]["$value"], "rgba(28, 22, 36, 0.5)")
+
+    def test_failed_focus_is_left_out(self):
+        # doppler's own readings have no failed focus: plant one and a skipped state.
+        def plant(j):
+            j["components"]["nav-cta"]["states"]["focus-visible"]["via"] = "focus failed"
+            j["components"]["nav-link"]["states"]["focus-visible"] = {"skipped": "focus failed: keyboard focus did not reach the element"}
+        root = self.rebuild_with(edit_components=plant)
+        md = (root / "components.md").read_text()
+        self.assertIn("Focus could not be captured on 2 more", md)
+        rings = re.search(r"\*\*Focus\.\*\* .*", md).group(0).split("Focus could not be captured")[0]
+        self.assertNotIn("`nav-cta`", rings)
+        node = shutil.which("node")
+        if node:
+            subprocess.run([node, str(root / "tools" / "capture" / "public" / "build-measurements.mjs")], cwd=root, check=True, capture_output=True)
+            m = (root / "raw" / "measurements.md").read_text()
+            for k in ("nav-cta", "nav-link"):
+                self.assertIn("| Skipped |", m.split(f"#### {k}\n")[1].split("\n#### ")[0], k)
+
 if __name__ == "__main__":
     unittest.main()
