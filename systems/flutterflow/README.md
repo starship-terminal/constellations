@@ -12,7 +12,7 @@ FlutterFlow is a visual builder for Flutter apps that leads its site with an AI 
 | [style-guide.html](style-guide.html) | One self-contained page rendering every token and the main components (nav bar, buttons, field, composer, segmented control, tag chip, select popup, plan card) with a working light/dark toggle |
 | [components.md](components.md) | The discovery list of every page and view, one entry per measured component (74) with crops, the shared values (focus rings, pressed scale, motion, layout grids, card shapes), the icon index and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the shared frame, the prompt-first hero, pricing, the enterprise form, feature tabs, Studio pages, and how the two themes rebind the same surfaces |
-| [components/crops/](components/crops) | 159 element screenshots, `{component}-{state}.png`, at 2x |
+| [components/crops/](components/crops) | 158 element screenshots, `{component}-{state}.png`, at 2x |
 | [icons/](icons) | 109 inline SVGs lifted from the pages, named by role in INDEX.tsv, `currentColor` where the site drew them so |
 | [screenshots/](screenshots) | 54 full-page and state captures `{page}-{theme}-{state}.png` (256-colour; full colour stays in scratch), each with a `.capture.json` sidecar carrying provenance |
 | [raw/](raw) | The readings every value traces to: css-vars.json (every declaration, resolved per theme and viewport), components-computed.json, measurements.md, layout.json, motion.json, component-tokens.json (the token spec) |
@@ -53,7 +53,7 @@ Fonts: `core.fontFamily.sans` is Inter, then 6 fallbacks; `core.fontFamily.mono`
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 159 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 158 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 

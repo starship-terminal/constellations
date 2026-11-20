@@ -13,7 +13,7 @@ Fibery is worth a capture because its public site is a fully declared token laye
 | [style-guide.html](style-guide.html) | One page that renders every token and drawn mocks of the chrome, hero, pricing, sign-up and login — light only, matching the product's public surface. |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (45, 109 states) with crops and values, and the Gaps. |
 | [patterns.md](patterns.md) | How the components combine: the cream chrome and its hover dropdowns, the soup-field hero, pricing, the template gallery, the sign-up wizard, the login panel, mobile, motion and focus. |
-| [components/crops/](components/crops) | 106 element crops at 2x, named `{component}-{state}.png`. |
+| [components/crops/](components/crops) | 103 element crops at 2x, named `{component}-{state}.png`. |
 | [icons/](icons) | 140 SVG glyphs lifted from the served pages (nav/menu/template/social/product icons), indexed in `icons/INDEX.tsv`. |
 | [screenshots/](screenshots) | 47 quantised `{page}-light-{state}.png` captures, each with a `.capture.json` sidecar. Desktop 1440 x 900 at 1x; `-full` whole pages at 1x (the FAQ page was scroll-stitched — see the sidecar); `mobile-*` shots at 390 x 844 @2x; `home-light-menu-*` the two header dropdowns; `mobile-home-light-drawer` the nav drawer. |
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the stylesheet harvest — the `:root` declarations, resolved values and @font-face rules), `component-tokens.json` (the token-tree spec). |
@@ -53,7 +53,7 @@ Fonts: `core.font.family.suisse` is Suisse Intl, then 1 fallback; `core.font.fam
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 106 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 103 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -126,7 +126,7 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 - 18 desktop routes and 4 mobile routes captured signed out, all on the single light theme (the marketing pages, the sign-up wizard and the sign-in share the same stylesheets).
 - 45 components measured in 109 states, including the opened header dropdowns, the mobile drawer, the toggled billing switch, the revealed e-mail step, forced-pressed controls and typed-then-cleared fields.
-- 140 SVG icons lifted into `icons/`; 106 component crops in `components/crops/`.
+- 140 SVG icons lifted into `icons/`; 103 component crops in `components/crops/`.
 - Missing surfaces (declared in the catalog's `capture.gaps`): every post-login app surface, the wizard's later steps, the demo scheduler, and all but one article/template detail per index.
 
 ## Do and don't
