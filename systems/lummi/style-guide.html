@@ -4,247 +4,136 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lummi style guide</title>
-<meta name="description" content="Lummi public-site tokens, rendered from tokens.json. Light is painted. Dark is the declared twin.">
+<meta name="description" content="Lummi public design tokens, rendered from tokens.json.">
 <style>
 :root {
-  --color-ink: #09090b;
-  --color-inkHover: #18181b;
-  --color-white: #ffffff;
-  --color-offwhite: #fafafa;
-  --color-muted: #71717a;
-  --color-wash: #f4f4f5;
-  --color-black: #000000;
-  --color-zinc700: #3f3f46;
-  --color-proYellow: #e7b008;
   --font-family-sans: Inter, "Inter Fallback";
-  --font-family-pro: "DM Sans", sans-serif;
+  --font-size-display: 141.12px;
+  --font-size-body: 16px;
+  --font-size-label: 14px;
+  --font-lineHeight-display: 144px;
+  --font-lineHeight-body: 24px;
+  --font-lineHeight-label: 24px;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-size-tag: 12px;
-  --font-size-ui: 14px;
-  --font-size-body: 16px;
-  --font-size-lede: 20px;
-  --font-size-section: 18px;
-  --font-size-explore: 64px;
-  --font-size-search: 104px;
-  --font-size-display: 141.12px;
-  --font-lineHeight-display: 144px;
-  --font-lineHeight-explore: 70.4px;
-  --font-lineHeight-lede: 28px;
-  --font-lineHeight-body: 24px;
-  --font-lineHeight-ui: 24px;
-  --font-lineHeight-tag: 14px;
-  --typography-display: var(--font-weight-semibold) var(--font-size-display)/var(--font-lineHeight-display) var(--font-family-sans);
-  --typography-heading: var(--font-weight-semibold) var(--font-size-explore)/var(--font-lineHeight-explore) var(--font-family-sans);
-  --typography-body: var(--font-weight-regular) var(--font-size-body)/var(--font-lineHeight-body) var(--font-family-sans);
-  --typography-label: var(--font-weight-medium) var(--font-size-ui)/var(--font-lineHeight-ui) var(--font-family-sans);
-  --typography-caption: var(--font-weight-regular) var(--font-size-tag)/var(--font-lineHeight-tag) var(--font-family-sans);
-  --space-1: 4px;
-  --space-2: 8px;
+  --font-tracking-display: -7.056px;
+  --radius-sm: 4px;
   --space-3: 12px;
-  --space-4: 16px;
-  --space-6: 24px;
-  --space-10: 40px;
-  --space-12: 48px;
-  --radius-control: 4px;
-  --radius-tab: 2px;
-  --radius-menu: 6px;
-  --radius-card: 8px;
-  --radius-pill: 9999px;
-  --border-hairline: 1px;
-  --border-focus: 2px;
-  --elevation-menu: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --sizing-control: 40px;
-  --sizing-field: 48px;
-  --sizing-search: 38px;
-  --sizing-icon: 20px;
-  --sizing-focus: 2px;
-  --motion-fast: 150ms;
-  --motion-slow: 300ms;
-  --motion-ease: cubic-bezier(0.4, 0, 0.2, 1);
-  --layout-desktop: 1440px;
-  --layout-phone: 390px;
-  --layout-nav: 64px;
+  --size-control: 40px;
+  --size-field: 38px;
+  --typography-display: var(--font-weight-semibold) var(--font-size-display)/var(--font-lineHeight-display) var(--font-family-sans);
+  --typography-body: var(--font-weight-regular) var(--font-size-body)/var(--font-lineHeight-body) var(--font-family-sans);
+  --typography-label: var(--font-weight-medium) var(--font-size-label)/var(--font-lineHeight-label) var(--font-family-sans);
   --page: #ffffff;
   --surface: #ffffff;
-  --overlay: #ffffff;
+  --popover: #ffffff;
   --text: #09090b;
+  --ink-on-surface: #09090b;
+  --ink-on-popover: #09090b;
+  --ink-faint: #a1a1aa;
   --textMuted: #71717a;
-  --textFaint: #a1a1aa;
   --accent: #18181b;
-  --onAccent: #fafafa;
-  --accentHover: #3f3f46;
-  --secondary: #f4f4f5;
+  --brand-foreground: #fafafa;
+  --brand-hover: #3f3f46;
+  --brand-secondary: #f4f4f5;
+  --brand-secondary-foreground: #18181b;
+  --brand-secondary-hover: #d4d4d8;
+  --brand-quiet: #f4f4f5;
+  --brand-quiet-foreground: #18181b;
+  --status-destructive: #ef4343;
+  --status-destructive-foreground: #fafafa;
+  --status-destructive-hover: #dc2828;
+  --status-yellow: #e7b008;
   --border: #e4e4e7;
-  --danger: #ef4343;
+  --line-input: #e4e4e7;
   --focus: #a1a1aa;
-  --warning: #e7b008;
-  --info: #6467f2;
-  --surfaceMuted: #f4f4f5;
-  --surfaceFaint: #fafafa;
-  --input: #e4e4e7;
-  --textOnAccent: var(--color-offwhite);
-  --link: var(--color-ink);
-  --scrim: rgba(0, 0, 0, 0.8);
-  --accentPressed: var(--color-zinc700);
-  --sg-sans: Inter, "Inter Fallback", system-ui, sans-serif;
-  --sg-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --highlight: #6467f2;
   color-scheme: light;
+  --sg-sans: Inter, ui-sans-serif, system-ui, sans-serif;
 }
 [data-mode="dark"] {
   --page: #09090b;
   --surface: #09090b;
-  --overlay: #09090b;
+  --popover: #09090b;
   --text: #fafafa;
+  --ink-on-surface: #fafafa;
+  --ink-on-popover: #fafafa;
+  --ink-faint: #71717a;
   --textMuted: #a1a1aa;
-  --textFaint: #71717a;
   --accent: #fafafa;
-  --onAccent: #18181b;
-  --accentHover: #e4e4e7;
-  --secondary: #27272a;
+  --brand-foreground: #18181b;
+  --brand-hover: #e4e4e7;
+  --brand-secondary: #27272a;
+  --brand-secondary-foreground: #fafafa;
+  --brand-secondary-hover: #3f3f46;
+  --brand-quiet: #27272a;
+  --brand-quiet-foreground: #fafafa;
+  --status-destructive: #dc2828;
+  --status-destructive-foreground: #fafafa;
+  --status-destructive-hover: #ef4343;
+  --status-yellow: #e7b008;
   --border: #3f3f46;
-  --danger: #dc2828;
+  --line-input: #27272a;
   --focus: #d4d4d8;
-  --warning: #e7b008;
-  --info: #6467f2;
-  --surfaceMuted: #27272a;
-  --surfaceFaint: #18181b;
-  --input: #27272a;
+  --highlight: #6467f2;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sg-sans); }
-main { max-width: 1040px; margin: 0 auto; padding: 40px 24px 80px; }
-h1 { font: 600 48px/52px var(--sg-sans); letter-spacing: -1.5px; margin: 0 0 8px; }
-h2 { font: 600 13px/1 var(--sg-sans); letter-spacing: .06em; text-transform: none; color: var(--textMuted); margin: 48px 0 12px; }
-p { max-width: 68ch; color: var(--textMuted); }
+main { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 600 40px/48px var(--sg-sans); letter-spacing: -1px; margin: 0 0 8px; }
+h2 { font: 500 13px/20px var(--sg-sans); margin: 40px 0 12px; }
 .row { display: flex; flex-wrap: wrap; gap: 12px; }
-.sw { width: 148px; }
-.sw i { display: block; height: 48px; border-radius: 4px; border: 1px solid var(--border); }
-.sw b, .sw span { display: block; font: 500 12px/1.4 var(--sg-mono); color: var(--text); }
-.sw span { font-weight: 400; color: var(--textMuted); }
-.bar { display: flex; align-items: center; gap: 16px; height: 64px; padding: 0 20px; background: var(--page); color: var(--text); }
-.bar .mark { font-weight: 600; font-style: italic; }
-.bar a { color: var(--textMuted); font-weight: 500; text-decoration: none; font-size: 14px; }
-.bar a.on { color: var(--text); box-shadow: inset 0 -2px 0 var(--accent); }
-.bar .sp { flex: 1; }
-.bar .search { flex: 1; height: 40px; border-radius: 9999px; border: 1px solid var(--border); display: flex; align-items: center; padding: 0 16px; color: var(--textFaint); font-size: 14px; }
-.pro { display: inline-flex; align-items: center; height: 40px; padding: 0 12px; border-radius: 4px; background: #000; color: #fff; font: 500 14px/1 var(--sg-sans); border: 0; }
-.login { color: var(--text); font: 500 14px/1 var(--sg-sans); text-decoration: none; }
-.hero { padding: 28px 0 8px; }
-.hero h3 { margin: 0; font: 600 64px/70px var(--sg-sans); letter-spacing: -2px; }
-.hero p { color: var(--text); font-size: 20px; line-height: 28px; }
-.tools { display: flex; gap: 8px; margin: 20px 0; }
-.chip { height: 40px; padding: 0 12px; border-radius: 4px; border: 1px solid transparent; background: transparent; color: var(--text); font: 500 14px/1 var(--sg-sans); }
-.chip.on { background: var(--surfaceMuted); }
-.card { display: flex; gap: 24px; padding: 16px; border-radius: 8px; background: var(--surface); box-shadow: 0 8px 24px rgba(0,0,0,.08); max-width: 720px; }
-.card .shot { width: 220px; height: 160px; border-radius: 4px; background: var(--surfaceMuted); }
-.card h4 { margin: 0 0 6px; font: 600 22px/28px var(--sg-sans); }
-.tag { display: inline-flex; height: 24px; align-items: center; padding: 0 8px; border-radius: 9999px; background: var(--surfaceMuted); font: 500 12px/14px var(--sg-sans); margin-right: 6px; }
-.field { display: flex; align-items: center; height: 48px; padding: 0 16px; border-radius: 4px; border: 1px solid var(--border); background: var(--surface); color: var(--textFaint); max-width: 360px; }
-.btn { display: inline-flex; align-items: center; height: 48px; padding: 0 16px; border-radius: 4px; background: var(--accent); color: var(--onAccent); border: 0; font: 600 14px/1 var(--sg-sans); }
-.note { font-size: 13px; }
-table { border-collapse: collapse; width: 100%; font-size: 14px; }
-td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
-.toggle { margin-left: auto; font: 500 13px/1 var(--sg-sans); background: var(--surfaceMuted); color: var(--text); border: 0; border-radius: 4px; height: 32px; padding: 0 10px; cursor: pointer; }
+.sw { width: 140px; }
+.sw i { display: block; height: 56px; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+.sw b, .sw span { display: block; font-size: 12px; line-height: 16px; }
+.sw span { color: var(--textMuted); }
+button.demo, a.demo {
+  display: inline-flex; align-items: center; height: var(--size-control); padding: 0 12px;
+  border-radius: var(--radius-sm); background: var(--accent); color: var(--brand-foreground);
+  font: 500 14px/24px var(--sg-sans); text-decoration: none; border: 0;
+}
+.field {
+  height: var(--size-field); border: 1px solid var(--line-input); border-radius: var(--radius-sm);
+  padding: 0 12px; background: var(--page); color: var(--text); font: 500 14px/24px var(--sg-sans); width: 280px;
+}
+.card { background: var(--surface); color: var(--ink-on-surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px; max-width: 320px; }
+.muted { color: var(--textMuted); }
+.toggle { margin-left: 16px; font-size: 14px; }
 </style>
 </head>
 <body>
 <main>
-  <div class="bar">
-    <span class="mark">Lummi</span>
-    <a class="on" href="#colours">Photos</a>
-    <a href="#type">Illustrations</a>
-    <a href="#components">3D</a>
-    <span class="search">Search or create anything!</span>
-    <span class="pro">Try Pro for free</span>
-    <a class="login" href="#components">Log in</a>
-    <button class="toggle" type="button" id="theme">Dark declared</button>
-  </div>
-  <div class="hero">
-    <h1>no more boring design</h1>
-    <p>The future of visual creation. Powered by humans and AI everywhere</p>
-  </div>
-  <h2 id="colours">Colour roles</h2>
-  <p class="note">Light values are the painted :root roles. Dark values are the declared --*-dark twins. The toggle shows that declared set. The captured pages never painted it.</p>
+  <h1>Lummi <button class="toggle" type="button" onclick="document.documentElement.toggleAttribute('data-mode') || document.documentElement.setAttribute('data-mode', document.documentElement.getAttribute('data-mode')==='dark'?'light':'dark'); if(document.documentElement.getAttribute('data-mode')==='light') document.documentElement.removeAttribute('data-mode');">Theme</button></h1>
+  <p class="muted">Public site tokens from lummi.ai. Light is the default. Dark follows prefers-color-scheme when no data-theme=&quot;light&quot; is set. This page toggles the measured dark set.</p>
+  <h2>Colour</h2>
   <div class="row">
-    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>background</span></div>
-    <div class="sw"><i style="background:var(--surface)"></i><b>surface</b><span>card</span></div>
-    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>foreground</span></div>
-    <div class="sw"><i style="background:var(--textMuted)"></i><b>muted</b><span>muted-foreground</span></div>
-    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>primary</span></div>
-    <div class="sw"><i style="background:var(--border)"></i><b>border</b><span>border</span></div>
-    <div class="sw"><i style="background:var(--danger)"></i><b>danger</b><span>destructive</span></div>
-    <div class="sw"><i style="background:var(--warning)"></i><b>warning</b><span>yellow</span></div>
-    <div class="sw"><i style="background:var(--info)"></i><b>info</b><span>highlight</span></div>
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>var(--page)</span></div>
+    <div class="sw"><i style="background:var(--surface)"></i><b>surface</b><span>var(--surface)</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>var(--text)</span></div>
+    <div class="sw"><i style="background:var(--textMuted)"></i><b>muted</b><span>var(--textMuted)</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>var(--accent)</span></div>
+    <div class="sw"><i style="background:var(--border)"></i><b>border</b><span>var(--border)</span></div>
+    <div class="sw"><i style="background:var(--status-destructive)"></i><b>destructive</b><span>var(--status-destructive)</span></div>
+    <div class="sw"><i style="background:var(--highlight)"></i><b>highlight</b><span>var(--highlight)</span></div>
+    <div class="sw"><i style="background:var(--focus)"></i><b>focus</b><span>var(--focus)</span></div>
   </div>
-  <h2 id="type">Type</h2>
-  <p style="font:600 64px/70px var(--sg-sans);letter-spacing:-1.5px;color:var(--text)">Explore</p>
-  <p style="font:500 14px/24px var(--sg-sans);color:var(--text)">Photos, Illustrations, 3D. 14px medium.</p>
-  <h2 id="components">Components</h2>
-  <div class="tools">
-    <span class="chip on">Tools</span>
-    <span class="chip">Reframe</span>
-    <span class="chip">Restyle</span>
-    <span class="chip">Background removal</span>
-  </div>
-  <div class="card">
-    <div class="shot"></div>
-    <div>
-      <h4>Martini with Garnish</h4>
-      <p>A public image page. Download stays a button. It was not pressed.</p>
-      <span class="tag">cocktail</span><span class="tag">still life</span>
-    </div>
-  </div>
-  <h2>Sign-in wall</h2>
-  <p class="note">The login card was measured. Continue was not pressed. The address below is a placeholder, not an account.</p>
-  <div class="field">Email address</div>
-  <p><button class="btn" type="button">Continue</button></p>
-  <h2>Token values</h2>
-  <p class="note">Every group below is read from the token tree. A colour paints its swatch. Other values are printed as recorded.</p>
-  <div id="tokens"></div>
+  <h2>Type</h2>
+  <p style="font:var(--typography-display); margin:0">no more boring design</p>
+  <p style="font:var(--typography-body)">Body at 16/24, Inter.</p>
+  <p style="font:var(--typography-label)">Label at 14/24 medium.</p>
+  <h2>Controls</h2>
+  <p><button class="demo" type="button">Try Pro for free</button></p>
+  <p><input class="field" placeholder="Search or create anything!" readonly></p>
+  <div class="card"><b>Card</b><p class="muted">Surface on the page ground, 4px radius, 1px border.</p></div>
 </main>
 <script>
-const TOKENS = {"core":{"color":{"ink":{"v":"#09090b","t":"color","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: body and h1 color rgb(9, 9, 11)"},"inkHover":{"v":"#18181b","t":"color","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: Log in hover and selected nav rgb(24, 24, 27)"},"white":{"v":"#ffffff","t":"color","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: page and popover background"},"offwhite":{"v":"#fafafa","t":"color","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: primary button label rgb(250, 250, 250)"},"muted":{"v":"#71717a","t":"color","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: unselected nav and license line rgb(113, 113, 122)"},"wash":{"v":"#f4f4f5","t":"color","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: icon-button hover and tag pill rgb(244, 244, 245)"},"black":{"v":"#000000","t":"color","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: Try Pro for free fill"},"zinc700":{"v":"#3f3f46","t":"color","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: Try Pro and Continue hover rgb(63, 63, 70)"},"proYellow":{"v":"#e7b008","t":"color","s":"Derived from a measured value on the same capture: declared --yellow 45 93% 47%, converted from HSL. The word Pro is painted with this role, not a sampled glyph"}},"font":{"family":{"sans":{"v":"Inter, \"Inter Fallback\"","t":"fontFamily","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: body font-family"},"pro":{"v":"\"DM Sans\", sans-serif","t":"fontFamily","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: /pro marketing CTA, a separate Webflow page"}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: lede and body"},"medium":{"v":500,"t":"fontWeight","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: nav, buttons, search"},"semibold":{"v":600,"t":"fontWeight","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: display and Continue"},"bold":{"v":700,"t":"fontWeight","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: Forgot password?"}},"size":{"tag":{"v":"12px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: photo tag pill and license line"},"ui":{"v":"14px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: nav, buttons, fields, search"},"body":{"v":"16px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: body default"},"lede":{"v":"20px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: home subtitle"},"section":{"v":"18px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: Similar images heading"},"explore":{"v":"64px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: Explore h1"},"search":{"v":"104px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: search results h1 Forest"},"display":{"v":"141.12px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: home h1 at 1440, text-[9.6vw]"}},"lineHeight":{"display":{"v":"144px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: home h1"},"explore":{"v":"70.4px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: Explore h1"},"lede":{"v":"28px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: home subtitle"},"body":{"v":"24px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: body"},"ui":{"v":"24px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: 14px nav line-height"},"tag":{"v":"14px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: tag pill"}}},"typography":{"display":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.display}","fontWeight":"{font.weight.semibold}","lineHeight":"{font.lineHeight.display}","letterSpacing":"-7.056px"},"t":"typography","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: home h1, tracking-tighter"},"heading":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.explore}","fontWeight":"{font.weight.semibold}","lineHeight":"{font.lineHeight.explore}"},"t":"typography","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: Explore h1"},"body":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.body}","fontWeight":"{font.weight.regular}","lineHeight":"{font.lineHeight.body}"},"t":"typography","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: body default"},"label":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.ui}","fontWeight":"{font.weight.medium}","lineHeight":"{font.lineHeight.ui}"},"t":"typography","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: nav and buttons"},"caption":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.tag}","fontWeight":"{font.weight.regular}","lineHeight":"{font.lineHeight.tag}"},"t":"typography","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: license line"}},"space":{"1":{"v":"4px","t":"dimension","s":"Derived from a measured value on the same capture: 4px step the 12/16/40 control sizes sit on"},"2":{"v":"8px","t":"dimension","s":"Derived from a measured value on the same capture: 4px times 2"},"3":{"v":"12px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: Try Pro padding-inline"},"4":{"v":"16px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: login field padding-inline and Continue"},"6":{"v":"24px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: body line-height"},"10":{"v":"40px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: nav link, icon button and Try Pro height"},"12":{"v":"48px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: login field and Continue height"}},"radius":{"control":{"v":"4px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: Try Pro, Download, login field, icon button, --radius 0.25rem"},"tab":{"v":"2px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: By Subject tab"},"menu":{"v":"6px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: Daily picks menu and search dialog"},"card":{"v":"8px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: explore category tile"},"pill":{"v":"9999px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: tag pill and heart icon button"}},"border":{"hairline":{"v":"1px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: login field and menu panel border"},"focus":{"v":"2px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: focus-visible outline width"}},"elevation":{"menu":{"v":[{"color":"rgba(0, 0, 0, 0.1)","offsetX":"0px","offsetY":"4px","blur":"6px","spread":"-1px"},{"color":"rgba(0, 0, 0, 0.1)","offsetX":"0px","offsetY":"2px","blur":"4px","spread":"-2px"}],"t":"shadow","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: Daily picks menu and search dialog box-shadow"}},"sizing":{"control":{"v":"40px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: header buttons"},"field":{"v":"48px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: login fields and Continue"},"search":{"v":"38px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: header search input"},"icon":{"v":"20px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: header icon buttons use a 20px svg"},"focus":{"v":"2px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: focus-visible outline"}},"motion":{"fast":{"v":"150ms","t":"duration","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: button and link transition-duration 0.15s"},"slow":{"v":"300ms","t":"duration","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: opacity transition 0.3s on one header control"},"ease":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: cubic-bezier(0.4, 0, 0.2, 1) on nav and buttons"}},"layout":{"desktop":{"v":"1440px","t":"dimension","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: desktop viewport innerWidth"},"phone":{"v":"390px","t":"dimension","s":"Phone capture width requested and used, 390x844 at 2x"},"nav":{"v":"64px","t":"dimension","s":"Derived from a measured value on the same capture: sticky tool bar sits at top-16, 64px under the header"}}},"light":{"page":{"v":"#ffffff","t":"color","s":"Declared on :root in the lummi.ai stylesheet, resolved 2026-11-18, light: --background = 0 0% 100%"},"surface":{"v":"#ffffff","t":"color","s":"Declared on :root in the lummi.ai stylesheet, resolved 2026-11-18, light: --card = 0 0% 100%"},"overlay":{"v":"#ffffff","t":"color","s":"Declared on :root in the lummi.ai stylesheet, resolved 2026-11-18, light: --popover = 0 0% 100%"},"text":{"v":"#09090b","t":"color","s":"Declared on :root in the lummi.ai stylesheet, resolved 2026-11-18, light: --foreground = 240 10% 4%"},"textMuted":{"v":"#71717a","t":"color","s":"Declared on :root in the lummi.ai stylesheet, resolved 2026-11-18, light: --muted-foreground = 240 4% 46%"},"textFaint":{"v":"#a1a1aa","t":"color","s":"Declared on :root in the lummi.ai stylesheet, resolved 2026-11-18, light: --faint-foreground = 240 5% 65%"},"accent":{"v":"#18181b","t":"color","s":"Declared on :root in the lummi.ai stylesheet, resolved 2026-11-18, light: --primary = 240 6% 10%"},"onAccent":{"v":"#fafafa","t":"color","s":"Declared on :root in the lummi.ai stylesheet, resolved 2026-11-18, light: --primary-foreground = 0 0% 98%"},"accentHover":{"v":"#3f3f46","t":"color","s":"Declared on :root in the lummi.ai stylesheet, resolved 2026-11-18, light: --primary-hover = 240 5% 26%"},"secondary":{"v":"#f4f4f5","t":"color","s":"Declared on :root in the lummi.ai stylesheet, resolved 2026-11-18, light: --secondary = 240 5% 96%"},"border":{"v":"#e4e4e7","t":"color","s":"Declared on :root in the lummi.ai stylesheet, resolved 2026-11-18, light: --border = 240 6% 90%"},"danger":{"v":"#ef4343","t":"color","s":"Declared on :root in the lummi.ai stylesheet, resolved 2026-11-18, light: --destructive = 0 84% 60%"},"focus":{"v":"#a1a1aa","t":"color","s":"Declared on :root in the lummi.ai stylesheet, resolved 2026-11-18, light: --ring = 240 5% 65%"},"warning":{"v":"#e7b008","t":"color","s":"Declared on :root in the lummi.ai stylesheet, resolved 2026-11-18, light: --yellow = 45 93% 47%"},"info":{"v":"#6467f2","t":"color","s":"Declared on :root in the lummi.ai stylesheet, resolved 2026-11-18, light: --highlight = 239,84%,67%"},"surfaceMuted":{"v":"#f4f4f5","t":"color","s":"Declared on :root in the lummi.ai stylesheet, resolved 2026-11-18, light: --muted = 240 5% 96%"},"surfaceFaint":{"v":"#fafafa","t":"color","s":"Declared on :root in the lummi.ai stylesheet, resolved 2026-11-18, light: --faint = 0 0% 98%"},"input":{"v":"#e4e4e7","t":"color","s":"Declared on :root in the lummi.ai stylesheet, resolved 2026-11-18, light: --input = 240 6% 90%"},"textOnAccent":{"v":"{color.offwhite}","t":"color","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: Try Pro label rgb(250, 250, 250)"},"link":{"v":"{color.ink}","t":"color","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: Log in and license links use the ink, not a blue"},"scrim":{"v":"rgba(0, 0, 0, 0.8)","t":"color","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: search dialog overlay class bg-black/80"},"accentPressed":{"v":"{color.zinc700}","t":"color","s":"Measured computed style, public lummi.ai, 2026-11-18, light, 1440x900: Try Pro and Continue pressed/hover fill"}},"dark":{"page":{"v":"#09090b","t":"color","s":"Declared as a --*-dark custom property on :root, 2026-11-18. Not painted on the captured pages.: --background = 240 10% 4%"},"surface":{"v":"#09090b","t":"color","s":"Declared as a --*-dark custom property on :root, 2026-11-18. Not painted on the captured pages.: --card = 240 10% 4%"},"overlay":{"v":"#09090b","t":"color","s":"Declared as a --*-dark custom property on :root, 2026-11-18. Not painted on the captured pages.: --popover = 240 10% 4%"},"text":{"v":"#fafafa","t":"color","s":"Declared as a --*-dark custom property on :root, 2026-11-18. Not painted on the captured pages.: --foreground = 0 0% 98%"},"textMuted":{"v":"#a1a1aa","t":"color","s":"Declared as a --*-dark custom property on :root, 2026-11-18. Not painted on the captured pages.: --muted-foreground = 240 5% 65%"},"textFaint":{"v":"#71717a","t":"color","s":"Declared as a --*-dark custom property on :root, 2026-11-18. Not painted on the captured pages.: --faint-foreground = 240 4% 46%"},"accent":{"v":"#fafafa","t":"color","s":"Declared as a --*-dark custom property on :root, 2026-11-18. Not painted on the captured pages.: --primary = 0 0% 98%"},"onAccent":{"v":"#18181b","t":"color","s":"Declared as a --*-dark custom property on :root, 2026-11-18. Not painted on the captured pages.: --primary-foreground = 240 6% 10%"},"accentHover":{"v":"#e4e4e7","t":"color","s":"Declared as a --*-dark custom property on :root, 2026-11-18. Not painted on the captured pages.: --primary-hover = 240 6% 90%"},"secondary":{"v":"#27272a","t":"color","s":"Declared as a --*-dark custom property on :root, 2026-11-18. Not painted on the captured pages.: --secondary = 240 4% 16%"},"border":{"v":"#3f3f46","t":"color","s":"Declared as a --*-dark custom property on :root, 2026-11-18. Not painted on the captured pages.: --border = 240 5% 26%"},"danger":{"v":"#dc2828","t":"color","s":"Declared as a --*-dark custom property on :root, 2026-11-18. Not painted on the captured pages.: --destructive = 0 72% 51%"},"focus":{"v":"#d4d4d8","t":"color","s":"Declared as a --*-dark custom property on :root, 2026-11-18. Not painted on the captured pages.: --ring = 240 5% 84%"},"warning":{"v":"#e7b008","t":"color","s":"Declared as a --*-dark custom property on :root, 2026-11-18. Not painted on the captured pages.: --yellow = 45 93% 47%"},"info":{"v":"#6467f2","t":"color","s":"Declared as a --*-dark custom property on :root, 2026-11-18. Not painted on the captured pages.: --highlight = 239,84%,67%"},"surfaceMuted":{"v":"#27272a","t":"color","s":"Declared as a --*-dark custom property on :root, 2026-11-18. Not painted on the captured pages.: --muted = 240 4% 16%"},"surfaceFaint":{"v":"#18181b","t":"color","s":"Declared as a --*-dark custom property on :root, 2026-11-18. Not painted on the captured pages.: --faint = 240 4% 10%"},"input":{"v":"#27272a","t":"color","s":"Declared as a --*-dark custom property on :root, 2026-11-18. Not painted on the captured pages.: --input = 240 4% 16%"}}};
-function walk(node, prefix, out) {
-  out = out || [];
-  if (!node || typeof node !== "object") return out;
-  if ("v" in node) { out.push([prefix, node]); return out; }
-  for (const [k, v] of Object.entries(node)) {
-    if (k.startsWith("$")) continue;
-    walk(v, prefix ? prefix + "." + k : k, out);
-  }
-  return out;
-}
-const host = document.getElementById("tokens");
-for (const set of ["core", "light", "dark"]) {
-  const rows = walk(TOKENS[set], set);
-  if (!rows.length) continue;
-  const h = document.createElement("h3");
-  h.textContent = set;
-  host.appendChild(h);
-  const table = document.createElement("table");
-  for (const [path, token] of rows) {
-    const tr = document.createElement("tr");
-    const value = typeof token.v === "string" ? token.v : JSON.stringify(token.v);
-    const paint = typeof token.v === "string" && (token.v.startsWith("#") || token.v.startsWith("rgb"));
-    tr.innerHTML = "<td></td><td></td><td></td>";
-    const cells = tr.children;
-    cells[0].textContent = path;
-    cells[1].textContent = value;
-    if (paint) cells[2].style.background = value;
-    table.appendChild(tr);
-  }
-  host.appendChild(table);
-}
-document.getElementById('theme').addEventListener('click', () => {
-  const html = document.documentElement;
-  const on = html.getAttribute('data-mode') === 'dark';
-  html.setAttribute('data-mode', on ? 'light' : 'dark');
-  document.getElementById('theme').textContent = on ? 'Dark declared' : 'Light painted';
-});
+document.querySelector('.toggle').onclick = () => {
+  const el = document.documentElement;
+  el.setAttribute('data-mode', el.getAttribute('data-mode') === 'dark' ? 'light' : 'dark');
+  if (el.getAttribute('data-mode') === 'light') el.removeAttribute('data-mode');
+};
 </script>
 </body>
 </html>

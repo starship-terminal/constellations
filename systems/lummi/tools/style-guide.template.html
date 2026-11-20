@@ -4,14 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lummi style guide</title>
-<meta name="description" content="Lummi public-site tokens, rendered from tokens.json. Light is painted. Dark is the declared twin.">
+<meta name="description" content="Lummi public design tokens, rendered from tokens.json.">
 <style>
 :root {
 /*CORE*/
 /*LIGHT*/
-  --sg-sans: Inter, "Inter Fallback", system-ui, sans-serif;
-  --sg-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   color-scheme: light;
+  --sg-sans: Inter, ui-sans-serif, system-ui, sans-serif;
 }
 [data-mode="dark"] {
 /*DARK*/
@@ -19,135 +18,59 @@
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sg-sans); }
-main { max-width: 1040px; margin: 0 auto; padding: 40px 24px 80px; }
-h1 { font: 600 48px/52px var(--sg-sans); letter-spacing: -1.5px; margin: 0 0 8px; }
-h2 { font: 600 13px/1 var(--sg-sans); letter-spacing: .06em; text-transform: none; color: var(--textMuted); margin: 48px 0 12px; }
-p { max-width: 68ch; color: var(--textMuted); }
+main { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 600 40px/48px var(--sg-sans); letter-spacing: -1px; margin: 0 0 8px; }
+h2 { font: 500 13px/20px var(--sg-sans); margin: 40px 0 12px; }
 .row { display: flex; flex-wrap: wrap; gap: 12px; }
-.sw { width: 148px; }
-.sw i { display: block; height: 48px; border-radius: 4px; border: 1px solid var(--border); }
-.sw b, .sw span { display: block; font: 500 12px/1.4 var(--sg-mono); color: var(--text); }
-.sw span { font-weight: 400; color: var(--textMuted); }
-.bar { display: flex; align-items: center; gap: 16px; height: 64px; padding: 0 20px; background: var(--page); color: var(--text); }
-.bar .mark { font-weight: 600; font-style: italic; }
-.bar a { color: var(--textMuted); font-weight: 500; text-decoration: none; font-size: 14px; }
-.bar a.on { color: var(--text); box-shadow: inset 0 -2px 0 var(--accent); }
-.bar .sp { flex: 1; }
-.bar .search { flex: 1; height: 40px; border-radius: 9999px; border: 1px solid var(--border); display: flex; align-items: center; padding: 0 16px; color: var(--textFaint); font-size: 14px; }
-.pro { display: inline-flex; align-items: center; height: 40px; padding: 0 12px; border-radius: 4px; background: #000; color: #fff; font: 500 14px/1 var(--sg-sans); border: 0; }
-.login { color: var(--text); font: 500 14px/1 var(--sg-sans); text-decoration: none; }
-.hero { padding: 28px 0 8px; }
-.hero h3 { margin: 0; font: 600 64px/70px var(--sg-sans); letter-spacing: -2px; }
-.hero p { color: var(--text); font-size: 20px; line-height: 28px; }
-.tools { display: flex; gap: 8px; margin: 20px 0; }
-.chip { height: 40px; padding: 0 12px; border-radius: 4px; border: 1px solid transparent; background: transparent; color: var(--text); font: 500 14px/1 var(--sg-sans); }
-.chip.on { background: var(--surfaceMuted); }
-.card { display: flex; gap: 24px; padding: 16px; border-radius: 8px; background: var(--surface); box-shadow: 0 8px 24px rgba(0,0,0,.08); max-width: 720px; }
-.card .shot { width: 220px; height: 160px; border-radius: 4px; background: var(--surfaceMuted); }
-.card h4 { margin: 0 0 6px; font: 600 22px/28px var(--sg-sans); }
-.tag { display: inline-flex; height: 24px; align-items: center; padding: 0 8px; border-radius: 9999px; background: var(--surfaceMuted); font: 500 12px/14px var(--sg-sans); margin-right: 6px; }
-.field { display: flex; align-items: center; height: 48px; padding: 0 16px; border-radius: 4px; border: 1px solid var(--border); background: var(--surface); color: var(--textFaint); max-width: 360px; }
-.btn { display: inline-flex; align-items: center; height: 48px; padding: 0 16px; border-radius: 4px; background: var(--accent); color: var(--onAccent); border: 0; font: 600 14px/1 var(--sg-sans); }
-.note { font-size: 13px; }
-table { border-collapse: collapse; width: 100%; font-size: 14px; }
-td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
-.toggle { margin-left: auto; font: 500 13px/1 var(--sg-sans); background: var(--surfaceMuted); color: var(--text); border: 0; border-radius: 4px; height: 32px; padding: 0 10px; cursor: pointer; }
+.sw { width: 140px; }
+.sw i { display: block; height: 56px; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+.sw b, .sw span { display: block; font-size: 12px; line-height: 16px; }
+.sw span { color: var(--textMuted); }
+button.demo, a.demo {
+  display: inline-flex; align-items: center; height: var(--size-control); padding: 0 12px;
+  border-radius: var(--radius-sm); background: var(--accent); color: var(--brand-foreground);
+  font: 500 14px/24px var(--sg-sans); text-decoration: none; border: 0;
+}
+.field {
+  height: var(--size-field); border: 1px solid var(--line-input); border-radius: var(--radius-sm);
+  padding: 0 12px; background: var(--page); color: var(--text); font: 500 14px/24px var(--sg-sans); width: 280px;
+}
+.card { background: var(--surface); color: var(--ink-on-surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px; max-width: 320px; }
+.muted { color: var(--textMuted); }
+.toggle { margin-left: 16px; font-size: 14px; }
 </style>
 </head>
 <body>
 <main>
-  <div class="bar">
-    <span class="mark">Lummi</span>
-    <a class="on" href="#colours">Photos</a>
-    <a href="#type">Illustrations</a>
-    <a href="#components">3D</a>
-    <span class="search">Search or create anything!</span>
-    <span class="pro">Try Pro for free</span>
-    <a class="login" href="#components">Log in</a>
-    <button class="toggle" type="button" id="theme">Dark declared</button>
-  </div>
-  <div class="hero">
-    <h1>no more boring design</h1>
-    <p>The future of visual creation. Powered by humans and AI everywhere</p>
-  </div>
-  <h2 id="colours">Colour roles</h2>
-  <p class="note">Light values are the painted :root roles. Dark values are the declared --*-dark twins. The toggle shows that declared set. The captured pages never painted it.</p>
+  <h1>Lummi <button class="toggle" type="button" onclick="document.documentElement.toggleAttribute('data-mode') || document.documentElement.setAttribute('data-mode', document.documentElement.getAttribute('data-mode')==='dark'?'light':'dark'); if(document.documentElement.getAttribute('data-mode')==='light') document.documentElement.removeAttribute('data-mode');">Theme</button></h1>
+  <p class="muted">Public site tokens from lummi.ai. Light is the default. Dark follows prefers-color-scheme when no data-theme=&quot;light&quot; is set. This page toggles the measured dark set.</p>
+  <h2>Colour</h2>
   <div class="row">
-    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>background</span></div>
-    <div class="sw"><i style="background:var(--surface)"></i><b>surface</b><span>card</span></div>
-    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>foreground</span></div>
-    <div class="sw"><i style="background:var(--textMuted)"></i><b>muted</b><span>muted-foreground</span></div>
-    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>primary</span></div>
-    <div class="sw"><i style="background:var(--border)"></i><b>border</b><span>border</span></div>
-    <div class="sw"><i style="background:var(--danger)"></i><b>danger</b><span>destructive</span></div>
-    <div class="sw"><i style="background:var(--warning)"></i><b>warning</b><span>yellow</span></div>
-    <div class="sw"><i style="background:var(--info)"></i><b>info</b><span>highlight</span></div>
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>var(--page)</span></div>
+    <div class="sw"><i style="background:var(--surface)"></i><b>surface</b><span>var(--surface)</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>var(--text)</span></div>
+    <div class="sw"><i style="background:var(--textMuted)"></i><b>muted</b><span>var(--textMuted)</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>var(--accent)</span></div>
+    <div class="sw"><i style="background:var(--border)"></i><b>border</b><span>var(--border)</span></div>
+    <div class="sw"><i style="background:var(--status-destructive)"></i><b>destructive</b><span>var(--status-destructive)</span></div>
+    <div class="sw"><i style="background:var(--highlight)"></i><b>highlight</b><span>var(--highlight)</span></div>
+    <div class="sw"><i style="background:var(--focus)"></i><b>focus</b><span>var(--focus)</span></div>
   </div>
-  <h2 id="type">Type</h2>
-  <p style="font:600 64px/70px var(--sg-sans);letter-spacing:-1.5px;color:var(--text)">Explore</p>
-  <p style="font:500 14px/24px var(--sg-sans);color:var(--text)">Photos, Illustrations, 3D. 14px medium.</p>
-  <h2 id="components">Components</h2>
-  <div class="tools">
-    <span class="chip on">Tools</span>
-    <span class="chip">Reframe</span>
-    <span class="chip">Restyle</span>
-    <span class="chip">Background removal</span>
-  </div>
-  <div class="card">
-    <div class="shot"></div>
-    <div>
-      <h4>Martini with Garnish</h4>
-      <p>A public image page. Download stays a button. It was not pressed.</p>
-      <span class="tag">cocktail</span><span class="tag">still life</span>
-    </div>
-  </div>
-  <h2>Sign-in wall</h2>
-  <p class="note">The login card was measured. Continue was not pressed. The address below is a placeholder, not an account.</p>
-  <div class="field">Email address</div>
-  <p><button class="btn" type="button">Continue</button></p>
-  <h2>Token values</h2>
-  <p class="note">Every group below is read from the token tree. A colour paints its swatch. Other values are printed as recorded.</p>
-  <div id="tokens"></div>
+  <h2>Type</h2>
+  <p style="font:var(--typography-display); margin:0">no more boring design</p>
+  <p style="font:var(--typography-body)">Body at 16/24, Inter.</p>
+  <p style="font:var(--typography-label)">Label at 14/24 medium.</p>
+  <h2>Controls</h2>
+  <p><button class="demo" type="button">Try Pro for free</button></p>
+  <p><input class="field" placeholder="Search or create anything!" readonly></p>
+  <div class="card"><b>Card</b><p class="muted">Surface on the page ground, 4px radius, 1px border.</p></div>
 </main>
 <script>
-const TOKENS = /*TOKENS*/null;
-function walk(node, prefix, out) {
-  out = out || [];
-  if (!node || typeof node !== "object") return out;
-  if ("v" in node) { out.push([prefix, node]); return out; }
-  for (const [k, v] of Object.entries(node)) {
-    if (k.startsWith("$")) continue;
-    walk(v, prefix ? prefix + "." + k : k, out);
-  }
-  return out;
-}
-const host = document.getElementById("tokens");
-for (const set of ["core", "light", "dark"]) {
-  const rows = walk(TOKENS[set], set);
-  if (!rows.length) continue;
-  const h = document.createElement("h3");
-  h.textContent = set;
-  host.appendChild(h);
-  const table = document.createElement("table");
-  for (const [path, token] of rows) {
-    const tr = document.createElement("tr");
-    const value = typeof token.v === "string" ? token.v : JSON.stringify(token.v);
-    const paint = typeof token.v === "string" && (token.v.startsWith("#") || token.v.startsWith("rgb"));
-    tr.innerHTML = "<td></td><td></td><td></td>";
-    const cells = tr.children;
-    cells[0].textContent = path;
-    cells[1].textContent = value;
-    if (paint) cells[2].style.background = value;
-    table.appendChild(tr);
-  }
-  host.appendChild(table);
-}
-document.getElementById('theme').addEventListener('click', () => {
-  const html = document.documentElement;
-  const on = html.getAttribute('data-mode') === 'dark';
-  html.setAttribute('data-mode', on ? 'light' : 'dark');
-  document.getElementById('theme').textContent = on ? 'Dark declared' : 'Light painted';
-});
+document.querySelector('.toggle').onclick = () => {
+  const el = document.documentElement;
+  el.setAttribute('data-mode', el.getAttribute('data-mode') === 'dark' ? 'light' : 'dark');
+  if (el.getAttribute('data-mode') === 'light') el.removeAttribute('data-mode');
+};
 </script>
 </body>
 </html>

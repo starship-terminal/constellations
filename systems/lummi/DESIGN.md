@@ -15,26 +15,28 @@ colors:
   on-surface-variant: "#71717a"
   outline: "#e4e4e7"
   page: "#ffffff"
-  overlay: "#ffffff"
+  popover: "#ffffff"
   text: "#09090b"
+  ink-on-surface: "#09090b"
+  ink-on-popover: "#09090b"
+  ink-faint: "#a1a1aa"
   textMuted: "#71717a"
-  textFaint: "#a1a1aa"
   accent: "#18181b"
-  onAccent: "#fafafa"
-  accentHover: "#3f3f46"
-  secondary: "#f4f4f5"
+  brand-foreground: "#fafafa"
+  brand-hover: "#3f3f46"
+  brand-secondary: "#f4f4f5"
+  brand-secondary-foreground: "#18181b"
+  brand-secondary-hover: "#d4d4d8"
+  brand-quiet: "#f4f4f5"
+  brand-quiet-foreground: "#18181b"
+  status-destructive: "#ef4343"
+  status-destructive-foreground: "#fafafa"
+  status-destructive-hover: "#dc2828"
+  status-yellow: "#e7b008"
   border: "#e4e4e7"
-  danger: "#ef4343"
+  line-input: "#e4e4e7"
   focus: "#a1a1aa"
-  warning: "#e7b008"
-  info: "#6467f2"
-  surfaceMuted: "#f4f4f5"
-  surfaceFaint: "#fafafa"
-  input: "#e4e4e7"
-  textOnAccent: "#fafafa"
-  link: "#09090b"
-  scrim: "rgba(0, 0, 0, 0.8)"
-  accentPressed: "#3f3f46"
+  highlight: "#6467f2"
 typography:
   display:
     fontFamily: "Inter"
@@ -42,11 +44,6 @@ typography:
     fontWeight: 600
     lineHeight: "144px"
     letterSpacing: "-7.056px"
-  heading:
-    fontFamily: "Inter"
-    fontSize: "64px"
-    fontWeight: 600
-    lineHeight: "70.4px"
   body:
     fontFamily: "Inter"
     fontSize: "16px"
@@ -57,25 +54,10 @@ typography:
     fontSize: "14px"
     fontWeight: 500
     lineHeight: "24px"
-  caption:
-    fontFamily: "Inter"
-    fontSize: "12px"
-    fontWeight: 400
-    lineHeight: "14px"
 rounded:
-  control: "4px"
-  tab: "2px"
-  menu: "6px"
-  card: "8px"
-  pill: "9999px"
+  sm: "4px"
 spacing:
-  "1": "4px"
-  "2": "8px"
   "3": "12px"
-  "4": "16px"
-  "6": "24px"
-  "10": "40px"
-  "12": "48px"
 ---
 
 # Lummi
@@ -90,17 +72,7 @@ Good for: A signed-out stock library: white page, Inter display at tight trackin
 
 Captured 2026-11-18, signed-out public marketing, browse, a public image page, and the /login wall. Downloads, the account, generation and checkout were not entered. Continue, Download, Google and the Stripe checkout link were not pressed.. Themes: light, dark.
 
-Tokens and component notes for Lummi (lummi.ai), captured **2026-11-18**. Desktop is 1440×900. Phone is 390×844. The painted theme is light. A dark twin is declared as `--*-dark` custom properties and was not painted on any captured page.
-
-Public routes: `/`, `/illustration`, `/3d`, `/photo/textured-green-powder-_wioh`, `/explore`, `/s/photo/forest`, `/login`, `/about`, `/pro`, `/updates`, `/license`, `/privacy`, `/terms`, `/blog`, `/creator/rena`, and a missing path. Downloads, the account, checkout and generation sit behind sign-in. None of those were opened. Continue, Download, Google and the Stripe checkout link were not pressed. OneTrust was hidden and never clicked.
-
-The app is Next.js on Inter. Colour is a shadcn set of HSL custom properties on `:root` (`--background`, `--foreground`, `--primary`, …) plus matching `--*-dark` twins. `/pro` is a separate Webflow page on DM Sans.
-
-<!-- brief:start -->
-<!-- brief:end -->
-
-<!-- health:start -->
-<!-- health:end -->
+Public design reference for [Lummi](https://www.lummi.ai/), a stock image site. Captured signed out on 2026-11-21 in headless Chromium at 1440x900 and 390x844, light and dark (`prefers-color-scheme`). No account was created. Login and signup walls were recorded and not entered. No form was submitted.
 
 ## Colors
 
@@ -115,27 +87,23 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Typography
 
-5 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Inter.
+3 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Inter.
 
 ### Fonts (from README.md)
 
-Inter is loaded by the app as a next/font face named Inter, with "Inter Fallback". The files are not shipped in this package. `/pro` uses DM Sans. Neither file is committed.
+Inter, with an "Inter Fallback" metric face. Served by the site. Not committed. The style guide uses Inter, then the system sans.
 
 ## Layout
 
-Spacing from `core.space`: `1` 4px, `2` 8px, `3` 12px, `4` 16px, `6` 24px, `10` 40px, `12` 48px.
+Spacing from `core.space`: `3` 12px.
 
 ## Elevation & Depth
 
-Shadows, resolved to CSS:
-
-| Token | box-shadow |
-|---|---|
-| `core.elevation.menu` | `0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1)` |
+No shadow tokens were captured; depth comes from surface colours and borders. See [style-guide.html](style-guide.html).
 
 ## Shapes
 
-Corner radii from `core.radius`: `control` 4px, `tab` 2px, `menu` 6px, `card` 8px, `pill` 9999px.
+Corner radii from `core.radius`: `sm` 4px.
 
 ## Components
 
@@ -151,19 +119,18 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Don't copy the product's logo, icons, illustrations or brand colours into something that ships. Borrow structure and proportions.
 - Don't edit this file; it is regenerated from the tokens.
 
-### Do and don't (from README.md)
-
-- Do keep one black fill for the primary action. Try Pro and Download are black with a white label. Secondary actions are quiet text or a white button with a hairline. See [home](screenshots/home-light-default.png) and [photo](screenshots/photo-light-default.png).
-- Do set the display in Inter, weight 600, tracking tight, almost the width of the page. The home headline is 141px at 1440. See [home](screenshots/home-light-default.png).
-- Do use a 4px radius on buttons and fields, and a pill only on tags and the search chrome. See [login](screenshots/login-light-default.png) and [photo](screenshots/photo-light-default.png).
-- Don't paint a second accent. The yellow in Try Pro is the word Pro only. The rest of the chrome is ink on white.
-- Don't treat the `--*-dark` values as a theme the public pages showed. They are declared and unpainted.
-- Don't put a download or a checkout on a signed-out capture. Both sit behind sign-in.
-
 ### What to distrust (from README.md)
 
-The dark set is declared, not seen. The yellow Pro word is the declared `--yellow` role, not a sampled glyph. Pressed states were forced with `CSS.forcePseudoState` and no button was clicked. Display size is viewport-relative (`9.6vw`) and will not match 141px at another width. `/pro` is a different page (DM Sans, Webflow) from the app chrome.
+- Screenshots are 256-colour PNGs. Read colours from tokens.json.
+- The hero size `141.12px` is the fluid size at 1440, not a fixed step.
+- `--yellow` has no dark twin. The dark token repeats the light value and says so.
+- `darkClassMatchesLight` in css-vars.json is true because a `.dark` class does nothing. The real switch is `prefers-color-scheme` and `data-theme`.
+- Card photography is the product's published images. It is not a colour token.
+- Contact addresses on the privacy, terms, and license captures were painted out before commit. A creator name on the creators index that is also an email address was painted out the same way. The layout of those pages remains.
 
-- [components.md](components.md) was written by hand from the 2026-11-18 readings. A recapture does not refresh it.
-- The script that wrote [raw/components-computed.json](raw/components-computed.json) is not in this package. The `measure.mjs` that sat in `tools/capture/public/` was another product's script with only its URLs changed, and its output has a different shape from the committed file. It was deleted in the 2026-11 audit, with the builders copied from other products (`build_components_md.py` wrote ChatGPT's components and `build_components_md.public.py` Gauth's) the Gauth icon pass (`icons.mjs`, which imports helpers this package's `lib.mjs` does not have), and the unused signed-in, native and Electron routes. A refresh of the component readings needs a new measure script.
-- `core` values in [tools/build_tokens.py](tools/build_tokens.py) were typed in from the readings. [tools/test_build_tokens.py](tools/test_build_tokens.py) fails when a value labelled Measured is not in `raw/`.
+### Do and don't (from README.md)
+
+1. **Do keep the ground white and the ink near-black.** Page is #ffffff and text is #09090b in light. See [home-light-default](screenshots/home-light-default.png).
+2. **Do use one radius.** Controls are 4px, from `--radius` (0.25rem).
+3. **Do invert for dark.** Dark page is #09090b and text is #fafafa. The switch is the system colour scheme, not a button on the public site.
+4. **Don't follow Log in, Google, or the Pro trial.** Those leave the public site for an account or checkout.
