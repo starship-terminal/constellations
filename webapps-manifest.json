@@ -3540,7 +3540,7 @@
       "description": "Open source personal knowledge management for everyone",
       "status": "pending",
       "package": null,
-      "notes": "https://memotron.app/ has no sign-in page. The user confirmed there is no auth.",
+      "notes": "https://memotron.app/ has no sign-in page. The user confirmed there is no auth. Public walk 2026-11-21: marketing pages loaded. https://web.memotron.app/ redirects to https://web.memotron.app/signup (Google, Apple, or Continue offline). Nothing clicked. No PR. Skipped the app shell this pass.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 11
