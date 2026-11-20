@@ -3967,7 +3967,7 @@
       "description": "We make tools for the modern Nomad",
       "status": "pending",
       "package": null,
-      "notes": "https://nomadgoods.com/sg/login and /account/login are page-not-found. Public walk 2026-11-21: Account on https://nomadgoods.com/sg/ opens https://account.nomadgoods.com/authentication/login (email, then Continue). Form not submitted. No PR. Skipped the account shell this pass.",
+      "notes": "https://nomadgoods.com/sg/login and /account/login are page-not-found. Public walk 2026-11-21: storefront loaded and redirected to /sg/. Account opens https://account.nomadgoods.com/authentication/login (email, then Continue) and was not entered. Form not submitted. Public package in PR 1506 at 118c7444f. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 12
