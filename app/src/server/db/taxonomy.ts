@@ -202,6 +202,20 @@ export async function seedNewCuratedMediaTerms(
 }
 
 /**
+ * v45: a revision number every write to media_term_assignments bumps, by
+ * trigger, so a reader can keep the assignment map until it changes, even
+ * for writes made with plain SQL.
+ */
+export const mediaTermsRevisionMigration = [
+  `CREATE TABLE IF NOT EXISTS media_terms_revision (id INTEGER PRIMARY KEY CHECK(id=1), value INTEGER NOT NULL)`,
+  `INSERT OR IGNORE INTO media_terms_revision(id,value) VALUES(1,0)`,
+  ...["INSERT", "UPDATE", "DELETE"].map(
+    (event) =>
+      `CREATE TRIGGER IF NOT EXISTS media_terms_revision_${event.toLowerCase()} AFTER ${event} ON media_term_assignments BEGIN UPDATE media_terms_revision SET value=value+1 WHERE id=1; END`,
+  ),
+];
+
+/**
  * The seed ledger (v44) records every seed key a store has been offered:
  * a (reference, category group) for the category seed and a (reference,
  * media) pair for the media seed. A key in the ledger is never seeded again,
@@ -454,6 +468,23 @@ function isCategoryGroup(groupId: string) {
 }
 
 export function taxonomyStore(client: Client) {
+  // The load in flight is shared, so parallel requests read the rows once.
+  let termMap:
+    { revision: number; map: Promise<Map<string, string[]>> } | undefined;
+  async function loadTermMap() {
+    const map = new Map<string, string[]>();
+    for (const row of (
+      await client.execute(
+        "SELECT reference_id,media_id,term_id FROM media_term_assignments ORDER BY reference_id,media_id,term_id",
+      )
+    ).rows) {
+      const id = `${row.reference_id}:${row.media_id}`;
+      const terms = map.get(id);
+      if (terms) terms.push(String(row.term_id));
+      else map.set(id, [String(row.term_id)]);
+    }
+    return map;
+  }
   async function listTaxonomyGroups(): Promise<TaxonomyGroup[]> {
     const [groups, terms] = await Promise.all([
       client.execute(
@@ -522,6 +553,25 @@ export function taxonomyStore(client: Client) {
         mediaId: String(row.media_id),
         termId: String(row.term_id),
       }));
+    },
+    /**
+     * Term IDs per "<referenceId>:<mediaId>", kept until media_term_assignments
+     * changes. Every capture query needs all ~40k rows, so they are read once
+     * per change rather than once per request. Treat the result as read-only.
+     */
+    async mediaTermsByMedia(): Promise<ReadonlyMap<string, string[]>> {
+      const revision = Number(
+        (await client.execute("SELECT value FROM media_terms_revision")).rows[0]
+          ?.value ?? -1,
+      );
+      if (termMap?.revision === revision) return termMap.map;
+      const map = loadTermMap();
+      termMap = { revision, map };
+      // A failed load is not kept: the next call tries again.
+      map.catch(() => {
+        if (termMap?.map === map) termMap = undefined;
+      });
+      return map;
     },
     async listReferenceCategories(): Promise<
       { referenceId: string; termId: string }[]
