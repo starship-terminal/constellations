@@ -1,0 +1,6 @@
+{
+  "_note": "claude-ios: the owner's own account, chats and content stay visible. Only a third party's first name in one chat title in the Chats list is painted out.",
+  "families": [
+    {"name":"Third-party first name in a chat title, Chats list","files":["screenshots/dark/11-chats-list-search-new-chat.png"],"size":[[812,1780]],"rects":[[268,1162,372,1201,"solid"]]}
+  ]
+}
