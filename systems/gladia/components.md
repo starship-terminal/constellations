@@ -559,9 +559,7 @@ Read on 2026-11-15.
 
 #### Resource card
 A content card on the library index; measured, never followed. Read as `lib-card` on the library page.
-Read on 2026-11-15. `hover` failed at capture (locator.hover: Element is not visible
-Call log:
-  - waiting for locator('a').filter({ has:).
+Read on 2026-11-15. `hover` failed at capture (locator.hover: Element is not visible).
 
 **Values (default).** size 0 x 0; padding 10px 32px; background transparent; text Suisse Intl 16/22.4 400, #000000 `light.bg.inverse`; transition background 0.16s cubic-bezier(0, 0, 0.2, 1).
 
@@ -577,9 +575,7 @@ No crop was saved for this entry (a whole page or a hidden element); the values 
 
 #### Article card
 An article card in the blog index; measured, never followed. Read as `blog-card` on the blog page.
-Read on 2026-11-15. `hover` failed at capture (locator.hover: Element is not visible
-Call log:
-  - waiting for locator('a').filter({ has:).
+Read on 2026-11-15. `hover` failed at capture (locator.hover: Element is not visible).
 
 **Values (default).** size 0 x 0; padding 16px 12px; border 1px solid #0d0d0d; radius 12px; background transparent; text Suisseintl 16/24 400, #ffffff `light.bg.primary`.
 

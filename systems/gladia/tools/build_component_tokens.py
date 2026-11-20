@@ -291,14 +291,21 @@ if C_PATH.exists():
 
     def style_tok(comp, state, prop, path, ty, label):
         st = C.get(comp, {}).get("states", {}).get(state, {})
-        v = (st.get("style") or {}).get(prop)
+        if "style" not in st:
+            return  # not captured: no token
+        v = st["style"].get(prop)
         if v is None:
+            # the kit records longhands only (borderTopLeftRadius, not borderRadius): a mapped
+            # row that reads nothing on a captured state is a typo, never a silent skip
+            raise KeyError(f"{comp} {state} has no computed {prop}")
+        if ty == "color" and re.fullmatch(r"rgba\([^)]*,\s*0\)|transparent", str(v).strip()):
+            # a transparent fill is not a surface: no token (the painted panel was not read)
             return
         lit(v, ty, f"measured {comp} {state} on {C[comp].get('page')} ({label})",
             "component", path)
 
-    style_tok("nav-cta", "default", "borderRadius", "button.headerCta.radius", "other", "header CTA corner")
-    style_tok("plan-card", "default", "borderRadius", "planCard.radius", "other", "plan card corner")
+    style_tok("nav-cta", "default", "borderTopLeftRadius", "button.headerCta.radius", "dimension", "header CTA corner")
+    style_tok("plan-card", "default", "borderTopLeftRadius", "planCard.radius", "dimension", "plan card corner")
     style_tok("glass-card", "default", "backgroundColor", "glassCard.bg", "color", "frosted glass card fill")
     style_tok("glass-card", "default", "backdropFilter", "glassCard.backdrop", "other", "frosted glass blur")
     style_tok("login-panel", "default", "backgroundColor", "auth.panel.bg", "color", "app-shell sign-in card")
