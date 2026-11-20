@@ -17,7 +17,7 @@
       ]
     },
     {
-      "name": "activity: subscribers' avatars, names, handles and bio; a person named in a note; the last row's avatar and name behind the tab bar (the Home icon and the Home and Read labels go with them)",
+      "name": "activity: subscribers' avatars, names, handles and bio; a person named in a note; the last row's avatar and name where they show through the glass tab bar, painted around the tab icons and labels",
       "files": [
         "screenshots/*/12-activity-feed-primary-secondary-buttons.png"
       ],
@@ -93,24 +93,87 @@
           "solid"
         ],
         [
-          118,
+          124,
           1584,
-          206,
-          1598,
+          212,
+          1623,
           "rows"
         ],
         [
-          116,
-          1598,
-          206,
-          1678,
+          174,
+          1623,
+          212,
+          1671,
+          "cols"
+        ],
+        [
+          134,
+          1642,
+          165,
+          1652,
+          "pixelate:16"
+        ],
+        [
+          134,
+          1652,
+          142,
+          1664,
+          "pixelate:16"
+        ],
+        [
+          158,
+          1652,
+          165,
+          1664,
+          "pixelate:16"
+        ],
+        [
+          178,
+          1672,
+          249,
+          1705,
+          "cols"
+        ],
+        [
+          301,
+          1672,
+          359,
+          1705,
+          "cols"
+        ],
+        [
+          452,
+          1672,
+          512,
+          1705,
+          "cols"
+        ],
+        [
+          561,
+          1672,
+          622,
+          1705,
+          "cols"
+        ],
+        [
+          120,
+          1671,
+          179,
+          1679,
           "rows"
         ],
         [
-          116,
-          1676,
-          362,
-          1712,
+          120,
+          1698,
+          179,
+          1706,
+          "rows"
+        ],
+        [
+          249,
+          1698,
+          302,
+          1706,
           "rows"
         ]
       ]
