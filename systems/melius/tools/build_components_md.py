@@ -95,7 +95,7 @@ def row(state, s, base):
     size = f"{round(rect.get('w', 0))}×{round(rect.get('h', 0))}"
     crop = s.get("crop") or ""
     link = f"[crop]({crop})" if crop else ""
-    return f"| {state} | {size} | {', '.join(bits) or 'same'} | {s.get('via', '')} | {link} |"
+    return f"| {cell(state)} | {size} | {cell(', '.join(bits) or 'same')} | {cell(s.get('via', ''))} | {link} |"
 
 
 lines = [
@@ -128,6 +128,10 @@ for group, items in groups.items():
         for name, s in states.items():
             if s.get("error"):
                 lines.append(f"| {cell(name)} |  | {cell(s['error'])} | {cell(s.get('via', ''))} | |")
+                continue
+            if s.get("skipped") or s.get("via") == "focus failed":
+                # The element at rest, not the state: listed as not captured and never used as a base.
+                lines.append(f"| {cell(name)} |  | not captured: keyboard focus did not reach the element | {cell(s.get('via', ''))} | |")
                 continue
             lines.append(row(name, s, base))
             base = base or paint(s)

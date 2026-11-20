@@ -41,6 +41,15 @@ class Components(unittest.TestCase):
             subprocess.run([sys.executable, str(pkg / "tools" / "build_components_md.py")], check=True, capture_output=True)
             self.assertEqual((pkg / "components.md").read_text(), (ROOT / "components.md").read_text())
 
+    def test_rows_escape_pipes_and_skip_failed_focus(self):
+        src = (ROOT / "tools" / "build_components_md.py").read_text()
+        # Load only the helpers (the module writes when run as a script).
+        ns = {"__name__": "helpers", "__file__": str(ROOT / "tools" / "build_components_md.py")}
+        exec(compile(src.split("\nlines = [")[0], "bcm", "exec"), ns)
+        row = ns["row"]("hover", {"style": {"fontFamily": "Odd|Face, serif"}, "via": "mouse\nhover"}, None)
+        self.assertEqual(row.count(" | "), 4)  # five cells, the pipe in the font name escaped
+        self.assertIn("\\|", row)
+
     def test_gap_links_resolve_from_the_package_root(self):
         text = (ROOT / "components.md").read_text()
         self.assertNotIn("](../", text)
