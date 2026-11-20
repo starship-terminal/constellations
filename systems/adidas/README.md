@@ -12,7 +12,7 @@ The site: strict monochrome — black text and keylines on white with grey steps
 | [style-guide.html](style-guide.html) | Self-contained rendering of tokens and components |
 | [components.md](components.md) | Discovery list + component inventory (21 components, 41 states) with crops and Gaps |
 | [patterns.md](patterns.md) | How the components combine per surface |
-| [components/crops/](components/crops) | 41 element screenshots at 2x |
+| [components/crops/](components/crops) | 34 element screenshots at 2x |
 | [screenshots/](screenshots) | 17 `{page}-light-{state}.png` captures: desktop 1440x900, mobile 390x844 |
 | [raw/](raw) | `css-vars.json`, `components-computed.json`, `measurements.md`, `component-tokens.json`. Full-colour raws stay outside the repo at `~/.design-systems/adidas/raw-full/` |
 | [tools/](tools) | The builders and capture kit. See Rebuild |

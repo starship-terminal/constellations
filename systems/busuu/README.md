@@ -12,7 +12,7 @@ Busuu is worth a capture because its language-learning marketing is a tight stud
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (28, ~57 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the two shells, the gradient hero, the language picker, the upsell, the course page, the footers, mobile |
-| [components/crops/](components/crops) | 58 element screenshots, `{component}-{state}.png` |
+| [components/crops/](components/crops) | 61 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 19 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages (mobile-course is part-stitched), `mobile-*` phone shots, `home-light-menu`/`mobile-home-light-menu` the opened kebab dropdown, `premium-light-monthly` the toggled billing tab |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — busuu.com declares almost no custom properties; it carries the served font faces), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
