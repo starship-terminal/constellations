@@ -1677,7 +1677,7 @@
       "description": "Personalized soundscapes",
       "status": "captured",
       "package": "systems/endel",
-      "notes": "https://app.endel.io/login accepted the email and opened the signed-in app. No password or code was asked. The product was not walked.",
+      "notes": "https://app.endel.io/login accepted the email and opened the signed-in app. No password or code was asked. A later walk found Sign In on the explore page. Session was not present. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "signed-in",
       "batch": 5
