@@ -2,7 +2,8 @@
 //
 //   PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node tools/capture/run.mjs
 //
-// Writes raw/css-vars.json, raw/components-computed.json, raw/layout.json,
+// Writes raw/readings.json (then run tools/build_from_readings.py for
+// components-computed.json and css-vars.json), raw/layout.json,
 // raw/archive-urls.json, raw/motion.json, full-colour shots under
 // ~/.design-systems/modyfi/raw-shots/, and component crops.
 // Live modyfi.com is a Webflow 404; app.modyfi.com does not resolve.
@@ -162,7 +163,6 @@ function readStyle(specs) {
 const browser = await chromium.launch();
 const archive = {};
 const readings = {};
-const components = {};
 
 async function pass(mobile) {
   const vw = mobile ? 390 : 1440;
@@ -212,31 +212,41 @@ async function pass(mobile) {
       await page.evaluate(() => window.scrollTo(0, 0));
       await shoot(page, prefix, vw, vh, dpr, 'full', true);
       if (!mobile) {
+        // The signup hover and CTA focus above leave the pointer and focus on those controls; read
+        // the rest styles only after both are gone, or the hover fill is recorded as the default.
+        await page.mouse.move(2, 2).catch(() => {});
+        await page.evaluate(() => document.activeElement && document.activeElement.blur && document.activeElement.blur()).catch(() => {});
+        await page.waitForTimeout(400);
         const data = await page.evaluate(readStyle, SPECS);
         readings[key] = data;
-        for (const [name, row] of Object.entries(data.components)) {
-          if (row.missing) continue;
-          if (!components[name]) components[name] = { states: {} };
-          if (!components[name].states.default) {
-            components[name].states.default = { ...row, page: key, source: 'computed style on ' + row.sel + ' at ' + data.innerWidth + 'px, ' + PAGES[key] };
-          }
-          components[name].pages = components[name].pages || {};
-          components[name].pages[key] = { text: row.text, fontSize: row.fontSize, color: row.color, backgroundColor: row.backgroundColor, fontFamily: row.fontFamily };
-        }
         if (key === 'home') {
-          // hover and focus-visible via CDP where the control exists
+          // hover and focus-visible where the control exists. They go into readings.json, which
+          // tools/build_from_readings.py reads; this script does not write components-computed.json.
           const cdp = await context.newCDPSession(page);
+          await cdp.send('DOM.enable').catch(() => {});
+          await cdp.send('CSS.enable').catch(() => {});
+          readings[key].states = {};
           for (const [state, sel] of [['hover', 'a.rl_navbar2_button.w-button:not(.loginbutton)'], ['focus-visible', 'a.rl-button']]) {
             const node = await page.$(sel);
             if (!node) continue;
             const box = await node.boundingBox();
-            if (state === 'hover' && box) await page.mouse.move(box.x + 8, box.y + 8);
+            if (state === 'hover' && box) {
+              await page.mouse.move(box.x + 8, box.y + 8);
+              await page.waitForTimeout(400);   // let the hover transition settle, as crops.mjs does
+            }
             if (state === 'focus-visible') {
               await node.focus().catch(() => {});
+              // Force :focus-visible on the element itself: mark it, find it with DOM.querySelector
+              // (DOM is enabled above). A point lookup returned the topmost text node instead.
+              let forced = false;
               try {
-                const { nodeId } = await cdp.send('DOM.getNodeForLocation', { x: Math.round((box || { x: 10 }).x + 4), y: Math.round((box || { y: 10 }).y + 4) }).catch(() => ({ nodeId: 0 }));
-                if (nodeId) await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: ['focus-visible'] }).catch(() => {});
-              } catch { /* optional */ }
+                await node.evaluate((el) => el.setAttribute('data-m-force', ''));
+                const { root } = await cdp.send('DOM.getDocument', { depth: 0 });
+                const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: '[data-m-force]' });
+                if (nodeId) { await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: ['focus-visible'] }); forced = true; }
+              } catch { /* recorded below as not forced */ }
+              await node.evaluate((el) => el.removeAttribute('data-m-force')).catch(() => {});
+              if (!forced) { console.log('  focus-visible not forced on', sel); continue; }
             }
             const styled = await page.evaluate((selName) => {
               const el = document.querySelector(selName);
@@ -244,7 +254,8 @@ async function pass(mobile) {
               const s = getComputedStyle(el);
               return { color: s.color, backgroundColor: s.backgroundColor, borderTopColor: s.borderTopColor, borderRadius: s.borderRadius, outline: s.outline, boxShadow: s.boxShadow };
             }, sel);
-            if (styled) components[state === 'hover' ? 'signup-button' : 'cta-button'].states[state] = { ...styled, page: 'home', sel, source: state + ' computed style on ' + sel };
+            if (styled) readings[key].states[state] = { ...styled, component: state === 'hover' ? 'signup-button' : 'cta-button', sel, source: state + ' computed style on ' + sel };
+            await page.mouse.move(2, 2).catch(() => {});
           }
         }
       }
@@ -260,34 +271,24 @@ await pass(false);
 await pass(true);
 await browser.close();
 
-const home = readings.home || {};
-fs.writeFileSync(path.join(RAW, 'archive-urls.json'), JSON.stringify({ captured: '2026-11-19', live: 'webflow-404', pages: archive }, null, 2) + '\n');
+fs.writeFileSync(path.join(RAW, 'archive-urls.json'), JSON.stringify({ captured: new Date().toLocaleDateString('en-CA'), live: 'webflow-404', pages: archive }, null, 2) + '\n');
 fs.writeFileSync(path.join(RAW, 'readings.json'), JSON.stringify(readings, null, 2) + '\n');
-fs.writeFileSync(path.join(RAW, 'components-computed.json'), JSON.stringify({
-  source: 'getComputedStyle on Wayback replay of www.modyfi.com public pages, 1440x900, 2026-11-19. Live site is a Webflow 404.',
-  viewport: { width: 1440, height: 900 },
-  components,
-}, null, 2) + '\n');
-fs.writeFileSync(path.join(RAW, 'css-vars.json'), JSON.stringify({
-  source: 'computed custom properties on :root of the archived homepage ' + (PAGES.home),
-  resolved: home.vars || {},
-  body: home.body || {},
-  title: home.title || '',
-}, null, 2) + '\n');
+// raw/components-computed.json and raw/css-vars.json are written by tools/build_from_readings.py
+// from readings.json and crops-measured.json, so each raw file has one writer.
 fs.writeFileSync(path.join(RAW, 'layout.json'), JSON.stringify({
   source: 'measured boxes on archived pages',
   pages: Object.fromEntries(Object.entries(readings).map(([k, v]) => [k, { title: v.title, innerWidth: v.innerWidth, innerHeight: v.innerHeight, dpr: v.dpr }])),
 }, null, 2) + '\n');
 
-// Motion: the homepage declares Webflow interactions; a computed read at rest
-// is recorded so the package does not invent durations.
+// Motion: no computed transition is read here, so the verdict is Not captured rather than a
+// claim that nothing moves. tools/capture/motion-probe.mjs is the script that reads motion.
 const motion = {
   source: 'computed style at rest on the archived homepage. Webflow IX2 timelines are JavaScript-driven and are Not captured as durations.',
   pages: {
     'page-1': {
       url: BASE + PAGES.home,
-      verdict: 'no-motion',
-      note: 'At rest, interactive controls report transition none. Webflow IX2 (data-w-id) drives scroll and hover motion in JavaScript; those durations were not read from computed style.',
+      verdict: 'not-captured',
+      note: 'This script reads no computed transition. Webflow IX2 (data-w-id) drives scroll and hover motion in JavaScript; those durations were not read.',
     },
   },
 };
