@@ -2,6 +2,7 @@
 
 Nothing here writes tokens.json: build() returns the document and the test compares it.
 """
+import copy
 import json
 import pathlib
 import unittest
@@ -35,6 +36,19 @@ class TokensTest(unittest.TestCase):
         raw = build_tokens.RAW
         self.assertEqual(DATA["light"]["status"]["success"]["$value"], raw["semanticLightDocs"]["success"])
         self.assertEqual(DATA["dark"]["status"]["success"]["$value"], raw["semanticDark"]["success"])
+
+    def test_a_missing_status_reading_fails_the_build(self):
+        # No silent fallback to a ramp step: drop success from each theme's reading in turn.
+        saved = build_tokens.RAW
+        try:
+            for theme in ("semanticDark", "semanticLightDocs"):
+                raw = copy.deepcopy(saved)
+                del raw[theme]["success"]
+                build_tokens.RAW = raw
+                with self.assertRaises(KeyError, msg=theme):
+                    build_tokens.build()
+        finally:
+            build_tokens.RAW = saved
 
     def test_durations_are_durations(self):
         for set_name in ("core", "light", "dark"):
