@@ -27,6 +27,12 @@ export const APP = 'https://app.maze.co';
 // committed: set MAZE_REPORT_URL to the report's link before a capture.
 // measure.mjs and vars.mjs stop without it; public.mjs skips the report pages.
 export const REPORT = process.env.MAZE_REPORT_URL || null;
+// Every file a capture writes goes through maskReport, so the link used to
+// navigate is never saved: the committed placeholder takes its place.
+export const REPORT_PLACEHOLDER = 'https://app.maze.co/report/[share-link]';
+export function maskReport(text) {
+  return REPORT ? String(text).split(REPORT).join(REPORT_PLACEHOLDER) : String(text);
+}
 export function requireReport() {
   if (!REPORT) throw new Error('MAZE_REPORT_URL is not set: the sample report link is not committed (a share link is masked like a signed URL)');
   return REPORT;

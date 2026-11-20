@@ -7,7 +7,7 @@
 // painted button with data-m-mark so a crop is the control, not the page.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, AUTH, requireReport, launch, open, styleOf, crop, centre, RAW, hideConsent } from './lib.mjs';
+import { BASE, AUTH, requireReport, maskReport, launch, open, styleOf, crop, centre, RAW, hideConsent } from './lib.mjs';
 import { startRun, touch, readOk, readFailed } from './dates.mjs';
 
 const REPORT = requireReport();   // the sample report's share link, from the environment (lib.mjs)
@@ -29,7 +29,7 @@ Object.assign(out._meta, {
   note: 'Signed out. CookieYes and OneTrust hidden, never clicked. Login fields focused and filled with a sample string, then cleared. Nothing submitted. No study started.',
 });
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
-const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
+const save = () => fs.writeFileSync(OUT, maskReport(JSON.stringify(out, null, 1)) + '\n');
 const freshThisRun = new Set();
 const earlier = new Map();   // key -> the states the committed file held, for a failed reread
 
