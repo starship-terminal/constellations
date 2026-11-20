@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reown style guide</title>
+<style>
+:root {
+  --color-primitive-black: #000000;
+  --color-primitive-blue: #0988f0;
+  --color-primitive-blue-strong: #0878d3;
+  --color-primitive-blue-surface: #379def;
+  --color-primitive-green: #18ac65;
+  --color-primitive-grey-1: #e9e9e9;
+  --color-primitive-grey-1-5: #dedede;
+  --color-primitive-grey-1-7: #d0d0d0;
+  --color-primitive-grey-2: #bbbbbb;
+  --color-primitive-grey-3: #9a9a9a;
+  --color-primitive-grey-3-5: #808080;
+  --color-primitive-grey-4: #787878;
+  --color-primitive-grey-5: #6c6c6c;
+  --color-primitive-grey-6: #4f4f4f;
+  --color-primitive-grey-7: #363636;
+  --color-primitive-grey-8: #202020;
+  --color-primitive-orange: #f4624a;
+  --color-primitive-white: #ffffff;
+  --color-primitive-yellow: #ffb800;
+  --color-appkit-accent: #0988f0;
+  --color-appkit-black: #202020;
+  --color-appkit-white: #ffffff;
+  --color-appkit-walletkit: #ffb800;
+  --color-appkit-appkit: #ff573b;
+  --color-appkit-cloud: #0988f0;
+  --color-appkit-documentation: #008847;
+  --duration-0: 0ms;
+  --duration-150: 150ms;
+  --duration-1600: 1600ms;
+  --duration-2000: 2000ms;
+  --duration-250: 250ms;
+  --duration-300: 300ms;
+  --duration-50: 50ms;
+  --duration-600: 600ms;
+  --easing-card: cubic-bezier(0.0, 0.5, 0.5, 1.0);
+  --easing-circ: cubic-bezier(0.85, 0.0, 0.15, 1.0);
+  --easing-in: cubic-bezier(0.11, 0.0, 0.5, 0.0);
+  --easing-in-circ: cubic-bezier(0.55, 0.0, 1.0, 0.45);
+  --easing-out: cubic-bezier(0.5, 1.0, 0.89, 1.0);
+  --easing-out-circ: cubic-bezier(0.0, 0.55, 0.45, 1.0);
+  --easing-out-slow: cubic-bezier(0.61, 1.0, 0.88, 1.0);
+  --easing-sine: cubic-bezier(0.37, 0.0, 0.63, 1.0);
+  --easing-standard: cubic-bezier(0.45, 0.0, 0.55, 1.0);
+  --font-leading-none: 1;
+  --font-leading-normal: 1.4;
+  --font-leading-relaxed: 1.5;
+  --font-leading-snug: 1.2;
+  --font-leading-tight: 1.1;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  --font-size-7xl: 4.5rem;
+  --font-size-8xl: 6rem;
+  --font-size-9xl: 8rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-sm: .875rem;
+  --font-size-xl: 1.25rem;
+  --font-size-xs: .75rem;
+  --font-tracking-button: -.05rem;
+  --font-tracking-none: 0;
+  --font-tracking-snug: -.01em;
+  --font-tracking-tight: -.02em;
+  --font-tracking-wide: .02em;
+  --font-weight-bold: 700;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-family-sans: "KHTeka-Regular", sans-serif;
+  --font-family-mono: "KHTekaMono-Regular", monospace;
+  --font-family-docs-sans: Inter;
+  --radius-112: 7rem;
+  --radius-128: 8rem;
+  --radius-150: 9.375rem;
+  --radius-16: 1rem;
+  --radius-160: 10rem;
+  --radius-192: 12rem;
+  --radius-24: 1.5rem;
+  --radius-254: 15.875rem;
+  --radius-32: 2rem;
+  --radius-40: 2.5rem;
+  --radius-64: 4rem;
+  --radius-88: 5.5rem;
+  --spacing-112: 7rem;
+  --spacing-12: .75rem;
+  --spacing-120: 7.5rem;
+  --spacing-16: 1rem;
+  --spacing-160: 10rem;
+  --spacing-2: .125rem;
+  --spacing-20: 1.25rem;
+  --spacing-24: 1.5rem;
+  --spacing-32: 2rem;
+  --spacing-4: .25rem;
+  --spacing-40: 2.5rem;
+  --spacing-48: 3rem;
+  --spacing-56: 3.5rem;
+  --spacing-64: 4rem;
+  --spacing-8: .5rem;
+  --spacing-80: 5rem;
+  --spacing-96: 6rem;
+  --color-surface: #9a9a9a;
+  --color-surface-lift: #969696;
+  --color-surface-dark: #202020;
+  --color-surface-dim: #d0d0d0;
+  --color-surface-subtle: #e9e9e9;
+  --color-on-surface: #6c6c6c;
+  --color-on-surface-muted: #727272;
+  --color-accent: #0988f0;
+  --color-accent-blue: #0988f0;
+  --color-accent-green: #18ac65;
+  --color-accent-orange: #f4624a;
+  --color-accent-yellow: #ffb800;
+  --color-backdrop: #000000;
+  --color-border: #4f4f4f;
+  --color-border-strong: #7a7a7a;
+  --color-border-subtle: #939393;
+  --color-button-bg: #0988f0;
+  --color-button-text: #9a9a9a;
+  --color-danger: #f4624a;
+  --color-divider: #bbbbbb;
+  --color-field-bg: #363636;
+  --color-field-text: #e9e9e9;
+  --color-nav-overlay: #808080;
+  --color-placeholder: #4f4f4f;
+  --color-docs-primary: #008847;
+  --color-docs-background: #ffffff;
+  --color-docs-border: #eef2f0;
+  --component-button-height: 48px;
+  --component-button-radius: 14px;
+  --component-button-font: KHTekaMono-Regular;
+  --component-button-bg: #379def;
+  --component-button-text: #202020;
+  --component-field-radius: 32px;
+  --component-field-bg: #363636;
+  color-scheme: light;
+  --page: var(--color-surface, #9a9a9a);
+  --ink: var(--color-on-surface, #6c6c6c);
+  --sans: var(--font-family-sans), ui-sans-serif, system-ui, sans-serif;
+  --mono: var(--font-family-mono), ui-monospace, monospace;
+}
+[data-mode="dark"] {
+  --color-docs-primary: #008847;
+  --color-docs-background: #202020;
+  --color-docs-border: #252927;
+  color-scheme: dark;
+  --page: var(--color-docs-background, #202020);
+  --ink: #fff;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 400 16px/1.5 var(--sans); }
+header { display: flex; gap: 16px; align-items: center; padding: 16px 24px; position: sticky; top: 0; background: var(--page); }
+h1 { font-size: 20px; font-weight: 400; margin: 0; }
+button.theme { margin-left: auto; font: 400 14px/1 var(--mono); border-radius: 14px; border: 1px solid currentColor; background: transparent; color: inherit; padding: 10px 14px; }
+main { max-width: 1100px; margin: 0 auto; padding: 8px 24px 64px; }
+section { margin-top: 40px; }
+h2 { font-size: 28px; font-weight: 400; letter-spacing: -0.02em; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { display: flex; gap: 10px; align-items: center; }
+.sw i { width: 40px; height: 40px; border-radius: 12px; display: block; box-shadow: inset 0 0 0 1px rgba(0,0,0,.15); }
+.sw b { display: block; font: 500 12px/1.3 var(--mono); }
+.sw span { font-size: 12px; opacity: .7; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+.btn { display: inline-flex; align-items: center; height: 48px; padding: 0 18px; border-radius: 14px; font: 400 16px/1 var(--mono); letter-spacing: -0.05rem; text-decoration: none; }
+.btn-blue { background: #379def; color: #202020; }
+.btn-white { background: #fff; color: #202020; }
+.btn-outline { background: transparent; color: #fff; box-shadow: inset 0 0 0 1px #fff; }
+.card { background: #bbb; color: #202020; border-radius: 40px; padding: 24px; max-width: 420px; }
+.field { background: #363636; color: #e9e9e9; border: 0; border-radius: 32px; padding: 16px 20px; font: 16px/1 var(--mono); width: 280px; }
+.note { max-width: 70ch; opacity: .85; }
+code { font-family: var(--mono); font-size: 13px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Reown</h1>
+  <span>public marketing, docs, demo</span>
+  <button class="theme" type="button" id="theme">Docs dark</button>
+</header>
+<main>
+<section>
+  <h2>Marketing colours</h2>
+  <p class="note">Resolved on reown.com. The page surface is grey-3 (#9a9a9a). Section classes override these locally. The toggle switches the docs dark set, which the marketing site does not use.</p>
+  <div class="grid"><div class="sw"><i style="background:#9a9a9a"></i><div><b>surface</b><span>#9a9a9a</span></div></div>
+<div class="sw"><i style="background:#969696"></i><div><b>surface-lift</b><span>#969696</span></div></div>
+<div class="sw"><i style="background:#202020"></i><div><b>surface-dark</b><span>#202020</span></div></div>
+<div class="sw"><i style="background:#d0d0d0"></i><div><b>surface-dim</b><span>#d0d0d0</span></div></div>
+<div class="sw"><i style="background:#e9e9e9"></i><div><b>surface-subtle</b><span>#e9e9e9</span></div></div>
+<div class="sw"><i style="background:#6c6c6c"></i><div><b>on-surface</b><span>#6c6c6c</span></div></div>
+<div class="sw"><i style="background:#727272"></i><div><b>on-surface-muted</b><span>#727272</span></div></div>
+<div class="sw"><i style="background:#0988f0"></i><div><b>accent</b><span>#0988f0</span></div></div>
+<div class="sw"><i style="background:#0988f0"></i><div><b>accent-blue</b><span>#0988f0</span></div></div>
+<div class="sw"><i style="background:#18ac65"></i><div><b>accent-green</b><span>#18ac65</span></div></div>
+<div class="sw"><i style="background:#f4624a"></i><div><b>accent-orange</b><span>#f4624a</span></div></div>
+<div class="sw"><i style="background:#ffb800"></i><div><b>accent-yellow</b><span>#ffb800</span></div></div>
+<div class="sw"><i style="background:#000000"></i><div><b>backdrop</b><span>#000000</span></div></div>
+<div class="sw"><i style="background:#4f4f4f"></i><div><b>border</b><span>#4f4f4f</span></div></div>
+<div class="sw"><i style="background:#7a7a7a"></i><div><b>border-strong</b><span>#7a7a7a</span></div></div>
+<div class="sw"><i style="background:#939393"></i><div><b>border-subtle</b><span>#939393</span></div></div>
+<div class="sw"><i style="background:#0988f0"></i><div><b>button-bg</b><span>#0988f0</span></div></div>
+<div class="sw"><i style="background:#9a9a9a"></i><div><b>button-text</b><span>#9a9a9a</span></div></div>
+<div class="sw"><i style="background:#f4624a"></i><div><b>danger</b><span>#f4624a</span></div></div>
+<div class="sw"><i style="background:#bbbbbb"></i><div><b>divider</b><span>#bbbbbb</span></div></div>
+<div class="sw"><i style="background:#363636"></i><div><b>field-bg</b><span>#363636</span></div></div>
+<div class="sw"><i style="background:#e9e9e9"></i><div><b>field-text</b><span>#e9e9e9</span></div></div>
+<div class="sw"><i style="background:#808080"></i><div><b>nav-overlay</b><span>#808080</span></div></div>
+<div class="sw"><i style="background:#4f4f4f"></i><div><b>placeholder</b><span>#4f4f4f</span></div></div>
+<div class="sw"><i style="background:#008847"></i><div><b>docs-primary</b><span>#008847</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>docs-background</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#eef2f0"></i><div><b>docs-border</b><span>#eef2f0</span></div></div></div>
+</section>
+<section>
+  <h2>Buttons</h2>
+  <div class="row">
+    <a class="btn btn-blue">Learn</a>
+    <a class="btn btn-white">Log in</a>
+    <a class="btn btn-outline">Explore Plans</a>
+  </div>
+  <p class="note">Solid blue and white buttons are 48px tall, 14px radius, KH Teka Mono. Outline buttons are 44px, 16px radius.</p>
+</section>
+<section>
+  <h2>Type</h2>
+  <p style="font-size:2.25rem;line-height:1.1;letter-spacing:-0.02em;margin:0">Infrastructure for blockchain app development</p>
+  <p class="note">H1 is 2.25rem, weight 400, KH Teka. Docs headings are Inter at 36px / 600.</p>
+</section>
+<section>
+  <h2>Field</h2>
+  <input class="field" placeholder="Mail" readonly>
+  <p class="note">Footer newsletter field. Not submitted in the capture.</p>
+</section>
+<section>
+  <h2>Docs colours</h2>
+  <p class="note">Mintlify. Primary is #008847 in both themes. Background light #ffffff, dark #202020.</p>
+  <div class="grid"><div class="sw"><i style="background:#008847"></i><div><b>docs-primary</b><span>#008847</span></div></div>
+<div class="sw"><i style="background:#202020"></i><div><b>docs-background</b><span>#202020</span></div></div>
+<div class="sw"><i style="background:#252927"></i><div><b>docs-border</b><span>#252927</span></div></div></div>
+</section>
+</main>
+<script>
+const btn = document.getElementById('theme');
+btn.addEventListener('click', () => {
+  const dark = document.documentElement.getAttribute('data-mode') === 'dark';
+  document.documentElement.setAttribute('data-mode', dark ? 'light' : 'dark');
+  btn.textContent = dark ? 'Docs dark' : 'Marketing light';
+});
+</script>
+</body>
+</html>
