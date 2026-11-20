@@ -29,6 +29,7 @@ GENERIC = {
     "build/build_style_guide.py", "build/motion.py",
     "capture/css-colour.mjs", "capture/motion.mjs", "capture/motion-probe.mjs", "capture/quantize.py", "capture/safe-url.mjs",
     "capture/screenshot.mjs", "capture/readings.mjs", "capture/electron/shot.mjs", "capture/public/pin.mjs",
+    "capture/no-query.mjs", "capture/crop.mjs",
     "capture/signed-in/snapshot.js", "capture/signed-in/unsnap.py", "capture/signed-in/render-all.sh",
     "capture/native/sample.py", "capture/native/shot.sh", "capture/native/winid.swift",
     "native/crops.py", "native/quantize.py",
@@ -105,6 +106,37 @@ class CopyRecipe(unittest.TestCase):
                     else:
                         self.assertTrue((HERE.parent / path).exists(), path)
                 self.assertNotIn(a.rstrip("/"), ("tools/kit/capture", "tools/kit/build/*"), "copy one route, not the whole kit")
+
+
+    def test_each_route_copies_every_kit_file_its_scripts_import(self):
+        # A route's scripts import shared helpers (../safe-url.mjs, ../crop.mjs, ../no-query.mjs, ...); a helper
+        # the recipe leaves out stops the copied script with ERR_MODULE_NOT_FOUND before capture starts.
+        block = re.search(r"```bash\n(.*?)```", (KIT / "README.md").read_text(), re.S).group(1)
+        shared_part, routes_part = block.split("# then one of:", 1)
+
+        def copied(lines):
+            out = set()
+            for ln in lines.splitlines():
+                if not ln.startswith("cp "):
+                    continue
+                args = [a for a in ln.split()[1:-1] if not a.startswith("-")]
+                for a in args:
+                    m = re.fullmatch(r"(.*)\{(.+)\}(.*)", a)
+                    for path in ([m.group(1) + part + m.group(3) for part in m.group(2).split(",")] if m else [a]):
+                        full = HERE.parent / path
+                        out |= {q.resolve() for q in full.rglob("*") if q.is_file()} if full.is_dir() else {full.resolve()}
+            return out
+
+        shared = copied(shared_part)
+        routes = re.split(r"^# (.+)$", routes_part, flags=re.M)[1:]
+        self.assertTrue(routes)
+        for name, lines in zip(routes[::2], routes[1::2]):
+            files = shared | copied(lines)
+            for f in sorted(x for x in files if x.suffix == ".mjs" and not x.name.startswith("test_")):
+                for rel in re.findall(r"^import\b[^'\"]*from\s+['\"](\.{1,2}/[^'\"]+)['\"]", f.read_text(), re.M):
+                    dep = (f.parent / rel).resolve()
+                    with self.subTest(route=name, script=f.name, imports=rel):
+                        self.assertIn(dep, files)
 
 
 class TemplateGuard(unittest.TestCase):

@@ -12,7 +12,7 @@ a record of how the package was captured.
 ```bash
 # every web or Electron route: the shared helpers and the token and style-guide builders
 mkdir -p systems/<slug>/tools/capture
-cp tools/kit/capture/{screenshot,safe-url,css-colour,readings,motion,motion-probe}.mjs tools/kit/capture/quantize.py systems/<slug>/tools/capture/
+cp tools/kit/capture/{screenshot,safe-url,no-query,css-colour,readings,crop,motion,motion-probe}.mjs tools/kit/capture/quantize.py systems/<slug>/tools/capture/
 cp tools/kit/build/{build_tokens.py,build_style_guide.py,style-guide.template.html,motion.py} systems/<slug>/tools/
 
 # then one of:
