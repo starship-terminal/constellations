@@ -59,6 +59,8 @@ slim = {
     }},
 }
 html = TEMPLATE.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light"))
-html = html.replace("/*TOKENS*/null", json.dumps(slim, separators=(",", ":")))
-(HERE / "style-guide.html").write_text(html)
-print("wrote", HERE / "style-guide.html")
+# Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" from ending it early.
+html = html.replace("/*TOKENS*/null", json.dumps(slim, separators=(",", ":")).replace("<", "\\u003c"))
+if __name__ == "__main__":
+    (HERE / "style-guide.html").write_text(html)
+    print("wrote", HERE / "style-guide.html")
