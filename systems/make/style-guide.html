@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Make style guide</title>
+<style>
+:root {
+  --color-brand-50: #faf7fe;
+  --color-brand-100: #f3ecfd;
+  --color-brand-200: #e9dcfb;
+  --color-brand-300: #d8c0f6;
+  --color-brand-400: #bf98ec;
+  --color-brand-500: #a66ee2;
+  --color-brand-600: #8f4bd2;
+  --color-brand-700: #803bbf;
+  --color-brand-800: #683496;
+  --color-brand-900: #552c79;
+  --color-brand-950: #3a1559;
+  --color-accent-50: #fbf6fe;
+  --color-accent-100: #f6e9fe;
+  --color-accent-200: #eed8fc;
+  --color-accent-300: #e1b9f9;
+  --color-accent-400: #cf8bf5;
+  --color-accent-500: #bc5fed;
+  --color-accent-600: #b251e2;
+  --color-accent-700: #932cc4;
+  --color-accent-800: #7b29a0;
+  --color-accent-900: #652380;
+  --color-accent-950: #460d5e;
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f3f2f3;
+  --color-neutral-200: #e9e6e9;
+  --color-neutral-300: #dad4da;
+  --color-neutral-400: #b0a6b1;
+  --color-neutral-500: #867489;
+  --color-neutral-600: #69586c;
+  --color-neutral-700: #58475a;
+  --color-neutral-800: #3d2f40;
+  --color-neutral-900: #342237;
+  --color-neutral-950: #221528;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #030712;
+  --color-green-50: #f0fdf4;
+  --color-green-100: #dcfce7;
+  --color-green-200: #bbf7d0;
+  --color-green-300: #86efac;
+  --color-green-400: #4ade80;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-green-700: #15803d;
+  --color-green-800: #166534;
+  --color-green-900: #14532d;
+  --color-green-950: #052e16;
+  --color-red-50: #fef2f2;
+  --color-red-100: #fee2e2;
+  --color-red-200: #fecaca;
+  --color-red-300: #fca5a5;
+  --color-red-400: #f87171;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-red-700: #b91c1c;
+  --color-red-800: #991b1b;
+  --color-red-900: #7f1d1d;
+  --color-red-950: #450a0a;
+  --color-yellow-50: #fefce8;
+  --color-yellow-100: #fef9c3;
+  --color-yellow-200: #fef08a;
+  --color-yellow-300: #fde047;
+  --color-yellow-400: #facc15;
+  --color-yellow-500: #eab308;
+  --color-yellow-600: #ca8a04;
+  --color-yellow-700: #a16207;
+  --color-yellow-800: #854d0e;
+  --color-yellow-900: #713f12;
+  --color-yellow-950: #422006;
+  --color-blue-300: #18bfff;
+  --color-blue-600: #6666cc;
+  --font-family-sans: Satoshi, Arial, sans-serif;
+  --font-family-fallback: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --font-family-mono: "Geist Mono Latin 300", Arial, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 800;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-28: 32px;
+  --space-32: 32px;
+  --space-36: 36px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-80: 80px;
+  --space-96: 96px;
+  --space-112: 112px;
+  --space-160: 160px;
+  --space-224: 224px;
+  --space-none: 0px;
+  --radius-small: 8px;
+  --radius-medium: 12px;
+  --radius-main: 16px;
+  --radius-round: 9999px;
+  --size-buttonSmall: 32px;
+  --size-buttonMedium: 48px;
+  --size-buttonLarge: 80px;
+  --size-gutter: 16px;
+  --motion-cardHoverDuration: 0.3s;
+  --motion-cardHoverEase: ease;
+  --motion-themeEase: cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-cardHover: 0px 20px 40px -12px rgba(52, 34, 55, 0.18);
+  --page: #ffffff;
+  --surface: #ffffff;
+  --raised: #ffffff;
+  --text: var(--color-neutral-900);
+  --muted: var(--color-neutral-600);
+  --placeholder: var(--color-neutral-500);
+  --onAccent: #ffffff;
+  --link: #803bbf;
+  --accent: #8f4bd2;
+  --accentHover: #803bbf;
+  --border: var(--color-neutral-300);
+  --borderBrand: #a66ee2;
+  --success: var(--color-green-500);
+  --danger: var(--color-red-500);
+  --warning: var(--color-yellow-500);
+  --info: var(--color-blue-300);
+  color-scheme: light;
+  --sg-sans: Satoshi, Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/1.5 var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font-weight: 500; font-size: 40px; letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font-weight: 500; font-size: 24px; margin: 40px 0 12px; }
+p.lead { color: var(--muted); max-width: 68ch; }
+.swatches { display: grid; gap: 8px; }
+.ramp { display: grid; grid-template-columns: 80px 1fr; align-items: center; gap: 8px; }
+.ramp span { font-size: 13px; color: var(--muted); }
+.cells { display: flex; gap: 3px; }
+.cells i { flex: 1; height: 36px; border-radius: 4px; box-shadow: inset 0 0 0 1px rgba(52,34,55,.08); }
+.roles { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.role { border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
+.role i { display: block; height: 36px; border-radius: 6px; margin-bottom: 8px; box-shadow: inset 0 0 0 1px rgba(52,34,55,.08); }
+.role b { display: block; font-size: 13px; }
+.role span { font-size: 12px; color: var(--muted); }
+.typerow { display: grid; grid-template-columns: 180px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--border); align-items: baseline; }
+.typerow .k { font-size: 12px; }
+.typerow small { display: block; color: var(--muted); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 47px; padding: 10px 18px; border-radius: var(--radius-small); font: 400 16px/1 var(--sg-sans); text-decoration: none; border: 1px solid transparent; }
+.btn-primary { background: var(--accent); color: var(--onAccent); border-color: var(--accent); }
+.btn-secondary { background: var(--surface); color: var(--text); border-color: var(--border); }
+.field { height: 40px; border: 1px solid var(--border); border-radius: var(--radius-small); padding: 0 12px; width: 280px; font: 400 16px var(--sg-sans); }
+.card { background: var(--surface); border-radius: var(--radius-main); box-shadow: var(--shadow-cardHover); padding: 20px; max-width: 320px; }
+.badge { display: inline-flex; border-radius: 999px; background: #dcfce7; color: #15803d; font-size: 12px; padding: 2px 8px; }
+.note { font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Make</h1>
+<p class="lead">Public marketing site, one light theme. Values from tokens.json. Satoshi is proprietary and is not loaded here, so the page falls back to Arial.</p>
+<h2>Colour ramps</h2>
+<div class="swatches"><div class="ramp"><span>brand</span><div class="cells"><i style="background:#faf7fe" title="brand-50 #faf7fe"></i><i style="background:#f3ecfd" title="brand-100 #f3ecfd"></i><i style="background:#e9dcfb" title="brand-200 #e9dcfb"></i><i style="background:#d8c0f6" title="brand-300 #d8c0f6"></i><i style="background:#bf98ec" title="brand-400 #bf98ec"></i><i style="background:#a66ee2" title="brand-500 #a66ee2"></i><i style="background:#8f4bd2" title="brand-600 #8f4bd2"></i><i style="background:#803bbf" title="brand-700 #803bbf"></i><i style="background:#683496" title="brand-800 #683496"></i><i style="background:#552c79" title="brand-900 #552c79"></i><i style="background:#3a1559" title="brand-950 #3a1559"></i></div></div><div class="ramp"><span>accent</span><div class="cells"><i style="background:#fbf6fe" title="accent-50 #fbf6fe"></i><i style="background:#f6e9fe" title="accent-100 #f6e9fe"></i><i style="background:#eed8fc" title="accent-200 #eed8fc"></i><i style="background:#e1b9f9" title="accent-300 #e1b9f9"></i><i style="background:#cf8bf5" title="accent-400 #cf8bf5"></i><i style="background:#bc5fed" title="accent-500 #bc5fed"></i><i style="background:#b251e2" title="accent-600 #b251e2"></i><i style="background:#932cc4" title="accent-700 #932cc4"></i><i style="background:#7b29a0" title="accent-800 #7b29a0"></i><i style="background:#652380" title="accent-900 #652380"></i><i style="background:#460d5e" title="accent-950 #460d5e"></i></div></div><div class="ramp"><span>neutral</span><div class="cells"><i style="background:#fafafa" title="neutral-50 #fafafa"></i><i style="background:#f3f2f3" title="neutral-100 #f3f2f3"></i><i style="background:#e9e6e9" title="neutral-200 #e9e6e9"></i><i style="background:#dad4da" title="neutral-300 #dad4da"></i><i style="background:#b0a6b1" title="neutral-400 #b0a6b1"></i><i style="background:#867489" title="neutral-500 #867489"></i><i style="background:#69586c" title="neutral-600 #69586c"></i><i style="background:#58475a" title="neutral-700 #58475a"></i><i style="background:#3d2f40" title="neutral-800 #3d2f40"></i><i style="background:#342237" title="neutral-900 #342237"></i><i style="background:#221528" title="neutral-950 #221528"></i></div></div><div class="ramp"><span>gray</span><div class="cells"><i style="background:#f9fafb" title="gray-50 #f9fafb"></i><i style="background:#f3f4f6" title="gray-100 #f3f4f6"></i><i style="background:#e5e7eb" title="gray-200 #e5e7eb"></i><i style="background:#d1d5db" title="gray-300 #d1d5db"></i><i style="background:#9ca3af" title="gray-400 #9ca3af"></i><i style="background:#6b7280" title="gray-500 #6b7280"></i><i style="background:#4b5563" title="gray-600 #4b5563"></i><i style="background:#374151" title="gray-700 #374151"></i><i style="background:#1f2937" title="gray-800 #1f2937"></i><i style="background:#111827" title="gray-900 #111827"></i><i style="background:#030712" title="gray-950 #030712"></i></div></div><div class="ramp"><span>green</span><div class="cells"><i style="background:#f0fdf4" title="green-50 #f0fdf4"></i><i style="background:#dcfce7" title="green-100 #dcfce7"></i><i style="background:#bbf7d0" title="green-200 #bbf7d0"></i><i style="background:#86efac" title="green-300 #86efac"></i><i style="background:#4ade80" title="green-400 #4ade80"></i><i style="background:#22c55e" title="green-500 #22c55e"></i><i style="background:#16a34a" title="green-600 #16a34a"></i><i style="background:#15803d" title="green-700 #15803d"></i><i style="background:#166534" title="green-800 #166534"></i><i style="background:#14532d" title="green-900 #14532d"></i><i style="background:#052e16" title="green-950 #052e16"></i></div></div><div class="ramp"><span>red</span><div class="cells"><i style="background:#fef2f2" title="red-50 #fef2f2"></i><i style="background:#fee2e2" title="red-100 #fee2e2"></i><i style="background:#fecaca" title="red-200 #fecaca"></i><i style="background:#fca5a5" title="red-300 #fca5a5"></i><i style="background:#f87171" title="red-400 #f87171"></i><i style="background:#ef4444" title="red-500 #ef4444"></i><i style="background:#dc2626" title="red-600 #dc2626"></i><i style="background:#b91c1c" title="red-700 #b91c1c"></i><i style="background:#991b1b" title="red-800 #991b1b"></i><i style="background:#7f1d1d" title="red-900 #7f1d1d"></i><i style="background:#450a0a" title="red-950 #450a0a"></i></div></div><div class="ramp"><span>yellow</span><div class="cells"><i style="background:#fefce8" title="yellow-50 #fefce8"></i><i style="background:#fef9c3" title="yellow-100 #fef9c3"></i><i style="background:#fef08a" title="yellow-200 #fef08a"></i><i style="background:#fde047" title="yellow-300 #fde047"></i><i style="background:#facc15" title="yellow-400 #facc15"></i><i style="background:#eab308" title="yellow-500 #eab308"></i><i style="background:#ca8a04" title="yellow-600 #ca8a04"></i><i style="background:#a16207" title="yellow-700 #a16207"></i><i style="background:#854d0e" title="yellow-800 #854d0e"></i><i style="background:#713f12" title="yellow-900 #713f12"></i><i style="background:#422006" title="yellow-950 #422006"></i></div></div></div>
+<h2>Roles</h2>
+<div class="roles">
+  <div class="role"><i style="background:var(--page)"></i><b>page</b><span>var(--page)</span></div>
+  <div class="role"><i style="background:var(--surface)"></i><b>surface</b><span>var(--surface)</span></div>
+  <div class="role"><i style="background:var(--text)"></i><b>text</b><span>var(--text)</span></div>
+  <div class="role"><i style="background:var(--muted)"></i><b>muted</b><span>var(--muted)</span></div>
+  <div class="role"><i style="background:var(--accent)"></i><b>accent</b><span>var(--accent)</span></div>
+  <div class="role"><i style="background:var(--accentHover)"></i><b>accent hover</b><span>var(--accentHover)</span></div>
+  <div class="role"><i style="background:var(--link)"></i><b>link</b><span>var(--link)</span></div>
+  <div class="role"><i style="background:var(--border)"></i><b>border</b><span>var(--border)</span></div>
+  <div class="role"><i style="background:var(--success)"></i><b>success</b><span>var(--success)</span></div>
+  <div class="role"><i style="background:var(--danger)"></i><b>danger</b><span>var(--danger)</span></div>
+  <div class="role"><i style="background:var(--warning)"></i><b>warning</b><span>var(--warning)</span></div>
+  <div class="role"><i style="background:var(--info)"></i><b>info</b><span>var(--info)</span></div>
+</div>
+<h2>Type</h2>
+<div class="typerow"><div class="k">display<small>72px / 500</small></div><div class="sample" style="font-size:72px;font-weight:500;line-height:1.2">Make automations</div></div><div class="typerow"><div class="k">h1<small>60px / 500</small></div><div class="sample" style="font-size:60px;font-weight:500;line-height:1.2">Make automations</div></div><div class="typerow"><div class="k">h2<small>48px / 500</small></div><div class="sample" style="font-size:48px;font-weight:500;line-height:1.2">Make automations</div></div><div class="typerow"><div class="k">h3<small>36px / 500</small></div><div class="sample" style="font-size:36px;font-weight:500;line-height:1.25">Make automations</div></div><div class="typerow"><div class="k">h4<small>30px / 500</small></div><div class="sample" style="font-size:30px;font-weight:500;line-height:1.3">Make automations</div></div><div class="typerow"><div class="k">h5<small>24px / 500</small></div><div class="sample" style="font-size:24px;font-weight:500;line-height:1.35">Make automations</div></div><div class="typerow"><div class="k">h6<small>18px / 500</small></div><div class="sample" style="font-size:18px;font-weight:500;line-height:1.4">Make automations</div></div><div class="typerow"><div class="k">text-xlarge<small>20px / 400</small></div><div class="sample" style="font-size:20px;font-weight:400;line-height:1.5">Make automations</div></div><div class="typerow"><div class="k">text-large<small>18px / 400</small></div><div class="sample" style="font-size:18px;font-weight:400;line-height:1.5">Make automations</div></div><div class="typerow"><div class="k">body<small>16px / 400</small></div><div class="sample" style="font-size:16px;font-weight:400;line-height:1.5">Make automations</div></div><div class="typerow"><div class="k">text-small<small>14px / 400</small></div><div class="sample" style="font-size:14px;font-weight:400;line-height:1.5">Make automations</div></div><div class="typerow"><div class="k">caption<small>12px / 400</small></div><div class="sample" style="font-size:12px;font-weight:400;line-height:1.5">Make automations</div></div>
+<p class="note">Desktop ends of Make's fluid clamps. Phone sizes are the clamp minimums in raw/css-vars.json.</p>
+<h2>Components</h2>
+<p><a class="btn btn-primary" href="#">Try it free</a> <a class="btn btn-secondary" href="#">Talk to sales</a></p>
+<p><input class="field" placeholder="Search integrations..." aria-label="Search"></p>
+<div class="card"><span class="badge">Save 15%</span><p>Pro plan card, radius main, card hover shadow.</p></div>
+</div>
+</body>
+</html>
