@@ -23,7 +23,7 @@ colors:
   secondaryForeground: "#0f0f0f"
   muted: "#f3f0ed"
   mutedForeground: "#232529"
-  accent: "#ff773c"
+  accent: "#f3f0ed"
   accentForeground: "#0f0f0f"
   destructive: "#ef4444"
   destructiveForeground: "#fafafa"
@@ -44,6 +44,7 @@ colors:
   sidebar-border: "#e5e7eb"
   sidebar-ring: "#3b82f6"
   brand: "#312f2f"
+  accent-cta: "#ff773c"
   focus: "#1e1e24"
   measured-linkHover: "#3a3939"
 typography:
@@ -70,6 +71,7 @@ typography:
     fontSize: "16px"
     fontWeight: 500
     lineHeight: "24px"
+    letterSpacing: "0px"
   button:
     fontFamily: "Geist"
     fontSize: "16px"
@@ -81,6 +83,7 @@ typography:
     fontSize: "48px"
     fontWeight: 400
     lineHeight: "48px"
+    letterSpacing: "0px"
 rounded:
   none: "0px"
   xs: "4px"
