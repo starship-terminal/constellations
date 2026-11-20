@@ -107,6 +107,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 - **Some font names differ per surface.** The shop shell paints `arketSansMono`; the consent card and account gate fall back to `"Arket Sans"`/`"Arket-Sans-Mono"` stacks. The `+N` colour chips use the small-caps `arketSCSansMono`.
 - **Screenshots are 256-colour PNGs** — read exact colours from tokens.json or the raw JSON, never from a screenshot pixel.
 - **`service-link` is the service page's ARKET logo.** Two specs share the key: the service page's loose `main a` probe overwrote the home page's Customer service link with the logo (43 x 40, "ARKET"). Needs a recapture; the script now gives the second probe its own key, `service-page-link` (not run since).
+- **`breadcrumb`, `gate-continue` and `m-search` were read from the wrong elements.** `breadcrumb` is the main category nav ("Women Men Children Homeware Gift shop"), `gate-continue` is the gate's "with Google" button, and `m-search` is the mobile menu button. Each needs a recapture; the script now targets the breadcrumb and the Continue button by their own markers (not run since).
 
 ## Fonts
 

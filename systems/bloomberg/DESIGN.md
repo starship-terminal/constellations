@@ -105,6 +105,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **The sign-in sheet screenshot shows the challenge.** [home-light-signin](screenshots/home-light-signin.png) is the `/account/iframe/login` sheet mounted by the Sign In button — under PerimeterX throttling it renders the verification card inside the sheet. That is the honest surface this client saw.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
 - **The article is a sample**, not a fixed story.
+- **`offer-header` was read from the wrong element.** It is the corporate utility bar at the top of /subscriptions ("Bloomberg the Company & Its Products ..."), not the offers page header. Needs a recapture; the script now targets the offers header class only (not run since).
 
 ### Do and don't (from README.md)
 

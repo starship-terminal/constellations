@@ -117,6 +117,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Log in / Sign Up did not render on the captured loads** — recorded missing, not evidence they are absent: the first recon run saw them in the header. No public login page exists signed-out (`/session/login` 404s).
 - **`submit-cta-2` is a recorded miss** — /submit/ showed no measurable CTA to headless; the plan card is the evidence.
 - **Focus styles were not systematically captured** beyond focus-visible states on the measured components.
+- **`sotd-heading` and `coll-card` were read from the wrong elements.** `sotd-heading` is the whole 1336 x 359 Site of the Day block, not its heading, and `coll-card` is the "Reset filters" link on /collections/. Both need a recapture; the script now takes a heading element and a collections link with an image (not run since).
 
 ### Do and don't (from README.md)
 
