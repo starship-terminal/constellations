@@ -50,6 +50,15 @@ class Check(unittest.TestCase):
         t["light"]["shadow"]["tab"]["$value"]["color"] = "#123457"
         self.assertTrue(any("light.shadow.tab" in p and "in no reading" in p for p in build_tokens.problems(t, READINGS)))
 
+    def test_chain_through_core_resolves_from_core(self):
+        # light.font.shared -> {core.font.shared} -> {font.base} reads core.font.base (Inter), not the
+        # light theme's own font.base override.
+        tree = {"core": {"font": {"base": {"$value": "Inter"}, "shared": {"$value": "{font.base}"}}},
+                "light": {"font": {"base": {"$value": "{font.shared}"}, "shared": {"$value": "{core.font.shared}"}}}}
+        self.assertIsNone(build_tokens.resolve(tree, "light", "core.font.shared", set()))
+        tree["core"]["font"]["base"]["$value"] = "{font.shared}"   # now core loops on itself
+        self.assertIn("cycle", build_tokens.resolve(tree, "light", "core.font.shared", set()))
+
     def test_rgba_alpha_rounds_half_up(self):
         self.assertIn("#1b1b204d", build_tokens.colours_in("rgba(27, 27, 32, 0.3)"))
 
