@@ -672,6 +672,41 @@ class ProviderKeyTest(TempConfig):
         self.assertEqual(out.returncode, 0, out.stderr)
         self.assertEqual(json.loads(out.stdout.strip().splitlines()[-1]), GOOD)
 
+    def raw_bytes(self):
+        return b"".join(p.read_bytes() for p in self.config.iterdir() if p.is_file())
+
+    def test_no_copy_of_a_removed_or_replaced_key_stays_in_the_files(self):
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY2})
+        self.assertNotIn(KEY.encode(), self.raw_bytes())
+        self.call("delete", "/api/provider")
+        self.assertNotIn(KEY2.encode(), self.raw_bytes())
+
+    def test_remove_and_a_checked_replacement_recover_a_damaged_file(self):
+        self.config.mkdir(parents=True)
+        db = self.config / "provider.db"
+        db.write_text(("damaged %s " % KEY) * 300)
+        h = self.call("delete", "/api/provider")
+        self.assertEqual((h.status, h.json()["removed"], h.json()["source"]), (200, True, "none"))
+        db.write_text(("damaged %s " % KEY) * 300)
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2})
+        self.assertTrue(h.json()["ok"])
+        self.assertEqual(self.saved()["api_key"], KEY2)
+        db.write_text(("damaged %s " % KEY) * 300)
+        h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2, "migrate": True})
+        self.assertFalse(h.json()["ok"])
+
+    def test_an_unreadable_folder_is_reported_not_replaced_by_env(self):
+        self.chat.env_cfg = {"api": "anthropic", "api_key": ENV_KEY, "model": "env"}
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        os.chmod(self.config, 0o000)
+        try:
+            cfg, source, error = self.store.resolve(self.chat.env_cfg)
+        finally:
+            os.chmod(self.config, 0o700)
+        self.assertEqual((cfg, source), (None, "saved"))
+        self.assertTrue(error)
+
     def test_delete_is_only_the_provider_route(self):
         handled, h = _send(self.routes, "delete", "/api/mcp")
         self.assertFalse(handled)

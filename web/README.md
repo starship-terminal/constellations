@@ -24,14 +24,18 @@ lives in the browser:
    mode). Every change is one statement, so SQLite's own locking makes it
    atomic across both servers, and a crashed process never leaves a lock
    behind. A model change applies only while the saved key and endpoint are
-   the ones the page was editing.
+   the ones the page was editing. `secure_delete` and a checkpoint after
+   every write keep a replaced or removed key's bytes out of the files.
+   Remove deletes a damaged database outright, and saving a key the provider
+   accepted replaces one, so a broken file never needs a hand fix.
 4. No answer carries the key. `GET /api/provider` and `GET /api/status` say
    only where it comes from, shown on the page as a badge: saved on the
    server, from the server environment, or no key.
 5. The chat uses the saved key; `ANTHROPIC_API_KEY` (from the environment
    or the repo's `.env`) only while nothing is saved; with neither, the
-   chat asks for setup. A saved file that is broken is reported, never
-   quietly replaced by the env key.
+   chat asks for setup. A saved file that is broken or unreadable (a
+   permission change, say) is reported, never quietly replaced by the env
+   key.
 6. A saved key only goes to the endpoint it was saved with. Changing the
    API, base URL, key header or models URL needs the key again; the model
    and label change without it. Remove (`DELETE /api/provider`) deletes the
