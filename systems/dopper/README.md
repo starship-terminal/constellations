@@ -105,6 +105,7 @@ Nothing was signed into, created, submitted or paid for: the login fields were f
 - **`cart-empty`** is the "Your cart" h1, kept from an earlier run when the latest pass did not find the empty-basket block (recaptureMissed); components.md flags it.
 - **Role colours with no reading.** `light.text.muted` (#515a8a), `light.surface.card` (#f9f3df: the only readings are 0 x 0 footer chips), `light.surface.menu` and `light.action.warm` (#fed200) carry their declared variables only: no captured component paints them (the opened mega-menu was screenshotted, not measured).
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ## Fonts
 

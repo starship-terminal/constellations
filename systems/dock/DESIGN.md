@@ -142,6 +142,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **`menu-link`** was not found by the 2026-11-12 run; its states are those of the 2026-11-13 run (`recaptureMissed`), and the four tokens read from it say so.
 - **`m-hero`** was read with the mobile menu still open (Escape does not close its `<details>`), so its crop can show the menu over the headline. The script now closes the menu with its own toggle; not re-run.
 - **Screenshots are 256-colour PNGs** — read exact colours from tokens.json or raw files, never from a screenshot.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ### Do and don't (from README.md)
 

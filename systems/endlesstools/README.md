@@ -110,6 +110,7 @@ Nothing was signed into, created, submitted or consented to: the only presses we
 - **The pill radius is nominal `9999px`.** Chrome resolves Tailwind's `rounded-full` (`calc(infinity * 1px)`) to 33554432px in computed style; the token records 9999px, the value a reader expects.
 - **Quantised screenshots and crops.** `screenshots/` and `components/crops/` are 256-colour PNGs; the crops' in-run quantize step failed (the runner's `python3` lacked Pillow) so they were quantised after capture with the same recipe — the `cropError` keys in [raw/components-computed.json](raw/components-computed.json) record the failure. Read exact colours from tokens or the raw files.
 - **Animated content moves between runs.** The hero's orbiting asset cards, gradient title and the auto-advancing testimonial carousel mean two captures of the same view differ.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ## Fonts
 

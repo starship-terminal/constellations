@@ -524,6 +524,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **`social-icon` is the wrong element.** Its selector's `href*="x.com"` also matches dropbox.com, so the entry holds the "Dropbox Sign" footer link's values; components.md marks it and no token reads it. The selector is fixed in `measure.mjs` (edited, not run); the entry needs a recapture.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
 - **A/B and regional variance.** The home hero rotates variants ("One place to store, share, and collaborate" / "Freedom to work your way"), prices render US$, and the CCPA banner mounts by region — all recorded as they painted.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ### Do and don't (from README.md)
 

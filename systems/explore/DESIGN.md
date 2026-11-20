@@ -147,6 +147,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw values, never the pixels.
 - **Values picked from the sheet.** The colours, type ramp, radii, spacings, containers and motion were chosen from the compiled stylesheet at capture time. The builder now checks each one is still declared in `raw/css-declarations.json` under the right properties and stops if not; the leadings are derived from declared font-size/line-height pairs. `core.zIndex.modal` (999) has no declaration behind it and is labelled as entered by hand.
 - **`pill` and `pill-idle` have no focus reading.** Keyboard focus never reached them, so their `focus-visible` readings are the element at rest: components.md and `raw/measurements.md` leave them out. Needs a recapture; `measure.mjs` now records such a state as skipped (edited, not run).
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ### Do and don't (from README.md)
 

@@ -513,6 +513,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 - **Seven entries measured the wrong element.** The capture's `.or()` fallbacks are unions resolved in DOM order, so an earlier node won: `nav-link` is the highlighted "New chat" row (the same node as `nav-link-current`), `input-card` the transparent wrapper, `chat-hero` the whole `main`, `logo` the 620 x 25 wrapper, `feature-card` the testimonial (the same card as `quote-card`), `signin-dialog` the transparent inner section, and `menu-item` the expandable "About Chat" row (the same node as `menu-item-expand`). components.md flags each; `light.component.dialog.width` (393px) is the inner section's width and says so. The input-card and dialog radius tokens read the painted `form` and `div.modal` layers and are unaffected. The script now prefers the intended node by `count()` (not re-run). Recapture needed.
 - **Dark screenshots were requested, not checked.** The dark pass sets `localStorage.theme`; the committed shots were never checked for what painted. The script now skips a shot whose page ground does not match the requested theme (not re-run).
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ### Do and don't (from README.md)
 

@@ -108,6 +108,7 @@ Nothing was signed into, generated, sent or submitted: Sign in (clerk.endless.ap
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; gradients band. Read exact colours from tokens or the raw files.
 - **`composer-send` read the wrong control.** Its four states are the composer's "Add to prompt" attach button (36px icon button), not the send control; recapture needed. `component.icon-button.size` cites `m-menu-button` instead.
 - **A few readings predate the selector fixes.** Where a component moved during capture, the surviving evidence is the earlier, sometimes larger, painted ancestor — noted on the entry rather than silently wrong.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ## Fonts
 

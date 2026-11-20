@@ -111,6 +111,7 @@ Nothing was sent, signed into, booked or bought. The only presses were local UI 
 - **Pressed states are forced.** `:active` was applied with DevTools, so anything a real mousedown would add is unmeasured.
 - **Quantised screenshots.** `screenshots/` and `components/crops/` are 256-colour PNGs; read exact colours from tokens or the raw JSON.
 - **The dashboard mock-ups are imagery.** The product screenshots and the "Take a self-guided tour" affordance visible in several shots are baked into the marketing artwork, not DOM controls; the real workspace lives behind sign-in.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ## Fonts
 

@@ -100,6 +100,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 - **Emotion hashes** in selectors are build-dependent; treat any `css-*` class in raw/ as evidence, not an API.
 - **The `#005fcc` 1px auto outlines** on ecom/generator controls are the browser's default focus ring, not a designed token — the designed ring is the cobalt 2px+2px pair.
 - **Sampled pixels** — screenshots are 256-colour PNGs; exact values come from tokens.json or raw/.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ## Fonts
 
