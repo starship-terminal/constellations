@@ -6,7 +6,7 @@ Manrope UI text, Literatatt display), its /library route a separate
 Tailwind build in Mulish, and its sign-in (app.clearful.com) a Flutter
 canvas app measured through the semantics overlay at devicePixelRatio 1 —
 the canvas paints its own colours, which CSSOM cannot read; the app-surface
-values below are pixel-sampled from raw/full/signin-light-default.png and
+values below are pixel-sampled from the full-colour sign-in screenshot and
 documented as such.
 
 Unlike the previous captures, the Webflow stylesheet DOES declare a real
@@ -43,7 +43,8 @@ import json, pathlib, re
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
 V = json.loads((RAW / "css-vars.json").read_text())
-RL = V["resolved"].get("dark") or V["resolved"].get("light") or {}
+# clearful paints light only (catalog theme list): resolve against the light pass, never a dark probe.
+RL = V["resolved"]["light"]
 C = json.loads((RAW / "components-computed.json").read_text())["components"]
 R = {n: v.get("value", v.get("raw")) for n, v in RL.items()}
 
@@ -303,18 +304,19 @@ for path, comp, state, prop, desc in [
 # ----- the Flutter sign-in surface: canvas-painted, CSSOM-blind
 #
 # The sign-in card paints on a Flutter canvas. These values are sampled
-# straight off the captured screenshot (raw/full/signin-light-default.png,
-# 1440x900 at dsf1) at the measured control rects — a real reading of
-# painted pixels, not a stylesheet claim.
+# straight off the full-colour sign-in screenshot (1440x900 at dsf1, kept
+# outside the repo) at the measured control rects: painted pixels, not a
+# stylesheet or computed-style reading. docs/EVIDENCE.md labels them Sampled
+# and keeps them out of the semantic sets, so they live under core.sampled.
 for path, hexval, pt, desc in [
-    ("light:app.ground", "#f7f7f7", "60,450", "The sign-in page's grey ground — sampled off the screenshot at (60,450)."),
-    ("light:app.oauth.ink", "#222222", "720,486", "The Continue-with-Apple button's near-black fill — sampled at the button centre."),
-    ("light:app.oauth.google", "#1a73e8", "720,540", "The Continue-with-Google button's Google blue — sampled at the button centre."),
-    ("light:app.oauth.email", "#ffffff", "720,412", "The Continue-with-email button's white fill — sampled at the button centre."),
-    ("light:app.text.primary", "#222222", "720,417", "The sign-in card's ink — sampled on the email button's label."),
+    ("core:sampled.app.ground", "#f7f7f7", "60,450", "The sign-in page's grey ground — sampled off the screenshot at (60,450)."),
+    ("core:sampled.app.oauth.ink", "#222222", "720,486", "The Continue-with-Apple button's near-black fill — sampled at the button centre."),
+    ("core:sampled.app.oauth.google", "#1a73e8", "720,540", "The Continue-with-Google button's Google blue — sampled at the button centre."),
+    ("core:sampled.app.oauth.email", "#ffffff", "720,412", "The Continue-with-email button's white fill — sampled at the button centre."),
+    ("core:sampled.app.text.primary", "#222222", "720,417", "The sign-in card's ink — sampled on the email button's label."),
 ]:
     leaf = {"value": hexval, "type": "color", "description": desc,
-            "source": f"pixel sample of raw/full/signin-light-default.png at ({pt}) — canvas-painted, CSSOM-blind"}
+            "source": f"Sampled: a screenshot pixel of the full-colour sign-in capture (kept outside the repo) at ({pt}); canvas-painted, CSSOM-blind, no element reading holds it"}
     theme, _, rest = path.partition(":")
     node = SPEC[theme]
     for p in rest.split(".")[:-1]:
@@ -452,7 +454,7 @@ for key, cname, desc in [
 def count(d):
     if not isinstance(d, dict):
         return 1
-    if "var" in d or "value" in d or "" in d:
+    if "var" in d or "value" in d:
         return 1
     return sum(count(v) for v in d.values())
 

@@ -30,7 +30,7 @@ out._meta ??= {};
 out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
-const URLS = { home: '/', pricing: '/pricing', library: '/library', prompts: '/journal-prompts', signin: 'https://app.clearful.com/#/sign-in' };
+const URLS = { home: '/', pricing: '/pricing', library: '/library', signin: 'https://app.clearful.com/#/sign-in' };
 let page, cdp, current, view, context, run;
 const touched = new Set();
 const listed = new Map();
