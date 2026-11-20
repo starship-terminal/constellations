@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tilda style guide</title>
+<style>
+:root {
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+  --color-coral: #fa8669;
+  --color-on-coral: #ffffff;
+  --color-cream: #ffe8c7;
+  --color-field-line: rgba(255, 255, 255, 0.3);
+  --color-faq-chip: #ececec;
+  --color-faq-chip-text: #282828;
+  --color-price-accent: #ff8562;
+  --color-menu-shadow: rgba(0, 0, 0, 0.15);
+  --color-auth-panel: rgba(255, 255, 255, 0.1);
+  --font-family-sans: TildaSans, Arial, sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-nav: 13px;
+  --font-size-button: 15px;
+  --font-size-menu: 19px;
+  --font-size-body: 16px;
+  --font-size-field: 24px;
+  --font-size-display: 46px;
+  --font-size-pricing: 60px;
+  --radius-none: 0px;
+  --radius-chip: 4px;
+  --radius-field: 5px;
+  --radius-pill: 100px;
+  --size-button-sm: 45px;
+  --size-button-smd: 50px;
+  --size-button-xl: 80px;
+  --size-field: 53px;
+  --size-faq-field: 48px;
+  --size-auth-button: 44px;
+  --surface-page: var(--color-paper);
+  --surface-auth-panel: var(--color-auth-panel);
+  --text-primary: var(--color-ink);
+  --text-on-accent: var(--color-on-coral);
+  --text-on-auth: #ffffff;
+  --accent-default: var(--color-coral);
+  --border-field: var(--color-field-line);
+  --component-button-background: var(--color-coral);
+  --component-button-text: var(--color-on-coral);
+  --component-button-height: var(--size-button-smd);
+  --component-button-radius: var(--radius-none);
+  --component-auth-button-background: var(--color-cream);
+  --component-auth-button-text: var(--color-ink);
+  --component-auth-button-radius: var(--radius-pill);
+  --component-auth-button-height: var(--size-auth-button);
+  --sg-sans: "TildaSans", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--surface-page, #fff); color: var(--text-primary, #000); font: 400 16px/1.4 var(--sg-sans); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+h1 { font-weight: 300; font-size: 46px; margin: 0 0 8px; }
+h2 { font-weight: 300; font-size: 28px; margin: 40px 0 12px; }
+.row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.sw { width: 72px; height: 72px; border: 1px solid #ddd; }
+.btn { display: inline-flex; align-items: center; background: var(--component-button-background); color: var(--component-button-text); height: var(--component-button-height); padding: 0 44px; font-weight: 600; font-size: 15px; text-decoration: none; }
+.pill { display: inline-flex; align-items: center; background: var(--component-auth-button-background); color: var(--component-auth-button-text); height: var(--component-auth-button-height); padding: 0 28px; border-radius: var(--component-auth-button-radius); font-size: 18px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid #eee; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Tilda</h1>
+  <p>Public marketing tokens from tilda.cc, 2026-11-21. Light only.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Buttons</h2>
+  <div class="row">
+    <a class="btn" href="#">Create a website for free</a>
+    <button class="pill" type="button">Log in</button>
+  </div>
+  <h2>Tokens</h2>
+  <table id="tokens"></table>
+</div>
+<script>
+const TOKENS = {"core":{"color":{"ink":{"v":"#000000","t":"color","s":"computed color of hero-title default on tilda.cc, 2026-11-21"},"paper":{"v":"#ffffff","t":"color","s":"computed backgroundColor of faq-search default"},"coral":{"v":"#fa8669","t":"color","s":"computed backgroundColor of hero-cta default on tilda.cc, 2026-11-21"},"on-coral":{"v":"#ffffff","t":"color","s":"computed color of hero-cta default on tilda.cc, 2026-11-21"},"cream":{"v":"#ffe8c7","t":"color","s":"computed backgroundColor of login-submit default on tilda.cc, 2026-11-21"},"field-line":{"v":"rgba(255, 255, 255, 0.3)","t":"color","s":"computed borderBottomColor of login-email default"},"faq-chip":{"v":"#ececec","t":"color","s":"computed backgroundColor of faq-category selected on tilda.cc, 2026-11-21"},"faq-chip-text":{"v":"#282828","t":"color","s":"computed color of faq-category selected on tilda.cc, 2026-11-21"},"price-accent":{"v":"#ff8562","t":"color","s":"computed color of the Personal website label on /pricing/, 2026-11-21"},"menu-shadow":{"v":"rgba(0, 0, 0, 0.15)","t":"color","s":"computed box-shadow colour of .tmain-submenu__content, 2026-11-21"},"auth-panel":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"computed backgroundColor of .ts-form on /login/, 2026-11-21"}},"font":{"family":{"sans":{"v":"TildaSans, Arial, sans-serif","t":"fontFamily","s":"css-var --t-headline-font and --t-text-font on #allrecords .r, body"}},"weight":{"light":{"v":300,"t":"fontWeight","s":"computed fontWeight of hero-title default on tilda.cc, 2026-11-21"},"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of menu-link default on tilda.cc, 2026-11-21"},"semibold":{"v":600,"t":"fontWeight","s":"computed fontWeight of hero-cta default on tilda.cc, 2026-11-21"},"bold":{"v":700,"t":"fontWeight","s":"computed fontWeight of login-link default on tilda.cc, 2026-11-21"}},"size":{"nav":{"v":"13px","t":"dimension","s":"computed fontSize of login-link default on tilda.cc, 2026-11-21"},"button":{"v":"15px","t":"dimension","s":"computed fontSize of hero-cta default on tilda.cc, 2026-11-21"},"menu":{"v":"19px","t":"dimension","s":"computed fontSize of menu-link default on tilda.cc, 2026-11-21"},"body":{"v":"16px","t":"dimension","s":"computed fontSize of body text on /pricing/ plan labels"},"field":{"v":"24px","t":"dimension","s":"computed fontSize of login-email default on tilda.cc, 2026-11-21"},"display":{"v":"46px","t":"dimension","s":"computed fontSize of hero-title default on tilda.cc, 2026-11-21"},"pricing":{"v":"60px","t":"dimension","s":"computed fontSize of pricing-title default on tilda.cc, 2026-11-21"}}},"radius":{"none":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of hero-cta default on tilda.cc, 2026-11-21"},"chip":{"v":"4px","t":"dimension","s":"computed borderTopLeftRadius of template-radio default on tilda.cc, 2026-11-21"},"field":{"v":"5px","t":"dimension","s":"computed borderTopLeftRadius of faq-search default on tilda.cc, 2026-11-21"},"pill":{"v":"100px","t":"dimension","s":"computed borderTopLeftRadius of login-submit default on tilda.cc, 2026-11-21"}},"size":{"button-sm":{"v":"45px","t":"dimension","s":"css-var --height on .t-btnflex_sm"},"button-smd":{"v":"50px","t":"dimension","s":"computed height of hero-cta default on tilda.cc, 2026-11-21"},"button-xl":{"v":"80px","t":"dimension","s":"css-var --height on .t-btnflex_xl"},"field":{"v":"53px","t":"dimension","s":"computed height of login-email default on tilda.cc, 2026-11-21"},"faq-field":{"v":"48px","t":"dimension","s":"computed height of faq-search default on tilda.cc, 2026-11-21"},"auth-button":{"v":"44px","t":"dimension","s":"computed height of login-submit default on tilda.cc, 2026-11-21"}}},"light":{"surface":{"page":{"v":"{color.paper}","t":"color","s":"alias of core.color.paper"},"auth-panel":{"v":"{color.auth-panel}","t":"color","s":"alias of core.color.auth-panel"}},"text":{"primary":{"v":"{color.ink}","t":"color","s":"alias of core.color.ink"},"on-accent":{"v":"{color.on-coral}","t":"color","s":"alias of core.color.on-coral"},"on-auth":{"v":"#ffffff","t":"color","s":"computed color of login-email default on tilda.cc, 2026-11-21"}},"accent":{"default":{"v":"{color.coral}","t":"color","s":"alias of core.color.coral"}},"border":{"field":{"v":"{color.field-line}","t":"color","s":"alias of core.color.field-line"}},"component":{"button":{"background":{"v":"{color.coral}","t":"color","s":"alias of core.color.coral"},"text":{"v":"{color.on-coral}","t":"color","s":"alias of core.color.on-coral"},"height":{"v":"{size.button-smd}","t":"dimension","s":"alias of core.size.button-smd"},"radius":{"v":"{radius.none}","t":"dimension","s":"alias of core.radius.none"}},"auth-button":{"background":{"v":"{color.cream}","t":"color","s":"alias of core.color.cream"},"text":{"v":"{color.ink}","t":"color","s":"alias of core.color.ink"},"radius":{"v":"{radius.pill}","t":"dimension","s":"alias of core.radius.pill"},"height":{"v":"{size.auth-button}","t":"dimension","s":"alias of core.size.auth-button"}}}},"dark":{}};
+const root = document.documentElement;
+function flat(node, prefix, out) {
+  for (const [k, v] of Object.entries(node || {})) {
+    if (k.startsWith("$")) continue;
+    const path = prefix ? prefix + "." + k : k;
+    if (v && v.$value !== undefined) out.push([path, v]);
+    else if (v && typeof v === "object") flat(v, path, out);
+  }
+}
+const rows = [];
+flat(TOKENS.core, "", rows);
+flat(TOKENS.light, "", rows);
+const css = (path) => "--" + path.replace(/\./g, "-");
+for (const [path, t] of rows) {
+  if (typeof t.$value === "string") root.style.setProperty(css(path), t.$value.replace(/\{([^{}]+)\}/g, (_, a) => "var(" + css(a) + ")"));
+}
+const sw = document.getElementById("swatches");
+for (const [path, t] of rows) {
+  if (t.$type !== "color") continue;
+  const d = document.createElement("div");
+  d.innerHTML = '<div class="sw"></div><div>' + path + '</div>';
+  d.querySelector(".sw").style.background = getComputedStyle(root).getPropertyValue(css(path));
+  sw.appendChild(d);
+}
+const table = document.getElementById("tokens");
+for (const [path, t] of rows) {
+  const tr = document.createElement("tr");
+  tr.innerHTML = "<td>" + path + "</td><td>" + t.$type + "</td><td>" + String(t.$value) + "</td>";
+  table.appendChild(tr);
+}
+</script>
+</body>
+</html>

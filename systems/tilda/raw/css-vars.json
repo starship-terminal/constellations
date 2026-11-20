@@ -1,0 +1,671 @@
+{
+ "read": "2026-11-21",
+ "url": "https://tilda.cc/",
+ "sheetCount": 74,
+ "customPropertyCount": 16,
+ "customProperties": [
+  "--border-width",
+  "--column-gap",
+  "--column-width",
+  "--container-max-width",
+  "--container-width",
+  "--height",
+  "--padding-left",
+  "--padding-right",
+  "--slider-gap",
+  "--t-headline-font",
+  "--t-text-font",
+  "--t396-bgcolor-color",
+  "--t396-bgcolor-image",
+  "--t396-borderwidth",
+  "--t396-shadow-text-opacity",
+  "--t396-speedhover"
+ ],
+ "fonts": [
+  {
+   "family": "TildaSans",
+   "weight": "250 1000",
+   "style": "normal",
+   "file": "https://static.tildacdn.net/css/fonts-tildasans.css"
+  },
+  {
+   "family": "TildaSans",
+   "weight": "300",
+   "style": "normal",
+   "file": "https://static.tildacdn.net/css/fonts-tildasans.css"
+  },
+  {
+   "family": "TildaSans",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://static.tildacdn.net/css/fonts-tildasans.css"
+  },
+  {
+   "family": "TildaSans",
+   "weight": "500",
+   "style": "normal",
+   "file": "https://static.tildacdn.net/css/fonts-tildasans.css"
+  },
+  {
+   "family": "TildaSans",
+   "weight": "600",
+   "style": "normal",
+   "file": "https://static.tildacdn.net/css/fonts-tildasans.css"
+  },
+  {
+   "family": "TildaSans",
+   "weight": "700",
+   "style": "normal",
+   "file": "https://static.tildacdn.net/css/fonts-tildasans.css"
+  },
+  {
+   "family": "TildaSans",
+   "weight": "800",
+   "style": "normal",
+   "file": "https://static.tildacdn.net/css/fonts-tildasans.css"
+  },
+  {
+   "family": "TildaSans",
+   "weight": "900",
+   "style": "normal",
+   "file": "https://static.tildacdn.net/css/fonts-tildasans.css"
+  }
+ ],
+ "rules": [
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": "#allrecords .r, body",
+   "context": [],
+   "properties": {
+    "--t-headline-font": "'TildaSans',Arial,sans-serif",
+    "--t-text-font": "'TildaSans',Arial,sans-serif"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t-btnflex_xs, .t-btn.t-btnflex_xs, .t-submit.t-btnflex_xs",
+   "context": [],
+   "properties": {
+    "--height": "35px"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t-btnflex_sm, .t-btn.t-btnflex_sm, .t-submit.t-btnflex_sm",
+   "context": [],
+   "properties": {
+    "--height": "45px"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t-btnflex_smd, .t-btn.t-btnflex_smd, .t-submit.t-btnflex_smd",
+   "context": [],
+   "properties": {
+    "--height": "50px"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t-btnflex_md, .t-btn.t-btnflex_md, .t-submit.t-btnflex_md",
+   "context": [],
+   "properties": {
+    "--height": "60px"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t-btnflex_lg, .t-btn.t-btnflex_lg, .t-submit.t-btnflex_lg",
+   "context": [],
+   "properties": {
+    "--height": "60px"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t-btnflex_xl, .t-btn.t-btnflex_xl, .t-submit.t-btnflex_xl",
+   "context": [],
+   "properties": {
+    "--height": "80px"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t-btnflex_xxl, .t-btn.t-btnflex_xxl, .t-submit.t-btnflex_xxl",
+   "context": [],
+   "properties": {
+    "--height": "100px"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t-btnflex_xs, .t-btn.t-btnflex_xs, .t-submit.t-btnflex_xs",
+   "context": [
+    "CSSMediaRule screen and (max-width: 480px)"
+   ],
+   "properties": {
+    "--height": "40px"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t-btnflex_sm, .t-btn.t-btnflex_sm, .t-submit.t-btnflex_sm",
+   "context": [
+    "CSSMediaRule screen and (max-width: 480px)"
+   ],
+   "properties": {
+    "--height": "50px"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196",
+   "context": [],
+   "properties": {
+    "--slider-gap": "0px"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t-record_scaled .t1196__slider.t1196__slider_width_40",
+   "context": [],
+   "properties": {
+    "--padding-right": "20px",
+    "--padding-left": "20px"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196__slider",
+   "context": [],
+   "properties": {
+    "--padding-right": "0px",
+    "--padding-left": "0px"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196__slider.t1196__slider_width_40",
+   "context": [],
+   "properties": {
+    "--padding-right": "40px",
+    "--padding-left": "40px"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196__slider.t1196__slider_width_12",
+   "context": [],
+   "properties": {
+    "--column-width": "60px",
+    "--column-gap": "40px",
+    "--container-max-width": "calc(var(--column-width) * 12 + var(--column-gap) * 11)",
+    "--container-width": "min(calc(100% - 40px),var(--container-max-width))",
+    "--padding-right": "calc((100% - var(--container-width)) / 2)",
+    "--padding-left": "calc((100% - var(--container-width)) / 2)"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196__slider.t1196__slider_width_12.t1196__slider_prefix_1",
+   "context": [],
+   "properties": {
+    "--padding-left": "calc((100% - var(--container-width)) / 2 + var(--column-width) + var(--column-gap))"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196__slider.t1196__slider_width_12.t1196__slider_prefix_2",
+   "context": [],
+   "properties": {
+    "--padding-left": "calc((100% - var(--container-width)) / 2 + (var(--column-width) + var(--column-gap)) * 2)"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196__slider.t1196__slider_width_12.t1196__slider_prefix_3",
+   "context": [],
+   "properties": {
+    "--padding-left": "calc((100% - var(--container-width)) / 2 + (var(--column-width) + var(--column-gap)) * 3)"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196__slider.t1196__slider_width_12.t1196__slider_prefix_4",
+   "context": [],
+   "properties": {
+    "--padding-left": "calc((100% - var(--container-width)) / 2 + (var(--column-width) + var(--column-gap)) * 4)"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196__slider.t1196__slider_width_12.t1196__slider_prefix_5",
+   "context": [],
+   "properties": {
+    "--padding-left": "calc((100% - var(--container-width)) / 2 + (var(--column-width) + var(--column-gap)) * 5)"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196__slider.t1196__slider_width_12.t1196__slider_prefix_6",
+   "context": [],
+   "properties": {
+    "--padding-left": "calc((100% - var(--container-width)) / 2 + (var(--column-width) + var(--column-gap)) * 6)"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196__slider.t1196__slider_width_12.t1196__slider_prefix_7",
+   "context": [],
+   "properties": {
+    "--padding-left": "calc((100% - var(--container-width)) / 2 + (var(--column-width) + var(--column-gap)) * 7)"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196__slider.t1196__slider_width_12.t1196__slider_prefix_8",
+   "context": [],
+   "properties": {
+    "--padding-left": "calc((100% - var(--container-width)) / 2 + (var(--column-width) + var(--column-gap)) * 8)"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196__slider.t1196__slider_width_12.t1196__slider_prefix_9",
+   "context": [],
+   "properties": {
+    "--padding-left": "calc((100% - var(--container-width)) / 2 + (var(--column-width) + var(--column-gap)) * 9)"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196__slider.t1196__slider_width_12.t1196__slider_prefix_10",
+   "context": [],
+   "properties": {
+    "--padding-left": "calc((100% - var(--container-width)) / 2 + (var(--column-width) + var(--column-gap)) * 10)"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196__slider.t1196__slider_width_12.t1196__slider_prefix_11",
+   "context": [],
+   "properties": {
+    "--padding-left": "calc((100% - var(--container-width)) / 2 + (var(--column-width) + var(--column-gap)) * 11)"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196__slider.t1196__slider_width_12",
+   "context": [
+    "CSSMediaRule screen and (max-width: 1200px)"
+   ],
+   "properties": {
+    "--column-gap": "20px"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196__slider.t1196__slider_width_40",
+   "context": [
+    "CSSMediaRule screen and (max-width: 1200px)"
+   ],
+   "properties": {
+    "--padding-right": "30px",
+    "--padding-left": "30px"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196__slider.t1196__slider_width_12",
+   "context": [
+    "CSSMediaRule screen and (max-width: 960px)"
+   ],
+   "properties": {
+    "--column-width": "calc(1px - 1px)",
+    "--column-gap": "calc(1px - 1px)",
+    "--container-max-width": "600px"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t1196__slider.t1196__slider_width_40",
+   "context": [
+    "CSSMediaRule screen and (max-width: 960px)"
+   ],
+   "properties": {
+    "--padding-right": "20px",
+    "--padding-left": "20px"
+   }
+  },
+  {
+   "file": "https://static.tildacdn.net/ws/project90/tilda-blocks-page11048940.min.css?t=1791550310",
+   "selector": ".t-btn.t934__enter, .t-btn.t934__reg",
+   "context": [],
+   "properties": {
+    "--height": "34px"
+   }
+  },
+  {
+   "file": "inline-10",
+   "selector": "#cookiebanner .t-btnflex.t-btnflex_type_button",
+   "context": [],
+   "properties": {
+    "--border-width": "0px"
+   }
+  },
+  {
+   "file": "inline-10",
+   "selector": "#cookiebanner .t-btnflex.t-btnflex_type_button3",
+   "context": [],
+   "properties": {
+    "--border-width": "0px"
+   }
+  },
+  {
+   "file": "inline-10",
+   "selector": "#cookiebanner .t-btnflex.t-btnflex_type_button2",
+   "context": [],
+   "properties": {
+    "--border-width": "0px"
+   }
+  },
+  {
+   "file": "inline-10",
+   "selector": "#cookiebanner .t-btnflex.t-btnflex_type_button",
+   "context": [],
+   "properties": {
+    "--border-width": "0px"
+   }
+  },
+  {
+   "file": "inline-16",
+   "selector": "#rec170590155 .t-btnflex.t-btnflex_type_button",
+   "context": [],
+   "properties": {
+    "--border-width": "0px"
+   }
+  },
+  {
+   "file": "inline-17",
+   "selector": "#rec170590155 .t-btnflex.t-btnflex_type_button2",
+   "context": [],
+   "properties": {
+    "--border-width": "1px"
+   }
+  },
+  {
+   "file": "inline-20",
+   "selector": "#rec2340846391 .t-btnflex.t-btnflex_type_button",
+   "context": [],
+   "properties": {
+    "--border-width": "1px"
+   }
+  },
+  {
+   "file": "inline-21",
+   "selector": "#rec2340846391 .t-btnflex.t-btnflex_type_button2",
+   "context": [],
+   "properties": {
+    "--border-width": "1px"
+   }
+  },
+  {
+   "file": "inline-32",
+   "selector": "#rec186881035 .t-btnflex.t-btnflex_type_button",
+   "context": [],
+   "properties": {
+    "--border-width": "0px"
+   }
+  },
+  {
+   "file": "inline-33",
+   "selector": "#rec1024640461 .tn-elem[data-elem-id=\"1738663895314\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "0px",
+    "--t396-speedhover": "0.2s",
+    "--t396-bgcolor-color": "transparent",
+    "--t396-bgcolor-image": "linear-gradient(0.918turn,rgba(250,134,105,1) 0%,rgba(255,140,111,1) 100%)"
+   }
+  },
+  {
+   "file": "inline-33",
+   "selector": "#rec1024640461 .tn-elem[data-elem-id=\"1738663428334\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-33",
+   "selector": "#rec1024640461 .tn-elem[data-elem-id=\"1738663644970\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-41",
+   "selector": "#rec186881044 .t-btnflex.t-btnflex_type_button",
+   "context": [],
+   "properties": {
+    "--border-width": "0px"
+   }
+  },
+  {
+   "file": "inline-43",
+   "selector": "#rec2405008941 .t1196__slider",
+   "context": [],
+   "properties": {
+    "--slider-gap": "40px"
+   }
+  },
+  {
+   "file": "inline-43",
+   "selector": "#rec2405008941 .t1196__slider",
+   "context": [
+    "CSSMediaRule (max-width: 480px)"
+   ],
+   "properties": {
+    "--slider-gap": "10px"
+   }
+  },
+  {
+   "file": "inline-45",
+   "selector": "#rec1025845626 .t-btnflex.t-btnflex_type_button",
+   "context": [],
+   "properties": {
+    "--border-width": "0px"
+   }
+  },
+  {
+   "file": "inline-58",
+   "selector": "#rec344575805 .t-btnflex.t-btnflex_type_button",
+   "context": [],
+   "properties": {
+    "--border-width": "0px"
+   }
+  },
+  {
+   "file": "inline-60",
+   "selector": "#rec240708630 .t-btnflex.t-btnflex_type_button",
+   "context": [],
+   "properties": {
+    "--border-width": "0px"
+   }
+  },
+  {
+   "file": "inline-69",
+   "selector": "#rec186881051 .t-btnflex.t-btnflex_type_button",
+   "context": [],
+   "properties": {
+    "--border-width": "0px"
+   }
+  },
+  {
+   "file": "inline-71",
+   "selector": "#rec117766 .t-btnflex.t-btnflex_type_button",
+   "context": [],
+   "properties": {
+    "--border-width": "0px"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1508938927099\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1475147461250\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1508938951933\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1508861258604\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1508938983188\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1475147678114\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1508938780630\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1475147601290\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1508861215456\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1508849110275\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1530812327195\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1530604124272\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1530604476203\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1530604184792\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1530604463995\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1530789027697\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1530604480402\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1530604487920\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  },
+  {
+   "file": "inline-72",
+   "selector": "#rec54294920 .tn-elem[data-elem-id=\"1530604492299\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   }
+  }
+ ],
+ "errors": [],
+ "resolved": {
+  "light": {},
+  "dark": {}
+ }
+}

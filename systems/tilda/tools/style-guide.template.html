@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tilda style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "TildaSans", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--surface-page, #fff); color: var(--text-primary, #000); font: 400 16px/1.4 var(--sg-sans); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+h1 { font-weight: 300; font-size: 46px; margin: 0 0 8px; }
+h2 { font-weight: 300; font-size: 28px; margin: 40px 0 12px; }
+.row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.sw { width: 72px; height: 72px; border: 1px solid #ddd; }
+.btn { display: inline-flex; align-items: center; background: var(--component-button-background); color: var(--component-button-text); height: var(--component-button-height); padding: 0 44px; font-weight: 600; font-size: 15px; text-decoration: none; }
+.pill { display: inline-flex; align-items: center; background: var(--component-auth-button-background); color: var(--component-auth-button-text); height: var(--component-auth-button-height); padding: 0 28px; border-radius: var(--component-auth-button-radius); font-size: 18px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid #eee; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Tilda</h1>
+  <p>Public marketing tokens from tilda.cc, 2026-11-21. Light only.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Buttons</h2>
+  <div class="row">
+    <a class="btn" href="#">Create a website for free</a>
+    <button class="pill" type="button">Log in</button>
+  </div>
+  <h2>Tokens</h2>
+  <table id="tokens"></table>
+</div>
+<script>
+const TOKENS = /*TOKENS*/null;
+const root = document.documentElement;
+function flat(node, prefix, out) {
+  for (const [k, v] of Object.entries(node || {})) {
+    if (k.startsWith("$")) continue;
+    const path = prefix ? prefix + "." + k : k;
+    if (v && v.$value !== undefined) out.push([path, v]);
+    else if (v && typeof v === "object") flat(v, path, out);
+  }
+}
+const rows = [];
+flat(TOKENS.core, "", rows);
+flat(TOKENS.light, "", rows);
+const css = (path) => "--" + path.replace(/\./g, "-");
+for (const [path, t] of rows) {
+  if (typeof t.$value === "string") root.style.setProperty(css(path), t.$value.replace(/\{([^{}]+)\}/g, (_, a) => "var(" + css(a) + ")"));
+}
+const sw = document.getElementById("swatches");
+for (const [path, t] of rows) {
+  if (t.$type !== "color") continue;
+  const d = document.createElement("div");
+  d.innerHTML = '<div class="sw"></div><div>' + path + '</div>';
+  d.querySelector(".sw").style.background = getComputedStyle(root).getPropertyValue(css(path));
+  sw.appendChild(d);
+}
+const table = document.getElementById("tokens");
+for (const [path, t] of rows) {
+  const tr = document.createElement("tr");
+  tr.innerHTML = "<td>" + path + "</td><td>" + t.$type + "</td><td>" + String(t.$value) + "</td>";
+  table.appendChild(tr);
+}
+</script>
+</body>
+</html>
