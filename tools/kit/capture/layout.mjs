@@ -19,6 +19,8 @@ import path from 'node:path';
 import { chromium, RAW, SNAPS, metaOf, newContext, openSnap } from './signed-in/lib.mjs';
 import { safeUrl } from './safe-url.mjs';
 import { mergeLayout } from './readings.mjs';
+import { scrubConsole } from './no-query.mjs';
+scrubConsole();   // logs are committed: no query, from a locator or a page URL, is printed
 
 if (!SNAPS) { console.error('SNAPS=<snapshot dir> is required'); process.exit(2); }
 const LABELS = fs.readdirSync(SNAPS).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5)).filter((l) => fs.existsSync(path.join(SNAPS, `${l}.html`))).sort();

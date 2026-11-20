@@ -105,7 +105,8 @@ or `'./…'` lines, then the same lines in each helper. `screenshot.mjs` imports
 The other shared imports today: `layout.mjs` and the two `measure.mjs` import
 `safe-url.mjs`; `layout.mjs` and the public `measure.mjs` import `readings.mjs`;
 the public `lib.mjs` and the signed-in `measure.mjs` import `crop.mjs`;
-`vars.mjs` and `electron/shot.mjs` import `no-query.mjs`; `motion-probe.mjs`
+`vars.mjs`, `electron/shot.mjs`, `icons.mjs`, `layout.mjs`, `motion-probe.mjs`,
+both `measure.mjs` and the public `public.mjs` import `no-query.mjs`; `motion-probe.mjs`
 imports `motion.mjs` and `safe-url.mjs`; and both `build-measurements.mjs` import
 `css-colour.mjs`. Within the public route, `measure.mjs` imports `pin.mjs`.
 

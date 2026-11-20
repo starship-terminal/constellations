@@ -33,6 +33,8 @@ import { BASE, M, launch, open, closePromo, openStory, styleOf, crop, centre, RA
 import { safeUrl } from '../safe-url.mjs';
 import { pruneStale } from '../readings.mjs';
 import { pin, unpin, prefer } from './pin.mjs';
+import { scrubConsole } from '../no-query.mjs';
+scrubConsole();   // logs are committed: no query, from a locator or a page URL, is printed
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};

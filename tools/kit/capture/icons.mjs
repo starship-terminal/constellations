@@ -20,6 +20,8 @@ import crypto from 'crypto';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { M, BASE, chromium, UA, closePromo, openStory } from './public/lib.mjs'; // the signed-in route: swap in its own page opener
+import { scrubConsole } from './no-query.mjs';
+scrubConsole();   // logs are committed: no query, from a locator or a page URL, is printed
 
 const OUT = fileURLToPath(new URL('../../icons/', import.meta.url));
 fs.mkdirSync(OUT, { recursive: true });

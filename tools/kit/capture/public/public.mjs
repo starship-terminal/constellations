@@ -22,6 +22,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { M, closePromo, openStory, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
+import { scrubConsole } from '../no-query.mjs';
+scrubConsole();   // logs are committed: no query, from a locator or a page URL, is printed
 
 // Full-colour shots are working files, never committed: by default they go outside the repository,
 // to ~/.design-systems/<slug>/raw-shots for a package's copy at systems/<slug>/tools/capture/public/.
