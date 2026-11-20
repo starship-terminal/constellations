@@ -65,11 +65,14 @@ class Tokens(unittest.TestCase):
         walk(TOKENS)
         html = (ROOT / "style-guide.html").read_text()
         root = re.search(r":root \{(.*?)\}", html, re.S).group(1)
-        declared = re.findall(r"--([\w-]+):\s*(#[0-9a-fA-F]+);", root)
+        # Every custom property on :root, whatever its form: a colour written as rgb() or a name
+        # must not slip past the check, so anything that is not a hex is a failure.
+        declared = re.findall(r"--([\w-]+):\s*([^;]+);", root)
         self.assertTrue(declared)
         for name, value in declared:
             with self.subTest(var=name):
-                self.assertIn(value.lower(), values)
+                self.assertRegex(value.strip(), r"^#[0-9a-fA-F]+$")
+                self.assertIn(value.strip().lower(), values)
 
     def test_no_dark_theme(self):
         self.assertNotIn("dark", TOKENS)
