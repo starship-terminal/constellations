@@ -103,6 +103,21 @@ class RebuildTest(unittest.TestCase):
         skipped = {e["name"] for e in self.built["core"]["$extensions"]["notTokenised"]}
         self.assertEqual(skipped, {"font.tracking.tighter", "font.tracking.tight"})
 
+    def test_unconvertible_colour_stops_the_build(self):
+        # A colour function the builder cannot convert must fail, not vanish from the export.
+        spec_path = self.root / "raw" / "component-tokens.json"
+        saved = spec_path.read_text()
+        spec = json.loads(saved)
+        spec["core"]["color"]["wash"]["primary-10"]["value"] = "lab(50% 20 -30 / 0.1)"
+        try:
+            spec_path.write_text(json.dumps(spec))
+            r = subprocess.run([sys.executable, str(self.root / "tools" / "build_tokens.py")],
+                               cwd=self.root, capture_output=True, text=True)
+        finally:
+            spec_path.write_text(saved)
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("lab(50% 20 -30 / 0.1)", r.stderr)
+
     def test_flagged_and_wrong_readings_say_so(self):
         # 13-7 and 11d-10: a kept or wrong-element reading names itself in the source.
         core = self.built["core"]

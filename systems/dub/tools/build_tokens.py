@@ -99,9 +99,9 @@ def norm_color(v):
         return "#%02x%02x%02x" % (r, g, b) if a >= 1 else "rgba(%d, %d, %d, %g)" % (r, g, b, a)
     if v == "currentcolor":
         raise NotTokenised("currentColor: the colour follows the element's text colour, which a DTCG colour cannot hold")
-    if re.fullmatch(r"(oklch|lab|lch|hsl|hsla|hwb|color|color-mix|light-dark)\(.*\)", v):
-        raise NotTokenised("a CSS colour function this builder does not convert to sRGB")
-    raise ValueError("not a colour: " + v)
+    # Any other colour function (lab, oklch, color-mix, ...) stops the build: dropping it
+    # would remove a token from the export without anyone noticing. Add a conversion.
+    raise ValueError("not a colour this builder converts: " + v)
 
 
 DIM = re.compile(r"-?(\d+(\.\d+)?|\.\d+)(px|rem)")
