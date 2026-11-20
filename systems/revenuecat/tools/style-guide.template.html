@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RevenueCat style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-sans: var(--font-family-helvetica-neue), ui-sans-serif, system-ui, sans-serif;
+  --sg-display: var(--font-family-object-sans), ui-sans-serif, system-ui, sans-serif;
+}
+[data-mode="dark"] {
+/*DARK*/
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page, #fff); color: var(--text, #1f1f47); font: 400 16px/24px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header.top { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 28px; }
+h1 { font: 500 32px/36px var(--sg-display); margin: 0; }
+h2 { font: 500 22px/28px var(--sg-display); margin: 36px 0 12px; }
+button.toggle { border: 1px solid var(--border, #eaedf6); background: transparent; color: var(--text); border-radius: 9999px; height: 36px; padding: 0 14px; font: 500 14px/14px var(--sg-display); }
+.swatches, .row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 140px; }
+.swatch i { display: block; height: 64px; border-radius: 12px; border: 1px solid var(--border, #eaedf6); }
+.swatch span, .note { display: block; font-size: 12px; line-height: 16px; color: var(--muted, #3d3d5c); margin-top: 4px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-primary-height, 36px); padding: 0 16px; border-radius: 9999px; background: var(--component-button-primary-bg, #576cdb); color: var(--component-button-primary-text, #fff); font: 500 14px/14px var(--sg-display); text-decoration: none; border: 0; }
+.btn.lg { height: var(--component-button-lg-height, 48px); font-size: 16px; }
+.btn.outline { background: transparent; color: var(--component-button-outline-text, #3d52b8); border: 1px solid var(--link, #3d52b8); }
+.field { height: var(--component-field-height, 56px); border-radius: 9999px; border: 1px solid var(--component-field-border, #eaedf6); padding: 0 18px; min-width: 280px; font: 400 16px/24px var(--sg-sans); color: var(--text); background: var(--component-field-bg, #fff); }
+.card { border: 1px solid var(--border, #eaedf6); border-radius: 16px; padding: 20px; max-width: 360px; background: var(--page, #fff); }
+.card strong { font: 500 22px/28px var(--sg-display); }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border, #eaedf6); vertical-align: top; }
+code { font-family: var(--font-family-ibm-plex-mono), ui-monospace, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <h1>RevenueCat</h1>
+  <button class="toggle" type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? '' : 'dark'">Docs theme</button>
+</header>
+<p class="note">Rendered from tokens.json. Marketing is light. The toggle applies the docs dark set, which only holds values re-read after the live docs theme switch.</p>
+
+<h2>Colour roles</h2>
+<div class="swatches" id="swatches"></div>
+
+<h2>Type</h2>
+<p style="font: var(--typography-display, 500 60px/67.5px var(--sg-display)); margin: 0;">Build and grow your app business</p>
+<p>Body at 16/24 in Helvetica Neue. Buttons use Object Sans at 14/500.</p>
+
+<h2>Components</h2>
+<div class="row">
+  <a class="btn" href="#components">Sign up</a>
+  <a class="btn lg" href="#components">Start for free</a>
+  <a class="btn outline" href="#components">Contact sales</a>
+</div>
+<p></p>
+<input class="field" placeholder="Your email address..." aria-label="Email example, not submitted">
+<div class="card" style="margin-top: 16px;">
+  <div class="note">PRO</div>
+  <strong>Start for free</strong>
+  <p>Pay nothing up to $2,500 in monthly tracked revenue.</p>
+</div>
+
+<h2>Tokens</h2>
+<table id="tokens"><thead><tr><th>Token</th><th>Value</th><th>Source</th></tr></thead><tbody></tbody></table>
+</div>
+<script>
+const TOKENS = /*TOKENS*/null;
+function cssName(path) { return "--" + path.replaceAll(".", "-").replace(/[^a-zA-Z0-9-]/g, "-"); }
+function flat(node, prefix, out) {
+  for (const [k, v] of Object.entries(node || {})) {
+    if (k.startsWith("$")) continue;
+    const path = prefix ? prefix + "." + k : k;
+    if (v && typeof v === "object" && "$value" in v) out.push([path, v]);
+    else if (v && typeof v === "object") flat(v, path, out);
+  }
+}
+const rows = [];
+flat(TOKENS.core, "core", rows);
+flat(TOKENS.light, "light", rows);
+flat(TOKENS.dark, "dark", rows);
+const body = document.querySelector("#tokens tbody");
+for (const [path, t] of rows) {
+  const tr = document.createElement("tr");
+  const value = typeof t.v === "object" ? JSON.stringify(t.v) : String(t.v);
+  tr.innerHTML = `<td><code>${path}</code></td><td>${value}</td><td>${t.s}</td>`;
+  body.appendChild(tr);
+}
+const roles = ["page", "surface", "text", "muted", "accent", "brand", "border", "success", "warning", "danger"];
+const box = document.querySelector("#swatches");
+for (const role of roles) {
+  const el = document.createElement("div");
+  el.className = "swatch";
+  el.innerHTML = `<i style="background: var(--${role})"></i><span>${role}</span>`;
+  box.appendChild(el);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+{
+  "capturedAt": "2026-11-20",
+  "widths": {
+    "390": {
+      "/": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "dpr": 2,
+        "scrollHeight": 13633,
+        "header": {
+          "h": 64,
+          "y": 0
+        },
+        "h1": {
+          "size": "30px",
+          "weight": "500",
+          "family": "objectSans, \"objectSans Fallback\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "w": 358
+        },
+        "mainWidth": 390
+      },
+      "/pricing": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "dpr": 2,
+        "scrollHeight": 10492,
+        "header": {
+          "h": 64,
+          "y": 0
+        },
+        "h1": {
+          "size": "32px",
+          "weight": "500",
+          "family": "objectSans, \"objectSans Fallback\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "w": 358
+        },
+        "mainWidth": 390
+      },
+      "/feature/paywalls": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "dpr": 2,
+        "scrollHeight": 8140,
+        "header": {
+          "h": 64,
+          "y": 0
+        },
+        "h1": {
+          "size": "30px",
+          "weight": "500",
+          "family": "objectSans, \"objectSans Fallback\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "w": 358
+        },
+        "mainWidth": 390
+      },
+      "/docs": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "dpr": 2,
+        "scrollHeight": 4830,
+        "header": null,
+        "h1": {
+          "size": "30px",
+          "weight": "700",
+          "family": "\"Object Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+          "w": 351.7
+        },
+        "mainWidth": 390
+      }
+    },
+    "1024": {
+      "/": {
+        "innerWidth": 1024,
+        "innerHeight": 800,
+        "dpr": 1,
+        "scrollHeight": 12765,
+        "header": {
+          "h": 64,
+          "y": 0
+        },
+        "h1": {
+          "size": "48px",
+          "weight": "500",
+          "family": "objectSans, \"objectSans Fallback\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "w": 735.8
+        },
+        "mainWidth": 1024
+      },
+      "/pricing": {
+        "innerWidth": 1024,
+        "innerHeight": 800,
+        "dpr": 1,
+        "scrollHeight": 7123,
+        "header": {
+          "h": 64,
+          "y": 0
+        },
+        "h1": {
+          "size": "56px",
+          "weight": "500",
+          "family": "objectSans, \"objectSans Fallback\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "w": 960
+        },
+        "mainWidth": 1024
+      },
+      "/feature/paywalls": {
+        "innerWidth": 1024,
+        "innerHeight": 800,
+        "dpr": 1,
+        "scrollHeight": 6451,
+        "header": {
+          "h": 64,
+          "y": 0
+        },
+        "h1": {
+          "size": "44px",
+          "weight": "500",
+          "family": "objectSans, \"objectSans Fallback\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "w": 766.8
+        },
+        "mainWidth": 1024
+      },
+      "/docs": {
+        "innerWidth": 1024,
+        "innerHeight": 800,
+        "dpr": 1,
+        "scrollHeight": 2601,
+        "header": null,
+        "h1": {
+          "size": "36px",
+          "weight": "700",
+          "family": "\"Object Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+          "w": 521.3
+        },
+        "mainWidth": 1024
+      }
+    },
+    "1440": {
+      "/": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 1,
+        "scrollHeight": 11757,
+        "header": {
+          "h": 64,
+          "y": 0
+        },
+        "h1": {
+          "size": "60px",
+          "weight": "500",
+          "family": "objectSans, \"objectSans Fallback\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "w": 579
+        },
+        "mainWidth": 1440
+      },
+      "/pricing": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 1,
+        "scrollHeight": 7780,
+        "header": {
+          "h": 64,
+          "y": 0
+        },
+        "h1": {
+          "size": "64px",
+          "weight": "500",
+          "family": "objectSans, \"objectSans Fallback\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "w": 960
+        },
+        "mainWidth": 1440
+      },
+      "/feature/paywalls": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 1,
+        "scrollHeight": 7127,
+        "header": {
+          "h": 64,
+          "y": 0
+        },
+        "h1": {
+          "size": "56px",
+          "weight": "500",
+          "family": "objectSans, \"objectSans Fallback\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "w": 579
+        },
+        "mainWidth": 1440
+      },
+      "/docs": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 1,
+        "scrollHeight": 2437,
+        "header": null,
+        "h1": {
+          "size": "36px",
+          "weight": "700",
+          "family": "\"Object Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+          "w": 670.7
+        },
+        "mainWidth": 1280
+      }
+    }
+  }
+}
