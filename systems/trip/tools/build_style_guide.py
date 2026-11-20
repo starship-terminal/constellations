@@ -55,6 +55,9 @@ def block(setname):
     )
 
 
+# Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" from ending it early.
+# Computed before the f-string, because a backslash inside an f-string expression needs Python 3.12.
+TOK_JSON = json.dumps({"core": T["core"], "light": T["light"]}, separators=(",", ":")).replace("<", "\\u003c")
 CSS = f""":root {{
 {block("core")}
 {block("light")}
@@ -137,7 +140,7 @@ HTML = f"""<!doctype html>
   <div id="space"></div>
 </div>
 <script>
-const TOK = {json.dumps({"core": T["core"], "light": T["light"]}, separators=(",", ":")).replace("<", "\\u003c")};
+const TOK = {TOK_JSON};
 function val(path) {{
   const parts = path.replace(/\\{{|\\}}/g, "").split(".");
   let n = TOK;
