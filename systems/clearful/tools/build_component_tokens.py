@@ -23,7 +23,7 @@ measurements say what it paints.
 The site paints ONE light theme (white ground, #f7f7f7 secondary bands,
 #d6e0ff brand-light sections, #1953ff brand controls). The Flutter
 sign-in is a second stack's surface, not a second theme; its handful of
-sampled values sit under light.app.*.
+sampled values sit under core.sampled.app.*.
 
 The measured palette:
 
@@ -93,7 +93,7 @@ SPEC = {"_about": (
     "site paints without declaring. Semantic roles are measured on the "
     "painted chrome in raw/components-computed.json and alias the core "
     "when the value matches. One theme exists (light); the Flutter "
-    "sign-in's sampled shades live under light.app.*."),
+    "sign-in's sampled shades live under core.sampled.app.*."),
     "core": {}, "light": {}, "component": {}}
 
 

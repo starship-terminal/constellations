@@ -1,5 +1,5 @@
 {
- "_about": "The token tree build_tokens.py turns into tokens.json. Clearful's Webflow stylesheet declares a real palette and semantic layer (raw/css-vars.json); the core ramps below are those declared values resolved at build time, with measured leaves for the few shades the site paints without declaring. Semantic roles are measured on the painted chrome in raw/components-computed.json and alias the core when the value matches. One theme exists (light); the Flutter sign-in's sampled shades live under light.app.*.",
+ "_about": "The token tree build_tokens.py turns into tokens.json. Clearful's Webflow stylesheet declares a real palette and semantic layer (raw/css-vars.json); the core ramps below are those declared values resolved at build time, with measured leaves for the few shades the site paints without declaring. Semantic roles are measured on the painted chrome in raw/components-computed.json and alias the core when the value matches. One theme exists (light); the Flutter sign-in's sampled shades live under core.sampled.app.*.",
  "core": {
   "color": {
    "blue": {

@@ -542,7 +542,7 @@ W("- **Disabled, error and loading states** were not seen on the public surface.
 W()
 W("### Themes")
 W()
-W("One theme: the whole public surface paints light. The Webflow marketing routes and the Tailwind /library share it; the Flutter sign-in is a separate stack's surface, not a theme — its sampled shades sit under `light.app.*`.")
+W("One theme: the whole public surface paints light. The Webflow marketing routes and the Tailwind /library share it; the Flutter sign-in is a separate stack's surface, not a theme — its sampled shades sit under `core.sampled.app.*`.")
 W()
 W("### Fonts")
 W()
