@@ -419,6 +419,8 @@ class JavaScriptHalves(unittest.TestCase):
             'image-set("//cdn.example.test/a.png?sig=1" 1x, //cdn.example.test/b.png?sig=2 2x)': 'image-set("//cdn.example.test/a.png" 1x, //cdn.example.test/b.png 2x)',
             '/media/avatar.png?token=secret': '/media/avatar.png',
             '"avatar.png?sig=abc"': '"avatar.png"',
+            '/avatar.png?crop=(0,0)&token=secret': '/avatar.png',
+            'avatar(1).png?token=secret': 'avatar(1).png',
             'calc(100% - 2px)': 'calc(100% - 2px)',
             'url(data:image/svg+xml,abc) no-repeat': 'url(data:image/svg+xml,abc) no-repeat',
             '#5e6ad2': '#5e6ad2',
@@ -438,6 +440,12 @@ class JavaScriptHalves(unittest.TestCase):
         src = js_block(HERE / "kit/capture/electron/shot.mjs", "const noUrl", "const read")
         got = self.node(stub + src + "\nconsole.log(JSON.stringify(['--a', '--b', '--c'].map(read)))")
         self.assertEqual(got, ["", "blue", "url(…)"])
+
+    def test_the_no_query_node_tests_pass(self):
+        # tools/kit/capture/test_no_query.mjs: the full case table, and keys that clean alike being merged
+        res = subprocess.run([NODE, "--test", str(HERE / "kit/capture/test_no_query.mjs")], capture_output=True, text=True, timeout=60)
+        self.assertEqual(res.returncode, 0, res.stdout[-3000:] + res.stderr[-1000:])
+        self.assertRegex(res.stdout, r"# pass [1-9]")
 
     def test_vars_mjs_writes_its_output_through_the_query_scrub(self):
         # vars.mjs records declared and resolved values and selectors; noUrl only sees url(), so a bare,
