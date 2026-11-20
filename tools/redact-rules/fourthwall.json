@@ -8,7 +8,7 @@
    "@example\\.org$",
    "@domain\\.com$",
    "@domain\\.org$"
-  ],
-  "families": []
- }
+  ]
+ },
+ "families": []
 }

@@ -2,6 +2,7 @@
 import contextlib
 import io
 import json
+import os
 import re
 import shutil
 import sys
@@ -18,6 +19,43 @@ try:
     import redact_images as R
 except ImportError:  # the Makefile needs only python3; this tool needs Pillow and numpy
     R = None
+
+
+def need_tesseract(test):
+    """Skip a test that runs the real tesseract when it is not on PATH, except in CI (the CI
+    environment variable is set): the Check workflow installs it, so there a missing binary fails
+    instead of skipping, and `check` cannot stop reading real images in CI without anyone noticing."""
+    if shutil.which("tesseract") is None:
+        if os.environ.get("CI"):
+            test.fail("tesseract is not on PATH in CI; .github/workflows/check.yml installs tesseract-ocr")
+        test.skipTest("tesseract is not on PATH")
+
+
+class NeedTesseract(unittest.TestCase):
+    """The real-OCR test skips on a machine without tesseract and fails in CI without it."""
+
+    def outcome(self, env):
+        from unittest import mock
+        with mock.patch.object(shutil, "which", return_value=None), mock.patch.dict(os.environ, env, clear=True):
+            try:
+                need_tesseract(self)
+            except unittest.SkipTest:
+                return "skip"
+            except self.failureException as e:
+                self.assertIn("check.yml", str(e))
+                return "fail"
+        return "run"
+
+    def test_skips_off_ci_and_fails_in_ci(self):
+        self.assertEqual(self.outcome({}), "skip")
+        self.assertEqual(self.outcome({"CI": ""}), "skip")
+        self.assertEqual(self.outcome({"CI": "true"}), "fail")
+
+    def test_runs_when_tesseract_is_on_path(self):
+        from unittest import mock
+        with mock.patch.object(shutil, "which", return_value="/usr/bin/tesseract"), \
+             mock.patch.dict(os.environ, {"CI": "true"}):
+            need_tesseract(self)                     # neither skips nor fails
 
 
 @unittest.skipIf(R is None, "Pillow and numpy are not installed")
@@ -132,9 +170,9 @@ class Commands(unittest.TestCase):
         self.assertEqual(sizes[-1], (1440, 400))
         self.assertEqual([R.ocr_scale(w) for w in (390, 499, 500, 999, 1000)], [3, 3, 2, 2, 1])
 
-    @unittest.skipIf(shutil.which("tesseract") is None, "tesseract is not on PATH")
     def test_small_text_in_a_tall_capture_is_read(self):
         from PIL import ImageDraw, ImageFont
+        need_tesseract(self)
         im = Image.new("RGB", (390, 2000), "white")                # 9px text: read only when enlarged
         ImageDraw.Draw(im).text((10, 1500), "someone@private.test", fill="black", font=ImageFont.load_default(size=9))
         words = R.ocr_words(im)
@@ -617,6 +655,68 @@ class AllowEntries(unittest.TestCase):
             for entry in allow:
                 with self.subTest(rules=f.name, entry=entry):
                     self.assertIsNone(R.allow_entry_problem(entry))
+
+
+@unittest.skipIf(R is None, "Pillow and numpy are not installed")
+class RulesKeys(unittest.TestCase):
+    """A rules file key at a level that never reads it, or an unknown key, is refused, not ignored."""
+
+    def test_misplaced_and_unknown_keys_are_named(self):
+        rules = {"_note": "a note", "wrap_ignore": ["screenshots/a.png"], "colour": "red",
+                 "ocr": {"_why": "a note", "families": [], "email_allow": []},
+                 "families": [{"name": "rows", "files": ["*.png"], "rect": [0, 0, 1, 1],
+                               "ocr_lines": [{"rect": [0, 0, 1, 1], "keep": [], "files": []}]}]}
+        self.assertEqual(R.rules_key_problems(rules), [
+            "wrap_ignore belongs in ocr",
+            "colour is not a rules-file key",
+            "ocr.families belongs in the top level",
+            "families[0].rect belongs in an ocr_lines entry",
+            "families[0].ocr_lines[0].files belongs in a family",
+        ])
+
+    def test_wrong_shapes_are_named(self):
+        self.assertEqual(R.rules_key_problems({"ocr": [], "families": [7]}),
+                         ["ocr must be a JSON object", "families[0] must be a JSON object"])
+        self.assertEqual(R.rules_key_problems({"families": {}}), ["families must be a list"])
+        # a bad entry before a good one does not shift the good one's index in the message
+        self.assertEqual(R.rules_key_problems({"families": [7, {"ocr_lines": [{"bogus": 1}]}]}),
+                         ["families[0] must be a JSON object", "families[1].ocr_lines[0].bogus is not a rules-file key"])
+
+    def test_documented_keys_pass(self):
+        rules = {"families": [{"name": "n", "files": ["*"], "skip": [], "size": [[1, 1]], "rects": [],
+                               "ocr_lines": [{"rect": [0, 0, 1, 1], "keep": ["^x$"]}]}],
+                 "delete_stems": [], "delete": [], "excludeSources": [], "captureLimitations": {},
+                 "ocr": {"net": True, "emails": True, "email_allow": [], "keep": [], "boost": [],
+                         "delete_if_covered": 0.3, "wrap_ignore": []}}
+        self.assertEqual(R.rules_key_problems(rules), [])
+
+    def test_check_and_apply_refuse_a_misplaced_key(self):
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            pkg = Path(d) / "pkg"
+            pkg.mkdir()
+            Image.new("RGB", (4, 4)).save(pkg / "a.png")
+            pats = Path(d) / "p.json"
+            pats.write_text(json.dumps({"replace": [["x", "y"]]}))
+            rules = Path(d) / "r.json"
+            rules.write_text(json.dumps({"ocr": {"emails": True}, "wrap_ignore": ["a.png"]}))
+            for argv in (["check", str(pkg), "--patterns", str(pats), "--rules", str(rules)],
+                         ["apply", str(pkg), "--rules", str(rules), "--patterns", str(pats), "--dry-run"]):
+                err = io.StringIO()
+                with mock.patch.object(R, "ocr_words", return_value=[]), contextlib.redirect_stderr(err), \
+                     contextlib.redirect_stdout(io.StringIO()), self.assertRaises(SystemExit) as cm:
+                    R.main(argv)
+                self.assertEqual(cm.exception.code, 2, argv)
+                self.assertEqual(len(err.getvalue().strip().splitlines()), 1, err.getvalue())
+                self.assertIn("r.json", err.getvalue())
+                self.assertIn("wrap_ignore belongs in ocr", err.getvalue())
+
+    def test_every_committed_rules_file_puts_each_key_where_it_is_read(self):
+        files = sorted(R.RULES_DIR.glob("*.json"))
+        self.assertTrue(files)
+        for f in files:
+            with self.subTest(rules=f.name):
+                self.assertEqual(R.rules_key_problems(json.loads(f.read_text())), [])
 
 
 if __name__ == "__main__":

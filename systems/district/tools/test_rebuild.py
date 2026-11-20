@@ -5,6 +5,7 @@ linked read-only), so nothing committed is rewritten.
 """
 import json
 import pathlib
+import re
 import shutil
 import subprocess
 import sys
@@ -99,6 +100,24 @@ class RebuildTest(unittest.TestCase):
         md = (PKG / "tools" / "build_components_md.py").read_text()
         self.assertNotIn("Server discovery", md)
         self.assertEqual({c["page"] for c in self.C.values() if c.get("group", "").startswith("Dark theme")}, {"homeDark"})
+
+    def test_colours_are_named_from_their_theme_before_core(self):
+        # A colour a theme role shares with a core step is named by the theme role: the dark
+        # page #131316 is dark background.primary, not the core button-outline-text step.
+        T = json.loads((PKG / "tokens.json").read_text())
+        names = {s: {} for s in ("light", "dark")}
+        for s in names:
+            for n, t in flat(T[s]):
+                if t.get("$type") == "color" and isinstance(t["$value"], str) and t["$value"].startswith("#"):
+                    names[s].setdefault(t["$value"].lower(), set()).add(n)
+        md = (self.root / "components.md").read_text()
+        dark = md[md.index("### Dark theme (data-theme=dark)"):]
+        dark = dark[:dark.index("\n### ", 1)] if "\n### " in dark[1:] else dark
+        self.assertIn("background #131316 `color.background.primary`", dark)
+        for section, theme in ((md[:md.index("### Dark theme (data-theme=dark)")], "light"), (dark, "dark")):
+            for hexv, name in re.findall(r"(#[0-9a-f]{6}) `([^`]+)`", section):
+                if hexv in names[theme]:
+                    self.assertIn(name, names[theme][hexv], f"{theme} {hexv} named {name}")
 
 
 if __name__ == "__main__":

@@ -53,9 +53,9 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Price card](#price-card) | 368.53 x 661.53 | - | 24px | #ffffff `core.color.raw.neutral-0` | none | 32px 32px 40px 32px |
+| [Price card](#price-card) | 368.53 x 661.53 | - | 24px | #ffffff `light.surface.primary` | none | 32px 32px 40px 32px |
 | [FAQ accordion](#faq-accordion) | 841.33 x 62.39 | - | - | transparent | none | 0 |
-| [Guide card](#guide-card) | 368 x 372.17 | 1px solid #f5f5f5 `core.color.raw.neutral-10` | - | transparent | rgba(0, 0, 0, 0.08) 0px 4px 8px 0px | 0 |
+| [Guide card](#guide-card) | 368 x 372.17 | 1px solid #f5f5f5 `light.background.secondary` | - | transparent | rgba(0, 0, 0, 0.08) 0px 4px 8px 0px | 0 |
 
 ## Components
 
@@ -66,14 +66,14 @@ The sticky chrome: a 68px black Creator World strip on home, a 92px white nav (w
 #### Promo banner
 The Creator World 27 strip above the nav. A marketing link; measured, never followed. Read as `promo-banner` on the home page.
 
-**Values (default).** size 1440 x 68; background #0f0f0f `core.color.raw.neutral-900`; text CoFo Sans Mono 14/10 400, #0f0f0f `core.color.raw.neutral-900`; transition color 0.3s ease.
+**Values (default).** size 1440 x 68; background #0f0f0f `light.text.primary`; text CoFo Sans Mono 14/10 400, #0f0f0f `light.text.primary`; transition color 0.3s ease.
 
 ![Promo banner default](components/crops/promo-banner-default.png)
 
 #### Header
 The sticky nav: logo, Product/Solutions/Agencies/Pricing/Resources, locale, Log in, Get started. The site paints no <header> element. Read as `header-nav` on the home page.
 
-**Values (default).** size 1440 x 92; background transparent; text CoFo Sans Mono 12/16.32 400, #ffffff `core.color.raw.neutral-0`; transition transform 0.45s cubic-bezier(0.43, 0.195, 0.02, 1); layers div::before._4Y2iAa_menu 1400pxx900px rgb(237, 242, 237); a.p_y-s.p_x-l 150.0x48.0 rgb(250, 12, 247) 999px; a::before.p_y-s.p_x-l 149.953pxx48px T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 999px; div.mb-0.4rem.flex 1336.0x48.3 rgb(255, 255, 255) 8px; span._4Y2iAa_underline_item.mc-text-label 51.3x16.3; span._4Y2iAa_under.
+**Values (default).** size 1440 x 92; background transparent; text CoFo Sans Mono 12/16.32 400, #ffffff `light.surface.primary`; transition transform 0.45s cubic-bezier(0.43, 0.195, 0.02, 1); layers div::before._4Y2iAa_menu 1400pxx900px rgb(237, 242, 237); a.p_y-s.p_x-l 150.0x48.0 rgb(250, 12, 247) 999px; a::before.p_y-s.p_x-l 149.953pxx48px T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 999px; div.mb-0.4rem.flex 1336.0x48.3 rgb(255, 255, 255) 8px; span._4Y2iAa_underline_item.mc-text-label 51.3x16.3; span._4Y2iAa_under.
 
 Child layers that carry the look: div::before 1400pxx900px background #edf2ed; a 150x48 background #fa0cf7 `core.color.brand.neon-pink` radius 999px; a::before 149.953pxx48px border 1px solid transparent radius 999px.
 
@@ -82,7 +82,7 @@ Child layers that carry the look: div::before 1400pxx900px background #edf2ed; a
 #### Logo
 The Manychat wordmark in the nav. Read as `nav-logo` on the home page.
 
-**Values (default).** size 151 x 28; background transparent; text Rooftop 15/19.5 400, #ffffff `core.color.raw.neutral-0`; transition color 0.3s ease.
+**Values (default).** size 151 x 28; background transparent; text Rooftop 15/19.5 400, #ffffff `light.surface.primary`; transition color 0.3s ease.
 
 ![Logo default](components/crops/nav-logo-default.png)
 
@@ -91,12 +91,12 @@ The Manychat wordmark in the nav. Read as `nav-logo` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 51.25 x 18; background transparent; text CoFo Sans Mono 12/18 400, #ffffff `core.color.raw.neutral-0`; transition transform 0.45s cubic-bezier(0.43, 0.195, 0.02, 1); layers span._4Y2iAa_underline_item 51.3x14.0; ancestors div._4Y2iAa_nav_item._4Y2iAa_underline bg transparent |
+| default | size 51.25 x 18; background transparent; text CoFo Sans Mono 12/18 400, #ffffff `light.surface.primary`; transition transform 0.45s cubic-bezier(0.43, 0.195, 0.02, 1); layers span._4Y2iAa_underline_item 51.3x14.0; ancestors div._4Y2iAa_nav_item._4Y2iAa_underline bg transparent |
 | hover, pressed, opened | text CoFo Sans Mono 12/18 400, #000000 |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
-Child layers that carry the look: span 51.3x14 image linear-gradient(#ffffff `core.color.raw.neutral-0`, #ffffff `core.color.raw.neutral-0`).
+Child layers that carry the look: span 51.3x14 image linear-gradient(#ffffff `light.surface.primary`, #ffffff `light.surface.primary`).
 
 ![Nav item (dropdown) default](components/crops/nav-link-default.png) ![Nav item (dropdown) hover](components/crops/nav-link-hover.png) ![Nav item (dropdown) pressed](components/crops/nav-link-pressed.png) ![Nav item (dropdown) opened](components/crops/nav-link-opened.png)
 
@@ -138,7 +138,7 @@ The nav "Get started" pill. It opens the sign-up flow. Measured, never followed.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 136.53 x 44.31; padding 14px 20px; radius 999px; background #ffffff `core.color.raw.neutral-0`; text CoFo Sans Mono 12/16.32 400, #ffffff `core.color.raw.neutral-0` (measured white on a white fill, so the visible label's colour was not read); transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
+| default (same: hover, focus-visible, pressed) | size 136.53 x 44.31; padding 14px 20px; radius 999px; background #ffffff `light.surface.primary`; text CoFo Sans Mono 12/16.32 400, #ffffff `light.surface.primary` (measured white on a white fill, so the visible label's colour was not read); transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
 
 ![Get started pill default](components/crops/nav-cta-default.png) ![Get started pill hover](components/crops/nav-cta-hover.png) ![Get started pill focus-visible](components/crops/nav-cta-focus-visible.png) ![Get started pill pressed](components/crops/nav-cta-pressed.png)
 
@@ -155,7 +155,7 @@ Not on the page when it was captured.
 #### Footer
 The footer band: product, company and legal columns. Read as `footer` on the home page.
 
-**Values (default).** size 1440 x 942.22; padding 40px 0px; border T: 1px solid oklab(0.999994 0.0000455678 0.0000200868 / 0.25); background #0f0f0f `core.color.raw.neutral-900`; text CoFo Sans Mono 12/16.32 400, #ffffff `core.color.raw.neutral-0`.
+**Values (default).** size 1440 x 942.22; padding 40px 0px; border T: 1px solid oklab(0.999994 0.0000455678 0.0000200868 / 0.25); background #0f0f0f `light.text.primary`; text CoFo Sans Mono 12/16.32 400, #ffffff `light.surface.primary`.
 
 ![Footer default](components/crops/footer-default.png)
 
@@ -164,7 +164,7 @@ The footer band: product, company and legal columns. Read as `footer` on the hom
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 37.67 x 14; background transparent; image linear-gradient(#ffffff `core.color.raw.neutral-0`, #ffffff `core.color.raw.neutral-0`); text Rooftop 12/16.32 400, #ffffff `core.color.raw.neutral-0`; transition background-size 0.3s ease |
+| default (same: hover, focus-visible, pressed) | size 37.67 x 14; background transparent; image linear-gradient(#ffffff `light.surface.primary`, #ffffff `light.surface.primary`); text Rooftop 12/16.32 400, #ffffff `light.surface.primary`; transition background-size 0.3s ease |
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
 
@@ -175,7 +175,7 @@ The landing: a ManyChatGravity hero, a neon-pink Get started pill, and an FAQ ac
 #### Hero heading
 "Social smarter, not harder." set in ManyChatGravity. Read as `hero-h1` on the home page.
 
-**Values (default).** size 692 x 118.06; background transparent; text ManyChatGravity 72/59.04 400, #ffffff `core.color.raw.neutral-0`.
+**Values (default).** size 692 x 118.06; background transparent; text ManyChatGravity 72/59.04 400, #ffffff `light.surface.primary`.
 
 ![Hero heading default](components/crops/hero-h1-default.png)
 
@@ -184,14 +184,14 @@ The neon-pink hero pill. It opens sign-up. Measured, never followed. Read as `he
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 149.95 x 48; padding 14px 20px; radius 999px; background #fa0cf7 `core.color.brand.neon-pink`; text CoFo Sans Mono 14/20 400, #ffffff `core.color.raw.neutral-0` (the element's computed colour; its first label span is a transparent copy); transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
+| default (same: hover, focus-visible, pressed) | size 149.95 x 48; padding 14px 20px; radius 999px; background #fa0cf7 `core.color.brand.neon-pink`; text CoFo Sans Mono 14/20 400, #ffffff `light.surface.primary` (the element's computed colour; its first label span is a transparent copy); transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
 
 ![Hero Get started default](components/crops/hero-cta-default.png) ![Hero Get started hover](components/crops/hero-cta-hover.png) ![Hero Get started focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero Get started pressed](components/crops/hero-cta-pressed.png)
 
 #### Section heading
 A Rooftop section heading below the hero. Read as `section-heading` on the home page.
 
-**Values (default).** size 930 x 118.06; background transparent; text ManyChatGravity 72/59.04 400, #0f0f0f `core.color.raw.neutral-900`; transition opacity 0.7s cubic-bezier(0.43, 0.195, 0.02, 1), transform 0.7s cubic-bezier(0.43, 0.195, 0.02, 1).
+**Values (default).** size 930 x 118.06; background transparent; text ManyChatGravity 72/59.04 400, #0f0f0f `light.text.primary`; transition opacity 0.7s cubic-bezier(0.43, 0.195, 0.02, 1), transform 0.7s cubic-bezier(0.43, 0.195, 0.02, 1).
 
 ![Section heading default](components/crops/section-heading-default.png)
 
@@ -205,7 +205,7 @@ A home FAQ summary. Opened by its own click. Nothing was submitted. Read as `faq
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: opened, focus-visible) | size 841.33 x 62.39; background transparent; text Rooftop 16/22.4 400, #ffffff `core.color.raw.neutral-0` |
+| default (same: opened, focus-visible) | size 841.33 x 62.39; background transparent; text Rooftop 16/22.4 400, #ffffff `light.surface.primary` |
 
 ![FAQ accordion default](components/crops/faq-item-default.png) ![FAQ accordion opened](components/crops/faq-item-opened.png) ![FAQ accordion focus-visible](components/crops/faq-item-focus-visible.png)
 
@@ -216,7 +216,7 @@ The /pricing page: Plans that scale when you do, the Monthly/Annual labels, the 
 #### Pricing heading
 "Plans that scale when you do". Read as `price-h1` on the pricing page.
 
-**Values (default).** size 1376 x 38.88; background transparent; text Rooftop 36/38.88 600, #0f0f0f `core.color.raw.neutral-900`.
+**Values (default).** size 1376 x 38.88; background transparent; text Rooftop 36/38.88 600, #0f0f0f `light.text.primary`.
 
 ![Pricing heading default](components/crops/price-h1-default.png)
 
@@ -225,7 +225,7 @@ The Annual side of the Monthly/Annual switch. The control is a label, not a butt
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 51.25 x 19.59; background transparent; text CoFo Sans Mono 14/19.6 400, #ffffff `core.color.raw.neutral-0` |
+| default (same: hover, pressed) | size 51.25 x 19.59; background transparent; text CoFo Sans Mono 14/19.6 400, #ffffff `light.surface.primary` |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -234,7 +234,7 @@ The Annual side of the Monthly/Annual switch. The control is a label, not a butt
 #### Price card
 The Free plan card: $0, 25 active contacts, Start for free. Read as `price-card` on the pricing page.
 
-**Values (default).** size 368.53 x 661.53; padding 32px 32px 40px 32px; radius 24px; background #ffffff `core.color.raw.neutral-0`; text Rooftop 20/28 700, #0f0f0f `core.color.raw.neutral-900`; icon 16 x 16, oklab(0.168402 0.0000076443 0.00000336766 / 0.2).
+**Values (default).** size 368.53 x 661.53; padding 32px 32px 40px 32px; radius 24px; background #ffffff `light.surface.primary`; text Rooftop 20/28 700, #0f0f0f `light.text.primary`; icon 16 x 16, oklab(0.168402 0.0000076443 0.00000336766 / 0.2).
 
 ![Price card default](components/crops/price-card-default.png)
 
@@ -243,7 +243,7 @@ The Free plan card: $0, 25 active contacts, Start for free. Read as `price-card`
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 304.53 x 48; padding 14px 20px; radius 999px; background #0f0f0f `core.color.raw.neutral-900`; text CoFo Sans Mono 12/20 400, #ffffff `core.color.raw.neutral-0` (the element's computed colour; its first label span is a transparent copy); transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1; ancestors div.relative.h-full bg #ffffff `core.color.raw.neutral-0` |
+| default (same: hover, focus-visible, pressed) | size 304.53 x 48; padding 14px 20px; radius 999px; background #0f0f0f `light.text.primary`; text CoFo Sans Mono 12/20 400, #ffffff `light.surface.primary` (the element's computed colour; its first label span is a transparent copy); transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1; ancestors div.relative.h-full bg #ffffff `light.surface.primary` |
 
 ![Price CTA default](components/crops/price-cta-default.png) ![Price CTA hover](components/crops/price-cta-hover.png) ![Price CTA focus-visible](components/crops/price-cta-focus-visible.png) ![Price CTA pressed](components/crops/price-cta-pressed.png)
 
@@ -259,7 +259,7 @@ The /product/instagram page: Your Instagram just got smarter, and a Get started 
 #### Product heading
 "Your Instagram just got smarter". Read as `product-h1` on the instagram page.
 
-**Values (default).** size 590 x 118.06; background transparent; text ManyChatGravity 72/59.04 400, #ffffff `core.color.raw.neutral-0`.
+**Values (default).** size 590 x 118.06; background transparent; text ManyChatGravity 72/59.04 400, #ffffff `light.surface.primary`.
 
 ![Product heading default](components/crops/product-h1-default.png)
 
@@ -268,7 +268,7 @@ A product-page Get started pill. Measured, never followed. Read as `product-cta`
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 136.53 x 44.31; padding 14px 20px; radius 999px; background #ffffff `core.color.raw.neutral-0`; text CoFo Sans Mono 12/16.32 400, #ffffff `core.color.raw.neutral-0` (measured white on a white fill, so the visible label's colour was not read); transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
+| default (same: hover, focus-visible, pressed) | size 136.53 x 44.31; padding 14px 20px; radius 999px; background #ffffff `light.surface.primary`; text CoFo Sans Mono 12/16.32 400, #ffffff `light.surface.primary` (measured white on a white fill, so the visible label's colour was not read); transition background 0.3s ease, transform 0.3s ease; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
 
 ![Product CTA default](components/crops/product-cta-default.png) ![Product CTA hover](components/crops/product-cta-hover.png) ![Product CTA focus-visible](components/crops/product-cta-focus-visible.png) ![Product CTA pressed](components/crops/product-cta-pressed.png)
 
@@ -279,7 +279,7 @@ The /resources/how-to page: How to Use Manychat, a public guide index. Not the i
 #### How-to heading
 "How to Use Manychat". A public guide index, not the bot builder. Read as `howto-h1` on the how-to page.
 
-**Values (default).** size 1041.31 x 72; background transparent; text ManyChatGravity 80/72 400, #0f0f0f `core.color.raw.neutral-900`.
+**Values (default).** size 1041.31 x 72; background transparent; text ManyChatGravity 80/72 400, #0f0f0f `light.text.primary`.
 
 ![How-to heading default](components/crops/howto-h1-default.png)
 
@@ -288,8 +288,8 @@ A public how-to card. Measured, never followed into a form. Read as `howto-card`
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 368 x 372.17; border 1px solid #f5f5f5 `core.color.raw.neutral-10`; background transparent; shadow rgba(0, 0, 0, 0.08) 0px 4px 8px 0px; text Rooftop 20/24 600, rgba(15, 15, 15, 0.4); transition transform 0.3s ease, box-shadow 0.3s ease |
-| hover | shadow rgba(0, 0, 0, 0.08) 0px 8px 16px 10px; text Rooftop 20/24 600, #0f0f0f `core.color.raw.neutral-900`; transform translate(0px, -4px) |
+| default | size 368 x 372.17; border 1px solid #f5f5f5 `light.background.secondary`; background transparent; shadow rgba(0, 0, 0, 0.08) 0px 4px 8px 0px; text Rooftop 20/24 600, rgba(15, 15, 15, 0.4); transition transform 0.3s ease, box-shadow 0.3s ease |
+| hover | shadow rgba(0, 0, 0, 0.08) 0px 8px 16px 10px; text Rooftop 20/24 600, #0f0f0f `light.text.primary`; transform translate(0px, -4px) |
 
 ![Guide card default](components/crops/howto-card-default.png) ![Guide card hover](components/crops/howto-card-hover.png)
 
@@ -300,7 +300,7 @@ Home at phone width: a 60px nav, the 44px hero, a Get started pill. The painted 
 #### Mobile header
 The nav at phone width. The site paints no <header> element. Read as `m-header` on the home page at 390 wide.
 
-**Values (default).** size 390 x 60; background transparent; text CoFo Sans Mono 12/16.32 400, #ffffff `core.color.raw.neutral-0`; transition transform 0.45s cubic-bezier(0.43, 0.195, 0.02, 1); icon 107.84 x 20, #ffffff `core.color.raw.neutral-0`; layers div::before._4Y2iAa_menu 390pxx844px rgb(237, 242, 237); a.p_y-s.p_x-l 150.0x48.0 rgb(250, 12, 247) 999px; a::before.p_y-s.p_x-l 149.953pxx48px T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 999px; div.mb-0.4rem.flex 358.0x48.3 rgb(255, 255, 255) 8px; span._4Y2iAa_underline_item.mc-text-label 51.3x16.3; span._4Y2iAa_underli.
+**Values (default).** size 390 x 60; background transparent; text CoFo Sans Mono 12/16.32 400, #ffffff `light.surface.primary`; transition transform 0.45s cubic-bezier(0.43, 0.195, 0.02, 1); icon 107.84 x 20, #ffffff `light.surface.primary`; layers div::before._4Y2iAa_menu 390pxx844px rgb(237, 242, 237); a.p_y-s.p_x-l 150.0x48.0 rgb(250, 12, 247) 999px; a::before.p_y-s.p_x-l 149.953pxx48px T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 999px; div.mb-0.4rem.flex 358.0x48.3 rgb(255, 255, 255) 8px; span._4Y2iAa_underline_item.mc-text-label 51.3x16.3; span._4Y2iAa_underli.
 
 Child layers that carry the look: div::before 390pxx844px background #edf2ed; a 150x48 background #fa0cf7 `core.color.brand.neon-pink` radius 999px; a::before 149.953pxx48px border 1px solid transparent radius 999px.
 
@@ -309,7 +309,7 @@ Child layers that carry the look: div::before 390pxx844px background #edf2ed; a 
 #### Mobile logo
 Read as `m-logo` on the home page at 390 wide.
 
-**Values (default).** size 107.84 x 20; background transparent; text Rooftop 15/19.5 400, #ffffff `core.color.raw.neutral-0`; transition color 0.3s ease; icon 107.84 x 20, #ffffff `core.color.raw.neutral-0`.
+**Values (default).** size 107.84 x 20; background transparent; text Rooftop 15/19.5 400, #ffffff `light.surface.primary`; transition color 0.3s ease; icon 107.84 x 20, #ffffff `light.surface.primary`.
 
 ![Mobile logo default](components/crops/m-logo-default.png)
 
@@ -321,7 +321,7 @@ Not on the page when it was captured.
 #### Mobile hero heading
 The hero h1 at 390px. Read as `m-h1` on the home page at 390 wide.
 
-**Values (default).** size 358 x 72.16; background transparent; text ManyChatGravity 44/36.08 400, #ffffff `core.color.raw.neutral-0`.
+**Values (default).** size 358 x 72.16; background transparent; text ManyChatGravity 44/36.08 400, #ffffff `light.surface.primary`.
 
 ![Mobile hero heading default](components/crops/m-h1-default.png)
 
@@ -330,7 +330,7 @@ A Get started link at 390px. Measured, never followed. Read as `m-cta` on the ho
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 128.53 x 32.31; padding 8px 16px; radius 32px; background #fa0cf7 `core.color.brand.neon-pink`; text CoFo Sans Mono 12/16.32 400, #ffffff `core.color.raw.neutral-0` (the element's computed colour; its first label span is a transparent copy); transition background 0.3s ease, transform 0.3s ease; opacity 0; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
+| default (same: hover, focus-visible, pressed) | size 128.53 x 32.31; padding 8px 16px; radius 32px; background #fa0cf7 `core.color.brand.neon-pink`; text CoFo Sans Mono 12/16.32 400, #ffffff `light.surface.primary` (the element's computed colour; its first label span is a transparent copy); transition background 0.3s ease, transform 0.3s ease; opacity 0; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
 
 ![Mobile Get started default](components/crops/m-cta-default.png) ![Mobile Get started hover](components/crops/m-cta-hover.png) ![Mobile Get started focus-visible](components/crops/m-cta-focus-visible.png) ![Mobile Get started pressed](components/crops/m-cta-pressed.png)
 

@@ -35,7 +35,9 @@ def flat(node, prefix=""):
 
 
 BY_COLOR = {}
-for _set in ("core", "light", "dark"):
+# Theme names first, core as the fallback: a colour a theme role shares with a core
+# scale step is named by the role it plays in that theme.
+for _set in ("light", "dark", "core"):
     for n, t in flat(T.get(_set, {}), prefix=_set + "."):
         if t["$type"] == "color":
             BY_COLOR.setdefault(t["$value"], n)

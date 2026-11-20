@@ -66,7 +66,7 @@ The fixed app bar and footer: the District mark, the For you / Dining / Movies /
 #### Top nav
 The fixed app bar — District mark, category tabs, search and location. Read as `nv-bar` on the home feed page.
 
-**Values (default).** size 1440 x 75; padding 8px 0px 12px 0px; border B: 1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8`; background #ffffff `color.brand-pure-white`; text BeVietnamPro 16/24 600, #131316 `color.button-outline-text`; icon 32 x 32, #6444e4 `color.border-brand`.
+**Values (default).** size 1440 x 75; padding 8px 0px 12px 0px; border B: 1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary`; background #ffffff `color.background.primary`; text BeVietnamPro 16/24 600, #131316 `color.button.outline.border`; icon 32 x 32, #6444e4 `color.border-brand`.
 
 ![Top nav default](components/crops/nv-bar-default.png)
 
@@ -75,7 +75,7 @@ The District logo link in the top nav; measured, never followed. Read as `nv-mar
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 108 x 43.63; background transparent; text BeVietnamPro 16/24 400, #131316 `color.button-outline-text` |
+| default (same: hover, focus-visible, pressed) | size 108 x 43.63; background transparent; text BeVietnamPro 16/24 400, #131316 `color.button.outline.border` |
 
 ![District mark default](components/crops/nv-mark-default.png) ![District mark hover](components/crops/nv-mark-hover.png) ![District mark focus-visible](components/crops/nv-mark-focus-visible.png) ![District mark pressed](components/crops/nv-mark-pressed.png)
 
@@ -84,7 +84,7 @@ The Movies tab in the top category row — a real link; measured, never followed
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 84 x 36; padding 8px; radius 9999px; background transparent; text BeVietnamPro 14/20 600, #545459 `color.grey.500`; transition all 0.2s cubic-bezier(0.4, 0, 0.2, 1); layers a.md:dds-px-2.dds-py-2 84.0x36.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px 9999px |
+| default (same: hover, focus-visible, pressed) | size 84 x 36; padding 8px; radius 9999px; background transparent; text BeVietnamPro 14/20 600, #545459 `color.button.secondary.border.pressed`; transition all 0.2s cubic-bezier(0.4, 0, 0.2, 1); layers a.md:dds-px-2.dds-py-2 84.0x36.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px 9999px |
 
 ![Category tab default](components/crops/nv-tab-default.png) ![Category tab hover](components/crops/nv-tab-hover.png) ![Category tab focus-visible](components/crops/nv-tab-focus-visible.png) ![Category tab pressed](components/crops/nv-tab-pressed.png)
 
@@ -93,7 +93,7 @@ The "For you" home tab — the selected state of the category row. Read as `nv-t
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 84 x 36; padding 8px; radius 9999px; background #eae5ff `color.gradient-purple`; text BeVietnamPro 14/20 600, #231268 `color.purple.800`; transition all 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
+| default (same: hover, focus-visible, pressed) | size 84 x 36; padding 8px; radius 9999px; background #eae5ff `color.gradient-purple`; text BeVietnamPro 14/20 600, #231268 `color.text.accent.purple`; transition all 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
 
 ![Category tab (For you) default](components/crops/nv-tab-active-default.png) ![Category tab (For you) hover](components/crops/nv-tab-active-hover.png) ![Category tab (For you) focus-visible](components/crops/nv-tab-active-focus-visible.png) ![Category tab (For you) pressed](components/crops/nv-tab-active-pressed.png)
 
@@ -102,14 +102,14 @@ The search affordance linking to /search; hover/focus measured, never followed. 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 28 x 28; background transparent; text BeVietnamPro 16/24 400, #131316 `color.button-outline-text`; icon 18 x 18, #6444e4 `color.border-brand` |
+| default (same: hover, focus-visible, pressed) | size 28 x 28; background transparent; text BeVietnamPro 16/24 400, #131316 `color.button.outline.border`; icon 18 x 18, #6444e4 `color.border-brand` |
 
 ![Search field default](components/crops/nv-search-default.png) ![Search field hover](components/crops/nv-search-hover.png) ![Search field focus-visible](components/crops/nv-search-focus-visible.png) ![Search field pressed](components/crops/nv-search-pressed.png)
 
 #### Site footer
 The District sitemap footer. Read as `ft-bar` on the home feed page.
 
-**Values (default).** size 1440 x 410.5; background #1e1e20 `color.grey.800`; text BeVietnamPro 14/21 600, #eaeaeb; icon 79.56 x 32, #ffffff `color.brand-pure-white`.
+**Values (default).** size 1440 x 410.5; background #1e1e20 `color.border.selection`; text BeVietnamPro 14/21 600, #eaeaeb; icon 79.56 x 32, #ffffff `color.background.primary`.
 
 ![Site footer default](components/crops/ft-bar-default.png)
 
@@ -120,14 +120,14 @@ The '/' For-you feed: the page heading and the section rails (artist headshots, 
 #### Page heading
 The home feed heading. Read as `hm-h1` on the home feed page.
 
-**Values (default).** size 263 x 20; background transparent; text BeVietnamPro 24/20 600, #131316 `color.button-outline-text`.
+**Values (default).** size 263 x 20; background transparent; text BeVietnamPro 24/20 600, #131316 `color.button.outline.border`.
 
 ![Page heading default](components/crops/hm-h1-default.png)
 
 #### Section heading
 A feed section heading (artists / movies / events rail). Read as `hm-section` on the home feed page.
 
-**Values (default).** size 314 x 20; background transparent; text BeVietnamPro 24/20 600, #131316 `color.button-outline-text`.
+**Values (default).** size 314 x 20; background transparent; text BeVietnamPro 24/20 600, #131316 `color.button.outline.border`.
 
 ![Section heading default](components/crops/hm-section-default.png)
 
@@ -140,16 +140,16 @@ A movie card — poster art, title, certificate and language; hover measured, ne
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 197.33 x 348.45; background transparent; text BeVietnamPro 16/22 600, #131316 `color.button-outline-text`; layers div.sm:dds-mx-[0px].dds-min-h-[282px] 197.3x348.5 T:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` / R:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` / B:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` / L:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` 16px |
+| default (same: hover) | size 197.33 x 348.45; background transparent; text BeVietnamPro 16/22 600, #131316 `color.button.outline.border`; layers div.sm:dds-mx-[0px].dds-min-h-[282px] 197.3x348.5 T:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` / R:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` / B:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` / L:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` 16px |
 
-Child layers that carry the look: div 197.3x348.5 border 1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` radius 16px.
+Child layers that carry the look: div 197.3x348.5 border 1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` radius 16px.
 
 ![Movie card default](components/crops/mc-card-default.png) ![Movie card hover](components/crops/mc-card-hover.png)
 
 #### Movie title
 The title line inside a movie card. Read as `mc-title` on the home feed page.
 
-**Values (default).** size 77.81 x 22; background transparent; text BeVietnamPro 16/22 600, #131316 `color.button-outline-text`.
+**Values (default).** size 77.81 x 22; background transparent; text BeVietnamPro 16/22 600, #131316 `color.button.outline.border`.
 
 ![Movie title default](components/crops/mc-title-default.png)
 
@@ -158,7 +158,7 @@ An artist card in the circular headshot rail (Samay Raina, ALAN WALKER…); hove
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 190 x 222; background transparent; text BeVietnamPro 16/24 600, #131316 `color.button-outline-text` |
+| default (same: hover) | size 190 x 222; background transparent; text BeVietnamPro 16/24 600, #131316 `color.button.outline.border` |
 
 ![Artist card default](components/crops/ar-card-default.png) ![Artist card hover](components/crops/ar-card-hover.png)
 
@@ -167,9 +167,9 @@ An event card with date and venue; hover measured, never followed. Read as `ev-c
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 236 x 325; background transparent; text BeVietnamPro 18/28 600, #f7f7f7 `color.button-brand-label`; layers div.dds-relative.dds-overflow-hidden 236.0x325.0 #ffffff `color.brand-pure-white` T:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` / R:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` / B:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` / L:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` 24px; div.dds-absolute.dds-inset-0 234.0x323.0; div.dds-flex.dds-flex-col 210.0x89.0 T:1px solid |
+| default (same: hover) | size 236 x 325; background transparent; text BeVietnamPro 18/28 600, #f7f7f7 `color.button.primary.label.default`; layers div.dds-relative.dds-overflow-hidden 236.0x325.0 #ffffff `color.background.primary` T:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` / R:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` / B:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` / L:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` 24px; div.dds-absolute.dds-inset-0 234.0x323.0; div.dds-flex.dds-flex- |
 
-Child layers that carry the look: div 236x325 background #ffffff `color.brand-pure-white` border 1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` radius 24px; div 234x323 image linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.6) 45%, transparent 100%); div 210x89 border 1px solid rgba(247, 247, 247, 0.2).
+Child layers that carry the look: div 236x325 background #ffffff `color.background.primary` border 1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` radius 24px; div 234x323 image linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.6) 45%, transparent 100%); div 210x89 border 1px solid rgba(247, 247, 247, 0.2).
 
 ![Event card default](components/crops/ev-card-default.png) ![Event card hover](components/crops/ev-card-hover.png)
 
@@ -178,9 +178,9 @@ A movie card on the listing grid; hover measured, never followed. Read as `mv-ca
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 197.33 x 348.44; background transparent; text BeVietnamPro 16/22 600, #131316 `color.button-outline-text`; layers div.sm:dds-mx-[0px].dds-min-h-[282px] 197.3x348.4 T:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` / R:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` / B:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` / L:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` 16px |
+| default (same: hover) | size 197.33 x 348.44; background transparent; text BeVietnamPro 16/22 600, #131316 `color.button.outline.border`; layers div.sm:dds-mx-[0px].dds-min-h-[282px] 197.3x348.4 T:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` / R:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` / B:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` / L:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` 16px |
 
-Child layers that carry the look: div 197.3x348.4 border 1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` radius 16px.
+Child layers that carry the look: div 197.3x348.4 border 1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` radius 16px.
 
 ![Listing movie card default](components/crops/mv-card-default.png) ![Listing movie card hover](components/crops/mv-card-hover.png)
 
@@ -194,16 +194,16 @@ An event card on the listing; hover measured, never followed. Read as `ev-listca
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 236 x 325; background transparent; text BeVietnamPro 18/28 600, #f7f7f7 `color.button-brand-label`; layers div.dds-relative.dds-overflow-hidden 236.0x325.0 #ffffff `color.brand-pure-white` T:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` / R:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` / B:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` / L:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` 24px; div.dds-absolute.dds-inset-0 234.0x323.0; div.dds-flex.dds-flex-col 210.0x89.0 T:1px solid |
+| default (same: hover) | size 236 x 325; background transparent; text BeVietnamPro 18/28 600, #f7f7f7 `color.button.primary.label.default`; layers div.dds-relative.dds-overflow-hidden 236.0x325.0 #ffffff `color.background.primary` T:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` / R:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` / B:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` / L:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` 24px; div.dds-absolute.dds-inset-0 234.0x323.0; div.dds-flex.dds-flex- |
 
-Child layers that carry the look: div 236x325 background #ffffff `color.brand-pure-white` border 1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` radius 24px; div 234x323 image linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.6) 45%, transparent 100%); div 210x89 border 1px solid rgba(247, 247, 247, 0.2).
+Child layers that carry the look: div 236x325 background #ffffff `color.background.primary` border 1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` radius 24px; div 234x323 image linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.6) 45%, transparent 100%); div 210x89 border 1px solid rgba(247, 247, 247, 0.2).
 
 ![Listing event card default](components/crops/ev-listcard-default.png) ![Listing event card hover](components/crops/ev-listcard-hover.png)
 
 #### Event price
 A "₹1499 onwards" price line on an event card. Read as `ev-price` on the events listing page.
 
-**Values (default).** size 440 x 24; background transparent; text BeVietnamPro 16/24 700, #131316 `color.button-outline-text`.
+**Values (default).** size 440 x 24; background transparent; text BeVietnamPro 16/24 700, #131316 `color.button.outline.border`.
 
 ![Event price default](components/crops/ev-price-default.png)
 
@@ -214,7 +214,7 @@ The listing surfaces (/movies/, /events/, /events/comedy): headings, language/fo
 #### Movies heading
 The "Movies in <city>" listing heading. Read as `mv-h1` on the movies listing page.
 
-**Values (default).** size 700 x 60; background transparent; text BeVietnamPro 40/60 700, #131316 `color.button-outline-text`.
+**Values (default).** size 700 x 60; background transparent; text BeVietnamPro 40/60 700, #131316 `color.button.outline.border`.
 
 ![Movies heading default](components/crops/mv-h1-default.png)
 
@@ -223,7 +223,7 @@ A language/format filter chip on the listing; measured, never toggled. Read as `
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 56 x 32; padding 8px 12px; border 1px solid rgba(0, 0, 0, 0.24) `color.black-alpha.24`; radius 6px; background #ffffff `color.brand-pure-white`; text BeVietnamPro 12/16 500, #131316 `color.button-outline-text` |
+| default (same: hover, pressed) | size 56 x 32; padding 8px 12px; border 1px solid rgba(0, 0, 0, 0.24) `color.border.intense`; radius 6px; background #ffffff `color.background.primary`; text BeVietnamPro 12/16 500, #131316 `color.button.outline.border` |
 | focus-visible | outline 1px auto #101010 `color.semantics-dark-background-universal-inverse-strong`, offset 0px |
 
 ![Filter chip default](components/crops/mv-chip-default.png) ![Filter chip hover](components/crops/mv-chip-hover.png) ![Filter chip focus-visible](components/crops/mv-chip-focus-visible.png) ![Filter chip pressed](components/crops/mv-chip-pressed.png)
@@ -231,14 +231,14 @@ A language/format filter chip on the listing; measured, never toggled. Read as `
 #### Events heading
 The events listing heading. Read as `ev-h1` on the events listing page.
 
-**Values (default).** size 440 x 60; background transparent; text BeVietnamPro 40/60 700, #131316 `color.button-outline-text`.
+**Values (default).** size 440 x 60; background transparent; text BeVietnamPro 40/60 700, #131316 `color.button.outline.border`.
 
 ![Events heading default](components/crops/ev-h1-default.png)
 
 #### Comedy heading
 The comedy events listing heading. Read as `cm-h1` on the comedy listing page.
 
-**Values (default).** size 626.94 x 60; background transparent; text ui-sans-serif 40/60 700, #131316 `color.button-outline-text`.
+**Values (default).** size 626.94 x 60; background transparent; text ui-sans-serif 40/60 700, #131316 `color.button.outline.border`.
 
 ![Comedy heading default](components/crops/cm-h1-default.png)
 
@@ -247,11 +247,11 @@ A listing filter control; measured, never opened. Read as `cm-filter` on the com
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 632 x 500; background transparent; text ui-sans-serif 12/20 600, #131316 `color.button-outline-text`; layers div.dds-flex.dds-flex-col 132.0x52.0 #f1f1f2 `color.grey.100`; div::after.dds-flex.dds-flex-col 132pxx52px; div.dds-bg-surface-secondary.dds-flex 500.0x500.0 #f1f1f2 `color.grey.100` 0px 20px 20px 0px; input 0.0x0.0 #ffffff `color.brand-pure-white` T:1px solid rgba(0, 0, 0, 0.24) `color.black-alpha.24` / R:1px solid rgba(0, 0, 0, 0.24) `color.black-alpha.24` / B:1px solid rgba(0, 0, 0, 0.24) `colo |
+| default (same: hover, pressed) | size 632 x 500; background transparent; text ui-sans-serif 12/20 600, #131316 `color.button.outline.border`; layers div.dds-flex.dds-flex-col 132.0x52.0 #f1f1f2 `color.background.secondary`; div::after.dds-flex.dds-flex-col 132pxx52px; div.dds-bg-surface-secondary.dds-flex 500.0x500.0 #f1f1f2 `color.background.secondary` 0px 20px 20px 0px; input 0.0x0.0 #ffffff `color.background.primary` T:1px solid rgba(0, 0, 0, 0.24) `color.border.intense` / R:1px solid rgba(0, 0, 0, 0.24) `color.border.intense` / B:1px solid |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
-Child layers that carry the look: div 132x52 background #f1f1f2 `color.grey.100`; div::after 132pxx52px image linear-gradient(to right, #d5ccff `color.purple.150` -70%, transparent); div 500x500 background #f1f1f2 `color.grey.100` radius 0px 20px 20px 0px.
+Child layers that carry the look: div 132x52 background #f1f1f2 `color.background.secondary`; div::after 132pxx52px image linear-gradient(to right, #d5ccff `color.surface.accent.purple` -70%, transparent); div 500x500 background #f1f1f2 `color.background.secondary` radius 0px 20px 20px 0px.
 
 ![Filter control default](components/crops/cm-filter-default.png) ![Filter control hover](components/crops/cm-filter-hover.png) ![Filter control pressed](components/crops/cm-filter-pressed.png)
 
@@ -262,7 +262,7 @@ The artist page and the ticket page: display names, upcoming-show cards, date pi
 #### Artist name
 The artist page display name. Read as `at-h1` on the artist page page.
 
-**Values (default).** size 350.58 x 40; background transparent; text ui-sans-serif 32/40 700, #131316 `color.button-outline-text`.
+**Values (default).** size 350.58 x 40; background transparent; text ui-sans-serif 32/40 700, #131316 `color.button.outline.border`.
 
 ![Artist name default](components/crops/at-h1-default.png)
 
@@ -271,9 +271,9 @@ An upcoming-show card on the artist page; hover measured, never followed. Read a
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 296 x 544; background transparent; text ui-sans-serif 16/24 400, #131316 `color.button-outline-text`; layers div.dds-min-w-[268px].md:dds-min-w-[296px] 296.0x544.0 T:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` / R:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` / B:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` / L:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` 16px; div.dds-absolute.dds-px-3 88.3x36.0 #ffffff `color.brand-pure-white` T:1px solid rgba(0, 0, 0, 0.1) / R:1px solid rgb |
+| default (same: hover) | size 296 x 544; background transparent; text ui-sans-serif 16/24 400, #131316 `color.button.outline.border`; layers div.dds-min-w-[268px].md:dds-min-w-[296px] 296.0x544.0 T:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` / R:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` / B:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` / L:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` 16px; div.dds-absolute.dds-px-3 88.3x36.0 #ffffff `color.background.primary` T:1px solid rgba(0, 0, |
 
-Child layers that carry the look: div 296x544 border 1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` radius 16px; div 88.3x36 background #ffffff `color.brand-pure-white` border 1px solid rgba(0, 0, 0, 0.1) radius 7px shadow rgba(0, 0, 0, 0.25) 0px 4px 4px 0px.
+Child layers that carry the look: div 296x544 border 1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` radius 16px; div 88.3x36 background #ffffff `color.background.primary` border 1px solid rgba(0, 0, 0, 0.1) radius 7px shadow rgba(0, 0, 0, 0.25) 0px 4px 4px 0px.
 
 ![Show card default](components/crops/at-show-default.png) ![Show card hover](components/crops/at-show-hover.png)
 
@@ -282,16 +282,16 @@ The booking link on the artist page — the show card itself navigates to the ti
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 296 x 544; background transparent; text ui-sans-serif 16/24 400, #131316 `color.button-outline-text`; layers div.dds-min-w-[268px].md:dds-min-w-[296px] 296.0x544.0 T:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` / R:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` / B:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` / L:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` 16px; div.dds-absolute.dds-px-3 88.3x36.0 #ffffff `color.brand-pure-white` T:1px solid rgba(0, 0, 0, 0.1) / R:1px solid rgb |
+| default (same: hover, focus-visible, pressed) | size 296 x 544; background transparent; text ui-sans-serif 16/24 400, #131316 `color.button.outline.border`; layers div.dds-min-w-[268px].md:dds-min-w-[296px] 296.0x544.0 T:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` / R:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` / B:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` / L:1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` 16px; div.dds-absolute.dds-px-3 88.3x36.0 #ffffff `color.background.primary` T:1px solid rgba(0, 0, |
 
-Child layers that carry the look: div 296x544 border 1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` radius 16px; div 88.3x36 background #ffffff `color.brand-pure-white` border 1px solid rgba(0, 0, 0, 0.1) radius 7px shadow rgba(0, 0, 0, 0.25) 0px 4px 4px 0px.
+Child layers that carry the look: div 296x544 border 1px solid rgba(0, 0, 0, 0.08) `color.border.card.primary` radius 16px; div 88.3x36 background #ffffff `color.background.primary` border 1px solid rgba(0, 0, 0, 0.1) radius 7px shadow rgba(0, 0, 0, 0.25) 0px 4px 4px 0px.
 
 ![Book CTA default](components/crops/at-book-default.png) ![Book CTA hover](components/crops/at-book-hover.png) ![Book CTA focus-visible](components/crops/at-book-focus-visible.png) ![Book CTA pressed](components/crops/at-book-pressed.png)
 
 #### Event title
 The event detail title on the ticket page. Read as `tk-h1` on the ticket page page.
 
-**Values (default).** size 169.13 x 38; background transparent; text ui-sans-serif 28/normal 700, #131316 `color.button-outline-text`.
+**Values (default).** size 169.13 x 38; background transparent; text ui-sans-serif 28/normal 700, #131316 `color.button.outline.border`.
 
 ![Event title default](components/crops/tk-h1-default.png)
 
@@ -300,7 +300,7 @@ A date/time selector pill; measured, never confirmed. Read as `tk-date` on the t
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 162.13 x 20; background transparent; text ui-sans-serif 16/20 600, #6d49fd `color.button-brand-background` |
+| default (same: hover, pressed) | size 162.13 x 20; background transparent; text ui-sans-serif 16/20 600, #6d49fd `color.border.accent.purple` |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -309,7 +309,7 @@ A date/time selector pill; measured, never confirmed. Read as `tk-date` on the t
 #### Ticket price
 The ticket price line. Read as `tk-price` on the ticket page page.
 
-**Values (default).** size 41.19 x 24; background transparent; text ui-sans-serif 18/20 700, #131316 `color.button-outline-text`.
+**Values (default).** size 41.19 x 24; background transparent; text ui-sans-serif 18/20 700, #131316 `color.button.outline.border`.
 
 ![Ticket price default](components/crops/tk-price-default.png)
 
@@ -318,8 +318,8 @@ The primary Book/Proceed CTA; hover/focus measured, never pressed — payment ga
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 162.97 x 52; padding 4px 32px; radius 12px; background #131316 `color.button-outline-text`; text ui-sans-serif 16/24 600, #ffffff `color.brand-pure-white` |
-| hover | background #1e1e20 `color.grey.800` |
+| default | size 162.97 x 52; padding 4px 32px; radius 12px; background #131316 `color.button.outline.border`; text ui-sans-serif 16/24 600, #ffffff `color.background.primary` |
+| hover | background #1e1e20 `color.border.selection` |
 | focus-visible | outline 1px auto #101010 `color.semantics-dark-background-universal-inverse-strong`, offset 0px |
 
 ![Book button default](components/crops/tk-book-default.png) ![Book button hover](components/crops/tk-book-hover.png) ![Book button focus-visible](components/crops/tk-book-focus-visible.png)
@@ -331,23 +331,23 @@ The same surfaces with the DDS dark theme applied through html[data-theme=dark] 
 #### Dark body
 The page background with data-theme=dark applied — the real dark surface the DDS declares. Read as `dk-body` on the home feed, dark page.
 
-**Values (default).** size 1440 x 4254.58; background #131316 `color.button-outline-text`; text BeVietnamPro 16/24 600, #f7f7f7 `color.button-brand-label`; icon 32 x 32, #6444e4 `color.border-brand`.
+**Values (default).** size 1440 x 4254.58; background #131316 `color.background.primary`; text BeVietnamPro 16/24 600, #f7f7f7 `color.border.selection`; icon 32 x 32, #6444e4 `color.border-brand`.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 #### Dark nav
 The top nav under the dark theme. Read as `dk-nav` on the home feed, dark page.
 
-**Values (default).** size 1440 x 75; padding 8px 0px 12px 0px; border B: 1px solid rgba(255, 255, 255, 0.08) `color.white-alpha.8`; background #131316 `color.button-outline-text`; text BeVietnamPro 16/24 600, #f7f7f7 `color.button-brand-label`; icon 32 x 32, #6444e4 `color.border-brand`.
+**Values (default).** size 1440 x 75; padding 8px 0px 12px 0px; border B: 1px solid rgba(255, 255, 255, 0.08) `color.border.subtle`; background #131316 `color.background.primary`; text BeVietnamPro 16/24 600, #f7f7f7 `color.border.selection`; icon 32 x 32, #6444e4 `color.border-brand`.
 
 ![Dark nav default](components/crops/dk-nav-default.png)
 
 #### Dark card
 A content card under the dark theme. Read as `dk-card` on the home feed, dark page.
 
-**Values (default).** size 197.33 x 348.45; background transparent; text BeVietnamPro 16/22 600, #f7f7f7 `color.button-brand-label`; layers div.sm:dds-mx-[0px].dds-min-h-[282px] 197.3x348.5 T:1px solid rgba(255, 255, 255, 0.08) `color.white-alpha.8` / R:1px solid rgba(255, 255, 255, 0.08) `color.white-alpha.8` / B:1px solid rgba(255, 255, 255, 0.08) `color.white-alpha.8` / L:1px solid rgba(255, 255, 255, 0.08) `color.white-alpha.8` 16px.
+**Values (default).** size 197.33 x 348.45; background transparent; text BeVietnamPro 16/22 600, #f7f7f7 `color.border.selection`; layers div.sm:dds-mx-[0px].dds-min-h-[282px] 197.3x348.5 T:1px solid rgba(255, 255, 255, 0.08) `color.border.subtle` / R:1px solid rgba(255, 255, 255, 0.08) `color.border.subtle` / B:1px solid rgba(255, 255, 255, 0.08) `color.border.subtle` / L:1px solid rgba(255, 255, 255, 0.08) `color.border.subtle` 16px.
 
-Child layers that carry the look: div 197.3x348.5 border 1px solid rgba(255, 255, 255, 0.08) `color.white-alpha.8` radius 16px.
+Child layers that carry the look: div 197.3x348.5 border 1px solid rgba(255, 255, 255, 0.08) `color.border.subtle` radius 16px.
 
 ![Dark card default](components/crops/dk-card-default.png)
 
@@ -358,21 +358,21 @@ The phone surface at 390 wide: the app bar, a category tab and a content card.
 #### Mobile nav
 The phone app bar at 390px. Read as `m-bar` on the movies listing page at 390 wide.
 
-**Values (default).** size 390 x 60; padding 8px 0px 0px 0px; background #ffffff `color.brand-pure-white`; text BeVietnamPro 16/24 600, #131316 `color.button-outline-text`; icon 32 x 32, #6444e4 `color.border-brand`.
+**Values (default).** size 390 x 60; padding 8px 0px 0px 0px; background #ffffff `color.background.primary`; text BeVietnamPro 16/24 600, #131316 `color.button.outline.border`; icon 32 x 32, #6444e4 `color.border-brand`.
 
 ![Mobile nav default](components/crops/m-bar-default.png)
 
 #### Mobile tab
 A category tab at 390px. Read as `m-tab` on the movies listing page at 390 wide.
 
-**Values (default).** size 84 x 60; padding 8px; radius 8px; background transparent; text BeVietnamPro 14/20 600, #545459 `color.grey.500`; transition all 0.2s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #545459 `color.grey.500`; layers a.md:dds-px-2.dds-py-2 84.0x60.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px 8px.
+**Values (default).** size 84 x 60; padding 8px; radius 8px; background transparent; text BeVietnamPro 14/20 600, #545459 `color.button.secondary.border.pressed`; transition all 0.2s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #545459 `color.button.secondary.border.pressed`; layers a.md:dds-px-2.dds-py-2 84.0x60.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px 8px.
 
 ![Mobile tab default](components/crops/m-tab-default.png)
 
 #### Mobile card
 A content card at 390px. Read as `m-card` on the movies listing page at 390 wide.
 
-**Values (default).** size 364 x 271.75; background transparent; text BeVietnamPro 16/24 600, #131316 `color.button-outline-text`.
+**Values (default).** size 364 x 271.75; background transparent; text BeVietnamPro 16/24 600, #131316 `color.button.outline.border`.
 
 ![Mobile card default](components/crops/m-card-default.png)
 

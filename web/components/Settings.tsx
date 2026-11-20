@@ -154,7 +154,7 @@ export function Settings({ stats }: { stats: SettingsStats }) {
       </div>
 
       <div className="prefs">
-        <fieldset className="pref">
+        <fieldset className="pref" id="model-provider">
           <legend className="pref-name">Model provider</legend>
           <p className="pref-help">The chat&rsquo;s brain: which wire format, endpoint, key and model it talks to.</p>
           <div className="pf-grid">

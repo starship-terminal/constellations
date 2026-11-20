@@ -419,7 +419,10 @@ into a focused input is not read by OCR, so give it a rectangle. A `rows` rectan
 whose right edge touches a coloured button smears that colour across the fill; end
 it a few pixels short. A pattern that matches a logo word next to a heading is
 reported as spanning lines; if it is a false positive, list the image under
-`ocr.wrap_ignore` and `check --rules` stops flagging it.
+`ocr.wrap_ignore` and `check --rules` stops flagging it. `check` and `apply`
+refuse a rules file holding a key at a level that never reads it (a top-level
+`wrap_ignore`, an `ocr.families`) or a key they do not know; start a note's
+key with `_`.
 
 ## Traps that cost time before
 

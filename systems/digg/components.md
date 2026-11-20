@@ -38,7 +38,7 @@ Screenshots are named `{page}-{theme}-{state}.png`: home and story are captured 
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 18 components were given a real keyboard focus. 1 draw an outline ring: `lg-signup` (1px auto rgba(171, 171, 191, 0.5) `border.focus`, offset 1px). 16 draw a focus ring as a shadow instead: `sb-home`, `sb-tech`, `sb-pill`, `sb-login`, `sb-signup`, `feed-trending`, `d-vote`, `d-signup`, `d-trending`, `st-sources`, `st-crumb`, `lg-google`, `lg-x`, `lg-continue`, `su-continue`, `m-vote`. The other 1 show no measured change: `st-vote`.
+**Focus.** 18 components were given a real keyboard focus. 1 draw an outline ring: `lg-signup` (1px auto rgba(171, 171, 191, 0.5), offset 1px). 16 draw a focus ring as a shadow instead: `sb-home`, `sb-tech`, `sb-pill`, `sb-login`, `sb-signup`, `feed-trending`, `d-vote`, `d-signup`, `d-trending`, `st-sources`, `st-crumb`, `lg-google`, `lg-x`, `lg-continue`, `su-continue`, `m-vote`. The other 1 show no measured change: `st-vote`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -58,10 +58,10 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|---|---|---|
 | [Story card](#story-card) | 704 x 183 | 1px solid transparent | 18px | transparent | none | 14px 16px |
 | [Category card](#category-card) | 704 x 160 | 1px solid transparent | 18px | transparent | none | 14px 16px |
-| [Top Contributors](#top-contributors) | 376 x 352 | 1px solid rgba(0, 0, 0, 0.08) `border.default` | 18px | #ffffff `color.white` | rgba(22, 22, 23, 0.1) 0px 0px 0px 0px | 24px 0px |
-| [Top Posts panel](#top-posts-panel) | 376 x 556 | 1px solid rgba(0, 0, 0, 0.08) `border.default` | 18px | #ffffff `color.white` | rgba(22, 22, 23, 0.1) 0px 0px 0px 0px | 24px 0px |
-| [Stat card](#stat-card) | 376 x 384 | 1px solid rgba(0, 0, 0, 0.08) `border.default` | 18px | #ffffff `color.white` | rgba(22, 22, 23, 0.1) 0px 0px 0px 0px | 24px 0px |
-| [Sources list](#sources-list) | 376 x 246 | 1px solid rgba(0, 0, 0, 0.08) `border.default` | 18px | #ffffff `color.white` | rgba(22, 22, 23, 0.1) 0px 0px 0px 0px | 24px 0px |
+| [Top Contributors](#top-contributors) | 376 x 352 | 1px solid rgba(0, 0, 0, 0.08) | 18px | #ffffff `color.white` | rgba(22, 22, 23, 0.1) 0px 0px 0px 0px | 24px 0px |
+| [Top Posts panel](#top-posts-panel) | 376 x 556 | 1px solid rgba(0, 0, 0, 0.08) | 18px | #ffffff `color.white` | rgba(22, 22, 23, 0.1) 0px 0px 0px 0px | 24px 0px |
+| [Stat card](#stat-card) | 376 x 384 | 1px solid rgba(0, 0, 0, 0.08) | 18px | #ffffff `color.white` | rgba(22, 22, 23, 0.1) 0px 0px 0px 0px | 24px 0px |
+| [Sources list](#sources-list) | 376 x 246 | 1px solid rgba(0, 0, 0, 0.08) | 18px | #ffffff `color.white` | rgba(22, 22, 23, 0.1) 0px 0px 0px 0px | 24px 0px |
 | [Card (dark)](#card-dark) | 704 x 183 | 1px solid transparent | 18px | transparent | none | 14px 16px |
 | [Mobile card](#mobile-card) | 390 x 207 | 1px solid transparent | 18px | transparent | none | 14px 16px |
 
@@ -76,7 +76,7 @@ The Home row in the left sidebar — icon + label pill, painted selected on the 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 231 x 40; padding 4px 12px; radius 3.35544e+07px; background #f0f0f5 `background.fill`; text roobert 14/20 600, #161617 `card.foreground`; transition width 0.15s cubic-bezier(0.4, 0, 0.2, 1), height 0.15s cubic-bezier(0.4, 0, 0.2, 1), padding 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default (same: hover, pressed) | size 231 x 40; padding 4px 12px; radius 3.35544e+07px; background #f0f0f5; text roobert 14/20 600, #161617; transition width 0.15s cubic-bezier(0.4, 0, 0.2, 1), height 0.15s cubic-bezier(0.4, 0, 0.2, 1), padding 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | focus-visible | shadow #ababbf 0px 0px 0px 2px |
 
 ![Sidebar item (active) default](components/crops/sb-home-default.png) ![Sidebar item (active) hover](components/crops/sb-home-hover.png) ![Sidebar item (active) focus-visible](components/crops/sb-home-focus-visible.png) ![Sidebar item (active) pressed](components/crops/sb-home-pressed.png)
@@ -86,10 +86,10 @@ A category row in the left sidebar (Technology, with its badge icon); measured, 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 231 x 40; padding 4px 12px; radius 3.35544e+07px; background transparent; text roobert 14/20 600, #161617 `card.foreground`; transition width 0.15s cubic-bezier(0.4, 0, 0.2, 1), height 0.15s cubic-bezier(0.4, 0, 0.2, 1), padding 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background #f0f0f5 `background.fill` |
-| focus-visible | shadow #ababbf 0px 0px 0px 2px; layers a.peer/menu-button.group/menu-button 231.0x40.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #ababbf `ring` 0px 0px 0px 2px, transparent 0px 0px 0px 0px 3.35544e+07px |
-| pressed | background #f0f0f5 `background.fill` |
+| default | size 231 x 40; padding 4px 12px; radius 3.35544e+07px; background transparent; text roobert 14/20 600, #161617; transition width 0.15s cubic-bezier(0.4, 0, 0.2, 1), height 0.15s cubic-bezier(0.4, 0, 0.2, 1), padding 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | background #f0f0f5 |
+| focus-visible | shadow #ababbf 0px 0px 0px 2px; layers a.peer/menu-button.group/menu-button 231.0x40.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #ababbf 0px 0px 0px 2px, transparent 0px 0px 0px 0px 3.35544e+07px |
+| pressed | background #f0f0f5 |
 
 ![Sidebar item default](components/crops/sb-tech-default.png) ![Sidebar item hover](components/crops/sb-tech-hover.png) ![Sidebar item focus-visible](components/crops/sb-tech-focus-visible.png) ![Sidebar item pressed](components/crops/sb-tech-pressed.png)
 
@@ -98,10 +98,10 @@ The sidebar theme pill (System / Light / Dark cycle); pressed is CDP-forced — 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 231 x 40; padding 0px 16px; border 1px solid transparent; radius 26px; background #f0f0f5 `background.fill`; text roobert 14/20 500, #161617 `card.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #161617 `card.foreground` |
-| hover | background #dbe3f6 `secondary.hover` |
-| focus-visible | border 1px solid #ababbf `ring`; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px |
-| pressed | background #dbe3f6 `secondary.hover` |
+| default | size 231 x 40; padding 0px 16px; border 1px solid transparent; radius 26px; background #f0f0f5; text roobert 14/20 500, #161617; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #161617 |
+| hover | background #dbe3f6 |
+| focus-visible | border 1px solid #ababbf; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px |
+| pressed | background #dbe3f6 |
 
 ![Theme pill default](components/crops/sb-pill-default.png) ![Theme pill hover](components/crops/sb-pill-hover.png) ![Theme pill focus-visible](components/crops/sb-pill-focus-visible.png) ![Theme pill pressed](components/crops/sb-pill-pressed.png)
 
@@ -110,10 +110,10 @@ The sidebar Log in link to /login; measured, never followed. Read as `sb-login` 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 231 x 40; padding 0px 16px; border 1px solid transparent; radius 26px; background #f0f0f5 `background.fill`; text roobert 14/20 500, #161617 `card.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background #dbe3f6 `secondary.hover` |
-| focus-visible | border 1px solid #ababbf `ring`; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px |
-| pressed | background #dbe3f6 `secondary.hover` |
+| default | size 231 x 40; padding 0px 16px; border 1px solid transparent; radius 26px; background #f0f0f5; text roobert 14/20 500, #161617; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | background #dbe3f6 |
+| focus-visible | border 1px solid #ababbf; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px |
+| pressed | background #dbe3f6 |
 
 ![Log in link default](components/crops/sb-login-default.png) ![Log in link hover](components/crops/sb-login-hover.png) ![Log in link focus-visible](components/crops/sb-login-focus-visible.png) ![Log in link pressed](components/crops/sb-login-pressed.png)
 
@@ -122,9 +122,9 @@ The blue Sign up button at the foot of the sidebar; measured, never followed. Re
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 231 x 40; padding 0px 16px; border 1px solid transparent; radius 26px; background #1c66eb `color.primary`; text roobert 14/20 500, #ffffff `color.white`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default | size 231 x 40; padding 0px 16px; border 1px solid transparent; radius 26px; background #1c66eb `color.blue.500`; text roobert 14/20 500, #ffffff `color.white`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover | background rgba(28, 102, 235, 0.8) `action.primary-hover` |
-| focus-visible | border 1px solid #ababbf `ring`; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px |
+| focus-visible | border 1px solid #ababbf; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px |
 | pressed | background rgba(28, 102, 235, 0.801409) |
 
 ![Sign up CTA default](components/crops/sb-signup-default.png) ![Sign up CTA hover](components/crops/sb-signup-hover.png) ![Sign up CTA focus-visible](components/crops/sb-signup-focus-visible.png) ![Sign up CTA pressed](components/crops/sb-signup-pressed.png)
@@ -132,7 +132,7 @@ The blue Sign up button at the foot of the sidebar; measured, never followed. Re
 #### Sidebar item (selected)
 The Technology sidebar row on /tech — the painted selected state of a category item. Read as `cat-tech-active` on the technology category page.
 
-**Values (default).** size 231 x 40; padding 4px 12px; radius 3.35544e+07px; background #f0f0f5 `background.fill`; text roobert 14/20 600, #161617 `card.foreground`; transition width 0.15s cubic-bezier(0.4, 0, 0.2, 1), height 0.15s cubic-bezier(0.4, 0, 0.2, 1), padding 0.15s cubic-bezier(0.4, 0, 0.2, 1).
+**Values (default).** size 231 x 40; padding 4px 12px; radius 3.35544e+07px; background #f0f0f5; text roobert 14/20 600, #161617; transition width 0.15s cubic-bezier(0.4, 0, 0.2, 1), height 0.15s cubic-bezier(0.4, 0, 0.2, 1), padding 0.15s cubic-bezier(0.4, 0, 0.2, 1).
 
 ![Sidebar item (selected) default](components/crops/cat-tech-active-default.png)
 
@@ -141,10 +141,10 @@ The category chip link beside the back button; measured, never followed. Read as
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 170.55 x 40; padding 0px 16px; border 1px solid transparent; radius 26px; background #f0f0f5 `background.fill`; text roobert 14/20 500, #161617 `card.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background #dbe3f6 `secondary.hover` |
-| focus-visible | border 1px solid #ababbf `ring`; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px |
-| pressed | background #dbe3f6 `secondary.hover` |
+| default | size 170.55 x 40; padding 0px 16px; border 1px solid transparent; radius 26px; background #f0f0f5; text roobert 14/20 500, #161617; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | background #dbe3f6 |
+| focus-visible | border 1px solid #ababbf; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px |
+| pressed | background #dbe3f6 |
 
 ![Category crumb default](components/crops/st-crumb-default.png) ![Category crumb hover](components/crops/st-crumb-hover.png) ![Category crumb focus-visible](components/crops/st-crumb-focus-visible.png) ![Category crumb pressed](components/crops/st-crumb-pressed.png)
 
@@ -157,8 +157,8 @@ The Trending sort trigger over the feed; its opened state is a local dropdown of
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed, opened) | size 105.28 x 36; padding 8px 12px; border 1px solid #e5e5e5 `border.input`; radius 26px; background rgba(229, 229, 229, 0.3) `background.input-fill`; text roobert 14/20 400, #161617 `card.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, rgba(22, 22, 23, 0.7) `muted.foreground` |
-| focus-visible | border 1px solid #ababbf `ring`; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px |
+| default (same: hover, pressed, opened) | size 105.28 x 36; padding 8px 12px; border 1px solid #e5e5e5; radius 26px; background rgba(229, 229, 229, 0.3); text roobert 14/20 400, #161617; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, rgba(22, 22, 23, 0.7) |
+| focus-visible | border 1px solid #ababbf; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px |
 
 ![Sort dropdown default](components/crops/feed-trending-default.png) ![Sort dropdown hover](components/crops/feed-trending-hover.png) ![Sort dropdown focus-visible](components/crops/feed-trending-focus-visible.png) ![Sort dropdown pressed](components/crops/feed-trending-pressed.png) ![Sort dropdown opened](components/crops/feed-trending-opened.png)
 
@@ -167,7 +167,7 @@ The Compact density control beside the sort dropdown; measured, never toggled. R
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 64 x 36; padding 8px 12px; border 1px solid #e5e5e5 `border.input`; radius 26px; background rgba(229, 229, 229, 0.3) `background.input-fill`; text roobert 14/20 400, #161617 `card.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #161617 `card.foreground` |
+| default (same: hover, pressed) | size 64 x 36; padding 8px 12px; border 1px solid #e5e5e5; radius 26px; background rgba(229, 229, 229, 0.3); text roobert 14/20 400, #161617; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #161617 |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -176,7 +176,7 @@ The Compact density control beside the sort dropdown; measured, never toggled. R
 #### Category heading
 The Technology feed heading. Read as `cat-title` on the technology category page.
 
-**Values (default).** size 656 x 36; background transparent; text roobert 30/36 700, #161617 `card.foreground`.
+**Values (default).** size 656 x 36; background transparent; text roobert 30/36 700, #161617.
 
 ![Category heading default](components/crops/cat-title-default.png)
 
@@ -187,7 +187,7 @@ The feed's story card (704 x 183): semibold 16px headline, muted summary, the vo
 #### Story card
 A feed story card: category chip, headline, summary, vote pill, comment link and source cluster, thumbnail at right. Read as `post-card` on the home feed page.
 
-**Values (default).** size 704 x 183; padding 14px 16px; border 1px solid transparent; radius 18px; background transparent; text roobert 12/16 600, #161617 `card.foreground`; transition color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, rgba(22, 22, 23, 0.7) `muted.foreground`.
+**Values (default).** size 704 x 183; padding 14px 16px; border 1px solid transparent; radius 18px; background transparent; text roobert 12/16 600, #161617; transition color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, rgba(22, 22, 23, 0.7).
 
 ![Story card default](components/crops/post-card-default.png)
 
@@ -196,7 +196,7 @@ The card’s stretched headline link (data-post-headline); measured, never follo
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 536 x 48; background transparent; text roobert 16/24 600, #161617 `card.foreground` |
+| default (same: hover, pressed) | size 536 x 48; background transparent; text roobert 16/24 600, #161617 |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -205,7 +205,7 @@ The card’s stretched headline link (data-post-headline); measured, never follo
 #### Card summary
 The one-two line summary under the headline. Read as `post-summary` on the home feed page.
 
-**Values (default).** size 536 x 40; background transparent; text roobert 14/20 400, rgba(22, 22, 23, 0.7) `muted.foreground`.
+**Values (default).** size 536 x 40; background transparent; text roobert 14/20 400, rgba(22, 22, 23, 0.7).
 
 ![Card summary default](components/crops/post-summary-default.png)
 
@@ -214,8 +214,8 @@ The digg-it vote pill on the card (icon + odometer count); pressed is CDP-forced
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 32 x 24; radius 3.35544e+07px 26px 26px 3.35544e+07px; background transparent; text roobert 14/20 500, rgba(22, 22, 23, 0.7) `muted.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, rgba(22, 22, 23, 0.7) `muted.foreground`; layers ::after transparent 0px none 1; button.group/button.inline-flex 32.0x24.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px 3.35544e+07px 26px 26px 3.35544e+07px; span.relative.flex 32.0x24.0 rgba(28, 102, 235, 0.05) T:1px solid rgba(28, 102, 235, 0.2) `border.vote-border` / R:1px solid rgba(28, 102, 235, |
-| hover, pressed | text roobert 14/20 500, #161617 `card.foreground`; icon 12 x 12, #161617 `card.foreground` |
+| default | size 32 x 24; radius 3.35544e+07px 26px 26px 3.35544e+07px; background transparent; text roobert 14/20 500, rgba(22, 22, 23, 0.7); transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, rgba(22, 22, 23, 0.7); layers ::after transparent 0px none 1; button.group/button.inline-flex 32.0x24.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px 3.35544e+07px 26px 26px 3.35544e+07px; span.relative.flex 32.0x24.0 rgba(28, 102, 235, 0.05) T:1px solid rgba(28, 102, 235, 0.2) `border.vote-border` / R:1px solid rgba(28, 102, 235, |
+| hover, pressed | text roobert 14/20 500, #161617; icon 12 x 12, #161617 |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -226,7 +226,7 @@ The comment-count link on the card; measured, never followed. Read as `post-comm
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 32 x 32; border 1px solid rgba(0, 0, 0, 0.08) `border.default`; radius 26px; background transparent; text roobert 14/20 500, #161617 `card.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, rgba(22, 22, 23, 0.7) `muted.foreground` |
+| default | size 32 x 32; border 1px solid rgba(0, 0, 0, 0.08); radius 26px; background transparent; text roobert 14/20 500, #161617; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, rgba(22, 22, 23, 0.7) |
 | hover, pressed | background rgba(229, 229, 229, 0.5) |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
@@ -238,11 +238,11 @@ A source avatar in the card’s cluster (popover anchor, initials); measured, ne
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 24 x 24; radius 3.35544e+07px; background transparent; text roobert 12/16 400, rgba(22, 22, 23, 0.7) `muted.foreground`; transition color 0.15s ease-out, text-decoration-color 0.15s ease-out, opacity 0.15s ease-out; layers span.group/avatar.flex 24.0x24.0 #fdfdff `background.default` 0px 0px 0px 1.5px 3.35544e+07px; span.flex.size-full 24.0x24.0 #f0f0f5 `background.fill` 3.35544e+07px; span.pointer-events-none.absolute 24.0x24.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) `border.default` 0px 0px 0px 1px inset, rgba(0, 0, 0,  |
+| default (same: hover, pressed) | size 24 x 24; radius 3.35544e+07px; background transparent; text roobert 12/16 400, rgba(22, 22, 23, 0.7); transition color 0.15s ease-out, text-decoration-color 0.15s ease-out, opacity 0.15s ease-out; layers span.group/avatar.flex 24.0x24.0 #fdfdff 0px 0px 0px 1.5px 3.35544e+07px; span.flex.size-full 24.0x24.0 #f0f0f5 3.35544e+07px; span.pointer-events-none.absolute 24.0x24.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.12) 0px 2px 4px 0px inset 3.35544e+07px |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
-Child layers that carry the look: span 24x24 radius 3.35544e+07px shadow #fdfdff `background.default` 0px 0px 0px 1.5px; span 24x24 background #f0f0f5 `background.fill` radius 3.35544e+07px; span 24x24 radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) `border.default` 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.12) 0px 2px 4px 0px inset.
+Child layers that carry the look: span 24x24 radius 3.35544e+07px shadow #fdfdff 0px 0px 0px 1.5px; span 24x24 background #f0f0f5 radius 3.35544e+07px; span 24x24 radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.12) 0px 2px 4px 0px inset.
 
 ![Source avatar default](components/crops/post-avatars-default.png) ![Source avatar hover](components/crops/post-avatars-hover.png) ![Source avatar pressed](components/crops/post-avatars-pressed.png)
 
@@ -251,7 +251,7 @@ The "N Sources, updated Xm ago" meta link; measured, never followed. Read as `po
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 87 x 16; radius 2px; background transparent; text roobert 14/20 600, rgba(22, 22, 23, 0.7) `muted.foreground`; transition color 0.15s ease-out, text-decoration-color 0.15s ease-out, opacity 0.15s ease-out |
+| default (same: hover, pressed) | size 87 x 16; radius 2px; background transparent; text roobert 14/20 600, rgba(22, 22, 23, 0.7); transition color 0.15s ease-out, text-decoration-color 0.15s ease-out, opacity 0.15s ease-out |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -267,7 +267,7 @@ The story’s right-side thumbnail inside the card. Read as `post-thumb` on the 
 #### Category card
 A story card on the Technology feed — same anatomy as the trending card. Read as `cat-card` on the technology category page.
 
-**Values (default).** size 704 x 160; padding 14px 16px; border 1px solid transparent; radius 18px; background transparent; text roobert 16/24 600, #161617 `card.foreground`; transition color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, rgba(22, 22, 23, 0.7) `muted.foreground`.
+**Values (default).** size 704 x 160; padding 14px 16px; border 1px solid transparent; radius 18px; background transparent; text roobert 16/24 600, #161617; transition color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, rgba(22, 22, 23, 0.7).
 
 ![Category card default](components/crops/cat-card-default.png)
 
@@ -278,14 +278,14 @@ The two white rail panels beside the feed: Top Contributors (with the #e37b4c ra
 #### Top Contributors
 The right-rail "Top Contributors" ranked panel. Read as `rail-contribs` on the home feed page.
 
-**Values (default).** size 376 x 352; padding 24px 0px; border 1px solid rgba(0, 0, 0, 0.08) `border.default`; radius 18px; background #ffffff `color.white`; shadow rgba(22, 22, 23, 0.1) 0px 0px 0px 0px; text roobert 16/24 600, #161617 `card.foreground`.
+**Values (default).** size 376 x 352; padding 24px 0px; border 1px solid rgba(0, 0, 0, 0.08); radius 18px; background #ffffff `color.white`; shadow rgba(22, 22, 23, 0.1) 0px 0px 0px 0px; text roobert 16/24 600, #161617.
 
 ![Top Contributors default](components/crops/rail-contribs-default.png)
 
 #### Top Posts panel
 The right-rail "Top Posts Yesterday" list with thumbnails. Read as `rail-posts` on the home feed page.
 
-**Values (default).** size 376 x 556; padding 24px 0px; border 1px solid rgba(0, 0, 0, 0.08) `border.default`; radius 18px; background #ffffff `color.white`; shadow rgba(22, 22, 23, 0.1) 0px 0px 0px 0px; text roobert 16/24 600, #161617 `card.foreground`; icon 12 x 12, rgba(22, 22, 23, 0.7) `muted.foreground`.
+**Values (default).** size 376 x 556; padding 24px 0px; border 1px solid rgba(0, 0, 0, 0.08); radius 18px; background #ffffff `color.white`; shadow rgba(22, 22, 23, 0.1) 0px 0px 0px 0px; text roobert 16/24 600, #161617; icon 12 x 12, rgba(22, 22, 23, 0.7).
 
 ![Top Posts panel default](components/crops/rail-posts-default.png)
 
@@ -296,7 +296,7 @@ The muted footer links at the bottom of the feed.
 #### Site footer
 The mono sitemap footer (About / Contact / Privacy Policy / Terms / Community Guidelines / © digg). Read as `site-footer` on the home feed page.
 
-**Values (default).** size 376 x 56; padding 8px 0px 16px 0px; background transparent; text roobert 12/16 400, rgba(22, 22, 23, 0.7) `muted.foreground`.
+**Values (default).** size 376 x 56; padding 8px 0px 16px 0px; background transparent; text roobert 12/16 400, rgba(22, 22, 23, 0.7).
 
 ![Site footer default](components/crops/site-footer-default.png)
 
@@ -307,14 +307,14 @@ The same feed measured with the theme pill set to dark: #161617 page, #1c1c1f ca
 #### Card (dark)
 A feed story card measured with the dark theme painted via the sidebar pill. Read as `d-card` on the home feed (theme pill set to dark) page.
 
-**Values (default).** size 704 x 183; padding 14px 16px; border 1px solid transparent; radius 18px; background transparent; text roobert 12/16 600, #fdfdff `background.default`; transition color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, rgba(253, 253, 255, 0.7) `muted.foreground`.
+**Values (default).** size 704 x 183; padding 14px 16px; border 1px solid transparent; radius 18px; background transparent; text roobert 12/16 600, #fdfdff; transition color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, rgba(253, 253, 255, 0.7).
 
 ![Card (dark) default](components/crops/d-card-default.png)
 
 #### Headline (dark)
 The card headline under the dark theme. Read as `d-headline` on the home feed (theme pill set to dark) page.
 
-**Values (default).** size 536 x 48; background transparent; text roobert 16/24 600, #fdfdff `background.default`.
+**Values (default).** size 536 x 48; background transparent; text roobert 16/24 600, #fdfdff.
 
 ![Headline (dark) default](components/crops/d-headline-default.png)
 
@@ -323,10 +323,10 @@ The digg-it vote pill under the dark theme. Read as `d-vote` on the home feed (t
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 32 x 24; radius 3.35544e+07px 26px 26px 3.35544e+07px; background transparent; text roobert 14/20 500, rgba(253, 253, 255, 0.7) `muted.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, rgba(253, 253, 255, 0.7) `muted.foreground`; layers ::after transparent 0px none 1; button.group/button.inline-flex 32.0x24.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px 3.35544e+07px 26px 26px 3.35544e+07px; span.relative.flex 32.0x24.0 rgba(28, 102, 235, 0.05) T:1px solid rgba(28, 102, 235, 0.2) `border.vote-border` / R:1px solid rgba(28, 102, 235, |
-| hover | text roobert 14/20 500, #fdfdff `background.default`; icon 12 x 12, #fdfdff `background.default` |
-| focus-visible | shadow rgba(28, 102, 235, 0.5) 0px 0px 0px 3px; text roobert 14/20 500, #fdfdff `background.default`; icon 12 x 12, #fdfdff `background.default`; layers ::after transparent 0px none 1; button.group/button.inline-flex 32.0x24.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(28, 102, 235, 0.5) `border.focus` 0px 0px 0px 3px, transparent 0px 0px 0px 0px 3.35544e+07px 26px 26px 3.35544e+07px; span.relative.flex 32.0x24.0 rgba(28, 102, 235, 0.05) T:1px solid rgba(28, 102, 235, 0.2) `border.vote-border` / R:1 |
-| pressed | text roobert 14/20 500, #fdfdff `background.default`; icon 12 x 12, #fdfdff `background.default` |
+| default | size 32 x 24; radius 3.35544e+07px 26px 26px 3.35544e+07px; background transparent; text roobert 14/20 500, rgba(253, 253, 255, 0.7); transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, rgba(253, 253, 255, 0.7); layers ::after transparent 0px none 1; button.group/button.inline-flex 32.0x24.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px 3.35544e+07px 26px 26px 3.35544e+07px; span.relative.flex 32.0x24.0 rgba(28, 102, 235, 0.05) T:1px solid rgba(28, 102, 235, 0.2) `border.vote-border` / R:1px solid rgba(28, 102, 235, |
+| hover | text roobert 14/20 500, #fdfdff; icon 12 x 12, #fdfdff |
+| focus-visible | shadow rgba(28, 102, 235, 0.5) 0px 0px 0px 3px; text roobert 14/20 500, #fdfdff; icon 12 x 12, #fdfdff; layers ::after transparent 0px none 1; button.group/button.inline-flex 32.0x24.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(28, 102, 235, 0.5) 0px 0px 0px 3px, transparent 0px 0px 0px 0px 3.35544e+07px 26px 26px 3.35544e+07px; span.relative.flex 32.0x24.0 rgba(28, 102, 235, 0.05) T:1px solid rgba(28, 102, 235, 0.2) `border.vote-border` / R:1px solid rgba(2 |
+| pressed | text roobert 14/20 500, #fdfdff; icon 12 x 12, #fdfdff |
 
 ![Vote pill (dark) default](components/crops/d-vote-default.png) ![Vote pill (dark) hover](components/crops/d-vote-hover.png) ![Vote pill (dark) focus-visible](components/crops/d-vote-focus-visible.png) ![Vote pill (dark) pressed](components/crops/d-vote-pressed.png)
 
@@ -335,9 +335,9 @@ The blue Sign up CTA under the dark theme. Read as `d-signup` on the home feed (
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 231 x 40; padding 0px 16px; border 1px solid transparent; radius 26px; background #1c66eb `color.primary`; text roobert 14/20 500, #ffffff `color.white`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default | size 231 x 40; padding 0px 16px; border 1px solid transparent; radius 26px; background #1c66eb `color.blue.500`; text roobert 14/20 500, #ffffff `color.white`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover | background rgba(28, 102, 235, 0.8) `action.primary-hover` |
-| focus-visible | border 1px solid #1c66eb `color.primary`; shadow rgba(28, 102, 235, 0.5) 0px 0px 0px 3px |
+| focus-visible | border 1px solid #1c66eb `color.blue.500`; shadow rgba(28, 102, 235, 0.5) 0px 0px 0px 3px |
 | pressed | background rgba(28, 102, 235, 0.8) `action.primary-hover` |
 
 ![Sign up (dark) default](components/crops/d-signup-default.png) ![Sign up (dark) hover](components/crops/d-signup-hover.png) ![Sign up (dark) focus-visible](components/crops/d-signup-focus-visible.png) ![Sign up (dark) pressed](components/crops/d-signup-pressed.png)
@@ -347,9 +347,9 @@ The Trending sort trigger under the dark theme. Read as `d-trending` on the home
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 105.28 x 36; padding 8px 12px; border 1px solid rgba(255, 255, 255, 0.15) `border.input`; radius 26px; background rgba(255, 255, 255, 0.045) `background.input-fill`; text roobert 14/20 400, #fdfdff `background.default`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, rgba(253, 253, 255, 0.7) `muted.foreground` |
+| default | size 105.28 x 36; padding 8px 12px; border 1px solid rgba(255, 255, 255, 0.15); radius 26px; background rgba(255, 255, 255, 0.045); text roobert 14/20 400, #fdfdff; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, rgba(253, 253, 255, 0.7) |
 | hover | background rgba(255, 255, 255, 0.075) |
-| focus-visible | border 1px solid #1c66eb `color.primary`; shadow rgba(28, 102, 235, 0.5) 0px 0px 0px 3px |
+| focus-visible | border 1px solid #1c66eb `color.blue.500`; shadow rgba(28, 102, 235, 0.5) 0px 0px 0px 3px |
 | pressed | background rgba(255, 255, 255, 0.075) |
 
 ![Sort dropdown (dark) default](components/crops/d-trending-default.png) ![Sort dropdown (dark) hover](components/crops/d-trending-hover.png) ![Sort dropdown (dark) focus-visible](components/crops/d-trending-focus-visible.png) ![Sort dropdown (dark) pressed](components/crops/d-trending-pressed.png)
@@ -357,7 +357,7 @@ The Trending sort trigger under the dark theme. Read as `d-trending` on the home
 #### Rail panel (dark)
 The Top Contributors panel under the dark theme. Read as `d-rail` on the home feed (theme pill set to dark) page.
 
-**Values (default).** size 376 x 352; padding 24px 0px; border 1px solid rgba(255, 255, 255, 0.08) `border.default`; radius 18px; background #1c1c1f `background.card`; shadow rgba(253, 253, 255, 0.1) 0px 0px 0px 0px; text roobert 16/24 600, #fdfdff `background.default`.
+**Values (default).** size 376 x 352; padding 24px 0px; border 1px solid rgba(255, 255, 255, 0.08); radius 18px; background #1c1c1f; shadow rgba(253, 253, 255, 0.1) 0px 0px 0px 0px; text roobert 16/24 600, #fdfdff.
 
 ![Rail panel (dark) default](components/crops/d-rail-default.png)
 
@@ -368,21 +368,21 @@ A story detail page: the REPORT kicker, 36px headline, 20px summary, the 138 x 4
 #### REPORT kicker
 The tracked-out REPORT label over the story headline. Read as `st-kicker` on the story page.
 
-**Values (default).** size 672 x 24; background transparent; text roobert 12/16 600, rgba(22, 22, 23, 0.7) `muted.foreground`.
+**Values (default).** size 672 x 24; background transparent; text roobert 12/16 600, rgba(22, 22, 23, 0.7).
 
 ![REPORT kicker default](components/crops/st-kicker-default.png)
 
 #### Story headline
 The serif story headline. Read as `st-h1` on the story page.
 
-**Values (default).** size 672 x 80; background transparent; text roobert 36/40 700, #161617 `card.foreground`.
+**Values (default).** size 672 x 80; background transparent; text roobert 36/40 700, #161617.
 
 ![Story headline default](components/crops/st-h1-default.png)
 
 #### Story summary
 The one-two line summary under the headline. Read as `st-summary` on the story page.
 
-**Values (default).** size 672 x 56; background transparent; text roobert 20/28 400, rgba(22, 22, 23, 0.7) `muted.foreground`.
+**Values (default).** size 672 x 56; background transparent; text roobert 20/28 400, rgba(22, 22, 23, 0.7).
 
 ![Story summary default](components/crops/st-summary-default.png)
 
@@ -391,9 +391,9 @@ The "digg it" vote pill under the headline (icon + count); pressed is CDP-forced
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 138.33 x 44; padding 3px 11px 3px 3px; border 1px solid rgba(28, 102, 235, 0.2) `border.vote-border`; radius 999px; background #fdfdff `background.default`; text roobert 12/16 600, #1c66eb `color.primary`; transition background-color 0.28s cubic-bezier(0.77, 0, 0.175, 1), border-color 0.28s cubic-bezier(0.77, 0, 0.175, 1), color 0.28s cubic-bezier(0.77, 0, 0.175, 1), scale 0.16s cubic-bezier(0.23, 1, 0.32, 1); icon 12 x 12, #1c66eb `color.primary` |
+| default (same: focus-visible) | size 138.33 x 44; padding 3px 11px 3px 3px; border 1px solid rgba(28, 102, 235, 0.2) `border.vote-border`; radius 999px; background #fdfdff; text roobert 12/16 600, #1c66eb `color.blue.500`; transition background-color 0.28s cubic-bezier(0.77, 0, 0.175, 1), border-color 0.28s cubic-bezier(0.77, 0, 0.175, 1), color 0.28s cubic-bezier(0.77, 0, 0.175, 1), scale 0.16s cubic-bezier(0.23, 1, 0.32, 1); icon 12 x 12, #1c66eb `color.blue.500` |
 | hover | border 1px solid rgba(28, 102, 235, 0.3) |
-| pressed | size 134.18 x 42.68; border 1px solid rgba(28, 102, 235, 0.3); icon 11.64 x 11.64, #1c66eb `color.primary` |
+| pressed | size 134.18 x 42.68; border 1px solid rgba(28, 102, 235, 0.3); icon 11.64 x 11.64, #1c66eb `color.blue.500` |
 
 ![digg it button default](components/crops/st-vote-default.png) ![digg it button hover](components/crops/st-vote-hover.png) ![digg it button focus-visible](components/crops/st-vote-focus-visible.png) ![digg it button pressed](components/crops/st-vote-pressed.png)
 
@@ -402,36 +402,36 @@ The "N Sources, first seen Xh ago" meta cluster; measured, never followed. Read 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 86 x 16; radius 2px; background transparent; text roobert 14/20 600, rgba(22, 22, 23, 0.7) `muted.foreground`; transition color 0.15s ease-out, text-decoration-color 0.15s ease-out, opacity 0.15s ease-out |
-| focus-visible | shadow #fdfdff 0px 0px 0px 2px, #ababbf 0px 0px 0px 4px; layers a.rounded-xs.font-semibold 86.0x16.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #fdfdff `background.default` 0px 0px 0px 2px, #ababbf `ring` 0px 0px 0px 4px, transparent 0px 0px 0px 0px 2px |
+| default (same: hover, pressed) | size 86 x 16; radius 2px; background transparent; text roobert 14/20 600, rgba(22, 22, 23, 0.7); transition color 0.15s ease-out, text-decoration-color 0.15s ease-out, opacity 0.15s ease-out |
+| focus-visible | shadow #fdfdff 0px 0px 0px 2px, #ababbf 0px 0px 0px 4px; layers a.rounded-xs.font-semibold 86.0x16.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #fdfdff 0px 0px 0px 2px, #ababbf 0px 0px 0px 4px, transparent 0px 0px 0px 0px 2px |
 
 ![Sources meta default](components/crops/st-sources-default.png) ![Sources meta hover](components/crops/st-sources-hover.png) ![Sources meta focus-visible](components/crops/st-sources-focus-visible.png) ![Sources meta pressed](components/crops/st-sources-pressed.png)
 
 #### Stat card
 The right-rail stat card — TODAY'S RANK over COMBINED VIEWS and the like/comment/save counts. Read as `st-stat` on the story page.
 
-**Values (default).** size 376 x 384; padding 24px 0px; border 1px solid rgba(0, 0, 0, 0.08) `border.default`; radius 18px; background #ffffff `color.white`; shadow rgba(22, 22, 23, 0.1) 0px 0px 0px 0px; text roobert 12/16 600, rgba(22, 22, 23, 0.7) `muted.foreground`; icon 12 x 12, rgba(22, 22, 23, 0.7) `muted.foreground`.
+**Values (default).** size 376 x 384; padding 24px 0px; border 1px solid rgba(0, 0, 0, 0.08); radius 18px; background #ffffff `color.white`; shadow rgba(22, 22, 23, 0.1) 0px 0px 0px 0px; text roobert 12/16 600, rgba(22, 22, 23, 0.7); icon 12 x 12, rgba(22, 22, 23, 0.7).
 
 ![Stat card default](components/crops/st-stat-default.png)
 
 #### Sources list
 The right-rail "N Sources" list of source posts. Read as `st-srclist` on the story page.
 
-**Values (default).** size 376 x 246; padding 24px 0px; border 1px solid rgba(0, 0, 0, 0.08) `border.default`; radius 18px; background #ffffff `color.white`; shadow rgba(22, 22, 23, 0.1) 0px 0px 0px 0px; text roobert 12/16 600, rgba(22, 22, 23, 0.7) `muted.foreground`; icon 12 x 12, rgba(22, 22, 23, 0.7) `muted.foreground`.
+**Values (default).** size 376 x 246; padding 24px 0px; border 1px solid rgba(0, 0, 0, 0.08); radius 18px; background #ffffff `color.white`; shadow rgba(22, 22, 23, 0.1) 0px 0px 0px 0px; text roobert 12/16 600, rgba(22, 22, 23, 0.7); icon 12 x 12, rgba(22, 22, 23, 0.7).
 
 ![Sources list default](components/crops/st-srclist-default.png)
 
 #### TLDR label
 The tracked TLDR section label over the summary prose. Read as `st-tldr` on the story page.
 
-**Values (default).** size 605 x 16; background transparent; text roobert 10/16 600, rgba(22, 22, 23, 0.7) `muted.foreground`.
+**Values (default).** size 605 x 16; background transparent; text roobert 10/16 600, rgba(22, 22, 23, 0.7).
 
 ![TLDR label default](components/crops/st-tldr-default.png)
 
 #### TLDR paragraph
 A body paragraph in the TLDR section. Read as `st-para` on the story page.
 
-**Values (default).** size 605 x 189; background transparent; text roobert 18/31.5 500, #161617 `card.foreground`.
+**Values (default).** size 605 x 189; background transparent; text roobert 18/31.5 500, #161617.
 
 ![TLDR paragraph default](components/crops/st-para-default.png)
 
@@ -442,14 +442,14 @@ A /u/<source> profile: the 20px source name over the same story cards as the fee
 #### Profile name
 The source profile heading (@wired). Read as `pf-name` on the source profile page.
 
-**Values (default).** size 61.06 x 28; background transparent; text roobert 20/28 600, #161617 `card.foreground`.
+**Values (default).** size 61.06 x 28; background transparent; text roobert 20/28 600, #161617.
 
 ![Profile name default](components/crops/pf-name-default.png)
 
 #### Profile story card
 A story card in the source’s profile feed. Read as `pf-card` on the source profile page.
 
-**Values (default).** size 704 x 183; padding 14px 16px; border 1px solid transparent; radius 18px; background transparent; text roobert 12/16 600, #161617 `card.foreground`; transition color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, rgba(22, 22, 23, 0.7) `muted.foreground`.
+**Values (default).** size 704 x 183; padding 14px 16px; border 1px solid transparent; radius 18px; background transparent; text roobert 12/16 600, #161617; transition color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, rgba(22, 22, 23, 0.7).
 
 ![Profile story card default](components/crops/pf-card-default.png)
 
@@ -460,7 +460,7 @@ The Clerk auth surfaces: OAuth outline buttons, the 8px-rounded fields with thei
 #### Sign-in heading
 "Welcome back!" — the Clerk sign-in card heading. Read as `lg-h1` on the login page.
 
-**Values (default).** size 353 x 32; background transparent; text roobert 24/32 600, #161617 `card.foreground`.
+**Values (default).** size 353 x 32; background transparent; text roobert 24/32 600, #161617.
 
 ![Sign-in heading default](components/crops/lg-h1-default.png)
 
@@ -469,10 +469,10 @@ The "Continue with Google" outline button; measured, never followed. Read as `lg
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 353 x 36; padding 0px 10px; border 1px solid rgba(0, 0, 0, 0.08) `border.default`; radius 3.35544e+07px; background #fdfdff `background.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text roobert 13/18 500, rgba(22, 22, 23, 0.62); transition background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), transform 0.1s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background #f0f0f5 `background.fill` |
-| focus-visible | border 1px solid #ababbf `ring`; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; transition background-color 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease, fill 0.2s ease, stroke 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease |
-| pressed | background #f0f0f5 `background.fill` |
+| default | size 353 x 36; padding 0px 10px; border 1px solid rgba(0, 0, 0, 0.08); radius 3.35544e+07px; background #fdfdff; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text roobert 13/18 500, rgba(22, 22, 23, 0.62); transition background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), transform 0.1s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | background #f0f0f5 |
+| focus-visible | border 1px solid #ababbf; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; transition background-color 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease, fill 0.2s ease, stroke 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease |
+| pressed | background #f0f0f5 |
 
 ![Google OAuth default](components/crops/lg-google-default.png) ![Google OAuth hover](components/crops/lg-google-hover.png) ![Google OAuth focus-visible](components/crops/lg-google-focus-visible.png) ![Google OAuth pressed](components/crops/lg-google-pressed.png)
 
@@ -481,10 +481,10 @@ The "Continue with X / Twitter" outline button; measured, never followed. Read a
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 353 x 36; padding 0px 10px; border 1px solid rgba(0, 0, 0, 0.08) `border.default`; radius 3.35544e+07px; background #fdfdff `background.default`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text roobert 13/18 500, rgba(22, 22, 23, 0.62); transition background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), transform 0.1s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background #f0f0f5 `background.fill` |
-| focus-visible | border 1px solid #ababbf `ring`; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; transition background-color 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease, fill 0.2s ease, stroke 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease |
-| pressed | background #f0f0f5 `background.fill` |
+| default | size 353 x 36; padding 0px 10px; border 1px solid rgba(0, 0, 0, 0.08); radius 3.35544e+07px; background #fdfdff; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text roobert 13/18 500, rgba(22, 22, 23, 0.62); transition background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), transform 0.1s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | background #f0f0f5 |
+| focus-visible | border 1px solid #ababbf; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; transition background-color 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease, fill 0.2s ease, stroke 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease |
+| pressed | background #f0f0f5 |
 
 ![X OAuth default](components/crops/lg-x-default.png) ![X OAuth hover](components/crops/lg-x-hover.png) ![X OAuth focus-visible](components/crops/lg-x-focus-visible.png) ![X OAuth pressed](components/crops/lg-x-pressed.png)
 
@@ -493,8 +493,8 @@ The "Enter your email address" identifier field; the filled state types an addre
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 353 x 36; padding 4px 10px; border 1px solid #e5e5e5 `border.input`; radius 8px; background transparent; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text roobert 14/20 400, #161617 `card.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1); placeholder rgba(22, 22, 23, 0.7) `muted.foreground` |
-| focused, filled | border 1px solid #ababbf `ring`; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
+| default | size 353 x 36; padding 4px 10px; border 1px solid #e5e5e5; radius 8px; background transparent; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text roobert 14/20 400, #161617; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1); placeholder rgba(22, 22, 23, 0.7) |
+| focused, filled | border 1px solid #ababbf; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
 
 ![Email field default](components/crops/lg-email-default.png) ![Email field focused](components/crops/lg-email-focused.png) ![Email field filled](components/crops/lg-email-filled.png)
 
@@ -503,8 +503,8 @@ The password field; focused via a click-in, never filled. Read as `lg-pass` on t
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 197 x 36; padding 4px 10px; border 1px solid #e5e5e5 `border.input`; radius 8px; background transparent; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text roobert 14/20 400, #161617 `card.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1); placeholder rgba(22, 22, 23, 0.7) `muted.foreground` |
-| focused | border 1px solid #ababbf `ring`; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
+| default | size 197 x 36; padding 4px 10px; border 1px solid #e5e5e5; radius 8px; background transparent; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text roobert 14/20 400, #161617; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1); placeholder rgba(22, 22, 23, 0.7) |
+| focused | border 1px solid #ababbf; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
 
 ![Password field default](components/crops/lg-pass-default.png) ![Password field focused](components/crops/lg-pass-focused.png)
 
@@ -513,9 +513,9 @@ The blue Continue submit; hover/focus measured, never pressed — it would submi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 353 x 36; padding 0px 10px; border 1px solid transparent; radius 3.35544e+07px; background #1c66eb `color.primary`; text roobert 14/20 500, #ffffff `color.white`; transition background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), transform 0.1s cubic-bezier(0.4, 0, 0.2, 1); layers ::after transparent 0px none 1 |
+| default | size 353 x 36; padding 0px 10px; border 1px solid transparent; radius 3.35544e+07px; background #1c66eb `color.blue.500`; text roobert 14/20 500, #ffffff `color.white`; transition background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), transform 0.1s cubic-bezier(0.4, 0, 0.2, 1); layers ::after transparent 0px none 1 |
 | hover | background rgba(28, 102, 235, 0.8) `action.primary-hover`; layers ::after transparent 0px none 0 |
-| focus-visible | border 1px solid #ababbf `ring`; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px; transition background-color 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease, fill 0.2s ease, stroke 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease |
+| focus-visible | border 1px solid #ababbf; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px; transition background-color 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease, fill 0.2s ease, stroke 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease |
 
 ![Continue button default](components/crops/lg-continue-default.png) ![Continue button hover](components/crops/lg-continue-hover.png) ![Continue button focus-visible](components/crops/lg-continue-focus-visible.png)
 
@@ -524,9 +524,9 @@ The "Don’t have an account? Sign up" link under the form; measured, never foll
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 46 x 17.98; background transparent; text roobert 13/18 500, #1c66eb `color.primary`; transition color 0.15s ease-out, text-decoration-color 0.15s ease-out, opacity 0.15s ease-out |
+| default | size 46 x 17.98; background transparent; text roobert 13/18 500, #1c66eb `color.blue.500`; transition color 0.15s ease-out, text-decoration-color 0.15s ease-out, opacity 0.15s ease-out |
 | hover | text roobert 13/18 500, #3a7bee |
-| focus-visible | outline 1px auto rgba(171, 171, 191, 0.5) `border.focus`, offset 1px; layers a.cl-footerActionLink.🔒️ 46.0x18.0 1px auto rgba(171, 171, 191, 0.5) `border.focus` offset 1px |
+| focus-visible | outline 1px auto rgba(171, 171, 191, 0.5), offset 1px; layers a.cl-footerActionLink.🔒️ 46.0x18.0 1px auto rgba(171, 171, 191, 0.5) offset 1px |
 | pressed | text roobert 13/18 500, #1359d7 |
 
 ![Sign up link default](components/crops/lg-signup-default.png) ![Sign up link hover](components/crops/lg-signup-hover.png) ![Sign up link focus-visible](components/crops/lg-signup-focus-visible.png) ![Sign up link pressed](components/crops/lg-signup-pressed.png)
@@ -534,7 +534,7 @@ The "Don’t have an account? Sign up" link under the form; measured, never foll
 #### Sign-up heading
 The Clerk sign-up card heading. Read as `su-h1` on the sign-up page.
 
-**Values (default).** size 353 x 32; background transparent; text roobert 24/32 600, #161617 `card.foreground`.
+**Values (default).** size 353 x 32; background transparent; text roobert 24/32 600, #161617.
 
 ![Sign-up heading default](components/crops/su-h1-default.png)
 
@@ -543,8 +543,8 @@ The sign-up identifier field; the filled state types an address then deletes it 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 353 x 36; padding 4px 10px; border 1px solid #e5e5e5 `border.input`; radius 8px; background transparent; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text roobert 14/20 400, #161617 `card.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1); placeholder rgba(22, 22, 23, 0.7) `muted.foreground` |
-| focused, filled | border 1px solid #ababbf `ring`; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
+| default | size 353 x 36; padding 4px 10px; border 1px solid #e5e5e5; radius 8px; background transparent; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text roobert 14/20 400, #161617; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1); placeholder rgba(22, 22, 23, 0.7) |
+| focused, filled | border 1px solid #ababbf; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
 
 ![Sign-up email default](components/crops/su-email-default.png) ![Sign-up email focused](components/crops/su-email-focused.png) ![Sign-up email filled](components/crops/su-email-filled.png)
 
@@ -553,9 +553,9 @@ The sign-up Continue submit; hover/focus measured, never pressed. Read as `su-co
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 353 x 36; padding 0px 10px; border 1px solid transparent; radius 3.35544e+07px; background #1c66eb `color.primary`; text roobert 14/20 500, #ffffff `color.white`; transition background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), transform 0.1s cubic-bezier(0.4, 0, 0.2, 1); layers ::after transparent 0px none 1 |
+| default | size 353 x 36; padding 0px 10px; border 1px solid transparent; radius 3.35544e+07px; background #1c66eb `color.blue.500`; text roobert 14/20 500, #ffffff `color.white`; transition background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.1s cubic-bezier(0.4, 0, 0.2, 1), transform 0.1s cubic-bezier(0.4, 0, 0.2, 1); layers ::after transparent 0px none 1 |
 | hover | background rgba(28, 102, 235, 0.8) `action.primary-hover`; layers ::after transparent 0px none 0 |
-| focus-visible | border 1px solid #ababbf `ring`; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px; transition background-color 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease, fill 0.2s ease, stroke 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease |
+| focus-visible | border 1px solid #ababbf; shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px; transition background-color 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease, fill 0.2s ease, stroke 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease |
 
 ![Sign-up Continue default](components/crops/su-continue-default.png) ![Sign-up Continue hover](components/crops/su-continue-hover.png) ![Sign-up Continue focus-visible](components/crops/su-continue-focus-visible.png)
 
@@ -566,14 +566,14 @@ The phone surface at 390 wide: the 107px top bar, the story card and the feed fo
 #### Mobile top bar
 The phone top bar (digg wordmark + menu trigger). Read as `m-bar` on the home feed page at 390 wide.
 
-**Values (default).** size 390 x 107; background #f8f8fb `sidebar.default`; text roobert 14/20 500, #ffffff `color.white`; icon 21 x 21, rgba(22, 22, 23, 0.7) `muted.foreground`.
+**Values (default).** size 390 x 107; background #f8f8fb; text roobert 14/20 500, #ffffff `color.white`; icon 21 x 21, rgba(22, 22, 23, 0.7).
 
 ![Mobile top bar default](components/crops/m-bar-default.png)
 
 #### Mobile card
 A story card at 390px. Read as `m-card` on the home feed page at 390 wide.
 
-**Values (default).** size 390 x 207; padding 14px 16px; border 1px solid transparent; radius 18px; background transparent; text roobert 12/16 600, #161617 `card.foreground`; transition color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, rgba(22, 22, 23, 0.7) `muted.foreground`.
+**Values (default).** size 390 x 207; padding 14px 16px; border 1px solid transparent; radius 18px; background transparent; text roobert 12/16 600, #161617; transition color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, rgba(22, 22, 23, 0.7).
 
 ![Mobile card default](components/crops/m-card-default.png)
 
@@ -582,15 +582,15 @@ The digg-it vote pill at 390px. Read as `m-vote` on the home feed page at 390 wi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 32 x 24; radius 3.35544e+07px 26px 26px 3.35544e+07px; background transparent; text roobert 14/20 500, rgba(22, 22, 23, 0.7) `muted.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, rgba(22, 22, 23, 0.7) `muted.foreground`; layers ::after transparent 0px none 1; button.group/button.inline-flex 32.0x24.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px 3.35544e+07px 26px 26px 3.35544e+07px; span.relative.flex 32.0x24.0 rgba(28, 102, 235, 0.05) T:1px solid rgba(28, 102, 235, 0.2) `border.vote-border` / R:1px solid rgba(28, 102, 235, |
-| focus-visible | shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px; text roobert 14/20 500, #161617 `card.foreground`; icon 12 x 12, #161617 `card.foreground`; layers ::after transparent 0px none 1; button.group/button.inline-flex 32.0x24.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(171, 171, 191, 0.5) `border.focus` 0px 0px 0px 3px, transparent 0px 0px 0px 0px 3.35544e+07px 26px 26px 3.35544e+07px; span.relative.flex 32.0x24.0 rgba(28, 102, 235, 0.05) T:1px solid rgba(28, 102, 235, 0.2) `border.vote-border` / R: |
+| default (same: hover, pressed) | size 32 x 24; radius 3.35544e+07px 26px 26px 3.35544e+07px; background transparent; text roobert 14/20 500, rgba(22, 22, 23, 0.7); transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, rgba(22, 22, 23, 0.7); layers ::after transparent 0px none 1; button.group/button.inline-flex 32.0x24.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px 3.35544e+07px 26px 26px 3.35544e+07px; span.relative.flex 32.0x24.0 rgba(28, 102, 235, 0.05) T:1px solid rgba(28, 102, 235, 0.2) `border.vote-border` / R:1px solid rgba(28, 102, 235, |
+| focus-visible | shadow rgba(171, 171, 191, 0.5) 0px 0px 0px 3px; text roobert 14/20 500, #161617; icon 12 x 12, #161617; layers ::after transparent 0px none 1; button.group/button.inline-flex 32.0x24.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(171, 171, 191, 0.5) 0px 0px 0px 3px, transparent 0px 0px 0px 0px 3.35544e+07px 26px 26px 3.35544e+07px; span.relative.flex 32.0x24.0 rgba(28, 102, 235, 0.05) T:1px solid rgba(28, 102, 235, 0.2) `border.vote-border` / R:1px solid rgba( |
 
 ![Mobile vote pill default](components/crops/m-vote-default.png) ![Mobile vote pill hover](components/crops/m-vote-hover.png) ![Mobile vote pill focus-visible](components/crops/m-vote-focus-visible.png) ![Mobile vote pill pressed](components/crops/m-vote-pressed.png)
 
 #### Mobile footer
 The phone footer. Read as `m-footer` on the home feed page at 390 wide.
 
-**Values (default).** size 358 x 48; background transparent; text roobert 12/16 400, rgba(22, 22, 23, 0.7) `muted.foreground`.
+**Values (default).** size 358 x 48; background transparent; text roobert 12/16 400, rgba(22, 22, 23, 0.7).
 
 ![Mobile footer default](components/crops/m-footer-default.png)
 

@@ -49,9 +49,14 @@ jobs:
           python-version: "3.13"
       - run: make check
       # Pillow, numpy and markdown, so the package tests that need Pillow run
-      # instead of reporting a skip.
-      - name: Install the tools' Python dependencies
-        run: pip install -r requirements.txt -r tools/requirements-capture.txt
+      # instead of reporting a skip. tesseract, so tools/test_redact_images.py
+      # OCRs a real image: that test fails rather than skips when CI is set and
+      # tesseract is missing.
+      - name: Install the tools' Python dependencies and tesseract
+        run: |
+          pip install -r requirements.txt -r tools/requirements-capture.txt
+          sudo apt-get update -q
+          sudo apt-get install -y -q tesseract-ocr
       - run: make test
   docs:
     # Skips audit fix branches; see the note on the first job.
