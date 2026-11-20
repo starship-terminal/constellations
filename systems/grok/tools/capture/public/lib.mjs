@@ -190,11 +190,18 @@ export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up =
   return ok ? page.locator(`[data-m-mark="${tag}"]`) : page.locator('[data-m-mark="__none__"]');
 }
 
+// Returns whether the page was reached and any bot check cleared by itself (it is waited out,
+// never solved). A caller that gets false records the page as a boundary instead of measuring it.
 export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-  await clearChallenge(page);
+  let reached = true;
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch((e) => {
+    reached = false;
+    console.log('  ! navigation failed', url, String(e.message || e).split('\n')[0]);
+  });
+  const cleared = reached && (await clearChallenge(page));
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
+  return cleared;
 }
 
 // Computed style properties recorded for every component and state.
