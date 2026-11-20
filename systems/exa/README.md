@@ -1,6 +1,8 @@
 # Exa design reference
 
-A token set and component reference for Exa's public, signed-out web surfaces — for building developer-tool marketing pages, API docs and auth cards in the style of the real thing. It was read from **exa.ai** on **2026-11-13**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: the marketing site (home, /pricing, /products/search, /about, /blog, /demos, /evals, /brand, /customers, /versus), websets.exa.ai/websets, the Mintlify documentation under /docs in its real light and dark themes, and the auth.exa.ai sign-in card dashboard.exa.ai redirects to, plus 390px passes on home, pricing, sign-in and docs-dark.
+A token set and component reference for Exa's public web surfaces, plus a signed-in walk of the dashboard. The public surfaces were read from **exa.ai** on **2026-11-13**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured then: the marketing site (home, /pricing, /products/search, /about, /blog, /demos, /evals, /brand, /customers, /versus), websets.exa.ai/websets, the Mintlify documentation under /docs in its real light and dark themes, and the auth.exa.ai sign-in card dashboard.exa.ai redirects to, plus 390px passes on home, pricing, sign-in and docs-dark.
+
+The signed-in dashboard was walked on **2026-11-20** in the owner's already signed-in browser, on the Personal team. Measured viewport: desktop `innerWidth` 1440, `innerHeight` 900, `devicePixelRatio` 2, `visualViewport` 1440 x 900 at scale 1 (PNG 2880 x 1800). Phone: `innerWidth` 390, `innerHeight` 844, `devicePixelRatio` 2, `visualViewport` 390 x 844 at scale 1 (PNG 780 x 1688). System theme painted dark. Light was opened from the command palette and captured on home, then System was restored. The walk is recorded in [login-review.json](login-review.json). Screenshots are named `signed-in-*`. The account email, avatar, API key prefixes and team id are masked in those shots. Nothing was created, invited, purchased or run.
 
 Exa is worth a capture because one product ships three distinct visual surfaces. The marketing site is a warm paper product: a cream `#faf9f7` field (`--cream`), greige text (`--greige` `#58544e`), charcoal `#111111` CTAs, a blue `#1f40ed` brand ramp (`--brand-*`), ABC Diatype UI and the ABC Arizona Flare serif display for headlines. The docs are a different machine entirely — a Mintlify theme with a real light/dark pair (`html.light`/`html.dark`), its own cool-toned `--gray-*` ramp, `--primary` `#1840ed` (a different blue from marketing's `#1f40ed`), `--docs-*` component vars, `--twoslash-*` code vars, Inter UI and Paper Mono code. The sign-in card on auth.exa.ai is a third layer: light-only, `--background`/`--foreground`/`--text-light-*` over the brand vars, Arizona Flare heading, Geist Mono for its code sample. **Boundary:** everything behind the login — the dashboard, the API keys, the playground — was never reached; dashboard routes rate-limited or redirected during reconnaissance; the home demo's "Run preview" arrow, every Get-started/Sign-up action and the login buttons were measured, never pressed; the sign-in e-mail and demo query fields were focused and filled, then cleared, never sent.
 
@@ -14,8 +16,9 @@ Exa is worth a capture because one product ships three distinct visual surfaces.
 | [patterns.md](patterns.md) | How the components combine: the marketing chrome and mega-menu, the home search demo, the pricing grid, the docs shell, the auth card, mobile |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` (157) |
 | [icons/](icons) | 55 inline SVGs lifted from the public DOM with an [INDEX.tsv](icons/INDEX.tsv) naming each by role |
-| [screenshots/](screenshots) | 39 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 (256-colour PNGs); `-full` whole pages, chunked and stitched (8 tiles max); `mobile-*` are 390 x 844 at 2x |
-| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — 1,316 custom-property rules resolved in marketing/auth/docs-light/docs-dark probes, 79 font faces), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
+| [screenshots/](screenshots) | Public `{page}-{theme}-{state}.png` captures plus 20 `signed-in-*` dashboard shots. Public desktop shots are 1440 x 900 (256-colour PNGs); signed-in desktop PNGs are 2880 x 1800 (1440 x 900 at 2x). `mobile-*` and `signed-in-*-narrow` are 390 x 844 at 2x (780 px wide) |
+| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — 1,316 custom-property rules resolved in marketing/auth/docs-light/docs-dark probes, 79 font faces), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads), [signed-in-dashboard.json](raw/signed-in-dashboard.json) (the 2026-11-20 dashboard reading) |
+| [login-review.json](login-review.json) | The signed-in walk: offered nav, settings and create, every signed-in screenshot, gaps, and what was not submitted |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
 
 ## Brief
@@ -32,7 +35,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 4. Do use small radii and hairline borders.
 5. Do treat menus as hover chrome.
 6. Do treat focus as an outline.
-7. Don't style the authenticated product from this package.
+7. Don't style the authenticated product from the public tokens alone.
 8. Don't read the demo's output as a real result.
 9. Don't fabricate a dark marketing theme.
 10. Don't fire interactive demos.
@@ -99,7 +102,7 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 4. **Do use small radii and hairline borders.** Declared radii are 8px (marketing `--radius`), 6px (docs `--docs-radius`) and 1000px for pills; borders are 1px in near-neutral ink — docs light `#eeeff5`, docs dark `#26272c`. See [mkt-menu](components/crops/mkt-menu-default.png) and [docs-search](components/crops/docs-search-default.png).
 5. **Do treat menus as hover chrome.** The Products/Solutions/Resources mega-menu opens on pointer hover into a 380 x 485 white panel (`light.marketing.menu-surface`), the mobile hamburger opens a fixed full-height drawer, and the docs search opens a `Ctrl K` palette — all measured, their links never followed. See [home-light-menu](screenshots/home-light-menu.png) and [mobile-home-light-drawer](screenshots/mobile-home-light-drawer.png).
 6. **Do treat focus as an outline.** Marketing controls draw a 1px `#101010` auto outline (`light.marketing.focus`); docs controls draw `#1840ed` (light) or `#5f7cff` (dark); the sign-in field focuses in brand blue. See [mkt-signup](components/crops/mkt-signup-focus-visible.png) and [auth-email](components/crops/auth-email-focused.png).
-7. **Don't style the authenticated product from this package.** The dashboard, API keys and playground behind the login were never reached — they rate-limited or redirected during reconnaissance. The evidence ends at the sign-in card. See [signin-light-default](screenshots/signin-light-default.png).
+7. **Don't style the authenticated product from the public tokens alone.** The 2026-11-13 public capture stopped at the sign-in card. The 2026-11-20 walk shows the dashboard shell: black field, 240px sidebar, Inter controls, an 8px-radius brand button. See [signed-in-home-dark-desktop](screenshots/signed-in-home-dark-desktop.png) and [signin-light-default](screenshots/signin-light-default.png).
 8. **Don't read the demo's output as a real result.** The home widget's Run-preview arrow was never pressed; its output panel honestly shows "We couldn't verify your browser" for a headless visitor. See [demo-output](components/crops/demo-output-default.png).
 9. **Don't fabricate a dark marketing theme.** The marketing site and sign-in card paint light only (a dark-preference rule exists in the CSS as a utility, not a real theme); the genuine light/dark pair lives only in the docs.
 10. **Don't fire interactive demos.** Latency, category and output pills re-configure the widget's preview locally and were toggled as measurement states; the search itself was never run.
@@ -111,6 +114,7 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 | Screenshots | `tools/capture/public/public.mjs` — 15 desktop routes and 4 mobile routes at 1440 x 900 and 390 x 844, whole pages chunked and stitched at 8 tiles max |
 | CSS harvest | `tools/capture/vars.mjs` — every custom property on the marketing, auth and docs stylesheets, resolved in per-surface probes (`marketing`, `auth`, `docs-light`, `docs-dark`) because the names collide (`--gray-*`, `--background` differ per site) |
 | Measurements | `tools/capture/public/measure.mjs` — 70 components on public routes only; hover/focus-visible/pressed/opened/filled states; pressed forced via CDP `CSS.forcePseudoState`; nothing signed into, submitted or followed |
+| Signed-in walk | 2026-11-20, live dashboard in the owner's signed-in browser. Read-only DOM and screenshots. Computed styles for the shell, the Create Key button and a nav row are in [raw/signed-in-dashboard.json](raw/signed-in-dashboard.json). No form was submitted |
 | Icons | `tools/capture/icons.mjs` — distinct inline `<svg>`s deduplicated by geometry into [icons/](icons) |
 | Tokens | `tools/build_component_tokens.py` → `raw/component-tokens.json` → `tools/build_tokens.py` → `tokens.json` |
 | Docs | `tools/build_components_md.py`, `tools/build_style_guide.py`, `tools/capture/public/build-measurements.mjs` |
@@ -131,6 +135,8 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 - **`faq` and `prod-code` are stale entries.** The 2026-11-13 run marked them missing and the script no longer measures them, but its prune could never fire, so they stay in `raw/components-computed.json` and components.md. `measure.mjs` now prunes untouched entries on pages that finished (edited, not run); the next full run drops them.
 - **Some roles are left out on purpose.** A transparent fill is no surface and the browser's own `auto` focus ring is no product colour, so these tokens are not published and `raw/component-tokens.json` lists each under `_gaps` with its reason: `marketing.menu-hover`, `marketing.demo-surface`, `marketing.focus`, `signin.card`, `signin.field`, light and dark `docs.code-bg` and `docs.field`, `core.shadow.widget`, `core.shadow.cta` and `core.motion.control-reduced` (the only reduced-motion reading is an `h1` with no transition). Where the element sits in a painted container the row names (the announcement strip, the docs CTA banner, the sign-in code panel), the token carries the parent's background and says so.
 - **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
+- **Signed-in screenshots hide the account.** The email, avatar, API key prefixes and team id are painted out. The owner's name stays. Key chips on the API keys page are covered entirely. Read dashboard colours from [raw/signed-in-dashboard.json](raw/signed-in-dashboard.json), not from the PNGs.
+- **The signed-in dashboard is not in tokens.json.** `build_tokens.py` still builds from the public harvest. The dashboard reading is evidence, not a new token set.
 
 ## Fonts
 
@@ -151,16 +157,18 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 | Light and dark themes | partly — the docs paint a real light/dark pair; marketing and auth are light-only by design and say so |
 | Components measured, not inferred | yes — 70 components, hover/focus-visible/pressed/opened/filled states |
 | Consent overlay handled | n/a — no consent banner mounts on the public pages; the "Introducing Exa 3.0" announcement strip is page content and stays in the shots |
-| Boundaries declared | yes — auth, checkout and the demo's real request measured, never followed |
-| Mobile pass | yes — 390 x 844 on home, pricing, sign-in and docs-dark |
+| Boundaries declared | yes — public auth, checkout and the demo's real request measured, never followed. Signed-in create, invite, purchase and playground runs were opened or seen and not submitted |
+| Mobile pass | yes — public 390 x 844 on home, pricing, sign-in and docs-dark. Signed-in 390 x 844 on home, the nav drawer, billing and the create-key dialog |
 | Icons | yes — 55 inline SVGs lifted with [INDEX.tsv](icons/INDEX.tsv) |
 | Fonts | declared and measured; served faces (ABCDiatype, Arizona Flare, Paper Mono) not redistributed |
 
 ## Gaps
 
-- Every post-login surface — the dashboard, API keys, the playground, billing — sits behind auth.exa.ai and was never reached; `dashboard.exa.ai/login` and `/playground/search` rate-limited (HTTP 429) during reconnaissance.
-- The home demo's output panel only ever shows its verification state signed out; real results need an API key.
-- The docs assistant slide-over and the `Ctrl K` search palette were never opened (the assistant input measured is its closed-state input).
+- The 2026-11-13 public pass never reached the dashboard. The 2026-11-20 signed-in walk did. What that walk still could not reach is listed in [login-review.json](login-review.json).
+- Websets Settings is a paid-plan gate. Enterprise upgrade, credits, payment method and Slack install were not followed.
+- Playground runs were not executed, so result, error and loading states of a real request are absent.
+- The public home demo's output panel only ever shows its verification state signed out.
+- The docs assistant slide-over and the docs `Ctrl K` search palette were never opened (the assistant input measured is its closed-state input). The dashboard command palette was opened and not screenshotted.
 - websets.exa.ai rate-limited the first reconnaissance pass; it loaded later and `websets-light-default` captured it.
 
 ## Rebuild
