@@ -34,6 +34,9 @@ class Shooter {
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
+    // drop this shot's earlier tiles (and sidecars) first: a shorter or capped page would
+    // otherwise leave old partN files that quantize.py stitches into the new shot
+    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
     // An infinite or growing page reports a scrollHeight without end: tile at most 8 chunks
     // and log the boundary (the kit's cap), never one tile per chunk for ever.
     const MAXH = 8 * chunk;

@@ -34,6 +34,9 @@ class Shooter {
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
+    // drop this shot's earlier tiles (and sidecars) first: a shorter or capped page would
+    // otherwise leave old partN files that quantize.py stitches into the new shot
+    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
     // A page's capture shape can change between runs (a once-tiled page can fit
     // a single PNG now): drop the obsolete files for this capture name before
     // writing the new one, so quantize.py can never stitch stale tiles over it.
