@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PlayStation style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-sans: sst, Arial, Helvetica, sans-serif;
+}
+[data-mode="dark"] {
+/*DARK*/
+  color-scheme: dark;
+  --page: var(--page);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font-weight: 300; font-size: 39px; line-height: 1.25; }
+h2 { font-weight: 500; font-size: 20px; margin-top: 40px; }
+.row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.sw { width: 72px; height: 48px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.15); }
+.pill { display: inline-flex; align-items: center; height: 24px; padding: 0 8px; border-radius: 999px; background: var(--signIn); color: #fff; font-weight: 500; font-size: 16px; }
+.commerce { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 999px; background: var(--commerce); color: #fff; font-weight: 700; }
+.nav { font-size: 13px; font-weight: 500; color: var(--textBody); }
+button.toggle { margin-left: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>PlayStation <button class="toggle" type="button" onclick="document.documentElement.dataset.mode=document.documentElement.dataset.mode==='dark'?'':'dark'">Theme</button></h1>
+  <p>Values come from tokens.json. SST is not loaded, so type falls back to Arial.</p>
+  <h2>Roles</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Controls</h2>
+  <div class="row">
+    <span class="pill">Sign In</span>
+    <span class="commerce">Add to Cart</span>
+    <span class="nav">Games</span>
+  </div>
+</div>
+<script>
+const T = /*TOKENS*/null;
+const box = document.getElementById('swatches');
+const light = T.light || {};
+for (const [name, tok] of Object.entries(light)) {
+  if (!tok || tok.t !== 'color') continue;
+  const d = document.createElement('div');
+  d.innerHTML = '<div class="sw" style="background:' + tok.v + '"></div><div>' + name + '<br>' + tok.v + '</div>';
+  box.appendChild(d);
+}
+</script>
+</body>
+</html>

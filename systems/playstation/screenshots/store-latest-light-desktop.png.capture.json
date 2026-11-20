@@ -1,0 +1,14 @@
+{
+  "capturedAt": "2026-11-20T19:31:58.999Z",
+  "sanitizedSourceUrl": "https://store.playstation.com/en-sg/pages/latest",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "fullPage": false,
+  "file": "store-latest-light-desktop.png"
+}
