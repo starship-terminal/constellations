@@ -37,7 +37,7 @@ Values that apply across entries, from the measurement files.
 
 **Focus.** 9 components were given a real keyboard focus. 8 show a visible focus state: `nav-link` (1px auto #005fcc, offset 1px), `nav-signup` (1px auto #005fcc, offset 1px), `plugin-cta` (1px auto #005fcc, offset 1px), `contact-cta` (1px auto #005fcc, offset 1px), `filter-chip` (1px auto #005fcc, offset 1px), `figma-cta` (1px auto #005fcc, offset 1px), `m-menu-button` (2px solid #4d65ff, offset 2px), `footer-link` (1px auto #005fcc, offset 1px). The other 1 show no change a keyboard user can see: `tab`.
 
-**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): links and buttons fade or lift as measured. Nothing that would submit or navigate was pressed.
+**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover) on 9 components; nothing that would submit or navigate was pressed. 7 change from default: `nav-link` (text system-ui 16/16 400, #aaaaaa); `nav-signup` (text system-ui 16/16 400, #aaaaaa); `plugin-cta` (background #222222); `contact-cta` (background #222222); `filter-chip` (background #222222); `figma-cta` (background #222222); `footer-link` (text system-ui 16/16 400, #aaaaaa). The other 2 read the same as default.
 
 **Motion.** Transitions measured on the components, by duration.
 
@@ -48,13 +48,13 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Header](#header) | 1440 x 106 | 1px solid #dfff9f | 8px | #aaff00 `mg.gree` | none | 0 |
+| [Header](#header) | 1440 x 106 | - | - | transparent | none | 0 |
 | [Hero title](#hero-title) | 768 x 145.91 | - | - | transparent | none | 0 |
 | [Category tab](#category-tab) | 200.27 x 50 | 1px solid rgba(13, 20, 0, 0.1) | 8px | #0d1400 `color.scheme.1..accent` | none | 12px 24px |
-| [Mockup card](#mockup-card) | 199.27 x 199.27 | 1px solid rgba(13, 20, 0, 0.1) | 8px | - | none | 0 |
-| [Library search field](#library-search-field) | 1005 x 64.69 | 1px solid rgba(13, 20, 0, 0.1) | 8px | #ffffff `base.color.neutral..white<deleted|relume.variable.color.neutral.2>` | none | 16px 16px 16px 44px |
+| [Mockup card](#mockup-card) | 199.27 x 199.27 | 1px solid rgba(13, 20, 0, 0.1) | 8px | transparent | none | 0 |
+| [Library search field](#library-search-field) | 1005 x 64.69 | 1px solid rgba(13, 20, 0, 0.1) | 8px | #ffffff `base.color.neutral..white` | none | 16px 16px 16px 44px |
 | [Filter chip](#filter-chip) | 317 x 50 | - | 12px | #0d1400 `color.scheme.1..accent` | none | 0 |
-| [Footer](#footer) | 1440 x 1102 | 1px solid #dfff9f | 8px | #aaff00 `mg.gree` | none | 48px |
+| [Footer](#footer) | 1440 x 1102 | - | - | #ffffff `base.color.neutral..white` | none | 48px |
 
 ## Components
 
@@ -67,7 +67,7 @@ The top nav: wordmark, Mockup Library and Figma plugin links, Signup. Read as `h
 
 **Values (default).** size 1440 x 106; background transparent; text system-ui 18/27 700, #0d1400 `color.scheme.1..accent`.
 
-Child layers that carry the look: div 40x40 background #aaff00 `mg.gree` border 1px solid #dfff9f radius 8px; nav 0x0 background #ffffff `base.color.neutral..white<deleted/relume.variable.color.neutral.2>` radius 12px.
+Child layers that carry the look: div 40x40 background #aaff00 `mg.gree` border 1px solid #dfff9f radius 8px; nav 0x0 background #ffffff `base.color.neutral..white` radius 12px.
 
 ![Header default](components/crops/header-default.png)
 
@@ -125,21 +125,21 @@ A mockup-category tab (Most Popular is the selected one). Read as `tab` on the h
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 200.27 x 50; padding 12px 24px; border 1px solid rgba(13, 20, 0, 0.1); radius 8px; background #0d1400 `color.scheme.1..accent`; text system-ui 16/24 400, #ffffff `base.color.neutral..white<deleted/relume.variable.color.neutral.2>` |
+| default (same: hover, focus-visible, pressed) | size 200.27 x 50; padding 12px 24px; border 1px solid rgba(13, 20, 0, 0.1); radius 8px; background #0d1400 `color.scheme.1..accent`; text system-ui 16/24 400, #ffffff `base.color.neutral..white` |
 
 ![Category tab default](components/crops/tab-default.png) ![Category tab hover](components/crops/tab-hover.png) ![Category tab focus-visible](components/crops/tab-focus-visible.png) ![Category tab pressed](components/crops/tab-pressed.png)
 
 #### Tab, selected
 Read as `tab-selected` on the home page.
 
-**Values (default).** size 200.27 x 50; padding 12px 24px; border 1px solid rgba(13, 20, 0, 0.1); radius 8px; background #0d1400 `color.scheme.1..accent`; text system-ui 16/24 400, #ffffff `base.color.neutral..white<deleted/relume.variable.color.neutral.2>`.
+**Values (default).** size 200.27 x 50; padding 12px 24px; border 1px solid rgba(13, 20, 0, 0.1); radius 8px; background #0d1400 `color.scheme.1..accent`; text system-ui 16/24 400, #ffffff `base.color.neutral..white`.
 
 ![Tab, selected default](components/crops/tab-selected-default.png)
 
 #### Tab, switched
 A tab after its own toggle; the selection moves locally. Read as `tab-switched` on the home page.
 
-**Values (selected).** size 200.27 x 50; padding 12px 24px; border 1px solid rgba(13, 20, 0, 0.1); radius 8px; background #ffffff `base.color.neutral..white<deleted/relume.variable.color.neutral.2>`; text system-ui 16/24 400, #0d1400 `color.scheme.1..accent`.
+**Values (selected).** size 200.27 x 50; padding 12px 24px; border 1px solid rgba(13, 20, 0, 0.1); radius 8px; background #ffffff `base.color.neutral..white`; text system-ui 16/24 400, #0d1400 `color.scheme.1..accent`.
 
 ![Tab, switched selected](components/crops/tab-switched-selected.png)
 
@@ -164,7 +164,7 @@ The "Install Figma plugin" icon action. Measured, never followed. Read as `plugi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 229.58 x 42; padding 8px 19.2px; border 1px solid #0d1400 `color.scheme.1..accent`; radius 8px; background #0d1400 `color.scheme.1..accent`; text system-ui 16/24 400, #ffffff `base.color.neutral..white<deleted/relume.variable.color.neutral.2>`; icon 13 x 20, #ffffff `base.color.neutral..white<deleted/relume.variable.color.neutral.2>` |
+| default | size 229.58 x 42; padding 8px 19.2px; border 1px solid #0d1400 `color.scheme.1..accent`; radius 8px; background #0d1400 `color.scheme.1..accent`; text system-ui 16/24 400, #ffffff `base.color.neutral..white`; icon 13 x 20, #ffffff `base.color.neutral..white` |
 | hover | background #222222 |
 | focus-visible | outline 1px auto #005fcc, offset 1px |
 | pressed | background #222222 |
@@ -176,7 +176,7 @@ The Contact icon action. Measured, never followed. Read as `contact-cta` on the 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 133.5 x 42; padding 8px 19.2px; border 1px solid #0d1400 `color.scheme.1..accent`; radius 8px; background #0d1400 `color.scheme.1..accent`; text system-ui 16/24 400, #ffffff `base.color.neutral..white<deleted/relume.variable.color.neutral.2>`; icon 20 x 20, #ffffff `base.color.neutral..white<deleted/relume.variable.color.neutral.2>` |
+| default | size 133.5 x 42; padding 8px 19.2px; border 1px solid #0d1400 `color.scheme.1..accent`; radius 8px; background #0d1400 `color.scheme.1..accent`; text system-ui 16/24 400, #ffffff `base.color.neutral..white`; icon 20 x 20, #ffffff `base.color.neutral..white` |
 | hover | background #222222 |
 | focus-visible | outline 1px auto #005fcc, offset 1px |
 | pressed | background #222222 |
@@ -199,7 +199,7 @@ Focused only; nothing typed or sent. Read as `search-field` on the mockup librar
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 1005 x 64.69; padding 16px 16px 16px 44px; border 1px solid rgba(13, 20, 0, 0.1); radius 8px; background #ffffff `base.color.neutral..white<deleted/relume.variable.color.neutral.2>`; text system-ui 19.2/30.72 400, #0d1400 `color.scheme.1..accent`; placeholder rgba(0, 0, 0, 0.6) |
+| default (same: focused) | size 1005 x 64.69; padding 16px 16px 16px 44px; border 1px solid rgba(13, 20, 0, 0.1); radius 8px; background #ffffff `base.color.neutral..white`; text system-ui 19.2/30.72 400, #0d1400 `color.scheme.1..accent`; placeholder rgba(0, 0, 0, 0.6) |
 
 ![Library search field default](components/crops/search-field-default.png) ![Library search field focused](components/crops/search-field-focused.png)
 
@@ -208,7 +208,7 @@ A category filter on the library. Measured, never selected. Read as `filter-chip
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 317 x 50; radius 12px; background #0d1400 `color.scheme.1..accent`; text Vend Sans 16/24 400, #ffffff `base.color.neutral..white<deleted/relume.variable.color.neutral.2>` |
+| default | size 317 x 50; radius 12px; background #0d1400 `color.scheme.1..accent`; text Vend Sans 16/24 400, #ffffff `base.color.neutral..white` |
 | hover | background #222222 |
 | focus-visible | outline 1px auto #005fcc, offset 1px |
 | pressed | background #222222 |
@@ -223,7 +223,7 @@ A mockup thumbnail tile. Read as `lib-card` on the mockup library page.
 | default | size 317 x 50; radius 12px; background transparent; text system-ui 16/24 400, #0d1400 `color.scheme.1..accent` |
 | hover | background #f4f3f2 |
 
-Child layers that carry the look: div 317x50 border 1px solid transparent radius 12px; div 40x40 background #ffffff `base.color.neutral..white<deleted/relume.variable.color.neutral.2>` border 1px solid rgba(13, 20, 0, 0.1) radius 8px.
+Child layers that carry the look: div 317x50 border 1px solid transparent radius 12px; div 40x40 background #ffffff `base.color.neutral..white` border 1px solid rgba(13, 20, 0, 0.1) radius 8px.
 
 ![Library card default](components/crops/lib-card-default.png) ![Library card hover](components/crops/lib-card-hover.png)
 
@@ -243,7 +243,7 @@ The page primary action. Measured, never followed. Read as `figma-cta` on the fi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 206.45 x 42; padding 8px 19.2px; border 1px solid #0d1400 `color.scheme.1..accent`; radius 8px; background #0d1400 `color.scheme.1..accent`; text system-ui 16/24 400, #ffffff `base.color.neutral..white<deleted/relume.variable.color.neutral.2>`; icon 20 x 20, #ffffff `base.color.neutral..white<deleted/relume.variable.color.neutral.2>` |
+| default | size 206.45 x 42; padding 8px 19.2px; border 1px solid #0d1400 `color.scheme.1..accent`; radius 8px; background #0d1400 `color.scheme.1..accent`; text system-ui 16/24 400, #ffffff `base.color.neutral..white`; icon 20 x 20, #ffffff `base.color.neutral..white` |
 | hover | background #222222 |
 | focus-visible | outline 1px auto #005fcc, offset 1px |
 | pressed | background #222222 |
@@ -257,7 +257,7 @@ The link columns, headings and legal.
 #### Footer
 Read as `footer` on the home page.
 
-**Values (default).** size 1440 x 1102; padding 48px; background #ffffff `base.color.neutral..white<deleted/relume.variable.color.neutral.2>`; text system-ui 18/27 700, #0d1400 `color.scheme.1..accent`; icon 24 x 24, #0d1400 `color.scheme.1..accent`.
+**Values (default).** size 1440 x 1102; padding 48px; background #ffffff `base.color.neutral..white`; text system-ui 18/27 700, #0d1400 `color.scheme.1..accent`; icon 24 x 24, #0d1400 `color.scheme.1..accent`.
 
 ![Footer default](components/crops/footer-default.png)
 
@@ -282,7 +282,7 @@ Read as `m-header` on the home page at 390 wide.
 
 **Values (default).** size 390 x 88; background transparent; text system-ui 18/27 700, #0d1400 `color.scheme.1..accent`.
 
-Child layers that carry the look: div 0x0 background #aaff00 `mg.gree` border 1px solid #dfff9f radius 8px; ul 0x0 background #ffffff `base.color.neutral..white<deleted/relume.variable.color.neutral.2>`; nav 0x0 background #ffffff `base.color.neutral..white<deleted/relume.variable.color.neutral.2>` radius 12px.
+Child layers that carry the look: div 0x0 background #aaff00 `mg.gree` border 1px solid #dfff9f radius 8px; ul 0x0 background #ffffff `base.color.neutral..white`; nav 0x0 background #ffffff `base.color.neutral..white` radius 12px.
 
 ![Mobile header default](components/crops/m-header-default.png)
 
@@ -299,7 +299,7 @@ Read as `m-menu-button` on the home page at 390 wide.
 #### Mobile menu, open
 The bar after its own toggle; the crop is the opened nav panel. Read as `m-menu-open` on the home page at 390 wide.
 
-**Values (opened).** size 48 x 48; padding 12px; background #a6b1bf; text system-ui 24/36 400, #ffffff `base.color.neutral..white<deleted/relume.variable.color.neutral.2>`.
+**Values (opened).** size 48 x 48; padding 12px; background #a6b1bf; text system-ui 24/36 400, #ffffff `base.color.neutral..white`.
 
 ![Mobile menu, open opened](components/crops/m-menu-open-opened.png)
 
@@ -314,14 +314,11 @@ Read inside the open menu. Read as `m-nav-link` on the home page at 390 wide.
 
 No standalone SVG icon set was lifted on this pass; the icons in the crops and screenshots are Artboard Studio's artwork. Declared under layoutGaps in the catalog entry.
 
-| Icon | Rendered sizes | View box | Style | Seen on | Next to |
-|---|---|---|---|---|---|
-
 ## Gaps
 
 ### Pages
 
-- **Anything that sends, submits or signs in.** No form was submitted, no prompt was sent, no account was created. The contact-sales .ds-input fields were focused and one sample value typed and deleted, never submitted.
+- **Anything that sends, submits or signs in.** No form was submitted, no prompt was sent, no account was created. `search-field` was focused only; nothing was typed into it.
 
 ### States
 
