@@ -15,10 +15,13 @@
 // playback that opens the player bar; Like, Remix, Share and every Create are measured, never
 // pressed). The Cookiebot overlay (implied consent) is hidden, never answered.
 import fs from 'fs';
+import path from 'path';
+import os from 'os';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE, findScroller, scrollMain, expandScroller, restoreScroller } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour shots stay outside the repo (the kit's default); quantize.py writes screenshots/.
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'elevenmusic', 'raw-shots') + '/';
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
@@ -83,7 +86,11 @@ async function setTheme(p, theme) {
   if (await b.count()) { await clickEl(b); await wait(p, 1200); }
   await scrollMain(p, 0).catch(() => {});
   await wait(p, 600);
+  return (await paintsDark(p)) === (theme === 'Dark');
 }
+
+// What the page paints, not what was requested: the product's dark theme is html.dark.
+const paintsDark = (p) => p.evaluate(() => document.documentElement.classList.contains('dark')).catch(() => null);
 
 const desktop = {
   home: { path: '/', wait: 12000, run: async (p, S) => {
@@ -228,11 +235,13 @@ for (const { k, mob, lite } of runs) {
         await p.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
         if (!(await clearChallenge(p))) { log('  BLOCKED challenge', '/'); await ctx.close(); continue; }
         await wait(p, 8000);
-        await setTheme(p, 'Light');
+        if (!(await setTheme(p, 'Light'))) { log('  THEME toggle did not paint light, skipped', name); await ctx.close(); continue; }
       }
       await p.goto(BASE + spec.path, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
       if (!(await clearChallenge(p))) { log('  BLOCKED challenge', spec.path); await ctx.close(); continue; }
       await wait(p, spec.wait || 7000);
+      // A light-named shot only when the route really paints light (the cookie may not carry).
+      if (lite && (await paintsDark(p)) !== false) { log('  THEME not light, skipped', name); await ctx.close(); continue; }
     }
     await spec.run(p, S);
   } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }

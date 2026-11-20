@@ -294,6 +294,10 @@ async function markPainted(sel, tag, { maxUp = 8, minW = 100, minH = 60, descend
   return ok ? page.locator(`[data-m-mark="${tag}"]`) : page.locator('[data-m-mark="__none__"]');
 }
 
+// markPainted returns a never-matching locator on a miss, never null, so a
+// `marked || fallback` never falls back: choose by count() instead.
+const orElse = async (loc, fallback) => ((loc && (await loc.count())) ? loc : fallback);
+
 // Marks the sidebar rail: the fixed left column that holds the logo anchor and
 // the primary nav (a plain div, not a landmark element).
 async function sidebarLoc(tag = 'm-sidebar') {
@@ -395,7 +399,7 @@ async function explore() {
   await S('create-nav', q('nav[aria-label="Create"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Create nav', desc: 'The pill nav under the title (Create/Composer/Styles/Sounds/Library — every item gated behind sign-in).', sel: 'nav[aria-label="Create"]' });
   await S('explore-input', q('input').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Prompt input', desc: 'The "Describe your song" prompt field (556px); sample text typed and deleted, nothing sent.', sel: 'explore prompt input' });
   // The featured carousel card: the big artwork card with its Remix chip.
-  await S('feature-card', await markPainted('button[aria-label^="Play"]', 'm-feat', { minW: 200, minH: 200, maxUp: 10 }).catch(() => null) || q('[role="group"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Feature card', desc: 'The featured track\'s carousel card (artwork, title, artist, Remix chip).', sel: 'painted ancestor of the feature play button' });
+  await S('feature-card', await orElse(await markPainted('button[aria-label^="Play"]', 'm-feat', { minW: 200, minH: 200, maxUp: 10 }).catch(() => null), q('[role="group"]').filter({ visible: true }).first()), ['default'], { group: g, title: 'Feature card', desc: 'The featured track\'s carousel card (artwork, title, artist, Remix chip).', sel: 'painted ancestor of the feature play button' });
   await S('play-feature', q('button[aria-label^="Play "], button[aria-label="Play track"]').filter({ visible: true }).first(), B4, { group: g, title: 'Card play button', desc: 'The 36px play control on a feature card; pressed once below to mount the player bar.', sel: 'button[aria-label^="Play "]' });
   await S('remix-chip', q('button, a').filter({ hasText: /^\s*Remix\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Remix chip', desc: 'The Remix chip on a feature card; measured, never pressed (gated).', sel: 'feature card "Remix"' });
   await S('track-card', q('[role="group"]').filter({ hasText: /v\d\.\d|Remix|v2\.5/ }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Track card', desc: 'A 208px track card in a shelf (artwork, title, artist, version badge); hover raises the play button.', sel: 'role=group track card' });
@@ -429,7 +433,7 @@ async function explore() {
   const pg = 'Player';
   const pauseBtn = q('button[aria-label="Pause"]').filter({ visible: true }).first();
   const bar = await markPainted('button[aria-label="Pause"]', 'm-player', { minW: 600, minH: 40, maxUp: 12 }).catch(() => null);
-  await S('player-bar', bar || q('footer').filter({ visible: true }).first(), ['default'], { group: pg, title: 'Player bar', desc: 'The bottom transport bar mounted by pressing a card\'s Play (art, progress, transport, volume).', sel: 'painted ancestor of the pause button' }, { noScroll: true });
+  await S('player-bar', await orElse(bar, q('footer').filter({ visible: true }).first()), ['default'], { group: pg, title: 'Player bar', desc: 'The bottom transport bar mounted by pressing a card\'s Play (art, progress, transport, volume).', sel: 'painted ancestor of the pause button' }, { noScroll: true });
   await S('player-play', pauseBtn, B4, { group: pg, title: 'Player play/pause', desc: 'The transport\'s central pause button (a playing track).', sel: 'button[aria-label="Pause"]' }, { noScroll: true });
   // Previous/next carry no accessible name: they are the transport buttons
   // immediately before and after Pause in DOM order.
@@ -515,7 +519,9 @@ async function pricing() {
   await S('plan-cta-free', q('a').filter({ hasText: /^\s*Start free\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Plan CTA, Free', desc: 'The Start-free pill on the Free card (white fill on dark); measured, never followed.', sel: 'a "Start free"' });
   await S('plan-cta-pro', q('a').filter({ hasText: /^\s*Get Pro\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Plan CTA, Pro', desc: 'The Get-Pro pill on the Pro card (dark fill on the white island); measured, never followed.', sel: 'a "Get Pro"' });
   await S('faq-item', q('button').filter({ hasText: /Is it free\?|What can I make\?/ }).filter({ visible: true }).first(), [...B4, 'expanded'], { group: g, title: 'FAQ accordion', desc: 'A pricing FAQ row (68px, border-t); the expanded state was opened by its own toggle.', sel: 'pricing faq button' },
-    { before: { expanded: async (loc) => { const s = await loc.getAttribute('data-state'); if (s !== 'open') await clickEl(loc); await page.waitForTimeout(900); return 'own accordion toggle' } } });
+    { before: { expanded: async (loc) => { const s = await loc.getAttribute('data-state'); if (s !== 'open') await clickEl(loc); await page.waitForTimeout(900); return 'own accordion toggle' } },
+      // close it again, or faq-answer (the same row) is read open but labelled default
+      after: { expanded: async (loc) => { if ((await loc.getAttribute('data-state')) === 'open') { await clickEl(loc); await page.waitForTimeout(700); } } } });
   await S('faq-answer', q('button').filter({ hasText: /Is it free\?|What can I make\?/ }).filter({ visible: true }).first().locator('xpath=ancestor::*[self::div or self::section][1]'), ['default'], { group: g, title: 'FAQ row', desc: 'The accordion item wrapper (question + answer region).', sel: 'faq item wrapper' });
   save();
 }
