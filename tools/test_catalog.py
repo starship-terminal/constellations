@@ -3,6 +3,7 @@ import contextlib
 import copy
 import io
 import json
+import os
 import re
 import shutil
 import sys
@@ -13,6 +14,59 @@ from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import catalog  # noqa: E402
+
+
+class NonAsciiTest(unittest.TestCase):
+    def test_git_ignored_recognises_a_non_ascii_name(self):
+        import subprocess
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            subprocess.run(["git", "init", "-q"], cwd=root, check=True)
+            (root / ".gitignore").write_text("dumps/\n")
+            (root / "dumps").mkdir()
+            ignored, kept = root / "dumps" / "café-dark.png", root / "café-light.png"
+            ignored.write_text("x")
+            kept.write_text("x")
+            with mock.patch.object(catalog, "ROOT", root):
+                self.assertEqual(catalog.git_ignored([ignored, kept]), {ignored})
+
+    def test_pull_request_catalogs_read_non_ascii_rows_under_an_ascii_locale(self):
+        # The taxonomy and coverage --check fallbacks read the base and head catalogs
+        # through `git show`; under LC_ALL=C with UTF-8 mode off that must still decode.
+        import subprocess
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            git = lambda *a: subprocess.run(["git", *a], cwd=root, check=True, capture_output=True)
+            git("init", "-q")
+            (root / "catalog.json").write_text(json.dumps({"systems": [{"slug": "cafe", "name": "Café — Bar"}]},
+                                                          ensure_ascii=False), encoding="utf-8")
+            git("add", "catalog.json")
+            git("-c", "user.name=t", "-c", "user.email=t@example.test", "commit", "-qm", "c")
+            git("update-ref", "refs/remotes/origin/main", "HEAD")
+            git("update-ref", "refs/pr-head", "HEAD")
+            code = ("import sys, json; sys.path.insert(0, sys.argv[1]); import catalog; from pathlib import Path; "
+                    "base, head = catalog.pull_request_catalogs(Path(sys.argv[2])); "
+                    "print(json.dumps(base['cafe']['name']))")
+            env = {**os.environ, "LC_ALL": "C", "LANG": "C", "PYTHONUTF8": "0", "PYTHONCOERCECLOCALE": "0",
+                   "GITHUB_BASE_REF": "main", "GITHUB_HEAD_SHA": "refs/pr-head"}
+            run = subprocess.run([sys.executable, "-c", code, str(Path(catalog.__file__).parent), str(root)],
+                                 capture_output=True, text=True, encoding="utf-8", env=env)
+        self.assertEqual(run.returncode, 0, run.stderr[-2000:])
+        self.assertEqual(json.loads(run.stdout), "Café — Bar")
+
+    def test_atomic_write_writes_utf8_whatever_the_locale(self):
+        opened = []
+        real = catalog.os.fdopen
+
+        def fdopen(fd, mode="r", *args, **kwargs):
+            opened.append(kwargs.get("encoding"))
+            return real(fd, mode, *args, **kwargs)
+
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.object(catalog.os, "fdopen", fdopen):
+            path = Path(tmp) / "out.json"
+            catalog.atomic_write(path, "café\n")
+            self.assertEqual(path.read_bytes(), "café\n".encode("utf-8"))
+        self.assertEqual(opened, ["utf-8"])
 
 
 class UntestedHelpersTest(unittest.TestCase):
