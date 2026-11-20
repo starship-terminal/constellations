@@ -119,9 +119,11 @@ async function pressOn(loc) {
   await loc.evaluate((el) => el.setAttribute('data-press-target', '1'));
   try {
     const { result } = await cdp.send('Runtime.evaluate', { expression: `document.querySelector('[data-press-target]')`, returnByValue: false });
-    if (!result || !result.objectId) return null;
+    // an unresolved target throws, so the state records an error instead of
+    // a resting reading labelled pressed
+    if (!result || !result.objectId) throw new Error('press target not resolvable');
     const { nodeId } = await cdp.send('DOM.requestNode', { objectId: result.objectId });
-    if (!nodeId) return null;
+    if (!nodeId) throw new Error('press target has no DOM node');
     await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: ['active', 'hover'] });
     await page.waitForTimeout(400);
     return nodeId;
