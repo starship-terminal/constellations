@@ -250,6 +250,23 @@ describe("review fixes", () => {
     assert.equal((await handleSave({ ...GOOD, api_key: KEY2 }, okModels)).body.ok, true);
   });
 
+  it("a file from before the meta backfill still blocks a revived key", async () => {
+    // A provider.db made by an earlier version: a saved row, an empty meta.
+    const { DatabaseSync } = await import("node:sqlite");
+    await fs.mkdir(path.join(dir, "config"), { recursive: true });
+    const old = new DatabaseSync(providerFile());
+    old.exec(`CREATE TABLE provider (id INTEGER PRIMARY KEY CHECK (id = 1), api TEXT NOT NULL, base_url TEXT NOT NULL,
+      key_header TEXT NOT NULL DEFAULT '', models_url TEXT NOT NULL DEFAULT '', model TEXT NOT NULL,
+      name TEXT NOT NULL DEFAULT '', api_key TEXT NOT NULL);
+      CREATE TABLE meta (k TEXT PRIMARY KEY);
+      INSERT INTO provider VALUES (1, 'openai', 'https://models.example/v1', '', '', 'm1', '', '${KEY}');`);
+    old.close();
+    await handleRemove();
+    const again = await handleSave({ ...GOOD, api_key: KEY, migrate: true }, okModels);
+    assert.deepEqual([again.body.ok, again.body.existing], [false, true]);
+    assert.equal(await loadSaved(), null);
+  });
+
   it("a migration saves when nothing is saved, and needs a key", async () => {
     const r = await handleSave({ ...GOOD, api_key: KEY, migrate: true }, okModels);
     assert.equal(r.body.ok, true);

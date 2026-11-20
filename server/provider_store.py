@@ -198,7 +198,10 @@ SCHEMA = """CREATE TABLE IF NOT EXISTS provider (
 -- has since removed.
 CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY);
 CREATE TRIGGER IF NOT EXISTS provider_saved AFTER INSERT ON provider
-BEGIN INSERT OR IGNORE INTO meta (k) VALUES ('saved'); END;"""
+BEGIN INSERT OR IGNORE INTO meta (k) VALUES ('saved'); END;
+-- A file made before meta existed, or by the first version of it, can hold a
+-- provider with an empty meta table: mark it as having held one.
+INSERT OR IGNORE INTO meta (k) SELECT 'saved' FROM provider;"""
 COLUMNS = ("api", "base_url", "key_header", "models_url", "model", "name", "api_key")
 _UPDATE = ", ".join(f"{c} = excluded.{c}" for c in COLUMNS)
 _INSERT = f"INSERT INTO provider (id, {', '.join(COLUMNS)}) VALUES (1, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(id) DO "

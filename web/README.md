@@ -32,8 +32,8 @@ lives in the browser:
    folder also turns off `ANTHROPIC_API_KEY`: the variable says where a
    saved key is meant to live, so running on the env key would spend a key
    the operator may not mean to and hide the mistake. The chat shows the
-   error until the variable is fixed. Every change is one statement, so SQLite's own locking makes it
-   atomic across both servers, and a crashed process never leaves a lock
+   error until the variable is fixed. Every change is one statement, so
+   SQLite's own locking makes it atomic across both servers, and a crashed process never leaves a lock
    behind. A model change applies only while the saved key and endpoint are
    the ones the page was editing. The database uses SQLite's rollback
    journal with `secure_delete` on, not WAL, so a replaced or removed key is
