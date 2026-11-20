@@ -746,6 +746,35 @@ class ProviderKeyTest(TempConfig):
             malformed = self.store._store_error("x", __import__("sqlite3").DatabaseError("database disk image is malformed"))
             self.assertTrue(malformed.damaged)
 
+    def test_a_read_only_file_still_reads_and_refuses_a_save_without_env(self):
+        self.chat.env_cfg = {"api": "anthropic", "api_key": ENV_KEY, "model": "env"}
+        self.call("post", "/api/provider", {**GOOD, "api_key": KEY})
+        db = self.config / "provider.db"
+        os.chmod(db, 0o400)
+        try:
+            status = self.call("get", "/api/status").json()
+            self.assertEqual((status["source"], status["configured"]), ("saved", True))
+            cfg, source, error = self.store.resolve(self.chat.env_cfg)
+            self.assertEqual((source, cfg["api_key"], error), ("saved", KEY, None))
+            h = self.call("post", "/api/provider", {**GOOD, "api_key": KEY2})
+            self.assertEqual(h.status, 500)
+            self.assertIn("read-only", h.json()["error"])
+            self.assertEqual(self.call("delete", "/api/provider").status, 500)
+            self.assertEqual(db.stat().st_mode & 0o777, 0o400, "a read-only file stays read-only")
+            self.assertEqual(self.store.resolve(self.chat.env_cfg)[0]["api_key"], KEY)
+        finally:
+            os.chmod(db, 0o600)
+        self.assert_no_key(KEY2, ENV_KEY)
+
+    def test_sqlite_refusing_a_deleted_file_is_its_own_error(self):
+        import sqlite3
+        moved = sqlite3.OperationalError("attempt to write a readonly database")
+        moved.sqlite_errorcode = 1032
+        self.assertEqual(str(self.store._store_error("x", moved)), self.store.MOVED)
+        plain = sqlite3.OperationalError("attempt to write a readonly database")
+        plain.sqlite_errorcode = 8
+        self.assertEqual(str(self.store._store_error("x", plain)), self.store.READ_ONLY)
+
     def test_a_busy_database_is_never_deleted(self):
         import sqlite3
         self.call("post", "/api/provider", {**GOOD, "api_key": KEY})

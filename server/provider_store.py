@@ -79,6 +79,10 @@ class StoreError(Exception):
 
 _SQLITE_BUSY = 5
 _SQLITE_LOCKED = 6
+# Extended codes: a plain read-only file, and a file deleted (by a recovery)
+# while this connection held it, which SQLite refuses to write.
+_SQLITE_READONLY = 8
+_SQLITE_READONLY_DBMOVED = 1032
 _SQLITE_CORRUPT = 11
 _SQLITE_NOTADB = 26
 
@@ -95,9 +99,14 @@ def _error_code(cause: BaseException | None):
 
 
 def _store_error(message: str, cause: BaseException | None = None, file: tuple | None = None) -> StoreError:
+    code = _error_code(cause)
+    if code == _SQLITE_READONLY_DBMOVED:
+        message = MOVED
+    elif code == _SQLITE_READONLY or (code is None and isinstance(cause, sqlite3.Error)
+                                      and "readonly database" in str(cause).lower()):
+        message = READ_ONLY
     err = StoreError(message)
     err.file = file
-    code = _error_code(cause)
     if code is not None:
         err.damaged = (code & 0xFF) in (_SQLITE_CORRUPT, _SQLITE_NOTADB)
     elif isinstance(cause, sqlite3.DatabaseError):
@@ -119,6 +128,8 @@ LINK_HELP = (f"{FILE_NAME} or a file next to it in {CONFIG_DIR_ENV} is a symboli
 OPENED_ELSEWHERE = (f"The saved provider file opened somewhere other than {CONFIG_DIR_ENV}: the folder "
                     "changed while it was being opened. Nothing was written.")
 RECOVERY_BUSY = "The saved provider file is being repaired by another request. Try again in a moment."
+READ_ONLY = "The saved provider file is read-only, so nothing can be saved or removed. It is still used as saved."
+MOVED = "The saved provider file was replaced while this request used it. Nothing was written; try again."
 
 
 def config_dir() -> Path:
@@ -231,10 +242,14 @@ SCHEMA = """CREATE TABLE IF NOT EXISTS provider (
 -- has since removed.
 CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY);
 CREATE TRIGGER IF NOT EXISTS provider_saved AFTER INSERT ON provider
-BEGIN INSERT OR IGNORE INTO meta (k) VALUES ('saved'); END;
--- A file made before meta existed, or by the first version of it, can hold a
--- provider with an empty meta table: mark it as having held one.
-INSERT OR IGNORE INTO meta (k) SELECT 'saved' FROM provider;"""
+BEGIN INSERT OR IGNORE INTO meta (k) VALUES ('saved'); END;"""
+# A file made before meta existed, or by the first version of it, can hold a
+# provider with an empty meta table: mark it as having held one. Written only
+# when a read shows it is needed, so opening a complete file never writes and
+# a read-only file (mode 0400, a read-only volume) still reads.
+NEEDS_BACKFILL = ("SELECT EXISTS (SELECT 1 FROM provider) AND NOT EXISTS "
+                  "(SELECT 1 FROM meta WHERE k = 'saved')")
+BACKFILL = "INSERT OR IGNORE INTO meta (k) SELECT 'saved' FROM provider"
 COLUMNS = ("api", "base_url", "key_header", "models_url", "model", "name", "api_key")
 _UPDATE = ", ".join(f"{c} = excluded.{c}" for c in COLUMNS)
 _INSERT = f"INSERT INTO provider (id, {', '.join(COLUMNS)}) VALUES (1, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(id) DO "
@@ -266,9 +281,10 @@ def _identity(path: Path) -> tuple | None:
 
 def _create_private(path: Path) -> None:
     """Create `path` 0600 when it is new, never through a link (O_EXCL and
-    O_NOFOLLOW), and tighten an existing one. Opening and closing an existing
-    database outside SQLite would drop the POSIX locks another connection in
-    this process holds on it, so an existing file is only chmod-ed by path."""
+    O_NOFOLLOW), and take group and other access off an existing one. Opening
+    and closing an existing database outside SQLite would drop the POSIX locks
+    another connection in this process holds on it, so an existing file is
+    only chmod-ed by path."""
     try:
         fd = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY | getattr(os, "O_NOFOLLOW", 0), 0o600)
     except FileExistsError:
@@ -277,8 +293,11 @@ def _create_private(path: Path) -> None:
         os.close(fd)
     _identity(path)
     # By path, so no descriptor is opened: a restored or copied file with a
-    # looser mode is tightened before a key is written into it.
-    os.chmod(path, 0o600)
+    # looser mode is tightened before a key is written into it. The owner's
+    # own bits are kept, so a file the operator made read-only stays so.
+    mode = os.lstat(path).st_mode & 0o777
+    if mode & 0o077:
+        os.chmod(path, mode & 0o600)
 
 
 def _check_opened(conn: sqlite3.Connection, path: Path) -> tuple:
@@ -333,6 +352,8 @@ def _db(create: bool):
             conn.execute("PRAGMA secure_delete = ON")
             conn.execute("PRAGMA journal_mode = DELETE")
             conn.executescript(SCHEMA)
+            if conn.execute(NEEDS_BACKFILL).fetchone()[0]:
+                conn.execute(BACKFILL)
         except sqlite3.Error as e:
             raise _store_error("The saved provider file cannot be read.", e, ident) from None
         try:
@@ -458,6 +479,12 @@ def _values(cfg: dict) -> tuple:
     return tuple(cfg.get(c) or "" for c in COLUMNS)
 
 
+# Why a plain save takes no lock beyond SQLite's own: only a recovery ever
+# deletes provider.db (_discard_if_still_damaged, under the recovery lock), a
+# new file is only ever created with O_EXCL, and a writer still holding a file
+# that a recovery deleted gets an error from SQLite, not a save that quietly
+# went into the deleted file. So a save either lands in the file at the path
+# or fails visibly. Keep those three true before adding a lock here.
 def save_provider(cfg: dict, mode: str) -> bool:
     """Write the provider in one statement. `mode`: "replace" always (a key the
     provider checked); "create" only when the store has never held a provider
