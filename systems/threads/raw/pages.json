@@ -1,0 +1,129 @@
+[
+ {
+  "name": "home-light-default",
+  "href": "https://www.threads.com/",
+  "title": "Threads",
+  "htmlClass": "_9dls _aoqh __fb-light-mode",
+  "vw": 1440,
+  "vh": 900,
+  "dpr": 1,
+  "bodyBg": "rgb(255, 255, 255)",
+  "bodyColor": "rgb(0, 0, 0)",
+  "bodyFont": "system-ui, -apple-system, \"system-ui\", Roboto, Helvetica, Arial, sans-serif",
+  "bodySize": "15px",
+  "bodyWeight": "400",
+  "bodyLh": "21px",
+  "pickedCount": 0,
+  "picked": {},
+  "samples": {
+   "login": {
+    "sel": "a[href*=\"/login\"]",
+    "text": "Log in",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgb(0, 0, 0)",
+    "font": "system-ui, -apple-system, \"system-ui\", Roboto, Helvetica, Arial, sans-serif",
+    "size": "15px",
+    "weight": "600",
+    "lh": "21px",
+    "radius": "10px",
+    "pad": "0px 16px",
+    "h": 34,
+    "w": 200
+   }
+  }
+ },
+ {
+  "name": "login-light-default",
+  "note": "boundary, not submitted",
+  "href": "https://www.threads.com/login",
+  "title": "Threads • Log in",
+  "htmlClass": "_9dls _aoqh __fb-light-mode",
+  "vw": 1440,
+  "vh": 900,
+  "dpr": 1,
+  "bodyBg": "rgb(255, 255, 255)",
+  "bodyColor": "rgb(0, 0, 0)",
+  "bodyFont": "system-ui, -apple-system, \"system-ui\", Roboto, Helvetica, Arial, sans-serif",
+  "bodySize": "15px",
+  "bodyWeight": "400",
+  "bodyLh": "21px",
+  "pickedCount": 0,
+  "picked": {},
+  "samples": {
+   "login": null
+  }
+ },
+ {
+  "name": "home-dark-default",
+  "href": "https://www.threads.com/",
+  "title": "Threads",
+  "htmlClass": "_9dls _aoqh __fb-dark-mode",
+  "vw": 1440,
+  "vh": 900,
+  "dpr": 1,
+  "bodyBg": "rgb(16, 16, 16)",
+  "bodyColor": "rgb(243, 245, 247)",
+  "bodyFont": "system-ui, -apple-system, \"system-ui\", Roboto, Helvetica, Arial, sans-serif",
+  "bodySize": "15px",
+  "bodyWeight": "400",
+  "bodyLh": "21px",
+  "pickedCount": 0,
+  "picked": {},
+  "samples": {
+   "login": {
+    "sel": "a[href*=\"/login\"]",
+    "text": "Log in",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgb(255, 255, 255)",
+    "font": "system-ui, -apple-system, \"system-ui\", Roboto, Helvetica, Arial, sans-serif",
+    "size": "15px",
+    "weight": "600",
+    "lh": "21px",
+    "radius": "10px",
+    "pad": "0px 16px",
+    "h": 34,
+    "w": 200
+   }
+  }
+ },
+ {
+  "name": "mobile-home-light-default",
+  "href": "https://www.threads.com/?hpir=1&http_ref=eyJ0cyI6MTc5NTIxNjYxMDAwMCwiciI6IiJ9",
+  "title": "Threads",
+  "htmlClass": "_9dls _aoqh __fb-light-mode",
+  "vw": 390,
+  "vh": 844,
+  "dpr": 2,
+  "bodyBg": "rgb(255, 255, 255)",
+  "bodyColor": "rgb(0, 0, 0)",
+  "bodyFont": "system-ui, -apple-system, \"system-ui\", Roboto, Helvetica, Arial, sans-serif",
+  "bodySize": "15px",
+  "bodyWeight": "400",
+  "bodyLh": "21px",
+  "pickedCount": 0,
+  "picked": {},
+  "samples": {
+   "login": null
+  }
+ },
+ {
+  "name": "mobile-home-dark-default",
+  "href": "https://www.threads.com/?hpir=1&http_ref=eyJ0cyI6MTc5NTIxNjYxODAwMCwiciI6IiJ9",
+  "title": "Threads",
+  "htmlClass": "_9dls _aoqh __fb-dark-mode",
+  "vw": 390,
+  "vh": 844,
+  "dpr": 2,
+  "bodyBg": "rgb(16, 16, 16)",
+  "bodyColor": "rgb(243, 245, 247)",
+  "bodyFont": "system-ui, -apple-system, \"system-ui\", Roboto, Helvetica, Arial, sans-serif",
+  "bodySize": "15px",
+  "bodyWeight": "400",
+  "bodyLh": "21px",
+  "pickedCount": 0,
+  "picked": {},
+  "samples": {
+   "login": null
+  }
+ }
+]

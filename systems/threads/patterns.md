@@ -1,43 +1,31 @@
 # Patterns
 
-How the signed-out controls combine. Screenshots are headless Chromium after the same URLs loaded in the T3 preview tab without a Cloudflare challenge.
+Public Threads, signed out, 2026-11-21. The map of which control opens which page is [site-tree.md](site-tree.md).
 
-## Signed-out home
+## App shell
 
-A public feed sits in a 640 px column (`size.column`) with a 24 px bottom radius and a soft column shadow. A login card floats at the top right. A modal, "Say more with Threads", covers the centre. The scrim is `color.background.scrim`.
+Desktop is three columns. A left rail (logo, Home, New thread, Search, Messages, Activity, Profile, Insights, Log in, More). A centre feed titled Home. A right card, "Log in or sign up for Threads", with Continue with Instagram. The page ground is `light.page` (`rgb(255, 255, 255)`). The rail item for the current page is a light grey pill. [home-light-default.png](screenshots/home-light-default.png).
 
-Dark, live class: [screenshots/home-dark-default.png](screenshots/home-dark-default.png).
+Dark follows `prefers-color-scheme` and paints `__fb-dark-mode`. The page is `rgb(16, 16, 16)`. Log in inverts to a white pill. [home-dark-default.png](screenshots/home-dark-default.png).
 
-Light, class-forced `__fb-light-mode`: [screenshots/home-light-default.png](screenshots/home-light-default.png).
+Phone drops the rail. A centred mark, Log in and Open app (or Get app), then the feed, then a five-icon tab bar (Home, Search, Create, Notifications, Profile). [mobile-home-dark-default.png](screenshots/mobile-home-dark-default.png).
 
-The feed itself is public. The capture did not open a post, follow a profile, or search.
+## Feed
 
-## Login page
+A post is an avatar, a bold handle, a topic chip, a relative time, body text, optional media, and a row of like, comment, repost, and share with counts. Like, comment, repost, and share were not pressed.
 
-`/login` is a centred column: a 16 px heading ("Log in with your Instagram account"), two empty fields, a white or black Log in button, a muted "Forgot password?" link, an "or" divider, the Instagram button, and a "Scan to get the app" caption at 13 px. Nothing was typed. Log in was not pressed.
+## Login wall
 
-Dark: [screenshots/login-dark-default.png](screenshots/login-dark-default.png).
+New thread, Messages, Activity, Profile, Insights, Follow, and the follower count open a dialog or `/login`. The branch stops there. The login page itself is a centred form over a black Threads-word pattern, with a QR labelled "Scan to get the app". Nothing was typed. [login-light-default.png](screenshots/login-light-default.png).
 
-Light, class-forced: [screenshots/login-light-default.png](screenshots/login-light-default.png).
+## Search
 
-The QR in those shots is the app-download code the page paints. It is not a session credential.
+An empty search field in a rounded column, with the same right-hand login card. [search-light-default.png](screenshots/search-light-default.png). No query was typed.
 
-## Phone width
+## Profile
 
-At 390 CSS pixels the dark home shows a top banner (Log in, Open app), the feed, and a "Thread on Threads" sheet with Open Threads and Continue with Instagram. `/login` at the same width is the full-screen "Say more with Threads" dialog plus a legal toast. Neither sheet was submitted.
+The official @threads profile is public: name, handle, bio, topic chips, follower count, Follow, Mention, and four tabs. [profile-light-default.png](screenshots/profile-light-default.png). Follow opens the sign-up dialog. [profile-light-follow-wall.png](screenshots/profile-light-follow-wall.png).
 
-[screenshots/mobile-home-dark-default.png](screenshots/mobile-home-dark-default.png)
+## Menu
 
-[screenshots/mobile-login-dark-default.png](screenshots/mobile-login-dark-default.png)
-
-Phone light was not captured.
-
-## Help center
-
-Threads Terms and the privacy supplemental live on help.instagram.com, not on the app's token set. The help page is light, 24 px titles, 12 px body. Recorded only so the legal links on the Threads footer have a destination. Do not restyle Threads with these values.
-
-[screenshots/terms-light-default.png](screenshots/terms-light-default.png)
-
-[screenshots/privacy-light-default.png](screenshots/privacy-light-default.png)
-
-Cookies policy (https://help.instagram.com/1896641480634370/) was not shot.
+More opens Appearance, Sounds, and Report a problem. Appearance shows sun, moon, and Auto, with Auto selected. Sounds shows two off switches. Neither switch was toggled. Report a problem did not open a form in this pass.
