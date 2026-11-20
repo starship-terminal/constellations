@@ -4188,7 +4188,7 @@
       "description": "Supercharge your video creation",
       "status": "pending",
       "package": null,
-      "notes": "https://ozone.tech/login did not return a sign-in page. No email form.",
+      "notes": "https://ozone.tech/login did not return a sign-in page. No email form. Public walk 2026-11-21: ozone.tech and www.ozone.tech are NXDOMAIN. /login does not resolve. ozone.pro returns a Framer Site Not Found 404, not the product. No package. Skipped this pass.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 13
@@ -4494,7 +4494,7 @@
       "description": "The first native iOS design tool built for creating mobile products",
       "status": "pending",
       "package": null,
-      "notes": "https://createwithplay.com/login did not return a sign-in page. No email form.",
+      "notes": "https://createwithplay.com/login did not return a sign-in page. No email form. Public walk 2026-11-21: createwithplay.com has nameservers and no address record. www, docs, play, and app are NXDOMAIN. /login does not resolve. No package. Skipped this pass.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 13
