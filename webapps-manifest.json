@@ -5820,9 +5820,9 @@
       "description": "AI Music Generator",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://suno.com/sign-in email path said sign-in is not approved for this address. Phone path not used.",
+      "notes": "Email probe: https://suno.com/sign-in email path said sign-in is not approved for this address. Phone path not used. Google sign-in completed in the capture browser. A birthday screen appeared and was not filled. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "closed",
+      "login-probe": "signed-in",
       "batch": 17
     },
     {
@@ -5871,9 +5871,9 @@
       "description": "Home to all your lists",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://app.superlist.com/ Continue in browser then Sign in with Google opened the inbox. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 18
     },
     {
@@ -5888,9 +5888,9 @@
       "description": "Video Communication Platform",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: headless /login was Access Denied. https://app.synthesia.io/welcome Continue with Google signed in and opened a plan picker. No plan chosen. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 18
     },
     {
@@ -5905,9 +5905,9 @@
       "description": "Automate Sales and CRM Busywork",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://app.tango.us/sign-in Continue with Google returned to the Tango app. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 18
     },
     {
@@ -5922,9 +5922,9 @@
       "description": "Sell Courses, Coaching and Digital Downloads",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://sso.teachable.com/secure/teachable_accounts/sign_in stopped on a Cloudflare check before a form. Not retried.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 18
     },
     {
@@ -5939,9 +5939,9 @@
       "description": "AI Powered Tools to Grow Your Career",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.tealhq.com/ stopped on a Cloudflare check before a form. Not retried.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 18
     },
     {
@@ -5956,9 +5956,9 @@
       "description": "Swedish consumer electronics company",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://teenage.engineering/ is a store. /login is 404. No account sign-in.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 18
     },
     {
@@ -5973,9 +5973,9 @@
       "description": "Discover the best recommendations from the best curators",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://telescope.fyi/login Continue with Google signed in and opened curator onboarding. No curator chosen. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 18
     },
     {
@@ -5990,9 +5990,9 @@
       "description": "Online Screen Recorder for Mac & Windows",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.tella.com/api/login Continue with Google signed in to an empty video library. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 18
     },
     {
@@ -6007,9 +6007,9 @@
       "description": "Electric Cars, Solar & Clean Energy",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://auth.tesla.com sign-in accepted the capture inbox and asked for a password. Password not submitted. No Google button.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 18
     },
     {
@@ -6024,9 +6024,9 @@
       "description": "Sports news, stories, scores, schedules",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.nytimes.com/athletic/ stopped on a bot check before a form. /login is 404. Not retried.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 18
     },
     {
@@ -6041,9 +6041,9 @@
       "description": "Meal Delivery",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://account.dinnerladies.com.au/ sent a verification code to the capture inbox. News checkbox left unchecked. Code not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 18
     },
     {
@@ -6058,9 +6058,9 @@
       "description": "Your Free All-In-One Creator Store",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://make.theleap.co/accounts/login stopped on a Cloudflare check before a form. Not retried.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 18
     },
     {
@@ -6075,9 +6075,9 @@
       "description": "Breaking News, US News, World News",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.nytimes.com/ stopped on a bot check before a form. Not retried.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 18
     },
     {
@@ -6092,9 +6092,9 @@
       "description": "Since 1925",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.newyorker.com/auth/initiate offered Google. Google consent completed and the next screen asked for newsletter preferences. Preferences not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 18
     },
     {
@@ -6109,9 +6109,9 @@
       "description": "Explore the world's biggest network of public org charts",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://theorg.com/login showed email and password. Continue with Google returned to the public homepage without an account surface. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 18
     },
     {
@@ -6126,9 +6126,9 @@
       "description": "Breaking news and latest headlines ",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.washingtonpost.com/subscribe/signin/ offers email and Google. Google account chooser did not select the signed-in session and asked for a Google email or password. Not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 18
     },
     {
@@ -6143,9 +6143,9 @@
       "description": "National and local weather forecast",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://weather.com/login showed email and password. Password not submitted. No Google button.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 18
     },
     {
@@ -6160,9 +6160,9 @@
       "description": "Join Threads to share ideas, ask questions, post random thoughts, find your people and more",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.threads.com/login is Instagram login, with Continue with Instagram. No Google button. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 18
     },
     {
@@ -6177,9 +6177,9 @@
       "description": "High Fidelity Music Streaming",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://login.tidal.com offered Continue, Passkey, Google, and Apple. Google account chooser did not select the signed-in session and asked for a Google email or password. Not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "oauth-only",
       "batch": 18
     },
     {
@@ -6194,9 +6194,9 @@
       "description": "Simple calendar management and booking solution",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://tidycal.com/login Continue with Google signed in and opened profile onboarding. Profile not filled. Product not walked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "signed-in",
       "batch": 18
     },
     {
