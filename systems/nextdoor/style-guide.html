@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nextdoor style guide</title>
+<style>
+:root {
+  --color-green-0: #f6fff8;
+  --color-green-10: #b0f3c5;
+  --color-green-20: #75df9e;
+  --color-green-30: #42be7a;
+  --color-green-40: #1b8751;
+  --color-green-50: #0e663f;
+  --color-green-60: #07422a;
+  --color-green-70: #042a1b;
+  --color-green-80: #032117;
+  --color-green-90: #031912;
+  --color-blueGray-0: #f0f2f5;
+  --color-blueGray-5: #dfe6f2;
+  --color-blueGray-10: #cad3e5;
+  --color-blueGray-20: #abb7cc;
+  --color-blueGray-30: #8f9bb2;
+  --color-blueGray-40: #748199;
+  --color-blueGray-50: #576580;
+  --color-blueGray-60: #3d4b66;
+  --color-blueGray-70: #232f46;
+  --color-blueGray-80: #1a2233;
+  --color-blueGray-90: #0d111a;
+  --color-blue-0: #f5fbff;
+  --color-blue-10: #b4e0f8;
+  --color-blue-20: #7bc9f2;
+  --color-blue-30: #45b0ea;
+  --color-blue-40: #1197de;
+  --color-blue-50: #0085cc;
+  --color-blue-60: #0076b6;
+  --color-blue-70: #006093;
+  --color-blue-80: #00507a;
+  --color-blue-90: #003c5c;
+  --color-red-0: #fff5f5;
+  --color-red-10: #fbced0;
+  --color-red-20: #f8a6a9;
+  --color-red-30: #f48083;
+  --color-red-40: #f15a5f;
+  --color-red-50: #ed353b;
+  --color-red-60: #c90b11;
+  --color-red-70: #a4060b;
+  --color-red-80: #800206;
+  --color-red-90: #5c0003;
+  --color-orange-0: #fffcf1;
+  --color-orange-10: #fcebba;
+  --color-orange-20: #fad788;
+  --color-orange-30: #f6bf56;
+  --color-orange-40: #f2ad30;
+  --color-orange-50: #ea9b11;
+  --color-orange-60: #d98b00;
+  --color-orange-70: #b07000;
+  --color-orange-80: #946000;
+  --color-orange-90: #5c3e00;
+  --font-family: Saans, system-ui, -apple-system, BlinkMacSystemFont, 'HelveticaNeue', 'Helvetica Neue', Helvetica, 'Roboto', 'Segoe UI', Arial, sans-serif;
+  --font-weightBody: 400;
+  --font-weightTitle: 600;
+  --typography-body: 400 16px/1.25 Saans, system-ui, -apple-system, BlinkMacSystemFont, 'HelveticaNeue', 'Helvetica Neue', Helvetica, 'Roboto', 'Segoe UI', Arial, sans-serif;
+  --typography-bodyTitle: 600 16px/1.25 Saans, system-ui, -apple-system, BlinkMacSystemFont, 'HelveticaNeue-Medium', 'Helvetica Neue Medium', Helvetica-Bold, 'Roboto-Medium', 'Segoe UI Semibold', Arial-Bold, sans-serif;
+  --typography-detail: 400 14px/1.25 Saans, system-ui, -apple-system, BlinkMacSystemFont, 'HelveticaNeue', 'Helvetica Neue', Helvetica, 'Roboto', 'Segoe UI', Arial, sans-serif;
+  --typography-mini: 400 13px/1.25 Saans, system-ui, -apple-system, BlinkMacSystemFont, 'HelveticaNeue', 'Helvetica Neue', Helvetica, 'Roboto', 'Segoe UI', Arial, sans-serif;
+  --typography-sectionTitle: 600 22px/1.25 Saans, system-ui, -apple-system, BlinkMacSystemFont, 'HelveticaNeue-Medium', 'Helvetica Neue Medium', Helvetica-Bold, 'Roboto-Medium', 'Segoe UI Semibold', Arial-Bold, sans-serif;
+  --typography-headline: 600 28px/1.25 Saans, system-ui, -apple-system, BlinkMacSystemFont, 'HelveticaNeue-Medium', 'Helvetica Neue Medium', Helvetica-Bold, 'Roboto-Medium', 'Segoe UI Semibold', Arial-Bold, sans-serif;
+  --typography-shout: 600 32px/1.25 Saans, system-ui, -apple-system, BlinkMacSystemFont, 'HelveticaNeue-Medium', 'Helvetica Neue Medium', Helvetica-Bold, 'Roboto-Medium', 'Segoe UI Semibold', Arial-Bold, sans-serif;
+  --typography-folio: 600 52px/1.25 Saans, system-ui, -apple-system, BlinkMacSystemFont, 'HelveticaNeue-Medium', 'Helvetica Neue Medium', Helvetica-Bold, 'Roboto-Medium', 'Segoe UI Semibold', Arial-Bold, sans-serif;
+  --space-0: 0px;
+  --space-0-25: 1px;
+  --space-0-5: 2px;
+  --space-1: 4px;
+  --space-1-5: 6px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 10000px;
+  --motion-duration3: 150ms;
+  --motion-duration4: 200ms;
+  --motion-duration6: 300ms;
+  --motion-duration8: 400ms;
+  --motion-duration10: 500ms;
+  --motion-duration16: 800ms;
+  --motion-duration20: 1000ms;
+  --motion-duration30: 1500ms;
+  --motion-duration40: 2000ms;
+  --motion-emphasized: cubic-bezier(0.45, 0.0, 0.0, 1.0);
+  --motion-emphasizedAccelerate: cubic-bezier(0.65, 0.0, 1.0, 1.0);
+  --motion-emphasizedDecelerate: cubic-bezier(0.05, 0.7, 0.1, 1.0);
+  --color-page: #ffffff;
+  --color-surface: #f0f2f5;
+  --color-elevated: #ffffff;
+  --color-emphasis: #1a2233;
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-underlay: #cad3e5;
+  --color-text: #232f46;
+  --color-muted: #576580;
+  --color-onAccent: #ffffff;
+  --color-link: #1197de;
+  --color-accent: #1b8751;
+  --color-accentPressed: #0e663f;
+  --color-border: #cad3e5;
+  --color-borderStrong: #232f46;
+  --color-focus: #0076b6;
+  --color-success: #1b8751;
+  --color-warning: #f6bf56;
+  --color-danger: #a4060b;
+  --color-info: #1197de;
+  --color-errorSurface: #fbced0;
+  --measured-buttonHoverOpacity: 0.88;
+  --measured-fieldFocusRing: 2px;
+  --measured-controlHeight: 48px;
+  --measured-fieldHeight: 56px;
+  --sg-sans: Saans, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+[data-mode="dark"] {
+  --color-page: #262626;
+  --color-surface: #1a1a1a;
+  --color-elevated: #333333;
+  --color-emphasis: #232f46;
+  --color-overlay: rgba(0, 0, 0, 0.7);
+  --color-underlay: #576580;
+  --color-text: #dfe6f2;
+  --color-muted: #abb7cc;
+  --color-onAccent: #ffffff;
+  --color-link: #1197de;
+  --color-accent: #1b8751;
+  --color-accentPressed: #0e663f;
+  --color-border: #cad3e5;
+  --color-borderStrong: #232f46;
+  --color-focus: #0076b6;
+  --color-success: #1b8751;
+  --color-warning: #ea9b11;
+  --color-danger: #fff5f5;
+  --color-info: #1197de;
+  --color-errorSurface: #a4060b;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-text, #232f46); background: var(--color-page, #fff); }
+main { max-width: 1080px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font-weight: 600; font-size: 32px; letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; margin: 40px 0 12px; color: var(--color-muted, #576580); }
+.lead { max-width: 68ch; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { width: 92px; }
+.sw i { display: block; height: 48px; border-radius: 8px; border: 1px solid var(--color-border, #cad3e5); }
+.sw b, .sw span { display: block; font-size: 11px; font-weight: 500; }
+.sw span { font-weight: 400; opacity: 0.7; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 24px; border-radius: 10000px; border: 0; font-weight: 600; font-size: 16px; }
+.btn.primary { background: var(--color-accent, #1b8751); color: var(--color-onAccent, #fff); }
+.btn.quiet { background: var(--color-surface, #f0f2f5); color: var(--color-text, #232f46); }
+.btn.ink { background: var(--color-emphasis, #1a2233); color: #fff; }
+.field { height: 56px; border-radius: 12px; border: 0; box-shadow: inset 0 0 0 1px var(--color-border, #cad3e5); padding: 0 16px; width: 280px; background: var(--color-page, #fff); color: var(--color-text); font: inherit; }
+.card { background: var(--color-elevated, #fff); border-radius: 12px; padding: 24px; max-width: 400px; box-shadow: 0 8px 24px rgba(26, 34, 51, 0.08); }
+.toggle { margin-left: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Nextdoor <button class="toggle" type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Theme</button></h1>
+  <p class="lead">Values from tokens.json, measured on nextdoor.com on 2026-11-21. The dark theme is declared in CSS and is not applied on the public pages. Saans is not loaded here. Samples fall back to the system sans.</p>
+
+  <h2>Colour roles</h2>
+  <div class="row" id="roles"></div>
+
+  <h2>Green ramp</h2>
+  <div class="row" id="green"></div>
+
+  <h2>Buttons and field</h2>
+  <div class="card">
+    <p style="font-weight:600;font-size:22px;margin:0 0 16px">Discover your neighborhood</p>
+    <p><button class="btn quiet" type="button">Continue with Google</button></p>
+    <p><input class="field" placeholder="Email address" aria-label="Email address" readonly></p>
+    <p><button class="btn primary" type="button">Continue</button></p>
+    <p><button class="btn ink" type="button">Claim your free Business Page</button></p>
+  </div>
+  <p class="lead">The card and buttons are reconstructions drawn with the measured tokens. The real pixels are in screenshots/.</p>
+
+  <h2>Type</h2>
+  <p style="font-size:52px;font-weight:600;margin:0">Folio</p>
+  <p style="font-size:32px;font-weight:600;margin:0">Shout</p>
+  <p style="font-size:28px;font-weight:600;margin:0">Headline</p>
+  <p style="font-size:22px;font-weight:600;margin:0">Section title</p>
+  <p style="font-size:16px;margin:0">Body at 16px, weight 420 on the product.</p>
+  <p style="font-size:13px;color:var(--color-muted)">Mini at 13px.</p>
+</main>
+<script>
+const T = {"core":{"color":{"green":{"0":{"v":"#f6fff8","t":"color","s":"css-var --theme-ui-colors-green0 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"10":{"v":"#b0f3c5","t":"color","s":"css-var --theme-ui-colors-green10 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"20":{"v":"#75df9e","t":"color","s":"css-var --theme-ui-colors-green20 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"30":{"v":"#42be7a","t":"color","s":"css-var --theme-ui-colors-green30 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"40":{"v":"#1b8751","t":"color","s":"css-var --theme-ui-colors-green40 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"50":{"v":"#0e663f","t":"color","s":"css-var --theme-ui-colors-green50 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"60":{"v":"#07422a","t":"color","s":"css-var --theme-ui-colors-green60 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"70":{"v":"#042a1b","t":"color","s":"css-var --theme-ui-colors-green70 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"80":{"v":"#032117","t":"color","s":"css-var --theme-ui-colors-green80 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"90":{"v":"#031912","t":"color","s":"css-var --theme-ui-colors-green90 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"}},"blueGray":{"0":{"v":"#f0f2f5","t":"color","s":"css-var --theme-ui-colors-blueGray0 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"5":{"v":"#dfe6f2","t":"color","s":"css-var --theme-ui-colors-blueGray5 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"10":{"v":"#cad3e5","t":"color","s":"css-var --theme-ui-colors-blueGray10 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"20":{"v":"#abb7cc","t":"color","s":"css-var --theme-ui-colors-blueGray20 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"30":{"v":"#8f9bb2","t":"color","s":"css-var --theme-ui-colors-blueGray30 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"40":{"v":"#748199","t":"color","s":"css-var --theme-ui-colors-blueGray40 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"50":{"v":"#576580","t":"color","s":"css-var --theme-ui-colors-blueGray50 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"60":{"v":"#3d4b66","t":"color","s":"css-var --theme-ui-colors-blueGray60 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"70":{"v":"#232f46","t":"color","s":"css-var --theme-ui-colors-blueGray70 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"80":{"v":"#1a2233","t":"color","s":"css-var --theme-ui-colors-blueGray80 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"90":{"v":"#0d111a","t":"color","s":"css-var --theme-ui-colors-blueGray90 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"}},"blue":{"0":{"v":"#f5fbff","t":"color","s":"css-var --theme-ui-colors-blue0 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"10":{"v":"#b4e0f8","t":"color","s":"css-var --theme-ui-colors-blue10 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"20":{"v":"#7bc9f2","t":"color","s":"css-var --theme-ui-colors-blue20 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"30":{"v":"#45b0ea","t":"color","s":"css-var --theme-ui-colors-blue30 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"40":{"v":"#1197de","t":"color","s":"css-var --theme-ui-colors-blue40 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"50":{"v":"#0085cc","t":"color","s":"css-var --theme-ui-colors-blue50 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"60":{"v":"#0076b6","t":"color","s":"css-var --theme-ui-colors-blue60 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"70":{"v":"#006093","t":"color","s":"css-var --theme-ui-colors-blue70 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"80":{"v":"#00507a","t":"color","s":"css-var --theme-ui-colors-blue80 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"90":{"v":"#003c5c","t":"color","s":"css-var --theme-ui-colors-blue90 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"}},"red":{"0":{"v":"#fff5f5","t":"color","s":"css-var --theme-ui-colors-red0 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"10":{"v":"#fbced0","t":"color","s":"css-var --theme-ui-colors-red10 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"20":{"v":"#f8a6a9","t":"color","s":"css-var --theme-ui-colors-red20 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"30":{"v":"#f48083","t":"color","s":"css-var --theme-ui-colors-red30 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"40":{"v":"#f15a5f","t":"color","s":"css-var --theme-ui-colors-red40 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"50":{"v":"#ed353b","t":"color","s":"css-var --theme-ui-colors-red50 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"60":{"v":"#c90b11","t":"color","s":"css-var --theme-ui-colors-red60 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"70":{"v":"#a4060b","t":"color","s":"css-var --theme-ui-colors-red70 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"80":{"v":"#800206","t":"color","s":"css-var --theme-ui-colors-red80 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"90":{"v":"#5c0003","t":"color","s":"css-var --theme-ui-colors-red90 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"}},"orange":{"0":{"v":"#fffcf1","t":"color","s":"css-var --theme-ui-colors-orange0 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"10":{"v":"#fcebba","t":"color","s":"css-var --theme-ui-colors-orange10 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"20":{"v":"#fad788","t":"color","s":"css-var --theme-ui-colors-orange20 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"30":{"v":"#f6bf56","t":"color","s":"css-var --theme-ui-colors-orange30 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"40":{"v":"#f2ad30","t":"color","s":"css-var --theme-ui-colors-orange40 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"50":{"v":"#ea9b11","t":"color","s":"css-var --theme-ui-colors-orange50 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"60":{"v":"#d98b00","t":"color","s":"css-var --theme-ui-colors-orange60 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"70":{"v":"#b07000","t":"color","s":"css-var --theme-ui-colors-orange70 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"80":{"v":"#946000","t":"color","s":"css-var --theme-ui-colors-orange80 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"90":{"v":"#5c3e00","t":"color","s":"css-var --theme-ui-colors-orange90 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"}}},"font":{"family":{"v":"Saans, system-ui, -apple-system, BlinkMacSystemFont, 'HelveticaNeue', 'Helvetica Neue', Helvetica, 'Roboto', 'Segoe UI', Arial, sans-serif","t":"fontFamily","s":"css-var --nd-font-family-body (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"weightBody":{"v":400,"t":"fontWeight","s":"css-var --nd-font-weight-body (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"weightTitle":{"v":600,"t":"fontWeight","s":"css-var --nd-font-weight-bodyTitle (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"}},"typography":{"body":{"v":{"fontFamily":"Saans, system-ui, -apple-system, BlinkMacSystemFont, 'HelveticaNeue', 'Helvetica Neue', Helvetica, 'Roboto', 'Segoe UI', Arial, sans-serif","fontSize":"16px","fontWeight":400,"lineHeight":"1.25"},"t":"typography","s":"css-var --nd-font-size-body (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21; lineHeight is Not captured as a token (the stylesheet does not declare one for this role)"},"bodyTitle":{"v":{"fontFamily":"Saans, system-ui, -apple-system, BlinkMacSystemFont, 'HelveticaNeue-Medium', 'Helvetica Neue Medium', Helvetica-Bold, 'Roboto-Medium', 'Segoe UI Semibold', Arial-Bold, sans-serif","fontSize":"16px","fontWeight":600,"lineHeight":"1.25"},"t":"typography","s":"css-var --nd-font-size-bodyTitle (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21; lineHeight is Not captured as a token (the stylesheet does not declare one for this role)"},"detail":{"v":{"fontFamily":"Saans, system-ui, -apple-system, BlinkMacSystemFont, 'HelveticaNeue', 'Helvetica Neue', Helvetica, 'Roboto', 'Segoe UI', Arial, sans-serif","fontSize":"14px","fontWeight":400,"lineHeight":"1.25"},"t":"typography","s":"css-var --nd-font-size-detail (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21; lineHeight is Not captured as a token (the stylesheet does not declare one for this role)"},"mini":{"v":{"fontFamily":"Saans, system-ui, -apple-system, BlinkMacSystemFont, 'HelveticaNeue', 'Helvetica Neue', Helvetica, 'Roboto', 'Segoe UI', Arial, sans-serif","fontSize":"13px","fontWeight":400,"lineHeight":"1.25"},"t":"typography","s":"css-var --nd-font-size-mini (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21; lineHeight is Not captured as a token (the stylesheet does not declare one for this role)"},"sectionTitle":{"v":{"fontFamily":"Saans, system-ui, -apple-system, BlinkMacSystemFont, 'HelveticaNeue-Medium', 'Helvetica Neue Medium', Helvetica-Bold, 'Roboto-Medium', 'Segoe UI Semibold', Arial-Bold, sans-serif","fontSize":"22px","fontWeight":600,"lineHeight":"1.25"},"t":"typography","s":"css-var --nd-font-size-sectionTitle (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21; lineHeight is Not captured as a token (the stylesheet does not declare one for this role)"},"headline":{"v":{"fontFamily":"Saans, system-ui, -apple-system, BlinkMacSystemFont, 'HelveticaNeue-Medium', 'Helvetica Neue Medium', Helvetica-Bold, 'Roboto-Medium', 'Segoe UI Semibold', Arial-Bold, sans-serif","fontSize":"28px","fontWeight":600,"lineHeight":"1.25"},"t":"typography","s":"css-var --nd-font-size-headline (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21; lineHeight is Not captured as a token (the stylesheet does not declare one for this role)"},"shout":{"v":{"fontFamily":"Saans, system-ui, -apple-system, BlinkMacSystemFont, 'HelveticaNeue-Medium', 'Helvetica Neue Medium', Helvetica-Bold, 'Roboto-Medium', 'Segoe UI Semibold', Arial-Bold, sans-serif","fontSize":"32px","fontWeight":600,"lineHeight":"1.25"},"t":"typography","s":"css-var --nd-font-size-shout (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21; lineHeight is Not captured as a token (the stylesheet does not declare one for this role)"},"folio":{"v":{"fontFamily":"Saans, system-ui, -apple-system, BlinkMacSystemFont, 'HelveticaNeue-Medium', 'Helvetica Neue Medium', Helvetica-Bold, 'Roboto-Medium', 'Segoe UI Semibold', Arial-Bold, sans-serif","fontSize":"52px","fontWeight":600,"lineHeight":"1.25"},"t":"typography","s":"css-var --nd-font-size-folio (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21; lineHeight is Not captured as a token (the stylesheet does not declare one for this role)"}},"space":{"0":{"v":"0px","t":"dimension","s":"css-var --nd-space-0 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"0.25":{"v":"1px","t":"dimension","s":"css-var --nd-space-0_25 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"0.5":{"v":"2px","t":"dimension","s":"css-var --nd-space-0_5 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"1":{"v":"4px","t":"dimension","s":"css-var --nd-space-1 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"1.5":{"v":"6px","t":"dimension","s":"css-var --nd-space-1_5 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"2":{"v":"8px","t":"dimension","s":"css-var --nd-space-2 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"3":{"v":"12px","t":"dimension","s":"css-var --nd-space-3 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"4":{"v":"16px","t":"dimension","s":"css-var --nd-space-4 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"5":{"v":"20px","t":"dimension","s":"css-var --nd-space-5 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"6":{"v":"24px","t":"dimension","s":"css-var --nd-space-6 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"8":{"v":"32px","t":"dimension","s":"css-var --nd-space-8 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"10":{"v":"40px","t":"dimension","s":"css-var --nd-space-10 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"12":{"v":"48px","t":"dimension","s":"css-var --nd-space-12 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"16":{"v":"64px","t":"dimension","s":"css-var --nd-space-16 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"20":{"v":"80px","t":"dimension","s":"css-var --nd-space-20 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"}},"radius":{"none":{"v":"0px","t":"dimension","s":"css-var --nd-border-radius-none (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"xs":{"v":"2px","t":"dimension","s":"css-var --nd-border-radius-0_5 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"sm":{"v":"8px","t":"dimension","s":"css-var --nd-border-radius-2 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"md":{"v":"12px","t":"dimension","s":"css-var --nd-border-radius-3 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"lg":{"v":"16px","t":"dimension","s":"css-var --nd-border-radius-4 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"pill":{"v":"10000px","t":"dimension","s":"css-var --nd-border-radius-pill (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"}},"motion":{"duration3":{"v":"150ms","t":"duration","s":"css-var --nd-motion-duration-3 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"duration4":{"v":"200ms","t":"duration","s":"css-var --nd-motion-duration-4 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"duration6":{"v":"300ms","t":"duration","s":"css-var --nd-motion-duration-6 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"duration8":{"v":"400ms","t":"duration","s":"css-var --nd-motion-duration-8 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"duration10":{"v":"500ms","t":"duration","s":"css-var --nd-motion-duration-10 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"duration16":{"v":"800ms","t":"duration","s":"css-var --nd-motion-duration-16 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"duration20":{"v":"1000ms","t":"duration","s":"css-var --nd-motion-duration-20 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"duration30":{"v":"1500ms","t":"duration","s":"css-var --nd-motion-duration-30 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"duration40":{"v":"2000ms","t":"duration","s":"css-var --nd-motion-duration-40 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"emphasized":{"v":[0.45,0.0,0.0,1.0],"t":"cubicBezier","s":"css-var --nd-motion-easing-emphasized (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"emphasizedAccelerate":{"v":[0.65,0.0,1.0,1.0],"t":"cubicBezier","s":"css-var --nd-motion-easing-emphasizedAccelerate (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"emphasizedDecelerate":{"v":[0.05,0.7,0.1,1.0],"t":"cubicBezier","s":"css-var --nd-motion-easing-emphasizedDecelerate (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"}}},"light":{"color":{"page":{"v":"#ffffff","t":"color","s":"css-var --nd-color-bgPrimary (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"surface":{"v":"#f0f2f5","t":"color","s":"css-var --nd-color-bgBase (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"elevated":{"v":"#ffffff","t":"color","s":"css-var --nd-color-bgElevated (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"emphasis":{"v":"#1a2233","t":"color","s":"css-var --nd-color-bgEmphasis (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"overlay":{"v":"rgba(0, 0, 0, 0.5)","t":"color","s":"css-var --nd-color-bgTint (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"underlay":{"v":"#cad3e5","t":"color","s":"css-var --nd-color-bgUnderlay (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"text":{"v":"#232f46","t":"color","s":"css-var --nd-color-fgPrimary (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"muted":{"v":"#576580","t":"color","s":"css-var --nd-color-fgSecondary (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"onAccent":{"v":"#ffffff","t":"color","s":"css-var --theme-ui-colors-on-brand-logo (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"link":{"v":"#1197de","t":"color","s":"css-var --theme-ui-colors-fg-blue (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"accent":{"v":"#1b8751","t":"color","s":"css-var --nd-color-brandLogo (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"accentPressed":{"v":"#0e663f","t":"color","s":"css-var --theme-ui-colors-brand-lime-logo (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"border":{"v":"#cad3e5","t":"color","s":"css-var --theme-ui-colors-blueGray10 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"borderStrong":{"v":"#232f46","t":"color","s":"css-var --theme-ui-colors-blueGray70 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"focus":{"v":"#0076b6","t":"color","s":"css-var --theme-ui-colors-blue60 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"success":{"v":"#1b8751","t":"color","s":"css-var --theme-ui-colors-green40 (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"warning":{"v":"#f6bf56","t":"color","s":"css-var --nd-color-bgWarning (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"danger":{"v":"#a4060b","t":"color","s":"css-var --theme-ui-colors-fg-error (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"info":{"v":"#1197de","t":"color","s":"css-var --theme-ui-colors-fg-blue (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"errorSurface":{"v":"#fbced0","t":"color","s":"css-var --nd-color-bgError (light), raw/css-vars.json, nextdoor.com homepage 2026-11-21"}},"measured":{"buttonHoverOpacity":{"v":0.88,"t":"number","s":"Measured computed filter opacity(0.88) on the Sign up face while hovered, nextdoor.com homepage 2026-11-21"},"fieldFocusRing":{"v":"2px","t":"dimension","s":"Measured box-shadow inset 2px on the focused email field, nextdoor.com homepage 2026-11-21. Ring colour is light.color.borderStrong."},"controlHeight":{"v":"48px","t":"dimension","s":"Measured Sign up and Continue face height, nextdoor.com homepage 2026-11-21"},"fieldHeight":{"v":"56px","t":"dimension","s":"Measured email field height, nextdoor.com homepage 2026-11-21"}}},"dark":{"color":{"page":{"v":"#262626","t":"color","s":"css-var --nd-color-bgPrimary (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"surface":{"v":"#1a1a1a","t":"color","s":"css-var --nd-color-bgBase (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"elevated":{"v":"#333333","t":"color","s":"css-var --nd-color-bgElevated (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"emphasis":{"v":"#232f46","t":"color","s":"css-var --nd-color-bgEmphasis (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"overlay":{"v":"rgba(0, 0, 0, 0.7)","t":"color","s":"css-var --nd-color-bgTint (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"underlay":{"v":"#576580","t":"color","s":"css-var --nd-color-bgUnderlay (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"text":{"v":"#dfe6f2","t":"color","s":"css-var --nd-color-fgPrimary (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"muted":{"v":"#abb7cc","t":"color","s":"css-var --nd-color-fgSecondary (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"onAccent":{"v":"#ffffff","t":"color","s":"css-var --theme-ui-colors-on-brand-logo (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"link":{"v":"#1197de","t":"color","s":"css-var --theme-ui-colors-fg-blue (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"accent":{"v":"#1b8751","t":"color","s":"css-var --nd-color-brandLogo (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"accentPressed":{"v":"#0e663f","t":"color","s":"css-var --theme-ui-colors-brand-lime-logo (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"border":{"v":"#cad3e5","t":"color","s":"css-var --theme-ui-colors-blueGray10 (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"borderStrong":{"v":"#232f46","t":"color","s":"css-var --theme-ui-colors-blueGray70 (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"focus":{"v":"#0076b6","t":"color","s":"css-var --theme-ui-colors-blue60 (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"success":{"v":"#1b8751","t":"color","s":"css-var --theme-ui-colors-green40 (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"warning":{"v":"#ea9b11","t":"color","s":"css-var --nd-color-bgWarning (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"danger":{"v":"#fff5f5","t":"color","s":"css-var --theme-ui-colors-fg-error (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"info":{"v":"#1197de","t":"color","s":"css-var --theme-ui-colors-fg-blue (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"},"errorSurface":{"v":"#a4060b","t":"color","s":"css-var --nd-color-bgError (dark), raw/css-vars.json, nextdoor.com homepage 2026-11-21"}}}};
+const roles = ["page","surface","elevated","text","muted","accent","border","link","danger","warning","info"];
+const box = document.getElementById("roles");
+for (const name of roles) {
+  const t = T.light.color[name];
+  if (!t) continue;
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = `<i style="background:${t.v}"></i><b>${name}</b><span>${t.v}</span>`;
+  box.appendChild(el);
+}
+const green = document.getElementById("green");
+for (const [step, t] of Object.entries(T.core.color.green)) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = `<i style="background:${t.v}"></i><b>${step}</b><span>${t.v}</span>`;
+  green.appendChild(el);
+}
+</script>
+</body>
+</html>
