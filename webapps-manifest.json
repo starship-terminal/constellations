@@ -4868,9 +4868,9 @@
       "description": "The onchain UX platform",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://reown.com/login is a 404. The email field on that page is a newsletter signup, not a sign-in.",
+      "notes": "Email probe: https://reown.com/login is a 404. The email field on that page is a newsletter signup, not a sign-in. Public walk 2026-11-21: marketing, docs, demo, and status loaded. Log in stops at https://dashboard.reown.com/sign-in and was not entered. Public package in PR 1500 at 3cf4f6ce5. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 15
     },
     {
