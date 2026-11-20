@@ -131,9 +131,9 @@ The small square icon button that closes the announcement bar. Measured, never p
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 28 x 28; radius 50%; background transparent; text Inter 13/20 400, #6b6b6b `color.muted`; transition background-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94); icon 15 x 15, #6b6b6b `color.muted` |
-| hover | background oklab(0.217772 0.00000990927 0.00000436604 / 0.06); text Inter 13/20 400, #1a1a1a `color.ink`; icon 15 x 15, #1a1a1a `color.ink` |
+| hover | background rgba(26, 26, 26, 0.06); text Inter 13/20 400, #1a1a1a `color.ink`; icon 15 x 15, #1a1a1a `color.ink` |
 | focus-visible | outline 2px solid #1a1a1a `color.ink`, offset 2px |
-| pressed | background oklab(0.217772 0.00000990927 0.00000436604 / 0.06); text Inter 13/20 400, #1a1a1a `color.ink`; icon 15 x 15, #1a1a1a `color.ink` |
+| pressed | background rgba(26, 26, 26, 0.06); text Inter 13/20 400, #1a1a1a `color.ink`; icon 15 x 15, #1a1a1a `color.ink` |
 
 ![Banner dismiss button default](components/crops/banner-dismiss-default.png) ![Banner dismiss button hover](components/crops/banner-dismiss-hover.png) ![Banner dismiss button focus-visible](components/crops/banner-dismiss-focus-visible.png) ![Banner dismiss button pressed](components/crops/banner-dismiss-pressed.png)
 
@@ -143,8 +143,8 @@ The floating bar over every page: brand lockup, the Product/Studio/Resources men
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 1440 x 64; background oklab(0.990761 -0.00032863 0.0012874 / 0.86); text Inter 14/21.7 400, #6b6b6b `color.muted`; transition box-shadow 0.24s cubic-bezier(0.25, 0.46, 0.45, 0.94); icon 101.95 x 14.44, #1a1a1a `color.ink` |
-| dark | background oklab(0.182191 0.0000082776 0.00000365078 / 0.86); text Inter 14/21.7 400, #a0a0a0; icon 101.95 x 14.44, #ededed |
+| default | size 1440 x 64; background rgba(252, 252, 251, 0.86); text Inter 14/21.7 400, #6b6b6b `color.muted`; transition box-shadow 0.24s cubic-bezier(0.25, 0.46, 0.45, 0.94); icon 101.95 x 14.44, #1a1a1a `color.ink` |
+| dark | background rgba(18, 18, 18, 0.86); text Inter 14/21.7 400, #a0a0a0; icon 101.95 x 14.44, #ededed |
 
 ![Top nav default](components/crops/header-default.png) ![Top nav dark](components/crops/header-dark.png)
 
@@ -305,7 +305,7 @@ A details/summary row in the questions list: hairline-separated, a plus/cross ma
 
 **Values (default).** size 840 x 150; border B: 1px solid rgba(0, 0, 0, 0.08) `color.line`; background transparent; text Inter 17/26 510, #1a1a1a `color.ink`; icon 21.21 x 21.21, #1a1a1a `color.ink`.
 
-Child layers that carry the look: details 840x150 border 1px rgba(0, 0, 0, 0.08) `color.line`; span 39.6x39.6 background oklab(0.217772 0.00000990927 0.00000436604 / 0.06) radius 50%.
+Child layers that carry the look: details 840x150 border 1px rgba(0, 0, 0, 0.08) `color.line`; span 39.6x39.6 background rgba(26, 26, 26, 0.06) radius 50%.
 
 ![FAQ accordion item default](components/crops/accordion-item-default.png)
 
@@ -315,7 +315,7 @@ The same details element measured closed: the first item ships open, and togglin
 
 **Values (default).** size 840 x 72; border B: 1px solid rgba(0, 0, 0, 0.08) `color.line`; background transparent; text Inter 17/26 510, #1a1a1a `color.ink`; icon 15 x 15, #1a1a1a `color.ink`.
 
-Child layers that carry the look: details 840x72 border 1px rgba(0, 0, 0, 0.08) `color.line`; span 28x28 background oklab(0.217772 0.00000990927 0.00000436604 / 0.06) radius 50%.
+Child layers that carry the look: details 840x72 border 1px rgba(0, 0, 0, 0.08) `color.line`; span 28x28 background rgba(26, 26, 26, 0.06) radius 50%.
 
 ![FAQ accordion, closed default](components/crops/accordion-closed-default.png)
 
@@ -340,9 +340,9 @@ The "What should your app do?" field on inner pages: a rounded field (radius-fie
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 640 x 130; background transparent; text Inter 12/18 500, #1a1a1a `color.ink`; icon 17 x 17, #6b6b6b `color.muted` |
-| hover | text Inter 16/24 400, oklab(0.527745 0.0000239611 0.0000105798 / 0.8) |
+| hover | text Inter 16/24 400, rgba(107, 107, 107, 0.8) |
 
-Child layers that carry the look: div 640x130 background #ffffff `color.card` border 1px oklab(0.217772 0.00000990927 0.00000436604 / 0.12) radius 22px shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px; span 1.5x18.4 background oklab(0.527745 0.0000239611 0.0000105798 / 0.8); button 37x21 background #fcfcfb `color.page` border 1px rgba(0, 0, 0, 0.08) `color.line` radius 6px.
+Child layers that carry the look: div 640x130 background #ffffff `color.card` border 1px rgba(26, 26, 26, 0.12) radius 22px shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px; span 1.5x18.4 background rgba(107, 107, 107, 0.8); button 37x21 background #fcfcfb `color.page` border 1px rgba(0, 0, 0, 0.08) `color.line` radius 6px.
 
 ![Prompt composer (new skin) default](components/crops/ff-composer-default.png) ![Prompt composer (new skin) hover](components/crops/ff-composer-hover.png)
 
@@ -363,9 +363,9 @@ The round submit arrow (type=submit). Measured, never pressed. Read as `ff-compo
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 36 x 36; radius 50%; background oklab(0.217772 0.00000990927 0.00000436604 / 0.08); text Inter 16/24.8 400, oklab(0.217772 0.00000990927 0.00000436604 / 0.4); transition background-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94); icon 18 x 18, oklab(0.217772 0.00000990927 0.00000436604 / 0.4) |
+| default (same: hover) | size 36 x 36; radius 50%; background rgba(26, 26, 26, 0.08); text Inter 16/24.8 400, rgba(26, 26, 26, 0.4); transition background-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94); icon 18 x 18, rgba(26, 26, 26, 0.4) |
 | focus-visible | outline 2px solid #1a1a1a `color.ink`, offset 2px |
-| pressed | size 33.84 x 33.84; transform scale(0.94); icon 16.92 x 16.92, oklab(0.217772 0.00000990927 0.00000436604 / 0.4) |
+| pressed | size 33.84 x 33.84; transform scale(0.94); icon 16.92 x 16.92, rgba(26, 26, 26, 0.4) |
 
 ![Composer send button default](components/crops/ff-composer-go-default.png) ![Composer send button hover](components/crops/ff-composer-go-hover.png) ![Composer send button focus-visible](components/crops/ff-composer-go-focus-visible.png) ![Composer send button pressed](components/crops/ff-composer-go-pressed.png)
 
@@ -376,9 +376,9 @@ The "Use this idea" suggestion chip inside the composer. Read as `ff-composer-ke
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 37 x 21; padding 0px 7px; border T: 1px solid rgba(0, 0, 0, 0.08) `color.line`; R: 1px solid rgba(0, 0, 0, 0.08) `color.line`; B: 2px solid rgba(0, 0, 0, 0.08) `color.line`; L: 1px solid rgba(0, 0, 0, 0.08) `color.line`; radius 6px; background #fcfcfb `color.page`; text Inter 12/18 500, #1a1a1a `color.ink` |
-| hover | border T: 1px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.3); R: 1px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.3); B: 2px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.3); L: 1px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.3) |
+| hover | border T: 1px solid rgba(26, 26, 26, 0.3); R: 1px solid rgba(26, 26, 26, 0.3); B: 2px solid rgba(26, 26, 26, 0.3); L: 1px solid rgba(26, 26, 26, 0.3) |
 | focus-visible | outline 2px solid #1a1a1a `color.ink`, offset 2px |
-| pressed | border T: 1px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.3); R: 1px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.3); B: 2px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.3); L: 1px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.3) |
+| pressed | border T: 1px solid rgba(26, 26, 26, 0.3); R: 1px solid rgba(26, 26, 26, 0.3); B: 2px solid rgba(26, 26, 26, 0.3); L: 1px solid rgba(26, 26, 26, 0.3) |
 
 ![Idea key chip default](components/crops/ff-composer-key-default.png) ![Idea key chip hover](components/crops/ff-composer-key-hover.png) ![Idea key chip focus-visible](components/crops/ff-composer-key-focus-visible.png) ![Idea key chip pressed](components/crops/ff-composer-key-pressed.png)
 
@@ -388,10 +388,10 @@ The hero prompt field: a large rounded card with the ghost idea text, the Tab hi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 720 x 130; background transparent; text Inter 16/24 400, oklab(0.527745 0.0000239611 0.0000105798 / 0.8); icon 17 x 17, #6b6b6b `color.muted` |
-| dark | text Inter 16/24 400, oklab(0.705739 0.0000320971 0.0000140667 / 0.8); icon 17 x 17, #a0a0a0 |
+| default (same: hover) | size 720 x 130; background transparent; text Inter 16/24 400, rgba(107, 107, 107, 0.8); icon 17 x 17, #6b6b6b `color.muted` |
+| dark | text Inter 16/24 400, rgba(160, 160, 160, 0.8); icon 17 x 17, #a0a0a0 |
 
-Child layers that carry the look: div 720x130 background #ffffff `color.card` border 1px oklab(0.217772 0.00000990927 0.00000436604 / 0.12) radius 22px shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px; span 1.5x18.4 background oklab(0.527745 0.0000239611 0.0000105798 / 0.8); button 39x21 background #fcfcfb `color.page` border 1px rgba(0, 0, 0, 0.07) `legacy.edge` radius 6px.
+Child layers that carry the look: div 720x130 background #ffffff `color.card` border 1px rgba(26, 26, 26, 0.12) radius 22px shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px; span 1.5x18.4 background rgba(107, 107, 107, 0.8); button 39x21 background #fcfcfb `color.page` border 1px rgba(0, 0, 0, 0.07) `legacy.edge` radius 6px.
 
 ![Prompt composer (home skin) default](components/crops/composer-default.png) ![Prompt composer (home skin) hover](components/crops/composer-hover.png) ![Prompt composer (home skin) dark](components/crops/composer-dark.png)
 
@@ -410,7 +410,7 @@ The prompt textarea; text was typed and deleted, nothing sent. Read as `composer
 #### Composer ghost idea
 The suggested prompt painted as placeholder ghost text. Read as `composer-ghost` on the home page.
 
-**Values (default).** size 225 x 20; background transparent; text Inter 16/24 400, oklab(0.527745 0.0000239611 0.0000105798 / 0.8).
+**Values (default).** size 225 x 20; background transparent; text Inter 16/24 400, rgba(107, 107, 107, 0.8).
 
 ![Composer ghost idea default](components/crops/composer-ghost-default.png)
 
@@ -421,9 +421,9 @@ The previous/next idea arrows in the composer. Read as `composer-nav` on the hom
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 30 x 30; radius 50%; background transparent; text Inter 16/24.8 400, #6b6b6b `color.muted`; transition background-color 0.15s ease, color 0.15s ease; icon 17 x 17, #6b6b6b `color.muted` |
-| hover | background oklab(0.217772 0.00000990927 0.00000436604 / 0.06); text Inter 16/24.8 400, #1a1a1a `color.ink`; icon 17 x 17, #1a1a1a `color.ink` |
+| hover | background rgba(26, 26, 26, 0.06); text Inter 16/24.8 400, #1a1a1a `color.ink`; icon 17 x 17, #1a1a1a `color.ink` |
 | focus-visible | size 0 x 0; icon none |
-| pressed | size 0 x 0; background oklab(0.217772 0.00000990927 0.00000436604 / 0.06); text Inter 16/24.8 400, #1a1a1a `color.ink`; icon none |
+| pressed | size 0 x 0; background rgba(26, 26, 26, 0.06); text Inter 16/24.8 400, #1a1a1a `color.ink`; icon none |
 
 ![Idea nav button default](components/crops/composer-nav-default.png) ![Idea nav button hover](components/crops/composer-nav-hover.png)
 
@@ -435,7 +435,7 @@ The "Use this idea" chip under the ghost text (home skin); only painted in the d
 |---|---|
 | default | size 39 x 21; padding 0px 7px; border T: 1px solid rgba(0, 0, 0, 0.07) `legacy.edge`; R: 1px solid rgba(0, 0, 0, 0.07) `legacy.edge`; B: 2px solid rgba(0, 0, 0, 0.07) `legacy.edge`; L: 1px solid rgba(0, 0, 0, 0.07) `legacy.edge`; radius 6px; background #fcfcfb `color.page`; text Inter 12/18 500, #1a1a1a `color.ink` |
 | focus-visible | size 0 x 0 |
-| pressed | size 0 x 0; border T: 1px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.3); R: 1px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.3); B: 2px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.3); L: 1px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.3) |
+| pressed | size 0 x 0; border T: 1px solid rgba(26, 26, 26, 0.3); R: 1px solid rgba(26, 26, 26, 0.3); B: 2px solid rgba(26, 26, 26, 0.3); L: 1px solid rgba(26, 26, 26, 0.3) |
 
 ![Idea key chip default](components/crops/composer-key-default.png)
 
@@ -445,9 +445,9 @@ The round submit arrow in the composer (type=submit). Measured, never pressed. R
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 36 x 36; radius 50%; background oklab(0.217772 0.00000990927 0.00000436604 / 0.08); text Inter 16/24.8 400, oklab(0.217772 0.00000990927 0.00000436604 / 0.4); transition background-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94); icon 18 x 18, oklab(0.217772 0.00000990927 0.00000436604 / 0.4) |
+| default (same: hover) | size 36 x 36; radius 50%; background rgba(26, 26, 26, 0.08); text Inter 16/24.8 400, rgba(26, 26, 26, 0.4); transition background-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94); icon 18 x 18, rgba(26, 26, 26, 0.4) |
 | focus-visible | outline 2px solid #0a68e0 `color.accent`, offset 2px |
-| pressed | size 33.84 x 33.84; transform scale(0.94); icon 16.92 x 16.92, oklab(0.217772 0.00000990927 0.00000436604 / 0.4) |
+| pressed | size 33.84 x 33.84; transform scale(0.94); icon 16.92 x 16.92, rgba(26, 26, 26, 0.4) |
 
 ![Send button default](components/crops/composer-go-default.png) ![Send button hover](components/crops/composer-go-hover.png) ![Send button focus-visible](components/crops/composer-go-focus-visible.png) ![Send button pressed](components/crops/composer-go-pressed.png)
 
@@ -461,7 +461,7 @@ The enterprise inquiry form: a carded column of labelled fields, topic radios, t
 
 **Values (default).** size 904 x 952; padding 64px 0px 64px 64px; background transparent; text Inter 14/20 510, #1a1a1a `color.ink`.
 
-Child layers that carry the look: input 410x44 background #ffffff `color.card` border 1px oklab(0.217772 0.00000990927 0.00000436604 / 0.12) radius 999px shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px; input 410x44 background #ffffff `color.card` border 1px oklab(0.217772 0.00000990927 0.00000436604 / 0.12) radius 999px shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px; input 410x44 background #ffffff `color.card` border 1px oklab(0.217772 0.00000990927 0.00000436604 / 0.12) radius 999px shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px.
+Child layers that carry the look: input 410x44 background #ffffff `color.card` border 1px rgba(26, 26, 26, 0.12) radius 999px shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px; input 410x44 background #ffffff `color.card` border 1px rgba(26, 26, 26, 0.12) radius 999px shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px; input 410x44 background #ffffff `color.card` border 1px rgba(26, 26, 26, 0.12) radius 999px shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px.
 
 ![Contact form default](components/crops/contact-form-default.png)
 
@@ -471,7 +471,7 @@ One form row: label (.ff-fld-l), the control (.ff-fld-i), an optional hint and t
 
 **Values (default).** size 410 x 72; background transparent; text Inter 14/20 510, #1a1a1a `color.ink`.
 
-Child layers that carry the look: input 410x44 background #ffffff `color.card` border 1px oklab(0.217772 0.00000990927 0.00000436604 / 0.12) radius 999px shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px.
+Child layers that carry the look: input 410x44 background #ffffff `color.card` border 1px rgba(26, 26, 26, 0.12) radius 999px shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px.
 
 ![Field wrapper default](components/crops/field-default.png)
 
@@ -489,8 +489,8 @@ A .ff-fld-i input: --ff-color-card fill, hairline border, radius-field-tall, --f
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 410 x 44; padding 0px 18px; border 1px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.12); radius 999px; background #ffffff `color.card`; shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px; text Inter 16/24 400, #1a1a1a `color.ink`; transition border-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94); placeholder oklab(0.527745 0.0000239611 0.0000105798 / 0.8) |
-| focused, filled | border 1px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.4); shadow rgba(26, 26, 26, 0.06) 0px 0px 0px 4px, rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px |
+| default (same: hover) | size 410 x 44; padding 0px 18px; border 1px solid rgba(26, 26, 26, 0.12); radius 999px; background #ffffff `color.card`; shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px; text Inter 16/24 400, #1a1a1a `color.ink`; transition border-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94); placeholder rgba(107, 107, 107, 0.8) |
+| focused, filled | border 1px solid rgba(26, 26, 26, 0.4); shadow rgba(26, 26, 26, 0.06) 0px 0px 0px 4px, rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px |
 
 ![Text field hover](components/crops/text-field-hover.png) ![Text field focused](components/crops/text-field-focused.png) ![Text field filled](components/crops/text-field-filled.png)
 
@@ -500,8 +500,8 @@ Read as `textarea` on the enterprise page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 840 x 122; padding 12px 18px; border 1px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.12); radius 22px; background #ffffff `color.card`; shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px; text Inter 16/24 400, #1a1a1a `color.ink`; transition border-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94); placeholder oklab(0.527745 0.0000239611 0.0000105798 / 0.8) |
-| focused | border 1px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.4); shadow rgba(26, 26, 26, 0.06) 0px 0px 0px 4px, rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px |
+| default | size 840 x 122; padding 12px 18px; border 1px solid rgba(26, 26, 26, 0.12); radius 22px; background #ffffff `color.card`; shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px; text Inter 16/24 400, #1a1a1a `color.ink`; transition border-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94); placeholder rgba(107, 107, 107, 0.8) |
+| focused | border 1px solid rgba(26, 26, 26, 0.4); shadow rgba(26, 26, 26, 0.06) 0px 0px 0px 4px, rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px |
 
 ![Text area default](components/crops/textarea-default.png) ![Text area focused](components/crops/textarea-focused.png)
 
@@ -509,7 +509,7 @@ Read as `textarea` on the enterprise page.
 #### Topic radio
 A native radio in the topic list; the checked state is the accent dot. Read as `radio` on the enterprise page.
 
-**Values (default).** size 18 x 18; border 1px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.3); radius 50%; background #ffffff `color.card`; text Arial 13.33/normal 400, #000000 `color.statusbar-ink`; transition background-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94); placeholder #000000 `color.statusbar-ink`.
+**Values (default).** size 18 x 18; border 1px solid rgba(26, 26, 26, 0.3); radius 50%; background #ffffff `color.card`; text Arial 13.33/normal 400, #000000 `color.statusbar-ink`; transition background-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94); placeholder #000000 `color.statusbar-ink`.
 
 ![Topic radio default](components/crops/radio-default.png)
 
@@ -527,8 +527,8 @@ A role=combobox button styled as a field (.ff-fld-i.ff-sel-t); opens .ff-sel-p l
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 410 x 44; padding 0px 44px 0px 18px; border 1px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.12); radius 999px; background #ffffff `color.card`; image an image (data URI); shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px; text Inter 16/24 400, #6b6b6b `color.muted`; transition border-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94) |
-| focus-visible | border 1px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.4); shadow rgba(26, 26, 26, 0.06) 0px 0px 0px 4px, rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px |
+| default (same: hover, pressed) | size 410 x 44; padding 0px 44px 0px 18px; border 1px solid rgba(26, 26, 26, 0.12); radius 999px; background #ffffff `color.card`; image an image (data URI); shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px; text Inter 16/24 400, #6b6b6b `color.muted`; transition border-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94) |
+| focus-visible | border 1px solid rgba(26, 26, 26, 0.4); shadow rgba(26, 26, 26, 0.06) 0px 0px 0px 4px, rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px |
 
 ![Select (custom combobox) default](components/crops/select-default.png) ![Select (custom combobox) hover](components/crops/select-hover.png) ![Select (custom combobox) focus-visible](components/crops/select-focus-visible.png)
 
@@ -538,8 +538,8 @@ A role=combobox button styled as a field (.ff-fld-i.ff-sel-t); opens .ff-sel-p l
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 410 x 44; padding 0px 44px 0px 18px; border 1px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.12); radius 999px; background #ffffff `color.card`; image an image (data URI); shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px; text Inter 16/24 400, #6b6b6b `color.muted`; transition border-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94) |
-| focus-visible | border 1px solid oklab(0.217772 0.00000990927 0.00000436604 / 0.4); shadow rgba(26, 26, 26, 0.06) 0px 0px 0px 4px, rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px |
+| default (same: hover, pressed) | size 410 x 44; padding 0px 44px 0px 18px; border 1px solid rgba(26, 26, 26, 0.12); radius 999px; background #ffffff `color.card`; image an image (data URI); shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px; text Inter 16/24 400, #6b6b6b `color.muted`; transition border-color 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94) |
+| focus-visible | border 1px solid rgba(26, 26, 26, 0.4); shadow rgba(26, 26, 26, 0.06) 0px 0px 0px 4px, rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px |
 
 ![Custom select trigger default](components/crops/select-trigger-default.png) ![Custom select trigger hover](components/crops/select-trigger-hover.png) ![Custom select trigger focus-visible](components/crops/select-trigger-focus-visible.png) ![Custom select trigger pressed](components/crops/select-trigger-pressed.png)
 
@@ -631,7 +631,7 @@ Read as `accordion-item-product` on the product page.
 
 **Values (default).** size 840 x 176; border B: 1px solid rgba(0, 0, 0, 0.08) `color.line`; background transparent; text Inter 17/26 510, #1a1a1a `color.ink`; icon 21.21 x 21.21, #1a1a1a `color.ink`.
 
-Child layers that carry the look: details 840x176 border 1px rgba(0, 0, 0, 0.08) `color.line`; span 39.6x39.6 background oklab(0.217772 0.00000990927 0.00000436604 / 0.06) radius 50%.
+Child layers that carry the look: details 840x176 border 1px rgba(0, 0, 0, 0.08) `color.line`; span 39.6x39.6 background rgba(26, 26, 26, 0.06) radius 50%.
 
 ![FAQ accordion item (product) default](components/crops/accordion-item-product-default.png)
 
@@ -692,9 +692,9 @@ The small outline "Replay" control on the demo panels (.ff-pbtn-outline). Read a
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 92 x 32; padding 0px 12px; radius 24px; background transparent; shadow #dedede 0px 0px 0px 1px inset; text Inter 14/21.7 500, #1a1a1a `color.ink`; transition background 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease; icon 16 x 16, #1a1a1a `color.ink` |
-| hover | background oklab(0.795543 0.0000361949 0.0000159889); shadow #a3a3a3 0px 0px 0px 1px inset |
+| hover | background #bcbcbc; shadow #a3a3a3 0px 0px 0px 1px inset |
 | focus-visible | outline 2px solid #1a1a1a `color.ink`, offset 2px |
-| pressed | background oklab(0.795543 0.0000361949 0.0000159889); shadow #a3a3a3 0px 0px 0px 1px inset |
+| pressed | background #bcbcbc; shadow #a3a3a3 0px 0px 0px 1px inset |
 
 ![Replay button default](components/crops/replay-btn-default.png) ![Replay button hover](components/crops/replay-btn-hover.png) ![Replay button focus-visible](components/crops/replay-btn-focus-visible.png) ![Replay button pressed](components/crops/replay-btn-pressed.png)
 
@@ -702,9 +702,9 @@ The small outline "Replay" control on the demo panels (.ff-pbtn-outline). Read a
 #### Home hero
 The first band: the two-line display headline, the lede, the prompt composer and the check line, over the page ground with its grain texture. Read as `home-hero` on the home page.
 
-**Values (default).** size 1344 x 651.13; padding 115.2px 0px 0px 0px; background transparent; text Inter 14/20 500, oklab(0.449669 -0.0000916526 0.000389276); icon 12.2 x 15, #1a1a1a `color.ink`.
+**Values (default).** size 1344 x 651.13; padding 115.2px 0px 0px 0px; background transparent; text Inter 14/20 500, #555555 `color.ink-soft`; icon 12.2 x 15, #1a1a1a `color.ink`.
 
-Child layers that carry the look: p 191.1x34 background oklab(0.999994 0.0000455677 0.0000200868 / 0.6) radius 999px shadow rgba(0, 0, 0, 0.08) `color.line` 0px 0px 0px 1px inset; i 1x12 background oklab(0.217772 0.00000990927 0.00000436604 / 0.14); div 720x130 background #ffffff `color.card` border 1px oklab(0.217772 0.00000990927 0.00000436604 / 0.12) radius 22px shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px.
+Child layers that carry the look: p 191.1x34 background rgba(255, 255, 255, 0.6) radius 999px shadow rgba(0, 0, 0, 0.08) `color.line` 0px 0px 0px 1px inset; i 1x12 background rgba(26, 26, 26, 0.14); div 720x130 background #ffffff `color.card` border 1px rgba(26, 26, 26, 0.12) radius 22px shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -841,7 +841,7 @@ A few components as a phone draws them, at 390 x 844 with a mobile user agent: t
 #### Top nav (390)
 The 390-wide bar: brand, the Open menu icon button. Read as `m-nav` on the home page at 390 wide.
 
-**Values (default).** size 390 x 56; background oklab(0.990761 -0.00032863 0.0012874 / 0.86); text Inter 13/20.15 510, #ffffff `color.card`; transition box-shadow 0.24s cubic-bezier(0.25, 0.46, 0.45, 0.94); icon 91.69 x 12.98, #1a1a1a `color.ink`.
+**Values (default).** size 390 x 56; background rgba(252, 252, 251, 0.86); text Inter 13/20.15 510, #ffffff `color.card`; transition box-shadow 0.24s cubic-bezier(0.25, 0.46, 0.45, 0.94); icon 91.69 x 12.98, #1a1a1a `color.ink`.
 
 ![Top nav (390) default](components/crops/m-nav-default.png)
 
@@ -871,9 +871,9 @@ Read as `m-menu-close` on the home page at 390 wide.
 #### Composer (390)
 Read as `m-composer` on the home page at 390 wide.
 
-**Values (default).** size 350 x 170; background transparent; text Inter 16/24 400, oklab(0.527745 0.0000239611 0.0000105798 / 0.8); icon 17 x 17, #6b6b6b `color.muted`.
+**Values (default).** size 350 x 170; background transparent; text Inter 16/24 400, rgba(107, 107, 107, 0.8); icon 17 x 17, #6b6b6b `color.muted`.
 
-Child layers that carry the look: div 350x170 background #ffffff `color.card` border 1px oklab(0.217772 0.00000990927 0.00000436604 / 0.12) radius 22px shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px; span 1.5x18.4 background oklab(0.527745 0.0000239611 0.0000105798 / 0.8); button 50x21 background #fcfcfb `color.page` border 1px rgba(0, 0, 0, 0.07) `legacy.edge` radius 6px.
+Child layers that carry the look: div 350x170 background #ffffff `color.card` border 1px rgba(26, 26, 26, 0.12) radius 22px shadow rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px; span 1.5x18.4 background rgba(107, 107, 107, 0.8); button 50x21 background #fcfcfb `color.page` border 1px rgba(0, 0, 0, 0.07) `legacy.edge` radius 6px.
 
 ![Composer (390) default](components/crops/m-composer-default.png)
 
