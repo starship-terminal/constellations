@@ -614,8 +614,11 @@ for key, comp, state, prop, group, prefer, desc in [
 ]:
     try:
         if prop == "_page":
-            raw = "#ffffff"
-            src = "the painted field of /, /movies/, /events/ (screenshots/home-default.png); matches declared --color-background-primary"
+            # No light-pass element reports the page field; read the declared role the
+            # pages paint it with, not a screenshot pixel.
+            raw = R["--color-background-primary"]
+            src = ("declared --color-background-primary (raw/css-vars.json resolved.light); no computed reading "
+                   "of the light page field (seen in screenshots/home-default.png)")
         elif prop == "_ctaLabel":
             raw = C[comp]["states"][state]["textStyle"]["color"]
             src = f"computed label colour of {comp} {state} (raw/components-computed.json)"
@@ -643,8 +646,8 @@ for key, comp, state, prop, group, prefer, desc in [
 ]:
     try:
         if prop == "_darkink":
-            raw = "#f7f7f7"
-            src = "the repainted nav/tab ink under data-theme=dark (screenshots/home-dark-default.png); matches declared --color-text-primary dark"
+            raw = st(comp, state)["color"]
+            src = f"computed color of {comp} {state}, the repainted nav ink under data-theme=dark (raw/components-computed.json)"
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
@@ -653,6 +656,25 @@ for key, comp, state, prop, group, prefer, desc in [
         pass
 
 # ------------------------------------------------------------- type ramp
+
+# Components whose selector caught another element in the 2026-11 run (the
+# README's Known gaps; the capture script is fixed by edit, not yet re-run).
+# A token read from one says so, so a wrong-element reading never ships as the
+# component it is named for.
+# Each is flagged only while its reading still shows the fault, so a good
+# recapture clears it.
+def _rect(k):
+    return C[k]["states"]["default"].get("rect") or {}
+
+
+_OFFSCREEN = lambda k: _rect(k).get("x", 0) + _rect(k).get("w", 0) <= 0
+WRONG_ELEMENT = {k: what for k, what, bad in [
+    ("mv-h1", "an off-screen carousel slide title, not the listing heading", _OFFSCREEN),
+    ("ev-h1", "an off-screen carousel slide title, not the listing heading", _OFFSCREEN),
+    ("cm-h1", "an off-screen carousel slide title, not the listing heading", _OFFSCREEN),
+    ("cm-filter", "the 632x500 sort dropdown panel, not a filter control", lambda k: _rect(k).get("h", 0) >= 200),
+    ("at-book", "the same show card as at-show, not a booking control", lambda k: "at-show" in C and _rect(k) == _rect("at-show")),
+] if k in C and bad(k)}
 
 ty = SPEC["core"].setdefault("font", {}).setdefault("size", {})
 for key, comp, state, desc in [
@@ -745,6 +767,19 @@ for name, cname, state, prop, ty_, desc in [
                          ty_, f"measured {prop} of {cname} {state} (raw/components-computed.json)", desc)
     except KeyError:
         pass
+
+def note_wrong(node):
+    if isinstance(node, dict):
+        src = node.get("source")
+        if isinstance(src, str):
+            for k, what in WRONG_ELEMENT.items():
+                if re.search(rf"(?<![\w-]){re.escape(k)}(?![\w-])", src) and "read from the wrong element" not in src:
+                    node["source"] = src = src + f"; {k} caught {what} (read from the wrong element; recapture needed)"
+        for v in node.values():
+            note_wrong(v)
+
+
+note_wrong(SPEC)
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
 print("component-tokens.json:", {k: len(v) for k, v in SPEC.items() if k != "_about"})
