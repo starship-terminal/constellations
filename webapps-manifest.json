@@ -4851,9 +4851,9 @@
       "description": "Websites designed & built faster with AI",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.relume.ai/app/login shows email and password, or Google or SSO. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 15
     },
     {
@@ -4868,9 +4868,9 @@
       "description": "The onchain UX platform",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://reown.com/login is a 404. The email field on that page is a newsletter signup, not a sign-in.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 15
     },
     {
@@ -4885,9 +4885,9 @@
       "description": "Landing page builder & optimization tools for Shopify",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: marketing /login is 404. https://dashboard.replo.app/auth/login shows email and password, or Google. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 15
     },
     {
@@ -4902,9 +4902,9 @@
       "description": "Email for developers",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://resend.com/login shows email, or Google or GitHub. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 15
     },
     {
@@ -4919,9 +4919,9 @@
       "description": "Create a job-winning resume",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://resume.io/app/auth/sign-in Email path emailed a confirmation link to the capture inbox. Link not opened.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 15
     },
     {
@@ -4936,9 +4936,9 @@
       "description": "Build internal tools, remarkably fast",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://login.retool.com/auth/login shows email and password, or Google, or a login link. Login link not requested. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 15
     },
     {
@@ -4953,9 +4953,9 @@
       "description": "In-App Subscriptions Made Easy",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://app.revenuecat.com/login asked for email, then showed a password field. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 15
     },
     {
@@ -4970,9 +4970,9 @@
       "description": "All-in-one Finance App for your Money",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://sso.revolut.com/signin email path accepted the capture inbox and asked for a passcode. Passcode not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 15
     },
     {
@@ -4987,9 +4987,9 @@
       "description": "Crypto Solutions for Business",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: Customer Login at https://home.ripple.com/ opens Auth0 with email and password. Password not submitted. Cookie banner denied.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 15
     },
     {
@@ -5004,9 +5004,9 @@
       "description": "Helps you and your team stay organized and on track, with all your work in one place",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://risecalendar.com/ announces the product shut down on 27 January 2025. /login is 404.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 15
     },
     {
@@ -5021,9 +5021,9 @@
       "description": "Build interactive motion graphics that run anywhere",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://rive.app/login/ shows email or username and password, or Google or SSO. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 15
     },
     {
@@ -5038,9 +5038,9 @@
       "description": "HD Podcast & Video Software",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://riverside.com/login shows email and password, or SSO. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 15
     },
     {
@@ -5055,9 +5055,9 @@
       "description": "Electric adventure vehicles",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://rivian.com/auth/login shows email and password. Password not submitted. Cookie banner rejected.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 15
     },
     {
@@ -5072,9 +5072,9 @@
       "description": "Commission-free Stock Trading & Investing App",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://robinhood.com/login shows email and password, or Google or Apple. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 15
     },
     {
@@ -5089,9 +5089,9 @@
       "description": "Create a mobile app using AI in minutes",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://rork.com/auth?from=header&mode=login emailed a 6-digit code to the capture inbox. Code not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 15
     },
     {
@@ -5106,9 +5106,9 @@
       "description": "Radio Reinvented",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://www.rovr.live/sign-in shows email and password. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 15
     },
     {
@@ -5123,9 +5123,9 @@
       "description": "The spreadsheet with superpowers",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://rows.com/ says Rows joined Superhuman and points inquiries to support. No sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 15
     },
     {
@@ -5140,9 +5140,9 @@
       "description": "Revenue Agents for the Global 2000",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://rox.com/login Auth0 business-email step then asked for a password. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 15
     },
     {
@@ -5157,9 +5157,9 @@
       "description": "Invoices, Projects & Clients in One Place",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://runey.app/auth shows email and password, or Google. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 15
     },
     {
@@ -5174,9 +5174,9 @@
       "description": "Tools for human imagination.",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Email probe: https://auth.runwayml.com sign-in shows username or email and password. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 15
     },
     {
