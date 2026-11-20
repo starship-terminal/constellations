@@ -108,7 +108,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--border-default, rgba(15,15,
   <div id="elev-out" class="kv"></div>
 
   <h2 class="sh">Type</h2>
-  <p class="lead">Three voices: <code>ManyChatGravity</code> for display, <code>Rooftop</code> for UI, <code>CoFo Sans Mono</code> for nav labels. Sizes are rem against a 10px root (h1 7.2rem is 72px at 1440). Samples fall back to system faces.</p>
+  <p class="lead">Three voices: <code>ManyChatGravity</code> for display, <code>Rooftop</code> for UI, <code>CoFo Sans Mono</code> for nav labels. Sizes are px, resolved from rem against the 10px root (h1 7.2rem is 72px at 1440). Samples fall back to system faces.</p>
   <div id="type-out"></div>
   <div id="fam-out" class="kv"></div>
 
@@ -171,8 +171,10 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   let h = '';
   for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
     const v = t.v || {};
-    const rem = parseFloat(v.fontSize);
-    const px = Number.isFinite(rem) ? Math.min(rem * 10, 72) : 16;
+    // Sizes are px (the builder resolves the authored rem at the site's 10px root); a rem value is still
+    // read at 10px. Samples are capped at 72px.
+    const size = parseFloat(v.fontSize);
+    const px = Number.isFinite(size) ? Math.min(String(v.fontSize).endsWith('rem') ? size * 10 : size, 72) : 16;
     const family = String(v.fontFamily || '').replace(/\{font\.family\.([^}]+)\}/, (_, key) => (TOK.core.font && TOK.core.font.family && TOK.core.font.family[key] && TOK.core.font.family[key].v) || 'inherit');
     h += `<div class="tr"><span class="ts" style="font-family:${esc(family)};font-weight:${esc(v.fontWeight || 400)};font-size:${px}px;line-height:${esc(v.lineHeight || 1.2)};letter-spacing:${esc(v.letterSpacing || '0')}">${esc(n)}: Social smarter</span><span class="tv">${esc(v.fontSize)} / ${esc(v.lineHeight)} / ${esc(v.fontWeight)}</span></div>`;
   }

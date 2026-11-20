@@ -26,5 +26,13 @@ class BuildTokens(unittest.TestCase):
         self.assertEqual(tokens["$metadata"]["tokenSetOrder"], [k for k in ("core", "light", "dark") if k in tokens])
 
 
+
+class StyleGuide(unittest.TestCase):
+    def test_type_samples_read_px(self):
+        # The table multiplied every size by 10 (a rem rule), so px sizes all hit the 72px cap.
+        tpl = (PKG / "tools" / "style-guide.template.html").read_text()
+        self.assertNotIn("Math.min(rem * 10, 72)", tpl)
+        self.assertIn("endsWith('rem') ? size * 10 : size", tpl)
+
 if __name__ == "__main__":
     unittest.main()
