@@ -21,6 +21,7 @@ hume.ai is worth a capture because the product line pivoted from EVI/Octave TTS 
 | [raw/](raw) | The evidence: `css-vars.json` (the four-surface stylesheet harvest — resolved custom properties per theme plus the palette literals), `components-computed.json` (every measurement), `measurements.md` (readable tables), `layout.json` (multi-width geometry over 27 page/viewport pairs), `motion.json` (the reduced-motion probe), `component-tokens.json` (the token-tree spec). |
 | [tools/](tools) | The builders and the capture kit (see Rebuild). |
 | [capture.pr](capture.pr) | The pull request that shipped this capture. |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, dialog, or interaction. Mapped 2026-11-21 from the live header. It does not replace the 2026-11-17/18 captures. |
 
 ## How the values were read
 
