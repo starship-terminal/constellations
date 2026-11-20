@@ -58,19 +58,35 @@ h2 { font-size: 18px; margin: 32px 0 12px; }
 <script>
 const TOK = /*TOKENS*/null;
 const themeBox = document.getElementById("theme");
+// Leaves only, with their path as the name: a group (color.component) is walked, never painted.
+function leaves(node, prefix, out) {
+  for (const [k, v] of Object.entries(node || {})) {
+    if (v && typeof v === "object" && "v" in v && "t" in v) out.push([prefix + k, v]);
+    else if (v && typeof v === "object") leaves(v, prefix + k + "-", out);
+  }
+  return out;
+}
+function el(tag, text) { const e = document.createElement(tag); if (text !== undefined) e.textContent = text; return e; }
+function show(v) { return typeof v === "object" ? JSON.stringify(v) : String(v); }
 function paint() {
   const mode = themeBox.checked ? "dark" : "light";
   document.documentElement.setAttribute("data-mode", mode);
-  const colors = TOK[mode].color || {};
-  document.getElementById("swatches").innerHTML = Object.entries(colors).map(([name, token]) => {
-    const value = token.v;
-    return `<div class="sw"><i style="background:${value}"></i><div><b>${name}</b><span>${value}</span></div></div>`;
-  }).join("");
-  const type = TOK.core.typography || {};
-  document.getElementById("type").innerHTML = Object.entries(type).map(([name, token]) => {
-    const v = token.v;
-    return `<p style="font-size:${v.fontSize};line-height:${v.lineHeight};font-weight:${v.fontWeight};letter-spacing:${v.letterSpacing};margin:8px 0"><b>${name}</b> ${v.fontSize} / ${v.lineHeight}</p>`;
-  }).join("");
+  const sw = document.getElementById("swatches");
+  sw.replaceChildren();
+  for (const [name, token] of leaves(TOK[mode].color, "", [])) {
+    const card = el("div"); card.className = "sw";
+    const chip = el("i"); if (token.t === "color") chip.style.background = "var(--color-" + name + ")";
+    const label = el("div"); label.append(el("b", name), el("span", show(token.v)));
+    card.append(chip, label); sw.appendChild(card);
+  }
+  const ty = document.getElementById("type");
+  ty.replaceChildren();
+  for (const [name, token] of leaves(TOK.core.typography, "", [])) {
+    const p = el("p"); p.style.font = "var(--typography-" + name + ")"; p.style.margin = "8px 0";
+    if (token.v && typeof token.v === "object") p.style.letterSpacing = String(token.v.letterSpacing || "");
+    p.append(el("b", name), document.createTextNode(" " + (typeof token.v === "object" ? token.v.fontSize + " / " + token.v.lineHeight : show(token.v))));
+    ty.appendChild(p);
+  }
 }
 themeBox.addEventListener("change", paint);
 paint();
