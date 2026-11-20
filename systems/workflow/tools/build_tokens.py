@@ -16,6 +16,7 @@ same bytes.
 """
 import json
 import pathlib
+import re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
@@ -288,9 +289,80 @@ def main():
             "Prices on /pricing ($16 yearly, $20 monthly) are not tokens.",
         ]
     }
+    check(doc)
     out = HERE / "tokens.json"
     out.write_text(json.dumps(doc, indent=2) + "\n")
     print(f"wrote {out}")
+
+
+# ---------------------------------------------------------------- check (finding 16-6)
+
+def _token_paths(node, path=""):
+    for key, value in node.items():
+        if key.startswith("$") or not isinstance(value, dict):
+            continue
+        if "$value" in value:
+            yield f"{path}{key}", value
+        else:
+            yield from _token_paths(value, f"{path}{key}.")
+
+
+def _aliases(value):
+    if isinstance(value, str):
+        return re.findall(r"\{([^{}]+)\}", value)
+    if isinstance(value, dict):
+        return [a for v in value.values() for a in _aliases(v)]
+    if isinstance(value, list):
+        return [a for v in value for a in _aliases(v)]
+    return []
+
+
+def _follow(flat, s, ref, seen):
+    """Follow an alias chain: each name resolves in the set it is read from, then core, then the
+    root (the Resolver's order). Returns a problem string for a dead alias or a repeated token,
+    else None."""
+    # Own set, then core, then the root, where a set-qualified name such as core.color.white.solid
+    # names a token in that set. The next hop resolves from the set the target was found in.
+    candidates = [(s, ref), ("core", ref)]
+    if "." in ref:
+        candidates.append(tuple(ref.split(".", 1)))
+    found = next(((fs, fp) for fs, fp in candidates if fp in flat.get(fs, {})), None)
+    if found is None:
+        return f"alias {{{ref}}} resolves nowhere"
+    if found in seen:
+        return f"alias loop through {{{ref}}}"
+    target_set, target_path = found
+    for nxt in _aliases(flat[target_set][target_path]["$value"]):
+        err = _follow(flat, target_set, nxt, seen | {found})
+        if err:
+            return err
+    return None
+
+
+def check(doc):
+    """Refuse a token with no source, a colour that is neither #rrggbb(aa) nor one whole alias, an
+    alias that resolves in neither its own set nor core (the order tools/catalog.py's Resolver
+    uses), and an alias chain that comes back to a token it already passed. Raises SystemExit."""
+    sets = [s for s, v in doc.items() if not s.startswith("$") and isinstance(v, dict)]
+    flat = {s: dict(_token_paths(doc[s])) for s in sets}
+    core = flat.get("core", {})
+    problems = []
+    for s in sets:
+        for path, token in flat[s].items():
+            where = f"{s}.{path}"
+            if not token.get("$extensions", {}).get("source"):
+                problems.append(f"{where}: no source")
+            value = token["$value"]
+            for ref in _aliases(value):
+                err = _follow(flat, s, ref, {(s, path)})
+                if err:
+                    problems.append(f"{where}: {err}")
+            if token.get("$type") == "color":
+                whole_alias = isinstance(value, str) and re.fullmatch(r"\{[^{}]+\}", value)
+                if not whole_alias and not (isinstance(value, str) and re.fullmatch(r"#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?", value)):
+                    problems.append(f"{where}: colour {value!r} is not #rrggbb(aa) or one whole alias")
+    if problems:
+        raise SystemExit("token check failed:\n" + "\n".join(problems))
 
 
 if __name__ == "__main__":

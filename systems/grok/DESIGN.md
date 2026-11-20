@@ -215,11 +215,13 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **grok.com, x.ai, console.x.ai, status.x.ai, accounts.x.ai**: blocked at the edge — the Cloudflare managed challenge on grok.com never cleared headless or headed, and the sibling domains returned 403. Nothing on those surfaces was captured; the blocked attempts are the evidence. Do not present this package's tokens as the Grok chat product's tokens — they are the documentation portal's.
 - **Dark-only names**: `--border`, `--input`, `--ring`, `--alert`, `--on-alert`, `--background-level-*`, `--background-screen/-striped/-vignette`, `--content-*` and `--sb-*` are declared under `.dark` only; the light set has no values for them and none were inferred.
 - **Search results**: the cmdk dialog was opened and its resting suggestions measured; no query was ever typed, so result rows and the "Ask Grok" answer path are uncaptured.
 - **xVf/xMono rendering**: the faces are self-hosted and not shipped here; crops show them, the style guide falls back to system fonts.
 - **Pressed states** are DevTools-forced; a script-applied mousedown style would not show.
+- **`docs-cta` pressed equals its default.** The capture forced `:active` on the topmost node at the button's centre (a text span or svg), not the button, so the button's own `:active` rule never applied. The script now forces the component's own node (edited, not run); the committed pressed reading needs a recapture.
 - **Reduced motion**: the probe saw prefers-reduced-motion ignored on most pages (two pages partially honour it) — see `raw/motion.json`.
 
 ### Do and don't (from README.md)

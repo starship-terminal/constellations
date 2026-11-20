@@ -110,6 +110,7 @@ Nothing was bought, added to bag, joined, subscribed or signed into. The public 
 - **`color-tile` and `to-top` missed their selectors** on this pass (lazy Builder.io blocks); recorded as missing, visible in screenshots.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from the tokens.
 - **The PDP is a sample**, not a fixed product — see `pdp_url`.
+- **`pdp-swatch-picked` is not the swatch that was clicked.** The `:not(.active)` locator re-resolved after the click, so the picked reading is the next swatch (Navy at x=1006), not Black (x=960). Needs a recapture; the script now pins the swatch before the click (not run since).
 
 ## Fonts
 

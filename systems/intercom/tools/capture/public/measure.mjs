@@ -62,8 +62,8 @@ async function newPage(key, { mobile = false, wait = 8000, dsf } = {}) {
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, BASE + URLS[key], { wait });
-  if (await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); if (context === ctx) context = ctx0; return false; }
+  const loaded = await open(page, BASE + URLS[key], { wait });
+  if (!loaded || await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); if (context === ctx) context = ctx0; return false; }
   opened.add(key + '|' + view);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   await closePromo(page);
@@ -376,6 +376,13 @@ async function blog() {
 }
 
 async function footerGroup() {
+  // its own page, so the footer readings name the page they come from (it
+  // used to measure whatever page ran last; 2026-11 audit, not run since).
+  // Opening home for the footer must not count as a home run: the prune at
+  // the end deletes the readings of every page+view in `opened`.
+  const homeRan = opened.has('home|desktop');
+  if (!(await newPage('home'))) return;
+  if (!homeRan) opened.delete('home|desktop');
   const g = G.footer;
   await S('footer', q('footer'), ['default'], { group: g, title: 'Footer', desc: 'The site footer: link columns, social icons, the locale selector and legal row on the page ground.', sel: 'footer' });
   await S('footer-link', q('footer a'), B4, { group: g, title: 'Footer link', desc: 'A footer link (Saans, muted); focus-visible carries the site outline.', sel: 'footer a first' });

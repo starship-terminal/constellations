@@ -233,7 +233,7 @@ for key, comp, state, prop, desc in [
     try:
         if prop == "ancestor-white":
             hit = next((a.get("bg") for a in C[comp]["states"][state].get("ancestors", []) if a.get("bg")), None)
-            v = norm_color(hit) if hit else "#ffffff"
+            v = norm_color(hit) if hit else None  # no reading, no token (never a typed #ffffff)
         elif prop == "muted-text":
             v = norm_color((C[comp]["states"][state].get("textStyle") or {}).get("color"))
         elif prop == "footer-bg":
@@ -289,6 +289,22 @@ for name, target, desc in [
                            "source": "computed color of plan-cta / oauth-button labels (raw/components-computed.json)",
                            "description": desc})
 
+def read_somewhere(value, comps):
+    """True when one of comps' states reads `value` as a colour, fill, text colour or painted layer."""
+    want = norm_color(value)
+    for comp in comps:
+        for s in (C.get(comp) or {}).get("states", {}).values():
+            sty = s.get("style") or {}
+            pool = [sty.get(k) for k in ("color", "backgroundColor", "borderTopColor")]
+            pool += [(s.get("textStyle") or {}).get("color")]
+            pool += [x.get("bg") for x in s.get("paint") or []]
+            pool += [c for x in s.get("paint") or [] for c in re.findall(r"rgba?\([^)]*\)", str(x.get("shadow", "")))]
+            pool += re.findall(r"rgba?\([^)]*\)", str(sty.get("boxShadow", "")))
+            if any(v and norm_color(v) == want for v in pool):
+                return True
+    return False
+
+
 dark = SPEC["dark"]
 # The dark-painted band (header + hero + feature sections): white text and
 # fills are translucent so the gradient media shows through.
@@ -312,12 +328,19 @@ for name, target, desc in [
                              source=f"css-var {DARKSURF} resolved dark (raw/css-vars.json)",
                              description=desc))
     elif target == "DARKSURF":
+        # No resolved var holds the dark surface: keep the typed value, labelled as typed (D2).
         emit(dark, name, {"value": "#16171d", "type": "color",
-                          "source": "resolved .theme.dark surface value (raw/css-vars.json)",
+                          "source": "Reconstruction: entered by hand at capture time as the .theme.dark surface; raw/css-vars.json resolves no variable to it",
                           "description": desc})
     else:
+        if target.startswith("{"):
+            src_ = ALIAS
+        elif read_somewhere(target, ("signup-cta", "login-link", "nav-trigger", "hero-cta")):
+            src_ = "computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)"
+        else:
+            src_ = "Reconstruction: entered by hand at capture time; no reading of signup-cta / login-link / nav-trigger / hero-cta holds it"
         emit(dark, name, {"value": target, "type": "color",
-                          "source": ALIAS if target.startswith("{") else "computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)",
+                          "source": src_,
                           "description": desc})
 
 # ------------------------------------------------------------- type scale
@@ -376,19 +399,20 @@ for key, comp, state, prop, desc in [
 card_r = None
 try:
     for n in C["nav-dropdown"]["states"]["default"].get("paint") or []:
-        if n.get("radius") and "32" in str(n["radius"]):
+        if n.get("radius") and str(n["radius"]).split()[0] == "32px":
             card_r = "32px"
+            card_r_read = str(n["radius"])
             break
 except KeyError:
     pass
 if card_r:
     radius["flyout-panel"] = {"value": card_r, "type": "dimension",
-                              "source": "painted layer radius inside nav-dropdown (raw/components-computed.json): '32px 0px 0px 32px'",
+                              "source": "painted layer radius inside nav-dropdown (raw/components-computed.json): '%s'" % card_r_read,
                               "description": "The 32px radius the mega-menu's white column paints on its left corners."}
 plan_r = None
 try:
     for n in C["plan-card"]["states"]["default"].get("paint") or []:
-        if n.get("radius") and "16" in str(n["radius"]):
+        if n.get("radius") and str(n["radius"]).split()[0] == "16px":
             plan_r = n["radius"]
 except KeyError:
     pass

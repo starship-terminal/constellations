@@ -15,6 +15,13 @@ Run from anywhere: python3 tools/build_components_md.py
 import collections, json, os, re
 from pathlib import Path
 
+# PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+# for it. While this is None the script stops: the kit's copy is ChatGPT's example and would
+# write ChatGPT's values. KIT_EXAMPLE=1 runs the example as it is.
+ADAPTED_FOR = None
+if ADAPTED_FOR is None and not os.environ.get("KIT_EXAMPLE"):
+    raise SystemExit("build_components_md.py is the kit's ChatGPT example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR")
+
 ROOT = Path(__file__).resolve().parent.parent
 os.chdir(ROOT)
 J = json.load(open("raw/components-computed.json"))

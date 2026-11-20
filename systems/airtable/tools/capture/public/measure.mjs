@@ -248,6 +248,7 @@ async function tag(name, probe) {
   return page.evaluate(([n, src]) => {
     const el = (new Function('return (' + src + ')')())();
     if (!el) return false;
+    document.querySelectorAll(`[data-m="${n}"]`).forEach((o) => o.removeAttribute('data-m'));
     el.setAttribute('data-m', n);
     return true;
   }, [name, probe.toString()]).catch(() => false);
@@ -265,6 +266,7 @@ async function tagEl(name, reSrc, scopeSel) {
     }).sort((a, b) => (a.innerText || '').length - (b.innerText || '').length);
     const el = cands.find((e) => e.matches('a,button,[role=button],[role=tab],li,[tabindex]') || getComputedStyle(e).cursor === 'pointer') || cands[0];
     if (!el) return false;
+    document.querySelectorAll(`[data-m="${n}"]`).forEach((o) => o.removeAttribute('data-m'));
     el.setAttribute('data-m', n);
     return true;
   }, [name, reSrc, scopeSel || null]).catch(() => false);
@@ -742,7 +744,8 @@ async function about() {
   const card = await tag('acard', () => {
     const cands = [...document.querySelectorAll('a, [class*="card" i], article')].filter((e) => {
       const r = e.getBoundingClientRect();
-      return r.width > 240 && r.height > 100 && r.top > 400 && (e.querySelector('img, h2, h3'));
+      // a card, not a full-width list or grid (the 1342px stats ul matched before)
+      return r.width > 240 && r.width < 900 && r.height > 100 && r.top > 400 && !e.matches('ul, ol') && (e.querySelector('img, h2, h3'));
     });
     return cands[0] || null;
   });

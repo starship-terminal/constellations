@@ -42,7 +42,7 @@ colors:
   status-danger: "#e62214"
   status-urgent: "#fe620f"
   status-info: "#116dff"
-  scrim: "rgba(0, 0, 0, 0.5)"
+  scrim: "#00000080"
   focus-ring: "#000000"
   component-button-bg: "#166aea"
   component-button-text: "#ffffff"

@@ -69,6 +69,8 @@ Every number in this package was read off the live site in headless Chromium, si
 
 The declared palette (`--Red-*` … `--Tools-Glow-*`) is exported under `core.color.*`; measured roles under `light.*` alias to declared values where a computed style resolves identically, and carry the raw measured value plus its evidence otherwise. Where a measured value and a declaration match, the role keeps the alias so the token graph stays connected.
 
+**Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
+
 ## Do and don't
 
 1. **Do put the display headline in Gamuth and keep it huge.** 88px on the home hero, 72px on product pages, 56px on sections, 48px on mobile. See [home-light-full](screenshots/home-light-full.png).

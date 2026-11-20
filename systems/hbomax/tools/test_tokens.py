@@ -59,12 +59,20 @@ class TokensTest(unittest.TestCase):
         self.assertIn("Max Sans", core["font.family.primary"])
 
     def test_component_geometry(self):
-        comp = T["core"].get("component")
-        self.assertIsNotNone(comp, "no component tokens")
-        names = {n for n, _ in token_checks.tokens_of(comp)}
-        # geometry emitted only when measure.mjs has run; check the shape it takes
-        for n in names:
-            self.assertRegex(n, r"^[a-zA-Z]+\.")
+        """Every component leaf equals the computed style it cites."""
+        import re
+        C = json.loads((HERE / "raw" / "components-computed.json").read_text())["components"]
+        comp = T["core"]["component"]
+        checked = 0
+        for n, t in token_checks.tokens_of(comp):
+            m = re.match(r"computed (\w+) of (\S+) (\S+) ", t["$extensions"]["source"])
+            self.assertIsNotNone(m, n)
+            self.assertEqual(t["$value"], C[m.group(2)]["states"][m.group(3)]["style"][m.group(1)], n)
+            checked += 1
+        self.assertGreaterEqual(checked, 4)
+        # the CTA radius is read from its corners (the capture never records
+        # the borderRadius shorthand)
+        self.assertEqual(comp["control"]["radiusCta"]["$value"], "8px")
 
 
 if __name__ == "__main__":

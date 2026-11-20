@@ -8,10 +8,20 @@
 // with every page and place it was seen. Colour is kept as `currentColor` wherever the computed fill or
 // stroke equals the svg's text colour, so each icon recolours from CSS `color` the way it does on the site.
 // Adapted from the Coursera kit's icons.mjs.
+// PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+// for it. While this is null the script stops: the kit's copy is Gauth's example and would
+// read or write Gauth's values. KIT_EXAMPLE=1 runs the example as it is.
+const ADAPTED_FOR = null;
+if (!ADAPTED_FOR && !process.env.KIT_EXAMPLE) {
+  console.error('icons.mjs is the kit\'s Gauth example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR');
+  process.exit(2);
+}
 import crypto from 'crypto';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { M, BASE, chromium, UA, closePromo, openStory } from './public/lib.mjs'; // the signed-in route: swap in its own page opener
+import { scrubConsole } from './no-query.mjs';
+scrubConsole();   // logs are committed: no query, from a locator or a page URL, is printed
 
 const OUT = fileURLToPath(new URL('../../icons/', import.meta.url));
 fs.mkdirSync(OUT, { recursive: true });

@@ -19,6 +19,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { MOTION_PROPS, MOTION_VAR_NAME, MOTION_VAR_VALUE, motionOf, groupRecords, summarise, mergeSummaries, declaredOf, readMotionInPage, readSheetsInPage } from './motion.mjs';
 import { safeUrl } from './safe-url.mjs';
+import { scrubConsole } from './no-query.mjs';
+scrubConsole();   // logs are committed: no query, from a locator or a page URL, is printed
 
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;

@@ -39,7 +39,7 @@ async function newPage(key, { mobile = false, wait = 3500 } = {}) {
   await cdp.send('CSS.enable');
   page._browser = launched.browser;
   log('open', key, mobile ? 'mobile' : 'desktop');
-  await open(page, BASE + URLS[key], { wait });
+  if (!(await open(page, BASE + URLS[key], { wait }))) throw new Error(`BLOCKED ${key}: the page never loaded, nothing measured`);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   return true;
 }

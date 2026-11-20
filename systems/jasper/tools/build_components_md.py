@@ -23,6 +23,16 @@ T = json.load(open("tokens.json"))
 # --------------------------------------------------------------------------- colours and tokens
 
 
+
+def focus_not_captured(v):
+    """A state whose reading is not what its name says (decision D4, ported
+    from the kit's builder): a skipped one, or a focus-visible reading taken
+    where keyboard focus never landed (via "focus failed") or where the
+    element took focus but did not match :focus-visible. Its style is the
+    element at rest, so it is left out of every table and tally and listed as
+    "focus could not be captured"."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
 def flat(node, prefix=""):
     for k, v in node.items():
         if k.startswith("$"):
@@ -148,7 +158,7 @@ ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow",
 
 
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    states = [s for s in c["states"] if "style" in c["states"][s] and not focus_not_captured(c["states"][s])]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -310,9 +320,13 @@ W()
 W("Values that apply across entries, from the measurement files.")
 W()
 foc = []
+no_focus = []  # focus-visible readings where focus never landed (D4)
 for k, c in C.items():
     st = c["states"].get("focus-visible")
     if not st or "style" not in st:
+        continue
+    if focus_not_captured(st):
+        no_focus.append(k)
         continue
     s = st["style"]
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
@@ -320,6 +334,8 @@ for k, c in C.items():
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
 W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring) or 'none'}. The other {len(without)} draw none: {', '.join(without) or 'none'}.")
+if no_focus:
+    W(f"Focus could not be captured on {len(no_focus)}: keyboard focus never reached them (or they took focus without matching :focus-visible), so their focus look is unknown, not absent: {', '.join(f'`{k}`' for k in no_focus)}.")
 W()
 W("**Pressed.** Pressed was forced with DevTools `:active:hover` on the measured controls. Read the state row for the colour change. Jasper's primary button moves from flame `#fa4028` to `#801a10` on hover.")
 W()

@@ -15,11 +15,11 @@ Measured on 2026-11-19 from computed styles. No component crops: the preview bro
 | Select | Not present. Pricing uses tabs, not a native select | | |
 | Checkbox | Not present | | |
 | Radio | Not present | | |
-| Switch | Pricing Monthly / Yearly control was in the DOM with height 0 at rest. Not toggled | Declared tag styles only: white fill, 1px #16a34a border, radius 6px, padding 8px 16px |
+| Switch | Pricing Monthly / Yearly control | In the DOM with height 0 at rest. Not toggled | Declared tag styles only: white fill, 1px #16a34a border, radius 6px, padding 8px 16px |
 | Tabs | Pricing product tabs | Selected and idle | Selected: fill #5727e7, white text, radius 12px, height 56px, shadow 0 1px 2px rgba(0,0,0,0.06). Idle: white fill, black text. Community tab fill #ffb7c5 |
 | Menu | Header dropdowns | Closed. A synthetic click left `.w-dropdown-list` at display none, background rgb(221, 221, 221) | Open menu colours were not read |
 | Tooltip | Not present | | |
-| Dialog | Book a Demo is a Tally modal hash. Not opened | --modal-bg is #000000b3 on :root. Not applied to an open dialog |
+| Dialog | Book a Demo, a Tally modal hash | Not opened | --modal-bg is #000000b3 on :root. Not applied to an open dialog |
 | Toast | Not present | | |
 | Card | Pricing plan card `.pricing-tab-item` | Default | White, 1px #e5e7eb border, radius 12px, padding 16px, width 397px at 1440 and 350px at 390 |
 | List row | Not present on these pages | | |

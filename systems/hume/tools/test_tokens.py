@@ -58,12 +58,81 @@ class TokensTest(unittest.TestCase):
         self.assertTrue(pal, "no palette literals emitted")
 
     def test_component_geometry(self):
-        comp = T["core"].get("component")
-        self.assertIsNotNone(comp, "no component tokens")
-        names = {n for n, _ in token_checks.tokens_of(comp)}
-        # geometry emitted only when measure.mjs has run; check the shape it takes
-        for n in names:
-            self.assertRegex(n, r"^[a-zA-Z]+\.")
+        """Every measured component leaf equals the raw reading it cites."""
+        import re
+        C = json.loads((HERE / "raw" / "components-computed.json").read_text())["components"]
+        comp = T["core"]["component"]
+        checked = 0
+        for n, t in token_checks.tokens_of(comp):
+            m = re.match(r"measured (\S+) (\S+) on ", t["$extensions"]["source"])
+            self.assertIsNotNone(m, n)
+            st = C[m.group(1)]["states"][m.group(2)]
+            v = t["$value"]
+            if n.endswith(".height") or n.endswith(".width"):
+                raw = st["rect"]["h" if n.endswith(".height") else "w"]
+                self.assertEqual(v, f"{raw:g}px", n)
+            elif n.endswith(".radius"):
+                raw = st["style"]["borderTopLeftRadius"]
+                self.assertEqual(v, "9999px" if float(raw[:-2]) >= 9999 else raw, n)
+            elif n.endswith(".size"):
+                self.assertEqual(v, st["style"]["fontSize"], n)
+            elif n.endswith(".tracking"):
+                self.assertEqual(v, st["style"]["letterSpacing"], n)
+            else:
+                continue
+            checked += 1
+        self.assertGreaterEqual(checked, 20)
+        # the measured geometry is pinned by path, so a reading that drops out
+        # of a rebuild fails here instead of passing as "fewer leaves"
+        expected = {
+            "benchmarkTab.radius", "button.cta.height", "button.cta.radius", "contactField.height",
+            "contactField.radius", "contactSubmit.radius", "demoGate.height", "demoGate.radius",
+            "docsCodeBlock.height", "docsSearch.radius", "docsSidebar.width", "docsToc.width",
+            "focus.contactOutline.color", "focus.outline.color", "hero.height", "input.height",
+            "input.radius", "loginCard.height", "loginCard.radius", "loginField.height",
+            "loginField.radius", "loginSubmit.radius", "mobileNav.height", "nav.height",
+            "newsletterButton.radius", "playerCard.height", "playerTransport.radius", "postCard.height",
+            "postCard.radius", "type.articleTitle.size", "type.hero.tracking", "type.linkHover.color",
+            "type.navLinkHover.color",
+        }
+        self.assertEqual({n for n, _ in token_checks.tokens_of(comp)}, expected)
+
+    def test_font_stacks_are_measured_verbatim(self):
+        C = json.loads((HERE / "raw" / "components-computed.json").read_text())["components"]
+        core = {n: t for n, t in token_checks.tokens_of(T["core"])}
+        for path, comp in (("font.family.body", "site-nav"), ("font.family.display", "hero-headline"),
+                           ("font.family.monoWww", "player-card"), ("font.family.docs", "docs-side-link"),
+                           ("font.family.code", "docs-code-block")):
+            st = C[comp]["states"]["default"]
+            raw = (st.get("textStyle") or {}).get("fontFamily") or st["style"]["fontFamily"]
+            self.assertEqual(core[path]["$value"], raw, path)
+        # the Japanese face is the declared variable, not a hand-written stack
+        self.assertIn("--font-japanese", core["font.family.japanese"]["$extensions"]["source"])
+
+    def test_exotic_palette_literals_are_kept(self):
+        core = {n: t["$value"] for n, t in token_checks.tokens_of(T["core"])}
+        self.assertIn("#101828", core.values())  # the docs oklch(21% .034 264.665)
+
+
+class PaletteConverterTest(unittest.TestCase):
+    """The palette path itself (exotic() and norm_lit() in the builder), not the
+    committed file: lab() with alpha and the docs' percentage oklch()."""
+
+    def setUp(self):
+        import ast, re as _re
+        src = (pathlib.Path(__file__).resolve().parent / "build_component_tokens.py").read_text()
+        fns = [n for n in ast.parse(src).body if isinstance(n, ast.FunctionDef) and n.name in ("exotic", "norm_lit")]
+        self.ns = {"re": _re}
+        exec(compile(ast.Module(fns, []), "build_component_tokens.py", "exec"), self.ns)
+
+    def test_oklch_percentage_lightness(self):
+        self.assertEqual(self.ns["norm_lit"]("oklch(21% .034 264.665)"), "#101828")
+
+    def test_lab_with_alpha(self):
+        self.assertEqual(self.ns["norm_lit"]("lab(48.7982% 67.6999 48.8037 / 0.5)"), "rgba(220, 38, 38, 0.5)")
+
+    def test_unconvertible_is_dropped(self):
+        self.assertIsNone(self.ns["norm_lit"]("hsl(from red h s l)"))
 
 
 if __name__ == "__main__":

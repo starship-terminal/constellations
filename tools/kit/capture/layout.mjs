@@ -6,11 +6,21 @@
 // raw/pages.md is written by hand from it. Adapted from the Manus kit.
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs SNAPS=<dir of page copies> node tools/capture/layout.mjs
+// PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+// for it. While this is null the script stops: the kit's copy is Claude's example and would
+// read or write Claude's values. KIT_EXAMPLE=1 runs the example as it is.
+const ADAPTED_FOR = null;
+if (!ADAPTED_FOR && !process.env.KIT_EXAMPLE) {
+  console.error('layout.mjs is the kit\'s Claude example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR');
+  process.exit(2);
+}
 import fs from 'node:fs';
 import path from 'node:path';
 import { chromium, RAW, SNAPS, metaOf, newContext, openSnap } from './signed-in/lib.mjs';
 import { safeUrl } from './safe-url.mjs';
 import { mergeLayout } from './readings.mjs';
+import { scrubConsole } from './no-query.mjs';
+scrubConsole();   // logs are committed: no query, from a locator or a page URL, is printed
 
 if (!SNAPS) { console.error('SNAPS=<snapshot dir> is required'); process.exit(2); }
 const LABELS = fs.readdirSync(SNAPS).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5)).filter((l) => fs.existsSync(path.join(SNAPS, `${l}.html`))).sort();

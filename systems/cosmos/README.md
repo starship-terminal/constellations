@@ -96,6 +96,7 @@ A Next.js/Tailwind product with a real dual semantic layer: the sheets declare `
 
 ## Boundaries
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - The signed-in product (feed, boards, clusters, settings) was never reached; only the public `/login` card was measured and Next was never pressed.
 - Dark mode is declared, not painted: `data-theme="light"` under forced dark emulation. The dark token set is the declared `--dark-*` values.
 - Search and profile pages run to ~23-24k px (infinite feeds); `-full` shots truncate at the 8-chunk bound.

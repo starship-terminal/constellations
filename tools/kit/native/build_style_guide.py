@@ -11,7 +11,15 @@ Adapted from systems/hevy/tools/build_style_guide.py. Standard library only, det
 """
 import html
 import json
+import os
 import pathlib
+
+# PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+# for it. While this is None the script stops: the kit's copy is Grok Bot's example and
+# would write Grok Bot's values. KIT_EXAMPLE=1 runs the example as it is.
+ADAPTED_FOR = None
+if ADAPTED_FOR is None and not os.environ.get("KIT_EXAMPLE"):
+    raise SystemExit("build_style_guide.py is the kit's Grok Bot example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR")
 
 PKG = pathlib.Path(__file__).resolve().parent.parent
 TOKENS = PKG / "tokens.json"

@@ -941,6 +941,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Font stacks and palette literals were rebuilt in the 2026-11 audit.** The five `core.font.family.*` stacks were hand-written with extra fallbacks; they are now the computed stack of an element that paints each face, verbatim (`body` is `Inter, system-ui, sans-serif`). `font.family.japanese` is again the declared `--font-japanese` value (a hand-written stack had overwritten it). Nine lab()/oklch() palette literals that the builder dropped are now tokens, converted to sRGB.
 - **The signed-in product and the demo playground** are the product's own boundaries: app.hume.ai past /log-in and the demo.hume.ai workspace were never entered. The gate and log-in cards are the honest signed-out evidence.
 - **EVI and Octave TTS are gone from the public web**: the pivot to the Audio Decision Model / VoiceEQ line retired every public EVI surface — demo.hume.ai/evi answers 404. No EVI demo, waveform or mic-permission surface exists to capture; none is claimed.
 - **The /explore explorer is a canvas**: its visualisation is captured as pixels but its internal structure is not DOM — no values are invented for it.
@@ -951,6 +952,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Pressed states** are DevTools-forced; a script-applied mousedown style would not show.
 - **Reduced motion is only partly honoured** — `raw/motion.json` records `honours` on the www pages (the authored `*, ::before, ::after { transition-duration: 0.001ms; animation-duration: 0.001ms }` reset stops every moving element), `partial` on the docs (14 of 88 moving elements stopped, 74 keep moving) and `ignores` on the demo and app surfaces (the `spin` loader still loops). The package records the product's behaviour, it does not tidy it.
 - **Three components' focus-visible rings** are the only real keyboard focus captured; where a ring could not be held the entry says so instead of claiming one.
+- **Readings after two toggles were taken in the toggled page.** `player-card` `playing` pressed Play and never stopped the call, so `player-transport`, `scenario-button`, `benchmark-tab`, the newsletter field and button, `section-heading` and `product-hero` on the home page were read while the sample call played. `blog-filter` `selected` left Research selected. `tools/capture/public/measure.mjs` now stops the player and reselects All after those readings (edited in the 2026-11 audit, not run); a recapture is needed.
 
 ### Do and don't (from README.md)
 

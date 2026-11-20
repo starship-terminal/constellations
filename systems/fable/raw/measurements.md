@@ -690,22 +690,23 @@ Page: clubs. Selector: `button.IconButton-module Previous`. States: default, hov
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 40 x 40 | = | = | = |
-| Padding | 1px 6px | = | = | = |
-| Border | 1px solid #070607 @ 0.1 | = | = | = |
-| Radius | 9999px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Arial 13.3333px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #1b1a1b | = | = | = |
-| Transition | background-color, color, opacity, border-color 0.15s, 0.15s, 0.15s, 0.15s ease, ease, ease, ease delay 0s, 0s, 0s, 0s | = | = | = |
-| Opacity | 0.5 | = | = | = |
-| Cursor | default | = | = | = |
-| Icon | 24 x 24, colour #1b1a1b | = | = | = |
-| Painted layers | button.IconButton-module-scss-module__PqhHDa__base.IconButton-module-scss-module__PqhHDa__sizeMd 40.0x40.0 border T:1px #070607 @ 0.1 / R:1px #070607 @ 0.1 / B:1px #070607 @ 0.1 / L:1px #070607 @ 0.1 r 9999px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 40 x 40 | = | - | = |
+| Padding | 1px 6px | = | - | = |
+| Border | 1px solid #070607 @ 0.1 | = | - | = |
+| Radius | 9999px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Arial 13.3333px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #1b1a1b | = | - | = |
+| Transition | background-color, color, opacity, border-color 0.15s, 0.15s, 0.15s, 0.15s ease, ease, ease, ease delay 0s, 0s, 0s, 0s | = | - | = |
+| Opacity | 0.5 | = | - | = |
+| Cursor | default | = | - | = |
+| Icon | 24 x 24, colour #1b1a1b | = | - | = |
+| Painted layers | button.IconButton-module-scss-module__PqhHDa__base.IconButton-module-scss-module__PqhHDa__sizeMd 40.0x40.0 border T:1px #070607 @ 0.1 / R:1px #070607 @ 0.1 / B:1px #070607 @ 0.1 / L:1px #070607 @ 0.1 r 9999px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `icon-btn-default.png`, `icon-btn-hover.png`, `icon-btn-focus-visible.png`, `icon-btn-pressed.png`.
 
@@ -1167,22 +1168,23 @@ Page: book. Selector: `button.IconButton-module`. States: default, hover, focus-
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 40 x 40 | = | = | = |
-| Padding | 1px 6px | = | = | = |
-| Border | 1px solid #070607 @ 0.1 | = | = | = |
-| Radius | 9999px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Arial 13.3333px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #1b1a1b | = | = | = |
-| Transition | background-color, color, opacity, border-color 0.15s, 0.15s, 0.15s, 0.15s ease, ease, ease, ease delay 0s, 0s, 0s, 0s | = | = | = |
-| Opacity | 0.5 | = | = | = |
-| Cursor | default | = | = | = |
-| Icon | 24 x 24, colour #1b1a1b | = | = | = |
-| Painted layers | button.IconButton-module-scss-module__PqhHDa__base.IconButton-module-scss-module__PqhHDa__sizeMd 40.0x40.0 border T:1px #070607 @ 0.1 / R:1px #070607 @ 0.1 / B:1px #070607 @ 0.1 / L:1px #070607 @ 0.1 r 9999px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 40 x 40 | = | - | = |
+| Padding | 1px 6px | = | - | = |
+| Border | 1px solid #070607 @ 0.1 | = | - | = |
+| Radius | 9999px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Arial 13.3333px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #1b1a1b | = | - | = |
+| Transition | background-color, color, opacity, border-color 0.15s, 0.15s, 0.15s, 0.15s ease, ease, ease, ease delay 0s, 0s, 0s, 0s | = | - | = |
+| Opacity | 0.5 | = | - | = |
+| Cursor | default | = | - | = |
+| Icon | 24 x 24, colour #1b1a1b | = | - | = |
+| Painted layers | button.IconButton-module-scss-module__PqhHDa__base.IconButton-module-scss-module__PqhHDa__sizeMd 40.0x40.0 border T:1px #070607 @ 0.1 / R:1px #070607 @ 0.1 / B:1px #070607 @ 0.1 / L:1px #070607 @ 0.1 r 9999px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `icon-btn-book-default.png`, `icon-btn-book-hover.png`, `icon-btn-book-focus-visible.png`, `icon-btn-book-pressed.png`.
 

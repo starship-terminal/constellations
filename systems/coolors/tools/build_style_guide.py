@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Render style-guide.html from tokens.json for the Coolors block record.
 
-The kit template draws Claude's app. This package never reached Coolors, so
-the guide renders only the placeholder tokens and says so. Deterministic.
+The tokens are computed-style readings from coolors.co taken in the signed-in
+preview tab (the headless probe met a Cloudflare challenge); the guide says
+which evidence it shows. Deterministic.
 """
 import json
 import pathlib
@@ -33,18 +34,9 @@ for setname in ("core", "light"):
         rows.append((setname + "." + path, value, token["$type"], source))
 
 swatches = "\n".join(
-    f'<div class="sw"><i style="background:{cssname(p)}"></i><div><b>{p}</b><small>{v}</small></div></div>'
-    if False else
     f'<div class="sw"><i style="background:var({cssname(p)})"></i><div><code>{p}</code><small>{v}</small><p>{s}</p></div></div>'
     for p, v, ty, s in rows if ty == "color"
 )
-
-css_vars = []
-for setname in ("core", "light"):
-    for path, token in flat(T[setname]):
-        if token["$type"] != "color":
-            continue
-        css_vars.append(f"  {cssname(setname + '.' + path)}: {token['$value'] if not str(token['$value']).startswith('{') else 'var(' + cssname(str(token['$value'])[1:-1]) + ')'};")
 
 # Resolve aliases simply: light tokens that alias {color.unmeasured} point at the core colour.
 resolved = {}
@@ -64,7 +56,6 @@ for setname in ("core", "light"):
     for path, token in flat(T[setname]):
         if token["$type"] != "color":
             continue
-        full = f"{setname}.{path}" if setname == "light" else path
         # core paths are already unprefixed in flat(); keep a stable custom property.
         name = setname + "." + path
         var_lines.append(f"  {cssname(name)}: {resolve(token['$value'])};")
@@ -99,7 +90,7 @@ small, .sw p {{ display: block; color: var(--light-muted); font-size: 13px; marg
 <body>
 <main>
   <h1>Coolors</h1>
-  <p class="note">This page renders the placeholder tokens in tokens.json. coolors.co answered the public Playwright probe with a Cloudflare managed challenge (HTTP 403, title Just a moment...). No Coolors colour, type or component is on this page.</p>
+  <p class="note">This page renders tokens.json: colours read with getComputedStyle on coolors.co in the signed-in preview tab (each token's source names the element and page). The headless Playwright probe got a Cloudflare managed challenge (HTTP 403, title Just a moment...) and measured nothing, so no value here comes from it.</p>
   <div class="swatches">
     {swatches}
   </div>

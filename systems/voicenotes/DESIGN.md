@@ -10,7 +10,7 @@ colors:
   surface: "#FFFFFF"
   on-surface: "#0D0D0D"
   on-surface-variant: "#717171"
-  outline: "rgba(13, 13, 13, 0.1)"
+  outline: "#0d0d0d1a"
   color-page: "#FAF9F5"
   color-surface: "#FFFFFF"
   color-sand: "#F2F1ED"
@@ -20,27 +20,27 @@ colors:
   color-text-soft: "#222222"
   color-ink: "#1D1D1D"
   color-muted: "#717171"
-  color-muted-60: "rgba(13, 13, 13, 0.6)"
+  color-muted-60: "#0d0d0d99"
   color-on-accent: "#FFFFFF"
-  color-border: "rgba(13, 13, 13, 0.1)"
+  color-border: "#0d0d0d1a"
   color-border-strong: "#0D0D0D"
-  color-border-card: "rgba(34, 34, 34, 0.08)"
+  color-border-card: "#22222214"
   color-accent: "#0D0D0D"
   color-link: "#0088FF"
   color-info: "#00B3F8"
   color-success-bg: "#E6F9EB"
   color-success-text: "#006119"
   color-danger: "#FF4538"
-  color-scrim: "rgba(0, 0, 0, 0.5)"
-  color-field: "rgba(13, 13, 13, 0.05)"
+  color-scrim: "#00000080"
+  color-field: "#0d0d0d0d"
   color-focus: "#0D0D0D"
   component-button-primary-bg: "#0D0D0D"
   component-button-primary-text: "#FFFFFF"
   component-button-secondary-text: "#0D0D0D"
-  component-field-bg: "rgba(13, 13, 13, 0.05)"
+  component-field-bg: "#0d0d0d0d"
   component-field-text: "#0D0D0D"
   component-card-bg: "#FFFFFF"
-  component-button-secondary-bg: "rgba(0, 0, 0, 0)"
+  component-button-secondary-bg: "#00000000"
 typography:
   display-home:
     fontFamily: "P22 Mackinac Pro"
@@ -159,7 +159,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 - **surface (#FFFFFF):** `light.color.surface`
 - **on-surface (#0D0D0D):** `light.color.text`
 - **on-surface-variant (#717171):** `light.color.muted`
-- **outline (rgba(13, 13, 13, 0.1)):** `light.color.border`
+- **outline (#0d0d0d1a):** `light.color.border`
 
 ## Typography
 

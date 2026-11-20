@@ -93,23 +93,24 @@ Page: home. Selector: `.HeaderMenuItem_root Solutions`. States: default, hover, 
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 113 x 36 | = | = | = | = |
-| Padding | 0px | = | = | = | = |
-| Border | 1px solid #000000 @ 0 | 1px solid #251d1a @ 0.1 | = | 1px solid #251d1a @ 0.1 | 1px solid #251d1a @ 0.1 |
-| Radius | 6px | = | = | = | = |
-| Background | transparent | #fdf7ef | = | #fdf7ef | #fdf7ef |
-| Box shadow | none | = | = | = | = |
-| Outline | none | = | = | = | = |
-| Font | Suisse Intl 16px/34px 400 | = | = | = | = |
-| Letter spacing | normal | = | = | = | = |
-| Colour | #251d1a | = | = | = | = |
-| Text node | span.HeaderMenuItem_menuLink__JgNSg: Suisse Intl 16px/34px 500, #251d1a | = | = | = | = |
-| Transition | none | = | = | = | = |
-| Icon | 0 x 0, colour #0000ee | 32 x 32, colour #0000ee | = | 32 x 32, colour #0000ee | 32 x 32, colour #0000ee |
-| ::before | 8px x 34px, absolute, bg #000000 @ 0, radius 0px | = | = | = | = |
-| ::after | 8px x 34px, absolute, bg #000000 @ 0, radius 0px | = | = | = | = |
-| Painted layers | div.HeaderMenuItem_root__Lva5Q.HeaderMenuItem_mobileHidden__ssM4C 113.0x36.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 6px; span::after.HeaderMenuItem_menuLink__JgNSg 5pxx5px border R:2px solid #251d1a / B:2px solid #251d1a; div.HeaderMenuDropdown_root__uAFiX 0.0x0.0 bg #fff5e8 r 12px shadow #14151a @ 0.08 0px 10px 16px -3px, #14151a @ 0.05 0px 1px 2px 0px; div.MenuItemHeadline_root__BAYvv 0.0x0.0 border B:1px solid #251d1a @ 0.1; div.MenuItemTile_iconWrap__6DuKw 0.0x0.0 border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 8px; div.MenuItemTile_iconWrap__6DuKw 0.0x0.0 border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 8px | div.HeaderMenuItem_root__Lva5Q.HeaderMenuItem_mobileHidden__ssM4C 113.0x36.0 bg #fdf7ef border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 6px; span::after.HeaderMenuItem_menuLink__JgNSg 5pxx5px border R:2px solid #251d1a / B:2px solid #251d1a; div.HeaderMenuDropdown_root__uAFiX 740.0x383.0 bg #fff5e8 r 12px shadow #14151a @ 0.08 0px 10px 16px -3px, #14151a @ 0.05 0px 1px 2px 0px; div.MenuItemHeadline_root__BAYvv 322.0x23.0 border B:1px solid #251d1a @ 0.1; div.MenuItemTile_iconWrap__6DuKw 56.0x56.0 border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 8px; div.MenuItemTile_iconWrap__6DuKw 56.0x56.0 border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 8px | = | div.HeaderMenuItem_root__Lva5Q.HeaderMenuItem_mobileHidden__ssM4C 113.0x36.0 bg #fdf7ef border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 6px; span::after.HeaderMenuItem_menuLink__JgNSg 5pxx5px border R:2px solid #251d1a / B:2px solid #251d1a; div.HeaderMenuDropdown_root__uAFiX 740.0x383.0 bg #fff5e8 r 12px shadow #14151a @ 0.08 0px 10px 16px -3px, #14151a @ 0.05 0px 1px 2px 0px; div.MenuItemHeadline_root__BAYvv 322.0x23.0 border B:1px solid #251d1a @ 0.1; div.MenuItemTile_iconWrap__6DuKw 56.0x56.0 border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 8px; div.MenuItemTile_iconWrap__6DuKw 56.0x56.0 border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 8px | div.HeaderMenuItem_root__Lva5Q.HeaderMenuItem_mobileHidden__ssM4C 113.0x36.0 bg #fdf7ef border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 6px; span::after.HeaderMenuItem_menuLink__JgNSg 5pxx5px border R:2px solid #251d1a / B:2px solid #251d1a; div.HeaderMenuDropdown_root__uAFiX 740.0x383.0 bg #fff5e8 r 12px shadow #14151a @ 0.08 0px 10px 16px -3px, #14151a @ 0.05 0px 1px 2px 0px; div.MenuItemHeadline_root__BAYvv 322.0x23.0 border B:1px solid #251d1a @ 0.1; div.MenuItemTile_iconWrap__6DuKw 56.0x56.0 border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 8px; div.MenuItemTile_iconWrap__6DuKw 56.0x56.0 border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 8px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover | held open by an earlier toggle |
+| Size (w x h) | 113 x 36 | = | - | = | = |
+| Padding | 0px | = | - | = | = |
+| Border | 1px solid #000000 @ 0 | 1px solid #251d1a @ 0.1 | - | 1px solid #251d1a @ 0.1 | 1px solid #251d1a @ 0.1 |
+| Radius | 6px | = | - | = | = |
+| Background | transparent | #fdf7ef | - | #fdf7ef | #fdf7ef |
+| Box shadow | none | = | - | = | = |
+| Outline | none | = | - | = | = |
+| Font | Suisse Intl 16px/34px 400 | = | - | = | = |
+| Letter spacing | normal | = | - | = | = |
+| Colour | #251d1a | = | - | = | = |
+| Text node | span.HeaderMenuItem_menuLink__JgNSg: Suisse Intl 16px/34px 500, #251d1a | = | - | = | = |
+| Transition | none | = | - | = | = |
+| Icon | 0 x 0, colour #0000ee | 32 x 32, colour #0000ee | - | 32 x 32, colour #0000ee | 32 x 32, colour #0000ee |
+| ::before | 8px x 34px, absolute, bg #000000 @ 0, radius 0px | = | - | = | = |
+| ::after | 8px x 34px, absolute, bg #000000 @ 0, radius 0px | = | - | = | = |
+| Painted layers | div.HeaderMenuItem_root__Lva5Q.HeaderMenuItem_mobileHidden__ssM4C 113.0x36.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 6px; span::after.HeaderMenuItem_menuLink__JgNSg 5pxx5px border R:2px solid #251d1a / B:2px solid #251d1a; div.HeaderMenuDropdown_root__uAFiX 0.0x0.0 bg #fff5e8 r 12px shadow #14151a @ 0.08 0px 10px 16px -3px, #14151a @ 0.05 0px 1px 2px 0px; div.MenuItemHeadline_root__BAYvv 0.0x0.0 border B:1px solid #251d1a @ 0.1; div.MenuItemTile_iconWrap__6DuKw 0.0x0.0 border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 8px; div.MenuItemTile_iconWrap__6DuKw 0.0x0.0 border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 8px | div.HeaderMenuItem_root__Lva5Q.HeaderMenuItem_mobileHidden__ssM4C 113.0x36.0 bg #fdf7ef border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 6px; span::after.HeaderMenuItem_menuLink__JgNSg 5pxx5px border R:2px solid #251d1a / B:2px solid #251d1a; div.HeaderMenuDropdown_root__uAFiX 740.0x383.0 bg #fff5e8 r 12px shadow #14151a @ 0.08 0px 10px 16px -3px, #14151a @ 0.05 0px 1px 2px 0px; div.MenuItemHeadline_root__BAYvv 322.0x23.0 border B:1px solid #251d1a @ 0.1; div.MenuItemTile_iconWrap__6DuKw 56.0x56.0 border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 8px; div.MenuItemTile_iconWrap__6DuKw 56.0x56.0 border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 8px | - | div.HeaderMenuItem_root__Lva5Q.HeaderMenuItem_mobileHidden__ssM4C 113.0x36.0 bg #fdf7ef border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 6px; span::after.HeaderMenuItem_menuLink__JgNSg 5pxx5px border R:2px solid #251d1a / B:2px solid #251d1a; div.HeaderMenuDropdown_root__uAFiX 740.0x383.0 bg #fff5e8 r 12px shadow #14151a @ 0.08 0px 10px 16px -3px, #14151a @ 0.05 0px 1px 2px 0px; div.MenuItemHeadline_root__BAYvv 322.0x23.0 border B:1px solid #251d1a @ 0.1; div.MenuItemTile_iconWrap__6DuKw 56.0x56.0 border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 8px; div.MenuItemTile_iconWrap__6DuKw 56.0x56.0 border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 8px | div.HeaderMenuItem_root__Lva5Q.HeaderMenuItem_mobileHidden__ssM4C 113.0x36.0 bg #fdf7ef border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 6px; span::after.HeaderMenuItem_menuLink__JgNSg 5pxx5px border R:2px solid #251d1a / B:2px solid #251d1a; div.HeaderMenuDropdown_root__uAFiX 740.0x383.0 bg #fff5e8 r 12px shadow #14151a @ 0.08 0px 10px 16px -3px, #14151a @ 0.05 0px 1px 2px 0px; div.MenuItemHeadline_root__BAYvv 322.0x23.0 border B:1px solid #251d1a @ 0.1; div.MenuItemTile_iconWrap__6DuKw 56.0x56.0 border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 8px; div.MenuItemTile_iconWrap__6DuKw 56.0x56.0 border T:1px solid #251d1a @ 0.1 / R:1px solid #251d1a @ 0.1 / B:1px solid #251d1a @ 0.1 / L:1px solid #251d1a @ 0.1 r 8px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | held open by an earlier toggle |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
 Crops: `nav-menu-btn-default.png`, `nav-menu-btn-hover.png`, `nav-menu-btn-focus-visible.png`, `nav-menu-btn-pressed.png`, `nav-menu-btn-opened.png`.
 
@@ -793,24 +794,25 @@ Page: signup. Selector: `Create workspace`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed | enabled |
 |---|---|---|---|---|---|
-| Size (w x h) | 162 x 32 | = | = | = | = |
-| Padding | 6px 12px | = | = | = | = |
-| Gap | 10px | = | = | = | = |
-| Border | none | = | = | = | = |
-| Radius | 16px | = | = | = | = |
-| Background | #bd5f00 | = | = | = | = |
-| Box shadow | none | = | = | = | = |
-| Outline | none | = | = | = | = |
-| Font | Suisse Intl 14px/20px 500 | = | = | = | = |
-| Letter spacing | normal | = | = | = | = |
-| Colour | #fffdfa | = | = | = | = |
-| Text node | span.FiberyButton_content__4PHkJ: Suisse Intl 14px/20px 500, #fffdfa | = | = | = | = |
-| Transition | all 0.3s ease | = | = | = | = |
-| Opacity | 0.5 | = | = | = | - |
-| Cursor | not-allowed | = | = | = | pointer |
-| Icon | 12 x 10, colour #fffdfa | = | = | = | = |
-| Painted layers | button.FiberyButton_root__0jBYr.AiPromptInput_submitButton__VlAIj 162.0x32.0 bg #bd5f00 r 16px | = | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover | typed into the prompt to enable the submit (cleared afterwards, never pressed) |
+| Size (w x h) | 162 x 32 | = | - | = | = |
+| Padding | 6px 12px | = | - | = | = |
+| Gap | 10px | = | - | = | = |
+| Border | none | = | - | = | = |
+| Radius | 16px | = | - | = | = |
+| Background | #bd5f00 | = | - | = | = |
+| Box shadow | none | = | - | = | = |
+| Outline | none | = | - | = | = |
+| Font | Suisse Intl 14px/20px 500 | = | - | = | = |
+| Letter spacing | normal | = | - | = | = |
+| Colour | #fffdfa | = | - | = | = |
+| Text node | span.FiberyButton_content__4PHkJ: Suisse Intl 14px/20px 500, #fffdfa | = | - | = | = |
+| Transition | all 0.3s ease | = | - | = | = |
+| Opacity | 0.5 | = | - | = | - |
+| Cursor | not-allowed | = | - | = | pointer |
+| Icon | 12 x 10, colour #fffdfa | = | - | = | = |
+| Painted layers | button.FiberyButton_root__0jBYr.AiPromptInput_submitButton__VlAIj 162.0x32.0 bg #bd5f00 r 16px | = | - | = | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | typed into the prompt to enable the submit (cleared afterwards, never pressed) |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
 Crops: `su-submit-default.png`, `su-submit-hover.png`, `su-submit-focus-visible.png`, `su-submit-pressed.png`, `su-submit-enabled.png`.
 
@@ -1122,23 +1124,24 @@ Page: mobile. Selector: `.HeaderMainMenu_sandwichBtn`. States: default, hover, f
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 20 x 20 | = | = | = | = |
-| Padding | 0px | = | = | = | = |
-| Border | none | = | = | = | = |
-| Radius | 0px | = | = | = | = |
-| Background | transparent | = | = | = | = |
-| Box shadow | none | = | = | = | = |
-| Outline | none | = | = | = | = |
-| Font | Suisse Intl 16px/19.2px 400 | = | = | = | = |
-| Letter spacing | normal | = | = | = | = |
-| Colour | #251d1a | = | = | = | = |
-| Transition | none | = | = | = | = |
-| Cursor | pointer | = | = | = | = |
-| ::before | 20px x 2px, static, bg #251d1a, radius 2px | = | = | = | = |
-| ::after | 20px x 2px, static, bg #251d1a, radius 2px | = | = | = | = |
-| Painted layers | div::before.HeaderMainMenu_sandwichBtn__VTPQ2 20pxx2px bg #251d1a r 2px; div::after.HeaderMainMenu_sandwichBtn__VTPQ2 20pxx2px bg #251d1a r 2px | = | = | = | = |
-| Ancestor paint | 2 up div.HeaderMainMenu_root__idMKp bg #fff5e8 shadow #14151a @ 0.08 0px 10px 16px -3px, #14151a @ 0.05 0px 1px 2px 0px | = | = | = | 2 up div.HeaderMainMenu_root__idMKp.HeaderMainMenu_mobileMenuOpen__Q6P7N bg #fff5e8 shadow #14151a @ 0.08 0px 10px 16px -3px, #14151a @ 0.05 0px 1px 2px 0px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover | held open by an earlier toggle |
+| Size (w x h) | 20 x 20 | = | - | = | = |
+| Padding | 0px | = | - | = | = |
+| Border | none | = | - | = | = |
+| Radius | 0px | = | - | = | = |
+| Background | transparent | = | - | = | = |
+| Box shadow | none | = | - | = | = |
+| Outline | none | = | - | = | = |
+| Font | Suisse Intl 16px/19.2px 400 | = | - | = | = |
+| Letter spacing | normal | = | - | = | = |
+| Colour | #251d1a | = | - | = | = |
+| Transition | none | = | - | = | = |
+| Cursor | pointer | = | - | = | = |
+| ::before | 20px x 2px, static, bg #251d1a, radius 2px | = | - | = | = |
+| ::after | 20px x 2px, static, bg #251d1a, radius 2px | = | - | = | = |
+| Painted layers | div::before.HeaderMainMenu_sandwichBtn__VTPQ2 20pxx2px bg #251d1a r 2px; div::after.HeaderMainMenu_sandwichBtn__VTPQ2 20pxx2px bg #251d1a r 2px | = | - | = | = |
+| Ancestor paint | 2 up div.HeaderMainMenu_root__idMKp bg #fff5e8 shadow #14151a @ 0.08 0px 10px 16px -3px, #14151a @ 0.05 0px 1px 2px 0px | = | - | = | 2 up div.HeaderMainMenu_root__idMKp.HeaderMainMenu_mobileMenuOpen__Q6P7N bg #fff5e8 shadow #14151a @ 0.08 0px 10px 16px -3px, #14151a @ 0.05 0px 1px 2px 0px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | held open by an earlier toggle |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
 Crops: `m-menu-btn-default.png`, `m-menu-btn-hover.png`, `m-menu-btn-focus-visible.png`, `m-menu-btn-pressed.png`, `m-menu-btn-opened.png`.
 

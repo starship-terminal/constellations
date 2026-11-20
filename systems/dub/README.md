@@ -114,6 +114,7 @@ Nothing was signed into, sent or submitted: the login and register cards were ca
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
 - **`--primary` means two different colours.** The marketing shadcn sheet declares it `0 0% 9%` (a near-black `#171717`, `#fafafa` under the `.dark` scope); the docs inline sheet binds the same name to the Dub blue `21 93 252` (`#155dfc`). The tokens keep them apart — `light.marketing.primary`/`dark.marketing.primary` versus `light.primary.base`/`dark.primary.base` (the docs value) — and [raw/css-vars.json](raw/css-vars.json) lists the collision under `conflicts` with each surface's own resolution under `resolved.surfaces`. Never read a `--primary` value without checking which surface declared it.
 - **`--primary-foreground` looks wrong on dark** (`#171717` on the unchanged `#155dfc`) — it is what the `.dark` scope declares, not a misread; the docs surface never paints a primary button there.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ## Fonts
 

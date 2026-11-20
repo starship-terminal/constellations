@@ -112,29 +112,24 @@ async function pick(p, sel, score, tag = 'pk') {
 // CSS.forcePseudoState through CDP: the press never happens, so no link can
 // navigate and no button can fire.
 async function pressOn(loc) {
-  const b = await loc.boundingBox();
-  if (!b) return null;
+  // Force :active:hover on the component element itself, never the topmost
+  // node at its centre (a text span or an svg), so the component's own
+  // :active rule applies (2026-11 audit, finding 12-6; not run since).
   await cdp.send('DOM.getDocument').catch(() => {});
-  let nodeId = null;
+  await loc.evaluate((el) => el.setAttribute('data-press-target', '1'));
   try {
-    const { backendNodeId } = await cdp.send('DOM.getNodeForLocation', { x: Math.round(b.x + b.width / 2), y: Math.round(b.y + b.height / 2) });
-    const { nodeIds } = await cdp.send('DOM.pushNodesByBackendIdsToFrontend', { backendNodeIds: [backendNodeId] });
-    nodeId = nodeIds[0];
-  } catch {
-    // getNodeForLocation misses on moving elements — mark the element and
-    // resolve it through the runtime objectId instead.
-    await loc.evaluate((el) => el.setAttribute('data-press-target', '1')).catch(() => {});
-    const { result } = await cdp.send('Runtime.evaluate', { expression: `document.querySelector('[data-press-target]')`, returnByValue: false }).catch(() => ({}));
-    if (result && result.objectId) {
-      const { node } = await cdp.send('DOM.requestNode', { objectId: result.objectId }).catch(() => ({}));
-      nodeId = node ? node.nodeId : null;
-    }
+    const { result } = await cdp.send('Runtime.evaluate', { expression: `document.querySelector('[data-press-target]')`, returnByValue: false });
+    // an unresolved target throws, so the state records an error instead of
+    // a resting reading labelled pressed
+    if (!result || !result.objectId) throw new Error('press target not resolvable');
+    const { nodeId } = await cdp.send('DOM.requestNode', { objectId: result.objectId });
+    if (!nodeId) throw new Error('press target has no DOM node');
+    await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: ['active', 'hover'] });
+    await page.waitForTimeout(400);
+    return nodeId;
+  } finally {
     await loc.evaluate((el) => el.removeAttribute('data-press-target')).catch(() => {});
   }
-  if (nodeId == null) return null;
-  await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: ['active', 'hover'] });
-  await page.waitForTimeout(400);
-  return nodeId;
 }
 const pressOff = (id) => id == null ? null : cdp.send('CSS.forcePseudoState', { nodeId: id, forcedPseudoClasses: [] }).catch(() => {});
 
@@ -467,6 +462,10 @@ const GROUPS = {
   mobile: { page: 'mobile', mobile: true, specs: MOBILE },
 };
 
+// The group that owns each spec key's bare name: the last group listing it.
+const KEY_OWNER = {};
+for (const [gk, gg] of Object.entries(GROUPS)) for (const sp of gg.specs) KEY_OWNER[sp.key] = gk;
+
 // ---------- runner ----------
 
 const b = await chromium.launch();
@@ -491,7 +490,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
   await cdp.send('CSS.enable');
   const url = URLS[g.page];
   log('open', key, g.mobile ? '(mobile)' : '', url);
-  await open(page, url, { wait: 7000 });
+  if (!(await open(page, url, { wait: 7000 }))) { log('  group skipped: the page never loaded'); await page.close().catch(() => {}); continue; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   // the readable sheets' transition declarations, for measurements.md
   out._meta.sheets[g.page] = await page.evaluate(() => {
@@ -506,7 +505,13 @@ for (const [key, g] of Object.entries(GROUPS)) {
     return found.slice(0, 30);
   }).catch(() => []);
 
-  for (const spec of g.specs) {
+  for (let spec of g.specs) {
+    // One key per page, fixed by GROUPS order: a spec key listed by several
+    // groups belongs to the LAST group that lists it (connect, which is what
+    // the committed readings and the builder's bare keys are), and every other
+    // group writes it under its own prefix (service-back-button). The names
+    // never depend on what an earlier run saved. (2026-11 audit; not run.)
+    if (KEY_OWNER[spec.key] !== key) spec = { ...spec, key: `${key}-${spec.key}` };
     const comp = out.components[spec.key] ??= {};
     comp.group = spec.group;
     comp.title = spec.title;

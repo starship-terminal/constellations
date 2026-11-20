@@ -108,6 +108,7 @@ Nothing was signed into, created, submitted or consented to: the More flyout, th
 - **The tokens mix declared and measured.** Palette, grid and type steps resolve the bundle's own `:root` vars; roles and component metrics are computed-style readings. Each token's `$extensions.source` says which.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
 - **Two readings are recorded as misses, not values.** The home page's mid-page newsletter row (`input-email`, `btn-subscribe`) was not on the page at capture time — the footer's own newsletter field was painted instead. `button-mode` could not be driven to a real keyboard focus.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ## Fonts
 

@@ -143,6 +143,9 @@ async function measure(key, state, target, opts = {}) {
 }
 
 async function S(key, target, list, meta = {}, opts = {}) {
+  // meta is the entry's description only; an option placed here (fillText, cropLoc,
+  // noToggle...) would be silently ignored, so refuse it
+  for (const k of Object.keys(meta)) if (!['group', 'title', 'desc', 'sel'].includes(k)) throw new Error(`S(${key}): '${k}' is an option; pass it in opts`);
   const prev = out.components[key];
   const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
@@ -281,7 +284,7 @@ async function home() {
   await S('utility-bar', q('nav.bb-that').first(), ['default'], { group: g, title: 'Utility bar', desc: 'The thin top strip: "Bloomberg the Company & Its Products", Terminal demo, Anywhere login, customer support.', sel: 'nav.bb-that' }, { noScroll: true });
   const util = q('button, a').filter({ hasText: /Bloomberg the Company/i }).first();
   await S('utility-toggle', util, B4, { group: g, title: 'Company sitemap toggle', desc: 'Opens the "Bloomberg the Company & Its Products" sitemap dropdown.', sel: 'button:has-text("Bloomberg the Company")' }, { noScroll: true });
-  await S('utility-toggle-open', util, ['opened'], { group: g, title: 'Company sitemap, open', desc: 'The toggle after its own press; the dropdown shows in the crop of the opened panel.', sel: 'button:has-text("Bloomberg the Company")', noToggle: false }, { noScroll: true, cropLoc: q('nav.bb-that').first(), allowLink: true });
+  await S('utility-toggle-open', util, ['opened'], { group: g, title: 'Company sitemap, open', desc: 'The toggle after its own press; the dropdown shows in the crop of the opened panel.', sel: 'button:has-text("Bloomberg the Company")' }, { noScroll: true, cropLoc: q('nav.bb-that').first() });
   await page.keyboard.press('Escape'); await page.waitForTimeout(500);
   await S('logo-bar', q('[class*="nav-ui-LogoBar__bar"]').first(), ['default'], { group: g, title: 'Logo bar', desc: 'The black bar: wordmark, Sign In, Subscribe, search.', sel: '[class*="nav-ui-LogoBar__bar"]' }, { noScroll: true });
   await S('logo', q('a[class*="nav-ui-Logo__logo"]').first(), ['default'], { group: g, title: 'Logo', sel: 'a[class*="nav-ui-Logo__logo"]' }, { noScroll: true });
@@ -393,7 +396,8 @@ async function subscriptions() {
   if (!(await newPage('subscriptions', { wait: 10000 }))) return;
   await sheetsFor('subscriptions');
   const g = G.subscriptions;
-  await S('offer-header', q('header, [class*="offers-page-header"], [class*="header" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Offers header', sel: 'header' }, { noScroll: true });
+  // the offers page's own header: header/[class*=header] caught the corporate utility bar
+  await S('offer-header', q('[class*="offers-page-header"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Offers header', sel: 'header' }, { noScroll: true });
   await S('offer-hero', q('[class*="offers-header-block"]').first(), ['default'], { group: g, title: 'Offer hero', desc: 'The lead WordPress offer block ("Get context beyond the headlines").', sel: '[class*="offers-header-block"]' });
   await S('offer-price', q('[class*="offers-header-block-price"], [class*="price" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Offer price', sel: '[class*="price"]' });
   await S('offer-cta', q('[class*="wp-ga-button"], .wp-block-button a, a.wp-element-button').filter({ hasText: /Continue|Choose|Subscribe/i }).first(), B4, { group: g, title: 'Offer CTA', desc: 'The offer’s own action; links to checkout, measured, never followed.', sel: 'a.wp-ga-button' });

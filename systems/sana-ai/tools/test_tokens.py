@@ -1,19 +1,35 @@
 """Sana tokens stay inside the colours that were measured or declared on the public pages."""
 import json
+import re
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TOKENS = json.loads((ROOT / "tokens.json").read_text())
 
-MEASURED = {
-    "#0a1217", "#0a121799", "#686d70", "#0a121766", "#ffffff", "#fafafa",
-    "#131314", "#1e1f20", "#242628", "#353536", "#17181a", "#e8e8e8",
-    "#e8e8e899", "#8b8b8b", "#e8e8e866", "#5d5d5d", "#cdfe00", "#00dd00",
-    "#ff3b30", "#ff3b300f", "#ffa82f", "#fd2d55", "#e59700", "#0a121780",
-    "#0a12171a", "#00000008", "#00000014", "#e8e8e826", "#e8e8e80a",
-    "#e8e8e899",
-}
+
+def raw_colours():
+    """Every colour the raw readings hold: hex as written (short forms expanded), rgb()/rgba() as
+    #rrggbb or #rrggbbaa. The test compares tokens with this, not with a list typed into the test."""
+    seen = set()
+    for f in sorted((ROOT / "raw").iterdir()):
+        text = f.read_text(errors="replace")
+        for h in re.findall(r"#([0-9a-fA-F]{8}|[0-9a-fA-F]{6}|[0-9a-fA-F]{3,4})\b", text):
+            seen.add("#" + ("".join(c * 2 for c in h) if len(h) in (3, 4) else h).lower())
+        for body in re.findall(r"rgba?\(([^)]*)\)", text):
+            parts = [p for p in re.split(r"[\s,/]+", body.strip()) if p]
+            try:
+                hx = "#%02x%02x%02x" % tuple(round(float(p)) for p in parts[:3])
+            except ValueError:
+                continue
+            if len(parts) > 3:
+                a = float(parts[3][:-1]) / 100 if parts[3].endswith("%") else float(parts[3])
+                hx += "%02x" % round(a * 255) if a < 1 else ""
+            seen.add(hx)
+    return seen
+
+
+MEASURED = raw_colours()
 
 
 def colours(node):

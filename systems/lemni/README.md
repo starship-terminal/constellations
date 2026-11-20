@@ -98,11 +98,15 @@ The free account used email sign-in at `https://lemni.com/signin`. Continue with
 
 ## What to distrust
 
-- **No published palette.** Framer does not declare a `--token-*` set. The signed-in app declares no custom properties. Semantic colours are computed styles of real elements, plus two declared hairlines (`--border-color`) and `--framer-link-text-color` (`#09f`).
+- **No published palette.** Framer does not declare a `--token-*` set. The signed-in app declares no custom properties. Semantic colours are computed styles of real elements, plus two declared hairlines (`--border-color`). The sheets reference `--framer-link-text-color` but never declare it, so the link blue `#0099ff` was entered by hand.
 - **TWK Lausanne weight is the family name.** The hero reports `font-weight: 400` and `font-family: "TWK Lausanne 250"`. The 250 is the face, not a computed weight.
 - **Auth Continue label.** The black button's computed label colour is `rgb(100, 100, 101)`, not white. The crop is the evidence. Do not recolour it to white.
 - **`feature-card` is not a card.** The locator matched a large decorative region. Ignore that crop as a component spec.
-- **Spacing 2, 3 and 4 are derived** from a 4 px base. 5, 10 and 12 are measured.
+- **Spacing 2, 3 and 4 were entered by hand** on a 4 px base and are labelled Reconstruction. 5, 10 and 12 are measured.
+- **Hand-entered colours.** `core.color.ground.light-card` and `light.background.raised` (`#f5f5f7`), `light.background.surface` (white), `core.color.accent.violet` (`#5500ff`), `core.color.accent.link` (`#0099ff`) and `core.color.price.struck` (`#cacacd`) were entered by hand at capture time. No raw reading holds them: the pricing card, the violet chip and the struck price were never measured. They are labelled Reconstruction in tokens.json.
+- **Roles drawn from other elements.** `text.secondary` (light `#646465`) is the computed label of the sign-in Continue button, and `color.ink.700` (`#20232e`) is that button's hover fill. No pricing subtitle or feature line was measured. tokens.json names the element each value was read from.
+- **Readings taken with automation hidden.** Every committed reading and screenshot was taken by scripts that masked `navigator.webdriver` and turned off Chromium's AutomationControlled flag. The scripts no longer do; a recapture records any bot check as a boundary instead.
+- **components.md has no builder.** It was written at capture time; no builder in tools/ regenerates it.
 - **Pressed and focus were forced.** A script that runs only on a real pointer event is not in these crops. The Google button's pressed shrink is the one clear change.
 - **Reduced motion is ignored.** The probe kept 15 moving elements, including the home `dots` loop. There are no authored `prefers-reduced-motion` rules in the readable sheets.
 - **Screenshots are 256-colour PNGs.** Full-colour originals stay in the scratch directory and are not in git.
@@ -118,14 +122,14 @@ The free account used email sign-in at `https://lemni.com/signin`. Continue with
 | Expectation | Status | Where |
 |---|---|---|
 | Page background | captured | `light.background.page` `#f6f6f8`, `dark.background.page` `#0d0d12` |
-| Surface | captured | `light.background.surface` white card, `dark.background.surface` nav wash |
-| Raised | captured | `light.background.raised` pricing well, `dark.background.raised` Watch video |
+| Surface | partly | `light.background.surface` white card face, entered by hand (the card was not measured); `dark.background.surface` nav wash, measured |
+| Raised | partly | `light.background.raised` pricing well, entered by hand; `dark.background.raised` Watch video, measured |
 | Overlay and scrim | captured | `light.background.overlay` `rgba(255, 255, 255, 0.8)` on the workplace settings dialog |
 | Primary text | captured | `light.text.primary` black, `dark.text.primary` `#e3e8ff` |
 | Secondary text | captured | `light.text.secondary` `#646465`, `dark.text.secondary` `#9095a4` |
 | Disabled text | captured | `light.text.disabled` `rgba(0, 0, 0, 0.3)` on Add Webpage |
 | On-accent text | captured | `text.on-action` white on the pills |
-| Link text | captured | Current item is black on light pages. Dark Continue label is `#ccd1e9`. Declared link blue `#0099ff` is `core.color.accent.link` |
+| Link text | captured | Current item is black on light pages. Dark Continue label is `#ccd1e9`. The link blue `#0099ff` in `core.color.accent.link` was entered by hand |
 | Border default | captured | `border.stroke` hairline, declared |
 | Border strong | not present | No stronger stroke on the public controls |
 | Focus border | captured | No separate ring. `border.focus` records what keyboard focus paints |

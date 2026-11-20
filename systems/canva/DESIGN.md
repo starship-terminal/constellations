@@ -112,6 +112,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **The tool tab and tool panel were read in the wrong state; they need a recapture.** `tool-tab` is an ARIA tab that selects itself when it takes keyboard focus, so its focus-visible and pressed readings are the selected Presentations tab (white label), not an unselected tab, and `tool-panel`, read after it, is the Presentations panel. The capture now measures the tab after the panel (edited, not rerun).
+- `dark.surface.page` (#16171d) was entered by hand: no resolved variable holds it, and its source now says so.
 - **This is the public surface, not the editor.** The design editor, Brand Kit, dashboards, teams and account sit behind the auth card and are uncaptured. Marketing pages describe the product; nothing here verifies how it behaves. Treat the product's own design system as unknown.
 - **"Dark" is a painted surface, not a toggle.** The home header/hero band and feature sections paint dark through `.theme.dark` elements on a light page — nothing on the public surface toggles it. The `dark` token set is the translucent-white state layer those surfaces paint, read as surface roles, not a user-selectable mode.
 - **The hero's colour field is media, not CSS.** The purple-to-teal band is painted by an image/video layer behind the hero — no flat-colour token claims to be it. The teal→purple gradient token is the *logo* gradient from the StyleX layer, a different thing.

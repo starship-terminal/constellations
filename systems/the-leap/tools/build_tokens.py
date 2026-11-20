@@ -172,7 +172,7 @@ def build():
         },
         "motion": {
             "duration": {
-                "hover": dim("150ms", src + " button-yellow::before opacity 0.15s ease-in"),
+                "hover": tok("duration", "150ms", src + " button-yellow::before opacity 0.15s ease-in"),
             },
             "easing": {
                 "ease-in": tok("cubicBezier", [0.42, 0, 1, 1], src + " button-gray background 0.15s ease-in, keyword expanded"),

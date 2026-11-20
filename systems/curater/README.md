@@ -90,9 +90,11 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 ## Boundaries
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - The signed-in app (creating curations, the TasteScope questionnaire, saving items, settings) sits behind 'Log in or sign up' / the Google SSO button and was never reached; every captured control was measured, never followed.
 - /feed scrolls in an inner container (not the document): the desktop full-page capture is bounded at the first 27,850px and mobile at 57,550px — the tail is a documented boundary.
 - One curation (/curation/qDNMdxe5) and one profile (/ravi) were captured as representatives of their page types; the catalog's full range is not enumerated.
 - Disabled, error and loading states never appeared on the public surface.
+- **`core.spacing.content-w` (480px) was resolved at 1280 wide, not 1440.** The resolution probe in `tools/capture/vars.mjs` ran at Playwright's 1280 x 720 default, where `--centered-content-width` resolves to 30rem. At the 1440 x 900 the notes name, the declared `@media (min-width: 90rem)` rule sets it to 35rem (560px). The probe now uses 1440 x 900 (edited, not run); the token needs a recapture.
 - The /taste route client-side redirects to /taste/soon; Playwright locators never resolve on it, so its components are measured through main-world DOM queries (the values are the same computed styles).
 - No standalone SVG icon set was lifted on this pass; the glyphs are visible in the crops and screenshots — declared under `layoutGaps` in the catalog entry.

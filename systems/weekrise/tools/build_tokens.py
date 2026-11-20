@@ -3,7 +3,8 @@
 
 The tokens file was written from those readings. This script does not regenerate
 it. It fails if a --vapor-* colour or radius from raw/css-vars.json is missing
-from tokens.json, so a later edit cannot drop a measured value quietly.
+from tokens.json, so a later edit cannot drop a measured value quietly. Values are
+compared whole after normalising case and short hex, so #000 does not match #000000xx.
 
     python3 tools/build_tokens.py
 """
@@ -18,10 +19,18 @@ RAW = json.loads((HERE / "raw" / "css-vars.json").read_text())
 TOKENS = json.loads((HERE / "tokens.json").read_text())
 
 
+def norm(value: str) -> str:
+    """Lower-case; a 3- or 4-digit hex is spelt out (#e00 -> #ee0000). Compared whole, never as a substring."""
+    v = value.strip().lower()
+    if v.startswith("#") and len(v) in (4, 5):
+        v = "#" + "".join(c * 2 for c in v[1:])
+    return v
+
+
 def walk(node, found: set[str]) -> None:
     if isinstance(node, dict):
         if "$value" in node and isinstance(node["$value"], str):
-            found.add(node["$value"].lower())
+            found.add(norm(node["$value"]))
         for child in node.values():
             walk(child, found)
     elif isinstance(node, list):
@@ -41,11 +50,8 @@ def main() -> int:
                     "--vapor-error", "--vapor-error-text", "--vapor-black", "--vapor-white",
                 }):
             continue
-        needle = value.lower()
-        shorts = {"#999": "#999999", "#888": "#888888", "#666": "#666666", "#e00": "#ee0000"}
-        if needle in shorts:
-            needle = shorts[needle]
-        if needle not in found and not any(needle in item for item in found):
+        needle = norm(value)
+        if needle not in found:
             missing.append(f"{name} {value}")
     if missing:
         print("missing measured values:", file=sys.stderr)

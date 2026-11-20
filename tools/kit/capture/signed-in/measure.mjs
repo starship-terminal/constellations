@@ -25,11 +25,21 @@
 //                  `checked`, `open`, `typed`, `on`, ...
 // No click is dispatched anywhere; the copies have no scripts and every navigation away from the
 // file is aborted.
+// PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+// for it. While this is null the script stops: the kit's copy is Claude's example and would
+// read or write Claude's values. KIT_EXAMPLE=1 runs the example as it is.
+const ADAPTED_FOR = null;
+if (!ADAPTED_FOR && !process.env.KIT_EXAMPLE) {
+  console.error('measure.mjs is the kit\'s Claude example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR');
+  process.exit(2);
+}
 import fs from 'node:fs';
 import path from 'node:path';
 import { chromium, REF, RAW, CROPS, SNAPS, SCROLL, PYTHON, metaOf, newContext, openSnap, setLight } from './lib.mjs';
 import { safeUrl } from '../safe-url.mjs';
 import { quantizeCrop } from '../crop.mjs';
+import { scrubConsole } from '../no-query.mjs';
+scrubConsole();   // logs are committed: no query, from a locator or a page URL, is printed
 
 if (!SNAPS) { console.error('SNAPS=<snapshot dir> is required'); process.exit(2); }
 // Every recorded string is written through noEmails, whatever recorded it: styleOf masks its own text,

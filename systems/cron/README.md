@@ -93,6 +93,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 ## Boundaries
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - The Cron app (the calendar, its Notion Calendar successor, docs, the demo) sits behind Login/Sign up and was never reached.
 - /changelog reports a 113,351px scroll height; the full-page capture is bounded at 112,000px — the tail is a documented boundary.
 - Disabled, error and loading states never appeared on the public surface.

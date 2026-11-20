@@ -446,7 +446,7 @@ if icons:
     W()
     W("## Icons")
     W()
-    W(f"{len(icons)} SVGs were lifted from the pages into [icons/](icons), named by role, with the source table in [icons/INDEX.tsv](icons/INDEX.tsv). Colour is `currentColor` wherever the icon took its colour from the text, so each recolours from CSS `color`. The SVGs are Untitled's property, kept for reference only.")
+    W(f"{len(icons)} SVGs were lifted from the pages into [icons/](icons), named by role, with the source table in [icons/INDEX.tsv](icons/INDEX.tsv). Colour is `currentColor` wherever the icon took its colour from the text, so each recolours from CSS `color`. The SVGs are aaply's property, kept for reference only.")
     W()
     W("| Icon | Rendered sizes | View box | Style | Seen on | Next to |")
     W("|---|---|---|---|---|---|")

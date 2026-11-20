@@ -674,6 +674,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Two summaries were read with their `<details>` open.** `faq-summary` and `m-footer-summary` were measured right after `faq-item` and `m-footer-col` opened the same `<details>` for their `open` state and left it open, so their states are of an open item labelled default (and `m-footer-summary`'s keyboard focus failed). `measure.mjs` now closes the item after the `open` reading (edited, not run); both entries need a recapture.
 - **Quantised screenshots.** `screenshots/` and `components/crops/` are 256-colour PNGs; read exact colours from tokens or the raw files.
 - **No standalone icon set.** The wordmark, SSO glyphs, chevrons and footer arrows appear in crops and screenshots but were not lifted as an icon library; icon.png is the site favicon-derived mark.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ### Do and don't (from README.md)
 

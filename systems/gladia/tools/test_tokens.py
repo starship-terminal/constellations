@@ -55,12 +55,28 @@ class TokensTest(unittest.TestCase):
         self.assertEqual(core["duration.240"], "240ms")
 
     def test_component_geometry(self):
+        """Pin component tokens to the readings they came from (a name-shape check passed for {})."""
         comp = T["core"].get("component")
         self.assertIsNotNone(comp, "no component tokens")
-        names = {n for n, _ in token_checks.tokens_of(comp)}
-        # geometry emitted only when measure.mjs has run; check the shape it takes
-        for n in names:
-            self.assertRegex(n, r"^[a-zA-Z]+\.")
+        raw = json.loads((HERE / "raw" / "components-computed.json").read_text())["components"]
+
+        def reading(c, field):
+            s = raw[c]["states"]["default"]
+            v = s["rect"][field] if field in s.get("rect", {}) else s["style"][field]
+            return v if isinstance(v, str) else "%gpx" % v
+
+        def tok(path):
+            node = comp
+            for k in path.split("."):
+                node = node[k]
+            return node["$value"]
+
+        for path, c, field in [("header.height", "mkt-header", "h"), ("button.headerCta.height", "nav-cta", "h"),
+                               ("button.headerCta.radius", "nav-cta", "borderTopLeftRadius"),
+                               ("planCard.width", "plan-card", "w"), ("planCard.radius", "plan-card", "borderTopLeftRadius")]:
+            self.assertEqual(tok(path), reading(c, field), path)
+        # a transparent reading is never published as a fill
+        self.assertNotIn("auth", comp)
 
 
 if __name__ == "__main__":

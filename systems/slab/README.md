@@ -58,7 +58,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | light | 7.89:1 pass | 7.89:1 pass | 3.00:1 fail | 3.00:1 fail |
 
-2 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `core.color.focus` #e59700; `light.border.focus` #e59700.
+2 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `core.color.focus` #e59700 (Observed, not measured); `light.border.focus` #e59700 (Observed, not measured).
 
 <!-- brief:end -->
 
@@ -80,7 +80,7 @@ Custom properties on https://slab.com/ are only Swiper's `--swiper-theme-color` 
 
 ## What to distrust
 
-The live CSS viewport was 1169, not 1440. The 1440 and 390 screenshots are a later headless pass of the marketing pages, not the viewport the computed styles were read at. Hover, pressed and disabled colours come from stylesheet rules, not from a shown state. The home email field's programmatic focus did not paint the cyan focus ring the stylesheet declares, so that ring is a rule, not a shown state. No dark theme was found. `prefers-color-scheme` was dark in the preview tab and the page stayed on the plum and white palette. IBM Plex Mono is declared in an `@font-face` and was not used on the pages opened. Screenshot colours are 24-bit PNGs. Read values from the tokens.
+The live CSS viewport was 1169, not 1440. The 1440 and 390 screenshots are a later headless pass of the marketing pages, not the viewport the computed styles were read at. Hover, pressed and disabled colours come from stylesheet rules, not from a shown state. The home email field's programmatic focus did not paint the cyan focus ring the stylesheet declares, so that ring is a rule, not a shown state. `core.color.focus` and `light.border.focus` (`#e59700`) are Chromium's default focus ring on a focused link, labelled Observed: the product does not style it, so do not ship it as a brand focus colour. No dark theme was found. `prefers-color-scheme` was dark in the preview tab and the page stayed on the plum and white palette. IBM Plex Mono is declared in an `@font-face` and was not used on the pages opened. Screenshot colours are 24-bit PNGs. Read values from the tokens.
 
 ## Fonts
 

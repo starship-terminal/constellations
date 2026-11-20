@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Write components.md from raw/readings.json. No crops: screenshots were not produced."""
+"""Write components.md. The text is typed into this script from raw/readings.json at capture time;
+it does not read raw/, so a recapture must update the text by hand. No crops: screenshots were not produced."""
 import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent

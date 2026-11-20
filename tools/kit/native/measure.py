@@ -27,6 +27,7 @@ Each reading is one of:
 Standard library only (tools/capture/native/sample.py). Deterministic.
 """
 import json
+import os
 import pathlib
 import sys
 
@@ -342,7 +343,14 @@ def write(readings):
     (PKG / "raw" / f"{SLUG}-measured.md").write_text("\n".join(lines) + "\n")
 
 
+# PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+# for it. While this is None the script stops when run: the kit's copy is Grok Bot's example and
+# would write Grok Bot's values. KIT_EXAMPLE=1 runs the example as it is.
+ADAPTED_FOR = None
+
 if __name__ == "__main__":
+    if ADAPTED_FOR is None and not os.environ.get("KIT_EXAMPLE"):
+        raise SystemExit("measure.py is the kit's Grok Bot example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR")
     readings = run(sys.argv[1] if len(sys.argv) > 1 else f"~/.design-systems/{SLUG}/raw-shots")
     missing = sorted(rid for rid in R if rid not in readings)
     if missing:   # a light-only gap is fine; a reading with no theme at all means a capture is absent

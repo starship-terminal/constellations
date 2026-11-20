@@ -11,10 +11,12 @@
 // (the Platform nav dropdown, the mobile menu). The Transcend/HubSpot consent overlay is
 // hidden, never answered. The demo form and the login card are screenshotted at rest.
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE, APP } from './lib.mjs';
 
-const RAW = process.env.RAW || (process.env.HOME + '/.design-systems/jasper/raw-shots');
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'jasper', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);

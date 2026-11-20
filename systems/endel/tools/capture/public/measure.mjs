@@ -61,8 +61,8 @@ async function newPage(key, { mobile = false, wait = 8000 } = {}) {
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, URLS[key], { wait });
-  if (await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); return false; }
+  const cleared = await open(page, URLS[key], { wait });  // false: the bot check did not clear (lib.mjs)
+  if (!cleared || (await blocked())) { log('  BLOCKED', key); await page.close(); await ctx.close(); return false; }
   opened.add(key + '|' + view);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   await closePromo(page);

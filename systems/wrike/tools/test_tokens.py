@@ -28,7 +28,7 @@ class Tokens(unittest.TestCase):
         home = next(p for p in RAW["pages"] if p["name"] == "home")
         self.assertEqual(home["h1"]["size"], "64px")
         self.assertEqual(value("core.typography.display")["fontSize"], "64px")
-        self.assertEqual(value("core.typography.display")["fontWeight"], "600")
+        self.assertEqual(value("core.typography.display")["fontWeight"], 600)
 
     def test_spacing_matches_1440_vars(self):
         home = next(p for p in RAW["pages"] if p["name"] == "home")

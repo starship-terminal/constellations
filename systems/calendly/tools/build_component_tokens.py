@@ -588,7 +588,9 @@ for key, comp, state, prop, desc in [
         try:
             pr = next((n.get("radius") for n in C[comp]["states"][state].get("paint", [])
                        if n.get("radius") and n["radius"] != "0px"), None)
-            if pr and not pr.startswith("3."):  # billing-radio paints 3.3e7px circles; skip non-finite pills
+            # billing-radio paints 3.3e7px circles: skip a computed rounded-full (a px radius
+            # above 9999px), not every radius that starts "3." (3.5px is a real radius)
+            if pr and not (pr.endswith("px") and float(pr.split()[0][:-2]) > 9999):
                 if pr.endswith("%"):  # a proportional radius is a number, not a dimension
                     radius[key] = {"value": float(pr[:-1]) / 100, "type": "number",
                                    "source": f"painted layer radius under {comp} {state} (raw/components-computed.json)",

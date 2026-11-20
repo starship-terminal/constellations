@@ -116,6 +116,50 @@ def lit(value, ty, src, root="component", path=None, desc=None):
     emit_at(root, path, leaf)
 
 
+def exotic(c):
+    """CSS lab() (D50, Bradford-adapted) and oklab()/oklch() -> 'rgb(r, g, b)' or
+    'rgba(r, g, b, a)', so colour() can label it like any other reading. The
+    palette's lab()/oklch() literals become tokens instead of being dropped
+    (2026-11 audit, finding 14-20). Returns c unchanged when it cannot convert."""
+    import math
+    gam = lambda v: 12.92 * v if v <= 0.0031308 else 1.055 * v ** (1 / 2.4) - 0.055
+    alpha = lambda a: 1.0 if a is None else (float(a[:-1]) / 100 if a.endswith("%") else float(a))
+
+    def out(lin, a):
+        r, g, b = (max(0, min(255, round(gam(max(0.0, v)) * 255))) for v in lin)
+        al = alpha(a)
+        return f"rgb({r}, {g}, {b})" if al == 1 else f"rgba({r}, {g}, {b}, {al:g})"
+
+    m = re.fullmatch(r"lab\(\s*([\d.]+)%?\s+(-?[\d.]+)\s+(-?[\d.]+)\s*(?:/\s*([\d.]+%?))?\s*\)", c.strip())
+    if m:
+        L, A, B, a = m.groups()
+        fy = (float(L) + 16) / 116
+        fx, fz = fy + float(A) / 500, fy - float(B) / 200
+        d = 6 / 29
+        f = lambda t: t ** 3 if t > d else 3 * d ** 2 * (t - 4 / 29)
+        x, y, z = f(fx) * 0.96422, f(fy) * 1.0, f(fz) * 0.82521
+        return out((3.1338561 * x - 1.6168667 * y - 0.4906146 * z,
+                    -0.9787684 * x + 1.9161415 * y + 0.0334540 * z,
+                    0.0719453 * x - 0.2289914 * y + 1.4052427 * z), a)
+    m = re.fullmatch(r"okl(ch|ab)\(\s*([\d.]+%?)\s+(none|-?[\d.]+%?)\s+(none|-?[\d.]+(?:deg)?)\s*(?:/\s*([\d.]+%?))?\s*\)", c.strip())
+    if m:
+        kind, L, x, y, a = m.groups()
+        L = float(L[:-1]) / 100 if L.endswith("%") else float(L)
+        num_ = lambda v, scale: 0.0 if v == "none" else (float(v[:-1]) / 100 * scale if v.endswith("%") else float(v.replace("deg", "")))
+        if kind == "ch":
+            C_, h = num_(x, 0.4), num_(y, 1)
+            A, B = C_ * math.cos(math.radians(h)), C_ * math.sin(math.radians(h))
+        else:
+            A, B = num_(x, 0.4), num_(y, 0.4)
+        l_ = (L + 0.3963377774 * A + 0.2158037573 * B) ** 3
+        m_ = (L - 0.1055613458 * A - 0.0638541728 * B) ** 3
+        s_ = (L - 0.0894841775 * A - 1.2914855480 * B) ** 3
+        return out((4.0767416621 * l_ - 3.3077115913 * m_ + 0.2309699292 * s_,
+                    -1.2684380046 * l_ + 2.6097574011 * m_ - 0.3413193965 * s_,
+                    -0.0041960863 * l_ - 0.7034186147 * m_ + 1.7076147010 * s_), a)
+    return c
+
+
 def norm_lit(c):
     """A palette literal -> '#rrggbb' or 'rgba(r, g, b, a)'."""
     c = re.sub(r"/\s*var\(--[\w-]+\)", "", c.strip().lower())
@@ -138,9 +182,9 @@ def norm_lit(c):
             return "#%02x%02x%02x" % (r, g, b)
         a = float(a[:-1]) / 100 if a.endswith("%") else float(a)
         return "#%02x%02x%02x" % (r, g, b) if a == 1 else "rgba(%d, %d, %d, %g)" % (r, g, b, a)
-    m = re.fullmatch(r"(oklch|oklab|lab|hsl|hsla)\(", c)
-    if m:
-        return c  # unresolved exotic literal: keep the declaration as evidence
+    if re.match(r"(oklch|oklab|lab)\(", c):
+        v = exotic(c)
+        return norm_lit(v) if v != c else None
     return None
 
 
@@ -283,9 +327,10 @@ for surf in ("www", "docs", "demo", "app"):
             "core", f"palette.{name}")
 
 # ------------------------------------------------- measured type scale
+# Required: without it every measured token would drop silently.
 C_PATH = RAW / "components-computed.json"
-if C_PATH.exists():
-    C = json.loads(C_PATH.read_text()).get("components", {})
+if True:
+    C = json.loads(C_PATH.read_text())["components"]
 
     def geom(comp, state, field, path, label):
         st = C.get(comp, {}).get("states", {}).get(state, {})
@@ -433,26 +478,26 @@ if C_PATH.exists():
     typ("login-email-field", "typography.loginField", "the log-in field — Fellix")
 
 # --------------------------------------------------------- font faces
-# The faces are proprietary and never shipped: names + roles from the
-# @font-face harvest and the measured font stacks.
-lit('"Inter", system-ui, sans-serif', "fontFamily",
-    "@font-face in www.hume.ai's sheets (raw/css-vars.json fonts): 'Inter' is the open-licensed body/UI face",
-    "core", "font.family.body", desc="the body/UI face on www.hume.ai")
-lit('"Martina Plantijn", Georgia, serif', "fontFamily",
-    "@font-face in www.hume.ai's sheets (raw/css-vars.json fonts): 'Martina Plantijn' is a licensed display serif — the name is evidence, the font file is not shipped",
-    "core", "font.family.display", desc="the serif display face — pull-quotes and accents")
-lit('"PP Fraktion Mono", ui-monospace, monospace', "fontFamily",
-    "@font-face in www.hume.ai's sheets (raw/css-vars.json fonts): 'PP Fraktion Mono' is licensed — the name is evidence, the font file is not shipped",
-    "core", "font.family.monoWww", desc="the code face on www.hume.ai")
-lit("'Fellix', 'Fellix Fallback', ui-sans-serif, system-ui, sans-serif", "fontFamily",
-    "@font-face in dev.hume.ai's sheets (raw/css-vars.json fonts): 'Fellix' is a licensed face on the docs, demo and app — the name is evidence, the font file is not shipped",
-    "core", "font.family.docs", desc="the docs/app body face")
-lit("'Fraktion', ui-monospace, SFMono-Regular, Menlo, monospace", "fontFamily",
-    "@font-face in dev.hume.ai's sheets (raw/css-vars.json fonts): 'Fraktion' is a licensed mono — the name is evidence, the font file is not shipped",
-    "core", "font.family.code", desc="the docs code face")
-lit('"M PLUS 1", sans-serif', "fontFamily",
-    "@font-face in www.hume.ai's sheets (raw/css-vars.json fonts): 'M PLUS 1' covers Japanese text",
-    "core", "font.family.japanese", desc="the Japanese face")
+# The faces are proprietary and never shipped. Each stack is the computed
+# fontFamily of an element that paints it, verbatim; the @font-face harvest
+# (raw/css-vars.json fonts) names the faces. The Japanese face is the declared
+# --font-japanese var leaf above (no element paints it).
+def measured_family(comp, path, face, host, desc):
+    st = C[comp]["states"]["default"]
+    v = (st.get("textStyle") or {}).get("fontFamily") or st["style"]["fontFamily"]
+    if face.lower() not in v.lower():
+        raise ValueError(f"{comp}: computed fontFamily {v!r} does not name {face}")
+    lit(v, "fontFamily",
+        f"computed fontFamily of {comp} default on {C[comp].get('page')} (raw/components-computed.json); {face} is declared by @font-face in {host}'s sheets",
+        "core", path, desc=desc)
 
-(RAW / "component-tokens.json").write_text(json.dumps(TREE, indent=1, ensure_ascii=False) + "\n")
-print({k: sum(1 for _ in json.dumps(v).split('"type"')) - 1 for k, v in TREE.items()})
+
+measured_family("site-nav", "font.family.body", "Inter", "www.hume.ai", "the body/UI face on www.hume.ai (open-licensed)")
+measured_family("hero-headline", "font.family.display", "Martina Plantijn", "www.hume.ai", "the serif display face — a licensed face, not shipped")
+measured_family("player-card", "font.family.monoWww", "PP Fraktion Mono", "www.hume.ai", "the code face on www.hume.ai — licensed, not shipped")
+measured_family("docs-side-link", "font.family.docs", "Fellix", "dev.hume.ai", "the docs/app body face — licensed, not shipped")
+measured_family("docs-code-block", "font.family.code", "Fraktion", "dev.hume.ai", "the docs code face — licensed, not shipped")
+
+if __name__ == "__main__":
+    (RAW / "component-tokens.json").write_text(json.dumps(TREE, indent=1, ensure_ascii=False) + "\n")
+    print({k: sum(1 for _ in json.dumps(v).split('"type"')) - 1 for k, v in TREE.items()})

@@ -122,7 +122,7 @@ export const M = (name) => `[class*="${name}"]`;
 
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // bot check: navigator.webdriver is left as the browser reports it; a challenge is recorded as a boundary, not bypassed (D7)
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }

@@ -1027,23 +1027,24 @@ Page: tools-bio. Selector: `bio Generate bios`. States: default, hover, focus-vi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 364 x 50 | = | = | = |
-| Padding | 0px 24px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 15px | = | = | = |
-| Background | #b9c0f5 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 15px/22.5px 500 | = | = | = |
-| Letter spacing | -0.45px | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.3s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Cursor | not-allowed | = | = | = |
-| Icon | 20 x 20, colour #ffffff | = | = | = |
-| Painted layers | button.inline-flex.h-[50px] 364.0x50.0 bg #b9c0f5 r 15px | = | = | = |
-| Ancestor paint | 1 up form.rounded-[12px].bg-white bg #ffffff | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 364 x 50 | = | - | = |
+| Padding | 0px 24px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 15px | = | - | = |
+| Background | #b9c0f5 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 15px/22.5px 500 | = | - | = |
+| Letter spacing | -0.45px | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.3s cubic-bezier(0.4, 0, 0.2, 1) | = | - | = |
+| Cursor | not-allowed | = | - | = |
+| Icon | 20 x 20, colour #ffffff | = | - | = |
+| Painted layers | button.inline-flex.h-[50px] 364.0x50.0 bg #b9c0f5 r 15px | = | - | = |
+| Ancestor paint | 1 up form.rounded-[12px].bg-white bg #ffffff | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `bio-submit-default.png`, `bio-submit-hover.png`, `bio-submit-focus-visible.png`, `bio-submit-pressed.png`.
 

@@ -199,7 +199,7 @@ def pick_role(candidates, prop):
 def role(path, comp, state, prop, desc):
     v = norm_color(stprop(comp, state, prop))
     if not v or v == "transparent":
-        return
+        return False
     cands = BY_VALUE.get(v, [])
     target = pick_role(cands, prop) if cands else None
     leaf = {"type": "color", "description": desc}
@@ -216,6 +216,8 @@ def role(path, comp, state, prop, desc):
     node[parts[-1]] = leaf
 
 
+GAPS = []  # mapped rows that yielded no token, printed by the build
+
 for path, comp, state, prop, desc in [
     ("page", "header-bar", "default", "ancestors.0.bg", "The ground the navbar sits on (body's own paint)."),
     ("nav", "header-bar", "default", "backgroundColor", "The navbar's painted surface."),
@@ -229,9 +231,10 @@ for path, comp, state, prop, desc in [
     ("focus", "header-nav-link", "focus-visible", "outlineColor", "The keyboard-focus ring where one is drawn."),
 ]:
     try:
-        role(path, comp, state, prop, desc)
+        if role(path, comp, state, prop, desc) is False:
+            GAPS.append(f"dark.{path} ({comp} {state}: transparent or empty)")
     except KeyError:
-        pass
+        GAPS.append(f"dark.{path} ({comp} {state}: not captured)")
 
 # -------------------------------------------------- measured extras (no var)
 
@@ -250,8 +253,11 @@ for comp, state, key, prop, desc in [
             meas[key] = {"value": v, "type": "color",
                          "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)",
                          "description": desc}
+        else:
+            err = C[comp]["states"][state].get("error")
+            GAPS.append(f"dark.measured.{key} ({comp} {state}: {'the reading is an error' if err else 'transparent or empty'})")
     except KeyError:
-        pass
+        GAPS.append(f"dark.measured.{key} ({comp} {state}: not captured)")
 
 # ------------------------------------------------------------------ component
 
@@ -259,15 +265,23 @@ comp = SPEC["component"]
 for key, cname, state, prop, desc in [
     ("control.heightCta", "hero-cta", "default", "height", "The 'Start Subscription' pill height."),
     ("control.heightSignin", "header-signin", "default", "height", "The Sign In pill height."),
-    ("control.radiusCta", "hero-cta", "default", "borderRadius", "The CTA's corner radius."),
+    ("control.radiusCta", "hero-cta", "default", "borderTopLeftRadius", "The CTA's corner radius."),
     ("nav.height", "header-bar", "default", "height", "The navbar block at 1440px."),
     ("footer.height", "footer", "default", "height", "The footer block at 1440px."),
-    ("card.radius", "plan-card", "default", "borderRadius", "A plan card's corner radius."),
-    ("dialog.radius", "consent-dialog", "default", "borderRadius", "The consent modal's corner radius."),
+    ("card.radius", "plan-card", "default", "borderTopLeftRadius", "A plan card's corner radius."),
+    ("dialog.radius", "consent-dialog", "default", "borderTopLeftRadius", "The consent modal's corner radius."),
 ]:
     try:
         v = stprop(cname, state, prop)
+        # the capture records the four corners, never the borderRadius
+        # shorthand; a radius token needs all four to agree
+        if prop == "borderTopLeftRadius":
+            st_ = C[cname]["states"][state].get("style", {})
+            if len({st_.get(f"border{c}Radius") for c in ("TopLeft", "TopRight", "BottomRight", "BottomLeft")}) != 1:
+                GAPS.append(f"component.{key} ({cname} {state}: corners differ)")
+                continue
         if not v or v == "0px":
+            GAPS.append(f"component.{key} ({cname} {state}: {v or 'no reading'})")
             continue
         node = comp
         parts = key.split(".")
@@ -277,9 +291,11 @@ for key, cname, state, prop, desc in [
                            "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)",
                            "description": desc}
     except KeyError:
-        pass
+        GAPS.append(f"component.{key} ({cname} {state}: not captured)")
 
-(RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1, ensure_ascii=False) + "\n")
+if __name__ == "__main__":
+    (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1, ensure_ascii=False) + "\n")
+    print("no token (see README What to distrust):", "; ".join(GAPS))
 
 
 def count(d):

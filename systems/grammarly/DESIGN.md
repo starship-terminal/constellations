@@ -736,6 +736,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **The dark set is declared, not painted.** Every `dark.*` value is a stylesheet declaration resolved with the theme attributes mounted by hand; no public page ever paints it, so a dark screenshot does not exist and none is implied.
 - **`pressed` is forced**, not a real mousedown: a JS-only press state would be missed.
 - **`copy-button` reads 0x0.** The button is in the DOM but collapsed whenever the editor's helper footer hides; its states record the declared style of a collapsed slot, not a painted button.

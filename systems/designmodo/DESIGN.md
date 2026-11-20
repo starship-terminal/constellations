@@ -125,6 +125,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 - `light.background.paper` (`#f4f4f4`, the app gallery canvas) was entered by hand at capture time: the recon read the app body background as rgb(244,244,244) but never saved that reading, so no file in `raw/` holds it. Its source says so; a recapture of the `app` page should record the body background and let the builder read it.
 - `tpl-card` was not found by the 2026-11-13 re-run (`recaptureMissed`); `core.component.tpl-card-width` and `-height` are the readings kept from the earlier run and say so in their source.
+- **Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
 
 ### Do and don't (from README.md)
 

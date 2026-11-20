@@ -69,6 +69,9 @@ let page, cdp, context, current;
 // ---------- state drivers ----------
 
 async function reset() {
+  // open() leaves the tab on about:blank when a reload was blocked; every
+  // state after that fails here, so the saved readings are kept
+  if (page.url() === 'about:blank') throw new Error('the page was lost to a blocked reload; saved readings kept');
   await page.keyboard.press('Escape').catch(() => {});
   await page.evaluate(() => document.activeElement && document.activeElement.blur && document.activeElement.blur()).catch(() => {});
   const vw = page.viewportSize()?.width ?? 1440;
@@ -125,14 +128,24 @@ async function pick(p, sel, score, tag = 'pk') {
 // CSS.forcePseudoState through CDP: the press never happens, so no link can
 // navigate and no button can fire.
 async function pressOn(loc) {
-  const b = await loc.boundingBox();
-  if (!b) return null;
+  // Force :active:hover on the component element itself, never the topmost
+  // node at its centre (a text span or an svg), so the component's own
+  // :active rule applies (2026-11 audit, finding 12-6; not run since).
   await cdp.send('DOM.getDocument').catch(() => {});
-  const { backendNodeId } = await cdp.send('DOM.getNodeForLocation', { x: Math.round(b.x + b.width / 2), y: Math.round(b.y + b.height / 2) });
-  const { nodeIds } = await cdp.send('DOM.pushNodesByBackendIdsToFrontend', { backendNodeIds: [backendNodeId] });
-  await cdp.send('CSS.forcePseudoState', { nodeId: nodeIds[0], forcedPseudoClasses: ['active', 'hover'] });
-  await page.waitForTimeout(400);
-  return nodeIds[0];
+  await loc.evaluate((el) => el.setAttribute('data-press-target', '1'));
+  try {
+    const { result } = await cdp.send('Runtime.evaluate', { expression: `document.querySelector('[data-press-target]')`, returnByValue: false });
+    // an unresolved target throws, so the state records an error instead of
+    // a resting reading labelled pressed
+    if (!result || !result.objectId) throw new Error('press target not resolvable');
+    const { nodeId } = await cdp.send('DOM.requestNode', { objectId: result.objectId });
+    if (!nodeId) throw new Error('press target has no DOM node');
+    await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: ['active', 'hover'] });
+    await page.waitForTimeout(400);
+    return nodeId;
+  } finally {
+    await loc.evaluate((el) => el.removeAttribute('data-press-target')).catch(() => {});
+  }
 }
 const pressOff = (id) => id == null ? null : cdp.send('CSS.forcePseudoState', { nodeId: id, forcedPseudoClasses: [] }).catch(() => {});
 
@@ -515,7 +528,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
   const darkFn = isBlog(g.page) ? setBlogTheme : setTheme;
   const url = urlOf(g.page);
   log('open', key, g.mobile ? '(mobile)' : '', url);
-  await open(page, url, { wait: 7000 });
+  if (!(await open(page, url, { wait: 7000 }))) { log('  group skipped: the page never loaded'); await page.close().catch(() => {}); continue; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   if (g.setup) await g.setup(page).catch((e) => log('  setup failed:', e.message));
   // the readable sheets' transition declarations, for measurements.md

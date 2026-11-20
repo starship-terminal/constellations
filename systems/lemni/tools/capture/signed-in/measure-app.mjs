@@ -14,7 +14,11 @@ const [workspace, token] = fs.readFileSync(AUTH, 'utf8').trim().split('\n');
 const SPACE = `https://lemni.com/s/${workspace}`;
 const OUT = path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { _meta: {}, components: {} };
-out._meta = { ...out._meta, read: '2026-11-18', product: 'Lemni', route: 'public-web+signed-in-free' };
+const TODAY = new Date().toLocaleDateString('en-CA');
+// _meta.read keeps the earlier date until this run reads a state, so a rerun that
+// fails throughout never redates old readings; _meta.lastAttempt is this run's date.
+// Each component and state also carries its own `read` date.
+out._meta = { ...out._meta, read: (out._meta && out._meta.read) || TODAY, lastAttempt: TODAY, product: 'Lemni', route: 'public-web+signed-in-free' };
 out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
@@ -26,7 +30,7 @@ const context = await chromium.launchPersistentContext(PROFILE, {
   deviceScaleFactor: 2,
   userAgent: UA,
   locale: 'en-US',
-  args: ['--disable-blink-features=AutomationControlled'],
+  // automation is not hidden: the AutomationControlled feature stays as Chromium sets it (bot check: recorded as a boundary, not bypassed)
 });
 await patch(context);
 await context.addInitScript(({ workspace, token }) => {
@@ -79,7 +83,9 @@ async function forcePseudo(loc, classes) {
 }
 
 function comp(key, meta) {
-  out.components[key] = { page: current, url: meta.url, states: {}, ...meta };
+  // Each component carries the date it was read, so a partial run that leaves
+  // other components untouched does not pass their readings off as today's.
+  out.components[key] = { page: current, url: meta.url, read: TODAY, states: {}, ...meta };
   return out.components[key];
 }
 
@@ -92,7 +98,8 @@ async function measure(key, state, loc, opts = {}) {
       try { file = await crop(page, loc, `${key}-${state}`, opts.pad ?? 10); }
       catch (e) { s.cropError = String(e.message || e).slice(0, 140); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    c.states[state] = { ...s, crop: file, via: opts.via, read: TODAY };
+    out._meta.read = TODAY; // a reading succeeded in this run
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
     c.states[state] = { error: String(e.message || e).slice(0, 200) };

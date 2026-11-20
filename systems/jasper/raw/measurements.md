@@ -68,20 +68,21 @@ Page: home. Selector: `.nav_menu_link "Platform"`. States: default, hover, focus
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 85.69 x 28.17 | = | = | = |
-| Padding | 8px 12px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | ABC ROM 16px/22.4px 450 | = | = | = |
-| Letter spacing | -0.16px | = | = | = |
-| Colour | #00063d | = | = | = |
-| Text node | div.nav_menu_text.u-text-style-main: ABC ROM 16px/22.4px 450, #00063d, ls -0.16px | = | = | = |
-| Transition | none | = | = | = |
-| Painted layers | div.nav_menu_link_color.is-border 9.9x28.2 bg #ceebff; div.nav_menu_link_color.is-center 65.9x28.2 bg #ceebff; div.nav_menu_link_color.is-border 9.9x28.2 bg #ceebff | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 85.69 x 28.17 | = | - | = |
+| Padding | 8px 12px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | ABC ROM 16px/22.4px 450 | = | - | = |
+| Letter spacing | -0.16px | = | - | = |
+| Colour | #00063d | = | - | = |
+| Text node | div.nav_menu_text.u-text-style-main: ABC ROM 16px/22.4px 450, #00063d, ls -0.16px | = | - | = |
+| Transition | none | = | - | = |
+| Painted layers | div.nav_menu_link_color.is-border 9.9x28.2 bg #ceebff; div.nav_menu_link_color.is-center 65.9x28.2 bg #ceebff; div.nav_menu_link_color.is-border 9.9x28.2 bg #ceebff | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `nav-item-default.png`, `nav-item-hover.png`, `nav-item-focus-visible.png`, `nav-item-pressed.png`.
 

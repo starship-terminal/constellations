@@ -18,7 +18,7 @@ Measured on the public site on 2026-11-18, light theme, 1440 CSS pixels. Crops a
 
 **Solutions menu** ([opened](screenshots/home-light-solutions.png)). White panel, soft shadow `core.elevation.popover`, grouped By use case / By role / By job / By condition.
 
-**Menu item** ([default](components/crops/menu-item-default.png), [hover](components/crops/menu-item-hover.png)). 13px / 500 zinc 600, 6px radius. Hover is zinc 700 on a 5% purple wash `color.purple.tint`. Items were not followed from the open menu.
+**Menu item** ([default](components/crops/menu-item-default.png), [hover](components/crops/menu-item-hover.png)). 12.8px / 500 zinc 600, 6px radius. Hover is zinc 700 on a 5% purple wash `color.purple.tint`. Items were not followed from the open menu.
 
 ## Type
 

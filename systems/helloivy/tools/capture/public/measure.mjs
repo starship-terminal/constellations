@@ -62,6 +62,9 @@ async function reset() {
   // otherwise be the overlay, not the component.
   const overlayOpen = await page.evaluate(() => [...document.querySelectorAll('*')].some((e) => e !== document.documentElement && e !== document.body && /01\s*HOME/i.test(e.innerText || '') && /FEATURES/i.test(e.innerText || '') && (e.innerText || '').length < 4000 && e.getBoundingClientRect().height > 300)).catch(() => false);
   if (overlayOpen && currentUrl) { await open(page, currentUrl, { wait: 8000 }); await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {}); }
+  // open() leaves the tab on about:blank when a reload was blocked; every
+  // state after that fails here, so the saved readings are kept
+  if (page.url() === 'about:blank') throw new Error('the page was lost to a blocked reload; saved readings kept');
   await page.evaluate(() => document.activeElement && document.activeElement.blur && document.activeElement.blur()).catch(() => {});
   const vw = page.viewportSize()?.width ?? 1440;
   await page.mouse.move(vw - 2, 2);
@@ -117,29 +120,24 @@ async function pick(p, sel, score, tag = 'pk') {
 // CSS.forcePseudoState through CDP: the press never happens, so no link can
 // navigate and no button can fire.
 async function pressOn(loc) {
-  await centre(loc).catch(() => {});   // getNodeForLocation needs the point inside the viewport
-  const b = await loc.boundingBox();
-  if (!b) return null;
+  // Force :active:hover on the component element itself, never the topmost
+  // node at its centre (a text span or an svg), so the component's own
+  // :active rule applies (2026-11 audit, finding 12-6; not run since).
   await cdp.send('DOM.getDocument').catch(() => {});
-  let backendNodeId;
+  await loc.evaluate((el) => el.setAttribute('data-press-target', '1'));
   try {
-    ({ backendNodeId } = await cdp.send('DOM.getNodeForLocation', { x: Math.round(b.x + b.width / 2), y: Math.round(b.y + b.height / 2) }));
-  } catch {
-    // Hit-testing misses under some Framer transform layers — resolve the
-    // measured element itself instead of whatever paints on top.
-    await loc.evaluate((el) => el.setAttribute('data-press-target', '1'));
     const { result } = await cdp.send('Runtime.evaluate', { expression: `document.querySelector('[data-press-target]')`, returnByValue: false });
-    if (!result || !result.objectId) throw new Error('press fallback: element not resolvable');
+    // an unresolved target throws, so the state records an error instead of
+    // a resting reading labelled pressed
+    if (!result || !result.objectId) throw new Error('press target not resolvable');
     const { nodeId } = await cdp.send('DOM.requestNode', { objectId: result.objectId });
-    await loc.evaluate((el) => el.removeAttribute('data-press-target')).catch(() => {});
+    if (!nodeId) throw new Error('press target has no DOM node');
     await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: ['active', 'hover'] });
     await page.waitForTimeout(400);
     return nodeId;
+  } finally {
+    await loc.evaluate((el) => el.removeAttribute('data-press-target')).catch(() => {});
   }
-  const { nodeIds } = await cdp.send('DOM.pushNodesByBackendIdsToFrontend', { backendNodeIds: [backendNodeId] });
-  await cdp.send('CSS.forcePseudoState', { nodeId: nodeIds[0], forcedPseudoClasses: ['active', 'hover'] });
-  await page.waitForTimeout(400);
-  return nodeIds[0];
 }
 const pressOff = (id) => id == null ? null : cdp.send('CSS.forcePseudoState', { nodeId: id, forcedPseudoClasses: [] }).catch(() => {});
 
@@ -543,7 +541,7 @@ for (const [key, g] of Object.entries(GROUPS)) {
   const url = URLS[g.page];
   currentUrl = url;
   log('open', key, g.mobile ? '(mobile)' : '', url);
-  await open(page, url, { wait: 8000 });
+  if (!(await open(page, url, { wait: 8000 }))) { log('  group skipped: the page never loaded'); await page.close().catch(() => {}); continue; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
   if (g.setup) await g.setup(page).catch((e) => log('  setup failed:', e.message));
   // the readable sheets' transition declarations, for measurements.md

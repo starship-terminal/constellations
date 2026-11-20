@@ -144,10 +144,21 @@ export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up =
 }
 
 export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-  await clearChallenge(page);
+  // A failed load or a challenge page that never clears is a boundary,
+  // never measured as the product: open() logs BLOCKED, leaves the tab on
+  // about:blank and returns false (true once the page loaded), without
+  // stopping the rest of the run. Every caller checks the result and skips
+  // the page or group, or fails the reading, so a blank tab is never saved
+  // as the product (2026-11 audit, finding 20-4; not run since).
+  const loaded = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).then(() => true, (e) => { console.log(`BLOCKED ${url}: ${String(e.message).split('\n')[0]}`); return false; });
+  if (!loaded || !(await clearChallenge(page))) {
+    if (loaded) console.log(`BLOCKED ${url}: the challenge page never cleared`);
+    await page.goto('about:blank').catch(() => {});
+    return false;
+  }
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
+  return true;
 }
 
 // ---- the guest registry's painted-wait, shared by every capture path ----
@@ -172,7 +183,7 @@ export async function registryPainted(page) {
 // cover the page. Shared by measure.mjs, layout.mjs and public.mjs so the
 // three paths can never disagree about what "the registry loaded" means.
 export async function openRegistry(page, { url = BASE + '/zoeandnoah' } = {}) {
-  await open(page, url, { wait: 12000 });
+  if (!(await open(page, url, { wait: 12000 }))) throw new Error(`BLOCKED ${url}: the page never loaded, nothing measured`);
   for (let i = 0; i < 3; i++) {
     if (await registryPainted(page)) break;
     if (i === 1) await page.reload({ waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});

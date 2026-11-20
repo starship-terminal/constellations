@@ -27,7 +27,7 @@ out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 const URLS = { home: '/', pricing: '/pricing', feature: '/features/cap-table', blog: '/blog', demo: '/demo-request' };
-let page, cdp, current, context, run, liveCtx;
+let page, cdp, current, currentUrl, context, run, liveCtx;
 const touched = new Set();
 const listed = new Map();
 // Routes the edge gates this run: components last measured on them keep their
@@ -44,6 +44,7 @@ async function blocked() {
 
 async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url = null } = {}) {
   current = key;
+  currentUrl = url || BASE + URLS[key];  // login and mobile pass their own url; no URLS entry
   // Close the previous page's context before opening the next: leaving them
   // alive keeps every captured page (and its animations) running in the
   // background for the rest of the run.
@@ -59,7 +60,7 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, url || BASE + URLS[key], { wait, promo });
+  await open(page, currentUrl, { wait, promo });
   if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   return true;
@@ -119,7 +120,7 @@ async function forcePseudo(loc, classes) {
 
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
-  Object.assign(c, { page: current, run, url: URLS[current] && BASE + URLS[current] }, meta);
+  Object.assign(c, { page: current, run, url: currentUrl }, meta);
   touched.add(key);
   c.states ??= {};
   return c;

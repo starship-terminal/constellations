@@ -212,7 +212,12 @@ def build_core():
         elif group == "blur":
             core["blur"]["-".join(rest)] = dim_token(value, SRC_VARS + f"; {name}")
         elif group == "breakpoints":
-            core["breakpoint"]["-".join(rest)] = dim_token(value, SRC_VARS + f"; {name}")
+            # A media-query em is the browser's 16px default, whatever the root font size.
+            if not value.endswith("em"):
+                raise ValueError(f"{name}: breakpoint {value!r} is not em")
+            px = ("%g" % (float(value[:-2]) * 16)) + "px"
+            core["breakpoint"]["-".join(rest)] = dim_token(
+                px, SRC_VARS + f"; {name} {value}, converted at the 16px media-query em")
         else:
             not_tokenised.append({"name": name, "value": value, "reason": "unmapped group " + group})
 

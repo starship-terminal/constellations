@@ -301,22 +301,23 @@ Page: home. Selector: `Watch the Video`. States: default, hover, focus-visible, 
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 199.7 x 48 | = | = | = |
-| Padding | 0px 20px 0px 19px | = | = | = |
-| Gap | 11px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 32px | = | = | = |
-| Background | #f6f4ef | #eae6dd | = | #eae6dd |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 17px/17px 500 | = | = | = |
-| Letter spacing | -0.22px | = | = | = |
-| Colour | #121212 | = | = | = |
-| Transition | background-color 0.1s ease | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 18 x 20, colour #121212 | = | = | = |
-| Painted layers | a.SectionIntro__Button-sc-1nhl813-4.cxKtcG 199.7x48.0 bg #f6f4ef r 32px | a.SectionIntro__Button-sc-1nhl813-4.cxKtcG 199.7x48.0 bg #eae6dd r 32px | = | a.SectionIntro__Button-sc-1nhl813-4.cxKtcG 199.7x48.0 bg #eae6dd r 32px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 199.7 x 48 | = | - | = |
+| Padding | 0px 20px 0px 19px | = | - | = |
+| Gap | 11px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 32px | = | - | = |
+| Background | #f6f4ef | #eae6dd | - | #eae6dd |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 17px/17px 500 | = | - | = |
+| Letter spacing | -0.22px | = | - | = |
+| Colour | #121212 | = | - | = |
+| Transition | background-color 0.1s ease | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 18 x 20, colour #121212 | = | - | = |
+| Painted layers | a.SectionIntro__Button-sc-1nhl813-4.cxKtcG 199.7x48.0 bg #f6f4ef r 32px | a.SectionIntro__Button-sc-1nhl813-4.cxKtcG 199.7x48.0 bg #eae6dd r 32px | - | a.SectionIntro__Button-sc-1nhl813-4.cxKtcG 199.7x48.0 bg #eae6dd r 32px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `watch-video-default.png`, `watch-video-hover.png`, `watch-video-focus-visible.png`, `watch-video-pressed.png`.
 
@@ -549,21 +550,22 @@ Page: home. Selector: `Testimonials__Panel`. States: default, hover, focus-visib
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 540 x 204 | = | = | = |
-| Padding | 32px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 10px | = | = | = |
-| Background | color(display-p3 1 1 1) | = | = | color(display-p3 0.984314 0.980392 0.976471) |
-| Box shadow | color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 1px inset | = | = | color(display-p3 0.984314 0.980392 0.976471) 0px 0px 0px 0px inset |
-| Outline | none | = | = | = |
-| Font | Inter 16px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #474645 | = | = | = |
-| Text node | div.Typography__Paragraph-sc-p3xo6h-7.cfflXR: Inter 15px/22px 600, #474645, ls -0.13px | = | = | = |
-| Transition | box-shadow, background 0.1s ease | = | = | = |
-| Icon | 20 x 21.11, colour color(display-p3 0.203922 0.203922 0.2) | = | = | = |
-| Painted layers | div.Testimonials__Panel-sc-1rcs3hw-3.gqyXuo 540.0x204.0 bg color(display-p3 1 1 1) r 10px shadow color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 1px inset; div::before.sc-gsFSXq.cBSgSE 40pxx40px bg #fbfaf9 image linear-gradient(90deg, #fbfaf9 50%, #e5e4e4, #fbfaf9) r 40px | = | = | div.Testimonials__Panel-sc-1rcs3hw-3.gqyXuo 540.0x204.0 bg color(display-p3 0.984314 0.980392 0.976471) r 10px shadow color(display-p3 0.984314 0.980392 0.976471) 0px 0px 0px 0px inset; div::before.sc-gsFSXq.cBSgSE 40pxx40px bg #fbfaf9 image linear-gradient(90deg, #fbfaf9 50%, #e5e4e4, #fbfaf9) r 40px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 540 x 204 | = | - | = |
+| Padding | 32px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 10px | = | - | = |
+| Background | color(display-p3 1 1 1) | = | - | color(display-p3 0.984314 0.980392 0.976471) |
+| Box shadow | color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 1px inset | = | - | color(display-p3 0.984314 0.980392 0.976471) 0px 0px 0px 0px inset |
+| Outline | none | = | - | = |
+| Font | Inter 16px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #474645 | = | - | = |
+| Text node | div.Typography__Paragraph-sc-p3xo6h-7.cfflXR: Inter 15px/22px 600, #474645, ls -0.13px | = | - | = |
+| Transition | box-shadow, background 0.1s ease | = | - | = |
+| Icon | 20 x 21.11, colour color(display-p3 0.203922 0.203922 0.2) | = | - | = |
+| Painted layers | div.Testimonials__Panel-sc-1rcs3hw-3.gqyXuo 540.0x204.0 bg color(display-p3 1 1 1) r 10px shadow color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 1px inset; div::before.sc-gsFSXq.cBSgSE 40pxx40px bg #fbfaf9 image linear-gradient(90deg, #fbfaf9 50%, #e5e4e4, #fbfaf9) r 40px | = | - | div.Testimonials__Panel-sc-1rcs3hw-3.gqyXuo 540.0x204.0 bg color(display-p3 0.984314 0.980392 0.976471) r 10px shadow color(display-p3 0.984314 0.980392 0.976471) 0px 0px 0px 0px inset; div::before.sc-gsFSXq.cBSgSE 40pxx40px bg #fbfaf9 image linear-gradient(90deg, #fbfaf9 50%, #e5e4e4, #fbfaf9) r 40px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `tweet-card-default.png`, `tweet-card-hover.png`, `tweet-card-focus-visible.png`, `tweet-card-pressed.png`.
 

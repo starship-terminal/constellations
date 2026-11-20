@@ -119,6 +119,7 @@ Nothing was joined, submitted, voted on, searched or signed into. The public mar
 - **/legal and /support render but were not captured** — both return 200; they were out of the page set.
 - **Card components are structural.** With utility classes only, `talent-card`/`vibe-card`/`res-card` match the first card-ish container; they are representative measurements, not a lifted component API.
 - **Focus styles were not systematically captured** beyond focus-visible states on the measured components.
+- **`vibe-card` was read from the wrong element.** It is the whole 1440 x 920 vibeathon section, not a card in it. Needs a recapture.
 
 ## Fonts
 

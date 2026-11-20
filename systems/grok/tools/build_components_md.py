@@ -24,6 +24,14 @@ T = json.load(open("tokens.json"))
 # --------------------------------------------------------------------------- colours and tokens
 
 
+
+def one_line(err, n=90):
+    """An error's first line only, control bytes (ANSI escapes) stripped and pipes escaped:
+    a Playwright call log never lands in prose or breaks a table."""
+    s = re.sub(r"\x1b\[[0-9;]*[A-Za-z]", "", str(err)).split("\n")[0]
+    s = re.sub(r"[\x00-\x1f\x7f]", "", s).replace("|", "\\|").strip()
+    return s[:n]
+
 def flat(node, prefix=""):
     for k, v in node.items():
         if k.startswith("$"):
@@ -484,9 +492,9 @@ for g in groups:
             prov.append(f"A {c['recaptureMissed']} recapture missed it — the {c.get('run')} readings are retained, not remeasured.")
         for s, v in c["states"].items():
             if v.get("rerunError"):
-                prov.append(f"`{s}` kept its {v.get('run')} reading after a failed re-read ({v['rerunError'][:90]}).")
+                prov.append(f"`{s}` kept its {v.get('run')} reading after a failed re-read ({one_line(v['rerunError'])}).")
             elif v.get("error"):
-                prov.append(f"`{s}` failed at capture ({v['error'][:90]}).")
+                prov.append(f"`{s}` failed at capture ({one_line(v['error'])}).")
         if prov:
             W(" ".join(prov))
         W()

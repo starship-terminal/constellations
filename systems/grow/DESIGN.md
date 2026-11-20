@@ -224,6 +224,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **Two blues are real, not a bug.** The site paints **#3186ff** on its links and filled buttons — brighter than the declared glue-blue-600 #1a73e8 the card links and focus ring still use. Copying #1a73e8 onto a button or #3186ff onto a focus ring is wrong either way; the tokens keep them in separate roles.
 - **#185abc is hover/pressed, not a brand step** — it happens to equal declared glue-blue-800, and the tokens say which role it paints.
 - **The dark hero is not a dark theme.** Certificate pages open on a #18191d band with white type; no theme control, no dark media query, no dark token set exists. Do not extend it into one.

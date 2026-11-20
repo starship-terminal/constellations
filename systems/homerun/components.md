@@ -56,7 +56,8 @@ Screenshots are named `{page}-light-{state}.png` (Homerun shows one light theme)
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 23 components were given a real keyboard focus. 12 draw a ring: `nav-link` (1px auto #101010, offset 1px), `nav-product-pill` (1px auto #101010, offset 1px), `nav-demo` (1px auto #101010, offset 1px), `nav-trial` (1px auto #101010, offset 1px), `hero-cta` (1px auto #101010, offset 1px), `hero-demo` (1px auto #101010, offset 1px), `footer-link` (1px auto #101010, offset 1px), `plan-button` (1px auto #101010, offset 1px), `pricing-cta` (1px auto #101010, offset 1px), `signin-sso` (5px auto #101010, offset 0px), `hr-button` (2px solid #00b16b `secondary.green`, offset 2px), `hr-link` (1px auto #101010, offset 1px). The other 11 draw none, so a keyboard user sees no change: `careers-share`, `careers-all-jobs`, `careers-filter`, `careers-job-card`, `job-apply`, `job-share`, `apply-back`, `signin-button`, `signin-link`, `m-menu-link`, `job-back`.
+**Focus.** 21 components were given a real keyboard focus. 12 draw a ring: `nav-link` (1px auto #101010, offset 1px), `nav-product-pill` (1px auto #101010, offset 1px), `nav-demo` (1px auto #101010, offset 1px), `nav-trial` (1px auto #101010, offset 1px), `hero-cta` (1px auto #101010, offset 1px), `hero-demo` (1px auto #101010, offset 1px), `footer-link` (1px auto #101010, offset 1px), `plan-button` (1px auto #101010, offset 1px), `pricing-cta` (1px auto #101010, offset 1px), `signin-sso` (5px auto #101010, offset 0px), `hr-button` (2px solid #00b16b `secondary.green`, offset 2px), `hr-link` (1px auto #101010, offset 1px). The other 9 draw none, so a keyboard user sees no change: `careers-filter`, `careers-job-card`, `job-apply`, `job-share`, `apply-back`, `signin-button`, `signin-link`, `m-menu-link`, `job-back`.
+Focus could not be captured on 2: keyboard focus never reached them (or they took focus without matching :focus-visible), so their focus look is unknown, not absent: `careers-share`, `careers-all-jobs`.
 
 **Pressed.** The blue controls darken on press to blue-600 `#254cda` (the hero CTA, the nav trial button and the ATS sign-in button all read the same value); the dark buttons lighten toward brown-300 `#4a3e3e`; the HR button darkens toward `#128053`. The careers and apply buttons hold their fill. What changed is in each entry's state row.
 
@@ -503,18 +504,18 @@ A share-this-site social icon button in the careers header; measured never press
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 175 x 40; padding 0px 10px 0px 37px; background transparent; text Inter 15/40 400, #736b6b `brown.200`; transition all 0.18s cubic-bezier(0.55, 0.025, 0.455, 0.98) |
+| default (same: hover, pressed) | size 175 x 40; padding 0px 10px 0px 37px; background transparent; text Inter 15/40 400, #736b6b `brown.200`; transition all 0.18s cubic-bezier(0.55, 0.025, 0.455, 0.98) |
 
-![Share button focus-visible](components/crops/careers-share-focus-visible.png) ![Share button pressed](components/crops/careers-share-pressed.png)
+![Share button pressed](components/crops/careers-share-pressed.png)
 
 #### See-all-jobs button
 The "See all jobs" button — scrolls to the job list. Read as `careers-all-jobs` on the careers (jobs.homerun.co) page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 179 x 59; border B: 1px solid #466af6; radius 12px; background #466af6; text GTAmerica-Regular 22/34 400, #ffffff `white`; transition all 0.18s cubic-bezier(0.55, 0.025, 0.455, 0.98) |
+| default (same: hover, pressed) | size 179 x 59; border B: 1px solid #466af6; radius 12px; background #466af6; text GTAmerica-Regular 22/34 400, #ffffff `white`; transition all 0.18s cubic-bezier(0.55, 0.025, 0.455, 0.98) |
 
-![See-all-jobs button default](components/crops/careers-all-jobs-default.png) ![See-all-jobs button hover](components/crops/careers-all-jobs-hover.png) ![See-all-jobs button focus-visible](components/crops/careers-all-jobs-focus-visible.png) ![See-all-jobs button pressed](components/crops/careers-all-jobs-pressed.png)
+![See-all-jobs button default](components/crops/careers-all-jobs-default.png) ![See-all-jobs button hover](components/crops/careers-all-jobs-hover.png) ![See-all-jobs button pressed](components/crops/careers-all-jobs-pressed.png)
 
 #### Filter button
 A job-list filter pill (Department/Location/Job type) — opens a filter popover. Read as `careers-filter` on the careers (jobs.homerun.co) page.

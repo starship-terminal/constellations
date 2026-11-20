@@ -24,5 +24,22 @@ class Tokens(unittest.TestCase):
         self.assertEqual(TOKENS["light"]["action"]["trial"]["$value"], "#68befd")
 
 
+    def test_every_token_has_a_source(self):
+        missing = []
+
+        def walk(node, path):
+            if isinstance(node, dict) and "$value" in node:
+                if not (node.get("$extensions") or {}).get("source"):
+                    missing.append(path)
+                return
+            if isinstance(node, dict):
+                for k, v in node.items():
+                    if not k.startswith("$"):
+                        walk(v, f"{path}.{k}" if path else k)
+
+        walk(TOKENS, "")
+        self.assertEqual(missing, [])
+
+
 if __name__ == "__main__":
     unittest.main()

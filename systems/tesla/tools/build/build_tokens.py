@@ -231,7 +231,8 @@ def build():
         if lh:
             style["lineHeight"] = "{font.line-height." + step + "}"
             put(core, ["font", "line-height", step], tok("dimension", lh, source(lh_name, ":root")))
-        # Display sizes (40 and up) use the display family on the marketing pages.
+        # Steps 70 and up (28px and larger) take the display family. This is a rule, not a per-step
+        # reading: the marketing headings read 40px and 56px in Universal Sans Display.
         if int(step) >= 70:
             style["fontFamily"] = "{font.family.display}"
             style["fontWeight"] = "{font.weight.medium}"

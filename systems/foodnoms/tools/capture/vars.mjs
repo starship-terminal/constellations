@@ -108,7 +108,7 @@ const result = await probe.evaluate((sheets) => {
 // 1440 (dark via the emulated prefers-color-scheme the site's own media rule
 // answers), plus a 390 light pass so vw/clamp() values stay honest ----
 const shell = () => '<!doctype html><html lang="en"><head>'
-  + sheets.map(([n, css]) => '<style>' + css.replace(/<\/style>/gi, '<\\/style') + '</style>').join('')
+  + sheets.map(([n, css]) => '<style>' + css.replace(/<\/style/gi, '<\\/style') + '</style>').join('')
   + '</head><body><div id="probe-root"></div></body></html>';
 const want = [...new Set(result.rules.filter((r) => !r.context.includes('@layer properties') && !/\\\[--/.test(r.selector || '')).flatMap((r) => Object.keys(r.properties)))]
   .filter((n) => !/^--(tw-|_|lightningcss-)/.test(n)).sort();

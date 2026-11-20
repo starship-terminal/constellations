@@ -16,6 +16,7 @@ The builder refuses a token without a source, an alias that points at nothing, a
 Standard library only. Deterministic: the same readings give the same bytes.
 """
 import json
+import os
 import pathlib
 import re
 
@@ -401,7 +402,14 @@ def build():
     print(f"tokens.json: {n} tokens")
 
 
+# PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+# for it. While this is None the script stops when run: the kit's copy is Grok Bot's example and
+# would write Grok Bot's values. KIT_EXAMPLE=1 runs the example as it is.
+ADAPTED_FOR = None
+
 if __name__ == "__main__":
+    if ADAPTED_FOR is None and not os.environ.get("KIT_EXAMPLE"):
+        raise SystemExit("build_tokens.py is the kit's Grok Bot example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR")
     if not READ:
         raise SystemExit("no raw/readings.json: run tools/measure.py first")
     build()

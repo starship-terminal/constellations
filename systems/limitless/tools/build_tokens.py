@@ -10,6 +10,7 @@ dark set: the product does not paint one on the captured surfaces.
 """
 import json
 import pathlib
+import re
 import sys
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
@@ -39,213 +40,251 @@ def font(value, source):
 M = "Measured computed style, public Limitless pages, 2026-11-18, light, 1440"
 A = "Measured computed style, app.limitless.ai Sign Up Unavailable dialog, 2026-11-18, light, 1440"
 D = "Derived from measured computed styles on the same capture"
+# Values with no raw reading behind them, typed in at capture time. Kept, labelled.
+RECON = "Reconstruction: entered by hand at capture time; no raw reading holds this value"
+
+C = json.loads((RAW / "components-computed.json").read_text())["components"]
+DIALOG = json.loads((RAW / "app-css-vars.json").read_text())["paintedOnDialog"]
+
+
+def recon(note):
+    return f"{RECON}; {note}"
+
+
+def rd(comp, state, prop):
+    """One computed property of a measured component state; raises when it is missing."""
+    s = C[comp]["states"][state]
+    if s.get("error") or "style" not in s:
+        raise SystemExit(f"{comp}.{state} has no reading")
+    v = s["style"].get(prop)
+    if v in (None, ""):
+        raise SystemExit(f"{comp}.{state} has no {prop}")
+    return v
+
+
+def norm_color(v):
+    v = v.strip()
+    m = re.fullmatch(r"rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)", v)
+    if not m:
+        raise SystemExit("colour not understood: " + v)
+    r, g, b, a = m.groups()
+    if a is None or float(a) >= 1:
+        return "#%02x%02x%02x" % (int(r), int(g), int(b))
+    return "rgba(%d, %d, %d, %g)" % (int(r), int(g), int(b), float(a))
+
+
+def at(comp, state, prop):
+    return f"{comp}.{state} {prop}"
+
+
+def cm(comp, state, prop, note):
+    return color(norm_color(rd(comp, state, prop)), f"{M}: {at(comp, state, prop)}, {note}")
+
+
+def ca(field, note):
+    return color(norm_color(DIALOG[field]), f"{A}: raw/app-css-vars.json paintedOnDialog.{field}, {note}")
+
+
+def dm(comp, state, prop, note):
+    return dim(rd(comp, state, prop), f"{M}: {at(comp, state, prop)}, {note}")
+
+
+def wm(comp, state, note):
+    return num(int(rd(comp, state, "fontWeight")), f"{M}: {at(comp, state, 'fontWeight')}, {note}", "fontWeight")
+
+
+def gradient_stop(i):
+    stops = re.findall(r"rgba?\([^)]*\)", DIALOG["okGradient"])
+    return norm_color(stops[i])
+
+
+def shadow(comp, state, note):
+    """The painted layers of a computed box-shadow: colour first, then four lengths, optional inset.
+    Fully transparent or all-zero ring layers (Tailwind's empty --tw-ring slots) are dropped."""
+    raw = rd(comp, state, "boxShadow")
+    layers = []
+    for m in re.finditer(r"(rgba?\([^)]*\))\s+((?:-?[\d.]+px\s*){2,4})(inset)?", raw):
+        colour, lengths = norm_color(m.group(1)), m.group(2).split()
+        lengths += ["0px"] * (4 - len(lengths))
+        if colour.endswith(", 0)") or all(x == "0px" for x in lengths):
+            continue
+        layer = {"color": colour, "offsetX": lengths[0], "offsetY": lengths[1], "blur": lengths[2], "spread": lengths[3]}
+        if m.group(3):
+            layer["inset"] = True
+        layers.append(layer)
+    if not layers:
+        raise SystemExit(f"{comp}.{state} boxShadow paints nothing: {raw}")
+    return {"$type": "shadow", "$value": layers, "$extensions": {"source": f"{M}: {at(comp, state, 'boxShadow')}, {note}"}}
+
+
+def typo(comp, state, family, note, tracking=True):
+    v = {"fontFamily": family, "fontSize": rd(comp, state, "fontSize"), "fontWeight": int(rd(comp, state, "fontWeight")),
+         "lineHeight": rd(comp, state, "lineHeight")}
+    ls = rd(comp, state, "letterSpacing")
+    if tracking and ls != "normal":
+        v["letterSpacing"] = ls
+    return {"$type": "typography", "$value": v, "$extensions": {"source": f"{M}: {comp}.{state} font, {note}"}}
+
+
+SIGNIN_INK = rd("signin-link", "default", "color")  # rgba(100, 116, 139, 0.7)
+_rgb = re.fullmatch(r"rgba\((\d+),\s*(\d+),\s*(\d+),\s*[\d.]+\)", SIGNIN_INK)
 
 core = {
     "color": {
         "slate": {
-            "900": color("#0f172a", f"{M}: hero and product titles (text-slate-900)"),
-            "800": color("#1e293b", f"{M}: nav link hover ink"),
-            "700": color("#334155", f"{M}: help link and carousel icon"),
-            "600": color("#475569", f"{M}: nav link and body copy (text-slate-600)"),
-            "500": color("#64748b", f"{M}: sign-in link, alpha 0.7 over white"),
-            "400": color("#94a3b8", f"{D}: Tailwind slate-400, the muted caption step between 500 and 300"),
-            "300": color("#cbd5e1", f"{D}: Tailwind slate-300"),
-            "200": color("#e2e8f0", f"{D}: Tailwind slate-200"),
-            "100": color("#f1f5f9", f"{M}: code block fill (bg-slate-100)"),
-            "50": color("#f8fafc", f"{M}: carousel icon-button hover fill"),
+            "900": cm("hero-title", "default", "color", "hero and product titles (text-slate-900)"),
+            "800": cm("nav-link", "hover", "color", "nav link hover ink"),
+            "700": cm("help-link", "default", "color", "help link; also the carousel icon"),
+            "600": cm("nav-link", "default", "color", "nav link and body copy (text-slate-600)"),
+            "500": color("#%02x%02x%02x" % tuple(int(x) for x in _rgb.groups()),
+                         f"{D}: the rgb of signin-link.default color {SIGNIN_INK}, alpha dropped"),
+            "400": cm("help-link", "hover", "textDecorationColor", "the help link's hover underline"),
+            "300": cm("help-link", "default", "textDecorationColor", "the help link's underline"),
+            "200": color("#e2e8f0", recon("Tailwind slate-200, the step between 300 and 100")),
+            "100": cm("code-block", "default", "backgroundColor", "code block fill (bg-slate-100)"),
+            "50": cm("carousel-next", "hover", "backgroundColor", "carousel icon-button hover fill"),
         },
         "zinc": {
-            "950": color("#09090b", f"{A}: dialog title (text-xl tracking-tight)"),
-            "800": color("#27272a", f"{M}: sign-in card ink and email field"),
-            "700": color("#3f3f46", f"{A}: dialog body (text-zinc-700); also {M}: menu item hover ink"),
-            "600": color("#52525b", f"{A}: dialog caption (text-zinc-600); also {M}: Solutions menu item"),
-            "500": color("#71717a", f"{A}: dialog close icon (text-zinc-500)"),
-            "200": color("#e4e4e7", f"{D}: Tailwind zinc-200, the sign-in field hairline family"),
+            "950": ca("title", "dialog title (text-xl tracking-tight)"),
+            "800": cm("google-button", "default", "color", "sign-in card ink; also the email field"),
+            "700": ca("body", "dialog body (text-zinc-700)"),
+            "600": ca("caption", "dialog caption (text-zinc-600); also the Solutions menu item"),
+            "500": color("#71717a", recon("Tailwind zinc-500, the dialog close icon; the icon was not measured")),
+            "200": cm("google-button", "default", "borderTopColor", "the sign-in field hairline family"),
         },
         "gray": {
-            "900": color("#111827", f"{M}: FAQ summary ink"),
-            "100": color("#f3f4f6", f"{M}: FAQ summary fill"),
+            "900": cm("faq", "default", "color", "FAQ summary ink"),
+            "100": cm("faq", "default", "backgroundColor", "FAQ summary fill"),
         },
         "purple": {
-            "500": color("#a855f7", f"{M}: Copy button and developer anchor (purple-500)"),
-            "600": color("#9333ea", f"{M}: Copy button hover"),
-            "700": color("#7c3aed", f"{A}: dialog mailto link (text-primary); also {M}: sign-in Google button focus ring"),
-            "appFrom": color("#8436e2", f"{A}: OK button linear-gradient start rgb(132, 54, 226)"),
-            "appTo": color("#6515c5", f"{A}: OK button linear-gradient end rgb(101, 21, 197)"),
-            "tint": color("rgba(109, 40, 217, 0.05)", f"{M}: Solutions menu item hover fill"),
+            "500": cm("copy-button", "default", "backgroundColor", "Copy button; also the developer anchor (purple-500)"),
+            "600": cm("copy-button", "hover", "backgroundColor", "Copy button hover"),
+            "700": ca("link", "dialog mailto link (text-primary); also the sign-in Google button focus ring"),
+            "appFrom": color(gradient_stop(0), f"{A}: raw/app-css-vars.json paintedOnDialog.okGradient, first stop"),
+            "appTo": color(gradient_stop(1), f"{A}: raw/app-css-vars.json paintedOnDialog.okGradient, last stop"),
+            "tint": cm("menu-item", "hover", "backgroundColor", "Solutions menu item hover fill"),
         },
-        "white": color("#ffffff", f"{M}: page, cards, Google button; also {A}: dialog card"),
-        "scrim": color("rgba(0, 0, 0, 0.3)", f"{A}: dialog overlay bg-black/30"),
-        "ink": color("#1a1a1a", f"{M}: help collection card text, search field focused"),
-        "footer": color("#d1d5db", f"{M}: footer link on the dark footer band"),
-        "navHover": color("rgba(51, 65, 85, 0.08)", f"{M}: nav link and Solutions hover fill"),
-        "focus": color("#005fcc", f"{M}: browser focus-visible outline on links and buttons"),
+        "white": cm("google-button", "default", "backgroundColor", "page, cards, Google button; also the dialog card"),
+        "scrim": ca("overlay", "dialog overlay bg-black/30"),
+        "ink": cm("collection-card", "default", "color", "help collection card text; also the focused search field"),
+        "footer": cm("footer-link", "default", "color", "footer link on the dark footer band"),
+        "navHover": cm("nav-link", "hover", "backgroundColor", "nav link and Solutions hover fill"),
+        "focus": cm("nav-link", "focus-visible", "outlineColor", "browser focus-visible outline on links and buttons"),
     },
     "font": {
         "family": {
             "sans": font(
                 "Greycliff, system-ui, -apple-system, Roboto, Open Sans, sans-serif",
-                f"{M}: body font-family is __greycliff (next/font). The woff files are not shipped; the stack is the declared fallback.",
+                f"{M}: {at('nav-link', 'default', 'fontFamily')} is __greycliff (next/font); the hashed next/font names were "
+                "renamed Greycliff by hand. The woff files are not shipped; the rest is the declared fallback.",
             ),
-            "mono": font(
-                "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
-                f"{M}: developer code samples",
-            ),
+            "mono": font(rd("code-block", "default", "fontFamily").replace('"', ""),
+                         f"{M}: {at('code-block', 'default', 'fontFamily')}, developer code samples"),
         },
         "weight": {
-            "regular": num(400, f"{M}: body copy", "fontWeight"),
-            "medium": num(500, f"{M}: sign-in link, menu item, Google button", "fontWeight"),
-            "semibold": num(600, f"{M}: nav, hero title, help link", "fontWeight"),
-            "bold": num(700, f"{M}: wordmark, product title, FAQ, section heading", "fontWeight"),
+            "regular": wm("body-copy", "default", "body copy"),
+            "medium": wm("signin-link", "default", "sign-in link; also the menu item and Google button"),
+            "semibold": wm("nav-link", "default", "nav; also the hero title and help link"),
+            "bold": wm("product-title", "default", "product title; also the wordmark, FAQ and section heading"),
         },
         "size": {
-            "caption": dim("14px", f"{M}: footer link and code"),
-            "menu": dim("13px", f"{M}: Solutions menu item, 12.8px rounded"),
-            "body": dim("16px", f"{M}: nav, buttons, fields"),
-            "body-lg": dim("18px", f"{M}: letter body and FAQ"),
-            "heading": dim("36px", f"{M}: section heading on /for/voice-recorder"),
-            "display": dim("60px", f"{M}: hero and product titles"),
+            "caption": dm("footer-link", "default", "fontSize", "footer link and code"),
+            "menu": dm("menu-item", "default", "fontSize", "Solutions menu item"),
+            "body": dm("nav-link", "default", "fontSize", "nav, buttons, fields"),
+            "body-lg": dm("body-copy", "default", "fontSize", "letter body and FAQ"),
+            "heading": dm("section-heading", "default", "fontSize", "section heading on /for/voice-recorder"),
+            "display": dm("hero-title", "default", "fontSize", "hero and product titles"),
         },
         "lineHeight": {
-            "display": dim("60px", f"{M}: hero title line-height equals 60px size"),
-            "body": dim("24px", f"{M}: 16px body, 24px line"),
-            "body-lg": dim("28px", f"{D}: 18px letter copy reads relaxed; measured leading-relaxed"),
+            "display": dm("hero-title", "default", "lineHeight", "hero title line-height equals its 60px size"),
+            "body": dm("nav-link", "default", "lineHeight", "16px body, 24px line"),
+            "body-lg": dm("faq", "default", "lineHeight", "18px FAQ summary"),
         },
         "tracking": {
-            "display": dim("-1.5px", f"{M}: hero letter-spacing"),
-        },
-    },
-    "typography": {
-        "display": {
-            "$type": "typography",
-            "$value": {
-                "fontFamily": "{font.family.sans}",
-                "fontSize": "{font.size.display}",
-                "fontWeight": "{font.weight.semibold}",
-                "lineHeight": "{font.lineHeight.display}",
-                "letterSpacing": "{font.tracking.display}",
-            },
-            "$extensions": {"source": f"{M}: h1 on the acquisition home"},
-        },
-        "heading": {
-            "$type": "typography",
-            "$value": {
-                "fontFamily": "{font.family.sans}",
-                "fontSize": "{font.size.heading}",
-                "fontWeight": "{font.weight.bold}",
-                "lineHeight": "41px",
-            },
-            "$extensions": {"source": f"{M}: section h2 on /for/voice-recorder"},
-        },
-        "body": {
-            "$type": "typography",
-            "$value": {
-                "fontFamily": "{font.family.sans}",
-                "fontSize": "{font.size.body}",
-                "fontWeight": "{font.weight.regular}",
-                "lineHeight": "{font.lineHeight.body}",
-            },
-            "$extensions": {"source": f"{M}: body default"},
-        },
-        "body-lg": {
-            "$type": "typography",
-            "$value": {
-                "fontFamily": "{font.family.sans}",
-                "fontSize": "{font.size.body-lg}",
-                "fontWeight": "{font.weight.regular}",
-                "lineHeight": "29px",
-            },
-            "$extensions": {"source": f"{M}: letter paragraphs, text-lg leading-relaxed"},
-        },
-        "label": {
-            "$type": "typography",
-            "$value": {
-                "fontFamily": "{font.family.sans}",
-                "fontSize": "{font.size.body}",
-                "fontWeight": "{font.weight.semibold}",
-                "lineHeight": "{font.lineHeight.body}",
-            },
-            "$extensions": {"source": f"{M}: nav links"},
-        },
-        "caption": {
-            "$type": "typography",
-            "$value": {
-                "fontFamily": "{font.family.sans}",
-                "fontSize": "{font.size.caption}",
-                "fontWeight": "{font.weight.medium}",
-                "lineHeight": "20px",
-            },
-            "$extensions": {"source": f"{M}: footer links"},
-        },
-        "code": {
-            "$type": "typography",
-            "$value": {
-                "fontFamily": "{font.family.mono}",
-                "fontSize": "{font.size.caption}",
-                "fontWeight": "{font.weight.regular}",
-                "lineHeight": "20px",
-            },
-            "$extensions": {"source": f"{M}: developer code samples"},
+            "display": dm("hero-title", "default", "letterSpacing", "hero letter-spacing"),
         },
     },
     "space": {
-        "1": dim("4px", f"{D}: Tailwind spacing unit the utilities are built on"),
-        "2": dim("8px", f"{M}: Solutions button padding-block"),
-        "3": dim("12px", f"{D}: 4px base times 3"),
-        "4": dim("16px", f"{M}: Solutions button padding-inline, body size"),
-        "5": dim("20px", f"{D}: 4px base times 5"),
-        "6": dim("24px", f"{M}: body line-height, letter card radius"),
-        "8": dim("32px", f"{D}: 4px base times 8, nav vertical rhythm"),
-        "10": dim("40px", f"{M}: nav control height and carousel icon button"),
-        "12": dim("48px", f"{M}: Google button height"),
-        "16": dim("64px", f"{D}: 4px base times 16"),
+        "1": dim("4px", recon("a step of the Tailwind 4px spacing unit")),
+        "2": dm("nav-solutions", "default", "paddingTop", "Solutions button padding-block"),
+        "3": dim("12px", recon("a step of the Tailwind 4px spacing unit")),
+        "4": dm("nav-solutions", "default", "paddingLeft", "Solutions button padding-inline"),
+        "5": dim("20px", recon("a step of the Tailwind 4px spacing unit")),
+        "6": dm("letter-card", "default", "borderTopLeftRadius", "letter card radius; also the body line-height"),
+        "8": dm("letter-card", "default", "paddingLeft", "letter card inline padding"),
+        "10": dm("nav-link", "default", "height", "nav control height; also the carousel icon button"),
+        "12": dm("google-button", "default", "height", "Google button height"),
+        "16": dim("64px", recon("a step of the Tailwind 4px spacing unit")),
     },
     "radius": {
-        "code": dim("4px", f"{M}: code chip and Copy button"),
-        "menu": dim("6px", f"{M}: Solutions menu item"),
-        "control": dim("8px", f"{M}: FAQ summary, Google button, help card"),
-        "search": dim("10px", f"{M}: help search field"),
-        "dialog": dim("12px", f"{A}: Sign Up Unavailable card (sm:rounded-xl)"),
-        "card": dim("24px", f"{M}: letter card"),
-        "pill": dim("9999px", f"{M}: nav links, Solutions, carousel arrows"),
+        "code": dm("code-block", "default", "borderTopLeftRadius", "code chip; also the Copy button"),
+        "menu": dm("menu-item", "default", "borderTopLeftRadius", "Solutions menu item"),
+        "control": dm("faq", "default", "borderTopLeftRadius", "FAQ summary; also the Google button and help card"),
+        "search": dm("search-field", "default", "borderTopLeftRadius", "help search field"),
+        "dialog": dim(DIALOG["cardRadius"], f"{A}: raw/app-css-vars.json paintedOnDialog.cardRadius, Sign Up Unavailable card (sm:rounded-xl)"),
+        "card": dm("letter-card", "default", "borderTopLeftRadius", "letter card"),
+        "pill": dm("nav-link", "default", "borderTopLeftRadius", "nav links, Solutions, carousel arrows"),
     },
     "border": {
-        "hairline": dim("1px", f"{M}: focus outline width"),
-        "focus": dim("1px", f"{M}: focus-visible outline"),
+        "hairline": dm("letter-card", "default", "outlineWidth", "the letter card's 1px outline"),
+        "focus": dm("nav-link", "focus-visible", "outlineWidth", "focus-visible outline"),
     },
     "elevation": {
-        "card": {
-            "$type": "shadow",
-            "$value": [{"color": "rgba(15, 23, 42, 0.15)", "offsetX": "0px", "offsetY": "25px", "blur": "50px", "spread": "-12px"}],
-            "$extensions": {"source": f"{M}: letter and video cards use shadow-2xl / shadow-slate-800/15"},
-        },
+        "card": shadow("letter-card", "default", "letter and video cards (shadow-2xl / shadow-slate-800/15)"),
         "popover": {
             "$type": "shadow",
             "$value": [{"color": "rgba(15, 23, 42, 0.12)", "offsetX": "0px", "offsetY": "12px", "blur": "24px", "spread": "-8px"}],
-            "$extensions": {"source": f"{M}: Solutions menu panel"},
+            "$extensions": {"source": recon("the Solutions menu panel; the panel was not measured")},
         },
-        "control": {
-            "$type": "shadow",
-            "$value": [{"color": "rgba(0, 0, 0, 0.1)", "offsetX": "0px", "offsetY": "1px", "blur": "2px", "spread": "0px"}],
-            "$extensions": {"source": f"{M}: carousel icon button"},
-        },
+        "control": shadow("carousel-next", "default", "carousel icon button (shadow-md)"),
         "dialog": {
             "$type": "shadow",
             "$value": [
                 {"color": "rgba(0, 0, 0, 0.1)", "offsetX": "0px", "offsetY": "10px", "blur": "15px", "spread": "-3px"},
                 {"color": "rgba(0, 0, 0, 0.1)", "offsetX": "0px", "offsetY": "4px", "blur": "6px", "spread": "-4px"},
             ],
-            "$extensions": {"source": f"{A}: dialog inner card box-shadow (Tailwind shadow-lg)"},
+            "$extensions": {"source": recon("Tailwind shadow-lg for the dialog; the measured dialog card (raw/gated-dialog.json card) computes box-shadow none")},
         },
     },
     "layout": {
-        "page": dim("1440px", f"{M}: desktop capture width"),
-        "phone": dim("390px", f"{M}: phone capture width"),
-        "content": dim("1024px", f"{M}: letter card width, max-w-5xl"),
-        "prose": dim("896px", f"{M}: hero title width, max-w-4xl"),
-        "navHeight": dim("64px", f"{M}: top bar"),
+        "page": dim("1440px", recon("the desktop capture viewport width, not a product value")),
+        "phone": dim("390px", recon("the phone capture viewport width, not a product value")),
+        "content": dm("letter-card", "default", "width", "letter card width, max-w-5xl"),
+        "prose": dm("hero-title", "default", "width", "hero title width, max-w-4xl"),
+        "navHeight": dim("64px", recon("the top bar height; the bar was not measured")),
     },
 }
+
+# Type roles: one composite per measured element. Each field names the core token that holds the
+# same reading where there is one, else carries the reading itself.
+def _alias(group, value):
+    for name, t in core["font"][group].items():
+        if str(t["$value"]) == str(value):
+            return "{font.%s.%s}" % (group, name)
+    return value
+
+
+def role(comp, state, family, note):
+    t = typo(comp, state, family, note)
+    v = t["$value"]
+    v["fontSize"] = _alias("size", v["fontSize"])
+    v["fontWeight"] = _alias("weight", v["fontWeight"])
+    v["lineHeight"] = _alias("lineHeight", v["lineHeight"])
+    if "letterSpacing" in v:
+        v["letterSpacing"] = _alias("tracking", v["letterSpacing"])
+    return t
+
+
+core["typography"] = {
+    "display": role("hero-title", "default", "{font.family.sans}", "h1 on the acquisition home"),
+    "heading": role("section-heading", "default", "{font.family.sans}", "section h2 on /for/voice-recorder"),
+    "body": role("roles-link", "default", "{font.family.sans}", "body default"),
+    "body-lg": role("body-copy", "default", "{font.family.sans}", "letter paragraphs, text-lg leading-relaxed"),
+    "label": role("nav-link", "default", "{font.family.sans}", "nav links"),
+    "caption": role("footer-link", "default", "{font.family.sans}", "footer links"),
+    "code": role("code-block", "default", "{font.family.mono}", "developer code samples"),
+}
+core = {k: core[k] for k in ("color", "font", "typography", "space", "radius", "border", "elevation", "layout")}
 
 light = {
     "page": color("{color.white}", f"{M}: marketing page background"),
@@ -254,16 +293,16 @@ light = {
     "surfaceCode": color("{color.slate.100}", f"{M}: inline code"),
     "text": color("{color.slate.900}", f"{M}: titles"),
     "textBody": color("{color.slate.600}", f"{M}: letter and nav"),
-    "textMuted": color("rgba(100, 116, 139, 0.7)", f"{M}: Sign In link"),
+    "textMuted": color(norm_color(SIGNIN_INK), f"{M}: {at('signin-link', 'default', 'color')}, Sign In link"),
     "textOnAccent": color("{color.white}", f"{M}: Copy button label"),
     "link": color("{color.purple.500}", f"{M}: developer anchors"),
     "accent": color("{color.purple.500}", f"{M}: Copy, wordmark, Join #developers"),
     "accentHover": color("{color.purple.600}", f"{M}: Copy hover"),
     "navHover": color("{color.navHover}", f"{M}: nav hover wash"),
     "focus": color("{color.focus}", f"{M}: focus-visible outline"),
-    "border": color("{color.slate.200}", f"{D}: hairline family around cards"),
+    "border": color("{color.slate.200}", "alias of the hand-entered color.slate.200; no card hairline reading holds it"),
     "footerInk": color("{color.footer}", f"{M}: footer links"),
-    "helpBand": color("#8a54e1", f"Measured from the help center stylesheet harvest: purple header band"),
+    "helpBand": color("#8a54e1", recon("the help center's purple header band; no raw file holds it")),
     "overlay": color("{color.scrim}", f"{A}: fixed inset overlay bg-black/30"),
     "scrim": color("{color.scrim}", f"{A}: same overlay, the dim behind the dialog"),
     "appInk": color("{color.zinc.950}", f"{A}: dialog title"),

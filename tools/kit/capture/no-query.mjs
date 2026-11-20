@@ -194,3 +194,17 @@ export function scrubQueries(x) {
   }
   return x;
 }
+
+// Every line a capture script prints goes through noQuery, and so does an error that ends the run: a
+// package commits its capture logs (raw/*.log), and a Playwright error quotes the locator it failed on
+// and, on navigation, the page URL, query and all. Call it once, before the script launches a browser.
+export function scrubConsole() {
+  const clean = (x) => (typeof x === 'string' ? noQuery(x) : x instanceof Error ? noQuery(x.stack || String(x)) : x);
+  for (const k of ['log', 'info', 'warn', 'error']) {
+    const write = console[k].bind(console);
+    console[k] = (...args) => write(...args.map(clean));
+  }
+  const die = (e) => { console.error(e instanceof Error ? e : String(e)); process.exit(1); };
+  process.on('uncaughtException', die);
+  process.on('unhandledRejection', die);
+}

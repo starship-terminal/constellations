@@ -1,11 +1,11 @@
 // One-shot DOM probe for lemni.com. Not part of the rebuild.
-import { chromium } from '/Users/kaichen/.design-systems/pw/node_modules/playwright/index.mjs';
+const { chromium } = await import(process.env.PLAYWRIGHT || 'playwright');
 
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
 const url = process.argv[2] || 'https://www.lemni.com/';
 const b = await chromium.launch({ headless: true });
 const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US' });
-await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+// automation is not hidden: the webdriver flag stays as Chromium sets it (bot check: recorded as a boundary, not bypassed)
 const p = await ctx.newPage();
 await p.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
 await p.waitForTimeout(5000);

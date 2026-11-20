@@ -76,7 +76,8 @@ def other(value: str, source: str) -> dict:
     return {"$value": value, "$extensions": {"source": source}}
 
 
-def main() -> None:
+def build() -> dict:
+    """The token document; nothing is written (main() writes it)."""
     home = COMP["home"]
     auth = COMP["authentication"]
     terms = COMP["terms"]
@@ -280,8 +281,17 @@ def main() -> None:
             "source": "Built by tools/build_tokens.py from raw/css-vars.json and raw/components-computed.json.",
         },
     }
+    return doc
+
+
+def render() -> str:
+    """tokens.json's exact text."""
+    return json.dumps(build(), indent=2) + "\n"
+
+
+def main() -> None:
     out = HERE / "tokens.json"
-    out.write_text(json.dumps(doc, indent=2) + "\n")
+    out.write_text(render())
     print(f"wrote {out}")
 
 

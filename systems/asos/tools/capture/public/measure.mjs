@@ -143,6 +143,9 @@ async function measure(key, state, target, opts = {}) {
 }
 
 async function S(key, target, list, meta = {}, opts = {}) {
+  // meta is the entry's description only; an option placed here (fillText, cropLoc,
+  // noToggle...) would be silently ignored, so refuse it
+  for (const k of Object.keys(meta)) if (!['group', 'title', 'desc', 'sel'].includes(k)) throw new Error(`S(${key}): '${k}' is an option; pass it in opts`);
   const c = comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   if (!listed.has(key)) listed.set(key, new Set());
   for (const st of list) listed.get(key).add(st);
@@ -298,13 +301,13 @@ async function plp() {
   await S('breadcrumb', q('nav[aria-label*="breadcrumb" i], [class*="breadcrumb" i]').first(), ['default'], { group: g, title: 'Breadcrumb', desc: 'Home / Women / New In / New In: Clothing.', sel: 'breadcrumb nav' }, { noScroll: true });
   // The category nav row is visible here (it is display:none on home).
   const gnav = G.shell;
-  await S('nav-item', q(tid('primarynav-button')).filter({ visible: true }).first(), B4, { group: gnav, title: 'Category button', desc: 'A button in the category nav row (New in, Clothing, Dresses…); each opens a flyout.', sel: tid('primarynav-button'), cropLoc: q(tid('primarynav-button')).filter({ visible: true }).first() }, { noScroll: true });
+  await S('nav-item', q(tid('primarynav-button')).filter({ visible: true }).first(), B4, { group: gnav, title: 'Category button', desc: 'A button in the category nav row (New in, Clothing, Dresses…); each opens a flyout.', sel: tid('primarynav-button') }, { cropLoc: q(tid('primarynav-button')).filter({ visible: true }).first(), noScroll: true });
   const newin = q(tid('primarynav-button')).filter({ visible: true }).first();
-  await S('nav-mega', newin, ['opened'], { group: gnav, title: 'Category flyout, open', desc: 'The nav button while its flyout is open.', sel: tid('primarynav-button') + ':hover', cropLoc: newin }, { noScroll: true, noReset: true, noToggle: true, open: async () => { await newin.hover(); await page.waitForTimeout(1600); } });
-  await S('nav-flyout', q(tid('secondarynav-flyout')).filter({ visible: true }).first(), ['default'], { group: gnav, title: 'Category flyout panel', desc: 'The open mega-menu panel itself, while the button is hovered.', sel: tid('secondarynav-flyout'), cropLoc: q(tid('secondarynav-flyout')).filter({ visible: true }).first() }, { noScroll: true, noReset: true, open: async () => { await newin.hover(); await page.waitForTimeout(1600); } });
+  await S('nav-mega', newin, ['opened'], { group: gnav, title: 'Category flyout, open', desc: 'The nav button while its flyout is open.', sel: tid('primarynav-button') + ':hover' }, { cropLoc: newin, noScroll: true, noReset: true, noToggle: true, open: async () => { await newin.hover(); await page.waitForTimeout(1600); } });
+  await S('nav-flyout', q(tid('secondarynav-flyout')).filter({ visible: true }).first(), ['default'], { group: gnav, title: 'Category flyout panel', desc: 'The open mega-menu panel itself, while the button is hovered.', sel: tid('secondarynav-flyout') }, { cropLoc: q(tid('secondarynav-flyout')).filter({ visible: true }).first(), noScroll: true, noReset: true, open: async () => { await newin.hover(); await page.waitForTimeout(1600); } });
   // Only states that keep the pointer on the nav button: the flyout closes
   // as soon as focus moves, so focus/press states on its links do not exist.
-  await S('flyout-link', q(tid('secondarynav-flyout')).filter({ visible: true }).first().locator(tid('text-link')).filter({ visible: true }).first(), ['default', 'hover'], { group: gnav, title: 'Flyout link', desc: 'A link inside the open mega-menu ("View all", "New In: Today"…). Measured, never followed.', sel: tid('secondarynav-flyout') + ' ' + tid('text-link'), cropLoc: q(tid('secondarynav-flyout')).filter({ visible: true }).first().locator(tid('text-link')).filter({ visible: true }).first() }, { noScroll: true, noReset: true, open: async () => { await newin.hover(); await page.waitForTimeout(1600); } });
+  await S('flyout-link', q(tid('secondarynav-flyout')).filter({ visible: true }).first().locator(tid('text-link')).filter({ visible: true }).first(), ['default', 'hover'], { group: gnav, title: 'Flyout link', desc: 'A link inside the open mega-menu ("View all", "New In: Today"…). Measured, never followed.', sel: tid('secondarynav-flyout') + ' ' + tid('text-link') }, { cropLoc: q(tid('secondarynav-flyout')).filter({ visible: true }).first().locator(tid('text-link')).filter({ visible: true }).first(), noScroll: true, noReset: true, open: async () => { await newin.hover(); await page.waitForTimeout(1600); } });
   await page.mouse.move(700, 500); await page.waitForTimeout(500);
   await S('plp-title', q('h1').first(), ['default'], { group: g, title: 'Collection title', desc: '"New In Clothing for Women" in Futura bold.', sel: 'h1' }, { noScroll: true });
   await S('cat-pill', q('a, button').filter({ hasText: /new in: today/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Category pill', desc: 'A chip in the sub-category carousel ("New in: Today"…).', sel: ':has-text("New in: Today")' }, { noScroll: true });

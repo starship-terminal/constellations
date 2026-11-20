@@ -19,12 +19,22 @@
 //   anything else  a resting state reached by the page itself or by a UI toggle (a tab,
 //                  a menu, "Show more", the lesson's own Pause and Settings); nothing that
 //                  sends a question, creates a course, signs in or uploads is ever pressed
+// PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+// for it. While this is null the script stops: the kit's copy is Gauth's example and would
+// read or write Gauth's values. KIT_EXAMPLE=1 runs the example as it is.
+const ADAPTED_FOR = null;
+if (!ADAPTED_FOR && !process.env.KIT_EXAMPLE) {
+  console.error('measure.mjs is the kit\'s Gauth example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR');
+  process.exit(2);
+}
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, M, launch, open, closePromo, openStory, styleOf, crop, centre, RAW, REF, CROPS } from './lib.mjs';
 import { safeUrl } from '../safe-url.mjs';
 import { pruneStale } from '../readings.mjs';
 import { pin, unpin, prefer } from './pin.mjs';
+import { scrubConsole } from '../no-query.mjs';
+scrubConsole();   // logs are committed: no query, from a locator or a page URL, is printed
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};

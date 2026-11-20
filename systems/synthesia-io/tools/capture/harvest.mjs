@@ -186,17 +186,23 @@ const MEASURE = () => {
   };
 };
 
+// Consent: hide the banner, never choose. The committed readings were taken after an earlier
+// version of this script clicked "Accept all" (README); this one only hides fixed layers that carry
+// cookie or consent copy.
 async function dismissCookies(page) {
-  const labels = [/accept all/i, /accept cookies/i, /^accept$/i, /allow all/i, /got it/i];
-  for (const re of labels) {
-    const b = page.getByRole('button', { name: re }).first();
-    if (await b.count() && await b.isVisible().catch(() => false)) {
-      await b.click().catch(() => {});
-      await page.waitForTimeout(600);
-      return String(re);
+  const hidden = await page.evaluate(() => {
+    let n = 0;
+    for (const el of document.querySelectorAll('body *')) {
+      const st = getComputedStyle(el);
+      if ((st.position === 'fixed' || st.position === 'sticky') && /cookie|consent/i.test(el.innerText || '') && (el.innerText || '').length < 2000) {
+        el.style.setProperty('display', 'none', 'important');
+        n++;
+      }
     }
-  }
-  return null;
+    return n;
+  }).catch(() => 0);
+  if (hidden) await page.waitForTimeout(300);
+  return hidden ? `hidden ${hidden}` : null;
 }
 
 function writePngMeta(file, extra) {
@@ -282,7 +288,8 @@ for (const [name, url] of PAGES) {
       challenge: /just a moment|cf-challenge|cloudflare/i.test(document.title),
     }));
     info.status = res ? res.status() : null;
-    fs.writeFileSync(path.join(RAW, 'login-wall.json'), JSON.stringify(info, null, 2));
+    // probe.mjs owns raw/login-wall.json (one writer per raw file); this pass keeps its own copy.
+    fs.writeFileSync(path.join(RAW, 'harvest-login-wall.json'), JSON.stringify(info, null, 2));
     if (!info.challenge) {
       const shot = path.join(SHOTS, 'login-light-signed-out.png');
       await page.screenshot({ path: shot, fullPage: false });
@@ -338,7 +345,9 @@ for (const [name, h] of Object.entries(harvests)) {
   }
 }
 
-fs.writeFileSync(path.join(RAW, 'css-vars.json'), JSON.stringify({
+// probe.mjs owns raw/css-vars.json, which build_tokens.py reads; this pass writes its own file so a
+// rerun cannot replace the committed readings with a different shape.
+fs.writeFileSync(path.join(RAW, 'harvest-css-vars.json'), JSON.stringify({
   source: 'computed custom properties on https://www.synthesia.io/ at 1440x900, headless Chromium, 2026-11-19',
   sheets: harvests.home?.sheets || [],
   fonts: harvests.home?.fonts || [],

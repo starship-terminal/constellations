@@ -96,6 +96,8 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 | Docs | `tools/build_components_md.py` → `components.md`; `tools/capture/public/build-measurements.mjs` → `raw/measurements.md`; `tools/build_style_guide.py` → `style-guide.html` |
 | Stitched shots | `tools/capture/quantize.py` — stitches `partN` tiles, quantizes to 256-colour PNGs into `screenshots/` |
 
+**Automation was masked during capture.** Until 2026-11-20, `tools/capture/public/lib.mjs` hid `navigator.webdriver` in every page it opened, so every committed reading was taken with that mask. The mask is removed (a bot check is now recorded as a boundary, not bypassed); whether any page needed it to load is not known, and a recapture without it is the check.
+
 ## Do and don't
 
 1. **Do let the declared layer carry the design.** The product ships its token layer: use the `color.<family>.<step>` scales, the `fg.*`/`surface.*`/`primary.*` semantics and the `--mind-*` expert tiers rather than restating hex. See [tokens.json](tokens.json).

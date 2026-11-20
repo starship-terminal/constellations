@@ -146,7 +146,7 @@ States read on 2026-11-17T16:34:26.072Z (default); 2026-11-17T16:34:28.939Z (hov
 The page footer: link columns, the newsletter form, the social links. Read as `site-footer` on the home page.
 Read on 2026-11-17T16:34:35.127Z.
 
-**Values (default).** size 1440 x 501; background #191917; text Martina Plantijn 24/30 300, rgba(253, 253, 253, 0.65).
+**Values (default).** size 1440 x 501; background #191917; text Martina Plantijn 24/30 300, rgba(253, 253, 252, 0.65).
 
 ![Site footer default](components/crops/site-footer-default.png)
 
@@ -290,7 +290,7 @@ States read on 2026-11-17T16:27:49.888Z (default); 2026-11-17T16:27:56.318Z (hov
 |---|---|
 | default (same: hover) | size 1152 x 500; radius 8px; background transparent; text PP Fraktion Mono 12/16 400, #474644; icon 24 x 24, #1b1918 `light.ink.default`; layers div.flex.flex-col 576.0x500.0 #ffffff; div.w-full.h-full 40.0x40.0 #f9f9f9 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(30, 30, 29, 0.1) 0px 0px 0px 1.67px inset, transparent 0px 0px 0px 0px 3.35544e+07px; p.@container.absolute 576.0x500.0 rgba(25, 25, 23, 0.12) |
 
-Child layers that carry the look: div 576x500 background #ffffff `light.docs.color.background`; div 40x40 background #f9f9f9 `light.docs.accent.2` radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(30, 30, 29, 0.1) 0px 0px 0px 1.67px inset, transparent 0px 0px 0px 0px; p 576x500 background rgba(25, 25, 23, 0.12).
+Child layers that carry the look: div 576x500 background #ffffff `light.docs.color.background`; div 40x40 background #f9f9f9 `light.docs.accent.2` radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(30, 30, 29, 0.1) `core.palette.pab1123xx` 0px 0px 0px 1.67px inset, transparent 0px 0px 0px 0px; p 576x500 background rgba(25, 25, 23, 0.12).
 
 ![Post preview card default](components/crops/post-card-default.png) ![Post preview card hover](components/crops/post-card-hover.png)
 

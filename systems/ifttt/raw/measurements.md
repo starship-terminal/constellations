@@ -94,19 +94,20 @@ Page: explore. Selector: `a.nav-link`. States: default, hover, focus-visible.
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 71 x 22 | = | = |
-| Padding | 0px | = | = |
-| Border | none | = | = |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | Museo Sans Rounded 20px/22px 900 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #ffffff | = | = |
-| Transition | none | = | = |
-| Cursor | pointer | = | = |
-| How | resting state | mouse hover over the element | focus failed |
+| Size (w x h) | 71 x 22 | = | - |
+| Padding | 0px | = | - |
+| Border | none | = | - |
+| Radius | 0px | = | - |
+| Background | transparent | = | - |
+| Box shadow | none | = | - |
+| Outline | none | = | - |
+| Font | Museo Sans Rounded 20px/22px 900 | = | - |
+| Letter spacing | normal | = | - |
+| Colour | #ffffff | = | - |
+| Transition | none | = | - |
+| Cursor | pointer | = | - |
+| How | resting state | mouse hover over the element | - |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element |
 
 Crops: `nav-link-default.png`, `nav-link-focus-visible.png`.
 

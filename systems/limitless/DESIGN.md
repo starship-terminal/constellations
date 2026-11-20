@@ -46,7 +46,8 @@ typography:
     fontFamily: "Greycliff"
     fontSize: "36px"
     fontWeight: 700
-    lineHeight: "41px"
+    lineHeight: "41.4px"
+    letterSpacing: "-0.9px"
   body:
     fontFamily: "Greycliff"
     fontSize: "16px"
@@ -56,7 +57,7 @@ typography:
     fontFamily: "Greycliff"
     fontSize: "18px"
     fontWeight: 400
-    lineHeight: "29px"
+    lineHeight: "29.25px"
   label:
     fontFamily: "Greycliff"
     fontSize: "16px"
@@ -144,9 +145,9 @@ Shadows, resolved to CSS:
 
 | Token | box-shadow |
 |---|---|
-| `core.elevation.card` | `0px 25px 50px -12px rgba(15, 23, 42, 0.15)` |
+| `core.elevation.card` | `0px 25px 50px -12px rgba(30, 41, 59, 0.15)` |
 | `core.elevation.popover` | `0px 12px 24px -8px rgba(15, 23, 42, 0.12)` |
-| `core.elevation.control` | `0px 1px 2px 0px rgba(0, 0, 0, 0.1)` |
+| `core.elevation.control` | `0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1)` |
 | `core.elevation.dialog` | `0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1)` |
 
 ## Shapes
@@ -177,6 +178,10 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Greycliff files. The family name is measured. The files are not in this package.
 - Pressed states. They are forced pseudo-classes.
 - Reduced motion. The product ignores it. That is recorded, not corrected.
+- Hand-entered values. `core.color.slate.200` (`#e2e8f0`, so `light.border`), `core.color.zinc.500` (`#71717a`), `light.helpBand` (`#8a54e1`), `core.elevation.popover` and `core.elevation.dialog`, `core.space.1`, `.3`, `.5` and `.16`, and `core.layout.page`, `.phone` and `.navHeight` were entered by hand at capture time. No raw reading holds them: the Solutions panel, the dialog close icon, the help header band and the top bar were not measured, and the measured dialog card computes no box-shadow. They are labelled Reconstruction in tokens.json.
+- Values corrected to the readings (2026-11 audit): `core.font.size.menu` 13px to the measured 12.8px; `core.typography.heading` line-height 41px to 41.4px, with the measured -0.9px tracking; `core.typography.body-lg` line-height 29px to 29.25px; `core.elevation.card` colour slate 900 to the measured slate 800 at 15%; `core.elevation.control` from one invented 0 1px 2px layer to the carousel button's two measured layers; `core.font.family.mono` now carries the whole measured stack.
+- The Sign Up Unavailable readings ([raw/gated-dialog.json](raw/gated-dialog.json), the gated screenshots) were taken after an email was submitted to the live sign-in form, a state change the capture rules now treat as a boundary. No committed script performs that submit.
+- components.md was written at capture time; no builder in tools/ regenerates it.
 - The phone sign-in shot is 1x. That host reports `devicePixelRatio` 1 while Playwright still writes a 2x PNG, so the shot was taken at 1x to match the page.
 
 ### Do and don't (from README.md)

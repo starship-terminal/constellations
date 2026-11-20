@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""The package's own check: every token has a source, and colours match the raw readings."""
+"""The package's own check: every token names a source, four headline colours are pinned to the
+values read live, and raw/component-tokens.json and tokens.json hold the same number of leaves.
+It does not re-read raw/: the pinned colours are literals."""
 import json
 import pathlib
 import unittest

@@ -74,10 +74,11 @@ const result = await probe.evaluate((sheets) => {
     }
   };
   for (const s of sheets) {
-    if (!s.css) { if (s.unreadable) errors.push({ file: s.name, error: 'cross-origin to the CSSOM' }); continue; }
+    const name = s.name.split(/[?#]/)[0];  // rules cite the sheet by path only
+    if (!s.css) { if (s.unreadable) errors.push({ file: name, error: 'cross-origin to the CSSOM' }); continue; }
     const ss = new CSSStyleSheet();
-    try { ss.replaceSync(s.css); } catch (e) { errors.push({ file: s.name, error: String(e) }); continue; }
-    walk(ss.cssRules, [], s.name);
+    try { ss.replaceSync(s.css); } catch (e) { errors.push({ file: name, error: String(e) }); continue; }
+    walk(ss.cssRules, [], name);
   }
   return { rules, fonts, errors };
 }, sheets);
@@ -158,7 +159,7 @@ const names = (bin) => [...new Set(ok.filter((r) => r.bin === bin).flatMap((r) =
 const out = {
   readAt: new Date().toLocaleDateString('en-CA'),
   source: 'chargetrip.com\'s inline <style> bundles (a Framer site), read through the CSSOM on the live home page and re-parsed in a probe document',
-  sheets: sheets.map(({ name, media, css }) => ({ name, media, bytes: css.length })),
+  sheets: sheets.map(({ name, media, css }) => ({ name: name.split(/[?#]/)[0], media, bytes: css.length })),  // path only: no deploy id or font query
   counts: {
     rules: ok.length,
     fonts: result.fonts.length,

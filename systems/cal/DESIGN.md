@@ -170,6 +170,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **One booking page, one brand.** The booker is cal.com/peer's event type; its `#292929` paint on today/Confirm is this host's effective brand — other users' pages recolour and reflow.
 - **Dark is the booker's mode, not the marketing site.** The marketing pages declare `--color-hp-*` dark overrides but never paint them signed out; the exported dark set is the booker's `?theme=dark` surface only.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
+- **The details form was opened by clicking a live slot.** The committed `bk-form`, `bk-field` and `bk-confirm` readings were taken after the capture clicked an available time slot on a real booking page, which can hold the slot. The script no longer clicks it (edited, not run), so a recapture records those three missing until an owned demo page is used.
 - **Auth values serialize wide-gamut.** The app.cal.com cards compute colours as `lab()`/`oklab()`; tokens carry the sRGB conversion (`#262626` dark fill, `#696969` muted), provenance notes say where.
 - **The hero headline wraps its mock.** `hero-title`'s rect covers the embedded booking mock too; the text readings are the headline's own.
 

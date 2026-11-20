@@ -64,12 +64,22 @@ class TokensTest(unittest.TestCase):
         self.assertIn("xMono", core["font.family.xMono"])
 
     def test_component_geometry(self):
+        """Pin component tokens to the readings they came from (a name-shape check passed for {})."""
         comp = T["core"].get("component")
         self.assertIsNotNone(comp, "no component tokens")
-        names = {n for n, _ in token_checks.tokens_of(comp)}
-        # geometry emitted only when measure.mjs has run; check the shape it takes
-        for n in names:
-            self.assertRegex(n, r"^[a-zA-Z]+\.")
+        raw = json.loads((HERE / "raw" / "components-computed.json").read_text())["components"]
+
+        def tok(path):
+            node = comp
+            for k in path.split("."):
+                node = node[k]
+            return node["$value"]
+
+        for path, c, state, field in [("header.height", "docs-header", "default", "h"),
+                                      ("sidebar.width", "docs-sidebar", "default", "w"),
+                                      ("button.cta.height", "docs-cta", "default", "h"),
+                                      ("mobileDrawer.width", "m-docs-drawer", "opened", "w")]:
+            self.assertEqual(tok(path), "%gpx" % float(raw[c]["states"][state]["rect"][field]), path)
 
 
 if __name__ == "__main__":

@@ -104,6 +104,7 @@ The cookie overlay (`#biscuits-overlay`) is hidden by CSS for the clean captures
 - **`palette.lime-stripe` is read off a patterned cell**, not a flat fill: the promo card's background alternates lime and pale-blue stripes, and the token is the lime of the brighter band, approximate by eye.
 - **Hover reads "same" on most controls by design.** Ableton's `abl-button`s genuinely do not restyle on hover (verified on the crop pairs); the entries are not missing a state.
 - **The register form's `ul` paints `#ffc2ca`** in the child-layers note: that is the password-strength meter's track, not the form's background.
+- **`trial-edition-card` and `pack-card` were read from the wrong elements.** `trial-edition-card` is the 720 x 655 hero column of /trial and `pack-card` is the 1440 x 348 page banner of /packs, not a single edition panel or Pack tile. Both need a recapture. `packs-green` now cites only `packs-title`, which holds the same value.
 
 ## Fonts
 

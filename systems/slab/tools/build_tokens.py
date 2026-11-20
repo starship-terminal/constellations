@@ -48,7 +48,7 @@ def build():
             "text": color(c["text"], SRC + " body color rgb(69, 83, 96)"),
             "muted": color(c["muted"], SRC + " footer link color rgb(147, 149, 152)"),
             "ink": color(c["ink"], SRC + " login heading color rgb(51, 51, 51)"),
-            "focus": color(c["focusOutline"], SRC + " focused link outline rgb(229, 151, 0)"),
+            "focus": color(c["focusOutline"], "Observed: Chromium's default focus ring (-webkit-focus-ring-color rgb(229, 151, 0), outline auto) on a focused link; Slab does not style link focus, so this is the browser default, not a product colour. " + SRC),
             "google": color(c["google"], SRC + " Sign up with Google background rgb(66, 133, 244)"),
         },
         "font": {
@@ -173,7 +173,7 @@ def build():
             "default": color("#ebecec", SRC + " stylesheet file-other border rgb(235, 236, 236)"),
             "strong": color(c["slate"], SRC + " stylesheet secondary button border"),
             "account": color("#e3e3e3", SRC + " register Sign up with Google border rgb(227, 227, 227)"),
-            "focus": color(c["focusOutline"], SRC + " focused link outline"),
+            "focus": color(c["focusOutline"], "Observed: Chromium's default focus ring (-webkit-focus-ring-color rgb(229, 151, 0), outline auto) on a focused link; Slab does not style link focus, so this is the browser default, not a product colour. " + SRC),
         },
         "component": {
             "button": {
