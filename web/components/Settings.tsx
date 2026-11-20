@@ -13,7 +13,7 @@ import { agentSnippets } from "@/lib/agent-snippets";
 import { scrollBehavior } from "@/components/motion";
 import { SnippetCopyButton } from "@/components/CopyButton";
 import { TABS, tabForKey, tabFromHash, type TabId } from "@/components/settings-tabs";
-import { afterSave, EMPTY_FORM, latestOnly, withField, type ProviderForm } from "@/components/provider-form";
+import { afterRemove, afterSave, EMPTY_FORM, latestOnly, withField, type ProviderForm } from "@/components/provider-form";
 
 export interface SettingsStats {
   /** The checkout's folder name, never its absolute path. */
@@ -219,19 +219,25 @@ function ProviderPanel() {
 
   const remove = async () => {
     setBusy(true);
+    const sent = current.current;
     try {
       const d = await postJson("/api/provider", "DELETE");
       if (d?.ok) {
         reads.begin();
         setState(d as unknown as ProviderState);
-        setCfg(EMPTY);
-        edited.current = false;
-        setModels([]);
+        // The form empties only if the reader did not start a replacement
+        // while the removal was in flight (as with Save).
+        const after = afterRemove(current.current, sent);
+        setCfg(after.form);
+        if (after.settled) {
+          edited.current = false;
+          setModels([]);
+        }
         setWarn(false);
         setStatus(
-          (d as unknown as ProviderState).source === "env"
+          ((d as unknown as ProviderState).source === "env"
             ? "Removed the saved key. The chat now uses the server's environment key."
-            : "Removed the saved key.",
+            : "Removed the saved key.") + (after.settled ? "" : " The form keeps what you typed since; save it to use it."),
         );
         announceProviderChange();
       } else {

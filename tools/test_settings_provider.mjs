@@ -176,6 +176,40 @@ test("a save reply that lands after the form changed leaves the newer edits alon
   assert.ok(!els["pf-status"].textContent.includes(NEWER) && !els["pf-status"].textContent.includes(KEY));
 });
 
+test("a Remove reply that lands after the form changed keeps the newer edits", async () => {
+  const NEWER = "sk-typed-during-remove-1111111";
+  let release;
+  const held = new Promise((r) => (release = r));
+  const saved = { ok: true, source: "saved", provider: { api: "openai", base_url: "https://api.openai.com/v1", model: "m1", name: "openai" } };
+  const { els } = await run(undefined, (url, method) => {
+    if (method === "DELETE") return held.then(() => ({ ok: true, source: "none", provider: null }));
+    return saved;
+  });
+  assert.equal(els["pf-clear"].hidden, false);
+  els["pf-clear"].onclick();
+  for (let i = 0; i < 5; i++) await new Promise((r) => setImmediate(r));
+  assert.deepEqual([els["pf-save"].disabled, els["pf-clear"].disabled], [true, true]);
+  // The reader starts a replacement while the removal is in flight.
+  els["pf-base"].value = "https://api.x.ai/v1";
+  els["pf-key"].value = NEWER;
+  release();
+  for (let i = 0; i < 10; i++) await new Promise((r) => setImmediate(r));
+  assert.equal(els["pf-badge"].textContent, "No key");
+  assert.deepEqual([els["pf-base"].value, els["pf-key"].value], ["https://api.x.ai/v1", NEWER], "the newer edits are kept");
+  assert.match(els["pf-status"].textContent, /^Removed the saved key\. The form keeps what you typed since/);
+  assert.ok(!els["pf-status"].textContent.includes(NEWER));
+});
+
+test("a Remove reply on an unchanged form resets it", async () => {
+  const saved = { ok: true, source: "saved", provider: { api: "openai", base_url: "https://api.openai.com/v1", model: "m1", name: "openai" } };
+  const { els } = await run(undefined, (url, method) => (method === "DELETE" ? { ok: true, source: "none", provider: null } : saved));
+  assert.equal(els["pf-base"].value, "https://api.openai.com/v1");
+  els["pf-clear"].onclick();
+  for (let i = 0; i < 10; i++) await new Promise((r) => setImmediate(r));
+  assert.equal(els["pf-base"].value, "https://api.anthropic.com", "back to the default template");
+  assert.equal(els["pf-status"].textContent, "Removed the saved key.");
+});
+
 test("the form stays hidden until a slow migration and the read after it have filled it", async () => {
   let release;
   const held = new Promise((r) => (release = r));
