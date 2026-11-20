@@ -779,14 +779,6 @@
         "description": "The placeholder ink (form-placeholder)."
       }
     },
-    "surface": {
-      "planCardBg": {
-        "value": "{theme.btn.ghost.bg.default}",
-        "type": "color",
-        "source": "computed backgroundColor of plan-card default (raw/components-computed.json); matches declared theme.btn.ghost.bg.default",
-        "description": "The plan card's tinted fill on /pricing."
-      }
-    },
     "background": {
       "page": {
         "value": "{theme.bg}",
@@ -1022,12 +1014,6 @@
         "source": "computed color of login-submit default on the product app shell (raw/components-computed.json)",
         "description": "The 'Log in' button text."
       },
-      "google-btn-fill": {
-        "value": "rgba(0, 0, 0, 0)",
-        "type": "color",
-        "source": "computed backgroundColor of login-google default on the product app shell (raw/components-computed.json)",
-        "description": "The 'Continue with Google' button fill."
-      },
       "comm-signup-fill": {
         "value": "#ffffff",
         "type": "color",
@@ -1039,12 +1025,6 @@
         "type": "color",
         "source": "computed color of comm-signup default on the product app shell (raw/components-computed.json)",
         "description": "The community 'Sign up' button text."
-      },
-      "comm-search-bg": {
-        "value": "rgba(0, 0, 0, 0)",
-        "type": "color",
-        "source": "computed backgroundColor of comm-search default on the product app shell (raw/components-computed.json)",
-        "description": "The community search field fill."
       }
     }
   }

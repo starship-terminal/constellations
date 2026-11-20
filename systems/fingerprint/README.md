@@ -113,6 +113,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 - **The forms.** Contact-sales, footer/blog newsletter and the demo's fake checkout were typed into then cleared — validation, error, loading and success states are unverified because nothing was submitted.
 - **Detail pages.** The blog, case-studies, resources, integrations, bot-directory, careers and docs lists were captured as indexes or exemplars; individual posts, jobs, bots, integrations and most docs articles were not opened.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw values, never the pixels.
+- **Unpainted fills are not tokens.** The docs code block and the hero pill compute a transparent `backgroundColor`, so `core.component.docs.code-bg` and `light.surface.pillBg` were dropped in the 2026-11 audit.
 
 ## Fonts
 
