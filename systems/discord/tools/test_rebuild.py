@@ -65,6 +65,46 @@ class RebuildTest(unittest.TestCase):
         self.assertIn("div.dotOnline", spec["text"]["online"]["source"])
         self.assertIn("div.wrapper", spec["background"]["field"]["source"])
 
+    def _rebuild_with(self, name, edit):
+        """Run build_component_tokens.py on a fresh temp copy whose readings `edit` changed."""
+        root = pathlib.Path(self.tmp.name) / name
+        shutil.copytree(self.root / "tools", root / "tools")
+        shutil.copytree(self.root / "raw", root / "raw")
+        path = root / "raw" / "components-computed.json"
+        J = json.loads(path.read_text())
+        edit(J["components"])
+        path.write_text(json.dumps(J))
+        subprocess.run([sys.executable, str(root / "tools" / "build_component_tokens.py")], cwd=root, check=True, capture_output=True)
+        return json.loads((root / "raw" / "component-tokens.json").read_text())["dark"]
+
+    def test_paint_layers_follow_their_node_not_their_colour(self):
+        def edit(C):
+            paint = C["sc-card"]["states"]["default"]["paint"]
+            for n in paint:
+                if n["node"].startswith("article.guildItemContainer"):
+                    n["bg"] = "rgb(1, 2, 3)"
+                elif n["node"].startswith("div.dotOnline"):
+                    n["bg"] = "rgb(4, 5, 6)"
+                else:  # decoys that carry the colours the old picks looked for
+                    n["bg"] = "rgb(32, 32, 36)" if "listIcon" in n["node"] else "rgb(67, 181, 129)"
+            for n in C["lg-pass"]["states"]["default"]["ancestors"]:
+                if n["node"].startswith("div.wrapper_"):
+                    n["bg"] = "rgba(7, 8, 9, 0.5)"
+        dark = self._rebuild_with("moved", edit)
+        self.assertEqual(dark["background"]["card"]["value"], "#010203")
+        self.assertEqual(dark["text"]["online"]["value"], "#040506")
+        self.assertEqual(dark["background"]["field"]["value"], "rgba(7, 8, 9, 0.5)")
+
+    def test_missing_layer_drops_the_role(self):
+        def edit(C):
+            C["sc-card"]["states"]["default"]["paint"] = [n for n in C["sc-card"]["states"]["default"]["paint"]
+                                                         if not n["node"].startswith(("article.guildItemContainer", "div.dotOnline"))]
+            C["lg-pass"]["states"]["default"]["ancestors"] = []
+        dark = self._rebuild_with("missing", edit)
+        self.assertNotIn("card", dark.get("background", {}))
+        self.assertNotIn("field", dark.get("background", {}))
+        self.assertNotIn("online", dark.get("text", {}))
+
     def test_components_md_labels_each_colour_once(self):
         import re
         md = (self.root / "components.md").read_text()
