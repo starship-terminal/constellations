@@ -101,7 +101,7 @@ The capture reads computed styles on real DOM elements and custom properties fro
 
 The token builder maps declared CSS properties and observed element values into core scales and the captured dark and light sets. Raw measurements remain available under [raw/readings/](raw/readings/). Usage counts count observations across capture states, including repeated appearances of the same control, rather than unique production elements. Color string normalization preserves the measured value; the package does not invent missing scales or uncaptured theme states.
 
-Images were inspected, email addresses masked using native-pixel OCR boxes, and then quantized to 256 colors. The screenshot ingestion record lists accepted and excluded captures. Raw screenshots and any private text remain outside git under the operator’s capture scratch directory. Ordinary names, avatars and owner content remain under this repository’s private-reference policy.
+Images were inspected, email addresses masked using native-pixel OCR boxes, and then quantized to 256 colors. The screenshot ingestion record lists accepted and excluded captures. Raw screenshots and any private text remain outside git under the operator’s capture scratch directory. On 2026-11-21 the other users' names and avatars were masked: in the users tables (desktop, mobile, overview, and behind the create-user dialog and the application switcher) and on the workspace Team page, avatars are pixelated and names filled, by the rectangles in [clerk.json](../../tools/redact-rules/clerk.json); in `raw/readings/` their names read "[name removed]". The owner's own row on the Team page and owner content stay.
 
 | Retained evidence | Count | Inventory |
 |---|---:|---|
@@ -156,7 +156,7 @@ The dashboard’s computed sans stack is `geistNumbers, suisse, "suisse Fallback
 | Card | Captured, partial | Applications and overview recommendations |
 | List row | Captured, partial | Users and settings lists |
 | Table | Captured, partial | Users, SSO, features and logs |
-| Avatar | Captured, observed | Names and avatars in screenshots; no standalone asset extraction |
+| Avatar | Captured, observed | Avatar size and placement in screenshots; other users' avatars are pixelated; no standalone asset extraction |
 | Badge | Captured, observed | Hobby, Development, Production and Pro indicators |
 | App shell and navigation | Captured | Workspace tabs, application header and settings sidebar |
 | Forms and validation | Captured, partial | Forms captured; invalid email on blur showed no error, no submit attempted |
