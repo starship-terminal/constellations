@@ -41,15 +41,18 @@ SIGNED = [
 PLAIN = ["https://example.test/page?unit=7", "https://example.test/a?tokenizer=1&sigma=2"]
 # A stand-in clone for the whole-copy pass: a signed URL in a data- attribute and an inline
 # style, plain attributes that must stay, and an inlined stylesheet the page pass must clean.
-WHOLE_COPY_NODES = [["img", {"data-src": "https://x/p.png?crop=(0,0)&token=abc", "alt": "a;b"}],
+WHOLE_COPY_NODES = [["img", {"data-src": "https://x/p.png?crop=(0,0)&token=abc", "alt": "a;b",
+                             # cutSigned stops at ;name: so it would keep this token; only
+                             # cutSignedUrl, the attribute cleaner, removes it.
+                             "data-srcset": "https://x/p?options=a;b:c&token=abc"}],
                     ["div", {"style": "color:#fff;background:url(https://x/i.png?sig=1)",
                              "data-unit": "https://example.test/page?unit=7"}]]
 WHOLE_COPY_STYLE = ".x{background:url(https://x/bg.png?X-Amz-Signature=abc)}"
 WHOLE_COPY_WANT = {
-    "attrs": [{"data-src": "https://x/p.png", "alt": "a;b"},
+    "attrs": [{"data-src": "https://x/p.png", "alt": "a;b", "data-srcset": "https://x/p"},
               {"style": "color:#fff;background:url(https://x/i.png)",
                "data-unit": "https://example.test/page?unit=7"}],
-    "html": '<!doctype html>\n<img data-src="https://x/p.png" alt="a;b">'
+    "html": '<!doctype html>\n<img data-src="https://x/p.png" alt="a;b" data-srcset="https://x/p">'
             '<div style="color:#fff;background:url(https://x/i.png)" data-unit="https://example.test/page?unit=7">'
             '<style>.x{background:url(https://x/bg.png)}</style>',
 }
