@@ -28,6 +28,7 @@ const save = () => { fs.mkdirSync(RAW, { recursive: true }); fs.writeFileSync(OU
 const URLS = { home: '/', pricing: '/prices', contact: '/contact-us', login: 'https://app.copy.ai/login' };
 let page, cdp, current, context, run, liveCtx;
 const touched = new Set();
+const earlierRun = new WeakMap();  // component -> the run its states were measured in before this one
 const listed = new Map();
 // Routes blocked this run: components last measured on them keep their
 // earlier readings instead of being pruned below (a blocked pass must never
@@ -124,6 +125,18 @@ function comp(key, meta) {
   return c;
 }
 
+// A failed rerun keeps the state's earlier good reading and notes the error on
+// it (recaptureError), as the kit does; only a state with no reading gets {error}.
+function keepOrFail(c, state, e) {
+  const msg = String(e.message || e).slice(0, 200);
+  const prev = c.states[state];
+  // a kept reading keeps the run it was measured in (comp() has already stamped this run on c),
+  // and the failed retry is recorded beside it with its own date
+  c.states[state] = prev && !prev.error
+    ? { ...prev, run: prev.run || earlierRun.get(c) || c.run, recaptureError: msg, recaptureRun: run }
+    : { error: msg, run };
+}
+
 async function measure(key, state, target, opts = {}) {
   const loc = target.filter({ visible: true }).first();
   const c = out.components[key];
@@ -135,17 +148,18 @@ async function measure(key, state, target, opts = {}) {
         file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    c.states[state] = { ...s, crop: file, via: opts.via, run };  // each state names the run that measured it
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
-    c.states[state] = { error: String(e.message || e).slice(0, 200) };
+    keepOrFail(c, state, e);
     log('  !', key, state, String(e.message).slice(0, 120));
   }
 }
 
 async function S(key, target, list, meta = {}, opts = {}) {
   const prev = out.components[key];
+  if (prev) earlierRun.set(prev, prev.run);  // before comp() stamps this run
   const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   if (!listed.has(key)) listed.set(key, new Set());
@@ -197,7 +211,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
       } else via = via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
-      out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
+      keepOrFail(out.components[key], st, e);
       log('  !', key, st, String(e.message).slice(0, 120));
     }
     if (undo) await undo().catch(() => {});
@@ -323,7 +337,8 @@ async function markPlanCard() {
         return;
       }
     }
-    (cta.closest('.price_layout-new') || cta.parentElement).setAttribute('data-m-mark', 'plancard');
+    // no ancestor fits a plan card: leave it unmarked so the spec records a miss
+    // (never the CTA's parent or the layout standing in for the card)
   });
 }
 
@@ -343,7 +358,7 @@ async function markAuthCard() {
         return;
       }
     }
-    fld.closest('form, main, section, div').setAttribute('data-m-mark', 'authcard');
+    // no ancestor holds the OAuth buttons: leave it unmarked so the spec records a miss
   });
 }
 

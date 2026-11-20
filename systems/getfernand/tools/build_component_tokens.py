@@ -507,8 +507,11 @@ for comp in ("hero-cta", "nav-cta", "wpg-color"):
         s = st(comp, "default")
         dur, ease = s.get("transitionDuration"), s.get("transitionTimingFunction")
         if dur and dur != "0s":
-            props = [p.strip() for p in s.get("transitionProperty", "all").split(",") if p.strip()]
-            val = ", ".join(f"{p} {dur} {ease or ''}".strip() for p in props)
+            # zip the lists per index, wrapping the shorter as CSS does: "color 0.2s ease, background-color
+            # 0.2s ease", never every property with the whole duration and easing lists
+            split = lambda v: [x.strip() for x in re.split(r",(?![^(]*\))", v or "") if x.strip()]
+            props, durs, eases = split(s.get("transitionProperty", "all")) or ["all"], split(dur), split(ease) or ["ease"]
+            val = ", ".join(f"{p} {durs[i % len(durs)]} {eases[i % len(eases)]}" for i, p in enumerate(props))
             mo["control"] = lit(val, "other",
                 f"computed transition of {comp} default (raw/components-computed.json)",
                 "The control transition the site puts on buttons and swatches.")

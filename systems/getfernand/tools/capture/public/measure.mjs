@@ -319,7 +319,7 @@ async function openAiMenu() {
   const open = async () => (await btn.getAttribute('aria-expanded').catch(() => null)) === 'true';
   if (await open()) return 'the Install-with-AI menu was already open';
   for (let i = 0; i < 3; i++) {
-    await btn.click({ timeout: 4000 }).catch(() => btn.evaluate((el) => el.click()));
+    await toggle(btn);  // through toggle(): its NEVER list and link refusal apply to scripted clicks too
     await page.waitForTimeout(700);
     if (await open()) return 'clicked the "Install with AI" button to open its menu';
     await btn.focus();
@@ -339,7 +339,7 @@ async function openDemoModal() {
   const open = async () => !!(await page.locator('.demo-modal__dialog').filter({ visible: true }).count());
   if (await open()) return 'the demo dialog was already open';
   for (let i = 0; i < 3; i++) {
-    await btn.click({ timeout: 4000 }).catch(() => btn.evaluate((el) => el.click()));
+    await toggle(btn);  // through toggle(): its NEVER list and link refusal apply to scripted clicks too
     await page.waitForTimeout(1200);
     if (await open()) { await page.evaluate(() => document.querySelectorAll('.demo-modal video').forEach((v) => v.pause())).catch(() => {}); return 'clicked "Watch a 2 minute demo" to open the video dialog'; }
   }
@@ -367,7 +367,7 @@ async function openLauncher() {
   };
   if (await open()) return 'the widget panel was already open';
   for (let i = 0; i < 3; i++) {
-    await el.click({ timeout: 4000 }).catch(() => el.evaluate((x) => x.click()));
+    await toggle(el);  // through toggle(): its NEVER list applies
     await page.waitForTimeout(2000);
     if (await open()) return 'clicked the Fernand widget launcher to open its panel';
   }
@@ -396,7 +396,7 @@ async function helpDarkOn() {
   if (cur) return 'the docs page already painted dark-mode';
   const sw = page.locator('a.switch__dark').first();
   if (!(await sw.count())) return 'no dark-mode switch';
-  await sw.click({ timeout: 4000 }).catch(() => sw.evaluate((el) => el.click()));
+  await toggle(sw, { allowLink: true });  // the dark-mode switch is an <a>; toggle() still applies NEVER
   await page.waitForTimeout(1200);
   return 'clicked the docs site\'s own "Switch to dark mode" link — the user-facing toggle';
 }

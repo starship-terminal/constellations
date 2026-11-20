@@ -6,13 +6,22 @@
 <title>Coolors style guide</title>
 <style>
 :root {
-  --core-color-unmeasured: #1a1a1a;
-  --light-page: #1a1a1a;
-  --light-surface: #1a1a1a;
-  --light-text: #f5f5f5;
-  --light-muted: #c8c8c8;
-  --light-accent: #b20f03;
-  --light-border: #313131;
+  --core-color-ink: #0a0a0a;
+  --core-color-page: #ffffff;
+  --core-color-muted: #525252;
+  --core-color-primary: #2563eb;
+  --core-color-on-primary: #ffffff;
+  --core-color-pro: #ec4899;
+  --core-color-gray-fill: #0000000f;
+  --core-color-hairline: #00000012;
+  --light-page: #ffffff;
+  --light-surface: #ffffff;
+  --light-text: #0a0a0a;
+  --light-muted: #525252;
+  --light-accent: #2563eb;
+  --light-border: #00000012;
+  --light-on-accent: #ffffff;
+  --light-pro: #ec4899;
   color-scheme: light;
   --ink: var(--light-text);
   --page: var(--light-page);
@@ -34,15 +43,24 @@ small, .sw p { display: block; color: var(--light-muted); font-size: 13px; margi
 <body>
 <main>
   <h1>Coolors</h1>
-  <p class="note">This page renders the placeholder tokens in tokens.json. coolors.co answered the public Playwright probe with a Cloudflare managed challenge (HTTP 403, title Just a moment...). No Coolors colour, type or component is on this page.</p>
+  <p class="note">This page renders tokens.json: colours read with getComputedStyle on coolors.co in the signed-in preview tab (each token's source names the element and page). The headless Playwright probe got a Cloudflare managed challenge (HTTP 403, title Just a moment...) and measured nothing, so no value here comes from it.</p>
   <div class="swatches">
-    <div class="sw"><i style="background:var(--core-color-unmeasured)"></i><div><code>core.color.unmeasured</code><small>#1a1a1a</small><p>Not captured. coolors.co returned a Cloudflare managed challenge (HTTP 403, cf-mitigated: challenge) on every probed route. No product colour was read.</p></div></div>
-<div class="sw"><i style="background:var(--light-page)"></i><div><code>light.page</code><small>{color.unmeasured}</small><p>Not captured. Headless Playwright title was Just a moment... at 1440x900. No Coolors page colour was computed.</p></div></div>
-<div class="sw"><i style="background:var(--light-surface)"></i><div><code>light.surface</code><small>{color.unmeasured}</small><p>Not captured. Same block as light.page.</p></div></div>
-<div class="sw"><i style="background:var(--light-text)"></i><div><code>light.text</code><small>#f5f5f5</small><p>Not captured. Chosen as a light ink on the placeholder page so the token file validates. Coolors text colours were not read.</p></div></div>
-<div class="sw"><i style="background:var(--light-muted)"></i><div><code>light.muted</code><small>#c8c8c8</small><p>Not captured. Same caveat as light.text.</p></div></div>
-<div class="sw"><i style="background:var(--light-accent)"></i><div><code>light.accent</code><small>#b20f03</small><p>Read from the Cloudflare 403 HTML (inline SVG fill #B20F03 on #challenge-error-text). Not a product token.</p></div></div>
-<div class="sw"><i style="background:var(--light-border)"></i><div><code>light.border</code><small>#313131</small><p>Read from the Cloudflare 403 HTML (html { color:#313131 }). Not a product token.</p></div></div>
+    <div class="sw"><i style="background:var(--core-color-ink)"></i><div><code>core.color.ink</code><small>#0a0a0a</small><p>getComputedStyle(document.body).color and h1 color on https://coolors.co/ at 1169x731, attached preview browser, 2026-11-18. rgb(10, 10, 10).</p></div></div>
+<div class="sw"><i style="background:var(--core-color-page)"></i><div><code>core.color.page</code><small>#ffffff</small><p>getComputedStyle(document.body).backgroundColor and header background on https://coolors.co/, 2026-11-18. rgb(255, 255, 255).</p></div></div>
+<div class="sw"><i style="background:var(--core-color-muted)"></i><div><code>core.color.muted</code><small>#525252</small><p>Hint 'Press the spacebar to generate color palettes!' color on /generate, and the explore lede at 390px. rgb(82, 82, 82).</p></div></div>
+<div class="sw"><i style="background:var(--core-color-primary)"></i><div><code>core.color.primary</code><small>#2563eb</small><p>a.btn.btn--primary 'Start the Generator' backgroundColor rgb(37, 99, 235) on https://coolors.co/. The same fill paints 'I accept' and 'Let's go!'. :root --color-primary-600 is #2563eb.</p></div></div>
+<div class="sw"><i style="background:var(--core-color-on-primary)"></i><div><code>core.color.on-primary</code><small>#ffffff</small><p>Start the Generator color rgb(255, 255, 255).</p></div></div>
+<div class="sw"><i style="background:var(--core-color-pro)"></i><div><code>core.color.pro</code><small>#ec4899</small><p>Header 'Go Pro' (.btn--accent-transparent) color rgb(236, 72, 153) on the signed-in homepage.</p></div></div>
+<div class="sw"><i style="background:var(--core-color-gray-fill)"></i><div><code>core.color.gray-fill</code><small>#0000000f</small><p>Explore 10M+ Palettes backgroundColor rgba(0, 0, 0, 0.06).</p></div></div>
+<div class="sw"><i style="background:var(--core-color-hairline)"></i><div><code>core.color.hairline</code><small>#00000012</small><p>header boxShadow rgba(0, 0, 0, 0.07) 0px 1px 0px 0px. Modal .modal_element boxShadow rgba(0, 0, 0, 0.07) 0px 0px 0px 1px.</p></div></div>
+<div class="sw"><i style="background:var(--light-page)"></i><div><code>light.page</code><small>{color.page}</small><p>Alias of core.color.page, measured on the signed-in homepage.</p></div></div>
+<div class="sw"><i style="background:var(--light-surface)"></i><div><code>light.surface</code><small>{color.page}</small><p>header and .modal_element backgroundColor rgb(255, 255, 255).</p></div></div>
+<div class="sw"><i style="background:var(--light-text)"></i><div><code>light.text</code><small>{color.ink}</small><p>Alias of core.color.ink.</p></div></div>
+<div class="sw"><i style="background:var(--light-muted)"></i><div><code>light.muted</code><small>{color.muted}</small><p>Alias of core.color.muted.</p></div></div>
+<div class="sw"><i style="background:var(--light-accent)"></i><div><code>light.accent</code><small>{color.primary}</small><p>Alias of core.color.primary.</p></div></div>
+<div class="sw"><i style="background:var(--light-border)"></i><div><code>light.border</code><small>{color.hairline}</small><p>Alias of core.color.hairline.</p></div></div>
+<div class="sw"><i style="background:var(--light-on-accent)"></i><div><code>light.on-accent</code><small>{color.on-primary}</small><p>Alias of core.color.on-primary.</p></div></div>
+<div class="sw"><i style="background:var(--light-pro)"></i><div><code>light.pro</code><small>{color.pro}</small><p>Alias of core.color.pro.</p></div></div>
   </div>
 </main>
 </body>
