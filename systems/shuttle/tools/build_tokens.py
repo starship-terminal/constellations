@@ -20,6 +20,12 @@ def color(value, source):
     return tok("color", value, source)
 
 
+def rgba_hex(value):
+    """A computed rgba(r, g, b, a) as #rrggbbaa, so a translucent reading keeps its alpha."""
+    r, g, b, a = (float(x) for x in value[value.index("(") + 1:-1].split(","))
+    return "#%02x%02x%02x%02x" % (round(r), round(g), round(b), round(a * 255))
+
+
 def dim(value, source):
     return tok("dimension", value, source)
 
@@ -148,7 +154,7 @@ def build():
         },
         "motion": {
             "duration": {
-                "fast": dim("150ms", src + " button transition 0.15s"),
+                "fast": tok("duration", "150ms", src + " button transition 0.15s"),
             },
             "easing": {
                 "standard": tok(
@@ -169,7 +175,7 @@ def build():
         "text": {
             "primary": color(c["text"], src + " body color --color-label"),
             "secondary": color(c["lede"], src + " about lede #d4d4d4"),
-            "muted": color(c["label2Hex"], src + " --color-label2 painted rgba(235, 235, 245, 0.6)"),
+            "muted": color(rgba_hex(c["label2"]), src + " --color-label2 painted rgba(235, 235, 245, 0.6)"),
             "faint": color(c["neutral500"], src + " FAQ text-neutral-500"),
             "onAccent": color(c["white"], src + " Sign up and Share text on tint"),
             "onInverse": color(c["black"], src + " Contact us text on white pill"),
@@ -178,7 +184,7 @@ def build():
         "link": color("#0984ff", src + " declared --color-link, not a painted link colour"),
         "border": {
             "default": color(c["grouped"], src + " field fill stands in for a border; fields have 0px border"),
-            "hairline": color("#ffffff", src + " pricing card border rgba(255, 255, 255, 0.2); alpha in components.md"),
+            "hairline": color(rgba_hex(c["hairline"]), src + " pricing card border rgba(255, 255, 255, 0.2)"),
             "pro": color(c["proBorder"], src + " Pro card computed border rgb(0, 122, 255)"),
         },
         "component": {
