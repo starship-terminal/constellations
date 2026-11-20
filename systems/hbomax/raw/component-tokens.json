@@ -9423,6 +9423,12 @@
     "value": "44px",
     "source": "computed height of header-signin default (raw/components-computed.json)",
     "description": "The Sign In pill height."
+   },
+   "radiusCta": {
+    "type": "dimension",
+    "value": "8px",
+    "source": "computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)",
+    "description": "The CTA's corner radius."
    }
   },
   "nav": {
