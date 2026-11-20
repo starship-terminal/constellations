@@ -15,11 +15,7 @@ HubSpot field on the public contact page. Focused only. The form was not submitt
 
 HubSpot combobox on the public contact page. Opened to show the list. No option was chosen and the form was not submitted. Group: Select. Selector: `input.hsfc-TextInput[role=combobox]`.
 
-| State | Size | Background | Text | Via |
-|---|---|---|---|---|
-| [default](components/crops/contact-select-default.png) | 544 x 44 | rgba(0, 0, 0, 0) | rgb(33, 45, 58) | at rest |
-| [focused](components/crops/contact-select-focused.png) | 544 x 44 | rgba(0, 0, 0, 0) | rgb(33, 45, 58) | focused the field; nothing submitted |
-| [opened](components/crops/contact-select-opened.png) | 544 x 44 | rgba(0, 0, 0, 0) | rgb(33, 45, 58) | local toggle, not a navigation |
+Not present on the captured page.
 
 ## Contact text area
 
@@ -35,7 +31,7 @@ Hero CTA fill (.button_inner). The anchor was never followed. Pressed is a CDP :
 |---|---|---|---|---|
 | [default](components/crops/cta-primary-default.png) | 206.73 x 51.59 | rgb(0, 122, 252) | rgb(255, 255, 255) | at rest |
 | [hover](components/crops/cta-primary-hover.png) | 206.73 x 51.59 | rgb(49, 149, 255) | rgb(255, 255, 255) | mouse hover |
-| focus-visible |  |  |  | not captured: keyboard focus did not reach the element |
+| [focus-visible](components/crops/cta-primary-focus-visible.png) | 206.73 x 51.59 | rgb(0, 122, 252) | rgb(255, 255, 255) | focus failed |
 | [pressed](components/crops/cta-primary-pressed.png) | 206.73 x 51.59 | rgb(0, 122, 252) | rgb(255, 255, 255) | CDP forcePseudoState :active |
 
 ## Contact us (hero)
@@ -46,17 +42,14 @@ Stroke pill beside the hero CTA. Never followed. Group: Button. Selector: `a.but
 |---|---|---|---|---|
 | [default](components/crops/cta-secondary-default.png) | 135.45 x 51.59 | rgba(0, 0, 0, 0) | rgb(14, 16, 18) | at rest |
 | [hover](components/crops/cta-secondary-hover.png) | 135.45 x 51.59 | rgb(239, 247, 255) | rgb(0, 122, 252) | mouse hover |
-| focus-visible |  |  |  | not captured: keyboard focus did not reach the element |
+| [focus-visible](components/crops/cta-secondary-focus-visible.png) | 135.45 x 51.59 | rgba(0, 0, 0, 0) | rgb(14, 16, 18) | focus failed |
 | [pressed](components/crops/cta-secondary-pressed.png) | 135.45 x 51.59 | rgba(0, 0, 0, 0) | rgb(14, 16, 18) | CDP forcePseudoState :active |
 
 ## Docs GL JS link
 
 A visible GL JS link on the docs index. Not followed for this state shot. Group: Card. Selector: `a[href*=mapbox-gl-js]`.
 
-| State | Size | Background | Text | Via |
-|---|---|---|---|---|
-| [default](components/crops/docs-card-default.png) | 93.86 x 30 | rgba(0, 0, 0, 0) | rgb(86, 97, 113) | at rest |
-| [hover](components/crops/docs-card-hover.png) | 93.86 x 30 | rgb(47, 192, 120) | rgb(255, 255, 255) | mouse hover |
+Not present on the captured page.
 
 ## Docs code block
 
@@ -179,9 +172,7 @@ Blue pill in the desktop nav. The link was never followed. Group: Button. Select
 
 First visible pricing card, if the page paints one as its own box. Group: Card. Selector: `pricing card`.
 
-| State | Size | Background | Text | Via |
-|---|---|---|---|---|
-| [default](components/crops/plan-card-default.png) | 1344 x 327.36 | rgba(0, 0, 0, 0) | rgb(51, 57, 67) | at rest |
+Not present on the captured page.
 
 ## Pricing headline
 
@@ -213,11 +204,7 @@ Usage range on a public price calculator. Not submitted. Group: Slider. Selector
 
 Maps link in the pricing subnav. Measured at rest, hover and focus. The link was not followed for a purchase. Group: Tabs. Selector: `a.pricing_subnav-link`.
 
-| State | Size | Background | Text | Via |
-|---|---|---|---|---|
-| [default](components/crops/pricing-tab-default.png) | 38.56 x 53.59 | rgba(0, 0, 0, 0) | rgb(139, 150, 170) | at rest |
-| [hover](components/crops/pricing-tab-hover.png) | 38.56 x 53.59 | rgba(0, 0, 0, 0) | rgb(0, 122, 252) | mouse hover |
-| [focus-visible](components/crops/pricing-tab-focus-visible.png) | 38.56 x 53.59 | rgba(0, 0, 0, 0) | rgb(139, 150, 170) | Shift+Tab, Tab |
+Not present on the captured page.
 
 ## Gaps
 
