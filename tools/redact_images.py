@@ -16,7 +16,9 @@ email_allow entry is one exact address or one @domain, never a pattern, and neve
 (see allow_entry_text); `check` and `apply` refuse a file holding anything else. `check` reads every image file under the package that git does not ignore (any folder, every frame;
 a file of an image type it cannot read fails the check), and the package's own rules file, tools/redact-rules/<slug>.json, when one exists (its ocr
 block: email_allow, wrap_ignore) and prints which file it loaded; `--rules` names another one instead.
-`apply` never guesses: it edits files, so its `--rules` stays required.
+`apply` never guesses: it edits files, so its `--rules` stays required. Both refuse a rules file with a
+key at a level that never reads it or a key that is not listed below (RULES_KEYS); a key that starts
+with "_" is a note.
 
 `apply` edits files in place (they are Git LFS objects, so git has the originals until you commit).
 Run it on a clean checkout of the package; to redo it after changing a rule, `git checkout` the
@@ -551,6 +553,59 @@ def package_allow(rules_file, entries):
     return out
 
 
+# The keys a rules file may hold at each level, as cmd_apply, cmd_check and rules_for read them. A key
+# that starts with "_" is a note and is never read. excludeSources and captureLimitations are read by
+# systems/clerk/tools/ingest_evidence.py from that package's rules file.
+RULES_KEYS = {
+    "the top level": {"families", "delete_stems", "delete", "ocr", "excludeSources", "captureLimitations"},
+    "ocr": {"net", "emails", "email_allow", "keep", "boost", "delete_if_covered", "wrap_ignore"},
+    "a family": {"name", "files", "skip", "size", "rects", "ocr_lines"},
+    "an ocr_lines entry": {"rect", "keep"},
+}
+
+
+def rules_key_problems(rules):
+    """One line per key a rules file holds at a level that never reads it: a known key at the wrong
+    level names where it belongs, any other key is unknown. A misplaced key used to be ignored without
+    a word (a top-level wrap_ignore, an ocr.families), so the rule it carried never ran."""
+    out = []
+
+    def keys(obj, level, where):
+        if not isinstance(obj, dict):
+            out.append(f"{where} must be a JSON object")
+            return
+        for k in obj:
+            if k.startswith("_") or k in RULES_KEYS[level]:
+                continue
+            home = [lv for lv, ks in RULES_KEYS.items() if k in ks]
+            label = f"{where}.{k}" if where else k
+            out.append(f"{label} belongs in {' or '.join(home)}" if home else f"{label} is not a rules-file key")
+
+    def items(obj, level, where):
+        if not isinstance(obj, list):
+            out.append(f"{where} must be a list")
+            return []
+        for i, o in enumerate(obj):
+            keys(o, level, f"{where}[{i}]")
+        return [(i, o) for i, o in enumerate(obj) if isinstance(o, dict)]   # keep each entry's own index
+
+    keys(rules, "the top level", "")
+    if "ocr" in rules:
+        keys(rules["ocr"], "ocr", "ocr")
+    for i, fam in items(rules.get("families", []), "a family", "families"):
+        items(fam.get("ocr_lines", []), "an ocr_lines entry", f"families[{i}].ocr_lines")
+    return out
+
+
+def read_rules(path):
+    """The rules file at `path`, or one error line naming the file and every misplaced or unknown key."""
+    rules = read_json_object(path, "rules file")
+    bad = rules_key_problems(rules)
+    if bad:
+        input_error(f"{path}: " + "; ".join(bad))
+    return rules
+
+
 def find_private(words, patterns, emails, email_allow):
     """Boxes (x0, y0, x1, y1) of OCR words that fall inside a pattern or email match, per line."""
     lines = {}
@@ -602,7 +657,7 @@ def save_256(im, f):
 
 def cmd_apply(args):
     pkg = Path(args.package)
-    rules = read_json_object(args.rules, "rules file")
+    rules = read_rules(args.rules)
     ocr_cfg = dict(rules.get("ocr", {}))
     allow = package_allow(args.rules, ocr_cfg.get("email_allow", []))
     patterns = load_patterns(args.patterns) if args.patterns else []
@@ -680,7 +735,7 @@ def cmd_check(args):
     rules_file = package_rules(pkg, args.rules)
     cfg, leaks = {}, []
     if rules_file:
-        rules = read_json_object(rules_file, "rules file")
+        rules = read_rules(rules_file)
         cfg = dict(rules.get("ocr", {}))
         cfg["email_allow"] = package_allow(rules_file, cfg.get("email_allow", []))
         print(f"rules: {rules_file if args.rules else 'tools/redact-rules/' + rules_file.name}"
