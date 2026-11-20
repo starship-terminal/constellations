@@ -17,7 +17,7 @@ Surfaces: home, pricing, product, and enterprise, plus the auth login form. Them
 | [icons/](icons/) | The header wordmark, cropped from the homepage |
 | [screenshots/](screenshots/) | Five page screenshots |
 | [raw/](raw/) | Capture notes |
-| [tools/](tools/) | The kit copy and a token checker |
+| [tools/](tools/) | The kit copy and a token checker. The unadapted kit builders (`build/`, the `native/` builders and `capture/signed-in/build-measurements.mjs`) were removed in the 2026-11 audit; the capture helpers remain. |
 
 ## Brief
 

@@ -13,7 +13,7 @@ The signed-in app was not opened. Login offers Google, Microsoft, Dropbox and SS
 | [components.md](components.md) | Component inventory and gaps |
 | [patterns.md](patterns.md) | Page patterns |
 | [raw/](raw/) | Computed-style readings |
-| [tools/](tools/) | Capture kit copy, adapted only by leaving the builders unused |
+| [tools/](tools/) | Capture kit copy, adapted only by leaving the builders unused. The unadapted kit builders (`build/`, the `native/` builders and `capture/signed-in/build-measurements.mjs`) were removed in the 2026-11 audit; the capture helpers remain. |
 | [screenshots/](screenshots/) | No page captures. The preview browser returned no frames. See [screenshots/README.md](screenshots/README.md) |
 | [components/](components/) | Empty crops folder. No screenshots to crop |
 | [icons/](icons/) | Empty except an index. Icons were not exported |

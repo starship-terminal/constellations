@@ -12,7 +12,7 @@ Public signed-out surfaces of quizlet.com, measured on 19 November 2026 in the T
 | [components.md](components.md) | Controls that were on the signed-out pages, with computed values |
 | [patterns.md](patterns.md) | Home, login, signup and About |
 | [raw/](raw/) | The readings dump |
-| [tools/](tools/) | The kit copy. Builders were not adapted. tokens.json was written from the readings |
+| [tools/](tools/) | The kit copy. Builders were not adapted. tokens.json was written from the readings. The unadapted kit builders (`build/`, the `native/` builders and `capture/signed-in/build-measurements.mjs`) were removed in the 2026-11 audit; the capture helpers remain. |
 
 ## Brief
 
