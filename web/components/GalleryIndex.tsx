@@ -265,7 +265,7 @@ export function GalleryIndex({ data }: { data: GalleryData }) {
                   <td>{data.categories[s.category] || s.category}</td>
                   <td className="gf">{s.goodFor}</td>
                   <td><Strip sw={Object.values(s.swatches)[0] || []} /></td>
-                  <td className="dt">{s.themes.map(themeLabel).join(", ")}</td>
+                  <td className="dt themes">{s.themes.map(themeLabel).join(", ")}</td>
                   <td className="dt">{s.score ? `${s.score.meets}/${s.score.applicable} met` : ""}</td>
                   <td className="dt">{s.captured}</td>
                 </tr>
