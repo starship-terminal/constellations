@@ -215,10 +215,22 @@ def paint_delta(a, b):
     return "; ".join(out)
 
 
+def focus_not_captured(v):
+    """A state whose reading is not what its name says: a skipped one, or a focus-visible reading
+    taken where keyboard focus never landed (kbFocus returned "focus failed") or where the element
+    took focus but did not match :focus-visible. Its style is the element at rest, so it is left out
+    of every table and tally (the kit's rule)."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
+
+def measured(v):
+    return "style" in v and not focus_not_captured(v)
+
+
 def state_rows(c):
     """The first state lists every value; later rows list only what changed."""
     rows = []
-    states = [s for s, v in c["states"].items() if "style" in v]
+    states = [s for s, v in c["states"].items() if measured(v)]
     if not states:
         return rows
     base = props(c["states"][states[0]])
@@ -252,7 +264,7 @@ def fmt(d):
 
 
 def child_layers(c):
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
@@ -369,6 +381,10 @@ for cid, c in C.items():
     for sname, s in c["states"].items():
         if "style" not in s:
             continue
+        if sname == "focus-visible" and focus_not_captured(s):
+            # the element at rest, not a focus reading: counted as a miss, kept out of the tallies
+            focus["focus could not be driven"] += 1
+            continue
         st = s["style"]
         r = st["borderTopLeftRadius"]
         if r != "0px" and s["rect"]["w"] > 4:
@@ -448,7 +464,7 @@ for g, ids in groups.items():
         order = ("default", "hover", "focus-visible", "pressed", "focused", "filled", "selected", "open")
         for sname in [n for n in order if n in c["states"]] + sorted(n for n in c["states"] if n not in order):
             s = c["states"].get(sname)
-            if s and s.get("crop") and Path(s["crop"]).exists():
+            if s and measured(s) and s.get("crop") and Path(s["crop"]).exists():
                 crops.append(f'<img src="{s["crop"]}" alt="{c["title"]}, {sname}" height="{min(120, max(24, round(s["rect"]["h"])))}"> ')
         if crops:
             W("".join(crops))
