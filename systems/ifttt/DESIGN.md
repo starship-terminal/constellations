@@ -208,6 +208,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Museo Sans Rounded renders from licensed woff2** loaded by the site; crops and screenshots show it, the style guide falls back to a rounded system face — the font files are not shipped.
 - **Pressed states are DevTools-forced**; a script-applied mousedown style would not show.
 - **IFTTT paints one theme** — the dark grounds on /explore and the detail heroes are painted sections measured in place, not a dark theme to tokenise.
+- **The detail-page components are the /connect page's.** `back-button`, `share-button`, `share-modal-copy`, `share-url-field`, `service-hero`, `service-icon` and `get-started-today` were measured on the service, applet and connect pages under one key each, and the last page kept its reading; their tokens say "on connect". `tools/capture/public/measure.mjs` now gives a repeated key its page prefix (edited in the 2026-11 audit, not run); a recapture is needed for the service and applet versions.
+- **The brand stack is the measured one.** `core.font.family.brand` is the computed stack verbatim (`"Museo Sans Rounded", "Museo Sans Rounded Fallback", "Avenir Next", helvetica, arial, sans-serif`); `font.family.fallback` is a hand-written stack, labelled Reconstruction.
 
 ### Do and don't (from README.md)
 
