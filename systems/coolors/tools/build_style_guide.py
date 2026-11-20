@@ -33,18 +33,9 @@ for setname in ("core", "light"):
         rows.append((setname + "." + path, value, token["$type"], source))
 
 swatches = "\n".join(
-    f'<div class="sw"><i style="background:{cssname(p)}"></i><div><b>{p}</b><small>{v}</small></div></div>'
-    if False else
     f'<div class="sw"><i style="background:var({cssname(p)})"></i><div><code>{p}</code><small>{v}</small><p>{s}</p></div></div>'
     for p, v, ty, s in rows if ty == "color"
 )
-
-css_vars = []
-for setname in ("core", "light"):
-    for path, token in flat(T[setname]):
-        if token["$type"] != "color":
-            continue
-        css_vars.append(f"  {cssname(setname + '.' + path)}: {token['$value'] if not str(token['$value']).startswith('{') else 'var(' + cssname(str(token['$value'])[1:-1]) + ')'};")
 
 # Resolve aliases simply: light tokens that alias {color.unmeasured} point at the core colour.
 resolved = {}
@@ -64,7 +55,6 @@ for setname in ("core", "light"):
     for path, token in flat(T[setname]):
         if token["$type"] != "color":
             continue
-        full = f"{setname}.{path}" if setname == "light" else path
         # core paths are already unprefixed in flat(); keep a stable custom property.
         name = setname + "." + path
         var_lines.append(f"  {cssname(name)}: {resolve(token['$value'])};")
