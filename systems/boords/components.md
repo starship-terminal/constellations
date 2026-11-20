@@ -47,7 +47,7 @@ Screenshots are named `{page}-light-{state}.png`: the site paints one light them
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 12 components were given a real keyboard focus. 6 draw an outline ring: `nav-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `nav-trigger` (1px auto #005fcc `measured.focus-outline`, offset 0px), `cta-demo` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `social-icon` (1px auto #005fcc `measured.focus-outline`, offset 1px), `m-menu-button` (1px auto #e59700, offset 0px). 3 draw a focus ring as a shadow instead: `billing-tab`, `timer-toggle`, `feature-row`. The other 3 show no measured change: `hero-cta`, `plan-cta`, `m-nav-item`.
+**Focus.** 12 components were given a real keyboard focus. 6 draw an outline ring: `nav-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `nav-trigger` (1px auto #005fcc `measured.focus-outline`, offset 0px), `cta-demo` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `social-icon` (1px auto #005fcc `measured.focus-outline`, offset 1px), `m-menu-button` (1px auto #e59700, offset 0px). 2 draw a focus ring as a shadow instead: `timer-toggle`, `feature-row`. The other 4 show no measured change: `hero-cta`, `billing-tab`, `plan-cta`, `m-nav-item`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): buttons and tabs read the same at rest and pressed — Boords controls press through scale in the DOM, not colour. Nothing a real press would submit was ever pressed.
 

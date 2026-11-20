@@ -39,5 +39,13 @@ class RebuildTest(unittest.TestCase):
         self.assertNotIn("solid transparent", focus)
 
 
+    def test_zero_size_shadow_layers_are_not_a_ring(self):
+        # billing-tab's focus-visible only recolours two 0px placeholder layers: nothing paints
+        text = (self.copy / "components.md").read_text()
+        focus = next(line for line in text.splitlines() if line.startswith("**Focus.**"))
+        shadow_part = focus.split("as a shadow instead:")[1].split(".")[0]
+        self.assertNotIn("`billing-tab`", shadow_part)
+        self.assertIn("`timer-toggle`", shadow_part)
+
 if __name__ == "__main__":
     unittest.main()

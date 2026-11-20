@@ -324,6 +324,21 @@ def _alpha(c):
     return float(m.group(1) or m.group(2)) if m else 1.0
 
 
+def _painting_layers(v):
+    """The box-shadow layers that paint something: a visible colour and some offset, blur or
+    spread. A zero-size layer (Tailwind's ring placeholders) paints nothing, whatever its colour."""
+    out = set()
+    for layer in re.split(r",(?![^(]*\))", v or ""):
+        layer = layer.strip()
+        if not layer or layer == "none":
+            continue
+        cm = re.search(r"rgba?\([^)]*\)|color\([^)]*\)|#[0-9a-fA-F]{3,8}|transparent", layer)
+        lengths = [float(x) for x in re.findall(r"(-?[\d.]+)px", layer)]
+        if (cm and _alpha(cm.group(0)) > 0) and any(x != 0 for x in lengths):
+            out.add(layer)
+    return out
+
+
 foc = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
@@ -337,7 +352,8 @@ for k, c in C.items():
     # draw 1px dotted outlines on their inner anchor while the wrapper's own
     # outline stays none. Those states must count as ringed too.
     child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline") and _alpha(re.sub(r"^[\d.]+px \w+ | offset .*$", "", n["outline"])) > 0), None)
-    shadow = s["boxShadow"] != base["boxShadow"] and s["boxShadow"] != "none"
+    # a ring drawn as a shadow: a layer that paints at focus and did not at rest
+    shadow = bool(_painting_layers(s["boxShadow"]) - _painting_layers(base["boxShadow"]))
     border = any(
         s[f"border{d}{p}"] != base[f"border{d}{p}"]
         for d in ("Top", "Right", "Bottom", "Left")
