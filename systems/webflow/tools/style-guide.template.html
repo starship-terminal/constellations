@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Webflow style guide</title>
+<style>
+:root {
+  --page: #ffffff;
+  --surface: #f0f0f0;
+  --text: #080808;
+  --muted: #5a5a5a;
+  --accent: #146ef5;
+  --border: #d8d8d8;
+  --on-accent: #ffffff;
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  --page: #080808;
+  --surface: #171717;
+  --text: #ffffff;
+  --muted: #ababab;
+  --accent: #146ef5;
+  --border: #363636;
+  --on-accent: #ffffff;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/1.5 Arial, sans-serif; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--page); }
+h1 { font-size: 20px; margin: 0; }
+button.theme { background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 4px; padding: 8px 12px; cursor: pointer; }
+main { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+h2 { font-size: 28px; margin: 40px 0 12px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; }
+.swatch { width: 140px; }
+.swatch i { display: block; height: 56px; border-radius: 8px; border: 1px solid var(--border); }
+.swatch span { display: block; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.btn { display: inline-flex; align-items: center; background: var(--accent); color: var(--on-accent); border-radius: 4px; padding: 16px 24px; font-weight: 500; text-decoration: none; }
+.btn.quiet { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.field { display: block; width: 280px; margin-top: 12px; border: 1px solid var(--border); border-radius: 4px; padding: 12px; background: var(--page); color: var(--text); font: inherit; }
+.card { background: var(--surface); border-radius: 8px; padding: 24px; max-width: 360px; }
+.nav { display: flex; gap: 16px; align-items: center; height: 68px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+.nav a { color: var(--text); text-decoration: none; font-size: 14px; }
+p.note { color: var(--muted); max-width: 68ch; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Webflow public style</h1>
+  <button class="theme" type="button" id="theme">Dark mode</button>
+</header>
+<main>
+  <p class="note">Values are the public site's CSS custom properties, computed on webflow.com on 2026-11-21. WF Visual Sans is not loaded here. The page falls back to Arial, which is the stack's own fallback.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Type</h2>
+  <p style="font-size: 48px; font-weight: 600; line-height: 1.04; margin: 0;">Build for what's next</p>
+  <p class="note">Display uses the desktop end of the h0 clamp, 7rem / 600 / 1.04. Body is 1rem / 400.</p>
+  <h2>Controls</h2>
+  <div class="nav"><a>Platform</a><a>Pricing</a><a class="btn" style="padding: 10px 16px;">Start for free</a></div>
+  <p><a class="btn" href="#components">Start for free</a> <a class="btn quiet" href="#components">Talk to Sales</a></p>
+  <label>Email <input class="field" placeholder="Email" readonly></label>
+  <h2>Card</h2>
+  <div class="card"><strong>Optimize</strong><p class="note">Card radius is 0.5rem. Surface is the secondary background.</p></div>
+</main>
+<script>
+const light = [
+  ["page", "#ffffff"], ["surface", "#f0f0f0"], ["text", "#080808"],
+  ["muted", "#5a5a5a"], ["accent", "#146ef5"], ["border", "#d8d8d8"]
+];
+const dark = [
+  ["page", "#080808"], ["surface", "#171717"], ["text", "#ffffff"],
+  ["muted", "#ababab"], ["accent", "#146ef5"], ["border", "#363636"]
+];
+const box = document.getElementById("swatches");
+function paint(theme) {
+  const rows = theme === "dark" ? dark : light;
+  box.innerHTML = rows.map(([n, v]) => `<div class="swatch"><i style="background:${v}"></i><span>${n}<br>${v}</span></div>`).join("");
+}
+paint("light");
+document.getElementById("theme").onclick = () => {
+  const html = document.documentElement;
+  const next = html.dataset.theme === "dark" ? "light" : "dark";
+  html.dataset.theme = next;
+  document.getElementById("theme").textContent = next === "dark" ? "Light mode" : "Dark mode";
+  paint(next);
+};
+</script>
+</body>
+</html>
