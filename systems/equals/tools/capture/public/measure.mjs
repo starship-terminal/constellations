@@ -18,7 +18,7 @@
 // sign-in form are focused and typed into then cleared — never submitted.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, APP_BASE, DOCS_BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { BASE, APP_BASE, DOCS_BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, REF, CROPS, UA, UA_MOBILE } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -140,7 +140,7 @@ async function measure(key, state, target, opts = {}) {
         file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    c.states[state] = { ...s, crop: file, via: opts.via, run };
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
@@ -200,10 +200,25 @@ async function S(key, target, list, meta = {}, opts = {}) {
         undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
-        if (opts.noToggle) via = 'held open by an earlier toggle';
+        if (opts.noToggle) via = via || 'held open by an earlier toggle';
         else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
       } else via = via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      if (st === 'focus-visible' && via === 'focus failed') {
+        // Keyboard focus never reached the element, so a reading now would be the element at rest
+        // saved as its focus. Record the miss instead (the builders list it as "focus could not be
+        // captured"), and drop the crop an earlier run saved for this state.
+        // An earlier run's real focus reading is kept, with the failed retry noted beside it.
+        const prevSt = out.components[key].states[st];
+        if (prevSt?.style && prevSt.via !== 'focus failed') {
+          prevSt.rerunError = 'focus failed: keyboard focus did not reach the element';
+          log('  !', key, st, 'focus failed; earlier reading kept');
+        } else {
+          const old = prevSt?.crop && path.resolve(REF, prevSt.crop);
+          if (old && old.startsWith(CROPS + path.sep)) fs.rmSync(old, { force: true });
+          out.components[key].states[st] = { skipped: 'focus failed: keyboard focus did not reach the element', via, run };
+          log('  -', key, st, 'skipped: focus failed');
+        }
+      } else await measure(key, st, loc, { ...opts, via });
     } catch (e) {
       const prev = out.components[key].states[st];
       if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
@@ -212,6 +227,14 @@ async function S(key, target, list, meta = {}, opts = {}) {
     }
     if (undo) await undo().catch(() => {});
     if (opts.after?.[st]) await opts.after[st](loc).catch(() => {});
+  }
+  // A listed state that failed its re-read kept the earlier evidence under
+  // rerunError (and its own earlier `run`); the entry then republishes under
+  // the earlier run's page/run/url and records the miss, so retained readings
+  // never carry the new run's date.
+  if (keep && list.some((st) => out.components[key].states[st]?.rerunError)) {
+    Object.assign(out.components[key], keep);
+    out.components[key].recaptureMissed = run;
   }
   await reset();
 }
@@ -252,6 +275,7 @@ async function sheetsFor(key) {
 // Whether the page paints a different transition under prefers-reduced-motion:
 // the same component re-read in a context with reduce on.
 async function reducedMotion(key, sel) {
+  const slot = `${key} ${sel}`; // one entry per element, so a second call cannot overwrite the first
   out._meta.reducedMotion ??= {};
   try {
     const b = context.browser();
@@ -267,9 +291,9 @@ async function reducedMotion(key, sel) {
       const cs = getComputedStyle(el);
       return { transition: cs.transition, animation: cs.animation, scrollBehavior: getComputedStyle(document.documentElement).scrollBehavior };
     }, sel).catch(() => null);
-    out._meta.reducedMotion[key] = { selector: sel, reduce: v };
+    out._meta.reducedMotion[slot] = { page: key, selector: sel, reduce: v };
     await ctx.close();
-  } catch (e) { out._meta.reducedMotion[key] = { selector: sel, error: String(e).slice(0, 120) }; }
+  } catch (e) { out._meta.reducedMotion[slot] = { page: key, selector: sel, error: String(e).slice(0, 120) }; }
 }
 
 const G = {
@@ -371,7 +395,9 @@ async function pricing() {
   await S('plan-cta', q('.pricing__plan .plan-cta').filter({ visible: true }).first(), B4, { group: g, title: 'Plan CTA', desc: 'The card’s "Get a demo" action on its accent--amber background; measured never pressed.', sel: '.plan-cta' });
   await S('plan-cta-orchid', q('.pricing__plan .plan-cta.accent--orchid, .pricing__plan.accent--orchid .plan-cta, .pricing__plan .plan-cta').nth(1), B4, { group: g, title: 'Plan CTA (orchid)', desc: 'The Business card’s CTA on the accent--orchid background; each plan carries its own accent colour.', sel: '.plan-cta.accent--orchid' });
   await S('plan-feature', q('.pricing__plan .plan-features li').filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan feature row', desc: 'A feature line inside the plan card ("Unlimited seats").', sel: '.plan-features li' });
-  await S('faq', q('.faq').filter({ visible: true }).first(), ['default', 'opened'], { group: g, title: 'FAQ item', desc: 'A pricing FAQ row (a checkbox accordion); opened by clicking its label — a local toggle, never a form post.', sel: '.faq' }, { open: openFaq });
+  await S('faq', q('.faq').filter({ visible: true }).first(), ['default', 'opened'], { group: g, title: 'FAQ item', desc: 'A pricing FAQ row (a checkbox accordion); opened by clicking its label — a local toggle, never a form post.', sel: '.faq' }, { before: { opened: openFaq }, noToggle: true });
+  // ^ `open` is a prerequisite run before every state, so on 2026-11-13 `default` was read already
+  //   expanded; the toggle now runs only for `opened`.
   await S('faq-question', q('label.faq__question').filter({ visible: true }).first(), ['default'], { group: g, title: 'FAQ question', desc: 'The question label of the first FAQ item.', sel: 'label.faq__question' }, { open: openFaq });
   save();
 }
@@ -429,7 +455,10 @@ async function mobile() {
   const g = G.mobile;
   await S('m-header', q('header').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile header', desc: 'The top bar at 390: wordmark, hamburger and "Get a demo".', sel: 'header' }, { noScroll: true });
   await S('m-hamburger', q('label.header__mobile-nav-toggle').filter({ visible: true }).first(), [...B4, 'opened'], { group: g, title: 'Hamburger', desc: 'The mobile nav toggle (a label over a hidden checkbox); opened to reveal the drawer — a local toggle, its links never followed.', sel: 'label.header__mobile-nav-toggle' }, { noScroll: true });
-  await S('m-drawer', q('.header__nav, .header__mobile-nav, nav').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile nav drawer', desc: 'The nav the hamburger opens.', sel: 'mobile nav' }, { open: openMobileNav, noScroll: true, noReset: true });
+  // The drawer is the tall panel the hamburger reveals: `.header__nav, .header__mobile-nav, nav`
+  // .first() caught the 52px header nav on 2026-11-13.
+  await openMobileNav();
+  await S('m-drawer', await domFind(page, /Use cases[\s\S]*Pricing/, { sel: 'nav, div, ul', tag: 'mdrawer', minH: 200 }), ['default'], { group: g, title: 'Mobile nav drawer', desc: 'The nav the hamburger opens.', sel: 'mobile nav' }, { open: openMobileNav, noScroll: true, noReset: true });
   await S('m-hero-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Hero headline (mobile)', desc: '"What’s after Excel?" at 390 wide.', sel: 'h1' }, { noScroll: true });
   await S('m-email', q('input.email-capture-group__input').filter({ visible: true }).first(), FIELD, { group: g, title: 'Demo email field (mobile)', desc: 'The email capture at 390; focused and typed into then cleared — never submitted.', sel: '.email-capture-group__input' }, { fillText: 'name@example.com' });
   save();
@@ -442,20 +471,25 @@ const browser = launched.browser;
 context = launched.context;
 run = new Date().toISOString();
 out._meta.read = run.slice(0, 10);
+const finishedPages = new Set();
 try {
   for (const k of Object.keys(PAGES)) {
     if (want.length && !want.includes(k)) continue;
     await PAGES[k]();
+    finishedPages.add(k);
   }
   await reducedMotion('home', '.build-tab');
   await reducedMotion('home', 'button.email-capture-group__button');
 } finally {
   for (const k of failedPages) log('blocked:', k);
-  // Prune components from pages that measured nothing this run — except ones
-  // the run was gated from, which keep their earlier evidence.
-  const okPages = new Set(Object.values(out.components).map((c) => c.page));
+  // An untouched entry is pruned only when its page finished this run (a page the run never
+  // reached, or an edge-blocked one, keeps its earlier readings under their own provenance), and
+  // a touched entry keeps only the states this run's spec lists. comp() stamps every touched
+  // entry with this run, so the old `c.run === run` guard could never prune anything.
   for (const [k, c] of Object.entries(out.components)) {
-    if (!touched.has(k) && c.run === run && !failedPages.has(c.page)) delete out.components[k];
+    if (!touched.has(k) && finishedPages.has(c.page) && !failedPages.has(c.page)) { delete out.components[k]; continue; }
+    const wantSt = listed.get(k);
+    if (wantSt) for (const st of Object.keys(c.states || {})) if (!wantSt.has(st)) delete c.states[st];
   }
   save();
   if (liveCtx) await liveCtx.close().catch(() => {});

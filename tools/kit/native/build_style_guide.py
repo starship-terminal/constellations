@@ -22,7 +22,7 @@ MONO_STACK = 'ui-monospace, "SF Mono", Menlo, monospace'
 NAME = "Grok Bot"   # PRODUCT (adapt)
 OWNER = "X Corp"    # PRODUCT (adapt): whose visual system it is
 LEDE = ("Grok Bot 1.16.0 for iOS 26, read from stills captured through iPhone Mirroring on 2026-10-23.")  # PRODUCT (adapt)
-EV_CLASS = {"Sampled": "ev-sampled", "Sampled (text)": "ev-text", "Derived": "ev-derived", "Not captured": "ev-none"}
+EV_CLASS = {"Sampled": "ev-sampled", "Sampled (text)": "ev-text", "Derived": "ev-derived", "Reconstruction": "ev-derived", "Not captured": "ev-none"}
 
 
 def walk(node, path=()):
@@ -278,8 +278,9 @@ for(var i=0;i<b.length;i++){b[i].addEventListener('click',function(e){a(e.curren
              ('<div class="toggle" role="group" aria-label="Theme"><button type="button" data-set-theme="light" aria-pressed="false">Light</button>'
               '<button type="button" data-set-theme="dark" aria-pressed="true">Dark</button></div></header>' if len(themes) == 2 else "</header>"),
              "<h2>Colour</h2>",
-             '<p class="lede">%s The badge says how each value was read: Sampled (a flat fill, exact), Sampled (text) '
-             "(the anti-aliased pixel furthest from the fill), Derived (worked out, or a glass or gradient reading). Hover a swatch for its capture.</p>"
+             '<p class="lede">%s The badge says how each value was read: Sampled (a pixel read off a capture; '
+             "a glass or gradient box gives its share in the description), Sampled (text) (the anti-aliased pixel furthest from the fill), "
+             "Derived (worked out from readings), Reconstruction (judged by eye). Hover a swatch for its capture.</p>"
              % ("Light and dark side by side." if len(themes) == 2 else "%s only: the app has one theme." % themes[0].title()),
              "".join(colour_html),
              # PRODUCT (adapt): the palette and ramp captions

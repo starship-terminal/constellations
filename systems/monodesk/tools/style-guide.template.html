@@ -212,9 +212,9 @@ const resolveVal = (v, depth) => {
   let h = '';
   for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
     const px = parseFloat(resolveVal(t.v)) * (String(resolveVal(t.v)).endsWith('rem') ? 16 : 1);
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — Huddlekit</span><span class="tv">${esc(t.v)}</span></div>`;
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — MonoDesk</span><span class="tv">${esc(t.v)}</span></div>`;
   }
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Huddlekit</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — MonoDesk</span><span class="tv">${esc(t.v)}</span></div>`;
   for (const [n, t] of flat((TOK.core.font || {}).leading || {}, 'font.leading.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
   for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
   $('#type-out').innerHTML = h;
@@ -230,7 +230,7 @@ const resolveVal = (v, depth) => {
     const fs = parseFloat(v.fontSize) || 14;
     const mono = /mono/i.test(String(v.fontFamily));
     const meta = [v.fontSize, v.lineHeight, 'w' + v.fontWeight, v.letterSpacing].filter(Boolean).join(' / ');
-    h += `<div class="tr"><span class="ts" style="font-family:${mono ? 'var(--sg-mono)' : 'var(--sg-sans)'};font-size:${Math.min(fs, 44)}px;font-weight:${esc(String(v.fontWeight || 400))};line-height:${esc(v.lineHeight || 'normal')}">${esc(n)} — Huddlekit 0123</span><span class="tv">${esc(meta)}</span></div>`;
+    h += `<div class="tr"><span class="ts" style="font-family:${mono ? 'var(--sg-mono)' : 'var(--sg-sans)'};font-size:${Math.min(fs, 44)}px;font-weight:${esc(String(v.fontWeight || 400))};line-height:${esc(v.lineHeight || 'normal')}">${esc(n)} — MonoDesk 0123</span><span class="tv">${esc(meta)}</span></div>`;
   }
   $('#typ-out').innerHTML = h;
 })();

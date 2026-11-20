@@ -184,7 +184,7 @@ Shadows, resolved to CSS:
 
 | Token | box-shadow |
 |---|---|
-| `light.shadow.card` | `0px 1px 3px 0px #00000026` |
+| `light.shadow.card` | `0px 1px 3px 0px #00000026, 0px 0px 0.5px 0px #0000004d` |
 
 ## Shapes
 
@@ -206,7 +206,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The dark set is declared, not painted. The sign-in page had no `data-preferred-theme` attribute. Enterprise's grey field is a video under a 50% black gradient, not a token. `--brand--azure` is the CSS keyword `azure`, while the Contact Sales hover computed `#f0ffff`. Several `--wv--*` names are declared and unused on the pages that were read. Screenshots are headless Playwright of the public URLs because preview_snapshot returned "The browser is not producing screenshot frames". The sign-in page has no screenshot. Do not read colours off the PNGs.
+The dark set is declared, not painted. The sign-in page had no `data-preferred-theme` attribute. Eleven dark roles and the three light status fills (`danger`, `success`, `warning`) were resolved from the stylesheet ramps but are not in [raw/readings.json](raw/readings.json); they are labelled Reconstruction, entered by hand at capture time. Enterprise's grey field is a video under a 50% black gradient, not a token. `--brand--azure` is the CSS keyword `azure`, while the Contact Sales hover computed `#f0ffff`. Several `--wv--*` names are declared and unused on the pages that were read. Screenshots are headless Playwright of the public URLs because preview_snapshot returned "The browser is not producing screenshot frames". The sign-in page has no screenshot. Do not read colours off the PNGs.
 
 ### Do and don't (from README.md)
 

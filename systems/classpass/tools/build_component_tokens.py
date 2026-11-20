@@ -394,6 +394,25 @@ for key, cname, desc in [
     except KeyError:
         pass
 
+# A component flagged recaptureMissed kept a previous run's readings (the recapture did not find it). st()
+# refuses those, but stprop() reads them; any leaf built from one says so instead of shipping as current.
+STALE = {k: c for k, c in C.items() if c.get("recaptureMissed")}
+
+
+def mark_stale(node):
+    if isinstance(node, dict):
+        src = node.get("source")
+        if isinstance(src, str):
+            m = re.search(r"\bof ([a-z0-9-]+) (default|hover|focus-visible|pressed|focused|opened)\b", src)
+            if m and m.group(1) in STALE and "stale" not in src:
+                c = STALE[m.group(1)]
+                node["source"] = src + "; stale: kept from an earlier run (the %s recapture did not find %s)" % (c["recaptureMissed"], m.group(1))
+        for v in node.values():
+            mark_stale(v)
+
+
+mark_stale(SPEC)
+
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1, ensure_ascii=False) + "\n")
 
 

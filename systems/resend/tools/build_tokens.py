@@ -6,6 +6,7 @@ script does not invent colours. Re-run only after updating the raw file.
 """
 import json
 import pathlib
+import re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = json.loads((HERE / "raw" / "foundations.json").read_text())
@@ -22,6 +23,18 @@ def color(value, source):
 
 def dim(value, source):
     return tok("dimension", value, source)
+
+
+def gradient_base(component):
+    """The first stop of a measured linear-gradient fill, as #rrggbbaa. A missing or unparseable
+    reading fails the build rather than falling back to a guessed opaque fill."""
+    image = (RAW["components"].get(component) or {}).get("backgroundImage", "")
+    # The first stop is the first colour after the optional angle or direction; it must be rgba().
+    m = re.match(r"linear-gradient\(\s*(?:[^,()]+,\s*)?rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)", image)
+    if not m:
+        raise SystemExit(f"{component} backgroundImage is not a readable linear-gradient: {image!r}")
+    r, g, b = (int(m.group(i)) for i in (1, 2, 3))
+    return "#%02x%02x%02x%02x" % (r, g, b, round(float(m.group(4)) * 255)), image
 
 
 def build():
@@ -196,7 +209,7 @@ def build():
         },
         "component": {
             "button": {
-                "bg": color(c["white"], src + " primary button text is white on a translucent white gradient; fill token is --bg-accent"),
+                "bg": color(BUTTON_BG, src + " hero Get started backgroundImage " + BUTTON_IMAGE + ": its first stop. The fill is that translucent gradient over the black page, not an opaque colour"),
                 "text": color(c["white"], src + " Get started color"),
                 "radius": dim("16px", src + " Get started border-radius"),
                 "height": dim("40px", src + " header Get started height"),
@@ -222,9 +235,11 @@ def build():
             {"name": "dark", "selectedTokenSets": {"core": "enabled", "dark": "enabled"}},
         ],
     }
-    OUT.write_text(json.dumps(doc, indent=2) + "\n")
-    print(f"wrote {OUT}")
+    return json.dumps(doc, indent=2) + "\n"
 
+
+BUTTON_BG, BUTTON_IMAGE = gradient_base("getStartedHero")
 
 if __name__ == "__main__":
-    build()
+    OUT.write_text(build())
+    print(f"wrote {OUT}")

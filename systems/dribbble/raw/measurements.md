@@ -1549,21 +1549,22 @@ Page: jobs. Selector: `job card`. States: default, hover, focus-visible, pressed
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 912 x 104 | = | = | = |
-| Padding | 24px | = | = | = |
-| Border | 1px solid #f1f1f1 | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | #ffffff | = | = | = |
-| Box shadow | none | #f3f3f4 @ 0.65 0px 8px 15px 0px | = | #f3f3f4 @ 0.65 0px 8px 15px 0px |
-| Outline | none | = | = | = |
-| Font | Mona Sans 14px/28px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #0d0c22 | = | = | = |
-| Text node | span.job-board-job-company: Mona Sans 15px/15px 500, #0d0c22 | = | = | = |
-| Transition | background-color 0.2s ease | = | = | = |
-| Icon | 14 x 22, colour #0d0c22 | = | = | = |
-| Painted layers | li.job-list-item 912.0x104.0 bg #ffffff border T:1px solid #f1f1f1 / R:1px solid #f1f1f1 / B:1px solid #f1f1f1 / L:1px solid #f1f1f1 r 8px; a.form-btn.outlined 93.5x40.0 bg #ffffff border T:1px solid #e7e7e9 / R:1px solid #e7e7e9 / B:1px solid #e7e7e9 / L:1px solid #e7e7e9 r 1e+07px; button.btn2.btn2--tertiary 105.8x40.0 bg #ffffff border T:1px solid #e7e7e9 / R:1px solid #e7e7e9 / B:1px solid #e7e7e9 / L:1px solid #e7e7e9 r 1e+07px; button::before.btn2.btn2--tertiary 103.812pxx38px bg #ffffff; button::after.btn2.btn2--tertiary 16pxx16px border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #0d0c22 / L:1px solid #0d0c22 r 50% | li.job-list-item 912.0x104.0 bg #ffffff border T:1px solid #f1f1f1 / R:1px solid #f1f1f1 / B:1px solid #f1f1f1 / L:1px solid #f1f1f1 r 8px shadow #f3f3f4 @ 0.65 0px 8px 15px 0px; a.form-btn.outlined 93.5x40.0 bg #ffffff border T:1px solid #e7e7e9 / R:1px solid #e7e7e9 / B:1px solid #e7e7e9 / L:1px solid #e7e7e9 r 1e+07px; button.btn2.btn2--tertiary 105.8x40.0 bg #ffffff border T:1px solid #e7e7e9 / R:1px solid #e7e7e9 / B:1px solid #e7e7e9 / L:1px solid #e7e7e9 r 1e+07px; button::before.btn2.btn2--tertiary 103.812pxx38px bg #ffffff; button::after.btn2.btn2--tertiary 16pxx16px border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #0d0c22 / L:1px solid #0d0c22 r 50% | = | li.job-list-item 912.0x104.0 bg #ffffff border T:1px solid #f1f1f1 / R:1px solid #f1f1f1 / B:1px solid #f1f1f1 / L:1px solid #f1f1f1 r 8px shadow #f3f3f4 @ 0.65 0px 8px 15px 0px; a.form-btn.outlined 93.5x40.0 bg #ffffff border T:1px solid #e7e7e9 / R:1px solid #e7e7e9 / B:1px solid #e7e7e9 / L:1px solid #e7e7e9 r 1e+07px; button.btn2.btn2--tertiary 105.8x40.0 bg #ffffff border T:1px solid #e7e7e9 / R:1px solid #e7e7e9 / B:1px solid #e7e7e9 / L:1px solid #e7e7e9 r 1e+07px; button::before.btn2.btn2--tertiary 103.812pxx38px bg #ffffff; button::after.btn2.btn2--tertiary 16pxx16px border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #0d0c22 / L:1px solid #0d0c22 r 50% |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 912 x 104 | = | - | = |
+| Padding | 24px | = | - | = |
+| Border | 1px solid #f1f1f1 | = | - | = |
+| Radius | 8px | = | - | = |
+| Background | #ffffff | = | - | = |
+| Box shadow | none | #f3f3f4 @ 0.65 0px 8px 15px 0px | - | #f3f3f4 @ 0.65 0px 8px 15px 0px |
+| Outline | none | = | - | = |
+| Font | Mona Sans 14px/28px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #0d0c22 | = | - | = |
+| Text node | span.job-board-job-company: Mona Sans 15px/15px 500, #0d0c22 | = | - | = |
+| Transition | background-color 0.2s ease | = | - | = |
+| Icon | 14 x 22, colour #0d0c22 | = | - | = |
+| Painted layers | li.job-list-item 912.0x104.0 bg #ffffff border T:1px solid #f1f1f1 / R:1px solid #f1f1f1 / B:1px solid #f1f1f1 / L:1px solid #f1f1f1 r 8px; a.form-btn.outlined 93.5x40.0 bg #ffffff border T:1px solid #e7e7e9 / R:1px solid #e7e7e9 / B:1px solid #e7e7e9 / L:1px solid #e7e7e9 r 1e+07px; button.btn2.btn2--tertiary 105.8x40.0 bg #ffffff border T:1px solid #e7e7e9 / R:1px solid #e7e7e9 / B:1px solid #e7e7e9 / L:1px solid #e7e7e9 r 1e+07px; button::before.btn2.btn2--tertiary 103.812pxx38px bg #ffffff; button::after.btn2.btn2--tertiary 16pxx16px border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #0d0c22 / L:1px solid #0d0c22 r 50% | li.job-list-item 912.0x104.0 bg #ffffff border T:1px solid #f1f1f1 / R:1px solid #f1f1f1 / B:1px solid #f1f1f1 / L:1px solid #f1f1f1 r 8px shadow #f3f3f4 @ 0.65 0px 8px 15px 0px; a.form-btn.outlined 93.5x40.0 bg #ffffff border T:1px solid #e7e7e9 / R:1px solid #e7e7e9 / B:1px solid #e7e7e9 / L:1px solid #e7e7e9 r 1e+07px; button.btn2.btn2--tertiary 105.8x40.0 bg #ffffff border T:1px solid #e7e7e9 / R:1px solid #e7e7e9 / B:1px solid #e7e7e9 / L:1px solid #e7e7e9 r 1e+07px; button::before.btn2.btn2--tertiary 103.812pxx38px bg #ffffff; button::after.btn2.btn2--tertiary 16pxx16px border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #0d0c22 / L:1px solid #0d0c22 r 50% | - | li.job-list-item 912.0x104.0 bg #ffffff border T:1px solid #f1f1f1 / R:1px solid #f1f1f1 / B:1px solid #f1f1f1 / L:1px solid #f1f1f1 r 8px shadow #f3f3f4 @ 0.65 0px 8px 15px 0px; a.form-btn.outlined 93.5x40.0 bg #ffffff border T:1px solid #e7e7e9 / R:1px solid #e7e7e9 / B:1px solid #e7e7e9 / L:1px solid #e7e7e9 r 1e+07px; button.btn2.btn2--tertiary 105.8x40.0 bg #ffffff border T:1px solid #e7e7e9 / R:1px solid #e7e7e9 / B:1px solid #e7e7e9 / L:1px solid #e7e7e9 r 1e+07px; button::before.btn2.btn2--tertiary 103.812pxx38px bg #ffffff; button::after.btn2.btn2--tertiary 16pxx16px border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #0d0c22 / L:1px solid #0d0c22 r 50% |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `job-card-default.png`, `job-card-hover.png`, `job-card-focus-visible.png`, `job-card-pressed.png`.
 
@@ -1575,18 +1576,19 @@ Page: jobs. Selector: `job title inside a job card`. States: default, hover, foc
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 250.09 x 36 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Mona Sans 22px/36px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #0d0c22 | = | = | = |
-| Transition | none | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 250.09 x 36 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Mona Sans 22px/36px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #0d0c22 | = | - | = |
+| Transition | none | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `job-title-default.png`, `job-title-hover.png`, `job-title-focus-visible.png`, `job-title-pressed.png`.
 
@@ -1598,20 +1600,21 @@ Page: jobs. Selector: `job tag inside a job card`. States: default, hover, focus
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 67.78 x 28 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Mona Sans 14px/28px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #3d3d4e | = | = | = |
-| Text node | span.location: Mona Sans 12px/28px 700, #3d3d4e | = | = | = |
-| Transition | none | = | = | = |
-| Icon | 14 x 22, colour #0d0c22 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 67.78 x 28 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Mona Sans 14px/28px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #3d3d4e | = | - | = |
+| Text node | span.location: Mona Sans 12px/28px 700, #3d3d4e | = | - | = |
+| Transition | none | = | - | = |
+| Icon | 14 x 22, colour #0d0c22 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `job-tag-default.png`, `job-tag-hover.png`, `job-tag-focus-visible.png`, `job-tag-pressed.png`.
 

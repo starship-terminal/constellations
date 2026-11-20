@@ -47,7 +47,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #ea4c89 `core.color.measured.pink` | #ea4c89 `core.color.measured.pink` |
 | border | rgba(219, 218, 222, 0.9) `core.color.measured.border` | #0d0c22 `core.color.measured.pill-border` |
 
-Fonts: `core.font.family.sans` is Mona Sans, then 4 fallbacks; `core.font.face.source-serif-4` is Source Serif 4, with no fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 8 radius steps (`core.radius`), 10 spacing steps (`core.spacing`).
+Fonts: `core.font.family.sans` is Mona Sans, then 4 fallbacks; `core.font.face.source-serif-4` is Source Serif 4, with no fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 10 radius steps (`core.radius`), 10 spacing steps (`core.spacing`).
 
 ### Using components
 
@@ -108,6 +108,7 @@ Nothing was signed into, filled or submitted: the login and signup forms were ca
 - **The home hero animates.** The accent word, the hero media card and the promo content rotate; the crops catch one frame and later runs may read a different word.
 - **Percentages and mega-radii.** `50%` radii are stored under a non-standard `other` type because a percentage is relative to the element, and Chromium serialises pill radii as `1e+07px` — both mean "as round as the element allows".
 - **A zero-sized nav link.** The pink `Start Project Brief` nav link exists in the header DOM but paints 0 x 0 at 1440 wide on the home page — it is documented as a gap, not measured.
+- **Readings to recapture.** `designer-name` is the "15 Services available" meta line (its name filter matched inside "available") and `m-search` is a tag chip; components.md marks both and no token reads them. The selectors are fixed in `measure.mjs` (edited, not run), as is the reduced-motion probe, which read `header` (absent) instead of the `.site-nav` bar and so recorded nothing.
 - **Feeds are third-party content.** Shot cards, designer names, ratings and avatars are public posts by other people; values are read from the first card, so geometry and copy vary between runs.
 
 ## Fonts

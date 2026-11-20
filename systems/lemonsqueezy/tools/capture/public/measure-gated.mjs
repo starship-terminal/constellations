@@ -1,18 +1,18 @@
-// Measure the closed-signup SMP card and the login error. Get started is
-// measured, never clicked. Writes into the existing components-computed.json.
+// Measure the customer order portal's sign-in controls at rest. Nothing is typed or submitted.
+// Writes into the existing components-computed.json, keeping every reading it does not retake.
 import fs from 'node:fs';
 import path from 'node:path';
-import os from 'node:os';
-import { AUTH, launch, open, styleOf, crop, centre, RAW } from './lib.mjs';
+import { launch, styleOf, crop, RAW } from './lib.mjs';
+import { datePrior } from '../merge-dates.mjs';
 
 const OUT = path.join(RAW, 'components-computed.json');
 const existing = JSON.parse(fs.readFileSync(OUT, 'utf8'));
+// Each state carries its own read date; kept states keep theirs (merge-dates.mjs).
+const RUN = new Date().toLocaleDateString('en-CA');
 const out = existing;
-out._meta.gated = '2026-11-18 closed-signup + login-error';
+datePrior(out.components, out._meta && out._meta.captured);
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
-const password = fs.readFileSync(path.join(os.homedir(), '.design-systems/lemonsqueezy/password'), 'utf8').trim();
-const EMAIL = (process.env.LS_EMAIL || fs.readFileSync(path.join(os.homedir(), '.design-systems/lemonsqueezy/email'), 'utf8')).trim();
 
 const { browser, context } = await launch({ width: 1440, height: 900, dpr: 2 });
 let page, cdp;
@@ -26,15 +26,19 @@ async function measure(key, state, loc, opts = {}) {
       try { file = await crop(page, loc, `${key}-${state}`, opts.pad ?? 12); }
       catch (e) { s.cropError = String(e.message || e).slice(0, 140); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    c.states[state] = { ...s, crop: file, via: opts.via, read: RUN };
     log('  ', key, state, Math.round(s.rect.w) + 'x' + Math.round(s.rect.h), s.style.backgroundColor, s.style.color);
   } catch (e) {
-    c.states[state] = { error: String(e.message || e).slice(0, 200) };
+    // A failed re-read keeps the committed reading and notes the failure beside it.
+    const prior = c.states[state];
+    if (prior && !prior.error) { c.states[state] = { ...prior, recaptureError: String(e.message || e).slice(0, 200), recaptureRun: RUN }; return; }
+    c.states[state] = { error: String(e.message || e).slice(0, 200), read: RUN };
     log('  !', key, state, String(e.message).slice(0, 140));
   }
 }
 
 function comp(key, meta) {
+  const prev = out.components[key];
   out.components[key] = {
     page: meta.page,
     url: meta.url,
@@ -42,7 +46,7 @@ function comp(key, meta) {
     group: meta.group,
     desc: meta.desc,
     selector: meta.sel,
-    states: {},
+    states: { ...(prev?.states || {}) },
   };
 }
 
@@ -52,57 +56,11 @@ try {
   await cdp.send('DOM.enable');
   await cdp.send('CSS.enable');
 
-  await open(page, AUTH + '/login', { wait: 1400 });
-  await page.locator('#email').fill(EMAIL);
-  await page.locator('#password').fill(password);
-  await page.getByRole('button', { name: /^sign in$/i }).click();
-  await page.waitForTimeout(2500);
-  await page.locator('#email').fill('learner@example.com');
-  await page.locator('#password').fill('');
-
-  const err = page.locator('text=These credentials do not match our records').first();
-  comp('login-error', {
-    page: 'login', url: AUTH + '/login', title: 'Login error', group: 'status',
-    desc: 'Server error after a failed email/password sign-in. The typed address was replaced with learner@example.com before the crop.',
-    sel: 'credentials-do-not-match',
-  });
-  if (await err.count()) await measure('login-error', 'default', err, { via: 'failed sign-in, email redacted in the field', pad: 8 });
-  else log('  ! missing login-error');
-
-  await page.goto(AUTH + '/signup/business-intent', { waitUntil: 'domcontentloaded' });
-  await page.waitForTimeout(1200);
-  await page.locator('#business_name').fill('Personal testing');
-  await page.locator('#website_url').fill('https://example.com');
-  await page.locator('#country').selectOption('US');
-  await page.getByRole('button', { name: /continue/i }).click();
-  await page.waitForURL(/\/signup\/smp/, { timeout: 15000 });
-  await page.waitForTimeout(1200);
-
-  const smpUrl = AUTH + '/signup/smp';
-  const card = page.locator('text=Managed Payments').first();
-  // Prefer the recommended card container
-  const cardBox = page.locator('div').filter({ hasText: 'Recommended for your business' }).filter({ hasText: 'Get started' }).first();
-  comp('smp-card', {
-    page: 'register-smp', url: smpUrl, title: 'Managed Payments card', group: 'card',
-    desc: 'Closed-signup recommendation card. Get started was not clicked.',
-    sel: 'Recommended for your business card',
-  });
-  if (await cardBox.count()) await measure('smp-card', 'default', cardBox, { via: 'at rest after business-intent submit', pad: 16 });
-  else if (await card.count()) await measure('smp-card', 'default', card, { via: 'fallback heading', pad: 16 });
-
-  const cta = page.getByRole('link', { name: /get started/i }).or(page.getByRole('button', { name: /get started/i })).first();
-  comp('smp-cta', {
-    page: 'register-smp', url: smpUrl, title: 'Get started', group: 'button',
-    desc: 'Purple CTA on the closed-signup card. Measured, never followed (Stripe onboarding).',
-    sel: 'Get started',
-  });
-  if (await cta.count()) {
-    await measure('smp-cta', 'default', cta, { via: 'at rest' });
-    await cta.hover().catch(() => {});
-    await page.waitForTimeout(300);
-    await measure('smp-cta', 'hover', cta, { via: 'mouse hover' });
-    await page.mouse.move(4, 4);
-  }
+  // state change: recorded as a boundary, not performed. The committed login-error, smp-card and
+  // smp-cta readings (2026-11-18) were taken after this script typed the account's address and
+  // password into the live sign-in form and submitted the business-intent signup form. Neither is
+  // done any more; those three entries stay in raw/components-computed.json as they were read and
+  // are not re-measured here.
 
   await page.goto('https://app.lemonsqueezy.com/my-orders', { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2200);

@@ -32,7 +32,7 @@ The README's [Do and don't](#do-and-dont) section lists no rules.
 
 | Role | light |
 |---|---|
-| page | #fff `light.color.bg-surface` |
+| page | #ffffff `light.color.bg-surface` |
 | surface | #f6f7fa `light.color.bg-container` |
 | text | #121826 `light.color.text-primary` |
 | muted | #6f7685 `light.color.text-tertiary` |

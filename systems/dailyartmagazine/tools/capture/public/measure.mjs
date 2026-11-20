@@ -15,7 +15,7 @@
 // toggles; newsletter and wpcf7 forms are measured but never submitted.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, M, launch, patch, open, closePromo, domFind, styleOf, styleOfSelector, crop, cropSelector, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -60,8 +60,7 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   // fresh context before recording the route as blocked this run.
   let ok = false;
   for (let tries = 0; tries < 2 && !ok; tries++) {
-    await open(page, url || (/^https?:/.test(URLS[key]) ? URLS[key] : BASE + URLS[key]), { wait, promo });
-    ok = !(await blocked());
+    ok = (await open(page, url || (/^https?:/.test(URLS[key]) ? URLS[key] : BASE + URLS[key]), { wait, promo })) && !(await blocked());  // open() is false when the bot check did not clear
     if (!ok && tries === 0) { log('  challenge, one reload', key); }
   }
   if (!ok) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); liveCtx = null; return false; }
@@ -219,32 +218,6 @@ async function toggle(loc, { allowLink = false } = {}) {
   const t = await l.evaluate((el) => ({ tag: el.tagName, type: el.getAttribute('type'), text: (el.innerText || el.getAttribute('aria-label') || '').trim() }));
   if (t.type === 'submit' || NEVER.test(t.text) || (t.tag === 'A' && !allowLink)) throw new Error(`toggle refused: ${t.tag} "${t.text}"`);
   await l.click({ timeout: 4000 }).catch(() => l.evaluate((el) => el.click()));
-}
-
-// Variant of S() for routes whose Playwright locators never resolve.
-// curater.org/taste client-side redirected to /taste/soon and the navigation
-// never settles: locators count matches, but every resolve dies with the
-// execution context. Measuring the default state through the main world
-// (same styleOf reader + clip crop) instead of locators.
-async function SJ(key, sel, meta = {}, opts = {}) {
-  comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: sel });
-  delete out.components[key].missing;
-  const found = await page.evaluate((pick) => !!eval(pick), sel.startsWith('js:') ? sel.slice(3) : `document.querySelector(${JSON.stringify(sel)})`);
-  if (!found) { out.components[key].missing = true; log('  ! missing', key); return; }
-  try {
-    const s = await styleOfSelector(page, sel);
-    if (!s) throw new Error('element not found');
-    let file;
-    if (opts.crop !== false) {
-      try { file = await cropSelector(page, sel, `${key}-default`, opts.pad ?? 8); }
-      catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
-    }
-    out.components[key].states.default = { ...s, crop: file, via: 'main-world query (locators never settle on this route)' };
-    log('  ', key, 'default', s.rect.w + 'x' + s.rect.h);
-  } catch (e) {
-    out.components[key].states.default = { error: String(e.message || e).slice(0, 200) };
-    log('  !', key, 'default', String(e.message).slice(0, 120));
-  }
 }
 
 const q = (sel) => page.locator(sel);

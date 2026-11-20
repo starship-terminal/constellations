@@ -389,7 +389,7 @@ No standalone SVG icon set was lifted on this pass; the icons in the crops and s
 
 ### Themes
 
-One theme: the whole public surface paints light. The Webflow marketing routes and the Tailwind /library share it; the Flutter sign-in is a separate stack's surface, not a theme — its sampled shades sit under `light.app.*`.
+One theme: the whole public surface paints light. The Webflow marketing routes and the Tailwind /library share it; the Flutter sign-in is a separate stack's surface, not a theme — its sampled shades sit under `core.sampled.app.*`.
 
 ### Fonts
 

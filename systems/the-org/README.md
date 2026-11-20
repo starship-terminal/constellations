@@ -56,7 +56,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | light | 19.27:1 pass | 19.43:1 pass | 4.82:1 pass | 4.86:1 pass |
 
-4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.color.focus` #003088; `core.color.named.focus` #003088.
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.color.focus` #003088; `core.color.named.focus` #003088 (Reconstruction, not measured).
 
 <!-- brief:end -->
 
@@ -75,6 +75,8 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 Computed styles and the CSSOM were read in the T3 preview tab on the live pages, signed out, at 1440 by 900 and 390 by 844. Custom properties on `:root` and `html` were walked from the stylesheets. Component values are `getComputedStyle` on the element named in each token. Screenshots and crops were taken with headless Playwright after the same public URLs had already loaded in the preview tab without a Cloudflare challenge. The preview tab itself returned "The browser is not producing screenshot frames", so those PNGs are the Playwright copies, not preview frames.
 
 ## What to distrust
+
+The per-element readings were not saved. [raw/components.json](raw/components.json) holds only the viewport and a note, so 90 tokens read from computed styles (the named colours, type, weights, component sizes, shadows and motion) are labelled Reconstruction, entered by hand at capture time. The 124 values declared as custom properties in [raw/css-vars.json](raw/css-vars.json) stay Measured.
 
 The painted Sign up blue, rgb(23, 84, 207), is not `--primary-100` (`#0F4BE5`). The hover blue, rgb(15, 73, 189), is not `--primary-100-hover` (`#0515d4`). Body type computes as DMSans, not the declared `--font-primary` Inter. Inter was measured only on the auth inputs. `--card-box-shadow` is a four-layer stack. The trending cards computed a smaller shadow. The homepage footer computed 322px tall. `--height-footer` is 205px. Sonner declares a dark toast theme. It was not on screen, so there is no dark token set. Screenshots are full colour. Do not sample tokens from them.
 

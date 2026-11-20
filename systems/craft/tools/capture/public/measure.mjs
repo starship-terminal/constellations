@@ -329,7 +329,7 @@ async function pricing() {
   await markPlanCard();
   await S('plan-card', q('[data-m-mark="plancard"]').filter({ visible: true }).first(), B4, { group: g, title: 'Plan card', desc: 'The PLUS plan card (name, serif price, /month, feature list, CTA); measured, never used.', sel: 'PLUS card' });
   await S('plan-price', q('main *').filter({ hasText: /^\s*\$\d+/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan price', desc: 'A 54px Untitled Serif price figure on a plan card.', sel: 'serif price' });
-  await S('team-card', q('main [class*="shadow-block"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Team card', desc: 'The TEAM plan card — the shadow-block variant.', sel: '.shadow-block card' });
+  await S('team-card', q('main [class*="shadow-block"]').filter({ visible: true }).filter({ hasText: /team/i }).last(), ['default'], { group: g, title: 'Team card', desc: 'The TEAM plan card — the shadow-block variant.', sel: '.shadow-block card' });
   await S('faq-row', q('button').filter({ hasText: /\?/ }).filter({ visible: true }).first(), B4, { group: g, title: 'FAQ row', desc: 'A pricing FAQ accordion row (shadcn-style ring on focus-visible); toggled locally.', sel: 'FAQ accordion row' });
 }
 

@@ -47,6 +47,7 @@ light = "\n".join(
     if css_value(token) is not None
 )
 html = template.replace("/*CORE*/", core).replace("/*LIGHT*/", light)
-html = html.replace("/*TOKENS*/null", json.dumps(tokens, separators=(",", ":")))
+# "<" as \u003c keeps a value holding "</script>" from ending the inlined script (the kit's escape).
+html = html.replace("/*TOKENS*/null", json.dumps(tokens, separators=(",", ":")).replace("<", "\\u003c"))
 (HERE / "style-guide.html").write_text(html)
 print(f"wrote style-guide.html ({len(html)} bytes)")

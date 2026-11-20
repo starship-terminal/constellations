@@ -61,7 +61,7 @@ export const M = (name) => `[class*="${name}"]`;
 // __captureDPR keeps the launch-time value for the screenshot sidecar.
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // no navigator.webdriver mask: removed in the 2026-11 audit (D7), not run since
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }
@@ -121,13 +121,21 @@ export async function closePromo(page) {
   return true;
 }
 
-// Clicks the consent banner's own Decline button — a dismissal press, the
-// page's offered way to refuse cookies. Returns whether a banner was there.
-export async function declineConsent(page) {
+// Hides the consent banner without answering it. Answering (even Decline) is
+// a submission, which this kit never makes (docs/FIELD-NOTES.md), so the
+// banner — the nearest fixed or sticky ancestor of its Decline button — is
+// set display:none. The committed captures were taken while this pressed
+// Decline (edited in the 2026-11 audit; not run since). Returns whether a
+// banner was there.
+export async function hideConsent(page) {
   const btn = page.getByRole('button', { name: 'Decline' }).first();
   if (!(await btn.count()) || !(await btn.isVisible().catch(() => false))) return false;
-  await btn.click({ timeout: 4000 }).catch(() => {});
-  await page.waitForTimeout(800);
+  await btn.evaluate((el) => {
+    let n = el;
+    while (n && n !== document.body && !['fixed', 'sticky'].includes(getComputedStyle(n).position)) n = n.parentElement;
+    (n && n !== document.body ? n : el.parentElement).style.setProperty('display', 'none', 'important');
+  }).catch(() => {});
+  await page.waitForTimeout(300);
   return true;
 }
 

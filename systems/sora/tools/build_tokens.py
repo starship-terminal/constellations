@@ -7,7 +7,8 @@ tokens override them on .dark. The page loaded with html.dark. A second read
 applied class "light", which dropped the .dark overrides and resolved :root.
 
 Every colour here is a declaration from those two blocks, or a getComputedStyle
-reading named in raw/computed.json. Nothing is sampled from a screenshot.
+reading named in raw/computed.json. Nothing is sampled from a screenshot. Each is
+written as hex (to_hex) and its source keeps the declared rgb()/hsl() text.
 """
 import json
 import pathlib
@@ -31,8 +32,48 @@ def src(where):
     return {"source": where}
 
 
+def _channel(p, scale=255):
+    return float(p[:-1]) / 100 * scale if p.endswith("%") else float(p)
+
+
+def _alpha(p):
+    return float(p[:-1]) / 100 if p.endswith("%") else float(p)
+
+
+def to_hex(value):
+    """A declared or computed CSS colour as #rrggbb, or #rrggbbaa when translucent. The declared
+    notation stays in the token's source; tools/catalog.py and contrast read only hex."""
+    v = value.strip().lower()
+    m = re.fullmatch(r"#([0-9a-f]{3,4}|[0-9a-f]{6}|[0-9a-f]{8})", v)
+    if m:
+        h = m.group(1)
+        h = "".join(c * 2 for c in h) if len(h) in (3, 4) else h
+        return "#" + (h[:6] if h[6:] == "ff" else h)
+    m = re.fullmatch(r"(rgba?|hsla?)\((.*)\)", v)
+    if not m:
+        raise ValueError(f"not a colour: {value!r}")
+    fn, parts = m.group(1), [x for x in re.split(r"[\s,/]+", m.group(2).strip()) if x]
+    if len(parts) not in (3, 4):
+        raise ValueError(f"not a colour: {value!r}")
+    a = _alpha(parts[3]) if len(parts) == 4 else 1.0
+    if fn.startswith("rgb"):
+        r, g, b = (_channel(x) for x in parts[:3])
+    else:
+        hh, ss, ll = float(parts[0]) % 360 / 360, _channel(parts[1], 1), _channel(parts[2], 1)
+        def f(n):
+            k = (n + hh * 12) % 12
+            return ll - ss * min(ll, 1 - ll) * max(-1, min(k - 3, 9 - k, 1))
+        r, g, b = (f(n) * 255 for n in (0, 8, 4))
+    out = "#" + "".join("%02x" % max(0, min(255, round(c))) for c in (r, g, b))
+    return out if a >= 1 else out + "%02x" % round(a * 255)
+
+
 def color(value, where):
-    return {"$type": "color", "$value": value, "$extensions": src(where)}
+    return {"$type": "color", "$value": to_hex(value), "$extensions": src(where)}
+
+
+def duration(value, where):
+    return {"$type": "duration", "$value": value, "$extensions": src(where)}
 
 
 def dim(value, where):
@@ -241,12 +282,12 @@ def core():
 
     motion = {
         "duration": {
-            "pulse": dim("2000ms", "Measured. .animate-pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}"),
-            "spin": dim("1000ms", "Measured. .animate-spin{animation:spin 1s linear infinite}"),
-            "progress": dim("1200ms", "Measured. .progress-bar-indeterminate{animation:progress-bar-indeterminate 1.2s linear infinite}"),
-            "card-fade": dim("3000ms", "Measured. .placeholderCard{animation:cardFade 3s cubic-bezier(.45,0,.4,1) infinite both}"),
-            "caret": dim("1000ms", "Measured. .animate-caret-blink{animation:caret-blink 1s step-end infinite}"),
-            "firework": dim("600ms", "Measured. .emoji-firework-center{animation:emoji-firework-center .6s ease-out forwards}"),
+            "pulse": duration("2000ms", "Measured. .animate-pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}"),
+            "spin": duration("1000ms", "Measured. .animate-spin{animation:spin 1s linear infinite}"),
+            "progress": duration("1200ms", "Measured. .progress-bar-indeterminate{animation:progress-bar-indeterminate 1.2s linear infinite}"),
+            "card-fade": duration("3000ms", "Measured. .placeholderCard{animation:cardFade 3s cubic-bezier(.45,0,.4,1) infinite both}"),
+            "caret": duration("1000ms", "Measured. .animate-caret-blink{animation:caret-blink 1s step-end infinite}"),
+            "firework": duration("600ms", "Measured. .emoji-firework-center{animation:emoji-firework-center .6s ease-out forwards}"),
         },
         "easing": {
             "pulse": {
@@ -339,10 +380,8 @@ def build():
             {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "enabled", "dark": "enabled"}},
         ],
     }
-    text = json.dumps(doc, indent=2) + "\n"
-    (HERE / "tokens.json").write_text(text)
-    return text
+    return json.dumps(doc, indent=2) + "\n"
 
 
 if __name__ == "__main__":
-    build()
+    (HERE / "tokens.json").write_text(build())

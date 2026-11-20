@@ -41,7 +41,7 @@ export const M = (name) => `[class*="${name}"]`;
 // __captureDPR keeps the launch-time value for the screenshot sidecar.
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // no navigator.webdriver mask: removed in the 2026-11 audit (D7), not run since
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }

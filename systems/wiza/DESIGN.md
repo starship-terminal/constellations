@@ -37,13 +37,13 @@ colors:
   component-proseLink-text: "#7e43ff"
   component-emailField-background: "#ffffff"
   component-emailField-text: "#3e0079"
-  component-problemCard-background: "rgba(255, 255, 255, 0.8)"
+  component-problemCard-background: "#ffffffcc"
   component-problemCard-text: "#312749"
-  component-pricingCard-background: "rgba(255, 255, 255, 0.6)"
+  component-pricingCard-background: "#ffffff99"
   component-pricingCard-text: "#391b50"
   component-pricingCardFeatured-background: "#ffffff"
-  component-pricingToggle-track: "rgba(56, 5, 116, 0.04)"
-  component-pricingToggle-thumb: "rgba(255, 255, 255, 0.95)"
+  component-pricingToggle-track: "#3805740a"
+  component-pricingToggle-thumb: "#fffffff2"
   component-pricingBadge-text: "#26114a"
   component-ratingPill-background: "#ecedf3"
   component-ratingPill-text: "#26114a"
@@ -65,74 +65,62 @@ typography:
     fontFamily: "Britti Sans"
     fontSize: "80px"
     fontWeight: 500
-    lineHeight: "64px"
-    letterSpacing: "0em"
+    lineHeight: "80px"
   h1:
     fontFamily: "Britti Sans"
     fontSize: "64px"
     fontWeight: 500
     lineHeight: "64px"
-    letterSpacing: "0em"
   h2:
     fontFamily: "Britti Sans"
     fontSize: "56px"
     fontWeight: 500
     lineHeight: "56px"
-    letterSpacing: "0em"
   h3:
     fontFamily: "Britti Sans"
     fontSize: "48px"
     fontWeight: 500
     lineHeight: "48px"
-    letterSpacing: "0em"
   h4:
     fontFamily: "Britti Sans"
     fontSize: "40px"
     fontWeight: 500
     lineHeight: "40px"
-    letterSpacing: "0em"
   h5:
     fontFamily: "Britti Sans"
     fontSize: "32px"
     fontWeight: 500
     lineHeight: "32px"
-    letterSpacing: "0em"
   h6:
     fontFamily: "Britti Sans"
     fontSize: "24px"
     fontWeight: 500
     lineHeight: "24px"
-    letterSpacing: "0em"
   textXlarge:
     fontFamily: "Inter"
     fontSize: "22px"
     fontWeight: 400
     lineHeight: "28.6px"
-    letterSpacing: "0em"
   textLarge:
     fontFamily: "Inter"
     fontSize: "18px"
     fontWeight: 400
     lineHeight: "27px"
-    letterSpacing: "0em"
   textMain:
     fontFamily: "Inter"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: "24px"
-    letterSpacing: "0em"
   textSmall:
     fontFamily: "Inter"
     fontSize: "14px"
     fontWeight: 400
     lineHeight: "21px"
-    letterSpacing: "0em"
   textXsmall:
     fontFamily: "Inter"
     fontSize: "12px"
     fontWeight: 400
     lineHeight: "16px"
-    letterSpacing: "0em"
 rounded:
   xsmall: "0.375rem"
   small: "0.5rem"
@@ -320,6 +308,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Login is a different system.** Inter var and 6px radius. It is not the marketing button.
 - **Signup was a Cloudflare challenge.** It was not measured.
 - **Britti Sans and Inter files are not shipped.** The tokens name the families.
+- **Type line heights are hand entries.** raw/ holds the declared font-size clamps and line-height steps, not each style's computed line height or tracking. Each `core.typography` step's line height applies the declared steps by hand (headings at 1, text at 1.3 or 1.5); `display` is 80px/80px. `textXsmall` is the exception: its 16px line height is the computed value on the pricing tag and price note, not a declared step, and raw/ does not hold that reading either. No step carries a letterSpacing. The `-0.03em` tracking token is under `core.$extensions.notTokenised`. `light.color.heroGround`, `core.layout.contentMax` and `core.font.family.auth` were read but not saved, and are labelled Reconstruction.
 
 ### Do and don't (from README.md)
 

@@ -138,6 +138,43 @@ class SectionTest(unittest.TestCase):
         text = self.section(tokens=tokens)
         self.assertLess(text.index("`light.border.x.focus`"), text.index("`light.border.focus-danger`"))
 
+    def test_a_focus_token_not_measured_carries_its_evidence_label(self):
+        tokens = json.loads(json.dumps(TOKENS))
+        tokens["core"]["focusRing"] = {
+            "width": {"$value": "2px", "$extensions": {"source": {"evidence": "Measured"}}},
+            "color": {"$value": "#123456", "$extensions": {"source": {"evidence": "Reconstruction"}}},
+            "offset": {"$value": "1px", "$extensions": {"source": "Sampled from the focus crop."}},
+            "inset": {"$value": "0px", "$extensions": {"evidence": "Derived", "source": "rem at 16px"}}}
+        del tokens["light"]["border"]
+        text = self.section(tokens=tokens)
+        self.assertIn("`core.focusRing.color` #123456 (Reconstruction, not measured)", text)
+        self.assertIn("`core.focusRing.width` 2px;", text)
+        self.assertIn("`core.focusRing.inset` 0px;", text)
+        self.assertIn("`core.focusRing.offset` 1px (Sampled, not measured)", text)
+
+    def test_a_key_holding_a_dot_keeps_its_label(self):
+        tokens = json.loads(json.dumps(TOKENS))
+        tokens["light"]["border"] = {"input.error.focus": {
+            "$value": "#ff0000", "$extensions": {"source": {"evidence": "Sampled"}}}}
+        self.assertIn("`light.border.input.error.focus` #ff0000 (Sampled, not measured)", self.section(tokens=tokens))
+
+    def test_token_objects_walks_like_flatten(self):
+        tokens = json.loads(json.dumps(TOKENS))
+        tokens["light"]["a.b"] = {"c": {"$value": "#000000"}}
+        tokens["core"]["legacy"] = {"value": "1px", "type": "dimension"}
+        self.assertEqual(set(brief.token_objects(tokens)), set(catalog.flatten(tokens)))
+
+    def test_evidence_reads_each_label_place(self):
+        self.assertEqual(brief.evidence({"$extensions": {"source": {"evidence": "Sampled (text)"}}}), "Sampled")
+        self.assertEqual(brief.evidence({"$extensions": {"evidence": "Observed", "source": "UA ring"}}), "Observed")
+        self.assertEqual(brief.evidence({"$extensions": {"source": "Reconstruction: entered by hand."}}),
+                         "Reconstruction")
+        self.assertEqual(brief.evidence({"$extensions": {"source": "not captured in dark"}}), "Not captured")
+        self.assertIsNone(brief.evidence({"$extensions": {"source": "computed outline of the field"}}))
+        self.assertIsNone(brief.evidence({"$extensions": {"source": "Measuredness"}}))
+        self.assertIsNone(brief.evidence({"$value": "1px"}))
+        self.assertIsNone(brief.evidence(None))
+
     def test_no_focus_tokens_is_said(self):
         tokens = json.loads(json.dumps(TOKENS))
         del tokens["core"]["focusRing"], tokens["light"]["border"]

@@ -484,7 +484,7 @@ W("The nav theme toggle paints both themes live (data-theme on <html>): the css-
 W()
 W("### Fonts")
 W()
-W("- **Euclid Circular A** (600 on every heading, 400/500 UI) is Craftwork&apos;s own face served same-origin as euclidCircularA*WebS webfonts (harvested src list in raw/css-vars.json). The style guide falls back to system sans — the webfonts are licensed, not shipped.")
+W("- **Euclid Circular A** (600 on every heading, 400/500 UI) is Craftwork's own face served same-origin as euclidCircularA*WebS webfonts (harvested src list in raw/css-vars.json). The style guide falls back to system sans — the webfonts are licensed, not shipped.")
 W()
 W("### Screenshots")
 W()

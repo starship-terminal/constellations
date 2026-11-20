@@ -689,7 +689,7 @@ Crops: `m-heading-default.png`.
 
 ## Transitions declared in the readable stylesheets
 
-cron.com serves its Sass sheets from the cross-origin d3ui957tjb5bqd.cloudfront.net CDN, so the CSSOM lists only the page's own rules; the per-state Transition rows above are the computed values the page paints.
+The readable CSSOM lists only the rules each page exposes; the per-state Transition rows above are the computed values the page paints.
 
 - blog: none
 

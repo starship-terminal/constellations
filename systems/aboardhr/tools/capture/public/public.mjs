@@ -8,10 +8,15 @@
 // Nothing is sent, submitted or signed into: the Book-a-demo form is never touched, and the
 // app.aboardhr.com sign-in/sign-up links are never opened.
 import fs from 'fs';
+import os from 'node:os';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, killGeo, clearChallenge, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour shots go to a scratch dir outside the repo (the kit's default), never into
+// systems/<slug>/raw/: quantize.py reads them from there and writes screenshots/.
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', path.basename(fileURLToPath(new URL('../../..', import.meta.url))), 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
@@ -95,7 +100,7 @@ for (const { k, mob } of runs) {
   const spec = (mob ? mobile : desktop)[k];
   const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
   const ctx = await b.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US' });
-  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
   const p = await ctx.newPage();
   log(name);
   const S = new Shooter(p, `${name}-light`, vw, vh, dpr);

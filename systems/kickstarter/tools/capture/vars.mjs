@@ -121,7 +121,7 @@ for (const name of Object.keys(live.resolved)) bins[binOf(name)]++;
 
 const out = {
   product: 'kickstarter',
-  read: '2026-11-18',
+  read: new Date().toLocaleDateString('en-CA'),
   source: 'atomic stylesheet downloaded through headed Chrome from a.kickstarter.com, parsed in a constructed CSSStyleSheet and resolved on documentElement at https://www.kickstarter.com/',
   cssFile: path.basename(cssFile),
   fontBody: live.fontBody,

@@ -35,7 +35,9 @@ import json, pathlib, re
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
 V = json.loads((RAW / "css-vars.json").read_text())
-RL = V["resolved"].get("dark") or V["resolved"].get("light") or {}
+# clipchamp paints light only (catalog theme list), so declarations resolve against the light pass; a dark
+# probe added by a recapture must not silently become the light values.
+RL = V["resolved"]["light"]
 C = json.loads((RAW / "components-computed.json").read_text())["components"]
 R = {n: v.get("value", v.get("raw")) for n, v in RL.items()}
 # The Fluent v9 layer declares on .fui-FluentProvider (not :root), so its
@@ -286,17 +288,18 @@ for path, comp, state, prop, desc in [
 
 # surface.offWhite is declared (--color-background-off-white #fbfbfc, the
 # secondary band ground) but no measured component's own backgroundColor
-# reads it — cards are white. surface.dark is painted by the dark band's
-# section wrapper (#313242 on the sheet); the ContentBlockDark element
-# itself is transparent, so the value is pixel-sampled and labelled.
+# reads it — cards are white. The dark band is painted by a section wrapper
+# no capture measured (the ContentBlockDark element itself is transparent),
+# so its fill is a pixel sample: labelled Sampled and kept out of the light
+# semantic set (docs/EVIDENCE.md), under core.sampled.
 SPEC["light"]["surface"]["offWhite"] = {
     "type": "color", "value": "{color.offWhite}",
     "source": "declared --color-background-off-white (raw/css-vars.json); the secondary band ground — sections only, no component's bg reads it",
     "description": "The off-white secondary band ground (#fbfbfc)."}
-SPEC["light"]["surface"]["dark"] = {
+SPEC["core"].setdefault("sampled", {})["surfaceDark"] = {
     "type": "color", "value": "{color.grey.20}",
-    "source": "pixel-sampled off raw/full/home-light-full.png at (720, 3520) — the ContentBlockDark band's own element is transparent, the fill is painted by its section wrapper; equals declared --color-grey-20",
-    "description": "The dark content band inside the single light theme (#313242 = grey-20 as ground)."}
+    "source": "Sampled: a screenshot pixel of the full-colour home capture (kept outside the repo) at (720, 3520), not a reading of any element; the band's own element is transparent and the section wrapper that paints it was not measured; the sample equals declared --color-grey-20",
+    "description": "The dark content band's fill inside the single light theme (#313242 = grey-20), from a pixel sample."}
 
 # -------------------------------------------------- measured extras (no var)
 
@@ -321,18 +324,22 @@ for _cname in ("nav-submenu", "feature-card", "faq-item"):
         if _sh and _sh != "none":
             _layers = []
             for _ly in re.split(r",(?![^(]*\))", _sh):
-                m = re.match(
-                    r"\s*(rgb[a]?\([^)]*\)|#[0-9a-fA-F]{3,8})\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px",
+                m = re.fullmatch(
+                    r"\s*(rgb[a]?\([^)]*\)|#[0-9a-fA-F]{3,8})\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(\s+inset)?\s*",
                     _ly)
-                if m:
-                    _layers.append({"color": m.group(1), "offsetX": m.group(2) + "px",
-                                    "offsetY": m.group(3) + "px", "blur": m.group(4) + "px",
-                                    "spread": m.group(5) + "px"})
-            if _layers:
-                SPEC["light"]["shadow"] = {"menu": {
-                    "type": "shadow", "value": _layers,
-                    "source": f"computed boxShadow of {_cname} default (raw/components-computed.json)",
-                    "description": f"The {_cname}'s drop shadow — the surface's painted elevation."}}
+                if not m:
+                    # A layer that cannot be read refuses the build instead of being dropped.
+                    raise SystemExit(f"build_component_tokens: cannot read {_cname} box-shadow layer {_ly!r}")
+                _layers.append({"color": m.group(1), "offsetX": m.group(2) + "px",
+                                "offsetY": m.group(3) + "px", "blur": m.group(4) + "px",
+                                "spread": m.group(5) + "px"})
+                if m.group(6):
+                    _layers[-1]["inset"] = True
+            SPEC["light"]["shadow"] = {"menu": {
+                "type": "shadow", "value": _layers,
+                "source": f"computed boxShadow of {_cname} default (raw/components-computed.json)",
+                "description": f"The {_cname}'s drop shadow — the surface's painted elevation."}}
+            # Only a component that paints a shadow ends the search; one reading "none" falls through.
             break
     except KeyError:
         continue
@@ -505,7 +512,7 @@ for key, cname, desc in [
 def count(d):
     if not isinstance(d, dict):
         return 1
-    if "var" in d or "value" in d or "" in d:
+    if "var" in d or "value" in d:
         return 1
     return sum(count(v) for v in d.values())
 

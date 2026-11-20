@@ -858,7 +858,7 @@
     "hover-fill": {
      "value": "{color.curater.background}",
      "type": "color",
-     "source": "computed backgroundColor of signin-btn default equals {color.curater.background} (raw/components-computed.json + raw/css-vars.json)",
+     "source": "computed backgroundColor of signin-btn hover equals {color.curater.background} (raw/components-computed.json + raw/css-vars.json)",
      "description": "The #f2f2f2 hover/active fill — Curater background."
     }
    },
@@ -981,9 +981,9 @@
    "description": "The ~259px sign-in pill width."
   },
   "signin-fill": {
-   "value": "oklch(1 0 0)",
+   "value": "#ffffff",
    "type": "color",
-   "source": "computed bg of signin-btn default (raw/components-computed.json)",
+   "source": "computed bg of signin-btn default (raw/components-computed.json); computed as oklch(1 0 0), written as sRGB",
    "description": "The white pill fill."
   },
   "save-height": {

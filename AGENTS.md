@@ -401,7 +401,9 @@ generator, or a data file outside the path filters appears.
 | [app.yml](.github/workflows/app.yml) | A pull request that touches `app/`, `systems/`, `catalog.json`, `refero/catalog.json`, or `tools/catalog.py` | Prettier on `app/`, the media taxonomy seed, the float-parity fixture, Next typegen, typecheck, the app tests, and a production build. |
 | [web.yml](.github/workflows/web.yml) | A pull request that touches `web/`, `tools/catalog.py`, or `catalog.json` | Typecheck, the gallery unit tests, `tools/catalog.py build`, and a production build. |
 
-`make check` stops at the first stale file. The usual chain after a catalog
+`make check` runs all six gates (catalog, refero, Brief, scorecard, gated,
+login-extracted) and fails at the end with a `make check: failed:` line naming
+each gate that failed. The usual chain after a catalog
 or package change is: `make brief`, `make design-md`, `python3 tools/refero/coverage.py`,
 `python3 tools/gated.py`, `python3 tools/health.py`, and, when `app/` will run,
 `python3 app/scripts/build-media-taxonomy.py`. A catalog `goodFor` edit also

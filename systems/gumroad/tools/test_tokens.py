@@ -7,6 +7,7 @@ under @media (prefers-color-scheme: dark) — there is no in-page toggle), and t
 headline declared values survived the build."""
 import json
 import pathlib
+import re
 import sys
 import unittest
 
@@ -67,15 +68,50 @@ class TokensTest(unittest.TestCase):
         self.assertEqual(light["role.danger"], "#dc341e")
         self.assertEqual(light["channels.accent"], "#ff90e8")
 
-    def test_component_geometry(self):
-        comp = T["core"].get("component")
-        self.assertIsNotNone(comp, "no component tokens")
-        names = {n for n, _ in token_checks.tokens_of(comp)}
-        # geometry emitted only when measure.mjs has run; declared component
-        # constants land as flat leaves beside the measured sub-trees
-        for n in names:
-            self.assertRegex(n, r"^[a-zA-Z0-9]+(\..+)?$")
+    def test_component_geometry_matches_the_readings(self):
+        # Each measured height/width leaf names the component and state it came from; it must equal that
+        # reading in raw/components-computed.json, not just be present.
+        C = json.loads((HERE / "raw" / "components-computed.json").read_text())["components"]
+        checked = 0
+        for n, t in token_checks.tokens_of(T["core"]["component"]):
+            m = re.match(r"measured (\S+) (\S+) on ", t["$extensions"]["source"])
+            if not m or not n.endswith(("height", "width")):
+                continue
+            rect = C[m.group(1)]["states"][m.group(2)]["rect"]
+            want = rect["h" if n.endswith("height") else "w"]
+            self.assertEqual(t["$value"], f"{float(want):g}px", n)
+            checked += 1
+        self.assertGreaterEqual(checked, 20)
 
+
+class BuilderTest(unittest.TestCase):
+    """build_tokens.py, built in memory (it writes tokens.json only when run as a script)."""
+
+    @classmethod
+    def setUpClass(cls):
+        import build_tokens
+        cls.b = build_tokens
+
+    def test_committed_file_matches_a_fresh_build(self):
+        self.assertEqual(T, self.b.tokens)
+
+    def test_shadow_layers_are_read_whole(self):
+        p = self.b.parse_shadow
+        self.assertEqual(p("rgb(0, 0, 0) 4px 4px 0px 0px"),
+                         [{"color": "#000000", "offsetX": "4px", "offsetY": "4px", "blur": "0px", "spread": "0px"}])
+        two = p("inset 0 0 0 1px rgba(0, 0, 0, 0.5), rgb(221, 221, 221) .5rem .5rem 0rem")
+        self.assertEqual(len(two), 2)
+        self.assertTrue(two[0]["inset"])
+        self.assertEqual(two[0]["spread"], "1px")
+        self.assertEqual(two[1]["blur"], "0rem")
+        self.assertEqual(two[1]["spread"], "0px")
+        self.assertEqual(p("0px 2px 4px -1px rgb(0, 0, 0)")[0]["spread"], "-1px")
+
+    def test_an_unreadable_layer_refuses_the_build(self):
+        for bad in ("rgb(0, 0, 0) 4px 4px, 1px 1px var(--x)", "4px 4px 0px", "none",
+                    "rgb(0, 0, 0) 1px2px", "#12345 4px 4px", "inset inset 0 0 0 1px #000"):
+            with self.assertRaises(ValueError, msg=bad):
+                self.b.parse_shadow(bad)
 
 if __name__ == "__main__":
     unittest.main()

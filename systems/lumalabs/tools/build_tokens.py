@@ -112,21 +112,49 @@ def channels(theme, name):
 
 OBSERVED = V.get("observedFonts") or {}
 
+# Next.js local fonts compute to a hashed family name ("__graphik_7126cf") that resolves nowhere
+# outside the page. The token carries the face's real name; the computed stack stays beside it.
+LOCAL_FONTS = {"graphik": "Graphik"}
+
+
+def observed_family(key):
+    """A computed family from raw/css-vars.json observedFonts. A missing reading fails the build."""
+    computed = OBSERVED.get(key)
+    if not computed:
+        raise SystemExit(f"observedFonts.{key} missing from raw/css-vars.json")
+    m = re.match(r"__([A-Za-z]+)_[0-9a-f]{6}\b", computed)
+    if not m or m.group(1).lower() not in LOCAL_FONTS:
+        raise SystemExit(f"observedFonts.{key} is not a known Next.js local font: {computed!r}")
+    return LOCAL_FONTS[m.group(1).lower()], computed
+
+
+BODY_FACE, BODY_COMPUTED = observed_family("bodyFamily")
+H1_FACE, H1_COMPUTED = observed_family("h1Family")
+graphik = leaf(
+    f"{BODY_FACE}, sans-serif",
+    "fontFamily",
+    f"derived from the computed font-family on body, lumalabs.ai / , 2026-11-18: {BODY_COMPUTED}, the Next.js "
+    f"local name for {BODY_FACE}. Not a resolvable :root custom property.",
+    "UI face. The family is named as the font loader's local name says; the computed stack is in $extensions.computed.",
+)
+graphik["$extensions"]["computed"] = BODY_COMPUTED
+if H1_FACE == BODY_FACE:
+    editorial = leaf(
+        "{font.family.graphik}", "fontFamily",
+        f"computed font-family on the home h1, lumalabs.ai / , 2026-11-18: {H1_COMPUTED}, the same face as body.",
+        "The home h1 computed to Graphik on this pass. PP Editorial is loaded on the page but was not the computed h1 family.",
+    )
+else:
+    editorial = leaf(f"{H1_FACE}, serif", "fontFamily",
+                     f"derived from the computed font-family on the home h1, lumalabs.ai / , 2026-11-18: {H1_COMPUTED}.",
+                     "Display face of the home h1.")
+    editorial["$extensions"]["computed"] = H1_COMPUTED
+
 core = {
     "font": {
         "family": {
-            "graphik": leaf(
-                OBSERVED.get("bodyFamily") or "Graphik, sans-serif",
-                "fontFamily",
-                "computed font-family on body, lumalabs.ai / , 2026-11-18. Next.js local font class on html; not a resolvable :root custom property.",
-                "UI face. The hashed family name is the Next.js font loader's local name for Graphik.",
-            ),
-            "editorial": leaf(
-                OBSERVED.get("h1Family") or OBSERVED.get("bodyFamily") or "PP Editorial, serif",
-                "fontFamily",
-                "computed font-family on the home h1, lumalabs.ai / , 2026-11-18.",
-                "Display face when the h1 uses PP Editorial. When the h1 uses Graphik, this matches the UI face.",
-            ),
+            "graphik": graphik,
+            "editorial": editorial,
             "sans": other("light", "--font-sans", "fontFamily",
                           "Tailwind default sans. Body text uses the Graphik local font, not this stack."),
             "mono": other("light", "--font-mono", "fontFamily",

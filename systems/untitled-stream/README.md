@@ -14,7 +14,7 @@ Untitled is the library's first creator-tool web capture, and its first package 
 | [patterns.md](patterns.md) | How the components combine: the marketing chrome, hero and pill bar, pricing rail and cards, the consent card, the login card, each with its screenshots |
 | [components/crops/](components/crops) | 99 element screenshots, `{component}-{state}.png`, at 2x — except a crop over ~1.2 MP, which quantize.py halves to save size (the 1440 x 762 login card is therefore at 1x) |
 | [screenshots/](screenshots) | 14 `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 1x and `mobile-*` shots 390 x 844 at 2x; `-full` shots are whole pages at the same width and scale |
-| [raw/](raw) | The unprocessed readings: every custom property resolved from the live CSSOM with font faces and the transition index (`css-vars.json`); per-component computed styles (`components-computed.json`, and `measurements.md` built from it); the token tree the builder reads (`component-tokens.json`); the tour's full-colour PNGs before quantize.py 256-colours them into screenshots/ |
+| [raw/](raw) | The unprocessed readings: every custom property resolved from the live CSSOM with font faces and the transition index (`css-vars.json`); per-component computed styles (`components-computed.json`, and `measurements.md` built from it); the token tree the builder reads (`component-tokens.json`). The tour's full-colour PNGs are working files kept outside the repository (`~/.design-systems/untitled-stream/raw-shots`) |
 | [tools/](tools) | The three builders (`build_tokens.py`, `build_style_guide.py`, `build_components_md.py`), the style-guide template, and the capture kit under `capture/` (`public/` holds the tour, the measure runner, the vars extractor and their library; `quantize.py` re-encodes screenshots to 256 colours). See Rebuild |
 
 ## Brief
@@ -98,7 +98,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 Everything was read from the running site, signed out, in headless Chromium.
 
-- **Bot wall.** untitled.stream sits behind Cloudflare's managed challenge. Headless pages only clear it with `navigator.webdriver` masked before first paint (`tools/capture/public/lib.mjs` seeds it via `addInitScript`), and `/trust` and `/login` are flakier — the runner gives each page its own browser context so one challenged navigation cannot poison the rest. Routes that stayed behind the waiting room after retries are recorded as blocked, never screenshotted.
+- **Bot wall.** untitled.stream sits behind Cloudflare's managed challenge. At capture time headless pages only cleared it with `navigator.webdriver` masked before first paint. Every committed reading and screenshot (`raw/components-computed.json`, `raw/css-vars.json`, `screenshots/`, `components/crops/`) was taken past that mask. The capture scripts no longer mask it: a route whose challenge does not clear on its own is recorded as blocked, so a rerun may block routes this package holds. Also, `/trust` and `/login` are flakier — the runner gives each page its own browser context so one challenged navigation cannot poison the rest. Routes that stayed behind the waiting room after retries are recorded as blocked, never screenshotted.
 - **Theme variables.** `tools/capture/public/vars.mjs` walked the live CSSOM and resolved every custom property. The site declares its full semantic set twice — `:root`/`[data-theme="light"]` (what the marketing site renders) and `[data-theme="dark"]` (the app's remap, shipped in the same stylesheet) — and both land in `raw/css-vars.json` next to the `@font-face` rules and the per-selector transition index. The `dark` token set is built from that CSS source; no dark UI was navigated.
 - **Component measurements.** `tools/capture/public/measure.mjs` opened each route in a fresh context, detected the in-body "Performing security verification" marker (the title stays `untitled.stream`, so title checks alone miss it), hid the consent card, then read computed styles, rects and paint layers per component in each state (default, hover, focus-visible, pressed, open, selected) and cropped them at 2x into `components/crops/`. Results merge into `raw/components-computed.json`; re-running a single page updates only its entries.
 - **The consent card was never answered.** Clicking "Reject all" (or "Accept all") POSTs to `/settings/cookies`, which returns 403 to the capture client and crashes the page into Remix's "Something went wrong" error boundary — every early screenshot of that card is that crash, not the product. The card is measured as a component (it is the only dark element on the light site and carries real tokens), then hidden for the page captures. No consent state was mutated.
@@ -157,12 +157,12 @@ Two families, both self-hosted woff/woff2 (`fonts` in [raw/css-vars.json](raw/cs
 
 ```sh
 # from the package root (systems/untitled-stream); Playwright comes from ~/.design-systems/pw
-node tools/capture/public/public.mjs        # the screenshot tour into raw/full/ (full colour)
+node tools/capture/public/public.mjs        # the screenshot tour into ~/.design-systems/untitled-stream/raw-shots (full colour, or RAW=<dir>)
 node tools/capture/public/measure.mjs       # component readings into raw/components-computed.json
                                           # (or a page list: home,pricing,trust,login,mobile)
 node tools/capture/vars.mjs                 # CSSOM variables into raw/css-vars.json
 node tools/capture/public/build-measurements.mjs   # raw/measurements.md
-python3 tools/capture/quantize.py raw/full  # 256-colour screenshots into screenshots/
+python3 tools/capture/quantize.py ~/.design-systems/untitled-stream/raw-shots  # 256-colour screenshots into screenshots/
 python3 tools/build_tokens.py               # tokens.json from raw/component-tokens.json + css-vars.json
 python3 tools/build_style_guide.py          # style-guide.html from tokens.json + the template
 python3 tools/build_components_md.py        # components.md from the readings, crops and screenshots

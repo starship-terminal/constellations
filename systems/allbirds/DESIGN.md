@@ -215,6 +215,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Intermittent mounts.** The PDP gallery tooltip pill and the mobile "Shop with AI" chip mount media-load dependent; their measurements come from runs where they rendered. The geofencing dialog mounts on first visits only and was removed before other captures, so it has screenshots from early runs but no entry.
 - **Hydration windows.** The buy box, nav bar and filter markup hydrate late and differ between loads; a measurement flagged `missing` with no states means it was not on the page that run, not that it does not exist.
 - **Screenshots are 256-colour PNGs.** Read exact colours from tokens.json or the raw files, never off a PNG.
+- **The cart drawer was reached by pressing Add to Cart.** The committed `cart-drawer` reading and the `*-cart-drawer` screenshots show a one-item session cart the capture created on the live store. The capture scripts no longer press Add to Cart (they open the header cart instead, so a recapture shows the empty drawer); not run since.
+- **`size-tab-active` was read from the wrong element.** Both size tabs were read from the same "WOMEN'S SIZES" tab, so the active tab (MEN'S SIZES, underlined) has no reading; it needs a recapture. The script now targets each tab by its exact label (not run since).
+- **`accordion` hover was read on the expanded row**, because the open state ran before hover and nothing collapsed the row. `size-button` has no selected state, though an older description said it was measured after a click. The script now orders the states and says so (not run since).
 
 ### Do and don't (from README.md)
 

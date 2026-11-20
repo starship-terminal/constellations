@@ -92,6 +92,7 @@ Third-party UI is swept out of every capture ([lib.mjs](tools/capture/public/lib
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **Screenshots are 256-colour PNGs.** Gradients and photography band slightly; read exact colours from tokens.json or the raw files.
 - **Type varies by page.** Most pages run Haas/ATSeasonSans, but /pricing is Inter Display and /marketplace GT Eesti Display — check `core.typography.display-pricing` before styling a pricing page.
 - **Field borders are painted by the container.** The contact-sales fields' visible border sits on the field box, not the `<input>`; `component.field-border` is the measured `rgba(0, 14, 38, 0.23)` of that container, not a reading of the input itself.
@@ -166,7 +167,7 @@ PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/measure.mjs h
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/remeasure.mjs pricing whatsnew
 ```
 
-`public.mjs` re-takes the screenshot set into `RAW` (a scratch dir outside the repository); `python3 tools/capture/quantize.py <dir>` stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`; `remeasure.mjs` is the gap-fill pass that re-reads only the entries it is pointed at; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs` and `icons.mjs` rewrite their raw or icon files whole. `lib.mjs` holds the shared helpers, including the Riley/One-Tap sweep and `navigator.webdriver` masking.
+`public.mjs` re-takes the screenshot set into `RAW` (a scratch dir outside the repository); `python3 tools/capture/quantize.py <dir>` stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`; `remeasure.mjs` is the gap-fill pass that re-reads only the entries it is pointed at; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs` and `icons.mjs` rewrite their raw or icon files whole. `lib.mjs` holds the shared helpers, including the Riley/One-Tap sweep (it no longer masks `navigator.webdriver`).
 
 ## Use in Figma
 

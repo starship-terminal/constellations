@@ -100,7 +100,7 @@ Shadows, resolved to CSS:
 | Token | box-shadow |
 |---|---|
 | `core.shadow.glassLift` | `0px 1px 2px 0px rgba(0, 0, 0, 0.04)` |
-| `core.shadow.glassRim` | `0px 1px 2px 0px rgba(0, 0, 0, 0.04)` |
+| `core.shadow.glassRim` | `inset 1px 1px 0px 0px rgba(255, 255, 255, 0.95), inset -1px -1px 0px 0px rgba(255, 255, 255, 0.45)` |
 
 ## Shapes
 
@@ -122,7 +122,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-Screenshots are 256-colour PNGs. Read colours from tokens.json. The home hero photos are lazy and can be blank in a viewport shot taken before they paint. The signup page shows "Security verification failed" because the Turnstile widget does not complete in headless Chromium. That banner is the widget's own failure, not a submitted form. Dark muted text is Tailwind gray-400 from the `dark:text-gray-400` class, not a second computed reading of the recipe meta. EB Garamond and Inter are loaded from Google Fonts and are not shipped in this package.
+Screenshots are 256-colour PNGs. Read colours from tokens.json. The home hero photos are lazy and can be blank in a viewport shot taken before they paint. The signup page shows "Security verification failed" because the Turnstile widget does not complete in headless Chromium. That banner is the widget's own failure, not a submitted form. Dark muted text `#a3a3a3` was entered by hand from the `dark:text-gray-400` class name, not read: it is Tailwind's neutral-400, not gray-400 (`#9ca3af`), and its source says Reconstruction. EB Garamond and Inter are not shipped in this package, and the style guide does not fetch them.
 
 ### Do and don't (from README.md)
 

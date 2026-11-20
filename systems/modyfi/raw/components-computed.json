@@ -32,7 +32,7 @@
           "textTransform": "none",
           "display": "flex",
           "page": "home",
-          "source": "computed style on .rl_navbar2_component at 1440px, Wayback 20250219221151 https://www.modyfi.com/"
+          "source": "computed style read with the pointer away, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (nav-default); other fields from the homepage pass"
         }
       }
     },
@@ -63,7 +63,7 @@
           "textTransform": "none",
           "display": "block",
           "page": "home",
-          "source": "computed style on a.rl_navbar2_link at 1440px, Wayback 20250219221151 https://www.modyfi.com/"
+          "source": "computed style read with the pointer away, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (nav-link-default); other fields from the homepage pass"
         }
       }
     },
@@ -125,7 +125,7 @@
           "textTransform": "none",
           "display": "block",
           "page": "home",
-          "source": "computed style on a.rl_navbar2_button.loginbutton.w-button at 1440px, Wayback 20250219221151 https://www.modyfi.com/"
+          "source": "computed style read with the pointer away, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (login-button-default); other fields from the homepage pass"
         }
       }
     },
@@ -137,7 +137,7 @@
           "width": "83px",
           "height": "39px",
           "color": "rgb(255, 255, 255)",
-          "backgroundColor": "rgb(255, 3, 87)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
           "borderTopColor": "rgba(255, 3, 87, 0.47)",
           "borderTopWidth": "2px",
           "borderTopStyle": "solid",
@@ -156,18 +156,16 @@
           "textTransform": "none",
           "display": "block",
           "page": "home",
-          "source": "computed style on a.rl_navbar2_button.w-button:not(.loginbutton) at 1440px, Wayback 20250219221151 https://www.modyfi.com/"
+          "source": "computed style read with the pointer away, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (signup-button-default); other fields from the homepage pass"
         },
         "hover": {
           "color": "rgb(255, 255, 255)",
           "backgroundColor": "rgb(255, 3, 87)",
           "borderTopColor": "rgba(255, 3, 87, 0.47)",
           "borderRadius": "15px",
-          "outline": "rgb(255, 255, 255) none 0px",
-          "boxShadow": "none",
           "page": "home",
           "sel": "a.rl_navbar2_button.w-button:not(.loginbutton)",
-          "source": "hover computed style on the homepage signup control, 2026-11-19 Wayback replay",
+          "source": "computed style read after signup.hover() in tools/capture/crops.mjs, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (signup-button-hover)",
           "evidence": "Measured"
         }
       }
@@ -199,7 +197,7 @@
           "textTransform": "none",
           "display": "block",
           "page": "home",
-          "source": "computed style on h1 at 1440px, Wayback 20250219221151 https://www.modyfi.com/"
+          "source": "computed style read with the pointer away, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (hero-title-default); other fields from the homepage pass"
         }
       }
     },
@@ -230,7 +228,7 @@
           "textTransform": "none",
           "display": "block",
           "page": "home",
-          "source": "computed style on p.rl-text-style-medium-8, .hero-paragraph, p at 1440px, Wayback 20250219221151 https://www.modyfi.com/"
+          "source": "computed style read with the pointer away, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (hero-body-default); other fields from the homepage pass"
         }
       }
     },
@@ -261,7 +259,7 @@
           "textTransform": "none",
           "display": "flex",
           "page": "home",
-          "source": "computed style on a.rl-button, a.button-7 at 1440px, Wayback 20250219221151 https://www.modyfi.com/"
+          "source": "computed style read with the pointer away, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (cta-button-default); other fields from the homepage pass"
         },
         "focus-visible": {
           "color": "rgb(0, 0, 0)",
@@ -272,8 +270,8 @@
           "boxShadow": "none",
           "page": "home",
           "sel": "a.rl-button",
-          "source": "focus-visible computed style on a.rl-button, archived homepage, 2026-11-19",
-          "evidence": "Measured"
+          "source": "entered by hand in tools/build_from_readings.py; no saved reading backs it. A programmatic focus() shows the browser's default ring, not a Modyfi style",
+          "evidence": "Reconstruction"
         }
       }
     },
@@ -304,7 +302,7 @@
           "textTransform": "none",
           "display": "block",
           "page": "home",
-          "source": "computed style on h2 at 1440px, Wayback 20250219221151 https://www.modyfi.com/"
+          "source": "computed style read with the pointer away, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (section-title-default); other fields from the homepage pass"
         }
       }
     },

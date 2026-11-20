@@ -1,12 +1,11 @@
 // Reads the product's motion into raw/motion.json: durations, easing curves, which properties transition,
 // animation and @keyframes names, motion custom properties, and what prefers-reduced-motion: reduce
-// changes. Serves both web routes (docs/decisions/0001-motion-tokens.md, docs/CAPTURE.md#motion).
+// changes (docs/decisions/0001-motion-tokens.md, docs/CAPTURE.md#motion). This copy keeps only the public
+// route: copperx was captured signed out, so the signed-in opener is not shipped and SNAPS is refused.
 //
-//   PLAYWRIGHT=/path/to/playwright/index.mjs SNAPS=<dir of page copies> node tools/capture/motion-probe.mjs
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/motion-probe.mjs --urls <url>[,<url>...]
 //
-// Signed-in route: every copy under SNAPS is opened the way layout.mjs opens it. Public route: each URL is
-// opened in a plain headless context. Each page is read twice in the same session, on the same elements:
+// Each URL is opened in a plain headless context. Each page is read twice in the same session, on the same elements:
 // once with page.emulateMedia({ reducedMotion: 'no-preference' }), once with 'reduce'. The page's own
 // matchMedia answer is recorded for both, so a pass that did not take is visible. Nothing is clicked,
 // typed or submitted; computed transitions are read at rest, and the stylesheets' own rules (hover and
@@ -28,7 +27,8 @@ const OUT = process.env.OUT_JSON || path.join(REF, 'raw', 'motion.json');
 const SNAPS = process.env.SNAPS ? path.resolve(process.env.SNAPS) : null;
 const urlsArg = process.argv.indexOf('--urls');
 const URLS = urlsArg > 0 ? (process.argv[urlsArg + 1] || '').split(',').filter(Boolean) : [];
-if (!SNAPS && !URLS.length) { console.error('SNAPS=<dir of page copies>, or --urls <url>[,<url>...], is required'); process.exit(2); }
+if (SNAPS) { console.error('this package keeps only the public route: pass --urls'); process.exit(2); }
+if (!URLS.length) { console.error('--urls <url>[,<url>...] is required'); process.exit(2); }
 const CAP = Number(process.env.MOTION_CAP) || 6000;   // moving elements kept per pass
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 

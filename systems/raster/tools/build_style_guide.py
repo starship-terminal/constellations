@@ -126,7 +126,7 @@ nav.mock {{ display: flex; align-items: center; gap: 18px; height: 53px; padding
   <p style="font-size:15px">Not only is Raster the fastest DAM on the planet.</p>
 </main>
 <script>
-const T = {json.dumps({"core": T["core"], "dark": T["dark"], "docs": T["docs"]})};
+const T = {json.dumps({"core": T["core"], "dark": T["dark"], "docs": T["docs"]}).replace("<", "\\u003c")};
 function swatches(group, root) {{
   const el = document.getElementById(root);
   const node = group.split('.').reduce((o, k) => o[k], T);

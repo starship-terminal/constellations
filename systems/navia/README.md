@@ -15,10 +15,8 @@ No account was created. The contact form asks for a phone number, so it was not 
 | [patterns.md](patterns.md) | Home, pricing, blog, contact, app gate |
 | [icons/](icons/) | One wordmark SVG and INDEX.tsv |
 | [raw/](raw/) | Custom properties and computed styles |
-| [tools/](tools/) | A token test. The kit scripts sit beside this folder |
-| [build/](build/) | Kit builders, copied with the kit and unused for this capture |
-| [capture/](capture/) | Kit capture scripts, unused for this capture |
-| [native/](native/) | Kit native scripts, unused for this capture |
+| [tools/](tools/) | A token test |
+| [capture/signed-in/](capture/signed-in/) | Only the kit's page-copy privacy guards (`snapshot.js`, `unsnap.py`, `signed-params.json`); no kit script took these readings |
 
 ## Brief
 
@@ -128,4 +126,4 @@ python3 tools/catalog.py design-md navia
 python3 tools/package_tests.py navia
 ```
 
-`tools/build_tokens.py` is the kit copy. This package's tokens were written from the live readings in [raw/](raw/), not from that builder.
+This package's tokens were written by hand from the live readings in [raw/](raw/); there is no generating builder.

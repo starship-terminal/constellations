@@ -24,8 +24,9 @@ def rgba_to_hex(value):
         alpha = float(parts[3]) if len(parts) > 3 else 1
         if alpha >= 0.999:
             return "#%02x%02x%02x" % (r, g, b)
-        return "rgba(%d, %d, %d, %s)" % (r, g, b, ("%g" % alpha))
-    return text
+        return "#%02x%02x%02x%02x" % (r, g, b, round(alpha * 255))
+    # A value that is not a colour (a renamed var, a keyword) must not pass through as one.
+    raise ValueError("not a colour reading: %r" % value)
 
 
 def color(name, source):
@@ -290,7 +291,7 @@ light = {
     "text": measured_color(signin["heading"]["color"], "computed sign-in heading and offer card text rgb(17, 17, 17)"),
     "muted": measured_color(article["paywallCard"]["already"]["color"], "computed offer 'Already a subscriber?' rgb(89, 89, 89)"),
     "headline": measured_color(article["paywallCard"]["offerHeadline"]["color"], "computed offer headline rgb(42, 42, 42)"),
-    "accent": color("--wpds-colors-cta", "sign-in Next, also declared --wpds-colors-cta"),
+    "accent": measured_color(signin["next"]["backgroundColor"], "computed sign-in Next background rgb(22, 109, 252), also declared --wpds-colors-cta"),
     "on-accent": measured_color(signin["next"]["color"], "computed sign-in Next text"),
     "border": measured_color("rgb(233, 233, 233)", "computed offer card border"),
     "field-focus": measured_color("rgb(87, 132, 197)", "computed focused sign-in field border"),
@@ -312,5 +313,13 @@ tokens = {
     "$metadata": {"tokenSetOrder": ["core", "dark", "light"]},
 }
 
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
-print("wrote", HERE / "tokens.json")
+
+
+def render():
+    """tokens.json's exact text; importing this module writes nothing."""
+    return json.dumps(tokens, indent=2) + "\n"
+
+
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(render())
+    print("wrote", HERE / "tokens.json")

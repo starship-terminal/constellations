@@ -61,7 +61,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | light | 18.23:1 pass | 17.17:1 pass | 7.36:1 pass | 6.93:1 pass |
 
-4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.component.focus.outline` #007aff.
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.component.focus.ring` rgba(0, 0, 0, 0.1); `light.component.focus.ring-width` 2px.
 
 <!-- brief:end -->
 
@@ -108,7 +108,8 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 - **The light set is the painted dark theme.** Catalog swatches named `light.*` are what `html.dark` paints. Do not treat them as a light product theme.
 - **`--background` and the body field differ.** `--background` resolves to `#0a0a0a`. The body uses `dark:bg-primary-950`, which is `#101010`. The page you see is `#101010`.
-- **Some computed colours stay in oklch.** Sign in's fill was read as `oklch(0.985 0 0)`, which is the near-white `--primary` role. The stylesheet harvest stores the same role as `#fafafa`. Prefer the harvest hex when a component token still says oklch.
+- **Computed colours were read in oklch and oklab.** Chromium reports Tailwind v4 colours that way (Sign in's fill is `oklch(0.985 0 0)`). tokens.json converts them to sRGB hex or rgba and keeps the form Chromium reported under `$extensions.computed`.
+- **The focus ring is a shadow.** Sign in's keyboard focus draws a 2px box-shadow ring of black at 10% (`light.component.focus.ring`, `ring-width`) and leaves `outline` at none. The `#007aff` outline colour the page also reports is the browser default and is not painted, so it is no longer a token. `ent-cta` and `plug-link` draw a `1px auto` outline: the browser's own ring, whose colour is not the recorded value.
 - **Marketing heroes can be light while html is dark.** /plugins and /features paint a white hero. That is a marketing surface, not a second theme.
 - **A few selectors missed their node.** `price-card`, `faq-item`, `composer-send`, `image-generate`, `m-sidebar` and `m-signin` are recorded as missing. Get Pro, the composer field, Sign in and the phone menu were measured.
 - **Quantised screenshots band gradients.** Read exact colours from tokens.json or the raw JSON.

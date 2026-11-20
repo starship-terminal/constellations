@@ -26,7 +26,6 @@ def html():
     def chips(theme):
         bits = []
         for name, value in swatches(theme):
-            fg = "#1f1f1f" if value.lower() in ("#ffffff", "#f7f7f7", "#eeeeee", "#f4f5f6", "#e2e2e7", "#ebebf0", "#e3dbd3", "#c8d2e6", "#c09ca1", "#b1aaa1") else "#ffffff"
             bits.append(
                 f'<div class="chip"><i style="background:{value}"></i>'
                 f'<span>{name}</span><code>{value}</code></div>'

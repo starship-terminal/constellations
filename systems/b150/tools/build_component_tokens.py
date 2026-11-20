@@ -19,6 +19,16 @@ HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
 C = json.loads((RAW / "components-computed.json").read_text())["components"]
 
+
+def current(comp):
+    """The component's entry, refused when the last run did not read it: missing
+    (no states) or recaptureMissed (earlier states kept under their own
+    provenance) is not a current reading, so it cannot source a role."""
+    c = C[comp]
+    if c.get("missing") or c.get("recaptureMissed"):
+        raise KeyError(f"{comp}: not a current reading (missing or recaptureMissed)")
+    return c
+
 SPEC = {"_about": (
     "The token tree build_tokens.py turns into tokens.json. b150.ai is a "
     "Tailwind v4 site whose `@layer theme` block declares --color-*, "
@@ -160,7 +170,10 @@ ROLES = [
 ]
 for role, var, verif, desc in ROLES:
     emit(SPEC["light"], role, V(var, "color", desc, f"verified: {verif} (raw/components-computed.json)"))
-emit(SPEC["light"], "focus-ring", M(norm_color(style("nav-item", "focus-visible").get("outlineColor", "")) or "#005fcc", "color", "computed outlineColor of nav-item/footer-link focus-visible (raw/components-computed.json)", "The focus ring."))
+_ring = norm_color(current("nav-item")["states"]["focus-visible"]["style"].get("outlineColor", ""))
+if not _ring:
+    raise KeyError("nav-item focus-visible has no outlineColor reading")  # no typed fallback
+emit(SPEC["light"], "focus-ring", M(_ring, "color", "computed outlineColor of nav-item/footer-link focus-visible (raw/components-computed.json)", "The focus ring."))
 
 # ------------------------------------------------------------------ component
 comp_spec = SPEC["component"]

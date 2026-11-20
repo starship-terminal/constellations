@@ -97,6 +97,7 @@ Consent SDKs (OneTrust / Cookiebot) are aborted at the network layer in [lib.mjs
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **Screenshots are 256-colour PNGs.** The pastel hero gradient and photography band slightly; read exact colours from tokens.json or the raw files.
 - **The home hero repaints per load.** Nine `--c1/--c2/--c3` gradient variants rotate (raw/css-vars.json); the tokens record the variant live during the capture, and the sampled pixels differ from the declared stops because the gradient sits under a white ::after wash.
 - **The pricing hero's dark band is a photograph** (`pricing-background.webp`), not a flat fill — its pixels (~#334e53 teal) are image content, not a palette value.
@@ -170,7 +171,7 @@ PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/measure.mjs home pricing getstarted login mobile
 ```
 
-`public.mjs` re-takes the screenshot set into `RAW` (a scratch dir outside the repository, defaults to `raw/full`); `python3 tools/capture/quantize.py raw/full` stitches any `*.partN.png` tiles and stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`, re-cropping `components/crops/`; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs` rewrites `raw/css-vars.json` whole. `lib.mjs` holds the shared helpers, including the consent-SDK request aborts and the `navigator.webdriver` masking.
+`public.mjs` re-takes the screenshot set into `RAW` (a scratch dir outside the repository, defaults to `raw/full`); `python3 tools/capture/quantize.py raw/full` stitches any `*.partN.png` tiles and stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`, re-cropping `components/crops/`; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs` rewrites `raw/css-vars.json` whole. `lib.mjs` holds the shared helpers, including the consent-SDK request aborts (it no longer masks `navigator.webdriver`).
 
 ## Use in Figma
 

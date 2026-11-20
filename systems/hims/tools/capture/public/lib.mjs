@@ -28,7 +28,7 @@ export const M = (name) => `[class*="${name}"]`;
 
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // no navigator.webdriver mask: removed in the 2026-11 audit (D7), not run since
   });
 }
 
@@ -92,7 +92,7 @@ export const PROPS = [
 export async function styleOf(locator) {
   return locator.evaluate((el, props) => {
     const noUrl = (v) => (typeof v === 'string'
-      ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)')
+      ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)')
       : v);
     const cs = getComputedStyle(el);
     const out = {};
@@ -129,5 +129,5 @@ q.save(${JSON.stringify(file)}, optimize=True)
 }
 
 export const noUrl = (v) => (typeof v === 'string'
-  ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)')
+  ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)')
   : v);

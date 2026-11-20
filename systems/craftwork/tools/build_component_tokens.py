@@ -291,7 +291,10 @@ for key, comp, prop, desc in [
 ]:
     if have(comp, "default", prop):
         v = st(comp, "default")[prop]
-        fv = str(int(float(v[:-2]))) + "px" if v.endswith("px") else v
+        # %g keeps a fractional radius; a computed rounded-full (3.35544e+07px, the CSS maximum) is
+        # written 9999px, the kit's pill radius.
+        n = float(v[:-2]) if v.endswith("px") else None
+        fv = ("9999px" if n > 9999 else "%gpx" % n) if n is not None else v
         radii[key] = {"value": fv, "type": "dimension",
                       "source": f"computed {prop} of {comp} default (raw/components-computed.json)",
                       "description": desc}
@@ -343,6 +346,8 @@ for key, n, desc in [
 
 # ------------------------------------------------------------- components
 
+# Components the capture read from the wrong element (README, What is not here).
+WRONG_ELEMENT = {"plan-card": "a Rebuild FlowSuite promo card", "m-menu-button": "the mobile Search button"}
 comp = SPEC["component"]
 for name, cname, state, prop, ty_, desc in [
     ("button-height-nav", "connect-cta", "default", "height", "dimension", "The 30px nav CTA."),
@@ -351,20 +356,21 @@ for name, cname, state, prop, ty_, desc in [
     ("library-row", "library-row", "default", "height", "dimension", "The 34px library list row."),
     ("filter-field", "components-filter", "default", "height", "dimension", "The 30px catalog filter field."),
     ("login-field", "login-field", "default", "height", "dimension", "The 46px OTP email field."),
-    ("plan-card", "plan-card", "default", "width", "dimension", "The 547px plan card column."),
+    ("plan-card", "plan-card", "default", "width", "dimension", "547px. Read from the wrong element: a \"Rebuild FlowSuite\" promo card, not a plan card; recapture needed."),
     ("product-card", "product-card", "default", "width", "dimension", "The 363px product card."),
-    ("menu-button", "m-menu-button", "default", "width", "dimension", "The 44px mobile menu button."),
+    ("menu-button", "m-menu-button", "default", "width", "dimension", "44px. Read from the wrong element: the mobile Search button, not the menu button; recapture needed."),
     ("theme-toggle", "theme-toggle", "default", "width", "dimension", "The 32px theme toggle."),
     ("faq-row", "faq-row", "default", "height", "dimension", "The 68px FAQ accordion row."),
-    ("promo-text", "promo-banner", "default", "fontSize", "fontSize", "The 13px promo text."),
-    ("nav-link-size", "nav-link", "default", "fontSize", "fontSize", "Nav link 16px."),
+    ("promo-text", "promo-banner", "default", "fontSize", "dimension", "The 13px promo text."),
+    ("nav-link-size", "nav-link", "default", "fontSize", "dimension", "Nav link 16px."),
 ]:
     if have(cname, state):
         v = st(cname, state).get(prop)
         if v and v not in ("0px", "auto"):
-            comp[name] = {"value": v, "type": ty_,
-                          "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)",
-                          "description": desc}
+            src = f"computed {prop} of {cname} {state} (raw/components-computed.json)"
+            if cname in WRONG_ELEMENT:
+                src += "; read from the wrong element (%s); recapture needed" % WRONG_ELEMENT[cname]
+            comp[name] = {"value": v, "type": ty_, "source": src, "description": desc}
 # measured state move: the primary pill hover
 try:
     comp.setdefault("button", {})["state-move"] = {

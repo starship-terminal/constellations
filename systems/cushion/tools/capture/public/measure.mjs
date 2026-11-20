@@ -23,7 +23,7 @@ out._meta ??= {};
 out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => { fs.mkdirSync(RAW, { recursive: true }); fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n'); };
-const URLS = { home: '/', pricing: '/pricing', updates: '/updates', blog: '/blog', slackalt: '/slack-alternative', download: '/download', terms: '/terms' };
+const URLS = { home: '/', pricing: '/pricing', updates: '/updates', blog: '/blog', slackalt: '/slack-alternative', terms: '/terms' };
 let page, cdp, current, context, run, liveCtx;
 const touched = new Set();
 const listed = new Map();
@@ -221,32 +221,6 @@ async function toggle(loc, { allowLink = false } = {}) {
   await l.click({ timeout: 4000 }).catch(() => l.evaluate((el) => el.click()));
 }
 
-// Variant of S() for routes whose Playwright locators never resolve.
-// curater.org/taste client-side redirected to /taste/soon and the navigation
-// never settles: locators count matches, but every resolve dies with the
-// execution context. Measuring the default state through the main world
-// (same styleOf reader + clip crop) instead of locators.
-async function SJ(key, sel, meta = {}, opts = {}) {
-  comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: sel });
-  delete out.components[key].missing;
-  const found = await page.evaluate((pick) => !!eval(pick), sel.startsWith('js:') ? sel.slice(3) : `document.querySelector(${JSON.stringify(sel)})`);
-  if (!found) { out.components[key].missing = true; log('  ! missing', key); return; }
-  try {
-    const s = await styleOfSelector(page, sel);
-    if (!s) throw new Error('element not found');
-    let file;
-    if (opts.crop !== false) {
-      try { file = await cropSelector(page, sel, `${key}-default`, opts.pad ?? 8); }
-      catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
-    }
-    out.components[key].states.default = { ...s, crop: file, via: 'main-world query (locators never settle on this route)' };
-    log('  ', key, 'default', s.rect.w + 'x' + s.rect.h);
-  } catch (e) {
-    out.components[key].states.default = { error: String(e.message || e).slice(0, 200) };
-    log('  !', key, 'default', String(e.message).slice(0, 120));
-  }
-}
-
 const q = (sel) => page.locator(sel);
 const B4 = ['default', 'hover', 'focus-visible', 'pressed'];
 
@@ -303,38 +277,6 @@ async function reducedMotion(key, sel) {
   } catch (e) { out._meta.reducedMotion[key] = { selector: sel, error: String(e).slice(0, 120) }; }
 }
 
-// Marks the opened mobile nav overlay: the nav rail widens / a sheet opens.
-async function markMobileMenu() {
-  await page.evaluate(() => {
-    const m = document.querySelector('[class*="_navSheet"], [class*="_mobileNav"], [class*="_menu"], nav');
-    if (m) m.setAttribute('data-m-mark', 'mmenu');
-  });
-}
-
-// Marks a home feed card: the smallest ancestor holding a headline and a
-// thumbnail.
-async function markTrendCard() {
-  await page.evaluate(() => {
-    const cand = [...document.querySelectorAll('[class*="_card_"]')].filter((el) => {
-      const r = el.getBoundingClientRect();
-      return el.querySelector('h1,h2,h3') && r.width > 300 && r.height > 200;
-    }).sort((a, b) => (a.innerText || '').length - (b.innerText || '').length);
-    if (cand[0]) cand[0].setAttribute('data-m-mark', 'trendcard');
-  });
-}
-
-// Marks a feed curation entry: the smallest ancestor holding a curator label
-// and a title link.
-async function markFeedEntry() {
-  await page.evaluate(() => {
-    const cand = [...document.querySelectorAll('article, [class*="_item"], [class*="_entry"], [class*="_curation"]')].filter((el) => {
-      const r = el.getBoundingClientRect();
-      return el.querySelector('a') && r.width > 300 && r.height > 200;
-    }).sort((a, b) => (a.innerText || '').length - (b.innerText || '').length);
-    if (cand[0]) cand[0].setAttribute('data-m-mark', 'feedentry');
-  });
-}
-
 const G = {
   shell: 'Shell and navigation', home: 'Home', pricing: 'Pricing',
   updates: 'Updates', blog: 'Blog', terms: 'Legal', mobile: 'Mobile (390 wide)',
@@ -350,7 +292,8 @@ async function markMock() {
       const r = el.getBoundingClientRect(); const cs = getComputedStyle(el);
       if (r.width > 500 && r.height > 400 && (cs.borderTopWidth !== '0px' || cs.boxShadow !== 'none' || cs.borderTopLeftRadius !== '0px')) { best = el; break; }
     }
-    (best || (btn && btn.parentElement) || document.body).setAttribute('data-m-mark', 'mock');
+    // No fallback to the button's parent or the body: a miss is recorded as missing, never a guessed frame.
+    if (best) best.setAttribute('data-m-mark', 'mock');
   });
 }
 

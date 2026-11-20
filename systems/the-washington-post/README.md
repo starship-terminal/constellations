@@ -44,7 +44,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | text | #ffffff `dark.text` | #111111 `light.text` |
 | muted | #a1a1a1 `dark.muted` | #595959 `light.muted` |
 | accent | #166dfc `dark.accent` | #166dfc `light.accent` |
-| border | rgba(255, 255, 255, 0.1) `dark.border` | #e9e9e9 `light.border` |
+| border | #ffffff1a `dark.border` | #e9e9e9 `light.border` |
 
 Fonts: `core.font.family.meta` is Franklin, then 2 fallbacks; `core.font.family.headline` is Postoni, then 2 fallbacks; `core.font.family.body` is georgia, then 2 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 9 type styles (`core.typography`), 8 radius steps (`core.radius`), 16 spacing steps (`core.space`).
 
@@ -134,4 +134,4 @@ python3 tools/catalog.py design-md the-washington-post
 python3 tools/package_tests.py the-washington-post
 ```
 
-The package has no `tools/test_*.py`. `package_tests.py` reports no tests for this slug until one is added. That is the kit's own message, and it exits 2.
+`tools/test_build_tokens.py` holds three tests: the committed tokens.json matches a fresh build, the light accent is the light sign-in reading, and colours are hex while an unknown colour string is refused. `package_tests.py` runs them and exits 0 when they pass.

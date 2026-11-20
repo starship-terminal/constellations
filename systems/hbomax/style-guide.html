@@ -1507,26 +1507,6 @@
   --motion-easing-ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
   --motion-easing-ease-out: cubic-bezier(0, 0, 0.58, 1);
   --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
-  --motion-transition-color-200ms-bezier-0-0-0-34-1: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-bezier-0-0-0-34-1)'};
-  --motion-transition-background-color-200ms-bezier-0-0-0-34-1: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-bezier-0-0-0-34-1)'};
-  --motion-transition-opacity-200ms-bezier-0-0-0-34-1: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-bezier-0-0-0-34-1)'};
-  --motion-transition-all-500ms-ease-in-out: {'duration': 'var(--motion-duration-500ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
-  --motion-transition-all-200ms-bezier-0-0-0-34-1: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-bezier-0-0-0-34-1)'};
-  --motion-transition-background-color-500ms-ease-in-out: {'duration': 'var(--motion-duration-500ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
-  --motion-transition-transform-200ms-bezier-0-0-0-34-1: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-bezier-0-0-0-34-1)'};
-  --motion-transition-transform-250ms-ease: {'duration': 'var(--motion-duration-250ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
-  --motion-transition-all-200ms-ease-in-out: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
-  --motion-transition-opacity-150ms-ease: {'duration': 'var(--motion-duration-150ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
-  --motion-transition-opacity-1000ms-ease: {'duration': 'var(--motion-duration-1000ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
-  --motion-transition-transform-100ms-bezier-0-55-0-055-0-675-0-19: {'duration': 'var(--motion-duration-100ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-bezier-0-55-0-055-0-675-0-19)'};
-  --motion-transition-transform-1000ms-ease: {'duration': 'var(--motion-duration-1000ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
-  --motion-transition-bottom-100ms-ease-delay140ms: {'duration': 'var(--motion-duration-100ms)', 'delay': '140ms', 'timingFunction': 'var(--motion-easing-ease)'};
-  --motion-transition-filter-150ms-linear: {'duration': 'var(--motion-duration-150ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-linear)'};
-  --motion-transition-opacity-100ms-ease: {'duration': 'var(--motion-duration-100ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
-  --motion-transition-opacity-150ms-linear: {'duration': 'var(--motion-duration-150ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-linear)'};
-  --motion-transition-opacity-500ms-ease-in-out: {'duration': 'var(--motion-duration-500ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
-  --motion-transition-top-100ms-ease-delay140ms: {'duration': 'var(--motion-duration-100ms)', 'delay': '140ms', 'timingFunction': 'var(--motion-easing-ease)'};
-  --motion-animation-animatein: {'name': 'animateIn', 'duration': 'var(--motion-duration-400ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)', 'iterationCount': '1', 'direction': 'normal', 'fillMode': 'both'};
   --color-action-link-inverse-text-base: #246298;
   --color-action-link-inverse-text-hover: #508fc3;
   --color-action-link-inverse-text-press: #4f7695;
@@ -2066,7 +2046,9 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 
 (function motion() {
   let m = '';
-  for (const [n, t] of flat(TOK.core && TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  // composite motion tokens (transition, animation) are objects: list their parts
+  const fmt = (v) => Array.isArray(v) ? v.map(fmt).join(', ') : (v && typeof v === 'object' ? Object.entries(v).map(([k, x]) => k + ' ' + fmt(x)).join(' ') : String(v));
+  for (const [n, t] of flat(TOK.core && TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(fmt(t.v))}</span></div>`;
   $('#motion-out').innerHTML = m || '<i>no motion tokens emitted</i>';
 })();
 </script>

@@ -70,10 +70,12 @@ document.getElementById('theme').addEventListener('change', (e) => {
   root.setAttribute('data-mode', e.target.checked ? 'dark' : 'light');
   paint();
 });
+// The builder inlines a slim tree: each token is {v: value, t: type, s: source}.
+const esc = (x) => String(x).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const show = (v) => (typeof v === 'string' ? v : JSON.stringify(v));
 function flat(node, prefix, out) {
   for (const [k, v] of Object.entries(node || {})) {
-    if (k.startsWith('$')) continue;
-    if (v && v.$value !== undefined) out.push([prefix + k, v]);
+    if (v && v.v !== undefined && v.t !== undefined) out.push([prefix + k, v]);
     else if (v && typeof v === 'object') flat(v, prefix + k + '.', out);
   }
   return out;
@@ -83,11 +85,11 @@ function paint() {
   const set = T[mode] || {};
   const rows = flat(set, '', []);
   const pal = document.getElementById('pal');
-  pal.innerHTML = rows.filter(([, t]) => t.$type === 'color').map(([n, t]) =>
-    `<div class="sw"><i style="background:${t.$value}"></i><div><b>${n}</b><span>${t.$value}</span></div></div>`).join('');
+  pal.innerHTML = rows.filter(([, t]) => t.t === 'color').map(([n, t]) =>
+    `<div class="sw"><i style="background:${esc(t.v)}"></i><div><b>${esc(n)}</b><span>${esc(t.v)}</span></div></div>`).join('');
   const all = [...flat(T.core, 'core.', []), ...rows.map(([n, t]) => [mode + '.' + n, t])];
   document.getElementById('tokens').innerHTML = '<tr><th>Token</th><th>Value</th><th>Source</th></tr>' +
-    all.map(([n, t]) => `<tr><td><code>${n}</code></td><td>${typeof t.$value === 'string' ? t.$value : JSON.stringify(t.$value)}</td><td>${(t.$extensions && t.$extensions.source) || ''}</td></tr>`).join('');
+    all.map(([n, t]) => `<tr><td><code>${esc(n)}</code></td><td>${esc(show(t.v))}</td><td>${esc(t.s || '')}</td></tr>`).join('');
 }
 paint();
 </script>

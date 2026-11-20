@@ -67,6 +67,49 @@ SPEC = {"_about": (
     "core": {}, "light": {}, "dark": {}, "component": {}}
 
 
+# A named row whose reading is missing is recorded here instead of being
+# dropped silently; the build stops on any gap not listed in KNOWN_GAPS (at the
+# end), and listed ones are written to raw/component-tokens.json `_gaps`.
+GAPS = []
+
+
+def gap(what):
+    GAPS.append(what)
+
+
+HAND = "entered by hand at capture time, not measured: "
+
+
+def body_fill(comp, state):
+    """The <body> fill among a component's recorded ancestors."""
+    return next(a["bg"] for a in C[comp]["states"][state].get("ancestors") or []
+                if a.get("node", "").startswith("body") and a.get("bg"))
+
+
+def _list(v):
+    """A computed comma list, split only at commas outside parentheses."""
+    return [x.strip() for x in re.split(r",(?![^()]*\))", v or "") if x.strip()]
+
+
+def transition(s):
+    """The computed transition lists as one valid shorthand: CSS repeats the
+    duration/easing/delay lists to the length of transition-property, so each
+    property is paired with its own entry by index. A 0s entry is kept (it
+    can override an earlier `all`); only a list that is 0s throughout means
+    no transition."""
+    props = _list(s.get("transitionProperty") or "all")
+    durs = _list(s.get("transitionDuration") or "0s")
+    eases = _list(s.get("transitionTimingFunction") or "ease")
+    delays = _list(s.get("transitionDelay") or "0s")
+    if all(d in ("0s", "0ms") for d in durs):
+        return ""
+    parts = []
+    for i, p in enumerate(props):
+        d, e, dl = durs[i % len(durs)], eases[i % len(eases)], delays[i % len(delays)]
+        parts.append(" ".join([p, d, e] + ([dl] if dl not in ("0s", "0ms") else [])))
+    return ", ".join(parts)
+
+
 def st(comp, state):
     return C[comp]["states"][state]["style"]
 
@@ -356,8 +399,12 @@ def semcolor(raw, src, desc, theme="light"):
 
 sem = SPEC["light"]
 dsem = SPEC["dark"]
+desc_reason = {
+    "divider": "no measured border paints it (rgba(207,214,229,.16) appears only as icon-button pressed fills)",
+    "liked": "no liked-state icon was measured (the value equals the genre banner's pink)",
+}
 for root, theme, key, comp, state, prop, group, desc in [
-    (sem, "light", "page", None, "default", "#f1f0eb", "background",
+    (sem, "light", "page", "header", "default", "_body", "background",
      "The ecru field every marketing page paints (alternative-light)."),
     (sem, "light", "ink", "hero-h1", "default", "color", "text",
      "The #000 ink — display headings and body text on ecru."),
@@ -375,9 +422,9 @@ for root, theme, key, comp, state, prop, group, desc in [
      "The #000 focus ring the light surface draws on keyboard focus."),
     (sem, "light", "switch", "billing-switch", "default", "backgroundColor", "action",
      "The plan-period switch track on pricing."),
-    (dsem, "dark", "canvas", None, "default", "#121418", "background",
+    (dsem, "dark", "canvas", "c-header", "default", "_body", "background",
      "The #121418 dark canvas every catalog page and the account forms paint."),
-    (dsem, "dark", "surface", None, "default", "rgba(207, 214, 229, 0.08)", "background",
+    (dsem, "dark", "surface", "sfx-row", "hover", "backgroundColor", "background",
      "The rgba(207,214,229,.08) surface tint — cards, hover fills, the want-more strip edges."),
     (dsem, "dark", "text", "genre-h1", "default", "_paint-text", "text",
      "The #fff primary text (genre h1 prints dark on its pink banner, so the row text carries this)."),
@@ -407,16 +454,27 @@ for root, theme, key, comp, state, prop, group, desc in [
         elif prop.startswith("#") or prop.startswith("rgba"):
             raw = prop
             prop = "_literal"
+        elif prop == "_body":
+            raw = None
         else:
             raw = st(comp, state)[prop]
         if prop == "_literal":
-            src = f"the {raw} field the page paints (screenshots and body computed styles)"
+            # No reading in raw/ holds these: say so rather than cite screenshots.
+            src = HAND + f"{desc_reason.get(key, 'no component in raw/ paints it')}; recapture needed"
+        elif prop == "_body":
+            raw = body_fill(comp, state)
+            src = f"computed body fill among the ancestors of {comp} {state} (raw/components-computed.json)"
         elif prop == "_paint-muted":
-            raw = next(pl["color"] for pl in C[comp]["states"][state]["paint"] if pl.get("color") in ("rgba(255, 255, 255, 0.72)", "rgba(0, 0, 0, 0.6)"))
-            src = f"painted text colour inside {comp} {state} (raw/components-computed.json)"
+            # The secondary text is a painted text layer whose colour differs
+            # from the component's own (primary) ink: picked by role, not by
+            # matching the expected value.
+            own = (C[comp]["states"][state].get("textStyle") or {}).get("color") or st(comp, state)["color"]
+            raw = next(pl["color"] for pl in C[comp]["states"][state].get("paint") or [] if pl.get("color") and pl["color"] != own)
+            src = f"painted secondary text colour inside {comp} {state} (raw/components-computed.json)"
         elif prop == "_paint-text":
-            raw = next(pl["color"] for pl in C["track-row"]["states"]["default"]["paint"] if pl.get("color") == "rgb(255, 255, 255)")
-            src = "painted track-row text colour (raw/components-computed.json)"
+            # The first text node's colour: the row's primary ink.
+            raw = C["track-row"]["states"]["default"]["textStyle"]["color"]
+            src = "computed first text node colour of track-row default (raw/components-computed.json)"
         elif prop == "_paint-secondary":
             # No dark secondary button was measured (every dark icon button is
             # a transparent ghost), so the role resolves to its declaration —
@@ -431,9 +489,13 @@ for root, theme, key, comp, state, prop, group, desc in [
             raw = st("track-like", "focus-visible").get("outlineColor") or st("track-like", "focus-visible").get("borderTopColor")
             src = "computed focus outline of a dark-surface icon button (raw/components-computed.json)"
         elif prop == "_paint-upsell":
-            layers = (C[comp]["states"][state].get("ancestors") or []) + C[comp]["states"][state].get("paint", [])
-            raw = next(pl["bg"] for pl in layers if pl.get("bg") and pl["bg"].startswith("rgb(2"))
-            src = f"painted banner fill inside {comp} {state} (raw/components-computed.json)"
+            # The banner is the largest painted layer inside the component.
+            def area(pl):
+                # "1328.0x244.0" for elements, "32pxx16px" for ::before/::after
+                n = [float(x) for x in re.findall(r"[\d.]+", pl.get("size") or "")[:2]]
+                return n[0] * n[1] if len(n) == 2 else 0.0
+            raw = max((pl for pl in C[comp]["states"][state].get("paint") or [] if pl.get("bg")), key=area)["bg"]
+            src = f"painted banner fill (the largest painted layer) inside {comp} {state} (raw/components-computed.json)"
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
@@ -448,8 +510,10 @@ for root, theme, key, comp, state, prop, group, desc in [
                     prefer = EMITTED.get(declvar.replace("--es-color-", "--color-"))
             root.setdefault(group, {})[key] = (lit(f"{{{prefer}}}", "color", f"{src}; declared as {prefer}", desc)
                                              if prefer else semcolor(raw, src, desc, theme))
-    except (KeyError, StopIteration):
-        pass
+        else:
+            gap(f"{theme}.{group}.{key}: {comp} {state} {prop} is empty")
+    except (KeyError, StopIteration, ValueError):
+        gap(f"{theme}.{group}.{key}: no {comp} {state} {prop} reading")
 
 # ------------------------------------------------------------- type ramp
 #
@@ -474,10 +538,10 @@ for key, comp, state, desc in [
         raw = st(comp, state)["fontSize"]
         src = f"computed fontSize of {comp} {state} (raw/components-computed.json)"
         alias = size_alias.get(raw)
-        ty[key] = lit(f"{{{alias[0]}}}" if alias else raw, "fontSize",
+        ty[key] = lit(f"{{{alias[0]}}}" if alias else raw, "dimension",
                       src + (f"; matches declared {alias[1]}" if alias else ""), desc)
     except KeyError:
-        pass
+        gap(f"font.size.measured.{key}: no {comp} {state} fontSize reading")
 if not ty:
     SPEC["core"]["font"]["size"].pop("measured", None)
 
@@ -498,20 +562,22 @@ for key, comp, state, prop, desc in [
         else:
             radii[key] = lit(v, "dimension" if re.fullmatch(r"[0-9.]+(px|rem)", v or "") else "other", src, desc)
     except KeyError:
-        pass
+        gap(f"radius.{key}: no {comp} {state} {prop} reading")
 
 # ------------------------------------------------------------------ motion
 
 try:
-    s = st("c-signup", "default")
-    dur, ease = s.get("transitionDuration"), s.get("transitionTimingFunction")
-    if dur and dur != "0s":
+    # Each property paired with its own duration/easing by index.
+    val = transition(st("c-signup", "default"))
+    if val:
         mo = SPEC["core"].setdefault("motion", {})
-        emit(SPEC["core"], "--motion-control", lit(f"{s.get('transitionProperty', 'all')} {dur} {ease or ''}".strip(), "other",
+        emit(SPEC["core"], "--motion-control", lit(val, "other",
             "computed transition of c-signup default (raw/components-computed.json)",
             "The measured control transition on buttons."))
+    else:
+        gap("motion.control: c-signup default has no transition")
 except KeyError:
-    pass
+    gap("motion.control: no c-signup default reading")
 
 # ------------------------------------------------------------- components
 
@@ -534,7 +600,7 @@ for name, cname, state, prop, ty_, desc in [
         comp[name] = lit(("%g" % v) + "px" if isinstance(v, (int, float)) else str(v) + "px",
                          ty_, f"measured {prop} of {cname} {state} (raw/components-computed.json)", desc)
     except KeyError:
-        pass
+        gap(f"component.{name}: no {cname} {state} {prop} reading")
 
 # Declared component internals (--es-trackrow-*, --es-play-button-size-*,
 # --es-i-*, --es-button-*, --es-select-*, --es-dropdown-*, --es-iconbutton-*,
@@ -563,6 +629,20 @@ for name in sorted(DECL_ONLY):
     v = DECL_ONLY[name]
     leaf = lit(v, ty, f"{DECL_SRC}: {name} (component-scoped declaration, not :root-resolved)", f"The declared `{name}`.")
     emit(comp, "--declared-" + name[len("--es-"):], leaf)
+
+# Rows missing from the committed readings, kept visible in `_gaps` (they
+# were dropped silently before 2026-11): no measured component paints the
+# muted text as its own layer, and c-signup's computed transition is 0s.
+KNOWN_GAPS = {
+    "light.text.muted: no section-h2 default _paint-muted reading",
+    "dark.text.muted: no track-row default _paint-muted reading",
+    "motion.control: c-signup default has no transition",
+}
+_new = [g for g in GAPS if g not in KNOWN_GAPS]
+if _new:
+    raise SystemExit("missing readings for named token rows (recapture, or list them in KNOWN_GAPS):\n  " + "\n  ".join(_new))
+if GAPS:
+    SPEC["_gaps"] = GAPS
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
 print("component-tokens.json:", {k: len(v) for k, v in SPEC.items() if k != "_about"})

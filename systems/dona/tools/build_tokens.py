@@ -62,7 +62,7 @@ def norm_color(v):
     raise ValueError("not a colour: " + v)
 
 
-DIM = re.compile(r"-?\d+(\.\d+)?(px|rem|%)")
+DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
 
 
 def check(path, ty, val):
@@ -70,7 +70,7 @@ def check(path, ty, val):
     if isinstance(val, str) and val.startswith("{"):
         return
     if ty == "dimension" and not DIM.fullmatch(str(val)):
-        raise ValueError(f"{path}: dimension must be one px, rem or % length, got {val!r}")
+        raise ValueError(f"{path}: dimension must be one px or rem length, got {val!r}")
     if ty == "color":
         norm_color(val) if not str(val).startswith("{") else None
     if ty == "shadow":
@@ -151,6 +151,9 @@ def build(node, theme, path=""):
 
 
 core = build(SPEC["core"], "light")  # scales are theme-independent
+# Readings DTCG has no type for (percentage radii) are listed with their source, not tokenised.
+if SPEC["core"].get("_notTokenised"):
+    core["$extensions"] = {"notTokenised": SPEC["core"]["_notTokenised"]}
 light = build(SPEC["light"], "light")
 dark = build(SPEC["dark"], "dark")
 # The component tokens live in their own top-level spec tree but belong to the
@@ -208,7 +211,8 @@ tokens = {
 
 
 def count(d):
-    return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
+    """Tokens in a set; the set's $extensions (the notTokenised list) is not a token."""
+    return sum(count(v) for k, v in d.items() if k != "$extensions") if isinstance(d, dict) and "$value" not in d else 1
 
 
 print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})

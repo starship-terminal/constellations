@@ -5,6 +5,7 @@ Every colour on the page comes from tokens.json. The page opens on dark, which
 is the theme that was on screen.
 """
 import json
+import re
 import pathlib
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
@@ -33,7 +34,8 @@ def css_value(token):
         return None
     if isinstance(value, (dict, list)):
         return None
-    return str(value).replace("{", "var(--").replace(".", "-").replace("}", ")")
+    # Only an alias's own dots become dashes: 28.8px stays 28.8px (it used to become 28-8px).
+    return re.sub(r"\{([^{}]+)\}", lambda m: "var(--" + m.group(1).replace(".", "-") + ")", str(value))
 
 
 def block(name):
@@ -99,7 +101,7 @@ h2 {{ font-size: 24px; line-height: 32px; font-weight: 800; text-transform: uppe
   </div>
 </main>
 <script>
-const tokens = {json.dumps({"dark": TOKENS["dark"]["color"], "light": TOKENS["light"]["color"]})};
+const tokens = {json.dumps({"dark": TOKENS["dark"]["color"], "light": TOKENS["light"]["color"]}).replace("<", "\\u003c")};
 const box = document.getElementById("swatches");
 function paint(mode) {{
   box.replaceChildren();
@@ -124,5 +126,6 @@ document.getElementById("theme").addEventListener("click", () => {{
 </body>
 </html>
 """
-(HERE / "style-guide.html").write_text(html)
-print("wrote", HERE / "style-guide.html")
+if __name__ == "__main__":
+    (HERE / "style-guide.html").write_text(html)
+    print("wrote", HERE / "style-guide.html")

@@ -100,7 +100,7 @@ if (J._meta.backdrop) {
 W('');
 W('## Transitions declared in the readable stylesheets');
 W('');
-W('cron.com serves its Sass sheets from the cross-origin d3ui957tjb5bqd.cloudfront.net CDN, so the CSSOM lists only the page\'s own rules; the per-state Transition rows above are the computed values the page paints.');
+W('The readable CSSOM lists only the rules each page exposes; the per-state Transition rows above are the computed values the page paints.');
 for (const [pg, list] of Object.entries(J._meta.sheets || {}).sort()) {
   const uniq = [...new Map(list.filter((t) => t.transition).map((t) => [t.transition, t])).values()].slice(0, 12);
   W('');

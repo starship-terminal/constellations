@@ -353,54 +353,61 @@ def px(v):
     return str(v)
 
 
+def rd(comp, prop, ty, state="default", note=""):
+    """A computed style read on comp in raw/components-computed.json; raises when the
+    component, state or property is missing, so a recapture that loses it fails the build."""
+    v = C[comp]["states"][state]["style"].get(prop)
+    if v in (None, ""):
+        raise KeyError(f"{comp} {state}: no {prop} reading")
+    return val(v, ty, f"computed {prop} of {comp} {state} (raw/components-computed.json){note}")
+
+
+def anc(comp, key, ty, note, state="default"):
+    """A value recorded on the first ancestor that paints it (styleOf's `ancestors`)."""
+    for a in C[comp]["states"][state].get("ancestors") or []:
+        if a.get(key):
+            return val(a[key], ty, f"painted {key} of {a['node']}, the ancestor of {comp} {state} (raw/components-computed.json){note}")
+    raise KeyError(f"{comp} {state}: no ancestor paints {key}")
+
+
+HAND = "Reconstruction — entered by hand at capture time, no raw reading behind it"
+
 comp = SPEC["component"]
-put(comp, ["button", "height", "small"], val("40px", "dimension",
-    "measured height of the header fs-button--primary small (nav-signup-buy default, raw/components-computed.json)"))
-put(comp, ["button", "height", "medium"], val("48px", "dimension",
-    "measured height of the fs-button medium (cta-primary/next-btn default, raw/components-computed.json)"))
-put(comp, ["button", "paddingX", "small"], val("16px", "dimension",
-    "measured horizontal padding of the small fs-button (nav-signup-buy default, raw/components-computed.json)"))
-put(comp, ["button", "paddingX", "medium"], val("20px", "dimension",
-    "measured horizontal padding of the medium fs-button (cta-primary default, raw/components-computed.json)"))
-put(comp, ["button", "radius"], val("4px", "dimension",
-    "measured border-radius of fs-buttons (cta-primary/nav-signup-buy default, raw/components-computed.json); matches --slate-radius-component-default"))
-put(comp, ["radius", "filter"], val("999px", "dimension",
-    "measured border-radius of the All-filters pill (cat-filter-btn default, raw/components-computed.json); matches --slate-radius-component-filter"))
-put(comp, ["field", "inputHeight"], val("20px", "dimension",
-    "measured height of the text input inside the boxed apply/sign-in fields (field-email/signin-email default, raw/components-computed.json)"))
+put(comp, ["button", "height", "small"], rd("nav-signup-buy", "height", "dimension", note="; the header fs-button--primary small"))
+put(comp, ["button", "height", "medium"], rd("cta-primary", "height", "dimension", note="; next-btn matches"))
+put(comp, ["button", "paddingX", "small"], rd("nav-signup-buy", "paddingLeft", "dimension"))
+put(comp, ["button", "paddingX", "medium"], rd("cta-primary", "paddingLeft", "dimension"))
+put(comp, ["button", "radius"], rd("cta-primary", "borderTopLeftRadius", "dimension",
+    note="; nav-signup-buy matches; matches --slate-radius-component-default"))
+put(comp, ["radius", "filter"], rd("cat-filter-btn", "borderTopLeftRadius", "dimension",
+    note="; the All-filters pill; matches --slate-radius-component-filter"))
+put(comp, ["field", "inputHeight"], rd("field-email", "height", "dimension",
+    note="; the text input inside the boxed apply field (signin-email matches)"))
+# The text inputs measure borderTopWidth 0px and their fs-form-field box records no border, so the
+# 1px field border was typed in at capture time.
 put(comp, ["field", "borderWidth"], val("1px", "dimension",
-    "measured border width on the apply text fields (field-firstname default, raw/components-computed.json)"))
-put(comp, ["checkbox", "size"], val("14px", "dimension",
-    "measured size of the fs-checkbox input (checkbox-terms default, raw/components-computed.json)"))
-put(comp, ["checkbox", "radius"], val("2px", "dimension",
-    "measured border-radius of the fs-checkbox input; matches --slate-radius-component-checkbox (checkbox-terms default, raw/components-computed.json)"))
-put(comp, ["dialog", "width", "signIn"], val("420px", "dimension",
-    "measured width of the 'Sign in to Faire' fs-modal (signin-dialog default, raw/components-computed.json)"))
-put(comp, ["dialog", "width", "signUp"], val("500px", "dimension",
-    "measured width of the 'Unlock wholesale pricing' fs-modal (signup-dialog default, raw/components-computed.json)"))
-put(comp, ["navDrawer", "width"], val("312px", "dimension",
-    "measured width of the mobile nav drawer (m-drawer default, raw/components-computed.json)"))
-put(comp, ["avatar", "brand"], val("96px", "dimension",
-    "measured size of the circular fs-avatar on the brand storefront (brand-avatar default, raw/components-computed.json)"))
-put(comp, ["categoriesPanel", "height"], val("712px", "dimension",
-    "measured height of the 'All categories' dropdown panel at 1440x900 (categories-panel default, raw/components-computed.json)"))
-put(comp, ["header", "height", "desktop"], val("108px", "dimension",
-    "measured height of the desktop header element incl. promo strip and category nav (mkt-header default, raw/components-computed.json)"))
-put(comp, ["header", "height", "mobile"], val("51px", "dimension",
-    "measured height of the phone top bar (m-topbar default, raw/components-computed.json)"))
-put(comp, ["focusRing", "width"], val("2px", "dimension",
-    "measured focus-visible outline width on fs-buttons (cta-primary/nav-signup-buy/next-btn focus-visible, raw/components-computed.json)"))
-put(comp, ["focusRing", "offset"], val("1px", "dimension",
-    "measured focus-visible outline offset on fs-buttons (cta-primary/next-btn focus-visible, raw/components-computed.json)"))
-put(comp, ["focusRing", "color"], val("rgb(39, 94, 197)", "color",
-    "measured focus-visible outline colour on fs-buttons (cta-primary/next-btn focus-visible, raw/components-computed.json); the blue action-border-focus_ring role"))
-
-(RAW / "component-tokens.json").write_text(
-    json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
-
+    HAND + " (field-firstname measures borderTopWidth 0px, and its fs-form-field box records no border)"))
+put(comp, ["checkbox", "size"], rd("checkbox-terms", "width", "dimension"))
+put(comp, ["checkbox", "radius"], anc("checkbox-terms", "radius", "dimension",
+    "; the input itself measures 0px; matches --slate-radius-component-checkbox"))
+put(comp, ["dialog", "width", "signIn"], rd("signin-dialog", "width", "dimension", note="; the Sign in to Faire fs-modal"))
+put(comp, ["dialog", "width", "signUp"], rd("signup-dialog", "width", "dimension", note="; the Unlock wholesale pricing fs-modal"))
+put(comp, ["navDrawer", "width"], rd("m-drawer", "width", "dimension", note="; the mobile nav drawer"))
+put(comp, ["avatar", "brand"], rd("brand-avatar", "width", "dimension", note="; the circular fs-avatar on the brand storefront"))
+put(comp, ["categoriesPanel", "height"], rd("categories-panel", "height", "dimension", note="; the All categories dropdown at 1440x900"))
+put(comp, ["header", "height", "desktop"], rd("mkt-header", "height", "dimension", note="; header incl. promo strip and category nav"))
+put(comp, ["header", "height", "mobile"], rd("m-topbar", "height", "dimension", note="; the phone top bar"))
+put(comp, ["focusRing", "width"], rd("cta-primary", "outlineWidth", "dimension", state="focus-visible",
+    note="; nav-signup-buy and next-btn match"))
+put(comp, ["focusRing", "offset"], rd("cta-primary", "outlineOffset", "dimension", state="focus-visible", note="; next-btn matches"))
+put(comp, ["focusRing", "color"], rd("cta-primary", "outlineColor", "color", state="focus-visible",
+    note="; next-btn matches; the blue action-border-focus_ring role"))
 
 def count(d):
     return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d and "var" not in d and "value" not in d else 1
 
 
-print({k: count(v) for k, v in SPEC.items() if not k.startswith("_")})
+if __name__ == "__main__":
+    (RAW / "component-tokens.json").write_text(
+        json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
+    print({k: count(v) for k, v in SPEC.items() if not k.startswith("_")})

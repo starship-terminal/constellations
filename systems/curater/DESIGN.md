@@ -36,7 +36,7 @@ colors:
   color-border-sidebar-border: "#e4e4e7"
   color-action-destructive: "#e7000b"
   component-nav-active-fill: "#f2f2f2"
-  component-signin-fill: "oklch(1 0 0)"
+  component-signin-fill: "#ffffff"
 rounded:
   pill: "9999px"
   card: "24px"

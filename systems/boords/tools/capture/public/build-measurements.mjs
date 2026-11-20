@@ -100,7 +100,7 @@ if (J._meta.backdrop) {
 W('');
 W('## Transitions declared in the readable stylesheets');
 W('');
-W('boords.com serves its Squarespace sheets cross-origin, so this list holds what the CSSOM could read on each page (cross-origin sheets stay unreadable there); the per-state Transition rows above are computed values and cover every rule the page paints.');
+W('This list holds only what the CSSOM could read on each page: inline styles and same-origin sheets, since a cross-origin sheet stays unreadable there. The per-state Transition rows in the tables above are computed values and cover every rule the page paints.');
 for (const [pg, list] of Object.entries(J._meta.sheets || {}).sort()) {
   const uniq = [...new Map(list.filter((t) => t.transition).map((t) => [t.transition, t])).values()].slice(0, 12);
   W('');

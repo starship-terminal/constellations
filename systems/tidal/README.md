@@ -55,7 +55,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | dark | 21.00:1 pass | 17.71:1 pass | 6.24:1 pass | 6.05:1 pass |
 
-4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.color.border.focus` #FFFFFF.
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.color.border.focus` #FFFFFF (Reconstruction, not measured).
 
 <!-- brief:end -->
 
@@ -78,6 +78,8 @@ The same tab then opened Explore, the authorize page (by clicking Log in, which 
 Stylesheets on tidal.com were readable. The Square Sans stylesheet on squarecdn.com was cross-origin and was not parsed. Its family name comes from the computed font stack.
 
 ## What to distrust
+
+The readings were not saved. [raw/readings.json](raw/readings.json) holds the pages, viewports, theme and what was not entered, but no style or custom-property value. So every token read in the inspector is labelled Reconstruction, entered by hand at capture time, and the two values worked out from those stay Derived. A recapture that writes the computed styles and `:root` custom properties to raw/ would make them Measured.
 
 The preview browser returned "The browser is not producing screenshot frames." Nothing in screenshots/ is a capture of the product. Headless Playwright against https://tidal.com/ returned HTTP 403 and a block page, so that shot was deleted and not used.
 

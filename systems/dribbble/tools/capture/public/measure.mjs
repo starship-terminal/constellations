@@ -66,8 +66,8 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   await cdp.send('CSS.enable');
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
-  await open(page, url || BASE + URLS[key], { wait, promo });
-  if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
+  const cleared = await open(page, url || BASE + URLS[key], { wait, promo });  // false: the bot check did not clear (lib.mjs)
+  if (!cleared || (await blocked())) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   return true;
 }
@@ -225,6 +225,9 @@ async function toggle(loc, { allowLink = false } = {}) {
 
 const q = (sel) => page.locator(sel);
 const B4 = ['default', 'hover', 'focus-visible', 'pressed'];
+// markLargest/domFind return a never-matching locator on a miss, never throw, so a
+// `.catch(() => fallback)` never fell back: choose by count() instead.
+const orElse = async (loc, fallback) => ((loc && (await loc.count())) ? loc : fallback);
 
 // Transitions and animations declared in every readable sheet, by selector.
 async function sheetsFor(key) {
@@ -392,7 +395,7 @@ async function shot() {
   await S('shot-follow', q('a, button').filter({ hasText: /^\s*Follow\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Follow button', desc: 'The Follow action under the author; measured never pressed.', sel: '"Follow"' });
   await S('shot-cta', q('a, button').filter({ hasText: /Get in touch/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Get-in-touch button', desc: 'The dark hire pill on the shot page; measured never followed.', sel: '"Get in touch"' });
   await S('shot-icon-btn', q('button[aria-label*="like" i], button[aria-label*="save" i], button[class*="like" i], button[class*="save" i]').filter({ visible: true }).first(), B4, { group: g, title: 'Like/save icon button', desc: 'A heart/bookmark round button beside the CTA; measured never pressed.', sel: 'like or save icon button' });
-  await S('shot-media', await markLargest('main img, article img, figure img, [class*="media" i] img, [class*="shot" i] img', 'm-shot-media', { minW: 300, minH: 200 }).catch(() => q('main img').first()), ['default'], { group: g, title: 'Shot media', desc: 'The big shot image frame (largest image in main).', sel: 'largest main img' });
+  await S('shot-media', await orElse(await markLargest('main img, article img, figure img, [class*="media" i] img, [class*="shot" i] img', 'm-shot-media', { minW: 300, minH: 200 }).catch(() => null), q('main img').first()), ['default'], { group: g, title: 'Shot media', desc: 'The big shot image frame (largest image in main).', sel: 'largest main img' });
   await S('rail-btn', q('[class*="rail" i] button, aside button, [class*="sidebar" i] button').filter({ visible: true }).first(), B4, { group: g, title: 'Action rail button', desc: 'A button on the right-hand action rail (like/share/info).', sel: 'right rail button' });
   save();
 }
@@ -424,11 +427,11 @@ async function directory() {
   await S('topic-chip', q('a').filter({ hasText: /^\s*(logo design|landing page|mobile app|web design|ux design|framer|branding|social media|animation|typography)\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Topic chip', desc: 'A Popular topic link under the directory heading.', sel: 'popular topic a' });
   await S('filter-select', q('button, a, [role="combobox"], select, details').filter({ hasText: /^\s*(Categories|Budget|Location|Rating|More)\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Filter control', desc: 'A filter dropdown over the directory (Categories/Budget/Location/Rating/More); its list was never opened.', sel: 'filter dropdown' });
   await S('designer-card', q('.resume-user-card, [class*="designer" i][class*="card" i], [class*="service-card" i], li article, article').filter({ visible: true }).first(), B4, { group: g, title: 'Designer card', desc: 'A freelancer card (resume-user-card): avatar, name, PRO+/SELECT badges, star rating, projects count, rate, location, response time, work strip and skill chips.', sel: '.resume-user-card' });
-  await S('designer-name', q('h2, h3, a').filter({ hasText: /LAB|STUDIO|®|™/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Designer name', desc: 'The freelancer\'s display name on the card.', sel: 'designer card name' });
+  await S('designer-name', q('h2, h3, a').filter({ hasText: /\b(LAB|STUDIO)\b|®|™/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Designer name', desc: 'The freelancer\'s display name on the card.', sel: 'designer card name' });
   await S('badge-select', q('[class*="badge" i], span').filter({ hasText: /^\s*(SELECT|PRO\+?)\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'SELECT badge', desc: 'The SELECT/PRO+ membership chip on the card.', sel: 'SELECT badge' });
-  await S('rating', await domFind(page, /\d\.\d\s*\(\d+\)/, { sel: 'span, div, a, li', tag: 'm-rating', leaf: true }).catch(() => q('span, div').filter({ hasText: /\d\.\d\s*\(\d+\)/ }).filter({ visible: true }).first()), ['default'], { group: g, title: 'Star rating', desc: 'The 4.9 (158) star-rating figure.', sel: 'star rating' });
-  await S('designer-meta', await domFind(page, /projects completed|Responds in|Services available|From \$[\d,]+/i, { sel: 'span, li, div', tag: 'm-meta', leaf: true }).catch(() => q('span, li, div').filter({ hasText: /projects completed|Responds in|Services available/i }).filter({ visible: true }).first()), ['default'], { group: g, title: 'Designer meta', desc: 'A projects-completed / response-time / services meta item.', sel: 'designer meta' });
-  await S('promoted-tag', await domFind(page, /^\s*Promoted\s*$/, { sel: 'span, div, a', tag: 'm-promo', leaf: true }).catch(() => q('span').filter({ hasText: /Promoted/ }).filter({ visible: true }).first()), ['default'], { group: g, title: 'Promoted tag', desc: 'The small "Promoted" disclosure label.', sel: '"Promoted"' });
+  await S('rating', await orElse(await domFind(page, /\d\.\d\s*\(\d+\)/, { sel: 'span, div, a, li', tag: 'm-rating', leaf: true }).catch(() => null), q('span, div').filter({ hasText: /\d\.\d\s*\(\d+\)/ }).filter({ visible: true }).first()), ['default'], { group: g, title: 'Star rating', desc: 'The 4.9 (158) star-rating figure.', sel: 'star rating' });
+  await S('designer-meta', await orElse(await domFind(page, /projects completed|Responds in|Services available|From \$[\d,]+/i, { sel: 'span, li, div', tag: 'm-meta', leaf: true }).catch(() => null), q('span, li, div').filter({ hasText: /projects completed|Responds in|Services available/i }).filter({ visible: true }).first()), ['default'], { group: g, title: 'Designer meta', desc: 'A projects-completed / response-time / services meta item.', sel: 'designer meta' });
+  await S('promoted-tag', await orElse(await domFind(page, /^\s*Promoted\s*$/, { sel: 'span, div, a', tag: 'm-promo', leaf: true }).catch(() => null), q('span').filter({ hasText: /Promoted/ }).filter({ visible: true }).first()), ['default'], { group: g, title: 'Promoted tag', desc: 'The small "Promoted" disclosure label.', sel: '"Promoted"' });
   await S('designer-cta', q('a, button').filter({ hasText: /Get in touch/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Get-in-touch button', desc: 'The dark hire pill on the card; measured never followed.', sel: '"Get in touch"' });
   await S('bookmark-btn', q('.resume-user-card button, .resume-user-card a').filter({ hasNotText: /\S/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Bookmark icon button', desc: 'The icon-only save/bookmark button on the card; measured never pressed.', sel: '.resume-user-card icon-only control' });
   await S('skill-chip-dark', q('a, span, li').filter({ hasText: /Expert|Partner/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Skill chip, dark', desc: 'The dark certified chip ("Webflow Expert").', sel: 'dark skill chip' });
@@ -489,7 +492,7 @@ async function login() {
   await S('email-field', q('input[type="email"], input[name*="email" i], input[type="text"], input').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Email field', desc: 'The "Enter email or username" input; sample text was typed and deleted, nothing sent.', sel: 'auth email input' });
   await S('continue-btn', q('button[type="submit"], button, a').filter({ hasText: /^\s*Continue\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Continue button', desc: 'The dark Continue submit; measured, never pressed (a press would submit).', sel: '"Continue"' });
   await S('auth-link', q('a').filter({ hasText: /Sign up|Terms|Privacy/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Auth link', desc: 'A Terms / Privacy / Sign-up link under the card actions.', sel: 'auth link' });
-  await S('auth-art', await markLargest('img, [class*="art" i], [class*="image" i], aside', 'm-auth-art', { minW: 200, minH: 300 }).catch(() => q('main').first()), ['default'], { group: g, title: 'Auth illustration panel', desc: 'The painted half of the split layout (a shot fills it, credited bottom-right).', sel: 'auth side panel' });
+  await S('auth-art', await orElse(await markLargest('img, [class*="art" i], [class*="image" i], aside', 'm-auth-art', { minW: 200, minH: 300 }).catch(() => null), q('main').first()), ['default'], { group: g, title: 'Auth illustration panel', desc: 'The painted half of the split layout (a shot fills it, credited bottom-right).', sel: 'auth side panel' });
   save();
 }
 
@@ -526,7 +529,7 @@ async function mobile() {
   await S('m-menu-open', q('[class*="fixed"][class*="inset-0"], [role="dialog"], header + div, nav').filter({ hasText: /Explore|Shots|Sign up/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile menu, open', desc: 'The header menu panel opened by its own toggle.', sel: 'mobile menu panel' }, { noScroll: true });
   await page.keyboard.press('Escape'); await page.waitForTimeout(500);
   await S('m-hero', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile headline', sel: 'h1 at 390' });
-  await S('m-search', q('input[type="search"], input[placeholder*="interested" i], input[placeholder*="looking" i], a[href*="/search"], form input').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile search field', sel: 'search input/link at 390' });
+  await S('m-search', q('input[type="search"], input[placeholder*="interested" i], input[placeholder*="looking" i], form input').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile search field', sel: 'search input/link at 390' });
   save();
 }
 
@@ -556,7 +559,7 @@ try {
   if (!wanted.size || wanted.has('mobile')) await plan.mobile();
   // Reduced-motion check on an element that transitions (the header), so the
   // delta is meaningful.
-  if (!wanted.size || wanted.has('home')) await reducedMotion('home', 'header');
+  if (!wanted.size || wanted.has('home')) await reducedMotion('home', '.site-nav'); // the bar is div.site-nav; there is no <header>
   runDone = true;
 } finally {
   for (const [key, c] of Object.entries(out.components)) {

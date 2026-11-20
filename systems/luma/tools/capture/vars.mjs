@@ -66,7 +66,9 @@ if (!bodies.size && !inlines.length) { console.log('no stylesheets harvested; cs
 const sheets = [...bodies.entries()].concat(inlines);
 
 // ---- harvest: every rule with --* declarations ----
-const probe = await browser.newPage();
+// The probe resolves vw/vh values, so it needs the 1440 x 900 viewport its notes name (a bare
+// newPage() is 1280 x 720).
+const probe = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 const result = await probe.evaluate((sheets) => {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];

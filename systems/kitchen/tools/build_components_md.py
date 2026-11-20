@@ -25,12 +25,17 @@ W("## Inventory")
 W("")
 W("| Component | Group | Page | States |")
 W("|---|---|---|---|")
+
+def cell(v):
+    """Table-cell text: a "|" or a newline in captured text would break the row."""
+    return " ".join(str(v).split("\n")).replace("|", "\\|")
+
 for k, c in C.items():
     if c.get("missing"):
-        W(f"| {c.get('title', k)} | {c.get('group', '')} | {c.get('page', '')} | not present on the captured page |")
+        W(f"| {cell(c.get('title', k))} | {cell(c.get('group', ''))} | {cell(c.get('page', ''))} | not present on the captured page |")
         continue
     states = ", ".join(c.get("states") or {})
-    W(f"| {c.get('title', k)} | {c.get('group', '')} | {c.get('page', '')} | {states} |")
+    W(f"| {cell(c.get('title', k))} | {cell(c.get('group', ''))} | {cell(c.get('page', ''))} | {cell(states)} |")
 W("")
 W("## Entries")
 W("")

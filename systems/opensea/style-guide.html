@@ -6,15 +6,11 @@
 <style>
 :root, [data-mode="dark"] {
   color-scheme: dark;
-  --page: #080808; --surface: #0c0c0c; --ink: #ffffff; --muted: #acacac;
-  --line: #202020; --line-2: #2c2c2c; --accent: #0086ff; --selected: #161616;
-  --up: #47bb64; --down: #e24756; --link: #83c3ff;
+  --page: #080808; --surface: #0c0c0c; --ink: #ffffff; --muted: #acacac; --line: #202020; --line-2: #2c2c2c; --accent: #0086ff; --selected: #161616; --up: #47bb64; --down: #e24756; --link: #83c3ff;
 }
 [data-mode="light"] {
   color-scheme: light;
-  --page: #fafafa; --surface: #ffffff; --ink: #171717; --muted: #666666;
-  --line: #ebebeb; --line-2: #dcdcdc; --accent: #0086ff; --selected: #f2f2f2;
-  --up: #28a948; --down: #ea3943; --link: #0086ff;
+  --page: #fafafa; --surface: #ffffff; --ink: #171717; --muted: #666666; --line: #ebebeb; --line-2: #dcdcdc; --accent: #0086ff; --selected: #f2f2f2; --up: #28a948; --down: #ea3943; --link: #0086ff;
 }
 body { margin: 0; background: var(--page); color: var(--ink); font: 16px/24px ui-sans-serif, system-ui, sans-serif; }
 main { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
@@ -23,7 +19,7 @@ h2 { font-size: 24px; line-height: 30px; font-weight: 500; margin: 40px 0 12px; 
 p.note { color: var(--muted); max-width: 68ch; }
 .hero { font-size: 60px; line-height: 63px; font-weight: 500; letter-spacing: -1.5px; margin: 12px 0; }
 .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-button, .pill { font: 14px/21px inherit; font-weight: 500; border-radius: 9999px; height: 32px; padding: 0 16px; }
+button, .pill { font-family: inherit; font-size: 14px; line-height: 21px; font-weight: 500; border-radius: 9999px; height: 32px; padding: 0 16px; }
 button.primary { background: var(--accent); color: #fff; border: 0; }
 button.nav { background: var(--selected); color: var(--ink); border: 0; }
 button.ghost { background: transparent; color: var(--ink); border: 0; }
@@ -75,15 +71,11 @@ td { border-top: 1px solid var(--line); padding: 6px 8px; vertical-align: top; f
 <tr><td>Control</td><td>12px</td><td>Dialog, menu, OAuth, email field</td></tr>
 <tr><td>Card</td><td>8px</td><td>Item card shell and menu row</td></tr>
 <tr><td>Avatar</td><td>4px</td><td>Collection avatar</td></tr>
-<tr><td>None</td><td>0</td><td>Item media, Buy Now</td></tr>
+<tr><td>None</td><td>0px</td><td>Item media, Buy Now</td></tr>
 </table>
 </main>
 <script>
-const dark = [
-  ["page", "#080808"], ["surface", "#0c0c0c"], ["selected", "#161616"],
-  ["text", "#ffffff"], ["muted", "#acacac"], ["border", "#202020"],
-  ["accent", "#0086ff"], ["link", "#83c3ff"], ["up", "#47bb64"], ["down", "#e24756"]
-];
+const dark = [["page", "#080808"], ["surface", "#0c0c0c"], ["selected", "#161616"], ["text", "#ffffff"], ["muted", "#acacac"], ["border", "#202020"], ["accent", "#0086ff"], ["link", "#83c3ff"], ["up", "#47bb64"], ["down", "#e24756"]];
 const box = document.getElementById("swatches");
 for (const [name, hex] of dark) {
   const d = document.createElement("div");

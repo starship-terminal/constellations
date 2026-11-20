@@ -87,12 +87,14 @@ if comp_path.exists():
     comp = json.loads(comp_path.read_text()).get("components", {})
 
 def measured_px(key, prop, fallback=None):
+    """A px reading from raw/components-computed.json. A missing one fails the build: the typed
+    fallback used to stand in under the measured source."""
     st = (comp.get(key) or {}).get("states", {}).get("default", {})
     style = st.get("style") or {}
     val = style.get(prop)
     if isinstance(val, str) and re.fullmatch(r"-?\d+(\.\d+)?px", val):
         return val
-    return fallback
+    raise SystemExit(f"{key} default {prop} is not a px reading in raw/components-computed.json: {val!r}")
 
 hero_size = measured_px("hero-h1", "fontSize", "56px")
 hero_lh = measured_px("hero-h1", "lineHeight", "70px")

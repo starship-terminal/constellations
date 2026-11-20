@@ -47,7 +47,7 @@ def typography(family: str, size: str, weight: str, line_height: str, letter_spa
     }
 
 
-def main() -> None:
+def build() -> dict:
     raw = json.loads((ROOT / "raw" / "foundations.json").read_text())
     tokens = raw["rootTokens"]
     s = f"{SRC}. Declared on :root as comma-separated RGB channels."
@@ -182,7 +182,7 @@ def main() -> None:
             "divider": color("#bbbbbb", SRC + ". --s-color-divider grey-2 rgb(187, 187, 187)"),
         },
         "focus": {
-            "ring": color("#e59700", SRC + ". Start building outline after focus() rgb(229, 151, 0)"),
+            "ring": color("#e59700", "Observed. Chromium's default focus ring (-webkit-focus-ring-color), not a Reown colour: the Start building outline after focus() reads rgb(229, 151, 0) and the marketing site styles no ring of its own. " + SRC),
         },
     }
 
@@ -252,7 +252,11 @@ def main() -> None:
             {"name": "sign-in", "selectedTokenSets": {"core": "source", "sign-in": "enabled"}},
         ],
     }
-    (ROOT / "tokens.json").write_text(json.dumps(doc, indent=2) + "\n")
+    return doc
+
+
+def main() -> None:
+    (ROOT / "tokens.json").write_text(json.dumps(build(), indent=2) + "\n")
     print("wrote", ROOT / "tokens.json")
 
 

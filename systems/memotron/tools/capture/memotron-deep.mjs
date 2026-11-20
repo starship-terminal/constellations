@@ -22,22 +22,6 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
 
 const browser = await chromium.launch({ headless: true });
 
-async function sheetText(page) {
-  return page.evaluate(async () => {
-    const out = [];
-    for (const link of [...document.querySelectorAll('link[rel="stylesheet"]')]) {
-      try {
-        const res = await fetch(link.href);
-        const css = await res.text();
-        out.push({ href: link.href, bytes: css.length, css });
-      } catch (e) {
-        out.push({ href: link.href, error: String(e) });
-      }
-    }
-    return out.map(({ href, bytes, error }) => ({ href, bytes, error, css: undefined, hasCss: false }));
-  });
-}
-
 // Pull stylesheet text in Node (page fetch can be CORS-blocked for some sheets).
 async function fetchSheets(page) {
   const hrefs = await page.evaluate(() => [...document.querySelectorAll('link[rel="stylesheet"]')].map((l) => l.href));
@@ -156,7 +140,12 @@ fs.writeFileSync(path.join(RAW, 'css-rules.json'), JSON.stringify({
 const typeScale = await page.evaluate(() => {
   const classes = ['text-h1', 'text-h2', 'text-h3', 'text-h4', 'text-base', 'text-b1', 'text-b2', 'text-b3', 'text-lb2', 'text-lbase', 'text-fgs1', 'text-fgs2', 'bg-bgs1', 'bg-bgs2', 'bg-fgs1', 'text-aps1'];
   const host = document.createElement('div');
-  host.className = document.querySelector('[class*="cs_tidigit"]').className;
+  // The probe takes the theme classes of the page's cs_tidigit wrapper; without one the read stops
+  // with a plain message instead of a TypeError.
+  const wrapper = document.querySelector('[class*="cs_tidigit"]');
+  // Throw, so page.evaluate rejects and the run stops before it writes over the saved readings.
+  if (!wrapper) throw new Error('no cs_tidigit wrapper on the page; the type probe has nothing to copy');
+  host.className = wrapper.className;
   host.style.cssText = 'position:absolute;left:-9999px;top:0';
   document.body.appendChild(host);
   const out = {};
@@ -224,7 +213,6 @@ await scrollShots('https://memotron.app/compare', 'compare-dark');
 {
   const c = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', colorScheme: 'dark' });
   const p = await c.newPage();
-  const cdp = await c.newCDPSession(p);
   await p.goto('https://web.memotron.app/signup', { waitUntil: 'domcontentloaded', timeout: 45000 });
   await p.waitForTimeout(2000);
   const crops = path.join(PKG, 'components', 'crops');
@@ -294,10 +282,12 @@ await scrollShots('https://memotron.app/compare', 'compare-dark');
   await p.locator('a[href*="apps.apple.com"]').first().hover();
   await p.waitForTimeout(250);
   await shoot('button-download-hover', 'a[href*="apps.apple.com"]');
+  // A hover pair is the same element at rest and under the pointer (it was /pricing, then /compare).
   await shoot('nav-link-default', 'a[href="/pricing"]');
-  await p.locator('a[href="/compare"]').first().hover();
+  await p.locator('a[href="/pricing"]').first().hover();
   await p.waitForTimeout(250);
-  await shoot('nav-link-hover', 'a[href="/compare"]');
+  await shoot('nav-link-hover', 'a[href="/pricing"]');
+  await p.mouse.move(2, 2);
   await shoot('wordmark-default', 'a[href="/"]');
   await c.close();
 }

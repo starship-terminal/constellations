@@ -5,7 +5,7 @@
         "display": {
           "value": "\"Headspace Apercu\", sans-serif",
           "type": "fontFamily",
-          "source": "computed fontFamily of hero-h1 default (raw/components-computed.json)",
+          "source": "computed fontFamily of hero-h1 default (raw/components-computed.json); the /share page's headline: measure.mjs read hero-h1 on 16 pages under one key and kept the last, so the home headline was not kept; recapture needed",
           "description": "The Headspace Apercu stack on the hero headline \u2014 the single family the whole marketing surface ships, weights 200/400/600/700."
         },
         "body": {
@@ -25,7 +25,7 @@
         "display": {
           "value": "64px",
           "type": "dimension",
-          "source": "computed text-fontSize of hero-h1 default (raw/components-computed.json)",
+          "source": "computed text-fontSize of hero-h1 default (raw/components-computed.json); the /share page's headline: measure.mjs read hero-h1 on 16 pages under one key and kept the last, so the home headline was not kept; recapture needed",
           "description": "The hero headline."
         },
         "h1-b2b": {
@@ -81,7 +81,7 @@
         "display": {
           "value": "700",
           "type": "number",
-          "source": "computed text-fontWeight of hero-h1 default (raw/components-computed.json)",
+          "source": "computed text-fontWeight of hero-h1 default (raw/components-computed.json); the /share page's headline: measure.mjs read hero-h1 on 16 pages under one key and kept the last, so the home headline was not kept; recapture needed",
           "description": "The headline weight (the family ships 200/400/600/700)."
         },
         "body": {
@@ -90,11 +90,11 @@
           "source": "computed text-fontWeight of prose-body default (raw/components-computed.json)",
           "description": "Body text weight."
         },
-        "bold": {
+        "cardHeading": {
           "value": "400",
           "type": "number",
           "source": "computed text-fontWeight of prose-h3 default (raw/components-computed.json)",
-          "description": "Card-heading / strong weight."
+          "description": "The card-heading weight."
         },
         "button": {
           "value": "700",
@@ -107,7 +107,7 @@
         "display": {
           "value": "72px",
           "type": "dimension",
-          "source": "computed text-lineHeight of hero-h1 default (raw/components-computed.json)",
+          "source": "computed text-lineHeight of hero-h1 default (raw/components-computed.json); the /share page's headline: measure.mjs read hero-h1 on 16 pages under one key and kept the last, so the home headline was not kept; recapture needed",
           "description": "The hero headline line height."
         },
         "heading": {
@@ -192,7 +192,7 @@
       "auth-card": {
         "value": "40px",
         "type": "dimension",
-        "source": "computed paddingLeft of auth-card default (raw/components-computed.json)",
+        "source": "computed paddingLeft of auth-card default (raw/components-computed.json); the /signup card (\"Create your account\"): measured under one key on /login and /signup, the /signup reading was kept and the /login one lost; recapture needed",
         "description": "The auth card's padding."
       }
     },
@@ -266,7 +266,7 @@
         "primary": {
           "value": "#4b4c4d",
           "type": "color",
-          "source": "computed color of hero-h1 default (raw/components-computed.json)",
+          "source": "computed color of hero-h1 default (raw/components-computed.json); the /share page's headline: measure.mjs read hero-h1 on 16 pages under one key and kept the last, so the home headline was not kept; recapture needed",
           "description": "The near-black text of headings and body on the light ground."
         },
         "muted": {
@@ -310,7 +310,7 @@
         "auth-card": {
           "value": "#ffffff",
           "type": "color",
-          "source": "computed paint of div.bg-card.text-card-foreground inside auth-card default (raw/components-computed.json)",
+          "source": "computed paint of div.bg-card.text-card-foreground inside auth-card default (raw/components-computed.json); the /signup card (\"Create your account\"): measured under one key on /login and /signup, the /signup reading was kept and the /login one lost; recapture needed",
           "description": "The white the universal-login card paints."
         },
         "footer-panel": {

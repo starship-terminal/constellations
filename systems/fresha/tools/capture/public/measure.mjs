@@ -472,26 +472,19 @@ async function booking() {
   const row = await domFind(page, /\d+\s*min|\d+h/i, { sel: 'li,div', tag: 'brow', up: 'li', minW: 280, minH: 40 });
   const brow = (await row.count()) ? row : q('ul li').nth(2);
   await S('booking-service-row', brow, ['default', 'hover'], { group: G.booking, title: 'Booking service row', desc: 'A selectable service card: name, duration, notes and price, with a round "+" add control. Adding only marks the service in the local cart; nothing is booked.', sel: 'li booking service' });
-  // The "+" add control on a service card, at rest, then after its own press
-  // adds the service to the local cart (removed again afterwards).
+  // The "+" add control on a service card: hover, keyboard focus and a
+  // CDP-forced :active only, never a real press.
   let add = await domFind(page, /^\s*\+\s*$|^Add$/i, { sel: 'button, [role="button"]', tag: 'badd', leaf: true });
   if (!(await add.count())) add = (await brow.count()) ? brow.locator('button, [role="button"]').last() : add;
-  await S('booking-add-button', add, B4, { group: G.booking, title: 'Add-service button', desc: 'The round "+" that selects a service for the cart. Its pressed state is captured for real: one press adds the service, then it is removed again — the wizard never advances.', sel: 'button "+"' });
+  await S('booking-add-button', add, B4, { group: G.booking, title: 'Add-service button', desc: 'The round "+" that selects a service for the cart. Measured, never pressed: its pressed state is CDP-forced.', sel: 'button "+"' });
   const catPill = await domFind(page, /^Featured$|^Promotion$|^Set menu$/i, { sel: 'button,a,[role="tab"]', tag: 'cat' });
   await S('booking-category-pill', catPill, ['default', 'hover'], { group: G.booking, title: 'Category pill', desc: 'The service-category chips under "Select services" (Featured, Promotion, Set menu, CUT & TRIM …) — the active one is solid.', sel: 'category pill' });
   const cart = await domFind(page, /No services selected|Total/i, { sel: 'aside,section,div', tag: 'cart', leaf: true, minW: 240, minH: 200 });
   await S('booking-cart', cart, ['default'], { group: G.booking, title: 'Cart summary', desc: 'The right-hand booking summary: venue card (photo, rating, address), the selected-services list, Total and the step button.', sel: 'aside cart' });
-  if (await add.count()) {
-    await reset();
-    const b = add.filter({ visible: true }).first();
-    await b.click({ timeout: 4000 }).catch(() => {});
-    await page.waitForTimeout(900);
-    await measure('booking-cart', 'service-added', cart, { via: 'one service added by its own "+", then removed; the wizard never advanced' });
-    const rm = page.locator('button[aria-label*="remove" i], button[aria-label*="minus" i], button:has-text("−")').filter({ visible: true }).first();
-    if (await rm.count()) await rm.click({ timeout: 3000 }).catch(() => {});
-    else await b.click({ timeout: 3000 }).catch(() => {});
-    await page.waitForTimeout(500);
-  }
+  // No service is added: the "+" puts a service in a real venue's booking
+  // cart, a state change on a third-party site, so the cart is measured at
+  // rest only. The committed 'service-added' reading predates this edit
+  // (2026-11 audit; not run since).
   const cont = await domFind(page, /^Continue$/, { sel: 'button', tag: 'bcont' });
   await S('booking-continue', cont, B4, { group: G.booking, title: 'Continue button', desc: 'The wizard\'s step button — grey while the cart is empty, dark once a service is selected. Measured, never pressed: a press advances to "Professional". The wizard never goes past step 1 in this capture.', sel: 'button "Continue"' });
   await page.close();

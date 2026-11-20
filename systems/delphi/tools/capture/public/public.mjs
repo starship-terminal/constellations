@@ -136,7 +136,7 @@ const desktop = {
     });
     await S.full();
   } },
-  chat: { url: BASE + '/karpathy/chat?handoff=karpathy-how-far-we-are-from-agi', wait: 9000, theme: 'light', run: async (p, S) => {
+  chat: { url: BASE + '/karpathy/chat', wait: 9000, theme: 'light', run: async (p, S) => {
     await S.view('default');
     await S.full();
   } },
@@ -153,7 +153,7 @@ const mobile = {
     await S.view('default');
     await S.full();
   } },
-  chat: { url: BASE + '/karpathy/chat?handoff=karpathy-how-far-we-are-from-agi', wait: 9000, theme: 'light', run: async (p, S) => {
+  chat: { url: BASE + '/karpathy/chat', wait: 9000, theme: 'light', run: async (p, S) => {
     await S.view('default');
     await S.full();
   } },

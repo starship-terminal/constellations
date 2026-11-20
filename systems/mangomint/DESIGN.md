@@ -152,7 +152,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Forgot password. The email field was measured. Continue was not submitted.
 - Public booking. `booking.mangomint.com/737397` is Mangomint's own embed (title "Mangomint Internal"). It loaded signed out with an empty service list. Rebook a past service was not pressed. No slot, no checkout.
 - The desktop Features menu. The click timed out. The Businesses menu is captured.
-- Pressed states. They are forced pseudo-classes.
+- Pressed states. They are forced pseudo-classes. Four of them are not pressed readings: Book a demo, Try it now, Businesses and Log In (`nav-demo`, `nav-trial`, `nav-businesses`, `login-submit` in [raw/components-computed.json](raw/components-computed.json)) equal their default, because the 2026-11-18 script left the first pressed control's marker in place and forced that control again. `tools/capture/public/measure.mjs` now clears the marker; those four need a recapture.
+- Hand-typed values. `tools/build_tokens.py` copies most values from the readings by hand rather than reading raw/ at build time. They match the readings today; after a recapture, check them against the new readings.
 - The stylesheet harvest. The app host's sheet list was cut. Measured computed styles are the source of truth. Declared `--color-*` values that were not painted on a captured element are labeled as declared.
 - TT Commons Pro, TT Commons Mono and IvyPresto. The family names are measured. The files are proprietary and not in this package.
 - Quantised screenshots. Read colours from the JSON, not from the 256-colour PNGs.

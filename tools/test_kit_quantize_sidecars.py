@@ -2,6 +2,7 @@
 sidecar (grep stitched_sidecar). A plain capture's .capture.json is copied; a stitched image's is rebuilt
 from its tiles with a fresh dimensionCheck. Each script is copied into a throwaway package tree and run as
 a subprocess, so the committed screenshots/ is never touched. Needs Pillow; skipped without it."""
+import hashlib
 import json
 import pathlib
 import shutil
@@ -17,8 +18,21 @@ except ImportError:  # pragma: no cover
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 KIT = ROOT / "tools" / "kit" / "capture" / "quantize.py"
+
+def distinct(paths):
+    """One script per distinct body: byte-identical copies behave identically, and every run is a
+    subprocess (about 3,000 per make test when each of 400 copies ran), so each body is tested once."""
+    seen, out = set(), []
+    for p in paths:
+        h = hashlib.sha1(p.read_bytes()).hexdigest()
+        if h not in seen:
+            seen.add(h)
+            out.append(p)
+    return out
+
+
 COPIES = sorted(p for p in ROOT.glob("systems/*/tools/capture/quantize.py") if "def stitched_sidecar" in p.read_text())
-SCRIPTS = [KIT] + COPIES
+SCRIPTS = distinct([KIT] + COPIES)
 # designmodo judges a sheet by the tiles' own recorded dimensionCheck and writes a failing sidecar for a
 # tile it cannot vouch for, instead of none; that is deliberate, so its tests expect "fail" where the rest expect no file.
 RECORDED = [s for s in SCRIPTS if "recorded checks" in s.read_text()]
@@ -234,9 +248,26 @@ class QuantizeSidecarTest(unittest.TestCase):
             self.tiles((6, 4), doc_h=30)   # the document was 30px; 10px of it was tiled
             self.assertIn("intended", self.run_refused())
 
+        def first_tile_never_wrote():
+            # screenshotWithMetadata threw on part0: only its failed sidecar is left, and the previous
+            # run's stitched long.png still sits in raw/, so a PNG-only scan stitched nothing and published it.
+            self.tiles((6, 4))
+            meta = json.loads((self.raw / "long.part0.png.capture.json").read_text())
+            meta["dimensionCheck"] = {"status": "fail", "error": "screenshot threw"}
+            (self.raw / "long.part0.png.capture.json").write_text(json.dumps(meta))
+            (self.raw / "long.part0.png").unlink()
+            (self.raw / "long.part1.png").unlink(); (self.raw / "long.part1.png.capture.json").unlink()
+            Image.new("RGB", (8, 10)).save(self.raw / "long.png")
+            self.assertIn("long.part0.png: the tile never wrote its PNG (its sidecar records 'fail')", self.run_refused())
+
+        def last_tile_never_wrote():
+            self.tiles((6, 4)); (self.raw / "long.part1.png").unlink()   # no document height to fall short of
+            self.assertIn("long.part1.png: the tile never wrote its PNG", self.run_refused())
+
         # The kit only: package copies that carried a check first refuse in their own ways, and some
         # miss a case (listed for the package wave); each is ported from the kit, then can join.
-        for case in (missing_sidecar, gap_in_the_run, failed_tile, clips_do_not_join, short_of_the_page):
+        for case in (missing_sidecar, gap_in_the_run, failed_tile, clips_do_not_join, short_of_the_page,
+                     first_tile_never_wrote, last_tile_never_wrote):
             with self.subTest(case=case.__name__):
                 self.each(case, [KIT])
 

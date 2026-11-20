@@ -242,20 +242,9 @@ const desktop = {
       await clickEl(t); await wait(p, 1200); await S.view('share'); await p.keyboard.press('Escape'); await wait(p, 500);
     });
     await S.full();
-    await step('checkout', async () => {
-      // The Subscribe/I-want-this link navigates to gumroad.com/checkout — a
-      // public form surface. Shot as found, never filled, never submitted;
-      // it runs last because the page is left behind afterwards.
-      const t = p.locator('button, a').filter({ hasText: /^\s*(Subscribe|I want this|Buy this|Add to cart)\s*$/i }).filter({ visible: true }).first();
-      if (!(await t.count())) { log('  ! purchase button missing'); return; }
-      await clickEl(t);
-      await p.waitForLoadState('domcontentloaded', { timeout: 30000 }).catch(() => {});
-      await wait(p, 12000);
-      // The page navigated to gumroad.com/checkout — record that surface, not
-      // the product page the shooter was opened on. safeUrl drops the
-      // product/option query, so the sidecar names the public route only.
-      await S.view('checkout', safeUrl(p.url()));
-    });
+    // Checkout: a boundary, not a step. Pressing Subscribe / I want this puts the product into a checkout
+    // session on gumroad.com (a server-side cart), so the capture stops at the button and shoots it at rest.
+    // The committed product-light-checkout shot was taken past that step (README, What to distrust).
     ctx.extra += await darkPass(p, 'product', 1440, 900, 1, PRODUCT_URL, ['default']);
   } },
   creator: { url: CREATOR_URL, wait: 12000, run: async (p, S, ctx) => {

@@ -52,7 +52,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 | light | 21.00:1 pass | 18.81:1 pass | 5.98:1 pass | 5.36:1 pass |
 | dark | 17.01:1 pass | 21.00:1 pass | 7.69:1 pass | 9.49:1 pass |
 
-8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.focus` #000000; `light.focus` #86b7fe.
+8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.focus` #000000 (Reconstruction, not measured); `light.focus` #86b7fe (Reconstruction, not measured).
 
 <!-- brief:end -->
 
@@ -79,6 +79,8 @@ Headless Playwright was tried only after the public pages had already loaded in 
 [screenshots/capture-gap-light.png](screenshots/capture-gap-light.png) is a label, not a capture of the site. Do not sample colours from it.
 
 Dark roles are declared custom properties, not a live dark screenshot. The filled shell button "Sign up or log in" computed black, while `--primary-button-background` stayed `#1b66e7`. Both are recorded. The black pill is the one on screen.
+
+The custom-property values were read in the preview tab but not saved: `raw/` holds computed control styles and motion rules, no custom-property dump. The 18 core colours that no `raw/` file holds (the dark greys, `pageDark`, the dark price colours, `blue`, the orange and edge accents) and both `focus` tokens are labelled Reconstruction, entered by hand at capture time. A recapture that dumps `:root` and `[data-theme=dark]` would make them Measured.
 
 The sign-in field's focus computed outline none. `--select-focused` (`#86b7fe` in light) is declared and was not painted on that field.
 

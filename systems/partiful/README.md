@@ -14,7 +14,7 @@ Partiful (partiful.com) is an invitations product. This package records the publ
 | [components/](components/) | Declared missing. Same screenshot failure |
 | [icons/](icons/) | Declared missing. Inline SVGs were not extracted |
 | [icon.png](icon.png) | Site icon, 128 px, upscaled from the 32 px marketing favicon |
-| [tools/](tools/) | Kit copy used as the capture record, plus a token test |
+| [tools/](tools/) | Kit copy used as the capture record, plus a token test. The unadapted kit builders and capture routes for other products were removed in the 2026-11 audit; the generic capture helpers remain. |
 
 <!-- brief:start -->
 <!-- brief:end -->

@@ -17,7 +17,7 @@ The marketing pages set their type in Stabil Grotesk. The sign-in page sets its 
 | [icons/](icons/) | An index. The wordmark is a CDN image, not an SVG in this folder |
 | [screenshots/](screenshots/) | Home, pricing, sign-in, and two phone shots |
 | [raw/](raw/) | A short record of where the readings came from |
-| [tools/](tools/) | The kit copy. This capture was measured live, not rebuilt by the kit scripts |
+| [tools/](tools/) | The kit copy. This capture was measured live, not rebuilt by the kit scripts. The unadapted kit builders and capture routes for other products were removed in the 2026-11 audit; the generic capture helpers remain. |
 
 ## Brief
 
@@ -136,7 +136,7 @@ The font files are proprietary and are not in this package.
 python3 tools/catalog.py design-md playbook
 ```
 
-The tokens were written from the live readings. The kit builders were not adapted, and they do not regenerate `tokens.json`.
+The tokens were written from the live readings. Nothing regenerates `tokens.json`; the unadapted kit builders were removed.
 
 ## Do and don't evidence
 

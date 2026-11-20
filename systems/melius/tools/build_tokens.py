@@ -20,7 +20,7 @@ VARS = json.loads((RAW / "css-vars.json").read_text())
 LIGHT = VARS["resolved"]["light"]
 COMP = json.loads((RAW / "components-computed.json").read_text()) if (RAW / "components-computed.json").exists() else {"components": {}}
 
-S = "Resolved from www.melius.com :root custom properties, 2026-11-19"
+S = "Declared on the www.melius.com :root, 2026-11-19"
 M = "Measured computed style, public Melius pages, 2026-11-19, light, 1440"
 
 
@@ -44,11 +44,33 @@ def other(value, source, ty="other"):
     return {"$value": value, "$type": ty, "$extensions": {"source": source}}
 
 
+def _marketing_root():
+    """The top-level :root rule of the www.melius.com sheet: the one that declares the named
+    --color-* palette. The merged `resolved` map keeps the last of 385 sheets, so a docs or app sheet
+    that redeclares a name (--color-black #000, --container-xl 36rem) would win there."""
+    rules = [a for a in VARS["app"] if a["selector"].startswith(":root") and a["context"] == ["@layer theme"]
+             and "--color-orange" in a["properties"]]
+    if len(rules) != 1:
+        raise SystemExit(f"expected one marketing :root rule in raw/css-vars.json, found {len(rules)}")
+    return rules[0]
+
+
+MARKETING = _marketing_root()
+
+
 def resolved(name):
-    node = LIGHT.get(name)
-    if not node:
-        raise SystemExit(f"missing {name} in raw/css-vars.json")
-    return node.get("value") or node.get("raw")
+    """A custom property as the marketing sheet declares it: #rgb expanded, rem at the 16px root."""
+    v = MARKETING["properties"].get(name)
+    if v is None:
+        raise SystemExit(f"missing {name} on the marketing :root in raw/css-vars.json")
+    v = v.strip().lower()
+    m = re.fullmatch(r"#([0-9a-f]{3})", v)
+    if m:
+        return "#" + "".join(c * 2 for c in m.group(1))
+    m = re.fullmatch(r"(-?\d*\.?\d+)rem", v)
+    if m:
+        return "%gpx" % (float(m.group(1)) * 16)
+    return v
 
 
 def measured_style(key, state="default"):
@@ -59,9 +81,9 @@ def measured_style(key, state="default"):
 
 core = {
     "color": {
-        "black": color("#0e0e0e", f"{S}: declared --color-black #0e0e0e on the marketing sheet. The merged harvest resolved a later #000; the hero ink measured rgb(14, 14, 14)."),
+        "black": color(resolved("--color-black"), f"{S}: --color-black on the marketing sheet; the hero ink measured rgb(14, 14, 14)."),
         "white": color(resolved("--color-white-2"), f"{S}: --color-white-2. Marketing --color-white is #fafafa, kept as offwhite."),
-        "offwhite": color("#fafafa", f"{S}: marketing --color-white #fafafa. The merged harvest resolved a later #fff."),
+        "offwhite": color(resolved("--color-white"), f"{S}: marketing --color-white"),
         "offblack": color(resolved("--color-offblack"), f"{S}: --color-offblack"),
         "orange": color(resolved("--color-orange"), f"{S}: --color-orange, also --color-accent"),
         "yellow": color(resolved("--color-yellow"), f"{S}: --color-yellow"),
@@ -80,21 +102,21 @@ core = {
         "navy": color(resolved("--color-navy"), f"{S}: --color-navy"),
         "lime": color(resolved("--color-lime"), f"{S}: --color-lime"),
         "olive": color(resolved("--color-olive"), f"{S}: --color-olive"),
-        "red500": color("#fb2c36", f"{S}: declared --color-red-500 #fb2c36. The harvest kept the lab() override, which did not convert."),
-        "green600": color("#00a544", f"{S}: declared --color-green-600 #00a544 on the marketing sheet."),
+        "red500": color(resolved("--color-red-500"), f"{S}: --color-red-500 on the marketing sheet. Browsers with lab() support paint the @supports override instead."),
+        "green600": color(resolved("--color-green-600"), f"{S}: --color-green-600 on the marketing sheet. Browsers with lab() support paint the @supports override instead."),
     },
     "font": {
         "family": {
             "display": font("recklessStandard, \"recklessStandard Fallback\", ui-serif, Georgia, serif", f"{M}: h1 fontFamily recklessStandard. @font-face in 398ln9hj2tk0d.css, weight 400. Files not shipped."),
             "ui": font("easeStandard, \"easeStandard Fallback\", ui-sans-serif, system-ui, sans-serif", f"{M}: nav and button fontFamily easeStandard. @font-face weight 400. Files not shipped."),
             "mono": font("\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, monospace", f"{S}: --font-geist-mono on the marketing sheet. Files not shipped."),
-            "app": font("Inter, ui-sans-serif, system-ui, sans-serif", f"{S}: docs and app declare --font-inter Inter"),
+            "app": font("Inter, ui-sans-serif, system-ui, sans-serif", "Declared on the app.melius.com and docs.melius.com sheets, 2026-11-19: --font-inter \"Inter\". The fallbacks after Inter are hand-written."),
         },
         "weight": {
-            "regular": num(400, f"{S}: --font-weight-normal"),
-            "medium": num(500, f"{S}: --font-weight-medium"),
-            "semibold": num(600, f"{S}: --font-weight-semibold"),
-            "bold": num(700, f"{S}: --font-weight-bold"),
+            "regular": num(int(resolved("--font-weight-normal")), f"{S}: --font-weight-normal"),
+            "medium": num(int(resolved("--font-weight-medium")), f"{S}: --font-weight-medium"),
+            "semibold": num(int(resolved("--font-weight-semibold")), f"{S}: --font-weight-semibold"),
+            "bold": num(700, "Declared on the app.melius.com and docs.melius.com sheets, 2026-11-19: --font-weight-bold 700. The marketing sheet declares no bold weight."),
         },
         "size": {
             "xs": dim(resolved("--text-xs"), f"{S}: --text-xs"),
@@ -131,7 +153,7 @@ core = {
         "phone": dim("390px", "Phone capture width"),
         "navHeight": dim("56px", f"{M}: nav height 56px"),
         "content": dim(resolved("--container-xl"), f"{S}: --container-xl"),
-        "max": dim("2000px", f"{S}: --container-max 2000px"),
+        "max": dim(resolved("--container-max"), f"{S}: --container-max"),
     },
 }
 
@@ -190,5 +212,8 @@ tokens = {
     }],
     "$metadata": {"tokenSetOrder": ["core", "light"]},
 }
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
-print("tokens", len(names), "motion", motion_path.exists())
+TEXT = json.dumps(tokens, indent=2) + "\n"
+
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(TEXT)
+    print("tokens", len(names), "motion", motion_path.exists())

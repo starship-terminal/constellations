@@ -43,5 +43,28 @@ class Tokens(unittest.TestCase):
         self.assertNotIn("dark", self.tokens)
 
 
+
+class Build(unittest.TestCase):
+    def test_committed_tokens_match_build(self):
+        import build_tokens  # builds on import; writes only when run as a script
+        self.assertEqual(json.loads((ROOT / "tokens.json").read_text()), json.loads(json.dumps(build_tokens.doc)))
+
+    def test_excluded_custom_properties_are_not_labelled_measured(self):
+        # raw/pricing-root-vars.json excludes --tw-* and --wcds-*, so no reading backs a token sourced to one.
+        def leaves(node):
+            for k, v in node.items():
+                if isinstance(v, dict) and "$value" in v:
+                    yield v
+                elif isinstance(v, dict) and not k.startswith("$"):
+                    yield from leaves(v)
+        for tok in leaves(json.loads((ROOT / "tokens.json").read_text())):
+            src = tok["$extensions"]["source"]
+            if "--tw-" in src or "--wcds-" in src:
+                self.assertTrue(src.startswith("Reconstruction"), src[:80])
+
+    def test_guide_matches_render(self):
+        import build_style_guide
+        self.assertEqual((ROOT / "style-guide.html").read_text(), build_style_guide.html)
+
 if __name__ == "__main__":
     unittest.main()

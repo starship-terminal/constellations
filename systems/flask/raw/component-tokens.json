@@ -1250,12 +1250,6 @@
         "type": "color",
         "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-surface-4; the channel list `42 42 42` normalised to #2a2a2a",
         "description": "The declared `--ds-surface-4`."
-      },
-      "demoCardBg": {
-        "value": "rgba(0, 0, 0, 0)",
-        "type": "color",
-        "source": "computed backgroundColor of demo-share-popover default (raw/components-computed.json)",
-        "description": "The demo share popover's surface fill — the glass/surface-3 card."
       }
     },
     "toast": {
@@ -1404,9 +1398,19 @@
         "description": "The header CTA's hover fill."
       },
       "heroCtaFill": {
-        "value": "rgba(0, 0, 0, 0)",
-        "type": "color",
-        "source": "computed backgroundColor of hero-cta default (raw/components-computed.json)",
+        "value": [
+          {
+            "color": "#adadad",
+            "position": 0.2
+          },
+          {
+            "color": "#cacaca",
+            "position": 0.8
+          }
+        ],
+        "type": "gradient",
+        "angle": "0deg",
+        "source": "computed backgroundImage of hero-cta default (linear-gradient(to top, rgb(173, 173, 173) 20%, rgb(202, 202, 202) 80%)); its backgroundColor reads transparent (raw/components-computed.json)",
         "description": "The hero CTA fill (button-primary in the marketing demo style)."
       },
       "heroCtaInk": {
@@ -1416,9 +1420,19 @@
         "description": "The hero CTA text."
       },
       "googleFill": {
-        "value": "rgba(0, 0, 0, 0)",
-        "type": "color",
-        "source": "computed backgroundColor of login-google default (raw/components-computed.json)",
+        "value": [
+          {
+            "color": "#adadad",
+            "position": 0.2
+          },
+          {
+            "color": "#cacaca",
+            "position": 0.8
+          }
+        ],
+        "type": "gradient",
+        "angle": "0deg",
+        "source": "computed backgroundImage of login-google default (linear-gradient(to top, rgb(173, 173, 173) 20%, rgb(202, 202, 202) 80%)); its backgroundColor reads transparent (raw/components-computed.json)",
         "description": "The 'Continue with Google' button fill on the login card."
       },
       "googleInk": {
@@ -1434,9 +1448,19 @@
         "description": "The billing switch track fill when on."
       },
       "planCtaFill": {
-        "value": "rgba(0, 0, 0, 0)",
-        "type": "color",
-        "source": "computed backgroundColor of plan-cta default (raw/components-computed.json)",
+        "value": [
+          {
+            "color": "#adadad",
+            "position": 0.2
+          },
+          {
+            "color": "#cacaca",
+            "position": 0.8
+          }
+        ],
+        "type": "gradient",
+        "angle": "0deg",
+        "source": "computed backgroundImage of plan-cta default (linear-gradient(to top, rgb(173, 173, 173) 20%, rgb(202, 202, 202) 80%)); its backgroundColor reads transparent (raw/components-computed.json)",
         "description": "The 'Get Started' plan button fill."
       },
       "planCtaInk": {
@@ -1454,9 +1478,9 @@
     },
     "border": {
       "focusRing": {
-        "value": "{control.fg.default}",
+        "value": "{focus.ring}",
         "type": "color",
-        "source": "computed outlineColor of nav-cta focus-visible (raw/components-computed.json); matches declared control.fg.default",
+        "source": "computed boxShadow ring of nav-cta focus-visible (2px spread; the outline is none 0px) (raw/components-computed.json); matches declared focus.ring",
         "description": "The keyboard focus ring colour on the header CTA."
       }
     },

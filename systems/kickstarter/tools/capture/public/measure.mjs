@@ -17,7 +17,7 @@ const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { _meta: {}, components: {} };
 out._meta ??= {};
 out.components ??= {};
-const RUN = '2026-11-18';
+const RUN = new Date().toLocaleDateString('en-CA');   // the local run date
 
 const browser = await launchBrowser();
 let page, cdp, context, current;
@@ -75,8 +75,11 @@ async function shot(loc, key, state) {
 }
 
 async function S(key, loc, states, meta) {
+  // fillText is an option for the filled state, not part of the component record.
+  const { fillText = 'name@example.com', ...record } = meta || {};
   const c = out.components[key] ??= { states: {} };
-  Object.assign(c, { page: current, run: RUN, url: page.url().split('?')[0], ...meta });
+  Object.assign(c, { page: current, run: RUN, url: page.url().split('?')[0], ...record });
+  delete c.fillText;
   c.states ??= {};
   const target = loc.first();
   if (!(await target.count())) {
@@ -105,14 +108,14 @@ async function S(key, loc, states, meta) {
         via = 'clicked into the field, nothing submitted';
       } else if (st === 'filled') {
         await target.click({ timeout: 4000 }).catch(() => target.evaluate((el) => el.focus()));
-        await page.keyboard.type('name@example.com', { delay: 8 });
+        await page.keyboard.type(fillText, { delay: 8 });
         await page.waitForTimeout(200);
         undo = async () => {
           await target.focus();
           await page.keyboard.press('Meta+a').catch(() => {});
           await page.keyboard.press('Backspace');
         };
-        via = 'typed name@example.com, then deleted; nothing sent';
+        via = `typed ${fillText}, then deleted; nothing sent`;
       }
       const s = await styleOf(target);
       const cropPath = await shot(target, key, st);
@@ -120,7 +123,11 @@ async function S(key, loc, states, meta) {
       delete c.missing;
       log('  ', key, st, `${s.rect.w}x${s.rect.h}`, s.style?.backgroundColor, s.style?.color);
     } catch (e) {
-      c.states[st] = { error: String(e.message || e).slice(0, 180) };
+      // A failed re-measure keeps the earlier reading and notes the error, so a rerun never
+      // replaces a good state with an error.
+      const err = String(e.message || e).slice(0, 180);
+      const prev = c.states[st];
+      c.states[st] = prev && !prev.error ? { ...prev, recaptureError: err, recaptureRun: RUN } : { error: err };
       log('  !', key, st, String(e.message).slice(0, 100));
     }
     if (undo) await undo().catch(() => {});

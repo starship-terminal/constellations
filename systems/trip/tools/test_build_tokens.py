@@ -29,9 +29,27 @@ class BuildTokens(unittest.TestCase):
         self.assertIn("Trip Geom", body["fontFamily"])
 
     def test_written_file_matches_builder(self):
-        written = json.loads((HERE / "tokens.json").read_text())
-        self.assertEqual(written["light"]["color"]["bg-brand"]["$value"], "{core.color.blue6}")
-        self.assertIn("search-card", written["light"]["shadow"])
+        # The whole committed file, built in memory.
+        self.assertEqual(json.loads((HERE / "tokens.json").read_text()), build_tokens.build())
+
+    def test_colours_are_hex(self):
+        import re
+
+        def walk(node):
+            if isinstance(node, dict) and "$value" in node:
+                yield node
+            elif isinstance(node, dict):
+                for k, v in node.items():
+                    if not k.startswith("$"):
+                        yield from walk(v)
+        for token in walk(build_tokens.build()):
+            if token["$type"] == "color" and not token["$value"].startswith("{"):
+                self.assertRegex(token["$value"], r"^#[0-9a-f]{6}([0-9a-f]{2})?$")
+        self.assertEqual(build_tokens.to_hex("hsla(0,0%,100%,0.96)"), "#fffffff5")
+
+    def test_search_card_shadow_is_the_computed_colour(self):
+        shadow = build_tokens.build()["light"]["shadow"]["search-card"]
+        self.assertTrue(shadow["$value"].startswith("0px 0px 4px 0px rgba(7, 20, 60, 0.16)"))
 
 
 if __name__ == "__main__":

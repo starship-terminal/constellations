@@ -16,9 +16,15 @@ const CACHE = path.join(os.homedir(), '.design-systems', 'kickstarter', 'css');
 
 function loadCss() {
   const dir = fs.existsSync(CACHE) ? CACHE : path.join(os.homedir(), '.design-systems', 'kickstarter', 'probe', 'css');
-  const hits = fs.readdirSync(dir).filter((n) => n.includes('atomic'));
+  // The sheet vars.mjs recorded in raw/css-vars.json (cssFile) wins; otherwise the cached atomic
+  // sheets are sorted so the pick does not depend on directory order.
+  const recorded = (() => { try { return JSON.parse(fs.readFileSync(path.join(REF, 'raw', 'css-vars.json'), 'utf8')).cssFile; } catch { return null; } })();
+  const hits = fs.readdirSync(dir).filter((n) => n.includes('atomic')).sort();
   if (!hits.length) throw new Error('no atomic css in ' + dir);
-  return fs.readFileSync(path.join(dir, hits[0]), 'utf8').replace(/^\/\* https?:\/\/[^\n]*\n/, '');
+  const known = recorded && hits.includes(path.basename(recorded));
+  const name = known ? path.basename(recorded) : hits[0];
+  if (!known && hits.length > 1) console.log('several atomic sheets cached and none is the recorded one; reading', name);
+  return fs.readFileSync(path.join(dir, name), 'utf8').replace(/^\/\* https?:\/\/[^\n]*\n/, '');
 }
 
 const css = loadCss();
@@ -97,7 +103,7 @@ for (const route of pages) {
 }
 const out = {
   product: 'kickstarter',
-  read: '2026-11-18',
+  read: new Date().toLocaleDateString('en-CA'),
   source: 'headed Chrome, atomic stylesheet parsed in a constructed sheet, computed motion on the live DOM',
   pages: records,
   verdict: 'partial',

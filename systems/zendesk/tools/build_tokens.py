@@ -150,7 +150,8 @@ light = {
         "on-hero-body": color("#ffffff", "hero lede rgb(255, 255, 255), " + S_HOME),
         "inverse": color("#ffffff", "badge text and hero-submit text, " + S_PRICE),
         "muted": color("#11110db6", "rgba(17, 17, 13, 0.714) on secondary copy, colour frequency on the homepage, " + S_HOME),
-        "link": color("#70a32a", "pricing headline accent span rgb(112, 163, 42), " + S_PRICE),
+        "link": color("#11110d", "the Sign in to Chat product link, computed color rgb(17, 17, 13) "
+                      "(raw/components-computed.json controls.login.productLink), " + S_LOGIN),
     },
     "border": {
         "default": color("#d5d5d2", "email inset ring rgb(213, 213, 210), " + S_HOME),
@@ -207,6 +208,14 @@ doc = {
     "$themes": themes,
 }
 
-out = HERE / "tokens.json"
-out.write_text(json.dumps(doc, indent=2) + "\n")
-print("wrote", out, "bytes", out.stat().st_size)
+
+
+def render():
+    """tokens.json's exact text; importing this module writes nothing."""
+    return json.dumps(doc, indent=2) + "\n"
+
+
+if __name__ == "__main__":
+    out = HERE / "tokens.json"
+    out.write_text(render())
+    print("wrote", out, "bytes", out.stat().st_size)

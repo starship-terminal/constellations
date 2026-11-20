@@ -6,6 +6,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 J = json.loads((ROOT / "raw" / "components-computed.json").read_text())
 C = J.get("components", {})
+def cell(text):
+    """A table cell: a pipe would split it and a newline would end the row."""
+    return " ".join(str(text).split()).replace("|", "\\|")
+
+
 lines = ["# Mapbox components", "", "Measured on the public signed-out site. A missing row was not on the page.", ""]
 for key in sorted(C):
     c = C[key]
@@ -20,15 +25,20 @@ for key in sorted(C):
     lines.append("| State | Size | Background | Text | Via |")
     lines.append("|---|---|---|---|---|")
     for state, s in (c.get("states") or {}).items():
+        if s.get("via") == "focus failed":
+            # D4: keyboard focus never reached the element, so the reading is the element at rest. It
+            # is listed as not captured rather than shown as the focus state, as the kit does.
+            lines.append(f"| {cell(state)} |  |  |  | not captured: keyboard focus did not reach the element |")
+            continue
         if s.get("error") and "style" not in s:
-            lines.append(f"| {state} |  |  |  | {s['error'][:80]} |")
+            lines.append(f"| {cell(state)} |  |  |  | {cell(s['error'][:80])} |")
             continue
         style = s.get("style") or {}
         rect = s.get("rect") or {}
         size = f"{rect.get('w', '')} x {rect.get('h', '')}"
         bg = style.get("backgroundColor", "")
         color = style.get("color", "")
-        via = (s.get("via") or "").replace("|", "/")
+        via = cell(s.get("via") or "")
         crop = s.get("crop")
         name = f"[{state}]({crop})" if crop else state
         lines.append(f"| {name} | {size} | {bg} | {color} | {via} |")

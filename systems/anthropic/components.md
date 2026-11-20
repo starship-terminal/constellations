@@ -113,12 +113,12 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Feature card](#feature-card) | 1440 x 810 | - | 10px | #f5f4ed `gray.100` | none | 224px 0px |
+| [Feature card](#feature-card) | 1440 x 810 | - | - | #f5f4ed `gray.100` | none | 224px 0px |
 | [News card](#news-card) | 632 x 104.17 | - | - | transparent | none | 0 |
 | [Product card](#product-card) | 480 x 270 | 1px solid #e8e6dc `gray.200` | 19px | #f0eee6 `gray.150` | none | 0 |
 | [Plan card](#plan-card) | 420 x 375.2 | 1px solid #f0eee6 `gray.150` | 24px | #ffffff `gray.000` | none | 40px 32px 48px 32px |
 | [Search dialog](#search-dialog) | 672 x 500 | - | 12px | #ffffff `gray.000` | rgba(11, 11, 11, 0.1) 0px 0px 0px 0px inset, rgba(11, 11, 11, 0.1) 0px 0px 0px 1px, rgba(11, 11, 11, 0.08) 0px 4px 8px 0px, rgba(11, 11, 11, 0.08) 0px 12px 28px -2px | 0 |
-| [Mobile nav sheet](#mobile-nav-sheet) | 390 x 844 | - | 8px | #141413 `gray.950` | none | 0 |
+| [Mobile nav sheet](#mobile-nav-sheet) | 390 x 844 | - | - | #141413 `gray.950` | none | 0 |
 
 ## Components
 

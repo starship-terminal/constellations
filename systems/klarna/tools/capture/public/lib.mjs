@@ -28,9 +28,7 @@ export async function launch({ width = 1440, height = 900, mobile = false, dpr =
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: dpr, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: dpr, userAgent: UA, locale: 'en-US' });
-  await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
-  });
+  // navigator.webdriver is left as the browser reports it: automation is not hidden (2026-11 audit).
   return { browser, context };
 }
 

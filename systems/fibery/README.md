@@ -113,6 +113,7 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 - **The dark theme.** The login page's "Did you know?" hint advertises a dark/system theme for the app; it paints nowhere on the public surface, so there is deliberately no `dark` token set.
 - **`undefined` variables.** `--fibery-page-secondary-color` and `--fibery-text-selection-color` are declared as the literal string `undefined` in the served CSS; preserved as evidence, unusable as values.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw values, never the pixels.
+- **Unpainted fills are not tokens.** The login Google button computes a transparent `backgroundColor`, so `light.background.oauthFill` was dropped in the 2026-11 audit.
 
 ## Fonts
 
@@ -157,3 +158,7 @@ python3 tools/build_style_guide.py                                              
 python3 tools/build_components_md.py                                                       # -> components.md
 make -C ../.. design-md grade check                                                        # repo-level: DESIGN.md, health, validation
 ```
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

@@ -98,6 +98,8 @@ The signed-in pass used an email code on 2026-11-20. The account name in the cop
 - **Get Luma Plus is checkout.** It links to `/calendar/manage/plus`. That page was never opened.
 - **Discover is localized.** Popular events follow the capture egress. Treat those titles as sample content.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs. Read exact colours from tokens or the raw files.
+- **The modal shadow's last layer is inset.** `core.shadow.modal` keeps the `0px -4px 4px` top edge as `inset: true`. Before the 2026-11 audit it was written as an outer drop shadow.
+- **Automation was masked.** The committed public readings and screenshots were taken with `navigator.webdriver` hidden by `tools/capture/public/lib.mjs`. The mask has been removed from the script (2026-11 audit); a bot check is now a boundary, not something to get past.
 - **The map is imagery.** The event page embeds a map of a public venue (Brooklyn Bridge Park). Street names in that image are the map, not a measured address.
 
 ## Fonts

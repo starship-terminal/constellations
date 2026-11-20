@@ -93,6 +93,7 @@ A Shopify customer account for the capture inbox was created at `account.hellokl
 - **Market and currency drift.** Most shots are the international market with Singapore dollars and "Free Shipping Over $150". The desktop menu shot landed on United Kingdom GBP and "Free Shipping Over £35". Do not treat one announcement string as the brand constant.
 - **The opened FAQ answer is below the fold.** [faq-light-open](screenshots/faq-light-open.png) shows a minus on "What is hard water?" and does not show the answer copy.
 - **The subscription page is a marketing page.** [subscription-light-default](screenshots/subscription-light-default.png) is the storefront subscription story, with a sticky "Start now" pill over the quote. It is not the Skio account.
+- **Some type values were entered by hand.** The heading-2, heading-3, heading-4 and body line heights, the heading-4 weight and `light.text.muted` `#6e6e73` have no raw reading behind them; their sources say Reconstruction. heading-1's line height (1.1) is measured on the hero title, and the button's weight 400 and 14 px line on `hero-cta` (the cart's Continue Shopping pill, a storefront pill at the declared 14 px).
 - **Focus rings are not an authored token.** `light.focus.ring` aliases ink because no focus custom property exists. The focus-visible crops record whatever the browser painted.
 - **Quantised screenshots.** Read exact colours from [tokens.json](tokens.json) or [raw/css-vars.json](raw/css-vars.json).
 - **Account chrome is Shopify's.** Body type on `account.helloklean.com` computed as Times, main as system UI at 14 px, on a white page. Those readings are not storefront tokens.
@@ -187,3 +188,7 @@ python3 tools/build_style_guide.py
 ```
 
 `tokens.json`, `components.md` and `style-guide.html` are outputs of `raw/` and the template. Edit the inputs or the builders, not those outputs.
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

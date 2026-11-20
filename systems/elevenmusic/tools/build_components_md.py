@@ -456,6 +456,12 @@ for k in ["feature-card", "track-card", "genre-card", "demo-card", "plan-card", 
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
+# Entries read while an earlier entry had left their node open (the README's
+# What to distrust lists them): the default reading is of the open item.
+READ_OPEN = {
+    "faq-answer": "faq-item's `expanded` reading opened this row and left it open, so this default reading (152px tall, against the 68px closed row) is of the open item. tools/capture/public/measure.mjs now closes it after the reading.",
+}
+
 # ------------------------------------------------ entries
 W("## Components")
 groups = [g for g in GROUP_INTRO if any(c.get("group") == g for c in C.values())]
@@ -481,6 +487,9 @@ for g in groups:
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
+        if k in READ_OPEN:
+            W(f"**Read in the wrong state.** {READ_OPEN[k]} The entry needs a recapture.")
+            W()
         failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
         rows, states = state_rows(c)
         if len(states) == 1 and rows:

@@ -39,13 +39,15 @@ DECL = {n: v.get("value", v["raw"]) for n, v in V["resolved"]["dark"].items()}
 
 def norm_color(v):
     """#rgb, #rrggbb, #rrggbbaa, rgb(), rgba(), hsla() -> #rrggbb or rgba(r, g, b, a).
-    Tailwind v3 declares 'rgb(28 22 36/var(--tw-bg-opacity,1))' — fold the var
-    opacity (always 1 in the declarations) into an opaque rgb()."""
+    Tailwind v3 declares 'rgb(28 22 36/var(--tw-bg-opacity,1))' — fold the var's
+    fallback opacity in (1 in every declaration today), never assume opaque."""
     v = v.strip().lower()
-    v = re.sub(r"/var\(--tw-[a-z-]*-opacity,[^)]*\)", "", v)  # rgb(r g b/var(--tw-x-opacity,1)) -> rgb(r g b)
-    m = re.fullmatch(r"rgb\(\s*(\d+)\s+(\d+)\s+(\d+)\s*\)", v)
+    v = re.sub(r"\s*/\s*var\(--tw-[a-z-]*-opacity,\s*([\d.]+%?)\)", r" / \1", v)
+    m = re.fullmatch(r"rgb\(\s*(\d+)\s+(\d+)\s+(\d+)\s*(?:/\s*([\d.]+%?))?\s*\)", v)
     if m:
-        return "#%02x%02x%02x" % (int(m.group(1)), int(m.group(2)), int(m.group(3)))
+        r, g, b, a = int(m.group(1)), int(m.group(2)), int(m.group(3)), m.group(4)
+        a = 1.0 if a is None else (float(a[:-1]) / 100 if a.endswith("%") else float(a))
+        return "#%02x%02x%02x" % (r, g, b) if a >= 1 else "rgba(%d, %d, %d, %g)" % (r, g, b, a)
     m = re.fullmatch(r"#([0-9a-f]{3,8})", v)
     if m:
         h = m.group(1)

@@ -198,6 +198,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **`radar-search` does not exist.** The /radar page has no search input on the public surface; recorded missing.
 - **Field fills are translucent.** Contact fields paint `rgba(229,229,229,.5)`-family fills, so the same token reads differently over different grounds — copy the alpha, not a flattened hex.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; gradients band. Read exact colours from tokens or the raw files.
+- **`composer-send` read the wrong control.** Its four states are the composer's "Add to prompt" attach button (36px icon button), not the send control; recapture needed. `component.icon-button.size` cites `m-menu-button` instead.
 - **A few readings predate the selector fixes.** Where a component moved during capture, the surviving evidence is the earlier, sometimes larger, painted ancestor — noted on the entry rather than silently wrong.
 
 ### Do and don't (from README.md)

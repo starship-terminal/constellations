@@ -24,7 +24,7 @@ colors:
   border-subtle: "#212629"
   status-forgeGreen: "#44ffa4"
   status-forgeRed: "#fe4e54"
-  component-button-bg: "#ffffff"
+  component-button-bg: "#fdfdfd0d"
   component-button-text: "#ffffff"
   component-field-text: "#ffffff"
 typography:

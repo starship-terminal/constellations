@@ -82,14 +82,30 @@ def _lab_okl(c):
             return "#%02x%02x%02x" % (r, g, b)
         al = float(a[:-1]) / 100 if a.endswith("%") else float(a)
         return "#%02x%02x%02x" % (r, g, b) if al == 1 else "rgba(%d, %d, %d, %g)" % (r, g, b, al)
-    # achromatic oklch()/oklab(): L 0 is black, L 1 is white. Chromium's
-    # computed a/b can be signed or `none`; the tiny chroma these shadows
-    # carry is within a rounding step of the grey L gives.
-    m = re.fullmatch(r"okl(?:ch|ab)\(\s*([\d.]+)\s+(?:none|-?[\d.]+)\s+(?:none|-?[\d.]+)\s*(?:/\s*([\d.]+%?))?\s*\)", c.strip())
+    # oklab()/oklch() as Chromium computes them: the full OKLab -> linear
+    # sRGB conversion, so a chromatic value keeps its hue and a grey keeps its
+    # true lightness (L 0.221 is #1b1b1b, not L x 255).
+    m = re.fullmatch(r"okl(ch|ab)\(\s*([\d.]+%?)\s+(none|-?[\d.]+%?)\s+(none|-?[\d.]+(?:deg)?)\s*(?:/\s*([\d.]+%?))?\s*\)", c.strip())
     if m:
-        lvl = round(float(m.group(1)) * 255)
-        a = float(m.group(2) or 1)
-        return "#%02x%02x%02x" % (lvl, lvl, lvl) if a == 1 else "rgba(%d, %d, %d, %g)" % (lvl, lvl, lvl, a)
+        import math
+        kind, L, x, y, a = m.groups()
+        L = float(L[:-1]) / 100 if L.endswith("%") else float(L)
+        num = lambda v, scale: 0.0 if v == "none" else (float(v[:-1]) / 100 * scale if v.endswith("%") else float(v.replace("deg", "")))
+        if kind == "ch":
+            C_, h = num(x, 0.4), num(y, 1)
+            A, B = C_ * math.cos(math.radians(h)), C_ * math.sin(math.radians(h))
+        else:
+            A, B = num(x, 0.4), num(y, 0.4)
+        l_ = (L + 0.3963377774 * A + 0.2158037573 * B) ** 3
+        m_ = (L - 0.1055613458 * A - 0.0638541728 * B) ** 3
+        s_ = (L - 0.0894841775 * A - 1.2914855480 * B) ** 3
+        lin = (4.0767416621 * l_ - 3.3077115913 * m_ + 0.2309699292 * s_,
+               -1.2684380046 * l_ + 2.6097574011 * m_ - 0.3413193965 * s_,
+               -0.0041960863 * l_ - 0.7034186147 * m_ + 1.7076147010 * s_)
+        gam = lambda v: 12.92 * v if v <= 0.0031308 else 1.055 * v ** (1 / 2.4) - 0.055
+        r, g, b = (max(0, min(255, round(gam(max(0.0, v)) * 255))) for v in lin)
+        al = 1 if a is None else (float(a[:-1]) / 100 if a.endswith("%") else float(a))
+        return "#%02x%02x%02x" % (r, g, b) if al == 1 else "rgba(%d, %d, %d, %g)" % (r, g, b, al)
     return c
 
 

@@ -68,22 +68,23 @@ Page: home. Selector: `dopper-navigation button Bottle`. States: default, hover,
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 64.16 x 20.8 | = | = | - |
-| Padding | 0px | = | = | - |
-| Gap | 12px | = | = | - |
-| Border | none | = | = | - |
-| Radius | 0px | = | = | - |
-| Background | transparent | = | = | - |
-| Box shadow | none | = | = | - |
-| Outline | none | = | = | - |
-| Font | Gilroy 16px/20.8px 700 | = | = | - |
-| Letter spacing | normal | = | = | - |
-| Colour | #000f2e | #0067e5 | = | - |
-| Text node | span: Gilroy 16px/20.8px 700, #000f2e | span: Gilroy 16px/20.8px 700, #0067e5 | = | - |
-| Transition | color 0.3s ease | = | = | - |
-| Icon | 12 x 8, colour #000f2e | 12.9 x 9.43, colour #0067e5 | 13.97 x 11.52, colour #000f2e | - |
-| How | at rest | mouse hover | focus failed | - |
+| Size (w x h) | 64.16 x 20.8 | = | - | - |
+| Padding | 0px | = | - | - |
+| Gap | 12px | = | - | - |
+| Border | none | = | - | - |
+| Radius | 0px | = | - | - |
+| Background | transparent | = | - | - |
+| Box shadow | none | = | - | - |
+| Outline | none | = | - | - |
+| Font | Gilroy 16px/20.8px 700 | = | - | - |
+| Letter spacing | normal | = | - | - |
+| Colour | #000f2e | #0067e5 | - | - |
+| Text node | span: Gilroy 16px/20.8px 700, #000f2e | span: Gilroy 16px/20.8px 700, #0067e5 | - | - |
+| Transition | color 0.3s ease | = | - | - |
+| Icon | 12 x 8, colour #000f2e | 12.9 x 9.43, colour #0067e5 | - | - |
+| How | at rest | mouse hover | - | - |
 | Cursor | - | pointer | = | = |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Error | - | = | = | cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id |
 
 Crops: `nav-trigger-default.png`, `nav-trigger-hover.png`, `nav-trigger-focus-visible.png`.
@@ -96,22 +97,22 @@ Page: home. Selector: `dopper-navigation a Impact report`. States: default, hove
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 101.91 x 20.8 | = | = | - |
-| Padding | 0px | = | = | - |
-| Gap | 12px | = | = | - |
-| Border | none | = | = | - |
-| Radius | 0px | = | = | - |
-| Background | transparent | = | = | - |
-| Box shadow | none | = | = | - |
-| Outline | none | = | 1px auto #005fcc offset 1px | - |
-| Font | Gilroy 16px/20.8px 500 | = | = | - |
-| Letter spacing | normal | = | = | - |
-| Colour | #000f2e | #0067e5 | = | - |
-| Text node | span: Gilroy 16px/20.8px 500, #000f2e | span: Gilroy 16px/20.8px 500, #0067e5 | = | - |
-| Transition | color 0.3s ease | = | = | - |
-| Cursor | pointer | = | = | - |
-| How | at rest | mouse hover | el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus) | - |
-| Painted layers | - | = | a.nav-link.light 101.9x20.8 outline 1px auto #005fcc offset 1px | = |
+| Size (w x h) | 101.91 x 20.8 | = | - | - |
+| Padding | 0px | = | - | - |
+| Gap | 12px | = | - | - |
+| Border | none | = | - | - |
+| Radius | 0px | = | - | - |
+| Background | transparent | = | - | - |
+| Box shadow | none | = | - | - |
+| Outline | none | = | - | - |
+| Font | Gilroy 16px/20.8px 500 | = | - | - |
+| Letter spacing | normal | = | - | - |
+| Colour | #000f2e | #0067e5 | - | - |
+| Text node | span: Gilroy 16px/20.8px 500, #000f2e | span: Gilroy 16px/20.8px 500, #0067e5 | - | - |
+| Transition | color 0.3s ease | = | - | - |
+| Cursor | pointer | = | - | - |
+| How | at rest | mouse hover | - | - |
+| Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 | Error | - | = | = | cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id |
 
 Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-focus-visible.png`.
@@ -1261,21 +1262,21 @@ Page: mobile. Selector: `burger`. States: default, hover, focus-visible, pressed
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 45 x 45 | = | = | - |
-| Padding | 15px | = | = | - |
-| Border | none | = | = | - |
-| Radius | 0px | = | = | - |
-| Background | transparent | = | = | - |
-| Box shadow | none | = | = | - |
-| Outline | none | = | 1px auto #005fcc offset 0px | - |
-| Font | Arial 13.3333px/normal 400 | = | = | - |
-| Letter spacing | normal | = | = | - |
-| Colour | #000000 | = | = | - |
-| Transition | none | = | = | - |
-| Cursor | default | = | = | - |
-| Icon | 51 x 51, colour #000000 | = | = | - |
-| How | at rest | mouse hover | el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus) | - |
-| Painted layers | - | = | button.menuToggle 45.0x45.0 outline 1px auto #005fcc offset 0px | = |
+| Size (w x h) | 45 x 45 | = | - | - |
+| Padding | 15px | = | - | - |
+| Border | none | = | - | - |
+| Radius | 0px | = | - | - |
+| Background | transparent | = | - | - |
+| Box shadow | none | = | - | - |
+| Outline | none | = | - | - |
+| Font | Arial 13.3333px/normal 400 | = | - | - |
+| Letter spacing | normal | = | - | - |
+| Colour | #000000 | = | - | - |
+| Transition | none | = | - | - |
+| Cursor | default | = | - | - |
+| Icon | 51 x 51, colour #000000 | = | - | - |
+| How | at rest | mouse hover | - | - |
+| Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 | Error | - | = | = | cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id |
 
 Crops: `m-burger-default.png`, `m-burger-hover.png`, `m-burger-focus-visible.png`.
@@ -1338,22 +1339,23 @@ Page: mobile. Selector: `mobile menu row`. States: default, hover, focus-visible
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 120.81 x 37.41 | = | = | - |
-| Padding | 0px | = | = | - |
-| Gap | 15px | = | = | - |
-| Border | none | = | = | - |
-| Radius | 0px | = | = | - |
-| Background | transparent | = | = | - |
-| Box shadow | none | = | = | - |
-| Outline | none | = | = | - |
-| Font | Gilroy 34px/37.4px 700 | = | = | - |
-| Letter spacing | normal | = | = | - |
-| Colour | #fcfaf2 | = | = | - |
-| Transition | opacity, transform 0.3s, 0.7s ease, ease delay 0.3s | = | = | - |
-| Transform | matrix(1, 0, 0, 1, 0, 0) | = | = | - |
-| Cursor | pointer | = | = | - |
-| Icon | 12 x 8, colour #fcfaf2 | = | = | - |
-| How | at rest | mouse hover | focus failed | - |
+| Size (w x h) | 120.81 x 37.41 | = | - | - |
+| Padding | 0px | = | - | - |
+| Gap | 15px | = | - | - |
+| Border | none | = | - | - |
+| Radius | 0px | = | - | - |
+| Background | transparent | = | - | - |
+| Box shadow | none | = | - | - |
+| Outline | none | = | - | - |
+| Font | Gilroy 34px/37.4px 700 | = | - | - |
+| Letter spacing | normal | = | - | - |
+| Colour | #fcfaf2 | = | - | - |
+| Transition | opacity, transform 0.3s, 0.7s ease, ease delay 0.3s | = | - | - |
+| Transform | matrix(1, 0, 0, 1, 0, 0) | = | - | - |
+| Cursor | pointer | = | - | - |
+| Icon | 12 x 8, colour #fcfaf2 | = | - | - |
+| How | at rest | mouse hover | - | - |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 | Error | - | = | = | cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id |
 
 Crops: `m-nav-item-default.png`, `m-nav-item-hover.png`, `m-nav-item-focus-visible.png`.
@@ -1366,22 +1368,23 @@ Page: mobile. Selector: `menu outline pill`. States: default, hover, focus-visib
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 194.64 x 54 | = | = | - |
-| Padding | 14px 31px | = | = | - |
-| Gap | 12px | = | = | - |
-| Border | 2px solid #f6ecc8 | = | = | - |
-| Radius | 20px | = | = | - |
-| Background | transparent | = | = | - |
-| Box shadow | none | = | = | - |
-| Outline | none | = | 1px auto #005fcc offset 1px | - |
-| Font | Gilroy 20px/22px 700 | = | = | - |
-| Letter spacing | normal | = | = | - |
-| Colour | #f6ecc8 | = | = | - |
-| Transition | opacity, transform 0.4s, 0.7s ease, ease delay 0.4s | = | = | - |
-| Transform | matrix(1, 0, 0, 1, 0, 0) | = | = | - |
-| Cursor | pointer | = | = | - |
-| Painted layers | a.nav-link-mobile.secondary 194.6x54.0 border T:2px solid #f6ecc8 / R:2px solid #f6ecc8 / B:2px solid #f6ecc8 / L:2px solid #f6ecc8 r 20px | = | a.nav-link-mobile.secondary 194.6x54.0 border T:2px solid #f6ecc8 / R:2px solid #f6ecc8 / B:2px solid #f6ecc8 / L:2px solid #f6ecc8 r 20px outline 1px auto #005fcc offset 1px | - |
-| How | at rest | mouse hover | el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus) | - |
+| Size (w x h) | 194.64 x 54 | = | - | - |
+| Padding | 14px 31px | = | - | - |
+| Gap | 12px | = | - | - |
+| Border | 2px solid #f6ecc8 | = | - | - |
+| Radius | 20px | = | - | - |
+| Background | transparent | = | - | - |
+| Box shadow | none | = | - | - |
+| Outline | none | = | - | - |
+| Font | Gilroy 20px/22px 700 | = | - | - |
+| Letter spacing | normal | = | - | - |
+| Colour | #f6ecc8 | = | - | - |
+| Transition | opacity, transform 0.4s, 0.7s ease, ease delay 0.4s | = | - | - |
+| Transform | matrix(1, 0, 0, 1, 0, 0) | = | - | - |
+| Cursor | pointer | = | - | - |
+| Painted layers | a.nav-link-mobile.secondary 194.6x54.0 border T:2px solid #f6ecc8 / R:2px solid #f6ecc8 / B:2px solid #f6ecc8 / L:2px solid #f6ecc8 r 20px | = | - | - |
+| How | at rest | mouse hover | - | - |
+| Skipped | - | = | focus failed when captured; the via was later rewritten by hand, not re-measured | = |
 | Error | - | = | = | cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id |
 
 Crops: `m-menu-pill-default.png`, `m-menu-pill-hover.png`, `m-menu-pill-focus-visible.png`.

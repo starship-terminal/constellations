@@ -244,6 +244,7 @@ The home page is the screen to get right. An 80px frosted pill floats at top: th
 
 ### What to distrust (from README.md)
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **Screenshots are 256-colour PNGs.** Gradients and photography band slightly; read exact colours from tokens.json or the raw files.
 - **Focus rings are the browser's.** Where the site declares no `:focus-visible` style, the measured 1px `#005fcc` auto ring is headless Chromium's default, not a product choice.
 - **`pressed` is forced `:active`,** not a real mousedown; Framer's sheet paints links `#ff0000` under it.

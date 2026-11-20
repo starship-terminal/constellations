@@ -260,10 +260,14 @@ for literal, d in palette_items:
         f"literal in httpie.io's stylesheets (raw/css-vars.json palette, {d['count']} declarations; e.g. {uses})",
         "core", f"palette.{name}")
 
+TRANSPARENT = re.compile(r"transparent|rgba\(\s*[\d.]+[,\s]+[\d.]+[,\s]+[\d.]+\s*[,/]\s*0(\.0+)?%?\s*\)")
+
 # ------------------------------------------------- measured type scale
+# Required: a build without the measurements would silently drop every
+# measured token, so a missing file is an error.
 C_PATH = RAW / "components-computed.json"
-if C_PATH.exists():
-    C = json.loads(C_PATH.read_text()).get("components", {})
+if True:
+    C = json.loads(C_PATH.read_text())["components"]
 
     def geom(comp, state, field, path, label):
         st = C.get(comp, {}).get("states", {}).get(state, {})
@@ -327,16 +331,17 @@ if C_PATH.exists():
             "component", path, desc=desc)
 
     def theme_alias(comp, state, prop, path, role, label):
-        """A measured fill that lands on a declared semantic role: each theme
-        set gets the alias and resolves its own value."""
-        st = C.get(comp, {}).get("states", {}).get(state, {})
-        if (st.get("style") or {}).get(prop) is None:
-            return
-        leaf = {"type": "color", "value": "{" + role + "}",
-                "source": f"measured {comp} {state} on {C[comp].get('page')} ({label}) — the element's class paints the {role} role, so each theme resolves its own",
-                "description": label}
-        for t in ("light", "dark"):
-            emit_at(t, path, leaf)
+        """A measured fill that lands on a declared semantic role. Each theme
+        the element was measured under gets the alias: the default reading is
+        the dark site, a 'light' state the light one. A theme with no reading
+        gets no token."""
+        sts = C.get(comp, {}).get("states", {})
+        for t, s in (("dark", state), ("light", "light")):
+            if (sts.get(s, {}).get("style") or {}).get(prop) is None:
+                continue
+            emit_at(t, path, {"type": "color", "value": "{" + role + "}",
+                    "source": f"measured {comp} {s} on {C[comp].get('page')} ({label}) — the element's class paints the {role} role",
+                    "description": label})
 
     def measured_fill(comp, prop, path, label, note=None):
         """The component's painted fill recorded per theme from the
@@ -345,13 +350,12 @@ if C_PATH.exists():
         set gets the value measured under it ('light' state where the
         recording has one, else the default read)."""
         st = C.get(comp, {}).get("states", {})
-        dark_v = (st.get("default", {}).get("style") or {}).get(prop)
-        if dark_v is None:
-            return
-        light_st = st.get("light") or {}
-        light_v = (light_st.get("style") or {}).get(prop) or dark_v
-        for t, v, src_state in (("light", light_v, "light" if light_st else "default"),
-                                ("dark", dark_v, "default")):
+        for t, src_state in (("light", "light"), ("dark", "default")):
+            v = (st.get(src_state, {}).get("style") or {}).get(prop)
+            # a theme with no reading gets no token; a transparent reading is
+            # no fill (the page shows through) and is never committed
+            if v is None or TRANSPARENT.fullmatch(str(v).strip()):
+                continue
             leaf = {"type": "color", "value": norm_lit(v) or v,
                     "source": f"measured {comp} {src_state} on {C[comp].get('page')} ({label})" + (f" — {note}" if note else ""),
                     "description": label}
@@ -377,12 +381,8 @@ if C_PATH.exists():
     # — the app control paints var(--color-accent), so the alias stays; its
     # light state was not measured.
     theme_alias("app-send-button", "default", "backgroundColor", "component.sendButton.bg", "accent.default", "Send fill")
-    # Both paint transparent: the page's bg.z0 shows through, which the
-    # measured rgba(0,0,0,0) records honestly.
-    measured_fill("site-nav", "backgroundColor", "component.nav.bg", "nav bar fill",
-                  "transparent — the page's bg.z0 shows through")
-    measured_fill("app-sidebar", "backgroundColor", "component.appSidebar.bg", "app rail fill",
-                  "transparent — the page's bg.z0 shows through")
+    # site-nav and app-sidebar paint transparent in both themes (the page's
+    # bg.z0 shows through), so neither has a fill token.
     style_tok("nav-link", "hover", "color", "type.navLinkHover.color", "color", "nav link on hover")
     style_tok("post-title-link", "hover", "color", "type.linkHover.color", "color", "post title on hover")
     style_tok("prose-h1", "default", "fontSize", "type.articleTitle.size", "other", "article h1")
@@ -426,20 +426,26 @@ if C_PATH.exists():
     typ("newsletter-input", "typography.input", "the newsletter email field")
 
 # --------------------------------------------------------- font faces
-# The faces are proprietary and never shipped: names + role from the
-# @font-face harvest and the measured font stacks.
-lit('"Pie Headline", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif', "fontFamily",
-    "@font-face in httpie.io's sheets (raw/css-vars.json fonts): 'Pie Headline' is FK Screamer, a licensed face — the name is evidence, the font file is not shipped",
-    "core", "font.family.headline", desc="the display face — hero and section headlines")
-lit('"Pie Body", ui-sans-serif, system-ui, sans-serif', "fontFamily",
-    "@font-face in httpie.io's sheets (raw/css-vars.json fonts): 'Pie Body' is PolyPie, licensed — the name is evidence, the font file is not shipped",
-    "core", "font.family.body", desc="the body/UI face")
-lit('"Pie Monospace", ui-monospace, SFMono-Regular, Menlo, monospace', "fontFamily",
-    "@font-face in httpie.io's sheets (raw/css-vars.json fonts): 'Pie Monospace', licensed — the name is evidence, the font file is not shipped",
-    "core", "font.family.mono", desc="the code face — terminal blocks, the URL field, JSON")
+# The faces are proprietary and never shipped. Each stack is the computed
+# fontFamily of an element that paints it, verbatim; the @font-face harvest
+# (raw/css-vars.json fonts) names the faces.
+def measured_family(comp, path, face, desc):
+    st = C[comp]["states"]["default"]
+    v = (st.get("textStyle") or {}).get("fontFamily") or st["style"]["fontFamily"]
+    if face not in v:
+        raise ValueError(f"{comp}: computed fontFamily {v!r} does not name {face}")
+    lit(v, "fontFamily",
+        f"computed fontFamily of {comp} default on {C[comp].get('page')} (raw/components-computed.json); {face} is declared by @font-face in httpie.io's sheets, a licensed face (the name is evidence, the font file is not shipped)",
+        "core", path, desc=desc)
+
+
+measured_family("hero-headline", "font.family.headline", "Pie Headline", "the display face — hero and section headlines (FK Screamer)")
+measured_family("prose-p", "font.family.body", "Pie Body", "the body/UI face (PolyPie)")
+measured_family("cli-code-block", "font.family.mono", "Pie Monospace", "the code face — terminal blocks, the URL field, JSON")
 lit('"Pie Symbols"', "fontFamily",
     "@font-face in httpie.io's sheets (raw/css-vars.json fonts): 'Pie Symbols', licensed icon face — the name is evidence, the font file is not shipped",
     "core", "font.family.symbols", desc="the icon/symbol face")
 
-(RAW / "component-tokens.json").write_text(json.dumps(TREE, indent=1, ensure_ascii=False) + "\n")
-print({k: sum(1 for _ in json.dumps(v).split('"type"')) - 1 for k, v in TREE.items()})
+if __name__ == "__main__":
+    (RAW / "component-tokens.json").write_text(json.dumps(TREE, indent=1, ensure_ascii=False) + "\n")
+    print({k: sum(1 for _ in json.dumps(v).split('"type"')) - 1 for k, v in TREE.items()})

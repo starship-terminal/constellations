@@ -14,7 +14,7 @@ Cofounder is worth a capture because the site is a **Next.js/Tailwind v4 build t
 | [patterns.md](patterns.md) | How the components combine on each surface: the glass header and pill controls, the pixel-art hero, the #1a6fd1 tools band with its aria-pressed tabs, the whole-card plan anchors, the footer CTA card and the full-screen mobile menu |
 | [components/crops/](components/crops) | 87 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 28 `{page}-{theme}-{state}.png` captures, each with a `.capture.json` sidecar recording the actual browser width, scale and dimension check. Desktop 1440 x 900 at 1x, `-full` whole pages, `mobile-*` phone shots at 2x; the terms and mobile fulls exceed one GPU texture and are stitched from `.partN` tiles |
-| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — 227 rules, 116 app-scope variable names across the Tailwind theme/utilities/properties layers, and 30 @font-face records), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads), [full/](raw/full) the raw pre-quantization screenshots |
+| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — 227 rules, 116 app-scope variable names across the Tailwind theme/utilities/properties layers, and 30 @font-face records), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads). The full-colour pre-quantization shots are kept outside the repo |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
 
 ## Brief
@@ -97,6 +97,7 @@ Every number in [tokens.json](tokens.json) and [raw/measurements.md](raw/measure
 
 ## What is not here
 
+- **The tools-band tabs were read on moving targets; they need a recapture.** The band rotates its selected tab by itself and the capture re-found `aria-pressed` for each state, so `tool-tab` focus-visible is a different button (x = 595) from its default (x = 336.5), and `tool-tab-off` is that first button read again after it rotated off. The selected text (white) and unselected text (40% white) are real readings, but not of one control in two states. The capture now marks each button once (edited, not rerun).
 - **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
 - **The product.** Cofounder's OS — the agent workspace, integrations, settings and billing — lives behind app.cofounder.co sign-in; every CTA links there and was never followed, the login card was measured at rest and never submitted, and no checkout was entered. docs.cofounder.co (the docs/CLI surface) was not captured.
 - **Dark theme.** The site paints one light theme; the #1a6fd1 tools band and the pixel-art hero art are bands inside it, not a second theme.

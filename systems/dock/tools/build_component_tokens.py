@@ -106,8 +106,38 @@ def emit(root, name, leaf):
     node[last] = leaf
 
 
+# Eight header/footer focus-visible states were recorded `via: focus failed` by the run that wrote
+# them; their via was later rewritten by hand to this sentence (commit 492e65670), not re-measured.
+# They are treated as failed focus everywhere: never a token source, never counted as a ring.
+HAND_RELABELLED_FOCUS = "el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus)"
+
+
+def not_captured(v):
+    """A state whose reading is not what its name says: skipped, focus that never landed, or one
+    of the hand-relabelled focus states above."""
+    return (bool(v.get("skipped")) or v.get("via") in ("focus failed", HAND_RELABELLED_FOCUS)
+            or (v.get("focus") or {}).get("matches") is False)
+
+
 def st(comp, state):
-    return C[comp]["states"][state]["style"]
+    v = C[comp]["states"][state]
+    if not_captured(v):
+        raise KeyError(f"{comp} {state}: focus never confirmed (via {v.get('via')!r}); not a reading")
+    return v["style"]
+
+
+def missed(comp):
+    """A source note for a component a later run could not find (its states are an earlier run's)."""
+    d = C[comp].get("recaptureMissed")
+    return f"; the {d} run did not find {comp}, so these are its {C[comp].get('run')} states (recaptureMissed); recapture needed" if d else ""
+
+
+def reading(comp, state, prop):
+    """One measured colour, normalised; a missing or unconfirmed reading stops the build."""
+    v = st(comp, state).get(prop)
+    if not v:
+        raise KeyError(f"{comp} {state}: no {prop} reading")
+    return norm_color(v)
 
 
 def ts(comp, state, prop):
@@ -210,8 +240,6 @@ for key, comp, state, prop, desc in [
      "The #0060eb hover step every blue button takes."),
     ("blue-pressed", "nav-cta", "pressed", "backgroundColor",
      "The #005fe4 pressed step."),
-    ("blue-deep", "hero-lede", "default", "backgroundColor",
-     "The #002fa6 hero band the home page opens with; also the base of its oklch gradient."),
 ]:
     try:
         measured = norm_color(st(comp, state)[prop])
@@ -226,6 +254,11 @@ for key, comp, state, prop, desc in [
         brand[key] = leaf_
     except KeyError:
         pass
+# --color-blue-deep is declared; the component once cited for it (hero-lede) read the hero eyebrow
+# pill, not the lede (README: known wrong), so the token carries the declaration alone.
+brand["blue-deep"] = var("--color-blue-deep", "color",
+                         source="css-var --color-blue-deep resolved light (raw/css-vars.json)",
+                         description="The declared #002fa6 deep blue of the home hero; also the base of its oklch gradient.")
 # Declared marketing values: the auth royal blue, the selected-filter tint
 # and the illustration accents the --color-* layer names.
 for key, want, desc in [
@@ -261,14 +294,16 @@ for key, comp, state, prop, desc in [
     try:
         if prop == "ancestor-white":
             hit = next((a.get("bg") for a in C[comp]["states"][state].get("ancestors", []) if a.get("bg")), None)
-            v = norm_color(hit) if hit else "#ffffff"
+            if not hit:
+                raise ValueError(f"{comp} {state}: no painted ancestor; the white surface has no reading")
+            v = norm_color(hit)
         elif prop == "popular-col":
             hit = next((n.get("bg") for n in C[comp]["states"][state].get("paint", [])
                         if n.get("bg") and "popular" in (n.get("node") or "")), None)
             v = norm_color(hit) if hit else None
         elif prop == "hairline":
-            m = re.search(r"color\(srgb\s+[\d.]+\s+[\d.]+\s+[\d.]+\s*/\s*([\d.]+)\)\s+0px 0px 0px 0\.5px inset", st(comp, state).get("boxShadow") or "")
-            v = "rgba(18, 23, 34, %s)" % m.group(1) if m else None
+            m = re.search(r"(color\(srgb\s+[\d.]+\s+[\d.]+\s+[\d.]+\s*/\s*[\d.]+\))\s+0px 0px 0px 0\.5px inset", st(comp, state).get("boxShadow") or "")
+            v = norm_color(m.group(1)) if m else None
         else:
             v = norm_color(st(comp, state).get(prop, ""))
         if v:
@@ -305,14 +340,19 @@ for name, target, desc in [
     ("--action-primary-hover", "color.brand.blue-hover", "The #0060eb hover step."),
     ("--action-primary-pressed", "color.brand.blue-pressed", "The #005fe4 pressed step."),
     ("--action-auth", "color.brand.royal", "The auth app's #4058ff Chakra fill."),
-    ("--text-on-action", "#ffffff", "White labels on the blue fills."),
+    ("--text-on-action", ("nav-cta", "default", "color"), "White labels on the blue fills."),
     ("--state-hover", "color.neutral.wash-hover", "The ~#f8f8f9 control hover wash."),
     ("--state-pressed", "color.neutral.wash-pressed", "The ~#f2f2f3 control pressed wash."),
     ("--border", "color.neutral.border", "The #dedfe3 hairline."),
     ("--border-hairline", "color.neutral.hairline", "The inset 0.5px ring white controls carry instead of a border."),
-    ("--focus-ring", "rgba(18, 23, 34, 0.6)", "The 2px 60%-ink keyboard outline on light surfaces."),
+    ("--focus-ring", ("mcp-copy", "focus-visible", "outlineColor"), "The 2px 60%-ink keyboard outline on light surfaces."),
     ("--focus-ring-blue", "color.brand.blue", "The 2px #0068f9 keyboard outline on the pricing buttons."),
 ]:
+    if isinstance(target, tuple):
+        emit(light, name, {"value": reading(*target), "type": "color",
+                           "source": "computed {2} of {0} {1} (raw/components-computed.json)".format(*target),
+                           "description": desc})
+        continue
     parts = target.split(".")
     root_bag = parts[1] if len(parts) > 1 and parts[0] == "color" else None
     root_key = parts[-1]
@@ -320,33 +360,43 @@ for name, target, desc in [
     if bag and root_key in bag:
         emit(light, name, {"value": "{" + target + "}", "type": "color",
                            "source": ALIAS, "description": desc})
-    elif root_bag is None:
-        emit(light, name, {"value": target, "type": "color",
-                           "source": "computed outlineColor of nav-trigger / plan-cta focus-visible (raw/components-computed.json)",
-                           "description": desc})
 
 dark = SPEC["dark"]
 # The dark-painted islands on the light site: the #002fa6 hero band and the
 # auth signup's deep-blue testimonial pane. Ghost buttons paint white-alpha
 # fills and a 40% sky-blue inset ring.
+def shadow_colour(comp, state):
+    """The colour of a single-layer box-shadow reading."""
+    m = re.match(r"(color\(srgb[^)]*\)|rgba?\([^)]*\))", st(comp, state).get("boxShadow") or "")
+    if not m:
+        raise KeyError(f"{comp} {state}: no shadow colour reading")
+    return norm_color(m.group(1))
+
+
 for name, target, desc in [
-    ("--text-primary", "#ffffff", "White text on the deep-blue band (hero headline, ghost labels)."),
+    ("--text-primary", ("hero-title", "default", "color"), "White text on the deep-blue band (hero headline, ghost labels)."),
     ("--surface-band", "{color.brand.blue-deep}", "The #002fa6 hero band; the page-placeholder gradient runs to oklch(0.397 0.194 263.2)."),
-    ("--surface-pane", "#242d7d", "The auth signup's testimonial pane base (radial-gradient #242d7d -> #3542af, measured on auth.dock.us)."),
-    ("--action-ghost", "rgba(255, 255, 255, 0)", "Ghost buttons on the band start fully transparent (hero Request demo)."),
-    ("--action-ghost-hover", "rgba(255, 255, 255, 0.06)", "The 6% white fill a band ghost button takes on hover."),
-    ("--action-ghost-pressed", "rgba(255, 255, 255, 0.1)", "The 10% white fill on pressed."),
-    ("--border-ghost", "rgba(77, 181, 255, 0.4)", "The 0.5px inset sky ring ghost and primary buttons on the band carry (--color-sky at 40%)."),
+    ("--surface-pane", "#242d7d", "The auth signup's testimonial pane base (radial-gradient #242d7d -> #3542af)."),
+    ("--action-ghost", ("hero-demo", "default", "backgroundColor"), "Ghost buttons on the band start fully transparent (hero Request demo)."),
+    ("--action-ghost-hover", ("hero-demo", "hover", "backgroundColor"), "The 6% white fill a band ghost button takes on hover."),
+    ("--action-ghost-pressed", ("hero-demo", "pressed", "backgroundColor"), "The 10% white fill on pressed."),
+    ("--border-ghost", ("hero-demo", "default", "boxShadow"), "The 0.5px inset sky ring ghost and primary buttons on the band carry (--color-sky at 40%)."),
     ("--action-primary", "{color.brand.blue}", "The #0068f9 primary fill reads the same on the band."),
-    ("--text-on-action", "#ffffff", "White labels on the blue fill."),
-    ("--focus-ring", "rgba(18, 23, 34, 0.6)", "The same 2px 60%-ink keyboard outline paints over the band."),
+    ("--text-on-action", ("hero-cta", "default", "color"), "White labels on the blue fill."),
+    ("--focus-ring", ("hero-cta", "focus-visible", "outlineColor"), "The same 2px 60%-ink keyboard outline paints over the band."),
 ]:
-    if target.startswith("{"):
+    if isinstance(target, tuple):
+        v = shadow_colour(*target[:2]) if target[2] == "boxShadow" else reading(*target)
+        emit(dark, name, {"value": v, "type": "color",
+                          "source": "computed {2} of {0} {1} (raw/components-computed.json)".format(*target),
+                          "description": desc})
+    elif target.startswith("{"):
         emit(dark, name, {"value": target, "type": "color",
                           "source": ALIAS, "description": desc})
     else:
+        # No reading of auth.dock.us's signup pane is in raw/: the value was entered by hand.
         emit(dark, name, {"value": target, "type": "color",
-                          "source": "computed colors of hero-cta / hero-demo / hero-title states over the blue band, and the signup pane's radial-gradient measured on auth.dock.us (raw/components-computed.json)",
+                          "source": "Reconstruction: entered by hand at capture time from the auth signup pane's background; no reading in raw/ holds it",
                           "description": desc})
 
 # ------------------------------------------------------------- type scale
@@ -373,7 +423,7 @@ for key, comp, state, desc in [
     v = ts(comp, state, "fontSize")
     if v:
         type_scale[key] = {"type": "dimension", "value": v,
-                           "source": f"computed fontSize of {comp} {state} (raw/components-computed.json)",
+                           "source": f"computed fontSize of {comp} {state} (raw/components-computed.json)" + missed(comp),
                            "description": desc}
 
 leading = SPEC["core"].setdefault("font", {}).setdefault("lineHeight", {})
@@ -393,7 +443,7 @@ for key, comp, state, desc in [
     v = ts(comp, state, "lineHeight")
     if v:
         leading[key] = {"type": "dimension", "value": v,
-                        "source": f"computed lineHeight of {comp} {state} (raw/components-computed.json)",
+                        "source": f"computed lineHeight of {comp} {state} (raw/components-computed.json)" + missed(comp),
                         "description": desc}
 
 # ---------------------------------------------------------------- spacing
@@ -427,7 +477,7 @@ for key, comp, state, prop, desc in [
 ]:
     if have(comp, state, prop):
         radius[key] = {"value": st(comp, state)[prop], "type": "dimension",
-                       "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)",
+                       "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)" + missed(comp),
                        "description": desc}
 for key, comp, want, desc in [
     ("menu-panel", "nav-dropdown", "19.1", "The ~19px radius the mega-menu viewport paints."),
@@ -463,7 +513,7 @@ for key, want, desc in [
 
 meas = SPEC["core"].setdefault("measured", {})
 for key, comp, state, prop, ty, desc in [
-    ("focus-ring", "nav-trigger", "focus-visible", "outlineColor", "color", "The 2px rgba(18,23,34,0.6) ink keyboard outline on light controls."),
+    ("focus-ring", "mcp-copy", "focus-visible", "outlineColor", "color", "The 2px rgba(18,23,34,0.6) ink keyboard outline on light controls."),
     ("focus-ring-blue", "plan-cta", "focus-visible", "outlineColor", "color", "The 2px #0068f9 keyboard outline on pricing buttons."),
     ("focus-ring-on-blue", "hero-cta", "focus-visible", "outlineColor", "color", "The keyboard outline over the blue band."),
     ("ring-on-blue", "hero-cta", "default", "boxShadow", "shadow", "The 0.5px inset rgba(77,181,255,0.4) sky ring primary buttons paint on the band."),
@@ -557,7 +607,7 @@ for key, cname, state, prop, desc in [
         for p in parts[:-1]:
             node = node.setdefault(p, {})
         node[parts[-1]] = {"type": "dimension", "value": st(cname, state)[prop],
-                           "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)",
+                           "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)" + missed(cname),
                            "description": desc}
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1, ensure_ascii=False) + "\n")

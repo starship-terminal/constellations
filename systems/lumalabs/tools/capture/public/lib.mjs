@@ -32,7 +32,7 @@ export const M = (name) => `[class*="${name}"]`;
 
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // Automation is not hidden: no navigator.webdriver mask (bot check: recorded as a boundary, not bypassed).
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }
@@ -83,11 +83,15 @@ export async function closePromo(page) {
   return true;
 }
 
+// Returns false when a bot check never cleared: the caller records the route as blocked rather than
+// measuring the challenge page as the product. A navigation error is thrown, not swallowed.
 export async function open(page, url, { wait = 4000, promo = 'close' } = {}) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-  await clearChallenge(page);
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
+  const cleared = await clearChallenge(page);
+  if (!cleared) return false;
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
+  return true;
 }
 
 // A story's own URL (/atlas/session/<id>) belongs to the browser that opened it and redirects to /atlas

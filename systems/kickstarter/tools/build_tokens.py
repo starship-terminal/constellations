@@ -15,7 +15,37 @@ import re
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = json.loads((HERE / "raw" / "css-vars.json").read_text())
 RESOLVED = RAW["resolved"]["light"]
+COMP = json.loads((HERE / "raw" / "components-computed.json").read_text())["components"]
+MOTION = json.loads((HERE / "raw" / "motion.json").read_text())
 SRC = "css-var"
+# docs/EVIDENCE.md: a value typed into the builder with no reading in raw/ is a Reconstruction.
+HAND = "Reconstruction: entered by hand at capture time; no reading in raw/ holds it."
+# CSS easing keywords as the cubic-bezier() they are defined to be (CSS Easing Functions 1).
+KEYWORD_EASING = {"ease": [0.25, 0.1, 0.25, 1], "ease-in": [0.42, 0, 1, 1], "ease-out": [0, 0, 0.58, 1],
+                  "ease-in-out": [0.42, 0, 0.58, 1], "linear": [0, 0, 1, 1]}
+
+
+def reading(comp, state="default"):
+    """One state of a measured component in raw/components-computed.json; a missing one raises."""
+    return COMP[comp]["states"][state]
+
+
+def declared_transition(selector):
+    """The transition the atomic sheet declares on `selector`, as raw/motion.json recorded it."""
+    for page in MOTION["pages"].values():
+        for d in page["declared"]:
+            if d["selector"] == selector:
+                return d["transition"]
+    raise KeyError(f"{selector}: no declared transition in raw/motion.json")
+
+
+def first_declared_with(word):
+    """The first selector (by name) whose declared transition uses an easing keyword."""
+    hits = sorted({(d["selector"], d["transition"]) for page in MOTION["pages"].values()
+                   for d in page["declared"] if re.search(rf"(?<![\w-]){re.escape(word)}(?![\w-])", d["transition"])})
+    if not hits:
+        raise KeyError(f"no declared transition in raw/motion.json uses {word}")
+    return hits[0]
 
 
 def norm_color(v):
@@ -57,10 +87,39 @@ def dim_px(name, raw=None):
     return {"$type": "dimension", "$value": v, "$extensions": {"source": f"{SRC} {name}"}}
 
 
+def dim_ms(name):
+    v = str(RESOLVED.get(name) or declared(name)).strip()
+    m = re.fullmatch(r"([\d.]+)(m?s)", v)
+    if not m:
+        raise ValueError(f"{name}: not a duration: {v}")
+    return "%gms" % (float(m.group(1)) * (1 if m.group(2) == "ms" else 1000))
+
+
+def declared(name):
+    for d in RAW["declarations"]:
+        props = d.get("properties") or d.get("props") or {}
+        if name in props:
+            return props[name]
+    raise KeyError(f"{name}: not declared in raw/css-vars.json")
+
+
 def nest(tree, parts, leaf):
+    """Place a leaf at a path without nesting it inside another leaf.
+
+    --kds-color-x and --kds-color-x-y both split on "-", so the second would land
+    inside the first leaf, where tools/catalog.py's flatten (it stops at $value)
+    never sees it. When the walk reaches a leaf, the rest of the name stays joined
+    with "-" as a sibling key (x and x-y). A path that is already taken raises.
+    """
     node = tree
-    for p in parts[:-1]:
+    for i, p in enumerate(parts[:-1]):
+        nxt = node.get(p)
+        if isinstance(nxt, dict) and "$value" in nxt:
+            parts = parts[:i] + ["-".join(parts[i:])]
+            break
         node = node.setdefault(p, {})
+    if parts[-1] in node:
+        raise ValueError("token path already taken: " + ".".join(parts))
     node[parts[-1]] = leaf
 
 
@@ -111,18 +170,19 @@ def shadow(level):
 def font_family():
     return {
         "$type": "fontFamily",
-        "$value": ["Inter", "sans-serif"],
-        "$extensions": {"source": "computed font-family on body, https://www.kickstarter.com/ 2026-11-18; Inter loaded from fonts.googleapis.com. Effra is declared in one @font-face and was not the computed body family."},
+        "$value": [f.strip().strip('"') for f in RAW["fontBody"].split(",")],
+        "$extensions": {"source": "computed font-family on body, https://www.kickstarter.com/ 2026-11-18 (raw/css-vars.json fontBody); Inter loaded from fonts.googleapis.com. Effra is declared in one @font-face and was not the computed body family."},
     }
 
 
 def typography():
-    # Named roles from computed styles recorded in the capture notes and
-    # confirmed against the atomic type classes (kds-type-heading-*).
-    # Sizes below are the KDS type scale as declared by class names in the
-    # atomic sheet and confirmed on the home h1 / header / body during capture.
+    # display is the home hero h1 as raw/components-computed.json read it. The
+    # other roles were typed in at capture time from the atomic type class names;
+    # no reading in raw/ holds them, so they are Reconstructions.
+    h1 = reading("hero-h1")["style"]
     roles = {
-        "display": {"fontSize": "48px", "lineHeight": "56px", "fontWeight": 500, "note": "home hero h1, measured"},
+        "display": {"fontSize": h1["fontSize"], "lineHeight": h1["lineHeight"], "fontWeight": int(h1["fontWeight"]),
+                    "source": "computed fontSize, lineHeight and fontWeight of hero-h1 default on https://www.kickstarter.com/, 2026-11-18 (raw/components-computed.json): the home hero h1"},
         "heading-lg": {"fontSize": "28px", "lineHeight": "36px", "fontWeight": 500, "note": "kds-type-heading-lg, editorial banner"},
         "heading-md": {"fontSize": "22px", "lineHeight": "28px", "fontWeight": 500, "note": "section headings"},
         "heading-sm": {"fontSize": "18px", "lineHeight": "24px", "fontWeight": 500, "note": "card titles"},
@@ -136,12 +196,12 @@ def typography():
         out[name] = {
             "$type": "typography",
             "$value": {
-                "fontFamily": "{core.font.family.sans}",
+                "fontFamily": "{font.family.sans}",
                 "fontSize": r["fontSize"],
                 "fontWeight": r["fontWeight"],
                 "lineHeight": r["lineHeight"],
             },
-            "$extensions": {"source": "Derived from computed styles on the public home and project pages, 2026-11-18. " + r["note"]},
+            "$extensions": {"source": r.get("source") or f"{HAND} Intended for {r['note']}."},
         }
     return out
 
@@ -152,52 +212,68 @@ def core():
         "medium": dim_px("--kds-dimension-corner-radius-medium"),
         "large": dim_px("--kds-dimension-corner-radius-large"),
     }
-    # Kickstarter's public layout uses a 4px module (radius 4/8/16, elevation y 2/6/8).
-    spacing = {}
-    for i, px in enumerate([0, 2, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64]):
-        spacing[str(i) if i else "0"] = {
-            "$type": "dimension",
-            "$value": f"{px}px",
-            "$extensions": {"source": "Derived 4px module from --kds-dimension-corner-radius-small (4) and the elevation offsets (2, 6, 8). Named steps are the values the public chrome actually uses."},
-        }
-    spacing["0"]["$extensions"]["source"] = "Derived zero step of the 4px module."
-    # rename keys to readable
+    # The spacing steps were picked by hand at capture time on a 4px module; Kickstarter
+    # declares no spacing scale, so every step but the measured search height is a
+    # Reconstruction. Steps that equal a declared value say which.
+    def step(px, note):
+        return {"$type": "dimension", "$value": f"{px}px", "$extensions": {"source": f"{HAND} {note}"}}
+
+    def same_as(name):
+        v = dim_px(name)["$value"]
+        return v, f"Equals the declared {name} ({v}), which is not a spacing value."
+
+    v2, n2 = same_as("--kds-elevation-1-y")
+    v4, n4 = same_as("--kds-dimension-corner-radius-small")
+    v8, n8 = same_as("--kds-dimension-corner-radius-medium")
+    v16, n16 = same_as("--kds-dimension-corner-radius-large")
+    search = reading("search")
     named = {
-        "0": spacing["0"],
-        "2": {"$type": "dimension", "$value": "2px", "$extensions": {"source": "Derived from --kds-elevation-1-y (2px)."}},
-        "4": {"$type": "dimension", "$value": "4px", "$extensions": {"source": "css-var --kds-dimension-corner-radius-small (the 4px module base)."}},
-        "8": {"$type": "dimension", "$value": "8px", "$extensions": {"source": "css-var --kds-dimension-corner-radius-medium."}},
-        "12": {"$type": "dimension", "$value": "12px", "$extensions": {"source": "Derived 3 x 4px module."}},
-        "16": {"$type": "dimension", "$value": "16px", "$extensions": {"source": "css-var --kds-dimension-corner-radius-large."}},
-        "24": {"$type": "dimension", "$value": "24px", "$extensions": {"source": "Derived 6 x 4px module, the header and card padding step."}},
-        "32": {"$type": "dimension", "$value": "32px", "$extensions": {"source": "Derived 8 x 4px module."}},
-        "40": {"$type": "dimension", "$value": "40px", "$extensions": {"source": "Derived. Control height of the header search (measured 48 includes padding)."}},
-        "48": {"$type": "dimension", "$value": "48px", "$extensions": {"source": "Measured search field height on the home header, 2026-11-18."}},
-        "64": {"$type": "dimension", "$value": "64px", "$extensions": {"source": "Derived 16 x 4px module, section gap."}},
+        "0": step(0, "The zero step of the 4px module."),
+        "2": step(int(v2[:-2]), n2),
+        "4": step(int(v4[:-2]), "The 4px module base. " + n4),
+        "8": step(int(v8[:-2]), n8),
+        "12": step(12, "3 x the 4px module."),
+        "16": step(int(v16[:-2]), n16),
+        "24": step(24, "6 x the 4px module, used as the header and card padding step."),
+        "32": step(32, "8 x the 4px module."),
+        "40": step(40, "A control height; the measured header search is 48px including padding."),
+        "48": {"$type": "dimension", "$value": "%gpx" % search["rect"]["h"],
+               "$extensions": {"source": "measured height of search default on https://www.kickstarter.com/, 2026-11-18 (raw/components-computed.json): the home header search field"}},
+        "64": step(64, "16 x the 4px module, used as the section gap."),
     }
+    h1 = reading("hero-h1")["style"]
     font_size = {
-        "caption": {"$type": "dimension", "$value": "12px", "$extensions": {"source": "Derived caption step of the Inter scale used on the public site."}},
-        "label": {"$type": "dimension", "$value": "14px", "$extensions": {"source": "Derived label / meta step."}},
-        "body": {"$type": "dimension", "$value": "16px", "$extensions": {"source": "Computed body size on kickstarter.com, 2026-11-18."}},
-        "heading-sm": {"$type": "dimension", "$value": "18px", "$extensions": {"source": "Derived card-title step."}},
-        "heading-md": {"$type": "dimension", "$value": "22px", "$extensions": {"source": "Derived section-heading step."}},
-        "heading-lg": {"$type": "dimension", "$value": "28px", "$extensions": {"source": "kds-type-heading-lg on the editorial banner."}},
-        "display": {"$type": "dimension", "$value": "48px", "$extensions": {"source": "Measured home h1, 2026-11-18."}},
+        "caption": step(12, "The caption step of the Inter scale."),
+        "label": step(14, "The label and meta step."),
+        "body": step(16, "The body size."),
+        "heading-sm": step(18, "The card-title step."),
+        "heading-md": step(22, "The section-heading step."),
+        "heading-lg": step(28, "Named after the kds-type-heading-lg class on the editorial banner."),
+        "display": {"$type": "dimension", "$value": h1["fontSize"],
+                    "$extensions": {"source": "computed fontSize of hero-h1 default on https://www.kickstarter.com/, 2026-11-18 (raw/components-computed.json): the home hero h1"}},
     }
+    for v in font_size.values():
+        v["$type"] = "dimension"
+    expand = declared_transition(".expandable-background")
+    fast = re.match(r"(?:\S+\s+)?([\d.]+)(m?s)\b", expand)
+    fast_ms = "%gms" % (float(fast.group(1)) * (1 if fast.group(2) == "ms" else 1000))
+    out_sel, out_tr = first_declared_with("ease-out")
     motion = {
         "duration": {
-            "fast": {"$type": "duration", "$value": "100ms", "$extensions": {"source": "Declared .1s on .project-card-root and .expandable-background in the atomic sheet."}},
-            "nav": {"$type": "duration", "$value": "150ms", "$extensions": {"source": "Declared --creator-nav-transition-duration: 150ms under prefers-reduced-motion: no-preference."}},
-            "enter": {"$type": "duration", "$value": "300ms", "$extensions": {"source": "Declared 300ms translate on .creator-nav__submenu when open."}},
+            "fast": {"$type": "duration", "$value": fast_ms, "$extensions": {"source": f"declared transition `{expand}` on .expandable-background in the atomic sheet (raw/motion.json)"}},
+            "nav": {"$type": "duration", "$value": dim_ms("--creator-nav-transition-duration"), "$extensions": {"source": "declared --creator-nav-transition-duration under prefers-reduced-motion: no-preference (raw/css-vars.json)"}},
+            "enter": {"$type": "duration", "$value": "300ms", "$extensions": {"source": f"{HAND} Typed from the 300ms translate on .creator-nav__submenu when open."}},
         },
         "easing": {
-            "out": {"$type": "cubicBezier", "$value": [0, 0, 0.2, 1], "$extensions": {"source": "Derived from the ease-out keyword on .project-card-root__extra-info-container."}},
-            "nav": {"$type": "cubicBezier", "$value": [0, 1, 1, 1], "$extensions": {"source": "Declared cubic-bezier(0, 1, 1, 1) on .creator-nav__submenu."}},
+            "out": {"$type": "cubicBezier", "$value": KEYWORD_EASING["ease-out"], "$extensions": {"source": f"the ease-out keyword as CSS defines it, cubic-bezier(0, 0, 0.58, 1); declared on {out_sel} (`{out_tr}`) and other kds rules in raw/motion.json"}},
+            "nav": {"$type": "cubicBezier", "$value": [0, 1, 1, 1], "$extensions": {"source": f"{HAND} Typed from cubic-bezier(0, 1, 1, 1) on .creator-nav__submenu."}},
         },
     }
+    bordered = sorted(k for k, c in COMP.items() if c["states"].get("default", {}).get("style", {}).get("borderTopWidth") == "1px")
     border_width = {
-        "hairline": {"$type": "dimension", "$value": "1px", "$extensions": {"source": "Measured 1px borders on cards, inputs and the focus ring, 2026-11-18."}},
-        "none": {"$type": "dimension", "$value": "0px", "$extensions": {"source": "Derived zero border."}},
+        "hairline": {"$type": "dimension", "$value": reading(bordered[0])["style"]["borderTopWidth"],
+                     "$extensions": {"source": f"computed borderTopWidth of {bordered[0]} default, 2026-11-18 (raw/components-computed.json); the same 1px on {', '.join(bordered[1:])}"}},
+        "none": step(0, "The zero border."),
     }
     return {
         "font": {"family": {"sans": font_family()}},
@@ -238,7 +314,8 @@ def check(node, path=""):
         check(v, path + "." + k)
 
 
-def main():
+def build():
+    """The whole token document, checked, without writing it."""
     doc = {
         "$description": "Kickstarter public design system (KDS), captured 2026-11-18 from kickstarter.com signed out. One light theme.",
         "core": core(),
@@ -247,6 +324,11 @@ def main():
     }
     check(doc["core"])
     check(doc["light"])
+    return doc
+
+
+def main():
+    doc = build()
     out = HERE / "tokens.json"
     out.write_text(json.dumps(doc, indent=1) + "\n")
     n = sum(1 for _ in walk(doc))

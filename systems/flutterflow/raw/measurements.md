@@ -256,22 +256,23 @@ Page: pricing. Selector: `.ff-btn.ff-btn-primary.ff-btn-sm`. States: default, ho
 
 | Property | default | hover | focus-visible | pressed | dark |
 |---|---|---|---|---|---|
-| Size (w x h) | 183 x 32 | = | = | 177.51 x 31.04 | = |
-| Padding | 0px 14px | = | = | = | = |
-| Gap | 8px | = | = | = | = |
-| Border | none | = | = | = | = |
-| Radius | 999px | = | = | = | = |
-| Background | #1a1a1a | = | = | = | #ededed |
-| Box shadow | none | = | = | = | = |
-| Outline | none | = | = | = | = |
-| Font | Inter 13px/20.15px 510 | = | = | = | = |
-| Letter spacing | normal | = | = | = | = |
-| Colour | #ffffff | = | = | = | #111111 |
-| Transition | transform, background-color, box-shadow 0.12s, 0.12s, 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), cubic-bezier(0.25, 0.46, 0.45, 0.94), cubic-bezier(0.25, 0.46, 0.45, 0.94) delay 0s, 0s, 0s | = | = | = | = |
-| Cursor | pointer | = | = | = | = |
-| Painted layers | span.ff-btn.ff-btn-primary 183.0x32.0 bg #1a1a1a r 999px | = | = | span.ff-btn.ff-btn-primary 177.5x31.0 bg #1a1a1a r 999px | span.ff-btn.ff-btn-primary 183.0x32.0 bg #ededed r 999px |
-| Ancestor paint | 1 up a.ff-snav-lead bg #f5f5f5; 2 up div.ff-snav-panel.ff-snav-panel-studio bg #ffffff shadow #000000 @ 0.08 0px 0px 0px 1px, #000000 @ 0.28 0px 24px 48px -20px | = | = | = | 1 up a.ff-snav-lead bg #0b0b0b; 2 up div.ff-snav-panel.ff-snav-panel-studio bg #1b1b1b shadow #ffffff @ 0.1 0px 0px 0px 1px, #000000 0px 24px 48px -20px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover | footer theme switch set to Dark (data-theme="dark"), restored after |
+| Size (w x h) | 183 x 32 | = | - | 177.51 x 31.04 | = |
+| Padding | 0px 14px | = | - | = | = |
+| Gap | 8px | = | - | = | = |
+| Border | none | = | - | = | = |
+| Radius | 999px | = | - | = | = |
+| Background | #1a1a1a | = | - | = | #ededed |
+| Box shadow | none | = | - | = | = |
+| Outline | none | = | - | = | = |
+| Font | Inter 13px/20.15px 510 | = | - | = | = |
+| Letter spacing | normal | = | - | = | = |
+| Colour | #ffffff | = | - | = | #111111 |
+| Transition | transform, background-color, box-shadow 0.12s, 0.12s, 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94), cubic-bezier(0.25, 0.46, 0.45, 0.94), cubic-bezier(0.25, 0.46, 0.45, 0.94) delay 0s, 0s, 0s | = | - | = | = |
+| Cursor | pointer | = | - | = | = |
+| Painted layers | span.ff-btn.ff-btn-primary 183.0x32.0 bg #1a1a1a r 999px | = | - | span.ff-btn.ff-btn-primary 177.5x31.0 bg #1a1a1a r 999px | span.ff-btn.ff-btn-primary 183.0x32.0 bg #ededed r 999px |
+| Ancestor paint | 1 up a.ff-snav-lead bg #f5f5f5; 2 up div.ff-snav-panel.ff-snav-panel-studio bg #ffffff shadow #000000 @ 0.08 0px 0px 0px 1px, #000000 @ 0.28 0px 24px 48px -20px | = | - | = | 1 up a.ff-snav-lead bg #0b0b0b; 2 up div.ff-snav-panel.ff-snav-panel-studio bg #1b1b1b shadow #ffffff @ 0.1 0px 0px 0px 1px, #000000 0px 24px 48px -20px |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | footer theme switch set to Dark (data-theme="dark"), restored after |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 | Transform | - | = | = | matrix(0.97, 0, 0, 0.97, 0, 0) | = |
 
 Crops: `btn-primary-sm-default.png`, `btn-primary-sm-hover.png`, `btn-primary-sm-focus-visible.png`, `btn-primary-sm-pressed.png`, `btn-primary-sm-dark.png`.
@@ -528,22 +529,23 @@ Page: pricing. Selector: `.ff-go`. States: default, hover, focus-visible, presse
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 174.53 x 26 | - | = | = |
-| Padding | 0px | - | = | = |
-| Gap | 4px | - | = | = |
-| Border | none | - | = | = |
-| Radius | 0px | - | = | = |
-| Background | transparent | - | = | = |
-| Box shadow | none | - | = | = |
-| Outline | none | - | = | = |
-| Font | Inter 15px/26px 510 | - | = | = |
-| Letter spacing | -0.176px | - | = | = |
-| Colour | #1a1a1a | - | = | = |
-| Transition | none | - | = | = |
-| Cursor | pointer | - | = | = |
-| Icon | 16.05 x 16.05, colour #1a1a1a | - | = | = |
-| How | at rest | - | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 174.53 x 26 | - | - | = |
+| Padding | 0px | - | - | = |
+| Gap | 4px | - | - | = |
+| Border | none | - | - | = |
+| Radius | 0px | - | - | = |
+| Background | transparent | - | - | = |
+| Box shadow | none | - | - | = |
+| Outline | none | - | - | = |
+| Font | Inter 15px/26px 510 | - | - | = |
+| Letter spacing | -0.176px | - | - | = |
+| Colour | #1a1a1a | - | - | = |
+| Transition | none | - | - | = |
+| Cursor | pointer | - | - | = |
+| Icon | 16.05 x 16.05, colour #1a1a1a | - | - | = |
+| How | at rest | - | - | CDP forcePseudoState :active:hover |
 | Error | - | locator.evaluate: Timeout 8000ms exceeded. Call log:   - waiting for locator('.ff-go').first().first().first()  | = | = |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: none.
 
@@ -740,22 +742,23 @@ Page: home. Selector: `.cmp-nav`. States: default, hover, focus-visible, pressed
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 30 x 30 | = | 0 x 0 | 0 x 0 |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 50% | = | = | = |
-| Background | transparent | #1a1a1a @ 0.06 | = | #1a1a1a @ 0.06 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 16px/24.8px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #6b6b6b | #1a1a1a | = | #1a1a1a |
-| Transition | background-color, color 0.15s, 0.15s ease, ease delay 0s, 0s | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 17 x 17, colour #6b6b6b | 17 x 17, colour #1a1a1a | 0 x 0, colour #6b6b6b | 0 x 0, colour #1a1a1a |
-| Ancestor paint | 2 up div.cmp-card.big bg #ffffff shadow #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.14 0px 8px 24px -14px | = | 2 up div.cmp-card.big bg #ffffff shadow #1a1a1a @ 0.06 0px 0px 0px 4px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.14 0px 8px 24px -14px | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 30 x 30 | = | - | 0 x 0 |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 50% | = | - | = |
+| Background | transparent | #1a1a1a @ 0.06 | - | #1a1a1a @ 0.06 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 16px/24.8px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #6b6b6b | #1a1a1a | - | #1a1a1a |
+| Transition | background-color, color 0.15s, 0.15s ease, ease delay 0s, 0s | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 17 x 17, colour #6b6b6b | 17 x 17, colour #1a1a1a | - | 0 x 0, colour #1a1a1a |
+| Ancestor paint | 2 up div.cmp-card.big bg #ffffff shadow #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.14 0px 8px 24px -14px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Painted layers | - | button.cmp-nav 30.0x30.0 bg #1a1a1a @ 0.06 r 50% | = | button.cmp-nav 0.0x0.0 bg #1a1a1a @ 0.06 r 50% |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `composer-nav-default.png`, `composer-nav-hover.png`.
 
@@ -767,23 +770,24 @@ Page: home. Selector: `.cmp-key`. States: default, hover, focus-visible, pressed
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 39 x 21 | - | 0 x 0 | 0 x 0 |
-| Padding | 0px 7px | - | = | = |
-| Border | T: 1px solid #000000 @ 0.07; R: 1px solid #000000 @ 0.07; B: 2px solid #000000 @ 0.07; L: 1px solid #000000 @ 0.07 | - | = | T: 1px solid #1a1a1a @ 0.3; R: 1px solid #1a1a1a @ 0.3; B: 2px solid #1a1a1a @ 0.3; L: 1px solid #1a1a1a @ 0.3 |
-| Radius | 6px | - | = | = |
-| Background | #fcfcfb | - | = | = |
-| Box shadow | none | - | = | = |
-| Outline | none | - | = | = |
-| Font | Inter 12px/18px 500 | - | = | = |
-| Letter spacing | normal | - | = | = |
-| Colour | #1a1a1a | - | = | = |
+| Size (w x h) | 39 x 21 | - | - | 0 x 0 |
+| Padding | 0px 7px | - | - | = |
+| Border | T: 1px solid #000000 @ 0.07; R: 1px solid #000000 @ 0.07; B: 2px solid #000000 @ 0.07; L: 1px solid #000000 @ 0.07 | - | - | T: 1px solid #1a1a1a @ 0.3; R: 1px solid #1a1a1a @ 0.3; B: 2px solid #1a1a1a @ 0.3; L: 1px solid #1a1a1a @ 0.3 |
+| Radius | 6px | - | - | = |
+| Background | #fcfcfb | - | - | = |
+| Box shadow | none | - | - | = |
+| Outline | none | - | - | = |
+| Font | Inter 12px/18px 500 | - | - | = |
+| Letter spacing | normal | - | - | = |
+| Colour | #1a1a1a | - | - | = |
 | Text node | span.k: Inter 12px/18px 500, #1a1a1a | - | - | - |
-| Transition | none | - | = | = |
-| Cursor | pointer | - | = | = |
-| Painted layers | button.cmp-key 39.0x21.0 bg #fcfcfb border T:1px #000000 @ 0.07 / R:1px #000000 @ 0.07 / B:2px #000000 @ 0.07 / L:1px #000000 @ 0.07 r 6px | - | button.cmp-key 0.0x0.0 bg #fcfcfb border T:1px #000000 @ 0.07 / R:1px #000000 @ 0.07 / B:2px #000000 @ 0.07 / L:1px #000000 @ 0.07 r 6px | button.cmp-key 0.0x0.0 bg #fcfcfb border T:1px #1a1a1a @ 0.3 / R:1px #1a1a1a @ 0.3 / B:2px #1a1a1a @ 0.3 / L:1px #1a1a1a @ 0.3 r 6px |
-| Ancestor paint | 3 up div.cmp-card.big bg #ffffff shadow #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.14 0px 8px 24px -14px | - | 3 up div.cmp-card.big bg #ffffff shadow #1a1a1a @ 0.06 0px 0px 0px 4px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.14 0px 8px 24px -14px | = |
-| How | at rest | - | focus failed | CDP forcePseudoState :active:hover |
+| Transition | none | - | - | = |
+| Cursor | pointer | - | - | = |
+| Painted layers | button.cmp-key 39.0x21.0 bg #fcfcfb border T:1px #000000 @ 0.07 / R:1px #000000 @ 0.07 / B:2px #000000 @ 0.07 / L:1px #000000 @ 0.07 r 6px | - | - | button.cmp-key 0.0x0.0 bg #fcfcfb border T:1px #1a1a1a @ 0.3 / R:1px #1a1a1a @ 0.3 / B:2px #1a1a1a @ 0.3 / L:1px #1a1a1a @ 0.3 r 6px |
+| Ancestor paint | 3 up div.cmp-card.big bg #ffffff shadow #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.14 0px 8px 24px -14px | - | - | = |
+| How | at rest | - | - | CDP forcePseudoState :active:hover |
 | Error | - | locator.hover: Element is not visible Call log:   - waiting for locator('.cmp-key').first().first().first()     - locator resolved to <button data-use="" type="button" class="cmp-key" aria-label="Use  | = | = |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `composer-key-default.png`.
 
@@ -1704,23 +1708,24 @@ Page: home. Selector: `.pbtn.outline`. States: default, hover, focus-visible, pr
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 0 x 0 | - | = | = |
-| Padding | 0px 12px | - | = | = |
-| Gap | 6px | - | = | = |
-| Border | none | - | = | = |
-| Radius | 24px | - | = | = |
-| Background | transparent | - | = | #ffffff |
-| Box shadow | #dedede 0px 0px 0px 1px inset | - | = | #a3a3a3 0px 0px 0px 1px inset |
-| Outline | none | - | = | = |
-| Font | Inter 14px/21.7px 500 | - | = | = |
-| Letter spacing | normal | - | = | = |
-| Colour | #6b6b6b | - | = | #1a1a1a |
-| Transition | background, box-shadow, opacity 0.15s, 0.15s, 0.2s ease, ease, ease delay 0s, 0s, 0s | - | = | = |
-| Cursor | pointer | - | = | = |
-| Icon | 0 x 0, colour #6b6b6b | - | = | 0 x 0, colour #1a1a1a |
-| Painted layers | button.pbtn.outline 0.0x0.0 r 24px shadow #dedede 0px 0px 0px 1px inset | - | = | button.pbtn.outline 0.0x0.0 bg #ffffff r 24px shadow #a3a3a3 0px 0px 0px 1px inset |
-| How | at rest | - | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 0 x 0 | - | - | = |
+| Padding | 0px 12px | - | - | = |
+| Gap | 6px | - | - | = |
+| Border | none | - | - | = |
+| Radius | 24px | - | - | = |
+| Background | transparent | - | - | #ffffff |
+| Box shadow | #dedede 0px 0px 0px 1px inset | - | - | #a3a3a3 0px 0px 0px 1px inset |
+| Outline | none | - | - | = |
+| Font | Inter 14px/21.7px 500 | - | - | = |
+| Letter spacing | normal | - | - | = |
+| Colour | #6b6b6b | - | - | #1a1a1a |
+| Transition | background, box-shadow, opacity 0.15s, 0.15s, 0.2s ease, ease, ease delay 0s, 0s, 0s | - | - | = |
+| Cursor | pointer | - | - | = |
+| Icon | 0 x 0, colour #6b6b6b | - | - | 0 x 0, colour #1a1a1a |
+| Painted layers | button.pbtn.outline 0.0x0.0 r 24px shadow #dedede 0px 0px 0px 1px inset | - | - | button.pbtn.outline 0.0x0.0 bg #ffffff r 24px shadow #a3a3a3 0px 0px 0px 1px inset |
+| How | at rest | - | - | CDP forcePseudoState :active:hover |
 | Error | - | locator.hover: Element is not visible Call log:   - waiting for locator('.pbtn.outline').first().first().first()     - locator resolved to <button hidden="" type="button" id="bx-replay" aria-label="Re | = | = |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: none.
 

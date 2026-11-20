@@ -434,9 +434,11 @@ One of the energy-mode icon buttons under the visualizer. Read as `button-mode` 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 56 x 56; background transparent; text apercuProRegular 16/0 400, #ffffff `color.neutral.white`; transition opacity 0.25s linear; icon 56 x 56, #ffffff `color.neutral.white` |
+| default (same: hover, pressed) | size 56 x 56; background transparent; text apercuProRegular 16/0 400, #ffffff `color.neutral.white`; transition opacity 0.25s linear; icon 56 x 56, #ffffff `color.neutral.white` |
 
-![Mode button default](components/crops/button-mode-default.png) ![Mode button hover](components/crops/button-mode-hover.png) ![Mode button focus-visible](components/crops/button-mode-focus-visible.png) ![Mode button pressed](components/crops/button-mode-pressed.png)
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured, not measured as absent.
+
+![Mode button default](components/crops/button-mode-default.png) ![Mode button hover](components/crops/button-mode-hover.png) ![Mode button pressed](components/crops/button-mode-pressed.png)
 
 #### Mode button, active
 The engaged mode icon. Read as `button-mode-active` on the web app's player page.

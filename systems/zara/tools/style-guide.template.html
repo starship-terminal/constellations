@@ -114,17 +114,36 @@ const swatches = [
   ["Emphasis", "light.color.status.emphasis"],
   ["Focus", "light.color.status.focus"]
 ];
-document.getElementById("swatches").innerHTML = swatches.map(([n, p]) => {
+// Built with DOM properties, not an HTML string: a font family such as "Helvetica Now Text"
+// holds double quotes that would close a style="..." attribute and drop the rest of the specimen.
+const el = (tag, text) => { const n = document.createElement(tag); if (text !== undefined) n.textContent = text; return n; };
+document.getElementById("swatches").replaceChildren(...swatches.map(([n, p]) => {
   const v = val(p);
-  return `<div class="sw"><i style="background:${v}"></i><b>${n}</b><span>${v}</span></div>`;
-}).join("");
+  const sw = el("div");
+  sw.className = "sw";
+  const dot = el("i");
+  dot.style.background = v;
+  sw.append(dot, el("b", n), el("span", v));
+  return sw;
+}));
 const type = TOKENS.core.typography;
-document.getElementById("type").innerHTML = Object.entries(type).map(([n, t]) => {
+document.getElementById("type").replaceChildren(...Object.entries(type).map(([n, t]) => {
   const v = t.v;
-  return `<p style="font-family:${v.fontFamily};font-size:${v.fontSize};font-weight:${v.fontWeight};line-height:${v.lineHeight};letter-spacing:${v.letterSpacing};text-transform:uppercase">${n} — The new</p>`;
-}).join("");
+  const p = el("p", `${n} — The new`);
+  Object.assign(p.style, { fontFamily: v.fontFamily, fontSize: v.fontSize, fontWeight: v.fontWeight,
+    lineHeight: v.lineHeight, letterSpacing: v.letterSpacing, textTransform: "uppercase" });
+  return p;
+}));
 const space = TOKENS.core.spacing;
-document.getElementById("space").innerHTML = "<tr><th>Token</th><th>Value</th></tr>" + Object.entries(space).map(([n, t]) => `<tr><td><code>core.spacing.${n}</code></td><td>${t.v}</td></tr>`).join("");
+const head = el("tr");
+head.append(el("th", "Token"), el("th", "Value"));
+document.getElementById("space").replaceChildren(head, ...Object.entries(space).map(([n, t]) => {
+  const tr = el("tr");
+  const name = el("td");
+  name.append(el("code", `core.spacing.${n}`));
+  tr.append(name, el("td", t.v));
+  return tr;
+}));
 </script>
 </body>
 </html>

@@ -111,7 +111,10 @@ def norm_color(v):
     # rgba token (the same normalisation build_tokens.py applies).
     m = re.fullmatch(r"okl(?:ch|ab)\(\s*([\d.]+)\s+(?:0(?:\.0+)?|none)\s+(?:none|[-\d.]+)\s*(?:/\s*([\d.]+))?\s*\)", v)
     if m:
-        lvl = round(float(m.group(1)) * 255)
+        # an achromatic OKLab colour is linear grey L^3, then sRGB gamma:
+        # oklch(0.5 0 0) is #636363, not L x 255 (2026-11 audit, finding 14-22)
+        lin = float(m.group(1)) ** 3
+        lvl = max(0, min(255, round((12.92 * lin if lin <= 0.0031308 else 1.055 * lin ** (1 / 2.4) - 0.055) * 255)))
         a = float(m.group(2) or 1)
         return "#%02x%02x%02x" % (lvl, lvl, lvl) if a == 1 else "rgba(%d, %d, %d, %g)" % (lvl, lvl, lvl, a)
     m = re.fullmatch(r"color-mix\(in (?:oklch|srgb|hsl|lab|oklab|lch|hwb|xyz[^)]*),\s*(#[0-9a-fA-F]{3,8}),\s*transparent\s+([\d.]+)%\)", v)
@@ -138,6 +141,18 @@ def have(comp, state, prop=None):
     except KeyError:
         return False
 
+
+
+# A transparent reading is no fill (the colour comes from an ancestor), so it
+# is never committed as one (2026-11 audit, finding 14-8).
+TRANSPARENT = re.compile(r"transparent|rgba\(\s*[\d.]+[,\s]+[\d.]+[,\s]+[\d.]+\s*[,/]\s*0(\.0+)?%?\s*\)")
+
+
+def opaque(v):
+    """v unless it is a transparent reading; a KeyError skips the token."""
+    if v is None or TRANSPARENT.fullmatch(str(v).strip()):
+        raise KeyError("transparent")
+    return v
 
 def lit(value, ty, src, desc):
     return {"value": norm_color(value) if ty == "color" else value, "type": ty, "source": src, "description": desc}
@@ -509,7 +524,7 @@ for key, comp, state, prop, group, desc in [
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
-        if raw in (None, ""):
+        if raw in (None, "") or (prop == "backgroundColor" and TRANSPARENT.fullmatch(str(raw).strip())):
             raise KeyError(prop)
         sem.setdefault(group, {})[key] = semcolor(raw, src, desc, "light")
     except KeyError:
@@ -638,7 +653,7 @@ for name, cname, state, prop, ty_, desc in [
             v = rc(cname, state, prop)
             shell[name] = lit(("%g" % v) + "px", ty_, f"measured {prop} of {cname} {state} on the product app shell (raw/components-computed.json)", desc)
         else:
-            shell[name] = lit(norm_color(st(cname, state)[prop]), "color",
+            shell[name] = lit(norm_color(opaque(st(cname, state)[prop])), "color",
                 f"computed {prop} of {cname} {state} on the product app shell (raw/components-computed.json)", desc)
     except KeyError:
         pass

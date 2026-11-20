@@ -32,12 +32,12 @@ export const LAUNCH_OPTS = {};
 // heading-*), so selectors key off them, roles and stable text.
 export const M = (name) => name;
 
-// The per-context patches every page gets: the webdriver mask, plus a record of
+// The per-context patches every page gets (no webdriver mask: a bot check is a boundary), plus a record of
 // the real devicePixelRatio before app code runs — kept for the screenshot
 // sidecar when app code rewrites window.devicePixelRatio.
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }

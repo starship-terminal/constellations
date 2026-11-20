@@ -103,6 +103,13 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 7. **Don't fabricate outcomes.** The provider buttons, "Sign in to design" and every link were measured never pressed; search and quiz states are local interactions only — no validation, cart or checkout state exists here. ([pdp-design-cta default](components/crops/pdp-design-cta-default.png))
 8. **Don't copy the brand.** The Fourthwall wordmark, product photography, creator shop examples, mega-menu artwork and Eli assistant marks are the product's — borrow structure and tokens, never the artwork. ([home-light-mega-menu](screenshots/home-light-mega-menu.png))
 
+## What to distrust
+
+- **Fills the element does not paint.** Ten measured surface roles read a transparent `backgroundColor` (the fill comes from an ancestor): catalog `background.page` (cat-nav), `surface.card` (prod-card), `surface.field-bg` (cat-search), signup `surface.card` (auth-card), docs `surface.sidebar-bg`, docsDark `background.page` and `surface.code-bg`, help `surface.card`, helpDark `background.page` and `surface.card`. They are not tokens. `catalog.background.page` and `help.background.page` still alias the declared page names (`--bg-primary`, `--ifm-background-color`). docs, docsDark and helpDark have no page token: the docs' declared `--background-light`/`--background-dark` sit in the capture's `app` bin, which the builder does not emit, and nothing measured paints a docs page field.
+- **No catalogue field border.** cat-search paints no border (style none, 0px on every side), so there is no `catalog.border.field-border`.
+- **The auth Log-in link** is `signup.text.login-link` (it computes the primary ink); `signup.text.link` holds the declared `--text-link` blues.
+- **The capture scripts were edited after the capture** (2026-11 audit, not run since): every scripted click in `tools/capture/public/measure.mjs` now goes through `toggle()`, so its never-press list applies to the openers too. The committed readings were taken before that edit; nothing was pressed that the list names.
+
 ## Rebuild
 
 ```sh
@@ -118,3 +125,7 @@ python3 tools/build_style_guide.py && python3 tools/build_components_md.py      
 ```
 
 Deterministic: same raw inputs, byte-identical outputs. Edit raw inputs or specs, never the generated files.
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

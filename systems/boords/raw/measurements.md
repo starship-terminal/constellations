@@ -828,7 +828,7 @@ Crops: `m-hero-default.png`.
 
 ## Transitions declared in the readable stylesheets
 
-boords.com serves its Squarespace sheets cross-origin, so this list holds what the CSSOM could read on each page (cross-origin sheets stay unreadable there); the per-state Transition rows above are computed values and cover every rule the page paints.
+This list holds only what the CSSOM could read on each page: inline styles and same-origin sheets, since a cross-origin sheet stays unreadable there. The per-state Transition rows in the tables above are computed values and cover every rule the page paints.
 
 - home: `transform 0.4s`, `transform 0.4s, opacity 0.4s, height 0.4s, box-shadow 0.2s`, `opacity 0.4s, box-shadow 0.2s`, `opacity 0.1s, background 0.2s, border-color 0.2s`, `opacity 0.4s`, `transform 0.5s, opacity 0.2s`, `none`, `opacity 0.2s, transform 0.2s`
 

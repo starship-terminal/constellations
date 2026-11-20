@@ -65,12 +65,50 @@ class TokensTest(unittest.TestCase):
         self.assertIn("rgba(250, 155, 250, 0.25)", pal.values())  # the pink border literal (border-pink/25)
 
     def test_component_geometry(self):
-        comp = T["core"].get("component")
-        self.assertIsNotNone(comp, "no component tokens")
-        names = {n for n, _ in token_checks.tokens_of(comp)}
-        # geometry emitted only when measure.mjs has run; check the shape it takes
-        for n in names:
-            self.assertRegex(n, r"^[a-zA-Z]+\.")
+        """Every measured component leaf equals the raw reading it cites."""
+        import re
+        C = json.loads((HERE / "raw" / "components-computed.json").read_text())["components"]
+        comp = T["core"]["component"]
+        checked = 0
+        for n, t in token_checks.tokens_of(comp):
+            m = re.match(r"measured (\S+) (\S+) on ", t["$extensions"]["source"])
+            self.assertIsNotNone(m, n)
+            st = C[m.group(1)]["states"][m.group(2)]
+            v = t["$value"]
+            if n.endswith(".height") or n.endswith(".width"):
+                raw = st["rect"]["h" if n.endswith(".height") else "w"]
+                self.assertEqual(v, f"{raw:g}px", n)
+            elif n.endswith(".radius"):
+                raw = st["style"]["borderTopLeftRadius"]
+                self.assertEqual(v, "9999px" if float(raw[:-2]) >= 9999 else raw, n)
+            elif n.endswith(".size"):
+                self.assertEqual(v, st["style"]["fontSize"], n)
+            elif n.endswith(".tracking"):
+                self.assertEqual(v, st["style"]["letterSpacing"], n)
+            else:
+                continue
+            checked += 1
+        self.assertGreaterEqual(checked, 20)
+
+    def test_font_stacks_are_measured_verbatim(self):
+        C = json.loads((HERE / "raw" / "components-computed.json").read_text())["components"]
+        core = {n: t for n, t in token_checks.tokens_of(T["core"])}
+        for path, comp in (("font.family.headline", "hero-headline"), ("font.family.body", "prose-p"),
+                           ("font.family.mono", "cli-code-block")):
+            st = C[comp]["states"]["default"]
+            raw = (st.get("textStyle") or {}).get("fontFamily") or st["style"]["fontFamily"]
+            self.assertEqual(core[path]["$value"], raw, path)
+
+    def test_fills_only_where_measured(self):
+        # the Send button was measured on the dark site only, and the nav and
+        # app rail paint transparent: none of them may carry a light or a
+        # transparent fill token
+        light = {n for n, _ in token_checks.tokens_of(T["light"])}
+        self.assertNotIn("component.sendButton.bg", light)
+        for s in ("light", "dark"):
+            for n, t in token_checks.tokens_of(T[s]):
+                if t["$type"] == "color":
+                    self.assertNotRegex(str(t["$value"]), r"rgba\([^)]*,\s*0\)", f"{s}.{n}")
 
 
 if __name__ == "__main__":

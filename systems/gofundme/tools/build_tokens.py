@@ -225,7 +225,10 @@ if (RAW / "motion.json").exists():
     import sys
     sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
     import motion
-    core["motion"], _motion_not_core = motion.build(json.loads((RAW / "motion.json").read_text()))
+    core["motion"], motion_not_core = motion.build(json.loads((RAW / "motion.json").read_text()))
+    # what DTCG cannot carry (steps()/linear() easings, an easing left as var()) is listed, not dropped
+    if motion_not_core:
+        core.setdefault("$extensions", {}).setdefault("notTokenised", []).extend(motion_not_core)
 
 
 # every alias must point at a token that exists

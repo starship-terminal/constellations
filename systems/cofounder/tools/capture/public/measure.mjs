@@ -284,8 +284,18 @@ async function home() {
   // The "All the tools and systems" band paints #1a6fd1 and holds
   // aria-pressed tab buttons that switch the tool diagram.
   await S('blue-section', q('section[aria-label*="tools and systems"], section.bg-\\[\\#1a6fd1\\]').filter({ visible: true }).first(), ['default'], { group: h, title: 'Tools band', desc: 'The #1a6fd1 "All the tools and systems" band with the tools diagram and tab toggles.', sel: 'section.bg-[#1a6fd1]' });
-  await S('tool-tab', q('section[aria-label*="tools and systems"] button[aria-pressed="true"], section button[aria-pressed="true"]').filter({ visible: true }).first(), ['default', 'focus-visible'], { group: h, title: 'Tools tab (selected)', desc: 'The selected aria-pressed tab in the tools band (text-white selected).', sel: 'button[aria-pressed=true] in tools band' });
-  await S('tool-tab-off', q('section[aria-label*="tools and systems"] button[aria-pressed="false"], section button[aria-pressed="false"]').filter({ visible: true }).first(), ['default', 'hover', 'focus-visible'], { group: h, title: 'Tools tab (unselected)', desc: 'An unselected aria-pressed tab (text-white/40, hover white/60); never pressed — it swaps the diagram.', sel: 'button[aria-pressed=false] in tools band' });
+  // The band rotates its selected tab by itself, so a locator that re-resolves aria-pressed for every state
+  // reads whichever button is selected at that moment (tool-tab focus-visible was another button, and
+  // tool-tab-off was the first button after it rotated off). Mark one button of each kind once, then
+  // measure those. The rotation itself is not paused, so a state read late can still find its button
+  // flipped; the via and text of each reading show which.
+  await page.evaluate(() => {
+    const band = document.querySelector('section[aria-label*="tools and systems"]') || document;
+    band.querySelector('button[aria-pressed="true"]')?.setAttribute('data-m-tab', 'on');
+    band.querySelector('button[aria-pressed="false"]')?.setAttribute('data-m-tab', 'off');
+  });
+  await S('tool-tab', q('[data-m-tab="on"]').filter({ visible: true }).first(), ['default', 'focus-visible'], { group: h, title: 'Tools tab (selected)', desc: 'The selected aria-pressed tab in the tools band (text-white selected).', sel: 'button[aria-pressed=true] in tools band' });
+  await S('tool-tab-off', q('[data-m-tab="off"]').filter({ visible: true }).first(), ['default', 'hover', 'focus-visible'], { group: h, title: 'Tools tab (unselected)', desc: 'An unselected aria-pressed tab (text-white/40, hover white/60); never pressed — it swaps the diagram.', sel: 'button[aria-pressed=false] in tools band' });
   await S('tool-button', q('button.rounded-\\[10px\\].border, section button[class*="border-black"]').filter({ visible: true }).first(), B4, { group: h, title: 'Tool button', desc: 'A tool/agent picker button (border-black/10 bg-white/60 rounded-[10px], hover white-fill swap).', sel: 'button.border-black/10' });
   await S('case-study', q('a[aria-label="View Cofounder case studies"]').filter({ visible: true }).first(), B4, { group: h, title: 'Case study card', desc: 'A case-study card anchor.', sel: 'a[aria-label="View Cofounder case studies"]' });
   await S('carousel-prev', q('button[aria-label="Previous campaign"], button[aria-label="Previous"]').filter({ visible: true }).first(), B4, { group: h, title: 'Carousel arrow', desc: 'A campaign-carousel arrow button.', sel: 'button[aria-label="Previous campaign"]' });

@@ -110,6 +110,7 @@ Nothing was joined, submitted, voted on, searched or signed into. The public mar
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **Var-backed plus measured.** The declared `@layer theme` tokens resolve through their names; leaves with a `computed …` source are measurements where nothing declares the value (`component.*`, the pill radius, the focus ring). The accents are declared but rarely painted on the public surface — the chrome stays cream-on-ink.
 - **One painted theme.** A `dark` probe resolves every var identically; the site mixes dark chrome (near-black header/footer, cream ink) with warm-cream inner surfaces. `tokens.json` ships no dark set.
 - **Roles are verified, not declared.** Every `light` role pairs a measured colour with the component that was measured wearing it; `light.surface.page` was verified on the footer (#000), so name and fill describe that component.

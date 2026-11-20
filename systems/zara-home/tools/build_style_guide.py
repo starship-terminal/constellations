@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Render style-guide.html from tokens.json. No network, no invented colours."""
+import html as htmllib
 import json
 import pathlib
 
@@ -26,8 +27,14 @@ def walk(path):
     return resolve(node["$value"])
 
 
+def esc(value):
+    """Every token value is escaped before it lands in an attribute or text (a quoted font name
+    would otherwise close style="...")."""
+    return htmllib.escape(str(value), quote=True)
+
+
 def swatch(name, path):
-    value = walk(path)
+    value = esc(walk(path))
     return (
         f'<div class="swatch"><i style="background:{value}"></i>'
         f"<b>{name}</b><code>{value}</code><small>{path}</small></div>"
@@ -41,6 +48,9 @@ body = walk("light.text.body")
 sans = walk("core.fontFamily.sans")
 focus = walk("light.border.focus")
 rule = walk("light.border.rule")
+for _value in (page, ink, muted, body, sans, focus, rule):
+    if any(c in str(_value) for c in "<>{};"):
+        raise SystemExit(f"refusing a token value that would break the stylesheet: {_value!r}")
 
 html = f"""<!doctype html>
 <html lang="en">
@@ -107,9 +117,9 @@ html = f"""<!doctype html>
   </div>
   <p><input class="search" placeholder="What are you searching for?" aria-label="Search"></p>
   <div class="row">
-    <i class="swatch-dot" style="background:{walk('light.background.page')}"></i>
-    <i class="swatch-dot" style="background:{walk('light.text.primary')}"></i>
-    <i class="swatch-dot" style="background:{walk('light.text.muted')}"></i>
+    <i class="swatch-dot" style="background:{esc(walk('light.background.page'))}"></i>
+    <i class="swatch-dot" style="background:{esc(walk('light.text.primary'))}"></i>
+    <i class="swatch-dot" style="background:{esc(walk('light.text.muted'))}"></i>
   </div>
   <footer>Help · Contact · Stores</footer>
 </main>

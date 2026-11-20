@@ -30,7 +30,8 @@ import json, pathlib, re
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
 V = json.loads((RAW / "css-vars.json").read_text())
-RL = V["resolved"].get("dark") or V["resolved"].get("light") or {}
+# cohere paints light only (catalog theme list): resolve against the light pass, never a dark probe.
+RL = V["resolved"]["light"]
 C = json.loads((RAW / "components-computed.json").read_text())["components"]
 R = {n: v.get("value", v.get("raw")) for n, v in RL.items()}
 
@@ -55,8 +56,13 @@ def rgb_of(v):
     """`rgb(158 158 158/var(--tw-bg-opacity,1))` -> `rgb(158 158 158)` —
     strip the /alpha tail and the var() inside."""
     v = (v or "").strip()
-    v = re.sub(r"/\s*var\([^)]*\)", "", v)
-    v = re.sub(r"/\s*[\d.]+%?\s*\)", ")", v)
+    # The Tailwind opacity var carries its own default (1 in every utility here): use it, and keep a
+    # numeric slash alpha instead of dropping it.
+    v = re.sub(r"/\s*var\([^,)]*,\s*([\d.]+%?)\s*\)", r"/\1", v)
+    m = re.fullmatch(r"rgb\(\s*(\d+)[\s,]+(\d+)[\s,]+(\d+)\s*/\s*([\d.]+)(%?)\s*\)", v)
+    if m:
+        a = float(m.group(4)) / (100 if m.group(5) else 1)
+        return "rgb(%s %s %s)" % m.group(1, 2, 3) if a >= 1 else "rgba(%s, %s, %s, %g)" % (m.group(1), m.group(2), m.group(3), a)
     return v.strip()
 
 

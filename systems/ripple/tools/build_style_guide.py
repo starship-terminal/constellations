@@ -57,6 +57,14 @@ def block(setname):
 
 
 css = block("core") + "\n" + block("light")
+
+
+def js(value):
+    """A JS string literal for a token value: quoted and escaped by json, with < as \\u003c so a
+    value holding </script> cannot end the script."""
+    return json.dumps(str(value)).replace("<", "\\u003c")
+
+
 html = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -126,14 +134,14 @@ p {{ max-width: 70ch; }}
 </main>
 <script>
 const roles = [
-  ["page", "var(--surface-page)", "{T['light']['surface']['page']['$value']}"],
-  ["hero", "var(--surface-hero)", "{T['light']['surface']['hero']['$value']}"],
-  ["raised", "var(--surface-raised)", "{T['light']['surface']['raised']['$value']}"],
-  ["text", "var(--text-primary)", "{T['light']['text']['primary']['$value']}"],
-  ["muted", "var(--text-muted)", "{T['light']['text']['muted']['$value']}"],
-  ["accent", "var(--accent)", "{T['light']['accent']['$value']}"],
-  ["on accent", "var(--text-on-accent)", "{T['light']['text']['on-accent']['$value']}"],
-  ["link", "var(--text-link)", "{T['light']['text']['link']['$value']}"]
+  ["page", "var(--surface-page)", {js(T['light']['surface']['page']['$value'])}],
+  ["hero", "var(--surface-hero)", {js(T['light']['surface']['hero']['$value'])}],
+  ["raised", "var(--surface-raised)", {js(T['light']['surface']['raised']['$value'])}],
+  ["text", "var(--text-primary)", {js(T['light']['text']['primary']['$value'])}],
+  ["muted", "var(--text-muted)", {js(T['light']['text']['muted']['$value'])}],
+  ["accent", "var(--accent)", {js(T['light']['accent']['$value'])}],
+  ["on accent", "var(--text-on-accent)", {js(T['light']['text']['on-accent']['$value'])}],
+  ["link", "var(--text-link)", {js(T['light']['text']['link']['$value'])}]
 ];
 const box = document.getElementById("swatches");
 for (const [name, bg, hex] of roles) {{

@@ -111,6 +111,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 - **Animated surfaces.** Hero video panels and the scroll-revealed sections hold animated content; a screenshot freezes one frame, so a dark rectangle or a half-revealed section is a capture artifact, not the design.
 - **The forms.** Contact and sign-in fields were measured at rest and typed into then cleared — validation, error, loading and success states are unverified because nothing was submitted.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw values, never the pixels.
+- **Unpainted fills are not tokens.** The auth.factory.ai sign-in panel, e-mail field and Google button and the dark docs sidebar compute a transparent `backgroundColor` (the colour comes from an ancestor), so `core.component.signin.panel-bg`, `field-bg`, `google-fill` and `dark.background.docsPanel` were dropped in the 2026-11 audit.
 
 ## Fonts
 
@@ -155,3 +156,7 @@ python3 tools/build_style_guide.py                                              
 python3 tools/build_components_md.py                                                       # -> components.md
 make -C ../.. design-md grade check                                                        # repo-level (the Makefile is at the root): DESIGN.md, health, validation
 ```
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

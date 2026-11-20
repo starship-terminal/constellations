@@ -62,8 +62,8 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   // fresh context before recording the route as blocked this run.
   let ok = false;
   for (let tries = 0; tries < 2 && !ok; tries++) {
-    await open(page, url || (/^https?:/.test(URLS[key]) ? URLS[key] : BASE + URLS[key]), { wait, promo });
-    ok = !(await blocked());
+    ok = (await open(page, url || (/^https?:/.test(URLS[key]) ? URLS[key] : BASE + URLS[key]), { wait, promo }))
+      && !(await blocked());
     if (!ok && tries === 0) { log('  challenge, one reload', key); }
   }
   if (!ok) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); liveCtx = null; return false; }

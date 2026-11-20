@@ -47,6 +47,16 @@ colors:
   app-success: "rgb(118, 183, 126)"
   app-warning: "rgb(229, 169, 72)"
   app-info: "rgb(74, 152, 181)"
+  band-bg-page: "#0d0a07"
+  band-bg-surface: "#181310"
+  band-bg-surface-2: "#221c17"
+  band-text-primary: "#f5f2e0"
+  band-text-muted: "#f5f2e0a6"
+  band-text-subtle: "#f5f2e073"
+  band-border-default: "#f5f2e01a"
+  band-border-strong: "#f5f2e033"
+  band-accent-default: "#faf082"
+  band-accent-ink: "#180600"
 typography:
   display-xl:
     fontFamily: "Mackinac"
@@ -190,7 +200,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The `dark` token set is the hero and footer palette on the light page. The site did not switch themes. Hover and pressed colours are stylesheet rules (`espresso/90`, `ivory`, `scale: 0.985`), not a hovered element. The marketing focus ring was declared as `ring-espresso/30` and was not forced. Keyboard focus on Product painted the browser outline `auto 1px rgb(229, 151, 0)`. The login checkbox was already checked, so the unchecked fill is missing. Display sizes that use `clamp()` are recorded at 1440, not at 390. Matter and Mackinac are proprietary and are not in this package. The style guide falls back to system fonts.
+The hero and footer palette on the light page is the `light.band` group. It was a `dark` token set, but the site did not switch themes, so it is not registered as a theme. Hover and pressed colours are stylesheet rules (`espresso/90`, `ivory`, `scale: 0.985`), not a hovered element. The marketing focus ring was declared as `ring-espresso/30` and was not forced. Keyboard focus on Product painted the browser outline `auto 1px rgb(229, 151, 0)`. The login checkbox was already checked, so the unchecked fill is missing. Display sizes that use `clamp()` are recorded at 1440, not at 390. Matter and Mackinac are proprietary and are not in this package. The style guide falls back to system fonts.
 
 ### Do and don't (from README.md)
 

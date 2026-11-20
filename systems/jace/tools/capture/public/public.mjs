@@ -104,17 +104,10 @@ const desktop = {
     await S.view('default');
   } },
   signup: { path: APP + '/signup', abs: true, run: async (p, S) => {
-    // Signup funnel, signed out. Click Continue and Continue to signup only.
-    // Never press Google, Outlook, Apple, or SSO. There is no email field.
+    // Signup landing, signed out, shot at rest. Consent boundary: Continue opens a privacy notice
+    // whose "Continue to signup" acknowledges it, so neither is clicked (never choose a consent
+    // option). The privacy and OAuth cards are recorded as a boundary, not reached.
     await S.view('default');
-    await step('privacy', async () => {
-      const b = p.getByRole('button', { name: /^Continue$/ });
-      if (await b.count()) { await b.first().click(); await wait(p, 900); await S.view('privacy'); }
-    });
-    await step('oauth', async () => {
-      const b = p.getByRole('button', { name: /Continue to signup/i });
-      if (await b.count()) { await b.first().click(); await wait(p, 900); await S.view('oauth'); }
-    });
   } },
   notfound: { path: '/features', run: async (p, S) => { await S.view('default'); } },
 };
@@ -129,15 +122,8 @@ const mobile = {
   blog: { path: '/blog', run: async (p, S) => { await S.view('default'); } },
   signin: { path: APP + '/signin', abs: true, run: async (p, S) => { await S.view('default'); } },
   signup: { path: APP + '/signup', abs: true, run: async (p, S) => {
+    // Consent boundary, as on desktop: Continue and Continue to signup are never clicked.
     await S.view('default');
-    await step('privacy', async () => {
-      const b = p.getByRole('button', { name: /^Continue$/ });
-      if (await b.count()) { await b.first().click(); await wait(p, 900); await S.view('privacy'); }
-    });
-    await step('oauth', async () => {
-      const b = p.getByRole('button', { name: /Continue to signup/i });
-      if (await b.count()) { await b.first().click(); await wait(p, 900); await S.view('oauth'); }
-    });
   } },
   docs: { path: '/docs/guides-getting-started', run: async (p, S) => { await S.view('default'); } },
 };

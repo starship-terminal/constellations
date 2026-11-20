@@ -305,14 +305,6 @@ async function reducedMotion(key, sel) {
   } catch (e) { out._meta.reducedMotion[key] = { selector: sel, error: String(e).slice(0, 120) }; }
 }
 
-// Marks the opened mobile nav overlay: the nav rail widens / a sheet opens.
-async function markMobileMenu() {
-  await page.evaluate(() => {
-    const m = document.querySelector('[class*="_navSheet"], [class*="_mobileNav"], [class*="_menu"], nav');
-    if (m) m.setAttribute('data-m-mark', 'mmenu');
-  });
-}
-
 // Marks a home feed card: the smallest ancestor holding a headline and a
 // thumbnail.
 async function markTrendCard() {

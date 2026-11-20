@@ -52,7 +52,7 @@ Screenshots are named `{page}-light-{state}.png` (grow.google paints one theme �
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 20 components were given a real keyboard focus. Glue's ring is a 2px box-shadow in the declared glue-blue-600 (rgb(26, 115, 232)) offset 1px — the outline is set transparent beside it: `promo-link` (2px solid transparent, offset 1px), `hero-cta` (2px solid transparent, offset 1px), `video-teaser` (2px solid transparent, offset 0px), `card-link` (2px solid transparent, offset 1px), `footer-link` (2px solid transparent, offset 1px), `footer-lang` (1px auto #101010, offset 0px), `breadcrumb` (2px solid transparent, offset 1px), `learn-more-btn` (2px solid transparent, offset 1px), `tab` (2px solid transparent, offset 1px), `cert-cta` (2px solid transparent, offset 1px), `ai-link` (2px solid transparent, offset 1px), `m-hero-cta` (2px solid transparent, offset 1px). The rest draw the same shadow ring without the transparent outline: `header-logo`, `nav-link`, `nav-drop-trigger`, `mega-item`, `promo-banner`, `m-drawer-btn`, `m-drawer-link`, `m-skip-link`.
+**Focus.** 19 components were given a real keyboard focus. Glue's ring is a box-shadow, not an outline. 11 draw a 2px box-shadow ring in #1a73e8 `color.palette.blue.600`: `header-logo`, `nav-link`, `nav-drop-trigger`, `mega-item`, `promo-link`, `card-link`, `footer-link`, `breadcrumb`, `learn-more-btn`, `m-drawer-link`, `m-skip-link`. 5 draw a 2px box-shadow ring in #185abc `color.palette.blue.800`: `hero-cta`, `video-teaser`, `cert-cta`, `ai-link`, `m-hero-cta`. 1 draw a 1px auto outline in #101010 (offset 0px): `footer-lang`. 1 draw a 2px box-shadow ring in #4285f4 `color.palette.blue.500`: `tab`. 1 draw no ring, so a keyboard user sees no change: `m-drawer-btn`. 11 also set a transparent outline, which draws nothing: `promo-link`, `hero-cta`, `video-teaser`, `card-link`, `footer-link`, `breadcrumb`, `learn-more-btn`, `tab`, `cert-cta`, `ai-link`, `m-hero-cta`. Focus could not be captured on 1 more (keyboard focus never landed, so their readings are left out): `promo-banner`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover) — nothing a real press would submit or open was ever pressed. A pressed filled button keeps the hover's #185abc fill and deepens the elevation (0 1px 2px / 0 2px 6px rgba(60,64,67)); pressed text links keep the faint brand wash (rgba(26,115,232,0.1)); the 5px `outline: auto` Chrome draws on forced :active is the forced-state artifact, not a page style.
 
@@ -82,17 +82,17 @@ Values that apply across entries, from the measurement files.
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
 | [Promo banner](#promo-banner) | 575.83 x 25 | - | - | transparent | none | 1px 0px 0px 0px |
-| [Video teaser](#video-teaser) | 616 x 346.5 | - | 100px | rgba(255, 255, 255, 0.62) | none | 0 |
-| [Content card](#content-card) | 1296 x 285 | - | 8px | #ffffff `color.palette.grey.0` | transparent 0px 0px 0px 0px | 0 |
+| [Video teaser](#video-teaser) | 616 x 346.5 | - | - | transparent | none | 0 |
+| [Content card](#content-card) | 1296 x 285 | - | - | transparent | none | 0 |
 | [Card link](#card-link) | 616 x 205 | - | 8px | #ffffff `color.palette.grey.0` | none | 0 |
 | [Mega-menu panel](#mega-menu-panel) | 1440 x 623 | - | 0px 0px 50px 50px | #ffffff `color.palette.grey.0` | rgba(60, 64, 67, 0.2) 0px 15px 20px 0px | 5px 0px |
 | [Section tabs](#section-tabs) | 721 x 48 | - | 120px | #ffffff `color.palette.grey.0` | rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px | 0 |
-| [Certificate card](#certificate-card) | 369.75 x 386 | 1px transparent | 48px | #3186ff | none | 0 |
-| [Dark hero](#dark-hero) | 1440 x 720 | 1px transparent | 48px | #3186ff | none | 0 |
+| [Certificate card](#certificate-card) | 369.75 x 386 | - | - | transparent | none | 0 |
+| [Dark hero](#dark-hero) | 1440 x 720 | - | - | #18191d | none | 0 |
 | [Graduate badge card](#graduate-badge-card) | 377.91 x 68 | - | - | transparent | none | 0 |
-| [Expansion panel](#expansion-panel) | 1296 x 93 | 1px #dadce0 `color.palette.grey.300` | - | - | none | 0 |
-| [AI card](#ai-card) | 1069.33 x 702.25 | - | 34px | #ffffff `color.palette.grey.0` | none | 0 |
-| [Footer](#footer) | 1440 x 837 | - | 4px | #eff2f7 | none | 0 |
+| [Expansion panel](#expansion-panel) | 1296 x 93 | T: 1px solid #dadce0 `color.palette.grey.300` | - | transparent | none | 0 |
+| [AI card](#ai-card) | 1069.33 x 702.25 | - | - | transparent | none | 0 |
+| [Footer](#footer) | 1440 x 837 | - | - | #eff2f7 | none | 0 |
 
 ## Components
 
@@ -169,9 +169,9 @@ The blue "New! Enroll in the AI Certificate and learn vibe coding…" promotion 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 575.83 x 25; padding 1px 0px 0px 0px; background transparent; text Google Sans Flex 16/24 500, #ffffff `color.palette.grey.0` |
+| default (same: hover, pressed) | size 575.83 x 25; padding 1px 0px 0px 0px; background transparent; text Google Sans Flex 16/24 500, #ffffff `color.palette.grey.0` |
 
-![Promo banner default](components/crops/promo-banner-default.png) ![Promo banner hover](components/crops/promo-banner-hover.png) ![Promo banner focus-visible](components/crops/promo-banner-focus-visible.png) ![Promo banner pressed](components/crops/promo-banner-pressed.png)
+![Promo banner default](components/crops/promo-banner-default.png) ![Promo banner hover](components/crops/promo-banner-hover.png) ![Promo banner pressed](components/crops/promo-banner-pressed.png)
 
 #### Promo link
 The banner's "Enroll now →" tail; measured, never followed. Read as `promo-link` on the home page.

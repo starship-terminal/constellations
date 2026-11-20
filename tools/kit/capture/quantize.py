@@ -15,10 +15,12 @@ clips recorded under partClip, the union under capture.clip, and a fresh dimensi
 stitched PNG's real pixel size (a part's own check can never vouch for the sheet).
 
 A tile set is refused, and nothing is written, unless it is complete (check_tiles): a contiguous
-part0..partN run, every tile's sidecar present with its own check passed, clips that butt-join from
+part0..partN run, every tile's PNG and sidecar present with its own check passed, clips that butt-join from
 y=0 at one width, and a covered height that reaches the document height the tiles recorded (capped
 at public.mjs's 8-tile ceiling). A run that lost a tile otherwise published a shortened sheet whose
-sidecar said pass.
+sidecar said pass. A tile is found by its PNG or by its sidecar alone: a tile whose screenshot threw
+before writing leaves only its failed .capture.json, and a set whose part0 never wrote would otherwise
+go unchecked while the previous run's stitched name.png was published as this run's.
 """
 from PIL import Image
 import json, pathlib, re, shutil, sys
@@ -58,6 +60,9 @@ def check_tiles(name, ps):
     doc_h = None
     for i, f in ps:
         sc = sidecar_for(f)
+        if not f.exists():
+            status = ((sc or {}).get('dimensionCheck') or {}).get('status')
+            die(f'{f.name}: the tile never wrote its PNG (its sidecar records {status!r}) — the capture failed')
         if sc is None:
             die(f'{f.name}: no .capture.json sidecar — the tile never finished writing')
         chk = sc.get('dimensionCheck') or {}
@@ -132,15 +137,19 @@ def stitched_sidecar(name, sheet, tile_paths, intended=None):
     return meta
 
 
+# A tile is name.partN.png; a name such as x.partial.png or home.party.png is a screenshot.
+TILE = re.compile(r'(.+)\.part(\d+)\.png$')
+TILE_SIDECAR = re.compile(r'(.+)\.part(\d+)\.png\.capture\.json$')
+# Every attempted tile, by its PNG or by a sidecar left without one, so a set whose first tile failed
+# before writing still reaches check_tiles instead of being skipped.
 parts = {}
-for f in RAW.glob('*.part*.png'):
-    m = re.match(r'(.+)\.part(\d+)\.png$', f.name)
-    if not m:   # a name such as x.partial.png is not a tile
-        continue
-    parts.setdefault(m.group(1), []).append((int(m.group(2)), f))
+for f in RAW.iterdir():
+    m = TILE.match(f.name) or TILE_SIDECAR.match(f.name)
+    if m:
+        parts.setdefault(m.group(1), {})[int(m.group(2))] = RAW / f'{m.group(1)}.part{m.group(2)}.png'
 stitched = {}
-for name, ps in parts.items():
-    ps = sorted(ps)
+for name, tiles in sorted(parts.items()):
+    ps = sorted(tiles.items())
     intended = check_tiles(name, ps)
     ims = [Image.open(f).convert('RGB') for _, f in ps]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
@@ -152,9 +161,8 @@ for name, ps in parts.items():
     print('stitched', name, sheet.size)
 
 n = 0
-TILE = re.compile(r'.+\.part\d+\.png$')
 for f in sorted(RAW.glob('*.png')):
-    if TILE.match(f.name):   # a tile, stitched above; x.partial.png or home.party.png is a screenshot
+    if TILE.match(f.name):   # a tile, stitched above
         continue
     im = Image.open(f).convert('RGB')
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)

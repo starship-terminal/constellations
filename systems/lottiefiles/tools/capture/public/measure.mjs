@@ -24,7 +24,7 @@ const URLS = {
 };
 
 let page, cdp, current, context;
-const run = new Date().toISOString();
+const run = new Date().toLocaleDateString('en-CA'); // the local date of the capture
 
 async function newPage(key, { mobile = false } = {}) {
   current = key;

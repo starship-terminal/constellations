@@ -1,12 +1,11 @@
 // Reads the product's motion into raw/motion.json: durations, easing curves, which properties transition,
 // animation and @keyframes names, motion custom properties, and what prefers-reduced-motion: reduce
-// changes. Serves both web routes (docs/decisions/0001-motion-tokens.md, docs/CAPTURE.md#motion).
+// changes (docs/decisions/0001-motion-tokens.md, docs/CAPTURE.md#motion). Literal was captured on the
+// public route only, so this copy reads public URLs; the kit's signed-in SNAPS route is not shipped.
 //
-//   PLAYWRIGHT=/path/to/playwright/index.mjs SNAPS=<dir of page copies> node tools/capture/motion-probe.mjs
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/motion-probe.mjs --urls <url>[,<url>...]
 //
-// Signed-in route: every copy under SNAPS is opened the way layout.mjs opens it. Public route: each URL is
-// opened in a plain headless context. Each page is read twice in the same session, on the same elements:
+// Each URL is opened in a plain headless context. Each page is read twice in the same session, on the same elements:
 // once with page.emulateMedia({ reducedMotion: 'no-preference' }), once with 'reduce'. The page's own
 // matchMedia answer is recorded for both, so a pass that did not take is visible. Nothing is clicked,
 // typed or submitted; computed transitions are read at rest, and the stylesheets' own rules (hover and
@@ -25,10 +24,10 @@ const { chromium } = pw.default ?? pw;
 const here = path.dirname(fileURLToPath(import.meta.url));
 const REF = path.resolve(here, '..', '..');              // systems/<slug>, from tools/capture
 const OUT = process.env.OUT_JSON || path.join(REF, 'raw', 'motion.json');
-const SNAPS = process.env.SNAPS ? path.resolve(process.env.SNAPS) : null;
+if (process.env.SNAPS) { console.error('SNAPS is set, but this package has no signed-in route (tools/capture/signed-in/ is not shipped); use --urls'); process.exit(2); }
 const urlsArg = process.argv.indexOf('--urls');
 const URLS = urlsArg > 0 ? (process.argv[urlsArg + 1] || '').split(',').filter(Boolean) : [];
-if (!SNAPS && !URLS.length) { console.error('SNAPS=<dir of page copies>, or --urls <url>[,<url>...], is required'); process.exit(2); }
+if (!URLS.length) { console.error('--urls <url>[,<url>...] is required'); process.exit(2); }
 const CAP = Number(process.env.MOTION_CAP) || 6000;   // moving elements kept per pass
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
@@ -82,20 +81,7 @@ async function readPage(page, label, url) {
 const browser = await chromium.launch();
 const pages = {};
 try {
-  if (SNAPS) {
-    // The signed-in route's own opener (lib.mjs reads SNAPS when it loads, so import it after the check).
-    const lib = await import('./signed-in/lib.mjs');
-    const labels = fs.readdirSync(SNAPS).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5)).filter((l) => fs.existsSync(path.join(SNAPS, `${l}.html`))).sort();
-    for (const label of labels) {
-      const meta = lib.metaOf(label);
-      const ctx = await lib.newContext(browser, meta);
-      try {
-        const page = await lib.openSnap(ctx, label);
-        pages[`${label}@${meta.w}`] = await readPage(page, label, meta.url);   // a copy's label is unique in SNAPS
-      } catch (e) { log('failed', label, String(e.message).split('\n')[0]); }
-      await ctx.close();
-    }
-  } else {
+  {
     for (const [i, url] of URLS.entries()) {
       const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, locale: 'en-US' });
       const page = await ctx.newPage();
@@ -119,7 +105,7 @@ const out = {
   _meta: {
     readAt: new Date().toLocaleDateString('en-CA'),     // the local date of the run
     probe: "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
-    source: SNAPS ? 'static signed-in page copies (stylesheets inlined), rendered headless' : 'public pages, headless Chromium, read at rest',
+    source: 'public pages, headless Chromium, read at rest',
     notes: 'Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial.',
   },
   summary: mergeSummaries(Object.values(pages).map((p) => p.summary)),

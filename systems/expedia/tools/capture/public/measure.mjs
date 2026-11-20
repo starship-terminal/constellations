@@ -25,6 +25,7 @@
 //   focused        the field clicked into (a text field only)
 //   filled         sample text typed into a field, measured, then deleted; Enter
 //                  is never pressed
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -40,6 +41,9 @@ const save = () => { out._meta.read = new Date().toISOString().slice(0, 10); fs.
 const PAGESDIR = process.env.PAGES || path.join(os.homedir(), '.design-systems', 'expedia', 'pages');
 const { srv, port } = await servePages(PAGESDIR);
 const LOCAL = `http://127.0.0.1:${port}`;
+// Which archived copy each page was read from: the inputs live outside the repo, so the file name
+// and its hash are the only way a later rebuild can tell whether it saw the same snapshot.
+const pageFile = (key) => (URLS[key] ? new URL(URLS[key]).pathname.replace(/^\/+/, '').replace(/^pages\//, '') : null);
 const URLS = {
   home: `${LOCAL}/pages/home.html`,
   'home-i': `${LOCAL}/pages/home.html`,
@@ -449,6 +453,19 @@ async function mobile() {
 
 // ---------- run ----------
 
+// A component recorded for a page this run finished but never touched is stale evidence from an
+// earlier capture (a probe that returned false, or a page that changed): flag it missing so it
+// cannot read as a fresh measurement on a subset run (a full run drops it below). Ported from the
+// airbnb base, which this fork dropped.
+function sweepMissing(pageName) {
+  for (const [k, c] of Object.entries(out.components)) {
+    if (c.page === pageName && !touched.has(k) && !c.missing) {
+      c.missing = true;
+      log('  ! not found this run', k);
+    }
+  }
+}
+
 const RUNS = { home, 'home-i': homeI, search, mobile };
 const { browser, context: ctx } = await launch();
 context = ctx;
@@ -457,11 +474,23 @@ run = new Date().toISOString();
 const finishedPages = new Set();
 for (const key of Object.keys(RUNS)) {
   if (only.length && !only.includes(key)) continue;
+  const file = pageFile(key);
+  if (file && fs.existsSync(path.join(PAGESDIR, file))) {
+    (out._meta.pages ??= {})[key] = { file, sha256: crypto.createHash('sha256').update(fs.readFileSync(path.join(PAGESDIR, file))).digest('hex') };
+  }
   try {
     await RUNS[key]();
     finishedPages.add(key);
+    sweepMissing(key);
+    if (out._meta.failed) delete out._meta.failed[key];
     save();
-  } catch (e) { log('PAGE FAILED', key, e.message.split('\n')[0]); }
+  } catch (e) {
+    const msg = e.message.split('\n')[0].slice(0, 160);
+    log('PAGE FAILED', key, msg);
+    // record the failure against the page instead of letting its old components read as fresh
+    (out._meta.failed ??= {})[key] = msg;
+    save();
+  }
   if (page) await page.close().catch(() => {});
 }
 // Drop components no page touched this full run — but only ones from a page

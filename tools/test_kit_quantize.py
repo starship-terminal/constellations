@@ -1,6 +1,7 @@
 """tools/kit/capture/quantize.py, and every package copy that stitches tiles, stitches name.partN.png
 tiles and skips a name that only looks like one (x.partial.png) instead of crashing. Needs Pillow;
 skipped without it."""
+import hashlib
 import pathlib
 import shutil
 import subprocess
@@ -15,8 +16,22 @@ except ImportError:  # pragma: no cover
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 KIT = ROOT / "tools" / "kit" / "capture" / "quantize.py"
-# Package copies that stitch .partN tiles (the rest of the packages' quantize.py never glob for them).
-COPIES = sorted(p for p in ROOT.glob("systems/*/tools/capture/quantize.py") if "*.part*.png" in p.read_text())
+
+def distinct(paths):
+    """One script per distinct body: byte-identical copies behave identically, and every run is a
+    subprocess (about 3,000 per make test when each of 400 copies ran), so each body is tested once."""
+    seen, out = set(), []
+    for p in paths:
+        h = hashlib.sha1(p.read_bytes()).hexdigest()
+        if h not in seen:
+            seen.add(h)
+            out.append(p)
+    return out
+
+
+# Package copies that stitch .partN tiles (the rest of the packages' quantize.py never glob for them),
+# one per distinct body.
+COPIES = distinct(sorted(p for p in ROOT.glob("systems/*/tools/capture/quantize.py") if "*.part*.png" in p.read_text()))
 
 
 @unittest.skipIf(Image is None, "Pillow is not installed")

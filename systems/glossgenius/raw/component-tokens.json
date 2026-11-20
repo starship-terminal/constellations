@@ -18,28 +18,16 @@
       },
       "weight": {
         "regular": {
-          "value": 500,
+          "value": 400,
           "type": "fontWeight",
-          "source": "computed fontWeight of plan-row default (raw/components-computed.json)",
-          "description": "The 400 body weight on plan rows, FAQ and fields."
+          "source": "computed fontWeight of nav-link default (raw/components-computed.json)",
+          "description": "The 400 weight, measured on header nav links."
         },
         "medium": {
           "value": 500,
           "type": "fontWeight",
-          "source": "computed fontWeight of hero-eyebrow default (raw/components-computed.json)",
-          "description": "The 500 weight on the eyebrow and app labels."
-        },
-        "semibold": {
-          "value": 400,
-          "type": "fontWeight",
-          "source": "computed fontWeight of nav-link default (raw/components-computed.json)",
-          "description": "The 600 weight on nav links, buttons and card headings."
-        },
-        "bold": {
-          "value": 500,
-          "type": "fontWeight",
-          "source": "computed fontWeight of hero-h1 default (raw/components-computed.json)",
-          "description": "The display-heading weight."
+          "source": "computed fontWeight of plan-row default, hero-eyebrow default, hero-h1 default (raw/components-computed.json)",
+          "description": "The 500 weight, measured on pricing plan rows; the hero eyebrow; the hero heading."
         }
       },
       "size": {
@@ -6898,7 +6886,7 @@
     "action": {
       "select-fill": {
         "value": "{accent.primary.default}",
-        "type": "color",
+        "type": "other",
         "source": "the painted bgImage layer of bk-service-select default (raw/components-computed.json paint list); matches declared accent.primary.default",
         "description": "A service row's 'Select' pill fill — the accent gradient the button paints as bgImage (its own backgroundColor stays transparent)."
       },
@@ -6910,7 +6898,7 @@
       },
       "book-fill": {
         "value": "{accent.primary.default}",
-        "type": "color",
+        "type": "other",
         "source": "the painted bgImage layer of bk-book-btn default (raw/components-computed.json paint list); matches declared accent.primary.default",
         "description": "The header 'BOOK n SERVICE' bar fill — the same accent gradient, painted as bgImage."
       },

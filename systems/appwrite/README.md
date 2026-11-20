@@ -14,7 +14,7 @@ Appwrite is worth a capture because it is a current reference for a dark-pinned 
 | [patterns.md](patterns.md) | How the components combine on each surface: the shell, hero/CTA pattern, cards and pricing, docs chrome, blog/changelog, the sign-in gate |
 | [components/crops/](components/crops) | 162 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 34 `{page}-dark-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages |
-| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property the bundle declares, binned, resolved light and dark), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads), [full/](raw/full) (full-colour captures with `.capture.json` viewport sidecars) |
+| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property the bundle declares, binned, resolved light and dark), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [Rebuild](#rebuild) |
 
 ## Brief
@@ -103,12 +103,13 @@ Nothing was signed into, sent, created or submitted. The public marketing surfac
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **Dark is painted, light is declared.** Every captured route pins `html.dark`; the `dark` set is measured evidence, the `light` set is the `:root` declaration the console app uses — never seen on these pages.
 - **The page lies about devicePixelRatio.** appwrite.io's scripts make `window.devicePixelRatio` read 1 while the renderer paints at 2x; the `.capture.json` sidecars record both (`devicePixelRatio` real, `reportedDevicePixelRatio` the page's).
 - **`component.*` tokens live on the dark set only** (the painted theme); they are measured heights/radii, not site variables.
 - **Skins are evidence, not themes.** The `.crazy`/`.stealth`/`.premium`/`.high-contrast`/`.barbie`/`.nineties`/`.legacy` blocks are console easter eggs in the shared bundle; binned `skins` in css-vars.json, never tokenised.
 - **No icons.** No standalone SVG set was lifted (declared `layoutGaps`); the icon glyphs visible in crops are Appwrite's artwork.
-- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or `raw/full/`.
+- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from the tokens.
 
 ## Fonts
 
@@ -169,10 +170,10 @@ The kit under [tools/capture/](tools/capture) re-reads the live site; the builde
 ```sh
 cd systems/appwrite
 PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs \
-  node tools/capture/public/public.mjs            # page screenshots -> raw/full/
+  node tools/capture/public/public.mjs            # page screenshots -> ~/.design-systems/appwrite/raw-shots/ (outside the repo)
 PYTHON=<python with Pillow> node tools/capture/vars.mjs    # raw/css-vars.json
 PLAYWRIGHT=... PYTHON=<python with Pillow> node tools/capture/public/measure.mjs   # raw/components-computed.json + crops
-python3 tools/capture/quantize.py raw/full        # -> screenshots/
+python3 tools/capture/quantize.py ~/.design-systems/appwrite/raw-shots        # -> screenshots/
 node tools/capture/public/build-measurements.mjs  # raw/measurements.md
 python3 tools/build_component_tokens.py           # raw/component-tokens.json
 python3 tools/build_tokens.py                     # tokens.json

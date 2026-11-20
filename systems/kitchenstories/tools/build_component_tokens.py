@@ -15,7 +15,8 @@ RAW = HERE / "raw"
 V = json.loads((RAW / "css-vars.json").read_text())
 RL = V.get("resolved", {}).get("light", {})
 comp_path = RAW / "components-computed.json"
-C = json.loads(comp_path.read_text())["components"] if comp_path.exists() else {}
+# Required: without it every measured component token would silently drop out of the build.
+C = json.loads(comp_path.read_text())["components"]
 R = {n: (v.get("value", v.get("raw")) if isinstance(v, dict) else v) for n, v in RL.items()}
 
 SPEC = {
@@ -60,12 +61,30 @@ def ref(name, ty, desc):
     return var(name, ty, source=f"css-var {name} resolved (raw/css-vars.json)", description=desc)
 
 
+def is_leaf(node):
+    return isinstance(node, dict) and "type" in node and ("var" in node or "value" in node)
+
+
 def put(tree, path, leaf):
+    """Place a leaf without nesting it inside another leaf.
+
+    --wpds-color-background-interactive-error and its -active/-disabled/-strong/-weak
+    children split on "-", so the children would land inside the parent leaf, where
+    build_tokens.py treats the node as one leaf and drops them. When the walk reaches
+    a leaf, the rest of the path stays joined with "-" as a sibling key (error and
+    error-active). A path that is already taken raises.
+    """
     if leaf is None:
         return
     node = tree
-    for k in path[:-1]:
+    path = list(path)
+    for i, k in enumerate(path[:-1]):
+        if is_leaf(node.get(k)):
+            path = path[:i] + ["-".join(path[i:])]
+            break
         node = node.setdefault(k, {})
+    if path[-1] in node:
+        raise KeyError(f"token path {'.'.join(path)} is already taken")
     node[path[-1]] = leaf
 
 

@@ -49,14 +49,15 @@ export const RAW = path.join(REF, 'raw');
 // role/structure. Any consent or promo overlay is hidden, never answered.
 export const M = (name) => `[class*="${name}"]`;
 
-// The per-context patches every page gets: a record of
+// The per-context patch every page gets: a record of
 // the real devicePixelRatio before app code runs — a site's scripts can make
 // window.devicePixelRatio read 1 while the renderer still paints at the
 // context's deviceScaleFactor (a 780x1688 PNG from a 390x844 viewport).
 // __captureDPR keeps the launch-time value for the screenshot sidecar.
 export async function patch(context) {
   await context.addInitScript(() => {
-    // automation flag: left as the browser sets it (navigator.webdriver is not masked).
+    // navigator.webdriver is left as the browser reports it: hiding automation from a bot check is a
+    // bypass. Bot check: recorded as a boundary, not bypassed.
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }

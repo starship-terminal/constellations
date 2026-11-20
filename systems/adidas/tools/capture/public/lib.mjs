@@ -30,14 +30,14 @@ export const RAW = path.join(REF, 'raw');
 // sweep for promo/tooltip layers.
 export const M = (name) => `.${name}`;
 
-// The per-context patches every page gets: the webdriver mask, and the
+// The per-context patches every page gets (no webdriver mask: a bot check is a boundary), and the
 // OneTrust consent SDK aborted at request level. The SDK re-mounts its banner
 // if it is hidden after the fact and the hide/remount loop pins the renderer;
 // aborting it is the same remove-only outcome (no consent buttons clicked, no
 // consent record POSTed).
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
   });
   // No consent SDK on adidas.com.cn; nothing to abort.
 }

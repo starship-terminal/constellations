@@ -233,9 +233,34 @@ def fmt(d):
     return "; ".join(f"{k} {d[k]}" for k in ORDER if k in d).replace("|", "/")
 
 
+def measured(v):
+    """A state with a real reading: not skipped, not a focus that never landed (via "focus failed"), not a
+    focus that did not match :focus-visible. Those are the element at rest (the kit's rule, PR 932)."""
+    return "style" in v and not v.get("skipped") and v.get("via") != "focus failed" and (v.get("focus") or {}).get("matches") is not False
+
+
+def clear(c):
+    """A colour that paints nothing (alpha 0)."""
+    c = c.strip()
+    return c == "transparent" or bool(re.fullmatch(r"rgba\([^)]*,\s*0(?:\.0+)?\)", c))
+
+
+def visible_shadow(v):
+    """True when a box-shadow list paints something: a layer with a colour that is not clear and a
+    non-zero offset, blur or spread (Tailwind's all-zero ring slots paint nothing)."""
+    if not v or v == "none":
+        return False
+    for part in re.split(r",\s*(?![^()]*\))", v):
+        colour_ = re.search(r"rgba?\([^)]*\)|#[0-9a-fA-F]{3,8}", part)
+        lengths = re.findall(r"-?[\d.]+px", part)
+        if colour_ and not clear(colour_.group(0)) and any(float(x[:-2]) != 0 for x in lengths):
+            return True
+    return False
+
+
 def child_layers(c):
     setname = PAGE_SET.get(c.get("page"), "light")
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
@@ -361,7 +386,7 @@ OVER = [
     ("Mobile menu", "home, phone width", "tapped the nav burger", "[mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [m-burger](#mobile-burger), [m-menu-link](#mobile-menu-link)"),
     ("Craft dialog", "anonymous editor", "clicked the 'Try with Placeholder Image' card — the product's demo path on the scratch file", "[designer-app-dialog](screenshots/designer-app-dialog.png), [ed-craft](#craft-dialog), [ob-ph](#placeholder-image-card)"),
     ("Craft style pick", "anonymous editor", "clicked the 'Modern' style card — the local toggle that enables 'Add to canvas'", "[designer-app-style-picked](screenshots/designer-app-style-picked.png), [ed-craft-style](#style-card), [ed-add](#add-to-canvas)"),
-    ("Canvas view", "anonymous editor", "pressed 'Add to canvas' on the scratch file — the product's advertised demo path; it generates a placeholder design locally, nothing of ours is sent", "[designer-app-canvas](screenshots/designer-app-canvas.png)"),
+    ("Canvas view", "anonymous editor", "pressed 'Add to canvas' once on the scratch file (the screenshot pass) — it ran a server-side AI generation; a boundary since 2026-11, no longer pressed", "[designer-app-canvas](screenshots/designer-app-canvas.png)"),
     ("Inspector LAYERS tab", "anonymous editor", "clicked the LAYERS inspector tab — a local UI toggle", "[designer-app-layers](screenshots/designer-app-layers.png), [ed-tab](#inspector-tab), [ed-tab-layers](#layers-tab)"),
     ("Auth fields", "app.glorify.com", "typed into then cleared — nothing sent; the sign-in submit's enabled fill was measured with sample text in both fields, never clicked", "[login-field](#email-field-sign-in), [login-submit](#sign-in-submit)"),
     ("Signed-in product", "a Glorify account", "every post-login surface (the real projects, dashboards, brand kit, billing) needs an account", "boundary; see Gaps"),
@@ -378,16 +403,18 @@ W()
 foc = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if not st or "style" not in st or st.get("via") == "focus failed":
+    if not st or not measured(st):
         continue
     s = st["style"]
-    base = next((v["style"] for v in c["states"].values() if "style" in v), s)
-    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
+    base = next((v["style"] for v in c["states"].values() if measured(v)), s)
+    # A transparent outline passes the width/style test but draws nothing.
+    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0 and not clear(s["outlineColor"])
     # A ring painted on a child layer instead of the wrapper: offer buttons
     # draw 1px dotted outlines on their inner anchor while the wrapper's own
     # outline stays none. Those states must count as ringed too.
-    child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline")), None)
-    shadow = s["boxShadow"] != base["boxShadow"] and s["boxShadow"] != "none"
+    child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline")
+                       and not any(clear(x) for x in re.findall(r"rgba?\([^)]*\)|transparent", n["outline"]))), None)
+    shadow = s["boxShadow"] != base["boxShadow"] and visible_shadow(s["boxShadow"])
     border = any(
         s[f"border{d}{p}"] != base[f"border{d}{p}"]
         for d in ("Top", "Right", "Bottom", "Left")
@@ -417,7 +444,7 @@ W("|---|---|---|---|")
 mot = {}
 for k, c in C.items():
     for st in c["states"].values():
-        if "style" not in st:
+        if not measured(st):
             continue
         s = st["style"]
         if s["transitionDuration"] in ("0s", ""):
@@ -453,7 +480,7 @@ for k in ["home-card", "plan-card", "feat-card", "tpl-card", "mk-card", "learn-c
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
         continue
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if st is None:
         continue
     p = props(st, PAGE_SET.get(c.get("page"), "light"))
@@ -531,7 +558,7 @@ W()
 W("- **The account.** Every post-login surface was never reached; the sign-in and sign-up forms were measured and typed into then cleared — 'Sign in', 'Sign up' and the OAuth buttons were never pressed, and what a submitted form returns is unverified.")
 W("- **Purchase.** Plan CTAs ('Start Basic/Pro/Business Trial', 'Book a demo') were measured, never followed; no checkout or trial flow was started.")
 W("- **Feature and comparison routes** beyond the captured set (the other /features/* pages, the alternative pages, the rest of /learn's articles) are the same templates, unmeasured; one example of each family was captured.")
-W("- **Editor depth.** On the anonymous scratch file the Craft dialog was opened, a style picked, and 'Add to canvas' pressed once to paint the canvas state — the product's own demo path. Share, Download, the tool flyouts and the sign-in nudges inside the editor were measured, never activated.")
+W("- **Editor depth.** On the anonymous scratch file the Craft dialog was opened, a style picked, and 'Add to canvas' pressed once to paint the canvas state, which ran a server-side AI generation (a boundary since 2026-11: the screenshot pass no longer presses it). Share, Download, the tool flyouts and the sign-in nudges inside the editor were measured, never activated.")
 W()
 W("### States")
 W()

@@ -198,6 +198,7 @@ The home page is the screen to get right. An 80px white bar carries the acuity:s
 
 ### What to distrust (from README.md)
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **Screenshots are 256-colour PNGs.** The pastel hero gradient and photography band slightly; read exact colours from tokens.json or the raw files.
 - **The home hero repaints per load.** Nine `--c1/--c2/--c3` gradient variants rotate (raw/css-vars.json); the tokens record the variant live during the capture, and the sampled pixels differ from the declared stops because the gradient sits under a white ::after wash.
 - **The pricing hero's dark band is a photograph** (`pricing-background.webp`), not a flat fill — its pixels (~#334e53 teal) are image content, not a palette value.

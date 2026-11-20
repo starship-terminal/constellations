@@ -159,7 +159,9 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 
 (function motion() {
   let m = '';
-  for (const [n, t] of flat(TOK.core && TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  // composite motion tokens (transition, animation) are objects: list their parts
+  const fmt = (v) => Array.isArray(v) ? v.map(fmt).join(', ') : (v && typeof v === 'object' ? Object.entries(v).map(([k, x]) => k + ' ' + fmt(x)).join(' ') : String(v));
+  for (const [n, t] of flat(TOK.core && TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(fmt(t.v))}</span></div>`;
   $('#motion-out').innerHTML = m || '<i>no motion tokens emitted</i>';
 })();
 </script>

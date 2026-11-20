@@ -343,9 +343,9 @@ Below the search shell: the Reckless XPD hero title, the marketing-3 re-themed p
 #### Marketing band
 The section re-themed data-theme-light="marketing-3": the pale-blue palette applied to the same components (the promo strip under the search form). Read as `marketing-band` on the home page.
 
-**Values (default).** size 1200 x 72; background transparent; text Centra No2 16/20 500, #191e3b `color.palette.light1.onFeatured`; icon 24 x 24, #191e3b `color.palette.light1.onFeatured`.
+**Values (default).** size 1200 x 72; background transparent; text Centra No2 16/20 500, #191e3b `color.palette.marketing3.inverseSurface`; icon 24 x 24, #191e3b `color.palette.marketing3.inverseSurface`.
 
-Child layers that carry the look: div 1200x72 background #b7cddc `color.palette.dark2.featured` radius 16px.
+Child layers that carry the look: div 1200x72 background #b7cddc `color.palette.marketing3.surface` radius 16px.
 
 ![Marketing band default](components/crops/marketing-band-default.png)
 

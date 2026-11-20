@@ -1708,7 +1708,7 @@
       "focus-ring": {
         "value": "{color.brand.225}",
         "type": "color",
-        "source": "computed outlineColor of nav-menu-btn focus-visible (raw/components-computed.json); matches declared color.brand.225",
+        "source": "computed focus ring (outline 2px solid) of nav-link focus-visible (raw/components-computed.json); matches declared color.brand.225",
         "description": "The brand-green keyboard focus ring (focus-visible:outline-control-focus-ring)."
       }
     },

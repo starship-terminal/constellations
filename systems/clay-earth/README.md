@@ -109,6 +109,8 @@ Every public surface was captured signed-out: routes were opened in fresh contex
 - The app interior, checkout, downloads (/start links) and every OAuth/sign-in action — boundaries, never crossed.
 - The marketing site mixes themes per route (dark home, light pricing): both sets are tokenised; components measured on their own route.
 - CSS-module class names are hashed but stable across loads; the package never selects the random part.
+- **Two components were read from the wrong element; they need a recapture.** `menu-panel` is the closed Company panel (opacity 0), not the open dropdown, so `core.component.menuPanel.width` (556px) and `menu-card` ("ABOUT MESH") come from a hidden panel. `hero-sub` is not a hero lede (the hero has none): the first paragraph after the h1 is a section paragraph ("Set reminders..."), so `core.color.gray.400` and `core.font.size.sub` describe section body copy. The token descriptions say so; the capture selectors are fixed by edit (opacity above 0, a sibling paragraph of the h1), not rerun.
+- **Seven focus states could not be driven.** Their focus-visible readings were the element at rest (`via: focus failed`); [components.md](components.md) leaves them out of its tables and lists them as not driven.
 
 ## License
 

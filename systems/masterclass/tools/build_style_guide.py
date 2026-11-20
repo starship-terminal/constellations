@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Render style-guide.html from tokens.json. Dark-only: the dark set sits on :root."""
+import html as _html
 import json
 import pathlib
 import re
@@ -18,15 +19,17 @@ def flat(node, prefix=""):
             yield from flat(v, prefix + k + "-")
 
 
+def esc(value):
+    """Escapes a value for text and a double-quoted attribute: a font stack with quotes cannot close style=\"\"."""
+    return _html.escape(str(value), quote=True)
+
+
 def cssname(path):
     return "--" + re.sub(r"[^a-zA-Z0-9-]", "-", path.replace(".", "-"))
 
 
 def css_val(t):
-    v = t["$value"]
-    if isinstance(v, (int, float)) and t["$type"] == "number":
-        return str(v)
-    return str(v)
+    return str(t["$value"])
 
 
 props = []
@@ -39,7 +42,7 @@ for name, tok in flat(T.get("dark", {})):
     if tok["$type"] != "color":
         continue
     swatches.append(
-        f'<div class="swatch"><i style="background:{tok["$value"]}"></i><span>{name}</span><code>{tok["$value"]}</code></div>'
+        f'<div class="swatch"><i style="background:{esc(tok["$value"])}"></i><span>{esc(name)}</span><code>{esc(tok["$value"])}</code></div>'
     )
 
 ramps = []
@@ -50,9 +53,9 @@ for hue, steps in sorted((T.get("core", {}).get("color") or {}).items()):
     for step, tok in steps.items():
         if not isinstance(tok, dict) or "$value" not in tok or tok.get("$type") != "color":
             continue
-        chips.append(f'<i title="{hue} {step}" style="background:{tok["$value"]}"></i>')
+        chips.append(f'<i title="{esc(hue)} {esc(step)}" style="background:{esc(tok["$value"])}"></i>')
     if chips:
-        ramps.append(f'<div class="ramp"><b>{hue}</b>{"".join(chips)}</div>')
+        ramps.append(f'<div class="ramp"><b>{esc(hue)}</b>{"".join(chips)}</div>')
 
 html = f"""<!doctype html>
 <html lang="en">
@@ -93,5 +96,6 @@ h1 {{ font-weight: 600; letter-spacing: 0.02em; }}
 </body>
 </html>
 """
-(HERE / "style-guide.html").write_text(html)
-print("style-guide.html", len(html))
+if __name__ == "__main__":
+    (HERE / "style-guide.html").write_text(html)
+    print("style-guide.html", len(html))

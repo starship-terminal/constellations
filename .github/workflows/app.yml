@@ -6,12 +6,19 @@ on:
       - '.github/workflows/app.yml'
       # The app reads these at runtime and in its tests, and the media
       # taxonomy seed is built from them. The float-parity fixture check
-      # imports server/library.py and tools/catalog.py.
+      # imports server/library.py and tools/catalog.py, which loads
+      # tools/refero/refero_media.py. app/src/server/knowledge/ reads
+      # scorecard/ and docs/. The host-rule test reads
+      # server/front-door-cases.json.
       - 'systems/**'
       - 'catalog.json'
       - 'refero/catalog.json'
       - 'tools/catalog.py'
       - 'server/library.py'
+      - 'server/front-door-cases.json'
+      - 'tools/refero/refero_media.py'
+      - 'scorecard/**'
+      - 'docs/**'
   push:
     branches: [main]
     paths:
@@ -22,8 +29,16 @@ on:
       - 'refero/catalog.json'
       - 'tools/catalog.py'
       - 'server/library.py'
+      - 'server/front-door-cases.json'
+      - 'tools/refero/refero_media.py'
+      - 'scorecard/**'
+      - 'docs/**'
 permissions:
   contents: read
+# Replaces a pull request's older run on a new push; see the note in check.yml.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   app:
     # Audit fix branches (audit2/*) are not tested one by one: each fix is

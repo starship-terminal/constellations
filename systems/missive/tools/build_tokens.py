@@ -185,25 +185,53 @@ light = {
     "mailMuted": color("{color.mail.inkMuted}", f"{S}: mail --text-color-b"),
 }
 
+def dark_hex(name):
+    """A mail colour under [data-theme=dark], read from raw/css-vars.json. Raises when it is
+    missing or does not parse, so a recapture cannot keep a stale hand-typed value."""
+    value = resolved("dark", name)
+    hx = hex_of(value)
+    if not hx:
+        raise SystemExit(f"dark {name} is {value!r}, not an opaque colour")
+    return hx
+
+
+def dark_rgba(name):
+    """A translucent mail colour under dark, written as rgba() with the raw channels and alpha."""
+    value = resolved("dark", name)
+    m = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)\s*[,/]\s*(\d*\.?\d+)\s*\)", value)
+    if not m:
+        raise SystemExit(f"dark {name} is {value!r}, not a translucent colour")
+    alpha = float(m.group(4))
+    return f"rgba({m.group(1)}, {m.group(2)}, {m.group(3)}, {alpha:g})"
+
+
+DARK_PAGE = dark_hex("--background-color")
+DARK_TEXT = dark_hex("--text-color-a")
+DARK_BODY = dark_hex("--text-color-b")
+DARK_MUTED = dark_hex("--text-color-c")
+DARK_SURFACE = dark_hex("--popup-background-color")
+DARK_INPUT = dark_hex("--input-background-color")
+DARK_BORDER = dark_rgba("--border-color")
+
 dark = {
-    "page": color("#1d1e1f", f"{S}: mail --background-color under [data-theme=dark] is rgb(29, 30, 31)"),
-    "surface": color("#242528", f"{S}: mail --popup-background-color under dark is rgb(36, 37, 40)"),
-    "text": color("#e1e2e4", f"{S}: mail --text-color-a under dark is rgb(225, 226, 228)"),
-    "textBody": color("#a7acb2", f"{S}: mail --text-color-b under dark is rgb(167, 172, 178)"),
-    "textMuted": color("#a7acb2", f"{S}: mail --text-color-c matches --text-color-b under dark"),
+    "page": color(DARK_PAGE, f"{S}: mail --background-color under [data-theme=dark] is {resolved('dark', '--background-color')}"),
+    "surface": color(DARK_SURFACE, f"{S}: mail --popup-background-color under dark is {resolved('dark', '--popup-background-color')}"),
+    "text": color(DARK_TEXT, f"{S}: mail --text-color-a under dark is {resolved('dark', '--text-color-a')}"),
+    "textBody": color(DARK_BODY, f"{S}: mail --text-color-b under dark is {resolved('dark', '--text-color-b')}"),
+    "textMuted": color(DARK_MUTED, f"{S}: mail --text-color-c under dark is {resolved('dark', '--text-color-c')}"),
     "textOnAccent": color("{color.white}", f"{M}: Log in label stays white on the brand fill"),
     "accent": color("{color.brand}", f"{S}: mail --brand-color does not change under dark"),
     "accentHover": color("{color.blue.800}", f"{S}: marketing brand-dark; mail brand is unchanged"),
     "link": color("{color.mail.blue}", f"{S}: mail --blue-color does not change under dark"),
     "action": color("{color.brand}", f"{S}: mail --brand-color"),
     "focus": color("{color.mail.blue}", f"{S}: mail --blue-color"),
-    "border": color("rgba(225, 226, 228, 0.14)", f"{S}: mail --border-color under dark is rgb(225 226 228 / 0.14)"),
+    "border": color(DARK_BORDER, f"{S}: mail --border-color under dark is {resolved('dark', '--border-color')}"),
     "error": color("{color.mail.red}", f"{S}: mail --red-color"),
     "success": color("{color.mail.green}", f"{S}: mail --green-color"),
-    "mailPage": color("#1d1e1f", f"{S}: mail --background-color under dark"),
-    "mailSurface": color("#1f2123", f"{S}: mail --input-background-color under dark is rgb(31, 33, 35)"),
-    "mailText": color("#e1e2e4", f"{S}: mail --text-color-a under dark"),
-    "mailMuted": color("#a7acb2", f"{S}: mail --text-color-b under dark"),
+    "mailPage": color(DARK_PAGE, f"{S}: mail --background-color under dark"),
+    "mailSurface": color(DARK_INPUT, f"{S}: mail --input-background-color under dark is {resolved('dark', '--input-background-color')}"),
+    "mailText": color(DARK_TEXT, f"{S}: mail --text-color-a under dark"),
+    "mailMuted": color(DARK_BODY, f"{S}: mail --text-color-b under dark"),
 }
 
 
@@ -263,5 +291,8 @@ doc = {
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
 }
-(HERE / "tokens.json").write_text(json.dumps(doc, indent=2) + "\n")
-print("wrote", HERE / "tokens.json", "tokens", len(list(walk(core))) + len(list(walk(light))) + len(list(walk(dark))))
+TEXT = json.dumps(doc, indent=2) + "\n"
+
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(TEXT)
+    print("wrote", HERE / "tokens.json", "tokens", len(list(walk(core))) + len(list(walk(light))) + len(list(walk(dark))))

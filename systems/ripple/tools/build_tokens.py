@@ -383,10 +383,14 @@ def build():
     }
     # gradient position 0 may need to be 0.0 for some readers; leave as measured.
     check(doc)
+    return doc
+
+
+def write(doc):
     (PKG / "tokens.json").write_text(json.dumps(doc, indent=2) + "\n")
     n = sum(1 for s in ("core", "light") for _ in walk(doc[s]))
     print(f"tokens.json: {n} tokens")
 
 
 if __name__ == "__main__":
-    build()
+    write(build())

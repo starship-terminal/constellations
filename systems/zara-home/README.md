@@ -78,7 +78,7 @@ Everything was read from the live page in the T3 preview browser, signed out, wi
 
 - Front version `2.11.18` from `window.inditex.iFrontVersion`. Angular `22.1.5` from `zh-root`.
 - House colours are `--primary-color` #1e1e1e, `--primary-darker-color` #8e8e93, `--footer-v2-focus` #2684ff, `--footer-v2-rule` #d8d8dc. Material also declares `--warn-color` #b32624 and `--accent-lighter-color` #cf0a2c. Those last two were not the fill of a measured storefront button or price.
-- `tools/build_tokens.py` writes tokens.json from [raw/readings.json](raw/readings.json). `tools/build_style_guide.py` and `tools/build_components_md.py` write the guide and the inventory.
+- `tools/build_tokens.py` writes tokens.json from [raw/readings.json](raw/readings.json). `tools/build_style_guide.py` and `tools/build_components_md.py` write the guide and the inventory. The inventory's text, values included, was typed into `build_components_md.py` at capture time from the same readings; it does not read raw/, so a recapture must update that text by hand.
 
 ## What to distrust
 

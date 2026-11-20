@@ -1,5 +1,5 @@
 {
- "_about": "The token tree build_tokens.py turns into tokens.json. Clearful's Webflow stylesheet declares a real palette and semantic layer (raw/css-vars.json); the core ramps below are those declared values resolved at build time, with measured leaves for the few shades the site paints without declaring. Semantic roles are measured on the painted chrome in raw/components-computed.json and alias the core when the value matches. One theme exists (light); the Flutter sign-in's sampled shades live under light.app.*.",
+ "_about": "The token tree build_tokens.py turns into tokens.json. Clearful's Webflow stylesheet declares a real palette and semantic layer (raw/css-vars.json); the core ramps below are those declared values resolved at build time, with measured leaves for the few shades the site paints without declaring. Semantic roles are measured on the painted chrome in raw/components-computed.json and alias the core when the value matches. One theme exists (light); the Flutter sign-in's sampled shades live under core.sampled.app.*.",
  "core": {
   "color": {
    "blue": {
@@ -156,6 +156,44 @@
      "type": "color",
      "source": "computed outlineColor of nav-cta focus-visible (raw/components-computed.json)",
      "description": "#101010 — the 1px focus ring on this surface's controls."
+    }
+   }
+  },
+  "sampled": {
+   "app": {
+    "ground": {
+     "value": "#f7f7f7",
+     "type": "color",
+     "description": "The sign-in page's grey ground — sampled off the screenshot at (60,450).",
+     "source": "Sampled: a screenshot pixel of the full-colour sign-in capture (kept outside the repo) at (60,450); canvas-painted, CSSOM-blind, no element reading holds it"
+    },
+    "oauth": {
+     "ink": {
+      "value": "#222222",
+      "type": "color",
+      "description": "The Continue-with-Apple button's near-black fill — sampled at the button centre.",
+      "source": "Sampled: a screenshot pixel of the full-colour sign-in capture (kept outside the repo) at (720,486); canvas-painted, CSSOM-blind, no element reading holds it"
+     },
+     "google": {
+      "value": "#1a73e8",
+      "type": "color",
+      "description": "The Continue-with-Google button's Google blue — sampled at the button centre.",
+      "source": "Sampled: a screenshot pixel of the full-colour sign-in capture (kept outside the repo) at (720,540); canvas-painted, CSSOM-blind, no element reading holds it"
+     },
+     "email": {
+      "value": "#ffffff",
+      "type": "color",
+      "description": "The Continue-with-email button's white fill — sampled at the button centre.",
+      "source": "Sampled: a screenshot pixel of the full-colour sign-in capture (kept outside the repo) at (720,412); canvas-painted, CSSOM-blind, no element reading holds it"
+     }
+    },
+    "text": {
+     "primary": {
+      "value": "#222222",
+      "type": "color",
+      "description": "The sign-in card's ink — sampled on the email button's label.",
+      "source": "Sampled: a screenshot pixel of the full-colour sign-in capture (kept outside the repo) at (720,417); canvas-painted, CSSOM-blind, no element reading holds it"
+     }
     }
    }
   },
@@ -381,42 +419,6 @@
    "description": "The 1px #101010 focus ring — UA-style ring, consistent across the surface's controls.",
    "value": "{color.focus.0}",
    "source": "computed outlineColor of nav-cta focus-visible (raw/components-computed.json); same value as core.color.focus.0"
-  },
-  "app": {
-   "ground": {
-    "value": "#f7f7f7",
-    "type": "color",
-    "description": "The sign-in page's grey ground — sampled off the screenshot at (60,450).",
-    "source": "pixel sample of raw/full/signin-light-default.png at (60,450) — canvas-painted, CSSOM-blind"
-   },
-   "oauth": {
-    "ink": {
-     "value": "#222222",
-     "type": "color",
-     "description": "The Continue-with-Apple button's near-black fill — sampled at the button centre.",
-     "source": "pixel sample of raw/full/signin-light-default.png at (720,486) — canvas-painted, CSSOM-blind"
-    },
-    "google": {
-     "value": "#1a73e8",
-     "type": "color",
-     "description": "The Continue-with-Google button's Google blue — sampled at the button centre.",
-     "source": "pixel sample of raw/full/signin-light-default.png at (720,540) — canvas-painted, CSSOM-blind"
-    },
-    "email": {
-     "value": "#ffffff",
-     "type": "color",
-     "description": "The Continue-with-email button's white fill — sampled at the button centre.",
-     "source": "pixel sample of raw/full/signin-light-default.png at (720,412) — canvas-painted, CSSOM-blind"
-    }
-   },
-   "text": {
-    "primary": {
-     "value": "#222222",
-     "type": "color",
-     "description": "The sign-in card's ink — sampled on the email button's label.",
-     "source": "pixel sample of raw/full/signin-light-default.png at (720,417) — canvas-painted, CSSOM-blind"
-    }
-   }
   },
   "shadow": {
    "card": {

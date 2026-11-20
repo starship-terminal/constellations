@@ -20,7 +20,7 @@ the export holds core + light only and the dark set stays empty.
 
 Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
 """
-import json, pathlib, re
+import json, math, pathlib, re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
@@ -35,6 +35,25 @@ DECL = {t: {n: v.get("value", v["raw"]) for n, v in V.get("resolved", {}).get(t,
 # esquire.com paints one theme; nothing needs lifting into dark.
 if not DECL["dark"]:
     DECL["dark"] = {n: v for n, v in DECL["light"].items() if n.startswith("--dark-")}
+
+
+def _lin(c):
+    return 12.92 * c if c <= 0.0031308 else 1.055 * c ** (1 / 2.4) - 0.055
+
+
+def oklab_rgb(L, a, b):
+    """oklab -> 8-bit sRGB, the kit's tools/kit/build/build_tokens.py conversion."""
+    l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3
+    m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3
+    s = (L - 0.0894841775 * a - 1.2914855480 * b) ** 3
+    rgb = [4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s, -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s,
+           -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s]
+    return [round(min(1, max(0, _lin(x))) * 255) for x in rgb]
+
+
+def _fmt(rgb, a):
+    a = round(float(a), 3)
+    return "#%02x%02x%02x" % tuple(rgb) if a >= 1 else "rgba(%d, %d, %d, %s)" % (rgb[0], rgb[1], rgb[2], "%g" % a)
 
 
 def norm_color(v):
@@ -65,10 +84,20 @@ def norm_color(v):
         lvl = round(float(m.group(1)) * 2.55)
         a = float(m.group(2) or 1)
         return "#%02x%02x%02x" % (lvl, lvl, lvl) if a == 1 else "rgba(%d, %d, %d, %g)" % (lvl, lvl, lvl, a)
-    # CSS Color 4 / composited values pass through verbatim (lab, oklch, color-mix, ...)
-    if re.match(r"(ok)?lab\(|(ok)?lch\(|(ok)?color\(|color-mix\(", v.strip()):
-        return v.strip()
-    raise ValueError("not a colour: " + v)
+    # CSS Color 4 forms convert to sRGB as the kit does (the authored string is kept in
+    # $extensions.authored); any other form stops the build rather than reaching tokens.json
+    # as a string that contrast checks and DESIGN.md cannot read.
+    m = re.fullmatch(r"oklab\(\s*([-\d.e]+)\s+([-\d.e]+)\s+([-\d.e]+)(?:\s*/\s*([\d.]+))?\s*\)", v)
+    if m:
+        return _fmt(oklab_rgb(float(m.group(1)), float(m.group(2)), float(m.group(3))), m.group(4) or 1)
+    m = re.fullmatch(r"oklch\(\s*([-\d.e]+)\s+([-\d.e]+)\s+([-\d.e]+)(?:deg)?(?:\s*/\s*([\d.]+))?\s*\)", v)
+    if m:
+        L, c, h = float(m.group(1)), float(m.group(2)), math.radians(float(m.group(3)))
+        return _fmt(oklab_rgb(L, c * math.cos(h), c * math.sin(h)), m.group(4) or 1)
+    m = re.fullmatch(r"color\(srgb\s+([-\d.e]+)\s+([-\d.e]+)\s+([-\d.e]+)(?:\s*/\s*([\d.]+))?\s*\)", v)
+    if m:
+        return _fmt([round(min(1, max(0, float(m.group(i)))) * 255) for i in (1, 2, 3)], m.group(4) or 1)
+    raise ValueError("not a colour the export can hold: " + v)
 
 
 DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
@@ -116,7 +145,10 @@ def leaf(path, spec, theme):
     else:
         val = spec["value"]
         src = spec["source"]
+    authored = None
     if ty == "color" and not str(val).startswith("{"):
+        if re.match(r"(oklab|oklch|color)\(", str(val).strip().lower()):
+            authored = str(val).strip()
         val = norm_color(val)
     if ty == "cubicBezier" and isinstance(val, str):
         m = re.fullmatch(r"cubic-bezier\(\s*([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)\s*\)", val.strip())
@@ -150,6 +182,8 @@ def leaf(path, spec, theme):
         t["$extensions"]["responsive"] = spec["responsive"]
     if spec.get("angle"):
         t["$extensions"]["angle"] = spec["angle"]
+    if authored:
+        t["$extensions"]["authored"] = authored
     return t
 
 

@@ -15,6 +15,8 @@ import re
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
 V = json.loads((RAW / "css-vars.json").read_text())
+# docs/EVIDENCE.md: a value typed into the builder with no reading in raw/ is a Reconstruction.
+HAND = "Reconstruction: entered by hand at capture time; no reading in raw/ holds it."
 DECL = {t: V["resolved"][t] for t in ("light", "dark")}
 
 DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
@@ -128,15 +130,13 @@ def semantic(theme):
         if name in FLIP or (theme == "dark" and name == "forest-soft"):
             out["color"][name] = from_var(f"{theme}.color.{name}", raw, theme, "color")
         else:
-            # A bare {color.name} on color.name resolves to itself. Name the
-            # core set. Semantic roles below keep {color.name} so they read
-            # this theme's own value when the colour flips.
-            out["color"][name] = alias(
-                f"{theme}.color.{name}",
-                f"core.color.{name}",
-                "color",
-                f"alias of core.color.{name}; resolved the same in {theme}",
-            )
+            # A colour that does not flip resolves the same in both themes. It is
+            # written as its value: a bare {color.name} on color.name resolves to
+            # itself, and {core.color.name} names a set, which DTCG and Tokens
+            # Studio readers report as dangling. Semantic roles below keep
+            # {color.name} so they read this theme's own value when it flips.
+            out["color"][name] = from_var(f"{theme}.color.{name}", raw, theme, "color",
+                                          "Resolves the same in both themes, like core.color." + name + ".")
     # Roles a screen uses, named after the product's own tokens.
     out["background"] = {
         "page": alias(f"{theme}.background.page", f"color.white", "color", "the page field is --color-white"),
@@ -159,7 +159,7 @@ def semantic(theme):
     }
     out["action"] = {
         "fill": alias(f"{theme}.action.fill", "color.ink", "color", "Join free, Subscribe and Continue fill with --color-ink"),
-        "fill-hover": leaf(f"{theme}.action.fill-hover", "color", "#2a2a2c", "measured hover:bg-[#2a2a2c] on the ink CTA (kinhive.com header Join free, 2026-11-18). A literal, not a declared custom property."),
+        "fill-hover": leaf(f"{theme}.action.fill-hover", "color", "#2a2a2c", f"{HAND} Typed from the hover:bg-[#2a2a2c] utility on the ink CTA (kinhive.com header Join free, 2026-11-18); hover was not measured."),
         "ink": alias(f"{theme}.action.ink", "color.white", "color", "label on the ink CTA is --color-white"),
         "cobalt": alias(f"{theme}.action.cobalt", "color.cobalt", "color", "the cobalt accent is --color-cobalt"),
     }
@@ -183,15 +183,20 @@ def core():
             continue
         c["color"][name] = leaf(f"core.color.{name}", "color", rec["value"], f"css-var {raw} (light); declared on :root,:host in kinhive.com's css bundle")
     # Families: the declared stacks, which resolve through next/font variables.
+    # The two stacks are the declared --font-sans and --font-heading with their
+    # next/font variables substituted; raw/ holds the declarations, not a computed read.
+    for name in ("--font-figtree", "--font-affairs"):
+        if not any(name in (r.get("properties") or {}) for b in ("theme", "app", "tailwind") for r in V.get(b) or []):
+            raise KeyError(f"{name} is not declared in raw/css-vars.json")
     c["font"]["family"]["sans"] = leaf(
         "core.font.family.sans", "fontFamily",
         "Figtree, \"Figtree Fallback\", ui-sans-serif, system-ui, sans-serif",
-        "computed font-family on body (kinhive.com /, 2026-11-18); --font-sans is var(--font-figtree), ui-sans-serif, system-ui, sans-serif and --font-figtree names the next/font Figtree face",
+        "Derived: the declared --font-sans (var(--font-figtree), ui-sans-serif, system-ui, sans-serif) with the declared --font-figtree (\"Figtree\", \"Figtree Fallback\") substituted (raw/css-vars.json)",
     )
     c["font"]["family"]["heading"] = leaf(
         "core.font.family.heading", "fontFamily",
         "affairs, \"affairs Fallback\", Georgia, serif",
-        "computed font-family of the home h1 (font-heading, 2026-11-18); --font-heading is var(--font-affairs), Georgia, serif",
+        "Derived: the declared --font-heading (var(--font-affairs), Georgia, serif) with the declared --font-affairs (\"affairs\", \"affairs Fallback\", Georgia, serif) substituted (raw/css-vars.json)",
     )
     c["font"]["family"]["mono"] = from_var("core.font.family.mono", "--font-mono", "light", "fontFamily")
     for raw, key in (("--font-weight-normal", "normal"), ("--font-weight-medium", "medium"), ("--font-weight-semibold", "semibold"), ("--font-weight-bold", "bold")):
@@ -209,15 +214,15 @@ def core():
     c["spacing"]["container-xl"] = from_var("core.spacing.container-xl", "--container-xl", "light", "dimension")
     c["motion"]["duration"] = from_var("core.motion.duration", "--default-transition-duration", "light", "duration")
     c["motion"]["easing"] = from_var("core.motion.easing", "--default-transition-timing-function", "light", "cubicBezier")
-    # Measured control geometry from the 2026-11-18 homepage probe. These are
-    # computed styles, not declared custom properties.
+    # Control geometry typed in from the 2026-11-18 homepage probe. The probe's
+    # readings were never committed, so no file in raw/ holds them.
     c["component"] = {
-        "nav-height": leaf("core.component.nav-height", "dimension", "65px", "measured height of header.sticky on kinhive.com / at 1440, 2026-11-18"),
-        "nav-link-size": leaf("core.component.nav-link-size", "dimension", "14px", "computed font-size of header nav links (text-[14px]), 2026-11-18"),
-        "cta-height": leaf("core.component.cta-height", "dimension", "32px", "measured height of the header Join free link (h-8), 2026-11-18"),
-        "cta-radius": leaf("core.component.cta-radius", "dimension", "8px", "computed border-radius of the header Join free link (rounded-lg), 2026-11-18"),
-        "field-height": leaf("core.component.field-height", "dimension", "44px", "measured height of #hero-email (h-11), 2026-11-18"),
-        "hero-size": leaf("core.component.hero-size", "dimension", "44px", "computed font-size of the home h1 at 1440 (sm:text-[44px] from the affairs heading), 2026-11-18"),
+        "nav-height": leaf("core.component.nav-height", "dimension", "65px", f"{HAND} Typed from the height of header.sticky on kinhive.com / at 1440, 2026-11-18."),
+        "nav-link-size": leaf("core.component.nav-link-size", "dimension", "14px", f"{HAND} Typed from the font-size of the header nav links (text-[14px]), 2026-11-18."),
+        "cta-height": leaf("core.component.cta-height", "dimension", "32px", f"{HAND} Typed from the height of the header Join free link (h-8), 2026-11-18."),
+        "cta-radius": leaf("core.component.cta-radius", "dimension", "8px", f"{HAND} Typed from the border-radius of the header Join free link (rounded-lg), 2026-11-18."),
+        "field-height": leaf("core.component.field-height", "dimension", "44px", f"{HAND} Typed from the height of #hero-email (h-11), 2026-11-18."),
+        "hero-size": leaf("core.component.hero-size", "dimension", "44px", f"{HAND} Typed from the font-size of the home h1 at 1440 (sm:text-[44px] on the affairs heading), 2026-11-18."),
         "page-width": leaf("core.component.page-width", "dimension", "1440px", "desktop capture viewport, 2026-11-18"),
         "phone-width": leaf("core.component.phone-width", "dimension", "390px", "phone capture viewport, 2026-11-18"),
     }

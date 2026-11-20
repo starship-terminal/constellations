@@ -417,11 +417,7 @@ Not on the page when it was captured.
 #### Signup page
 The page the Try-Calm-for-Free button navigates to (/signup-flow?source=homepage) — the signup flow's first step, reached by its own button and never submitted; its landing stayed PerimeterX-blocked this run. Read as `signup-page` on the home page.
 
-**Values (default).** size 1424 x 0; background transparent; text Roboto 29/24.07 500, #626364; layers div.px-captcha-container 530.0x340.0 rgb(255, 255, 255) rgba(0, 0, 0, 0.13) 0px 2px 9px -1px 3px; div.px-captcha-refid 530.0x28.0 rgb(250, 251, 252) T:1px solid rgb(240, 238, 238) 0px 0px 3px 3px.
-
-Child layers that carry the look: div 530x340 background #ffffff `color.neutral.paper` radius 3px shadow rgba(0, 0, 0, 0.13) 0px 2px 9px -1px; div 530x28 background #fafbfc border 1px solid #f0eeee radius 0px 0px 3px 3px.
-
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+Not captured: the page served a PerimeterX bot check ("Press & Hold to confirm you are a human") instead of this view, so the reading is the challenge container, not the product. It is left out here and needs a recapture.
 
 ### Calm Health (B2B)
 

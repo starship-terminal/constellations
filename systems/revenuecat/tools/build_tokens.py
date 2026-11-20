@@ -14,6 +14,7 @@ sheet was read from the stylesheet, not from a live light page.
 """
 import json
 import pathlib
+import re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = json.loads((HERE / "raw" / "readings.json").read_text())
@@ -428,8 +429,83 @@ def check(tokens):
         raise SystemExit("tokens failed:\n  " + "\n  ".join(problems))
 
 
+# raw/readings.json is the only raw file. A token labelled Measured or Derived whose value it does not
+# hold (hex, rgb(), px, ms as s) was typed in from the capture session: the app ramps, for one, were read
+# as raw hex in the same session but never stored. Such a token is relabelled Reconstruction.
+RAW_TEXT = re.sub(r"\s+", "", (HERE / "raw" / "readings.json").read_text().lower())
+HAND_NOTE = "Entered by hand at capture time; raw/readings.json holds no reading of this value."
+
+
+
+def _colours(text):
+    """Every colour written in raw/, as (r, g, b, alpha): rgb()/rgba() with commas, spaces or a slash
+    alpha, and #rgb/#rrggbb/#rrggbbaa."""
+    out = []
+    for m in re.finditer(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)\s*(?:[,/]\s*(\d*\.?\d+)(%?))?\s*\)", text):
+        a = 1.0 if m.group(4) is None else float(m.group(4)) / (100 if m.group(5) else 1)
+        out.append((int(m.group(1)), int(m.group(2)), int(m.group(3)), a))
+    for m in re.finditer(r"#([0-9a-f]{8}|[0-9a-f]{6}|[0-9a-f]{3})(?![0-9a-z])", text):
+        out.append(_hex(m.group(0)))
+    return out
+
+
+def _hex(value):
+    h = value.lstrip("#")
+    if len(h) == 3:
+        h = "".join(c * 2 for c in h)
+    return (int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16), int(h[6:8], 16) / 255 if len(h) == 8 else 1.0)
+
+
+RAW_COLOURS = _colours((HERE / "raw" / "readings.json").read_text().lower())
+
+
+def colour_in_raw(value):
+    """A hex colour is backed only by a raw colour with the same channels and the same opacity."""
+    r, g, b, a = _hex(value)
+    return any((r, g, b) == c[:3] and abs(a - c[3]) <= 0.01 for c in RAW_COLOURS)
+
+def in_raw(value):
+    v = str(value).strip().lower()
+    forms = {v.replace(" ", "")}
+    if re.fullmatch(r"#[0-9a-f]{6}([0-9a-f]{2})?", v):
+        return colour_in_raw(v)
+    m = re.fullmatch(r"(\d*\.?\d+)ms", v)
+    if m:
+        forms.add(f"{float(m.group(1)) / 1000:g}s")
+    if "," in v and not v.startswith(("#", "rgb")):
+        forms.add(v.split(",")[0].strip().strip("'\""))  # a font stack: its first family
+    m = re.fullmatch(r"(\d*\.?\d+)px", v)
+    if m:
+        n = float(m.group(1))
+        forms |= {f":{n:g},", f":{n:g}}}"}  # a box size stored as a bare number ("height": 40)
+    if v == "9999px":
+        forms |= {"16777215px", "16777200px", "1.67772e+07px"}  # the full pill a computed rounded-full radius reports
+    return any(f.replace(" ", "") in RAW_TEXT for f in forms)
+
+
+def relabel_unread(tokens):
+    def walk(node):
+        for k, v in node.items():
+            if k.startswith("$") or not isinstance(v, dict):
+                continue
+            if "$value" in v:
+                yield v
+            else:
+                yield from walk(v)
+    for tok in walk(tokens):
+        value, src = tok["$value"], tok["$extensions"]["source"]
+        if not isinstance(value, (str, int, float)) or (isinstance(value, str) and value.startswith("{")):
+            continue  # aliases and composites carry the evidence of what they name
+        if isinstance(src, dict) and src.get("evidence") in ("Measured", "Derived") and not in_raw(value):
+            src["evidence"] = "Reconstruction"
+            if "note" in src:
+                src["captureNote"] = src.pop("note")
+            src["note"] = HAND_NOTE
+
+
 def main():
     tokens = build()
+    relabel_unread(tokens)
     check(tokens)
     path = HERE / "tokens.json"
     path.write_text(json.dumps(tokens, indent=2) + "\n")

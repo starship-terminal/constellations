@@ -81,7 +81,7 @@ Values that apply across entries, from the measurement files.
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
 | [Search dialog](#search-dialog) | 672 x 594 | 1px solid #e2e4e8 `light.border.default` | 12px | #ffffff `light.brand.foreground` | rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px | 0 |
-| [App sidebar](#app-sidebar) | 64 x 876 | - | 28px | #f7f8fa `light.sidebar.background` | rgba(51, 51, 51, 0.06) 0px 0px 0px 1px inset | 0 |
+| [App sidebar](#app-sidebar) | 64 x 876 | - | 28px | #f7f8fa `light.sidebar.background` | rgba(19, 22, 28, 0.06) 0px 0px 0px 1px inset | 0 |
 | [Feed post card](#feed-post-card) | 1020 x 293.16 | - | - | transparent | none | 0 |
 | [Comment textarea](#comment-textarea) | 670 x 72 | - | - | transparent | none | 12px 16px |
 | [Main navigation pill](#main-navigation-pill) | 468.59 x 36 | 1px solid #e2e4e8 `light.border.default` | 3.35544e+07px | #f7f8fa `light.sidebar.background` | none | 2px |
@@ -100,8 +100,8 @@ States read on 2026-11-17T06:01:46.657Z (default); 2026-11-17T06:01:52.744Z (dar
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 64 x 876; radius 28px; background #f7f8fa `light.sidebar.background`; shadow rgba(51, 51, 51, 0.06) 0px 0px 0px 1px inset; text Inter 16/24 400, #13161c `light.accent.foreground`; icon 16 x 16, #63666d `light.muted.foreground` |
-| dark | background #06070b; shadow rgba(237, 237, 237, 0.06) 0px 0px 0px 1px inset; text Inter 16/24 400, #e6e8eb `light.codeBlock.codeBlockForeground`; icon 16 x 16, #a2a5aa |
+| default | size 64 x 876; radius 28px; background #f7f8fa `light.sidebar.background`; shadow rgba(19, 22, 28, 0.06) 0px 0px 0px 1px inset; text Inter 16/24 400, #13161c `light.accent.foreground`; icon 16 x 16, #63666d `light.muted.foreground` |
+| dark | background #06070b; shadow rgba(230, 232, 235, 0.06) 0px 0px 0px 1px inset; text Inter 16/24 400, #e6e8eb `light.codeBlock.codeBlockForeground`; icon 16 x 16, #a2a5aa |
 
 ![App sidebar default](components/crops/app-sidebar-default.png) ![App sidebar dark](components/crops/app-sidebar-dark.png)
 
@@ -180,9 +180,9 @@ States read on 2026-11-17T06:02:39.382Z (default); 2026-11-17T06:02:44.080Z (hov
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 241 x 56; padding 0px 28px; radius 3.35544e+07px; background #181b20 `light.primary.default`; shadow rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px; text Inter 16/24 600, #ffffff `light.brand.foreground`; transition all 0.15s cubic-bezier(0.16, 1, 0.3, 1); icon 18 x 18, #ffffff `light.brand.foreground` |
-| hover | background rgba(56, 56, 56, 0.9) |
-| focus-visible | shadow rgba(143, 143, 143, 0.5) 0px 0px 0px 3px, rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px |
-| pressed | background rgba(56, 56, 56, 0.9) |
+| hover | background rgba(24, 27, 32, 0.9) |
+| focus-visible | shadow rgba(41, 98, 255, 0.5) 0px 0px 0px 3px, rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px |
+| pressed | background rgba(24, 27, 32, 0.9) |
 | dark | background #e6e8eb `light.codeBlock.codeBlockForeground`; shadow rgba(0, 0, 0, 0.4) 0px 1px 2px 0px, rgba(0, 0, 0, 0.6) 0px 12px 32px -12px; text Inter 16/24 600, #15171c `light.codeBlock.codeBlock`; icon 18 x 18, #15171c `light.codeBlock.codeBlock` |
 
 !["Start your blog, free" CTA default](components/crops/app-cta-default.png) !["Start your blog, free" CTA hover](components/crops/app-cta-hover.png) !["Start your blog, free" CTA focus-visible](components/crops/app-cta-focus-visible.png) !["Start your blog, free" CTA pressed](components/crops/app-cta-pressed.png) !["Start your blog, free" CTA dark](components/crops/app-cta-dark.png)
@@ -281,7 +281,7 @@ States read on 2026-11-17T05:50:51.153Z (default); 2026-11-17T05:50:52.989Z (hov
 |---|---|
 | default | size 101 x 32; padding 0px 12px; border 1px solid #ced1d6 `light.border.input`; radius 8px; background #ffffff `light.brand.foreground`; shadow rgba(19, 22, 28, 0.05) 0px 1px 2px 0px; text Inter 14/20 600, #13161c `light.accent.foreground`; transition all 0.15s cubic-bezier(0.16, 1, 0.3, 1) |
 | hover | background #e9ebef `light.accent.default` |
-| focus-visible | border 1px solid #2962ff `light.border.ring`; shadow rgba(143, 143, 143, 0.5) 0px 0px 0px 3px, rgba(19, 22, 28, 0.05) 0px 1px 2px 0px |
+| focus-visible | border 1px solid #2962ff `light.border.ring`; shadow rgba(41, 98, 255, 0.5) 0px 0px 0px 3px, rgba(19, 22, 28, 0.05) 0px 1px 2px 0px |
 
 !["Load more" button default](components/crops/feed-load-more-default.png) !["Load more" button hover](components/crops/feed-load-more-hover.png) !["Load more" button focus-visible](components/crops/feed-load-more-focus-visible.png)
 
@@ -289,7 +289,7 @@ States read on 2026-11-17T05:50:51.153Z (default); 2026-11-17T05:50:52.989Z (hov
 The "Trending" rail beside the feed column (aria-label "Trending"). Read as `feed-trending` on the /feed page.
 Read on 2026-11-17T05:50:57.313Z.
 
-**Values (default).** size 352 x 3861.77; radius 28px; background #f7f8fa `light.sidebar.background`; shadow rgba(51, 51, 51, 0.06) 0px 0px 0px 1px inset; text Inter 20/28 600, #13161c `light.accent.foreground`; icon 14 x 14, #2962ff `light.border.ring`.
+**Values (default).** size 352 x 3861.77; radius 28px; background #f7f8fa `light.sidebar.background`; shadow rgba(19, 22, 28, 0.06) 0px 0px 0px 1px inset; text Inter 20/28 600, #13161c `light.accent.foreground`; icon 14 x 14, #2962ff `light.border.ring`.
 
 ![Trending aside default](components/crops/feed-trending-default.png)
 
@@ -379,7 +379,7 @@ States read on 2026-11-17T04:15:28.416Z (default); 2026-11-17T04:15:31.032Z (hov
 |---|---|
 | default | size 89.72 x 36; padding 8px 12px; border 1px solid #ced1d6 `light.border.input`; radius 8px; background #ffffff `light.brand.foreground`; shadow rgba(19, 22, 28, 0.05) 0px 1px 2px 0px; text -apple-system 14/20 600, #13161c `light.accent.foreground`; transition all 0.15s cubic-bezier(0.16, 1, 0.3, 1); icon 16 x 16, #13161c `light.accent.foreground` |
 | hover | background #e9ebef `light.accent.default` |
-| focus-visible | border 1px solid #2962ff `light.border.ring`; shadow rgba(143, 143, 143, 0.5) 0px 0px 0px 3px, rgba(19, 22, 28, 0.05) 0px 1px 2px 0px |
+| focus-visible | border 1px solid #2962ff `light.border.ring`; shadow rgba(41, 98, 255, 0.5) 0px 0px 0px 3px, rgba(19, 22, 28, 0.05) 0px 1px 2px 0px |
 
 ![Profile "Share" button default](components/crops/profile-share-default.png) ![Profile "Share" button hover](components/crops/profile-share-hover.png) ![Profile "Share" button focus-visible](components/crops/profile-share-focus-visible.png)
 
@@ -407,7 +407,7 @@ States read on 2026-11-17T05:51:43.202Z (default); 2026-11-17T05:51:45.125Z (hov
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover) | size 860 x 52; padding 20px 0px 8px 0px; radius 8px; background transparent; text -apple-system 16/24 600, #13161c `light.accent.foreground` |
-| focus-visible | shadow rgba(143, 143, 143, 0.5) 0px 0px 0px 3px; layers button.flex.flex-1 860.0x52.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(143, 143, 143, 0.5) 0px 0px 0px 3px, transparent 0px 0px 0px 0px 8px |
+| focus-visible | shadow rgba(41, 98, 255, 0.5) 0px 0px 0px 3px; layers button.flex.flex-1 860.0x52.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(41, 98, 255, 0.5) 0px 0px 0px 3px, transparent 0px 0px 0px 0px 8px |
 | opened | size 860 x 64; padding 20px 0px; icon 16 x 16, #63666d `light.muted.foreground` |
 
 ![FAQ accordion question default](components/crops/faq-question-default.png) ![FAQ accordion question hover](components/crops/faq-question-hover.png) ![FAQ accordion question focus-visible](components/crops/faq-question-focus-visible.png) ![FAQ accordion question opened](components/crops/faq-question-opened.png)
@@ -432,7 +432,7 @@ States read on 2026-11-17T04:16:52.755Z (default); 2026-11-17T04:16:55.394Z (hov
 |---|---|
 | default | size 85 x 28; padding 0px 12px; radius 6px; background transparent; text -apple-system 14/20 600, #63666d `light.muted.foreground`; transition color 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.15s cubic-bezier(0.16, 1, 0.3, 1) |
 | hover | text -apple-system 14/20 600, #13161c `light.accent.foreground` |
-| focus-visible | background #ffffff `light.brand.foreground`; shadow rgba(143, 143, 143, 0.5) 0px 0px 0px 3px, rgba(19, 22, 28, 0.05) 0px 1px 2px 0px; outline 1px solid #2962ff `light.border.ring`, offset 2px; text -apple-system 14/20 600, #13161c `light.accent.foreground` |
+| focus-visible | background #ffffff `light.brand.foreground`; shadow rgba(41, 98, 255, 0.5) 0px 0px 0px 3px, rgba(19, 22, 28, 0.05) 0px 1px 2px 0px; outline 1px solid #2962ff `light.border.ring`, offset 2px; text -apple-system 14/20 600, #13161c `light.accent.foreground` |
 | selected | background #ffffff `light.brand.foreground`; shadow rgba(19, 22, 28, 0.05) 0px 1px 2px 0px; text -apple-system 14/20 600, #13161c `light.accent.foreground` |
 
 ![Category tab default](components/crops/changelog-tab-default.png) ![Category tab hover](components/crops/changelog-tab-hover.png) ![Category tab focus-visible](components/crops/changelog-tab-focus-visible.png) ![Category tab selected](components/crops/changelog-tab-selected.png)
@@ -479,7 +479,7 @@ States read on 2026-11-17T04:17:37.053Z (default); 2026-11-17T04:17:38.402Z (foc
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 386 x 40; padding 4px 12px 4px 8px; background transparent; text -apple-system 14/20 400, #13161c `light.accent.foreground`; transition color 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1); placeholder #63666d `light.muted.foreground`; layers input.file:text-foreground.placeholder:text-muted-foreground 386.0x40.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px |
-| focus-visible | shadow rgba(143, 143, 143, 0.5) 0px 0px 0px 0px; layers input.file:text-foreground.placeholder:text-muted-foreground 386.0x40.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(143, 143, 143, 0.5) 0px 0px 0px 0px, transparent 0px 0px 0px 0px |
+| focus-visible | shadow rgba(41, 98, 255, 0.5) 0px 0px 0px 0px; layers input.file:text-foreground.placeholder:text-muted-foreground 386.0x40.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(41, 98, 255, 0.5) 0px 0px 0px 0px, transparent 0px 0px 0px 0px |
 
 ![Combobox (city) default](components/crops/onboard-combobox-default.png) ![Combobox (city) focus-visible](components/crops/onboard-combobox-focus-visible.png)
 
@@ -490,7 +490,7 @@ States read on 2026-11-17T04:17:39.569Z (default); 2026-11-17T04:17:42.495Z (foc
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 416 x 68; padding 8px 12px; border 1px solid #ced1d6 `light.border.input`; radius 8px; background transparent; text -apple-system 14/20 400, #13161c `light.accent.foreground`; transition color 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1); placeholder #63666d `light.muted.foreground` |
-| focus-visible | border 1px solid #2962ff `light.border.ring`; shadow rgba(143, 143, 143, 0.5) 0px 0px 0px 3px |
+| focus-visible | border 1px solid #2962ff `light.border.ring`; shadow rgba(41, 98, 255, 0.5) 0px 0px 0px 3px |
 
 ![Tagline textarea default](components/crops/onboard-textarea-default.png) ![Tagline textarea focus-visible](components/crops/onboard-textarea-focus-visible.png)
 
@@ -512,8 +512,8 @@ States read on 2026-11-17T04:17:50.558Z (default); 2026-11-17T04:17:52.427Z (hov
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 416 x 40; padding 0px 16px; radius 8px; background #181b20 `light.primary.default`; shadow rgba(255, 255, 255, 0.12) 0px 1px 0px 0px inset, rgba(19, 22, 28, 0.2) 0px 1px 2px 0px; text -apple-system 14/20 600, #ffffff `light.brand.foreground`; transition all 0.15s cubic-bezier(0.16, 1, 0.3, 1); icon 16 x 16, #ffffff `light.brand.foreground` |
-| hover | background rgba(56, 56, 56, 0.9) |
-| focus-visible | shadow rgba(143, 143, 143, 0.5) 0px 0px 0px 3px, rgba(255, 255, 255, 0.12) 0px 1px 0px 0px inset, rgba(19, 22, 28, 0.2) 0px 1px 2px 0px |
+| hover | background rgba(24, 27, 32, 0.9) |
+| focus-visible | shadow rgba(41, 98, 255, 0.5) 0px 0px 0px 3px, rgba(255, 255, 255, 0.12) 0px 1px 0px 0px inset, rgba(19, 22, 28, 0.2) 0px 1px 2px 0px |
 
 !["Next" button default](components/crops/onboard-next-default.png) !["Next" button hover](components/crops/onboard-next-hover.png) !["Next" button focus-visible](components/crops/onboard-next-focus-visible.png)
 
@@ -545,7 +545,7 @@ States read on 2026-11-17T05:52:26.883Z (default); 2026-11-17T05:52:55.102Z (dar
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 1440 x 72; background rgba(255, 255, 255, 0.8); text -apple-system 14/20 400, #13161c `light.accent.foreground`; transition transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), translate 0.3s cubic-bezier(0.4, 0, 0.2, 1), scale 0.3s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.3s cubic-bezier(0.4, 0, 0.2, 1); icon 22 x 22, #63666d `light.muted.foreground` |
-| dark | background rgba(43, 43, 43, 0.8); text -apple-system 14/20 400, #e6e8eb `light.codeBlock.codeBlockForeground`; icon 22 x 22, #a2a5aa |
+| dark | background rgba(13, 15, 20, 0.8); text -apple-system 14/20 400, #e6e8eb `light.codeBlock.codeBlockForeground`; icon 22 x 22, #a2a5aa |
 
 ![Blog header bar default](components/crops/th-header-default.png)
 
@@ -661,7 +661,7 @@ States read on 2026-11-17T05:56:05.700Z (default); 2026-11-17T05:56:13.015Z (hov
 |---|---|
 | default | size 149.47 x 36; padding 0px 16px; border 1px solid #ced1d6 `light.border.input`; radius 3.35544e+07px; background #ffffff `light.brand.foreground`; text -apple-system 14/20 600, #13161c `light.accent.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover | background #e9ebef `light.accent.default` |
-| focus-visible | shadow rgba(143, 143, 143, 0.5) 0px 0px 0px 2px |
+| focus-visible | shadow rgba(41, 98, 255, 0.5) 0px 0px 0px 2px |
 
 !["Load more posts" button default](components/crops/th-load-more-default.png) !["Load more posts" button hover](components/crops/th-load-more-hover.png) !["Load more posts" button focus-visible](components/crops/th-load-more-focus-visible.png)
 
