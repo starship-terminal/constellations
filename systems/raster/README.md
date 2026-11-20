@@ -123,4 +123,4 @@ python3 ../../tools/catalog.py design-md raster
 
 Run the last command from the repository root, or the first two from `systems/raster`.
 
-`tools/build_tokens.py` is behind [tokens.json](tokens.json): it writes a `light` set where the committed file has `docs`, with `$themes` and `$metadata` to match. Running it replaces the committed set. Bring the builder up to date before you run it; until then, edit nothing through it.
+Both builders reproduce their committed files byte for byte; `tools/test_rebuild.py` checks it. The docs surface is the `docs` set (not `light`), the name the style guide and the catalog entry read.
