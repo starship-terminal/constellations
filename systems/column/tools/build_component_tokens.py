@@ -35,7 +35,8 @@ import json, pathlib, re
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
 V = json.loads((RAW / "css-vars.json").read_text())
-RL = V["resolved"].get("dark") or V["resolved"].get("light") or {}
+# column paints light only (catalog theme list): resolve against the light pass, never a dark probe.
+RL = V["resolved"]["light"]
 C = json.loads((RAW / "components-computed.json").read_text())["components"]
 R = {n: v.get("value", v.get("raw")) for n, v in RL.items()}
 RAW_DECL = {n: v.get("raw") for n, v in RL.items()}

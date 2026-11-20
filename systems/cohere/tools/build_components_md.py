@@ -228,9 +228,15 @@ def paint_diff(cur, base):
     return "; ".join(out)
 
 
+def measured(v):
+    """A state with a real reading: not skipped, not a focus that never landed (via "focus failed"), not a
+    focus that did not match :focus-visible. Those are the element at rest (the kit's rule, PR 932)."""
+    return "style" in v and not v.get("skipped") and "failed" not in str(v.get("via", "")) and (v.get("focus") or {}).get("matches") is not False
+
+
 def state_rows(c):
-    states = list(c["states"])
-    good = [s for s in states if "style" in c["states"][s]]
+    states = [s for s in c["states"] if "failed" not in str(c["states"][s].get("via", ""))]
+    good = [s for s in states if measured(c["states"][s])]
     if not good:
         return ([(", ".join(states), {"size": "unmeasured — the capture failed on this pass"})] if states else []), states
     base = props(c["states"][good[0]])
@@ -255,7 +261,7 @@ def state_rows(c):
             rows.append((st, diff))
     if same:
         rows[0] = (f"{good[0]} (same: {', '.join(same)})", base)
-    missed = [s for s in states if "style" not in c["states"][s]]
+    missed = [s for s in states if not measured(c["states"][s])]
     if missed:
         rows.append((", ".join(missed), {"size": "unmeasured — the capture failed on this pass"}))
     return rows, states
@@ -266,7 +272,7 @@ def fmt(d):
 
 
 def child_layers(c):
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
@@ -408,7 +414,9 @@ for k, c in C.items():
         # browser's auto outline on focus-visible, so compare painted outlines
         # between the focused and default states before calling it no-change.
         def rings(v):
-            return {p.get("node"): p.get("outline") for p in ((v or {}).get("paint") or []) if p.get("outline")}
+            # A transparent outline on a child draws nothing, so it is not a ring.
+            return {p.get("node"): p.get("outline") for p in ((v or {}).get("paint") or [])
+                    if p.get("outline") and not re.search(r"rgba\(\d+, \d+, \d+, 0\)|transparent", p["outline"])}
         new = {n: o for n, o in rings(st).items() if rings(c["states"].get("default")).get(n) != o}
         if new:
             foc.append((k, "; ".join(f"{o} on {n}" for n, o in list(new.items())[:2]) + " (child layer)"))
@@ -438,7 +446,7 @@ W("|---|---|---|---|")
 mot = {}
 for k, c in C.items():
     for st in c["states"].values():
-        if "style" not in st:
+        if not measured(st):
             continue
         s = st["style"]
         if s["transitionDuration"] in ("0s", ""):
