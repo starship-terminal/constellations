@@ -32,6 +32,10 @@ import { BASE, launch, open, closePromo, styleOf, crop, centre, markFixed, RAW }
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const LAYOUT_OUT = path.join(RAW, 'layout.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
+// Older runs saved the camelCase page keys; map them to the URLS keys PAGES now uses, so the
+// stale-entry cleanup (done.has(c.run)) still covers readings an older run wrote.
+const OLD_RUN = { getDemo: 'get-demo', docsOverview: 'docs-overview', docsApi: 'docs-api', docsDark: 'docs-dark' };
+for (const c of Object.values(out.components || {})) if (OLD_RUN[c.run]) c.run = OLD_RUN[c.run];
 const layout = fs.existsSync(LAYOUT_OUT) ? JSON.parse(fs.readFileSync(LAYOUT_OUT, 'utf8')) : {};
 out._meta ??= {};
 out.components ??= {};
@@ -179,7 +183,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
         await page.waitForTimeout(500);
         undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
         via = `typed "${opts.fillText || FILL}", then deleted; nothing sent`;
-      } else via = via || 'at rest';
+      } else via = via || opts.via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
       out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
@@ -200,6 +204,7 @@ const q = (sel) => page.locator(sel);
 async function tag(name, probe, ...args) {
   return page.evaluate(([n, src, a]) => {
     const el = (new Function('return (' + src + ')')())(...a);
+    for (const old of document.querySelectorAll(`[data-m="${n}"]`)) old.removeAttribute('data-m');
     if (!el) return false;
     el.setAttribute('data-m', n);
     return true;
@@ -212,12 +217,14 @@ async function tag(name, probe, ...args) {
 async function tagEl(name, reSrc, scopeSel) {
   return page.evaluate(([n, src, scope]) => {
     const re = new RegExp(src, 'i');
-    const sc = (scope && document.querySelector(scope)) || document;
+    const sc = scope ? document.querySelector(scope) : document;
+    if (!sc) return false; // the scope (an open menu) is gone: never fall back to the whole page
     const cands = [...sc.querySelectorAll('a,button,[role=button],[role=tab],li,div,span')].filter((e) => {
       const t = (e.innerText || e.getAttribute('aria-label') || '').trim(); const r = e.getBoundingClientRect();
       return re.test(t) && t.length < 80 && r.width > 10 && r.height > 8;
     }).sort((a, b) => (a.innerText || '').length - (b.innerText || '').length);
     const el = cands.find((e) => e.matches('a,button,[role=button],[role=tab],li,[tabindex]') || getComputedStyle(e).cursor === 'pointer') || cands[0];
+    for (const old of document.querySelectorAll(`[data-m="${n}"]`)) old.removeAttribute('data-m');
     if (!el) return false;
     el.setAttribute('data-m', n);
     return true;
@@ -304,9 +311,12 @@ async function shell() {
         });
         return cands.sort((a, b) => a.innerText.length - b.innerText.length)[0] || null;
       });
-      if (menu) await S('nav-submenu', q('[data-m="submenu"]'), ['default'], { group: g, title: 'Nav submenu', desc: 'The dropdown that opens under a nav section on hover (Developers: Documentation, Tools, Changelog; Company: Team, Research, Security). Shown in its hover-open state.', sel: 'the open ContentSubMenu' }, { noScroll: true, via: 'hover over the nav item' });
+      if (menu) await S('nav-submenu', q('[data-m="submenu"]'), ['default'], { group: g, title: 'Nav submenu', desc: 'The dropdown that opens under a nav section on hover (Developers: Documentation, Tools, Changelog; Company: Team, Research, Security). Shown in its hover-open state.', sel: 'the open ContentSubMenu' }, { noScroll: true, noReset: true, via: 'hover over the nav item' });
+      // S() resets the pointer when it returns, which closes the hover menu: reopen it
+      await q('[data-m="navdev"]').hover({ timeout: 4000 }).catch(() => {});
+      await page.waitForTimeout(1000);
       if (await tagEl('sublink', 'documentation|changelog|^blog$', '[data-m="submenu"]'))
-        await S('nav-sub-link', q('[data-m="sublink"]'), ['default', 'hover', 'focus-visible'], { group: g, title: 'Submenu link', desc: 'A row inside the open nav dropdown. Measured, never followed.', sel: 'a link inside the submenu' }, { noScroll: true });
+        await S('nav-sub-link', q('[data-m="sublink"]'), ['default', 'hover', 'focus-visible'], { group: g, title: 'Submenu link', desc: 'A row inside the open nav dropdown. Measured, never followed.', sel: 'a link inside the submenu' }, { noScroll: true, noReset: true });
       await page.mouse.move(720, 500);
       await page.waitForTimeout(600);
     }
@@ -373,7 +383,7 @@ async function home() {
     });
     if (sel2) {
       await page.waitForTimeout(1200);
-      await S('persona-chip-selected', q('[data-m="pchip2"]'), ['default'], { group: g, title: 'Persona chip, selected', desc: 'The same chip after a press, in its selected state (the demo card now names that persona).', sel: 'a pressed persona card', via: 'a press on the chip (a local selection toggle)' });
+      await S('persona-chip-selected', q('[data-m="pchip2"]'), ['default'], { group: g, title: 'Persona chip, selected', desc: 'The same chip after a press, in its selected state (the demo card now names that persona).', sel: 'a pressed persona card' }, { via: 'a press on the chip (a local selection toggle)' });
     }
   }
   // The "Talk with …" demo card: the smallest ON-SCREEN element still holding
@@ -506,15 +516,17 @@ async function gallery(key, headingRe, cardRe, compKey, title, desc) {
   await S(`${compKey}-title`, q('h1').first(), ['default'], { group: g, title: `${title} title`, sel: 'h1' }, { noScroll: true });
   const card = await tag('gcard', (reSrc, reFlags) => {
     const cardRe = new RegExp(reSrc, reFlags);
-    const cands = [...document.querySelectorAll('a, article, [data-framer-name]')].filter((e) => {
+    // Inside the page body only: the nav's Company/Developers submenu stays
+    // mounted in the header and is not a card.
+    const root = document.querySelector('main') || document.body;
+    const cands = [...root.querySelectorAll('a, article, [data-framer-name]')].filter((e) => {
       const r = e.getBoundingClientRect();
-      return (e.querySelector('img, video') || cardRe.test(e.innerText || '')) && r.width > 200 && r.width < 900 && r.height > 100 && r.top > 60;
+      return !e.closest('header, nav, [role="navigation"], footer') && (e.querySelector('img, video') || cardRe.test(e.innerText || '')) && r.width > 200 && r.width < 900 && r.height > 100 && r.top > 60;
     });
     return cands.sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top || a.getBoundingClientRect().left - b.getBoundingClientRect().left)[0] || null;
   }, cardRe.source, cardRe.flags);
-  if (card) {
-    await S(compKey, q('[data-m="gcard"]'), ['default', 'hover', 'focus-visible'], { group: g, title, desc, sel: `the first card on ${URLS[key]}` });
-  }
+  // S() records the component as missing when nothing was tagged.
+  await S(compKey, q('[data-m="gcard"]'), ['default', 'hover', 'focus-visible'], { group: g, title, desc, sel: card ? `the first card on ${URLS[key]}` : `no card found on ${URLS[key]}` });
   await page.close();
 }
 
@@ -598,7 +610,7 @@ async function docsOverview() {
   await page.waitForTimeout(1500);
   const dlg = await tag('sdlg', () => [...document.querySelectorAll('[role=dialog], [data-component-name*=search], [aria-modal=true]')].find((e) => { const r = e.getBoundingClientRect(); return r.width > 200 && r.height > 20 && !/cookie/i.test(e.className || ''); }) || null);
   if (dlg) {
-    await S('docs-search-dialog', q('[data-m="sdlg"]'), ['default'], { group: G.overlay, title: 'Search dialog', desc: 'The \u2318K search overlay: a field, result list and keyboard hints. Opened by keyboard; nothing was typed.', sel: 'the [role=dialog] search overlay', via: 'Meta+K' }, { noScroll: true });
+    await S('docs-search-dialog', q('[data-m="sdlg"]'), ['default'], { group: G.overlay, title: 'Search dialog', desc: 'The \u2318K search overlay: a field, result list and keyboard hints. Opened by keyboard; nothing was typed.', sel: 'the [role=dialog] search overlay' }, { noScroll: true, noReset: true, via: 'Meta+K' });
     const sinput = await tag('sinput', () => document.querySelector('[role=dialog] input, [role=dialog] textarea') || null);
     if (sinput) await S('docs-search-input', q('[data-m="sinput"]'), ['default'], { group: G.overlay, title: 'Search field', sel: 'the input inside the search dialog' }, { noScroll: true, crop: false });
   }
@@ -608,7 +620,7 @@ async function docsOverview() {
   await page.waitForTimeout(1500);
   const panel = await tag('apanel', () => [...document.querySelectorAll('[role=dialog], [data-component-name*=assistant], [id*=assistant], aside')].filter((e) => /ask a question|assistant/i.test(e.innerText || '') && e.getBoundingClientRect().width > 200)[0] || null);
   if (panel) {
-    await S('docs-assistant-panel', q('[data-m="apanel"]'), ['default'], { group: G.overlay, title: 'Assistant panel', desc: 'The "Ask Assistant" sheet with a question box and send button. Opened by keyboard; nothing was typed or sent.', sel: 'the assistant sheet', via: 'Meta+I' }, { noScroll: true });
+    await S('docs-assistant-panel', q('[data-m="apanel"]'), ['default'], { group: G.overlay, title: 'Assistant panel', desc: 'The "Ask Assistant" sheet with a question box and send button. Opened by keyboard; nothing was typed or sent.', sel: 'the assistant sheet' }, { noScroll: true, noReset: true, via: 'Meta+I' });
     if (await tagEl('asend', 'send message|^send', '[data-m="apanel"]'))
       await S('docs-assistant-send', q('[data-m="asend"]'), ['default', 'hover', 'focus-visible'], { group: G.overlay, title: 'Assistant send button', desc: 'The send control in the assistant sheet. Measured, never pressed.', sel: '"Send message" in the assistant panel' }, { noScroll: true });
   }
@@ -660,7 +672,7 @@ async function docsDark() {
   const g = G.docs;
   const darkNow = await page.evaluate(() => document.documentElement.className.includes('dark') || document.documentElement.getAttribute('data-theme-preference') === 'dark');
   if (!darkNow) { log('  ! dark theme not applied; skipping dark measures'); await page.close(); return; }
-  await S('docs-dark-main', q('main').first(), ['default'], { group: g, title: 'Docs page, dark', desc: 'The content column in the dark theme.', sel: 'main', via: 'theme menu > Dark' }, { noScroll: true });
+  await S('docs-dark-main', q('main').first(), ['default'], { group: g, title: 'Docs page, dark', desc: 'The content column in the dark theme.', sel: 'main' }, { noScroll: true, via: 'theme menu > Dark' });
   const side = await tag('dside', () => document.querySelector('#sidebar, [id*=sidebar]') || null);
   if (side) await S('docs-dark-sidebar', q('[data-m="dside"]'), ['default'], { group: g, title: 'Sidebar, dark', sel: '#sidebar in dark' }, { noScroll: true });
   await S('docs-dark-h1', q('main h1, h1').first(), ['default'], { group: g, title: 'Docs title, dark', sel: 'main h1 in dark' }, { noScroll: true });
@@ -697,7 +709,7 @@ async function mobile() {
       });
       return cands.sort((a, b) => (a.innerText || '').length - (b.innerText || '').length)[0] || null;
     });
-    if (drawer) await S('m-nav-drawer', q('[data-m="mdrawer"]'), ['default'], { group: g, title: 'Mobile nav drawer', desc: 'The open menu at 390 wide (a local toggle: the menu button).', sel: 'the open nav drawer', via: 'a press on the menu button' }, { noScroll: true });
+    if (drawer) await S('m-nav-drawer', q('[data-m="mdrawer"]'), ['default'], { group: g, title: 'Mobile nav drawer', desc: 'The open menu at 390 wide (a local toggle: the menu button).', sel: 'the open nav drawer' }, { noScroll: true, noReset: true, via: 'a press on the menu button' });
     await page.keyboard.press('Escape').catch(() => {});
     await page.mouse.click(20, 780).catch(() => {});
     await page.waitForTimeout(500);
@@ -719,7 +731,7 @@ async function mobile() {
 }
 
 const PAGES = {
-  home, api, pricing, getDemo: getDemo, docsOverview, docsApi, docsDark, mobile,
+  home, api, pricing, 'get-demo': getDemo, 'docs-overview': docsOverview, 'docs-api': docsApi, 'docs-dark': docsDark, mobile,
   'interactive-avatars': () => gallery('interactive-avatars', /avatar|character/i, /.+/i, 'avatar-card', 'Avatar card', 'A card in the avatar gallery: a face, its style tag and name.'),
   about: () => gallery('about', /team|story|mission/i, /.+/i, 'about-card', 'About card', 'A card on the team/company page.'),
   research: () => gallery('research', /research|paper|model/i, /.+/i, 'research-card', 'Research entry', 'A paper or model entry on the research page.'),
