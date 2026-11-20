@@ -6,8 +6,8 @@
 // shots are 1440x900 at 1x, mobile 390x844 at 2x, `*-full` shots 1x. A page taller than one GPU
 // texture is saved as name.partN.png tiles, which quantize.py stitches back together.
 // Nothing is sent, bought or signed into: the only presses are dialog dismissals, the MEN/WOMEN
-// mega-menu buttons, Search, a size chip, Add to Cart (a session cart, never checkout),
-// and FAQ/product accordions.
+// mega-menu buttons, Search, a size chip, the header cart button and FAQ/product
+// accordions. Add to Cart is never pressed (it writes a cart on the store's server).
 import fs from 'fs';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { M, closePromo, killGeo, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
@@ -70,9 +70,11 @@ const pickSize = async (p) => {
   if (await chip.count()) { await clickEl(chip); await wait(p, 800); return true; }
   return false;
 };
+// Opens the cart drawer through the header cart button, never Add to Cart
+// (state change: recorded as a boundary), so the drawer shown is the empty cart.
 const addToCart = async (p) => {
   await closePromo(p);
-  const b = p.locator('button:has-text("ADD TO CART"), button:has-text("Add to Cart"), button:has-text("ADD TO BAG")')
+  const b = p.locator('button[aria-label*="cart" i], a[aria-label*="cart" i], button:has-text("View cart")')
     .filter({ visible: true }).first();
   if (await b.count()) { await clickEl(b); await wait(p, 2500); return true; }
   return false;
