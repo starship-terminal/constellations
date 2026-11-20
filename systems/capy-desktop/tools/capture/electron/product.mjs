@@ -437,12 +437,12 @@ export const RUN = {
     const target = await mac.innerText().catch(() => '');
     // The current choice, not just the This Mac row: that row names the scratch folder whatever is selected, so
     // another paired machine or checkout would pass a check of its text alone. Fail closed unless the This Mac
-    // row is the checked one or the Run on button itself names the scratch folder.
+    // row is the checked one or the Run on button itself names the whole scratch path (a name fragment such
+    // as "capy" would also match another machine called capy-build).
     const checked = await mac.evaluate(el => el.getAttribute('aria-checked') === 'true' || el.getAttribute('data-state') === 'checked').catch(() => false);
     await closeAll(page);
     const runOn = (await btn(page, 'Run on').innerText()).trim();
-    const folder = RUN_DIR.split('/').pop();
-    if (!target.includes(RUN_DIR.slice(1)) || /^Cloud/.test(runOn) || !(checked || runOn.includes(folder))) throw new Error(`Run on is ${runOn} (${target.replace(/\s+/g, ' ')}), not this Mac in ~${RUN_DIR}`);
+    if (!target.includes(RUN_DIR.slice(1)) || /^Cloud/.test(runOn) || !(checked || runOn.includes(RUN_DIR.slice(1)))) throw new Error(`Run on is ${runOn} (${target.replace(/\s+/g, ' ')}), not this Mac in ~${RUN_DIR}`);
     await clearEditor(page);
   },
   async finish(h) {

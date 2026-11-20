@@ -21,6 +21,13 @@ test('an empty draft (the JSON text null) needs nothing', async () => {
   assert.equal(f.s.writes, 0);
 });
 
+test('no saved draft still checks the composer read back empty', async () => {
+  const f = fake();
+  f.s.value = JSON.stringify({ text: 'left over from the run' });
+  await assert.rejects(restoreDraft({ ...f, saved: 'null' }), /not restored/);
+  assert.equal(f.s.writes, 0);
+});
+
 test('a multi-line draft is written back whole, never typed', async () => {
   const saved = JSON.stringify({ text: 'first line\nsecond line\n', project: 'p' });
   const f = fake();

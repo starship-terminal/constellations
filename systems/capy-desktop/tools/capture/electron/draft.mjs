@@ -10,18 +10,21 @@
 //   write(v)   writes v back to the draft key
 //   reload()   reloads the page so the composer reads the key again
 //   read()     the raw localStorage value now
-// It resolves `false` when there was no draft, `true` once the draft reads back unchanged, and throws when it
-// does not, so the capture fails instead of leaving the owner's draft lost or changed.
+// It resolves `false` when there was no draft (and the composer reads back empty), `true` once the draft reads
+// back unchanged, and throws when either does not hold, so the capture fails instead of leaving the owner's draft lost or changed.
 export const draftText = v => {
   try { return (v && JSON.parse(v)?.text) || ''; } catch { return ''; }
 };
 
 export async function restoreDraft({ saved, write, reload, read }) {
   const want = draftText(saved);
-  if (!want) return false;
-  await write(saved);
-  await reload();
+  if (want) {
+    await write(saved);
+    await reload();
+  }
+  // Read back either way: with no saved draft the composer must be empty again (the clear before this only
+  // sends keys, so a failed or slow clear would otherwise go unnoticed).
   const got = draftText(await read());
   if (got !== want) throw new Error(`the draft was not restored: ${got.slice(0, 60)}`);
-  return true;
+  return Boolean(want);
 }
