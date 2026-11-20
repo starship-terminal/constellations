@@ -13,7 +13,8 @@ ASOS is worth a capture because it is the reference for *flat fast-fashion chrom
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (72, ~180 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: shop chrome, buttons, product surfaces, PDP, forms, the mobile side panel, consent |
 | [components/crops/](components/crops) | ~176 element screenshots, `{component}-{state}.png` |
-| [screenshots/](screenshots) | 25 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `home-light-consent` the OneTrust dialog as it arrives |
+| [screenshots/](screenshots) | 25 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `home-light-consent` the OneTrust dialog as it arrives. Signed-in shots are `signed-in-*.png` |
+| [login-review.json](login-review.json) | Signed-in walk: nav, settings, and create that were opened, the screenshot for each, and what was not submitted |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property, binned generated/app/vendor/utility/tailwind, resolved light+dark, plus @font-face declarations), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [Rebuild](#rebuild) |
 
@@ -103,6 +104,8 @@ Every value came off the running signed-out shop in headed Chrome (Akamai 403s h
 
 Nothing was bought, added to bag, joined, subscribed, searched or signed into. The public storefront plus the account gate was enough.
 
+A later signed-in pass (2026-11-20) walked the already signed-in account in the T3 preview and added [login-review.json](login-review.json) plus `screenshots/signed-in-*.png`. It did not rebuild tokens. The account hub, empty orders, Premier pitch, vouchers unavailable page, contact preferences, social accounts, empty address form, payment-method gate, empty saved list, empty bag, and the returns landing are in that review. My details was opened and its screenshot was discarded because it shows the account email and date of birth. Sign out, preference confirm, address add, payment add, Premier signup, return start, and checkout were not submitted.
+
 ## What to distrust
 
 - **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
@@ -142,15 +145,15 @@ Nothing was bought, added to bag, joined, subscribed, searched or signed into. T
 | Card | captured | `product-tile`, `grid-tile`, `hub-tile`, `hub-card`, `m-feature-tile` |
 | List row | captured | `m-nav-link` side-panel rows; flyout link rows |
 | Table | not present | none on the public surface |
-| Avatar | not present | none on the public surface |
+| Avatar | captured | signed-in account hub initials, [signed-in-my-account-desktop](screenshots/signed-in-my-account-desktop.png) |
 | Badge | captured | `tile-badge` (SELLING FAST / MORE COLOURS), `rating` star button |
 | States: default, hover, focus-visible, pressed | captured | every interactive entry; pressed via CDP |
 | States: selected | captured | `size-select` picked; `nav-mega`, `pdp-accordion-open`, `m-menu-open` |
 | States: disabled, error | partly | none surfaced on the public surface; `search-button` focus is an honest error record |
 | App shell and navigation | captured | [home-light-default](screenshots/home-light-default.png), [patterns.md](patterns.md) |
 | Form with a validation error | not captured | the login form was never submitted |
-| Empty state | captured | `bag-empty`, `saved-empty` — the signed-out bag and saved lists |
-| Checkout, account, order flow | not captured | nothing was added to the bag; behind sign-in |
+| Empty state | captured | signed-out `bag-empty` and `saved-empty`; signed-in empty bag, saved list, and orders in `screenshots/signed-in-*` |
+| Checkout, account, order flow | partly | signed-in account nav, empty orders, empty bag, and the returns landing are in [login-review.json](login-review.json). Checkout was not started. My details is omitted because the screenshot showed the account email and date of birth. |
 | Themes: light, dark | partly | light is the only painted theme |
 | Widths: 1440, 390 | captured | desktop + `mobile-*` shots and the Mobile group |
 
