@@ -79,9 +79,9 @@
       "description": "Music production with Live and Push",
       "status": "captured",
       "package": "systems/ableton",
-      "notes": "https://www.ableton.com/en/login/ asks for email or username plus a password. Register asks for a password too. No code was sent.",
+      "notes": "https://www.ableton.com/en/login/ asks for email or username plus a password. Register asks for a password too. No code was sent. Public walk 2026-11-21: the top bar opened Live, Push, Move, Note, Link, Shop, Packs, Help, the trial, and login. More and the phone Menu opened Blog, Classroom, Colleges, Certified Training, About, Jobs, Apprenticeships, plus Learn, Learning Synths, and Making Music off-site. The cookie banner, the YouTube dialog, the Live video dialog, and the Live FAQ are in-page. Footer newsletter, language, and country forms were not submitted. Login, register, account, cart, and license registration stop at https://www.ableton.com/en/login/. That wall was not entered. Job apply, classroom apply, and newsletter signup were not filled. Public package already on main. Refresh in PR 1537 at 850c2d582425. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 1
     },
     {
