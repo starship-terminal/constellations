@@ -511,7 +511,8 @@ async function measureSnap(browser, label, specs, out) {
         if (spec.crop !== false) {
           try { s.crop = await crop(loc, name, spec.pad ?? 8); } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
         }
-        c.states[state] = { theme, snapshot: label, ...s, via };
+        c.states[state] = { theme, snapshot: label, ...s, via, read: RUN };
+        out._meta.read = RUN; // a reading succeeded in this run
         if (job.find !== spec.find) (c.selectors ||= {})[state] = job.find.toString();
         log('  ', name, `${s.rect.w}x${s.rect.h}`, via.slice(0, 50));
       } catch (e) {
@@ -519,7 +520,7 @@ async function measureSnap(browser, label, specs, out) {
         // instead of replacing a good reading with an error.
         const prev = (earlier.get(spec.key) || {})[state];
         const error = String(e.message || e).slice(0, 200);
-        c.states[state] = prev && !prev.error ? { ...prev, recaptureError: error } : { theme, snapshot: label, error };
+        c.states[state] = prev && !prev.error ? { ...prev, recaptureError: error, recaptureRun: RUN } : { theme, snapshot: label, error, read: RUN };
         log('  !', name, String(e.message || e).slice(0, 120));
       } finally {
         await page.mouse.up().catch(() => {});
@@ -535,12 +536,22 @@ async function measureSnap(browser, label, specs, out) {
 // ---------------------------------------------------------------- main
 
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
+// _meta.read keeps the earlier date until this run reads a state, so a rerun that
+// fails throughout never redates old readings; _meta.lastAttempt is this run's
+// date. Each state carries its own `read` date; states kept from before per-state
+// dates existed take the earlier _meta.read.
+const RUN = new Date().toLocaleDateString('en-CA');
+const PRIOR_READ = out._meta && out._meta.read;
+for (const c of Object.values(out.components || {})) {
+  for (const st of Object.values((c && c.states) || {})) if (st && typeof st === 'object' && !st.read && PRIOR_READ) st.read = PRIOR_READ;
+}
 // NotebookLM (adapt): every dark copy is measured again in light, from the same file.
 const hasCopy = (label) => fs.existsSync(path.join(SNAPS, `${label.replace(/#light$/, '')}.json`));
 const copiesOf = (snap) => [snap, ...(/-dark(?=-|$)/.test(snap) ? [snap + '#light'] : [])];
 const labels = [...new Set(SPECS.flatMap((s) => jobsFor(s).flatMap((j) => copiesOf(j.snap))))].filter((l) => hasCopy(l) && (!ONLY.length || ONLY.includes(l.replace(/#light$/, ''))));
 out._meta = {
-  read: new Date().toLocaleDateString('en-CA'),   // the local date of this run, as the kit records it
+  read: PRIOR_READ || RUN,   // moves to this run's date once a state is read
+  lastAttempt: RUN,
   source: 'Static, redacted copies of the signed-in notebook.google.com web app (tools/capture/signed-in/snapshot.js) with every same-origin stylesheet inlined, loaded from file:// in headless Chromium; Google Fonts and gstatic come through a local cache. Nothing was requested from notebook.google.com itself.',
   viewport: '1440x900 (the mobile-* copies 390x844), deviceScaleFactor 2',
   themes: 'Every copy was taken in dark. Light is the same copy with the body class dark-theme swapped for light-theme, which is what the in-app Light mode does. Dark states have plain names; light states are `light`, `light-<state>`. Every state records `theme` and `snapshot`.',
