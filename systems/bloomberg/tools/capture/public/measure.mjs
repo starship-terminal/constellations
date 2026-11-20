@@ -436,20 +436,28 @@ context = ctx0;
 const pages = process.argv.slice(2);
 const plan = { home, markets, article, quote, live, subscriptions, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
+// A page counts as finished only when its runner returns without throwing and
+// no bot check stopped it: any other throw (a goto timeout, a locator outside
+// S()) used to abort the loop, and the finally then pruned every page after it.
+const finished = new Set();
+async function runPage(fn, ...args) {
+  try { await fn(...args); if (current) finished.add(current); } catch (e) { if (current) failedPages.add(current); log('PAGE FAILED', fn.name, String(e && e.message || e).split('\n')[0]); }
+}
+const pageDone = (c) => finished.has(c.page) && !failedPages.has(c.page);
 try {
-  for (const k of order) { if (k !== 'mobile' && k !== 'article') await plan[k](); }
-  if (!pages.length || pages.includes('article')) await article();
-  if (!pages.length || pages.includes('home')) await footer();
-  if (!pages.length || pages.includes('mobile')) await plan.mobile();
-  if (!pages.length || pages.includes('home')) await reducedMotion('home', '[class*="TickerBarWithPill_bar"]');
+  for (const k of order) { if (k !== 'mobile' && k !== 'article') await runPage(plan[k]); }
+  if (!pages.length || pages.includes('article')) await runPage(article);
+  if (!pages.length || pages.includes('home')) await runPage(footer);
+  if (!pages.length || pages.includes('mobile')) await runPage(plan.mobile);
+  if (!pages.length || pages.includes('home')) await runPage(reducedMotion, 'home', '[class*="TickerBarWithPill_bar"]');
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
-    // An untouched entry is pruned only when its page was not blocked this
-    // run: a PerimeterX-gated route keeps its earlier readings under their
+    // Prune only what a finished page no longer produces: a page that was
+    // blocked (PerimeterX) or threw keeps its earlier readings under their
     // original provenance instead of being erased and republished.
-    if (!touched.has(key) && !pages.length && !failedPages.has(c.page)) { delete out.components[key]; continue; }
+    if (!touched.has(key)) { if (!pages.length && pageDone(c)) delete out.components[key]; continue; }
     const want = listed.get(key);
-    if (want) for (const st of Object.keys(c.states || {})) if (!want.has(st)) delete c.states[st];
+    if (want && pageDone(c)) for (const st of Object.keys(c.states || {})) if (!want.has(st)) delete c.states[st];
   }
   save();
   await browser.close();
