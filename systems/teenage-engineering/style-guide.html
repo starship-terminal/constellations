@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teenage Engineering style guide</title>
+<style>
+:root {
+  --color-white: #ffffff;
+  --color-teWhite: #f5f5f5;
+  --color-teBlack: #0f0e12;
+  --color-grey100: #e5e5e5;
+  --color-grey200: #cccccc;
+  --color-grey300: #b2b2b2;
+  --color-grey500: #a1a7af;
+  --color-grey600: #767676;
+  --color-grey700: #7f7f7f;
+  --color-grey900: #4d4d4d;
+  --color-grey1000: #272727;
+  --color-blue: #0071bb;
+  --color-green: #006837;
+  --color-orange: #f05a24;
+  --color-red: #b81d13;
+  --color-yellow: #fab413;
+  --color-error: #c0262c;
+  --color-paper: #f1f2f2;
+  --color-success: var(--color-green);
+  --font-family-te20: "te-20", "Unicode", sans-serif;
+  --font-family-te40: "te-40", "Unicode", sans-serif;
+  --font-weight-thin: 100;
+  --font-weight-light: 300;
+  --font-scale-10: 13.219px;
+  --font-scale-15: 19.094px;
+  --font-scale-20: 26.438px;
+  --font-scale-25: 33.781px;
+  --font-scale-30: 39.672px;
+  --font-scale-40: 52.891px;
+  --font-scale-ui: 16px;
+  --space-xs: 7.344px;
+  --space-sm: 14.688px;
+  --space-md: 22.031px;
+  --space-lg: 33.047px;
+  --space-xl: 66.109px;
+  --radius-none: 0px;
+  --radius-field: 0px;
+  --radius-tile: 0px;
+  --radius-pill: 9999px;
+  --border-hairline: 1px;
+  --border-checkbox: 2px;
+  --size-clickMin: 48px;
+  --size-field: 60.016px;
+  --size-button: 73.469px;
+  --size-icon: 35.25px;
+  --size-header: 117.547px;
+  --size-checkbox: 29.375px;
+  --z-over: 100;
+  --z-navigation: 1000;
+  --z-modalBackdrop: 2000;
+  --z-dialog: 2001;
+  --typography-nav: var(--font-weight-thin) var(--font-scale-ui)/15px var(--font-family-te20);
+  --typography-body: var(--font-weight-light) var(--font-scale-ui)/22px var(--font-family-te20);
+  --typography-field: var(--font-weight-light) var(--font-scale-15)/24px var(--font-family-te20);
+  --typography-button: var(--font-weight-light) var(--font-scale-20)/29px var(--font-family-te20);
+  --background-page: var(--color-white);
+  --background-pageInverse: #000000;
+  --background-surface: var(--color-teWhite);
+  --background-field: var(--color-white);
+  --background-fieldDisabled: #e5e5e5;
+  --background-inverse: var(--color-teBlack);
+  --text-primary: #000000;
+  --text-onInverse: var(--color-teWhite);
+  --text-onBlack: var(--color-paper);
+  --text-muted: #7f7f7f;
+  --text-disabled: #b2b2b2;
+  --text-link: #000000;
+  --border-default: #000000;
+  --border-muted: #e5e5e5;
+  --border-fieldMuted: #e5e5e5;
+  --border-focus: #000000;
+  --border-select: #767676;
+  --action-primary: var(--color-teBlack);
+  --action-primaryText: var(--color-teWhite);
+  --action-soldOut: var(--color-teBlack);
+  --status-success: var(--color-success);
+  --status-error: var(--color-error);
+  --status-info: var(--color-blue);
+  --status-warning: var(--color-yellow);
+  --focus-ring: #000000;
+  color-scheme: light;
+  --sg-sans: "te-20", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sg-mono: ui-monospace, Menlo, Consolas, monospace;
+}
+[data-mode="dark"] {
+
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 300 16px/22px var(--sg-sans); }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
+header.top { border-bottom: 1px solid var(--border-muted); margin-bottom: 32px; }
+header.top h1 { font-weight: 100; font-size: 28px; margin: 0 0 8px; }
+p.lead { max-width: 70ch; color: var(--text-primary); }
+h2 { font-weight: 100; font-size: 26px; margin: 40px 0 12px; }
+h3 { font-weight: 300; font-size: 16px; margin: 24px 0 8px; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 64px; border: 1px solid var(--border-muted); }
+.sw b, .sw span { display: block; font-size: 12px; font-weight: 300; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--size-button); min-width: 220px; padding: 0 24px; background: var(--action-primary); color: var(--action-primaryText); border: 0; font: 300 var(--font-scale-20)/29px var(--sg-sans); }
+.fld { display: block; width: min(480px, 100%); height: var(--size-field); border: var(--border-hairline) solid var(--border-default); background: var(--background-field); color: var(--text-primary); font: 300 var(--font-scale-15)/24px var(--sg-sans); padding: 0 12px; }
+.tile { width: 220px; height: 140px; background: var(--background-surface); }
+.ink { background: var(--background-pageInverse); color: var(--text-onBlack); padding: 16px; }
+.ink a { color: var(--text-onBlack); text-decoration: none; font-weight: 100; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border-muted); font-weight: 300; }
+code { font-family: var(--sg-mono); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <h1>teenage engineering</h1>
+  <p class="lead">Public store, measured 2026-11-21. One theme. The home page is black. The store and forms are white. Values come from tokens.json.</p>
+</header>
+<section>
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+</section>
+<section>
+  <h2>Type</h2>
+  <p style="font-weight:100;font-size:var(--font-scale-ui)">nav, weight 100, 16px at 1440</p>
+  <p style="font-weight:300;font-size:var(--font-scale-15)">field, weight 300</p>
+  <p style="font-weight:300;font-size:var(--font-scale-20)">button, weight 300</p>
+</section>
+<section>
+  <h2>Controls</h2>
+  <p><button class="btn" type="button">subscribe</button></p>
+  <p><input class="fld" placeholder="email" readonly></p>
+  <div class="tile"></div>
+  <div class="ink"><a href="#">store</a></div>
+</section>
+<section>
+  <h2>Space</h2>
+  <p>xs <span id="xs"></span> · sm <span id="sm"></span> · md <span id="md"></span> · lg <span id="lg"></span> · xl <span id="xl"></span></p>
+</section>
+</div>
+<script>
+const TOKENS = {"core":{"color":{"white":{"v":"#ffffff","t":"color","s":"css-var --white resolved on :root at 1440x900 (raw/css-vars.json)"},"teWhite":{"v":"#f5f5f5","t":"color","s":"css-var --te-white resolved on :root at 1440x900 (raw/css-vars.json)"},"teBlack":{"v":"#0f0e12","t":"color","s":"css-var --te-black resolved on :root at 1440x900 (raw/css-vars.json)"},"grey100":{"v":"#e5e5e5","t":"color","s":"css-var --te-grey-100 resolved on :root at 1440x900 (raw/css-vars.json)"},"grey200":{"v":"#cccccc","t":"color","s":"css-var --te-grey-200 resolved on :root at 1440x900 (raw/css-vars.json)"},"grey300":{"v":"#b2b2b2","t":"color","s":"css-var --te-grey-300 resolved on :root at 1440x900 (raw/css-vars.json)"},"grey500":{"v":"#a1a7af","t":"color","s":"css-var --te-grey-500 resolved on :root at 1440x900 (raw/css-vars.json)"},"grey600":{"v":"#767676","t":"color","s":"css-var --te-grey-600 resolved on :root at 1440x900 (raw/css-vars.json)"},"grey700":{"v":"#7f7f7f","t":"color","s":"css-var --te-grey-700 resolved on :root at 1440x900 (raw/css-vars.json)"},"grey900":{"v":"#4d4d4d","t":"color","s":"css-var --te-grey-900 resolved on :root at 1440x900 (raw/css-vars.json)"},"grey1000":{"v":"#272727","t":"color","s":"css-var --te-grey-1000 resolved on :root at 1440x900 (raw/css-vars.json)"},"blue":{"v":"#0071bb","t":"color","s":"css-var --te-blue resolved on :root at 1440x900 (raw/css-vars.json)"},"green":{"v":"#006837","t":"color","s":"css-var --te-green resolved on :root at 1440x900 (raw/css-vars.json)"},"orange":{"v":"#f05a24","t":"color","s":"css-var --te-orange resolved on :root at 1440x900 (raw/css-vars.json)"},"red":{"v":"#b81d13","t":"color","s":"css-var --te-red resolved on :root at 1440x900 (raw/css-vars.json)"},"yellow":{"v":"#fab413","t":"color","s":"css-var --te-yellow resolved on :root at 1440x900 (raw/css-vars.json)"},"error":{"v":"#c0262c","t":"color","s":"css-var --error resolved on :root at 1440x900 (raw/css-vars.json)"},"paper":{"v":"#f1f2f2","t":"color","s":"computed color of logo, nav-link and search-button on the home page (raw/components-computed.json)","d":"Off-white used as text on the black home and menu."},"success":{"v":"{color.green}","t":"color","s":"css-var --success declared as var(--te-green) in root stylesheet"}},"font":{"family":{"te20":{"v":"\"te-20\", \"Unicode\", sans-serif","t":"fontFamily","s":"css-var --te-20 declared on :root (raw/css-vars.json)","d":"Product face. Proprietary. The guide falls back to sans-serif."},"te40":{"v":"\"te-40\", \"Unicode\", sans-serif","t":"fontFamily","s":"css-var --te-40 declared on :root (raw/css-vars.json)"}},"weight":{"thin":{"v":100,"t":"fontWeight","s":"css-var --fw-thin declared 100; computed fontWeight of logo and nav-link"},"light":{"v":300,"t":"fontWeight","s":"css-var --fw-light declared 300; computed fontWeight of subscribe, add-to-cart, fields"}},"scale":{"10":{"v":"13.219px","t":"dimension","s":"css-var --fs-10 resolved to 13.2188px at 1440x900; viewport-relative, resolved at the live viewport; authored calc of client width; 13.219px at 1440 (raw/css-vars.json)"},"15":{"v":"19.094px","t":"dimension","s":"css-var --fs-15 resolved to 19.0938px at 1440x900; viewport-relative, resolved at the live viewport (raw/css-vars.json)"},"20":{"v":"26.438px","t":"dimension","s":"css-var --fs-20 resolved to 26.4375px at 1440x900; viewport-relative, resolved at the live viewport (raw/css-vars.json)"},"25":{"v":"33.781px","t":"dimension","s":"css-var --fs-25 resolved to 33.7812px at 1440x900; viewport-relative, resolved at the live viewport (raw/css-vars.json)"},"30":{"v":"39.672px","t":"dimension","s":"css-var --fs-30 resolved to 39.6719px at 1440x900; viewport-relative, resolved at the live viewport (raw/css-vars.json)"},"40":{"v":"52.891px","t":"dimension","s":"css-var --fs-40 resolved to 52.8906px at 1440x900; viewport-relative, resolved at the live viewport (raw/css-vars.json)"},"ui":{"v":"16px","t":"dimension","s":"computed fontSize of nav-link, logo, search-button, footer-link at 1440"}}},"space":{"xs":{"v":"7.344px","t":"dimension","s":"css-var --space-xs resolved to 7.34375px at 1440x900; viewport-relative, resolved at the live viewport (raw/css-vars.json)"},"sm":{"v":"14.688px","t":"dimension","s":"css-var --space-sm resolved to 14.6875px at 1440x900; viewport-relative, resolved at the live viewport (raw/css-vars.json)"},"md":{"v":"22.031px","t":"dimension","s":"css-var --space-md resolved to 22.0312px at 1440x900; viewport-relative, resolved at the live viewport (raw/css-vars.json)"},"lg":{"v":"33.047px","t":"dimension","s":"css-var --space-lg resolved to 33.0469px at 1440x900; viewport-relative, resolved at the live viewport (raw/css-vars.json)"},"xl":{"v":"66.109px","t":"dimension","s":"css-var --space-xl resolved to 66.1094px at 1440x900; viewport-relative, resolved at the live viewport (raw/css-vars.json)"}},"radius":{"none":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of subscribe, add-to-cart, newsletter-field, store-tile"},"field":{"v":"0px","t":"dimension","s":"css-var --field-border-radius resolved to 0px at 1440x900; declared calc of client width; resolved 0px at 1440 (raw/css-vars.json)"},"tile":{"v":"0px","t":"dimension","s":"css-var --tile-border-radius resolved to 0px at 1440x900 (raw/css-vars.json)"},"pill":{"v":"9999px","t":"dimension","s":"css-var --round resolved to 9999px at 1440x900; declared 9999px (raw/css-vars.json)"}},"border":{"hairline":{"v":"1px","t":"dimension","s":"computed borderTopWidth of newsletter-field"},"checkbox":{"v":"2px","t":"dimension","s":"computed borderTopWidth of newsletter-check"}},"size":{"clickMin":{"v":"48px","t":"dimension","s":"css-var --btn-min-click-area resolved to 48px at 1440x900; declared 48px, not viewport-relative (raw/css-vars.json)"},"field":{"v":"60.016px","t":"dimension","s":"computed height of newsletter email field at 1440"},"button":{"v":"73.469px","t":"dimension","s":"computed height of subscribe and add-to-cart at 1440"},"icon":{"v":"35.25px","t":"dimension","s":"css-var --icon-size resolved to 35.25px at 1440x900; viewport-relative, resolved at the live viewport (raw/css-vars.json)"},"header":{"v":"117.547px","t":"dimension","s":"css-var --header-height resolved to 117.547px at 1440x900; viewport-relative, resolved at the live viewport (raw/css-vars.json)"},"checkbox":{"v":"29.375px","t":"dimension","s":"computed height of the newsletter checkbox"}},"z":{"over":{"v":100,"t":"number","s":"css-var --z-over"},"navigation":{"v":1000,"t":"number","s":"css-var --z-navigation"},"modalBackdrop":{"v":2000,"t":"number","s":"css-var --z-modal-backdrop"},"dialog":{"v":2001,"t":"number","s":"css-var --z-dialog"}},"typography":{"nav":{"v":{"fontFamily":"{font.family.te20}","fontSize":"{font.scale.ui}","fontWeight":"{font.weight.thin}","lineHeight":"15px","letterSpacing":"0px"},"t":"typography","s":"computed font of nav-link default (raw/components-computed.json)"},"body":{"v":{"fontFamily":"{font.family.te20}","fontSize":"{font.scale.ui}","fontWeight":"{font.weight.light}","lineHeight":"22px","letterSpacing":"0px"},"t":"typography","s":"computed font of footer-link and newsletter-check label size"},"field":{"v":{"fontFamily":"{font.family.te20}","fontSize":"{font.scale.15}","fontWeight":"{font.weight.light}","lineHeight":"24px","letterSpacing":"0px"},"t":"typography","s":"computed fontSize of newsletter-field, matching --fs-15"},"button":{"v":{"fontFamily":"{font.family.te20}","fontSize":"{font.scale.20}","fontWeight":"{font.weight.light}","lineHeight":"29px","letterSpacing":"0px"},"t":"typography","s":"computed fontSize of subscribe and add-to-cart, matching --fs-20 at 1440"}}},"light":{"background":{"page":{"v":"{color.white}","t":"color","s":"css-var --theme-body-bc declared #fff on :root. Home overrides it to #000 in an inline style; store, newsletter and checkout paint the declared white."},"pageInverse":{"v":"#000000","t":"color","s":"computed backgroundColor of body on https://teenage.engineering/ (raw probe, 2026-11-21). The home campaign is black."},"surface":{"v":"{color.teWhite}","t":"color","s":"css-var --product-background-color declared #f5f5f5; computed backgroundColor of store-tile"},"field":{"v":"{color.white}","t":"color","s":"css-var --field-background declared #fff; computed backgroundColor of newsletter-field"},"fieldDisabled":{"v":"#e5e5e5","t":"color","s":"css-var --field-background-disabled resolved on :root at 1440x900 (raw/css-vars.json)"},"inverse":{"v":"{color.teBlack}","t":"color","s":"computed backgroundColor of subscribe and add-to-cart"}},"text":{"primary":{"v":"#000000","t":"color","s":"computed color of newsletter-field and store-tile"},"onInverse":{"v":"{color.teWhite}","t":"color","s":"computed color of subscribe and add-to-cart"},"onBlack":{"v":"{color.paper}","t":"color","s":"computed color of logo and nav-link on the black home page"},"muted":{"v":"#7f7f7f","t":"color","s":"css-var --field-placeholder resolved on :root at 1440x900 (raw/css-vars.json)"},"disabled":{"v":"#b2b2b2","t":"color","s":"css-var --field-color-disabled resolved on :root at 1440x900 (raw/css-vars.json)"},"link":{"v":"#000000","t":"color","s":"computed color of the privacy-policy link was not isolated; the newsletter body text is black. Link colour on the white pages matches primary."}},"border":{"default":{"v":"#000000","t":"color","s":"computed borderTopColor of newsletter-field"},"muted":{"v":"#e5e5e5","t":"color","s":"css-var --field-border-color resolved on :root at 1440x900 (raw/css-vars.json)"},"fieldMuted":{"v":"#e5e5e5","t":"color","s":"computed borderTopColor of newsletter-check default"},"focus":{"v":"#000000","t":"color","s":"computed borderTopColor of newsletter-check focus-visible"},"select":{"v":"#767676","t":"color","s":"computed borderTopColor of region-select, matching --te-grey-600"}},"action":{"primary":{"v":"{color.teBlack}","t":"color","s":"computed backgroundColor of subscribe and add-to-cart"},"primaryText":{"v":"{color.teWhite}","t":"color","s":"computed color of subscribe and add-to-cart"},"soldOut":{"v":"{color.teBlack}","t":"color","s":"computed color of the sold-out label; the control has a transparent background"}},"status":{"success":{"v":"{color.success}","t":"color","s":"css-var --success. Not observed on a painted control in this capture."},"error":{"v":"{color.error}","t":"color","s":"css-var --error. Not observed on a painted control in this capture."},"info":{"v":"{color.blue}","t":"color","s":"css-var --te-blue. Declared, not observed on a control."},"warning":{"v":"{color.yellow}","t":"color","s":"css-var --te-yellow. Declared, not observed on a control."}},"focus":{"ring":{"v":"#000000","t":"color","s":"newsletter-check and region-select change borderTopColor to #000 on focus-visible. No outline width was painted on the measured controls."}}},"dark":{}};
+const root = getComputedStyle(document.documentElement);
+const box = document.getElementById('swatches');
+const names = ['background-page','background-pageInverse','background-surface','text-primary','text-onInverse','text-onBlack','text-muted','border-default','action-primary','status-error','status-success'];
+for (const n of names) {
+  const el = document.createElement('div');
+  el.className = 'sw';
+  const v = root.getPropertyValue('--' + n).trim();
+  el.innerHTML = '<i style="background:' + v + '"></i><b>' + n + '</b><span>' + v + '</span>';
+  box.appendChild(el);
+}
+</script>
+</body>
+</html>
