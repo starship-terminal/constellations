@@ -174,3 +174,7 @@ RAW=<scratch> node tools/capture/public/public.mjs   # screenshots -> <scratch>
 ```
 
 Category/suppliers/brand routes are intermittently challenged by Cloudflare: measure.mjs preserves prior readings on a blocked run, so recaptures should be re-tried route by route until the challenge clears; the challenge is waited out on a fresh context, never solved.
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

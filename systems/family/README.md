@@ -129,3 +129,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 ## Rights and reuse
 
 The screenshots, crops, testimonial names/quotes and the Family wordmark and illustrations are Family's published product content. Borrow structure, tokens and proportions; do not copy the product's artwork, brand or content into something that ships. See [docs/RIGHTS.md](../../docs/RIGHTS.md).
+
+## Capture conduct
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

@@ -156,3 +156,7 @@ python3 tools/build_style_guide.py && python3 tools/build_components_md.py
 ```
 
 All deterministic: same inputs, byte-identical outputs.
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

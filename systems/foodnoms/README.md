@@ -133,3 +133,7 @@ Quantization: `tools/capture/quantize.py` cut every committed PNG to 256 colours
 | Mobile pass | yes — 390 x 844 on home, /plus and /help, plus the drawer screenshot |
 | Icons | yes — 13 SVGs in [icons/](icons) with INDEX.tsv (source + tint per row) |
 | Fonts | declared and measured; the uploaded Aquawax Pro faces are not redistributed |
+
+## Capture conduct
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

@@ -187,3 +187,7 @@ python3 tools/build_style_guide.py
 ```
 
 `tokens.json`, `components.md` and `style-guide.html` are outputs of `raw/` and the template. Edit the inputs or the builders, not those outputs.
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.

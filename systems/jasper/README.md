@@ -167,6 +167,10 @@ node tools/capture/public/build-measurements.mjs
 
 Scratch screenshots stay in `~/.design-systems/jasper/` and never enter git. Quantize with `python3 tools/capture/quantize.py`.
 
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.
+
 ## Gated surfaces
 
 These were not captured. They are recorded so a later pass can backfill them.

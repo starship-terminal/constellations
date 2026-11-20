@@ -176,3 +176,8 @@ python3 tools/capture/quantize.py ~/.design-systems/jitter/raw-shots
 python3 tools/build_tokens.py
 python3 tools/build_style_guide.py
 ```
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask and Chromium's `AutomationControlled` launch flag is removed. The committed captures were taken with it.
+- The signed-in editor states no longer press "Create new file", which added a file to the owner's account on every run. They open an existing scratch file named by `JITTER_SCRATCH_FILE`, and are a recorded boundary without it. `dismissEditorChrome()` closes only buttons inside a dialog.

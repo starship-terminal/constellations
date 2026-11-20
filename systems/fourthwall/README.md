@@ -118,3 +118,7 @@ python3 tools/build_style_guide.py && python3 tools/build_components_md.py      
 ```
 
 Deterministic: same raw inputs, byte-identical outputs. Edit raw inputs or specs, never the generated files.
+
+Capture conduct, edited in the 2026-11 audit and not run since:
+
+- The capture scripts no longer hide automation: the `navigator.webdriver` mask is removed. The committed captures were taken with it.
