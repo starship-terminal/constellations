@@ -1,5 +1,5 @@
 {
-  "about": "DESIGN_SYSTEMS_CONFIG_DIR values and the folder each must resolve to, run by tools/test_routes.py (server/provider_store.py) and web/lib/provider-api.test.ts (web/lib/provider-store.ts) so both stores name the same provider.db. <HOME> is the test's home folder, <REPO> the checkout, <REPO_SWAPCASE> the checkout with the letter case of its last part swapped, <LINK> a symlink the test makes that points at the checkout; \"error\" means the store refuses the value. \"error-if-case-insensitive\" means refused where the filesystem ignores case and resolved as typed elsewhere.",
+  "about": "DESIGN_SYSTEMS_CONFIG_DIR values and the folder each must resolve to, run by tools/test_routes.py (server/provider_store.py) and web/lib/provider-api.test.ts (web/lib/provider-store.ts) so both stores name the same provider.db. <HOME> is the test's home folder (a real path, no links in it), <REPO> the checkout, <REPO_SWAPCASE> the checkout with the letter case of its last part swapped, <LINK> a symlink the test makes that points at the checkout, <OUT_LINK> a symlink the test makes that points at <HOME>/outside, and <DB_LINK_DIR>, <JOURNAL_LINK_DIR> and <LOCK_LINK_DIR> folders the test makes where provider.db, provider.db-journal or provider.lock is a symlink to a file outside them. \"error\" means the store refuses the value as a folder; \"error-link\" means it refuses it because a store file is a symbolic link. \"error-if-case-insensitive\" means refused where the filesystem ignores case and resolved as typed elsewhere. A folder that resolves is returned with the links in its existing part resolved, so \"<OUT_LINK>/cfg\" is <HOME>/outside/cfg.",
   "cases": [
     {
       "value": "",
@@ -60,6 +60,26 @@
     {
       "value": "<REPO_SWAPCASE>/web/cfg",
       "expect": "error-if-case-insensitive"
+    },
+    {
+      "value": "<OUT_LINK>/cfg",
+      "expect": "<HOME>/outside/cfg"
+    },
+    {
+      "value": "<OUT_LINK>",
+      "expect": "<HOME>/outside"
+    },
+    {
+      "value": "<DB_LINK_DIR>",
+      "expect": "error-link"
+    },
+    {
+      "value": "<JOURNAL_LINK_DIR>",
+      "expect": "error-link"
+    },
+    {
+      "value": "<LOCK_LINK_DIR>",
+      "expect": "error-link"
     }
   ]
 }

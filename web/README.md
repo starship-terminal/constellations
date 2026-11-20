@@ -32,16 +32,43 @@ lives in the browser:
    folder also turns off `ANTHROPIC_API_KEY`: the variable says where a
    saved key is meant to live, so running on the env key would spend a key
    the operator may not mean to and hide the mistake. The chat shows the
-   error until the variable is fixed. Every change is one statement, so
-   SQLite's own locking makes it atomic across both servers, and a crashed process never leaves a lock
-   behind. A model change applies only while the saved key and endpoint are
-   the ones the page was editing. The database uses SQLite's rollback
-   journal with `secure_delete` on, not WAL, so a replaced or removed key is
-   overwritten in place and no copy lingers in a `-wal` file (an exception
-   to the stack conventions' WAL default: one row, rare writes). Remove
-   deletes a file SQLite reports as damaged, and saving a key the provider
-   accepted replaces one; a busy or unreadable file is reported and never
-   deleted.
+   error until the variable is fixed. The existing part of the folder's
+   path is resolved to its real path, so the file is opened by that path,
+   and a `provider.db`, side file or lock that is itself a symbolic link is
+   refused (to anywhere: a linked database has no use here, and it could
+   carry the key into the checkout). Neither runtime's SQLite binding can
+   ask SQLite not to follow links, so each open is checked before (no link,
+   and a new file is created with `O_EXCL` and `O_NOFOLLOW`) and after: the
+   path SQLite reports in `PRAGMA database_list`, which it resolves when it
+   opens the file, must be the expected one. Every change is one statement,
+   so SQLite's own locking makes it atomic across both servers, and a
+   crashed process never leaves a lock behind. A model change applies only
+   while the saved key and endpoint are the ones the page was editing. The
+   database uses SQLite's rollback journal with `secure_delete` on, not
+   WAL, so a replaced or removed key is overwritten in place and no copy
+   lingers in a `-wal` file (an exception to the stack conventions' WAL
+   default: one row, rare writes). Remove deletes a file SQLite reports as
+   damaged, and saving a key the provider accepted replaces one; a busy or
+   unreadable file is reported and never deleted.
+
+   Deleting a damaged file and writing its replacement is the one step that
+   is not a single statement, so it runs under a recovery lock both servers
+   take: `BEGIN EXCLUSIVE` on `provider.lock`, an empty SQLite file next to
+   the database that never holds a table. SQLite was chosen over a lock file
+   made with `O_EXCL`: its lock is a POSIX lock, which both runtimes already
+   speak, which excludes other processes and other connections in the same
+   process alike, and which the operating system drops when its holder
+   dies, so a crash never blocks the store and there is no stale-lock rule
+   (age, owner pid) to get wrong. A lock file left behind is simply taken.
+   Inside the lock a recovery deletes only the file the damage was seen on:
+   the path must still have that file's device and inode, and SQLite must
+   still call it damaged (`PRAGMA quick_check`); otherwise another request
+   has recovered it already and a newer save is left alone. Side files are
+   deleted before the database, since no new database can appear at the
+   path while the damaged one is still there. A recovery waits up to ten
+   seconds for one already running, then reports that the file is being
+   repaired. The gallery's recovery never awaits while it holds the lock, so
+   no other request in its process runs in between.
 4. No answer carries the key. `GET /api/provider` and `GET /api/status` say
    only where it comes from, shown on the page as a badge: saved on the
    server, from the server environment, or no key.
@@ -108,7 +135,11 @@ These steps are for the owner; nothing in this repo contacts the host.
 3. Make sure the folder belongs to the user the units run as. The app
    creates it 0700 and the database 0600 itself; an existing folder keeps its
    mode, so check it is not readable by others. Keep it on a local disk, not
-   a network share, since both units lock the same SQLite file. Back it up,
+   a network share, since both units lock the same SQLite files (the
+   database and `provider.lock`) and a network share's locks are not
+   reliable. Do not make `provider.db` or the files next to it symbolic
+   links: the store refuses them (a linked folder is fine; it is
+   resolved). Back it up,
    if at all, with `sqlite3 provider.db ".backup <copy>"`, never `cp`.
 4. Restart the API unit once after this change deploys: `server/api.py`
    itself changed (it now passes `DELETE /api/provider` to the routes), and

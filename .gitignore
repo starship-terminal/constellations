@@ -33,8 +33,9 @@ docs/scorecard/
 !.env.example
 # The chat's saved provider key (web/lib/provider-store.ts, server/
 # provider_store.py). Both refuse a folder inside the checkout; this is the
-# second line of defence.
+# second line of defence. provider.lock is their (always empty) recovery lock.
 provider.db*
+provider.lock
 *.key
 secrets/
 __pycache__/

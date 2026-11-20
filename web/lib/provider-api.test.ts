@@ -4,7 +4,8 @@
 // response and log line. listModels is a stub, so no provider is called.
 // Run with `pnpm test`.
 import assert from "node:assert/strict";
-import { promises as fs, mkdtempSync, rmSync, statSync } from "node:fs";
+import { spawn } from "node:child_process";
+import { promises as fs, lstatSync, mkdtempSync, realpathSync, rmSync, statSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { afterEach, beforeEach, describe, it, mock } from "node:test";
@@ -18,7 +19,20 @@ import {
   resolveProvider,
   type ListModels,
 } from "./provider-api.ts";
-import { CONFIG_DIR_ENV, configDir, insideCheckout, loadSaved, providerFile, saveProvider, updateModel, StoreError } from "./provider-store.ts";
+import {
+  CONFIG_DIR_ENV,
+  configDir,
+  discardDamaged,
+  insideCheckout,
+  LOCK_NAME,
+  loadSaved,
+  providerFile,
+  recoveryLock,
+  removeSaved,
+  saveProvider,
+  updateModel,
+  StoreError,
+} from "./provider-store.ts";
 import { ROOT } from "./repo.ts";
 
 const KEY = "sk-test-0123456789abcdef";
@@ -44,7 +58,8 @@ const failModels: ListModels = async (cfg) => {
 const everything = (...bodies: unknown[]) => [...bodies.map((b) => JSON.stringify(b)), ...logged].join("\n");
 
 beforeEach(() => {
-  dir = mkdtempSync(path.join(os.tmpdir(), "ds-provider-test-"));
+  // Real path: the store resolves links in the folder (macOS's /var is one).
+  dir = realpathSync(mkdtempSync(path.join(os.tmpdir(), "ds-provider-test-")));
   process.env[CONFIG_DIR_ENV] = path.join(dir, "config");
   delete process.env.ANTHROPIC_API_KEY;
   delete process.env.DS_CHAT_MODEL;
@@ -74,6 +89,21 @@ describe("the config folder", () => {
     );
     const link = path.join(home, "repo-link");
     await fs.symlink(ROOT, link, "dir");
+    const outLink = path.join(home, "out-link");
+    await fs.mkdir(path.join(home, "outside"));
+    await fs.symlink(path.join(home, "outside"), outLink, "dir");
+    const linkDirs: Record<string, string> = {};
+    for (const [tag, name] of [
+      ["<DB_LINK_DIR>", "provider.db"],
+      ["<JOURNAL_LINK_DIR>", "provider.db-journal"],
+      ["<LOCK_LINK_DIR>", LOCK_NAME],
+    ]) {
+      const d = path.join(home, `linked-${name}`);
+      await fs.mkdir(d);
+      // Dangling on purpose: a link is refused whether or not its target exists.
+      await fs.symlink(path.join(home, "elsewhere", name), path.join(d, name));
+      linkDirs[tag] = d;
+    }
     let caseInsensitive = false;
     try {
       const [a, b] = [statSync(ROOT), statSync(swapcase)];
@@ -83,7 +113,10 @@ describe("the config folder", () => {
     process.env.HOME = home;
     try {
       for (const c of cases as { value: string; expect: string }[]) {
-        const value = c.value
+        let value = c.value;
+        for (const [tag, d] of Object.entries(linkDirs)) value = value.replaceAll(tag, d);
+        value = value
+          .replaceAll("<OUT_LINK>", outLink)
           .replaceAll("<HOME>", home)
           .replaceAll("<REPO_SWAPCASE>", swapcase)
           .replaceAll("<REPO>", ROOT)
@@ -97,6 +130,13 @@ describe("the config folder", () => {
           process.env.ANTHROPIC_API_KEY = ENV_KEY;
           const held = await resolveProvider();
           assert.deepEqual([held.cfg, held.source], [null, "saved"], value);
+          delete process.env.ANTHROPIC_API_KEY;
+        } else if (expect === "error-link") {
+          assert.throws(() => configDir(), (e: unknown) => e instanceof StoreError && /is a symbolic link/.test(e.message), value);
+          process.env.ANTHROPIC_API_KEY = ENV_KEY;
+          const held = await resolveProvider();
+          assert.deepEqual([held.cfg, held.source], [null, "saved"], value);
+          assert.match(String(held.error), /symbolic link/, value);
           delete process.env.ANTHROPIC_API_KEY;
         } else {
           assert.equal(configDir(), expect.replaceAll("<HOME>", home), value);
@@ -345,7 +385,9 @@ describe("recovery and key bytes", () => {
     assert.equal((await providerState()).configured, false);
     const removed = await handleRemove();
     assert.deepEqual([removed.status, removed.body.removed, removed.body.source], [200, true, "none"]);
-    assert.deepEqual(await fs.readdir(path.join(dir, "config")), []);
+    // Only the recovery lock stays: an empty file that never holds a key.
+    assert.deepEqual(await fs.readdir(path.join(dir, "config")), [LOCK_NAME]);
+    assert.equal((await fs.stat(path.join(dir, "config", LOCK_NAME))).size, 0);
     await fs.writeFile(providerFile(), `damaged ${KEY} `.repeat(300));
     const saved = await handleSave({ ...GOOD, api_key: KEY2 }, okModels);
     assert.equal(saved.body.ok, true);
@@ -392,6 +434,160 @@ describe("recovery and key bytes", () => {
     } finally {
       await fs.chmod(path.join(dir, "config"), 0o700);
     }
+  });
+});
+
+describe("the recovery lock", () => {
+  const damage = async () => {
+    await fs.mkdir(path.join(dir, "config"), { recursive: true });
+    await fs.writeFile(providerFile(), `damaged ${KEY} `.repeat(300));
+  };
+  /** The StoreError a request sees on the damaged file, as it would before recovering. */
+  const seenDamage = async (): Promise<StoreError> => {
+    const e = await loadSaved().then(
+      () => null,
+      (err: unknown) => err,
+    );
+    assert.ok(e instanceof StoreError && e.damaged && e.file, "the error names the damaged file");
+    return e;
+  };
+  const identity = (f: string) => {
+    const st = lstatSync(f, { bigint: true });
+    return { dev: st.dev, ino: st.ino };
+  };
+
+  it("two recoveries of one damaged file never delete a save made in between, nor its live journal", async () => {
+    await damage();
+    // Two requests both find the file damaged.
+    const first = await seenDamage();
+    const second = await seenDamage();
+    assert.equal(await discardDamaged(first), true);
+    // A fresh save lands, and another write to it is in flight.
+    assert.equal((await handleSave({ ...GOOD, api_key: KEY2 }, okModels)).body.ok, true);
+    const { DatabaseSync } = await import("node:sqlite");
+    const writer = new DatabaseSync(providerFile());
+    writer.exec("BEGIN IMMEDIATE");
+    writer.exec("UPDATE provider SET name = 'in flight' WHERE id = 1");
+    const journal = `${providerFile()}-journal`;
+    assert.ok((await fs.stat(journal)).isFile(), "the write has a live journal");
+    try {
+      // The second recovery still holds its old error: it must do nothing.
+      assert.equal(await discardDamaged(second), false);
+      assert.equal(await removeSaved().catch(() => "busy"), "busy", "a busy file is reported, not deleted");
+      assert.ok((await fs.stat(journal)).isFile(), "the live journal is still there");
+    } finally {
+      writer.exec("COMMIT");
+      writer.close();
+    }
+    const saved = await savedFile();
+    assert.deepEqual([saved.api_key, saved.name], [KEY2, "in flight"]);
+  });
+
+  it("never deletes a healthy file, even one with the damaged file's identity", async () => {
+    await handleSave({ ...GOOD, api_key: KEY }, okModels);
+    const forged = new StoreError("forged");
+    forged.damaged = true;
+    forged.file = identity(providerFile());
+    assert.equal(await discardDamaged(forged), false);
+    forged.file = undefined;
+    assert.equal(await discardDamaged(forged), false);
+    assert.equal((await savedFile()).api_key, KEY);
+    // Only damage is a reason to delete anything.
+    await assert.rejects(discardDamaged(new StoreError("busy")), /busy/);
+  });
+
+  it("waits for a recovery that holds the lock, then goes ahead", async () => {
+    await damage();
+    const { DatabaseSync } = await import("node:sqlite");
+    const other = new DatabaseSync(path.join(dir, "config", LOCK_NAME));
+    other.exec("BEGIN EXCLUSIVE");
+    const removing = removeSaved();
+    await new Promise((r) => setTimeout(r, 200));
+    assert.ok((await fs.stat(providerFile())).isFile(), "nothing is deleted while another recovery holds the lock");
+    other.exec("ROLLBACK");
+    other.close();
+    assert.equal(await removing, true);
+    await assert.rejects(fs.stat(providerFile()), { code: "ENOENT" });
+  });
+
+  it("gives up while another process holds it, deleting nothing, and takes it once that process dies", async (t) => {
+    // The other process is the Python store's own lock, so this also checks
+    // that both languages exclude each other.
+    const py = process.env.PYTHON ?? "python3";
+    await damage();
+    const lockFile = path.join(dir, "config", LOCK_NAME);
+    const child = spawn(
+      py,
+      ["-c", "import sqlite3,sys\nc=sqlite3.connect(sys.argv[1],isolation_level=None)\nc.execute('BEGIN EXCLUSIVE')\nprint('held',flush=True)\nsys.stdin.read()", lockFile],
+      { stdio: ["pipe", "pipe", "inherit"] },
+    );
+    const held = await new Promise<boolean>((resolve) => {
+      child.on("error", () => resolve(false));
+      child.stdout.on("data", (b: Buffer) => b.toString().includes("held") && resolve(true));
+      child.on("exit", () => resolve(false));
+    });
+    if (!held) {
+      t.skip(`${py} is required`);
+      return;
+    }
+    const wait = recoveryLock.waitMs;
+    recoveryLock.waitMs = 300;
+    try {
+      await assert.rejects(removeSaved(), (e: unknown) => e instanceof StoreError && !e.damaged && /being repaired/.test(e.message));
+      assert.ok((await fs.stat(providerFile())).isFile(), "nothing was deleted");
+      // A crash while holding the lock: the operating system drops it.
+      const exited = new Promise((r) => child.on("exit", r));
+      child.kill("SIGKILL");
+      await exited;
+      assert.equal(await removeSaved(), true);
+      await assert.rejects(fs.stat(providerFile()), { code: "ENOENT" });
+      assert.equal((await fs.stat(lockFile)).mode & 0o777, 0o600, "the lock file is tightened");
+      assert.equal((await fs.stat(lockFile)).size, 0, "the lock file holds nothing");
+    } finally {
+      recoveryLock.waitMs = wait;
+      child.kill("SIGKILL");
+    }
+  });
+});
+
+describe("a link in the store's folder", () => {
+  it("is refused, and nothing is written through it", async () => {
+    process.env.ANTHROPIC_API_KEY = ENV_KEY;
+    await fs.mkdir(path.join(dir, "config"), { recursive: true });
+    const target = path.join(dir, "target.db");
+    await fs.writeFile(target, "");
+    await fs.symlink(target, path.join(dir, "config", "provider.db"));
+    const r = await handleSave({ ...GOOD, api_key: KEY }, okModels);
+    assert.equal(r.status, 500);
+    assert.match(String(r.body.error), /symbolic link/);
+    assert.equal((await fs.stat(target)).size, 0, "the link's target was not written");
+    // Reported, not replaced by the env key.
+    const held = await resolveProvider();
+    assert.deepEqual([held.cfg, held.source], [null, "saved"]);
+    // Remove does not delete through it either.
+    assert.equal((await handleRemove()).status, 500);
+    assert.ok(lstatSync(path.join(dir, "config", "provider.db")).isSymbolicLink());
+    assert.ok(!everything(r.body).includes(KEY));
+  });
+
+  it("is refused for a side file too, before a key is written next to it", async () => {
+    await fs.mkdir(path.join(dir, "config"), { recursive: true });
+    const target = path.join(dir, "journal-target");
+    await fs.symlink(target, path.join(dir, "config", "provider.db-journal"));
+    const r = await handleSave({ ...GOOD, api_key: KEY }, okModels);
+    assert.equal(r.status, 500);
+    await assert.rejects(fs.stat(target), { code: "ENOENT" });
+    await assert.rejects(fs.stat(path.join(dir, "config", "provider.db")), { code: "ENOENT" });
+  });
+
+  it("in the folder's own path is resolved, so the file is opened by its real path", async () => {
+    await fs.mkdir(path.join(dir, "real"), { recursive: true });
+    await fs.symlink(path.join(dir, "real"), path.join(dir, "via"), "dir");
+    process.env[CONFIG_DIR_ENV] = path.join(dir, "via", "cfg");
+    assert.equal(providerFile(), path.join(dir, "real", "cfg", "provider.db"));
+    assert.equal((await handleSave({ ...GOOD, api_key: KEY }, okModels)).body.ok, true);
+    assert.ok((await fs.stat(path.join(dir, "real", "cfg", "provider.db"))).isFile());
+    assert.equal((await savedFile()).api_key, KEY);
   });
 });
 

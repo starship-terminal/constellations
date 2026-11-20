@@ -20,7 +20,25 @@
 // save only applies while the row still holds the key and endpoint it read
 // (compare and swap), a migration only inserts when no row exists, and an
 // unchecked key only replaces a row that holds the same key.
-import { existsSync, promises as fs, realpathSync, statSync } from "node:fs";
+//
+// The one step that is not a statement is recovering from a damaged file:
+// deleting it and writing its replacement. That runs under a second lock,
+// BEGIN EXCLUSIVE on an empty provider.lock next to the database, which both
+// servers take, and deletes only the file the damage was seen on (see
+// discardDamaged).
+import {
+  chmodSync,
+  closeSync,
+  constants,
+  existsSync,
+  lstatSync,
+  mkdirSync,
+  openSync,
+  realpathSync,
+  rmSync,
+  statSync,
+  unlinkSync,
+} from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import type { DatabaseSync } from "node:sqlite";
@@ -28,6 +46,12 @@ import { ROOT } from "./repo.ts";
 
 export const CONFIG_DIR_ENV = "DESIGN_SYSTEMS_CONFIG_DIR";
 export const FILE_NAME = "provider.db";
+/** SQLite's side files next to the database. */
+export const SIDE_FILES = ["-journal", "-wal", "-shm"] as const;
+/** The recovery lock: an empty SQLite file next to the database that both
+    servers hold with BEGIN EXCLUSIVE while they delete a damaged database
+    and write its replacement. It never holds a table, let alone a key. */
+export const LOCK_NAME = "provider.lock";
 
 /** The provider fields that are safe to show: everything but the key. */
 export const PUBLIC_FIELDS = ["api", "base_url", "key_header", "models_url", "model", "name"] as const;
@@ -38,26 +62,43 @@ export const ENDPOINT_FIELDS = ["api", "base_url", "key_header", "models_url"] a
 export type PublicProvider = Partial<Record<(typeof PUBLIC_FIELDS)[number], string>>;
 export type SavedProvider = PublicProvider & { api: string; base_url: string; model: string; api_key: string };
 
+/** Which file an error was about: its device and inode, as lstat gives them. */
+export type FileIdentity = { dev: bigint; ino: bigint };
+
 export class StoreError extends Error {
   // The saved provider exists but cannot be used. Never carries its contents.
   /** SQLite said the file is not a database or is corrupt. Only then may a
       remove or a checked save delete it; a busy lock, a full disk or a
       permission error must never cost a working provider. */
   damaged = false;
+  /** The database file the error came from, so a recovery deletes only that
+      file and never one that replaced it meanwhile. */
+  file?: FileIdentity;
 }
 
-/** SQLite's primary result codes for a file that is not a usable database. */
+/** SQLite's primary result codes. */
+const SQLITE_BUSY = 5;
+const SQLITE_LOCKED = 6;
 const SQLITE_CORRUPT = 11;
 const SQLITE_NOTADB = 26;
 
-function storeError(message: string, cause: unknown): StoreError {
-  const err = new StoreError(message);
+const primaryCode = (cause: unknown): number | null => {
   const code = (cause as { errcode?: unknown } | null)?.errcode;
-  if (typeof code === "number") err.damaged = [SQLITE_CORRUPT, SQLITE_NOTADB].includes(code & 0xff);
+  return typeof code === "number" ? code & 0xff : null;
+};
+
+function storeError(message: string, cause: unknown, file?: FileIdentity): StoreError {
+  const err = new StoreError(message);
+  const code = primaryCode(cause);
+  if (code !== null) err.damaged = [SQLITE_CORRUPT, SQLITE_NOTADB].includes(code);
+  if (file) err.file = file;
   return err;
 }
 
 const CONFIG_DIR_HELP = `${CONFIG_DIR_ENV} must be an absolute path outside the checkout (a leading ~/ is expanded), for example ~/.config/design-systems.`;
+const LINK_HELP = `${FILE_NAME} or a file next to it in ${CONFIG_DIR_ENV} is a symbolic link. The store never follows one: a link has no use here, and it could send the saved key into the checkout or anywhere else. Replace the link with the file itself, or remove it.`;
+const OPENED_ELSEWHERE = `The saved provider file opened somewhere other than ${CONFIG_DIR_ENV}: the folder changed while it was being opened. Nothing was written.`;
+const RECOVERY_BUSY = "The saved provider file is being repaired by another request. Try again in a moment.";
 
 const inside = (child: string, parent: string): boolean => {
   const rel = path.relative(parent, child);
@@ -123,6 +164,10 @@ export function insideCheckout(dir: string, root: string): boolean {
   return inside(d, r);
 }
 
+/** The store's own file names in the folder: the database, its side files
+    and the recovery lock. None of them may be a symbolic link. */
+const STORE_NAMES = [FILE_NAME, ...SIDE_FILES.map((s) => FILE_NAME + s), LOCK_NAME];
+
 /** The folder that holds provider.db. server/provider_store.py applies the
     same rules, and server/provider-config-cases.json holds the cases both
     test suites run, so the gallery and the Python API always name the same
@@ -130,7 +175,9 @@ export function insideCheckout(dir: string, root: string): boolean {
     a .env file do not expand it); a relative path, a ~user path or a path
     inside the checkout (see insideCheckout) is refused with a StoreError
     that says how to set it, never resolved against whatever folder the
-    server started in. */
+    server started in. The part of the folder that exists is returned with
+    its symlinks resolved, so the database is opened by its real path, and a
+    store file that is itself a symbolic link is refused. */
 export function configDir(): string {
   const raw = (process.env[CONFIG_DIR_ENV] ?? "").trim();
   const home = os.homedir();
@@ -140,8 +187,17 @@ export function configDir(): string {
   else if (raw.startsWith("~/")) dir = path.join(home, raw.slice(2));
   else if (path.isAbsolute(raw)) dir = raw;
   else throw new StoreError(CONFIG_DIR_HELP);
-  dir = path.resolve(dir);
+  dir = realOfNearest(path.resolve(dir));
   if (insideCheckout(dir, ROOT)) throw new StoreError(CONFIG_DIR_HELP);
+  for (const name of STORE_NAMES) {
+    let link = false;
+    try {
+      link = lstatSync(path.join(dir, name)).isSymbolicLink();
+    } catch {
+      // Missing (or unreadable: opening it reports that).
+    }
+    if (link) throw new StoreError(LINK_HELP);
+  }
   return dir;
 }
 
@@ -171,68 +227,231 @@ INSERT OR IGNORE INTO meta (k) SELECT 'saved' FROM provider;`;
 
 const COLUMNS = "api, base_url, key_header, models_url, model, name, api_key";
 
+type Sqlite = typeof import("node:sqlite");
+let sqliteModule: Sqlite | null = null;
+/** node:sqlite, loaded on first use, not at import, so nothing else in the
+    app depends on it. Everything below that touches the files is
+    synchronous once it is loaded, so no other request in this process can
+    run between a check and the step that relies on it. */
+const sqlite = async (): Promise<Sqlite> => (sqliteModule ??= await import("node:sqlite"));
+
+const errno = (e: unknown): string | undefined => (e as NodeJS.ErrnoException | null)?.code;
+
+/** The identity of `file` without following a link; null when it is
+    missing. A link is refused: configDir() checked, and this re-checks at
+    the moment it matters. */
+function identityOf(file: string): FileIdentity | null {
+  let st;
+  try {
+    st = lstatSync(file, { bigint: true });
+  } catch (e) {
+    if (errno(e) === "ENOENT") return null;
+    throw new StoreError("The saved provider file cannot be read.");
+  }
+  if (st.isSymbolicLink()) throw new StoreError(LINK_HELP);
+  if (!st.isFile()) throw new StoreError("The saved provider file cannot be read.");
+  return { dev: st.dev, ino: st.ino };
+}
+
+const sameFile = (a: FileIdentity | null | undefined, b: FileIdentity | null | undefined): boolean =>
+  !!a && !!b && a.dev === b.dev && a.ino === b.ino;
+
+/** Create `file` 0600 when it is new, never through a link (O_EXCL and
+    O_NOFOLLOW), and tighten an existing one. Opening and closing an
+    existing database outside SQLite would drop the POSIX locks another
+    connection in this process holds on it, so an existing file is only
+    chmod-ed by path. */
+function createPrivate(file: string): void {
+  try {
+    closeSync(openSync(file, constants.O_CREAT | constants.O_EXCL | constants.O_WRONLY | (constants.O_NOFOLLOW ?? 0), 0o600));
+  } catch (e) {
+    if (errno(e) !== "EEXIST") throw e;
+  }
+  identityOf(file);
+  // By path, so no descriptor is opened: a restored or copied file with a
+  // looser mode is tightened before a key is written into it.
+  chmodSync(file, 0o600);
+}
+
+/** Confirm that `db` opened `file` itself. Neither node:sqlite nor Python's
+    sqlite3 can pass SQLITE_OPEN_NOFOLLOW, so the store checks before it
+    opens and again after: SQLite resolves links when it opens a file and
+    reports that resolved path in PRAGMA database_list, so a link swapped in
+    between the check and the open shows up as a different path here.
+    Returns the file's identity. */
+function checkOpened(db: DatabaseSync, file: string): FileIdentity {
+  const before = identityOf(file);
+  let opened: unknown;
+  try {
+    opened = (db.prepare("PRAGMA database_list").all() as { name?: unknown; file?: unknown }[]).find((r) => r.name === "main")?.file;
+  } catch (e) {
+    throw storeError("The saved provider file cannot be read.", e, before ?? undefined);
+  }
+  const id = identityOf(file);
+  if (opened !== file || !id || !sameFile(id, before)) throw new StoreError(OPENED_ELSEWHERE);
+  return id;
+}
+
+type Opened = { db: DatabaseSync; file: FileIdentity };
+
 /** Open the database, or null when none has been created (nothing saved).
     `create` makes the folder (0700) and the file (0600) first. Any other
-    failure (a permission change, a damaged file) is a StoreError, never
-    "nothing saved", so the env key cannot quietly take over. node:sqlite is
-    loaded here, not at import, so nothing else in the app depends on it.
+    failure (a permission change, a damaged file, a link) is a StoreError,
+    never "nothing saved", so the env key cannot quietly take over.
     secure_delete overwrites a replaced or removed key's bytes in the file. */
-async function open(create: boolean): Promise<DatabaseSync | null> {
+function open(M: Sqlite, create: boolean): Opened | null {
   const file = providerFile();
   try {
     if (create) {
-      await fs.mkdir(configDir(), { recursive: true, mode: 0o700 });
-      // Create the file 0600 only when it is new. Opening and closing an
-      // existing database outside SQLite would drop the POSIX locks another
-      // connection in this process holds on it.
-      try {
-        const fh = await fs.open(file, "wx", 0o600);
-        await fh.close();
-      } catch (e) {
-        if ((e as NodeJS.ErrnoException).code !== "EEXIST") throw e;
-      }
-      // By path, so no descriptor is opened: a restored or copied file with a
-      // looser mode is tightened before a key is written into it.
-      await fs.chmod(file, 0o600);
-    } else {
-      await fs.access(file);
+      mkdirSync(path.dirname(file), { recursive: true, mode: 0o700 });
+      createPrivate(file);
+    } else if (!identityOf(file)) {
+      return null;
     }
   } catch (e) {
-    if (!create && (e as NodeJS.ErrnoException).code === "ENOENT") return null;
+    if (e instanceof StoreError) throw e;
     throw new StoreError("The saved provider file cannot be read.");
   }
   let db: DatabaseSync | null = null;
   try {
-    const { DatabaseSync } = await import("node:sqlite");
-    db = new DatabaseSync(file);
-    db.exec("PRAGMA busy_timeout = 5000");
-    db.exec("PRAGMA secure_delete = ON");
-    db.exec("PRAGMA journal_mode = DELETE");
-    db.exec(SCHEMA);
-    return db;
+    db = new M.DatabaseSync(file);
+    const id = checkOpened(db, file);
+    try {
+      db.exec("PRAGMA busy_timeout = 5000");
+      db.exec("PRAGMA secure_delete = ON");
+      db.exec("PRAGMA journal_mode = DELETE");
+      db.exec(SCHEMA);
+    } catch (e) {
+      throw storeError("The saved provider file cannot be read.", e, id);
+    }
+    return { db, file: id };
   } catch (e) {
     try {
       db?.close();
     } catch {}
+    if (e instanceof StoreError) throw e;
     throw storeError("The saved provider file cannot be read.", e);
   }
 }
 
-function run<T>(db: DatabaseSync, fn: () => T): T {
+function run<T>(o: Opened, fn: (db: DatabaseSync) => T): T {
   try {
-    return fn();
+    return fn(o.db);
   } catch (e) {
     if (e instanceof StoreError) throw e;
-    throw storeError("The saved provider file cannot be used.", e);
+    throw storeError("The saved provider file cannot be used.", e, o.file);
   } finally {
-    db.close();
+    o.db.close();
   }
 }
 
-/** Delete the database and its side files: the way out of a damaged one. */
-async function discardFiles(): Promise<void> {
+/** How long a recovery waits for one already running, in this server or the
+    other, before it gives up with an error. Tests shorten it. */
+export const recoveryLock = { waitMs: 10_000 };
+
+/** Run `fn` while holding the recovery lock: BEGIN EXCLUSIVE on
+    provider.lock, which server/provider_store.py takes the same way. SQLite
+    holds it as a POSIX lock, so it excludes the other server's processes
+    and other connections in this one, and the operating system drops it
+    when a process dies: a crash never leaves the store locked, and a lock
+    file left behind is simply taken. `fn` must be synchronous, so nothing
+    else in this process runs while the lock is held; waiting for it does
+    not block the event loop. */
+async function underRecoveryLock<T>(fn: (M: Sqlite) => T): Promise<T> {
+  const M = await sqlite();
+  const lockFile = path.join(configDir(), LOCK_NAME);
+  let lock: DatabaseSync | null = null;
+  try {
+    mkdirSync(path.dirname(lockFile), { recursive: true, mode: 0o700 });
+    createPrivate(lockFile);
+    lock = new M.DatabaseSync(lockFile);
+    checkOpened(lock, lockFile);
+  } catch (e) {
+    try {
+      lock?.close();
+    } catch {}
+    if (e instanceof StoreError) throw e;
+    throw new StoreError("The saved provider file cannot be repaired.");
+  }
+  try {
+    const deadline = Date.now() + recoveryLock.waitMs;
+    for (;;) {
+      try {
+        lock.exec("BEGIN EXCLUSIVE");
+        break;
+      } catch (e) {
+        const code = primaryCode(e);
+        if (code !== SQLITE_BUSY && code !== SQLITE_LOCKED) throw new StoreError("The saved provider file cannot be repaired.");
+        if (Date.now() >= deadline) throw new StoreError(RECOVERY_BUSY);
+        await new Promise((r) => setTimeout(r, 25));
+      }
+    }
+    try {
+      return fn(M);
+    } finally {
+      try {
+        lock.exec("ROLLBACK");
+      } catch {}
+    }
+  } finally {
+    lock.close();
+  }
+}
+
+/** Whether SQLite still calls `file` damaged. A busy or unreadable file is
+    an error, never damage. */
+function stillDamaged(M: Sqlite, file: string): boolean {
+  let db: DatabaseSync | null = null;
+  try {
+    db = new M.DatabaseSync(file);
+    checkOpened(db, file);
+    db.exec("PRAGMA busy_timeout = 5000");
+    const row = db.prepare("PRAGMA quick_check(1)").get() as Record<string, unknown> | undefined;
+    return Object.values(row ?? {})[0] !== "ok";
+  } catch (e) {
+    if (e instanceof StoreError) {
+      if (e.damaged) return true;
+      throw e;
+    }
+    if (storeError("", e).damaged) return true;
+    throw new StoreError("The saved provider file cannot be read.");
+  } finally {
+    try {
+      db?.close();
+    } catch {}
+  }
+}
+
+/** Delete the damaged database `seen` names, with its side files, if the
+    path still names that file and SQLite still calls it damaged. Only call
+    it under the recovery lock. The side files go first and the database
+    last: no new database can be created at the path until the damaged one
+    is gone, so nothing deleted here can belong to a healthy one. */
+function discardIfStillDamaged(M: Sqlite, seen: FileIdentity | undefined): "discarded" | "replaced" | "gone" {
   const file = providerFile();
-  for (const f of [file, `${file}-journal`, `${file}-wal`, `${file}-shm`]) await fs.rm(f, { force: true });
+  const now = identityOf(file);
+  if (!now) return "gone";
+  if (!sameFile(now, seen) || !stillDamaged(M, file)) return "replaced";
+  try {
+    for (const s of SIDE_FILES) rmSync(file + s, { force: true });
+    if (!sameFile(identityOf(file), seen)) return "replaced";
+    unlinkSync(file);
+  } catch (e) {
+    if (e instanceof StoreError) throw e;
+    throw new StoreError("The saved provider file cannot be removed.");
+  }
+  return "discarded";
+}
+
+/** Delete the damaged database `err` was raised for: the way out of one.
+    Under the recovery lock, and only while the path still names that same
+    file (device and inode) and SQLite still calls it damaged, so two
+    recoveries at once, or one in each server, never delete a database that
+    a save created in between, nor its journal. True when this call deleted
+    it; false when it was already gone or replaced. */
+export async function discardDamaged(err: StoreError): Promise<boolean> {
+  if (!err.damaged) throw err;
+  return underRecoveryLock((M) => discardIfStillDamaged(M, err.file) === "discarded");
 }
 
 const rowToProvider = (row: Record<string, unknown> | undefined): SavedProvider | null => {
@@ -258,9 +477,9 @@ const values = (cfg: SavedProvider): string[] => [
     the database is there but unusable: that is a broken saved key, and the
     env key must not quietly stand in for it. */
 export async function loadSaved(): Promise<SavedProvider | null> {
-  const db = await open(false);
-  if (!db) return null;
-  const row = run(db, () => db.prepare(`SELECT ${COLUMNS} FROM provider WHERE id = 1`).get() as Record<string, unknown> | undefined);
+  const o = open(await sqlite(), false);
+  if (!o) return null;
+  const row = run(o, (db) => db.prepare(`SELECT ${COLUMNS} FROM provider WHERE id = 1`).get() as Record<string, unknown> | undefined);
   return rowToProvider(row);
 }
 
@@ -281,19 +500,19 @@ export async function saveProvider(cfg: SavedProvider, mode: "replace" | "create
       : mode === "same-key"
         ? `INSERT INTO provider (id, ${COLUMNS}) VALUES (${placeholders}) ON CONFLICT(id) DO UPDATE SET ${update} WHERE provider.api_key = excluded.api_key`
         : `INSERT INTO provider (id, ${COLUMNS}) VALUES (${placeholders}) ON CONFLICT(id) DO UPDATE SET ${update}`;
-  const attempt = async () => {
-    const db = (await open(true))!;
-    return run(db, () => Number(db.prepare(sql).run(...values(cfg)).changes) > 0);
-  };
+  const attempt = (M: Sqlite) => run(open(M, true)!, (db) => Number(db.prepare(sql).run(...values(cfg)).changes) > 0);
   try {
-    return await attempt();
+    return attempt(await sqlite());
   } catch (e) {
     // A checked key may replace a file SQLite calls damaged; the other modes
     // must not, since they only write when they can see what is there, and
     // no other failure (busy, disk full) is a reason to delete anything.
+    // The delete and the write that follows happen under the recovery lock.
     if (!(e instanceof StoreError) || !e.damaged || mode !== "replace") throw e;
-    await discardFiles();
-    return attempt();
+    return underRecoveryLock((M) => {
+      discardIfStillDamaged(M, e.file);
+      return attempt(M);
+    });
   }
 }
 
@@ -301,11 +520,11 @@ export async function saveProvider(cfg: SavedProvider, mode: "replace" | "create
     holds exactly the key and endpoint `seen` (what the caller read). Returns
     false when it changed or was removed meanwhile; nothing is written then. */
 export async function updateModel(seen: SavedProvider, model: string, name: string): Promise<boolean> {
-  const db = await open(false);
-  if (!db) return false;
+  const o = open(await sqlite(), false);
+  if (!o) return false;
   return run(
-    db,
-    () =>
+    o,
+    (db) =>
       Number(
         db
           .prepare(
@@ -318,24 +537,19 @@ export async function updateModel(seen: SavedProvider, model: string, name: stri
 
 /** Delete the saved provider. True when there was one. The row is deleted
     with secure_delete on, so its bytes are overwritten; a file SQLite calls
-    damaged is deleted outright, so Remove recovers from it. */
+    damaged is deleted outright (see discardDamaged), so Remove recovers
+    from it. */
 export async function removeSaved(): Promise<boolean> {
   try {
-    const db = await open(false);
-    if (!db) return false;
-    return run(db, () => Number(db.prepare("DELETE FROM provider WHERE id = 1").run().changes) > 0);
+    const o = open(await sqlite(), false);
+    if (!o) return false;
+    return run(o, (db) => Number(db.prepare("DELETE FROM provider WHERE id = 1").run().changes) > 0);
   } catch (e) {
     if (!(e instanceof StoreError) || !e.damaged) throw e;
-    try {
-      await discardFiles();
-    } catch {
-      throw new StoreError("The saved provider file cannot be removed.");
-    }
-    return true;
+    return discardDamaged(e);
   }
 }
 
-/** The fields of a provider that may leave the server. */
 /** The fields of a provider that may leave the server, each passed through
     redact() with the provider's own key: parsing already refuses a key in
     any of them, and this guards anything saved some other way. */

@@ -13,9 +13,14 @@ that an open reader could keep from being checkpointed. Writes are rare and
 the table has one row, so WAL's concurrency buys nothing here.
 
 Every change is one SQL statement, so SQLite's own locking, which a crashed
-process never leaves behind, makes each one atomic across both servers: a model-only save applies only while the row still holds the key and
-endpoint it read, a migration only inserts into an empty table, and an
-unchecked key only replaces a row holding the same key.
+process never leaves behind, makes each one atomic across both servers: a
+model-only save applies only while the row still holds the key and endpoint
+it read, a migration only inserts into an empty table, and an unchecked key
+only replaces a row holding the same key. The one step that is not a
+statement, deleting a damaged file and writing its replacement, runs under a
+second lock both servers take (BEGIN EXCLUSIVE on an empty provider.lock next
+to the database) and deletes only the file the damage was seen on (see
+discard_damaged).
 
 The rules:
 - A key reaches the server once, is tested with one cheap call (the model
@@ -38,11 +43,21 @@ import contextlib
 import os
 import re
 import sqlite3
+import stat
 from urllib.parse import quote, unquote
 from pathlib import Path
 
 CONFIG_DIR_ENV = "DESIGN_SYSTEMS_CONFIG_DIR"
 FILE_NAME = "provider.db"
+SIDE_FILES = ("-journal", "-wal", "-shm")
+# The recovery lock: an empty SQLite file next to the database that both
+# servers hold with BEGIN EXCLUSIVE while they delete a damaged database and
+# write its replacement. It never holds a table, let alone a key.
+LOCK_NAME = "provider.lock"
+STORE_NAMES = (FILE_NAME, *(FILE_NAME + s for s in SIDE_FILES), LOCK_NAME)
+# How long a recovery waits for one already running, in this server or the
+# other, before it gives up with an error. Tests shorten it.
+LOCK_WAIT = 10.0
 PUBLIC_FIELDS = ("api", "base_url", "key_header", "models_url", "model", "name")
 ENDPOINT_FIELDS = ("api", "base_url", "key_header", "models_url")
 DEFAULT_BASE_URL = {"anthropic": "https://api.anthropic.com", "openai": "https://api.openai.com/v1"}
@@ -55,10 +70,15 @@ class StoreError(Exception):
     """The saved provider exists but cannot be used. Never carries its text.
     `damaged` is set only when SQLite said the file is not a database or is
     corrupt: only then may a remove or a checked save delete it. A busy lock,
-    a full disk or a permission error must never cost a working provider."""
+    a full disk or a permission error must never cost a working provider.
+    `file` is the (device, inode) of the database file the error came from,
+    so a recovery deletes only that file and never one that replaced it."""
     damaged = False
+    file: tuple | None = None
 
 
+_SQLITE_BUSY = 5
+_SQLITE_LOCKED = 6
 _SQLITE_CORRUPT = 11
 _SQLITE_NOTADB = 26
 
@@ -74,8 +94,9 @@ def _error_code(cause: BaseException | None):
     return code if isinstance(code, int) else None
 
 
-def _store_error(message: str, cause: BaseException | None = None) -> StoreError:
+def _store_error(message: str, cause: BaseException | None = None, file: tuple | None = None) -> StoreError:
     err = StoreError(message)
+    err.file = file
     code = _error_code(cause)
     if code is not None:
         err.damaged = (code & 0xFF) in (_SQLITE_CORRUPT, _SQLITE_NOTADB)
@@ -92,6 +113,12 @@ class BadRequest(Exception):
 REPO_ROOT = Path(__file__).resolve().parents[1]
 CONFIG_DIR_HELP = (f"{CONFIG_DIR_ENV} must be an absolute path outside the checkout (a leading ~/ is "
                    "expanded), for example ~/.config/design-systems.")
+LINK_HELP = (f"{FILE_NAME} or a file next to it in {CONFIG_DIR_ENV} is a symbolic link. The store never "
+             "follows one: a link has no use here, and it could send the saved key into the checkout or "
+             "anywhere else. Replace the link with the file itself, or remove it.")
+OPENED_ELSEWHERE = (f"The saved provider file opened somewhere other than {CONFIG_DIR_ENV}: the folder "
+                    "changed while it was being opened. Nothing was written.")
+RECOVERY_BUSY = "The saved provider file is being repaired by another request. Try again in a moment."
 
 
 def config_dir() -> Path:
@@ -101,7 +128,10 @@ def config_dir() -> Path:
     leading ~ or ~/ is the home folder (systemd's Environment= and a .env file
     do not expand it); a relative path, a ~user path or a path inside the
     checkout is refused with a StoreError that says how to set it, never
-    resolved against whatever folder the server started in."""
+    resolved against whatever folder the server started in. The part of the
+    folder that exists is returned with its symlinks resolved, so the
+    database is opened by its real path, and a store file that is itself a
+    symbolic link is refused."""
     raw = (os.environ.get(CONFIG_DIR_ENV) or "").strip()
     home = Path.home()
     if not raw:
@@ -114,9 +144,12 @@ def config_dir() -> Path:
         d = Path(raw)
     else:
         raise StoreError(CONFIG_DIR_HELP)
-    d = Path(os.path.normpath(d))
+    d = Path(_real_of_nearest(Path(os.path.normpath(d))))
     if inside_checkout(d, REPO_ROOT):
         raise StoreError(CONFIG_DIR_HELP)
+    for name in STORE_NAMES:
+        if os.path.islink(d / name):
+            raise StoreError(LINK_HELP)
     return d
 
 
@@ -214,64 +247,196 @@ SAVE_SQL = {
 }
 
 
+def _identity(path: Path) -> tuple | None:
+    """(device, inode) of `path` without following a link; None when it is
+    missing. A link is refused: config_dir() checked, and this re-checks at
+    the moment it matters."""
+    try:
+        st = os.lstat(path)
+    except FileNotFoundError:
+        return None
+    except OSError:
+        raise StoreError("The saved provider file cannot be read.") from None
+    if stat.S_ISLNK(st.st_mode):
+        raise StoreError(LINK_HELP)
+    if not stat.S_ISREG(st.st_mode):
+        raise StoreError("The saved provider file cannot be read.")
+    return (st.st_dev, st.st_ino)
+
+
+def _create_private(path: Path) -> None:
+    """Create `path` 0600 when it is new, never through a link (O_EXCL and
+    O_NOFOLLOW), and tighten an existing one. Opening and closing an existing
+    database outside SQLite would drop the POSIX locks another connection in
+    this process holds on it, so an existing file is only chmod-ed by path."""
+    try:
+        fd = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY | getattr(os, "O_NOFOLLOW", 0), 0o600)
+    except FileExistsError:
+        pass
+    else:
+        os.close(fd)
+    _identity(path)
+    # By path, so no descriptor is opened: a restored or copied file with a
+    # looser mode is tightened before a key is written into it.
+    os.chmod(path, 0o600)
+
+
+def _check_opened(conn: sqlite3.Connection, path: Path) -> tuple:
+    """Confirm that `conn` opened `path` itself. Neither Python's sqlite3 nor
+    node:sqlite can pass SQLITE_OPEN_NOFOLLOW, so the store checks before it
+    opens and again after: SQLite resolves links when it opens a file and
+    reports that resolved path in PRAGMA database_list, so a link swapped in
+    between the check and the open shows up as a different path here.
+    Returns the file's identity."""
+    before = _identity(path)
+    try:
+        opened = next((r[2] for r in conn.execute("PRAGMA database_list") if r[1] == "main"), None)
+    except sqlite3.Error as e:
+        raise _store_error("The saved provider file cannot be read.", e, before) from None
+    ident = _identity(path)
+    if opened != str(path) or ident is None or ident != before:
+        raise StoreError(OPENED_ELSEWHERE)
+    return ident
+
+
 @contextlib.contextmanager
 def _db(create: bool):
     """The open database, or None when none exists (nothing saved). `create`
     makes the folder (0700) and the file (0600) first. Any other failure (a
-    permission change, a damaged file) is a StoreError, never "nothing saved",
-    so the env key cannot quietly take over. secure_delete overwrites a
-    replaced or removed key's bytes in place, and the rollback journal is
+    permission change, a damaged file, a link) is a StoreError, never "nothing
+    saved", so the env key cannot quietly take over. secure_delete overwrites
+    a replaced or removed key's bytes in place, and the rollback journal is
     deleted at commit (see the module notes on journal_mode)."""
     path = provider_file()
     try:
         if create:
-            config_dir().mkdir(parents=True, exist_ok=True, mode=0o700)
-            # Create the file 0600 only when it is new. Opening and closing an
-            # existing database outside SQLite would drop the POSIX locks
-            # another connection in this process holds on it.
-            try:
-                fd = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
-            except FileExistsError:
-                pass
-            else:
-                os.close(fd)
-            # By path, so no descriptor is opened: a restored or copied file
-            # with a looser mode is tightened before a key is written into it.
-            os.chmod(path, 0o600)
+            path.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
+            _create_private(path)
+            missing = False
         else:
-            os.stat(path)
-    except FileNotFoundError:
-        if not create:
-            yield None
-            return
-        raise StoreError("The saved provider file cannot be read.") from None
+            missing = _identity(path) is None
+    except StoreError:
+        raise
     except OSError:
         raise StoreError("The saved provider file cannot be read.") from None
+    if missing:
+        yield None
+        return
     try:
         conn = sqlite3.connect(path, timeout=5, isolation_level=None)
     except sqlite3.Error as e:
         raise _store_error("The saved provider file cannot be read.", e) from None
     try:
+        ident = _check_opened(conn, path)
         try:
             conn.execute("PRAGMA busy_timeout = 5000")
             conn.execute("PRAGMA secure_delete = ON")
             conn.execute("PRAGMA journal_mode = DELETE")
             conn.executescript(SCHEMA)
         except sqlite3.Error as e:
-            raise _store_error("The saved provider file cannot be read.", e) from None
+            raise _store_error("The saved provider file cannot be read.", e, ident) from None
         try:
             yield conn
         except sqlite3.Error as e:
-            raise _store_error("The saved provider file cannot be used.", e) from None
+            raise _store_error("The saved provider file cannot be used.", e, ident) from None
     finally:
         conn.close()
 
 
-def _discard_files() -> None:
-    """Delete the database and its side files: the way out of a damaged one."""
+@contextlib.contextmanager
+def _recovery_lock():
+    """Hold the recovery lock: BEGIN EXCLUSIVE on provider.lock, which
+    web/lib/provider-store.ts takes the same way. SQLite holds it as a POSIX
+    lock, so it excludes the other server's processes and other connections
+    (threads) in this one, and the operating system drops it when a process
+    dies: a crash never leaves the store locked, and a lock file left behind
+    is simply taken."""
+    lock = config_dir() / LOCK_NAME
+    try:
+        lock.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
+        _create_private(lock)
+        conn = sqlite3.connect(lock, timeout=LOCK_WAIT, isolation_level=None)
+    except StoreError:
+        raise
+    except (OSError, sqlite3.Error):
+        raise StoreError("The saved provider file cannot be repaired.") from None
+    try:
+        _check_opened(conn, lock)
+        try:
+            conn.execute("BEGIN EXCLUSIVE")
+        except sqlite3.Error as e:
+            code = _error_code(e)
+            busy = ((code & 0xFF) in (_SQLITE_BUSY, _SQLITE_LOCKED)) if code is not None else "locked" in str(e).lower()
+            raise StoreError(RECOVERY_BUSY if busy else "The saved provider file cannot be repaired.") from None
+        try:
+            yield
+        finally:
+            with contextlib.suppress(sqlite3.Error):
+                conn.execute("ROLLBACK")
+    finally:
+        conn.close()
+
+
+def _still_damaged(path: Path) -> bool:
+    """Whether SQLite still calls `path` damaged. A busy or unreadable file is
+    an error, never damage."""
+    try:
+        conn = sqlite3.connect(path, timeout=5, isolation_level=None)
+    except sqlite3.Error as e:
+        if _store_error("", e).damaged:
+            return True
+        raise StoreError("The saved provider file cannot be read.") from None
+    try:
+        _check_opened(conn, path)
+        row = conn.execute("PRAGMA quick_check(1)").fetchone()
+        return not row or row[0] != "ok"
+    except StoreError as e:
+        if e.damaged:
+            return True
+        raise
+    except sqlite3.Error as e:
+        if _store_error("", e).damaged:
+            return True
+        raise StoreError("The saved provider file cannot be read.") from None
+    finally:
+        conn.close()
+
+
+def _discard_if_still_damaged(seen: tuple | None) -> str:
+    """Delete the damaged database `seen` names, with its side files, if the
+    path still names that file and SQLite still calls it damaged: "discarded",
+    else "replaced" or "gone". Only call it under the recovery lock. The side
+    files go first and the database last: no new database can be created at
+    the path until the damaged one is gone, so nothing deleted here can belong
+    to a healthy one."""
     path = provider_file()
-    for f in (path, *(path.with_name(path.name + x) for x in ("-journal", "-wal", "-shm"))):
-        f.unlink(missing_ok=True)
+    now = _identity(path)
+    if now is None:
+        return "gone"
+    if now != seen or not _still_damaged(path):
+        return "replaced"
+    try:
+        for x in SIDE_FILES:
+            path.with_name(path.name + x).unlink(missing_ok=True)
+        if _identity(path) != seen:
+            return "replaced"
+        path.unlink()
+    except OSError:
+        raise StoreError("The saved provider file cannot be removed.") from None
+    return "discarded"
+
+
+def discard_damaged(err: StoreError) -> bool:
+    """Delete the damaged database `err` was raised for: the way out of one.
+    Under the recovery lock, and only while the path still names that same
+    file (device and inode) and SQLite still calls it damaged, so two
+    recoveries at once, or one in each server, never delete a database that a
+    save created in between, nor its journal. True when this call deleted it;
+    False when it was already gone or replaced."""
+    if not err.damaged:
+        raise err
+    with _recovery_lock():
+        return _discard_if_still_damaged(err.file) == "discarded"
 
 
 def load() -> dict | None:
@@ -308,8 +473,10 @@ def save_provider(cfg: dict, mode: str) -> bool:
     except StoreError as e:
         if mode != "replace" or not e.damaged:
             raise
-        _discard_files()
-        return attempt()
+        # The delete and the write that follows happen under the recovery lock.
+        with _recovery_lock():
+            _discard_if_still_damaged(e.file)
+            return attempt()
 
 
 def update_model(seen: dict, model: str, name: str) -> bool:
@@ -328,7 +495,8 @@ def update_model(seen: dict, model: str, name: str) -> bool:
 
 def remove() -> bool:
     """Delete the saved provider. True when there was one. A file SQLite calls
-    damaged is deleted outright, so Remove recovers from it."""
+    damaged is deleted outright (see discard_damaged), so Remove recovers from
+    it."""
     try:
         with _db(False) as conn:
             if conn is None:
@@ -337,11 +505,7 @@ def remove() -> bool:
     except StoreError as e:
         if not e.damaged:
             raise
-        try:
-            _discard_files()
-        except OSError:
-            raise StoreError("The saved provider file cannot be removed.") from None
-        return True
+        return discard_damaged(e)
 
 
 URL_KEY = "Put the API key in the API key field only, not in the base URL, models URL, label or model."
