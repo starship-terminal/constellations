@@ -5990,9 +5990,9 @@
       "description": "Online Screen Recorder for Mac & Windows",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.tella.com/api/login Continue with Google signed in to an empty video library. Product not walked.",
+      "notes": "https://www.tella.com/api/login showed Sign in to Tella. Session was not present. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 18
     },
     {
