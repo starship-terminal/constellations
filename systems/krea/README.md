@@ -4,7 +4,7 @@ A token set and component reference for Krea's public signed-out website, for bu
 
 Krea paints one public theme, `html.dark`. The Tailwind v4 `@theme` layer on `:root,:host` declares a primary grey ramp (`--color-primary-0` through `--color-primary-1000`, including 150, 250, 850 and 975), action colours (`--color-action` `#006eff`, hover `#0064fe`, green `#65f223`, purple `#af00ff`), radius steps, a 4px spacing base, and Suisse Intl. Semantic roles (`--background`, `--foreground`, `--card`, `--sidebar`, `--destructive`, `--warning`, `--success`) live on `.dark`. The body field is `--color-primary-950` `#101010`. Those painted roles are the token file's `dark` set; there is no `light` set. There is no public light switch. Docs uses a separate sheet set and is not folded into the app tokens.
 
-**Boundary:** everything past login (assets, train, node editor, account, billing, API keys, checkout and generation) was never reached. Sign in, Sign up, Continue with Google, Apple and SSO, Book a call, Get Free, Get Basic, Get Pro, Get Max, Claim offer and Generate were measured, never followed. Continue with Email was submitted once on 2026-11-18; GET /api/auth/email-flow returned 400 captcha_failed (Cloudflare Turnstile, no visible widget) and the pass stopped. The prompt field was filled and cleared. Consent overlays were hidden, never answered.
+**Boundary:** the 2026-11-18 public pass stopped at login. A signed-in walk on 2026-11-20, in the T3 preview default profile, reached `/app` and the account menu, then stopped when the preview window stopped painting frames. Settings, create tools, billing and generation were not opened. Sign in, Sign up, Continue with Google, Apple and SSO, Book a call, Get Free, Get Basic, Get Pro, Get Max, Claim offer and Generate were measured on the public pass, never followed. Continue with Email was submitted once on 2026-11-18; GET /api/auth/email-flow returned 400 captcha_failed (Cloudflare Turnstile, no visible widget) and that pass stopped. The prompt field was filled and cleared. Consent overlays were hidden, never answered.
 
 | File | What it is |
 |---|---|
@@ -16,7 +16,8 @@ Krea paints one public theme, `html.dark`. The Tailwind v4 `@theme` layer on `:r
 | [patterns.md](patterns.md) | How the components combine: the dark app shell, pricing, the login card, marketing pages, phone |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | `{page}-dark-{state}.png` captures. Desktop 1440 x 900 at 1x. Phone 390 x 844 at 1x, because the page forces devicePixelRatio to 1 |
-| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json), [components-computed.json](raw/components-computed.json), [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) |
+| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json), [components-computed.json](raw/components-computed.json), [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json), [signed-in-2026-11-20.json](raw/signed-in-2026-11-20.json) |
+| [login-review.json](login-review.json) | The 2026-11-20 signed-in walk: nav and settings that were offered, the two screens, the gaps, and what was not submitted |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
 
 ## Brief
@@ -170,7 +171,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 | Desktop 1440 and phone 390 | Captured. Phone shots are 1x because the page forces devicePixelRatio to 1 |
 | Light theme | Not present as a shipped public theme. html.light was resolved as a comparison and is not in the tokens |
 | Login | Captured at the boundary. See [login-dark-default](screenshots/login-dark-default.png). Continue with Email was submitted once; Turnstile returned captcha_failed |
-| Signed-in product | Not captured. 2026-11-18 email pass stopped on GET /api/auth/email-flow 400 captcha_failed (Cloudflare Turnstile, no visible widget). Assets, train, nodes, account, billing, API keys and checkout remain behind sign-in |
+| Signed-in product | Partly. 2026-11-20 reached `/app` and the account menu at 1440 by 900, devicePixelRatio 2. See [app-dark-default](screenshots/app-dark-default.png) and [app-dark-account-menu](screenshots/app-dark-account-menu.png). Settings, create tools, phone width, billing and generation were not reached. The 2026-11-18 email pass had stopped on captcha_failed |
 | Icons | Not captured as an SVG set. Glyphs are visible in crops and screenshots. Recorded as a layout gap |
 | Fonts | Named with fallback stacks. Files are not redistributed |
 
@@ -182,7 +183,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 4. **Do use a 10px radius on sidebar controls.** Sign in and nav rows share `--radius` at 10px. Plan CTAs are pills. See [nav-signin](components/crops/nav-signin-default.png) and [price-cta](components/crops/price-cta-default.png).
 5. **Do keep the sidebar at 255px on desktop.** Folding it is a local toggle, not a second layout. See [sidebar](components/crops/sidebar-default.png) and [home-dark-sidebar-folded](screenshots/home-dark-sidebar-folded.png).
 6. **Don't invent a light app shell.** /plugins paints a white marketing hero. The app shell, login and pricing stay dark. See [plugins-dark-default](screenshots/plugins-dark-default.png) and [home-dark-default](screenshots/home-dark-default.png).
-7. **Don't style the signed-in product from this package.** Assets, train, nodes, account and billing were never reached. Stop at the login card. See [login-dark-default](screenshots/login-dark-default.png).
+7. **Don't style the signed-in product from the public shots alone.** The 2026-11-20 walk shows the signed-in home and the account menu. Settings, create tools and billing were not opened. See [app-dark-default](screenshots/app-dark-default.png) and [app-dark-account-menu](screenshots/app-dark-account-menu.png).
 8. **Don't follow Generate, Get Pro or Book a call.** Those controls were measured. Submitting them is a gated action. See [price-cta](components/crops/price-cta-default.png) and [ent-cta](components/crops/ent-cta-default.png).
 
 ## Rebuild
