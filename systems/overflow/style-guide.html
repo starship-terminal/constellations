@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overflow style guide</title>
+<meta name="description" content="Overflow (overflow.io) public design tokens, rendered from tokens.json with measured values.">
+<style>
+:root {
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+  --color-hero-ink: #ffffff;
+  --color-ink-soft: #161637;
+  --color-link: #0085e4;
+  --color-link-hover: #259aef;
+  --color-link-pressed: #124b74;
+  --color-muted: rgba(0, 0, 0, 0.6);
+  --color-grey: rgba(240, 240, 242, 0.498);
+  --color-grey-2: #f0f0f2;
+  --color-hairline: #dadce0;
+  --color-chip-border: #f5f5f7;
+  --color-swiper: #007aff;
+  --color-theme: #232d41;
+  --font-family-sans: Inter, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-family-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family-icons: icomoon;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-button: 550;
+  --font-weight-bold: 700;
+  --font-weight-display: 800;
+  --typography-display: var(--font-weight-display) 56px/63.84px var(--font-family-sans);
+  --typography-heading: var(--font-weight-display) 48px/55.68px var(--font-family-sans);
+  --typography-nav: var(--font-weight-regular) 15px/26.25px var(--font-family-sans);
+  --typography-body: var(--font-weight-regular) 16px/28px var(--font-family-sans);
+  --typography-button: var(--font-weight-button) 16px/16px var(--font-family-sans);
+  --typography-menu-item: var(--font-weight-regular) 14px/22px var(--font-family-sans);
+  --typography-phone-nav: var(--font-weight-bold) 24px/42px var(--font-family-sans);
+  --radius-button: 8px;
+  --radius-menu-link: 12px;
+  --radius-card: 24px;
+  --radius-chip: 20px;
+  --space-button-x: 24px;
+  --space-button-y: 19px;
+  --space-nav-x: 16px;
+  --space-nav-y: 8px;
+  --space-menu-x: 12px;
+  --space-menu-y: 14px;
+  --space-faq-y: 32px;
+  --size-button-height: 56px;
+  --size-nav-button-height: 48px;
+  --size-nav-link-height: 42.25px;
+  --size-menu-height: 393px;
+  --size-menu-link-height: 98.969px;
+  --size-logo-height: 27px;
+  --size-faq-opener-height: 88px;
+  --size-phone-toggle: 22px;
+  --size-phone-nav-item: 58px;
+  --shadow-card: 0px 4px 16px -8px rgba(0, 0, 0, 0.08);
+  --motion-button: 400ms;
+  --motion-link: 350ms;
+  --motion-menu: 200ms;
+  --motion-lift: cubic-bezier(0.3, 0.86, 0.36, 0.95);
+  --layout-desktop: 1440px;
+  --layout-phone: 390px;
+  --layout-desktop-height: 900px;
+  --layout-phone-height: 844px;
+  --page: var(--color-paper);
+  --surface: var(--color-paper);
+  --text: var(--color-ink);
+  --muted: var(--color-muted);
+  --accent: var(--color-link);
+  --border: var(--color-hairline);
+  --on-accent: var(--color-hero-ink);
+  --hero-text: var(--color-hero-ink);
+  --component-button-background: #000000;
+  --component-button-text: #ffffff;
+  --component-button-radius: var(--radius-button);
+  --component-button-height: var(--size-button-height);
+  --component-button-padding: var(--space-button-x);
+  --component-nav-link-text: #000000;
+  --component-nav-link-hover: #259aef;
+  --component-nav-link-pressed: #124b74;
+  --component-card-background: #ffffff;
+  --component-card-radius: var(--radius-card);
+  --component-menu-background: #ffffff;
+  --component-menu-border: #dadce0;
+  --component-menu-height: var(--size-menu-height);
+  --sg-sans: Inter, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --sg-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.75 var(--sg-sans); color: var(--text, #000); background: var(--page, #fff); }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 96px; }
+h1 { font: 800 40px/1.14 var(--sg-sans); letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font: 800 28px/1.16 var(--sg-sans); letter-spacing: -0.02em; margin: 48px 0 12px; }
+.lead { max-width: 62ch; color: #161637; }
+.note { font-size: 13px; color: rgba(0,0,0,.6); max-width: 68ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 56px; border-radius: 8px; border: 1px solid #dadce0; }
+.sw b, .sw span { display: block; font: 500 12px/1.4 var(--sg-mono); }
+.sw span { font-weight: 400; color: rgba(0,0,0,.6); }
+.hero {
+  margin: 24px 0;
+  border-radius: 24px;
+  padding: 72px 32px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(180deg, #6d5efc 0%, #3aa0ff 55%, #7fd4ff 100%);
+}
+.hero h2 { color: #fff; font-size: 56px; line-height: 1.14; letter-spacing: -1.2px; margin: 0 0 12px; }
+.hero p { max-width: 46ch; margin: 0 auto 24px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: var(--component-button-height, 56px);
+  padding: 0 24px;
+  border-radius: var(--component-button-radius, 8px);
+  background: var(--component-button-background, #000);
+  color: var(--component-button-text, #fff);
+  font-weight: 550; letter-spacing: 0.2px; text-decoration: none; border: 1px solid #000;
+}
+.btn.quiet { background: transparent; color: #000; border-color: transparent; }
+.row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.card {
+  margin-top: 24px;
+  background: var(--component-card-background, #fff);
+  border-radius: var(--component-card-radius, 24px);
+  box-shadow: 0 4px 16px -8px rgba(0,0,0,.08);
+  padding: 28px;
+  max-width: 392px;
+}
+.card .price { font: 800 40px/1 var(--sg-sans); letter-spacing: -1px; }
+.nav {
+  display: flex; align-items: center; gap: 8px;
+  height: 72px; padding: 0 16px; border-bottom: 1px solid #dadce0;
+}
+.nav .sp { flex: 1; }
+.nav a { color: var(--component-nav-link-text, #000); text-decoration: none; padding: 8px 16px; }
+.menu {
+  background: var(--component-menu-background, #fff);
+  border-top: 1px solid var(--component-menu-border, #dadce0);
+  padding: 16px;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;
+}
+.menu a { display: block; padding: 14px 12px; border-radius: 12px; color: #161637; text-decoration: none; background: #fff; }
+.menu a:hover { background: #f5f5f6; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #f0f0f2; vertical-align: top; }
+th { font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: rgba(0,0,0,.6); }
+</style>
+</head>
+<body>
+<main>
+<h1>Overflow</h1>
+<p class="lead">Public marketing system from overflow.io, measured 2026-11-21. One light theme. Black pill-less buttons, Inter display type, a blue link accent, and a white mega menu.</p>
+<p class="note">The hero gradient below is a reconstruction of the homepage wash. The token file does not store that gradient: it was not a custom property. Button, type, and surface values are measured.</p>
+
+<h2>Roles</h2>
+<div class="swatches" id="roles"></div>
+
+<nav class="nav" aria-label="Specimen">
+  <strong>overflow</strong>
+  <a href="#">Product</a>
+  <a href="#">Examples</a>
+  <span class="sp"></span>
+  <a class="quiet" href="#">Sign In</a>
+  <a class="btn" href="#" style="height:48px">Download for free</a>
+</nav>
+<div class="menu">
+  <a href="#">How it Works</a>
+  <a href="#">Features</a>
+  <a href="#">Design presentation</a>
+</div>
+
+<div class="hero">
+  <h2>User flows done right</h2>
+  <p>Create interactive user flows and design presentations.</p>
+  <div class="row"><a class="btn" href="#">Download - free trial</a></div>
+</div>
+
+<div class="card">
+  <div>Pro</div>
+  <div class="price">$19.95</div>
+  <p>per user / month</p>
+  <a class="btn" href="#">Start free trial</a>
+</div>
+
+<h2>Type</h2>
+<table id="type"></table>
+<h2>Radius and size</h2>
+<table id="geom"></table>
+</main>
+<script>
+const T = {"core":{"color":{"ink":{"v":"#000000","t":"color","s":"computed color of nav-link default on overflow.io"},"paper":{"v":"#ffffff","t":"color","s":"computed backgroundColor of product-menu default on overflow.io"},"hero-ink":{"v":"#ffffff","t":"color","s":"computed color of hero-title default on overflow.io"},"ink-soft":{"v":"#161637","t":"color","s":"computed color of menu-link default on overflow.io"},"link":{"v":"#0085e4","t":"color","s":"computed color of logo default on overflow.io"},"link-hover":{"v":"#259aef","t":"color","s":"computed color of nav-link hover on overflow.io"},"link-pressed":{"v":"#124b74","t":"color","s":"computed color of nav-link pressed on overflow.io"},"muted":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":"computed color of blog-card default on overflow.io"},"grey":{"v":"rgba(240, 240, 242, 0.498)","t":"color","s":"computed backgroundColor of nav-signin pressed on overflow.io"},"grey-2":{"v":"#f0f0f2","t":"color","s":"declared .btn-secondary background-color in public-site-homepage.min.css; the Sign In control computes transparent until :active"},"hairline":{"v":"#dadce0","t":"color","s":"computed borderTopColor of product-menu default on overflow.io"},"chip-border":{"v":"#f5f5f7","t":"color","s":"computed borderTopColor of blog-card default on overflow.io"},"swiper":{"v":"#007aff","t":"color","s":"css-var --swiper-theme-color on :root; the only custom property the homepage stylesheet declares. Not painted on the captured controls."},"theme":{"v":"#232d41","t":"color","s":"meta name=theme-color on https://overflow.io/"}},"font":{"family":{"sans":{"v":"Inter, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif","t":"fontFamily","s":"computed fontFamily of body, read on hero-title"},"mono":{"v":"SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace","t":"fontFamily","s":"declared font-family in public-site-homepage.min.css; no code specimen was on the captured pages"},"icons":{"v":"icomoon","t":"fontFamily","s":"declared @font-face icomoon in public-site-homepage.min.css"}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of nav-link default"},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of logo"},"button":{"v":550,"t":"fontWeight","s":"computed fontWeight of hero-cta .btn-primary"},"bold":{"v":700,"t":"fontWeight","s":"computed fontWeight of m-nav-item"},"display":{"v":800,"t":"fontWeight","s":"computed fontWeight of hero-title"}}},"typography":{"display":{"v":{"fontFamily":"{font.family.sans}","fontSize":"56px","fontWeight":"{font.weight.display}","lineHeight":"63.84px","letterSpacing":"-1.2px"},"t":"typography","s":"computed type of hero-title and pricing-h1 (.intro-section__title)"},"heading":{"v":{"fontFamily":"{font.family.sans}","fontSize":"48px","fontWeight":"{font.weight.display}","lineHeight":"55.68px","letterSpacing":"-0.8px"},"t":"typography","s":"computed type of section-h2 (.headline-block__title)"},"nav":{"v":{"fontFamily":"{font.family.sans}","fontSize":"15px","fontWeight":"{font.weight.regular}","lineHeight":"26.25px","letterSpacing":"0px"},"t":"typography","s":"computed type of nav-link default"},"body":{"v":{"fontFamily":"{font.family.sans}","fontSize":"16px","fontWeight":"{font.weight.regular}","lineHeight":"28px","letterSpacing":"0px"},"t":"typography","s":"computed type of product-menu and faq-item"},"button":{"v":{"fontFamily":"{font.family.sans}","fontSize":"16px","fontWeight":"{font.weight.button}","lineHeight":"16px","letterSpacing":"0.2px"},"t":"typography","s":"computed type of hero-cta"},"menu-item":{"v":{"fontFamily":"{font.family.sans}","fontSize":"14px","fontWeight":"{font.weight.regular}","lineHeight":"22px","letterSpacing":"0px"},"t":"typography","s":"computed type of menu-link"},"phone-nav":{"v":{"fontFamily":"{font.family.sans}","fontSize":"24px","fontWeight":"{font.weight.bold}","lineHeight":"42px","letterSpacing":"0px"},"t":"typography","s":"computed type of m-nav-item at 390x844"}},"radius":{"button":{"v":"8px","t":"dimension","s":"painted borderRadius of hero-cta .btn-primary"},"menu-link":{"v":"12px","t":"dimension","s":"painted borderRadius of menu-link"},"card":{"v":"24px","t":"dimension","s":"painted borderRadius of plan-card"},"chip":{"v":"20px","t":"dimension","s":"painted borderRadius of blog-card pill"}},"space":{"button-x":{"v":"24px","t":"dimension","s":"computed paddingLeft of hero-cta default on overflow.io"},"button-y":{"v":"19px","t":"dimension","s":"computed paddingTop of hero-cta default on overflow.io"},"nav-x":{"v":"16px","t":"dimension","s":"computed paddingLeft of nav-link default on overflow.io"},"nav-y":{"v":"8px","t":"dimension","s":"computed paddingTop of nav-link default on overflow.io"},"menu-x":{"v":"12px","t":"dimension","s":"computed paddingLeft of menu-link default on overflow.io"},"menu-y":{"v":"14px","t":"dimension","s":"computed paddingTop of menu-link default on overflow.io"},"faq-y":{"v":"32px","t":"dimension","s":"computed paddingTop of faq-item default on overflow.io"}},"size":{"button-height":{"v":"56px","t":"dimension","s":"computed height of hero-cta default on overflow.io"},"nav-button-height":{"v":"48px","t":"dimension","s":"computed height of nav-cta default on overflow.io"},"nav-link-height":{"v":"42.25px","t":"dimension","s":"computed height of nav-link default on overflow.io"},"menu-height":{"v":"393px","t":"dimension","s":"computed height of product-menu default on overflow.io"},"menu-link-height":{"v":"98.969px","t":"dimension","s":"computed height of menu-link default on overflow.io"},"logo-height":{"v":"27px","t":"dimension","s":"computed height of logo default on overflow.io"},"faq-opener-height":{"v":"88px","t":"dimension","s":"computed height of faq-item default on overflow.io"},"phone-toggle":{"v":"22px","t":"dimension","s":"computed width of m-menu-button default on overflow.io"},"phone-nav-item":{"v":"58px","t":"dimension","s":"computed height of m-nav-item default on overflow.io"}},"shadow":{"card":{"v":[{"offsetX":"0px","offsetY":"4px","blur":"16px","spread":"-8px","color":"rgba(0, 0, 0, 0.08)"}],"t":"shadow","s":"computed boxShadow of plan-card"}},"motion":{"button":{"v":"400ms","t":"duration","s":"declared transition transform .4s on .btn-primary"},"link":{"v":"350ms","t":"duration","s":"computed transitionDuration of nav-link"},"menu":{"v":"200ms","t":"duration","s":"computed transitionDuration of product-menu"},"lift":{"v":[0.3,0.86,0.36,0.95],"t":"cubicBezier","s":"declared cubic-bezier(.3,.86,.36,.95) on .navbar-nav__subnav in public-site-homepage.min.css"}},"layout":{"desktop":{"v":"1440px","t":"dimension","s":"requested and measured window.innerWidth of the desktop captures"},"phone":{"v":"390px","t":"dimension","s":"requested phone viewport width"},"desktop-height":{"v":"900px","t":"dimension","s":"requested and measured window.innerHeight of the desktop captures"},"phone-height":{"v":"844px","t":"dimension","s":"requested phone viewport height"}}},"light":{"page":{"v":"{color.paper}","t":"color","s":"alias of computed product-menu and body background"},"surface":{"v":"{color.paper}","t":"color","s":"alias of plan-card background"},"text":{"v":"{color.ink}","t":"color","s":"alias of nav-link color"},"muted":{"v":"{color.muted}","t":"color","s":"alias of blog-card color"},"accent":{"v":"{color.link}","t":"color","s":"alias of logo color, the painted blue"},"border":{"v":"{color.hairline}","t":"color","s":"alias of product-menu borderTopColor"},"on-accent":{"v":"{color.hero-ink}","t":"color","s":"alias of hero-cta text, white on the black button"},"hero-text":{"v":"{color.hero-ink}","t":"color","s":"alias of hero-title color on the gradient"},"component":{"button":{"background":{"v":"#000000","t":"color","s":"computed backgroundColor of hero-cta default on overflow.io"},"text":{"v":"#ffffff","t":"color","s":"computed color of hero-cta default on overflow.io"},"radius":{"v":"{radius.button}","t":"dimension","s":"alias"},"height":{"v":"{size.button-height}","t":"dimension","s":"alias"},"padding":{"v":"{space.button-x}","t":"dimension","s":"alias of hero-cta paddingLeft"}},"nav-link":{"text":{"v":"#000000","t":"color","s":"computed color of nav-link default on overflow.io"},"hover":{"v":"#259aef","t":"color","s":"computed color of nav-link hover on overflow.io"},"pressed":{"v":"#124b74","t":"color","s":"computed color of nav-link pressed on overflow.io"}},"card":{"background":{"v":"#ffffff","t":"color","s":"computed backgroundColor of plan-card default on overflow.io"},"radius":{"v":"{radius.card}","t":"dimension","s":"alias"}},"menu":{"background":{"v":"#ffffff","t":"color","s":"computed backgroundColor of product-menu default on overflow.io"},"border":{"v":"#dadce0","t":"color","s":"computed borderTopColor of product-menu default on overflow.io"},"height":{"v":"{size.menu-height}","t":"dimension","s":"alias"}}}},"dark":{}};
+const roles = [
+  ["page", "--page"],
+  ["surface", "--surface"],
+  ["text", "--text"],
+  ["muted", "--muted"],
+  ["accent", "--accent"],
+  ["border", "--border"],
+  ["ink", "--color-ink"],
+  ["link", "--color-link"],
+  ["link hover", "--color-link-hover"],
+  ["grey", "--color-grey-2"],
+  ["hairline", "--color-hairline"],
+];
+const box = document.getElementById("roles");
+for (const [name, v] of roles) {
+  const d = document.createElement("div");
+  d.className = "sw";
+  d.innerHTML = `<i style="background:var(${v})"></i><b>${name}</b><span>${v}</span>`;
+  box.appendChild(d);
+}
+function rows(id, pred) {
+  const tb = document.getElementById(id);
+  const walk = (node, prefix) => {
+    for (const [k, v] of Object.entries(node || {})) {
+      const path = prefix ? prefix + "." + k : k;
+      if (v && v.t) {
+        if (pred(path, v)) {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `<td><code>${path}</code></td><td>${typeof v.v === "object" ? JSON.stringify(v.v) : v.v}</td>`;
+          tb.appendChild(tr);
+        }
+      } else if (v && typeof v === "object") walk(v, path);
+    }
+  };
+  walk(T.core, "core");
+}
+rows("type", (p) => p.startsWith("core.typography") || p.startsWith("core.font"));
+rows("geom", (p) => p.startsWith("core.radius") || p.startsWith("core.size") || p.startsWith("core.space"));
+</script>
+</body>
+</html>
