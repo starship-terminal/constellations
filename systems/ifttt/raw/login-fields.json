@@ -1,0 +1,73 @@
+{
+  "fields": [
+    {
+      "type": "hidden",
+      "name": "return_to",
+      "ph": "",
+      "id": "return_to",
+      "h": "auto",
+      "radius": "0px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "border": "0px rgb(0, 0, 0)",
+      "font": "13.3333px 400",
+      "box": {
+        "w": 0,
+        "h": 0
+      }
+    },
+    {
+      "type": "text",
+      "name": "user[username]",
+      "ph": "Email or username",
+      "id": "user_username",
+      "h": "55px",
+      "radius": "16px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(17, 17, 17)",
+      "border": "2px rgb(17, 17, 17)",
+      "font": "18px 700",
+      "box": {
+        "w": 456,
+        "h": 55
+      }
+    },
+    {
+      "type": "password",
+      "name": "user[password]",
+      "ph": "Password",
+      "id": "user_password",
+      "h": "55px",
+      "radius": "16px",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgba(17, 17, 17, 0.4)",
+      "border": "2px rgba(17, 17, 17, 0.1)",
+      "font": "18px 700",
+      "box": {
+        "w": 456,
+        "h": 55
+      }
+    },
+    {
+      "type": "submit",
+      "name": "commit",
+      "ph": "",
+      "id": "",
+      "h": "101px",
+      "radius": "64px",
+      "bg": "rgb(17, 17, 17)",
+      "color": "rgb(255, 255, 255)",
+      "border": "0px rgb(255, 255, 255)",
+      "font": "34px 900",
+      "box": {
+        "w": 456,
+        "h": 101
+      }
+    }
+  ],
+  "focused": {
+    "outline": "rgb(0, 0, 0) none 0px",
+    "boxShadow": "none",
+    "border": "rgb(0, 0, 0) 0px"
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "capturedAt": "2026-11-20T20:24:26.200Z",
+  "page": {
+    "url": "https://ifttt.ai/",
+    "title": "The easiest way to automate anything - IFTTT"
+  },
+  "stylesheetCount": 1,
+  "stylesheetBytes": 154331,
+  "stylesheets": [
+    {
+      "url": "https://web-assets.ifttt.com/builds/assets/customer-BcV-_DZh.css",
+      "bytes": 154331
+    }
+  ],
+  "declared": {
+    "--primary-text": [
+      {
+        "selector": ":root",
+        "context": [
+          "inline"
+        ],
+        "raw": "#111"
+      }
+    ],
+    "--hero-unit": [
+      {
+        "selector": ".home-hero-anim",
+        "context": [
+          "inline"
+        ],
+        "raw": "min(1px, calc((100vw - 708px) / 682))"
+      },
+      {
+        "selector": ".home-hero-anim-mobile",
+        "context": [
+          "inline",
+          "@media (max-width: 1150px)"
+        ],
+        "raw": "calc(min(100vw, 660px) / 360)"
+      },
+      {
+        "selector": ".home-hero-anim-mobile",
+        "context": [
+          "inline",
+          "@media (max-width: 723px)"
+        ],
+        "raw": "calc(100vw / 360)"
+      },
+      {
+        "selector": ".prosumer-home .home-hero-anim",
+        "context": [
+          "https://web-assets.ifttt.com/builds/assets/customer-BcV-_DZh.css"
+        ],
+        "raw": "calc(min(1px, (100vw - 708px) / 682))"
+      },
+      {
+        "selector": ".prosumer-home .home-hero-anim-mobile",
+        "context": [
+          "https://web-assets.ifttt.com/builds/assets/customer-BcV-_DZh.css",
+          "@media (width <= 723px)"
+        ],
+        "raw": "calc(5vw / 18)"
+      },
+      {
+        "selector": ".prosumer-home .home-hero-anim-mobile",
+        "context": [
+          "https://web-assets.ifttt.com/builds/assets/customer-BcV-_DZh.css",
+          "@media (width >= 724px) and (width <= 1150px)"
+        ],
+        "raw": "calc(min(100vw, 660px) / 360)"
+      }
+    ],
+    "--card-color": [
+      {
+        "selector": ".prosumer-home .user-testimonial-card--clover",
+        "context": [
+          "https://web-assets.ifttt.com/builds/assets/customer-BcV-_DZh.css"
+        ],
+        "raw": "#0dd14e"
+      },
+      {
+        "selector": ".prosumer-home .user-testimonial-card--fuchsia",
+        "context": [
+          "https://web-assets.ifttt.com/builds/assets/customer-BcV-_DZh.css"
+        ],
+        "raw": "#ff3cec"
+      }
+    ]
+  },
+  "rootComputed": {},
+  "fonts": [
+    {
+      "family": "\"Museo Sans Rounded\"",
+      "weight": "300",
+      "style": "",
+      "display": "swap",
+      "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+    },
+    {
+      "family": "\"Museo Sans Rounded\"",
+      "weight": "500 600",
+      "style": "",
+      "display": "swap",
+      "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+    },
+    {
+      "family": "\"Museo Sans Rounded\"",
+      "weight": "700",
+      "style": "",
+      "display": "swap",
+      "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+    },
+    {
+      "family": "\"Museo Sans Rounded\"",
+      "weight": "900",
+      "style": "",
+      "display": "swap",
+      "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+    },
+    {
+      "family": "\"Museo Sans Rounded Fallback\"",
+      "weight": "500 600",
+      "style": "",
+      "display": "",
+      "src": "local(\"Avenir Next Medium\"), local(\"AvenirNext-Medium\")"
+    },
+    {
+      "family": "\"Museo Sans Rounded Fallback\"",
+      "weight": "700",
+      "style": "",
+      "display": "",
+      "src": "local(\"Avenir Next Bold\"), local(\"AvenirNext-Bold\")"
+    },
+    {
+      "family": "\"Museo Sans Rounded Fallback\"",
+      "weight": "900",
+      "style": "",
+      "display": "",
+      "src": "local(\"Avenir Next Heavy\"), local(\"AvenirNext-Heavy\")"
+    },
+    {
+      "family": "\"Museo Sans Rounded\"",
+      "weight": "500 600",
+      "style": "italic",
+      "display": "swap",
+      "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+    },
+    {
+      "family": "\"Museo Sans Rounded\"",
+      "weight": "700",
+      "style": "italic",
+      "display": "swap",
+      "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+    }
+  ],
+  "body": {
+    "color": "rgb(17, 17, 17)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+    "fontSize": "18px",
+    "lineHeight": "21.6px"
+  },
+  "samples": {
+    "h1": {
+      "sel": "h1",
+      "color": "rgb(17, 17, 17)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+      "fontSize": "79.3296px",
+      "fontWeight": "900",
+      "lineHeight": "79.3296px",
+      "borderRadius": "0px",
+      "padding": "0px"
+    },
+    "link": {
+      "sel": "header a",
+      "color": "rgb(17, 17, 17)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+      "fontSize": "18px",
+      "fontWeight": "700",
+      "lineHeight": "18px",
+      "borderRadius": "0px",
+      "padding": "0px"
+    },
+    "button": {
+      "sel": "button.button-primary, a.button-primary, .button-primary",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(17, 17, 17)",
+      "fontFamily": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+      "fontSize": "34px",
+      "fontWeight": "900",
+      "lineHeight": "37.4px",
+      "borderRadius": "64px",
+      "padding": "0px 64px"
+    }
+  }
+}
