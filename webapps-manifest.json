@@ -4171,9 +4171,9 @@
       "description": "User flows done right",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://overflow.io/login/ is a product page. https://overflow.io/n/signin asks for email and password, or Google or SSO. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 13
     },
     {
@@ -4188,9 +4188,9 @@
       "description": "Supercharge your video creation",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://ozone.tech/login did not return a sign-in page. No email form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 13
     },
     {
@@ -4205,9 +4205,9 @@
       "description": "AI Map Maker for Custom Interactive Maps",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.pampam.city/login offers only Sign in with Google. Google sign-in not completed.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "oauth-only",
       "batch": 13
     },
     {
@@ -4222,9 +4222,9 @@
       "description": "Web Search & Research APIs Built for AI Agents",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://platform.parallel.ai/login Continue with email sent a sign-in link. Link not opened. Google and SSO also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 13
     },
     {
@@ -4239,9 +4239,9 @@
       "description": "Make what you love your work",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.useparallel.com/login asks for email and password, or LinkedIn. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 13
     },
     {
@@ -4256,9 +4256,9 @@
       "description": "Free Online Invitations with RSVP Tracking",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://partiful.com/login asks for a phone number. No email field. Phone not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "phone",
       "batch": 13
     },
     {
@@ -4273,9 +4273,9 @@
       "description": "Fastest visual website feedback tool for web designers ",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://usepastel.com/login asks for email and password, or SSO. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 13
     },
     {
@@ -4290,9 +4290,9 @@
       "description": "Creativity powered by membership",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.patreon.com/login shows email and password, or Apple or Facebook. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 13
     },
     {
@@ -4307,9 +4307,9 @@
       "description": "Design-forward goods for everyday living",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.patternbrands.com/login and /signin are page-not-found. No sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 13
     },
     {
@@ -4324,9 +4324,9 @@
       "description": "Pay, Send and Save Money with PayPal",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.paypal.com/signin stopped before a usable form. Do not retry.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 13
     },
     {
@@ -4341,9 +4341,9 @@
       "description": "Official online shop",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://peakperformance.com/login asked to press and hold to confirm a human. Do not retry.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 13
     },
     {
@@ -4358,9 +4358,9 @@
       "description": "Buy TV stand and designer accessories",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.pedestal.com/login asks for a country or currency before any email. No country chosen.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 13
     },
     {
@@ -4375,9 +4375,9 @@
       "description": "Professional Network for people in tech",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://peerlist.io/login asks for email and password, or Google. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 13
     },
     {
@@ -4392,9 +4392,9 @@
       "description": "Free AI-powered answer engine that provides accurate, trusted, and real-time answers to any question",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Sign In on https://www.perplexity.ai/ sent a temporary sign-in link. Link not opened. Optional cookies declined. Google, Apple, and SSO also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 13
     },
     {
@@ -4409,9 +4409,9 @@
       "description": "Free stock photos & videos",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.pexels.com/login/ asks for email and password, or Google. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 13
     },
     {
@@ -4426,9 +4426,9 @@
       "description": "Pi, your personal AI",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Log in on https://pi.ai/ opens a choice of Google, Apple, Facebook, email, or phone. Email was not submitted, so no code was sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 13
     },
     {
@@ -4443,9 +4443,9 @@
       "description": "Discover recipes, home ideas, style inspiration and other ideas to try",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.pinterest.com/login/ asks for email and password. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 13
     },
     {
@@ -4460,9 +4460,9 @@
       "description": "Collaborative presentation software for modern teams",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://app.pitch.com/?login=true Continue with email sent a 6-digit sign-in code. Code not entered. Google, Apple, SSO, and email-plus-password also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 13
     },
     {
@@ -4477,9 +4477,9 @@
       "description": "A Free Online UI/UX Design Tool",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://pixso.net/signin is missing. https://pixso.net/user/login/ asks for email and password, or Google, NAVER, or SSO. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 13
     },
     {
@@ -4494,9 +4494,9 @@
       "description": "The first native iOS design tool built for creating mobile products",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://createwithplay.com/login did not return a sign-in page. No email form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 13
     },
     {
