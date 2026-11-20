@@ -592,7 +592,7 @@ The public surface paints one dark theme — a #151515 ground with #eeeef2 paper
 ### Screenshots
 
 - The product photography, Kulture covers and the Elektron wordmark in the screenshots are the product's published content.
-- The mobile-home and mobile-shop full-page captures hit the GPU texture cap and were stitched from chunks (the `.partN` PNGs and their sidecars are in raw/full/).
+- The mobile-home and mobile-shop full-page captures hit the GPU texture cap and were stitched from chunks (the `.partN` PNGs and their sidecars are kept with the unquantized captures, outside the repository).
 - Screenshots are stored as 256-colour PNGs; read exact colours from the tokens or the raw files.
 
 ### Content left out

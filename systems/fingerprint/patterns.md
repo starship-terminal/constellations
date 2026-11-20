@@ -24,7 +24,7 @@ The home page paints the light `:root` roles on the white `background.page` fiel
 
 ## Docs chrome (Mintlify, light + dark)
 
-docs.fingerprint.com is a different stack — Mintlify — with its own token layer and a real theme preference. Its chrome: the "Open search" trigger (`component.docs.search-btn-bg`), nav tabs, sidebar links (`component.docs.sidebar-link-ink`), code blocks (`component.docs.code-bg`) and the "Change theme preference" button. The preference was measured but never held; the docs' dark surface is captured as the `docs-*-light-theme-dark` screenshots — a genuinely painted dark theme, kept out of the marketing token sets.
+docs.fingerprint.com is a different stack — Mintlify — with its own token layer and a real theme preference. Its chrome: the "Open search" trigger (`component.docs.search-btn-bg`), nav tabs, sidebar links (`component.docs.sidebar-link-ink`), code blocks (no fill token: the block itself paints transparent, so its ground is the page's) and the "Change theme preference" button. The preference was measured but never held; the docs' dark surface is captured as the `docs-*-light-theme-dark` screenshots — a genuinely painted dark theme, kept out of the marketing token sets.
 
 ## The auth shell
 

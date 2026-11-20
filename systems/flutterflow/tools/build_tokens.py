@@ -200,16 +200,18 @@ def leaf(path, spec, theme):
     ext = {}
     if "var" in spec:
         name = spec["var"]
-        light = RES["light"].get(name, {})
-        raw = light.get("raw")
+        # provenance from the same pass as the value: a dark token cites the
+        # dark resolution's declaration and its own 390-px pass, never light's
+        own = RES[theme].get(name, {})
+        raw = own.get("raw")
         val = resolve(name, theme)
         src = var_source(name, theme)
         if spec.get("source"):
             src += "; " + spec["source"]
         if raw and raw != val:
             ext["declared"] = raw
-        r390 = RES["light390"].get(name, {})
-        if r390 and (r390.get("value") or r390["raw"]) != (light.get("value") or light["raw"]):
+        r390 = RES.get(theme + "390", {}).get(name, {})
+        if r390 and own and (r390.get("value") or r390["raw"]) != (own.get("value") or own["raw"]):
             ext["responsive"] = {"390px": r390.get("value") or r390["raw"]}
     else:
         name = None
@@ -323,7 +325,9 @@ for name, e in sorted(RES["light"].items()):
             over["letterSpacing"] = ls390
     if over:
         t["$extensions"]["responsive"] = {"390px": over}
-    if name in ("--ff-text-display", "--ff-text-heading"):
+    # only display is the 66px home title; the 48px heading role has no
+    # element reading of its own
+    if name == "--ff-text-display":
         t["$extensions"]["measured"] = "raw/measurements.md#home-title (66px at 1440, -2.31px tracking)"
     typo[role] = t
 typo["$description"] = ("The --ff-text-* type roles, parsed out of their font shorthands: display through "

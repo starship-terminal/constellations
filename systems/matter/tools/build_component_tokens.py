@@ -51,9 +51,11 @@ SPEC = {
             "family": {
                 "system": var("--mr-font-system", "fontFamily"),
                 "camphor": {
-                    "value": 'MR-Camphor, -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+                    # Copied as the h1 computes it, not hand-composed: the earlier literal dropped
+                    # the emoji faces and unquoted "system-ui".
+                    "value": C["hero-h1"]["states"]["default"]["style"]["fontFamily"],
                     "type": "fontFamily",
-                    "source": "computed font-family on the marketing h1 (MR-Camphor, loaded from the site)",
+                    "source": "computed font-family on the marketing h1, raw/components-computed.json hero-h1 (MR-Camphor, loaded from the site)",
                 },
             },
         },

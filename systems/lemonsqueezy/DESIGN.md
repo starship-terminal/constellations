@@ -156,7 +156,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 |---|---|---|
 | Circular Pro Book | Hero and section headings, `@font-face` on the marketing site | Proprietary. Not committed. Fallback: sans-serif |
 | Circular XX | Declared, rarely used on the captured pages | Proprietary. Not committed |
-| Inter | Body, nav, buttons, auth card | SIL Open Font License. The style guide loads it from Google Fonts |
+| Inter | Body, nav, buttons, auth card | SIL Open Font License. The style guide names it and uses it only when it is installed |
 | JetBrains Mono | Declared as `Jetbrainsmono` | SIL Open Font License. Barely used on the marketing pages |
 
 ## Layout
@@ -193,9 +193,11 @@ Focus on marketing links is the browser's default outline (`1px auto`, `#005fcc`
 
 `--dark-mode-bg-lighter` (`#141414`) is declared and unused. It is not a dark theme.
 
-Circular Pro Book and Circular XX are proprietary. The tokens name them and fall back to sans-serif. The font files are not in the repo. The style guide loads Inter from Google Fonts as the UI face.
+Circular Pro Book and Circular XX are proprietary. The tokens name them and fall back to sans-serif. The font files are not in the repo. The style guide loads no web fonts: it names Inter and falls back to the system sans-serif when Inter is not installed.
 
 The docs search dialog was screenshotted and not measured. The selector missed the button.
+
+Five type roles and one colour were never measured and were entered by hand at capture time: `typography.display` (the home h1, 80px), `typography.title` (`.text-size-xlarge`, 26px), `typography.body` (the hero paragraph, 18px / 30.6px), `typography.label` (14px / 500), `typography.code` and `light.surface.scrim`. They carry the Reconstruction label in tokens.json. `size.orchid` is the measured 46.3906px height of the help-centre pill, not a rounded 46px.
 
 The merchant dashboard was not opened. New store signups are closed. The login error colour matches `--red-500`. The native register tooltip is browser chrome, not a designed error.
 

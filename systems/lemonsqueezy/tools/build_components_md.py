@@ -13,6 +13,11 @@ ORDER = [
     ("Chrome", ["banner", "logo", "faq", "price-card", "docs-nav", "mobile-menu", "smp-card", "login-error"]),
 ]
 
+def cell(text):
+    """Text for one Markdown table cell: a pipe or a line break would split the row."""
+    return " ".join(str(text).split()).replace("|", "\\|")
+
+
 def line(key):
     c = C.get(key)
     if not c:
@@ -25,7 +30,7 @@ def line(key):
     bits.append("|---|---|---|---|---|---|")
     for st, s in states.items():
         if s.get("error"):
-            bits.append(f"| {st} | | | | | error: {s['error'][:80]} |")
+            bits.append(f"| {st} | | | | | error: {cell(s['error'][:80])} |")
             continue
         style = s.get("style") or {}
         rect = s.get("rect") or {}

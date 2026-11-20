@@ -273,6 +273,8 @@ async function S(key, target, list, meta = {}, opts = {}) {
 // Clicks a UI toggle (dropdown, menu, sheet trigger). Refuses a submit button
 // and any control whose text names an action this kit must never take.
 const NEVER = /^(send|send message|submit|sign in|log ?in|login|create|add|download|buy|purchase|pay|checkout|join|subscribe|save|apply|accept|reject|start|start now|get started|claim|share|export|select|continue|continue with.*|claim this offer|try again|start for free|sign in to design|sign up)$/i;
+// Every scripted click in this file goes through toggle(), so NEVER applies to
+// the hooks and openers too (edited 2026-11 audit; not run since).
 async function toggle(loc, { allowLink = false } = {}) {
   const l = loc;
   const t = await l.evaluate((el) => ({ tag: el.tagName, type: el.getAttribute('type'), text: (el.innerText || el.getAttribute('aria-label') || '').trim() }));
@@ -357,7 +359,7 @@ async function openMega() {
   await trig.hover({ timeout: 5000 }).catch(() => trig.hover({ timeout: 5000, force: true }));
   await page.waitForTimeout(1200);
   if (await open()) return 'hovered Features to open the mega-menu';
-  await trig.click({ timeout: 4000 }).catch(() => trig.evaluate((el) => el.click()));
+  await toggle(trig, { allowLink: true });
   await page.waitForTimeout(900);
   return (await open()) ? 'clicked Features to open the mega-menu' : 'the mega-menu did not report open';
 }
@@ -371,7 +373,7 @@ async function openMega() {
 async function openSizeGuide() {
   const btn = page.locator('button, [role="button"], a').filter({ hasText: /Size guide/i }).first();
   if (!(await btn.count())) return 'no size-guide control';
-  await btn.click({ timeout: 4000 }).catch(() => btn.evaluate((el) => el.click()));
+  await toggle(btn, { allowLink: true });
   await page.waitForTimeout(1200);
   const open = await page.evaluate(() => { const d = document.querySelector('[role="dialog"], [class*="dialog"], [class*="modal"]'); return d && d.getBoundingClientRect().height > 60; }).catch(() => false);
   return open ? 'clicked "Size guide" to open the size dialog' : 'clicked "Size guide"; the dialog did not report open';
@@ -382,7 +384,7 @@ async function openSizeGuide() {
 async function openDocsSearch() {
   const f = page.locator('button[aria-label="Open search"], button[data-search-item="trigger"], input[placeholder*="earch"], button[aria-label*="earch"], [class*="search"] button, button[class*="search"]').first();
   if (!(await f.count())) return 'no docs search';
-  await f.click({ timeout: 4000 }).catch(() => f.evaluate((el) => el.click()));
+  await toggle(f);
   await page.waitForTimeout(1500);
   const open = await page.evaluate(() => [...document.querySelectorAll('[role="dialog"], [cmdk-root], input[placeholder="Search..."]')].some((d) => { const r = d.getBoundingClientRect(); return r.width > 100 && r.height > 40; })).catch(() => false);
   return open ? 'clicked the docs search to open its dialog' : 'clicked the docs search; the dialog did not report open';
@@ -392,7 +394,7 @@ async function openDocsSearch() {
 async function openDocsThemeMenu() {
   const btn = page.locator('button[aria-label="Change theme preference"], button[aria-label*="theme preference" i]').first();
   if (!(await btn.count())) return 'no theme menu button';
-  await btn.click({ timeout: 4000 }).catch(() => btn.evaluate((el) => el.click()));
+  await toggle(btn, { allowLink: true });
   await page.waitForTimeout(900);
   const open = await page.evaluate(() => { const m = document.querySelector('[role="menu"], [data-radix-popper-content-wrapper]'); return m && m.getBoundingClientRect().height > 40; }).catch(() => false);
   return open ? 'clicked "Change theme preference" to open the theme menu' : 'clicked the theme button; the menu did not report open';
@@ -405,11 +407,11 @@ async function docsDarkOn() {
   if (cur) return 'the docs page already painted html.dark';
   const btn = page.locator('button[aria-label="Change theme preference"], button[aria-label*="theme preference" i]').first();
   if (!(await btn.count())) return 'no theme menu button';
-  await btn.click({ timeout: 4000 }).catch(() => btn.evaluate((el) => el.click()));
+  await toggle(btn, { allowLink: true });
   await page.waitForTimeout(900);
   const dk = page.locator('[role="menu"] *, [data-radix-popper-content-wrapper] *, [role="menuitem"], [role="option"]').filter({ hasText: /^Dark$/ }).first();
   if (!(await dk.count())) { await page.keyboard.press('Escape').catch(() => {}); return 'the theme menu listed no Dark item'; }
-  await dk.click({ timeout: 4000 }).catch(() => dk.evaluate((el) => el.click()));
+  await toggle(dk);
   await page.waitForTimeout(1200);
   return 'chose Dark in the docs site\'s own "Change theme preference" menu — the user-facing toggle';
 }
@@ -440,7 +442,7 @@ async function helpDarkOn() {
       if (!(await fb.count())) return 'no dark-mode toggle';
       b = fb;
     }
-    await b.click({ timeout: 4000 }).catch(() => b.evaluate((el) => el.click()));
+    await toggle(b);
     await page.waitForTimeout(1100);
     const t = await page.evaluate(() => document.documentElement.getAttribute('data-theme')).catch(() => null);
     if (t === 'dark') return 'clicked the help site\'s own colour-mode toggle until data-theme=dark painted — the user-facing control';
@@ -532,7 +534,7 @@ async function pricing() {
   // .plan-features list (.ph-faq-summary is the FAQ disclosure, not a row).
   await S('plan-card', q('.pricing-plans .plan-card'), ['default', 'hover'], { group: g, title: 'Plan card', desc: 'A plan card on /pricing (Free / Pro) — one .plan-card cell inside the .pricing-plans grid.', sel: '.pricing-plans .plan-card' });
   await S('plan-row', q('.plan-card .plan-feature'), ['default'], { group: g, title: 'Plan feature row', desc: 'A .plan-feature row inside a plan card\'s .plan-features list.', sel: '.plan-card .plan-feature' });
-  await S('faq-summary', q('.ph-faq-summary'), [...B4, 'opened'], { group: g, title: 'FAQ disclosure', desc: 'A disclosure button in the pricing FAQ; the opened state was measured after clicking it (a local UI toggle).', sel: '.ph-faq-summary' }, { before: { opened: async (loc) => { await loc.click({ timeout: 4000 }).catch(() => loc.evaluate((el) => el.click())); await page.waitForTimeout(700); return 'clicked the FAQ summary to expand its answer'; } } });
+  await S('faq-summary', q('.ph-faq-summary'), [...B4, 'opened'], { group: g, title: 'FAQ disclosure', desc: 'A disclosure button in the pricing FAQ; the opened state was measured after clicking it (a local UI toggle).', sel: '.ph-faq-summary' }, { before: { opened: async (loc) => { await toggle(loc); await page.waitForTimeout(700); return 'clicked the FAQ summary to expand its answer'; } } });
   save();
 }
 

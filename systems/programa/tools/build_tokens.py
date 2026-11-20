@@ -3,8 +3,11 @@
 
 Programa's tokens were written from computed styles on the live marketing
 site and the signed-out login and register pages. This script does not
-invent values. It refuses a token whose source string is empty, a dimension
-that is not one px length, and a colour that is not hex or rgba().
+invent values or write tokens.json. It refuses a token whose source has no
+evidence label, a Measured, Declared or Derived value that no file in raw/
+holds (raw_check.py normalises both sides), a dimension that is not one px
+length, and a colour that is not hex or rgba(). A value no reading holds is
+labelled Reconstruction, entered by hand at capture time.
 
     python3 tools/build_tokens.py
 """
@@ -14,6 +17,8 @@ import json
 import re
 import sys
 from pathlib import Path
+
+import raw_check
 
 HERE = Path(__file__).resolve().parent.parent
 TOKENS = HERE / "tokens.json"
@@ -38,6 +43,7 @@ def main() -> int:
     data = json.loads(TOKENS.read_text())
     problems = []
     count = 0
+    seen = raw_check.reading_forms(HERE / "raw")
     for set_name in ("core", "light", "app"):
         if set_name not in data:
             problems.append(f"missing set {set_name}")
@@ -45,8 +51,14 @@ def main() -> int:
         for path, token in walk(data[set_name]):
             count += 1
             source = (token.get("$extensions") or {}).get("source") or ""
-            if not any(word in source for word in ("Measured", "Declared", "Derived")):
-                problems.append(f"{set_name}.{path}: source does not say Measured, Declared, or Derived")
+            if source.startswith("Reconstruction"):
+                pass
+            elif any(source.startswith(word) for word in ("Measured", "Declared", "Derived")):
+                gone = raw_check.missing(token, seen)
+                if gone:
+                    problems.append(f"{set_name}.{path}: labelled {source.split()[0]} but raw/ holds no reading of {gone}")
+            else:
+                problems.append(f"{set_name}.{path}: source does not start with Measured, Declared, Derived or Reconstruction")
             kind = token.get("$type")
             value = token.get("$value")
             if kind == "color" and not (isinstance(value, str) and (HEX.match(value) or RGBA.match(value) or value.startswith("{"))):

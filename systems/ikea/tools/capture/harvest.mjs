@@ -5,7 +5,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { chromium } from '/Users/kaichen/.design-systems/pw/node_modules/playwright/index.mjs';
+const pw = await import(process.env.PLAYWRIGHT || 'playwright');
+const { chromium } = pw.default ?? pw;
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const PKG = path.resolve(HERE, '..', '..');
@@ -16,7 +17,7 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
 const BASE = 'https://www.ikea.com/sg/en';
 
 const noUrl = (v) => (typeof v === 'string'
-  ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)')
+  ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)')
   : v);
 
 async function hide(page) {
@@ -24,6 +25,8 @@ async function hide(page) {
 }
 
 async function harvestVars(page) {
+  // noUrl runs here in Node on what the page returns: a url() can carry a signed asset URL.
+  const clean = (o) => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, noUrl(v)]));
   return page.evaluate(() => {
     const declared = {};
     const walk = (list) => {
@@ -58,7 +61,7 @@ async function harvestVars(page) {
       url: location.href,
       title: document.title,
     };
-  });
+  }).then((d) => ({ ...d, declared: clean(d.declared), resolved: clean(d.resolved) }));
 }
 
 const PROPS = ['backgroundColor', 'color', 'borderTopColor', 'borderTopWidth', 'borderTopStyle', 'borderRadius', 'fontFamily', 'fontSize', 'fontWeight', 'lineHeight', 'letterSpacing', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft', 'height', 'boxShadow', 'outlineWidth', 'outlineStyle', 'outlineColor', 'outlineOffset'];
@@ -114,7 +117,6 @@ await shot('button-primary', 'button.pipf-btn--emphasised');
 await shot('button-icon', 'button.pipf-favourite-button');
 await shot('quantity', 'input[name="pipf-quantity-stepper-input"]');
 await shot('search', 'input[name="q"]');
-await shot('price', '.pipcom-price__integer, [class*="pipcom-price"]').catch?.() ;
 await shot('price', '[class*="pipcom-price"]');
 await shot('product-title', 'h1');
 
@@ -124,6 +126,7 @@ if (await add.count()) {
   await add.hover();
   await page.waitForTimeout(250);
   components['button-primary-hover'] = await readEl(page, 'button.pipf-btn--emphasised');
+  await page.mouse.move(2, 2);  // focus is read from rest, not on top of the hover
   await add.focus();
   await page.waitForTimeout(200);
   components['button-primary-focus'] = await readEl(page, 'button.pipf-btn--emphasised');

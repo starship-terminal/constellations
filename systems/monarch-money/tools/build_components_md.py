@@ -58,6 +58,10 @@ def fam(f):
 
 
 def row(state, s, base):
+    if s.get("via") == "focus failed":
+        # D4: keyboard focus never reached the element, so the reading is the element at rest. It is
+        # listed as not captured rather than as "same as default", as the kit does.
+        return f"| {state} | not captured: keyboard focus did not reach the element |  |  |"
     if not s or "style" not in s:
         return f"| {state} | not measured | | | |"
     st = s["style"]

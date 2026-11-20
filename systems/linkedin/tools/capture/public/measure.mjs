@@ -64,8 +64,7 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   // fresh context before recording the route as blocked this run.
   let ok = false;
   for (let tries = 0; tries < 2 && !ok; tries++) {
-    await open(page, url || (/^https?:/.test(URLS[key]) ? URLS[key] : BASE + URLS[key]), { wait, promo });
-    ok = !(await blocked());
+    ok = (await open(page, url || (/^https?:/.test(URLS[key]) ? URLS[key] : BASE + URLS[key]), { wait, promo })) && !(await blocked());
     if (!ok && tries === 0) { log('  challenge, one reload', key); }
   }
   if (!ok) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); liveCtx = null; return false; }
@@ -345,22 +344,25 @@ async function home() {
 
 // The jobs search paints controls inside a virtualized list. Playwright's
 // visibility filter misses them; a main-world mark on a painted box does not.
-async function mark(tag, predSource) {
-  const ok = await page.evaluate(({ tag, predSource }) => {
-    document.querySelectorAll(`[data-m-mark="${tag}"]`).forEach((n) => n.removeAttribute('data-m-mark'));
-    const pred = eval(predSource);
-    const els = [...document.querySelectorAll('a,button,input,h1,li,div')].filter((el) => {
-      const r = el.getBoundingClientRect();
-      if (r.width < 8 || r.height < 8 || r.bottom < 0 || r.top > innerHeight) return false;
-      const cs = getComputedStyle(el);
-      if (cs.visibility === 'hidden' || cs.display === 'none' || Number(cs.opacity) === 0) return false;
-      return pred(el, (el.innerText || el.getAttribute('aria-label') || el.getAttribute('placeholder') || '').replace(/\s+/g, ' ').trim());
-    });
-    const el = els.find((n) => !els.some((o) => o !== n && n.contains(o))) || els[0];
-    if (!el) return false;
-    el.setAttribute('data-m-mark', tag);
-    return true;
-  }, { tag, predSource });
+// The predicate is a real function spliced into the evaluated source, so the
+// page never calls eval (a CSP without 'unsafe-eval' would reject that).
+function markInPage(tag, pred) {
+  document.querySelectorAll(`[data-m-mark="${tag}"]`).forEach((n) => n.removeAttribute('data-m-mark'));
+  const els = [...document.querySelectorAll('a,button,input,h1,li,div')].filter((el) => {
+    const r = el.getBoundingClientRect();
+    if (r.width < 8 || r.height < 8 || r.bottom < 0 || r.top > innerHeight) return false;
+    const cs = getComputedStyle(el);
+    if (cs.visibility === 'hidden' || cs.display === 'none' || Number(cs.opacity) === 0) return false;
+    return pred(el, (el.innerText || el.getAttribute('aria-label') || el.getAttribute('placeholder') || '').replace(/\s+/g, ' ').trim());
+  });
+  const el = els.find((n) => !els.some((o) => o !== n && n.contains(o))) || els[0];
+  if (!el) return false;
+  el.setAttribute('data-m-mark', tag);
+  return true;
+}
+
+async function mark(tag, pred) {
+  const ok = await page.evaluate(`(${markInPage})(${JSON.stringify(tag)}, ${pred})`).catch(() => false);
   return ok ? q(`[data-m-mark="${tag}"]`) : q('[data-m-mark="__none__"]');
 }
 
@@ -374,11 +376,11 @@ async function jobs() {
     document.querySelectorAll('*').forEach((e) => { if (e.scrollTop) e.scrollTop = 0; });
   });
   await page.waitForTimeout(800);
-  await S('jobs-h1', await mark('jobs-h1', '(el, t) => el.tagName === "H1" && /Designer Jobs/.test(t)'), ['default'], { group: g, title: 'Results heading', desc: 'The jobs-search results heading, as the page painted it for this capture IP.', sel: 'h1' }, { noScroll: true });
-  await S('filter-chip', await mark('filter-chip', '(el, t) => el.tagName === "BUTTON" && t === "Date posted"'), [...B4, 'opened'], { group: g, title: 'Filter chip', desc: '"Date posted" filter chip. Opened as a local dropdown, never submitted.', sel: 'button' }, { noScroll: true });
-  await S('job-row', await mark('job-row', '(el, t) => el.tagName === "LI" && /Designer/.test(t) && el.getBoundingClientRect().height < 220'), ['default', 'hover', 'focus-visible'], { group: g, title: 'Job card', desc: 'A job result card on the public search. Measured, never followed. Apply was not clicked.', sel: 'li' });
-  await S('apply-cta', await mark('apply-cta', '(el, t) => /^(A|BUTTON)$/.test(el.tagName) && t === "Apply"'), B4, { group: g, title: 'Apply', desc: '"Apply" on the job detail pane. A sign-in destination, measured, never followed.', sel: 'button' });
-  await S('search-keyword', await mark('search-keyword', '(el, t) => el.tagName === "INPUT" && /title|keyword|Search job/i.test((el.getAttribute("aria-label") || "") + " " + (el.getAttribute("placeholder") || "") + " " + t)'), ['default'], { group: g, title: 'Keyword field', desc: 'The jobs keyword field, when it is painted. Nothing was typed or submitted on this pass.', sel: 'input' }, { noScroll: true });
+  await S('jobs-h1', await mark('jobs-h1', (el, t) => el.tagName === "H1" && /Designer Jobs/.test(t)), ['default'], { group: g, title: 'Results heading', desc: 'The jobs-search results heading, as the page painted it for this capture IP.', sel: 'h1' }, { noScroll: true });
+  await S('filter-chip', await mark('filter-chip', (el, t) => el.tagName === "BUTTON" && t === "Date posted"), [...B4, 'opened'], { group: g, title: 'Filter chip', desc: '"Date posted" filter chip. Opened as a local dropdown, never submitted.', sel: 'button' }, { noScroll: true });
+  await S('job-row', await mark('job-row', (el, t) => el.tagName === "LI" && /Designer/.test(t) && el.getBoundingClientRect().height < 220), ['default', 'hover', 'focus-visible'], { group: g, title: 'Job card', desc: 'A job result card on the public search. Measured, never followed. Apply was not clicked.', sel: 'li' });
+  await S('apply-cta', await mark('apply-cta', (el, t) => /^(A|BUTTON)$/.test(el.tagName) && t === "Apply"), B4, { group: g, title: 'Apply', desc: '"Apply" on the job detail pane. A sign-in destination, measured, never followed.', sel: 'button' });
+  await S('search-keyword', await mark('search-keyword', (el, t) => el.tagName === "INPUT" && /title|keyword|Search job/i.test((el.getAttribute("aria-label") || "") + " " + (el.getAttribute("placeholder") || "") + " " + t)), ['default'], { group: g, title: 'Keyword field', desc: 'The jobs keyword field, when it is painted. Nothing was typed or submitted on this pass.', sel: 'input' }, { noScroll: true });
 }
 
 async function company() {
@@ -389,7 +391,7 @@ async function company() {
   await S('company-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Company name', desc: 'The public company page title.', sel: 'h1' }, { noScroll: true });
   await S('company-follow', exact('button, a', 'Follow'), B4, { group: g, title: 'Follow', desc: '"Follow" on the company top card. A sign-in destination, measured, never followed.', sel: 'button' }, { noScroll: true });
   await S('company-jobs', exact('a, button', 'See jobs'), B4, { group: g, title: 'See jobs', desc: '"See jobs" primary pill. Measured, never followed.', sel: 'a' }, { noScroll: true });
-  await S('company-tab', await mark('company-tab', '(el, t) => /^(A|BUTTON)$/.test(el.tagName) && t === "About us" && el.getBoundingClientRect().height >= 32 && el.getBoundingClientRect().height <= 64'), ['default', 'hover', 'focus-visible'], { group: g, title: 'Company tab', desc: 'The About us tab on the company page. Measured, never followed.', sel: 'a' });
+  await S('company-tab', await mark('company-tab', (el, t) => /^(A|BUTTON)$/.test(el.tagName) && t === "About us" && el.getBoundingClientRect().height >= 32 && el.getBoundingClientRect().height <= 64), ['default', 'hover', 'focus-visible'], { group: g, title: 'Company tab', desc: 'The About us tab on the company page. Measured, never followed.', sel: 'a' });
 }
 
 async function profile() {

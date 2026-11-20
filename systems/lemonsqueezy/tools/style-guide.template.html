@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lemon Squeezy style guide</title>
 <meta name="description" content="Lemon Squeezy public-site tokens, rendered from tokens.json. Captured 2026-11-18, signed out.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <style>
 :root {
 /*CORE*/
@@ -85,7 +83,11 @@ function add(title, items) {
     const i = document.createElement('i');
     i.style.background = value;
     const t = document.createElement('div');
-    t.innerHTML = '<b>' + name + '</b><span>' + value + '</span>';
+    const b = document.createElement('b');
+    b.textContent = name;
+    const sp = document.createElement('span');
+    sp.textContent = value;
+    t.append(b, sp);
     sw.append(i, t);
     pal.appendChild(sw);
   }

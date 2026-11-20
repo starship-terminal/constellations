@@ -36,7 +36,6 @@ export const M = (name) => `[class*="${name}"]`;
 
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }

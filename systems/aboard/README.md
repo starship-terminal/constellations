@@ -94,6 +94,7 @@ Font sizes on this site are fluid (`clamp()` everywhere), so every size token is
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **Screenshots are 256-colour PNGs.** Gradients, photography and the frosted nav pill band slightly; read exact colours from tokens.json or the raw files.
 - **Font sizes are fluid.** The px values in `core.font.size` are resolved at 1440 wide; scale them or re-measure for another width (see `font.size.m-display` for the 390 hero step). The `--wp--preset--font-size--*` presets in css-vars.json are the theme's own steps and differ from what the `.rd-*` classes paint.
 - **The four `cookie-*` components are recorded missing.** CookieYes never rendered headless, so `home-light-cookie-banner.png` shows the page without the strip; the consent mock in style-guide.html is a placeholder, not a measurement.
@@ -165,7 +166,7 @@ PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/measure.mjs home newsletter mobile
 ```
 
-`public.mjs` re-takes the screenshot set into `~/.design-systems/aboard/raw-shots` (outside the repo); `python3 tools/capture/quantize.py ~/.design-systems/aboard/raw-shots` stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs`, `layout.mjs` and `icons.mjs` rewrite their raw or icon files whole. `lib.mjs` holds the shared helpers, including the consent-strip hide and the `navigator.webdriver` masking.
+`public.mjs` re-takes the screenshot set into `~/.design-systems/aboard/raw-shots` (outside the repo); `python3 tools/capture/quantize.py ~/.design-systems/aboard/raw-shots` stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs`, `layout.mjs` and `icons.mjs` rewrite their raw or icon files whole. `lib.mjs` holds the shared helpers, including the consent-strip hide (it no longer masks `navigator.webdriver`).
 
 ## Use in Figma
 

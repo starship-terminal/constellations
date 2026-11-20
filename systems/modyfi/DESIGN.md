@@ -147,6 +147,11 @@ Jokker is a commercial face and is not in this package. The style guide falls ba
 Untitled UI and Relume names in the stylesheet (`--untitled-ui-*`, `--relume-library-lite-*`) are library leftovers. They are in `raw/css-vars.json` and are not the marketing palette.
 
 Sign up at rest is a transparent pill with a 2px `rgba(255, 3, 87, 0.47)` border. Hover fills it `#ff0357`. An earlier pass that hovered the control before reading rest recorded the fill as the default. `raw/crops-measured.json` is the resting read.
+`tools/build_from_readings.py` now takes each default it can from that file, so [raw/components-computed.json](raw/components-computed.json) also says transparent.
+
+The Primary call to action's focus-visible row has no saved reading. Its values were entered by hand, after a programmatic `focus()`, so its `rgb(153, 200, 255) auto 1px` outline is the browser's default ring, not a Modyfi style. It is labelled Reconstruction.
+
+[raw/motion.json](raw/motion.json) says `no-motion`, but the capture read no computed transition. Read it as not captured. `tools/capture/run.mjs` now writes `not-captured`.
 
 ### Do and don't (from README.md)
 

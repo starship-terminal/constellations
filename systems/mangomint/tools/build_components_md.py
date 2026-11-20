@@ -23,9 +23,20 @@ def rgb(c):
     return c if c else ""
 
 
+def cell(text):
+    """A table cell: a pipe would split it and a newline would end the row."""
+    return " ".join(str(text).split()).replace("|", "\\|")
+
+
 def line(state, s):
+    if "skipped" in s:
+        return f"| {cell(state)} | not captured: {cell(s['skipped'])} | |"
+    if s.get("via") == "focus failed":
+        # D4: keyboard focus never reached the element, so the reading is the element at rest. It is
+        # listed as not captured rather than shown as the focus state (the kit's builder does this).
+        return f"| {cell(state)} | not captured: keyboard focus did not reach the element | |"
     if "error" in s:
-        return f"| {state} | not read: {s['error'][:80]} |"
+        return f"| {cell(state)} | not read: {cell(s['error'][:80])} | |"
     st = s.get("style") or {}
     bits = [
         st.get("fontSize", ""),
@@ -37,12 +48,12 @@ def line(state, s):
     ]
     crop = s.get("crop")
     link = f"[crop]({crop})" if crop else ""
-    return "| " + state + " | " + " · ".join(b for b in bits if b) + " | " + link + " |"
+    return "| " + cell(state) + " | " + cell(" · ".join(str(b) for b in bits if b)) + " | " + link + " |"
 
 
 parts = ["# Mangomint components", "",
          "Measured on the public pages, 2026-11-18, desktop 1440. Nothing was submitted, signed into, or booked.",
-         "Pressed rows are CDP `forcePseudoState` (`:active` and `:hover`). A focus row whose `via` is `focus failed` did not land.",
+         "Pressed rows are CDP `forcePseudoState` (`:active` and `:hover`). A focus row that keyboard focus never reached is listed as not captured. The pressed rows of Book a demo, Try it now, Businesses and Log In equal their default: the 2026-11-18 run forced the first pressed control on each page again, so they are not pressed readings.",
          ""]
 for key in ORDER:
     c = C.get(key)

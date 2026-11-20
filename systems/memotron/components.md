@@ -58,7 +58,7 @@ Pricing plan card: border 1px brs3, radius about 12px, icon, title, price, featu
 
 ## Menu
 
-Resources opens a panel of five tiles (Features, Tutorials, FAQs, Changelog, Roadmap) under the nav. Captured in [screenshots/home-dark-resources-menu.png](../screenshots/home-dark-resources-menu.png).
+Resources opens a panel of five tiles (Features, Tutorials, FAQs, Changelog, Roadmap) under the nav. Captured in [screenshots/home-dark-resources-menu.png](screenshots/home-dark-resources-menu.png).
 
 ## Segmented control
 

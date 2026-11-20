@@ -150,7 +150,7 @@ def build():
         },
         "motion": {
             "duration": {
-                "default": dim("250ms", src + " .transition duration 0.25s"),
+                "default": tok("duration", "250ms", src + " .transition duration 0.25s"),
             },
             "easing": {
                 "standard": tok("cubicBezier", [0.25, 0, 0, 1], src + " .transition timing-function"),
@@ -174,7 +174,9 @@ def build():
         "accentHover": color(c["blue110"], src + " hover:bg-blue-110 declared, not shown"),
         "border": {
             "default": color(c["borderHex"], src + " .border-neutral-25-hex"),
-            "subtle": color("#3b4c6a", src + " cookie banner border rgba(59, 76, 106, 0.15); token stores the opaque neutral"),
+            # The alpha is kept (0.15 -> 26). raw/ holds no reading of this border, so it is a hand entry.
+            "subtle": color("#3b4c6a26", "Reconstruction: entered by hand at capture time from the cookie banner "
+                            "border, computed rgba(59, 76, 106, 0.15) (" + src + "); no raw/ file holds this reading"),
         },
         "status": {
             "magenta": color(c["magenta"], src + " Metrics button"),
@@ -230,9 +232,9 @@ def build():
             {"name": "dark", "selectedTokenSets": {"core": "enabled", "dark": "enabled"}},
         ],
     }
-    OUT.write_text(json.dumps(doc, indent=2) + "\n")
-    print(OUT)
+    return doc
 
 
 if __name__ == "__main__":
-    build()
+    OUT.write_text(json.dumps(build(), indent=2) + "\n")
+    print(OUT)

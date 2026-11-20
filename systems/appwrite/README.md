@@ -103,6 +103,7 @@ Nothing was signed into, sent, created or submitted. The public marketing surfac
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **Dark is painted, light is declared.** Every captured route pins `html.dark`; the `dark` set is measured evidence, the `light` set is the `:root` declaration the console app uses — never seen on these pages.
 - **The page lies about devicePixelRatio.** appwrite.io's scripts make `window.devicePixelRatio` read 1 while the renderer paints at 2x; the `.capture.json` sidecars record both (`devicePixelRatio` real, `reportedDevicePixelRatio` the page's).
 - **`component.*` tokens live on the dark set only** (the painted theme); they are measured heights/radii, not site variables.

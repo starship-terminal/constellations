@@ -2,6 +2,7 @@
 """Write style-guide.html from tokens.json. No values of its own."""
 from __future__ import annotations
 
+import html as html_lib
 import json
 from pathlib import Path
 
@@ -51,6 +52,8 @@ def type_row(name: str) -> str:
     size = style["fontSize"]
     weight = style["fontWeight"]
     line = style["lineHeight"]
+    # escape every value put in the attribute: a stack like "Graphik Web", ... would close it
+    family, size, weight, line = (html_lib.escape(str(v), quote=True) for v in (family, size, weight, line))
     return (
         f'<div class="type" style="font-family:{family};font-size:{size};'
         f'font-weight:{weight};line-height:{line}">'
@@ -119,8 +122,8 @@ html = f"""<!doctype html>
   <div class="swatches" id="swatches">{swatches("light")}</div>
 </main>
 <script>
-  const light = {json.dumps(swatches("light"))};
-  const dark = {json.dumps(swatches("dark"))};
+  const light = {json.dumps(swatches("light")).replace("<", "\\u003c")};
+  const dark = {json.dumps(swatches("dark")).replace("<", "\\u003c")};
   document.getElementById("theme").addEventListener("click", () => {{
     const html = document.documentElement;
     const next = html.dataset.theme === "light" ? "dark" : "light";

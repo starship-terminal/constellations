@@ -150,7 +150,7 @@ python3 tools/build_style_guide.py
 python3 tools/build_components_md.py
 ```
 
-`build_tokens.py` in this package checks that [tokens.json](tokens.json) still matches [raw/computed-root.json](raw/computed-root.json) for the semantic colours. It does not browse the site. Re-reading the live page needs the T3 preview browser. Do not point headless Playwright at `www.meta.ai` while curl returns 403.
+`build_tokens.py` in this package checks that [tokens.json](tokens.json) still matches [raw/computed-root.json](raw/computed-root.json) for the semantic colours. It does not browse the site. None of the three scripts writes a file. [tokens.json](tokens.json), [style-guide.html](style-guide.html) and [components.md](components.md) are written by hand from the readings; `build_style_guide.py` and `build_components_md.py` only check that their file still names the measured values. After a recapture, update all three by hand. Re-reading the live page needs the T3 preview browser. Do not point headless Playwright at `www.meta.ai` while curl returns 403.
 
 ## Product note
 

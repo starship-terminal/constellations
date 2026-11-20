@@ -11,6 +11,7 @@ No token is invented. A role the page did not show is left out.
 """
 
 import json
+import re
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent.parent
@@ -22,32 +23,53 @@ COMP = "computed style on a live element, https://portrait.so/, light, 1169px, 2
 DARK = "computed style after documentElement data-mode=dark, same page, 2026-11-19. Forced attribute, not a live theme control."
 
 
+HAND = "Reconstruction: entered by hand at capture time from a live reading that raw/ does not hold (raw/css-vars.json keeps only the --color-* custom properties)"
+
+
 def hex_of(value):
     return "#ffffff" if value == "#fff" else "#000000" if value == "#000" else value
 
 
-def color_token(value, source):
-    return {"$type": "color", "$value": value, "$extensions": {"source": source, "evidence": "Measured"}}
+def ext(source, measured):
+    """A value raw/ holds is Measured; anything else was typed in from a reading that was not saved."""
+    if measured:
+        return {"source": source, "evidence": "Measured"}
+    return {"source": f"{source}. {HAND}", "evidence": "Reconstruction"}
+
+
+def color_token(value, source, measured=False):
+    return {"$type": "color", "$value": value, "$extensions": ext(source, measured)}
 
 
 def dim(value, source):
-    return {"$type": "dimension", "$value": value, "$extensions": {"source": source, "evidence": "Measured"}}
+    return {"$type": "dimension", "$value": value, "$extensions": ext(source, False)}
 
 
 def num(value, source):
-    return {"$type": "number", "$value": value, "$extensions": {"source": source, "evidence": "Measured"}}
+    return {"$type": "number", "$value": value, "$extensions": ext(source, False)}
 
 
 def font(value, source):
-    return {"$type": "fontFamily", "$value": value, "$extensions": {"source": source, "evidence": "Measured"}}
+    return {"$type": "fontFamily", "$value": value, "$extensions": ext(source, False)}
 
 
-def other(value, source):
-    return {"$value": value, "$extensions": {"source": source, "evidence": "Measured"}}
+def shadow(value, source):
+    return {"$type": "shadow", "$value": value, "$extensions": ext(source, False)}
+
+
+def duration(value, source):
+    return {"$type": "duration", "$value": value, "$extensions": ext(source, False)}
+
+
+def cubic(value, source):
+    """cubic-bezier(a, b, c, d) as the DTCG four-number list."""
+    nums = [float(n) for n in re.fullmatch(r"cubic-bezier\(([^)]*)\)", value).group(1).split(",")]
+    nums = [int(n) if n.is_integer() else n for n in nums]
+    return {"$type": "cubicBezier", "$value": nums, "$extensions": ext(source + f" ({value})", False)}
 
 
 def alias(ref, source, type_="color"):
-    return {"$type": type_, "$value": ref, "$extensions": {"source": source, "evidence": "Measured"}}
+    return {"$type": type_, "$value": ref, "$extensions": ext(source, False)}
 
 
 def ramp(prefix):
@@ -57,7 +79,7 @@ def ramp(prefix):
         if not key.startswith(needle):
             continue
         step = key[len(needle):]
-        out[step] = color_token(hex_of(COLORS[key]), VAR + f" {key}")
+        out[step] = color_token(hex_of(COLORS[key]), VAR + f" {key}", measured=True)
     return out
 
 
@@ -70,14 +92,15 @@ def typography(family, size, weight, line_height, source, tracking=None):
     }
     if tracking:
         value["letterSpacing"] = tracking
-    return {"$type": "typography", "$value": value, "$extensions": {"source": source, "evidence": "Measured"}}
+    return {"$type": "typography", "$value": value, "$extensions": ext(source, False)}
 
 
-def main():
+def build():
+    """The token document, without writing it."""
     core = {
         "color": {
-            "black": color_token("#000000", VAR + " --color-black"),
-            "white": color_token("#ffffff", VAR + " --color-white"),
+            "black": color_token(hex_of(COLORS["--color-black"]), VAR + " --color-black", measured=True),
+            "white": color_token(hex_of(COLORS["--color-white"]), VAR + " --color-white", measured=True),
             "gray": ramp("gray"),
             "brand": {
                 "blue": ramp("brand-blue"),
@@ -112,10 +135,10 @@ def main():
             "h3": typography("{font.family.display}", "37.44px", 500, 1.08, COMP + " h2.text-h3-fluid computed 37.4425px", "-0.0256em"),
             "h4": typography("{font.family.display}", "31.25px", 500, 1.1, VAR + " --text-h4 1.9531rem; h2.text-h4 computed 31.2496px", "-0.02048em"),
             "h6": typography("{font.family.display}", "20px", 500, 1.2, VAR + " --text-h6 1.25rem; h3.text-h6 computed 20px", "-0.0131em"),
-            "body": typography("{font.sans}", "16px", 400, 1.5, COMP + " body 16px / 24px"),
-            "body-lg": typography("{font.sans}", "18px", 400, 1.5, COMP + " hero lede computed 18px"),
-            "label": typography("{font.sans}", "14px", 540, 1.43, COMP + " header Log in face 14px / 20px / weight 540"),
-            "caption": typography("{font.sans}", "12px", 600, 1.33, COMP + " New badge 12px / weight 600"),
+            "body": typography("{font.family.sans}", "16px", 400, 1.5, COMP + " body 16px / 24px"),
+            "body-lg": typography("{font.family.sans}", "18px", 400, 1.5, COMP + " hero lede computed 18px"),
+            "label": typography("{font.family.sans}", "14px", 540, 1.43, COMP + " header Log in face 14px / 20px / weight 540"),
+            "caption": typography("{font.family.sans}", "12px", 600, 1.33, COMP + " New badge 12px / weight 600"),
         },
         "radius": {
             "xs": dim("2px", VAR + " --radius-xs .125rem"),
@@ -147,31 +170,30 @@ def main():
             "code": dim("58px", COMP + " confirmation-code cell height 58px, width 46px"),
             "icon-button": dim("44px", COMP + " editor trailing icon button 44px"),
             "avatar": dim("28px", COMP + " editor Account avatar 28px"),
-            "focus-ring": dim("3px", COMP + " outline-width 3px (style none until focus)"),
         },
         "border": {"width": dim("1px", COMP + " username field and email input border 1px")},
         "shadow": {
-            "sm": other(
+            "sm": shadow(
                 "0 16px 16px -8px #00000008, 0 10px 10px -5px #00000008, 0 5px 5px -2.5px #00000008, 0 3px 3px -1.5px #00000008, 0 2px 2px -1px #00000008, 0 1px 1px -0.5px #00000008",
                 COMP + " primary button face box-shadow layers at rgba(0,0,0,0.03)",
             ),
-            "lg": other(
+            "lg": shadow(
                 "0 28px 28px -14px #0000000f, 0 16px 16px -8px #0000000d",
                 "computed .shadow-lg utility, first two painted layers. Signup hover class is group-hocus/button:shadow-lg.",
             ),
         },
         "motion": {
             "duration": {
-                "fast": other("150ms", VAR + " --default-transition-duration .15s"),
-                "accordion": other("200ms", VAR + " --animate-accordion-open .2s"),
-                "slide": other("600ms", VAR + " --animate-slide-up .6s"),
+                "fast": duration("150ms", VAR + " --default-transition-duration .15s"),
+                "accordion": duration("200ms", VAR + " --animate-accordion-open .2s"),
+                "slide": duration("600ms", VAR + " --animate-slide-up .6s"),
             },
             "easing": {
-                "standard": other("cubic-bezier(0.4, 0, 0.2, 1)", VAR + " --default-transition-timing-function"),
-                "out": other("cubic-bezier(0, 0, 0.2, 1)", VAR + " --ease-out"),
-                "in": other("cubic-bezier(0.4, 0, 1, 1)", VAR + " --ease-in"),
-                "out-smooth": other("cubic-bezier(0.26, 0.08, 0.25, 1)", VAR + " --ease-out-smooth"),
-                "dropdown": other("cubic-bezier(0.16, 1, 0.3, 1)", VAR + " --animate-dropdown-in"),
+                "standard": cubic("cubic-bezier(0.4, 0, 0.2, 1)", VAR + " --default-transition-timing-function"),
+                "out": cubic("cubic-bezier(0, 0, 0.2, 1)", VAR + " --ease-out"),
+                "in": cubic("cubic-bezier(0.4, 0, 1, 1)", VAR + " --ease-in"),
+                "out-smooth": cubic("cubic-bezier(0.26, 0.08, 0.25, 1)", VAR + " --ease-out-smooth"),
+                "dropdown": cubic("cubic-bezier(0.16, 1, 0.3, 1)", VAR + " --animate-dropdown-in"),
             },
         },
         "layout": {
@@ -205,7 +227,6 @@ def main():
             "border": {
                 "default": alias("{color.gray.50}", COMP + " username field border rgb(222, 222, 222)"),
                 "input": color_token("#ebebeb", COMP + " email input border rgb(235, 235, 235). Not a named gray step."),
-                "focus": color_token("#e59700", COMP + " focused Log in outline-color rgb(229, 151, 0); outline-style was none"),
             },
             "action": {
                 "fill": alias("{color.gray.700}", COMP + " Create your Portrait face background rgb(44, 44, 44)"),
@@ -282,7 +303,11 @@ def main():
             {"id": "dark", "name": "dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}},
         ],
     }
-    (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
+    return tokens
+
+
+def main():
+    (HERE / "tokens.json").write_text(json.dumps(build(), indent=2) + "\n")
     print("wrote", HERE / "tokens.json")
 
 

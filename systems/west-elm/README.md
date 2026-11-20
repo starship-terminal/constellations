@@ -78,7 +78,7 @@ Everything was read from the live page in the T3 preview browser, signed out.
 - Custom properties on the page are Tailwind internals (`--tw-*`) plus a few animation variables. West Elm does not expose a `:root` design-token layer. Colours and type were read with `getComputedStyle` on the elements named in [raw/readings.json](raw/readings.json).
 - Same-origin stylesheets were fetched and searched for button, focus and banner rules: `global-we-486d7fda434f11c2ad3eb0e98c1067c705836808.css` and `content-we-534fcc0714be69e51163ae92750dfff97dbcb28c.css`.
 - The email overlay was measured, then dismissed with NO THANKS. It was not submitted.
-- `tools/build_tokens.py` writes tokens.json from those readings. `tools/build_style_guide.py` and `tools/build_components_md.py` write the guide and the inventory.
+- `tools/build_tokens.py` writes tokens.json from those readings. `tools/build_style_guide.py` and `tools/build_components_md.py` write the guide and the inventory. The inventory's text, values included, was typed into `build_components_md.py` at capture time; it does not read raw/, so a recapture must update that text by hand.
 
 ## What to distrust
 

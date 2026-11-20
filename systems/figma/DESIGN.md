@@ -49,7 +49,6 @@ colors:
   form-fieldBg: "rgba(0, 0, 0, 0.08)"
   form-fieldInk: "#000000"
   form-placeholder: "#000000"
-  surface-planCardBg: "rgba(0, 0, 0, 0)"
   background-page: "#ffffff"
 rounded:
   "12": "12px"
@@ -159,6 +158,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **The forms.** Contact, login, signup and Make prompt fields were typed into then cleared — validation, error, loading and success states are unverified because nothing was submitted. `/contact`'s `name=topic` input is a display:none honeypot; the measured `field-topic` is the visible unnamed text input beside it.
 - **Detail pages.** The community, blog, customers and careers indexes were captured; individual community files, posts, case studies and job ads were not opened (careers links out to an external ATS — out of scope).
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw values, never the pixels.
+- **Unpainted fills are not tokens.** The product shell's Google button and community search compute a transparent `backgroundColor`, and the plan card's reading matched only the transparent `--fig-theme-btn-ghost-bg`; `core.component.productShell.google-btn-fill`, `comm-search-bg` and `light.surface.planCardBg` were dropped in the 2026-11 audit. The declared transparent theme variables stay: they are what the sheet declares.
 
 ### Do and don't (from README.md)
 

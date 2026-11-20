@@ -33,7 +33,7 @@ export const RAW = path.join(REF, 'raw');
 // hidden, never answered.
 export const M = (name) => `[class*="${name}"]`;
 
-// The per-context patches every page gets: the webdriver mask, plus a record of
+// The per-context patches every page gets (no webdriver mask: a bot check is a boundary), plus a record of
 // the real devicePixelRatio before app code runs — inherited from the butter
 // copy in case the site's scripts make
 // window.devicePixelRatio read 1 while the renderer still paints at the
@@ -41,7 +41,7 @@ export const M = (name) => `[class*="${name}"]`;
 // __captureDPR keeps the launch-time value for the screenshot sidecar.
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }

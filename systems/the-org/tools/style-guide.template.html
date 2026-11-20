@@ -105,6 +105,8 @@ function val(set, path) {
   for (const p of path.split(".")) n = n && n[p];
   return n && n.v;
 }
+// Token names and values come from third-party CSS: escape them before they reach innerHTML.
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
 const roles = [
   ["page", "color.page"], ["surface", "color.surface"], ["text", "color.text"],
   ["muted", "color.muted"], ["accent", "color.accent"], ["border", "color.border"],
@@ -112,16 +114,16 @@ const roles = [
   ["danger", "color.danger"], ["success", "color.success"], ["warning", "color.warning"]
 ];
 document.getElementById("swatches").innerHTML = roles.map(([name, path]) =>
-  `<div class="sw"><i style="background:${css(path)}"></i><div><b>${name}</b><span>${val("light", path)}</span></div></div>`
+  `<div class="sw"><i style="background:${esc(css(path))}"></i><div><b>${esc(name)}</b><span>${esc(val("light", path))}</span></div></div>`
 ).join("");
 const type = TOKENS.core.typography || {};
 document.getElementById("type").innerHTML = "<table><tr><th>Role</th><th>Size</th><th>Weight</th><th>Line</th></tr>" +
-  Object.entries(type).map(([k, t]) => `<tr><td><code>${k}</code></td><td>${t.v.fontSize}</td><td>${t.v.fontWeight}</td><td>${t.v.lineHeight}</td></tr>`).join("") + "</table>";
+  Object.entries(type).map(([k, t]) => `<tr><td><code>${esc(k)}</code></td><td>${esc(t.v.fontSize)}</td><td>${esc(t.v.fontWeight)}</td><td>${esc(t.v.lineHeight)}</td></tr>`).join("") + "</table>";
 document.getElementById("space").innerHTML = Object.entries(TOKENS.core.space).map(([k, t]) =>
-  `<div style="display:flex;align-items:center;gap:8px;margin:4px 0"><i style="display:block;height:12px;width:${t.v};background:var(--color-accent)"></i><code>space.${k} ${t.v}</code></div>`
+  `<div style="display:flex;align-items:center;gap:8px;margin:4px 0"><i style="display:block;height:12px;width:${esc(t.v)};background:var(--color-accent)"></i><code>space.${esc(k)} ${esc(t.v)}</code></div>`
 ).join("");
 document.getElementById("radius").innerHTML = Object.entries(TOKENS.core.radius).map(([k, t]) =>
-  `<div style="display:inline-flex;flex-direction:column;align-items:center;margin:8px 12px 8px 0"><i style="width:64px;height:40px;border:1px solid var(--color-border);border-radius:${t.v};display:block"></i><code>${k} ${t.v}</code></div>`
+  `<div style="display:inline-flex;flex-direction:column;align-items:center;margin:8px 12px 8px 0"><i style="width:64px;height:40px;border:1px solid var(--color-border);border-radius:${esc(t.v)};display:block"></i><code>${esc(k)} ${esc(t.v)}</code></div>`
 ).join("");
 </script>
 </body>

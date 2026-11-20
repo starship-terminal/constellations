@@ -62,7 +62,7 @@ def css_val(name, t):
 
 
 # A light-only product has no dark set; every set that is missing renders as empty.
-SETS = [s for s in ("core", "light", "dark") if s in T]
+SETS = [s for s in ("core", "light", "dark", "auth") if s in T]
 THEMES = [s for s in SETS if s != "core"]
 
 
@@ -95,7 +95,7 @@ def slim(node):
 
 # Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" or "<!--"
 # from ending the script early. JSON.parse and a JS literal read it back unchanged.
-data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "dark")},
+data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "dark", "auth")},
                   ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
 
 _uid = [0]
@@ -123,7 +123,7 @@ def icon(m):
 
 
 tpl = (HERE / "tools" / "style-guide.template.html").read_text()
-html = (tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*DARK*/", block("dark"))
+html = (tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*DARK*/", block("dark")).replace("/*AUTH*/", block("auth"))
         .replace("/*TOKENS*/null", data))
 html = re.sub(r"<!--icon:([a-z0-9-]+)(?::(\d+))?-->", icon, html)
 (HERE / "style-guide.html").write_text(html)

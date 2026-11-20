@@ -18,7 +18,7 @@
 //   anything else  a resting state reached by the page itself
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, UA, UA_MOBILE, launch, open, sweepOverlays, firstRoomHref, styleOf, crop, centre, markFixed, RAW, REF } from './lib.mjs';
+import { BASE, UA, UA_MOBILE, launch, open, sweepOverlays, firstRoomHref, styleOf, crop, centre, markFixed, RAW, REF, assertProductPage } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -52,6 +52,7 @@ async function newPage(key, { mobile = false, sweep = 'sweep', wait = 9000 } = {
   await cdp.send('CSS.enable');
   log('open', key, mobile ? '(mobile)' : '', urlFor(key));
   await open(page, urlFor(key), { wait, sweep });
+  await assertProductPage(page);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   await markFixed(page);
 }
@@ -624,7 +625,7 @@ for (const name of process.argv.slice(2).length ? wanted : Object.keys(ALL)) {
   // page for the href.
   const mob = name === 'mobile';
   context = await browser.newContext({ viewport: { width: mob ? 390 : 1440, height: mob ? 844 : 900 }, deviceScaleFactor: mob ? 2 : 2, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US', reducedMotion: 'no-preference' });
-  await context.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
   if (name === 'room' && !roomHref) {
     const p = await context.newPage();
     await open(p, BASE + '/s/Tokyo--Japan/homes', { wait: 8000 });

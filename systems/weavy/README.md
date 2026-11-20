@@ -69,7 +69,7 @@ Computed styles were read in the T3 preview tab on the live pages: home, pricing
 
 ## What to distrust
 
-The dark set is declared, not painted. The sign-in page had no `data-preferred-theme` attribute. Enterprise's grey field is a video under a 50% black gradient, not a token. `--brand--azure` is the CSS keyword `azure`, while the Contact Sales hover computed `#f0ffff`. Several `--wv--*` names are declared and unused on the pages that were read. Screenshots are headless Playwright of the public URLs because preview_snapshot returned "The browser is not producing screenshot frames". The sign-in page has no screenshot. Do not read colours off the PNGs.
+The dark set is declared, not painted. The sign-in page had no `data-preferred-theme` attribute. Eleven dark roles and the three light status fills (`danger`, `success`, `warning`) were resolved from the stylesheet ramps but are not in [raw/readings.json](raw/readings.json); they are labelled Reconstruction, entered by hand at capture time. Enterprise's grey field is a video under a 50% black gradient, not a token. `--brand--azure` is the CSS keyword `azure`, while the Contact Sales hover computed `#f0ffff`. Several `--wv--*` names are declared and unused on the pages that were read. Screenshots are headless Playwright of the public URLs because preview_snapshot returned "The browser is not producing screenshot frames". The sign-in page has no screenshot. Do not read colours off the PNGs.
 
 ## Fonts
 

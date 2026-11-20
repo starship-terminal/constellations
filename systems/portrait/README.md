@@ -6,7 +6,7 @@ Portrait (portrait.so) is a link-in-bio and wallet product. This package records
 |---|---|
 | [README.md](README.md) | This file |
 | [DESIGN.md](DESIGN.md) | Generated from tokens.json |
-| [tokens.json](tokens.json) | Measured colour ramps, type, radius, spacing, and component roles |
+| [tokens.json](tokens.json) | Measured colour ramps; type, radius, spacing, and component roles typed in from live readings (labelled Reconstruction) |
 | [style-guide.html](style-guide.html) | A small page of the measured roles |
 | [components.md](components.md) | Component inventory and gaps |
 | [patterns.md](patterns.md) | Marketing shell, sign-in, editor |
@@ -50,7 +50,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 | light | 11.44:1 pass | 12.26:1 pass | 6.64:1 pass | 7.11:1 pass |
 | dark | 18.42:1 pass | 18.42:1 pass | 10.89:1 pass | 10.89:1 pass |
 
-8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.color.border.focus` #e59700; `core.size.focus-ring` 3px.
+8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus: no focus tokens (no token path contains "focus").
 
 <!-- brief:end -->
 
@@ -72,6 +72,10 @@ Custom properties were read from `getComputedStyle(document.documentElement)` on
 ## What to distrust
 
 There are no screenshots. The preview browser returned "The browser is not producing screenshot frames". Do not treat a missing image as a measured layout.
+
+Only the `--color-*` custom properties were saved, in [raw/css-vars.json](raw/css-vars.json). Every other value (type, radius, spacing, sizes, shadows, motion, the component values) and each role's mapping onto a colour step was typed into the builder from live readings that were not saved, so tokens.json labels them Reconstruction. A recapture should save those readings to raw/.
+
+The focused Log in button reported `outline-color` #e59700, Chromium's default focus-ring colour, with `outline-style: none`: no ring was painted, so the package publishes no focus token.
 
 Hover classes (`group-hocus/button:bg-gray-25`, `shadow-lg`) were read from the class list, not from a live `:hover`. The forced dark pass left the h1 navy. A live Dark appearance in the editor was not applied.
 

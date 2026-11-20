@@ -84,7 +84,7 @@ export const PROPS = [
 
 export async function styleOf(locator) {
   return locator.evaluate((el, props) => {
-    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const pick = (cs) => {
       const o = {};
       for (const p of props) o[p] = noUrl(cs[p]);

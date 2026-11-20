@@ -128,6 +128,8 @@ Computed styles on the live DOM, 2026-11-18, light, 1440. Hover is a real pointe
 - Dark theme. Declared in CSS, not painted on a captured public page.
 - Choc Chip CSS. The stylesheet is cross-origin and unreadable.
 - Pressed states. They are forced pseudo-classes.
+- Focus-visible on Get Started. The 2026-11-18 script left the pointer on each control from its hover reading through pressed and focus-visible, so the `focus-visible` readings of `primary-button`, `primary-button-lg` and `secondary-button` in [raw/components-computed.json](raw/components-computed.json) carry the hover fill (`rgb(64, 64, 64)`, `oklch(0.92 0 0)`), not the fill at rest. Read only their outline as the focus state. `tools/capture/public/measure.mjs` now moves the pointer away before every state; those readings need a recapture.
+- `raw/css-vars.json` `darkDeclared` is empty. The dark values are in its `app` rules (`.dark` and the `:root` inside `@media (prefers-color-scheme: dark)`) and in `resolved.dark`. `tools/capture/vars-live.mjs` now fills it from those rules.
 - The plan-card crop. The selector matched a transparent wrapper, not the card face. Use [pricing-light-default.png](screenshots/pricing-light-default.png).
 - Careers, privacy and terms. Those links leave the site for neverbeforeseen.group and were not followed.
 

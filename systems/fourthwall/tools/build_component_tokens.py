@@ -152,8 +152,11 @@ def var(name, ty="color", **kw):
     return d
 
 
-EMITTED = {}   # variable name -> dotted token path it was actually written to
-_OWNER = {}    # dotted token path -> variable name holding it
+# Per set: variable name -> dotted token path it was actually written to, and
+# dotted path -> variable name holding it. Kept per set so a later set's
+# re-homing (a leaf moved under `default`) never moves an earlier set's entry.
+EMITTED_BY = {}
+OWNER_BY = {}
 
 
 def _leaf(d):
@@ -180,6 +183,8 @@ def emit(root, name, leaf):
     """Write `leaf` at name's dotted path; a leaf that later needs children
     moves inside its group under `default`/`base`/`self`."""
     node = root
+    EMITTED = EMITTED_BY.setdefault(id(root), {})
+    _OWNER = OWNER_BY.setdefault(id(root), {})
     parts = path_parts(name)
     for i, p in enumerate(parts[:-1]):
         nxt = node.get(p)
@@ -209,6 +214,37 @@ def emit(root, name, leaf):
         node[last] = leaf
     EMITTED[name] = path
     _OWNER[path] = name
+
+
+def transition(s):
+    """The CSS transition shorthand from the computed longhands, one entry per
+    property; each property takes the duration/easing/delay at its index,
+    the lists repeating as CSS repeats them."""
+    def items(v, d):
+        out = []
+        depth, cur = 0, ""
+        for ch in str(v or d):
+            if ch == "(":
+                depth += 1
+            elif ch == ")":
+                depth -= 1
+            if ch == "," and depth == 0:
+                out.append(cur.strip()); cur = ""
+            else:
+                cur += ch
+        out.append(cur.strip())
+        return [x for x in out if x] or [d]
+    props = items(s.get("transitionProperty"), "all")
+    durs = items(s.get("transitionDuration"), "0s")
+    eases = items(s.get("transitionTimingFunction"), "ease")
+    delays = items(s.get("transitionDelay"), "0s")
+    out = []
+    for i, p in enumerate(props):
+        part = [p, durs[i % len(durs)], eases[i % len(eases)]]
+        if delays[i % len(delays)] not in ("0s", "0ms"):
+            part.append(delays[i % len(delays)])
+        out.append(" ".join(part))
+    return ", ".join(out)
 
 
 def norm_len(v):
@@ -255,6 +291,28 @@ def painted(comp, state, key):
         if m and abs(float(m.group(1)) - rect.get("w", -9)) <= 1 and abs(float(m.group(2)) - rect.get("h", -9)) <= 1:
             return p[key]
     return entries[0][key]
+
+
+TRANSPARENT = re.compile(r"transparent|rgba\(\s*[\d.]+[,\s]+[\d.]+[,\s]+[\d.]+\s*[,/]\s*0(\.0+)?%?\s*\)")
+NOT_PAINTED = []  # (set, role) rows whose element paints no fill of its own
+
+
+def own_fill(comp, state):
+    """The fill the element itself paints: its backgroundColor unless that is
+    transparent, then a paint-list layer the exact size of the element. None
+    when the element paints nothing (the fill comes from an ancestor)."""
+    v = st(comp, state).get("backgroundColor")
+    if v and not TRANSPARENT.fullmatch(str(v).strip()):
+        return v
+    c = C[comp]["states"][state]
+    rect = c.get("rect") or {}
+    for p in c.get("paint") or []:
+        m = re.fullmatch(r"([\d.]+)x([\d.]+)", str(p.get("size") or ""))
+        bg = p.get("bg")
+        if bg and not TRANSPARENT.fullmatch(bg) and m and abs(float(m.group(1)) - rect.get("w", -9)) <= 1 \
+                and abs(float(m.group(2)) - rect.get("h", -9)) <= 1:
+            return bg
+    return None
 
 
 def inset_shadow_color(comp, state):
@@ -369,6 +427,11 @@ def emit_named(setroot, name, val):
     return False
 
 
+def E(setname):
+    """The names emitted in one set and the path each landed at."""
+    return EMITTED_BY.get(id(SPEC[setname]), {})
+
+
 SETS = {"light": R, "ink": RI, "catalog": RC, "catalogDark": RCD, "signup": RA,
         "docs": RD, "docsDark": RDD, "help": RH, "helpDark": RHD}
 ALIAS = {}
@@ -380,22 +443,22 @@ for name in mkt_names:
     emit_named(SPEC["light"], name, R.get(name))
 ALIAS["light"] = {}
 for name in mkt_names:
-    if name in EMITTED:
-        ALIAS["light"].setdefault(norm_color(R.get(name)), EMITTED[name])
+    if name in E("light"):
+        ALIAS["light"].setdefault(norm_color(R.get(name)), E("light")[name])
 
 # ink: the names whose on-ink resolution differs from :root light — the scoped
 # .on-ink/.site-footer/.leg-section redeclarations. (Same-path override: a name
 # like --_surface---bg--page lands at surface.bg.page in both sets.)
 ink_emitted = []
 for name in host_names("marketing", RI):
-    if name in EMITTED and norm_color(RI.get(name)) != norm_color(R.get(name)):
+    if name in E("light") and norm_color(RI.get(name)) != norm_color(R.get(name)):
         if emit_named(SPEC["ink"], name, RI.get(name)):
             ink_emitted.append(name)
 # ink roles may only alias the ink set's own tokens — a measured ink value
 # that happens to equal a :root-only token stays a literal.
 ALIAS["ink"] = {}
 for name in ink_emitted:
-    ALIAS["ink"][norm_color(RI.get(name))] = EMITTED[name]
+    ALIAS["ink"][norm_color(RI.get(name))] = E("ink")[name]
 
 # The catalogue vocabulary — emitted in all three shells; catalogDark carries
 # the light-dark() dark branch (forced color-scheme, declared not painted) and
@@ -404,8 +467,8 @@ for name in host_names("catalog", RC):
     emit_named(SPEC["catalog"], name, RC.get(name))
 ALIAS["catalog"] = {}
 for name in host_names("catalog", RC):
-    if name in EMITTED:
-        ALIAS["catalog"].setdefault(norm_color(RC.get(name)), EMITTED[name])
+    if name in E("catalog"):
+        ALIAS["catalog"].setdefault(norm_color(RC.get(name)), E("catalog")[name])
 
 # Each set emits only the names its own shell resolves — a var leaf resolved
 # under a shell that never declared it would be fiction.
@@ -416,46 +479,46 @@ for name in catd_names:
     emit_named(SPEC["catalogDark"], name, RCD.get(name))
 ALIAS["catalogDark"] = {}
 for name in catd_names:
-    if name in EMITTED:
-        ALIAS["catalogDark"].setdefault(norm_color(RCD.get(name)), EMITTED[name])
+    if name in E("catalogDark"):
+        ALIAS["catalogDark"].setdefault(norm_color(RCD.get(name)), E("catalogDark")[name])
 
 for name in auth_names:
     emit_named(SPEC["signup"], name, RA.get(name))
 ALIAS["signup"] = {}
 for name in auth_names:
-    if name in EMITTED:
-        ALIAS["signup"].setdefault(norm_color(RA.get(name)), EMITTED[name])
+    if name in E("signup"):
+        ALIAS["signup"].setdefault(norm_color(RA.get(name)), E("signup")[name])
 
 # The docs (Mintlify) and help (Docusaurus) vocabularies in both painted themes.
 for name in host_names("docs", RD):
     emit_named(SPEC["docs"], name, RD.get(name))
 ALIAS["docs"] = {}
 for name in host_names("docs", RD):
-    if name in EMITTED:
-        ALIAS["docs"].setdefault(norm_color(RD.get(name)), EMITTED[name])
+    if name in E("docs"):
+        ALIAS["docs"].setdefault(norm_color(RD.get(name)), E("docs")[name])
 
 docsd_names = [n for n in host_names("docs", RDD) if n in RDD]
 for name in docsd_names:
     emit_named(SPEC["docsDark"], name, RDD.get(name))
 ALIAS["docsDark"] = {}
 for name in docsd_names:
-    if name in EMITTED:
-        ALIAS["docsDark"].setdefault(norm_color(RDD.get(name)), EMITTED[name])
+    if name in E("docsDark"):
+        ALIAS["docsDark"].setdefault(norm_color(RDD.get(name)), E("docsDark")[name])
 
 for name in host_names("help", RH):
     emit_named(SPEC["help"], name, RH.get(name))
 ALIAS["help"] = {}
 for name in host_names("help", RH):
-    if name in EMITTED:
-        ALIAS["help"].setdefault(norm_color(RH.get(name)), EMITTED[name])
+    if name in E("help"):
+        ALIAS["help"].setdefault(norm_color(RH.get(name)), E("help")[name])
 
 helpd_names = [n for n in host_names("help", RHD) if n in RHD]
 for name in helpd_names:
     emit_named(SPEC["helpDark"], name, RHD.get(name))
 ALIAS["helpDark"] = {}
 for name in helpd_names:
-    if name in EMITTED:
-        ALIAS["helpDark"].setdefault(norm_color(RHD.get(name)), EMITTED[name])
+    if name in E("helpDark"):
+        ALIAS["helpDark"].setdefault(norm_color(RHD.get(name)), E("helpDark")[name])
 
 
 # emitted-path → resolved value, per theme: lets a measured role alias the
@@ -464,13 +527,36 @@ for name in helpd_names:
 # name is not always the meaningful one).
 POOLS = {"light": R, "ink": RI, "catalog": RC, "catalogDark": RCD, "signup": RA,
          "docs": RD, "docsDark": RDD, "help": RH, "helpDark": RHD}
-PATHVAL = {t: {EMITTED[n]: norm_color(v) for n, v in p.items() if n in EMITTED}
+PATHVAL = {t: {E(t)[n]: norm_color(v) for n, v in p.items() if n in E(t)}
            for t, p in POOLS.items()}
 
 
-def semcolor(raw, src, desc, theme="light", prefer=None):
+# Which declared names a role may alias when several share its value: a text
+# role takes a text/ink name first, a fill a background/surface name, a border
+# a border name. Only when no name of the role's own kind matches does any
+# declared name do (the first in emit order, as before).
+GROUP_WORDS = {
+    "text": ("text", "ink", "fg", "foreground", "color.gray", "font.color", "heading", "content"),
+    "background": ("bg", "background", "surface", "page"),
+    "surface": ("bg", "background", "surface", "panel", "card"),
+    "action": ("action", "button", "bg", "primary"),
+    "border": ("border", "stroke", "divider", "line"),
+}
+
+
+def ranked_alias(theme, norm, group):
+    words = GROUP_WORDS.get(group, ())
+    paths = [pth for pth, v in PATHVAL[theme].items() if v == norm]
+    for w in words:
+        hit = sorted(pth for pth in paths if w in pth.split(".") or pth.startswith(w + ".") or ("." + w) in pth)
+        if hit:
+            return hit[0]
+    return ALIAS[theme].get(norm)
+
+
+def semcolor(raw, src, desc, theme="light", prefer=None, group=None):
     norm = norm_color(raw)
-    alias = prefer if prefer and PATHVAL[theme].get(prefer) == norm else ALIAS[theme].get(norm)
+    alias = prefer if prefer and PATHVAL[theme].get(prefer) == norm else ranked_alias(theme, norm, group)
     value = f"{{{alias}}}" if alias else norm
     return lit(value, "color", src + (f"; matches declared {alias}" if alias else ""), desc)
 
@@ -511,8 +597,9 @@ for row in [
      "A catalogue product-card surface."),
     (SPEC["catalog"], "catalog", "field-bg", "cat-search", "default", "backgroundColor", "surface",
      "The catalogue search field fill."),
-    (SPEC["catalog"], "catalog", "field-border", "cat-search", "default", "borderColor", "border",
-     "The catalogue field border."),
+    # No catalogue field border: cat-search computes border-style none at 0px
+    # on every side, so no border role is read (its borderTopColor is only
+    # currentColor).
     # auth — the same catalogue DS painted light at /get-started
     (SPEC["signup"], "signup", "card", "auth-card", "default", "backgroundColor", "surface",
      "The auth card/page field at /get-started — the catalogue DS painted light.", "bg.primary.default"),
@@ -520,7 +607,9 @@ for row in [
      "The provider-button ink on the auth surface.", "text.primary.default"),
     (SPEC["signup"], "signup", "fill", "auth-google", "default", "backgroundColor", "action",
      "The provider-button fill.", "bg.secondary.default"),
-    (SPEC["signup"], "signup", "link", "auth-login", "default", "color", "text",
+    # "login-link", not "link": the auth sheet declares --text-link and
+    # --text-link-secondary, which already hold signup.text.link.
+    (SPEC["signup"], "signup", "login-link", "auth-login", "default", "color", "text",
      "The Log-in link ink on the auth surface.", "text.primary.default"),
     # docs light / dark
     (SPEC["docs"], "docs", "ink", "docs-h1", "default", "color", "text",
@@ -566,12 +655,20 @@ for row in [
         elif prop == "insetShadowColor":
             raw = inset_shadow_color(comp, state)
             src = f"the inset box-shadow layer painted on {comp} {state} (raw/components-computed.json)"
+        elif prop == "backgroundColor":
+            raw = own_fill(comp, state)
+            if raw is None:
+                NOT_PAINTED.append(f"{theme}.{group}.{key} ({comp} {state})")
+                continue
+            src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
-        if raw in (None, ""):
+        if raw in (None, "") or TRANSPARENT.fullmatch(str(raw).strip()):
             raise KeyError(prop)
-        root.setdefault(group, {})[key] = semcolor(raw, src, desc, theme, prefer)
+        if key in root.get(group, {}):
+            raise ValueError(f"{theme}.{group}.{key}: a measured role would overwrite a declared token")
+        root.setdefault(group, {})[key] = semcolor(raw, src, desc, theme, prefer, group)
     except KeyError:
         pass
 
@@ -586,9 +683,9 @@ for theme, name, comp, desc in [
     ("help", "--ifm-background-color", None, "The help page field in light."),
 ]:
     try:
-        if name in EMITTED:
+        if name in E(theme):
             SPEC[theme].setdefault("background", {})["page"] = lit(
-                "{%s}" % EMITTED[name], "color",
+                "{%s}" % E(theme)[name], "color",
                 f"the page field the surface paints; the declared {name}",
                 desc)
     except KeyError:
@@ -626,10 +723,8 @@ for comp in ("nav-cta", "hero-cta", "cmp-card", "prod-card"):
     try:
         s = st(comp, "default")
         dur, ease = s.get("transitionDuration"), s.get("transitionTimingFunction")
-        if dur and dur != "0s":
-            props = [p.strip() for p in s.get("transitionProperty", "all").split(",") if p.strip()]
-            val = ", ".join(f"{p} {dur} {ease or ''}".strip() for p in props)
-            mo["control"] = lit(val, "other",
+        if dur and any(d.strip() not in ("0s", "0ms") for d in dur.split(",")):
+            mo["control"] = lit(transition(s), "other",
                 f"computed transition of {comp} default (raw/components-computed.json)",
                 "The control transition the marketing site puts on buttons and links.")
             break
@@ -638,10 +733,9 @@ for comp in ("nav-cta", "hero-cta", "cmp-card", "prod-card"):
 try:
     s = st("cat-tab", "default")
     dur, ease = s.get("transitionDuration"), s.get("transitionTimingFunction")
-    if dur and dur != "0s":
-        props = [p.strip() for p in s.get("transitionProperty", "all").split(",") if p.strip()]
+    if dur and any(d.strip() not in ("0s", "0ms") for d in dur.split(",")):
         mo["catalog-control"] = lit(
-            ", ".join(f"{p} {dur} {ease or ''}".strip() for p in props), "other",
+            transition(s), "other",
             "computed transition of cat-tab default (raw/components-computed.json)",
             "The catalogue control transition (its --motion-* durations/easings are declared in the catalog set).")
 except KeyError:
@@ -679,5 +773,8 @@ for name, cname, state, prop, ty_, desc in [
     except KeyError:
         pass
 
-(RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
-print("component-tokens.json:", {k: len(v) for k, v in SPEC.items() if k != "_about"})
+if __name__ == "__main__":
+    (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
+    if NOT_PAINTED:
+        print("no own fill (not tokenised):", ", ".join(NOT_PAINTED))
+    print("component-tokens.json:", {k: len(v) for k, v in SPEC.items() if k != "_about"})

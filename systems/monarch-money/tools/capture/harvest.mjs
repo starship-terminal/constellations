@@ -1,5 +1,5 @@
-// Harvest Monarch Money public CSS custom properties, font faces, radii,
-// and a compact component survey. Writes raw/css-vars.json and raw/survey.json.
+// Harvest Monarch Money public CSS custom properties, font faces and radii.
+// Writes raw/css-vars.json. (It never wrote the raw/survey.json its header promised.)
 // Never clicks Sign up, Sign in, OAuth, checkout, or a consent button.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -15,14 +15,6 @@ const context = await browser.newContext({
   locale: 'en-US',
 });
 const page = await context.newPage();
-
-const PAGES = [
-  ['home', BASE + '/'],
-  ['pricing', BASE + '/pricing'],
-  ['features-tracking', BASE + '/features/tracking'],
-  ['about', BASE + '/about'],
-  ['login', APP + '/login'],
-];
 
 async function readSheets() {
   return page.evaluate(() => {
@@ -40,7 +32,9 @@ async function readSheets() {
       const walk = (list, media) => {
         for (const r of list) {
           ruleCount++;
-          if (r.type === CSSRule.MEDIA_RULE) walk(r.cssRules, r.conditionText);
+          // Any grouping rule (@media, @layer, @supports, @container) holds rules to walk; only
+          // @media used to be, so tokens inside @layer or @supports were skipped silently.
+          if (r.cssRules && !r.style && r.type !== CSSRule.KEYFRAMES_RULE) walk(r.cssRules, r.conditionText || media);
           else if (r.type === CSSRule.FONT_FACE_RULE) {
             fonts.push(noUrl(r.cssText).slice(0, 280));
           } else if (r.type === CSSRule.KEYFRAMES_RULE) {

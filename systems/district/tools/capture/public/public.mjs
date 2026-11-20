@@ -15,10 +15,13 @@
 // Nothing is sent or signed into: auth fields are never filled and no
 // submit button is pressed. Promo overlays are hidden, never answered.
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour shots stay outside the repo (the kit's default); quantize.py writes screenshots/.
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'district', 'raw-shots') + '/';
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
