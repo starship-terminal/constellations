@@ -3780,7 +3780,7 @@
       "description": "Art collective that engages art, fashion, tech, and capitalism",
       "status": "pending",
       "package": null,
-      "notes": "https://mschf.com/ is a project index with no account sign-in. www.mschf.com reset the connection.",
+      "notes": "https://mschf.com/ is a project index with no account sign-in. www.mschf.com reset the connection. Public walk 2026-11-21: index has no account control. SHOP opens store.mschf.com. A direct hit on store.mschf.com/account/login redirects to Shopify sign-in and was not entered. Public package in PR 1489 at 7d399a4f5. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 11
