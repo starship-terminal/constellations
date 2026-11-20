@@ -30,10 +30,13 @@ function checkDimensions(target, opts, requested) {
   const dpr = requested.deviceScaleFactor || 1;
   const want = opts.clip
     ? { width: Math.round(opts.clip.width * dpr), height: Math.round(opts.clip.height * dpr) }
-    : { width: Math.round(requested.viewport.width * dpr), height: opts.fullPage ? null : Math.round(requested.viewport.height * dpr) };
-  if (Math.abs(width - want.width) > 1 || (want.height !== null && Math.abs(height - want.height) > 1)) {
+    : { width: Math.round(requested.viewport.width * dpr),
+        // A whole-page shot is checked against the document height the caller measured (opts.docHeight).
+        height: Math.round((opts.fullPage ? opts.docHeight : requested.viewport.height) * dpr) };
+  if (opts.fullPage && !opts.clip && !opts.docHeight) throw new Error('a full-page shot needs opts.docHeight to be checked');
+  if (Math.abs(width - want.width) > 1 || Math.abs(height - want.height) > 1) {
     fs.unlinkSync(target);
-    throw new Error(`dimension mismatch: ${path.basename(target)} is ${width}x${height}, expected ${want.width}x${want.height ?? 'any'}`);
+    throw new Error(`dimension mismatch: ${path.basename(target)} is ${width}x${height}, expected ${want.width}x${want.height}`);
   }
   return { width, height };
 }
@@ -73,7 +76,7 @@ class Shooter {
     const MAXH = 8 * chunk;
     const hCap = Math.min(H, MAXH);
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only`);
-    if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
+    if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true, docHeight: hCap }, this.requested);
     else {
       const written = [];
       for (let i = 0, y = 0; y < hCap; i++, y += chunk) {

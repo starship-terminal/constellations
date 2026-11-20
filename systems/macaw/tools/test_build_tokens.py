@@ -20,6 +20,14 @@ class BuildTokens(unittest.TestCase):
         with self.assertRaises(SystemExit):
             build_tokens.check(doc)
 
+    def test_check_refuses_wrong_types_and_bad_colours(self):
+        import build_tokens
+        for bad in ("{size.button}", "rgba(nope)", "rgb()", 16):
+            doc = copy.deepcopy(build_tokens.tokens)
+            doc["light"]["page"]["$value"] = bad
+            with self.assertRaises(SystemExit, msg=repr(bad)):
+                build_tokens.check(doc)
+
     def test_values_with_no_reading_say_so(self):
         font = TOKENS["core"]["font"]
         for leaf in (font["size"]["section"], font["size"]["privacy-h2"], font["lineHeight"]["heading"],

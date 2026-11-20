@@ -285,27 +285,54 @@ def leaves(node, path=""):
             yield from leaves(v, here)
 
 
+CHANNEL = r"\s*\d{1,3}\s*"
+COLOR = (r"#[0-9a-f]{6}([0-9a-f]{2})?"
+         rf"|rgb\({CHANNEL},{CHANNEL},{CHANNEL}\)|rgba\({CHANNEL},{CHANNEL},{CHANNEL},\s*(0|1|0?\.\d+)\s*\)")
+DIMENSION = r"-?\d*\.?\d+(px|rem)"
+# The $type an alias inside a composite must point at, by member name.
+MEMBER = {"fontFamily": {"fontFamily"}, "fontSize": {"dimension"}, "fontWeight": {"fontWeight", "number"},
+          "lineHeight": {"dimension", "number"}, "letterSpacing": {"dimension"}, "color": {"color"},
+          "offsetX": {"dimension"}, "offsetY": {"dimension"}, "blur": {"dimension"}, "spread": {"dimension"}}
+
+
 def check(doc):
-    """The kit's guards, which this fork had dropped: every alias resolves (the set, then core),
-    every leaf has a source, and colours and dimensions have DTCG shapes."""
-    core_names = {p for p, _ in leaves(doc["core"])}
+    """The kit's guards, which this fork had dropped: every alias resolves (the set, then core) to a
+    token of the right $type, every leaf has a source, and colours, dimensions and shadow layers have
+    DTCG shapes."""
+    core_types = {p: t["$type"] for p, t in leaves(doc["core"])}
     for setname in ("core", "light"):
-        local = {p for p, _ in leaves(doc[setname])}
+        types = {**core_types, **{p: t["$type"] for p, t in leaves(doc[setname])}}
+
+        def check_value(where, v, want):
+            if isinstance(v, str) and re.fullmatch(r"\{([^{}]+)\}", v):
+                ref = v[1:-1]
+                if ref not in types:
+                    raise SystemExit(f"{where}: alias {{{ref}}} resolves to nothing")
+                if types[ref] not in want:
+                    raise SystemExit(f"{where}: alias {{{ref}}} is a {types[ref]}, not a {'/'.join(sorted(want))}")
+                return
+            if "color" in want and not (isinstance(v, str) and re.fullmatch(COLOR, v)):
+                raise SystemExit(f"{where}: colour {v!r}")
+            if want == {"dimension"} and not (isinstance(v, str) and re.fullmatch(DIMENSION, v)):
+                raise SystemExit(f"{where}: dimension {v!r}")
+
         for path, tok in leaves(doc[setname]):
+            where = f"{setname}.{path}"
             if not tok.get("$extensions", {}).get("source"):
-                raise SystemExit(f"{setname}.{path}: no source")
-            v = tok["$value"]
-            texts = [v] if isinstance(v, str) else [x for layer in (v if isinstance(v, list) else [v]) if isinstance(layer, dict) for x in layer.values() if isinstance(x, str)]
-            for ref in (r for t in texts for r in re.findall(r"\{([^{}]+)\}", t)):
-                if ref not in local and ref not in core_names:
-                    raise SystemExit(f"{setname}.{path}: alias {{{ref}}} resolves to nothing")
-            if isinstance(v, str) and not v.startswith("{"):
-                if tok["$type"] == "dimension" and not re.fullmatch(r"-?\d*\.?\d+(px|rem)", v):
-                    raise SystemExit(f"{setname}.{path}: dimension {v!r}")
-                if tok["$type"] == "color" and not re.fullmatch(r"#[0-9a-f]{6}([0-9a-f]{2})?|rgba?\([^)]*\)", v):
-                    raise SystemExit(f"{setname}.{path}: colour {v!r}")
-            if tok["$type"] == "shadow" and not isinstance(v, list):
-                raise SystemExit(f"{setname}.{path}: shadow must be a list of layers")
+                raise SystemExit(f"{where}: no source")
+            v, ty = tok["$value"], tok["$type"]
+            if ty in ("typography",):
+                for member, mv in v.items():
+                    check_value(f"{where}.{member}", mv, MEMBER.get(member, {ty}))
+            elif ty == "shadow":
+                if not isinstance(v, list):
+                    raise SystemExit(f"{where}: shadow must be a list of layers")
+                for layer in v:
+                    for member, mv in layer.items():
+                        if member != "inset":
+                            check_value(f"{where}.{member}", mv, MEMBER[member])
+            else:
+                check_value(where, v, {ty} | ({"number"} if ty == "fontWeight" else set()))
 
 
 check(tokens)
