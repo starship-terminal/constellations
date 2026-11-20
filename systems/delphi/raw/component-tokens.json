@@ -2031,7 +2031,7 @@
       "page": {
         "value": "{background.default}",
         "type": "color",
-        "source": "the public surfaces paint a white field (screenshots/*-light-*.png; --background resolves #ffffff); matches declared --background",
+        "source": "declared --background (raw/css-vars.json resolved.light); no computed reading of the page field (seen in screenshots/*-light-*.png); matches declared --background",
         "description": "The white field the whole public surface paints."
       },
       "card": {

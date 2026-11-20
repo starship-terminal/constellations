@@ -14,7 +14,7 @@ Alo is worth a capture because it is a current reference for a monochrome storef
 | [patterns.md](patterns.md) | How the components combine on each surface: shop chrome, the two-button vocabulary, product surfaces, PDP, forms, consent |
 | [components/crops/](components/crops) | 113 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 23 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `home-light-consent` the Osano dialog as it arrives |
-| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property, binned app/theme/vendor/tailwind/utility, resolved light+dark), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads), [full/](raw/full) (full-colour captures with `.capture.json` sidecars) |
+| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property, binned app/theme/vendor/tailwind/utility, resolved light+dark), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [Rebuild](#rebuild) |
 
 ## Brief
@@ -108,7 +108,7 @@ Nothing was bought, added to bag, joined, subscribed or signed into. The public 
 - **Vendor vars are not the shop.** `.s-mode-*`/`.s-theme-*` (an embedded third-party app's theme kit, ~500 rules) and `--osano-*` are binned `vendor` in css-vars.json and excluded from tokens.
 - **`component.*` tokens are measured**, not site variables.
 - **`color-tile` and `to-top` missed their selectors** on this pass (lazy Builder.io blocks); recorded as missing, visible in screenshots.
-- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or `raw/full/`.
+- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from the tokens.
 - **The PDP is a sample**, not a fixed product — see `pdp_url`.
 
 ## Fonts
@@ -167,10 +167,10 @@ The kit under [tools/capture/](tools/capture) re-reads the live shop; the builde
 ```sh
 cd systems/aloyoga
 PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs \
-  node tools/capture/public/public.mjs            # page screenshots -> raw/full/
+  node tools/capture/public/public.mjs            # page screenshots -> ~/.design-systems/aloyoga/raw-shots/ (outside the repo)
 PYTHON=<python with Pillow> node tools/capture/vars.mjs    # raw/css-vars.json
 PLAYWRIGHT=... PYTHON=<python with Pillow> node tools/capture/public/measure.mjs   # raw/components-computed.json + crops
-python3 tools/capture/quantize.py raw/full        # -> screenshots/
+python3 tools/capture/quantize.py ~/.design-systems/aloyoga/raw-shots        # -> screenshots/
 node tools/capture/public/build-measurements.mjs  # raw/measurements.md
 python3 tools/build_component_tokens.py           # raw/component-tokens.json
 python3 tools/build_tokens.py                     # tokens.json

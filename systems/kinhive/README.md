@@ -103,7 +103,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 | Step | What ran |
 |---|---|
-| Screenshots | `tools/capture/public/public.mjs` at 1440 x 900 and 390 x 844, then `tools/capture/public/code.mjs` for the join and sign-in code step. Consent overlays are hidden, never answered. Public presses are the Features and Use Cases menus, the mobile Open menu button, and the shop cart. Join and sign-in Continue were pressed; LinkedIn was not |
+| Screenshots | `tools/capture/public/public.mjs` at 1440 x 900 and 390 x 844, then `tools/capture/public/code.mjs` for the join and sign-in code step. Consent overlays are hidden, never answered. Public presses are the Features and Use Cases menus, the mobile Open menu button, and the shop cart. Join and sign-in Continue were pressed on 2026-11-18 (the script no longer presses them); LinkedIn was not |
 | CSS harvest | `tools/capture/vars.mjs` reads the `_next/static` stylesheets and resolves every custom property. The dark pass sets `data-app-theme="system"` and emulates `prefers-color-scheme: dark` |
 | Tokens | `tools/build_tokens.py` writes tokens.json from those resolved values, plus a handful of measured control sizes from the homepage probe |
 | Guide | `tools/build_style_guide.py` writes style-guide.html |
@@ -114,8 +114,9 @@ Every token leaf names its source in `$extensions.source`. A `css-var` source wa
 
 - **The signed-in product.** `/home`, `/matches`, `/chat`, `/profile`, and `/settings` were not opened. Join and sign-in APIs accepted the capture email and showed the code step; the 6-digit message never arrived, so the app shell was not reached. Marketing photographs of the app are published images, not the product.
 - **The dark screenshot.** [home-dark-default](screenshots/home-dark-default.png) paints only after the capture sets `data-app-theme="system"`. A visitor does not get that page from a toggle. The dark token values are still the declared ones.
-- **The forms.** Contact, subscribe, and the hero email were not submitted. Join and sign-in were submitted through the code step. Wrong-code and rate-limit errors paint `--color-destructive` #d93a1f as body text. Loading and success were not observed. `--color-alert` is still unused.
-- **Hover.** `light.action.fill-hover` is the authored `hover:bg-[#2a2a2c]` literal, not a forced-state measurement.
+- **The forms.** Contact, subscribe, and the hero email were not submitted. Join and sign-in were submitted through the code step on 2026-11-18, a live state change the capture scripts no longer make: the join-code and signin-code screenshots (default and wrong-code error, desktop and 390) and the disabled-Continue and rate-limit crops were taken past that step. `tools/capture/public/code.mjs` now stops at the form. Wrong-code and rate-limit errors paint `--color-destructive` #d93a1f as body text. Loading and success were not observed. `--color-alert` is still unused.
+- **Hover.** `light.action.fill-hover` is the authored `hover:bg-[#2a2a2c]` literal, typed in by hand and labelled Reconstruction, not a forced-state measurement.
+- **Control geometry.** `core.component.nav-height`, `nav-link-size`, `cta-height`, `cta-radius`, `field-height` and `hero-size` were typed in from the homepage probe, whose readings were never committed. They are labelled Reconstruction.
 - **Quantised screenshots.** `screenshots/` and crops are 256-colour PNGs. Read colours from tokens.json.
 - **The promo strip colour.** The strip is a dark brown band. It was not isolated as its own computed fill, so it is not a token.
 

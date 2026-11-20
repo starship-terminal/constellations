@@ -14,10 +14,10 @@
   --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--core-color-ink, #1d1d1f); background: var(--core-color-paper, #f5f4f1); }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-ink, #1d1d1f); background: var(--color-paper, #f5f4f1); }
 main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
 h1 { font: 400 38px/1.1 var(--sg-display); margin: 0 0 4px; }
-h2.sh { font: 500 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: none; color: var(--core-color-ink, #1d1d1f); opacity: .7; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid rgba(29,29,31,.15); }
+h2.sh { font: 500 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: none; color: var(--color-ink, #1d1d1f); opacity: .7; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid rgba(29,29,31,.15); }
 .lead { max-width: 68ch; }
 .note { font-size: 13px; opacity: .7; max-width: 68ch; }
 code { font-family: var(--sg-mono); font-size: .9em; }
@@ -80,44 +80,39 @@ table.cmp td, table.cmp th { border: 1px solid rgba(29,29,31,.15); padding: 6px 
 </main>
 <script>
 const TOK = /*TOKENS*/null;
+// TOK is the builder's slim tree: a token is {v, t, s} (value, type, source).
+function esc(x) { return String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
 function flat(node, prefix, out) {
   out = out || [];
   Object.keys(node || {}).forEach(function (k) {
-    if (k.charAt(0) === '$') return;
     var v = node[k];
     var path = prefix ? prefix + '.' + k : k;
-    if (v && v.$value !== undefined) out.push([path, v]);
+    if (v && v.v !== undefined && v.t !== undefined) out.push([path, v]);
     else if (v && typeof v === 'object') flat(v, path, out);
   });
   return out;
 }
+// The builder writes each token as --<path> with no set name (--color-ink); an alias {color.ink}
+// is var(--color-ink).
 function css(path) { return '--' + path.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-'); }
-function val(v) {
-  if (v && typeof v === 'object' && !Array.isArray(v)) return Object.keys(v).map(function (k) { return k + ': ' + val(v[k]); }).join('; ');
-  return String(v).replace(/\{([^{}]+)\}/g, function (_, p) { return 'var(' + css(p.indexOf('.') < 0 ? p : p) + ')'; });
-}
 var root = document.documentElement;
-flat(TOK && TOK.core, 'core').concat(flat(TOK && TOK.light, 'light')).forEach(function (pair) {
-  var path = pair[0], t = pair[1];
-  if (typeof t.$value === 'string' || typeof t.$value === 'number') root.style.setProperty(css(path), String(t.$value).replace(/\{([^{}]+)\}/g, function (_, p) { return 'var(' + css(p) + ')'; }));
-});
 function swatch(path, t) {
-  var raw = t.$value;
-  var color = typeof raw === 'string' ? getComputedStyle(root).getPropertyValue(css(path)) || raw : '';
-  return '<div style="display:flex;gap:8px;align-items:center;margin:6px 0"><i style="width:28px;height:28px;border-radius:50%;border:1px solid rgba(29,29,31,.2);background:' + (color || '#ccc') + '"></i><code>' + path + '</code> <span>' + raw + '</span></div>';
+  var raw = String(t.v);
+  var color = getComputedStyle(root).getPropertyValue(css(path)).trim() || raw;
+  return '<div style="display:flex;gap:8px;align-items:center;margin:6px 0"><i style="width:28px;height:28px;border-radius:50%;border:1px solid rgba(29,29,31,.2);background:' + esc(color) + '"></i><code>' + esc(path) + '</code> <span>' + esc(raw) + '</span></div>';
 }
 var roles = document.getElementById('roles-out');
-if (roles && TOK) roles.innerHTML = flat(TOK.light, 'light').filter(function (p) { return p[1].$type === 'color'; }).map(function (p) { return swatch(p[0], p[1]); }).join('');
+if (roles && TOK) roles.innerHTML = flat(TOK.light, '').filter(function (p) { return p[1].t === 'color'; }).map(function (p) { return swatch(p[0], p[1]); }).join('');
 var spacing = document.getElementById('spacing-out');
-if (spacing && TOK) spacing.innerHTML = flat(TOK.core, 'core').filter(function (p) { return p[1].$type === 'dimension'; }).map(function (p) { return '<div><b>' + p[0] + '</b> <span>' + p[1].$value + '</span></div>'; }).join('');
+if (spacing && TOK) spacing.innerHTML = flat(TOK.core, '').filter(function (p) { return p[1].t === 'dimension'; }).map(function (p) { return '<div><b>' + esc(p[0]) + '</b> <span>' + esc(p[1].v) + '</span></div>'; }).join('');
 var typeOut = document.getElementById('type-out');
 if (typeOut && TOK && TOK.core.typography) typeOut.innerHTML = Object.keys(TOK.core.typography).map(function (k) {
-  var t = TOK.core.typography[k].$value;
-  var size = (t.fontSize || '').replace(/\{fontSize\.([^}]+)\}/, function (_, n) { return (TOK.core.fontSize[n] || {}).$value || ''; });
-  return '<div class="tr"><span class="ts" style="font-size:' + size + '">' + k + '</span><span class="tv">' + size + '</span></div>';
+  var t = TOK.core.typography[k].v;
+  var size = String(t.fontSize || '').replace(/\{fontSize\.([^}]+)\}/, function (_, n) { return (TOK.core.fontSize[n] || {}).v || ''; });
+  return '<div class="tr"><span class="ts" style="font-size:' + esc(size) + '">' + esc(k) + '</span><span class="tv">' + esc(size) + '</span></div>';
 }).join('');
 var fam = document.getElementById('fam-out');
-if (fam && TOK && TOK.core.fontFamily) fam.innerHTML = Object.keys(TOK.core.fontFamily).map(function (k) { return '<div><b>' + k + '</b> <span>' + TOK.core.fontFamily[k].$value + '</span></div>'; }).join('');
+if (fam && TOK && TOK.core.fontFamily) fam.innerHTML = Object.keys(TOK.core.fontFamily).map(function (k) { return '<div><b>' + esc(k) + '</b> <span>' + esc(TOK.core.fontFamily[k].v) + '</span></div>'; }).join('');
 </script>
 </body>
 </html>

@@ -1,8 +1,8 @@
-// Collects every distinct inline <svg> icon on Gauth's public pages into icons/ and writes icons/INDEX.tsv.
+// Collects every distinct inline <svg> icon on Klarna's public pages into icons/ and writes icons/INDEX.tsv.
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node icons.mjs
 //
-// Gauth's icons carry no name in the DOM, so a file is named from icon-names.tsv (geometry hash -> name)
+// Klarna's icons carry no name in the DOM, so a file is named from icon-names.tsv (geometry hash -> name)
 // when the hash is listed there, else from the aria-label or text of the button or link it sits in, else
 // from its CSS-module class, else `icon-<hash>`. Files whose geometry matches are one icon, listed once
 // with every page and place it was seen. Colour is kept as `currentColor` wherever the computed fill or

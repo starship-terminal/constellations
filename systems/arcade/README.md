@@ -150,8 +150,8 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 ```sh
 cd systems/arcade
-PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs      # screenshots -> raw/full/
-python3 tools/capture/quantize.py raw/full                                         # 256-colour PNGs -> screenshots/
+PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs      # screenshots -> ~/.design-systems/arcade/raw-shots/ (outside the repo)
+python3 tools/capture/quantize.py ~/.design-systems/arcade/raw-shots                                         # 256-colour PNGs -> screenshots/
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/measure.mjs     # raw/components-computed.json + components/crops/
 node tools/capture/public/build-measurements.mjs                                   # raw/measurements.md
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/vars.mjs               # raw/css-vars.json

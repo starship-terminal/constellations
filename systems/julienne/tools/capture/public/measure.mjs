@@ -12,7 +12,7 @@ import { BASE, RECIPE, COLLECTION, launch, open, styleOf, crop, setTheme, RAW } 
 const only = (process.argv[2] || '').split(',').filter(Boolean);
 const priorPath = path.join(RAW, 'components-computed.json');
 const prior = fs.existsSync(priorPath) ? JSON.parse(fs.readFileSync(priorPath, 'utf8')) : {};
-const out = { readAt: '2026-11-18', source: 'computed styles on live signed-out withjulienne.com, 1440x900, light (boot) and dark (Toggle theme)', components: { ...(prior.components || {}) } };
+const out = { readAt: new Date().toLocaleDateString('en-CA'), source: 'computed styles on live signed-out withjulienne.com, 1440x900, light (boot) and dark (Toggle theme)', components: { ...(prior.components || {}) } };
 fs.mkdirSync(RAW, { recursive: true });
 const { browser, context } = await launch();
 const p = await context.newPage();

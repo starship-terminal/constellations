@@ -103,7 +103,7 @@ The header hamburger that opens the Browse-categories drawer — a local UI togg
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: opened) | size 0 x 0; border 1px solid transparent; radius 8px; background transparent; text Macan 16/24 600, #222325 `light.text.primary`; transition all 0.07s cubic-bezier(0.75, 0, 0.25, 1) |
-| pressed | background #efeff0 |
+| pressed | background #efeff0 `core.color.neutral.press-wash` |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -115,7 +115,7 @@ The header "Connect to your AI" button (the Fiverr AI-assistant entry); measured
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover) | size 242.91 x 42; padding 8px 16px; border 1px solid transparent; radius 8px; background transparent; text Macan 16/24 600, #222325 `light.text.primary`; transition all 0.07s cubic-bezier(0.75, 0, 0.25, 1); icon 20 x 20, #222325 `light.text.primary` |
-| pressed | background #efeff0 |
+| pressed | background #efeff0 `core.color.neutral.press-wash` |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -139,7 +139,7 @@ The header "Become a Seller" link to /start_selling; measured, never followed. R
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover) | size 159 x 42; padding 8px 16px; border 1px solid transparent; radius 8px; background transparent; text Macan 16/24 600, #222325 `light.text.primary`; transition all 0.07s cubic-bezier(0.75, 0, 0.25, 1) |
-| pressed | background #efeff0 |
+| pressed | background #efeff0 `core.color.neutral.press-wash` |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -151,7 +151,7 @@ The header "Sign in" link to /login; measured, never followed. Read as `nav-sign
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover) | size 85.02 x 42; padding 8px 16px; border 1px solid transparent; radius 8px; background transparent; text Macan 16/24 600, #222325 `light.text.primary`; transition all 0.07s cubic-bezier(0.75, 0, 0.25, 1) |
-| pressed | background #efeff0 |
+| pressed | background #efeff0 `core.color.neutral.press-wash` |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -347,7 +347,7 @@ A results-filter dropdown trigger (Category, Service Options, Seller Details, Bu
 | default | size 132.86 x 48; padding 10px 20px; border 1px solid #dadbdd `light.border.hairline`; radius 8px; background transparent; text Macan 16/26 600, #222325 `light.text.primary`; transition all 0.07s cubic-bezier(0.75, 0, 0.25, 1); icon 12 x 12, #222325 `light.text.primary` |
 | hover | background #f5f5f5 |
 | focus-visible | outline 2px solid #222325 `light.text.primary`, offset 1px |
-| pressed | background #efeff0 |
+| pressed | background #efeff0 `core.color.neutral.press-wash` |
 | opened | background #f5f5f5 |
 
 ![Filter button default](components/crops/filter-btn-default.png) ![Filter button hover](components/crops/filter-btn-hover.png) ![Filter button focus-visible](components/crops/filter-btn-focus-visible.png) ![Filter button pressed](components/crops/filter-btn-pressed.png) ![Filter button opened](components/crops/filter-btn-opened.png)
@@ -443,7 +443,7 @@ The "Contact me" button beside Continue; measured, never pressed (it fronts a si
 | default | size 364.55 x 42; padding 8px 16px; border 1px solid #e4e5e7; radius 4px; background transparent; text Macan 16/24 600, #222325 `light.text.primary`; transition all 0.07s cubic-bezier(0.75, 0, 0.25, 1) |
 | hover | background #f5f5f5 |
 | focus-visible | outline 2px solid #222325 `light.text.primary`, offset 1px |
-| pressed | background #efeff0 |
+| pressed | background #efeff0 `core.color.neutral.press-wash` |
 
 ![Contact me button default](components/crops/gig-contact-default.png) ![Contact me button hover](components/crops/gig-contact-hover.png) ![Contact me button focus-visible](components/crops/gig-contact-focus-visible.png) ![Contact me button pressed](components/crops/gig-contact-pressed.png)
 
@@ -524,7 +524,7 @@ The "Continue with Google" button on /join; measured, never pressed. Read as `jo
 | default | size 370 x 42; padding 8px 16px; border 1px solid #e4e5e7; radius 8px; background #ffffff `light.surface.card`; text Macan 16/24 600, #222325 `light.text.primary`; transition all 0.07s cubic-bezier(0.75, 0, 0.25, 1); icon 20 x 20, #222325 `light.text.primary` |
 | hover | background #f5f5f5 |
 | focus-visible | outline 2px solid #222325 `light.text.primary`, offset 1px |
-| pressed | background #efeff0 |
+| pressed | background #efeff0 `core.color.neutral.press-wash` |
 
 ![Google SSO (join) default](components/crops/join-google-default.png) ![Google SSO (join) hover](components/crops/join-google-hover.png) ![Google SSO (join) focus-visible](components/crops/join-google-focus-visible.png) ![Google SSO (join) pressed](components/crops/join-google-pressed.png)
 
@@ -536,7 +536,7 @@ The "Continue with Apple" button on /join; measured, never pressed. Read as `joi
 | default | size 370 x 42; padding 8px 16px; border 1px solid #e4e5e7; radius 8px; background #ffffff `light.surface.card`; text Macan 16/24 600, #222325 `light.text.primary`; transition all 0.07s cubic-bezier(0.75, 0, 0.25, 1); icon 20 x 20, #222325 `light.text.primary` |
 | hover | background #f5f5f5 |
 | focus-visible | outline 2px solid #222325 `light.text.primary`, offset 1px |
-| pressed | background #efeff0 |
+| pressed | background #efeff0 `core.color.neutral.press-wash` |
 
 ![Apple SSO (join) default](components/crops/join-apple-default.png) ![Apple SSO (join) hover](components/crops/join-apple-hover.png) ![Apple SSO (join) focus-visible](components/crops/join-apple-focus-visible.png) ![Apple SSO (join) pressed](components/crops/join-apple-pressed.png)
 
@@ -548,7 +548,7 @@ The e-mail join button on /join; measured, never pressed. Read as `join-email-bt
 | default | size 370 x 42; padding 8px 16px; border 1px solid #e4e5e7; radius 8px; background #ffffff `light.surface.card`; text Macan 16/24 600, #222325 `light.text.primary`; transition all 0.07s cubic-bezier(0.75, 0, 0.25, 1); icon 20 x 20, #222325 `light.text.primary` |
 | hover | background #f5f5f5 |
 | focus-visible | outline 3px solid #222325 `light.text.primary`, offset 0px |
-| pressed | background #efeff0 |
+| pressed | background #efeff0 `core.color.neutral.press-wash` |
 
 ![Email join button default](components/crops/join-email-btn-default.png) ![Email join button hover](components/crops/join-email-btn-hover.png) ![Email join button focus-visible](components/crops/join-email-btn-focus-visible.png) ![Email join button pressed](components/crops/join-email-btn-pressed.png)
 
@@ -570,7 +570,7 @@ The "Continue with Google" button on /login; measured, never pressed. Read as `l
 | default | size 370 x 42; padding 8px 16px; border 1px solid #e4e5e7; radius 8px; background #ffffff `light.surface.card`; text Macan 16/24 600, #222325 `light.text.primary`; transition all 0.07s cubic-bezier(0.75, 0, 0.25, 1); icon 20 x 20, #222325 `light.text.primary` |
 | hover | background #f5f5f5 |
 | focus-visible | outline 2px solid #222325 `light.text.primary`, offset 1px |
-| pressed | background #efeff0 |
+| pressed | background #efeff0 `core.color.neutral.press-wash` |
 
 ![Google SSO (login) default](components/crops/login-google-default.png) ![Google SSO (login) hover](components/crops/login-google-hover.png) ![Google SSO (login) focus-visible](components/crops/login-google-focus-visible.png) ![Google SSO (login) pressed](components/crops/login-google-pressed.png)
 
@@ -591,7 +591,7 @@ The sign-in form's submit button; its states were measured but it was never clic
 |---|---|
 | default | size 210 x 42; padding 8px 16px; border 1px solid #222325 `light.text.primary`; radius 8px; background transparent; text Macan 16/24 600, #222325 `light.text.primary`; transition all 0.07s cubic-bezier(0.75, 0, 0.25, 1) |
 | focus-visible | outline 2px solid #222325 `light.text.primary`, offset 1px |
-| pressed | background #efeff0 |
+| pressed | background #efeff0 `core.color.neutral.press-wash` |
 
 ![Sign-in submit default](components/crops/login-submit-default.png) ![Sign-in submit focus-visible](components/crops/login-submit-focus-visible.png) ![Sign-in submit pressed](components/crops/login-submit-pressed.png)
 
@@ -648,7 +648,7 @@ The "Create your profile" / "Get started" CTA on /start_selling; measured, never
 | default | size 159 x 42; padding 8px 16px; border 1px solid transparent; radius 8px; background transparent; text Macan 16/24 600, #222325 `light.text.primary`; transition all 0.07s cubic-bezier(0.75, 0, 0.25, 1) |
 | hover | background #f5f5f5 |
 | focus-visible | outline 2px solid #222325 `light.text.primary`, offset 1px |
-| pressed | background #efeff0 |
+| pressed | background #efeff0 `core.color.neutral.press-wash` |
 
 ![Seller CTA default](components/crops/sell-cta-default.png) ![Seller CTA hover](components/crops/sell-cta-hover.png) ![Seller CTA focus-visible](components/crops/sell-cta-focus-visible.png) ![Seller CTA pressed](components/crops/sell-cta-pressed.png)
 
@@ -710,7 +710,7 @@ The hamburger that opens the categories drawer — a local UI toggle; the opened
 | default (same: opened) | size 42 x 42; border 1px solid transparent; radius 8px; background transparent; text Macan 16/24 600, #222325 `light.text.primary`; transition all 0.07s cubic-bezier(0.75, 0, 0.25, 1); icon 20 x 20, #222325 `light.text.primary` |
 | hover | background #f5f5f5 |
 | focus-visible | outline 2px solid #222325 `light.text.primary`, offset 1px |
-| pressed | background #efeff0 |
+| pressed | background #efeff0 `core.color.neutral.press-wash` |
 
 ![Mobile menu button default](components/crops/m-menu-btn-default.png) ![Mobile menu button hover](components/crops/m-menu-btn-hover.png) ![Mobile menu button focus-visible](components/crops/m-menu-btn-focus-visible.png) ![Mobile menu button pressed](components/crops/m-menu-btn-pressed.png) ![Mobile menu button opened](components/crops/m-menu-btn-opened.png)
 

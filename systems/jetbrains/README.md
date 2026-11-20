@@ -47,7 +47,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #6b57ff `light.accent` | #8473ff `dark.accent` |
 | border | #d1d1d2 `light.border.default` | rgba(255, 255, 255, 0.2) `dark.border.default` |
 
-Fonts: `core.font.family.sans` is JetBrains Sans, then 3 fallbacks; `core.font.family.ui` is JetBrains Sans, then 8 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 4 radius steps (`core.radius`), 9 spacing steps (`core.spacing`).
+Fonts: `core.font.family.sans` is JetBrains Sans, then 3 fallbacks; `core.font.family.ui` is JetBrains Sans, then 13 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 4 radius steps (`core.radius`), 9 spacing steps (`core.spacing`).
 
 ### Using components
 
@@ -97,7 +97,7 @@ Declared colours come from the Rescui custom properties on jetbrains.com's style
 
 ## What to distrust
 
-Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json), not from the images. Home is labelled `light` in filenames because the kit names every shot that way. The dark values are the home campaign's declared roles, not a theme the visitor can switch. The pressed purple on light pages is derived, not measured. Hover on several pills did not change the computed fill. The signed-in account was not reached: Continue after the signup email hit reCAPTCHA.
+Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json), not from the images. Home is labelled `light` in filenames because the kit names every shot that way. The dark values are the home campaign's declared roles, not a theme the visitor can switch. The pressed purple on light pages (`#5646cc`) was entered by hand, not measured. So were the 18/24/48px type steps, the 500 and 700 weights, the 1.1 display line height, the 2px to 48px spacing steps, the 999px capsule radius, the 1px hairline and `light.text.primary` `#343434`: their sources say Reconstruction. Every other size is read from [raw/components-computed.json](raw/components-computed.json) or a declared custom property, and the dark set's sources say it resolved on `:root` because no dark pass ran. Hover on several pills did not change the computed fill. The signed-in account was not reached: Continue after the signup email hit reCAPTCHA.
 
 ## Fonts
 

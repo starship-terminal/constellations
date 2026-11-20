@@ -51,7 +51,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #ff7d55 `core.color.ember.500` | #ff7d55 `dark.surface.brand.DEFAULT` |
 | border | #f8ece1 `light.border.base` | #404142 `dark.border.base` |
 
-Fonts: `core.font.marketingSans` is GeistSans, then 1 fallback; `core.font.marketingDisplay` is gelica, then 1 fallback; `core.font.sans` is Inter Variable, then 1 fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, no radius steps under `core.radius`, 31 spacing steps (`core.space`).
+Fonts: `core.font.marketingSans` is GeistSans, then 1 fallback; `core.font.marketingDisplay` is gelica, then 1 fallback; `core.font.sans` is Inter Variable, then 1 fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, no radius steps under `core.radius`, 35 spacing steps (`core.space`).
 
 ### Using components
 
@@ -104,6 +104,8 @@ Motion was probed with `prefers-reduced-motion` emulated, then written into `cor
 Screenshots are 256-colour PNGs. Read colours from the tokens.
 
 ## What to distrust
+
+- **Signup readings taken past a consent step.** [signup-light-privacy](screenshots/signup-light-privacy.png), [signup-light-oauth](screenshots/signup-light-oauth.png), their `mobile-` twins, and the `signup-privacy-title`, `signup-privacy-continue`, `signup-oauth-title` and `signup-google` readings were taken after the capture clicked Continue and then Continue to signup, which acknowledges the app's privacy notice. The capture scripts no longer click either (2026-11-20), so a recapture stops at the signup landing.
 
 - **Marketing is not the product light theme.** `light.*` is `html.light`. The cream page uses Tailwind utilities and the computed marketing tokens. Do not treat `#fffefd` as `light.surface.default` (that role is `#fffefd` only because the light product surface happens to share sand-50). Body ink on the marketing site is `#2d2d2d` (`core.color.marketing.ink`), not `light.text.body.default` (`#3e3f40`).
 - **`theme.accent` is not the brand.** `--theme-new-colors-accent` resolves to `#27272a` in both themes (a shadcn zinc). The painted brand is lemon `#ffdc61` (`--button-background-primary`) and ember `#ff7d55` (`core.color.ember.500`, `surface.brand`).

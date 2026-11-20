@@ -18,6 +18,32 @@ HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
 V = json.loads((RAW / "css-vars.json").read_text())
 DECL = {n: d["value"] for n, d in V["resolved"]["light"].items()}
+C = json.loads((RAW / "components-computed.json").read_text())
+C = C.get("components", C)
+FONTS = {(f["family"], f["weight"]) for f in V["fonts"]}
+
+
+def computed(comp, prop, state="default"):
+    """A computed style read on a component; raises when the reading is missing."""
+    v = (C[comp]["states"][state].get("style") or {}).get(prop)
+    if not v:
+        raise KeyError(f"{comp} {state}: no {prop} reading")
+    return v
+
+
+def line_ratio(comp):
+    """lineHeight / fontSize of a measured component, e.g. 41.8px / 38px -> 1.1."""
+    lh, fs = computed(comp, "lineHeight"), computed(comp, "fontSize")
+    return round(float(lh.removesuffix("px")) / float(fs.removesuffix("px")), 3)
+
+
+def loaded(family, weight):
+    if (family, str(weight)) not in FONTS:
+        raise KeyError(f"{family} {weight} is not in raw/css-vars.json fonts")
+    return weight
+
+
+HAND = "Reconstruction — entered by hand at capture time, no raw reading behind it"
 
 
 def color(name, source):
@@ -57,16 +83,19 @@ core = {
                     "document.fonts on /en-int lists DM Sans 400/500/700"),
     },
     "fontWeight": {
-        "regular": tok(400, "fontWeight", "HKRepro 400 loaded"),
-        "medium": tok(500, "fontWeight", "HKRepro 500 loaded"),
+        "regular": tok(loaded("HKRepro", 400), "fontWeight", "HKRepro 400 loaded (raw/css-vars.json fonts)"),
+        "medium": tok(loaded("HKRepro", 500), "fontWeight", "HKRepro 500 loaded (raw/css-vars.json fonts)"),
     },
     "typography": {
-        "heading-1": tok({"fontFamily": "{fontFamily.display}", "fontSize": "{fontSize.heading-1}", "fontWeight": "{fontWeight.regular}", "lineHeight": 1.1}, "typography", SRC + " --heading-1"),
-        "heading-2": tok({"fontFamily": "{fontFamily.display}", "fontSize": "{fontSize.heading-2}", "fontWeight": "{fontWeight.regular}", "lineHeight": 1.15}, "typography", SRC + " --heading-2"),
-        "heading-3": tok({"fontFamily": "{fontFamily.display}", "fontSize": "{fontSize.heading-3}", "fontWeight": "{fontWeight.regular}", "lineHeight": 1.2}, "typography", SRC + " --heading-3"),
-        "heading-4": tok({"fontFamily": "{fontFamily.display}", "fontSize": "{fontSize.heading-4}", "fontWeight": "{fontWeight.medium}", "lineHeight": 1.3}, "typography", SRC + " --heading-4"),
-        "body": tok({"fontFamily": "{fontFamily.body}", "fontSize": "{fontSize.body}", "fontWeight": "{fontWeight.regular}", "lineHeight": 1.5}, "typography", SRC + " --body"),
-        "button": tok({"fontFamily": "{fontFamily.body}", "fontSize": "{fontSize.button}", "fontWeight": "{fontWeight.medium}", "lineHeight": 1.2}, "typography", SRC + " --button-font-size"),
+        # Sizes are the declared :root vars. A line height is measured only where a component
+        # was read at that size (hero-title is heading-1); the rest were entered by hand.
+        "heading-1": tok({"fontFamily": "{fontFamily.display}", "fontSize": "{fontSize.heading-1}", "fontWeight": "{fontWeight.regular}", "lineHeight": line_ratio("hero-title")}, "typography", SRC + " --heading-1; lineHeight computed on hero-title default (" + computed("hero-title", "lineHeight") + " / " + computed("hero-title", "fontSize") + ", raw/components-computed.json)"),
+        "heading-2": tok({"fontFamily": "{fontFamily.display}", "fontSize": "{fontSize.heading-2}", "fontWeight": "{fontWeight.regular}", "lineHeight": 1.15}, "typography", SRC + " --heading-2; lineHeight " + HAND),
+        "heading-3": tok({"fontFamily": "{fontFamily.display}", "fontSize": "{fontSize.heading-3}", "fontWeight": "{fontWeight.regular}", "lineHeight": 1.2}, "typography", SRC + " --heading-3; lineHeight " + HAND),
+        "heading-4": tok({"fontFamily": "{fontFamily.display}", "fontSize": "{fontSize.heading-4}", "fontWeight": "{fontWeight.medium}", "lineHeight": 1.3}, "typography", SRC + " --heading-4; fontWeight and lineHeight " + HAND),
+        "body": tok({"fontFamily": "{fontFamily.body}", "fontSize": "{fontSize.body}", "fontWeight": "{fontWeight.regular}", "lineHeight": 1.5}, "typography", SRC + " --body; lineHeight " + HAND),
+        # The hero CTA (a primary button at the declared 14px) measures weight 400 and a 14px line.
+        "button": tok({"fontFamily": "{fontFamily.body}", "fontSize": "{fontSize.button}", "fontWeight": "{fontWeight.regular}" if computed("hero-cta", "fontWeight") == "400" else "{fontWeight.medium}", "lineHeight": line_ratio("hero-cta")}, "typography", SRC + " --button-font-size; fontWeight and lineHeight computed on hero-cta default (" + computed("hero-cta", "fontWeight") + ", " + computed("hero-cta", "lineHeight") + ", raw/components-computed.json)"),
     },
     "fontSize": {
         "heading-1": dim("--heading-1", SRC + " --heading-1"),
@@ -98,7 +127,7 @@ light = {
         "primary": {"$value": "{color.ink}", "$type": "color", "$extensions": {"source": "alias of --text-primary-color"}},
         "inverse": {"$value": "{color.paper}", "$type": "color", "$extensions": {"source": "alias of --button-1-text-color"}},
         "on-inverse": {"$value": "{color.white}", "$type": "color", "$extensions": {"source": "alias of --text-alternate-color"}},
-        "muted": {"$value": "#6e6e73", "$type": "color", "$extensions": {"source": "computed color of the shop-card subtitle on /en-int/collections/hello-klean-2-0; not a :root custom property"}},
+        "muted": {"$value": "#6e6e73", "$type": "color", "$extensions": {"source": HAND + " (the shop-card subtitle colour on /en-int/collections/hello-klean-2-0; no component reading or :root property holds it)"}},
     },
     "border": {
         "default": {"$value": "{color.ink}", "$type": "color", "$extensions": {"source": "alias of --button-1-border-color"}},
@@ -120,25 +149,16 @@ light = {
     },
 }
 
-# Fix aliases: color.* lives under core, so alias paths from light need the set.
-# Tokens Studio aliases are relative to the token tree root of the exported file
-# when written as {core.color.ink}. Rewrite the short aliases.
-def rewrite(node):
-    if isinstance(node, dict):
-        if "$value" in node and isinstance(node["$value"], str):
-            node["$value"] = re.sub(r"\{(color|fontFamily|fontWeight|fontSize)\.", r"{core.\1.", node["$value"])
-        for v in node.values():
-            rewrite(v)
-    return node
-
-rewrite(core)
-rewrite(light)
+# Aliases name the token path without its set ({color.ink}, not {core.color.ink}): that is
+# how DTCG and Tokens Studio resolve them across sets.
 
 if (RAW / "motion.json").exists():
     import sys
     sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
     import motion
     core["motion"], _motion_skipped = motion.build(json.loads((RAW / "motion.json").read_text()))
+    if _motion_skipped:
+        core["$extensions"] = {"notTokenised": _motion_skipped}
 
 tokens = {
     "core": core,
@@ -161,17 +181,15 @@ def walk(tree, prefix=""):
             yield from walk(v, prefix + k + ".")
 
 names = {n for n, _ in walk(core)} | {n for n, _ in walk(light)}
-# aliases use core. prefix which is a set name, not a token path. Accept both.
-all_names = names | {"core." + n for n in names if not n.startswith("core.")}
 for n, t in list(walk(core)) + list(walk(light)):
     for a in re.findall(r"\{([^{}]+)\}", json.dumps(t["$value"])):
-        if a not in names and a not in all_names and not a.startswith("core."):
+        if a not in names:
             raise KeyError(f"{n}: alias {{{a}}} points at nothing")
 
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
-
-
 def count(d):
-    return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
+    return sum(count(v) for k, v in d.items() if not k.startswith("$")) if isinstance(d, dict) and "$value" not in d else 1
 
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light")})
+
+if __name__ == "__main__":
+    (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
+    print({k: count(v) for k, v in tokens.items() if k in ("core", "light")})

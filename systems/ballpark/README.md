@@ -14,7 +14,7 @@ Ballpark is worth a capture because it is a current reference for a clean, edito
 | [patterns.md](patterns.md) | How the components combine: the fixed shell, the CTA vocabulary, the hero, pricing, forms, footer |
 | [components/crops/](components/crops) | 109 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 26 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `-solutions-menu`/`-menu-open` the opened states |
-| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property in the Framer bundle, binned token/app/framer, resolved in a probe), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads), [full/](raw/full) (the full-colour captures with `.capture.json` sidecars) |
+| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property in the Framer bundle, binned token/app/framer, resolved in a probe), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [Rebuild](#rebuild) |
 
 ## Brief

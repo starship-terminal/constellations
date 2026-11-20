@@ -157,8 +157,8 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 ```sh
 cd systems/apollographql
-PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs      # screenshots -> raw/full/
-python3 tools/capture/quantize.py raw/full screenshots                             # 256-colour PNGs
+PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs      # screenshots -> ~/.design-systems/apollographql/raw-shots/ (outside the repo)
+python3 tools/capture/quantize.py ~/.design-systems/apollographql/raw-shots screenshots                             # 256-colour PNGs
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/measure.mjs     # raw/components-computed.json + components/crops/
 node tools/capture/public/build-measurements.mjs                                   # raw/measurements.md
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/vars.mjs               # raw/css-vars.json

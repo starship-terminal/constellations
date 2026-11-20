@@ -31,6 +31,22 @@ R = {n: v.get("value", v.get("raw")) for n, v in RES.get("light", {}).items()}
 D = {n: v.get("value", v.get("raw")) for n, v in RES.get("dark", {}).items()}
 C = json.loads((RAW / "components-computed.json").read_text())["components"]
 
+# A named row whose reading is missing is recorded here instead of being
+# dropped silently; the build stops on any gap not listed in KNOWN_GAPS (at the
+# end), and listed ones are written to raw/component-tokens.json `_gaps`.
+GAPS = []
+
+
+def gap(what):
+    GAPS.append(what)
+
+
+def declared(vname):
+    """Gate for one named declared variable: a miss is recorded as a gap."""
+    if vname not in R:
+        gap(f"{vname} not declared")
+    return vname in R
+
 
 def var(name, ty="color", **kw):
     d = {"var": name, "type": ty}
@@ -68,6 +84,8 @@ def descend(root, parts):
 
 def emit(root, name, leaf):
     node, last = descend(root, name[2:].split("-"))
+    if node.get(last) is not None:
+        raise SystemExit(f"duplicate token path for {name}: {last} is already set")
     node[last] = leaf
 
 
@@ -127,6 +145,9 @@ def _tohex(rgb):
 
 def norm_color(v):
     v = (v or "").strip()
+    # A percentage alpha ("/ 50%", "rgba(..., 50%)") becomes the 0-1 number the
+    # patterns below read; without this the colour passed through unconverted.
+    v = re.sub(r"(/\s*|^rgba\([^,]+,[^,]+,[^,]+,\s*)([\d.]+)%\)$", lambda m: f"{m.group(1)}{float(m.group(2)) / 100:g})", v)
     m = re.fullmatch(r"#([0-9a-fA-F]{3,8})", v)
     if m:
         h = m.group(1).lower()
@@ -193,13 +214,21 @@ COL = r"(?:rgba?\([^)]*\)|(?:ok)?lab\([^)]*\)|oklch\([^)]*\)|#[0-9a-fA-F]{3,8})"
 def shadow_layers(spec):
     """Parse '<color> x y blur sp, ...' into DTCG shadow layers, dropping fully transparent no-ops."""
     out = []
-    for m in re.finditer(
-            r"(" + COL + r")\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(?:\s+(-?[\d.]+)px)?", spec or ""):
+    # One layer per top-level comma, so an `inset` keyword stays with its own
+    # layer (Chromium writes it last) instead of being dropped.
+    for part in re.split(r",(?![^(]*\))", spec or ""):
+        m = re.search(
+            r"(" + COL + r")\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(?:\s+(-?[\d.]+)px)?", part)
+        if not m:
+            continue
         col, x, y, bl, sp = m.groups()
         if col.startswith("rgba") and col.rstrip(")").endswith(", 0"):
             continue  # rgba(0,0,0,0) 0px 0px 0px 0px placeholders Tailwind emits
-        out.append({"color": norm_color(col), "offsetX": f"{x}px", "offsetY": f"{y}px",
-                    "blur": f"{bl}px", "spread": f"{sp or 0}px"})
+        layer = {"color": norm_color(col), "offsetX": f"{x}px", "offsetY": f"{y}px",
+                 "blur": f"{bl}px", "spread": f"{sp or 0}px"}
+        if re.search(r"\binset\b", part):
+            layer["inset"] = True
+        out.append(layer)
     return out
 
 
@@ -218,14 +247,14 @@ def measure(key, comp, state, prop, ty, desc, bag, val=None, paint=False):
         if v is None:
             v = norm_color(painted(comp, state)) if paint else st(comp, state)[prop]
         if v is None or v == "" or v == "rgba(0, 0, 0, 0)":
-            return
+            return gap(f"{key}: {comp} {state} {prop} is empty")
         if ty == "color":
             v = norm_color(v)
         bag[key] = {"value": v, "type": ty,
                     "source": f"computed {prop if not paint else 'paint'} of {comp} {state} (raw/components-computed.json)",
                     "description": desc}
     except (KeyError, TypeError):
-        pass
+        gap(f"{key}: no {comp} {state} {prop} reading")
 
 
 # ------------------------------------------------------------------- fonts
@@ -241,7 +270,7 @@ for key, comp, state, desc in [
                     "source": f"computed fontFamily of {comp} {state} (raw/components-computed.json)",
                     "description": desc}
     except KeyError:
-        pass
+        gap(f"font.family.{key}: no {comp} {state} reading")
 
 weight = SPEC["core"].setdefault("font", {}).setdefault("weight", {})
 for name, desc in [
@@ -250,13 +279,13 @@ for name, desc in [
     ("semibold", "600 — CTA buttons and docs headings."),
 ]:
     vname = f"--font-weight-{name}"
-    if vname in R:
+    if declared(vname):
         weight[name] = var(vname, "fontWeight", description=desc)
 
 size = SPEC["core"].setdefault("font", {}).setdefault("size", {})
 for name in ["xs", "sm", "base", "lg", "xl", "2xl", "3xl", "4xl", "5xl"]:
     vname = f"--text-{name}"
-    if vname in R:
+    if declared(vname):
         size[name] = var(vname, "dimension",
                          description=f"Declared --text-{name} step of the Tailwind ramp ({R[vname]}).")
 for key, comp, state, desc in [
@@ -270,16 +299,18 @@ for key, comp, state, desc in [
         size[key] = {"value": v, "type": "dimension",
                      "source": f"computed fontSize of {comp} {state} (raw/components-computed.json)",
                      "description": desc}
+    else:
+        gap(f"font.size.{key}: no {comp} {state} fontSize reading")
 
 leading = SPEC["core"].setdefault("font", {}).setdefault("lineHeight", {})
 for name in ["xs", "sm", "base", "lg", "xl", "2xl", "3xl", "4xl", "5xl"]:
     vname = f"--text-{name}--line-height"
-    if vname in R:
+    if declared(vname):
         leading[name] = var(vname, "number",
                             description=f"Declared line-height ratio for --text-{name} ({R[vname]}).")
 for name in ["tight", "snug", "normal", "relaxed"]:
     vname = f"--leading-{name}"
-    if vname in R:
+    if declared(vname):
         leading[name] = var(vname, "number",
                             description=f"Declared --leading-{name} ({R[vname]}).")
 for key, comp, state, desc in [
@@ -291,11 +322,13 @@ for key, comp, state, desc in [
         leading[key] = {"value": v, "type": "dimension",
                         "source": f"computed lineHeight of {comp} {state} (raw/components-computed.json)",
                         "description": desc}
+    else:
+        gap(f"font.lineHeight.{key}: no {comp} {state} lineHeight reading")
 
 tracking = SPEC["core"].setdefault("font", {}).setdefault("tracking", {})
 for name in ["tighter", "tight", "normal", "wide", "wider"]:
     vname = f"--tracking-{name}"
-    if vname not in R:
+    if not declared(vname):
         continue
     v = R[vname].strip()
     if v.endswith("em"):
@@ -317,6 +350,8 @@ for key, comp, state, desc in [
         tracking[key] = {"value": v, "type": "dimension",
                          "source": f"computed letterSpacing of {comp} {state} (raw/components-computed.json)",
                          "description": desc}
+    else:
+        gap(f"font.tracking.{key}: no {comp} {state} letterSpacing reading")
 
 # --------------------------------------------------- theme-stable palettes
 # These read identically under .dark, so they are scale values, not roles.
@@ -326,7 +361,7 @@ for key, vname, desc in [
     ("landing-action", "--color-landing-action", "Landing action blue #11a8ff."),
     ("ring", "--ring", "The focus/interactive ring (same value as accent)."),
 ]:
-    if vname in R:
+    if declared(vname):
         brand[key] = var(vname, "color", description=desc)
 
 hue = SPEC["core"].setdefault("color", {}).setdefault("tailwind", {})
@@ -341,13 +376,13 @@ for key, vname, desc in [
     ("black", "--color-black", "Pure black."),
     ("white", "--color-white", "Pure white."),
 ]:
-    if vname in R:
+    if declared(vname):
         hue[key] = var(vname, "color", description=desc)
 
 label = SPEC["core"].setdefault("color", {}).setdefault("label", {})
 for key in ["blue", "gray", "green", "orange", "pink", "purple", "red", "yellow"]:
     vname = f"--label-{key}"
-    if vname in R:
+    if declared(vname):
         label[key] = var(vname, "color",
                          description=f"Declared --label-{key} ({R[vname]}): a tag/label hue, identical on both themes.")
 
@@ -360,9 +395,9 @@ for key, vname, desc in [
     ("xl", "--radius-xl", "Declared --radius-xl (16px): plan/blog cards."),
     ("2xl", "--radius-2xl", "Declared --radius-2xl (20px): the composer, model cards, brand tiles."),
 ]:
-    if vname in R:
+    if declared(vname):
         radius[key] = var(vname, "dimension", description=desc)
-if "--radius-icon" in R:
+if declared("--radius-icon"):
     # The declared value is a percentage ("22.5%"), not a length: type "other"
     # keeps it out of the length-only export — a bare number under core.radius
     # would be read as pixels (0.225px) and a "dimension" would fail the
@@ -386,7 +421,7 @@ for key, vname, desc in [
     ("standard", "--ease-standard", "ease-standard (.22,1,.36,1)."),
     ("default", "--default-transition-timing-function", "The default transition curve (.4,0,.2,1)."),
 ]:
-    if vname in R:
+    if declared(vname):
         easing[key] = var(vname, "cubicBezier", description=desc)
 
 duration = SPEC["core"].setdefault("duration", {})
@@ -396,13 +431,13 @@ for key, vname, desc in [
     ("enter", "--transition-duration-enter", "Element entrances (200ms)."),
     ("slow", "--transition-duration-slow", "Slow transitions (300ms)."),
 ]:
-    if vname in R:
+    if declared(vname):
         duration[key] = var(vname, "duration", description=desc)
 
 # ------------------------------------------------------------- space, layout
 
 spacing = SPEC["core"].setdefault("spacing", {})
-if "--spacing" in R:
+if declared("--spacing"):
     spacing["base"] = var("--spacing", "dimension",
                           description="The Tailwind spacing unit (4px); all gutters are multiples of it.")
 
@@ -410,13 +445,13 @@ layout = SPEC["core"].setdefault("layout", {})
 cont = layout.setdefault("container", {})
 for name in ["xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl"]:
     vname = f"--container-{name}"
-    if vname in R:
+    if declared(vname):
         cont[name] = var(vname, "dimension",
                          description=f"Declared --container-{name} max-width ({R[vname]}).")
 persp = layout.setdefault("perspective", {})
 for name in ["normal", "distant"]:
     vname = f"--perspective-{name}"
-    if vname in R:
+    if declared(vname):
         persp[name] = var(vname, "dimension", description=f"Declared --perspective-{name} ({R[vname]}).")
 
 # ----------------------------------------------------------------- shadows
@@ -430,21 +465,25 @@ if layers:
                       "source": "computed boxShadow of composer default (raw/components-computed.json)",
                       "description": "The floating-card elevation (a 1px 6% keyline ring plus 1px/2px umbrae): "
                                      "composer, tool panel, plan CTA."}
+else:
+    gap("shadow.card: no composer default boxShadow layer")
 for key, vname, desc in [
     ("drop-sm", "--drop-shadow-sm", "Declared drop-shadow filter sm (15% black, 1px 2px)."),
     ("drop-md", "--drop-shadow-md", "Declared drop-shadow filter md (12% black, 3px 3px)."),
 ]:
-    if vname in R:
+    if declared(vname):
         layers = shadow_layers(R[vname])
         if layers:
             shadow[key] = {"value": layers, "type": "shadow",
                            "source": f"css-var {vname} (light)",
                            "description": desc}
+        else:
+            gap(f"shadow.{key}: {vname} has no shadow layer")
 
 # ------------------------------------------------------- z-index, backdrop
 
 z = SPEC["core"].setdefault("zIndex", {})
-if "--z-index-dropdown" in R:
+if declared("--z-index-dropdown"):
     z["dropdown"] = {"value": int(float(R["--z-index-dropdown"])), "type": "number",
                      "source": "css-var --z-index-dropdown (light)",
                      "description": "Declared dropdown/menu z-index (40); the sticky header also paints z-40."}
@@ -452,7 +491,7 @@ if "--z-index-dropdown" in R:
 blur = SPEC["core"].setdefault("blur", {})
 for name in ["xs", "sm", "md"]:
     vname = f"--blur-{name}"
-    if vname in R:
+    if declared(vname):
         blur[name] = var(vname, "dimension", description=f"Declared --blur-{name} ({R[vname]}).")
 
 # ---------------------------------------------------------------- measured
@@ -461,8 +500,18 @@ meas = SPEC["core"].setdefault("measured", {})
 # The keyboard focus ring: buttons and links recolor their border to the
 # accent and paint a 3px 30% accent ring shadow (the computed outline-style
 # stays none — the ring is the shadow, not an outline).
+# The alias is published only for the components whose real keyboard focus
+# painted a border in the --ring colour (a failed focus is not a reading), and
+# only while --ring and --accent (color.brand.accent) still resolve alike.
+_ring = norm_color(R.get("--ring", ""))
+_ringed = [k for k in ("nav-signin", "nav-cta", "send-btn")
+           if have(k, "focus-visible", "borderTopColor")
+           and C[k]["states"]["focus-visible"].get("via") != "focus failed"
+           and norm_color(st(k, "focus-visible")["borderTopColor"]) == _ring]
+if not _ringed or norm_color(R.get("--accent", "")) != _ring:
+    raise SystemExit("focus-ring: no focus-visible reading paints the --ring colour, or --ring != --accent")
 meas["focus-ring"] = {"value": "{color.brand.accent}", "type": "color",
-                      "source": "computed focus-visible border/ring colour of nav-cta, send-btn, field-name == --ring (raw/components-computed.json)",
+                      "source": f"computed focus-visible borderTopColor of {', '.join(_ringed)} == --ring (raw/components-computed.json)",
                       "description": "The keyboard focus ring: the accent sky #01bcff as a 3px 30% ring plus an accent border."}
 # The 30% ring shadow buttons paint on focus-visible.
 layers = shadow_layers(C.get("nav-signin", {}).get("states", {}).get("focus-visible", {}).get("style", {}).get("boxShadow"))
@@ -470,9 +519,11 @@ if layers:
     shadow["focus-ring"] = {"value": layers, "type": "shadow",
                             "source": "computed boxShadow of nav-signin focus-visible (raw/components-computed.json)",
                             "description": "The 3px 30% accent ring buttons paint on keyboard focus (plus an accent border)."}
-    meas["focus-ring-width"] = {"value": "3px", "type": "dimension",
+    meas["focus-ring-width"] = {"value": max(layers, key=lambda l: float(l["spread"][:-2]))["spread"], "type": "dimension",
                                 "source": "computed boxShadow spread of nav-signin focus-visible (raw/components-computed.json)",
                                 "description": "The 3px focus ring spread."}
+else:
+    gap("shadow.focus-ring: no nav-signin focus-visible boxShadow layer")
 # Field fill: the translucent #ebebeb/50% the text inputs paint.
 measure("field-fill", "field-name", "default", "backgroundColor", "color",
         "The translucent field fill the contact/tool inputs paint (≈47% neutral grey).", meas)
@@ -484,7 +535,7 @@ try:
                            "source": "computed backgroundColor of header default (raw/components-computed.json)",
                            "description": "The sticky header's translucent veil (≈90% page field, backdrop-blurred)."}
 except KeyError:
-    pass
+    gap("measured.header-veil: no header default reading")
 for key, comp, state, desc in [
     ("link-transition", "nav-link", "default", "The 150ms colour transition on nav links and buttons."),
 ]:
@@ -495,8 +546,10 @@ for key, comp, state, desc in [
             meas[key] = {"value": d, "type": "duration",
                          "source": f"computed transition of {comp} {state} (raw/components-computed.json)",
                          "description": desc + f" ({s.get('transitionProperty', '')[:80]})"}
+        else:
+            gap(f"measured.{key}: {comp} {state} has no transition")
     except (KeyError, TypeError):
-        pass
+        gap(f"measured.{key}: no {comp} {state} reading")
 
 # ---------------------------------------------------------------- themes
 # The shadcn-style roles, emitted into light and dark off the same var names.
@@ -573,7 +626,7 @@ DECLARED = "declared shadcn-style role on the Tailwind v4 theme layer"
 
 def emit_role(root, name, desc):
     vname = f"--{name}"
-    if vname in R:
+    if declared(vname):
         emit(root, vname, {"var": vname, "type": "color",
                            "source": DECLARED, "description": desc})
 
@@ -588,7 +641,7 @@ pal_l = SPEC["light"].setdefault("palette", {})
 pal_d = SPEC["dark"].setdefault("palette", {})
 for name, desc in PALETTES:
     vname = f"--{name}"
-    if vname in R:
+    if declared(vname):
         emit(pal_l, vname, {"var": vname, "type": "color", "source": DECLARED, "description": desc})
         emit(pal_d, vname, {"var": vname, "type": "color", "source": DECLARED, "description": desc})
 
@@ -596,6 +649,8 @@ for name, desc in PALETTES:
 # per theme (the var re-binds).
 grad_l = gradient_stops(R.get("--gradient-sky", ""))
 grad_d = gradient_stops(D.get("--gradient-sky", ""))
+if not (grad_l and grad_d):
+    gap("gradient-sky: --gradient-sky has no stops in one theme")
 if grad_l:
     SPEC["light"]["gradient-sky"] = {"value": grad_l, "type": "gradient",
                                      "source": "css-var --gradient-sky (light; lab stops converted to sRGB)",
@@ -623,7 +678,7 @@ def typo(key, comp, state, desc):
                       "$description": desc,
                       "$extensions": {"source": f"computed type of {comp} {state} (raw/components-computed.json)"}}
     except (KeyError, ValueError):
-        pass
+        gap(f"font.type.{key}: no {comp} {state} reading")
 
 
 typo("display", "hero-title", "default", "The home hero display (59.2px medium, tight tracking).")
@@ -650,7 +705,9 @@ for key, cname, state, prop, desc in [
     ("button.padding-x-lg", "send-btn", "default", "paddingLeft", "Large-button horizontal padding (28px)."),
     ("button.radius-sm", "nav-cta", "default", "borderTopLeftRadius", "Small-button radius (8px)."),
     ("button.radius-md", "send-btn", "default", "borderTopLeftRadius", "Standard button radius (12px)."),
-    ("icon-button.size", "composer-send", "default", "height", "The 36px square icon button (send, mobile menu)."),
+    # Not composer-send: that reading caught the composer's "Add to prompt"
+    # attach button, not the send control (README, Known gaps).
+    ("icon-button.size", "m-menu-button", "default", "height", "The 36px square icon button (the phone-width Menu button)."),
     ("icon-button.size-sm", "theme-toggle", "default", "height", "The 32px icon button (theme toggle)."),
     ("nav-link.height", "nav-link", "default", "height", "Header nav link height (32px)."),
     ("field.height", "field-name", "default", "height", "Text field height (40px; textarea 64px min)."),
@@ -678,6 +735,17 @@ for key, cname, state, prop, desc in [
         node[parts[-1]] = {"type": "dimension", "value": st(cname, state)[prop],
                            "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)",
                            "description": desc}
+    else:
+        gap(f"component.{key}: no {cname} {state} {prop} reading")
+
+# Rows missing from the committed readings, kept visible in `_gaps`. Empty:
+# every named row has its reading today, so any miss is a new gap.
+KNOWN_GAPS = set()
+_new = [g for g in GAPS if g not in KNOWN_GAPS]
+if _new:
+    raise SystemExit("missing readings for named token rows (recapture, or list them in KNOWN_GAPS):\n  " + "\n  ".join(_new))
+if GAPS:
+    SPEC["_gaps"] = GAPS
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1, ensure_ascii=False) + "\n")
 

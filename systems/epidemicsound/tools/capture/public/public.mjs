@@ -14,10 +14,14 @@
 // trigger opens — never a Play, Download, Subscribe, Create-free-account or Log-in action. The "We
 // use cookies" banner is hidden, never answered.
 import fs from 'fs';
+import os from 'os';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour shots are working files, never committed: by default they go
+// outside the repository, to ~/.design-systems/epidemicsound/raw-shots (the
+// kit's default; the old default wrote into raw/full/ inside the package).
+const RAW = process.env.RAW || `${os.homedir()}/.design-systems/epidemicsound/raw-shots`;
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
