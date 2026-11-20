@@ -31,6 +31,7 @@ const URLS = { home: '/', women: '/women/', plp: '/women/new-in/new-in-clothing/
 let page, cdp, current, context, run;
 let activeCtx; // the context of the current page; closed when the next route opens
 const touched = new Set();
+const blockedPages = new Set(); // pages a bot check stopped; their old readings are kept
 const listed = new Map();
 
 async function blocked() {
@@ -60,7 +61,7 @@ async function newPage(key, { mobile = false, wait = 8000 } = {}) {
   log('open', key, mobile ? '(mobile)' : '');
   const target = URLS[key];
   await open(page, /^https?:/.test(target) ? target : BASE + target, { wait });
-  if (await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); activeCtx = undefined; return false; }
+  if (await blocked()) { log('  BLOCKED', key); blockedPages.add(key); await page.close(); await ctx.close(); activeCtx = undefined; return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   await closePromo(page);
   return true;
@@ -388,7 +389,7 @@ async function footer() {
   } else {
     current = 'home';
     await open(page, BASE + URLS.home, {});
-    if (await blocked()) { log('  BLOCKED footer'); return; }
+    if (await blocked()) { log('  BLOCKED footer'); blockedPages.add('home'); return; }
     await closePromo(page);
   }
   const g = G.footer;
@@ -433,16 +434,23 @@ context = ctx0;
 const pages = process.argv.slice(2);
 const plan = { home, women, plp, pdp, bag, saved, account, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
+// A page counts as finished only when its runner returns without throwing and
+// no bot check stopped it. Pruning touches only finished pages: a page that
+// threw keeps its unreached components and states instead of losing them.
+const finished = new Set(), broken = new Set();
+async function runPage(fn) {
+  try { await fn(); if (current) finished.add(current); } catch (e) { if (current) broken.add(current); log('PAGE FAILED', fn.name, String(e && e.message || e).split('\n')[0]); }
+}
+const pageDone = (c) => finished.has(c.page) && !broken.has(c.page) && !blockedPages.has(c.page);
 try {
-  for (const k of order) { if (k !== 'mobile') await plan[k](); }
-  if (!pages.length || pages.includes('home')) await footer();
-  if (!pages.length || pages.includes('mobile')) await plan.mobile();
+  for (const k of order) { if (k !== 'mobile') await runPage(plan[k]); }
+  if (!pages.length || pages.includes('home')) await runPage(footer);
+  if (!pages.length || pages.includes('mobile')) await runPage(plan.mobile);
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
-    if (!touched.has(key) && !pages.length) { delete out.components[key]; continue; }
-    if (!touched.has(key)) continue;
+    if (!touched.has(key)) { if (!pages.length && pageDone(c)) delete out.components[key]; continue; }
     const want = listed.get(key);
-    if (want) for (const st of Object.keys(c.states || {})) if (!want.has(st) && pages.length) delete c.states[st];
+    if (want && pageDone(c)) for (const st of Object.keys(c.states || {})) if (!want.has(st)) delete c.states[st];
   }
   save();
   await browser.close().catch(() => {});
