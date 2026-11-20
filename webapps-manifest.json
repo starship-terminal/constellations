@@ -2544,7 +2544,7 @@
       "description": "Hers for Women's Health ",
       "status": "pending",
       "package": null,
-      "notes": "https://www.forhers.com/account/orders is signed in. Product not walked.",
+      "notes": "https://www.forhers.com/account/orders redirected to a login wall. Session was not present. Skipped.",
       "login-extracted": "not-started",
       "login-probe": "signed-in",
       "batch": 8
