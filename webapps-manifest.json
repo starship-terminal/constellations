@@ -3831,9 +3831,9 @@
       "description": "Extension for your mind",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://mymind.com/login is 404. https://access.mymind.com/signin shows a welcome screen. Sign in did not open an email form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 12
     },
     {
@@ -3848,9 +3848,9 @@
       "description": "AI Workflow Automation Platform & Tools",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://app.n8n.cloud/login asks for an instance name before any email. Instance name not entered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 12
     },
     {
@@ -3865,9 +3865,9 @@
       "description": "The #1 Corporate Travel Management Platform",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://navan.com/signin opens https://login.navan.com/ and accepted the capture inbox, then asked for a password. Password not submitted. Passkey, Google, and Apple also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 12
     },
     {
@@ -3882,9 +3882,9 @@
       "description": "Marketing Strategies for Small Businesses",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://app.thenavia.com/ Sign In opens https://accounts.thenavia.com/sign-in with email or username and password, or Facebook, Google, or passkey. Password not submitted. Cookie banner rejected.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 12
     },
     {
@@ -3899,9 +3899,9 @@
       "description": "Watch TV Shows Online, Watch Movies Online",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.netflix.com/sg/login asks for email or mobile number and password. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 12
     },
     {
@@ -3916,9 +3916,9 @@
       "description": "Shoes, Sneakers, & Athletic Wear",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.newbalance.co.uk/login showed an error page before a form. Do not retry.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "captcha",
       "batch": 12
     },
     {
@@ -3933,9 +3933,9 @@
       "description": "Discover your neighborhood",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://nextdoor.com/login/ asks for email or mobile number and password, or Google, Facebook, or Apple. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 12
     },
     {
@@ -3950,9 +3950,9 @@
       "description": "Just Do It",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Sign In from https://www.nike.com/sg/ opened https://accounts.nike.com/lookup. Continue after the capture inbox said the server response could not be parsed. No code sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 12
     },
     {
@@ -3967,9 +3967,9 @@
       "description": "We make tools for the modern Nomad",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://nomadgoods.com/sg/login and /account/login are page-not-found. No account form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 12
     },
     {
@@ -3984,9 +3984,9 @@
       "description": "Making Nothing into something",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://nothing.tech/login is 404. https://account.nothing.tech/login/ asks for email and password. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 12
     },
     {
@@ -4001,9 +4001,9 @@
       "description": "A thoughtful curation of underwear and sleepwear crafted from natural and recycled materials",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.nudea.com/account/login opens Shopify customer login and sent a code. Code not entered. Offers checkbox left unchecked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 12
     },
     {
@@ -4018,9 +4018,9 @@
       "description": "Incredibly friendly people-first employee experience platform",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://app.officevibe.com/ opens Workleap login. After the capture inbox, the next page asked for a password or a sign-in link. Password not submitted and link not requested.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 12
     },
     {
@@ -4035,9 +4035,9 @@
       "description": "The companion app for every book",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://oku.club/login is missing. https://oku.club/signin asks for email and password. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 12
     },
     {
@@ -4052,9 +4052,9 @@
       "description": "Swiss Performance Running Shoes & Clothing",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.on.com/en-sg/login Log in accepted the capture inbox, then asked to create a password for a new account. Password not submitted. Marketing checkbox left unchecked.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 12
     },
     {
@@ -4069,9 +4069,9 @@
       "description": "Discover the world's most exclusive luxury home, apartment and villa rentals",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://www.onefinestay.com/login asks for email and password. Password not submitted. Cookie banner not accepted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 12
     },
     {
@@ -4086,9 +4086,9 @@
       "description": "Free Farming App for Precision Agriculture",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Marketing /login is 404. https://app.onesoil.ai/login asks for email and password, or Google or Apple. Password not submitted.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "password",
       "batch": 12
     },
     {
@@ -4103,9 +4103,9 @@
       "description": "Guided Meditation. Mindfulness. Breathwork",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://o-p-e-n.com/signin Continue with email accepted the capture inbox and opened account creation asking for name and password. Password not submitted. Apple and phone also offered. No code sent.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "needs-other-info",
       "batch": 12
     },
     {
@@ -4120,9 +4120,9 @@
       "description": "The largest NFT marketplace",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "Sign in on https://opensea.io/ sent a one-time authentication code to the capture inbox. Code not entered. Google, Apple, and wallets also offered.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "code-sent",
       "batch": 12
     },
     {
@@ -4137,9 +4137,9 @@
       "description": "The AI Fullstack Engineer",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://orchids.app/login is a paused Vercel deployment (503). No sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "closed",
       "batch": 12
     },
     {
@@ -4154,9 +4154,9 @@
       "description": "Create Your Branded AI Chat",
       "status": "pending",
       "package": null,
-      "notes": "",
+      "notes": "https://outchat.ai/ did not load. https://app.outchat.ai/login is a Vercel 404. No sign-in form.",
       "login-extracted": "not-started",
-      "login-probe": "not-tried",
+      "login-probe": "no-form",
       "batch": 12
     },
     {
