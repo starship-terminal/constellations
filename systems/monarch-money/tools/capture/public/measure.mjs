@@ -9,7 +9,10 @@ import { BASE, APP, launch, open, hideConsent, styleOf, crop, centre, RAW } from
 
 fs.mkdirSync(RAW, { recursive: true });
 const OUT = path.join(RAW, 'components-computed.json');
-const out = { _meta: { product: 'Monarch Money', captured: new Date().toISOString().slice(0, 10), route: 'public-web' }, components: {} };
+// Start from the committed readings and replace each component this run reaches, so a page that
+// fails part way keeps the earlier readings of every later component.
+const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { components: {} };
+const out = { _meta: { product: 'Monarch Money', captured: new Date().toLocaleDateString('en-CA'), route: 'public-web' }, components: prev.components || {} };
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 
