@@ -107,12 +107,17 @@ class RebuildTest(unittest.TestCase):
         self.assertGreater(checked, 35)
 
     def test_transition_pairs_each_property_with_its_own_timing(self):
-        transition = builder_fn("transition", "\ndef st(")
+        transition = builder_fn("transition", "\ndef st(", first="_list")
         s = self.C["nav-cta"]["states"]["default"]["style"]
         self.assertEqual(self.built["core"]["motion"]["control"]["$value"], transition(s))
         two = transition({"transitionProperty": "color, opacity", "transitionDuration": "0.1s, 0.3s",
                           "transitionTimingFunction": "ease, cubic-bezier(0.4, 0, 0.2, 1)", "transitionDelay": "0s"})
         self.assertEqual(two, "color 0.1s ease, opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)")
+        # A 0s entry overriding an earlier `all` is kept, and linear() keeps its stops.
+        self.assertEqual(transition({"transitionProperty": "all, opacity", "transitionDuration": "0.2s, 0s",
+                                     "transitionTimingFunction": "linear(0, 0.8 50%, 1)", "transitionDelay": "0s"}),
+                         "all 0.2s linear(0, 0.8 50%, 1), opacity 0s linear(0, 0.8 50%, 1)")
+        self.assertEqual(transition({"transitionProperty": "all", "transitionDuration": "0s"}), "")
 
     def test_focus_ring_is_read_from_a_painted_ring(self):
         ring = builder_fn("painted_ring", "\ndef transition(", first="split_shadow")
