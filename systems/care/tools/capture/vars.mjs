@@ -64,7 +64,9 @@ const sheets = [...bodies.entries()].concat(inline);
 await page.close();
 
 // ---- harvest: every rule with --* declarations ----
-const probe = await browser.newPage();
+// The probe resolves viewport-relative values: give it the 1440 x 900 viewport the notes name
+// (a bare browser.newPage() is Playwright's 1280 x 720 default).
+const probe = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 const result = await probe.evaluate((sheets) => {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];
