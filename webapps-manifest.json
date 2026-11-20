@@ -6585,7 +6585,7 @@
       "description": "The World's Leading Music Video Network",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://www.vevo.com/login never loaded a form. Homepage is a marketing site with no sign-in.",
+      "notes": "Email probe: https://www.vevo.com/login never loaded a form. Homepage is a marketing site with no sign-in. Public walk 2026-11-21: About, Originals, People, For Advertisers, For Artists, and Newsroom loaded. Forms were reached and not submitted. /home-old and /label-partners are password walls and were not entered. https://www.vevo.com/login returned HTTP 503 with no form. Public package in PR 1508 at 8d64bfaf7. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 20
