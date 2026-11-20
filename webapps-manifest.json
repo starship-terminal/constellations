@@ -6806,9 +6806,9 @@
       "description": "The developer-first ‍MLOps platform",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://wandb.ai/login redirected to CoreWeave Forge. Continue with Google signed in. Product not walked.",
+      "notes": "https://wandb.ai/home redirected to a CoreWeave Forge login wall. Session was not present. Skipped.",
       "login-extracted": "not-started",
-      "login-probe": "signed-in",
+      "login-probe": "closed",
       "batch": 20
     },
     {
