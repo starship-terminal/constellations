@@ -249,7 +249,7 @@ tokens = {
     "$themes": [
         {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
          "$description": "The .light-mode scope: the site's stylesheets re-point the semantic --text-*/--bg-*/--border-* roles under body.light-mode, the scope the /library page carries — a light painted surface, resolved through the same declarations."},
-        {"id": "dark", "name": "Dark", "selectedTokenSets": {"dark": "enabled"},
+        {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"},
          "$description": "The painted default: every www.gladia.io marketing page resolves the dark :root layer (--bg-primary black, --text-primary white, the glass translucents). No page mounts a dark-toggle — dark is simply what the site paints."},
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},

@@ -1124,6 +1124,11 @@
      "type": "dimension",
      "value": "32px",
      "source": "measured nav-cta default on home (header CTA)"
+    },
+    "radius": {
+     "type": "dimension",
+     "value": "40px",
+     "source": "measured nav-cta default on home (header CTA corner)"
     }
    }
   },
@@ -1132,6 +1137,11 @@
     "type": "dimension",
     "value": "428px",
     "source": "measured plan-card default on pricing (pricing plan card)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "24px",
+    "source": "measured plan-card default on pricing (plan card corner)"
    }
   },
   "field": {
@@ -1153,15 +1163,6 @@
     "type": "dimension",
     "value": "56px",
     "source": "measured m-topbar default on mobile (mobile top bar)"
-   }
-  },
-  "auth": {
-   "panel": {
-    "bg": {
-     "type": "color",
-     "value": "rgba(0, 0, 0, 0)",
-     "source": "measured login-panel default on login (app-shell sign-in card)"
-    }
    }
   }
  }
