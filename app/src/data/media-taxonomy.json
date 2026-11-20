@@ -1389,8 +1389,8 @@
     },
     {
       "referenceId": "systems:krea",
-      "media": 117,
-      "assignedMedia": 25
+      "media": 119,
+      "assignedMedia": 26
     },
     {
       "referenceId": "systems:krisp",
@@ -264265,6 +264265,22 @@
           "termId": "web-ux-patterns:searching",
           "rule": "ux-search",
           "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:krea",
+      "mediaId": "systems/krea/screenshots/app-dark-account-menu.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown-menu",
+          "rule": "ui-menu",
+          "reason": "Capture filename explicitly names dropdown menu; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:user-menu",
+          "rule": "ux-user-menu",
+          "reason": "Capture filename explicitly names user menu; local classification from recorded capture metadata."
         }
       ]
     },
