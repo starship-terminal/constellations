@@ -53,8 +53,39 @@ HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
 V = json.loads((RAW / "css-vars.json").read_text())
 RL = V.get("resolved", {}).get("dark", {})
-C = json.loads((RAW / "components-computed.json").read_text())["components"]
+J = json.loads((RAW / "components-computed.json").read_text())
+C = J["components"]
 R = {n: v.get("value", v.get("raw")) for n, v in RL.items()}
+
+
+def split_layers(v):
+    """Split a computed shadow list on the commas outside parentheses."""
+    out, depth, cur = [], 0, ""
+    for ch in v:
+        depth += ch == "("
+        depth -= ch == ")"
+        if ch == "," and depth == 0:
+            out.append(cur.strip())
+            cur = ""
+        else:
+            cur += ch
+    return out + [cur.strip()] if cur.strip() else out
+
+
+def shadow_value(v, where):
+    """Every layer of a computed box-shadow as DTCG layers; a layer it cannot read stops the build."""
+    layers = []
+    for part in split_layers(v):
+        m = re.fullmatch(r"(rgba?\([\d.,\s]+\)|#[0-9a-fA-F]{3,8})\s+(-?\d+(?:\.\d+)?px)\s+(-?\d+(?:\.\d+)?px)"
+                         r"\s+(-?\d+(?:\.\d+)?px)(?:\s+(-?\d+(?:\.\d+)?px))?(\s+inset)?", part)
+        if not m:
+            raise SystemExit(f"{where}: shadow layer not understood: {part!r}")
+        a, x, y, bl, sp, ins = m.groups()
+        layer = {"color": norm_color(a), "offsetX": x, "offsetY": y, "blur": bl, "spread": sp or "0px"}
+        if ins:
+            layer["inset"] = True
+        layers.append(layer)
+    return layers
 
 
 def var(name, ty="color", **kw):
@@ -282,8 +313,9 @@ for key, comp, state, prop, desc in [
     except KeyError:
         pass
 # pure white, the focus ring's outer half (measured on every focus-visible state)
-neutral["white"] = {"value": "#ffffff", "type": "color",
-                    "source": "computed boxShadow of nav-link focus-visible (raw/components-computed.json): #ffffff 0px 0px 0px 2px",
+neutral["white"] = {"value": shadow_value(st("nav-link", "focus-visible")["boxShadow"], "nav-link focus-visible")[0]["color"],
+                    "type": "color",
+                    "source": "computed boxShadow of nav-link focus-visible (raw/components-computed.json): the colour of its 2px spread layer",
                     "description": "Pure white, used only as the focus ring's 2px spread layer and the lightest field borders."}
 
 status = SPEC["core"].setdefault("color", {}).setdefault("status", {})
@@ -294,7 +326,10 @@ for key, vn, base, desc in [
      "The declared success green: --tdc-success paints color-mix(in srgb, #1e7a3c 70%, currentColor)."),
 ]:
     if vn in R:
-        status[key] = {"value": base, "type": "color",
+        m = re.fullmatch(r"color-mix\(in srgb,\s*(#[0-9a-fA-F]{3,8})\s+\d+%,\s*currentColor\)", R[vn].strip())
+        if not m:
+            raise SystemExit(f"{vn}: expected a color-mix over a base hue, got {R[vn]!r}")
+        status[key] = {"value": norm_color(m.group(1)), "type": "color",
                        "source": f"css-var {vn} (raw/css-vars.json) resolves to a color-mix over this base hue",
                        "description": desc}
 
@@ -326,8 +361,9 @@ for name, target, desc in [
 ]:
     emit(dark, name, {"value": "{" + target + "}", "type": "color",
                       "source": ALIAS, "description": desc})
-dark["focus-outline"] = {"value": "#000000", "type": "color",
-                         "source": "computed outlineColor of nav-link focus-visible (raw/components-computed.json): 2px solid #000000 offset 2px, paired with the white spread ring",
+_fo = st("nav-link", "focus-visible")
+dark["focus-outline"] = {"value": norm_color(_fo["outlineColor"]), "type": "color",
+                         "source": f"computed outlineColor of nav-link focus-visible (raw/components-computed.json): {_fo['outlineWidth']} {_fo['outlineStyle']} offset {_fo['outlineOffset']}, paired with the white spread ring",
                          "description": "The black 2px outline half of the double focus ring."}
 
 # ------------------------------------------------------------- type scale
@@ -445,13 +481,10 @@ shadow = SPEC["core"].setdefault("shadow", {})
 try:
     hit = next((a.get("shadow") for a in C["cart-continue"]["states"]["default"].get("ancestors", []) if a.get("shadow")), None)
     if hit:
-        m = re.fullmatch(r"(rgba?\([\d.,\s]+\))\s+(-?\d+(?:\.\d+)?px)\s+(-?\d+(?:\.\d+)?px)\s+(-?\d+(?:\.\d+)?px)\s+(-?\d+(?:\.\d+)?px)", hit)
-        if m:
-            a, x, y, bl, sp = m.groups()
-            shadow["drawer"] = {"value": [{"color": norm_color(a), "offsetX": x, "offsetY": y, "blur": bl, "spread": sp}],
-                                "type": "shadow",
-                                "source": "painted shadow on the cart drawer's panel ancestor (raw/components-computed.json)",
-                                "description": "The -7px/35px drop the cart and account drawers cast leftward over the page."}
+        shadow["drawer"] = {"value": shadow_value(hit, "cart-continue ancestor"),
+                            "type": "shadow",
+                            "source": "painted shadow on the cart drawer's panel ancestor (raw/components-computed.json)",
+                            "description": "The -7px/35px drop the cart and account drawers cast leftward over the page."}
 except KeyError:
     pass
 
@@ -483,8 +516,12 @@ for key, want, where, desc in [
             if hit:
                 break
         if not hit:  # declared in the readable sheets (the 1.5s line animations)
-            hit = want
-    easing[key] = {"value": want, "type": "cubicBezier",
+            sheets = json.dumps(J["_meta"].get("sheets", {})).replace(" ", "")
+            if want.replace(" ", "") in sheets:
+                hit = want
+    if not hit:
+        raise SystemExit(f"easing {key}: {want} is not in the readings it cites")
+    easing[key] = {"value": hit, "type": "cubicBezier",
                    "source": (f"computed transitionTimingFunction of {where} default (raw/components-computed.json)" if where
                               else "declared transition in the same-origin theme sheets (raw/components-computed.json _meta.sheets)"),
                    "description": desc}
@@ -499,13 +536,10 @@ for key, comp, state, prop, ty, desc in [
     try:
         s = st(comp, state)[prop]
         if prop == "boxShadow":
-            m = re.fullmatch(r"(rgba?\([\d.,\s]+\)|#[0-9a-fA-F]{3,8})\s+(-?\d+(?:\.\d+)?px)\s+(-?\d+(?:\.\d+)?px)\s+(-?\d+(?:\.\d+)?px)\s+(-?\d+(?:\.\d+)?px)", s)
-            if m:
-                a, x, y, bl, sp = m.groups()
-                meas[key] = {"value": [{"color": norm_color(a), "offsetX": x, "offsetY": y, "blur": bl, "spread": sp}],
-                             "type": "shadow",
-                             "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)",
-                             "description": desc}
+            meas[key] = {"value": shadow_value(s, f"{comp} {state}"),
+                         "type": "shadow",
+                         "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)",
+                         "description": desc}
             continue
         meas[key] = {"value": norm_color(s), "type": ty,
                      "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)",

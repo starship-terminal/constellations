@@ -331,20 +331,21 @@ Page: shop. Selector: `shop product group-content`. States: default, hover, focu
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 691.31 x 26.97 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Neue Haas Grotesk Text Pro 14px/21px 400 | = | = | = |
-| Letter spacing | 0.462px | = | = | = |
-| Colour | #eeeef2 | = | = | = |
-| Text node | h2.wp-block-heading.has-medium-font-size: Neue Haas Grotesk Text Pro 17.99px/26.985px 400, #eeeef2, ls 0.7196px | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 691.31 x 26.97 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Neue Haas Grotesk Text Pro 14px/21px 400 | = | - | = |
+| Letter spacing | 0.462px | = | - | = |
+| Colour | #eeeef2 | = | - | = |
+| Text node | h2.wp-block-heading.has-medium-font-size: Neue Haas Grotesk Text Pro 17.99px/26.985px 400, #eeeef2, ls 0.7196px | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
 Crops: `product-card-default.png`, `product-card-hover.png`, `product-card-focus-visible.png`, `product-card-pressed.png`.
 
@@ -507,22 +508,23 @@ Page: product-digitakt. Selector: `.block-button Key Features`. States: default,
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 461.33 x 37.81 | = | = | = | = |
-| Padding | 0px | = | = | = | = |
-| Gap | 12.005px | = | = | = | = |
-| Border | none | = | = | = | = |
-| Radius | 0px | = | = | = | = |
-| Background | transparent | = | = | = | = |
-| Box shadow | none | = | = | = | = |
-| Outline | none | = | = | = | = |
-| Font | Neue Haas Grotesk Display Pro 24.01px/36.015px 450 | = | = | = | = |
-| Letter spacing | 0.9604px | = | = | = | = |
-| Colour | #eeeef2 | = | = | = | = |
-| Text node | span: Neue Haas Grotesk Display Pro 24.01px/36.015px 450, #eeeef2, ls 0.9604px | = | = | = | = |
-| Transition | border, background-color, background-position, background-size, background-image, opacity 0.3s, 0.3s, 0.3s, 0.3s, 0.5s, 0.3s ease, ease, ease, ease, ease, ease delay 0s, 0s, 0s, 0s, 0s, 0s | = | = | = | = |
-| Cursor | pointer | = | = | = | = |
-| Painted layers | span 146.6x36.0 image linear-gradient(to right, #333333 0%, #333333 100%) | = | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover | own toggle |
+| Size (w x h) | 461.33 x 37.81 | = | - | = | = |
+| Padding | 0px | = | - | = | = |
+| Gap | 12.005px | = | - | = | = |
+| Border | none | = | - | = | = |
+| Radius | 0px | = | - | = | = |
+| Background | transparent | = | - | = | = |
+| Box shadow | none | = | - | = | = |
+| Outline | none | = | - | = | = |
+| Font | Neue Haas Grotesk Display Pro 24.01px/36.015px 450 | = | - | = | = |
+| Letter spacing | 0.9604px | = | - | = | = |
+| Colour | #eeeef2 | = | - | = | = |
+| Text node | span: Neue Haas Grotesk Display Pro 24.01px/36.015px 450, #eeeef2, ls 0.9604px | = | - | = | = |
+| Transition | border, background-color, background-position, background-size, background-image, opacity 0.3s, 0.3s, 0.3s, 0.3s, 0.5s, 0.3s ease, ease, ease, ease, ease, ease delay 0s, 0s, 0s, 0s, 0s, 0s | = | - | = | = |
+| Cursor | pointer | = | - | = | = |
+| Painted layers | span 146.6x36.0 image linear-gradient(to right, #333333 0%, #333333 100%) | = | - | = | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover | own toggle |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = | = |
 
 Crops: `accordion-default.png`, `accordion-hover.png`, `accordion-focus-visible.png`, `accordion-pressed.png`, `accordion-opened.png`.
 
