@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Leonardo.Ai style guide</title>
+<style>
+  :root {
+    --page: #000000;
+    --surface: #111111;
+    --text: #ffffff;
+    --muted: #ededed;
+    --accent: #6e60ee;
+    --white: #ffffff;
+    --ink: #000000;
+    --green: #03e65b;
+    --yellow: #f8c030;
+    --red: #f85848;
+    --tab-idle: rgba(255, 255, 255, 0.1);
+    --text-secondary: rgba(255, 255, 255, 0.7);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 16px/1.4 ui-sans-serif, system-ui, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-size: 34px; font-weight: 500; letter-spacing: -0.02em; text-transform: uppercase; }
+  h2 { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); margin-top: 40px; }
+  p.note { color: var(--text-secondary); max-width: 62ch; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+  .swatch { border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.12); }
+  .swatch i { display: block; height: 72px; }
+  .swatch span { display: block; padding: 8px 10px; font-size: 12px; background: var(--surface); }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .pill { display: inline-flex; align-items: center; justify-content: center; height: 35px; padding: 0 18px; border-radius: 9999px; border: 1px solid transparent; font-size: 16px; font-weight: 500; text-decoration: none; }
+  .login { background: var(--white); color: var(--ink); }
+  .tutorial { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.4); }
+  .start { background: var(--white); color: var(--ink); height: 48px; }
+  .subscribe { background: var(--accent); color: var(--white); height: 48px; }
+  .tabs { display: inline-flex; gap: 4px; padding: 4px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.16); }
+  .tab { height: 48px; padding: 0 28px; border-radius: 9999px; border: 0; font-weight: 500; letter-spacing: 0.04em; }
+  .tab.on { background: var(--accent); color: var(--ink); }
+  .tab.off { background: var(--tab-idle); color: #8e8e8e; }
+  .plans { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .plan { border: 1px solid rgba(255,255,255,0.16); border-radius: 16px; padding: 16px; background: #050505; }
+  .plan b { display: block; margin-bottom: 8px; }
+  .free { color: var(--white); }
+  .essential { color: var(--yellow); }
+  .premium { color: var(--green); }
+  .ultimate { color: var(--red); }
+  .menu { background: var(--surface); border-radius: 16px; padding: 16px; max-width: 280px; }
+  .menu a { display: block; color: var(--text); text-decoration: none; padding: 8px 0; }
+  .menu small { color: var(--text-secondary); }
+  @media (max-width: 700px) { .plans { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Leonardo.Ai</h1>
+  <p class="note">Public marketing surface, dark only. Values are the ones read on 2026-11-21. Canva Sans, Ufficio Display and Leo Sans are proprietary and are not loaded here. The fallback is the system sans.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:#000"></i><span>page #000000</span></div>
+    <div class="swatch"><i style="background:#111"></i><span>menu #111111</span></div>
+    <div class="swatch"><i style="background:#6e60ee"></i><span>violet #6e60ee</span></div>
+    <div class="swatch"><i style="background:#fff"></i><span>white #ffffff</span></div>
+    <div class="swatch"><i style="background:#ededed"></i><span>muted #ededed</span></div>
+    <div class="swatch"><i style="background:#03e65b"></i><span>green #03e65b</span></div>
+    <div class="swatch"><i style="background:#f8c030"></i><span>yellow #f8c030</span></div>
+    <div class="swatch"><i style="background:#f85848"></i><span>red #f85848</span></div>
+  </div>
+  <h2>Buttons</h2>
+  <div class="row">
+    <a class="pill login">Log in</a>
+    <a class="pill tutorial">Tutorial</a>
+    <a class="pill start">Start now</a>
+    <a class="pill subscribe">Subscribe</a>
+  </div>
+  <h2>Pricing tabs</h2>
+  <div class="tabs">
+    <button class="tab on">SOLO</button>
+    <button class="tab off">TEAM</button>
+    <button class="tab off">API</button>
+  </div>
+  <h2>Plan names</h2>
+  <div class="plans">
+    <div class="plan"><b class="free">FREE</b><span>$0</span></div>
+    <div class="plan"><b class="essential">ESSENTIAL</b><span>$12</span></div>
+    <div class="plan"><b class="premium">PREMIUM</b><span>$30</span></div>
+    <div class="plan"><b class="ultimate">ULTIMATE</b><span>$60</span></div>
+  </div>
+  <h2>Menu surface</h2>
+  <div class="menu">
+    <a>AI Image Generator<br><small>Create images from prompts or references</small></a>
+    <a>AI Video Generator<br><small>Generate motion from images or text</small></a>
+  </div>
+</main>
+</body>
+</html>
