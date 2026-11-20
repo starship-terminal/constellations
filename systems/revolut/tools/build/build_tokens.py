@@ -8,9 +8,11 @@ Sources, read on 2026-11-19 from the live pages (T3 preview, computed style):
   raw/dark-colors.json    the same names resolved on
                           https://www.revolut.com/our-pricing-plans/ with
                           html[data-theme=dark]
-  raw/foundation.json     type, radius, space, size, shadow, motion and focus
-                          resolved on :root of https://www.revolut.com/
-                          (these names do not change between the two themes)
+  foundation()            type, radius, space, size, shadow, motion and focus,
+                          resolved on :root of https://www.revolut.com/ and typed
+                          in here: no raw/foundation.json was kept, so these and
+                          the painted-chrome values are labelled Reconstruction
+                          unless raw/ holds the same value
 
 The marketing site and the signed-out SSO wall both ship Revolut UI (`--rui-*`).
 A token is the computed value, never a guessed one. Empty computed values
@@ -234,8 +236,10 @@ def foundation():
         "shadow": "cubic-bezier(0.4, 0.3, 0.8, 0.6)",
         "toast": "cubic-bezier(0.175, 0.885, 0.21, 1.65)",
     }
+    # DTCG cubicBezier is four numbers, not the CSS function text.
     motion_easing = {
-        name: tok(value, "cubicBezier", ROOT_PAGE + " --rui-easing-" + name)
+        name: tok([float(x) for x in re.fullmatch(r"cubic-bezier\(([^)]*)\)", value).group(1).split(",")],
+                  "cubicBezier", ROOT_PAGE + " --rui-easing-" + name + " " + value)
         for name, value in easing.items()
     }
     return {
@@ -336,10 +340,83 @@ def build():
             },
         },
     }
-    text = json.dumps(doc, indent=2, ensure_ascii=False) + "\n"
+    relabel_unread(doc)
+    return doc
+
+
+# raw/ holds only the --rui-color-* dumps. A Measured token whose value raw/ does not hold (as hex or
+# rgb()) was typed in from the capture session: the foundation scales, the focus outlines and most
+# painted-chrome values. Its evidence becomes Reconstruction (docs/EVIDENCE.md).
+RAW_TEXT = re.sub(r"\s+", "", "".join(f.read_text().lower() for f in sorted(RAW.glob("*.json"))))
+HAND = "Entered by hand at capture time; raw/ holds no reading of this value. Capture note: "
+
+
+
+def _colours(text):
+    """Every colour written in raw/, as (r, g, b, alpha): rgb()/rgba() with commas, spaces or a slash
+    alpha, and #rgb/#rrggbb/#rrggbbaa."""
+    out = []
+    for m in re.finditer(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)\s*(?:[,/]\s*(\d*\.?\d+)(%?))?\s*\)", text):
+        a = 1.0 if m.group(4) is None else float(m.group(4)) / (100 if m.group(5) else 1)
+        out.append((int(m.group(1)), int(m.group(2)), int(m.group(3)), a))
+    for m in re.finditer(r"#([0-9a-f]{8}|[0-9a-f]{6}|[0-9a-f]{3})(?![0-9a-z])", text):
+        out.append(_hex(m.group(0)))
+    return out
+
+
+def _hex(value):
+    h = value.lstrip("#")
+    if len(h) == 3:
+        h = "".join(c * 2 for c in h)
+    return (int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16), int(h[6:8], 16) / 255 if len(h) == 8 else 1.0)
+
+
+RAW_COLOURS = _colours("".join(f.read_text().lower() for f in sorted(RAW.glob("*.json"))))
+
+
+def colour_in_raw(value):
+    """A hex colour is backed only by a raw colour with the same channels and the same opacity."""
+    r, g, b, a = _hex(value)
+    return any((r, g, b) == c[:3] and abs(a - c[3]) <= 0.01 for c in RAW_COLOURS)
+
+def in_raw(value):
+    v = str(value).strip().lower()
+    if " " in v and "," not in v and not v.startswith(("#", "rgb")):
+        # a compound such as "2px solid #234fa680": every part must be in raw/
+        return all(in_raw(part) for part in v.split() if part not in ("solid", "dashed", "dotted", "inset"))
+    forms = {v.replace(" ", "")}
+    if re.fullmatch(r"#[0-9a-f]{6}([0-9a-f]{2})?", v):
+        return colour_in_raw(v)
+    m = re.fullmatch(r"(\d*\.?\d+)px", v)
+    if m:
+        forms.add(f"{float(m.group(1)) / 16:g}rem")
+    return any(f in RAW_TEXT for f in forms)
+
+
+def relabel_unread(doc):
+    def walk(node):
+        for k, v in node.items():
+            if k.startswith("$") or not isinstance(v, dict):
+                continue
+            if "$value" in v:
+                yield v
+            else:
+                yield from walk(v)
+    for setname in ("core", "light", "dark"):
+        for tok_ in walk(doc[setname]):
+            ext, value = tok_["$extensions"], tok_["$value"]
+            if ext.get("evidence") != "Measured" or (isinstance(value, str) and value.startswith("{")):
+                continue
+            if not isinstance(value, (str, int, float)) or not in_raw(value):
+                ext["evidence"] = "Reconstruction"
+                ext["source"] = HAND + ext["source"]
+
+
+def write():
+    text = json.dumps(build(), indent=2, ensure_ascii=False) + "\n"
     (HERE / "tokens.json").write_text(text)
     print(f"wrote tokens.json ({text.count(chr(10))} lines)")
 
 
 if __name__ == "__main__":
-    build()
+    write()
