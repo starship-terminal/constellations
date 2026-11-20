@@ -3438,9 +3438,9 @@
       "description": "Online Classes",
       "status": "pending",
       "package": null,
-      "notes": "https://www.masterclass.com/auth/login redirected to a Google sign-in for MasterClass. No site email field. Google sign-in not completed.",
+      "notes": "https://www.masterclass.com/auth/login redirected to a Google sign-in for MasterClass. No site email field. Google sign-in not completed. Public walk 2026-11-21: Browse opens a category menu on the homepage. View All Categories goes to categories. Search opens popular searches. Watch Trailer opens a video dialog. Get MasterClass goes to promotion. View Plans goes to checkout. Log In goes to auth/login, which redirects to Google. That branch stopped. Google was not clicked. No email was typed. No form was submitted. Signed-in classes were not captured. Public package refresh in PR 1596 at a79856ba0beb. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "oauth-only",
+      "login-probe": "closed",
       "batch": 10
     },
     {
