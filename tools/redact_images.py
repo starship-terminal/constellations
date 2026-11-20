@@ -759,7 +759,8 @@ class Native:
 
     def encode(self, work, painted):
         """(PNG bytes, the array a decode must give back, painted pixels with no palette entry
-        within NEAR, the largest distance to the entry used), or None when no pixel changes.
+        within NEAR, the largest distance to the entry used). The bytes and the array are None when no
+        pixel changes, which a palette file can do even though a fill wrote new colours: `far` still counts.
 
         A palette file keeps every index outside `painted`, and every painted pixel whose colour the
         fill left alone; any other painted pixel takes the nearest existing entry (squared distance
@@ -780,13 +781,13 @@ class Native:
                 idx[sel] = best[inv]
                 far, dmax = int((dist[inv] > NEAR).sum()), float(dist.max())
             if np.array_equal(idx, self.idx):
-                return None
+                return None, None, far, dmax
             im = Image.frombytes("P", self.size, np.ascontiguousarray(idx, np.uint8).tobytes())
             im.putpalette(np.ascontiguousarray(self.lut[:, :3]).tobytes())
             intended = idx
         else:
             if np.array_equal(work, self.work):
-                return None
+                return None, None, 0, 0.0
             arr = work[..., 0] if self.mode == "L" else work[..., [0, 3]] if self.mode == "LA" else work
             im = Image.fromarray(np.ascontiguousarray(arr, np.uint8))
             intended = _work_from(self.mode, np.asarray(arr))
@@ -908,15 +909,18 @@ def cmd_apply(args):
             refused.append(rel)
             print(f"cannot edit {rel} in place: {why}", flush=True)
             continue
-        enc = src.encode(a, painted)
-        if enc is None:                       # every painted pixel kept its palette index
-            continue
-        out, intended, far, dmax = enc
-        edited += 1
-        print(("would edit " if args.dry_run else "edited ") + rel, flush=True)
+        out, intended, far, dmax = src.encode(a, painted)
+        if out is not None:
+            edited += 1
+            print(("would edit " if args.dry_run else "edited ") + rel, flush=True)
+        elif far:                             # the fill mapped back to the pixels' own entries
+            print(f"unchanged {rel}: every painted pixel mapped back to its own palette entry, so the "
+                  "region may still show what it was meant to hide", flush=True)
         if far:
             print(f"   {far} painted pixels have no palette entry within {NEAR} of the fill; painted with the "
                   f"nearest entry (up to {dmax:.0f} off). The palette is never grown; look at the result", flush=True)
+        if out is None:
+            continue
         if not args.dry_run:
             write_in_place(f, before, out, painted, intended)
 

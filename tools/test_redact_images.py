@@ -584,6 +584,27 @@ class ApplyInPlace(unittest.TestCase):
             self.assertEqual(Image.open(f).getpalette(), pal)      # never grown
             self.assertTrue(set(np.unique(np.array(Image.open(f)))) <= {0, 1})
 
+    def test_a_fill_that_maps_back_to_the_same_entries_is_still_reported(self):
+        """Black left, white right, split inside the box: the grey blend maps back to the very same
+        indices, so nothing is written, but the far matches and the no-op are still said."""
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "screenshots/split.png"
+            f.parent.mkdir()
+            idx = np.zeros((self.H, self.W), np.uint8)
+            idx[:, 24:] = 1
+            im = Image.frombytes("P", (self.W, self.H), idx.tobytes())
+            im.putpalette(bytes([0, 0, 0, 255, 255, 255]))
+            im.save(f)
+            raw = f.read_bytes()
+            r = Path(d) / "r.json"
+            r.write_text(json.dumps({"families": [{"files": ["screenshots/*"], "rects": [[20, 5, 28, 30]]}],
+                                     "ocr": {"net": False}}))
+            code, out = self.apply(d, r)
+            self.assertEqual((code, f.read_bytes()), (0, raw))
+            self.assertIn("unchanged screenshots/split.png: every painted pixel mapped back", out)
+            self.assertIn("no palette entry within", out)
+            self.assertIn("0 edited", out)
+
     def test_a_rewrite_that_changes_an_outside_pixel_is_refused(self):
         from unittest import mock
         real = R.Native.encode
