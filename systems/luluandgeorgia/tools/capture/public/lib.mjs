@@ -29,9 +29,7 @@ export const M = (name) => `.${name}`;
 const CONSENT = /datagrail|dg-consent|cookielaw\.org|onetrust\.com|cookiepro\.com|privacy-mgmt|transcend-cdn|cdn\.transcend\.io|consent\.cookielaw/;
 
 export async function patch(context) {
-  await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
-  });
+  // Automation is not hidden: no navigator.webdriver mask (bot check: recorded as a boundary, not bypassed).
   await context.route(CONSENT, (r) => r.abort());
 }
 

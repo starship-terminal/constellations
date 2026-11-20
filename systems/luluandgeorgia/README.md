@@ -101,6 +101,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (Header icons are
 - `light.color.info` is the reviews widget, not a storefront status colour. Success, warning, and danger were not painted as their own roles. Sale red is the only red.
 - The Shop sign-in page uses Libre Franklin and a purple pill. Those values are not in `tokens.json`.
 - Screenshots are 256-colour PNGs. Read colours from tokens, not from the images.
+- The committed readings and screenshots were taken with `navigator.webdriver` hidden by `tools/capture/public/lib.mjs`. The mask has been removed from the script (2026-11 audit); a bot check is now a boundary, not something to get past.
 - The chat bubble (Gladly) is still in some screenshots. It is a third-party widget.
 
 ## Fonts
