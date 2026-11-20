@@ -5684,9 +5684,9 @@
       "description": "Generative AI for music & sound fx",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: homepage Sign in opened AuthKit. Continue with email then asked for a password. Password not submitted.",
+      "notes": "Email probe: homepage Sign in opened AuthKit. Continue with email then asked for a password. Password not submitted. Public walk 2026-11-21: nav opens How it works, Plugin, Pricing, the manual, and the guide. Homepage Presets, mad-lib chips, Roll the dice, Help, and FAQ stay on the page. Make my mix, Download, and Save open a signup dialog and that branch stopped. Sign in, Start free, Open Sampler, Try it in Labs, and Generate stop at AuthKit. Cookie banner was hidden, never clicked. No email was typed. No form was submitted. Signed-in workspace was not captured. Public package refresh in PR 1581 at 9de7b6f20f8a. That PR also edited catalog.json. A follow-up was asked to restore catalog.json to origin/main. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 17
     },
     {
