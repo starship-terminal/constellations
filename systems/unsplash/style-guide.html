@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unsplash style guide</title>
+<meta name="description" content="Unsplash public design tokens, rendered from tokens.json. Light only. The stylesheet declares a .dark class that the public site never applies.">
+<style>
+:root {
+  --color-black: #111111;
+  --color-white: #ffffff;
+  --color-blue: #007fff;
+  --color-blue-dark: #006aff;
+  --color-green: #3cb46e;
+  --color-green-dark: #37a866;
+  --color-pink: #f15151;
+  --color-pink-dark: #e04c4c;
+  --color-red: #e25c3d;
+  --color-red-dark: #df4927;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #eeeeee;
+  --color-gray-400: #d1d1d1;
+  --color-gray-600: #aaaaaa;
+  --color-gray-700: #767676;
+  --color-gray-800: #555555;
+  --color-border-opacity: rgba(0, 0, 0, 0.122);
+  --color-backdrop: rgba(0, 0, 0, 0.4);
+  --font-family: ui-sans-serif, system-ui, sans-serif;
+  --typography-heading-xxl: 700 72px/76px var(--font-family);
+  --typography-heading-xl: 700 48px/52px var(--font-family);
+  --typography-heading-l: 700 40px/48px var(--font-family);
+  --typography-heading-m: 700 28px/36px var(--font-family);
+  --typography-heading-s: 600 24px/32px var(--font-family);
+  --typography-heading-xs: 600 20px/28px var(--font-family);
+  --typography-heading-xxs: 600 18px/24px var(--font-family);
+  --typography-text-m: 400 14px/20px var(--font-family);
+  --typography-text-s: 400 13px/20px var(--font-family);
+  --typography-text-xs: 400 12px/16px var(--font-family);
+  --typography-body: 400 15px/24px var(--font-family);
+  --radius-button: 8px;
+  --radius-modal: 8px;
+  --space-unit: 4px;
+  --space-nav: 56px;
+  --space-control-small: 32px;
+  --space-control-medium: 44px;
+  --space-control-large: 56px;
+  --motion-base: 100ms;
+  --page: #ffffff;
+  --surface: #f5f5f5;
+  --text: #111111;
+  --muted: #767676;
+  --accent: #111111;
+  --border: #d1d1d1;
+  --link: #767676;
+  --link-hover: #111111;
+  --button: #111111;
+  --button-hover: #222222;
+  --button-text: #ffffff;
+  --placeholder: #f4f4f4;
+  --separator: #d1d1d1;
+  --scrim: rgba(0, 0, 0, 0.4);
+  --success: #3cb46e;
+  --danger: #e25c3d;
+  --info: #007fff;
+  --focus: #111111;
+  color-scheme: light;
+  --sg-sans: ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"] {
+
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 15px/24px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 700 40px/1.2 var(--sg-sans); margin: 0 0 8px; }
+h2 { font: 600 24px/1.33 var(--sg-sans); margin: 40px 0 8px; }
+p { max-width: 72ch; color: var(--muted); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0; }
+.sw { width: 140px; }
+.sw i { display: block; height: 56px; border-radius: var(--radius-button); border: 1px solid var(--border); }
+.sw b, .sw span { display: block; font: 12px/1.4 var(--sg-mono); }
+.sw span { color: var(--muted); }
+.search { display: flex; align-items: center; height: 40px; width: 420px; max-width: 100%; padding: 0 16px; background: var(--surface); border-radius: 24px; color: var(--muted); font-size: 14px; }
+.btn { display: inline-flex; align-items: center; height: var(--space-control-medium); padding: 0 16px; background: var(--button); color: var(--button-text); border-radius: var(--radius-button); font-weight: 600; }
+.btn-quiet { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border: 1px solid var(--border); border-radius: var(--radius-button); color: var(--muted); background: var(--page); }
+.field { width: 320px; max-width: 100%; height: 40px; border: 1px solid var(--border); border-radius: var(--radius-button); background: var(--page); }
+.chip { color: var(--muted); font-size: 14px; font-weight: 500; border-bottom: 2px solid transparent; padding-bottom: 8px; }
+.chip.on { color: var(--text); border-bottom-color: var(--text); }
+.card { width: 220px; }
+.card .ph { height: 140px; background: var(--placeholder); border-radius: 4px; }
+.card b { display: block; margin-top: 8px; }
+.card span { color: var(--muted); font-size: 14px; }
+table { border-collapse: collapse; font-size: 13px; }
+td, th { text-align: left; padding: 6px 12px; border-bottom: 1px solid var(--border); }
+code { font-family: var(--sg-mono); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Unsplash</h1>
+  <p>Public site, signed out, light only. Values come from <code>tokens.json</code>. The site declares a <code>.dark</code> class. These pages never apply it, so this guide has no dark toggle.</p>
+
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+
+  <h2>Type</h2>
+  <div id="type"></div>
+
+  <h2>Controls</h2>
+  <div class="row">
+    <div class="search">Search photos and illustrations</div>
+    <span class="btn">Login</span>
+    <span class="btn-quiet">Submit an image</span>
+  </div>
+  <div class="row">
+    <div class="field"></div>
+  </div>
+  <div class="row">
+    <span class="chip on">Featured</span>
+    <span class="chip">Nature</span>
+    <span class="chip">Wallpapers</span>
+  </div>
+
+  <h2>Card</h2>
+  <div class="card">
+    <div class="ph"></div>
+    <b>Photo title</b>
+    <span>Photographer</span>
+  </div>
+
+  <h2>Tokens</h2>
+  <table id="tokens"><thead><tr><th>Token</th><th>Value</th><th>Source</th></tr></thead><tbody></tbody></table>
+</div>
+<script>
+const T = {"core":{"color":{"black":{"v":"#111111","t":"color","s":"Measured css-var --color-black selector :root page home (2026-11-20)"},"white":{"v":"#ffffff","t":"color","s":"Measured css-var --color-white selector :root page home (2026-11-20)"},"blue":{"v":"#007fff","t":"color","s":"Measured css-var --color-blue selector :root page home (2026-11-20)"},"blue-dark":{"v":"#006aff","t":"color","s":"Measured css-var --color-blue-dark selector :root page home (2026-11-20)"},"green":{"v":"#3cb46e","t":"color","s":"Measured css-var --color-green selector :root page home (2026-11-20)"},"green-dark":{"v":"#37a866","t":"color","s":"Measured css-var --color-green-dark selector :root page home (2026-11-20)"},"pink":{"v":"#f15151","t":"color","s":"Measured css-var --color-pink selector :root page home (2026-11-20)"},"pink-dark":{"v":"#e04c4c","t":"color","s":"Measured css-var --color-pink-dark selector :root page home (2026-11-20)"},"red":{"v":"#e25c3d","t":"color","s":"Measured css-var --color-red selector :root page home (2026-11-20)"},"red-dark":{"v":"#df4927","t":"color","s":"Measured css-var --color-red-dark selector :root page home (2026-11-20)"},"gray":{"100":{"v":"#f5f5f5","t":"color","s":"Measured css-var --color-gray-100 selector :root page home (2026-11-20)"},"200":{"v":"#eeeeee","t":"color","s":"Measured css-var --color-gray-200 selector :root page home (2026-11-20)"},"400":{"v":"#d1d1d1","t":"color","s":"Measured css-var --color-gray-400 selector :root page home (2026-11-20)"},"600":{"v":"#aaaaaa","t":"color","s":"Measured css-var --color-gray-600 selector :root page home (2026-11-20)"},"700":{"v":"#767676","t":"color","s":"Measured css-var --color-gray-700 selector :root page home (2026-11-20)"},"800":{"v":"#555555","t":"color","s":"Measured css-var --color-gray-800 selector :root page home (2026-11-20)"}},"border-opacity":{"v":"rgba(0, 0, 0, 0.122)","t":"color","s":"Measured css-var --color-border-opacity selector :root page home (2026-11-20)"},"backdrop":{"v":"rgba(0, 0, 0, 0.4)","t":"color","s":"Measured css-var --color-backdrop-bg selector :root page home (2026-11-20)"}},"font":{"family":{"v":"ui-sans-serif, system-ui, sans-serif","t":"fontFamily","s":"Measured computed style body fontFamily on https://unsplash.com/ (css-vars.json computed.home.roles.body)"}},"typography":{"heading-xxl":{"v":{"fontFamily":"{font.family}","fontSize":"72px","fontWeight":700,"lineHeight":"76px"},"t":"typography","s":"Measured css-var --heading-xxl-font-size --heading-xxl-font-weight; lineHeight Derived from --heading-xxl-line-height 1.05556 times the size"},"heading-xl":{"v":{"fontFamily":"{font.family}","fontSize":"48px","fontWeight":700,"lineHeight":"52px"},"t":"typography","s":"Measured css-var --heading-xl-font-size --heading-xl-font-weight; lineHeight Derived from --heading-xl-line-height 1.08333 times the size"},"heading-l":{"v":{"fontFamily":"{font.family}","fontSize":"40px","fontWeight":700,"lineHeight":"48px"},"t":"typography","s":"Measured css-var --heading-l-font-size --heading-l-font-weight; lineHeight Derived from --heading-l-line-height 1.2 times the size"},"heading-m":{"v":{"fontFamily":"{font.family}","fontSize":"28px","fontWeight":700,"lineHeight":"36px"},"t":"typography","s":"Measured css-var --heading-m-font-size --heading-m-font-weight; lineHeight Derived from --heading-m-line-height 1.28571 times the size"},"heading-s":{"v":{"fontFamily":"{font.family}","fontSize":"24px","fontWeight":600,"lineHeight":"32px"},"t":"typography","s":"Measured css-var --heading-s-font-size --heading-s-font-weight; lineHeight Derived from --heading-s-line-height 1.33333 times the size"},"heading-xs":{"v":{"fontFamily":"{font.family}","fontSize":"20px","fontWeight":600,"lineHeight":"28px"},"t":"typography","s":"Measured css-var --heading-xs-font-size --heading-xs-font-weight; lineHeight Derived from --heading-xs-line-height 1.4 times the size"},"heading-xxs":{"v":{"fontFamily":"{font.family}","fontSize":"18px","fontWeight":600,"lineHeight":"24px"},"t":"typography","s":"Measured css-var --heading-xxs-font-size --heading-xxs-font-weight; lineHeight Derived from --heading-xxs-line-height 1.33333 times the size"},"text-m":{"v":{"fontFamily":"{font.family}","fontSize":"14px","fontWeight":400,"lineHeight":"20px"},"t":"typography","s":"Measured css-var --text-m-font-size; fontWeight 400 is the body computed weight, not a declared token; lineHeight Derived from --text-m-line-height"},"text-s":{"v":{"fontFamily":"{font.family}","fontSize":"13px","fontWeight":400,"lineHeight":"20px"},"t":"typography","s":"Measured css-var --text-s-font-size; fontWeight 400 is the body computed weight, not a declared token; lineHeight Derived from --text-s-line-height"},"text-xs":{"v":{"fontFamily":"{font.family}","fontSize":"12px","fontWeight":400,"lineHeight":"16px"},"t":"typography","s":"Measured css-var --text-xs-font-size; fontWeight 400 is the body computed weight, not a declared token; lineHeight Derived from --text-xs-line-height"},"body":{"v":{"fontFamily":"{font.family}","fontSize":"15px","fontWeight":400,"lineHeight":"24px"},"t":"typography","s":"Measured computed style body on https://unsplash.com/ (css-vars.json computed.home.roles.body)"}},"radius":{"button":{"v":"8px","t":"dimension","s":"Measured css-var --button-border-radius selector :root page home"},"modal":{"v":"8px","t":"dimension","s":"Measured css-var --modal-border-radius selector .popup-vBZs6V page home"}},"space":{"unit":{"v":"4px","t":"dimension","s":"Measured css-var --spacing-unit selector :root page home"},"nav":{"v":"56px","t":"dimension","s":"Measured css-var --nav-height selector :root page home"},"control-small":{"v":"32px","t":"dimension","s":"Measured css-var --height-small selector .small-sJhOSH page home"},"control-medium":{"v":"44px","t":"dimension","s":"Measured css-var --height-medium selector .medium-BCGzdt page home"},"control-large":{"v":"56px","t":"dimension","s":"Measured css-var --height-large selector .large-Vwg_8T page home"}},"motion":{"base":{"v":"100ms","t":"duration","s":"Measured css-var --transition-speed-base (.1s) selector :root"}}},"light":{"page":{"v":"#ffffff","t":"color","s":"Measured css-var --color-white selector :root page home (2026-11-20)"},"surface":{"v":"#f5f5f5","t":"color","s":"Measured css-var --color-gray-100 selector :root page home (2026-11-20)"},"text":{"v":"#111111","t":"color","s":"Measured css-var --color-black selector :root page home (2026-11-20)"},"muted":{"v":"#767676","t":"color","s":"Measured css-var --color-gray-700 selector :root page home (2026-11-20)"},"accent":{"v":"#111111","t":"color","s":"Measured css-var --color-black selector :root page home (2026-11-20)"},"border":{"v":"#d1d1d1","t":"color","s":"Measured css-var --color-gray-400 selector :root page home (2026-11-20)"},"link":{"v":"#767676","t":"color","s":"Measured css-var --link-text-color selector :root page home (2026-11-20)"},"link-hover":{"v":"#111111","t":"color","s":"Measured css-var --link-text-color-hover selector :root page home (2026-11-20)"},"button":{"v":"#111111","t":"color","s":"Measured css-var --button-primary-background-color selector :root page home (2026-11-20)"},"button-hover":{"v":"#222222","t":"color","s":"Measured css-var --button-primary-background-color-hover selector .light page home (2026-11-20); confirmed computed rgb(34, 34, 34) on login-submit hover"},"button-text":{"v":"#ffffff","t":"color","s":"Measured css-var --button-primary-text-color selector :root page home (2026-11-20)"},"placeholder":{"v":"#f4f4f4","t":"color","s":"Measured css-var --placeholder-background-color selector :root page home (2026-11-20)"},"separator":{"v":"#d1d1d1","t":"color","s":"Measured css-var --color-separator selector :root page home (2026-11-20)"},"scrim":{"v":"rgba(0, 0, 0, 0.4)","t":"color","s":"Measured css-var --color-backdrop-bg selector :root page home (2026-11-20)"},"success":{"v":"#3cb46e","t":"color","s":"Measured css-var --color-green selector :root page home (2026-11-20)"},"danger":{"v":"#e25c3d","t":"color","s":"Measured css-var --color-red selector :root page home (2026-11-20)"},"info":{"v":"#007fff","t":"color","s":"Measured css-var --color-blue selector :root page home (2026-11-20)"},"focus":{"v":"#111111","t":"color","s":"Measured computed style submit-button focus-visible color, components-computed.json"}},"dark":{}};
+const sw = document.getElementById('swatches');
+for (const [k, node] of Object.entries(T.light || {})) {
+  const d = document.createElement('div');
+  d.className = 'sw';
+  d.innerHTML = `<i style="background:${node.v}"></i><b>${k}</b><span>${node.v}</span>`;
+  sw.appendChild(d);
+}
+const type = document.getElementById('type');
+for (const [k, node] of Object.entries((T.core && T.core.typography) || {})) {
+  const v = node.v;
+  const p = document.createElement('p');
+  p.style.font = `${v.fontWeight} ${v.fontSize}/${v.lineHeight} var(--sg-sans)`;
+  p.style.color = 'var(--text)';
+  p.textContent = k + '  The internet’s source for visuals.';
+  type.appendChild(p);
+}
+const tb = document.querySelector('#tokens tbody');
+function walk(node, prefix) {
+  for (const [k, v] of Object.entries(node || {})) {
+    if (v && v.v !== undefined) {
+      const tr = document.createElement('tr');
+      const val = typeof v.v === 'object' ? JSON.stringify(v.v) : v.v;
+      tr.innerHTML = `<td><code>${prefix}${k}</code></td><td>${val}</td><td>${v.s}</td>`;
+      tb.appendChild(tr);
+    } else if (v && typeof v === 'object') walk(v, prefix + k + '.');
+  }
+}
+walk(T.core, 'core.');
+walk(T.light, 'light.');
+</script>
+</body>
+</html>
