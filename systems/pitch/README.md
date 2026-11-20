@@ -17,7 +17,7 @@ The marketing site is a Framer page with hashed colour tokens. The templates gal
 | [icons/](icons/) | The login wordmark SVG and an index |
 | [screenshots/](screenshots/) | Home, product, pricing, templates, login, and two phone shots |
 | [raw/](raw/) | The stylesheet token dump and the computed-style readings |
-| [tools/](tools/) | The kit copy. This capture was measured live, not rebuilt by the kit scripts. |
+| [tools/](tools/) | test_tokens.py and the generic capture helpers copied from the kit. This capture was measured live and tokens.json written by hand; the unadapted kit builders and route folders were removed in the 2026-11 audit. |
 
 ## Brief
 
@@ -81,6 +81,8 @@ The T3 preview tab opened https://pitch.com/ and then https://app.pitch.com/, wh
 Marketing colours come from the Framer `--token-*` declarations. Login colours come from the auth page's custom properties, checked against the computed style of the field and the buttons. Hover on Log in and Sign up was a real pointer hover in Playwright. Focus on the email field and the templates search field was a real focus.
 
 ## What to distrust
+
+The six login colours `core.color.login-ink-deep`, `login-muted`, `login-border`, `login-error`, `login-success` and `login-warning` were read from auth.pitch.com custom properties that raw/ does not hold. They are labelled Reconstruction, entered by hand at capture time.
 
 The home hero is a collage and a gradient, not a flat fill. The violet and violet-deep tokens are the colours the type and the buttons use. They are not a single sampled pixel of the hero.
 
