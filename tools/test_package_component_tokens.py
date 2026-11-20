@@ -102,21 +102,34 @@ def component_token_problems(pkg):
     except (OSError, ValueError) as e:
         return [f"{src.name} cannot be read: {e}"]
     comp = leaves(tree)
-    built = {}
+    built, themes = {}, []
     if (pkg / "tokens.json").is_file():
         try:
-            built = leaves(json.loads((pkg / "tokens.json").read_text(encoding="utf-8")))
+            built_tree = json.loads((pkg / "tokens.json").read_text(encoding="utf-8"))
         except ValueError as e:
             return [f"tokens.json is not valid JSON: {e}"]
+        built = leaves(built_tree)
+        themes = [t.get("selectedTokenSets") or {} for t in built_tree.get("$themes") or [] if isinstance(t, dict)]
     # An alias may name a token the builder makes from another reading, so tokens.json counts too;
     # the input's own leaf wins where both hold a path.
     known = {**built, **comp}
     sets = sorted({p.split(".")[0] for p in known})
+    # A theme set (light, dark, or any set a tokens.json theme enables) is active only with the sets
+    # its own themes select; every other set is shared and active in every theme.
+    theme_sets = {s for t in themes for s, state in t.items() if state == "enabled"} | {"light", "dark"}
+    shared = [s for s in sets if s not in theme_sets]
+    with_set = {s: sorted({o for t in themes if t.get(s) in ("enabled", "source") for o in t} - {s}) for s in theme_sets}
 
     def target(ref, set_name):
-        """The path an alias resolves to: its own set, then core, then the root, then any other set
-        (a shared component set aliases each theme's role). None when no token has that name."""
-        for cand in [f"{set_name}.{ref}", f"core.{ref}", ref] + [f"{s}.{ref}" for s in sets]:
+        """The path an alias resolves to, or None: its own set, then core, then the root, then the
+        sets active beside it. A theme set's token sees only the sets its themes select and the shared
+        sets, so light.a -> {b} never resolves to a dark-only b; a shared set's token (a component set
+        every theme reads) may name each theme's role."""
+        if set_name in theme_sets:
+            others = with_set.get(set_name, []) + shared
+        else:
+            others = sets
+        for cand in [f"{set_name}.{ref}", f"core.{ref}", ref] + [f"{s}.{ref}" for s in others]:
             if cand in known:
                 return cand
         return None
@@ -215,6 +228,25 @@ class Checker(unittest.TestCase):
     def test_an_alias_to_no_token_is_named(self):
         tree = {"light": {"text": {"value": "{palette.gone}", "type": "color"}}}
         self.assertEqual(self.problems(tree), ["light.text: {palette.gone} names no token"])
+
+    def test_a_theme_token_never_resolves_in_another_theme(self):
+        tree = {"light": {"a": {"value": "{b}", "type": "color"}},
+                "dark": {"b": {"value": "#000000", "type": "color"}}}
+        self.assertEqual(self.problems(tree), ["light.a: {b} names no token"])
+        tokens = {"$themes": [{"name": "light", "selectedTokenSets": {"core": "source", "light": "enabled"}},
+                              {"name": "dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}}],
+                  "dark": {"b": {"$value": "#000000", "$type": "color"}}}
+        self.assertEqual(self.problems({"light": tree["light"]}, tokens), ["light.a: {b} names no token"])
+
+    def test_a_theme_token_resolves_in_a_set_its_theme_enables_or_a_shared_set(self):
+        tokens = {"$themes": [{"name": "docs", "selectedTokenSets": {"core": "source", "light": "enabled",
+                                                                     "docs": "enabled"}}],
+                  "docs": {"b": {"$value": "#000000", "$type": "color"}}}
+        self.assertEqual(self.problems({"light": {"a": {"value": "{b}", "type": "color"}}}, tokens), [])
+        tree = {"light": {"a": {"value": "{b}", "type": "color"}},
+                "_surface": {"b": {"value": "#000000", "type": "color"}},
+                "component": {"c": {"value": "{a}", "type": "color"}}}
+        self.assertEqual(self.problems(tree), [])
 
     def test_an_alias_inside_a_composite_value_is_checked(self):
         tree = {"core": {"type": {"body": {"value": {"fontFamily": "{font.gone}"}, "type": "typography"}}}}
