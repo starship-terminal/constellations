@@ -4290,9 +4290,9 @@
       "description": "Creativity powered by membership",
       "status": "pending",
       "package": null,
-      "notes": "https://www.patreon.com/login shows email and password, or Apple or Facebook. Password not submitted.",
+      "notes": "https://www.patreon.com/login shows email and password, or Apple or Facebook. Password not submitted. Public walk 2026-11-21: home sometimes opens the logged-out app and sometimes the marketing homepage. Explore, creator tabs, marketing header, company, and Help Center were mapped. /login, /create, Chats, Notifications, and Join stop at an email and password wall. Apple and Facebook were not clicked. No form was submitted. Public package in PR 1552 at 46daef45b4e6. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 13
     },
     {
