@@ -262,7 +262,14 @@ async function shoot(context, prefix, pageName, url, extra) {
   const full = path.join(SHOTS, `${prefix}${pageName}-light-full.png`);
   const vp = page.viewportSize();
   const docH = await page.evaluate(() => document.documentElement.scrollHeight);
-  await page.screenshot({ path: full, clip: { x: 0, y: 0, width: vp.width, height: Math.min(docH, vp.height * 8) }, fullPage: true });
+  const capH = Math.min(docH, vp.height * 8);
+  await page.screenshot({ path: full, clip: { x: 0, y: 0, width: vp.width, height: capH }, fullPage: true });
+  // A capped shot is recorded as a boundary: its sidecar and the page's readings say how tall the
+  // document was and how much was kept, so the image is never read as the whole page.
+  const fullPage = { documentHeight: docH, capturedHeight: capH, truncated: capH < docH };
+  fs.writeFileSync(full + '.capture.json', JSON.stringify({ ...sidecar, fullPage }, null, 2) + '\n');
+  if (fullPage.truncated) console.warn(`  ${prefix}${pageName}: full-page shot capped at ${capH}px of ${docH}px (8 viewports)`);
+  extra = { ...(extra || {}), fullPage };
   const comp = await components(page);
   let states = {};
   if (pageName === 'home' && !prefix) states = await hoverAndFocus(page, /Download now/);
