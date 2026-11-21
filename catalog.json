@@ -19047,6 +19047,65 @@
       }
     },
     {
+      "slug": "t3code",
+      "name": "T3 Code",
+      "url": "https://kai-home-server.taild6a23f.ts.net:8109/",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "A dense coding-agent workspace: black page, quiet sidebar, centred composer, settings as a dialog",
+      "tags": [
+        "web",
+        "dark",
+        "light",
+        "dense",
+        "agent",
+        "developer-tools",
+        "sidebar"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-22",
+      "access": "paired on the owner's tailnet, preview browser",
+      "themes": ["dark", "light"],
+      "widths": [1440],
+      "entry": "systems/t3code/README.md",
+      "tokens": "systems/t3code/tokens.json",
+      "styleGuide": "systems/t3code/style-guide.html",
+      "preview": {
+        "cover": "systems/t3code/screenshots/draft-new-thread-dark.png",
+        "icon": "systems/t3code/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.page",
+            "surface": "dark.color.surface",
+            "text": "dark.color.text",
+            "muted": "dark.color.muted",
+            "accent": "dark.color.accent",
+            "border": "dark.color.border"
+          },
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface",
+            "text": "light.color.text",
+            "muted": "light.color.muted",
+            "accent": "light.color.accent",
+            "border": "light.color.border"
+          }
+        },
+        "fonts": ["core.fontFamily.sans", "core.fontFamily.mono"]
+      },
+      "capture": {
+        "harness": "Grok",
+        "model": "grok-4.7",
+        "version": "0.1.8",
+        "route": "web-inspector",
+        "durationMin": 50
+      },
+      "layoutGaps": {
+        "components/": "no component crops; states were read from full-page screenshots",
+        "icons/": "product icons stay in the screenshots (docs/RIGHTS.md)"
+      }
+    },
+    {
       "slug": "tella",
       "name": "Tella",
       "url": "https://www.tella.com",

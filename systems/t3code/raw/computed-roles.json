@@ -1,0 +1,46 @@
+{
+  "dark": {
+    "background": "#000",
+    "foreground": "oklch(97% 0 none)",
+    "card": "color-mix(in srgb, oklch(14.5% 0 none) 97%, #fff)",
+    "popover": "color-mix(in srgb, oklch(14.5% 0 none) 97%, #fff)",
+    "primary": "oklch(57.1% .21 264)",
+    "primaryForeground": "#fff",
+    "muted": "color-mix(in oklab, #fff 3%, transparent)",
+    "mutedForeground": "oklch(70.8% 0 none)",
+    "accent": "color-mix(in oklab, #fff 4%, transparent)",
+    "border": "color-mix(in oklab, #fff 8%, transparent)",
+    "input": "color-mix(in oklab, #fff 11%, transparent)",
+    "ring": "oklch(57.1% .21 264)",
+    "sidebar": "color-mix(in srgb, oklch(14.5% 0 none) 97%, #fff)",
+    "destructive": "color-mix(in srgb, oklch(63.7% .237 25.331) 90%, #fff)",
+    "success": "oklch(69.6% .17 162.48)",
+    "warning": "oklch(76.9% .188 70.08)",
+    "info": "oklch(62.3% .214 259.815)",
+    "messageSurface": "color-mix(in srgb, oklch(14.5% 0 none) 92%, #fff)"
+  },
+  "light": {
+    "background": "oklch(99.2% 0 0)",
+    "foreground": "oklch(21% .006 285.885)",
+    "card": "#fff",
+    "popover": "#fff",
+    "primary": "oklch(48.8% .217 264)",
+    "primaryForeground": "#fff",
+    "muted": "oklch(98.5% 0 none)",
+    "mutedForeground": "oklch(55.2% .016 285.938)",
+    "border": "oklch(92% .004 286.32)",
+    "input": "oklch(87.1% .006 286.286)",
+    "ring": "oklch(48.8% .217 264)",
+    "sidebar": "oklch(98.5% 0 none)",
+    "destructive": "oklch(63.7% .237 25.331)",
+    "success": "oklch(69.6% .17 162.48)",
+    "warning": "oklch(76.9% .188 70.08)",
+    "info": "oklch(62.3% .214 259.815)"
+  },
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 2
+  },
+  "version": "0.1.8"
+}
