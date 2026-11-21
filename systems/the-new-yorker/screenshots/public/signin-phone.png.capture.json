@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T18:39:16.148Z",
+  "screenshot": "signin-phone.png",
+  "sanitizedSourceUrl": "https://id.condenast.com/interaction/ahFs2hN32lCVOOh39WDL0/email",
+  "title": "Sign in or create an account",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 1
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 1
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "css"
+  },
+  "visualReview": {
+    "status": "pending"
+  }
+}
