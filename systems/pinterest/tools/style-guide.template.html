@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pinterest style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-sans: "Pin Sans", -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, sans-serif;
+}
+[data-mode="dark"] {
+/*DARK*/
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 16px/1.4 var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+h1 { font-size: 28px; line-height: 1.1; font-weight: 700; margin: 0; }
+h2 { font-size: 20px; margin: 36px 0 12px; }
+.switch { margin-left: auto; font-size: 14px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.swatch { width: 72px; height: 48px; border-radius: 8px; border: 1px solid var(--border-default); }
+.cap { font-size: 12px; color: var(--text-secondary); }
+.btn-primary { background: var(--background-accent); color: var(--text-on-accent); border: 0; border-radius: 16px; height: 48px; padding: 0 16px; font: 700 16px/1.2 var(--sg-sans); }
+.btn-secondary { background: var(--background-surface); color: var(--text-primary); border: 0; border-radius: 16px; height: 48px; padding: 0 16px; font: 700 16px/1.2 var(--sg-sans); }
+.search { background: var(--background-surface); color: var(--text-secondary); border-radius: 999px; height: 48px; padding: 0 16px; display: flex; align-items: center; min-width: 280px; }
+.card { background: var(--background-raised); border-radius: 16px; padding: 16px; box-shadow: var(--elevation-floating); max-width: 280px; }
+.note { color: var(--text-secondary); max-width: 70ch; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border-default); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Pinterest</h1>
+  <label class="switch"><input type="checkbox" id="theme"> Declared dark</label>
+</header>
+<p class="note">Values come from tokens.json, read from www.pinterest.com signed out on 2026-11-21. The public site paints light. The dark toggle applies declared inverse tokens. It is not a theme the site shipped on these pages.</p>
+<h2>Colour</h2>
+<div class="row" id="swatches"></div>
+<h2>Type</h2>
+<p style="font-size:48px;font-weight:900;line-height:1.1;margin:0">Create the life you love</p>
+<p class="cap">display, Pin Sans 48 / 900. The face is not loaded here, so the system sans stands in.</p>
+<p style="font-size:16px">Body 16 / 400. Search for easy dinners, fashion, etc.</p>
+<h2>Controls</h2>
+<div class="row">
+  <button class="btn-primary">Join Pinterest for free</button>
+  <button class="btn-secondary">I already have an account</button>
+  <div class="search">Search for easy dinners, fashion, etc.</div>
+</div>
+<h2>Card</h2>
+<div class="card">
+  <div style="height:120px;border-radius:16px;background:var(--background-subtle)"></div>
+  <p style="font-weight:700;margin:12px 0 4px">Featured board</p>
+  <p class="cap">57 Pins</p>
+</div>
+<h2>Tokens</h2>
+<table id="tokens"></table>
+</div>
+<script>
+const TOKENS = /*TOKENS*/null;
+document.getElementById("theme").addEventListener("change", (e) => {
+  document.documentElement.dataset.mode = e.target.checked ? "dark" : "light";
+});
+const roles = ["background-page","background-surface","background-accent","text-primary","text-secondary","border-default"];
+const host = document.getElementById("swatches");
+for (const id of roles) {
+  const el = document.createElement("div");
+  el.innerHTML = `<div class="swatch" style="background:var(--${id})"></div><div class="cap">${id}</div>`;
+  host.appendChild(el);
+}
+const table = document.getElementById("tokens");
+function rows(node, prefix) {
+  for (const [k, v] of Object.entries(node || {})) {
+    if (v && v.v !== undefined) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td><code>${prefix}${k}</code></td><td>${typeof v.v === "object" ? JSON.stringify(v.v) : v.v}</td><td>${v.t}</td>`;
+      table.appendChild(tr);
+    } else if (v && typeof v === "object") rows(v, prefix + k + ".");
+  }
+}
+rows(TOKENS.light, "light.");
+rows(TOKENS.core.typography, "typography.");
+</script>
+</body>
+</html>
