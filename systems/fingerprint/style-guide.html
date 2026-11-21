@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fingerprint style guide</title>
+<style>
+  body { margin: 0; background: #f8f8f6; color: #000; font: 400 16px/24px Inter, ui-sans-serif, system-ui, sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-size: 48px; line-height: 56px; font-weight: 500; letter-spacing: -3px; margin: 0 0 8px; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0 28px; }
+  .swatch { width: 120px; }
+  .chip { height: 48px; border-radius: 6px; border: 1px solid #e4e5e1; }
+  .label { font-size: 12px; line-height: 16px; margin-top: 6px; }
+  a.btn { display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 6px; background: #f35820; color: #fff; text-decoration: none; font-size: 12px; font-weight: 500; border: 1px solid #bd400f; }
+  a.quiet { display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 6px; background: #fefefd; color: #f35b22; text-decoration: none; font-size: 12px; font-weight: 500; border: 1px solid #e4e5e1; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Fingerprint</h1>
+  <p>Public light theme. Values from tokens.json.</p>
+  <div class="row">
+    <div class="swatch"><div class="chip" style="background:#f8f8f6"></div><div class="label">page #f8f8f6</div></div>
+    <div class="swatch"><div class="chip" style="background:#fefefd"></div><div class="label">surface #fefefd</div></div>
+    <div class="swatch"><div class="chip" style="background:#f35820"></div><div class="label">accent #f35820</div></div>
+    <div class="swatch"><div class="chip" style="background:#bd400f"></div><div class="label">hover #bd400f</div></div>
+    <div class="swatch"><div class="chip" style="background:#e4e5e1"></div><div class="label">border #e4e5e1</div></div>
+    <div class="swatch"><div class="chip" style="background:#a0a09c"></div><div class="label">muted #a0a09c</div></div>
+  </div>
+  <p><a class="btn" href="#">Get Started</a> <a class="quiet" href="#">Contact Sales</a></p>
+</main>
+</body>
+</html>
