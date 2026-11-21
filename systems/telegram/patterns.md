@@ -104,3 +104,7 @@ The chat list filters by folder chips, and Contacts sorts with a pull-down menu
 Edit turns the chat list into a selection: circles at the left, reorder handles at the right, remove crosses on
 the folder chips, and a bottom toolbar (Read All, Archive, Delete) that stays disabled until a chat is chosen
 ([20](screenshots/dark/20-chat-list-edit-mode-disabled-actions.png)).
+
+## Public site
+
+The public website is a separate surface from the iOS app. [site-tree.md](site-tree.md) maps the homepage header, footer, and the pages those controls open. The marketing pages are white with blue links. Telegram Web is the login wall: a dark card titled "Log in by QR Code", with phone and passkey left unused. Shots live in [screenshots/public/](screenshots/public/).

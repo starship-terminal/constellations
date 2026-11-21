@@ -1,0 +1,26 @@
+{
+  "pass": "signed-out walls only",
+  "date": "2026-11-22",
+  "signed_in": false,
+  "submitted": false,
+  "typed": false,
+  "login_extracted": "not-started",
+  "note": "The public web login wall is Telegram Web at https://web.telegram.org/k/. The QR slot was painted over before the shots were saved. Log in by phone number and Log in by passkey were not clicked. No password, code, phone number, or email was typed. No identity provider was used. No chat was opened.",
+  "walls": [
+    {
+      "url": "https://web.telegram.org/k/",
+      "opened_from": "footer Mobile Web and Web-browser, via https://telegram.org/dl/web",
+      "heading": "Log in by QR Code",
+      "subheading": "Scan with Telegram app on your phone",
+      "desktop": "screenshots/public/login-wall-desktop.png",
+      "phone": "screenshots/public/login-wall-phone.png",
+      "qr_painted_over": true,
+      "controls_not_used": [
+        "Log in by phone number",
+        "Log in by passkey",
+        "QR scan"
+      ],
+      "stopped": true
+    }
+  ]
+}
