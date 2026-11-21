@@ -1,0 +1,29 @@
+{
+  "captured": "2026-11-22",
+  "name": "pricing-light-390",
+  "url": "https://trello.com/pricing",
+  "requestedUrl": "https://trello.com/pricing",
+  "title": "Which Trello Plan Is Best for You? Our Pricing Guide Can Help",
+  "h1": "Trello your way.",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport at 390. Signed out. Cookie banner hidden. No form submitted.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}

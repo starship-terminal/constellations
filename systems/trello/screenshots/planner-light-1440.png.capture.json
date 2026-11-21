@@ -1,0 +1,29 @@
+{
+  "captured": "2026-11-22",
+  "name": "planner-light-1440",
+  "url": "https://trello.com/planner",
+  "requestedUrl": "https://trello.com/planner",
+  "title": "Trello Planner: Focus and flourish",
+  "h1": "Trello Planner",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted. No identity provider clicked.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

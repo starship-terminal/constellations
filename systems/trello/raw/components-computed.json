@@ -1,0 +1,63 @@
+{
+  "source": "https://trello.com/",
+  "captured": "2026-11-22",
+  "colorScheme": "normal",
+  "body": {
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(9, 30, 66)",
+    "font": "\"Charlie Text\", sans-serif",
+    "size": "20px",
+    "weight": "400",
+    "lineHeight": "30px"
+  },
+  "h1": {
+    "size": "48px",
+    "weight": "500",
+    "family": "\"Charlie Display\", sans-serif",
+    "lineHeight": "60px",
+    "letterSpacing": "normal",
+    "color": "rgb(9, 30, 66)"
+  },
+  "pricingLink": {
+    "color": "rgb(23, 43, 77)",
+    "size": "16px",
+    "weight": "400",
+    "family": "\"Charlie Text\", sans-serif"
+  },
+  "headerButton": {
+    "text": "Get Trello for free",
+    "bg": "rgb(0, 101, 255)",
+    "color": "rgb(255, 255, 255)",
+    "radius": "0px",
+    "size": "19.2px",
+    "weight": "400",
+    "family": "\"Charlie Text\", sans-serif",
+    "padding": "8px 24px",
+    "height": "60px"
+  },
+  "emailField": {
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "border": "1px solid rgb(223, 225, 230)",
+    "radius": "4.8px",
+    "height": "49.9844px",
+    "size": "16px",
+    "placeholder": "Email",
+    "valueLength": 0
+  },
+  "signupButton": {
+    "text": "Sign up - it\u2019s free!",
+    "bg": "rgb(0, 101, 255)",
+    "color": "rgb(255, 255, 255)",
+    "radius": "4.8px",
+    "height": "49.9844px",
+    "padding": "11.2px 16px 12.8px",
+    "size": "16px",
+    "weight": "400"
+  },
+  "learnMore": {
+    "text": "Learn more.",
+    "color": "rgb(0, 82, 204)",
+    "href": "https://www.atlassian.com/software/artificial-intelligence"
+  }
+}

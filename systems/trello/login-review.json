@@ -1,0 +1,94 @@
+{
+  "product": "Trello",
+  "domain": "trello.com",
+  "reviewedAt": "2026-11-22",
+  "method": "Headless Chromium, signed out. Desktop 1440x900 CSS pixels and phone 390x844 CSS pixels, device pixel ratio 2. Login and signup were opened and discarded because the painted URL carried OAuth and session state.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "boardCreated": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Log in, footer Log In, and https://trello.com/login",
+      "url": "https://trello.com/login",
+      "paintedUrlHost": "id.atlassian.com",
+      "title": "Log in to continue - Log in with Atlassian account",
+      "painted": true,
+      "headings": ["Log in to continue"],
+      "asksFor": [
+        {
+          "label": "Email",
+          "type": "email",
+          "name": "username",
+          "valueLength": 0
+        },
+        {
+          "label": "Password",
+          "type": "password",
+          "name": "password",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": ["Passkey", "Google", "Microsoft", "Apple", "Slack"],
+      "otherControls": ["Continue", "Can't log in?", "Create an account", "Privacy Policy", "User Notice"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Empty login wall. Continue was not clicked. No identity provider was clicked. The painted URL is an Atlassian login URL with continue and returnUrl, so the screenshot was discarded."
+    },
+    {
+      "control": "header Get Trello for free and https://trello.com/signup",
+      "url": "https://trello.com/signup",
+      "paintedUrlHost": "id.atlassian.com",
+      "title": "Sign up",
+      "painted": true,
+      "headings": ["Sign up for Trello"],
+      "asksFor": [
+        {
+          "label": "Email",
+          "type": "email",
+          "name": "email",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": ["Google", "Microsoft", "Apple", "Slack"],
+      "otherControls": ["Sign up", "Already have an Atlassian account? Log in", "Privacy Policy"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Empty signup wall. Sign up was not clicked. No identity provider was clicked. The painted URL carries continue and createMember, so the screenshot was discarded."
+    },
+    {
+      "control": "footer Contact us",
+      "url": "https://trello.com/contact",
+      "paintedUrlHost": "id.atlassian.com",
+      "title": "Log in to continue",
+      "painted": true,
+      "headings": ["Log in to continue"],
+      "asksFor": [
+        {
+          "label": "Email",
+          "type": "email",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": ["Google", "Microsoft", "Apple", "Slack"],
+      "otherControls": ["Continue", "Remember me", "Can't log in?", "Create an account"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Contact redirects through support.atlassian.com/contact and then to an Atlassian login wall. The screenshot was discarded."
+    }
+  ],
+  "notOpened": [
+    "Continue and Sign up were not clicked.",
+    "Google, Microsoft, Apple, Slack, and Passkey were not clicked.",
+    "The homepage email field was left empty and was not submitted.",
+    "Get started, Sign up now, Try for free, and Contact sales on the pricing page were not clicked.",
+    "No board was created.",
+    "Social profiles and app stores were not followed.",
+    "The language switcher was not used.",
+    "Cookie Accept all, Only necessary, and Preferences were not clicked. The banner was hidden with CSS."
+  ]
+}

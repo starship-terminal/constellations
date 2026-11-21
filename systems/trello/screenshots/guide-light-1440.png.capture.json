@@ -1,0 +1,29 @@
+{
+  "captured": "2026-11-22",
+  "name": "guide-light-1440",
+  "url": "https://trello.com/guide",
+  "requestedUrl": "https://trello.com/guide",
+  "title": "Trello Guides: Help Getting Started With Trello",
+  "h1": "Getting started with Trello",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted. No identity provider clicked.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}
