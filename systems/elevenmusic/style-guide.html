@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ElevenMusic style guide</title>
+<style>
+  :root {
+    --page: #fdfcfb;
+    --surface: #ffffff;
+    --text: #000000;
+    --muted: #73685c;
+    --accent: #000000;
+    --on-accent: #ffffff;
+    --border: rgba(83, 54, 10, 0.08);
+    --chip: rgba(83, 54, 10, 0.047);
+    --raised: #222222;
+  }
+  [data-mode="dark"] {
+    --page: #000000;
+    --surface: #222222;
+    --text: #fafafa;
+    --muted: #868686;
+    --accent: #fafafa;
+    --on-accent: #0a0a0a;
+    --border: rgba(255, 255, 255, 0.1);
+    --chip: rgba(255, 255, 255, 0.08);
+    --raised: #232323;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px Inter, ui-sans-serif, system-ui, sans-serif; }
+  header { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--border); }
+  h1 { font: 300 32px/36px Georgia, serif; letter-spacing: -0.8px; margin: 0; }
+  main { padding: 32px 24px 64px; display: grid; gap: 28px; max-width: 960px; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .swatch { width: 96px; height: 64px; border-radius: 12px; border: 1px solid var(--border); }
+  button, .pill { border: 0; border-radius: 9999px; height: 32px; padding: 0 12px; font: 400 14px/20px Inter, sans-serif; }
+  .quiet { background: var(--surface); color: var(--text); box-shadow: 0 0 0 1px var(--border); }
+  .primary { background: var(--accent); color: var(--on-accent); }
+  .provider { background: var(--raised); color: var(--text); height: 40px; }
+  .chip { background: var(--chip); color: var(--muted); height: 28px; font-size: 12px; }
+  .field { height: 36px; border-radius: 9999px; border: 1px solid var(--border); background: transparent; color: var(--text); padding: 0 14px; min-width: 280px; }
+  .note { color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>ElevenMusic</h1>
+  <button type="button" class="quiet" id="theme">Light theme</button>
+</header>
+<main>
+  <p>Public chrome only. Values are the measured tokens in tokens.json. Waldenburg and Inter are not loaded here.</p>
+  <div class="row" id="swatches"></div>
+  <div class="row">
+    <button class="quiet" type="button">Sign in</button>
+    <button class="primary" type="button">Start free</button>
+    <button class="provider" type="button">Continue with Google</button>
+    <button class="chip" type="button">Trap beat</button>
+  </div>
+  <input class="field" placeholder="Describe your song" readonly>
+  <p class="note">Display is Waldenburg 300, 40px, tracking -0.8px. UI is Inter 400.</p>
+</main>
+<script>
+  const names = ["page", "surface", "text", "muted", "accent", "border"];
+  const box = document.getElementById("swatches");
+  for (const name of names) {
+    const el = document.createElement("div");
+    el.className = "swatch";
+    el.style.background = "var(--" + name + ")";
+    el.title = name;
+    box.appendChild(el);
+  }
+  const btn = document.getElementById("theme");
+  btn.addEventListener("click", () => {
+    const dark = document.documentElement.getAttribute("data-mode") !== "light";
+    document.documentElement.setAttribute("data-mode", dark ? "light" : "dark");
+    btn.textContent = dark ? "Dark theme" : "Light theme";
+  });
+</script>
+</body>
+</html>
