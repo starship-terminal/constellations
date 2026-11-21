@@ -1,0 +1,124 @@
+{
+  "url": "https://support.apple.com/guide/tvapp/welcome/web",
+  "title": "Apple TV App User Guide - Apple Support",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "bodyBg": "rgb(255, 255, 255)",
+  "bodyColor": "rgb(51, 51, 51)",
+  "bodyFont": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+  "bodySize": "17px",
+  "headerBg": "rgba(0, 0, 0, 0)",
+  "headerH": 389,
+  "controls": [
+    {
+      "tag": "A",
+      "text": "Table of Contents",
+      "aria": null,
+      "href": "https://support.apple.com/guide/tvapp/toc",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 112, 201)",
+      "font": "\"SF Pro Display\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "size": "22px",
+      "weight": "300",
+      "radius": "0px",
+      "height": 26
+    }
+  ],
+  "footerText": "Subscription required for Apple TV, which in some countries and regions may include some or all of the following: Friday Night Baseball, Major League Soccer (MLS), and Formula 1\u00ae. Not all features and content are available in all countries or regions, or on all streaming devices. Apple TV subscription does not include third-party branded subscription services or content available for rental or pur",
+  "footerNonCountry": [],
+  "headings": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "inputs": [
+    {
+      "type": "input",
+      "name": "q",
+      "label": "Search Support",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "src",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "type",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "page",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "locale",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "page",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "src",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "locale",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "bookid",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "rurl",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "title",
+      "label": "",
+      "required": false
+    }
+  ],
+  "buttons": [
+    "Main menu",
+    "Apple",
+    "Store",
+    "Store menu",
+    "Mac",
+    "Mac menu",
+    "iMac"
+  ],
+  "vars": {}
+}

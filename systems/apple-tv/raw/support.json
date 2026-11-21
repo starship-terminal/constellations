@@ -1,0 +1,255 @@
+{
+  "url": "https://support.apple.com/tv",
+  "title": "TV Support - Official Apple Support",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "bodyBg": "rgb(255, 255, 255)",
+  "bodyColor": "rgb(29, 29, 31)",
+  "bodyFont": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+  "bodySize": "17px",
+  "headerBg": null,
+  "headerH": 0,
+  "controls": [],
+  "footerText": "Apple Footer Apple Support TV Support Product Support iPhone Support Mac Support iPad Support Watch Support Apple Vision Pro Support AirPods Support TV Support Support Site Map Service and Repair Apple Repair Options Service and Repair Information AppleCare Products Hardware Warranties Software License Agreements Complimentary Support Resources My Support Product Documentation Apple Support Videos",
+  "footerNonCountry": [
+    {
+      "text": "Apple",
+      "href": "https://www.apple.com/"
+    },
+    {
+      "text": "Support",
+      "href": "https://support.apple.com/"
+    },
+    {
+      "text": "Open Menu",
+      "href": "https://support.apple.com/tv#ac-gf-directory-column-section-product-support"
+    },
+    {
+      "text": "Close Menu",
+      "href": "https://support.apple.com/tv#"
+    },
+    {
+      "text": "iPhone Support",
+      "href": "https://support.apple.com/iphone"
+    },
+    {
+      "text": "Mac Support",
+      "href": "https://support.apple.com/mac"
+    },
+    {
+      "text": "iPad Support",
+      "href": "https://support.apple.com/ipad"
+    },
+    {
+      "text": "Watch Support",
+      "href": "https://support.apple.com/watch"
+    },
+    {
+      "text": "Apple Vision Pro Support",
+      "href": "https://support.apple.com/apple-vision-pro"
+    },
+    {
+      "text": "AirPods Support",
+      "href": "https://support.apple.com/airpods"
+    },
+    {
+      "text": "TV Support",
+      "href": "https://support.apple.com/tv"
+    },
+    {
+      "text": "Support Site Map",
+      "href": "https://support.apple.com/sitemap"
+    },
+    {
+      "text": "Open Menu",
+      "href": "https://support.apple.com/tv#ac-gf-directory-column-section-service-and-repair"
+    },
+    {
+      "text": "Close Menu",
+      "href": "https://support.apple.com/tv#"
+    },
+    {
+      "text": "Apple Repair Options",
+      "href": "https://support.apple.com/repair"
+    },
+    {
+      "text": "Service and Repair Information",
+      "href": "https://support.apple.com/repair-products"
+    },
+    {
+      "text": "AppleCare Products",
+      "href": "http://www.apple.com/support/products/"
+    },
+    {
+      "text": "Hardware Warranties",
+      "href": "https://www.apple.com/legal/warranty/"
+    },
+    {
+      "text": "Software License Agreements",
+      "href": "https://www.apple.com/legal/sla/"
+    },
+    {
+      "text": "Complimentary Support",
+      "href": "https://support.apple.com/complimentary"
+    },
+    {
+      "text": "Open Menu",
+      "href": "https://support.apple.com/tv#ac-gf-directory-column-section-resources"
+    },
+    {
+      "text": "Close Menu",
+      "href": "https://support.apple.com/tv#"
+    },
+    {
+      "text": "My Support",
+      "href": "https://support.apple.com/en-us/my-support"
+    },
+    {
+      "text": "Product Documentation",
+      "href": "https://support.apple.com/en-us/docs"
+    },
+    {
+      "text": "Apple Support Videos",
+      "href": "https://www.youtube.com/applesupport"
+    },
+    {
+      "text": "Accessibility",
+      "href": "https://support.apple.com/accessibility"
+    },
+    {
+      "text": "Open Menu",
+      "href": "https://support.apple.com/tv#ac-gf-directory-column-section-connect"
+    },
+    {
+      "text": "Close Menu",
+      "href": "https://support.apple.com/tv#"
+    },
+    {
+      "text": "Contact Us",
+      "href": "https://support.apple.com/contact"
+    },
+    {
+      "text": "Support app",
+      "href": "https://apps.apple.com/us/app/apple-support/id1130498044?pt=2003&ct=support.footer&mt=8&l=en"
+    },
+    {
+      "text": "United States (English)",
+      "href": "https://support.apple.com/choose-country-region"
+    },
+    {
+      "text": "Espa\u00f1ol",
+      "href": "https://support.apple.com/es-us"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.apple.com/legal/privacy/"
+    },
+    {
+      "text": "Terms of Use",
+      "href": "https://www.apple.com/legal/"
+    },
+    {
+      "text": "Sales and Refunds",
+      "href": "https://www.apple.com/shop/goto/help/sales_refunds"
+    },
+    {
+      "text": "Site Map",
+      "href": "https://www.apple.com/sitemap/"
+    }
+  ],
+  "headings": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "inputs": [
+    {
+      "type": "input",
+      "name": "q",
+      "label": "Search Support",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "src",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "type",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "page",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "locale",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "page",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "type",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "src",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "locale",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "text",
+      "name": "q",
+      "label": "",
+      "required": true
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "label": "",
+      "required": false
+    }
+  ],
+  "buttons": [
+    "Main menu",
+    "Apple",
+    "Store",
+    "Store menu",
+    "Mac",
+    "Mac menu",
+    "iMac"
+  ],
+  "vars": {}
+}

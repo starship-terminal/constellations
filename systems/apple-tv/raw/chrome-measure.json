@@ -1,0 +1,63 @@
+{
+  "search": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px",
+    "border": "0px none rgba(255, 255, 255, 0.92)",
+    "h": 28,
+    "color": "rgba(255, 255, 255, 0.92)"
+  },
+  "wrap": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px",
+    "border": "0px none rgba(255, 255, 255, 0.92)",
+    "h": 28
+  },
+  "field": {
+    "radius": "4px",
+    "border": "1px solid rgba(255, 255, 255, 0.92)",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  "posterRadius": "14px",
+  "nodes": [
+    {
+      "tag": "DIV",
+      "cls": "grid svelte-n3nezg grid--no-chin",
+      "radius": "0px"
+    },
+    {
+      "tag": "DIV",
+      "cls": "artwork svelte-n3nezg",
+      "radius": "0px"
+    },
+    {
+      "tag": "DIV",
+      "cls": "artwork-component artwork-component--aspect-ratio artwork-component--orientation",
+      "radius": "0px"
+    },
+    {
+      "tag": "PICTURE",
+      "cls": "svelte-1fla0gl",
+      "radius": "0px"
+    },
+    {
+      "tag": "SOURCE",
+      "cls": "",
+      "radius": "0px"
+    },
+    {
+      "tag": "SOURCE",
+      "cls": "",
+      "radius": "0px"
+    },
+    {
+      "tag": "IMG",
+      "cls": "artwork-component__contents artwork-component__image svelte-1fla0gl",
+      "radius": "0px"
+    },
+    {
+      "tag": "DIV",
+      "cls": "legibility-gradient svelte-9zz17v",
+      "radius": "0px"
+    }
+  ]
+}
