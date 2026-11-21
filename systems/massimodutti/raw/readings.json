@@ -1,0 +1,136 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.massimodutti.com/",
+  "storefront": "https://www.massimodutti.com/sg/",
+  "region": "Singapore",
+  "currency": "SGD ($)",
+  "language": "English",
+  "viewport": {"width": 1440, "height": 900, "devicePixelRatio": 2},
+  "title": "Massimo Dutti Singapore | New Collection | Online Store",
+  "body": {
+    "fontFamily": "suisse-regular, Helvetica, arial, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "23.2px",
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)"
+  },
+  "navButton": {
+    "text": "NEW IN",
+    "fontFamily": "suisse-light, Arial, Helvetica, sans-serif",
+    "fontSize": "12px",
+    "fontWeight": "300",
+    "letterSpacing": "1.92px",
+    "lineHeight": "12px",
+    "color": "rgb(0, 0, 0)",
+    "textTransform": "uppercase",
+    "height": 24
+  },
+  "menuPanel": {
+    "backgroundColor": "rgb(255, 255, 255)"
+  },
+  "menuLink": {
+    "text": "NEW IN",
+    "fontFamily": "suisse-light, Arial, Helvetica, sans-serif",
+    "fontSize": "12px",
+    "fontWeight": "300",
+    "letterSpacing": "1.92px",
+    "color": "rgb(0, 0, 0)",
+    "textTransform": "uppercase",
+    "height": 24
+  },
+  "productTitle": {
+    "text": "100% COTTON MICRO-CORDUROY SHIRT WITH POCKETS",
+    "fontFamily": "suisse-light, Arial, Helvetica, sans-serif",
+    "fontSize": "13px",
+    "fontWeight": "300",
+    "letterSpacing": "2.08px",
+    "lineHeight": "18.2px",
+    "color": "rgb(0, 0, 0)",
+    "textTransform": "uppercase"
+  },
+  "price": {
+    "text": "$180.00",
+    "fontFamily": "suisse-light, Arial, Helvetica, sans-serif",
+    "fontSize": "12px",
+    "fontWeight": "300",
+    "letterSpacing": "1.92px",
+    "lineHeight": "18px",
+    "color": "rgb(0, 0, 0)"
+  },
+  "addToBasket": {
+    "text": "ADD TO BASKET",
+    "fontFamily": "suisse-light, Arial, Helvetica, sans-serif",
+    "fontSize": "12px",
+    "fontWeight": "300",
+    "letterSpacing": "1.92px",
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "border": "1px solid rgb(0, 0, 0)",
+    "borderRadius": "0px",
+    "textTransform": "uppercase",
+    "height": 32,
+    "width": 330,
+    "clicked": false
+  },
+  "colourLabel": {
+    "text": "Colour:",
+    "fontFamily": "suisse-light, Arial, Helvetica, sans-serif",
+    "fontSize": "12px",
+    "fontWeight": "300",
+    "letterSpacing": "0.48px",
+    "color": "rgb(0, 0, 0)"
+  },
+  "colourChip": {
+    "title": "Red, Ref. 5195/895",
+    "height": 32,
+    "width": 32,
+    "borderRadius": "0px",
+    "clicked": false
+  },
+  "marketContinue": {
+    "text": "CONTINUE",
+    "fontFamily": "suisse-regular, Helvetica, arial, sans-serif",
+    "fontSize": "12px",
+    "fontWeight": "400",
+    "letterSpacing": "1.92px",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(0, 0, 0)",
+    "border": "1px solid rgb(0, 0, 0)",
+    "borderRadius": "0px",
+    "textTransform": "uppercase",
+    "height": 32,
+    "width": 360,
+    "paintedFill": "#999999"
+  },
+  "fieldLabel": {
+    "text": "CHOOSE MARKET",
+    "fontFamily": "suisse-light, Helvetica, arial, sans-serif",
+    "fontSize": "10px",
+    "fontWeight": "400",
+    "letterSpacing": "1.6px",
+    "color": "rgb(115, 115, 115)",
+    "textTransform": "uppercase"
+  },
+  "tokens": {
+    "white": "#ffffff",
+    "black": "#000000",
+    "darkGrey": "#737373",
+    "middleGrey": "#a9a9a9",
+    "lightGrey": "#F9F9F9",
+    "greyUltra": "#2F2F2F",
+    "orange": "#B75D0B",
+    "error": "#dd2d01",
+    "info": "#537487",
+    "success": "#12882C",
+    "warning": "#ffce4e",
+    "notice": "#EB8807",
+    "gold": "#A38A6B",
+    "cream": "#f4f2ed"
+  },
+  "faces": {
+    "body": "suisse-regular",
+    "light": "suisse-light",
+    "fallback": "Helvetica, arial, sans-serif"
+  }
+}
