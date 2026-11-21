@@ -1,0 +1,13 @@
+{
+  "capturedAt": "2026-11-21",
+  "url": "https://digg.com/",
+  "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 1 },
+  "phone": { "width": 390, "height": 844, "devicePixelRatio": 2 },
+  "themes": ["light", "dark"],
+  "fontSans": "\"roobert\", \"roobert Fallback\", ui-sans-serif, system-ui, sans-serif",
+  "radius": "0.625rem",
+  "primary": "#1c66eb",
+  "pageLight": "#fdfdff",
+  "pageDark": "#161617",
+  "note": "Full stylesheet dumps live outside the repo at ~/.design-systems/digg/readings/."
+}

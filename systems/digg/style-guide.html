@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digg style guide</title>
+<style>
+  :root, [data-theme="light"] {
+    --page: #fdfdff;
+    --surface: #ffffff;
+    --text: #161617;
+    --muted: #151517;
+    --accent: #1c66eb;
+    --on-accent: #ffffff;
+    --secondary: #f0f0f5;
+    --border: rgba(0, 0, 0, 0.08);
+    --sidebar: #f8f8fb;
+    --destructive: #cc434d;
+  }
+  [data-theme="dark"] {
+    --page: #161617;
+    --surface: #1c1c1f;
+    --text: #fdfdff;
+    --muted: rgba(254, 254, 255, 0.7);
+    --accent: #1c66eb;
+    --on-accent: #ffffff;
+    --secondary: #242424;
+    --border: rgba(255, 255, 255, 0.08);
+    --sidebar: #0f0f10;
+    --destructive: #cc434d;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 400 16px/1.5 "roobert", ui-sans-serif, system-ui, sans-serif; background: var(--page); color: var(--text); }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+  h1 { font-size: 32px; line-height: 1.2; margin: 0 0 8px; }
+  h2 { font-size: 14px; font-weight: 600; margin: 36px 0 10px; }
+  p { max-width: 62ch; }
+  button.theme { height: 40px; padding: 0 16px; border-radius: 26px; border: 0; background: var(--secondary); color: var(--text); font: inherit; font-size: 14px; font-weight: 500; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .sw { width: 148px; }
+  .sw i { display: block; height: 48px; border-radius: 10px; border: 1px solid var(--border); }
+  .sw span { display: block; font-size: 12px; margin-top: 4px; }
+  .pill { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 26px; font-size: 14px; font-weight: 500; }
+  .pill.primary { background: var(--accent); color: var(--on-accent); }
+  .pill.secondary { background: var(--secondary); color: var(--text); }
+  .field { height: 36px; border-radius: 8px; border: 1px solid var(--border); padding: 4px 10px; background: transparent; color: var(--text); font: inherit; font-size: 14px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 14px 16px; max-width: 420px; }
+  .card b { font-weight: 600; }
+  .shell { display: grid; grid-template-columns: 200px 1fr; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .side { background: var(--sidebar); padding: 12px; }
+  .side a { display: block; height: 40px; line-height: 40px; padding: 0 12px; border-radius: 999px; color: var(--text); text-decoration: none; font-size: 14px; font-weight: 600; }
+  .side a.on { background: var(--secondary); }
+  .feed { padding: 16px; }
+  .note { font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <button class="theme" type="button" id="theme">Theme: light</button>
+  <h1>Digg</h1>
+  <p class="note">Rendered from measured tokens in tokens.json. Roobert is not bundled, so the fallback stack shows here.</p>
+
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <span class="pill primary">Sign up</span>
+    <span class="pill secondary">Log in</span>
+  </div>
+
+  <h2>Field</h2>
+  <input class="field" placeholder="Enter your email address" aria-label="Email example" readonly>
+
+  <h2>Shell</h2>
+  <div class="shell">
+    <div class="side">
+      <a class="on" href="#home">Home</a>
+      <a href="#tech">Technology</a>
+      <a href="#ai">AI</a>
+    </div>
+    <div class="feed">
+      <div class="card">
+        <div class="note">AI</div>
+        <b>Story title, 16px semibold</b>
+        <p class="note">Summary in the body size. Cards use an 18px radius and a hairline border.</p>
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+const roles = [
+  ["page", "--page"],
+  ["surface", "--surface"],
+  ["text", "--text"],
+  ["muted", "--muted"],
+  ["accent", "--accent"],
+  ["secondary", "--secondary"],
+  ["sidebar", "--sidebar"],
+  ["destructive", "--destructive"],
+];
+const box = document.getElementById("swatches");
+for (const [name, v] of roles) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = "<i style=\"background:var(" + v + ")\"></i><span>" + name + "</span>";
+  box.appendChild(el);
+}
+document.getElementById("theme").onclick = () => {
+  const html = document.documentElement;
+  const next = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  html.setAttribute("data-theme", next);
+  document.getElementById("theme").textContent = "Theme: " + next;
+};
+</script>
+</body>
+</html>
