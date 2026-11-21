@@ -1,0 +1,108 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.warp.dev/",
+  "signedOut": true,
+  "viewport": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewportScale": 1},
+  "colorScheme": "normal",
+  "title": "Warp — Open Infrastructure for Cloud Software Factories",
+  "htmlBackground": "oklch(0.992495 0.00178735 220)",
+  "body": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "oklch(0.07 0.007 220)",
+    "fontFamily": "Matter, system-ui, sans-serif",
+    "fontSize": "16px",
+    "lineHeight": "24px"
+  },
+  "nav": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "button": {
+      "text": "PRODUCTS",
+      "color": "rgb(26, 21, 34)",
+      "fontFamily": "azeretSemiMono, \"azeretSemiMono Fallback\", \"Azeret SemiMono\", ui-monospace, monospace",
+      "fontSize": "12px",
+      "fontWeight": "500",
+      "lineHeight": "16.8px",
+      "padding": "6px 8px"
+    }
+  },
+  "h1": {
+    "text": "The software factory infrastructure platform",
+    "fontFamily": "azeretSemiMono, \"azeretSemiMono Fallback\", \"Azeret SemiMono\", ui-monospace, monospace",
+    "fontSize": "54px",
+    "fontWeight": "400",
+    "lineHeight": "63.72px",
+    "letterSpacing": "normal",
+    "color": "rgb(26, 21, 34)"
+  },
+  "lede": {
+    "color": "rgba(26, 21, 34, 0.7)"
+  },
+  "requestEarlyAccess": {
+    "backgroundColor": "rgb(26, 21, 34)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "13px",
+    "fontWeight": "500",
+    "lineHeight": "18.2px",
+    "borderRadius": "4px",
+    "padding": "6px 16px",
+    "border": "1px solid rgb(26, 21, 34)"
+  },
+  "bookADemo": {
+    "backgroundColor": "rgb(237, 248, 114)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "12px",
+    "fontWeight": "500",
+    "lineHeight": "16.8px",
+    "borderRadius": "999px",
+    "padding": "6px 16px",
+    "border": "1px solid rgb(237, 248, 114)"
+  },
+  "getStartedOutline": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(26, 21, 34)",
+    "border": "1px solid rgb(26, 21, 34)",
+    "borderRadius": "999px",
+    "fontSize": "12px"
+  },
+  "footer": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(26, 21, 34)",
+    "fontFamily": "matter, \"matter Fallback\", Matter, system-ui, sans-serif"
+  },
+  "sampledPngBeforeQuantize": {
+    "banner": "rgb(8, 9, 10)",
+    "page": "rgb(254, 253, 254)",
+    "nav": "rgb(255, 255, 255)",
+    "bookADemoFill": "rgb(239, 248, 133)",
+    "h1Ink": "rgb(25, 21, 33)",
+    "ctaFill": "rgb(25, 21, 33)"
+  },
+  "declared": {
+    "--font-sans": "\"Matter\", system-ui, sans-serif",
+    "--font-mono": "\"matterMono\", \"matterMono Fallback\", \"Azeret Mono\", \"Azeret Mono Fallback\", ui-monospace, monospace",
+    "--font-display": "\"theFuture\", \"theFuture Fallback\", \"The Future\", system-ui, sans-serif",
+    "--font-azeret-semimono": "\"azeretSemiMono\", \"azeretSemiMono Fallback\"",
+    "--color-theme-accent": "#00c2ff",
+    "--color-theme-cursor": "#00c2ff",
+    "--color-primary": "oklch(40% .007 220)",
+    "--color-background": "color-mix(in oklch, white 75%, oklch(97% .007 220))",
+    "--radius-md": ".125rem",
+    "--default-transition-duration": ".15s",
+    "--ease-out": "cubic-bezier(0, 0, .2, 1)"
+  },
+  "loginWall": {
+    "url": "https://app.warp.dev/login",
+    "title": "Log in to Warp",
+    "heading": "Sign in to Warp",
+    "backgroundColor": "rgb(0, 0, 0)",
+    "emailPlaceholder": "Your email address",
+    "emailValueLength": 0,
+    "providersNotClicked": ["Continue with email", "Continue with GitHub", "Continue with Google", "Continue with ChatGPT", "Continue with SSO"]
+  },
+  "signupWall": {
+    "url": "https://app.warp.dev/signup",
+    "title": "Sign up for Warp",
+    "heading": "Sign up for Warp",
+    "emailValueLength": 0
+  }
+}

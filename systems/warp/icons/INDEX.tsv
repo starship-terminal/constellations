@@ -1,0 +1,3 @@
+role	file	note
+wordmark	(not exported)	The nav wordmark is an img alt "Warp" on the homepage. Not extracted as an SVG (docs/RIGHTS.md).
+favicon	../icon.png	128px PNG from https://www.warp.dev/favicon-128x128.png

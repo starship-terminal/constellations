@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T17:03:41Z",
+  "screenshot": "menu-signin.png",
+  "sanitizedSourceUrl": "https://www.warp.dev/",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "configuredViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device",
+    "clip": null
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 2880,
+      "height": 1800
+    },
+    "basis": "configuredViewport"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop boxes from requested size."
+  },
+  "note": "Captured in the T3 incognito preview tab on 2026-11-22. Sidecar written from measured innerWidth, innerHeight and devicePixelRatio, not from Playwright."
+}
