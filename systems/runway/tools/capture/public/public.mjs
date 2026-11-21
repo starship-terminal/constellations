@@ -11,7 +11,7 @@ import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { chromium, UA, UA_MOBILE, hideConsent, dismissBanner, isWall } from './lib.mjs';
+import { chromium, UA, UA_MOBILE, hideConsent, dismissBanner, isWall, openAuthWall } from './lib.mjs';
 
 const PKG = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'runway', 'raw-shots');
@@ -69,9 +69,16 @@ const step = async (label, fn) => {
 
 async function hoverNav(p, S, label) {
   const loc = p.locator('header a, nav a').filter({ hasText: new RegExp('^' + label + '$') }).first();
-  await loc.hover({ timeout: 4000 });
-  await wait(p, 700);
-  const expanded = await loc.getAttribute('aria-expanded');
+  const box = await loc.boundingBox();
+  if (!box) { log('  menu trigger missing', label); return; }
+  await p.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+  await wait(p, 900);
+  let expanded = await loc.getAttribute('aria-expanded');
+  if (expanded !== 'true') {
+    await loc.hover({ force: true, timeout: 4000 }).catch(() => {});
+    await wait(p, 700);
+    expanded = await loc.getAttribute('aria-expanded');
+  }
   if (expanded !== 'true') log('  menu not expanded', label, expanded);
   if (isWall(p.url())) { log('  WALL after hover', label, p.url()); return; }
   await S.view('menu-' + label.toLowerCase());
@@ -153,7 +160,16 @@ const desktop = {
   academy: { url: 'https://academy.runwayml.com/', run: async (p, S) => { await S.view('default'); } },
   help: { url: 'https://help.runwayml.com/hc/en-us', run: async (p, S) => { await S.view('default'); } },
   status: { url: 'https://status.runwayml.com/', run: async (p, S) => { await S.view('default'); } },
-  login: { url: 'https://app.runwayml.com/login', wall: true, run: async (p, S) => { await S.view('default'); } },
+  login: { url: 'https://app.runwayml.com/login', wall: true, run: async (p, S) => {
+    const url = await openAuthWall(p, 'login');
+    log('  auth host', new URL(url).host + new URL(url).pathname.replace(/\/interaction\/[^/]+/, '/interaction/…'));
+    await S.view('default');
+  } },
+  signup: { url: 'https://app.runwayml.com/signup', wall: true, run: async (p, S) => {
+    const url = await openAuthWall(p, 'signup');
+    log('  auth host', new URL(url).host + new URL(url).pathname.replace(/\/interaction\/[^/]+/, '/interaction/…'));
+    await S.view('default');
+  } },
 };
 
 const mobile = {
@@ -173,7 +189,16 @@ const mobile = {
   research: { url: 'https://runway.com/research', run: async (p, S) => { await S.view('default'); } },
   dev: { url: 'https://dev.runwayml.com/', run: async (p, S) => { await S.view('default'); } },
   docs: { url: 'https://docs.dev.runwayml.com/', run: async (p, S) => { await S.view('default'); } },
-  login: { url: 'https://app.runwayml.com/login', wall: true, run: async (p, S) => { await S.view('default'); } },
+  login: { url: 'https://app.runwayml.com/login', wall: true, run: async (p, S) => {
+    const url = await openAuthWall(p, 'login');
+    log('  auth host', new URL(url).host + new URL(url).pathname.replace(/\/interaction\/[^/]+/, '/interaction/…'));
+    await S.view('default');
+  } },
+  signup: { url: 'https://app.runwayml.com/signup', wall: true, run: async (p, S) => {
+    const url = await openAuthWall(p, 'signup');
+    log('  auth host', new URL(url).host + new URL(url).pathname.replace(/\/interaction\/[^/]+/, '/interaction/…'));
+    await S.view('default');
+  } },
 };
 
 const browser = await chromium.launch({ headless: true });

@@ -18,9 +18,9 @@ A two-column sales form. Fields are empty in the capture. Shown in [screenshots/
 
 The header collapses to a wordmark and a Menu button. The sheet lists the six sections, Pricing, Enterprise Sales and Get Started. Shown in [screenshots/mobile-home-light-default.png](screenshots/mobile-home-light-default.png) and [screenshots/mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png).
 
-## Login wall
+## Login and signup walls
 
-Login leaves the marketing site for auth.runwayml.com. The page shows Username or Email and Password, plus Google, Apple and SSO. Shown in [screenshots/login-light-default.png](screenshots/login-light-default.png). The branch stops there. The signed-in editor is not in this package.
+Login and signup leave the marketing site for auth.runwayml.com. The empty login wall shows Username or Email and Password, plus Google, Apple and SSO. Shown in [screenshots/login-light-default.png](screenshots/login-light-default.png). The empty signup wall asks for an email and was not filled. Shown in [screenshots/signup-light-default.png](screenshots/signup-light-default.png). The branch stops there. The signed-in editor is not in this package.
 
 ## Developer docs
 
