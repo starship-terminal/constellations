@@ -1,6 +1,6 @@
 # Components
 
-Public marketing controls and the signed-out login form. Values are computed styles from 19 November 2026. Crops are from the Playwright captures.
+Public marketing controls and the signed-out login form. Values are computed styles. The 21 November walk re-read the same button, page, and field colours. Crops are from the Playwright captures. The control map is [site-tree.md](site-tree.md).
 
 ## Button
 
@@ -81,5 +81,6 @@ The nav wordmark is an image at `/web-assets/media/vectary-logo-full.svg`. The c
 - Icon button, text area, radio, switch, tabs, menu, tooltip, dialog, toast, list row, table, and avatar were not on the pages that were measured.
 - Hover, pressed, and loading crops were not taken. Hover shadow is a declared rule.
 - The checkbox was not checked. The select was not opened.
-- The hero 3D player failed in headless Playwright and showed "Player error". That frame is in the home screenshot. It is not a Vectary empty state.
-- Signed-in editor controls were not reached.
+- The hero 3D player failed in headless Playwright and showed "Player error". That frame is in the home, Canvas, and Studio screenshots. It is not a Vectary empty state.
+- The phone menu was opened. Hover and pressed crops were still not taken.
+- Signed-in editor controls were not reached. `/dashboard/` redirected to the login wall.

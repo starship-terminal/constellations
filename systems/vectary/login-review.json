@@ -1,0 +1,96 @@
+{
+  "product": "Vectary",
+  "capturedAt": "2026-11-21",
+  "requestedUrl": "https://www.vectary.com/login/",
+  "landedUrl": "https://www.vectary.com/login/",
+  "title": "Vectary | Welcome to Vectary",
+  "stopped": true,
+  "reason": "The empty wall offers Continue with Google, Continue with Apple, Continue with GitHub, Continue with Slack, and Use email. No identity provider was clicked. Use email was opened only far enough to see the empty email and password fields. Nothing was typed. Log in was not clicked. Forgot password was not opened. Log in with SSO was not opened.",
+  "asksFor": [
+    "Continue with Google",
+    "Continue with Apple",
+    "Continue with GitHub",
+    "Continue with Slack",
+    "Use email",
+    "Don't have an account?"
+  ],
+  "passwordFieldVisible": false,
+  "codeFieldVisible": false,
+  "identityProvidersOffered": ["Google", "Apple", "GitHub", "Slack"],
+  "identityProvidersClicked": [],
+  "screenshot": "screenshots/login-light-empty.png",
+  "emailWall": {
+    "requestedUrl": "https://www.vectary.com/login/",
+    "landedUrl": "https://www.vectary.com/login-email/",
+    "title": "Vectary | Log in",
+    "heading": "Log in",
+    "asksFor": ["Email", "Password", "Log in", "Forgot password?", "Log in with SSO", "Use other sign-in methods?"],
+    "passwordFieldVisible": true,
+    "codeFieldVisible": false,
+    "stopped": true,
+    "screenshot": "screenshots/login-email-light-empty.png",
+    "note": "Fields were empty. Nothing was typed. Log in was not clicked."
+  },
+  "signup": {
+    "requestedUrl": "https://www.vectary.com/signup/",
+    "landedUrl": "https://www.vectary.com/signup/",
+    "title": "Vectary | Create Account",
+    "heading": "Create Account",
+    "asksFor": [
+      "Continue with Google",
+      "Continue with Apple",
+      "Continue with GitHub",
+      "Continue with Slack",
+      "Use email",
+      "Already have an account?"
+    ],
+    "stopped": true,
+    "screenshot": "screenshots/signup-light-empty.png",
+    "emailWall": {
+      "landedUrl": "https://www.vectary.com/signup/",
+      "heading": "Create Account",
+      "asksFor": [
+        "First name",
+        "Last name",
+        "Work email",
+        "Password",
+        "What kind of work do you do?",
+        "Keep me posted on new features, AI presets, and helpful tips.",
+        "I agree to the Terms of Service, incl. the Acceptable Use Policy.",
+        "Sign up"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/signup-email-light-empty.png",
+      "note": "Fields were empty. Nothing was typed. The occupation select was not opened. Neither checkbox was checked. Sign up was not clicked."
+    }
+  },
+  "openVectary": {
+    "requestedUrl": "https://www.vectary.com/dashboard/",
+    "landedUrl": "https://www.vectary.com/login/",
+    "stopped": true,
+    "screenshot": "screenshots/dashboard-redirect-light-wall.png"
+  },
+  "measured": {
+    "pageBackground": "rgb(255, 255, 255)",
+    "heading": {
+      "text": "Welcome to Vectary",
+      "note": "Heading text was read. Type metrics for the login heading were not re-measured on 2026-11-21."
+    },
+    "emailField": {
+      "background": "rgb(241, 241, 241)",
+      "radius": "12px",
+      "height": "44px",
+      "fontFamily": "Inter, system-ui, sans-serif",
+      "fontSize": "14px"
+    },
+    "logIn": {
+      "background": "rgb(46, 46, 46)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "12px",
+      "height": "40px",
+      "opacity": "0.5",
+      "note": "Computed while the email and password fields were empty. Not clicked."
+    }
+  },
+  "tokens": "Not captured. Hidden form tokens were unread and are not stored."
+}

@@ -6,9 +6,11 @@ A yellow announcement bar sits above a light nav. The bar is `#fbd302`, 37px tal
 
 [screenshots/home-light-default.png](screenshots/home-light-default.png)
 
-At 390px the nav collapses to the mark, Login, Sign up, and a menu button. The menu was not opened.
+At 390px the nav collapses to the mark, Login, Sign up, and a menu button. The menu opens Product, Solutions, Business, Resources, and Pricing. Product expands to Studio, Canvas, and Workspaces.
 
-[screenshots/pricing-light-phone.png](screenshots/pricing-light-phone.png)
+[screenshots/home-light-phone-menu.png](screenshots/home-light-phone-menu.png)
+
+[screenshots/home-light-phone-product.png](screenshots/home-light-phone-product.png)
 
 ## Hero
 
@@ -26,7 +28,7 @@ Four plans in a row: Free, Starter, Team, Business. Each card has a 20px radius,
 
 ## Signed-out login
 
-The first screen offers Google, Apple, GitHub, Slack, and Use email. Those provider buttons were not clicked. Use email opens a form with email, password, a disabled-looking submit at opacity 0.5, Forgot password, and Log in with SSO. SSO was not opened. Nothing was submitted.
+The first screen offers Google, Apple, GitHub, Slack, and Use email. Those provider buttons were not clicked. Use email opens a form with email, password, a submit at opacity 0.5 while the fields are empty, Forgot password, and Log in with SSO. SSO was not opened. Nothing was typed. Nothing was submitted. The map is [site-tree.md](site-tree.md).
 
 [screenshots/login-light-default.png](screenshots/login-light-default.png)
 
@@ -38,7 +40,11 @@ The phone login shot is the same shell at 390px.
 
 ## Signup
 
-The signup form asks for first name, last name, work email, password, an occupation select, a marketing checkbox, and a required terms checkbox. It was not submitted. No screenshot of that form is in the package, because the fields would have held typed values if the capture had continued, and it did not.
+The signup identity wall offers the same four providers, then Use email. The email form asks for first name, last name, work email, password, an occupation select, a marketing checkbox, and a required terms checkbox. The fields were empty. The select was not opened. The checkboxes were not checked. Sign up was not clicked.
+
+[screenshots/signup-light-empty.png](screenshots/signup-light-empty.png)
+
+[screenshots/signup-email-light-empty.png](screenshots/signup-email-light-empty.png)
 
 ## Not captured
 

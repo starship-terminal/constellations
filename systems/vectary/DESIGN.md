@@ -118,7 +118,7 @@ Good for: 3D design marketing: yellow announcement bar, light nav, Fira Sans her
 
 Captured 2026-11-19, signed out (login and signup were opened and not submitted). Themes: light.
 
-Vectary's public marketing site and the signed-out login shell, captured on 19 November 2026. The marketing site is light. The login shell is a second light UI. Widths are 1440 and 390 CSS pixels. Signup was opened and not submitted. No password, payment, or SSO was entered.
+Vectary's public marketing site and the empty signed-out login and signup walls, refreshed on 21 November 2026 from a headless Playwright walk. The marketing site is light. The login shell is a second light UI. Widths are 1440 and 390 CSS pixels. Use email was opened only far enough to see the empty fields. Nothing was typed. No identity provider was clicked. No form was submitted. The control map is [site-tree.md](site-tree.md). The wall is [login-review.json](login-review.json).
 
 <!-- brief:start -->
 
@@ -169,11 +169,11 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The home body computes a line-height of 27px. The body token uses the hero subtitle's 24px. The primary button fill is `#222222`. The nav Login button is `#313131`. They are different controls. `--blue` is `#222`, not a blue. The login subtitle colour is `oklch(0.556 0 0)`, stored as `#737373` after a canvas read. There is no dark theme switch on the marketing site. A dark colour scheme was not applied. Fira Sans and Inter are not in the package. The style guide names them and falls back. The hero player failed in the headless capture and shows "Player error". That is a capture failure, not a product empty state. The signup form was not screenshotted.
+The home body computes a line-height of 27px. The body token uses the hero subtitle's 24px. The primary button fill is `#222222`. The nav Login button is `#313131`. They are different controls. `--blue` is `#222`, not a blue. The login subtitle colour is `oklch(0.556 0 0)`, stored as `#737373` after a canvas read. There is no dark theme switch on the marketing site. A dark colour scheme was not applied. Fira Sans and Inter are not in the package. The style guide names them and falls back. The hero player failed in the headless capture and shows "Player error". That is a capture failure, not a product empty state. Canvas and Studio show the same player failure below a readable hero. The signup email form is photographed empty. Nothing was typed into it. Starter and Team prices were not re-read as tokens on this pass: the pricing page painted `$0` and `Custom`, and the mid cards were not re-measured.
 
 ### Do and don't (from README.md)
 
 - **Use the near-black fill for the primary action.** Create account is `#222222` with `#f7f7f7` type and an 8px radius. [components/crops/button-primary-default.png](components/crops/button-primary-default.png)
 - **Set display type in Fira Sans.** The hero and the pricing title are Fira Sans at weight 300, 60px, with -2px tracking. [screenshots/home-light-default.png](screenshots/home-light-default.png)
 - **Keep the marketing page on `#f0f0f0`.** The footer is `#0b0b0b`. The yellow bar is `#fbd302`. [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png)
-- **Leave login, signup, and payment unsubmitted.** The email form was measured and not sent. SSO was not opened. [patterns.md](patterns.md)
+- **Leave login, signup, and payment unsubmitted.** The email form was photographed empty and not sent. SSO was not opened. [screenshots/login-email-light-empty.png](screenshots/login-email-light-empty.png)
