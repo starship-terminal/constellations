@@ -2204,9 +2204,9 @@
       "description": "One platform for all your creative work",
       "status": "captured",
       "package": "systems/frame",
-      "notes": "https://next.frame.io/login is page not found. Opening https://app.frame.io/ redirected to https://accounts.frame.io/welcome with email and password. Cookie banner was rejected. No code was sent.",
+      "notes": "https://next.frame.io/login is page not found. Opening https://app.frame.io/ redirected to https://accounts.frame.io/welcome with email and password. Cookie banner was rejected. No code was sent. Public walk 2026-11-21: the public site tree is in systems/frame/site-tree.md. https://frame.io/ loaded. https://next.frame.io/login is still a 404. Opening https://app.frame.io/ still redirects to https://accounts.frame.io/welcome with an empty email field and Let's go. A password input is in the DOM and is not painted. Nothing was typed. No identity provider was clicked. No form was submitted. login-review.json is present and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1669 at 4a6c52b27c09. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 7
     },
     {
