@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codex public site style guide</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; background: #000; color: #fff; font: 16px/1.45 "OpenAI Sans", ui-sans-serif, system-ui, sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-size: 40px; font-weight: 500; letter-spacing: -0.02em; }
+  h2 { font-size: 22px; font-weight: 500; margin-top: 40px; }
+  p { color: rgba(255,255,255,.72); max-width: 62ch; }
+  .hero-btns { display: flex; gap: 8px; margin: 16px 0 28px; }
+  .btn { display: inline-flex; align-items: center; height: 40px; padding: 0 20px; border-radius: 40px; font-size: 14px; font-weight: 500; text-decoration: none; }
+  .btn-primary { background: #000; color: #fff; border: 1px solid #fff; }
+  .btn-secondary { background: rgba(0,0,0,.04); color: #000; }
+  .wash { background: linear-gradient(180deg, #d7e4ff, #efe7ff); color: #000; border-radius: 16px; padding: 28px; }
+  .grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+  .swatch, .row { display: grid; grid-template-columns: 48px 1fr auto; gap: 12px; align-items: center; border-top: 1px solid rgba(255,255,255,.12); padding: 8px 0; }
+  .row { grid-template-columns: 1fr auto; }
+  .swatch i { width: 48px; height: 28px; border-radius: 6px; border: 1px solid rgba(255,255,255,.2); display: block; }
+  code { font-size: 13px; }
+  .login { margin-top: 12px; background: #000; border: 1px solid rgba(255,255,255,.15); border-radius: 16px; padding: 28px; max-width: 384px; }
+  .login h3 { font-weight: 400; font-size: 30px; margin: 0 0 16px; color: #ededed; }
+  .pill { height: 52px; border-radius: 9999px; border: 1px solid rgba(255,255,255,.15); display: flex; align-items: center; justify-content: center; margin: 8px 0; color: #ededed; }
+  .pill.go { background: #ededed; color: #0d0d0d; border-color: transparent; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Codex public site</h1>
+  <p>Measured from openai.com/codex on 2026-11-22, signed out. Dark is the only painted marketing theme. The login card is a different host and stays in its own set.</p>
+  <div class="wash">
+    <h2 style="margin-top:0">Build anything with Codex</h2>
+    <div class="hero-btns">
+      <a class="btn btn-primary" href="#tokens">Download for macOS</a>
+      <a class="btn btn-secondary" href="#tokens">Try on web</a>
+    </div>
+  </div>
+  <h2 id="tokens">Dark marketing tokens</h2>
+  <div class="grid"><div class="swatch"><i style="background:#000000"></i><code>color.page</code><span>#000000</span></div>
+<div class="swatch"><i style="background:#ffffff"></i><code>color.text</code><span>#ffffff</span></div>
+<div class="swatch"><i style="background:rgba(255, 255, 255, 0.6)"></i><code>color.text-muted</code><span>rgba(255, 255, 255, 0.6)</span></div>
+<div class="swatch"><i style="background:#000000"></i><code>color.text-on-light</code><span>#000000</span></div>
+<div class="swatch"><i style="background:#000000"></i><code>color.surface-nav</code><span>#000000</span></div>
+<div class="swatch"><i style="background:#000000"></i><code>color.button-primary-bg</code><span>#000000</span></div>
+<div class="swatch"><i style="background:#ffffff"></i><code>color.button-primary-text</code><span>#ffffff</span></div>
+<div class="swatch"><i style="background:rgba(0, 0, 0, 0.04)"></i><code>color.button-secondary-bg</code><span>rgba(0, 0, 0, 0.04)</span></div>
+<div class="swatch"><i style="background:#000000"></i><code>color.button-secondary-text</code><span>#000000</span></div>
+<div class="swatch"><i style="background:rgba(255, 255, 255, 0.12)"></i><code>color.button-login-bg</code><span>rgba(255, 255, 255, 0.12)</span></div>
+<div class="swatch"><i style="background:#ffffff"></i><code>color.button-login-text</code><span>#ffffff</span></div>
+<div class="swatch"><i style="background:#ffffff"></i><code>color.try-chatgpt-bg</code><span>#ffffff</span></div>
+<div class="swatch"><i style="background:#8f8f8f"></i><code>color.brand-gray-400</code><span>#8f8f8f</span></div>
+<div class="swatch"><i style="background:#f9f9f9"></i><code>color.brand-gray-900</code><span>#f9f9f9</span></div>
+<div class="swatch"><i style="background:#1f1f1f"></i><code>color.primary-solid-4</code><span>#1f1f1f</span></div>
+<div class="swatch"><i style="background:#333333"></i><code>color.primary-solid-12</code><span>#333333</span></div>
+<div class="swatch"><i style="background:#cccccc"></i><code>color.primary-solid-80</code><span>#cccccc</span></div>
+<div class="row"><code>component.button-height</code><span>40px</span></div>
+<div class="row"><code>component.login-height</code><span>36px</span></div>
+<div class="row"><code>component.nav-height</code><span>64px</span></div>
+<div class="row"><code>component.h1-size</code><span>64px</span></div>
+<div class="row"><code>component.button-size</code><span>14px</span></div>
+<div class="row"><code>component.nav-size</code><span>17px</span></div></div>
+  <h2>Core</h2>
+  <div class="grid"><div class="row"><code>font.sans</code><span>OpenAI Sans, OpenAI Sans Variable Scripts, sans-serif</span></div>
+<div class="row"><code>font.mono</code><span>SF Mono, Consolas, "Liberation Mono", ui-monospace, monospace</span></div>
+<div class="row"><code>radius.sm</code><span>0.25rem</span></div>
+<div class="row"><code>radius.md</code><span>0.38rem</span></div>
+<div class="row"><code>radius.lg</code><span>1rem</span></div>
+<div class="row"><code>radius.2xl</code><span>1rem</span></div>
+<div class="row"><code>radius.4xl</code><span>2rem</span></div>
+<div class="row"><code>radius.pill</code><span>40px</span></div>
+<div class="row"><code>motion.duration-short</code><span>0.2s</span></div>
+<div class="row"><code>motion.duration-medium</code><span>0.3s</span></div>
+<div class="row"><code>motion.duration-long</code><span>0.4s</span></div>
+<div class="row"><code>motion.ease-out</code><span>cubic-bezier(0, 0, 0.2, 1)</span></div>
+<div class="row"><code>motion.ease-in</code><span>cubic-bezier(0.4, 0, 1, 1)</span></div>
+<div class="row"><code>space.header</code><span>4rem</span></div>
+<div class="row"><code>space.control-pad-x</code><span>20px</span></div></div>
+  <h2>Login wall</h2>
+  <div class="login">
+    <h3>Log in or sign up</h3>
+    <div class="pill">Continue with Google</div>
+    <div class="pill go">Continue</div>
+  </div>
+  <div class="grid"><div class="swatch"><i style="background:#000000"></i><code>color.page</code><span>#000000</span></div>
+<div class="swatch"><i style="background:#ededed"></i><code>color.text</code><span>#ededed</span></div>
+<div class="swatch"><i style="background:#ededed"></i><code>color.continue-bg</code><span>#ededed</span></div>
+<div class="swatch"><i style="background:#0d0d0d"></i><code>color.continue-text</code><span>#0d0d0d</span></div>
+<div class="swatch"><i style="background:#000000"></i><code>color.provider-bg</code><span>#000000</span></div>
+<div class="swatch"><i style="background:#ededed"></i><code>color.provider-text</code><span>#ededed</span></div>
+<div class="swatch"><i style="background:rgba(255, 255, 255, 0.15)"></i><code>color.provider-border</code><span>rgba(255, 255, 255, 0.15)</span></div>
+<div class="swatch"><i style="background:rgba(255, 255, 255, 0.2)"></i><code>color.field-border</code><span>rgba(255, 255, 255, 0.2)</span></div>
+<div class="row"><code>component.button-height</code><span>52px</span></div>
+<div class="row"><code>component.field-height</code><span>56px</span></div>
+<div class="row"><code>component.button-radius</code><span>9999px</span></div>
+<div class="row"><code>component.card-width</code><span>384px</span></div>
+<div class="row"><code>component.h1-size</code><span>30px</span></div></div>
+</main>
+</body>
+</html>
