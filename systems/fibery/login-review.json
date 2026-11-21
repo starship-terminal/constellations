@@ -1,0 +1,40 @@
+{
+  "product": "Fibery",
+  "signed_in": false,
+  "captured": "2026-11-21",
+  "wall": {
+    "url": "https://fibery.io/login",
+    "title": "Login — Fibery",
+    "reached": true,
+    "providers": ["Continue with Google", "Continue with Microsoft", "Continue with Email", "Workspace SSO"],
+    "email_path": {
+      "url": "https://fibery.io/login",
+      "fields_revealed": ["Work Email", "Password"],
+      "filled": false,
+      "submitted": false,
+      "code_sent": false
+    },
+    "not_clicked": ["Continue with Google", "Continue with Microsoft", "Workspace SSO", "Forgot password", "Continue"],
+    "signup_url": "https://fibery.io/sign-up",
+    "signup_title": "Create workspace — Fibery",
+    "signup_submitted": false
+  },
+  "offered": {
+    "nav": { "items": [], "reached": [] },
+    "settings": { "items": [], "reached": [] },
+    "create": { "items": [], "reached": [] }
+  },
+  "screens": [
+    { "name": "Login providers", "file": "screenshots/login-light-providers.png", "url": "https://fibery.io/login" },
+    { "name": "Login email empty", "file": "screenshots/login-light-email-empty.png", "url": "https://fibery.io/login" },
+    { "name": "Login phone", "file": "screenshots/login-light-mobile.png", "url": "https://fibery.io/login" },
+    { "name": "Signup wall", "file": "screenshots/signup-light-wall.png", "url": "https://fibery.io/sign-up" }
+  ],
+  "gaps": [
+    "signed-in app was not captured",
+    "unread token values are Not captured",
+    "onboarding was not filled",
+    "no workspace navigation, settings, or create flow was offered because the walk stopped at the auth wall"
+  ],
+  "not_submitted": ["login", "signup", "newsletter", "demo", "cookie accept", "profile", "plan", "survey", "onboarding"]
+}
