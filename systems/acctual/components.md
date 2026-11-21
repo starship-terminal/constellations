@@ -16,20 +16,54 @@ Screenshots are named `{page}-light-{state}.png` (acctual.com has one theme). De
 
 | Surface | URL | Screenshots |
 |---|---|---|
-| Home. Display hero, interactive invoice mock, fee rows, FAQ. | `/` | [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png), [invoice-demo](screenshots/home-light-invoice-demo.png) |
+| Home. Display hero, interactive invoice mock, fee rows, FAQ. | `/` | [default](screenshots/home-light-default.png), [faq-open](screenshots/home-light-faq-open.png), [full](screenshots/home-light-full.png), [invoice-demo](screenshots/home-light-invoice-demo.png) |
 | Pricing. The fee comparison. | `/pricing` | [default](screenshots/pricing-light-default.png), [full](screenshots/pricing-light-full.png) |
-| Teams. The team plan page. | `/teams` | [default](screenshots/teams-light-default.png), [full](screenshots/teams-light-full.png) |
-| About. Company page. | `/about` | [default](screenshots/about-light-default.png), [full](screenshots/about-light-full.png) |
+| Teams. The team plan page. Sitemap only; not in the current nav. | `/teams` | [default](screenshots/teams-light-default.png), [full](screenshots/teams-light-full.png) |
+| About. Company page. Sitemap only; not in the current nav. | `/about` | [default](screenshots/about-light-default.png), [full](screenshots/about-light-full.png) |
 | Blog index. | `/blog` | [default](screenshots/blog-light-default.png), [full](screenshots/blog-light-full.png) |
 | Blog post. Acctual joins Altitude. | `/blog/acctual-joins-altitude` | [default](screenshots/blog-post-light-default.png), [full](screenshots/blog-post-light-full.png) |
 | Altitude announcement page the banner links to. | `/altitude` | [default](screenshots/altitude-light-default.png), [full](screenshots/altitude-light-full.png) |
 | Freelancer invoicing. Persona landing page. | `/freelancer-invoicing` | [default](screenshots/freelancer-invoicing-light-default.png), [full](screenshots/freelancer-invoicing-light-full.png) |
+| Agency invoicing. The nav Agency link. | `/agency-invoicing` | [default](screenshots/agency-invoicing-light-default.png), [full](screenshots/agency-invoicing-light-full.png) |
 | Stablecoin invoicing. Product landing page. | `/stablecoin-invoicing` | [default](screenshots/stablecoin-invoicing-light-default.png), [full](screenshots/stablecoin-invoicing-light-full.png) |
-| US to Japan corridor. One of ~30 location pages. | `/locations/us-to-japan` | [default](screenshots/location-light-default.png), [full](screenshots/location-light-full.png) |
+| USDC invoicing. Product landing page. | `/usdc-invoicing` | [default](screenshots/usdc-invoicing-light-default.png), [full](screenshots/usdc-invoicing-light-full.png) |
+| USDT invoicing. Product landing page. | `/usdt-invoicing` | [default](screenshots/usdt-invoicing-light-default.png), [full](screenshots/usdt-invoicing-light-full.png) |
+| Exporters landing page. | `/exporters` | [default](screenshots/exporters-light-default.png), [full](screenshots/exporters-light-full.png) |
+| Invoice templates. Footer link. | `/invoice-templates` | [default](screenshots/invoice-templates-light-default.png), [full](screenshots/invoice-templates-light-full.png) |
+| FreshBooks alternative. Footer link. | `/freshbooks-alternative` | [default](screenshots/freshbooks-alternative-light-default.png), [full](screenshots/freshbooks-alternative-light-full.png) |
+| Free invoice software. Reached from the public graph. | `/free-invoice-software` | [default](screenshots/free-invoice-software-light-default.png), [full](screenshots/free-invoice-software-light-full.png) |
+| US to Japan corridor. Sitemap template, not linked from the homepage footer. | `/locations/us-to-japan` | [default](screenshots/location-light-default.png), [full](screenshots/location-light-full.png) |
+| US to UK corridor. Footer link. | `/locations/us-to-uk` | [default](screenshots/location-us-uk-light-default.png), [full](screenshots/location-us-uk-light-full.png) |
 | Terms. Legal text. | `/terms` | [default](screenshots/terms-light-default.png), [full](screenshots/terms-light-full.png) |
 | Privacy. Legal text. | `/privacy` | [default](screenshots/privacy-light-default.png), [full](screenshots/privacy-light-full.png) |
+| Retired homepage. Sitemap only. | `/old-home` | [default](screenshots/old-home-light-default.png), [full](screenshots/old-home-light-full.png) |
+| Retired blog index. Sitemap only. | `/blog-old` | [default](screenshots/blog-old-light-default.png), [full](screenshots/blog-old-light-full.png) |
+| The published 404 page. | `/404` | [default](screenshots/not-found-light-default.png), [full](screenshots/not-found-light-full.png) |
+| Footer-linked post. Recurring invoices. | `/blog/how-to-set-up-recurring-invoices` | [default](screenshots/blog-recurring-light-default.png), [full](screenshots/blog-recurring-light-full.png) |
+| Footer-linked post. Graphic design invoice. | `/blog/graphic-design-invoice` | [default](screenshots/blog-graphic-light-default.png), [full](screenshots/blog-graphic-light-full.png) |
+| Footer-linked post. Web design invoice. | `/blog/web-design-development-invoice` | [default](screenshots/blog-web-light-default.png), [full](screenshots/blog-web-light-full.png) |
+| Footer-linked post. Video production invoice. | `/blog/video-film-production-invoices` | [default](screenshots/blog-video-light-default.png), [full](screenshots/blog-video-light-full.png) |
+| Footer-linked post. PayPal invoice fees. | `/blog/paypal-invoice-fees-are-they-worth-it` | [default](screenshots/blog-paypal-light-default.png), [full](screenshots/blog-paypal-light-full.png) |
+| Footer-linked post. Upwork alternatives. | `/blog/best-upwork-alternatives-12-platforms-to-find-better-work-in-2026` | [default](screenshots/blog-upwork-light-default.png), [full](screenshots/blog-upwork-light-full.png) |
+| Footer-linked post. Past due vs overdue. | `/blog/past-due-vs-overdue-invoices` | [default](screenshots/blog-pastdue-light-default.png), [full](screenshots/blog-pastdue-light-full.png) |
+| Public help centre. Getting started. | `https://guides.acctual.com/guide/getting-started` | [default](screenshots/guide-light-default.png), [full](screenshots/guide-light-full.png) |
+| Public help centre. Overview. | `https://guides.acctual.com/guide/overview` | [default](screenshots/guide-overview-light-default.png), [full](screenshots/guide-overview-light-full.png) |
+| Public help centre. Create and send an invoice. | `https://guides.acctual.com/guide/send-an-invoice/create-send-an-invoice` | [default](screenshots/guide-invoice-light-default.png), [full](screenshots/guide-invoice-light-full.png) |
+| Public help centre. Pay a bill from wallet. | `https://guides.acctual.com/guide/pay-a-bill/pay-a-bill-from-wallet` | [default](screenshots/guide-pay-light-default.png), [full](screenshots/guide-pay-light-full.png) |
+| Public help centre. Rates and fees. | `https://guides.acctual.com/guide/resources/rates-fees` | [default](screenshots/guide-rates-light-default.png), [full](screenshots/guide-rates-light-full.png) |
 | Home at 390: collapsed header, the opened menu, single-column cards. | `/` | [default](screenshots/mobile-home-light-default.png), [full](screenshots/mobile-home-light-full.png), [menu-open](screenshots/mobile-home-light-menu-open.png) |
 | Pricing at 390. | `/pricing` | [default](screenshots/mobile-pricing-light-default.png), [full](screenshots/mobile-pricing-light-full.png) |
+| Blog index at 390. | `/blog` | [default](screenshots/mobile-blog-light-default.png), [full](screenshots/mobile-blog-light-full.png) |
+| Freelancer invoicing at 390. | `/freelancer-invoicing` | [default](screenshots/mobile-freelancer-invoicing-light-default.png), [full](screenshots/mobile-freelancer-invoicing-light-full.png) |
+| Agency invoicing at 390. | `/agency-invoicing` | [default](screenshots/mobile-agency-invoicing-light-default.png), [full](screenshots/mobile-agency-invoicing-light-full.png) |
+| Altitude announcement at 390. | `/altitude` | [default](screenshots/mobile-altitude-light-default.png), [full](screenshots/mobile-altitude-light-full.png) |
+| Invoice templates at 390. | `/invoice-templates` | [default](screenshots/mobile-invoice-templates-light-default.png), [full](screenshots/mobile-invoice-templates-light-full.png) |
+| Altitude blog post at 390. | `/blog/acctual-joins-altitude` | [default](screenshots/mobile-blog-post-light-default.png), [full](screenshots/mobile-blog-post-light-full.png) |
+| US to UK corridor at 390. | `/locations/us-to-uk` | [default](screenshots/mobile-location-light-default.png), [full](screenshots/mobile-location-light-full.png) |
+| Terms at 390. Full page is truncated at 8 tiles. | `/terms` | [default](screenshots/mobile-terms-light-default.png), [full](screenshots/mobile-terms-light-full.png) |
+| Privacy at 390. Full page is truncated at 8 tiles. | `/privacy` | [default](screenshots/mobile-privacy-light-default.png), [full](screenshots/mobile-privacy-light-full.png) |
+| Getting started guide at 390. | `https://guides.acctual.com/guide/getting-started` | [default](screenshots/mobile-guide-light-default.png), [full](screenshots/mobile-guide-light-full.png) |
+| Create-invoice guide at 390. | `https://guides.acctual.com/guide/send-an-invoice/create-send-an-invoice` | [default](screenshots/mobile-guide-invoice-light-default.png), [full](screenshots/mobile-guide-invoice-light-full.png) |
 
 ### Overlays and transient states
 
@@ -37,8 +71,8 @@ Screenshots are named `{page}-light-{state}.png` (acctual.com has one theme). De
 |---|---|---|---|
 | Mobile menu, open | home at 390 | the nav trigger pressed (a local disclosure) | [mobile-home-light-menu-open](screenshots/mobile-home-light-menu-open.png), [m-nav-panel](#m-nav-panel) |
 | Invoice demo | home hero | the interactive invoice mock scrolled into view; a marketing demo, not a live product | [home-light-invoice-demo](screenshots/home-light-invoice-demo.png), [invoice-demo](#invoice-demo) |
-| FAQ answer, open | home FAQs | the question pressed (a local accordion disclosure) | [faq-item](#faq-item) |
-| App sign-in / sign-up | nav links out to app.acctual.com | never opened; the product app sits behind a sign-in the capture does not take | no screenshot; documented under Gaps |
+| FAQ answer, open | home FAQs | the question pressed (a local accordion disclosure) | [home-light-faq-open](screenshots/home-light-faq-open.png), [faq-item](#faq-item) |
+| App sign-in / sign-up | nav links out to app.acctual.com | recorded at https://app.acctual.com/sign-in (email, password, Continue with Google); nothing typed, Google not clicked, branch stopped | no screenshot; documented under Gaps |
 
 ## Shared values
 

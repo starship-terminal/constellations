@@ -1,6 +1,8 @@
 # Acctual patterns
 
-How Acctual's components combine to do the recurring jobs on its public marketing pages, written from the captures of 2026-11-10 (signed out, 1440 and 390 wide). Each pattern says when the site uses it, the components it is built from (entries in [components.md](components.md), values in [tokens.json](tokens.json)), the layout, and the screens that show it. These are observations of what the site does, not Acctual's own guidance.
+The control map for these screens is [site-tree.md](site-tree.md). Auth walls (`app.acctual.com`, including `/sign-in`) are recorded there and were not entered.
+
+How Acctual's components combine to do the recurring jobs on its public marketing pages, written from the captures of 2026-11-10 and the public recapture of 2026-11-21 (signed out, 1440x900 and 390x844). Each pattern says when the site uses it, the components it is built from (entries in [components.md](components.md), values in [tokens.json](tokens.json)), the layout, and the screens that show it. These are observations of what the site does, not Acctual's own guidance.
 
 | Pattern | Captured | Example screen |
 |---|---|---|

@@ -51,6 +51,13 @@ class Shooter {
 }
 const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
 
+// Page list is the reachable public graph in systems/acctual/site-tree.md
+// (mapped 2026-11-21 from the homepage). Auth walls are not in this list.
+// Blog posts share one article template: the index, the announcement post,
+// and the footer-linked posts are captured. Remaining posts are the same
+// template and stay in the site tree.
+const page = (path) => ({ path, run: async (p, S) => { await S.view('default'); await S.full(); } });
+
 const desktop = {
   home: { path: '/', run: async (p, S) => {
     await S.view('default');
@@ -60,43 +67,95 @@ const desktop = {
       await S.view('invoice-demo');
       await p.evaluate(() => scrollTo(0, 0)); await wait(p, 400);
     });
+    await step('faq-open', async () => {
+      const item = p.locator('[data-framer-name="Closed"]').first();
+      if (await item.count()) {
+        await item.scrollIntoViewIfNeeded();
+        await item.click({ timeout: 4000 });
+        await wait(p, 700);
+        await S.view('faq-open');
+        await p.evaluate(() => scrollTo(0, 0));
+        await wait(p, 300);
+      }
+    });
     await S.full();
   } },
-  pricing: { path: '/pricing', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  teams: { path: '/teams', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  about: { path: '/about', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  blog: { path: '/blog', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'blog-post': { path: '/blog/acctual-joins-altitude', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  altitude: { path: '/altitude', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'freelancer-invoicing': { path: '/freelancer-invoicing', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'stablecoin-invoicing': { path: '/stablecoin-invoicing', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  location: { path: '/locations/us-to-japan', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  terms: { path: '/terms', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  privacy: { path: '/privacy', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  pricing: page('/pricing'),
+  teams: page('/teams'),
+  about: page('/about'),
+  blog: page('/blog'),
+  'blog-post': page('/blog/acctual-joins-altitude'),
+  altitude: page('/altitude'),
+  'freelancer-invoicing': page('/freelancer-invoicing'),
+  'agency-invoicing': page('/agency-invoicing'),
+  'stablecoin-invoicing': page('/stablecoin-invoicing'),
+  'usdc-invoicing': page('/usdc-invoicing'),
+  'usdt-invoicing': page('/usdt-invoicing'),
+  exporters: page('/exporters'),
+  'invoice-templates': page('/invoice-templates'),
+  'freshbooks-alternative': page('/freshbooks-alternative'),
+  location: page('/locations/us-to-japan'),
+  'location-us-uk': page('/locations/us-to-uk'),
+  terms: page('/terms'),
+  privacy: page('/privacy'),
+  'old-home': page('/old-home'),
+  'blog-old': page('/blog-old'),
+  'not-found': page('/404'),
+  'blog-recurring': page('/blog/how-to-set-up-recurring-invoices'),
+  'blog-graphic': page('/blog/graphic-design-invoice'),
+  'blog-web': page('/blog/web-design-development-invoice'),
+  'blog-video': page('/blog/video-film-production-invoices'),
+  'blog-paypal': page('/blog/paypal-invoice-fees-are-they-worth-it'),
+  'blog-upwork': page('/blog/best-upwork-alternatives-12-platforms-to-find-better-work-in-2026'),
+  'blog-pastdue': page('/blog/past-due-vs-overdue-invoices'),
+  'free-invoice-software': page('/free-invoice-software'),
+  'guide': { path: 'https://guides.acctual.com/guide/getting-started', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'guide-overview': { path: 'https://guides.acctual.com/guide/overview', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'guide-invoice': { path: 'https://guides.acctual.com/guide/send-an-invoice/create-send-an-invoice', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'guide-pay': { path: 'https://guides.acctual.com/guide/pay-a-bill/pay-a-bill-from-wallet', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'guide-rates': { path: 'https://guides.acctual.com/guide/resources/rates-fees', run: async (p, S) => { await S.view('default'); await S.full(); } },
 };
 
 const mobile = {
   home: { path: '/', run: async (p, S) => {
     await S.view('default');
     await step('menu-open', async () => {
-      // The framer nav trigger is an unnamed icon box on the right of the top
-      // bar (a local disclosure): tag it by geometry, then tap it.
-      await p.evaluate(() => {
-        const bar = document.querySelector('[data-framer-name="Navigation/Topbar"]');
-        if (!bar) return;
-        const small = [...bar.querySelectorAll('div,button,a')].filter((e) => {
-          const r = e.getBoundingClientRect();
-          return r.width >= 10 && r.width <= 90 && r.height <= 80 && r.x > window.innerWidth - 140 && e.querySelector('svg');
+      // Phone - Open is a local disclosure. The trigger is the 18px icon
+      // named Group 1171277804 on the right of Navigation/Topbar.
+      const named = p.locator('[data-framer-name="Group 1171277804"]').first();
+      if (await named.count()) {
+        await named.click({ timeout: 4000 });
+      } else {
+        await p.evaluate(() => {
+          const bar = document.querySelector('[data-framer-name="Navigation/Topbar"]');
+          if (!bar) return;
+          const small = [...bar.querySelectorAll('div,button,a')].filter((e) => {
+            const r = e.getBoundingClientRect();
+            return r.width >= 10 && r.width <= 90 && r.height <= 80 && r.x > window.innerWidth - 140 && e.querySelector('svg');
+          });
+          const el = small.find((e) => !small.some((o) => o !== e && o.contains(e))) || small[0];
+          if (el) el.click();
         });
-        const el = small.find((e) => !small.some((o) => o !== e && o.contains(e))) || small[0];
-        if (el) el.setAttribute('data-m-mark', 'mtr');
-      }).catch(() => {});
-      const btn = p.locator('[data-m-mark="mtr"], [data-framer-name="navtrigger"], [data-framer-name*="nav" i] button, [aria-label*="menu" i]').filter({ visible: true }).first();
-      if (await btn.count()) { await btn.click({ timeout: 4000 }).catch(() => btn.evaluate((el) => el.click())); await wait(p, 900); await S.view('menu-open'); await p.keyboard.press('Escape'); await wait(p, 400); }
+      }
+      await wait(p, 900);
+      await S.view('menu-open');
+      await p.keyboard.press('Escape').catch(() => {});
+      await wait(p, 400);
     });
     await S.full();
   } },
-  pricing: { path: '/pricing', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  pricing: page('/pricing'),
+  blog: page('/blog'),
+  'freelancer-invoicing': page('/freelancer-invoicing'),
+  'agency-invoicing': page('/agency-invoicing'),
+  altitude: page('/altitude'),
+  'invoice-templates': page('/invoice-templates'),
+  'blog-post': page('/blog/acctual-joins-altitude'),
+  location: page('/locations/us-to-uk'),
+  terms: page('/terms'),
+  privacy: page('/privacy'),
+  guide: { path: 'https://guides.acctual.com/guide/getting-started', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'guide-invoice': { path: 'https://guides.acctual.com/guide/send-an-invoice/create-send-an-invoice', run: async (p, S) => { await S.view('default'); await S.full(); } },
 };
 
 const b = await chromium.launch();
@@ -115,7 +174,8 @@ for (const { k, mob } of runs) {
   try {
     let ok = false;
     for (let attempt = 0; attempt < 3 && !ok; attempt++) {
-      await p.goto(BASE + spec.path, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+      const url = spec.path.startsWith('http') ? spec.path : BASE + spec.path;
+      await p.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
       if (!(await clearChallenge(p))) break;
       let clean = true;
       for (let i = 0; i < 6; i++) {
