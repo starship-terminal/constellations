@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fiverr style guide</title>
+<meta name="description" content="Fiverr public capture, 2026-11-21. Only sampled fills from the login wall are rendered. Unread roles are marked Not captured.">
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #ffffff;
+    --text: #222325;
+    --accent: #1dbf73;
+    --panel: #76293b;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 16px/1.45 system-ui, sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-size: 28px; font-weight: 600; margin: 0 0 8px; }
+  p { margin: 0 0 16px; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top; }
+  .swatch { display: inline-block; width: 28px; height: 18px; border: 1px solid #ccc; vertical-align: middle; margin-right: 8px; }
+  .note { color: #444; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Fiverr</h1>
+  <p class="note">Light only. Values below are the sampled fills in <a href="tokens.json">tokens.json</a>. A dark theme was not observed. Roles that were not read are Not captured and are not given a colour here.</p>
+  <table>
+    <thead><tr><th>Role</th><th>Value</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td><span class="swatch" style="background:#ffffff"></span>page, surface</td><td>#ffffff</td><td>Sampled, login page and sign-in card</td></tr>
+      <tr><td><span class="swatch" style="background:#222325"></span>text, Join fill</td><td>#222325</td><td>Sampled, Join button</td></tr>
+      <tr><td><span class="swatch" style="background:#1dbf73"></span>accent, wordmark</td><td>#1dbf73</td><td>Sampled, wordmark green</td></tr>
+      <tr><td><span class="swatch" style="background:#76293b"></span>login panel</td><td>#76293b</td><td>Sampled, left panel</td></tr>
+      <tr><td>muted, border, type, space, radius, motion</td><td>Not captured</td><td>Human-check blocked the measurement pass</td></tr>
+    </tbody>
+  </table>
+  <p class="note">The signed-in app was not captured. See <a href="site-tree.md">site-tree.md</a> and <a href="login-review.json">login-review.json</a>.</p>
+</main>
+</body>
+</html>

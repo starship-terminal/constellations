@@ -1,0 +1,64 @@
+{
+  "captured": "2026-11-21",
+  "product": "Fiverr",
+  "startUrl": "https://www.fiverr.com/",
+  "signedIn": false,
+  "themeObserved": "light",
+  "widthsRequested": [1440, 390],
+  "widthsMeasured": {
+    "login-light-default.png": {
+      "requested": { "width": 1440, "height": 900, "deviceScaleFactor": 1 },
+      "png": { "width": 1440, "height": 900 },
+      "innerWidth": "Not captured",
+      "innerHeight": "Not captured",
+      "devicePixelRatio": "Not captured",
+      "visualViewport": "Not captured",
+      "note": "Playwright context requested 1440x900 at deviceScaleFactor 1. The PNG is 1440x900. window.innerWidth was not read before the session was blocked."
+    }
+  },
+  "pagesPainted": [
+    {
+      "url": "https://www.fiverr.com/",
+      "when": "first headless Chromium load, 2026-11-21",
+      "httpStatus": 200,
+      "title": "Fiverr | Freelance services marketplace | Find top global talent",
+      "screenshot": "Not captured",
+      "note": "The DOM text was read. The viewport screenshot file was overwritten by a later human-check capture of the same path before it was copied into the package. It is not reconstructed.",
+      "publishedProfileLinksSeen": [
+        "https://www.fiverr.com/andrewcarpen756",
+        "https://www.fiverr.com/kirillillenkov",
+        "https://www.fiverr.com/arnasofc",
+        "https://www.fiverr.com/yaeliroz",
+        "https://www.fiverr.com/edwinhioe",
+        "https://www.fiverr.com/filipzekicart",
+        "https://www.fiverr.com/alex_ma",
+        "https://www.fiverr.com/jusmarketing",
+        "https://www.fiverr.com/randysmccabe"
+      ]
+    },
+    {
+      "url": "https://www.fiverr.com/login",
+      "when": "2026-11-21",
+      "httpStatus": 200,
+      "title": "Login to Fiverr",
+      "screenshot": "screenshots/login-light-default.png",
+      "note": "Auth wall. No field was filled. No SSO control was clicked. No form was submitted."
+    }
+  ],
+  "blocked": [
+    {
+      "url": "https://www.fiverr.com/",
+      "httpStatus": 403,
+      "title": "It needs a human touch",
+      "why": "PerimeterX human-check painted before the homepage on every load after the first. The page asked to press and hold. It was not solved. A client IP and a trace id were visible on that page and were not copied into this package.",
+      "screenshotInPackage": false
+    },
+    {
+      "url": "https://www.fiverr.com/login",
+      "httpStatus": 403,
+      "title": "It needs a human touch",
+      "why": "A second navigation to the login URL, meant to inventory controls, painted the same human-check before the form. It was not solved.",
+      "screenshotInPackage": false
+    }
+  ]
+}
