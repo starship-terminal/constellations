@@ -1,0 +1,123 @@
+{
+  "capturedAt": "2026-11-21",
+  "method": "Headless Chromium via Playwright. Cookie banner hidden, never clicked. No email, name, or password typed. No identity provider opened. No form submitted.",
+  "note": "A prior probe reported that submitting an email at /login said no account exists, and that /app/signup then asks for a name and password. This capture did not submit the email field, so that second step was not reached and is recorded as not captured.",
+  "walls": [
+    {
+      "url": "https://calendly.com/login",
+      "finalUrl": "https://calendly.com/login",
+      "title": "Welcome back to Calendly. Log in to your account here. | Calendly",
+      "heading": "Log in to your account",
+      "screenshot": "screenshots/login-light-default.png",
+      "fields": [
+        {
+          "tag": "input",
+          "type": "email",
+          "name": "email",
+          "label": "Enter your email",
+          "placeholder": "Enter your email",
+          "ariaLabel": "Email address",
+          "filled": false
+        }
+      ],
+      "controls": [
+        {"text": "Continue with email", "action": "Would submit the email. Not clicked."},
+        {"text": "Continue with Google", "action": "Identity provider. Not opened."},
+        {"text": "Continue with Microsoft", "action": "Identity provider. Not opened."},
+        {"text": "Sign up for free", "href": "/signup", "action": "Opens the marketing signup wall."},
+        {"text": "Get started for free", "href": "/signup"},
+        {"text": "Talk to sales", "href": "/contact"},
+        {"text": "English", "action": "Language listbox. Not changed."}
+      ],
+      "asksFor": ["email"],
+      "doesNotAskOnThisStep": ["password", "name", "code"],
+      "stopped": true
+    },
+    {
+      "url": "https://calendly.com/signup",
+      "finalUrl": "https://calendly.com/signup",
+      "title": "Signup and create your free account | Calendly",
+      "heading": "Create a free account",
+      "subcopy": "No credit card required. Upgrade anytime.",
+      "screenshot": "screenshots/signup-light-default.png",
+      "fields": [
+        {
+          "tag": "input",
+          "type": "email",
+          "name": "email",
+          "label": "Enter your email",
+          "placeholder": "Enter your email",
+          "ariaLabel": "Email address",
+          "filled": false
+        }
+      ],
+      "controls": [
+        {"text": "Continue with email", "action": "Would submit the email. Not clicked."},
+        {"text": "Continue with Google", "action": "Identity provider. Not opened."},
+        {"text": "Continue with Microsoft", "action": "Identity provider. Not opened."},
+        {"text": "Log In", "href": "/login"},
+        {"text": "Talk to sales", "href": "/contact"}
+      ],
+      "sidePanel": "Try Teams Plus experience free. Lists multi-person meetings, round robin, AI notes, payments, and removing branding. No trial was started.",
+      "asksFor": ["email"],
+      "doesNotAskOnThisStep": ["password", "name", "code"],
+      "stopped": true
+    },
+    {
+      "url": "https://calendly.com/app/signup",
+      "finalUrl": "https://calendly.com/app/signup",
+      "title": "Sign Up - Calendly",
+      "heading": "Sign up with Calendly for free",
+      "screenshot": "screenshots/app-signup-light-default.png",
+      "fields": [
+        {
+          "tag": "input",
+          "type": "email",
+          "name": "email",
+          "label": "Enter your email to get started.",
+          "placeholder": "email address",
+          "autocomplete": "email",
+          "filled": false
+        }
+      ],
+      "hidden": ["A captcha response field is in the DOM. It was not solved."],
+      "controls": [
+        {"text": "Get Started", "action": "Would submit the email. Not clicked."},
+        {"text": "Sign up with Google", "action": "Identity provider. Not opened."},
+        {"text": "Sign up with Microsoft", "action": "Identity provider. Not opened."},
+        {"text": "Log in", "href": "/app/login"},
+        {"text": "English", "action": "Language listbox. Not changed."}
+      ],
+      "asksFor": ["email"],
+      "doesNotAskOnThisStep": ["password", "name"],
+      "nameAndPasswordStep": "Not captured. The task notes that a later step asks for a name and password. This capture stopped before submitting the email, so that step was not shown.",
+      "stopped": true
+    },
+    {
+      "url": "https://calendly.com/app/login",
+      "finalUrl": "https://calendly.com/app/login",
+      "title": "Log in - Calendly",
+      "heading": "Log into your Calendly account",
+      "screenshot": "screenshots/app-login-light-default.png",
+      "fields": [
+        {
+          "tag": "input",
+          "type": "email",
+          "name": "email",
+          "label": "Enter your email to get started.",
+          "placeholder": "email address",
+          "filled": false
+        }
+      ],
+      "controls": [
+        {"text": "Continue", "action": "Would submit the email. Not clicked."},
+        {"text": "Log in with Google", "action": "Identity provider. Not opened."},
+        {"text": "Log in with Microsoft", "action": "Identity provider. Not opened."},
+        {"text": "Sign up", "href": "/app/signup"}
+      ],
+      "asksFor": ["email"],
+      "doesNotAskOnThisStep": ["password", "name", "code"],
+      "stopped": true
+    }
+  ]
+}
