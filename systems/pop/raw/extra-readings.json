@@ -1,0 +1,149 @@
+{
+  "claimBgImage": "linear-gradient(110deg, rgb(0, 168, 245) 0%, rgb(59, 130, 246) 100%)",
+  "claimRadius": "26px",
+  "claimPad": [
+    "16px",
+    "24px",
+    "16px",
+    "24px"
+  ],
+  "shells": [
+    {
+      "i": 0,
+      "tag": "INPUT",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(0, 0, 0)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 149,
+      "h": 40
+    },
+    {
+      "i": 1,
+      "tag": "DIV",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(0, 0, 0)",
+      "radius": "999px 0px 0px 999px",
+      "shadow": "none",
+      "w": 169,
+      "h": 40
+    },
+    {
+      "i": 2,
+      "tag": "LABEL",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(0, 0, 0)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 169,
+      "h": 40
+    },
+    {
+      "i": 3,
+      "tag": "DIV",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(0, 0, 0)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 255,
+      "h": 40
+    },
+    {
+      "i": 4,
+      "tag": "DIV",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(0, 0, 0)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 406,
+      "h": 40
+    },
+    {
+      "i": 5,
+      "tag": "DIV",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(0, 0, 0)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 1440,
+      "h": 271
+    },
+    {
+      "i": 6,
+      "tag": "DIV",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(0, 0, 0)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 1440,
+      "h": 1144
+    },
+    {
+      "i": 7,
+      "tag": "DIV",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(0, 0, 0)",
+      "radius": "0px",
+      "shadow": "none",
+      "w": 1440,
+      "h": 1144
+    }
+  ],
+  "ps": [
+    {
+      "text": "Pricing",
+      "fs": "15px",
+      "fw": "500",
+      "lh": "19.5px",
+      "ls": "-0.45px",
+      "color": "rgb(23, 23, 23)",
+      "family": "Satoshi"
+    },
+    {
+      "text": "Blog",
+      "fs": "15px",
+      "fw": "500",
+      "lh": "19.5px",
+      "ls": "-0.45px",
+      "color": "rgb(23, 23, 23)",
+      "family": "Satoshi"
+    },
+    {
+      "text": "Create Account",
+      "fs": "15px",
+      "fw": "500",
+      "lh": "19.5px",
+      "ls": "-0.45px",
+      "color": "rgb(23, 23, 23)",
+      "family": "Satoshi"
+    },
+    {
+      "text": "Log In",
+      "fs": "15px",
+      "fw": "500",
+      "lh": "19.5px",
+      "ls": "-0.45px",
+      "color": "rgb(23, 23, 23)",
+      "family": "Satoshi"
+    },
+    {
+      "text": "Join 10K+ People",
+      "fs": "15px",
+      "fw": "500",
+      "lh": "19.5px",
+      "ls": "-0.45px",
+      "color": "rgb(23, 23, 23)",
+      "family": "Satoshi"
+    },
+    {
+      "text": "Used by 10K+ people in over 50 countries",
+      "fs": "21px",
+      "fw": "500",
+      "lh": "29.4px",
+      "ls": "-0.63px",
+      "color": "rgb(84, 84, 84)",
+      "family": "Satoshi"
+    }
+  ],
+  "reduced": false
+}
