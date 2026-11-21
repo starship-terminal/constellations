@@ -53,10 +53,18 @@ const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).cat
 const desktop = {
   home: { path: '/', wait: 11000, run: async (p, S) => {
     await S.view('default');
-    await step('nav-explore', async () => {
-      const t = p.locator('header button, header a, nav button, nav a').filter({ hasText: /^\s*Explore\s*$/ }).filter({ visible: true }).first();
-      if (await t.count()) { await t.hover({ timeout: 5000 }); await wait(p, 1400); await S.view('menu'); await p.keyboard.press('Escape'); }
-    });
+    const menus = [
+      ['menu', /^\s*Explore\s*$/],
+      ['menu-hire', /^\s*Hire Talent\s*$/],
+      ['menu-get-hired', /^\s*Get Hired\s*$/],
+      ['menu-community', /^\s*Community\s*$/],
+    ];
+    for (const [name, label] of menus) {
+      await step('nav-' + name, async () => {
+        const t = p.locator('.site-nav-main__item > a, header a, nav a').filter({ hasText: label }).filter({ visible: true }).first();
+        if (await t.count()) { await t.hover({ timeout: 5000 }); await wait(p, 1400); await S.view(name); await p.mouse.move(8, 8); await wait(p, 400); }
+      });
+    }
     await S.full();
   } },
   shots: { path: '/shots/popular', wait: 10000, run: async (p, S) => {
@@ -87,19 +95,24 @@ const desktop = {
     await S.view('default');
     await S.full();
   } },
-  signup: { path: '/signup', wait: 9000, run: async (p, S) => {
-    await S.view('default');
+  signup: { path: '/signups/new', wait: 9000, run: async (p, S) => {
+    await S.view('empty');
   } },
   login: { path: '/session/new', wait: 9000, run: async (p, S) => {
-    await S.view('default');
+    await S.view('empty');
   } },
+  hire: { path: '/hire', wait: 10000, run: async (p, S) => { await S.view('default'); } },
+  services: { path: '/services', wait: 10000, run: async (p, S) => { await S.view('default'); } },
+  briefs: { path: '/browse-project-briefs', wait: 10000, run: async (p, S) => { await S.view('default'); } },
+  about: { path: '/about', wait: 9000, run: async (p, S) => { await S.view('default'); } },
+  pro: { path: '/pro', wait: 9000, run: async (p, S) => { await S.view('default'); } },
 };
 
 const mobile = {
   home: { path: '/', wait: 11000, run: async (p, S) => {
     await S.view('default');
     await step('menu', async () => {
-      const m = p.locator('header button, button[aria-label*="menu" i], button[aria-label*="navigation" i]').filter({ visible: true }).last();
+      const m = p.locator('button[aria-label="Toggle mobile menu"], .site-nav-burger').filter({ visible: true }).first();
       if (await m.count()) { await clickEl(m); await wait(p, 1500); await S.view('menu'); await p.keyboard.press('Escape'); }
     });
     await S.full();
@@ -112,6 +125,7 @@ const mobile = {
     await S.view('default');
     await S.full();
   } },
+  login: { path: '/session/new', wait: 9000, run: async (p, S) => { await S.view('empty'); } },
 };
 
 const b = await chromium.launch();
