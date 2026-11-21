@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Saie public style guide</title>
+  <style>
+    :root {
+      --ink: #1b2121;
+      --page: #f2f2f2;
+      --lilac: #c0c0da;
+      --white: #ffffff;
+      --black: #000000;
+      --font: "Arial", sans-serif;
+    }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.3;
+    }
+    header, main { padding: 32px 40px; }
+    header { background: var(--ink); color: var(--lilac); }
+    h1 { font-size: 25px; font-weight: 500; letter-spacing: 0; text-transform: uppercase; margin: 0 0 8px; }
+    h2 { font-size: 13px; font-weight: 500; text-transform: uppercase; margin: 32px 0 12px; }
+    p { max-width: 62ch; }
+    .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+    .swatch { width: 140px; }
+    .chip { height: 64px; border: 1px solid var(--ink); }
+    .label { font-size: 13px; margin-top: 6px; }
+    .btn-fill, .btn-line {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      border-radius: 0;
+      text-decoration: none;
+    }
+    .btn-fill {
+      background: var(--ink);
+      color: var(--white);
+      border: 2px solid var(--ink);
+      padding: 20px 40px;
+    }
+    .btn-line {
+      background: transparent;
+      color: var(--black);
+      border: 2px solid var(--black);
+      padding: 12px 40px;
+    }
+    .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    footer { padding: 24px 40px 48px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header>
+    <p>Saie announcement bar. Ink #1b2121, lilac #c0c0da, 34px.</p>
+  </header>
+  <main>
+    <h1>Saie</h1>
+    <p>Public shop tokens measured on 22 November 2026 from saiehello.com. Ordinary-Display is the live family. This page falls back to Arial because the webfont is not bundled.</p>
+
+    <h2>Color</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#1b2121"></div><div class="label">Ink #1b2121</div></div>
+      <div class="swatch"><div class="chip" style="background:#f2f2f2"></div><div class="label">Page #f2f2f2</div></div>
+      <div class="swatch"><div class="chip" style="background:#c0c0da"></div><div class="label">Lilac #c0c0da</div></div>
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">White #ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#000000"></div><div class="label">Black #000000</div></div>
+    </div>
+
+    <h2>Type</h2>
+    <p style="font-size:25px;font-weight:500;text-transform:uppercase;line-height:26.25px">Glossybounce</p>
+    <p style="font-size:16px">Body 16px, weight 400, line-height 20.8px.</p>
+    <p style="font-size:13px;font-weight:500;text-transform:uppercase">Nav and button 13px, weight 500, uppercase.</p>
+
+    <h2>Buttons</h2>
+    <div class="row">
+      <span class="btn-fill">Add to makeup bag</span>
+      <span class="btn-line">Shop now</span>
+    </div>
+    <p>Filled button radius 0, padding 20px 40px, height 64px on the product page. Outline button padding 12px 40px, height 48px on the homepage. Radius is 0 throughout.</p>
+  </main>
+  <footer>Light only. The public shop did not offer a dark theme.</footer>
+</body>
+</html>
