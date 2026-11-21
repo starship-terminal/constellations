@@ -1,0 +1,33 @@
+{
+  "product": "ElevenReader",
+  "reviewed": "2026-11-21",
+  "account": "signed-out",
+  "url": "https://elevenreader.io/reader/sign-in",
+  "alsoLinkedFrom": [
+    "https://elevenreader.io/",
+    "https://elevenreader.io/explore",
+    "https://elevenreader.io/pricing"
+  ],
+  "loaded": true,
+  "status": 200,
+  "title": "Sign in to ElevenReader",
+  "asksFor": ["email", "password"],
+  "codeSent": false,
+  "typedEmail": false,
+  "typedPassword": false,
+  "submitted": false,
+  "oauthClicked": false,
+  "oauthVisible": ["Google", "Apple"],
+  "otherControls": ["Sign in with email", "Forgot password", "Create account"],
+  "stopped": "login wall",
+  "signupWall": {
+    "url": "https://elevenreader.io/reader/sign-up",
+    "title": "Sign up for ElevenReader",
+    "oauthVisible": ["Google", "Apple"],
+    "otherControls": ["Sign up with email", "Sign in"],
+    "typedEmail": false,
+    "submitted": false,
+    "oauthClicked": false
+  },
+  "notes": "The sign-in page asks for email and password, or Google or Apple. No code was sent. No field was filled. No OAuth button was clicked. Sign in with email was clicked only to reveal the empty fields. Forgot password was opened and left empty. Nothing was submitted."
+}
