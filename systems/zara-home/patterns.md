@@ -1,6 +1,6 @@
 # Zara Home patterns
 
-Public signed-out pages on zarahome.com, 2026-11-19, viewport 1169 by 731. No site screenshots: the preview browser produced no frames, and headless Playwright returned 403.
+Public signed-out pages on zarahome.com. Token readings from 2026-11-19 (viewport 1169 by 731) still match the 2026-11-21 shop. The control map and the site photographs are from 2026-11-21 at 1440 by 900 and 390 by 844. See [site-tree.md](site-tree.md) and [screenshots/](screenshots).
 
 ## Market gate
 
@@ -16,7 +16,7 @@ YES, CONTINUE IN INTERNATIONAL on `https://www.zarahome.com/ww/` dismisses the H
 
 ## Product
 
-`/ww/sateen-duvet-cover-300-thread-count-l40136088` sets the title at 22px weight 600 uppercase and the price at 18px weight 600, both ink. The SKU and the description are #8e8e93. CHOOSE A SIZE is the filled button. PRODUCT DETAILS, size guide, shipping and in-store availability are 11px uppercase links separated by a pipe. COMPLETE THE LOOK is 12px weight 600. The size menu was not opened. Nothing was added to the bag.
+`/ww/sateen-duvet-cover-300-thread-count-l40136088` sets the title at 22px weight 600 uppercase and the price at 19px weight 600 on 2026-11-21 (18px in the 2026-11-19 reading), both ink. The SKU and the description are #8e8e93. ADD opens an inline size list (Single, Double, King, and larger). Some rows say Coming Soon. No size was selected. Nothing was added to the bag. PRODUCT DETAILS, size guide, shipping and in-store availability stay on the page. COMPLETE THE LOOK is 12px weight 600.
 
 ## Search
 
