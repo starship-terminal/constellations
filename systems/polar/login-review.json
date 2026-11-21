@@ -1,0 +1,81 @@
+{
+  "slug": "polar",
+  "product": "Polar",
+  "domain": "polar.sh",
+  "captured": "2026-11-21",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "email-and-identity-providers",
+  "session": "Playwright headless Chromium, signed out. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed.",
+  "wall": {
+    "url": "https://polar.sh/auth",
+    "title": "Log in to Polar | Polar",
+    "asks": [
+      "Sign in with Google",
+      "Sign in with Apple",
+      "Sign in with GitHub",
+      "Email",
+      "Sign in with email"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "code_field": false,
+    "inputs": [
+      {"type": "email", "placeholder": "Email", "filled": false}
+    ],
+    "note": "The heading is Welcome to Polar. The email field was empty. Sign in with email was not clicked. Google, Apple and GitHub were not clicked. A hidden input sits beside the email field and was left empty."
+  },
+  "signup_wall": {
+    "url": "https://polar.sh/signup",
+    "lands_on": "https://polar.sh/auth",
+    "asks": ["Sign in with Google", "Sign in with Apple", "Sign in with GitHub", "Email", "Sign in with email"],
+    "email_field": true,
+    "continued": false,
+    "note": "/signup redirects to /auth. There is no separate signup form. The same empty wall was photographed as signup-light-default.png."
+  },
+  "dialog": {
+    "where": "https://polar.sh/ header Sign in",
+    "file": "screenshots/home-dark-signin-dialog.png",
+    "note": "Sign in opens a dialog on the marketing page. Escape closes it. Nothing was typed. Identity providers were not clicked."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "deviceScaleFactor": 1,
+      "file": "screenshots/auth-light-default.png"
+    },
+    "phone": {
+      "requested": "390x844",
+      "deviceScaleFactor": 2,
+      "file": "screenshots/mobile-auth-light-default.png"
+    }
+  },
+  "offered": {
+    "nav": [
+      {"label": "Sign in", "opens": "dialog on the current page", "reached": "wall only"},
+      {"label": "Get Started", "opens": "the same empty wall", "reached": "wall only"},
+      {"label": "Login", "where": "phone drawer", "reached": "wall only"}
+    ]
+  },
+  "screens": [
+    {"name": "Sign-in wall, desktop, empty", "file": "screenshots/auth-light-default.png"},
+    {"name": "Signup redirect, desktop, empty", "file": "screenshots/signup-light-default.png"},
+    {"name": "Sign-in dialog on the homepage, empty", "file": "screenshots/home-dark-signin-dialog.png"},
+    {"name": "Sign-in wall, phone, empty", "file": "screenshots/mobile-auth-light-default.png"}
+  ],
+  "gaps": [
+    "login-extracted is not-started.",
+    "Google, Apple and GitHub were not clicked.",
+    "The email field was left empty. Sign in with email was not clicked.",
+    "The signed-in dashboard, checkout, payout, bank and KYC were not reached.",
+    "/login is a 404. It does not show a form."
+  ],
+  "not_submitted": [
+    "Sign in with Google",
+    "Sign in with Apple",
+    "Sign in with GitHub",
+    "Sign in with email",
+    "startup program apply form",
+    "field guide early access form"
+  ]
+}

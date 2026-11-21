@@ -1,23 +1,25 @@
 # Polar
 
-Polar (polar.sh) is a billing platform and merchant of record for software. This package records the public marketing site and the signed-out login chrome, measured on 2026-11-19 from a live T3 preview tab. No account was created. No card, bank, or KYC step was entered. The signup wall at https://polar.sh/auth was recorded as a gap.
+Polar (polar.sh) is a billing platform and merchant of record for software. This package records the public marketing site and the empty sign-in wall. Refreshed on 2026-11-21 from the public site only, desktop 1440 and phone 390. Marketing pages paint dark. Docs paint light, and a dark docs theme was opened then restored. The signed-in app was not entered. `login-extracted` stays not-started.
 
-The live CSS viewport was 1169 by 731 at devicePixelRatio 2. The product's marketing pages ship with `html` class `antialiased dark`. Docs at https://polar.sh/docs/introduction also have a light theme, measured after clicking "Switch to light theme", then restored to dark.
+The 2026-11-19 pass measured tokens at a 1169 CSS viewport and saved no screenshots. This refresh adds the screenshots and the site tree. Token values are the 2026-11-19 readings, checked again on 2026-11-21 at 1440.
 
 | File | What it holds |
 |---|---|
 | [README.md](README.md) | This entry file |
 | [icon.png](icon.png) | 128 px site icon from https://polar.sh/favicon.png |
-| [DESIGN.md](DESIGN.md) | Generated token export |
+| [DESIGN.md](DESIGN.md) | Generated token export. Not rewritten in this refresh, because regeneration rewrites the catalog |
 | [tokens.json](tokens.json) | Measured colour, type, radius and spacing tokens |
 | [style-guide.html](style-guide.html) | Token swatches and the measured buttons and field |
 | [components.md](components.md) | Component inventory and gaps |
 | [patterns.md](patterns.md) | Public page patterns |
-| [components/](components/) | Crop folder, empty because screenshot frames failed |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, drawer or wall |
+| [login-review.json](login-review.json) | Empty login and signup walls. Probe stopped there. login-extracted is not-started |
+| [components/](components/) | Crop folder. Element crops were not cut on this pass |
 | [icons/](icons/) | Index pointing at the site icon |
-| [screenshots/](screenshots/) | Note that no frames were produced |
+| [screenshots/](screenshots/) | Public captures, desktop 1440 and phone 390 |
 | [raw/](raw/) | Computed-style readings |
-| [tools/](tools/) | Builders and the copied capture kit |
+| [tools/](tools/) | Builders and the capture scripts |
 
 ## Brief
 
@@ -75,13 +77,15 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 ## How the values were read
 
-Custom properties were read from the stylesheets on https://polar.sh/ and from `getComputedStyle(document.documentElement)`. Component colour, type, radius, padding and size were read with `getComputedStyle` on the live elements. Lab colours (`--color-blue-600` and the status ramps) were converted to hex by filling a 1 by 1 canvas in that same page. Docs light values were read after clicking the docs theme button labelled "Switch to light theme". Dark was restored afterwards.
+Custom properties and computed styles were read on 2026-11-19 from https://polar.sh/ with `getComputedStyle`. Lab colours were converted to hex by filling a 1 by 1 canvas in that page. Docs light values were read after clicking "Switch to light theme". Dark was restored afterwards.
 
-The preview browser returned "The browser is not producing screenshot frames" on `preview_snapshot`. No screenshots were invented. Headless Playwright was not launched against the login page.
+On 2026-11-21 the same pages were opened again at 1440 by 900. The marketing h1 was 36px / 400, PP Neue Montreal, white. The header Get Started pill was 40px, white fill, black text, weight 550. The auth email field was empty, 40px, 12px radius. Those readings match the tokens already in [tokens.json](tokens.json). The 2026-11-21 readings are in [raw/measure-2026-11-21.json](raw/measure-2026-11-21.json).
+
+T3 `preview_snapshot` failed twice with "The browser is not producing screenshot frames." Screenshots were taken with headless Playwright after that, then quantized to 256-colour PNGs.
 
 ## What to distrust
 
-The CSS viewport was 1169, not 1440 and not 390. Do not treat these readings as a 1440 or 390 capture. The light semantic set is the docs shell, not a light marketing theme. Marketing `html` stayed `dark`. A light marketing theme was not found. Button hover, focus-visible, pressed and disabled were named in class strings and were not shown, so they are not tokens. The auth secondary border was an oklab colour with alpha. It is recorded in components.md and not forced into a hex token. Screenshot folders are empty on purpose.
+The 2026-11-19 token pass used a 1169 CSS viewport. The screenshots are 1440 and 390. Do not treat a token's source string as proof of the screenshot width. The light semantic set is the docs shell and the auth wall, not a light marketing theme. Marketing `html` stayed `dark`. Button hover, focus-visible, pressed and disabled were named in class strings and were not shown, so they are not tokens. The homepage dashboard (Acme Inc, joe@acme.com, Visa ending 4242) is marketing copy, not a signed-in account. Quantized screenshots band gradients. Read colours from [tokens.json](tokens.json).
 
 ## Fonts
 
@@ -91,30 +95,34 @@ PP Neue Montreal is the marketing face (`--font-sans` and `--font-display`), wit
 
 | Item | Status |
 |---|---|
-| Colour, dark marketing | Captured in [tokens.json](tokens.json) from https://polar.sh/ |
-| Colour, docs light | Captured from https://polar.sh/docs/introduction after the light theme click |
-| Type, spacing, radius | Captured from computed styles on home, auth, pricing, docs and a blog post |
-| Button default | Captured as computed styles in [components.md](components.md) |
+| Colour, dark marketing | Captured in [tokens.json](tokens.json) from https://polar.sh/ and shown in [screenshots/home-dark-default.png](screenshots/home-dark-default.png) |
+| Colour, docs light | Captured from https://polar.sh/docs/introduction. Shown in [screenshots/docs-light-default.png](screenshots/docs-light-default.png) |
+| Colour, docs dark | Shown in [screenshots/docs-light-dark.png](screenshots/docs-light-dark.png) after the theme control, then restored |
+| Type, spacing, radius | Captured from computed styles on home, auth, pricing and docs |
+| Button default | Captured as computed styles in [components.md](components.md) and shown in the homepage shots |
 | Button hover, focus, pressed, disabled, loading | Not captured. Classes name a focus ring and disabled opacity. The states were not shown |
 | Link | Captured on nav, docs and footer |
-| Text field | Email field on https://polar.sh/auth, empty, not submitted |
-| Text area, select, checkbox, radio, switch, tabs, menu, tooltip, dialog, toast | Not present on the public pages opened |
-| Table | Pricing table on https://polar.sh/resources/pricing |
-| Card | Blog cards measured as link boxes. No separate fill |
-| Avatar, badge | Not captured as components. A docs "Beta" label was 14px `#9e9e9e` |
-| App shell | Marketing nav and docs sidebar, described in [patterns.md](patterns.md) |
-| Signup wall | Opened at https://polar.sh/auth and not submitted |
+| Text field | Empty email field on https://polar.sh/auth. Not submitted |
+| Text area, select, checkbox, radio, switch, tabs, tooltip, toast | Not present on the public pages opened |
+| Menu | Features and Docs hover panels. [screenshots/home-dark-features-menu.png](screenshots/home-dark-features-menu.png) and [screenshots/home-dark-docs-menu.png](screenshots/home-dark-docs-menu.png) |
+| Dialog | Empty Sign in dialog. [screenshots/home-dark-signin-dialog.png](screenshots/home-dark-signin-dialog.png) |
+| Table | Pricing document on https://polar.sh/resources/pricing |
+| Card | Blog cards. No separate fill |
+| Avatar, badge | Not captured as components |
+| App shell | Marketing nav and docs sidebar. [patterns.md](patterns.md) |
+| Signup wall | Opened at https://polar.sh/auth and not submitted. [login-review.json](login-review.json) |
 | Signed-in app, checkout, card, bank, KYC | Not entered |
-| Screenshots | Not captured. Preview frames failed |
-| Phone 390 and desktop 1440 | Not applied. Live width was 1169 |
+| Desktop 1440 | Captured |
+| Phone 390 | Homepage, pricing and the empty auth wall |
+| login-extracted | not-started |
 
 ## Do and don't
 
-- **Use the dark marketing page.** The home, pricing, company, blog and auth pages render on `#181818` with white headings and a `#090909` nav. [patterns.md](patterns.md) describes that shell.
-- **Use white pills for the primary action.** "Get Started" is a white pill with black text. "Sign in" is a transparent pill with white text. [components.md](components.md) lists the sizes.
-- **Keep the signup wall as a wall.** https://polar.sh/auth offers Google, Apple, GitHub and email. Do not invent a signed-in dashboard behind it. [components.md](components.md) records the gap.
-- **Use Inter on docs, PP Neue Montreal on marketing.** The two shells do not share a face. [tokens.json](tokens.json) keeps both stacks.
-- **Do not invent a 1440 screenshot.** The preview browser produced no frames. [screenshots/](screenshots/) says so.
+- **Use the dark marketing page.** Home, pricing, company, blog and the feature pages paint dark, with a white pill for the primary action. [screenshots/home-dark-default.png](screenshots/home-dark-default.png) shows that shell.
+- **Use white pills for the primary action.** "Get Started" is a white pill with black text. "Sign in" is a quiet label. [screenshots/home-dark-default.png](screenshots/home-dark-default.png) shows both.
+- **Keep the signup wall as a wall.** https://polar.sh/auth offers Google, Apple, GitHub and an empty email field. Do not invent a signed-in dashboard behind it. [screenshots/auth-light-default.png](screenshots/auth-light-default.png) is the wall.
+- **Use Inter on docs, PP Neue Montreal on marketing.** The two shells do not share a face. [tokens.json](tokens.json) keeps both stacks. [screenshots/docs-light-default.png](screenshots/docs-light-default.png) is the docs shell.
+- **Treat the homepage dashboard as a demo.** Acme Inc and the Visa line are painted marketing copy. [screenshots/home-dark-default.png](screenshots/home-dark-default.png) shows them. They are not an account.
 
 ## Rebuild
 
@@ -123,4 +131,4 @@ python3 tools/build_tokens.py
 python3 ../../tools/catalog.py design-md polar
 ```
 
-`tools/build_tokens.py` writes [tokens.json](tokens.json) from [raw/foundations.json](raw/foundations.json). DESIGN.md is generated by the repo catalog tool. Do not edit DESIGN.md by hand.
+`tools/build_tokens.py` writes [tokens.json](tokens.json) from [raw/foundations.json](raw/foundations.json). DESIGN.md is generated by the repo catalog tool. This refresh did not run that generator, because it rewrites the catalog. Do not edit DESIGN.md by hand.
