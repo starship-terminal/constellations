@@ -1,0 +1,21 @@
+{
+  "slug": "dia",
+  "product": "Dia",
+  "domain": "www.diabrowser.com",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "no-public-wall",
+  "session": "Headless Chromium opened the public login and signup paths and the auth host. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed.",
+  "wall": {
+    "url": "https://www.diabrowser.com/login",
+    "title": "Dia Browser | Page Not Found",
+    "asks": ["404", "This page could not be found.", "Go back home"],
+    "email_field": false,
+    "password_field": false,
+    "code_field": false,
+    "inputs": [],
+    "note": "The marketing host has no /login or /signup page. Both return the public 404. auth.diabrowser.com and its /login, /signup, /sign-in and /sign-up paths returned an empty document with no fields. Nothing was typed."
+  },
+  "stopped": "No public login or signup wall was on the page. The probe stopped. The signed-in app was not opened."
+}
