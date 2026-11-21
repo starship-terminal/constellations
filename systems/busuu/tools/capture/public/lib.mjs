@@ -31,14 +31,14 @@ export const RAW = path.join(REF, 'raw');
 // promo overlay are hidden, never answered.
 export const M = (name) => `[class*="${name}"]`;
 
-// The per-context patches every page gets (no webdriver mask: a bot check is a boundary), plus a record of
+// The per-context patches every page gets: the webdriver mask, plus a record of
 // the real devicePixelRatio before app code runs — appwrite.io's scripts make
 // window.devicePixelRatio read 1 while the renderer still paints at the
 // context's deviceScaleFactor (a 780x1688 PNG from a 390x844 viewport).
 // __captureDPR keeps the launch-time value for the screenshot sidecar.
 export async function patch(context) {
   await context.addInitScript(() => {
-    // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
+    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }

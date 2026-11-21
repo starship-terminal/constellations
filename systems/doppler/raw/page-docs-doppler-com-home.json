@@ -1,0 +1,136 @@
+{
+  "title": "Welcome 👋",
+  "rules": [
+    {
+      "selector": ":root",
+      "context": [],
+      "props": {
+        "--project-color-primary": "#E9EBED",
+        "--project-color-inverse": "#222",
+        "--recipe-button-color": "#6B13F5",
+        "--recipe-button-color-hover": "#41079b",
+        "--recipe-button-color-active": "#2c056a",
+        "--recipe-button-color-focus": "rgba(107, 19, 245, 0.25)",
+        "--recipe-button-color-disabled": "#e6d7fd"
+      },
+      "href": "inline"
+    },
+    {
+      "selector": "[id=\"enterprise\"] .ReadMeUI[is=\"AlgoliaSearch\"]",
+      "context": [],
+      "props": {
+        "--project-color-primary": "#E9EBED",
+        "--project-color-inverse": "#222"
+      },
+      "href": "inline"
+    },
+    {
+      "selector": ".markdown-body .callout.callout_default[theme=\"📷\"]",
+      "context": [],
+      "props": {
+        "--emoji": "unset",
+        "--icon": "\"\\f02d\"",
+        "--icon-color": "#6b13f5",
+        "--background": "#f9f5ff",
+        "--border": "#6b13f5",
+        "--text": "#000000"
+      },
+      "href": "inline"
+    }
+  ],
+  "fonts": [],
+  "resolved": {
+    "--project-color-primary": "#E9EBED",
+    "--project-color-inverse": "#222",
+    "--recipe-button-color": "#6B13F5",
+    "--recipe-button-color-hover": "#41079b",
+    "--recipe-button-color-active": "#2c056a",
+    "--recipe-button-color-focus": "rgba(107, 19, 245, 0.25)",
+    "--recipe-button-color-disabled": "#e6d7fd",
+    "--emoji": "",
+    "--icon": "",
+    "--icon-color": "",
+    "--background": "",
+    "--border": "",
+    "--text": ""
+  },
+  "html": {
+    "colorScheme": "normal",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "font": "Times",
+    "className": " useReactApp  ",
+    "dataTheme": null
+  },
+  "body": {
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(50, 52, 58)",
+    "font": "Ubuntu, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "size": "15px",
+    "weight": "400",
+    "lh": "normal"
+  },
+  "h1": {
+    "tag": "h1",
+    "text": "Welcome 👋",
+    "w": 800,
+    "h": 40,
+    "color": "rgb(50, 52, 58)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "\"Twemoji Country Flags\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+    "size": "31px",
+    "weight": "600",
+    "lh": "39.8567px",
+    "radius": "0px",
+    "border": "0px none rgb(50, 52, 58)",
+    "shadow": "none",
+    "pad": "0px",
+    "gap": "normal",
+    "letter": "normal",
+    "transform": "none"
+  },
+  "nav": {
+    "tag": "header",
+    "text": "Jump to Content Support Status Community Sign Up Documentati",
+    "w": 1440,
+    "h": 96,
+    "color": "rgb(50, 52, 58)",
+    "bg": "rgb(255, 255, 255)",
+    "font": "\"Twemoji Country Flags\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+    "size": "14px",
+    "weight": "400",
+    "lh": "normal",
+    "radius": "0px",
+    "border": "0px none rgb(50, 52, 58)",
+    "shadow": "rgba(0, 0, 0, 0.1) 0px 1px 0px 0px",
+    "pad": "0px",
+    "gap": "normal",
+    "letter": "normal",
+    "transform": "none"
+  },
+  "buttons": [
+    {
+      "label": "Get Started",
+      "tag": "a",
+      "text": "Get Started",
+      "w": 197,
+      "h": 20,
+      "color": "rgb(102, 107, 121)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "\"Twemoji Country Flags\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "size": "13px",
+      "weight": "400",
+      "lh": "19.5px",
+      "radius": "0px",
+      "border": "0px none rgb(102, 107, 121)",
+      "shadow": "none",
+      "pad": "0px 0px 0px 12px",
+      "gap": "normal",
+      "letter": "normal",
+      "transform": "none"
+    }
+  ],
+  "prefersDark": false,
+  "sheetCount": 17,
+  "ruleCount": 3
+}

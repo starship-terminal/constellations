@@ -1,231 +1,62 @@
-# LottieFiles components
+# Components
 
-Measured on lottiefiles.com, signed out, desktop 1440. Colours are computed styles. Crops are in [components/crops/](components/crops/).
-Log in, Sign up, checkout and the editor were never followed.
+Public controls on lottiefiles.com, measured 2026-11-21 from computed styles. Crops are 2x screenshots of the element. A missing state is listed under Gaps.
 
-## Animation card
+## button-primary
 
-A published free-animation card on the public library.
+- default: [button-primary-default.png](components/crops/button-primary-default.png). bg `oklch(0.626 0.11 185.333)`, text `oklch(0.985 0 0)`, 16px/500, radius `12px`, height `48px`. Via home hero.
+- hover: [button-primary-hover.png](components/crops/button-primary-hover.png). bg `oklab(0.626 -0.109524 -0.0102239 / 0.9)`, text `oklch(0.985 0 0)`, 16px/500, radius `12px`, height `48px`. Via pointer hover.
+- focus-visible: [button-primary-focus-visible.png](components/crops/button-primary-focus-visible.png). bg `oklab(0.626 -0.109524 -0.0102239 / 0.9)`, text `oklch(0.985 0 0)`, 16px/500, radius `12px`, height `48px`. Via focus().
 
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 320 x 210 | rgba(0, 0, 0, 0) | oklch(0.141 0.005 285.823) | 0px | at rest |
-| hover | 320 x 210 | rgba(0, 0, 0, 0) | oklch(0.141 0.005 285.823) | 0px | mouse hover |
+## button-secondary
 
-Crops: [animation-card-default.png](components/crops/animation-card-default.png), [animation-card-hover.png](components/crops/animation-card-hover.png)
+- default: [button-secondary-default.png](components/crops/button-secondary-default.png). bg `rgba(0, 0, 0, 0)`, text `oklch(0.141 0.005 285.823)`, 16px/500, radius `0px`, height `24px`. Via home hero.
+- hover: [button-secondary-hover.png](components/crops/button-secondary-hover.png). bg `rgba(0, 0, 0, 0)`, text `oklch(0.21 0.006 285.885)`, 16px/500, radius `0px`, height `24px`. Via pointer hover.
 
-## Download tab
+## button-signup
 
-The animation page already has Download selected. Clicking the tab did not open a new panel. Format buttons (MP4, WebM, MOV, SVG, GIF) are visible in the page screenshot. No file was downloaded. Some formats sit behind sign-in.
+- default: [button-signup-default.png](components/crops/button-signup-default.png). bg `oklch(0.626 0.11 185.333)`, text `oklch(0.985 0 0)`, 14px/500, radius `6px`, height `36px`. Via header.
+- hover: [button-signup-hover.png](components/crops/button-signup-hover.png). bg `oklab(0.626 -0.109524 -0.0102239 / 0.9)`, text `oklch(0.985 0 0)`, 14px/500, radius `6px`, height `36px`. Via pointer hover.
 
-The measure pass did not isolate a control named Download, so there is no crop. See [animation-light-download-tab.png](screenshots/animation-light-download-tab.png).
+## button-login
 
-## Edit with AI
+- default: [button-login-default.png](components/crops/button-login-default.png). bg `oklch(1 0 0)`, text `oklch(0.141 0.005 285.823)`, 14px/500, radius `6px`, height `36px`. Via header.
 
-Links to creator.lottiefiles.com. Measured, never followed. The editor sits behind sign-in.
+## nav-link
 
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 130 x 36 | rgba(0, 0, 0, 0) | oklch(0.141 0.005 285.823) | 6px | at rest |
-| hover | 130 x 36 | rgba(0, 0, 0, 0) | oklch(0.141 0.005 285.823) | 6px | mouse hover |
+- default: [nav-link-default.png](components/crops/nav-link-default.png). bg `oklch(1 0 0)`, text `oklch(0.141 0.005 285.823)`, 14px/500, radius `6px`, height `36px`. Via header.
+- hover: [nav-link-hover.png](components/crops/nav-link-hover.png). bg `oklch(0.967 0.001 286.375)`, text `oklch(0.21 0.006 285.885)`, 14px/500, radius `6px`, height `36px`. Via pointer hover.
 
-Crops: [animation-edit-default.png](components/crops/animation-edit-default.png), [animation-edit-hover.png](components/crops/animation-edit-hover.png)
+## heading
 
-## Animation title
+- default: [heading-default.png](components/crops/heading-default.png). bg `rgba(0, 0, 0, 0)`, text `oklch(0.141 0.005 285.823)`, 96px/500, radius `0px`, height `299.531px`. Via home h1.
 
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 472 x 28 | rgba(0, 0, 0, 0) | oklch(0.141 0.005 285.823) | 0px | at rest |
+## search-button
 
-Crops: [animation-heading-default.png](components/crops/animation-heading-default.png)
+- default: [search-button-default.png](components/crops/search-button-default.png). bg `oklch(0.985 0 0)`, text `oklch(0.552 0.016 285.938)`, 14px/400, radius `6px`, height `36px`. Via header search.
 
-## Save animation
+## menu
 
-Measured, never pressed. Saving sits behind sign-in.
+- opened: [menu-opened.png](components/crops/menu-opened.png). bg `oklch(1 0 0)`, text `oklch(0.141 0.005 285.823)`, 16px/400, radius `6px`, height `616px`. Via products menu.
 
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 134 x 36 | oklch(0.626 0.11 185.333) | oklch(0.985 0 0) | 6px | at rest |
-| hover | 134 x 36 | oklab(0.626 -0.109524 -0.0102239 / 0.9) | oklch(0.985 0 0) | 6px | mouse hover |
+## text-field
 
-Crops: [animation-save-default.png](components/crops/animation-save-default.png), [animation-save-hover.png](components/crops/animation-save-hover.png)
+- default: [text-field-default.png](components/crops/text-field-default.png). bg `rgba(0, 0, 0, 0)`, text `oklch(0.141 0.005 285.823)`, 16px/400, radius `6px`, height `36px`. Via search dialog.
+- focus-visible: [text-field-focus-visible.png](components/crops/text-field-focus-visible.png). bg `rgba(0, 0, 0, 0)`, text `oklch(0.141 0.005 285.823)`, 16px/400, radius `6px`, height `36px`. Via focus search.
+- filled: [text-field-filled.png](components/crops/text-field-filled.png). bg `rgba(0, 0, 0, 0)`, text `oklch(0.141 0.005 285.823)`, 16px/400, radius `6px`, height `36px`. Via typed loader, not submitted.
 
-## Download format row
+## badge
 
-A format row in the Download menu. Not activated.
+- default: [badge-default.png](components/crops/badge-default.png). bg `rgba(0, 0, 0, 0)`, text `rgb(32, 39, 44)`, 20px/400, radius `0px`, height `auto`. Via pricing plan name.
 
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 64 x 36 | oklch(1 0 0) | oklch(0.141 0.005 285.823) | 6px | at rest |
+## price
 
-Crops: [download-format-default.png](components/crops/download-format-default.png)
-
-## Feature card
-
-Not found on the page during this run.
-
-## Get started for free
-
-Primary marketing CTA. Links to app.lottiefiles.com. Measured, never followed.
-
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 195 x 48 | oklch(0.626 0.11 185.333) | oklch(0.985 0 0) | 12px | at rest |
-| hover | 195 x 48 | oklab(0.626 -0.109524 -0.0102239 / 0.9) | oklch(0.985 0 0) | 12px | mouse hover |
-| focus-visible | 195 x 48 | oklch(0.626 0.11 185.333) | oklch(0.985 0 0) | 12px | Shift+Tab, Tab |
-| pressed | 195 x 48 | oklab(0.626 -0.109524 -0.0102239 / 0.9) | oklch(0.985 0 0) | 12px | CDP forcePseudoState :active:hover |
-
-Crops: [hero-cta-default.png](components/crops/hero-cta-default.png), [hero-cta-hover.png](components/crops/hero-cta-hover.png), [hero-cta-focus-visible.png](components/crops/hero-cta-focus-visible.png), [hero-cta-pressed.png](components/crops/hero-cta-pressed.png)
-
-## Home heading
-
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 712 x 300 | rgba(0, 0, 0, 0) | oklch(0.141 0.005 285.823) | 0px | at rest |
-
-Crops: [hero-heading-default.png](components/crops/hero-heading-default.png)
-
-## Library heading
-
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 720 x 147 | rgba(0, 0, 0, 0) | oklch(0.141 0.005 285.823) | 0px | at rest |
-
-Crops: [library-heading-default.png](components/crops/library-heading-default.png)
-
-## Unlock All Animations
-
-Links to app.lottiefiles.com premium. Measured, never followed. Checkout was not opened.
-
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 207 x 40 | oklch(0.626 0.11 185.333) | oklch(0.985 0 0) | 8px | at rest |
-| hover | 207 x 40 | oklab(0.626 -0.109524 -0.0102239 / 0.9) | oklch(0.985 0 0) | 8px | mouse hover |
-
-Crops: [marketplace-cta-default.png](components/crops/marketplace-cta-default.png), [marketplace-cta-hover.png](components/crops/marketplace-cta-hover.png)
-
-## Log in button
-
-Quiet header control. Measured, never pressed. The editor and dashboard sit behind sign-in.
-
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 82 x 36 | oklch(1 0 0) | oklch(0.141 0.005 285.823) | 6px | at rest |
-| hover | 82 x 36 | oklch(0.967 0.001 286.375) | oklch(0.21 0.006 285.885) | 6px | mouse hover |
-| focus-visible | 82 x 36 | oklch(1 0 0) | oklch(0.141 0.005 285.823) | 6px | Shift+Tab, Tab |
-| pressed | 82 x 36 | oklch(0.967 0.001 286.375) | oklch(0.21 0.006 285.885) | 6px | CDP forcePseudoState :active:hover |
-
-Crops: [nav-login-default.png](components/crops/nav-login-default.png), [nav-login-hover.png](components/crops/nav-login-hover.png), [nav-login-focus-visible.png](components/crops/nav-login-focus-visible.png), [nav-login-pressed.png](components/crops/nav-login-pressed.png)
-
-## Pricing link
-
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 79 x 36 | oklch(1 0 0) | oklch(0.141 0.005 285.823) | 6px | at rest |
-| hover | 79 x 36 | oklch(0.967 0.001 286.375) | oklch(0.21 0.006 285.885) | 6px | mouse hover |
-| focus-visible | 79 x 36 | oklch(0.967 0.001 286.375) | oklch(0.21 0.006 285.885) | 6px | Shift+Tab, Tab |
-| pressed | 79 x 36 | oklch(0.967 0.001 286.375) | oklch(0.21 0.006 285.885) | 6px | CDP forcePseudoState :active:hover |
-
-Crops: [nav-pricing-default.png](components/crops/nav-pricing-default.png), [nav-pricing-hover.png](components/crops/nav-pricing-hover.png), [nav-pricing-focus-visible.png](components/crops/nav-pricing-focus-visible.png), [nav-pricing-pressed.png](components/crops/nav-pricing-pressed.png)
-
-## Products menu button
-
-Opens the products menu on hover. The menu shot is a local toggle.
-
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 108 x 36 | oklch(1 0 0) | oklch(0.141 0.005 285.823) | 6px | at rest |
-| hover | 108 x 36 | oklch(0.967 0.001 286.375) | oklch(0.21 0.006 285.885) | 6px | mouse hover |
-| focus-visible | 108 x 36 | oklch(0.967 0.001 286.375) | oklch(0.21 0.006 285.885) | 6px | Shift+Tab, Tab |
-
-Crops: [nav-products-default.png](components/crops/nav-products-default.png), [nav-products-hover.png](components/crops/nav-products-hover.png), [nav-products-focus-visible.png](components/crops/nav-products-focus-visible.png)
-
-## Sign up button
-
-Primary header control. Measured, never pressed. Sign-up sits behind this control.
-
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 82 x 36 | oklch(0.626 0.11 185.333) | oklch(0.985 0 0) | 6px | at rest |
-| hover | 82 x 36 | oklab(0.626 -0.109524 -0.0102239 / 0.9) | oklch(0.985 0 0) | 6px | mouse hover |
-| pressed | 82 x 36 | oklab(0.626 -0.109524 -0.0102239 / 0.9) | oklch(0.985 0 0) | 6px | CDP forcePseudoState :active:hover |
-
-Crops: [nav-signup-default.png](components/crops/nav-signup-default.png), [nav-signup-hover.png](components/crops/nav-signup-hover.png), [nav-signup-pressed.png](components/crops/nav-signup-pressed.png)
-
-## Not found heading
-
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 712 x 221 | rgba(0, 0, 0, 0) | oklch(0.141 0.005 285.823) | 0px | at rest |
-
-Crops: [notfound-heading-default.png](components/crops/notfound-heading-default.png)
-
-## Get Individual Plan
-
-Links to app.lottiefiles.com/upgrade. Measured, never followed. Checkout was not opened.
-
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 341 x 48 | rgb(0, 119, 187) | oklch(0.141 0.005 285.823) | 16px | at rest |
-| hover | 341 x 48 | rgb(0, 98, 155) | oklch(0.141 0.005 285.823) | 16px | mouse hover |
-| focus-visible | 341 x 48 | rgb(0, 119, 187) | oklch(0.141 0.005 285.823) | 16px | Shift+Tab, Tab |
-
-Crops: [plan-individual-default.png](components/crops/plan-individual-default.png), [plan-individual-hover.png](components/crops/plan-individual-hover.png), [plan-individual-focus-visible.png](components/crops/plan-individual-focus-visible.png)
-
-## Contact Sales
-
-Leads to a sales form. Measured, never submitted.
-
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 341 x 48 | rgb(16, 20, 23) | oklch(0.141 0.005 285.823) | 16px | at rest |
-| hover | 341 x 48 | rgb(32, 39, 44) | oklch(0.141 0.005 285.823) | 16px | mouse hover |
-
-Crops: [plan-sales-default.png](components/crops/plan-sales-default.png), [plan-sales-hover.png](components/crops/plan-sales-hover.png)
-
-## Get Team Plan
-
-Links to the upgrade checkout. Measured, never followed.
-
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 341 x 48 | rgb(1, 122, 113) | oklch(0.141 0.005 285.823) | 16px | at rest |
-| hover | 341 x 48 | rgb(1, 104, 96) | oklch(0.141 0.005 285.823) | 16px | mouse hover |
-
-Crops: [plan-team-default.png](components/crops/plan-team-default.png), [plan-team-hover.png](components/crops/plan-team-hover.png)
-
-## Pricing heading
-
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 800 x 166 | rgba(0, 0, 0, 0) | rgb(32, 39, 44) | 0px | at rest |
-
-Crops: [pricing-heading-default.png](components/crops/pricing-heading-default.png)
-
-## Products menu
-
-Opened by hovering Products. Closed without following a destination.
-
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 108 x 36 | oklch(0.967 0.001 286.375) | oklch(0.21 0.006 285.885) | 6px | at rest |
-
-Crops: [products-menu-default.png](components/crops/products-menu-default.png)
-
-## Search animations control
-
-Header search trigger. The search field itself was not submitted.
-
-| State | Size | Background | Text | Radius | Via |
-|---|---|---|---|---|---|
-| default | 166 x 36 | oklch(0.985 0 0) | oklch(0.552 0.016 285.938) | 6px | at rest |
-| hover | 166 x 36 | oklch(0.985 0 0) | oklch(0.552 0.016 285.938) | 6px | mouse hover |
-| focus-visible | 166 x 36 | oklch(0.985 0 0) | oklch(0.552 0.016 285.938) | 6px | Shift+Tab, Tab |
-
-Crops: [search-button-default.png](components/crops/search-button-default.png), [search-button-hover.png](components/crops/search-button-hover.png), [search-button-focus-visible.png](components/crops/search-button-focus-visible.png)
+- default: [price-default.png](components/crops/price-default.png). bg `rgba(0, 0, 0, 0)`, text `rgb(32, 39, 44)`, 36px/400, radius `0px`, height `46.7969px`. Via pricing.
 
 ## Gaps
 
-Select, checkbox, radio, switch, tooltip, dialog, toast, table, avatar and badge were not isolated on the public pages.
-Text field and text area were not submitted. The header search opened as a focus shot only.
-The editor, dashboard, sign-in form and checkout were not opened.
+- Checkbox, radio, switch, tabs, tooltip, toast, table, avatar, select: not present as product controls on the captured public pages. Pricing has a hire-status switch that is an account control, not a theme switch.
+- Disabled, loading, error, pressed: not shown on the public pages. Pressed was not forced.
+- Focus ring: keyboard Tab did not land on the hero CTA in the probe. The search button carries a 1px border-coloured outline. Focus ring token is not captured as a measured focus-visible ring.
+- Dark theme: not present. `--color-*-inverse` tokens exist and paint inverse sections, not a second theme.
+- Signed-in app components: behind login.lottiefiles.com. Not captured.

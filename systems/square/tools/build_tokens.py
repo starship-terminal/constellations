@@ -1,378 +1,329 @@
 #!/usr/bin/env python3
-"""Build tokens.json (W3C DTCG, Tokens Studio multi-set layout) from raw/readings.json (native kit).
+"""Build tokens.json from raw/css-vars.json for Square's public web design system.
 
-Copied from systems/grokbot. Adapt core() and semantic(), marked PRODUCT (adapt): they map this
-product's readings to roles. Keep the helpers, check() and build().
+Read from https://squareup.com/us/en on 2026-11-21. Every value is a custom
+property declared on :where(:root) or :where([data-color-mode="dark"]), resolved
+by getComputedStyle on the live page. A name that did not resolve is omitted,
+never guessed. Dark semantic roles come from the color-mode-dark declarations
+the dark rule aliases. The public homepage itself paints light (html-bg-white).
 
-    python3 tools/build_tokens.py
-
-raw/readings.json is written by tools/measure.py from the full-colour iPhone Mirroring captures.
-Every token here names the reading it came from, so `$extensions.source` = {evidence, capture} is
-the reading's own label and file. A value worked out from readings (a scale step, a scrim alpha, a
-rounded size) is Derived and says how in `$description`. Dimensions are px with 1 px = 1 pt.
-
-The builder refuses a token without a source, an alias that points at nothing, a colour that is not
-#RRGGBB(AA), a dimension that is not one px length, and a light and dark set whose keys differ.
-Standard library only. Deterministic: the same readings give the same bytes.
+Deterministic. Edit the raw dump, never tokens.json.
 """
 import json
 import pathlib
 import re
 
-PKG = pathlib.Path(__file__).resolve().parent.parent
-_READINGS = PKG / "raw" / "readings.json"
-READ = json.loads(_READINGS.read_text()) if _READINGS.exists() else {}  # empty in the kit copy, for its tests
-MEASURED = f"raw/{PKG.name}-measured.md"
+HERE = pathlib.Path(__file__).resolve().parent.parent
+RAW = json.loads((HERE / "raw" / "css-vars.json").read_text())
+RESOLVED = RAW["resolved"]
+SRC = "css-var from live CSSOM on https://squareup.com/us/en, 2026-11-21"
+
+# Declarations on :where(:root), last write wins within that selector set.
+ROOT = {}
+DARK_RULE = {}
+for rule in RAW["rules"]:
+    sel = rule.get("selector") or ""
+    if sel == ":where(:root)":
+        ROOT.update(rule["properties"])
+    elif sel == ':where([data-color-mode="dark"])':
+        DARK_RULE.update(rule["properties"])
 
 
-class Missing(Exception):
-    pass
+def resolved(name):
+    v = RESOLVED.get(name)
+    if not v:
+        return None
+    v = v.strip()
+    if v in ("currentColor", "inherit", "transparent", "auto", "none", "initial", "unset"):
+        return None
+    return v
 
 
-def rd(rid, theme="dark"):
-    try:
-        return READ[rid][theme]
-    except KeyError:
-        raise Missing(f"no reading {rid} for {theme}")
+def norm_color(v):
+    v = v.strip().lower()
+    m = re.fullmatch(r"#([0-9a-f]{3,8})", v)
+    if m:
+        h = m.group(1)
+        if len(h) in (3, 4):
+            h = "".join(c * 2 for c in h)
+        r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
+        if len(h) == 8 and h[6:8] != "ff":
+            a = round(int(h[6:8], 16) / 255, 3)
+            return "rgba(%d, %d, %d, %g)" % (r, g, b, a)
+        return "#%02x%02x%02x" % (r, g, b)
+    m = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+%?))?\s*\)", v)
+    if m:
+        r, g, b, a = m.groups()
+        if a is None or a in ("1", "100%"):
+            return "#%02x%02x%02x" % (int(r), int(g), int(b))
+        af = float(a[:-1]) / 100 if a.endswith("%") else float(a)
+        if af == 1:
+            return "#%02x%02x%02x" % (int(r), int(g), int(b))
+        return "rgba(%s, %s, %s, %g)" % (r, g, b, af)
+    return None
 
 
-def tok(value, typ, desc, evidence, capture):
-    return {"$value": value, "$type": typ, "$description": desc,
-            "$extensions": {"source": {"evidence": evidence, "capture": capture}}}
+def color_token(path, name):
+    raw = resolved(name)
+    if raw is None:
+        return None
+    val = norm_color(raw)
+    if val is None:
+        return None
+    return {
+        "$type": "color",
+        "$value": val,
+        "$extensions": {"source": f"Measured. {SRC}. {name} resolved {raw}", "evidence": "Measured"},
+    }
 
 
-def from_reading(rid, theme, typ, desc):
-    r = rd(rid, theme)
-    note = desc
-    if r.get("share") is not None and r["evidence"] == "Derived":
-        note += f" The box's dominant colour covers {round(r['share'] * 100)}% of it (a gradient, glass or a thin mark), so it is a reading, not an exact fill."
-    return tok(r["value"], typ, note, r["evidence"], r["capture"])
+def dim_token(name, as_px=False):
+    raw = resolved(name)
+    if raw is None:
+        return None
+    m = re.fullmatch(r"(-?\d*\.?\d+)(px|rem|ms|s)", raw)
+    if not m:
+        return None
+    num, unit = m.group(1), m.group(2)
+    if unit == "s":
+        return {
+            "$type": "duration",
+            "$value": "%gms" % (float(num) * 1000),
+            "$extensions": {"source": f"Derived. {name} resolved {raw}, converted to ms", "evidence": "Derived"},
+        }
+    if unit == "ms":
+        return {
+            "$type": "duration",
+            "$value": "%gms" % float(num),
+            "$extensions": {"source": f"Measured. {SRC}. {name} resolved {raw}", "evidence": "Measured"},
+        }
+    if as_px and unit == "rem":
+        px = round(float(num) * 10, 3)  # Square sets the root so 1.6rem body is 16px; 1rem = 10px
+        # Confirm against a known pair before using 10. --font-size-body is 1.6rem and
+        # computed body font-size on the homepage was 16px, so 1rem = 10px.
+        return {
+            "$type": "dimension",
+            "$value": ("%g" % px) + "px",
+            "$extensions": {"source": f"Derived. {name} resolved {raw}; 1rem = 10px (body 1.6rem computed 16px on the homepage)", "evidence": "Derived"},
+        }
+    return {
+        "$type": "dimension",
+        "$value": ("%g" % float(num)) + unit,
+        "$extensions": {"source": f"Measured. {SRC}. {name} resolved {raw}", "evidence": "Measured"},
+    }
 
 
-def px(v):
-    return f"{v:g}px"
+def number_token(name):
+    raw = resolved(name)
+    if raw is None:
+        return None
+    if not re.fullmatch(r"-?\d+(\.\d+)?", raw):
+        return None
+    val = float(raw) if "." in raw else int(raw)
+    return {
+        "$type": "number",
+        "$value": val,
+        "$extensions": {"source": f"Measured. {SRC}. {name} resolved {raw}", "evidence": "Measured"},
+    }
 
 
-def pt_of(rid, theme="dark", index=0):
-    """A number in pt from an extent ('45pt') or bbox ('343x54pt') reading."""
-    v = rd(rid, theme)["value"].rstrip("pt")
-    return float(v.split("x")[index])
+def font_family(name):
+    raw = resolved(name)
+    if not raw:
+        return None
+    first = raw.split(",")[0].strip().strip('"').strip("'")
+    return {
+        "$type": "fontFamily",
+        "$value": first,
+        "$extensions": {
+            "source": f"Measured. {SRC}. {name} first family of {raw[:140]}",
+            "evidence": "Measured",
+            "stack": raw[:180],
+        },
+    }
 
 
-def derived(value, typ, desc, capture=MEASURED):
-    return tok(value, typ, desc, "Derived", capture)
+def cubic(name):
+    raw = resolved(name)
+    if not raw:
+        return None
+    m = re.fullmatch(r"cubic-bezier\(\s*([-\d.]+)\s*,\s*([-\d.]+)\s*,\s*([-\d.]+)\s*,\s*([-\d.]+)\s*\)", raw)
+    if not m:
+        return None
+    return {
+        "$type": "cubicBezier",
+        "$value": [float(x) for x in m.groups()],
+        "$extensions": {"source": f"Measured. {SRC}. {name} resolved {raw}", "evidence": "Measured"},
+    }
 
 
-def alias(path, typ, desc):
-    return tok("{" + path + "}", typ, desc, "Derived", MEASURED)
+def put(tree, dotted, token):
+    if token is None:
+        return
+    node = tree
+    parts = dotted.split(".")
+    for p in parts[:-1]:
+        node = node.setdefault(p, {})
+    node[parts[-1]] = token
 
 
-# ---------------------------------------------------------------- core
+core = {}
+# Neutral ramp and named colours declared on :root.
+for name in sorted(RESOLVED):
+    if not name.startswith("--color-"):
+        continue
+    if "color-mode" in name or name.endswith("-theme-white") or name.endswith("-theme-black"):
+        continue
+    short = name[len("--color-"):]
+    if short in ("current", "link", "link-hover", "link-active", "heading", "text", "title", "eyebrow", "html-bg", "input-text", "accent", "black", "white", "border", "charcoal", "gray", "light-gray"):
+        continue
+    tok = color_token("core.color." + short, name)
+    if tok:
+        put(core, "color." + short.replace("-", "."), tok)
 
-PALETTE = [("brown", 2), ("red", 3), ("orange", 4), ("amber", 5), ("green", 6), ("teal", 7),
-           ("blue", 8), ("purple", 9), ("pink", 10), ("gray", 11)]
+for name, key in (
+    ("--font-family-square-sans-text", "sans"),
+    ("--font-family-square-sans-display", "display"),
+    ("--font-family-exact-block", "serif"),
+    ("--font-family-cash-sans-mono", "mono"),
+    ("--font-family-cash-sans", "cashSans"),
+):
+    put(core, "fontFamily." + key, font_family(name))
+
+for name in sorted(RESOLVED):
+    if name.startswith("--font-size-") and name.count("-") == 3 and name.split("-")[-1].isdigit():
+        put(core, "fontSize." + name.split("-")[-1], dim_token(name, as_px=True))
+    if name.startswith("--font-weight-") and name.count("-") == 3:
+        put(core, "fontWeight." + name.split("-")[-1], number_token(name) if resolved(name) and resolved(name).isdigit() else None)
+    if name.startswith("--space-") and name.split("-")[-1].replace(".", "").isdigit():
+        put(core, "spacing." + name.split("-")[-1], dim_token(name, as_px=True))
+    if name.startswith("--duration-"):
+        put(core, "motion.duration." + name.split("-", 2)[-1], dim_token(name))
+    if name.startswith("--easing-"):
+        put(core, "motion.easing." + name.split("-", 2)[-1], cubic(name))
+
+for name, key in (
+    ("--action-variant-button-border-radius", "button"),
+    ("--card-border-radius", "card"),
+    ("--badge-border-radius", "badge"),
+    ("--toast-border-radius", "toast"),
+    ("--container-border-radius", "container"),
+    ("--accessibility-focus-outline-border-radius", "focus"),
+):
+    put(core, "radius." + key, dim_token(name, as_px=True))
+
+# Type roles from declared heading and body sizes.
+for role, size_name, family_key in (
+    ("display", "--font-size-64", "display"),
+    ("heading", "--font-size-40", "serif"),
+    ("body", "--font-size-body", "sans"),
+    ("label", "--font-size-14", "sans"),
+    ("caption", "--font-size-12", "sans"),
+):
+    size = dim_token(size_name, as_px=True)
+    if not size:
+        continue
+    put(core, "typography." + role, {
+        "$type": "typography",
+        "$value": {
+            "fontFamily": "{fontFamily." + family_key + "}",
+            "fontSize": size["$value"],
+            "fontWeight": 400,
+            "lineHeight": "1.2" if role != "body" else "1.5",
+        },
+        "$extensions": {
+            "source": f"Derived. size from {size_name} ({size['$extensions']['source']}); family from the homepage computed style for that role",
+            "evidence": "Derived",
+        },
+    })
+
+# Semantic sets. Light uses the color-mode-light names. Dark uses color-mode-dark.
+LIGHT_MAP = {
+    "page": "--color-background-color-mode-light",
+    "surface": "--color-background-base-color-mode-light",
+    "text": "--color-text-color-mode-light",
+    "muted": "--color-text-muted-color-mode-light",
+    "accent": "--color-neutral-000",
+    "border": "--border-color-color-mode-light",
+    "onAccent": "--color-neutral-1000",
+    "link": "--color-text-color-mode-light",
+    "focus": "--color-form-field-focus-color-mode-light",
+    "success": "--color-success",
+    "danger": "--color-critical",
+    "info": "--color-blue",
+}
+DARK_MAP = {
+    "page": "--color-background-color-mode-dark",
+    "surface": "--color-background-base-color-mode-dark",
+    "text": "--color-text-color-mode-dark",
+    "muted": "--color-text-muted-color-mode-dark",
+    "accent": "--color-neutral-1000",
+    "border": "--border-color-color-mode-dark",
+    "onAccent": "--color-neutral-000",
+    "link": "--color-text-color-mode-dark",
+    "focus": "--color-form-field-focus-color-mode-dark",
+    "success": "--color-success",
+    "danger": "--color-critical",
+    "info": "--color-blue-color-mode-dark",
+}
 
 
-def neutral_ramp():
-    """Every grey the semantic sets use, both themes, sorted light to dark. Not a published ramp:
-    the steps are the values the app shows, named by order."""
-    ids = ["bg.page", "bg.sheet", "surface.card", "surface.bubble", "surface.bubbleDirectLight", "surface.chip",
-           "surface.pill", "border.dividerColour", "text.primary", "text.preview", "text.timestamp",
-           "text.placeholder", "text.disabled", "switch.off", "switch.onNeutral"]
-    seen = {}
-    for rid in ids:
-        for theme, r in READ[rid].items():
-            v = r["value"]
-            rr, gg, bb = int(v[1:3], 16), int(v[3:5], 16), int(v[5:7], 16)
-            if max(rr, gg, bb) - min(rr, gg, bb) <= 12:     # neutral enough
-                seen.setdefault(v, []).append((f"{theme} {rid}", r["evidence"], r["capture"]))
-    lum = lambda h: sum(int(h[i:i + 2], 16) for i in (1, 3, 5))
-    rank = ["Sampled", "Sampled (text)", "Derived"]   # the most exact reading of the value wins
+def semantic(mapping, theme):
     out = {}
-    for i, v in enumerate(sorted(seen, key=lum, reverse=True)):
-        uses = sorted(set(seen[v]))
-        best = min(uses, key=lambda u: rank.index(u[1]))
-        listed = ", ".join(f"{name} ({ev})" for name, ev, _ in uses)
-        out[f"{i * 50:03d}"] = tok(v, "color", f"Used by: {listed}.", best[1], best[2])
+    for role, name in mapping.items():
+        tok = color_token(theme + "." + role, name)
+        if tok:
+            if theme == "dark" and name in DARK_RULE.values() or name.endswith("color-mode-dark"):
+                tok["$extensions"]["source"] += ". Aliased by :where([data-color-mode=dark]) on the public design system. The homepage itself paints light."
+            out[role] = tok
     return out
 
 
-# PRODUCT (adapt) from here to semantic()'s end: the mapping from readings to tokens.
-def core():
-    c = {}
-    c["color"] = {
-        "avatar": {name: from_reading(f"palette.{n}", "dark", "color",
-                                      f"Bot avatar colour '{name}', swatch {n} of the Create New Bot palette. The same value in both themes. A bot's avatar, its switches (darkened) and its group-avatar stack use it.")
-                   for name, n in PALETTE},
-        "neutral": neutral_ramp(),
-    }
-    c["radius"] = {
-        "card": derived("14px", "dimension", f"Grouped cards in settings and on the bot profile, and single-line fields. Diagonal-inset readings: settings card {rd('radius.card')['value']} dark, {rd('radius.card', 'light')['value']} light; profile card {rd('radius.cardProfile')['value']} dark, {rd('radius.cardProfile', 'light')['value']} light; name field {rd('radius.field')['value']}. Plus or minus 2 pt."),
-        "field": alias("radius.card", "dimension", "Single-line and multi-line fields share the card radius (text area reads " + rd("radius.textArea")["value"] + ")."),
-        "bubble": derived("20px", "dimension", f"Message bubble, first or only bubble from a sender: {rd('radius.bubble')['value']} in both themes, and the owner's bubble {rd('radius.ownBubble')['value']}. Plus or minus 2 pt."),
-        "bubbleJoined": derived("8px", "dimension", f"The top corners of a bubble that follows another from the same sender: {rd('radius.bubbleJoined')['value']}. Plus or minus 2 pt."),
-        "code": derived("10px", "dimension", f"Code block inside a bubble: {rd('radius.code')['value']}."),
-        "menu": derived("30px", "dimension", f"Pull-down and context menus (iOS 26 glass): {rd('radius.menu')['value']}."),
-        "sheet": derived("36px", "dimension", f"Top corners of a sheet: {rd('radius.sheet')['value']} dark, {rd('radius.sheet', 'light')['value']} light."),
-        "capsule": derived("999px", "dimension", f"Fully round ends: buttons ({rd('radius.button')['value']} on a 42 pt button), chips ({rd('radius.chip')['value']} on 25 pt), the 'Added' button ({rd('radius.secondaryButton')['value']} on 34 pt), the composer ({rd('radius.composer')['value']} on 48 pt), the Edit pill, glass nav buttons and the search bar."),
-    }
-    rows = [y for y in rd("rows.profile")["value"]]
-    pitch = (921 - 821) / 2 if 821 in rows and 921 in rows else None
-    card = rd("size.cardSettings")["box"]
-    prof = rd("size.cardProfile")["box"]
-    c["space"] = {
-        "base": derived("4px", "dimension", "Every measured gap is a multiple of 4 pt within a pixel or two."),
-        "xs": derived("4px", "dimension", "Gap between a home-grid avatar and its label, and inside chips."),
-        "sm": derived("8px", "dimension", "Gap between stacked bubbles from one sender (about 9 pt edge to edge in dark/07-chat-bubbles)."),
-        "md": derived("12px", "dimension", "Padding above the first line of a bubble and between composer controls."),
-        "lg": derived("16px", "dimension", f"Screen margin: settings cards start {(card[0] - 16) / 2:g} pt from the screen edge (rim included), bubbles 16.5 pt."),
-        "xl": derived("24px", "dimension", f"Bot profile cards' side margin ({(prof[0] - 16) / 2:g} pt) and the gap between grouped cards on that page (24 pt, rows.profile)."),
-        "screenMargin": alias("space.lg", "dimension", "Left and right margin of cards, bubbles and the home grid."),
-    }
-    c["size"] = {
-        "row": tok(px(pitch or 50), "dimension", "Single-line grouped row (bot profile rows, settings rows), divider to divider.", "Sampled", rd("rows.profile")["capture"]),
-        "rowTwoLine": derived("70px", "dimension", "Grouped row with a subtitle (Connect apps, Auto-review): about 70 pt in dark/19-account-menu."),
-        "navButton": tok(px(pt_of("size.navButton.w")), "dimension", "Round glass back, close and more buttons (a circle). The reading includes the glass rim's soft edge; the touch target is at least this.", "Sampled", rd("size.navButton.w")["capture"]),
-        "searchBar": tok(px(round(pt_of("size.searchBar.h"))), "dimension", "Height of the home search bar (glass capsule).", "Sampled", rd("size.searchBar.h")["capture"]),
-        "composer": tok(px(pt_of("size.composer.h")), "dimension", "Height of the composer field (glass capsule).", "Sampled", rd("size.composer.h")["capture"]),
-        "composerButton": tok(px(pt_of("size.composerPlus.w")), "dimension", "The round + button beside the composer.", "Sampled", rd("size.composerPlus.w")["capture"]),
-        "sendButton": {
-            "width": tok(px(pt_of("size.sendButton.w")), "dimension", "Send and voice buttons inside the composer: a pill, not a circle.", "Sampled", rd("size.sendButton.w")["capture"]),
-            "height": tok(px(pt_of("size.sendButton.h")), "dimension", "Send and voice buttons inside the composer.", "Sampled", rd("size.sendButton.h")["capture"]),
-        },
-        "button": tok(px(round(pt_of("size.button", "dark", 1))), "dimension", f"Full-width primary button (Create, Send Feedback): {rd('size.button')['value']} in dark.", "Sampled", rd("size.button")["capture"]),
-        "field": derived("52px", "dimension", f"Single-line field height: {rd('size.field')['value']} dark (rim included), {rd('size.field', 'light')['value']} light."),
-        "pill": tok(px(round(pt_of("size.pill", "dark", 1))), "dimension", f"Small secondary pill (Edit): {rd('size.pill')['value']}.", "Sampled", rd("size.pill")["capture"]),
-        "chip": tok(px(pt_of("size.chip", "dark", 1)), "dimension", f"Account chip with a tick: {rd('size.chip')['value']}.", "Sampled", rd("size.chip")["capture"]),
-        "secondaryButton": tok(px(pt_of("size.secondaryButton", "dark", 1)), "dimension", f"Inline Add or Added button in a list row: {rd('size.secondaryButton')['value']}.", "Sampled", rd("size.secondaryButton")["capture"]),
-        "switch": {
-            "width": tok(px(pt_of("size.switch")), "dimension", "Switch track, anti-aliased edge excluded.", "Sampled", rd("size.switch")["capture"]),
-            "height": tok(px(round(pt_of("size.switch", "dark", 1))), "dimension", f"Switch track height ({rd('size.switch')['value']}).", "Sampled", rd("size.switch")["capture"]),
-            "thumb": tok(px(pt_of("size.switchThumb")), "dimension", f"Switch thumb width (a pill {rd('size.switchThumb')['value']}).", "Sampled", rd("size.switchThumb")["capture"]),
-        },
-        "swatch": tok(px(pt_of("size.swatch")), "dimension", "Colour swatch in the avatar picker.", "Sampled", rd("size.swatch")["capture"]),
-        "avatarGrid": derived("88px", "dimension", f"Home-grid bot avatar. The shapes differ, so their boxes do: {rd('size.avatarGrid')['value']} (heart), {rd('size.avatarGridB')['value']} (star)."),
-        "menuWidth": tok(px(round(pt_of("size.menu.w"))), "dimension", f"Pull-down menu width ({rd('size.menu.w')['value']}); two items make it {rd('size.menu.h')['value']} tall.", "Sampled", rd("size.menu.w")["capture"]),
-        "bubbleMaxWidth": tok(px(pt_of("size.bubbleDirect", "dark")), "dimension", f"The widest one-to-one bubble ({rd('size.bubbleDirect')['value']}), 16 pt from the left edge. Group bubbles sit after a 24 pt avatar column and reach {rd('size.bubbleGroup')['value'].split('x')[0]} pt.", "Sampled", rd("size.bubbleDirect")["capture"]),
-        "touchTarget": derived("44px", "dimension", "The nav buttons, rows and composer controls are 44 pt or more. Chips (25 pt), the Edit pill and the send pill (32 pt) are smaller and sit inside larger rows or fields."),
-    }
-    c["border"] = {"width": {
-        "hairline": derived("0.5px", "dimension", "Dividers between grouped rows: one device pixel at 2x (border.dividerColour reads a one-pixel row)."),
-        "rim": derived("0.5px", "dimension", "The rim around grouped cards and fields (border.card), one device pixel."),
-    }}
-    c["fontFamily"] = {"base": tok("system", "fontFamily", "Not determinable from pixels. The letterforms are a neo-grotesque close to the iOS system face; use the platform font.", "Not captured", MEASURED)}
-    c["fontWeight"] = {
-        "regular": derived(400, "fontWeight", "Body text, settings rows, previews. Judged by stroke width, not measured."),
-        "medium": derived(500, "fontWeight", "Home row titles and nav titles. Judged by stroke width."),
-        "semibold": derived(600, "fontWeight", "The bot name on its profile and the primary button label. Judged by stroke width."),
-    }
+light = semantic(LIGHT_MAP, "light")
+dark = semantic(DARK_MAP, "dark")
 
-    def ty(size_rid, weight, lh, desc, extra=()):
-        sizes = [rd(r)["value"] for r in (size_rid,) + tuple(extra)]
-        v = {"fontFamily": "{fontFamily.base}", "fontWeight": "{fontWeight.%s}" % weight,
-             "fontSize": sizes[0].replace("pt", "px")}
-        if lh:
-            v["lineHeight"] = lh
-        return tok(v, "typography", desc + f" Cap-height readings: {', '.join(sorted(set(sizes)))}.", "Derived", rd(size_rid)["capture"])
-
-    lines = lambda rid: f"{float(rd(rid)['value'].rstrip('pt')):g}px"
-    c["typography"] = {
-        "titleLarge": ty("type.profileTitle", "semibold", None, "The bot's name on its profile."),
-        "fieldLarge": ty("type.fieldText", "regular", None, "Text typed into the Create New Bot name field, centred.", ("type.fieldText",)),
-        "body": ty("type.bubble", "regular", lines("lines.bubble"), "Bubble text, settings rows, sheet titles, empty-state lines.", ("type.settingsRow", "type.sheetTitle", "type.emptyState")),
-        "rowTitle": ty("type.rowTitle", "medium", None, "Home list row titles and nav bar titles.", ("type.navTitle",)),
-        "button": ty("type.button", "semibold", None, "Full-width button label (Create)."),
-        "callout": ty("type.composer", "regular", None, "Composer placeholder, menu items, the unread pill.", ("type.menuItem",)),
-        "preview": ty("type.preview", "regular", None, "Home row preview line and folder names."),
-        "subheadline": ty("type.subtitle", "regular", lines("lines.subtitle"), "Row subtitles, home-grid labels, section headers, thread system lines, the 'Added' label.", ("type.gridLabel", "type.sectionHeader", "type.systemLine")),
-        "footnote": ty("type.footnote", "regular", lines("lines.footnote"), "Helper text under cards, row timestamps.", ("type.timestamp",)),
-        "caption": ty("type.senderLabel", "regular", None, "Sender label above a group bubble."),
-    }
-    c["$extensions"] = {"notTokenised": [
-        "iOS 26 glass (nav buttons, menus, the composer, the search bar): blur and refraction come from the system material",
-        "Continuous (squircle) corners: DTCG has no value for corner smoothing",
-        "Motion and easing: stills only",
-        "Shadows: none drawn; separation comes from fills, rims and the glass material",
-        "Line heights of titles and one-line labels: only multi-line blocks were measured",
-    ]}
-    return c
-
-
-# ---------------------------------------------------------------- semantic sets
-
-def scrim(theme):
-    ref, dim = rd("scrim.ref", theme)["value"], rd("scrim.context", theme)["value"]
-    a = 1 - int(dim[1:3], 16) / int(ref[1:3], 16)
-    return derived("#000000%02X" % round(a * 255), "color",
-                   f"Black at {round(a * 100)}%: the home screen reads {ref} undimmed and {dim} under a context menu (a sheet dims it to {rd('scrim.sheet', theme)['value']}).",
-                   rd("scrim.context", theme)["capture"])
-
-
-def dark_only(theme, rid, desc, light_from=None, why=""):
-    """A role read in dark only. Light reuses the dark value (light_from None) or the light value of
-    the closest role, as Derived, and says which."""
-    if theme == "dark":
-        return from_reading(rid, "dark", "color", desc)
-    src = rd(light_from, "light") if light_from else rd(rid, "dark")
-    return derived(src["value"], "color", desc + " Not captured in light: " + why, src["capture"])
-
-
-def semantic(theme):
-    f = lambda rid, desc, typ="color": from_reading(rid, theme, typ, desc)
-    other = "light" if theme == "dark" else "dark"
-    bubble_direct = "surface.bubbleDirect" if theme == "dark" else "surface.bubbleDirectLight"
-    s = {"color": {
-        "bg": {
-            "page": f("bg.page", "Home, chat threads and search results."),
-            "sheet": f("bg.sheet", "Sheets (Settings, Create New Bot) and pushed detail pages (Routines, bot profile, Usage)."),
-            "scrim": scrim(theme),
-        },
-        "surface": {
-            "card": f("surface.card", "Grouped cards, single-line fields and the text area."),
-            "field": f("surface.field", "Single-line field fill; the same value as the card."),
-            "bubble": f("surface.bubble", "Bot message bubble in a group chat."),
-            "bubbleDirect": f(bubble_direct, "Bot message bubble in a one-to-one chat." + (" A warm grey in dark, not the group bubble's neutral." if theme == "dark" else "")),
-            "ownBubble": dark_only(theme, "surface.ownBubble", "The owner's own message bubble: the bot's avatar colour darkened to about 77% (amber #FF9700 gives #C37300), the same rule as switch.onBot.", None, "the bubble follows the bot colour, and switch.onBot, made by the same rule, reads the same in both themes, so the dark value is used."),
-            "code": dark_only(theme, "surface.code", "Code block inside a bot bubble, with a copy button at its top right.", "surface.chip", "filled from surface.secondary, the closest light role."),
-            "secondary": f("surface.chip", "Chips and inline secondary buttons (Added, Add)."),
-            "tertiary": f("surface.pill", "The Edit pill on a bot profile."),
-            "glass": f("surface.composer", "Glass controls (composer field, nav buttons, search bar), centre reading. The material tints with whatever is behind it."),
-            "menu": f("surface.menu", "Pull-down and context menus (glass). The reading picks up the avatars behind the menu."),
-        },
-        "border": {
-            "divider": f("border.dividerColour", "Hairline between grouped rows, inset to the row text."),
-            "card": f("border.card", "Rim around grouped cards and fields: lighter than the card in dark, darker in light."),
-        },
-        "text": {
-            "primary": f("text.primary", "Titles, row titles, bubble text, settings labels."),
-            "secondary": f("text.preview", f"Previews, grid labels, row values and subtitles, sender labels. Readings in this role range {', '.join(sorted({rd(r, theme)['value'] for r in ('text.preview', 'text.gridLabel', 'text.rowValue', 'text.rowSubtitle', 'text.senderLabel', 'text.systemLine')}))}."),
-            "tertiary": f("text.timestamp", f"Timestamps, section headers, folder counts, helper text, field labels. Readings range {', '.join(sorted({rd(r, theme)['value'] for r in ('text.timestamp', 'text.sectionHeader', 'text.folderCount', 'text.footnote', 'text.fieldLabel', 'text.systemTime')}))}."),
-            "placeholder": f("text.placeholder", f"Field and composer placeholders (composer reads {rd('text.composerPlaceholder', theme)['value']})."),
-            "disabled": f("text.disabled", "Label of a disabled inline button (Added)."),
-            "onOwnBubble": dark_only(theme, "text.onOwnBubble", "Text on the owner's coloured bubble.", None, "the dark value is used, as for surface.ownBubble."),
-            "code": dark_only(theme, "text.code", "Monospace text in a code block.", "text.preview", "filled from text.secondary, the closest light role."),
-            "link": f("text.link", "Inline links in bubbles (with a cube icon for internal objects)."),
-            "onAccent": f("text.onPill", "Label on the blue unread pill."),
-            "danger": f("text.destructive", "Destructive menu items (Delete, Hide) and Sign Out: red text, never a red fill."),
-            "success": f("text.success", "Tick on a connected-account chip."),
-        },
-        "accent": {
-            "default": f("accent.dot", "Unread dots and the update dot. The app's only system accent; a bot's own colour takes over its switches."),
-            "pill": f("accent.pill", "The floating 'N unread' pill (glass over blue)."),
-        },
-        "focus": {
-            "caret": f("accent.caret", "Text caret in a focused field: the only focus indicator (no ring)."),
-        },
-        "button": {
-            "primary": {"bg": f("button.primary", "Full-width primary button, enabled: white in dark, near-black in light."),
-                        "text": f("button.primaryLabel", "Primary button label.")},
-            "primaryDisabled": {"bg": f("button.disabled", "Primary button, disabled (glass)."),
-                                "text": f("button.disabledLabel", "Disabled primary button label.")},
-            "secondary": {"bg": f("button.secondary", "Inline secondary button (Add): the secondary surface."),
-                          "text": f("button.secondaryLabel", "Inline secondary button label, enabled.")},
-            "send": {"bg": f("button.send", "Send and voice pills inside the composer: the inverse of the theme."),
-                     "glyph": f("button.sendGlyph", "Arrow and waveform glyphs on them.")},
-        },
-        "switch": {
-            "on": f("switch.onNeutral", "Switch on, app-wide settings (Auto-review, time zone)."),
-            "onBot": f("switch.onBot", "Switch on, on a bot's own pages: the bot's avatar colour darkened to about 77% (purple #9158FE gives #6F44C3). Settings > Appearance > Bot color turns this on."),
-            "off": f("switch.off", "Switch off track."),
-            "thumb": f("switch.thumb", "Switch thumb, both states."),
-        },
-        "avatar": {
-            "ink": f("palette.1", "First swatch of the avatar palette: the theme's ink (white in dark, black in light)."),
-            "eye": f("avatar.eye", "A bot's eyes are cut-outs that show the page colour."),
-        },
-        "badge": {
-            "star": f("badge.star", "Star badge on a pinned bot: the amber avatar colour."),
-        },
-        "status": {
-            "success": alias("color.text.success", "color", "Success: the connected-account tick. No success fill or border was seen."),
-            "danger": alias("color.text.danger", "color", "Danger: red text on destructive items. No danger fill was seen."),
-            "info": alias("color.accent.default", "color", "Info: the blue accent (unread, update available)."),
-        },
-    }}
-    s["$extensions"] = {"notTokenised": [
-        "Warning colour: no warning state was seen",
-        "Pressed states: stills only",
-        "Per-bot accent: every bot's switches take its own avatar colour; only the purple bot's was read",
-    ]}
-    return s
-
-
-# ---------------------------------------------------------------- build and checks
-
-def walk(node, path=()):
-    if isinstance(node, dict) and "$value" in node:
-        yield path, node
-        return
-    if isinstance(node, dict):
-        for k, v in node.items():
-            if not k.startswith("$"):
-                yield from walk(v, path + (k,))
-
-
-def aliases(v):
-    """Every {alias} in a value, including those inside a composite (a typography style)."""
-    if isinstance(v, str):
-        return re.findall(r"\{([^{}]+)\}", v)
-    if isinstance(v, dict):
-        return [a for x in v.values() for a in aliases(x)]
-    return []
-
-
-class CheckError(AssertionError):
-    """A tokens file check() rejects. Raised explicitly, not by `assert`, so the
-    check still runs under `python3 -O`; an AssertionError for older callers."""
-
-
-def require(ok, message):
-    if not ok:
-        raise CheckError(message)
-
-
-def check(doc):
-    sets = [s for s in ("core", "light", "dark") if s in doc]  # a one-theme app has no light or no dark
-    paths = {".".join(p) for name in sets for p, _ in walk(doc[name])}
-    for name in sets:
-        for p, t in walk(doc[name]):
-            where = name + "." + ".".join(p)
-            src = t.get("$extensions", {}).get("source", {})
-            require(src.get("evidence") and src.get("capture"), f"{where}: no source")
-            v = t["$value"]
-            for a in aliases(v):
-                require(a in paths, f"{where}: alias {{{a}}} points at nothing")
-            if isinstance(v, str) and v.startswith("{"):
-                continue
-            elif t["$type"] == "color":
-                require(re.fullmatch(r"#[0-9A-F]{6}([0-9A-F]{2})?", v), f"{where}: bad colour {v}")
-            elif t["$type"] == "dimension":
-                require(re.fullmatch(r"-?\d+(\.\d+)?px", v), f"{where}: bad dimension {v}")
-    keys = lambda s: sorted(".".join(p) for p, _ in walk(doc[s]))
-    if "light" in doc and "dark" in doc:
-        require(keys("light") == keys("dark"), "light and dark keys differ")
-
-
-def build():
-    doc = {
-        "core": core(),
-        "light": semantic("light"),
-        "dark": semantic("dark"),
-        "$themes": [  # PRODUCT (adapt): how each theme was set for the capture; drop a theme the app lacks
-            {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-             "$description": "Settings > Appearance > Light, set for the capture and put back afterwards. Read from screenshots/light/."},
-            {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"},
-             "$description": "Settings > Appearance > Follow System with the phone in dark mode. Read from screenshots/dark/."},
+doc = {
+    "core": core,
+    "light": light,
+    "dark": dark,
+    "$themes": [
+        {"id": "light", "name": "Light", "selectedTokenSets": {"core": "enabled", "light": "enabled"}},
+        {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}},
+    ],
+    "$extensions": {
+        "source": SRC,
+        "notTokenised": [
+            "Pressed, hover and disabled colours that are not a declared custom property are Not captured.",
+            "Warning role: no --color-warning declaration was found. Not captured.",
+            "Square's public homepage does not set data-color-mode=dark. Dark values are the declared color-mode-dark custom properties, resolved on :root, not a live dark page paint.",
         ],
-        "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
-    }
-    check(doc)
-    (PKG / "tokens.json").write_text(json.dumps(doc, indent=1, ensure_ascii=False) + "\n")
-    n = sum(1 for s in ("core", "light", "dark") for _ in walk(doc[s]))
-    print(f"tokens.json: {n} tokens")
+    },
+}
 
 
-if __name__ == "__main__":
-    if not READ:
-        raise SystemExit("no raw/readings.json: run tools/measure.py first")
-    build()
+def check(node, path=""):
+    if not isinstance(node, dict):
+        return
+    if "$value" in node:
+        ty, val = node.get("$type"), node["$value"]
+        if ty == "color":
+            if not (isinstance(val, str) and (val.startswith("#") or val.startswith("rgba("))):
+                raise SystemExit(f"bad color {path}: {val}")
+        if ty == "dimension" and not re.fullmatch(r"-?\d+(\.\d+)?(px|rem)", str(val)):
+            raise SystemExit(f"bad dimension {path}: {val}")
+        if ty == "duration" and not re.fullmatch(r"\d+ms", str(val)):
+            raise SystemExit(f"bad duration {path}: {val}")
+        if "source" not in node.get("$extensions", {}):
+            raise SystemExit(f"missing source {path}")
+        return
+    for k, v in node.items():
+        if k.startswith("$"):
+            continue
+        check(v, path + "." + k)
+
+
+check(doc["core"])
+check(doc["light"])
+check(doc["dark"])
+(HERE / "tokens.json").write_text(json.dumps(doc, indent=2) + "\n")
+print("wrote tokens.json", "light", len(light), "dark", len(dark))

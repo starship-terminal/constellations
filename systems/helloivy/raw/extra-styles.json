@@ -1,0 +1,85 @@
+{
+  "word": [],
+  "price": [
+    {
+      "t": "$12",
+      "tag": "SPAN",
+      "fam": "Unbounded, \"Unbounded Placeholder\", sans-serif",
+      "size": "28px",
+      "weight": "500",
+      "color": "rgb(0, 0, 0)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "y": 1189
+    },
+    {
+      "t": "Try for Free",
+      "tag": "A",
+      "fam": "sans-serif",
+      "size": "12px",
+      "weight": "400",
+      "color": "rgb(0, 0, 238)",
+      "bg": "rgb(0, 0, 0)",
+      "y": 1621
+    },
+    {
+      "t": "Try for Free",
+      "tag": "H1",
+      "fam": "Unbounded, \"Unbounded Placeholder\", sans-serif",
+      "size": "16px",
+      "weight": "500",
+      "color": "rgb(250, 246, 240)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "y": 1633
+    },
+    {
+      "t": "$18",
+      "tag": "SPAN",
+      "fam": "Unbounded, \"Unbounded Placeholder\", sans-serif",
+      "size": "28px",
+      "weight": "500",
+      "color": "rgb(0, 0, 0)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "y": 1189
+    },
+    {
+      "t": "Try for Free",
+      "tag": "A",
+      "fam": "sans-serif",
+      "size": "12px",
+      "weight": "400",
+      "color": "rgb(0, 0, 238)",
+      "bg": "rgb(0, 0, 0)",
+      "y": 1621
+    },
+    {
+      "t": "Try for Free",
+      "tag": "H1",
+      "fam": "Unbounded, \"Unbounded Placeholder\", sans-serif",
+      "size": "16px",
+      "weight": "500",
+      "color": "rgb(250, 246, 240)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "y": 1633
+    },
+    {
+      "t": "Let's Talk",
+      "tag": "A",
+      "fam": "sans-serif",
+      "size": "12px",
+      "weight": "400",
+      "color": "rgb(0, 0, 238)",
+      "bg": "rgb(0, 0, 0)",
+      "y": 1621
+    },
+    {
+      "t": "Let's Talk",
+      "tag": "H1",
+      "fam": "Unbounded, \"Unbounded Placeholder\", sans-serif",
+      "size": "16px",
+      "weight": "500",
+      "color": "rgb(250, 246, 240)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "y": 1633
+    }
+  ]
+}

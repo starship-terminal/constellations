@@ -1,50 +1,26 @@
 // Reads every custom property classpass.com's stylesheets declare and writes
-// raw/css-vars.json.
-//
-//   PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/vars.mjs
-//
-// classpass.com is a React app: its styles arrive as inline <style> bundles
-// (styled-components + CSS modules) plus a few same-origin sheets, so the
-// CSSOM can read most rules. Every rule declaring a --* property is kept with
-// its selector and enclosing @media/@layer context, and @font-face rules are
-// kept too.
-//
-// The site paints one light theme. Each name is resolved in a probe document
-// that carries the real stylesheets, computed the way the browser computes
-// it: colours come back as sRGB hex, lengths as px at 1440 x 900.
-//
-// Bins:
-//   token     namespaced design-token names (--cp-*, --token-*) if any
-//   app       other custom names the site's own rules declare
-//   framework third-party internals (styled-components, vendor prefixes)
-//   utility   a one-off `[--x:value]` arbitrary-property utility class
+// raw/css-vars.json. Live CSSOM on the public home page, light theme only.
+// Cross-origin sheets that the CSSOM cannot read are listed under skipped.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { BASE, launch } from './public/lib.mjs';
+import { BASE, launch, hideConsent } from './public/lib.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const REF = path.resolve(here, '..', '..');
+fs.mkdirSync(path.join(REF, 'raw'), { recursive: true });
 
 const { browser, context } = await launch();
 const page = await context.newPage();
-await page.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 90000 });
-await page.waitForTimeout(6000);
-// sheets read via CSSOM (styled-components + CSS modules arrive inline; external
-// sheets are read the same way when the CSSOM allows)
-const sheets = await page.evaluate(() => [...document.styleSheets].map((s, i) => {
-  try { return { name: s.href || 'inline-' + i, media: s.media.mediaText || '', css: [...s.cssRules].map((r) => r.cssText).join('\n') }; }
-  catch { return { name: s.href || 'sheet-' + i, media: '', css: '', unreadable: true }; }
-}));
-await page.close();
+await page.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 60000 });
+await page.waitForTimeout(3000);
+await hideConsent(page);
 
-// ---- harvest: every rule with --* declarations ----
-const probe = await browser.newPage();
-const result = await probe.evaluate((sheets) => {
-  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
+const result = await page.evaluate(() => {
   const rules = [];
   const fonts = [];
-  const errors = [];
+  const skipped = [];
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const walk = (list, ctx, file) => {
     for (const r of list) {
       if (r.type === CSSRule.FONT_FACE_RULE) {
@@ -58,7 +34,7 @@ const result = await probe.evaluate((sheets) => {
           : r.type === CSSRule.SUPPORTS_RULE ? '@supports ' + r.conditionText
           : r.constructor.name === 'CSSLayerBlockRule' ? '@layer ' + r.name
           : r.constructor.name === 'CSSContainerRule' ? '@container ' + r.conditionText
-          : (r.cssText || '').split('{')[0].trim().slice(0, 120);
+          : r.cssText.split('{')[0].trim().slice(0, 120);
         walk(r.cssRules, [...ctx, head], file);
         continue;
       }
@@ -69,113 +45,48 @@ const result = await probe.evaluate((sheets) => {
         const k = r.style[i];
         if (k && k.startsWith('--')) { props[k] = noUrl(r.style.getPropertyValue(k).trim()); n++; }
       }
-      if (n) rules.push({ file, selector: r.selectorText, context: ctx, properties: props });
-      if (r.cssRules && r.cssRules.length) walk(r.cssRules, [...ctx, r.selectorText], file);
+      if (n) rules.push({ file, selector: (r.selectorText || '').slice(0, 160), context: ctx, properties: props });
+      if (r.cssRules && r.cssRules.length) walk(r.cssRules, [...ctx, (r.selectorText || '').slice(0, 120)], file);
     }
   };
-  for (const s of sheets) {
-    const name = s.name.split(/[?#]/)[0];  // rules cite the sheet by path only
-    if (!s.css) { if (s.unreadable) errors.push({ file: name, error: 'cross-origin to the CSSOM' }); continue; }
-    const ss = new CSSStyleSheet();
-    try { ss.replaceSync(s.css); } catch (e) { errors.push({ file: name, error: String(e) }); continue; }
-    walk(ss.cssRules, [], name);
-  }
-  return { rules, fonts, errors };
-}, sheets);
-
-// ---- resolve each name the way the browser does, on a probe carrying the sheets
-const probe2 = await browser.newPage({ viewport: { width: 1440, height: 900 } });
-await probe2.setContent('<!doctype html><html><head>'
-  + sheets.filter((s) => s.css).map((s) => '<style' + (s.media ? ' media="' + s.media + '"' : '') + '>' + s.css.replace(/<\/style/gi, '<\\/style') + '</style>').join('')
-  + '</head><body><div id="probe-root"></div></body></html>', { waitUntil: 'load' });
-const want = [...new Set(result.rules.filter((r) => !r.error).flatMap((r) => Object.keys(r.properties)))]
-  .filter((n) => !/^--(tw-|_)/.test(n)).sort();
-const resolved = await probe2.evaluate((names) => {
-  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
-  const rootProbe = document.getElementById('probe-root');
-  const box = document.createElement('div');
-  box.style.cssText = 'position:absolute;left:0;top:0;width:1000px;height:1000px;visibility:hidden';
-  const probe = document.createElement('div');
-  probe.style.cssText = 'position:absolute;left:0;top:0';
-  box.appendChild(probe);
-  document.body.appendChild(box);
-  const lin = (c) => (c <= 0.0031308 ? 12.92 * c : 1.055 * Math.pow(c, 1 / 2.4) - 0.055);
-  const fromOklab = (L, a, b) => {
-    const l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3, m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3, s = (L - 0.0894841775 * a - 1.2914855480 * b) ** 3;
-    return [4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s, -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s, -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s].map((v) => Math.round(Math.min(1, Math.max(0, lin(v))) * 255));
+  [...document.styleSheets].forEach((ss, i) => {
+    const file = ss.href ? ss.href.split('/').pop().split('?')[0] || ss.href : `inline-${i}`;
+    try { walk(ss.cssRules, [], file); } catch { skipped.push(file); }
+  });
+  const root = getComputedStyle(document.documentElement);
+  const names = [...new Set(rules.flatMap((r) => Object.keys(r.properties)))].sort();
+  const resolved = {};
+  for (const n of names) resolved[n] = root.getPropertyValue(n).trim();
+  return {
+    rules, fonts, skipped, resolved, names,
+    colorScheme: root.colorScheme,
+    fontFamily: root.fontFamily,
+    background: root.backgroundColor,
+    color: root.color,
+    hrefs: [...document.styleSheets].map((ss) => ss.href || 'inline'),
   };
-  const num = (x) => (x.endsWith('%') ? parseFloat(x) / 100 : parseFloat(x));
-  const norm = (c) => {
-    let m = c.match(/^rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)$/);
-    let rgb, a = 1;
-    if (m) { rgb = [m[1], m[2], m[3]].map((v) => Math.round(+v)); a = m[4] === undefined ? 1 : +m[4]; }
-    else if ((m = c.match(/^color\(srgb ([-\d.e]+) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+%?))?\)$/))) { rgb = [m[1], m[2], m[3]].map((v) => Math.round(Math.min(1, Math.max(0, +v)) * 255)); a = m[4] === undefined ? 1 : num(m[4]); }
-    else if ((m = c.match(/^oklab\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+%?))?\)$/))) { rgb = fromOklab(num(m[1]), +m[2], +m[3]); a = m[4] === undefined ? 1 : num(m[4]); }
-    else if ((m = c.match(/^oklch\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+%?))?\)$/))) { const h = (+m[3] * Math.PI) / 180; rgb = fromOklab(num(m[1]), +m[2] * Math.cos(h), +m[2] * Math.sin(h)); a = m[4] === undefined ? 1 : num(m[4]); }
-    else return { unparsed: c };
-    a = Math.round(a * 1000) / 1000;
-    return a === 1 ? '#' + rgb.map((v) => v.toString(16).padStart(2, '0')).join('') : `rgba(${rgb.join(', ')}, ${a})`;
-  };
-  const out = {};
-  for (const name of names) {
-    const raw = noUrl(getComputedStyle(rootProbe).getPropertyValue(name).trim());
-    if (!raw) continue;
-    const r = { raw: raw.length > 300 ? raw.slice(0, 300) + '…' : raw };
-    probe.removeAttribute('style'); probe.style.cssText = 'position:absolute;left:0;top:0';
-    if (/^-?\d*\.?\d+$/.test(raw)) { r.kind = 'number'; r.value = +raw; }
-    else if (/currentcolor/i.test(raw)) { r.kind = 'other'; r.note = 'depends on currentColor'; }
-    else if (CSS.supports('color', raw) && !/^(inherit|initial|unset|revert)$/.test(raw)) {
-      probe.style.color = raw; r.kind = 'color'; r.value = norm(getComputedStyle(probe).color);
-      if (typeof r.value === 'object') { r.kind = 'other'; r.note = 'colour space not converted: ' + r.value.unparsed; delete r.value; }
-    } else if (!raw.includes('%') && CSS.supports('width', raw)) { probe.style.width = raw; r.kind = 'dimension'; r.value = getComputedStyle(probe).width; if (/vw|vh|dvh/.test(raw)) r.note = 'viewport-relative, resolved at 1440 x 900'; }
-    else if (CSS.supports('box-shadow', raw)) { probe.style.boxShadow = raw; r.kind = 'shadow'; r.value = getComputedStyle(probe).boxShadow; }
-    else if (CSS.supports('transition-duration', raw)) { probe.style.transitionDuration = raw; r.kind = 'duration'; r.value = getComputedStyle(probe).transitionDuration; }
-    else if (CSS.supports('transition-timing-function', raw) && !/^[a-z-]+$/.test(raw) || /^(ease|ease-in|ease-out|ease-in-out|linear)$/.test(raw)) { r.kind = 'easing'; r.value = raw; }
-    else if (/[A-Za-z]/.test(raw) && CSS.supports('font-family', raw)) { r.kind = 'fontFamily'; r.value = raw; }
-    else r.kind = 'other';
-    out[name] = r;
-  }
-  box.remove();
-  return out;
-}, want);
-await browser.close();
+});
 
-const FRAMEWORK = /^--(sc-|framer|border|grid|section|stack|variant|ticker|cursor|overlay|scroll|breakpoint|blending|mask|filters?|transform|layout|styles)-/;
-const binOf = (r) => {
-  const names = Object.keys(r.properties);
-  if (/\\\[--/.test(r.selector || '')) return 'utility';
-  if (names.some((n) => n.startsWith('--token-'))) return 'token';
-  if (names.every((n) => FRAMEWORK.test(n))) return 'framework';
-  return 'app';
-};
-const ok = result.rules;
-for (const r of ok) r.bin = binOf(r);
-const bySelector = {};
-for (const r of ok) {
-  const key = `[${r.bin}] ` + (r.context.length ? r.context.join(' ') + ' ' : '') + r.selector;
-  bySelector[key] = (bySelector[key] || 0) + Object.keys(r.properties).length;
-}
-const names = (bin) => [...new Set(ok.filter((r) => r.bin === bin).flatMap((r) => Object.keys(r.properties)))].sort();
 const out = {
-  readAt: new Date().toLocaleDateString('en-CA'),
-  source: 'classpass.com\'s inline <style> bundles and same-origin sheets (a React/styled-components app), read through the CSSOM on the live home page and re-parsed in a probe document',
-  sheets: sheets.map(({ name, media, css }) => ({ name: name.split(/[?#]/)[0], media, bytes: css.length })),  // path only: no deploy id or font query
-  counts: {
-    rules: ok.length,
-    fonts: result.fonts.length,
-    names: { token: names('token').length, app: names('app').length, framework: names('framework').length, utility: names('utility').length },
-    bySelector,
-  },
-  errors: result.errors,
-  token: ok.filter((r) => r.bin === 'token'),
-  app: ok.filter((r) => r.bin === 'app'),
-  framework: ok.filter((r) => r.bin === 'framework'),
-  utility: ok.filter((r) => r.bin === 'utility'),
+  product: 'ClassPass',
+  url: 'https://classpass.com/',
+  captured: new Date().toISOString(),
+  theme: 'light',
+  note: 'Public marketing site. No dark theme switch was found on the captured pages.',
+  colorScheme: result.colorScheme,
+  rootFontFamily: result.fontFamily,
+  rootBackground: result.background,
+  rootColor: result.color,
+  stylesheetHrefs: result.hrefs,
+  skipped: result.skipped,
   fonts: result.fonts,
-  resolved: { light: resolved },
+  ruleCount: result.rules.length,
+  nameCount: result.names.length,
+  rules: result.rules,
+  resolved: result.resolved,
 };
-fs.mkdirSync(path.join(REF, 'raw'), { recursive: true });
-fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(out, null, 1) + '\n');
-console.log(`resolved: ${Object.keys(resolved).length} names`);
-console.log(`css-vars.json: ${ok.length} rules, ${result.fonts.length} font faces; names token ${out.counts.names.token}, app ${out.counts.names.app}, framework ${out.counts.names.framework}, utility ${out.counts.names.utility}`);
-for (const [k, v] of Object.entries(bySelector).sort((a, b) => b[1] - a[1]).slice(0, 30)) console.log(`  ${v}\t${k.slice(0, 160)}`);
+fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(out, null, 2) + '\n');
+console.log('rules', result.rules.length, 'names', result.names.length, 'fonts', result.fonts.length, 'skipped', result.skipped.length);
+console.log('root', result.fontFamily, result.background, result.color, result.colorScheme);
+console.log('sample', result.names.slice(0, 30).join(', '));
+await browser.close();

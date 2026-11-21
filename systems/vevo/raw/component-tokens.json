@@ -1,0 +1,105 @@
+{
+  "_readme": "Token tree for hq.vevo.com, read 2026-11-21. Each leaf is a computed style from raw/components-computed.json or a painted element sampled in the same headless Chromium session (raw/brand-probe.json). Wix custom properties are layout internals (--one-unit, --section-max-width) and are not the visual system. One light theme. The site paints section grounds, not a token ramp.",
+  "core": {
+    "$description": "Scales and primitives measured on the public marketing site.",
+    "color": {
+      "black": { "type": "color", "value": "rgb(0, 0, 0)", "source": "computed backgroundColor of button default and footer band (raw/components-computed.json, homepage painted-element probe)", "description": "Primary button fill, footer band, and ink on light pages." },
+      "white": { "type": "color", "value": "rgb(255, 255, 255)", "source": "computed color of nav-link text and backgroundColor of the About Us pill (raw/components-computed.json)", "description": "Text on dark heroes and the light pill fill." },
+      "inkSoft": { "type": "color", "value": "rgb(2, 2, 2)", "source": "computed color of button hover text and backgroundColor of text-link hover (raw/components-computed.json)", "description": "Near-black used when a black control inverts on hover." },
+      "paper": { "type": "color", "value": "rgb(253, 253, 253)", "source": "computed color of text-link hover text and backgroundColor of button hover (raw/components-computed.json)", "description": "Off-white of the inverted hover button." },
+      "navHover": { "type": "color", "value": "rgb(81, 81, 81)", "source": "computed textStyle.color of nav-link hover (raw/components-computed.json)", "description": "Header link colour while the pointer is over it." },
+      "crimson": { "type": "color", "value": "rgb(161, 0, 46)", "source": "painted backgroundColor of the homepage By the numbers band, and borderTopColor of text-field blurred-empty (homepage painted-element probe, raw/components-computed.json)", "description": "The one brand red: the stats band, and the invalid field border." },
+      "slate": { "type": "color", "value": "rgb(112, 115, 129)", "source": "painted backgroundColor of the advertiser contact page (form-page probe, 2026-11-21)", "description": "The advertiser form page ground." }
+    },
+    "font": {
+      "family": {
+        "sans": { "type": "fontFamily", "value": "Helvetica, Arial, sans-serif", "source": "computed fontFamily of body, with the Wix hashed face (wfont_08392a_c1f9747dda3c4c4889c513212) stripped because it is a hosted cut, not a public family name (raw/components-computed.json). The loaded document.font family was wf_c1f9747dda3c4c4889c513212. The public name of that cut was Not captured.", "description": "Fallback stack only. The real face is a Wix-hosted cut whose public name was not readable." }
+      },
+      "scale": {
+        "14": { "type": "dimension", "value": "14px", "source": "nav-link textStyle.fontSize" },
+        "15": { "type": "dimension", "value": "15px", "source": "text-field fontSize" },
+        "16": { "type": "dimension", "value": "16px", "source": "About Us pill and text-link textStyle.fontSize" },
+        "18": { "type": "dimension", "value": "18px", "source": "button (Submit) textStyle.fontSize" },
+        "22": { "type": "dimension", "value": "22px", "source": "drawer-link fontSize at 390" },
+        "74": { "type": "dimension", "value": "74.5px", "source": "homepage 22 Billion figure fontSize, painted-element probe" }
+      },
+      "weight": {
+        "regular": { "type": "fontWeight", "value": 400, "source": "computed fontWeight of nav-link, button, hero-heading and the stats figure" }
+      },
+      "lineHeight": {
+        "nav": { "type": "dimension", "value": "21px", "source": "nav-link textStyle.lineHeight" },
+        "button": { "type": "dimension", "value": "25.2px", "source": "button textStyle.lineHeight" },
+        "figure": { "type": "dimension", "value": "74.5px", "source": "stats figure lineHeight, painted-element probe" }
+      }
+    },
+    "typography": {
+      "nav": { "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.scale.14}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.lineHeight.nav}" }, "$type": "typography", "$extensions": { "source": "nav-link default textStyle (raw/components-computed.json)" }, "$description": "14/21 header links." },
+      "control": { "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.scale.16}", "fontWeight": "{font.weight.regular}", "lineHeight": "22.4px" }, "$type": "typography", "$extensions": { "source": "text-link and About Us pill textStyle" }, "$description": "16/22.4 pill labels." },
+      "button": { "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.scale.18}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.lineHeight.button}" }, "$type": "typography", "$extensions": { "source": "button Submit textStyle" }, "$description": "18/25.2 submit label." },
+      "field": { "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.scale.15}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.scale.15}" }, "$type": "typography", "$extensions": { "source": "text-field fontSize. Line height was the keyword normal and is not a length." }, "$description": "15px field text." },
+      "figure": { "$value": { "fontFamily": "{font.family.sans}", "fontSize": "{font.scale.74}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.lineHeight.figure}" }, "$type": "typography", "$extensions": { "source": "homepage 22 Billion figure" }, "$description": "74.5/74.5 stats figure." }
+    },
+    "radius": {
+      "none": { "type": "dimension", "value": "0px", "source": "borderTopLeftRadius of text-field, nav-link, accordion" },
+      "pill": { "type": "dimension", "value": "24px", "source": "borderRadius of the About Us pill, painted-element probe" },
+      "full": { "type": "dimension", "value": "999px", "source": "borderTopLeftRadius of button Submit" }
+    },
+    "border": {
+      "hairline": { "type": "dimension", "value": "1px", "source": "borderTopWidth of text-field, select and text-area" }
+    },
+    "size": {
+      "header": { "type": "dimension", "value": "77px", "source": "header getBoundingClientRect height 76.7px, rounded, painted-element probe. Derived from that reading." },
+      "button": { "type": "dimension", "value": "46px", "source": "rendered height of button and the About Us pill" },
+      "field": { "type": "dimension", "value": "41px", "source": "rendered height of text-field and select" },
+      "area": { "type": "dimension", "value": "104px", "source": "rendered height of text-area" },
+      "checkbox": { "type": "dimension", "value": "13px", "source": "rendered width and height of checkbox and radio" }
+    },
+    "space": {
+      "fieldX": { "type": "dimension", "value": "16px", "source": "paddingLeft of text-field" },
+      "fieldY": { "type": "dimension", "value": "3px", "source": "paddingTop of text-field" }
+    }
+  },
+  "light": {
+    "$description": "The only theme the public site paints. Section grounds change per page. There is no dark theme switch.",
+    "color": {
+      "bg": {
+        "page": { "type": "color", "value": "{color.white}", "source": "painted background of the homepage root (rgb(255, 255, 255), 1440x5766)" },
+        "hero": { "type": "color", "value": "{color.black}", "source": "painted black band behind the homepage hero photo" },
+        "band": { "type": "color", "value": "{color.crimson}", "source": "By the numbers band" },
+        "form": { "type": "color", "value": "{color.slate}", "source": "advertiser contact page ground" },
+        "footer": { "type": "color", "value": "{color.black}", "source": "footer band on the advertiser contact page" }
+      },
+      "text": {
+        "primary": { "type": "color", "value": "{color.black}", "source": "about heading color and field color" },
+        "onDark": { "type": "color", "value": "{color.white}", "source": "nav-link textStyle.color and hero heading color" },
+        "onAccent": { "type": "color", "value": "{color.white}", "source": "stats figure color on the crimson band" },
+        "inverseHover": { "type": "color", "value": "{color.inkSoft}", "source": "button hover text color" }
+      },
+      "border": {
+        "field": { "type": "color", "value": "{color.white}", "source": "text-field default borderTopColor on the slate form" },
+        "fieldFocus": { "type": "color", "value": "rgb(151, 151, 151)", "source": "text-field focus borderTopColor (raw/components-computed.json)" },
+        "invalid": { "type": "color", "value": "{color.crimson}", "source": "text-field blurred-empty borderTopColor. The field was blurred empty. The form was not submitted." }
+      },
+      "accent": {
+        "default": { "type": "color", "value": "{color.crimson}", "source": "the stats band. No separate hover or pressed accent was measured." }
+      },
+      "nav": {
+        "selected": { "type": "color", "value": "rgb(149, 7, 255)", "source": "drawer-link borderTopColor and drawer textStyle.color for the current Home item at 390 (raw/components-computed.json). Observed in mobile-home-light-menu.png as a purple current item." }
+      }
+    },
+    "component": {
+      "button": {
+        "bg": { "type": "color", "value": "{color.black}", "source": "button default backgroundColor" },
+        "text": { "type": "color", "value": "{color.white}", "source": "button default textStyle.color" },
+        "radius": { "type": "dimension", "value": "{radius.full}", "source": "button borderTopLeftRadius" },
+        "height": { "type": "dimension", "value": "{size.button}", "source": "button rendered height" }
+      },
+      "field": {
+        "bg": { "type": "color", "value": "rgba(174, 192, 248, 0)", "source": "text-field backgroundColor. The fill is transparent. The slate page shows through." },
+        "text": { "type": "color", "value": "{color.black}", "source": "text-field color" },
+        "height": { "type": "dimension", "value": "{size.field}", "source": "text-field rendered height" },
+        "radius": { "type": "dimension", "value": "{radius.none}", "source": "text-field borderTopLeftRadius" }
+      }
+    }
+  }
+}

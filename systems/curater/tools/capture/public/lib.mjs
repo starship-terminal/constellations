@@ -1,7 +1,6 @@
-// Shared helpers for the curater.org public captures (adapted from the
-// curater.org copy of the public-capture kit (copy.ai/canva lineage). Run with
-// PLAYWRIGHT pointing at a Playwright install (index.mjs) when this
-// directory has no node_modules.
+// Shared helpers for the Gauth captures (adapted from the Coursera kit).
+// Run with PLAYWRIGHT pointing at a Playwright install (index.mjs) when this
+// directory has no node_modules of its own.
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -17,139 +16,59 @@ export const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
 export const UA_MOBILE =
   'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1';
-export const BASE = 'https://curater.org';
-export const AUTH_BASE = 'https://curater.org';
+export const BASE = 'https://www.gauth.com';
 
 export const HERE = path.dirname(new URL(import.meta.url).pathname);
 export const REF = path.resolve(HERE, '..', '..', '..'); // systems/<slug>, from tools/capture/public
 export const CROPS = path.join(REF, 'components', 'crops');
 export const RAW = path.join(REF, 'raw');
 
-// cron.com is a static landing page: its CSS is an inline <style> block plus a
-// 3.6KB style.css, all literal declarations apart from the Sign-up pill's
-// --glow/--glow-hover shadow vars. One dark page (#161412 over #0f0d0a).
-// Specs select by class fragment, role, aria-label or text. The site shows no
-// consent banner; closePromo still runs as a safety pass.
-export const M = (name) => `[class*="${name}"]`;
-
-// The per-context patches every page gets: a record of
-// the real devicePixelRatio before app code runs — a page's scripts can make
-// window.devicePixelRatio read 1 while the renderer still paints at the
-// context's deviceScaleFactor (a 780x1688 PNG from a 390x844 viewport).
-// __captureDPR keeps the launch-time value for the screenshot sidecar.
-export async function patch(context) {
-  await context.addInitScript(() => {
-    // automation flag: left as the browser sets it (navigator.webdriver is not masked).
-    try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
-  });
-}
+// Gauth styles its pages with CSS modules: a class is `<file>_<name>__<hash>`.
+// M('catalog_card') selects by the stable part, so a rebuild that changes the
+// hash does not break the kit.
+export const M = (name) => `[class*="${name}__"]`;
 
 export async function launch({ width = 1440, height = 900, mobile = false } = {}) {
   const browser = await chromium.launch();
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion: 'no-preference' });
-  await patch(context);
   return { browser, context };
 }
 
-// Waits out any bot interstitial and reports whether the real document
-// arrived.
-export async function clearChallenge(page, { tries = 12, step = 2000 } = {}) {
-  for (let i = 0; i < tries; i++) {
-    const s = await page.evaluate(() => ({
-      title: document.title,
-      body: (document.body && document.body.innerText || '').slice(0, 400),
-    })).catch(() => ({ title: '', body: '' }));
-    const challenging = /just a moment|attention required/i.test(s.title)
-      || /performing security verification|verify you are human|verifying you are human|checking your browser|unusual activity from your computer network|press ?& ?hold|not a robot|you have been blocked|unable to access/i.test(s.body);
-    if (!challenging && s.body.length > 40) return true;
-    await page.waitForTimeout(step);
+// Every page opens with a promo dialog ("Introducing Gauth Academy"); its own
+// close button dismisses it. `waitUntil: 'networkidle'` never settles on
+// gauth.com, so a page is `load` plus a fixed wait.
+export async function closePromo(page) {
+  const x = page.locator(M('atlas-intro-modal_aw-atlas-intro-modal-close'));
+  for (let i = 0; i < 3; i++) {
+    if (await x.count() && await x.first().isVisible().catch(() => false)) {
+      await x.first().click().catch(() => {});
+      await page.waitForTimeout(800);
+      return true;
+    }
+    await page.waitForTimeout(700);
   }
   return false;
 }
 
-// Hide (never click) any fixed overlay that mounts over the page: a promo or
-// announcement layer. REMOVE-ONLY: hiding never accepts or rejects anything.
-export async function closePromo(page) {
-  for (let i = 0; i < 4; i++) {
-    const hit = await page.evaluate(() => {
-      let n = 0;
-      // Any fixed promo/cookie overlay is hidden, never answered. Hiding
-      // never accepts or rejects anything.
-      document.querySelectorAll('#onetrust-banner-sdk, [id*="onetrust" i], [class*="onetrust" i], [class*="cookie" i], [class*="consent" i], [id*="termly" i], iframe[title*="privacy" i]').forEach((x) => { x.style.setProperty('display', 'none', 'important'); n++; });
-      // iubenda's banner, preferences layer and veil; never answered either.
-      document.querySelectorAll('#iubenda-cs-banner, [id*="iubenda" i], [class*="iubenda" i]').forEach((x) => { x.style.setProperty('display', 'none', 'important'); n++; });
-      // CookieYes (a common consent manager): banner, modal and veil; never answered.
-      document.querySelectorAll('.cky-consent-container, .cky-modal, .cky-overlay, [class*="cky-" i]').forEach((x) => { x.style.setProperty('display', 'none', 'important'); n++; });
-      // A chat-dialog launcher and its dialog: a fixed support widget, hidden
-      // for clean shots, never interacted with.
-      document.querySelectorAll('.chat-dialog-launcher, [class*="chat-dialog" i]').forEach((x) => { x.style.setProperty('display', 'none', 'important'); n++; });
-      // OneTrust's dark page veil sits behind the banner; hide it too. Never
-      // clicked: no consent choice is ever made.
-      document.querySelectorAll('.onetrust-pc-dark-filter, #onetrust-consent-sdk .ot-fade-in').forEach((x) => { x.style.setProperty('display', 'none', 'important'); n++; });
-      // Never answered — hidden only.
-      document.querySelectorAll('[id*="cookie" i][class*="banner" i], [class*="consent" i], [id*="onetrust" i], [id*="hs-banner" i], [id*="cookie-confirmation" i], iframe[src*="hs-banner"]').forEach((x) => { x.style.setProperty('display', 'none', 'important'); n++; });
-      // A dismissible promo strip (a thin banner carrying a "Dismiss" button
-      // that is not part of the header) is hidden, never dismissed by click.
-      for (const x of document.querySelectorAll('div,section,aside')) {
-        const cs = getComputedStyle(x);
-        if (cs.position !== 'fixed' && cs.position !== 'sticky') continue;
-        const r = x.getBoundingClientRect();
-        if (r.height > 160 || r.width < 200) continue;
-        if (x.closest('header') || x.querySelector('header')) continue;
-        if ([...x.querySelectorAll('button')].some((b) => /^\s*Dismiss\s*$/i.test(b.innerText || ''))) { x.style.setProperty('display', 'none', 'important'); n++; }
-      }
-      const box = [...document.querySelectorAll('div,section,aside,[role="dialog"],[role="alertdialog"]')].find((x) => {
-        const t = x.innerText || '';
-        const r = x.getBoundingClientRect();
-        const cs = getComputedStyle(x);
-        return (cs.position === 'fixed' || cs.position === 'sticky')
-          && /cookie|we value privacy|newsletter|subscribe to|sign up for|join to shop|off sitewide|first order/i.test(t)
-          && t.length < 1600 && r.width > 200 && r.height > 60 && (+cs.zIndex > 5 || cs.zIndex === 'auto');
-      });
-      if (box) { box.style.setProperty('display', 'none', 'important'); n++; }
-      document.body && document.body.style.removeProperty('overflow');
-      document.documentElement && document.documentElement.style.removeProperty('overflow');
-      return n;
-    }).catch(() => 0);
-    if (!hit) { await page.waitForTimeout(600); continue; }
-    await page.waitForTimeout(600);
-  }
-  return true;
-}
-
-// Finds a visible element in-page whose trimmed innerText matches reText,
-// tags it with data-m-mark="<tag>" and returns a locator for it. up optionally
-// retargets an ancestor (closest()). Use where getByRole/hasText miss nodes
-// whose text lives in nested spans.
-export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up = null, nth = 0, leaf = true, minW = 0, minH = 0 } = {}) {
-  const ok = await page.evaluate(
-    ([src, flags, s, t, upSel, i, leafOnly, w, h]) => {
-      const re = new RegExp(src, flags);
-      document.querySelectorAll(`[data-m-mark="${t}"]`).forEach((n) => n.removeAttribute('data-m-mark'));
-      const els = [...document.querySelectorAll(s)].filter((n) => {
-        const r = n.getBoundingClientRect();
-        const cs = getComputedStyle(n);
-        return r.width >= w && r.height >= h && r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && cs.opacity !== '0' && re.test((n.innerText || '').trim());
-      });
-      // leaf: a container holding another match is a wrapper, not the target
-      const pool = leafOnly ? els.filter((n) => !els.some((o) => o !== n && n.contains(o))) : els;
-      const el = pool[i] || els[i];
-      if (!el) return false;
-      (upSel ? el.closest(upSel) || el : el).setAttribute('data-m-mark', t);
-      return true;
-    },
-    [reText.source, reText.flags, sel, tag, up, nth, leaf, minW, minH],
-  );
-  return ok ? page.locator(`[data-m-mark="${tag}"]`) : page.locator('[data-m-mark="__none__"]');
-}
-
 export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-  await clearChallenge(page);
+  await page.goto(url, { waitUntil: 'load', timeout: 90000 });
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
+}
+
+// A story's own URL (/atlas/session/<id>) belongs to the browser that opened it and redirects to /atlas
+// anywhere else, so the story is reached the way a visitor reaches it: its card, then Explore.
+export async function openStory(p, title = 'Apollo 11') {
+  // desktop cards are user-cases_card and open a preview with Explore; phone cards are home_caseItem
+  const card = p.locator(`${M('user-cases_card')}, ${M('home_caseItem')}`).filter({ hasText: title }).first();
+  await card.scrollIntoViewIfNeeded();
+  await card.click();
+  await p.waitForTimeout(3000);
+  const explore = p.locator(M('user-cases_exploreButton'));
+  if (await explore.count()) await explore.first().click();
+  await p.waitForTimeout(10000);
 }
 
 // Computed style properties recorded for every component and state.
@@ -175,12 +94,11 @@ export const PROPS = [
 // Reads the computed style of the element, its ::before/::after if they paint
 // anything, the rect, the painted layers in its subtree, a focus ring or fill
 // painted by an ancestor, the first text node's type, and the first svg icon.
-// The element-level reader behind styleOf. Kept standalone so a route whose
-// Playwright locators never resolve (a persistent client-side navigation
-// unsettles every resolve — curater.org/taste redirects to /taste/soon this
-// way) can run the same reader in the main world via styleOfSelector.
-export function styleOfEl(el, props) {
-    const cls = (n) => [...n.classList].map((c) => String(c)).filter((c) => c && !/^x[0-9a-z]{5,8}$/.test(c));
+// Class names are reported without their CSS-module hash.
+export async function styleOf(locator) {
+  return locator.evaluate((el, props) => {
+    const strip = (c) => String(c).replace(/__[A-Za-z0-9_-]{5,6}$/, '');
+    const cls = (n) => [...n.classList].map(strip).filter((c) => !/^x[0-9a-z]{5,8}$/.test(c));
     // A url() in a computed value (a background photo, a cursor) can be a signed URL: recorded as
     // url(…), only data: and #fragment references kept.
     const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
@@ -194,9 +112,7 @@ export function styleOfEl(el, props) {
     const out = {
       tag: el.tagName.toLowerCase(),
       classes: cls(el).slice(0, 4).join(' '),
-      // Phone numbers are banned from committed packages (the cleanup-redact
-      // list): mask them in the recorded label so a recapture stays clean.
-      text: (el.innerText || el.getAttribute('aria-label') || el.getAttribute('placeholder') || '').trim().replace(/\s+/g, ' ').replace(/\+\d[\d -]{6,}\d/g, '[phone]').slice(0, 80),
+      text: (el.innerText || el.getAttribute('aria-label') || el.getAttribute('placeholder') || '').trim().replace(/\s+/g, ' ').slice(0, 80),
       rect: { x: +r.x.toFixed(1), y: +r.y.toFixed(1), w: +r.width.toFixed(2), h: +r.height.toFixed(2) },
       style: pick(cs),
     };
@@ -263,48 +179,26 @@ export function styleOfEl(el, props) {
       out.icon = { w: +sr.width.toFixed(2), h: +sr.height.toFixed(2), fill: scs.fill, stroke: scs.stroke, color: scs.color };
     }
     return out;
-}
-
-export async function styleOf(locator) {
-  return locator.evaluate(styleOfEl, PROPS);
-}
-
-// A selector the main world can resolve: plain CSS, or a `js:` expression
-// evaluated to an element (for "the h4 that says X" or "the largest canvas").
-const pickJs = (sel) => sel.startsWith('js:')
-  ? `(${sel.slice(3)})`
-  : `document.querySelector(${JSON.stringify(sel)})`;
-
-export async function styleOfSelector(page, sel) {
-  return page.evaluate(
-    new Function('props', `const el = ${pickJs(sel)}; return el ? (${styleOfEl.toString()})(el, props) : null`),
-    PROPS,
-  );
+  }, PROPS);
 }
 
 // Element screenshot into components/crops/<name>.png, padded so a focus ring
 // or shadow is not clipped, then quantized to 256 colours. Sticky bars that do
 // not hold the element are hidden for the shot.
-const STICKY = ['header', 'nav[class*="sticky" i]', '[class*="sticky" i] header', 'div[class*="sticky" i]:has(> nav)'].join(', ');
+const STICKY = [M('pc-header_header'), M('catalog_stickyToolbar'), M('math-course-detail_backBar'), M('header_header')].join(', ');
 export async function crop(page, locator, name, pad = 8) {
   fs.mkdirSync(CROPS, { recursive: true });
   const file = path.join(CROPS, `${name}.png`);
-  const hidden = await locator.evaluate((el, { sel, pad }) => {
+  const hidden = await locator.evaluate((el, sel) => {
     let n = 0;
-    const er = el.getBoundingClientRect();
     document.querySelectorAll(sel).forEach((s) => {
       if (s.contains(el) || el.contains(s)) return;
-      // A sticky layer painted behind the target supplies its backdrop; hiding
-      // it turns the crop into the page's plain field.
-      const sr = s.getBoundingClientRect();
-      const overlap = !(sr.right < er.left - pad || sr.left > er.right + pad || sr.bottom < er.top - pad || sr.top > er.bottom + pad);
-      if (overlap) return;
       s.setAttribute('data-m-hidden', '1');
       s.style.setProperty('visibility', 'hidden', 'important');
       n++;
     });
     return n;
-  }, { sel: STICKY, pad });
+  }, STICKY);
   try {
     const box = await locator.boundingBox();
     if (!box) throw new Error(`no box for ${name}`);
@@ -321,57 +215,6 @@ export async function crop(page, locator, name, pad = 8) {
     } else {
       await locator.screenshot({ path: file, animations: 'allow' });
     }
-  } finally {
-    if (hidden) await page.evaluate(() => document.querySelectorAll('[data-m-hidden]').forEach((n) => { n.style.removeProperty('visibility'); n.removeAttribute('data-m-hidden'); }));
-  }
-  quantize(file);
-  return path.relative(REF, file);
-}
-
-// Same crop for a route whose locators never resolve: the element is found
-// through the main world (a `js:` expression or plain CSS), clipped from a
-// viewport screenshot after centring.
-export async function cropSelector(page, sel, name, pad = 8) {
-  fs.mkdirSync(CROPS, { recursive: true });
-  const file = path.join(CROPS, `${name}.png`);
-  const pick = pickJs(sel);
-  const hidden = await page.evaluate(({ sticky, pick, pad }) => {
-    const el = eval(pick);
-    if (!el) return 0;
-    let n = 0;
-    const er = el.getBoundingClientRect();
-    document.querySelectorAll(sticky).forEach((s) => {
-      if (s.contains(el) || el.contains(s)) return;
-      const sr = s.getBoundingClientRect();
-      const overlap = !(sr.right < er.left - pad || sr.left > er.right + pad || sr.bottom < er.top - pad || sr.top > er.bottom + pad);
-      if (overlap) return;
-      s.setAttribute('data-m-hidden', '1');
-      s.style.setProperty('visibility', 'hidden', 'important');
-      n++;
-    });
-    return n;
-  }, { sticky: STICKY, pick, pad });
-  try {
-    const boxOf = () => page.evaluate((pick) => {
-      const el = eval(pick);
-      const r = el.getBoundingClientRect();
-      return { x: r.x, y: r.y, width: r.width, height: r.height };
-    }, pick);
-    let box = await boxOf();
-    if (!box || !box.width) throw new Error(`no box for ${name}`);
-    const vp = page.viewportSize();
-    if (box.y - pad < 0 || box.y + box.height + pad > vp.height) {
-      await page.evaluate((pick) => eval(pick).scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'instant' }), pick);
-      await page.waitForTimeout(350);
-      box = await boxOf();
-    }
-    const clip = {
-      x: Math.max(0, box.x - pad),
-      y: Math.max(0, box.y - pad),
-      width: Math.min(vp.width - Math.max(0, box.x - pad), box.width + 2 * pad),
-      height: Math.min(vp.height - Math.max(0, box.y - pad), box.height + 2 * pad),
-    };
-    await page.screenshot({ path: file, clip, animations: 'allow' });
   } finally {
     if (hidden) await page.evaluate(() => document.querySelectorAll('[data-m-hidden]').forEach((n) => { n.style.removeProperty('visibility'); n.removeAttribute('data-m-hidden'); }));
   }

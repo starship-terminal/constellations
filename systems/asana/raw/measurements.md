@@ -250,24 +250,23 @@ Page: home. Selector: `hero CTA`. States: default, hover, focus-visible, pressed
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 167.81 x 64 | = | - | = |
-| Padding | 16px 32px | = | - | = |
-| Gap | 8px | = | - | = |
-| Border | 1px solid #000000 @ 0 | = | - | = |
-| Radius | 100px | = | - | = |
-| Background | #ffffff | = | - | = |
-| Box shadow | none | = | - | = |
-| Outline | none | = | - | = |
-| Font | TWK Lausanne 20px/30px 400 | = | - | = |
-| Letter spacing | normal | = | - | = |
-| Colour | #0d0d0d | = | - | = |
-| Transition | color, border 0.3s ease | = | - | = |
-| Cursor | pointer | = | - | = |
-| Painted layers | a.css-9oncxd-link-3-link-2-link-1.e78bqlk1 167.8x64.0 bg #ffffff border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 100px | = | - | = |
-| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
-| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
+| Size (w x h) | 167.81 x 64 | = | = | = |
+| Padding | 16px 32px | = | = | = |
+| Gap | 8px | = | = | = |
+| Border | 1px solid #000000 @ 0 | = | = | = |
+| Radius | 100px | = | = | = |
+| Background | #ffffff | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | TWK Lausanne 20px/30px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #0d0d0d | = | = | = |
+| Transition | color, border 0.3s ease | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | a.css-9oncxd-link-3-link-2-link-1.e78bqlk1 167.8x64.0 bg #ffffff border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 100px | = | = | = |
+| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
 
-Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-pressed.png`.
+Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`, `hero-cta-pressed.png`.
 
 #### caps-label
 

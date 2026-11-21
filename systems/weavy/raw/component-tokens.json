@@ -1,0 +1,374 @@
+{
+  "capturedAt": "2026-11-21",
+  "home": {
+    "ctaDefault": {
+      "bg": "rgb(247, 255, 158)",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "40px",
+      "fontFamily": "\"Figma Sans Regular\", Arial, sans-serif",
+      "fontWeight": "400",
+      "lineHeight": "40px",
+      "letterSpacing": "normal",
+      "padding": [
+        "10px",
+        "24.36px",
+        "7.92px",
+        "12.76px"
+      ],
+      "radius": "0px",
+      "shadow": "none",
+      "textTransform": "none",
+      "rect": {
+        "w": 206.3125,
+        "h": 89.90625
+      }
+    },
+    "ctaHover": {
+      "bg": "rgb(37, 37, 37)",
+      "color": "rgb(244, 244, 244)",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "shadow": "none",
+      "opacity": "1"
+    },
+    "ctaFocus": {
+      "outline": "rgb(244, 244, 244) none 0px",
+      "outlineColor": "rgb(244, 244, 244)",
+      "outlineWidth": "0px",
+      "outlineOffset": "1px",
+      "boxShadow": "none"
+    },
+    "linkDefault": {
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "letterSpacing": "0.15px",
+      "textTransform": "uppercase",
+      "textDecoration": "none"
+    },
+    "linkHover": {
+      "color": "rgb(37, 37, 37)",
+      "textDecoration": "none",
+      "opacity": "1"
+    },
+    "h1": [
+      {
+        "tag": "H1",
+        "cls": "heading_h1-hero",
+        "text": "Figma Weave",
+        "fontSize": "94px",
+        "fontWeight": "400",
+        "lineHeight": "79.9px",
+        "letterSpacing": "-4.32px",
+        "fontFamily": "\"Figma Sans Regular\", Arial, sans-serif",
+        "color": "rgb(0, 0, 0)",
+        "h": 79.890625
+      },
+      {
+        "tag": "H1",
+        "cls": "heading_h1-hero",
+        "text": "Artistic Intelligence",
+        "fontSize": "94px",
+        "fontWeight": "400",
+        "lineHeight": "79.9px",
+        "letterSpacing": "-4.32px",
+        "fontFamily": "\"Figma Sans Regular\", Arial, sans-serif",
+        "color": "rgb(0, 0, 0)",
+        "h": 79.890625
+      },
+      {
+        "tag": "H2",
+        "cls": "heading-style-xl",
+        "text": "Use all AI models, together at last",
+        "fontSize": "94px",
+        "fontWeight": "400",
+        "lineHeight": "81.9999px",
+        "letterSpacing": "-4.608px",
+        "fontFamily": "\"Figma Sans Regular\", Arial, sans-serif",
+        "color": "rgb(255, 255, 255)",
+        "h": 328
+      },
+      {
+        "tag": "H2",
+        "cls": "heading-style-xl",
+        "text": "With all the professional tools you rely",
+        "fontSize": "94px",
+        "fontWeight": "400",
+        "lineHeight": "81.9999px",
+        "letterSpacing": "-4.608px",
+        "fontFamily": "\"Figma Sans Regular\", Arial, sans-serif",
+        "color": "rgb(51, 51, 51)",
+        "h": 164
+      },
+      {
+        "tag": "H2",
+        "cls": "heading-style-xl",
+        "text": "With all the professional tools you rely",
+        "fontSize": "94px",
+        "fontWeight": "400",
+        "lineHeight": "81.9999px",
+        "letterSpacing": "-4.608px",
+        "fontFamily": "\"Figma Sans Regular\", Arial, sans-serif",
+        "color": "rgb(51, 51, 51)",
+        "h": 0
+      },
+      {
+        "tag": "H2",
+        "cls": "heading-style-xl heading-style-xl-pricing",
+        "text": "Control the Outcome",
+        "fontSize": "94px",
+        "fontWeight": "400",
+        "lineHeight": "81.9999px",
+        "letterSpacing": "-4.70002px",
+        "fontFamily": "\"Figma Sans Regular\", Arial, sans-serif",
+        "color": "rgb(51, 51, 51)",
+        "h": 164
+      }
+    ],
+    "banner": [
+      {
+        "cls": "banner_component",
+        "text": "Meet Max, our new best-value plan. Subscribe to annual Max b",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(51, 51, 51)",
+        "h": 0
+      },
+      {
+        "cls": "padding-global is-stretch-banner",
+        "text": "Meet Max, our new best-value plan. Subscribe to annual Max b",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(51, 51, 51)",
+        "h": 0
+      },
+      {
+        "cls": "container-banner-top",
+        "text": "Meet Max, our new best-value plan. Subscribe to annual Max b",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(51, 51, 51)",
+        "h": 0
+      },
+      {
+        "cls": "banner_wrapper",
+        "text": "Meet Max, our new best-value plan. Subscribe to annual Max b",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(51, 51, 51)",
+        "h": 0
+      },
+      {
+        "cls": "banner_content",
+        "text": "Meet Max, our new best-value plan. Subscribe to annual Max b",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(51, 51, 51)",
+        "h": 0
+      },
+      {
+        "cls": "banner_rich-text w-richtext",
+        "text": "Meet Max, our new best-value plan. Subscribe to annual Max b",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(51, 51, 51)",
+        "h": 0
+      },
+      {
+        "cls": "banner_cta w-inline-block",
+        "text": "Explore Max \u2192",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(51, 51, 51)",
+        "h": 0
+      },
+      {
+        "cls": "banner_disclaimer-text",
+        "text": "Terms apply.",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(51, 51, 51)",
+        "h": 0
+      }
+    ]
+  },
+  "pricing": {
+    "pricing": {
+      "classes": [
+        {
+          "cls": "section_pricing-hero",
+          "h": 1331.4375,
+          "w": 1440
+        },
+        {
+          "cls": "padding-section-large is-pricing-hero-no-tp-banner",
+          "h": 1223.046875,
+          "w": 1310.40625
+        },
+        {
+          "cls": "pricing-grid is-no-banner",
+          "h": 1122.265625,
+          "w": 1310.40625
+        },
+        {
+          "cls": "pricing_header-wrapper is-v4",
+          "h": 127.59375,
+          "w": 1310.40625
+        },
+        {
+          "cls": "heading-pricing_xl",
+          "h": 57.59375,
+          "w": 1310.40625
+        },
+        {
+          "cls": "pricing_v4-actions",
+          "h": 70,
+          "w": 1310.40625
+        },
+        {
+          "cls": "pricing-controls_wrapper",
+          "h": 46,
+          "w": 1310.40625
+        },
+        {
+          "cls": "pricing_plans-comp",
+          "h": 951.484375,
+          "w": 1310.40625
+        },
+        {
+          "cls": "w-layout-grid pricing_plans is-v4",
+          "h": 951.484375,
+          "w": 1310.40625
+        },
+        {
+          "cls": "pricing_plan-v4",
+          "h": 487.21875,
+          "w": 316.796875
+        },
+        {
+          "cls": "heading-pricing",
+          "h": 57.59375,
+          "w": 61.0625
+        },
+        {
+          "cls": "pricing25_feature-list",
+          "h": 40.171875,
+          "w": 272.671875
+        },
+        {
+          "cls": "pricing25_feature-list",
+          "h": 117.5625,
+          "w": 272.671875
+        }
+      ],
+      "plan": {
+        "cls": "pricing_plan-v4",
+        "text": "Free Explore Figma Weave's possibilities $0 / Month Start fr",
+        "rect": {
+          "w": 316.8,
+          "h": 487.2
+        },
+        "bg": "rgb(245, 245, 246)",
+        "color": "rgb(51, 51, 51)",
+        "fontSize": "14.4px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "letterSpacing": "normal",
+        "fontFamily": "\"Figma Sans Regular\", Arial, sans-serif",
+        "radius": "13px",
+        "border": "1px solid rgb(230, 230, 230)",
+        "shadow": "none",
+        "padding": "21.0731px 21.0731px 21.0731px 21.0731px",
+        "textTransform": "none"
+      },
+      "btn": {
+        "cls": "button max-width-full w-button",
+        "text": "Start free",
+        "rect": {
+          "w": 272.7,
+          "h": 41.6
+        },
+        "bg": "rgb(37, 37, 37)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "14.4px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "letterSpacing": "normal",
+        "fontFamily": "\"Figma Sans Regular\", Arial, sans-serif",
+        "radius": "4px",
+        "border": "0px none rgb(255, 255, 255)",
+        "shadow": "none",
+        "padding": "10.8px 21.6px 10.8px 21.6px",
+        "textTransform": "none"
+      },
+      "badge": {
+        "cls": "billing-toggle_badge",
+        "text": "Save 30%",
+        "rect": {
+          "w": 71.3,
+          "h": 20.9
+        },
+        "bg": "rgb(247, 255, 158)",
+        "color": "rgba(0, 0, 0, 0.9)",
+        "fontSize": "13.0003px",
+        "fontWeight": "400",
+        "lineHeight": "16.9004px",
+        "letterSpacing": "0.09936px",
+        "fontFamily": "Dmsans, Arial, sans-serif",
+        "radius": "2.00016px",
+        "border": "0px none rgba(0, 0, 0, 0.9)",
+        "shadow": "none",
+        "padding": "2.00016px 6.00048px 2.00016px 6.00048px",
+        "textTransform": "none"
+      },
+      "table": null,
+      "th": null,
+      "td": null
+    },
+    "btnHover": {
+      "bg": "rgb(234, 242, 151)",
+      "color": "rgb(47, 47, 51)",
+      "transform": "none",
+      "shadow": "none"
+    },
+    "btnFocus": {
+      "outline": "rgb(33, 33, 38) none 0px",
+      "outlineWidth": "0px",
+      "outlineColor": "rgb(33, 33, 38)",
+      "boxShadow": "none"
+    },
+    "btnPressed": {
+      "bg": "rgb(247, 255, 158)",
+      "color": "rgb(33, 33, 38)",
+      "transform": "none"
+    },
+    "tabHover": null
+  },
+  "help": {
+    "search": {
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(26, 26, 26)",
+      "fontSize": "18px",
+      "radius": "8px",
+      "border": "1px rgba(0, 0, 0, 0)",
+      "outline": "rgba(0, 0, 0, 0) solid 2px",
+      "placeholder": "Search for articles...",
+      "wrapBg": "rgba(0, 0, 0, 0)",
+      "wrapRadius": "0px"
+    },
+    "card": {
+      "bg": "rgb(35, 35, 41)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "8px",
+      "border": "1px rgba(255, 255, 255, 0.15)",
+      "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+      "w": 960,
+      "h": 128,
+      "fontSize": "16px"
+    }
+  },
+  "changelogMenu": {
+    "links": [
+      "All update types",
+      "New model",
+      "Product improvement",
+      "Feature release",
+      "Pricing update",
+      "Model deprecation"
+    ],
+    "openBg": "rgb(255, 255, 255)",
+    "openShadow": "rgba(14, 14, 19, 0.08) 0px 8.064px 24.048px 0px",
+    "openRadius": "5.04px"
+  }
+}

@@ -1,18 +1,31 @@
 # Patterns
 
-Public pages only. Desktop shots are 1440 by 900 at 1x. Phone shots are 390 by 844 at 2x, so the PNGs are 780 by 1688.
+How the public site combines the measured pieces. Screenshots are in [screenshots/](screenshots/).
 
-| Pattern | Where |
-|---|---|
-| Product stage | [home-light-default.png](screenshots/home-light-default.png) and [products-light-default.png](screenshots/products-light-default.png). Black page, white icon header, product photograph, price in TechnoType. The home price computed as 399 USD |
-| Icon header | Same shots. Wordmark, products, store, latest, finder, a Japanese line, and the TE mark. On a black page the labels are `#f1f2f2`. On the store they are black. On the 404 the store icon is green and the latest square is orange |
-| Search | [home-light-search.png](screenshots/home-light-search.png). A rounded field, 10% white, 16.163px radius, 59px tall, over the product stage. The phone menu uses the same fill at 7.8px radius |
-| Store grid | [store-light-default.png](screenshots/store-light-default.png). White page, category links, product tiles, discount pill, strikethrough price, plus. 143 products were listed. Add to cart was not pressed |
-| Product story | [product-light-default.png](screenshots/product-light-default.png) is `/products/ep-35`, the same black stage as home. A store category, `/store/pocket-operators`, is a white grid, not a product detail page |
-| Newsletter | [newsletter-light-default.png](screenshots/newsletter-light-default.png). Centred title, email field, consent checkbox, square subscribe button. The field was focused and left empty. Nothing was submitted |
-| 404 | [not-found-light-default.png](screenshots/not-found-light-default.png). Grey page `#e5e5e5`, yellow document, underlined return link |
-| Phone shell | [mobile-home-light-default.png](screenshots/mobile-home-light-default.png) and [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png). Checkout count, menu, search, product lists, grey join button, footer rows |
+## Shell
 
-## Not entered
+Desktop header is a row of wordmarks and line icons: products, store, latest, finder, and the TE mark. The home header sits on black with off-white type. Store, newsletter and checkout invert the same header to black type on white, and fill the store icon. See [home-light-default.png](screenshots/home-light-default.png) and [store-light-default.png](screenshots/store-light-default.png).
 
-Cart, checkout, payment, and account. The header links to `/store/checkout`. That URL was not opened. No card, no email, no country selection.
+Phone header is a cart count, the TE mark, and a menu control. The menu opens a black full-screen list of products, then store, guides, downloads, support. See [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png).
+
+## Store
+
+Category links sit in one row under the header. Products are large grey tiles (`#f5f5f5`) with the name and price under the tile and a plus for add to cart. A "launch offer" pill sits on some tiles. See [store-light-default.png](screenshots/store-light-default.png).
+
+A product buy page puts a black add-to-cart bar beside the gallery. Sold out is quiet text, not a filled button. See [store-pdp-light-default.png](screenshots/store-pdp-light-default.png).
+
+## Search
+
+Search is a field that drops in over the page. Results are a dark panel: a "store" row of white image cards, then a "pages" list. See [home-light-search.png](screenshots/home-light-search.png) and [home-light-search-results.png](screenshots/home-light-search-results.png).
+
+## Empty cart
+
+Checkout with an empty cart says "your cart is empty." and links to the store, then a featured-products row. No sign-in step. See [checkout-light-default.png](screenshots/checkout-light-default.png).
+
+## Newsletter
+
+A centred form on white: title, one email field, one checkbox, one black subscribe bar. The form was not submitted. See [newsletter-light-default.png](screenshots/newsletter-light-default.png).
+
+## Not present
+
+No destructive confirmation, no toast, no onboarding, no signed-in shell. Form validation was not triggered, because nothing was submitted.

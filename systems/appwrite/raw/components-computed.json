@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "read": "2026-11-10",
+  "read": "2026-11-21",
   "viewport": "1440 x 900 (mobile group 390 x 844), dark theme pinned",
   "tool": "tools/capture/public/measure.mjs",
   "sheets": {
@@ -218,7 +218,9 @@
    "title": "Announcement banner",
    "group": "Shell and navigation",
    "desc": "The strip above the header carrying the current announcement and a dismiss button.",
-   "selector": "div:has(> button[aria-label*=\"ismiss\" i])"
+   "selector": "div:has(> button[aria-label*=\"ismiss\" i])",
+   "missing": true,
+   "recaptureMissed": "2026-11-21"
   },
   "banner-dismiss": {
    "states": {
@@ -612,17 +614,19 @@
    "url": "https://appwrite.io/",
    "title": "Banner dismiss button",
    "group": "Shell and navigation",
-   "selector": "button[aria-label*=\"ismiss\" i]"
+   "selector": "button[aria-label*=\"ismiss\" i]",
+   "missing": true,
+   "recaptureMissed": "2026-11-21"
   },
   "header": {
    "states": {
     "default": {
      "tag": "header",
      "classes": "h-14 min-h-14 items-center gap-1",
-     "text": "Products Solutions Pricing Docs Customers Blog Changelog 57.9K Sign in Sign up",
+     "text": "Products Solutions Pricing Docs Customers Blog Changelog 58.4K Sign in Sign up",
      "rect": {
       "x": 0,
-      "y": 57,
+      "y": 0,
       "w": 1440,
       "h": 56
      },
@@ -649,7 +653,7 @@
       "flexDirection": "row",
       "alignItems": "center",
       "justifyContent": "normal",
-      "gridTemplateColumns": "376.656px 630.688px 376.656px",
+      "gridTemplateColumns": "375.547px 632.906px 375.547px",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
       "borderTopColor": "lab(13.1873 0.517011 -1.80675)",
@@ -747,7 +751,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Top bar",
    "group": "Shell and navigation",
@@ -762,7 +766,7 @@
      "text": "Appwrite",
      "rect": {
       "x": 16,
-      "y": 64.5,
+      "y": 7.5,
       "w": 126,
       "h": 40
      },
@@ -848,7 +852,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Logo",
    "group": "Shell and navigation",
@@ -861,8 +865,8 @@
      "classes": "link-unstyled inline-flex h-9 items-center",
      "text": "Pricing",
      "rect": {
-      "x": 598.3,
-      "y": 66.5,
+      "x": 597.1,
+      "y": 9.5,
       "w": 63.11,
       "h": 36
      },
@@ -956,8 +960,8 @@
      "classes": "link-unstyled inline-flex h-9 items-center",
      "text": "Pricing",
      "rect": {
-      "x": 598.3,
-      "y": 66.5,
+      "x": 597.1,
+      "y": 9.5,
       "w": 63.11,
       "h": 36
      },
@@ -1059,8 +1063,8 @@
      "classes": "link-unstyled inline-flex h-9 items-center",
      "text": "Pricing",
      "rect": {
-      "x": 598.3,
-      "y": 66.5,
+      "x": 597.1,
+      "y": 9.5,
       "w": 63.11,
       "h": 36
      },
@@ -1162,8 +1166,8 @@
      "classes": "link-unstyled inline-flex h-9 items-center",
      "text": "Pricing",
      "rect": {
-      "x": 598.3,
-      "y": 66.5,
+      "x": 597.1,
+      "y": 9.5,
       "w": 63.11,
       "h": 36
      },
@@ -1262,7 +1266,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Nav link",
    "group": "Shell and navigation",
@@ -1276,8 +1280,8 @@
      "classes": "inline-flex h-9 cursor-pointer items-center",
      "text": "Products",
      "rect": {
-      "x": 400.7,
-      "y": 66.5,
+      "x": 399.5,
+      "y": 9.5,
       "w": 93.88,
       "h": 36
      },
@@ -1366,8 +1370,8 @@
      "classes": "inline-flex h-9 cursor-pointer items-center",
      "text": "Products",
      "rect": {
-      "x": 400.7,
-      "y": 66.5,
+      "x": 399.5,
+      "y": 9.5,
       "w": 93.88,
       "h": 36
      },
@@ -1464,8 +1468,8 @@
      "classes": "inline-flex h-9 cursor-pointer items-center",
      "text": "Products",
      "rect": {
-      "x": 400.7,
-      "y": 66.5,
+      "x": 399.5,
+      "y": 9.5,
       "w": 93.88,
       "h": 36
      },
@@ -1562,8 +1566,8 @@
      "classes": "inline-flex h-9 cursor-pointer items-center",
      "text": "Products",
      "rect": {
-      "x": 400.7,
-      "y": 66.5,
+      "x": 399.5,
+      "y": 9.5,
       "w": 93.88,
       "h": 36
      },
@@ -1657,7 +1661,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Nav flyout button",
    "group": "Shell and navigation",
@@ -1671,8 +1675,8 @@
      "classes": "inline-flex h-9 cursor-pointer items-center",
      "text": "Products",
      "rect": {
-      "x": 400.7,
-      "y": 66.5,
+      "x": 399.5,
+      "y": 9.5,
       "w": 93.88,
       "h": 36
      },
@@ -1766,7 +1770,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Nav flyout, open",
    "group": "Shell and navigation",
@@ -1778,18 +1782,18 @@
     "default": {
      "tag": "a",
      "classes": "inline-flex h-9 items-center gap-1.5",
-     "text": "57.9K",
+     "text": "58.4K",
      "rect": {
-      "x": 954.5,
-      "y": 66.5,
-      "w": 76.83,
+      "x": 953.4,
+      "y": 9.5,
+      "w": 79.05,
       "h": 36
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "76.8281px",
+      "width": "79.0469px",
       "height": "36px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -1857,7 +1861,7 @@
      },
      "textStyle": {
       "node": "span",
-      "text": "57.9K",
+      "text": "58.4K",
       "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
       "fontSize": "13px",
       "lineHeight": "19.5px",
@@ -1880,18 +1884,18 @@
     "hover": {
      "tag": "a",
      "classes": "inline-flex h-9 items-center gap-1.5",
-     "text": "57.9K",
+     "text": "58.4K",
      "rect": {
-      "x": 954.5,
-      "y": 66.5,
-      "w": 76.83,
+      "x": 953.4,
+      "y": 9.5,
+      "w": 79.05,
       "h": 36
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "76.8281px",
+      "width": "79.0469px",
       "height": "36px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -1960,14 +1964,14 @@
      "paint": [
       {
        "node": "a.inline-flex.h-9",
-       "size": "76.8x36.0",
+       "size": "79.0x36.0",
        "bg": "rgb(45, 45, 49)",
        "radius": "8px"
       }
      ],
      "textStyle": {
       "node": "span",
-      "text": "57.9K",
+      "text": "58.4K",
       "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
       "fontSize": "13px",
       "lineHeight": "19.5px",
@@ -1990,18 +1994,18 @@
     "focus-visible": {
      "tag": "a",
      "classes": "inline-flex h-9 items-center gap-1.5",
-     "text": "57.9K",
+     "text": "58.4K",
      "rect": {
-      "x": 954.5,
-      "y": 66.5,
-      "w": 76.83,
+      "x": 953.4,
+      "y": 9.5,
+      "w": 79.05,
       "h": 36
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "76.8281px",
+      "width": "79.0469px",
       "height": "36px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2070,7 +2074,7 @@
      "paint": [
       {
        "node": "a.inline-flex.h-9",
-       "size": "76.8x36.0",
+       "size": "79.0x36.0",
        "bg": "rgb(45, 45, 49)",
        "outline": "1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5) offset 1px",
        "radius": "8px"
@@ -2078,7 +2082,7 @@
      ],
      "textStyle": {
       "node": "span",
-      "text": "57.9K",
+      "text": "58.4K",
       "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
       "fontSize": "13px",
       "lineHeight": "19.5px",
@@ -2101,18 +2105,18 @@
     "pressed": {
      "tag": "a",
      "classes": "inline-flex h-9 items-center gap-1.5",
-     "text": "57.9K",
+     "text": "58.4K",
      "rect": {
-      "x": 954.5,
-      "y": 66.5,
-      "w": 76.83,
+      "x": 953.4,
+      "y": 9.5,
+      "w": 79.05,
       "h": 36
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "76.8281px",
+      "width": "79.0469px",
       "height": "36px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2181,14 +2185,14 @@
      "paint": [
       {
        "node": "a.inline-flex.h-9",
-       "size": "76.8x36.0",
+       "size": "79.0x36.0",
        "bg": "rgb(45, 45, 49)",
        "radius": "8px"
       }
      ],
      "textStyle": {
       "node": "span",
-      "text": "57.9K",
+      "text": "58.4K",
       "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
       "fontSize": "13px",
       "lineHeight": "19.5px",
@@ -2210,7 +2214,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "GitHub stars link",
    "group": "Shell and navigation",
@@ -2225,7 +2229,7 @@
      "text": "Sign in",
      "rect": {
       "x": 1267.5,
-      "y": 66.5,
+      "y": 9.5,
       "w": 67.88,
       "h": 36
      },
@@ -2316,7 +2320,7 @@
      "text": "Sign in",
      "rect": {
       "x": 1267.5,
-      "y": 66.5,
+      "y": 9.5,
       "w": 67.88,
       "h": 36
      },
@@ -2408,7 +2412,7 @@
      "text": "Sign in",
      "rect": {
       "x": 1267.5,
-      "y": 66.5,
+      "y": 9.5,
       "w": 67.88,
       "h": 36
      },
@@ -2500,7 +2504,7 @@
      "text": "Sign in",
      "rect": {
       "x": 1267.5,
-      "y": 66.5,
+      "y": 9.5,
       "w": 67.88,
       "h": 36
      },
@@ -2588,7 +2592,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Sign in button",
    "group": "Shell and navigation",
@@ -2603,7 +2607,7 @@
      "text": "Sign up",
      "rect": {
       "x": 1343.4,
-      "y": 66.5,
+      "y": 9.5,
       "w": 72.59,
       "h": 36
      },
@@ -2695,7 +2699,7 @@
      "text": "Sign up",
      "rect": {
       "x": 1343.4,
-      "y": 66.5,
+      "y": 9.5,
       "w": 72.59,
       "h": 36
      },
@@ -2787,7 +2791,7 @@
      "text": "Sign up",
      "rect": {
       "x": 1343.4,
-      "y": 66.5,
+      "y": 9.5,
       "w": 72.59,
       "h": 36
      },
@@ -2880,7 +2884,7 @@
      "text": "Sign up",
      "rect": {
       "x": 1343.4,
-      "y": 66.5,
+      "y": 9.5,
       "w": 72.59,
       "h": 36
      },
@@ -2968,7 +2972,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Sign up button",
    "group": "Shell and navigation",
@@ -3080,7 +3084,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Skip link",
    "group": "Shell and navigation",
@@ -3095,7 +3099,7 @@
      "text": "Breaking We're thrilled to announce Appwrite 2.0",
      "rect": {
       "x": 546.1,
-      "y": 193,
+      "y": 136,
       "w": 347.88,
       "h": 28
      },
@@ -3205,7 +3209,7 @@
      "text": "Breaking We're thrilled to announce Appwrite 2.0",
      "rect": {
       "x": 546.1,
-      "y": 193,
+      "y": 136,
       "w": 347.88,
       "h": 28
      },
@@ -3316,7 +3320,7 @@
      "text": "Breaking We're thrilled to announce Appwrite 2.0",
      "rect": {
       "x": 546.1,
-      "y": 193,
+      "y": 136,
       "w": 347.88,
       "h": 28
      },
@@ -3427,7 +3431,7 @@
      "text": "Breaking We're thrilled to announce Appwrite 2.0",
      "rect": {
       "x": 546.1,
-      "y": 193,
+      "y": 136,
       "w": 347.88,
       "h": 28
      },
@@ -3534,7 +3538,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Announcement pill",
    "group": "Home",
@@ -3549,7 +3553,7 @@
      "text": "The open-source cloud for agents & devs_",
      "rect": {
       "x": 285,
-      "y": 245,
+      "y": 188,
       "w": 870.05,
       "h": 164.14
      },
@@ -3635,7 +3639,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Hero title",
    "group": "Home",
@@ -3650,7 +3654,7 @@
      "text": "Start project",
      "rect": {
       "x": 590.7,
-      "y": 525.1,
+      "y": 468.1,
       "w": 132.94,
       "h": 40
      },
@@ -3742,7 +3746,7 @@
      "text": "Start project",
      "rect": {
       "x": 590.7,
-      "y": 525.1,
+      "y": 468.1,
       "w": 132.94,
       "h": 40
      },
@@ -3834,7 +3838,7 @@
      "text": "Start project",
      "rect": {
       "x": 590.7,
-      "y": 525.1,
+      "y": 468.1,
       "w": 132.94,
       "h": 40
      },
@@ -3927,7 +3931,7 @@
      "text": "Start project",
      "rect": {
       "x": 590.7,
-      "y": 525.1,
+      "y": 468.1,
       "w": 132.94,
       "h": 40
      },
@@ -4015,7 +4019,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Primary CTA",
    "group": "Home",
@@ -4030,7 +4034,7 @@
      "text": "View docs",
      "rect": {
       "x": 731.6,
-      "y": 525.1,
+      "y": 468.1,
       "w": 117.72,
       "h": 40
      },
@@ -4121,7 +4125,7 @@
      "text": "View docs",
      "rect": {
       "x": 731.6,
-      "y": 525.1,
+      "y": 468.1,
       "w": 117.72,
       "h": 40
      },
@@ -4213,7 +4217,7 @@
      "text": "View docs",
      "rect": {
       "x": 731.6,
-      "y": 525.1,
+      "y": 468.1,
       "w": 117.72,
       "h": 40
      },
@@ -4305,7 +4309,7 @@
      "text": "View docs",
      "rect": {
       "x": 731.6,
-      "y": 525.1,
+      "y": 468.1,
       "w": 117.72,
       "h": 40
      },
@@ -4393,7 +4397,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Secondary CTA",
    "group": "Home",
@@ -4404,7 +4408,7 @@
    "states": {
     "default": {
      "tag": "a",
-     "classes": "group flex size-9 items-center",
+     "classes": "home-tool-link group",
      "text": "React",
      "rect": {
       "x": 208,
@@ -4487,7 +4491,7 @@
     },
     "hover": {
      "tag": "a",
-     "classes": "group flex size-9 items-center",
+     "classes": "home-tool-link group",
      "text": "React",
      "rect": {
       "x": 206.2,
@@ -4570,7 +4574,7 @@
     },
     "focus-visible": {
      "tag": "a",
-     "classes": "group flex size-9 items-center",
+     "classes": "home-tool-link group",
      "text": "React",
      "rect": {
       "x": 208,
@@ -4650,7 +4654,7 @@
      },
      "paint": [
       {
-       "node": "a.group.flex",
+       "node": "a.home-tool-link.group",
        "size": "36.0x36.0",
        "outline": "1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5) offset 1px"
       }
@@ -4660,7 +4664,7 @@
     },
     "pressed": {
      "tag": "a",
-     "classes": "group flex size-9 items-center",
+     "classes": "home-tool-link group",
      "text": "React",
      "rect": {
       "x": 206.2,
@@ -4743,7 +4747,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Framework icon button",
    "group": "Home",
@@ -4754,7 +4758,7 @@
    "states": {
     "default": {
      "tag": "a",
-     "classes": "link-unstyled absolute inset-0 z-[1]",
+     "classes": "link-unstyled product-bento-link",
      "text": "Learn more about Auth",
      "rect": {
       "x": 73,
@@ -4846,7 +4850,7 @@
     },
     "hover": {
      "tag": "a",
-     "classes": "link-unstyled absolute inset-0 z-[1]",
+     "classes": "link-unstyled product-bento-link",
      "text": "Learn more about Auth",
      "rect": {
       "x": 73,
@@ -4938,7 +4942,7 @@
     },
     "focus-visible": {
      "tag": "a",
-     "classes": "link-unstyled absolute inset-0 z-[1]",
+     "classes": "link-unstyled product-bento-link",
      "text": "Learn more about Auth",
      "rect": {
       "x": 73,
@@ -5018,7 +5022,7 @@
      },
      "paint": [
       {
-       "node": "a.link-unstyled.absolute",
+       "node": "a.link-unstyled.product-bento-link",
        "size": "430.3x379.0",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(25, 25, 28) 0px 0px 0px 2px, lab(35.8321 1.55474 -5.40724) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
       }
@@ -5037,7 +5041,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Product card",
    "group": "Home",
@@ -5131,7 +5135,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Section headline",
    "group": "Home",
@@ -5146,7 +5150,7 @@
      "text": "Everything your app needs, one subscription_",
      "rect": {
       "x": 336,
-      "y": 169,
+      "y": 112,
       "w": 768,
       "h": 132
      },
@@ -5225,7 +5229,7 @@
     }
    },
    "page": "pricing",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/pricing",
    "title": "Pricing title",
    "group": "Pricing",
@@ -5358,7 +5362,7 @@
     }
    },
    "page": "pricing",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/pricing",
    "title": "Plan card",
    "group": "Pricing",
@@ -5461,7 +5465,7 @@
     }
    },
    "page": "pricing",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/pricing",
    "title": "Plan price",
    "group": "Pricing",
@@ -5874,7 +5878,7 @@
     }
    },
    "page": "pricing",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/pricing",
    "title": "Plan CTA",
    "group": "Pricing",
@@ -6288,7 +6292,7 @@
     }
    },
    "page": "pricing",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/pricing",
    "title": "Enterprise CTA",
    "group": "Pricing",
@@ -6299,37 +6303,37 @@
    "states": {
     "default": {
      "tag": "button",
-     "classes": "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1",
-     "text": "I work with sensitive data and need to sign a BAA. Does Appwrite provide this?",
+     "classes": "flex h-8 w-8 cursor-pointer",
+     "text": "YouTube",
      "rect": {
-      "x": 615.3,
-      "y": 419.9,
-      "w": 720.69,
-      "h": 60
+      "x": 407,
+      "y": 857.4,
+      "w": 32,
+      "h": 32
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "720.688px",
-      "height": "60px",
+      "width": "32px",
+      "height": "32px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
-      "paddingTop": "20px",
+      "paddingTop": "0px",
       "paddingRight": "0px",
-      "paddingBottom": "20px",
+      "paddingBottom": "0px",
       "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "16px",
-      "rowGap": "16px",
-      "columnGap": "16px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "flex-start",
-      "justifyContent": "space-between",
+      "alignItems": "center",
+      "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
@@ -6356,221 +6360,17 @@
       "outlineColor": "oklab(0.447998 0.00407566 -0.0144229 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
-      "fontSize": "14px",
-      "fontWeight": "500",
-      "lineHeight": "20px",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "lab(98.26 0 0)",
+      "color": "lab(65.6464 1.53497 -5.42429)",
       "textDecorationLine": "none",
-      "textDecorationColor": "lab(98.26 0 0)",
+      "textDecorationColor": "lab(65.6464 1.53497 -5.42429)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0.15s",
-      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "textStyle": {
-      "node": "span.pe-4.text-[14px]",
-      "text": "I work with sensitive data and need to s",
-      "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
-      "fontSize": "14px",
-      "lineHeight": "20px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "lab(98.26 0 0)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 16,
-      "h": 16,
-      "fill": "none",
-      "stroke": "lab(65.6464 1.53497 -5.42429)",
-      "color": "lab(65.6464 1.53497 -5.42429)"
-     },
-     "crop": "components/crops/faq-question-default.png",
-     "via": "at rest"
-    },
-    "hover": {
-     "tag": "button",
-     "classes": "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1",
-     "text": "I work with sensitive data and need to sign a BAA. Does Appwrite provide this?",
-     "rect": {
-      "x": 615.3,
-      "y": 419.9,
-      "w": 720.69,
-      "h": 60
-     },
-     "style": {
-      "display": "flex",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "720.688px",
-      "height": "60px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "20px",
-      "paddingRight": "0px",
-      "paddingBottom": "20px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "16px",
-      "rowGap": "16px",
-      "columnGap": "16px",
-      "flexDirection": "row",
-      "alignItems": "flex-start",
-      "justifyContent": "space-between",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "lab(13.1873 0.517011 -1.80675)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "lab(13.1873 0.517011 -1.80675)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "lab(13.1873 0.517011 -1.80675)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "lab(13.1873 0.517011 -1.80675)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "oklab(0.447998 0.00407566 -0.0144229 / 0.5)",
-      "outlineOffset": "0px",
-      "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
-      "fontSize": "14px",
-      "fontWeight": "500",
-      "lineHeight": "20px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "lab(98.26 0 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "lab(98.26 0 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0.15s",
-      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "textStyle": {
-      "node": "span.pe-4.text-[14px]",
-      "text": "I work with sensitive data and need to s",
-      "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
-      "fontSize": "14px",
-      "lineHeight": "20px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "lab(98.26 0 0)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 16,
-      "h": 16,
-      "fill": "none",
-      "stroke": "lab(65.6464 1.53497 -5.42429)",
-      "color": "lab(65.6464 1.53497 -5.42429)"
-     },
-     "crop": "components/crops/faq-question-hover.png",
-     "via": "mouse hover"
-    },
-    "focus-visible": {
-     "tag": "button",
-     "classes": "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1",
-     "text": "I work with sensitive data and need to sign a BAA. Does Appwrite provide this?",
-     "rect": {
-      "x": 615.3,
-      "y": 419.9,
-      "w": 720.69,
-      "h": 60
-     },
-     "style": {
-      "display": "flex",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "720.688px",
-      "height": "60px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "20px",
-      "paddingRight": "0px",
-      "paddingBottom": "20px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "16px",
-      "rowGap": "16px",
-      "columnGap": "16px",
-      "flexDirection": "row",
-      "alignItems": "flex-start",
-      "justifyContent": "space-between",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "lab(35.8321 1.55474 -5.40724)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "lab(35.8321 1.55474 -5.40724)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "lab(35.8321 1.55474 -5.40724)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "lab(35.8321 1.55474 -5.40724)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.447998 0.00407566 -0.0144229 / 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "oklab(0.447998 0.00407566 -0.0144229 / 0.5)",
-      "outlineOffset": "0px",
-      "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
-      "fontSize": "14px",
-      "fontWeight": "500",
-      "lineHeight": "20px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "lab(98.26 0 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "lab(98.26 0 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
+      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
       "transitionDuration": "0.15s",
       "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
       "transitionDelay": "0s",
@@ -6583,67 +6383,143 @@
      },
      "paint": [
       {
-       "node": "button.focus-visible:border-ring.focus-visible:ring-ring/50",
-       "size": "720.7x60.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.447998 0.00407566 -0.0144229 / 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "8px"
+       "node": "span.h-4.w-4",
+       "size": "16.0x16.0",
+       "bg": "lab(65.6464 1.53497 -5.42429)"
       }
      ],
-     "textStyle": {
-      "node": "span.pe-4.text-[14px]",
-      "text": "I work with sensitive data and need to s",
-      "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
-      "fontSize": "14px",
-      "lineHeight": "20px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "lab(98.26 0 0)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 16,
-      "h": 16,
-      "fill": "none",
-      "stroke": "lab(65.6464 1.53497 -5.42429)",
-      "color": "lab(65.6464 1.53497 -5.42429)"
-     },
-     "crop": "components/crops/faq-question-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "crop": "components/crops/faq-question-default.png",
+     "via": "at rest"
     },
-    "pressed": {
+    "hover": {
      "tag": "button",
-     "classes": "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1",
-     "text": "I work with sensitive data and need to sign a BAA. Does Appwrite provide this?",
+     "classes": "flex h-8 w-8 cursor-pointer",
+     "text": "YouTube",
      "rect": {
-      "x": 615.3,
-      "y": 419.9,
-      "w": 720.69,
-      "h": 60
+      "x": 407,
+      "y": 857.4,
+      "w": 32,
+      "h": 32
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "720.688px",
-      "height": "60px",
+      "width": "32px",
+      "height": "32px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
-      "paddingTop": "20px",
+      "paddingTop": "0px",
       "paddingRight": "0px",
-      "paddingBottom": "20px",
+      "paddingBottom": "0px",
       "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "16px",
-      "rowGap": "16px",
-      "columnGap": "16px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "flex-start",
-      "justifyContent": "space-between",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "lab(13.1873 0.517011 -1.80675)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "lab(13.1873 0.517011 -1.80675)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "lab(13.1873 0.517011 -1.80675)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "lab(13.1873 0.517011 -1.80675)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(45, 45, 49)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "oklab(0.447998 0.00407566 -0.0144229 / 0.5)",
+      "outlineOffset": "0px",
+      "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "lab(98.26 0 0)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "lab(98.26 0 0)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+      "transitionDuration": "0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "button.flex.h-8",
+       "size": "32.0x32.0",
+       "bg": "rgb(45, 45, 49)",
+       "radius": "8px"
+      },
+      {
+       "node": "span.h-4.w-4",
+       "size": "16.0x16.0",
+       "bg": "lab(98.26 0 0)"
+      }
+     ],
+     "crop": "components/crops/faq-question-hover.png",
+     "via": "mouse hover"
+    },
+    "focus-visible": {
+     "tag": "button",
+     "classes": "flex h-8 w-8 cursor-pointer",
+     "text": "YouTube",
+     "rect": {
+      "x": 407,
+      "y": 857.4,
+      "w": 32,
+      "h": 32
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "32px",
+      "height": "32px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
@@ -6665,22 +6541,22 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
+      "outlineWidth": "1px",
+      "outlineStyle": "auto",
       "outlineColor": "oklab(0.447998 0.00407566 -0.0144229 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
-      "fontSize": "14px",
-      "fontWeight": "500",
-      "lineHeight": "20px",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "lab(98.26 0 0)",
+      "color": "lab(65.6464 1.53497 -5.42429)",
       "textDecorationLine": "none",
-      "textDecorationColor": "lab(98.26 0 0)",
+      "textDecorationColor": "lab(65.6464 1.53497 -5.42429)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
+      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
       "transitionDuration": "0.15s",
       "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
       "transitionDelay": "0s",
@@ -6691,31 +6567,121 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "textStyle": {
-      "node": "span.pe-4.text-[14px]",
-      "text": "I work with sensitive data and need to s",
+     "paint": [
+      {
+       "node": "button.flex.h-8",
+       "size": "32.0x32.0",
+       "outline": "1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5) offset 0px",
+       "radius": "8px"
+      },
+      {
+       "node": "span.h-4.w-4",
+       "size": "16.0x16.0",
+       "bg": "lab(65.6464 1.53497 -5.42429)"
+      }
+     ],
+     "crop": "components/crops/faq-question-focus-visible.png",
+     "via": "Shift+Tab, Tab"
+    },
+    "pressed": {
+     "tag": "button",
+     "classes": "flex h-8 w-8 cursor-pointer",
+     "text": "YouTube",
+     "rect": {
+      "x": 407,
+      "y": 857.4,
+      "w": 32,
+      "h": 32
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "32px",
+      "height": "32px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "lab(13.1873 0.517011 -1.80675)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "lab(13.1873 0.517011 -1.80675)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "lab(13.1873 0.517011 -1.80675)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "lab(13.1873 0.517011 -1.80675)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(45, 45, 49)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "oklab(0.447998 0.00407566 -0.0144229 / 0.5)",
+      "outlineOffset": "0px",
       "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
-      "fontSize": "14px",
-      "lineHeight": "20px",
-      "fontWeight": "500",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
       "letterSpacing": "normal",
+      "textTransform": "none",
       "color": "lab(98.26 0 0)",
       "textDecorationLine": "none",
-      "textTransform": "none"
+      "textDecorationColor": "lab(98.26 0 0)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+      "transitionDuration": "0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
      },
-     "icon": {
-      "w": 16,
-      "h": 16,
-      "fill": "none",
-      "stroke": "lab(65.6464 1.53497 -5.42429)",
-      "color": "lab(65.6464 1.53497 -5.42429)"
-     },
+     "paint": [
+      {
+       "node": "button.flex.h-8",
+       "size": "32.0x32.0",
+       "bg": "rgb(45, 45, 49)",
+       "radius": "8px"
+      },
+      {
+       "node": "span.h-4.w-4",
+       "size": "16.0x16.0",
+       "bg": "lab(98.26 0 0)"
+      }
+     ],
      "crop": "components/crops/faq-question-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
    },
    "page": "pricing",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/pricing",
    "title": "FAQ accordion button",
    "group": "Pricing",
@@ -6725,37 +6691,37 @@
    "states": {
     "opened": {
      "tag": "button",
-     "classes": "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1",
-     "text": "I work with sensitive data and need to sign a BAA. Does Appwrite provide this?",
+     "classes": "flex h-8 w-8 cursor-pointer",
+     "text": "YouTube",
      "rect": {
-      "x": 615.3,
-      "y": 355.9,
-      "w": 720.69,
-      "h": 60
+      "x": 407,
+      "y": 857.4,
+      "w": 32,
+      "h": 32
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "720.688px",
-      "height": "60px",
+      "width": "32px",
+      "height": "32px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
-      "paddingTop": "20px",
+      "paddingTop": "0px",
       "paddingRight": "0px",
-      "paddingBottom": "20px",
+      "paddingBottom": "0px",
       "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "16px",
-      "rowGap": "16px",
-      "columnGap": "16px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "flex-start",
-      "justifyContent": "space-between",
+      "alignItems": "center",
+      "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
@@ -6773,7 +6739,7 @@
       "borderTopRightRadius": "8px",
       "borderBottomRightRadius": "8px",
       "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(45, 45, 49)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -6782,9 +6748,9 @@
       "outlineColor": "oklab(0.447998 0.00407566 -0.0144229 / 0.5)",
       "outlineOffset": "0px",
       "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
-      "fontSize": "14px",
-      "fontWeight": "500",
-      "lineHeight": "20px",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "lab(98.26 0 0)",
@@ -6792,7 +6758,7 @@
       "textDecorationColor": "lab(98.26 0 0)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
+      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
       "transitionDuration": "0.15s",
       "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
       "transitionDelay": "0s",
@@ -6803,31 +6769,25 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "textStyle": {
-      "node": "span.pe-4.text-[14px]",
-      "text": "I work with sensitive data and need to s",
-      "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
-      "fontSize": "14px",
-      "lineHeight": "20px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "lab(98.26 0 0)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 16,
-      "h": 16,
-      "fill": "none",
-      "stroke": "lab(65.6464 1.53497 -5.42429)",
-      "color": "lab(65.6464 1.53497 -5.42429)"
-     },
+     "paint": [
+      {
+       "node": "button.flex.h-8",
+       "size": "32.0x32.0",
+       "bg": "rgb(45, 45, 49)",
+       "radius": "8px"
+      },
+      {
+       "node": "span.h-4.w-4",
+       "size": "16.0x16.0",
+       "bg": "lab(98.26 0 0)"
+      }
+     ],
      "crop": "components/crops/faq-open-opened.png",
      "via": "own toggle"
     }
    },
    "page": "pricing",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/pricing",
    "title": "FAQ accordion, open",
    "group": "Pricing",
@@ -7177,7 +7137,7 @@
     }
    },
    "page": "pricing",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/pricing",
    "title": "Compare plans link",
    "group": "Pricing",
@@ -7192,7 +7152,7 @@
      "text": "Search documentation... ⌘ K",
      "rect": {
       "x": 536,
-      "y": 66.5,
+      "y": 9.5,
       "w": 368,
       "h": 36
      },
@@ -7315,7 +7275,7 @@
      "text": "Search documentation... ⌘ K",
      "rect": {
       "x": 536,
-      "y": 66.5,
+      "y": 9.5,
       "w": 368,
       "h": 36
      },
@@ -7438,7 +7398,7 @@
      "text": "Search documentation... ⌘ K",
      "rect": {
       "x": 536,
-      "y": 66.5,
+      "y": 9.5,
       "w": 368,
       "h": 36
      },
@@ -7562,7 +7522,7 @@
      "text": "Search documentation... ⌘ K",
      "rect": {
       "x": 536,
-      "y": 66.5,
+      "y": 9.5,
       "w": 368,
       "h": 36
      },
@@ -7681,7 +7641,7 @@
     }
    },
    "page": "docs",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/docs/quick-starts/react",
    "title": "Docs search button",
    "group": "Docs",
@@ -7696,7 +7656,7 @@
      "text": "Tutorials",
      "rect": {
       "x": 12,
-      "y": 229.5,
+      "y": 172.5,
       "w": 195,
       "h": 31.5
      },
@@ -7798,7 +7758,7 @@
      "text": "Tutorials",
      "rect": {
       "x": 12,
-      "y": 229.5,
+      "y": 172.5,
       "w": 195,
       "h": 31.5
      },
@@ -7908,7 +7868,7 @@
      "text": "Tutorials",
      "rect": {
       "x": 12,
-      "y": 229.5,
+      "y": 172.5,
       "w": 195,
       "h": 31.5
      },
@@ -8018,7 +7978,7 @@
      "text": "Tutorials",
      "rect": {
       "x": 12,
-      "y": 229.5,
+      "y": 172.5,
       "w": 195,
       "h": 31.5
      },
@@ -8124,7 +8084,7 @@
     }
    },
    "page": "docs",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/docs/quick-starts/react",
    "title": "Docs sidebar link",
    "group": "Docs",
@@ -8138,7 +8098,7 @@
      "text": "Home",
      "rect": {
       "x": 12,
-      "y": 129,
+      "y": 72,
       "w": 195,
       "h": 31.5
      },
@@ -8236,7 +8196,7 @@
     }
    },
    "page": "docs",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/docs/quick-starts/react",
    "title": "Docs sidebar item, current",
    "group": "Docs",
@@ -8351,7 +8311,7 @@
     }
    },
    "page": "docs",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/docs/quick-starts/react",
    "title": "Code block",
    "group": "Docs",
@@ -8454,7 +8414,7 @@
     }
    },
    "page": "docs",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/docs/quick-starts/react",
    "title": "Inline code",
    "group": "Docs",
@@ -8468,7 +8428,7 @@
      "text": "QUICK START",
      "rect": {
       "x": 488,
-      "y": 211,
+      "y": 154,
       "w": 97.53,
       "h": 15
      },
@@ -8551,7 +8511,7 @@
      "text": "QUICK START",
      "rect": {
       "x": 488,
-      "y": 211,
+      "y": 154,
       "w": 97.53,
       "h": 15
      },
@@ -8634,7 +8594,7 @@
      "text": "QUICK START",
      "rect": {
       "x": 488,
-      "y": 211,
+      "y": 154,
       "w": 97.53,
       "h": 15
      },
@@ -8724,7 +8684,7 @@
      "text": "QUICK START",
      "rect": {
       "x": 488,
-      "y": 211,
+      "y": 154,
       "w": 97.53,
       "h": 15
      },
@@ -8803,7 +8763,7 @@
     }
    },
    "page": "docs",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/docs/quick-starts/react",
    "title": "Prose link",
    "group": "Docs",
@@ -8817,7 +8777,7 @@
      "text": "Start with React_",
      "rect": {
       "x": 488,
-      "y": 240,
+      "y": 183,
       "w": 599,
       "h": 45
      },
@@ -8896,7 +8856,7 @@
     }
    },
    "page": "docs",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/docs/quick-starts/react",
    "title": "Docs page title",
    "group": "Docs",
@@ -9008,7 +8968,7 @@
     }
    },
    "page": "docs",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/docs/quick-starts/react",
    "title": "Docs section heading",
    "group": "Docs",
@@ -9022,7 +8982,7 @@
      "text": "Blog_",
      "rect": {
       "x": 104,
-      "y": 193,
+      "y": 136,
       "w": 768,
       "h": 72
      },
@@ -9101,7 +9061,7 @@
     }
    },
    "page": "blog",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/blog",
    "title": "Blog title",
    "group": "Blog",
@@ -9329,7 +9289,7 @@
     }
    },
    "page": "blog",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/blog",
    "title": "Post card",
    "group": "Blog",
@@ -9423,7 +9383,7 @@
     }
    },
    "page": "blog",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/blog",
    "title": "Post headline",
    "group": "Blog",
@@ -9854,7 +9814,7 @@
     }
    },
    "page": "blog",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/blog",
    "title": "Author link",
    "group": "Blog",
@@ -10357,7 +10317,7 @@
     }
    },
    "page": "blog",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/blog",
    "title": "Blog search button",
    "group": "Blog",
@@ -10755,7 +10715,7 @@
     }
    },
    "page": "blog",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/blog",
    "title": "Category link",
    "group": "Blog",
@@ -10952,7 +10912,7 @@
     }
    },
    "page": "signin",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/sign-in",
    "title": "Sign-in card",
    "group": "Sign-in gate",
@@ -11046,7 +11006,7 @@
     }
    },
    "page": "signin",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/sign-in",
    "title": "Sign-in title",
    "group": "Sign-in gate",
@@ -11499,7 +11459,7 @@
     }
    },
    "page": "signin",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/sign-in",
    "title": "OAuth button",
    "group": "Sign-in gate",
@@ -11625,14 +11585,14 @@
      "rect": {
       "x": 357,
       "y": 170,
-      "w": 278.98,
+      "w": 278.97,
       "h": 36
      },
      "style": {
       "display": "inline-flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "278.984px",
+      "width": "278.969px",
       "height": "36px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -11953,7 +11913,7 @@
     }
    },
    "page": "signin",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/sign-in",
    "title": "OAuth icon button",
    "group": "Sign-in gate",
@@ -12359,7 +12319,7 @@
     }
    },
    "page": "signin",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/sign-in",
    "title": "Google button",
    "group": "Sign-in gate",
@@ -12765,7 +12725,7 @@
     }
    },
    "page": "signin",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/sign-in",
    "title": "Passkey button",
    "group": "Sign-in gate",
@@ -12967,113 +12927,15 @@
       "fontSize": "14px"
      },
      "crop": "components/crops/email-input-focused.png",
-     "via": "clicked into the field"
-    },
-    "filled": {
-     "tag": "input",
-     "classes": "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground",
-     "text": "Your email",
-     "rect": {
-      "x": 313,
-      "y": 444,
-      "w": 367,
-      "h": 36
-     },
-     "style": {
-      "display": "block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "367px",
-      "height": "36px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "4px",
-      "paddingRight": "12px",
-      "paddingBottom": "4px",
-      "paddingLeft": "12px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "1px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "lab(35.8321 1.55474 -5.40724)",
-      "borderRightWidth": "1px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "lab(35.8321 1.55474 -5.40724)",
-      "borderBottomWidth": "1px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "lab(35.8321 1.55474 -5.40724)",
-      "borderLeftWidth": "1px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "lab(35.8321 1.55474 -5.40724)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "oklab(0.298707 0.00198022 -0.00687116 / 0.3)",
-      "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.447998 0.00407566 -0.0144229 / 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "oklab(0.447998 0.00407566 -0.0144229 / 0.5)",
-      "outlineOffset": "0px",
-      "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "20px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "lab(98.26 0 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "lab(98.26 0 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "color, box-shadow",
-      "transitionDuration": "0.15s",
-      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
-      "transitionDelay": "0s",
-      "cursor": "text",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "clip",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "input.file:text-foreground.placeholder:text-muted-foreground",
-       "size": "367.0x36.0",
-       "border": "T:1px solid lab(35.8321 1.55474 -5.40724) | R:1px solid lab(35.8321 1.55474 -5.40724) | B:1px solid lab(35.8321 1.55474 -5.40724) | L:1px solid lab(35.8321 1.55474 -5.40724)",
-       "bg": "oklab(0.298707 0.00198022 -0.00687116 / 0.3)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.447998 0.00407566 -0.0144229 / 0.5) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "8px"
-      }
-     ],
-     "placeholder": {
-      "color": "lab(65.6464 1.53497 -5.42429)",
-      "opacity": "1",
-      "fontSize": "14px"
-     },
-     "crop": "components/crops/email-input-filled.png",
-     "via": "typed \"dev@example.com\", then deleted; nothing sent"
+     "via": "element.focus(), nothing typed"
     }
    },
    "page": "signin",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/sign-in",
    "title": "Email field",
    "group": "Sign-in gate",
-   "desc": "Text was typed and deleted; the form was never submitted.",
+   "desc": "Focused with element.focus(). Nothing was typed and the form was never submitted.",
    "selector": "input[placeholder=\"Your email\"]"
   },
   "password-input": {
@@ -13271,11 +13133,11 @@
       "fontSize": "14px"
      },
      "crop": "components/crops/password-input-focused.png",
-     "via": "clicked into the field"
+     "via": "element.focus(), nothing typed"
     }
    },
    "page": "signin",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/sign-in",
    "title": "Password field",
    "group": "Sign-in gate",
@@ -13654,7 +13516,7 @@
     }
    },
    "page": "signin",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/sign-in",
    "title": "Show-password toggle",
    "group": "Sign-in gate",
@@ -14004,7 +13866,7 @@
     }
    },
    "page": "signin",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/sign-in",
    "title": "Forgot-password link",
    "group": "Sign-in gate",
@@ -14383,7 +14245,7 @@
     }
    },
    "page": "signin",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/sign-in",
    "title": "Login button",
    "group": "Sign-in gate",
@@ -14733,7 +14595,7 @@
     }
    },
    "page": "signin",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/sign-in",
    "title": "Legal link",
    "group": "Sign-in gate",
@@ -14747,7 +14609,7 @@
      "text": "Sign in Sign up",
      "rect": {
       "x": 0,
-      "y": 57,
+      "y": 0,
       "w": 390,
       "h": 56
      },
@@ -14872,7 +14734,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Mobile top bar",
    "group": "Mobile (390 wide)",
@@ -14886,7 +14748,7 @@
      "text": "Open website navigation",
      "rect": {
       "x": 12,
-      "y": 66.5,
+      "y": 9.5,
       "w": 36,
       "h": 36
      },
@@ -14976,7 +14838,7 @@
      "text": "Open website navigation",
      "rect": {
       "x": 12,
-      "y": 66.5,
+      "y": 9.5,
       "w": 36,
       "h": 36
      },
@@ -15066,7 +14928,7 @@
      "text": "Open website navigation",
      "rect": {
       "x": 12,
-      "y": 66.5,
+      "y": 9.5,
       "w": 36,
       "h": 36
      },
@@ -15164,7 +15026,7 @@
      "text": "Open website navigation",
      "rect": {
       "x": 12,
-      "y": 66.5,
+      "y": 9.5,
       "w": 36,
       "h": 36
      },
@@ -15250,7 +15112,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Mobile menu button",
    "group": "Mobile (390 wide)",
@@ -15264,7 +15126,7 @@
      "text": "Open website navigation",
      "rect": {
       "x": 12,
-      "y": 66.5,
+      "y": 9.5,
       "w": 36,
       "h": 36
      },
@@ -15350,7 +15212,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Mobile menu, open",
    "group": "Mobile (390 wide)",
@@ -15465,7 +15327,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Mobile nav link",
    "group": "Mobile (390 wide)",
@@ -15845,7 +15707,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/",
    "title": "Mobile primary CTA",
    "group": "Mobile (390 wide)",
@@ -16041,7 +15903,7 @@
    "group": "Footer",
    "selector": "footer",
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/"
   },
   "footer-link": {
@@ -16390,7 +16252,7 @@
    "group": "Footer",
    "selector": "footer a",
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/"
   },
   "footer-social": {
@@ -16739,7 +16601,7 @@
    "group": "Footer",
    "selector": "footer a[aria-label]",
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-21",
    "url": "https://appwrite.io/"
   }
  }

@@ -1,6 +1,6 @@
 # Cron (cron.com)
 
-Cron's public signed-out surface — the dark marketing home and the light Next.js content pages at /blog, /changelog and a /blog/<post> article — captured 2026-11-12 in headless Chromium at 1440 x 900, plus the home and blog at 390 x 844. Cron is now Notion Calendar (the banner says so); the app behind Login and Sign up was never entered, and nothing was submitted.
+Cron's public signed-out surface — the dark marketing home and the light Next.js content pages at /blog, /changelog and a /blog/<post> article — captured 2026-11-12 in headless Chromium at 1440 x 900, plus the home and blog at 390 x 844. A 2026-11-21 Playwright pass rephotographed those pages and mapped every homepage control. Cron is now Notion Calendar. Login, Sign up, and Web app open Notion walls. Those walls were photographed and not submitted. The Notion app was not captured as Cron.
 
 ## Brief
 
@@ -84,17 +84,19 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 | [style-guide.html](style-guide.html) | every token rendered, with a reconstructed mock of the dark header |
 | [components.md](components.md) | the discovery list and 28 measured component entries (58 state crops; post-video recorded as a miss) |
 | [patterns.md](patterns.md) | page layouts |
+| [site-tree.md](site-tree.md) | which public control opens which page or wall |
+| [login-review.json](login-review.json) | the 2026-11-21 walk: walls opened, screenshots, and what was not submitted |
 | [DESIGN.md](DESIGN.md) | the generated one-theme export |
 | [icon.png](icon.png) | the Cron / Notion Calendar app icon, 128px (Git LFS) |
 | [components/](components) | `crops/` — quantized state crops at 2x |
-| [screenshots/](screenshots) | 13 quantized captures (desktop 1440, mobile 390@2x, full-page bounded at 8 chunks) |
+| [screenshots/](screenshots) | 27 quantized captures: the 2026-11-21 public pages (viewport and full), the Notion login and signup walls, and the legacy Cron signup and download pages |
 | [raw/](raw) | `css-vars.json` (the var harvest), `components-computed.json`, `component-tokens.json`, `measurements.md` |
 | [tools/](tools) | the builders and capture scripts that produced this package |
 
 ## Boundaries
 
 - **Captured with the automation flag masked.** The public capture (`tools/capture/public/`) hid `navigator.webdriver` from every page, so the committed readings and screenshots it took were taken past that mask. The scripts no longer hide it (edited, not run); a recapture that meets a bot check records it as a boundary.
-- The Cron app (the calendar, its Notion Calendar successor, docs, the demo) sits behind Login/Sign up and was never reached.
+- The Cron app sits behind Login and Sign up. On 2026-11-21 those controls opened Notion walls (https://app.notion.com/login, https://app.notion.com/signup, and a Notion Calendar login from Web app). The walls were photographed. No field was filled. The Notion app was not captured as Cron. The map is [site-tree.md](site-tree.md).
 - /changelog reports a 113,351px scroll height; the full-page capture is bounded at 112,000px — the tail is a documented boundary.
 - Disabled, error and loading states never appeared on the public surface.
 - The mobile menu was opened/closed locally; its links were never followed.

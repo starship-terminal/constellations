@@ -1,250 +1,227 @@
 #!/usr/bin/env python3
-"""Write tokens.json from raw/foundations.json.
+"""Build tokens.json from Slack's measured public styles.
 
-Values were read with getComputedStyle on slack.com on 2026-11-19. This
-script does not invent colours. Re-run only after updating the raw file.
+Sources, read on 2026-11-21 from https://slack.com/intl/en-sg/:
+  raw/components-computed.json   computed styles of public controls
+  raw/css-vars.json              declared custom properties (hashed colour
+                                 names plus font families)
+  raw/page-colors.json           body and section backgrounds
+
+The public site painted light only. There is no dark semantic set.
+Unread values stay out. Edit the raw inputs, never tokens.json.
 """
 import json
 import pathlib
+import re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
-RAW = json.loads((HERE / "raw" / "foundations.json").read_text())
-OUT = HERE / "tokens.json"
+RAW = HERE / "raw"
+COMP = json.loads((RAW / "components-computed.json").read_text())
+VARS = json.loads((RAW / "css-vars.json").read_text())
 
 
-def tok(type_, value, source):
-    return {"$type": type_, "$value": value, "$extensions": {"source": source}}
+def rgb_to_hex(value):
+    value = value.strip()
+    m = re.fullmatch(r"rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)(?:\s*,\s*([\d.]+))?\s*\)", value)
+    if not m:
+        if re.fullmatch(r"#[0-9a-fA-F]{3,8}", value):
+            return value.lower()
+        raise ValueError("not a colour: " + value)
+    r, g, b, a = m.groups()
+    if a is None or float(a) == 1:
+        return "#%02x%02x%02x" % (int(r), int(g), int(b))
+    return "rgba(%d, %d, %d, %g)" % (int(r), int(g), int(b), float(a))
 
 
-def color(value, source):
-    return tok("color", value, source)
+def dim(value):
+    value = str(value).strip()
+    if re.fullmatch(r"-?\d+(\.\d+)?px", value):
+        num = float(value[:-2])
+        return ("%gpx" % round(num, 2))
+    raise ValueError("not a dimension: " + value)
 
 
-def dim(value, source):
-    return tok("dimension", value, source)
+def state(key, name="default"):
+    entry = COMP["components"][key]
+    if entry.get("miss"):
+        raise KeyError(key + " was not measured")
+    st = entry["states"].get(name)
+    if not st or st.get("error") or st.get("miss"):
+        raise KeyError(f"{key}.{name} was not measured")
+    return st
 
 
-def build():
-    src = RAW["source"]
-    c = RAW["colors"]
-    fonts = RAW["fonts"]
-    brand = {k: color(v, src + " --dt_color-brand-core-" + k.replace("_", "-"))
-             for k, v in c["brand"].items()}
-    semantic = {k: color(v, src + " Slack Kit " + k)
-                for k, v in c["semantic"].items()}
-    marketing = {k: color(v, src + " marketing computed " + k)
-                 for k, v in c["marketing"].items()}
-    core = {
-        "color": {
-            "brand": brand,
-            "semantic": semantic,
-            "marketing": marketing,
-        },
-        "font": {
-            "family": {
-                "marketingHeading": tok("fontFamily", fonts["marketingHeading"], src + " --font-family-heading"),
-                "marketingBody": tok("fontFamily", fonts["marketingBody"], src + " --font-family-body"),
-                "authBody": tok("fontFamily", fonts["authBody"], src + " sign-in body font-family"),
-                "mono": tok("fontFamily", fonts["mono"], src + " --font-family-monospace"),
-            },
-            "weight": {
-                "regular": tok("fontWeight", 400, src + " body font-weight"),
-                "semibold": tok("fontWeight", 600, src + " pricing strike and badge font-weight"),
-                "bold": tok("fontWeight", 700, src + " button and h1 font-weight"),
-            },
-            "size": {
-                "badge": dim("10px", src + " pricing promo pill font-size"),
-                "button": dim("14px", src + " marketing .c-button font-size"),
-                "nav": dim("15px", src + " nav trigger and sign-in body font-size"),
-                "body": dim("16px", src + " marketing body font-size"),
-                "lede": dim("18px", src + " home lede and sign-in subhead font-size"),
-                "authButton": dim("18px", src + " sign-in button font-size"),
-                "pricingLede": dim("20px", src + " pricing .c-type-paragraph-hero font-size"),
-                "price": dim("28px", src + " pricing .plan-free-price font-size"),
-                "heroPhone": dim("32px", src + " home h1 at 390px"),
-                "hero": dim("48px", src + " home h1 and sign-in h1 at 1169px"),
-                "section": dim("50px", src + " home h2 and pricing h1 at 1169px"),
-            },
+def color(path, key, prop, st="default"):
+    raw = state(key, st)[prop]
+    return {
+        "$value": rgb_to_hex(raw),
+        "$type": "color",
+        "$extensions": {"source": f"Measured computed {prop} on {key} {st}, {COMP['source']}, raw/components-computed.json"},
+    }
+
+
+def dimension(path, key, prop, st="default"):
+    raw = state(key, st)[prop]
+    return {
+        "$value": dim(raw),
+        "$type": "dimension",
+        "$extensions": {"source": f"Measured computed {prop} on {key} {st}, {COMP['source']}, raw/components-computed.json"},
+    }
+
+
+def font_family(name):
+    raw = VARS["resolved"]["light"][name]["raw"]
+    return {
+        "$value": raw,
+        "$type": "fontFamily",
+        "$extensions": {"source": f"Measured css-var {name} resolved on the slack.com probe, raw/css-vars.json"},
+    }
+
+
+def typography(role, key, family_token):
+    st = state(key)
+    size = dim(st["fontSize"])
+    line = dim(st["lineHeight"]) if re.fullmatch(r"-?\d+(\.\d+)?px", str(st["lineHeight"])) else None
+    weight = int(float(st["fontWeight"]))
+    letter = st.get("letterSpacing")
+    value = {
+        "fontFamily": family_token,
+        "fontSize": size,
+        "fontWeight": weight,
+    }
+    if line:
+        value["lineHeight"] = line
+    if letter and letter != "normal" and re.fullmatch(r"-?\d+(\.\d+)?px", letter):
+        value["letterSpacing"] = dim(letter)
+    return {
+        "$value": value,
+        "$type": "typography",
+        "$extensions": {"source": f"Measured computed type on {key} default, {COMP['source']}, raw/components-computed.json"},
+    }
+
+
+primary = color("accent", "button-primary", "backgroundColor")
+primary_hover = color("accentHover", "button-primary", "backgroundColor", "hover")
+on_accent = color("onAccent", "button-primary", "color")
+text = color("text", "link-nav", "color")
+ink = color("ink", "heading-display", "color")
+link = color("link", "menu-link", "color")
+link_hover = color("linkHover", "menu-link", "color", "hover")
+field_border = color("fieldBorder", "text-field", "borderTopColor")
+focus = color("focus", "button-primary", "outlineColor", "focus-visible")
+page_bg = {
+    "$value": "#ffffff",
+    "$type": "color",
+    "$extensions": {"source": "Measured: body background was transparent and the painted page behind the hero is white in screenshots/home-light-default.png; section aubergine rgb(72, 26, 84) is light.surface.aubergine from raw/page-colors.json"},
+}
+aubergine = {
+    "$value": "#481a54",
+    "$type": "color",
+    "$extensions": {"source": "Measured computed backgroundColor rgb(72, 26, 84) on a homepage section, raw/page-colors.json"},
+}
+sidebar = {
+    "$value": rgb_to_hex(VARS["resolved"]["light"]["--sidebar-color"]["value"]),
+    "$type": "color",
+    "$extensions": {"source": "Measured css-var --sidebar-color on the slack.com probe, raw/css-vars.json. Used by the marketing app-demo chrome, not a signed-in workspace."},
+}
+
+tokens = {
+    "core": {
+        "fontFamily": {
+            "heading": font_family("--font-family-heading"),
+            "body": font_family("--font-family-body"),
+            "monospace": font_family("--font-family-monospace"),
         },
         "typography": {
-            "hero": {
-                "$type": "typography",
-                "$value": {
-                    "fontFamily": fonts["marketingHeading"],
-                    "fontSize": "48px",
-                    "fontWeight": 700,
-                    "lineHeight": "53.76px",
-                    "letterSpacing": "-0.576px",
-                },
-                "$extensions": {"source": src + " home h1 at 1169px"},
-            },
-            "heroPhone": {
-                "$type": "typography",
-                "$value": {
-                    "fontFamily": fonts["marketingHeading"],
-                    "fontSize": "32px",
-                    "fontWeight": 700,
-                    "lineHeight": "35.84px",
-                    "letterSpacing": "-0.384px",
-                },
-                "$extensions": {"source": src + " home h1 at 390px"},
-            },
-            "section": {
-                "$type": "typography",
-                "$value": {
-                    "fontFamily": fonts["marketingHeading"],
-                    "fontSize": "50px",
-                    "fontWeight": 600,
-                    "lineHeight": "56px",
-                    "letterSpacing": "-0.6px",
-                },
-                "$extensions": {"source": src + " home h2 .c-dark-ai-headline at 1169px"},
-            },
-            "authHeading": {
-                "$type": "typography",
-                "$value": {
-                    "fontFamily": fonts["marketingHeading"],
-                    "fontSize": "48px",
-                    "fontWeight": 700,
-                    "lineHeight": "46px",
-                    "letterSpacing": "-0.75px",
-                },
-                "$extensions": {"source": src + " sign-in h1"},
-            },
-            "lede": {
-                "$type": "typography",
-                "$value": {
-                    "fontFamily": fonts["marketingBody"],
-                    "fontSize": "18px",
-                    "fontWeight": 400,
-                    "lineHeight": "27.99px",
-                    "letterSpacing": "-0.0216px",
-                },
-                "$extensions": {"source": src + " home .c-billboard__subhead"},
-            },
-            "body": {
-                "$type": "typography",
-                "$value": {
-                    "fontFamily": fonts["marketingBody"],
-                    "fontSize": "16px",
-                    "fontWeight": 400,
-                    "lineHeight": "normal",
-                    "letterSpacing": "normal",
-                },
-                "$extensions": {"source": src + " marketing body"},
-            },
-            "button": {
-                "$type": "typography",
-                "$value": {
-                    "fontFamily": fonts["marketingBody"],
-                    "fontSize": "14px",
-                    "fontWeight": 700,
-                    "lineHeight": "18.004px",
-                    "letterSpacing": "0.798px",
-                },
-                "$extensions": {"source": src + " marketing .c-button.v--primary"},
-            },
-            "authButton": {
-                "$type": "typography",
-                "$value": {
-                    "fontFamily": fonts["authBody"],
-                    "fontSize": "18px",
-                    "fontWeight": 700,
-                    "lineHeight": "normal",
-                    "letterSpacing": "normal",
-                },
-                "$extensions": {"source": src + " sign-in submit"},
-            },
+            "display": typography("display", "heading-display", "{core.fontFamily.heading}"),
+            "body": typography("body", "body-lead", "{core.fontFamily.body}"),
+            "label": typography("label", "button-primary", "{core.fontFamily.body}"),
+            "nav": typography("nav", "link-nav", "{core.fontFamily.body}"),
         },
         "radius": {
-            "none": dim("0px", src + " --dt_static_radius-none"),
-            "small": dim("2px", src + " --dt_static_radius-small"),
-            "base": dim("4px", src + " marketing button border-radius and --dt_static_radius-base"),
-            "large": dim("8px", src + " --dt_static_radius-large"),
-            "xlarge": dim("12px", src + " sign-in field and button border-radius, pricing column radius"),
-            "pill": dim("20px", src + " pricing .promo-pill-text border-radius"),
-            "rounded": dim("9999px", src + " --dt_static_radius-rounded"),
+            "control": dimension("radius.control", "button-primary", "borderTopLeftRadius"),
+            "field": dimension("radius.field", "text-field", "borderTopLeftRadius"),
         },
         "spacing": {
-            "0": dim("0px", src + " --dt_static_space-0"),
-            "px": dim("1px", src + " --dt_static_space-px"),
-            "0125": dim("2px", src + " --dt_static_space-0125"),
-            "025": dim("4px", src + " --dt_static_space-025"),
-            "050": dim("8px", src + " --dt_static_space-050"),
-            "075": dim("12px", src + " --dt_static_space-075"),
-            "100": dim("16px", src + " --dt_static_space-100"),
-            "125": dim("20px", src + " --dt_static_space-125"),
-            "150": dim("24px", src + " --dt_static_space-150"),
-            "200": dim("32px", src + " --dt_static_space-200"),
-            "250": dim("40px", src + " --dt_static_space-250"),
-            "300": dim("48px", src + " --dt_static_space-300"),
+            "field-pad-x": dimension("spacing.field-pad-x", "text-field", "paddingLeft"),
+            "button-pad-x": dimension("spacing.button-pad-x", "button-primary", "paddingLeft"),
         },
-        "shadow": {
-            "sm": tok("shadow", RAW["shadows"]["sm"], src + " --dt_static_shadow-sm"),
-            "base": tok("shadow", RAW["shadows"]["base"], src + " --dt_static_shadow-base"),
-            "md": tok("shadow", RAW["shadows"]["md"], src + " --dt_static_shadow-md"),
-            "lg": tok("shadow", RAW["shadows"]["lg"], src + " --dt_static_shadow-lg"),
-            "pricing": tok("shadow", RAW["shadows"]["pricing"], src + " featured pricing column box-shadow"),
-            "focus": tok("shadow", RAW["shadows"]["focus"], src + " sign-in email field box-shadow"),
+        "fontSize": {
+            "body": {
+                "$value": "16px",
+                "$type": "dimension",
+                "$extensions": {"source": "Measured computed font-size on body, raw/page-colors.json"},
+            },
         },
-        "motion": {
-            "duration160": tok("duration", "160ms", src + " --dt_static_transition-duration-160 0.16s"),
-            "duration200": tok("duration", "200ms", src + " --dt_static_transition-duration-200 0.2s"),
-            "duration80": tok("duration", "80ms", src + " --dt_static_transition-duration-80"),
-            "easeDefault": tok("cubicBezier", [0.36, 0.19, 0.29, 1], src + " --dt_static_transition-ease-default"),
+    },
+    "light": {
+        "page": page_bg,
+        "surface": {
+            "default": page_bg,
+            "aubergine": aubergine,
+            "sidebar": sidebar,
         },
-    }
-    light = {
-        "color": {
-            "bg": {
-                "page": color(c["page"], src + " html background-color on marketing"),
-                "surface": color(c["surface"], src + " sign-in .get-started-app-root background"),
-                "aubergine": color(c["marketing"]["aubergine"], src + " .c-dark-ai-container background"),
-                "nav": color(c["nav"], src + " .c-nav background, transparent over the page"),
+        "text": {
+            "primary": text,
+            "ink": ink,
+            "on-accent": on_accent,
+            "link": link,
+        },
+        "muted": {
+            "$value": rgb_to_hex(state("text-field")["borderTopColor"]),
+            "$type": "color",
+            "$extensions": {"source": "Measured computed border colour on text-field default, used as the quiet ink on form chrome, raw/components-computed.json. A dedicated muted text role was not a separate token on the page."},
+        },
+        "accent": {
+            "default": primary,
+            "hover": primary_hover,
+        },
+        "border": {
+            "default": field_border,
+            "accent": color("border.accent", "button-outline", "borderTopColor"),
+        },
+        "focus": {
+            "ring": focus,
+        },
+        "link": {
+            "default": link,
+            "hover": link_hover,
+        },
+        "component": {
+            "button": {
+                "height": dimension("button.height", "button-primary", "height"),
+                "radius": dimension("button.radius", "button-primary", "borderTopLeftRadius"),
+                "outline-height": dimension("button.outline-height", "button-outline", "height"),
             },
-            "text": {
-                "primary": color(c["text"], src + " sign-in body and --dt_color-content-pry"),
-                "secondary": color(c["muted"], src + " --dt_color-content-sec and sign-in subhead"),
-                "legal": color(c["legal"], src + " sign-in footer link color"),
-                "onAubergine": color("#ffffff", src + " home h2 color on aubergine"),
-                "onPrimary": color("#ffffff", src + " marketing primary button color"),
+            "field": {
+                "height": dimension("field.height", "text-field", "height"),
+                "radius": dimension("field.radius", "text-field", "borderTopLeftRadius"),
+                "border-width": dimension("field.border-width", "text-field", "borderTopWidth"),
             },
-            "accent": color(c["accent"], src + " marketing .c-button.v--primary background"),
-            "border": color(c["border"], src + " pricing column border-color"),
-            "focus": color(c["focus"], src + " sign-in link color and field focus ring"),
-            "component": {
-                "button": {
-                    "bg": color(c["accent"], src + " marketing primary button background"),
-                    "text": color("#ffffff", src + " marketing primary button color"),
-                    "radius": dim("4px", src + " marketing button border-radius"),
-                    "padding": dim("12px", src + " marketing button padding-top"),
-                    "height": dim("42px", src + " header GET STARTED height at 1169px"),
-                },
-                "field": {
-                    "bg": color("#ffffff", src + " sign-in email field background"),
-                    "text": color(c["text"], src + " sign-in email field color"),
-                    "radius": dim("12px", src + " sign-in email field border-radius"),
-                    "padding": dim("12px", src + " sign-in email field padding"),
-                    "height": dim("44px", src + " sign-in email field height"),
-                },
+            "focus": {
+                "width": dimension("focus.width", "button-primary", "outlineWidth", "focus-visible"),
+                "offset": dimension("focus.offset", "button-primary", "outlineOffset", "focus-visible"),
             },
+        },
+    },
+    "$themes": [
+        {
+            "id": "light",
+            "name": "Light",
+            "selectedTokenSets": {"core": "source", "light": "enabled"},
+            "$description": "The theme the public marketing pages painted on 2026-11-21.",
         }
-    }
-    return {
-        "$schema": "https://www.designtokens.org/schemas/2025.10/format/",
-        "core": core,
-        "light": light,
-        "$themes": [
-            {"id": "light", "name": "Light", "selectedTokenSets": {"core": "enabled", "light": "enabled"}}
-        ],
-    }
+    ],
+    "$metadata": {"tokenSetOrder": ["core", "light"]},
+}
 
+# focus offset
+focus_state = state("button-primary", "focus-visible")
+tokens["light"]["component"]["focus"]["offset"] = {
+    "$value": dim(focus_state["outlineOffset"]),
+    "$type": "dimension",
+    "$extensions": {"source": "Measured computed outlineOffset on button-primary focus-visible, raw/components-computed.json"},
+}
 
-def main():
-    data = build()
-    OUT.write_text(json.dumps(data, indent=2) + "\n")
-    print(f"wrote {OUT}")
-
-
-if __name__ == "__main__":
-    main()
+(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
+print("wrote tokens.json")

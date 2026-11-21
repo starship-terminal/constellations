@@ -1,50 +1,112 @@
 # Trulia components
 
-Measured on the signed-out homepage at https://www.trulia.com/ on 2026-11-19. Viewport 1169 by 731 CSS pixels, device pixel ratio 2. No element crops: the preview browser did not produce screenshot frames, and a later navigation hit PerimeterX.
+Public signed-out surface, measured 2026-11-21 in headed Chrome. Crops are the real controls. Values are token names from [tokens.json](tokens.json).
 
-Values are token names from [tokens.json](tokens.json). The reading is in [raw/homepage-computed.json](raw/homepage-computed.json).
+## Button
 
-## Header
+Login button `[data-testid=navbar-login-button]`. Height 42px (`core.sizing.control`), radius `core.radius.m` (8px), weight 700, 16px Figtree.
 
-Fixed header, computed height 64px (`core.size.header`). Background transparent. Wordmark link "Go to Trulia Home" (`data-testid="navbar-trulia-logo"`), color `light.color.accent`, padding 16px 24px 16px 0, an inline SVG at 70 by 24.
+| State | Fill | Text |
+|---|---|---|
+| default | `light.color.page` | `light.color.text` |
+| hover | grey.100 `#e8e9ea` (measured, not a named step that matches exactly; nearest declared step is `color.grey.100`) | `light.color.text` |
+| focus-visible | page, plus the declared `--focus-shadow` | `light.color.text` |
+| pressed | grey.600 `#6b7780` | white |
 
-Nav links Buy and Rent: `button--type_navigation`, text `light.color.text`, weight 700, padding 8px 16px, radius `core.radius.m`, height 42px, transparent fill and border.
+![default](components/crops/login-button-default.png) ![hover](components/crops/login-button-hover.png) ![focus](components/crops/login-button-focus-visible.png) ![pressed](components/crops/login-button-pressed.png)
 
-Sign up or Log in: `button--type_default`, white fill, 1px `light.color.border`, text `light.color.text`, weight 700, padding 8px 16px, radius 8px, height 42px, width 157px. Not clicked.
+Primary submit inside the login dialog: fill `light.color.accent` (`color.tarzana.700`), text white, radius 8px, height 42px. Not pressed (that would submit).
 
-## Hero
+Search submit `[aria-label=submit search]`: 60×60, fill `light.color.search-submit` (`color.oakmore.500-a-a`), radius 0 8px 8px 0. Hover and pressed both paint `light.color.search-submit-hover`.
 
-h1 "Discover a place you'll love to live": `textStyle_headline`, 28px, weight 900, line-height 31.92px, letter-spacing -0.1px, color white. Sits on a photograph. The photograph is content.
-
-Buy / Rent / Sold tabs. Selected Buy: white fill, text `light.color.accent`, weight 400, padding 8px 24px, radius 8px, height 40px. Resting Rent and Sold: transparent fill, white text, same padding and radius.
-
-Search combobox, placeholder "Search for City, Neighborhood, Zip, County, School": white fill, 1px `light.color.search-border`, radius 8px, height 60px, width 520px, padding 8px 48px 8px 16px, 20px Figtree, weight 400. Not typed into. A second combobox on the page used grey-50 fill. Which instance is the hero field was not isolated.
-
-## City card
-
-Link "Atlanta, GA / View Homes" to `/GA/Atlanta/`. Card title h3 `textStyle_title`, 24px, weight 900, white, text-shadow `0 1px 5px black` from class `tsh_0_1px_5px_black`. The card photo is content. The link was not followed. A later direct navigation to that URL was denied by PerimeterX.
-
-## Section CTA
-
-"Find a home", "Find a rental", "Learn more": `button--type_primary`, background `light.color.accent`, text white, weight 700, padding 8px 16px, radius 8px, height 42px, width 175px, shadow `core.shadow.button-primary`. Not followed.
-
-## Footer link
-
-Caption anchors such as "Houses for Rent Near Me": 12px, weight 400, line-height 15.96px, color `light.color.text`, class includes `hover:td_underline`. "More" is the same size, weight 700, color `light.color.accent`. Hover was not measured.
-
-Legal line: 10px, line-height 16px, letter-spacing -0.1px.
+![search](components/crops/search-submit-default.png) ![search hover](components/crops/search-submit-hover.png)
 
 ## Icon button
 
-40 by 40, color `light.color.accent`, class `trs_opacity_0.2s_ease hover:op_0.85`. Resting opacity only. Hover not measured.
+Main Menu toggle is an icon button (hamburger). It opens a 320px drawer. No separate crop of the glyph alone.
+
+## Link
+
+Header links (Buy, Rent, Mortgage) are 16px Figtree, colour `light.color.text`. Mortgage hover opens a flyout of text links. Teal links on the newsroom cards use the accent.
+
+## Text field
+
+`#banner-search`, 60px tall, white, radius 8px, placeholder "Search for City, Neighborhood, Zip, County, School". Focus shrinks the field as the clear control appears (453px wide when focused). Not submitted.
+
+![field](components/crops/search-field-default.png) ![focus](components/crops/search-field-focus.png)
+
+Login dialog email field: 42px, 1px solid grey.500, radius 8px, placeholder "Enter email address". Not typed into.
+
+Calculator fields (home price, down payment, rate, ZIP, loan-type select) are on the calculator page. That screenshot was dropped because a cleanup pass wiped the sample numbers. The field chrome was measured only as Observed on the first pass.
+
+## Text area
+
+Not present on the public pages that loaded.
+
+## Select
+
+Loan type on the calculator is a native select ("30-year fixed"). Observed on the first calculator pass. The kept screenshots do not include it.
+
+## Checkbox, radio, switch
+
+Not present on the pages that loaded.
+
+## Tabs
+
+Hero Buy / Rent / Sold. Selected Buy: white fill, text `color.tarzana.700`, radius 8px, 83×40. Idle Rent: transparent, white text. Hover on Rent: fill `color.tarzana.50`, text tarzana.700.
+
+![selected](components/crops/tab-buy-selected.png) ![idle](components/crops/tab-rent-default.png) ![hover](components/crops/tab-rent-hover.png)
+
+## Menu
+
+Main Menu drawer: 320×900, fill `color.grey.900`, sections Buy, Rent, Mortgage, Local Info, Additional Resources. Close control aria-label "Close Menu".
+
+Header Mortgage hover flyout lists eight links. Rent hover lists Post A Rental Listing. Buy hover has no extra links.
+
+![menu page](screenshots/home-light-menu.png) ![flyout](screenshots/home-light-mortgage-flyout.png)
+
+## Tooltip
+
+Not captured. Info icons sit next to calculator labels; their popovers were not opened.
+
+## Dialog
+
+Sign up or Log in. Accessible name "Sign in or register". Panel 375×396, white, radius 8px. Overlay class paints `rgba(0, 0, 0, 0.3)`. Email, Submit, Continue with Google (iframe, not clicked), Continue with Apple (not clicked).
+
+![login](screenshots/home-light-login.png)
+
+## Toast
+
+Not present.
+
+## Card
+
+City photo cards on the homepage rail, neighborhood photo cards, newsroom text cards (white, light border, radius about 8px). Mortgage tool cards are illustration plus an outline button.
+
+## List row
+
+Menu section rows and footer link groups. Footer "More" expands a group in place.
+
+## Table
+
+Not present on the pages that loaded.
+
+## Avatar
+
+Not present. The homepage hero is a photograph, not an avatar component.
+
+## Badge
+
+Not captured as a component. No pill badge was isolated.
 
 ## Gaps
 
-- Button hover, focus-visible, pressed, disabled, loading, and error were not measured. `--focus-shadow` is declared on `:root` and was not seen applied.
-- Text field filled, error, and disabled states were not measured. The search field was left empty.
-- Text area, select, checkbox, radio, switch, menu, tooltip, dialog, toast, table, avatar, and badge were not present as measurable controls on the homepage, or were not isolated before the challenge.
-- Tabs were observed as the hero Buy / Rent / Sold group at rest. Switching them was not done.
-- Saved Homes and Saved Searches were visible in the header and were not opened.
-- Sign up or Log in was not opened. No account was created. No phone was entered. No agent was contacted.
-- Listing cards, map, filters, neighborhood pages, mortgage calculators, and the help center were not measured. `/GA/Atlanta/` returned a PerimeterX press-and-hold wall. A reload of the homepage and a new preview tab returned the same wall. Headless Chromium got HTTP 403 and was not used for values.
-- No screenshots or crops exist. The preview browser reported: "The browser is not producing screenshot frames."
+| Item | Status |
+|---|---|
+| Dark theme | Not present. `color-scheme` on the document is `normal`. No dark custom properties. |
+| Disabled, loading, error | Not captured. No public control painted them. |
+| Text area, checkbox, radio, switch, tooltip, toast, table, avatar, badge | Not present or not reached on the loaded pages. |
+| Select | Observed on the calculator, screenshot not kept. |
+| Form validation | Not captured. No form was submitted. |
+| Login password step | Not captured. Email was not submitted. https://www.trulia.com/login was not opened in this run. |
+| Listing result pages | Mapped in [site-tree.md](site-tree.md), not screenshotted. |

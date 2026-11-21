@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build components.md for the Luma AI design reference.
+"""Build components.md for the Gauth design reference.
 
 Reads raw/components-computed.json (every component and state, measured), raw/layout.json,
 tokens.json, screenshots/ and icons/INDEX.tsv, and writes components.md next to them. Every value
@@ -18,23 +18,8 @@ ROOT = Path(__file__).resolve().parent.parent
 os.chdir(ROOT)
 J = json.load(open("raw/components-computed.json"))
 C = J["components"]
-LAYOUT = json.load(open("raw/layout.json")) if Path("raw/layout.json").exists() else {}
+LAYOUT = json.load(open("raw/layout.json"))
 T = json.load(open("tokens.json"))
-
-# Components whose computed values come from another element (2026-11 audit, recapture needed). A
-# state whose S() target was a stand-in carries the real element's reading in extra.card (measure.mjs
-# writes it for price-card since the audit); when it is there, it replaces the stand-in's reading.
-WRONG_ELEMENT = {
-    "price-card": "The computed values in the raw reading are the page `body`'s, not the plan card's: the capture's target was `body`, and only the crop was taken from the Plus card. They are left out here. Recapture needed (the pk-k recapture tracking issue, 2026-11 audit).",
-}
-for _k, _c in C.items():
-    for _st, _v in (_c.get("states") or {}).items():
-        _ex = _v.get("extra") or {}
-        if _ex.get("card"):
-            _c["states"][_st] = {**_ex["card"], "crop": _ex.get("crop") or _v.get("crop"), "via": _v.get("via")}
-            WRONG_ELEMENT.pop(_k, None)
-        elif _ex.get("crop") and not _v.get("crop"):
-            _v["crop"] = _ex["crop"]
 
 # --------------------------------------------------------------------------- colours and tokens
 
@@ -50,13 +35,9 @@ def flat(node, prefix=""):
 
 
 BY_COLOR = {}
-# Theme names first, core as the fallback: a colour a theme role shares with a core
-# scale step is named by the role it plays in that theme.
-for setname in ("light", "dark", "core"):
-    node = T.get(setname) or {}
-    for n, t in flat(node):
-        if isinstance(t, dict) and t.get("$type") == "color" and isinstance(t.get("$value"), str):
-            BY_COLOR.setdefault(t["$value"].lower(), f"{setname}.{n}")
+for n, t in flat(T["core"]["palette"]):
+    if t["$type"] == "color":
+        BY_COLOR.setdefault(t["$value"], n)
 
 
 def norm(r, g, b, a=None):
@@ -167,19 +148,8 @@ def props(v):
 ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
 
 
-def focus_not_captured(v):
-    """A focus-visible reading taken where keyboard focus never landed (kbFocus returned "focus failed"),
-    a skipped state, or one that did not match :focus-visible: its style is the element at rest, so it
-    is left out of every table and tally (ported from the kit's builder, 2026-11 audit D4)."""
-    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
-
-
-def measured(v):
-    return "style" in v and not focus_not_captured(v)
-
-
 def state_rows(c):
-    states = [s for s in c["states"] if measured(c["states"][s])]
+    states = [s for s in c["states"] if "style" in c["states"][s]]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -208,7 +178,7 @@ def fmt(d):
 
 
 def child_layers(c):
-    st = next((s for s in c["states"].values() if measured(s)), None)
+    st = next((s for s in c["states"].values() if "style" in s), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
@@ -233,44 +203,43 @@ def child_layers(c):
 
 # --------------------------------------------------------------------------- page and group text
 
-# The pages measure.mjs reads, named as an entry says them ("Read as `x` on the home page").
-PAGE_NAME = {"home": "home", "pricing": "pricing", "about": "about", "api": "API", "enterprise": "enterprise", "ray": "Ray", "news": "news"}
+PAGE_NAME = {"home": "Homework home", "science": "Academy (Science Labs)", "math": "Academy (Math Curriculum)", "history": "Academy (History Signature)",
+             "my": "Academy (My Course)", "unit": "unit", "lesson-science": "science lesson", "lesson-math": "math lesson",
+             "lesson-history": "history lesson", "atlas": "Atlas", "story": "Atlas story", "news": "Insights"}
 
 GROUP_INTRO = {
-    "Marketing shell": "The header shared by the public pages: a wordmark, uppercase nav labels, and a Sign In pill. Sign In was measured and never followed.",
-    "Home": "The dark video hero, the Try for free pill, and the prompt composer. The prompt was filled and cleared. Submit was not clicked.",
-    "Pricing": "A light page with a Monthly / Yearly toggle and three plan cards. Start Now was measured and never followed.",
-    "About": "A light editorial page.",
-    "API": "A light page with Use the API, Explore docs, and a model tab. Use the API was never followed.",
-    "Ray": "A dark cinematic page for Ray3.2.",
-    "News": "A light index with category filters and article cards. Subscribe was not clicked.",
-    "Enterprise": "A dark photograph hero and a sales form. The field was focused. Submit was never clicked.",
-    "Phone (390 wide)": "The home at 390: Sign In and a menu button that opens the nav. Sign In was not followed.",
+    "Shell and navigation": "The app shell shared by Homework, Academy and Insights: a fixed 220px sidebar and a 60px top bar over the content. The sidebar is white with a cool grey current item on Homework and Insights, and takes the warm `#faf9f5` ground with a beige current item on Academy. Atlas and the lesson players have shells of their own (their groups below).",
+    "Homework home": "The question-first home page: a serif hero over a lilac gradient, the question field, an upload panel and subject chips, then marketing sections. Nothing was ever sent or uploaded.",
+    "Academy catalogue": "The course catalogue: the Playfair title and Create Course, four category tabs, then course sections of card grids. Science Labs and History Signature use cover cards with a progress track; Math Curriculum uses unit cards with an 80px cover tile.",
+    "Unit page": "A math course's page: a back link, a tinted course banner, the unit rail at the left and the topic path at the right, with a floating Start panel.",
+    "Lesson player: science canvas": "The science player is built in Astryx, a separate design system (`astryx-*` classes, StyleX variables, the \"stone\" theme): a narrated canvas that pans by itself, a section rail, transport controls and a docked Ask Tutor bar. Its focus ring is the only blue one on the site.",
+    "Lesson player: math": "The math player puts a tutor column at the left and the slide in a white frame at the right, on the warm ground.",
+    "Lesson player: history": "The history player is immersive: chapter pills at the top, the scene in the middle, a play disc and a caption line.",
+    "Atlas": "Atlas has its own shell (a 56px header and a 230px drawer), a prompt box, recommendation chips and a grid of story cards. A story opens as a video preview, then a story page.",
+    "Insights": "The news and blog list in the app shell.",
+    "Dialogs and overlays": "The promo dialog every page opens with, the Create a Course dialog, the science player's audio dialog, the math player's audio gate and the Atlas story preview. The promo's overlay is `rgba(15, 17, 20, 0.45)`.",
+    "Mobile (390 wide)": "A few components as a phone draws them, at 390 x 844 with an iPhone user agent.",
 }
 
 SHOTS = [
-    ("home-dark", "Home. Dark video hero, Sign In, Try for free, prompt filled and cleared.", "https://lumalabs.ai/"),
-    ("pricing-light", "Pricing. Monthly and Yearly, three plan cards. Start Now was not followed.", "https://lumalabs.ai/pricing"),
-    ("about-light", "About. Editorial heading and company copy.", "https://lumalabs.ai/about"),
-    ("api-light", "API. Use the API, Explore docs, Uni-1.1 tab.", "https://lumalabs.ai/api"),
-    ("enterprise-light", "Enterprise. Dark photograph hero. The form was not submitted.", "https://lumalabs.ai/enterprise"),
-    ("ray-dark", "Ray3.2. Dark cinematic page.", "https://lumalabs.ai/ray"),
-    ("uni-light", "Uni-1 product page.", "https://lumalabs.ai/uni-1"),
-    ("news-light", "News index. Category filters and article cards.", "https://lumalabs.ai/news"),
-    ("mcp-light", "MCP page.", "https://lumalabs.ai/mcp"),
-    ("careers-light", "Careers.", "https://lumalabs.ai/careers"),
-    ("cases-light", "Case studies.", "https://lumalabs.ai/case-studies"),
-    ("learning-light", "Learning center.", "https://lumalabs.ai/learning-center"),
-    ("create-light", "AI video generator marketing page.", "https://lumalabs.ai/create/ai-video-generator"),
-    ("agents-light", "Dream Machine to Luma Agents.", "https://lumalabs.ai/models/luma-dream-machine-evolved-into-luma-agents"),
-    ("terms-light", "Terms of service.", "https://lumalabs.ai/legal/terms-of-service"),
-    ("docs-light", "Docs hub (ReadMe). Sheets are not in the marketing tokens.", "https://docs.lumalabs.ai/docs/welcome"),
+    ("home", "Homework home. Serif hero, question field, upload panel, subject chips, then the Atlas, AI solution and live tutor bands, comments and the footer. The promo dialog, the field focused and the folded sidebar captured.", "/"),
+    ("academy-science", "Academy, Science Labs. Title, Create Course, tabs, course sections of lesson cards.", "/course/science"),
+    ("academy-math", "Academy, Math Curriculum. Unit cards, six per course, and Show more expanded (the toolbar sticks with Create Course in it).", "/course/math"),
+    ("academy-history", "Academy, History Signature. Illustrated lesson cards.", "/course/history"),
+    ("academy-my", "Academy, My Course. The signed-out empty state, and the Create a Course dialog.", "/course/my"),
+    ("unit", "Unit page (Algebra 1). Banner, unit rail, topic path, Start panel; scrolled down the path; Unit 2 chosen in the rail.", "/course/math/algebra-1?unit=real-numbers-and-sets"),
+    ("lesson-science", "Science lesson. The audio dialog, the first chapter, Settings open, Ask Tutor opened, a figure with its callout and list, and a quiz.", "/course/science/how-things-work-1/learn"),
+    ("lesson-math", "Math lesson. The audio gate, the playing slide with the tutor column, the chapters panel.", "/course/math/algebra-1/fundamentals-of-set-theory/learn"),
+    ("lesson-history", "History lesson. The opening scene, the chapter panel.", "/course/history/crossing-the-ocean-wall/learn"),
+    ("atlas", "Atlas. Landing, prompt box, chips, Popular Stories, FAQ; a story card's video preview; the Apollo 11 story page, and its Video Settings popover.", "/atlas"),
+    ("news", "Insights. Breadcrumb, News and Blog tabs, featured article, article rows.", "/news"),
 ]
 MOBILE = [
-    ("mobile-home-dark", "Home at 390, including the opened nav. Sign In was not followed.", "https://lumalabs.ai/"),
-    ("mobile-pricing-light", "Pricing at 390.", "https://lumalabs.ai/pricing"),
-    ("mobile-ray-dark", "Ray at 390.", "https://lumalabs.ai/ray"),
-    ("mobile-news-light", "News at 390.", "https://lumalabs.ai/news"),
+    ("mobile-home", "Homework home at 390: the promo dialog, the hero, the full page with the app banner.", "/"),
+    ("mobile-academy", "Academy at 390: Math Curriculum (Science Labs is not offered on a phone).", "/course/math"),
+    ("mobile-unit", "Unit page at 390, and scrolled down the path.", "/course/math/algebra-1?unit=real-numbers-and-sets"),
+    ("mobile-lesson-math", "Math lesson at 390: the audio gate and the slide.", "/course/math/algebra-1/fundamentals-of-set-theory/learn"),
+    ("mobile-atlas", "Atlas at 390, and a story page (Artemis II).", "/atlas"),
 ]
 
 L = []
@@ -286,34 +255,31 @@ shots = sorted(p.name for p in Path("screenshots").glob("*.png"))
 def links(prefix):
     out = []
     for f in shots:
-        if f.startswith(prefix + "-") and f.endswith(".png"):
-            label = f[len(prefix) + 1:-4]
-            out.append(f"[{label}](screenshots/{f})")
-    return ", ".join(out) or "-"
+        m = re.fullmatch(re.escape(prefix) + r"-light-(.+)\.png", f)
+        if m:
+            out.append(f"[{m.group(1)}](screenshots/{f})")
+    return ", ".join(out)
 
 
 n_crops = len(list(Path("components/crops").glob("*.png")))
 n_states = sum(len(c["states"]) for c in C.values())
-icons = []
-index = Path("icons/INDEX.tsv")
-if index.exists():
-    icons = [r.split("\t") for r in index.read_text().strip().split("\n")[1:]]
+icons = [r.split("\t") for r in open("icons/INDEX.tsv").read().strip().split("\n")[1:]]
 
-W("# Luma AI components")
+W("# Gauth components")
 W()
-W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured from lumalabs.ai on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, submitted or purchased.")
+W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, the icon index and the Gaps. Captured from www.gauth.com on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.")
 W()
-W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states).")
+W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [raw/pages.md](raw/pages.md).")
 W()
 W("How to read an entry:")
 W()
-W("- A colour is its value followed by the token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, and is read from the first text node inside the component.")
+W("- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.")
 W("- The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
 W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
 W()
 W("## Discovery list")
 W()
-W("Screenshots are named `{page}-{theme}-{state}.png`. Inner pages are light. The home hero and /ray are dark. Desktop shots are 1440 x 900 at 1x. Phone shots are 390 x 844 at 2x, so the PNG is 780 wide.")
+W("Screenshots are named `{page}-light-{state}.png` (Gauth has one theme). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x).")
 W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")
@@ -325,9 +291,19 @@ W()
 W("| State | Where | How it was reached | Captured |")
 W("|---|---|---|---|")
 OVER = [
-    ("Prompt filled", "home", "sample text typed, then deleted; Submit was not clicked", "[home-dark-prompt-filled](screenshots/home-dark-prompt-filled.png)"),
-    ("Yearly interval", "pricing", "the Yearly button, a local toggle", "[pricing-light-yearly](screenshots/pricing-light-yearly.png)"),
-    ("Phone nav", "home at 390", "the menu button, a local toggle; Sign In was not followed", "[mobile-home-dark-nav](screenshots/mobile-home-dark-nav.png)"),
+    ("Promo dialog (\"Introducing Gauth Academy\")", "every page, on load", "at rest; then dismissed with its own close button for every other capture", "[home-light-promo](screenshots/home-light-promo.png), [promo-dialog](#promo-dialog)"),
+    ("Create a Course dialog", "Academy", "Create Course pressed (opens the dialog); a prompt typed and deleted, no suggestion pressed", "[academy-my-light-create-dialog](screenshots/academy-my-light-create-dialog.png), [create-a-course-dialog](#create-a-course-dialog)"),
+    ("Enable audio dialog", "science lesson", "on load; Not now pressed, Enable audio never pressed", "[lesson-science-light-audio-dialog](screenshots/lesson-science-light-audio-dialog.png)"),
+    ("Audio gate", "math lesson", "on load; Continue pressed to start playback", "[lesson-math-light-audio-gate](screenshots/lesson-math-light-audio-gate.png)"),
+    ("Settings popover", "science lesson", "the lesson's Settings button", "[lesson-science-light-settings](screenshots/lesson-science-light-settings.png)"),
+    ("Ask Tutor, opened", "science lesson", "clicked into the bar; sample text typed and deleted, nothing sent", "[lesson-science-light-ask-tutor](screenshots/lesson-science-light-ask-tutor.png)"),
+    ("Quiz", "science lesson", "reached by letting the lesson play about three minutes; no option chosen", "[lesson-science-light-quiz](screenshots/lesson-science-light-quiz.png)"),
+    ("Chapters panel", "math and history lessons", "the chapters button", "[lesson-math-light-chapters](screenshots/lesson-math-light-chapters.png), [lesson-history-light-chapters](screenshots/lesson-history-light-chapters.png)"),
+    ("Show more", "Math Curriculum", "the Show 14 more button", "[academy-math-light-show-more](screenshots/academy-math-light-show-more.png)"),
+    ("Folded sidebar", "Homework home", "the sidebar's collapse button", "[home-light-sidebar-folded](screenshots/home-light-sidebar-folded.png)"),
+    ("Story preview", "Atlas", "a story card pressed (opens a video preview)", "[atlas-light-story-preview](screenshots/atlas-light-story-preview.png)"),
+    ("Story page", "Atlas", "Explore in the preview (opens the published story)", "[atlas-light-story](screenshots/atlas-light-story.png), [mobile-atlas-light-story](screenshots/mobile-atlas-light-story.png)"),
+    ("Video Settings popover", "Atlas story", "hovering Generate Video; nothing in it pressed", "[atlas-light-story-video-settings](screenshots/atlas-light-story-video-settings.png)"),
 ]
 for r in OVER:
     W("| " + " | ".join(r) + " |")
@@ -338,23 +314,19 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
-foc, unfocused = [], []
+foc = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if st and focus_not_captured(st):
-        unfocused.append(f"`{k}`")
-    if not st or not measured(st):
+    if not st or "style" not in st:
         continue
     s = st["style"]
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
     foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
-none_text = f" The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}." if without else ""
-unfocused_text = f" Focus could not be captured on {len(unfocused)} more (keyboard focus never landed on them, so their readings are left out): {', '.join(unfocused)}." if unfocused else ""
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}.{none_text}{unfocused_text}")
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}. The Upgrade and Sign in buttons in the top bar are a `div` and a `span` and cannot take focus at all.")
 W()
-W("**Pressed.** Pressed on Sign In, Try for free, Start Now and Use the API was a forced :active:hover so the link was not followed. Monthly, Yearly and the news filter are local toggles.")
+W("**Pressed.** Gauth's primary buttons shrink when pressed instead of changing colour much: Create, Start, Create Course and the Astryx buttons scale to 0.98, the math player's round buttons to 0.94, the promo button to 0.99. Cards deepen their shadow on hover and keep it when pressed.")
 W()
 W("**Motion.** Transitions measured on the components, by duration.")
 W()
@@ -363,7 +335,7 @@ W("|---|---|---|---|")
 mot = {}
 for k, c in C.items():
     for st in c["states"].values():
-        if not measured(st):
+        if "style" not in st:
             continue
         s = st["style"]
         if s["transitionDuration"] in ("0s", ""):
@@ -389,13 +361,10 @@ def dur_ms(d):
 for (d, e), (ps, ks) in sorted(mot.items(), key=lambda kv: (dur_ms(kv[0][0]), kv[0][1])):
     W(f"| {d} | `{e}` | {', '.join(sorted(ps))} | {', '.join(sorted(ks)[:8])}{' and more' if len(ks) > 8 else ''} |")
 W()
-if LAYOUT:
-    W("**Layout grid.** Read on each page at each width ([raw/layout.json](raw/layout.json)).")
-    W()
-    W("| Page | 1440 | 1920 | 1024 | 390 |")
-    W("|---|---|---|---|---|")
-else:
-    W("**Layout grid.** Not captured: `tools/capture/layout.mjs` was not run, so there is no `raw/layout.json`.")
+W("**Layout grid.** Read on each page at each width ([raw/layout.json](raw/layout.json)).")
+W()
+W("| Page | 1440 | 1920 | 1024 | 390 |")
+W("|---|---|---|---|---|")
 
 
 def grid_of(key):
@@ -408,46 +377,26 @@ def grid_of(key):
     return f"{main}; grid {cols} gap {g['colGap']}" if g else main
 
 
-for page in ["home", "pricing", "about", "api", "ray", "news"] if LAYOUT else []:
-    row = " | ".join(grid_of(f"{page}@{w}") for w in (1440, 1920, 1024, 390))
-    if row.replace("|", "").replace("-", "").strip():
-        W(f"| {page} | {row} |")
+for page in ["home", "academy-science", "academy-math", "unit", "lesson-math", "atlas"]:
+    W(f"| {page} | " + " | ".join(grid_of(f"{page}@{w}") for w in (1440, 1920, 1024, 390)) + " |")
 W()
-def covering_layer(st):
-    """The first painted layer inside the component that fills or frames at least 90% of its box. The
-    capture records a layer's size but not its offset, so the most it can cover is the smaller width
-    times the smaller height (ported from the kit's builder, 2026-11 audit finding 18-3)."""
-    rw, rh = st["rect"]["w"], st["rect"]["h"]
-    for x in st.get("paint") or []:
-        dims = [float(n) for n in re.findall(r"[\d.]+", x.get("size", ""))[:2]]
-        if len(dims) == 2 and rw and rh and min(dims[0], rw) * min(dims[1], rh) >= 0.9 * rw * rh and (x.get("bg") or x.get("border")):
-            return x
-    return None
-
-
 W("**Card shapes.** Default-state values; the entries hold the states.")
 W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
 W("|---|---|---|---|---|---|---|")
 # PRODUCT (adapt): the card-like components to compare in one table.
-for k in ["price-card", "prompt", "nav-signin", "hero-cta", "news-card", "ent-field"]:
+for k in ["lesson-card", "unit-card", "story-card", "feature-card", "solution-option", "create-suggestion", "quiz-card", "quiz-option", "learning-panel", "settings-popover", "chapters-panel", "video-settings", "view-rail", "m-unit-card"]:
     c = C.get(k)
     # A card the capture could not find is saved with missing: true and no states.
-    if not c or c.get("missing") or k in WRONG_ELEMENT:
+    if not c or c.get("missing"):
         continue
-    st = next((s for s in c["states"].values() if measured(s)), None)
+    st = next((s for s in c["states"].values() if "style" in s), None)
     if st is None:
         continue
     p = props(st)
-    if p["background"] == "transparent" and "border" not in p and st.get("paint"):
-        # The root paints nothing: its look is a painted child that covers it (at least 90% of its
-        # box), named in the row. A smaller child (a CTA, a badge, a divider) is not the card, so the
-        # row then keeps the root's own values.
-        p0 = covering_layer(st)
-        if p0:
-            p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius") or p.get("radius", "-"),
-                     background=(colour(p0["bg"]) if p0.get("bg") else "-") + f" (on `{p0['node']}`)",
-                     shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
+    if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
+        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
+        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
@@ -476,12 +425,6 @@ for g in groups:
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
-        if k in WRONG_ELEMENT:
-            W(WRONG_ELEMENT[k])
-            W()
-            imgs = [f"![{c['title']} {st}](components/crops/{os.path.basename(v['crop'])})" for st, v in c["states"].items() if v.get("crop")]
-            W(" ".join(imgs) if imgs else "No crop was saved for this entry.")
-            continue
         rows, states = state_rows(c)
         if len(states) == 1 and rows:
             W(f"**Values ({states[0]}).** {fmt(rows[0][1])}.")
@@ -503,7 +446,7 @@ for g in groups:
 W()
 W("## Icons")
 W()
-W("No standalone SVG set was extracted. The wordmark and control glyphs are in the crops and screenshots. This is a layout gap.")
+W(f"{len(icons)} SVGs were lifted from the pages into [icons/](icons), named by role, with the source table in [icons/INDEX.tsv](icons/INDEX.tsv). Colour is `currentColor` wherever the icon took its colour from the text, so each recolours from CSS `color`. Lesson content (the canvas, slides and formulas) was left out; these are the interface icons. The SVGs are Gauth's property, kept for reference only.")
 W()
 W("| Icon | Rendered sizes | View box | Style | Seen on | Next to |")
 W("|---|---|---|---|---|---|")
@@ -517,40 +460,39 @@ W("## Gaps")
 W()
 W("### Pages")
 W()
-W("- **Signed-in app.** https://app.lumalabs.ai redirects to a WorkOS sign-up host. Generation, account, billing, API keys and checkout were not entered. Sign In, Try for free, Start Now and Use the API were measured and never followed.")
-W("- **Enterprise form.** The field was focused. Submit was hovered and never clicked, so no sales form was sent.")
-W("- **Public gallery.** There is no signed-out user gallery. Stills on /ray and the marketing pages are product demos.")
-W("- **404.** A missing path rendered a Vercel invalid-slug page, not a Luma 404. It was not kept.")
+W("- **Signed-in pages.** Nothing behind sign-in was captured: a learner's own My Course list, course progress, history, the homework answer page, Atlas topics a learner made, account settings and the subscription checkout. The kit never signs in.")
+W("- **Anything that sends or creates.** No homework question was submitted (so the answer and step-by-step pages are missing), no course was generated from Create a Course, no tutor message or voice question was sent, no Atlas story was generated, no file was uploaded, no quiz option was chosen.")
+W("- **Study Resources.** `/study-resources/*` redirects to gauthmath.com, which answers a headless browser with Access Denied.")
+W("- **The science lesson's Completed screen** (a cover, a laurel \"Completed\" title, Share and View Canvas) was seen while exploring, after a lesson played to its end, but the kit does not wait the several minutes it takes, so there is no crop or measurement.")
+W("- **Mobile science lessons.** A phone is redirected from `/course/science` to `/course/math`; Science Labs is not offered on a phone.")
+W("- **Other lesson kinds.** Math lessons carry interactive steps (matching, drag, number lines, flashcards, graphs; their CSS is in the stylesheets) that only appear as a lesson plays on; the capture saw the first slides only.")
 W()
 W("### States")
 W()
-W("- **Pressed** on gated links was forced with DevTools, so a script that runs on mousedown was not observed.")
-W("- **Disabled, loading and error** states do not paint on the public pages.")
-W("- **Pricing FAQ** was not found as a stable button. About and Ray FAQ rows were measured.")
+W("- **Pressed** was forced with DevTools on every control except toggles, so a state a script adds on mousedown (if any) is missing.")
+W("- **Hover on the feature cards, the article rows, the Share button and the play disc** changed nothing measurable; their entries read 'same'.")
+W("- **The tutor transcript** held only the status line during the 25 seconds of playback the kit waits; transcript text was not captured.")
+W("- **Disabled states** were not seen on any public control.")
 W()
 W("### Themes")
 W()
-W("Two resolutions of the same marketing sheets are in tokens.json. Inner pages paint html.light. The home hero and /ray paint dark media, and html.dark resolves a black page with white text. There is no theme switch. Docs (docs.lumalabs.ai) is a ReadMe hub and its tokens are not folded in.")
+W("Gauth shows one light theme. Its stylesheets do declare dark values: TikTok's TUX theme under `[data-theme=\"dark\"]` and `.twv-container` with `prefers-color-scheme: dark`, the lesson palette under `[data-lesson-style=\"dark\"]`, and Astryx's stone theme as `light-dark()` pairs. None of them is applied on any page captured: no page sets a dark attribute, the science player pins `data-theme=\"light\"`, and every page painted the same under `prefers-color-scheme: dark` (`themeChecks` in [raw/css-vars.json](raw/css-vars.json)). There is no theme switch in the sidebar, the lesson Settings or the footer. The token file therefore ships no dark set, and the dark declarations stay in the raw file for reference.")
 W()
 W("### Fonts")
 W()
-W("- **Graphik** is the computed body and h1 family, under a Next.js local-font class name. The file is not redistributed.")
-W("- **PP Editorial** is loaded on the page and was not the computed h1 family on this pass.")
+W("- **SF Pro** is Apple's system face; Gauth declares an \"SF Pro\" family over `local()` only, so it renders as SF Pro on Apple devices and falls back elsewhere.")
+W("- **Satoshi** (the science canvas's \"Canvas Print\" and \"Canvas Heading\") is from Fontshare and is not on Google Fonts; the style guide falls back to the system font.")
+W("- **Rubik**, named on small Atlas labels, has no `@font-face` on the page and rendered as a fallback in the capture.")
 W()
 W("### Screenshots")
 W()
-W("- Generated stills and the home video are Luma's content and appear only inside screenshots and crops.")
-W("- The news index is very tall. The full-page news shot was dropped. The viewport shot was kept.")
+W("- Covers, illustrations, videos and story images are Gauth's content and appear only inside screenshots and crops. The lesson canvas and the Atlas story keep moving, so two captures of the same view can differ in what the narration has drawn.")
 W("- Screenshots are stored as 256-colour PNGs; read exact colours from the tokens or the raw files.")
 W()
 W("### Content left out")
 W()
-W("- No prompt was submitted and no account was created. The pages were read signed out.")
+W("- Lesson content (slides, canvas drawings, formulas, narration) was not transcribed; only the frames around it were measured.")
+W("- No personal data was captured: the pages were read signed out, and the Atlas drawer was empty.")
 
-# Every image or file this page links must exist in the package (2026-11 audit finding 18-2: rows
-# copied from another product's builder linked screenshots this capture never took).
-dead = sorted({t for t in re.findall(r"\]\(((?:screenshots|components|raw|icons)/[^)#\s]+)\)", "\n".join(L)) if not Path(t).exists()})
-if dead:
-    raise SystemExit("components.md links files that do not exist: " + ", ".join(dead))
 Path("components.md").write_text("\n".join(L) + "\n")
 print("components.md:", len(L), "lines,", len(C), "entries,", n_crops, "crops,", len(icons), "icons")

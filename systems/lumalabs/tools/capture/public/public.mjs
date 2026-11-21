@@ -1,179 +1,254 @@
-// Captures lumalabs.ai's public signed-out pages into RAW (full-colour PNGs).
+// Captures Luma AI's public pages into RAW (full-colour PNGs).
 // quantize.py turns them into screenshots/.
 //
-//   PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node public.mjs [page,page,...]
+//   PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [page,page,...]
 //
-// Names are {page}-{theme}-{state}.png. Inner pages (pricing, about, API,
-// news) paint a light page. The home hero and /ray paint a dark video or
-// image under a light nav, so those viewport shots are named dark. Desktop
-// shots are 1440x900 at 1x, phone shots 390x844 at 2x, *-full shots at the
-// same scale. A page taller than one GPU texture is tiled; an unbounded page
-// truncates at 4 chunks.
-//
-// Nothing is signed into, submitted or purchased. Sign In, Try for free,
-// Start Now, Use the API, Subscribe and the enterprise form Submit are never
-// clicked. The home prompt is filled and cleared, never submitted. Consent
-// overlays are hidden, never answered. Local toggles only: pricing interval,
-// news filter, FAQ, mobile nav, API model tab.
-import fs from 'fs';
-import os from 'os';
-import path from 'path';
-import { fileURLToPath } from 'url';
+// Desktop shots are 1440x900 at 1x. Mobile shots are 390x844 at 2x.
+// Names are {page}-light-{state}.png. Mobile names get a mobile- prefix.
+// Nothing is submitted. Sign-in, Google, Apple, and form fields are not used.
+// A control that leaves lumalabs.ai for an account host is recorded and skipped.
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
-// Full-colour shots are working files, never committed: by default they go outside the repository,
-// to ~/.design-systems/<slug>/raw-shots for a package's copy at systems/<slug>/tools/capture/public/.
+const pw = await import(process.env.PLAYWRIGHT || 'playwright');
+const { chromium } = pw.default ?? pw;
+
+const BASE = 'https://lumalabs.ai';
+const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
+const UA_MOBILE = 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1';
+
 const PKG = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
-const inPackage = path.basename(path.dirname(PKG)) === 'systems';
-if (!process.env.RAW && !inPackage) { console.error('set RAW=<scratch dir> (this copy is not inside systems/<slug>/tools/)'); process.exit(2); }
-const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', path.basename(PKG), 'raw-shots');
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'lumalabs', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
-const log = (...a) => console.log(...a);
+const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const wait = (p, ms) => p.waitForTimeout(ms);
+
+const PAGES = {
+  home: '/',
+  app: '/app',
+  pricing: '/pricing',
+  api: '/api',
+  enterprise: '/enterprise',
+  mcp: '/mcp',
+  news: '/news',
+  careers: '/careers',
+  ray: '/ray',
+  uni1: '/uni-1',
+  'learning-center': '/learning-center',
+  'create-video': '/create/ai-video-generator',
+  'create-image': '/create/ai-video-generator-from-image',
+  about: '/about',
+  'case-studies': '/case-studies',
+  'creative-partner': '/creative-partner-program',
+  educator: '/education/educator',
+  student: '/education/student',
+  'terms': '/legal/terms-of-service',
+  privacy: '/legal/privacy-policy',
+  cookies: '/legal/cookie-policy',
+  subprocessors: '/legal/subprocessors',
+  'agents-guide': '/agents-guide',
+  changelog: '/changelog',
+  'contact-sales': '/contact-sales',
+  dreamlab: '/dreamlab/featured',
+  'llm-info': '/llm-info',
+  'series-b': '/series-b',
+  'trend-report': '/the-state-of-ai-2026-annual-trend-report',
+  whitepaper: '/whitepaper',
+  'uni1-showcase': '/uni-1/showcase',
+  photon: '/photon',
+  'news-ray32': '/news/introducing-ray-3-2',
+  'news-skills': '/news/luma-skills',
+  'case-aperture': '/case-studies/aperture',
+  'learn-article': '/learning-center/articles/luma-connectors',
+};
 
 async function lazyScroll(p) {
   const h = await p.evaluate(() => document.documentElement.scrollHeight);
-  for (let y = 0; y < h; y += 600) { await p.evaluate((y) => scrollTo(0, y), y); await wait(p, 200); }
-  await p.evaluate(() => scrollTo(0, 0)); await wait(p, 900);
+  const cap = Math.min(h, 6000);
+  for (let y = 0; y < cap; y += 700) {
+    await p.evaluate((y) => scrollTo(0, y), y);
+    await wait(p, 120);
+  }
+  await p.evaluate(() => scrollTo(0, 0));
+  await wait(p, 400);
 }
 
 class Shooter {
-  constructor(p, prefix, vw, vh, dpr, sourceUrl) {
+  constructor(p, prefix, vw, vh, dpr) {
     this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr;
-    this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, sanitizedSourceUrl: sourceUrl };
+    this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, sanitizedSourceUrl: null };
     this.count = 0;
   }
   async view(name) {
-    await closePromo(this.p);
     await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested);
-    this.count++; log('  shot', name);
+    this.count++;
+    log('  shot', this.prefix, name);
   }
   async full(name = 'full') {
     const p = this.p;
-    await closePromo(p);
     await lazyScroll(p);
-    const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
+    const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body?.scrollHeight || 0));
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
-    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
-    // Infinite-scroll pages grow scrollHeight without bound after lazyScroll;
-    // without a ceiling the tile loop writes forever (acuityscheduling filled
-    // 111 GB once). Truncate hard and record the boundary instead.
-    const MAXH = 4 * chunk;
+    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${path.basename(f)}.part`) || n.startsWith(`${this.prefix}-${name}.part`))) {
+      fs.unlinkSync(`${RAW}/${old}`);
+    }
+    const MAXH = 8 * chunk;
     const hCap = Math.min(H, MAXH);
-    if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
+    if (H > MAXH) log(`  ! ${name}: page is ${H}px, capturing first ${hCap}px`);
     if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
-    this.count++; log('  shot', name, 'H=' + H);
-    await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
+    else {
+      for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
+        await screenshotWithMetadata(p, {
+          path: `${f}.part${i}.png`, fullPage: true,
+          clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) },
+        }, this.requested);
+      }
+    }
+    this.count++;
+    log('  shot', this.prefix, name, 'H=' + H);
+    await p.evaluate(() => scrollTo(0, 0));
+    await wait(p, 300);
   }
 }
-const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
 
-const desktop = {
-  home: { path: '/', theme: 'dark', wait: 4000, run: async (p, S) => {
-    await S.view('default');
-    await step('prompt-filled', async () => {
-      const field = p.locator('textarea, [contenteditable="true"]').first();
-      if (!(await field.count())) return;
-      await field.click({ timeout: 4000 });
-      await p.keyboard.type('a short product film of a ceramic cup', { delay: 8 });
-      await wait(p, 400);
-      await S.view('prompt-filled');
-      await p.keyboard.press('Meta+a');
-      await p.keyboard.press('Backspace');
-      await wait(p, 300);
-    });
-    await S.full();
-  } },
-  pricing: { path: '/pricing', theme: 'light', wait: 3500, run: async (p, S) => {
-    await S.view('default');
-    await step('yearly', async () => {
-      const b = p.getByRole('button', { name: /^Yearly$/ }).first();
-      if (await b.count()) { await b.click(); await wait(p, 600); await S.view('yearly'); }
-    });
-    await S.full();
-  } },
-  about: { path: '/about', theme: 'light', wait: 3000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  api: { path: '/api', theme: 'light', wait: 3000, run: async (p, S) => {
-    await S.view('default');
-    await step('uni', async () => {
-      const b = p.getByRole('button', { name: /^Uni-1\.1$/ }).first();
-      if (await b.count()) { await b.click(); await wait(p, 500); await S.view('uni'); }
-    });
-    await S.full();
-  } },
-  enterprise: { path: '/enterprise', theme: 'light', wait: 3000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  ray: { path: '/ray', theme: 'dark', wait: 3500, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  uni: { path: '/uni-1', theme: 'light', wait: 3000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  news: { path: '/news', theme: 'light', wait: 3000, run: async (p, S) => {
-    await S.view('default');
-    await step('product', async () => {
-      const b = p.getByRole('button', { name: /^Product$/ }).first();
-      if (await b.count()) { await b.click(); await wait(p, 600); await S.view('product'); }
-    });
-    await S.full();
-  } },
-  mcp: { path: '/mcp', theme: 'light', wait: 3000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  careers: { path: '/careers', theme: 'light', wait: 3000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  cases: { path: '/case-studies', theme: 'light', wait: 3000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  learning: { path: '/learning-center', theme: 'light', wait: 3000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  create: { path: '/create/ai-video-generator', theme: 'light', wait: 3000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  agents: { path: '/models/luma-dream-machine-evolved-into-luma-agents', theme: 'light', wait: 3000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  terms: { path: '/legal/terms-of-service', theme: 'light', wait: 2500, run: async (p, S) => { await S.view('default'); } },
-  // A missing path on lumalabs.ai is served by Vercel as "Invalid slug" (the
-  // captures/genie shell), not a Luma 404. That page is not this product and
-  // is not captured.
-  docs: { path: 'https://docs.lumalabs.ai/docs/welcome', theme: 'light', wait: 4000, run: async (p, S) => { await S.view('default'); await S.full(); } },
+async function hideConsent(p) {
+  await p.evaluate(() => {
+    for (const el of document.querySelectorAll('[id*="cookie" i],[class*="cookie" i],[id*="consent" i],[class*="consent" i]')) {
+      const t = (el.innerText || '').slice(0, 400);
+      if (/cookie|consent|privacy preference/i.test(t) && el.getBoundingClientRect().height > 40) {
+        el.style.setProperty('display', 'none', 'important');
+      }
+    }
+  }).catch(() => {});
+}
+
+async function clickNamed(p, role, name) {
+  const loc = p.getByRole(role, { name, exact: false }).first();
+  if (!(await loc.count())) return false;
+  await loc.click({ timeout: 4000 }).catch(() => {});
+  await wait(p, 500);
+  return true;
+}
+
+const interactions = {
+  home: async (p, S, mob) => {
+    await S.view('prompt');
+    await clickNamed(p, 'button', 'Product Hero Shots');
+    await S.view('chip');
+    if (mob) {
+      const menu = p.getByRole('button', { name: 'Toggle mobile navigation menu' }).first();
+      if (await menu.count()) {
+        await menu.click().catch(() => {});
+        await wait(p, 700);
+        await S.view('nav-open');
+        await p.keyboard.press('Escape').catch(() => {});
+        await wait(p, 300);
+      }
+    }
+  },
+  app: async (p, S) => {
+    await clickNamed(p, 'button', 'Yearly');
+    await S.view('yearly');
+    await clickNamed(p, 'button', 'What is Luma Agents?');
+    await S.view('faq-open');
+  },
+  pricing: async (p, S) => {
+    await clickNamed(p, 'button', 'Yearly');
+    await S.view('yearly');
+  },
+  api: async (p, S) => {
+    await clickNamed(p, 'button', 'Uni-1.1');
+    await S.view('uni-tab');
+    await clickNamed(p, 'button', 'What key capabilities are available via the API?');
+    await S.view('faq-open');
+  },
+  enterprise: async (p, S) => {
+    const sel = p.getByRole('button', { name: 'Select an industry' }).first();
+    if (await sel.count()) {
+      await sel.click().catch(() => {});
+      await wait(p, 500);
+      await S.view('select-open');
+      await p.keyboard.press('Escape').catch(() => {});
+    }
+  },
+  mcp: async (p, S) => {
+    await clickNamed(p, 'button', 'ChatGPT');
+    await S.view('chatgpt-tab');
+    await clickNamed(p, 'button', '2 Or add Luma AI by hand');
+    await S.view('step-open');
+  },
+  careers: async (p, S) => {
+    await clickNamed(p, 'button', 'All departments');
+    await S.view('filter-open');
+    await p.keyboard.press('Escape').catch(() => {});
+  },
+  uni1: async (p, S) => {
+    await clickNamed(p, 'button', 'Go to slide 3');
+    await S.view('slide-3');
+  },
+  'case-studies': async (p, S) => {
+    await clickNamed(p, 'button', 'Agency');
+    await S.view('filter-agency');
+  },
+  photon: async (p, S) => {
+    await clickNamed(p, 'button', 'Next');
+    await S.view('next');
+  },
+  'learning-center': async (p, S) => {
+    await clickNamed(p, 'button', 'What is Luma Agents?');
+    await S.view('faq-open');
+  },
 };
 
-const mobile = {
-  home: { path: '/', theme: 'dark', wait: 4000, run: async (p, S) => {
-    await S.view('default');
-    await step('nav', async () => {
-      const b = p.locator('button[aria-label*="menu" i], button[aria-label*="Menu" i], header button').last();
-      if (!(await b.count())) return;
-      await b.click({ timeout: 8000 });
-      await wait(p, 800);
-      await S.view('nav');
-      await p.keyboard.press('Escape');
-    });
-  } },
-  pricing: { path: '/pricing', theme: 'light', wait: 3000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  ray: { path: '/ray', theme: 'dark', wait: 3000, run: async (p, S) => { await S.view('default'); } },
-  news: { path: '/news', theme: 'light', wait: 3000, run: async (p, S) => { await S.view('default'); } },
-};
-
-const b = await chromium.launch();
+const browser = await chromium.launch({ headless: true });
 let total = 0;
-const runs = [...Object.keys(desktop).map((k) => ({ k, mob: false })), ...Object.keys(mobile).map((k) => ({ k, mob: true }))];
+const keys = Object.keys(PAGES);
+const runs = [
+  ...keys.map((k) => ({ k, mob: false })),
+  ...['home', 'pricing', 'app', 'news', 'careers'].map((k) => ({ k, mob: true })),
+];
 for (const { k, mob } of runs) {
   const name = (mob ? 'mobile-' : '') + k;
-  if (pageArg.length && !pageArg.includes(name)) continue;
-  const spec = (mob ? mobile : desktop)[k];
-  const theme = spec.theme || 'light';
-  const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
-  const ctx = await b.newContext({
-    viewport: { width: vw, height: vh }, deviceScaleFactor: dpr,
-    userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US',
-    colorScheme: theme === 'dark' ? 'dark' : 'light',
+  if (pageArg.length && !pageArg.includes(name) && !pageArg.includes(k)) continue;
+  const vw = mob ? 390 : 1440;
+  const vh = mob ? 844 : 900;
+  const dpr = mob ? 2 : 1;
+  const ctx = await browser.newContext({
+    viewport: { width: vw, height: vh },
+    deviceScaleFactor: dpr,
+    userAgent: mob ? UA_MOBILE : UA,
+    isMobile: mob,
+    hasTouch: mob,
+    locale: 'en-US',
   });
-  await patch(ctx);
+  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
   const p = await ctx.newPage();
-  log(name, theme);
-  const target = spec.path.startsWith('http') ? spec.path : BASE + spec.path;
-  const S = new Shooter(p, `${name}-${theme}`, vw, vh, dpr, target.split('?')[0]);
+  const S = new Shooter(p, `${name}-light`, vw, vh, dpr);
+  log('page', name, PAGES[k]);
   try {
-    await p.goto(target, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-    if (!(await clearChallenge(p))) { log('  BLOCKED', target); await ctx.close(); continue; }
-    await wait(p, spec.wait || 3000);
-    await closePromo(p);
-    await spec.run(p, S);
-  } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
+    const resp = await p.goto(BASE + PAGES[k], { waitUntil: 'domcontentloaded', timeout: 50000 });
+    await wait(p, 2200);
+    const host = new URL(p.url()).hostname;
+    if (!/lumalabs\.ai$/.test(host)) {
+      log('  WALL', p.url().split('?')[0]);
+      await ctx.close();
+      continue;
+    }
+    log('  status', resp?.status(), 'host', host);
+    await hideConsent(p);
+    await S.view('default');
+    await S.full();
+    if (interactions[k]) await interactions[k](p, S, mob).catch((e) => log('  interact fail', e.message.split('\n')[0]));
+  } catch (e) {
+    log('  PAGE FAILED', name, e.message.split('\n')[0]);
+  }
   total += S.count;
   await ctx.close();
 }
-log('done', total, 'screenshots ->', RAW);
-await b.close();
+log('done', total, '->', RAW);
+await browser.close();

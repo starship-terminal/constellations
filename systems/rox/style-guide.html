@@ -1,109 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-mode="light">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rox style guide</title>
 <style>
-  :root {
-    --page: #f7f6f4;
-    --surface: #fafafa;
-    --ink: #0c0a09;
-    --muted: #57534d;
-    --action: #0c0a09;
-    --border: #e7e5e4;
-    --field: #f4f4f3;
-    --blue: #0b63e8;
-    --stone-400: #a6a09b;
-  }
-  body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.4 system-ui, sans-serif; }
-  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
-  h1 { font-weight: 420; font-size: 42px; letter-spacing: -0.84px; line-height: 1.2; margin: 0 0 8px; }
-  h2 { font-size: 20px; font-weight: 500; margin: 40px 0 12px; }
-  p { color: var(--muted); max-width: 62ch; }
-  .row { display: flex; flex-wrap: wrap; gap: 12px; }
-  .swatch { width: 140px; }
-  .chip { height: 64px; border: 1px solid var(--border); }
-  .swatch span { display: block; font-size: 12px; margin-top: 4px; }
-  .swatch code { font-size: 11px; color: var(--muted); }
-  button, .btn { font: 500 16px/16px system-ui, sans-serif; border: 0; border-radius: 0; padding: 12px 24px 13px; cursor: default; }
-  .btn-ink { background: #0c0a09; color: #fafafa; }
-  .btn-paper { background: #fafafa; color: #0c0a09; box-shadow: 0.5px 0.5px 0.5px 0 rgba(255,255,255,.25) inset, -0.5px -0.5px 1px 0 rgba(0,0,0,.12) inset, 1px 1px 2px 0 rgba(0,0,0,.08) inset; }
-  .btn-charcoal { background: #403f3e; color: #fafafa; }
-  .field { background: var(--field); border-radius: 4px; padding: 16px; width: 320px; color: var(--stone-400); font-size: 14px; box-shadow: 0 0.48px 0.48px -1.875px rgba(0,0,0,.08), 0 4px 4px -3px rgba(0,0,0,.03); }
-  .card { background: var(--surface); border: 1px solid #d6d3d1; padding: 24px; width: 280px; }
-  .card strong { font-size: 42px; font-weight: 420; }
-  table { border-collapse: collapse; width: 100%; font-size: 14px; }
-  td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); }
-  .note { font-size: 13px; }
+:root {
+  --page: #f7f6f4;
+  --paper: #fafafa;
+  --card: #faf9f7;
+  --field: #f4f4f3;
+  --ink: #1c1917;
+  --ink-deep: #0c0a09;
+  --stone: #403f3e;
+  --muted: #a6a09b;
+  --muted-2: #57534d;
+  --on-ink: #fafafa;
+  --blue: #0b63e8;
+  --amber: #f0c030;
+  --orange: #f9700a;
+  --red: #e5484d;
+  --violet: #9458ff;
+  --focus: #005fcc;
+  --white: #ffffff;
+  --black: #000000;
+  --page: #f7f6f4;
+  --ink: #1c1917;
+  --surface: #fafafa;
+  --muted: #a6a09b;
+  --field: #f4f4f3;
+/*LIGHT*/
+  --sg-sans: Geist, Inter, system-ui, sans-serif;
+  --sg-display: "Season Mix-TRIAL Regular", Georgia, serif;
+  --sg-mono: "Geist Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 14px/1.5 var(--sg-sans); color: var(--ink, #1c1917); background: var(--page, #f7f6f4); }
+main { max-width: 980px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 420 42px/1.2 var(--sg-display); letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font: 500 13px/1 var(--sg-sans); margin: 40px 0 12px; }
+p { max-width: 62ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 56px; border: 1px solid rgba(28,25,23,.12); }
+.sw b, .sw span { display: block; font: 500 11px/1.4 var(--sg-mono); }
+.sw span { font-weight: 400; opacity: .7; }
+.btn { display: inline-flex; align-items: center; height: 30px; padding: 0 13px; font: 500 14px/1 var(--sg-sans); text-decoration: none; }
+.btn.ink { background: var(--ink, #1c1917); color: #fafafa; }
+.btn.paper { background: #fafafa; color: #403f3e; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+.field { background: #f4f4f3; border-radius: 4px; height: 49px; width: 280px; display: flex; align-items: center; padding: 0 16px; color: #1c1917; }
+.card { background: #faf9f7; width: 220px; min-height: 140px; padding: 16px; }
+.type-display { font: 420 56px/1.2 var(--sg-display); letter-spacing: -0.02em; }
+code { font-family: var(--sg-mono); }
 </style>
 </head>
 <body>
 <main>
   <h1>Rox</h1>
-  <p>Public marketing site, measured 2026-11-19. Light only. Display type on the live site is Season Mix Trial at weight 420. This page uses system-ui because the trial face is not committed.</p>
-
+  <p>Public site tokens, one theme. Values come from tokens.json.</p>
   <h2>Colour</h2>
-  <div class="row" id="swatches"></div>
-
+  <div class="row" id="swatches"><div class="sw"><i style="background:#f7f6f4"></i><b>page</b><span>#f7f6f4</span></div><div class="sw"><i style="background:#fafafa"></i><b>paper</b><span>#fafafa</span></div><div class="sw"><i style="background:#faf9f7"></i><b>card</b><span>#faf9f7</span></div><div class="sw"><i style="background:#f4f4f3"></i><b>field</b><span>#f4f4f3</span></div><div class="sw"><i style="background:#1c1917"></i><b>ink</b><span>#1c1917</span></div><div class="sw"><i style="background:#0c0a09"></i><b>ink-deep</b><span>#0c0a09</span></div><div class="sw"><i style="background:#403f3e"></i><b>stone</b><span>#403f3e</span></div><div class="sw"><i style="background:#a6a09b"></i><b>muted</b><span>#a6a09b</span></div><div class="sw"><i style="background:#57534d"></i><b>muted-2</b><span>#57534d</span></div><div class="sw"><i style="background:#fafafa"></i><b>on-ink</b><span>#fafafa</span></div><div class="sw"><i style="background:#0b63e8"></i><b>blue</b><span>#0b63e8</span></div><div class="sw"><i style="background:#f0c030"></i><b>amber</b><span>#f0c030</span></div><div class="sw"><i style="background:#f9700a"></i><b>orange</b><span>#f9700a</span></div><div class="sw"><i style="background:#e5484d"></i><b>red</b><span>#e5484d</span></div><div class="sw"><i style="background:#9458ff"></i><b>violet</b><span>#9458ff</span></div><div class="sw"><i style="background:#005fcc"></i><b>focus</b><span>#005fcc</span></div><div class="sw"><i style="background:#ffffff"></i><b>white</b><span>#ffffff</span></div><div class="sw"><i style="background:#000000"></i><b>black</b><span>#000000</span></div></div>
   <h2>Type</h2>
-  <p class="note">56px display, 42px title, 30px heading, 14px nav at weight 500, 16px button label. See tokens.json core.typography.</p>
-
-  <h2>Buttons</h2>
+  <p class="type-display">The Revenue Agent</p>
+  <p>Geist 14 / 500 for nav and buttons. Season Mix for display.</p>
+  <h2>Controls</h2>
   <div class="row">
-    <button class="btn-ink">Get in touch</button>
-    <button class="btn-paper">Start now</button>
-    <button class="btn-charcoal">Start for free</button>
+    <a class="btn paper">Contact Sales</a>
+    <a class="btn ink">Start now</a>
+    <div class="field">Enter your email</div>
+    <div class="card"><b>Individual</b><p>starts at $100</p></div>
   </div>
-  <p class="note">Marketing buttons are square. Radius 0 was computed on the nav, the plan button and the contact submit.</p>
-
-  <h2>Field</h2>
-  <div class="field">Enter your email</div>
-  <p class="note">Contact field wrapper is #f4f4f3, radius 4px, padding 16px, height 49px.</p>
-
-  <h2>Plan card</h2>
-  <div class="card">
-    <div class="note">INDIVIDUAL</div>
-    <p>starts at</p>
-    <strong>$100</strong>
-    <div style="margin-top:16px"><button class="btn-charcoal">Start for free</button></div>
-  </div>
-
-  <h2>Scales</h2>
-  <table>
-    <tr><th>Token</th><th>Value</th></tr>
-    <tr><td>radius.none</td><td>0px</td></tr>
-    <tr><td>radius.field</td><td>4px</td></tr>
-    <tr><td>radius.auth-control</td><td>10px</td></tr>
-    <tr><td>radius.auth-card</td><td>14px</td></tr>
-    <tr><td>spacing.nav-button</td><td>8px 13px</td></tr>
-    <tr><td>spacing.button</td><td>12px 24px 13px</td></tr>
-    <tr><td>spacing.field</td><td>16px</td></tr>
-    <tr><td>spacing.form-card</td><td>40px</td></tr>
-  </table>
-  <p class="note">Auth radii come from the signed-out Auth0 card, not from the marketing site. There is no dark theme.</p>
 </main>
 <script>
-const chips = [
-  ["page", "#f7f6f4"],
-  ["surface", "#fafafa"],
-  ["ink", "#0c0a09"],
-  ["ink soft", "#1c1917"],
-  ["muted", "#57534d"],
-  ["stone 400", "#a6a09b"],
-  ["field", "#f4f4f3"],
-  ["action", "#403f3e"],
-  ["blue token", "#0b63e8"],
-  ["auth page", "#efedea"],
-  ["auth card", "#fafaf9"],
-  ["error token", "#E38268"]
+const swatches = [
+  ["page", "--page"],
+  ["surface", "--surface"],
+  ["ink", "--ink"],
+  ["muted", "--muted"],
+  ["field", "--field"],
 ];
-const row = document.getElementById("swatches");
-for (const [name, value] of chips) {
-  const el = document.createElement("div");
-  el.className = "swatch";
-  el.innerHTML = `<div class="chip" style="background:${value}"></div><span>${name}</span><code>${value}</code>`;
-  row.appendChild(el);
-}
 </script>
 </body>
 </html>

@@ -1,19 +1,49 @@
-# Patterns
+# Sharewillow patterns
 
-Public pages only. No screenshot: the preview browser did not produce frames. Layout notes come from the live DOM at innerWidth 1440.
+Public site only. The signed-in app was not opened past the login wall.
 
-## Marketing shell
+## App shell and navigation
 
-A fixed header, about 102px tall, holds an announcement strip (`max-w-[1280px]`, 13px) and a pill nav: Product, Industries, Customers, Pricing, Agents with a COMING SOON badge, Sign in, and Book a demo. Product and Industries open a paper flyout. The page background is ivory `#f7f5f1`. The h1 is Mackinac, 80px at 1440, "Show your techs the money." The footer is the hero dark band, `#0d0a07` with `#f5f2e0` ink.
+Desktop header: wordmark, Product and Industries disclosures, Customers, Pricing, Agents with a lemon "Coming soon" badge, Sign in, and a pill "Book a demo". A lemon announcement bar sits above the header. [screenshots/home-light-default.png](screenshots/home-light-default.png).
+
+Phone header: wordmark, "Book a demo", and "Open menu". The menu is a dialog. [screenshots/mobile-home-light-default.png](screenshots/mobile-home-light-default.png), [screenshots/mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png).
+
+## Marketing hero
+
+Ivory page, espresso display type in Mackinac, one pill primary and one quiet text link. A phone mock of the product sits in the hero. That mock is a public demo, not the signed-in app. [screenshots/home-light-default.png](screenshots/home-light-default.png).
 
 ## Pricing
 
-One public page, no checkout. A Mackinac headline, a paper calculator card with a range input (value 10 of 1 to 100), a `$50` figure, and a price table (1–19 at $50/mo, up to 75+ at $35/mo). FAQ buttons were in the heading list. None were opened, so the expanded answer is a gap.
+[screenshots/pricing-light-default.png](screenshots/pricing-light-default.png) and the full page [screenshots/pricing-light-full.png](screenshots/pricing-light-full.png).
 
-## Signed-out login
+## Form
 
-`app.sharewillow.com/login` is a centered mushroom card, 576px, radius 32px, padding 48px, on a white page. Title "Welcome Back" in the serif at 24px. A lemon logo tile, a phone-number link (not followed), email, password, a checked Remember me box, and a Login button. The form was not submitted.
+The demo page shows a form. It was not submitted. [screenshots/demo-light-default.png](screenshots/demo-light-default.png). Newsletter and partner signup forms were not filled.
 
-## Signup
+## Empty, loading, error
 
-`/signup` is step 1 of 6: work email, password, confirm password, Create account, and a reCAPTCHA notice. It is not an email-only form, so it was not filled in. Steps 2 to 6 are a gap.
+Not captured. No public empty state, spinner, or validation error was reached without submitting a form.
+
+## Destructive confirmation
+
+Not present on the public site.
+
+## Feedback after an action
+
+Not captured. No action was submitted.
+
+## Search and filtering
+
+Not present on the captured marketing pages. Blog categories exist as links (`/blog/category/incentives` and siblings). One category was not given its own screenshot. The blog index stands in: [screenshots/blog-light-default.png](screenshots/blog-light-default.png).
+
+## List or table
+
+Customer index and blog index are card lists. [screenshots/customers-light-default.png](screenshots/customers-light-default.png), [screenshots/blog-light-default.png](screenshots/blog-light-default.png). No data table was captured.
+
+## Onboarding
+
+Signup is a six-step account flow. Step 1 was visible at [https://app.sharewillow.com/signup](https://app.sharewillow.com/signup) during the site-tree walk and was not screenshotted into the package, because the page asks for an email and a password. Steps 2–6 were not opened. Not captured.
+
+## Login wall
+
+[screenshots/login-light-wall.png](screenshots/login-light-wall.png) and [screenshots/mobile-login-light-wall.png](screenshots/mobile-login-light-wall.png). Branch stopped there.

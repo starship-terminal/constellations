@@ -1,91 +1,110 @@
 # Unsplash components
 
-Measured on unsplash.com, signed out, on 2026-11-19. Values are computed styles. The preview browser did not produce screenshot frames, so this file has no crops.
+Public signed-out surface, measured 2026-11-21 in headed Chromium at 1440 x 900. Crops are in [components/crops/](components/crops). Values are token names from [tokens.json](tokens.json).
 
-## Button
+## Search field
 
-Primary fill is `#111111` with white type, radius 8px, and a `rgba(0, 0, 0, 0.08) 0px 1px 1px` shadow. Small is 32px tall, 14px type, 11px inline padding. Medium is 44px, 15px type, 16px inline padding. Large is 56px, 18px type, 24px inline padding. Download on a photo page and Login on `/login` are this button.
+The header search is a gray pill (`light.surface`, radius larger than the 8px button token; the pill radius was not isolated as its own custom property). The input itself paints transparent. Placeholder copy: "Search photos and illustrations". Focus opens a suggestion list. Nothing was typed or submitted.
 
-Outline is white with a 1px `#d1d1d1` border, `#767676` type, and the same radius and shadow. Submit an image and Share use it. Hover, from the stylesheet, sets the border to `#767676`, the type to `#111111`, and the shadow to `rgba(0, 0, 0, 0.1) 0px 1px 2px`.
+| State | Crop | Notes |
+|---|---|---|
+| default | [search-field-default](components/crops/search-field-default.png) | 14px, `light.text` |
+| hover | [search-field-hover](components/crops/search-field-hover.png) | no fill change on the input |
+| focus-visible | [search-field-focus-visible](components/crops/search-field-focus-visible.png) | focus ring not captured as a distinct outline on the input |
+| pressed | [search-field-pressed](components/crops/search-field-pressed.png) | CDP `:active`. No submit |
 
-Secondary is `#007fff` with white type. It was measured on a specimen using the live `.secondary-Qhy_qo` class, not on a button that was already on the page.
+## Primary button
 
-Disabled, from `.base-WybTAX:disabled`, is `#eeeeee` fill, `#767676` type, and `cursor: not-allowed`.
+Login submit. Fill `light.button` (`#111111`), text `light.button-text`, radius `core.radius.button` (8px), height `core.space.control-medium` (44px). Hover fill `light.button-hover` (`#222222`).
 
-Pressed was not measured. The stylesheet does not declare a separate `:active` fill for the primary button.
+| State | Crop |
+|---|---|
+| default | [login-submit-default](components/crops/login-submit-default.png) |
+| hover | [login-submit-hover](components/crops/login-submit-hover.png) |
+| focus-visible | [login-submit-focus-visible](components/crops/login-submit-focus-visible.png) |
+| pressed | [login-submit-pressed](components/crops/login-submit-pressed.png) |
+
+## Quiet button
+
+"Submit an image" in the header. White fill, gray text (`#767676`, `light.muted`), 8px radius, 32px height (`core.space.control-small`), 1px shadow `rgba(0, 0, 0, 0.08) 0 1px 1px`. Clicking it opens the login wall. The click was not used for the state shots. Pressed is CDP.
+
+| State | Crop |
+|---|---|
+| default | [submit-button-default](components/crops/submit-button-default.png) |
+| hover | [submit-button-hover](components/crops/submit-button-hover.png) |
+| focus-visible | [submit-button-focus-visible](components/crops/submit-button-focus-visible.png) |
+| pressed | [submit-button-pressed](components/crops/submit-button-pressed.png) |
+
+## Icon button
+
+The header Menu control is 40 x 40, 8px radius. Hover fills `light.surface` (`#eeeeee`, `--color-gray-200`).
+
+| State | Crop |
+|---|---|
+| default | [menu-button-default](components/crops/menu-button-default.png) |
+| hover | [menu-button-hover](components/crops/menu-button-hover.png) |
+| focus-visible | [menu-button-focus-visible](components/crops/menu-button-focus-visible.png) |
+| pressed | [menu-button-pressed](components/crops/menu-button-pressed.png) |
 
 ## Link
 
-Log in is a text button: transparent fill, `#767676`, 14px, weight 500, radius 8px, padding `0 11px`, height 32px. Hover colour is `#111111`. The transition is `color 0.1s ease-in-out, opacity 0.1s ease-in-out`.
+Header "Log in" is 14px / 500, `light.muted` at rest, `light.text` on hover.
 
-Topic links (Featured, Nature) are 14px, weight 500, 64px tall. Inactive is `#767676`. Active is `#111111` with an inset 2px bottom bar.
+| State | Crop |
+|---|---|
+| default | [login-link-default](components/crops/login-link-default.png) |
+| hover | [login-link-hover](components/crops/login-link-hover.png) |
+| focus-visible | [login-link-focus-visible](components/crops/login-link-focus-visible.png) |
+| pressed | [login-link-pressed](components/crops/login-link-pressed.png) |
+
+Menu links use the same gray-to-black shift. See [menu-link-default](components/crops/menu-link-default.png).
 
 ## Text field
 
-The login email and password fields are 40px tall, radius 8px, 1px `#d1d1d1` border, padding `6px 12px`, 14px type, white fill. Focus outline is `rgb(229, 151, 0) auto 5px`. The fields were focused and not filled. The form was not submitted.
+Login email and password, empty. Not typed. White fill, 8px radius, 40px tall, 472px wide on the 1440 capture.
 
-Search is a separate control: a 40px pill, radius 24px, fill `#eeeeee`, placeholder "Search photos and illustrations" in `#767676`. At 1440 the form is 706px wide. At 390 it is 366px wide.
-
-## Select
-
-Orientation, License, and Sort by Relevance are 32px chips, radius 8px, 1px `#eeeeee` border, 14px type, weight 500, padding `5px 8px 5px 11px`. The menus were not opened.
-
-## Checkbox and radio
-
-A radio specimen using `.radioButton-ewDQ_A` is 16px, 50% radius, `1.5px solid #d1d1d1`. Checked, from the stylesheet, uses an 8px `#007fff` dot. No checkbox class was on the public pages. The OneTrust checkboxes belong to the consent vendor and were not measured as product controls.
-
-## Switch
-
-Not present as a switch. `/plus` uses a tablist: a `#f5f5f5` track, radius 32px, padding 4px, height 42px, with a white thumb, radius 24px, height 34px, shadow `rgba(0, 0, 0, 0.08) 0px 1px 3px`. Yearly is selected. Monthly was not clicked, because the click would change the displayed price.
+| Field | Crop |
+|---|---|
+| email | [email-field-default](components/crops/email-field-default.png) |
+| password | [password-field-default](components/crops/password-field-default.png) |
 
 ## Tabs
 
-Home and search use a 64px text tab with a 2px inset bar. `/plus` uses the pill tablist above.
+Topic chips under the search. Resting text `light.muted`. Selected topic uses a 2px black underline (Featured on the home shot). Hover darkens the label to `light.text`.
+
+| State | Crop |
+|---|---|
+| default | [topic-chip-default](components/crops/topic-chip-default.png) |
+| hover | [topic-chip-hover](components/crops/topic-chip-hover.png) |
 
 ## Menu
 
-At 390, the Menu button opens a white popup, 358px wide, radius 8px, shadow `rgba(0, 0, 0, 0.06) 0px 4px 8px -4px, rgba(0, 0, 0, 0.08) 0px 16px 24px -8px`. It lists Company, Product, Community, Explore, and Legal, plus Submit an image and Log in. The links were not followed.
-
-## Tooltip
-
-Not captured. No tooltip was open.
+The Menu button opens a white dialog with Company, Product, and Community columns. Captured in [home-light-menu](screenshots/home-light-menu.png).
 
 ## Dialog
 
-The modal class `.popup-vBZs6V` computes white, radius 8px, shadow `rgba(0, 0, 0, 0.15) 0px 8px 16px`. No product dialog was opened. Login, download, and checkout were not entered.
-
-## Toast
-
-Not present on the pages visited.
+Visual search opens a dialog (drop a file, paste a link, try an example). No file was uploaded. See [home-light-visual-search](screenshots/home-light-visual-search.png).
 
 ## Card
 
-The Plus plan card is 450px wide, padding 32px, radius 24px, border `2px solid #eeeeee`. The Limited Launch Special pill is `#37a866` on `rgba(60, 180, 110, 0.1)`, radius 36px, padding `4px 12px`.
+Photo and collection tiles on the home grid. The crop of the first photo link hit a caption line, not the image. The layout is in [home-light-default](screenshots/home-light-default.png).
 
-Explore tiles are 240 by 210, with an image radius of 8px. Home promo modules use radius 8px and `overflow: hidden`. Photo grid figures at search have square corners.
+## Shared values
 
-## List row
-
-Not a separate component. Search results are a photo grid. Related tags are 28px pills, fill `#eeeeee`, type `#555555`, radius 6px, padding `4px 10px`.
-
-## Table
-
-Not present.
-
-## Avatar
-
-A photo-page avatar computed 32 by 32, radius 50%.
-
-## Badge
-
-The deal pill above is the badge. No other badge was measured.
+| Role | Token |
+|---|---|
+| Page | `light.page` #ffffff |
+| Text | `light.text` #111111 |
+| Muted | `light.muted` #767676 |
+| Search surface | `light.surface` #f5f5f5 |
+| Primary button | `light.button` / `light.button-hover` |
+| Radius | `core.radius.button` 8px |
+| Body | 15px / 24px, `ui-sans-serif, system-ui, sans-serif` |
 
 ## Gaps
 
-- No screenshot crops. The preview browser returned "The browser is not producing screenshot frames".
-- Hover and pressed were read from stylesheets, not from a pointer press, except focus, which was applied with `element.focus()`.
-- Download was not clicked. The two photo pages that loaded were Unsplash+ photos. A free-photo download control was not isolated.
-- Login was not submitted. Join was not opened.
-- Get Unsplash+ was not followed into checkout.
-- Dark theme was resolved on a detached `.dark` node. No signed-out page painted it.
-- Checkbox, tooltip, toast, table, and a destructive confirm were not on the public pages.
+- Text area, select, checkbox, radio, switch, tooltip, toast, table, avatar, badge: not present on the public pages that were opened, or not isolated.
+- Disabled, loading, and error states: not shown. No form was submitted, so validation never appeared.
+- Dark theme: declared on `.dark` in CSS, never applied. Not exported as a theme.
+- Search pill radius and photo corner radius: visible, not a dedicated custom property. Not captured as their own tokens.
+- Icon artwork: not extracted ([docs/RIGHTS.md](../../docs/RIGHTS.md)).

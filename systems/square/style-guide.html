@@ -1,74 +1,195 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-mode="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Square style guide</title>
 <style>
-  :root {
-    --page: #FFFFFF;
-    --canvas: #FAFAFA;
-    --surface: #F7F6F5;
-    --ink: #000000;
-    --login: #101010;
-    --accent: #006AFF;
-    --plate: #004BFF;
-    --muted: #707070;
-    --field-border: #DADADA;
-    --passkey: #F0F0F0;
-    --sans: "Square Sans Text VF", "Square Sans Text", Helvetica, Arial, sans-serif;
-    --display: "Square Sans Display VF", "Square Sans Display", Helvetica, Arial, sans-serif;
-    --cash: "Cash Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--canvas); color: var(--ink); font: 400 16px/24px var(--sans); }
-  main { max-width: 880px; margin: 0 auto; padding: 32px 20px 64px; }
-  h1 { font-family: var(--display); font-weight: 400; letter-spacing: -0.5px; font-size: 40px; margin: 0 0 8px; }
-  h2 { font-family: var(--display); font-weight: 700; font-size: 22px; margin: 32px 0 12px; }
-  p { max-width: 68ch; }
-  .row { display: flex; flex-wrap: wrap; gap: 12px; }
-  .sw { width: 140px; }
-  .sw i { display: block; height: 64px; border-radius: 10px; border: 1px solid var(--field-border); }
-  .sw span { display: block; font-size: 12px; margin-top: 6px; }
-  .btn { display: inline-block; background: #006AFF; color: #fff; text-decoration: none; font-weight: 500; padding: 10px 20px; border-radius: 50px; line-height: 24px; }
-  .btn-alt { display: inline-block; background: #fff; color: #006AFF; text-decoration: none; font-weight: 500; padding: 10px 20px; border-radius: 50px; line-height: 24px; }
-  .btn-login { display: inline-block; background: #101010; color: #fff; border-radius: 24px; padding: 12px 20px; font-weight: 600; min-width: 220px; text-align: center; }
-  .field { display: block; width: 100%; max-width: 535px; background: #fff; box-shadow: inset 0 0 0 1px #DADADA; border: 0; border-radius: 8px; height: 64px; padding: 20px 16px; font: 400 16px/24px var(--sans); }
-  .card { background: #fff; border-radius: 10px; padding: 20px; max-width: 350px; }
-  .plate { background: var(--plate); color: #fff; padding: 28px; }
-  code { font-size: 12px; }
+:root {
+  --color-accent-transparent: rgba(0, 0, 0, 0.06);
+  --color-background: #ffffff;
+  --color-blue: #006aff;
+  --color-border-transparent: rgba(128, 128, 128, 0.35);
+  --color-critical: #cc0023;
+  --color-drop-shadow: rgba(0, 0, 0, 0.16);
+  --color-form-field-active: #000000;
+  --color-form-field-default: #cccccc;
+  --color-form-field-disabled-background-color: #e5e5e5;
+  --color-form-field-disabled-box-shadow: #cccccc;
+  --color-form-field-focus: #000000;
+  --color-form-field-hover: #000000;
+  --color-form-field-placeholder: #888888;
+  --color-form-field-selected: #000000;
+  --color-gray-0: #ffffff;
+  --color-gray-03: #f7f7f7;
+  --color-gray-05: #f2f2f2;
+  --color-gray-100: #000000;
+  --color-gray-13: #e5e5e5;
+  --color-gray-15: #cccccc;
+  --color-gray-3: #f7f6f5;
+  --color-gray-30: #bbbbbb;
+  --color-gray-5: #f7f6f5;
+  --color-gray-55: #707070;
+  --color-gray-75: #333333;
+  --color-gray-80: #333333;
+  --color-gray-85: #1f1f1f;
+  --color-gray-90: #1f1f1f;
+  --color-gray-93: #000000;
+  --color-gray-99: #000000;
+  --color-green: #0bb634;
+  --color-link-secondary-hover: #000000;
+  --color-neutral-000: #000000;
+  --color-neutral-100: #1f1f1f;
+  --color-neutral-1000: #ffffff;
+  --color-neutral-200: #333333;
+  --color-neutral-300: #707070;
+  --color-neutral-400: #888888;
+  --color-neutral-500: #999999;
+  --color-neutral-600: #bbbbbb;
+  --color-neutral-700: #cccccc;
+  --color-neutral-800: #e5e5e5;
+  --color-neutral-900: #f7f6f5;
+  --color-phone-field-button-background-color-hover: #e5e5e5;
+  --color-plum: #a1499c;
+  --color-red: #df3320;
+  --color-rose: #c14f70;
+  --color-success: #00b23b;
+  --color-text-base: #000000;
+  --color-text-body: #000000;
+  --color-text-muted: #707070;
+  --color-transparent: rgba(0, 0, 0, 0);
+  --fontFamily-sans: Square Sans Text VF;
+  --fontFamily-display: Square Sans Display VF;
+  --fontFamily-serif: Exact Block;
+  --fontFamily-mono: Cash Sans Mono;
+  --fontFamily-cashSans: Cash Sans;
+  --motion-duration-duration-complex: 375ms;
+  --motion-duration-duration-default: 300ms;
+  --motion-duration-duration-enter: 225ms;
+  --motion-duration-duration-leave: 195ms;
+  --motion-duration-duration-quick: 150ms;
+  --motion-duration-duration-slow: 400ms;
+  --motion-easing-easing-accelerate: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --motion-easing-easing-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --motion-easing-easing-sharp: cubic-bezier(0.4, 0.0, 0.6, 1.0);
+  --motion-easing-easing-standard: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --spacing-10: 10px;
+  --spacing-100: 100px;
+  --spacing-120: 120px;
+  --spacing-140: 140px;
+  --spacing-15: 15px;
+  --spacing-160: 160px;
+  --spacing-180: 180px;
+  --spacing-20: 20px;
+  --spacing-200: 200px;
+  --spacing-30: 30px;
+  --spacing-40: 40px;
+  --spacing-5: 5px;
+  --spacing-50: 50px;
+  --spacing-60: 60px;
+  --spacing-80: 80px;
+  --radius-button: 50px;
+  --radius-card: 10px;
+  --radius-badge: 5px;
+  --radius-toast: 6px;
+  --radius-container: 10px;
+  --radius-focus: 5px;
+  --typography-display: 400 64px/1.2 var(--fontFamily-display);
+  --typography-heading: 400 40px/1.2 var(--fontFamily-serif);
+  --typography-body: 400 16px/1.5 var(--fontFamily-sans);
+  --typography-label: 400 14px/1.2 var(--fontFamily-sans);
+  --typography-caption: 400 12px/1.2 var(--fontFamily-sans);
+  --page: #ffffff;
+  --surface: #ffffff;
+  --text: #000000;
+  --muted: #707070;
+  --accent: #000000;
+  --border: #cccccc;
+  --onAccent: #ffffff;
+  --link: #000000;
+  --focus: #000000;
+  --success: #00b23b;
+  --danger: #cc0023;
+  --info: #006aff;
+  color-scheme: light;
+  --sg-sans: "Square Sans Text VF", "Square Sans Text", Helvetica, Arial, sans-serif;
+  --sg-display: "Square Sans Display VF", "Square Sans Display", Helvetica, Arial, sans-serif;
+  --sg-serif: "Exact Block", Georgia, "Times New Roman", serif;
+}
+[data-mode="dark"] {
+  --page: #000000;
+  --surface: #000000;
+  --text: #ffffff;
+  --muted: #999999;
+  --accent: #ffffff;
+  --border: #707070;
+  --onAccent: #000000;
+  --link: #ffffff;
+  --focus: #ffffff;
+  --success: #00b23b;
+  --danger: #cc0023;
+  --info: #1379f3;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sg-sans); }
+header { display: flex; justify-content: space-between; align-items: center; padding: 16px 28px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--surface); }
+header h1 { margin: 0; font: 400 20px/28px var(--sg-display); }
+button.theme { border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 24px; padding: 8px 16px; font: inherit; cursor: pointer; }
+main { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+h2 { font: 400 32px/38px var(--sg-serif); margin: 40px 0 12px; }
+p.note { color: var(--muted); max-width: 68ch; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.sw { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
+.sw i { display: block; height: 64px; }
+.sw b, .sw code { display: block; padding: 6px 10px 0; font-size: 13px; }
+.sw code { padding-bottom: 10px; color: var(--muted); }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 16px 0; }
+.btn { display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border-radius: 50px; background: var(--accent); color: var(--onAccent); text-decoration: none; font-weight: 500; }
+.btn.quiet { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.field { height: 48px; border-radius: 8px; border: 1px solid var(--border); padding: 0 14px; background: var(--surface); color: var(--text); min-width: 240px; font: inherit; }
+.card { border: 1px solid var(--border); border-radius: 16px; padding: 20px; max-width: 280px; background: var(--surface); }
+.card strong { display: block; font: 400 22px/28px var(--sg-display); }
+footer.fake { margin-top: 28px; background: var(--accent); color: var(--onAccent); padding: 20px; border-radius: 12px; }
 </style>
 </head>
 <body>
-<main>
+<header>
   <h1>Square</h1>
-  <p>Light tokens from the public signed-out pages, 2026-11-19. Proprietary faces fall back to Helvetica when they are not installed.</p>
-  <h2>Colour</h2>
-  <div class="row">
-    <div class="sw"><i style="background:#FFFFFF"></i><span>page #FFFFFF</span></div>
-    <div class="sw"><i style="background:#FAFAFA"></i><span>canvas #FAFAFA</span></div>
-    <div class="sw"><i style="background:#F7F6F5"></i><span>surface #F7F6F5</span></div>
-    <div class="sw"><i style="background:#000000"></i><span>ink #000000</span></div>
-    <div class="sw"><i style="background:#101010"></i><span>login ink #101010</span></div>
-    <div class="sw"><i style="background:#006AFF"></i><span>accent #006AFF</span></div>
-    <div class="sw"><i style="background:#004BFF"></i><span>plate #004BFF</span></div>
-    <div class="sw"><i style="background:#707070"></i><span>muted #707070</span></div>
-    <div class="sw"><i style="background:#DADADA"></i><span>field border #DADADA</span></div>
+  <button class="theme" type="button" id="theme">Dark tokens</button>
+</header>
+<main>
+  <p class="note">Values from Square's public design-system custom properties on squareup.com, measured 2026-11-21. The live marketing site paints light. Dark is the declared <code>data-color-mode=dark</code> set, not a captured dark page.</p>
+  <h2>Colour roles</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#ffffff"></i><b>page</b><code>#ffffff</code></div><div class="sw"><i style="background:#ffffff"></i><b>surface</b><code>#ffffff</code></div><div class="sw"><i style="background:#000000"></i><b>text</b><code>#000000</code></div><div class="sw"><i style="background:#707070"></i><b>muted</b><code>#707070</code></div><div class="sw"><i style="background:#000000"></i><b>accent</b><code>#000000</code></div><div class="sw"><i style="background:#cccccc"></i><b>border</b><code>#cccccc</code></div><div class="sw"><i style="background:#ffffff"></i><b>onAccent</b><code>#ffffff</code></div><div class="sw"><i style="background:#000000"></i><b>link</b><code>#000000</code></div><div class="sw"><i style="background:#000000"></i><b>focus</b><code>#000000</code></div><div class="sw"><i style="background:#00b23b"></i><b>success</b><code>#00b23b</code></div><div class="sw"><i style="background:#cc0023"></i><b>danger</b><code>#cc0023</code></div><div class="sw"><i style="background:#006aff"></i><b>info</b><code>#006aff</code></div>
   </div>
   <h2>Type</h2>
-  <p style="font-family:var(--display);font-weight:400;font-size:40px;letter-spacing:-0.5px;line-height:1">Make it big on your block.</p>
-  <p>Body is Square Sans Text VF at 16px. This paragraph uses the fallback stack.</p>
+  <p style="font: 400 64px/1.05 var(--sg-display); letter-spacing: -0.5px; margin: 0;">Local legend or global icon.</p>
+  <p style="font: 400 40px/45px var(--sg-serif); letter-spacing: -0.8px;">Whatever your flavor of business.</p>
+  <p>Body copy uses Square Sans Text at 16px on 24px. Footer links use the muted grey.</p>
   <h2>Controls</h2>
-  <p><a class="btn" href="#button">Contact sales</a> <a class="btn-alt" href="#alt">Get started</a></p>
+  <div class="row">
+    <a class="btn" href="#roles">Get started</a>
+    <a class="btn quiet" href="#roles">Contact sales</a>
+  </div>
+  <div class="row">
+    <input class="field" placeholder="Search" aria-label="Search sample">
+  </div>
   <div class="card">
-    <p style="font-family:var(--display);font-weight:700;font-size:25px;line-height:32px;color:#101010;margin-top:0">Sign in</p>
-    <input class="field" placeholder="Email or phone number" aria-label="Email or phone number" readonly>
-    <p><span class="btn-login">Continue</span></p>
+    <strong>Square Plus</strong>
+    <p>$49/mo. per location</p>
+    <a class="btn" href="#roles">Try free for 30 days</a>
   </div>
-  <h2>Plate</h2>
-  <div class="plate">
-    <p style="font-family:var(--display);font-weight:400;font-size:32px;letter-spacing:-0.5px;margin:0">Local legend or global icon.</p>
-  </div>
+  <footer class="fake">Footer band is black ink with white text on the live site.</footer>
 </main>
+<script>
+document.getElementById("theme").onclick = () => {
+  const html = document.documentElement;
+  const next = html.getAttribute("data-mode") === "dark" ? "light" : "dark";
+  html.setAttribute("data-mode", next);
+  document.getElementById("theme").textContent = next === "dark" ? "Light tokens" : "Dark tokens";
+};
+</script>
 </body>
 </html>

@@ -15,10 +15,13 @@ radius and a soft white shadow, carrying the wordmark
 14.4px ([nav-link](components/crops/nav-link-default.png)) — Features ·
 Resources · Success Stories · Pricing — a nav-menu-trigger that opens a
 flyout ([nav-trigger-open](components/crops/nav-trigger-open-opened.png)),
-and a dark `#121212` Book a demo CTA
+and a dark `#121212` Try Boords Free CTA
 ([cta-demo](components/crops/cta-demo-default.png)) that fades to a 5% ink
-fill on hover. A round menu button opens the desktop overlay
-([home-light-menu](screenshots/home-light-menu.png)).
+fill on hover. Features and Resources open on hover
+([home-light-features-menu](screenshots/home-light-features-menu.png),
+[home-light-resources-menu](screenshots/home-light-resources-menu.png)).
+On a phone, Open menu opens a near-black drawer
+([mobile-home-light-menu](screenshots/mobile-home-light-menu.png)).
 
 ## The hero
 

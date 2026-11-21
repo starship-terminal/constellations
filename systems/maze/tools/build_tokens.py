@@ -1,205 +1,231 @@
 #!/usr/bin/env python3
-"""Build tokens.json from the Maze public capture.
+"""Build tokens.json from raw/css-vars.json.
 
-Maze marketing declares a named oklch palette on :root (Tailwind v4 custom
-properties). tools/capture/vars.mjs resolved those to sRGB. Auth and the
-public report paint Inter and a blue action as literals; those colours are
-recorded only when a computed style measured them. One painted theme. There
-is no dark set.
+maze.co paints one light theme. Colours are declared as oklch() on :root and
+converted here with the CSS Color 4 OKLab matrix. The hex is Derived from the
+measured oklch. A value that was not read is not invented.
+
+Deterministic: same inputs, byte-identical output. Edit the readings, never tokens.json.
 """
 import json
+import math
 import pathlib
 import re
-import sys
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
-RAW = HERE / "raw"
-sys.path.insert(0, str(HERE / "tools"))
-
-VARS = json.loads((RAW / "css-vars.json").read_text())
-LIGHT = VARS["resolved"]["light"]
-COMP = json.loads((RAW / "components-computed.json").read_text()) if (RAW / "components-computed.json").exists() else {"components": {}}
-
-S = "Resolved from maze.co :root custom properties, 2026-11-18 (oklch converted to sRGB by tools/capture/vars.mjs)"
-M = "Measured computed style, public Maze pages, 2026-11-18, light, 1440"
+RAW = json.loads((HERE / "raw" / "css-vars.json").read_text())
+LIGHT = RAW["resolved"]["light"]
 
 
-def color(value, source):
-    return {"$value": value, "$type": "color", "$extensions": {"source": source}}
+def oklch_to_srgb(L, C, H):
+    h = math.radians(H)
+    a = C * math.cos(h)
+    b = C * math.sin(h)
+    l_ = L + 0.3963377774 * a + 0.2158037573 * b
+    m_ = L - 0.1055613458 * a - 0.0638541728 * b
+    s_ = L - 0.0894841775 * a - 1.2914855480 * b
+    l, m, s = l_ ** 3, m_ ** 3, s_ ** 3
+    r = +4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s
+    g = -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s
+    b_ = -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s
+
+    def lin(c):
+        c = 0 if c < 0 else (1 if c > 1 else c)
+        return 12.92 * c if c <= 0.0031308 else 1.055 * (c ** (1 / 2.4)) - 0.055
+
+    R, G, B = (round(lin(c) * 255) for c in (r, g, b_))
+    return "#%02x%02x%02x" % (R, G, B)
 
 
-def dim(value, source):
-    return {"$value": value, "$type": "dimension", "$extensions": {"source": source}}
+def parse_oklch(value):
+    m = re.fullmatch(r"oklch\(\s*([\d.]+)(%)?\s+([\d.]+)\s+([\d.]+)\s*\)", value.strip())
+    if not m:
+        return None
+    L = float(m.group(1))
+    if m.group(2) == "%":
+        L /= 100
+    return oklch_to_srgb(L, float(m.group(3)), float(m.group(4)))
 
 
-def num(value, source, ty="number"):
-    return {"$value": value, "$type": ty, "$extensions": {"source": source}}
+def color(name):
+    raw = LIGHT[name]["raw"]
+    resolved = LIGHT[name]["value"]
+    hexed = parse_oklch(resolved) or parse_oklch(raw)
+    if not hexed:
+        raise SystemExit(f"{name}: not an oklch colour ({resolved!r})")
+    return {
+        "$value": hexed,
+        "$type": "color",
+        "$extensions": {
+            "source": f"Derived from css-var {name} = {raw} on :root, maze.co homepage 2026-11-21, converted OKLab to sRGB",
+            "evidence": "Derived",
+            "oklch": raw,
+        },
+    }
 
 
-def font(value, source):
-    return {"$value": value, "$type": "fontFamily", "$extensions": {"source": source}}
+def dim(name, note=""):
+    raw = LIGHT[name]["value"].strip()
+    if raw.startswith("."):
+        raw = "0" + raw
+    if not re.fullmatch(r"-?\d+(\.\d+)?(px|rem)", raw):
+        raise SystemExit(f"{name}: not a dimension ({raw!r})")
+    return {
+        "$value": raw,
+        "$type": "dimension",
+        "$extensions": {"source": f"Measured css-var {name} on :root, maze.co homepage 2026-11-21" + ("; " + note if note else ""), "evidence": "Measured"},
+    }
 
 
-def resolved(name):
-    node = LIGHT.get(name)
-    if not node:
-        raise SystemExit(f"missing {name} in raw/css-vars.json")
-    return node.get("value") or node.get("raw")
+def number_token(name):
+    raw = LIGHT[name]["value"].strip()
+    if not re.fullmatch(r"\d+", raw):
+        raise SystemExit(f"{name}: not an integer ({raw!r})")
+    return {
+        "$value": int(raw),
+        "$type": "fontWeight",
+        "$extensions": {"source": f"Measured css-var {name} on :root, maze.co homepage 2026-11-21", "evidence": "Measured"},
+    }
 
 
-def ramp(prefix):
-    out = {}
-    for key, node in LIGHT.items():
-        m = re.fullmatch(re.escape(prefix) + r"([0-9]+)", key)
-        if not m or node.get("kind") != "color":
-            continue
-        out[m.group(1)] = color(node["value"], f"{S}: {key} was {node.get('raw')}")
-    if not out:
-        raise SystemExit(f"no ramp for {prefix}")
-    return dict(sorted(out.items(), key=lambda kv: int(kv[0])))
+def duration(name):
+    raw = LIGHT[name]["value"].strip()
+    m = re.fullmatch(r"([\d.]+)s", raw)
+    if not m:
+        raise SystemExit(f"{name}: not a duration ({raw!r})")
+    ms = int(round(float(m.group(1)) * 1000))
+    return {
+        "$value": f"{ms}ms",
+        "$type": "duration",
+        "$extensions": {"source": f"Derived from css-var {name} = {raw} on :root, maze.co homepage 2026-11-21", "evidence": "Derived"},
+    }
 
 
-def measured_bg(key, state="default"):
-    comp = COMP["components"].get(key) or {}
-    st = (comp.get("states") or {}).get(state) or {}
-    style = st.get("style") or {}
-    return style.get("backgroundColor"), style.get("color"), style.get("fontFamily"), style.get("fontSize"), style.get("borderTopLeftRadius")
+def bezier(name):
+    raw = LIGHT[name]["value"].strip()
+    m = re.fullmatch(r"cubic-bezier\(\s*([-\d.]+)[,\s]+([-\d.]+)[,\s]+([-\d.]+)[,\s]+([-\d.]+)\s*\)", raw)
+    if not m:
+        raise SystemExit(f"{name}: not a cubic-bezier ({raw!r})")
+    return {
+        "$value": [float(x) for x in m.groups()],
+        "$type": "cubicBezier",
+        "$extensions": {"source": f"Measured css-var {name} on :root, maze.co homepage 2026-11-21", "evidence": "Measured"},
+    }
+
+
+def font_family():
+    raw = LIGHT["--font-phonic"]["value"]
+    return {
+        "$value": "Phonic, sans-serif",
+        "$type": "fontFamily",
+        "$extensions": {"source": "Measured css-var --font-phonic on :root, maze.co homepage 2026-11-21; @font-face Phonic woff2 from /fonts/phonic/", "evidence": "Measured"},
+    }
 
 
 core = {
     "color": {
-        "neutral": ramp("--color-neutral-"),
-        "blue": ramp("--color-blue-"),
-        "lime": ramp("--color-lime-"),
-        "cyan": ramp("--color-cyan-"),
-        "purple": ramp("--color-purple-"),
-        "red": ramp("--color-red-"),
-        "yellow": ramp("--color-yellow-"),
-        "white": color(resolved("--color-neutral-000"), f"{S}: --color-white aliases --color-neutral-000"),
-        "error": color(resolved("--color-red-500"), f"{S}: --color-error aliases --color-red-500"),
-        "success": color(resolved("--color-cyan-600"), f"{S}: --color-success aliases --color-cyan-600"),
+        "neutral": {step: color(f"--color-neutral-{step}") for step in ("000", "100", "200", "300", "400", "500", "600", "700", "900")},
+        "blue": {step: color(f"--color-blue-{step}") for step in ("100", "200", "300", "400", "500", "600", "700")},
+        "cyan": {step: color(f"--color-cyan-{step}") for step in ("100", "200", "300", "400", "500", "600", "700")},
+        "lime": {step: color(f"--color-lime-{step}") for step in ("100", "200", "300", "400", "500", "600", "700")},
+        "purple": {step: color(f"--color-purple-{step}") for step in ("100", "200", "300", "400", "500", "600", "700")},
+        "red": {step: color(f"--color-red-{step}") for step in ("100", "200", "300", "400", "500", "600", "700")},
+        "yellow": {step: color(f"--color-yellow-{step}") for step in ("100", "200", "300", "400", "500", "600", "700")},
     },
     "font": {
-        "family": {
-            "display": font("Phonic, sans-serif", f"{S}: --font-phonic, weights 300 400 500 700 in phonic.css"),
-            "sans": font("Inter, ui-sans-serif, system-ui, sans-serif", f"{M}: auth.maze.co and the public report paint Inter"),
-            "mono": font(resolved("--font-mono"), f"{S}: --font-mono"),
-        },
+        "family": {"display": font_family(), "ui": font_family()},
         "weight": {
-            "light": num(300, f"{S}: --font-weight-light"),
-            "regular": num(400, f"{S}: --font-weight-normal"),
-            "medium": num(500, f"{S}: --font-weight-medium"),
-            "semibold": num(600, f"{S}: --font-weight-semibold"),
-            "bold": num(700, f"{S}: --font-weight-bold"),
+            "light": number_token("--font-weight-light"),
+            "normal": number_token("--font-weight-normal"),
+            "medium": number_token("--font-weight-medium"),
+            "semibold": number_token("--font-weight-semibold"),
         },
-        "size": {
-            "sm": dim(resolved("--text-sm"), f"{S}: --text-sm"),
-            "base": dim(resolved("--text-base"), f"{S}: --text-base"),
-            "lg": dim(resolved("--text-lg"), f"{S}: --text-lg"),
-            "xl": dim(resolved("--text-xl"), f"{S}: --text-xl"),
-            "2xl": dim(resolved("--text-2xl"), f"{S}: --text-2xl"),
-            "3xl": dim(resolved("--text-3xl"), f"{S}: --text-3xl"),
-            "4xl": dim(resolved("--text-4xl"), f"{S}: --text-4xl"),
-            "7xl": dim(resolved("--text-7xl"), f"{S}: --text-7xl"),
-        },
-    },
-    "space": {
-        "1": dim(resolved("--spacing"), f"{S}: --spacing, the 4px unit"),
-        "2": dim("8px", "Derived: --spacing times 2"),
-        "3": dim("12px", "Derived: --spacing times 3"),
-        "4": dim("16px", "Derived: --spacing times 4"),
-        "6": dim("24px", "Derived: --spacing times 6"),
-        "8": dim("32px", "Derived: --spacing times 8"),
-        "10": dim("40px", "Derived: --spacing times 10, the header control height"),
-        "12": dim("48px", "Derived: --spacing times 12, the login field height"),
     },
     "radius": {
-        "xs": dim(resolved("--radius-xs"), f"{S}: --radius-xs"),
-        "sm": dim(resolved("--radius-sm"), f"{S}: --radius-sm"),
-        "md": dim(resolved("--radius-md"), f"{S}: --radius-md"),
-        "lg": dim(resolved("--radius-lg"), f"{S}: --radius-lg"),
-        "xl": dim(resolved("--radius-xl"), f"{S}: --radius-xl"),
-        "2xl": dim(resolved("--radius-2xl"), f"{S}: --radius-2xl"),
-        "3xl": dim(resolved("--radius-3xl"), f"{S}: --radius-3xl"),
-        "pill": dim("9999px", f"{M}: Try Maze for free is a pill"),
+        "xs": dim("--radius-xs"),
+        "sm": dim("--radius-sm"),
+        "md": dim("--radius-md"),
+        "lg": dim("--radius-lg"),
+        "xl": dim("--radius-xl"),
+        "2xl": dim("--radius-2xl"),
+    },
+    "spacing": {
+        "1": dim("--spacing"),
+        "nav-height": dim("--nav-height"),
+    },
+    "motion": {
+        "duration": duration("--default-transition-duration"),
+        "ease-out": bezier("--ease-out"),
+        "ease-in-out": bezier("--ease-in-out"),
     },
     "layout": {
-        "page": dim("1440px", "Desktop capture width"),
-        "phone": dim("390px", "Phone capture width"),
-        "navHeight": dim(resolved("--nav-height"), f"{S}: --nav-height. The painted header measured about 81px under the promo bar."),
-        "content": dim(resolved("--container-6xl"), f"{S}: --container-6xl"),
-        "prose": dim(resolved("--container-4xl"), f"{S}: --container-4xl"),
+        "breakpoint-2xl": dim("--breakpoint-2xl"),
+        "container-sm": dim("--container-sm"),
+        "container-md": dim("--container-md"),
+        "container-3xl": dim("--container-3xl"),
+    },
+    "typography": {
+        "display": {
+            "$type": "typography",
+            "$value": {
+                "fontFamily": "{font.family.display}",
+                "fontSize": "130px",
+                "fontWeight": "{font.weight.light}",
+                "lineHeight": "136.5px",
+                "letterSpacing": "-11.7px",
+            },
+            "$extensions": {"source": "Measured computed style of homepage h1, maze.co, light, 1440, 2026-11-21", "evidence": "Measured"},
+        },
+        "body": {
+            "$type": "typography",
+            "$value": {
+                "fontFamily": "{font.family.ui}",
+                "fontSize": "16px",
+                "fontWeight": "{font.weight.normal}",
+                "lineHeight": "24px",
+            },
+            "$extensions": {"source": "Measured computed style of body, maze.co homepage, light, 1440, 2026-11-21", "evidence": "Measured"},
+        },
+        "label": {
+            "$type": "typography",
+            "$value": {
+                "fontFamily": "{font.family.ui}",
+                "fontSize": "14px",
+                "fontWeight": "{font.weight.medium}",
+                "lineHeight": "24px",
+            },
+            "$extensions": {"source": "Measured computed style of header button, maze.co homepage, light, 1440, 2026-11-21", "evidence": "Measured"},
+        },
+    },
+    "shadow": {
+        "nav": {
+            "$type": "shadow",
+            "$value": [{"color": "rgba(0, 0, 0, 0.039)", "offsetX": "0px", "offsetY": "4px", "blur": "30px", "spread": "0px"}],
+            "$extensions": {"source": "Derived from css-var --shadow-nav = 0px 4px 30px #0000000a on :root", "evidence": "Derived"},
+        },
+        "modal": {
+            "$type": "shadow",
+            "$value": [{"color": "rgba(0, 0, 0, 0.078)", "offsetX": "0px", "offsetY": "4px", "blur": "20px", "spread": "0px"}],
+            "$extensions": {"source": "Derived from css-var --shadow-modal = 0 4px 20px #00000014 on :root", "evidence": "Derived"},
+        },
     },
 }
 
-login_bg, login_fg, login_font, login_size, login_radius = measured_bg("login-submit")
-# The action colour is the measured Log in fill; a missing or translucent reading fails the build
-# instead of falling back to a typed literal under the same Measured source.
-_m = re.fullmatch(r"rgba?\(\s*(\d+),\s*(\d+),\s*(\d+)\s*(?:,\s*1\s*)?\)", login_bg or "")
-if not _m:
-    raise SystemExit(f"login-submit backgroundColor is not an opaque rgb() reading: {login_bg!r}")
-core["color"]["action"] = color("#%02x%02x%02x" % tuple(int(x) for x in _m.groups()), f"{M}: Log in submit backgroundColor {login_bg}")
-
 light = {
-    "page": color("{color.neutral.100}", f"{S}: marketing ground is the warm neutral 100"),
-    "surface": color("{color.white}", f"{S}: cards and the auth form sit on white"),
-    "text": color("{color.neutral.700}", f"{M}: hero ink is oklch(0.226 0 0), the painted step nearest neutral 700"),
-    "textBody": color("{color.neutral.500}", f"{S}: secondary copy"),
-    "textMuted": color("{color.neutral.400}", f"{S}: captions"),
-    "textOnAccent": color("{color.white}", f"{M}: filled button labels"),
-    "accent": color("{color.neutral.700}", f"{M}: Get a demo fill is oklch(0.226 0 0), nearest neutral 700"),
-    "accentHover": color("{color.neutral.600}", f"{M}: Get a demo hover fill is oklch(0.356 0 0), nearest neutral 600"),
-    "link": color("{color.action}", f"{M}: auth links and the report Sign up for free"),
-    "action": color("{color.action}", f"{M}: Log in submit"),
-    "focus": color("{color.blue.500}", f"{S}: blue 500 is the declared focus-adjacent step"),
-    "border": color("{color.neutral.200}", f"{S}: hairline"),
-    "error": color("{color.error}", f"{S}: --color-error"),
-    "success": color("{color.success}", f"{S}: --color-success"),
-    "lime": color("{color.lime.400}", f"{S}: the lime collage on pricing and auth"),
+    "page": color("--color-neutral-000"),
+    "surface": color("--color-neutral-100"),
+    "text": color("--color-neutral-700"),
+    "muted": color("--color-neutral-500"),
+    "accent": color("--color-lime-400"),
+    "accent-ink": color("--color-neutral-700"),
+    "border": color("--color-neutral-300"),
+    "success": color("--color-success"),
+    "danger": color("--color-error"),
+    "link": color("--link-color"),
+    "heading": color("--heading-color"),
+    "chip": color("--chips-background"),
+    "on-accent": color("--chips-text"),
 }
-
-
-def walk(node, prefix=""):
-    for k, v in node.items():
-        if k.startswith("$"):
-            continue
-        path = f"{prefix}.{k}" if prefix else k
-        if isinstance(v, dict) and "$value" in v:
-            yield path, v
-        elif isinstance(v, dict):
-            yield from walk(v, path)
-
-
-names = {n for n, _ in walk(core)} | {n for n, _ in walk(light)}
-
-
-def alias_ok(alias):
-    return alias in names or ("color." + alias) in names or alias.startswith("color.") and alias in names
-
-
-def strings(v):
-    if isinstance(v, str):
-        yield v
-    elif isinstance(v, dict):
-        for x in v.values():
-            yield from strings(x)
-    elif isinstance(v, list):
-        for x in v:
-            yield from strings(x)
-
-
-for path, tok in walk({"core": core, "light": light}):
-    for blob in strings(tok["$value"]):
-        for alias in re.findall(r"\{([^{}]+)\}", blob):
-            if alias not in names and not (alias.startswith("color.") and alias in names):
-                raise SystemExit(f"{path} alias {{{alias}}} missing")
-
-motion_path = RAW / "motion.json"
-if motion_path.exists():
-    import motion as motion_mod
-    core["motion"], extra = motion_mod.build(json.loads(motion_path.read_text()))
-    if extra:
-        core["motion"].setdefault("$extensions", {})["notTokenised"] = extra
 
 tokens = {
     "core": core,
@@ -208,9 +234,24 @@ tokens = {
         "id": "light",
         "name": "Light",
         "selectedTokenSets": {"core": "source", "light": "enabled"},
-        "$description": "The only painted theme on captured Maze surfaces, 2026-11-18.",
+        "$description": "The only theme maze.co paints on the captured public pages. No dark class or data-theme switch was found.",
     }],
     "$metadata": {"tokenSetOrder": ["core", "light"]},
 }
+
+# Refuse a colour token whose value is not hex.
+for set_name, tree in (("core", core), ("light", light)):
+    def walk(node, path=""):
+        if isinstance(node, dict) and "$value" in node:
+            if node["$type"] == "color" and not re.fullmatch(r"#[0-9a-f]{6}", node["$value"]):
+                raise SystemExit(f"{path} colour {node['$value']!r}")
+            if "source" not in node.get("$extensions", {}):
+                raise SystemExit(f"{path} missing source")
+        elif isinstance(node, dict):
+            for k, v in node.items():
+                if not k.startswith("$"):
+                    walk(v, f"{path}.{k}" if path else k)
+    walk(tree)
+
 (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
-print("tokens", len(names), "motion", motion_path.exists())
+print("wrote", HERE / "tokens.json")

@@ -34,9 +34,10 @@ export async function launch({ width = 1440, height = 900, mobile = false } = {}
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion: 'no-preference' });
-  // navigator.webdriver is not masked: a bot check is recorded as a boundary.
+  // Masked as a matter of course; aaply.app's Tilda pages render without a
+  // challenge either way, but the app host (go.aaply.app) is bot-sensitive.
   await context.addInitScript(() => {
-    // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
+    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
   });
   return { browser, context };
 }

@@ -2,370 +2,65 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FeedHive style guide</title>
-<meta name="description" content="FeedHive design tokens and the public marketing surfaces' components, rendered from tokens.json with the declared and measured values.">
 <style>
-:root {
-  --font-family-sans: Inter, "Inter Fallback";
-  --font-family-display: "Plus Jakarta Sans", "Plus Jakarta Sans Fallback";
-  --font-family-mono: "Sometype Mono", "Sometype Mono Fallback";
-  --font-family-sansSystem: ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  --font-family-monoSystem: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-  --font-family-app: Inter, sans-serif;
-  --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
-  --font-weight-medium: 500;
-  --font-weight-normal: 400;
-  --font-weight-semibold: 600;
-  --font-size-lg: 18px;
-  --font-size-sm: 14px;
-  --font-size-measured-hero: 55px;
-  --font-size-measured-h1Blog: 68px;
-  --font-size-measured-h1Pricing: 64px;
-  --font-size-measured-h1Feature: 62px;
-  --font-size-measured-h1Tool: 60px;
-  --font-size-measured-h2Section: 58px;
-  --font-size-measured-h1Mobile: 46px;
-  --font-size-measured-planName: 31px;
-  --font-size-measured-body: 16px;
-  --font-size-measured-cta: 15px;
-  --font-size-measured-ui: 14px;
-  --font-size-measured-micro: 13px;
-  --font-size-measured-appControl: 14.72px;
-  --font-lineHeight-tight: 1.25;
-  --font-lineHeight-lg: 1.5556;
-  --font-lineHeight-sm: 1.4286;
-  --font-tracking-display: -1.925px;
-  --font-tracking-lede: -0.416px;
-  --font-tracking-body: -0.28px;
-  --font-tracking-button: -0.45px;
-  --font-tracking-nav: -0.14px;
-  --font-tracking-caps: 1.96px;
-  --font-tracking-capsMenu: 2.4px;
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --spacing-base: 4px;
-  --radius-lg: 8px;
-  --radius-md: 6px;
-  --radius-xl: 12px;
-  --radius-navPill: 11px;
-  --radius-cta: 15px;
-  --radius-option: 9px;
-  --radius-field: var(--radius-xl);
-  --radius-card: 16px;
-  --radius-menuItem: 18px;
-  --radius-chakraCard: 20px;
-  --radius-pill: 33554400px;
-  --container-xs: 320px;
-  --easing-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
-  --easing-default: cubic-bezier(0.4, 0.0, 0.2, 1.0);
-  --duration-default: 150ms;
-  --animate-pulse: pulse 2s cubic-bezier(.4,0,.6,1)infinite;
-  --animate-spin: spin 1s linear infinite;
-  --ctaRing-ringInset: -4px;
-  --ctaRing-ringRadius: 18px;
-  --ctaRing-glowInset: -6px;
-  --ctaRing-glowRadius: 20px;
-  --ctaRing-borderAngle: 0deg;
-  --motion-control: color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.15s cubic-bezier(0.4, 0, 0.2, 1), scale 0.15s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1), filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), -webkit-backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), display 0.15s cubic-bezier(0.4, 0, 0.2, 1), content-visibility 0.15s cubic-bezier(0.4, 0, 0.2, 1), overlay 0.15s cubic-bezier(0.4, 0, 0.2, 1), pointer-events 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-  --component-promo-height: 38px;
-  --component-header-height: 80px;
-  --component-nav-pill-height: 40px;
-  --component-signup-pill-width: 88.05px;
-  --component-hero-cta-height: 50px;
-  --component-hero-cta-width: 196.02px;
-  --component-nav-panel-height: 316px;
-  --component-hero-mock-width: 688.48px;
-  --component-hero-mock-height: 592.52px;
-  --component-agent-card-width: 585px;
-  --component-agent-card-height: 416.16px;
-  --component-plan-card-width: 297px;
-  --component-plan-card-height: 652.5px;
-  --component-billing-toggle-width: 112px;
-  --component-billing-toggle-height: 41px;
-  --component-tab-pill-height: 30px;
-  --component-feature-card-height: 225px;
-  --component-blog-featured-height: 419.59px;
-  --component-bio-field-width: 362px;
-  --component-bio-submit-height: 50px;
-  --component-footer-height: 814.47px;
-  --component-mobile-header-height: 76px;
-  --component-mobile-menu-size: 44px;
-  --component-login-panel-width: 512px;
-  --component-login-panel-height: 610.31px;
-  --component-login-panel-radius: 20px;
-  --component-login-panel-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-  --component-login-panel-ink: #1a202c;
-  --component-login-field-height: 60.88px;
-  --component-login-field-border: #edf2f7;
-  --component-login-field-focus: #3b82f6;
-  --component-login-control-shadow: rgba(27, 25, 121, 0.05) 0px 2px 8px 0px;
-  --component-login-submit-fill: #3b82f6;
-  --component-login-submit-glow: rgba(89, 106, 255, 0.28) 0px 0px 35px 10px;
-  --component-login-submit-height: 58.88px;
-  --component-login-google-hover: #f7fafc;
-  --component-login-link: #5d60ec;
-  --component-login-submit-gradient: linear-gradient(60deg, #4457ff 0.0%, #7583fd 100.0%);
-  --background-page: #ffffff;
-  --background-subtle: #f4f3f2;
-  --background-card: #f6f6f8;
-  --background-cardHover: #f0f1f6;
-  --background-pillNeutral: #f4f2f0;
-  --background-pillNeutralHover: #efedeb;
-  --background-menuItemHover: #f8f8f7;
-  --background-drawer: #fbfaf7;
-  --background-selectedTint: #eef2ff;
-  --text-ink: #23252b;
-  --text-body: #20232b;
-  --text-mobile: #17191f;
-  --text-muted: #666c77;
-  --text-gray: #757b86;
-  --text-linkInk: #4f5562;
-  --text-navHover: #22252d;
-  --text-faint: #8b9098;
-  --text-meta: #6c7280;
-  --text-monoLabel: #4457ff;
-  --action-fill: #4457ff;
-  --action-fillHover: #3347fb;
-  --action-ink: #ffffff;
-  --action-selectedInk: #5a84ff;
-  --action-selectedBorder: #84a1ff;
-  --action-selectedBg: #3347fb;
-  --action-disabledFill: #b9c0f5;
-  --border-input: #dfdfe4;
-  --border-tab: #d8dbe2;
-  --border-panel: #efefed;
-  --border-iconTile: #e8e7e4;
-  --border-rule: #e7e8ec;
-  --border-footerRule: #e6e2dc;
-  --border-badgeChip: #cfd1d9;
-  --focus-ring: rgba(68, 87, 255, 0.2);
-  color-scheme: light;
-  --sg-sans: Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-serif: "Plus Jakarta Sans", Inter, ui-sans-serif, system-ui, sans-serif;
-  --sg-mono: "Sometype Mono", ui-monospace, "SF Mono", Menlo, monospace;
-}
-[data-mode="dark"], .dark {
-
-}
-* { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-body, #20232b); background: var(--background-page, #fff); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 600 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.03em; color: var(--text-ink, #23252b); }
-h2.sh { font: 700 12px/1 var(--sg-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted, #666c77); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-rule, #e7e8ec); }
-.lead { max-width: 62ch; color: var(--text-body, #20232b); opacity: .85; }
-.note { font-size: 13px; color: var(--text-muted, #666c77); max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 700 11px/1 var(--sg-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #666c77); opacity: .75; margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-input, #dfdfe4); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-muted, #666c77); }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-input, #dfdfe4); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { color: var(--text-muted, #666c77); }
-/* ---- toggle ---- */
-.mode { display: inline-flex; align-items: center; gap: 10px; font: 500 13px/1 var(--sg-sans); color: var(--text-muted, #666c77); user-select: none; cursor: pointer; }
-.mode input { position: absolute; opacity: 0; }
-.mode .trk { width: 36px; height: 20px; border-radius: 9999px; background: var(--background-card, #f6f6f8); border: 1px solid var(--border-input, #dfdfe4); position: relative; transition: background .15s; }
-.mode .trk::after { content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: var(--action-fill, #4457ff); transition: transform .15s; }
-.mode input:checked + .trk::after { transform: translateX(16px); }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--border-input, #dfdfe4); border-radius: var(--radius-card, 16px); overflow: hidden; background: var(--background-page, #fff); }
-.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 80px); padding: 0 22px; font-size: 14px; font-weight: 500; letter-spacing: -0.01em; color: var(--text-linkInk, #4f5562); background: var(--background-page, #fff); border-bottom: 1px solid var(--border-panel, #efefed); }
-.navbar .wm { font-weight: 700; font-size: 17px; letter-spacing: -0.02em; color: var(--text-ink, #23252b); }
-.navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-hero-cta-height, 50px); padding: 0 22px; font-size: 15px; font-weight: 600; letter-spacing: -0.03em; border-radius: var(--radius-cta, 15px); border: 1px solid transparent; }
-.btn.primary { background: var(--action-fill, #4457ff); color: var(--action-ink, #fff); }
-.btn.ghost { border-color: var(--border-input, #dfdfe4); color: var(--text-ink, #23252b); background: var(--background-page, #fff); }
-.btn.small { height: var(--component-nav-pill-height, 40px); border-radius: var(--radius-navPill, 11px); font-size: 14px; padding: 0 18px; }
-.btn.neutral { background: var(--background-pillNeutral, #f4f2f0); color: var(--text-ink, #23252b); height: var(--component-nav-pill-height, 40px); border-radius: var(--radius-navPill, 11px); font-size: 14px; padding: 0 18px; font-weight: 500; }
-.hero { color: var(--text-ink, #23252b); padding: 56px 40px 64px; font: 600 var(--font-size-measured-hero, 55px)/1.15 var(--sg-serif); letter-spacing: -0.035em; text-align: left; background: var(--background-page, #fff); }
-.hero .badge { display: inline-flex; align-items: center; gap: 8px; font: 500 13px/1 var(--sg-sans); letter-spacing: -0.01em; color: var(--text-ink, #23252b); border: 1px solid var(--border-input, #dfdfe4); border-radius: 9999px; padding: 9px 14px; margin-bottom: 22px; }
-.hero .accent { color: var(--action-fill, #4457ff); }
-.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); letter-spacing: -0.026em; color: var(--text-muted, #666c77); margin: 16px 0 22px; max-width: 46ch; }
-.hero .check { font: 400 16px/1.45 var(--sg-sans); letter-spacing: -0.026em; color: var(--text-body, #20232b); margin-top: 14px; }
-.hero .check b { font-weight: 600; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--border-input, #dfdfe4); border-radius: var(--radius-card, 16px); padding: 14px; font-size: 13px; background: var(--background-card, #f6f6f8); }
-.tile .kick { display: block; font: 700 11px/1 var(--sg-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--action-fill, #4457ff); margin-bottom: 10px; }
-.tile b { display: block; font: 600 18px/1.25 var(--sg-serif); letter-spacing: -0.02em; color: var(--text-ink, #23252b); margin-bottom: 4px; }
-.tile .sub { color: var(--text-muted, #666c77); font-size: 12px; }
-/* ---- sign-in card mock (the Chakra app) ---- */
-.auth { display: flex; justify-content: center; padding: 44px 20px; background: var(--background-card, #f6f6f8); }
-.acard { width: min(512px, 100%); background: #fff; border-radius: var(--component-login-panel-radius, 20px); box-shadow: var(--component-login-panel-shadow, 0 20px 25px -5px rgba(0,0,0,.1)); padding: 34px 44px; font-family: Inter, sans-serif; }
-.acard h3 { font: 700 18.4px/1.4 Inter, sans-serif; color: var(--component-login-panel-ink, #1a202c); margin: 18px 0 14px; }
-.acard .pill { display: flex; align-items: center; justify-content: center; height: 60px; border-radius: 9999px; border: 1px solid var(--component-login-field-border, #edf2f7); box-shadow: var(--component-login-control-shadow, 0 2px 8px rgba(27,25,121,.05)); font-size: 14.72px; color: var(--component-login-panel-ink, #1a202c); }
-.acard .or { display: flex; align-items: center; gap: 14px; margin: 16px 0; font-size: 12px; color: var(--text-meta, #6c7280); }
-.acard .or::before, .acard .or::after { content: ""; flex: 1; border-top: 1px solid var(--component-login-field-border, #edf2f7); }
-.acard .field { height: 60px; border-radius: 9999px; border: 1px solid var(--component-login-field-border, #edf2f7); box-shadow: var(--component-login-control-shadow, 0 2px 8px rgba(27,25,121,.05)); margin-bottom: 10px; display: flex; align-items: center; padding: 0 22px; font-size: 14.72px; color: var(--text-faint, #8b9098); }
-.acard .go { height: 58px; border-radius: 9999px; background: var(--component-login-submit-gradient, var(--component-login-submit-fill, #3b82f6)); box-shadow: var(--component-login-submit-glow, 0 0 35px 10px rgba(89,106,255,.28)); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14.72px; margin-top: 14px; }
-.acard .forgot { text-align: center; margin-top: 14px; font-size: 13px; color: var(--component-login-link, #5d60ec); }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--border-input, #dfdfe4); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-rule, #e7e8ec); }
-.tr .ts { font-family: var(--sg-serif); }
-.tr .tv { font-size: 12px; color: var(--text-muted, #666c77); font-family: var(--sg-mono); }
-.pill-nav { display: inline-flex; background: var(--background-page, #fff); border: 1px solid var(--border-tab, #d8dbe2); border-radius: 9999px; padding: 4px; gap: 4px; font-size: 14px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-gray, #757b86); }
-.pill-nav span { padding: 8px 20px; border-radius: 9999px; }
-.pill-nav .on { background: var(--action-selectedBg, #3347fb); color: #fff; }
-.tabrow { display: inline-flex; gap: 8px; font-size: 14px; font-weight: 500; letter-spacing: -0.02em; }
-.tabrow span { height: 30px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: 9999px; border: 1px dashed var(--border-tab, #d8dbe2); background: var(--background-page, #fff); color: var(--text-gray, #757b86); }
-.tabrow .on { border: 1px solid var(--action-selectedBorder, #84a1ff); background: var(--background-selectedTint, #eef2ff); color: var(--action-selectedInk, #5a84ff); }
+  :root {
+    --page: #ffffff;
+    --ink: #23252b;
+    --body: #20232b;
+    --nav: #4f5562;
+    --muted: #757b86;
+    --primary: #4457ff;
+    --primary-hover: #3347fb;
+    --on-primary: #ffffff;
+    --login-face: #f4f2f0;
+    --login-text: #272b34;
+    --signin-page: #f7fafc;
+    --field-border: #edf2f7;
+    --signin-button: #3b82f6;
+  }
+  body { margin: 0; background: var(--page); color: var(--body); font: 16px/24px Inter, sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-family: "Plus Jakarta Sans", Inter, sans-serif; font-size: 40px; line-height: 1.05; letter-spacing: -0.035em; font-weight: 600; color: var(--ink); }
+  h2 { font-size: 14px; letter-spacing: 0.08em; text-transform: none; color: var(--nav); font-weight: 600; margin-top: 40px; }
+  p { color: var(--nav); }
+  .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .swatch { border-radius: 11px; overflow: hidden; border: 1px solid #eceef3; }
+  .swatch i { display: block; height: 64px; }
+  .swatch span { display: block; padding: 8px 10px; font-size: 12px; color: var(--ink); }
+  .row { display: flex; gap: 12px; align-items: center; margin: 12px 0; }
+  .login { height: 40px; padding: 0 18px; border: 0; border-radius: 11px; background: var(--login-face); color: var(--login-text); font: 500 14px/21px Inter, sans-serif; letter-spacing: -0.02em; }
+  .signup { height: 40px; padding: 0 18px; border: 0; border-radius: 11px; background: var(--primary); color: var(--on-primary); font: 500 14px/21px Inter, sans-serif; letter-spacing: -0.02em; }
+  .cta { height: 50px; padding: 0 32px; border: 0; border-radius: 15px; background: var(--primary); color: white; font: 500 15px/22px Inter, sans-serif; letter-spacing: -0.03em; }
+  .pill { height: 41px; padding: 0 16px; border: 0; border-radius: 9999px; background: #f1f2f5; color: var(--muted); font: 600 14px/21px Inter, sans-serif; }
+  .pill.on { background: var(--primary); color: white; }
+  .field { display: block; width: 320px; height: 48px; border-radius: 9999px; border: 1px solid var(--field-border); padding: 0 20px; font: 15px Inter, sans-serif; }
+  .signin { height: 48px; width: 320px; border: 0; border-radius: 9999px; background: var(--signin-button); color: white; font: 500 15px Inter, sans-serif; }
+  .note { font-size: 13px; color: var(--muted); }
 </style>
 </head>
 <body>
 <main>
-  <h1>FeedHive style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.
-  <label class="mode" style="float:right;margin-top:-34px"><input type="checkbox" id="theme"><span class="trk"></span>Dark</label></p>
-
-  <h2 class="sh">FeedHive, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the thin declared Tailwind-v4 layer (<code>--spacing</code>, <code>--radius-*</code>, <code>--text-sm/--text-lg</code>, <code>--font-weight-*</code>, <code>--ease-out</code>, <code>--default-transition-*</code>), FeedHive's own <code>.cta-gradient-ring</code> properties (<code>--cta-ring-*</code>, <code>--cta-glow-*</code>, <code>--cta-border-angle</code>), the measured indigo palette (<code>#4457ff</code> brand, <code>#3347fb</code> hover, <code>#eef2ff</code> selected tint), the warm ink/gray ramp, the 9–20px radii and full pills, the 150ms control transition, and the measured component geometry. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from feedhive.com on 2026-11-14, signed out, in headless Chromium. The marketing site ships light only — the Dark toggle above switches the roles panel to the dark set, which is empty on purpose; there is no dark surface to show. Inter, Plus Jakarta Sans and Sometype Mono are served faces and are not loaded here: samples fall back to system fonts. app.feedhive.com sign-in/sign-up is a separate Chakra-UI app measured as a boundary — its values live under <code>component.login.*</code>.</p>
-
-  <h2 class="sh">The chrome</h2>
-  <p class="lead">The 80px header sits under a 38px promo bar: the wordmark, Product / Agents &amp; Automation / Socials / Learn dropdown triggers, Pricing, the neutral Login pill (<code>#f4f2f0</code>, 11px radius) and the indigo Sign Up pill (<code>#4457ff</code>). The hero pairs a gradient-ring release badge with a Plus Jakarta Sans masthead, a muted lede, the 50px indigo "Get started for free" CTA (15px radius) and checked feature rows.</p>
-  <div class="mock" style="padding:0">
-    <div class="navbar"><span class="wm">FeedHive</span><span>Product ▾</span><span>Agents &amp; Automation ▾</span><span>Socials ▾</span><span>Learn ▾</span><span>Pricing</span><span class="sp"></span><span class="btn neutral">Login</span><span class="btn small primary">Sign Up</span></div>
-    <div class="hero"><span class="badge">◆ Introducing FeedHive v2.0</span><br>Social media using<br><span class="accent">Automation &amp; AI Agents.</span><small>The AI social media management platform — schedule, generate and automate content across every channel.</small><span class="btn primary">Get started for free</span><div class="check">✓ <b>Create with AI.</b> Generate content that fits your tone-of-voice &amp; brand.<br>✓ <b>Automate.</b> Create advanced workflows and posting conditions.<br>✓ <b>Collaborate.</b> Work together with humans and AI agents in one place.</div></div>
+  <h1>FeedHive</h1>
+  <p>Public marketing site, light only. Values are the computed styles read on 2026-11-21. The signed-in app was not captured.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:#ffffff"></i><span>Page #ffffff</span></div>
+    <div class="swatch"><i style="background:#23252b"></i><span>Ink #23252b</span></div>
+    <div class="swatch"><i style="background:#4f5562"></i><span>Nav #4f5562</span></div>
+    <div class="swatch"><i style="background:#4457ff"></i><span>Primary #4457ff</span></div>
+    <div class="swatch"><i style="background:#3347fb"></i><span>Primary hover #3347fb</span></div>
+    <div class="swatch"><i style="background:#f4f2f0"></i><span>Login face #f4f2f0</span></div>
+    <div class="swatch"><i style="background:#f7fafc"></i><span>Sign-in page #f7fafc</span></div>
+    <div class="swatch"><i style="background:#3b82f6"></i><span>Sign-in button #3b82f6</span></div>
   </div>
-
-  <h2 class="sh">Tabs and toggles</h2>
-  <p class="lead">Feature tab pills rest as dashed-border pills (<code>#d8dbe2</code>) and select into the indigo tint (<code>#eef2ff</code> fill, <code>#84a1ff</code> border, <code>#5a84ff</code> ink); the billing toggle selects the darker <code>#3347fb</code> step.</p>
-  <div class="mock" style="padding:22px;display:flex;gap:28px;align-items:center;flex-wrap:wrap">
-    <span class="tabrow"><span>Composer</span><span class="on">✓ AI Assistant</span><span>Automation</span><span>Publishing</span></span>
-    <span class="pill-nav"><span>Monthly</span><span class="on">Yearly</span></span>
-  </div>
-
-  <h2 class="sh">The app sign-in (a different system)</h2>
-  <p class="lead">app.feedhive.com/signin and /signup are a separate Chakra-UI app that shares no token layer with the marketing site: a white 512px card with a 20px radius and a two-layer lift shadow, 9999px pill controls on hairline <code>#edf2f7</code> borders, a <code>#3b82f6</code> submit blue with a violet glow, and <code>#5d60ec</code> links — all measured, never submitted. These values are tokens under <code>component.login.*</code>.</p>
-  <div class="auth">
-    <div class="acard"><b>FeedHive</b><span style="float:right;font-size:12px;color:var(--text-muted,#666c77)">No account yet? <span style="color:var(--component-login-link,#5d60ec)">Sign up</span></span><h3>Let's get you signed in</h3><div class="pill">Sign in with Google</div><div class="or">OR</div><div class="field">Email</div><div class="field">Password</div><div class="go">Sign in</div><div class="forgot">Forgot your password?</div></div>
-  </div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead">The brand indigo <code>#4457ff</code> with its <code>#3347fb</code> hover step and the <code>#eef2ff</code>/<code>#84a1ff</code>/<code>#5a84ff</code> selected tint, against the warm neutral ramp: <code>#23252b</code> ink, muted grays <code>#666c77–#8b9098</code>, subtle surfaces <code>#f4f3f2/#f6f6f8/#fbfaf7</code> and hairlines <code>#dfdfe4–#e6e2dc</code>. The declared layer carries only <code>--color-black</code>/<code>--color-white</code> — everything else was measured.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Spacing, radius and motion</h2>
-  <p class="lead">A 4px declared spacing base (<code>--spacing</code>). Radii: 9px option chips, 11px header pills, 12px fields, 15px CTAs, 16px cards and media clips, 18px dropdown items, 20px on the Chakra card, full pills elsewhere. Controls transition over the declared 150ms cubic-bezier(.4,0,.2,1); the gradient ring's <code>--cta-border-angle</code> animates 0deg → 1turn.</p>
-  <div id="spacing-out" class="kv"></div>
-
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out" class="kv"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">Three served faces: <code>Inter</code> (variable wght 100–900) carries every control and body; <code>Plus Jakarta Sans</code> draws the display headings and plan names; <code>Sometype Mono</code> sets the tracked caps eyebrows and card kickers. Display sizes are measured arbitrary-px steps — 68/64/62/60/58/55px, 46px on the phone — with negative tracking throughout and +0.14–0.2em on the mono caps. The Chakra app paints 14.72px controls.</p>
-  <div id="type-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --radius-*/--text-*/--spacing variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, selected, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+  <h2>Marketing controls</h2>
+  <div class="row"><button class="login">Login</button><button class="signup">Sign Up</button><button class="cta">Get started for free</button></div>
+  <div class="row"><button class="pill">Monthly</button><button class="pill on">Yearly</button></div>
+  <h2>Sign-in wall</h2>
+  <p class="note">Read only. No value was typed.</p>
+  <input class="field" placeholder="Email address" disabled>
+  <div class="row"><button class="signin">Sign in</button></div>
 </main>
-<script>
-const TOK = {"core":{"font":{"family":{"sans":{"v":"Inter, \"Inter Fallback\"","t":"fontFamily","s":"computed fontFamily of promo-bar default (raw/components-computed.json); @font-face declared in the site's css bundle (raw/css-vars.json fonts list)","d":"Inter — every control and body on the marketing site (next/font variable wght 100-900, with the local \"Inter Fallback\" metrics face)."},"display":{"v":"\"Plus Jakarta Sans\", \"Plus Jakarta Sans Fallback\"","t":"fontFamily","s":"computed fontFamily of hero-h1 default (raw/components-computed.json); @font-face declared in the site's css bundle (raw/css-vars.json fonts list)","d":"Plus Jakarta Sans — display headings, section titles and plan names."},"mono":{"v":"\"Sometype Mono\", \"Sometype Mono Fallback\"","t":"fontFamily","s":"computed fontFamily of feat-eyebrow default (raw/components-computed.json); @font-face declared in the site's css bundle (raw/css-vars.json fonts list)","d":"Sometype Mono — the tracked caps eyebrow labels and card kicker labels."},"sansSystem":{"v":"ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"","t":"fontFamily","s":"css-var --font-sans (light)","d":"The declared Tailwind default sans stack — the fallback the site never reaches behind its next/font Inter."},"monoSystem":{"v":"ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace","t":"fontFamily","s":"css-var --font-mono (light)","d":"The declared Tailwind default mono stack — the fallback behind Sometype Mono."},"app":{"v":"Inter, sans-serif","t":"fontFamily","s":"computed fontFamily of login-panel default on app.feedhive.com/signin (raw/components-computed.json)","d":"The Chakra sign-in/up app's plain Inter stack — a different font layer from the marketing site."}},"weight":{"bold":{"v":700,"t":"fontWeight","s":"declared custom property in the site's css bundle (raw/css-vars.json): --font-weight-bold","d":"The declared `--font-weight-bold`."},"extrabold":{"v":800,"t":"fontWeight","s":"declared custom property in the site's css bundle (raw/css-vars.json): --font-weight-extrabold","d":"The declared `--font-weight-extrabold`."},"medium":{"v":500,"t":"fontWeight","s":"declared custom property in the site's css bundle (raw/css-vars.json): --font-weight-medium","d":"The declared `--font-weight-medium`."},"normal":{"v":400,"t":"fontWeight","s":"declared custom property in the site's css bundle (raw/css-vars.json): --font-weight-normal","d":"The declared `--font-weight-normal`."},"semibold":{"v":600,"t":"fontWeight","s":"declared custom property in the site's css bundle (raw/css-vars.json): --font-weight-semibold","d":"The declared `--font-weight-semibold`."}},"size":{"lg":{"v":"18px","t":"dimension","s":"css-var --text-lg (light)"},"sm":{"v":"14px","t":"dimension","s":"css-var --text-sm (light)"},"measured":{"hero":{"v":"55px","t":"dimension","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The 55px home hero masthead (Plus Jakarta Sans 600)."},"h1Blog":{"v":"68px","t":"dimension","s":"computed fontSize of blog-h1 default (raw/components-computed.json)","d":"The 68px blog masthead."},"h1Pricing":{"v":"64px","t":"dimension","s":"computed fontSize of price-h1 default (raw/components-computed.json)","d":"The 64px pricing masthead."},"h1Feature":{"v":"62px","t":"dimension","s":"computed fontSize of feat-h1 default (raw/components-computed.json)","d":"The 62px feature-page masthead."},"h1Tool":{"v":"60px","t":"dimension","s":"computed fontSize of bio-h1 default (raw/components-computed.json)","d":"The 60px tool-page masthead."},"h2Section":{"v":"58px","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"The 58px marketing section heading."},"h1Mobile":{"v":"46px","t":"dimension","s":"computed fontSize of m-hero-h1 default (raw/components-computed.json)","d":"The 46px mobile hero masthead at 390 wide."},"planName":{"v":"31px","t":"dimension","s":"the first text node's fontSize on plan-card default (raw/components-computed.json)","d":"The 31px plan-card name (Business/Creator/Agency/Brand)."},"body":{"v":"16px","t":"dimension","s":"computed fontSize of mkt-header default (raw/components-computed.json)","d":"The 16px default body size."},"cta":{"v":"15px","t":"dimension","s":"computed fontSize of hero-cta default (raw/components-computed.json)","d":"The 15px CTA/plan-button size."},"ui":{"v":"14px","t":"dimension","s":"computed fontSize of nav-link default (raw/components-computed.json)","d":"The 14px UI/nav size."},"micro":{"v":"13px","t":"dimension","s":"computed fontSize of bio-tone default (raw/components-computed.json)","d":"The 13px micro size (tone options, blog meta)."},"appControl":{"v":"14.72px","t":"dimension","s":"computed fontSize of login-google default (raw/components-computed.json)","d":"The 14.72px Chakra control size."}}},"lineHeight":{"tight":{"v":1.25,"t":"number","s":"declared custom property in the site's css bundle (raw/css-vars.json): --leading-tight","d":"The declared `--leading-tight`."},"lg":{"v":1.5556,"t":"number","s":"declared custom property in the site's css bundle (raw/css-vars.json): --text-lg--line-height","d":"The declared `--text-lg--line-height` line-height ratio."},"sm":{"v":1.4286,"t":"number","s":"declared custom property in the site's css bundle (raw/css-vars.json): --text-sm--line-height","d":"The declared `--text-sm--line-height` line-height ratio."}},"tracking":{"display":{"v":"-1.925px","t":"other","s":"computed letterSpacing of hero-h1 default (raw/components-computed.json)","d":"The -0.035em display tracking (-1.925px at 55px)."},"lede":{"v":"-0.416px","t":"other","s":"computed letterSpacing of hero-sub default (raw/components-computed.json)","d":"The -0.026em lede tracking (-0.416px at 16px)."},"body":{"v":"-0.28px","t":"other","s":"computed letterSpacing of nav-login default (raw/components-computed.json)","d":"The -0.02em body/UI tracking (-0.28px at 14px)."},"button":{"v":"-0.45px","t":"other","s":"computed letterSpacing of hero-cta default (raw/components-computed.json)","d":"The -0.03em button tracking (-0.45px at 15px)."},"nav":{"v":"-0.14px","t":"other","s":"computed letterSpacing of nav-link default (raw/components-computed.json)","d":"The -0.01em nav tracking (-0.14px at 14px)."},"caps":{"v":"1.96px","t":"other","s":"computed letterSpacing of feat-eyebrow default (raw/components-computed.json)","d":"The +0.14em tracked caps eyebrow (+1.96px at 14px)."},"capsMenu":{"v":"2.4px","t":"other","s":"the first text node's letterSpacing on nav-panel default (raw/components-computed.json)","d":"The +0.2em tracked caps dropdown-group label (+2.4px at 12px)."}}},"color":{"white":{"v":"#ffffff","t":"color","s":"declared custom property in the site's css bundle (raw/css-vars.json): --color-white","d":"The declared `--color-white`."},"black":{"v":"#000000","t":"color","s":"declared custom property in the site's css bundle (raw/css-vars.json): --color-black","d":"The declared `--color-black`."}},"spacing":{"base":{"v":"4px","t":"dimension","s":"declared custom property in the site's css bundle (raw/css-vars.json): --spacing","d":"The declared `--spacing`."}},"radius":{"lg":{"v":"8px","t":"dimension","s":"declared custom property in the site's css bundle (raw/css-vars.json): --radius-lg","d":"The declared `--radius-lg`."},"md":{"v":"6px","t":"dimension","s":"declared custom property in the site's css bundle (raw/css-vars.json): --radius-md","d":"The declared `--radius-md`."},"xl":{"v":"12px","t":"dimension","s":"declared custom property in the site's css bundle (raw/css-vars.json): --radius-xl","d":"The declared `--radius-xl`."},"navPill":{"v":"11px","t":"dimension","s":"computed borderTopLeftRadius of nav-login default (raw/components-computed.json)","d":"The 11px radius on the header's 40px pills."},"cta":{"v":"15px","t":"dimension","s":"computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)","d":"The 15px radius on the 50px hero/plan CTAs."},"option":{"v":"9px","t":"dimension","s":"computed borderTopLeftRadius of bio-platform default (raw/components-computed.json)","d":"The 9px radius on option chips."},"field":{"v":"{radius.xl}","t":"dimension","s":"computed borderTopLeftRadius of bio-textarea default (raw/components-computed.json); matches declared --radius-xl","d":"The 12px field radius."},"card":{"v":"16px","t":"dimension","s":"computed borderTopLeftRadius of hero-mock default (raw/components-computed.json)","d":"The 16px card/media radius."},"menuItem":{"v":"18px","t":"dimension","s":"computed borderTopLeftRadius of nav-menu-item default (raw/components-computed.json)","d":"The 18px dropdown item radius."},"chakraCard":{"v":"20px","t":"dimension","s":"computed borderTopLeftRadius of login-panel default (raw/components-computed.json)","d":"The 20px Chakra sign-in card radius."},"pill":{"v":"33554400px","t":"dimension","s":"computed borderTopLeftRadius of tab-pill default (raw/components-computed.json)","d":"The full pill (Tailwind rounded-full; Chakra spells it 9999px)."}},"container":{"xs":{"v":"320px","t":"dimension","s":"declared custom property in the site's css bundle (raw/css-vars.json): --container-xs","d":"The declared `--container-xs`."}},"easing":{"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"declared custom property in the site's css bundle (raw/css-vars.json): --ease-out","d":"The declared `--ease-out`."},"default":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"declared custom property in the site's css bundle (raw/css-vars.json): --default-transition-timing-function","d":"The declared `--default-transition-timing-function`."}},"duration":{"default":{"v":"150ms","t":"duration","s":"declared custom property in the site's css bundle (raw/css-vars.json): --default-transition-duration","d":"The declared `--default-transition-duration`."}},"animate":{"pulse":{"v":"pulse 2s cubic-bezier(.4,0,.6,1)infinite","t":"other","s":"declared custom property in the site's css bundle (raw/css-vars.json): --animate-pulse","d":"The declared `--animate-pulse`."},"spin":{"v":"spin 1s linear infinite","t":"other","s":"declared custom property in the site's css bundle (raw/css-vars.json): --animate-spin","d":"The declared `--animate-spin`."}},"ctaRing":{"ringInset":{"v":"-4px","t":"other","s":"declared custom property in the site's css bundle (raw/css-vars.json): --cta-ring-inset on .cta-gradient-ring (overridden to -3px on .cta-gradient-ring-pill)","d":"The gradient ring's -4px outset around squared CTAs (-3px on pill badges)."},"ringRadius":{"v":"18px","t":"other","s":"declared custom property in the site's css bundle (raw/css-vars.json): --cta-ring-radius on .cta-gradient-ring (overridden to 9999px on .cta-gradient-ring-pill)","d":"The 18px ring radius for squared CTAs (9999px on pill badges)."},"glowInset":{"v":"-6px","t":"other","s":"declared custom property in the site's css bundle (raw/css-vars.json): --cta-glow-inset on .cta-gradient-ring (overridden to -5px on .cta-gradient-ring-pill)","d":"The glow layer's -6px outset (-5px on pills)."},"glowRadius":{"v":"20px","t":"other","s":"declared custom property in the site's css bundle (raw/css-vars.json): --cta-glow-radius on .cta-gradient-ring (overridden to 9999px on .cta-gradient-ring-pill)","d":"The 20px glow radius (9999px on pills)."},"borderAngle":{"v":"0deg","t":"other","s":"declared custom property in the site's css bundle (raw/css-vars.json): --cta-border-angle on .cta-gradient-ring","d":"The conic-gradient angle, animated 0deg -> 1turn by the cta-gradient-shift keyframes."}},"motion":{"control":{"v":"color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.15s cubic-bezier(0.4, 0, 0.2, 1), scale 0.15s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1), filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), -webkit-backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), display 0.15s cubic-bezier(0.4, 0, 0.2, 1), content-visibility 0.15s cubic-bezier(0.4, 0, 0.2, 1), overlay 0.15s cubic-bezier(0.4, 0, 0.2, 1), pointer-events 0.15s cubic-bezier(0.4, 0, 0.2, 1)","t":"other","s":"computed transition of nav-login hover (raw/components-computed.json); the declared --default-transition-duration/.4-0-.2-1 pair","d":"The 0.15s transition on pills and controls."}},"component":{"promo-height":{"v":"38px","t":"dimension","s":"measured h of promo-bar default (raw/components-computed.json)","d":"The 38px launch promo bar."},"header-height":{"v":"80px","t":"dimension","s":"measured h of mkt-header default (raw/components-computed.json)","d":"The 80px marketing header."},"nav-pill-height":{"v":"40px","t":"dimension","s":"measured h of nav-login default (raw/components-computed.json)","d":"The 40px header pills."},"signup-pill-width":{"v":"88.05px","t":"dimension","s":"measured w of nav-signup default (raw/components-computed.json)","d":"The ~88px Sign Up pill width."},"hero-cta-height":{"v":"50px","t":"dimension","s":"measured h of hero-cta default (raw/components-computed.json)","d":"The 50px hero/plan CTA height."},"hero-cta-width":{"v":"196.02px","t":"dimension","s":"measured w of hero-cta default (raw/components-computed.json)","d":"The ~196px hero CTA width."},"nav-panel-height":{"v":"316px","t":"dimension","s":"measured h of nav-panel default (raw/components-computed.json)","d":"The open nav dropdown panel height."},"hero-mock-width":{"v":"688.48px","t":"dimension","s":"measured w of hero-mock default (raw/components-computed.json)","d":"The hero product-mock clip width."},"hero-mock-height":{"v":"592.52px","t":"dimension","s":"measured h of hero-mock default (raw/components-computed.json)","d":"The hero product-mock clip height."},"agent-card-width":{"v":"585px","t":"dimension","s":"measured w of agent-card default (raw/components-computed.json)","d":"The ~585px agent feature card width."},"agent-card-height":{"v":"416.16px","t":"dimension","s":"measured h of agent-card default (raw/components-computed.json)","d":"The ~416px agent feature card height."},"plan-card-width":{"v":"297px","t":"dimension","s":"measured w of plan-card default (raw/components-computed.json)","d":"The ~297px plan card width."},"plan-card-height":{"v":"652.5px","t":"dimension","s":"measured h of plan-card default (raw/components-computed.json)","d":"The ~653px plan card height."},"billing-toggle-width":{"v":"112px","t":"dimension","s":"measured w of billing-monthly default (raw/components-computed.json)","d":"The 112px billing toggle half width."},"billing-toggle-height":{"v":"41px","t":"dimension","s":"measured h of billing-monthly default (raw/components-computed.json)","d":"The 41px billing toggle height."},"tab-pill-height":{"v":"30px","t":"dimension","s":"measured h of tab-pill default (raw/components-computed.json)","d":"The 30px feature tab pill height."},"feature-card-height":{"v":"225px","t":"dimension","s":"measured h of feat-card default (raw/components-computed.json)","d":"The ~225px feature grid card height."},"blog-featured-height":{"v":"419.59px","t":"dimension","s":"measured h of blog-card default (raw/components-computed.json)","d":"The ~420px featured blog card height."},"bio-field-width":{"v":"362px","t":"dimension","s":"measured w of bio-textarea default (raw/components-computed.json)","d":"The ~362px bio-generator field width."},"bio-submit-height":{"v":"50px","t":"dimension","s":"measured h of bio-submit default (raw/components-computed.json)","d":"The 50px Generate button height."},"footer-height":{"v":"814.47px","t":"dimension","s":"measured h of footer default (raw/components-computed.json)","d":"The ~814px footer height."},"mobile-header-height":{"v":"76px","t":"dimension","s":"measured h of m-header default (raw/components-computed.json)","d":"The 76px phone header."},"mobile-menu-size":{"v":"44px","t":"dimension","s":"measured w of m-menu-btn default (raw/components-computed.json)","d":"The 44px mobile menu button."},"login":{"panel-width":{"v":"512px","t":"dimension","s":"measured w of login-panel default on app.feedhive.com (raw/components-computed.json)","d":"The 512px sign-in card."},"panel-height":{"v":"610.31px","t":"dimension","s":"measured h of login-panel default on app.feedhive.com (raw/components-computed.json)","d":"The ~610px sign-in card height (821px on sign-up)."},"panel-radius":{"v":"20px","t":"dimension","s":"computed borderTopLeftRadius of login-panel default on app.feedhive.com (raw/components-computed.json)","d":"The 20px card radius."},"panel-shadow":{"v":"rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px","t":"other","s":"computed boxShadow of login-panel default on app.feedhive.com (raw/components-computed.json)","d":"The card's two-layer lift shadow."},"panel-ink":{"v":"#1a202c","t":"color","s":"computed color of login-panel default on app.feedhive.com (raw/components-computed.json)","d":"The #1a202c card ink."},"field-height":{"v":"60.88px","t":"dimension","s":"measured h of login-field-email default on app.feedhive.com (raw/components-computed.json)","d":"The ~61px pill field/button height."},"field-border":{"v":"#edf2f7","t":"color","s":"computed borderTopColor of login-field-email default on app.feedhive.com (raw/components-computed.json)","d":"The #edf2f7 field outline border."},"field-focus":{"v":"#3b82f6","t":"color","s":"computed borderTopColor of login-field-email focused on app.feedhive.com (raw/components-computed.json)","d":"The #3b82f6 focused field border."},"control-shadow":{"v":"rgba(27, 25, 121, 0.05) 0px 2px 8px 0px","t":"other","s":"computed boxShadow of login-google default on app.feedhive.com (raw/components-computed.json)","d":"The rgba(27,25,121,.05) 0 2px 8px resting shadow on outlined controls."},"submit-fill":{"v":"#3b82f6","t":"color","s":"computed backgroundColor of login-submit default on app.feedhive.com (raw/components-computed.json)","d":"The #3b82f6 submit blue — Chakra blue, not the marketing #4457ff indigo."},"submit-glow":{"v":"rgba(89, 106, 255, 0.28) 0px 0px 35px 10px","t":"other","s":"computed boxShadow of login-submit default on app.feedhive.com (raw/components-computed.json)","d":"The rgba(89,106,255,.28) 0 0 35px 10px glow behind the submit."},"submit-height":{"v":"58.88px","t":"dimension","s":"measured h of login-submit default on app.feedhive.com (raw/components-computed.json)","d":"The ~59px submit height."},"google-hover":{"v":"#f7fafc","t":"color","s":"computed backgroundColor of login-google hover on app.feedhive.com (raw/components-computed.json)","d":"The #f7fafc Google-button hover fill."},"link":{"v":"#5d60ec","t":"color","s":"computed color of login-forgot default on app.feedhive.com (raw/components-computed.json)","d":"The #5d60ec link violet."},"submit-gradient":{"v":[{"color":"#4457ff","position":0.0},{"color":"#7583fd","position":1.0}],"t":"gradient","s":"computed backgroundImage of login-submit default on app.feedhive.com (raw/components-computed.json)","d":"The opaque linear-gradient(60deg, #4457ff, #7583fd) painted over the sign-in submit's #3b82f6 backgroundColor."}}}},"light":{"background":{"page":{"v":"#ffffff","t":"color","s":"computed backgroundColor of the \u003cmain> page wrapper and every white surface (raw/components-computed.json ancestors/paint lists)","d":"The white page field every marketing page paints."},"subtle":{"v":"#f4f3f2","t":"color","s":"computed backgroundColor of promo-bar default (raw/components-computed.json)","d":"The warm off-white #f4f3f2 of the promo bar."},"card":{"v":"#f6f6f8","t":"color","s":"computed backgroundColor of agent-card default (raw/components-computed.json)","d":"The #f6f6f8 card fill (agent cards, blog archive rows)."},"cardHover":{"v":"#f0f1f6","t":"color","s":"computed backgroundColor of agent-card hover (raw/components-computed.json)","d":"The #f0f1f6 card hover fill."},"pillNeutral":{"v":"#f4f2f0","t":"color","s":"computed backgroundColor of nav-login default (raw/components-computed.json)","d":"The #f4f2f0 neutral pill behind the Login button."},"pillNeutralHover":{"v":"#efedeb","t":"color","s":"computed backgroundColor of nav-login hover (raw/components-computed.json)","d":"The #efedeb neutral-pill hover fill."},"menuItemHover":{"v":"#f8f8f7","t":"color","s":"computed backgroundColor of nav-menu-item hover (raw/components-computed.json)","d":"The #f8f8f7 dropdown item hover fill."},"drawer":{"v":"#fbfaf7","t":"color","s":"computed backgroundColor of m-drawer default (raw/components-computed.json)","d":"The #fbfaf7 mobile nav overlay fill."},"selectedTint":{"v":"#eef2ff","t":"color","s":"computed backgroundColor of tab-pill selected (raw/components-computed.json)","d":"The #eef2ff selected-pill tint."}},"text":{"ink":{"v":"#23252b","t":"color","s":"the first text node's color on hero-h1 default (raw/components-computed.json)","d":"The #23252b heading ink (display copy, card titles)."},"body":{"v":"#20232b","t":"color","s":"computed color of mkt-header default (raw/components-computed.json)","d":"The #20232b default body ink."},"mobile":{"v":"#17191f","t":"color","s":"the first text node's color on m-menu-btn default (raw/components-computed.json)","d":"The #17191f ink on the mobile menu rows."},"muted":{"v":"#666c77","t":"color","s":"the first text node's color on hero-sub default (raw/components-computed.json)","d":"The #666c77 muted lede gray."},"gray":{"v":"#757b86","t":"color","s":"computed color of billing-monthly default (raw/components-computed.json)","d":"The #757b86 unselected-toggle gray."},"linkInk":{"v":"#4f5562","t":"color","s":"the first text node's color on nav-dropdown default (raw/components-computed.json)","d":"The #4f5562 nav-pill ink."},"navHover":{"v":"#22252d","t":"color","s":"the first text node's color on nav-dropdown hover (raw/components-computed.json)","d":"The #22252d nav ink on hover/open."},"faint":{"v":"#8b9098","t":"color","s":"the first text node's color on nav-panel default (raw/components-computed.json)","d":"The #8b9098 faint dropdown-group label."},"meta":{"v":"#6c7280","t":"color","s":"the first text node's color on blog-row default (raw/components-computed.json)","d":"The #6c7280 blog-meta gray."},"monoLabel":{"v":"#4457ff","t":"color","s":"the first text node's color on agent-card default (raw/components-computed.json)","d":"The #4457ff mono kicker label inside feature cards (brand indigo on light tint)."}},"action":{"fill":{"v":"#4457ff","t":"color","s":"computed backgroundColor of nav-signup default (raw/components-computed.json)","d":"The #4457ff brand indigo — bg-primary on CTAs, the Business plan card, the selected billing toggle; also the declared vendor --cc-btn-primary-bg and the Tailwind ring-primary/20 source."},"fillHover":{"v":"#3347fb","t":"color","s":"computed backgroundColor of nav-signup hover (raw/components-computed.json)","d":"The #3347fb indigo hover step — also the declared vendor --cc-btn-primary-hover-bg."},"ink":{"v":"#ffffff","t":"color","s":"computed color of nav-signup default (raw/components-computed.json)","d":"The white ink on indigo fills."},"selectedInk":{"v":"#5a84ff","t":"color","s":"computed color of tab-pill selected (raw/components-computed.json)","d":"The #5a84ff ink on the selected tab pill."},"selectedBorder":{"v":"#84a1ff","t":"color","s":"computed borderTopColor of tab-pill selected (raw/components-computed.json)","d":"The #84a1ff border on the selected tab pill."},"selectedBg":{"v":"#3347fb","t":"color","s":"computed backgroundColor of billing-monthly selected (raw/components-computed.json)","d":"The #3347fb selected billing-toggle fill (the darker indigo step)."},"disabledFill":{"v":"#b9c0f5","t":"color","s":"computed backgroundColor of bio-submit default (raw/components-computed.json)","d":"The #b9c0f5 desaturated indigo of the at-rest (disabled-looking) Generate button."}},"border":{"input":{"v":"#dfdfe4","t":"color","s":"computed borderTopColor of bio-tone default (raw/components-computed.json)","d":"The #dfdfe4 input/badge hairline."},"tab":{"v":"#d8dbe2","t":"color","s":"computed borderTopColor of tab-pill default (raw/components-computed.json)","d":"The #d8dbe2 dashed tab-pill border at rest."},"panel":{"v":"#efefed","t":"color","s":"the painted border layer on nav-panel default (raw/components-computed.json paint list)","d":"The #efefed hairline on the open nav panel."},"iconTile":{"v":"#e8e7e4","t":"color","s":"the painted border layer on nav-menu-item default (raw/components-computed.json paint list)","d":"The #e8e7e4 border on the 48px dropdown icon tiles."},"rule":{"v":"#e7e8ec","t":"color","s":"the painted border layer on blog-row default (raw/components-computed.json paint list)","d":"The #e7e8ec divider inside the blog rows."},"footerRule":{"v":"#e6e2dc","t":"color","s":"the border-[#e6e2dc] utility on the footer's top rule (painted layer in raw/components-computed.json paint lists)","d":"The #e6e2dc footer top rule (border-[#e6e2dc], visible in footer-light crops)."},"badgeChip":{"v":"#cfd1d9","t":"color","s":"the painted border layer on hero-badge default (raw/components-computed.json paint list)","d":"The #cfd1d9 border on the inner rounded chip of the gradient-ring badge."}},"focus":{"ring":{"v":"rgba(68, 87, 255, 0.2)","t":"color","s":"the declared --tw-ring-color on .focus:ring-primary/20:focus in the site's css bundle (raw/css-vars.json tailwind bin)","d":"The primary/20 focus ring on keyboard focus."}}},"dark":{}};
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  // The roles panel obeys the Dark toggle: feedhive.com ships no dark
-  // surface, so the dark set is empty and the panel says so instead of
-  // pretending.
-  const rolesHost = () => {
-    const dark = document.documentElement.dataset.mode === 'dark';
-    const roles = flat(TOK[dark ? 'dark' : 'light'] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
-    let hh = `<div class="pal-h">${dark ? 'dark roles' : 'light roles'}</div>`;
-    if (!roles.length) return hh + `<p class="note">Empty — feedhive.com ships one light theme only; there is no dark token set on the public site.</p>`;
-    hh += `<div class="pal${dark ? ' dark' : ''}">`;
-    for (const [n, t] of roles) hh += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    return hh + '</div>';
-  };
-  const host = document.createElement('div');
-  host.id = 'roles-panel';
-  $('#roles-out').insertAdjacentHTML('beforeend', h);
-  $('#roles-out').appendChild(host);
-  const refill = () => { host.innerHTML = rolesHost(); };
-  refill();
-  document.getElementById('theme').addEventListener('change', function () {
-    document.documentElement.dataset.mode = this.checked ? 'dark' : '';
-    refill();
-  });
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.ctaRing || {}, 'ctaRing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
-  for (const [n, t] of flat(TOK.core.animate || {}, 'animate.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#spacing-out').innerHTML = m;
-})();
-
-(function elev() {
-  let e = '';
-  for (const setname of ['light', 'dark']) {
-    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.component || {}).login || {}, 'component.login.')) {
-    if (/shadow|glow/.test(n)) e += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 110))}</span></div>`;
-  }
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
-  $('#meas-out').innerHTML = m;
-})();
-
-const resolveVal = (v, depth) => {
-  if (depth > 6 || typeof v !== 'string') return v;
-  const m = v.match(/^\{(.+)\}$/);
-  if (!m) return v;
-  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
-    let node = root;
-    for (const k of m[1].split('.')) node = node && node[k];
-    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
-  }
-  return v;
-};
-
-(function type() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(resolveVal(t.v));
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — FeedHive</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
-</script>
 </body>
 </html>

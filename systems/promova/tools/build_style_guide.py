@@ -1,12 +1,19 @@
 #!/usr/bin/env python3
-"""Render style-guide.html from tokens.json.
+"""Render style-guide.html from tokens.json + tools/style-guide.template.html.
 
-Light only. Promova paints one theme: a black page with white and pastel
-islands. The guide uses the token values and does not invent a dark set.
+Every colour, radius, shadow and type style on the page is a CSS custom property generated from
+tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
+`:root` and the `dark` set on `[data-mode="dark"]`, which is how Claude itself switches: the guide's
+theme toggle sets data-mode on <html>. Aliases like {text.primary} become var(--text-primary).
+
+Placeholders in the template:
+  /*CORE*/ /*LIGHT*/ /*DARK*/     CSS custom property blocks
+  /*TOKENS*/null                  a compact copy of the token tree for the JS tables
+  <!--icon:NAME[:SIZE]-->         an SVG from icons/NAME.svg, inlined
+
+Deterministic: same inputs, byte-identical output. Adapted from the Manus kit's builder.
 """
-import json
-import pathlib
-import re
+import json, pathlib, re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 T = json.loads((HERE / "tokens.json").read_text())
@@ -30,130 +37,87 @@ def alias(v):
     return re.sub(r"\{([^{}]+)\}", lambda m: f"var({cssname(m.group(1))})", str(v))
 
 
-def css_val(t):
+def css_val(name, t):
     v, ty = t["$value"], t["$type"]
+    if ty == "cubicBezier":
+        return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
+    if ty == "shadow":
+        if isinstance(v, str):
+            return alias(v)
+        return ", ".join(("inset " if s.get("inset") else "") + f'{s["offsetX"]} {s["offsetY"]} {s["blur"]} {s["spread"]} {alias(s["color"])}' for s in v)
     if ty == "typography":
-        return (
-            f'{alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} '
-            f'{alias(v["fontFamily"])}'
-        )
+        return f'{alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])}'
+    if ty == "gradient":
+        angle = t["$extensions"].get("angle", "180deg")
+        return f"linear-gradient({angle}, " + ", ".join(f'{alias(s["color"])} {round(s["position"] * 100, 2)}%' for s in v) + ")"
     return alias(v)
 
 
+# A light-only product has no dark set; every set that is missing renders as empty.
+SETS = [s for s in ("core", "light", "dark") if s in T]
+THEMES = [s for s in SETS if s != "core"]
+
+
 def block(setname):
-    return "\n".join(f"  {cssname(n)}: {css_val(t)};" for n, t in flat(T[setname]))
+    """A set's custom properties; a set the product lacks renders as nothing."""
+    if setname not in T:
+        return ""
+    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]))
 
 
-swatches = [
-    ("page", "light.background.page", "#000000"),
-    ("surface", "light.background.surface", "#ffffff"),
-    ("hero", "light.background.hero", "#bec8ff"),
-    ("action", "light.background.action", "#000000"),
-    ("announcement", "light.background.announcement", "#fff584"),
-    ("field border", "light.border.stroke", "rgba(0, 0, 0, 0.3)"),
-]
+# a core name and a themed name must not land on the same custom property
+_core = {cssname(n) for n, _ in flat(T["core"])}
+for _set in THEMES:
+    _clash = _core & {cssname(n) for n, _ in flat(T[_set])}
+    if _clash:
+        raise SystemExit(f"core and {_set} share custom properties: {sorted(_clash)[:5]}")
 
-rows = "\n".join(
-    f'<div class="sw"><i style="background:{alias("{" + path + "}")}"></i><div><b>{name}</b><code>{path}</code></div></div>'
-    for name, path, _ in swatches
-)
 
-html = f"""<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Promova style guide</title>
-<style>
-:root {{
-{block("core")}
-{block("light")}
-}}
-* {{ box-sizing: border-box; }}
-body {{
-  margin: 0;
-  background: var(--background-page);
-  color: var(--text-on-action);
-  font: 16px/1.45 var(--font-family-ui);
-  padding: 24px;
-}}
-main {{
-  max-width: 960px;
-  margin: 0 auto;
-  background: var(--background-surface);
-  color: var(--text-primary);
-  border-radius: var(--radius-section);
-  padding: 32px;
-}}
-h1 {{ font-family: var(--font-family-display); font-weight: 700; font-size: 40px; line-height: 1; margin: 0 0 8px; }}
-h2 {{ font-family: var(--font-family-display); font-weight: 400; font-size: 24px; margin: 32px 0 12px; }}
-p {{ margin: 0 0 16px; }}
-.swatches {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }}
-.sw {{ display: flex; gap: 10px; align-items: center; }}
-.sw i {{ width: 48px; height: 48px; border-radius: 8px; border: 1px solid rgba(0,0,0,.2); display: block; }}
-code {{ display: block; font-size: 12px; color: rgba(0,0,0,.55); }}
-.hero {{
-  background: var(--background-hero);
-  border-radius: var(--radius-section);
-  padding: 28px;
-  margin-top: 16px;
-}}
-.btn {{
-  display: inline-flex; align-items: center; justify-content: center;
-  height: var(--component-button-cta-height);
-  padding: 0 28px;
-  background: var(--background-action);
-  color: var(--text-on-action);
-  font-family: var(--font-family-display);
-  font-size: var(--component-button-cta-font-size);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  border-radius: var(--radius-none);
-  border: 0;
-}}
-.btn-line {{
-  display: inline-flex; align-items: center; justify-content: center;
-  height: 40px; padding: 0 10px;
-  background: var(--background-surface);
-  color: var(--text-primary);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-none);
-  font-family: var(--font-family-display);
-  font-size: 14px;
-  text-transform: uppercase;
-}}
-.field {{
-  display: block; width: 280px; height: var(--component-field-height);
-  border: 1px solid var(--border-stroke);
-  border-radius: var(--radius-field);
-  padding: 0 var(--spacing-field-pad);
-  font: 500 15px/22px var(--font-family-ui);
-}}
-.row {{ display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }}
-</style>
-</head>
-<body>
-<main>
-  <h1>Promova</h1>
-  <p>Public signed-out surfaces, measured 2026-11-19. One light theme on a black page. Values come from tokens.json.</p>
-  <h2>Colour</h2>
-  <div class="swatches">
-    {rows}
-  </div>
-  <h2>Hero island</h2>
-  <div class="hero">
-    <h1 style="font-size:40px">Speak before you're ready</h1>
-    <p>Speaking isn't the final step of learning a language.</p>
-    <div class="row">
-      <span class="btn">Try now</span>
-      <span class="btn-line">Sign up</span>
-    </div>
-  </div>
-  <h2>Field</h2>
-  <input class="field" placeholder="example@gmail.com" aria-label="Email example">
-</main>
-</body>
-</html>
-"""
+def slim(node):
+    if isinstance(node, dict) and "$value" in node:
+        out = {"v": node["$value"], "t": node["$type"], "s": node["$extensions"]["source"]}
+        for k in ("compact", "darkVariationAxis"):
+            if k in node["$extensions"]:
+                out[k] = node["$extensions"][k]
+        if node.get("$description"):
+            out["d"] = node["$description"]
+        return out
+    return {k: slim(v) for k, v in node.items() if not k.startswith("$")}
+
+
+# Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" or "<!--"
+# from ending the script early. JSON.parse and a JS literal read it back unchanged.
+data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "dark")},
+                  ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+
+_uid = [0]
+ICON_SRC = {}
+
+
+def clean_svg(svg, size):
+    svg = re.sub(r"<\?xml[^>]*>\s*", "", svg).strip()
+    svg = re.sub(r"\s+", " ", svg).replace("> <", "><")
+    for i in sorted(set(re.findall(r'id="([^"]+)"', svg))):
+        _uid[0] += 1
+        svg = svg.replace(f'id="{i}"', f'id="i{_uid[0]}"').replace(f"url(#{i})", f"url(#i{_uid[0]})")
+    svg = re.sub(r"<svg\b", '<svg aria-hidden="true" focusable="false" class="ic"', svg, count=1)
+    if size:
+        svg = re.sub(r'\swidth="[^"]*"', "", svg, count=1)
+        svg = re.sub(r'\sheight="[^"]*"', "", svg, count=1)
+        svg = svg.replace("<svg ", f'<svg width="{size}" height="{size}" ', 1)
+    return svg
+
+
+def icon(m):
+    name, size = m.group(1), m.group(2)
+    src = ICON_SRC.setdefault(name, (HERE / "icons" / f"{name}.svg").read_text())
+    return clean_svg(src, size)
+
+
+tpl = (HERE / "tools" / "style-guide.template.html").read_text()
+html = (tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*DARK*/", block("dark"))
+        .replace("/*TOKENS*/null", data))
+html = re.sub(r"<!--icon:([a-z0-9-]+)(?::(\d+))?-->", icon, html)
 (HERE / "style-guide.html").write_text(html)
-print("wrote style-guide.html", len(html))
+print("style-guide.html:", len(html.encode()), "bytes;",
+      " + ".join(f"{len(list(flat(T[s])))} {s}" for s in SETS), "tokens;", len(ICON_SRC), "icons")

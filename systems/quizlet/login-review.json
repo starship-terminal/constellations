@@ -1,0 +1,155 @@
+{
+  "slug": "quizlet",
+  "captured": "2026-11-21",
+  "signed_in": true,
+  "session": "T3 in-app preview, default profile. Title Your Sets on /latest, body class theme-night, library and settings loaded. No login wall and no robot check.",
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2,
+      "visualViewport": {
+        "width": 1440,
+        "height": 900,
+        "scale": 1
+      },
+      "png": "2880x1800",
+      "toolReported": "1280x800"
+    },
+    "phone": {
+      "requested": "390x844",
+      "innerWidth": 430,
+      "innerHeight": 932,
+      "devicePixelRatio": 2,
+      "visualViewport": {
+        "width": 430,
+        "height": 932,
+        "scale": 1
+      },
+      "png": "860x1864",
+      "preset": "iphone-14-pro-max",
+      "toolReported": "1280x800"
+    }
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "Home",
+        "Your library",
+        "Study groups",
+        "Notifications",
+        "Flashcards",
+        "Podcasts",
+        "Study Guides",
+        "Games",
+        "Practice Tests",
+        "Expert Solutions",
+        "New folder"
+      ],
+      "reached": [
+        "Home",
+        "Your library"
+      ]
+    },
+    "settings": {
+      "items": [
+        "Settings",
+        "Achievements",
+        "Light mode",
+        "Subscription",
+        "Personal information",
+        "Appearance",
+        "Notifications",
+        "Account and privacy",
+        "Log out",
+        "Upgrade"
+      ],
+      "reached": [
+        "Settings",
+        "Subscription",
+        "Personal information",
+        "Appearance",
+        "Notifications",
+        "Account and privacy"
+      ]
+    },
+    "create": {
+      "items": [
+        "Lecture recording",
+        "Flashcard set",
+        "Podcast",
+        "Study guide",
+        "Practice test",
+        "Folder",
+        "Study group"
+      ],
+      "reached": [
+        "Flashcard set"
+      ]
+    }
+  },
+  "screens": [
+    {
+      "name": "Your library, empty flashcard sets",
+      "file": "screenshots/library-night-empty.png"
+    },
+    {
+      "name": "Settings, profile",
+      "file": "screenshots/settings-night-profile.png"
+    },
+    {
+      "name": "Settings, notifications",
+      "file": "screenshots/settings-night-notifications.png"
+    },
+    {
+      "name": "Create a set, empty",
+      "file": "screenshots/create-set-night-empty.png"
+    },
+    {
+      "name": "Your Sets, phone",
+      "file": "screenshots/home-night-phone.png"
+    },
+    {
+      "name": "Nav, phone",
+      "file": "screenshots/nav-night-phone.png"
+    },
+    {
+      "name": "Settings, phone",
+      "file": "screenshots/settings-night-phone.png"
+    }
+  ],
+  "gaps": [
+    "Study groups, Notifications, Flashcards, Podcasts, Study Guides, Games, Practice Tests, Expert Solutions, and New folder were listed and not opened. Several of those start a create or upload flow.",
+    "Achievements, Light mode, Log out, and Upgrade were offered and not opened. Light mode would switch the theme. Upgrade is a paid path. Log out would end the session.",
+    "Create items other than Flashcard set were listed and not opened. The flashcard form was left empty. A Quizlet Plus modal on /create-set was closed and the trial was not started.",
+    "Library tabs other than Flashcard sets were not opened.",
+    "Light theme was not captured. Settings Theme was Auto and the page painted theme-night.",
+    "Phone width measured 430 by 932 after the iphone-14-pro-max preset. A freeform 390 by 844 request did not change the CSS viewport.",
+    "Hover, pressed, and focus-visible were not captured.",
+    "icons/ is missing. The site icon is the q-twilight PNG resized to 128 px. SVG icons were not exported.",
+    "catalog.json has no quizlet entry. make check fails on that, and the entry is deferred.",
+    "The home shot with both menus open, and the account-menu crop, were deleted because they still showed the account email. Settings shots had the email replaced in the page before capture. The timezone city was painted out of the notifications shot.",
+    "The account-and-privacy screenshot was deleted because the timezone city was still visible at the top. The section was opened. Create password, Link Facebook, privacy switches, and Delete account were not used."
+  ],
+  "not_submitted": [
+    "Create a set",
+    "Create and practice",
+    "New folder",
+    "Study group",
+    "Podcast generate",
+    "Study guide upload",
+    "Practice test generator",
+    "Record lecture",
+    "Upgrade",
+    "Try it for free",
+    "Log out",
+    "Delete account",
+    "Create password",
+    "Link Facebook",
+    "Edit profile",
+    "notification switches",
+    "privacy switches",
+    "theme switch"
+  ]
+}

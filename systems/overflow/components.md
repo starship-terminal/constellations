@@ -1,125 +1,216 @@
-# Components
+# Overflow components
 
-Public marketing controls on overflow.io, plus the signed-out app shell at
-`/n/signin` and `/n/signup`. Values are computed styles from 2026-11-19.
-Crops are in [components/crops/](components/crops/).
+Measured on https://overflow.io/ on 2026-11-21, signed out, desktop 1440x900 and phone 390x844. Crops are 256-colour PNGs. Read colours from [tokens.json](tokens.json).
 
-## Button
+## hero-title
 
-Primary marketing button. Black fill, white text, 8px radius, 1px black border.
+Display heading. Homepage and pricing h1, class intro-section__title.
 
-| State | Where | Values |
+| State | Crop | What changed |
 |---|---|---|
-| default | header `a.btn-primary`, [button-primary-default.png](components/crops/button-primary-default.png) | background `{background.action}`, text `{text.on-action}`, radius `{radius.button}`, height 48px, padding 15px 12.8px, weight 550, 15px, tracking 0.2px |
-| hero | `.intro-section a.btn-primary` | height `{size.button-hero}` (56px), padding 19px 24px, 16px |
-| hover | declared `.btn-primary:hover` | background stays `#000`, `transform: translateY(-2px)` over 0.4s. Computed hover of the header button did not change colour |
-| focus | declared `.btn-primary:focus` | same fill as default |
-| focus-visible | forced on the header button | outline 1px `{focus.outline}` (`#005fcc`), offset `{focus.offset}`: `outline-style: auto`, Chromium's default ring. Overflow sets no focus colour, so this is the browser's, not a brand value |
-| pressed | not captured | no `:active` rule in the marketing sheet; a press was not held |
+| default | [default](components/crops/hero-title-default.png) | rgb(255, 255, 255) on rgba(0, 0, 0, 0), 56px, 800 |
 
-Secondary cookie button `button.btn-secondary.btn-xs`: fill `{background.action-secondary}` (`#f0f0f2`), text black, radius 8px, padding 8px 12px, 15px weight 550. Declared hover fills `#e8e8ea` and lifts 2px.
+## hero-cta
 
-Ghost `a.navbar__btn-simple` ("Sign In"): transparent, black, 15px weight 400, padding 8px 16px, radius 0.
+Button. Black primary button, Download - free trial.
 
-## App button
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/hero-cta-default.png) | rgb(255, 255, 255) on rgb(0, 0, 0), 16px, 550 |
+| hover | [hover](components/crops/hero-cta-hover.png) | transform matrix(1, 0, 0, 1, 0, -1.94684) |
+| focus-visible | [focus-visible](components/crops/hero-cta-focus-visible.png) | transform matrix(1, 0, 0, 1, 0, -0.0078372); Tab |
+| pressed | [pressed](components/crops/hero-cta-pressed.png) | transform matrix(1, 0, 0, 1, 0, -0.408152); CDP forcePseudoState active |
 
-Signed-out shell. Crop: [button-download-hover.png](components/crops/button-download-hover.png), [button-signin-disabled.png](components/crops/button-signin-disabled.png), [button-google-hover.png](components/crops/button-google-hover.png).
+## nav-cta
 
-| State | Values |
-|---|---|
-| primary `.download-button` | fill `{background.app-action}` `#0071db`, text white, radius 6px, height 32px, padding 0 12px, weight 600, 12px, tracking 0.1px, shadow `{shadow.app-button}` |
-| primary hover | fill `{background.app-action-hover}` `#0065c5`, shadow `{shadow.app-button-hover}` |
-| disabled `button.disabled` | fill `{background.app-disabled}` `#f0f1f3`, text `{text.auth-disabled}` `#b7bdc5`, height 40px, radius 6px. The empty Sign in button is disabled until the fields validate |
-| secondary `.google-btn` | white fill, text `#36383b`, height 40px, radius 6px, same resting shadow. Hover deepens the shadow and does not change the fill |
-| text button | `{text.auth-link}` `#0071db`, 14px or 12px, radius 3px |
+Button. Header Download for free, shorter than the hero button.
 
-## Link
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/nav-cta-default.png) | rgb(255, 255, 255) on rgb(0, 0, 0), 15px, 550 |
+| hover | [hover](components/crops/nav-cta-hover.png) | transform matrix(1, 0, 0, 1, 0, -1.98188) |
+| focus-visible | [focus-visible](components/crops/nav-cta-focus-visible.png) | transform matrix(1, 0, 0, 1, 0, -0.00778137); Tab |
+| pressed | [pressed](components/crops/nav-cta-pressed.png) | transform matrix(1, 0, 0, 1, 0, -0.496637); CDP forcePseudoState active |
 
-In-content link (cookie statement, active nav "Pricing"): `{text.link}` `#0085e4`, weight 500 on the cookie link, weight 400 on `.nav-link.active`. Declared `a:hover` is `#259aef`. Footer link: `{text.secondary}` at 60% black, 14px / 24.5px.
+## nav-signin
 
-App text links ("Sign in with SSO", "Forgot password?") use the text-button styles above. Forgot password is the muted grey, not the blue.
+Button. Quiet Sign In control. Fill appears only while pressed.
 
-## Text field
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/nav-signin-default.png) | rgb(0, 0, 0) on rgba(0, 0, 0, 0), 15px, 400 |
+| hover | [hover](components/crops/nav-signin-hover.png) | transform matrix(1, 0, 0, 1, 0, -1.98197) |
+| focus-visible | [focus-visible](components/crops/nav-signin-focus-visible.png) | transform matrix(1, 0, 0, 1, 0, -0.00782178); Tab |
+| pressed | [pressed](components/crops/nav-signin-pressed.png) | backgroundColor rgba(240, 240, 242, 0.498); transform matrix(1, 0, 0, 1, 0, -0.496717); CDP forcePseudoState active |
 
-Marketing footer `input.form-control`: fill `{color.field}` (4% black), radius 8px, height 48px, padding 16px, 14px, border 0 with a computed border-colour of `#e8e8ea`. Declared focus turns the background white and paints a 2px `#149bfe` ring.
+## nav-link
 
-App field, [textfield-focus.png](components/crops/textfield-focus.png): white fill, 1px `{border.app-input}` `#cfd2d7`, radius 6px, height 40px, padding 7px 11px, 14px / 24px, tracking 0.2px, placeholder colour not separately read. Focus darkens the border to `{border.app-input-focus}` `#a3a6aa` and adds no ring. Password focus crop: [textfield-password-focus.png](components/crops/textfield-password-focus.png).
+Link. Header text link. Hover and pressed shift to the blue accent.
 
-## Text area
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/nav-link-default.png) | rgb(0, 0, 0) on rgba(0, 0, 0, 0), 15px, 400 |
+| hover | [hover](components/crops/nav-link-hover.png) | color rgb(37, 154, 239) |
+| focus-visible | [focus-visible](components/crops/nav-link-focus-visible.png) | Tab |
+| pressed | [pressed](components/crops/nav-link-pressed.png) | color rgb(18, 75, 116); CDP forcePseudoState active |
 
-Not present on the captured public pages.
+## product-trigger
 
-## Select
+Link. Product control that opens the mega menu.
 
-The sign-in page shows an "Overflow for Mac" platform menu beside Download. Its computed style was not isolated (the measurement pass found no `select`). Recorded as a gap.
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/product-trigger-default.png) | rgb(0, 0, 0) on rgba(0, 0, 0, 0), 15px, 400 |
+| hover | [hover](components/crops/product-trigger-hover.png) | color rgb(37, 154, 239) |
+| focus-visible | [focus-visible](components/crops/product-trigger-focus-visible.png) | color rgb(34, 141, 219); Tab |
+| pressed | [pressed](components/crops/product-trigger-pressed.png) | color rgb(37, 154, 239); CDP forcePseudoState active |
 
-## Checkbox
+## product-menu
 
-`/n/signup` renders two checkboxes (Terms of Service, product updates). Both computed to 0x0: the visible box is not the input element. The painted box was not measured. Recorded as a gap.
+Menu. White mega menu, 1440 by 393, hairline #dadce0.
 
-## Radio
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/product-menu-default.png) | rgb(0, 0, 0) on rgb(255, 255, 255), 16px, 400 |
 
-Not present.
+## menu-link
 
-## Switch
+Link. Mega menu item. Hover fills #f5f5f6.
 
-Not present on the captured pages. The pricing page has no billing toggle.
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/menu-link-default.png) | rgb(22, 22, 55) on rgb(255, 255, 255), 14px, 400 |
+| hover | [hover](components/crops/menu-link-hover.png) | backgroundColor rgb(245, 245, 246) |
+| focus-visible | [focus-visible](components/crops/menu-link-focus-visible.png) | Tab |
+| pressed | [pressed](components/crops/menu-link-pressed.png) | backgroundColor rgb(249, 249, 250); CDP forcePseudoState active |
 
-## Tabs
+## logo
 
-Home "Canvas view / Prototype view / Story presentation" is a presentation switcher. Its resting and selected computed styles were not isolated. Recorded as a gap. See [screenshots/home-light-default.png](screenshots/home-light-default.png).
+Link. Wordmark link. Computed color is the brand blue.
 
-## Menu
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/logo-default.png) | rgb(0, 133, 228) on rgba(0, 0, 0, 0), 16px, 500 |
 
-Product mega-menu, opened by hover: [screenshots/home-light-nav-open.png](screenshots/home-light-nav-open.png). The panel is `.navbar-nav__megamenu`, white, 1440px wide, 393px tall, no shadow, radius 0. Column titles are the eyebrow style (14px, weight 700, `#acacbc`, tracking 1px). Item titles are 16px weight 700 `#161637`, tracking -0.4px.
+## demo-link
 
-Phone drawer: [screenshots/mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png). White sheet, black  type, Sign in on the grey secondary fill, Download for free on black.
+Link. Watch product demo. Opens the video dialog.
 
-## Tooltip
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/demo-link-default.png) | rgb(0, 0, 0) on rgba(0, 0, 0, 0), 14px, 400 |
+| hover | [hover](components/crops/demo-link-hover.png) | color rgba(0, 0, 0, 0.6) |
+| focus-visible | no crop | focus failed |
+| pressed | [pressed](components/crops/demo-link-pressed.png) | CDP forcePseudoState active |
 
-Not present on the captured pages. The app declares `--color-tooltip` and `--shadow-*` but no tooltip was opened.
+## plan-card
 
-## Dialog
+Card. Pricing card, 24px radius, soft shadow.
 
-Cookie notice `.alert.alert--cookies.alert-white`: white surface, 14px text, two buttons (Required only, Allow all). It sits over the hero. No other dialog was opened. Forgot-password is not a dialog: `/n/forgot` returns the app 404.
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/plan-card-default.png) | rgb(0, 0, 0) on rgb(255, 255, 255), 16px, 400 |
 
-## Toast
+## plan-cta
 
-Not present.
+Button. Start free trial inside the plan card.
 
-## Card
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/plan-cta-default.png) | rgb(255, 255, 255) on rgb(0, 0, 0), 16px, 550 |
+| hover | [hover](components/crops/plan-cta-hover.png) | transform matrix(1, 0, 0, 1, 0, -1.94674) |
+| focus-visible | [focus-visible](components/crops/plan-cta-focus-visible.png) | transform matrix(1, 0, 0, 1, 0, -0.00782418); Tab |
+| pressed | [pressed](components/crops/plan-cta-pressed.png) | transform matrix(1, 0, 0, 1, 0, -0.408489); CDP forcePseudoState active |
 
-Plan card `.card` on `/pricing/`: white, radius `{radius.card}` 24px, shadow `0 4px 16px -8px rgba(0,0,0,.08)`, 392px wide. Header `.price-box__header` radius 7px 7px 0 0, padding 40px. Title "Pro" is the link blue.
+## pricing-h1
 
-The sign-in trial card ("Don't have an account?") was not isolated as its own computed box. It is visible in [screenshots/signin-light-default.png](screenshots/signin-light-default.png).
+Display heading. Pricing page title, same ramp as the homepage h1, ink on white.
 
-## List row
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/pricing-h1-default.png) | rgb(0, 0, 0) on rgba(0, 0, 0, 0), 56px, 800 |
 
-Mega-menu rows and pricing feature rows (check icon plus label). Feature-row metrics were not isolated. Recorded as a gap beyond the menu type above.
+## faq-item
 
-## Table
+Accordion. Closed FAQ opener. Hover does not change the computed fill.
 
-Not present.
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/faq-item-default.png) | rgb(0, 0, 0) on rgb(255, 255, 255), 16px, 400 |
+| hover | [hover](components/crops/faq-item-hover.png) | same as default |
+| focus-visible | no crop | focus failed |
+| pressed | no crop | CDP forcePseudoState active |
 
-## Avatar
+## faq-open
 
-Not present. Testimonials use names and roles, not avatar images, on the captured fold.
+Accordion. Same item after click, body opened.
 
-## Badge
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/faq-open-default.png) | rgb(0, 0, 0) on rgba(0, 0, 0, 0), 16px, 400 |
 
-Not present as a component. The app declares `--color-latest-version-badge`.
+## download-mac
 
-## Heading
+Button. Download for Mac. Class btn-gradient, painted black.
 
-Marketing display, [screenshots/home-light-default.png](screenshots/home-light-default.png): 56px, weight 800, line-height 63.84px, tracking -1.2px, white on the hero, black on interior pages. Section titles 48px / 55.68px / -0.8px weight 800. Mobile home h1 is 40px. App h1, [heading-signin.png](components/crops/heading-signin.png): 32px weight 600, line-height 40px, tracking -0.6px, colour `#2a2d32`.
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/download-mac-default.png) | rgb(255, 255, 255) on rgb(0, 0, 0), 16px, 550 |
+| hover | [hover](components/crops/download-mac-hover.png) | transform matrix(1, 0, 0, 1, 0, -1.94678) |
+| focus-visible | [focus-visible](components/crops/download-mac-focus-visible.png) | transform matrix(1, 0, 0, 1, 0, -0.0180869); Tab |
+| pressed | [pressed](components/crops/download-mac-pressed.png) | transform matrix(1, 0, 0, 1, 0, -0.408682); CDP forcePseudoState active |
+
+## download-h1
+
+Display heading. Download page title.
+
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/download-h1-default.png) | rgb(0, 0, 0) on rgba(0, 0, 0, 0), 56px, 800 |
+
+## section-h2
+
+Heading. Features section title, 48px extra-bold.
+
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/section-h2-default.png) | rgb(0, 0, 0) on rgba(0, 0, 0, 0), 48px, 800 |
+
+## blog-card
+
+Badge. Blog filter pill. The card selector missed the article grid.
+
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/blog-card-default.png) | rgba(0, 0, 0, 0.6) on rgb(255, 255, 255), 15px, 500 |
+| hover | [hover](components/crops/blog-card-hover.png) | color rgb(0, 0, 0) |
+
+## m-menu-button
+
+Icon button. Phone navbar toggler, 22px wide.
+
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/m-menu-button-default.png) | rgb(0, 0, 0) on rgba(0, 0, 0, 0), 16px, 500 |
+| hover | [hover](components/crops/m-menu-button-hover.png) | same as default |
+| focus-visible | [focus-visible](components/crops/m-menu-button-focus-visible.png) | Tab |
+| pressed | [pressed](components/crops/m-menu-button-pressed.png) | CDP forcePseudoState active |
+
+## m-nav-item
+
+Link. Phone menu row, 24px bold.
+
+| State | Crop | What changed |
+|---|---|---|
+| default | [default](components/crops/m-nav-item-default.png) | rgb(0, 0, 0) on rgba(0, 0, 0, 0), 24px, 700 |
 
 ## Gaps
 
-- No dark theme. `prefers-color-scheme: dark` left marketing and `/n/signin` painted light.
-- Pressed states were not held. Marketing `:active` is absent from the sheet.
-- Select, checkbox paint, tabs, tooltip, toast, table, avatar, badge, list-row metrics: not isolated.
-- `/n/forgot` is a 404, so the forgot-password field was not measured.
-- Signup was looked at and not submitted. Validation, error, and loading states are uncaptured.
-- Google and SSO were not clicked.
-- Help center `support.overflow.io` returned 403 and was not captured.
-- The hero wash is a rendered gradient (no CSS `background-image` on the section or its ancestors). Its stops were not read from CSS.
+- Text field, text area, select, checkbox, radio, and switch are not on the public marketing pages. The footer newsletter field was not filled.
+- Tooltip, toast, table, and avatar were not found as product controls. The homepage shows decorative avatars inside the product demo artwork.
+- Disabled, loading, and error states were not present on the captured controls.
+- Focus-visible on demo-link and faq-item failed: those nodes are not keyboard-focusable.
+- feature-card and integration-card selectors matched the page body. Those crops are not component evidence.
+- Success, warning, danger, and info roles were not painted as status colours.
+- Dark theme: not present. The site has no theme toggle.
+- Signed-in app, editor, and account screens: not captured. https://overflow.io/n/signin and https://overflow.io/n/signup?buy are walls.

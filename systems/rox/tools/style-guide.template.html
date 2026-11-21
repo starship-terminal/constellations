@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rox style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: Geist, Inter, system-ui, sans-serif;
+  --sg-display: "Season Mix-TRIAL Regular", Georgia, serif;
+  --sg-mono: "Geist Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 14px/1.5 var(--sg-sans); color: var(--ink, #1c1917); background: var(--page, #f7f6f4); }
+main { max-width: 980px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 420 42px/1.2 var(--sg-display); letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font: 500 13px/1 var(--sg-sans); margin: 40px 0 12px; }
+p { max-width: 62ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 56px; border: 1px solid rgba(28,25,23,.12); }
+.sw b, .sw span { display: block; font: 500 11px/1.4 var(--sg-mono); }
+.sw span { font-weight: 400; opacity: .7; }
+.btn { display: inline-flex; align-items: center; height: 30px; padding: 0 13px; font: 500 14px/1 var(--sg-sans); text-decoration: none; }
+.btn.ink { background: var(--ink, #1c1917); color: #fafafa; }
+.btn.paper { background: #fafafa; color: #403f3e; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+.field { background: #f4f4f3; border-radius: 4px; height: 49px; width: 280px; display: flex; align-items: center; padding: 0 16px; color: #1c1917; }
+.card { background: #faf9f7; width: 220px; min-height: 140px; padding: 16px; }
+.type-display { font: 420 56px/1.2 var(--sg-display); letter-spacing: -0.02em; }
+code { font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Rox</h1>
+  <p>Public site tokens, one theme. Values come from tokens.json.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Type</h2>
+  <p class="type-display">The Revenue Agent</p>
+  <p>Geist 14 / 500 for nav and buttons. Season Mix for display.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="btn paper">Contact Sales</a>
+    <a class="btn ink">Start now</a>
+    <div class="field">Enter your email</div>
+    <div class="card"><b>Individual</b><p>starts at $100</p></div>
+  </div>
+</main>
+<script>
+const swatches = [
+  ["page", "--page"],
+  ["surface", "--surface"],
+  ["ink", "--ink"],
+  ["muted", "--muted"],
+  ["field", "--field"],
+];
+</script>
+</body>
+</html>

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T13:23:13.048Z",
+  "capturedAt": "2026-11-21T01:15:19.825Z",
   "screenshot": "careers-light-default.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://www.coinbase.com/en-sg/careers",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -24,7 +24,7 @@
       "colorScheme": "normal"
     },
     "visualViewport": {
-      "width": 1425,
+      "width": 1440,
       "height": 900,
       "scale": 1,
       "offsetLeft": 0,
@@ -33,8 +33,8 @@
       "pageTop": 0
     },
     "documentSize": {
-      "width": 1425,
-      "height": 5355
+      "width": 1440,
+      "height": 5362
     },
     "scroll": {
       "x": 0,

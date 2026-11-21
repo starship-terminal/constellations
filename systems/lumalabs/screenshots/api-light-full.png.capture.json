@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T09:27:25.080Z",
+  "capturedAt": "2026-11-20T20:57:59.943Z",
   "screenshot": "api-light-full.png",
-  "sanitizedSourceUrl": "https://lumalabs.ai/api",
+  "sanitizedSourceUrl": null,
   "requested": {
     "viewport": {
       "width": 1440,
@@ -30,15 +30,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 0
+      "pageTop": 490
     },
     "documentSize": {
       "width": 1440,
-      "height": 11297
+      "height": 11365
     },
     "scroll": {
       "x": 0,
-      "y": 0
+      "y": 490
     }
   },
   "capture": {
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 11297
+    "height": 11365
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 11297
+      "height": 11365
     },
     "basis": "fullPage"
   },

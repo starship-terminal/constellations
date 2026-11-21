@@ -13,9 +13,12 @@ ElevenLabs is worth a capture because the voice-AI category leader paints a dece
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (71, 172 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the promo strip + nav chrome, the hero product tabs and TTS playground, the pricing grid, the product pages, docs, the auth cards, footer, mobile, the state signature |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` at 2x |
-| [screenshots/](screenshots) | 32 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages, `mobile-*` phone shots at 2x (mobile-home's full page stitched from three chunks, text-to-speech from two), plus toggled states: home mega-menu + agents tab + playground, mobile menu, the billing dropdown |
+| [screenshots/](screenshots) | 32 `{page}-{theme}-{state}.png` captures from 2026-11-13, plus [screenshots/site-tree/](screenshots/site-tree) (27 opened states from the 2026-11-21 map). Desktop 1440 x 900 at 1x, `-full` whole pages, `mobile-*` and `phone-*` at 2x |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the custom-property harvest — the --f-* type ramp, --spacing-*/--section-*/--rounded-* layout vars, --eggshell, the font stacks and the shadcn triplets, resolved light), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
+| [site-tree.md](site-tree.md) | Public site map, 2026-11-21: which header, footer, menu, search, language, cookie, docs, and in-page control opens which page, dialog, or wall. Signed-in app is out of scope |
+| [login-review.json](login-review.json) | Walls this pass stopped at. Nothing was typed or submitted |
+| [screenshots/site-tree/](screenshots/site-tree) | Opened states from that map, desktop 1440 and phone 390, 256-colour |
 
 ## Brief
 

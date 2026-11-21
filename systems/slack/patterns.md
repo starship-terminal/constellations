@@ -1,23 +1,35 @@
-# Patterns
+# Slack patterns
 
-Public marketing and the signed-out sign-in chrome. Viewport was 1169 by 731, then 390 by 844 on the home tab. No screenshots exist. See [screenshots/README.md](screenshots/README.md).
+Public marketing patterns from https://slack.com/intl/en-sg/ on 2026-11-21. The signed-in app is not in these screenshots.
 
-## Marketing home
+## App shell stand-in
 
-https://slack.com/intl/en-sg/ paints on white. The nav `.c-nav` is fixed, 80px tall at 1169px and 55px at 390px, z-index 1000, background transparent. The wordmark is the black Slack plus Salesforce lockup, 101 by 38 at 390px. Nav triggers are Salesforce-Sans 15px weight 400, black. "Sign in" is weight 700. "GET STARTED" is the purple primary button.
+The marketing header is the shell: logo, Product, Solutions, Enterprise, Resources, Pricing, search, Sign in, Request a demo, Get started. Phone width replaces the links with a Menu button. See [screenshots/home-light-default.png](screenshots/home-light-default.png) and [screenshots/mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png).
 
-The hero h1 is Salesforce-Avant-Garde, 48px weight 700 at 1169px (line-height 53.76px, letter-spacing -0.576px) and 32px at 390px (line-height 35.84px, letter-spacing -0.384px). The lede is Salesforce-Sans 18px, line-height 27.99px. The billboard padding is 104px 0 50px at 1169px.
+## Navigation menus
 
-A later section `.c-dark-ai-container` is `rgb(72, 26, 84)` with a white 50px heading, weight 600. The footer CTA band uses that same aubergine.
+Product, Solutions and Resources open mega menus over a dimmed page. See [screenshots/home-light-product-menu.png](screenshots/home-light-product-menu.png), [screenshots/home-light-solutions-menu.png](screenshots/home-light-solutions-menu.png) and [screenshots/home-light-resources-menu.png](screenshots/home-light-resources-menu.png). The control map is [site-tree.md](site-tree.md).
+
+## Hero and primary action
+
+A large Salesforce Avant Garde heading, a Salesforce Sans lead, a filled aubergine Get started button and an outlined Find your subscription button. See [screenshots/home-light-default.png](screenshots/home-light-default.png).
 
 ## Pricing
 
-https://slack.com/intl/en-sg/pricing. The h1 is Salesforce-Avant-Garde 50px weight 700. The lede `.c-type-paragraph-hero` is Salesforce-Sans 20px. Four plan columns sit in a row. The featured column carries the 2px aubergine border and the 16px shadow. Prices use Salesforce-Avant-Garde 28px. A strike price is `rgb(116, 116, 116)` weight 600. Plan CTAs were not followed.
+Plan comparison and an FAQ that opens in place. See [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png) and [screenshots/pricing-light-faq.png](screenshots/pricing-light-faq.png).
 
-## Sign-in chrome
+## Form, not submitted
 
-https://slack.com/signin#/signin. The shell `.get-started-app-root` is white. The logo is the SVG wordmark, 102 by 26. The heading is Salesforce-Avant-Garde 48px weight 700, line-height 46px, letter-spacing -0.75px, colour `rgb(29, 28, 29)`. Body type is Slack-Lato 15px. The form is 400px wide: email field, aubergine submit, an "OR SIGN IN WITH" rule, then Google, Microsoft, and Apple. "Create an account" sits in the header and was not followed. "Try entering a workspace URL" was not followed.
+Contact sales shows text fields, a text area and a select. They were measured and not filled. See [screenshots/contact-light-default.png](screenshots/contact-light-default.png).
 
-## Phone
+## Search
 
-At 390px the home nav drops to 55px and shows a menu button (24 by 21, label "Menu") plus the compact primary button. The menu was not opened. Sign-in was not remeasured at 390px.
+The header search button reveals an inline field. It was not submitted. See [screenshots/home-light-search.png](screenshots/home-light-search.png).
+
+## Region dialog
+
+Change region opens a locale list. No locale was chosen. See [screenshots/home-light-region.png](screenshots/home-light-region.png).
+
+## Not reached
+
+Empty, loading and error states inside the product, destructive confirmation, feedback after an action, filtering a workspace list, and onboarding all sit behind sign-in or get-started. Those URLs are recorded in [site-tree.md](site-tree.md).

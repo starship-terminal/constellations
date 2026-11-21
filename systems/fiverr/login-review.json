@@ -1,0 +1,56 @@
+{
+  "product": "Fiverr",
+  "catalogName": "Fiverr",
+  "reviewed": "2026-11-21",
+  "signed_in": false,
+  "accountCreated": false,
+  "formSubmitted": false,
+  "ssoClicked": false,
+  "codeEntered": false,
+  "checkoutStarted": false,
+  "onboardingFilled": false,
+  "wall": {
+    "kind": "auth-wall",
+    "url": "https://www.fiverr.com/login",
+    "httpStatus": 200,
+    "title": "Login to Fiverr",
+    "screenshot": "screenshots/login-light-default.png",
+    "reachedFrom": "Direct navigation to /login after the homepage walk was blocked. The homepage Sign in control was read as a link to this URL on the one homepage load that painted, and was not clicked.",
+    "askedFor": [
+      "Continue with Google",
+      "Continue with email/username",
+      "Apple",
+      "Facebook",
+      "Join here (no account)"
+    ],
+    "action": "Stopped. No email, username, or password was typed. No code was entered. Google, Apple, and Facebook were not clicked. Join was not clicked. No form was submitted."
+  },
+  "humanCheck": {
+    "kind": "bot-wall",
+    "title": "It needs a human touch",
+    "vendorHint": "PerimeterX press-and-hold (ERRCODE prefix PXCR on the page text). The full error code, client IP, and trace id were visible and were not copied into this package.",
+    "urls": [
+      {
+        "url": "https://www.fiverr.com/",
+        "httpStatus": 403,
+        "when": "Every headless and headed Chromium load after the first homepage paint, including the menu-open pass."
+      },
+      {
+        "url": "https://www.fiverr.com/login",
+        "httpStatus": 403,
+        "when": "The follow-up load that was meant to inventory header, footer, and in-page controls."
+      }
+    ],
+    "action": "Stopped. The check was not solved. No screenshot of the challenge page is in the package, because it displayed a client IP."
+  },
+  "gaps": [
+    "Signed-in app was not captured.",
+    "Unread token values are Not captured.",
+    "Onboarding was not filled and was not reached.",
+    "Phone width 390x844 was not captured. The human-check blocked the session before a phone context could load a painted page.",
+    "Homepage viewport screenshot was read by the agent and then overwritten on disk before it was copied. It is not in the package and was not reconstructed.",
+    "Header menus (Connect to your AI, EN), category links, search, filters, and footer destinations were not opened. The human-check painted before those clicks.",
+    "Join, Become a Seller, and Continue with email/username were not followed. They are auth or account-creation branches."
+  ],
+  "privateStringsWritten": false
+}

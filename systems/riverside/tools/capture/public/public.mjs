@@ -1,144 +1,221 @@
-// Captures Gauth's public pages into RAW (full-colour PNGs); quantize.py turns them into screenshots/.
+// Captures riverside.com's public pages into RAW (full-colour PNGs); quantize.py turns them into screenshots/.
 //
 //   RAW=/some/scratch/dir PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [page,page,...]
 //
-// Names are {page}-light-{state}.png; mobile ones get a `mobile-` prefix. Gauth ships one theme, so there
-// is no dark run. Desktop shots are 1440x900 at 1x, mobile shots 390x844 at 2x, `*-full` shots 1x. A page
-// taller than one GPU texture is saved as name.partN.png tiles, which quantize.py stitches back together.
-// Nothing is sent, created or signed into: the only presses are dialog dismissals, tabs, Show more, the
-// lesson's own Not now, Continue (the audio gate), Pause, Settings and chapters, and a story card's
-// Explore, which opens a published story.
+// Names are {page}-light-{state}.png; mobile ones get a `mobile-` prefix. The site paints one light
+// theme. Desktop shots are 1440x900 at 1x, mobile 390x844 at 2x, `*-full` shots 1x. A page taller
+// than one GPU texture is saved as name.partN.png tiles, which quantize.py stitches back together;
+// an unbounded page truncates at 8 chunks and the log records the boundary.
+// Nothing is sent, uploaded or signed into. Login, Start for Free and register are recorded as walls
+// and not filled. Forms are not submitted. Cookie dialogs are hidden, never answered.
+// Local presses only: nav dropdowns, pricing tabs, an FAQ accordion, the mobile menu.
 import fs from 'fs';
-import os from 'os';
-import path from 'path';
-import { fileURLToPath } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { M, closePromo, openStory, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
+import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
-// Full-colour shots are working files, never committed: by default they go outside the repository,
-// to ~/.design-systems/<slug>/raw-shots for a package's copy at systems/<slug>/tools/capture/public/.
-const PKG = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
-const inPackage = path.basename(path.dirname(PKG)) === 'systems';
-if (!process.env.RAW && !inPackage) { console.error('set RAW=<scratch dir> (this copy is not inside systems/<slug>/tools/)'); process.exit(2); }
-const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', path.basename(PKG), 'raw-shots');
+const RAW = process.env.RAW || (process.env.HOME + '/.design-systems/riverside/raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
 const wait = (p, ms) => p.waitForTimeout(ms);
 
+async function pageHeight(p) {
+  return p.evaluate(() => {
+    const root = document.documentElement;
+    const body = document.body;
+    const nodes = [root, body, document.querySelector('main'), document.querySelector('.page-wrapper'), document.querySelector('.main-wrapper')].filter(Boolean);
+    let h = 0;
+    for (const n of nodes) {
+      const sh = n.scrollHeight || 0;
+      // A 900px html height is the viewport, not the page, when the body is taller.
+      if (n === root && body && sh <= (window.innerHeight || 900) + 2 && (body.scrollHeight || 0) > sh + 40) continue;
+      h = Math.max(h, sh, n.offsetHeight || 0);
+    }
+    for (const n of document.querySelectorAll('section, .section')) {
+      const r = n.getBoundingClientRect();
+      h = Math.max(h, r.bottom + window.scrollY);
+    }
+    return Math.ceil(h);
+  });
+}
+
 async function lazyScroll(p) {
-  const h = await p.evaluate(() => document.documentElement.scrollHeight);
-  for (let y = 0; y < h; y += 600) { await p.evaluate((y) => scrollTo(0, y), y); await wait(p, 200); }
-  await p.evaluate(() => scrollTo(0, 0)); await wait(p, 900);
+  let last = 0;
+  for (let i = 0; i < 48; i++) {
+    const h = await pageHeight(p);
+    if (h <= last + 40 && i > 3) break;
+    last = Math.max(last, h);
+    await p.evaluate((y) => window.scrollTo(0, y), Math.min(last - 100, (i + 1) * 800));
+    await wait(p, 160);
+  }
+  await p.evaluate(() => window.scrollTo(0, 0));
+  await wait(p, 500);
 }
 
 class Shooter {
   constructor(p, prefix, vw, vh, dpr) { this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr; this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr }; this.count = 0; }
-  async view(name) { await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested); this.count++; log('  shot', name); }
+  async view(name) { await closePromo(this.p); await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested); this.count++; log('  shot', name); }
   async full(name = 'full') {
     const p = this.p;
+    await closePromo(p);
     await lazyScroll(p);
-    const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
+    await closePromo(p);
+    const H = await pageHeight(p);
+    log('  height', name, H);
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
-    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
     // Infinite-scroll pages grow scrollHeight without bound after lazyScroll;
-    // without a ceiling the tile loop writes forever (acuityscheduling filled
-    // 111 GB once). Truncate hard and record the boundary instead.
+    // without a ceiling the tile loop writes forever. Truncate hard and record
+    // the boundary instead.
     const MAXH = 8 * chunk;
     const hCap = Math.min(H, MAXH);
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
-    if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+    // Stage every tile under a .new name and swap it in only after the whole
+    // shot succeeds, so a failed tile never truncates the previous capture.
+    const staged = [];
+    try {
+      if (hCap <= chunk) {
+        await screenshotWithMetadata(p, { path: f + '.new.png', fullPage: true }, this.requested);
+        staged.push([f + '.new.png', f + '.png']);
+      } else {
+        for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
+          const tmp = `${f}.part${i}.new.png`;
+          await screenshotWithMetadata(p, { path: tmp, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+          staged.push([tmp, `${f}.part${i}.png`]);
+        }
+      }
+    } catch (e) {
+      for (const [tmp] of staged) { for (const f of [tmp, tmp + '.capture.json']) fs.existsSync(f) && fs.unlinkSync(f); }
+      throw e;
+    }
+    // `.new.png` staging names also start with `${prefix}-${name}.part`, so the
+    // stale-tile sweep must skip them or it deletes the files about to be renamed.
+    const stale = (n) => !n.includes('.new') && (n.startsWith(`${this.prefix}-${name}.part`) || n === `${this.prefix}-${name}.png` || n === `${this.prefix}-${name}.png.capture.json`);
+    for (const old of fs.readdirSync(RAW).filter(stale)) fs.unlinkSync(`${RAW}/${old}`);
+    for (const [tmp, final] of staged) {
+      fs.renameSync(tmp, final);
+      // The sidecar follows the image: rename it and point its `screenshot`
+      // name at the final file, or a finished capture has no matching record.
+      const sidecar = tmp + '.capture.json';
+      if (fs.existsSync(sidecar)) {
+        try {
+          const meta = JSON.parse(fs.readFileSync(sidecar, 'utf8'));
+          if (meta.screenshot) meta.screenshot = final.split('/').pop();
+          fs.writeFileSync(sidecar, JSON.stringify(meta, null, 2) + '\n');
+        } catch { /* leave the record as-is rather than lose it */ }
+        fs.renameSync(sidecar, final + '.capture.json');
+      }
+    }
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
   }
 }
 const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
-const notNow = async (p) => { const b = p.getByRole('button', { name: 'Not now' }); if (await b.count()) { await b.click(); await wait(p, 1200); } };
-const gate = async (p) => { const b = p.getByRole('button', { name: 'Continue', exact: true }); if (await b.count()) { await b.click(); await wait(p, 4000); } };
-const pause = async (p) => { const b = p.getByRole('button', { name: /^Pause/ }); if (await b.count()) { await b.first().click().catch(() => {}); await wait(p, 600); } };
+const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).catch(() => loc.evaluate((el) => el.click())); };
+
+// A Webflow dropdown toggle opens a menu already in the DOM. The toggle text
+// includes a chevron, so a ^Label$ filter misses it. Match the label, then
+// force the matching .w-dropdown open so the list paints in the viewport.
+const openDropdown = async (p, label) => {
+  const opened = await p.evaluate((name) => {
+    const toggles = [...document.querySelectorAll('.nav-dropdown-toggle--updated')];
+    const t = toggles.find((el) => new RegExp('^' + name + '\\b').test((el.innerText || '').trim()));
+    if (!t) return false;
+    const drop = t.closest('.w-dropdown');
+    if (!drop) return false;
+    drop.classList.add('w--open');
+    t.classList.add('w--open');
+    t.setAttribute('aria-expanded', 'true');
+    const list = drop.querySelector('.w-dropdown-list');
+    if (list) {
+      list.classList.add('w--open');
+      list.style.setProperty('display', 'block', 'important');
+      list.style.setProperty('opacity', '1', 'important');
+      list.style.setProperty('visibility', 'visible', 'important');
+    }
+    return true;
+  }, label);
+  if (!opened) return false;
+  await wait(p, 500);
+  return true;
+};
+
+const openFaq = async (p) => {
+  const a = p.locator('.faq-question, .w-dropdown-toggle, [class*="accordion"], summary, [role="button"]').filter({ visible: true });
+  const n = await a.count();
+  for (let i = 0; i < Math.min(n, 12); i++) {
+    const el = a.nth(i);
+    const text = ((await el.innerText().catch(() => '')) || '').trim();
+    if (text.length < 12 || text.length > 180) continue;
+    if (/cookie|allow all|platform|solutions|resources|english/i.test(text)) continue;
+    await el.scrollIntoViewIfNeeded().catch(() => {});
+    await clickEl(el);
+    await wait(p, 700);
+    return true;
+  }
+  return false;
+};
+
+const shotPage = async (p, S, extra) => {
+  await S.view('default');
+  if (extra) await extra(p, S);
+  await S.full();
+};
 
 const desktop = {
-  home: { path: '/', promo: 'keep', run: async (p, S) => {
-    await S.view('promo');
-    await closePromo(p);
+  home: { path: '/', wait: 5000, run: async (p, S) => {
     await S.view('default');
+    await step('platform-menu', async () => {
+      if (await openDropdown(p, 'Platform')) {
+        await wait(p, 400);
+        await S.view('platform-menu');
+      }
+    });
+    await p.keyboard.press('Escape').catch(() => {});
+    await p.mouse.click(700, 500).catch(() => {});
+    await wait(p, 400);
+    await step('solutions-menu', async () => { if (await openDropdown(p, 'Solutions')) await S.view('solutions-menu'); });
+    await p.keyboard.press('Escape').catch(() => {});
     await S.full();
-    await step('question-focused', async () => { await p.locator(M('pc_input')).first().click(); await wait(p, 500); await S.view('question-focused'); await p.mouse.click(1400, 600); });
-    await step('sidebar-folded', async () => { await p.locator(M('side-menu_sidebar-collapse')).first().click(); await wait(p, 900); await S.view('sidebar-folded'); });
   } },
-  'academy-science': { path: '/course/science', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'academy-math': { path: '/course/math', run: async (p, S) => {
+  pricing: { path: '/pricing', wait: 5000, run: async (p, S) => {
     await S.view('default');
-    await step('show-more', async () => {
-      const b = p.locator(M('catalog_expandButton')).first();
-      await b.click(); await wait(p, 1200);
-      await p.evaluate(() => scrollTo(0, 420)); await wait(p, 700);
-      await S.view('show-more');
+    await step('monthly', async () => {
+      const tab = p.locator('button, [role="tab"], a, div').filter({ hasText: /^Monthly$/ }).filter({ visible: true }).first();
+      if (await tab.count()) { await clickEl(tab); await wait(p, 800); await S.view('monthly'); }
     });
-  } },
-  'academy-history': { path: '/course/history', run: async (p, S) => { await S.view('default'); } },
-  'academy-my': { path: '/course/my', run: async (p, S) => {
-    await S.view('default');
-    await step('create-dialog', async () => { await p.locator(M('catalog_createButton')).first().click(); await wait(p, 2500); await S.view('create-dialog'); });
-  } },
-  unit: { path: '/course/math/algebra-1?unit=real-numbers-and-sets', run: async (p, S) => {
-    await S.view('default');
-    await step('path', async () => { await p.evaluate(() => scrollTo(0, 700)); await wait(p, 1000); await S.view('path'); });
-    await step('unit-2', async () => { await p.evaluate(() => scrollTo(0, 0)); await p.locator(M('math-course-detail_unitButton')).nth(1).click(); await wait(p, 1500); await S.view('unit-2'); });
-  } },
-  'lesson-science': { path: '/course/science/how-things-work-1/learn?entry_source=start&from=science', wait: 7000, run: async (p, S) => {
-    await S.view('audio-dialog');
-    await notNow(p);
-    await S.view('default');
-    await step('settings', async () => { await p.getByRole('button', { name: 'Settings' }).click(); await wait(p, 1000); await S.view('settings'); await p.keyboard.press('Escape'); await wait(p, 500); });
-    await step('ask-tutor', async () => { await pause(p); await p.locator('[aria-label="Ask Tutor"]').first().click(); await wait(p, 1500); await S.view('ask-tutor'); await p.keyboard.press('Escape'); await p.mouse.click(700, 500); await wait(p, 500); });
-    await step('figure', async () => {
-      const play = p.getByRole('button', { name: 'Play' }); if (await play.count()) await play.click();
-      for (let i = 0; i < 60; i++) { const ok = await p.evaluate(() => { const e = document.querySelector('ol[class*="canvas_list__"]'); if (!e) return false; const r = e.getBoundingClientRect(); return r.bottom < innerHeight - 20 && r.top > 60; }); if (ok) break; await wait(p, 1500); }
-      await pause(p); await S.view('figure');
-      const play2 = p.getByRole('button', { name: 'Play' }); if (await play2.count()) await play2.click();
-    });
-    await step('quiz', async () => {
-      for (let i = 0; i < 110; i++) { if (await p.locator('[aria-label="Close quiz and continue"]').count()) break; await wait(p, 2000); }
-      await S.view('quiz');
-    });
-  } },
-  'lesson-math': { path: '/course/math/algebra-1/fundamentals-of-set-theory/learn?entry_source=start&return_to=course_detail', wait: 8000, run: async (p, S) => {
-    await S.view('audio-gate');
-    await gate(p);
-    await S.view('default');
-    await step('chapters', async () => { await p.getByRole('button', { name: 'Open lesson chapters' }).click(); await wait(p, 1200); await S.view('chapters'); });
-  } },
-  'lesson-history': { path: '/course/history/crossing-the-ocean-wall/learn?entry_source=start&from=history', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await step('chapters', async () => { await p.locator(M('lesson_chapterMenuButton')).first().click(); await wait(p, 1200); await S.view('chapters'); });
-  } },
-  atlas: { path: '/atlas', run: async (p, S) => {
-    await S.view('default');
     await S.full();
-    await step('story', async () => {
-      const card = p.locator(M('user-cases_card')).filter({ hasText: 'Apollo 11' }).first();
-      await card.scrollIntoViewIfNeeded(); await card.click(); await wait(p, 3000);
-      await S.view('story-preview');
-      await p.locator(M('user-cases_exploreButton')).first().click(); await wait(p, 10000);
-      await p.mouse.move(700, 880); await wait(p, 600);
-      await S.view('story');
-      await p.evaluate(() => { const b = [...document.querySelectorAll('button')].find((e) => /Generate Video/.test(e.innerText || '') && e.getBoundingClientRect().top < 40); if (b) b.setAttribute('data-m', 'gen'); });
-      await p.locator('[data-m="gen"]').hover(); await wait(p, 1500);
-      await S.view('story-video-settings');
-    });
   } },
-  news: { path: '/news', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  recording: { path: '/recording', wait: 4500, run: async (p, S) => shotPage(p, S) },
+  editor: { path: '/video-editor', wait: 4500, run: async (p, S) => shotPage(p, S) },
+  agents: { path: '/agents', wait: 4500, run: async (p, S) => shotPage(p, S) },
+  business: { path: '/business', wait: 4500, run: async (p, S) => shotPage(p, S) },
+  faq: { path: '/faq', wait: 4500, run: async (p, S) => {
+    await S.view('default');
+    await step('open', async () => { if (await openFaq(p)) await S.view('open'); });
+    await S.full();
+  } },
+  blog: { path: '/blog', wait: 4500, run: async (p, S) => shotPage(p, S) },
+  tools: { path: '/tools', wait: 4500, run: async (p, S) => shotPage(p, S) },
+  about: { path: '/about', wait: 4500, run: async (p, S) => shotPage(p, S) },
+  login: { path: '/login', wait: 4000, run: async (p, S) => {
+    // Wall only. Do not type, do not click Google or Apple, do not submit.
+    await S.view('wall');
+  } },
 };
 
 const mobile = {
-  home: { path: '/', promo: 'keep', run: async (p, S) => { await S.view('promo'); await closePromo(p); await S.view('default'); await S.full(); } },
-  academy: { path: '/course/math', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  unit: { path: '/course/math/algebra-1?unit=real-numbers-and-sets', run: async (p, S) => { await S.view('default'); await step('path', async () => { await p.evaluate(() => scrollTo(0, 700)); await wait(p, 900); await S.view('path'); }); } },
-  'lesson-math': { path: '/course/math/algebra-1/fundamentals-of-set-theory/learn?entry_source=start&return_to=course_detail', wait: 8000, run: async (p, S) => { await S.view('audio-gate'); await gate(p); await S.view('default'); } },
-  atlas: { path: '/atlas', run: async (p, S) => { await S.view('default'); await step('story', async () => { await openStory(p, 'Artemis II'); await S.view('story'); }); } },
+  home: { path: '/', wait: 5000, run: async (p, S) => {
+    await S.view('default');
+    await step('menu', async () => {
+      const m = p.locator('.w-nav-button, .menu-button').filter({ visible: true }).first();
+      if (await m.count()) { await clickEl(m); await wait(p, 1200); await S.view('menu'); }
+    });
+    await S.full();
+  } },
+  pricing: { path: '/pricing', wait: 4500, run: async (p, S) => shotPage(p, S) },
+  recording: { path: '/recording', wait: 4500, run: async (p, S) => shotPage(p, S) },
+  faq: { path: '/faq', wait: 4500, run: async (p, S) => shotPage(p, S) },
 };
 
 const b = await chromium.launch();
@@ -150,13 +227,14 @@ for (const { k, mob } of runs) {
   const spec = (mob ? mobile : desktop)[k];
   const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
   const ctx = await b.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US' });
+  await patch(ctx);
   const p = await ctx.newPage();
   log(name);
   const S = new Shooter(p, `${name}-light`, vw, vh, dpr);
   try {
-    await p.goto(BASE + spec.path, { waitUntil: 'load', timeout: 90000 });
-    await wait(p, spec.wait || 6000);
-    if (spec.promo !== 'keep') await closePromo(p);
+    await p.goto(BASE + spec.path, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+    if (!(await clearChallenge(p))) { log('  BLOCKED challenge', spec.path); await ctx.close(); continue; }
+    await wait(p, spec.wait || 7000);
     await spec.run(p, S);
   } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
   total += S.count;

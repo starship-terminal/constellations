@@ -1,0 +1,41 @@
+{
+  "slug": "starbucks",
+  "name": "Starbucks",
+  "platform": "web",
+  "category": "e-commerce",
+  "tags": ["retail", "food", "marketing", "light"],
+  "goodFor": "A consumer coffee brand site: green bands, white chrome, pill account buttons, a product order page.",
+  "entry": "systems/starbucks/README.md",
+  "tokens": "systems/starbucks/tokens.json",
+  "styleGuide": "systems/starbucks/style-guide.html",
+  "preview": {
+    "cover": "systems/starbucks/screenshots/home-light-default.png",
+    "icon": "systems/starbucks/icon.png",
+    "fonts": ["core.font.family.sans"],
+    "light": {
+      "page": "light.background.page",
+      "surface": "light.background.surface",
+      "text": "light.text.primary",
+      "muted": "light.text.ink",
+      "accent": "light.text.accent",
+      "border": "light.border.default"
+    }
+  },
+  "capture": {
+    "harness": "grok",
+    "model": "grok-4.7",
+    "route": "public",
+    "date": "2026-11-21",
+    "version": "www.starbucks.com public, 2026-11-21",
+    "durationNote": "one session",
+    "gaps": [
+      "catalog.json intentionally not edited by this capture",
+      "store locator not screenshotted (street addresses)",
+      "sign-in and sign-up recorded as empty walls",
+      "no dark theme on the public pages"
+    ]
+  },
+  "layoutGaps": {
+    "icons/": "Starbucks icon artwork is brand art and is not kept (docs/RIGHTS.md)"
+  }
+}

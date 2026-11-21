@@ -6,13 +6,12 @@ the screenshots named below are in [screenshots/](screenshots).
 
 ## The shell
 
-A top nav with the Asana wordmark left and a compact link set right —
-Product flyout, Pricing, Resources, then a ghost Log in, an outlined
-Contact sales and the near-black Get started pill
+A top nav with the Asana wordmark left and a compact link set right:
+Products, Solutions, Pricing, then Log in and the near-black Get started pill
 ([home-light-default](screenshots/home-light-default.png),
-`header`, `nav-link`, `nav-cta`). Hovering the Product item opens a wide
-flyout panel over the hero
+`header`, `nav-link`, `nav-cta`). Opening Products shows a wide panel over the hero
 ([home-light-flyout](screenshots/home-light-flyout.png), `flyout-open`).
+The control map is [site-tree.md](site-tree.md).
 At 390 the links collapse behind a menu button opening a full-width panel
 ([mobile-home-light-menu](screenshots/mobile-home-light-menu.png),
 `m-menu-open`).

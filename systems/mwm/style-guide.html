@@ -1,188 +1,69 @@
 <!doctype html>
-<html lang="en" data-mode="dark">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MWM style guide</title>
 <style>
-:root {   --font-family-ui: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-family-display: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  --font-family-console: InterVariable, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-family-create: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-size-nav: 13px;
-  --font-size-body: 14px;
-  --font-size-lede: 16px;
-  --font-size-prompt: 16px;
-  --font-size-link: 18px;
-  --font-size-plan-title: 32px;
-  --font-size-section: 48px;
-  --font-size-display: 72px;
-  --font-size-price: 28px;
-  --font-line-height-nav: 16px;
-  --font-line-height-body: 21px;
-  --font-line-height-lede: 24px;
-  --font-line-height-plan-title: 40px;
-  --font-line-height-section: 54px;
-  --font-line-height-display: 76px;
-  --font-letter-spacing-nav: -0.26px;
-  --font-letter-spacing-lede: -0.32px;
-  --font-letter-spacing-section: -1.92px;
-  --font-letter-spacing-display: -2.88px;
-  --radius-button: 8px;
-  --radius-card: 16px;
-  --radius-panel: 24px;
-  --radius-frame: 20px;
-  --radius-field: 6px;
-  --radius-pill: 999px;
-  --radius-sm: 4px;
-  --radius-lg: 12px;
-  --space-4: 4px;
-  --space-8: 8px;
-  --space-12: 12px;
-  --space-14: 14px;
-  --space-16: 16px;
-  --space-24: 24px;
-  --space-32: 32px;
-  --space-40: 40px;
-  --space-72: 72px;
-  --size-nav-item: 32px;
-  --size-plan-cta: 44px;
-  --size-prompt-control: 40px;
-  --size-signin-button: 48px;
-  --size-field: 43px;
-  --shadow-prompt: 0px 26px 90px 0px rgba(0, 0, 0, 0.38);
-  --motion-duration-fast: 140ms;
-  --motion-duration-sheet: 180ms;
-  --motion-duration-base: 150ms;
-  --motion-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
-  --motion-easing-out: cubic-bezier(0.2, 0, 0, 1);   --color-ink: #0c0c0c;
-  --color-ink-alt: #0d0d0d;
-  --color-page: #0c0c0c;
-  --color-surface: #141414;
-  --color-surface-2: #181818;
-  --color-surface-hover: #1d1d1d;
-  --color-panel: #141414;
-  --color-panel-2: #181818;
-  --color-hairline: #1a1a1a;
-  --color-control: #2a2a2a;
-  --color-control-active: #3d3d3d;
-  --color-text: #ffffff;
-  --color-text-muted: #9a9a9a;
-  --color-text-body: #858585;
-  --color-text-tertiary: #616161;
-  --color-orange: #ff5301;
-  --color-orange-hot: #ff4814;
-  --color-up: #2fcb6e;
-  --color-down: #ff4d4d;
-  --color-glow: #48494c;
-  --color-ai-grad-top: #ff5732;
-  --color-ai-grad-bot: #ff362b;
-  --color-button-primary: #ffffff;
-  --color-button-primary-text: #0c0c0c;
-  --color-button-secondary: #2a2a2a;
-  --color-button-secondary-text: #ffffff;
-  --color-button-ghost-text: #ffffff;
-  --color-line: rgba(255, 255, 255, 0.1);
-  --color-line-strong: rgba(255, 255, 255, 0.18);
-  --color-muted: rgba(255, 255, 255, 0.6);
-  --color-soft: rgba(255, 255, 255, 0.38);
-  --color-orange-data-muted: rgba(255, 83, 1, 0.72);
-  --color-orange-data-border: rgba(255, 83, 1, 0.22);
-  --color-orange-data-border-strong: rgba(255, 83, 1, 0.32);
-  --color-button-primary-hover: #e9edf2;
-  --color-nav-hover: rgba(255, 255, 255, 0.1);
-  --color-topbar: rgba(13, 13, 13, 0.8);
-  --color-lede: rgba(255, 255, 255, 0.7);
-  --color-focus: #005fcc;
-  --color-chip: rgba(255, 255, 255, 0.05);
-  --color-prompt-border: rgba(255, 255, 255, 0.1);
-  --color-card-border: rgba(255, 255, 255, 0.2);
-  --console-focus-ring: #0a84ff;
-  --console-text-1: #f2f2f2;
-  --console-text-2: #b0b0b0;
-  --console-text-3: #858585;
-  --console-agent: #b89aee;
-  --console-caution: #efbb62;
-  --console-live: #30d158;
-  --console-negative: #f07878;
-  --console-line-subtle: rgba(255, 255, 255, 0.051);
-  --create-page: #1c1c1c;
-  --create-secondary: #272725;
-  --create-input: #272725;
-  --create-surface: #494948;
-  --create-text: #ffffff;
-  --create-text-secondary: #c6c2b9;
-  --create-text-muted: #92918e;
-  --create-orange: #ff5301;
-  --create-border: #494948;
-  --create-provider: rgba(255, 255, 255, 0.1);
-  --create-provider-hover: rgba(255, 255, 255, 0.14); color-scheme: dark; }
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--color-page); color: var(--color-text); font: 400 14px/21px var(--font-family-ui); }
-.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
-h1 { font-size: 32px; line-height: 40px; letter-spacing: -0.96px; font-weight: 600; margin: 0 0 8px; }
-h2 { font-size: 20px; line-height: 28px; font-weight: 600; margin: 40px 0 12px; }
-p { color: var(--color-text-muted); max-width: 70ch; }
-.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-.sw { width: 72px; }
-.sw i { display: block; height: 48px; border-radius: 8px; border: 1px solid var(--color-line); }
-.sw b { display: block; font-size: 11px; font-weight: 500; margin-top: 6px; }
-.sw span { display: block; font-size: 11px; color: var(--color-text-muted); }
-.btn { display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 8px; font-size: 13px; font-weight: 600; letter-spacing: -0.26px; text-decoration: none; }
-.btn.primary { background: var(--color-button-primary); color: var(--color-button-primary-text); }
-.btn.secondary { background: var(--color-nav-hover); color: var(--color-text); }
-.btn.orange { background: var(--color-orange); color: #fff; border-radius: 999px; padding: 0 10px; font-size: 12px; }
-.field { background: var(--color-surface); color: var(--color-text); border: 1px solid var(--color-control); border-radius: 6px; padding: 8px 12px; width: 280px; }
-.card { background: var(--color-surface); border: 1px solid var(--color-prompt-border); border-radius: 16px; padding: 16px; width: 320px; box-shadow: var(--shadow-prompt); }
-.type { border-bottom: 1px solid var(--color-line); padding: 10px 0; }
-code { font-family: var(--font-family-mono); font-size: 12px; color: var(--color-text-muted); }
+  :root {
+    color-scheme: dark;
+    --page: #0c0c0c;
+    --text: #fff;
+    --muted: #9a9a9a;
+    --surface: #141414;
+    --line: hsla(0,0%,100%,.1);
+    --font: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--text); font: 16px/1.5 var(--font); }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-size: 40px; line-height: 1.05; letter-spacing: -1.2px; font-weight: 600; margin: 0 0 8px; }
+  h2 { font-size: 18px; margin: 40px 0 12px; }
+  p { color: var(--muted); max-width: 62ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .swatch i { display: block; height: 64px; border-radius: 8px; border: 1px solid rgba(255,255,255,.12); }
+  .swatch b, .swatch code, .swatch small { display: block; font-size: 12px; }
+  .swatch code, .swatch small { color: var(--muted); }
+  .btn { display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 8px; font-size: 13px; font-weight: 600; letter-spacing: -0.26px; text-decoration: none; }
+  .primary { background: #fff; color: #0c0c0c; }
+  .secondary { background: rgba(255,255,255,.1); color: #fff; }
+  .pricing { display: inline-flex; align-items: center; justify-content: center; height: 44px; min-width: 180px; border-radius: 8px; background: #fff; color: #000; font-weight: 600; }
+  .disabled { display: inline-flex; align-items: center; justify-content: center; height: 48px; min-width: 180px; border-radius: 8px; background: #2a2a2a; color: #616161; font-weight: 700; font-size: 12.25px; }
+  .field { width: 280px; box-sizing: border-box; height: 40px; border-radius: 8px; border: 1px solid #1a1a1a; background: #141414; color: #fff; padding: 10px 16px; font: 12.25px/18.375px var(--font); }
+  .field:focus { background: #1c1c1c; border-color: #3a3a3a; outline: none; }
+  .card { width: 220px; padding: 18px; border-radius: 16px; background: #181818; }
+  .card.selected { background: #1d1d1d; box-shadow: rgba(255,83,1,.32) 0 0 0 1px inset; }
+  .display { font-size: 72px; font-weight: 600; line-height: 76px; letter-spacing: -2.88px; margin: 0; }
+  .note { font-size: 13px; color: var(--muted); }
 </style>
 </head>
 <body>
-<div class="wrap">
+<main>
   <h1>MWM</h1>
-  <p>Public signed-out surfaces, measured 2026-11-19. One dark theme. Values come from tokens.json.</p>
-  <h2>Colour</h2>
-  <div class="row" id="swatches"></div>
-  <h2>Type</h2>
-  <div class="type" style="font-size:72px;line-height:76px;letter-spacing:-2.88px;font-weight:600">Build, run, and scale</div>
-  <div class="type" style="font-size:48px;line-height:54px;letter-spacing:-1.92px;font-weight:600">The end-to-end platform</div>
-  <div class="type" style="font-size:16px;line-height:24px;letter-spacing:-0.32px;color:var(--color-lede)">MWM is a technology company that operates the full lifecycle of mobile apps.</div>
-  <div class="type" style="font-size:13px;line-height:16px;letter-spacing:-0.26px">Products · Resources · Pricing</div>
-  <h2>Controls</h2>
+  <p>Public marketing site, dark only, measured 2026-11-21. Hover and pressed header buttons are not shown: they were not measured.</p>
+  <h2>Colours</h2>
   <div class="row">
-    <a class="btn primary" href="#controls">Build your app</a>
-    <a class="btn secondary" href="#controls">Open MWM Console</a>
-    <span class="btn orange">MOST POPULAR</span>
+    <div class="swatch"><i style="background:#0c0c0c"></i><b>page</b><code>#0c0c0c</code><small>dark.page</small></div><div class="swatch"><i style="background:#141414"></i><b>surface</b><code>#141414</code><small>dark.surface</small></div><div class="swatch"><i style="background:#181818"></i><b>surface 2</b><code>#181818</code><small>dark.surface-2</small></div><div class="swatch"><i style="background:#fff"></i><b>text</b><code>#fff</code><small>dark.text</small></div><div class="swatch"><i style="background:#9a9a9a"></i><b>muted</b><code>#9a9a9a</code><small>dark.muted</small></div><div class="swatch"><i style="background:#858585"></i><b>body</b><code>#858585</code><small>core.color.text-body</small></div><div class="swatch"><i style="background:#616161"></i><b>tertiary</b><code>#616161</code><small>core.color.text-tertiary</small></div><div class="swatch"><i style="background:#ff5301"></i><b>accent</b><code>#ff5301</code><small>dark.accent</small></div><div class="swatch"><i style="background:#2fcb6e"></i><b>up</b><code>#2fcb6e</code><small>dark.up</small></div><div class="swatch"><i style="background:#ff4d4d"></i><b>down</b><code>#ff4d4d</code><small>dark.down</small></div><div class="swatch"><i style="background:#1a1a1a"></i><b>hairline</b><code>#1a1a1a</code><small>core.color.hairline</small></div><div class="swatch"><i style="background:#2a2a2a"></i><b>control</b><code>#2a2a2a</code><small>core.color.control</small></div>
   </div>
-  <h2>Prompt</h2>
-  <div class="card">
-    <div style="color:var(--color-text-muted);margin-bottom:28px">Describe the mobile app you want to build...</div>
-    <span class="btn secondary" style="background:var(--color-chip)">Agent</span>
+  <h2>Type</h2>
+  <p class="display">Build</p>
+  <p>72 px, weight 600, line-height 76 px, tracking -2.88 px, Inter. The declared display stack names Modern Gothic first. That face was not loaded.</p>
+  <h2>Buttons</h2>
+  <div class="row">
+    <a class="btn primary">Build your app</a>
+    <a class="btn secondary">Open MWM Console</a>
+    <a class="pricing">Get MWM AI Pro</a>
+    <span class="disabled">Submit Dispute</span>
   </div>
-  <h2>Console field</h2>
-  <input class="field" value="" placeholder="Email" aria-label="Email">
-</div>
-<script>
-const TOKENS = {"core":{"font":{"family":{"ui":{"v":"Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif","t":"fontFamily","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-font-ui. Inter loaded. Modern Gothic is named by --mwm-font-display and did not load."},"display":{"v":"Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif","t":"fontFamily","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; computed font-family on h1 is Inter. --mwm-font-display names Modern Gothic first; that face did not load."},"mono":{"v":"ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace","t":"fontFamily","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-font-mono with the unloaded Modern Gothic Mono name dropped."},"console":{"v":"InterVariable, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif","t":"fontFamily","s":"Measured. getComputedStyle on :root, https://console.mwm.ai/sign-in, 1440x900, 2026-11-19; --mwm-font-ui on the console sign-in page."},"create":{"v":"Inter, ui-sans-serif, system-ui, -apple-system, sans-serif","t":"fontFamily","s":"Measured. getComputedStyle on :root, https://create.mwm.ai/sign-in, 1440x900, 2026-11-19; computed font-family on body."}},"weight":{"regular":{"v":"400","t":"fontWeight","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; body"},"medium":{"v":"500","t":"fontWeight","s":"Measured. .mwm-select-pill computed font-weight, https://mwm.ai/"},"semibold":{"v":"600","t":"fontWeight","s":"Measured. .mwm-product-start computed font-weight"},"bold":{"v":"700","t":"fontWeight","s":"Measured. .mwm-plan-popular computed font-weight, https://mwm.ai/pricing"}},"size":{"nav":{"v":"13px","t":"dimension","s":"Measured. .mwm-product-nav-item computed font-size"},"body":{"v":"14px","t":"dimension","s":"Measured. body computed font-size, https://mwm.ai/"},"lede":{"v":"16px","t":"dimension","s":"Measured. .mwm-hero-copy p computed font-size"},"prompt":{"v":"16px","t":"dimension","s":"Measured. .mwm-prompt textarea computed font-size"},"link":{"v":"18px","t":"dimension","s":"Measured. .mwm-build-link computed font-size"},"plan-title":{"v":"32px","t":"dimension","s":"Measured. pricing h2 computed font-size"},"section":{"v":"48px","t":"dimension","s":"Measured. home h2 computed font-size"},"display":{"v":"72px","t":"dimension","s":"Measured. home h1 computed font-size"},"price":{"v":"28px","t":"dimension","s":"Measured. .mwm-plan-price-amount strong computed font-size"}},"line-height":{"nav":{"v":"16px","t":"dimension","s":"Measured. .mwm-product-nav-item computed line-height"},"body":{"v":"21px","t":"dimension","s":"Measured. body computed line-height"},"lede":{"v":"24px","t":"dimension","s":"Measured. .mwm-hero-copy p computed line-height"},"plan-title":{"v":"40px","t":"dimension","s":"Measured. pricing h2 computed line-height"},"section":{"v":"54px","t":"dimension","s":"Measured. home h2.lifecycle-title computed line-height"},"display":{"v":"76px","t":"dimension","s":"Measured. home h1 computed line-height"}},"letter-spacing":{"nav":{"v":"-0.26px","t":"dimension","s":"Measured. .mwm-product-nav-item computed letter-spacing"},"lede":{"v":"-0.32px","t":"dimension","s":"Measured. .mwm-hero-copy p computed letter-spacing"},"section":{"v":"-1.92px","t":"dimension","s":"Measured. home h2 computed letter-spacing"},"display":{"v":"-2.88px","t":"dimension","s":"Measured. home h1 computed letter-spacing"}}},"radius":{"button":{"v":"8px","t":"dimension","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-radius-btn"},"card":{"v":"16px","t":"dimension","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-radius-card"},"panel":{"v":"24px","t":"dimension","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-radius-panel"},"frame":{"v":"20px","t":"dimension","s":"Measured. .mwm-build-frame computed border-radius"},"field":{"v":"6px","t":"dimension","s":"Measured. console email input computed border-radius"},"pill":{"v":"999px","t":"dimension","s":"Measured. .mwm-plan-popular computed border-radius"},"sm":{"v":"4px","t":"dimension","s":"Measured. getComputedStyle on :root, https://console.mwm.ai/sign-in, 1440x900, 2026-11-19; --mwm-radius-sm"},"lg":{"v":"12px","t":"dimension","s":"Measured. getComputedStyle on :root, https://console.mwm.ai/sign-in, 1440x900, 2026-11-19; --mwm-radius-lg"}},"space":{"4":{"v":"4px","t":"dimension","s":"Derived. 4px step used by the prompt chip gap; the site has no spacing custom properties"},"8":{"v":"8px","t":"dimension","s":"Derived. prompt chip padding uses 8px"},"12":{"v":"12px","t":"dimension","s":"Measured. .mwm-product-nav-item padding-inline"},"14":{"v":"14px","t":"dimension","s":"Measured. .mwm-product-start padding-inline"},"16":{"v":"16px","t":"dimension","s":"Measured. .mwm-product-login padding-inline end"},"24":{"v":"24px","t":"dimension","s":"Measured. getComputedStyle on :root, https://console.mwm.ai/sign-in, 1440x900, 2026-11-19; --cx-gutter"},"32":{"v":"32px","t":"dimension","s":"Measured. .mwm-plan-card padding-inline"},"40":{"v":"40px","t":"dimension","s":"Measured. .mwm-plan-card padding-top"},"72":{"v":"72px","t":"dimension","s":"Measured. .mwm-product-topbar height"}},"size":{"nav-item":{"v":"32px","t":"dimension","s":"Measured. .mwm-product-nav-item height"},"plan-cta":{"v":"44px","t":"dimension","s":"Measured. Get MWM AI Pro link height"},"prompt-control":{"v":"40px","t":"dimension","s":"Measured. prompt chip and icon button height"},"signin-button":{"v":"48px","t":"dimension","s":"Measured. console .signin-btn height"},"field":{"v":"43px","t":"dimension","s":"Measured. console email input height"}},"shadow":{"prompt":{"v":[{"color":"rgba(0, 0, 0, 0.38)","offsetX":"0px","offsetY":"26px","blur":"90px","spread":"0px"}],"t":"shadow","s":"Measured. .mwm-prompt computed box-shadow"}},"motion":{"duration":{"fast":{"v":"140ms","t":"duration","s":"Measured. getComputedStyle on :root, https://console.mwm.ai/sign-in, 1440x900, 2026-11-19; --mwm-duration .14s"},"sheet":{"v":"180ms","t":"duration","s":"Measured. getComputedStyle on :root, https://console.mwm.ai/sign-in, 1440x900, 2026-11-19; --mwm-motion-sheet .18s"},"base":{"v":"150ms","t":"duration","s":"Measured. getComputedStyle on :root, https://console.mwm.ai/sign-in, 1440x900, 2026-11-19; --default-transition-duration .15s"}},"easing":{"standard":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":"Measured. getComputedStyle on :root, https://console.mwm.ai/sign-in, 1440x900, 2026-11-19; --mwm-ease"},"out":{"v":[0.2,0,0,1],"t":"cubicBezier","s":"Measured. getComputedStyle on :root, https://console.mwm.ai/sign-in, 1440x900, 2026-11-19; --mwm-ease-out"}}}},"light":{},"dark":{"color":{"ink":{"v":"#0c0c0c","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-ink; ink"},"ink-alt":{"v":"#0d0d0d","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-ink-alt; ink-alt"},"page":{"v":"#0c0c0c","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-bg; page"},"surface":{"v":"#141414","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-surface-1; surface"},"surface-2":{"v":"#181818","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-surface-2; surface-2"},"surface-hover":{"v":"#1d1d1d","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-surface-hover; surface-hover"},"panel":{"v":"#141414","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-panel; panel"},"panel-2":{"v":"#181818","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-panel-2; panel-2"},"hairline":{"v":"#1a1a1a","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-hairline; hairline"},"control":{"v":"#2a2a2a","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-control; control"},"control-active":{"v":"#3d3d3d","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-control-active; control-active"},"text":{"v":"#ffffff","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-text; text"},"text-muted":{"v":"#9a9a9a","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-text-muted; text-muted"},"text-body":{"v":"#858585","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-text-body; text-body"},"text-tertiary":{"v":"#616161","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-text-tertiary; text-tertiary"},"orange":{"v":"#ff5301","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-orange; orange"},"orange-hot":{"v":"#ff4814","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-orange-hot; orange-hot"},"up":{"v":"#2fcb6e","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-up; up"},"down":{"v":"#ff4d4d","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-down; down"},"glow":{"v":"#48494c","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-glow-peak; glow"},"ai-grad-top":{"v":"#ff5732","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-ai-grad-top; ai-grad-top"},"ai-grad-bot":{"v":"#ff362b","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-ai-grad-bot; ai-grad-bot"},"button-primary":{"v":"#ffffff","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-btn-primary-bg; button-primary"},"button-primary-text":{"v":"#0c0c0c","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-btn-primary-fg; button-primary-text"},"button-secondary":{"v":"#2a2a2a","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-btn-secondary-bg; button-secondary"},"button-secondary-text":{"v":"#ffffff","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-btn-secondary-fg; button-secondary-text"},"button-ghost-text":{"v":"#ffffff","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-btn-ghost-fg; button-ghost-text"},"line":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-line; line"},"line-strong":{"v":"rgba(255, 255, 255, 0.18)","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-line-strong; line-strong"},"muted":{"v":"rgba(255, 255, 255, 0.6)","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-muted; muted"},"soft":{"v":"rgba(255, 255, 255, 0.38)","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-soft; soft"},"orange-data-muted":{"v":"rgba(255, 83, 1, 0.72)","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-orange-data-muted; orange-data-muted"},"orange-data-border":{"v":"rgba(255, 83, 1, 0.22)","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-orange-data-border; orange-data-border"},"orange-data-border-strong":{"v":"rgba(255, 83, 1, 0.32)","t":"color","s":"Measured. getComputedStyle on :root, https://mwm.ai/, 1440x900, 2026-11-19; --mwm-orange-data-border-strong; orange-data-border-strong"},"button-primary-hover":{"v":"#e9edf2","t":"color","s":"Measured. .mwm-product-start :hover computed background-color, rgb(233, 237, 242)"},"nav-hover":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"Measured. .mwm-product-nav-item :hover computed background-color"},"topbar":{"v":"rgba(13, 13, 13, 0.8)","t":"color","s":"Measured. .mwm-product-topbar computed background-color"},"lede":{"v":"rgba(255, 255, 255, 0.7)","t":"color","s":"Measured. .mwm-hero-copy p computed color"},"focus":{"v":"#005fcc","t":"color","s":"Observed. Chromium's default focus ring, not an MWM colour: .mwm-product-nav-item, button-primary and button-secondary :focus-visible compute outline 'rgb(0, 95, 204) auto 1px' (raw/components.json), the browser's -webkit-focus-ring-color with outline-style auto. The marketing site styles no ring of its own; console's own ring is console.focus-ring."},"chip":{"v":"rgba(255, 255, 255, 0.05)","t":"color","s":"Measured. prompt chip computed background-color"},"prompt-border":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"Measured. .mwm-prompt computed border-color"},"card-border":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"Measured. .mwm-number-card computed border-color"}},"console":{"focus-ring":{"v":"#0a84ff","t":"color","s":"Measured. getComputedStyle on :root, https://console.mwm.ai/sign-in, 1440x900, 2026-11-19; --mwm-focus; focus-ring"},"text-1":{"v":"#f2f2f2","t":"color","s":"Measured. getComputedStyle on :root, https://console.mwm.ai/sign-in, 1440x900, 2026-11-19; --mwm-text-1; text-1"},"text-2":{"v":"#b0b0b0","t":"color","s":"Measured. getComputedStyle on :root, https://console.mwm.ai/sign-in, 1440x900, 2026-11-19; --mwm-text-2; text-2"},"text-3":{"v":"#858585","t":"color","s":"Measured. getComputedStyle on :root, https://console.mwm.ai/sign-in, 1440x900, 2026-11-19; --mwm-text-3; text-3"},"agent":{"v":"#b89aee","t":"color","s":"Measured. getComputedStyle on :root, https://console.mwm.ai/sign-in, 1440x900, 2026-11-19; --mwm-agent; agent"},"caution":{"v":"#efbb62","t":"color","s":"Measured. getComputedStyle on :root, https://console.mwm.ai/sign-in, 1440x900, 2026-11-19; --mwm-caution; caution"},"live":{"v":"#30d158","t":"color","s":"Measured. getComputedStyle on :root, https://console.mwm.ai/sign-in, 1440x900, 2026-11-19; --mwm-live; live"},"negative":{"v":"#f07878","t":"color","s":"Measured. getComputedStyle on :root, https://console.mwm.ai/sign-in, 1440x900, 2026-11-19; --mwm-negative; negative"},"line-subtle":{"v":"rgba(255, 255, 255, 0.051)","t":"color","s":"Measured. getComputedStyle on :root, https://console.mwm.ai/sign-in, 1440x900, 2026-11-19; --mwm-line-subtle; line-subtle"}},"create":{"page":{"v":"#1c1c1c","t":"color","s":"Measured. getComputedStyle on :root, https://create.mwm.ai/sign-in, 1440x900, 2026-11-19; --bg-primary; page"},"secondary":{"v":"#272725","t":"color","s":"Measured. getComputedStyle on :root, https://create.mwm.ai/sign-in, 1440x900, 2026-11-19; --bg-secondary; secondary"},"input":{"v":"#272725","t":"color","s":"Measured. getComputedStyle on :root, https://create.mwm.ai/sign-in, 1440x900, 2026-11-19; --bg-input; input"},"surface":{"v":"#494948","t":"color","s":"Measured. getComputedStyle on :root, https://create.mwm.ai/sign-in, 1440x900, 2026-11-19; --bg-surface; surface"},"text":{"v":"#ffffff","t":"color","s":"Measured. getComputedStyle on :root, https://create.mwm.ai/sign-in, 1440x900, 2026-11-19; --text-primary; text"},"text-secondary":{"v":"#c6c2b9","t":"color","s":"Measured. getComputedStyle on :root, https://create.mwm.ai/sign-in, 1440x900, 2026-11-19; --text-secondary; text-secondary"},"text-muted":{"v":"#92918e","t":"color","s":"Measured. getComputedStyle on :root, https://create.mwm.ai/sign-in, 1440x900, 2026-11-19; --text-muted; text-muted"},"orange":{"v":"#ff5301","t":"color","s":"Measured. getComputedStyle on :root, https://create.mwm.ai/sign-in, 1440x900, 2026-11-19; --brand-orange; orange"},"border":{"v":"#494948","t":"color","s":"Measured. getComputedStyle on :root, https://create.mwm.ai/sign-in, 1440x900, 2026-11-19; --border-default; border"},"provider":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"Measured. create .signin-btn computed background-color"},"provider-hover":{"v":"rgba(255, 255, 255, 0.14)","t":"color","s":"Measured. create .signin-btn :hover computed background-color"}}}};
-const box = document.getElementById('swatches');
-const colors = (TOKENS.dark && TOKENS.dark.color) || {};
-// The builder inlines a slim tree: each token is {v, t, s} (value, type, source), not DTCG $value/$type.
-for (const [name, token] of Object.entries(colors)) {
-  if (!token || token.t !== 'color') continue;
-  const d = document.createElement('div');
-  d.className = 'sw';
-  const i = document.createElement('i'); i.style.background = token.v;
-  const b = document.createElement('b'); b.textContent = name;
-  const span = document.createElement('span'); span.textContent = token.v;
-  d.append(i, b, span);
-  box.appendChild(d);
-}
-</script>
+  <p class="note">Primary label #0c0c0c. Pricing label #000. Disabled submit is the empty form, not a hover state.</p>
+  <h2>Field</h2>
+  <input class="field" placeholder="Empty field" aria-label="Empty field specimen">
+  <p class="note">Default fill #141414, border #1a1a1a. Focus fill #1c1c1c, border #3a3a3a. Do not type a real value here.</p>
+  <h2>Card</h2>
+  <div class="row">
+    <div class="card">Category</div>
+    <div class="card selected">Selected</div>
+  </div>
+  <p class="note">Selected ring is rgba(255, 83, 1, 0.32) inset 1 px.</p>
+</main>
 </body>
 </html>

@@ -1,1071 +1,260 @@
 {
- "readAt": "2026-11-15",
- "source": "the stylesheet bodies read during live signed-out loads of getfernand.com / (inline <style> blocks + linked _nuxt chunks), app.getfernand.com /auth/login (the bundled index css) and help.getfernand.com / (the entry css), re-parsed with CSSStyleSheet; resolved in per-host probes carrying each host's real sheets — light (marketing), app (the SPA), help (docs, body.light-mode), dark (docs, body.dark-mode — the help site's own toggle) and appDark (the SPA's declared-but-gated remap), at 1440 x 900",
- "sheets": [
-  "marketing https://getfernand.com/_nuxt/AiSetup.D779f8EW.css (5559 bytes)",
-  "marketing https://getfernand.com/_nuxt/index.14iKVG3q.css (191 bytes)",
-  "marketing https://getfernand.com/_nuxt/IntegrationLogo.B4KgJgJc.css (172 bytes)",
-  "marketing https://messenger.getfernand.com/css/onload.min.css (10357 bytes)",
-  "marketing https://messenger.getfernand.com/css/blocks.css (16016 bytes)",
-  "marketing https://messenger.getfernand.com/css/styles.css (43312 bytes)",
-  "marketing https://getfernand.com/_nuxt/index.BYSMdllG.css (438 bytes)",
-  "marketing inline-0 (104204 bytes)",
-  "marketing inline-1 (16931 bytes)",
-  "marketing inline-2 (6649 bytes)",
-  "marketing inline-3 (234 bytes)",
-  "marketing inline-4 (192 bytes)",
-  "marketing inline-5 (136 bytes)",
-  "app https://app.getfernand.com/assets/index-BHoOg0OQ.css (212765 bytes)",
-  "help https://help.getfernand.com/_nuxt/entry.Bnx3DPsJ.css (37693 bytes)",
-  "help https://messenger.getfernand.com/css/onload.min.css (10357 bytes)",
-  "help inline-0 (441 bytes)",
-  "help inline-1 (81 bytes)"
- ],
- "counts": {
-  "rules": 21,
-  "fonts": 27,
-  "names": {
-   "theme": 18,
-   "app": 19,
-   "skins": 1,
-   "vendor": 56,
-   "utility": 0,
-   "tailwind": 0
+  "source": "https://getfernand.com/",
+  "capturedAt": "2026-11-21T02:04:00.489Z",
+  "theme": {
+    "themeColor": "#ffffff",
+    "bodyBg": "rgb(255, 255, 255)",
+    "bodyColor": "rgb(19, 30, 64)",
+    "bodyFont": "Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+    "h1": {
+      "fontFamily": "Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+      "fontSize": "38px",
+      "fontWeight": "400",
+      "lineHeight": "48px",
+      "color": "rgb(26, 32, 53)",
+      "letterSpacing": "normal"
+    }
   },
-  "bySelector": {
-   "[theme] marketing :root": 30,
-   "[theme] marketing body.dark-mode": 12,
-   "[skins] marketing @keyframes rotation ": 2,
-   "[theme] marketing .dark-mode .message__loader": 1,
-   "[vendor] marketing .widget-pg__widget": 9,
-   "[vendor] marketing .widget-pg__widget--dark": 9,
-   "[vendor] marketing :root": 47,
-   "[theme] app :root": 18,
-   "[app] app .chat__playground": 1,
-   "[app] app @media (max-width: 1150px) .chat__playground": 1,
-   "[theme] app .wrapper__sidebar.wrapper__sidebar--unauth": 2,
-   "[theme] app .dark-mode .wrapper__sidebar.wrapper__sidebar--unauth": 1,
-   "[theme] app .wrapper__sidebar.wrapper__sidebar--unauth .modal": 2,
-   "[theme] app .dark-mode .wrapper__sidebar.wrapper__sidebar--unauth .modal": 2,
-   "[theme] app .dark-mode": 11,
-   "[app] help :root": 17,
-   "[app] help @media (prefers-color-scheme: dark) :root": 2,
-   "[app] help body.dark-mode": 13
-  }
- },
- "errors": [],
- "theme": [
-  {
-   "file": "marketing https://messenger.getfernand.com/css/styles.css",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--white": "#fff",
-    "--grey": "#9fa3b5",
-    "--grey-light": "#F7FAFC",
-    "--grey-medium": "#5f667d",
-    "--black": "#131e40",
-    "--blue": "#00a0ff",
-    "--blue-pale": "#e8f5ff",
-    "--orange": "#fb8c3b",
-    "--orange-pale": "#fffaf1",
-    "--red": "#dc2626",
-    "--red-pale": "#fee2e2",
-    "--green": "#2dbd33",
-    "--green-pale": "#edf8eb",
-    "--border": "#eaecf8",
-    "--border-strong": "#d1d5e6"
-   },
-   "bin": "theme"
+  "resolved": {
+    "light": {
+      "--white": {
+        "value": "#fff"
+      },
+      "--grey": {
+        "value": "#9fa3b5"
+      },
+      "--grey-light": {
+        "value": "#f4f5f7"
+      },
+      "--grey-medium": {
+        "value": "#717583"
+      },
+      "--grey-strong": {
+        "value": "#3d4259"
+      },
+      "--black": {
+        "value": "#131e40"
+      },
+      "--blue": {
+        "value": "#00a0ff"
+      },
+      "--blue-pale": {
+        "value": "#e8f5ff"
+      },
+      "--orange": {
+        "value": "#fb8c3b"
+      },
+      "--red": {
+        "value": "#dc2626"
+      },
+      "--red-pale": {
+        "value": "#fee2e2"
+      },
+      "--green": {
+        "value": "#2dbd33"
+      },
+      "--green-dark": {
+        "value": "#33c27f"
+      },
+      "--border": {
+        "value": "#eaecf8"
+      },
+      "--border-strong": {
+        "value": "#e4e6eb"
+      },
+      "--wpg-bg": {
+        "value": ""
+      },
+      "--wpg-text": {
+        "value": ""
+      },
+      "--wpg-sub": {
+        "value": ""
+      },
+      "--wpg-border": {
+        "value": ""
+      },
+      "--wpg-muted": {
+        "value": ""
+      },
+      "--wpg-link": {
+        "value": ""
+      },
+      "--wpg-hover": {
+        "value": ""
+      },
+      "--wpg-search": {
+        "value": ""
+      },
+      "--wpg-powered": {
+        "value": ""
+      }
+    }
   },
-  {
-   "file": "marketing https://messenger.getfernand.com/css/styles.css",
-   "selector": "body.dark-mode",
-   "context": [],
-   "properties": {
-    "--white": "#161618",
-    "--grey-light": "#18181b",
-    "--grey": "#E6E9EB",
-    "--grey-medium": "#8a8f98",
-    "--grey-strong": "#8a8f98",
-    "--black": "#f7f8f8",
-    "--border": "rgba(255, 255, 255, 0.1)",
-    "--border-strong": "#44474e",
-    "--blue-pale": "#2d2f36",
-    "--orange-pale": "#201a12",
-    "--green-pale": "#253023",
-    "--red-pale": "#260e0e"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "marketing https://messenger.getfernand.com/css/styles.css",
-   "selector": ".dark-mode .message__loader",
-   "context": [],
-   "properties": {
-    "--grey": "#4f5052"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "marketing inline-0",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--white": "#fff",
-    "--grey": "#9fa3b5",
-    "--grey-light": "#f4f5f7",
-    "--grey-medium": "#717583",
-    "--grey-strong": "#3d4259",
-    "--black": "#131e40",
-    "--blue": "#00a0ff",
-    "--blue-pale": "#e8f5ff",
-    "--orange": "#fb8c3b",
-    "--red": "#dc2626",
-    "--red-pale": "#fee2e2",
-    "--green": "#2dbd33",
-    "--green-dark": "#33c27f",
-    "--border": "#eaecf8",
-    "--border-strong": "#e4e6eb"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--white": "#fff",
-    "--grey-light": "#F7FAFC",
-    "--grey": "#E6E9EB",
-    "--grey-medium": "#5e6271",
-    "--grey-strong": "#9FA3B5",
-    "--black": "#131E40",
-    "--blue": "#00A0FF",
-    "--blue-pale": "#e8f5ff",
-    "--orange": "#FB8C3B",
-    "--orange-pale": "#fffaf1",
-    "--red": "#dc2626",
-    "--red-pale": "#FEE2E2",
-    "--green-pale": "#edf8eb",
-    "--green": "#2dbd33",
-    "--green-dark": "#33c27f",
-    "--border": "#EAECF8",
-    "--border-strong": "#E4E6EB"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--viewport-height": "min(100vh, 100dvh)"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
-   "selector": ".wrapper__sidebar.wrapper__sidebar--unauth",
-   "context": [],
-   "properties": {
-    "--grey-strong": "#9f9489",
-    "--border": "#f0e5d3"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
-   "selector": ".dark-mode .wrapper__sidebar.wrapper__sidebar--unauth",
-   "context": [],
-   "properties": {
-    "--border": "#464035"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
-   "selector": ".wrapper__sidebar.wrapper__sidebar--unauth .modal",
-   "context": [],
-   "properties": {
-    "--grey-strong": "#9FA3B5",
-    "--border": "#EAECF8"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
-   "selector": ".dark-mode .wrapper__sidebar.wrapper__sidebar--unauth .modal",
-   "context": [],
-   "properties": {
-    "--grey-strong": "#8a8f98",
-    "--border": "rgba(255, 255, 255, .1)"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
-   "selector": ".dark-mode",
-   "context": [],
-   "properties": {
-    "--white": "#121212",
-    "--grey-light": "#1A1A1A",
-    "--grey": "#E6E9EB",
-    "--grey-medium": "#8a8f98",
-    "--grey-strong": "#8a8f98",
-    "--black": "#f7f8f8",
-    "--border": "rgba(255, 255, 255, .1)",
-    "--border-strong": "#44474e",
-    "--blue-pale": "#2d2f36",
-    "--orange-pale": "#201a12",
-    "--green-pale": "#253023"
-   },
-   "bin": "theme"
-  }
- ],
- "app": [
-  {
-   "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
-   "selector": ".chat__playground",
-   "context": [],
-   "properties": {
-    "--playground-width": "max(100%, min(1200px, calc(100vw - 455px) ))"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
-   "selector": ".chat__playground",
-   "context": [
-    "@media (max-width: 1150px)"
-   ],
-   "properties": {
-    "--playground-width": "100%"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "help https://help.getfernand.com/_nuxt/entry.Bnx3DPsJ.css",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--white": "#fff",
-    "--grey": "#9fa3b5",
-    "--grey-light": "#f7fafc",
-    "--grey-medium": "#5f667d",
-    "--black": "#131e40",
-    "--blue": "#00a0ff",
-    "--blue-pale": "#e8f5ff",
-    "--orange": "#fb8c3b",
-    "--orange-pale": "#fffaf1",
-    "--red": "#dc2626",
-    "--red-pale": "#fee2e2",
-    "--green": "#2dbd33",
-    "--green-pale": "#edf8eb",
-    "--border": "#eaecf8",
-    "--border-strong": "#d1d5e6",
-    "--lightningcss-light": "initial",
-    "--lightningcss-dark": ""
-   },
-   "bin": "app"
-  },
-  {
-   "file": "help https://help.getfernand.com/_nuxt/entry.Bnx3DPsJ.css",
-   "selector": ":root",
-   "context": [
-    "@media (prefers-color-scheme: dark)"
-   ],
-   "properties": {
-    "--lightningcss-light": "",
-    "--lightningcss-dark": "initial"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "help https://help.getfernand.com/_nuxt/entry.Bnx3DPsJ.css",
-   "selector": "body.dark-mode",
-   "context": [],
-   "properties": {
-    "--white": "#161618",
-    "--grey-light": "#18181b",
-    "--grey": "#e6e9eb",
-    "--grey-medium": "#8a8f98",
-    "--grey-strong": "#8a8f98",
-    "--black": "#f7f8f8",
-    "--border": "#ffffff1a",
-    "--border-strong": "#44474e",
-    "--blue-pale": "#2d2f36",
-    "--orange-pale": "#201a12",
-    "--green-pale": "#253023",
-    "--lightningcss-light": "",
-    "--lightningcss-dark": "initial"
-   },
-   "bin": "app"
-  }
- ],
- "skins": [
-  {
-   "file": "marketing https://messenger.getfernand.com/css/styles.css",
-   "selector": "",
-   "context": [
-    "@keyframes rotation"
-   ],
-   "properties": {
-    "--gradient-angle": "0deg"
-   },
-   "bin": "skins"
-  },
-  {
-   "file": "marketing https://messenger.getfernand.com/css/styles.css",
-   "selector": "",
-   "context": [
-    "@keyframes rotation"
-   ],
-   "properties": {
-    "--gradient-angle": "360deg"
-   },
-   "bin": "skins"
-  }
- ],
- "vendor": [
-  {
-   "file": "marketing inline-0",
-   "selector": ".widget-pg__widget",
-   "context": [],
-   "properties": {
-    "--wpg-bg": "#fff",
-    "--wpg-text": "#1a2035",
-    "--wpg-sub": "#848894",
-    "--wpg-border": "#f1f3f6",
-    "--wpg-muted": "#9498a5",
-    "--wpg-link": "#2c3145",
-    "--wpg-hover": "#f8f9fc",
-    "--wpg-search": "#f3f4f8",
-    "--wpg-powered": "#c2c5d2"
-   },
-   "bin": "vendor"
-  },
-  {
-   "file": "marketing inline-0",
-   "selector": ".widget-pg__widget--dark",
-   "context": [],
-   "properties": {
-    "--wpg-bg": "#1e2235",
-    "--wpg-text": "#e8eaf0",
-    "--wpg-sub": "hsla(0,0%,100%,.4)",
-    "--wpg-border": "hsla(0,0%,100%,.08)",
-    "--wpg-muted": "hsla(0,0%,100%,.35)",
-    "--wpg-link": "hsla(0,0%,100%,.82)",
-    "--wpg-hover": "hsla(0,0%,100%,.05)",
-    "--wpg-search": "hsla(0,0%,100%,.07)",
-    "--wpg-powered": "hsla(0,0%,100%,.2)"
-   },
-   "bin": "vendor"
-  },
-  {
-   "file": "marketing inline-1",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--wp--preset--aspect-ratio--square": "1",
-    "--wp--preset--aspect-ratio--4-3": "4/3",
-    "--wp--preset--aspect-ratio--3-4": "3/4",
-    "--wp--preset--aspect-ratio--3-2": "3/2",
-    "--wp--preset--aspect-ratio--2-3": "2/3",
-    "--wp--preset--aspect-ratio--16-9": "16/9",
-    "--wp--preset--aspect-ratio--9-16": "9/16",
-    "--wp--preset--color--black": "#000",
-    "--wp--preset--color--cyan-bluish-gray": "#abb8c3",
-    "--wp--preset--color--white": "#fff",
-    "--wp--preset--color--pale-pink": "#f78da7",
-    "--wp--preset--color--vivid-red": "#cf2e2e",
-    "--wp--preset--color--luminous-vivid-orange": "#ff6900",
-    "--wp--preset--color--luminous-vivid-amber": "#fcb900",
-    "--wp--preset--color--light-green-cyan": "#7bdcb5",
-    "--wp--preset--color--vivid-green-cyan": "#00d084",
-    "--wp--preset--color--pale-cyan-blue": "#8ed1fc",
-    "--wp--preset--color--vivid-cyan-blue": "#0693e3",
-    "--wp--preset--color--vivid-purple": "#9b51e0",
-    "--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple": "linear-gradient(135deg,#0693e3,#9b51e0)",
-    "--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan": "linear-gradient(135deg,#7adcb4,#00d082)",
-    "--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange": "linear-gradient(135deg,#fcb900,#ff6900)",
-    "--wp--preset--gradient--luminous-vivid-orange-to-vivid-red": "linear-gradient(135deg,#ff6900,#cf2e2e)",
-    "--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray": "linear-gradient(135deg,#eee,#a9b8c3)",
-    "--wp--preset--gradient--cool-to-warm-spectrum": "linear-gradient(135deg,#4aeadc,#9778d1 20%,#cf2aba 40%,#ee2c82 60%,#fb6962 80%,#fef84c)",
-    "--wp--preset--gradient--blush-light-purple": "linear-gradient(135deg,#ffceec,#9896f0)",
-    "--wp--preset--gradient--blush-bordeaux": "linear-gradient(135deg,#fecda5,#fe2d2d 50%,#6b003e)",
-    "--wp--preset--gradient--luminous-dusk": "linear-gradient(135deg,#ffcb70,#c751c0 50%,#4158d0)",
-    "--wp--preset--gradient--pale-ocean": "linear-gradient(135deg,#fff5cb,#b6e3d4 50%,#33a7b5)",
-    "--wp--preset--gradient--electric-grass": "linear-gradient(135deg,#caf880,#71ce7e)",
-    "--wp--preset--gradient--midnight": "linear-gradient(135deg,#020381,#2874fc)",
-    "--wp--preset--font-size--small": "13px",
-    "--wp--preset--font-size--medium": "20px",
-    "--wp--preset--font-size--large": "36px",
-    "--wp--preset--font-size--x-large": "42px",
-    "--wp--preset--spacing--20": ".44rem",
-    "--wp--preset--spacing--30": ".67rem",
-    "--wp--preset--spacing--40": "1rem",
-    "--wp--preset--spacing--50": "1.5rem",
-    "--wp--preset--spacing--60": "2.25rem",
-    "--wp--preset--spacing--70": "3.38rem",
-    "--wp--preset--spacing--80": "5.06rem",
-    "--wp--preset--shadow--natural": "6px 6px 9px rgba(0,0,0,.2)",
-    "--wp--preset--shadow--deep": "12px 12px 50px rgba(0,0,0,.4)",
-    "--wp--preset--shadow--sharp": "6px 6px 0px rgba(0,0,0,.2)",
-    "--wp--preset--shadow--outlined": "6px 6px 0px -3px #fff,6px 6px #000",
-    "--wp--preset--shadow--crisp": "6px 6px 0px #000"
-   },
-   "bin": "vendor"
-  }
- ],
- "utility": [],
- "tailwind": [],
- "fonts": [
-  {
-   "file": "marketing https://messenger.getfernand.com/css/styles.css",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "marketing https://messenger.getfernand.com/css/styles.css",
-   "font-family": "Inter",
-   "font-style": "italic",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "marketing https://messenger.getfernand.com/css/styles.css",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "marketing https://messenger.getfernand.com/css/styles.css",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "marketing https://messenger.getfernand.com/css/styles.css",
-   "font-family": "Inter",
-   "font-style": "italic",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "marketing inline-0",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "300",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "marketing inline-0",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "400",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "marketing inline-0",
-   "font-family": "Inter",
-   "font-style": "italic",
-   "font-weight": "400",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "marketing inline-0",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "marketing inline-0",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "marketing inline-0",
-   "font-family": "Inter",
-   "font-style": "italic",
-   "font-weight": "600",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "marketing inline-0",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "700",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "marketing inline-0",
-   "font-family": "Inter",
-   "font-style": "italic",
-   "font-weight": "700",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "300",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
-   "font-family": "Inter",
-   "font-style": "italic",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
-   "font-family": "Inter",
-   "font-style": "italic",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
-   "font-family": "Inter",
-   "font-style": "italic",
-   "font-weight": "700",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "help https://help.getfernand.com/_nuxt/entry.Bnx3DPsJ.css",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "300",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "help https://help.getfernand.com/_nuxt/entry.Bnx3DPsJ.css",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "help https://help.getfernand.com/_nuxt/entry.Bnx3DPsJ.css",
-   "font-family": "Inter",
-   "font-style": "italic",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "help https://help.getfernand.com/_nuxt/entry.Bnx3DPsJ.css",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "help https://help.getfernand.com/_nuxt/entry.Bnx3DPsJ.css",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  },
-  {
-   "file": "help https://help.getfernand.com/_nuxt/entry.Bnx3DPsJ.css",
-   "font-family": "Inter",
-   "font-style": "italic",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
-  }
- ],
- "resolved": {
-  "light": {
-   "--black": {
-    "raw": "#131e40",
-    "kind": "color",
-    "value": "#131e40"
-   },
-   "--blue": {
-    "raw": "#00a0ff",
-    "kind": "color",
-    "value": "#00a0ff"
-   },
-   "--blue-pale": {
-    "raw": "#e8f5ff",
-    "kind": "color",
-    "value": "#e8f5ff"
-   },
-   "--border": {
-    "raw": "#eaecf8",
-    "kind": "color",
-    "value": "#eaecf8"
-   },
-   "--border-strong": {
-    "raw": "#e4e6eb",
-    "kind": "color",
-    "value": "#e4e6eb"
-   },
-   "--gradient-angle": {
-    "raw": "0deg",
-    "kind": "other"
-   },
-   "--green": {
-    "raw": "#2dbd33",
-    "kind": "color",
-    "value": "#2dbd33"
-   },
-   "--green-dark": {
-    "raw": "#33c27f",
-    "kind": "color",
-    "value": "#33c27f"
-   },
-   "--green-pale": {
-    "raw": "#edf8eb",
-    "kind": "color",
-    "value": "#edf8eb"
-   },
-   "--grey": {
-    "raw": "#9fa3b5",
-    "kind": "color",
-    "value": "#9fa3b5"
-   },
-   "--grey-light": {
-    "raw": "#f4f5f7",
-    "kind": "color",
-    "value": "#f4f5f7"
-   },
-   "--grey-medium": {
-    "raw": "#717583",
-    "kind": "color",
-    "value": "#717583"
-   },
-   "--grey-strong": {
-    "raw": "#3d4259",
-    "kind": "color",
-    "value": "#3d4259"
-   },
-   "--orange": {
-    "raw": "#fb8c3b",
-    "kind": "color",
-    "value": "#fb8c3b"
-   },
-   "--orange-pale": {
-    "raw": "#fffaf1",
-    "kind": "color",
-    "value": "#fffaf1"
-   },
-   "--red": {
-    "raw": "#dc2626",
-    "kind": "color",
-    "value": "#dc2626"
-   },
-   "--red-pale": {
-    "raw": "#fee2e2",
-    "kind": "color",
-    "value": "#fee2e2"
-   },
-   "--white": {
-    "raw": "#fff",
-    "kind": "color",
-    "value": "#ffffff"
-   }
-  },
-  "app": {
-   "--black": {
-    "raw": "#131E40",
-    "kind": "color",
-    "value": "#131e40"
-   },
-   "--blue": {
-    "raw": "#00A0FF",
-    "kind": "color",
-    "value": "#00a0ff"
-   },
-   "--blue-pale": {
-    "raw": "#e8f5ff",
-    "kind": "color",
-    "value": "#e8f5ff"
-   },
-   "--border": {
-    "raw": "#EAECF8",
-    "kind": "color",
-    "value": "#eaecf8"
-   },
-   "--border-strong": {
-    "raw": "#E4E6EB",
-    "kind": "color",
-    "value": "#e4e6eb"
-   },
-   "--green": {
-    "raw": "#2dbd33",
-    "kind": "color",
-    "value": "#2dbd33"
-   },
-   "--green-dark": {
-    "raw": "#33c27f",
-    "kind": "color",
-    "value": "#33c27f"
-   },
-   "--green-pale": {
-    "raw": "#edf8eb",
-    "kind": "color",
-    "value": "#edf8eb"
-   },
-   "--grey": {
-    "raw": "#E6E9EB",
-    "kind": "color",
-    "value": "#e6e9eb"
-   },
-   "--grey-light": {
-    "raw": "#F7FAFC",
-    "kind": "color",
-    "value": "#f7fafc"
-   },
-   "--grey-medium": {
-    "raw": "#5e6271",
-    "kind": "color",
-    "value": "#5e6271"
-   },
-   "--grey-strong": {
-    "raw": "#9FA3B5",
-    "kind": "color",
-    "value": "#9fa3b5"
-   },
-   "--orange": {
-    "raw": "#FB8C3B",
-    "kind": "color",
-    "value": "#fb8c3b"
-   },
-   "--orange-pale": {
-    "raw": "#fffaf1",
-    "kind": "color",
-    "value": "#fffaf1"
-   },
-   "--red": {
-    "raw": "#dc2626",
-    "kind": "color",
-    "value": "#dc2626"
-   },
-   "--red-pale": {
-    "raw": "#FEE2E2",
-    "kind": "color",
-    "value": "#fee2e2"
-   },
-   "--viewport-height": {
-    "raw": "min(100vh, 100dvh)",
-    "kind": "dimension",
-    "value": "900px",
-    "note": "viewport-relative, resolved at 1440 x 900"
-   },
-   "--white": {
-    "raw": "#fff",
-    "kind": "color",
-    "value": "#ffffff"
-   }
-  },
-  "help": {
-   "--black": {
-    "raw": "#131e40",
-    "kind": "color",
-    "value": "#131e40"
-   },
-   "--blue": {
-    "raw": "#00a0ff",
-    "kind": "color",
-    "value": "#00a0ff"
-   },
-   "--blue-pale": {
-    "raw": "#e8f5ff",
-    "kind": "color",
-    "value": "#e8f5ff"
-   },
-   "--border": {
-    "raw": "#eaecf8",
-    "kind": "color",
-    "value": "#eaecf8"
-   },
-   "--border-strong": {
-    "raw": "#d1d5e6",
-    "kind": "color",
-    "value": "#d1d5e6"
-   },
-   "--green": {
-    "raw": "#2dbd33",
-    "kind": "color",
-    "value": "#2dbd33"
-   },
-   "--green-pale": {
-    "raw": "#edf8eb",
-    "kind": "color",
-    "value": "#edf8eb"
-   },
-   "--grey": {
-    "raw": "#9fa3b5",
-    "kind": "color",
-    "value": "#9fa3b5"
-   },
-   "--grey-light": {
-    "raw": "#f7fafc",
-    "kind": "color",
-    "value": "#f7fafc"
-   },
-   "--grey-medium": {
-    "raw": "#5f667d",
-    "kind": "color",
-    "value": "#5f667d"
-   },
-   "--orange": {
-    "raw": "#fb8c3b",
-    "kind": "color",
-    "value": "#fb8c3b"
-   },
-   "--orange-pale": {
-    "raw": "#fffaf1",
-    "kind": "color",
-    "value": "#fffaf1"
-   },
-   "--red": {
-    "raw": "#dc2626",
-    "kind": "color",
-    "value": "#dc2626"
-   },
-   "--red-pale": {
-    "raw": "#fee2e2",
-    "kind": "color",
-    "value": "#fee2e2"
-   },
-   "--white": {
-    "raw": "#fff",
-    "kind": "color",
-    "value": "#ffffff"
-   }
-  },
-  "dark": {
-   "--black": {
-    "raw": "#f7f8f8",
-    "kind": "color",
-    "value": "#f7f8f8"
-   },
-   "--blue": {
-    "raw": "#00a0ff",
-    "kind": "color",
-    "value": "#00a0ff"
-   },
-   "--blue-pale": {
-    "raw": "#2d2f36",
-    "kind": "color",
-    "value": "#2d2f36"
-   },
-   "--border": {
-    "raw": "#ffffff1a",
-    "kind": "color",
-    "value": "rgba(255, 255, 255, 0.1)"
-   },
-   "--border-strong": {
-    "raw": "#44474e",
-    "kind": "color",
-    "value": "#44474e"
-   },
-   "--green": {
-    "raw": "#2dbd33",
-    "kind": "color",
-    "value": "#2dbd33"
-   },
-   "--green-pale": {
-    "raw": "#253023",
-    "kind": "color",
-    "value": "#253023"
-   },
-   "--grey": {
-    "raw": "#e6e9eb",
-    "kind": "color",
-    "value": "#e6e9eb"
-   },
-   "--grey-light": {
-    "raw": "#18181b",
-    "kind": "color",
-    "value": "#18181b"
-   },
-   "--grey-medium": {
-    "raw": "#8a8f98",
-    "kind": "color",
-    "value": "#8a8f98"
-   },
-   "--grey-strong": {
-    "raw": "#8a8f98",
-    "kind": "color",
-    "value": "#8a8f98"
-   },
-   "--orange": {
-    "raw": "#fb8c3b",
-    "kind": "color",
-    "value": "#fb8c3b"
-   },
-   "--orange-pale": {
-    "raw": "#201a12",
-    "kind": "color",
-    "value": "#201a12"
-   },
-   "--red": {
-    "raw": "#dc2626",
-    "kind": "color",
-    "value": "#dc2626"
-   },
-   "--red-pale": {
-    "raw": "#fee2e2",
-    "kind": "color",
-    "value": "#fee2e2"
-   },
-   "--white": {
-    "raw": "#161618",
-    "kind": "color",
-    "value": "#161618"
-   }
-  },
-  "appDark": {
-   "--black": {
-    "raw": "#f7f8f8",
-    "kind": "color",
-    "value": "#f7f8f8"
-   },
-   "--blue": {
-    "raw": "#00A0FF",
-    "kind": "color",
-    "value": "#00a0ff"
-   },
-   "--blue-pale": {
-    "raw": "#2d2f36",
-    "kind": "color",
-    "value": "#2d2f36"
-   },
-   "--border": {
-    "raw": "rgba(255, 255, 255, .1)",
-    "kind": "color",
-    "value": "rgba(255, 255, 255, 0.1)"
-   },
-   "--border-strong": {
-    "raw": "#44474e",
-    "kind": "color",
-    "value": "#44474e"
-   },
-   "--green": {
-    "raw": "#2dbd33",
-    "kind": "color",
-    "value": "#2dbd33"
-   },
-   "--green-dark": {
-    "raw": "#33c27f",
-    "kind": "color",
-    "value": "#33c27f"
-   },
-   "--green-pale": {
-    "raw": "#253023",
-    "kind": "color",
-    "value": "#253023"
-   },
-   "--grey": {
-    "raw": "#E6E9EB",
-    "kind": "color",
-    "value": "#e6e9eb"
-   },
-   "--grey-light": {
-    "raw": "#1A1A1A",
-    "kind": "color",
-    "value": "#1a1a1a"
-   },
-   "--grey-medium": {
-    "raw": "#8a8f98",
-    "kind": "color",
-    "value": "#8a8f98"
-   },
-   "--grey-strong": {
-    "raw": "#8a8f98",
-    "kind": "color",
-    "value": "#8a8f98"
-   },
-   "--orange": {
-    "raw": "#FB8C3B",
-    "kind": "color",
-    "value": "#fb8c3b"
-   },
-   "--orange-pale": {
-    "raw": "#201a12",
-    "kind": "color",
-    "value": "#201a12"
-   },
-   "--red": {
-    "raw": "#dc2626",
-    "kind": "color",
-    "value": "#dc2626"
-   },
-   "--red-pale": {
-    "raw": "#FEE2E2",
-    "kind": "color",
-    "value": "#fee2e2"
-   },
-   "--viewport-height": {
-    "raw": "min(100vh, 100dvh)",
-    "kind": "dimension",
-    "value": "900px",
-    "note": "viewport-relative, resolved at 1440 x 900"
-   },
-   "--white": {
-    "raw": "#121212",
-    "kind": "color",
-    "value": "#121212"
-   }
-  }
- }
+  "app": [
+    {
+      "file": "inline",
+      "selector": ":root",
+      "context": [],
+      "properties": {
+        "--white": "#fff",
+        "--grey": "#9fa3b5",
+        "--grey-light": "#f4f5f7",
+        "--grey-medium": "#717583",
+        "--grey-strong": "#3d4259",
+        "--black": "#131e40",
+        "--blue": "#00a0ff",
+        "--blue-pale": "#e8f5ff",
+        "--orange": "#fb8c3b",
+        "--red": "#dc2626",
+        "--red-pale": "#fee2e2",
+        "--green": "#2dbd33",
+        "--green-dark": "#33c27f",
+        "--border": "#eaecf8",
+        "--border-strong": "#e4e6eb"
+      }
+    },
+    {
+      "file": "inline",
+      "selector": ".widget-pg__widget",
+      "context": [],
+      "properties": {
+        "--wpg-bg": "#fff",
+        "--wpg-text": "#1a2035",
+        "--wpg-sub": "#848894",
+        "--wpg-border": "#f1f3f6",
+        "--wpg-muted": "#9498a5",
+        "--wpg-link": "#2c3145",
+        "--wpg-hover": "#f8f9fc",
+        "--wpg-search": "#f3f4f8",
+        "--wpg-powered": "#c2c5d2"
+      }
+    },
+    {
+      "file": "inline",
+      "selector": ".widget-pg__widget--dark",
+      "context": [],
+      "properties": {
+        "--wpg-bg": "#1e2235",
+        "--wpg-text": "#e8eaf0",
+        "--wpg-sub": "hsla(0,0%,100%,.4)",
+        "--wpg-border": "hsla(0,0%,100%,.08)",
+        "--wpg-muted": "hsla(0,0%,100%,.35)",
+        "--wpg-link": "hsla(0,0%,100%,.82)",
+        "--wpg-hover": "hsla(0,0%,100%,.05)",
+        "--wpg-search": "hsla(0,0%,100%,.07)",
+        "--wpg-powered": "hsla(0,0%,100%,.2)"
+      }
+    }
+  ],
+  "wordpress": [
+    {
+      "selector": ":root",
+      "names": [
+        "--wp--preset--aspect-ratio--square",
+        "--wp--preset--aspect-ratio--4-3",
+        "--wp--preset--aspect-ratio--3-4",
+        "--wp--preset--aspect-ratio--3-2",
+        "--wp--preset--aspect-ratio--2-3",
+        "--wp--preset--aspect-ratio--16-9",
+        "--wp--preset--aspect-ratio--9-16",
+        "--wp--preset--color--black",
+        "--wp--preset--color--cyan-bluish-gray",
+        "--wp--preset--color--white",
+        "--wp--preset--color--pale-pink",
+        "--wp--preset--color--vivid-red",
+        "--wp--preset--color--luminous-vivid-orange",
+        "--wp--preset--color--luminous-vivid-amber",
+        "--wp--preset--color--light-green-cyan",
+        "--wp--preset--color--vivid-green-cyan",
+        "--wp--preset--color--pale-cyan-blue",
+        "--wp--preset--color--vivid-cyan-blue",
+        "--wp--preset--color--vivid-purple",
+        "--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple",
+        "--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan",
+        "--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange",
+        "--wp--preset--gradient--luminous-vivid-orange-to-vivid-red",
+        "--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray",
+        "--wp--preset--gradient--cool-to-warm-spectrum",
+        "--wp--preset--gradient--blush-light-purple",
+        "--wp--preset--gradient--blush-bordeaux",
+        "--wp--preset--gradient--luminous-dusk",
+        "--wp--preset--gradient--pale-ocean",
+        "--wp--preset--gradient--electric-grass",
+        "--wp--preset--gradient--midnight",
+        "--wp--preset--font-size--small",
+        "--wp--preset--font-size--medium",
+        "--wp--preset--font-size--large",
+        "--wp--preset--font-size--x-large",
+        "--wp--preset--spacing--20",
+        "--wp--preset--spacing--30",
+        "--wp--preset--spacing--40",
+        "--wp--preset--spacing--50",
+        "--wp--preset--spacing--60",
+        "--wp--preset--spacing--70",
+        "--wp--preset--spacing--80",
+        "--wp--preset--shadow--natural",
+        "--wp--preset--shadow--deep",
+        "--wp--preset--shadow--sharp",
+        "--wp--preset--shadow--outlined",
+        "--wp--preset--shadow--crisp"
+      ]
+    }
+  ],
+  "fonts": [
+    {
+      "family": "Inter",
+      "weight": "300",
+      "style": "normal",
+      "file": "inline"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "normal",
+      "file": "inline"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "italic",
+      "file": "inline"
+    },
+    {
+      "family": "Inter",
+      "weight": "500",
+      "style": "normal",
+      "file": "inline"
+    },
+    {
+      "family": "Inter",
+      "weight": "600",
+      "style": "normal",
+      "file": "inline"
+    },
+    {
+      "family": "Inter",
+      "weight": "600",
+      "style": "italic",
+      "file": "inline"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "normal",
+      "file": "inline"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "italic",
+      "file": "inline"
+    }
+  ],
+  "errors": [
+    {
+      "file": "https://messenger.getfernand.com/css/onload.min.css",
+      "error": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules"
+    }
+  ]
 }

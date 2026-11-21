@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T09:26:50.251Z",
+  "capturedAt": "2026-11-20T20:57:55.142Z",
   "screenshot": "pricing-light-yearly.png",
-  "sanitizedSourceUrl": "https://lumalabs.ai/pricing",
+  "sanitizedSourceUrl": null,
   "requested": {
     "viewport": {
       "width": 1440,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 18434
+      "height": 19210
     },
     "scroll": {
       "x": 0,

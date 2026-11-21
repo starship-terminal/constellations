@@ -1,69 +1,55 @@
 # Components
 
-Public signed-out surfaces of mymind, measured on 2026-11-19 from computed styles. No component crop was saved: the preview browser returned "The browser is not producing screenshot frames."
-
-Values are token names. Shared numbers are in [tokens.json](tokens.json).
+Public marketing controls on mymind.com, measured 2026-11-21. The signed-in app was not reached. Values are token names. A state that was not on screen is Not captured.
 
 ## Button
 
-The marketing primary is an orange pill. On the home page, "TRY IT OUT" paints `light.component.button-primary.background` (`#ff5924`) with `light.component.button-primary.text` (`#ffffff`), `core.typography.button` (Nunito 15px, tracking 0.8px) and `core.radius.cta` (120px). Padding is `core.spacing.button-y` by `core.spacing.button-x`.
+The filled control. Home "TRY IT OUT" is an ember pill (`.is-content`, radius 120px, height 45px) with white Nunito-SemiBold 15px label. Pricing "SIGN UP" is the same ember at radius 25px and height 50px. The header "Sign up" is this pill: white label on ember, sitting beside a blue "Log in" link.
 
-The header "Sign up" item is the same orange with `core.radius.pill` (30px) and `core.typography.ui` (Nunito 16px, weight 500). On pricing, `.button-orange.button-xl` is 50px tall, radius `core.radius.button` (25px), horizontal padding about 27px.
-
-"GET APP" is an orange text link, `#ff5924`, radius 100px, 14px Nunito, tracking 0.4px. Its computed border width was 0, so the outline is not a measured stroke.
-
-Hover, focus-visible, pressed, disabled and loading were not measured. Rest transitions on `.is-content` are `all` over `core.motion.duration.button` (700ms) with `core.motion.easing.ease-out-expo`.
+| State | Evidence |
+|---|---|
+| default | [button-signup-default.png](components/crops/button-signup-default.png). Fill `light.accent.default`, text `light.text.on-accent`, radius `core.radius.pill` |
+| hover | Home CTA fill did not change. Header Sign up link text went from `light.text.link` to black. Fill hover is Not captured as a separate colour |
+| focus-visible | Not captured. Log in outline computed as `auto 0px` |
+| pressed | Not captured |
+| disabled | Not present on the public pages |
+| loading | Not present |
+| error | Not present |
 
 ## Link
 
-Header links "What", "Why" and "How" use `core.typography.nav` (Louize 20px) in `light.color.link` (`#1573dd`). The visible label inside the link is Inter 18px at `rgba(74, 84, 101, 0.8)`. "Log in" is Nunito 16px weight 500 in `light.color.muted`.
+Auth and nav links are Louize 20px in `light.text.link` (`#1573dd`), authored as `a { color:#1573dd }` in styles.css. They open a page or the auth wall. See [site-tree.md](site-tree.md).
 
-On the sign-in panel, "Sign up here." is Nunito 15px in `#ff5924`. "Terms of Use" and "Privacy Policy" are Nunito 15px in `#748297`.
-
-## Text field
-
-Not present on the public marketing pages or the signed-out sign-in panel. Sign-in offers Google and Apple buttons, not an email field. Recorded as a gap.
-
-## Text area, select, checkbox, radio, switch
-
-Not present on the captured public pages.
-
-## Tabs
-
-Pricing has a Monthly / Yearly pair of buttons. Both computed to Nunito 20px weight 600, colour `#7e90a7`, tracking -1px, transparent background. The Yearly button carries class `yearly active`. The selected treatment (underline, colour change) was not isolated from the rest state, so the selected colour is a gap.
+| State | Evidence |
+|---|---|
+| default | [link-login-default.png](components/crops/link-login-default.png), [nav-default.png](components/crops/nav-default.png) |
+| hover | Sign up text colour computed `rgb(0, 0, 0)` |
+| focus-visible | Not captured as a painted ring |
 
 ## Menu
 
-At innerWidth 390 the header nav computes `display: none` and a `.hamburger` shows at 50 by 36px on `#e2e6ee`. The opened menu was not captured.
+Phone only. `a[aria-label="Menu"]` opens an overlay on the same URL. What, Why, How, LOG IN, SIGN UP. Close returns to the page. [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png), crop [menu-button-default.png](components/crops/menu-button-default.png).
 
-## Tooltip, toast
+## Tabs
 
-Not present on the captured pages.
-
-## Dialog
-
-The sign-in URL also holds an onboarding layer ("SET UP MY MIND", "SOUND") whose button sat at y 731, on the fold of the 731px-tall viewport. It was not opened. Not captured.
+Pricing Monthly / Yearly is an in-page toggle. Both labels computed Nunito 20px / 600 in `#7e90a7` before a selection was forced. Selected fill was not read as a separate token. Mobile iOS / Android tabs on `/mobile` share fill `#ebebf1`.
 
 ## Card
 
-Pricing `.feature-card` is `light.color.surface`, radius `core.radius.card` (22px), shadow `core.shadow.card` (`rgba(61, 65, 84, 0.15) 0px 1px 6px 0px`), about 350px wide. The title is Louize 28px weight 500, tracking -1.4px, colour `#2c3441`, padding 15px 30px 0.
+Feature cards on the home page use flat pastel fills: `core.color.card-sand`, `card-blue`, `card-green`, `card-blush`, `card-peach`. Pricing plan cards are white, radius 22px (`core.radius.card`). No shadow was measured (`box-shadow: none` on the sampled cards).
 
-## List row, table, avatar, badge
+## Display type
 
-Review quotes are blockquotes, Inter about 19px, colour `#4a5465`, with no card background. No table, avatar or badge was on the captured pages.
+Home h1 is Avenir Book 140px / 119px, tracking -8.4px, ink `#000000`. [display-default.png](components/crops/display-default.png). Pricing h1 is Louize, computed 134.11px, colour `#2c3441`.
 
-Hero keyword chips (notes, bookmarks, inspiration, articles, images) are transparent pills with a 1px border in the matching text colour, radius `core.radius.bubble` (36px), padding 4px 18px, Nunito 18px.
+## Not present on the public surface
 
-## Icon button
-
-The home play control is a circle with shadow `rgba(255, 154, 36, 0.1) 0px 8px 16px 2px`. Size was not isolated. Not captured as a component state.
+Text field, text area, select, checkbox, radio, switch, tooltip, dialog, toast, list row, table, avatar, badge, icon button. FAQ questions are headings, not accordions (`details` count 0, `button` count 0).
 
 ## Gaps
 
-- No screenshots or crops. Preview snapshot failed with "The browser is not producing screenshot frames."
-- Dark theme of the signed-in product. Pricing copy mentions night mode. The public site did not paint a dark theme. `prefers-color-scheme: dark` was true in the browser and the sign-in page still painted a light panel.
-- Hover, focus-visible, pressed, disabled, loading, error.
-- Email field, validation, and any account form. FAQ says Google and Apple are the only sign-in methods.
-- Open mobile menu, tooltips, toasts, destructive confirm, empty and loading app states.
-- Selected style of the pricing Monthly / Yearly control.
-- Reduced-motion pass. Computed motion was read at rest only.
+- Signed-in library, search, cards and settings: auth wall at https://access.mymind.com/signin. Headless Chromium received HTTP 403 from CloudFront. Not entered.
+- Dark theme: not on the public site.
+- Pressed, disabled, loading, error, focus ring width, elevation: Not captured.
+- Status colours (success, warning, danger, info): not painted.
+- WordPress `--wp--preset--*` colours are in styles.css and were not used by these pages. They are not tokens.

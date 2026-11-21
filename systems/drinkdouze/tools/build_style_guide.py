@@ -3,15 +3,14 @@
 
 Every colour, radius, shadow and type style on the page is a CSS custom property generated from
 tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
-`:root`; drinkdouze.com paints light only, so there is no dark set to scope. Aliases like
-{text.color} become var(--text-color).
+`:root`. Douze has no dark set, so the dark block is empty. Aliases like {color.dusk} become var(--color-dusk).
 
 Placeholders in the template:
   /*CORE*/ /*LIGHT*/ /*DARK*/     CSS custom property blocks
   /*TOKENS*/null                  a compact copy of the token tree for the JS tables
   <!--icon:NAME[:SIZE]-->         an SVG from icons/NAME.svg, inlined
 
-Deterministic: same inputs, byte-identical output. Adapted from the Manus kit's builder.
+Deterministic: same inputs, byte-identical output. Adapted from the shared kit builder for this Douze package.
 """
 import json, pathlib, re
 

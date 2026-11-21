@@ -45,7 +45,7 @@ Good for: AI-product marketing: cream-ground productivity surface with a blue ac
 
 Captured 2026-11-11, signed out (every captured surface is public; the app behind login and the download were never reached). Themes: light.
 
-A token set and component reference for Amie's public site — for building AI-product marketing and pricing surfaces in the style of the real thing. It was read from **amie.so** on **2026-11-11**, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the home (with the Features flyout), pricing (billing toggle + FAQ), changelog, blog, stories, calendar, tools, templates, download and contact.
+A token set and component reference for Amie's public site — for building AI-product marketing and pricing surfaces in the style of the real thing. It was read from **amie.so** on **2026-11-21**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. The [site tree](site-tree.md) maps every public control. Captured pages are the sitemap (65 URLs) plus blog pagination, the sales contact variant, the Features flyout, billing and FAQ toggles, the Watch demo dialog, and the response-generator style menu. Login, signup, downloads, and form submits were not taken.
 
 Amie is worth a capture because it is a current reference for a soft, colorful productivity-marketing surface: a cream #fafafa ground, a single action blue (`--color-blue-500` #11a8ff) against a red brand accent (`--color-accent` #fd2b38), full Tailwind `--color-*` ramps shipped as RGB triplets, rounded-12px CTAs, a floating 59px nav bar, and the product's own layout metrics (`--nav-width`, `--inbox-width`, calendar `--grid-*`) declared in the same bundle.
 
@@ -96,13 +96,14 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **One painted theme.** `.dark` exists in the stylesheet but only re-declares `--foreground` and the two `--shadow-wysiwyg-*` vars; nothing on the captured routes sets it, so no dark set is emitted.
 - **RGB triplets.** `--color-*` values are stored as `r,g,b` strings for `<alpha-value>` utilities; tokens carry the converted hex.
 - **`component.*` tokens are measured**, not site variables.
 - **No hamburger at 390px.** The mobile header collapses to the icon row — the `m-menu-*` entries are recorded missing.
 - **`hero-title` missed its selector** on this pass (the headline isn't an `h1`); visible in screenshots.
-- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from the tokens.
+- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or `raw/full/`.
+- **A few full-page shots are wider than the viewport.** `/recap` and the pomodoro, prompt-generator, and some docs pages set a min-width, so their `-full` PNGs are wider than 1440 or 780. The `-default` viewport shots are 1440×900 and 780×1688 (390×844 at 2x).
+- **Subscribe placeholder.** The public field shows the site's own example `tim@apple.com`. It was not typed. It is a placeholder, not an account.
 
 ### Do and don't (from README.md)
 

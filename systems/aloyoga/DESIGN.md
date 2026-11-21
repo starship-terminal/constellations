@@ -28,9 +28,9 @@ colors:
   color-neutral-smoke: "#f2f2f2"
   color-neutral-white: "#ffffff"
   measured-focus-outline: "#005fcc"
-  measured-button-hover: "#000000"
+  measured-button-hover: "#ffffff"
   measured-action-bg: "#000000"
-  measured-action-bg-hover: "#000000"
+  measured-action-bg-hover: "#232323"
 spacing:
   "0": "0px"
   "2xl": "40px"
@@ -62,7 +62,7 @@ Good for: Fashion e-commerce storefront: monochrome black-on-white Shopify + Bui
 
 Captured 2026-11-11, signed out (every captured surface is public; checkout, the bag drawer and account behind sign-in were never reached). Themes: light.
 
-A token set and component reference for Alo Yoga's public storefront — for building fashion-e-commerce surfaces in the style of the real thing. It was read from **aloyoga.com** (served at `/en-sg`) on **2026-11-11**, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the home, women's and men's shop grids, new arrivals, a product page discovered at run time, New to Alo, the cart, and the public account-login gate.
+A token set and component reference for Alo Yoga's public storefront — for building fashion-e-commerce surfaces in the style of the real thing. It was read from **aloyoga.com** (served at `/en-sg`) on **2026-11-21**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. The map of which control opens which page is [site-tree.md](site-tree.md). Captured pages: home (consent, women mega-menu, search drawer), women's and men's shop grids, new arrivals, shoes, atelier, gift guide, a product page discovered at run time, New to Alo, the empty cart, help center, size guide, stores, We Are ALO, and the account URL as a stopped login wall. Phone captures cover home (drawer and search), the women grid (filter and sort), a product page, cart, gift guide and help.
 
 Alo is worth a capture because it is a current reference for a monochrome storefront: black-on-white primary actions, uppercase small-cap nav on 84px chrome, colour-dot and square-tile swatch systems with an out-of-stock state, a member-price hook woven into every tile, and a monochrome-on-purpose surface: the shop's own tokens are a set of named neutrals plus a handful of accent/alert/highlight/success roles. (The `--color-*` ramp set in raw/css-vars.json is the embedded Sierra chat widget's palette, recorded as vendor evidence, never Alo's.)
 
@@ -120,18 +120,16 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **One theme only.** The `dark` probe resolves to the same `:root` values — nothing paints dark. `tokens.json` ships no dark set.
 - **Vendor vars are not the shop.** `.s-mode-*`/`.s-theme-*` (an embedded third-party app's theme kit, ~500 rules) and `--osano-*` are binned `vendor` in css-vars.json and excluded from tokens.
 - **`component.*` tokens are measured**, not site variables.
 - **`color-tile` and `to-top` missed their selectors** on this pass (lazy Builder.io blocks); recorded as missing, visible in screenshots.
-- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from the tokens.
+- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or `raw/full/`.
 - **The PDP is a sample**, not a fixed product — see `pdp_url`.
-- **`pdp-swatch-picked` is not the swatch that was clicked.** The `:not(.active)` locator re-resolved after the click, so the picked reading is the next swatch (Navy at x=1006), not Black (x=960). Needs a recapture; the script now pins the swatch before the click (not run since).
 
 ### Do and don't (from README.md)
 
-1. **Do keep the storefront achromatic.** White ground, `#111`/`#242424`/`#3b3b3b` ink, `#636363` secondary, `#e1e1e1`/`#f2f2f2` surfaces. Colour lives in product imagery, not chrome. See [home-light-default](screenshots/home-light-default.png).
+1. **Do keep the storefront achromatic.** White ground, black primary actions, grey secondary ink, hairline borders. Colour lives in product imagery, not chrome. See [home-light-default](screenshots/home-light-default.png).
 2. **Do run the two-button vocabulary.** Filled black `--primary` uppercase for the action that ends a flow; hairline ghost for the sibling. See [add-to-bag-default](components/crops/add-to-bag-default.png) and [wishlist-button-default](components/crops/wishlist-button-default.png).
 3. **Do keep controls square-edged.** The hero and buy buttons are sharp-cornered; size chips and colour tiles are square. See [size-button-default](components/crops/size-button-default.png).
 4. **Do use the square colour tile on PDPs, the dot on grids.** PDP swatches are 46px labelled squares; grid swatches are 26px dots with an active ring. See [pdp-swatch-default](components/crops/pdp-swatch-default.png) and [swatch-selected-default](components/crops/swatch-selected-default.png).

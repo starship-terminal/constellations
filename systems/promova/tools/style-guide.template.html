@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Promova style guide</title>
+<meta name="description" content="Promova public marketing tokens, rendered from tokens.json. Nekst and Manrope are not loaded here.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-display: Nekst, Arial, sans-serif;
+  --sg-body: Manrope, Rubik, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-neutral-frame, #000); color: var(--color-neutral-ink, #000); font: 400 16px/1.5 var(--sg-body); }
+main { max-width: 1100px; margin: 0 auto; padding: 28px 20px 80px; }
+h1 { font: 700 40px/1 var(--sg-display); margin: 0 0 8px; color: #fff; }
+.note, .lead { color: #fff; max-width: 68ch; }
+.note { opacity: .75; font-size: 14px; }
+h2 { font: 400 13px/1 var(--sg-body); letter-spacing: .08em; text-transform: lowercase; color: #fff; margin: 40px 0 12px; }
+.panel { background: var(--color-neutral-paper, #fff); color: var(--color-neutral-ink, #000); border-radius: var(--radius-panel, 30px); padding: 28px; }
+.hero { background: var(--color-brand-lilac, #bec8ff); border-radius: var(--radius-panel, 30px); padding: 36px; margin-top: 16px; }
+.hero h3 { font: 700 48px/1 var(--sg-display); margin: 0 0 12px; max-width: 10ch; }
+.bar { display: flex; align-items: center; gap: 18px; background: #fff; border-radius: 30px; height: 72px; padding: 0 24px; color: #000; }
+.bar .wm { background: #000; color: #fff; font-weight: 700; padding: 6px 10px; border-radius: 8px; }
+.bar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 14px; font: 400 14px/1 var(--sg-display); background: #000; color: #fff; border: 0; }
+.btn.ghost { background: #fff; color: #000; border: 1px solid #000; }
+.btn.hero { height: 60px; padding: 0 48px; font-weight: 700; font-size: 18px; }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.sw { background: #fff; color: #000; border-radius: 12px; padding: 8px 10px; min-width: 140px; font-size: 12px; }
+.sw i { display: block; height: 28px; border-radius: 6px; border: 1px solid #ddd; margin-bottom: 6px; }
+.card { background: #fff; border-radius: 20px; padding: 20px; width: 180px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Promova</h1>
+  <p class="lead">Public marketing surface, measured 2026-11-21. Every swatch below is a custom property from tokens.json. The boxed mocks are reconstructions drawn with those tokens.</p>
+  <p class="note">Nekst and Manrope are served faces and are not loaded here. Samples fall back to Arial. The signed-in app, sign-up form and onboarding past screen 1 were not captured.</p>
+
+  <h2>chrome</h2>
+  <div class="bar"><span class="wm">promova</span><span>Languages</span><span>Courses</span><span>Why Promova</span><span>Resources</span><span class="sp"></span><span class="btn ghost">SIGN UP</span><span class="btn">GET STARTED</span></div>
+  <div class="hero">
+    <h3>Speak before you're ready</h3>
+    <p>Speaking isn't the final step. It's where you start.</p>
+    <span class="btn hero">TRY NOW</span>
+  </div>
+
+  <h2>colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--color-neutral-ink)"></i>ink</div>
+    <div class="sw"><i style="background:var(--color-neutral-paper)"></i>paper</div>
+    <div class="sw"><i style="background:var(--color-neutral-frame)"></i>frame</div>
+    <div class="sw"><i style="background:var(--color-neutral-hover-ink)"></i>hover ink</div>
+    <div class="sw"><i style="background:var(--color-brand-lilac)"></i>lilac</div>
+    <div class="sw"><i style="background:var(--color-brand-pink)"></i>pink</div>
+    <div class="sw"><i style="background:var(--color-brand-yellow)"></i>yellow</div>
+    <div class="sw"><i style="background:var(--color-neutral-wall)"></i>wall</div>
+  </div>
+
+  <h2>cards</h2>
+  <div class="panel">
+    <div class="row">
+      <div class="card">English</div>
+      <div class="card">Spanish</div>
+      <div class="card">French</div>
+    </div>
+  </div>
+</main>
+<script>const TOK = /*TOKENS*/null;</script>
+</body>
+</html>

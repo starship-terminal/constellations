@@ -1,0 +1,59 @@
+{
+  "_note": "Leaves are measured computed styles from macawhq.com on 2026-11-21, desktop 1440x900, light theme. Sources name the element and the reading file. Custom properties in css-vars.json are Senja widget Tailwind internals, not this palette.",
+  "color": {
+    "page": { "type": "color", "value": "#fffdf9", "source": "Measured: getComputedStyle(document.body).backgroundColor on https://macawhq.com/ at 1440x900, 2026-11-21 (rgb(255, 253, 249)). raw/foundations.json" },
+    "ink": { "type": "color", "value": "#101828", "source": "Measured: getComputedStyle(h1).color on the home page, 2026-11-21 (rgb(16, 24, 40)). raw/foundations.json" },
+    "text": { "type": "color", "value": "#475467", "source": "Measured: getComputedStyle(document.body).color on the home page, 2026-11-21 (rgb(71, 84, 103)). 717 elements in raw/components-computed.json useCounts" },
+    "textNav": { "type": "color", "value": "#1d2939", "source": "Measured: a.navbar_link default color, raw/components-computed.json nav-link.default (rgb(29, 41, 57))" },
+    "textSecondary": { "type": "color", "value": "#344054", "source": "Measured: a.button-secondary-gray default color, raw/components-computed.json button-secondary.default (rgb(52, 64, 84))" },
+    "muted": { "type": "color", "value": "#98a2b3", "source": "Measured: computed color rgb(152, 162, 179) on 92 elements, raw/components-computed.json useCounts.colors" },
+    "white": { "type": "color", "value": "#ffffff", "source": "Measured: a.button (Start for free) color, raw/components-computed.json button-primary.default (rgb(255, 255, 255))" },
+    "coral": { "type": "color", "value": "#f66658", "source": "Measured: a.button (Start for free) backgroundColor, raw/components-computed.json button-primary.default (rgb(246, 102, 88)). 122 elements in useCounts" },
+    "coralHover": { "type": "color", "value": "#de4f31", "source": "Measured: a.button hover backgroundColor, raw/components-computed.json button-primary.hover (rgb(222, 79, 49))" },
+    "coralPressed": { "type": "color", "value": "#f26557", "source": "Measured: a.navbar_link hover color, raw/components-computed.json nav-link.hover (rgb(242, 101, 87)). The pricing toggle hover is a different reading, rgb(222, 79, 48)." },
+    "surface": { "type": "color", "value": "#f2f4f7", "source": "Measured: a.button-secondary-gray hover backgroundColor, raw/components-computed.json button-secondary.hover (rgb(242, 244, 247))" },
+    "row": { "type": "color", "value": "#fbf7ee", "source": "Measured: pricing comparison row backgroundColor, raw/foundations.json extra.row (rgb(251, 247, 238))" },
+    "lilac": { "type": "color", "value": "#efccff", "source": "Measured: .highlight-hero backgroundColor on the home h1, raw/foundations.json (rgb(239, 204, 255))" },
+    "violet": { "type": "color", "value": "#c65cf5", "source": "Measured: .highlight-hero-bar and .highlight-hero-tag backgroundColor, raw/foundations.json (rgb(198, 92, 245))" },
+    "blush": { "type": "color", "value": "#ffcac5", "source": "Measured: .highlight-sub backgroundColor, raw/foundations.json (rgb(255, 202, 197))" },
+    "planStarter": { "type": "color", "value": "#f6e2ff", "source": "Measured: Starter plan card backgroundColor on /pricing, raw/foundations.json (rgb(246, 226, 255))" },
+    "planPro": { "type": "color", "value": "#ffe8e2", "source": "Measured: Pro plan card backgroundColor on /pricing, raw/foundations.json (rgb(255, 232, 226))" },
+    "planScale": { "type": "color", "value": "#e3eeff", "source": "Measured: Scale plan card backgroundColor on /pricing, raw/foundations.json (rgb(227, 238, 255))" },
+    "inkButton": { "type": "color", "value": "#222020", "source": "Measured: Get started link backgroundColor on /pricing, raw/components-computed.json plan-cta.default (rgb(34, 32, 32))" },
+    "inkButtonHover": { "type": "color", "value": "#353434", "source": "Measured: Get started hover backgroundColor, raw/components-computed.json plan-cta.hover (rgb(53, 52, 52))" },
+    "focusRing": { "type": "color", "value": "#ffe1df", "source": "Measured: contact input box-shadow ring rgb(255, 225, 223) 0 0 0 4px, raw/components-computed.json text-field.default and focus-visible" }
+  },
+  "font": {
+    "family": { "type": "fontFamily", "value": "Inter, sans-serif", "source": "Measured: getComputedStyle(document.body).fontFamily on https://macawhq.com/, 2026-11-21. Webflow class wf-inter. Open Sans is also activated on html (wf-opensans-*) but body and controls compute to Inter." }
+  },
+  "typography": {
+    "display": { "type": "typography", "value": { "fontFamily": "{font.family}", "fontSize": "53.6px", "fontWeight": 700, "lineHeight": "64.32px" }, "source": "Measured: h1 on the home page, raw/foundations.json" },
+    "body": { "type": "typography", "value": { "fontFamily": "{font.family}", "fontSize": "16px", "fontWeight": 400, "lineHeight": "24px" }, "source": "Measured: document.body font size and line height, raw/foundations.json" },
+    "nav": { "type": "typography", "value": { "fontFamily": "{font.family}", "fontSize": "16px", "fontWeight": 600, "lineHeight": "24px" }, "source": "Measured: a.navbar_link fontSize 16px fontWeight 600, raw/components-computed.json nav-link.default. lineHeight 24px is Derived from body (the nav computed lineHeight was the keyword normal, which is not a dimension)." },
+    "label": { "type": "typography", "value": { "fontFamily": "{font.family}", "fontSize": "14.8px", "fontWeight": 600, "lineHeight": "22.2px" }, "source": "Measured: a.button fontSize 14.8px fontWeight 600, raw/components-computed.json button-primary.default. lineHeight 22.2px is Derived as 1.5 times 14.8px because the computed lineHeight was the keyword normal." }
+  },
+  "radius": {
+    "control": { "type": "dimension", "value": "8px", "source": "Measured: a.button borderRadius, raw/components-computed.json button-primary.default" },
+    "card": { "type": "dimension", "value": "12px", "source": "Measured: plan card borderRadius, raw/foundations.json extra.cards" },
+    "example": { "type": "dimension", "value": "16px", "source": "Measured: .div-block-46 borderRadius, raw/components-computed.json example-card.default" },
+    "dialog": { "type": "dimension", "value": "12px", "source": "Measured: .tingle-modal-box borderRadius, raw/components-computed.json example-dialog.default" }
+  },
+  "space": {
+    "fieldX": { "type": "dimension", "value": "14px", "source": "Measured: contact input paddingLeft, raw/components-computed.json text-field.default" },
+    "fieldY": { "type": "dimension", "value": "8px", "source": "Measured: contact input paddingTop, raw/components-computed.json text-field.default" },
+    "buttonX": { "type": "dimension", "value": "18px", "source": "Measured: a.button paddingLeft, raw/components-computed.json button-primary.default" },
+    "buttonY": { "type": "dimension", "value": "10px", "source": "Measured: a.button paddingTop, raw/components-computed.json button-primary.default" },
+    "navX": { "type": "dimension", "value": "16px", "source": "Measured: a.navbar_link paddingLeft, raw/components-computed.json nav-link.default" },
+    "navY": { "type": "dimension", "value": "12px", "source": "Measured: a.navbar_link paddingTop, raw/components-computed.json nav-link.default" }
+  },
+  "size": {
+    "button": { "type": "dimension", "value": "46px", "source": "Measured: a.button height, raw/components-computed.json button-primary.default" },
+    "navItem": { "type": "dimension", "value": "48px", "source": "Measured: a.navbar_link height, raw/components-computed.json nav-link.default" },
+    "field": { "type": "dimension", "value": "44px", "source": "Measured: contact input height, raw/components-computed.json text-field.default" },
+    "area": { "type": "dimension", "value": "112px", "source": "Measured: contact textarea height, raw/components-computed.json text-area.default" },
+    "focus": { "type": "dimension", "value": "4px", "source": "Measured: contact input box-shadow spread 4px, raw/components-computed.json text-field.focus-visible" }
+  },
+  "shadow": {
+    "control": { "type": "shadow", "value": "0px 1px 2px 0px rgba(16, 24, 40, 0.05)", "source": "Measured: a.button boxShadow, raw/components-computed.json button-primary.default" }
+  }
+}

@@ -208,7 +208,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
 
 const q = (sel) => page.locator(sel);
 const B4 = ['default', 'hover', 'focus-visible', 'pressed'];
-const FILL = 'name@example.com';
+const FILL = 'sample';
 
 // Transitions and animations declared in every readable sheet, by selector.
 async function sheetsFor(key) {
@@ -408,7 +408,7 @@ async function login() {
   await S('login-email', q('input[type="email"], input[name*="mail" i]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Email field', desc: 'The grey EMAIL field: typed and deleted, never submitted.', sel: 'login email input' });
   await S('login-continue', await domFind(page, /^continue$/i, { sel: 'button, [role="button"]', tag: 'lc', minH: 30 }), B4, { group: g, title: 'Continue button', desc: 'The black CONTINUE bar. Measured, never pressed.', sel: 'login continue' });
   await S('login-google', await domFind(page, /^google$/i, { sel: 'button, a, [role="button"]', tag: 'lg', minH: 30 }), B4, { group: g, title: 'Google button', desc: 'The white-bordered GOOGLE oauth row. Measured, never pressed.', sel: 'login google' });
-  await S('change-location', await domFind(page, /change location/i, { sel: 'a, button', tag: 'cl', minH: 10 }), B4, { group: g, title: 'Change location link', desc: 'The "Singapore. Change location" line under the title.', sel: 'change location' });
+  await S('change-location', await domFind(page, /change location/i, { sel: 'a, button', tag: 'cl', minH: 10 }), B4, { group: g, title: 'Change location link', desc: 'The change-location line under the title. The place name is not recorded.', sel: 'change location' });
   await page.close();
 }
 

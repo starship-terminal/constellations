@@ -9,8 +9,9 @@
 // disclosure, the nav flyout, the filter rail and PDP accordions. There is no
 // consent SDK on these routes. The store served is the China flagship (zh-CN, ¥).
 import fs from 'fs';
+import path from 'path';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { closePromo, chromium, patch, UA, UA_MOBILE, BASE } from './lib.mjs';
+import { closePromo, hideStaffDialog, chromium, patch, UA, UA_MOBILE, BASE } from './lib.mjs';
 
 const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
 fs.mkdirSync(RAW, { recursive: true });
@@ -19,9 +20,31 @@ const log = (...a) => console.log(...a);
 const wait = (p, ms) => p.waitForTimeout(ms);
 
 async function lazyScroll(p) {
-  const h = await p.evaluate(() => document.documentElement.scrollHeight);
-  for (let y = 0; y < h; y += 600) { await p.evaluate((y) => scrollTo(0, y), y); await wait(p, 200); }
-  await p.evaluate(() => scrollTo(0, 0)); await wait(p, 900);
+  // The storefront scrolls an inner shell, not the document. Walk that shell
+  // so lazy tiles paint, then return it to the top.
+  const shell = await p.evaluate(() => {
+    const s = [...document.querySelectorAll('div')].find((el) => {
+      const cs = getComputedStyle(el);
+      const oy = cs.overflowY;
+      return (oy === 'auto' || oy === 'scroll' || oy === 'hidden') && el.scrollHeight > el.clientHeight + 80 && el.clientHeight > 400 && el.getBoundingClientRect().width > 300;
+    });
+    if (!s) return { h: Math.max(document.documentElement.scrollHeight, document.body.scrollHeight), inner: false };
+    s.setAttribute('data-m-shell', '1');
+    return { h: s.scrollHeight, inner: true };
+  });
+  const h = shell.h;
+  for (let y = 0; y < h; y += 600) {
+    await p.evaluate((y) => {
+      const s = document.querySelector('[data-m-shell]');
+      if (s) s.scrollTop = y; else scrollTo(0, y);
+    }, y);
+    await wait(p, 200);
+  }
+  await p.evaluate(() => {
+    const s = document.querySelector('[data-m-shell]');
+    if (s) s.scrollTop = 0; else scrollTo(0, 0);
+  });
+  await wait(p, 900);
 }
 
 class Shooter {
@@ -32,7 +55,13 @@ class Shooter {
     const p = this.p;
     await closePromo(p);
     await lazyScroll(p);
-    const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
+    const shell = await p.evaluate(() => {
+      const s = document.querySelector('[data-m-shell]');
+      if (!s) return { inner: false, h: Math.max(document.documentElement.scrollHeight, document.body.scrollHeight), marked: false };
+      return { inner: true, h: s.scrollHeight, marked: true, ch: s.clientHeight };
+    });
+    log('  shell', JSON.stringify(shell));
+    const H = shell.h;
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
     // Infinite-scroll pages grow scrollHeight without bound after lazyScroll;
@@ -45,7 +74,36 @@ class Shooter {
     // shot succeeds, so a failed tile never truncates the previous capture.
     const staged = [];
     try {
-      if (hCap <= chunk) {
+      if (shell.inner) {
+        // The document is one viewport tall and the header is sticky inside
+        // the shell. Hide the header, scroll the shell by one content band,
+        // and clip that band so the stitch is the page rather than repeated chrome.
+        const band = await p.evaluate(() => {
+          const header = document.querySelector('.navigation-warpper.showheaderBar, .pc-navigation-bar');
+          const hh = header ? Math.round(header.getBoundingClientRect().height) : 0;
+          if (header && hh > 0 && hh < 200) header.style.setProperty('visibility', 'hidden', 'important');
+          const tab = document.querySelector('.lib-tab-bar');
+          const tr = tab ? tab.getBoundingClientRect() : null;
+          const th = tr && tr.height > 0 && tr.top < innerHeight ? Math.round(tr.height) : 0;
+          if (tab && th) tab.style.setProperty('visibility', 'hidden', 'important');
+          return { hh: hh > 0 && hh < 200 ? hh : 0, th, vh: window.innerHeight };
+        });
+        const stepY = Math.max(200, (band.vh || this.vh) - band.hh - band.th);
+        const clip = { x: 0, y: band.hh, width: this.vw, height: Math.min(stepY, (band.vh || this.vh) - band.hh) };
+        for (let i = 0, y = 0; y < hCap; i++, y += stepY) {
+          await p.evaluate((yy) => { const s = document.querySelector('[data-m-shell]'); if (s) s.scrollTop = yy; }, y);
+          await wait(p, 280);
+          const remain = Math.min(clip.height, hCap - y);
+          if (remain < 8) break;
+          const tmp = `${f}.part${i}.new.png`;
+          await screenshotWithMetadata(p, { path: tmp, clip: { ...clip, height: remain } }, this.requested);
+          staged.push([tmp, `${f}.part${i}.png`]);
+          if (y + stepY >= hCap) break;
+        }
+        await p.evaluate(() => {
+          document.querySelectorAll('.navigation-warpper, header, .lib-tab-bar').forEach((n) => n.style.removeProperty('visibility'));
+        });
+      } else if (hCap <= chunk) {
         await screenshotWithMetadata(p, { path: f + '.new.png', fullPage: true }, this.requested);
         staged.push([f + '.new.png', f + '.png']);
       } else {
@@ -59,10 +117,18 @@ class Shooter {
       for (const [tmp] of staged) fs.existsSync(tmp) && fs.unlinkSync(tmp);
       throw e;
     }
-    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`) || n === `${this.prefix}-${name}.png`)) fs.unlinkSync(`${RAW}/${old}`);
-    for (const [tmp, final] of staged) fs.renameSync(tmp, final);
+    const finals = new Set(staged.map(([, final]) => path.basename(final)));
+    for (const old of fs.readdirSync(RAW).filter((n) => (n.startsWith(`${this.prefix}-${name}.part`) || n === `${this.prefix}-${name}.png`) && !finals.has(n) && !n.includes('.new.'))) fs.unlinkSync(`${RAW}/${old}`);
+    for (const [tmp, final] of staged) {
+      if (tmp === final) continue;
+      if (fs.existsSync(final) && path.resolve(tmp) !== path.resolve(final)) fs.unlinkSync(final);
+      fs.renameSync(tmp, final);
+    }
     this.count++; log('  shot', name, 'H=' + H);
-    await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
+    await p.evaluate(() => {
+      const s = document.querySelector('[data-m-shell]');
+      if (s) s.scrollTop = 0; else scrollTo(0, 0);
+    }); await wait(p, 500);
   }
 }
 const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
@@ -109,16 +175,25 @@ const desktop = {
     await S.full();
   } },
   cart: { path: '/cart', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  sitemap: { path: '/siteMap', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  privacy: { path: '/my-account/privacy-statement', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  campaign: { path: '/splp?contentId=SPLP_NGuAJiSc', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  clp: { path: '/clp?contentId=904', run: async (p, S) => { await S.view('default'); await S.full(); } },
 };
 const mobile = {
   home: { path: '/', run: async (p, S) => {
     await S.view('default');
-    // No burger/menu control is mounted at 390 — the mobile top bar is the
-    // search pill, so there is no menu state to shoot.
+    await step('search', async () => {
+      const b = p.locator('.search-bar-box').filter({ visible: true }).first();
+      if (await b.count()) { await clickEl(b); await wait(p, 1400); await S.view('search'); await esc(p); }
+    });
     await S.full();
   } },
   plp: { path: '/plp/sp_run_app_male', run: async (p, S) => { await S.view('default'); await S.full(); } },
   pdp: { path: PDP, run: async (p, S) => { await S.view('default'); await S.full(); } },
+  cart: { path: '/cart', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  category: { path: '/category', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  account: { path: '/my-account', run: async (p, S) => { await S.view('default'); } },
 };
 
 const b = await chromium.launch();
@@ -140,6 +215,7 @@ for (const { k, mob } of runs) {
     const resp = await p.goto(target, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => null);
     if (!(await loadedOk(p, resp))) { log('  LOAD FAILED', name, '- keeping existing images'); await ctx.close(); continue; }
     await p.waitForTimeout(7000);
+    await hideStaffDialog(p);
     await spec.run(p, S);
   } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
   total += S.count;

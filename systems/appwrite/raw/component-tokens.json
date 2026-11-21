@@ -109,6 +109,10 @@
      "var": "--color-emerald-700",
      "type": "color"
     },
+    "800": {
+     "var": "--color-emerald-800",
+     "type": "color"
+    },
     "900": {
      "var": "--color-emerald-900",
      "type": "color"
@@ -479,6 +483,10 @@
     },
     "800": {
      "var": "--color-zinc-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-zinc-900",
      "type": "color"
     }
    }

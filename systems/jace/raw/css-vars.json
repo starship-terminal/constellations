@@ -29,7 +29,7 @@
   "bodyFont": "\"Inter Variable\"",
   "colorScheme": "normal",
   "htmlClass": "",
-  "resolvedCount": 834
+  "resolvedCount": 839
  },
  "signinResolved": {
   "--color-shell": "color(srgb 0.035 0.035 0.043)",
@@ -317,6 +317,10 @@
   "--context-menu-spacing-default": "1rem",
   "--motion-attention-duration": ".6s",
   "--motion-attention-easing": "cubic-bezier(0,0,.2,1)",
+  "--motion-calm-enter-duration": ".22s",
+  "--motion-calm-enter-easing": "cubic-bezier(.25,.1,.25,1)",
+  "--motion-calm-settle-duration": ".24s",
+  "--motion-calm-settle-easing": "cubic-bezier(.25,.1,.25,1)",
   "--motion-celebrate-duration": ".36s",
   "--motion-celebrate-easing": "cubic-bezier(.2,.8,.2,1)",
   "--motion-enter-duration": ".16s",
@@ -351,6 +355,7 @@
   "--platform-new-text-line-height-fancy-md": "2rem",
   "--platform-new-text-line-height-fancy-xl": "2.5rem",
   "--platform-new-text-line-height-fancy-xs": "2rem",
+  "--platform-new-text-line-height-label": "1.25rem",
   "--platform-new-text-line-height-lg": "1.75rem",
   "--platform-new-text-line-height-md": "1.25rem",
   "--platform-new-text-line-height-message": "1.5",
@@ -871,14 +876,14 @@
   {
    "name": "inline-0",
    "media": "",
-   "bytes": 335170
+   "bytes": 335573
   }
  ],
  "counts": {
   "rules": 409,
   "fonts": 5,
   "names": {
-   "token": 891,
+   "token": 897,
    "app": 7,
    "utility": 0,
    "tailwind": 303
@@ -1263,6 +1268,10 @@
    "properties": {
     "--motion-attention-duration": ".6s",
     "--motion-attention-easing": "cubic-bezier(0,0,.2,1)",
+    "--motion-calm-enter-duration": ".22s",
+    "--motion-calm-enter-easing": "cubic-bezier(.25,.1,.25,1)",
+    "--motion-calm-settle-duration": ".24s",
+    "--motion-calm-settle-easing": "cubic-bezier(.25,.1,.25,1)",
     "--motion-celebrate-duration": ".36s",
     "--motion-celebrate-easing": "cubic-bezier(.2,.8,.2,1)",
     "--motion-enter-duration": ".16s",
@@ -1297,6 +1306,7 @@
     "--platform-new-text-line-height-fancy-md": "var(--primitives-font-line-height-leading-8)",
     "--platform-new-text-line-height-fancy-xl": "var(--primitives-font-line-height-leading-10)",
     "--platform-new-text-line-height-fancy-xs": "var(--primitives-font-line-height-leading-8)",
+    "--platform-new-text-line-height-label": "var(--primitives-font-line-height-leading-5)",
     "--platform-new-text-line-height-lg": "var(--primitives-font-line-height-leading-7)",
     "--platform-new-text-line-height-md": "var(--primitives-font-line-height-leading-5)",
     "--platform-new-text-line-height-message": "var(--primitives-font-line-height-message)",
@@ -2094,6 +2104,8 @@
    ],
    "properties": {
     "--motion-attention-duration": "0s",
+    "--motion-calm-enter-duration": "0s",
+    "--motion-calm-settle-duration": "0s",
     "--motion-celebrate-duration": "0s",
     "--motion-enter-duration": "0s",
     "--motion-settle-duration": "0s"
@@ -2186,6 +2198,7 @@
     "--leading-fancy-md": "var(--primitives-font-line-height-leading-7)",
     "--leading-fancy-xs": "var(--primitives-font-line-height-leading-7)",
     "--leading-base": "var(--primitives-font-line-height-leading-5)",
+    "--leading-label": "var(--primitives-font-line-height-leading-5)",
     "--leading-message": "var(--primitives-font-line-height-message)",
     "--rounded-none": "var(--primitives-radius-rounded-none)",
     "--rounded-sm": "var(--primitives-radius-rounded-sm)",
@@ -8476,6 +8489,26 @@
     "kind": "easing",
     "value": "cubic-bezier(0,0,.2,1)"
    },
+   "--motion-calm-enter-duration": {
+    "raw": ".22s",
+    "kind": "duration",
+    "value": "0.22s"
+   },
+   "--motion-calm-enter-easing": {
+    "raw": "cubic-bezier(.25,.1,.25,1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.25,.1,.25,1)"
+   },
+   "--motion-calm-settle-duration": {
+    "raw": ".24s",
+    "kind": "duration",
+    "value": "0.24s"
+   },
+   "--motion-calm-settle-easing": {
+    "raw": "cubic-bezier(.25,.1,.25,1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.25,.1,.25,1)"
+   },
    "--motion-celebrate-duration": {
     "raw": ".36s",
     "kind": "duration",
@@ -8677,6 +8710,10 @@
    },
    "--platform-new-text-line-height-fancy-xs": {
     "raw": "2rem",
+    "kind": "other"
+   },
+   "--platform-new-text-line-height-label": {
+    "raw": "1.25rem",
     "kind": "other"
    },
    "--platform-new-text-line-height-lg": {
@@ -13199,6 +13236,26 @@
     "kind": "easing",
     "value": "cubic-bezier(0,0,.2,1)"
    },
+   "--motion-calm-enter-duration": {
+    "raw": ".22s",
+    "kind": "duration",
+    "value": "0.22s"
+   },
+   "--motion-calm-enter-easing": {
+    "raw": "cubic-bezier(.25,.1,.25,1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.25,.1,.25,1)"
+   },
+   "--motion-calm-settle-duration": {
+    "raw": ".24s",
+    "kind": "duration",
+    "value": "0.24s"
+   },
+   "--motion-calm-settle-easing": {
+    "raw": "cubic-bezier(.25,.1,.25,1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.25,.1,.25,1)"
+   },
    "--motion-celebrate-duration": {
     "raw": ".36s",
     "kind": "duration",
@@ -13400,6 +13457,10 @@
    },
    "--platform-new-text-line-height-fancy-xs": {
     "raw": "2rem",
+    "kind": "other"
+   },
+   "--platform-new-text-line-height-label": {
+    "raw": "1.25rem",
     "kind": "other"
    },
    "--platform-new-text-line-height-lg": {

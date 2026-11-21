@@ -1,87 +1,141 @@
 <!doctype html>
-<html lang="en" data-mode="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nothing style guide</title>
+<meta name="description" content="Nothing design tokens and the public storefront components, rendered from tokens.json.">
 <style>
 :root {
-  --page: #f4f4f4;
-  --ink: #040404;
-  --muted: #595a5a;
-  --on-dark: #ffffff;
-  --footer: #040404;
-  --accent: #ffc700;
-  --field: #3c3c3c99;
-  --sans: "NType82-Regular", sans-serif;
-  --dot: "Ndot-Regular", sans-serif;
-  --mono: "Geist Mono Variable", ui-monospace, monospace;
-  color-scheme: light;
+  --color-accent-red: #c8102e;
+  --color-accent-yellow: #ffc700;
+  --color-accent-blue: #002f6c;
+  --color-greyscale-100: #f4f4f4;
+  --color-greyscale-150: #ededed;
+  --color-greyscale-200: #d8d9d9;
+  --color-greyscale-300: #cbcccc;
+  --color-greyscale-400: #bec0c0;
+  --color-greyscale-default: #b1b3b3;
+  --color-greyscale-600: #9b9d9d;
+  --color-greyscale-700: #858787;
+  --color-greyscale-800: #6f7070;
+  --color-greyscale-900: #595a5a;
+  --color-greyscale-1000: #3c3c3c;
+  --color-greyscale-black: #040404;
+  --color-greyscale-white: #ffffff;
+  --color-greyscale-dm-light: #181818;
+  --color-greyscale-dm-dark: #040404;
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+  --font-family-body: NType82-Regular, sans-serif;
+  --font-family-headline: NType82-Headline, sans-serif;
+  --font-family-dot: Ndot-Regular, sans-serif;
+  --font-family-dot-bold: Ndot-Bold, sans-serif;
+  --font-family-mono: "Geist Mono Variable", ui-monospace, monospace;
+  --font-family-geist: "Geist Variable", sans-serif;
+  --font-family-lattera: LatteraMonoLL, ui-monospace, monospace;
+  --space-header: 64px;
+  --space-header-space: 4rem;
+  --space-aside: 400px;
+  --space-grid-item: 355px;
+  --space-cart-summary: 250px;
+  --space-cart-summary-discount: 300px;
+  --radius-none: 0px;
+  --radius-control: 4px;
+  --radius-field: 800px;
+  --color-page: var(--color-greyscale-100);
+  --color-surface: var(--color-greyscale-white);
+  --color-text: var(--color-greyscale-black);
+  --color-promo: var(--color-accent-yellow);
+  --color-on-promo: var(--color-greyscale-black);
+  --color-field: #e9ecef;
+  --component-promo-bar-text: var(--color-greyscale-black);
+  --component-promo-bar-font-size: 16px;
+  --component-promo-bar-height: 29.75px;
+  --component-hero-cta-background: var(--color-greyscale-white);
+  --component-hero-cta-text: var(--color-greyscale-black);
+  --component-hero-cta-radius: 4px;
+  --component-hero-cta-height: 40px;
+  --component-hero-cta-padding: 12px;
+  --component-text-field-background: #e9ecef;
+  --component-text-field-text: var(--color-ink);
+  --component-text-field-radius: 800px;
+  --component-text-field-height: 44px;
+  --component-text-field-font-size: 18px;
+  --component-cart-button-size: 32px;
+  --sg-sans: NType82-Regular, "Helvetica Neue", Arial, sans-serif;
+  --sg-dot: Ndot-Regular, ui-monospace, monospace;
+  --sg-mono: "Geist Mono Variable", ui-monospace, Menlo, monospace;
 }
-[data-mode="dark"] {
-  --page: #181818;
-  --ink: #ffffff;
-  --muted: #d8d9d9;
-  --on-dark: #040404;
-  --footer: #040404;
-  color-scheme: dark;
+[data-mode="dark"], .dark {
+  --color-page: var(--color-greyscale-dm-dark);
+  --color-surface: var(--color-greyscale-dm-light);
+  --color-text: var(--color-greyscale-white);
+  --color-promo: var(--color-accent-yellow);
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--page); color: var(--ink); font: 400 16px/22.4px var(--sans); }
-header, main { max-width: 960px; margin: 0 auto; padding: 32px 16px; }
-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
-h1 { font: 400 40px/40px var(--sans); margin: 0; }
-h2 { font: 400 24px/26.4px var(--sans); margin: 32px 0 12px; }
-button.toggle { background: var(--ink); color: var(--page); border: 0; border-radius: 4px; padding: 12px 16px; font: 400 16px/22.4px var(--sans); }
-.row { display: flex; flex-wrap: wrap; gap: 8px; }
-.swatch { width: 140px; }
-.swatch i { display: block; height: 64px; border-radius: 4px; }
-.swatch span { display: block; font: 400 12px/15px var(--mono); margin-top: 8px; }
-.promo { background: var(--accent); color: #040404; border-radius: 4px; height: 30px; display: flex; align-items: center; padding: 0 16px; font: 57 20px/20px "Ndot-Bold", sans-serif; letter-spacing: 0; text-transform: uppercase; }
-.pill { margin-top: 8px; background: #ffffffcc; color: #040404; border-radius: 4px; height: 48px; display: flex; align-items: center; padding: 16px; backdrop-filter: blur(45px); }
-.btn { display: inline-flex; align-items: center; height: 40px; padding: 12px 16px; border-radius: 4px; background: #fff; color: #040404; text-decoration: none; }
-.bag { display: inline-flex; align-items: center; height: 48px; padding: 16px; border-radius: 6px; background: #040404; color: #fff; font: 400 11px/12.1px "LatteraMonoLL", ui-monospace, monospace; }
-footer.demo { background: var(--footer); color: var(--on-dark); padding: 32px 16px; }
-footer.demo a { color: #fff; font: 400 40px/40px var(--dot); text-transform: uppercase; text-decoration: none; margin-right: 16px; }
-input.demo { display: block; margin-top: 16px; width: 320px; height: 48px; border: 0; border-radius: 4px; background: var(--field); color: #fff; padding: 8px 16px; font: 400 12px/15px var(--mono); text-transform: uppercase; }
-.note { color: var(--muted); font-size: 14px; }
+body { margin: 0; font: 400 16px/1.4 var(--sg-sans); color: var(--color-greyscale-black, #040404); background: var(--color-greyscale-100, #f4f4f4); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 32px/1.1 var(--sg-dot); margin: 0 0 8px; letter-spacing: 0.04em; }
+h2.sh { font: 400 12px/1 var(--sg-dot); letter-spacing: .12em; margin: 48px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-greyscale-200, #d8d9d9); }
+.lead, .note { max-width: 66ch; }
+.note { font-size: 13px; opacity: .7; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.promo { background: var(--color-accent-yellow, #ffc700); color: var(--color-greyscale-black, #040404); text-align: center; padding: 8px 16px; font-size: 16px; }
+.nav { display: flex; align-items: center; gap: 22px; height: 64px; padding: 0 20px; background: var(--color-greyscale-white, #fff); margin: 0 auto 24px; max-width: 980px; }
+.nav .wm { font-family: var(--sg-dot); letter-spacing: .04em; }
+.nav .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 16px; border-radius: 4px; border: 0; background: var(--color-greyscale-white, #fff); color: var(--color-greyscale-black, #040404); font: 400 16px/1 var(--sg-sans); }
+.btn.solid { background: var(--color-greyscale-black, #040404); color: var(--color-greyscale-white, #fff); }
+.field { height: 44px; border: 0; border-radius: 800px; background: #e9ecef; padding: 0 16px; font: 300 18px/1 var(--sg-sans); width: 280px; }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.sw { width: 120px; }
+.sw i { display: block; height: 48px; border-radius: 4px; border: 1px solid var(--color-greyscale-200, #d8d9d9); }
+.sw b, .sw span { display: block; font: 400 11px/1.3 var(--sg-mono); }
+.sw span { opacity: .65; }
 </style>
 </head>
 <body>
-<header>
-  <h1>Nothing</h1>
-  <button class="toggle" type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Theme</button>
-</header>
 <main>
-  <p class="note">Values from the 2026-11-19 capture of nothing.tech. Proprietary faces fall back to the system font.</p>
-  <h2>Colour</h2>
-  <div class="row" id="swatches"></div>
-  <h2>Promo and header</h2>
-  <div class="promo">Black Friday</div>
-  <div class="pill">Nothing (R)</div>
-  <h2>Controls</h2>
-  <p><a class="btn" href="#controls">Shop now</a></p>
-  <p><span class="bag">£579 Add to bag</span></p>
-  <h2>Type</h2>
-  <p style="font-size:48px;line-height:48px;margin:0">The tech you want.</p>
-  <p class="note">Display 48px / 48px, NType82 weight 400. Muted line uses greyscale-900.</p>
+  <div class="promo">The Black Friday deals you've waited for are here</div>
+  <div class="nav"><span class="wm">NOTHING (R)</span><span class="sp"></span><span>AUDIO</span><span>PHONES</span></div>
+  <h1>NOTHING</h1>
+  <p class="lead">Public storefront tokens from nothing.tech, read 2026-11-21. Values come from tokens.json. The theme toggle switches the product-page dark set. The site does not expose a second CSS variable sheet.</p>
+  <p><button type="button" id="theme">Toggle theme</button></p>
+  <h2 class="sh">Controls</h2>
+  <p><button class="btn">Shop now</button> <button class="btn solid">Continue shopping</button></p>
+  <p><input class="field" placeholder="Search" readonly></p>
+  <h2 class="sh">Colour</h2>
+  <div class="swatches" id="swatches"></div>
+  <p class="note">Channel tokens are the declared rgb triplets. The contact field fill #e9ecef is a computed style, not a named custom property.</p>
 </main>
-<footer class="demo">
-  <a href="#about">About</a>
-  <input class="demo" placeholder="Email address" aria-label="Email address">
-</footer>
 <script>
-const light = [
-  ["Page", "#f4f4f4"], ["Ink", "#040404"], ["Muted", "#595a5a"],
-  ["Accent", "#ffc700"], ["Footer", "#040404"], ["On dark", "#ffffff"]
-];
-const el = document.getElementById("swatches");
-for (const [name, hex] of light) {
-  const d = document.createElement("div");
-  d.className = "swatch";
-  d.innerHTML = "<i style=\"background:" + hex + "\"></i><span>" + name + " " + hex + "</span>";
-  el.appendChild(d);
+const TOKENS = {"core":{"color":{"accent":{"red":{"v":"#c8102e","t":"color","s":"css-var --accent-red (light); declared on :root"},"yellow":{"v":"#ffc700","t":"color","s":"css-var --accent-yellow (light); declared on :root"},"blue":{"v":"#002f6c","t":"color","s":"css-var --accent-blue (light); declared on :root"}},"greyscale":{"100":{"v":"#f4f4f4","t":"color","s":"css-var --greyscale-100 (light)"},"150":{"v":"#ededed","t":"color","s":"css-var --greyscale-150 (light)"},"200":{"v":"#d8d9d9","t":"color","s":"css-var --greyscale-200 (light)"},"300":{"v":"#cbcccc","t":"color","s":"css-var --greyscale-300 (light)"},"400":{"v":"#bec0c0","t":"color","s":"css-var --greyscale-400 (light)"},"default":{"v":"#b1b3b3","t":"color","s":"css-var --greyscale-default (light)"},"600":{"v":"#9b9d9d","t":"color","s":"css-var --greyscale-600 (light)"},"700":{"v":"#858787","t":"color","s":"css-var --greyscale-700 (light)"},"800":{"v":"#6f7070","t":"color","s":"css-var --greyscale-800 (light)"},"900":{"v":"#595a5a","t":"color","s":"css-var --greyscale-900 (light)"},"1000":{"v":"#3c3c3c","t":"color","s":"css-var --greyscale-1000 (light)"},"black":{"v":"#040404","t":"color","s":"css-var --greyscale-black (light)"},"white":{"v":"#ffffff","t":"color","s":"css-var --greyscale-white (light)"},"dm-light":{"v":"#181818","t":"color","s":"css-var --greyscale-dm-light (light)"},"dm-dark":{"v":"#040404","t":"color","s":"css-var --greyscale-dm-dark (light)"}},"ink":{"v":"#000000","t":"color","s":"css-var --color-dark (light)"},"paper":{"v":"#ffffff","t":"color","s":"css-var --color-light (light)"}},"font":{"family":{"body":{"v":"NType82-Regular, sans-serif","t":"fontFamily","s":"computed fontFamily of promo-bar default (raw/components-computed.json)"},"headline":{"v":"NType82-Headline, sans-serif","t":"fontFamily","s":"font face NType82-Headline 400 in raw/css-vars.json fonts"},"dot":{"v":"Ndot-Regular, sans-serif","t":"fontFamily","s":"font face Ndot-Regular weight 55 in raw/css-vars.json fonts"},"dot-bold":{"v":"Ndot-Bold, sans-serif","t":"fontFamily","s":"font face Ndot-Bold weight 57 in raw/css-vars.json fonts"},"mono":{"v":"\"Geist Mono Variable\", ui-monospace, monospace","t":"fontFamily","s":"font face Geist Mono Variable in raw/css-vars.json fonts"},"geist":{"v":"\"Geist Variable\", sans-serif","t":"fontFamily","s":"font face Geist Variable in raw/css-vars.json fonts"},"lattera":{"v":"LatteraMonoLL, ui-monospace, monospace","t":"fontFamily","s":"font face LatteraMonoLL 400 in raw/css-vars.json fonts"}}},"space":{"header":{"v":"64px","t":"dimension","s":"css-var --header-height (light); declared on :root"},"header-space":{"v":"4rem","t":"dimension","s":"css-var --header-space (light); declared on body"},"aside":{"v":"400px","t":"dimension","s":"css-var --aside-width (light); declared on :root"},"grid-item":{"v":"355px","t":"dimension","s":"css-var --grid-item-width (light); declared on :root"},"cart-summary":{"v":"250px","t":"dimension","s":"css-var --cart-aside-summary-height (light); declared on :root"},"cart-summary-discount":{"v":"300px","t":"dimension","s":"css-var --cart-aside-summary-height-with-discount (light); declared on :root"}},"radius":{"none":{"v":"0px","t":"dimension","s":"computed borderRadius of promo-bar default"},"control":{"v":"4px","t":"dimension","s":"computed borderRadius of hero-cta default"},"field":{"v":"800px","t":"dimension","s":"computed borderRadius of text-field default (pill)"}}},"light":{"color":{"page":{"v":"{color.greyscale.100}","t":"color","s":"body class bg-grey-lightest maps to greyscale-100; sampled page fill on phones collection"},"surface":{"v":"{color.greyscale.white}","t":"color","s":"header and card fill"},"text":{"v":"{color.greyscale.black}","t":"color","s":"computed color of promo-bar and hero-cta"},"promo":{"v":"{color.accent.yellow}","t":"color","s":"yellow announcement bar fill, accent-yellow"},"on-promo":{"v":"{color.greyscale.black}","t":"color","s":"computed color of promo-bar text"},"field":{"v":"#e9ecef","t":"color","s":"computed backgroundColor of text-field default rgb(233, 236, 239)"}},"component":{"promo-bar":{"text":{"v":"{color.greyscale.black}","t":"color","s":"computed color of promo-bar default"},"font-size":{"v":"16px","t":"dimension","s":"computed fontSize of promo-bar default"},"height":{"v":"29.75px","t":"dimension","s":"computed height of promo-bar default"}},"hero-cta":{"background":{"v":"{color.greyscale.white}","t":"color","s":"computed backgroundColor of hero-cta default"},"text":{"v":"{color.greyscale.black}","t":"color","s":"computed color of hero-cta default"},"radius":{"v":"4px","t":"dimension","s":"computed borderRadius of hero-cta default"},"height":{"v":"40px","t":"dimension","s":"computed height of hero-cta default"},"padding":{"v":"12px","t":"dimension","s":"computed paddingTop of hero-cta default"}},"text-field":{"background":{"v":"#e9ecef","t":"color","s":"computed backgroundColor of text-field default"},"text":{"v":"{color.ink}","t":"color","s":"computed color of text-field default rgb(0, 0, 0)"},"radius":{"v":"800px","t":"dimension","s":"computed borderRadius of text-field default"},"height":{"v":"44px","t":"dimension","s":"computed height of text-field default"},"font-size":{"v":"18px","t":"dimension","s":"computed fontSize of text-field default"}},"cart-button":{"size":{"v":"32px","t":"dimension","s":"computed width of cart-button default"}}}},"dark":{"color":{"page":{"v":"{color.greyscale.dm-dark}","t":"color","s":"html.dark on Headphone (1) Pro; --greyscale-dm-dark"},"surface":{"v":"{color.greyscale.dm-light}","t":"color","s":"--greyscale-dm-light, dark surface step"},"text":{"v":"{color.greyscale.white}","t":"color","s":"dark product page paints light type on a dark canvas"},"promo":{"v":"{color.accent.yellow}","t":"color","s":"same accent-yellow; CSS variable sheet does not change under html.dark"}}}};
+const themeBtn = document.getElementById('theme');
+themeBtn.addEventListener('click', () => {
+  const dark = document.documentElement.getAttribute('data-mode') === 'dark';
+  document.documentElement.setAttribute('data-mode', dark ? 'light' : 'dark');
+});
+function flatten(node, prefix, out) {
+  Object.keys(node).forEach((key) => {
+    const child = node[key];
+    const path = prefix ? prefix + '.' + key : key;
+    if (child && child.v !== undefined && child.t === 'color') out.push([path, child]);
+    else if (child && typeof child === 'object') flatten(child, path, out);
+  });
 }
+const rows = [];
+flatten(TOKENS.core.color, 'core.color', rows);
+const box = document.getElementById('swatches');
+rows.forEach(([path, token]) => {
+  const el = document.createElement('div');
+  el.className = 'sw';
+  el.innerHTML = '<i></i><b></b><span></span>';
+  el.querySelector('i').style.background = token.v;
+  el.querySelector('b').textContent = path.replace('core.color.', '');
+  el.querySelector('span').textContent = token.v;
+  box.appendChild(el);
+});
 </script>
 </body>
 </html>

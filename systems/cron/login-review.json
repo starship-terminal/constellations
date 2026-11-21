@@ -1,0 +1,150 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "route": "public Playwright. No session was present. Cron now redirects Login and Sign up into Notion. The Notion app was not captured as Cron.",
+  "probe": {
+    "url": "https://www.cron.com/",
+    "result": "Closed. A prior probe said the email domain is invalid. No code was sent. This pass did not type an email and did not reopen a signed-in URL."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measuredInnerWidth": 1440,
+      "measuredInnerHeight": 900,
+      "deviceScaleFactor": 1
+    },
+    "phone": {
+      "requested": "390x844",
+      "measuredInnerWidth": 390,
+      "measuredInnerHeight": 844,
+      "deviceScaleFactor": 2
+    }
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "Blog",
+        "Changelog",
+        "Docs",
+        "Login",
+        "Sign up",
+        "Cron is now Notion Calendar",
+        "Privacy Policy",
+        "Terms of Service",
+        "Web app",
+        "Download",
+        "Mobile menu"
+      ],
+      "reached": [
+        "Home",
+        "Blog",
+        "Changelog",
+        "Blog post",
+        "Mobile menu",
+        "Login wall",
+        "Sign up wall",
+        "Web app wall",
+        "Legacy signup",
+        "Legacy download"
+      ]
+    },
+    "settings": {
+      "items": [
+        "Language: English (US) on the Notion login wall"
+      ],
+      "reached": [
+        "Language row visible on the Notion login wall. Not opened."
+      ]
+    },
+    "create": {
+      "items": [
+        "Sign up",
+        "Continue",
+        "Google",
+        "Apple",
+        "Microsoft",
+        "ChatGPT",
+        "Passkey",
+        "SSO",
+        "Sign in with Google"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    {"name": "Home, dark, 1440", "file": "screenshots/home-dark-default.png"},
+    {"name": "Home, dark, full", "file": "screenshots/home-dark-full.png"},
+    {"name": "Blog, light, 1440", "file": "screenshots/blog-light-default.png"},
+    {"name": "Blog, light, full", "file": "screenshots/blog-light-full.png"},
+    {"name": "Blog, light, viewport alias", "file": "screenshots/blog-light-viewport.png"},
+    {"name": "Blog, light, page alias", "file": "screenshots/blog-light-page.png"},
+    {"name": "Changelog, light, 1440", "file": "screenshots/changelog-light-default.png"},
+    {"name": "Changelog, light, full, bounded", "file": "screenshots/changelog-light-full.png"},
+    {"name": "Changelog, light, viewport alias", "file": "screenshots/changelog-light-viewport.png"},
+    {"name": "Changelog, light, page alias", "file": "screenshots/changelog-light-page.png"},
+    {"name": "Blog post, light", "file": "screenshots/post-light-default.png"},
+    {"name": "Blog post, light, full", "file": "screenshots/post-light-full.png"},
+    {"name": "Blog post, light, viewport alias", "file": "screenshots/post-light-viewport.png"},
+    {"name": "Blog post, light, page alias", "file": "screenshots/post-light-page.png"},
+    {"name": "Home, phone", "file": "screenshots/mobile-home-dark-default.png"},
+    {"name": "Home, phone, menu", "file": "screenshots/mobile-home-dark-menu.png"},
+    {"name": "Home, phone, full", "file": "screenshots/mobile-home-dark-full.png"},
+    {"name": "Blog, phone", "file": "screenshots/mobile-blog-light-default.png"},
+    {"name": "Blog, phone, full", "file": "screenshots/mobile-blog-light-full.png"},
+    {"name": "Blog, phone, viewport alias", "file": "screenshots/mobile-blog-light-viewport.png"},
+    {"name": "Blog, phone, page alias", "file": "screenshots/mobile-blog-light-page.png"},
+    {"name": "Notion login wall from header Login", "file": "screenshots/login-notion-wall-desktop.png"},
+    {"name": "Notion signup wall from header Sign up", "file": "screenshots/signup-notion-wall-desktop.png"},
+    {"name": "Notion login wall, phone", "file": "screenshots/login-notion-wall-phone.png"},
+    {"name": "Notion Calendar login from Web app", "file": "screenshots/webapp-notion-calendar-wall.png"},
+    {"name": "Legacy Cron signup", "file": "screenshots/signup-legacy-desktop.png"},
+    {"name": "Legacy Cron download", "file": "screenshots/download-legacy-desktop.png"}
+  ],
+  "walls": [
+    {
+      "control": "Login",
+      "url": "https://app.notion.com/login",
+      "asks": "Email, Continue, Google, ChatGPT, Apple, Microsoft, Passkey, SSO, Sign up",
+      "stopped": true
+    },
+    {
+      "control": "Sign up",
+      "url": "https://app.notion.com/signup",
+      "asks": "Work email, Continue, Google, Microsoft, ChatGPT, Log in",
+      "stopped": true
+    },
+    {
+      "control": "Web app",
+      "url": "https://www.notion.so/login/calendar",
+      "asks": "Email, Continue, Google, Apple, Microsoft, Passkey, SSO, Sign up. Heading: Welcome to Notion Calendar.",
+      "stopped": true
+    },
+    {
+      "control": "Legacy /signup",
+      "url": "https://www.cron.com/signup",
+      "asks": "Sign in with Google, Browse docs",
+      "stopped": true
+    }
+  ],
+  "gaps": [
+    "Signed-in calendar, settings, and create flows were not opened. No session was present.",
+    "Cron now redirects Login, Sign up, and Web app into Notion. The Notion app was not walked.",
+    "Identity providers were not clicked.",
+    "Email fields were not filled. Continue was not clicked.",
+    "Docs, the rebrand banner, Privacy, Terms, and Download leave cron.com for Notion. Those Notion pages were not captured as Cron.",
+    "Legacy download buttons were not clicked. A support address on that page was masked.",
+    "Changelog entries after the first screen, older blog posts, Twitter, and cronhq.notion.site docs were recorded and not each opened.",
+    "The changelog page is 113351px tall. The full shot stops at 112000px.",
+    "Homepage product-demo emails were masked before the screenshots were committed."
+  ],
+  "not_submitted": [
+    "No email, name, phone, password, or code typed",
+    "No identity provider clicked",
+    "No form submitted",
+    "No account created",
+    "No captcha solved",
+    "No onboarding filled",
+    "No download started"
+  ]
+}

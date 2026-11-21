@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-20T20:33:44.432Z",
+  "screenshot": "help-search-default.png",
+  "sanitizedSourceUrl": null,
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "configuredViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "documentSize": {
+      "width": 1440,
+      "height": 1860
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "capture": {
+    "mode": "clip",
+    "scale": "device",
+    "clip": {
+      "x": 275.21875,
+      "y": 243.453125,
+      "width": 584.78125,
+      "height": 56
+    }
+  },
+  "png": {
+    "width": 1168,
+    "height": 112
+  },
+  "dimensionCheck": {
+    "status": "fail",
+    "expected": {
+      "width": 1170,
+      "height": 112
+    },
+    "basis": "clip",
+    "error": "Screenshot dimension mismatch: PNG 1168x112, expected 1170x112"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+  }
+}

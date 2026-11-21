@@ -1,0 +1,9 @@
+{
+  "h": 48,
+  "radius": "16px",
+  "bg": "rgb(36, 35, 38)",
+  "color": "rgb(255, 255, 255)",
+  "font": "Inter, Arial, sans-serif",
+  "size": "15px",
+  "placeholder": "Artists, tracks, podcasts..."
+}

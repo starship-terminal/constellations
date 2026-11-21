@@ -47,7 +47,7 @@ Good for: Product-research marketing: white-ground editorial SaaS surface with I
 
 Captured 2026-11-11, signed out (every captured surface is public; the app behind /sign-in was never reached and no form was submitted). Themes: light.
 
-A token set and component reference for Ballpark's public site — for building product-research marketing, pricing and sign-in surfaces in the style of the real thing. It was read from **ballparkhq.com** on **2026-11-11**, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the home page (with the Solutions menu opened), features, coach, templates, enterprise, blog, pricing, the sales contact form and the sign-in page.
+A token set and component reference for Ballpark's public site — for building product-research marketing, pricing and sign-in surfaces in the style of the real thing. Tokens were read from **ballparkhq.com** on **2026-11-11**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. On **2026-11-21** the public tree was mapped from the homepage and re-photographed at the same widths: every nav target, the Platform and Solutions menus, the phone sheet, and the auth walls (photographed, not submitted). The map is [site-tree.md](site-tree.md).
 
 Ballpark is worth a capture because it is a current reference for a clean, editorial SaaS marketing surface: a white ground, display type in **Inter Display** at up to 96px/800, one near-black CTA recipe (`#111827`, 7px radius, 36px pills) repeated from the nav to the pricing page, a coral flame ramp (`#fc4a2b` family) reserved for the "NEW" chip and small accents, a hairline-bordered ghost button next to it, and a full Framer `--token-*` palette — the Tailwind v3 ramps plus the product's own colours — declared on `body`.
 
@@ -98,7 +98,6 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **One painted theme.** Every captured route paints light; the bundle declares no dark variant, so no dark set is emitted.
 - **Framer uuid token names.** `--token-<uuid>` names are unstable build artefacts; tokens.json emits them under readable Tailwind/brand names while each leaf keeps the real variable in `$extensions.source`.
 - **Anchor `color` reads `#0000ee`.** Framer paints link/button text on inner spans; the anchor's own computed colour is the UA default. `light.accentText`/`link` read the text child (`textStyle` in the raw file), never the anchor.

@@ -13,8 +13,9 @@ Coinbase is worth a capture because the site is a **styled-components build that
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (38, 85 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the promo row + sticky white nav, the pill CTA language, the dark asset band, the explore price table, the grey footer band and the sign-in card |
 | [components/crops/](components/crops) | 87 element screenshots, `{component}-{state}.png` |
-| [screenshots/](screenshots) | 36 `{page}-{theme}-{state}.png` captures, each with a `.capture.json` sidecar recording the actual browser width, scale and dimension check. Desktop 1440 x 900 at 1x, `-full` whole pages, `mobile-*` phone shots at 2x; the long mobile fulls exceed one GPU texture and are stitched from `.partN` tiles (bounded at 8 chunks each) |
+| [screenshots/](screenshots) | 117 `{page}-{theme}-{state}.png` captures, each with a `.capture.json` sidecar recording the actual browser width, scale and dimension check. Desktop 1440 x 900 at 1x, `-full` whole pages, `mobile-*` phone shots at 2x. The 2026-11-21 refresh adds the pages the homepage controls open, plus search, language, region, and the phone drawer. |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — 957 rules plus the `themes` bin holding the 830/210-var `.coinbase.light`/`.coinbase.dark` theme elements and 11 @font-face records), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads). The full-colour pre-quantization shots are kept outside the repo |
+| [site-tree.md](site-tree.md) | Which header, menu, footer, search, language, and phone control opens which page or in-page interaction. Mapped 2026-11-21. Login, signup, other hosts, and social profiles are recorded stops. |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
 
 ## Brief
@@ -28,7 +29,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 1. Do take colours from `core.color`'s named families.
 2. Do reproduce the pill the way the site does.
 3. Do treat the dark asset panel as an island inside the single light theme.
-4. Don't invent a page-level dark theme.
+4. Don't treat the home page as the only theme. Home is light. Agents and Derivatives paint a dark page.
 5. Don't infer the Coinbase product from the marketing pages or the sign-in card.
 6. Don't copy the Coinbase logo, the app-mock artwork, or the sparkline/brand glyphs into anything that ships.
 
@@ -81,7 +82,9 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 
 ## What was captured
 
-Routes: `/en-sg` (with the promo row, sticky white nav, CoinbaseDisplay hero, the .coinbase.dark asset band and footer), `/en-sg/explore` (the crypto market price table with filter chips and the top-movers rail), `/en-sg/one`, `/en-sg/business`, `/en-sg/prime`, `/en-sg/advanced-trade`, `/en-sg/developer-platform`, `/en-sg/usdc`, `/en-sg/learn`, `/en-sg/about`, `/en-sg/careers`, `/en-sg/blog`, `/legal/privacy`, the mobile passes for home/explore/one/business at 390 x 844 with the hamburger menu opened by its own press, and `login.coinbase.com/signin` at rest. 36 screenshots, 38 measured components in 85 states, 87 crops.
+The 2026-11-17 pass measured `/en-sg` (promo row, sticky white nav, CoinbaseDisplay hero, the `.coinbase.dark` asset band and footer), `/en-sg/explore`, `/en-sg/one`, `/en-sg/business`, `/en-sg/prime`, `/en-sg/advanced-trade`, `/en-sg/developer-platform`, `/en-sg/usdc`, `/en-sg/learn`, `/en-sg/about`, `/en-sg/careers`, `/en-sg/blog`, `/legal/privacy`, the phone passes for home, explore, one, and business, and `login.coinbase.com/signin` at rest. 38 components in 85 states, 87 crops.
+
+The 2026-11-21 refresh mapped every homepage control into [site-tree.md](site-tree.md) and recaptured the public pages those controls open, in headed Chrome at 1440×900 and 390×844. New routes include agents, token sales, listings, token manager, prime financing and custody, staking, exchange, international exchange, derivatives, verified pools, payments, affiliates, security, press, legal, stocks, market stats, Bytes, card, XSGD, a Bitcoin price page, an Apple stock page, two learn articles, options, the partner offer, two developer product pages, the institutional clients page, vendors, cookie policy, and terms. Desktop overlays: Individuals menu, search (opened, not submitted), language dialog, country dialog. Phone: menu open and Individuals expanded. Cookie dialogs were hidden, never accepted. Sign-in was loaded and stopped. No email was typed.
 
 ## Known gaps
 
@@ -92,8 +95,9 @@ Routes: `/en-sg` (with the promo row, sticky white nav, CoinbaseDisplay hero, th
 - **The email field's focus ring is not captured as a token**: the field element itself shows no outline/border change when focused (the ring lives on its container wrapper and the focused container was not separately measured).
 - **The sign-in card boundary is narrow**: `signin-card` measures the content column (400 x 146); the full page paints a plain centred surface with no card chrome of its own.
 - **Business, advanced-trade, developer-platform, usdc, learn, about, careers, blog and legal/privacy** are captured as full screenshots but their internal components were not individually measured (the spec covers shell + home + explore + one/prime titles + footer + mobile + sign-in).
-- **The site geolocates**: every route was captured at the Singapore locale (`/en-sg`, SGD prices, the "trusted crypto exchange 🇸🇬" hero, Singpass/SGX-relevant promo) — a US-locale pass was not captured.
-- `login.coinbase.com` beyond the sign-in card, the dashboard, trading and every post-auth surface are out of scope by design — sign-in was a boundary only.
+- **The site geolocates**: every route was captured at the Singapore locale (`/en-sg`, SGD prices, the "trusted crypto exchange 🇸🇬" hero, Singpass promo). The country dialog lists other regions. None was switched.
+- **Agents and Derivatives are dark pages.** The 2026-11-17 note that every marketing route paints the same light surface is wrong for those two. Their dark values were not re-measured on this pass. Screenshots only.
+- `login.coinbase.com` beyond the sign-in card, the dashboard, trading, and every post-auth surface stay a boundary. The 2026-11-21 load stopped on the email card. No email typed. Passkey, Google, and Apple not clicked.
 
 ## How the values were read
 
@@ -107,6 +111,6 @@ Routes: `/en-sg` (with the promo row, sticky white nav, CoinbaseDisplay hero, th
 - **Do take colours from `core.color`'s named families.** Eleven declared CDS ramps: `blue.60 #0052ff` the brand accent on the Sign-up pill, the `gray` neutral ramp grounding page/footer/dark-band surfaces ([nav](components/crops/nav-cta-default.png)).
 - **Do reproduce the pill the way the site does.** A `borderRadius-1000` pill — blue `light.accent` for primary, near-black `#0a0b0d` for the hero and dark-band CTAs, `#282b31` for chips inside the band ([hero CTA](components/crops/hero-cta-default.png)).
 - **Do treat the dark asset panel as an island inside the single light theme.** `light.surface.dark` `#0a0b0d` is `.coinbase.dark` remapped on a child element, not a page theme ([dark band](components/crops/dark-band-default.png)).
-- **Don't invent a page-level dark theme.** Every marketing route paints the same light surface ([home](screenshots/home-light-full.png)).
+- **Don't invent a page-level dark theme for the home marketing pages.** Home, explore, and the product marketing pages paint a light surface ([home](screenshots/home-light-full.png)). Agents and Derivatives paint a dark page of their own ([agents](screenshots/agents-light-default.png)).
 - **Don't infer the Coinbase product from the marketing pages or the sign-in card.** Everything behind `login.coinbase.com` was measured at rest only ([sign-in](screenshots/signin-light-default.png)).
 - **Don't copy the Coinbase logo, the app-mock artwork, or the sparkline/brand glyphs into anything that ships.** They are Coinbase's and its partners' marks ([hero](screenshots/home-light-default.png)).

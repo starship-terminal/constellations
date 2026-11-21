@@ -1,27 +1,25 @@
-# Patterns
-
-Public signed-out pages only. Viewport was 1169 by 731, device pixel ratio 2. Screenshots were not saved.
+# Pastel patterns
 
 ## Marketing home
 
-https://usepastel.com/ opens with a full-width `#165dfb` announcement bar, 40px tall, padding 10px 20px. Under it, a 68px nav holds text links, a bordered Login button and a `#454745` Sign up button. The hero h1 is Figtree 52.605px, weight 400, letter-spacing -0.8px, on a white page. A quote at 21px sits above a blue trial button and a transparent Watch demo button. A stone section `#f5f5f4` follows, padded about 94px on each side at this width. The declared container max width is 1440px.
+A blue announcement bar, a white header with Figtree links, a 60px display headline, a blue pill CTA beside a ghost button, and a product demo card. See [home-light-default](screenshots/home-light-default.png) and [home-light-full](screenshots/home-light-full.png). Phone width stacks the CTAs and opens the nav in a white sheet: [mobile-home-light-default](screenshots/mobile-home-light-default.png), [mobile-home-light-menu](screenshots/mobile-home-light-menu.png).
 
 ## Pricing
 
-https://usepastel.com/plans repeats the same nav and the clamp display heading, centred at 800px. A grey pill says Pricing. Four plan columns sit in a row: Free on `#f5f5f4`, Pro and Team on white, Enterprise on `#e9e4ff`. Each column is 269px with a 1px `#5050504d` border and a green `#12b981` button. A 70 by 36 billing switch sits above the columns. A sky band `#bae6fc` (`.messages-section`) sits lower on the page. Get started and Contact us were not pressed.
+Four plan columns. Free is `#f5f5f4`. Enterprise is a lilac wash. A Monthly / Annual switch sits above the columns. Annual changes the prices and the selected label weight (Monthly 400, Annual 600 after the switch click). See [plans-light-annual](screenshots/plans-light-annual.png).
 
-## Features
+## Customers
 
-https://usepastel.com/features uses the same nav and a smaller hero: 36px, line-height 49.5px, colour `#1c1917`. Feature rows use 20px headings. A blue callout pill (`#dbeafe` / `#2563eb`) marks New. The closing band is `#4f77ff` with padding 80px 20px 100px and a `#2e52cc` button, 62px tall, 6px radius.
+A separate Tailwind shell on `#f5f5f4` with a story grid. See [customers-light-default](screenshots/customers-light-default.png) and one story at [customer-light-default](screenshots/customer-light-default.png).
 
-## Signed-out account card
+## Blog
 
-https://usepastel.com/login and https://usepastel.com/signup share a `#f5f5f4` page and a white card, 550px wide, 12px radius, 24px inline padding, no shadow. The title is 30px weight 500, `#44403c`. A Google button iframe sits above an OR divider in `#78716c`. Fields are 400px wide and 48px tall. Login asks for email and password. Signup asks for name, email and password, plus a 13px legal line. Neither form was submitted. SSO links to `/sso` and was not opened.
+Inter on white, with its own nav. One post and one tag confirm the template: [blog-post-light-default](screenshots/blog-post-light-default.png), [blog-tag-light-default](screenshots/blog-tag-light-default.png).
 
-## Footer
+## Login wall
 
-Declared footer copy is `#222222` at 16px, headers at weight 600, links at line-height 32px with no underline. The home footer section computed transparent on white, 435px tall, with 5px bottom padding.
+A centered card on a warm grey page: Google, email, password, a blue Log in button, and an SSO link. Recorded and not used. See [login-light-default](screenshots/login-light-default.png).
 
-## Widths
+## Help and status
 
-Desktop 1440 and phone 390 were not captured. The sheet changes `.main-h1` to 54px under `max-width: 991px` in one breakpoint block, and to 48px, 42px and 36px at smaller breakpoints. Those sizes were not computed in this pane.
+Help center is Intercom's public docs, blue header `#4f77ff`. Status is Instatus, with operational green `#00bc86`. They are linked from the footer and are not the marketing shell.

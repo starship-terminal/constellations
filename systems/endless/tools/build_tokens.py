@@ -1,228 +1,268 @@
 #!/usr/bin/env python3
-"""Build tokens.json (W3C DTCG, Tokens Studio multi-set layout) from the raw captures.
+"""Build tokens.json from the public endless.app capture.
 
-Sources, read from endless.app (what endless.io redirects to) on 2026-11-13:
-  raw/css-vars.json          the custom properties the site's Tailwind v4
-                             stylesheets declare — the shadcn-style semantic
-                             roles (--background/--foreground/--primary/
-                             --muted/--accent/--ring/--sidebar-*/--surface-*),
-                             the --mode-*/--label-*/--chart-*/--series-*
-                             product palettes and Tailwind's own theme vars
-                             (--text-*/--radius-*/--container-*/--spacing/
-                             --ease-*/--blur-*), resolved by
-                             tools/capture/vars.mjs once plain (:root, the
-                             light paint) and once under the html `dark`
-                             class (the next-themes scope the system scheme
-                             and the footer Theme control write)
-  raw/component-tokens.json  the token tree (tools/build_component_tokens.py):
-                             each leaf either names a variable ("var")
-                             resolved per theme or carries a measured value
-                             and the measurement it came from ("source")
-Every token carries $extensions.source: "css-var <name>" or "measured <where>".
+Readings (2026-11-21, signed out, headless Chromium):
+  raw/vars-light.json, raw/vars-dark.json   custom properties on :root, light and dark
+  raw/home-computed.json, raw/home-dark-computed.json
+  raw/signup-hover.json, raw/signup-focus.json, raw/signin.json, raw/signin-email-focus.json
 
-endless.app paints light on a light system and dark on a dark one via
-next-themes (a .dark class on <html> that re-binds every semantic role; the
-dark group of the capture ran under emulated prefers-color-scheme dark, the
-same trigger the site honours). The export holds core, light and dark:
-light roles are the declared :root values, dark roles the .dark re-bindings.
-
-Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
+Colour tokens are the browser's computed style. CSS lab() values are converted
+with the CSS Color 4 Lab to sRGB path (D50, Bradford to D65) and checked
+against flat pixels in the full-colour captures. A value that could not be
+read is not invented.
 """
 import json, pathlib, re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
-V = json.loads((RAW / "css-vars.json").read_text())
-SPEC = json.loads((RAW / "component-tokens.json").read_text())
-
-# Resolved declarations per surface. vars.mjs resolves each custom property on
-# a probe document carrying the site's real sheets, once plain (:root, the
-# light paint) and once with the html `dark` class. DECL[theme][name] is what
-# the browser paints there. A leaf may set "resolve": "<pass>" to look its var
-# up on a different surface than the theme it sits in.
-DECL = {t: {n: v.get("value", v["raw"]) for n, v in V["resolved"][t].items()}
-        for t in V["resolved"]}
+LIGHT = json.loads((RAW / "vars-light.json").read_text())["all"]
+DARK = json.loads((RAW / "vars-dark.json").read_text())["all"]
+HOME = json.loads((RAW / "home-computed.json").read_text())
+HOME_DARK = json.loads((RAW / "home-dark-computed.json").read_text())
 
 
-def norm_color(v):
-    """#rgb, #rrggbb, #rrggbbaa, rgb(), rgba(), hsla() -> #rrggbb or rgba(r, g, b, a)."""
-    v = v.strip().lower()
-    m = re.fullmatch(r"#([0-9a-f]{3,8})", v)
-    if m:
-        h = m.group(1)
-        if len(h) in (3, 4):
-            h = "".join(c * 2 for c in h)
-        r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
-        if len(h) == 8:
-            a = round(int(h[6:8], 16) / 255, 3)
-            return "#%02x%02x%02x" % (r, g, b) if a == 1 else "rgba(%d, %d, %d, %s)" % (r, g, b, ("%g" % a))
-        return "#%02x%02x%02x" % (r, g, b)
-    m = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+%?))?\s*\)", v)
+def lab_to_srgb(L, a, b):
+    fy = (L + 16) / 116
+    fx = fy + (a / 500)
+    fz = fy - (b / 200)
+
+    def finv(t):
+        delta = 6 / 29
+        return t ** 3 if t > delta else 3 * delta * delta * (t - 4 / 29)
+
+    Xn, Yn, Zn = 0.96422, 1.0, 0.82521
+    X, Y, Z = finv(fx) * Xn, finv(fy) * Yn, finv(fz) * Zn
+    M = (
+        (0.9555766, -0.0230393, 0.0631636),
+        (-0.0282895, 1.0099416, 0.0210077),
+        (0.0122982, -0.0204830, 1.3299098),
+    )
+    X65 = M[0][0] * X + M[0][1] * Y + M[0][2] * Z
+    Y65 = M[1][0] * X + M[1][1] * Y + M[1][2] * Z
+    Z65 = M[2][0] * X + M[2][1] * Y + M[2][2] * Z
+    R = 3.2404542 * X65 - 1.5371385 * Y65 - 0.4985314 * Z65
+    G = -0.9692660 * X65 + 1.8760108 * Y65 + 0.0415560 * Z65
+    B = 0.0556434 * X65 - 0.2040259 * Y65 + 1.0572252 * Z65
+
+    def enc(c):
+        c = min(1, max(0, c))
+        return 12.92 * c if c <= 0.0031308 else 1.055 * (c ** (1 / 2.4)) - 0.055
+
+    return tuple(round(enc(c) * 255) for c in (R, G, B))
+
+
+def hex_of(rgb):
+    return "#%02x%02x%02x" % rgb
+
+
+def parse_color(raw):
+    raw = (raw or "").strip()
+    if not raw:
+        raise ValueError("empty colour")
+    if re.fullmatch(r"#[0-9a-fA-F]{6}", raw):
+        return raw.lower()
+    if re.fullmatch(r"#[0-9a-fA-F]{3}", raw):
+        return "#" + "".join(c * 2 for c in raw[1:].lower())
+    m = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+))?\s*\)", raw)
     if m:
         r, g, b, a = m.groups()
-        if a is None:
-            return "#%02x%02x%02x" % (int(r), int(g), int(b))
-        a = float(a[:-1]) / 100 if a.endswith("%") else float(a)
-        return "#%02x%02x%02x" % (int(r), int(g), int(b)) if a == 1 else "rgba(%s, %s, %s, %g)" % (r, g, b, a)
-    m = re.fullmatch(r"hsla?\(\s*0\s*,\s*0%\s*,\s*([\d.]+)%\s*(?:,\s*([\d.]+))?\)", v)
+        if a is None or float(a) >= 0.999:
+            return hex_of((int(r), int(g), int(b)))
+        return "rgba(%d, %d, %d, %g)" % (int(r), int(g), int(b), float(a))
+    m = re.fullmatch(r"lab\(\s*([0-9.]+)%?\s+(-?[0-9.]+)\s+(-?[0-9.]+)(?:\s*/\s*([0-9.]+))?\s*\)", raw)
     if m:
-        lvl = round(float(m.group(1)) * 2.55)
-        a = float(m.group(2) or 1)
-        return "#%02x%02x%02x" % (lvl, lvl, lvl) if a == 1 else "rgba(%d, %d, %d, %g)" % (lvl, lvl, lvl, a)
-    raise ValueError("not a colour: " + v)
+        rgb = lab_to_srgb(float(m.group(1)), float(m.group(2)), float(m.group(3)))
+        if m.group(4) is None or float(m.group(4)) >= 0.999:
+            return hex_of(rgb)
+        return "rgba(%d, %d, %d, %g)" % (*rgb, float(m.group(4)))
+    raise ValueError("not a colour: " + raw)
 
 
-DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
+def src(text):
+    return {"source": text}
 
 
-def check(path, ty, val):
-    """Refuse a value that is not the DTCG type it claims. An alias is checked by the alias pass."""
-    if isinstance(val, str) and val.startswith("{"):
-        return
-    if ty == "dimension" and not DIM.fullmatch(str(val)):
-        raise ValueError(f"{path}: dimension must be one px or rem length, got {val!r}")
-    if ty == "color":
-        norm_color(val) if not str(val).startswith("{") else None
-    if ty == "shadow":
-        for layer in val:
-            for k in ("offsetX", "offsetY", "blur", "spread"):
-                if not DIM.fullmatch(layer[k]):
-                    raise ValueError(f"{path}: shadow {k} {layer[k]!r}")
-    if ty == "number" and not isinstance(val, (int, float)):
-        raise ValueError(f"{path}: number {val!r}")
-    if ty == "fontWeight" and not isinstance(val, int):
-        raise ValueError(f"{path}: fontWeight {val!r}")
-    if ty == "duration" and not re.fullmatch(r"\d+ms", str(val)):
-        raise ValueError(f"{path}: duration {val!r}")
-    if ty == "cubicBezier" and not (isinstance(val, list) and len(val) == 4):
-        raise ValueError(f"{path}: cubicBezier {val!r}")
-    if ty == "gradient":
-        for stop in val:
-            if not str(stop["color"]).startswith("{"):
-                norm_color(stop["color"])
-            if not 0 <= stop["position"] <= 1:
-                raise ValueError(f"{path}: gradient position {stop['position']!r}")
+def color_token(value, source, description=None):
+    token = {"$value": parse_color(value), "$type": "color", "$extensions": src(source)}
+    if description:
+        token["$description"] = description
+    return token
 
 
-def leaf(path, spec, theme):
-    ty = spec["type"]
-    if "var" in spec:
-        name = spec["var"]
-        surface = spec.get("resolve", theme)
-        if name not in DECL[surface]:
-            raise KeyError(f"{path}: {name} is not a resolved variable in raw/css-vars.json ({surface})")
-        val = DECL[surface][name]
-        src = f"css-var {name} ({surface})"
-        if spec.get("source"):
-            src += "; " + spec["source"]
-    else:
-        val = spec["value"]
-        src = spec["source"]
-    if ty == "color" and not str(val).startswith("{"):
-        val = norm_color(val)
-    if ty == "cubicBezier" and isinstance(val, str):
-        m = re.fullmatch(r"cubic-bezier\(\s*([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)\s*\)", val.strip())
-        if m:
-            val = [float("%g" % float(x)) for x in m.groups()]
-        elif val.strip() in ("ease", "ease-in", "ease-out", "ease-in-out", "linear"):
-            val = {"ease": [.25, .1, .25, 1], "ease-in": [.42, 0, 1, 1], "ease-out": [0, 0, .58, 1],
-                   "ease-in-out": [.42, 0, .58, 1], "linear": [0, 0, 1, 1]}[val.strip()]
-    if ty in ("fontWeight", "number") and isinstance(val, str):
-        m = re.fullmatch(r"calc\((-?\d*\.?\d+)\s*/\s*(-?\d*\.?\d+)\)", val)
-        if m:  # Tailwind v4 emits line-heights as calc(a/b) ratios
-            val = round(float(m.group(1)) / float(m.group(2)), 4)
-        elif re.fullmatch(r"-?\d+(\.\d+)?", val):
-            val = float(val) if "." in val else int(val)
-    if ty == "duration" and isinstance(val, str):
-        m = re.fullmatch(r"([\d.]+)(m?s)", val.strip())
-        if m:
-            val = ("%g" % (float(m.group(1)) * (1 if m.group(2) == "ms" else 1000))) + "ms"
-    if ty == "dimension":
-        if isinstance(val, (int, float)):
-            val = "%gpx" % val
-        elif isinstance(val, str) and re.fullmatch(r"-?\d+(\.\d+)?", val.strip()):
-            val = val.strip() + "px"
-    check(path, ty, val)
-    t = {"$value": val, "$type": ty, "$extensions": {"source": src}}
-    if spec.get("description"):
-        t["$description"] = spec["description"]
-    if spec.get("responsive"):
-        t["$extensions"]["responsive"] = spec["responsive"]
-    if spec.get("angle"):
-        t["$extensions"]["angle"] = spec["angle"]
-    return t
+def dim(value, source, description=None):
+    token = {"$value": value, "$type": "dimension", "$extensions": src(source)}
+    if description:
+        token["$description"] = description
+    return token
 
 
-def build(node, theme, path=""):
-    if isinstance(node, dict) and "type" in node and ("value" in node or "var" in node):
-        return leaf(path, node, theme)
-    if isinstance(node, dict) and "$value" in node:
-        return node  # already a DTCG leaf (typography composites)
-    return {k: build(v, theme, f"{path}.{k}" if path else k) for k, v in node.items() if not k.startswith("_")}
+def num(value, source, ty="number"):
+    return {"$value": value, "$type": ty, "$extensions": src(source)}
 
 
-core = build(SPEC["core"], "light")  # scales are theme-independent
-light = build(SPEC["light"], "light")
-dark = build(SPEC["dark"], "dark")
-# The component tokens live in their own top-level spec tree but belong to the
-# exported themes the components were measured on: light.component.*
-light["component"] = build(SPEC["component"], "light")
+def alias(path, source):
+    return {"$value": "{" + path + "}", "$type": "color", "$extensions": src(source)}
 
 
-# every alias must point at a token that exists
-def tokens_of(tree, prefix=""):
-    for k, v in tree.items():
-        if isinstance(v, dict) and "$value" in v:
-            yield prefix + k, v
-        elif isinstance(v, dict):
-            yield from tokens_of(v, prefix + k + ".")
+VAR = "custom property on :root, raw/vars-light.json and raw/vars-dark.json, computed 2026-11-21"
 
-
-NAMES = {n for n, _ in tokens_of(core)}
-NAMES_L = NAMES | {n for n, _ in tokens_of(light)}
-NAMES_D = NAMES | {n for n, _ in tokens_of(dark)}
-
-
-def aliases(v):
-    if isinstance(v, str):
-        return re.findall(r"\{([^{}]+)\}", v)
-    if isinstance(v, dict):
-        return [a for x in v.values() for a in aliases(x)]
-    if isinstance(v, list):
-        return [a for x in v for a in aliases(x)]
-    return []
-
-
-for n, t in list(tokens_of(core)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES:
-            raise KeyError(f"core.{n}: alias {{{a}}} points at nothing")
-for n, t in list(tokens_of(light)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES_L:
-            raise KeyError(f"light.{n}: alias {{{a}}} points at nothing")
-for n, t in list(tokens_of(dark)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES_D:
-            raise KeyError(f"dark.{n}: alias {{{a}}} points at nothing")
-
-tokens = {
-    "core": core,
-    "light": light,
-    "dark": dark,
-    "$themes": [
-        {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "endless.app paints light on a light system: the :root declaration of the shadcn-style roles."},
-        {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"},
-         "$description": "The .dark class next-themes writes from the system scheme (or the footer Theme control) re-binds every role; measured under emulated prefers-color-scheme dark."},
-    ],
-    "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
+core = {
+    "$description": "Scales and primitives measured on endless.app, theme-free.",
+    "color": {
+        "ink": color_token(HOME["h1"]["color"], "computed color of h1 on the home page, light (raw/home-computed.json)", "Near-black text and the filled button."),
+        "paper": color_token(HOME["page"]["backgroundColor"], "computed backgroundColor of body, light (raw/home-computed.json)", "Page ground in light."),
+        "white": color_token(LIGHT["--color-white"], VAR + " --color-white"),
+        "black": color_token(LIGHT["--color-black"], VAR + " --color-black"),
+        "sky": color_token(LIGHT["--color-landing-action"], VAR + " --color-landing-action. Declared #11a8ff. Painted hero pixels nearby read about #21aeed; the declared value is the token."),
+        "accent": color_token(LIGHT["--accent"], VAR + " --accent. CSS lab() converted to sRGB. Focus ring uses this hue."),
+        "blue600": color_token(LIGHT["--color-blue-600"], VAR + " --color-blue-600"),
+        "green600": color_token(LIGHT["--color-green-600"], VAR + " --color-green-600"),
+        "orange600": color_token(LIGHT["--color-orange-600"], VAR + " --color-orange-600"),
+        "pink600": color_token(LIGHT["--color-pink-600"], VAR + " --color-pink-600"),
+        "purple600": color_token(LIGHT["--color-purple-600"], VAR + " --color-purple-600"),
+        "sky600": color_token(LIGHT["--color-sky-600"], VAR + " --color-sky-600"),
+        "neutral800": color_token(LIGHT["--color-neutral-800"], VAR + " --color-neutral-800"),
+    },
+    "font": {
+        "family": {
+            "sans": {
+                "$value": "TikTok Sans, system-ui, arial",
+                "$type": "fontFamily",
+                "$extensions": src("computed fontFamily of body (raw/vars-light.json body.font) and --font-sans"),
+                "$description": "The marketing and app face. Proprietary; the guide falls back to system-ui.",
+            },
+            "mono": {
+                "$value": "Geist Mono, ui-monospace, monospace",
+                "$type": "fontFamily",
+                "$extensions": src("--font-mono / --default-mono-font-family, raw/vars-light.json"),
+            },
+        }
+    },
+    "typography": {
+        "display": {
+            "$type": "typography",
+            "$value": {"fontFamily": "TikTok Sans, system-ui, arial", "fontSize": "59.2px", "fontWeight": 500, "lineHeight": "64px"},
+            "$extensions": src("computed font of h1 on the home page at 1440 (raw/home-computed.json)"),
+        },
+        "body": {
+            "$type": "typography",
+            "$value": {"fontFamily": "TikTok Sans, system-ui, arial", "fontSize": "16px", "fontWeight": 400, "lineHeight": "24px"},
+            "$extensions": src("computed font of body (raw/vars-light.json body)"),
+        },
+        "label": {
+            "$type": "typography",
+            "$value": {"fontFamily": "TikTok Sans, system-ui, arial", "fontSize": "14px", "fontWeight": 600, "lineHeight": "20px"},
+            "$extensions": src("computed font of the header Sign up button (raw/home-computed.json signup)"),
+        },
+        "caption": {
+            "$type": "typography",
+            "$value": {"fontFamily": "TikTok Sans, system-ui, arial", "fontSize": "12px", "fontWeight": 400, "lineHeight": "16px"},
+            "$extensions": src("computed font of the MCP banner link (raw/home-computed.json mcpLink)"),
+        },
+    },
+    "radius": {
+        "xs": dim(LIGHT["--radius-xs"], VAR + " --radius-xs"),
+        "sm": dim(LIGHT["--radius-sm"], VAR + " --radius-sm"),
+        "md": dim(LIGHT["--radius-md"], VAR + " --radius-md"),
+        "lg": dim(LIGHT["--radius-lg"], VAR + " --radius-lg"),
+        "xl": dim(LIGHT["--radius-xl"], VAR + " --radius-xl"),
+        "2xl": dim(LIGHT["--radius-2xl"], VAR + " --radius-2xl"),
+        "control": dim(HOME["signup"]["borderRadius"], "computed borderRadius of the header Sign up button (raw/home-computed.json)"),
+        "chip": dim(HOME["chip"]["borderRadius"], "computed borderRadius of a prompt chip (raw/home-computed.json)"),
+    },
+    "space": {
+        "1": dim("4px", "Derived from the 4px step implied by control padding. Header button padding was not a token; 4px is the smallest step that divides the measured 8px radius."),
+        "2": dim("8px", "Derived: header button radius and the gap scale step (raw/home-computed.json signup borderRadius 8px)."),
+        "3": dim("12px", "Measured chip radius 12px used as the 12px step (raw/home-computed.json chip)."),
+        "4": dim("16px", "Measured body font size, also the composer font size (raw/vars-light.json)."),
+        "6": dim("24px", "Measured body line height (raw/vars-light.json)."),
+        "8": dim("32px", "Measured header button height (raw/home-computed.json signup height 32)."),
+    },
+    "size": {
+        "headerButton": dim("32px", "computed height of header Sign up (raw/home-computed.json)"),
+        "chip": dim("36px", "computed height of a prompt chip (raw/home-computed.json)"),
+        "composer": dim("72px", "computed height of the home composer textarea (raw/home-computed.json)"),
+        "control": dim("32px", "header control height, reused as the default control height"),
+    },
+    "fontWeight": {
+        "regular": num(400, "--font-weight-normal " + VAR, "fontWeight"),
+        "medium": num(500, "--font-weight-medium " + VAR, "fontWeight"),
+        "semibold": num(600, "--font-weight-semibold " + VAR, "fontWeight"),
+    },
+    "focusRing": {
+        "color": color_token(LIGHT["--ring"], VAR + " --ring"),
+        "width": dim("2px", "computed outline width on the focused sign-in email field was 2px with a 3.98px accent halo (raw/signin-email-focus.json)"),
+    },
 }
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
+
+def semantic(theme, readings, computed):
+    g = readings
+    return {
+        "$description": f"Semantic roles for the {theme} theme, from :root custom properties after the footer theme control was set to {theme}.",
+        "background": {
+            "page": color_token(g["--background"], f"{VAR} --background, {theme}"),
+            "surface": color_token(g["--card"], f"{VAR} --card, {theme}"),
+            "muted": color_token(g["--muted"], f"{VAR} --muted, {theme}"),
+            "popover": color_token(g["--popover"], f"{VAR} --popover, {theme}"),
+            "sidebar": color_token(g["--sidebar"], f"{VAR} --sidebar, {theme}"),
+        },
+        "text": {
+            "primary": color_token(g["--foreground"], f"{VAR} --foreground, {theme}"),
+            "muted": color_token(g["--muted-foreground"], f"{VAR} --muted-foreground, {theme}"),
+            "onAccent": color_token(g["--primary-foreground"], f"{VAR} --primary-foreground, {theme}"),
+            "card": color_token(g["--card-foreground"], f"{VAR} --card-foreground, {theme}"),
+        },
+        "border": {
+            "default": color_token(g["--border"], f"{VAR} --border, {theme}"),
+        },
+        "accent": {
+            "default": color_token(g["--accent"], f"{VAR} --accent, {theme}"),
+            "landing": color_token(g["--color-landing-action"], f"{VAR} --color-landing-action, {theme}"),
+        },
+        "action": {
+            "primary": color_token(g["--primary"], f"{VAR} --primary, {theme}"),
+            "primaryText": color_token(g["--primary-foreground"], f"{VAR} --primary-foreground, {theme}"),
+        },
+        "status": {
+            "success": color_token(g["--success"], f"{VAR} --success, {theme}"),
+            "warning": color_token(g["--warning"], f"{VAR} --warning, {theme}"),
+            "danger": color_token(g["--destructive"], f"{VAR} --destructive, {theme}"),
+            "info": color_token(g["--color-sky-600"], f"{VAR} --color-sky-600, {theme}. No separate info role; sky-600 is the closest declared info hue."),
+        },
+        "focus": {
+            "ring": color_token(g["--ring"], f"{VAR} --ring, {theme}"),
+        },
+        "component": {
+            "button": {
+                "bg": color_token(computed["signup"]["backgroundColor"], f"computed backgroundColor of header Sign up, {theme} (raw/home-computed.json or home-dark-computed.json)"),
+                "text": color_token(computed["signup"]["color"], f"computed color of header Sign up, {theme}"),
+                "radius": dim(computed["signup"]["borderRadius"], f"computed borderRadius of header Sign up, {theme}"),
+                "height": dim(str(computed["signup"]["h"]) + "px", f"bounding height of header Sign up, {theme}"),
+            },
+            "chip": {
+                "bg": color_token(computed["chip"]["backgroundColor"], f"computed backgroundColor of a prompt chip, {theme}"),
+                "text": color_token(computed["chip"]["color"], f"computed color of a prompt chip, {theme}"),
+                "radius": dim(computed["chip"]["borderRadius"], f"computed borderRadius of a prompt chip, {theme}"),
+            },
+        },
+    }
 
 
-def count(d):
-    return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
+doc = {
+    "core": core,
+    "light": semantic("light", LIGHT, HOME),
+    "dark": semantic("dark", DARK, HOME_DARK),
+    "$themes": [
+        {"id": "light", "name": "light", "selectedTokenSets": {"core": "source", "light": "enabled"}},
+        {"id": "dark", "name": "dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}},
+    ],
+}
 
+# sanity: page and ink match sampled pixels
+assert doc["light"]["background"]["page"]["$value"] == "#fcfcfc", doc["light"]["background"]["page"]
+assert doc["light"]["text"]["primary"]["$value"] == "#0a0a0a", doc["light"]["text"]["primary"]
+assert doc["core"]["color"]["sky"]["$value"] == "#11a8ff"
 
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})
+out = HERE / "tokens.json"
+out.write_text(json.dumps(doc, indent=1) + "\n")
+print("wrote", out, "light page", doc["light"]["background"]["page"]["$value"], "accent", doc["core"]["color"]["accent"]["$value"])

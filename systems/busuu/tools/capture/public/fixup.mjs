@@ -7,9 +7,6 @@ import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
 const RAW = process.env.RAW;
-// No default: the shots belong in a scratch dir outside the repo, and an unset RAW
-// used to write them to ./undefined/.
-if (!RAW) { console.error('set RAW=<raw-shots dir> (a scratch dir outside the repo)'); process.exit(2); }
 const wait = (p, ms) => p.waitForTimeout(ms);
 const log = (...a) => console.log(...a);
 const b = await chromium.launch();

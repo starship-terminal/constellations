@@ -1,45 +1,33 @@
-# District patterns
+# Patterns
 
-How the measured components combine on district.in. Read with [components.md](components.md) for the per-component values and [tokens.json](tokens.json) for the numbers.
+## App shell
 
-## The app shell
+White header, black wordmark, location pin, search pill, Login pill, then a two-item nav with a purple underline on the current item. Footer is four columns plus an app-download block. Phone stacks the same header and drops the wordmark. See [home-light-default.png](screenshots/home-light-default.png) and [mobile-home-light-default.png](screenshots/mobile-home-light-default.png).
 
-Every public page carries the same sticky top bar (`nv-bar`, 1440x75): the District wordmark left, the location line (the city and state District detected for the visitor; masked in raw/ as `[city]` `[state]`, and painted out of the screenshots and crops), a centered category tab row (For you, Dining, Movies, Events, Comedy, Stores, Activities, Play — 84x36 pills, 9999px radius), and a 28x28 search affordance plus avatar at right. A black@8% hairline (`--color-border-subtle`) separates the bar from the page. The active tab is a `#eae5ff` (`--color-purple-100`) fill with a `#231268` (`--color-text-accent-purple`) 14px semibold label; inactive tabs are transparent with `#545459` (`--color-text-secondary`) ink. Tabs are real links — navigation, not JS state.
+## Search and filtering
 
-The page field below is `#ffffff` (`--color-background-primary`) with `#131316` (`--color-text-primary`) ink, ending in a `#1e1e20` (`--color-grey-800`) sitemap footer with help/contact links.
+Search opens a results list without leaving the page. Events and dining add a Filters dialog and chips. Apply was not pressed. See [events-light-filters.png](screenshots/events-light-filters.png).
 
-## The feed (/)
+## Listing
 
-The home feed is a stack of headed rails:
+Artist circles, then poster cards with date, title, venue, and price. Comedy and activities add a Book tickets control that was not pressed.
 
-- **Section heading** — a bold display line ("Top Hindi movies near you", "Artists in your District") above each rail.
-- **Movie rail** — 197x348 poster cards (`mc-card`): rounded artwork over a 16px semibold title (`mc-title`), then a certificate chip + language line ("U | Hindi", "UA13+ | Hindi").
-- **Artist rail** — 190x222 circular headshot cards (`ar-card`) with the artist's name underneath, linking to `/events/<slug>/artist`.
-- **Venue rail** — 236x325 venue/event cards (`ev-card`): image, name, distance and address lines (the distance is painted out of the images: it measures from the visitor's location).
+## Detail
 
-Rails scroll horizontally (snap-x) with a carousel arrow at the rail edge.
+Event pages add a gallery, about copy, and a booking bar. Movie pages add a trailer control and an FAQ accordion. See [event-light-default.png](screenshots/event-light-default.png) and [movie-light-faq.png](screenshots/movie-light-faq.png).
 
-## The listing pages
+## Empty
 
-`/movies/`, `/events/`, `/events/comedy`, `/dining/`, `/stores/`, `/activities/`, `/play/` share one recipe:
+`/play/` and `/stores/` render the shell with no listing. Stores still shows a purple marketing panel. See [play-light-default.png](screenshots/play-light-default.png) and [stores-light-default.png](screenshots/stores-light-default.png).
 
-- A display heading — the 40px/60px lh bold line (`mv-h1`, `ev-h1`, `cm-h1`).
-- A filter rail — 56x32 white chips (`mv-chip`) with a black@24% border (`--color-border-intense`) and 6px radius for language/format choices; the comedy page adds a sort/filter column (`cm-filter`).
-- A card grid — movie cards on /movies/, venue cards on /events/ and /events/comedy (with `₹… onwards` price lines at 16px bold, `ev-price`), store cards on /stores/ with "Flat ₹300 OFF" offer lines.
+## Form
 
-## The artist and ticket pages
+Contact is the only public form. It was not submitted, so validation, error, and success states were not captured. See [contact-light-default.png](screenshots/contact-light-default.png).
 
-- **Artist page** (`/events/<slug>/artist`): the artist display name (`at-h1` region), then upcoming-show cards (`at-show`, 296x544) holding date, venue and price, each with a booking affordance (`at-book`).
-- **Ticket page** (`/events/<slug>-buy-tickets`): the event title and About section (`tk-h1`, 24px semibold), date pills (`tk-date`), the ₹ price line (`tk-price`) and the primary Book CTA (`tk-book`, 163x52, `#131316` fill — `--color-button-primary-background` — 12px radius, `#f7f7f7` label). Booking gates on the Zomato account: measured, never pressed.
+## Login wall
 
-## The dark theme
+Login opens a dialog on the current URL. `/login` is a missing page. The dialog was closed without a number. See [home-light-login-wall.png](screenshots/home-light-login-wall.png) and [login-url-light-missing.png](screenshots/login-url-light-missing.png).
 
-`html[data-theme=dark]` is the product's own theme switch and the package measures it as a forced pass: chrome repaints to `#131316` (`--color-background-primary` dark) with `#f7f7f7` ink (`--color-text-primary` dark) and white@8% hairlines (`--color-border-subtle` dark). Feed rails on / keep their baked gradient fills (`gradient-for-you`-style classes), so dark paint on this surface is partial — the nav, cards and text roles all repaint; the recorded `dk-*` measurements are the real evidence, not a full dark redesign.
+## Onboarding
 
-## Mobile
-
-At 390x844 the same chrome compresses: a 390x60 bar (`m-bar`) with mark + location, an 84x60 tab (`m-tab`, 8px radius), and 364x272 content cards (`m-card`) in a single column. Category tabs stay link-based.
-
-## States and motion
-
-Controls expose default/hover/focus-visible/pressed on tabs, chips, CTAs and links; the category tab transition is the measured 0.2s `cubic-bezier(0.4, 0, 0.2, 1)`. Disabled, error and loading states do not exist on the signed-out public surface and were not fabricated.
+Not present while signed out.

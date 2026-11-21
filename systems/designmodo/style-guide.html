@@ -4,262 +4,90 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Designmodo style guide</title>
-<meta name="description" content="Designmodo design tokens and the public marketing, pricing, templates and Postcards app surfaces' components, rendered from tokens.json with the measured values.">
 <style>
-:root {
-  --font-family-ui: InterVariable, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --font-family-app: "Fira Sans", sans-serif;
-  --font-weight-nav: 500;
-  --font-weight-cta: 500;
-  --font-weight-plan: 800;
-  --font-size-measured-badge: 9px;
-  --font-size-measured-filter: 13px;
-  --font-size-measured-control: 15px;
-  --font-size-measured-ui: 15px;
-  --font-size-measured-body: 16px;
-  --font-size-measured-field: 17px;
-  --font-size-measured-sub: 18px;
-  --font-size-measured-product-cta: 20px;
-  --font-size-measured-section: 24px;
-  --font-size-measured-mobile-display: 44px;
-  --font-size-measured-display: 56px;
-  --font-size-measured-tpl-display: 63px;
-  --font-size-measured-mega: 91.5px;
-  --radius-form: 5px;
-  --radius-app: 6px;
-  --radius-modal-btn: 8px;
-  --radius-product: 12px;
-  --radius-pill: 999px;
-  --shadow-modal: rgba(169, 179, 187, 0.5) 0px 0px 2px 0px, rgba(169, 179, 187, 0.25) 0px 10px 12px 0px;
-  --shadow-cta: rgba(39, 174, 96, 0.15) 0px 4px 9px 0px;
-  --shadow-cta-hover: rgba(39, 174, 96, 0.2) 0px 6px 12px 0px;
-  --shadow-card: rgba(58, 76, 102, 0.07) 0px 4px 57px 0px, rgba(191, 197, 202, 0.65) 0px -1.5px 4.5px 0px inset;
-  --shadow-badge-inset: rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset;
-  --shadow-field-focus: rgba(99, 142, 216, 0.3) 0px 0px 10px 0px;
-  --motion-control: all 0.3s ease;
-  --component-topbar-height: 70px;
-  --component-appbar-height: 60px;
-  --component-sidebar-width: 241px;
-  --component-cta-height: 53px;
-  --component-plan-card-width: 313.33px;
-  --component-plan-cta-width: 233.33px;
-  --component-modal-width: 423px;
-  --component-modal-btn-width: 343px;
-  --component-field-width: 380px;
-  --component-tpl-card-width: 266px;
-  --component-tpl-card-height: 592px;
-  --component-badge-height: 14px;
-  --component-free-badge: 43px;
-  --component-filter-height: 15px;
-  --component-auth-submit-width: 186px;
-  --component-mobile-topbar-height: 70px;
-  --background-page: #ffffff;
-  --background-paper: #f4f4f4;
-  --background-navy: #071c26;
-  --background-card: rgba(247, 249, 252, 0.9);
-  --background-card-face: #f4f6f7;
-  --background-field: #ffffff;
-  --background-modal: #ffffff;
-  --action-secondary: #e8ecf0;
-  --action-accent: #27ae60;
-  --action-accent-hover: #1e8449;
-  --action-orange: #f49a40;
-  --action-orange-hover: #f18110;
-  --action-blue: #2198ed;
-  --action-blue-hover: #344a56;
-  --action-auth-blue: #2f80ed;
-  --action-auth-blue-hover: #1366d6;
-  --action-slate: #485f6b;
-  --action-slate-hover: #344a56;
-  --action-dark: #0d1d24;
-  --action-dark-hover: #fb754b;
-  --text-ink: #101d24;
-  --text-ink-body: #313942;
-  --text-app-ink: #2d3a41;
-  --text-muted: #585d63;
-  --text-muted-mkt: #c3cecb;
-  --text-on-dark: #ffffff;
-  --text-link: #2198ed;
-  --border-hairline: #e0e5eb;
-  --border-focus: #101d24;
-  --sg-sans: InterVariable, Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-serif: "Fira Sans", ui-sans-serif, system-ui, Arial, sans-serif;
-  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
-}
-[data-mode="dark"], .dark {
-
-}
-* { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); background: var(--color-neutral-paper, #fff); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
-.lead { max-width: 62ch; color: var(--color-neutral-ink, #000); opacity: .8; }
-.note { font-size: 13px; color: var(--color-neutral-ink, #000); opacity: .65; max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .6; margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, #ddd); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #000); opacity: .65; }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, #ddd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--color-neutral-hairline, #ddd); overflow: hidden; background: var(--color-neutral-paper, #fff); }
-.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 64px); padding: 0 12px 0 22px; font-size: 15px; color: var(--text-ink, #21201c); background: var(--background-page, #fff); }
-.navbar .wm { font-weight: 800; font-size: 24px; letter-spacing: -0.02em; }
-.navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 24px; font-size: 16px; font-weight: 700; border-radius: var(--radius-button, 26px); border: 1px solid transparent; }
-.btn.primary { background: var(--action-accent, #a238ff); color: #fff; }
-.btn.dark { background: var(--action-dark-button, #121216); color: var(--text-on-dark, #fdfcfe); }
-.btn.small { height: 34px; border-radius: var(--radius-chip, 18px); font-size: 13px; font-weight: 600; }
-.hero { color: var(--text-ink, #21201c); padding: 72px 40px; font: 500 50px/1.1 var(--sg-serif); letter-spacing: .01em; text-align: center; background: var(--background-page, #fff); }
-.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--text-mid, #63635e); margin: 16px auto 22px; max-width: 46ch; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 14px; font-size: 13px; background: #fff; }
-.tile .img { height: 140px; background: #ddd; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
-.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
-.tile .sub { opacity: .65; font-size: 12px; }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
-.tr .ts { font-family: var(--sg-serif); }
-.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
-.toggle { display: inline-flex; background: var(--background-chip, rgba(33,32,28,.06)); border-radius: 999px; padding: 4px; gap: 4px; font-size: 15px; color: var(--text-ink, #21201c); }
-.toggle span { padding: 8px 22px; border-radius: 999px; }
-.toggle .on { background: var(--action-accent, #fd5400); color: #fff; }
+  :root {
+    --ink: #313942;
+    --white: #ffffff;
+    --muted: #656a75;
+    --muted-hero: #c3cecb;
+    --green: #27ae60;
+    --green-hover: #1e8449;
+    --orange: #f49a40;
+    --blue: #2f80ed;
+    --field-border: #e0e5eb;
+    --field-text: #242424;
+    --page: #ffffff;
+    --sans: InterVariable, -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--ink); font: 400 16px/24px var(--sans); }
+  header { padding: 28px 32px 8px; }
+  h1 { font-size: 32px; line-height: 1.2; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 8px; }
+  h2 { font-size: 20px; margin: 32px 0 12px; }
+  p.note { color: var(--muted); max-width: 68ch; }
+  .wrap { padding: 8px 32px 64px; max-width: 980px; }
+  .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border-radius: 5px; border: 1px solid #e0e5eb; }
+  .swatch span { display: block; font-size: 13px; margin-top: 6px; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+  button, .btn { border: 0; color: var(--white); font: 600 15px/22.5px var(--sans); cursor: default; }
+  .pill { border-radius: 999px; }
+  .sq { border-radius: 5px; }
+  .signup { background: var(--orange); padding: 8px 18px; height: 38.5px; }
+  .open { background: var(--green); padding: 13px 28px; height: 53px; font-weight: 500; font-size: 18px; box-shadow: 0 4px 9px rgba(39, 174, 96, 0.15); }
+  .login { background: var(--blue); padding: 8px 17px; height: 38.5px; font-weight: 500; box-shadow: 0 4px 9px rgba(47, 128, 237, 0.15); }
+  input.demo { height: 50px; width: 280px; border: 1px solid var(--field-border); border-radius: 5px; padding: 14px 18px; font: 400 17px/normal var(--sans); color: var(--field-text); }
+  .hero { background: #0e231c; color: var(--white); padding: 28px; border-radius: 12px; }
+  .hero h3 { margin: 0 0 8px; font-size: 40px; line-height: 1.1; font-weight: 600; letter-spacing: -0.028em; }
+  .hero p { color: var(--muted-hero); font-size: 20px; line-height: 34px; margin: 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid #e0e5eb; vertical-align: top; }
 </style>
 </head>
 <body>
-<main>
-  <h1>Designmodo style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
-
-  <h2 class="sh">Designmodo, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: an almost fully measured layer, because designmodo.com declares nearly nothing as custom properties. Two systems sit over one light theme: the InterVariable marketing surface (dark hero bands, the #f49a40 Sign Up pill, the #27ae60 Open App CTA) and the Fira Sans Postcards app shell (#071c26 navy header, #2198ed/#485f6b actions, 266x592 gallery cards with FREE/NEW badges). The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from designmodo.com on 2026-11-13, signed out, in headless Chromium. Everything behind an account — the builder canvas, saving — is a documented boundary; the Welcome-back modal and sign-in form were measured, never submitted. InterVariable and Fira Sans are served faces and are not loaded here: samples fall back to system fonts.</p>
-
-  <h2 class="sh">The marketing surface</h2>
-  <p class="lead">The public top bar carries the Designmodo wordmark and product dropdowns over the dark hero, with a Log in link and the #f49a40 Sign Up Free pill. The hero is a 56px InterVariable display over white; the green pill opens the Postcards app.</p>
-  <div class="mock" style="padding:20px">
-    <div class="navbar" style="background:var(--background-navy,#071c26);color:var(--text-on-dark,#fff);border-radius:8px;padding:0 20px;height:56px;display:flex;align-items:center;gap:24px"><span class="wm" style="color:#fff">designmodo</span><span>Products</span><span>Bundles</span><span>Articles</span><span class="sp"></span><span>Log in</span><span class="btn small" style="background:var(--action-orange,#f49a40);color:#fff;border-radius:var(--radius-pill,999px)">Sign Up Free</span></div>
-    <div class="hero" style="background:var(--background-navy,#071c26);color:var(--text-on-dark,#fff);border-radius:8px;margin-top:14px;padding:34px 20px;font-size:34px;line-height:1.15">Design, build &amp; publish —<small style="color:var(--text-muted-mkt,#c3cecb)">with the most popular design tools.</small><span class="btn" style="height:53px;border-radius:var(--radius-pill,999px);background:var(--action-accent,#27ae60);color:#fff;padding:0 26px;font-size:18px;margin-top:18px">Open App</span></div>
+<header>
+  <h1>Designmodo</h1>
+  <p class="note">Public signed-out surface, measured 2026-11-21. One light theme. Values are computed styles from tokens.json. Roles marked not captured were not read.</p>
+</header>
+<div class="wrap">
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><span>page #ffffff</span></div>
+    <div class="swatch"><div class="chip" style="background:#313942"></div><span>ink #313942</span></div>
+    <div class="swatch"><div class="chip" style="background:#656a75"></div><span>muted #656a75</span></div>
+    <div class="swatch"><div class="chip" style="background:#27ae60"></div><span>green #27ae60</span></div>
+    <div class="swatch"><div class="chip" style="background:#1e8449"></div><span>green hover #1e8449</span></div>
+    <div class="swatch"><div class="chip" style="background:#f49a40"></div><span>orange #f49a40</span></div>
+    <div class="swatch"><div class="chip" style="background:#2f80ed"></div><span>blue #2f80ed</span></div>
+    <div class="swatch"><div class="chip" style="background:#0e231c"></div><span>hero ground not tokenised</span></div>
   </div>
-
-  <h2 class="sh">The Postcards app shell</h2>
-  <p class="lead">The signed-out app route mounts the Welcome-back modal over a real gallery: the #071c26 navy app header, a 241px workspace sidebar with the selected Templates item in #2198ed, + Create in app green, and 266x592 cards carrying 9px FREE (blue) and NEW (green) badges.</p>
-  <div class="mock" style="padding:20px;font-family:var(--sg-serif)">
-    <div class="navbar" style="background:var(--background-navy,#071c26);color:#fff;border-radius:8px;padding:0 16px;height:60px;display:flex;align-items:center;gap:16px"><span class="wm" style="color:#fff">Postcards</span><span class="sp"></span><span class="btn small" style="background:var(--action-blue,#2198ed);color:#fff;border-radius:var(--radius-app,6px)">Log in</span><span class="btn small" style="background:var(--action-slate,#485f6b);color:#fff;border-radius:var(--radius-app,6px)">Sign Up</span></div>
-    <div class="grid" style="margin-top:14px;grid-template-columns:180px 1fr;display:grid;gap:12px">
-      <div class="tile" style="border-radius:var(--radius-app,6px);background:var(--background-paper,#f4f4f4);border:none;color:var(--text-app-ink,#2d3a41)"><b style="color:var(--action-blue,#2198ed)">Templates</b><span class="sub" style="color:var(--text-muted,#585d63)">workspace sidebar</span></div>
-      <div class="tile" style="border-radius:var(--radius-app,6px);background:var(--background-card-face,#f4f6f7);border:1px dashed #c6cdce;color:var(--text-app-ink,#2d3a41)"><b>Start from scratch</b><span class="sub" style="color:var(--text-muted,#585d63)">+ Create</span></div>
-      <div class="tile" style="border-radius:var(--radius-app,6px);background:#fff;border:1px solid #e8ecf0;color:var(--text-app-ink,#2d3a41)"><b>Designmodo News</b><span class="sub" style="display:inline-block;margin-top:6px;padding:2px 6px;border-radius:3px;background:var(--action-blue,#2198ed);color:#fff;font-size:9px">FREE</span></div>
-    </div>
+  <h2>Type</h2>
+  <p style="font-size:56px;line-height:61.6px;font-weight:600;letter-spacing:-1.568px;margin:0">Display 56 / 600</p>
+  <p style="font-size:24px;line-height:32.4px;font-weight:700;letter-spacing:-0.48px">Heading 24 / 700</p>
+  <p style="font-size:20px;line-height:34px">Lede 20 / 400</p>
+  <p>Body 16 / 400</p>
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="pill signup">Sign Up</button>
+    <button class="pill open">Open App</button>
+    <button class="sq login">Login</button>
   </div>
-
-  <h2 class="sh">Pricing</h2>
-  <p class="lead">The /pricing page: the 91.5px InterVariable display over the tinted field, near-white plan cards and the near-black #0d1d24 CTA that flips to #fb754b coral on hover.</p>
-  <div class="mock" style="padding:20px">
-    <div class="tile" style="border-radius:var(--radius-app,6px);background:var(--background-card,#f7f9fc);border:1px solid #e8ecf0;color:var(--text-ink,#101d24)"><b>Professional</b><span class="sub" style="color:var(--text-muted,#585d63)">$18 / month, billed annually</span><span class="btn" style="height:44px;margin-top:12px;border-radius:var(--radius-product,12px);background:var(--action-dark,#0d1d24);color:#fff;padding:0 22px;font-size:15px">Purchase</span></div>
+  <h2>Field</h2>
+  <input class="demo" placeholder="Your Email" readonly>
+  <h2>Hero sample</h2>
+  <div class="hero">
+    <h3>Level up email &amp; web designs faster</h3>
+    <p>An AI email builder for beautiful, responsive newsletters.</p>
   </div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead">The site declares almost no custom properties, so the palette below is the measured layer: the marketing accents (#f49a40 orange, #27ae60 green, #0d1d24 near-black) next to the app roles (#071c26 navy, #2198ed blue, #485f6b slate, #e8ecf0 secondary). Everything resolves from computed styles, not a token file.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Spacing and radius</h2>
-  <p class="lead">Marketing CTAs are 999px pills; the app is rectilinear — 5px auth, 6px app buttons/sidebar/cards, 8px modal buttons, 12px product CTAs. Borders are light hairlines on a near-white field.</p>
-  <div id="spacing-out" class="kv"></div>
-
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out" class="kv"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">Served faces: <code>InterVariable</code> on the marketing surface (nav, hero, pricing, forms), <code>Fira Sans</code> on the Postcards app (sidebar, modal, gallery, the 9px badges). Sizes are the measured steps — 91.5/63/56px displays down to 9px badges; samples fall back to system fonts.</p>
-  <div id="type-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared variables from the live stylesheets (425 resolved per theme) and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
-</main>
-<script>
-const TOK = {"core":{"font":{"family":{"ui":{"v":"InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of nav-apps default (raw/components-computed.json)","d":"InterVariable — the marketing face (nav, hero, pricing, forms)."},"app":{"v":"\"Fira Sans\", sans-serif","t":"fontFamily","s":"computed fontFamily of modal-google default (raw/components-computed.json)","d":"Fira Sans — the Postcards app face (sidebar, modal, gallery, badges)."}},"weight":{"nav":{"v":500,"t":"fontWeight","s":"computed fontWeight of nav-apps default (raw/components-computed.json)","d":"The nav link weight."},"cta":{"v":500,"t":"fontWeight","s":"computed fontWeight of openapp-cta default (raw/components-computed.json)","d":"The Open App CTA weight."},"plan":{"v":800,"t":"fontWeight","s":"computed fontWeight of plan-cta default (raw/components-computed.json)","d":"The plan button weight."}},"size":{"measured":{"badge":{"v":"9px","t":"fontSize","s":"computed fontSize of new-badge default (raw/components-computed.json)","d":"The 9px badge size (NEW / FREE)."},"filter":{"v":"13px","t":"fontSize","s":"computed fontSize of filter-industry default (raw/components-computed.json)","d":"The 13px app filter label."},"control":{"v":"15px","t":"fontSize","s":"computed fontSize of modal-google default (raw/components-computed.json)","d":"The 15px app control size (modal buttons, sidebar items)."},"ui":{"v":"15px","t":"fontSize","s":"computed fontSize of nav-apps default (raw/components-computed.json)","d":"The 15px marketing nav size."},"body":{"v":"16px","t":"fontSize","s":"computed fontSize of site-footer default (raw/components-computed.json)","d":"The 16px body/footer text."},"field":{"v":"17px","t":"fontSize","s":"computed fontSize of login-email default (raw/components-computed.json)","d":"The 17px form field text."},"sub":{"v":"18px","t":"fontSize","s":"computed fontSize of seemore-link default (raw/components-computed.json)","d":"The 18px marketing secondary size."},"product-cta":{"v":"20px","t":"fontSize","s":"computed fontSize of pc-cta default (raw/components-computed.json)","d":"The 20px product CTA."},"section":{"v":"24px","t":"fontSize","s":"computed fontSize of login-h1 default (raw/components-computed.json)","d":"The 24px form/section heading."},"mobile-display":{"v":"44px","t":"fontSize","s":"computed fontSize of m-h1 default (raw/components-computed.json)","d":"The 44px mobile hero size at 390px."},"display":{"v":"56px","t":"fontSize","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The 56px marketing hero display."},"tpl-display":{"v":"63px","t":"fontSize","s":"computed fontSize of tpl-h1 default (raw/components-computed.json)","d":"The 63px gallery page display."},"mega":{"v":"91.5px","t":"fontSize","s":"computed fontSize of pricing-h1 default (raw/components-computed.json)","d":"The 91.5px pricing/product display."}}}},"color":{},"radius":{"form":{"v":"5px","t":"dimension","s":"computed borderTopLeftRadius of login-submit default (raw/components-computed.json)","d":"The 5px auth button/field radius."},"app":{"v":"6px","t":"dimension","s":"computed borderTopLeftRadius of app-login default (raw/components-computed.json)","d":"The 6px app pill/button radius."},"modal-btn":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of modal-login default (raw/components-computed.json)","d":"The 8px modal button radius."},"product":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of pc-cta default (raw/components-computed.json)","d":"The 12px product CTA radius."},"pill":{"v":"999px","t":"dimension","s":"computed borderTopLeftRadius of openapp-cta default (raw/components-computed.json)","d":"The 999px marketing pill (Open App, Sign Up)."}},"shadow":{"modal":{"v":"rgba(169, 179, 187, 0.5) 0px 0px 2px 0px, rgba(169, 179, 187, 0.25) 0px 10px 12px 0px","t":"other","s":"computed boxShadow of welcome-modal default (raw/components-computed.json)","d":"The shadow the welcome modal casts over the dimmed gallery."},"cta":{"v":"rgba(39, 174, 96, 0.15) 0px 4px 9px 0px","t":"other","s":"computed boxShadow of openapp-cta default (raw/components-computed.json)","d":"The tinted lift the green CTAs carry (a deeper 0 6px 12px on hover/pressed)."},"cta-hover":{"v":"rgba(39, 174, 96, 0.2) 0px 6px 12px 0px","t":"other","s":"computed boxShadow of openapp-cta hover (raw/components-computed.json)","d":"The raised hover/pressed shadow on the green CTAs."},"card":{"v":"rgba(58, 76, 102, 0.07) 0px 4px 57px 0px, rgba(191, 197, 202, 0.65) 0px -1.5px 4.5px 0px inset","t":"other","s":"computed boxShadow of plan-card default (raw/components-computed.json)","d":"The plan-card elevation on the pricing strip."},"badge-inset":{"v":"rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset","t":"other","s":"computed boxShadow of free-badge default (raw/components-computed.json)","d":"The 1px inset line under the FREE/NEW badges."},"field-focus":{"v":"rgba(99, 142, 216, 0.3) 0px 0px 10px 0px","t":"other","s":"computed boxShadow of login-email focused (raw/components-computed.json)","d":"The blue glow a focused auth field paints."}},"motion":{"control":{"v":"all 0.3s ease","t":"other","s":"computed transition of openapp-cta default (raw/components-computed.json)","d":"The measured control transition."}},"component":{"topbar-height":{"v":"70px","t":"dimension","s":"measured h of mkt-header default (raw/components-computed.json)","d":"The 70px marketing top bar."},"appbar-height":{"v":"60px","t":"dimension","s":"measured h of app-header default (raw/components-computed.json)","d":"The 60px navy app header."},"sidebar-width":{"v":"241px","t":"dimension","s":"measured w of sidebar default (raw/components-computed.json)","d":"The 241px app workspace sidebar."},"cta-height":{"v":"53px","t":"dimension","s":"measured h of openapp-cta default (raw/components-computed.json)","d":"The 53px Open App CTA."},"plan-card-width":{"v":"313.33px","t":"dimension","s":"measured w of plan-card default (raw/components-computed.json)","d":"The 313px pricing plan card."},"plan-cta-width":{"v":"233.33px","t":"dimension","s":"measured w of plan-cta default (raw/components-computed.json)","d":"The 233px plan action."},"modal-width":{"v":"423px","t":"dimension","s":"measured w of welcome-modal default (raw/components-computed.json)","d":"The 423px welcome modal card."},"modal-btn-width":{"v":"343px","t":"dimension","s":"measured w of modal-google default (raw/components-computed.json)","d":"The 343px modal action."},"field-width":{"v":"380px","t":"dimension","s":"measured w of login-email default (raw/components-computed.json)","d":"The 380px auth field."},"tpl-card-width":{"v":"266px","t":"dimension","s":"measured w of tpl-card default (raw/components-computed.json); tpl-card was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run","d":"The 266px template card."},"tpl-card-height":{"v":"592px","t":"dimension","s":"measured h of tpl-card default (raw/components-computed.json); tpl-card was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run","d":"The 592px template card."},"badge-height":{"v":"14px","t":"dimension","s":"measured h of new-badge default (raw/components-computed.json)","d":"The 14px NEW badge."},"free-badge":{"v":"43px","t":"dimension","s":"measured w of free-badge default (raw/components-computed.json)","d":"The 43px FREE badge."},"filter-height":{"v":"15px","t":"dimension","s":"measured h of filter-industry default (raw/components-computed.json)","d":"The 15px gallery filter label."},"auth-submit-width":{"v":"186px","t":"dimension","s":"measured w of login-submit default (raw/components-computed.json)","d":"The 186px auth button pair."},"mobile-topbar-height":{"v":"70px","t":"dimension","s":"measured h of m-header default (raw/components-computed.json)","d":"The 70px phone top bar."}}},"light":{"background":{"page":{"v":"#ffffff","t":"color","s":"computed backgroundColor of site-footer default: the marketing surface paints white (raw/components-computed.json)","d":"The white field the marketing surface paints (footer/section paint; #fff on the pricing tint)."},"paper":{"v":"#f4f4f4","t":"color","s":"entered by hand at capture time, not measured: the recon's app body background rgb(244,244,244) was never saved to raw/ (compare screenshots/app-*.png); recapture needed","d":"The #f4f4f4 app canvas behind the gallery (the app shell's page paint)."},"navy":{"v":"#071c26","t":"color","s":"computed backgroundColor of app-header default (raw/components-computed.json)","d":"The #071c26 dark navy app header band."},"card":{"v":"rgba(247, 249, 252, 0.9)","t":"color","s":"computed backgroundColor of plan-card default (raw/components-computed.json)","d":"The near-white plan/gallery card field (#f7f9fc at 90% over the pricing tint)."},"card-face":{"v":"#f4f6f7","t":"color","s":"painted background of the div.sc-hBxvHn card face inside create-blank default (raw/components-computed.json)","d":"The #f4f6f7 dashed Create-Blank/AI card faces in the app gallery."},"field":{"v":"#ffffff","t":"color","s":"computed backgroundColor of login-email default (raw/components-computed.json)","d":"The white 380x50 form fields."},"modal":{"v":"#ffffff","t":"color","s":"computed backgroundColor of welcome-modal default (raw/components-computed.json)","d":"The white welcome-modal card."}},"action":{"secondary":{"v":"#e8ecf0","t":"color","s":"computed backgroundColor of modal-create default (raw/components-computed.json)","d":"The #e8ecf0 secondary button fill (Create Account)."},"accent":{"v":"#27ae60","t":"color","s":"computed backgroundColor of openapp-cta default (raw/components-computed.json)","d":"The #27ae60 green — Open App, + Create, Login, Create Account, NEW badges."},"accent-hover":{"v":"#1e8449","t":"color","s":"computed backgroundColor of openapp-cta hover (raw/components-computed.json)","d":"The #1e8449 darker green on hover/pressed."},"orange":{"v":"#f49a40","t":"color","s":"computed backgroundColor of nav-signup default (raw/components-computed.json)","d":"The #f49a40 orange — the marketing Sign Up pill."},"orange-hover":{"v":"#f18110","t":"color","s":"computed backgroundColor of nav-signup hover (raw/components-computed.json)","d":"The #f18110 deeper orange on hover/pressed."},"blue":{"v":"#2198ed","t":"color","s":"computed backgroundColor of app-login default (raw/components-computed.json)","d":"The #2198ed blue — the app Login pill and FREE badges."},"blue-hover":{"v":"#344a56","t":"color","s":"computed backgroundColor of app-login hover (raw/components-computed.json)","d":"The #344a56 slate the app Login pill takes on hover/pressed."},"auth-blue":{"v":"#2f80ed","t":"color","s":"computed backgroundColor of login-submit default (raw/components-computed.json)","d":"The #2f80ed blue on the /my-account/sign-in/ form's Login button."},"auth-blue-hover":{"v":"#1366d6","t":"color","s":"computed backgroundColor of login-submit hover (raw/components-computed.json)","d":"The #1366d6 deeper blue on the auth Login's hover/pressed."},"slate":{"v":"#485f6b","t":"color","s":"computed backgroundColor of app-signup default (raw/components-computed.json)","d":"The #485f6b slate on the app Sign Up button."},"slate-hover":{"v":"#344a56","t":"color","s":"computed backgroundColor of app-signup hover (raw/components-computed.json)","d":"The #344a56 deeper slate on the app Sign Up's hover/pressed."},"dark":{"v":"#0d1d24","t":"color","s":"computed backgroundColor of pc-cta default (raw/components-computed.json)","d":"The #0d1d24 near-black CTA on product pages (Sign-in with SSO shares it)."},"dark-hover":{"v":"#fb754b","t":"color","s":"computed backgroundColor of pc-cta hover (raw/components-computed.json)","d":"The #fb754b coral the product CTA flips to on hover/pressed."}},"text":{"ink":{"v":"#101d24","t":"color","s":"computed color of pricing-h1 default (raw/components-computed.json)","d":"The #101d24 ink — headings, pricing text, plan features."},"ink-body":{"v":"#313942","t":"color","s":"computed color of site-footer default (raw/components-computed.json)","d":"The #313942 body ink on the marketing surface."},"app-ink":{"v":"#2d3a41","t":"color","s":"computed color of welcome-modal default (raw/components-computed.json)","d":"The #2d3a41 app ink — modal copy, sidebar, gallery labels."},"muted":{"v":"#585d63","t":"color","s":"computed color of filter-industry default (raw/components-computed.json)","d":"The #585d63 muted app label (filters, secondary text)."},"muted-mkt":{"v":"#c3cecb","t":"color","s":"computed color of seemore-link default (raw/components-computed.json)","d":"The #c3cecb muted 'See more' link on the dark marketing strips."},"on-dark":{"v":"#ffffff","t":"color","s":"computed color of mkt-header default (raw/components-computed.json)","d":"White text painted on the dark hero/header regions."},"link":{"v":"#2198ed","t":"color","s":"computed color of side-templates default (raw/components-computed.json)","d":"The #2198ed link blue on the selected sidebar item."}},"border":{"hairline":{"v":"#e0e5eb","t":"color","s":"computed borderTopColor of login-email default (raw/components-computed.json)","d":"The 1px #e0e5eb hairline on the auth fields."},"focus":{"v":"#101d24","t":"color","s":"computed outlineColor of pc-cta focus-visible (raw/components-computed.json)","d":"The 2px #101d24 outline the product CTA takes on focus-visible."}}},"dark":{}};
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (declared, never painted signed out)']]) {
-    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
-    if (!roles.length) continue;
-    // The dark set's custom properties only resolve inside a .dark scope:
-    // swatch dots must live under it or they paint the light values/unset.
-    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
-  $('#spacing-out').innerHTML = m;
-})();
-
-(function elev() {
-  let e = '';
-  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#meas-out').innerHTML = m;
-})();
-
-const resolveVal = (v, depth) => {
-  if (depth > 6 || typeof v !== 'string') return v;
-  const m = v.match(/^\{(.+)\}$/);
-  if (!m) return v;
-  let node = TOK.core || TOK, seen = [];
-  for (const k of m[1].split('.')) { node = node && node[k]; seen.push(k); }
-  return node && node.v !== undefined ? resolveVal(node.v, (depth || 0) + 1) : v;
-};
-
-(function type() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(resolveVal(t.v));
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Designmodo</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
-</script>
+  <h2>Not captured</h2>
+  <table>
+    <tr><th>Role</th><th>Why</th></tr>
+    <tr><td>Dark theme</td><td>colorScheme was normal. No theme toggle on the public pages.</td></tr>
+    <tr><td>Focus ring</td><td>Sign Up focus-visible did not paint a ring (outline width 0).</td></tr>
+    <tr><td>Pressed, disabled, loading, error</td><td>Not reached without submitting a form.</td></tr>
+    <tr><td>Hero page background</td><td>Visible in screenshots. Not read as a computed background on a named element, so it is not a token.</td></tr>
+  </table>
+</div>
 </body>
 </html>

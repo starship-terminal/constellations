@@ -1,20 +1,72 @@
-# Components
+# Shopify components
 
-Measured on the signed-out home, pricing, and login pages. No crop exists: the preview browser did not produce screenshot frames.
+Public marketing site, signed out, captured 2026-11-21 at 1440 and 390. Crops are the live controls. Values are token names from [tokens.json](tokens.json).
 
-| Component | State | Value |
+## Button
+
+Primary action is a white pill on the black hero.
+
+| State | Crop | Values |
 |---|---|---|
-| Button, marketing primary | rest | White fill, black type, radius 9999px, padding 8px 20px, 16px, weight 550, height 44px. Hero: padding 12px 24px, 18px, height 56px |
-| Button, marketing secondary | rest | Transparent, 2px solid white, white type, radius 9999px, padding 12px 24px |
-| Button, login primary | rest | `#0b1314` fill, `#fafcfc` type, radius 8px, padding 12px 16px, height 44px, shadow `0px 3px 1px -1px rgba(26, 26, 26, 0.07)` |
-| Button, login secondary | rest | `#f1f1f1` fill, `#303030` type, radius 8px. Passkey height 41px. Provider links 44px |
-| Link, header | rest | "Log in", white, 16px, weight 400 |
-| Link, login | rest | "Get started", `#005bd3`, 13px, weight 550 |
-| Text field | empty | Email `#f3f3f3`, password `#ffffff`, 1px solid `#1a1a1a`, radius 8px, padding 8px 12px, height 38px, 16px, weight 450 |
-| Card, nav | rest | `#0e0e10`, 1px solid `#19272a`, radius 16px, padding 24px |
-| Card, product | rest | `#061a1c`, 1px solid `#1e2c31`, radius 12px, padding 32px |
-| Card, plan | rest | `#141a1a`, radius 24px, padding 24px 24px 32px |
+| default | [button-primary-default](components/crops/button-primary-default.png) | fill `light.action.primary`, label `light.text.on-accent`, radius 9999px, padding 8px 20px, type 16px / 550 |
+| hover | [button-primary-hover](components/crops/button-primary-hover.png) | fill moves to `light.action.primary-hover` (`#d4d4d8`) |
+| focus-visible | Not captured | Keyboard focus ring was not read as a painted outline on this control |
+| pressed | Not captured | |
+| disabled | Not present | No disabled primary on the public home header |
+| loading | Not present | |
+
+On the phone drawer, Log in is an outlined pill and Start for free is the white pill. See [mobile-home-light-menu](screenshots/mobile-home-light-menu.png).
+
+## Link
+
+Header Log in is white, 16px, no underline until hover.
+
+| State | Crop |
+|---|---|
+| default | [link-login-default](components/crops/link-login-default.png) |
+| hover | [link-login-hover](components/crops/link-login-hover.png) |
+
+Nav links (Pricing, Enterprise) sit in the 72px header. [nav-link-default](components/crops/nav-link-default.png).
+
+## Icon button
+
+The region dialog's close control. [icon-button-default](components/crops/icon-button-default.png). The phone drawer uses an X of the same role. [mobile-home-light-menu](screenshots/mobile-home-light-menu.png).
+
+## Menu
+
+Why Shopify opens a mega menu of image cards on hover. [menu-open](components/crops/menu-open.png). Phone uses a full-screen drawer. [mobile-home-light-menu](screenshots/mobile-home-light-menu.png) and [mobile-home-light-products-menu](screenshots/mobile-home-light-products-menu.png).
+
+## Dialog
+
+Region and language. [dialog-open](components/crops/dialog-open.png). Page shot: [home-light-region-dialog](screenshots/home-light-region-dialog.png).
+
+## Switch
+
+Pricing yearly toggle. [switch-default](components/crops/switch-default.png), [switch-selected](components/crops/switch-selected.png). Page: [pricing-light-yearly](screenshots/pricing-light-yearly.png).
+
+## Accordion
+
+Pricing FAQ `summary`. [accordion-default](components/crops/accordion-default.png), [accordion-open](components/crops/accordion-open.png).
+
+## Text field
+
+Help Center search, light surface, not the marketing hero. [help-light-default](screenshots/help-light-default.png). The region dialog has two selects. No text was typed.
+
+## Card
+
+Plan cards on pricing. [pricing-light-default](screenshots/pricing-light-default.png). Theme cards on the theme store. [themes-light-default](screenshots/themes-light-default.png).
+
+## Badge
+
+Fall '26 Edition is a pill link in the header, not a status badge. [home-light-default](screenshots/home-light-default.png).
+
+## Not present on the public marketing surface
+
+Text area, checkbox, radio, tabs (beyond the pricing carousel dots), tooltip, toast, table, avatar, list row as an app row. The admin app that would show those is behind login.
 
 ## Gaps
 
-Hover, focus-visible, pressed, disabled, error, and loading were not forced. Checkbox, radio, switch, tabs, menu, tooltip, toast, table, avatar, and badge were not on these pages. The region dialog was closed. No element crop was saved.
+- Focus-visible and pressed were not captured as distinct painted states. The primary hover is the only state change that was measured.
+- Login and signup were not entered. `https://accounts.shopify.com/lookup` is the login wall.
+- Dark theme is not a switch on the marketing site. Help Center is a separate light product.
+- Icons are brand artwork and are not extracted (`docs/RIGHTS.md`).

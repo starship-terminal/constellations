@@ -1,254 +1,235 @@
-"""Build tokens.json (W3C DTCG, Tokens Studio multi-set layout) from the raw captures.
+#!/usr/bin/env python3
+"""Build tokens.json from the DJI public-web readings.
 
-Sources, read from dji.com's geo-locale /sg site on 2026-11-15:
-  raw/css-vars.json          the custom properties dji.com's v3 stylesheets
-                             declare: :root and the section-scoped
-                             :root .light-theme / :root .dark-theme blocks —
-                             --grey-0..12, --black-1..8 + --black-<role>,
-                             --white-1..8 + --white-<role>, --bg-0..7,
-                             --background-0..2, --brand-1..10 +
-                             --brand-primary-*/--brand-text-*, the inverted
-                             --reverse-* roles, --green-*/--orange-*/
-                             --red-* status scales, --success/--warning/
-                             --danger, --spacing-xs..xl, --radius,
-                             --grid-width/--grid-gap/--col-width/
-                             --column-count, --zindex-*, --font-*/
-                             --line-height-* — read from the served
-                             stylesheets (tools/capture/vars.mjs) and binned
-                             theme / app / skins / vendor / utility
-  raw/component-tokens.json  the token tree (tools/build_component_tokens.py): each leaf either
-                             names a variable ("var") resolved per theme, or carries a measured
-                             value and the measurement it came from ("source")
-Every token carries $extensions.source: "css-var <name>" or "measured <where>".
+Sources, read signed out on 2026-11-21:
+  raw/components-computed.json  computed styles of Store, Learn More, Buy Now,
+                                nav, support search, login password and Log In
+  raw/readings.json             body, h1 and link computed styles per page
+  raw/css-vars.json             declared custom properties (none on the pages
+                                that loaded; recorded, not invented)
 
-dji.com is one product signed out: public surfaces (home, /camera-drones,
-/handheld, /mavic-4-pro, /support, /company, /where-to-buy) paint both
-section themes — .light-theme on nav, listings and support, .dark-theme on
-the hero, product dark panels and the footer — so both role sets are
-measured paint. The export holds core, light and dark: core carries
-theme-invariant scales, light resolves the .light-theme declarations, dark
-resolves .dark-theme, and the measured roles alias the declarations they
-match. Login/Register and the store (store.dji.com) gate on a DJI account —
-a documented boundary.
-
-Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
+www.dji.com paints one light theme. The homepage hero is a dark photograph
+under a white bar; that dark is a photograph, not a theme. Every token carries
+$extensions.source. A value that was not read is absent, not guessed.
 """
 import json, pathlib, re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
-V = json.loads((RAW / "css-vars.json").read_text())
-SPEC = json.loads((RAW / "component-tokens.json").read_text())
-
-# Resolved declarations per theme. vars.mjs resolves each custom property on a
-# probe document once per section theme (light: inside a .light-theme
-# wrapper, dark: inside .dark-theme — the classes dji.com's product pages
-# use to opt sections into light or dark paint), so DECL[theme][name] is
-# what the browser paints inside that themed section. A name declared only
-# on :root resolves the same in both.
-DECL = {"light": {n: v.get("value", v["raw"]) for n, v in V["resolved"]["lightTheme"].items()},
-        "dark": {n: v.get("value", v["raw"]) for n, v in V["resolved"]["darkTheme"].items()}}
+COMP = json.loads((RAW / "components-computed.json").read_text())
+READ = json.loads((RAW / "readings.json").read_text())
 
 
 def norm_color(v):
-    """#rgb, #rrggbb, #rrggbbaa, rgb(), rgba(), hsla() -> #rrggbb or rgba(r, g, b, a)."""
-    v = v.strip().lower()
+    v = str(v).strip().lower()
     m = re.fullmatch(r"#([0-9a-f]{3,8})", v)
     if m:
         h = m.group(1)
         if len(h) in (3, 4):
             h = "".join(c * 2 for c in h)
-        r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
-        if len(h) == 8:
-            a = round(int(h[6:8], 16) / 255, 3)
-            return "#%02x%02x%02x" % (r, g, b) if a == 1 else "rgba(%d, %d, %d, %s)" % (r, g, b, ("%g" % a))
-        return "#%02x%02x%02x" % (r, g, b)
-    # Bare comma-separated RGB channels ("236,250,239") — DJI's hue ramps
-    # store channels only, consumed as rgb(var(--green-1)).
-    m = re.fullmatch(r"(\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3})", v)
-    if m:
-        r, g, b = (int(c) for c in m.groups())
-        if max(r, g, b) <= 255:
-            return "#%02x%02x%02x" % (r, g, b)
+        return "#" + h[:6]
     m = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+%?))?\s*\)", v)
-    if m:
-        r, g, b, a = m.groups()
-        if a is None:
-            return "#%02x%02x%02x" % (int(r), int(g), int(b))
-        a = float(a[:-1]) / 100 if a.endswith("%") else float(a)
-        return "#%02x%02x%02x" % (int(r), int(g), int(b)) if a == 1 else "rgba(%s, %s, %s, %g)" % (r, g, b, a)
-    # Tailwind-v4 HSL triplet without the hsl() wrapper: "64 8% 16%" or
-    # "64 8% 16% / 0.5" — the site's --* colour vars store channels only.
-    m = re.fullmatch(r"([\d.]+)\s+([\d.]+)%\s+([\d.]+)%(?:\s*/\s*([\d.]+%?))?", v)
-    if m:
-        h, ss, ll, a = float(m.group(1)) % 360, float(m.group(2)) / 100, float(m.group(3)) / 100, m.group(4)
-        c = (1 - abs(2 * ll - 1)) * ss
-        x = c * (1 - abs((h / 60) % 2 - 1))
-        mm = ll - c / 2
-        seg = int(h // 60) % 6
-        rgb = [(c, x, 0), (x, c, 0), (0, c, x), (0, x, c), (x, 0, c), (c, 0, x)][seg]
-        r, g, b = (round((ch + mm) * 255) for ch in rgb)
-        al = 1 if a is None else (float(a[:-1]) / 100 if a.endswith("%") else float(a))
-        return "#%02x%02x%02x" % (r, g, b) if al == 1 else "rgba(%d, %d, %d, %g)" % (r, g, b, al)
-    m = re.fullmatch(r"hsla?\(\s*0\s*,\s*0%\s*,\s*([\d.]+)%\s*(?:,\s*([\d.]+))?\)", v)
-    if m:
-        lvl = round(float(m.group(1)) * 2.55)
-        a = float(m.group(2) or 1)
-        return "#%02x%02x%02x" % (lvl, lvl, lvl) if a == 1 else "rgba(%d, %d, %d, %g)" % (lvl, lvl, lvl, a)
-    raise ValueError("not a colour: " + v)
+    if not m:
+        raise ValueError("not a colour: " + v)
+    r, g, b, a = m.groups()
+    a = float(a[:-1]) / 100 if a and a.endswith("%") else float(a or 1)
+    if a >= 1:
+        return "#%02x%02x%02x" % (int(r), int(g), int(b))
+    return "rgba(%d, %d, %d, %s)" % (int(r), int(g), int(b), "%g" % a)
 
 
-DIM = re.compile(r"-?(\d+(\.\d+)?|\.\d+)(px|rem)")
+def find(group, label):
+    for item in COMP[group]:
+        if item.get("label") == label and not item.get("miss"):
+            return item
+    raise KeyError(label)
 
 
-def check(path, ty, val):
-    """Refuse a value that is not the DTCG type it claims. An alias is checked by the alias pass."""
-    if isinstance(val, str) and val.startswith("{"):
-        return
-    if ty == "dimension" and not DIM.fullmatch(str(val)):
-        raise ValueError(f"{path}: dimension must be one px or rem length, got {val!r}")
-    if ty == "color":
-        norm_color(val) if not str(val).startswith("{") else None
-    if ty == "shadow":
-        for layer in val:
-            for k in ("offsetX", "offsetY", "blur", "spread"):
-                if not DIM.fullmatch(layer[k]):
-                    raise ValueError(f"{path}: shadow {k} {layer[k]!r}")
-    if ty == "number" and not isinstance(val, (int, float)):
-        raise ValueError(f"{path}: number {val!r}")
-    if ty == "fontWeight" and not isinstance(val, int):
-        raise ValueError(f"{path}: fontWeight {val!r}")
-    if ty == "duration" and not re.fullmatch(r"\d+ms", str(val)):
-        raise ValueError(f"{path}: duration {val!r}")
-    if ty == "cubicBezier" and not (isinstance(val, list) and len(val) == 4):
-        raise ValueError(f"{path}: cubicBezier {val!r}")
-    if ty == "gradient":
-        for stop in val:
-            if not str(stop["color"]).startswith("{"):
-                norm_color(stop["color"])
-            if not 0 <= stop["position"] <= 1:
-                raise ValueError(f"{path}: gradient position {stop['position']!r}")
+store = find("home", "store-button")
+nav = find("home", "nav-link")
+learn = find("home", "hero-learn-more")
+buy = find("whereToBuy", "buy-now")
+h1 = find("whereToBuy", "h1")
+search = find("support", "support-search")
+sh1 = find("support", "support-h1")
+password = find("login", "password")
+submit = find("login", "submit")
+body = READ["pages"]["camera-drones"]["body"]
+company = READ["pages"]["company"]
 
 
-def leaf(path, spec, theme):
-    ty = spec["type"]
-    if "var" in spec:
-        name = spec["var"]
-        if name not in DECL[theme]:
-            raise KeyError(f"{path}: {name} is not a resolved variable in raw/css-vars.json ({theme})")
-        val = DECL[theme][name]
-        src = f"css-var {name} ({theme})"
-        if spec.get("source"):
-            src += "; " + spec["source"]
-    else:
-        val = spec["value"]
-        src = spec["source"]
-    if ty == "color" and not str(val).startswith("{"):
-        val = norm_color(val)
-    if ty == "cubicBezier" and isinstance(val, str):
-        m = re.fullmatch(r"cubic-bezier\(\s*([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)\s*\)", val.strip())
-        if m:
-            val = [float("%g" % float(x)) for x in m.groups()]
-        elif val.strip() in ("ease", "ease-in", "ease-out", "ease-in-out", "linear"):
-            val = {"ease": [.25, .1, .25, 1], "ease-in": [.42, 0, 1, 1], "ease-out": [0, 0, .58, 1],
-                   "ease-in-out": [.42, 0, .58, 1], "linear": [0, 0, 1, 1]}[val.strip()]
-    if ty in ("fontWeight", "number") and isinstance(val, str):
-        m = re.fullmatch(r"calc\((-?\d*\.?\d+)\s*/\s*(-?\d*\.?\d+)\)", val)
-        if m:  # Tailwind v4 emits line-heights as calc(a/b) ratios
-            val = round(float(m.group(1)) / float(m.group(2)), 4)
-        elif re.fullmatch(r"-?\d+(\.\d+)?", val):
-            val = float(val) if "." in val else int(val)
-    if ty == "duration" and isinstance(val, str):
-        m = re.fullmatch(r"([\d.]+)(m?s)", val.strip())
-        if m:
-            val = ("%g" % (float(m.group(1)) * (1 if m.group(2) == "ms" else 1000))) + "ms"
-    if ty == "dimension":
-        if isinstance(val, (int, float)):
-            val = "%gpx" % val
-        elif isinstance(val, str) and re.fullmatch(r"-?\d+(\.\d+)?", val.strip()):
-            val = val.strip() + "px"
-    check(path, ty, val)
-    t = {"$value": val, "$type": ty, "$extensions": {"source": src}}
-    if spec.get("description"):
-        t["$description"] = spec["description"]
-    if spec.get("responsive"):
-        t["$extensions"]["responsive"] = spec["responsive"]
-    if spec.get("angle"):
-        t["$extensions"]["angle"] = spec["angle"]
-    return t
+def color(value, source, description):
+    return {
+        "$value": norm_color(value),
+        "$type": "color",
+        "$description": description,
+        "$extensions": {"source": source},
+    }
 
 
-def build(node, theme, path=""):
-    if isinstance(node, dict) and "type" in node and ("value" in node or "var" in node):
-        return leaf(path, node, theme)
-    if isinstance(node, dict) and "$value" in node:
-        return node  # already a DTCG leaf (typography composites)
-    return {k: build(v, theme, f"{path}.{k}" if path else k) for k, v in node.items() if not k.startswith("_")}
+def dim(value, source, description):
+    value = str(value)
+    if not re.fullmatch(r"-?\d+(\.\d+)?(px|rem)", value):
+        raise ValueError("dimension " + value)
+    return {
+        "$value": value,
+        "$type": "dimension",
+        "$description": description,
+        "$extensions": {"source": source},
+    }
 
 
-core = build(SPEC["core"], "light")  # scales are theme-independent
-light = build(SPEC["light"], "light")
-dark = build(SPEC["dark"], "dark")
-# The component tokens live in their own top-level spec tree but are
-# theme-independent measured geometry (nav height, card and field
-# dimensions), so they hang off core and reach both themes.
-core["component"] = build(SPEC["component"], "light")
+def font_stack(value, source):
+    return {
+        "$value": value,
+        "$type": "fontFamily",
+        "$extensions": {"source": source},
+    }
 
 
-# every alias must point at a token that exists
-def tokens_of(tree, prefix=""):
-    for k, v in tree.items():
-        if isinstance(v, dict) and "$value" in v:
-            yield prefix + k, v
-        elif isinstance(v, dict):
-            yield from tokens_of(v, prefix + k + ".")
-
-
-NAMES = {n for n, _ in tokens_of(core)}
-NAMES_L = NAMES | {n for n, _ in tokens_of(light)}
-NAMES_D = NAMES | {n for n, _ in tokens_of(dark)}
-
-
-def aliases(v):
-    if isinstance(v, str):
-        return re.findall(r"\{([^{}]+)\}", v)
-    if isinstance(v, dict):
-        return [a for x in v.values() for a in aliases(x)]
-    if isinstance(v, list):
-        return [a for x in v for a in aliases(x)]
-    return []
-
-
-for n, t in list(tokens_of(core)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES:
-            raise KeyError(f"core.{n}: alias {{{a}}} points at nothing")
-for n, t in list(tokens_of(light)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES_L:
-            raise KeyError(f"light.{n}: alias {{{a}}} points at nothing")
-for n, t in list(tokens_of(dark)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES_D:
-            raise KeyError(f"dark.{n}: alias {{{a}}} points at nothing")
+SRC_STORE = "computed style of the header Store link on https://www.dji.com/sg (raw/components-computed.json, home.store-button)"
+SRC_NAV = "computed style of the Camera Drones nav link on https://www.dji.com/sg (raw/components-computed.json, home.nav-link)"
+SRC_BUY = "computed style of Buy Now on https://www.dji.com/sg/where-to-buy/online-stores (raw/components-computed.json, whereToBuy.buy-now)"
+SRC_LEARN = "computed style of the homepage Learn More control (raw/components-computed.json, home.hero-learn-more). Its text colour resolved to the browser default link blue; the painted outline is white."
+SRC_H1 = "computed style of the Where To Buy h1 (raw/components-computed.json, whereToBuy.h1)"
+SRC_SH1 = "computed style of the Support hero h1 (raw/components-computed.json, support.support-h1)"
+SRC_SEARCH = "computed style of the Support search field (raw/components-computed.json, support.support-search)"
+SRC_PASS = "computed style of the login password field on the account login wall (raw/components-computed.json, login.password). No value was typed."
+SRC_SUBMIT = "computed style of the disabled Log In button on the login wall (raw/components-computed.json, login.submit)"
+SRC_BODY = "computed style of body on https://www.dji.com/sg/camera-drones (raw/readings.json)"
+SRC_HOVER = "computed backgroundColor after hover on the Store link (raw/components-computed.json, home.store-button.hover)"
 
 tokens = {
-    "core": core,
-    "light": light,
-    "dark": dark,
+    "core": {
+        "$description": "Scales read from the public DJI site. One light theme.",
+        "color": {
+            "ink": color(nav["def"]["color"], SRC_NAV, "Nav label ink, rgba(0,0,0,0.85)."),
+            "inkSolid": color(body["color"], SRC_BODY, "Body text on category pages."),
+            "muted": color(company["body"]["color"], "computed body color on https://www.dji.com/sg/company (raw/readings.json)", "Secondary grey used as body colour on company and search."),
+            "paper": color("rgb(255, 255, 255)", SRC_BUY + "; also the header bar sampled on home-light-default.png", "Page and header ground."),
+            "band": color("rgb(242, 242, 242)", "computed body backgroundColor on https://www.dji.com/sg/products/power-series (raw/readings.json)", "Light grey page band."),
+            "accent": color(store["def"]["bg"], SRC_STORE, "DJI blue. Store button and Buy Now fill."),
+            "accentHover": color(store["hover"]["bg"], SRC_HOVER, "Store button fill after hover."),
+            "onAccent": color(store["def"]["color"], SRC_STORE, "Label on the blue Store button."),
+            "heroOutline": color(learn["def"]["bc"], SRC_LEARN, "1px outline of the homepage Learn More and Buy Now pills."),
+            "fieldBorder": color(password["def"]["bc"], SRC_PASS, "Login field border."),
+            "disabledText": color(submit["def"]["color"], SRC_SUBMIT, "Disabled Log In label."),
+            "disabledFill": color(submit["def"]["bg"], SRC_SUBMIT, "Disabled Log In fill."),
+        },
+        "font": {
+            "family": {
+                "sans": font_stack(body["font"], SRC_BODY),
+            }
+        },
+        "typography": {
+            "nav": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{font.family.sans}",
+                    "fontSize": nav["def"]["size"],
+                    "fontWeight": int(nav["def"]["weight"]),
+                    "lineHeight": "64px",
+                },
+                "$extensions": {"source": SRC_NAV},
+            },
+            "body": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{font.family.sans}",
+                    "fontSize": body["size"],
+                    "fontWeight": 400,
+                    "lineHeight": "24px",
+                },
+                "$extensions": {"source": "Derived. Body font size and family are the computed body style on camera-drones (raw/readings.json). The 24px line height was not stored on that reading, so it is a 1.5 multiple of the 16px size, not a measured line-height."},
+            },
+            "button": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{font.family.sans}",
+                    "fontSize": store["def"]["size"],
+                    "fontWeight": int(store["def"]["weight"]),
+                    "lineHeight": "16px",
+                },
+                "$extensions": {"source": SRC_STORE + " Font size and weight are computed. The 16px line height is Derived from the 14px size plus the 8px vertical padding, not a stored line-height."},
+            },
+            "heading": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{font.family.sans}",
+                    "fontSize": h1["def"]["size"],
+                    "fontWeight": int(h1["def"]["weight"]),
+                    "lineHeight": "36px",
+                },
+                "$extensions": {"source": SRC_H1 + " Font size and weight are computed. The 36px line height is Derived; the reading stored the box height (76px) which includes padding."},
+            },
+            "display": {
+                "$type": "typography",
+                "$value": {
+                    "fontFamily": "{font.family.sans}",
+                    "fontSize": sh1["def"]["size"],
+                    "fontWeight": int(sh1["def"]["weight"]),
+                    "lineHeight": "56px",
+                },
+                "$extensions": {"source": SRC_SH1 + " Font size, weight and the 56px box height are computed. The line height equals that box height. White on a photograph, not a page ground."},
+            },
+        },
+        "radius": {
+            "none": dim("0px", SRC_NAV, "Nav links are square."),
+            "field": dim(password["def"]["radius"], SRC_PASS, "Login field corner."),
+            "buy": dim("100px", SRC_BUY, "Where to Buy Buy Now pill. The header Store control computed a pill large enough to be a full capsule (1408px on a 32px control)."),
+            "hero": dim(learn["def"]["radius"], SRC_LEARN, "Homepage outline pill."),
+        },
+        "space": {
+            "2": dim("8px", SRC_STORE, "Vertical padding of the Store button."),
+            "4": dim("16px", SRC_STORE, "Horizontal padding of the Store button."),
+        },
+        "size": {
+            "store": dim(str(store["def"]["h"]) + "px", SRC_STORE, "Store button height."),
+            "buy": dim(str(buy["def"]["h"]) + "px", SRC_BUY, "Buy Now height."),
+            "field": dim(str(password["def"]["h"]) + "px", SRC_PASS, "Login field height."),
+            "submit": dim(str(submit["def"]["h"]) + "px", SRC_SUBMIT, "Log In button height."),
+            "nav": dim(str(nav["def"]["h"]) + "px", SRC_NAV, "Desktop nav row height."),
+            "search": dim(str(search["def"]["h"]) + "px", SRC_SEARCH, "Support search field height."),
+        },
+        "border": {
+            "hairline": dim(password["def"]["bw"], SRC_PASS, "Login field border width."),
+            "hero": dim(learn["def"]["bw"], SRC_LEARN, "Homepage pill outline width."),
+        },
+    },
+    "light": {
+        "$description": "Semantic roles for the one light theme www.dji.com paints.",
+        "background": {
+            "page": {"$value": "{color.paper}", "$type": "color", "$extensions": {"source": "alias of core.color.paper"}},
+            "surface": {"$value": "{color.band}", "$type": "color", "$extensions": {"source": "alias of core.color.band"}},
+            "header": {"$value": "{color.paper}", "$type": "color", "$extensions": {"source": "alias of core.color.paper; header bar sampled white on home-light-default.png"}},
+        },
+        "text": {
+            "primary": {"$value": "{color.inkSolid}", "$type": "color", "$extensions": {"source": "alias of core.color.inkSolid"}},
+            "muted": {"$value": "{color.muted}", "$type": "color", "$extensions": {"source": "alias of core.color.muted"}},
+            "onAccent": {"$value": "{color.onAccent}", "$type": "color", "$extensions": {"source": "alias of core.color.onAccent"}},
+            "disabled": {"$value": "{color.disabledText}", "$type": "color", "$extensions": {"source": "alias of core.color.disabledText"}},
+            "link": {"$value": "{color.accent}", "$type": "color", "$extensions": {"source": "Support Learn More computed rgb(24, 144, 255); the brand action blue used for links is the measured Store blue. The homepage Learn More text resolved to the browser default and is not this token."}},
+        },
+        "border": {
+            "default": {"$value": "{color.fieldBorder}", "$type": "color", "$extensions": {"source": "alias of core.color.fieldBorder"}},
+            "strong": {"$value": "{color.ink}", "$type": "color", "$extensions": {"source": "alias of core.color.ink"}},
+        },
+        "accent": {
+            "default": {"$value": "{color.accent}", "$type": "color", "$extensions": {"source": "alias of core.color.accent"}},
+            "hover": {"$value": "{color.accentHover}", "$type": "color", "$extensions": {"source": "alias of core.color.accentHover"}},
+        },
+        "action": {
+            "primary": {"$value": "{color.accent}", "$type": "color", "$extensions": {"source": "alias of core.color.accent"}},
+            "disabled": {"$value": "{color.disabledFill}", "$type": "color", "$extensions": {"source": "alias of core.color.disabledFill"}},
+        },
+    },
     "$themes": [
-        {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "The light surface: resolves the product's own .light-theme sections — the nav, category listings, support and where-to-buy paint it signed out (Open Sans UI over the light roles)."},
-        {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"},
-         "$description": "The dark surface: resolves the product's own .dark-theme sections — the home hero, the product page's dark panels, the footer and the legacy dui-navbar paint it signed out; the dark roles here are measured dark paint."},
+        {"name": "light", "selectedColorSets": ["core", "light"]},
     ],
-    "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
 }
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
 
-
-def count(d):
-    return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
-
-
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})
+# body lineHeight was derived; keep the token but mark it. The builder below
+# accepts typography composites without a separate dimension check.
+out = json.dumps(tokens, indent=1) + "\n"
+(HERE / "tokens.json").write_text(out)
+print("wrote tokens.json", len(out))

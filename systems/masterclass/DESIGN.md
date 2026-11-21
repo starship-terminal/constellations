@@ -3,67 +3,99 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "MasterClass"
-description: "Celebrity-instructor class marketing on a near-black ground: Sohne type, one pink #e32652 action, an 8px control radius, a class landing page with a still and a membership card, and a three-column annual plan picker"
+description: "Class marketplace: black page, white condensed headlines, one pink action, dark browse menu"
 omitted:
-  - section: "typography"
-    reason: "tokens.json has no typography tokens under `core.typography`"
   - section: "components"
     reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
   primary: "#e32652"
   neutral: "#0d0d0e"
-  surface: "#191c21"
+  surface: "#222326"
   on-surface: "#ffffff"
-  on-surface-variant: "#9ea0a9"
-  outline: "#303136"
-  color-page-default: "#0d0d0e"
-  color-surface-default: "#0d0d0e"
-  color-surface-raised: "#191c21"
-  color-surface-overlay: "#272c33"
-  color-scrim: "rgba(0,0,0,0.9)"
-  color-text-primary: "#ffffff"
-  color-text-secondary: "#d4d5d9"
-  color-text-muted: "#9ea0a9"
-  color-text-disabled: "#9ea0a9"
-  color-text-onAccent: "#ffffff"
-  color-text-link: "#ffffff"
-  color-border-default: "#303136"
-  color-border-strong: "#9ea0a9"
-  color-border-focus: "#3787ff"
-  color-accent-default: "#e32652"
-  color-accent-hover: "#d61a46"
-  color-accent-pressed: "#c71a42"
-  color-brand-default: "#ef4562"
-  color-status-success: "#3ebb70"
-  color-status-warning: "#ff9000"
-  color-status-danger: "#ff3333"
-  color-status-info: "#3787ff"
-  color-control-field: "#191c21"
-  color-control-fieldBorder: "#272c33"
-  color-control-placeholder: "rgba(255,255,255,0.5)"
-  color-plan-selected: "rgba(25,28,33,0.8)"
-  color-plan-unselectedText: "#949aa4"
-  color-badge-fill: "#272c33"
-  color-badge-text: "#ffffff"
+  on-surface-variant: "#d4d5d9"
+  outline: "#272c33"
+  background-page: "#0d0d0e"
+  background-surface: "#222326"
+  background-raised: "#191c21"
+  background-overlay: "#272c33"
+  background-scrim: "rgba(0, 0, 0, 0.9)"
+  text-primary: "#ffffff"
+  text-secondary: "#d4d5d9"
+  text-disabled: "#9ea0a9"
+  text-on-accent: "#ffffff"
+  text-link: "#ffffff"
+  border-default: "#272c33"
+  border-strong: "#9ea0a9"
+  border-focus: "#3787ff"
+  accent-default: "#e32652"
+  accent-hover: "#d61a46"
+  accent-pressed: "#c71a42"
+  status-success: "#3ebb70"
+  status-warning: "#ff9000"
+  status-danger: "#ff3333"
+  status-info: "#3787ff"
+typography:
+  display:
+    fontFamily: "Sohne Schmal"
+    fontSize: "46px"
+    fontWeight: 600
+    lineHeight: "46px"
+    letterSpacing: "0px"
+  heading:
+    fontFamily: "Sohne"
+    fontSize: "34px"
+    fontWeight: 600
+    lineHeight: 1.15
+    letterSpacing: "0px"
+  title:
+    fontFamily: "Sohne"
+    fontSize: "20px"
+    fontWeight: 600
+    lineHeight: 1.25
+    letterSpacing: "0px"
+  body:
+    fontFamily: "Sohne"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: "0px"
+  label:
+    fontFamily: "Sohne"
+    fontSize: "16px"
+    fontWeight: 600
+    lineHeight: "20px"
+    letterSpacing: "0.16px"
+  caption:
+    fontFamily: "Sohne"
+    fontSize: "12px"
+    fontWeight: 400
+    lineHeight: 1.45
+    letterSpacing: "0px"
+  code:
+    fontFamily: "ui-monospace"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: 1.45
+    letterSpacing: "0px"
 rounded:
-  lg: "1.6rem"
-  md: "1.2rem"
-  sm: "0.8rem"
-  xl: "2.4rem"
+  sm: "8px"
+  md: "12px"
+  lg: "16px"
+  xl: "18px"
 spacing:
   "0": "0px"
   "1": "4px"
-  "10": "64px"
-  "11": "80px"
-  "12": "96px"
   "2": "8px"
   "3": "12px"
   "4": "16px"
-  "5": "20px"
-  "6": "24px"
-  "7": "28px"
-  "8": "32px"
-  "9": "48px"
+  "5": "18px"
+  "6": "18px"
+  "7": "20px"
+  "8": "20px"
+  "9": "34px"
+  "10": "46px"
+  "11": "60px"
+  "12": "72px"
 ---
 
 # MasterClass
@@ -74,36 +106,42 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 ## Overview
 
-Good for: Celebrity-instructor class marketing on a near-black ground: Sohne type, one pink #e32652 action, an 8px control radius, a class landing page with a still and a membership card, and a three-column annual plan picker.
+Good for: Class marketplace: black page, white condensed headlines, one pink action, dark browse menu.
 
-Captured 2026-11-18, signed out (every captured surface is public); the member library, lesson player and payment sit behind sign-in or checkout and were never reached; the sign-in form and the find-my-classes quiz were measured empty and not submitted; no trial was started and no plan was bought; the OneTrust consent layer was hidden, never clicked. Themes: dark.
+Captured 2026-11-21, signed out. Themes: dark.
 
-A token set and component reference for MasterClass's public signed-out surface. Read on **2026-11-18** from **www.masterclass.com** in headless Chromium at 1440×900 and 390×844: the marketing home, a class landing page, the membership picker at `/checkout` (viewed, not purchased), the sign-in form (empty, not submitted), categories, gifts, At Work, and the find-my-classes quiz (not submitted).
+A token set and component reference for MasterClass's public site (`www.masterclass.com`), captured signed out on 2026-11-21 in headless Chromium. Desktop is 1440x900. Phone is 390x844. The public site ships one dark theme: black page, white type, one pink accent. Signed-in class playback, account and checkout payment were not entered. Login at `https://www.masterclass.com/auth/login` redirected to a Google sign-in. Google was not clicked. No form was submitted.
 
-MasterClass paints one dark theme. The page ground is `#0d0d0e`, the primary action is a pink `#e32652` pill (`--mc-color-accent-default`), and type is Sohne. The site declares a large `--mc-color-*` custom-property layer, including numbered ramps and semantic roles. **Boundary:** class playback, the lesson player, the member library, account, and payment sit behind sign-in or checkout and were never reached.
+The site tree, written before the screenshots, is [site-tree.md](site-tree.md).
 
 ## Colors
 
 The roles below are the catalog's swatches for the `dark` theme. The front matter then lists every colour token under `dark`, named by its path with dots turned into hyphens.
 
-- **primary (#e32652):** `dark.color.accent.default`
-- **neutral (#0d0d0e):** `dark.color.page.default`
-- **surface (#191c21):** `dark.color.surface.raised`
-- **on-surface (#ffffff):** `dark.color.text.primary`
-- **on-surface-variant (#9ea0a9):** `dark.color.text.muted`
-- **outline (#303136):** `dark.color.border.default`
+- **primary (#e32652):** `dark.accent.default`
+- **neutral (#0d0d0e):** `dark.background.page`
+- **surface (#222326):** `dark.background.surface`
+- **on-surface (#ffffff):** `dark.text.primary`
+- **on-surface-variant (#d4d5d9):** `dark.text.secondary`
+- **outline (#272c33):** `dark.border.default`
 
 ## Typography
 
-No composite type styles in tokens.json; the README text below names the faces and sizes.
+7 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Sohne, Sohne Schmal, ui-monospace.
 
 ### Fonts (from README.md)
 
-**Sohne** is the UI face (`--font-sohne`). **Sohne Kraftig** is declared beside it. **Ivar Display Condensed** is the only `@font-face` family the home stylesheet registered. None of these files ship with the package. The style guide falls back to Helvetica.
+| Family | Weights | Used for |
+|---|---|---|
+| Sohne | 400, 600 | UI and body. Proprietary. The style guide falls back to Helvetica |
+| Sohne Schmal | 600 | Condensed display headlines |
+| Sohne Kraftig | 500 | A heavier cut, declared in `@font-face` |
+| Ivar Display Condensed | 400 | Serif display on some headlines |
+| Ivar Text | 400, 500 | Editorial text, declared in `@font-face` |
 
 ## Layout
 
-Spacing from `core.spacing`: `0` 0px, `1` 4px, `10` 64px, `11` 80px, `12` 96px, `2` 8px, `3` 12px, `4` 16px, `5` 20px, `6` 24px, `7` 28px, `8` 32px, `9` 48px.
+Spacing from `core.spacing`: `0` 0px, `1` 4px, `2` 8px, `3` 12px, `4` 16px, `5` 18px, `6` 18px, `7` 20px, `8` 20px, `9` 34px, `10` 46px, `11` 60px, `12` 72px.
 
 ## Elevation & Depth
 
@@ -111,7 +149,7 @@ No shadow tokens were captured; depth comes from surface colours and borders. Se
 
 ## Shapes
 
-Corner radii from `core.radius`: `lg` 1.6rem, `md` 1.2rem, `sm` 0.8rem, `xl` 2.4rem.
+Corner radii from `core.radius`: `sm` 8px, `md` 12px, `lg` 16px, `xl` 18px.
 
 ## Components
 
@@ -129,19 +167,19 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- **This is the public shell.** Playback, the lesson list behind a membership, account and payment were not reached. Do not style the member app from this package.
-- **One theme.** No light set is applied on `:root`. Do not invent one.
-- **Pressed states were not measured.** The CDP CSS agent did not enable, so hover and default are the interactive evidence.
-- **Automation was hidden during the committed capture.** The readings, crops and screenshots were taken with a `navigator.webdriver` mask. The scripts no longer hide automation, and a rerun that meets a bot check records it as a boundary. The `/checkout` pass used to click a plan's Select. No committed file holds that state, and the script now shoots the plans at rest.
-- **Quantised screenshots.** `screenshots/` are 256-colour PNGs. Read colours from tokens.
-- **The quiz Continue control is disabled until a choice is made.** It was not clicked, so its enabled colour is uncaptured.
-- **`--mc-color-error-*-rgb` channels are truncated in the stylesheet** (for example error-100-rgb reads `255,214,21`). The hex channels were used. The rgb twins were dropped.
+- Screenshots are 256-colour PNGs. Read colours from tokens.json.
+- `dark.status.info` is the focus blue. The stylesheet has no `--mc-color-info`. The source string says so.
+- Radii in px are derived from rem scale tokens. The 8px step was also computed on the button.
+- Code type uses the browser monospace. The public pages do not declare a code family.
+- Hover was captured for the primary button and Log In. Pressed and focus-visible were not held on every control.
+- The sample-lesson button on the class page did not click in time. The lesson-plan state was captured.
+- Login, signup, payment, newsletter and contact fields were not filled.
 
 ### Do and don't (from README.md)
 
-1. **Do put white type on near-black.** `#ffffff` on `#0d0d0e` is the page. Muted copy is `#9ea0a9`. See [home-dark-default](screenshots/home-dark-default.png).
-2. **Do spend pink on the one action.** `#e32652` is Get MasterClass and the selected plan. Secondary actions are quiet text or a dark Browse pill. See [home-dark-default](screenshots/home-dark-default.png).
-3. **Do keep corners at 8px.** Buttons and the search field use an 8px radius. See [components/crops/nav-cta-default.png](components/crops/nav-cta-default.png).
-4. **Do set plans in a three-column comparison.** Standard, Plus and Premium sit in one row, with a Best Value badge on Premium and a filled Selected state. See [checkout-dark-default](screenshots/checkout-dark-default.png).
-5. **Don't style the player from this package.** Lessons and playback sit behind sign-in or purchase.
-6. **Don't ship a light theme.** The signed-out site does not apply one.
+- **Do keep the page black and the type white.** The public site has one theme. See [screenshots/home-dark-default.png](screenshots/home-dark-default.png).
+- **Do spend the pink on one action.** Get MasterClass is the filled button. Other header actions are text. See [components/crops/button-default.png](components/crops/button-default.png).
+- **Do set headlines in condensed caps.** The hero is Sohne Schmal, uppercase. See [screenshots/home-dark-default.png](screenshots/home-dark-default.png).
+- **Do use the Browse menu for categories.** It opens on the page. View All Categories is the index. See [screenshots/home-dark-browse.png](screenshots/home-dark-browse.png).
+- **Don't round the page into a light theme.** No light toggle was on the public site.
+- **Don't fill the signup fields.** Login is a Google wall, and the newsletter fields were left empty.

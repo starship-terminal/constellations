@@ -1,0 +1,359 @@
+{
+ "readAt": "2026-11-20",
+ "source": "www.useparallel.com home page, stylesheets read through the CSSOM in headless Chromium at 1440x900, then re-parsed in a probe document. Cross-origin sheets that the CSSOM refused are listed under errors.",
+ "sheets": [
+  {
+   "name": "https://www.useparallel.com/_next/static/css/cc2fd95245c66a8d.css",
+   "media": "",
+   "bytes": 706505,
+   "unreadable": false
+  },
+  {
+   "name": "inline-1",
+   "media": "",
+   "bytes": 7161,
+   "unreadable": false
+  },
+  {
+   "name": "https://www.useparallel.com/_next/static/css/33d5d0695d21fc14.css",
+   "media": "",
+   "bytes": 33626,
+   "unreadable": false
+  },
+  {
+   "name": "https://www.useparallel.com/_next/static/css/93d28a08b85d7c74.css",
+   "media": "",
+   "bytes": 77728,
+   "unreadable": false
+  },
+  {
+   "name": "https://www.useparallel.com/_next/static/css/78d96c595884f8d9.css",
+   "media": "",
+   "bytes": 25042,
+   "unreadable": false
+  },
+  {
+   "name": "https://www.useparallel.com/_next/static/css/8aee48eb52f4c731.css",
+   "media": "",
+   "bytes": 24526,
+   "unreadable": false
+  },
+  {
+   "name": "https://www.useparallel.com/_next/static/css/ab699959edbc876f.css",
+   "media": "",
+   "bytes": 20051,
+   "unreadable": false
+  },
+  {
+   "name": "https://www.useparallel.com/_next/static/css/b331b6e312a75d54.css",
+   "media": "",
+   "bytes": 11647,
+   "unreadable": false
+  },
+  {
+   "name": "inline-8",
+   "media": "",
+   "bytes": 12697,
+   "unreadable": false
+  },
+  {
+   "name": "inline-9",
+   "media": "",
+   "bytes": 1458,
+   "unreadable": false
+  }
+ ],
+ "rootComputed": {},
+ "counts": {
+  "declared": 114,
+  "resolved": 61
+ },
+ "resolved": {
+  "light": {
+   "--annotation-unfocused-field-background": {
+    "raw": "url(\"data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>\")",
+    "kind": "other"
+   },
+   "--app-background": {
+    "raw": "#fbfaf9",
+    "kind": "color",
+    "value": "#fbfaf9"
+   },
+   "--border-primary": {
+    "raw": "2px solid #0f0f0f",
+    "kind": "other"
+   },
+   "--card-translate-primary": {
+    "raw": "translate(-0.8rem,-0.8rem)",
+    "kind": "other"
+   },
+   "--card-translate-secondary": {
+    "raw": "translate(-0.6rem,-0.6rem)",
+    "kind": "other"
+   },
+   "--color-black": {
+    "raw": "#0f0f0f",
+    "kind": "color",
+    "value": "#0f0f0f"
+   },
+   "--color-employee-gradient": {
+    "raw": "radial-gradient(116.91% 70.35% at 46.56% -7.36%,#eafa35 0%,hsla(0,0%,100%,0) 55.72%,hsla(0,0%,100%,0) 100%),#fffefb",
+    "kind": "other"
+   },
+   "--color-gradient-1": {
+    "raw": "radial-gradient(91.37% 91.37% at 50% -28.7%,#f33 0%,hsla(0,0%,100%,0) 100%),radial-gradient(86.52% 86.52% at 103.72% -7.83%,#fe0e9f 6.73%,hsla(47,69%,97%,0) 100%),radial-gradient(103.04% 103.04% at 7.53% -7.33%,#e3ff35 0%,hsla(0,0%,100%,0) 95.72%,hsla(0,0%,100%,0) 100%),#fffefb",
+    "kind": "other"
+   },
+   "--color-gradient-10": {
+    "raw": "radial-gradient(48.68% 64.03% at 50% 45.59%,#eafa35 0%,#fffefb 100%)",
+    "kind": "other"
+   },
+   "--color-gradient-2": {
+    "raw": "radial-gradient(41.86% 41.86% at 50% -12.3%,#f33 0%,hsla(0,0%,100%,0) 100%),radial-gradient(32.17% 32.17% at 77.08% -3.98%,#fe0e9f 6.73%,hsla(47,69%,97%,0) 100%),radial-gradient(45.59% 45.59% at 24.13% -3.23%,#e3ff35 0%,hsla(0,0%,100%,0) 95.72%,hsla(0,0%,100%,0) 100%),#fffefb",
+    "kind": "other"
+   },
+   "--color-gradient-3": {
+    "raw": "radial-gradient(58.95% 93.89% at 105.74% 14.74%,#f54cb2 14.65%,hsla(0,0%,100%,0) 98.79%),radial-gradient(47.76% 75.72% at 1.37% 87.33%,rgba(236,251,74,.897) 20.72%,#eafa35 29.74%,hsla(0,0%,100%,0) 100%),#fffefb",
+    "kind": "other"
+   },
+   "--color-gradient-4": {
+    "raw": "radial-gradient(116.91% 70.35% at 46.56% -7.36%,#eafa35 0%,hsla(0,0%,100%,0) 70.72%,hsla(0,0%,100%,0) 100%),#fffefb",
+    "kind": "other"
+   },
+   "--color-gradient-5": {
+    "raw": "radial-gradient(48.68% 64.03% at 50% 45.59%,#eafa35 0%,#fffefb 100%)",
+    "kind": "other"
+   },
+   "--color-gradient-6": {
+    "raw": "radial-gradient(48.68% 64.03% at 50% 45.59%,#daccff 0%,#fffefb 100%)",
+    "kind": "other"
+   },
+   "--color-gradient-7": {
+    "raw": "radial-gradient(45.45% 389.52% at 50% 110.67%,#e3c0fe 0%,#fffefb 100%)",
+    "kind": "other"
+   },
+   "--color-gray": {
+    "raw": "hsla(0,0%,80%,.09)",
+    "kind": "color",
+    "value": "rgba(204, 204, 204, 0.09)"
+   },
+   "--color-green": {
+    "raw": "#1fba4a",
+    "kind": "color",
+    "value": "#1fba4a"
+   },
+   "--color-hiringManager-gradient": {
+    "raw": "radial-gradient(116.91% 70.35% at 46.56% -7.36%,#daccff 0%,hsla(0,0%,100%,0) 55.72%,hsla(0,0%,100%,0) 100%),#fffefb",
+    "kind": "other"
+   },
+   "--color-light-gray": {
+    "raw": "#fafafa",
+    "kind": "color",
+    "value": "#fafafa"
+   },
+   "--color-off-white": {
+    "raw": "#fffefb",
+    "kind": "color",
+    "value": "#fffefb"
+   },
+   "--color-orange": {
+    "raw": "#fe8a11",
+    "kind": "color",
+    "value": "#fe8a11"
+   },
+   "--color-pink": {
+    "raw": "#f54cb2",
+    "kind": "color",
+    "value": "#f54cb2"
+   },
+   "--color-purple": {
+    "raw": "#daccff",
+    "kind": "color",
+    "value": "#daccff"
+   },
+   "--color-red": {
+    "raw": "#f22",
+    "kind": "color",
+    "value": "#ff2222"
+   },
+   "--color-red-200": {
+    "raw": "#ff3e3e",
+    "kind": "color",
+    "value": "#ff3e3e"
+   },
+   "--color-red-400": {
+    "raw": "#e95656",
+    "kind": "color",
+    "value": "#e95656"
+   },
+   "--color-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--color-yellow": {
+    "raw": "#eafa35",
+    "kind": "color",
+    "value": "#eafa35"
+   },
+   "--font-advercase": {
+    "raw": "\"Advercase Demo\"",
+    "kind": "other"
+   },
+   "--font-family-primary": {
+    "raw": "\"Work Sans\",sans-serif",
+    "kind": "fontFamily",
+    "value": "\"Work Sans\",sans-serif"
+   },
+   "--font-family-secondary": {
+    "raw": "\"Termina\",sans-serif",
+    "kind": "fontFamily",
+    "value": "\"Termina\",sans-serif"
+   },
+   "--font-family-tertiary": {
+    "raw": "\"Cousine\",sans-serif",
+    "kind": "fontFamily",
+    "value": "\"Cousine\",sans-serif"
+   },
+   "--input-disabled-border-color": {
+    "raw": "transparent",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--input-focus-border-color": {
+    "raw": "Highlight",
+    "kind": "color",
+    "value": "rgba(128, 188, 254, 0.6)"
+   },
+   "--input-focus-outline": {
+    "raw": "1px solid Canvas",
+    "kind": "other"
+   },
+   "--input-hover-border-color": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--input-unfocused-border-color": {
+    "raw": "transparent",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--link-outline": {
+    "raw": "none",
+    "kind": "other"
+   },
+   "--mobile-gradient-modal": {
+    "raw": "radial-gradient(245.78% 90.57% at 100% 4.6%,#f54cb2 0%,#f54cb2 20.78%,rgba(248,127,200,.45) 50.98%,hsla(0,0%,100%,0) 98.79%),radial-gradient(117.73% 88.96% at 0% 100%,rgba(236,251,74,.897) 20.72%,#eafa35 36.29%,hsla(0,0%,100%,0) 100%),#fdfaf2",
+    "kind": "other"
+   },
+   "--prll-g-1": {
+    "raw": "70px",
+    "kind": "dimension",
+    "value": "70px"
+   },
+   "--prll-g-10": {
+    "raw": "916px",
+    "kind": "dimension",
+    "value": "916px"
+   },
+   "--prll-g-11": {
+    "raw": "1010px",
+    "kind": "dimension",
+    "value": "1010px"
+   },
+   "--prll-g-12": {
+    "raw": "1104px",
+    "kind": "dimension",
+    "value": "1104px"
+   },
+   "--prll-g-2": {
+    "raw": "164px",
+    "kind": "dimension",
+    "value": "164px"
+   },
+   "--prll-g-3": {
+    "raw": "258px",
+    "kind": "dimension",
+    "value": "258px"
+   },
+   "--prll-g-4": {
+    "raw": "352px",
+    "kind": "dimension",
+    "value": "352px"
+   },
+   "--prll-g-5": {
+    "raw": "446px",
+    "kind": "dimension",
+    "value": "446px"
+   },
+   "--prll-g-6": {
+    "raw": "540px",
+    "kind": "dimension",
+    "value": "540px"
+   },
+   "--prll-g-7": {
+    "raw": "634px",
+    "kind": "dimension",
+    "value": "634px"
+   },
+   "--prll-g-8": {
+    "raw": "728px",
+    "kind": "dimension",
+    "value": "728px"
+   },
+   "--prll-g-9": {
+    "raw": "822px",
+    "kind": "dimension",
+    "value": "822px"
+   },
+   "--prll-gt-1": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--prll-gt-2": {
+    "raw": "48px",
+    "kind": "dimension",
+    "value": "48px"
+   },
+   "--prll-scrollbar-size": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--prll-scrollbar-thumb-border-size": {
+    "raw": "2px",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--prll-scrollbar-thumb-color": {
+    "raw": "#d3d3d3",
+    "kind": "color",
+    "value": "#d3d3d3"
+   },
+   "--prll-scrollbar-track-margin": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--react-pdf-annotation-layer": {
+    "raw": "1",
+    "kind": "other"
+   },
+   "--shadow-primary": {
+    "raw": "8px 8px 0px #0f0f0f",
+    "kind": "other"
+   },
+   "--shadow-secondary": {
+    "raw": "6px 6px 0px #0f0f0f",
+    "kind": "other"
+   },
+   "--shadow-tertiary": {
+    "raw": "2px 6px 10px rgba(0,0,0,.11)",
+    "kind": "other"
+   }
+  }
+ },
+ "errors": []
+}

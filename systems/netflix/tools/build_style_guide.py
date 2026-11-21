@@ -39,8 +39,6 @@ def alias(v):
 
 def css_val(name, t):
     v, ty = t["$value"], t["$type"]
-    if ty in ("transition", "animation"):
-        return None   # composites with no single CSS value; the Motion section reads them from the token tree
     if ty == "cubicBezier":
         return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
     if ty == "shadow":
@@ -48,8 +46,7 @@ def css_val(name, t):
             return alias(v)
         return ", ".join(("inset " if s.get("inset") else "") + f'{s["offsetX"]} {s["offsetY"]} {s["blur"]} {s["spread"]} {alias(s["color"])}' for s in v)
     if ty == "typography":
-        lh = alias(v["lineHeight"]) if "lineHeight" in v else "normal"
-        return f'{alias(v["fontWeight"])} {alias(v["fontSize"])}/{lh} {alias(v["fontFamily"])}'
+        return f'{alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])}'
     if ty == "gradient":
         angle = t["$extensions"].get("angle", "180deg")
         return f"linear-gradient({angle}, " + ", ".join(f'{alias(s["color"])} {round(s["position"] * 100, 2)}%' for s in v) + ")"
@@ -65,7 +62,7 @@ def block(setname):
     """A set's custom properties; a set the product lacks renders as nothing."""
     if setname not in T:
         return ""
-    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]) if css_val(n, t) is not None)
+    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]))
 
 
 # a core name and a themed name must not land on the same custom property

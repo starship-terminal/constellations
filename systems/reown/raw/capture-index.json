@@ -1,0 +1,399 @@
+{
+  "capturedAt": "2026-11-20T19:47:16.287Z",
+  "pages": [
+    {
+      "name": "home",
+      "url": "https://reown.com/",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/",
+      "title": "Reown |Infrastructure for blockchain app development — Reown"
+    },
+    {
+      "name": "pricing",
+      "url": "https://reown.com/pricing",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/pricing",
+      "title": "Pricing | Reown"
+    },
+    {
+      "name": "learn",
+      "url": "https://reown.com/learn",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/learn",
+      "title": "Reown Learn: Learn blockchain development with Reown — Reown"
+    },
+    {
+      "name": "solutions-analytics",
+      "url": "https://reown.com/solutions/analytics",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/solutions/analytics",
+      "title": "Blockchain App Analytics | Reown — Reown"
+    },
+    {
+      "name": "solutions-authentication",
+      "url": "https://reown.com/solutions/authentication",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/solutions/authentication",
+      "title": "Web3 Authentication Solution | Reown — Reown"
+    },
+    {
+      "name": "solutions-transactions",
+      "url": "https://reown.com/solutions/transactions",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/solutions/transactions",
+      "title": "Onchain Transacting Solutions | Reown — Reown"
+    },
+    {
+      "name": "solutions-compliance",
+      "url": "https://reown.com/solutions/compliance",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/solutions/compliance",
+      "title": "Blockchain App Compliance | Reown — Reown"
+    },
+    {
+      "name": "use-cases-defi",
+      "url": "https://reown.com/use-cases/defi",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/use-cases/defi",
+      "title": "DeFi App Development Solutions | Reown — Reown"
+    },
+    {
+      "name": "use-cases-marketplaces",
+      "url": "https://reown.com/use-cases/marketplaces",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/use-cases/marketplaces",
+      "title": "Web3 Marketplace App Infrastructure | Reown — Reown"
+    },
+    {
+      "name": "use-cases-gaming",
+      "url": "https://reown.com/use-cases/gaming",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/use-cases/gaming",
+      "title": "Blockchain Game Development | Reown — Reown"
+    },
+    {
+      "name": "use-cases-social",
+      "url": "https://reown.com/use-cases/social",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/use-cases/social",
+      "title": "Reown For Social — Reown"
+    },
+    {
+      "name": "about",
+      "url": "https://reown.com/about-reown",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/about-reown",
+      "title": "Learn about Reown, the infrastructure solution for onchain apps — Reown"
+    },
+    {
+      "name": "blog",
+      "url": "https://reown.com/blog",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/blog",
+      "title": "Reown Blog — Reown"
+    },
+    {
+      "name": "careers",
+      "url": "https://reown.com/careers",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/careers",
+      "title": "Start working with us — Reown"
+    },
+    {
+      "name": "contact",
+      "url": "https://reown.com/contact",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/contact",
+      "title": "Get in touch with us today | Reown — Reown"
+    },
+    {
+      "name": "faq",
+      "url": "https://reown.com/faq",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/faq",
+      "title": "Explore the Reown FAQ — Reown"
+    },
+    {
+      "name": "security",
+      "url": "https://reown.com/security",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/security",
+      "title": "Submit Security Report | Reown — Reown"
+    },
+    {
+      "name": "sdk",
+      "url": "https://reown.com/reown-sdk",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/reown-sdk",
+      "title": "Discover Reown SDK — Reown"
+    },
+    {
+      "name": "state-of-defi",
+      "url": "https://reown.com/state-of-defi-2026",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/state-of-defi-2026",
+      "title": "State of DeFi 2026 — Reown"
+    },
+    {
+      "name": "privacy",
+      "url": "https://reown.com/privacy-policy",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/privacy-policy",
+      "title": "Reown Privacy Policy — Reown"
+    },
+    {
+      "name": "terms",
+      "url": "https://reown.com/terms-of-service",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/terms-of-service",
+      "title": "Reown Terms of Services — Reown"
+    },
+    {
+      "name": "cookies",
+      "url": "https://reown.com/cookie-policy",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/cookie-policy",
+      "title": "Read our cookie policy — Reown"
+    },
+    {
+      "name": "login-404",
+      "url": "https://reown.com/login",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/login",
+      "title": "Reown"
+    },
+    {
+      "name": "mobile-home",
+      "url": "https://reown.com/",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/",
+      "title": "Reown |Infrastructure for blockchain app development — Reown"
+    },
+    {
+      "name": "mobile-pricing",
+      "url": "https://reown.com/pricing",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/pricing",
+      "title": "Pricing | Reown"
+    },
+    {
+      "name": "mobile-learn",
+      "url": "https://reown.com/learn",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/learn",
+      "title": "Reown Learn: Learn blockchain development with Reown — Reown"
+    },
+    {
+      "name": "mobile-solutions-analytics",
+      "url": "https://reown.com/solutions/analytics",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/solutions/analytics",
+      "title": "Blockchain App Analytics | Reown — Reown"
+    },
+    {
+      "name": "mobile-solutions-authentication",
+      "url": "https://reown.com/solutions/authentication",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/solutions/authentication",
+      "title": "Web3 Authentication Solution | Reown — Reown"
+    },
+    {
+      "name": "mobile-solutions-transactions",
+      "url": "https://reown.com/solutions/transactions",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/solutions/transactions",
+      "title": "Onchain Transacting Solutions | Reown — Reown"
+    },
+    {
+      "name": "mobile-solutions-compliance",
+      "url": "https://reown.com/solutions/compliance",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/solutions/compliance",
+      "title": "Blockchain App Compliance | Reown — Reown"
+    },
+    {
+      "name": "mobile-use-cases-defi",
+      "url": "https://reown.com/use-cases/defi",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/use-cases/defi",
+      "title": "DeFi App Development Solutions | Reown — Reown"
+    },
+    {
+      "name": "mobile-use-cases-marketplaces",
+      "url": "https://reown.com/use-cases/marketplaces",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/use-cases/marketplaces",
+      "title": "Web3 Marketplace App Infrastructure | Reown — Reown"
+    },
+    {
+      "name": "mobile-use-cases-gaming",
+      "url": "https://reown.com/use-cases/gaming",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/use-cases/gaming",
+      "title": "Blockchain Game Development | Reown — Reown"
+    },
+    {
+      "name": "mobile-use-cases-social",
+      "url": "https://reown.com/use-cases/social",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/use-cases/social",
+      "title": "Reown For Social — Reown"
+    },
+    {
+      "name": "mobile-about",
+      "url": "https://reown.com/about-reown",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/about-reown",
+      "title": "Learn about Reown, the infrastructure solution for onchain apps — Reown"
+    },
+    {
+      "name": "mobile-blog",
+      "url": "https://reown.com/blog",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/blog",
+      "title": "Reown Blog — Reown"
+    },
+    {
+      "name": "mobile-careers",
+      "url": "https://reown.com/careers",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/careers",
+      "title": "Start working with us — Reown"
+    },
+    {
+      "name": "mobile-contact",
+      "url": "https://reown.com/contact",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/contact",
+      "title": "Get in touch with us today | Reown — Reown"
+    },
+    {
+      "name": "mobile-faq",
+      "url": "https://reown.com/faq",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/faq",
+      "title": "Explore the Reown FAQ — Reown"
+    },
+    {
+      "name": "mobile-security",
+      "url": "https://reown.com/security",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/security",
+      "title": "Submit Security Report | Reown — Reown"
+    },
+    {
+      "name": "mobile-sdk",
+      "url": "https://reown.com/reown-sdk",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/reown-sdk",
+      "title": "Discover Reown SDK — Reown"
+    },
+    {
+      "name": "mobile-state-of-defi",
+      "url": "https://reown.com/state-of-defi-2026",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/state-of-defi-2026",
+      "title": "State of DeFi 2026 — Reown"
+    },
+    {
+      "name": "mobile-privacy",
+      "url": "https://reown.com/privacy-policy",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/privacy-policy",
+      "title": "Reown Privacy Policy — Reown"
+    },
+    {
+      "name": "mobile-terms",
+      "url": "https://reown.com/terms-of-service",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/terms-of-service",
+      "title": "Reown Terms of Services — Reown"
+    },
+    {
+      "name": "mobile-cookies",
+      "url": "https://reown.com/cookie-policy",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/cookie-policy",
+      "title": "Read our cookie policy — Reown"
+    },
+    {
+      "name": "mobile-login-404",
+      "url": "https://reown.com/login",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://reown.com/login",
+      "title": "Reown"
+    },
+    {
+      "name": "docs",
+      "url": "https://docs.reown.com/"
+    },
+    {
+      "name": "mobile-docs",
+      "url": "https://docs.reown.com/"
+    },
+    {
+      "name": "demo",
+      "url": "https://demo.reown.com/"
+    },
+    {
+      "name": "mobile-demo",
+      "url": "https://demo.reown.com/"
+    },
+    {
+      "name": "status",
+      "url": "https://status.reown.com/"
+    },
+    {
+      "name": "dashboard-signin",
+      "wall": false,
+      "status": 200,
+      "finalUrl": "https://dashboard.reown.com/sign-in"
+    }
+  ]
+}

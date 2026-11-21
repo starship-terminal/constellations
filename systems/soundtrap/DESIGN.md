@@ -3,7 +3,7 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Soundtrap"
-description: "Music-product marketing with a dark 90px nav, Matter type, a purple #6551ff primary, pill CTAs on the marketing site and 8px fields on the signed-out login page"
+description: "Music-making marketing and signup wall: a near-black hero with a light pill CTA, a purple #6551ff app accent, Matter type, and a light st-light-theme token set"
 colors:
   primary: "#6551ff"
   neutral: "#f2f2f4"
@@ -11,148 +11,189 @@ colors:
   on-surface: "#2d2d2d"
   on-surface-variant: "#5c5c6d"
   outline: "#d4d4da"
-  background-page: "#f2f2f4"
-  background-highlight: "#fbfbfc"
-  background-press: "#e2e2e7"
-  background-surface: "#fdfdfe"
-  background-surface-highlight: "#f4f4f6"
-  background-surface-press: "#e5e5e9"
-  background-tinted: "rgba(0,0,0,0.07)"
-  background-tinted-highlight: "rgba(0,0,0,0.11)"
-  background-tinted-press: "rgba(0,0,0,0.14)"
-  text-primary: "#2d2d2d"
-  text-secondary: "#5c5c6d"
-  text-link: "#553fff"
-  text-spotlight: "#a44a00"
-  text-negative: "#b4074b"
-  text-positive: "#00743a"
-  text-on-accent: "#ffffff"
-  border-default: "#d4d4da"
-  border-strong: "#7f7f92"
-  border-focus: "#3c95ff"
-  accent-default: "#6551ff"
-  accent-hover: "#5944ff"
-  accent-pressed: "#4c35ff"
-  status-danger: "#b4074b"
-  status-success: "#00743a"
-  status-danger-fill: "#b4074b"
-  status-success-fill: "#008744"
-  shadow-dialog: "rgba(0,0,0,0.15)"
-  component-button-primary-bg: "#6551ff"
-  component-button-primary-text: "#ffffff"
-  component-button-pill-bg: "#eeeeee"
-  component-button-pill-text: "#2d2d2d"
-  component-field-bg: "rgba(0,0,0,0.07)"
-  component-field-text: "#2d2d2d"
-  essential-primary: "#6551ff"
+  page: "#f2f2f4"
+  text: "#2d2d2d"
+  muted: "#5c5c6d"
+  accent: "#6551ff"
+  border: "#d4d4da"
+  link: "#553fff"
+  onAccent: "#ffffff"
+  danger: "#b4074b"
+  success: "#008744"
+  warning: "#d15e00"
+  focusRing: "#3c95ff"
+  color-background-base: "#f2f2f4"
+  color-background-highlight: "#fbfbfc"
+  color-background-press: "#e2e2e7"
+  color-background-elevated-base: "#fdfdfe"
+  color-background-elevated-highlight: "#f4f4f6"
+  color-background-elevated-press: "#e5e5e9"
+  color-background-tinted-base: "rgba(0, 0, 0, 0.07)"
+  color-background-tinted-highlight: "rgba(0, 0, 0, 0.11)"
+  color-background-tinted-press: "rgba(0, 0, 0, 0.14)"
+  color-text-base: "#2d2d2d"
+  color-text-subdued: "#5c5c6d"
+  color-text-primary: "#553fff"
+  color-text-spotlight: "#a44a00"
+  color-text-negative: "#b4074b"
+  color-text-positive: "#00743a"
+  color-text-simply-red: "#c51c1c"
+  color-text-maroon: "#b03273"
+  color-text-iron-wine: "#7829ff"
+  color-text-purple-rain: "#553fff"
+  color-text-royal-blue: "#086a9b"
+  color-text-ocean-eyes: "#114eff"
+  color-text-forest: "#27705e"
+  color-text-green-light: "#486f19"
+  color-text-gold-frapp: "#825e0c"
+  color-text-orange-soda: "#955413"
+  color-essential-base: "#2d2d2d"
+  color-essential-subdued: "#7f7f92"
+  color-essential-primary: "#6551ff"
+  color-essential-spotlight: "#d15e00"
+  color-essential-negative: "#b4074b"
+  color-essential-positive: "#008744"
+  color-essential-simply-red: "#e54747"
+  color-essential-maroon: "#c73b83"
+  color-essential-iron-wine: "#985cff"
+  color-essential-purple-rain: "#6551ff"
+  color-essential-royal-blue: "#0a88c6"
+  color-essential-ocean-eyes: "#4776ff"
+  color-essential-forest: "#328f78"
+  color-essential-green-light: "#5c8e1f"
+  color-essential-gold-frapp: "#a6780f"
+  color-essential-orange-soda: "#be6b18"
+  color-decorative-base: "#2d2d2d"
+  color-decorative-subdued: "#d4d4da"
+  status-negativeSurface: "#b4074b"
+  status-positiveSurface: "#008744"
+  status-spotlightSurface: "#ff780a"
+  focus: "#3c95ff"
+  component-heroCta-background: "#eeeeee"
+  component-heroCta-text: "#2d2d2d"
+  component-loginSubmit-background: "#6551ff"
+  component-loginSubmit-text: "#ffffff"
+  component-field-background: "rgba(0, 0, 0, 0.07)"
 typography:
-  headline-hero:
+  display:
     fontFamily: "Matter"
     fontSize: "80px"
     fontWeight: 700
-    lineHeight: "96px"
-    letterSpacing: "-1.28px"
-  display-1:
+    lineHeight: 1.2
+    letterSpacing: "-0.016px"
+  display1:
     fontFamily: "Matter"
     fontSize: "37px"
     fontWeight: 600
-    lineHeight: "41px"
-    letterSpacing: "-0.99px"
-  display-2:
+    lineHeight: 1.1081
+    letterSpacing: "-0.0268px"
+  display2:
     fontFamily: "Matter"
     fontSize: "33px"
     fontWeight: 600
-    lineHeight: "38px"
-    letterSpacing: "-0.84px"
-  heading-1:
+    lineHeight: 1.1515
+    letterSpacing: "-0.0255px"
+  heading1:
     fontFamily: "Matter"
     fontSize: "29px"
     fontWeight: 600
-    lineHeight: "35px"
-    letterSpacing: "-0.5px"
-  heading-2:
+    lineHeight: 1.2069
+    letterSpacing: "0px"
+  heading2:
     fontFamily: "Matter"
     fontSize: "25px"
     fontWeight: 600
-    lineHeight: "30px"
-    letterSpacing: "-0.5px"
-  heading-3:
+    lineHeight: 1.2
+    letterSpacing: "-0.02px"
+  heading3:
     fontFamily: "Matter"
     fontSize: "21px"
     fontWeight: 600
-    lineHeight: "25px"
-    letterSpacing: "-0.42px"
-  title-large:
+    lineHeight: 1.1905
+    letterSpacing: "-0.02px"
+  titleLarge:
     fontFamily: "Matter"
     fontSize: "18px"
     fontWeight: 500
-    lineHeight: "23px"
-  title-standard:
+    lineHeight: 1.2778
+    letterSpacing: "0px"
+  title:
     fontFamily: "Matter"
     fontSize: "15px"
     fontWeight: 500
-    lineHeight: "20px"
-  body-standard:
+    lineHeight: 1.3333
+    letterSpacing: "0px"
+  body:
     fontFamily: "Matter"
     fontSize: "15px"
     fontWeight: 400
-    lineHeight: "20px"
-  body-small:
+    lineHeight: 1.2
+    letterSpacing: "0px"
+  bodySmall:
     fontFamily: "Matter"
     fontSize: "13px"
     fontWeight: 400
-    lineHeight: "17px"
-  label-standard:
+    lineHeight: 1.3077
+    letterSpacing: "0px"
+  caption:
+    fontFamily: "Matter"
+    fontSize: "11px"
+    fontWeight: 400
+    lineHeight: 1.3636
+    letterSpacing: "0px"
+  labelLarge:
+    fontFamily: "Matter"
+    fontSize: "15px"
+    fontWeight: 500
+    lineHeight: 1.3333
+    letterSpacing: "0px"
+  label:
     fontFamily: "Matter"
     fontSize: "13px"
     fontWeight: 500
-    lineHeight: "17px"
-  label-small:
+    lineHeight: 1.3077
+    letterSpacing: "0px"
+  labelSmall:
     fontFamily: "Matter"
     fontSize: "11px"
     fontWeight: 500
-    lineHeight: "15px"
-  nav-item:
-    fontFamily: "Matter"
-    fontSize: "15px"
-    fontWeight: 700
-    lineHeight: "20px"
-    letterSpacing: "0.015px"
+    lineHeight: 1.3636
+    letterSpacing: "0px"
 rounded:
-  sm: "2px"
-  md: "4px"
-  control: "6px"
-  lg: "8px"
   pill: "9999px"
-  toggle: "25px"
+  control: "8px"
+  sm: "4px"
+  md: "6px"
+  lg: "8px"
 spacing:
   nano: "4px"
   tiny: "8px"
-  tiny-1: "12px"
+  tiny1: "12px"
   small: "16px"
-  small-1: "20px"
+  small1: "20px"
   medium: "24px"
-  medium-1: "28px"
-  medium-2: "32px"
+  medium1: "28px"
+  medium2: "32px"
   large: "40px"
-  large-1: "48px"
-  large-2: "56px"
+  large1: "48px"
+  large2: "56px"
   huge: "64px"
-  huge-1: "80px"
-  huge-2: "96px"
-  huge-3: "120px"
+  huge1: "80px"
+  huge2: "96px"
+  huge3: "120px"
 components:
-  button-primary:
-    backgroundColor: "{colors.component-button-primary-bg}"
-    textColor: "{colors.component-button-primary-text}"
-    rounded: "8px"
-  button-pill:
-    backgroundColor: "{colors.component-button-pill-bg}"
-    textColor: "{colors.component-button-pill-text}"
+  heroCta:
+    backgroundColor: "{colors.component-heroCta-background}"
+    textColor: "{colors.component-heroCta-text}"
     rounded: "9999px"
+    height: "80px"
+  loginSubmit:
+    backgroundColor: "{colors.component-loginSubmit-background}"
+    textColor: "{colors.component-loginSubmit-text}"
+    rounded: "8px"
+    height: "41px"
   field:
-    backgroundColor: "{colors.component-field-bg}"
-    textColor: "{colors.component-field-text}"
+    backgroundColor: "{colors.component-field-background}"
     rounded: "8px"
     height: "40px"
 ---
@@ -161,56 +202,48 @@ components:
 
 Generated from [tokens.json](tokens.json) and [README.md](README.md) by the design-systems catalog tool. Do not edit this file: change the tokens through the package's builders, then run `make design-md` at the repository root.
 
-It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, holds the `dark` theme, and keeps the 7 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
+It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, holds the `dark` theme, and keeps the 6 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
 
 ## Overview
 
-Good for: Music-product marketing with a dark 90px nav, Matter type, a purple #6551ff primary, pill CTAs on the marketing site and 8px fields on the signed-out login page.
+Good for: Music-making marketing and signup wall: a near-black hero with a light pill CTA, a purple #6551ff app accent, Matter type, and a light st-light-theme token set.
 
-Captured 2026-11-19, signed out (public marketing and login chrome; OAuth not followed; no card entered). Themes: light, dark.
+Captured 2026-11-21, signed out. Themes: light, dark.
 
-Soundtrap's public marketing site and signed-out login chrome, measured on 2026-11-19 from the live pages in the T3 preview browser. The start URL `https://www.soundtrap.com/` redirects to `/musicmakers`. Also measured: `/content/features`, `/pricing`, and `/login`. Themes seen: light and dark, both as classes on the page (`st-light-theme`, `st-dark-theme`), not as a user setting. Widths measured: 1440 by 900 and 390 by 844, both at device pixel ratio 2.
+A token set and component reference for Soundtrap's public site, the browser DAW from Spotify. Captured from [soundtrap.com](https://www.soundtrap.com/) on 2026-11-21, signed out, in headless Chromium at 1440×900 and 390×844. `/` redirects to `/musicmakers`. The public shell, pricing, education landing, originals, login and signup walls, blog, and support home were read. The studio, checkout, and account sit behind login and were not entered.
 
-Nothing was submitted. OAuth buttons (Google, Apple, Facebook, Microsoft School Account) were not followed. No card, phone, or checkout was entered. The signed-in studio was not opened.
-
-The preview browser did not produce screenshot frames, so this package has no page screenshots and no component crops. Values come from computed styles and the site's stylesheets.
+The public marketing pages paint a near-black hero (`#1a1a23`) with a light pill CTA, then a light app theme (`body.st-light-theme`) whose accent is `#6551ff`. Matter is the only family. A `.st-dark-theme` block is declared in the stylesheet and was not applied on any page captured.
 
 ## Colors
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#6551ff):** `light.accent.default`
-- **neutral (#f2f2f4):** `light.background.page`
-- **surface (#fdfdfe):** `light.background.surface`
-- **on-surface (#2d2d2d):** `light.text.primary`
-- **on-surface-variant (#5c5c6d):** `light.text.secondary`
-- **outline (#d4d4da):** `light.border.default`
+- **primary (#6551ff):** `light.accent`
+- **neutral (#f2f2f4):** `light.page`
+- **surface (#fdfdfe):** `light.surface`
+- **on-surface (#2d2d2d):** `light.text`
+- **on-surface-variant (#5c5c6d):** `light.muted`
+- **outline (#d4d4da):** `light.border`
 
 ## Typography
 
-13 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Matter.
+14 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Matter.
 
 ### Fonts (from README.md)
 
-Matter, a variable face (weight 100 to 1000, plus an oblique), loaded from `static.soundtrap.com`. The computed stack is `Matter, sans-serif`. The files are proprietary and are not in this package. The style guide falls back to sans-serif.
+Matter, a variable face, is served from `static.soundtrap.com/mango-foundation`. It is not in this package. The style guide falls back to the system sans. The stylesheet also names `ui-monospace` for code samples.
 
 ## Layout
 
-Spacing from `core.space`: `nano` 4px, `tiny` 8px, `tiny-1` 12px, `small` 16px, `small-1` 20px, `medium` 24px, `medium-1` 28px, `medium-2` 32px, `large` 40px, `large-1` 48px, `large-2` 56px, `huge` 64px, `huge-1` 80px, `huge-2` 96px, `huge-3` 120px.
+Spacing from `core.space`: `nano` 4px, `tiny` 8px, `tiny1` 12px, `small` 16px, `small1` 20px, `medium` 24px, `medium1` 28px, `medium2` 32px, `large` 40px, `large1` 48px, `large2` 56px, `huge` 64px, `huge1` 80px, `huge2` 96px, `huge3` 120px.
 
 ## Elevation & Depth
 
-Shadows, resolved to CSS:
-
-| Token | box-shadow |
-|---|---|
-| `light.shadow.small` | `0px 1px 1.1px 0px hsla(240,3%,70%,0.189), 0px 2.7px 3px -0.8px hsla(240,3%,70%,0.184), 0px 4px 4.4px -1.6px hsla(240,3%,70%,0.179)` |
-| `light.shadow.medium` | `0px 1px 1px 0px hsla(240,3%,74%,0.192), 0px 4.8px 5px -0.6px hsla(240,3%,74%,0.173), 0px 8.1px 8.4px -1.2px hsla(240,3%,74%,0.155), 0px 11px 11.4px -1.9px hsla(240,3%,74%,0.136)` |
-| `light.shadow.large` | `0px 1px 1px 0px hsla(240,3%,73%,0.244), 0px 9.5px 9.7px -0.5px hsla(240,3%,73%,0.223), 0px 17.4px 17.7px -1px hsla(240,3%,73%,0.201), 0px 24.5px 25px -1.4px hsla(240,3%,73%,0.18), 0px 31px 31.6px -1.9px hsla(240,3%,73%,0.159)` |
+No shadow tokens were captured; depth comes from surface colours and borders. See [style-guide.html](style-guide.html).
 
 ## Shapes
 
-Corner radii from `core.radius`: `sm` 2px, `md` 4px, `control` 6px, `lg` 8px, `pill` 9999px, `toggle` 25px.
+Corner radii from `core.radius`: `pill` 9999px, `control` 8px, `sm` 4px, `md` 6px, `lg` 8px.
 
 ## Components
 
@@ -228,12 +261,19 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-Hover and pressed colours are declared (`--background-highlight`, `--background-press`, `--background-base` on each set) and were not forced on a live control. The hero wrapper `rgb(26, 26, 35)` and the pricing nav `rgb(62, 17, 101)` are painted colours with no matching token name in the marketing sheet. The pricing simply-red card computed `rgb(223, 45, 71)`. A simply-red declaration extracted from the pricing sheet was `#e85c5c`, so that card fill is recorded as a gap in `tokens.json` `$extensions.notTokenised` rather than stored as a token. `--disabled-opacity: 0.4` is declared. A disabled product control was not on screen. Screenshots are absent, so layout claims rest on measured widths and class names.
+- **Dark is declared, not seen.** `dark` in tokens.json is `.st-dark-theme` from the stylesheet. No public page applied it. The near-black hero is a marketing section, not that theme.
+- **Shadow tokens are a stand-in.** The stylesheet's shadow stacks are hsla layers. The token stores one structured layer and keeps the authored stack in `$description`.
+- **Quantised screenshots.** `screenshots/` are 256-colour PNGs. Read colours from tokens.json.
+- **Signup shows a Cloudflare check.** It was not solved. The form was not filled.
+- **The studio in the hero is a render.** It is not a capture of the signed-in app.
+- **Careers was not captured.** `careers.soundtrap.com` showed a cookie banner. It was not clicked.
+- **This package is not in catalog.json.** The capture task forbids that edit. `make check`, `make brief`, and `make grade` will fail until a later change adds the entry. DESIGN.md and the Brief were generated from an in-memory entry with the same swatch paths.
 
 ### Do and don't (from README.md)
 
-- **Do keep the marketing nav dark.** The home and features bars use `dark.background.page` even when the next section is light. The evidence is the computed nav on `/musicmakers` in [raw/components-computed.json](raw/components-computed.json).
-- **Do use one purple for the primary action.** Login submit and the skip link are `#6551ff`. Links in body text are the slightly different `#553fff`.
-- **Do use pills on marketing and 8px radius on login.** Get started is `9999px`. The login field, OAuth button, and submit are `8px`.
-- **Don't follow OAuth or enter a card to finish a capture.** Those controls were measured and left alone.
-- **Don't invent the hero wash or the pricing bar.** `rgb(26, 26, 35)` and `rgb(62, 17, 101)` were painted and are not named tokens.
+- **Do put the light pill on the dark hero.** The home CTA is `#eeeeee` on `#1a1a23`, not the purple accent. [home-light-default.png](screenshots/home-light-default.png)
+- **Do spend purple on the app action.** Login and Sign up use `#6551ff`. [login-light-default.png](screenshots/login-light-default.png)
+- **Do pill the marketing buttons.** Get started and Try it free are 9999px. Login fields are 8px. [pricing-light-default.png](screenshots/pricing-light-default.png)
+- **Don't treat the hero render as the studio.** The DAW in the hero is a marketing image. The real studio redirects to login.
+- **Don't ship the dark set as observed.** `.st-dark-theme` was not on the pages captured.
+- **Don't fill the signup form from this package.** Birthday, email, and the Cloudflare check were left empty.

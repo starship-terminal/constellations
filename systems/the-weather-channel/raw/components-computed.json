@@ -1,0 +1,331 @@
+{
+  "run": "2026-11-20T23:21:09.838Z",
+  "page": "https://weather.com/news",
+  "measured": {
+    "page": {
+      "name": "page",
+      "style": {
+        "color": "lab(2.75381 0 0)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderTopColor": "lab(90.952 0 -0.0000119209)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "Inter, \"Inter Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "height": "4705.53px",
+        "width": "1440px",
+        "boxShadow": "none",
+        "outlineColor": "oklab(0.707999 -0.00000712276 0.0000166297 / 0.5)",
+        "outlineWidth": "3px",
+        "outlineStyle": "none",
+        "gap": "normal"
+      },
+      "box": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 4705.5
+      },
+      "labelKind": "BODY"
+    },
+    "header": {
+      "name": "header",
+      "style": {
+        "color": "lab(2.75381 0 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "lab(90.952 0 -0.0000119209)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "Inter, \"Inter Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "height": "64px",
+        "width": "1440px",
+        "boxShadow": "none",
+        "outlineColor": "oklab(0.707999 -0.00000712276 0.0000166297 / 0.5)",
+        "outlineWidth": "3px",
+        "outlineStyle": "none",
+        "gap": "normal"
+      },
+      "box": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 64
+      },
+      "labelKind": "HEADER"
+    },
+    "location": {
+      "name": "location",
+      "missing": true
+    },
+    "settings": {
+      "name": "settings",
+      "style": {
+        "color": "rgb(37, 36, 34)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "lab(90.952 0 -0.0000119209)",
+        "borderTopWidth": "0px",
+        "borderRadius": "1.67772e+07px",
+        "fontFamily": "Inter, \"Inter Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "lineHeight": "16.1px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "14px",
+        "paddingBottom": "0px",
+        "paddingLeft": "12px",
+        "height": "40px",
+        "width": "104.898px",
+        "boxShadow": "none",
+        "outlineColor": "oklab(0.707999 -0.00000712276 0.0000166297 / 0.5)",
+        "outlineWidth": "3px",
+        "outlineStyle": "none",
+        "gap": "8px"
+      },
+      "box": {
+        "x": 1219.8,
+        "y": 12,
+        "w": 104.9,
+        "h": 40
+      },
+      "labelKind": "BUTTON"
+    },
+    "signIn": {
+      "name": "signIn",
+      "style": {
+        "color": "rgb(37, 36, 34)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "lab(90.952 0 -0.0000119209)",
+        "borderTopWidth": "0px",
+        "borderRadius": "1.67772e+07px",
+        "fontFamily": "Inter, \"Inter Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "lineHeight": "16.1px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "14px",
+        "paddingBottom": "0px",
+        "paddingLeft": "12px",
+        "height": "40px",
+        "width": "95.3438px",
+        "boxShadow": "none",
+        "outlineColor": "oklab(0.707999 -0.00000712276 0.0000166297 / 0.5)",
+        "outlineWidth": "3px",
+        "outlineStyle": "none",
+        "gap": "8px"
+      },
+      "box": {
+        "x": 1332.7,
+        "y": 12,
+        "w": 95.3,
+        "h": 40
+      },
+      "labelKind": "A"
+    },
+    "navToday": {
+      "name": "navToday",
+      "style": {
+        "color": "rgb(37, 36, 34)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "lab(90.952 0 -0.0000119209)",
+        "borderTopWidth": "0px",
+        "borderRadius": "10px",
+        "fontFamily": "Inter, \"Inter Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "lineHeight": "16.1px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "4px",
+        "paddingBottom": "0px",
+        "paddingLeft": "4px",
+        "height": "32px",
+        "width": "176px",
+        "boxShadow": "none",
+        "outlineColor": "oklab(0.707999 -0.00000712276 0.0000166297 / 0.5)",
+        "outlineWidth": "3px",
+        "outlineStyle": "none",
+        "gap": "8px"
+      },
+      "box": {
+        "x": 8,
+        "y": 108,
+        "w": 176,
+        "h": 32
+      },
+      "labelKind": "A"
+    },
+    "navSelected": {
+      "name": "navSelected",
+      "style": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(58, 97, 204)",
+        "borderTopColor": "lab(90.952 0 -0.0000119209)",
+        "borderTopWidth": "0px",
+        "borderRadius": "10px",
+        "fontFamily": "Inter, \"Inter Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "lineHeight": "16.1px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "4px",
+        "paddingBottom": "0px",
+        "paddingLeft": "4px",
+        "height": "32px",
+        "width": "176px",
+        "boxShadow": "none",
+        "outlineColor": "oklab(0.707999 -0.00000712276 0.0000166297 / 0.5)",
+        "outlineWidth": "3px",
+        "outlineStyle": "none",
+        "gap": "8px"
+      },
+      "box": {
+        "x": 8,
+        "y": 510,
+        "w": 176,
+        "h": 32
+      },
+      "labelKind": "A"
+    },
+    "heading": {
+      "name": "heading",
+      "style": {
+        "color": "rgb(37, 36, 34)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "lab(90.952 0 -0.0000119209)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "Inter, \"Inter Fallback\"",
+        "fontSize": "24px",
+        "fontWeight": "800",
+        "lineHeight": "27.6px",
+        "letterSpacing": "-0.48px",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "height": "27.5938px",
+        "width": "278px",
+        "boxShadow": "none",
+        "outlineColor": "oklab(0.707999 -0.00000712276 0.0000166297 / 0.5)",
+        "outlineWidth": "3px",
+        "outlineStyle": "none",
+        "gap": "normal"
+      },
+      "box": {
+        "x": 240,
+        "y": 82.2,
+        "w": 278,
+        "h": 27.6
+      },
+      "labelKind": "H1"
+    },
+    "watch": {
+      "name": "watch",
+      "missing": true
+    },
+    "trend": {
+      "name": "trend",
+      "style": {
+        "color": "rgb(37, 36, 34)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderTopColor": "lab(90.952 0 -0.0000119209)",
+        "borderTopWidth": "0px",
+        "borderRadius": "16px",
+        "fontFamily": "Inter, \"Inter Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "lineHeight": "16.1px",
+        "letterSpacing": "normal",
+        "paddingTop": "0px",
+        "paddingRight": "0px",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "height": "32px",
+        "width": "91.7188px",
+        "boxShadow": "none",
+        "outlineColor": "oklab(0.707999 -0.00000712276 0.0000166297 / 0.5)",
+        "outlineWidth": "3px",
+        "outlineStyle": "none",
+        "gap": "normal"
+      },
+      "box": {
+        "x": 615.8,
+        "y": 80,
+        "w": 91.7,
+        "h": 32
+      },
+      "labelKind": "A"
+    },
+    "signInHover": {
+      "color": "rgb(37, 36, 34)",
+      "backgroundColor": "oklab(0 0 0 / 0.07)",
+      "textDecoration": "none"
+    },
+    "settingsFocus": {
+      "outline": "oklab(0.707999 -0.00000712276 0.0000166297 / 0.5) none 1px",
+      "outlineColor": "oklab(0.707999 -0.00000712276 0.0000166297 / 0.5)",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(58, 97, 204) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+      "backgroundColor": "oklab(0 0 0 / 0.07)"
+    },
+    "settingsDialog": {
+      "backgroundColor": "lab(100 0 0)",
+      "color": "lab(2.75381 0 0)",
+      "borderRadius": "16px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(37, 36, 34, 0.2) 0px 12px 32px 0px",
+      "w": 380,
+      "h": 126.09375
+    },
+    "unitSelected": {
+      "backgroundColor": "rgb(37, 36, 34)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "1.67772e+07px",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "height": "32px"
+    },
+    "maps": {
+      "signIn": null,
+      "search": {
+        "color": "rgb(37, 36, 34)",
+        "backgroundColor": "rgb(242, 242, 242)",
+        "borderRadius": "8px",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "fontFamily": "Inter, \"Inter Fallback: Arial\", \"Inter Fallback: Roboto\", Arial, Roboto, sans-serif",
+        "height": 48,
+        "padding": "5px 6px 5px 16px",
+        "border": "0px rgb(37, 36, 34)"
+      },
+      "heading": {
+        "color": "rgb(37, 36, 34)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderRadius": "0px",
+        "fontSize": "20px",
+        "fontWeight": "500",
+        "fontFamily": "Inter, \"Inter Fallback: Arial\", \"Inter Fallback: Roboto\", Arial, Roboto, sans-serif",
+        "height": 20,
+        "padding": "0px",
+        "border": "0px rgb(37, 36, 34)"
+      },
+      "bodyBg": "rgba(0, 0, 0, 0)"
+    }
+  }
+}

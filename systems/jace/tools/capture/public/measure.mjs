@@ -147,15 +147,12 @@ async function S(key, target, list, meta = {}, opts = {}) {
         await page.waitForTimeout(250);
         via = 'clicked into the field; nothing submitted';
       } else if (st === 'filled') {
-        await loc.click({ timeout: 4000 });
-        await page.keyboard.type('name@example.com', { delay: 8 });
-        await page.waitForTimeout(200);
-        undo = async () => {
-          await loc.focus();
-          await page.keyboard.press('Meta+a');
-          await page.keyboard.press('Backspace');
-        };
-        via = 'typed a sample address, then deleted; nothing submitted';
+        // Never type a name, email, or any other field value. The sales form
+        // stays empty. A filled state is not captured.
+        via = 'not captured: typing into the field is refused';
+        out.components[key].states[st] = { error: 'not captured: the field was not filled' };
+        log('  skip fill', key);
+        continue;
       } else if (st === 'error') {
         via = opts.via || 'validation state shown by the page';
       } else via = 'at rest';
@@ -246,7 +243,7 @@ async function contact() {
   if (!(await newPage('contact'))) return;
   const g = G.contact;
   await S('form-title', q('h1').first(), ['default'], { group: g, title: 'Form title', desc: 'The sales contact heading. The form is a boundary: nothing is submitted.', sel: 'h1' }, { noScroll: true });
-  await S('text-field', q('input').first(), ['default', 'hover', 'focus-visible', 'focused', 'filled'], { group: g, title: 'Text field', desc: 'The first sales-form field. Sample text is typed and deleted. Nothing is submitted.', sel: 'input first' });
+  await S('text-field', q('input').first(), ['default', 'hover', 'focus-visible', 'focused'], { group: g, title: 'Text field', desc: 'The first sales-form field, empty. Nothing is typed and nothing is submitted.', sel: 'input first' });
   await S('text-area', q('textarea').first(), ['default', 'focused'], { group: g, title: 'Text area', desc: 'The message textarea, focused only. Nothing typed that would be sent.', sel: 'textarea' });
   await S('form-submit', q('button').filter({ hasText: /Send a request/ }).first(), ['default', 'hover', 'focus-visible', 'pressed'], { group: g, title: 'Submit button', desc: 'The send button, measured with a forced pressed state. Never clicked, so the form is not submitted.', sel: 'button Send a request' });
   // Empty submit is a click that would POST. Do not click. Record the gap

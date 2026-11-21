@@ -1,0 +1,4291 @@
+{
+  "product": "Faire",
+  "catalogName": "Faire",
+  "startUrl": "https://www.faire.com/",
+  "capturedAt": "2026-11-21",
+  "account": "signed out",
+  "widths": {
+    "desktop": 1440,
+    "phone": 390
+  },
+  "theme": "light only on the public site",
+  "cookieBanner": "OneTrust preference center was open on load. Hidden with CSS. Not accepted. Allow All and Confirm My Choices were not clicked.",
+  "pagesVisited": 70,
+  "notes": [
+    "Headed Chrome was required. Headless Chromium received a Cloudflare challenge on category URLs.",
+    "Product grids repeat the same card link pattern. Those card hrefs are omitted from controls so the tree stays the navigation map. One brand page was opened and recorded under pages.",
+    "The site map lists more category URLs than were opened. Unopened ones use the same catalog shell."
+  ],
+  "pages": [
+    {
+      "id": "01-home",
+      "url": "https://www.faire.com/",
+      "status": 200,
+      "title": "Faire Online Wholesale Marketplace for Retailers & Brands",
+      "h1": "Find your next bestseller",
+      "from": null,
+      "via": "start",
+      "gate": null
+    },
+    {
+      "id": "02-blog",
+      "url": "https://www.faire.com/blog",
+      "status": 200,
+      "title": "Faire blog",
+      "h1": "Faire blog",
+      "from": "https://www.faire.com/",
+      "via": "Blog",
+      "gate": null
+    },
+    {
+      "id": "03-category-new-20products",
+      "url": "https://www.faire.com/category/New%20Products",
+      "status": 200,
+      "title": "New wholesale products in new products for your store",
+      "h1": "",
+      "from": "https://www.faire.com/",
+      "via": "New products",
+      "gate": null
+    },
+    {
+      "id": "04-category-new-20brands",
+      "url": "https://www.faire.com/category/New%20Brands",
+      "status": 200,
+      "title": "New brands | Wholesale suppliers | Faire",
+      "h1": "New arrivals on Faire",
+      "from": "https://www.faire.com/",
+      "via": "New brands",
+      "gate": null
+    },
+    {
+      "id": "05-category-home-20decor",
+      "url": "https://www.faire.com/category/Home%20Decor",
+      "status": 200,
+      "title": "Wholesale home decor for your store",
+      "h1": "Wholesale home decor",
+      "from": "https://www.faire.com/",
+      "via": "Home decor",
+      "gate": null
+    },
+    {
+      "id": "06-category-food-20-20drink",
+      "url": "https://www.faire.com/category/Food%20&%20Drink",
+      "status": 200,
+      "title": "Wholesale food & drink for your store",
+      "h1": "Wholesale food & drink",
+      "from": "https://www.faire.com/",
+      "via": "Food & drink",
+      "gate": null
+    },
+    {
+      "id": "07-category-women",
+      "url": "https://www.faire.com/category/Women",
+      "status": 200,
+      "title": "Wholesale women\u2019s products for your store",
+      "h1": "Wholesale women\u2019s products",
+      "from": "https://www.faire.com/",
+      "via": "Women",
+      "gate": null
+    },
+    {
+      "id": "08-category-beauty-20-20wellness",
+      "url": "https://www.faire.com/category/Beauty%20&%20Wellness",
+      "status": 200,
+      "title": "Wholesale beauty & wellness for your store",
+      "h1": "Wholesale beauty & wellness",
+      "from": "https://www.faire.com/",
+      "via": "Beauty & wellness",
+      "gate": null
+    },
+    {
+      "id": "09-category-jewelry",
+      "url": "https://www.faire.com/category/Jewelry",
+      "status": 200,
+      "title": "Wholesale jewelry for your store",
+      "h1": "Wholesale jewelry",
+      "from": "https://www.faire.com/",
+      "via": "Jewelry",
+      "gate": null
+    },
+    {
+      "id": "10-category-paper-20-20novelty",
+      "url": "https://www.faire.com/category/Paper%20&%20Novelty",
+      "status": 200,
+      "title": "Wholesale paper & novelty for your store",
+      "h1": "Wholesale paper & novelty",
+      "from": "https://www.faire.com/",
+      "via": "Paper & novelty",
+      "gate": null
+    },
+    {
+      "id": "11-category-kids-20-20baby",
+      "url": "https://www.faire.com/category/Kids%20&%20Baby",
+      "status": 200,
+      "title": "Wholesale kids & baby products for your store",
+      "h1": "Wholesale kids & baby products",
+      "from": "https://www.faire.com/",
+      "via": "Kids & baby",
+      "gate": null
+    },
+    {
+      "id": "12-category-pets",
+      "url": "https://www.faire.com/category/Pets",
+      "status": 200,
+      "title": "Wholesale pet products for your store",
+      "h1": "Wholesale pet products",
+      "from": "https://www.faire.com/",
+      "via": "Pets",
+      "gate": null
+    },
+    {
+      "id": "13-category-men",
+      "url": "https://www.faire.com/category/Men",
+      "status": 200,
+      "title": "Wholesale men\u2019s products for your store",
+      "h1": "Wholesale men\u2019s products",
+      "from": "https://www.faire.com/",
+      "via": "Men",
+      "gate": null
+    },
+    {
+      "id": "14-category-books",
+      "url": "https://www.faire.com/category/Books",
+      "status": 200,
+      "title": "Wholesale books for your store",
+      "h1": "Wholesale books",
+      "from": "https://www.faire.com/",
+      "via": "Books",
+      "gate": null
+    },
+    {
+      "id": "15-brand-b-d72c56fe",
+      "url": "https://www.faire.com/brand/b_d72c56fe",
+      "status": 200,
+      "title": "54 Celsius wholesale products",
+      "h1": "54 Celsius wholesale",
+      "from": "https://www.faire.com/",
+      "via": "54 Celsius",
+      "gate": null
+    },
+    {
+      "id": "16-brand-b-tbh69o5jgo",
+      "url": "https://www.faire.com/brand/b_tbh69o5jgo",
+      "status": 200,
+      "title": "Sophie Lou Jacobsen wholesale products",
+      "h1": "Sophie Lou Jacobsen wholesale",
+      "from": "https://www.faire.com/",
+      "via": "Sophie Lou Jacobsen",
+      "gate": null
+    },
+    {
+      "id": "17-brand-b-6afyx18cny",
+      "url": "https://www.faire.com/brand/b_6afyx18cny",
+      "status": 200,
+      "title": "Bazar Bizar Living wholesale products",
+      "h1": "Bazar Bizar Living wholesale",
+      "from": "https://www.faire.com/",
+      "via": "Bazar Bizar Living",
+      "gate": null
+    },
+    {
+      "id": "18-brand-b-747629cb",
+      "url": "https://www.faire.com/brand/b_747629cb",
+      "status": 200,
+      "title": "YIELD wholesale products",
+      "h1": "YIELD wholesale",
+      "from": "https://www.faire.com/",
+      "via": "YIELD ",
+      "gate": null
+    },
+    {
+      "id": "19-brand-b-9i29vt7r7q",
+      "url": "https://www.faire.com/brand/b_9i29vt7r7q",
+      "status": 200,
+      "title": "Flowerhead Tea wholesale products",
+      "h1": "Flowerhead Tea wholesale",
+      "from": "https://www.faire.com/",
+      "via": "Flowerhead Tea",
+      "gate": null
+    },
+    {
+      "id": "20-brand-value-women-owned",
+      "url": "https://www.faire.com/suppliers/All%20Brands/brand-value/women-owned",
+      "status": 200,
+      "title": "Discover thousands of vendors selling wholesale on Faire.com",
+      "h1": "Discover wholesale suppliers for your store \u2022 Women owned",
+      "from": "https://www.faire.com/",
+      "via": "Shop women owned",
+      "gate": null
+    },
+    {
+      "id": "21-kitchen-20-20tabletop-drinkware",
+      "url": "https://www.faire.com/suppliers/Home%20Decor/subcategory/Kitchen%20&%20Tabletop/Drinkware",
+      "status": 200,
+      "title": "Drinkware | Wholesale suppliers | Faire",
+      "h1": "Wholesale Drinkware suppliers",
+      "from": "https://www.faire.com/",
+      "via": "drinkware",
+      "gate": null
+    },
+    {
+      "id": "22-about",
+      "url": "https://www.faire.com/about",
+      "status": 200,
+      "title": "Your one-stop shop for wholesale - Faire",
+      "h1": "About Us",
+      "from": "https://www.faire.com/",
+      "via": "About us",
+      "gate": null
+    },
+    {
+      "id": "23-news",
+      "url": "https://www.faire.com/news",
+      "status": 200,
+      "title": "Faire Newsroom | Press Releases & Company News",
+      "h1": "",
+      "from": "https://www.faire.com/",
+      "via": "Newsroom",
+      "gate": null
+    },
+    {
+      "id": "24-careers",
+      "url": "https://www.faire.com/careers",
+      "status": 200,
+      "title": "Careers at Faire | Join us!",
+      "h1": "",
+      "from": "https://www.faire.com/",
+      "via": "Careers",
+      "gate": null
+    },
+    {
+      "id": "25-affiliates",
+      "url": "https://www.faire.com/affiliates",
+      "status": 200,
+      "title": "Become a Faire affiliate",
+      "h1": "Become a Faire affiliate",
+      "from": "https://www.faire.com/",
+      "via": "Affiliates",
+      "gate": null
+    },
+    {
+      "id": "26-support",
+      "url": "https://www.faire.com/support",
+      "status": 200,
+      "title": "Faire \u2013 Help Center",
+      "h1": "",
+      "from": "https://www.faire.com/",
+      "via": "Help center",
+      "gate": null
+    },
+    {
+      "id": "27-markets",
+      "url": "https://www.faire.com/markets",
+      "status": 200,
+      "title": "Faire Free virtual buying events for retailers",
+      "h1": "Shop the biggest online buying & selling event in wholesale",
+      "from": "https://www.faire.com/",
+      "via": "Faire Markets",
+      "gate": null
+    },
+    {
+      "id": "28-point-of-sale-about",
+      "url": "https://www.faire.com/point-of-sale/about",
+      "status": 200,
+      "title": "Your one-stop shop for wholesale - Faire",
+      "h1": "",
+      "from": "https://www.faire.com/",
+      "via": "Point of sale integration",
+      "gate": null
+    },
+    {
+      "id": "29-how-faire-works",
+      "url": "https://www.faire.com/how-faire-works",
+      "status": 200,
+      "title": "What Is Faire & How It Works for Retailers and Brands",
+      "h1": "How Faire works",
+      "from": "https://www.faire.com/",
+      "via": "How Faire works",
+      "gate": null
+    },
+    {
+      "id": "30-large-retailers",
+      "url": "https://www.faire.com/large-retailers",
+      "status": 200,
+      "title": "Wholesale for Large Retailers | Faire",
+      "h1": "Faire for Large Retailers",
+      "from": "https://www.faire.com/",
+      "via": "Large retailers",
+      "gate": null
+    },
+    {
+      "id": "31-tos",
+      "url": "https://www.faire.com/tos",
+      "status": 200,
+      "title": "Your one-stop shop for wholesale - Faire",
+      "h1": "FAIRE WHOLESALE B.V. TERMS OF SERVICE",
+      "from": "https://www.faire.com/",
+      "via": "Terms of Service",
+      "gate": null
+    },
+    {
+      "id": "32-privacy",
+      "url": "https://www.faire.com/privacy",
+      "status": 200,
+      "title": "Your one-stop shop for wholesale - Faire",
+      "h1": "Privacy Policy",
+      "from": "https://www.faire.com/",
+      "via": "Privacy Policy",
+      "gate": null
+    },
+    {
+      "id": "33-privacy-cookies",
+      "url": "https://www.faire.com/privacy/cookies",
+      "status": 200,
+      "title": "Your one-stop shop for wholesale - Faire",
+      "h1": "",
+      "from": "https://www.faire.com/",
+      "via": "Cookie Policy",
+      "gate": null
+    },
+    {
+      "id": "34-copyright",
+      "url": "https://www.faire.com/copyright",
+      "status": 200,
+      "title": "Your one-stop shop for wholesale - Faire",
+      "h1": "",
+      "from": "https://www.faire.com/",
+      "via": "IP Policy",
+      "gate": null
+    },
+    {
+      "id": "35-aoda",
+      "url": "https://www.faire.com/aoda",
+      "status": 200,
+      "title": "Your one-stop shop for wholesale - Faire",
+      "h1": "Statement of Commitment",
+      "from": "https://www.faire.com/",
+      "via": "Accessibility Policy",
+      "gate": null
+    },
+    {
+      "id": "36-site-map",
+      "url": "https://www.faire.com/site-map",
+      "status": 200,
+      "title": "Your one-stop shop for wholesale - Faire",
+      "h1": "Faire Site Map",
+      "from": "https://www.faire.com/",
+      "via": "Sitemap",
+      "gate": null
+    },
+    {
+      "id": "37-home",
+      "url": "https://status.faire.com/posts/dashboard",
+      "status": 200,
+      "title": "Faire Status Page",
+      "h1": "System Status",
+      "from": "https://www.faire.com/",
+      "via": "System Status",
+      "gate": null
+    },
+    {
+      "id": "38-hub",
+      "url": "https://www.faire.com/hub",
+      "status": 200,
+      "title": "Wholesale buying guide for retailers | Faire",
+      "h1": "Faire wholesale hub",
+      "from": "https://www.faire.com/",
+      "via": "Hub",
+      "gate": null
+    },
+    {
+      "id": "39-category-mother-s-20day-20shop",
+      "url": "https://www.faire.com/category/Mother's%20Day%20Shop",
+      "status": 200,
+      "title": "Wholesale mother's day shop for your store",
+      "h1": "Find the perfect Mother\u2019s Day products for your store",
+      "from": "https://www.faire.com/#All categories",
+      "via": "Mother's Day shop",
+      "gate": null
+    },
+    {
+      "id": "40-category-father-s-20day-20shop",
+      "url": "https://www.faire.com/category/Father's%20Day%20Shop",
+      "status": 200,
+      "title": "Wholesale father's day shop for your store",
+      "h1": "Find the perfect Father\u2019s Day products for your store",
+      "from": "https://www.faire.com/#All categories",
+      "via": "Father's Day shop",
+      "gate": null
+    },
+    {
+      "id": "41-category-summer-20shop",
+      "url": "https://www.faire.com/category/Summer%20Shop",
+      "status": 200,
+      "title": "Wholesale summer shop for your store",
+      "h1": "Find the perfect summer products for your store",
+      "from": "https://www.faire.com/#All categories",
+      "via": "Summer shop",
+      "gate": null
+    },
+    {
+      "id": "42-category-fall-20shop",
+      "url": "https://www.faire.com/category/Fall%20Shop",
+      "status": 200,
+      "title": "Wholesale fall shop for your store",
+      "h1": "Find the perfect fall products for your store",
+      "from": "https://www.faire.com/#All categories",
+      "via": "Fall shop",
+      "gate": null
+    },
+    {
+      "id": "43-category-holiday-20shop",
+      "url": "https://www.faire.com/category/Holiday%20Shop",
+      "status": 200,
+      "title": "Wholesale holiday shop for your store",
+      "h1": "Find the perfect holiday products for your store",
+      "from": "https://www.faire.com/#All categories",
+      "via": "Holiday shop",
+      "gate": null
+    },
+    {
+      "id": "44-category-everyday-20jewelry",
+      "url": "https://www.faire.com/category/Everyday%20Jewelry",
+      "status": 200,
+      "title": "Wholesale everyday jewelry for your store",
+      "h1": "Wholesale everyday jewelry",
+      "from": "https://www.faire.com/#All categories",
+      "via": "Everyday Jewelry",
+      "gate": null
+    },
+    {
+      "id": "45-category-premium-20contemporary",
+      "url": "https://www.faire.com/category/Premium%20Contemporary",
+      "status": 200,
+      "title": "Wholesale premium contemporary for your store",
+      "h1": "Wholesale premium contemporary",
+      "from": "https://www.faire.com/#All categories",
+      "via": "Premium contemporary",
+      "gate": null
+    },
+    {
+      "id": "46-category-for-20the-20coffee-20-20tea-20lover",
+      "url": "https://www.faire.com/category/For%20the%20Coffee%20&%20Tea%20Lover",
+      "status": 200,
+      "title": "Wholesale for the coffee & tea lover for your store",
+      "h1": "Wholesale for the coffee & tea lover",
+      "from": "https://www.faire.com/#All categories",
+      "via": "For the coffee & tea lover",
+      "gate": null
+    },
+    {
+      "id": "47-category-for-20the-20foodie",
+      "url": "https://www.faire.com/category/For%20the%20Foodie",
+      "status": 200,
+      "title": "Wholesale for the foodie for your store",
+      "h1": "Wholesale for the foodie",
+      "from": "https://www.faire.com/#All categories",
+      "via": "For the foodie",
+      "gate": null
+    },
+    {
+      "id": "48-category-healthy-20eats-20-20drinks",
+      "url": "https://www.faire.com/category/Healthy%20Eats%20&%20Drinks",
+      "status": 200,
+      "title": "Wholesale healthy eats & drinks for your store",
+      "h1": "Wholesale healthy eats & drinks",
+      "from": "https://www.faire.com/#All categories",
+      "via": "Healthy eats & drinks",
+      "gate": null
+    },
+    {
+      "id": "49-category-all-20european-20brands",
+      "url": "https://www.faire.com/category/All%20European%20Brands",
+      "status": 200,
+      "title": "Wholesale all european brands for your store",
+      "h1": "Wholesale all european brands",
+      "from": "https://www.faire.com/#All categories",
+      "via": "All European brands",
+      "gate": null
+    },
+    {
+      "id": "50-category-based-20in-20france",
+      "url": "https://www.faire.com/category/Based%20in%20France",
+      "status": 200,
+      "title": "Wholesale based in france for your store",
+      "h1": "Wholesale based in france",
+      "from": "https://www.faire.com/#All categories",
+      "via": "Based in France",
+      "gate": null
+    },
+    {
+      "id": "51-category-based-20in-20germany",
+      "url": "https://www.faire.com/category/Based%20in%20Germany",
+      "status": 200,
+      "title": "Wholesale based in germany for your store",
+      "h1": "Wholesale based in germany",
+      "from": "https://www.faire.com/#All categories",
+      "via": "Based in Germany",
+      "gate": null
+    },
+    {
+      "id": "52-category-based-20in-20the-20nordics",
+      "url": "https://www.faire.com/category/Based%20in%20the%20Nordics",
+      "status": 200,
+      "title": "Wholesale based in the nordics for your store",
+      "h1": "Wholesale based in the nordics",
+      "from": "https://www.faire.com/#All categories",
+      "via": "Based in the Nordics",
+      "gate": null
+    },
+    {
+      "id": "53-category-based-20in-20the-20u-k",
+      "url": "https://www.faire.com/category/Based%20in%20the%20U.K.",
+      "status": 200,
+      "title": "Wholesale based in the u.k. for your store",
+      "h1": "Wholesale based in the u.k.",
+      "from": "https://www.faire.com/#All categories",
+      "via": "Based in the U.K.",
+      "gate": null
+    },
+    {
+      "id": "54-category-made-20in-20italy",
+      "url": "https://www.faire.com/category/Made%20In%20Italy",
+      "status": 200,
+      "title": "Wholesale made in italy for your store",
+      "h1": "Wholesale made in italy",
+      "from": "https://www.faire.com/#All categories",
+      "via": "Made In Italy",
+      "gate": null
+    },
+    {
+      "id": "55-news-case-studies",
+      "url": "https://www.faire.com/news/case-studies",
+      "status": 200,
+      "title": "Case Studies from Retailers & Brands on Faire",
+      "h1": "",
+      "from": "https://www.faire.com/news",
+      "via": "Case studies",
+      "gate": null
+    },
+    {
+      "id": "56-careers-belonging-at-faire",
+      "url": "https://www.faire.com/careers/belonging-at-faire",
+      "status": 200,
+      "title": "Careers at Faire | Join us!",
+      "h1": "",
+      "from": "https://www.faire.com/careers",
+      "via": "Belonging at Faire",
+      "gate": null
+    },
+    {
+      "id": "57-support",
+      "url": "https://www.faire.com/support",
+      "status": 200,
+      "title": "Faire \u2013 Help Center",
+      "h1": "",
+      "from": "https://www.faire.com/support",
+      "via": "Get support",
+      "gate": null
+    },
+    {
+      "id": "58-articles-360047925272",
+      "url": "https://www.faire.com/support/articles/360047925272",
+      "status": 200,
+      "title": "Can I rebrand products purchased on Faire? | Faire Help Center",
+      "h1": "Can I rebrand products purchased on Faire?",
+      "from": "https://www.faire.com/support",
+      "via": "guidelines for selling",
+      "gate": null
+    },
+    {
+      "id": "59-articles-4406840862747",
+      "url": "https://www.faire.com/support/articles/4406840862747",
+      "status": 200,
+      "title": "How does Insider work for US retailers? | Faire Help Center",
+      "h1": "How does Insider work for US retailers?",
+      "from": "https://www.faire.com/markets",
+      "via": "Learn more",
+      "gate": null
+    },
+    {
+      "id": "60-articles-360037248712",
+      "url": "https://www.faire.com/support/articles/360037248712",
+      "status": 429,
+      "title": "Just a moment...",
+      "h1": "www.faire.com",
+      "from": "https://www.faire.com/point-of-sale/about",
+      "via": "Help center",
+      "gate": "cloudflare"
+    },
+    {
+      "id": "61-brands",
+      "url": "https://www.faire.com/brands",
+      "status": 200,
+      "title": "Sell wholesale to independent retailers worldwide | Faire for brands",
+      "h1": "Sell wholesale products to retailers around the world",
+      "from": "https://www.faire.com/how-faire-works",
+      "via": "Sign up to sell",
+      "gate": null
+    },
+    {
+      "id": "62-articles-360016111311",
+      "url": "https://www.faire.com/support/articles/360016111311",
+      "status": 429,
+      "title": "Just a moment...",
+      "h1": "www.faire.com",
+      "from": "https://www.faire.com/large-retailers",
+      "via": "select locations",
+      "gate": "cloudflare"
+    },
+    {
+      "id": "63-privacy",
+      "url": "https://www.faire.com/privacy",
+      "status": 200,
+      "title": "Your one-stop shop for wholesale - Faire",
+      "h1": "Privacy Policy",
+      "from": "https://www.faire.com/tos",
+      "via": "Privacy Policy",
+      "gate": null
+    },
+    {
+      "id": "64-static-faire-ontario-aoda-integrated-accessibili",
+      "url": "https://cdn.faire.com/static/Faire+Ontario+AODA+Integrated+Accessibility+Standards+Policy.pdf",
+      "status": 200,
+      "title": "",
+      "h1": "",
+      "from": "https://www.faire.com/aoda",
+      "via": "General Integrated Accessibility Standards Policy (AODA)",
+      "gate": null
+    },
+    {
+      "id": "65-site-map-discover",
+      "url": "https://www.faire.com/site-map/discover",
+      "status": 200,
+      "title": "Your one-stop shop for wholesale - Faire",
+      "h1": "Discover",
+      "from": "https://www.faire.com/site-map",
+      "via": "Discover",
+      "gate": null
+    },
+    {
+      "id": "66-history",
+      "url": "https://status.faire.com/posts/history",
+      "status": 200,
+      "title": "Faire Status Page",
+      "h1": "History",
+      "from": "https://status.faire.com/",
+      "via": "History",
+      "gate": null
+    },
+    {
+      "id": "67-gift-bags-boxes-buying-guide-trends",
+      "url": "https://www.faire.com/hub/paper-novelty/gift-wrapping/gift-bags-boxes/buying-guide-trends",
+      "status": 200,
+      "title": "Wholesale gift bags & boxes: Buying guide & trends",
+      "h1": "How to buy wholesale gift bags & boxes: Trends, top brands & retailer insights",
+      "from": "https://www.faire.com/hub",
+      "via": "Paper & novelty | Gift wrapping Wholesale gift bags & boxes: Buying guide & tren",
+      "gate": null
+    },
+    {
+      "id": "68-brand-b-76cwpv1j6d",
+      "url": "https://www.faire.com/brand/b_76cwpv1j6d",
+      "status": 200,
+      "title": "Carol Wilson Fine Arts Inc./For Arts Sake wholesale products",
+      "h1": "Carol Wilson Fine Arts Inc./For Arts Sake wholesale",
+      "from": "https://www.faire.com/category/Mother's%20Day%20Shop",
+      "via": "",
+      "gate": null
+    },
+    {
+      "id": "69-brand-b-tafk34eq47",
+      "url": "https://www.faire.com/brand/b_tafk34eq47",
+      "status": 200,
+      "title": "From The Heart wholesale products",
+      "h1": "From The Heart wholesale",
+      "from": "https://www.faire.com/category/Mother's%20Day%20Shop",
+      "via": "",
+      "gate": null
+    },
+    {
+      "id": "70-brand-b-25kcsmxy6l",
+      "url": "https://www.faire.com/brand/b_25kcsmxy6l",
+      "status": 200,
+      "title": "Nordstjerne wholesale products",
+      "h1": "Nordstjerne wholesale",
+      "from": "https://www.faire.com/category/Mother's%20Day%20Shop",
+      "via": "",
+      "gate": null
+    }
+  ],
+  "controls": [
+    {
+      "page": "https://www.faire.com/",
+      "tag": "button",
+      "control": "Sign up",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Go to Faire homepage",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "button",
+      "control": "All categories",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": "menu"
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Blog",
+      "kind": "page",
+      "opens": "https://www.faire.com/blog",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Sign up to sell",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/apply",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "button",
+      "control": "Sign in",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "button",
+      "control": "Sign up to buy",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "New products",
+      "kind": "page",
+      "opens": "https://www.faire.com/category/New%20Products",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "New brands",
+      "kind": "page",
+      "opens": "https://www.faire.com/category/New%20Brands",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Home decor",
+      "kind": "page",
+      "opens": "https://www.faire.com/category/Home%20Decor",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Food & drink",
+      "kind": "page",
+      "opens": "https://www.faire.com/category/Food%20&%20Drink",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Women",
+      "kind": "page",
+      "opens": "https://www.faire.com/category/Women",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Beauty & wellness",
+      "kind": "page",
+      "opens": "https://www.faire.com/category/Beauty%20&%20Wellness",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Jewelry",
+      "kind": "page",
+      "opens": "https://www.faire.com/category/Jewelry",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Paper & novelty",
+      "kind": "page",
+      "opens": "https://www.faire.com/category/Paper%20&%20Novelty",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Kids & baby",
+      "kind": "page",
+      "opens": "https://www.faire.com/category/Kids%20&%20Baby",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Pets",
+      "kind": "page",
+      "opens": "https://www.faire.com/category/Pets",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Men",
+      "kind": "page",
+      "opens": "https://www.faire.com/category/Men",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Books",
+      "kind": "page",
+      "opens": "https://www.faire.com/category/Books",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Skip to main content",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Shop all home decor",
+      "kind": "page",
+      "opens": "https://www.faire.com/category/Home%20Decor",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "button",
+      "control": "Previous slide",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "button",
+      "control": "Next slide",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "button",
+      "control": "Sign up for free",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "About us",
+      "kind": "page",
+      "opens": "https://www.faire.com/about",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Newsroom",
+      "kind": "page",
+      "opens": "https://www.faire.com/news",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Careers",
+      "kind": "page",
+      "opens": "https://www.faire.com/careers",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Affiliates",
+      "kind": "page",
+      "opens": "https://www.faire.com/affiliates",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Help center",
+      "kind": "page",
+      "opens": "https://www.faire.com/support",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Faire Markets",
+      "kind": "page",
+      "opens": "https://www.faire.com/markets",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Point of sale integration",
+      "kind": "page",
+      "opens": "https://www.faire.com/point-of-sale/about",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "How Faire works",
+      "kind": "page",
+      "opens": "https://www.faire.com/how-faire-works",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Refer a brand",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/user/brand-referrals",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Instagram",
+      "kind": "external",
+      "opens": "https://www.instagram.com/faire_wholesale",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Facebook",
+      "kind": "external",
+      "opens": "https://www.facebook.com/fairewholesale",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Twitter",
+      "kind": "external",
+      "opens": "https://x.com/faire_wholesale",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Terms of Service",
+      "kind": "page",
+      "opens": "https://www.faire.com/tos",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Privacy Policy",
+      "kind": "page",
+      "opens": "https://www.faire.com/privacy",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Cookie Policy",
+      "kind": "page",
+      "opens": "https://www.faire.com/privacy/cookies",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "IP Policy",
+      "kind": "page",
+      "opens": "https://www.faire.com/copyright",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Accessibility Policy",
+      "kind": "page",
+      "opens": "https://www.faire.com/aoda",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Sitemap",
+      "kind": "page",
+      "opens": "https://www.faire.com/site-map",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "System Status",
+      "kind": "page",
+      "opens": "https://status.faire.com/",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "tag": "a",
+      "control": "Hub",
+      "kind": "page",
+      "opens": "https://www.faire.com/hub",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/",
+      "control": "All categories",
+      "kind": "menu",
+      "opens": "dropdown",
+      "links": [
+        {
+          "text": "Go to Faire homepage",
+          "href": "/"
+        },
+        {
+          "text": "Beauty & wellness",
+          "href": "/category/Beauty & Wellness"
+        },
+        {
+          "text": "Food & drink",
+          "href": "/category/Food & Drink"
+        },
+        {
+          "text": "Kids & baby",
+          "href": "/category/Kids & Baby"
+        },
+        {
+          "text": "Home decor",
+          "href": "/category/Home Decor"
+        },
+        {
+          "text": "Jewelry",
+          "href": "/category/Jewelry"
+        },
+        {
+          "text": "Men",
+          "href": "/category/Men"
+        },
+        {
+          "text": "Paper & novelty",
+          "href": "/category/Paper & Novelty"
+        },
+        {
+          "text": "Pets",
+          "href": "/category/Pets"
+        },
+        {
+          "text": "Women",
+          "href": "/category/Women"
+        },
+        {
+          "text": "Books",
+          "href": "/category/Books"
+        },
+        {
+          "text": "Mother's Day shop",
+          "href": "/category/Mother's Day Shop"
+        },
+        {
+          "text": "Father's Day shop",
+          "href": "/category/Father's Day Shop"
+        },
+        {
+          "text": "Summer shop",
+          "href": "/category/Summer Shop"
+        },
+        {
+          "text": "Fall shop",
+          "href": "/category/Fall Shop"
+        },
+        {
+          "text": "Holiday shop",
+          "href": "/category/Holiday Shop"
+        },
+        {
+          "text": "Everyday Jewelry",
+          "href": "/category/Everyday Jewelry"
+        },
+        {
+          "text": "Premium contemporary",
+          "href": "/category/Premium Contemporary"
+        },
+        {
+          "text": "For the coffee & tea lover",
+          "href": "/category/For the Coffee & Tea Lover"
+        },
+        {
+          "text": "For the foodie",
+          "href": "/category/For the Foodie"
+        },
+        {
+          "text": "Healthy eats & drinks",
+          "href": "/category/Healthy Eats & Drinks"
+        },
+        {
+          "text": "All European brands",
+          "href": "/category/All European Brands"
+        },
+        {
+          "text": "Based in France",
+          "href": "/category/Based in France"
+        },
+        {
+          "text": "Based in Germany",
+          "href": "/category/Based in Germany"
+        },
+        {
+          "text": "Based in the Nordics",
+          "href": "/category/Based in the Nordics"
+        },
+        {
+          "text": "Based in the U.K.",
+          "href": "/category/Based in the U.K."
+        },
+        {
+          "text": "Made In Italy",
+          "href": "/category/Made In Italy"
+        },
+        {
+          "text": "Blog",
+          "href": "https://www.faire.com/blog/"
+        },
+        {
+          "text": "Sign up to sell",
+          "href": "/apply"
+        },
+        {
+          "text": "New products",
+          "href": "/category/New Products"
+        },
+        {
+          "text": "New brands",
+          "href": "/category/New Brands"
+        },
+        {
+          "text": "Home decor",
+          "href": "/category/Home Decor"
+        },
+        {
+          "text": "Food & drink",
+          "href": "/category/Food & Drink"
+        },
+        {
+          "text": "Women",
+          "href": "/category/Women"
+        },
+        {
+          "text": "Beauty & wellness",
+          "href": "/category/Beauty & Wellness"
+        },
+        {
+          "text": "Jewelry",
+          "href": "/category/Jewelry"
+        },
+        {
+          "text": "Paper & novelty",
+          "href": "/category/Paper & Novelty"
+        },
+        {
+          "text": "Kids & baby",
+          "href": "/category/Kids & Baby"
+        },
+        {
+          "text": "Pets",
+          "href": "/category/Pets"
+        },
+        {
+          "text": "Men",
+          "href": "/category/Men"
+        }
+      ]
+    },
+    {
+      "page": "https://www.faire.com/blog",
+      "control": "All categories",
+      "kind": "menu",
+      "opens": "dropdown",
+      "links": [
+        {
+          "text": "Go to Faire homepage",
+          "href": "/"
+        },
+        {
+          "text": "Beauty & wellness",
+          "href": "/category/Beauty & Wellness"
+        },
+        {
+          "text": "Food & drink",
+          "href": "/category/Food & Drink"
+        },
+        {
+          "text": "Kids & baby",
+          "href": "/category/Kids & Baby"
+        },
+        {
+          "text": "Home decor",
+          "href": "/category/Home Decor"
+        },
+        {
+          "text": "Jewelry",
+          "href": "/category/Jewelry"
+        },
+        {
+          "text": "Men",
+          "href": "/category/Men"
+        },
+        {
+          "text": "Paper & novelty",
+          "href": "/category/Paper & Novelty"
+        },
+        {
+          "text": "Pets",
+          "href": "/category/Pets"
+        },
+        {
+          "text": "Women",
+          "href": "/category/Women"
+        },
+        {
+          "text": "Books",
+          "href": "/category/Books"
+        },
+        {
+          "text": "Mother's Day shop",
+          "href": "/category/Mother's Day Shop"
+        },
+        {
+          "text": "Father's Day shop",
+          "href": "/category/Father's Day Shop"
+        },
+        {
+          "text": "Summer shop",
+          "href": "/category/Summer Shop"
+        },
+        {
+          "text": "Fall shop",
+          "href": "/category/Fall Shop"
+        },
+        {
+          "text": "Holiday shop",
+          "href": "/category/Holiday Shop"
+        },
+        {
+          "text": "Everyday Jewelry",
+          "href": "/category/Everyday Jewelry"
+        },
+        {
+          "text": "Premium contemporary",
+          "href": "/category/Premium Contemporary"
+        },
+        {
+          "text": "For the coffee & tea lover",
+          "href": "/category/For the Coffee & Tea Lover"
+        },
+        {
+          "text": "For the foodie",
+          "href": "/category/For the Foodie"
+        },
+        {
+          "text": "Healthy eats & drinks",
+          "href": "/category/Healthy Eats & Drinks"
+        },
+        {
+          "text": "All European brands",
+          "href": "/category/All European Brands"
+        },
+        {
+          "text": "Based in France",
+          "href": "/category/Based in France"
+        },
+        {
+          "text": "Based in Germany",
+          "href": "/category/Based in Germany"
+        },
+        {
+          "text": "Based in the Nordics",
+          "href": "/category/Based in the Nordics"
+        },
+        {
+          "text": "Based in the U.K.",
+          "href": "/category/Based in the U.K."
+        },
+        {
+          "text": "Made In Italy",
+          "href": "/category/Made In Italy"
+        },
+        {
+          "text": "Blog",
+          "href": "https://www.faire.com/blog/"
+        },
+        {
+          "text": "Sign up to sell",
+          "href": "/apply"
+        },
+        {
+          "text": "New products",
+          "href": "/category/New Products"
+        },
+        {
+          "text": "New brands",
+          "href": "/category/New Brands"
+        },
+        {
+          "text": "Home decor",
+          "href": "/category/Home Decor"
+        },
+        {
+          "text": "Food & drink",
+          "href": "/category/Food & Drink"
+        },
+        {
+          "text": "Women",
+          "href": "/category/Women"
+        },
+        {
+          "text": "Beauty & wellness",
+          "href": "/category/Beauty & Wellness"
+        },
+        {
+          "text": "Jewelry",
+          "href": "/category/Jewelry"
+        },
+        {
+          "text": "Paper & novelty",
+          "href": "/category/Paper & Novelty"
+        },
+        {
+          "text": "Kids & baby",
+          "href": "/category/Kids & Baby"
+        },
+        {
+          "text": "Pets",
+          "href": "/category/Pets"
+        },
+        {
+          "text": "Men",
+          "href": "/category/Men"
+        }
+      ]
+    },
+    {
+      "page": "https://www.faire.com/category/New%20Products",
+      "control": "All categories",
+      "kind": "menu",
+      "opens": "dropdown",
+      "links": [
+        {
+          "text": "Go to Faire homepage",
+          "href": "/"
+        },
+        {
+          "text": "Beauty & wellness",
+          "href": "/category/Beauty & Wellness"
+        },
+        {
+          "text": "Food & drink",
+          "href": "/category/Food & Drink"
+        },
+        {
+          "text": "Kids & baby",
+          "href": "/category/Kids & Baby"
+        },
+        {
+          "text": "Home decor",
+          "href": "/category/Home Decor"
+        },
+        {
+          "text": "Jewelry",
+          "href": "/category/Jewelry"
+        },
+        {
+          "text": "Men",
+          "href": "/category/Men"
+        },
+        {
+          "text": "Paper & novelty",
+          "href": "/category/Paper & Novelty"
+        },
+        {
+          "text": "Pets",
+          "href": "/category/Pets"
+        },
+        {
+          "text": "Women",
+          "href": "/category/Women"
+        },
+        {
+          "text": "Books",
+          "href": "/category/Books"
+        },
+        {
+          "text": "Mother's Day shop",
+          "href": "/category/Mother's Day Shop"
+        },
+        {
+          "text": "Father's Day shop",
+          "href": "/category/Father's Day Shop"
+        },
+        {
+          "text": "Summer shop",
+          "href": "/category/Summer Shop"
+        },
+        {
+          "text": "Fall shop",
+          "href": "/category/Fall Shop"
+        },
+        {
+          "text": "Holiday shop",
+          "href": "/category/Holiday Shop"
+        },
+        {
+          "text": "Everyday Jewelry",
+          "href": "/category/Everyday Jewelry"
+        },
+        {
+          "text": "Premium contemporary",
+          "href": "/category/Premium Contemporary"
+        },
+        {
+          "text": "For the coffee & tea lover",
+          "href": "/category/For the Coffee & Tea Lover"
+        },
+        {
+          "text": "For the foodie",
+          "href": "/category/For the Foodie"
+        },
+        {
+          "text": "Healthy eats & drinks",
+          "href": "/category/Healthy Eats & Drinks"
+        },
+        {
+          "text": "All European brands",
+          "href": "/category/All European Brands"
+        },
+        {
+          "text": "Based in France",
+          "href": "/category/Based in France"
+        },
+        {
+          "text": "Based in Germany",
+          "href": "/category/Based in Germany"
+        },
+        {
+          "text": "Based in the Nordics",
+          "href": "/category/Based in the Nordics"
+        },
+        {
+          "text": "Based in the U.K.",
+          "href": "/category/Based in the U.K."
+        },
+        {
+          "text": "Made In Italy",
+          "href": "/category/Made In Italy"
+        },
+        {
+          "text": "Blog",
+          "href": "https://www.faire.com/blog/"
+        },
+        {
+          "text": "Sign up to sell",
+          "href": "/apply"
+        },
+        {
+          "text": "New products",
+          "href": "/category/New Products"
+        },
+        {
+          "text": "New brands",
+          "href": "/category/New Brands"
+        },
+        {
+          "text": "Home decor",
+          "href": "/category/Home Decor"
+        },
+        {
+          "text": "Food & drink",
+          "href": "/category/Food & Drink"
+        },
+        {
+          "text": "Women",
+          "href": "/category/Women"
+        },
+        {
+          "text": "Beauty & wellness",
+          "href": "/category/Beauty & Wellness"
+        },
+        {
+          "text": "Jewelry",
+          "href": "/category/Jewelry"
+        },
+        {
+          "text": "Paper & novelty",
+          "href": "/category/Paper & Novelty"
+        },
+        {
+          "text": "Kids & baby",
+          "href": "/category/Kids & Baby"
+        },
+        {
+          "text": "Pets",
+          "href": "/category/Pets"
+        },
+        {
+          "text": "Men",
+          "href": "/category/Men"
+        }
+      ]
+    },
+    {
+      "page": "https://www.faire.com/category/New%20Brands",
+      "control": "All categories",
+      "kind": "menu",
+      "opens": "dropdown",
+      "links": [
+        {
+          "text": "Go to Faire homepage",
+          "href": "/"
+        },
+        {
+          "text": "Beauty & wellness",
+          "href": "/category/Beauty & Wellness"
+        },
+        {
+          "text": "Food & drink",
+          "href": "/category/Food & Drink"
+        },
+        {
+          "text": "Kids & baby",
+          "href": "/category/Kids & Baby"
+        },
+        {
+          "text": "Home decor",
+          "href": "/category/Home Decor"
+        },
+        {
+          "text": "Jewelry",
+          "href": "/category/Jewelry"
+        },
+        {
+          "text": "Men",
+          "href": "/category/Men"
+        },
+        {
+          "text": "Paper & novelty",
+          "href": "/category/Paper & Novelty"
+        },
+        {
+          "text": "Pets",
+          "href": "/category/Pets"
+        },
+        {
+          "text": "Women",
+          "href": "/category/Women"
+        },
+        {
+          "text": "Books",
+          "href": "/category/Books"
+        },
+        {
+          "text": "Mother's Day shop",
+          "href": "/category/Mother's Day Shop"
+        },
+        {
+          "text": "Father's Day shop",
+          "href": "/category/Father's Day Shop"
+        },
+        {
+          "text": "Summer shop",
+          "href": "/category/Summer Shop"
+        },
+        {
+          "text": "Fall shop",
+          "href": "/category/Fall Shop"
+        },
+        {
+          "text": "Holiday shop",
+          "href": "/category/Holiday Shop"
+        },
+        {
+          "text": "Everyday Jewelry",
+          "href": "/category/Everyday Jewelry"
+        },
+        {
+          "text": "Premium contemporary",
+          "href": "/category/Premium Contemporary"
+        },
+        {
+          "text": "For the coffee & tea lover",
+          "href": "/category/For the Coffee & Tea Lover"
+        },
+        {
+          "text": "For the foodie",
+          "href": "/category/For the Foodie"
+        },
+        {
+          "text": "Healthy eats & drinks",
+          "href": "/category/Healthy Eats & Drinks"
+        },
+        {
+          "text": "All European brands",
+          "href": "/category/All European Brands"
+        },
+        {
+          "text": "Based in France",
+          "href": "/category/Based in France"
+        },
+        {
+          "text": "Based in Germany",
+          "href": "/category/Based in Germany"
+        },
+        {
+          "text": "Based in the Nordics",
+          "href": "/category/Based in the Nordics"
+        },
+        {
+          "text": "Based in the U.K.",
+          "href": "/category/Based in the U.K."
+        },
+        {
+          "text": "Made In Italy",
+          "href": "/category/Made In Italy"
+        },
+        {
+          "text": "Blog",
+          "href": "https://www.faire.com/blog/"
+        },
+        {
+          "text": "Sign up to sell",
+          "href": "/apply"
+        },
+        {
+          "text": "New products",
+          "href": "/category/New Products"
+        },
+        {
+          "text": "New brands",
+          "href": "/category/New Brands"
+        },
+        {
+          "text": "Home decor",
+          "href": "/category/Home Decor"
+        },
+        {
+          "text": "Food & drink",
+          "href": "/category/Food & Drink"
+        },
+        {
+          "text": "Women",
+          "href": "/category/Women"
+        },
+        {
+          "text": "Beauty & wellness",
+          "href": "/category/Beauty & Wellness"
+        },
+        {
+          "text": "Jewelry",
+          "href": "/category/Jewelry"
+        },
+        {
+          "text": "Paper & novelty",
+          "href": "/category/Paper & Novelty"
+        },
+        {
+          "text": "Kids & baby",
+          "href": "/category/Kids & Baby"
+        },
+        {
+          "text": "Pets",
+          "href": "/category/Pets"
+        },
+        {
+          "text": "Men",
+          "href": "/category/Men"
+        }
+      ]
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "button",
+      "control": "Sign up",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Go to Faire homepage",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "button",
+      "control": "All categories",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": "menu"
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Blog",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/blog",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Sign up to sell",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/apply",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "button",
+      "control": "Sign in",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "button",
+      "control": "Sign up to buy",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "New products",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/New%20Products",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "New brands",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/New%20Brands",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Home decor",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Food & drink",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Food%20&%20Drink",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Women",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Women",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Beauty & wellness",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Beauty%20&%20Wellness",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Jewelry",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Jewelry",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Paper & novelty",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Paper%20&%20Novelty",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Kids & baby",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Kids%20&%20Baby",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Pets",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Pets",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Men",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Men",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Books",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Books",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Skip to main content",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Unlock wholesale pricing",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=1",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "button",
+      "control": "Previous Carousel Slide",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "button",
+      "control": "Next Carousel Slide",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Home accents",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor/subcategory/Home%20Accents",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Household supplies & DIY",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor/subcategory/Household%20Supplies%20&%20DIY",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Candles & holders",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor/subcategory/Candles%20&%20Holders",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Garden & outdoor",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor/subcategory/Garden%20&%20Outdoor",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Storage & organization",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor/subcategory/Storage%20&%20Organization",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Bedding",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor/subcategory/Bedding",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Bath",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor/subcategory/Bath",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Kitchen & tabletop",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor/subcategory/Kitchen%20&%20Tabletop",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX Christmas Dumpling Squishy Advent Calendar",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "4.6 (40)",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Unlock wholesale price",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX Amos Peelerz Advent Calendar 2026",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "4.9 (599)",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX Dreamer Blanket",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "5.0 (9)",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX \"Pocket Nativity Scene\" Tin Can Set",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "5.0 (27)",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX Christmas Tree Farm Mason Jar Soy Candle 3 sizes",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX 20oz Powder Coated Sip Sip Tumbler",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "4.9 (343)",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Kitchen & tabletop linens",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor/subcategory/Kitchen%20&%20Tabletop/Kitchen%20&%20Tabletop%20Linens",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Tools & appliances",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor/subcategory/Kitchen%20&%20Tabletop/Tools%20&%20Appliances",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Quilts & coverlets",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor/subcategory/Bedding/Quilts%20&%20Coverlets",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Cleaning supplies",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor/subcategory/Household%20Supplies%20&%20DIY/Cleaning%20Supplies",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Cookware & bakeware",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor/subcategory/Kitchen%20&%20Tabletop/Cookware%20&%20Bakeware",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Coffee & teaware",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor/subcategory/Kitchen%20&%20Tabletop/Coffee%20&%20Teaware",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Bath accessories",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor/subcategory/Bath/Bath%20Accessories",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Bookends",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor/subcategory/Home%20Accents/Bookends",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "Tools & DIY",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor/subcategory/Household%20Supplies%20&%20DIY/Tools%20&%20DIY",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "button",
+      "control": "All filters",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "button",
+      "control": "Brands from your country",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "button",
+      "control": "Low minimum",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "button",
+      "control": "Top Shop",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "button",
+      "control": "New this month",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX Rolling Hauler Tote",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "5.0 (3)",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX \ud83c\udf19\u2728 Rustic Home Fragrance Collection | Simmer Pot Kits",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "5.0 (18)",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX Indoor/Outdoor Real Touch Juniper Garland",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "4.9 (139)",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX Frosted Pine Berry Artificial Christmas Floral Picks Decor",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "4.5 (365)",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX WRAPPED MINI Christmas Advent Calendar 24/pk | C001",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "4.6 (429)",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX Gourmet Christmas Candle - Fir - 100 g",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "4.9 (42)",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX Christmas Potpourri Collection \u2013 Handcrafted Natural Botanic",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "4.8 (91)",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX Small Town Holiday Custom City State Ceramic Ornament",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "5.0 (732)",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX Owala FreeSip 24oz Black Cherry Water Bottle, Dark Brown",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX The Tilly Tissue Vessel",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "5.0 (34)",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX Gingerbread Mini Cast Iron Dutch Oven Simmer Kit",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX Pots of Joy - Festive Stovetop Potpourri 3 colors",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX Menorah,\"Hot Dog\", Handpainted Ceramic,9.25\"x2\",colorbox",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "5.0 (6)",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX Highland Cow Advent Calendar\u2014Collectible Soft Plastic Figure",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "4.8 (624)",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX DRAGON'S BLOOD & WHITE SAGE 4\" Smudge Stick",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "5.0 (878)",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "tag": "a",
+      "control": "US$ XX.XX Viral Squishy Advent Calendar 1x12",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/category/Home%20Decor?signUp=product",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/category/Home%20Decor",
+      "control": "All categories",
+      "kind": "menu",
+      "opens": "dropdown",
+      "links": [
+        {
+          "text": "Go to Faire homepage",
+          "href": "/"
+        },
+        {
+          "text": "Beauty & wellness",
+          "href": "/category/Beauty & Wellness"
+        },
+        {
+          "text": "Food & drink",
+          "href": "/category/Food & Drink"
+        },
+        {
+          "text": "Kids & baby",
+          "href": "/category/Kids & Baby"
+        },
+        {
+          "text": "Home decor",
+          "href": "/category/Home Decor"
+        },
+        {
+          "text": "Jewelry",
+          "href": "/category/Jewelry"
+        },
+        {
+          "text": "Men",
+          "href": "/category/Men"
+        },
+        {
+          "text": "Paper & novelty",
+          "href": "/category/Paper & Novelty"
+        },
+        {
+          "text": "Pets",
+          "href": "/category/Pets"
+        },
+        {
+          "text": "Women",
+          "href": "/category/Women"
+        },
+        {
+          "text": "Books",
+          "href": "/category/Books"
+        },
+        {
+          "text": "Mother's Day shop",
+          "href": "/category/Mother's Day Shop"
+        },
+        {
+          "text": "Father's Day shop",
+          "href": "/category/Father's Day Shop"
+        },
+        {
+          "text": "Summer shop",
+          "href": "/category/Summer Shop"
+        },
+        {
+          "text": "Fall shop",
+          "href": "/category/Fall Shop"
+        },
+        {
+          "text": "Holiday shop",
+          "href": "/category/Holiday Shop"
+        },
+        {
+          "text": "Everyday Jewelry",
+          "href": "/category/Everyday Jewelry"
+        },
+        {
+          "text": "Premium contemporary",
+          "href": "/category/Premium Contemporary"
+        },
+        {
+          "text": "For the coffee & tea lover",
+          "href": "/category/For the Coffee & Tea Lover"
+        },
+        {
+          "text": "For the foodie",
+          "href": "/category/For the Foodie"
+        },
+        {
+          "text": "Healthy eats & drinks",
+          "href": "/category/Healthy Eats & Drinks"
+        },
+        {
+          "text": "All European brands",
+          "href": "/category/All European Brands"
+        },
+        {
+          "text": "Based in France",
+          "href": "/category/Based in France"
+        },
+        {
+          "text": "Based in Germany",
+          "href": "/category/Based in Germany"
+        },
+        {
+          "text": "Based in the Nordics",
+          "href": "/category/Based in the Nordics"
+        },
+        {
+          "text": "Based in the U.K.",
+          "href": "/category/Based in the U.K."
+        },
+        {
+          "text": "Made In Italy",
+          "href": "/category/Made In Italy"
+        },
+        {
+          "text": "Blog",
+          "href": "https://www.faire.com/blog/"
+        },
+        {
+          "text": "Sign up to sell",
+          "href": "/apply"
+        },
+        {
+          "text": "New products",
+          "href": "/category/New Products"
+        },
+        {
+          "text": "New brands",
+          "href": "/category/New Brands"
+        },
+        {
+          "text": "Home decor",
+          "href": "/category/Home Decor"
+        },
+        {
+          "text": "Food & drink",
+          "href": "/category/Food & Drink"
+        },
+        {
+          "text": "Women",
+          "href": "/category/Women"
+        },
+        {
+          "text": "Beauty & wellness",
+          "href": "/category/Beauty & Wellness"
+        },
+        {
+          "text": "Jewelry",
+          "href": "/category/Jewelry"
+        },
+        {
+          "text": "Paper & novelty",
+          "href": "/category/Paper & Novelty"
+        },
+        {
+          "text": "Kids & baby",
+          "href": "/category/Kids & Baby"
+        },
+        {
+          "text": "Pets",
+          "href": "/category/Pets"
+        },
+        {
+          "text": "Men",
+          "href": "/category/Men"
+        }
+      ]
+    },
+    {
+      "page": "https://www.faire.com/category/Food%20&%20Drink",
+      "control": "All categories",
+      "kind": "menu",
+      "opens": "dropdown",
+      "links": [
+        {
+          "text": "Go to Faire homepage",
+          "href": "/"
+        },
+        {
+          "text": "Beauty & wellness",
+          "href": "/category/Beauty & Wellness"
+        },
+        {
+          "text": "Food & drink",
+          "href": "/category/Food & Drink"
+        },
+        {
+          "text": "Kids & baby",
+          "href": "/category/Kids & Baby"
+        },
+        {
+          "text": "Home decor",
+          "href": "/category/Home Decor"
+        },
+        {
+          "text": "Jewelry",
+          "href": "/category/Jewelry"
+        },
+        {
+          "text": "Men",
+          "href": "/category/Men"
+        },
+        {
+          "text": "Paper & novelty",
+          "href": "/category/Paper & Novelty"
+        },
+        {
+          "text": "Pets",
+          "href": "/category/Pets"
+        },
+        {
+          "text": "Women",
+          "href": "/category/Women"
+        },
+        {
+          "text": "Books",
+          "href": "/category/Books"
+        },
+        {
+          "text": "Mother's Day shop",
+          "href": "/category/Mother's Day Shop"
+        },
+        {
+          "text": "Father's Day shop",
+          "href": "/category/Father's Day Shop"
+        },
+        {
+          "text": "Summer shop",
+          "href": "/category/Summer Shop"
+        },
+        {
+          "text": "Fall shop",
+          "href": "/category/Fall Shop"
+        },
+        {
+          "text": "Holiday shop",
+          "href": "/category/Holiday Shop"
+        },
+        {
+          "text": "Everyday Jewelry",
+          "href": "/category/Everyday Jewelry"
+        },
+        {
+          "text": "Premium contemporary",
+          "href": "/category/Premium Contemporary"
+        },
+        {
+          "text": "For the coffee & tea lover",
+          "href": "/category/For the Coffee & Tea Lover"
+        },
+        {
+          "text": "For the foodie",
+          "href": "/category/For the Foodie"
+        },
+        {
+          "text": "Healthy eats & drinks",
+          "href": "/category/Healthy Eats & Drinks"
+        },
+        {
+          "text": "All European brands",
+          "href": "/category/All European Brands"
+        },
+        {
+          "text": "Based in France",
+          "href": "/category/Based in France"
+        },
+        {
+          "text": "Based in Germany",
+          "href": "/category/Based in Germany"
+        },
+        {
+          "text": "Based in the Nordics",
+          "href": "/category/Based in the Nordics"
+        },
+        {
+          "text": "Based in the U.K.",
+          "href": "/category/Based in the U.K."
+        },
+        {
+          "text": "Made In Italy",
+          "href": "/category/Made In Italy"
+        },
+        {
+          "text": "Blog",
+          "href": "https://www.faire.com/blog/"
+        },
+        {
+          "text": "Sign up to sell",
+          "href": "/apply"
+        },
+        {
+          "text": "New products",
+          "href": "/category/New Products"
+        },
+        {
+          "text": "New brands",
+          "href": "/category/New Brands"
+        },
+        {
+          "text": "Home decor",
+          "href": "/category/Home Decor"
+        },
+        {
+          "text": "Food & drink",
+          "href": "/category/Food & Drink"
+        },
+        {
+          "text": "Women",
+          "href": "/category/Women"
+        },
+        {
+          "text": "Beauty & wellness",
+          "href": "/category/Beauty & Wellness"
+        },
+        {
+          "text": "Jewelry",
+          "href": "/category/Jewelry"
+        },
+        {
+          "text": "Paper & novelty",
+          "href": "/category/Paper & Novelty"
+        },
+        {
+          "text": "Kids & baby",
+          "href": "/category/Kids & Baby"
+        },
+        {
+          "text": "Pets",
+          "href": "/category/Pets"
+        },
+        {
+          "text": "Men",
+          "href": "/category/Men"
+        }
+      ]
+    },
+    {
+      "page": "https://www.faire.com/category/Women",
+      "control": "All categories",
+      "kind": "menu",
+      "opens": "dropdown",
+      "links": [
+        {
+          "text": "Go to Faire homepage",
+          "href": "/"
+        },
+        {
+          "text": "Beauty & wellness",
+          "href": "/category/Beauty & Wellness"
+        },
+        {
+          "text": "Food & drink",
+          "href": "/category/Food & Drink"
+        },
+        {
+          "text": "Kids & baby",
+          "href": "/category/Kids & Baby"
+        },
+        {
+          "text": "Home decor",
+          "href": "/category/Home Decor"
+        },
+        {
+          "text": "Jewelry",
+          "href": "/category/Jewelry"
+        },
+        {
+          "text": "Men",
+          "href": "/category/Men"
+        },
+        {
+          "text": "Paper & novelty",
+          "href": "/category/Paper & Novelty"
+        },
+        {
+          "text": "Pets",
+          "href": "/category/Pets"
+        },
+        {
+          "text": "Women",
+          "href": "/category/Women"
+        },
+        {
+          "text": "Books",
+          "href": "/category/Books"
+        },
+        {
+          "text": "Mother's Day shop",
+          "href": "/category/Mother's Day Shop"
+        },
+        {
+          "text": "Father's Day shop",
+          "href": "/category/Father's Day Shop"
+        },
+        {
+          "text": "Summer shop",
+          "href": "/category/Summer Shop"
+        },
+        {
+          "text": "Fall shop",
+          "href": "/category/Fall Shop"
+        },
+        {
+          "text": "Holiday shop",
+          "href": "/category/Holiday Shop"
+        },
+        {
+          "text": "Everyday Jewelry",
+          "href": "/category/Everyday Jewelry"
+        },
+        {
+          "text": "Premium contemporary",
+          "href": "/category/Premium Contemporary"
+        },
+        {
+          "text": "For the coffee & tea lover",
+          "href": "/category/For the Coffee & Tea Lover"
+        },
+        {
+          "text": "For the foodie",
+          "href": "/category/For the Foodie"
+        },
+        {
+          "text": "Healthy eats & drinks",
+          "href": "/category/Healthy Eats & Drinks"
+        },
+        {
+          "text": "All European brands",
+          "href": "/category/All European Brands"
+        },
+        {
+          "text": "Based in France",
+          "href": "/category/Based in France"
+        },
+        {
+          "text": "Based in Germany",
+          "href": "/category/Based in Germany"
+        },
+        {
+          "text": "Based in the Nordics",
+          "href": "/category/Based in the Nordics"
+        },
+        {
+          "text": "Based in the U.K.",
+          "href": "/category/Based in the U.K."
+        },
+        {
+          "text": "Made In Italy",
+          "href": "/category/Made In Italy"
+        },
+        {
+          "text": "Blog",
+          "href": "https://www.faire.com/blog/"
+        },
+        {
+          "text": "Sign up to sell",
+          "href": "/apply"
+        },
+        {
+          "text": "New products",
+          "href": "/category/New Products"
+        },
+        {
+          "text": "New brands",
+          "href": "/category/New Brands"
+        },
+        {
+          "text": "Home decor",
+          "href": "/category/Home Decor"
+        },
+        {
+          "text": "Food & drink",
+          "href": "/category/Food & Drink"
+        },
+        {
+          "text": "Women",
+          "href": "/category/Women"
+        },
+        {
+          "text": "Beauty & wellness",
+          "href": "/category/Beauty & Wellness"
+        },
+        {
+          "text": "Jewelry",
+          "href": "/category/Jewelry"
+        },
+        {
+          "text": "Paper & novelty",
+          "href": "/category/Paper & Novelty"
+        },
+        {
+          "text": "Kids & baby",
+          "href": "/category/Kids & Baby"
+        },
+        {
+          "text": "Pets",
+          "href": "/category/Pets"
+        },
+        {
+          "text": "Men",
+          "href": "/category/Men"
+        }
+      ]
+    },
+    {
+      "page": "https://www.faire.com/category/Beauty%20&%20Wellness",
+      "control": "All categories",
+      "kind": "menu",
+      "opens": "dropdown",
+      "links": [
+        {
+          "text": "Go to Faire homepage",
+          "href": "/"
+        },
+        {
+          "text": "Beauty & wellness",
+          "href": "/category/Beauty & Wellness"
+        },
+        {
+          "text": "Food & drink",
+          "href": "/category/Food & Drink"
+        },
+        {
+          "text": "Kids & baby",
+          "href": "/category/Kids & Baby"
+        },
+        {
+          "text": "Home decor",
+          "href": "/category/Home Decor"
+        },
+        {
+          "text": "Jewelry",
+          "href": "/category/Jewelry"
+        },
+        {
+          "text": "Men",
+          "href": "/category/Men"
+        },
+        {
+          "text": "Paper & novelty",
+          "href": "/category/Paper & Novelty"
+        },
+        {
+          "text": "Pets",
+          "href": "/category/Pets"
+        },
+        {
+          "text": "Women",
+          "href": "/category/Women"
+        },
+        {
+          "text": "Books",
+          "href": "/category/Books"
+        },
+        {
+          "text": "Mother's Day shop",
+          "href": "/category/Mother's Day Shop"
+        },
+        {
+          "text": "Father's Day shop",
+          "href": "/category/Father's Day Shop"
+        },
+        {
+          "text": "Summer shop",
+          "href": "/category/Summer Shop"
+        },
+        {
+          "text": "Fall shop",
+          "href": "/category/Fall Shop"
+        },
+        {
+          "text": "Holiday shop",
+          "href": "/category/Holiday Shop"
+        },
+        {
+          "text": "Everyday Jewelry",
+          "href": "/category/Everyday Jewelry"
+        },
+        {
+          "text": "Premium contemporary",
+          "href": "/category/Premium Contemporary"
+        },
+        {
+          "text": "For the coffee & tea lover",
+          "href": "/category/For the Coffee & Tea Lover"
+        },
+        {
+          "text": "For the foodie",
+          "href": "/category/For the Foodie"
+        },
+        {
+          "text": "Healthy eats & drinks",
+          "href": "/category/Healthy Eats & Drinks"
+        },
+        {
+          "text": "All European brands",
+          "href": "/category/All European Brands"
+        },
+        {
+          "text": "Based in France",
+          "href": "/category/Based in France"
+        },
+        {
+          "text": "Based in Germany",
+          "href": "/category/Based in Germany"
+        },
+        {
+          "text": "Based in the Nordics",
+          "href": "/category/Based in the Nordics"
+        },
+        {
+          "text": "Based in the U.K.",
+          "href": "/category/Based in the U.K."
+        },
+        {
+          "text": "Made In Italy",
+          "href": "/category/Made In Italy"
+        },
+        {
+          "text": "Blog",
+          "href": "https://www.faire.com/blog/"
+        },
+        {
+          "text": "Sign up to sell",
+          "href": "/apply"
+        },
+        {
+          "text": "New products",
+          "href": "/category/New Products"
+        },
+        {
+          "text": "New brands",
+          "href": "/category/New Brands"
+        },
+        {
+          "text": "Home decor",
+          "href": "/category/Home Decor"
+        },
+        {
+          "text": "Food & drink",
+          "href": "/category/Food & Drink"
+        },
+        {
+          "text": "Women",
+          "href": "/category/Women"
+        },
+        {
+          "text": "Beauty & wellness",
+          "href": "/category/Beauty & Wellness"
+        },
+        {
+          "text": "Jewelry",
+          "href": "/category/Jewelry"
+        },
+        {
+          "text": "Paper & novelty",
+          "href": "/category/Paper & Novelty"
+        },
+        {
+          "text": "Kids & baby",
+          "href": "/category/Kids & Baby"
+        },
+        {
+          "text": "Pets",
+          "href": "/category/Pets"
+        },
+        {
+          "text": "Men",
+          "href": "/category/Men"
+        }
+      ]
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "button",
+      "control": "Sign up",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Go to Faire homepage",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "button",
+      "control": "All categories",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": "menu"
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Blog",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/blog",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Sign up to sell",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/apply",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "button",
+      "control": "Sign in",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "button",
+      "control": "Sign up to buy",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "New products",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/New%20Products",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "New brands",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/New%20Brands",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Home decor",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Home%20Decor",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Food & drink",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Food%20&%20Drink",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Women",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Women",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Beauty & wellness",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Beauty%20&%20Wellness",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Jewelry",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Jewelry",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Paper & novelty",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Paper%20&%20Novelty",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Kids & baby",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Kids%20&%20Baby",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Pets",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Pets",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Men",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Men",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Books",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/category/Books",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Skip to main content",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/about",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "More from Max Rhodes, CEO",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/news/2025-11-17-a-milestone-for-faire",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Careers at Faire",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/careers",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Best Fashion Marketplace",
+      "kind": "external",
+      "opens": "https://www.glossy.co/wp-content/uploads/2021/06/Glossy-Awards-2021-Winners-Guide_061721.pdf",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Most Passionate Employees",
+      "kind": "external",
+      "opens": "https://digiday.com/awards/the-digiday-worklife-awards-shortlist-keeping-collaboration-and-charity-alive-during-an-unprecedented-year",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Small Business Innovator Awards",
+      "kind": "external",
+      "opens": "https://www.forbes.com/sites/maneetahuja/2021/12/29/forbes-small-business-awards-2020-faire-is-how-mom-and-pop-stand-up-to-amazon",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Most Innovative Companies",
+      "kind": "external",
+      "opens": "https://www.fastcompany.com/90457893/retail-most-innovative-companies-2020",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Business Resilience Award",
+      "kind": "external",
+      "opens": "https://digiday.com/awards/digiday-resilience-awards-winners-how-brands-protected-their-workers-and-gave-back-to-the-world-in-a-time-of-crisis",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Top Startups of 2025",
+      "kind": "external",
+      "opens": "https://wellfound.com/10-of-10-in-2025",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "About us",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/about",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Newsroom",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/news",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Careers",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/careers",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Affiliates",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/affiliates",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Help center",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Faire Markets",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/markets",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Point of sale integration",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/point-of-sale/about",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "How Faire works",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/how-faire-works",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Refer a brand",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/user/brand-referrals",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Instagram",
+      "kind": "external",
+      "opens": "https://www.instagram.com/faire_wholesale",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Facebook",
+      "kind": "external",
+      "opens": "https://www.facebook.com/fairewholesale",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Twitter",
+      "kind": "external",
+      "opens": "https://x.com/faire_wholesale",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Terms of Service",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/tos",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Privacy Policy",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/privacy",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Cookie Policy",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/privacy/cookies",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "IP Policy",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/copyright",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Accessibility Policy",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/aoda",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Sitemap",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/site-map",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "System Status",
+      "kind": "page-queued-or-seen",
+      "opens": "https://status.faire.com/",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/about",
+      "tag": "a",
+      "control": "Hub",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/hub",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "button",
+      "control": "EN-US",
+      "kind": "interaction",
+      "opens": "interaction",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Sign In",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/support?signIn=true",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Get support",
+      "kind": "page",
+      "opens": "https://www.faire.com/support",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "guidelines for selling",
+      "kind": "page",
+      "opens": "https://www.faire.com/support/articles/360047925272",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "net 60 terms",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/360016658851",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "contacting a brand",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/360016145111",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Returns & refunds How do I submit a return? Return eligibility We offer free ret",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/360002924031",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Orders & shipping When will I get my orders? Faire has thousands of brands for y",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/360006919652",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Orders & shipping How can I cancel an order? The option to cancel an order on Fa",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/360006919932",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Orders & shipping How do I contact a brand on Faire? The best way to get in touc",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/360016145111",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "FAQ",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/topics/360001585012",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Retailer TOS - MEX",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/58901476332827",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "What is Faire credit and how does it work?",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/38346573009179",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "How do I change my password?",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/37081853508635",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "View All (25)",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/topics/360001585012",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Getting started",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/topics/360001284932",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Who is a business-use buyer?",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/48986298220315",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "What does it mean to be a Retailer on Faire?",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/46376025334683",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Which new retailer discount did I qualify for?",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/37222391975195",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "View All (23)",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/topics/360001284932",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Orders & shipping",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/topics/360001411332",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "How does pallet shipping work for retailers?",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/58533782863899",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "What if a brand requires me to return items from my issue report?",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/58478404288411",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "How do I report issues with my order?",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/57206540169371",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "View All (63)",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/topics/360001411332",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Payments & taxes",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/topics/360001431771",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Why are the duties, taxes, and fees being added to my Faire order on my cross-bo",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/57872889350939",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "What are France's e-invoicing rules for retailers?",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/55178389862555",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "What is VIES?",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/54016691410203",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "View All (38)",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/topics/360001431771",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Returns & refunds",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/topics/360001479551",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "FAIRE WHOLESALE, INC. RETURNS, REFUNDS AND CANCELLATIONS POLICY",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/53980147426843",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "How do I submit a return?",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/360002924031",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Why can't I return my items?",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/360007069352",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "View All (4)",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/topics/360001479551",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Open with Faire",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/topics/360011358231",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "What is Open with Faire?",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/4645924980763",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Announcements",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/topics/360000578031",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Faire x Autumn Fair: Win Your \u00a35,000 Wishlist Official Rules",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/53980128263707",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Spend Offer Terms & Conditions",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/53980115066651",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "What is Faire\u2019s Warehouse Sale?",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/articles/49698524486427",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "View All (6)",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support/topics/360000578031",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Start a request",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "About Us",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/about",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Newsroom",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/news",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Careers",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/careers",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Help Center",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/support",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Faire Markets",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/markets",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Apply to Sell",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/brands",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Refer a brand",
+      "kind": "stopped",
+      "opens": "https://www.faire.com/user/brand-referrals",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Blog",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/blog",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Instagram",
+      "kind": "external",
+      "opens": "https://www.instagram.com/faire_wholesale",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Facebook",
+      "kind": "external",
+      "opens": "https://www.facebook.com/fairewholesale",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "X",
+      "kind": "external",
+      "opens": "https://x.com/faire_wholesale",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "\u00a92026 Faire Wholesale, Inc.",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Terms of Service",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/tos",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Privacy Policy",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/privacy",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "Cookie Policy",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/privacy/cookies",
+      "haspopup": null
+    },
+    {
+      "page": "https://www.faire.com/support",
+      "tag": "a",
+      "control": "IP Policy",
+      "kind": "page-queued-or-seen",
+      "opens": "https://www.faire.com/copyright",
+      "haspopup": null
+    }
+  ],
+  "stopped": [
+    {
+      "url": "https://www.faire.com/apply",
+      "from": "https://www.faire.com/",
+      "via": "Sign up to sell",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/user/brand-referrals",
+      "from": "https://www.faire.com/",
+      "via": "Refer a brand",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/category/New%20Products?signUp=1",
+      "from": "https://www.faire.com/category/New%20Products",
+      "via": "Unlock wholesale pricing",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/category/Home%20Decor?signUp=1",
+      "from": "https://www.faire.com/category/Home%20Decor",
+      "via": "Unlock wholesale pricing",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/category/Food%20&%20Drink?signUp=1",
+      "from": "https://www.faire.com/category/Food%20&%20Drink",
+      "via": "Unlock wholesale pricing",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/category/Women?signUp=1",
+      "from": "https://www.faire.com/category/Women",
+      "via": "Unlock wholesale pricing",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/category/Beauty%20&%20Wellness?signUp=1",
+      "from": "https://www.faire.com/category/Beauty%20&%20Wellness",
+      "via": "Unlock wholesale pricing",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/category/Jewelry?signUp=1",
+      "from": "https://www.faire.com/category/Jewelry",
+      "via": "Unlock wholesale pricing",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/category/Paper%20&%20Novelty?signUp=1",
+      "from": "https://www.faire.com/category/Paper%20&%20Novelty",
+      "via": "Unlock wholesale pricing",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/category/Kids%20&%20Baby?signUp=1",
+      "from": "https://www.faire.com/category/Kids%20&%20Baby",
+      "via": "Unlock wholesale pricing",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/category/Pets?signUp=1",
+      "from": "https://www.faire.com/category/Pets",
+      "via": "Unlock wholesale pricing",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/category/Men?signUp=1",
+      "from": "https://www.faire.com/category/Men",
+      "via": "Unlock wholesale pricing",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/category/Books?signUp=1",
+      "from": "https://www.faire.com/category/Books",
+      "via": "Unlock wholesale pricing",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/brand/b_d72c56fe?signUp=product",
+      "from": "https://www.faire.com/brand/b_d72c56fe",
+      "via": "",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/brand/b_tbh69o5jgo?signUp=product",
+      "from": "https://www.faire.com/brand/b_tbh69o5jgo",
+      "via": "",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/brand/b_6afyx18cny?signUp=product",
+      "from": "https://www.faire.com/brand/b_6afyx18cny",
+      "via": "",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/brand/b_9i29vt7r7q?signUp=product",
+      "from": "https://www.faire.com/brand/b_9i29vt7r7q",
+      "via": "",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/suppliers/Home%20Decor/subcategory/Kitchen%20&%20Tabletop/Drinkware?signUp=product",
+      "from": "https://www.faire.com/suppliers/Home%20Decor/subcategory/Kitchen%20&%20Tabletop/Drinkware",
+      "via": "",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/support?signIn=true",
+      "from": "https://www.faire.com/support",
+      "via": "Sign In",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/how-faire-works?signUp=1",
+      "from": "https://www.faire.com/how-faire-works",
+      "via": "Sign up to buy",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/hub?signUp=1",
+      "from": "https://www.faire.com/hub",
+      "via": "Unlock wholesale pricing",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/category/Mother's%20Day%20Shop?signUp=1",
+      "from": "https://www.faire.com/category/Mother's%20Day%20Shop",
+      "via": "Unlock wholesale pricing",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/category/Father's%20Day%20Shop?signUp=1",
+      "from": "https://www.faire.com/category/Father's%20Day%20Shop",
+      "via": "Unlock wholesale pricing",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/category/Summer%20Shop?signUp=1",
+      "from": "https://www.faire.com/category/Summer%20Shop",
+      "via": "Unlock wholesale pricing",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/category/Fall%20Shop?signUp=1",
+      "from": "https://www.faire.com/category/Fall%20Shop",
+      "via": "Unlock wholesale pricing",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/category/Holiday%20Shop?signUp=1",
+      "from": "https://www.faire.com/category/Holiday%20Shop",
+      "via": "Unlock wholesale pricing",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/?signIn=1",
+      "from": "https://www.faire.com/support?contact=true",
+      "via": "Sign in",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/support/articles/360047925272?signIn=true",
+      "from": "https://www.faire.com/support/articles/360047925272",
+      "via": "Sign In",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/support/articles/4406840862747?signIn=true",
+      "from": "https://www.faire.com/support/articles/4406840862747",
+      "via": "Sign In",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/user/insider/info",
+      "from": "https://www.faire.com/support/articles/4406840862747",
+      "via": "Insider",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/retailer/settings/insider-membership",
+      "from": "https://www.faire.com/support/articles/4406840862747",
+      "via": "Insider",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/support/articles/360037248712",
+      "via": "Help center",
+      "reason": "Cloudflare 429, page not captured"
+    },
+    {
+      "url": "https://www.faire.com/support/articles/360016111311",
+      "via": "select locations",
+      "reason": "Cloudflare 429, page not captured"
+    },
+    {
+      "url": "https://www.faire.com/brand/b_76cwpv1j6d?signUp=product",
+      "from": "https://www.faire.com/brand/b_76cwpv1j6d",
+      "via": "",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/brand/b_tafk34eq47?signUp=product",
+      "from": "https://www.faire.com/brand/b_tafk34eq47",
+      "via": "",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/brand/b_25kcsmxy6l?signUp=product",
+      "from": "https://www.faire.com/brand/b_25kcsmxy6l",
+      "via": "",
+      "reason": "auth-signup-checkout-or-account url"
+    },
+    {
+      "url": "https://www.faire.com/?signIn=1",
+      "via": "Sign in button",
+      "reason": "Sign-in modal: email and password, or Google or Apple. Not submitted. Identity providers not clicked."
+    },
+    {
+      "url": "https://www.faire.com/?signUp=1",
+      "via": "Sign up to buy",
+      "reason": "Signup modal. Not filled. Not submitted."
+    }
+  ],
+  "mobile": [
+    {
+      "id": "m-home",
+      "url": "https://www.faire.com/",
+      "title": "Faire Online Wholesale Marketplace for Retailers & Brands",
+      "gate": null
+    },
+    {
+      "id": "m-home-menu",
+      "url": null,
+      "title": null,
+      "gate": null
+    },
+    {
+      "id": "m-blog",
+      "url": "https://www.faire.com/blog",
+      "title": "Faire blog",
+      "gate": null
+    },
+    {
+      "id": "m-category-new-20products",
+      "url": "https://www.faire.com/category/New%20Products",
+      "title": "New wholesale products in new products for your store",
+      "gate": null
+    },
+    {
+      "id": "m-category-new-20brands",
+      "url": "https://www.faire.com/category/New%20Brands",
+      "title": "New brands | Wholesale suppliers | Faire",
+      "gate": null
+    },
+    {
+      "id": "m-category-home-20decor",
+      "url": "https://www.faire.com/category/Home%20Decor",
+      "title": "Wholesale home decor for your store",
+      "gate": null
+    },
+    {
+      "id": "m-category-home-20decor-menu",
+      "url": null,
+      "title": null,
+      "gate": null
+    },
+    {
+      "id": "m-category-food-20-20drink",
+      "url": "https://www.faire.com/category/Food%20&%20Drink",
+      "title": "Wholesale food & drink for your store",
+      "gate": null
+    },
+    {
+      "id": "m-category-women",
+      "url": "https://www.faire.com/category/Women",
+      "title": "Wholesale women\u2019s products for your store",
+      "gate": null
+    },
+    {
+      "id": "m-category-beauty-20-20wellness",
+      "url": "https://www.faire.com/category/Beauty%20&%20Wellness",
+      "title": "Wholesale beauty & wellness for your store",
+      "gate": null
+    },
+    {
+      "id": "m-category-jewelry",
+      "url": "https://www.faire.com/category/Jewelry",
+      "title": "Wholesale jewelry for your store",
+      "gate": null
+    },
+    {
+      "id": "m-category-paper-20-20novelty",
+      "url": "https://www.faire.com/category/Paper%20&%20Novelty",
+      "title": "Wholesale paper & novelty for your store",
+      "gate": null
+    },
+    {
+      "id": "m-category-kids-20-20baby",
+      "url": "https://www.faire.com/category/Kids%20&%20Baby",
+      "title": "Wholesale kids & baby products for your store",
+      "gate": null
+    },
+    {
+      "id": "m-category-pets",
+      "url": "https://www.faire.com/category/Pets",
+      "title": "Wholesale pet products for your store",
+      "gate": null
+    }
+  ]
+}

@@ -1,97 +1,96 @@
-# Components
+# PamPam components
 
-Measured on www.pampam.city, signed out, 2026-11-19. Desktop viewport 1440×900, device pixel ratio 2. Colours are the computed values. Crops are from those pages.
+Public marketing site and published maps, captured 2026-11-21, signed out. Crops are 2x element screenshots. Values are token names. A state that was not reached is listed under Gaps.
 
 ## Button
 
-Three faces.
+Primary plan action. Fill `light.accent.default`, text `light.text.onAccent`, border `light.border.accent`, radius `core.radius.control.button` (12px), height `core.size.button` (64px), shadow `core.shadow.button`.
 
-| Face | Where | Fill | Text | Radius | Height | Padding |
-|---|---|---|---|---|---|---|
-| Primary | Make map, in the hero prompt | `#000000` | `#ffffff`, Inter 550 16px | 8px | 40px | 12px |
-| Accent | Get Explorer, Get Business | `#4b72f3`, 1px `#2b3ea7` | `#ffffff`, Inter 550 19px | 12px | 64px | 20px 32px |
-| Secondary | Try it for free, Contact us, See tutorial & docs | `#fefefe`, 1px `rgba(0,0,0,0.1)` | `#8a8a8a`, Inter 550 19px | 12px | 64px | 20px 32px |
+| State | Crop |
+|---|---|
+| default | [button-primary-default.png](components/crops/button-primary-default.png) |
+| hover | [button-primary-hover.png](components/crops/button-primary-hover.png) |
+| focus-visible | not captured. Keyboard focus was not landed on the div control |
+| pressed | not captured |
+| disabled | not present as a disabled attribute. The print wizard's Next control paints grey until a place is chosen; that state was not measured |
 
-Primary hover is declared as `rgba(0,0,0,0.8)` and was not forced. Accent shadow is `rgba(0,0,0,0.3) 0px 1px 2px` plus an inset lip `rgb(99,135,244) 0px 2px 0px`. Secondary shadow is `rgba(0,0,0,0.1) 0px 1px 3px`.
+Quiet plan action. Fill `light.background.quiet`, text `light.text.disabled`, hairline `light.border.default`.
 
-![Make map](components/crops/button-primary.png)
+| State | Crop |
+|---|---|
+| default | [button-quiet-default.png](components/crops/button-quiet-default.png) |
 
-![Get Explorer](components/crops/button-accent.png)
+Make map. Black fill, white label, about 40px tall. Clicking it opens the login dialog. Google was not clicked.
 
-![Try it for free](components/crops/button-secondary.png)
-
-On the phone hero the label is hidden and the primary face is the icon only. [screenshots/home-light-phone.png](screenshots/home-light-phone.png)
-
-## Google button
-
-The header and `/login` sign-in control is a Google Identity Services iframe, title "Sign in with Google Button". Header size 204×44, theme outline. Login size 214×44, theme filled_blue. PamPam does not style the label. The button was not clicked.
-
-![Header Google button](components/crops/google-button.png)
-
-## Text field
-
-The hero prompt is a 406×66 shell: white, 12px radius, 1px `rgba(0,0,0,0.1)`, stacked shadow at 5% black. The input is borderless, Inter 550 16px / 24px, colour `#222222`, padding 8px 0. Placeholder colour `#8f8f8f`. Nothing was typed.
-
-![Prompt](components/crops/text-field.png)
-
-## Nav link
-
-Header links are Inter 550 16px / 24px, colour `#9894a8`, padding 8px 12px, radius 0. Hover opacity is 0.5, measured on Pricing. The header itself is fixed, 100px tall, background transparent.
-
-![Pricing](components/crops/nav-link.png)
-
-## Menu
-
-Solutions and Products open a panel: white, 126×218, radius 6px, padding 8px 0, border 1px `rgba(0,0,0,0.05)`, shadow `rgba(14,18,22,0.2) 0px 6px 20px -10px`. Items are Inter 400 16px / 24px, colour `#666666`, padding 8px 12px. Hover is declared as colour `#aaaaaa` and background `rgba(0,0,0,0.06)`.
-
-![Solutions menu](components/crops/menu.png)
-
-## Switch
-
-The yearly billing control is a 56×36 track, radius 24px, padding 8px. Off fill is declared `rgba(0,0,0,0.08)`. On, with Pay yearly selected, the inline background is `#006e0b` and the row reverses. Thumb is 20×20, radius 18px, white, shadow `rgba(38,38,38,0.15) 0px 0px 4px`. Track inset shadow is `rgba(0,0,0,0.18) 0px 0px 2px`. The control was read in the on state. It was not toggled, because that changes the prices.
-
-![Yearly on](components/crops/switch-on.png)
-
-## Badge
-
-Save 37% is an h4, Inter 550 14px, colour `#00a917`, background `#e5ffe8`. Save 30% and Save 35% use the same colours.
-
-![Save 37%](components/crops/badge.png)
-
-## Card
-
-Use-case cards are 216×186, fill `#faf2ec`, radius 16px, padding 24px, gap 12px, border 1px `rgba(0,0,0,0.02)`. Title is 16px weight 600. Body is `#9894a8`. Hover lifts 4px and darkens the border to `rgba(0,0,0,0.05)`, over 150ms ease. Focus-visible ring is declared as `0 0 0 2px #fff, 0 0 0 4px #ff9a50`.
-
-Plan cards are `#fbfcfd`, radius 16px, padding 24px, gap 20px. The Business card adds a 2px `#dde1f1` border. Price is Inter 700 32px / 24px.
-
-![Plan card](components/crops/plan-card.png)
+| State | Crop |
+|---|---|
+| default | [button-make-map-default.png](components/crops/button-make-map-default.png) |
 
 ## Link
 
-Footer and Learn more links are Inter 550 16px / 24px, colour `#9894a8`, no underline. Login legal links are 12px, colour `#808080`, underlined.
+Nav link. Colour `light.text.muted`, 16px / 24px, weight 550, padding 8px 12px. Hover on Pricing did not change the computed colour.
 
-## Accordion
+| State | Crop |
+|---|---|
+| default | [link-nav-default.png](components/crops/link-nav-default.png) |
+| hover | [link-nav-hover.png](components/crops/link-nav-hover.png) |
+| focus-visible | not captured as a crop. Computed outline on the Pricing link was `rgb(0, 95, 204) auto 1px`, the browser default (`light.focus.ring`) |
 
-FAQ rows have a 1px `rgba(0,0,0,0.1)` top border and 24px padding. The question is nineties 28px, computed 28px / 30.24px, colour `#1b1917`. The mark is 24px, `+` closed and `-` open. The open answer on the home page computed to 16px black through the system font, which does not match the muted colour in the screenshot. Treat the screenshot as the visual and the computed colour as the reading.
+## Text field
 
-[screenshots/home-light-faq.png](screenshots/home-light-faq.png)
+Explore search. Placeholder "Search map". Height about 36px, pill radius. Typed "park" and did not submit.
 
-## Logo
+| State | Crop |
+|---|---|
+| default | [text-field-search-default.png](components/crops/text-field-search-default.png) |
+| filled | [text-field-search-filled.png](components/crops/text-field-search-filled.png) |
 
-The wordmark is an inline SVG, 67×40. [icons/logo.svg](icons/logo.svg)
+The print wizard field ("Neighborhood, district, or business area") is a second field. It was not filled.
 
-![Logo](components/crops/logo.png)
+## Menu
+
+Solutions menu. White panel, 6px radius, shadow `core.shadow.menu`. Items are 40px, colour `light.text.menu`.
+
+| State | Crop |
+|---|---|
+| open | [menu-solutions-default.png](components/crops/menu-solutions-default.png) |
+| item hover | [menu-item-hover.png](components/crops/menu-item-hover.png) |
+
+Products opens the same kind of menu. See [home-light-products-menu.png](screenshots/home-light-products-menu.png).
+
+## Dialog
+
+Login dialog from Make map. White panel, about 375px wide. One action: Login with Google. Not clicked. Close control returns to the page.
+
+| State | Crop |
+|---|---|
+| default | [dialog-login-default.png](components/crops/dialog-login-default.png) |
+
+Page form of the same wall: [login-light-default.png](screenshots/login-light-default.png).
+
+## Card
+
+Pricing plan card. Fill `light.background.surface`, radius 16px, padding 24px. The crop is the full Free column, not a tight card.
+
+| State | Crop |
+|---|---|
+| default | [card-plan-default.png](components/crops/card-plan-default.png) |
+
+## Switch
+
+Pricing "Pay monthly / Pay yearly" is a pill toggle on [pricing-light-default.png](screenshots/pricing-light-default.png). A yearly state was on screen. The monthly state was clicked and the URL stayed `/pricing`. No crop of the pill was saved.
+
+## Not present on the public surface
+
+Text area, select, checkbox, radio, tabs, tooltip, toast, table, avatar, badge. Icon buttons exist (zoom +/−, dialog close, prompt star) and were not cropped. FAQ rows expand on the home page; the open state was not cropped.
 
 ## Gaps
 
-| Component | Status |
-|---|---|
-| Icon button | The phone Make map face is the primary button with its label hidden. No separate icon-button style was measured. |
-| Text area, select, checkbox, radio | Not on the public pages. |
-| Tabs | Not present. Billing is a switch. |
-| Tooltip, dialog, toast | Not opened. The menus are the only overlays. |
-| Table | Not present. |
-| Avatar | Not present. |
-| Disabled, loading, error, pressed | Not on the public pages. |
-| Focus-visible, painted | Declared on the use-case cards as `#ff9a50`. Not photographed. |
-| Google button internals | Cross-origin iframe. Size and theme only. |
+- Signed-in map editor, account, billing and onboarding stop at Google sign-in.
+- Hover and pressed colours of the primary button were not re-read from CSS. The hover crop exists; a colour change is not claimed.
+- Focus-visible crops were not saved. The one computed focus outline is the browser default.
+- Disabled, loading and error states of fields were not reached. No form was submitted.
+- Dark theme is not present. The stylesheet has no `data-theme` and no `prefers-color-scheme` rule.
+- 242 geo template pages and most blog posts share the marketing shell. One of each family was captured.
+- Filter on a published map was not opened.
+- The list-row crop missed the card and was deleted.

@@ -1,188 +1,205 @@
 #!/usr/bin/env python3
-"""Check tokens.json against the readings in raw/.
+"""Build tokens.json from raw/css-vars.json.
 
-The token file is the capture record. This script does not invent values.
-It fails when a semantic colour in tokens.json is absent from raw/css-vars.json, and it refuses:
-  - a token whose source is missing or does not start with an evidence label;
-  - a literal colour that no file under raw/ holds (hex, rgb() or rgba(), compared as
-    lower-case #rrggbb or #rrggbbaa, alpha rounded half up);
-  - an alias that does not resolve (in its own set, then core, then the root) or that loops.
+Zellerfeld declares one theme. Semantic colours, the grey primitives, radii,
+shadows and font stacks are read from the live CSSOM on
+https://www.zellerfeld.com/ at 1440x900 (tools/capture/vars.mjs). There is no
+dark set. A value that was not in the dump is not invented.
+
+Every token carries $extensions.source. Dimension values are one px or rem
+length. Same inputs, same bytes.
 """
 import json
 import pathlib
 import re
-import sys
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
-TOKENS = json.loads((HERE / "tokens.json").read_text())
 RAW = HERE / "raw"
-CSS = json.loads((RAW / "css-vars.json").read_text())
-# The evidence labels of docs/EVIDENCE.md, plus this package's own words for them:
-# "Computed" is a computed-style reading (Measured), "Alias" a token that points at another.
-# A reading entered by hand that no raw/ file holds says so at the start of its source; the colour
-# check passes it, because the source already says it is not backed by raw/.
-BY_HAND = "Reconstruction: entered by hand at capture time; no raw/ file holds this reading"
-LABELS = ("Measured", "Derived", "Sampled", "Observed", "Reconstruction", "Not captured", "Computed", "Alias")
-RESOLVED = CSS["home"]["resolved"]
+V = json.loads((RAW / "css-vars.json").read_text())
+RES = V["resolved"]
+SRC = "raw/css-vars.json resolved on :root, https://www.zellerfeld.com/ 1440x900, " + V["captured"][:10]
 
-EXPECTED = {
-    "dark.accent": ("#ff5e3e", "--semantic-primary"),
-    "dark.surface": ("#171717", "--semantic-background"),
-    "dark.text-muted": ("#ffffff80", "--semantic-muted-foreground"),
-    "dark.focus": ("#3773f5", "--semantic-focus-ring"),
-    "dark.success": ("#17f455", "--semantic-success"),
-    "dark.destructive": ("#ef4444", "--semantic-destructive"),
-    "dark.muted": ("#ffffff1a", "--semantic-muted"),
-    "dark.surface-card": ("#1b1b1b", "--semantic-surface-card"),
+
+def px(value):
+    text = str(value).strip()
+    if text == "0":
+        return "0px"
+    m = re.fullmatch(r"(-?\d*\.?\d+)px", text)
+    if m:
+        return "%gpx" % round(float(m.group(1)), 3)
+    m = re.fullmatch(r"(-?\d*\.?\d+)rem", text)
+    if m:
+        return "%grem" % round(float(m.group(1)), 4)
+    raise ValueError("not a length: %r" % value)
+
+
+def colour(name):
+    value = RES[name].strip()
+    if not value or value.startswith("var("):
+        raise ValueError("unresolved colour %s = %r" % (name, value))
+    return value
+
+
+def token(value, type_, source):
+    return {"$value": value, "$type": type_, "$extensions": {"source": source}}
+
+
+def alias(path, type_, source):
+    return {"$value": "{" + path + "}", "$type": type_, "$extensions": {"source": source}}
+
+
+def must(name):
+    if name not in RES or not RES[name].strip():
+        raise SystemExit("missing custom property " + name)
+    return RES[name].strip()
+
+
+def shadow(css, source):
+    """One or two box-shadow layers. Colour is the last token of each layer."""
+    layers = []
+    for part in css.split(","):
+        bits = part.strip().split()
+        if len(bits) < 3:
+            raise ValueError("shadow: " + css)
+        colour = bits[-1]
+        nums = bits[:-1]
+        inset = nums[0] == "inset"
+        if inset:
+            nums = nums[1:]
+        while len(nums) < 4:
+            nums.append("0px")
+        layers.append({
+            "color": colour,
+            "offsetX": px(nums[0]),
+            "offsetY": px(nums[1]),
+            "blur": px(nums[2]),
+            "spread": px(nums[3]),
+            "inset": inset,
+        })
+    return token(layers, "shadow", source)
+
+
+core = {
+    "color": {
+        "grey": {
+            "01": token(colour("--primitive-grey-01"), "color", SRC + " --primitive-grey-01"),
+            "02": token(colour("--primitive-grey-02"), "color", SRC + " --primitive-grey-02"),
+            "03": token(colour("--primitive-grey-03"), "color", SRC + " --primitive-grey-03"),
+            "04": token(colour("--primitive-grey-04"), "color", SRC + " --primitive-grey-04"),
+        },
+        "ember": token("#ff5e3e", "color", SRC + " --semantic-primary (same literal)"),
+        "focus": token("#3773f5", "color", SRC + " --semantic-focus-ring"),
+        "danger": token("#ef4444", "color", SRC + " --semantic-destructive"),
+        "success": token("#17f455", "color", SRC + " --semantic-success"),
+        "white": token("#ffffff", "color", SRC + " --semantic-foreground"),
+        "black": token("#000000", "color", SRC + " --semantic-primary-foreground"),
+    },
+    "font": {
+        "family": {
+            "primary": token(must("--font-primary"), "fontFamily", SRC + " --font-primary"),
+            "secondary": token(must("--font-secondary"), "fontFamily", SRC + " --font-secondary"),
+            "tertiary": token(must("--font-tertiary"), "fontFamily", SRC + " --font-tertiary"),
+            "system": token(must("--font-system"), "fontFamily", SRC + " --font-system"),
+            "mono": token(must("--font-mono"), "fontFamily", SRC + " --font-mono"),
+        },
+        "weight": {
+            "normal": token(int(float(must("--font-weight-normal"))), "fontWeight", SRC + " --font-weight-normal"),
+            "medium": token(int(float(must("--font-weight-medium"))), "fontWeight", SRC + " --font-weight-medium"),
+            "semibold": token(int(float(must("--font-weight-semibold"))), "fontWeight", SRC + " --font-weight-semibold"),
+            "bold": token(int(float(must("--font-weight-bold"))), "fontWeight", SRC + " --font-weight-bold"),
+        },
+    },
+    "typography": {
+        "display": token({
+            "fontFamily": "{font.family.primary}",
+            "fontSize": "32px",
+            "fontWeight": "{font.weight.normal}",
+            "lineHeight": "1.1",
+        }, "typography", "Derived: family from --font-primary; size Not captured as a token, 32px is a reconstruction of the homepage display and is not a measured role"),
+    },
+    "radius": {
+        "none": token(px(must("--radius-none")), "dimension", SRC + " --radius-none"),
+        "sm": token(px(must("--radius-sm")), "dimension", SRC + " --radius-sm"),
+        "md": token(px(must("--radius-md")), "dimension", SRC + " --radius-md"),
+        "lg": token(px(must("--radius-lg")), "dimension", SRC + " --radius-lg"),
+        "xl": token(px(must("--radius-xl")), "dimension", SRC + " --radius-xl"),
+        "2xl": token(px(must("--radius-2xl")), "dimension", SRC + " --radius-2xl"),
+        "3xl": token(px(must("--radius-3xl")), "dimension", SRC + " --radius-3xl"),
+    },
+
+    "shadow": {
+        "sm": shadow(must("--shadow-sm"), SRC + " --shadow-sm"),
+        "md": shadow(must("--shadow-md"), SRC + " --shadow-md"),
+        "lg": shadow(must("--shadow-lg"), SRC + " --shadow-lg"),
+        "xl": shadow(must("--shadow-xl"), SRC + " --shadow-xl"),
+    },
+    "motion": {
+        "duration": token({"value": 150, "unit": "ms"}, "duration", "Derived: --default-transition-duration is .15s"),
+        "easeOut": token([0, 0, 0.2, 1], "cubicBezier", SRC + " --ease-out cubic-bezier(0, 0, .2, 1)"),
+        "easeInOut": token([0.4, 0, 0.2, 1], "cubicBezier", SRC + " --ease-in-out cubic-bezier(.4, 0, .2, 1)"),
+    },
+    "layout": {
+        "contentMax": token(px(must("--layout-content-max-width")), "dimension", SRC + " --layout-content-max-width"),
+    },
 }
 
+# Drop the reconstructed display role. A guessed size must not sit in tokens.
+del core["typography"]
 
-KEYWORDS = {"black": "#000000", "white": "#ffffff", "transparent": "#00000000"}
+light = {
+    "background": {
+        "page": alias("color.grey.01", "color", SRC + " --semantic-background"),
+        "surface": token(colour("--semantic-surface-card"), "color", SRC + " --semantic-surface-card"),
+        "raised": token(colour("--semantic-surface-elevated"), "color", SRC + " --semantic-surface-elevated"),
+        "overlay": token(colour("--semantic-surface-overlay"), "color", SRC + " --semantic-surface-overlay"),
+        "muted": token(colour("--semantic-muted"), "color", SRC + " --semantic-muted"),
+        "popover": alias("color.grey.01", "color", SRC + " --semantic-popover"),
+    },
+    "text": {
+        "primary": alias("color.white", "color", SRC + " --semantic-foreground"),
+        "muted": token(colour("--semantic-muted-foreground"), "color", SRC + " --semantic-muted-foreground"),
+        "onAccent": alias("color.black", "color", SRC + " --semantic-primary-foreground"),
+        "accent": token(colour("--semantic-secondary-foreground"), "color", SRC + " --semantic-secondary-foreground"),
+        "card": alias("color.white", "color", SRC + " --semantic-card-foreground"),
+    },
+    "border": {
+        "default": token(colour("--semantic-border"), "color", SRC + " --semantic-border"),
+        "input": token(colour("--semantic-input"), "color", SRC + " --semantic-input"),
+        "ring": token(colour("--semantic-ring"), "color", SRC + " --semantic-ring"),
+    },
+    "accent": {
+        "default": alias("color.ember", "color", SRC + " --semantic-primary"),
+        "foreground": alias("color.black", "color", SRC + " --semantic-primary-foreground"),
+        "soft": token(colour("--semantic-accent"), "color", SRC + " --semantic-accent"),
+    },
+    "status": {
+        "success": alias("color.success", "color", SRC + " --semantic-success"),
+        "successForeground": alias("color.black", "color", SRC + " --semantic-success-foreground"),
+        "danger": alias("color.danger", "color", SRC + " --semantic-destructive"),
+        "dangerForeground": alias("color.white", "color", SRC + " --semantic-destructive-foreground"),
+    },
+    "focus": {
+        "ring": alias("color.focus", "color", SRC + " --semantic-focus-ring"),
+    },
+}
 
+doc = {
+    "$schema": "https://design-tokens.org/schema.json",
+    "core": core,
+    "light": light,
+    "$themes": [{"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"}}],
+    "$extensions": {
+        "notTokenised": {
+            "dark": "Not captured. The public site sets color-scheme normal and has no data-theme switch.",
+            "spacingScale": "Not captured as a product scale. core.space is a Derived Tailwind-sized stand-in and should not be treated as measured Zellerfeld spacing.",
+            "typeRoles": "Not captured. Families and weights are measured. Named display, heading, body, label and caption sizes were not declared as custom properties.",
+            "hoverPressed": "Not captured as colour tokens. --semantic-surface-hover equals --semantic-surface-elevated. Component hover is measured in raw/components-computed.json when that file exists.",
+            "warningInfo": "Not captured. No --semantic-warning or --semantic-info custom property.",
+            "disabled": "Not captured. No disabled text or fill custom property.",
+        }
+    },
+}
 
-def norm(h):
-    """#abc, #abcd, #aabbcc, #aabbccdd -> lower-case #rrggbb[aa]; an opaque alpha is dropped."""
-    h = h.lower().lstrip("#")
-    if len(h) in (3, 4):
-        h = "".join(c * 2 for c in h)
-    if len(h) == 8 and h.endswith("ff"):
-        h = h[:6]
-    return "#" + h
-
-
-def colours_in(text, words=True):
-    """Every colour a string holds, as lower-case #rrggbb[aa]. Alpha rounds half up."""
-    out = set()
-    for m in re.finditer(r"#([0-9a-fA-F]{3,8})\b", text):
-        if len(m.group(1)) in (3, 4, 6, 8):
-            out.add(norm(m.group(1)))
-    for m in re.finditer(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+%?))?\s*\)", text):
-        h = "#%02x%02x%02x" % tuple(int(x) for x in m.groups()[:3])
-        a = m.group(4)
-        if a is not None:
-            alpha = float(a[:-1]) / 100 if a.endswith("%") else float(a)
-            if alpha < 1:
-                h += "%02x" % int(alpha * 255 + 0.5)
-        out.add(h)
-    for word, h in (KEYWORDS.items() if words else ()):
-        if re.search(r"\b%s\b" % word, text):
-            out.add(h)
-    return out
-
-
-def strings(node):
-    if isinstance(node, str):
-        yield node
-    elif isinstance(node, dict):
-        for k, v in node.items():
-            yield k
-            yield from strings(v)
-    elif isinstance(node, list):
-        for v in node:
-            yield from strings(v)
-
-
-def tokens_in(node, path=""):
-    if isinstance(node, dict) and "$value" in node:
-        yield path, node
-        return
-    if isinstance(node, dict):
-        for k, v in node.items():
-            if not k.startswith("$"):
-                yield from tokens_in(v, f"{path}.{k}" if path else k)
-
-
-def lookup(tree, dotted):
-    node = tree
-    for part in dotted.split("."):
-        if not isinstance(node, dict) or part not in node:
-            return None
-        node = node[part]
-    return node if isinstance(node, dict) and "$value" in node else None
-
-
-def resolve(tokens, setname, ref, seen):
-    """None when the alias reaches a literal, else the reason it does not."""
-    # Own set, then core, then the root, as tools/catalog.py's Resolver does. The next hop resolves
-    # from the set the token was found in, and loops are tracked by (set, path within it).
-    candidates = [(setname, ref), ("core", ref)]
-    if "." in ref:
-        candidates.append(tuple(ref.split(".", 1)))
-    for found_set, found_path in candidates:
-        tok = lookup(tokens.get(found_set, {}), found_path)
-        if tok is None:
-            continue
-        if (found_set, found_path) in seen:
-            return f"alias cycle at {{{ref}}}"
-        v = tok["$value"]
-        inner = re.fullmatch(r"\{([^{}]+)\}", v) if isinstance(v, str) else None
-        return resolve(tokens, found_set, inner.group(1), seen | {(found_set, found_path)}) if inner else None
-    return f"dead alias {{{ref}}}"
-
-
-def problems(tokens, raw):
-    """Everything wrong with tokens against the readings in raw (a parsed raw/ file)."""
-    out = list(source_problems(tokens))
-    seen = set()
-    for s in strings(raw):
-        seen |= colours_in(s, words=False)
-    for path, tok in tokens_in(tokens):
-        setname = path.split(".", 1)[0]
-        v = tok["$value"]
-        values = v.values() if isinstance(v, dict) else v if isinstance(v, list) else [v]
-        for item in values:
-            if not isinstance(item, str):
-                continue
-            for ref in re.findall(r"\{([^{}]+)\}", item):
-                err = resolve(tokens, setname, ref, set())
-                if err:
-                    out.append(f"{path}: {err}")
-        by_hand = str((tok.get("$extensions") or {}).get("source", "")).startswith(BY_HAND)
-        if tok.get("$type") == "color" and isinstance(v, str) and not v.startswith("{") and not by_hand:
-            if not colours_in(v) <= seen or not colours_in(v):
-                out.append(f"{path}: {v} is in no file under raw/")
-    return out
-
-
-def source_problems(tokens):
-    for path, tok in tokens_in(tokens):
-        src = (tok.get("$extensions") or {}).get("source")
-        if not isinstance(src, str) or not src.strip():
-            yield f"{path}: missing $extensions.source"
-        elif not src.startswith(LABELS):
-            yield f"{path}: source does not start with an evidence label"
-
-
-def load_raw():
-    return [json.loads(p.read_text()) for p in sorted(RAW.glob("*.json"))]
-
-
-def value(path):
-    node = TOKENS
-    for part in path.split("."):
-        node = node[part]
-    return node["$value"]
-
-
-def main():
-    failed = False
-    for path, (want, var) in EXPECTED.items():
-        got = value(path)
-        declared = RESOLVED.get(var, "")
-        if got != want or declared.lower() != want:
-            print(f"{path}: token {got} reading {var}={declared} expected {want}", file=sys.stderr)
-            failed = True
-    if "--font-tertiary" not in RESOLVED or "Phonic" not in RESOLVED["--font-tertiary"]:
-        print("missing Phonic in --font-tertiary", file=sys.stderr)
-        failed = True
-    for line in problems(TOKENS, load_raw()):
-        print(line, file=sys.stderr)
-        failed = True
-    if failed:
-        return 1
-    print("tokens match raw/css-vars.json and every colour, alias and source checks out")
-    return 0
-
-
-if __name__ == "__main__":
-    sys.exit(main())
+text = json.dumps(doc, indent=2) + "\n"
+(HERE / "tokens.json").write_text(text)
+print("wrote tokens.json", len(text), "bytes")

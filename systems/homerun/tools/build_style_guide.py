@@ -23,7 +23,7 @@ def flat(node, prefix=""):
     for k, v in node.items():
         if k.startswith("$"):
             continue
-        if isinstance(v, dict) and "$value" in v:
+        if isinstance(v, dict) and "$value" in v and "$type" in v:
             yield prefix + k, v
         elif isinstance(v, dict):
             yield from flat(v, prefix + k + "-")
@@ -39,8 +39,6 @@ def alias(v):
 
 def css_val(name, t):
     v, ty = t["$value"], t["$type"]
-    if ty in ("transition", "animation"):
-        return None   # composites with no single CSS value; the Motion section reads them from the token tree
     if ty == "cubicBezier":
         return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
     if ty == "shadow":
@@ -64,7 +62,7 @@ def block(setname):
     """A set's custom properties; a set the product lacks renders as nothing."""
     if setname not in T:
         return ""
-    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]) if css_val(n, t) is not None)
+    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]))
 
 
 # a core name and a themed name must not land on the same custom property
@@ -76,7 +74,7 @@ for _set in THEMES:
 
 
 def slim(node):
-    if isinstance(node, dict) and "$value" in node:
+    if isinstance(node, dict) and "$value" in node and "$type" in node and "$extensions" in node:
         out = {"v": node["$value"], "t": node["$type"], "s": node["$extensions"]["source"]}
         for k in ("compact", "darkVariationAxis"):
             if k in node["$extensions"]:

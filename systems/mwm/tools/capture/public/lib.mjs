@@ -16,39 +16,31 @@ export const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
 export const UA_MOBILE =
   'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1';
-export const BASE = 'https://www.gauth.com';
+export const BASE = 'https://mwm.ai';
 
 export const HERE = path.dirname(new URL(import.meta.url).pathname);
 export const REF = path.resolve(HERE, '..', '..', '..'); // systems/<slug>, from tools/capture/public
 export const CROPS = path.join(REF, 'components', 'crops');
 export const RAW = path.join(REF, 'raw');
 
-// Gauth styles its pages with CSS modules: a class is `<file>_<name>__<hash>`.
-// M('catalog_card') selects by the stable part, so a rebuild that changes the
-// hash does not break the kit.
-export const M = (name) => `[class*="${name}__"]`;
+// MWM's public site is a Vue/Nuxt marketing build. Classes are semantic
+// (`mwm-*`), so selectors use the class name as written.
+export const M = (name) => `.${name}`;
 
 export async function launch({ width = 1440, height = 900, mobile = false } = {}) {
   const browser = await chromium.launch();
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
-    : { viewport: { width, height }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion: 'no-preference' });
+    : { viewport: { width, height }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US', reducedMotion: 'reduce' });
+  await context.addInitScript(() => {
+    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+  });
   return { browser, context };
 }
 
-// Every page opens with a promo dialog ("Introducing Gauth Academy"); its own
-// close button dismisses it. `waitUntil: 'networkidle'` never settles on
-// gauth.com, so a page is `load` plus a fixed wait.
-export async function closePromo(page) {
-  const x = page.locator(M('atlas-intro-modal_aw-atlas-intro-modal-close'));
-  for (let i = 0; i < 3; i++) {
-    if (await x.count() && await x.first().isVisible().catch(() => false)) {
-      await x.first().click().catch(() => {});
-      await page.waitForTimeout(800);
-      return true;
-    }
-    await page.waitForTimeout(700);
-  }
+// MWM's public pages do not mount a cookie banner. This stays so the kit's
+// open() call still has a dismisser. It never clicks a consent POST.
+export async function closePromo() {
   return false;
 }
 

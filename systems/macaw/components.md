@@ -1,44 +1,41 @@
 # Macaw components
 
-Measured on macawhq.com, signed out, 2026-11-18. Colours are computed styles. Token names are in [tokens.json](tokens.json).
+Public marketing site only (`https://macawhq.com/`), captured 2026-11-21, signed out, light theme, desktop 1440×900. Crops are 1x CSS pixels of the measured element. The signed-in app at `https://app.macawhq.com/` did not resolve, so nothing behind Log in or Start for free is here.
 
 | Component | States | Crop |
 |---|---|---|
-| Top bar (`navbar`) | default | [navbar-default.png](components/crops/navbar-default.png) |
-| Nav link (`nav-link`) | default, hover, focus-visible, pressed | [nav-link-default.png](components/crops/nav-link-default.png) |
-| Primary button (`button-primary`) | default, hover, focus-visible, pressed | [button-primary-default.png](components/crops/button-primary-default.png) |
-| Secondary button (`button-secondary`) | default, hover, focus-visible, pressed | [button-secondary-default.png](components/crops/button-secondary-default.png) |
-| Google sign-in link (`button-google`) | default, hover | [button-google-default.png](components/crops/button-google-default.png) |
-| Display heading (`display`) | default | [display-default.png](components/crops/display-default.png) |
-| Page (`body-copy`) | default | - |
-| Resources menu toggle (`resources-toggle`) | missing | - |
-| Resources menu (`resources-menu`) | missing | - |
-| Pricing heading (`pricing-heading`) | default | [pricing-heading-default.png](components/crops/pricing-heading-default.png) |
-| Starter plan card (`plan-starter`) | default | [plan-starter-default.png](components/crops/plan-starter-default.png) |
-| Pro plan card (`plan-pro`) | default | [plan-pro-default.png](components/crops/plan-pro-default.png) |
-| Scale plan card (`plan-scale`) | default | [plan-scale-default.png](components/crops/plan-scale-default.png) |
-| Yearly billing toggle (`billing-yearly`) | default, hover | [billing-yearly-default.png](components/crops/billing-yearly-default.png) |
-| Monthly billing toggle (`billing-monthly`) | default, selected | [billing-monthly-default.png](components/crops/billing-monthly-default.png) |
-| Plan call to action (`plan-cta`) | missing | - |
-| FAQ question (`faq-question`) | default, hover, expanded | [faq-question-default.png](components/crops/faq-question-default.png) |
-| FAQ answer (`faq-answer`) | default | [faq-answer-default.png](components/crops/faq-answer-default.png) |
-| Sales link (`sales-link`) | default | [sales-link-default.png](components/crops/sales-link-default.png) |
-| Field label (`field-label`) | default | [field-label-default.png](components/crops/field-label-default.png) |
-| Text field (`text-field`) | default, hover, focus-visible, focused, filled | [text-field-default.png](components/crops/text-field-default.png) |
-| Text area (`text-area`) | default, hover, focus-visible, focused | [text-area-default.png](components/crops/text-area-default.png) |
-| Send button (`send-button`) | default, hover, focus-visible | [send-button-default.png](components/crops/send-button-default.png) |
-| Tool heading (`tool-heading`) | default | [tool-heading-default.png](components/crops/tool-heading-default.png) |
-| Tool call to action (`tool-cta`) | default, hover | [tool-cta-default.png](components/crops/tool-cta-default.png) |
-| Legal heading (`legal-heading`) | default | [legal-heading-default.png](components/crops/legal-heading-default.png) |
-| Privacy heading (`privacy-heading`) | default | [privacy-heading-default.png](components/crops/privacy-heading-default.png) |
-| Mobile top bar (`m-navbar`) | default | [m-navbar-default.png](components/crops/m-navbar-default.png) |
-| Mobile menu button (`m-menu-button`) | default | [m-menu-button-default.png](components/crops/m-menu-button-default.png) |
-| Primary button (mobile) (`m-button-primary`) | default | [m-button-primary-default.png](components/crops/m-button-primary-default.png) |
-| Plan card (mobile) (`m-plan`) | default | [m-plan-default.png](components/crops/m-plan-default.png) |
-| Footer link (`footer-link`) | default, hover, focus-visible | [footer-link-default.png](components/crops/footer-link-default.png) |
+| Nav link | default, hover (ink turns coral) | [nav-link-default.png](components/crops/nav-link-default.png), [nav-link-hover.png](components/crops/nav-link-hover.png) |
+| Primary button | default, hover (coral darkens) | [button-primary-default.png](components/crops/button-primary-default.png), [button-primary-hover.png](components/crops/button-primary-hover.png) |
+| Secondary button | default, hover (warm grey fill) | [button-secondary-default.png](components/crops/button-secondary-default.png), [button-secondary-hover.png](components/crops/button-secondary-hover.png) |
+| Plan CTA | default, hover | [plan-cta-default.png](components/crops/plan-cta-default.png), [plan-cta-hover.png](components/crops/plan-cta-hover.png) |
+| Submit button | default, hover, focus-visible | [submit-button-default.png](components/crops/submit-button-default.png), [submit-button-hover.png](components/crops/submit-button-hover.png), [submit-button-focus-visible.png](components/crops/submit-button-focus-visible.png) |
+| Text field | default, hover, focus-visible (4px blush ring) | [text-field-default.png](components/crops/text-field-default.png), [text-field-focus-visible.png](components/crops/text-field-focus-visible.png) |
+| Text area | default, hover, focus-visible | [text-area-default.png](components/crops/text-area-default.png), [text-area-focus-visible.png](components/crops/text-area-focus-visible.png) |
+| Example card | default | [example-card-default.png](components/crops/example-card-default.png) |
+| Example dialog | default (published sample article) | [example-dialog-default.png](components/crops/example-dialog-default.png) |
+| Plan card | default (Starter wash) | [plan-card-default.png](components/crops/plan-card-default.png) |
+| Pricing toggle | default, hover | [pricing-toggle-default.png](components/crops/pricing-toggle-default.png), [pricing-toggle-hover.png](components/crops/pricing-toggle-hover.png) |
+| Logo link | default, hover | [logo-link-default.png](components/crops/logo-link-default.png) |
 
-## Notes
+Pressed was not captured. CDP `forcePseudoState` did not return a node id for these anchors, so no pressed crop was written. Disabled, loading, and error-on-field were not on the public pages. The contact form was not submitted, so validation was not shown.
 
-The Resources toggle is `display: none` at 1440, so that row is missing. Get started on pricing did not match a visible link during the run. Log in was cropped by its on-screen box: Playwright treats the Webflow nav link as hidden.
+Dialog close (`.tingle-modal__close`) missed the crop selector. The close control is visible in [home-light-example-dialog.png](screenshots/home-light-example-dialog.png).
 
-Pressed on the coral button is a forced `:active` and paints the same `--primary700` as hover. The contact form was not submitted.
+## Shared values
+
+- Primary fill is `light.accent.default` (`#f66658`), hover `light.accent.hover` (`#de4f31`), label `light.text.onAccent`.
+- Height is `core.size.button` (46px) with radius `core.radius.control` (8px) and shadow `core.shadow.control`.
+- Fields are 44px, radius 8px, focus ring `light.border.focus` at `core.size.focus` (4px).
+- Body type is Inter 16px / 24px. Display is Inter 53.6px / 64.32px weight 700.
+
+## Gaps
+
+- Icon button: the phone menu button is a 40×48 control with `aria-label="menu"`. No desktop icon-button crop. Not captured as a tokenised component.
+- Link: nav links are captured. Inline body links were not measured separately.
+- Select, checkbox, radio, switch, tabs, tooltip, toast, avatar, badge (as a tokenised component), table header styles: not present as interactive controls on the public pages. The pricing comparison is a set of rows, shown in [pricing-light-yearly.png](screenshots/pricing-light-yearly.png), not a `<table>` with header tokens.
+- Resources menu: present in the DOM, `display: none` at 1440. Opens on the phone menu. Not captured as a desktop dropdown. See [site-tree.md](site-tree.md).
+- Menu (phone): captured as a page state, [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png). No separate crop.
+- Focus ring on the coral button is the browser outline (`1px auto` blue) plus the blush shadow. Recorded on the submit button only.
+- Status colours (success, warning, danger, info): not present.
+- Dark theme: not present.
+- Signed-in app, search, filters, empty, loading, error, destructive confirmation, onboarding: not captured. Login and sign-up URLs do not resolve.

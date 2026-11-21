@@ -1,17 +1,27 @@
 # Patterns
 
-Public pages, signed out, light only. Widths are the measured CSS viewports: 1440 by 900, and 390 by 844 for the home page.
+How the public pages combine. Screenshots are in [screenshots/](screenshots). The control map is [site-tree.md](site-tree.md).
 
-| Pattern | Where |
-|---|---|
-| Promo banner plus header | Every captured page opens with a 48px `#2b22fa` banner, then a 68px white header. [home-light-default.png](screenshots/home-light-default.png) |
-| Hero card | A 12px-radius `#0c0c0c` panel, 1400 by 600 CSS px at 1440, holds the white headline and the light CTA. [home-light-default.png](screenshots/home-light-default.png) |
-| Phone home | Same banner, a shorter header (64px), and a 36px headline inside the hero. [home-light-phone.png](screenshots/home-light-phone.png) |
-| Pricing | Centered title, a three-way pill (Individual, Team and Enterprise, API), a yearly switch, and four plan columns. [pricing-light-default.png](screenshots/pricing-light-default.png) |
-| Product marketing | An 80px headline on a dark hero. [product-light-default.png](screenshots/product-light-default.png) |
-| Enterprise | A 48px headline and, far down the page, a sales form that was not submitted. [enterprise-light-default.png](screenshots/enterprise-light-default.png) |
-| Sign-in | A split page: a looping product video on the left, a white form on the right. Username or email, password, Log in, Google, Apple, and SSO. No screenshot. |
+## Marketing shell
 
-The container max-width is 1600px with 20px inline padding. The header is fixed. Nav links sit in a row at 1440 and collapse to a menu button at 390. That menu was not opened.
+A promo strip, then a white header, then a full-bleed media hero. The header holds six hover menus (Creative, Dev, Robotics, Research, Resources, Enterprise), Pricing, a quiet Enterprise Sales button, a quiet Login, and a filled Try Runway. Shown in [screenshots/home-light-default.png](screenshots/home-light-default.png) and [screenshots/home-light-menu-creative.png](screenshots/home-light-menu-creative.png).
 
-Empty, loading, error, and destructive confirmation states were not on these pages.
+## Pricing
+
+Audience tabs and a Monthly / Yearly pair sit above plan cards. Start Free is a pill that fills on hover. Shown in [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png) and [screenshots/pricing-light-yearly.png](screenshots/pricing-light-yearly.png). Checkout was not opened.
+
+## Enterprise form
+
+A two-column sales form. Fields are empty in the capture. Shown in [screenshots/enterprise-contact-light-default.png](screenshots/enterprise-contact-light-default.png) and [screenshots/enterprise-contact-light-field-focus.png](screenshots/enterprise-contact-light-field-focus.png). Nothing was typed or submitted.
+
+## Phone
+
+The header collapses to a wordmark and a Menu button. The sheet lists the six sections, Pricing, Enterprise Sales and Get Started. Shown in [screenshots/mobile-home-light-default.png](screenshots/mobile-home-light-default.png) and [screenshots/mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png).
+
+## Login wall
+
+Login leaves the marketing site for auth.runwayml.com. The page shows Username or Email and Password, plus Google, Apple and SSO. Shown in [screenshots/login-light-default.png](screenshots/login-light-default.png). The branch stops there. The signed-in editor is not in this package.
+
+## Developer docs
+
+docs.dev.runwayml.com is a separate public docs shell with a sidebar and a search dialog. Shown in [screenshots/docs-light-default.png](screenshots/docs-light-default.png) and [screenshots/docs-light-search.png](screenshots/docs-light-search.png).

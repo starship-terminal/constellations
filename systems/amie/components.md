@@ -415,9 +415,10 @@ No standalone SVG icon set was lifted on this pass; the icons in the crops and s
 
 ### Pages
 
-- **The app behind login and the download.** Amie's product (calendar, inbox, notes, recording) sits behind sign-in and was never reached; the download buttons were measured, never pressed.
-- **Anything that sends, downloads or signs in.** No form was submitted, no app was downloaded, no trial was started, no account was created.
-- **The Features flyout innards** were opened for the shot but not measured; the mobile header offers no hamburger at 390px — the links collapse to an icon row, recorded as a gap.
+- **The app behind login and the download.** Amie's product (calendar, inbox, notes, recording) sits behind https://calendar.amie.so/login (Continue with Google, Continue with Outlook, Continue with the app; no email field). That branch was recorded in [site-tree.md](site-tree.md) and not entered. https://app.amie.so/login returned 404. Download buttons were measured, never pressed.
+- **Anything that sends, downloads or signs in.** No form was submitted, no field was typed, no app was downloaded, no trial was started, no account was created. Contact, subscribe, and tool feedback fields were left empty.
+- **The Features flyout** was opened and screenshotted ([home-light-features](screenshots/home-light-features.png)). Its menu items were not re-measured as crops on 2026-11-21. The mobile header offers no hamburger at 390px.
+- **Watch demo dialog** on `/features/notes` was opened and measured ([raw/dialog-computed.json](raw/dialog-computed.json)): scrim `rgba(0, 0, 0, 0.6)`, panel `#000` at 16px radius, 896×504, close button 40px `rgba(255,255,255,0.2)`. The YouTube iframe was not interacted with. Tooltip and toast were not present.
 
 ### States
 
@@ -437,6 +438,7 @@ The site paints one light theme on every captured route. The stylesheet does car
 
 - The mobile header at 390px offers no hamburger button (the m-menu-* entries are recorded missing): nav links collapse to the icon row.
 - Screenshots are stored as 256-colour PNGs; read exact colours from the tokens or the raw files.
+- `/recap`, the pomodoro timer, the prompt generator, and a few docs pages paint wider than the viewport. Their `-full` PNGs record that overflow. Viewport shots stay 1440×900 and 390×844 at 2x.
 
 ### Content left out
 

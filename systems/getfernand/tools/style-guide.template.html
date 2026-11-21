@@ -1,255 +1,58 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-mode="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fernand style guide</title>
-<meta name="description" content="Fernand design tokens and the public marketing, app and docs surfaces' components, rendered from tokens.json with the declared and measured values.">
 <style>
 :root {
 /*CORE*/
 /*LIGHT*/
-  --sg-sans: "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-serif: "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
-}
-.help {
-/*HELP*/
-}
-.app {
-/*APP*/
-}
-[data-mode="dark"], .dark {
-/*DARK*/
+  color-scheme: light;
+  --sg-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--black, #131e40); background: var(--white, #fff); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 600 38px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 600 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--black, #131e40); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-default, #eaecf8); }
-.lead { max-width: 62ch; color: var(--black, #131e40); opacity: .8; }
-.note { font-size: 13px; color: var(--black, #131e40); opacity: .65; max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 600 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--black, #131e40); opacity: .6; margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-/* A non-light strip's values only read on its own field: the dark-role names
-   and value labels resolve to near-white inks, invisible on the white page. */
-.pal.dark { background: var(--background-page, #161618); color: var(--text-ink, #f7f8f8); padding: 12px; border-radius: 10px; }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-strong, #e4e6eb); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--black, #131e40); opacity: .65; }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-default, #eaecf8); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { color: var(--black, #131e40); opacity: .65; }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--border-default, #eaecf8); overflow: hidden; background: var(--white, #fff); }
-.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 60px); padding: 0 12px 0 22px; font-size: 15px; color: var(--black, #131e40); background: var(--white, #fff); box-shadow: var(--border-default, #eaecf8) 0 1px 0 0; }
-.navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
-.navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-hero-cta-height, 40px); padding: 0 14px; font-size: var(--font-size-button, 15px); font-weight: 500; border-radius: var(--radius-button, 8px); border: 1px solid transparent; }
-.btn.primary { background: var(--action-cta-fill, #1a2035); color: var(--action-cta-ink, #fff); }
-/* The other primary-looking actions measure the #00a0ff blue, not the hero's
-   near-black: the header Start-for-free and the docs dark toggle use the
-   palette's --blue-default, the app submit its own --action-primary-fill. */
-.btn.accent { background: var(--blue-default, #00a0ff); color: var(--action-cta-ink, #fff); }
-.app .btn.primary { background: var(--action-primary-fill, var(--blue-default, #00a0ff)); color: var(--action-primary-ink, #fff); }
-.btn.ghost { border-color: var(--border-strong, #e4e6eb); color: var(--black, #131e40); }
-.btn.small { height: var(--component-nav-cta-height, 32px); border-radius: var(--radius-control, 6px); font-size: 13px; font-weight: 500; }
-.hero { color: var(--black, #131e40); padding: 72px 40px; font: var(--font-weight-display, 400) var(--font-size-hero, 38px)/1.15 var(--sg-serif); letter-spacing: -0.02em; text-align: left; background: var(--white, #fff); }
-.hero small { display: block; font: 400 var(--font-size-lede, 17px)/1.55 var(--sg-sans); color: var(--text-muted, #717583); margin: 16px 0 22px; max-width: 46ch; }
-.tag { display: inline-block; padding: 4px 14px; border-radius: var(--radius-pill, 40px); background: var(--white, #fff); border: 1px solid var(--border-default, #eaecf8); font-size: var(--font-size-eyebrow, 12px); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--grey-medium, #717583); }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--border-default, #eaecf8); padding: 24px; font-size: 13px; background: var(--surface-card, #f7fafc); border-radius: var(--radius-card, 10px); }
-.tile .img { height: 140px; background: var(--grey-light, #f7fafc); border: 1px solid var(--border-default, #eaecf8); border-radius: 8px; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--grey-medium, #717583); }
-.tile b { display: block; font: 600 18px/1.25 var(--sg-serif); margin-bottom: 4px; color: var(--black, #131e40); }
-.tile .sub { opacity: .65; font-size: 12px; color: var(--grey-medium, #717583); }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--border-default, #eaecf8); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-default, #eaecf8); }
-.tr .ts { font-family: var(--sg-serif); }
-.tr .tv { font-size: 12px; color: var(--black, #131e40); opacity: .65; font-family: var(--sg-mono); }
-.field { width: var(--component-app-field-width, 320px); height: var(--component-app-field-height, 42px); border: 1px solid var(--border-strong, #e4e6eb); border-radius: var(--radius-field, 6px); background: var(--surface-field-bg, #fff); color: var(--text-field-ink, #3d4259); padding: 0 12px; font-size: 14px; }
-.field::placeholder { color: var(--grey-default, #9fa3b5); }
-.launcher { width: var(--component-launcher-size, 48px); height: var(--component-launcher-size, 48px); border-radius: var(--radius-bubble, 50%); background: var(--action-cta-fill, #1a2035); display: inline-flex; align-items: center; justify-content: center; color: #fff; font-weight: 600; }
-.theme-toggle { position: fixed; top: 18px; right: 18px; z-index: 50; display: inline-flex; gap: 0; border: 1px solid var(--border-strong, #e4e6eb); border-radius: 40px; background: var(--white, #fff); overflow: hidden; font: 500 12px/1 var(--sg-sans); }
-.theme-toggle button { border: 0; background: transparent; padding: 8px 14px; font: inherit; color: inherit; cursor: pointer; }
-.theme-toggle button.on { background: var(--action-cta-fill, #1a2035); color: var(--action-cta-ink, #fff); }
-body.dark { background: var(--background-page, #191c24); color: var(--text-ink, #f5f5f7); }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 14px/22px var(--sg-sans); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+h1 { font-weight: 400; font-size: 32px; line-height: 40px; margin: 0 0 8px; }
+h2 { font-size: 18px; font-weight: 500; margin: 32px 0 12px; }
+p.lede { color: var(--muted); max-width: 62ch; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.sw { border: 1px solid var(--border); border-radius: var(--radius-control); overflow: hidden; }
+.sw i { display: block; height: 56px; }
+.sw span { display: block; padding: 8px 10px; font-size: 12px; color: var(--ink); }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+a.btn { display: inline-block; background: var(--accent); color: var(--on-accent); text-decoration: none; border-radius: var(--button-radius); padding: 8px 12px; font-size: 14px; font-weight: 500; line-height: 14px; }
+a.quiet { display: inline-block; background: var(--page); color: var(--muted); text-decoration: none; border-radius: 6px; padding: 8px 12px; font-size: 14px; font-weight: 500; box-shadow: 0 0 0 1px rgba(18, 55, 105, 0.08); }
+.hero { font-size: var(--hero-size); line-height: var(--hero-line); font-weight: 400; color: var(--text); max-width: 16ch; }
 </style>
 </head>
 <body>
-<div class="theme-toggle"><button id="tt-light" class="on">Light</button><button id="tt-dark">Dark</button></div>
-<main>
-  <h1>Fernand style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
-
-  <h2 class="sh">Fernand, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the flat <code>--white</code>/<code>--grey*</code>/<code>--black</code>/<code>--blue*</code>/<code>--orange*</code>/<code>--red*</code>/<code>--green*</code>/<code>--border*</code> palette the three public hosts declare on <code>:root</code>, the docs site's <code>body.dark-mode</code> remap behind its real "Switch to dark mode" link, the SPA's own palette resolution and <code>--viewport-height</code>, self-hosted Inter (300–700 + italics), the measured type ramp, the 6–16px radii plus the 40px eyebrow pills, and the measured component sizes. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from getfernand.com, app.getfernand.com and help.getfernand.com, signed out, in headless Chromium. Everything post-login is a documented boundary; the login/signup forms were measured, never submitted; "Book a demo" is a Cal.com scheduler, never activated. Inter is a served face and is not loaded here: samples fall back to system sans.</p>
-
-  <h2 class="sh">The chrome</h2>
-  <p class="lead">The fixed header pairs the wordmark with About us / Pricing / Log in links, the Cal.com "Book a demo" action and the "Start for free" button. The hero runs a 38px/400 masthead with a dated changelog eyebrow pill and a near-black 8px-radius CTA; sections are labelled by the white 40px-radius tag pills.</p>
-  <div class="mock" style="padding:0">
-    <div class="navbar"><span class="wm">Fernand</span><span>About us</span><span>Pricing</span><span class="sp"></span><span>Log in</span><span class="btn small ghost">Book a demo</span><span class="btn small accent">Start for free</span></div>
-    <div class="hero"><span class="tag">Oct. 27 — Dodo Payments integration</span><br><br>The free customer support<br>platform for SaaS teams<small>Respond on every channel, resolve with AI, and keep humans for the conversations that matter.</small><span class="btn primary">Start for free</span> <span class="btn ghost">Watch a 2 minute demo</span></div>
-  </div>
-
-  <h2 class="sh">Cards and the widget</h2>
-  <p class="lead">Channel and feature cards sit on the <code>--grey-light</code> #f7fafc field inside 10px radii; pricing cards step up to 16px on white with layered shadows. The product's own chat widget launcher is the 48px dark bubble fixed at the page corner.</p>
-  <div class="mock" style="padding:20px">
-    <div class="grid">
-      <div class="tile"><div class="img">channel</div><b>Email</b><span class="sub">Consolidate all your support channels in one workspace.</span></div>
-      <div class="tile" style="background:var(--white,#fff);border-radius:var(--radius-panel,16px)"><b>FREE</b><span class="sub">$0 — the free plan card.</span></div>
-    </div>
-    <div style="margin-top:18px;text-align:right"><span class="launcher">F</span></div>
-  </div>
-
-  <h2 class="sh">The app surface</h2>
-  <p class="lead">app.getfernand.com declares the same palette names with its own grey family (<code>--grey</code> #e6e9eb, <code>--grey-medium</code> #5e6271, <code>--grey-strong</code> #9fa3b5) plus <code>--viewport-height</code> and scoped sidebar overrides; the signed-out login and signup forms paint it. The swatches in this scope carry the app set.</p>
-  <div class="mock app" style="padding:24px;max-width:420px">
-    <b style="font-size:25px;font-weight:600">Welcome back</b>
-    <p class="sub" style="color:var(--grey-strong,#9fa3b5);font-size:14px;margin:4px 0 16px">Log in to your Fernand workspace</p>
-    <input class="field" placeholder="Your work email"><br><br>
-    <input class="field" placeholder="Your password"><br><br>
-    <span class="btn primary">Login</span>
-  </div>
-
-  <h2 class="sh">The docs dark surface</h2>
-  <p class="lead">help.getfernand.com ships a real "Switch to dark mode" link that sets <code>body.dark-mode</code> and persists it — the dark set resolves the palette under that class on the docs shell, which is what the swatches below paint.</p>
-  <div class="mock dark" style="padding:20px;background:var(--background-page,#191c24);color:var(--text-ink,#f5f5f7)">
-    <div class="grid">
-      <div class="tile" style="background:var(--surface-card,#1e222b);border:1px solid var(--border-default,#2a2e38);color:var(--text-ink,#f5f5f7)"><b style="color:var(--text-ink,#f5f5f7)">Getting started</b><span class="sub" style="color:var(--text-muted,#9fa3b5)">A docs collection card under dark-mode.</span></div>
-    </div>
-    <div style="margin-top:18px"><span class="btn accent">Switch to dark mode</span></div>
-  </div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead">The declared palette runs the white/grey-light/grey/grey-medium/grey-strong/black grey ramp with the blue #00a0ff action accent and orange/red/green status family; the app re-resolves the grey family a step lighter, and the docs dark mode remaps the whole ramp. Measured roles alias the declared values they match.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Spacing, radius and motion</h2>
-  <p class="lead">Radii climb 6px (header controls) → 8px (buttons, fields) → 10px (cards) → 16px (pricing panels) → 40px (eyebrow pills) with a full-radius launcher bubble. Components are padded in eights (24px card padding); the control transition is measured on the live buttons.</p>
-  <div id="spacing-out" class="kv"></div>
-
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out" class="kv"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">Self-hosted Inter carries everything: display headings and body at 400, buttons, nav links and eyebrow pills at 500, plan eyebrows and card titles at 600 — the heaviest weight the public surfaces set. The marketing sizes are measured (the sheets declare no type vars); the app's declared <code>--viewport-height</code> shows under its surface. Samples fall back to system sans.</p>
-  <div id="type-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared palette variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
-</main>
+<div class="wrap">
+<h1>Fernand</h1>
+<p class="lede">Public marketing site, one light theme. Values come from tokens.json, read off getfernand.com on 2026-11-21.</p>
+<h2>Colour</h2>
+<div class="swatches" id="swatches"></div>
+<h2>Type</h2>
+<p class="hero">The free customer support platform for SaaS teams</p>
+<h2>Controls</h2>
+<div class="row">
+  <a class="btn" href="#controls">Start for free</a>
+  <a class="quiet" href="#controls">Book a demo</a>
+</div>
+</div>
 <script>
-const TOK = /*TOKENS*/null;
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  // The Fernand palette is a flat vocabulary at the set roots (white, grey.*,
-  // blue.*, …), not a --color-* namespace: collect the colour leaves wherever
-  // they live, grouped by first path segment.
-  const groups = {};
-  for (const [n, t] of flat(TOK.core, '')) {
-    if (t.t !== 'color' || n.startsWith('component')) continue;
-    (groups[n.split('.')[0]] ??= []).push([n, t]);
-  }
-  for (const g of Object.keys(groups).sort()) {
-    h += `<div class="pal-h">${esc(g)} (shared palette — app/dark re-resolve the same paths)</div><div class="pal">`;
-    for (const [n, t] of groups[g]) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  for (const [setname, label, scope] of [['light', 'light roles', ''], ['help', 'docs roles + vocabulary', ' help'], ['app', 'app roles + vocabulary', ' app'], ['dark', 'docs dark roles', ' dark']]) {
-    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color');
-    if (!roles.length) continue;
-    // A non-light set's custom properties only resolve inside its own scope:
-    // swatch dots must live under it or they paint the light values/unset.
-    h += `<div class="pal-h">${label}</div><div class="pal${scope}">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
-  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
-  $('#spacing-out').innerHTML = m;
-})();
-
-(function elev() {
-  let e = '';
-  for (const setname of ['light', 'dark']) {
-    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
-  }
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#meas-out').innerHTML = m;
-})();
-
-const resolveVal = (v, depth) => {
-  if (depth > 6 || typeof v !== 'string') return v;
-  const m = v.match(/^\{(.+)\}$/);
-  if (!m) return v;
-  // Aliases are set-relative: the palette scales live under TOK.core, surface
-  // roles under TOK.light / TOK.app / TOK.dark. Try each root.
-  for (const root of [TOK.core, TOK.light, TOK.help, TOK.app, TOK.dark, TOK]) {
-    let node = root;
-    for (const k of m[1].split('.')) node = node && node[k];
-    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
-  }
-  return v;
-};
-
-(function type() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(resolveVal(t.v));
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.app || {}).fs || {}, 'app.fs.')) {
-    const px = parseFloat(resolveVal(t.v));
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">app ${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Fernand</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
-
-// The light/dark toggle repaints the page with the docs dark token scope —
-// the same paths the site's own "Switch to dark mode" link re-declares under
-// body.dark-mode. It is a reconstruction on this file's mocks, not the live
-// toggle; the real toggled surface is in screenshots/help-dark-*.
-(function theme() {
-  const bl = document.getElementById('tt-light'), bd = document.getElementById('tt-dark');
-  const set = (dark) => {
-    document.body.classList.toggle('dark', dark);
-    bl.classList.toggle('on', !dark); bd.classList.toggle('on', dark);
-  };
-  bl.onclick = () => set(false); bd.onclick = () => set(true);
-})();
+const tokens = /*TOKENS*/null;
+const roles = ["page", "surface", "text", "muted", "accent", "border", "ink", "on-accent", "success", "warning", "danger", "focus"];
+const root = document.getElementById("swatches");
+for (const name of roles) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = "<i></i><span></span>";
+  el.querySelector("i").style.background = "var(--" + name + ")";
+  el.querySelector("span").textContent = name;
+  root.appendChild(el);
+}
 </script>
 </body>
 </html>

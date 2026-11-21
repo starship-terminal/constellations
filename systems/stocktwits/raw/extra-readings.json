@@ -1,0 +1,63 @@
+{
+  "captured": "2026-11-21",
+  "note": "Fresh Playwright contexts after Cloudflare returned 403 on a second navigation in the first measure session. Nothing typed. No form submitted.",
+  "signin": {
+    "url": "https://stocktwits.com/signin",
+    "login": {
+      "backgroundColor": "rgb(242, 242, 247)",
+      "color": "rgb(0, 0, 0)",
+      "borderRadius": "8px",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "height": "40px",
+      "padding": "8px 12px",
+      "placeholder": "Email or Username"
+    },
+    "password": {
+      "backgroundColor": "rgb(242, 242, 247)",
+      "borderRadius": "8px",
+      "height": "40px",
+      "placeholder": "Password"
+    },
+    "logInDisabled": {
+      "backgroundColor": "rgb(209, 209, 214)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "9999px",
+      "fontSize": "15px",
+      "fontWeight": "600",
+      "height": "40px",
+      "paddingLeft": "20px"
+    },
+    "h1": {
+      "text": "Log In",
+      "fontSize": "20px",
+      "fontWeight": "700",
+      "lineHeight": "28px",
+      "color": "rgb(0, 0, 0)"
+    }
+  },
+  "symbol": {
+    "url": "https://stocktwits.com/symbol/AAPL",
+    "bullish": {
+      "backgroundColor": "rgb(224, 247, 239)",
+      "color": "rgb(0, 0, 0)",
+      "borderRadius": "9999px",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "height": "32px"
+    },
+    "bearish": {
+      "backgroundColor": "rgb(251, 230, 227)",
+      "color": "rgb(0, 0, 0)",
+      "borderRadius": "9999px",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "height": "32px"
+    }
+  },
+  "buttonXs": {
+    "source": "stylesheet rule .STButton_xs__Mc6XR { --size: 24px } read from document.styleSheets on /",
+    "size": "24px"
+  }
+}

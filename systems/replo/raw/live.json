@@ -1,0 +1,64 @@
+{
+  "readAt": "2026-11-21",
+  "url": "https://www.replo.app/",
+  "viewport": { "width": 1440, "height": 900, "deviceScaleFactor": 2 },
+  "htmlClassHasDark": false,
+  "colorScheme": "dark",
+  "themeColor": "#000000",
+  "body": {
+    "bg": "rgb(0, 0, 0)",
+    "color": "rgb(245, 250, 217)",
+    "fontFamily": "archivo, \"archivo Fallback\", Arial, sans-serif",
+    "size": "16px",
+    "weight": "400",
+    "lh": "24px"
+  },
+  "h1": {
+    "text": "The website builder that learns what sells",
+    "color": "rgb(245, 250, 217)",
+    "fontFamily": "archivo, \"archivo Fallback\", Arial, sans-serif",
+    "size": "56px",
+    "weight": "500",
+    "lh": "59.36px",
+    "w": 771.5,
+    "h": 122.7
+  },
+  "header": { "h": 60, "bg": "rgba(0, 0, 0, 0)", "color": "rgb(245, 250, 217)" },
+  "start": {
+    "text": "Start for free",
+    "w": 109.8,
+    "h": 36,
+    "bg": "rgb(245, 250, 217)",
+    "color": "rgb(18, 18, 18)",
+    "size": "14px",
+    "weight": "400",
+    "lh": "22px",
+    "radius": "9999px",
+    "border": "1px solid rgba(18, 18, 18, 0.2)",
+    "pad": "0px 16px"
+  },
+  "login": {
+    "text": "Log in",
+    "h": 36,
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(245, 250, 217)",
+    "size": "14px",
+    "radius": "33554400px"
+  },
+  "book": {
+    "text": "Book a demo",
+    "h": 36,
+    "bg": "rgb(0, 0, 0)",
+    "color": "rgb(245, 250, 217)",
+    "size": "14px",
+    "radius": "9999px",
+    "borderColor": "rgba(245, 250, 217, 0.24)"
+  },
+  "product": {
+    "text": "Product",
+    "h": 36,
+    "size": "14px",
+    "color": "rgb(245, 250, 217)",
+    "pad": "8px 12px"
+  }
+}

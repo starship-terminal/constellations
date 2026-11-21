@@ -1,29 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-mode="dark">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MasterClass style guide</title>
 <style>
 :root {
-  --color-ai-500: rgb(101,34,242);
-  --color-error-100: #ffd6d6;
-  --color-error-200: #ffadad;
-  --color-error-300: #ff8585;
-  --color-error-400: #ff5c5c;
-  --color-error-500: #ff3333;
-  --color-error-600: #ff0000;
-  --color-error-700: #e00000;
-  --color-error-800: #b80000;
-  --color-error-900: #8f0000;
-  --color-green-100: #c2ebd2;
-  --color-green-200: #a3e0bc;
-  --color-green-300: #85d6a5;
-  --color-green-400: #66cc8f;
-  --color-green-500: #3ebb70;
-  --color-green-600: #38a865;
-  --color-green-700: #2e8a53;
-  --color-green-800: #246b40;
-  --color-green-900: #194d2e;
   --color-neutral-90: #ffffff;
   --color-neutral-100: #f4f4f5;
   --color-neutral-200: #e9eaec;
@@ -34,6 +16,8 @@
   --color-neutral-700: #43454c;
   --color-neutral-800: #303136;
   --color-neutral-900: #222326;
+  --color-neutral-1000: #0d0d0e;
+  --color-neutral-1010: #000000;
   --color-pink-100: #feb0c2;
   --color-pink-200: #ea5d7e;
   --color-pink-300: #e84a6f;
@@ -43,24 +27,6 @@
   --color-pink-700: #c71a42;
   --color-pink-800: #b5173c;
   --color-pink-900: #a21536;
-  --color-primary-100: #feb0c2;
-  --color-primary-200: #ea5d7e;
-  --color-primary-300: #e84a6f;
-  --color-primary-400: #e84a6f;
-  --color-primary-500: #e32652;
-  --color-primary-600: #d61a46;
-  --color-primary-700: #c71a42;
-  --color-primary-800: #b5173c;
-  --color-primary-900: #a21536;
-  --color-purple-100: #d4caf7;
-  --color-purple-200: #b7a7f1;
-  --color-purple-300: #9a83ec;
-  --color-purple-400: #7d60e6;
-  --color-purple-500: #4721d0;
-  --color-purple-600: #3c1cb0;
-  --color-purple-700: #301680;
-  --color-purple-800: #24116a;
-  --color-purple-900: #190b50;
   --color-red-100: #ffd6d6;
   --color-red-200: #ffadad;
   --color-red-300: #ff8585;
@@ -70,33 +36,6 @@
   --color-red-700: #e00000;
   --color-red-800: #b80000;
   --color-red-900: #8f0000;
-  --color-success-100: #c2ebd2;
-  --color-success-200: #a3e0bc;
-  --color-success-300: #85d6a5;
-  --color-success-400: #66cc8f;
-  --color-success-500: #3ebb70;
-  --color-success-600: #38a865;
-  --color-success-700: #2e8a53;
-  --color-success-800: #246b40;
-  --color-success-900: #194d2e;
-  --color-utility-100: #d4caf7;
-  --color-utility-200: #b7a7f1;
-  --color-utility-300: #9a83ec;
-  --color-utility-400: #7d60e6;
-  --color-utility-500: #4721d0;
-  --color-utility-600: #3c1cb0;
-  --color-utility-700: #301680;
-  --color-utility-800: #24116a;
-  --color-utility-900: #190b50;
-  --color-warning-100: #ffdcad;
-  --color-warning-200: #ffca85;
-  --color-warning-300: #ffb856;
-  --color-warning-400: #ffa733;
-  --color-warning-500: #ff9000;
-  --color-warning-600: #e88503;
-  --color-warning-700: #d17a08;
-  --color-warning-800: #b95c05;
-  --color-warning-900: #663a00;
   --color-yellow-100: #ffdcad;
   --color-yellow-200: #ffca85;
   --color-yellow-300: #ffb856;
@@ -106,94 +45,206 @@
   --color-yellow-700: #d17a08;
   --color-yellow-800: #b95c05;
   --color-yellow-900: #663a00;
-  --font-family-sohne: Sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-display: "Ivar Display Condensed", "Times New Roman", serif;
-  --font-family-sohneKraftig: "Sohne Kraftig", Sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --color-green-100: #c2ebd2;
+  --color-green-200: #a3e0bc;
+  --color-green-300: #85d6a5;
+  --color-green-400: #66cc8f;
+  --color-green-500: #3ebb70;
+  --color-green-600: #38a865;
+  --color-green-700: #2e8a53;
+  --color-green-800: #246b40;
+  --color-green-900: #194d2e;
+  --color-purple-100: #d4caf7;
+  --color-purple-200: #b7a7f1;
+  --color-purple-300: #9a83ec;
+  --color-purple-400: #7d60e6;
+  --color-purple-500: #4721d0;
+  --color-purple-600: #3c1cb0;
+  --color-purple-700: #301680;
+  --color-purple-800: #24116a;
+  --color-purple-900: #190b50;
+  --color-brand: #ef4562;
+  --color-focus: #3787ff;
+  --color-announce: #eed37f;
+  --color-nameplate: #fffef2;
+  --color-ai-500: #6522f2;
+  --fontFamily-sans: Sohne, Helvetica, Arial, sans-serif;
+  --fontFamily-display: "Sohne Schmal", Helvetica, Arial, sans-serif;
+  --fontFamily-serif: "Ivar Display Condensed", serif;
+  --fontWeight-regular: 400;
+  --fontWeight-medium: 500;
+  --fontWeight-semibold: 600;
+  --typography-display: 600 46px/46px Sohne Schmal, Helvetica, Arial, sans-serif;
+  --typography-heading: 600 34px/1.15 Sohne, Helvetica, Arial, sans-serif;
+  --typography-title: 600 20px/1.25 Sohne, Helvetica, Arial, sans-serif;
+  --typography-body: 400 16px/1.5 Sohne, Helvetica, Arial, sans-serif;
+  --typography-label: 600 16px/20px Sohne, Helvetica, Arial, sans-serif;
+  --typography-caption: 400 12px/1.45 Sohne, Helvetica, Arial, sans-serif;
+  --typography-code: 400 13px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace;
   --spacing-0: 0px;
   --spacing-1: 4px;
-  --spacing-10: 64px;
-  --spacing-11: 80px;
-  --spacing-12: 96px;
   --spacing-2: 8px;
   --spacing-3: 12px;
   --spacing-4: 16px;
-  --spacing-5: 20px;
-  --spacing-6: 24px;
-  --spacing-7: 28px;
-  --spacing-8: 32px;
-  --spacing-9: 48px;
-  --radius-lg: 1.6rem;
-  --radius-md: 1.2rem;
-  --radius-sm: 0.8rem;
-  --radius-xl: 2.4rem;
-  --lineHeight-body: 1.5;
-  --lineHeight-body-relaxed: 1.6;
-  --lineHeight-body-tight: 1.45;
-  --lineHeight-heading: 1.25;
-  --lineHeight-heading-super-tight: 1;
-  --lineHeight-heading-tight: 1.15;
-  --lineHeight-heading-ultra-tight: 0.9;
-  --breakpoint-lg: 960px;
-  --breakpoint-md: 768px;
-  --breakpoint-sm: 576px;
-  --breakpoint-xl: 1200px;
+  --spacing-5: 18px;
+  --spacing-6: 18px;
+  --spacing-7: 20px;
+  --spacing-8: 20px;
+  --spacing-9: 34px;
+  --spacing-10: 46px;
+  --spacing-11: 60px;
+  --spacing-12: 72px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 18px;
+  --borderWidth-hairline: 1px;
+  --borderWidth-control: 2px;
   --breakpoint-xs: 0px;
-  --color-page-default: #0d0d0e;
-  --color-surface-default: #0d0d0e;
-  --color-surface-raised: #191c21;
-  --color-surface-overlay: #272c33;
-  --color-scrim: rgba(0,0,0,0.9);
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #d4d5d9;
-  --color-text-muted: #9ea0a9;
-  --color-text-disabled: #9ea0a9;
-  --color-text-onAccent: #ffffff;
-  --color-text-link: #ffffff;
-  --color-border-default: #303136;
-  --color-border-strong: #9ea0a9;
-  --color-border-focus: #3787ff;
-  --color-accent-default: #e32652;
-  --color-accent-hover: #d61a46;
-  --color-accent-pressed: #c71a42;
-  --color-brand-default: #ef4562;
-  --color-status-success: #3ebb70;
-  --color-status-warning: #ff9000;
-  --color-status-danger: #ff3333;
-  --color-status-info: #3787ff;
-  --color-control-field: #191c21;
-  --color-control-fieldBorder: #272c33;
-  --color-control-placeholder: rgba(255,255,255,0.5);
-  --color-plan-selected: rgba(25,28,33,0.8);
-  --color-plan-unselectedText: #949aa4;
-  --color-badge-fill: #272c33;
-  --color-badge-text: #ffffff;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 960px;
+  --breakpoint-xl: 1200px;
+  --layout-content: 1136px;
+  --layout-maximum: 1264px;
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-slow: 300ms;
+  --easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-out: cubic-bezier(0, 0, 0.2, 1);
+  --easing-enter: cubic-bezier(0.22, 1, 0.36, 1);
+  --size-search: 44px;
+  --size-button-pad-y: 12px;
+  --size-button-pad-x: 24px;
+  --focus-color: var(--color-focus);
+
+  color-scheme: dark;
+  --sg-sans: "Sohne", Helvetica, Arial, sans-serif;
+  --sg-display: "Sohne Schmal", Helvetica, Arial, sans-serif;
+  --sg-serif: "Ivar Display Condensed", Georgia, serif;
+  --sg-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
-body { margin: 0; background: var(--page-default, #0d0d0e); color: var(--text-primary, #fff); font: 16px/1.5 Sohne, Helvetica, Arial, sans-serif; }
-main { max-width: 960px; margin: 0 auto; padding: 32px 20px 80px; }
-h1 { font-weight: 600; letter-spacing: 0.02em; }
-.swatches, .ramps { display: grid; gap: 8px; }
-.swatch { display: grid; grid-template-columns: 48px 1fr auto; gap: 12px; align-items: center; background: #191c21; border-radius: 8px; padding: 8px 12px; }
-.swatch i { width: 48px; height: 32px; border-radius: 4px; border: 1px solid #303136; }
-.ramp { display: flex; gap: 4px; align-items: center; }
-.ramp b { width: 88px; font-weight: 600; font-size: 13px; color: #d4d5d9; }
-.ramp i { width: 28px; height: 28px; border-radius: 4px; }
-.specimen { margin-top: 28px; }
-.btn { display: inline-block; background: var(--accent-default, #e32652); color: #fff; border-radius: 8px; padding: 12px 16px; font-weight: 600; }
-.field { display: block; margin-top: 12px; background: #191c21; color: #fff; border: 1px solid #272c33; border-radius: 8px; padding: 12px; width: 280px; }
+[data-mode="dark"] {
+  --background-page: var(--color-neutral-1000);
+  --background-surface: var(--color-neutral-900);
+  --background-raised: #191c21;
+  --background-overlay: #272c33;
+  --background-scrim: rgba(0, 0, 0, 0.9);
+  --text-primary: var(--color-neutral-90);
+  --text-secondary: var(--color-neutral-300);
+  --text-disabled: var(--color-neutral-500);
+  --text-on-accent: var(--color-neutral-90);
+  --text-link: var(--color-neutral-90);
+  --border-default: #272c33;
+  --border-strong: var(--color-neutral-500);
+  --border-focus: var(--color-focus);
+  --accent-default: var(--color-pink-500);
+  --accent-hover: var(--color-pink-600);
+  --accent-pressed: var(--color-pink-700);
+  --status-success: var(--color-green-500);
+  --status-warning: var(--color-yellow-500);
+  --status-danger: var(--color-red-500);
+  --status-info: var(--color-focus);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 16px/1.5 var(--sg-sans); }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 32px 24px 80px; }
+header.top { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; border-bottom: 1px solid var(--border-default); padding-bottom: 16px; }
+h1 { font: 600 28px/1.15 var(--sg-display); letter-spacing: 0.02em; text-transform: uppercase; margin: 0; }
+h2 { font: 600 20px/1.25 var(--sg-sans); margin: 40px 0 12px; }
+p.lead { color: var(--text-secondary); max-width: 70ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 56px; border-radius: var(--radius-sm); border: 1px solid var(--border-default); }
+.sw b, .sw span { display: block; font: 12px/1.4 var(--sg-mono); margin-top: 4px; }
+.sw span { color: var(--text-secondary); }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: var(--size-button-pad-y) var(--size-button-pad-x); border-radius: var(--radius-sm); border: 0; background: var(--accent-default); color: var(--text-on-accent); font: 600 16px/20px var(--sg-sans); letter-spacing: 0.16px; text-transform: capitalize; }
+.btn.quiet { background: transparent; color: var(--text-primary); box-shadow: inset 0 0 0 1px var(--border-strong); }
+.field { height: var(--size-search); width: 280px; border-radius: var(--radius-sm); border: 1px solid var(--border-default); background: var(--background-raised); color: var(--text-primary); padding: 0 12px; font: 400 16px/1 var(--sg-sans); }
+.card { width: 240px; background: var(--background-surface); border-radius: var(--radius-md); overflow: hidden; }
+.card .ph { height: 140px; background: var(--background-raised); }
+.card .bd { padding: 12px; }
+.card .kicker { color: var(--accent-default); font-size: 12px; }
+.badge { display: inline-block; background: var(--status-success); color: var(--background-page); font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-sm); }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border-default); }
+th { color: var(--text-secondary); font-weight: 400; }
+code { font-family: var(--sg-mono); font-size: 12px; }
 </style>
 </head>
 <body>
-<main>
-<h1>MasterClass</h1>
-<p>Signed-out public surface. One dark theme. Values are the custom properties read on :root.</p>
-<h2>Roles</h2>
-<div class="swatches"><div class="swatch"><i style="background:#0d0d0e"></i><span>color-page-default</span><code>#0d0d0e</code></div><div class="swatch"><i style="background:#0d0d0e"></i><span>color-surface-default</span><code>#0d0d0e</code></div><div class="swatch"><i style="background:#191c21"></i><span>color-surface-raised</span><code>#191c21</code></div><div class="swatch"><i style="background:#272c33"></i><span>color-surface-overlay</span><code>#272c33</code></div><div class="swatch"><i style="background:rgba(0,0,0,0.9)"></i><span>color-scrim</span><code>rgba(0,0,0,0.9)</code></div><div class="swatch"><i style="background:#ffffff"></i><span>color-text-primary</span><code>#ffffff</code></div><div class="swatch"><i style="background:#d4d5d9"></i><span>color-text-secondary</span><code>#d4d5d9</code></div><div class="swatch"><i style="background:#9ea0a9"></i><span>color-text-muted</span><code>#9ea0a9</code></div><div class="swatch"><i style="background:#9ea0a9"></i><span>color-text-disabled</span><code>#9ea0a9</code></div><div class="swatch"><i style="background:#ffffff"></i><span>color-text-onAccent</span><code>#ffffff</code></div><div class="swatch"><i style="background:#ffffff"></i><span>color-text-link</span><code>#ffffff</code></div><div class="swatch"><i style="background:#303136"></i><span>color-border-default</span><code>#303136</code></div><div class="swatch"><i style="background:#9ea0a9"></i><span>color-border-strong</span><code>#9ea0a9</code></div><div class="swatch"><i style="background:#3787ff"></i><span>color-border-focus</span><code>#3787ff</code></div><div class="swatch"><i style="background:#e32652"></i><span>color-accent-default</span><code>#e32652</code></div><div class="swatch"><i style="background:#d61a46"></i><span>color-accent-hover</span><code>#d61a46</code></div><div class="swatch"><i style="background:#c71a42"></i><span>color-accent-pressed</span><code>#c71a42</code></div><div class="swatch"><i style="background:#ef4562"></i><span>color-brand-default</span><code>#ef4562</code></div><div class="swatch"><i style="background:#3ebb70"></i><span>color-status-success</span><code>#3ebb70</code></div><div class="swatch"><i style="background:#ff9000"></i><span>color-status-warning</span><code>#ff9000</code></div><div class="swatch"><i style="background:#ff3333"></i><span>color-status-danger</span><code>#ff3333</code></div><div class="swatch"><i style="background:#3787ff"></i><span>color-status-info</span><code>#3787ff</code></div><div class="swatch"><i style="background:#191c21"></i><span>color-control-field</span><code>#191c21</code></div><div class="swatch"><i style="background:#272c33"></i><span>color-control-fieldBorder</span><code>#272c33</code></div><div class="swatch"><i style="background:rgba(255,255,255,0.5)"></i><span>color-control-placeholder</span><code>rgba(255,255,255,0.5)</code></div><div class="swatch"><i style="background:rgba(25,28,33,0.8)"></i><span>color-plan-selected</span><code>rgba(25,28,33,0.8)</code></div><div class="swatch"><i style="background:#949aa4"></i><span>color-plan-unselectedText</span><code>#949aa4</code></div><div class="swatch"><i style="background:#272c33"></i><span>color-badge-fill</span><code>#272c33</code></div><div class="swatch"><i style="background:#ffffff"></i><span>color-badge-text</span><code>#ffffff</code></div></div>
-<h2>Ramps</h2>
-<div class="ramps"><div class="ramp"><b>ai</b><i title="ai 500" style="background:rgb(101,34,242)"></i></div><div class="ramp"><b>error</b><i title="error 100" style="background:#ffd6d6"></i><i title="error 200" style="background:#ffadad"></i><i title="error 300" style="background:#ff8585"></i><i title="error 400" style="background:#ff5c5c"></i><i title="error 500" style="background:#ff3333"></i><i title="error 600" style="background:#ff0000"></i><i title="error 700" style="background:#e00000"></i><i title="error 800" style="background:#b80000"></i><i title="error 900" style="background:#8f0000"></i></div><div class="ramp"><b>green</b><i title="green 100" style="background:#c2ebd2"></i><i title="green 200" style="background:#a3e0bc"></i><i title="green 300" style="background:#85d6a5"></i><i title="green 400" style="background:#66cc8f"></i><i title="green 500" style="background:#3ebb70"></i><i title="green 600" style="background:#38a865"></i><i title="green 700" style="background:#2e8a53"></i><i title="green 800" style="background:#246b40"></i><i title="green 900" style="background:#194d2e"></i></div><div class="ramp"><b>neutral</b><i title="neutral 90" style="background:#ffffff"></i><i title="neutral 100" style="background:#f4f4f5"></i><i title="neutral 200" style="background:#e9eaec"></i><i title="neutral 300" style="background:#d4d5d9"></i><i title="neutral 400" style="background:#b3b5bc"></i><i title="neutral 500" style="background:#9ea0a9"></i><i title="neutral 600" style="background:#565961"></i><i title="neutral 700" style="background:#43454c"></i><i title="neutral 800" style="background:#303136"></i><i title="neutral 900" style="background:#222326"></i></div><div class="ramp"><b>pink</b><i title="pink 100" style="background:#feb0c2"></i><i title="pink 200" style="background:#ea5d7e"></i><i title="pink 300" style="background:#e84a6f"></i><i title="pink 400" style="background:#e84a6f"></i><i title="pink 500" style="background:#e32652"></i><i title="pink 600" style="background:#d61a46"></i><i title="pink 700" style="background:#c71a42"></i><i title="pink 800" style="background:#b5173c"></i><i title="pink 900" style="background:#a21536"></i></div><div class="ramp"><b>primary</b><i title="primary 100" style="background:#feb0c2"></i><i title="primary 200" style="background:#ea5d7e"></i><i title="primary 300" style="background:#e84a6f"></i><i title="primary 400" style="background:#e84a6f"></i><i title="primary 500" style="background:#e32652"></i><i title="primary 600" style="background:#d61a46"></i><i title="primary 700" style="background:#c71a42"></i><i title="primary 800" style="background:#b5173c"></i><i title="primary 900" style="background:#a21536"></i></div><div class="ramp"><b>purple</b><i title="purple 100" style="background:#d4caf7"></i><i title="purple 200" style="background:#b7a7f1"></i><i title="purple 300" style="background:#9a83ec"></i><i title="purple 400" style="background:#7d60e6"></i><i title="purple 500" style="background:#4721d0"></i><i title="purple 600" style="background:#3c1cb0"></i><i title="purple 700" style="background:#301680"></i><i title="purple 800" style="background:#24116a"></i><i title="purple 900" style="background:#190b50"></i></div><div class="ramp"><b>red</b><i title="red 100" style="background:#ffd6d6"></i><i title="red 200" style="background:#ffadad"></i><i title="red 300" style="background:#ff8585"></i><i title="red 400" style="background:#ff5c5c"></i><i title="red 500" style="background:#ff3333"></i><i title="red 600" style="background:#ff0000"></i><i title="red 700" style="background:#e00000"></i><i title="red 800" style="background:#b80000"></i><i title="red 900" style="background:#8f0000"></i></div><div class="ramp"><b>success</b><i title="success 100" style="background:#c2ebd2"></i><i title="success 200" style="background:#a3e0bc"></i><i title="success 300" style="background:#85d6a5"></i><i title="success 400" style="background:#66cc8f"></i><i title="success 500" style="background:#3ebb70"></i><i title="success 600" style="background:#38a865"></i><i title="success 700" style="background:#2e8a53"></i><i title="success 800" style="background:#246b40"></i><i title="success 900" style="background:#194d2e"></i></div><div class="ramp"><b>utility</b><i title="utility 100" style="background:#d4caf7"></i><i title="utility 200" style="background:#b7a7f1"></i><i title="utility 300" style="background:#9a83ec"></i><i title="utility 400" style="background:#7d60e6"></i><i title="utility 500" style="background:#4721d0"></i><i title="utility 600" style="background:#3c1cb0"></i><i title="utility 700" style="background:#301680"></i><i title="utility 800" style="background:#24116a"></i><i title="utility 900" style="background:#190b50"></i></div><div class="ramp"><b>warning</b><i title="warning 100" style="background:#ffdcad"></i><i title="warning 200" style="background:#ffca85"></i><i title="warning 300" style="background:#ffb856"></i><i title="warning 400" style="background:#ffa733"></i><i title="warning 500" style="background:#ff9000"></i><i title="warning 600" style="background:#e88503"></i><i title="warning 700" style="background:#d17a08"></i><i title="warning 800" style="background:#b95c05"></i><i title="warning 900" style="background:#663a00"></i></div><div class="ramp"><b>yellow</b><i title="yellow 100" style="background:#ffdcad"></i><i title="yellow 200" style="background:#ffca85"></i><i title="yellow 300" style="background:#ffb856"></i><i title="yellow 400" style="background:#ffa733"></i><i title="yellow 500" style="background:#ff9000"></i><i title="yellow 600" style="background:#e88503"></i><i title="yellow 700" style="background:#d17a08"></i><i title="yellow 800" style="background:#b95c05"></i><i title="yellow 900" style="background:#663a00"></i></div></div>
-<div class="specimen">
-  <a class="btn" href="#roles">Get MasterClass</a>
-  <input class="field" placeholder="Email" readonly>
+<div class="wrap">
+<header class="top">
+  <h1>MasterClass</h1>
+  <span>Public site, dark only</span>
+</header>
+<p class="lead">Rendered from tokens.json. The public site ships one dark theme. Sohne, Sohne Schmal and Ivar are proprietary and fall back to Helvetica and Georgia here.</p>
+
+<h2>Colour</h2>
+<div class="row" id="roles"></div>
+
+<h2>Type</h2>
+<p style="font: 600 46px/46px var(--sg-display); text-transform: uppercase; margin: 0;">Learn from the best</p>
+<p style="font: 600 34px/1.15 var(--sg-sans);">A dose of inspiration</p>
+<p>Body at 16px on a 1.5 line. Secondary text sits in the medium neutral.</p>
+<p style="font-size: 12px; color: var(--text-secondary);">Caption, 12px.</p>
+
+<h2>Controls</h2>
+<div class="row">
+  <button class="btn">Get MasterClass</button>
+  <button class="btn quiet">View plans</button>
+  <input class="field" placeholder="What do you want to learn today?" readonly>
+  <span class="badge">New</span>
 </div>
-</main>
+
+<h2>Card</h2>
+<div class="card">
+  <div class="ph"></div>
+  <div class="bd">
+    <div class="kicker">New</div>
+    <strong>Gordon Ramsay Teaches Cooking</strong>
+    <div style="color: var(--text-secondary); font-size: 14px;">1 hour 12 minutes</div>
+  </div>
+</div>
+
+<h2>Tokens</h2>
+<table id="tokens"><thead><tr><th>Token</th><th>Value</th><th>Source</th></tr></thead><tbody></tbody></table>
+</div>
+<script>
+const TOKENS = {"core":{"color":{"neutral":{"90":{"v":"#ffffff","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-neutral-90"},"100":{"v":"#f4f4f5","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-neutral-100"},"200":{"v":"#e9eaec","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-neutral-200"},"300":{"v":"#d4d5d9","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-neutral-300"},"400":{"v":"#b3b5bc","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-neutral-400"},"500":{"v":"#9ea0a9","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-neutral-500"},"600":{"v":"#565961","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-neutral-600"},"700":{"v":"#43454c","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-neutral-700"},"800":{"v":"#303136","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-neutral-800"},"900":{"v":"#222326","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-neutral-900"},"1000":{"v":"#0d0d0e","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-neutral-1000"},"1010":{"v":"#000000","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-neutral-1010"}},"pink":{"100":{"v":"#feb0c2","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-pink-100"},"200":{"v":"#ea5d7e","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-pink-200"},"300":{"v":"#e84a6f","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-pink-300"},"400":{"v":"#e84a6f","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-pink-400"},"500":{"v":"#e32652","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-pink-500"},"600":{"v":"#d61a46","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-pink-600"},"700":{"v":"#c71a42","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-pink-700"},"800":{"v":"#b5173c","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-pink-800"},"900":{"v":"#a21536","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-pink-900"}},"red":{"100":{"v":"#ffd6d6","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-red-100"},"200":{"v":"#ffadad","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-red-200"},"300":{"v":"#ff8585","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-red-300"},"400":{"v":"#ff5c5c","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-red-400"},"500":{"v":"#ff3333","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-red-500"},"600":{"v":"#ff0000","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-red-600"},"700":{"v":"#e00000","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-red-700"},"800":{"v":"#b80000","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-red-800"},"900":{"v":"#8f0000","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-red-900"}},"yellow":{"100":{"v":"#ffdcad","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-yellow-100"},"200":{"v":"#ffca85","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-yellow-200"},"300":{"v":"#ffb856","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-yellow-300"},"400":{"v":"#ffa733","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-yellow-400"},"500":{"v":"#ff9000","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-yellow-500"},"600":{"v":"#e88503","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-yellow-600"},"700":{"v":"#d17a08","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-yellow-700"},"800":{"v":"#b95c05","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-yellow-800"},"900":{"v":"#663a00","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-yellow-900"}},"green":{"100":{"v":"#c2ebd2","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-green-100"},"200":{"v":"#a3e0bc","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-green-200"},"300":{"v":"#85d6a5","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-green-300"},"400":{"v":"#66cc8f","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-green-400"},"500":{"v":"#3ebb70","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-green-500"},"600":{"v":"#38a865","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-green-600"},"700":{"v":"#2e8a53","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-green-700"},"800":{"v":"#246b40","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-green-800"},"900":{"v":"#194d2e","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-green-900"}},"purple":{"100":{"v":"#d4caf7","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-purple-100"},"200":{"v":"#b7a7f1","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-purple-200"},"300":{"v":"#9a83ec","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-purple-300"},"400":{"v":"#7d60e6","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-purple-400"},"500":{"v":"#4721d0","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-purple-500"},"600":{"v":"#3c1cb0","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-purple-600"},"700":{"v":"#301680","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-purple-700"},"800":{"v":"#24116a","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-purple-800"},"900":{"v":"#190b50","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-purple-900"}},"brand":{"v":"#ef4562","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-brand","d":"Brand pink, distinct from primary-500"},"focus":{"v":"#3787ff","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-focus"},"announce":{"v":"#eed37f","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-announce"},"nameplate":{"v":"#fffef2","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-nameplate"},"ai":{"500":{"v":"#6522f2","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-ai-500"}}},"fontFamily":{"sans":{"v":"Sohne, Helvetica, Arial, sans-serif","t":"fontFamily","s":"Measured: computed font-family on body, homepage, 2026-11-21. @font-face Sohne 400 and 600 in the site CSS."},"display":{"v":"\"Sohne Schmal\", Helvetica, Arial, sans-serif","t":"fontFamily","s":"Measured: computed font-family on a display heading, homepage, 2026-11-21. @font-face Sohne Schmal 600."},"serif":{"v":"\"Ivar Display Condensed\", serif","t":"fontFamily","s":"Measured: computed font-family on a serif heading, homepage, 2026-11-21. @font-face Ivar Display Condensed."}},"fontWeight":{"regular":{"v":400,"t":"fontWeight","s":"Measured: @font-face Sohne weight 400, and computed font-weight on body text."},"medium":{"v":500,"t":"fontWeight","s":"Measured: @font-face Sohne Kraftig weight 500."},"semibold":{"v":600,"t":"fontWeight","s":"Measured: computed font-weight 600 on the Get MasterClass button, homepage, 2026-11-21."}},"typography":{"display":{"v":{"fontFamily":"Sohne Schmal, Helvetica, Arial, sans-serif","fontSize":"46px","fontWeight":600,"lineHeight":"46px","letterSpacing":"0px"},"t":"typography","s":"Measured: type scale steps and computed styles on the homepage, 2026-11-21. Display uses --font-scale-10 (46px) and Sohne Schmal. Heading uses --font-scale-9 (34px) and --mc-lh-heading--tight (1.15). Body uses 16px and --mc-lh-body (1.5). Label is the computed Get MasterClass button. Caption uses --font-scale-3 (12px) and --mc-lh-body--tight (1.45). Code is the browser monospace: the public pages do not declare a code family."},"heading":{"v":{"fontFamily":"Sohne, Helvetica, Arial, sans-serif","fontSize":"34px","fontWeight":600,"lineHeight":1.15,"letterSpacing":"0px"},"t":"typography","s":"Measured: type scale steps and computed styles on the homepage, 2026-11-21. Display uses --font-scale-10 (46px) and Sohne Schmal. Heading uses --font-scale-9 (34px) and --mc-lh-heading--tight (1.15). Body uses 16px and --mc-lh-body (1.5). Label is the computed Get MasterClass button. Caption uses --font-scale-3 (12px) and --mc-lh-body--tight (1.45). Code is the browser monospace: the public pages do not declare a code family."},"title":{"v":{"fontFamily":"Sohne, Helvetica, Arial, sans-serif","fontSize":"20px","fontWeight":600,"lineHeight":1.25,"letterSpacing":"0px"},"t":"typography","s":"Measured: type scale steps and computed styles on the homepage, 2026-11-21. Display uses --font-scale-10 (46px) and Sohne Schmal. Heading uses --font-scale-9 (34px) and --mc-lh-heading--tight (1.15). Body uses 16px and --mc-lh-body (1.5). Label is the computed Get MasterClass button. Caption uses --font-scale-3 (12px) and --mc-lh-body--tight (1.45). Code is the browser monospace: the public pages do not declare a code family."},"body":{"v":{"fontFamily":"Sohne, Helvetica, Arial, sans-serif","fontSize":"16px","fontWeight":400,"lineHeight":1.5,"letterSpacing":"0px"},"t":"typography","s":"Measured: type scale steps and computed styles on the homepage, 2026-11-21. Display uses --font-scale-10 (46px) and Sohne Schmal. Heading uses --font-scale-9 (34px) and --mc-lh-heading--tight (1.15). Body uses 16px and --mc-lh-body (1.5). Label is the computed Get MasterClass button. Caption uses --font-scale-3 (12px) and --mc-lh-body--tight (1.45). Code is the browser monospace: the public pages do not declare a code family."},"label":{"v":{"fontFamily":"Sohne, Helvetica, Arial, sans-serif","fontSize":"16px","fontWeight":600,"lineHeight":"20px","letterSpacing":"0.16px"},"t":"typography","s":"Measured: type scale steps and computed styles on the homepage, 2026-11-21. Display uses --font-scale-10 (46px) and Sohne Schmal. Heading uses --font-scale-9 (34px) and --mc-lh-heading--tight (1.15). Body uses 16px and --mc-lh-body (1.5). Label is the computed Get MasterClass button. Caption uses --font-scale-3 (12px) and --mc-lh-body--tight (1.45). Code is the browser monospace: the public pages do not declare a code family."},"caption":{"v":{"fontFamily":"Sohne, Helvetica, Arial, sans-serif","fontSize":"12px","fontWeight":400,"lineHeight":1.45,"letterSpacing":"0px"},"t":"typography","s":"Measured: type scale steps and computed styles on the homepage, 2026-11-21. Display uses --font-scale-10 (46px) and Sohne Schmal. Heading uses --font-scale-9 (34px) and --mc-lh-heading--tight (1.15). Body uses 16px and --mc-lh-body (1.5). Label is the computed Get MasterClass button. Caption uses --font-scale-3 (12px) and --mc-lh-body--tight (1.45). Code is the browser monospace: the public pages do not declare a code family."},"code":{"v":{"fontFamily":"ui-monospace, SFMono-Regular, Menlo, monospace","fontSize":"13px","fontWeight":400,"lineHeight":1.45,"letterSpacing":"0px"},"t":"typography","s":"Measured: type scale steps and computed styles on the homepage, 2026-11-21. Display uses --font-scale-10 (46px) and Sohne Schmal. Heading uses --font-scale-9 (34px) and --mc-lh-heading--tight (1.15). Body uses 16px and --mc-lh-body (1.5). Label is the computed Get MasterClass button. Caption uses --font-scale-3 (12px) and --mc-lh-body--tight (1.45). Code is the browser monospace: the public pages do not declare a code family."}},"spacing":{"0":{"v":"0px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --spacing-scale-0"},"1":{"v":"4px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --spacing-scale-1"},"2":{"v":"8px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --spacing-scale-2"},"3":{"v":"12px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --spacing-scale-3"},"4":{"v":"16px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --spacing-scale-4"},"5":{"v":"18px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --spacing-scale-5"},"6":{"v":"18px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --spacing-scale-6"},"7":{"v":"20px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --spacing-scale-7"},"8":{"v":"20px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --spacing-scale-8"},"9":{"v":"34px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --spacing-scale-9"},"10":{"v":"46px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --spacing-scale-10"},"11":{"v":"60px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --spacing-scale-11"},"12":{"v":"72px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --spacing-scale-12"}},"radius":{"sm":{"v":"8px","t":"dimension","s":"Derived: --mc-corners--sm is var(--mc-scale-2), and --mc-scale-2 is 0.8rem. 0.8 times 16px is 8px. The Get MasterClass button computed border-radius is 8px."},"md":{"v":"12px","t":"dimension","s":"Derived: --mc-corners--md is var(--mc-scale-3), and --mc-scale-3 is 1.2rem. 1.2 times 16px is 12px."},"lg":{"v":"16px","t":"dimension","s":"Derived: --mc-corners--lg is var(--mc-scale-4), and --mc-scale-4 is 1.6rem. 1.6 times 16px is 16px."},"xl":{"v":"18px","t":"dimension","s":"Derived: --mc-corners--xl is var(--mc-scale-6), and --mc-scale-6 is 1.8rem. 1.8 times 16px is 18px."}},"borderWidth":{"hairline":{"v":"1px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-border--default starts with 1px."},"control":{"v":"2px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-button-primary-border-width"}},"breakpoint":{"xs":{"v":"0px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-bp-xs is 0. Recorded as 0px."},"sm":{"v":"576px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-bp-sm"},"md":{"v":"768px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-bp-md"},"lg":{"v":"960px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-bp-lg"},"xl":{"v":"1200px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-bp-xl"}},"layout":{"content":{"v":"1136px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-container-max-width","d":"Content column"},"maximum":{"v":"1264px","t":"dimension","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-maximum-content-width"}},"duration":{"fast":{"v":"150ms","t":"duration","s":"Measured: transition-duration .15s in the site CSS, the shortest named duration."},"base":{"v":"200ms","t":"duration","s":"Measured: transition-duration .2s in the site CSS."},"slow":{"v":"300ms","t":"duration","s":"Measured: transition-duration .3s in the site CSS."}},"easing":{"standard":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":"Measured: transition-timing-function cubic-bezier(.4,0,.2,1), the default ease in the site CSS."},"out":{"v":[0,0,0.2,1],"t":"cubicBezier","s":"Measured: cubic-bezier(0,0,.2,1) as --ease-out's fallback in the site CSS."},"enter":{"v":[0.22,1,0.36,1],"t":"cubicBezier","s":"Measured: cubic-bezier(.22,1,.36,1) in the site CSS."}},"size":{"search":{"v":"44px","t":"dimension","s":"Measured: computed height of #searchInput, homepage, 2026-11-21."},"button-pad-y":{"v":"12px","t":"dimension","s":"Measured: computed padding-top of the Get MasterClass link, homepage, 2026-11-21."},"button-pad-x":{"v":"24px","t":"dimension","s":"Measured: computed padding-left of the Get MasterClass link, homepage, 2026-11-21."}},"focus":{"color":{"v":"{color.focus}","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-focus resolves to --mc-color-focus"}}},"light":{},"dark":{"background":{"page":{"v":"{color.neutral.1000}","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-bg-page-default resolves to --mc-color-neutral-1000","d":"Page"},"surface":{"v":"{color.neutral.900}","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-bg-container-tint-dark resolves to --mc-color-neutral-900","d":"Raised surface"},"raised":{"v":"#191c21","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-theme-dropdown-bg. Dropdown and form surface.","d":"Raised control surface"},"overlay":{"v":"#272c33","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-theme-tooltip-bg","d":"Tooltip and menu surface"},"scrim":{"v":"rgba(0, 0, 0, 0.9)","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-theme-dropdown-backdrop","d":"Dialog scrim"}},"text":{"primary":{"v":"{color.neutral.90}","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-text-light resolves to --mc-color-neutral-90","d":"Primary text on the dark page"},"secondary":{"v":"{color.neutral.300}","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-text-medium resolves to --mc-color-neutral-300","d":"Secondary text"},"disabled":{"v":"{color.neutral.500}","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-text-disabled-medium resolves to --mc-color-neutral-500","d":"Disabled text"},"on-accent":{"v":"{color.neutral.90}","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-accent-text resolves to --mc-color-neutral-90","d":"Text on the accent button"},"link":{"v":"{color.neutral.90}","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-text-link-default-default resolves to --mc-color-neutral-90","d":"Link text"}},"border":{"default":{"v":"#272c33","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-theme-form-border"},"strong":{"v":"{color.neutral.500}","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-divider-strong resolves to --mc-color-neutral-500"},"focus":{"v":"{color.focus}","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-focus resolves to --mc-color-focus"}},"accent":{"default":{"v":"{color.pink.500}","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-primary-default resolves to --mc-color-pink-500"},"hover":{"v":"{color.pink.600}","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-primary-hover resolves to --mc-color-pink-600"},"pressed":{"v":"{color.pink.700}","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-primary-pressed resolves to --mc-color-pink-700"}},"status":{"success":{"v":"{color.green.500}","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-success-500 resolves to --mc-color-green-500"},"warning":{"v":"{color.yellow.500}","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-warning-500 resolves to --mc-color-yellow-500"},"danger":{"v":"{color.red.500}","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. --mc-color-error-500 resolves to --mc-color-red-500"},"info":{"v":"{color.focus}","t":"color","s":"Measured: custom property in www.masterclass.com stylesheets, 2026-11-21, raw/css-vars.json. No --mc-color-info token exists. Focus blue --mc-color-focus is the nearest info colour and is labelled as that stand-in."}}}};
+const roles = [
+  ["page", "background-page"],
+  ["surface", "background-surface"],
+  ["raised", "background-raised"],
+  ["text", "text-primary"],
+  ["muted", "text-secondary"],
+  ["accent", "accent-default"],
+  ["border", "border-default"],
+  ["success", "status-success"],
+  ["warning", "status-warning"],
+  ["danger", "status-danger"]
+];
+const row = document.getElementById("roles");
+for (const [label, name] of roles) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = `<i style="background: var(--${name})"></i><b>${label}</b><span>--${name}</span>`;
+  row.appendChild(el);
+}
+const tb = document.querySelector("#tokens tbody");
+function walk(node, prefix) {
+  for (const [k, v] of Object.entries(node)) {
+    if (v && v.v !== undefined) {
+      const tr = document.createElement("tr");
+      const val = typeof v.v === "object" ? JSON.stringify(v.v) : String(v.v);
+      tr.innerHTML = `<td><code>${prefix}${k}</code></td><td><code>${val}</code></td><td>${v.s || ""}</td>`;
+      tb.appendChild(tr);
+    } else if (v && typeof v === "object") walk(v, prefix + k + ".");
+  }
+}
+walk(TOKENS.core || {}, "core.");
+walk(TOKENS.dark || {}, "dark.");
+</script>
 </body>
 </html>

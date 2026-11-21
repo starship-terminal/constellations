@@ -4,236 +4,87 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MonoDesk style guide</title>
-<meta name="description" content="MonoDesk public and signed-out tokens, rendered from tokens.json.">
+<meta name="description" content="MonoDesk public site tokens, rendered from tokens.json.">
 <style>
 :root {
 /*CORE*/
-/*LIGHT*/
-  --sg-sans: var(--font-family-geist, Geist, system-ui, sans-serif);
-  --sg-mono: var(--font-family-geistMono, ui-monospace, Menlo, monospace);
-}
-[data-mode="dark"], .dark {
 /*DARK*/
+  --sg-sans: Geist, system-ui, sans-serif;
+  --sg-mono: "Geist Mono", ui-monospace, monospace;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #161616); background: var(--background-canvas, #dadee1); }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #e7e7e7); background: var(--page, #212121); }
 main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 500 40px/1.15 var(--sg-sans); margin: 0 0 4px; color: var(--text-primary, #161616); }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #515151); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-stroke, #ebebeb); }
-.lead { max-width: 66ch; color: var(--text-primary, #161616); }
-.note { font-size: 13px; color: var(--text-muted, #515151); max-width: 70ch; }
-code { font-family: var(--sg-mono); font-size: .9em; color: var(--brand-blue, #1c64f5); }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #515151); margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.pal.dark { padding: 10px; border-radius: 10px; background: var(--background-page, #15181c); color: var(--text-primary, #fff); }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-stroke, #ebebeb); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); color: inherit; }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); opacity: .7; color: inherit; }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { opacity: .7; }
-.mock { border: 1px solid var(--border-stroke, #ebebeb); overflow: hidden; background: var(--background-page, #1c64f5); color: #fff; border-radius: 16px; }
-.header { display: flex; align-items: center; gap: 16px; height: 66px; margin: 16px; padding: 0 20px; font-size: 14px; background: #1e54c0; color: #fff; border-radius: 16px; }
-.header .wm { font-weight: 600; font-size: 18px; }
-.header .nav { display: flex; gap: 16px; color: rgba(255,255,255,.85); font-weight: 500; font-size: 14px; }
-.header .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 16px; font-size: 14px; font-weight: 500; border-radius: 100px; border: 0; }
-.btn.primary { background: var(--background-action, #d1ff6e); color: var(--text-onAction, #026232); }
-.btn.ghost { background: rgba(255,255,255,.15); color: #fff; }
-.btn.ink { background: var(--background-inkButton, #161616); color: #fff; border-radius: 12px; height: 40px; }
-.hero { padding: 48px 40px 40px; text-align: center; }
-.hero h3 { font: 400 40px/1.05 var(--sg-sans); margin: 0 auto 14px; max-width: 16ch; color: #fff; }
-.hero p { margin: 0 auto 24px; color: #fff; }
-.herorow { display: flex; gap: 12px; justify-content: center; }
-.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 28px; background: #fff; color: var(--text-primary, #161616); }
-.plan { border: 1px solid var(--border-stroke, #ebebeb); background: #fff; padding: 20px; border-radius: 16px; min-height: 160px; }
-.plan .name { font-weight: 600; }
-.plan .price { font-size: 32px; font-weight: 700; margin: 8px 0; }
-.plan .sub { font-size: 12px; color: var(--text-secondary, rgba(22,22,22,.6)); margin-bottom: 16px; }
-.plan.pro { outline: 2px solid var(--brand-highlighter, #d1ff6e); }
-.login { max-width: 450px; margin: 28px auto; padding: 32px; background: #fff; color: var(--text-primary, #161616); border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,.15); }
-.login h3 { font: 500 22px/30px var(--sg-sans); margin: 0 0 18px; }
-.login .btn { width: 100%; margin-bottom: 8px; }
-.login .field { height: 44px; border-radius: 9px; border: 1px solid #ebebeb; background: #f8f8f8; display: flex; align-items: center; padding: 0 12px; color: #94959a; font-size: 16px; margin-bottom: 8px; }
-table.cmp { border-collapse: collapse; font-size: 14px; width: 100%; }
-table.cmp td, table.cmp th { border: 1px solid var(--border-stroke, #ebebeb); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-stroke, #ebebeb); }
-.tr .ts { font-family: var(--sg-sans); }
-.tr .tv { font-size: 12px; opacity: .65; font-family: var(--sg-mono); }
+h1 { font: 400 40px/1.15 var(--sg-sans); margin: 0 0 8px; }
+h2 { font: 500 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, rgba(255,255,255,.85)); margin: 48px 0 12px; }
+.note { color: var(--muted); max-width: 68ch; font-size: 14px; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 48px; border-radius: 10px; border: 1px solid var(--border, rgba(255,255,255,.08)); }
+.sw b, .sw span { display: block; font: 500 12px/1.4 var(--sg-mono); }
+.sw span { font-weight: 400; color: var(--muted); }
+.bar { display: flex; align-items: center; gap: 16px; height: 66px; padding: 12px 16px; border-radius: 16px; background: var(--surface); border: 1px solid var(--border); backdrop-filter: blur(20px); }
+.bar .sp { flex: 1; }
+.bar span { font-size: 14px; font-weight: 500; color: var(--muted); }
+.cta { display: inline-flex; align-items: center; height: 40px; padding: 8px 16px; border-radius: 100px; background: var(--accent); color: var(--accent-text); font-size: 14px; font-weight: 500; }
+.hero { font-size: 48px; line-height: 1.15; margin: 28px 0 12px; max-width: 16ch; }
+.search { display: block; width: min(520px, 100%); height: 48px; border-radius: 100px; border: 0; padding: 0 20px; background: #fff; color: #161616; font: 16px var(--sg-sans); }
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+.plan { background: #f4f6f7; color: #161616; border-radius: 16px; padding: 16px; }
+.plan.pro { outline: 2px solid var(--accent); }
+.plan .go { display: inline-flex; margin-top: 8px; height: 32px; padding: 0 14px; border-radius: 100px; background: var(--component-plan-cta-bg); color: var(--component-plan-cta-text); font-size: 13px; font-weight: 500; align-items: center; }
 </style>
 </head>
 <body>
 <main>
   <h1>MonoDesk style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>. Every swatch is a token. The mock is a reconstruction from those tokens, not captured pixels. The real captures are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Generated from tokens.json. Values are the public site's CSS custom properties and computed styles, read signed out on 2026-11-21. One painted dark page. The app at app.monodesk.com was not entered.</p>
 
-  <h2 class="sh">Measured surfaces</h2>
-  <p class="lead">www.monodesk.com paints a blue grid wash (<code>--brand-blue</code> #1c64f5) with a highlighter pill (<code>--brand-highlighter</code> #d1ff6e) and green ink (<code>--brand-fun-green</code> #026232). app.monodesk.com/login and /create, signed out, paint a white card on a grey canvas.</p>
-  <p class="note">Read on 2026-11-19 in headless Chromium at 1440×900, with a 390×844 pass. Geist is licensed and not bundled, so samples fall back to system fonts.</p>
-
-  <h2 class="sh">Marketing hero</h2>
-  <div class="mock">
-    <div class="header">
-      <span class="wm">MonoDesk</span>
-      <span class="nav"><span>Creative Pros</span><span>Features</span><span>Pricing</span><span>About</span></span>
-      <span class="sp"></span>
-      <span>Log in</span>
-      <span class="btn primary">Get started free</span>
-    </div>
-    <div class="hero">
-      <h3>Stuck on the boring bits of your creative business?</h3>
-      <p>MonoDesk can handle that for you</p>
-      <div class="herorow"><span class="btn primary">Get started free</span><span class="btn ghost">Log in</span></div>
-    </div>
+  <h2>Roles</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>dark.page</span></div>
+    <div class="sw"><i style="background:var(--surface)"></i><b>surface</b><span>dark.surface</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>dark.text</span></div>
+    <div class="sw"><i style="background:var(--muted)"></i><b>muted</b><span>dark.muted</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>dark.accent</span></div>
+    <div class="sw"><i style="background:var(--border)"></i><b>border</b><span>dark.border</span></div>
   </div>
 
-  <h2 class="sh">Pricing</h2>
-  <div class="mock"><div class="plans">
-    <div class="plan"><div class="name">Free</div><div class="price">$0</div><div class="sub">Always free</div><span class="btn primary">Get started</span></div>
-    <div class="plan"><div class="name">Core</div><div class="price">$19</div><div class="sub">Free until end of 2026</div><span class="btn primary">Get started</span></div>
-    <div class="plan pro"><div class="name">Pro</div><div class="price">$29</div><div class="sub">Most popular</div><span class="btn primary">Get started</span></div>
-  </div></div>
-
-  <h2 class="sh">Signed-out login</h2>
-  <p class="lead">app.monodesk.com/login, signed out. White card, 16px radius, grey field, ink Login button. Nothing on this card was submitted.</p>
-  <div class="mock" style="background:#e5eaed; padding: 8px 0 24px;">
-    <div class="login">
-      <h3>Login to your account</h3>
-      <span class="btn" style="background:#fff;color:#000;border:1px solid #e2e2e2;border-radius:7px;">Login with Google</span>
-      <div class="field">your@email.com</div>
-      <span class="btn ink">Login</span>
-    </div>
+  <h2>Brand tokens</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--color-orange)"></i><b>orange</b><span>--brand-orange</span></div>
+    <div class="sw"><i style="background:var(--color-highlighter)"></i><b>highlighter</b><span>--brand-highlighter</span></div>
+    <div class="sw"><i style="background:var(--color-blue)"></i><b>blue</b><span>--brand-blue</span></div>
+    <div class="sw"><i style="background:var(--color-fun-green)"></i><b>fun green</b><span>--brand-fun-green</span></div>
+    <div class="sw"><i style="background:var(--color-almost-black)"></i><b>almost black</b><span>--brand-almost-black</span></div>
+    <div class="sw"><i style="background:var(--color-grey)"></i><b>grey</b><span>--brand-grey</span></div>
   </div>
 
-  <h2 class="sh">Palette</h2>
-  <p class="lead"><code>light.*</code> is what the marketing site and the signed-out app paint. <code>dark.*</code> is the app's declared Tamagui dark scale, present on the document even while the login stayed light. Swatches in the dark block sit inside <code>.dark</code>.</p>
-  <div id="roles-out"></div>
+  <h2>Header</h2>
+  <div class="bar">
+    <b>MonoDesk</b>
+    <span>Creative Pros</span>
+    <span>Features</span>
+    <span>Pricing</span>
+    <span>About</span>
+    <span>More</span>
+    <span class="sp"></span>
+    <span>Log in</span>
+    <span class="cta">Get started free</span>
+  </div>
+  <p class="hero">Stuck on the boring bits of your creative business?</p>
+  <span class="cta">Get started free</span>
 
-  <h2 class="sh">Spacing, radius, layout and motion</h2>
-  <p class="lead">Spacing and radius come from the marketing <code>:root</code> custom properties and from computed control geometry. Motion durations are the header link transitions (0.2s and 0.15s, ease).</p>
-  <div id="spacing-out" class="kv"></div>
-  <div id="motion-out" class="kv"></div>
+  <h2>Help search</h2>
+  <input class="search" placeholder="Search help articles" readonly>
 
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out" class="kv"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">Geist is the marketing and app face. Geist Mono is declared. Samples fall back to system fonts because the licensed files are not bundled.</p>
-  <div id="type-out"></div>
-  <div id="typ-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2>
-  <table class="cmp"><tr><th>Reading</th><th>Where it landed</th></tr><tr><td>Stylesheet harvest</td><td>Declared <code>--background</code>, <code>--primary</code>, <code>--font-*</code> and the rest of the semantic layer, resolved under light and under <code>.dark</code></td></tr><tr><td>Live DOM</td><td>Hover, focus-visible, DevTools-forced pressed, and opened states, each named with the element it was read from</td></tr><tr><td>Withdrawn readings</td><td>FAQ, prose link, plan card, contact row and the mobile drawer matched navigation or a label. Those tokens are not published.</td></tr></table>
+  <h2>Plans</h2>
+  <div class="plans">
+    <div class="plan"><b>Free</b><div>$0</div><span class="go">Get started</span></div>
+    <div class="plan"><b>Core</b><div>$19</div><span class="go">Get started</span></div>
+    <div class="plan pro"><b>Pro</b><div>$29</div><span class="go">Get started</span></div>
+  </div>
 </main>
-<script>
-const TOK = /*TOKENS*/null;
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  for (const [setname, label] of [['light', 'light roles, the painted default'], ['dark', 'dark roles, the app OS preference and nested .dark panels']]) {
-    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
-    if (!roles.length) continue;
-    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.breakpoint || {}, 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.ease || {}, 'ease.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.animation || {}, 'animation.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
-  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#spacing-out').innerHTML = m;
-})();
-
-(function elev() {
-  const sh = (t) => Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v;
-  let e = '';
-  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#meas-out').innerHTML = m || '<div><b>none measured</b></div>';
-})();
-
-(function motion() {
-  const g = TOK.core.motion || {};
-  let m = '';
-  for (const [n, t] of flat(g.duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(g.easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
-  const tr = Object.keys(g.transition || {}).length, an = Object.keys(g.animation || {}).length;
-  if (tr || an) m += `<div><b>measured</b> <span>${tr} transition tokens, ${an} animation tokens (tokens.json, core.motion)</span></div>`;
-  const rm = (g._extensions || {}).reducedMotion;
-  if (rm) m += `<div><b>reduced motion</b> <span>${esc(rm.behaviour)} — ${esc(String(rm.removed))} removed, ${esc(String(rm.kept))} kept across ${esc(String(rm.pages))} pages</span></div>`;
-  $('#motion-out').innerHTML = m || '<div><b>no motion probe</b></div>';
-})();
-
-const resolveVal = (v, depth) => {
-  if (depth > 6 || typeof v !== 'string') return v;
-  const m = v.match(/^\{(.+)\}$/);
-  if (!m) return v;
-  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
-    let node = root;
-    for (const k of m[1].split('.')) node = node && node[k];
-    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
-  }
-  return v;
-};
-
-(function type() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(resolveVal(t.v)) * (String(resolveVal(t.v)).endsWith('rem') ? 16 : 1);
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — MonoDesk</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — MonoDesk</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).leading || {}, 'font.leading.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
-
-(function typ() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core || {}).typography || {}, 'typography.')) {
-    const v = t.v || {};
-    const fs = parseFloat(v.fontSize) || 14;
-    const mono = /mono/i.test(String(v.fontFamily));
-    const meta = [v.fontSize, v.lineHeight, 'w' + v.fontWeight, v.letterSpacing].filter(Boolean).join(' / ');
-    h += `<div class="tr"><span class="ts" style="font-family:${mono ? 'var(--sg-mono)' : 'var(--sg-sans)'};font-size:${Math.min(fs, 44)}px;font-weight:${esc(String(v.fontWeight || 400))};line-height:${esc(v.lineHeight || 'normal')}">${esc(n)} — MonoDesk 0123</span><span class="tv">${esc(meta)}</span></div>`;
-  }
-  $('#typ-out').innerHTML = h;
-})();
-</script>
 </body>
 </html>

@@ -1,2454 +1,56 @@
 {
- "readAt": "2026-11-17",
- "source": "the stylesheet bodies read during live signed-out loads of gumroad.com / and /discover and ichigo.gumroad.com/l/ichigo-reader (the cross-origin assets.gumroad.com design-*.css Vite bundle plus inline <style> blocks, from network responses, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets under emulated colour-scheme light and again dark — the media the @media (prefers-color-scheme:dark) :root block answers — each name applied to a real typed property so the `R G B` channel triplets and var() chains resolve the way a component consumes them, at 1440 x 900. light/dark resolve the gumroad.com document; product-light/product-dark resolve the product-page document, whose inline :root pins a light palette over the shared bundle",
+ "readAt": "2026-11-21",
+ "source": "gumroad.com home page stylesheets, read through the CSSOM. Resolved twice: prefers-color-scheme light and dark. Login is not themed.",
+ "painted": {
+  "light": {
+   "bodyBg": "rgb(244, 244, 240)",
+   "bodyColor": "rgb(0, 0, 0)",
+   "scheme": "light dark"
+  },
+  "dark": {
+   "bodyBg": "rgb(36, 36, 35)",
+   "bodyColor": "rgb(221, 221, 221)",
+   "scheme": "light dark"
+  }
+ },
  "sheets": [
-  "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css (161478 bytes)",
-  "/discover inline-0 (1093 bytes)",
-  "https://ichigo.gumroad.com/l/ichigo-reader inline-0 (590 bytes)",
-  "https://ichigo.gumroad.com/l/ichigo-reader inline-1 (1093 bytes)"
+  {
+   "name": "https://assets.gumroad.com/vite/assets/entrypoints/design-CJSCwH3f.css",
+   "media": "",
+   "bytes": 179308,
+   "unreadable": false
+  }
  ],
  "counts": {
-  "rules": 198,
+  "rules": 197,
   "fonts": 4,
   "names": {
-   "theme": 136,
-   "app": 70,
-   "darkscope": 13,
-   "vendor": 0,
-   "utility": 3,
-   "tailwind": 100
-  },
-  "bySelector": {
-   "[tailwind] @layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))) *, ::before, ::after, ::backdrop": 64,
-   "[theme] @layer theme :root, :host": 122,
-   "[app] @layer base :root, :host": 64,
-   "[darkscope] @layer base @media (prefers-color-scheme: dark) :root, :host": 13,
-   "[app] @layer base *": 5,
-   "[tailwind] .prose": 36,
-   "[tailwind] .border-spacing-0": 2,
-   "[tailwind] .-translate-1": 2,
-   "[tailwind] .-translate-1\\/2": 2,
-   "[tailwind] .translate-\\[-50\\%\\]": 2,
-   "[tailwind] .-translate-x-1\\/2": 1,
-   "[tailwind] .-translate-x-1\\/2\\!": 1,
-   "[tailwind] .-translate-x-2": 1,
-   "[tailwind] .-translate-x-3": 1,
-   "[tailwind] .-translate-x-\\[29\\.289\\%\\]": 1,
-   "[tailwind] .translate-x-1\\/2": 1,
-   "[tailwind] .translate-x-2": 1,
-   "[tailwind] .translate-x-3": 1,
-   "[tailwind] .translate-x-6": 1,
-   "[tailwind] .translate-x-full": 1,
-   "[tailwind] .-translate-y-1\\.5": 1,
-   "[tailwind] .-translate-y-1\\/2": 1,
-   "[tailwind] .-translate-y-1\\/2\\!": 1,
-   "[tailwind] .-translate-y-2": 1,
-   "[tailwind] .-translate-y-\\[5px\\]": 1,
-   "[tailwind] .-translate-y-\\[50\\%\\]": 1,
-   "[tailwind] .-translate-y-full": 1,
-   "[tailwind] .-translate-y-px": 1,
-   "[tailwind] .translate-y-\\(--toast-offset\\)": 1,
-   "[tailwind] .translate-y-0": 1,
-   "[tailwind] .translate-y-1\\.5": 1,
-   "[tailwind] .translate-y-2": 1,
-   "[tailwind] .translate-y-6": 1,
-   "[tailwind] .translate-y-\\[5px\\]": 1,
-   "[tailwind] .translate-y-px": 1,
-   "[tailwind] .snap-mandatory": 1,
-   "[tailwind] :where(.space-y-1 > :not(:last-child))": 1,
-   "[tailwind] :where(.space-y-2 > :not(:last-child))": 1,
-   "[tailwind] :where(.space-y-3 > :not(:last-child))": 1,
-   "[tailwind] :where(.space-y-4 > :not(:last-child))": 1,
-   "[tailwind] :where(.space-y-5 > :not(:last-child))": 1,
-   "[tailwind] :where(.space-y-6 > :not(:last-child))": 1,
-   "[tailwind] :where(.space-y-8 > :not(:last-child))": 1,
-   "[tailwind] :where(.space-y-12 > :not(:last-child))": 1,
-   "[tailwind] :where(.space-y-16 > :not(:last-child))": 1,
-   "[tailwind] :where(.space-x-3 > :not(:last-child))": 1,
-   "[tailwind] :where(.space-x-4 > :not(:last-child))": 1,
-   "[tailwind] :where(.divide-x > :not(:last-child))": 1,
-   "[tailwind] :where(.divide-y > :not(:last-child))": 1,
-   "[tailwind] :where(.divide-solid > :not(:last-child))": 1,
-   "[tailwind] .border-dashed": 1,
-   "[tailwind] .border-none": 1,
-   "[tailwind] .border-none\\!": 1,
-   "[tailwind] .border-solid": 1,
-   "[tailwind] .bg-gradient-to-t": 1,
-   "[tailwind] .from-black": 2,
-   "[tailwind] .from-red-500": 2,
-   "[tailwind] .leading-6": 1,
-   "[tailwind] .leading-7": 1,
-   "[tailwind] .leading-\\[0\\.9\\]": 1,
-   "[tailwind] .leading-\\[0\\.95\\]": 1,
-   "[tailwind] .leading-\\[1\\.2\\]": 1,
-   "[tailwind] .leading-\\[1\\.3\\]": 1,
-   "[tailwind] .leading-\\[1\\.05\\]": 1,
-   "[tailwind] .leading-\\[inherit\\]": 1,
-   "[tailwind] .leading-none": 1,
-   "[tailwind] .leading-relaxed": 1,
-   "[tailwind] .leading-snug": 1,
-   "[tailwind] .leading-tight": 1,
-   "[tailwind] .font-bold": 1,
-   "[tailwind] .font-medium": 1,
-   "[tailwind] .font-normal": 1,
-   "[tailwind] .font-semibold": 1,
-   "[tailwind] .tracking-\\[0\\.5em\\]": 1,
-   "[tailwind] .tracking-tight": 1,
-   "[tailwind] .tracking-wide": 1,
-   "[tailwind] .tracking-wider": 1,
-   "[tailwind] .tracking-widest": 1,
-   "[tailwind] .tabular-nums": 1,
-   "[tailwind] .shadow": 1,
-   "[tailwind] .shadow-\\[0\\.25rem_0\\.25rem_0_var\\(--color-black\\)\\]": 1,
-   "[tailwind] .shadow-\\[4px_4px_0_\\#000\\]": 1,
-   "[tailwind] .shadow-\\[4px_4px_0_0_\\#000\\]": 1,
-   "[tailwind] .shadow-lg": 1,
-   "[tailwind] .shadow-none": 1,
-   "[tailwind] .shadow-none\\!": 1,
-   "[tailwind] .ring, .ring-1": 1,
-   "[tailwind] .ring-accent": 1,
-   "[tailwind] .ring-indicator": 1,
-   "[tailwind] .outline-hidden": 1,
-   "[tailwind] .blur": 1,
-   "[tailwind] .drop-shadow": 2,
-   "[tailwind] .sepia": 1,
-   "[tailwind] .duration-30": 1,
-   "[tailwind] .duration-100": 1,
-   "[tailwind] .duration-150": 1,
-   "[tailwind] .duration-200": 1,
-   "[tailwind] .duration-300": 1,
-   "[tailwind] .ease-in-out": 1,
-   "[tailwind] .ease-out": 1,
-   "[tailwind] .outline-none": 1,
-   "[tailwind] .outline-solid": 1,
-   "[utility] .\\[--color\\:var\\(--contrast-filled\\)\\]": 1,
-   "[utility] .\\[--lift-halo-offset\\:2px\\]": 1,
-   "[utility] .\\[--lift-halo-offset\\:var\\(--button-hover-offset\\)\\]": 1,
-   "[utility] .\\[--toast-offset\\:calc\\(-100\\%-var\\(--spacer-4\\)\\)\\]": 1,
-   "[utility] .\\[--toast-offset\\:calc\\(100\\%\\+var\\(--spacer-4\\)\\+env\\(safe-area-inset-bottom\\)\\)\\]": 1,
-   "[tailwind] .group-hover\\:-translate-x-2:is(:where(.group):hover *)": 1,
-   "[tailwind] .group-hover\\:-translate-x-px:is(:where(.group):hover *)": 1,
-   "[tailwind] .group-hover\\:translate-x-2:is(:where(.group):hover *)": 1,
-   "[tailwind] .group-hover\\:-translate-y-2:is(:where(.group):hover *)": 1,
-   "[tailwind] .group-hover\\:-translate-y-px:is(:where(.group):hover *)": 1,
-   "[tailwind] .group-hover\\:translate-y-2:is(:where(.group):hover *)": 1,
-   "[tailwind] .group-hover\\:shadow-\\[2px_2px_0_0_\\#000\\]:is(:where(.group):hover *)": 1,
-   "[tailwind] .group-hover\\/card\\:-translate-x-1:is(:where(.group\\/card):hover *)": 1,
-   "[tailwind] .group-hover\\/card\\:-translate-y-1:is(:where(.group\\/card):hover *)": 1,
-   "[tailwind] .group-hover\\/card\\:shadow-\\[3px_3px_\\#000\\]:is(:where(.group\\/card):hover *)": 1,
-   "[tailwind] .before\\:content-\\[\\'\\'\\]::before": 1,
-   "[tailwind] .after\\:-translate-y-1\\/2::after": 1,
-   "[tailwind] .after\\:duration-150::after": 1,
-   "[tailwind] .after\\:content-\\[\\\"\\\"\\]::after, .after\\:content-\\[\\'\\'\\]::after": 1,
-   "[tailwind] .after\\:content-\\[\\'\\'\\]\\!::after": 1,
-   "[tailwind] .focus-within\\:ring-1:focus-within": 1,
-   "[tailwind] .focus-within\\:ring-accent:focus-within": 1,
-   "[tailwind] .focus-within\\:outline-none:focus-within": 1,
-   "[tailwind] .focus-within\\:outline-solid:focus-within": 1,
-   "[tailwind] .hover\\:-translate-\\(--button-hover-offset\\):hover": 2,
-   "[tailwind] .hover\\:-translate-1:hover": 2,
-   "[tailwind] .hover\\:translate-0:hover": 2,
-   "[tailwind] .hover\\:-translate-x-1:hover": 1,
-   "[tailwind] .hover\\:-translate-x-\\[2px\\]:hover": 1,
-   "[tailwind] .hover\\:-translate-y-1:hover": 1,
-   "[tailwind] .hover\\:-translate-y-\\[2px\\]:hover": 1,
-   "[tailwind] .hover\\:shadow:hover": 1,
-   "[tailwind] .hover\\:shadow\\!:hover": 1,
-   "[tailwind] .hover\\:shadow-\\[2px_2px_0_0_rgba\\(0\\,0\\,0\\,1\\)\\]:hover": 1,
-   "[tailwind] .hover\\:shadow-\\[3px_3px_\\#000\\]:hover": 1,
-   "[tailwind] .hover\\:shadow-\\[4px_4px_\\#000\\]:hover": 1,
-   "[tailwind] .hover\\:shadow-\\[4px_4px_0_0_\\#000000\\]:hover": 1,
-   "[tailwind] .hover\\:shadow-\\[4px_4px_black\\]:hover": 1,
-   "[tailwind] .hover\\:shadow-\\[var\\(--button-hover-offset\\)_var\\(--button-hover-offset\\)_0_var\\(--color-black\\)\\]:hover": 1,
-   "[tailwind] .hover\\:shadow-none:hover": 1,
-   "[tailwind] .not-active\\:hover\\:-translate-1:not(:active):hover": 2,
-   "[tailwind] .not-active\\:hover\\:translate-0:not(:active):hover": 2,
-   "[tailwind] .not-active\\:hover\\:shadow:not(:active):hover": 1,
-   "[tailwind] .not-active\\:hover\\:shadow-none:not(:active):hover": 1,
-   "[utility] .not-active\\:hover\\:\\[--lift-halo-offset\\:var\\(--spacing\\)\\]:not(:active):hover": 1,
-   "[tailwind] .focus\\:ring-1:focus": 1,
-   "[tailwind] .focus\\:ring-2:focus": 1,
-   "[tailwind] .focus\\:ring-accent:focus": 1,
-   "[tailwind] .focus\\:outline-hidden:focus": 1,
-   "[tailwind] .focus\\:outline-none:focus": 1,
-   "[tailwind] .focus-visible\\:outline-none:focus-visible": 1,
-   "[tailwind] .active\\:translate-0:active": 2,
-   "[tailwind] .active\\:shadow-none:active": 1,
-   "[tailwind] .disabled\\:hover\\:translate-0:disabled:hover": 2,
-   "[tailwind] .disabled\\:hover\\:shadow-none:disabled:hover": 1,
-   "[tailwind] .aria-\\[current\\=true\\]\\:hover\\:shadow\\![aria-current=\"true\"]:hover": 1,
-   "[tailwind] .data-\\[state\\=open\\]\\:translate-0\\![data-state=\"open\"]": 2,
-   "[tailwind] .data-\\[state\\=open\\]\\:shadow-none\\![data-state=\"open\"]": 1,
-   "[tailwind] @media (prefers-reduced-motion: no-preference) .motion-safe\\:hover\\:-translate-x-1:hover": 1,
-   "[tailwind] @media (prefers-reduced-motion: no-preference) .motion-safe\\:hover\\:-translate-y-1:hover": 1,
-   "[tailwind] @media not all and (width >= 64rem) :where(.max-lg\\:divide-x-0 > :not(:last-child))": 1,
-   "[tailwind] @media not all and (width >= 64rem) :where(.max-lg\\:divide-y > :not(:last-child))": 1,
-   "[tailwind] @media (width >= 40rem) .sm\\:font-normal": 1,
-   "[tailwind] @media (width >= 40rem) .sm\\:after\\:content-\\[\\'\\,\\'\\]::after": 1,
-   "[tailwind] @media (width >= 48rem) :where(.md\\:space-y-8 > :not(:last-child))": 1,
-   "[tailwind] @media (width >= 48rem) :where(.md\\:space-y-16 > :not(:last-child))": 1,
-   "[tailwind] @media (width >= 48rem) .md\\:bg-linear-to-r": 1,
-   "[tailwind] @media (width >= 48rem) @supports (background-image:linear-gradient(in lab, red, red)) .md\\:bg-linear-to-r": 1,
-   "[tailwind] @media (width >= 48rem) .md\\:leading-\\[0\\.9\\]": 1,
-   "[tailwind] @media (width >= 64rem) .lg\\:-translate-x-full": 1,
-   "[tailwind] @media (width >= 64rem) :where(.lg\\:divide-x-0 > :not(:last-child))": 1,
-   "[tailwind] @media (width >= 64rem) .lg\\:leading-10": 1,
-   "[tailwind] @media (width >= 64rem) .lg\\:leading-tight": 1,
-   "[tailwind] @media (prefers-color-scheme: dark) .dark\\:shadow-\\[4px_4px_0_0_rgba\\(255\\,255\\,255\\,0\\.35\\)\\]": 1,
-   "[tailwind] @media (prefers-color-scheme: dark) .dark\\:shadow-\\[4px_4px_0_rgba\\(255\\,255\\,255\\,0\\.25\\)\\]": 1,
-   "[tailwind] @media (prefers-color-scheme: dark) .dark\\:shadow-none": 1,
-   "[tailwind] @media (prefers-color-scheme: dark) .dark\\:invert": 1,
-   "[tailwind] @media (prefers-color-scheme: dark) .dark\\:prose-invert": 18,
-   "[tailwind] @media (prefers-color-scheme: dark) .dark\\:hover\\:shadow-\\[2px_2px_0_0_rgba\\(255\\,255\\,255\\,0\\.35\\)\\]:hover": 1,
-   "[tailwind] @media (prefers-color-scheme: dark) .dark\\:hover\\:shadow-\\[4px_4px_\\#fff\\]:hover": 1,
-   "[tailwind] @media (prefers-color-scheme: dark) .dark\\:hover\\:shadow-\\[4px_4px_0_0_rgba\\(255\\,255\\,255\\,0\\.35\\)\\]:hover": 1,
-   "[tailwind] @media (prefers-color-scheme: dark) .dark\\:hover\\:shadow-\\[4px_4px_white\\]:hover": 1,
-   "[tailwind] @starting-style .starting\\:translate-y-\\(--toast-offset\\)": 1,
-   "[tailwind] @media (forced-colors: active) .forced-colors\\:border-dashed, .forced-colors\\:disabled\\:border-dashed:disabled": 1,
-   "[tailwind] @media (forced-colors: active) .forced-colors\\:disabled\\:border-none:disabled": 1,
-   "[tailwind] @media (prefers-color-scheme: dark) .dark\\:\\[\\&_\\.wordmark_img\\]\\:invert .wordmark img": 1,
-   "[tailwind] .\\[\\&_a\\]\\:font-normal a": 1,
-   "[tailwind] .\\[\\&\\.sortable-chosen\\]\\:shadow.sortable-chosen": 1,
-   "[tailwind] .\\[\\&\\.sortable-ghost\\]\\:outline-dashed.sortable-ghost": 1,
-   "[tailwind] .\\[\\&\\>\\*\\]\\:border-none > *": 1,
-   "[tailwind] .\\[\\&\\>dt\\]\\:after\\:content-\\[\\'\\:\\'\\] > dt::after": 1,
-   "[tailwind] .\\[\\&\\>li\\]\\:leading-8 > li": 1,
-   "[tailwind] .\\[\\&\\>li\\:not\\(\\:last-child\\)\\]\\:after\\:content-\\[\\'_·_\\'\\] > li:not(:last-child)::after": 1,
-   "[app] *": 1,
-   "[app] .rich-text .embed": 3,
-   "[theme] :root": 16
+   "token": 191,
+   "app": 4,
+   "utility": 100
   }
  },
  "errors": [],
- "theme": [
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":root, :host",
-   "context": [
-    "@layer theme"
-   ],
-   "properties": {
-    "--font-sans": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
-    "--font-mono": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
-    "--color-red-100": "oklch(93.6% .032 17.717)",
-    "--color-red-500": "oklch(63.7% .237 25.331)",
-    "--color-red-700": "oklch(50.5% .213 27.518)",
-    "--color-yellow-50": "oklch(98.7% .026 102.212)",
-    "--color-yellow-400": "oklch(85.2% .199 91.936)",
-    "--color-yellow-800": "oklch(47.6% .114 61.907)",
-    "--color-blue-600": "oklch(54.6% .245 262.881)",
-    "--color-pink-600": "oklch(59.2% .249 .584)",
-    "--color-pink-800": "oklch(45.9% .187 3.815)",
-    "--color-gray-100": "oklch(96.7% .003 264.542)",
-    "--color-gray-200": "oklch(92.8% .006 264.531)",
-    "--color-gray-300": "oklch(87.2% .01 258.338)",
-    "--color-gray-400": "oklch(70.7% .022 261.325)",
-    "--color-gray-500": "oklch(55.1% .027 264.364)",
-    "--color-gray-600": "oklch(44.6% .03 256.802)",
-    "--color-gray-700": "oklch(37.3% .034 259.733)",
-    "--color-gray-800": "oklch(27.8% .033 256.848)",
-    "--color-black": "#000",
-    "--color-white": "#fff",
-    "--spacing": ".25rem",
-    "--breakpoint-lg": "64rem",
-    "--container-xs": "20rem",
-    "--container-sm": "24rem",
-    "--container-md": "28rem",
-    "--container-lg": "32rem",
-    "--container-xl": "36rem",
-    "--container-2xl": "42rem",
-    "--container-3xl": "48rem",
-    "--container-4xl": "56rem",
-    "--container-5xl": "64rem",
-    "--container-6xl": "72rem",
-    "--container-7xl": "80rem",
-    "--text-xs": ".75rem",
-    "--text-xs--line-height": "calc(1/.75)",
-    "--text-sm": ".875rem",
-    "--text-sm--line-height": "calc(1.25/.875)",
-    "--text-base": "1rem",
-    "--text-base--line-height": "calc(1.5/1)",
-    "--text-lg": "1.125rem",
-    "--text-lg--line-height": "calc(1.75/1.125)",
-    "--text-xl": "1.25rem",
-    "--text-xl--line-height": "calc(1.75/1.25)",
-    "--text-2xl": "1.5rem",
-    "--text-2xl--line-height": "calc(2/1.5)",
-    "--text-3xl": "1.875rem",
-    "--text-3xl--line-height": "calc(2.25/1.875)",
-    "--text-4xl": "2.25rem",
-    "--text-4xl--line-height": "calc(2.5/2.25)",
-    "--text-5xl": "3rem",
-    "--text-5xl--line-height": "1",
-    "--text-6xl": "3.75rem",
-    "--text-6xl--line-height": "1",
-    "--text-7xl": "4.5rem",
-    "--text-7xl--line-height": "1",
-    "--text-8xl": "6rem",
-    "--text-8xl--line-height": "1",
-    "--text-9xl": "8rem",
-    "--text-9xl--line-height": "1",
-    "--font-weight-normal": "400",
-    "--font-weight-medium": "500",
-    "--font-weight-semibold": "600",
-    "--font-weight-bold": "700",
-    "--tracking-tight": "-.025em",
-    "--tracking-wide": ".025em",
-    "--tracking-wider": ".05em",
-    "--tracking-widest": ".1em",
-    "--leading-tight": "1.25",
-    "--leading-snug": "1.375",
-    "--leading-relaxed": "1.625",
-    "--radius-xs": ".125rem",
-    "--radius-sm": "var(--radius)",
-    "--radius-md": ".375rem",
-    "--radius-lg": ".5rem",
-    "--radius-xl": ".75rem",
-    "--radius-2xl": "1rem",
-    "--radius-3xl": "1.5rem",
-    "--ease-out": "cubic-bezier(0,0,.2,1)",
-    "--ease-in-out": "cubic-bezier(.4,0,.2,1)",
-    "--animate-spin": "spin 1s linear infinite",
-    "--animate-pulse": "pulse 2s cubic-bezier(.4,0,.6,1)infinite",
-    "--aspect-video": "16/9",
-    "--default-transition-duration": ".15s",
-    "--default-transition-timing-function": "cubic-bezier(.4,0,.2,1)",
-    "--default-font-family": "var(--font-sans)",
-    "--default-mono-font-family": "var(--font-mono)",
-    "--radius": ".25rem",
-    "--color-pink": "#ff90e8",
-    "--color-purple": "#90a8ed",
-    "--color-green": "#23a094",
-    "--color-orange": "#ffc900",
-    "--color-red": "#dc341e",
-    "--color-yellow": "#f1f333",
-    "--color-gray": "#f4f4f0",
-    "--color-dark-gray": "#242423",
-    "--color-body": "var(--body-bg)",
-    "--color-background": "rgb(var(--filled))",
-    "--color-foreground": "rgb(var(--color))",
-    "--color-border": "rgb(var(--color)/var(--border-alpha))",
-    "--color-backdrop": "#000c",
-    "--color-accent": "rgb(var(--accent))",
-    "--color-indicator": "rgb(var(--indicator,var(--accent)))",
-    "--color-accent-foreground": "rgb(var(--contrast-accent))",
-    "--color-accent-with-text": "rgb(var(--accent-with-text))",
-    "--color-primary": "rgb(var(--primary))",
-    "--color-primary-foreground": "rgb(var(--contrast-primary))",
-    "--color-active-bg": "rgb(var(--color)/var(--gray-1))",
-    "--color-muted": "rgb(var(--color)/var(--gray-3))",
-    "--color-success": "rgb(var(--success))",
-    "--color-success-foreground": "rgb(var(--contrast-success))",
-    "--color-danger": "rgb(var(--danger))",
-    "--color-danger-foreground": "rgb(var(--contrast-danger))",
-    "--color-warning": "rgb(var(--warning))",
-    "--color-warning-foreground": "rgb(var(--contrast-warning))",
-    "--color-info": "rgb(var(--info))",
-    "--button-hover-offset": ".25rem",
-    "--spacing-product-page": "75.25rem",
-    "--grid-cols-sidebar": "1fr 3fr",
-    "--logo": "url(…)",
-    "--loading-spinner": "url(…)",
-    "--product-cover-placeholder": "url(…)"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "https://ichigo.gumroad.com/l/ichigo-reader inline-0",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--accent": "54 169 174",
-    "--accent-with-text": "54 169 174",
-    "--contrast-accent": "0 0 0",
-    "--font-family": "\"ABC Favorit\", \"ABC Favorit\", sans-serif",
-    "--color": "0 0 0",
-    "--primary": "var(--color)",
-    "--contrast-primary": "255 255 255",
-    "--filled": "255 255 255",
-    "--contrast-filled": "var(--color)",
-    "--danger": "220 52 30",
-    "--contrast-danger": "255 255 255",
-    "--body-bg": "#ffffff",
-    "--active-bg": "rgb(var(--color) / var(--gray-1))",
-    "--border-alpha": "1",
-    "--radius": "0.25rem",
-    "--button-hover-offset": "0.25rem"
-   },
-   "bin": "theme"
-  }
- ],
- "app": [
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":root, :host",
-   "context": [
-    "@layer base"
-   ],
-   "properties": {
-    "--lightningcss-light": "initial",
-    "--lightningcss-dark": "",
-    "--spacer-1": ".25rem",
-    "--spacer-2": ".5rem",
-    "--spacer-3": ".75rem",
-    "--spacer-4": "1rem",
-    "--spacer-5": "1.5rem",
-    "--spacer-6": "2rem",
-    "--spacer-7": "3rem",
-    "--spacer-8": "4rem",
-    "--border-radius-1": ".25rem",
-    "--border-radius-2": ".5rem",
-    "--border-radius-3": "10rem",
-    "--box-shadow-1": ".25rem .25rem 0rem var(--color)",
-    "--box-shadow-2": ".5rem .5rem 0rem var(--color)",
-    "--z-index-base": "0",
-    "--z-index-overlay": "1",
-    "--z-index-above-overlay": "2",
-    "--z-index-header": "3",
-    "--z-index-menubar": "10",
-    "--z-index-modal": "20",
-    "--z-index-tooltip": "30",
-    "--pink": "#ff90e8",
-    "--purple": "#90a8ed",
-    "--green": "#23a094",
-    "--orange": "#ffc900",
-    "--red": "#dc341e",
-    "--yellow": "#f1f333",
-    "--breakpoint-sm": "640px",
-    "--breakpoint-lg": "1024px",
-    "--success": "35 160 148",
-    "--contrast-success": "0 0 0",
-    "--warning": "255 201 0",
-    "--contrast-warning": "0 0 0",
-    "--danger": "220 52 30",
-    "--contrast-danger": "255 255 255",
-    "--info": "144 168 237",
-    "--contrast-info": "0 0 0",
-    "--accent": "255 144 232",
-    "--contrast-accent": "0 0 0",
-    "--primary": "0 0 0",
-    "--contrast-primary": "255 255 255",
-    "--black": "0 0 0",
-    "--contrast-black": "255 255 255",
-    "--filled": "255 255 255",
-    "--contrast-filled": "0 0 0",
-    "--accent-with-text": "var(--accent)",
-    "--color": "0 0 0",
-    "--neutral-accent": "255 144 232",
-    "--neutral-color": "0 0 0",
-    "--neutral-danger": "220 52 30",
-    "--neutral-filled": "255 255 255",
-    "--neutral-border-alpha": "1",
-    "--body-bg": "#f4f4f0",
-    "--border-alpha": "1",
-    "--font-family": "ABC Favorit,Avenir,Montserrat,Corbel,URW Gothic,source-sans-pro,sans-serif",
-    "--border-width": ".0625rem",
-    "--big-icon-size": "1.25em",
-    "--active-bg": "rgb(var(--filled))",
-    "--main-stack-width": "28rem",
-    "--dynamic-grid": "min(100%,calc((31.25rem - 100%)*1000))",
-    "--disabled-opacity": ".3",
-    "--form-element-height": "3rem",
-    "--transition-duration": ".14s"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": "*",
-   "context": [
-    "@layer base"
-   ],
-   "properties": {
-    "--border": "solid .0625rem rgb(var(--parent-color)/var(--border-alpha))",
-    "--outline": ".125rem solid rgb(var(--accent))",
-    "--gray-1": ".1",
-    "--gray-2": ".2",
-    "--gray-3": ".5"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": "*",
-   "context": [],
-   "properties": {
-    "--parent-color": "var(--color)"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".rich-text .embed",
-   "context": [],
-   "properties": {
-    "--color": "var(--contrast-filled)",
-    "--parent-color": "inherit",
-    "--active-bg": "rgb(var(--color)/.1)"
-   },
-   "bin": "app"
-  }
- ],
- "darkscope": [
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":root, :host",
-   "context": [
-    "@layer base",
-    "@media (prefers-color-scheme: dark)"
-   ],
-   "properties": {
-    "--lightningcss-light": "",
-    "--lightningcss-dark": "initial",
-    "--body-bg": "#242423",
-    "--primary": "221 221 221",
-    "--contrast-primary": "0 0 0",
-    "--color": "221 221 221",
-    "--filled": "0 0 0",
-    "--neutral-color": "221 221 221",
-    "--neutral-filled": "0 0 0",
-    "--neutral-border-alpha": ".35",
-    "--contrast-filled": "221 221 221",
-    "--contrast-black": "221 221 221",
-    "--border-alpha": ".35"
-   },
-   "bin": "darkscope"
-  }
- ],
- "vendor": [],
- "utility": [
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".\\[--color\\:var\\(--contrast-filled\\)\\]",
-   "context": [],
-   "properties": {
-    "--color": "var(--contrast-filled)"
-   },
-   "bin": "utility"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".\\[--lift-halo-offset\\:2px\\]",
-   "context": [],
-   "properties": {
-    "--lift-halo-offset": "2px"
-   },
-   "bin": "utility"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".\\[--lift-halo-offset\\:var\\(--button-hover-offset\\)\\]",
-   "context": [],
-   "properties": {
-    "--lift-halo-offset": "var(--button-hover-offset)"
-   },
-   "bin": "utility"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".\\[--toast-offset\\:calc\\(-100\\%-var\\(--spacer-4\\)\\)\\]",
-   "context": [],
-   "properties": {
-    "--toast-offset": "calc(-100% - var(--spacer-4))"
-   },
-   "bin": "utility"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".\\[--toast-offset\\:calc\\(100\\%\\+var\\(--spacer-4\\)\\+env\\(safe-area-inset-bottom\\)\\)\\]",
-   "context": [],
-   "properties": {
-    "--toast-offset": "calc(100% + var(--spacer-4) + env(safe-area-inset-bottom))"
-   },
-   "bin": "utility"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".not-active\\:hover\\:\\[--lift-halo-offset\\:var\\(--spacing\\)\\]:not(:active):hover",
-   "context": [],
-   "properties": {
-    "--lift-halo-offset": "var(--spacing)"
-   },
-   "bin": "utility"
-  }
- ],
- "tailwind": [
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": "*, ::before, ::after, ::backdrop",
-   "context": [
-    "@layer properties",
-    "@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b))))"
-   ],
-   "properties": {
-    "--tw-border-spacing-x": "0",
-    "--tw-border-spacing-y": "0",
-    "--tw-translate-x": "0",
-    "--tw-translate-y": "0",
-    "--tw-translate-z": "0",
-    "--tw-rotate-x": "initial",
-    "--tw-rotate-y": "initial",
-    "--tw-rotate-z": "initial",
-    "--tw-skew-x": "initial",
-    "--tw-skew-y": "initial",
-    "--tw-scroll-snap-strictness": "proximity",
-    "--tw-space-y-reverse": "0",
-    "--tw-space-x-reverse": "0",
-    "--tw-divide-x-reverse": "0",
-    "--tw-border-style": "solid",
-    "--tw-divide-y-reverse": "0",
-    "--tw-gradient-position": "initial",
-    "--tw-gradient-from": "#0000",
-    "--tw-gradient-via": "#0000",
-    "--tw-gradient-to": "#0000",
-    "--tw-gradient-stops": "initial",
-    "--tw-gradient-via-stops": "initial",
-    "--tw-gradient-from-position": "0%",
-    "--tw-gradient-via-position": "50%",
-    "--tw-gradient-to-position": "100%",
-    "--tw-leading": "initial",
-    "--tw-font-weight": "initial",
-    "--tw-tracking": "initial",
-    "--tw-ordinal": "initial",
-    "--tw-slashed-zero": "initial",
-    "--tw-numeric-figure": "initial",
-    "--tw-numeric-spacing": "initial",
-    "--tw-numeric-fraction": "initial",
-    "--tw-shadow": "0 0 #0000",
-    "--tw-shadow-color": "initial",
-    "--tw-shadow-alpha": "100%",
-    "--tw-inset-shadow": "0 0 #0000",
-    "--tw-inset-shadow-color": "initial",
-    "--tw-inset-shadow-alpha": "100%",
-    "--tw-ring-color": "initial",
-    "--tw-ring-shadow": "0 0 #0000",
-    "--tw-inset-ring-color": "initial",
-    "--tw-inset-ring-shadow": "0 0 #0000",
-    "--tw-ring-inset": "initial",
-    "--tw-ring-offset-width": "0px",
-    "--tw-ring-offset-color": "#fff",
-    "--tw-ring-offset-shadow": "0 0 #0000",
-    "--tw-outline-style": "solid",
-    "--tw-blur": "initial",
-    "--tw-brightness": "initial",
-    "--tw-contrast": "initial",
-    "--tw-grayscale": "initial",
-    "--tw-hue-rotate": "initial",
-    "--tw-invert": "initial",
-    "--tw-opacity": "initial",
-    "--tw-saturate": "initial",
-    "--tw-sepia": "initial",
-    "--tw-drop-shadow": "initial",
-    "--tw-drop-shadow-color": "initial",
-    "--tw-drop-shadow-alpha": "100%",
-    "--tw-drop-shadow-size": "initial",
-    "--tw-duration": "initial",
-    "--tw-ease": "initial",
-    "--tw-content": "\"\""
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".prose",
-   "context": [],
-   "properties": {
-    "--tw-prose-body": "oklch(37.3% .034 259.733)",
-    "--tw-prose-headings": "oklch(21% .034 264.665)",
-    "--tw-prose-lead": "oklch(44.6% .03 256.802)",
-    "--tw-prose-links": "oklch(21% .034 264.665)",
-    "--tw-prose-bold": "oklch(21% .034 264.665)",
-    "--tw-prose-counters": "oklch(55.1% .027 264.364)",
-    "--tw-prose-bullets": "oklch(87.2% .01 258.338)",
-    "--tw-prose-hr": "oklch(92.8% .006 264.531)",
-    "--tw-prose-quotes": "oklch(21% .034 264.665)",
-    "--tw-prose-quote-borders": "oklch(92.8% .006 264.531)",
-    "--tw-prose-captions": "oklch(55.1% .027 264.364)",
-    "--tw-prose-kbd": "oklch(21% .034 264.665)",
-    "--tw-prose-kbd-shadows": "oklab(21% -.00316127 -.0338527/.1)",
-    "--tw-prose-code": "oklch(21% .034 264.665)",
-    "--tw-prose-pre-code": "oklch(92.8% .006 264.531)",
-    "--tw-prose-pre-bg": "oklch(27.8% .033 256.848)",
-    "--tw-prose-th-borders": "oklch(87.2% .01 258.338)",
-    "--tw-prose-td-borders": "oklch(92.8% .006 264.531)",
-    "--tw-prose-invert-body": "oklch(87.2% .01 258.338)",
-    "--tw-prose-invert-headings": "#fff",
-    "--tw-prose-invert-lead": "oklch(70.7% .022 261.325)",
-    "--tw-prose-invert-links": "#fff",
-    "--tw-prose-invert-bold": "#fff",
-    "--tw-prose-invert-counters": "oklch(70.7% .022 261.325)",
-    "--tw-prose-invert-bullets": "oklch(44.6% .03 256.802)",
-    "--tw-prose-invert-hr": "oklch(37.3% .034 259.733)",
-    "--tw-prose-invert-quotes": "oklch(96.7% .003 264.542)",
-    "--tw-prose-invert-quote-borders": "oklch(37.3% .034 259.733)",
-    "--tw-prose-invert-captions": "oklch(70.7% .022 261.325)",
-    "--tw-prose-invert-kbd": "#fff",
-    "--tw-prose-invert-kbd-shadows": "#ffffff1a",
-    "--tw-prose-invert-code": "#fff",
-    "--tw-prose-invert-pre-code": "oklch(87.2% .01 258.338)",
-    "--tw-prose-invert-pre-bg": "#00000080",
-    "--tw-prose-invert-th-borders": "oklch(44.6% .03 256.802)",
-    "--tw-prose-invert-td-borders": "oklch(37.3% .034 259.733)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".border-spacing-0",
-   "context": [],
-   "properties": {
-    "--tw-border-spacing-x": "calc(var(--spacing)*0)",
-    "--tw-border-spacing-y": "calc(var(--spacing)*0)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".-translate-1",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(var(--spacing)*-1)",
-    "--tw-translate-y": "calc(var(--spacing)*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".-translate-1\\/2",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(calc(1/2*100%)*-1)",
-    "--tw-translate-y": "calc(calc(1/2*100%)*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".translate-\\[-50\\%\\]",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "-50%",
-    "--tw-translate-y": "-50%"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".-translate-x-1\\/2",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(calc(1/2*100%)*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".-translate-x-1\\/2\\!",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(calc(1/2*100%)*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".-translate-x-2",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(var(--spacing)*-2)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".-translate-x-3",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(var(--spacing)*-3)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".-translate-x-\\[29\\.289\\%\\]",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(29.289%*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".translate-x-1\\/2",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(1/2*100%)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".translate-x-2",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(var(--spacing)*2)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".translate-x-3",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(var(--spacing)*3)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".translate-x-6",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(var(--spacing)*6)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".translate-x-full",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "100%"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".-translate-y-1\\.5",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "calc(var(--spacing)*-1.5)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".-translate-y-1\\/2",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "calc(calc(1/2*100%)*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".-translate-y-1\\/2\\!",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "calc(calc(1/2*100%)*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".-translate-y-2",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "calc(var(--spacing)*-2)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".-translate-y-\\[5px\\]",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "calc(5px*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".-translate-y-\\[50\\%\\]",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "calc(50%*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".-translate-y-full",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "-100%"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".-translate-y-px",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "-1px"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".translate-y-\\(--toast-offset\\)",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "var(--toast-offset)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".translate-y-0",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "calc(var(--spacing)*0)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".translate-y-1\\.5",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "calc(var(--spacing)*1.5)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".translate-y-2",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "calc(var(--spacing)*2)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".translate-y-6",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "calc(var(--spacing)*6)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".translate-y-\\[5px\\]",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "5px"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".translate-y-px",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "1px"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".snap-mandatory",
-   "context": [],
-   "properties": {
-    "--tw-scroll-snap-strictness": "mandatory"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.space-y-1 > :not(:last-child))",
-   "context": [],
-   "properties": {
-    "--tw-space-y-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.space-y-2 > :not(:last-child))",
-   "context": [],
-   "properties": {
-    "--tw-space-y-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.space-y-3 > :not(:last-child))",
-   "context": [],
-   "properties": {
-    "--tw-space-y-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.space-y-4 > :not(:last-child))",
-   "context": [],
-   "properties": {
-    "--tw-space-y-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.space-y-5 > :not(:last-child))",
-   "context": [],
-   "properties": {
-    "--tw-space-y-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.space-y-6 > :not(:last-child))",
-   "context": [],
-   "properties": {
-    "--tw-space-y-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.space-y-8 > :not(:last-child))",
-   "context": [],
-   "properties": {
-    "--tw-space-y-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.space-y-12 > :not(:last-child))",
-   "context": [],
-   "properties": {
-    "--tw-space-y-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.space-y-16 > :not(:last-child))",
-   "context": [],
-   "properties": {
-    "--tw-space-y-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.space-x-3 > :not(:last-child))",
-   "context": [],
-   "properties": {
-    "--tw-space-x-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.space-x-4 > :not(:last-child))",
-   "context": [],
-   "properties": {
-    "--tw-space-x-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.divide-x > :not(:last-child))",
-   "context": [],
-   "properties": {
-    "--tw-divide-x-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.divide-y > :not(:last-child))",
-   "context": [],
-   "properties": {
-    "--tw-divide-y-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.divide-solid > :not(:last-child))",
-   "context": [],
-   "properties": {
-    "--tw-border-style": "solid"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".border-dashed",
-   "context": [],
-   "properties": {
-    "--tw-border-style": "dashed"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".border-none",
-   "context": [],
-   "properties": {
-    "--tw-border-style": "none"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".border-none\\!",
-   "context": [],
-   "properties": {
-    "--tw-border-style": "none"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".border-solid",
-   "context": [],
-   "properties": {
-    "--tw-border-style": "solid"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".bg-gradient-to-t",
-   "context": [],
-   "properties": {
-    "--tw-gradient-position": "to top in oklab"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".from-black",
-   "context": [],
-   "properties": {
-    "--tw-gradient-from": "var(--color-black)",
-    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position),var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-to)var(--tw-gradient-to-position))"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".from-red-500",
-   "context": [],
-   "properties": {
-    "--tw-gradient-from": "var(--color-red-500)",
-    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position),var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-to)var(--tw-gradient-to-position))"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".leading-6",
-   "context": [],
-   "properties": {
-    "--tw-leading": "calc(var(--spacing)*6)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".leading-7",
-   "context": [],
-   "properties": {
-    "--tw-leading": "calc(var(--spacing)*7)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".leading-\\[0\\.9\\]",
-   "context": [],
-   "properties": {
-    "--tw-leading": ".9"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".leading-\\[0\\.95\\]",
-   "context": [],
-   "properties": {
-    "--tw-leading": ".95"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".leading-\\[1\\.2\\]",
-   "context": [],
-   "properties": {
-    "--tw-leading": "1.2"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".leading-\\[1\\.3\\]",
-   "context": [],
-   "properties": {
-    "--tw-leading": "1.3"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".leading-\\[1\\.05\\]",
-   "context": [],
-   "properties": {
-    "--tw-leading": "1.05"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".leading-\\[inherit\\]",
-   "context": [],
-   "properties": {
-    "--tw-leading": "inherit"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".leading-none",
-   "context": [],
-   "properties": {
-    "--tw-leading": "1"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".leading-relaxed",
-   "context": [],
-   "properties": {
-    "--tw-leading": "var(--leading-relaxed)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".leading-snug",
-   "context": [],
-   "properties": {
-    "--tw-leading": "var(--leading-snug)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".leading-tight",
-   "context": [],
-   "properties": {
-    "--tw-leading": "var(--leading-tight)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".font-bold",
-   "context": [],
-   "properties": {
-    "--tw-font-weight": "var(--font-weight-bold)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".font-medium",
-   "context": [],
-   "properties": {
-    "--tw-font-weight": "var(--font-weight-medium)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".font-normal",
-   "context": [],
-   "properties": {
-    "--tw-font-weight": "var(--font-weight-normal)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".font-semibold",
-   "context": [],
-   "properties": {
-    "--tw-font-weight": "var(--font-weight-semibold)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".tracking-\\[0\\.5em\\]",
-   "context": [],
-   "properties": {
-    "--tw-tracking": ".5em"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".tracking-tight",
-   "context": [],
-   "properties": {
-    "--tw-tracking": "var(--tracking-tight)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".tracking-wide",
-   "context": [],
-   "properties": {
-    "--tw-tracking": "var(--tracking-wide)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".tracking-wider",
-   "context": [],
-   "properties": {
-    "--tw-tracking": "var(--tracking-wider)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".tracking-widest",
-   "context": [],
-   "properties": {
-    "--tw-tracking": "var(--tracking-widest)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".tabular-nums",
-   "context": [],
-   "properties": {
-    "--tw-numeric-spacing": "tabular-nums"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".shadow",
-   "context": [],
-   "properties": {
-    "--tw-shadow": ".25rem .25rem 0 var(--tw-shadow-color,currentColor)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".shadow-\\[0\\.25rem_0\\.25rem_0_var\\(--color-black\\)\\]",
-   "context": [],
-   "properties": {
-    "--tw-shadow": ".25rem .25rem 0 var(--tw-shadow-color,var(--color-black))"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".shadow-\\[4px_4px_0_\\#000\\]",
-   "context": [],
-   "properties": {
-    "--tw-shadow": "4px 4px 0 var(--tw-shadow-color,#000)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".shadow-\\[4px_4px_0_0_\\#000\\]",
-   "context": [],
-   "properties": {
-    "--tw-shadow": "4px 4px 0 0 var(--tw-shadow-color,#000)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".shadow-lg",
-   "context": [],
-   "properties": {
-    "--tw-shadow": ".5rem .5rem 0 var(--tw-shadow-color,currentColor)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".shadow-none",
-   "context": [],
-   "properties": {
-    "--tw-shadow": "0 0 #0000"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".shadow-none\\!",
-   "context": [],
-   "properties": {
-    "--tw-shadow": "0 0 #0000"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".ring, .ring-1",
-   "context": [],
-   "properties": {
-    "--tw-ring-shadow": "var(--tw-ring-inset,)0 0 0 calc(1px + var(--tw-ring-offset-width))var(--tw-ring-color,currentcolor)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".ring-accent",
-   "context": [],
-   "properties": {
-    "--tw-ring-color": "var(--color-accent)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".ring-indicator",
-   "context": [],
-   "properties": {
-    "--tw-ring-color": "var(--color-indicator)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".outline-hidden",
-   "context": [],
-   "properties": {
-    "--tw-outline-style": "none"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".blur",
-   "context": [],
-   "properties": {
-    "--tw-blur": "blur(8px)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".drop-shadow",
-   "context": [],
-   "properties": {
-    "--tw-drop-shadow-size": "drop-shadow(0 1px 2px var(--tw-drop-shadow-color,#0000001a))drop-shadow(0 1px 1px var(--tw-drop-shadow-color,#0000000f))",
-    "--tw-drop-shadow": "drop-shadow(0 1px 2px #0000001a)drop-shadow(0 1px 1px #0000000f)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".sepia",
-   "context": [],
-   "properties": {
-    "--tw-sepia": "sepia(100%)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".duration-30",
-   "context": [],
-   "properties": {
-    "--tw-duration": "30ms"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".duration-100",
-   "context": [],
-   "properties": {
-    "--tw-duration": ".1s"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".duration-150",
-   "context": [],
-   "properties": {
-    "--tw-duration": ".15s"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".duration-200",
-   "context": [],
-   "properties": {
-    "--tw-duration": ".2s"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".duration-300",
-   "context": [],
-   "properties": {
-    "--tw-duration": ".3s"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".ease-in-out",
-   "context": [],
-   "properties": {
-    "--tw-ease": "var(--ease-in-out)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".ease-out",
-   "context": [],
-   "properties": {
-    "--tw-ease": "var(--ease-out)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".outline-none",
-   "context": [],
-   "properties": {
-    "--tw-outline-style": "none"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".outline-solid",
-   "context": [],
-   "properties": {
-    "--tw-outline-style": "solid"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".group-hover\\:-translate-x-2:is(:where(.group):hover *)",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(var(--spacing)*-2)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".group-hover\\:-translate-x-px:is(:where(.group):hover *)",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "-1px"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".group-hover\\:translate-x-2:is(:where(.group):hover *)",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(var(--spacing)*2)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".group-hover\\:-translate-y-2:is(:where(.group):hover *)",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "calc(var(--spacing)*-2)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".group-hover\\:-translate-y-px:is(:where(.group):hover *)",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "-1px"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".group-hover\\:translate-y-2:is(:where(.group):hover *)",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "calc(var(--spacing)*2)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".group-hover\\:shadow-\\[2px_2px_0_0_\\#000\\]:is(:where(.group):hover *)",
-   "context": [],
-   "properties": {
-    "--tw-shadow": "2px 2px 0 0 var(--tw-shadow-color,#000)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".group-hover\\/card\\:-translate-x-1:is(:where(.group\\/card):hover *)",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(var(--spacing)*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".group-hover\\/card\\:-translate-y-1:is(:where(.group\\/card):hover *)",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "calc(var(--spacing)*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".group-hover\\/card\\:shadow-\\[3px_3px_\\#000\\]:is(:where(.group\\/card):hover *)",
-   "context": [],
-   "properties": {
-    "--tw-shadow": "3px 3px var(--tw-shadow-color,#000)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".before\\:content-\\[\\'\\'\\]::before",
-   "context": [],
-   "properties": {
-    "--tw-content": "\"\""
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".after\\:-translate-y-1\\/2::after",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "calc(calc(1/2*100%)*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".after\\:duration-150::after",
-   "context": [],
-   "properties": {
-    "--tw-duration": ".15s"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".after\\:content-\\[\\\"\\\"\\]::after, .after\\:content-\\[\\'\\'\\]::after",
-   "context": [],
-   "properties": {
-    "--tw-content": "\"\""
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".after\\:content-\\[\\'\\'\\]\\!::after",
-   "context": [],
-   "properties": {
-    "--tw-content": "\"\""
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".focus-within\\:ring-1:focus-within",
-   "context": [],
-   "properties": {
-    "--tw-ring-shadow": "var(--tw-ring-inset,)0 0 0 calc(1px + var(--tw-ring-offset-width))var(--tw-ring-color,currentcolor)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".focus-within\\:ring-accent:focus-within",
-   "context": [],
-   "properties": {
-    "--tw-ring-color": "var(--color-accent)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".focus-within\\:outline-none:focus-within",
-   "context": [],
-   "properties": {
-    "--tw-outline-style": "none"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".focus-within\\:outline-solid:focus-within",
-   "context": [],
-   "properties": {
-    "--tw-outline-style": "solid"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".hover\\:-translate-\\(--button-hover-offset\\):hover",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(var(--button-hover-offset)*-1)",
-    "--tw-translate-y": "calc(var(--button-hover-offset)*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".hover\\:-translate-1:hover",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(var(--spacing)*-1)",
-    "--tw-translate-y": "calc(var(--spacing)*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".hover\\:translate-0:hover",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(var(--spacing)*0)",
-    "--tw-translate-y": "calc(var(--spacing)*0)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".hover\\:-translate-x-1:hover",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(var(--spacing)*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".hover\\:-translate-x-\\[2px\\]:hover",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(2px*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".hover\\:-translate-y-1:hover",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "calc(var(--spacing)*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".hover\\:-translate-y-\\[2px\\]:hover",
-   "context": [],
-   "properties": {
-    "--tw-translate-y": "calc(2px*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".hover\\:shadow:hover",
-   "context": [],
-   "properties": {
-    "--tw-shadow": ".25rem .25rem 0 var(--tw-shadow-color,currentColor)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".hover\\:shadow\\!:hover",
-   "context": [],
-   "properties": {
-    "--tw-shadow": ".25rem .25rem 0 var(--tw-shadow-color,currentColor)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".hover\\:shadow-\\[2px_2px_0_0_rgba\\(0\\,0\\,0\\,1\\)\\]:hover",
-   "context": [],
-   "properties": {
-    "--tw-shadow": "2px 2px 0 0 var(--tw-shadow-color,#000)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".hover\\:shadow-\\[3px_3px_\\#000\\]:hover",
-   "context": [],
-   "properties": {
-    "--tw-shadow": "3px 3px var(--tw-shadow-color,#000)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".hover\\:shadow-\\[4px_4px_\\#000\\]:hover",
-   "context": [],
-   "properties": {
-    "--tw-shadow": "4px 4px var(--tw-shadow-color,#000)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".hover\\:shadow-\\[4px_4px_0_0_\\#000000\\]:hover",
-   "context": [],
-   "properties": {
-    "--tw-shadow": "4px 4px 0 0 var(--tw-shadow-color,#000)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".hover\\:shadow-\\[4px_4px_black\\]:hover",
-   "context": [],
-   "properties": {
-    "--tw-shadow": "4px 4px var(--tw-shadow-color,black)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".hover\\:shadow-\\[var\\(--button-hover-offset\\)_var\\(--button-hover-offset\\)_0_var\\(--color-black\\)\\]:hover",
-   "context": [],
-   "properties": {
-    "--tw-shadow": "var(--button-hover-offset)var(--button-hover-offset)0 var(--color-black)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".hover\\:shadow-none:hover",
-   "context": [],
-   "properties": {
-    "--tw-shadow": "0 0 #0000"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".not-active\\:hover\\:-translate-1:not(:active):hover",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(var(--spacing)*-1)",
-    "--tw-translate-y": "calc(var(--spacing)*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".not-active\\:hover\\:translate-0:not(:active):hover",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(var(--spacing)*0)",
-    "--tw-translate-y": "calc(var(--spacing)*0)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".not-active\\:hover\\:shadow:not(:active):hover",
-   "context": [],
-   "properties": {
-    "--tw-shadow": ".25rem .25rem 0 var(--tw-shadow-color,currentColor)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".not-active\\:hover\\:shadow-none:not(:active):hover",
-   "context": [],
-   "properties": {
-    "--tw-shadow": "0 0 #0000"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".focus\\:ring-1:focus",
-   "context": [],
-   "properties": {
-    "--tw-ring-shadow": "var(--tw-ring-inset,)0 0 0 calc(1px + var(--tw-ring-offset-width))var(--tw-ring-color,currentcolor)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".focus\\:ring-2:focus",
-   "context": [],
-   "properties": {
-    "--tw-ring-shadow": "var(--tw-ring-inset,)0 0 0 calc(2px + var(--tw-ring-offset-width))var(--tw-ring-color,currentcolor)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".focus\\:ring-accent:focus",
-   "context": [],
-   "properties": {
-    "--tw-ring-color": "var(--color-accent)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".focus\\:outline-hidden:focus",
-   "context": [],
-   "properties": {
-    "--tw-outline-style": "none"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".focus\\:outline-none:focus",
-   "context": [],
-   "properties": {
-    "--tw-outline-style": "none"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".focus-visible\\:outline-none:focus-visible",
-   "context": [],
-   "properties": {
-    "--tw-outline-style": "none"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".active\\:translate-0:active",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(var(--spacing)*0)",
-    "--tw-translate-y": "calc(var(--spacing)*0)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".active\\:shadow-none:active",
-   "context": [],
-   "properties": {
-    "--tw-shadow": "0 0 #0000"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".disabled\\:hover\\:translate-0:disabled:hover",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(var(--spacing)*0)",
-    "--tw-translate-y": "calc(var(--spacing)*0)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".disabled\\:hover\\:shadow-none:disabled:hover",
-   "context": [],
-   "properties": {
-    "--tw-shadow": "0 0 #0000"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".aria-\\[current\\=true\\]\\:hover\\:shadow\\![aria-current=\"true\"]:hover",
-   "context": [],
-   "properties": {
-    "--tw-shadow": ".25rem .25rem 0 var(--tw-shadow-color,currentColor)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".data-\\[state\\=open\\]\\:translate-0\\![data-state=\"open\"]",
-   "context": [],
-   "properties": {
-    "--tw-translate-x": "calc(var(--spacing)*0)",
-    "--tw-translate-y": "calc(var(--spacing)*0)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".data-\\[state\\=open\\]\\:shadow-none\\![data-state=\"open\"]",
-   "context": [],
-   "properties": {
-    "--tw-shadow": "0 0 #0000"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".motion-safe\\:hover\\:-translate-x-1:hover",
-   "context": [
-    "@media (prefers-reduced-motion: no-preference)"
-   ],
-   "properties": {
-    "--tw-translate-x": "calc(var(--spacing)*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".motion-safe\\:hover\\:-translate-y-1:hover",
-   "context": [
-    "@media (prefers-reduced-motion: no-preference)"
-   ],
-   "properties": {
-    "--tw-translate-y": "calc(var(--spacing)*-1)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.max-lg\\:divide-x-0 > :not(:last-child))",
-   "context": [
-    "@media not all and (width >= 64rem)"
-   ],
-   "properties": {
-    "--tw-divide-x-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.max-lg\\:divide-y > :not(:last-child))",
-   "context": [
-    "@media not all and (width >= 64rem)"
-   ],
-   "properties": {
-    "--tw-divide-y-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".sm\\:font-normal",
-   "context": [
-    "@media (width >= 40rem)"
-   ],
-   "properties": {
-    "--tw-font-weight": "var(--font-weight-normal)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".sm\\:after\\:content-\\[\\'\\,\\'\\]::after",
-   "context": [
-    "@media (width >= 40rem)"
-   ],
-   "properties": {
-    "--tw-content": "\",\""
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.md\\:space-y-8 > :not(:last-child))",
-   "context": [
-    "@media (width >= 48rem)"
-   ],
-   "properties": {
-    "--tw-space-y-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.md\\:space-y-16 > :not(:last-child))",
-   "context": [
-    "@media (width >= 48rem)"
-   ],
-   "properties": {
-    "--tw-space-y-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".md\\:bg-linear-to-r",
-   "context": [
-    "@media (width >= 48rem)"
-   ],
-   "properties": {
-    "--tw-gradient-position": "to right"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".md\\:bg-linear-to-r",
-   "context": [
-    "@media (width >= 48rem)",
-    "@supports (background-image:linear-gradient(in lab, red, red))"
-   ],
-   "properties": {
-    "--tw-gradient-position": "to right in oklab"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".md\\:leading-\\[0\\.9\\]",
-   "context": [
-    "@media (width >= 48rem)"
-   ],
-   "properties": {
-    "--tw-leading": ".9"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".lg\\:-translate-x-full",
-   "context": [
-    "@media (width >= 64rem)"
-   ],
-   "properties": {
-    "--tw-translate-x": "-100%"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ":where(.lg\\:divide-x-0 > :not(:last-child))",
-   "context": [
-    "@media (width >= 64rem)"
-   ],
-   "properties": {
-    "--tw-divide-x-reverse": "0"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".lg\\:leading-10",
-   "context": [
-    "@media (width >= 64rem)"
-   ],
-   "properties": {
-    "--tw-leading": "calc(var(--spacing)*10)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".lg\\:leading-tight",
-   "context": [
-    "@media (width >= 64rem)"
-   ],
-   "properties": {
-    "--tw-leading": "var(--leading-tight)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".dark\\:shadow-\\[4px_4px_0_0_rgba\\(255\\,255\\,255\\,0\\.35\\)\\]",
-   "context": [
-    "@media (prefers-color-scheme: dark)"
-   ],
-   "properties": {
-    "--tw-shadow": "4px 4px 0 0 var(--tw-shadow-color,#ffffff59)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".dark\\:shadow-\\[4px_4px_0_rgba\\(255\\,255\\,255\\,0\\.25\\)\\]",
-   "context": [
-    "@media (prefers-color-scheme: dark)"
-   ],
-   "properties": {
-    "--tw-shadow": "4px 4px 0 var(--tw-shadow-color,#ffffff40)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".dark\\:shadow-none",
-   "context": [
-    "@media (prefers-color-scheme: dark)"
-   ],
-   "properties": {
-    "--tw-shadow": "0 0 #0000"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".dark\\:invert",
-   "context": [
-    "@media (prefers-color-scheme: dark)"
-   ],
-   "properties": {
-    "--tw-invert": "invert(100%)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".dark\\:prose-invert",
-   "context": [
-    "@media (prefers-color-scheme: dark)"
-   ],
-   "properties": {
-    "--tw-prose-body": "var(--tw-prose-invert-body)",
-    "--tw-prose-headings": "var(--tw-prose-invert-headings)",
-    "--tw-prose-lead": "var(--tw-prose-invert-lead)",
-    "--tw-prose-links": "var(--tw-prose-invert-links)",
-    "--tw-prose-bold": "var(--tw-prose-invert-bold)",
-    "--tw-prose-counters": "var(--tw-prose-invert-counters)",
-    "--tw-prose-bullets": "var(--tw-prose-invert-bullets)",
-    "--tw-prose-hr": "var(--tw-prose-invert-hr)",
-    "--tw-prose-quotes": "var(--tw-prose-invert-quotes)",
-    "--tw-prose-quote-borders": "var(--tw-prose-invert-quote-borders)",
-    "--tw-prose-captions": "var(--tw-prose-invert-captions)",
-    "--tw-prose-kbd": "var(--tw-prose-invert-kbd)",
-    "--tw-prose-kbd-shadows": "var(--tw-prose-invert-kbd-shadows)",
-    "--tw-prose-code": "var(--tw-prose-invert-code)",
-    "--tw-prose-pre-code": "var(--tw-prose-invert-pre-code)",
-    "--tw-prose-pre-bg": "var(--tw-prose-invert-pre-bg)",
-    "--tw-prose-th-borders": "var(--tw-prose-invert-th-borders)",
-    "--tw-prose-td-borders": "var(--tw-prose-invert-td-borders)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".dark\\:hover\\:shadow-\\[2px_2px_0_0_rgba\\(255\\,255\\,255\\,0\\.35\\)\\]:hover",
-   "context": [
-    "@media (prefers-color-scheme: dark)"
-   ],
-   "properties": {
-    "--tw-shadow": "2px 2px 0 0 var(--tw-shadow-color,#ffffff59)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".dark\\:hover\\:shadow-\\[4px_4px_\\#fff\\]:hover",
-   "context": [
-    "@media (prefers-color-scheme: dark)"
-   ],
-   "properties": {
-    "--tw-shadow": "4px 4px var(--tw-shadow-color,#fff)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".dark\\:hover\\:shadow-\\[4px_4px_0_0_rgba\\(255\\,255\\,255\\,0\\.35\\)\\]:hover",
-   "context": [
-    "@media (prefers-color-scheme: dark)"
-   ],
-   "properties": {
-    "--tw-shadow": "4px 4px 0 0 var(--tw-shadow-color,#ffffff59)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".dark\\:hover\\:shadow-\\[4px_4px_white\\]:hover",
-   "context": [
-    "@media (prefers-color-scheme: dark)"
-   ],
-   "properties": {
-    "--tw-shadow": "4px 4px var(--tw-shadow-color,white)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".starting\\:translate-y-\\(--toast-offset\\)",
-   "context": [
-    "@starting-style"
-   ],
-   "properties": {
-    "--tw-translate-y": "var(--toast-offset)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".forced-colors\\:border-dashed, .forced-colors\\:disabled\\:border-dashed:disabled",
-   "context": [
-    "@media (forced-colors: active)"
-   ],
-   "properties": {
-    "--tw-border-style": "dashed"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".forced-colors\\:disabled\\:border-none:disabled",
-   "context": [
-    "@media (forced-colors: active)"
-   ],
-   "properties": {
-    "--tw-border-style": "none"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".dark\\:\\[\\&_\\.wordmark_img\\]\\:invert .wordmark img",
-   "context": [
-    "@media (prefers-color-scheme: dark)"
-   ],
-   "properties": {
-    "--tw-invert": "invert(100%)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".\\[\\&_a\\]\\:font-normal a",
-   "context": [],
-   "properties": {
-    "--tw-font-weight": "var(--font-weight-normal)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".\\[\\&\\.sortable-chosen\\]\\:shadow.sortable-chosen",
-   "context": [],
-   "properties": {
-    "--tw-shadow": ".25rem .25rem 0 var(--tw-shadow-color,currentColor)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".\\[\\&\\.sortable-ghost\\]\\:outline-dashed.sortable-ghost",
-   "context": [],
-   "properties": {
-    "--tw-outline-style": "dashed"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".\\[\\&\\>\\*\\]\\:border-none > *",
-   "context": [],
-   "properties": {
-    "--tw-border-style": "none"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".\\[\\&\\>dt\\]\\:after\\:content-\\[\\'\\:\\'\\] > dt::after",
-   "context": [],
-   "properties": {
-    "--tw-content": "\":\""
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".\\[\\&\\>li\\]\\:leading-8 > li",
-   "context": [],
-   "properties": {
-    "--tw-leading": "calc(var(--spacing)*8)"
-   },
-   "bin": "tailwind"
-  },
-  {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
-   "selector": ".\\[\\&\\>li\\:not\\(\\:last-child\\)\\]\\:after\\:content-\\[\\'_·_\\'\\] > li:not(:last-child)::after",
-   "context": [],
-   "properties": {
-    "--tw-content": "\" · \""
-   },
-   "bin": "tailwind"
-  }
- ],
  "fonts": [
   {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
+   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-CJSCwH3f.css",
    "font-family": "\"ABC Favorit\"",
    "src": "url(…)"
   },
   {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
+   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-CJSCwH3f.css",
    "font-family": "\"ABC Favorit\"",
    "src": "url(…)",
    "font-style": "italic"
   },
   {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
+   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-CJSCwH3f.css",
    "font-family": "\"ABC Favorit\"",
    "src": "url(…)",
    "font-weight": "700"
   },
   {
-   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-D3ivUF3s.css",
+   "file": "https://assets.gumroad.com/vite/assets/entrypoints/design-CJSCwH3f.css",
    "font-family": "\"ABC Favorit\"",
    "src": "url(…)",
    "font-weight": "700",
@@ -2459,13 +61,13 @@
   "light": {
    "--accent": {
     "raw": "255 144 232",
-    "kind": "color",
-    "value": "#ff90e8"
+    "kind": "other",
+    "value": "255 144 232"
    },
    "--accent-with-text": {
     "raw": "255 144 232",
-    "kind": "color",
-    "value": "#ff90e8"
+    "kind": "other",
+    "value": "255 144 232"
    },
    "--active-bg": {
     "raw": "rgb(255 255 255)",
@@ -2474,25 +76,28 @@
    },
    "--animate-pulse": {
     "raw": "pulse 2s cubic-bezier(.4,0,.6,1)infinite",
-    "kind": "other"
+    "kind": "other",
+    "value": "pulse 2s cubic-bezier(.4,0,.6,1)infinite"
    },
    "--animate-spin": {
     "raw": "spin 1s linear infinite",
-    "kind": "other"
+    "kind": "other",
+    "value": "spin 1s linear infinite"
    },
    "--aspect-video": {
     "raw": "16/9",
-    "kind": "other"
+    "kind": "other",
+    "value": "16/9"
    },
    "--big-icon-size": {
     "raw": "1.25em",
-    "kind": "other",
-    "note": "font-relative length; resolves per element"
+    "kind": "dimension",
+    "value": "20px"
    },
    "--black": {
     "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
+    "kind": "other",
+    "value": "0 0 0"
    },
    "--body-bg": {
     "raw": "#f4f4f0",
@@ -2501,12 +106,13 @@
    },
    "--border": {
     "raw": "solid .0625rem rgb(0 0 0/1)",
-    "kind": "other"
+    "kind": "other",
+    "value": "solid .0625rem rgb(0 0 0/1)"
    },
    "--border-alpha": {
     "raw": "1",
-    "kind": "number",
-    "value": 1
+    "kind": "other",
+    "value": "1"
    },
    "--border-radius-1": {
     "raw": ".25rem",
@@ -2530,15 +136,13 @@
    },
    "--box-shadow-1": {
     "raw": ".25rem .25rem 0rem 0 0 0",
-    "kind": "shadow",
-    "value": "rgb(0, 0, 0) 4px 4px 0px 0px",
-    "note": "channel-triplet colour wrapped rgb() the way the site consumes it"
+    "kind": "other",
+    "value": ".25rem .25rem 0rem 0 0 0"
    },
    "--box-shadow-2": {
     "raw": ".5rem .5rem 0rem 0 0 0",
-    "kind": "shadow",
-    "value": "rgb(0, 0, 0) 8px 8px 0px 0px",
-    "note": "channel-triplet colour wrapped rgb() the way the site consumes it"
+    "kind": "other",
+    "value": ".5rem .5rem 0rem 0 0 0"
    },
    "--breakpoint-lg": {
     "raw": "1024px",
@@ -2557,8 +161,8 @@
    },
    "--color": {
     "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
+    "kind": "other",
+    "value": "0 0 0"
    },
    "--color-accent": {
     "raw": "rgb(255 144 232)",
@@ -2598,7 +202,7 @@
    "--color-blue-600": {
     "raw": "oklch(54.6% .245 262.881)",
     "kind": "color",
-    "value": "#155dfc"
+    "value": "oklch(0.546 0.245 262.881)"
    },
    "--color-body": {
     "raw": "#f4f4f0",
@@ -2638,42 +242,42 @@
    "--color-gray-100": {
     "raw": "oklch(96.7% .003 264.542)",
     "kind": "color",
-    "value": "#f3f4f6"
+    "value": "oklch(0.967 0.003 264.542)"
    },
    "--color-gray-200": {
     "raw": "oklch(92.8% .006 264.531)",
     "kind": "color",
-    "value": "#e5e7eb"
+    "value": "oklch(0.928 0.006 264.531)"
    },
    "--color-gray-300": {
     "raw": "oklch(87.2% .01 258.338)",
     "kind": "color",
-    "value": "#d1d5dc"
+    "value": "oklch(0.872 0.01 258.338)"
    },
    "--color-gray-400": {
     "raw": "oklch(70.7% .022 261.325)",
     "kind": "color",
-    "value": "#99a1af"
+    "value": "oklch(0.707 0.022 261.325)"
    },
    "--color-gray-500": {
     "raw": "oklch(55.1% .027 264.364)",
     "kind": "color",
-    "value": "#6a7282"
+    "value": "oklch(0.551 0.027 264.364)"
    },
    "--color-gray-600": {
     "raw": "oklch(44.6% .03 256.802)",
     "kind": "color",
-    "value": "#4a5565"
+    "value": "oklch(0.446 0.03 256.802)"
    },
    "--color-gray-700": {
     "raw": "oklch(37.3% .034 259.733)",
     "kind": "color",
-    "value": "#364153"
+    "value": "oklch(0.373 0.034 259.733)"
    },
    "--color-gray-800": {
     "raw": "oklch(27.8% .033 256.848)",
     "kind": "color",
-    "value": "#1e2939"
+    "value": "oklch(0.278 0.033 256.848)"
    },
    "--color-green": {
     "raw": "#23a094",
@@ -2708,12 +312,12 @@
    "--color-pink-600": {
     "raw": "oklch(59.2% .249 .584)",
     "kind": "color",
-    "value": "#e60076"
+    "value": "oklch(0.592 0.249 0.584)"
    },
    "--color-pink-800": {
     "raw": "oklch(45.9% .187 3.815)",
     "kind": "color",
-    "value": "#a3004c"
+    "value": "oklch(0.459 0.187 3.815)"
    },
    "--color-primary": {
     "raw": "rgb(0 0 0)",
@@ -2738,17 +342,17 @@
    "--color-red-100": {
     "raw": "oklch(93.6% .032 17.717)",
     "kind": "color",
-    "value": "#ffe2e2"
+    "value": "oklch(0.936 0.032 17.717)"
    },
    "--color-red-500": {
     "raw": "oklch(63.7% .237 25.331)",
     "kind": "color",
-    "value": "#fb2c36"
+    "value": "oklch(0.637 0.237 25.331)"
    },
    "--color-red-700": {
     "raw": "oklch(50.5% .213 27.518)",
     "kind": "color",
-    "value": "#c10007"
+    "value": "oklch(0.505 0.213 27.518)"
    },
    "--color-success": {
     "raw": "rgb(35 160 148)",
@@ -2783,17 +387,17 @@
    "--color-yellow-400": {
     "raw": "oklch(85.2% .199 91.936)",
     "kind": "color",
-    "value": "#fdc700"
+    "value": "oklch(0.852 0.199 91.936)"
    },
    "--color-yellow-50": {
     "raw": "oklch(98.7% .026 102.212)",
     "kind": "color",
-    "value": "#fefce8"
+    "value": "oklch(0.987 0.026 102.212)"
    },
    "--color-yellow-800": {
     "raw": "oklch(47.6% .114 61.907)",
     "kind": "color",
-    "value": "#894b00"
+    "value": "oklch(0.476 0.114 61.907)"
    },
    "--container-2xl": {
     "raw": "42rem",
@@ -2852,127 +456,128 @@
    },
    "--contrast-accent": {
     "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
+    "kind": "other",
+    "value": "0 0 0"
    },
    "--contrast-black": {
     "raw": "255 255 255",
-    "kind": "color",
-    "value": "#ffffff"
+    "kind": "other",
+    "value": "255 255 255"
    },
    "--contrast-danger": {
     "raw": "255 255 255",
-    "kind": "color",
-    "value": "#ffffff"
+    "kind": "other",
+    "value": "255 255 255"
    },
    "--contrast-filled": {
     "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
+    "kind": "other",
+    "value": "0 0 0"
    },
    "--contrast-info": {
     "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
+    "kind": "other",
+    "value": "0 0 0"
    },
    "--contrast-primary": {
     "raw": "255 255 255",
-    "kind": "color",
-    "value": "#ffffff"
+    "kind": "other",
+    "value": "255 255 255"
    },
    "--contrast-success": {
     "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
+    "kind": "other",
+    "value": "0 0 0"
    },
    "--contrast-warning": {
     "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
+    "kind": "other",
+    "value": "0 0 0"
    },
    "--danger": {
     "raw": "220 52 30",
-    "kind": "color",
-    "value": "#dc341e"
+    "kind": "other",
+    "value": "220 52 30"
    },
    "--default-font-family": {
     "raw": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
-    "kind": "fontFamily",
+    "kind": "other",
     "value": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
    },
    "--default-mono-font-family": {
     "raw": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
-    "kind": "fontFamily",
+    "kind": "other",
     "value": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
    },
    "--default-transition-duration": {
     "raw": ".15s",
-    "kind": "duration",
-    "value": "0.15s"
+    "kind": "other",
+    "value": ".15s"
    },
    "--default-transition-timing-function": {
     "raw": "cubic-bezier(.4,0,.2,1)",
-    "kind": "easing",
+    "kind": "other",
     "value": "cubic-bezier(.4,0,.2,1)"
    },
    "--disabled-opacity": {
     "raw": ".3",
-    "kind": "number",
-    "value": 0.3
+    "kind": "other",
+    "value": ".3"
    },
    "--dynamic-grid": {
     "raw": "min(100%,calc((31.25rem - 100%)*1000))",
-    "kind": "other"
+    "kind": "other",
+    "value": "min(100%,calc((31.25rem - 100%)*1000))"
    },
    "--ease-in-out": {
     "raw": "cubic-bezier(.4,0,.2,1)",
-    "kind": "easing",
+    "kind": "other",
     "value": "cubic-bezier(.4,0,.2,1)"
    },
    "--ease-out": {
     "raw": "cubic-bezier(0,0,.2,1)",
-    "kind": "easing",
+    "kind": "other",
     "value": "cubic-bezier(0,0,.2,1)"
    },
    "--filled": {
     "raw": "255 255 255",
-    "kind": "color",
-    "value": "#ffffff"
+    "kind": "other",
+    "value": "255 255 255"
    },
    "--font-family": {
     "raw": "ABC Favorit,Avenir,Montserrat,Corbel,URW Gothic,source-sans-pro,sans-serif",
-    "kind": "fontFamily",
+    "kind": "other",
     "value": "ABC Favorit,Avenir,Montserrat,Corbel,URW Gothic,source-sans-pro,sans-serif"
    },
    "--font-mono": {
     "raw": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
-    "kind": "fontFamily",
+    "kind": "other",
     "value": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
    },
    "--font-sans": {
     "raw": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
-    "kind": "fontFamily",
+    "kind": "other",
     "value": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
    },
    "--font-weight-bold": {
     "raw": "700",
-    "kind": "number",
-    "value": 700
+    "kind": "other",
+    "value": "700"
    },
    "--font-weight-medium": {
     "raw": "500",
-    "kind": "number",
-    "value": 500
+    "kind": "other",
+    "value": "500"
    },
    "--font-weight-normal": {
     "raw": "400",
-    "kind": "number",
-    "value": 400
+    "kind": "other",
+    "value": "400"
    },
    "--font-weight-semibold": {
     "raw": "600",
-    "kind": "number",
-    "value": 600
+    "kind": "other",
+    "value": "600"
    },
    "--form-element-height": {
     "raw": "3rem",
@@ -2981,18 +586,18 @@
    },
    "--gray-1": {
     "raw": ".1",
-    "kind": "number",
-    "value": 0.1
+    "kind": "other",
+    "value": ".1"
    },
    "--gray-2": {
     "raw": ".2",
-    "kind": "number",
-    "value": 0.2
+    "kind": "other",
+    "value": ".2"
    },
    "--gray-3": {
     "raw": ".5",
-    "kind": "number",
-    "value": 0.5
+    "kind": "other",
+    "value": ".5"
    },
    "--green": {
     "raw": "#23a094",
@@ -3001,35 +606,38 @@
    },
    "--grid-cols-sidebar": {
     "raw": "1fr 3fr",
-    "kind": "other"
+    "kind": "other",
+    "value": "1fr 3fr"
    },
    "--info": {
     "raw": "144 168 237",
-    "kind": "color",
-    "value": "#90a8ed"
+    "kind": "other",
+    "value": "144 168 237"
    },
    "--leading-relaxed": {
     "raw": "1.625",
-    "kind": "number",
-    "value": 1.625
+    "kind": "other",
+    "value": "1.625"
    },
    "--leading-snug": {
     "raw": "1.375",
-    "kind": "number",
-    "value": 1.375
+    "kind": "other",
+    "value": "1.375"
    },
    "--leading-tight": {
     "raw": "1.25",
-    "kind": "number",
-    "value": 1.25
+    "kind": "other",
+    "value": "1.25"
    },
    "--loading-spinner": {
-    "raw": "url(…)",
-    "kind": "other"
+    "raw": "url(/images/loading-rainbow.svg)",
+    "kind": "other",
+    "value": "url(/images/loading-rainbow.svg)"
    },
    "--logo": {
-    "raw": "url(…)",
-    "kind": "other"
+    "raw": "url(/images/logo.svg)",
+    "kind": "other",
+    "value": "url(/images/logo.svg)"
    },
    "--main-stack-width": {
     "raw": "28rem",
@@ -3038,28 +646,28 @@
    },
    "--neutral-accent": {
     "raw": "255 144 232",
-    "kind": "color",
-    "value": "#ff90e8"
+    "kind": "other",
+    "value": "255 144 232"
    },
    "--neutral-border-alpha": {
     "raw": "1",
-    "kind": "number",
-    "value": 1
+    "kind": "other",
+    "value": "1"
    },
    "--neutral-color": {
     "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
+    "kind": "other",
+    "value": "0 0 0"
    },
    "--neutral-danger": {
     "raw": "220 52 30",
-    "kind": "color",
-    "value": "#dc341e"
+    "kind": "other",
+    "value": "220 52 30"
    },
    "--neutral-filled": {
     "raw": "255 255 255",
-    "kind": "color",
-    "value": "#ffffff"
+    "kind": "other",
+    "value": "255 255 255"
    },
    "--orange": {
     "raw": "#ffc900",
@@ -3068,12 +676,13 @@
    },
    "--outline": {
     "raw": ".125rem solid rgb(255 144 232)",
-    "kind": "other"
+    "kind": "other",
+    "value": ".125rem solid rgb(255 144 232)"
    },
    "--parent-color": {
     "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
+    "kind": "other",
+    "value": "0 0 0"
    },
    "--pink": {
     "raw": "#ff90e8",
@@ -3082,12 +691,13 @@
    },
    "--primary": {
     "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
+    "kind": "other",
+    "value": "0 0 0"
    },
    "--product-cover-placeholder": {
-    "raw": "url(…)",
-    "kind": "other"
+    "raw": "url(/images/placeholders/product-cover.png)",
+    "kind": "other",
+    "value": "url(/images/placeholders/product-cover.png)"
    },
    "--purple": {
     "raw": "#90a8ed",
@@ -3191,8 +801,8 @@
    },
    "--success": {
     "raw": "35 160 148",
-    "kind": "color",
-    "value": "#23a094"
+    "kind": "other",
+    "value": "35 160 148"
    },
    "--text-2xl": {
     "raw": "1.5rem",
@@ -3201,7 +811,8 @@
    },
    "--text-2xl--line-height": {
     "raw": "calc(2/1.5)",
-    "kind": "other"
+    "kind": "other",
+    "value": "calc(2/1.5)"
    },
    "--text-3xl": {
     "raw": "1.875rem",
@@ -3210,7 +821,8 @@
    },
    "--text-3xl--line-height": {
     "raw": "calc(2.25/1.875)",
-    "kind": "other"
+    "kind": "other",
+    "value": "calc(2.25/1.875)"
    },
    "--text-4xl": {
     "raw": "2.25rem",
@@ -3219,7 +831,8 @@
    },
    "--text-4xl--line-height": {
     "raw": "calc(2.5/2.25)",
-    "kind": "other"
+    "kind": "other",
+    "value": "calc(2.5/2.25)"
    },
    "--text-5xl": {
     "raw": "3rem",
@@ -3228,8 +841,8 @@
    },
    "--text-5xl--line-height": {
     "raw": "1",
-    "kind": "number",
-    "value": 1
+    "kind": "other",
+    "value": "1"
    },
    "--text-6xl": {
     "raw": "3.75rem",
@@ -3238,8 +851,8 @@
    },
    "--text-6xl--line-height": {
     "raw": "1",
-    "kind": "number",
-    "value": 1
+    "kind": "other",
+    "value": "1"
    },
    "--text-7xl": {
     "raw": "4.5rem",
@@ -3248,8 +861,8 @@
    },
    "--text-7xl--line-height": {
     "raw": "1",
-    "kind": "number",
-    "value": 1
+    "kind": "other",
+    "value": "1"
    },
    "--text-8xl": {
     "raw": "6rem",
@@ -3258,8 +871,8 @@
    },
    "--text-8xl--line-height": {
     "raw": "1",
-    "kind": "number",
-    "value": 1
+    "kind": "other",
+    "value": "1"
    },
    "--text-9xl": {
     "raw": "8rem",
@@ -3268,8 +881,8 @@
    },
    "--text-9xl--line-height": {
     "raw": "1",
-    "kind": "number",
-    "value": 1
+    "kind": "other",
+    "value": "1"
    },
    "--text-base": {
     "raw": "1rem",
@@ -3278,7 +891,8 @@
    },
    "--text-base--line-height": {
     "raw": "calc(1.5/1)",
-    "kind": "other"
+    "kind": "other",
+    "value": "calc(1.5/1)"
    },
    "--text-lg": {
     "raw": "1.125rem",
@@ -3287,7 +901,8 @@
    },
    "--text-lg--line-height": {
     "raw": "calc(1.75/1.125)",
-    "kind": "other"
+    "kind": "other",
+    "value": "calc(1.75/1.125)"
    },
    "--text-sm": {
     "raw": ".875rem",
@@ -3296,7 +911,8 @@
    },
    "--text-sm--line-height": {
     "raw": "calc(1.25/.875)",
-    "kind": "other"
+    "kind": "other",
+    "value": "calc(1.25/.875)"
    },
    "--text-xl": {
     "raw": "1.25rem",
@@ -3305,7 +921,8 @@
    },
    "--text-xl--line-height": {
     "raw": "calc(1.75/1.25)",
-    "kind": "other"
+    "kind": "other",
+    "value": "calc(1.75/1.25)"
    },
    "--text-xs": {
     "raw": ".75rem",
@@ -3314,36 +931,38 @@
    },
    "--text-xs--line-height": {
     "raw": "calc(1/.75)",
-    "kind": "other"
+    "kind": "other",
+    "value": "calc(1/.75)"
    },
    "--tracking-tight": {
     "raw": "-.025em",
-    "kind": "other"
+    "kind": "other",
+    "value": "-.025em"
    },
    "--tracking-wide": {
     "raw": ".025em",
-    "kind": "other",
-    "note": "font-relative length; resolves per element"
+    "kind": "dimension",
+    "value": "0.390625px"
    },
    "--tracking-wider": {
     "raw": ".05em",
-    "kind": "other",
-    "note": "font-relative length; resolves per element"
+    "kind": "dimension",
+    "value": "0.796875px"
    },
    "--tracking-widest": {
     "raw": ".1em",
-    "kind": "other",
-    "note": "font-relative length; resolves per element"
+    "kind": "dimension",
+    "value": "1.59375px"
    },
    "--transition-duration": {
     "raw": ".14s",
-    "kind": "duration",
-    "value": "0.14s"
+    "kind": "other",
+    "value": ".14s"
    },
    "--warning": {
     "raw": "255 201 0",
-    "kind": "color",
-    "value": "#ffc900"
+    "kind": "other",
+    "value": "255 201 0"
    },
    "--yellow": {
     "raw": "#f1f333",
@@ -3352,50 +971,50 @@
    },
    "--z-index-above-overlay": {
     "raw": "2",
-    "kind": "number",
-    "value": 2
+    "kind": "other",
+    "value": "2"
    },
    "--z-index-base": {
     "raw": "0",
-    "kind": "number",
-    "value": 0
+    "kind": "other",
+    "value": "0"
    },
    "--z-index-header": {
     "raw": "3",
-    "kind": "number",
-    "value": 3
+    "kind": "other",
+    "value": "3"
    },
    "--z-index-menubar": {
     "raw": "10",
-    "kind": "number",
-    "value": 10
+    "kind": "other",
+    "value": "10"
    },
    "--z-index-modal": {
     "raw": "20",
-    "kind": "number",
-    "value": 20
+    "kind": "other",
+    "value": "20"
    },
    "--z-index-overlay": {
     "raw": "1",
-    "kind": "number",
-    "value": 1
+    "kind": "other",
+    "value": "1"
    },
    "--z-index-tooltip": {
     "raw": "30",
-    "kind": "number",
-    "value": 30
+    "kind": "other",
+    "value": "30"
    }
   },
   "dark": {
    "--accent": {
     "raw": "255 144 232",
-    "kind": "color",
-    "value": "#ff90e8"
+    "kind": "other",
+    "value": "255 144 232"
    },
    "--accent-with-text": {
     "raw": "255 144 232",
-    "kind": "color",
-    "value": "#ff90e8"
+    "kind": "other",
+    "value": "255 144 232"
    },
    "--active-bg": {
     "raw": "rgb(0 0 0)",
@@ -3404,25 +1023,28 @@
    },
    "--animate-pulse": {
     "raw": "pulse 2s cubic-bezier(.4,0,.6,1)infinite",
-    "kind": "other"
+    "kind": "other",
+    "value": "pulse 2s cubic-bezier(.4,0,.6,1)infinite"
    },
    "--animate-spin": {
     "raw": "spin 1s linear infinite",
-    "kind": "other"
+    "kind": "other",
+    "value": "spin 1s linear infinite"
    },
    "--aspect-video": {
     "raw": "16/9",
-    "kind": "other"
+    "kind": "other",
+    "value": "16/9"
    },
    "--big-icon-size": {
     "raw": "1.25em",
-    "kind": "other",
-    "note": "font-relative length; resolves per element"
+    "kind": "dimension",
+    "value": "20px"
    },
    "--black": {
     "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
+    "kind": "other",
+    "value": "0 0 0"
    },
    "--body-bg": {
     "raw": "#242423",
@@ -3431,12 +1053,13 @@
    },
    "--border": {
     "raw": "solid .0625rem rgb(221 221 221/.35)",
-    "kind": "other"
+    "kind": "other",
+    "value": "solid .0625rem rgb(221 221 221/.35)"
    },
    "--border-alpha": {
     "raw": ".35",
-    "kind": "number",
-    "value": 0.35
+    "kind": "other",
+    "value": ".35"
    },
    "--border-radius-1": {
     "raw": ".25rem",
@@ -3460,15 +1083,13 @@
    },
    "--box-shadow-1": {
     "raw": ".25rem .25rem 0rem 221 221 221",
-    "kind": "shadow",
-    "value": "rgb(221, 221, 221) 4px 4px 0px 0px",
-    "note": "channel-triplet colour wrapped rgb() the way the site consumes it"
+    "kind": "other",
+    "value": ".25rem .25rem 0rem 221 221 221"
    },
    "--box-shadow-2": {
     "raw": ".5rem .5rem 0rem 221 221 221",
-    "kind": "shadow",
-    "value": "rgb(221, 221, 221) 8px 8px 0px 0px",
-    "note": "channel-triplet colour wrapped rgb() the way the site consumes it"
+    "kind": "other",
+    "value": ".5rem .5rem 0rem 221 221 221"
    },
    "--breakpoint-lg": {
     "raw": "1024px",
@@ -3487,8 +1108,8 @@
    },
    "--color": {
     "raw": "221 221 221",
-    "kind": "color",
-    "value": "#dddddd"
+    "kind": "other",
+    "value": "221 221 221"
    },
    "--color-accent": {
     "raw": "rgb(255 144 232)",
@@ -3528,7 +1149,7 @@
    "--color-blue-600": {
     "raw": "oklch(54.6% .245 262.881)",
     "kind": "color",
-    "value": "#155dfc"
+    "value": "oklch(0.546 0.245 262.881)"
    },
    "--color-body": {
     "raw": "#242423",
@@ -3568,42 +1189,42 @@
    "--color-gray-100": {
     "raw": "oklch(96.7% .003 264.542)",
     "kind": "color",
-    "value": "#f3f4f6"
+    "value": "oklch(0.967 0.003 264.542)"
    },
    "--color-gray-200": {
     "raw": "oklch(92.8% .006 264.531)",
     "kind": "color",
-    "value": "#e5e7eb"
+    "value": "oklch(0.928 0.006 264.531)"
    },
    "--color-gray-300": {
     "raw": "oklch(87.2% .01 258.338)",
     "kind": "color",
-    "value": "#d1d5dc"
+    "value": "oklch(0.872 0.01 258.338)"
    },
    "--color-gray-400": {
     "raw": "oklch(70.7% .022 261.325)",
     "kind": "color",
-    "value": "#99a1af"
+    "value": "oklch(0.707 0.022 261.325)"
    },
    "--color-gray-500": {
     "raw": "oklch(55.1% .027 264.364)",
     "kind": "color",
-    "value": "#6a7282"
+    "value": "oklch(0.551 0.027 264.364)"
    },
    "--color-gray-600": {
     "raw": "oklch(44.6% .03 256.802)",
     "kind": "color",
-    "value": "#4a5565"
+    "value": "oklch(0.446 0.03 256.802)"
    },
    "--color-gray-700": {
     "raw": "oklch(37.3% .034 259.733)",
     "kind": "color",
-    "value": "#364153"
+    "value": "oklch(0.373 0.034 259.733)"
    },
    "--color-gray-800": {
     "raw": "oklch(27.8% .033 256.848)",
     "kind": "color",
-    "value": "#1e2939"
+    "value": "oklch(0.278 0.033 256.848)"
    },
    "--color-green": {
     "raw": "#23a094",
@@ -3638,12 +1259,12 @@
    "--color-pink-600": {
     "raw": "oklch(59.2% .249 .584)",
     "kind": "color",
-    "value": "#e60076"
+    "value": "oklch(0.592 0.249 0.584)"
    },
    "--color-pink-800": {
     "raw": "oklch(45.9% .187 3.815)",
     "kind": "color",
-    "value": "#a3004c"
+    "value": "oklch(0.459 0.187 3.815)"
    },
    "--color-primary": {
     "raw": "rgb(221 221 221)",
@@ -3668,17 +1289,17 @@
    "--color-red-100": {
     "raw": "oklch(93.6% .032 17.717)",
     "kind": "color",
-    "value": "#ffe2e2"
+    "value": "oklch(0.936 0.032 17.717)"
    },
    "--color-red-500": {
     "raw": "oklch(63.7% .237 25.331)",
     "kind": "color",
-    "value": "#fb2c36"
+    "value": "oklch(0.637 0.237 25.331)"
    },
    "--color-red-700": {
     "raw": "oklch(50.5% .213 27.518)",
     "kind": "color",
-    "value": "#c10007"
+    "value": "oklch(0.505 0.213 27.518)"
    },
    "--color-success": {
     "raw": "rgb(35 160 148)",
@@ -3713,17 +1334,17 @@
    "--color-yellow-400": {
     "raw": "oklch(85.2% .199 91.936)",
     "kind": "color",
-    "value": "#fdc700"
+    "value": "oklch(0.852 0.199 91.936)"
    },
    "--color-yellow-50": {
     "raw": "oklch(98.7% .026 102.212)",
     "kind": "color",
-    "value": "#fefce8"
+    "value": "oklch(0.987 0.026 102.212)"
    },
    "--color-yellow-800": {
     "raw": "oklch(47.6% .114 61.907)",
     "kind": "color",
-    "value": "#894b00"
+    "value": "oklch(0.476 0.114 61.907)"
    },
    "--container-2xl": {
     "raw": "42rem",
@@ -3782,127 +1403,128 @@
    },
    "--contrast-accent": {
     "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
+    "kind": "other",
+    "value": "0 0 0"
    },
    "--contrast-black": {
     "raw": "221 221 221",
-    "kind": "color",
-    "value": "#dddddd"
+    "kind": "other",
+    "value": "221 221 221"
    },
    "--contrast-danger": {
     "raw": "255 255 255",
-    "kind": "color",
-    "value": "#ffffff"
+    "kind": "other",
+    "value": "255 255 255"
    },
    "--contrast-filled": {
     "raw": "221 221 221",
-    "kind": "color",
-    "value": "#dddddd"
+    "kind": "other",
+    "value": "221 221 221"
    },
    "--contrast-info": {
     "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
+    "kind": "other",
+    "value": "0 0 0"
    },
    "--contrast-primary": {
     "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
+    "kind": "other",
+    "value": "0 0 0"
    },
    "--contrast-success": {
     "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
+    "kind": "other",
+    "value": "0 0 0"
    },
    "--contrast-warning": {
     "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
+    "kind": "other",
+    "value": "0 0 0"
    },
    "--danger": {
     "raw": "220 52 30",
-    "kind": "color",
-    "value": "#dc341e"
+    "kind": "other",
+    "value": "220 52 30"
    },
    "--default-font-family": {
     "raw": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
-    "kind": "fontFamily",
+    "kind": "other",
     "value": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
    },
    "--default-mono-font-family": {
     "raw": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
-    "kind": "fontFamily",
+    "kind": "other",
     "value": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
    },
    "--default-transition-duration": {
     "raw": ".15s",
-    "kind": "duration",
-    "value": "0.15s"
+    "kind": "other",
+    "value": ".15s"
    },
    "--default-transition-timing-function": {
     "raw": "cubic-bezier(.4,0,.2,1)",
-    "kind": "easing",
+    "kind": "other",
     "value": "cubic-bezier(.4,0,.2,1)"
    },
    "--disabled-opacity": {
     "raw": ".3",
-    "kind": "number",
-    "value": 0.3
+    "kind": "other",
+    "value": ".3"
    },
    "--dynamic-grid": {
     "raw": "min(100%,calc((31.25rem - 100%)*1000))",
-    "kind": "other"
+    "kind": "other",
+    "value": "min(100%,calc((31.25rem - 100%)*1000))"
    },
    "--ease-in-out": {
     "raw": "cubic-bezier(.4,0,.2,1)",
-    "kind": "easing",
+    "kind": "other",
     "value": "cubic-bezier(.4,0,.2,1)"
    },
    "--ease-out": {
     "raw": "cubic-bezier(0,0,.2,1)",
-    "kind": "easing",
+    "kind": "other",
     "value": "cubic-bezier(0,0,.2,1)"
    },
    "--filled": {
     "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
+    "kind": "other",
+    "value": "0 0 0"
    },
    "--font-family": {
     "raw": "ABC Favorit,Avenir,Montserrat,Corbel,URW Gothic,source-sans-pro,sans-serif",
-    "kind": "fontFamily",
+    "kind": "other",
     "value": "ABC Favorit,Avenir,Montserrat,Corbel,URW Gothic,source-sans-pro,sans-serif"
    },
    "--font-mono": {
     "raw": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
-    "kind": "fontFamily",
+    "kind": "other",
     "value": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
    },
    "--font-sans": {
     "raw": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
-    "kind": "fontFamily",
+    "kind": "other",
     "value": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
    },
    "--font-weight-bold": {
     "raw": "700",
-    "kind": "number",
-    "value": 700
+    "kind": "other",
+    "value": "700"
    },
    "--font-weight-medium": {
     "raw": "500",
-    "kind": "number",
-    "value": 500
+    "kind": "other",
+    "value": "500"
    },
    "--font-weight-normal": {
     "raw": "400",
-    "kind": "number",
-    "value": 400
+    "kind": "other",
+    "value": "400"
    },
    "--font-weight-semibold": {
     "raw": "600",
-    "kind": "number",
-    "value": 600
+    "kind": "other",
+    "value": "600"
    },
    "--form-element-height": {
     "raw": "3rem",
@@ -3911,18 +1533,18 @@
    },
    "--gray-1": {
     "raw": ".1",
-    "kind": "number",
-    "value": 0.1
+    "kind": "other",
+    "value": ".1"
    },
    "--gray-2": {
     "raw": ".2",
-    "kind": "number",
-    "value": 0.2
+    "kind": "other",
+    "value": ".2"
    },
    "--gray-3": {
     "raw": ".5",
-    "kind": "number",
-    "value": 0.5
+    "kind": "other",
+    "value": ".5"
    },
    "--green": {
     "raw": "#23a094",
@@ -3931,35 +1553,38 @@
    },
    "--grid-cols-sidebar": {
     "raw": "1fr 3fr",
-    "kind": "other"
+    "kind": "other",
+    "value": "1fr 3fr"
    },
    "--info": {
     "raw": "144 168 237",
-    "kind": "color",
-    "value": "#90a8ed"
+    "kind": "other",
+    "value": "144 168 237"
    },
    "--leading-relaxed": {
     "raw": "1.625",
-    "kind": "number",
-    "value": 1.625
+    "kind": "other",
+    "value": "1.625"
    },
    "--leading-snug": {
     "raw": "1.375",
-    "kind": "number",
-    "value": 1.375
+    "kind": "other",
+    "value": "1.375"
    },
    "--leading-tight": {
     "raw": "1.25",
-    "kind": "number",
-    "value": 1.25
+    "kind": "other",
+    "value": "1.25"
    },
    "--loading-spinner": {
-    "raw": "url(…)",
-    "kind": "other"
+    "raw": "url(/images/loading-rainbow.svg)",
+    "kind": "other",
+    "value": "url(/images/loading-rainbow.svg)"
    },
    "--logo": {
-    "raw": "url(…)",
-    "kind": "other"
+    "raw": "url(/images/logo.svg)",
+    "kind": "other",
+    "value": "url(/images/logo.svg)"
    },
    "--main-stack-width": {
     "raw": "28rem",
@@ -3968,28 +1593,28 @@
    },
    "--neutral-accent": {
     "raw": "255 144 232",
-    "kind": "color",
-    "value": "#ff90e8"
+    "kind": "other",
+    "value": "255 144 232"
    },
    "--neutral-border-alpha": {
     "raw": ".35",
-    "kind": "number",
-    "value": 0.35
+    "kind": "other",
+    "value": ".35"
    },
    "--neutral-color": {
     "raw": "221 221 221",
-    "kind": "color",
-    "value": "#dddddd"
+    "kind": "other",
+    "value": "221 221 221"
    },
    "--neutral-danger": {
     "raw": "220 52 30",
-    "kind": "color",
-    "value": "#dc341e"
+    "kind": "other",
+    "value": "220 52 30"
    },
    "--neutral-filled": {
     "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
+    "kind": "other",
+    "value": "0 0 0"
    },
    "--orange": {
     "raw": "#ffc900",
@@ -3998,12 +1623,13 @@
    },
    "--outline": {
     "raw": ".125rem solid rgb(255 144 232)",
-    "kind": "other"
+    "kind": "other",
+    "value": ".125rem solid rgb(255 144 232)"
    },
    "--parent-color": {
     "raw": "221 221 221",
-    "kind": "color",
-    "value": "#dddddd"
+    "kind": "other",
+    "value": "221 221 221"
    },
    "--pink": {
     "raw": "#ff90e8",
@@ -4012,12 +1638,13 @@
    },
    "--primary": {
     "raw": "221 221 221",
-    "kind": "color",
-    "value": "#dddddd"
+    "kind": "other",
+    "value": "221 221 221"
    },
    "--product-cover-placeholder": {
-    "raw": "url(…)",
-    "kind": "other"
+    "raw": "url(/images/placeholders/product-cover.png)",
+    "kind": "other",
+    "value": "url(/images/placeholders/product-cover.png)"
    },
    "--purple": {
     "raw": "#90a8ed",
@@ -4121,8 +1748,8 @@
    },
    "--success": {
     "raw": "35 160 148",
-    "kind": "color",
-    "value": "#23a094"
+    "kind": "other",
+    "value": "35 160 148"
    },
    "--text-2xl": {
     "raw": "1.5rem",
@@ -4131,7 +1758,8 @@
    },
    "--text-2xl--line-height": {
     "raw": "calc(2/1.5)",
-    "kind": "other"
+    "kind": "other",
+    "value": "calc(2/1.5)"
    },
    "--text-3xl": {
     "raw": "1.875rem",
@@ -4140,7 +1768,8 @@
    },
    "--text-3xl--line-height": {
     "raw": "calc(2.25/1.875)",
-    "kind": "other"
+    "kind": "other",
+    "value": "calc(2.25/1.875)"
    },
    "--text-4xl": {
     "raw": "2.25rem",
@@ -4149,7 +1778,8 @@
    },
    "--text-4xl--line-height": {
     "raw": "calc(2.5/2.25)",
-    "kind": "other"
+    "kind": "other",
+    "value": "calc(2.5/2.25)"
    },
    "--text-5xl": {
     "raw": "3rem",
@@ -4158,8 +1788,8 @@
    },
    "--text-5xl--line-height": {
     "raw": "1",
-    "kind": "number",
-    "value": 1
+    "kind": "other",
+    "value": "1"
    },
    "--text-6xl": {
     "raw": "3.75rem",
@@ -4168,8 +1798,8 @@
    },
    "--text-6xl--line-height": {
     "raw": "1",
-    "kind": "number",
-    "value": 1
+    "kind": "other",
+    "value": "1"
    },
    "--text-7xl": {
     "raw": "4.5rem",
@@ -4178,8 +1808,8 @@
    },
    "--text-7xl--line-height": {
     "raw": "1",
-    "kind": "number",
-    "value": 1
+    "kind": "other",
+    "value": "1"
    },
    "--text-8xl": {
     "raw": "6rem",
@@ -4188,8 +1818,8 @@
    },
    "--text-8xl--line-height": {
     "raw": "1",
-    "kind": "number",
-    "value": 1
+    "kind": "other",
+    "value": "1"
    },
    "--text-9xl": {
     "raw": "8rem",
@@ -4198,8 +1828,8 @@
    },
    "--text-9xl--line-height": {
     "raw": "1",
-    "kind": "number",
-    "value": 1
+    "kind": "other",
+    "value": "1"
    },
    "--text-base": {
     "raw": "1rem",
@@ -4208,7 +1838,8 @@
    },
    "--text-base--line-height": {
     "raw": "calc(1.5/1)",
-    "kind": "other"
+    "kind": "other",
+    "value": "calc(1.5/1)"
    },
    "--text-lg": {
     "raw": "1.125rem",
@@ -4217,7 +1848,8 @@
    },
    "--text-lg--line-height": {
     "raw": "calc(1.75/1.125)",
-    "kind": "other"
+    "kind": "other",
+    "value": "calc(1.75/1.125)"
    },
    "--text-sm": {
     "raw": ".875rem",
@@ -4226,7 +1858,8 @@
    },
    "--text-sm--line-height": {
     "raw": "calc(1.25/.875)",
-    "kind": "other"
+    "kind": "other",
+    "value": "calc(1.25/.875)"
    },
    "--text-xl": {
     "raw": "1.25rem",
@@ -4235,7 +1868,8 @@
    },
    "--text-xl--line-height": {
     "raw": "calc(1.75/1.25)",
-    "kind": "other"
+    "kind": "other",
+    "value": "calc(1.75/1.25)"
    },
    "--text-xs": {
     "raw": ".75rem",
@@ -4244,36 +1878,38 @@
    },
    "--text-xs--line-height": {
     "raw": "calc(1/.75)",
-    "kind": "other"
+    "kind": "other",
+    "value": "calc(1/.75)"
    },
    "--tracking-tight": {
     "raw": "-.025em",
-    "kind": "other"
+    "kind": "other",
+    "value": "-.025em"
    },
    "--tracking-wide": {
     "raw": ".025em",
-    "kind": "other",
-    "note": "font-relative length; resolves per element"
+    "kind": "dimension",
+    "value": "0.390625px"
    },
    "--tracking-wider": {
     "raw": ".05em",
-    "kind": "other",
-    "note": "font-relative length; resolves per element"
+    "kind": "dimension",
+    "value": "0.796875px"
    },
    "--tracking-widest": {
     "raw": ".1em",
-    "kind": "other",
-    "note": "font-relative length; resolves per element"
+    "kind": "dimension",
+    "value": "1.59375px"
    },
    "--transition-duration": {
     "raw": ".14s",
-    "kind": "duration",
-    "value": "0.14s"
+    "kind": "other",
+    "value": ".14s"
    },
    "--warning": {
     "raw": "255 201 0",
-    "kind": "color",
-    "value": "#ffc900"
+    "kind": "other",
+    "value": "255 201 0"
    },
    "--yellow": {
     "raw": "#f1f333",
@@ -4282,1898 +1918,38 @@
    },
    "--z-index-above-overlay": {
     "raw": "2",
-    "kind": "number",
-    "value": 2
+    "kind": "other",
+    "value": "2"
    },
    "--z-index-base": {
     "raw": "0",
-    "kind": "number",
-    "value": 0
+    "kind": "other",
+    "value": "0"
    },
    "--z-index-header": {
     "raw": "3",
-    "kind": "number",
-    "value": 3
+    "kind": "other",
+    "value": "3"
    },
    "--z-index-menubar": {
     "raw": "10",
-    "kind": "number",
-    "value": 10
+    "kind": "other",
+    "value": "10"
    },
    "--z-index-modal": {
     "raw": "20",
-    "kind": "number",
-    "value": 20
+    "kind": "other",
+    "value": "20"
    },
    "--z-index-overlay": {
     "raw": "1",
-    "kind": "number",
-    "value": 1
+    "kind": "other",
+    "value": "1"
    },
    "--z-index-tooltip": {
     "raw": "30",
-    "kind": "number",
-    "value": 30
-   }
-  },
-  "product-light": {
-   "--accent": {
-    "raw": "54 169 174",
-    "kind": "color",
-    "value": "#36a9ae"
-   },
-   "--accent-with-text": {
-    "raw": "54 169 174",
-    "kind": "color",
-    "value": "#36a9ae"
-   },
-   "--active-bg": {
-    "raw": "rgb(0 0 0 / .1)",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0.1)"
-   },
-   "--animate-pulse": {
-    "raw": "pulse 2s cubic-bezier(.4,0,.6,1)infinite",
-    "kind": "other"
-   },
-   "--animate-spin": {
-    "raw": "spin 1s linear infinite",
-    "kind": "other"
-   },
-   "--aspect-video": {
-    "raw": "16/9",
-    "kind": "other"
-   },
-   "--big-icon-size": {
-    "raw": "1.25em",
     "kind": "other",
-    "note": "font-relative length; resolves per element"
-   },
-   "--black": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--body-bg": {
-    "raw": "#ffffff",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--border": {
-    "raw": "solid .0625rem rgb(0 0 0/1)",
-    "kind": "other"
-   },
-   "--border-alpha": {
-    "raw": "1",
-    "kind": "number",
-    "value": 1
-   },
-   "--border-radius-1": {
-    "raw": ".25rem",
-    "kind": "dimension",
-    "value": "4px"
-   },
-   "--border-radius-2": {
-    "raw": ".5rem",
-    "kind": "dimension",
-    "value": "8px"
-   },
-   "--border-radius-3": {
-    "raw": "10rem",
-    "kind": "dimension",
-    "value": "160px"
-   },
-   "--border-width": {
-    "raw": ".0625rem",
-    "kind": "dimension",
-    "value": "1px"
-   },
-   "--box-shadow-1": {
-    "raw": ".25rem .25rem 0rem 0 0 0",
-    "kind": "shadow",
-    "value": "rgb(0, 0, 0) 4px 4px 0px 0px",
-    "note": "channel-triplet colour wrapped rgb() the way the site consumes it"
-   },
-   "--box-shadow-2": {
-    "raw": ".5rem .5rem 0rem 0 0 0",
-    "kind": "shadow",
-    "value": "rgb(0, 0, 0) 8px 8px 0px 0px",
-    "note": "channel-triplet colour wrapped rgb() the way the site consumes it"
-   },
-   "--breakpoint-lg": {
-    "raw": "1024px",
-    "kind": "dimension",
-    "value": "1024px"
-   },
-   "--breakpoint-sm": {
-    "raw": "640px",
-    "kind": "dimension",
-    "value": "640px"
-   },
-   "--button-hover-offset": {
-    "raw": "0.25rem",
-    "kind": "dimension",
-    "value": "4px"
-   },
-   "--color": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--color-accent": {
-    "raw": "rgb(54 169 174)",
-    "kind": "color",
-    "value": "#36a9ae"
-   },
-   "--color-accent-foreground": {
-    "raw": "rgb(0 0 0)",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--color-accent-with-text": {
-    "raw": "rgb(54 169 174)",
-    "kind": "color",
-    "value": "#36a9ae"
-   },
-   "--color-active-bg": {
-    "raw": "rgb(0 0 0/.1)",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0.1)"
-   },
-   "--color-backdrop": {
-    "raw": "#000c",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0.8)"
-   },
-   "--color-background": {
-    "raw": "rgb(255 255 255)",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--color-black": {
-    "raw": "#000",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--color-blue-600": {
-    "raw": "oklch(54.6% .245 262.881)",
-    "kind": "color",
-    "value": "#155dfc"
-   },
-   "--color-body": {
-    "raw": "#ffffff",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--color-border": {
-    "raw": "rgb(0 0 0/1)",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--color-danger": {
-    "raw": "rgb(220 52 30)",
-    "kind": "color",
-    "value": "#dc341e"
-   },
-   "--color-danger-foreground": {
-    "raw": "rgb(255 255 255)",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--color-dark-gray": {
-    "raw": "#242423",
-    "kind": "color",
-    "value": "#242423"
-   },
-   "--color-foreground": {
-    "raw": "rgb(0 0 0)",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--color-gray": {
-    "raw": "#f4f4f0",
-    "kind": "color",
-    "value": "#f4f4f0"
-   },
-   "--color-gray-100": {
-    "raw": "oklch(96.7% .003 264.542)",
-    "kind": "color",
-    "value": "#f3f4f6"
-   },
-   "--color-gray-200": {
-    "raw": "oklch(92.8% .006 264.531)",
-    "kind": "color",
-    "value": "#e5e7eb"
-   },
-   "--color-gray-300": {
-    "raw": "oklch(87.2% .01 258.338)",
-    "kind": "color",
-    "value": "#d1d5dc"
-   },
-   "--color-gray-400": {
-    "raw": "oklch(70.7% .022 261.325)",
-    "kind": "color",
-    "value": "#99a1af"
-   },
-   "--color-gray-500": {
-    "raw": "oklch(55.1% .027 264.364)",
-    "kind": "color",
-    "value": "#6a7282"
-   },
-   "--color-gray-600": {
-    "raw": "oklch(44.6% .03 256.802)",
-    "kind": "color",
-    "value": "#4a5565"
-   },
-   "--color-gray-700": {
-    "raw": "oklch(37.3% .034 259.733)",
-    "kind": "color",
-    "value": "#364153"
-   },
-   "--color-gray-800": {
-    "raw": "oklch(27.8% .033 256.848)",
-    "kind": "color",
-    "value": "#1e2939"
-   },
-   "--color-green": {
-    "raw": "#23a094",
-    "kind": "color",
-    "value": "#23a094"
-   },
-   "--color-indicator": {
-    "raw": "rgb(54 169 174)",
-    "kind": "color",
-    "value": "#36a9ae"
-   },
-   "--color-info": {
-    "raw": "rgb(144 168 237)",
-    "kind": "color",
-    "value": "#90a8ed"
-   },
-   "--color-muted": {
-    "raw": "rgb(0 0 0/.5)",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0.5)"
-   },
-   "--color-orange": {
-    "raw": "#ffc900",
-    "kind": "color",
-    "value": "#ffc900"
-   },
-   "--color-pink": {
-    "raw": "#ff90e8",
-    "kind": "color",
-    "value": "#ff90e8"
-   },
-   "--color-pink-600": {
-    "raw": "oklch(59.2% .249 .584)",
-    "kind": "color",
-    "value": "#e60076"
-   },
-   "--color-pink-800": {
-    "raw": "oklch(45.9% .187 3.815)",
-    "kind": "color",
-    "value": "#a3004c"
-   },
-   "--color-primary": {
-    "raw": "rgb(0 0 0)",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--color-primary-foreground": {
-    "raw": "rgb(255 255 255)",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--color-purple": {
-    "raw": "#90a8ed",
-    "kind": "color",
-    "value": "#90a8ed"
-   },
-   "--color-red": {
-    "raw": "#dc341e",
-    "kind": "color",
-    "value": "#dc341e"
-   },
-   "--color-red-100": {
-    "raw": "oklch(93.6% .032 17.717)",
-    "kind": "color",
-    "value": "#ffe2e2"
-   },
-   "--color-red-500": {
-    "raw": "oklch(63.7% .237 25.331)",
-    "kind": "color",
-    "value": "#fb2c36"
-   },
-   "--color-red-700": {
-    "raw": "oklch(50.5% .213 27.518)",
-    "kind": "color",
-    "value": "#c10007"
-   },
-   "--color-success": {
-    "raw": "rgb(35 160 148)",
-    "kind": "color",
-    "value": "#23a094"
-   },
-   "--color-success-foreground": {
-    "raw": "rgb(0 0 0)",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--color-warning": {
-    "raw": "rgb(255 201 0)",
-    "kind": "color",
-    "value": "#ffc900"
-   },
-   "--color-warning-foreground": {
-    "raw": "rgb(0 0 0)",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--color-white": {
-    "raw": "#fff",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--color-yellow": {
-    "raw": "#f1f333",
-    "kind": "color",
-    "value": "#f1f333"
-   },
-   "--color-yellow-400": {
-    "raw": "oklch(85.2% .199 91.936)",
-    "kind": "color",
-    "value": "#fdc700"
-   },
-   "--color-yellow-50": {
-    "raw": "oklch(98.7% .026 102.212)",
-    "kind": "color",
-    "value": "#fefce8"
-   },
-   "--color-yellow-800": {
-    "raw": "oklch(47.6% .114 61.907)",
-    "kind": "color",
-    "value": "#894b00"
-   },
-   "--container-2xl": {
-    "raw": "42rem",
-    "kind": "dimension",
-    "value": "672px"
-   },
-   "--container-3xl": {
-    "raw": "48rem",
-    "kind": "dimension",
-    "value": "768px"
-   },
-   "--container-4xl": {
-    "raw": "56rem",
-    "kind": "dimension",
-    "value": "896px"
-   },
-   "--container-5xl": {
-    "raw": "64rem",
-    "kind": "dimension",
-    "value": "1024px"
-   },
-   "--container-6xl": {
-    "raw": "72rem",
-    "kind": "dimension",
-    "value": "1152px"
-   },
-   "--container-7xl": {
-    "raw": "80rem",
-    "kind": "dimension",
-    "value": "1280px"
-   },
-   "--container-lg": {
-    "raw": "32rem",
-    "kind": "dimension",
-    "value": "512px"
-   },
-   "--container-md": {
-    "raw": "28rem",
-    "kind": "dimension",
-    "value": "448px"
-   },
-   "--container-sm": {
-    "raw": "24rem",
-    "kind": "dimension",
-    "value": "384px"
-   },
-   "--container-xl": {
-    "raw": "36rem",
-    "kind": "dimension",
-    "value": "576px"
-   },
-   "--container-xs": {
-    "raw": "20rem",
-    "kind": "dimension",
-    "value": "320px"
-   },
-   "--contrast-accent": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--contrast-black": {
-    "raw": "255 255 255",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--contrast-danger": {
-    "raw": "255 255 255",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--contrast-filled": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--contrast-info": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--contrast-primary": {
-    "raw": "255 255 255",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--contrast-success": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--contrast-warning": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--danger": {
-    "raw": "220 52 30",
-    "kind": "color",
-    "value": "#dc341e"
-   },
-   "--default-font-family": {
-    "raw": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
-    "kind": "fontFamily",
-    "value": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
-   },
-   "--default-mono-font-family": {
-    "raw": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
-    "kind": "fontFamily",
-    "value": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
-   },
-   "--default-transition-duration": {
-    "raw": ".15s",
-    "kind": "duration",
-    "value": "0.15s"
-   },
-   "--default-transition-timing-function": {
-    "raw": "cubic-bezier(.4,0,.2,1)",
-    "kind": "easing",
-    "value": "cubic-bezier(.4,0,.2,1)"
-   },
-   "--disabled-opacity": {
-    "raw": ".3",
-    "kind": "number",
-    "value": 0.3
-   },
-   "--dynamic-grid": {
-    "raw": "min(100%,calc((31.25rem - 100%)*1000))",
-    "kind": "other"
-   },
-   "--ease-in-out": {
-    "raw": "cubic-bezier(.4,0,.2,1)",
-    "kind": "easing",
-    "value": "cubic-bezier(.4,0,.2,1)"
-   },
-   "--ease-out": {
-    "raw": "cubic-bezier(0,0,.2,1)",
-    "kind": "easing",
-    "value": "cubic-bezier(0,0,.2,1)"
-   },
-   "--filled": {
-    "raw": "255 255 255",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--font-family": {
-    "raw": "\"ABC Favorit\", \"ABC Favorit\", sans-serif",
-    "kind": "fontFamily",
-    "value": "\"ABC Favorit\", \"ABC Favorit\", sans-serif"
-   },
-   "--font-mono": {
-    "raw": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
-    "kind": "fontFamily",
-    "value": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
-   },
-   "--font-sans": {
-    "raw": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
-    "kind": "fontFamily",
-    "value": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
-   },
-   "--font-weight-bold": {
-    "raw": "700",
-    "kind": "number",
-    "value": 700
-   },
-   "--font-weight-medium": {
-    "raw": "500",
-    "kind": "number",
-    "value": 500
-   },
-   "--font-weight-normal": {
-    "raw": "400",
-    "kind": "number",
-    "value": 400
-   },
-   "--font-weight-semibold": {
-    "raw": "600",
-    "kind": "number",
-    "value": 600
-   },
-   "--form-element-height": {
-    "raw": "3rem",
-    "kind": "dimension",
-    "value": "48px"
-   },
-   "--gray-1": {
-    "raw": ".1",
-    "kind": "number",
-    "value": 0.1
-   },
-   "--gray-2": {
-    "raw": ".2",
-    "kind": "number",
-    "value": 0.2
-   },
-   "--gray-3": {
-    "raw": ".5",
-    "kind": "number",
-    "value": 0.5
-   },
-   "--green": {
-    "raw": "#23a094",
-    "kind": "color",
-    "value": "#23a094"
-   },
-   "--grid-cols-sidebar": {
-    "raw": "1fr 3fr",
-    "kind": "other"
-   },
-   "--info": {
-    "raw": "144 168 237",
-    "kind": "color",
-    "value": "#90a8ed"
-   },
-   "--leading-relaxed": {
-    "raw": "1.625",
-    "kind": "number",
-    "value": 1.625
-   },
-   "--leading-snug": {
-    "raw": "1.375",
-    "kind": "number",
-    "value": 1.375
-   },
-   "--leading-tight": {
-    "raw": "1.25",
-    "kind": "number",
-    "value": 1.25
-   },
-   "--loading-spinner": {
-    "raw": "url(…)",
-    "kind": "other"
-   },
-   "--logo": {
-    "raw": "url(…)",
-    "kind": "other"
-   },
-   "--main-stack-width": {
-    "raw": "28rem",
-    "kind": "dimension",
-    "value": "448px"
-   },
-   "--neutral-accent": {
-    "raw": "255 144 232",
-    "kind": "color",
-    "value": "#ff90e8"
-   },
-   "--neutral-border-alpha": {
-    "raw": "1",
-    "kind": "number",
-    "value": 1
-   },
-   "--neutral-color": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--neutral-danger": {
-    "raw": "220 52 30",
-    "kind": "color",
-    "value": "#dc341e"
-   },
-   "--neutral-filled": {
-    "raw": "255 255 255",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--orange": {
-    "raw": "#ffc900",
-    "kind": "color",
-    "value": "#ffc900"
-   },
-   "--outline": {
-    "raw": ".125rem solid rgb(54 169 174)",
-    "kind": "other"
-   },
-   "--parent-color": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--pink": {
-    "raw": "#ff90e8",
-    "kind": "color",
-    "value": "#ff90e8"
-   },
-   "--primary": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--product-cover-placeholder": {
-    "raw": "url(…)",
-    "kind": "other"
-   },
-   "--purple": {
-    "raw": "#90a8ed",
-    "kind": "color",
-    "value": "#90a8ed"
-   },
-   "--radius": {
-    "raw": "0.25rem",
-    "kind": "dimension",
-    "value": "4px"
-   },
-   "--radius-2xl": {
-    "raw": "1rem",
-    "kind": "dimension",
-    "value": "16px"
-   },
-   "--radius-3xl": {
-    "raw": "1.5rem",
-    "kind": "dimension",
-    "value": "24px"
-   },
-   "--radius-lg": {
-    "raw": ".5rem",
-    "kind": "dimension",
-    "value": "8px"
-   },
-   "--radius-md": {
-    "raw": ".375rem",
-    "kind": "dimension",
-    "value": "6px"
-   },
-   "--radius-sm": {
-    "raw": "0.25rem",
-    "kind": "dimension",
-    "value": "4px"
-   },
-   "--radius-xl": {
-    "raw": ".75rem",
-    "kind": "dimension",
-    "value": "12px"
-   },
-   "--radius-xs": {
-    "raw": ".125rem",
-    "kind": "dimension",
-    "value": "2px"
-   },
-   "--red": {
-    "raw": "#dc341e",
-    "kind": "color",
-    "value": "#dc341e"
-   },
-   "--spacer-1": {
-    "raw": ".25rem",
-    "kind": "dimension",
-    "value": "4px"
-   },
-   "--spacer-2": {
-    "raw": ".5rem",
-    "kind": "dimension",
-    "value": "8px"
-   },
-   "--spacer-3": {
-    "raw": ".75rem",
-    "kind": "dimension",
-    "value": "12px"
-   },
-   "--spacer-4": {
-    "raw": "1rem",
-    "kind": "dimension",
-    "value": "16px"
-   },
-   "--spacer-5": {
-    "raw": "1.5rem",
-    "kind": "dimension",
-    "value": "24px"
-   },
-   "--spacer-6": {
-    "raw": "2rem",
-    "kind": "dimension",
-    "value": "32px"
-   },
-   "--spacer-7": {
-    "raw": "3rem",
-    "kind": "dimension",
-    "value": "48px"
-   },
-   "--spacer-8": {
-    "raw": "4rem",
-    "kind": "dimension",
-    "value": "64px"
-   },
-   "--spacing": {
-    "raw": ".25rem",
-    "kind": "dimension",
-    "value": "4px"
-   },
-   "--spacing-product-page": {
-    "raw": "75.25rem",
-    "kind": "dimension",
-    "value": "1204px"
-   },
-   "--success": {
-    "raw": "35 160 148",
-    "kind": "color",
-    "value": "#23a094"
-   },
-   "--text-2xl": {
-    "raw": "1.5rem",
-    "kind": "dimension",
-    "value": "24px"
-   },
-   "--text-2xl--line-height": {
-    "raw": "calc(2/1.5)",
-    "kind": "other"
-   },
-   "--text-3xl": {
-    "raw": "1.875rem",
-    "kind": "dimension",
-    "value": "30px"
-   },
-   "--text-3xl--line-height": {
-    "raw": "calc(2.25/1.875)",
-    "kind": "other"
-   },
-   "--text-4xl": {
-    "raw": "2.25rem",
-    "kind": "dimension",
-    "value": "36px"
-   },
-   "--text-4xl--line-height": {
-    "raw": "calc(2.5/2.25)",
-    "kind": "other"
-   },
-   "--text-5xl": {
-    "raw": "3rem",
-    "kind": "dimension",
-    "value": "48px"
-   },
-   "--text-5xl--line-height": {
-    "raw": "1",
-    "kind": "number",
-    "value": 1
-   },
-   "--text-6xl": {
-    "raw": "3.75rem",
-    "kind": "dimension",
-    "value": "60px"
-   },
-   "--text-6xl--line-height": {
-    "raw": "1",
-    "kind": "number",
-    "value": 1
-   },
-   "--text-7xl": {
-    "raw": "4.5rem",
-    "kind": "dimension",
-    "value": "72px"
-   },
-   "--text-7xl--line-height": {
-    "raw": "1",
-    "kind": "number",
-    "value": 1
-   },
-   "--text-8xl": {
-    "raw": "6rem",
-    "kind": "dimension",
-    "value": "96px"
-   },
-   "--text-8xl--line-height": {
-    "raw": "1",
-    "kind": "number",
-    "value": 1
-   },
-   "--text-9xl": {
-    "raw": "8rem",
-    "kind": "dimension",
-    "value": "128px"
-   },
-   "--text-9xl--line-height": {
-    "raw": "1",
-    "kind": "number",
-    "value": 1
-   },
-   "--text-base": {
-    "raw": "1rem",
-    "kind": "dimension",
-    "value": "16px"
-   },
-   "--text-base--line-height": {
-    "raw": "calc(1.5/1)",
-    "kind": "other"
-   },
-   "--text-lg": {
-    "raw": "1.125rem",
-    "kind": "dimension",
-    "value": "18px"
-   },
-   "--text-lg--line-height": {
-    "raw": "calc(1.75/1.125)",
-    "kind": "other"
-   },
-   "--text-sm": {
-    "raw": ".875rem",
-    "kind": "dimension",
-    "value": "14px"
-   },
-   "--text-sm--line-height": {
-    "raw": "calc(1.25/.875)",
-    "kind": "other"
-   },
-   "--text-xl": {
-    "raw": "1.25rem",
-    "kind": "dimension",
-    "value": "20px"
-   },
-   "--text-xl--line-height": {
-    "raw": "calc(1.75/1.25)",
-    "kind": "other"
-   },
-   "--text-xs": {
-    "raw": ".75rem",
-    "kind": "dimension",
-    "value": "12px"
-   },
-   "--text-xs--line-height": {
-    "raw": "calc(1/.75)",
-    "kind": "other"
-   },
-   "--tracking-tight": {
-    "raw": "-.025em",
-    "kind": "other"
-   },
-   "--tracking-wide": {
-    "raw": ".025em",
-    "kind": "other",
-    "note": "font-relative length; resolves per element"
-   },
-   "--tracking-wider": {
-    "raw": ".05em",
-    "kind": "other",
-    "note": "font-relative length; resolves per element"
-   },
-   "--tracking-widest": {
-    "raw": ".1em",
-    "kind": "other",
-    "note": "font-relative length; resolves per element"
-   },
-   "--transition-duration": {
-    "raw": ".14s",
-    "kind": "duration",
-    "value": "0.14s"
-   },
-   "--warning": {
-    "raw": "255 201 0",
-    "kind": "color",
-    "value": "#ffc900"
-   },
-   "--yellow": {
-    "raw": "#f1f333",
-    "kind": "color",
-    "value": "#f1f333"
-   },
-   "--z-index-above-overlay": {
-    "raw": "2",
-    "kind": "number",
-    "value": 2
-   },
-   "--z-index-base": {
-    "raw": "0",
-    "kind": "number",
-    "value": 0
-   },
-   "--z-index-header": {
-    "raw": "3",
-    "kind": "number",
-    "value": 3
-   },
-   "--z-index-menubar": {
-    "raw": "10",
-    "kind": "number",
-    "value": 10
-   },
-   "--z-index-modal": {
-    "raw": "20",
-    "kind": "number",
-    "value": 20
-   },
-   "--z-index-overlay": {
-    "raw": "1",
-    "kind": "number",
-    "value": 1
-   },
-   "--z-index-tooltip": {
-    "raw": "30",
-    "kind": "number",
-    "value": 30
-   }
-  },
-  "product-dark": {
-   "--accent": {
-    "raw": "54 169 174",
-    "kind": "color",
-    "value": "#36a9ae"
-   },
-   "--accent-with-text": {
-    "raw": "54 169 174",
-    "kind": "color",
-    "value": "#36a9ae"
-   },
-   "--active-bg": {
-    "raw": "rgb(0 0 0 / .1)",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0.1)"
-   },
-   "--animate-pulse": {
-    "raw": "pulse 2s cubic-bezier(.4,0,.6,1)infinite",
-    "kind": "other"
-   },
-   "--animate-spin": {
-    "raw": "spin 1s linear infinite",
-    "kind": "other"
-   },
-   "--aspect-video": {
-    "raw": "16/9",
-    "kind": "other"
-   },
-   "--big-icon-size": {
-    "raw": "1.25em",
-    "kind": "other",
-    "note": "font-relative length; resolves per element"
-   },
-   "--black": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--body-bg": {
-    "raw": "#ffffff",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--border": {
-    "raw": "solid .0625rem rgb(0 0 0/1)",
-    "kind": "other"
-   },
-   "--border-alpha": {
-    "raw": "1",
-    "kind": "number",
-    "value": 1
-   },
-   "--border-radius-1": {
-    "raw": ".25rem",
-    "kind": "dimension",
-    "value": "4px"
-   },
-   "--border-radius-2": {
-    "raw": ".5rem",
-    "kind": "dimension",
-    "value": "8px"
-   },
-   "--border-radius-3": {
-    "raw": "10rem",
-    "kind": "dimension",
-    "value": "160px"
-   },
-   "--border-width": {
-    "raw": ".0625rem",
-    "kind": "dimension",
-    "value": "1px"
-   },
-   "--box-shadow-1": {
-    "raw": ".25rem .25rem 0rem 0 0 0",
-    "kind": "shadow",
-    "value": "rgb(0, 0, 0) 4px 4px 0px 0px",
-    "note": "channel-triplet colour wrapped rgb() the way the site consumes it"
-   },
-   "--box-shadow-2": {
-    "raw": ".5rem .5rem 0rem 0 0 0",
-    "kind": "shadow",
-    "value": "rgb(0, 0, 0) 8px 8px 0px 0px",
-    "note": "channel-triplet colour wrapped rgb() the way the site consumes it"
-   },
-   "--breakpoint-lg": {
-    "raw": "1024px",
-    "kind": "dimension",
-    "value": "1024px"
-   },
-   "--breakpoint-sm": {
-    "raw": "640px",
-    "kind": "dimension",
-    "value": "640px"
-   },
-   "--button-hover-offset": {
-    "raw": "0.25rem",
-    "kind": "dimension",
-    "value": "4px"
-   },
-   "--color": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--color-accent": {
-    "raw": "rgb(54 169 174)",
-    "kind": "color",
-    "value": "#36a9ae"
-   },
-   "--color-accent-foreground": {
-    "raw": "rgb(0 0 0)",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--color-accent-with-text": {
-    "raw": "rgb(54 169 174)",
-    "kind": "color",
-    "value": "#36a9ae"
-   },
-   "--color-active-bg": {
-    "raw": "rgb(0 0 0/.1)",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0.1)"
-   },
-   "--color-backdrop": {
-    "raw": "#000c",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0.8)"
-   },
-   "--color-background": {
-    "raw": "rgb(255 255 255)",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--color-black": {
-    "raw": "#000",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--color-blue-600": {
-    "raw": "oklch(54.6% .245 262.881)",
-    "kind": "color",
-    "value": "#155dfc"
-   },
-   "--color-body": {
-    "raw": "#ffffff",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--color-border": {
-    "raw": "rgb(0 0 0/1)",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--color-danger": {
-    "raw": "rgb(220 52 30)",
-    "kind": "color",
-    "value": "#dc341e"
-   },
-   "--color-danger-foreground": {
-    "raw": "rgb(255 255 255)",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--color-dark-gray": {
-    "raw": "#242423",
-    "kind": "color",
-    "value": "#242423"
-   },
-   "--color-foreground": {
-    "raw": "rgb(0 0 0)",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--color-gray": {
-    "raw": "#f4f4f0",
-    "kind": "color",
-    "value": "#f4f4f0"
-   },
-   "--color-gray-100": {
-    "raw": "oklch(96.7% .003 264.542)",
-    "kind": "color",
-    "value": "#f3f4f6"
-   },
-   "--color-gray-200": {
-    "raw": "oklch(92.8% .006 264.531)",
-    "kind": "color",
-    "value": "#e5e7eb"
-   },
-   "--color-gray-300": {
-    "raw": "oklch(87.2% .01 258.338)",
-    "kind": "color",
-    "value": "#d1d5dc"
-   },
-   "--color-gray-400": {
-    "raw": "oklch(70.7% .022 261.325)",
-    "kind": "color",
-    "value": "#99a1af"
-   },
-   "--color-gray-500": {
-    "raw": "oklch(55.1% .027 264.364)",
-    "kind": "color",
-    "value": "#6a7282"
-   },
-   "--color-gray-600": {
-    "raw": "oklch(44.6% .03 256.802)",
-    "kind": "color",
-    "value": "#4a5565"
-   },
-   "--color-gray-700": {
-    "raw": "oklch(37.3% .034 259.733)",
-    "kind": "color",
-    "value": "#364153"
-   },
-   "--color-gray-800": {
-    "raw": "oklch(27.8% .033 256.848)",
-    "kind": "color",
-    "value": "#1e2939"
-   },
-   "--color-green": {
-    "raw": "#23a094",
-    "kind": "color",
-    "value": "#23a094"
-   },
-   "--color-indicator": {
-    "raw": "rgb(54 169 174)",
-    "kind": "color",
-    "value": "#36a9ae"
-   },
-   "--color-info": {
-    "raw": "rgb(144 168 237)",
-    "kind": "color",
-    "value": "#90a8ed"
-   },
-   "--color-muted": {
-    "raw": "rgb(0 0 0/.5)",
-    "kind": "color",
-    "value": "rgba(0, 0, 0, 0.5)"
-   },
-   "--color-orange": {
-    "raw": "#ffc900",
-    "kind": "color",
-    "value": "#ffc900"
-   },
-   "--color-pink": {
-    "raw": "#ff90e8",
-    "kind": "color",
-    "value": "#ff90e8"
-   },
-   "--color-pink-600": {
-    "raw": "oklch(59.2% .249 .584)",
-    "kind": "color",
-    "value": "#e60076"
-   },
-   "--color-pink-800": {
-    "raw": "oklch(45.9% .187 3.815)",
-    "kind": "color",
-    "value": "#a3004c"
-   },
-   "--color-primary": {
-    "raw": "rgb(0 0 0)",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--color-primary-foreground": {
-    "raw": "rgb(255 255 255)",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--color-purple": {
-    "raw": "#90a8ed",
-    "kind": "color",
-    "value": "#90a8ed"
-   },
-   "--color-red": {
-    "raw": "#dc341e",
-    "kind": "color",
-    "value": "#dc341e"
-   },
-   "--color-red-100": {
-    "raw": "oklch(93.6% .032 17.717)",
-    "kind": "color",
-    "value": "#ffe2e2"
-   },
-   "--color-red-500": {
-    "raw": "oklch(63.7% .237 25.331)",
-    "kind": "color",
-    "value": "#fb2c36"
-   },
-   "--color-red-700": {
-    "raw": "oklch(50.5% .213 27.518)",
-    "kind": "color",
-    "value": "#c10007"
-   },
-   "--color-success": {
-    "raw": "rgb(35 160 148)",
-    "kind": "color",
-    "value": "#23a094"
-   },
-   "--color-success-foreground": {
-    "raw": "rgb(0 0 0)",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--color-warning": {
-    "raw": "rgb(255 201 0)",
-    "kind": "color",
-    "value": "#ffc900"
-   },
-   "--color-warning-foreground": {
-    "raw": "rgb(0 0 0)",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--color-white": {
-    "raw": "#fff",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--color-yellow": {
-    "raw": "#f1f333",
-    "kind": "color",
-    "value": "#f1f333"
-   },
-   "--color-yellow-400": {
-    "raw": "oklch(85.2% .199 91.936)",
-    "kind": "color",
-    "value": "#fdc700"
-   },
-   "--color-yellow-50": {
-    "raw": "oklch(98.7% .026 102.212)",
-    "kind": "color",
-    "value": "#fefce8"
-   },
-   "--color-yellow-800": {
-    "raw": "oklch(47.6% .114 61.907)",
-    "kind": "color",
-    "value": "#894b00"
-   },
-   "--container-2xl": {
-    "raw": "42rem",
-    "kind": "dimension",
-    "value": "672px"
-   },
-   "--container-3xl": {
-    "raw": "48rem",
-    "kind": "dimension",
-    "value": "768px"
-   },
-   "--container-4xl": {
-    "raw": "56rem",
-    "kind": "dimension",
-    "value": "896px"
-   },
-   "--container-5xl": {
-    "raw": "64rem",
-    "kind": "dimension",
-    "value": "1024px"
-   },
-   "--container-6xl": {
-    "raw": "72rem",
-    "kind": "dimension",
-    "value": "1152px"
-   },
-   "--container-7xl": {
-    "raw": "80rem",
-    "kind": "dimension",
-    "value": "1280px"
-   },
-   "--container-lg": {
-    "raw": "32rem",
-    "kind": "dimension",
-    "value": "512px"
-   },
-   "--container-md": {
-    "raw": "28rem",
-    "kind": "dimension",
-    "value": "448px"
-   },
-   "--container-sm": {
-    "raw": "24rem",
-    "kind": "dimension",
-    "value": "384px"
-   },
-   "--container-xl": {
-    "raw": "36rem",
-    "kind": "dimension",
-    "value": "576px"
-   },
-   "--container-xs": {
-    "raw": "20rem",
-    "kind": "dimension",
-    "value": "320px"
-   },
-   "--contrast-accent": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--contrast-black": {
-    "raw": "221 221 221",
-    "kind": "color",
-    "value": "#dddddd"
-   },
-   "--contrast-danger": {
-    "raw": "255 255 255",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--contrast-filled": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--contrast-info": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--contrast-primary": {
-    "raw": "255 255 255",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--contrast-success": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--contrast-warning": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--danger": {
-    "raw": "220 52 30",
-    "kind": "color",
-    "value": "#dc341e"
-   },
-   "--default-font-family": {
-    "raw": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
-    "kind": "fontFamily",
-    "value": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
-   },
-   "--default-mono-font-family": {
-    "raw": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
-    "kind": "fontFamily",
-    "value": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
-   },
-   "--default-transition-duration": {
-    "raw": ".15s",
-    "kind": "duration",
-    "value": "0.15s"
-   },
-   "--default-transition-timing-function": {
-    "raw": "cubic-bezier(.4,0,.2,1)",
-    "kind": "easing",
-    "value": "cubic-bezier(.4,0,.2,1)"
-   },
-   "--disabled-opacity": {
-    "raw": ".3",
-    "kind": "number",
-    "value": 0.3
-   },
-   "--dynamic-grid": {
-    "raw": "min(100%,calc((31.25rem - 100%)*1000))",
-    "kind": "other"
-   },
-   "--ease-in-out": {
-    "raw": "cubic-bezier(.4,0,.2,1)",
-    "kind": "easing",
-    "value": "cubic-bezier(.4,0,.2,1)"
-   },
-   "--ease-out": {
-    "raw": "cubic-bezier(0,0,.2,1)",
-    "kind": "easing",
-    "value": "cubic-bezier(0,0,.2,1)"
-   },
-   "--filled": {
-    "raw": "255 255 255",
-    "kind": "color",
-    "value": "#ffffff"
-   },
-   "--font-family": {
-    "raw": "\"ABC Favorit\", \"ABC Favorit\", sans-serif",
-    "kind": "fontFamily",
-    "value": "\"ABC Favorit\", \"ABC Favorit\", sans-serif"
-   },
-   "--font-mono": {
-    "raw": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
-    "kind": "fontFamily",
-    "value": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
-   },
-   "--font-sans": {
-    "raw": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
-    "kind": "fontFamily",
-    "value": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
-   },
-   "--font-weight-bold": {
-    "raw": "700",
-    "kind": "number",
-    "value": 700
-   },
-   "--font-weight-medium": {
-    "raw": "500",
-    "kind": "number",
-    "value": 500
-   },
-   "--font-weight-normal": {
-    "raw": "400",
-    "kind": "number",
-    "value": 400
-   },
-   "--font-weight-semibold": {
-    "raw": "600",
-    "kind": "number",
-    "value": 600
-   },
-   "--form-element-height": {
-    "raw": "3rem",
-    "kind": "dimension",
-    "value": "48px"
-   },
-   "--gray-1": {
-    "raw": ".1",
-    "kind": "number",
-    "value": 0.1
-   },
-   "--gray-2": {
-    "raw": ".2",
-    "kind": "number",
-    "value": 0.2
-   },
-   "--gray-3": {
-    "raw": ".5",
-    "kind": "number",
-    "value": 0.5
-   },
-   "--green": {
-    "raw": "#23a094",
-    "kind": "color",
-    "value": "#23a094"
-   },
-   "--grid-cols-sidebar": {
-    "raw": "1fr 3fr",
-    "kind": "other"
-   },
-   "--info": {
-    "raw": "144 168 237",
-    "kind": "color",
-    "value": "#90a8ed"
-   },
-   "--leading-relaxed": {
-    "raw": "1.625",
-    "kind": "number",
-    "value": 1.625
-   },
-   "--leading-snug": {
-    "raw": "1.375",
-    "kind": "number",
-    "value": 1.375
-   },
-   "--leading-tight": {
-    "raw": "1.25",
-    "kind": "number",
-    "value": 1.25
-   },
-   "--loading-spinner": {
-    "raw": "url(…)",
-    "kind": "other"
-   },
-   "--logo": {
-    "raw": "url(…)",
-    "kind": "other"
-   },
-   "--main-stack-width": {
-    "raw": "28rem",
-    "kind": "dimension",
-    "value": "448px"
-   },
-   "--neutral-accent": {
-    "raw": "255 144 232",
-    "kind": "color",
-    "value": "#ff90e8"
-   },
-   "--neutral-border-alpha": {
-    "raw": ".35",
-    "kind": "number",
-    "value": 0.35
-   },
-   "--neutral-color": {
-    "raw": "221 221 221",
-    "kind": "color",
-    "value": "#dddddd"
-   },
-   "--neutral-danger": {
-    "raw": "220 52 30",
-    "kind": "color",
-    "value": "#dc341e"
-   },
-   "--neutral-filled": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--orange": {
-    "raw": "#ffc900",
-    "kind": "color",
-    "value": "#ffc900"
-   },
-   "--outline": {
-    "raw": ".125rem solid rgb(54 169 174)",
-    "kind": "other"
-   },
-   "--parent-color": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--pink": {
-    "raw": "#ff90e8",
-    "kind": "color",
-    "value": "#ff90e8"
-   },
-   "--primary": {
-    "raw": "0 0 0",
-    "kind": "color",
-    "value": "#000000"
-   },
-   "--product-cover-placeholder": {
-    "raw": "url(…)",
-    "kind": "other"
-   },
-   "--purple": {
-    "raw": "#90a8ed",
-    "kind": "color",
-    "value": "#90a8ed"
-   },
-   "--radius": {
-    "raw": "0.25rem",
-    "kind": "dimension",
-    "value": "4px"
-   },
-   "--radius-2xl": {
-    "raw": "1rem",
-    "kind": "dimension",
-    "value": "16px"
-   },
-   "--radius-3xl": {
-    "raw": "1.5rem",
-    "kind": "dimension",
-    "value": "24px"
-   },
-   "--radius-lg": {
-    "raw": ".5rem",
-    "kind": "dimension",
-    "value": "8px"
-   },
-   "--radius-md": {
-    "raw": ".375rem",
-    "kind": "dimension",
-    "value": "6px"
-   },
-   "--radius-sm": {
-    "raw": "0.25rem",
-    "kind": "dimension",
-    "value": "4px"
-   },
-   "--radius-xl": {
-    "raw": ".75rem",
-    "kind": "dimension",
-    "value": "12px"
-   },
-   "--radius-xs": {
-    "raw": ".125rem",
-    "kind": "dimension",
-    "value": "2px"
-   },
-   "--red": {
-    "raw": "#dc341e",
-    "kind": "color",
-    "value": "#dc341e"
-   },
-   "--spacer-1": {
-    "raw": ".25rem",
-    "kind": "dimension",
-    "value": "4px"
-   },
-   "--spacer-2": {
-    "raw": ".5rem",
-    "kind": "dimension",
-    "value": "8px"
-   },
-   "--spacer-3": {
-    "raw": ".75rem",
-    "kind": "dimension",
-    "value": "12px"
-   },
-   "--spacer-4": {
-    "raw": "1rem",
-    "kind": "dimension",
-    "value": "16px"
-   },
-   "--spacer-5": {
-    "raw": "1.5rem",
-    "kind": "dimension",
-    "value": "24px"
-   },
-   "--spacer-6": {
-    "raw": "2rem",
-    "kind": "dimension",
-    "value": "32px"
-   },
-   "--spacer-7": {
-    "raw": "3rem",
-    "kind": "dimension",
-    "value": "48px"
-   },
-   "--spacer-8": {
-    "raw": "4rem",
-    "kind": "dimension",
-    "value": "64px"
-   },
-   "--spacing": {
-    "raw": ".25rem",
-    "kind": "dimension",
-    "value": "4px"
-   },
-   "--spacing-product-page": {
-    "raw": "75.25rem",
-    "kind": "dimension",
-    "value": "1204px"
-   },
-   "--success": {
-    "raw": "35 160 148",
-    "kind": "color",
-    "value": "#23a094"
-   },
-   "--text-2xl": {
-    "raw": "1.5rem",
-    "kind": "dimension",
-    "value": "24px"
-   },
-   "--text-2xl--line-height": {
-    "raw": "calc(2/1.5)",
-    "kind": "other"
-   },
-   "--text-3xl": {
-    "raw": "1.875rem",
-    "kind": "dimension",
-    "value": "30px"
-   },
-   "--text-3xl--line-height": {
-    "raw": "calc(2.25/1.875)",
-    "kind": "other"
-   },
-   "--text-4xl": {
-    "raw": "2.25rem",
-    "kind": "dimension",
-    "value": "36px"
-   },
-   "--text-4xl--line-height": {
-    "raw": "calc(2.5/2.25)",
-    "kind": "other"
-   },
-   "--text-5xl": {
-    "raw": "3rem",
-    "kind": "dimension",
-    "value": "48px"
-   },
-   "--text-5xl--line-height": {
-    "raw": "1",
-    "kind": "number",
-    "value": 1
-   },
-   "--text-6xl": {
-    "raw": "3.75rem",
-    "kind": "dimension",
-    "value": "60px"
-   },
-   "--text-6xl--line-height": {
-    "raw": "1",
-    "kind": "number",
-    "value": 1
-   },
-   "--text-7xl": {
-    "raw": "4.5rem",
-    "kind": "dimension",
-    "value": "72px"
-   },
-   "--text-7xl--line-height": {
-    "raw": "1",
-    "kind": "number",
-    "value": 1
-   },
-   "--text-8xl": {
-    "raw": "6rem",
-    "kind": "dimension",
-    "value": "96px"
-   },
-   "--text-8xl--line-height": {
-    "raw": "1",
-    "kind": "number",
-    "value": 1
-   },
-   "--text-9xl": {
-    "raw": "8rem",
-    "kind": "dimension",
-    "value": "128px"
-   },
-   "--text-9xl--line-height": {
-    "raw": "1",
-    "kind": "number",
-    "value": 1
-   },
-   "--text-base": {
-    "raw": "1rem",
-    "kind": "dimension",
-    "value": "16px"
-   },
-   "--text-base--line-height": {
-    "raw": "calc(1.5/1)",
-    "kind": "other"
-   },
-   "--text-lg": {
-    "raw": "1.125rem",
-    "kind": "dimension",
-    "value": "18px"
-   },
-   "--text-lg--line-height": {
-    "raw": "calc(1.75/1.125)",
-    "kind": "other"
-   },
-   "--text-sm": {
-    "raw": ".875rem",
-    "kind": "dimension",
-    "value": "14px"
-   },
-   "--text-sm--line-height": {
-    "raw": "calc(1.25/.875)",
-    "kind": "other"
-   },
-   "--text-xl": {
-    "raw": "1.25rem",
-    "kind": "dimension",
-    "value": "20px"
-   },
-   "--text-xl--line-height": {
-    "raw": "calc(1.75/1.25)",
-    "kind": "other"
-   },
-   "--text-xs": {
-    "raw": ".75rem",
-    "kind": "dimension",
-    "value": "12px"
-   },
-   "--text-xs--line-height": {
-    "raw": "calc(1/.75)",
-    "kind": "other"
-   },
-   "--tracking-tight": {
-    "raw": "-.025em",
-    "kind": "other"
-   },
-   "--tracking-wide": {
-    "raw": ".025em",
-    "kind": "other",
-    "note": "font-relative length; resolves per element"
-   },
-   "--tracking-wider": {
-    "raw": ".05em",
-    "kind": "other",
-    "note": "font-relative length; resolves per element"
-   },
-   "--tracking-widest": {
-    "raw": ".1em",
-    "kind": "other",
-    "note": "font-relative length; resolves per element"
-   },
-   "--transition-duration": {
-    "raw": ".14s",
-    "kind": "duration",
-    "value": "0.14s"
-   },
-   "--warning": {
-    "raw": "255 201 0",
-    "kind": "color",
-    "value": "#ffc900"
-   },
-   "--yellow": {
-    "raw": "#f1f333",
-    "kind": "color",
-    "value": "#f1f333"
-   },
-   "--z-index-above-overlay": {
-    "raw": "2",
-    "kind": "number",
-    "value": 2
-   },
-   "--z-index-base": {
-    "raw": "0",
-    "kind": "number",
-    "value": 0
-   },
-   "--z-index-header": {
-    "raw": "3",
-    "kind": "number",
-    "value": 3
-   },
-   "--z-index-menubar": {
-    "raw": "10",
-    "kind": "number",
-    "value": 10
-   },
-   "--z-index-modal": {
-    "raw": "20",
-    "kind": "number",
-    "value": 20
-   },
-   "--z-index-overlay": {
-    "raw": "1",
-    "kind": "number",
-    "value": 1
-   },
-   "--z-index-tooltip": {
-    "raw": "30",
-    "kind": "number",
-    "value": 30
+    "value": "30"
    }
   }
  }

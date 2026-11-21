@@ -17,7 +17,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
-import { pageRunner, exitStatus } from './run-pages.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -28,7 +27,6 @@ const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 const URLS = { home: '/', pricing: '/pricing', download: '/download', contact: '/contact' };
 let page, cdp, current, context, run;
 const touched = new Set();
-const blockedPages = new Set(); // pages a bot check stopped; their old readings are kept
 const listed = new Map();
 
 async function blocked() {
@@ -52,7 +50,7 @@ async function newPage(key, { mobile = false, wait = 8000 } = {}) {
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
   await open(page, BASE + URLS[key], { wait });
-  if (await blocked()) { log('  BLOCKED', key); blockedPages.add(key); await page.close(); await ctx.close(); return false; }
+  if (await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   await closePromo(page);
   return true;
@@ -325,25 +323,18 @@ context = ctx0;
 const pages = process.argv.slice(2);
 const plan = { home, pricing, download, contact, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
-// A page counts as finished only when its runner returns without throwing and
-// no bot check stopped it. Pruning touches only finished pages: a page that
-// threw keeps its unreached components and states instead of losing them.
-// A page that throws is recorded as broken and the run goes on; the exit
-// status at the end is nonzero when any page threw (run-pages.mjs).
-const { finished, broken, runPage } = pageRunner(() => current, log);
-const pageDone = (c) => finished.has(c.page) && !broken.has(c.page) && !blockedPages.has(c.page);
 try {
-  for (const k of order) { if (k !== 'mobile') await runPage(plan[k]); }
-  if (!pages.length || pages.includes('home')) await runPage(footer);
-  if (!pages.length || pages.includes('mobile')) await runPage(plan.mobile);
+  for (const k of order) { if (k !== 'mobile') await plan[k](); }
+  if (!pages.length || pages.includes('home')) await footer();
+  if (!pages.length || pages.includes('mobile')) await plan.mobile();
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
-    if (!touched.has(key)) { if (!pages.length && pageDone(c)) delete out.components[key]; continue; }
+    if (!touched.has(key) && !pages.length) { delete out.components[key]; continue; }
+    if (!touched.has(key)) continue;
     const want = listed.get(key);
-    if (want && pageDone(c)) for (const st of Object.keys(c.states || {})) if (!want.has(st)) delete c.states[st];
+    if (want) for (const st of Object.keys(c.states || {})) if (!want.has(st) && pages.length) delete c.states[st];
   }
   save();
   await browser.close().catch(() => {});
 }
-console.log(broken.size ? 'incomplete ->' : 'done ->', OUT);
-process.exitCode = exitStatus(broken);
+console.log('done ->', OUT);

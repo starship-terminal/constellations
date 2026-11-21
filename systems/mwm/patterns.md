@@ -1,39 +1,63 @@
 # Patterns
 
-Page-level arrangements on the public signed-out surfaces, 2026-11-19.
+How the captured pages are built. Screenshots are 256-colour. Values are in [tokens.json](tokens.json).
 
 ## Marketing shell
 
-A 72px top bar sits on `dark.color.topbar` with a 1px line at 15% white. The logo is at the left, Products / Resources / Pricing in the middle, and the two actions at the right. The page behind it is `dark.color.page`. Shot: [home-dark-default.png](screenshots/home-dark-default.png).
+Every public page on mwm.ai shares one header: logo, Products, Resources, Pricing, Open MWM Console, Build your app. The page background is `#0c0c0c`. Type is white. The two header actions are a translucent secondary button and a white primary button, both 32 px and 8 px radius.
 
-On a 390px width the same bar collapses to the logo and a menu button. Shot: [mobile-home-dark-default.png](screenshots/mobile-home-dark-default.png).
+At 390 px the same links move into a drawer opened by "Open navigation".
 
-The footer repeats the product list on `dark.color.page`. It was not cropped separately.
+| State | Shot |
+|---|---|
+| Desktop home | [screenshots/home-dark-default.png](screenshots/home-dark-default.png) |
+| Products menu | [screenshots/home-dark-products-menu.png](screenshots/home-dark-products-menu.png) |
+| Resources menu | [screenshots/home-dark-resources-menu.png](screenshots/home-dark-resources-menu.png) |
+| Language menu | [screenshots/home-dark-language-menu.png](screenshots/home-dark-language-menu.png) |
+| Phone drawer | [screenshots/mobile-home-dark-nav-open.png](screenshots/mobile-home-dark-nav-open.png) |
 
-## Hero
+The footer repeats Products, Resources, About, and Our apps as disclosure summaries. Our apps and Careers leave the site. Those destinations were not captured.
 
-The home hero is a centred 72px headline, a 16px lede at 70% white, and the prompt card. The headline types a second line in ("mobile product" and similar). Both home shots catch that animation mid-cycle. The grid behind the hero is a painted background, not a token.
+## Home composer
 
-## Pricing
+The home page is a display heading, one lede sentence, and a prompt panel. The heading is 72 px Inter at weight 600. The panel holds a textarea, an attachment control, Agent, platform, model, voice, and a disabled send control. Menus open in place. Sending a prompt, attaching a file, or using the microphone was not done.
 
-Three plan columns under a 72px headline. Each column has a wordmark, a tier pill, a 32px title, a price well, a feature list and a white button. The Pro column carries the orange "MOST POPULAR" badge. Shot: [pricing-dark-default.png](screenshots/pricing-dark-default.png).
-
-The FAQ sits below as a two-column block: a 48px heading on the left, the question list on the right. Shot: [pricing-dark-faq-open.png](screenshots/pricing-dark-faq-open.png).
+Full page: [screenshots/home-dark-full.png](screenshots/home-dark-full.png).
 
 ## Product page
 
-`/mwm-ai` uses the same shell and a 72px headline over a full-bleed product screenshot. Shot: [mwm-ai-dark-default.png](screenshots/mwm-ai-dark-default.png). `/mwm-console` and `/company` follow the same headline pattern. Shots: [mwm-console-dark-default.png](screenshots/mwm-console-dark-default.png), [company-dark-default.png](screenshots/company-dark-default.png).
+MWM AI, Console, Publishing, Intelligence, and Studio are long marketing pages under the same header. They use the same display scale, white type, and in-page FAQ buttons. Plan and console calls to action leave for a login wall. The wall URL is recorded in [site-tree.md](site-tree.md). The wall itself is not in the screenshots.
+
+| Page | Shot |
+|---|---|
+| MWM AI | [screenshots/mwm-ai-dark-default.png](screenshots/mwm-ai-dark-default.png) |
+| Agent details | [screenshots/mwm-ai-dark-agent-details.png](screenshots/mwm-ai-dark-agent-details.png) |
+| Pricing | [screenshots/pricing-dark-default.png](screenshots/pricing-dark-default.png) |
+| Pricing FAQ | [screenshots/pricing-dark-faq-open.png](screenshots/pricing-dark-faq-open.png) |
+| Studio apps | [screenshots/studio-apps-dark-default.png](screenshots/studio-apps-dark-default.png) |
+| One studio app | [screenshots/studio-app-dark-default.png](screenshots/studio-app-dark-default.png) |
 
 ## Directory
 
-`/apps/` is a public index: a 72px headline, a lede, and a "LIVE APP INDEX" card with two figures. Shot: [apps-dark-default.png](screenshots/apps-dark-default.png).
+Apps, tags, rankings, articles, glossary, and guides share an index-plus-detail template. Each index was captured, plus one example row. The other rows are the same template.
 
-## Sign-in
+| Index | Example |
+|---|---|
+| [screenshots/apps-dark-default.png](screenshots/apps-dark-default.png) | [screenshots/app-profile-dark-default.png](screenshots/app-profile-dark-default.png) |
+| [screenshots/articles-dark-default.png](screenshots/articles-dark-default.png) | [screenshots/article-dark-default.png](screenshots/article-dark-default.png) |
+| [screenshots/glossary-dark-default.png](screenshots/glossary-dark-default.png) | [screenshots/glossary-term-dark-default.png](screenshots/glossary-term-dark-default.png) |
+| [screenshots/guides-dark-default.png](screenshots/guides-dark-default.png) | [screenshots/guide-dark-default.png](screenshots/guide-dark-default.png) |
+| [screenshots/rankings-dark-default.png](screenshots/rankings-dark-default.png) | [screenshots/ranking-chart-dark-default.png](screenshots/ranking-chart-dark-default.png) |
+| [screenshots/tags-dark-default.png](screenshots/tags-dark-default.png) | [screenshots/tag-dark-default.png](screenshots/tag-dark-default.png) |
 
-Console splits the viewport: a form column on `dark.color.page` and an orange panel. The form stacks a title, two provider buttons, an or-rule, email, password and a white submit. Shot: [console-sign-in-dark-email.png](screenshots/console-sign-in-dark-email.png).
+Filters stay on the page: glossary categories, duo Optimized, reports Europe. Search fields were focused and not submitted.
 
-Create splits the viewport the other way: a form on `#1c1c1c` and a wall of app icons. Three provider buttons, no email field on the first screen. Shot: [create-sign-in-dark-default.png](screenshots/create-sign-in-dark-default.png).
+## Legal and missing page
 
-## Not captured
+Privacy, terms, SDK privacy, and SDK terms are long text under the same header. Their contact details are not copied into this package. The IP dispute form is shown empty, and with the first field focused and empty. It was not submitted.
 
-Signed-in app shells, checkout, and any flow that asks for a card or a phone number. The provider buttons and "Sign In" were not activated.
+`/sign-up` is a 404, linked from the ASO tool. Shot: [screenshots/sign-up-404-dark-default.png](screenshots/sign-up-404-dark-default.png).
+
+## Stopped
+
+Open MWM Console and Build your app, and the pricing "Get MWM AI Pro" links, open login walls. Those branches stop at the URL. Google, Apple, and GitHub were not clicked. No password, code, or profile field was filled.

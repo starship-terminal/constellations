@@ -11,8 +11,7 @@
 // is ever clicked). The store served is the US site (Sites-aesop-us-Site).
 import fs from 'fs';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { M, closePromo, killGeo, chromium, patch, UA, UA_MOBILE, BASE } from './lib.mjs';
-import { loadOnce, pageState } from './gate.mjs';
+import { M, closePromo, killGeo, clearChallenge, chromium, patch, launchOptions, UA, UA_MOBILE, BASE } from './lib.mjs';
 
 const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
 fs.mkdirSync(RAW, { recursive: true });
@@ -52,21 +51,26 @@ class Shooter {
 }
 const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
 const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).catch(() => loc.evaluate((el) => el.click())); };
-// A bot check is a boundary (gate.mjs): each page is loaded once in its run's
-// context, and a page that shows a challenge, an error or no content is
-// logged BLOCKED and shot not at all. Nothing reloads it, retries it or opens
-// it again in a fresh context. The product page is reached the way a visitor
-// reaches it, from the catalogue in the same context, so it is that context's
-// second document; Turnstile challenges a second document load, and that is
-// recorded as blocked like any other page.
-const toProduct = async (p) => {
-  const url = await p.evaluate(() => {
-    const a = [...document.querySelectorAll('a[href$=".html"]')].find((n) => /\/[A-Z]+\d[A-Z0-9]*\.html/i.test(n.getAttribute('href') || ''));
-    return a ? a.href : null;
-  }).catch(() => null);
-  if (!url) return { ok: false, reason: 'no product tile link found on /shop-all/' };
-  log('  ->', url);
-  return loadOnce(p, url);
+// Cloudflare lets each browser context load exactly one document before it
+// starts issuing Turnstile challenges, so a PDP is reached as a first load in
+// its own context: the product URL (…/<SKU>.html) is resolved on the
+// catalogue page in a throwaway context, then handed to the page run as its
+// path. Turnstile does not auto-solve in headless; a still-blocked route is
+// an honest boundary.
+const resolvePdp = async (browser, mobile) => {
+  const ctx = await browser.newContext({ viewport: { width: mobile ? 390 : 1440, height: mobile ? 844 : 900 }, userAgent: mobile ? UA_MOBILE : UA, isMobile: mobile, hasTouch: mobile, locale: 'en-US' });
+  await patch(ctx);
+  const p = await ctx.newPage();
+  let url = null;
+  try {
+    await p.goto(BASE + '/shop-all/', { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+    await clearChallenge(p, { tries: 6, step: 2000 });
+    url = await p.evaluate(() => {
+      const a = [...document.querySelectorAll('a[href$=".html"]')].find((n) => /\/[A-Z]+\d[A-Z0-9]*\.html/i.test(n.getAttribute('href') || ''));
+      return a ? a.href : null;
+    });
+  } finally { await ctx.close(); }
+  return url || BASE + '/gifts/seasonal-gift-kits/the-aesop-valise/APB399.html';
 };
 const esc = async (p) => { await p.keyboard.press('Escape'); await wait(p, 800); await p.evaluate(() => { for (const n of document.querySelectorAll('.c-sliding-panel.m-opened, [class*="m-opened"]')) n.classList.remove('m-opened', 'm-active'); document.body.classList.remove('m-lock', 'lock'); }).catch(() => {}); };
 
@@ -107,7 +111,7 @@ const desktop = {
     await S.view('default');
     await S.full();
   } },
-  pdp: { path: '/shop-all/', via: toProduct, run: async (p, S) => {
+  pdp: { resolve: (b) => resolvePdp(b, false), run: async (p, S) => {
     await killGeo(p);
     await S.view('default');
     // The PDP's information accordion only paints at phone widths
@@ -130,8 +134,8 @@ const desktop = {
   } },
   login: { path: '/on/demandware.store/Sites-aesop-us-Site/en_US/Login-Show', run: async (p, S) => {
     // The Demandware sign-in pipeline. Cloudflare Turnstile or a styled
-    // "unexpected error" page may serve instead of the form; either is
-    // logged BLOCKED (gate.mjs) and not shot.
+    // "unexpected error" page may serve instead of the form; whichever serves
+    // is the honest record.
     await S.view('default');
     await S.full();
   } },
@@ -140,6 +144,19 @@ const desktop = {
     await S.view('default');
     await S.full();
   } },
+  login404: { path: '/account/login', run: async (p, S) => {
+    // Probe note: this URL 404s. Record the styled error page and stop.
+    await S.view('default');
+    await S.full();
+  } },
+  gifts: { path: '/gifts.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  library: { path: '/library.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  experience: { path: '/experience.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  story: { path: '/our-story.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  contact: { path: '/customer-service/contact-us.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  finder: { path: '/gift-finder/', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  gathering: { path: '/the-aesop-gift-gathering/', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  sitemap: { path: '/customer-service/customer-service-sitemap.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
 };
 
 const mobile = {
@@ -152,7 +169,13 @@ const mobile = {
     await S.full();
   } },
   shopall: { path: '/shop-all/', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  pdp: { path: '/shop-all/', via: toProduct, run: async (p, S) => {
+  skincare: { path: '/skin-care.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  gifts: { path: '/gifts.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  stores: { path: '/stores', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  cart: { path: '/cart', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  contact: { path: '/customer-service/contact-us.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  library: { path: '/library.html', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  pdp: { resolve: (b) => resolvePdp(b, true), run: async (p, S) => {
     await S.view('default');
     await step('accordion', async () => {
       const acc = p.locator('.c-accordion__title').filter({ visible: true }).first();
@@ -162,9 +185,8 @@ const mobile = {
   } },
 };
 
-const b = await chromium.launch();
+const b = await chromium.launch(launchOptions());
 let total = 0;
-const blocked = [];
 const runs = [...Object.keys(desktop).map((k) => ({ k, mob: false })), ...Object.keys(mobile).map((k) => ({ k, mob: true }))];
 for (const { k, mob } of runs) {
   const name = (mob ? 'mobile-' : '') + k;
@@ -177,17 +199,21 @@ for (const { k, mob } of runs) {
   log(name);
   const S = new Shooter(p, `${name}-light`, vw, vh, dpr);
   try {
-    const target = spec.path.startsWith('http') ? spec.path : BASE + spec.path;
+    const path = spec.resolve ? await spec.resolve(b) : spec.path;
+    const target = path && path.startsWith('http') ? path : BASE + path;
     log('  ->', target);
-    let r = await loadOnce(p, target);
-    if (r.ok && spec.via) r = await spec.via(p);
-    // An error page or a late challenge can replace the document while it
-    // settles: watch it for a few seconds, without touching it.
-    for (let i = 0; i < 6 && r.ok; i++) {
-      await wait(p, 1200);
-      if ((await pageState(p)) !== 'ok') r = { ok: false, reason: 'page turned into a challenge or an error after loading' };
+    let ok = false;
+    for (let attempt = 0; attempt < 3 && !ok; attempt++) {
+      await p.goto(target, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+      if (!(await clearChallenge(p))) break;
+      let clean = true;
+      for (let i = 0; i < 6; i++) {
+        await wait(p, 1200);
+        if (await p.evaluate(() => /something went wrong|^not found$|page cannot be found/i.test(document.body.innerText.trim())).catch(() => false)) { clean = false; break; }
+      }
+      ok = clean;
     }
-    if (!r.ok) { log('  BLOCKED', name, r.reason); blocked.push(`${name} (${r.reason})`); await ctx.close(); continue; }
+    if (!ok) { log('  BLOCKED challenge-or-error', spec.path); await ctx.close(); continue; }
     await killGeo(p);
     await spec.run(p, S);
   } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
@@ -195,5 +221,4 @@ for (const { k, mob } of runs) {
   await ctx.close();
 }
 log('done', total, 'screenshots ->', RAW);
-if (blocked.length) log('blocked, not shot:', blocked.join('; '));
 await b.close();

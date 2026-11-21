@@ -1,0 +1,62 @@
+[
+  {
+    "tag": "A",
+    "cls": "",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(231, 231, 231)",
+    "radius": "0px",
+    "h": "40px",
+    "pad": "0px 0px",
+    "font": "Geist, system-ui, sans-serif",
+    "size": "16px",
+    "weight": "400"
+  },
+  {
+    "tag": "DIV",
+    "cls": "header-actions",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(231, 231, 231)",
+    "radius": "0px",
+    "h": "40px",
+    "pad": "0px 0px",
+    "font": "Geist, system-ui, sans-serif",
+    "size": "16px",
+    "weight": "400"
+  },
+  {
+    "tag": "DIV",
+    "cls": "menu",
+    "bg": "rgba(33, 33, 33, 0.25)",
+    "color": "rgb(231, 231, 231)",
+    "radius": "16px",
+    "h": "66px",
+    "pad": "12px 16px",
+    "font": "Geist, system-ui, sans-serif",
+    "size": "16px",
+    "weight": "400"
+  },
+  {
+    "tag": "BODY",
+    "cls": "",
+    "bg": "rgb(33, 33, 33)",
+    "color": "rgb(231, 231, 231)",
+    "radius": "0px",
+    "h": "8342.36px",
+    "pad": "0px 0px",
+    "font": "Geist, system-ui, sans-serif",
+    "size": "16px",
+    "weight": "400"
+  },
+  {
+    "tag": "HTML",
+    "cls": "",
+    "bg": "rgb(33, 33, 33)",
+    "color": "rgb(0, 0, 0)",
+    "radius": "0px",
+    "h": "8262.36px",
+    "pad": "0px 0px",
+    "font": "Times",
+    "size": "16px",
+    "weight": "400"
+  }
+]

@@ -3,134 +3,78 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Nextdoor"
-description: "Neighborhood marketing: green pill primary actions, gray pill secondary actions, 56px fields with a 12px radius, and blue-gray text on white"
+description: "Neighborhood marketing and a local directory: green #1b8751 wordmark and one green pill, blue-gray #232f46 ink, pill buttons, a white signup card over a photo"
+omitted:
+  - section: "components"
+    reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
-  primary: "#1B8751"
-  neutral: "#FFFFFF"
-  surface: "#FFFFFF"
-  on-surface: "#232F46"
+  primary: "#1b8751"
+  neutral: "#ffffff"
+  surface: "#f0f2f5"
+  on-surface: "#232f46"
   on-surface-variant: "#576580"
-  outline: "#CAD3E5"
-  color-page: "#FFFFFF"
-  color-surface: "#FFFFFF"
-  color-base: "#F0F2F5"
-  color-inlay: "#F0F2F5"
-  color-underlay: "#CAD3E5"
-  color-emphasis: "#1A2233"
-  color-scrim: "rgba(0, 0, 0, 0.5)"
-  color-overlay: "rgba(0, 0, 0, 0.6)"
-  color-text: "#232F46"
+  outline: "#cad3e5"
+  color-page: "#ffffff"
+  color-surface: "#f0f2f5"
+  color-elevated: "#ffffff"
+  color-emphasis: "#1a2233"
+  color-overlay: "rgba(0, 0, 0, 0.5)"
+  color-underlay: "#cad3e5"
+  color-text: "#232f46"
   color-muted: "#576580"
-  color-strong: "#232F46"
-  color-onAccent: "#FFFFFF"
-  color-onStrong: "#FFFFFF"
-  color-onOverlay: "#FFFFFF"
-  color-link: "#232F46"
-  color-border: "#CAD3E5"
-  color-borderStrong: "#232F46"
-  color-accent: "#1B8751"
-  color-info: "#1197DE"
-  color-success: "#1B8751"
-  color-warning: "#F6BF56"
-  color-warningText: "#B07000"
-  color-danger: "#C90B11"
-  color-dangerText: "#A4060B"
-  color-dangerSurface: "#FBCED0"
-  color-featured: "#974859"
-  component-buttonBrand-bg: "#1B8751"
-  component-buttonBrand-text: "#FFFFFF"
-  component-buttonNeutral-bg: "#F0F2F5"
-  component-buttonNeutral-text: "#232F46"
-  component-field-bg: "rgba(0, 0, 0, 0)"
-  component-field-text: "#232F46"
-  component-card-bg: "#FFFFFF"
-  component-badge-bg: "#CAD3E5"
-  component-focus-field: "#232F46"
+  color-onAccent: "#ffffff"
+  color-link: "#1197de"
+  color-accent: "#1b8751"
+  color-accentPressed: "#0e663f"
+  color-border: "#cad3e5"
+  color-borderStrong: "#232f46"
+  color-focus: "#0076b6"
+  color-success: "#1b8751"
+  color-warning: "#f6bf56"
+  color-danger: "#a4060b"
+  color-info: "#1197de"
+  color-errorSurface: "#fbced0"
 typography:
   body:
     fontFamily: "Saans"
     fontSize: "16px"
-    fontWeight: 420
-    lineHeight: "20px"
-    letterSpacing: "0px"
-  bodyLarge:
-    fontFamily: "Saans"
-    fontSize: "22px"
-    fontWeight: 420
-    lineHeight: "26px"
-    letterSpacing: "0px"
+    fontWeight: 400
+    lineHeight: 1.25
   bodyTitle:
     fontFamily: "Saans"
     fontSize: "16px"
-    fontWeight: 620
-    lineHeight: "20px"
-    letterSpacing: "0px"
+    fontWeight: 600
+    lineHeight: 1.25
   detail:
     fontFamily: "Saans"
     fontSize: "14px"
-    fontWeight: 420
-    lineHeight: "18px"
-    letterSpacing: "0px"
-  detailTitle:
-    fontFamily: "Saans"
-    fontSize: "14px"
-    fontWeight: 620
-    lineHeight: "18px"
-    letterSpacing: "0px"
-  folio:
-    fontFamily: "Saans"
-    fontSize: "52px"
-    fontWeight: 620
-    lineHeight: "52px"
-    letterSpacing: "0px"
-  headline:
-    fontFamily: "Saans"
-    fontSize: "28px"
-    fontWeight: 620
-    lineHeight: "32px"
-    letterSpacing: "0px"
+    fontWeight: 400
+    lineHeight: 1.25
   mini:
     fontFamily: "Saans"
     fontSize: "13px"
-    fontWeight: 420
-    lineHeight: "16px"
-    letterSpacing: "0px"
-  miniTitle:
-    fontFamily: "Saans"
-    fontSize: "13px"
-    fontWeight: 620
-    lineHeight: "16px"
-    letterSpacing: "0px"
-  section:
-    fontFamily: "Saans"
-    fontSize: "22px"
-    fontWeight: 620
-    lineHeight: "26px"
-    letterSpacing: "0px"
+    fontWeight: 400
+    lineHeight: 1.25
   sectionTitle:
     fontFamily: "Saans"
     fontSize: "22px"
-    fontWeight: 620
-    lineHeight: "26px"
-    letterSpacing: "0px"
+    fontWeight: 600
+    lineHeight: 1.25
+  headline:
+    fontFamily: "Saans"
+    fontSize: "28px"
+    fontWeight: 600
+    lineHeight: 1.25
   shout:
     fontFamily: "Saans"
     fontSize: "32px"
-    fontWeight: 620
-    lineHeight: "36px"
-    letterSpacing: "0px"
-  subsection:
+    fontWeight: 600
+    lineHeight: 1.25
+  folio:
     fontFamily: "Saans"
-    fontSize: "22px"
-    fontWeight: 420
-    lineHeight: "26px"
-    letterSpacing: "0px"
-  tiny:
-    fontFamily: "Saans"
-    fontSize: "13px"
-    fontWeight: 420
-    lineHeight: "16px"
-    letterSpacing: "0px"
+    fontSize: "52px"
+    fontWeight: 600
+    lineHeight: 1.25
 rounded:
   none: "0px"
   xs: "2px"
@@ -139,94 +83,65 @@ rounded:
   lg: "16px"
   pill: "10000px"
 spacing:
-  s1: "1px"
-  s2: "2px"
-  s4: "4px"
-  s6: "6px"
-  s8: "8px"
-  s12: "12px"
-  s16: "16px"
-  s20: "20px"
-  s24: "24px"
-  s32: "32px"
-  s40: "40px"
-  s48: "48px"
-  s64: "64px"
-  s80: "80px"
-components:
-  buttonBrand:
-    backgroundColor: "{colors.component-buttonBrand-bg}"
-    textColor: "{colors.component-buttonBrand-text}"
-    rounded: "10000px"
-    height: "48px"
-    padding: "24px"
-  buttonNeutral:
-    backgroundColor: "{colors.component-buttonNeutral-bg}"
-    textColor: "{colors.component-buttonNeutral-text}"
-    rounded: "10000px"
-    height: "48px"
-  field:
-    backgroundColor: "{colors.component-field-bg}"
-    textColor: "{colors.component-field-text}"
-    rounded: "12px"
-    height: "56px"
-  card:
-    backgroundColor: "{colors.component-card-bg}"
-    rounded: "12px"
-    padding: "24px"
-  badge:
-    backgroundColor: "{colors.component-badge-bg}"
+  "0": "0px"
+  "0-25": "1px"
+  "0-5": "2px"
+  "1": "4px"
+  "1-5": "6px"
+  "2": "8px"
+  "3": "12px"
+  "4": "16px"
+  "5": "20px"
+  "6": "24px"
+  "8": "32px"
+  "10": "40px"
+  "12": "48px"
+  "16": "64px"
+  "20": "80px"
 ---
 
 # Nextdoor
 
 Generated from [tokens.json](tokens.json) and [README.md](README.md) by the design-systems catalog tool. Do not edit this file: change the tokens through the package's builders, then run `make design-md` at the repository root.
 
-It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, holds the `dark` theme, and keeps the 13 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
+It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, holds the `dark` theme, and keeps the 4 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
 
 ## Overview
 
-Good for: Neighborhood marketing: green pill primary actions, gray pill secondary actions, 56px fields with a 12px radius, and blue-gray text on white.
+Good for: Neighborhood marketing and a local directory: green #1b8751 wordmark and one green pill, blue-gray #232f46 ink, pill buttons, a white signup card over a photo.
 
-Captured 2026-11-19, signed out; public marketing and the login card only; address verification not entered. Themes: light, dark.
+Captured 2026-11-21, signed out (public marketing, directory, help and about pages; login, join, choose-address and the homepage signup card were not used). Themes: light, dark.
 
-Nextdoor's public signed-out marketing site, captured on 2026-11-19 from [nextdoor.com](https://nextdoor.com/). Signed out. No account. The live page was light (`html` class `light`). Dark semantic colours are declared in CSS and were not painted.
+A token set and component reference for Nextdoor's public site, for building neighborhood-marketing and local-directory surfaces in the style of the real thing. It was read from **nextdoor.com**, **about.nextdoor.com**, **business.nextdoor.com**, **help.nextdoor.com**, **developer.nextdoor.com** and **blog.nextdoor.com** on **2026-11-21**, signed out, in headless Chromium at 1440 x 900 and 390 x 844.
 
-The neighborhood feed, address verification and signup were not entered. The homepage signup card was read and not submitted.
+Nextdoor's public face is a green wordmark (#1b8751) and one green pill on a white page, with ink type in a blue-gray (#232f46). The homepage is a photo with a white signup card. Corporate pages use the same ink and a dark pill for the secondary action. The product itself (the feed, the map, posts) sits behind https://nextdoor.com/login/ and was not opened.
 
 ## Colors
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#1B8751):** `light.color.accent`
-- **neutral (#FFFFFF):** `light.color.page`
-- **surface (#FFFFFF):** `light.color.surface`
-- **on-surface (#232F46):** `light.color.text`
+- **primary (#1b8751):** `light.color.accent`
+- **neutral (#ffffff):** `light.color.page`
+- **surface (#f0f2f5):** `light.color.surface`
+- **on-surface (#232f46):** `light.color.text`
 - **on-surface-variant (#576580):** `light.color.muted`
-- **outline (#CAD3E5):** `light.color.border`
+- **outline (#cad3e5):** `light.color.border`
 
 ## Typography
 
-14 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Saans.
+8 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Saans.
 
 ### Fonts (from README.md)
 
-Saans is the product face, loaded from `https://d33c41ebahvfs6.cloudfront.net/static/fonts/SaansVFUprights.woff2`. It is proprietary. Tokens name Saans first and fall back to system-ui, Helvetica Neue, Helvetica, Roboto, Segoe UI, Arial, sans-serif, which is the stack the page declares. The style guide uses the fallback stack and does not ship the font file.
+**Saans** is the only family the homepage loads, as a variable woff2 from Nextdoor's CDN, weight axis 100 to 1000. It is licensed to Nextdoor and is not committed. The style guide falls back to the system sans. About and business pages also load Lato for some HubSpot modules. Lato is not the product face.
 
 ## Layout
 
-Spacing from `core.space`: `s1` 1px, `s2` 2px, `s4` 4px, `s6` 6px, `s8` 8px, `s12` 12px, `s16` 16px, `s20` 20px, `s24` 24px, `s32` 32px, `s40` 40px, `s48` 48px, `s64` 64px, `s80` 80px.
+Spacing from `core.space`: `0` 0px, `0-25` 1px, `0-5` 2px, `1` 4px, `1-5` 6px, `2` 8px, `3` 12px, `4` 16px, `5` 20px, `6` 24px, `8` 32px, `10` 40px, `12` 48px, `16` 64px, `20` 80px.
 
 ## Elevation & Depth
 
-Shadows, resolved to CSS:
-
-| Token | box-shadow |
-|---|---|
-| `core.shadow.2` | `0px 1px 4px 0px rgba(0, 0, 0, 0.08), 0px 0px 2px 0px rgba(0, 0, 0, 0.20)` |
-| `core.shadow.4` | `0px 2px 8px 0px rgba(0, 0, 0, 0.12), 0px 0px 2px 0px rgba(0, 0, 0, 0.16)` |
-| `core.shadow.8` | `0px 4px 24px -2px rgba(0, 0, 0, 0.16), 0px 1px 4px 0px rgba(0, 0, 0, 0.12)` |
-| `core.shadow.24` | `0px 12px 32px -4px rgba(0, 0, 0, 0.20), 0px 4px 12px -2px rgba(0, 0, 0, 0.08)` |
+No shadow tokens were captured; depth comes from surface colours and borders. See [style-guide.html](style-guide.html).
 
 ## Shapes
 
@@ -234,7 +149,7 @@ Corner radii from `core.radius`: `none` 0px, `xs` 2px, `sm` 8px, `md` 12px, `lg`
 
 ## Components
 
-5 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
+No component tokens map onto DESIGN.md's component properties.
 
 Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
@@ -248,22 +163,19 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-Dark colours are declared, not painted. Do not treat them as a captured dark theme.
-
-Hover is a declared 8% ink wash (`hsl(from #232F46 h s l / 0.08)`), not a computed hover style. Pressed and disabled colours were not computed.
-
-The focus outline on the green button is `solid 3px rgb(255, 255, 255)`, the same colour as the page, so it may be an inner ring the outline shorthand does not show. The field focus ring, `inset 0 0 0 2px` in `--nd-color-fgPrimary`, was computed and is the one to trust.
-
-Saans weights 420 and 620 are the declared numbers. A browser that does not have the variable font will snap them.
-
-The help center at help.nextdoor.com uses Lato and Next-Sans-Semibold. Those faces are not this system.
-
-There are no screenshots. The coverage table says so on every visual row.
+- **Dark is declared, not applied.** The public pages do not set `.dark` on the root. The `dark` set is what the stylesheet resolves under that class. Do not treat it as a shipped dark mode of the marketing site.
+- **Homepage button crops can be transparent.** The measurement script cropped the `<button>`, which paints nothing. The green is the child face. Read the fill from `light.color.accent`, not from those crops.
+- **Font weight 420 and 620.** Saans is a variable font. The tokens store 400 and 600 so the file stays a valid fontWeight, and keep the measured 420 and 620 in `$extensions.measuredWeight`.
+- **Line height on type roles is Not captured.** The stylesheet does not declare a line-height token per role. The composites use 1.25 and mark that extension Not captured.
+- **Advertise Now hover** (#d8d9dc) is a computed colour with no matching token. It is not in tokens.json.
+- **The signup card is a wall.** Email, password, Continue, Google and Apple were not used. Do not treat the card as a completed form.
+- **No icons.** Glyph artwork is not extracted (docs/RIGHTS.md).
 
 ### Do and don't (from README.md)
 
-- **Primary actions are a green pill.** Continue, Sign up, Join Nextdoor and the login submit use `#1B8751` on white, 48 px tall, `10000px` radius.
-- **Secondary actions are a gray pill.** Log in, Continue with Google and Continue with Apple use `#F0F2F5` with `#232F46` text, same height and radius.
-- **Fields are 56 px with a 12 px radius.** The rest ring is 1 px `#CAD3E5` inset. Focus thickens it to 2 px `#232F46`.
-- **Body text is blue-gray, not black.** Body colour is `#232F46`. Muted footer links are `#576580`.
-- **One content width.** The declared layout width is 1224 px. Phone margins measured 24 px at 390.
+- **Do use one green.** The wordmark and the forward pill share #1b8751. See [home-light-default.png](screenshots/home-light-default.png).
+- **Do set type in blue-gray, not pure black.** Body and headings are #232f46. See [about-light-default.png](screenshots/about-light-default.png).
+- **Do make pills fully round.** Buttons use a 10000px radius. Fields use 12px. See [smallbiz-light-default.png](screenshots/smallbiz-light-default.png).
+- **Do keep secondary actions quiet.** Log in and Advertise Now are gray or ink, not a second green. See [smallbiz-light-default.png](screenshots/smallbiz-light-default.png).
+- **Don't treat the dark tokens as a shipped marketing theme.** They are declared and unused on these pages.
+- **Don't fill the signup card.** Email, password, and the social buttons are a wall.

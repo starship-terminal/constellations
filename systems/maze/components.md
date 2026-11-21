@@ -1,246 +1,140 @@
-# Components
+# Maze components
 
-Measured on the live signed-out DOM, 2026-11-18, light, 1440 (phone menu at 390). Nothing was submitted. Login email was filled with `sample@example.com` and cleared. The password field was focused and never filled.
+Measured on the public site, light theme, 1440 CSS pixels, 2026-11-21.
+Crops are in [components/crops/](components/crops). Login and signup were not opened. No form was submitted.
 
-## Navigation
+The header call-to-action measurements below are on the wrapping `<a>`, whose background is transparent. The painted button inside Get a demo is Phonic 17px, fill `oklch(0.226 0 0)` (`#1c1c1c`), white text, 8px radius, 40px height, padding 8px 16px. That inner button is recorded in the README and in the style guide. A later measure pass should crop the inner button.
 
-### Wordmark
+## Primary button (header Get a demo link wrapper)
 
-Selector: `header a[href="/"]`.
+Page: `/`.
 
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 108×24 | fill transparent, ink #000000 `neutral.900`, size 16px, weight 400, font ui-sans-serif | at rest | [crop](components/crops/wordmark-default.png) |
+| State | Size | Weight | Colour | Background | Radius | Crop |
+|---|---|---|---|---|---|---|
+| default | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/button-primary-default.png](components/crops/button-primary-default.png) |
+| hover | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/button-primary-hover.png](components/crops/button-primary-hover.png) |
+| focus-visible | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/button-primary-focus-visible.png](components/crops/button-primary-focus-visible.png) |
+| pressed | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/button-primary-pressed.png](components/crops/button-primary-pressed.png) |
 
-### Nav link
+## Secondary button (header Try Maze for free link wrapper)
 
-Selector: `header a[href="/pricing/"] in the nav row`.
+Page: `/`.
 
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 91×39 | fill transparent, ink oklch(0.226 0 0), size 14px, weight 400, font Phonic | at rest | [crop](components/crops/nav-link-default.png) |
-| hover | 91×39 | same | mouse hover | [crop](components/crops/nav-link-hover.png) |
-| focus-visible | 91×39 | outline 1px | Shift+Tab, Tab | [crop](components/crops/nav-link-focus-visible.png) |
-| pressed | 91×39 | same | CDP forcePseudoState :active:hover; no click, so the control does not navigate or submit | [crop](components/crops/nav-link-pressed.png) |
+| State | Size | Weight | Colour | Background | Radius | Crop |
+|---|---|---|---|---|---|---|
+| default | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/button-secondary-default.png](components/crops/button-secondary-default.png) |
+| hover | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/button-secondary-hover.png](components/crops/button-secondary-hover.png) |
+| focus-visible | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/button-secondary-focus-visible.png](components/crops/button-secondary-focus-visible.png) |
+| pressed | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/button-secondary-pressed.png](components/crops/button-secondary-pressed.png) |
 
-### Open navigation
+## Hero Get a demo link
 
-Selector: `button Open navigation; pressed via CDP, not opened here`.
+Page: `/`.
 
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 24×24 | fill transparent, ink #000000 `neutral.900`, size 16px, weight 400, font ui-sans-serif | at rest | [crop](components/crops/m-menu-default.png) |
-| pressed | 24×24 | same | CDP forcePseudoState :active:hover; no click, so the control does not navigate or submit | [crop](components/crops/m-menu-pressed.png) |
+| State | Size | Weight | Colour | Background | Radius | Crop |
+|---|---|---|---|---|---|---|
+| default | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/button-primary-hero-default.png](components/crops/button-primary-hero-default.png) |
 
-## Link
+## Pricing plan call to action
 
-### Log in
+Page: `/pricing/`.
 
-Selector: `header a[href*=auth.maze.co/login] in the nav row. The label is text, not a nested button.`.
+| State | Size | Weight | Colour | Background | Radius | Crop |
+|---|---|---|---|---|---|---|
+| default | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/plan-cta-default.png](components/crops/plan-cta-default.png) |
+| hover | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/plan-cta-hover.png](components/crops/plan-cta-hover.png) |
+| focus-visible | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/plan-cta-focus-visible.png](components/crops/plan-cta-focus-visible.png) |
+| pressed | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/plan-cta-pressed.png](components/crops/plan-cta-pressed.png) |
 
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 45×24 | fill transparent, ink oklch(0.226 0 0), size 17px, weight 400, font Phonic | at rest | [crop](components/crops/nav-login-default.png) |
-| hover | 45×24 | same | mouse hover | [crop](components/crops/nav-login-hover.png) |
-| focus-visible | 45×24 | outline 1px | Shift+Tab, Tab | [crop](components/crops/nav-login-focus-visible.png) |
-| pressed | 45×24 | same | CDP forcePseudoState :active:hover; no click, so the control does not navigate or submit | [crop](components/crops/nav-login-pressed.png) |
+## Log in link (not followed)
 
-### Continue with SSO
+Page: `/`.
 
-Selector: `a Continue with SSO; never clicked`.
+| State | Size | Weight | Colour | Background | Radius | Crop |
+|---|---|---|---|---|---|---|
+| default | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/link-login-default.png](components/crops/link-login-default.png) |
+| hover | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/link-login-hover.png](components/crops/link-login-hover.png) |
+| focus-visible | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/link-login-focus-visible.png](components/crops/link-login-focus-visible.png) |
+| pressed | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/link-login-pressed.png](components/crops/link-login-pressed.png) |
 
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 440×48 | fill #ffffff `neutral.0`, ink #0568fd `action`, size 16px, weight 600, font Inter, radius 8px, shadow rgba(5, 104, 253, 0.08) 0px 1px 2px 0px, rgba(5, 104, 253, 0.28) 0px 0px 0px ... | at rest | [crop](components/crops/login-sso-default.png) |
-| hover | 440×48 | fill #ceeeff, ink #034fd6, shadow rgba(5, 104, 253, 0.08) 0px 1px 2px 0px, rgba(5, 104, 253, 0.28) 0px 0px 0px ... | mouse hover | [crop](components/crops/login-sso-hover.png) |
-| focus-visible | 440×48 | outline 2px, outline colour #034fd6, shadow rgba(5, 104, 253, 0.28) 0px 0px 0px 1px inset | Shift+Tab, Tab | [crop](components/crops/login-sso-focus-visible.png) |
-| pressed | 440×48 | fill #9ad6ff, ink #0138a9, shadow rgb(5, 104, 253) 0px 0px 0px 1px inset | CDP forcePseudoState :active:hover; no click, so the control does not navigate or submit | [crop](components/crops/login-sso-pressed.png) |
+## PRICING nav link
 
-### Reset password
+Page: `/`.
 
-Selector: `a Reset password; never clicked`.
+| State | Size | Weight | Colour | Background | Radius | Crop |
+|---|---|---|---|---|---|---|
+| default | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/nav-link-default.png](components/crops/nav-link-default.png) |
+| hover | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/nav-link-hover.png](components/crops/nav-link-hover.png) |
+| focus-visible | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/nav-link-focus-visible.png](components/crops/nav-link-focus-visible.png) |
+| pressed | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/nav-link-pressed.png](components/crops/nav-link-pressed.png) |
 
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 440×20 | fill transparent, ink #000000 `neutral.900`, size 14px, weight 400, font Inter, radius 4px, outline 2px, outline colour transparent | at rest | [crop](components/crops/login-reset-default.png) |
-| hover | 440×20 | same | mouse hover | [crop](components/crops/login-reset-hover.png) |
+## Footer privacy link
 
-## Button
+Page: `/`.
 
-### Try Maze for free
+| State | Size | Weight | Colour | Background | Radius | Crop |
+|---|---|---|---|---|---|---|
+| default | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/footer-link-default.png](components/crops/footer-link-default.png) |
+| hover | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/footer-link-hover.png](components/crops/footer-link-hover.png) |
+| focus-visible | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/footer-link-focus-visible.png](components/crops/footer-link-focus-visible.png) |
+| pressed | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/footer-link-pressed.png](components/crops/footer-link-pressed.png) |
 
-Selector: `header signup button (pill, hairline)`.
+## Homepage display heading
 
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 160×40 | fill oklab(1 0 0 / 0.7), ink oklch(0.226 0 0), size 17px, weight 400, font Phonic, radius 3.35544e+07px | at rest | [crop](components/crops/nav-try-default.png) |
-| hover | 160×40 | fill oklch(1 0 0) | mouse hover | [crop](components/crops/nav-try-hover.png) |
-| focus-visible | 160×40 | outline 2px | Shift+Tab, Tab | [crop](components/crops/nav-try-focus-visible.png) |
-| pressed | 160×40 | fill oklch(1 0 0) | CDP forcePseudoState :active:hover; no click, so the control does not navigate or submit | [crop](components/crops/nav-try-pressed.png) |
+Page: `/`.
 
-### Get a demo
+| State | Size | Weight | Colour | Background | Radius | Crop |
+|---|---|---|---|---|---|---|
+| default | 130px | 300 | oklch(0.226 0 0) | rgba(0, 0, 0, 0) | 0px | [crops/display-default.png](components/crops/display-default.png) |
 
-Selector: `header a[href="/demo/"] button (filled)`.
+## Pricing heading
 
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 118×40 | fill oklch(0.226 0 0), ink oklch(1 0 0), size 17px, weight 400, font Phonic, radius 8px | at rest | [crop](components/crops/nav-demo-default.png) |
-| hover | 118×40 | fill oklch(0.356 0 0) | mouse hover | [crop](components/crops/nav-demo-hover.png) |
-| focus-visible | 118×40 | fill oklch(0.356 0 0), outline 2px | Shift+Tab, Tab | [crop](components/crops/nav-demo-focus-visible.png) |
-| pressed | 118×40 | fill oklch(0 0 0) | CDP forcePseudoState :active:hover; no click, so the control does not navigate or submit | [crop](components/crops/nav-demo-pressed.png) |
+Page: `/pricing/`.
 
-### Starter sign up
+| State | Size | Weight | Colour | Background | Radius | Crop |
+|---|---|---|---|---|---|---|
+| default | 90px | 300 | oklch(0.226 0 0) | rgba(0, 0, 0, 0) | 0px | [crops/pricing-title-default.png](components/crops/pricing-title-default.png) |
 
-Selector: `pricing Starter CTA; not clicked`.
+## Demo email field (empty, not submitted)
 
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 124×40 | fill oklch(0.226 0 0), ink oklch(1 0 0), size 17px, weight 400, font Phonic, radius 8px | at rest | [crop](components/crops/plan-cta-default.png) |
-| hover | 124×40 | fill oklch(0.356 0 0) | mouse hover | [crop](components/crops/plan-cta-hover.png) |
-| focus-visible | 124×40 | fill oklch(0.356 0 0), outline 2px | Shift+Tab, Tab | [crop](components/crops/plan-cta-focus-visible.png) |
-| pressed | 124×40 | fill oklch(0 0 0) | CDP forcePseudoState :active:hover; no click, so the control does not navigate or submit | [crop](components/crops/plan-cta-pressed.png) |
+Page: `/demo/`.
 
-### Log in button
+| State | Size | Weight | Colour | Background | Radius | Crop |
+|---|---|---|---|---|---|---|
+| default | 15px | 400 | oklch(0.226 0 0) | oklch(1 0 0) | 8px | [crops/text-field-default.png](components/crops/text-field-default.png) |
+| focus | 15px | 400 | oklch(0.226 0 0) | oklch(1 0 0) | 8px | [crops/text-field-focus.png](components/crops/text-field-focus.png) |
 
-Selector: `button[type=submit]; pressed via CDP, never clicked`.
+## Demo select (not changed)
 
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 440×48 | fill #0568fd `action`, ink #ffffff `neutral.0`, size 16px, weight 600, font Inter, radius 8px, shadow rgba(5, 104, 253, 0.08) 0px 1px 2px 0px, rgba(5, 104, 253, 0.28) 0px 0px 0px ... | at rest | [crop](components/crops/login-submit-default.png) |
-| hover | 440×48 | fill #034fd6, shadow rgba(5, 104, 253, 0.08) 0px 1px 2px 0px, rgba(5, 104, 253, 0.28) 0px 0px 0px ... | mouse hover | [crop](components/crops/login-submit-hover.png) |
-| focus-visible | 440×48 | shadow rgba(5, 104, 253, 0.28) 0px 0px 0px 1px inset | Shift+Tab, Tab | [crop](components/crops/login-submit-focus-visible.png) |
-| pressed | 440×48 | fill #0138a9, shadow rgb(5, 104, 253) 0px 0px 0px 1px inset | CDP forcePseudoState :active:hover; no click, so the control does not navigate or submit | [crop](components/crops/login-submit-pressed.png) |
+Page: `/demo/`.
 
-### Continue with Google
+| State | Size | Weight | Colour | Background | Radius | Crop |
+|---|---|---|---|---|---|---|
+| default | 15px | 400 | oklch(0.226 0 0) | oklch(1 0 0) | 8px | [crops/select-default.png](components/crops/select-default.png) |
 
-Selector: `button Continue with Google; never clicked`.
+## Homepage footer
 
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 440×48 | fill #ffffff `neutral.0`, ink #0568fd `action`, size 16px, weight 600, font Inter, radius 8px, shadow rgba(5, 104, 253, 0.08) 0px 1px 2px 0px, rgba(5, 104, 253, 0.28) 0px 0px 0px ... | at rest | [crop](components/crops/login-google-default.png) |
-| hover | 440×48 | fill #ceeeff, ink #034fd6, shadow rgba(5, 104, 253, 0.08) 0px 1px 2px 0px, rgba(5, 104, 253, 0.28) 0px 0px 0px ... | mouse hover | [crop](components/crops/login-google-hover.png) |
-| focus-visible | 440×48 | shadow rgba(5, 104, 253, 0.28) 0px 0px 0px 1px inset | Shift+Tab, Tab | [crop](components/crops/login-google-focus-visible.png) |
-| pressed | 440×48 | fill #9ad6ff, ink #0138a9, shadow rgb(5, 104, 253) 0px 0px 0px 1px inset | CDP forcePseudoState :active:hover; no click, so the control does not navigate or submit | [crop](components/crops/login-google-pressed.png) |
+Page: `/`.
 
-### Report sign up
+| State | Size | Weight | Colour | Background | Radius | Crop |
+|---|---|---|---|---|---|---|
+| default | 16px | 400 | rgb(0, 0, 0) | oklch(0.967 0.005 95.1) | 0px | [crops/footer-default.png](components/crops/footer-default.png) |
 
-Selector: `painted Sign up for free on the public report; never clicked`.
+## Pricing main region
 
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 118×32 | fill #0568fd `action`, ink #ffffff `neutral.0`, size 14px, weight 600, font Inter, radius 8px, shadow rgba(5, 104, 253, 0.08) 0px 1px 2px 0px, rgba(5, 104, 253, 0.28) 0px 0px 0px ... | at rest | [crop](components/crops/report-signup-default.png) |
-| hover | 118×32 | fill #034fd6, shadow rgba(5, 104, 253, 0.08) 0px 1px 2px 0px, rgba(5, 104, 253, 0.28) 0px 0px 0px ... | mouse hover | [crop](components/crops/report-signup-hover.png) |
-| focus-visible | 118×32 | shadow rgba(5, 104, 253, 0.28) 0px 0px 0px 1px inset | Shift+Tab, Tab | [crop](components/crops/report-signup-focus-visible.png) |
-| pressed | 118×32 | fill #0138a9, shadow rgb(5, 104, 253) 0px 0px 0px 1px inset | CDP forcePseudoState :active:hover; no click, so the control does not navigate or submit | [crop](components/crops/report-signup-pressed.png) |
+Page: `/pricing/`.
 
-### Report login
+| State | Size | Weight | Colour | Background | Radius | Crop |
+|---|---|---|---|---|---|---|
+| default | 16px | 400 | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 0px | [crops/plan-region-default.png](components/crops/plan-region-default.png) |
 
-Selector: `Login on the public report; never clicked`.
+## Gaps
 
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 64×32 | fill transparent, ink #535a74, size 14px, weight 600, font Inter | at rest | [crop](components/crops/report-login-default.png) |
-| hover | 64×32 | ink #034fd6 | mouse hover | [crop](components/crops/report-login-hover.png) |
-
-## Type
-
-### Hero title
-
-Selector: `h1`.
-
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 800×136 | fill transparent, ink oklch(0.226 0 0), size 130px, weight 300, font Phonic | at rest | [crop](components/crops/hero-title-default.png) |
-
-### Login title
-
-Selector: `h1 Log in to Maze`.
-
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 440×32 | fill transparent, ink #000000 `neutral.900`, size 23px, weight 600, font Inter | at rest | [crop](components/crops/login-title-default.png) |
-
-### Report title
-
-Selector: `first heading on the public sample report`.
-
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 419×32 | fill transparent, ink #000000 `neutral.900`, size 23px, weight 600, font Inter | at rest | [crop](components/crops/report-title-default.png) |
-
-### Demo page title
-
-Selector: `first heading on /demo/`.
-
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 624×128 | fill transparent, ink oklch(0.226 0 0), size 58px, weight 300, font Phonic | at rest | [crop](components/crops/demo-title-default.png) |
-
-## Card
-
-### Plan title
-
-Selector: `heading Starter`.
-
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 295×64 | fill transparent, ink oklch(0.226 0 0), size 58px, weight 300, font Phonic | at rest | [crop](components/crops/plan-title-default.png) |
-
-### Starter plan card
-
-Selector: `ancestor of the Starter heading, 280-560px wide`.
-
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 295×468 | fill transparent, ink #000000 `neutral.900`, size 16px, weight 400, font ui-sans-serif | at rest | [crop](components/crops/plan-card-default.png) |
-
-## Field
-
-### Email field
-
-Selector: `input[name=email]`.
-
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 440×48 | fill transparent, ink #000000 `neutral.900`, size 16px, weight 400, font Inter, radius 8px | at rest | [crop](components/crops/login-email-default.png) |
-| focused | 440×48 | same | clicked into the field; nothing submitted | [crop](components/crops/login-email-focused.png) |
-| filled | 440×48 | same | sample text typed, then the field is cleared; nothing submitted | [crop](components/crops/login-email-filled.png) |
-
-### Password field
-
-Selector: `input[name=password]; never filled`.
-
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 440×48 | fill transparent, ink #000000 `neutral.900`, size 16px, weight 400, font Inter, radius 8px | at rest | [crop](components/crops/login-password-default.png) |
-| focused | 440×48 | same | clicked into the field; nothing submitted | [crop](components/crops/login-password-focused.png) |
-
-### Demo form field
-
-Selector: `first input on /demo/; focused only, nothing typed or submitted`.
-
-| State | Size | What changed | How | Crop |
-|---|---|---|---|---|
-| default | 576×40 | fill oklch(1 0 0), ink oklch(0.226 0 0), size 15px, weight 400, font Phonic, radius 8px | at rest | [crop](components/crops/demo-field-default.png) |
-| focused | 576×40 | ink oklch(0.547 0.218 16.6) | clicked into the field; nothing submitted | [crop](components/crops/demo-field-focused.png) |
-
-## Menu
-
-### Mobile menu
-
-Selector: `opened mobile navigation; local toggle only`.
-
-Not found on the page at measure time.
-
-### Platform menu trigger
-
-Selector: `header a[href=/platform/] in the nav row`.
-
-Not found on the page at measure time.
-
-### Platform menu item
-
-Selector: `open platform panel`.
-
-Not found on the page at measure time.
-
+- Checkbox, radio, switch, tabs, tooltip, dialog, toast, table, avatar and badge were not isolated as product components on the captured public pages. Pricing and AI pages have in-page toggles and tabs. Those are screenshots, not a measured component set.
+- Hover, focus-visible and pressed were forced with CSS pseudo-states on the wrapping link. Several crops show no paint change because the fill sits on the inner button.
+- Disabled, loading and error states were not present on the public pages.
+- Text area was not found on the demo page at capture time.
+- Dark theme is not present.
+- The signed-in app (studies, reports, panel, builder) is behind https://auth.maze.co/login and was not entered.
+- Focus ring token: Not captured. No dedicated focus custom property was declared.
+- Warning and info colour roles: Not captured as semantic tokens. Yellow and blue ramps exist. They are not aliased to warning or info.

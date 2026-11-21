@@ -1,4 +1,4 @@
-// Shared helpers for the lumalabs.ai public captures.
+// Shared helpers for the Gauth captures (adapted from the Coursera kit).
 // Run with PLAYWRIGHT pointing at a Playwright install (index.mjs) when this
 // directory has no node_modules of its own.
 import fs from 'node:fs';
@@ -17,39 +17,16 @@ export const UA =
 export const UA_MOBILE =
   'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1';
 export const BASE = 'https://lumalabs.ai';
-export const APP = 'https://app.lumalabs.ai';
 
 export const HERE = path.dirname(new URL(import.meta.url).pathname);
 export const REF = path.resolve(HERE, '..', '..', '..'); // systems/<slug>, from tools/capture/public
 export const CROPS = path.join(REF, 'components', 'crops');
 export const RAW = path.join(REF, 'raw');
 
-// lumalabs.ai is a Next.js marketing site. Tokens are HSL channel triplets
-// (--surface-primary, --primary, --secondary) on .light / .dark, plus a
-// shadcn oklch layer (--background, --foreground, --border). Specs select by
-// role, aria-label or visible text. M() matches a Tailwind class fragment.
-export const M = (name) => `[class*="${name}"]`;
-
-export async function patch(context) {
-  await context.addInitScript(() => {
-    // Automation is not hidden: no navigator.webdriver mask (bot check: recorded as a boundary, not bypassed).
-    try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
-  });
-}
-
-export async function clearChallenge(page, { tries = 8, step = 1500 } = {}) {
-  for (let i = 0; i < tries; i++) {
-    const s = await page.evaluate(() => ({
-      title: document.title,
-      body: (document.body && document.body.innerText || '').slice(0, 400),
-    })).catch(() => ({ title: '', body: '' }));
-    const challenging = /just a moment|attention required/i.test(s.title)
-      || /performing security verification|verify you are human|checking your browser|you have been blocked/i.test(s.body);
-    if (!challenging && (s.body.length > 20 || /404|not found/i.test(s.title + s.body))) return true;
-    await page.waitForTimeout(step);
-  }
-  return false;
-}
+// Gauth styles its pages with CSS modules: a class is `<file>_<name>__<hash>`.
+// M('catalog_card') selects by the stable part, so a rebuild that changes the
+// hash does not break the kit.
+export const M = (name) => `[class*="${name}__"]`;
 
 export async function launch({ width = 1440, height = 900, mobile = false } = {}) {
   const browser = await chromium.launch();
@@ -59,39 +36,26 @@ export async function launch({ width = 1440, height = 900, mobile = false } = {}
   return { browser, context };
 }
 
-// Hide consent and promo overlays. Never click Accept, Reject or Dismiss:
-// those controls can POST. Hiding is the only action.
+// Every page opens with a promo dialog ("Introducing Gauth Academy"); its own
+// close button dismisses it. `waitUntil: 'networkidle'` never settles on
+// gauth.com, so a page is `load` plus a fixed wait.
 export async function closePromo(page) {
+  const x = page.locator(M('atlas-intro-modal_aw-atlas-intro-modal-close'));
   for (let i = 0; i < 3; i++) {
-    const hit = await page.evaluate(() => {
-      let n = 0;
-      const hide = (sel) => document.querySelectorAll(sel).forEach((x) => {
-        x.style.setProperty('display', 'none', 'important');
-        n++;
-      });
-      hide('#onetrust-banner-sdk, #onetrust-consent-sdk, .onetrust-pc-dark-filter, [id*="onetrust" i], [class*="onetrust" i]');
-      hide('#CybotCookiebotDialog, #CybotCookiebotDialogBodyUnderlay, [id*="CybotCookiebot" i]');
-      hide('#iubenda-cs-banner, [id*="iubenda" i], .cky-consent-container, .cky-modal, .cky-overlay');
-      hide('[id*="cookie" i], [class*="cookie-banner" i], [class*="consent" i], iframe[title*="privacy" i]');
-      document.body && document.body.style.removeProperty('overflow');
-      document.documentElement && document.documentElement.style.removeProperty('overflow');
-      return n;
-    }).catch(() => 0);
-    if (!hit) break;
-    await page.waitForTimeout(300);
+    if (await x.count() && await x.first().isVisible().catch(() => false)) {
+      await x.first().click().catch(() => {});
+      await page.waitForTimeout(800);
+      return true;
+    }
+    await page.waitForTimeout(700);
   }
-  return true;
+  return false;
 }
 
-// Returns false when a bot check never cleared: the caller records the route as blocked rather than
-// measuring the challenge page as the product. A navigation error is thrown, not swallowed.
-export async function open(page, url, { wait = 4000, promo = 'close' } = {}) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
-  const cleared = await clearChallenge(page);
-  if (!cleared) return false;
+export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
+  await page.goto(url, { waitUntil: 'load', timeout: 90000 });
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
-  return true;
 }
 
 // A story's own URL (/atlas/session/<id>) belongs to the browser that opened it and redirects to /atlas

@@ -1,0 +1,113 @@
+{
+  "_readme": "Token tree build_tokens.py reads. Each leaf is {type, value, source}. Values were read from understory.io on 2026-11-21: declared :root custom properties in raw/css-vars.json, and computed styles in raw/components-computed.json. One light theme on the marketing site. Unread states are not filled in.",
+  "core": {
+    "$description": "Scales and the brand palette declared on :root.",
+    "color": {
+      "moss": { "type": "color", "value": "#022c12", "source": "declared --moss on :root (raw/css-vars.json); computed color of body and background of a.button-n Try for free (raw/components-computed.json)", "description": "The house green. Text, primary button fill, and the ink of headings." },
+      "darkMoss": { "type": "color", "value": "#1d261f", "source": "declared --dark-moss on :root (raw/css-vars.json)", "description": "A darker moss declared on :root. Not seen as a computed fill on the captured marketing controls." },
+      "lichen": { "type": "color", "value": "#d5dfca", "source": "declared --lichen on :root (raw/css-vars.json)" },
+      "green100": { "type": "color", "value": "#b9c2b2", "source": "declared --green-100 on :root (raw/css-vars.json)" },
+      "muted": { "type": "color", "value": "#7c907d", "source": "computed color of .text-color-green (rgb(124, 144, 125)) on the homepage eyebrow (raw/components-computed.json). Not a declared custom property.", "description": "Secondary green used for small labels. Measured, not a named --variable." },
+      "beige": { "type": "color", "value": "#ede8d0", "source": "declared --beige on :root (raw/css-vars.json)" },
+      "beigeNew": { "type": "color", "value": "#eae8dd", "source": "declared --beige-new on :root (raw/css-vars.json)" },
+      "beigeGray": { "type": "color", "value": "#d3d1c6", "source": "declared --beige-gray on :root (raw/css-vars.json); resolved --_confirm-step---step-border" },
+      "lightGrey": { "type": "color", "value": "#f8f6ed", "source": "declared --light-grey on :root (raw/css-vars.json)" },
+      "lightGrey2": { "type": "color", "value": "#dbd8ce", "source": "declared --light-grey-2 on :root (raw/css-vars.json)" },
+      "grey": { "type": "color", "value": "#f3f3f3", "source": "declared --grey on :root (raw/css-vars.json)" },
+      "page": { "type": "color", "value": "#f6f4e8", "source": "computed backgroundColor of body (rgb(246, 244, 232)), class background-color-beige (raw/components-computed.json). Not equal to --beige or --light-grey.", "description": "The painted page ground. Slightly lighter than the declared --beige." },
+      "card": { "type": "color", "value": "#eae8dd", "source": "computed backgroundColor of .plan-card on /pricing (rgb(234, 232, 221)) (raw/pricing-extra.json). Equals declared --beige-new.", "description": "Plan card fill. Same hex as beigeNew." },
+      "citrus": { "type": "color", "value": "#f1f97e", "source": "declared --citrus on :root (raw/css-vars.json)", "description": "The yellow accent declared on :root. Used on promo pills; not the primary button." },
+      "lilac": { "type": "color", "value": "#d1bee7", "source": "declared --lilac on :root (raw/css-vars.json)" },
+      "skyBlue": { "type": "color", "value": "#cfe8ff", "source": "declared --sky-blue on :root (raw/css-vars.json)" },
+      "rust": { "type": "color", "value": "#933f29", "source": "declared --rust on :root (raw/css-vars.json)" },
+      "red": { "type": "color", "value": "#7e0c04", "source": "declared --red on :root (raw/css-vars.json)" },
+      "darkRed": { "type": "color", "value": "#380c0f", "source": "declared --dark-red on :root (raw/css-vars.json)" },
+      "companyBg": { "type": "color", "value": "#390d10", "source": "declared --company-bg on :root (raw/css-vars.json)" },
+      "darkBlue": { "type": "color", "value": "#091329", "source": "declared --dark-blue on :root (raw/css-vars.json)" },
+      "darkBlueN": { "type": "color", "value": "#1a1a26", "source": "declared --dark-blue-n on :root (raw/css-vars.json)" },
+      "white": { "type": "color", "value": "#ffffff", "source": "declared --white on :root (raw/css-vars.json); computed color of a.button-n primary label" },
+      "black": { "type": "color", "value": "#000000", "source": "declared --black on :root (raw/css-vars.json)" },
+      "navInk": { "type": "color", "value": "#222222", "source": "computed color of .dropdown-toggle_nav (rgb(34, 34, 34)) (raw/components-computed.json)" },
+      "stepText": { "type": "color", "value": "#6b7d6f", "source": "declared --_confirm-step---step-text on :root (raw/css-vars.json)" }
+    },
+    "font": {
+      "family": {
+        "sans": { "type": "fontFamily", "value": "Inter, Arial, sans-serif", "source": "computed fontFamily of body, buttons, nav, fields (raw/components-computed.json); @font-face Inter from the Webflow CDN" },
+        "display": { "type": "fontFamily", "value": "\"National 2 Condensed\", Arial, sans-serif", "source": "computed fontFamily of h1 and h2 (raw/components-computed.json); @font-face National 2 Condensed bold and regular" },
+        "editorial": { "type": "fontFamily", "value": "Ppeditorialnew, Georgia, sans-serif", "source": "computed fontFamily of the homepage step heading (class heading-style-h5 font-alternate) (raw/components-computed.json); @font-face Ppeditorialnew" }
+      },
+      "weight": {
+        "regular": { "type": "fontWeight", "value": 400, "source": "computed fontWeight of the editorial step heading" },
+        "book": { "type": "fontWeight", "value": 450, "source": "computed fontWeight of body and nav labels. Inter variable axis, not a CSS keyword." },
+        "medium": { "type": "fontWeight", "value": 500, "source": "computed fontWeight of a.button-n" },
+        "bold": { "type": "fontWeight", "value": 700, "source": "computed fontWeight of h1 and h2" }
+      }
+    },
+    "typography": {
+      "display": { "$value": { "fontFamily": "{font.family.display}", "fontSize": "63.75px", "fontWeight": "{font.weight.bold}", "lineHeight": "63.75px", "letterSpacing": "0px" }, "$type": "typography", "$extensions": { "source": "computed style of h1.heading-style-h1 on / at 1440 (raw/components-computed.json). text-transform uppercase is not a DTCG typography field; recorded in $description." }, "$description": "63.75/63.75 National 2 Condensed bold, uppercase. Desktop h1." },
+      "heading": { "$value": { "fontFamily": "{font.family.display}", "fontSize": "52.5px", "fontWeight": "{font.weight.bold}", "lineHeight": "52.5px", "letterSpacing": "0px" }, "$type": "typography", "$extensions": { "source": "computed style of h2.heading-style-h2 on / at 1440 (raw/components-computed.json)" }, "$description": "52.5/52.5 National 2 Condensed bold, uppercase." },
+      "editorial": { "$value": { "fontFamily": "{font.family.editorial}", "fontSize": "30px", "fontWeight": "{font.weight.regular}", "lineHeight": "37.5px", "letterSpacing": "0px" }, "$type": "typography", "$extensions": { "source": "computed style of the Step 1 heading (heading-style-h5 font-alternate) (raw/components-computed.json)" }, "$description": "30/37.5 PP Editorial New, sentence case." },
+      "body": { "$value": { "fontFamily": "{font.family.sans}", "fontSize": "13.5px", "fontWeight": "{font.weight.book}", "lineHeight": "20.25px", "letterSpacing": "0px" }, "$type": "typography", "$extensions": { "source": "computed style of body (raw/components-computed.json)" }, "$description": "13.5/20.25 Inter at weight 450. The site's body size." },
+      "label": { "$value": { "fontFamily": "{font.family.sans}", "fontSize": "13.5px", "fontWeight": "{font.weight.medium}", "lineHeight": "20.25px", "letterSpacing": "0px" }, "$type": "typography", "$extensions": { "source": "computed style of a.button-n (raw/components-computed.json)" }, "$description": "13.5/20.25 Inter 500 on buttons." },
+      "caption": { "$value": { "fontFamily": "{font.family.sans}", "fontSize": "10.5px", "fontWeight": "{font.weight.book}", "lineHeight": "13.65px", "letterSpacing": "-0.263px" }, "$type": "typography", "$extensions": { "source": "computed style of .text-size-small.text-color-green (raw/components-computed.json). letter-spacing rounded from -0.26256px." }, "$description": "10.5/13.65 Inter, slightly tight tracking, muted green." }
+    },
+    "radius": {
+      "none": { "type": "dimension", "value": "0px", "source": "computed borderRadius of h1, body, fields (raw/components-computed.json)" },
+      "nav": { "type": "dimension", "value": "6px", "source": "computed borderRadius of .dropdown-toggle_nav (raw/components-computed.json)" },
+      "button": { "type": "dimension", "value": "9px", "source": "computed borderRadius of a.button-n (raw/components-computed.json)" },
+      "navBar": { "type": "dimension", "value": "12px", "source": "computed borderRadius of .nav_component (raw/components-computed.json)" },
+      "card": { "type": "dimension", "value": "15px", "source": "computed borderRadius of .plan-card on /pricing (raw/pricing-extra.json)" },
+      "token": { "type": "dimension", "value": "0.75rem", "source": "declared --border-radius on :root (raw/css-vars.json). 0.75rem at the 13.5px root is 10.125px, which is not the 9px button radius.", "description": "The declared radius token. Buttons do not use it; they are 9px." }
+    },
+    "space": {
+      "buttonX": { "type": "dimension", "value": "9px", "source": "computed padding of a.button-n, 7.5px 9px (raw/components-computed.json)" },
+      "buttonY": { "type": "dimension", "value": "7.5px", "source": "computed padding of a.button-n (raw/components-computed.json)" },
+      "navX": { "type": "dimension", "value": "9px", "source": "computed padding of .dropdown-toggle_nav, 4.56px 9px (raw/components-computed.json)" },
+      "tabY": { "type": "dimension", "value": "10.56px", "source": "computed padding of .w-tab-link.w--current (raw/components-computed.json)" },
+      "fieldX": { "type": "dimension", "value": "15px", "source": "computed padding-left of input.field-form_link (raw/components-computed.json)" }
+    },
+    "size": {
+      "button": { "type": "dimension", "value": "29px", "source": "computed height of visible a.button-n Try for free and Login (raw/components-computed.json)" },
+      "tab": { "type": "dimension", "value": "42px", "source": "computed height of .w-tab-link.w--current (raw/components-computed.json)" },
+      "field": { "type": "dimension", "value": "38px", "source": "computed height of input.field-form_link (raw/components-computed.json)" },
+      "nav": { "type": "dimension", "value": "53px", "source": "computed height of .nav_component at 1440 (raw/components-computed.json)" },
+      "navItem": { "type": "dimension", "value": "25px", "source": "computed height of .dropdown-toggle_nav (raw/components-computed.json)" }
+    },
+    "border": {
+      "none": { "type": "dimension", "value": "0px", "source": "computed borderTopWidth of body, h1, buttons, nav (raw/components-computed.json). Edges are fills, not strokes." }
+    },
+    "layout": {
+      "desktop": { "type": "dimension", "value": "1440px", "source": "requested and measured viewport width of the desktop captures (raw/components-computed.json viewport.w)" },
+      "phone": { "type": "dimension", "value": "390px", "source": "requested viewport width of the phone captures" }
+    }
+  },
+  "light": {
+    "$description": "The one theme the marketing site paints. Roles alias the palette.",
+    "background": {
+      "page": { "type": "color", "value": "{color.page}", "source": "computed backgroundColor of body.background-color-beige (raw/components-computed.json)" },
+      "surface": { "type": "color", "value": "{color.card}", "source": "computed backgroundColor of .plan-card (raw/pricing-extra.json)" },
+      "scrim": { "type": "color", "value": "rgba(2, 44, 18, 0.1)", "source": "computed backgroundColor of a.button-n.is-lightgreen (raw/components-computed.json)" }
+    },
+    "text": {
+      "primary": { "type": "color", "value": "{color.moss}", "source": "computed color of body and h1 (raw/components-computed.json)" },
+      "muted": { "type": "color", "value": "{color.muted}", "source": "computed color of .text-color-green (raw/components-computed.json)" },
+      "onAccent": { "type": "color", "value": "{color.white}", "source": "computed color of a.button-n primary (raw/components-computed.json)" },
+      "nav": { "type": "color", "value": "{color.navInk}", "source": "computed color of .dropdown-toggle_nav (raw/components-computed.json)" }
+    },
+    "border": {
+      "default": { "type": "color", "value": "{color.beigeGray}", "source": "declared --beige-gray and --_confirm-step---step-border (raw/css-vars.json). Captured controls mostly have a 0px border." }
+    },
+    "action": {
+      "primary": { "type": "color", "value": "{color.moss}", "source": "computed backgroundColor of a.button-n (Try for free) (raw/components-computed.json)" },
+      "primaryText": { "type": "color", "value": "{color.white}", "source": "computed color of a.button-n (Try for free) (raw/components-computed.json)" },
+      "secondary": { "type": "color", "value": "rgba(2, 44, 18, 0.1)", "source": "computed backgroundColor of a.button-n.is-lightgreen (Book a demo) (raw/components-computed.json)" },
+      "ghost": { "type": "color", "value": "rgba(0, 0, 0, 0)", "source": "computed backgroundColor of a.button-n.is-transparent (Login) (raw/components-computed.json)" }
+    },
+    "accent": {
+      "citrus": { "type": "color", "value": "{color.citrus}", "source": "declared --citrus on :root (raw/css-vars.json)" }
+    },
+    "status": {
+      "danger": { "type": "color", "value": "{color.red}", "source": "declared --red on :root (raw/css-vars.json). A live error state was not shown; the role is the declared token only." }
+    }
+  }
+}

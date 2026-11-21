@@ -1,0 +1,29 @@
+{
+  "product": "Visitors",
+  "slug": "visitors",
+  "domain": "visitors.now",
+  "reviewed": "2026-11-21",
+  "session": "signed out",
+  "loginUrl": "https://visitors.now/login",
+  "loginWall": true,
+  "loginAskedFor": "Email address, or Continue with Google, or Continue with GitHub. Continue with email stays disabled until an address is typed. Google and GitHub were not clicked.",
+  "postAuthScreens": [],
+  "gaps": [
+    {
+      "screen": "project setup",
+      "reason": "Not reached. A prior probe landed here after Google sign-in. This session is signed out. /login is a wall. Google was not clicked."
+    },
+    {
+      "screen": "signed-in dashboard",
+      "reason": "https://visitors.now/dashboard redirects to /login when signed out."
+    },
+    {
+      "screen": "account",
+      "reason": "https://visitors.now/account redirects when signed out. Destination not followed because it is an auth wall."
+    },
+    {
+      "screen": "profiles, funnels, realtime, performance inside the app",
+      "reason": "Those names exist as public marketing pages and as hero demo tabs. The signed-in product that uses them was behind /login."
+    }
+  ]
+}

@@ -1,139 +1,210 @@
-// Captures IKEA Singapore's public signed-out storefront into RAW.
+// Captures IKEA Singapore public pages. Nothing is submitted. Login branches stop.
+// Country and store dialogs are opened and closed without a selection.
 //
-//   PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node public.mjs [page,...]
-//
-// Locale: www.ikea.com/sg/en/ (the shopping locale this host is served).
-// Consent is hidden, never clicked. Add to cart, login, and checkout are not pressed.
+//   PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs \
+//   RAW=~/.design-systems/ikea/raw-shots node tools/capture/public/public.mjs
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { BASE, LOCALE, hideConsent, launchBrowser, newContext, open } from './lib.mjs';
+import { launch, hideConsent, isLoginWall, openPublic, BASE } from './lib.mjs';
 
 const PKG = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'ikea', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
-const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
+const only = new Set((process.argv[2] || '').split(',').filter(Boolean));
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const wait = (p, ms) => p.waitForTimeout(ms);
 
-async function lazyScroll(p) {
-  const h = await p.evaluate(() => document.documentElement.scrollHeight);
-  const cap = Math.min(h, 9000);
-  for (let y = 0; y < cap; y += 700) {
-    await p.evaluate((y) => scrollTo(0, y), y);
-    await wait(p, 160);
-    await hideConsent(p);
-  }
-  await p.evaluate(() => scrollTo(0, 0));
-  await wait(p, 400);
-}
+const PAGES = [
+  { name: 'home', path: '/sg/en/' },
+  { name: 'products', path: '/sg/en/cat/products-products/' },
+  { name: 'rooms', path: '/sg/en/rooms/' },
+  { name: 'offers', path: '/sg/en/offers/' },
+  { name: 'ideas', path: '/sg/en/ideas/' },
+  { name: 'services', path: '/sg/en/customer-service/services/' },
+  { name: 'search', path: '/sg/en/search/?q=sofa' },
+  { name: 'plp', path: '/sg/en/cat/sofas-armchairs-700640/' },
+  { name: 'pdp', path: '/sg/en/p/vinterfint-artificial-christmas-tree-in-outdoor-green-60636381/' },
+  { name: 'cart', path: '/sg/en/cart/' },
+  { name: 'favourites', path: '/sg/en/favourites/' },
+  { name: 'stores', path: '/sg/en/stores/' },
+  { name: 'customer-service', path: '/sg/en/customer-service/faq/' },
+  { name: 'family', path: '/sg/en/ikea-family/' },
+  { name: 'new', path: '/sg/en/new/' },
+  { name: 'planners', path: '/sg/en/planners/' },
+  { name: 'about', path: '/sg/en/this-is-ikea/about-us/' },
+  { name: 'delivery', path: '/sg/en/customer-service/services/delivery/' },
+  { name: 'christmas', path: '/sg/en/campaigns/christmas/' },
+  { name: 'login', path: '/sg/en/profile/login/', wall: true },
+];
 
 class Shooter {
   constructor(p, prefix, vw, vh, dpr) {
-    this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr;
+    this.p = p; this.prefix = prefix; this.vw = vw; this.vh = vh; this.dpr = dpr;
     this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr };
-    this.count = 0;
   }
   async view(name) {
-    await hideConsent(this.p);
-    await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested);
-    this.count++;
+    const file = `${RAW}/${this.prefix}-${name}.png`;
+    await screenshotWithMetadata(this.p, { path: file }, this.requested);
     log('  shot', this.prefix, name);
   }
   async full(name = 'full') {
-    const p = this.p;
-    await lazyScroll(p);
-    const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
+    const H = await this.p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body ? document.body.scrollHeight : 0));
     const chunk = Math.floor(14000 / this.dpr);
-    const f = `${RAW}/${this.prefix}-${name}`;
-    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
-    const MAXH = 4 * chunk;
+    const MAXH = 8 * chunk;
     const hCap = Math.min(H, MAXH);
-    if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only`);
-    if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
-      await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+    if (H > MAXH) log('  !', name, 'page is', H, 'px, capturing first', hCap);
+    const f = `${RAW}/${this.prefix}-${name}`;
+    if (hCap <= chunk) {
+      await screenshotWithMetadata(this.p, { path: f + '.png', fullPage: true }, this.requested);
+    } else {
+      for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
+        await screenshotWithMetadata(this.p, {
+          path: `${f}.part${i}.png`, fullPage: true,
+          clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) },
+        }, this.requested);
+      }
     }
-    this.count++;
     log('  shot', this.prefix, name, 'H=' + H);
-    await p.evaluate(() => scrollTo(0, 0));
-    await wait(p, 250);
+    await this.p.evaluate(() => scrollTo(0, 0));
   }
 }
 
-const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
-
-const desktop = {
-  global: { path: '/', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  home: { path: `${LOCALE}/`, run: async (p, S) => {
-    await S.view('default');
-    await step('products-menu', async () => {
-      const products = p.getByRole('link', { name: 'Products', exact: true }).first();
-      await products.hover();
-      await wait(p, 700);
-      await S.view('products-menu');
-      await p.mouse.move(700, 700);
-    });
-    await step('search-focus', async () => {
-      const input = p.locator('input[name="q"], input[type="search"]').first();
-      await input.click();
-      await wait(p, 400);
-      await S.view('search-focused');
-      await p.keyboard.press('Escape');
-    });
-    await S.full();
-  } },
-  category: { path: `${LOCALE}/cat/sofas-armchairs-700640/`, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  product: { path: `${LOCALE}/p/billy-bookcase-white-00522047/`, run: async (p, S) => {
-    await S.view('default');
-    await step('qty-focus', async () => {
-      const qty = p.locator('input[name="pipf-quantity-stepper-input"]').first();
-      if (await qty.count()) { await qty.click(); await wait(p, 300); await S.view('qty-focused'); }
-    });
-    await S.full();
-  } },
-  search: { path: `${LOCALE}/search/?q=lamp`, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  stores: { path: `${LOCALE}/stores/`, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  login: { path: `${LOCALE}/profile/login/`, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  offers: { path: `${LOCALE}/offers/`, run: async (p, S) => { await S.view('default'); } },
-};
-
-const mobile = {
-  home: { path: `${LOCALE}/`, run: async (p, S) => {
-    await S.view('default');
-    await step('menu', async () => {
-      const btn = p.getByRole('button', { name: /^Menu$/ }).first();
-      if (await btn.count()) { await btn.click(); await wait(p, 800); await S.view('menu'); }
-    });
-    await S.full();
-  } },
-  category: { path: `${LOCALE}/cat/sofas-armchairs-700640/`, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  product: { path: `${LOCALE}/p/billy-bookcase-white-00522047/`, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  search: { path: `${LOCALE}/search/?q=lamp`, run: async (p, S) => { await S.view('default'); } },
-  stores: { path: `${LOCALE}/stores/`, run: async (p, S) => { await S.view('default'); } },
-  login: { path: `${LOCALE}/profile/login/`, run: async (p, S) => { await S.view('default'); } },
-};
-
-const browser = await launchBrowser();
-let total = 0;
-const runs = [...Object.keys(desktop).map((k) => ({ k, mob: false })), ...Object.keys(mobile).map((k) => ({ k, mob: true }))];
-for (const { k, mob } of runs) {
-  const name = (mob ? 'mobile-' : '') + k;
-  if (pageArg.length && !pageArg.includes(name) && !pageArg.includes(k)) continue;
-  const spec = (mob ? mobile : desktop)[k];
-  const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
-  const ctx = await newContext(browser, { mobile: mob, width: vw, height: vh, dpr });
-  const p = await ctx.newPage();
-  log(name, spec.path);
-  const S = new Shooter(p, `${name}-light`, vw, vh, dpr);
-  try {
-    await open(p, BASE + spec.path, { wait: 1800 });
-    await spec.run(p, S);
-  } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
-  total += S.count;
-  await ctx.close();
+async function dismissOverlays(page) {
+  await hideConsent(page);
+  await page.keyboard.press('Escape').catch(() => {});
+  await wait(page, 200);
 }
-log('done', total, 'screenshots ->', RAW);
-await browser.close();
+
+async function shotPage(context, spec, { mobile }) {
+  const prefix = (mobile ? 'mobile-' : '') + spec.name + '-light';
+  const page = await context.newPage();
+  page.setDefaultTimeout(20000);
+  const vw = mobile ? 390 : 1440;
+  const vh = mobile ? 844 : 900;
+  const dpr = mobile ? 2 : 1;
+  const S = new Shooter(page, prefix, vw, vh, dpr);
+  try {
+    const opened = await openPublic(page, BASE + spec.path, { wait: 2800 });
+    log('open', spec.name, opened.status, opened.url);
+    if (isLoginWall(opened.url) || spec.wall) {
+      await S.view('login-wall');
+      log('  STOP login wall', opened.url);
+      return { name: spec.name, url: opened.url, stopped: 'login-wall' };
+    }
+    await S.view('default');
+    if (!mobile) await S.full();
+    else await S.full();
+    return { name: spec.name, url: opened.url, status: opened.status };
+  } catch (e) {
+    log('  FAILED', spec.name, String(e.message).split('\n')[0]);
+    return { name: spec.name, error: String(e.message).split('\n')[0] };
+  } finally {
+    await page.close().catch(() => {});
+  }
+}
+
+async function interactions(context) {
+  const page = await context.newPage();
+  page.setDefaultTimeout(15000);
+  const S = new Shooter(page, 'home-light', 1440, 900, 1);
+  const notes = [];
+  try {
+    await openPublic(page, BASE + '/sg/en/', { wait: 2500 });
+    await dismissOverlays(page);
+    // Products mega menu
+    await page.locator('a.hnf-menu__entrypoint', { hasText: 'Products' }).first().click();
+    await wait(page, 900);
+    await S.view('products-menu');
+    await page.keyboard.press('Escape');
+    await wait(page, 400);
+    // Search suggestions, typed, not submitted with a password and not a form POST beyond the public search page
+    await page.locator('#ikea-search-input').click();
+    await wait(page, 600);
+    await S.view('search-focus');
+    await page.keyboard.type('sofa', { delay: 20 });
+    await wait(page, 1200);
+    await S.view('search-suggest');
+    await page.keyboard.press('Escape');
+    await wait(page, 300);
+    // Store dialog: open and close. Do not pick a store.
+    // A saved store preference turns this button into a store sheet with an address.
+    // Skip the shot when the button is no longer the generic "Select store" control.
+    const storeBtn = page.getByRole('button', { name: 'Select store' }).first();
+    const storeLabel = await storeBtn.innerText().catch(() => '');
+    if (/^select store$/i.test(storeLabel.trim())) {
+      await storeBtn.click();
+      await wait(page, 1000);
+      const sheetText = await page.locator('[role="dialog"]').innerText().catch(() => '');
+      if (!/\d{2,}/.test(sheetText)) await S.view('store-dialog');
+      else log('  skip store-dialog: sheet shows a saved store');
+      await page.keyboard.press('Escape');
+      await wait(page, 400);
+    } else {
+      log('  skip store-dialog: button is not Select store');
+    }
+    // Language dialog: open and close. Do not change country.
+    await page.getByRole('button', { name: /Change language or country/ }).first().click();
+    await wait(page, 900);
+    await S.view('country-dialog');
+    await page.keyboard.press('Escape');
+    notes.push('menus and dialogs captured on home');
+  } catch (e) {
+    notes.push('interaction failed: ' + String(e.message).split('\n')[0]);
+    log('  interaction', notes.at(-1));
+  } finally {
+    await page.close().catch(() => {});
+  }
+  return notes;
+}
+
+async function mobileMenu(context) {
+  const page = await context.newPage();
+  const S = new Shooter(page, 'mobile-home-light', 390, 844, 2);
+  try {
+    await openPublic(page, BASE + '/sg/en/', { wait: 2500 });
+    await hideConsent(page);
+    const menu = page.getByRole('button', { name: 'Menu' }).first();
+    if (await menu.count()) {
+      await menu.click();
+      await wait(page, 900);
+      await S.view('menu');
+      await page.keyboard.press('Escape');
+    } else {
+      log('  no mobile Menu button');
+    }
+  } catch (e) {
+    log('  mobile menu failed', String(e.message).split('\n')[0]);
+  } finally {
+    await page.close().catch(() => {});
+  }
+}
+
+const report = { desktop: [], mobile: [], notes: [] };
+const desk = await launch({ width: 1440, height: 900 });
+try {
+  for (const spec of PAGES) {
+    if (only.size && !only.has(spec.name) && !only.has('desktop')) continue;
+    report.desktop.push(await shotPage(desk.context, spec, { mobile: false }));
+  }
+  if (!only.size || only.has('interactions')) report.notes.push(...await interactions(desk.context));
+} finally {
+  await desk.browser.close();
+}
+
+const phonePages = PAGES.filter((p) => ['home', 'plp', 'pdp', 'search', 'cart', 'login', 'products'].includes(p.name));
+const mob = await launch({ mobile: true });
+try {
+  for (const spec of phonePages) {
+    if (only.size && !only.has(spec.name) && !only.has('mobile')) continue;
+    report.mobile.push(await shotPage(mob.context, spec, { mobile: true }));
+  }
+  if (!only.size || only.has('mobile')) await mobileMenu(mob.context);
+} finally {
+  await mob.browser.close();
+}
+
+fs.writeFileSync(path.join(RAW, 'capture-report.json'), JSON.stringify(report, null, 2));
+log('done', RAW);

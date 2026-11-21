@@ -1,159 +1,129 @@
 #!/usr/bin/env python3
-"""Render style-guide.html from tokens.json.
-
-Light only: the signed-out marketing pages did not expose a dark token set.
-Colours, radii and type on the page come from tokens.json. Crimson Pro and
-Inter are not loaded; the page falls back to Times New Roman and Arial.
-"""
+"""Render style-guide.html from tokens.json. Light theme only."""
 import html
 import json
 import pathlib
+import re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 T = json.loads((HERE / "tokens.json").read_text())
 
 
-def get(path):
-    node = T
-    for part in path.split("."):
-        node = node[part]
-    return node["$value"]
+def flat(node, prefix=""):
+    for k, v in node.items():
+        if k.startswith("$"):
+            continue
+        if isinstance(v, dict) and "$value" in v:
+            yield prefix + k, v
+        elif isinstance(v, dict):
+            yield from flat(v, prefix + k + ".")
 
 
 def resolve(value, seen=None):
     seen = seen or set()
-    if isinstance(value, str) and value.startswith("{") and value.endswith("}"):
-        ref = value[1:-1]
-        if ref in seen:
-            return value
-        seen = seen | {ref}
-        if ref.startswith("color.") or ref.startswith("font."):
-            return resolve(get("core." + ref), seen)
-        return resolve(get(ref), seen)
-    return value
+    if not isinstance(value, str):
+        return value
+    def repl(m):
+        path = m.group(1)
+        if path in seen:
+            return m.group(0)
+        for tree in (T["core"], T["light"]):
+            node = tree
+            ok = True
+            for part in path.split("."):
+                if isinstance(node, dict) and part in node:
+                    node = node[part]
+                else:
+                    ok = False
+                    break
+            if ok and isinstance(node, dict) and "$value" in node:
+                return str(resolve(node["$value"], seen | {path}))
+        return m.group(0)
+    return re.sub(r"\{([^{}]+)\}", repl, value)
 
 
-def swatch(path, label):
-    value = resolve(get(path))
-    return (
-        f'<div class="sw"><i style="background:{html.escape(str(value))}"></i>'
-        f'<div><b>{html.escape(label)}</b><code>{html.escape(path)}</code>'
-        f'<span>{html.escape(str(value))}</span></div></div>'
+rows = []
+for set_name in ("core", "light"):
+    for path, tok in flat(T[set_name]):
+        if tok.get("$type") != "color":
+            continue
+        val = resolve(tok["$value"])
+        rows.append((set_name + "." + path, val))
+
+swatches = "\n".join(
+    f'<div class="sw"><i style="background:{html.escape(val)}"></i><div><div class="nm">{html.escape(name)}</div><div class="vl">{html.escape(str(val))}</div></div></div>'
+    for name, val in rows
+)
+
+type_rows = []
+for path, tok in flat(T["core"]):
+    if tok.get("$type") != "typography":
+        continue
+    v = tok["$value"]
+    family = resolve(v.get("fontFamily", "Inter, Arial, sans-serif"))
+    sample = f'<div class="sample" style="font-family:{html.escape(family)};font-size:{html.escape(str(v.get("fontSize","")))};font-weight:{html.escape(str(v.get("fontWeight","")))};line-height:{html.escape(str(v.get("lineHeight","")))}">Design feedback, all in one place</div>'
+    type_rows.append(f'<div class="typerow"><div class="k">{html.escape(path)}</div>{sample}</div>')
+
+space_rows = []
+for path, tok in flat(T["core"]):
+    if not path.startswith("space.") or tok.get("$type") != "dimension":
+        continue
+    space_rows.append(
+        f'<div class="space"><span>{html.escape(path)} {html.escape(str(tok["$value"]))}</span><i style="width:{html.escape(str(tok["$value"]))}"></i></div>'
     )
 
-
-def main():
-    roles = [
-        ("light.background.page", "Page"),
-        ("light.background.canvas", "Canvas"),
-        ("light.background.surface", "Surface"),
-        ("light.background.muted", "Muted surface"),
-        ("light.text.primary", "Text"),
-        ("light.text.secondary", "Muted text"),
-        ("light.text.on-invert", "Text on ink"),
-        ("light.border.default", "Border"),
-        ("light.border.focus", "Focus"),
-        ("light.button.secondary", "Quiet button"),
-        ("light.button.dark", "Ink button"),
-        ("light.status.approve", "Approve"),
-        ("light.status.switch-on", "Switch on"),
-        ("light.text.error", "Error text"),
-        ("light.text.success", "Success text"),
-    ]
-    swatches = "\n".join(swatch(p, label) for p, label in roles)
-    radii = []
-    for key, token in T["core"]["radius"].items():
-        radii.append(
-            f'<div class="cell"><i style="border-radius:{html.escape(token["$value"])}"></i>'
-            f'<span>{html.escape(key)} {html.escape(token["$value"])}</span></div>'
-        )
-    spaces = []
-    for key, token in T["core"]["space"].items():
-        spaces.append(
-            f'<div class="space"><i style="width:{html.escape(token["$value"])}"></i>'
-            f'<span>{html.escape(key)} {html.escape(token["$value"])}</span></div>'
-        )
-    display = resolve(get("core.font.display"))
-    body = resolve(get("core.font.body"))
-    page = resolve(get("light.background.page"))
-    text = resolve(get("light.text.primary"))
-    muted = resolve(get("light.background.muted"))
-    ink = resolve(get("light.button.dark"))
-    on_ink = resolve(get("light.text.on-invert"))
-    radius = resolve(get("core.radius.medium"))
-    doc = f"""<!DOCTYPE html>
+page = """<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Workflow style guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {{
-    --page: {page};
-    --text: {text};
-    --muted: {muted};
-    --ink: {ink};
-    --on-ink: {on_ink};
-    --radius: {radius};
-    --display: {display};
-    --body: {body};
-  }}
-  body {{ margin: 0; background: var(--page); color: var(--text); font: 14px/21px var(--body); }}
-  main {{ max-width: 880px; margin: 0 auto; padding: 48px 24px 80px; }}
-  h1 {{ font: 300 32px/32px var(--display); margin: 0 0 8px; }}
-  h2 {{ font: 300 32px/32px var(--display); margin: 40px 0 12px; }}
-  p {{ max-width: 62ch; }}
-  .swatches, .radii, .spaces {{ display: grid; gap: 12px; }}
-  .swatches {{ grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }}
-  .sw {{ display: flex; gap: 12px; align-items: center; }}
-  .sw i {{ width: 48px; height: 48px; border-radius: 8px; border: 1px solid rgba(26,26,26,.12); display: block; }}
-  .sw b, .sw code, .sw span {{ display: block; }}
-  code {{ font: 12px/16px ui-monospace, monospace; }}
-  .radii {{ grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }}
-  .cell i {{ display: block; width: 64px; height: 40px; background: var(--muted); border: 1px solid rgba(26,26,26,.2); }}
-  .spaces {{ grid-template-columns: 1fr; }}
-  .space {{ display: flex; align-items: center; gap: 12px; }}
-  .space i {{ height: 12px; background: var(--ink); display: block; }}
-  .row {{ display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }}
-  .btn {{ display: inline-flex; align-items: center; height: 40px; padding: 8px 16px; border-radius: var(--radius); text-decoration: none; }}
-  .quiet {{ background: {muted}; color: {text}; }}
-  .dark {{ background: {ink}; color: {on_ink}; }}
-  .chip {{ border: 1px solid rgba(26,26,26,.12); border-radius: 9999px; padding: 8px 16px; height: 32px; display: inline-flex; align-items: center; }}
-  .approve {{ background: #e9f6ee; color: #547e69; border-radius: 5px; padding: 6px 10px; }}
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #f6f4f0; color: #1a1a1a; font: 400 14px/21px Inter, Arial, sans-serif; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+  h1 { font: 300 32px/32px "Crimson Pro", "Times New Roman", serif; margin: 0 0 8px; }
+  h2 { font: 300 24px/28px "Crimson Pro", "Times New Roman", serif; margin: 40px 0 12px; }
+  p { max-width: 68ch; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+  .sw { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: center; background: #fff; border-radius: 8px; padding: 8px; }
+  .sw i { display: block; width: 40px; height: 40px; border-radius: 4px; box-shadow: inset 0 0 0 1px #1a1a1a1f; }
+  .nm { font-size: 12px; }
+  .vl { font-size: 12px; color: #1a1a1aa6; }
+  .typerow { display: grid; grid-template-columns: 180px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid #1a1a1a1f; }
+  .k { font-size: 12px; }
+  .space { display: flex; align-items: center; gap: 12px; margin: 6px 0; }
+  .space i { display: block; height: 12px; background: #1a1a1a; }
+  button.demo { height: 40px; padding: 8px 16px; border: 0; border-radius: 8px; background: #f6f6f6; color: #1a1a1a; font: 400 14px/21px Inter, Arial, sans-serif; }
+  button.demo:hover { background: #ececec; }
+  a.nav { color: #1a1a1a; text-decoration: none; }
+  a.nav:hover { color: #353532; }
+  .note { color: #1a1a1aa6; font-size: 13px; }
 </style>
 </head>
 <body>
-<main>
+<div class="wrap">
   <h1>Workflow</h1>
-  <p>Light specimens from the public marketing site, measured 2026-11-19. Crimson Pro and Inter are not loaded here.</p>
+  <p class="note">Public marketing tokens from www.workflow.design, 2026-11-21. One light theme. Values come from tokens.json.</p>
   <h2>Colour</h2>
-  <div class="swatches">
-    {swatches}
+  <div class="grid">
+""" + swatches + """
   </div>
   <h2>Type</h2>
-  <p style="font: 300 32px/32px var(--display)">Design feedback and revisions, all in one place</p>
-  <p>Body is 14px Inter with a 21px line. The features page heading computed at 60.992px.</p>
-  <h2>Controls</h2>
-  <div class="row">
-    <a class="btn quiet">Try now</a>
-    <a class="btn dark">Get started for free</a>
-    <span class="chip">Collecting feedback</span>
-    <span class="approve">Approve</span>
-  </div>
-  <h2>Radius</h2>
-  <div class="radii">
-    {''.join(radii)}
-  </div>
+""" + "\n".join(type_rows) + """
   <h2>Space</h2>
-  <div class="spaces">
-    {''.join(spaces)}
-  </div>
-</main>
+""" + "\n".join(space_rows) + """
+  <h2>Controls</h2>
+  <p><button class="demo">Try now</button></p>
+  <p><a class="nav" href="#colour">Features</a></p>
+  <p class="note">The button matches the measured Try now control: 40px tall, 8px radius, #f6f6f6 fill, #ececec on hover. No dark theme toggle: the site does not publish one.</p>
+</div>
 </body>
 </html>
 """
-    (HERE / "style-guide.html").write_text(doc)
-    print("wrote style-guide.html")
-
-
-if __name__ == "__main__":
-    main()
+(HERE / "style-guide.html").write_text(page)
+print("style-guide.html", len(page))

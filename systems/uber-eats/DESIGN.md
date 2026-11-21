@@ -177,9 +177,9 @@ Good for: Food-delivery marketing: black and gray pills on white, a 32 px addres
 
 Captured 2026-11-19, signed out (public marketing only; login, signup, checkout and address entry were not opened). Themes: light.
 
-Public signed-out marketing for Uber Eats, captured on 2026-11-19 from the live site in the T3 preview browser. No account was used. The pages read were [https://www.ubereats.com/](https://www.ubereats.com/), [https://www.ubereats.com/promo](https://www.ubereats.com/promo), [https://www.ubereats.com/location](https://www.ubereats.com/location) and [https://www.ubereats.com/near-me](https://www.ubereats.com/near-me). The page declared `data-theme="light"` and `color-scheme: light`. The preview viewport stayed at 1169 by 731 CSS pixels, device pixel ratio 2. A 1440 and a 390 width were not applied.
+Public signed-out marketing for Uber Eats. Token values were read on 2026-11-19 from the live site. A 2026-11-21 Playwright pass mapped the public tree and photographed reachable states. No account was used. Desktop shots are 1440 by 900 CSS pixels at 1x. The phone location shot is 390 by 844 at 2x. The live page stayed light. Dark ramp names exist in the stylesheet and were not applied.
 
-The preview browser returned "The browser is not producing screenshot frames" on every snapshot. Values below are computed styles and custom properties. There are no page screenshots.
+The homepage paints one of two heroes on the same URL. The photographed hero is the wood table ("Enter delivery address", Deliver now, Search here). The 2026-11-19 readings were taken on the green illustrated hero. Both are recorded. Which hero appears is not a setting this pass could choose.
 
 ## Colors
 
@@ -238,24 +238,25 @@ Dark ramp names (`--gray50Dark`, `--blue600Dark`, and the rest) exist in the sty
 
 The `$0 Delivery Fee` link is `rgb(252, 252, 252)` on a parent whose fill was not isolated. Its parent colour is a gap.
 
-No screenshot exists, so a crop cannot prove a value. The evidence is the computed style, not a picture.
+Screenshots are 256-colour. Read colours from [tokens.json](tokens.json), not from the PNGs. The wood hero and the green hero are the same URL. A crop of one does not prove the other.
 
 ### Do and don't (from README.md)
 
-- **Use black for the primary action and gray for the secondary one.** Sign up and Search are `rgb(17, 17, 17)` with `rgb(252, 252, 252)` type. Log in, Get a ride and Find restaurants are `rgb(246, 246, 246)` with `rgb(17, 17, 17)` type. The blue brand token `#276ef1` is in the stylesheet and was not the fill of those buttons. Evidence is the computed style in [raw/computed.json](raw/computed.json), because this capture has no screenshot.
-- **Keep the address field a white pill.** On the home page the shell is 540 by 48, radius 32 px, white, with a 48 px black circular search button. On `/location` the same job is an 8 px white field beside an 8 px black Find Food button, on a `rgb(250, 146, 105)` band. See [raw/computed.json](raw/computed.json).
-- **Set display type in UberMove and UI type in UberMoveText.** The hero is UberMove 52 / 64 / 700. Buttons are UberMoveText 14 or 16 / 500. See [raw/computed.json](raw/computed.json).
-- **Leave the dark ramp names unused until a live dark page is measured.** `--gray50Dark` and the other `*Dark` names are declared. The signed-out pages stayed `data-theme="light"`. See [raw/computed.json](raw/computed.json).
-- **Read computed styles when a screenshot is missing.** This package has none. The preview browser returned "The browser is not producing screenshot frames". See [raw/computed.json](raw/computed.json).
+- **Use black for the primary action and gray or white for the secondary one.** Sign up and Search here are black with near-white type. Log in on the wood hero is a white pill. See [home-light-default.png](screenshots/home-light-default.png). The blue brand token `#276ef1` is in the stylesheet and was not the fill of those buttons.
+- **Keep the address field a white field.** On the wood hero it sits beside Deliver now and a black Search here button. On `/location` it sits beside a black Find Food button on a peach band. See [home-light-address-focused.png](screenshots/home-light-address-focused.png) and [location-light-default.png](screenshots/location-light-default.png).
+- **Set display type in UberMove and UI type in UberMoveText.** The hero is UberMove 52 / 64 / 700. Buttons are UberMoveText. See [raw/computed.json](raw/computed.json).
+- **Leave the dark ramp names unused until a live dark page is measured.** `--gray50Dark` and the other `*Dark` names are declared. The signed-out pages stayed light. See [raw/computed.json](raw/computed.json).
+- **Stop at the auth wall.** Log in and Sign up open `auth.uber.com` and ask for a phone number or email, then Google or Apple. Nothing was typed. See [login-wall-light-default.png](screenshots/login-wall-light-default.png).
 
 ### Gaps (from README.md)
 
-- No screenshots or crops. Preview snapshot failed with "The browser is not producing screenshot frames".
-- No 1440 or 390 capture. Viewport stayed 1169 by 731.
 - No dark theme on the live page.
-- No login, signup, checkout, gift card, phone, card, or address entry. Those flows were out of scope.
-- Hover, pressed, disabled, loading and error states were not forced.
+- No login, signup, checkout, gift card, phone, card, or address entry. Those flows were stopped. See [login-review.json](login-review.json).
+- Hover, pressed, disabled, loading and error states were not forced. Address focus is photographed.
 - Reduced motion was not emulated.
-- Elevation tokens were not seen in use.
-- Icon SVGs were not extracted.
-- `about.ubereats.com` failed to fetch from the page (`TypeError: Failed to fetch`) and was not opened.
+- Elevation tokens were not seen in use. The Log in pill computed a soft shadow on 2026-11-21.
+- Icon SVGs were not extracted. Element crops were not cut.
+- `/near-me`, `/shopping`, `/pickup/near-me`, `/promo`, and brand pages did not render past a security check. The check was not solved.
+- `about.ubereats.com` returned 404.
+- The phone homepage stayed on an app gate. The phone shot that remains is the location page.
+- The 2026-11-19 viewport was 1169 by 731. The 2026-11-21 shots are 1440 and 390. Token values were not re-measured at those widths.

@@ -1,125 +1,181 @@
-<!DOCTYPE html>
-<html lang="en" data-mode="light">
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sonarworks style guide</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+<meta name="description" content="Sonarworks public-site tokens, rendered from tokens.json. One light theme.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
 <style>
-  :root {
-    --page: #ffffff;
-    --inverse: #000000;
-    --muted-bg: #f3f3f3;
-    --text: #000000;
-    --secondary: #96999c;
-    --tertiary: #636669;
-    --on-inverse: #ffffff;
-    --border: #dfe0e1;
-    --strong: #000000;
-    --divider: #3e4042;
-    --hairline: #d8d9da;
-    --disabled: #d8d9da;
-    --on-disabled: #636669;
-    --trial: #68befd;
-    --sale: #ffe701;
-    --danger: #fc5b41;
-    --success: #6fe362;
-    --lime: #cdf045;
-    --orange: #ff904c;
-    --yellow: #f8d143;
-    --pink: #eb48c7;
-    --purple: #b25ced;
-    --font: Inter, sans-serif;
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--font); }
-  header, main { max-width: 960px; margin: 0 auto; padding: 32px 16px; }
-  h1 { font: 400 44px/52px var(--font); letter-spacing: -1.5px; margin: 0 0 8px; }
-  h2 { font: 400 24px/32px var(--font); letter-spacing: -0.5px; margin: 40px 0 12px; }
-  p.lede { color: var(--secondary); max-width: 62ch; }
-  .row { display: flex; flex-wrap: wrap; gap: 8px; }
-  .swatch { width: 140px; min-height: 88px; padding: 12px; border: 1px solid var(--border); }
-  .swatch span { display: block; font-size: 11px; letter-spacing: 0.2px; line-height: 16px; margin-top: 8px; }
-  .pill { display: inline-block; border-radius: 9999px; padding: 12px 16px; font: 400 16px/24px var(--font); text-decoration: none; }
-  .pill.dark { background: #000; color: #fff; }
-  .pill.light { background: #fff; color: #000; border: 1px solid #000; }
-  .pill.trial { background: var(--trial); color: #000; padding: 4px 16px; }
-  .pill.off { background: var(--disabled); color: var(--on-disabled); border: 1px solid var(--disabled); }
-  .field { display: block; width: 318px; height: 48px; margin: 8px 0; padding: 12px; border: 1px solid #000; background: #fff; font: 400 16px/24px var(--font); }
-  .field.rest { border-color: var(--border); }
-  .field.bad { border-color: var(--danger); color: var(--danger); }
-  .panel { background: var(--muted-bg); padding: 32px 16px 64px; max-width: 382px; }
-  .bar { background: #000; color: var(--secondary); padding: 8px 16px; }
-  .bar strong { color: #fff; font-weight: 600; }
-  .sale { background: var(--sale); color: #000; display: inline-block; padding: 0 4px; }
-  .note { font-size: 11px; letter-spacing: 0.2px; line-height: 16px; color: var(--tertiary); }
-  table { border-collapse: collapse; width: 100%; }
-  td, th { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--hairline); font-weight: 400; }
+:root {
+  --color-base-00: #000000;
+  --color-base-10: #1e1f20;
+  --color-base-25: #3e4042;
+  --color-base-40: #636669;
+  --color-base-60: #96999c;
+  --color-base-80: #cccccc;
+  --color-base-85: #d8d9da;
+  --color-base-95: #f3f3f3;
+  --color-base-100: #ffffff;
+  --color-highlight-blue: #68befd;
+  --color-highlight-green: #6fe362;
+  --color-highlight-lime: #cdf045;
+  --color-highlight-orange: #ff904c;
+  --color-highlight-pink: #eb48c7;
+  --color-highlight-purple: #b25ced;
+  --color-highlight-red: #fc5b41;
+  --color-highlight-sale: #ffe701;
+  --color-highlight-yellow: #f8d143;
+  --font-family-sans: Inter, sans-serif;
+  --typography-display: 400 44px/52px var(--core-font-family-sans);
+  --typography-heading: 400 24px/32px var(--core-font-family-sans);
+  --typography-body: 400 16px/24px var(--core-font-family-sans);
+  --typography-label: 600 16px/24px var(--core-font-family-sans);
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --radius-2xl: 12px;
+  --radius-3xl: 24px;
+  --radius-full: 9999px;
+  --sizing-top-nav: 56px;
+  --sizing-primary-nav: 104px;
+  --surface-page: var(--core-color-base-100);
+  --surface-inverse: var(--core-color-base-00);
+  --surface-raised: var(--core-color-base-95);
+  --surface-menu: var(--core-color-base-10);
+  --text-primary: var(--core-color-base-00);
+  --text-on-inverse: var(--core-color-base-100);
+  --text-muted: var(--core-color-base-60);
+  --text-secondary: var(--core-color-base-40);
+  --border-default: var(--core-color-base-25);
+  --border-hairline: #dfe0e1;
+  --accent-default: var(--core-color-highlight-blue);
+  --focus-ring: #3b82f6;
+  color-scheme: light;
+  --sg-sans: Inter, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+[data-mode="dark"] {
+
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--surface-page); color: var(--text-primary); font: 400 16px/24px var(--sg-sans); }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px 64px; }
+header.top { position: sticky; top: 0; background: var(--surface-inverse); color: var(--text-on-inverse); }
+header.top .in { max-width: 1100px; margin: 0 auto; padding: 16px 24px; display: flex; gap: 20px; align-items: center; }
+header.top h1 { margin: 0; font: 600 16px/24px var(--sg-sans); }
+header.top nav { display: flex; gap: 16px; }
+header.top a { color: var(--text-muted); text-decoration: none; font-size: 14px; }
+section.s { padding-top: 40px; }
+h2.sh { font: 400 24px/32px var(--sg-sans); letter-spacing: -0.5px; margin: 0 0 8px; }
+p.lead { color: var(--text-secondary); max-width: 72ch; }
+code { font-family: var(--sg-mono); font-size: 12px; }
+.pal { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.sw { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: center; }
+.sw .dot { width: 40px; height: 40px; box-shadow: inset 0 0 0 1px var(--border-hairline); position: relative; }
+.sw .dot i { position: absolute; inset: 0; }
+.sw .nm { font: 600 12px/1.3 var(--sg-mono); }
+.sw .vl { font-size: 12px; color: var(--text-secondary); }
+.pal-h { margin: 16px 0 8px; color: var(--text-secondary); }
+.typerow { display: grid; grid-template-columns: 220px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border-hairline); }
+.typerow .k { font: 600 12px/1.4 var(--sg-mono); }
+.boxes { display: flex; gap: 12px; flex-wrap: wrap; }
+.bx { width: 72px; height: 72px; background: var(--surface-raised); box-shadow: inset 0 0 0 1px var(--border-hairline); display: flex; align-items: flex-end; justify-content: center; font-size: 11px; color: var(--text-secondary); padding: 4px; text-align: center; }
+.navdemo { background: var(--surface-inverse); color: var(--text-muted); height: 56px; display: flex; align-items: center; gap: 8px; padding: 0 8px; }
+.navdemo a { color: var(--text-muted); text-decoration: none; padding: 8px 16px; }
+.navdemo .on { color: var(--text-on-inverse); font-weight: 600; }
+.pill { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: var(--radius-full); background: var(--accent-default); color: var(--text-primary); }
+.menu { background: var(--surface-menu); color: var(--text-on-inverse); padding: 8px 0; width: 220px; }
+.menu a { display: block; color: var(--text-on-inverse); text-decoration: none; padding: 8px 16px; }
+.field { height: 40px; border: 1px solid var(--border-hairline); padding: 0 12px; font: 400 16px/24px var(--sg-sans); width: 280px; }
+.cap { font-size: 12px; color: var(--text-secondary); margin-top: 6px; }
+.states { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; }
 </style>
 </head>
 <body>
-<header>
-  <h1>Sonarworks</h1>
-  <p class="lede">Public marketing and the signed-out account, measured on 19 November 2026. One light theme. Values are the computed styles from the live pages.</p>
-</header>
-<main>
-  <h2>Colour</h2>
-  <div class="row" id="swatches"></div>
-  <h2>Type</h2>
-  <p style="font:400 44px/52px var(--font);letter-spacing:-1.5px;margin:0">Create, mix and deliver</p>
-  <p style="font:400 24px/32px var(--font);letter-spacing:-0.5px">SoundID Reference</p>
-  <p style="margin:0">Industry-leading speaker and headphone calibration.</p>
-  <p class="note">Forgot your password?</p>
-  <h2>Buttons</h2>
-  <p>
-    <a class="pill dark">Buy now</a>
-    <a class="pill light">Continue with Google</a>
-    <a class="pill trial">7-day Free Trial</a>
-    <a class="pill off">Log in</a>
-  </p>
-  <h2>Fields</h2>
-  <div class="panel">
-    <input class="field" placeholder="Email address" aria-label="Email address">
-    <input class="field rest" placeholder="Password" aria-label="Password" type="password">
-    <input class="field bad" value="Not a valid address" aria-label="Error example">
-    <p class="note">The red border is the declared .field.has-errors rule. It was not shown on the live form.</p>
+<header class="top"><div class="in">
+  <h1>Sonarworks style guide</h1>
+  <nav>
+    <a href="#colour">Colour</a><a href="#type">Type</a><a href="#shape">Shape</a><a href="#components">Components</a>
+  </nav>
+</div></header>
+<div class="wrap">
+<section class="s" id="intro">
+  <h2 class="sh">Sonarworks, measured</h2>
+  <p class="lead">Values come from the public site at www.sonarworks.com on 2026-11-21. The marketing pages declare a Tailwind base scale (black through white) and a highlight scale. There is no dark theme toggle. Inter is the only computed family. Drawings here use the tokens. The real pages are in screenshots/.</p>
+</section>
+<section class="s" id="colour">
+  <h2 class="sh">Colour</h2>
+  <p class="lead">Page ground is white. The header is black with muted grey links. Highlight colours are campaign accents, not status roles.</p>
+  <div id="roles-out"></div>
+</section>
+<section class="s" id="type">
+  <h2 class="sh">Type</h2>
+  <p class="lead">Inter at 400 for display and body, 600 on the wordmark. Display is 44/52 with -1.5px tracking.</p>
+  <div id="type-out"></div>
+</section>
+<section class="s" id="shape">
+  <h2 class="sh">Radius</h2>
+  <div class="boxes" id="radius-out"></div>
+</section>
+<section class="s" id="components">
+  <h2 class="sh">Components</h2>
+  <div class="states">
+    <div>
+      <div class="navdemo"><a>Reviews</a><a>Blog</a><a class="on">Sonarworks</a></div>
+      <div class="cap">Top bar 56px, black, text-base-60 links</div>
+    </div>
+    <div>
+      <div class="menu"><a>About us</a><a>Careers</a><a>Contact us</a></div>
+      <div class="cap">Company menu, bg-base-10</div>
+    </div>
+    <div>
+      <span class="pill">Learn more</span>
+      <div class="cap">Highlight blue pill. Not every CTA uses it.</div>
+    </div>
+    <div>
+      <input class="field" placeholder="Email address" readonly>
+      <div class="cap">Contact field. Not submitted.</div>
+    </div>
   </div>
-  <h2>Chrome</h2>
-  <div class="bar"><strong>Sonarworks</strong> &nbsp; Reviews &nbsp; Blog &nbsp; Log in</div>
-  <p style="margin-top:16px">Was <s style="color:var(--tertiary)">€79.00</s> <span class="sale">You save €29.00</span></p>
-  <h2>Scale</h2>
-  <table>
-    <tr><th>Role</th><th>Value</th></tr>
-    <tr><td>Page</td><td>#ffffff</td></tr>
-    <tr><td>Nav and footer</td><td>#000000</td></tr>
-    <tr><td>Muted text</td><td>#96999c</td></tr>
-    <tr><td>Hairline</td><td>#dfe0e1</td></tr>
-    <tr><td>Display</td><td>44/52, -1.5px, Inter 400</td></tr>
-    <tr><td>Pill radius</td><td>9999px</td></tr>
-  </table>
-</main>
+</section>
+</div>
 <script>
-const colors = [
-  ["Page", "#ffffff", "#000"],
-  ["Inverse", "#000000", "#fff"],
-  ["Muted surface", "#f3f3f3", "#000"],
-  ["Secondary text", "#96999c", "#000"],
-  ["Tertiary", "#636669", "#fff"],
-  ["Border", "#dfe0e1", "#000"],
-  ["Divider", "#3e4042", "#fff"],
-  ["Disabled", "#d8d9da", "#636669"],
-  ["Trial blue", "#68befd", "#000"],
-  ["Sale", "#ffe701", "#000"],
-  ["Danger", "#fc5b41", "#000"],
-  ["Success", "#6fe362", "#000"],
-  ["Lime", "#cdf045", "#000"],
-  ["Orange", "#ff904c", "#000"],
-  ["Pink", "#eb48c7", "#000"],
-  ["Purple", "#b25ced", "#fff"]
-];
-document.getElementById("swatches").innerHTML = colors.map(([n, c, ink]) =>
-  `<div class="swatch" style="background:${c};color:${ink}"><b>${n}</b><span>${c}</span></div>`).join("");
+const TOK = {"core":{"color":{"base":{"00":{"v":"#000000","t":"color","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json)","d":"Tailwind bg-base-00 / text-base-00 / border-base-00."},"10":{"v":"#1e1f20","t":"color","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json)","d":"Tailwind bg-base-10 / text-base-10 / border-base-10."},"25":{"v":"#3e4042","t":"color","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json)","d":"Tailwind bg-base-25 / text-base-25 / border-base-25."},"40":{"v":"#636669","t":"color","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json)","d":"Tailwind bg-base-40 / text-base-40 / border-base-40."},"60":{"v":"#96999c","t":"color","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json)","d":"Tailwind bg-base-60 / text-base-60 / border-base-60."},"80":{"v":"#cccccc","t":"color","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json)","d":"Tailwind bg-base-80 / text-base-80 / border-base-80."},"85":{"v":"#d8d9da","t":"color","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json)","d":"Tailwind bg-base-85 / text-base-85 / border-base-85."},"95":{"v":"#f3f3f3","t":"color","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json)","d":"Tailwind bg-base-95 / text-base-95 / border-base-95."},"100":{"v":"#ffffff","t":"color","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json)","d":"Tailwind bg-base-100 / text-base-100 / border-base-100."}},"highlight":{"blue":{"v":"#68befd","t":"color","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json)","d":"Tailwind bg-highlight-blue. Used as a campaign accent, not a status role."},"green":{"v":"#6fe362","t":"color","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json)","d":"Tailwind bg-highlight-green. Used as a campaign accent, not a status role."},"lime":{"v":"#cdf045","t":"color","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json)","d":"Tailwind bg-highlight-lime. Used as a campaign accent, not a status role."},"orange":{"v":"#ff904c","t":"color","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json)","d":"Tailwind bg-highlight-orange. Used as a campaign accent, not a status role."},"pink":{"v":"#eb48c7","t":"color","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json)","d":"Tailwind bg-highlight-pink. Used as a campaign accent, not a status role."},"purple":{"v":"#b25ced","t":"color","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json)","d":"Tailwind bg-highlight-purple. Used as a campaign accent, not a status role."},"red":{"v":"#fc5b41","t":"color","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json)","d":"Tailwind bg-highlight-red. Used as a campaign accent, not a status role."},"sale":{"v":"#ffe701","t":"color","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json)","d":"Tailwind bg-highlight-sale. Used as a campaign accent, not a status role."},"yellow":{"v":"#f8d143","t":"color","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json)","d":"Tailwind bg-highlight-yellow. Used as a campaign accent, not a status role."}}},"font":{"family":{"sans":{"v":"Inter, sans-serif","t":"fontFamily","s":"computed style of body on https://www.sonarworks.com/ at 1440x900","d":"The only family the marketing pages compute. Inter is loaded from Google Fonts (weights 400, 500, 600, 700, 900). Inter Fallback is a local Arial metric override in the page style block."}}},"typography":{"display":{"v":{"fontFamily":"{core.font.family.sans}","fontSize":"44px","fontWeight":400,"lineHeight":"52px","letterSpacing":"-1.5px"},"t":"typography","s":"computed fontSize of h1 (raw/components-computed.json): 44px","d":"Home h1."},"heading":{"v":{"fontFamily":"{core.font.family.sans}","fontSize":"24px","fontWeight":400,"lineHeight":"32px","letterSpacing":"-0.5px"},"t":"typography","s":"computed style of h2 on https://www.sonarworks.com/ at 1440x900","d":"Home h2."},"body":{"v":{"fontFamily":"{core.font.family.sans}","fontSize":"16px","fontWeight":400,"lineHeight":"24px"},"t":"typography","s":"computed style of body on https://www.sonarworks.com/ at 1440x900","d":"Body copy."},"label":{"v":{"fontFamily":"{core.font.family.sans}","fontSize":"16px","fontWeight":600,"lineHeight":"24px"},"t":"typography","s":"computed font-weight 600 on the wordmark link in #primary-navigation","d":"Nav wordmark."}},"radius":{"sm":{"v":"2px","t":"dimension","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json); .rounded-sm is 0.125rem","d":"0.125rem at a 16px root."},"md":{"v":"4px","t":"dimension","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json); .rounded is 0.25rem","d":"0.25rem."},"lg":{"v":"6px","t":"dimension","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json); .rounded-md is 0.375rem","d":"0.375rem."},"xl":{"v":"8px","t":"dimension","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json); .rounded-lg is 0.5rem","d":"0.5rem."},"2xl":{"v":"12px","t":"dimension","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json); .rounded-xl is 0.75rem","d":"0.75rem."},"3xl":{"v":"24px","t":"dimension","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json); .rounded-3xl is 1.5rem","d":"1.5rem."},"full":{"v":"9999px","t":"dimension","s":"declared Tailwind utility in the inline style block on https://www.sonarworks.com/ (raw/css-vars.json); .rounded-full is 9999px","d":"Pill."}},"sizing":{"top-nav":{"v":"56px","t":"dimension","s":"computed style of #top-navigation on https://www.sonarworks.com/ at 1440x900; measured height 56","d":"Top utility bar height."},"primary-nav":{"v":"104px","t":"dimension","s":"computed height of #primary-navigation at 1440x900","d":"Primary nav row height."}}},"light":{"surface":{"page":{"v":"{core.color.base.100}","t":"color","s":"body background rgb(255, 255, 255) matches bg-base-100"},"inverse":{"v":"{core.color.base.00}","t":"color","s":"#top-navigation and #primary-navigation background rgb(0, 0, 0) matches bg-base-00"},"raised":{"v":"{core.color.base.95}","t":"color","s":"declared bg-base-95; used as a light inset. Not sampled from a screenshot."},"menu":{"v":"{core.color.base.10}","t":"color","s":"#company-top-navigation class bg-base-10"}},"text":{"primary":{"v":"{core.color.base.00}","t":"color","s":"body color rgb(0, 0, 0)"},"on-inverse":{"v":"{core.color.base.100}","t":"color","s":"wordmark color rgb(255, 255, 255) on the black nav"},"muted":{"v":"{core.color.base.60}","t":"color","s":"#top-navigation color rgb(150, 153, 156) matches text-base-60"},"secondary":{"v":"{core.color.base.40}","t":"color","s":"declared text-base-40. A quieter ink than muted."}},"border":{"default":{"v":"{core.color.base.25}","t":"color","s":"nav hairline class border-base-25, computed border color rgb(223, 224, 225) is the light-surface hairline and differs from this dark-nav token"},"hairline":{"v":"#dfe0e1","t":"color","s":"computed border-color rgb(223, 224, 225) on body","d":"Computed border color on body and header. Not a named base step."}},"accent":{"default":{"v":"{core.color.highlight.blue}","t":"color","s":"declared bg-highlight-blue. Campaign and tool accent, not a button fill on the home nav."}},"focus":{"ring":{"v":"#3b82f6","t":"color","s":"inline style --tw-ring-color: rgba(59, 130, 246, .5) resolved to the opaque #3b82f6; the 0.5 alpha is the ring token's own alpha, recorded in $description","d":"Tailwind default ring colour declared as --tw-ring-color. Whether a control paints it on :focus-visible was not confirmed on every control."}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+(function roles() {
+  let h = '';
+  for (const [label, set, prefix] of [['core.color', TOK.core.color, 'color.'], ['light', TOK.light, '']]) {
+    const items = flat(set, prefix).filter(([, t]) => t.t === 'color');
+    h += `<div class="pal-h">${label}</div><div class="pal">`;
+    for (const [n, t] of items) {
+      const bg = t.v.startsWith('{') ? 'var(' + cssname(t.v.replace(/[{}]/g, '')) + ')' : t.v;
+      h += `<div class="sw"><span class="dot"><i style="background:${bg}"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    }
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography, 'typography.')) {
+    const v = t.v;
+    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(v.fontSize)} / ${esc(v.lineHeight)}</small></div><div style="font-size:${esc(v.fontSize)};line-height:${esc(v.lineHeight)};font-weight:${esc(v.fontWeight)};letter-spacing:${esc(v.letterSpacing || 'normal')}">SoundID Reference</div></div>`;
+  }
+  $('#type-out').innerHTML = h;
+})();
+(function radius() {
+  let r = '';
+  for (const [n, t] of flat(TOK.core.radius, 'radius.')) {
+    r += `<div class="bx" style="border-radius:min(${esc(t.v)}, 36px)">${esc(n.replace('radius.', ''))}<br>${esc(t.v)}</div>`;
+  }
+  $('#radius-out').innerHTML = r;
+})();
 </script>
 </body>
 </html>

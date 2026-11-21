@@ -4,373 +4,241 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cal.com style guide</title>
-<meta name="description" content="Cal.com design tokens and the public marketing, booking and auth surfaces' components, rendered from tokens.json with the declared and measured values.">
 <style>
 :root {
+  --color-cal-bg: #ffffff;
+  --color-cal-border: #d1d5db;
+  --color-cal-brand: #111827;
+  --color-cal-text: #3c3e44;
+  --color-hp-accent: #cc4510;
+  --color-hp-accent-ink: #a83a0c;
+  --color-hp-body: #374151;
+  --color-hp-chip: #f3f4f6;
+  --color-hp-field: #f3f4f6;
+  --color-hp-hairline: rgba(15, 35, 75, 0.071);
+  --color-hp-highlight: #ffffff;
+  --color-hp-ink: #242424;
+  --color-hp-ink-2: #292929;
+  --color-hp-line: #e5e7eb;
+  --color-hp-line-2: #dee1e6;
+  --color-hp-mac-close: #ff5f57;
+  --color-hp-mac-minimize: #febc2e;
+  --color-hp-mac-zoom: #28c840;
+  --color-hp-muted: #6a6e78;
+  --color-hp-on-ink: #ffffff;
+  --color-hp-page: #ffffff;
+  --color-hp-paper: #e3dccd;
+  --color-hp-plate: #f3f4f6;
+  --color-hp-plate-line: rgba(15, 35, 75, 0.059);
+  --color-hp-print-ink: #292929;
+  --color-hp-print-label: #292929;
+  --color-hp-print-paper: #fbfaf7;
+  --color-hp-quiet: #858993;
+  --color-hp-raised: #ffffff;
+  --color-hp-slot: #dee1e6;
+  --color-hp-slot-selected: #242424;
+  --color-hp-subtle: #5f6570;
+  --color-hp-surface: #ffffff;
+  --color-hp-surface-2: #f9fafb;
+  --color-hp-text: #111111;
+  --color-hp-tint: #0f234b;
+  --color-hp-well: #e5e7eb;
+  --color-ramp-gray-100: #f3f4f6;
+  --color-ramp-gray-200: #e5e7eb;
+  --color-ramp-gray-300: #d1d5dc;
+  --color-ramp-gray-400: #99a1af;
+  --color-ramp-gray-50: #f9fafb;
+  --color-ramp-gray-500: #6a7282;
+  --color-ramp-gray-600: #4a5565;
+  --color-ramp-gray-700: #364153;
+  --color-ramp-gray-800: #1e2939;
+  --color-ramp-gray-900: #101828;
+  --color-ramp-neutral-100: #f5f5f5;
+  --color-ramp-neutral-200: #e5e5e5;
+  --color-ramp-neutral-400: #a1a1a1;
+  --color-ramp-neutral-50: #fafafa;
+  --color-ramp-neutral-500: #737373;
+  --color-ramp-neutral-600: #525252;
+  --color-ramp-neutral-800: #262626;
+  --color-ramp-neutral-900: #171717;
+  --color-ramp-neutral-950: #0a0a0a;
+  --color-ramp-emerald-100: #d0fae5;
+  --color-ramp-emerald-200: #a4f4cf;
+  --color-ramp-emerald-300: #5ee9b5;
+  --color-ramp-emerald-400: #00d294;
+  --color-ramp-emerald-50: #ecfdf5;
+  --color-ramp-emerald-500: #00bb7f;
+  --color-ramp-emerald-600: #009767;
+  --color-ramp-emerald-700: #007956;
+  --color-ramp-emerald-800: #005f46;
+  --color-ramp-emerald-900: #004e3b;
+  --color-ramp-emerald-950: #002c22;
+  --color-ramp-red-100: #ffe2e2;
+  --color-ramp-red-200: #ffcaca;
+  --color-ramp-red-300: #ffa3a3;
+  --color-ramp-red-400: #ff6568;
+  --color-ramp-red-50: #fef2f2;
+  --color-ramp-red-500: #fb2c36;
+  --color-ramp-red-600: #e40014;
+  --color-ramp-red-700: #bf000f;
+  --color-ramp-red-800: #9f0712;
+  --color-ramp-red-900: #82181a;
+  --color-ramp-amber-100: #fef3c6;
+  --color-ramp-amber-200: #fee685;
+  --color-ramp-amber-300: #ffd236;
+  --color-ramp-amber-400: #fcbb00;
+  --color-ramp-amber-500: #f99c00;
+  --color-ramp-amber-600: #dd7400;
+  --color-ramp-amber-700: #b75000;
+  --color-ramp-amber-800: #953d00;
+  --color-ramp-amber-950: #461901;
+  --color-ramp-blue-100: #dbeafe;
+  --color-ramp-blue-200: #bedbff;
+  --color-ramp-blue-300: #90c5ff;
+  --color-ramp-blue-400: #54a2ff;
+  --color-ramp-blue-500: #3080ff;
+  --color-ramp-blue-600: #155dfc;
+  --color-ramp-blue-700: #1447e6;
+  --color-ramp-blue-800: #193cb8;
+  --color-ramp-blue-950: #162456;
+  --color-ramp-orange-200: #ffd7a8;
+  --color-ramp-orange-400: #ff8b1a;
+  --color-ramp-orange-50: #fff7ed;
+  --color-ramp-orange-500: #fe6e00;
+  --color-ramp-orange-600: #f05100;
+  --color-ramp-orange-700: #c53c00;
+  --color-ramp-orange-800: #9f2d00;
+  --color-ramp-orange-900: #7e2a0c;
   --font-family-sans: calSans, "calSans Fallback", system-ui, sans-serif;
-  --font-family-display: fontHeading, "fontHeading Fallback";
-  --font-family-app: fontHeading, "fontHeading Fallback";
-  --font-family-booker: Inter, "Inter Fallback";
+  --font-family-display: calSans, "calSans Fallback", system-ui, sans-serif;
   --font-family-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-family-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  --font-size-display: 80px;
-  --font-size-h1: 64px;
-  --font-size-h2: 56px;
-  --font-size-display-mobile: 42px;
-  --font-size-h3: 22px;
-  --font-size-lede: 20px;
-  --font-size-body: 14px;
-  --font-size-ui: 14px;
-  --font-size-small: 13px;
-  --font-size-tiny: 11px;
-  --font-lineHeight-display: 86.4px;
-  --font-lineHeight-h1: 64px;
-  --font-lineHeight-h2: 56px;
-  --font-lineHeight-lede: 28px;
-  --font-lineHeight-ui: 21px;
-  --font-lineHeight-body: 21px;
-  --font-letterSpacing-display: -0.8px;
-  --font-letterSpacing-h1: -0.64px;
-  --font-letterSpacing-h3: -0.22px;
-  --color-hp-page: #ffffff;
-  --color-hp-surface: #ffffff;
-  --color-hp-surface-2: #f9fafb;
-  --color-hp-raised: #ffffff;
-  --color-hp-field: #f3f4f6;
-  --color-hp-chip: #f3f4f6;
-  --color-hp-well: #e5e7eb;
-  --color-hp-plate: #f3f4f6;
-  --color-hp-plate-line: rgba(15, 35, 75, 0.06);
-  --color-hp-hairline: rgba(15, 35, 75, 0.07);
-  --color-hp-line: #e5e7eb;
-  --color-hp-line-2: #dee1e6;
-  --color-hp-ink: #242424;
-  --color-hp-ink-2: #292929;
-  --color-hp-text: #111111;
-  --color-hp-body: #374151;
-  --color-hp-muted: #6a6e78;
-  --color-hp-subtle: #5f6570;
-  --color-hp-quiet: #858993;
-  --color-hp-tint: #0f234b;
-  --color-hp-on-ink: #ffffff;
-  --color-hp-accent: #cc4510;
-  --color-hp-accent-ink: #a83a0c;
-  --color-hp-slot: #dee1e6;
-  --color-hp-slot-selected: #242424;
-  --color-hp-highlight: #ffffff;
-  --color-hp-bar: rgba(255, 255, 255, 0.52);
-  --color-hp-material: rgba(243, 244, 246, 0.74);
-  --color-hp-mica: rgba(243, 244, 246, 0.88);
-  --color-cal-bg: #ffffff;
-  --color-cal-bg-subtle: #eeeff2;
-  --color-cal-bg-muted: #f6f7f9;
-  --color-cal-bg-emphasis: #e5e7eb;
-  --color-cal-bg-inverted: #070a0d;
-  --color-cal-bg-primary: #1d2735;
-  --color-cal-bg-primary-emphasis: #3c3e44;
-  --color-cal-bg-brand: #1d2735;
-  --color-cal-bg-brand-emphasis: #3c3e44;
-  --color-cal-bg-info: #dde7fd;
-  --color-cal-bg-success: #e4fbed;
-  --color-cal-bg-error: #f9e3e1;
-  --color-cal-bg-attention: #ffedd6;
-  --color-cal-brand: #111827;
-  --color-cal-brand-text: #ffffff;
-  --color-cal-brand-emphasis: #0f0f0f;
-  --color-cal-text: #3c3e44;
-  --color-cal-text-emphasis: #070a0d;
-  --color-cal-text-muted: #9ca3b0;
-  --color-cal-text-subtle: #6b7280;
-  --color-cal-text-inverted: #ffffff;
-  --color-cal-text-error: #811d1d;
-  --color-cal-text-info: #243c84;
-  --color-cal-text-attention: #74331b;
-  --color-cal-border: #d1d5db;
-  --color-cal-border-subtle: #e5e7eb;
-  --color-cal-border-emphasis: #9ca3b0;
-  --color-cal-border-booker: #e5e7eb;
-  --color-paint-booker-primary: #292929;
-  --color-paint-bar: rgba(244, 244, 244, 0.72);
-  --color-paint-footer: #111111;
-  --color-paint-hover-veil: rgba(36, 36, 36, 0.04);
-  --color-paint-muted-auth: #696969;
-  --color-paint-emphasis-auth: #262626;
-  --radius-sm: 8px;
-  --radius-md: 10px;
-  --radius-lg: 12px;
+  --radius-xs: 0.125rem;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 0.625rem;
   --radius-xl: 14px;
   --radius-2xl: 18px;
-  --radius-pill: 9999px;
-  --easing-hp: cubic-bezier(0.19, 1.0, 0.22, 1.0);
-  --easing-hp-fly: cubic-bezier(0.22, 1.0, 0.36, 1.0);
-  --easing-hp-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --easing-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
-  --easing-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
-  --shadow-lift: 0px 0px 0px 1px rgba(15, 35, 75, 0.06), 0px 1px 2px 0px rgba(15, 35, 75, 0.04);
-  --shadow-raised: inset 0px 1px 0px 0px #ffffff, 0px 0px 0px 1px rgba(15, 35, 75, 0.07), 0px 1px 2px 0px rgba(15, 35, 75, 0.04);
-  --shadow-well: inset 0px 1px 3px 0px rgba(15, 35, 75, 0.16), inset 0px 0px 0px 1px rgba(15, 35, 75, 0.05), 0px 1px 0px 0px #ffffff;
-  --shadow-plate: inset 0px 0px 0px 1px rgba(15, 35, 75, 0.05);
-  --shadow-float: 0px 0px 0px 1px rgba(15, 35, 75, 0.06), 0px 2px 6px -2px rgba(15, 35, 75, 0.08);
-  --shadow-print: 0px 1px 2px 0px rgba(0, 0, 0, 0.06), 0px 10px 18px -10px rgba(0, 0, 0, 0.22);
-  --shadow-print-lift: 0px 14px 22px -12px rgba(0, 0, 0, 0.2);
-  --shadow-window: 0px 0px 0px 0.5px rgba(0, 0, 0, 0.16), 0px 1px 2px 0px rgba(0, 0, 0, 0.06), 0px 24px 64px -8px rgba(15, 30, 50, 0.32);
-  --measured-focus-ring: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.16), 0px 0px 0px 1px #ffffff, 0px 0px 0px 3px #9ca3af, 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-  --measured-booker-focus-ring: 0px 0px 0px 0px rgba(59, 130, 246, 0.5), 0px 0px 0px 1px rgba(255, 255, 255, 0.2), 0px 0px 0px 2px rgba(0, 0, 0, 0.1);
-  --measured-slot-pressed-shadow: inset 0px 2px 1px 0px rgba(0, 0, 0, 0.05);
-  --measured-control-transition: 150ms;
-  --measured-menu-transition: 100ms;
-  --measured-navitem-transition: 150ms;
-  --measured-default-duration: 150ms;
-  --text-primary: var(--color-hp-ink);
-  --text-body: var(--color-hp-body);
-  --text-muted: var(--color-hp-muted);
-  --text-subtle: var(--color-hp-subtle);
-  --text-quiet: var(--color-hp-quiet);
-  --text-on-action: var(--color-hp-on-ink);
-  --surface-page: var(--color-hp-page);
-  --surface-raised: var(--color-hp-raised);
-  --surface-sunken: var(--color-hp-surface-2);
-  --surface-field: var(--color-hp-field);
-  --surface-chip: var(--color-hp-chip);
-  --surface-well: var(--color-hp-well);
-  --surface-bar: var(--color-paint-bar);
-  --surface-dark: var(--color-paint-footer);
-  --action-primary-default: var(--color-hp-ink);
-  --action-primary-hover: var(--color-paint-hover-veil);
-  --accent-default: var(--color-hp-accent);
-  --accent-ink: var(--color-hp-accent-ink);
-  --border-default: var(--color-hp-line);
-  --border-strong: var(--color-hp-line-2);
-  --border-hairline: var(--color-hp-hairline);
-  --booker-text-default: var(--color-cal-text);
-  --booker-text-emphasis: var(--color-cal-text-emphasis);
-  --booker-text-muted: var(--color-cal-text-muted);
-  --booker-text-subtle: var(--color-cal-text-subtle);
-  --booker-text-inverted: var(--color-cal-text-inverted);
-  --booker-surface-default: var(--color-cal-bg);
-  --booker-surface-subtle: var(--color-cal-bg-subtle);
-  --booker-surface-muted: var(--color-cal-bg-muted);
-  --booker-surface-emphasis: var(--color-cal-bg-emphasis);
-  --booker-border-default: var(--color-cal-border);
-  --booker-border-subtle: var(--color-cal-border-subtle);
-  --booker-action: var(--color-paint-booker-primary);
-  --booker-brand: var(--color-cal-brand);
-  --component-header-height: 64px;
-  --component-header-height-mobile: 64px;
-  --component-nav-button-height: 36px;
-  --component-hero-button-height: 64px;
-  --component-control-height: 36px;
-  --component-slot-height: 36px;
-  --component-day-size: 59.2969px;
-  --component-field-height: 32px;
-  --component-auth-field-height: 30px;
-  --component-auth-button-height: 40px;
-  --component-menu-card-width: 200px;
-  --component-mobile-navitem-height: 48px;
-  --component-card-radius: 14px;
-  --sg-sans: calSans, "calSans Fallback", fontSans, "fontSans Fallback", Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
-  --sg-serif: calSans, "calSans Fallback", fontHeading, "fontHeading Fallback", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --radius-3xl: 22px;
+  --radius-nav-pill: 10px;
+  --radius-cta: 12px;
+  --radius-field: 10px;
+  --space-unit: .25rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-9: 2.25rem;
+  --space-10: 2.5rem;
+  --shadow-md: 0 4px 6px -1px #0000001a,0 2px 4px -2px #0000001a;
+  --shadow-lg: 0 10px 15px -3px #0000001a,0 4px 6px -4px #0000001a;
+  --motion-ease-hp: cubic-bezier(0.19, 1, 0.22, 1);
+  --motion-ease-hp-fly: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --motion-menu: 200ms;
+  --typography-xs: var(--font-weight-normal) .75rem/1.5 var(--font-family-sans);
+  --typography-sm: var(--font-weight-normal) .875rem/1.5 var(--font-family-sans);
+  --typography-base: var(--font-weight-normal) 1rem/1.5 var(--font-family-sans);
+  --typography-lg: var(--font-weight-normal) 1.125rem/1.5 var(--font-family-sans);
+  --typography-xl: var(--font-weight-normal) 1.25rem/1.5 var(--font-family-sans);
+  --typography-2xl: var(--font-weight-normal) 1.5rem/1.5 var(--font-family-sans);
+  --typography-3xl: var(--font-weight-normal) 1.875rem/1.5 var(--font-family-sans);
+  --typography-4xl: var(--font-weight-normal) 2.25rem/1.5 var(--font-family-sans);
+  --typography-5xl: var(--font-weight-normal) 3rem/1.5 var(--font-family-sans);
+  --typography-6xl: var(--font-weight-normal) 3.75rem/1.5 var(--font-family-sans);
+  --typography-7xl: var(--font-weight-normal) 4.5rem/1.5 var(--font-family-sans);
+  --typography-display: var(--font-weight-bold) 80px/86.4px var(--font-family-sans);
+  --page: #ffffff;
+  --surface: #ffffff;
+  --raised: #ffffff;
+  --text: #242424;
+  --muted: #676b75;
+  --accent: #242424;
+  --on-accent: #ffffff;
+  --link: #242424;
+  --border: #e5e7eb;
+  --border-strong: #9ca3b0;
+  --focus: #9ca3af;
+  --field: #f3f4f6;
+  --accent-brand: #cc4510;
+  --scrim: #070a0d;
+  --success: #00bb7f;
+  --warning: #f99c00;
+  --danger: #e40014;
+  --info: #3080ff;
+  --success-subtle: #e4fbed;
+  --warning-subtle: #ffedd6;
+  --danger-subtle: #f9e3e1;
+  --info-subtle: #dde7fd;
+  --disabled: #9ca3b0;
+  --sg-sans: calSans, "calSans Fallback", system-ui, sans-serif;
   --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
 }
-[data-mode="dark"], .dark {
-  --text-primary: #d4d4d4;
-  --text-emphasis: #fafafa;
-  --text-muted: #a3a3a3;
-  --text-subtle: #a3a3a3;
-  --text-inverted: #000000;
-  --surface-page: #0f0f0f;
-  --surface-subtle: #262626;
-  --surface-muted: #171717;
-  --surface-emphasis: #404040;
-  --surface-inverted: #fafafa;
-  --border-default: #4d4d4d;
-  --border-subtle: #262626;
-  --border-emphasis: #737373;
-  --action-primary: #f5f5f5;
-  --brand: #ffffff;
-}
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #242424); background: var(--surface-page, #fff); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-primary, #242424); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-hairline, rgba(15,35,75,.07)); }
-.lead { max-width: 62ch; color: var(--text-primary, #242424); opacity: .8; }
-.note { font-size: 13px; color: var(--text-primary, #242424); opacity: .65; max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-primary, #242424); opacity: .6; margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, #e5e7eb); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-primary, #242424); opacity: .65; }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border, #e5e7eb); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { color: var(--text-primary, #242424); opacity: .65; }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--border, #e5e7eb); overflow: hidden; background: var(--surface-page, #fff); }
-.navbar { display: flex; align-items: center; gap: 22px; height: 64px; padding: 0 12px 0 22px; font-size: 15px; background: var(--surface-bar, rgba(244,244,244,.72)); border-radius: var(--radius-2xl, 18px); }
-.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
-.navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 36px); padding: 0 24px; font-size: 14px; font-weight: 500; border-radius: var(--radius-lg, 12px); border: 1px solid transparent; }
-.btn.primary { background: var(--action-primary, #242424); color: var(--text-on-action, #fff); }
-.btn.small { height: var(--component-nav-button-height, 36px); border-radius: var(--radius-md, 10px); }
-.hero { color: var(--text-primary, #242424); padding: 64px 40px; font: 700 60px/1.08 var(--sg-serif); letter-spacing: -0.01em; text-align: center; }
-.hero small { display: block; font: 500 18px/1.4 var(--sg-sans); color: var(--text-muted, #6a6e78); margin: 16px auto 22px; max-width: 46ch; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--border-strong, #dee1e6); padding: 14px; font-size: 13px; background: #fff; }
-.tile b { display: block; font: 700 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
-.tile .sub { opacity: .65; font-size: 12px; }
-.days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
-.days span { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm, 8px); font-size: 13px; color: var(--booker-text-emphasis, #070a0d); }
-.days .sel { background: var(--booker-surface-emphasis, #e5e7eb); }
-.days .today { background: var(--booker-action, #292929); color: #fff; }
-.slot { display: block; height: var(--component-slot-height, 36px); line-height: var(--component-slot-height, 36px); text-align: center; border: 1px solid var(--booker-border, #d1d5db); border-radius: var(--radius-md, 10px); font-size: 14px; font-weight: 500; color: var(--booker-text-default, #3c3e44); margin-bottom: 8px; }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--border, #e5e7eb); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-hairline, rgba(15,35,75,.07)); }
-.tr .ts { font-family: var(--sg-serif); }
-.tr .tv { font-size: 12px; color: var(--text-primary, #242424); opacity: .65; font-family: var(--sg-mono); }
-.toggle { display: inline-flex; background: var(--surface-field, #f3f4f6); border-radius: 999px; padding: 4px; gap: 4px; font-size: 15px; }
-.toggle span { padding: 8px 22px; border-radius: 999px; }
-.toggle .on { background: var(--action-primary, #242424); color: var(--text-on-action, #fff); }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #242424); background: var(--page, #fff); }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 96px; }
+h1 { font: 700 40px/1.1 var(--sg-sans); letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font: 600 13px/1 var(--sg-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted, #676b75); margin: 48px 0 12px; border-bottom: 1px solid var(--border, #e5e7eb); padding-bottom: 8px; }
+p { max-width: 68ch; }
+.note { font-size: 13px; color: var(--muted, #676b75); }
+.nav { display: flex; align-items: center; gap: 8px; height: 64px; padding: 0 16px; border: 1px solid var(--border, #e5e7eb); border-radius: 16px; background: var(--page, #fff); }
+.nav .wm { font-weight: 700; font-size: 18px; margin-right: 8px; }
+.nav .sp { flex: 1; }
+.pill { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 10px; font-size: 14px; font-weight: 500; color: var(--text, #242424); }
+.cta { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 12px; background: var(--accent, #242424); color: var(--on-accent, #fff); font-size: 14px; font-weight: 500; border: 1px solid var(--accent, #242424); }
+.hero { padding: 48px 8px 16px; font: 700 64px/1.08 var(--sg-sans); letter-spacing: -0.02em; }
+.hero small { display: block; margin-top: 12px; font: 500 20px/1.4 var(--sg-sans); color: var(--muted, #676b75); }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { width: 132px; }
+.sw i { display: block; height: 48px; border-radius: 10px; border: 1px solid var(--border, #e5e7eb); }
+.sw b, .sw span { display: block; font: 500 11px/1.3 var(--sg-mono); }
+.sw span { color: var(--muted, #676b75); font-weight: 400; }
+.card { border: 1px solid var(--border, #e5e7eb); border-radius: 16px; padding: 16px; background: var(--surface, #fff); }
+.field { height: 36px; border-radius: 10px; border: 1px solid var(--border, #e5e7eb); background: var(--field, #f3f4f6); padding: 0 12px; display: flex; align-items: center; color: var(--muted, #676b75); font-size: 14px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; }
 </style>
 </head>
 <body>
 <main>
   <h1>Cal.com style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+  <p class="note">Generated from tokens.json. Swatches are the declared tokens. The boxed nav is a reconstruction drawn with those tokens, not a screenshot. The public site paints light only.</p>
 
-  <h2 class="sh">Cal.com, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared <code>--color-hp-*</code> homepage layer (#242424 ink, #6a6e78 muted, #e5e7eb lines, the #cc4510 accent and the #0f234b-tinted shadows), the declared <code>--cal-*</code> semantic layer the booker and auth hosts paint (#3c3e44 text on white, #0f0f0f canvas in dark), the calSans type ramp from the 80px display to the 11px badge, the 8–18px radii and the measured focus rings. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from cal.com on 2026-11-11, signed out, in headless Chromium across three public hosts: the marketing pages on cal.com, the public booking page on i.cal.com (cal.com/peer) and the auth cards on app.cal.com. The signed-in product behind app.cal.com is a documented boundary; nothing was booked or submitted. calSans, fontSans, fontHeading and Inter are served faces and are not loaded here: samples fall back to system sans.</p>
-
-  <h2 class="sh">The chrome</h2>
-  <p class="lead">A floating 72%-white glass bar carries the wordmark, the mega-menu triggers, plain links, Sign in and the dark Get-started pill. The same dark fill draws the hero's sign-up buttons; a 1px-white-gap + 3px-grey ring is the keyboard focus every control draws. A near-black footer closes every marketing page.</p>
-  <div class="mock" style="padding:20px">
-    <div class="navbar"><span class="wm">Cal.com</span><span>Products</span><span>Use cases</span><span>Features</span><span>Resources</span><span class="sp"></span><span>Sign in</span><span class="btn small primary">Get started</span></div>
-    <div class="hero">Where people find the time to meet<small>Making time for millions of people every month.</small><span class="btn primary" style="height:var(--component-hero-button-height,64px);border-radius:var(--radius-xl,14px);font-size:20px">Sign up with Google</span></div>
+  <h2>Colour roles</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>var(--page)</span></div>
+    <div class="sw"><i style="background:var(--surface)"></i><b>surface</b><span>var(--surface)</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>var(--text)</span></div>
+    <div class="sw"><i style="background:var(--muted)"></i><b>muted</b><span>var(--muted)</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>var(--accent)</span></div>
+    <div class="sw"><i style="background:var(--border)"></i><b>border</b><span>var(--border)</span></div>
+    <div class="sw"><i style="background:var(--accent-brand)"></i><b>accent-brand</b><span>var(--accent-brand)</span></div>
+    <div class="sw"><i style="background:var(--success)"></i><b>success</b><span>var(--success)</span></div>
+    <div class="sw"><i style="background:var(--warning)"></i><b>warning</b><span>var(--warning)</span></div>
+    <div class="sw"><i style="background:var(--danger)"></i><b>danger</b><span>var(--danger)</span></div>
+    <div class="sw"><i style="background:var(--info)"></i><b>info</b><span>var(--info)</span></div>
   </div>
 
-  <h2 class="sh">Pricing</h2>
-  <p class="lead">/pricing centres plan tabs and a MONTHLY/YEARLY capsule switch above white plan cards on the page field; each card carries a 14px radius on a #dee1e6 hairline and a dark 12px action.</p>
-  <div class="mock" style="padding:20px">
-    <div style="text-align:center;margin-bottom:18px"><span class="toggle"><span>MONTHLY</span><span class="on">YEARLY</span></span></div>
-    <div class="grid">
-      <div class="tile" style="border-radius:var(--radius-xl,14px);background:var(--surface-raised,#fff);color:var(--text-primary,#242424)"><b>Free</b><span class="sub">Everything you could need for scheduling as an individual</span></div>
-      <div class="tile" style="border-radius:var(--radius-xl,14px);background:var(--surface-raised,#fff);color:var(--text-primary,#242424)"><b>Teams</b><span class="sub">$15/month per user</span></div>
-    </div>
-    <div style="margin-top:18px"><span class="btn primary">Use for free</span></div>
-  </div>
+  <h2>Chrome</h2>
+  <p>A white sticky bar, 64px tall, with a Cal Sans wordmark, text triggers, a quiet Sign in link and one ink pill. The orange brand accent is reserved for status chips such as Booked, not the primary action.</p>
+  <div class="nav"><span class="wm">Cal.com</span><span class="pill">Products</span><span class="pill">Pricing</span><span class="sp"></span><span class="pill">Sign in</span><span class="cta">Get started</span></div>
+  <div class="hero">Where people meet<small>Scheduling software for online bookings.</small></div>
 
-  <h2 class="sh">The public booking page</h2>
-  <p class="lead">cal.com/peer (served from i.cal.com) paints Inter on the <code>--cal-*</code> layer: a white canvas, #e5e7eb day cells, white slots on #d1d5db borders, and the host page's #292929 brand paint on today and confirm. Its supported embed mode paints the same tree dark: #0f0f0f canvas, #4d4d4d borders, #d4d4d4 text.</p>
-  <div class="mock" style="padding:20px;display:grid;grid-template-columns:1.2fr .8fr;gap:20px">
-    <div class="days">
-      <span>11</span><span>12</span><span class="today">13</span><span>14</span><span class="sel">15</span><span>16</span><span>17</span>
-    </div>
-    <div>
-      <span class="slot">4:00pm</span>
-      <span class="slot">4:15pm</span>
-      <span class="btn primary" style="width:100%">Confirm</span>
+  <h2>Field</h2>
+  <div class="row">
+    <div class="card" style="width:320px">
+      <div class="field">Email</div>
+      <p class="note">The login field was measured, not filled. Radius 10px, height 30px on the auth card.</p>
     </div>
   </div>
-  <div class="mock dark" style="margin-top:12px;padding:20px;background:var(--surface-page,#0f0f0f);color:var(--text-primary,#d4d4d4)">
-    <div class="grid">
-      <div class="tile" style="border-radius:var(--radius-md,10px);background:var(--surface-page,#0f0f0f);border:1px solid var(--border,#4d4d4d);color:var(--text-primary,#d4d4d4)"><b style="color:var(--text-emphasis,#fafafa)">Intro call</b><span class="sub" style="color:var(--text-muted,#a3a3a3)">30m · video</span></div>
-      <div class="tile" style="border-radius:var(--radius-md,10px);background:var(--surface-subtle,#262626);border:1px solid var(--border-subtle,#262626);color:var(--text-primary,#d4d4d4)"><b style="color:var(--text-emphasis,#fafafa)">Dark booker</b><span class="sub" style="color:var(--text-muted,#a3a3a3)">?theme=dark&amp;embed=true</span></div>
-    </div>
-    <div style="margin-top:18px"><span class="btn" style="height:36px;border-radius:var(--radius-md,10px);background:var(--action-primary,#f5f5f5);color:var(--text-inverted,#000);padding:0 18px;font-size:14px">Confirm</span></div>
-  </div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead">The declared <code>--color-hp-*</code> layer carries the marketing neutrals and accent; the declared <code>--cal-*</code> layer carries the booker/app semantics in both themes; the measured <code>color.paint.*</code> readings carry the near-black paints the variables do not name.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Spacing and radius</h2>
-  <p class="lead">Controls sit on 10px radii, CTAs on 12px, hero buttons and cards on 14px, the glass bar and menu cards on 18px; the billing switch is a capsule. Borders are hairlines: #e5e7eb/#dee1e6 on marketing, #d1d5db on the booker, #4d4d4d in dark.</p>
-  <div id="spacing-out" class="kv"></div>
-
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out" class="kv"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">Four served faces: <code>calSans</code> on the marketing pages, <code>fontSans</code>/<code>fontHeading</code> on the app.cal.com auth cards, <code>Inter</code> on the booking page. Sizes are the measured steps; samples fall back to system sans.</p>
-  <div id="type-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-hp-*/--cal-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+  <p class="note">Token data for scripts: {"core":{"color":{"cal":{"bg":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-bg)"},"border":{"v":"#d1d5db","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-border)"},"brand":{"v":"#111827","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-brand)"},"text":{"v":"#3c3e44","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-text)"}},"hp":{"accent":{"v":"#cc4510","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-accent)"},"accent.ink":{"v":"#a83a0c","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-accent-ink)"},"body":{"v":"#374151","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-body)"},"chip":{"v":"#f3f4f6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-chip)"},"field":{"v":"#f3f4f6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-field)"},"hairline":{"v":"rgba(15, 35, 75, 0.071)","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-hairline)"},"highlight":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-highlight)"},"ink":{"v":"#242424","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-ink)"},"ink.2":{"v":"#292929","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-ink-2)"},"line":{"v":"#e5e7eb","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-line)"},"line.2":{"v":"#dee1e6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-line-2)"},"mac.close":{"v":"#ff5f57","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-mac-close)"},"mac.minimize":{"v":"#febc2e","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-mac-minimize)"},"mac.zoom":{"v":"#28c840","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-mac-zoom)"},"muted":{"v":"#6a6e78","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-muted)"},"on.ink":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-on-ink)"},"page":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-page)"},"paper":{"v":"#e3dccd","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-paper)"},"plate":{"v":"#f3f4f6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-plate)"},"plate.line":{"v":"rgba(15, 35, 75, 0.059)","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-plate-line)"},"print.ink":{"v":"#292929","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-print-ink)"},"print.label":{"v":"#292929","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-print-label)"},"print.paper":{"v":"#fbfaf7","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-print-paper)"},"quiet":{"v":"#858993","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-quiet)"},"raised":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-raised)"},"slot":{"v":"#dee1e6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-slot)"},"slot.selected":{"v":"#242424","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-slot-selected)"},"subtle":{"v":"#5f6570","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-subtle)"},"surface":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-surface)"},"surface.2":{"v":"#f9fafb","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-surface-2)"},"text":{"v":"#111111","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-text)"},"tint":{"v":"#0f234b","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-tint)"},"well":{"v":"#e5e7eb","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-well)"}},"ramp":{"gray":{"100":{"v":"#f3f4f6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-100)"},"200":{"v":"#e5e7eb","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-200)"},"300":{"v":"#d1d5dc","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-300)"},"400":{"v":"#99a1af","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-400)"},"50":{"v":"#f9fafb","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-50)"},"500":{"v":"#6a7282","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-500)"},"600":{"v":"#4a5565","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-600)"},"700":{"v":"#364153","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-700)"},"800":{"v":"#1e2939","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-800)"},"900":{"v":"#101828","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-gray-900)"}},"neutral":{"100":{"v":"#f5f5f5","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-neutral-100)"},"200":{"v":"#e5e5e5","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-neutral-200)"},"400":{"v":"#a1a1a1","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-neutral-400)"},"50":{"v":"#fafafa","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-neutral-50)"},"500":{"v":"#737373","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-neutral-500)"},"600":{"v":"#525252","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-neutral-600)"},"800":{"v":"#262626","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-neutral-800)"},"900":{"v":"#171717","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-neutral-900)"},"950":{"v":"#0a0a0a","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-neutral-950)"}},"emerald":{"100":{"v":"#d0fae5","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-100)"},"200":{"v":"#a4f4cf","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-200)"},"300":{"v":"#5ee9b5","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-300)"},"400":{"v":"#00d294","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-400)"},"50":{"v":"#ecfdf5","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-50)"},"500":{"v":"#00bb7f","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-500)"},"600":{"v":"#009767","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-600)"},"700":{"v":"#007956","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-700)"},"800":{"v":"#005f46","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-800)"},"900":{"v":"#004e3b","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-900)"},"950":{"v":"#002c22","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-emerald-950)"}},"red":{"100":{"v":"#ffe2e2","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-100)"},"200":{"v":"#ffcaca","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-200)"},"300":{"v":"#ffa3a3","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-300)"},"400":{"v":"#ff6568","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-400)"},"50":{"v":"#fef2f2","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-50)"},"500":{"v":"#fb2c36","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-500)"},"600":{"v":"#e40014","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-600)"},"700":{"v":"#bf000f","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-700)"},"800":{"v":"#9f0712","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-800)"},"900":{"v":"#82181a","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-red-900)"}},"amber":{"100":{"v":"#fef3c6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-amber-100)"},"200":{"v":"#fee685","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-amber-200)"},"300":{"v":"#ffd236","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-amber-300)"},"400":{"v":"#fcbb00","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-amber-400)"},"500":{"v":"#f99c00","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-amber-500)"},"600":{"v":"#dd7400","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-amber-600)"},"700":{"v":"#b75000","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-amber-700)"},"800":{"v":"#953d00","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-amber-800)"},"950":{"v":"#461901","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-amber-950)"}},"blue":{"100":{"v":"#dbeafe","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-blue-100)"},"200":{"v":"#bedbff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-blue-200)"},"300":{"v":"#90c5ff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-blue-300)"},"400":{"v":"#54a2ff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-blue-400)"},"500":{"v":"#3080ff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-blue-500)"},"600":{"v":"#155dfc","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-blue-600)"},"700":{"v":"#1447e6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-blue-700)"},"800":{"v":"#193cb8","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-blue-800)"},"950":{"v":"#162456","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-blue-950)"}},"orange":{"200":{"v":"#ffd7a8","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-orange-200)"},"400":{"v":"#ff8b1a","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-orange-400)"},"50":{"v":"#fff7ed","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-orange-50)"},"500":{"v":"#fe6e00","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-orange-500)"},"600":{"v":"#f05100","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-orange-600)"},"700":{"v":"#c53c00","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-orange-700)"},"800":{"v":"#9f2d00","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-orange-800)"},"900":{"v":"#7e2a0c","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-orange-900)"}}}},"font":{"family":{"sans":{"v":"calSans, \"calSans Fallback\", system-ui, sans-serif","t":"fontFamily","s":"raw/components-computed.json, computed style, 1440x900, signed out; computed fontFamily on body and h1. Declared --font-sans is var(--font-cal-sans), system-ui, sans-serif."},"display":{"v":"calSans, \"calSans Fallback\", system-ui, sans-serif","t":"fontFamily","s":"raw/components-computed.json, computed style, 1440x900, signed out; h1 computed fontFamily. Declared --font-display aliases --font-cal-sans."},"mono":{"v":"ui-monospace, \"SF Mono\", Menlo, Consolas, monospace","t":"fontFamily","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--font-mono)"},"serif":{"v":"ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif","t":"fontFamily","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--font-serif)"}},"weight":{"normal":{"v":400,"t":"fontWeight","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--font-weight-normal = 400)"},"medium":{"v":500,"t":"fontWeight","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--font-weight-medium = 500)"},"semibold":{"v":600,"t":"fontWeight","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--font-weight-semibold = 600)"},"bold":{"v":700,"t":"fontWeight","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--font-weight-bold = 700)"}}},"radius":{"xs":{"v":"0.125rem","t":"dimension","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--radius-xs)"},"sm":{"v":"6px","t":"dimension","s":"Derived from raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--radius-sm calc(var(--radius) - 4px))"},"md":{"v":"8px","t":"dimension","s":"Derived from raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--radius-md calc(var(--radius) * .8))"},"lg":{"v":"0.625rem","t":"dimension","s":"Derived from raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--radius-lg var(--radius))"},"xl":{"v":"14px","t":"dimension","s":"Derived from raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--radius-xl calc(var(--radius) * 1.4))"},"2xl":{"v":"18px","t":"dimension","s":"Derived from raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--radius-2xl calc(var(--radius) * 1.8))"},"3xl":{"v":"22px","t":"dimension","s":"Derived from raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--radius-3xl calc(var(--radius) * 2.2))"},"nav-pill":{"v":"10px","t":"dimension","s":"raw/components-computed.json, computed style, 1440x900, signed out; nav-link borderRadius"},"cta":{"v":"12px","t":"dimension","s":"raw/components-computed.json, computed style, 1440x900, signed out; nav-cta borderRadius"},"field":{"v":"10px","t":"dimension","s":"raw/components-computed.json, computed style, 1440x900, signed out; login-email borderRadius, look-only"}},"space":{"unit":{"v":".25rem","t":"dimension","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--spacing)"},"1":{"v":"0.25rem","t":"dimension","s":"Derived from --spacing 0.25rem x 1, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"},"2":{"v":"0.5rem","t":"dimension","s":"Derived from --spacing 0.25rem x 2, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"},"3":{"v":"0.75rem","t":"dimension","s":"Derived from --spacing 0.25rem x 3, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"},"4":{"v":"1rem","t":"dimension","s":"Derived from --spacing 0.25rem x 4, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"},"5":{"v":"1.25rem","t":"dimension","s":"Derived from --spacing 0.25rem x 5, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"},"6":{"v":"1.5rem","t":"dimension","s":"Derived from --spacing 0.25rem x 6, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"},"7":{"v":"1.75rem","t":"dimension","s":"Derived from --spacing 0.25rem x 7, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"},"8":{"v":"2rem","t":"dimension","s":"Derived from --spacing 0.25rem x 8, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"},"9":{"v":"2.25rem","t":"dimension","s":"Derived from --spacing 0.25rem x 9, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"},"10":{"v":"2.5rem","t":"dimension","s":"Derived from --spacing 0.25rem x 10, raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out"}},"shadow":{"md":{"v":"0 4px 6px -1px #0000001a,0 2px 4px -2px #0000001a","t":"shadow","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--shadow-md)"},"lg":{"v":"0 10px 15px -3px #0000001a,0 4px 6px -4px #0000001a","t":"shadow","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--shadow-lg)"}},"motion":{"ease-hp":{"v":[0.19,1,0.22,1],"t":"cubicBezier","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--ease-hp cubic-bezier(.19, 1, .22, 1))"},"ease-hp-fly":{"v":[0.22,1,0.36,1],"t":"cubicBezier","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--ease-hp-fly)"},"ease-out":{"v":[0,0,0.2,1],"t":"cubicBezier","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--ease-out)"},"menu":{"v":"200ms","t":"duration","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out; mega-menu transition duration-200 on the dialog class"}},"typography":{"xs":{"v":{"fontFamily":"{font.family.sans}","fontSize":".75rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-xs + --text-xs--line-height)"},"sm":{"v":{"fontFamily":"{font.family.sans}","fontSize":".875rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-sm + --text-sm--line-height)"},"base":{"v":{"fontFamily":"{font.family.sans}","fontSize":"1rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-base + --text-base--line-height)"},"lg":{"v":{"fontFamily":"{font.family.sans}","fontSize":"1.125rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-lg + --text-lg--line-height)"},"xl":{"v":{"fontFamily":"{font.family.sans}","fontSize":"1.25rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-xl + --text-xl--line-height)"},"2xl":{"v":{"fontFamily":"{font.family.sans}","fontSize":"1.5rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-2xl + --text-2xl--line-height)"},"3xl":{"v":{"fontFamily":"{font.family.sans}","fontSize":"1.875rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-3xl + --text-3xl--line-height)"},"4xl":{"v":{"fontFamily":"{font.family.sans}","fontSize":"2.25rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-4xl + --text-4xl--line-height)"},"5xl":{"v":{"fontFamily":"{font.family.sans}","fontSize":"3rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-5xl + --text-5xl--line-height)"},"6xl":{"v":{"fontFamily":"{font.family.sans}","fontSize":"3.75rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-6xl + --text-6xl--line-height)"},"7xl":{"v":{"fontFamily":"{font.family.sans}","fontSize":"4.5rem","fontWeight":"{font.weight.normal}","lineHeight":"1.5"},"t":"typography","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--text-7xl + --text-7xl--line-height)"},"display":{"v":{"fontFamily":"{font.family.sans}","fontSize":"80px","fontWeight":"{font.weight.bold}","lineHeight":"86.4px","letterSpacing":"-0.8px"},"t":"typography","s":"raw/components-computed.json, computed style, 1440x900, signed out; h1 on https://cal.com/"}}},"light":{"page":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--background)"},"surface":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--card)"},"raised":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-raised)"},"text":{"v":"#242424","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--foreground)"},"muted":{"v":"#676b75","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--muted-foreground)"},"accent":{"v":"#242424","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--primary)"},"on-accent":{"v":"#ffffff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-brand-text)"},"link":{"v":"#242424","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--foreground)"},"border":{"v":"#e5e7eb","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--border)"},"border-strong":{"v":"#9ca3b0","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-border-emphasis)"},"focus":{"v":"#9ca3af","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--ring)"},"field":{"v":"#f3f4f6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-field)"},"accent-brand":{"v":"#cc4510","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--color-hp-accent)"},"scrim":{"v":"#070a0d","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-bg-inverted)"},"success":{"v":"#00bb7f","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out; alias --success -> --color-emerald-500 (--success)"},"warning":{"v":"#f99c00","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out; alias --warning -> --color-amber-500 (--warning)"},"danger":{"v":"#e40014","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--destructive)"},"info":{"v":"#3080ff","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out; alias --info -> --color-blue-500 (--info)"},"success-subtle":{"v":"#e4fbed","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-bg-success)"},"warning-subtle":{"v":"#ffedd6","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-bg-attention)"},"danger-subtle":{"v":"#f9e3e1","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-bg-error)"},"info-subtle":{"v":"#dde7fd","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-bg-info)"},"disabled":{"v":"#9ca3b0","t":"color","s":"raw/css-vars.json, declared on cal.com stylesheets, 2026-11-21, signed out (--cal-text-muted, the muted ink used for quiet labels; no separate disabled token was declared)"}},"dark":{}}</p>
 </main>
-<script>
-const TOK = {"core":{"font":{"family":{"sans":{"v":"calSans, \"calSans Fallback\", system-ui, sans-serif","t":"fontFamily","s":"computed fontFamily of header default (raw/components-computed.json)","d":"The marketing stack: the CalSans variable face with its metric fallback."},"display":{"v":"fontHeading, \"fontHeading Fallback\"","t":"fontFamily","s":"computed fontFamily of signup-title default (raw/components-computed.json)","d":"The fontHeading display face on the auth pages' headings."},"app":{"v":"fontHeading, \"fontHeading Fallback\"","t":"fontFamily","s":"computed fontFamily of auth-card default (raw/components-computed.json)","d":"The fontSans body face on the app.cal.com auth cards."},"booker":{"v":"Inter, \"Inter Fallback\"","t":"fontFamily","s":"computed fontFamily of bk-page default (raw/components-computed.json)","d":"The Inter stack the public booking page paints in."},"mono":{"v":"ui-monospace, \"SF Mono\", Menlo, Consolas, monospace","t":"fontFamily","s":"css-var --font-mono (light)","d":"The declared monospace stack."}},"weight":{"normal":{"v":400,"t":"fontWeight","s":"css-var --font-weight-normal (light)","d":"Regular body weight."},"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium (light)","d":"The 500 nav, button and label weight."},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold (light)","d":"The 600 booker title weight."},"bold":{"v":700,"t":"fontWeight","s":"css-var --font-weight-bold (light)","d":"The 700 display and section-heading weight."}},"size":{"display":{"v":"80px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The 80px hero display ('Where people find the time to meet')."},"h1":{"v":"64px","t":"dimension","s":"computed fontSize of pricing-h1 default (raw/components-computed.json)","d":"The 64px page-heading size."},"h2":{"v":"56px","t":"dimension","s":"computed fontSize of signup-title default (raw/components-computed.json)","d":"The 56px fontHeading size on the auth cards."},"display-mobile":{"v":"42px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The 42px display size at 390px."},"h3":{"v":"22px","t":"dimension","s":"computed fontSize of plan-tab default (raw/components-computed.json)","d":"The 22px plan-name/section size."},"lede":{"v":"20px","t":"dimension","s":"computed fontSize of hero-sub default (raw/components-computed.json)","d":"The 20px lede (also the booker event title)."},"body":{"v":"14px","t":"dimension","s":"computed fontSize of header default (raw/components-computed.json)","d":"The 16px base size."},"ui":{"v":"14px","t":"dimension","s":"computed fontSize of nav-link default (raw/components-computed.json)","d":"The 14px nav/button/field size."},"small":{"v":"13px","t":"dimension","s":"computed fontSize of trust-row default (raw/components-computed.json)","d":"The 13px smallest auth text."},"tiny":{"v":"11px","t":"dimension","s":"computed fontSize of changelog default (raw/components-computed.json)","d":"The 11px badge label (text node)."}},"lineHeight":{"display":{"v":"86.4px","t":"dimension","s":"computed lineHeight of hero-title default (raw/components-computed.json)","d":"The 1.08 display leading."},"h1":{"v":"64px","t":"dimension","s":"computed lineHeight of pricing-h1 default (raw/components-computed.json)","d":"The 1.0 page-heading leading."},"h2":{"v":"56px","t":"dimension","s":"computed lineHeight of signup-title default (raw/components-computed.json)","d":"The 1.0 auth-heading leading."},"lede":{"v":"28px","t":"dimension","s":"computed lineHeight of hero-sub default (raw/components-computed.json)","d":"The 1.4 lede leading."},"ui":{"v":"21px","t":"dimension","s":"computed lineHeight of nav-link default (raw/components-computed.json)","d":"The 1.5 control-label leading."},"body":{"v":"21px","t":"dimension","s":"computed lineHeight of header default (raw/components-computed.json)","d":"The 1.5 body leading."}},"letterSpacing":{"display":{"v":"-0.8px","t":"dimension","s":"computed letterSpacing of hero-title default (raw/components-computed.json)","d":"The -0.8px display tracking (-1%)."},"h1":{"v":"-0.64px","t":"dimension","s":"computed letterSpacing of pricing-h1 default (raw/components-computed.json)","d":"The -0.64px heading tracking (-1%)."},"h3":{"v":"-0.22px","t":"dimension","s":"computed letterSpacing of plan-tab default (raw/components-computed.json)","d":"The -0.22px section tracking (-1%)."}}},"color":{"hp":{"page":{"v":"#ffffff","t":"color","s":"css-var --color-hp-page (light)","d":"The white marketing page field."},"surface":{"v":"#ffffff","t":"color","s":"css-var --color-hp-surface (light)","d":"Card/panel white."},"surface-2":{"v":"#f9fafb","t":"color","s":"css-var --color-hp-surface-2 (light)","d":"The #f9fafb sunken section field."},"raised":{"v":"#ffffff","t":"color","s":"css-var --color-hp-raised (light)","d":"Raised white control fill."},"field":{"v":"#f3f4f6","t":"color","s":"css-var --color-hp-field (light)","d":"The #f3f4f6 input/chip field."},"chip":{"v":"#f3f4f6","t":"color","s":"css-var --color-hp-chip (light)","d":"The #f3f4f6 chip fill."},"well":{"v":"#e5e7eb","t":"color","s":"css-var --color-hp-well (light)","d":"The #e5e7eb inset well."},"plate":{"v":"#f3f4f6","t":"color","s":"css-var --color-hp-plate (light)","d":"The #f3f4f6 plate under framed content."},"plate-line":{"v":"rgba(15, 35, 75, 0.06)","t":"color","s":"css-var --color-hp-plate-line (light)","d":"The 6%-ink plate ring."},"hairline":{"v":"rgba(15, 35, 75, 0.07)","t":"color","s":"css-var --color-hp-hairline (light)","d":"The 7%-ink hairline."},"line":{"v":"#e5e7eb","t":"color","s":"css-var --color-hp-line (light)","d":"The #e5e7eb rule line."},"line-2":{"v":"#dee1e6","t":"color","s":"css-var --color-hp-line-2 (light)","d":"The #dee1e6 heavier rule (plan-card border)."},"ink":{"v":"#242424","t":"color","s":"css-var --color-hp-ink (light)","d":"The #242424 headline ink — also the dark button fill."},"ink-2":{"v":"#292929","t":"color","s":"css-var --color-hp-ink-2 (light)","d":"The #292929 secondary ink."},"text":{"v":"#111111","t":"color","s":"css-var --color-hp-text (light)","d":"The #111111 strongest text."},"body":{"v":"#374151","t":"color","s":"css-var --color-hp-body (light)","d":"The #374151 body text."},"muted":{"v":"#6a6e78","t":"color","s":"css-var --color-hp-muted (light)","d":"The #6a6e78 muted text (hero lede)."},"subtle":{"v":"#5f6570","t":"color","s":"css-var --color-hp-subtle (light)","d":"The #5f6570 quieter text."},"quiet":{"v":"#858993","t":"color","s":"css-var --color-hp-quiet (light)","d":"The #858993 quietest text."},"tint":{"v":"#0f234b","t":"color","s":"css-var --color-hp-tint (light)","d":"The #0f234b navy tint the shadows are drawn in."},"on-ink":{"v":"#ffffff","t":"color","s":"css-var --color-hp-on-ink (light)","d":"The white label on dark fills."},"accent":{"v":"#cc4510","t":"color","s":"css-var --color-hp-accent (light)","d":"The #cc4510 orange accent."},"accent-ink":{"v":"#a83a0c","t":"color","s":"css-var --color-hp-accent-ink (light)","d":"The #a83a0c accent text."},"slot":{"v":"#dee1e6","t":"color","s":"css-var --color-hp-slot (light)","d":"The #dee1e6 slot chip in the hero mock."},"slot-selected":{"v":"#242424","t":"color","s":"css-var --color-hp-slot-selected (light)","d":"The #242424 selected slot."},"highlight":{"v":"#ffffff","t":"color","s":"css-var --color-hp-highlight (light)","d":"White highlight paint."},"bar":{"v":"rgba(255, 255, 255, 0.52)","t":"color","s":"css-var --hp-bar (light)","d":"The 52%-white glass the floating header blurs over."},"material":{"v":"rgba(243, 244, 246, 0.74)","t":"color","s":"css-var --hp-material (light)","d":"The 74% #f3f4f6 window material."},"mica":{"v":"rgba(243, 244, 246, 0.88)","t":"color","s":"css-var --hp-mica (light)","d":"The 88% #f3f4f6 mica material."}},"cal":{"bg":{"v":"#ffffff","t":"color","s":"css-var --cal-bg (light)","d":"The booker page field (#ffffff light)."},"bg-subtle":{"v":"#eeeff2","t":"color","s":"css-var --cal-bg-subtle (light)","d":"The #eeeff2 subtle fill (focused slot)."},"bg-muted":{"v":"#f6f7f9","t":"color","s":"css-var --cal-bg-muted (light)","d":"The #f6f7f9 muted fill (slot hover)."},"bg-emphasis":{"v":"#e5e7eb","t":"color","s":"css-var --cal-bg-emphasis (light)","d":"The #e5e7eb emphasis fill (day cell)."},"bg-inverted":{"v":"#070a0d","t":"color","s":"css-var --cal-bg-inverted (light)","d":"The #070a0d inverted field."},"bg-primary":{"v":"#1d2735","t":"color","s":"css-var --cal-bg-primary (light)","d":"The #1d2735 declared primary fill."},"bg-primary-emphasis":{"v":"#3c3e44","t":"color","s":"css-var --cal-bg-primary-emphasis (light)","d":"The #3c3e44 primary hover."},"bg-brand":{"v":"#1d2735","t":"color","s":"css-var --cal-bg-brand (light)","d":"The declared brand fill."},"bg-brand-emphasis":{"v":"#3c3e44","t":"color","s":"css-var --cal-bg-brand-emphasis (light)","d":"The declared brand hover."},"bg-info":{"v":"#dde7fd","t":"color","s":"css-var --cal-bg-info (light)","d":"The #dde7fd info wash."},"bg-success":{"v":"#e4fbed","t":"color","s":"css-var --cal-bg-success (light)","d":"The #e4fbed success wash."},"bg-error":{"v":"#f9e3e1","t":"color","s":"css-var --cal-bg-error (light)","d":"The #f9e3e1 error wash."},"bg-attention":{"v":"#ffedd6","t":"color","s":"css-var --cal-bg-attention (light)","d":"The #ffedd6 attention wash."},"brand":{"v":"#111827","t":"color","s":"css-var --cal-brand (light)","d":"The declared brand colour (#111827 default)."},"brand-text":{"v":"#ffffff","t":"color","s":"css-var --cal-brand-text (light)","d":"Text on the brand fill."},"brand-emphasis":{"v":"#0f0f0f","t":"color","s":"css-var --cal-brand-emphasis (light)","d":"The brand emphasis."},"text":{"v":"#3c3e44","t":"color","s":"css-var --cal-text (light)","d":"The #3c3e44 booker/app body text."},"text-emphasis":{"v":"#070a0d","t":"color","s":"css-var --cal-text-emphasis (light)","d":"The #070a0d strong booker text."},"text-muted":{"v":"#9ca3b0","t":"color","s":"css-var --cal-text-muted (light)","d":"The #9ca3b0 muted booker text."},"text-subtle":{"v":"#6b7280","t":"color","s":"css-var --cal-text-subtle (light)","d":"The #6b7280 subtle booker text."},"text-inverted":{"v":"#ffffff","t":"color","s":"css-var --cal-text-inverted (light)","d":"Inverted text (#ffffff light)."},"text-error":{"v":"#811d1d","t":"color","s":"css-var --cal-text-error (light)","d":"The #811d1d error text."},"text-info":{"v":"#243c84","t":"color","s":"css-var --cal-text-info (light)","d":"The #243c84 info text."},"text-attention":{"v":"#74331b","t":"color","s":"css-var --cal-text-attention (light)","d":"The #74331b attention text."},"border":{"v":"#d1d5db","t":"color","s":"css-var --cal-border (light)","d":"The #d1d5db booker field/slot border."},"border-subtle":{"v":"#e5e7eb","t":"color","s":"css-var --cal-border-subtle (light)","d":"The #e5e7eb subtle border."},"border-emphasis":{"v":"#9ca3b0","t":"color","s":"css-var --cal-border-emphasis (light)","d":"The #9ca3b0 emphasis border."},"border-booker":{"v":"#e5e7eb","t":"color","s":"css-var --cal-border-booker (light)","d":"The booker frame border."}},"paint":{"booker-primary":{"v":"#292929","t":"color","s":"computed backgroundColor of bk-confirm default (raw/components-computed.json)","d":"The #292929 fill the booker's confirm button and today cell paint — the booking page's effective brand paint (the declared --cal-brand #111827 is not what this page paints)."},"bar":{"v":"rgba(244, 244, 244, 0.72)","t":"color","s":"computed backgroundColor of header default (raw/components-computed.json)","d":"The 72% #f4f4f4 glass the floating header bar computes to over --hp-bar."},"footer":{"v":"#111111","t":"color","s":"computed backgroundColor of footer default (raw/components-computed.json)","d":"The #111111 near-black footer field."},"hover-veil":{"v":"rgba(36, 36, 36, 0.04)","t":"color","s":"computed backgroundColor of menu-link hover (raw/components-computed.json)","d":"The ~4%-ink wash a dropdown item takes on hover."},"muted-auth":{"v":"#696969","t":"color","s":"computed color of forgot-link default (raw/components-computed.json)","d":"The #696969 muted text on the app.cal.com auth cards."},"emphasis-auth":{"v":"#262626","t":"color","s":"computed backgroundColor of sso-google default (raw/components-computed.json)","d":"The #262626 dark fill of the auth pages' SSO and continue buttons."}}},"radius":{"sm":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of changelog default (raw/components-computed.json)","d":"The 8px badge/day-cell radius."},"md":{"v":"10px","t":"dimension","s":"computed borderTopLeftRadius of nav-link default (raw/components-computed.json)","d":"The 10px control radius (nav items, slots, fields, SSO buttons)."},"lg":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"The 12px CTA radius (header and plan buttons)."},"xl":{"v":"14px","t":"dimension","s":"computed borderTopLeftRadius of hero-google default (raw/components-computed.json)","d":"The 14px hero-button/card radius."},"2xl":{"v":"18px","t":"dimension","s":"computed borderTopLeftRadius of header default (raw/components-computed.json)","d":"The 18px floating-bar and menu-card radius."},"pill":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of billing-toggle default: the capsule computes to an unbounded 3.36e7px, normalized here to the pill constant (raw/components-computed.json)","d":"The capsule shape (billing switch)."}},"easing":{"hp":{"v":[0.19,1.0,0.22,1.0],"t":"cubicBezier","s":"css-var --ease-hp (light)","d":"The homepage's long ease-out cubic-bezier(.19,1,.22,1)."},"hp-fly":{"v":[0.22,1.0,0.36,1.0],"t":"cubicBezier","s":"css-var --ease-hp-fly (light)","d":"The fly-in curve cubic-bezier(.22,1,.36,1)."},"hp-quad":{"v":[0.25,0.46,0.45,0.94],"t":"cubicBezier","s":"css-var --ease-hp-quad (light)","d":"The quad curve cubic-bezier(.25,.46,.45,.94)."},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-out (light)","d":"The standard Tailwind ease-out."},"in-out":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-in-out (light)","d":"The standard ease-in-out."}},"shadow":{"lift":{"v":[{"color":"rgba(15, 35, 75, 0.06)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px"},{"color":"rgba(15, 35, 75, 0.04)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px"}],"t":"shadow","s":"css-var --hp-shadow-lift (light)","d":"The resting button/card ring + drop (1px 6% + 1px 4%)."},"raised":{"v":[{"color":"#ffffff","offsetX":"0px","offsetY":"1px","blur":"0px","spread":"0px","inset":true},{"color":"rgba(15, 35, 75, 0.07)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px"},{"color":"rgba(15, 35, 75, 0.04)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px"}],"t":"shadow","s":"css-var --hp-shadow-raised (light)","d":"The raised control: white inset top line, ring and drop."},"well":{"v":[{"color":"rgba(15, 35, 75, 0.16)","offsetX":"0px","offsetY":"1px","blur":"3px","spread":"0px","inset":true},{"color":"rgba(15, 35, 75, 0.05)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":true},{"color":"#ffffff","offsetX":"0px","offsetY":"1px","blur":"0px","spread":"0px"}],"t":"shadow","s":"css-var --hp-shadow-well (light)","d":"The inset well shadow."},"plate":{"v":[{"color":"rgba(15, 35, 75, 0.05)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":true}],"t":"shadow","s":"css-var --hp-shadow-plate (light)","d":"The inset plate ring."},"float":{"v":[{"color":"rgba(15, 35, 75, 0.06)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px"},{"color":"rgba(15, 35, 75, 0.08)","offsetX":"0px","offsetY":"2px","blur":"6px","spread":"-2px"}],"t":"shadow","s":"css-var --hp-shadow-float (light)","d":"The floating-menu ring + soft drop."},"print":{"v":[{"color":"rgba(0, 0, 0, 0.06)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.22)","offsetX":"0px","offsetY":"10px","blur":"18px","spread":"-10px"}],"t":"shadow","s":"css-var --hp-shadow-print (light)","d":"The product-mock window shadow."},"print-lift":{"v":[{"color":"rgba(0, 0, 0, 0.2)","offsetX":"0px","offsetY":"14px","blur":"22px","spread":"-12px"}],"t":"shadow","s":"css-var --hp-shadow-print-lift (light)","d":"The lifted print shadow."},"window":{"v":[{"color":"rgba(0, 0, 0, 0.16)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0.5px"},{"color":"rgba(0, 0, 0, 0.06)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px"},{"color":"rgba(15, 30, 50, 0.32)","offsetX":"0px","offsetY":"24px","blur":"64px","spread":"-8px"}],"t":"shadow","s":"css-var --hp-shadow-window (light)","d":"The big OS-window shadow on the hero mock."}},"measured":{"focus-ring":{"v":[{"color":"rgba(255, 255, 255, 0.16)","offsetX":"0px","offsetY":"1px","blur":"0px","spread":"0px","inset":true},{"color":"#ffffff","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px"},{"color":"#9ca3af","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"3px"},{"color":"rgba(0, 0, 0, 0.05)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px"}],"t":"shadow","s":"computed boxShadow of nav-cta focus-visible (raw/components-computed.json)","d":"The keyboard focus ring every marketing control draws: 1px white gap, then a 3px #9ca3af ring."},"booker-focus-ring":{"v":[{"color":"rgba(59, 130, 246, 0.5)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0px"},{"color":"rgba(255, 255, 255, 0.2)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px"},{"color":"rgba(0, 0, 0, 0.1)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"2px"}],"t":"shadow","s":"computed boxShadow of bk-slot focus-visible (raw/components-computed.json)","d":"The booker's quieter focus ring: 1px 20%-white gap, then a 2px 10%-black ring."},"slot-pressed-shadow":{"v":[{"color":"rgba(0, 0, 0, 0.05)","offsetX":"0px","offsetY":"2px","blur":"1px","spread":"0px","inset":true}],"t":"shadow","s":"computed boxShadow of bk-slot pressed (raw/components-computed.json)","d":"The slot's pressed state: the drop shadow flips to a top inset."},"control-transition":{"v":"150ms","t":"duration","s":"computed transitionDuration of bk-day default (raw/components-computed.json)","d":"The booker controls' 0.15s colour/shadow transition."},"menu-transition":{"v":"100ms","t":"duration","s":"computed transitionDuration of menu-link default (raw/components-computed.json)","d":"The dropdown items' 0.1s hover fade."},"navitem-transition":{"v":"150ms","t":"duration","s":"computed transitionDuration of m-nav-item default (raw/components-computed.json)","d":"The mobile nav items' 0.15s transition."},"default-duration":{"v":"150ms","t":"duration","s":"css-var --default-transition-duration (light)","d":"The declared default 0.15s transition duration."}}},"light":{"text":{"primary":{"v":"{color.hp.ink}","t":"color","s":"role alias over the core palette","d":"Headline and strong text (#242424)."},"body":{"v":"{color.hp.body}","t":"color","s":"role alias over the core palette","d":"Marketing body text."},"muted":{"v":"{color.hp.muted}","t":"color","s":"role alias over the core palette","d":"Muted lede text."},"subtle":{"v":"{color.hp.subtle}","t":"color","s":"role alias over the core palette","d":"Quieter text (pricing sub-line)."},"quiet":{"v":"{color.hp.quiet}","t":"color","s":"role alias over the core palette","d":"The quietest marketing text."},"on":{"action":{"v":"{color.hp.on-ink}","t":"color","s":"role alias over the core palette","d":"White label on the dark buttons."}}},"surface":{"page":{"v":"{color.hp.page}","t":"color","s":"role alias over the core palette","d":"The white marketing page field."},"raised":{"v":"{color.hp.raised}","t":"color","s":"role alias over the core palette","d":"Raised white controls/cards."},"sunken":{"v":"{color.hp.surface-2}","t":"color","s":"role alias over the core palette","d":"The #f9fafb sunken field."},"field":{"v":"{color.hp.field}","t":"color","s":"role alias over the core palette","d":"The #f3f4f6 field fill."},"chip":{"v":"{color.hp.chip}","t":"color","s":"role alias over the core palette","d":"The chip fill."},"well":{"v":"{color.hp.well}","t":"color","s":"role alias over the core palette","d":"The inset well."},"bar":{"v":"{color.paint.bar}","t":"color","s":"role alias over the core palette","d":"The floating header's 72%-white glass."},"dark":{"v":"{color.paint.footer}","t":"color","s":"role alias over the core palette","d":"The near-black footer field."}},"action":{"primary":{"default":{"v":"{color.hp.ink}","t":"color","s":"role alias over the core palette","d":"The #242424 dark button fill."},"hover":{"v":"{color.paint.hover-veil}","t":"color","s":"role alias over the core palette","d":"The 4%-ink hover wash on quiet items."}}},"accent":{"default":{"v":"{color.hp.accent}","t":"color","s":"role alias over the core palette","d":"The #cc4510 orange accent."},"ink":{"v":"{color.hp.accent-ink}","t":"color","s":"role alias over the core palette","d":"Accent-coloured text."}},"border":{"default":{"v":"{color.hp.line}","t":"color","s":"role alias over the core palette","d":"The #e5e7eb rule."},"strong":{"v":"{color.hp.line-2}","t":"color","s":"role alias over the core palette","d":"The #dee1e6 heavier rule."},"hairline":{"v":"{color.hp.hairline}","t":"color","s":"role alias over the core palette","d":"The 7%-ink hairline."}},"booker":{"text":{"default":{"v":"{color.cal.text}","t":"color","s":"role alias over the core palette","d":"Booker body text (#3c3e44)."},"emphasis":{"v":"{color.cal.text-emphasis}","t":"color","s":"role alias over the core palette","d":"The strong booker ink (day numbers)."},"muted":{"v":"{color.cal.text-muted}","t":"color","s":"role alias over the core palette","d":"Muted booker text."},"subtle":{"v":"{color.cal.text-subtle}","t":"color","s":"role alias over the core palette","d":"Subtle booker text."},"inverted":{"v":"{color.cal.text-inverted}","t":"color","s":"role alias over the core palette","d":"Inverted booker text."}},"surface":{"default":{"v":"{color.cal.bg}","t":"color","s":"role alias over the core palette","d":"The booking page field."},"subtle":{"v":"{color.cal.bg-subtle}","t":"color","s":"role alias over the core palette","d":"Focused slot fill."},"muted":{"v":"{color.cal.bg-muted}","t":"color","s":"role alias over the core palette","d":"Slot hover fill."},"emphasis":{"v":"{color.cal.bg-emphasis}","t":"color","s":"role alias over the core palette","d":"The selected day-cell fill."}},"border":{"default":{"v":"{color.cal.border}","t":"color","s":"role alias over the core palette","d":"Slot and field borders."},"subtle":{"v":"{color.cal.border-subtle}","t":"color","s":"role alias over the core palette","d":"The booker frame border."}},"action":{"v":"{color.paint.booker-primary}","t":"color","s":"role alias over the core palette","d":"The #292929 confirm/today paint this booking page uses for its brand moments."},"brand":{"v":"{color.cal.brand}","t":"color","s":"role alias over the core palette","d":"The declared brand colour."}},"component":{"header":{"height":{"v":"64px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The floating header height at 1440."},"height-mobile":{"v":"64px","t":"dimension","s":"computed height of m-header default (raw/components-computed.json)","d":"The floating header at 390."}},"nav":{"button-height":{"v":"36px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"The 36px nav control height."}},"hero":{"button-height":{"v":"64px","t":"dimension","s":"computed height of hero-google default (raw/components-computed.json)","d":"The 64px hero SSO button height."}},"control":{"height":{"v":"36px","t":"dimension","s":"computed height of plan-cta default (raw/components-computed.json)","d":"The 36px standard button height."}},"slot":{"height":{"v":"36px","t":"dimension","s":"computed height of bk-slot default (raw/components-computed.json)","d":"The 36px booker slot height."}},"day":{"size":{"v":"59.2969px","t":"dimension","s":"computed height of bk-day default (raw/components-computed.json)","d":"The 59px booker day cell."}},"field":{"height":{"v":"32px","t":"dimension","s":"computed height of bk-field default (raw/components-computed.json)","d":"The 32px booker field height."}},"auth":{"field-height":{"v":"30px","t":"dimension","s":"computed height of email-field default (raw/components-computed.json)","d":"The 30px auth field height."},"button-height":{"v":"40px","t":"dimension","s":"computed height of signup-google default (raw/components-computed.json)","d":"The 40px auth button height."}},"menu":{"card-width":{"v":"200px","t":"dimension","s":"computed width of menu-link default (raw/components-computed.json)","d":"The 200px product-card column in the dropdown."}},"mobile":{"navitem-height":{"v":"48px","t":"dimension","s":"computed height of m-nav-item default (raw/components-computed.json)","d":"The 48px mobile menu row."}},"card":{"radius":{"v":"14px","t":"dimension","s":"computed borderTopLeftRadius of plan-card default (raw/components-computed.json)","d":"The plan-card radius."}}}},"dark":{"text":{"primary":{"v":"#d4d4d4","t":"color","s":"css-var --cal-text (dark)","d":"The #d4d4d4 booker dark body text."},"emphasis":{"v":"#fafafa","t":"color","s":"css-var --cal-text-emphasis (dark)","d":"The #fafafa strong dark text."},"muted":{"v":"#a3a3a3","t":"color","s":"css-var --cal-text-muted (dark)","d":"The #a3a3a3 muted dark text."},"subtle":{"v":"#a3a3a3","t":"color","s":"css-var --cal-text-subtle (dark)","d":"The subtle dark text."},"inverted":{"v":"#000000","t":"color","s":"css-var --cal-text-inverted (dark)","d":"The #000000 inverted dark text."}},"surface":{"page":{"v":"#0f0f0f","t":"color","s":"css-var --cal-bg (dark)","d":"The #0f0f0f dark canvas."},"subtle":{"v":"#262626","t":"color","s":"css-var --cal-bg-subtle (dark)","d":"The #262626 subtle dark fill."},"muted":{"v":"#171717","t":"color","s":"css-var --cal-bg-muted (dark)","d":"The #171717 muted dark fill."},"emphasis":{"v":"#404040","t":"color","s":"css-var --cal-bg-emphasis (dark)","d":"The #404040 emphasis dark fill."},"inverted":{"v":"#fafafa","t":"color","s":"css-var --cal-bg-inverted (dark)","d":"The #fafafa inverted dark field."}},"border":{"default":{"v":"#4d4d4d","t":"color","s":"css-var --cal-border (dark)","d":"The #4d4d4d dark border."},"subtle":{"v":"#262626","t":"color","s":"css-var --cal-border-subtle (dark)","d":"The #262626 subtle dark border."},"emphasis":{"v":"#737373","t":"color","s":"css-var --cal-border-emphasis (dark)","d":"The #737373 emphasis dark border."}},"action":{"primary":{"v":"#f5f5f5","t":"color","s":"css-var --cal-bg-primary (dark)","d":"The #f5f5f5 inverted dark button fill."}},"brand":{"v":"#ffffff","t":"color","s":"css-var --cal-brand (dark)","d":"The dark brand (#ffffff)."}}};
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  for (const [setname, label] of [['light', 'light roles (marketing + booker)'], ['dark', 'dark roles (booker)']]) {
-    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
-    if (!roles.length) continue;
-    // The dark set's custom properties only resolve inside a .dark scope:
-    // swatch dots must live under it or they paint the light values/unset.
-    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
-  $('#spacing-out').innerHTML = m;
-})();
-
-(function elev() {
-  let e = '';
-  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#meas-out').innerHTML = m;
-})();
-
-(function type() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(t.v);
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Cal.com</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
-</script>
 </body>
 </html>

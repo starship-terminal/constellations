@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T13:22:07.956Z",
+  "capturedAt": "2026-11-21T01:01:40.618Z",
   "screenshot": "usdc-light-full.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://www.coinbase.com/en-sg/usdc",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -24,7 +24,7 @@
       "colorScheme": "normal"
     },
     "visualViewport": {
-      "width": 1425,
+      "width": 1440,
       "height": 900,
       "scale": 1,
       "offsetLeft": 0,
@@ -33,7 +33,7 @@
       "pageTop": 0
     },
     "documentSize": {
-      "width": 1425,
+      "width": 1440,
       "height": 10585
     },
     "scroll": {
@@ -47,13 +47,13 @@
     "clip": null
   },
   "png": {
-    "width": 1425,
+    "width": 1440,
     "height": 10585
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
-      "width": 1425,
+      "width": 1440,
       "height": 10585
     },
     "basis": "fullPage"

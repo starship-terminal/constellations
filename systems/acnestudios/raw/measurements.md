@@ -253,24 +253,23 @@ Page: home. Selector: `gift guide link`. States: default, hover, focus-visible, 
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 1440 x 30 | = | - | = |
-| Padding | 4px 9px | = | - | = |
-| Border | 1px solid #000000 @ 0 | = | - | = |
-| Radius | 0px | = | - | = |
-| Background | transparent | = | - | = |
-| Box shadow | none | = | - | = |
-| Outline | none | = | - | = |
-| Font | Helvetica Now Text 12px/20px 400 | = | - | = |
-| Letter spacing | 0.3px | = | - | = |
-| Colour | #000000 | = | - | = |
-| Text node | span: Helvetica Now Text 12px/20px 400, #ffffff, ls 0.3px | = | - | = |
-| Transition | none | = | - | = |
-| Painted layers | div.as-cell.tile__pos--top 1440.0x30.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 | = | - | = |
-| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Size (w x h) | 1440 x 30 | = | = | = |
+| Padding | 4px 9px | = | = | = |
+| Border | 1px solid #000000 @ 0 | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | Helvetica Now Text 12px/20px 400 | = | = | = |
+| Letter spacing | 0.3px | = | = | = |
+| Colour | #000000 | = | = | = |
+| Text node | span: Helvetica Now Text 12px/20px 400, #ffffff, ls 0.3px | = | = | = |
+| Transition | none | = | = | = |
+| Painted layers | div.as-cell.tile__pos--top 1440.0x30.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 | = | = | = |
+| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
 | Opacity | - | 0 | = | = |
-| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `gift-link-default.png`, `gift-link-hover.png`, `gift-link-pressed.png`.
+Crops: `gift-link-default.png`, `gift-link-hover.png`, `gift-link-focus-visible.png`, `gift-link-pressed.png`.
 
 ### Footer
 
@@ -344,7 +343,7 @@ Page: home. Selector: `footer input[type=email]`. States: default, focused, fill
 | Cursor | text | = | = |
 | Placeholder | #c2c2c2, opacity 0 | #c2c2c2, opacity 1 | #c2c2c2, opacity 1 |
 | Painted layers | input 430.0x60.0 bg #f7f7f7 border T:1px solid #f7f7f7 / R:1px solid #f7f7f7 / B:1px solid #f7f7f7 / L:1px solid #f7f7f7 | input 430.0x60.0 bg #e8f0fe border T:1px solid #000000 / R:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000 | input 430.0x60.0 bg #e8f0fe border T:1px solid #000000 / R:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000 |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
+| How | at rest | clicked into the field | typed a placeholder, then deleted; nothing sent |
 
 Crops: `newsletter-field-default.png`, `newsletter-field-focused.png`, `newsletter-field-filled.png`.
 
@@ -428,23 +427,22 @@ Page: home. Selector: `footer shipping selector`. States: default, hover, focus-
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 227.52 x 20 | = | - | = |
-| Padding | 0px | = | - | = |
-| Border | none | = | - | = |
-| Radius | 0px | = | - | = |
-| Background | transparent | = | - | = |
-| Box shadow | none | = | - | = |
-| Outline | none | = | - | = |
-| Font | Helvetica Now Text 12px/20px 400 | = | - | = |
-| Letter spacing | 0.3px | = | - | = |
-| Colour | #0018a8 | #051574 | - | = |
-| Text node | span.current-country__shipping-to: Helvetica Now Text 12px/20px 400, #0018a8, ls 0.3px | span.current-country__shipping-to: Helvetica Now Text 12px/20px 400, #051574, ls 0.3px | - | = |
-| Transition | none | = | - | = |
-| Cursor | pointer | = | - | = |
-| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
-| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
+| Size (w x h) | 227.52 x 20 | = | = | = |
+| Padding | 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | Helvetica Now Text 12px/20px 400 | = | = | = |
+| Letter spacing | 0.3px | = | = | = |
+| Colour | #0018a8 | #051574 | = | = |
+| Text node | span.current-country__shipping-to: Helvetica Now Text 12px/20px 400, #0018a8, ls 0.3px | span.current-country__shipping-to: Helvetica Now Text 12px/20px 400, #051574, ls 0.3px | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
 
-Crops: `geo-selector-default.png`, `geo-selector-hover.png`, `geo-selector-pressed.png`.
+Crops: `geo-selector-default.png`, `geo-selector-hover.png`, `geo-selector-focus-visible.png`, `geo-selector-pressed.png`.
 
 ### Category page (PLP)
 
@@ -1015,7 +1013,7 @@ Page: search. Selector: `input[type=search]`. States: default, focused, filled.
 | Cursor | text | = | = |
 | Placeholder | #c2c2c2, opacity 0 | #c2c2c2, opacity 1 | #c2c2c2, opacity 1 |
 | Painted layers | input.search-field.field-size--small 360.0x30.0 bg #f7f7f7 border T:1px solid #000000 / R:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000 | input.search-field.field-size--small 360.0x30.0 bg #e8f0fe border T:1px solid #000000 / R:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000 | input.search-field.field-size--small 360.0x30.0 bg #e8f0fe border T:1px solid #000000 / R:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000 |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
+| How | at rest | clicked into the field | typed a placeholder, then deleted; nothing sent |
 
 Crops: `search-field-default.png`, `search-field-focused.png`, `search-field-filled.png`.
 
@@ -1128,23 +1126,22 @@ Page: filter. Selector: `sort option`. States: default, hover, focus-visible, pr
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 320 x 20 | = | - | = |
-| Padding | 0px | = | - | = |
-| Border | none | = | - | = |
-| Radius | 0px | = | - | = |
-| Background | transparent | = | - | = |
-| Box shadow | none | = | - | = |
-| Outline | none | = | - | = |
-| Font | Helvetica Now Text 12px/20px 400 | = | - | = |
-| Letter spacing | 0.3px | = | - | = |
-| Colour | #000000 | = | - | = |
-| Transition | none | = | - | = |
-| Cursor | pointer | = | - | = |
-| Ancestor paint | 1 up button.filter-button.as-radio bg #ffffff | = | - | = |
-| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
-| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
+| Size (w x h) | 320 x 20 | = | = | = |
+| Padding | 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | Helvetica Now Text 12px/20px 400 | = | = | = |
+| Letter spacing | 0.3px | = | = | = |
+| Colour | #000000 | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Ancestor paint | 1 up button.filter-button.as-radio bg #ffffff | = | = | = |
+| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
 
-Crops: `sort-option-default.png`, `sort-option-hover.png`, `sort-option-pressed.png`.
+Crops: `sort-option-default.png`, `sort-option-hover.png`, `sort-option-focus-visible.png`, `sort-option-pressed.png`.
 
 #### show-items
 
@@ -1267,7 +1264,7 @@ Page: login. Selector: `login email input`. States: default, focused, filled.
 | Cursor | text | = | = |
 | Placeholder | #c2c2c2, opacity 0 | #c2c2c2, opacity 1 | #c2c2c2, opacity 1 |
 | Painted layers | input 520.0x60.0 bg #f7f7f7 border T:1px solid #f7f7f7 / R:1px solid #f7f7f7 / B:1px solid #f7f7f7 / L:1px solid #f7f7f7 | input 520.0x60.0 bg #e8f0fe border T:1px solid #000000 / R:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000 | input.error 520.0x60.0 bg #e8f0fe border T:1px solid #000000 / R:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000 |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
+| How | at rest | clicked into the field | typed a placeholder, then deleted; nothing sent |
 
 Crops: `login-email-default.png`, `login-email-focused.png`, `login-email-filled.png`.
 
@@ -1324,7 +1321,7 @@ Crops: `login-google-default.png`, `login-google-hover.png`, `login-google-focus
 
 #### change-location
 
-Change location link. The "Singapore. Change location" line under the title.
+Change location link. The change-location line under the title. The place name is not recorded.
 
 Page: login. Selector: `change location`. States: default, hover, focus-visible, pressed.
 

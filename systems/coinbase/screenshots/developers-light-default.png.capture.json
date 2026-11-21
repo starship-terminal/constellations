@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T13:21:34.766Z",
+  "capturedAt": "2026-11-21T01:15:05.127Z",
   "screenshot": "developers-light-default.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://www.coinbase.com/en-sg/developer-platform",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -24,7 +24,7 @@
       "colorScheme": "normal"
     },
     "visualViewport": {
-      "width": 1425,
+      "width": 1440,
       "height": 900,
       "scale": 1,
       "offsetLeft": 0,
@@ -33,8 +33,8 @@
       "pageTop": 0
     },
     "documentSize": {
-      "width": 1433,
-      "height": 7561
+      "width": 1440,
+      "height": 7411
     },
     "scroll": {
       "x": 0,

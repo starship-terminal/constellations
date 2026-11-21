@@ -1,10 +1,10 @@
 {
- "readAt": "2026-11-11",
+ "readAt": "2026-11-21",
  "source": "the stylesheet bodies fetched during a live home load on amie.so (response bodies plus the page's inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class (unbound on this site), at 1440 x 900",
  "sheets": [
   "https://amie.so/_next/static/css/7ef81824ee6a42c3.css (106 bytes)",
   "https://amie.so/_next/static/css/f1f9980c2580fe44.css (128715 bytes)",
-  "https://app.growsurf.com/growsurf.css (1162445 bytes)",
+  "https://app.growsurf.com/growsurf.css (1162574 bytes)",
   "inline-0 (4864 bytes)"
  ],
  "counts": {

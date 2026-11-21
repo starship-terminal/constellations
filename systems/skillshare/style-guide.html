@@ -5,103 +5,86 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Skillshare style guide</title>
 <style>
-  * { box-sizing: border-box; }
-  body { margin: 0; background: #ffffff; color: #0b1215; font: 400 15px/22px "GT Walsheim Pro", -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-  header, main { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
-  h1 { font-size: 36px; line-height: 43px; margin: 0 0 8px; }
-  h2 { font-size: 22px; margin: 36px 0 12px; }
-  p.lead { color: #394649; max-width: 68ch; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
-  .sw { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; }
-  .sw i { width: 44px; height: 44px; border-radius: 4px; box-shadow: inset 0 0 0 1px #dcdee1; display: block; }
-  .sw b, .ty .k { display: block; font-size: 12px; }
-  .sw span, .ty small { color: #394649; font-size: 12px; font-weight: 400; }
-  .ty { display: grid; grid-template-columns: 180px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px solid #dcdee1; align-items: baseline; }
-  .sp { display: flex; align-items: center; gap: 12px; margin: 6px 0; }
-  .sp i { height: 12px; background: #55da9b; display: block; }
-  .btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 20px; border-radius: 4px; background: #55da9b; color: #0b1215; font-weight: 700; border: 1px solid #55da9b; }
-  .oauth { display: inline-flex; align-items: center; justify-content: center; height: 40px; width: 240px; border-radius: 4px; background: #fff; color: #0b1215; font-weight: 700; border: 1px solid #394649; }
-  .textbtn { color: #5620c1; font-weight: 700; background: transparent; border: 0; height: 40px; }
-  .row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
-  code { font-size: 12px; }
+:root {
+  --page: var(--core-color-paper);
+  --surface: var(--core-color-canvas);
+  --text: var(--core-color-ink);
+  --muted: var(--core-color-muted);
+  --accent: var(--core-color-green);
+  --border: var(--core-color-line);
+  --link: var(--core-color-link);
+  --focus: #5620c1;
+  --component-button-background: var(--core-color-green);
+  --component-button-text: var(--core-color-ink);
+  --component-button-radius: 4px;
+  --component-button-height: 40px;
+  --component-button-hover-background: var(--core-color-green-hover);
+  --component-field-background: var(--core-color-paper);
+  --component-field-text: var(--core-color-ink);
+  --component-field-border: var(--core-color-line);
+  --component-field-radius: 4px;
+  --component-field-height: 40px;
+  --sg-sans: "GT Walsheim Pro", Arial, Helvetica, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #0b1215); background: var(--page, #fff); }
+main { max-width: 980px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font-size: 40px; line-height: 1.15; margin: 0 0 8px; font-weight: 700; }
+h2 { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; margin: 40px 0 12px; font-weight: 700; }
+p { max-width: 62ch; }
+.note { font-size: 13px; opacity: 0.7; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 180px; }
+.dot { width: 28px; height: 28px; border-radius: 4px; border: 1px solid #dcdee1; }
+.nm { font-size: 12px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 20px; border-radius: 4px; border: 1px solid transparent; font-weight: 700; font-size: 18px; background: var(--accent, #55da9b); color: var(--text, #0b1215); }
+.social { display: flex; align-items: center; justify-content: center; height: 40px; width: 280px; border-radius: 4px; border: 1px solid #394649; background: #fff; font-weight: 700; font-size: 16px; }
+.field { height: 40px; width: 280px; border-radius: 4px; border: 1px solid var(--border, #dcdee1); padding: 0 10px; font: 400 15px/40px var(--sg-sans); }
+.link { color: var(--link, #5620c1); font-weight: 700; }
+.hero { font-size: 46px; line-height: 1.26; font-weight: 700; max-width: 16ch; }
+.bar { background: #000; color: #fff; padding: 16px 20px; display: flex; align-items: center; gap: 16px; }
+.word { font-weight: 700; letter-spacing: -0.03em; }
+footer.mock { background: #020404; color: #fff; padding: 28px 20px; margin-top: 24px; }
 </style>
 </head>
 <body>
-<header>
-  <h1>Skillshare</h1>
-  <p class="lead">Public signed-out surfaces, measured 2026-11-19. Light only. GT Walsheim Pro is proprietary and falls back to the system sans here. Values come from tokens.json.</p>
-</header>
 <main>
+  <h1>Skillshare style guide</h1>
+  <p class="note">Generated from tokens.json. Swatches are measured values. The page mock is a reconstruction drawn with those tokens, not a screenshot.</p>
+
   <h2>Colour</h2>
-  <div class="grid">
-    <div class="sw"><i style="background:#ffffff"></i><div><b>page</b><span>#ffffff</span></div></div>
-<div class="sw"><i style="background:#000000"></i><div><b>ink</b><span>#000000</span></div></div>
-<div class="sw"><i style="background:#0b1215"></i><div><b>ink-soft</b><span>#0b1215</span></div></div>
-<div class="sw"><i style="background:#394649"></i><div><b>muted</b><span>#394649</span></div></div>
-<div class="sw"><i style="background:#dcdee1"></i><div><b>border</b><span>#dcdee1</span></div></div>
-<div class="sw"><i style="background:#394649"></i><div><b>border-strong</b><span>#394649</span></div></div>
-<div class="sw"><i style="background:#55da9b"></i><div><b>accent</b><span>#55da9b</span></div></div>
-<div class="sw"><i style="background:#50cf93"></i><div><b>accent-hover</b><span>#50cf93</span></div></div>
-<div class="sw"><i style="background:#0b1215"></i><div><b>accent-ink</b><span>#0b1215</span></div></div>
-<div class="sw"><i style="background:#5620c1"></i><div><b>link</b><span>#5620c1</span></div></div>
-<div class="sw"><i style="background:rgba(85, 218, 155, 0.04)"></i><div><b>link-wash</b><span>rgba(85, 218, 155, 0.04)</span></div></div>
-<div class="sw"><i style="background:rgba(11, 18, 21, 0.04)"></i><div><b>oauth-wash</b><span>rgba(11, 18, 21, 0.04)</span></div></div>
-<div class="sw"><i style="background:#fafafa"></i><div><b>surface-muted</b><span>#fafafa</span></div></div>
-<div class="sw"><i style="background:#f4f4f4"></i><div><b>surface-sunken</b><span>#f4f4f4</span></div></div>
-<div class="sw"><i style="background:#000000"></i><div><b>inverse</b><span>#000000</span></div></div>
-<div class="sw"><i style="background:#070c0e"></i><div><b>inverse-deep</b><span>#070c0e</span></div></div>
-<div class="sw"><i style="background:#ffffff"></i><div><b>on-inverse</b><span>#ffffff</span></div></div>
-<div class="sw"><i style="background:#5620c1"></i><div><b>brand-band</b><span>#5620c1</span></div></div>
-<div class="sw"><i style="background:#002333"></i><div><b>teams-ink</b><span>#002333</span></div></div>
-<div class="sw"><i style="background:rgba(0, 0, 0, 0.7)"></i><div><b>scrim</b><span>rgba(0, 0, 0, 0.7)</span></div></div>
-<div class="sw"><i style="background:rgba(0, 0, 0, 0.2)"></i><div><b>hero-scrim</b><span>rgba(0, 0, 0, 0.2)</span></div></div>
-<div class="sw"><i style="background:#5620c1"></i><div><b>focus</b><span>#5620c1</span></div></div>
-<div class="sw"><i style="background:#232424"></i><div><b>card-ink</b><span>#232424</span></div></div>
-<div class="sw"><i style="background:#000000"></i><div><b>placeholder</b><span>#000000</span></div></div>
-  </div>
+  <div class="row" id="swatches"></div>
+
   <h2>Type</h2>
-  <div class="ty"><div class="k">hero<small>46px / 57.96px · 700</small></div><div style="font-family:&quot;GT Walsheim Pro&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:46px;font-weight:700;line-height:57.96px">Creative classes</div></div>
-<div class="ty"><div class="k">hero-mobile<small>32px / 32px · 700</small></div><div style="font-family:&quot;GT Walsheim Pro&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:32px;font-weight:700;line-height:32px">Creative classes</div></div>
-<div class="ty"><div class="k">display<small>74px / 70.3px · 700</small></div><div style="font-family:&quot;GT Walsheim Pro&quot;, Arial, sans-serif;font-size:74px;font-weight:700;line-height:70.3px">Creative classes</div></div>
-<div class="ty"><div class="k">title<small>50px / 55px · 700</small></div><div style="font-family:&quot;GT Walsheim Pro&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:50px;font-weight:700;line-height:55px">Creative classes</div></div>
-<div class="ty"><div class="k">page-title<small>36px / 43.2px · 600</small></div><div style="font-family:&quot;GT Walsheim Pro&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:36px;font-weight:600;line-height:43.2px">Creative classes</div></div>
-<div class="ty"><div class="k">marquee<small>28px / 40.04px · 700</small></div><div style="font-family:&quot;GT Walsheim Pro&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:28px;font-weight:700;line-height:40.04px">Creative classes</div></div>
-<div class="ty"><div class="k">section<small>36px / 51.48px · 700</small></div><div style="font-family:&quot;GT Walsheim Pro&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:36px;font-weight:700;line-height:51.48px">Creative classes</div></div>
-<div class="ty"><div class="k">heading<small>22px / 31.9px · 700</small></div><div style="font-family:&quot;GT Walsheim Pro&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:22px;font-weight:700;line-height:31.9px">Creative classes</div></div>
-<div class="ty"><div class="k">nav<small>15px / 15px · 700</small></div><div style="font-family:&quot;GT Walsheim Pro&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:15px;font-weight:700;line-height:15px">Creative classes</div></div>
-<div class="ty"><div class="k">button<small>18px / 39px · 700</small></div><div style="font-family:&quot;GT Walsheim Pro&quot;, Arial, sans-serif;font-size:18px;font-weight:700;line-height:39px">Creative classes</div></div>
-<div class="ty"><div class="k">button-compact<small>16px / 24px · 700</small></div><div style="font-family:&quot;GT Walsheim Pro&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:16px;font-weight:700;line-height:24px">Creative classes</div></div>
-<div class="ty"><div class="k">body<small>16px / 24px · 400</small></div><div style="font-family:&quot;GT Walsheim Pro&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;line-height:24px">Creative classes</div></div>
-<div class="ty"><div class="k">caption<small>13px / 24px · 400</small></div><div style="font-family:&quot;GT Walsheim Pro&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:13px;font-weight:400;line-height:24px">Creative classes</div></div>
-<div class="ty"><div class="k">legal<small>11px / 15.4px · 400</small></div><div style="font-family:&quot;GT Walsheim Pro&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:11px;font-weight:400;line-height:15.4px">Creative classes</div></div>
-<div class="ty"><div class="k">legal-page<small>15px / 22.5px · 400</small></div><div style="font-family:&quot;GT Walsheim Pro&quot;, &quot;DM Sans&quot;, Helvetica, Arial, sans-serif;font-size:15px;font-weight:400;line-height:22.5px">Creative classes</div></div>
-  <h2>Radius</h2>
-  <div class="grid"><div class="sw"><i style="background:#55da9b;border-radius:0px"></i><div><b>none</b><span>0px</span></div></div>
-<div class="sw"><i style="background:#55da9b;border-radius:4px"></i><div><b>control</b><span>4px</span></div></div>
-<div class="sw"><i style="background:#55da9b;border-radius:8px"></i><div><b>workable</b><span>8px</span></div></div></div>
-  <h2>Space</h2>
-  <div class="sp"><i style="width:0px"></i><span>0 · 0px</span></div>
-<div class="sp"><i style="width:4px"></i><span>4 · 4px</span></div>
-<div class="sp"><i style="width:5px"></i><span>5 · 5px</span></div>
-<div class="sp"><i style="width:6px"></i><span>6 · 6px</span></div>
-<div class="sp"><i style="width:8px"></i><span>8 · 8px</span></div>
-<div class="sp"><i style="width:10px"></i><span>10 · 10px</span></div>
-<div class="sp"><i style="width:12px"></i><span>12 · 12px</span></div>
-<div class="sp"><i style="width:15px"></i><span>15 · 15px</span></div>
-<div class="sp"><i style="width:16px"></i><span>16 · 16px</span></div>
-<div class="sp"><i style="width:20px"></i><span>20 · 20px</span></div>
-<div class="sp"><i style="width:24px"></i><span>24 · 24px</span></div>
-<div class="sp"><i style="width:30px"></i><span>30 · 30px</span></div>
-<div class="sp"><i style="width:38px"></i><span>38 · 38px</span></div>
-<div class="sp"><i style="width:40px"></i><span>40 · 40px</span></div>
-<div class="sp"><i style="width:80px"></i><span>80 · 80px</span></div>
+  <p class="hero">Creative Classes Taught by the Best Creative Pros</p>
+  <p>GT Walsheim Pro is the served face. This page falls back to Arial when that face is not installed.</p>
+
   <h2>Controls</h2>
-  <div class="row">
-    <span class="btn">Sign Up</span>
-    <span class="oauth">Continue with Google</span>
-    <span class="textbtn">Continue with email</span>
-  </div>
-  <p class="lead">Sign Up hover fills #50cf93. Google hover fills rgba(11, 18, 21, 0.04). Email hover underlines and fills rgba(85, 218, 155, 0.04). Focus outline is #5620c1.</p>
+  <p><span class="btn">Sign Up</span></p>
+  <p><span class="social">Continue with Google</span></p>
+  <p><input class="field" placeholder="Email address" readonly></p>
+  <p class="link">Continue with email</p>
+
+  <h2>Chrome</h2>
+  <div class="bar"><span class="word">SKILL SHARE.</span><span style="flex:1"></span><span>Sign In</span><span class="btn">Sign Up</span></div>
+  <footer class="mock">Company · Work With Us · Teach with Us · Shop</footer>
 </main>
+<script>
+const swatches = [
+  ["page", "var(--page, #fff)"],
+  ["surface", "var(--surface, #f4f4f4)"],
+  ["text", "var(--text, #0b1215)"],
+  ["accent", "var(--accent, #55da9b)"],
+  ["link", "var(--link, #5620c1)"],
+  ["border", "var(--border, #dcdee1)"],
+];
+const row = document.getElementById("swatches");
+for (const [name, value] of swatches) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = `<span class="dot" style="background:${value}"></span><span class="nm">${name}</span>`;
+  row.appendChild(el);
+}
+</script>
 </body>
 </html>

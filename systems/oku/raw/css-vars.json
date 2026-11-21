@@ -1,0 +1,7 @@
+{
+  "capturedAt": "2026-11-21",
+  "page": "https://oku.club/",
+  "productTokens": [],
+  "note": "oku.club's own CSS declares no design-token custom properties. The stylesheet harvest found 34 names, all --toastify-* or --swiper-*. They are vendor widgets and are not tokenised. Role colours were read from computed styles; see components-computed.json and capture-readings.json.",
+  "stylesheet": "https://static.oku.club/assets/index-zHkAtBUs.css"
+}

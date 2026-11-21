@@ -1,23 +1,23 @@
 # Twitch
 
-Public signed-out surfaces of [Twitch](https://www.twitch.tv/), captured on 2026-11-19. No account was created. The signup page offers a phone number and Google, Amazon, and Apple, so it is not email-only and was not submitted. No card, no OAuth grant, no paid subscription.
+Public signed-out surfaces of [Twitch](https://www.twitch.tv/), refreshed on 2026-11-21 with headless Playwright. No account was created. Log In and Sign Up open dialogs on the home. Both were photographed and not submitted. Google, Amazon, and Apple were not clicked.
 
-The live theme is dark (`html` class `tw-root--theme-dark`). Adding `tw-root--theme-light` did not remap the colour custom properties or the body background. There is no light set in the tokens.
-
-Surfaces: the signed-out home, `/signup`, `/directory`, `/directory/all`, and `/directory/category/just-chatting`. Desktop screenshots are 1440 by 900. The phone shots are 390 by 844. The T3 preview tab that supplied the computed styles was 1169 by 731 at device pixel ratio 2. Preview screenshots failed ("The browser is not producing screenshot frames"), so the PNGs are headless Chromium of pages that had already loaded in that tab without a Cloudflare challenge.
+The page loaded as `tw-root--theme-light`. The user-menu Dark Theme switch sets `tw-root--theme-dark` and remaps the colour custom properties. Both themes are in the tokens. Desktop shots are 1440 by 900. Phone shots are 390 by 844. Device pixel ratio was 2.
 
 | File | What it holds |
 |---|---|
-| [tokens.json](tokens.json) | DTCG tokens: `core` scales and a `dark` semantic set. Every token has `$extensions.source`. |
+| [tokens.json](tokens.json) | DTCG tokens: `core` scales, `dark`, and `light`. Every token has `$extensions.source`. |
 | [DESIGN.md](DESIGN.md) | Generated from the tokens and this file. Do not edit it by hand. |
-| [style-guide.html](style-guide.html) | Dark theme colour roles, type, and the signed-out controls. |
-| [components.md](components.md) | Buttons, fields, tabs, cards, badges, and the gaps. |
-| [patterns.md](patterns.md) | The signed-out shell, browse, and the signup wall. |
+| [style-guide.html](style-guide.html) | Colour roles, type, and the signed-out controls, with a theme toggle. |
+| [components.md](components.md) | Buttons, fields, tabs, menus, cards, and the gaps. |
+| [patterns.md](patterns.md) | The signed-out shell, browse, and the login and signup walls. |
+| [site-tree.md](site-tree.md) | Which public control opens which page or dialog. |
+| [login-review.json](login-review.json) | Public walk record. `login-extracted` is `not-started`. |
 | [components/](components/) | Crops in [components/crops/](components/crops). |
-| [screenshots/](screenshots/) | 7 page shots. |
-| [raw/](raw/) | Named custom properties and computed element styles. |
+| [screenshots/](screenshots/) | Public page and dialog shots in light and dark. |
+| [raw/](raw/) | Custom properties for both themes, computed controls, and the walk notes. |
 | [icon.png](icon.png) | 128 px site icon from `tools/fetch_icon.py`. |
-| [tools/](tools/) | Kit copy plus [tools/test_tokens.py](tools/test_tokens.py). Tokens were written from the readings, not from the unadapted kit builders. |
+| [tools/](tools/) | Kit copy plus [tools/test_tokens.py](tools/test_tokens.py). |
 
 ## Brief
 
@@ -31,7 +31,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 2. Keep secondary actions on the grey wash.
 3. Use 8px on fields and 9000px on buttons.
 4. Mark live with the red badge, not the purple.
-5. Do not invent a light theme from the class name.
+5. Ship both themes from the user-menu switch.
 
 Each rule links the screenshot or crop that shows it, under [Do and don't](#do-and-dont).
 
@@ -58,7 +58,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | dark | 16.79:1 pass | 15.42:1 pass | 12.93:1 pass | 11.88:1 pass |
 
-4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.shadow.focus` 0 0 0 2px #a970ff, inset 0 0 0 2px #a970ff; `dark.color.border.focus` #a970ff.
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.shadow.focus` 0 0 0 2px #a970ff, inset 0 0 0 2px #a970ff; `light.shadow.focus` 0 0 0 2px #772ce8, inset 0 0 0 2px #772ce8; `dark.color.border.focus` #a970ff; `light.color.border.focus` #772ce8.
 
 <!-- brief:end -->
 
@@ -74,25 +74,29 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (icon extraction 
 
 ## How the values were read
 
-Computed styles and custom properties were read with `preview_evaluate` on https://www.twitch.tv/, https://www.twitch.tv/signup, https://www.twitch.tv/directory, https://www.twitch.tv/directory/all, and https://www.twitch.tv/directory/category/just-chatting, signed out, on 2026-11-19. The page exposed about 1013 custom properties. The package keeps the roles that the signed-out UI paints, plus the declared hover, pressed, status, spacing, radius, type, and timing tokens those roles point at. Hashed class names were not treated as tokens.
+Custom properties were read with `getComputedStyle` on `html` after the Dark Theme switch, signed out, on https://www.twitch.tv/, on 2026-11-21. The page exposes about 1013 custom properties. The package keeps the roles the signed-out UI paints, plus the declared status, spacing, radius, type, and timing tokens those roles point at.
 
-The root font-size is 10px, so a `rem` in a custom property is 10px. `--font-size-base` is `1.4rem`, and the body computed 14px. That conversion is marked Derived. Colours, the 32px and 36px control heights, the 8px field radius, the 9000px pill radius, and the focus ring were read from `getComputedStyle`.
+The root font-size is 10px, so a `rem` in a custom property is 10px. `--font-size-base` is `1.4rem`, and the body computed 14px. That conversion is Derived.
 
-Screenshots were taken in headless Chromium at 1440 by 900 and 390 by 844 after the same URLs had loaded in the preview tab with no Cloudflare challenge. The email field was focused and not filled. Continue stayed disabled. Phone, Google, Amazon, and Apple were not clicked.
+Sign Up hover computed `rgb(119, 44, 232)`. Mouse-down computed `rgb(92, 22, 197)`. The login field computed a 2px focus ring: `#a970ff` in dark, `#772ce8` in light. Continue on the login dialog was disabled and computed `rgba(83, 83, 95, 0.55)`.
+
+Screenshots are the same Playwright browser as the readings, at the viewport recorded in each `.png.capture.json`.
 
 ## What to distrust
 
-`--color-background-top-nav` is `#451093`. The painted `nav.top-nav` background was transparent. Use the measured transparent bar for the signed-out shell, and the token only where a purple bar is actually painted. The community banner at the bottom of the home is that purple.
+`--color-background-top-nav` is `#451093` in dark and `#5c16c5` in light. The painted `nav.top-nav` background was transparent. Use the measured transparent bar for the signed-out shell.
 
-`--color-background-modal` is `#15052e`. The signup panel in the screenshot sits on a raised grey, closer to `#18181b` / `#26262c`. The token is recorded. The panel crop is the thing to match for that screen.
+`--color-background-modal` is `#15052e` in dark. The login and signup panels paint a raised grey, closer to `#26262c`. In light the token and the panel are both white.
 
-The idle signup page includes the sentence "Email is invalid. Please enter a valid email." It computed the body text colour, not `--color-text-error`. That paragraph is in the DOM before a submit. It is not a captured error state.
+`--color-text-button-overlay` is `#ffffff` in dark. The community-banner Sign Up label computed black on the 2026-11-19 pass. The banner crop is the thing to match.
 
-Hover and pressed button colours are declared custom properties. The pointer was not held, so those values were not confirmed on a painted control.
+The idle signup dialog includes "Email is invalid. Please enter a valid email." before any typing. It is not a submitted error state. `--color-text-error` was not confirmed on that sentence.
 
-Preview screenshots failed. The PNGs are a second browser at a different viewport than the 1169px measurement tab. Crop boxes were fitted by eye and by sampling pixels. They show the control. They are not a CSS-to-PNG transform.
+Light hover and pressed button colours are the declared custom properties. The pointer was held on the dark Sign Up button only.
 
 Roobert and Inter are named in the font stacks. This package does not ship the font files.
+
+The featured player shows "This video is either unavailable or not supported in this browser. (Error #4000)". That is the headless player, not a designed empty state.
 
 ## Fonts
 
@@ -103,38 +107,44 @@ Roobert and Inter are named in the font stacks. This package does not ship the f
 | Item | Status |
 |---|---|
 | Colour roles, dark | Captured. [tokens.json](tokens.json), [raw/css-vars.json](raw/css-vars.json) |
-| Colour roles, light | Not captured. `tw-root--theme-light` did not remap tokens, and no public toggle was found |
+| Colour roles, light | Captured. The user-menu switch remapped the tokens. [raw/css-vars-light.json](raw/css-vars-light.json) |
 | Type | Captured. Body, title, heading, label, caption |
 | Spacing, radii, borders, elevation, sizing, breakpoints | Captured from custom properties and computed controls |
 | Motion | Partial. `--timing-short`, `--timing-medium`, `--timing-long` only. Reduced motion was not probed |
-| Button | Captured default, overlay, and disabled. Hover and pressed are declared tokens |
+| Button | Captured default, hover, pressed, overlay, and disabled |
 | Icon button | Captured the search submit |
-| Link | Captured the phone link and the selected tab colour |
-| Text field | Captured search and email, including focus |
-| Text area, checkbox, radio, switch, toast, table | Not present on the signed-out pages |
-| Select | Present as Language and Sort. Open menu not captured |
-| Tabs | Captured on `/directory` |
-| Menu, tooltip | Not captured. Not opened |
-| Dialog | Captured the signup panel. Content notice on the category page was not measured control by control |
+| Link | Captured the phone link colour token and the selected tab colour |
+| Text field | Captured search, email, and focus |
+| Text area | Not present on the signed-out pages |
+| Select | Captured the sort menu (two options) and the language checkbox menu |
+| Checkbox | Captured in the language menu. Not checked |
+| Radio | Not present on the signed-out pages |
+| Switch | Captured the Dark Theme switch and the Hide Labeled Content switch. The labeled switch was not changed |
+| Tabs | Captured Categories and Live Channels on `/directory` |
+| Menu | Captured More Options, the user menu, and Labeled Content |
+| Tooltip | Not opened. Token recorded as Not confirmed on a painted tip |
+| Dialog | Captured login and signup. Content notice on the category page is a banner, not a dialog |
+| Toast | Not present |
 | Card, list row, avatar, badge | Captured on the home and directory |
-| App shell | Captured, desktop and phone |
+| Table | Not present |
+| App shell | Captured, desktop and phone, light and dark |
 | Form validation | Not captured. The form was not submitted. The idle invalid sentence is not the error colour |
 | Empty, loading, error | The player error is visible on the home shot. No app empty state |
-| Search | The field is captured. A results page was not opened |
+| Search | The field is captured, focused, not submitted |
 | Onboarding | The signup wall is the public onboarding. It was not submitted |
-| Signed-in chat and settings | Not captured. Account was not created |
+| Signed-in chat and settings | Not captured. No session. See [login-review.json](login-review.json) |
 
 ## Do and don't
 
-- **Paint the primary action as a purple pill.** Sign Up is `#9147ff`, white text, radius `9000px`, 32px tall. The community banner inverts it to a white pill on purple. See [screenshots/home-dark-default.png](screenshots/home-dark-default.png).
-- **Keep secondary actions on the grey wash.** Log In and the OAuth buttons use `rgba(83, 83, 95, 0.38)`, not a second purple. See [components/crops/button-primary-default.png](components/crops/button-primary-default.png).
-- **Use 8px on fields and 9000px on buttons.** The search and email fields are 8px. Buttons and tags are pills. See [components/crops/field-email-default.png](components/crops/field-email-default.png).
-- **Mark live with the red badge, not the purple.** LIVE is `#eb0400`, 4px radius, 12px type. Purple is the brand, not the live state. See [components/crops/card-live-default.png](components/crops/card-live-default.png).
-- **Do not invent a light theme from the class name.** `tw-root--theme-light` did not change the computed colours on these pages.
+- **Paint the primary action as a purple pill.** Sign Up is `#9147ff`, white text, radius `9000px`, 32px tall. Hover is `#772ce8`. Pressed is `#5c16c5`. See [screenshots/home-dark-default.png](screenshots/home-dark-default.png).
+- **Keep secondary actions on the grey wash.** Log In uses `rgba(83, 83, 95, 0.38)` in dark and `rgba(173, 173, 184, 0.22)` in light. See [screenshots/login-dark-default.png](screenshots/login-dark-default.png).
+- **Use 8px on fields and 9000px on buttons.** Search, email, and the login field are 8px. Buttons and tags are pills. See [screenshots/signup-dark-focus.png](screenshots/signup-dark-focus.png).
+- **Mark live with the red badge, not the purple.** LIVE is `#eb0400`, 4px radius, 12px type. See [screenshots/directory-dark-default.png](screenshots/directory-dark-default.png).
+- **Ship both themes from the user-menu switch.** Light page is `#f7f7f8`. Dark page is `#0e0e10`. The purple pill does not change. See [screenshots/home-light-default.png](screenshots/home-light-default.png).
 
 ## Rebuild
 
-Tokens and the guide were written from [raw/css-vars.json](raw/css-vars.json) and [raw/computed.json](raw/computed.json). The kit builders were not adapted. To regenerate the generated docs:
+Tokens were written from [raw/css-vars.json](raw/css-vars.json), [raw/css-vars-light.json](raw/css-vars-light.json), and [raw/computed.json](raw/computed.json). To regenerate the generated docs from the repo root:
 
 ```bash
 python3 tools/catalog.py design-md twitch

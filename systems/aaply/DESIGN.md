@@ -64,9 +64,9 @@ Good for: Playful product-marketing pages: floating pill nav, Poppins display wi
 
 Captured 2026-11-08, signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured). Themes: light.
 
-A token set and component reference for aaply's public marketing site (https://aaply.app), the website of a mobile-app wireframing tool — "design mobile apps" screens, user flows and exports to Figma. Use it to build a web page or marketing surface that borrows its look: a `#f2f2f2` field, a floating white pill nav bar, pure-black text in Poppins 700, one signature `#e6e51e` lime for primary actions and held states, coral icon accents, and a full-width black footer band. It was captured signed out, in headless Chromium at 1440 x 900 (mobile pages at 390 x 844) on 2026-11-08.
+A token set and component reference for aaply's public marketing site (https://aaply.app), the website of a mobile-app wireframing tool — "design mobile apps" screens, user flows and exports to Figma. Use it to build a web page or marketing surface that borrows its look: a `#f2f2f2` field, a floating white pill nav bar, pure-black text in Poppins 700, one signature `#e6e51e` lime for primary actions and held states, coral icon accents, and a full-width black footer band. It was captured signed out, in headless Chromium at 1440 x 900 (mobile pages at 390 x 844). The first pass was 2026-11-08. The public tree was remapped and the missing pages were captured on 2026-11-21.
 
-It holds 23 screenshots across eight routes — home, /features, /value, /pricing, /reviews, /our-story, /team, /figma_plugin, plus mobile variants and the pricing Yearly/Monthly toggle — and 51 measured components with 90 states and 89 crops. The product itself lives on go.aaply.app, which returned the bare body "Not found" on /login, /sign, /signup and /workspace/demo: the app is recorded as an unreachable boundary, and nothing here claims its functionality (see [components.md](components.md) > Gaps).
+It holds the public routes the live site opens, plus two sitemap-only pages (`/early-program`, `/manual`), at desktop and phone, the pricing Yearly/Monthly toggle, the reviews carousel on slide 2, and the phone menu overlay. Which control opens which page is in [site-tree.md](site-tree.md). The product itself lives on go.aaply.app. Probed again on 2026-11-21: `/login`, `/sign`, `/signup` and `/workspace/demo` each returned HTTP 404 with the body "Not found". The host root returned HTTP 200 but the document is not Aaply, so no app package was invented from it (see [components.md](components.md) > Gaps).
 
 This package contains no aaply code, and none of its artwork has been redrawn. The screenshots, the 3D character renders and the visual system they show belong to aaply ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the logo, characters or brand lime.
 
@@ -119,13 +119,11 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
-- **The app is absent.** go.aaply.app returned "Not found" on every route, so nothing in this package describes the product's own screens, flows or states — only the marketing site that links to it. The footer reads ©2024 and the app host looks retired or down; treat the product's live state as unknown.
+- **The app is absent.** On 2026-11-21 go.aaply.app returned HTTP 404 "Not found" on `/login`, `/sign`, `/signup` and `/workspace/demo`. The host root returned HTTP 200 with a foreign document that does not mention Aaply, so it was not captured. Nothing here describes the product's own screens.
 - **The billing segment's held state** paints its lime fill on a sibling shape, not the text atom — the segments measure transparent in both positions; the lime chip is visible in the screenshots.
 - **Hover-measured values are sparse.** Tilda applies most hovers through `--t396-*hover*` custom properties on the element, many of which read as unchanged at the atom level; the real swaps that were measured (the nav Sign up pill inverting to lime, link grey fades) are in the state rows.
 - **Prices are split across atoms.** A plan price is a `$` atom plus a `.1 /month` numeral atom; the price tokens cite the numeral atom.
 - **Screenshots are 256-colour PNGs** — read exact colours from tokens.json or the raw JSON, never from a screenshot pixel.
-- **`m-burger` was read from the wrong element.** Its selector fell back to the logo image (x=63, coral, no icon), so the Hamburger entry in components.md is the logo, not the menu button. Needs a recapture; the script no longer falls back to any image atom (not run since). `core.palette.coral` now cites only `social-icon` and the logo link, which hold the same value.
 
 ### Do and don't (from README.md)
 

@@ -20,7 +20,7 @@ The home hero sets 80px/80 CoinbaseDisplay (`hero-title`, 657 x 240, fg `light.t
 
 ## Coinbase One, Prime and the rest
 
-`/en-sg/one` repeats the home recipe: an 80px CoinbaseDisplay hero (`one-title`, 657 x 240) with a **blue** "Get Coinbase One" pill (`one-cta`, 235 x 56). `/en-sg/prime` opens wider (`prime-title`, 1361 x 192) with a dark CTA (`prime-cta`, 166 x 56). The remaining routes (business, advanced-trade, developer-platform, usdc, learn, about, careers, blog, legal/privacy) are captured as full-page screenshots; their components share the same CDS chrome.
+`/en-sg/one` repeats the home recipe: an 80px CoinbaseDisplay hero (`one-title`, 657 x 240) with a **blue** "Get Coinbase One" pill (`one-cta`, 235 x 56). `/en-sg/prime` opens wider (`prime-title`, 1361 x 192) with a dark CTA (`prime-cta`, 166 x 56). The remaining routes (business, advanced-trade, developer-platform, usdc, learn, about, careers, blog, legal/privacy, and the 2026-11-21 tree pages) are captured as screenshots. Their components share the same CDS chrome. `/en-sg/agents` and `/derivatives` paint a dark page, not the light home surface. The control map is [site-tree.md](site-tree.md).
 
 ## The footer band
 

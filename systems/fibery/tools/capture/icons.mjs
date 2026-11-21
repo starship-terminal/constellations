@@ -1,18 +1,16 @@
-// Collects every distinct inline <svg> icon on Fibery's public pages into icons/ and writes icons/INDEX.tsv.
+// Collects every distinct inline <svg> icon on Gauth's public pages into icons/ and writes icons/INDEX.tsv.
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node icons.mjs
 //
-// Fibery's icons carry no name in the DOM, so a file is named from icon-names.tsv (geometry hash -> name)
+// Gauth's icons carry no name in the DOM, so a file is named from icon-names.tsv (geometry hash -> name)
 // when the hash is listed there, else from the aria-label or text of the button or link it sits in, else
 // from its CSS-module class, else `icon-<hash>`. Files whose geometry matches are one icon, listed once
 // with every page and place it was seen. Colour is kept as `currentColor` wherever the computed fill or
 // stroke equals the svg's text colour, so each icon recolours from CSS `color` the way it does on the site.
-// Public only: the marketing pages, the header dropdown and mobile drawer (local UI toggles, opened and
-// harvested), fibery.io/sign-up and fibery.io/login/; no link is followed off a page, no form is sent.
 // Adapted from the Coursera kit's icons.mjs.
 import crypto from 'crypto';
 import fs from 'fs';
-import { M, BASE, SIGNUP_URL, LOGIN_URL, UA_MOBILE, chromium, UA, closePromo, patch } from './public/lib.mjs';
+import { M, BASE, chromium, UA, closePromo, openStory } from './public/lib.mjs'; // the signed-in route: swap in its own page opener
 
 const OUT = new URL('../../icons/', import.meta.url).pathname;
 fs.mkdirSync(OUT, { recursive: true });
@@ -79,8 +77,8 @@ async function scrollAll(p, tag) {
   for (let y = 0; y < h; y += 700) { await p.evaluate((y) => scrollTo(0, y), y); await wait(p, 250); await grab(p, tag); }
   await p.evaluate(() => scrollTo(0, 0)); await wait(p, 400);
 }
-async function open(p, url, w = 6500) {
-  await p.goto(url.startsWith('http') ? url : BASE + url, { waitUntil: 'load', timeout: 90000 }); await wait(p, w);
+async function open(p, path, w = 6500) {
+  await p.goto(BASE + path, { waitUntil: 'load', timeout: 90000 }); await wait(p, w);
 }
 // A page that fails is recorded, and a run with any failure leaves the committed icons alone.
 const failed = [];
@@ -88,39 +86,42 @@ async function tryDo(label, fn) { try { await fn(); } catch (e) { failed.push(la
 
 const b = await chromium.launch();
 const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA });
-await patch(ctx);
 const p = await ctx.newPage();
 
 await open(p, '/');
+await grab(p, 'home (promo dialog)');
 await closePromo(p);
 await scrollAll(p, 'home');
-for (const [path, tag] of [['/pricing', 'pricing'], ['/templates', 'templates'], ['/features', 'features'], ['/customer-stories', 'stories'], ['/blog/', 'blog'], ['/about-us', 'about'], ['/download', 'download']]) {
+for (const [path, tag] of [['/course/science', 'academy'], ['/course/math', 'academy'], ['/course/my', 'academy'], ['/news', 'news']]) {
   await open(p, path); await closePromo(p); await scrollAll(p, tag);
 }
-// The header dropdowns and the mobile drawer are local UI toggles: opened to
-// harvest their icons, nothing followed.
-await tryDo('mega menu', async () => {
-  await open(p, '/'); await closePromo(p);
-  for (const name of ['Solutions', 'Platform', 'Support']) {
-    const item = p.locator(M('HeaderMenuItem_root')).filter({ hasText: new RegExp(`^\\s*${name}`) }).first();
-    if (!(await item.count())) continue;
-    await item.hover().catch(() => {});
-    await wait(p, 900);
-    await grab(p, `menu (${name.toLowerCase()})`);
-  }
+await tryDo('create dialog', async () => { await open(p, '/course/my'); await closePromo(p); await p.locator(M('catalog_createButton')).first().click(); await wait(p, 2000); await grab(p, 'academy (create dialog)'); });
+await open(p, '/course/math/algebra-1?unit=real-numbers-and-sets'); await closePromo(p); await grab(p, 'unit');
+await tryDo('science lesson', async () => {
+  await open(p, '/course/science/how-things-work-1/learn?entry_source=start&from=science', 7000);
+  await grab(p, 'lesson-science (audio dialog)');
+  const nn = p.getByRole('button', { name: 'Not now' }); if (await nn.count()) await nn.click();
+  await wait(p, 1500); await grab(p, 'lesson-science');
+  await p.getByRole('button', { name: 'Settings' }).click(); await wait(p, 1000); await grab(p, 'lesson-science (settings)');
+  await p.keyboard.press('Escape');
+  const pz = p.getByRole('button', { name: 'Pause' }); if (await pz.count()) await pz.click();
+  await p.locator('[aria-label="Ask Tutor"]').first().click(); await wait(p, 1200); await grab(p, 'lesson-science (ask tutor)');
 });
-await tryDo('mobile drawer', async () => {
-  const mctx = await b.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true });
-  await patch(mctx);
-  const mp = await mctx.newPage();
-  await open(mp, '/'); await closePromo(mp);
-  const ham = mp.locator(M('HeaderMainMenu_sandwichBtn')).filter({ visible: true }).first();
-  if (await ham.count()) { await ham.click().catch(() => {}); await wait(mp, 900); }
-  await grab(mp, 'mobile drawer');
-  await mctx.close();
+await tryDo('math lesson', async () => {
+  await open(p, '/course/math/algebra-1/fundamentals-of-set-theory/learn?entry_source=start&return_to=course_detail', 8000);
+  const c = p.getByRole('button', { name: 'Continue', exact: true }); if (await c.count()) { await c.click(); await wait(p, 3000); }
+  await grab(p, 'lesson-math');
+  await p.getByRole('button', { name: 'Open lesson chapters' }).click(); await wait(p, 1000); await grab(p, 'lesson-math (chapters)');
 });
-await tryDo('sign-up', async () => { await open(p, SIGNUP_URL, 7000); await grab(p, 'sign-up'); });
-await tryDo('login', async () => { await open(p, LOGIN_URL, 7000); await grab(p, 'login'); });
+await tryDo('history lesson', async () => {
+  await open(p, '/course/history/crossing-the-ocean-wall/learn?entry_source=start&from=history', 8000);
+  await grab(p, 'lesson-history');
+  await p.locator(M('lesson_chapterMenuButton')).first().click(); await wait(p, 1000); await grab(p, 'lesson-history (chapters)');
+});
+await tryDo('atlas', async () => {
+  await open(p, '/atlas'); await closePromo(p); await scrollAll(p, 'atlas');
+  await openStory(p); await grab(p, 'atlas story');
+});
 await b.close();
 
 // The old set is replaced only after a complete collection, so a run that dies early or loses a page

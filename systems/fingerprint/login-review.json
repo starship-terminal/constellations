@@ -1,0 +1,46 @@
+{
+  "product": "Fingerprint",
+  "signed_in": false,
+  "captured_at": "2026-11-21",
+  "walls": [
+    {
+      "url": "https://fingerprint.com/login/",
+      "status": 404,
+      "what_loaded": "The marketing 404 page. Title: Fingerprint Pro - Not found. The public header and footer still render. There is no login form on this URL.",
+      "stopped": true,
+      "why": "Known missing page. The real login lives on the dashboard host."
+    },
+    {
+      "url": "https://dashboard.fingerprint.com/login",
+      "status": 200,
+      "title": "Log In – Fingerprint",
+      "viewport": { "desktop": "1440x900", "phone": "390x844" },
+      "what_loaded": "A Log In dialog over a blurred identification table. Controls, in order: Sign up link, Continue with Google, Continue with GitHub, Continue with Microsoft, Continue with email. Continue with email reveals Email and Password fields, a show-password icon, a Log In button, and Forgot password. None of those were used to authenticate.",
+      "clicked": ["Continue with email, only to record that the email and password fields appear. No email or password was typed. The form was not submitted."],
+      "not_clicked": ["Continue with Google", "Continue with GitHub", "Continue with Microsoft", "Log In", "Forgot password", "Sign up"],
+      "stopped": true,
+      "why": "Auth wall. The signed-in app was not entered."
+    },
+    {
+      "url": "https://dashboard.fingerprint.com/signup",
+      "status": 200,
+      "title": "Sign Up – Fingerprint",
+      "what_loaded": "A Sign up dialog with Log in, Continue with Google, and Continue with GitHub. The email step was still loading (Please wait) when the screenshot was taken. No account was created.",
+      "stopped": true,
+      "why": "Signup wall. Branch stopped."
+    },
+    {
+      "url": "https://docs.fingerprint.com/ Log In",
+      "href": "https://dashboard.fingerprint.com/mintlify_login",
+      "stopped": true,
+      "why": "Docs header Log In points at the dashboard login. Not followed past the wall."
+    }
+  ],
+  "gaps": [
+    "signed-in app was not captured",
+    "unread token values are Not captured",
+    "onboarding was not filled",
+    "no email, password, or code was entered",
+    "Google, GitHub, Microsoft, and SSO were not clicked"
+  ]
+}

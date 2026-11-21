@@ -1,67 +1,108 @@
-# Components
+# Super components
 
-Measured on 2026-11-19 from a T3 preview tab at 1169 by 731, devicePixelRatio 2. No crops: `preview_snapshot` returned "The browser is not producing screenshot frames".
+Measured on https://super.so/ and the login wall at https://app.super.so/login on 2026-11-21, signed out, in headless Chromium. Desktop 1440 x 900 at 1x. Phone drawer at 390 x 844 at 2x. Colours below are computed styles. Crops are in [components/crops/](components/crops). A row marked wrong node was a selector miss: the crop exists and must not be used as that component.
 
-## Button
+## Navbar
 
-Nav CTA "Get started free" on https://super.so/: background `#ffbe3c`, text `#111111`, 16px Beausite weight 500, padding `10px 16px`, radius `8px`, height 42px, no shadow.
+The marketing shell. Class `.super-navbar`. 1440 x 80. Background `rgba(255, 255, 255, 0.85)`, which is [light.navbar](tokens.json). Text `rgb(55, 53, 47)` (`core.color.default`). Font 16px.
 
-Hero CTA "Get started for free": same colours, padding `13px 16px 14px`, radius `8px`, height 53px, line-height 25.6px, shadow `rgba(18, 18, 32, 0.05) 0px 12px 40px -3px`.
+| Piece | Crop | Size | Fill | Text | Radius | States |
+|---|---|---|---|---|---|---|
+| Bar | [navbar-default](components/crops/navbar-default.png) | 1440 x 80 | light.navbar | core.color.default | 0 | default |
+| Logo | [logo-default](components/crops/logo-default.png) | 162 x 80 | transparent | core.color.default | 0 | default. Links to `/`. |
+| Link | [nav-link-default](components/crops/nav-link-default.png) | 99.77 x 80 | transparent | light.text | 8px | hover, focus-visible and pressed painted no change |
+| Menu control | [nav-menu-default](components/crops/nav-menu-default.png) | 99.97 x 80 | transparent | core.color.default | 8px | opened paints the same control. The panel is the screenshot, not this crop |
+| Sign in | [nav-signin-default](components/crops/nav-signin-default.png) | 84.81 x 44 | #ffffff | rgb(77, 84, 92) | 8px | hover and pressed: fill rgb(249, 249, 248), text light.text. Focus-visible: no change. Opens the login wall. Not followed past the wall |
+| Get started free | [nav-cta-default](components/crops/nav-cta-default.png) | 152.22 x 41 | light.accent | #111111 | radius.md | hover, focus-visible and pressed painted no change. Padding 10px 16px. Weight 500. Opens the signup wall |
 
-Pricing "Start for free" on the Free card: white background, text `#4d545c`, border `1px solid #f2f4f5`, radius `8px`, padding `13px 16px 14px`, height 53px, weight 500.
+Phone hamburger is [m-menu-button-default](components/crops/m-menu-button-default.png), 32 x 80, a `div.super-navbar__menu-open`. The drawer is below.
 
-Pricing "Start for free" on Personal and Pro: background `#fff8eb`, text `#262a2e`, border `1px solid #ffbe3d`, radius `6px`, same padding and height.
+## Menus
 
-"Get started today for free": background `#111111`, text `#ffffff`, radius `8px`, height 53px, weight 500.
+Use cases and Features open panels. The panel selector `.super-navbar .notion-dropdown__menu` clipped outside the image, so there is no panel crop. The open panel is [home-light-use-cases-menu.png](screenshots/home-light-use-cases-menu.png) and [home-light-features-menu.png](screenshots/home-light-features-menu.png).
 
-Login "Log in": background `#ffb224`, text `#1b1b18`, border `1px solid #ffb224`, radius `8px`, height 44px, padding `0 16px`, 14px weight 400, width 320px.
+| Piece | Crop | Size | Notes |
+|---|---|---|---|
+| Use cases item | [nav-dropdown-item-default](components/crops/nav-dropdown-item-default.png) | 298 x 48 | `a[href="/use-cases/website"]`. Text core.color.default, 16px, radius 8px. Hover fill rgb(242, 244, 245). The JSON marks the panel missing. The item crop is the link, not the panel |
 
-Login "Sign in with Google" and "Sign in with Apple": background `#151514`, text `#eeeeed`, border `1px solid #2d2d2a`, radius `8px`, height 44px. Passkey uses background `#1a1a19` and the same border.
+## Hero
 
-Hover, pressed, loading and disabled were not shown.
+| Piece | Crop | Size | Type | Fill |
+|---|---|---|---|---|
+| Title | [hero-title-default](components/crops/hero-title-default.png) | 1088 x 131.44 | core.typography.display, 56px / 600 / 62.72px, light.text | transparent |
+| Get started for free | [hero-cta-default](components/crops/hero-cta-default.png) | 177.36 x 52.59 | 16px / 500 / 25.6px, #111111 | light.accent. Hover and pressed: light.accentHover. Focus-visible: no change. Radius 8px. Shadow `rgba(18, 18, 32, 0.05) 0 12px 40px -3px` |
+| Load more | [load-more-default](components/crops/load-more-default.png) | 117.98 x 31 | 14px, rgb(120, 118, 115) | transparent. Hover and pressed fill rgb(239, 239, 239). Radius 9999px |
 
-## Link
+The yellow announcement pill is visible on [home-light-default.png](screenshots/home-light-default.png). The measurement selector matched the page, 1440 x 20019, so [announcement-default.png](components/crops/announcement-default.png) is not the pill. Pill colour, radius and type are Not captured.
 
-Nav item: 16px weight 400, colour `#262a2e`, padding `16px 12px`, radius `8px`, gap 4px, height 80px inside the bar.
+## Footer
 
-Sign in: background `#ffffff`, text `#4d545c`, border `1px solid #f2f4f5`, radius `8px`, padding `10px 16px`, weight 500, height 44px.
+[footer-default](components/crops/footer-default.png) is 1440 x 451, fill light.footer, text light.footerText. [footer-link](components/crops/footer-link-default.png) is 140 x 48, white, and hover and focus-visible painted no colour change.
 
-Footer list link: white at opacity 0.7, 200ms ease-in-out opacity, hover opacity 0.85 (declared, not hovered).
+## Templates
 
-Auth "Sign up" and "Forgot password?": `#7e7d77`, 14px weight 300 and 12px weight 300.
+The page is [templates-light-default.png](screenshots/templates-light-default.png). The big title is a Notion heading and was not the node measured as page-title.
 
-## Text field
+| Piece | Crop | What it actually is |
+|---|---|---|
+| page-title | [page-title-default](components/crops/page-title-default.png) | Wrong node. 115.81 x 48, 24px, rgb(179, 186, 194). That is the grey "Templates" eyebrow, not the painted title |
+| filter-button | [filter-button-default](components/crops/filter-button-default.png) | 104.42 x 36, 22px, light.text. Hover, focus-visible and pressed painted no change |
+| filter-menu | [filter-menu-default](components/crops/filter-menu-default.png) | 164.66 x 27.59, 14px, radius 6px. The "any site" sentence control |
+| search-field | [search-field-default](components/crops/search-field-default.png) | 226 x 39.59, white, 14px, light.text, radius 10px. Focused and filled with the word portfolio, then cleared. No colour change. Not submitted |
+| template-card | [template-card-default](components/crops/template-card-default.png) | Wrong node. 160.22 x 41. That is a Free badge, not a template card |
+| category-row | [category-row-default](components/crops/category-row-default.png) | 0 x 0. The data-tab row was not visible to the crop. Hover missing |
 
-Login email and password sit in `.input.input-focus-within.h-11.px-4`: background `#151514`, border `1px solid #2d2d2a`, radius `8px`, height 44px, padding `0 16px`, width 320px on login and 380px on signup. Input text `#eeeeed`, 14px weight 400. Placeholder `#727169`.
+## Pricing
 
-Declared focus, not forced on a live element: `.input-focus-within:focus-within:is(.dark *)` sets border `rgb(255, 178, 36)` and ring `#4d2e00`. The light rule sets border `rgb(255, 190, 61)` and ring `#ffe0b3`.
+Painted title [pricing-title-default](components/crops/pricing-title-default.png) is 777.48 x 69.34, core.typography.title, 57.6px / 600 / 63.36px, light.text.
 
-Error, disabled and filled states were not shown. The fields were left empty.
+[pricing-cta-default](components/crops/pricing-cta-default.png) is the wrong node: 160.22 x 41, transparent, the same size as the Free badge. The plan buttons ("Start for free") are on [pricing-light-default.png](screenshots/pricing-light-default.png) and were not measured. Their fill, radius and type are Not captured.
 
-## Checkbox
+## Use case
 
-Signup "Agree to terms of service" is a native checkbox, 18 by 18, background `#ffffff`, border `1px solid #6b7280`. It was not checked. Marketing pages had no checkbox.
+| Piece | Crop | Size | Notes |
+|---|---|---|---|
+| Title | [usecase-title-default](components/crops/usecase-title-default.png) | 520 x 182.25 | 54.4px / 600, light.text. A painted heading, not tokenised as its own style |
+| Start with this website | [usecase-cta-default](components/crops/usecase-cta-default.png) | 198.66 x 45.59 | Fill rgb(255, 190, 61), text #111111, 16px, radius 8px. Hover, focus-visible and pressed painted no change. Opens the signup wall |
+| Mono chip | [demo-chip-default](components/crops/demo-chip-default.png) | 54.34 x 27 | White, #111111, 12px, radius 999px. Hover painted no change. Recolours the demo in place |
 
-## Card
+## Feature and blog
 
-Pricing plan cards are 304px wide, radius 16px, white, shadow `rgba(0, 0, 0, 0.1) 0px 0px 26px -3px`. The inner block pads 24px. Personal adds border `1px solid #ffbe3d` and ring `rgba(254, 189, 60, 0.16) 0px 0px 0px 4px`.
+[feature-title-default](components/crops/feature-title-default.png) is 708 x 132.69, core.typography.title. [body-text-default](components/crops/body-text-default.png) is 708 x 33.52, 18px, rgb(102, 112, 122).
 
-Quote cards on pricing: background `#fdfdfc`, border `1px solid #f2f1f1`, radius 16px, padding `20px 24px 24px`.
+[blog-title-default](components/crops/blog-title-default.png) is the grey eyebrow, 53 x 48, 24px, rgb(179, 186, 194), not the article title. [blog-card-default](components/crops/blog-card-default.png) is a 341.34 x 311.2 transparent wrapper. Hover painted no change.
 
-Home gallery cards: background `#33383d`, text white, radius 8px, about 278 by 319.
+## Login wall
 
-## Badge
+Observed only. Nothing typed. Google, Apple and passkey were not clicked. The wall is [login-light-wall.png](screenshots/login-light-wall.png).
 
-Home gallery pill "Directory": background `#262a2e`, text `#ccd1d6`, padding `4px 8px`, radius 30px, height 26px. The stylesheet also declares `.notion-pill` at radius 3px and 0.875rem. The painted pill used 30px.
+| Piece | Crop | Size | Notes |
+|---|---|---|---|
+| Email | [login-email-default](components/crops/login-email-default.png) | 286 x 20 | The text node, not the field chrome. 14px, rgb(27, 27, 24). Focused, empty |
+| Password | [login-password-default](components/crops/login-password-default.png) | 286 x 20 | Same. Focused, empty. No password submitted |
+| Log in | [login-submit-default](components/crops/login-submit-default.png) | 320 x 44 | Fill rgb(255, 190, 61), text rgb(27, 27, 24), 14px, radius 8px. Hover fill rgb(255, 174, 0). Not clicked as a submit |
+| Google | [login-google-default](components/crops/login-google-default.png) | 320 x 44 | Fill rgb(253, 253, 252), text rgb(27, 27, 24), radius 8px. Not clicked |
+| Apple | [login-apple-default](components/crops/login-apple-default.png) | 320 x 44 | Same fill. Not clicked |
+| Passkey | [login-passkey-default](components/crops/login-passkey-default.png) | 320 x 44 | Same fill. Not clicked |
 
-## Billing track
+## Phone drawer
 
-Three links inside a callout: background `#ededed`, border `1px solid #e5e5e5`, radius 12px, shadow `rgba(0, 0, 0, 0.1) 0px 0px 26px -3px`. Each link pads `8px 12px`, radius 8px. Monthly is painted white. Yearly and Multi-pack are transparent with text `#66707a`.
+[m-drawer-opened](components/crops/m-drawer-opened.png) is 390 x 765, white, text core.color.default. [m-drawer-item-default](components/crops/m-drawer-item-default.png) is 358 x 37, 16px, radius 6px. The open drawer screenshot is [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png).
+
+## Shared values
+
+- Yellow marketing CTA: light.accent `#ffbe3c`, text `#111111`, radius 8px, 16px weight 500. Hero hover is light.accentHover `#fbb43c`. The navbar CTA did not change on hover.
+- Login submit is a close yellow, `rgb(255, 190, 61)`, and its hover is `rgb(255, 174, 0)`. That hover is not tokenised.
+- Sign-in ghost: white, `rgb(77, 84, 92)`, radius 8px. Hover fill `rgb(249, 249, 248)`.
+- Page ground is light.page. Footer is light.footer with light.footerText.
+- Focus-visible painted no ring on the controls that were focused.
 
 ## Gaps
 
-- Hover, pressed, loading, disabled and error were not shown.
-- Text area, select, radio, switch, tabs, menu, tooltip, dialog, toast and avatar were not on the pages opened.
-- The compare-plans table was visible. Its cells were not measured one by one.
-- Signed-in app chrome was not entered.
-- No crops. Screenshot frames failed.
+- Navbar dropdown panel: selector missed. Screenshot only.
+- Announcement pill: selector matched the page. Not captured as a component.
+- Template card, pricing plan button, category row, templates and blog eyebrows: wrong or empty nodes. Do not read those crops as the named component.
+- Login field chrome (the white rounded input) was not the measured node. The 286 x 20 crop is the inner text.
+- No dialog, toast, checkbox, radio, switch, tabs, tooltip, table, avatar, or badge component was measured. The Free pill on template cards is visible and was the wrong template-card node.
+- Dark theme: `html.theme-dark` is declared and was not switched. Not captured.
+- Signed-in app, editor, billing, validation errors, empty states, loading states: behind the login wall. Not captured.

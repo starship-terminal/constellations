@@ -3,101 +3,76 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Scape"
-description: "Student-accommodation marketing: cream page #fef5f0, pink #ec6ce7 announcement bar and wordmark, Grotzec Condensed uppercase display, Visuelt body, pill buttons, and a room-search grid"
+description: "Student housing marketing: cream page, pink logo, condensed uppercase display, 40px pills, 4px filter chips"
+omitted:
+  - section: "components"
+    reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
   primary: "#ec6ce7"
   neutral: "#fef5f0"
   surface: "#fefaf7"
-  on-surface: "#000000"
-  on-surface-variant: "rgba(0, 0, 0, 0.5)"
+  on-surface: "#212529"
+  on-surface-variant: "#2e2e30"
   outline: "rgba(0, 0, 0, 0.2)"
-  bg-page: "#fef5f0"
-  bg-surface: "#fefaf7"
-  bg-footer: "#2e2e30"
-  bg-banner: "#ec6ce7"
-  bg-overlay: "rgba(0, 0, 0, 0.8)"
-  bg-header-solid: "#fef5f0"
-  bg-header-transparent: "rgba(0, 0, 0, 0.16)"
-  text-primary: "#000000"
-  text-inverse: "#fef5f0"
-  text-muted: "rgba(0, 0, 0, 0.5)"
-  text-heading-on-photo: "#fef5f0"
-  text-banner: "rgb(33, 37, 41)"
-  accent-default: "#ec6ce7"
-  accent-logo: "#ec6ce7"
+  background-page: "#fef5f0"
+  background-surface: "#fefaf7"
+  background-raised: "#ffffff"
+  background-overlay: "rgba(0, 0, 0, 0.16)"
+  background-scrim: "rgba(0, 0, 0, 0.5)"
+  text-primary: "#212529"
+  text-secondary: "#2e2e30"
+  text-muted: "#2e2e30"
+  text-onAccent: "#fef5f0"
+  text-link: "#ec6ce7"
+  text-onDark: "#fef5f0"
   border-default: "rgba(0, 0, 0, 0.2)"
   border-strong: "#000000"
-  border-focus: "#c1b1a0"
-  button-primary-bg: "transparent"
-  button-primary-text: "#000000"
-  button-primary-border: "#000000"
-  button-secondary-bg: "#000000"
-  button-secondary-text: "#fef5f0"
-  button-secondary-border: "#000000"
-  button-secondary-light-bg: "#fef5f0"
-  button-secondary-light-text: "#000000"
-  button-tab-active-bg: "#000000"
-  button-tab-active-text: "#fef5f0"
-  component-button-primary-background: "transparent"
-  component-button-primary-text: "#000000"
-  component-button-secondary-background: "#000000"
-  component-button-secondary-text: "#fef5f0"
-  component-field-text: "#000000"
+  border-focus: "#000000"
+  accent-default: "#ec6ce7"
+  status-success: "#70f085"
+  status-warning: "#ff6110"
+  status-danger: "#ea5b53"
+  status-info: "#0f5bec"
+  action-primary-background: "#fef5f0"
+  action-primary-text: "#000000"
+  action-secondary-background: "#000000"
+  action-secondary-text: "#fef5f0"
 typography:
   display:
     fontFamily: "GrotzecCondensed"
-    fontSize: "64px"
+    fontSize: "160px"
     fontWeight: 700
-    lineHeight: 0.84
+    lineHeight: "134.4px"
     letterSpacing: "0px"
   heading:
     fontFamily: "GrotzecCondensed"
-    fontSize: "48px"
+    fontSize: "80px"
     fontWeight: 700
-    lineHeight: 0.84
-    letterSpacing: "0px"
-  title:
-    fontFamily: "GrotzecCondensed"
-    fontSize: "40px"
-    fontWeight: 700
-    lineHeight: 0.84
+    lineHeight: "67.2px"
     letterSpacing: "0px"
   body:
     fontFamily: "Visuelt"
     fontSize: "16px"
     fontWeight: 400
-    lineHeight: 1.5
+    lineHeight: "24px"
+    letterSpacing: "0px"
+  label:
+    fontFamily: "Visuelt"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "14px"
     letterSpacing: "0px"
   nav:
     fontFamily: "Visuelt"
     fontSize: "16px"
     fontWeight: 400
-    lineHeight: 1
-    letterSpacing: "0px"
-  button:
-    fontFamily: "Visuelt"
-    fontSize: "14px"
-    fontWeight: 400
-    lineHeight: 1
-    letterSpacing: "0px"
-  small:
-    fontFamily: "Visuelt"
-    fontSize: "14px"
-    fontWeight: 400
-    lineHeight: 1.2
-    letterSpacing: "0px"
-  badge:
-    fontFamily: "Visuelt"
-    fontSize: "10px"
-    fontWeight: 500
-    lineHeight: 1
+    lineHeight: "16px"
     letterSpacing: "0px"
 rounded:
-  pill: "100px"
-  card: "8px"
-  control: "4px"
-  cookie: "2px"
   none: "0px"
+  tab: "4px"
+  field: "4px"
+  pill: "100px"
 spacing:
   xs: "8px"
   s: "12px"
@@ -106,77 +81,46 @@ spacing:
   l: "32px"
   xl: "48px"
   "2xl": "64px"
-  x5: "40px"
-  x7: "56px"
-  x9: "72px"
-  x10: "80px"
-  gutter: "8px"
-  row-margin-desktop: "32px"
-  module-small-base: "32px"
-  module-large: "104px"
-  module-top-base: "40px"
-  banner: "41px"
-  header-mobile: "56px"
-  header-desktop: "72px"
-  icon: "24px"
-  button-height-base: "50px"
-  button-height-desktop: "40px"
-components:
-  button-primary:
-    backgroundColor: "{colors.component-button-primary-background}"
-    textColor: "{colors.component-button-primary-text}"
-    rounded: "100px"
-    height: "40px"
-  button-secondary:
-    backgroundColor: "{colors.component-button-secondary-background}"
-    textColor: "{colors.component-button-secondary-text}"
-    rounded: "100px"
-  field:
-    textColor: "{colors.component-field-text}"
-    rounded: "4px"
 ---
 
 # Scape
 
 Generated from [tokens.json](tokens.json) and [README.md](README.md) by the design-systems catalog tool. Do not edit this file: change the tokens through the package's builders, then run `make design-md` at the repository root.
 
-It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 9 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
+It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 5 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
 
 ## Overview
 
-Good for: Student-accommodation marketing: cream page #fef5f0, pink #ec6ce7 announcement bar and wordmark, Grotzec Condensed uppercase display, Visuelt body, pill buttons, and a room-search grid.
+Good for: Student housing marketing: cream page, pink logo, condensed uppercase display, 40px pills, 4px filter chips.
 
-Captured 2026-11-19, signed out. Public marketing only. Booking, payment, phone and the contact form were not entered. Cookie consent was dismissed with Reject All.. Themes: light.
+Captured 2026-11-21, signed out (public marketing only); CookieYes hidden, not accepted; login wall at /my-account/ not entered. Themes: light.
 
-Scape is the UK student-accommodation marketing site at [www.scape.com](https://www.scape.com/). `scape.com` redirects there. This package covers the public signed-out site on 19 November 2026: home, London, room search, FAQ, contact, blog, company and privacy. Desktop is 1440x900. Phone is 390x844 at 2x. One light theme. No account was used.
+A token set and component reference for Scape UK, the student-housing site at scape.com. Captured from the public marketing surface on 2026-11-21, signed out, in headless Chromium at 1440×900 and 390×844. One light theme. CookieYes was hidden, not accepted. No room was booked and no account was created. The login wall at `/my-account/` was recorded and not entered.
+
+The reason Scape is worth a capture: a cream page (`#fef5f0`, named `--scape-white`) carries black pills and a pink logo (`#ec6ce7`); display type is Grotzec Condensed, uppercase and tight; body type is Visuelt; buttons are 40px pills; filter chips are 4px; the header over the hero is a 16% black veil.
 
 ## Colors
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
 - **primary (#ec6ce7):** `light.accent.default`
-- **neutral (#fef5f0):** `light.bg.page`
-- **surface (#fefaf7):** `light.bg.surface`
-- **on-surface (#000000):** `light.text.primary`
-- **on-surface-variant (rgba(0, 0, 0, 0.5)):** `light.text.muted`
+- **neutral (#fef5f0):** `light.background.page`
+- **surface (#fefaf7):** `light.background.surface`
+- **on-surface (#212529):** `light.text.primary`
+- **on-surface-variant (#2e2e30):** `light.text.muted`
 - **outline (rgba(0, 0, 0, 0.2)):** `light.border.default`
 
 ## Typography
 
-8 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: GrotzecCondensed, Visuelt.
+5 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: GrotzecCondensed, Visuelt.
 
 ### Fonts (from README.md)
 
-| Family | Use | Licence |
-|---|---|---|
-| GrotzecCondensed | Display headings, uppercase | Trial woff on the site (`/fonts/GrotzecCondensedTrial-Bold.woff`). Not shipped here. |
-| Visuelt | Body, nav, buttons, UI | Site woff2 (`/fonts/Visuelt-Regular.woff2`, Medium, Bold). Not shipped here. |
-| Inter | Second family in the display stack | Named in `.u-font-secondary` and `--richtext-heading-font-family`. Not loaded as a file on the home page. |
-| Arial, sans-serif | Body fallback | System. |
+Visuelt (400, 500, 700) is the text face. Grotzec Condensed (700) is the display face. Both are proprietary. The style guide falls back to Arial. Inter is named as a second family on the display stack and was not loaded from a captured `@font-face`.
 
 ## Layout
 
-Spacing from `core.spacing`: `xs` 8px, `s` 12px, `base` 16px, `m` 24px, `l` 32px, `xl` 48px, `2xl` 64px, `x5` 40px, `x7` 56px, `x9` 72px, `x10` 80px, `gutter` 8px, `row-margin-desktop` 32px, `module-small-base` 32px, `module-large` 104px, `module-top-base` 40px, `banner` 41px, `header-mobile` 56px, `header-desktop` 72px, `icon` 24px, `button-height-base` 50px, `button-height-desktop` 40px.
+Spacing from `core.space`: `xs` 8px, `s` 12px, `base` 16px, `m` 24px, `l` 32px, `xl` 48px, `2xl` 64px.
 
 ## Elevation & Depth
 
@@ -184,18 +128,18 @@ Shadows, resolved to CSS:
 
 | Token | box-shadow |
 |---|---|
-| `light.shadow.card` | `0px 0px 16px 0px rgba(0, 0, 0, 0.12)` |
-| `light.shadow.card-hover` | `0px 0px 8px 0px rgba(0, 0, 0, 0.32)` |
+| `core.shadow.card` | `0px 0px 16px rgba(0,0,0,.12)` |
+| `core.shadow.cardHover` | `0px 0px 8px rgba(0,0,0,.32)` |
 
 ## Shapes
 
-Corner radii from `core.radius`: `pill` 100px, `card` 8px, `control` 4px, `cookie` 2px, `none` 0px.
+Corner radii from `core.radius`: `none` 0px, `tab` 4px, `field` 4px, `pill` 100px.
 
 ## Components
 
-3 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
+No component tokens map onto DESIGN.md's component properties.
 
-Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
+Measured states, crops and the full inventory: [components.md](components.md), [style-guide.html](style-guide.html).
 
 ## Do's and Don'ts
 
@@ -207,20 +151,20 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-Screenshots are 256-colour PNGs. Photographs band. Read colour from [tokens.json](tokens.json), not from a photo crop.
-
-`--header-height` is 56px in the base `:root` rule and 72px computed at desktop. `--button-height` is 50px in the base rule and the Find a room control computed at 40px. Both are recorded. The desktop computed value is the one the specimens use.
-
-`rgb(33, 37, 41)` on the banner and some headings is the Bootstrap reboot body colour. It is not a `--scape-*` token.
-
-GrotzecCondensed is loaded from `GrotzecCondensedTrial-Bold.woff`. The style guide falls back to Inter and Impact because the font file is not shipped.
-
-The contact form's fields paint inside a HubSpot frame. The modal shell was measured. The inner control pixels were not.
+- `--scape-white` is the cream page (`#fef5f0`), not paper white. Paper white is `--white` (`#ffffff`).
+- Body text is `#212529`. That colour is painted, and it appears once in the stylesheet. It is not a `--scape-*` custom property.
+- `--link-color` aliases `--primary` (black). The footer logo link painted pink. The link role follows the painted colour.
+- Status colours are palette steps. No success, warning, danger or info message was on the captured pages.
+- Hover and pressed fills for the primary pill are declared transparent, and a synthetic mouseenter did not change the computed fill.
+- Screenshots are 256-colour. Read colours from tokens.json.
+- The booking page body stayed on a loading line. That is not a finished cart.
+- Phone numbers, street addresses and map pins appear on the live contact page. They are not copied into this package. If a screenshot still shows one, treat that crop as needing a mask before reuse.
 
 ### Do and don't (from README.md)
 
-1. **Keep the page cream and the accent pink.** The page is `#fef5f0` and the wordmark and announcement bar are `#ec6ce7`. See [home-light-default.png](screenshots/home-light-default.png).
-2. **Set display type in Grotzec Condensed, uppercase, with a tight line height.** Headings use line-height 0.84. See [faq-light-default.png](screenshots/faq-light-default.png).
-3. **Use pill buttons.** Primary is an outline. Secondary is black fill with cream type. Radius is 100px. See [rooms-light-sort-open.png](screenshots/rooms-light-sort-open.png).
-4. **Keep search cards flat.** Room images have no radius. The shadow token belongs to city cards, not the search hit. See [rooms-light-default.png](screenshots/rooms-light-default.png).
-5. **Do not invent a dark theme.** The site has coloured sections (dark green, dark red, dark purple) and no `prefers-color-scheme` switch.
+- **Do set the page in cream, not paper white.** The ground is `#fef5f0`. See [screenshots/home-light-default.png](screenshots/home-light-default.png).
+- **Do set display lines in condensed uppercase.** The hero is Grotzec Condensed, 700, uppercase, line-height tighter than the size. See the same screenshot.
+- **Do make the primary action a 40px pill.** FIND A ROOM is cream on the dark header, black text, 100px radius. See [screenshots/home-light-default.png](screenshots/home-light-default.png).
+- **Do keep filter chips small and square-ish.** Location and sort are 4px radius, 14px type, 1px 20% black border. See [screenshots/rooms-light-filter-location.png](screenshots/rooms-light-filter-location.png).
+- **Don't invent a dark theme.** The public site has one scheme.
+- **Don't treat the pink as a button fill.** Pink is the logo and a painted link. Buttons are black or cream.

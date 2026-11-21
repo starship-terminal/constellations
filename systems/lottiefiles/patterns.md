@@ -1,27 +1,37 @@
 # Patterns
 
-Public signed-out pages only. The editor and dashboard sit behind sign-in.
+How the public LottieFiles site combines the measured controls. Screenshots are in [screenshots/](screenshots).
 
 ## App shell
 
-The marketing header is a white bar: teal wordmark, five menu buttons (Products, Integrations, Tools, Customers, Learn), a Pricing link, a search control, a language button, Log in and a teal Sign up. On a 390 phone the menus collapse to a search icon and a hamburger. See [home-light-default.png](screenshots/home-light-default.png) and [mobile-home-light-default.png](screenshots/mobile-home-light-default.png).
+The desktop header is a sticky white bar: logo, five menus (Products, Integrations, Tools, Customers, Learn), a Pricing link, a search button, an English locale menu, Log in, and a teal Sign up. See [home-light-default.png](screenshots/home-light-default.png).
 
-## Navigation menu
+Phone width drops the menus. The top bar is the logo, a search icon, and a menu icon. See [mobile-home-light-default.png](screenshots/mobile-home-light-default.png).
 
-Hovering Products opens a three-column panel: Core products, Highlights, Animations. It closes without following a destination. See [home-light-products-menu.png](screenshots/home-light-products-menu.png).
+## Navigation menus
+
+Products, Tools, and Customers open on click. Integrations and Learn open on hover. Each menu is a white panel of links with a short description. See [home-light-products-menu.png](screenshots/home-light-products-menu.png).
+
+## Search
+
+Search animations opens a dialog with a text field. Typing a query does not submit a form. See [home-light-search.png](screenshots/home-light-search.png).
+
+## Login wall
+
+Log in opens a modal from login.lottiefiles.com: Google, other providers, and enterprise login. The capture stops there. See [home-light-login-wall.png](screenshots/home-light-login-wall.png).
+
+## Hero
+
+A 96px DM Sans headline, a 24px muted supporting line, a 48px teal primary link, and a 48px quiet bordered button. Four feature chips sit under the hero.
 
 ## Pricing
 
-Four plan columns sit under a centred heading. Individual is blue, Team is teal and marked Recommended, Team+ and Enterprise are ink Contact Sales. The upgrade links go to app.lottiefiles.com. They were measured and not followed. See [pricing-light-default.png](screenshots/pricing-light-default.png).
+Plan names and prices on a long comparison page. No monthly/yearly toggle was found. See [pricing-light-default.png](screenshots/pricing-light-default.png).
 
-## Animation library and a public animation
+## Catalog
 
-The free-animations index is a grid of published cards. A card opens a public animation page: player, author, Save animation, Download / Asset & Embed / Comments tabs, and format rows. Download was not started. See [animations-light-default.png](screenshots/animations-light-default.png) and [animation-light-default.png](screenshots/animation-light-default.png).
+Featured animations are a filterable card grid. A card opens a public player page. Download was visible and was not completed. See [animations-light-default.png](screenshots/animations-light-default.png).
 
-## Empty and error
+## Empty, error, onboarding
 
-A missing path paints a 404: "Oh snap! We couldn't find the page you're looking for." with links back to public pages. See [notfound-light-default.png](screenshots/notfound-light-default.png).
-
-## Not reached
-
-Sign-in, the editor, the dashboard, a form validation error, a destructive confirmation, a toast after an action, and checkout. A Google one-tap sheet appeared on the phone home and was hidden, not used.
+The known missing route `/login` is a 404 page. See [not-found-light-default.png](screenshots/not-found-light-default.png). Onboarding, toasts after a save, and destructive confirmations sit behind the login wall and were not captured.

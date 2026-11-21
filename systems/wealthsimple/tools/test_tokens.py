@@ -1,28 +1,45 @@
-"""Wealthsimple tokens resolve and match the 2026-11-19 computed readings."""
+"""Package checks for the Wealthsimple capture. Run from tools/."""
 import json
 import pathlib
 import unittest
 
-TOKENS = pathlib.Path(__file__).resolve().parent.parent / "tokens.json"
+HERE = pathlib.Path(__file__).resolve().parent.parent
+TOKENS = json.loads((HERE / "tokens.json").read_text())
 
 
-class TokensTest(unittest.TestCase):
-    def test_file_loads_and_themes_match_shape(self):
-        doc = json.loads(TOKENS.read_text())
-        self.assertIn("core", doc)
-        self.assertIn("light", doc)
-        self.assertIn("dark", doc)
-        self.assertEqual(doc["light"]["color"]["page"]["$value"], "#FCFCFC")
-        self.assertEqual(doc["light"]["color"]["text"]["$value"], "#1C1B1B")
-        self.assertEqual(doc["dark"]["color"]["page"]["$value"], "#0D0D0D")
-        self.assertEqual(doc["dark"]["color"]["accent"]["$value"], "#6DC382")
-        self.assertEqual(doc["core"]["radius"]["pill"]["$value"], "1000px")
-        self.assertEqual(doc["core"]["size"]["login-button-height"]["$value"], "54px")
-        for theme in ("light", "dark"):
-            for role in ("page", "surface", "text", "muted", "accent", "border"):
-                token = doc[theme]["color"][role]
-                self.assertTrue(token["$extensions"]["source"])
-                self.assertEqual(token["$extensions"]["evidence"], "Measured")
+class Tokens(unittest.TestCase):
+    def test_sets(self):
+        self.assertIn("core", TOKENS)
+        self.assertIn("light", TOKENS)
+        self.assertNotIn("dark", TOKENS)
+
+    def test_every_token_has_a_source(self):
+        missing = []
+
+        def walk(node, path):
+            if isinstance(node, dict) and "$value" in node:
+                if "source" not in node.get("$extensions", {}):
+                    missing.append(path)
+                return
+            if isinstance(node, dict):
+                for k, v in node.items():
+                    if k.startswith("$"):
+                        continue
+                    walk(v, f"{path}.{k}" if path else k)
+
+        walk(TOKENS["core"], "core")
+        walk(TOKENS["light"], "light")
+        self.assertEqual(missing, [])
+
+    def test_page_is_off_white(self):
+        self.assertEqual(TOKENS["core"]["color"]["greyscale"]["99"]["$value"], "#fcfcfc")
+
+    def test_ink(self):
+        self.assertEqual(TOKENS["core"]["color"]["slate"]["10"]["$value"], "#1c1b1b")
+
+    def test_no_private_literals(self):
+        blob = (HERE / "tokens.json").read_text() + (HERE / "README.md").read_text() + (HERE / "site-tree.md").read_text()
+        self.assertNotRegex(blob, r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 
 
 if __name__ == "__main__":

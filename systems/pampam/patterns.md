@@ -1,54 +1,40 @@
-# Patterns
+# PamPam patterns
 
-Public pages only. Signed out. Desktop 1440×900 and phone 390×844.
+How the public pieces combine. Screenshots are viewport captures, 256-colour. Desktop is 1440x900 at 1x. Phone is 390x844 at 2x.
 
 ## Marketing shell
 
-A fixed transparent header holds the 67×40 wordmark, then Pricing, Solutions, Products, Inspiration, then a Google sign-in iframe. At 390 the text links are gone and the header is the wordmark plus the Google button.
+Desktop header: PAM wordmark, Pricing, Solutions, Products, Inspiration, Sign in with Google. Footer lists tools, use cases and company links. Phone header keeps the wordmark and Sign in with Google. There is no burger drawer.
 
-The hero is a photograph. The headline is nineties at 80px (48px on the phone), colour `#1b1917`, in a 600px column. Under it, a muted Inter lede, a prompt field, and three type cards.
+| State | Screenshot |
+|---|---|
+| Home | [home-light-default.png](screenshots/home-light-default.png) |
+| Solutions menu | [home-light-solutions-menu.png](screenshots/home-light-solutions-menu.png) |
+| Products menu | [home-light-products-menu.png](screenshots/home-light-products-menu.png) |
+| Phone home | [mobile-home-light-default.png](screenshots/mobile-home-light-default.png) |
 
-[screenshots/home-light-default.png](screenshots/home-light-default.png)
-
-[screenshots/home-light-phone.png](screenshots/home-light-phone.png)
-
-## Use-case band
-
-Four cream cards in a row: Startup Maps, Travel Maps, Directory Maps, Event Maps. Each is a link. They share one measured style.
+The home hero is a photograph with a serif headline, a prompt, and three mode tiles (Interactive Map, Map animation, Printable map). Make map opens a login dialog and stays on `/`.
 
 ## Pricing
 
-Four plan columns on `#fbfcfd`. A yearly switch sits above them, on by default, track `#006e0b`. The Business column has the 2px `#dde1f1` border. Buttons sit below the fold of the 900px shot. Free and Advanced use the secondary face. Explorer and Business use the accent face. Those buttons link toward checkout and were not followed.
+Four plan cards on a white page, a yearly billing pill, and a serif "Pricing" title. Primary actions are blue. Quiet actions are near-white. [pricing-light-default.png](screenshots/pricing-light-default.png), phone [mobile-pricing-light-default.png](screenshots/mobile-pricing-light-default.png).
 
-[screenshots/pricing-light-default.png](screenshots/pricing-light-default.png)
+## Product pages
 
-[screenshots/pricing-light-phone.png](screenshots/pricing-light-phone.png)
+Same shell, serif title, a short lede, then feature sections. Captured: [map-maker-light-default.png](screenshots/map-maker-light-default.png), [ai-map-maker-light-default.png](screenshots/ai-map-maker-light-default.png), [custom-maps-light-default.png](screenshots/custom-maps-light-default.png), [features-light-default.png](screenshots/features-light-default.png), [releases-light-default.png](screenshots/releases-light-default.png), [about-light-default.png](screenshots/about-light-default.png), [gift-shop-light-default.png](screenshots/gift-shop-light-default.png), [travel-recap-light-default.png](screenshots/travel-recap-light-default.png).
 
-## FAQ
+## Templates and blog
 
-A question list under a nineties heading. One row was opened. The answer sits between hairline rules. No search, no validation.
+[templates-light-default.png](screenshots/templates-light-default.png) is the template index. [template-london-light-default.png](screenshots/template-london-light-default.png) is one city template with a place list. [blog-light-default.png](screenshots/blog-light-default.png) and [blog-post-light-default.png](screenshots/blog-post-light-default.png) are the index and one article.
 
-[screenshots/home-light-faq.png](screenshots/home-light-faq.png)
+## Published map
 
-## Login
+A map canvas with a left sheet: search, a cover, a title, and place cards. Zoom sits on the right. Make your map is the account action. [explore-light-default.png](screenshots/explore-light-default.png), [map-public-light-default.png](screenshots/map-public-light-default.png). Phone: [mobile-explore-light-default.png](screenshots/mobile-explore-light-default.png), [mobile-map-public-light-default.png](screenshots/mobile-map-public-light-default.png).
 
-A centered column on white: the wordmark, "Welcome to PamPam" in Inter 700 28px, a muted 18px line, a filled-blue Google button, and a 12px legal line. No email field. No password field.
+## Print wizard
 
-[screenshots/login-light-default.png](screenshots/login-light-default.png)
+A two-pane step: copy and a field on the left, a map on the right. Next stays quiet until a place is chosen. The field was not filled and Next was not clicked. [printshop-light-default.png](screenshots/printshop-light-default.png).
 
-## Blog and features
+## Auth wall
 
-Blog is a two-column card list. Images are 436×300 with 10px radius. Dates are Inter 550 14px `#9894a8`. Features pairs a dark product shot with a nineties heading and a secondary button.
-
-[screenshots/blog-light-default.png](screenshots/blog-light-default.png)
-
-[screenshots/features-light-default.png](screenshots/features-light-default.png)
-
-## Not captured
-
-| Pattern | Why |
-|---|---|
-| Signed-in map editor | Login is Google-only. No email form. The Google button was not clicked. |
-| Checkout | Plan buttons were not followed. No card was entered. |
-| Empty, loading, error, onboarding | Not on the public pages. |
-| Dark theme | The site does not switch. |
+[login-light-default.png](screenshots/login-light-default.png) and [home-light-login-dialog.png](screenshots/home-light-login-dialog.png). Sign in with Google only. That branch stops. Phone login: [mobile-login-light-default.png](screenshots/mobile-login-light-default.png).

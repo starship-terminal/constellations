@@ -1,6 +1,6 @@
 # Components
 
-Public signed-out Uber Eats, measured 2026-11-19. No crops: the preview browser produced no screenshot frames. Values are computed styles. Token names point at [tokens.json](tokens.json).
+Public signed-out Uber Eats, measured 2026-11-19. No crops. The 2026-11-21 shots are in [screenshots/](screenshots/). Values are computed styles. Token names point at [tokens.json](tokens.json).
 
 ## Button
 

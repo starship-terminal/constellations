@@ -6,12 +6,12 @@ The shop paints one light theme; all values are from the light set unless noted.
 
 ## The shop chrome
 
-A black promo strip ("JOIN TO SHOP", [promo-strip](components/crops/promo-strip-default.png))
-sits above the 84px white header ([home-light-default](screenshots/home-light-default.png)):
-lowercase `alo` wordmark, uppercase WOMEN/MEN/SHOES nav items (72×70 hit
-areas, hover opens the mega-menu — [home-light-megamenu](screenshots/home-light-megamenu.png)),
-then search, account and bag icons on the right. At 390px the bar compresses
-to 57px and the links fold into a drawer opened by the hamburger
+A taupe promo strip sits above the 84px white header ([home-light-default](screenshots/home-light-default.png)):
+lowercase `alo` wordmark, uppercase Women, Men, Shoes, Atelier and Gift Guide
+(hover opens the mega-menu, [home-light-megamenu](screenshots/home-light-megamenu.png)),
+then search, Sign in to get rewards, wishlist and bag. Search opens an in-page
+drawer ([home-light-search](screenshots/home-light-search.png)). At 390 the bar
+compresses to 57px and the hamburger opens a drawer
 ([mobile-home-light-menu](screenshots/mobile-home-light-menu.png),
 [m-menu-open](components/crops/m-menu-open-opened.png)).
 
@@ -48,11 +48,14 @@ raw/components-computed.json).
 
 ## Forms
 
-The public forms share one field: a 35px-tall hairline-bordered input
-([email-input](components/crops/email-input-default.png) on the account gate,
-the newsletter field in the footer). The login page stacks email + password +
-full-width Sign in ([account-light-default](screenshots/account-light-default.png));
-it was measured, typed into, and cleared — never submitted.
+The footer newsletter field is a hairline input
+([newsletter-input](components/crops/newsletter-input-default.png)). It was
+focused and not filled. The account URL is a join and sign-in wall
+([account-light-default](screenshots/account-light-default.png)). Nothing was
+typed into it. The women grid opens a filter drawer
+([shop-women-light-filter](screenshots/shop-women-light-filter.png)) and a
+sort menu ([shop-women-light-sort](screenshots/shop-women-light-sort.png)).
+Neither was applied.
 
 ## Consent
 

@@ -1,34 +1,33 @@
 # Patterns
 
-Public signed-out pages only. No screenshots: the preview browser returned no frames. Layout numbers are from `getBoundingClientRect` at innerWidth 1169, devicePixelRatio 2.
+How the public pages combine the components. The control map is [site-tree.md](site-tree.md).
 
-## Marketing home
+## Marketing shell
 
-https://www.netflix.com/sg/ redirected from https://www.netflix.com/. English. Signed out.
+A black page, a red wordmark, a language select, and a red Sign In button. The hero is a poster collage with a 56px white headline, a price line, an email field, and a red Get Started button. Below that: a trending row of title cards, reason cards, an FAQ accordion, and a grey-on-black footer.
 
-The page is black. A 760px hero sits under an 80px header. The header holds the wordmark (148 by 40), a language select, and a red Sign In link. The hero copy is centred in a 508px column: a 40px bold headline, a 16px price line, then a prompt and a row of email field plus Get Started. A scrim gradient covers the hero image. The image URL is an nflxext asset. The full scrim stop list was truncated in the reader.
+Shown in [home-dark-default](screenshots/home-dark-default.png) and [home-dark-full](screenshots/home-dark-full.png). Phone stacks the same blocks in [mobile-home-dark-default](screenshots/mobile-home-dark-default.png).
 
-Below the hero, in a column that starts 80px from the left:
+## Title preview
 
-1. Trending now. A horizontal row of 140 by 196 tiles, 44px apart.
-2. More reasons to join. Four gradient cards, 499 by 198 at this width, radius 16px.
-3. Frequently asked questions. Six square rows on `#2d2d2d`.
-4. A second email prompt, then the footer.
+A trending card opens a dialog over a scrim. The dialog holds artwork, metadata chips, a synopsis, and a red Get started button. Get started was not clicked. The public title URL shows the same content as a page, with trailer cards and an email join block that was not used.
 
-The footer is `text.secondary`, 16px for the contact line and 14px underlined links. Padding-bottom is 96px.
+Shown in [home-dark-title-dialog](screenshots/home-dark-title-dialog.png) and [title-dark-default](screenshots/title-dark-default.png).
 
-## Login
+## Login and signup walls
 
-https://www.netflix.com/sg/login. The form was not submitted.
+Sign In opens a black page with one field labelled for email or mobile number, a red Continue button, and Get help. The field was left empty. Signup opens a light step labelled "Choose your plan" with a red Next button. Next was not clicked.
 
-Black page, no hero image. The wordmark sits at the top left, 148 by 40. The form column is 440px wide, starting 365px from the left at 1169. The title is 32px bold. The subhead is 18px at 70% white. Two fields (email or mobile number, password) then a 48px Continue button. "Get help" is a blue underlined button. The footer repeats a shorter link list and the language select.
+Shown in [login-wall-dark-default](screenshots/login-wall-dark-default.png) and [signup-wall-dark-default](screenshots/signup-wall-dark-default.png).
 
-At innerWidth 390 the Continue button was 350px wide and 48px tall. The email chrome stayed 56px. The title stayed 32px bold.
+## Help
 
-## Signup wall
+Help Center is a light page: a search field, topic links, and article pages. Search was focused and not submitted. Article Yes and No were not clicked.
 
-Get Started and "Or get started with a new account." lead into account creation. That flow was not entered. Plan choice, card entry, and playback are gaps.
+Shown in [help-dark-default](screenshots/help-dark-default.png). The filename says dark because the capture script labels the marketing theme. The help surface itself is light.
 
-## What these pages do not show
+## Cookie preferences
 
-No app shell, no search, no table, no empty browse state, no loading playback, no destructive confirm, no onboarding beyond the email prompt.
+Footer Cookie Preferences opens a white OneTrust dialog. Save settings was not clicked.
+
+Shown in [home-dark-cookie-dialog](screenshots/home-dark-cookie-dialog.png).

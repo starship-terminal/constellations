@@ -43,7 +43,7 @@ export async function screenshotWithMetadata(page, options, requested = {}) {
         innerWidth, innerHeight, devicePixelRatio,
         theme: {
           classes: [...root.classList].filter(name => name === 'light' || name === 'dark'),
-          attributes: Object.fromEntries(['data-theme', 'data-mode', 'data-color-mode', 'data-theme-preference'].flatMap(name => {
+          attributes: Object.fromEntries(['data-theme', 'data-mode', 'data-color-mode'].flatMap(name => {
             const value = root.getAttribute(name);
             return ['light', 'dark', 'system', 'auto'].includes(value) ? [[name, value]] : [];
           })),

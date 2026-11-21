@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overflow style guide</title>
+<meta name="description" content="Overflow (overflow.io) public design tokens, rendered from tokens.json with measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: Inter, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --sg-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.75 var(--sg-sans); color: var(--text, #000); background: var(--page, #fff); }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 24px 96px; }
+h1 { font: 800 40px/1.14 var(--sg-sans); letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font: 800 28px/1.16 var(--sg-sans); letter-spacing: -0.02em; margin: 48px 0 12px; }
+.lead { max-width: 62ch; color: #161637; }
+.note { font-size: 13px; color: rgba(0,0,0,.6); max-width: 68ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 56px; border-radius: 8px; border: 1px solid #dadce0; }
+.sw b, .sw span { display: block; font: 500 12px/1.4 var(--sg-mono); }
+.sw span { font-weight: 400; color: rgba(0,0,0,.6); }
+.hero {
+  margin: 24px 0;
+  border-radius: 24px;
+  padding: 72px 32px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(180deg, #6d5efc 0%, #3aa0ff 55%, #7fd4ff 100%);
+}
+.hero h2 { color: #fff; font-size: 56px; line-height: 1.14; letter-spacing: -1.2px; margin: 0 0 12px; }
+.hero p { max-width: 46ch; margin: 0 auto 24px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: var(--component-button-height, 56px);
+  padding: 0 24px;
+  border-radius: var(--component-button-radius, 8px);
+  background: var(--component-button-background, #000);
+  color: var(--component-button-text, #fff);
+  font-weight: 550; letter-spacing: 0.2px; text-decoration: none; border: 1px solid #000;
+}
+.btn.quiet { background: transparent; color: #000; border-color: transparent; }
+.row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.card {
+  margin-top: 24px;
+  background: var(--component-card-background, #fff);
+  border-radius: var(--component-card-radius, 24px);
+  box-shadow: 0 4px 16px -8px rgba(0,0,0,.08);
+  padding: 28px;
+  max-width: 392px;
+}
+.card .price { font: 800 40px/1 var(--sg-sans); letter-spacing: -1px; }
+.nav {
+  display: flex; align-items: center; gap: 8px;
+  height: 72px; padding: 0 16px; border-bottom: 1px solid #dadce0;
+}
+.nav .sp { flex: 1; }
+.nav a { color: var(--component-nav-link-text, #000); text-decoration: none; padding: 8px 16px; }
+.menu {
+  background: var(--component-menu-background, #fff);
+  border-top: 1px solid var(--component-menu-border, #dadce0);
+  padding: 16px;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;
+}
+.menu a { display: block; padding: 14px 12px; border-radius: 12px; color: #161637; text-decoration: none; background: #fff; }
+.menu a:hover { background: #f5f5f6; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #f0f0f2; vertical-align: top; }
+th { font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: rgba(0,0,0,.6); }
+</style>
+</head>
+<body>
+<main>
+<h1>Overflow</h1>
+<p class="lead">Public marketing system from overflow.io, measured 2026-11-21. One light theme. Black pill-less buttons, Inter display type, a blue link accent, and a white mega menu.</p>
+<p class="note">The hero gradient below is a reconstruction of the homepage wash. The token file does not store that gradient: it was not a custom property. Button, type, and surface values are measured.</p>
+
+<h2>Roles</h2>
+<div class="swatches" id="roles"></div>
+
+<nav class="nav" aria-label="Specimen">
+  <strong>overflow</strong>
+  <a href="#">Product</a>
+  <a href="#">Examples</a>
+  <span class="sp"></span>
+  <a class="quiet" href="#">Sign In</a>
+  <a class="btn" href="#" style="height:48px">Download for free</a>
+</nav>
+<div class="menu">
+  <a href="#">How it Works</a>
+  <a href="#">Features</a>
+  <a href="#">Design presentation</a>
+</div>
+
+<div class="hero">
+  <h2>User flows done right</h2>
+  <p>Create interactive user flows and design presentations.</p>
+  <div class="row"><a class="btn" href="#">Download - free trial</a></div>
+</div>
+
+<div class="card">
+  <div>Pro</div>
+  <div class="price">$19.95</div>
+  <p>per user / month</p>
+  <a class="btn" href="#">Start free trial</a>
+</div>
+
+<h2>Type</h2>
+<table id="type"></table>
+<h2>Radius and size</h2>
+<table id="geom"></table>
+</main>
+<script>
+const T = /*TOKENS*/null;
+const roles = [
+  ["page", "--page"],
+  ["surface", "--surface"],
+  ["text", "--text"],
+  ["muted", "--muted"],
+  ["accent", "--accent"],
+  ["border", "--border"],
+  ["ink", "--color-ink"],
+  ["link", "--color-link"],
+  ["link hover", "--color-link-hover"],
+  ["grey", "--color-grey-2"],
+  ["hairline", "--color-hairline"],
+];
+const box = document.getElementById("roles");
+for (const [name, v] of roles) {
+  const d = document.createElement("div");
+  d.className = "sw";
+  d.innerHTML = `<i style="background:var(${v})"></i><b>${name}</b><span>${v}</span>`;
+  box.appendChild(d);
+}
+function rows(id, pred) {
+  const tb = document.getElementById(id);
+  const walk = (node, prefix) => {
+    for (const [k, v] of Object.entries(node || {})) {
+      const path = prefix ? prefix + "." + k : k;
+      if (v && v.t) {
+        if (pred(path, v)) {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `<td><code>${path}</code></td><td>${typeof v.v === "object" ? JSON.stringify(v.v) : v.v}</td>`;
+          tb.appendChild(tr);
+        }
+      } else if (v && typeof v === "object") walk(v, path);
+    }
+  };
+  walk(T.core, "core");
+}
+rows("type", (p) => p.startsWith("core.typography") || p.startsWith("core.font"));
+rows("geom", (p) => p.startsWith("core.radius") || p.startsWith("core.size") || p.startsWith("core.space"));
+</script>
+</body>
+</html>

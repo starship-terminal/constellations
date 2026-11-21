@@ -1,29 +1,29 @@
-# Patterns
+# Trip.com patterns
 
-Public signed-out pages only. No screenshots: see [components.md](components.md).
+Public pages only. See [site-tree.md](site-tree.md) for which control opens which page.
 
-## Home
+## App shell
 
-`https://sg.trip.com/?locale=en-sg`. White header bar, 66px content height, full width. Logo at the left, 133 by 32 px. Right side: language/currency, Find bookings, and a brand-blue Sign in/register pill (34px tall, radius 4px, padding 8px).
+Desktop home keeps a left rail (Hotels, Flights, Attractions, and the rest) and a top bar (search, App, List your property, currency, support, Find bookings, Sign in/register). Product pages drop the rail and use a horizontal nav with an overflow "…" control. Phone home is a logo, a Where to? field, an account icon, and a menu. The menu is a sheet of settings, travel options, and Sign In/Register.
 
-Below that, a hero slogan `.slogan-desc`: "Every check-in is a new beginning", 700 40px/48px Trip Geom, white, on a photo banner whose container computed to `rgb(211, 211, 211)` where the image had not painted as a flat fill. USP line under it is 400 14px/18px white.
+Shown in [home-light-default](screenshots/home-light-default.png), [flights-light-default](screenshots/flights-light-default.png), [mobile-home-light-default](screenshots/mobile-home-light-default.png), [mobile-menu-light-menu](screenshots/mobile-menu-light-menu.png).
 
-The search card sits on the banner: white, radius 16px, the two-layer shadow in `light.shadow.search-card`, width 1096px at 1440. Product tabs across the top, then one field row (destination, dates, guests) and a Search button at the right, 48 by 106 px. A line under the card links "Sign in or register" in brand blue.
+## Search
 
-The page continues with coupon cards (radius 8px, soft shadow) and a grey footer (`rgb(245, 247, 250)`). Document height was 4615 px at 1440 by 900.
+The hotel card is Where to?, a date range, a guest summary, and a blue Search button. Flights swaps in Leaving from / Going to, radios for Return, One-way, and Multi-city, and a cabin select. Search was not submitted.
 
-## Hotels
+## Sign-in wall
 
-`https://sg.trip.com/hotels/`. Body background `#f6f7fa`. Heading "Hotels" is 700 48px/48px Trip Geom, white, on a banner. The same search row sits under it, wider (about 1097 px), with a 1px `#c5c5c5` border on the field group. Hotel cards follow: image on top, radius 8px, a score line, name, and address. Search was not submitted.
+Sign in/register, Claim all, and Sign in & claim all open the same dialog: email field (empty, not typed), Continue with email (disabled until an email), Continue with Google, Apple, and Facebook, plus a QR panel. Stopped there. Shown in [home-light-signin](screenshots/home-light-signin.png).
 
-## Customer support
+## Language and currency
 
-`https://sg.trip.com/pages/support/`. A cyan band (`#047c88`, 316px tall) holds "Customer support" at 700 48px/68px white, and two buttons: Search Bookings (white wireframe, 36px) and Sign in or register (white fill, cyan text `#047c88`). Below the band, FAQ chips in a row (Hot topics, Booking & price, Ticketing & payment, Booking query) on `#f5f7fa`.
+The SGD control opens a dialog with Languages and Currency tabs. Not submitted. Shown in [home-light-currency](screenshots/home-light-currency.png). A load-time Suggested Languages bar was hidden, never clicked.
 
-## Sign in
+## Support
 
-`https://sg.trip.com/account/signin`. A two-panel card. Left, white, 474 px: "Sign in/register", an email field, a disabled Continue with email button until the field is valid, then Google (vendor blue `#4285f4`), Apple, and Facebook (white, 1px `#d4d7de` border), each 378 by 56 px, radius 4px. Right, `#f6f7fa`, 384 px: QR instructions. The email field was focused for the border colour and left empty. No provider button was pressed.
+Customer support is a teal hero, product chips (Flights selected), FAQ rows, and Chat / Call us / FAQ / Emergency assistance. Call us was not opened, so no phone number was captured. Shown in [support-light-default](screenshots/support-light-default.png).
 
-## What was not entered
+## Empty, loading, error, destructive, onboarding
 
-Bookings, checkout, payment, phone verification, and account creation. The Search button was not clicked. Results, filters, and the map were not opened.
+Not present on the public pages captured. No form was submitted, so no validation error was seen.

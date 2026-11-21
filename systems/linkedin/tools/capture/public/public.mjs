@@ -1,210 +1,242 @@
-// Captures linkedin.com's public signed-out pages into RAW (full-colour PNGs); quantize.py turns them into screenshots/.
+// Captures LinkedIn's public guest pages into RAW (full-colour PNGs).
 //
-//   RAW=/some/scratch/dir PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [page,page,...]
+//   PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [page,page,...]
 //
-// Names are {page}-{theme}-{state}.png; mobile ones get a `mobile-` prefix.
-// The guest site paints a single light theme, so every shot is `-light`.
-// Desktop shots are 1440x900 at 1x, mobile 390x844 at 2x, `*-full` shots 1x.
-// A page taller than one GPU texture is saved as name.partN.png tiles, which
-// quantize.py stitches; an unbounded page truncates at 8 chunks.
-//
-// Sign in, Join now, Apply, Follow, Message and Easy Apply are measured as
-// destinations, never followed or submitted. Consent overlays are hidden,
-// never clicked. Nothing is signed into, purchased or posted.
+// Desktop shots are 1440x900 at 1x. Phone shots are 390x844 at 2x, named
+// mobile-*. Nothing is submitted. A control that lands on a login or signup
+// wall is recorded and that branch stops. Consent banners are hidden, not
+// clicked. Language menus are opened and closed, never changed.
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
+import { chromium, UA, UA_MOBILE, BASE, isWall } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+const PKG = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
+const inPackage = path.basename(path.dirname(PKG)) === 'systems';
+if (!process.env.RAW && !inPackage) { console.error('set RAW=<scratch dir>'); process.exit(2); }
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', path.basename(PKG), 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
-const log = (...a) => console.log(...a);
+const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const wait = (p, ms) => p.waitForTimeout(ms);
+const walls = [];
 
-async function lazyScroll(p) {
-  // Scroll the document through its range so lazy images/posts mount, then restore.
-  const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
-  for (let y = 0; y < H; y += 600) {
-    await p.evaluate((y) => {
-      window.scrollTo(0, y);
-      const sels = [...document.querySelectorAll('*')]
-        .filter((e) => e && e.scrollHeight > e.clientHeight + 50 && e.clientHeight > 100);
-      sels.forEach((e) => { e.scrollTop = y; });
-    }, y);
-    await wait(p, 220);
-  }
+async function hideConsent(p) {
   await p.evaluate(() => {
-    window.scrollTo(0, 0);
-    [...document.querySelectorAll('*')]
-      .filter((e) => e && e.scrollHeight > e.clientHeight + 50 && e.clientHeight > 100)
-      .forEach((e) => { e.scrollTop = 0; });
-  });
-  await wait(p, 900);
+    for (const el of document.querySelectorAll('#artdeco-global-alert-container, .artdeco-global-alert, [data-test-global-alert]')) {
+      el.style.setProperty('display', 'none', 'important');
+    }
+  }).catch(() => {});
 }
 
-// Expand inner scroll containers so document.scrollHeight covers the real
-// content height for the bounded full-page shot.
-async function expandScrollers(p) {
-  return p.evaluate(() => {
-    // Expand every inner scroll container to its real content height and
-    // unclip its ancestors, so document.scrollHeight covers the whole page.
-    document.querySelectorAll('*').forEach((e) => {
-      if (e.scrollHeight > e.clientHeight + 50 && e.clientHeight > 100) {
-        e.style.setProperty('height', e.scrollHeight + 'px', 'important');
-        e.style.setProperty('max-height', 'none', 'important');
-        e.style.setProperty('overflow', 'visible', 'important');
-        for (let a = e.parentElement; a; a = a.parentElement) {
-          a.style.setProperty('height', 'auto', 'important');
-          a.style.setProperty('max-height', 'none', 'important');
-          a.style.setProperty('overflow', 'visible', 'important');
-        }
-      }
-    });
-    document.documentElement.style.setProperty('overflow', 'visible', 'important');
-    document.body.style.setProperty('overflow', 'visible', 'important');
-    return Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
-  });
+async function lazyScroll(p) {
+  const h = await p.evaluate(() => document.documentElement.scrollHeight);
+  const cap = Math.min(h, 7200);
+  for (let y = 0; y < cap; y += 700) {
+    await p.evaluate((y) => scrollTo(0, y), y);
+    await wait(p, 120);
+  }
+  await p.evaluate(() => scrollTo(0, 0));
+  await wait(p, 400);
 }
 
 class Shooter {
-  constructor(p, prefix, vw, vh, dpr, sourceUrl) { this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr; this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, sanitizedSourceUrl: sourceUrl }; this.sourceUrl = sourceUrl; this.count = 0; }
+  constructor(p, prefix, vw, vh, dpr) {
+    this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr;
+    this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr };
+    this.count = 0;
+  }
   async view(name) {
-    await closePromo(this.p);
-    await this.p.evaluate(() => {
-      window.scrollTo(0, 0);
-      document.querySelectorAll('*').forEach((e) => { if (e.scrollTop) e.scrollTop = 0; });
-    });
-    await wait(this.p, 400);
+    await hideConsent(this.p);
     await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested);
-    this.count++; log('  shot', name);
+    this.count++;
+    log('  shot', this.prefix, name);
   }
   async full(name = 'full') {
     const p = this.p;
-    await closePromo(p);
     await lazyScroll(p);
-    const H = await expandScrollers(p);
+    const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
     for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
     const MAXH = 8 * chunk;
     const hCap = Math.min(H, MAXH);
-    if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
-    const opts = (extra) => ({ path: extra, scale: 'css' });
-    if (hCap <= chunk) await screenshotWithMetadata(p, { ...opts(f + '.png'), fullPage: true }, this.requested);
-    else {
-      // Declare the tile count up front; quantize refuses to stitch a partial set.
-      const n = Math.ceil(hCap / chunk);
-      fs.writeFileSync(`${f}.parts.json`, JSON.stringify({ parts: n, height: hCap, complete: false }) + '\n');
-      for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { ...opts(`${f}.part${i}.png`), fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
-      fs.writeFileSync(`${f}.parts.json`, JSON.stringify({ parts: n, height: hCap, complete: true }) + '\n');
+    if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only`);
+    if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
+    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
+      await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
     }
-    this.count++; log('  shot', name, 'H=' + H);
-    await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
+    this.count++;
+    log('  shot', this.prefix, name, 'H=' + H);
+    await p.evaluate(() => scrollTo(0, 0));
+    await wait(p, 300);
   }
 }
-const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
-const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).catch(() => loc.evaluate((el) => el.click())); };
 
-// "Show more" on the home job-category chips is a local toggle. It is never
-// a sign-in link or a form POST.
-async function showMoreShot(p, S) {
-  await step('show-more', async () => {
-    const more = p.locator('button, a').filter({ hasText: /^Show more$/ }).first();
-    if (!(await more.count())) return;
-    await clickEl(more);
-    await wait(p, 800);
-    await S.view('show-more');
-  });
+const step = async (label, fn) => {
+  try { await fn(); }
+  catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); }
+};
+
+async function noteWall(p, from) {
+  const url = p.url().split('?')[0];
+  walls.push({ from, url });
+  log('  WALL', from, '->', url);
 }
 
-// A jobs-search filter chip opens a local dropdown. Escape closes it. The
-// chip is never an Apply or Sign in control.
-async function filterShot(p, S) {
-  await step('filter', async () => {
-    const chip = p.locator('button').filter({ hasText: /^Date posted$/ }).first();
-    if (!(await chip.count())) return;
-    await clickEl(chip);
-    await wait(p, 900);
-    await S.view('filter');
-    await p.keyboard.press('Escape');
-    await wait(p, 400);
-  });
-}
-
-async function closeOverlays(p) {
-  await p.keyboard.press('Escape').catch(() => {});
-  await wait(p, 300);
+async function clickRole(p, role, name) {
+  const loc = p.getByRole(role, { name }).first();
+  if (!(await loc.count())) return false;
+  await loc.click({ timeout: 5000 });
+  await wait(p, 700);
+  return true;
 }
 
 const desktop = {
-  home: { path: '/', wait: 5000, run: async (p, S) => {
-    await S.view('default');
-    await showMoreShot(p, S);
-    await closeOverlays(p);
-    await S.full();
-  } },
-  jobs: { path: '/jobs/search/?keywords=designer&location=United%20States&trk=public_jobs_jobs-search-bar_search-submit&position=1&pageNum=0', wait: 6000, run: async (p, S) => {
-    await S.view('default');
-    await filterShot(p, S);
-    await closeOverlays(p);
-    await S.full();
-  } },
-  company: { path: '/company/linkedin', wait: 5000, run: async (p, S) => {
+  home: { path: '/', run: async (p, S) => {
     await S.view('default');
     await S.full();
+    await step('show-more-jobs', async () => {
+      if (await clickRole(p, 'button', /show more jobs/i)) await S.view('jobs-expanded');
+    });
+    await step('language-menu', async () => {
+      const lang = p.locator('button, [role=button]').filter({ hasText: /^Language$/ }).first();
+      if (await lang.count()) {
+        await lang.click();
+        await wait(p, 600);
+        await S.view('language-menu');
+        await p.keyboard.press('Escape');
+      }
+    });
+    await step('signin-hover', async () => {
+      const a = p.getByRole('link', { name: 'Sign in', exact: true }).first();
+      if (await a.count()) { await a.hover(); await wait(p, 300); await S.view('signin-hover'); }
+    });
   } },
-  profile: { path: '/in/reidhoffman', wait: 5000, run: async (p, S) => {
+  'top-content': { path: '/top-content', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'top-content-career': { path: '/top-content/career/', run: async (p, S) => {
     await S.view('default');
-    await S.full();
+    await step('share', async () => {
+      const share = p.getByRole('button', { name: /^Share$/ }).first();
+      if (await share.count()) { await share.click(); await wait(p, 600); await S.view('share'); await p.keyboard.press('Escape'); }
+    });
   } },
-  legal: { path: '/legal/user-agreement', wait: 4000, run: async (p, S) => {
+  learning: { path: '/learning/', run: async (p, S) => {
     await S.view('default');
-    await S.full();
+    await step('search-focus', async () => {
+      const s = p.getByRole('combobox', { name: /skills, subjects/i }).first();
+      if (await s.count()) { await s.click(); await wait(p, 400); await S.view('search-focused'); }
+    });
+    await step('tab-technology', async () => {
+      if (await clickRole(p, 'tab', /^Technology$/)) await S.view('tab-technology');
+    });
   } },
-  signin: { path: '/login', wait: 4000, run: async (p, S) => {
-    // The sign-in wall is captured at rest. Nothing is typed or submitted.
+  'learning-search': { path: '/learning/search', run: async (p, S) => { await S.view('default'); } },
+  'jobs-engineering': { path: '/jobs/engineering-jobs', run: async (p, S) => {
     await S.view('default');
+    await step('date-filter', async () => {
+      if (await clickRole(p, 'button', /date posted/i)) await S.view('date-filter');
+      await p.keyboard.press('Escape');
+    });
+    await step('filters-notice', async () => {
+      if (await clickRole(p, 'button', /where are the filters/i)) await S.view('filters-notice');
+    });
   } },
+  games: { path: '/games', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'games-zip': { path: '/games/zip/', run: async (p, S) => { await S.view('default'); } },
+  products: { path: '/products', run: async (p, S) => {
+    await S.view('default');
+    await step('search-focus', async () => {
+      const s = p.getByRole('combobox', { name: /search products/i }).first();
+      if (await s.count()) { await s.click(); await wait(p, 400); await S.view('search-focused'); }
+    });
+  } },
+  'products-category': { path: '/products/categories/e-commerce-platforms', run: async (p, S) => { await S.view('default'); } },
+  services: { path: '/services', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  legal: { path: '/legal/user-agreement', run: async (p, S) => {
+    await S.view('default');
+    await step('nav', async () => {
+      if (await clickRole(p, 'button', /open navigation/i)) await S.view('nav-open');
+    });
+  } },
+  privacy: { path: '/legal/privacy-policy', run: async (p, S) => { await S.view('default'); } },
+  help: { path: '/help/linkedin', run: async (p, S) => {
+    await S.view('notice');
+    await step('dismiss', async () => {
+      const d = p.getByRole('button', { name: /dismiss/i }).first();
+      if (await d.count()) { await d.click(); await wait(p, 500); }
+      await S.view('default');
+    });
+    await step('menu', async () => {
+      const m = p.getByRole('button', { name: /^LinkedIn$/ }).first();
+      if (await m.count()) { await m.click(); await wait(p, 500); await S.view('product-menu'); }
+    });
+  } },
+  accessibility: { path: '/accessibility', run: async (p, S) => { await S.view('default'); } },
+  'top-companies': { path: '/hubs/top-companies', run: async (p, S) => { await S.view('default'); } },
+  'company-jobs': { path: '/company/linkedin/jobs', run: async (p, S) => { await S.view('default'); } },
+  directory: { path: '/directory/people', run: async (p, S) => { await S.view('default'); } },
+  apps: { path: 'https://members.linkedin.com/apps', abs: true, run: async (p, S) => { await S.view('default'); } },
+  login: { path: '/login', wall: true, run: async (p, S) => { await S.view('wall'); } },
+  signup: { path: '/signup', wall: true, run: async (p, S) => { await S.view('wall'); } },
 };
 
 const mobile = {
-  home: { path: '/', wait: 5000, run: async (p, S) => {
+  home: { path: '/', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'top-content': { path: '/top-content', run: async (p, S) => { await S.view('default'); } },
+  learning: { path: '/learning/', run: async (p, S) => { await S.view('default'); } },
+  'jobs-engineering': { path: '/jobs/engineering-jobs', run: async (p, S) => { await S.view('default'); } },
+  games: { path: '/games', run: async (p, S) => { await S.view('default'); } },
+  products: { path: '/products', run: async (p, S) => { await S.view('default'); } },
+  services: { path: '/services', run: async (p, S) => { await S.view('default'); } },
+  legal: { path: '/legal/user-agreement', run: async (p, S) => {
     await S.view('default');
-    await S.full();
+    await step('nav', async () => { if (await clickRole(p, 'button', /open navigation/i)) await S.view('nav-open'); });
   } },
-  jobs: { path: '/jobs/search/?keywords=designer&location=United%20States&trk=public_jobs_jobs-search-bar_search-submit&position=1&pageNum=0', wait: 6000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  company: { path: '/company/linkedin', wait: 5000, run: async (p, S) => {
-    await S.view('default');
-  } },
+  help: { path: '/help/linkedin', run: async (p, S) => { await S.view('default'); } },
+  login: { path: '/login', wall: true, run: async (p, S) => { await S.view('wall'); } },
 };
 
-const b = await chromium.launch();
+const browser = await chromium.launch({ headless: true });
 let total = 0;
 const runs = [...Object.keys(desktop).map((k) => ({ k, mob: false })), ...Object.keys(mobile).map((k) => ({ k, mob: true }))];
 for (const { k, mob } of runs) {
   const name = (mob ? 'mobile-' : '') + k;
-  if (pageArg.length && !pageArg.includes(name)) continue;
+  if (pageArg.length && !pageArg.includes(name) && !pageArg.includes(k)) continue;
   const spec = (mob ? mobile : desktop)[k];
-  const theme = 'light';
   const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
-  const ctx = await b.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US', colorScheme: 'light' });
-  await patch(ctx);
+  const ctx = await browser.newContext({
+    viewport: { width: vw, height: vh },
+    deviceScaleFactor: dpr,
+    userAgent: mob ? UA_MOBILE : UA,
+    isMobile: mob,
+    hasTouch: mob,
+    locale: 'en-US',
+    colorScheme: 'light',
+  });
+  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
   const p = await ctx.newPage();
   log(name);
-  const target = spec.url || BASE + spec.path;
-  // The sidecar names the page, not its search query or tracking parameters.
-  const S = new Shooter(p, `${name}-${theme}`, vw, vh, dpr, target.split(/[?#]/)[0]);
+  const S = new Shooter(p, `${name}-light`, vw, vh, dpr);
   try {
-    await p.goto(target, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-    if (!(await clearChallenge(p))) { log('  BLOCKED challenge', target); await ctx.close(); continue; }
-    await wait(p, spec.wait || 7000);
-    await spec.run(p, S);
+    const url = spec.abs ? spec.path : BASE + spec.path;
+    await p.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    await wait(p, spec.wait || 2200);
+    await hideConsent(p);
+    const landed = p.url();
+    if (!spec.wall && isWall(landed)) {
+      await noteWall(p, name);
+      await S.view('wall');
+    } else {
+      if (spec.wall) await noteWall(p, name);
+      await spec.run(p, S);
+    }
   } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
   total += S.count;
   await ctx.close();
 }
+fs.writeFileSync(path.join(RAW, 'walls.json'), JSON.stringify(walls, null, 2) + '\n');
 log('done', total, 'screenshots ->', RAW);
-await b.close();
+await browser.close();

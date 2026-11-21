@@ -1,19 +1,16 @@
-// Collects every distinct inline <svg> icon on gumroad.com's public pages into icons/ and writes icons/INDEX.tsv.
+// Collects every distinct inline <svg> icon on Gauth's public pages into icons/ and writes icons/INDEX.tsv.
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node icons.mjs
 //
-// The icons carry no name in the DOM, so a file is named from icon-names.tsv (geometry hash -> name)
+// Gauth's icons carry no name in the DOM, so a file is named from icon-names.tsv (geometry hash -> name)
 // when the hash is listed there, else from the aria-label or text of the button or link it sits in, else
-// from its CSS class, else `icon-<hash>`. Files whose geometry matches are one icon, listed once
+// from its CSS-module class, else `icon-<hash>`. Files whose geometry matches are one icon, listed once
 // with every page and place it was seen. Colour is kept as `currentColor` wherever the computed fill or
 // stroke equals the svg's text colour, so each icon recolours from CSS `color` the way it does on the site.
-// Adapted from the gladia package's icons.mjs (itself the Coursera kit's).
-//
-// ScrollAll walks the document and any inner scrolling panes so icons lower
-// on long pages (home, discover, terms) are seen.
+// Adapted from the Coursera kit's icons.mjs.
 import crypto from 'crypto';
 import fs from 'fs';
-import { M, BASE, chromium, UA, UA_MOBILE, closePromo, patch } from './public/lib.mjs';
+import { M, BASE, chromium, UA, closePromo, openStory } from './public/lib.mjs'; // the signed-in route: swap in its own page opener
 
 const OUT = new URL('../../icons/', import.meta.url).pathname;
 fs.mkdirSync(OUT, { recursive: true });
@@ -27,7 +24,7 @@ function collect() {
   return [...document.querySelectorAll('svg')].filter((s) => {
     const r = s.getBoundingClientRect();
     if (!(r.width >= 10 && r.width <= 64 && r.height >= 10 && r.height <= 64) || s.closest('svg svg')) return false;
-    if (s.closest('[class*="canvas_board"], [class*="pgc_playerSurface"], hyperframes-player, .katex')) return false;
+    if (s.closest('[class*="canvas_board"], [class*="pgc_playerSurface"], hyperframes-player, .katex')) return false; // lesson content, not UI
     return getComputedStyle(s).visibility !== 'hidden';
   }).map((s) => {
     const r = s.getBoundingClientRect(), col = rgb(getComputedStyle(s).color);
@@ -53,7 +50,7 @@ function collect() {
     if (!c.hasAttribute('viewBox')) c.setAttribute('viewBox', `0 0 ${c.getAttribute('width') || Math.round(r.width)} ${c.getAttribute('height') || Math.round(r.height)}`.replace(/px/g, ''));
     if (!c.hasAttribute('width') || /%|em/.test(c.getAttribute('width'))) c.setAttribute('width', Math.round(r.width));
     if (!c.hasAttribute('height') || /%|em/.test(c.getAttribute('height'))) c.setAttribute('height', Math.round(r.height));
-    const holder = s.closest('button,a,[role=button],[role=tab],[role=switch],label,li');
+    const holder = s.closest('button,a,[role=button],[role=tab],label,li');
     const label = (holder?.getAttribute('aria-label') || s.getAttribute('aria-label') || holder?.innerText || s.parentElement?.innerText || '').trim().replace(/\s+/g, ' ').slice(0, 40);
     const modCls = [s, s.parentElement, holder].filter(Boolean).flatMap((e) => [...e.classList].map(String)).map(strip).find((x) => /_/.test(x) && !/^x[0-9a-z]+$/.test(x)) || '';
     const place = (holder ? holder.tagName.toLowerCase() : s.parentElement.tagName.toLowerCase()) + (modCls ? ' ' + modCls : '');
@@ -75,76 +72,55 @@ async function grab(p, tag) {
   }
   console.log(' ', tag, list.length, 'svgs,', fresh, 'new');
 }
-// The article scrolls in its own pane; the document itself stays at 0.
-// Both are walked so icons lower in the article or the sidebar are seen.
 async function scrollAll(p, tag) {
-  const scs = await p.evaluate(() => {
-    // gumroad.com scrolls the document; inner panes are appended after it.
-    const out = [document.documentElement.scrollHeight];
-    for (const el of document.querySelectorAll('div,main,aside,section,nav')) {
-      const cs = getComputedStyle(el);
-      if ((cs.overflowY === 'auto' || cs.overflowY === 'scroll') && el.scrollHeight > el.clientHeight + 100) out.push(el.scrollHeight);
-    }
-    return out.slice(0, 3);
-  });
-  const docH = scs.shift() || 0;
-  for (let y = 0; y < docH; y += 700) {
-    await p.evaluate((y) => scrollTo(0, y), y);
-    await wait(p, 220); await grab(p, tag);
-  }
-  for (const h of scs) {
-    for (let y = 0; y < h; y += 700) {
-      await p.evaluate((y) => { const els = [...document.querySelectorAll('div,main,aside,section,nav')].filter((el) => { const cs = getComputedStyle(el); return (cs.overflowY === 'auto' || cs.overflowY === 'scroll') && el.scrollHeight > el.clientHeight + 100; }); els.forEach((el) => { el.scrollTop = y; }); }, y);
-      await wait(p, 220); await grab(p, tag);
-    }
-  }
-  await p.evaluate(() => { [...document.querySelectorAll('div,main,aside,section,nav')].forEach((el) => { el.scrollTop = 0; }); scrollTo(0, 0); });
-  await wait(p, 400);
+  const h = await p.evaluate(() => document.documentElement.scrollHeight);
+  for (let y = 0; y < h; y += 700) { await p.evaluate((y) => scrollTo(0, y), y); await wait(p, 250); await grab(p, tag); }
+  await p.evaluate(() => scrollTo(0, 0)); await wait(p, 400);
 }
 async function open(p, path, w = 6500) {
-  await p.goto(BASE + path, { waitUntil: 'domcontentloaded', timeout: 90000 }); await wait(p, w);
+  await p.goto(BASE + path, { waitUntil: 'load', timeout: 90000 }); await wait(p, w);
 }
 // A page that fails is recorded, and a run with any failure leaves the committed icons alone.
 const failed = [];
 async function tryDo(label, fn) { try { await fn(); } catch (e) { failed.push(label); console.log('  skip', label, String(e.message).split('\n')[0]); } }
 
 const b = await chromium.launch();
-const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA, locale: 'en-US' });
-await patch(ctx);
+const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA });
 const p = await ctx.newPage();
 
 await open(p, '/');
+await grab(p, 'home (promo dialog)');
 await closePromo(p);
 await scrollAll(p, 'home');
-for (const [path, tag] of [
-  ['/discover', 'discover'], ['/design', 'category'], ['/features', 'features'],
-  ['/pricing', 'pricing'], ['/about', 'about'], ['/help', 'help'],
-  ['/login', 'login'], ['/signup', 'signup'], ['/terms', 'terms'],
-]) {
+for (const [path, tag] of [['/course/science', 'academy'], ['/course/math', 'academy'], ['/course/my', 'academy'], ['/news', 'news']]) {
   await open(p, path); await closePromo(p); await scrollAll(p, tag);
 }
-// The public overlays — the phone's nav sheet — are UI toggles: nothing is
-// searched, followed or submitted.
-await tryDo('mobile nav', async () => {
-  await p.setViewportSize({ width: 390, height: 844 });
-  await open(p, '/'); await closePromo(p);
-  const ham = p.locator('[data-toggle="mobile-menu"], button[aria-label*="menu" i]').filter({ visible: true }).first();
-  if (await ham.count()) { await ham.click({ timeout: 5000 }).catch(() => {}); await wait(p, 1400); await grab(p, 'nav (mobile sheet)'); }
-  await p.setViewportSize({ width: 1440, height: 900 });
+await tryDo('create dialog', async () => { await open(p, '/course/my'); await closePromo(p); await p.locator(M('catalog_createButton')).first().click(); await wait(p, 2000); await grab(p, 'academy (create dialog)'); });
+await open(p, '/course/math/algebra-1?unit=real-numbers-and-sets'); await closePromo(p); await grab(p, 'unit');
+await tryDo('science lesson', async () => {
+  await open(p, '/course/science/how-things-work-1/learn?entry_source=start&from=science', 7000);
+  await grab(p, 'lesson-science (audio dialog)');
+  const nn = p.getByRole('button', { name: 'Not now' }); if (await nn.count()) await nn.click();
+  await wait(p, 1500); await grab(p, 'lesson-science');
+  await p.getByRole('button', { name: 'Settings' }).click(); await wait(p, 1000); await grab(p, 'lesson-science (settings)');
+  await p.keyboard.press('Escape');
+  const pz = p.getByRole('button', { name: 'Pause' }); if (await pz.count()) await pz.click();
+  await p.locator('[aria-label="Ask Tutor"]').first().click(); await wait(p, 1200); await grab(p, 'lesson-science (ask tutor)');
 });
-// The product page's Share popover is a UI toggle too.
-await tryDo('share popover', async () => {
-  await p.goto('https://ichigo.gumroad.com/l/ichigo-reader', { waitUntil: 'domcontentloaded', timeout: 90000 }); await wait(p, 10000);
-  const share = p.locator('button, a').filter({ hasText: /share/i }).filter({ visible: true }).first();
-  if (await share.count()) { await share.click({ timeout: 4000 }).catch(() => {}); await wait(p, 1200); await grab(p, 'product (share popover)'); }
+await tryDo('math lesson', async () => {
+  await open(p, '/course/math/algebra-1/fundamentals-of-set-theory/learn?entry_source=start&return_to=course_detail', 8000);
+  const c = p.getByRole('button', { name: 'Continue', exact: true }); if (await c.count()) { await c.click(); await wait(p, 3000); }
+  await grab(p, 'lesson-math');
+  await p.getByRole('button', { name: 'Open lesson chapters' }).click(); await wait(p, 1000); await grab(p, 'lesson-math (chapters)');
 });
-// Dark-mode icon variants: gumroad paints dark through prefers-color-scheme —
-// emulating it is the product's own mechanism. Same geometries, but any svg
-// that hard-codes a light colour would surface as a new hash.
-await tryDo('dark theme', async () => {
-  await p.emulateMedia({ colorScheme: 'dark' }); await wait(p, 1200);
-  await open(p, '/'); await closePromo(p); await scrollAll(p, 'dark');
-  await p.emulateMedia({ colorScheme: 'light' });
+await tryDo('history lesson', async () => {
+  await open(p, '/course/history/crossing-the-ocean-wall/learn?entry_source=start&from=history', 8000);
+  await grab(p, 'lesson-history');
+  await p.locator(M('lesson_chapterMenuButton')).first().click(); await wait(p, 1000); await grab(p, 'lesson-history (chapters)');
+});
+await tryDo('atlas', async () => {
+  await open(p, '/atlas'); await closePromo(p); await scrollAll(p, 'atlas');
+  await openStory(p); await grab(p, 'atlas story');
 });
 await b.close();
 

@@ -1,31 +1,31 @@
-# Patterns
+# Replo patterns
 
-## Home
+How the public marketing pages combine the components. Screenshots are in [screenshots/](screenshots). The control map is [site-tree.md](site-tree.md).
 
-[home-light-default.png](screenshots/home-light-default.png) at 1440 by 900 CSS pixels, device pixel ratio 2. A 60px sticky header holds the wordmark, Product, Solutions, Resources, Customers, Pricing, Log in, Start for free and Book a demo. The display line is 56px Archivo at weight 500, tracking -1.96px. The word Replo in that line is set in the editorial italic in the screenshot. That italic's computed style was not separated from the h1. The lead is 20px at 70% cream. Two pills sit under it: Get started for free, and Add to ChatGPT / Claude. Below that is a product demonstration, labelled as a public demo, not a signed-in dashboard.
+## Marketing shell
 
-[home-light-menu.png](screenshots/home-light-menu.png) is the same page with Product open. The panel is 14px radius, `#111111`, with four columns and a row of Claude, ChatGPT and Codex chips.
+Every captured page uses the same header: Product, Solutions, and Resources as menus, Customers and Pricing as links, then Log in, Start for free, and Book a demo. The page background is black. Body and headings are the cream ink. Start for free is the only cream-filled pill. Book a demo is a black pill with a cream hairline.
 
-[home-phone-default.png](screenshots/home-phone-default.png) is 390 by 844. The wordmark, both pills and a hamburger remain. The nav links collapse.
+See [home-dark-default](screenshots/home-dark-default.png).
 
-## Pricing
+## Menus
 
-[pricing-light-default.png](screenshots/pricing-light-default.png) shows four cards: Free, Starter, Pro, Custom. Annual is selected. Starter carries Most popular. Prices on that state: $0, $99 (was $119), $499 (was $599), and Let's talk. [pricing-light-monthly.png](screenshots/pricing-light-monthly.png) is the same page after Monthly was clicked. The screenshot shows $119 and $599. Those monthly figures were not read as computed text.
+Product, Solutions, and Resources each open a panel of links over the page. Escape closes the panel. The phone width uses one "Open menu" button for the same links.
 
-[pricing-phone-default.png](screenshots/pricing-phone-default.png) stacks the cards. The billing track stays.
+See [home-dark-product-menu](screenshots/home-dark-product-menu.png), [home-dark-solutions-menu](screenshots/home-dark-solutions-menu.png), [home-dark-resources-menu](screenshots/home-dark-resources-menu.png), and [mobile-home-dark-menu](screenshots/mobile-home-dark-menu.png).
 
-## Contact
+## Hero
 
-[contact-light-default.png](screenshots/contact-light-default.png) splits a route list and a demo form. The form was not submitted. Fields are 50px, radius 10px.
+A 56px Archivo heading, a short lede, and the cream Start for free pill. Prompt chips sit under the hero and fill a prompt. That prompt was not submitted.
 
-## Customers
+## Pricing and contact
 
-[case-studies-light-default.png](screenshots/case-studies-light-default.png) is a title, a search field, a Newest menu, filter chips, and a row of brand cards. Search was not submitted.
+Pricing is a long dark page of plan cards. Contact is the demo request page. Neither form was submitted.
 
-## Missing page
+See [pricing-dark-default](screenshots/pricing-dark-default.png) and [contact-dark-default](screenshots/contact-dark-default.png).
 
-[missing-light-default.png](screenshots/missing-light-default.png) is the 404. A large 404, the display heading Page not found, and Return to homepage. The computed body background is still black. The starfield is painted behind it.
+## Auth boundary
 
-## Login
+Log in and Start for free leave the marketing host. The dashboard shows an email and password wall, or Google. That is the end of the public tree. The marketing `/login` path is a 404 that still wears the marketing chrome.
 
-No screenshot. `https://dashboard.replo.app` opened `https://dashboard.replo.app/auth/signup`. Sign in opened `https://dashboard.replo.app/auth/login`. The form is a single column: heading, email, password, Sign in, Continue with Google, and a link back to signup. Forgot password points at `/auth/password/reset/init` and was not followed.
+See [notfound-dark-default](screenshots/notfound-dark-default.png) and [login-dark-wall](screenshots/login-dark-wall.png).

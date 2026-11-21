@@ -1,53 +1,51 @@
-# Components
+# Rox components
 
-Public signed-out surfaces of Rox, measured 2026-11-19. Crops are 2x slices of the viewport screenshots. Token names point at [tokens.json](tokens.json).
+Public site only, measured on 2026-11-21 from www.rox.com, signed out. Crops from the first measure pass landed on Framer wrapper links and are not used as evidence. The states below were read again from the painted control. Screenshots show the layout.
 
 ## Button
 
-The marketing site paints square buttons. Computed `border-radius` on the nav Start now, the pricing Start for free, and the contact Get in touch is `0px`.
+Header "Start now" is the primary button. 90 by 30, fill `#1c1917`, label Geist 14/500 `#fafafa`, radius 0, padding 8px 13px. Hover fill `#0c0a09` with an inset shadow. Keyboard focus adds a 1px `#005fcc` auto outline. "Contact Sales" is the quiet button: fill `#fafafa`, label `#403f3e`, shadow `0 1px 2px rgba(0,0,0,.04)`. Plan "Start for free" is wider (308 by 41), fill `#403f3e`, label 16/500. Hover and pressed both go to `#000000`.
 
-| State | Crop | Values |
-|---|---|---|
-| Nav primary, on the home photograph | [button-primary-nav.png](components/crops/button-primary-nav.png) | Background `core.color.paper` (#fafafa). Label Geist 14px weight 500, colour `core.color.ink`. Padding 8px 13px. Height 30px. Inset shadow `core.shadow.nav-primary`. |
-| Hero primary | [button-primary-hero.png](components/crops/button-primary-hero.png) | White face, label `core.color.ink`, Geist 18px weight 400, letter-spacing -0.18px. The anchor itself computed as transparent; the white face is the visible control. Height 49px. |
-| Hero secondary | [button-secondary-hero.png](components/crops/button-secondary-hero.png) | Background rgba(0, 0, 0, 0.18). Label rgb(250, 250, 250), Geist 18px weight 400. Padding 12px 14px 13px. Height 49px. |
-| Plan primary | [button-primary-pricing.png](components/crops/button-primary-pricing.png) | Background `core.color.action-dark` rgb(64, 63, 62). Label rgb(250, 250, 250), Geist 16px weight 500. Padding 12px 24px 13px. Height 41px. |
-| Contact submit | [button-primary-contact.png](components/crops/button-primary-contact.png) | Background `core.color.ink` rgb(12, 10, 9). Label rgb(250, 250, 250), Geist 16px weight 500. Height 52px. Width 560px. |
+Shown in [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png) and [screenshots/home-light-default.png](screenshots/home-light-default.png).
 
-A second plan button on the pricing page computed to rgb(130, 130, 130). That is the dimmed column, recorded as `core.color.action-muted`. Hover, focus-visible, pressed and disabled were not captured.
+## Link and nav
 
-## Link
+Header links are Geist 14/500 `#403f3e` on a 64px hit row. Hover opens a menu for Platform, Resources, and Company. It does not recolour the link. Footer links repeat the same labels.
 
-Nav links on the home hero are Geist 14px weight 500, colour rgba(250, 250, 250, 0.8), line-height 14px. Footer links include Privacy Policy and Security. Their rest colour on a light page was not measured separately.
+Shown in [screenshots/home-light-platform-menu.png](screenshots/home-light-platform-menu.png).
 
-## Text field
+## Text field, text area, select
 
-[text-field-default.png](components/crops/text-field-default.png) is the contact form email field. The wrapper is `core.color.field` (#f4f4f3), radius 4px, padding 16px, height 49px. The input itself is transparent. Placeholder colour is stone-400, rgb(166, 160, 155). Type is Geist 14px. [text-field-half.png](components/crops/text-field-half.png) is the half-width first-name field, same chrome.
+The contact form is the only public form that was opened. The email field's painted wrapper is 560 by 49, fill `#f4f4f3`, radius 4px. The input itself is borderless. Text area padding is 16px. The "How did you hear about us?" control is a select. Nothing was typed. Nothing was submitted. Focus was moved onto the email field for [screenshots/contact-light-focus.png](screenshots/contact-light-focus.png). Disabled, error, and loading states were not present.
 
-Focus and error were not shown. The form was not submitted.
+## Menu
 
-## Text area
+Desktop menus are hover panels. The phone menu is a full-screen black drawer opened by a 33px icon button, with Contact Sales and Start now pinned at the bottom.
 
-[textarea-default.png](components/crops/textarea-default.png). Same field chrome as the text field. The control is 100px tall with 16px padding. Placeholder "Write your message".
+Shown in [screenshots/mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png).
 
-## Select
+## Dialog
 
-[select-default.png](components/crops/select-default.png). Native select, Geist 14px, colour rgb(28, 25, 23), padding 16px, height 49px. Options seen: Select an option, LinkedIn, X, Collegue or Friend, Google, Other. The closed state is the only one captured.
+Docs search opens a white dialog ("Search the docs…", Escape). No query was typed.
+
+Shown in [screenshots/docs-light-search.png](screenshots/docs-light-search.png).
 
 ## Card
 
-[card-plan.png](components/crops/card-plan.png) is the Individual plan card on /pricing. White surface, 1px stone border, price in Season Mix 42px weight 420, colour rgb(28, 25, 23). The charcoal button sits inside the card.
+Pricing cards sit on `#faf9f7` with a hairline. Three plans: Individual, Teams, Enterprise. No billing toggle.
 
-## Auth0 controls
+## Badge
 
-The signed-out login at roxai.us.auth0.com was measured and not screenshotted. The preview browser was not producing frames, and a login page is not a public marketing page, so headless Playwright was not launched against it.
-
-Email input: 52px tall, 318px wide, radius 10px, 1px solid rgb(166, 166, 166), background #ffffff, text #0d0d0d, padding 0 16px. Continue: black fill, white label, radius 10px, 52px tall. Google and Microsoft buttons: background #fafaf9, border 1px #e7e5e4, label rgb(133, 133, 133), radius 10px. Card: 400px wide, radius 14px, border 1px #e7e5e4, shadow 0 12px 40px rgba(0, 0, 0, 0.12), background #fafaf9, on page #efedea.
-
-## Not on these pages
-
-Checkbox, radio, switch, tabs, menu, tooltip, dialog, toast, avatar, badge, table, icon button. See [raw/gaps.md](raw/gaps.md).
+A Gartner toast sits over the home hero. It is a promo, not a status badge.
 
 ## Gaps
 
-Hover, focus-visible, pressed, disabled, loading and error states were not displayed. Auth0 publishes `--base-focus-color: #a6a6a6`, `--base-hover-color: #dbdbdb` and `--error-color: #E38268` as custom properties. Those were not observed on a control in that state. The signed-in product was not entered.
+| Component | Status |
+|---|---|
+| Icon button | Observed on phone (menu close). Values not isolated from the 33px hit target. |
+| Checkbox, radio, switch | Not present on the public pages opened. |
+| Tabs | Docs has a section nav. Not a tab widget. |
+| Tooltip, toast, table, avatar | Not present as product components. The Gartner toast is a marketing widget. |
+| List row | Customer logo row and story cards are marketing, not an app list. |
+| Destructive confirmation, empty, loading, error | Not present on the public surface. |
+| Signed-in app | Behind `run.rox.com` and Auth0. Not captured. |

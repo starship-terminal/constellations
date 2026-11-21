@@ -134,11 +134,9 @@ Good for: A dark live-video shell: purple pill primary, grey wash secondary, 8px
 
 Captured 2026-11-19, signed out (public home, directory, and signup wall; no account created). Themes: dark.
 
-Public signed-out surfaces of [Twitch](https://www.twitch.tv/), captured on 2026-11-19. No account was created. The signup page offers a phone number and Google, Amazon, and Apple, so it is not email-only and was not submitted. No card, no OAuth grant, no paid subscription.
+Public signed-out surfaces of [Twitch](https://www.twitch.tv/), refreshed on 2026-11-21 with headless Playwright. No account was created. Log In and Sign Up open dialogs on the home. Both were photographed and not submitted. Google, Amazon, and Apple were not clicked.
 
-The live theme is dark (`html` class `tw-root--theme-dark`). Adding `tw-root--theme-light` did not remap the colour custom properties or the body background. There is no light set in the tokens.
-
-Surfaces: the signed-out home, `/signup`, `/directory`, `/directory/all`, and `/directory/category/just-chatting`. Desktop screenshots are 1440 by 900. The phone shots are 390 by 844. The T3 preview tab that supplied the computed styles was 1169 by 731 at device pixel ratio 2. Preview screenshots failed ("The browser is not producing screenshot frames"), so the PNGs are headless Chromium of pages that had already loaded in that tab without a Cloudflare challenge.
+The page loaded as `tw-root--theme-light`. The user-menu Dark Theme switch sets `tw-root--theme-dark` and remaps the colour custom properties. Both themes are in the tokens. Desktop shots are 1440 by 900. Phone shots are 390 by 844. Device pixel ratio was 2.
 
 ## Colors
 
@@ -196,22 +194,24 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-`--color-background-top-nav` is `#451093`. The painted `nav.top-nav` background was transparent. Use the measured transparent bar for the signed-out shell, and the token only where a purple bar is actually painted. The community banner at the bottom of the home is that purple.
+`--color-background-top-nav` is `#451093` in dark and `#5c16c5` in light. The painted `nav.top-nav` background was transparent. Use the measured transparent bar for the signed-out shell.
 
-`--color-background-modal` is `#15052e`. The signup panel in the screenshot sits on a raised grey, closer to `#18181b` / `#26262c`. The token is recorded. The panel crop is the thing to match for that screen.
+`--color-background-modal` is `#15052e` in dark. The login and signup panels paint a raised grey, closer to `#26262c`. In light the token and the panel are both white.
 
-The idle signup page includes the sentence "Email is invalid. Please enter a valid email." It computed the body text colour, not `--color-text-error`. That paragraph is in the DOM before a submit. It is not a captured error state.
+`--color-text-button-overlay` is `#ffffff` in dark. The community-banner Sign Up label computed black on the 2026-11-19 pass. The banner crop is the thing to match.
 
-Hover and pressed button colours are declared custom properties. The pointer was not held, so those values were not confirmed on a painted control.
+The idle signup dialog includes "Email is invalid. Please enter a valid email." before any typing. It is not a submitted error state. `--color-text-error` was not confirmed on that sentence.
 
-Preview screenshots failed. The PNGs are a second browser at a different viewport than the 1169px measurement tab. Crop boxes were fitted by eye and by sampling pixels. They show the control. They are not a CSS-to-PNG transform.
+Light hover and pressed button colours are the declared custom properties. The pointer was held on the dark Sign Up button only.
 
 Roobert and Inter are named in the font stacks. This package does not ship the font files.
 
+The featured player shows "This video is either unavailable or not supported in this browser. (Error #4000)". That is the headless player, not a designed empty state.
+
 ### Do and don't (from README.md)
 
-- **Paint the primary action as a purple pill.** Sign Up is `#9147ff`, white text, radius `9000px`, 32px tall. The community banner inverts it to a white pill on purple. See [screenshots/home-dark-default.png](screenshots/home-dark-default.png).
-- **Keep secondary actions on the grey wash.** Log In and the OAuth buttons use `rgba(83, 83, 95, 0.38)`, not a second purple. See [components/crops/button-primary-default.png](components/crops/button-primary-default.png).
-- **Use 8px on fields and 9000px on buttons.** The search and email fields are 8px. Buttons and tags are pills. See [components/crops/field-email-default.png](components/crops/field-email-default.png).
-- **Mark live with the red badge, not the purple.** LIVE is `#eb0400`, 4px radius, 12px type. Purple is the brand, not the live state. See [components/crops/card-live-default.png](components/crops/card-live-default.png).
-- **Do not invent a light theme from the class name.** `tw-root--theme-light` did not change the computed colours on these pages.
+- **Paint the primary action as a purple pill.** Sign Up is `#9147ff`, white text, radius `9000px`, 32px tall. Hover is `#772ce8`. Pressed is `#5c16c5`. See [screenshots/home-dark-default.png](screenshots/home-dark-default.png).
+- **Keep secondary actions on the grey wash.** Log In uses `rgba(83, 83, 95, 0.38)` in dark and `rgba(173, 173, 184, 0.22)` in light. See [screenshots/login-dark-default.png](screenshots/login-dark-default.png).
+- **Use 8px on fields and 9000px on buttons.** Search, email, and the login field are 8px. Buttons and tags are pills. See [screenshots/signup-dark-focus.png](screenshots/signup-dark-focus.png).
+- **Mark live with the red badge, not the purple.** LIVE is `#eb0400`, 4px radius, 12px type. See [screenshots/directory-dark-default.png](screenshots/directory-dark-default.png).
+- **Ship both themes from the user-menu switch.** Light page is `#f7f7f8`. Dark page is `#0e0e10`. The purple pill does not change. See [screenshots/home-light-default.png](screenshots/home-light-default.png).

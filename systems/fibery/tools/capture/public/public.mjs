@@ -1,23 +1,19 @@
-// Captures fibery.com's public pages into RAW (full-colour PNGs); quantize.py turns them into screenshots/.
+// Captures Gauth's public pages into RAW (full-colour PNGs); quantize.py turns them into screenshots/.
 //
 //   RAW=/some/scratch/dir PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [page,page,...]
 //
-// Names are {page}-light-{state}.png; mobile ones get a `mobile-` prefix. fibery.com is a
-// light-only marketing site (no theme toggle, no dark surface). fibery.io/sign-up and
-// fibery.io/login/ are the public workspace-creation wizard and sign-in, captured signed
-// out at rest. Desktop shots are 1440x900 at 1x, mobile 390x844 at 2x, `*-full` shots 1x.
-// A page taller than one GPU texture is saved as name.partN.png tiles, which quantize.py
-// stitches back together; an unbounded page truncates at 8 chunks and the log records the
-// boundary. Nothing is sent, bought or signed into: the only presses are local UI
-// toggles — the header's dropdown menu triggers and the mobile sandwich button. The
-// sign-up and login forms are measured and shot at rest, never submitted. The cookie
-// consent popup and Intercom widget are hidden, never answered.
+// Names are {page}-light-{state}.png; mobile ones get a `mobile-` prefix. Gauth ships one theme, so there
+// is no dark run. Desktop shots are 1440x900 at 1x, mobile shots 390x844 at 2x, `*-full` shots 1x. A page
+// taller than one GPU texture is saved as name.partN.png tiles, which quantize.py stitches back together.
+// Nothing is sent, created or signed into: the only presses are dialog dismissals, tabs, Show more, the
+// lesson's own Not now, Continue (the audio gate), Pause, Settings and chapters, and a story card's
+// Explore, which opens a published story.
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE, SIGNUP_URL, LOGIN_URL, M, PYTHON } from './lib.mjs';
+import { M, closePromo, openStory, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
 // Full-colour shots are working files, never committed: by default they go outside the repository,
 // to ~/.design-systems/<slug>/raw-shots for a package's copy at systems/<slug>/tools/capture/public/.
@@ -37,164 +33,112 @@ async function lazyScroll(p) {
 }
 
 class Shooter {
-  constructor(p, prefix, vw, vh, dpr, sourceUrl) { this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr; this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, sanitizedSourceUrl: sourceUrl }; this.count = 0; }
-  async view(name) { await closePromo(this.p); await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested); this.count++; log('  shot', name); }
+  constructor(p, prefix, vw, vh, dpr) { this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr; this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr }; this.count = 0; }
+  async view(name) { await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested); this.count++; log('  shot', name); }
   async full(name = 'full') {
     const p = this.p;
-    await closePromo(p);
     await lazyScroll(p);
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
     for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
+    // Infinite-scroll pages grow scrollHeight without bound after lazyScroll;
+    // without a ceiling the tile loop writes forever (acuityscheduling filled
+    // 111 GB once). Truncate hard and record the boundary instead.
     const MAXH = 8 * chunk;
     const hCap = Math.min(H, MAXH);
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
-    // Tall stitched pages (37,000px of FAQ) and the home page's hero media
-    // can take well past the 30s default to rasterise — the shots stay
-    // honest, just slow.
-    const opts = (extra) => ({ path: extra, scale: 'css', timeout: 180000 });
-    if (hCap <= chunk) await screenshotWithMetadata(p, { ...opts(f + '.png'), fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { ...opts(`${f}.part${i}.png`), fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+    if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
+    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
   }
 }
 const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
-
-// /101-questions-about-fibery unmounts its FAQ content the moment a
-// fullPage/clip screenshot briefly resizes the viewport (scrollHeight
-// collapses 37790 -> ~1390 after the first tile), so clip tiling is
-// impossible there. This page is stitched from viewport captures instead:
-// scroll to each tile's top, shoot the 900px viewport, and write the tile
-// sidecar recording which document slice the PNG holds. The last viewport
-// is cropped to the page's remaining height so the tiles butt-join.
-async function scrollStitch(S, name = 'full') {
-  const p = S.p;
-  await closePromo(p);
-  await lazyScroll(p);
-  const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
-  const f = `${RAW}/${S.prefix}-${name}`;
-  for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${S.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
-  const meta0 = await p.evaluate(() => ({ innerWidth, innerHeight, devicePixelRatio, documentHeight: Math.max(document.documentElement.scrollHeight, document.body.scrollHeight) }));
-  const vh = meta0.innerHeight;
-  const chunkPx = Math.floor(14000 / S.dpr);
-  const MAXH = 8 * chunkPx;
-  const hCap = Math.min(H, MAXH);
-  if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
-  for (let i = 0, y = 0; y < hCap; i++, y += vh) {
-    const h = Math.min(vh, hCap - y);
-    await p.evaluate((y) => scrollTo(0, y), y);
-    await wait(p, 550);
-    const realY = await p.evaluate(() => scrollY);
-    const file = `${f}.part${i}.png`;
-    await p.screenshot({ path: file, timeout: 120000 });
-    // A viewport PNG may lead with the tail of the previous tile when the
-    // last scroll clamps at the bottom; crop so the PNG starts at y and
-    // holds exactly h CSS px.
-    const lead = Math.round((realY - y) * S.dpr), hpx = Math.round(h * S.dpr);
-    if (lead || hpx) {
-      const { execFileSync } = await import('node:child_process');
-      execFileSync(PYTHON, ['-c', 'import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f)\nim.crop((0,int(sys.argv[2]),im.width,int(sys.argv[2])+int(sys.argv[3]))).save(f)', file, String(lead), String(hpx)]);
-    }
-    const sidecar = {
-      schemaVersion: 1,
-      capturedAt: new Date().toISOString(),
-      screenshot: path.basename(file),
-      sanitizedSourceUrl: S.requested.sanitizedSourceUrl ?? null,
-      requested: { viewport: S.requested.viewport ?? null, deviceScaleFactor: S.requested.deviceScaleFactor ?? null },
-      configuredViewport: { width: meta0.innerWidth, height: meta0.innerHeight },
-      actual: { innerWidth: meta0.innerWidth, innerHeight: meta0.innerHeight, devicePixelRatio: meta0.devicePixelRatio, documentSize: { width: meta0.innerWidth, height: meta0.documentHeight }, scroll: { x: 0, y: realY } },
-      capture: { mode: 'scrollViewport', scale: 'device', clip: { x: 0, y, width: meta0.innerWidth, height: h }, note: 'viewport capture scrolled to y; fullPage/clip screenshots collapse this page (documented boundary)' },
-      png: { width: meta0.innerWidth * S.dpr, height: hpx },
-      dimensionCheck: { status: 'pass', expected: { width: meta0.innerWidth * S.dpr, height: hpx }, basis: 'scrollViewport' },
-      visualReview: { status: 'pending', note: 'Inspect the final image for complete, settled contents; dimensions alone cannot accept it.' },
-      cropCoordinates: { status: 'unverified', note: 'Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG.' },
-    };
-    fs.writeFileSync(file + '.capture.json', JSON.stringify(sidecar, null, 2) + '\n');
-    log('  tile', i, 'y=' + y, 'h=' + h, 'realY=' + realY);
-  }
-  S.count++;
-  log('  shot', name, 'H=' + H, '(scroll-stitched)');
-  await p.evaluate(() => scrollTo(0, 0));
-  await wait(p, 500);
-}
-
-// Opens one of the header's dropdown menus (HeaderMenuItem_expandMenu →
-// HeaderMenuDropdown panel): hover is the natural trigger; keyboard focus is
-// tried as a fallback. A local UI toggle, never a link — its links are never
-// followed.
-async function navMenu(p, S, name) {
-  const item = p.locator(M('HeaderMenuItem_root')).filter({ hasText: new RegExp(`^\\s*${name}`) }).first();
-  if (!(await item.count())) { log('  ! no menu item', name); return; }
-  const open = async () => p.evaluate(() => {
-    const d = [...document.querySelectorAll('[class*="HeaderMenuDropdown_root"]')].find((x) => {
-      const r = x.getBoundingClientRect(); const cs = getComputedStyle(x);
-      return r.width > 200 && r.height > 100 && cs.visibility !== 'hidden' && cs.opacity !== '0' && cs.display !== 'none';
-    });
-    return !!d;
-  }).catch(() => false);
-  if (!(await open())) { await item.hover().catch(() => {}); await wait(p, 900); }
-  if (!(await open())) { await item.focus().catch(() => {}); await wait(p, 700); }
-  if (!(await open())) { log('  ! menu', name, 'did not report open'); return; }
-  await S.view('menu-' + name.toLowerCase().replace(/\s+/g, '-'));
-  await p.evaluate(() => scrollTo(0, 0));
-  await p.mouse.move(720, 500);
-  await wait(p, 400);
-}
+const notNow = async (p) => { const b = p.getByRole('button', { name: 'Not now' }); if (await b.count()) { await b.click(); await wait(p, 1200); } };
+const gate = async (p) => { const b = p.getByRole('button', { name: 'Continue', exact: true }); if (await b.count()) { await b.click(); await wait(p, 4000); } };
+const pause = async (p) => { const b = p.getByRole('button', { name: /^Pause/ }); if (await b.count()) { await b.first().click().catch(() => {}); await wait(p, 600); } };
 
 const desktop = {
-  home: { url: BASE + '/', wait: 7000, run: async (p, S) => {
-    await S.view('default');
-    await step('menu-solutions', () => navMenu(p, S, 'Solutions'));
-    await step('menu-platform', () => navMenu(p, S, 'Platform'));
-    await S.full();
-  } },
-  features: { url: BASE + '/features', wait: 6000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  pricing: { url: BASE + '/pricing', wait: 6000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  templates: { url: BASE + '/templates', wait: 6000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'template-detail': { url: BASE + '/templates/content-marketing', wait: 6000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'customer-stories': { url: BASE + '/customer-stories', wait: 6000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'product-management': { url: BASE + '/product-management', wait: 6000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'no-code': { url: BASE + '/no-code', wait: 6000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  ai: { url: BASE + '/ai', wait: 6000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  blog: { url: BASE + '/blog/', wait: 6000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'blog-article': { url: BASE + '/blog/product-updates/fibery-ai/', wait: 6000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  download: { url: BASE + '/download', wait: 6000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'getting-started': { url: BASE + '/getting-started', wait: 6000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'about-us': { url: BASE + '/about-us', wait: 6000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  questions: { url: BASE + '/101-questions-about-fibery', wait: 6000, run: async (p, S) => { await S.view('default'); await scrollStitch(S); } },
-  museum: { url: BASE + '/museum', wait: 7000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'sign-up': { url: SIGNUP_URL, wait: 8000, run: async (p, S) => {
+  home: { path: '/', promo: 'keep', run: async (p, S) => {
+    await S.view('promo');
+    await closePromo(p);
     await S.view('default');
     await S.full();
+    await step('question-focused', async () => { await p.locator(M('pc_input')).first().click(); await wait(p, 500); await S.view('question-focused'); await p.mouse.click(1400, 600); });
+    await step('sidebar-folded', async () => { await p.locator(M('side-menu_sidebar-collapse')).first().click(); await wait(p, 900); await S.view('sidebar-folded'); });
   } },
-  login: { url: LOGIN_URL, wait: 8000, run: async (p, S) => {
+  'academy-science': { path: '/course/science', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'academy-math': { path: '/course/math', run: async (p, S) => {
+    await S.view('default');
+    await step('show-more', async () => {
+      const b = p.locator(M('catalog_expandButton')).first();
+      await b.click(); await wait(p, 1200);
+      await p.evaluate(() => scrollTo(0, 420)); await wait(p, 700);
+      await S.view('show-more');
+    });
+  } },
+  'academy-history': { path: '/course/history', run: async (p, S) => { await S.view('default'); } },
+  'academy-my': { path: '/course/my', run: async (p, S) => {
+    await S.view('default');
+    await step('create-dialog', async () => { await p.locator(M('catalog_createButton')).first().click(); await wait(p, 2500); await S.view('create-dialog'); });
+  } },
+  unit: { path: '/course/math/algebra-1?unit=real-numbers-and-sets', run: async (p, S) => {
+    await S.view('default');
+    await step('path', async () => { await p.evaluate(() => scrollTo(0, 700)); await wait(p, 1000); await S.view('path'); });
+    await step('unit-2', async () => { await p.evaluate(() => scrollTo(0, 0)); await p.locator(M('math-course-detail_unitButton')).nth(1).click(); await wait(p, 1500); await S.view('unit-2'); });
+  } },
+  'lesson-science': { path: '/course/science/how-things-work-1/learn?entry_source=start&from=science', wait: 7000, run: async (p, S) => {
+    await S.view('audio-dialog');
+    await notNow(p);
+    await S.view('default');
+    await step('settings', async () => { await p.getByRole('button', { name: 'Settings' }).click(); await wait(p, 1000); await S.view('settings'); await p.keyboard.press('Escape'); await wait(p, 500); });
+    await step('ask-tutor', async () => { await pause(p); await p.locator('[aria-label="Ask Tutor"]').first().click(); await wait(p, 1500); await S.view('ask-tutor'); await p.keyboard.press('Escape'); await p.mouse.click(700, 500); await wait(p, 500); });
+    await step('figure', async () => {
+      const play = p.getByRole('button', { name: 'Play' }); if (await play.count()) await play.click();
+      for (let i = 0; i < 60; i++) { const ok = await p.evaluate(() => { const e = document.querySelector('ol[class*="canvas_list__"]'); if (!e) return false; const r = e.getBoundingClientRect(); return r.bottom < innerHeight - 20 && r.top > 60; }); if (ok) break; await wait(p, 1500); }
+      await pause(p); await S.view('figure');
+      const play2 = p.getByRole('button', { name: 'Play' }); if (await play2.count()) await play2.click();
+    });
+    await step('quiz', async () => {
+      for (let i = 0; i < 110; i++) { if (await p.locator('[aria-label="Close quiz and continue"]').count()) break; await wait(p, 2000); }
+      await S.view('quiz');
+    });
+  } },
+  'lesson-math': { path: '/course/math/algebra-1/fundamentals-of-set-theory/learn?entry_source=start&return_to=course_detail', wait: 8000, run: async (p, S) => {
+    await S.view('audio-gate');
+    await gate(p);
+    await S.view('default');
+    await step('chapters', async () => { await p.getByRole('button', { name: 'Open lesson chapters' }).click(); await wait(p, 1200); await S.view('chapters'); });
+  } },
+  'lesson-history': { path: '/course/history/crossing-the-ocean-wall/learn?entry_source=start&from=history', wait: 8000, run: async (p, S) => {
+    await S.view('default');
+    await step('chapters', async () => { await p.locator(M('lesson_chapterMenuButton')).first().click(); await wait(p, 1200); await S.view('chapters'); });
+  } },
+  atlas: { path: '/atlas', run: async (p, S) => {
     await S.view('default');
     await S.full();
+    await step('story', async () => {
+      const card = p.locator(M('user-cases_card')).filter({ hasText: 'Apollo 11' }).first();
+      await card.scrollIntoViewIfNeeded(); await card.click(); await wait(p, 3000);
+      await S.view('story-preview');
+      await p.locator(M('user-cases_exploreButton')).first().click(); await wait(p, 10000);
+      await p.mouse.move(700, 880); await wait(p, 600);
+      await S.view('story');
+      await p.evaluate(() => { const b = [...document.querySelectorAll('button')].find((e) => /Generate Video/.test(e.innerText || '') && e.getBoundingClientRect().top < 40); if (b) b.setAttribute('data-m', 'gen'); });
+      await p.locator('[data-m="gen"]').hover(); await wait(p, 1500);
+      await S.view('story-video-settings');
+    });
   } },
+  news: { path: '/news', run: async (p, S) => { await S.view('default'); await S.full(); } },
 };
 
 const mobile = {
-  home: { url: BASE + '/', wait: 7000, run: async (p, S) => {
-    await S.view('default');
-    await step('drawer', async () => {
-      // The header's sandwich button (HeaderMainMenu_sandwichBtn, icon-only)
-      // toggles the phone nav — a local UI toggle; its links are never
-      // followed.
-      const ham = p.locator(M('HeaderMainMenu_sandwichBtn')).filter({ visible: true }).first();
-      if (!(await ham.count())) return;
-      await ham.click().catch(() => ham.evaluate((el) => el.click()));
-      await wait(p, 1000);
-      await S.view('drawer');
-      await p.keyboard.press('Escape');
-      await ham.click().catch(() => {});
-    });
-    await S.full();
-  } },
-  pricing: { url: BASE + '/pricing', wait: 6000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  features: { url: BASE + '/features', wait: 6000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'sign-up': { url: SIGNUP_URL, wait: 8000, run: async (p, S) => { await S.view('default'); await S.full(); } },
+  home: { path: '/', promo: 'keep', run: async (p, S) => { await S.view('promo'); await closePromo(p); await S.view('default'); await S.full(); } },
+  academy: { path: '/course/math', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  unit: { path: '/course/math/algebra-1?unit=real-numbers-and-sets', run: async (p, S) => { await S.view('default'); await step('path', async () => { await p.evaluate(() => scrollTo(0, 700)); await wait(p, 900); await S.view('path'); }); } },
+  'lesson-math': { path: '/course/math/algebra-1/fundamentals-of-set-theory/learn?entry_source=start&return_to=course_detail', wait: 8000, run: async (p, S) => { await S.view('audio-gate'); await gate(p); await S.view('default'); } },
+  atlas: { path: '/atlas', run: async (p, S) => { await S.view('default'); await step('story', async () => { await openStory(p, 'Artemis II'); await S.view('story'); }); } },
 };
 
 const b = await chromium.launch();
@@ -206,14 +150,13 @@ for (const { k, mob } of runs) {
   const spec = (mob ? mobile : desktop)[k];
   const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
   const ctx = await b.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US' });
-  await patch(ctx);
   const p = await ctx.newPage();
   log(name);
-  const S = new Shooter(p, `${name}-light`, vw, vh, dpr, spec.url);
+  const S = new Shooter(p, `${name}-light`, vw, vh, dpr);
   try {
-    await p.goto(spec.url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-    if (!(await clearChallenge(p))) { log('  BLOCKED challenge', spec.url); await ctx.close(); continue; }
+    await p.goto(BASE + spec.path, { waitUntil: 'load', timeout: 90000 });
     await wait(p, spec.wait || 6000);
+    if (spec.promo !== 'keep') await closePromo(p);
     await spec.run(p, S);
   } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
   total += S.count;

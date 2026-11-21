@@ -1,49 +1,56 @@
 # Components
 
-Public signed-out chrome only. Values are computed styles from 2026-11-19. Crops are absent because the preview browser returned "The browser is not producing screenshot frames" and headless Playwright was stopped by a Cloudflare challenge.
+Public Patreon, read on 2026-11-20. Crops were not cut. The states below were seen in full screenshots or measured on the live page. A value that was not read is Not captured.
 
 ## Button
 
-Header **Get Started** at 1440x900: background `rgb(255, 255, 255)`, text `rgb(0, 0, 0)`, height 47px, padding 15px 21px, radius 30px, Oracle 13.5px, weight 350, letter-spacing -0.24px, 1px solid white.
+Marketing Get Started is a white pill, 114×47, radius 30px, Oracle 13.5px weight 350, on the pricing header. See [pricing-light-default](screenshots/pricing-light-default.png).
 
-In-page **Get started** on `/pricing`: same size and radius, background `rgb(0, 0, 0)`, text `rgb(255, 255, 255)`.
+Creator Join for free is a filled pill, 116×40, radius 9999px, fill rgb(175, 2, 16), white text, ABC Oracle Plus Variable 14px weight 550. Membership Join links are the same fill at radius 8px. See [creator-membership-light-default](screenshots/creator-membership-light-default.png).
 
-At 390 the same header link computed to height 41px, padding 10px 14px, radius 40px, 16px.
-
-Hover, pressed, disabled and loading were not captured.
-
-## Link
-
-**Log in** at 1440: transparent background, white text, 1px solid white, height 47px, padding 15px 21px, radius 30px, weight 350.
-
-Footer column links at 390, on a black footer: white, 24px, weight 300, letter-spacing 0.36px. Social links: 18px, weight 350.
-
-## Text field
-
-**Find a Creator** on the marketing header: computed radius 60px, font-size 18px, transparent background. Its box was 0x0 at 390, so padding and height are a gap.
-
-Login **Email** field: wrapper background `rgba(120, 119, 118, 0.25)`, radius 8px, height 40px, width 400px. The input itself is transparent, 14px, weight 337, placeholder "Email". The label "Email *" is 14px, weight 500, white. The field was not typed into. Error, focus and filled states were not captured.
+Hover, focus-visible, pressed, disabled, and loading were not captured. Join was not clicked.
 
 ## Icon button
 
-**Open menu** at 390: 20x20, transparent, white, radius 0. **Close** in the off-canvas menu is an inline SVG, viewBox `0 0 22 22`, stroke currentColor, stroke-width 2. Hover and pressed were not captured.
+Explore carousel controls are 26×26, radius 9999px. The phone marketing sheet uses Open menu. See [explore-light-default](screenshots/explore-light-default.png) and [mobile-marketing-light-nav-sheet](screenshots/mobile-marketing-light-nav-sheet.png).
+
+## Link
+
+Marketing Log in is an Oracle text link, 13.5px weight 350, transparent fill, in a 30px radius hit area. App text links use `--TextLink-color-*`, declared, not measured on a live link.
+
+## Text field
+
+Explore search placeholder "Search creators or topics" sits in a pill. The input node itself measured transparent, 594×40, 14px weight 337. The painted pill is the parent. Marketing Find a Creator is 148×45, radius 45px. Help Center search was focused. See [explore-light-search-typed](screenshots/explore-light-search-typed.png) and [help-light-search-focused](screenshots/help-light-search-focused.png).
+
+Nothing was submitted.
+
+## Text area, select, checkbox, radio, switch
+
+Not captured. No public page in this capture showed them without a form submit or a login wall.
+
+## Tabs
+
+Creator pages use Home, Posts, Quips, Collections, Shop, Membership, Recommendations, Chats. Explore uses topic chips (All, Pop culture, Comedy, and the rest). Selected All is a black pill in the screenshot. The button node measured transparent, so the fill is painted by an inner element. See [explore-light-default](screenshots/explore-light-default.png) and [creator-light-default](screenshots/creator-light-default.png).
 
 ## Menu
 
-Creators mega menu, opened from the header: a full-width list, 1440px by 229px, padding 35.1px 35.1px 27px. Links such as Podcasters computed to 15px, weight 400, black. The panel's own background computed transparent because the paint sits on a parent. At 390 the same menu is a black full-screen sheet; Podcasters computed to 30px, weight 300, white.
+Marketing Creators, Features, and Resources are header buttons. Creators hover opens links to podcast, video, music, artist, and game pages. Share on a post opens Copy link, Share on X, Share on Facebook. Those share URLs were not opened. The account menu was mapped on the logged-out app home and is not in a screenshot in this package.
+
+## Tooltip, dialog, toast
+
+Not captured on the pages that stayed public. Chats, Notifications, and Join open a login wall. That wall was not screenshotted.
 
 ## Card
 
-Creator names (Rachel Maksy, RossDraws) sit in links about 250px wide. The link background computed transparent and no image radius was readable from the anchor. Card fill, radius and shadow are a gap.
+Explore topic cards are 243×84, radius 12px, fill rgb(249, 249, 249). Creator cards on Explore are photo tiles with a name and a category line. See [explore-light-default](screenshots/explore-light-default.png).
 
-## Other checklist components
+## List row, table, avatar, badge
 
-Text area, select, checkbox, radio, switch, tabs, tooltip, dialog, toast, list row, table, avatar and badge were not on the signed-out pages that loaded. The login wall has SSO buttons (Continue with Apple, Continue with Facebook): white, 1px solid `rgb(218, 220, 224)`, radius 4px, height 40px, width 400px, 14px, weight 550. Continue is white on black text, radius 8px, height 40px, width 400px.
+Creator cards include avatars. A table was not on the captured public pages. List rows appear in the Help Center and in creator post lists. Badge values were declared as `--Badge-*` and not measured on an element.
 
 ## Gaps
 
-- No screenshot crops. Preview frames never arrived. Headless Playwright got HTTP 403 "Just a moment..." and was not used on the login page after that.
-- Signup was not submitted. No account, no email, no SSO, no card.
-- Hover, pressed, disabled, loading, error and validation were not captured.
-- Dark theme of the marketing site was not found. `color-scheme` on the login page is `light dark`, but no dark toggle was used.
-- Footer mailing address is published on the page and is not copied into this package.
+- Logged-out app home screenshots, including the account menu and dark appearance, are not in this package. Later loads of `/` served the marketing homepage.
+- Login, signup, Apple, and Facebook were not opened past the URL record in [site-tree.md](site-tree.md).
+- Hover, focus-visible, pressed, disabled, loading, and error states were not measured on the painted controls.
+- Focus ring colour is Not captured.

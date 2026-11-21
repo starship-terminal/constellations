@@ -1,6 +1,5 @@
-// Shared helpers for the Gauth captures (adapted from the Coursera kit).
-// Run with PLAYWRIGHT pointing at a Playwright install (index.mjs) when this
-// directory has no node_modules of its own.
+// Shared helpers for the replo.app public captures. Run with PLAYWRIGHT pointing at a
+// Playwright install (index.mjs) when this directory has no node_modules.
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -16,59 +15,111 @@ export const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
 export const UA_MOBILE =
   'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1';
-export const BASE = 'https://www.gauth.com';
+export const BASE = 'https://www.replo.app';
 
 export const HERE = path.dirname(new URL(import.meta.url).pathname);
 export const REF = path.resolve(HERE, '..', '..', '..'); // systems/<slug>, from tools/capture/public
 export const CROPS = path.join(REF, 'components', 'crops');
 export const RAW = path.join(REF, 'raw');
 
-// Gauth styles its pages with CSS modules: a class is `<file>_<name>__<hash>`.
-// M('catalog_card') selects by the stable part, so a rebuild that changes the
-// hash does not break the kit.
-export const M = (name) => `[class*="${name}__"]`;
+// replo.app is a Next.js marketing site that paints one dark theme. Selectors
+// key off roles, landmarks and text. No consent overlay mounts on these routes.
+export const M = (name) => name;
+
+// The per-context patches every page gets: the webdriver mask, plus a record of
+// the real devicePixelRatio before app code runs — the site.s scripts make
+// window.devicePixelRatio read 1 while the renderer still paints at the
+// context's deviceScaleFactor (a 780x1688 PNG from a 390x844 viewport).
+// __captureDPR keeps the launch-time value for the screenshot sidecar.
+export async function patch(context) {
+  await context.addInitScript(() => {
+    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
+  });
+}
 
 export async function launch({ width = 1440, height = 900, mobile = false } = {}) {
   const browser = await chromium.launch();
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion: 'no-preference' });
+  await patch(context);
   return { browser, context };
 }
 
-// Every page opens with a promo dialog ("Introducing Gauth Academy"); its own
-// close button dismisses it. `waitUntil: 'networkidle'` never settles on
-// gauth.com, so a page is `load` plus a fixed wait.
-export async function closePromo(page) {
-  const x = page.locator(M('atlas-intro-modal_aw-atlas-intro-modal-close'));
-  for (let i = 0; i < 3; i++) {
-    if (await x.count() && await x.first().isVisible().catch(() => false)) {
-      await x.first().click().catch(() => {});
-      await page.waitForTimeout(800);
-      return true;
-    }
-    await page.waitForTimeout(700);
+// Waits out any bot interstitial and reports whether the real document
+// arrived. replo.app does not challenge this client.
+export async function clearChallenge(page, { tries = 12, step = 2000 } = {}) {
+  for (let i = 0; i < tries; i++) {
+    const s = await page.evaluate(() => ({
+      title: document.title,
+      body: (document.body && document.body.innerText || '').slice(0, 400),
+    })).catch(() => ({ title: '', body: '' }));
+    const challenging = /just a moment/i.test(s.title)
+      || /performing security verification|verify you are human|verifying you are human|checking your browser/i.test(s.body);
+    if (!challenging && s.body.length > 40) return true;
+    await page.waitForTimeout(step);
   }
   return false;
 }
 
-export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
-  await page.goto(url, { waitUntil: 'load', timeout: 90000 });
-  await page.waitForTimeout(wait);
-  if (promo === 'close') await closePromo(page);
+// Hide (never click) any fixed overlay that mounts over the page: a promo or
+// announcement layer. REMOVE-ONLY: hiding never accepts or rejects anything.
+export async function closePromo(page) {
+  for (let i = 0; i < 4; i++) {
+    const hit = await page.evaluate(() => {
+      let n = 0;
+      // Any fixed promo/newsletter/cookie overlay is hidden, never answered.
+      const box = [...document.querySelectorAll('div,section,aside,[role="dialog"],[role="alertdialog"]')].find((x) => {
+        const t = x.innerText || '';
+        const r = x.getBoundingClientRect();
+        const cs = getComputedStyle(x);
+        return (cs.position === 'fixed' || cs.position === 'sticky')
+          && /cookie|we value privacy|newsletter|subscribe to|sign up for|first order/i.test(t)
+          && t.length < 1600 && r.width > 200 && r.width < 1400 && r.height > 60 && +cs.zIndex > 5;
+      });
+      if (box) { box.style.setProperty('display', 'none', 'important'); n++; }
+      document.body && document.body.style.removeProperty('overflow');
+      document.documentElement && document.documentElement.style.removeProperty('overflow');
+      return n;
+    }).catch(() => 0);
+    if (!hit) { await page.waitForTimeout(600); continue; }
+    await page.waitForTimeout(600);
+  }
+  return true;
 }
 
-// A story's own URL (/atlas/session/<id>) belongs to the browser that opened it and redirects to /atlas
-// anywhere else, so the story is reached the way a visitor reaches it: its card, then Explore.
-export async function openStory(p, title = 'Apollo 11') {
-  // desktop cards are user-cases_card and open a preview with Explore; phone cards are home_caseItem
-  const card = p.locator(`${M('user-cases_card')}, ${M('home_caseItem')}`).filter({ hasText: title }).first();
-  await card.scrollIntoViewIfNeeded();
-  await card.click();
-  await p.waitForTimeout(3000);
-  const explore = p.locator(M('user-cases_exploreButton'));
-  if (await explore.count()) await explore.first().click();
-  await p.waitForTimeout(10000);
+// Finds a visible element in-page whose trimmed innerText matches reText,
+// tags it with data-m-mark="<tag>" and returns a locator for it. up optionally
+// retargets an ancestor (closest()). Use where getByRole/hasText miss nodes
+// whose text lives in nested spans.
+export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up = null, nth = 0, leaf = true, minW = 0, minH = 0 } = {}) {
+  const ok = await page.evaluate(
+    ([src, flags, s, t, upSel, i, leafOnly, w, h]) => {
+      const re = new RegExp(src, flags);
+      document.querySelectorAll(`[data-m-mark="${t}"]`).forEach((n) => n.removeAttribute('data-m-mark'));
+      const els = [...document.querySelectorAll(s)].filter((n) => {
+        const r = n.getBoundingClientRect();
+        const cs = getComputedStyle(n);
+        return r.width >= w && r.height >= h && r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && cs.opacity !== '0' && re.test((n.innerText || '').trim());
+      });
+      // leaf: a container holding another match is a wrapper, not the target
+      const pool = leafOnly ? els.filter((n) => !els.some((o) => o !== n && n.contains(o))) : els;
+      const el = pool[i] || els[i];
+      if (!el) return false;
+      (upSel ? el.closest(upSel) || el : el).setAttribute('data-m-mark', t);
+      return true;
+    },
+    [reText.source, reText.flags, sel, tag, up, nth, leaf, minW, minH],
+  );
+  return ok ? page.locator(`[data-m-mark="${tag}"]`) : page.locator('[data-m-mark="__none__"]');
+}
+
+export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+  await clearChallenge(page);
+  await page.waitForTimeout(wait);
+  if (promo === 'close') await closePromo(page);
 }
 
 // Computed style properties recorded for every component and state.
@@ -94,11 +145,9 @@ export const PROPS = [
 // Reads the computed style of the element, its ::before/::after if they paint
 // anything, the rect, the painted layers in its subtree, a focus ring or fill
 // painted by an ancestor, the first text node's type, and the first svg icon.
-// Class names are reported without their CSS-module hash.
 export async function styleOf(locator) {
   return locator.evaluate((el, props) => {
-    const strip = (c) => String(c).replace(/__[A-Za-z0-9_-]{5,6}$/, '');
-    const cls = (n) => [...n.classList].map(strip).filter((c) => !/^x[0-9a-z]{5,8}$/.test(c));
+    const cls = (n) => [...n.classList].map((c) => String(c)).filter((c) => c && !/^x[0-9a-z]{5,8}$/.test(c));
     // A url() in a computed value (a background photo, a cursor) can be a signed URL: recorded as
     // url(…), only data: and #fragment references kept.
     const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
@@ -116,6 +165,20 @@ export async function styleOf(locator) {
       rect: { x: +r.x.toFixed(1), y: +r.y.toFixed(1), w: +r.width.toFixed(2), h: +r.height.toFixed(2) },
       style: pick(cs),
     };
+    // Framer anchors inherit the UA link colour on the anchor itself and paint
+    // text on a descendant span: read the deepest text-bearing child's style
+    // too, so link/button text colour is evidence, not a browser default.
+    let tEl = el;
+    for (;;) {
+      const kids = [...tEl.children].filter((k) => (k.innerText || '').trim());
+      if (!kids.length) break;
+      tEl = kids[kids.length - 1];
+      if (tEl === el) break;
+    }
+    if (tEl !== el && (tEl.innerText || '').trim()) {
+      const tcs = getComputedStyle(tEl);
+      out.textStyle = { color: tcs.color, fontFamily: tcs.fontFamily, fontSize: tcs.fontSize, fontWeight: tcs.fontWeight, lineHeight: tcs.lineHeight, letterSpacing: tcs.letterSpacing, textDecorationLine: tcs.textDecorationLine, textTransform: tcs.textTransform };
+    }
     for (const pe of ['::before', '::after']) {
       const p = getComputedStyle(el, pe);
       if (p.content && p.content !== 'none' && p.content !== 'normal') {
@@ -185,7 +248,7 @@ export async function styleOf(locator) {
 // Element screenshot into components/crops/<name>.png, padded so a focus ring
 // or shadow is not clipped, then quantized to 256 colours. Sticky bars that do
 // not hold the element are hidden for the shot.
-const STICKY = [M('pc-header_header'), M('catalog_stickyToolbar'), M('math-course-detail_backBar'), M('header_header')].join(', ');
+const STICKY = ['header', 'nav[class*="sticky" i]', '[class*="sticky" i] header', 'div[class*="sticky" i]:has(> nav)'].join(', ');
 export async function crop(page, locator, name, pad = 8) {
   fs.mkdirSync(CROPS, { recursive: true });
   const file = path.join(CROPS, `${name}.png`);

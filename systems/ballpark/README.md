@@ -1,6 +1,6 @@
 # Ballpark design reference
 
-A token set and component reference for Ballpark's public site — for building product-research marketing, pricing and sign-in surfaces in the style of the real thing. It was read from **ballparkhq.com** on **2026-11-11**, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the home page (with the Solutions menu opened), features, coach, templates, enterprise, blog, pricing, the sales contact form and the sign-in page.
+A token set and component reference for Ballpark's public site — for building product-research marketing, pricing and sign-in surfaces in the style of the real thing. Tokens were read from **ballparkhq.com** on **2026-11-11**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. On **2026-11-21** the public tree was mapped from the homepage and re-photographed at the same widths: every nav target, the Platform and Solutions menus, the phone sheet, and the auth walls (photographed, not submitted). The map is [site-tree.md](site-tree.md).
 
 Ballpark is worth a capture because it is a current reference for a clean, editorial SaaS marketing surface: a white ground, display type in **Inter Display** at up to 96px/800, one near-black CTA recipe (`#111827`, 7px radius, 36px pills) repeated from the nav to the pricing page, a coral flame ramp (`#fc4a2b` family) reserved for the "NEW" chip and small accents, a hairline-bordered ghost button next to it, and a full Framer `--token-*` palette — the Tailwind v3 ramps plus the product's own colours — declared on `body`.
 
@@ -12,9 +12,10 @@ Ballpark is worth a capture because it is a current reference for a clean, edito
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every measured component (41, ~109 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the fixed shell, the CTA vocabulary, the hero, pricing, forms, footer |
-| [components/crops/](components/crops) | 108 element screenshots, `{component}-{state}.png` |
-| [screenshots/](screenshots) | 26 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `-solutions-menu`/`-menu-open` the opened states |
-| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property in the Framer bundle, binned token/app/framer, resolved in a probe), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
+| [components/crops/](components/crops) | 109 element screenshots, `{component}-{state}.png` |
+| [screenshots/](screenshots) | Public page and overlay captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x. `-full` whole pages, `-platform-menu`/`-solutions-menu`/`-menu-open` the opened states. The 2026-11-21 set is indexed in [site-tree.md](site-tree.md). |
+| [site-tree.md](site-tree.md) | Which homepage control opens which page, menu, or auth wall, mapped 2026-11-21 |
+| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property in the Framer bundle, binned token/app/framer, resolved in a probe), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads), [full/](raw/full) (the full-colour captures with `.capture.json` sidecars) |
 | [tools/](tools) | The builders and the capture kit. See [Rebuild](#rebuild) |
 
 ## Brief
@@ -51,7 +52,7 @@ Fonts: the catalog preview names none. Scales, counted as [DESIGN.md](DESIGN.md)
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 108 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 109 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -106,7 +107,6 @@ Nothing was sent, downloaded, signed into or trialled. The only presses were loc
 
 ## What to distrust
 
-- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **One painted theme.** Every captured route paints light; the bundle declares no dark variant, so no dark set is emitted.
 - **Framer uuid token names.** `--token-<uuid>` names are unstable build artefacts; tokens.json emits them under readable Tailwind/brand names while each leaf keeps the real variable in `$extensions.source`.
 - **Anchor `color` reads `#0000ee`.** Framer paints link/button text on inner spans; the anchor's own computed colour is the UA default. `light.accentText`/`link` read the text child (`textStyle` in the raw file), never the anchor.
@@ -151,6 +151,7 @@ Declared in `raw/css-vars.json` (`fonts`, 336 faces): **Inter Display** 600–90
 | Onboarding, the product itself | not captured | behind sign-in |
 | Themes: light, dark | partly | light painted everywhere; no dark declared |
 | Widths: 1440, 390 | captured | desktop + `mobile-*` shots and the Mobile group |
+| Public site tree | captured | [site-tree.md](site-tree.md): homepage controls, Platform and Solutions menus, footer, auth walls |
 | The app behind `/sign-in` | not captured | credentials were never entered |
 
 ## Do and don't

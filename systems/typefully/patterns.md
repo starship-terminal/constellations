@@ -1,31 +1,49 @@
-# Patterns
+# Typefully patterns
 
-## Marketing shell
+How the public pages combine. Screenshots are quantised sRGB PNGs. Read colours from [tokens.json](tokens.json), not from the PNGs.
 
-The home page is a product demo behind a centred panel. The panel holds the wordmark, a 44px heading, a short lede, and a row of OAuth pills. Log in and Sign up sit at the top right of the panel. Light is white. Dark is `#111418`.
+## Marketing page
 
-[screenshots/home-light-default.png](screenshots/home-light-default.png)
+A quiet white page, Inter, black headlines, muted secondary copy, and one blue accent. The header sits on the page, not in a bar with a border. The CTA is a short pill. Plan cards and tool cards use a hairline and a small radius, not a heavy shadow.
 
-[screenshots/home-dark-default.png](screenshots/home-dark-default.png)
+Shown in [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png) and [screenshots/ai-light-default.png](screenshots/ai-light-default.png).
 
-At 390 the same panel stacks the OAuth pills and keeps Sign up at the top right.
+## Homepage modal
 
-[screenshots/home-light-phone.png](screenshots/home-light-phone.png)
+`/` is a long marketing page drawn inside a dialog over a product-shell illustration. The shell looks like the app (Write, Plan, Analyze, queue) and does not receive clicks. Log in and Sign up open a second dialog on the same URL.
+
+Shown in [screenshots/home-light-default.png](screenshots/home-light-default.png) and [screenshots/home-light-login-dialog.png](screenshots/home-light-login-dialog.png).
+
+## Auth wall
+
+Every "Get started", "Try Typefully now", and "Create profile" control returns to that wall. The dialog offers four providers and a switch between log in and sign up. Email reveals a field and a Turnstile widget. That branch stops there.
 
 ## Pricing
 
-Three plan cards sit in a row: Free, Creator, Business. Business is the accent action. A yearly switch sits on the Business card and was on. Prices read from the number-flow shadow root were $0, $99 / year and $18 / mo per social set. Checkout was not opened.
+Three plans in a row: Free, Creator, Business. Copy says annual billing. There is no monthly toggle. A social-set control opens a menu. Feature rows expand in place. On a phone the comparison uses plan tabs.
 
-[screenshots/pricing-light-default.png](screenshots/pricing-light-default.png)
+Shown in [screenshots/pricing-light-full.png](screenshots/pricing-light-full.png) and [screenshots/mobile-pricing-light-default.png](screenshots/mobile-pricing-light-default.png).
 
-[screenshots/pricing-dark-default.png](screenshots/pricing-dark-default.png)
+## Editorial index
 
-## Email dialog
+Blog, changelog, announcements, and the glossary share a list of titles on the same white page, with the same header and footer. One sample of each template was captured. The sitemap has many more slugs of the same template.
 
-Clicking Email opens a dialog on the marketing page. It asks for an email address and says a verification code will be sent. Continue was not clicked. A Turnstile widget was in the form. Google, X/Twitter and LinkedIn were not clicked.
+Shown in [screenshots/blog-light-default.png](screenshots/blog-light-default.png) and [screenshots/changelog-light-default.png](screenshots/changelog-light-default.png).
 
-[screenshots/email-light-dialog.png](screenshots/email-light-dialog.png)
+## Tool page
 
-## Not captured
+The fake-tweet composer is a local form: name, handle, textarea, advanced options. It was not submitted. The glossary search was focused and not submitted.
 
-The signed-in composer, queue, analytics and settings were not entered. `/login` is a public 404. No payment, booking or company SSO was submitted.
+Shown in [screenshots/fake-tweet-light-default.png](screenshots/fake-tweet-light-default.png) and [screenshots/glossary-light-search-focused.png](screenshots/glossary-light-search-focused.png).
+
+## Docs
+
+`/docs/api` is a Scalar reference: a left rail of groups, method rows, and a client panel. It is a different chrome from the marketing pages. The token field stays empty.
+
+Shown in [screenshots/docs-light-default.png](screenshots/docs-light-default.png).
+
+## Phone
+
+390px CSS width, captured at 2x. Marketing pages keep the logo and the pill CTA. On jobs, a menu icon appears. Pricing, Blog, Changelog, Jobs, and Help stay in the footer when they leave the top bar. The jobs phone menu was not opened.
+
+Shown in [screenshots/mobile-home-light-default.png](screenshots/mobile-home-light-default.png) and [screenshots/mobile-jobs-light-default.png](screenshots/mobile-jobs-light-default.png).

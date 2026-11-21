@@ -223,11 +223,9 @@ Good for: Dense CRM tables, configurable views, record panels and progressive on
 
 Captured 2026-10-31, Signed-in basic setup; Attio automatically provisioned a 14-day Pro trial. Public marketing captured separately.. Themes: light, dark.
 
-The signed-in app was captured on 31 October 2026 from [Attio](https://attio.com). The owner completed sign-in and authorized onboarding. Attio automatically provisioned a 14-day Pro trial during basic setup. Those captures do not establish free-tier availability. No purchase, invitation, mailbox connection or record creation was submitted.
+Captured on 31 October 2026 from [Attio](https://attio.com) and its signed-in web app using the visible Codex in-app browser. The owner completed sign-in and authorized onboarding. Attio automatically provisioned a 14-day Pro trial during basic setup; these captures do not establish free-tier availability. No purchase, invitation, mailbox connection or record creation was submitted.
 
-A public refresh on 21 November 2026 walked attio.com in headless Chromium at 1440 by 900 and 390 by 844, device pixel ratio 2. Sign in and Start for free both land on an empty welcome wall at app.attio.com. Nothing was typed. Google was not clicked. No form was submitted. The control map is [site-tree.md](site-tree.md). The wall is [login-review.json](login-review.json).
-
-The package keeps the October app evidence and adds the public pages. The theme preference from October was restored to **System**, rendering dark. The temporary viewport override was reset.
+The package separates public marketing illustrations from interactive application evidence. It contains 37 accepted screenshots, including onboarding, light/dark company tables, filter/sort/view dialogs, record overview/actions, empty Notes and an unsubmitted create form. The theme preference was restored to **System**, rendering dark; the temporary viewport override was reset.
 
 ## Colors
 

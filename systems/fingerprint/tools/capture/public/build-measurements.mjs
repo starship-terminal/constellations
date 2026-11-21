@@ -46,9 +46,10 @@ function props(v) {
 
 const L = [];
 const W = (s = '') => L.push(s);
-W('# Fingerprint component measurements');
+W('# Component measurements'); // PRODUCT (adapt): the product's name
 W('');
-W(`Computed styles read from fingerprint.com on ${J._meta.read} by \`tools/capture/public/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — the light :root marketing pages (home, identification, smart-signals, ai-agent-detection, a use-case, ai, pricing, demo, contact-sales, blog, case-studies, resources, security, integrations, sdk-libraries, bot-directory, about-us, careers), the Mintlify docs site at docs.fingerprint.com (its own token layer and a real light/dark preference), the product auth shell at dashboard.fingerprint.com /login and /signup (a third stack), and the mobile nav overlay — and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). The marketing site ships no dark theme: an emulated prefers-color-scheme pass resolved :root identically, and the only dark redeclaration is the .dark-scoped --fpds-color-syntax-* set for code blocks. The /demo page and the IdentifySection panels paint the capture machine's own visitor ID, IP and geolocation, so the live-signal regions are masked in the committed shots (tools/redact-rules/fingerprint.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
+// PRODUCT (adapt): describe this product's capture.
+W(`Computed styles read from www.gauth.com on ${J._meta.read} by \`tools/capture/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by \`tools/capture/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
 W('');
 W('States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.');
 W('');
@@ -72,10 +73,6 @@ for (const g of groups) {
     for (const st of states) {
       const v = c.states[st];
       if (v.error) { rows.Error = rows.Error || {}; rows.Error[st] = v.error; continue; }
-      if (!v.style || !v.rect) { // a note entry (e.g. pdp_url) carries no computed style
-        (rows.Note ||= {})[st] = v.text || v.via || '';
-        continue;
-      }
       for (const [p, val] of Object.entries(props(v))) (rows[p] ||= {})[st] = val;
     }
     W(`| Property | ${states.join(' | ')} |`);
@@ -93,26 +90,19 @@ if (J._meta.backdrop) {
   W('');
   W('## Dialog backdrop');
   W('');
-  W('The layers behind the consent dialog that paint a fill, from the dialog outwards. The first is the overlay that dims the page.');
+  W('The layers behind the promo dialog that paint a fill, from the dialog outwards. The first is the overlay that dims the page.');
   W('');
   for (const b of J._meta.backdrop) W(`- \`${b.node || 'overlay (hashed class names only)'}\`:${hex(b.bg)}${b.backdrop && b.backdrop !== 'none' ? ', backdrop-filter ' + b.backdrop : ''}`);
 }
 W('');
 W('## Transitions declared in the readable stylesheets');
 W('');
-W('fingerprint.com serves its CSS as linked `/_astro/*.css` bundles plus small inline blocks; docs.fingerprint.com ships a separate Mintlify sheet. This list holds the transitions the readable sheets declare on each page; the per-state Transition rows above are computed values and cover every rule the page paints.');
+// PRODUCT (adapt): describe this product's capture.
+W('Gauth\'s own CSS is served cross-origin, so this list holds only what the CSSOM could read on each page (antd\'s CSS-in-JS and inline styles); the per-state Transition rows above are computed values and cover Gauth\'s own rules.');
 for (const [pg, list] of Object.entries(J._meta.sheets || {}).sort()) {
   const uniq = [...new Map(list.filter((t) => t.transition).map((t) => [t.transition, t])).values()].slice(0, 12);
   W('');
   W(`- ${pg}: ${uniq.map((t) => `\`${esc(t.transition)}\``).join(', ') || 'none'}`);
-}
-if (J._meta.reducedMotion) {
-  W('');
-  W('## Reduced motion');
-  for (const [pg, rm] of Object.entries(J._meta.reducedMotion)) {
-    W('');
-    W(`- ${pg} (\`${rm.selector}\` under prefers-reduced-motion): ${rm.reduce ? `transition \`${esc(rm.reduce.transition)}\`, animation \`${esc(rm.reduce.animation)}\`, html scroll-behavior \`${rm.reduce.scrollBehavior}\`` : (rm.error || 'element not found')}`);
-  }
 }
 fs.writeFileSync(path.join(REF, 'raw', 'measurements.md'), L.join('\n') + '\n');
 console.log('raw/measurements.md', L.length, 'lines');

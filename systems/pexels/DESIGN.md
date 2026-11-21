@@ -3,7 +3,7 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Pexels"
-description: "Stock-photo marketing: white page, Canva Sans, a 48px #191919 Join control with 12px radius, a #f7f7f7 search field, black 30px pill tabs, and an alien #54ca84 download button"
+description: "Free stock photo library: white page, ink 48px controls, Canva Sans, one green download action"
 omitted:
   - section: "components"
     reason: "tokens.json has no components tokens under the colour set's `component` group"
@@ -14,63 +14,83 @@ colors:
   on-surface: "#000000"
   on-surface-variant: "#747474"
   outline: "#ededed"
-  page: "#ffffff"
-  text: "#000000"
-  muted: "#747474"
-  accent: "#191919"
-  onAccent: "#ffffff"
-  border: "#ededed"
-  action: "#54ca84"
-  focus: "#f5f5f5"
+  color-greyscale-100: "#fafafa"
+  color-greyscale-200: "#f7f7f7"
+  color-greyscale-300: "#f5f5f5"
+  color-greyscale-400: "#ededed"
+  color-greyscale-500: "#e5e5e5"
+  color-greyscale-600: "#cdcdcd"
+  color-greyscale-700: "#a8a8a8"
+  color-greyscale-800: "#747474"
+  color-greyscale-900: "#393939"
+  color-greyscale-black: "#000000"
+  color-greyscale-shadow: "#191919"
+  color-greyscale-white: "#ffffff"
+  color-alien-light: "#ddf4e6"
+  color-alien-lighter: "#bbeace"
+  color-alien-mid: "#54ca84"
+  color-alien-dark: "#32ac64"
+  color-jellyfish-light: "#ececfe"
+  color-jellyfish-lighter: "#dadafe"
+  color-jellyfish-mid: "#a2a2fc"
+  color-jellyfish-dark: "#7a7add"
+  color-papaya-light: "#ffe5d8"
+  color-papaya-lighter: "#ffc4a7"
+  color-papaya-mid: "#ff7b3a"
+  color-papaya-dark: "#de5c1c"
+  color-strawberry-light: "#ffe3ec"
+  color-strawberry-lighter: "#ffb4cc"
+  color-strawberry-mid: "#ff3a78"
+  color-strawberry-dark: "#db255f"
+  color-sunshine-light: "#fff8dc"
+  color-sunshine-lighter: "#fff1ba"
+  color-sunshine-mid: "#ffdb52"
+  color-sunshine-dark: "#fdca08"
+  background-page: "#ffffff"
+  background-surface: "#f7f7f7"
+  background-sunken: "#fafafa"
+  text-primary: "#000000"
+  text-secondary: "#191919"
+  text-muted: "#747474"
+  text-onAccent: "#ffffff"
+  text-link: "#0000ee"
+  border-default: "#ededed"
+  border-strong: "#191919"
+  action-primary: "#191919"
+  action-primaryHover: "#393939"
+  action-selected: "#000000"
+  action-download: "#32ac64"
+  focus-ring: "#000000"
 typography:
-  hero:
+  display:
     fontFamily: "Canva Sans"
     fontSize: "48px"
     fontWeight: 700
-    lineHeight: 1.1
+    lineHeight: "52.8px"
     letterSpacing: "-2px"
-  title:
-    fontFamily: "Canva Sans"
-    fontSize: "36px"
-    fontWeight: 700
-    lineHeight: 1.3
-    letterSpacing: "-2px"
-  section:
-    fontFamily: "Canva Sans"
-    fontSize: "24px"
-    fontWeight: 700
-    lineHeight: 1.3
-    letterSpacing: "-1.5px"
-  label:
-    fontFamily: "Canva Sans"
-    fontSize: "17px"
-    fontWeight: 400
-    lineHeight: 1.6
-    letterSpacing: "-0.5px"
   body:
     fontFamily: "Canva Sans"
     fontSize: "14px"
     fontWeight: 400
-    lineHeight: 1.4
-    letterSpacing: "0px"
-  field:
+    lineHeight: "19.6px"
+  label:
     fontFamily: "Canva Sans"
-    fontSize: "15px"
+    fontSize: "17px"
     fontWeight: 400
-    lineHeight: "24px"
+    lineHeight: "17px"
     letterSpacing: "-0.5px"
 rounded:
   control: "12px"
-  field: "10px"
+  search: "12px"
   pill: "30px"
-  card: "12px"
+  chip: "180px"
+  nav: "25px"
 spacing:
   "4": "4px"
   "8": "8px"
   "12": "12px"
   "16": "16px"
   "20": "20px"
-  "30": "30px"
 ---
 
 # Pexels
@@ -81,36 +101,36 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 ## Overview
 
-Good for: Stock-photo marketing: white page, Canva Sans, a 48px #191919 Join control with 12px radius, a #f7f7f7 search field, black 30px pill tabs, and an alien #54ca84 download button.
+Good for: Free stock photo library: white page, ink 48px controls, Canva Sans, one green download action.
 
-Captured 2026-11-19, signed out. Public pages on pexels.com. Join and login were opened and not submitted. No card, phone, or download.. Themes: light, dark.
+Captured 2026-11-21, signed out. Themes: light, dark.
 
-Tokens and component notes for Pexels, the free stock photo and video site at https://www.pexels.com/, captured **2026-11-19**. Signed out the whole time. Desktop home shot is 1440×900. Phone home shot is 390×844. CSS readings came from a live preview tab at 1169×731.
+A token set and component reference for the public Pexels site (www.pexels.com), for building a photo-and-video library in that style. Captured signed out on 2026-11-21 in headless system Chrome through Playwright, at 1440x900 and 390x844. The homepage, search, videos, discover, license, challenges, leaderboard, a published photo, a published video, content pages, the styled 404, and the login wall were loaded. No form was submitted. No email was typed. Google, Apple, and Facebook were not clicked.
 
-The home page loaded with title "Free Stock Photos, Royalty Free Stock Images & Copyright Free Pictures · Pexels" and no Cloudflare challenge. Search, license, about, join, login, and a photo page also loaded in that tab. Headless Chromium could screenshot only the home page. The slug is `pexels`.
+Pexels paints one live theme: near-black ink (#191919) on white, a 12-step greyscale, and five named hues (alien green, jellyfish, papaya, strawberry, sunshine). Canva Sans sets the UI. Controls are 48px tall. The primary button is a 12px-radius ink pill. Selected nav items are black capsules. Search chips are full pills.
 
 ## Colors
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#191919):** `light.accent`
-- **neutral (#ffffff):** `light.page`
-- **surface (#f7f7f7):** `light.surface`
-- **on-surface (#000000):** `light.text`
-- **on-surface-variant (#747474):** `light.muted`
-- **outline (#ededed):** `light.border`
+- **primary (#191919):** `light.action.primary`
+- **neutral (#ffffff):** `light.background.page`
+- **surface (#f7f7f7):** `light.background.surface`
+- **on-surface (#000000):** `light.text.primary`
+- **on-surface-variant (#747474):** `light.text.muted`
+- **outline (#ededed):** `light.border.default`
 
 ## Typography
 
-6 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Canva Sans.
+3 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Canva Sans.
 
 ### Fonts (from README.md)
 
-Canva Sans is the computed family, with Helvetica Neue, Roboto, and the system sans as fallbacks. The site serves CanvaSans-Medium.woff2 and CanvaSans-Bold.woff2 from static.pexels.com. Canva Sans Display is declared and was not loaded on the home page. The files are the product's, so this package does not ship them. The style guide uses Helvetica Neue.
+Canva Sans (Medium and Bold) and Canva Sans Display (Regular, Medium, Bold) are served from static.pexels.com as woff2. Proprietary. The style guide falls back to Helvetica Neue. Jersey 10 is also declared and was not used on the measured controls.
 
 ## Layout
 
-Spacing from `core.space`: `4` 4px, `8` 8px, `12` 12px, `16` 16px, `20` 20px, `30` 30px.
+Spacing from `core.space`: `4` 4px, `8` 8px, `12` 12px, `16` 16px, `20` 20px.
 
 ## Elevation & Depth
 
@@ -118,7 +138,7 @@ No shadow tokens were captured; depth comes from surface colours and borders. Se
 
 ## Shapes
 
-Corner radii from `core.radius`: `control` 12px, `field` 10px, `pill` 30px, `card` 12px.
+Corner radii from `core.radius`: `control` 12px, `search` 12px, `pill` 30px, `chip` 180px, `nav` 25px.
 
 ## Components
 
@@ -136,23 +156,20 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-Dark tokens are declared, not painted. Do not treat the style guide's dark toggle as a live capture.
-
-Hover, focus-visible, and disabled button colours come from stylesheet rules. They were not forced on a live control.
-
-The Google button label rgb(101, 111, 107) is a computed colour with no matching custom property. It is recorded as `core.color.googleLabel` and is not a theme role.
-
-Canva download-ad colours (`--canva-blue` and the rest) sit on a component that was not on screen. They are not tokens.
-
-Inner-page layout is described from the DOM readings. Only the home page has a screenshot.
+- The dark set is a stylesheet declaration. It was not on screen. Do not treat dark screenshots as evidence. There are none.
+- `light.action.download` aliases `--color-alien-dark` (#32ac64). The Free download button looks that green, and its computed colour was not read.
+- `light.text.muted` and `light.background.sunken` are declared greyscale steps, not measured on a specific element.
+- Screenshots are 256-colour. Read colours from tokens.json.
+- The cookie banner did not paint in the capture sessions. The first mapper saw its copy.
+- The photo download chevron did not open a size menu. [photo-light-download-menu.png](screenshots/photo-light-download-menu.png) shows the search type menu instead.
+- Discover's full-page shot is truncated at the kit's height cap (page was 23225px).
+- Login wall text includes the product's own email placeholder. That is the field hint, not an account.
 
 ### Do and don't (from README.md)
 
-- **Paint the primary action as a 48px control.** Radius 12px, fill #191919, white 17px Canva Sans. The home Join button is that control.
-- **Paint Free download in alien #54ca84.** The email Log in submit uses the same green with white text.
-- **Set the hero in 48px bold.** Tracking is -2px, on white.
-- **Put search on #f7f7f7.** The field radius is 12px.
-- **Don't invent a painted dark theme.** The dark greyscale is declared and was not on screen.
-- **Don't submit the join form from this package.** It asks for a name and a password, not email alone.
-- **Don't ship Canva Sans.** The woff2 files stay on Pexels's host.
-- **Don't treat a hover colour as measured on a live control.** Those rules were read from the stylesheet.
+1. **Do set type in Canva Sans on white.** The homepage headline is 48px bold, tracking -2px, on a white page. [home-light-default.png](screenshots/home-light-default.png)
+2. **Do make the one filled action ink, 48px, 12px radius.** Join is #191919 with white label. The selected nav pill is a black capsule. [home-light-default.png](screenshots/home-light-default.png)
+3. **Do use the green only for download.** Free download is the alien green. Everything else in the chrome is ink or grey. [photo-light-default.png](screenshots/photo-light-default.png)
+4. **Do keep search as a grey well, not an outlined field.** The home search is #f7f7f7, 12px radius, 72px tall. [home-light-default.png](screenshots/home-light-default.png)
+5. **Don't invent a dark theme from the public site.** The dark custom properties exist and the captured pages never applied them.
+6. **Don't submit the login form to see the app.** The wall stops at email, password, Google, Apple, and Facebook. [login-light-wall.png](screenshots/login-light-wall.png)

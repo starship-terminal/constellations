@@ -1,168 +1,69 @@
 <!doctype html>
-<html lang="en" data-mode="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quizlet style guide</title>
 <style>
-:root {
-  --page: #f6f7fb;
-  --surface: #ffffff;
-  --sunken: #f6f7fb;
-  --text: #282e3e;
-  --muted: #586380;
-  --faint: #939bb4;
-  --action: #4255ff;
-  --action-hover: #423ed8;
-  --secondary: #edefff;
-  --focus: #a8b1ff;
-  --inverse: #ffffff;
-  --promo: #1f1c8b;
-  --mint: #c7f7e6;
-  --stroke: #d9dde8;
-  --shadow: 0 4px 16px rgba(40, 46, 62, 0.1);
-  --font: hurme_no2-webfont, -apple-system, system-ui, sans-serif;
-  color-scheme: light;
-}
-[data-mode="dark"] {
-  --page: #282e3e;
-  --surface: #1a1d28;
-  --sunken: #2e3856;
-  --text: #f6f7fb;
-  --muted: #d9dde8;
-  --faint: #939bb4;
-  --action: #a8b1ff;
-  --action-hover: #7583ff;
-  --secondary: #423ed8;
-  --focus: #a8b1ff;
-  --inverse: #1a1d28;
-  --promo: #0a092d;
-  --mint: #59e8b5;
-  --stroke: #586380;
-  --shadow: 0 4px 16px rgba(1, 1, 16, 0.45);
-  color-scheme: dark;
-}
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/26px var(--font); }
-header { position: sticky; top: 0; background: var(--surface); padding: 12px 24px; display: flex; align-items: center; gap: 16px; z-index: 2; }
-h1 { font: 700 20px/28px var(--font); margin: 0; }
-nav { display: flex; gap: 16px; flex: 1; }
-nav a { color: var(--muted); text-decoration: none; font: 600 14px/20px var(--font); }
-button.switch { margin-left: auto; }
-main { max-width: 1080px; margin: 0 auto; padding: 32px 24px 64px; }
-section { padding-top: 40px; }
-h2 { font: 700 32px/40px var(--font); margin: 0 0 8px; }
-p.lead { color: var(--muted); margin: 0 0 16px; max-width: 70ch; }
-.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
-.sw { background: var(--surface); border-radius: 8px; padding: 12px; box-shadow: var(--shadow); }
-.sw i { display: block; height: 40px; border-radius: 8px; margin-bottom: 8px; border: 1px solid var(--stroke); }
-.sw b { display: block; font: 600 12px/16px ui-monospace, monospace; }
-.sw span { color: var(--muted); font-size: 12px; }
-.btn { display: inline-flex; align-items: center; justify-content: center; border: 2px solid transparent; border-radius: 200px; font: 600 14px/20px var(--font); padding: 10px 16px; height: 40px; cursor: pointer; text-decoration: none; }
-.btn.primary { background: var(--action); color: var(--inverse); }
-.btn.primary:hover { background: var(--action-hover); }
-.btn.secondary { background: var(--secondary); color: var(--action); }
-.btn.large { height: 48px; padding: 12px 24px; font-size: 16px; line-height: 24px; }
-.btn.xlarge { height: 56px; padding: 16px 32px; font-size: 16px; }
-.btn:focus-visible { border-color: var(--focus); outline: none; }
-.link { color: var(--action); font: 600 14px/20px var(--font); text-decoration: none; border-radius: 4px; }
-.link:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
-.field { display: flex; align-items: center; height: 56px; padding: 8px 16px; background: var(--sunken); border: 2px solid transparent; border-radius: 8px; width: min(100%, 420px); }
-.field:focus-within { border-color: var(--focus); background: var(--surface); }
-.field input { border: 0; background: transparent; color: var(--text); font: 600 16px/24px var(--font); width: 100%; outline: none; }
-.field input::placeholder { color: var(--faint); font-weight: 600; }
-.card { background: var(--surface); border-radius: 24px; box-shadow: 0 2px 4px rgba(40, 46, 62, 0.1); padding: 24px; width: 280px; }
-.tile { border-radius: 24px; padding: 24px; width: 220px; height: 160px; font: 700 24px/32px var(--font); }
-.modal { background: var(--surface); border-radius: 16px; box-shadow: var(--shadow); padding: 24px; max-width: 480px; }
-.promo { background: var(--promo); color: #fff; border-radius: 8px; padding: 12px 16px; display: flex; gap: 16px; align-items: center; }
-.promo a { color: var(--mint); font-weight: 600; }
-.type p { margin: 8px 0; }
-code { font-family: ui-monospace, monospace; font-size: 12px; }
+  :root {
+    --page: {color.twilight.900};
+    --text: {color.gray.200};
+    --accent: {color.twilight.500};
+    --trial: {color.sunset.400};
+    --surface: {color.gray.700};
+    --muted: {color.gray.400};
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/26px -apple-system, system-ui, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+  h1 { font-size: 32px; line-height: 40px; font-weight: 700; }
+  h2 { font-size: 20px; line-height: 28px; font-weight: 600; margin-top: 40px; }
+  p { max-width: 68ch; }
+  .swatches, .roles { display: flex; flex-wrap: wrap; gap: 12px; }
+  .sw, .role { width: 140px; }
+  .sw i, .role i, .step i { display: block; height: 48px; border-radius: 8px; }
+  code, small { display: block; font: 12px/16px ui-monospace, Menlo, monospace; color: var(--muted); }
+  .hue { margin: 16px 0; }
+  .ramp { display: flex; gap: 6px; }
+  .step { width: 64px; }
+  button.primary, a.trial { display: inline-block; border: 0; border-radius: 200px; padding: 10px 16px; font: 600 14px/20px -apple-system, system-ui, sans-serif; text-decoration: none; }
+  button.primary { background: var(--accent); color: #FFFFFF; }
+  a.trial { background: var(--trial); color: #282E3E; margin-left: 8px; }
+  .search { margin-top: 16px; background: var(--surface); border-radius: 8px; padding: 10px 16px; width: 280px; color: var(--text); }
 </style>
 </head>
 <body>
-<header>
-  <h1>Quizlet</h1>
-  <nav>
-    <a href="#color">Color</a>
-    <a href="#type">Type</a>
-    <a href="#controls">Controls</a>
-  </nav>
-  <button class="btn secondary switch" type="button" id="theme">Night tokens</button>
-</header>
 <main>
-  <p class="lead">Values measured on quizlet.com on 19 November 2026, signed out, at a 1169 by 731 CSS viewport. Night tokens come from the body.theme-night rules. That class was not painted on the pages that loaded.</p>
-  <section id="color">
-    <h2>Color</h2>
-    <div class="swatches" id="swatches"></div>
-  </section>
-  <section id="type">
-    <h2>Type</h2>
-    <div class="type">
-      <p style="font:700 44px/56px var(--font);margin:0">How do you want to study?</p>
-      <p style="font:400 20px/28px var(--font)">Discover, create, and master your study material.</p>
-      <p style="font:700 32px/40px var(--font)">Any input. Instant study materials.</p>
-      <p style="font:400 16px/26px var(--font)">Body copy uses Hurme Geo Sans No2 at 16px over 26px.</p>
-      <p style="font:600 14px/20px var(--font)">Label at 14px, weight 600.</p>
-    </div>
-  </section>
-  <section id="controls">
-    <h2>Controls</h2>
-    <div class="row">
-      <button class="btn primary" type="button">Log in</button>
-      <button class="btn secondary" type="button">Teachers</button>
-      <button class="btn primary large" type="button">Sign up for free</button>
-      <button class="btn primary xlarge" type="button">Stay on track</button>
-      <a class="link" href="#controls">Create</a>
-    </div>
-    <p></p>
-    <label class="field"><input placeholder="Enter your email address or username"></label>
-    <p></p>
-    <div class="row">
-      <div class="tile" style="background:#4255ff;color:#fff">Record Lecture</div>
-      <div class="tile" style="background:#d9ffcc;color:#000">Study Guides</div>
-      <div class="card"><b>About Quizlet</b><p style="color:var(--muted);font-size:14px">Mission card, 24px radius, shadow 0 2px 4px.</p></div>
-    </div>
-    <p></p>
-    <div class="promo"><span>WORLD RECORD DAY</span><a href="#controls">RSVP now</a></div>
-    <p></p>
-    <div class="modal">
-      <p style="font:700 32px/40px var(--font);margin:0 0 8px">Request a magic link</p>
-      <p style="margin:0 0 16px">Enter the email you signed up with and we'll send you a link to log in.</p>
-      <label class="field"><input placeholder="Enter your email"></label>
-    </div>
-  </section>
+  <h1>Quizlet, night</h1>
+  <p>Rendered from tokens.json. Values were computed on the signed-in page while body had theme-night. Light mode was offered and not switched. Hurme Geometric Sans 2 is the product face and is not loaded here.</p>
+  <h2>Roles</h2>
+  <div class="roles">
+    <div class="sw"><i style="background:{color.twilight.900}"></i><code>night.page</code><span>{color.twilight.900}</span></div>
+<div class="sw"><i style="background:{color.gray.200}"></i><code>night.text</code><span>{color.gray.200}</span></div>
+<div class="sw"><i style="background:{color.gray.100}"></i><code>night.text-strong</code><span>{color.gray.100}</span></div>
+<div class="sw"><i style="background:{color.gray.400}"></i><code>night.text-muted</code><span>{color.gray.400}</span></div>
+<div class="sw"><i style="background:{color.twilight.500}"></i><code>night.accent</code><span>{color.twilight.500}</span></div>
+<div class="sw"><i style="background:{color.twilight.300}"></i><code>night.accent-text</code><span>{color.twilight.300}</span></div>
+<div class="sw"><i style="background:{color.twilight.400}"></i><code>night.selected</code><span>{color.twilight.400}</span></div>
+<div class="sw"><i style="background:{color.gray.700}"></i><code>night.surface</code><span>{color.gray.700}</span></div>
+<div class="sw"><i style="background:{color.sunset.400}"></i><code>night.trial</code><span>{color.sunset.400}</span></div>
+<div class="sw"><i style="background:{color.gray.800}"></i><code>night.on-trial</code><span>{color.gray.800}</span></div>
+<div class="sw"><i style="background:{color.error.300}"></i><code>night.danger</code><span>{color.error.300}</span></div>
+  </div>
+  <h2>Ramps</h2>
+  <div class="hue"><h3>error</h3><div class="ramp"><div class="step"><i style="background:#FF7873"></i><small>100</small></div><div class="step"><i style="background:#DA4543"></i><small>200</small></div><div class="step"><i style="background:#B00020"></i><small>300</small></div></div></div>
+<div class="hue"><h3>gray</h3><div class="ramp"><div class="step"><i style="background:#FFFFFF"></i><small>100</small></div><div class="step"><i style="background:#F6F7FB"></i><small>200</small></div><div class="step"><i style="background:#EDEFF4"></i><small>300</small></div><div class="step"><i style="background:#D9DDE8"></i><small>400</small></div><div class="step"><i style="background:#939BB4"></i><small>500</small></div><div class="step"><i style="background:#586380"></i><small>600</small></div><div class="step"><i style="background:#2E3856"></i><small>700</small></div><div class="step"><i style="background:#282E3E"></i><small>800</small></div><div class="step"><i style="background:#1A1D28"></i><small>900</small></div></div></div>
+<div class="hue"><h3>lemon</h3><div class="ramp"><div class="step"><i style="background:#FDFFE9"></i><small>100</small></div><div class="step"><i style="background:#FAFFBB"></i><small>200</small></div><div class="step"><i style="background:#F5FF7D"></i><small>300</small></div><div class="step"><i style="background:#EBFF03"></i><small>400</small></div><div class="step"><i style="background:#D4E603"></i><small>500</small></div></div></div>
+<div class="hue"><h3>lilac</h3><div class="ramp"><div class="step"><i style="background:#FCF0FF"></i><small>100</small></div><div class="step"><i style="background:#F7D9FF"></i><small>200</small></div><div class="step"><i style="background:#EEAAFF"></i><small>300</small></div><div class="step"><i style="background:#E372FF"></i><small>400</small></div><div class="step"><i style="background:#9900BE"></i><small>500</small></div></div></div>
+<div class="hue"><h3>mint</h3><div class="ramp"><div class="step"><i style="background:#E6FCF4"></i><small>100</small></div><div class="step"><i style="background:#C7F7E6"></i><small>200</small></div><div class="step"><i style="background:#98F1D1"></i><small>300</small></div><div class="step"><i style="background:#59E8B5"></i><small>400</small></div><div class="step"><i style="background:#18AE79"></i><small>500</small></div></div></div>
+<div class="hue"><h3>sherbert</h3><div class="ramp"><div class="step"><i style="background:#FFF6EF"></i><small>100</small></div><div class="step"><i style="background:#FFE8D8"></i><small>200</small></div><div class="step"><i style="background:#FFC38C"></i><small>300</small></div><div class="step"><i style="background:#FF983A"></i><small>400</small></div><div class="step"><i style="background:#CC4E00"></i><small>500</small></div></div></div>
+<div class="hue"><h3>sky</h3><div class="ramp"><div class="step"><i style="background:#EAF9FF"></i><small>100</small></div><div class="step"><i style="background:#CBF1FF"></i><small>200</small></div><div class="step"><i style="background:#98E3FF"></i><small>300</small></div><div class="step"><i style="background:#51CFFF"></i><small>400</small></div><div class="step"><i style="background:#008EC4"></i><small>500</small></div></div></div>
+<div class="hue"><h3>sunset</h3><div class="ramp"><div class="step"><i style="background:#FFF9E3"></i><small>100</small></div><div class="step"><i style="background:#FFEDAB"></i><small>200</small></div><div class="step"><i style="background:#FFDC62"></i><small>300</small></div><div class="step"><i style="background:#FFCD1F"></i><small>400</small></div><div class="step"><i style="background:#997700"></i><small>500</small></div></div></div>
+<div class="hue"><h3>twilight</h3><div class="ramp"><div class="step"><i style="background:#EDEFFF"></i><small>100</small></div><div class="step"><i style="background:#DBDFFF"></i><small>200</small></div><div class="step"><i style="background:#A8B1FF"></i><small>300</small></div><div class="step"><i style="background:#7583FF"></i><small>400</small></div><div class="step"><i style="background:#4255FF"></i><small>500</small></div><div class="step"><i style="background:#423ED8"></i><small>600</small></div><div class="step"><i style="background:#1F1C8B"></i><small>700</small></div><div class="step"><i style="background:#14125C"></i><small>800</small></div><div class="step"><i style="background:#0A092D"></i><small>900</small></div></div></div>
+  <h2>Controls</h2>
+  <button class="primary" type="button">Create a flashcard set</button>
+  <a class="trial" href="#trial">Upgrade: free 7-day trial</a>
+  <div class="search">Search</div>
 </main>
-<script>
-const swatches = [
-  ["page", "--page", "gray-200"],
-  ["surface", "--surface", "gray-100"],
-  ["text", "--text", "gray-800"],
-  ["muted", "--muted", "gray-600"],
-  ["action", "--action", "twilight-500"],
-  ["secondary", "--secondary", "twilight-100"],
-  ["focus", "--focus", "twilight-300"],
-  ["promo", "--promo", "twilight-700"],
-  ["mint", "--mint", "mint-200"],
-  ["stroke", "--stroke", "gray-400"]
-];
-const root = document.getElementById("swatches");
-for (const [name, variable] of swatches) {
-  const el = document.createElement("div");
-  el.className = "sw";
-  el.innerHTML = "<i></i><b></b><span></span>";
-  el.querySelector("i").style.background = "var(" + variable + ")";
-  el.querySelector("b").textContent = name;
-  el.querySelector("span").textContent = variable;
-  root.appendChild(el);
-}
-document.getElementById("theme").addEventListener("click", () => {
-  const html = document.documentElement;
-  const next = html.getAttribute("data-mode") === "dark" ? "light" : "dark";
-  html.setAttribute("data-mode", next);
-  document.getElementById("theme").textContent = next === "dark" ? "Light tokens" : "Night tokens";
-});
-</script>
 </body>
 </html>

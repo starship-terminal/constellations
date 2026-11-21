@@ -1,39 +1,41 @@
-# Patterns
+# Maze patterns
 
-How the public Maze pages are built. Screenshots are in [screenshots/](screenshots).
+Public marketing site only. Captured 2026-11-21 at 1440×900 and 390×844, light theme. The signed-in product was not reached.
 
-## Marketing frame
+## App shell
 
-[home-light-default](screenshots/home-light-default.png) is the signed-out home at 1440. A white header holds the wordmark, PLATFORM, SOLUTIONS, RESOURCES, CUSTOMERS, PRICING, Log in, a pill Try Maze for free, and a near-black Get a demo. The page ground is warm neutral. The hero is Phonic light, "Research at the pace of change", with the same two CTAs under the subcopy and a collage of product cards on the right.
+There is no signed-in app shell in this package. The marketing header is a sticky white bar: logo, four hover menus (Platform, Solutions, Resources, Customers), Pricing, Log in, a ghost Try Maze for free, and a filled Get a demo. Phone width replaces the menus with an Open navigation control.
 
-The header is `position: relative`, not fixed. Lenis owns the scroll, so a viewport shot taken after a scroll can miss the header even when `window.scrollY` is 0. The committed viewport shot is the top of the full-page capture.
+See [screenshots/home-light-default.png](screenshots/home-light-default.png) and [screenshots/home-light-platform-menu.png](screenshots/home-light-platform-menu.png).
 
-A black promo bar sits above the header: "Help shape Maze's Future of Research Report 2027 / Take the survey". That link opens a live study on `t.maze.co`. The bar is hidden in these shots. It was never clicked.
+## Marketing page
 
-CookieYes ("We value your privacy") sits bottom-right on maze.co. OneTrust sits on auth.maze.co. Both are hidden. Neither was clicked.
+A black announcement bar sits above the header. The hero is a 130px Phonic Light headline on a warm off-white page, with a short supporting paragraph and the same two calls to action. Product illustrations sit to the right. Sections below alternate method strips, proof cards and a footer on `--color-neutral-100`.
 
-A lime chat widget sits bottom-right. It was left alone.
-
-## Platform menu
-
-[home-light-platform-menu](screenshots/home-light-platform-menu.png). Hovering PLATFORM opens a panel: Maze Platform, Integrations, Panel, In-Product Prompts, AI Moderator, AI Study Builder, Prototype Testing, Moderated Interviews, Surveys, Live Website Testing, Mobile Testing, Maze MCP, Maze AI, Automated Reports. The labels are an icon font, so `innerText` is empty until the panel is open. No menu link was followed.
+See [screenshots/home-light-full.png](screenshots/home-light-full.png) and [screenshots/platform-light-default.png](screenshots/platform-light-default.png).
 
 ## Pricing
 
-[pricing-light-default](screenshots/pricing-light-default.png). "Pricing & Packages" over Free, Starter and Enterprise. Starter is $99 per month and its CTA is "Sign up now" to `auth.maze.co/signup/?plan=starter&frequency=yearly`. That link was not clicked. No monthly/yearly switch was in the first viewport. The signup href already carries `frequency=yearly`.
+A long comparison of plans. Plan calls to action leave the page for signup or the demo form. Those destinations are a wall or an unsubmitted form.
 
-## Auth login
-
-[login-light-default](screenshots/login-light-default.png). Inter on a white column, lime collage on the right. Email and password are 440×48, radius 8. Log in is filled `rgb(5, 104, 253)`, white label, weight 600. Continue with Google, Continue with SSO, Reset password, and Sign up for a new account are on the same card. Nothing was submitted. The password field was never filled.
-
-## Public report
-
-[report-light-default](screenshots/report-light-default.png). Maze publishes a sample report that loads signed out: Banking App Usability Test, 104 responses, 7 blocks. Sign up for free is the same blue as Log in. Login is a white control. Neither was clicked. The phone width shows "Window size too small" and asks for 800px ([mobile-report-light-default](screenshots/mobile-report-light-default.png)).
+See [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png).
 
 ## Demo form
 
-[demo-light-default](screenshots/demo-light-default.png). "Turn any question into a confident decision" beside "Tell us about yourself": work email, role, company size, how the team can help, and a black Submit. The form was not submitted.
+HubSpot fields for a sales conversation. Photographed empty. Not filled. Not submitted.
 
-## Phone
+See [screenshots/demo-light-default.png](screenshots/demo-light-default.png).
 
-[mobile-home-light-default](screenshots/mobile-home-light-default.png) is 390×844. The wordmark and a hamburger replace the desktop nav. [mobile-home-light-menu-open](screenshots/mobile-home-light-menu-open.png) is the local drawer: Platform, Solutions, Resources, Customers, Pricing, then Log in, Try Maze for free, and Get a demo. The drawer was opened with the button labelled Open navigation. No item was followed.
+## Content indexes
+
+Blog, customers, templates, guides, collections, glossary and resources are card indexes. One child of each type was opened when it stayed on maze.co.
+
+## Consent
+
+CookieYes mounts a bottom-right card with Customize and Accept All. The banner was hidden with CSS. Neither button was clicked, because Accept All submits consent.
+
+See [screenshots/home-light-consent.png](screenshots/home-light-consent.png).
+
+## What is not a pattern here
+
+Onboarding, empty, loading and error states of the product, destructive confirmation, search inside the app, and tables of study results sit behind login. They are not in this package.

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build tokens.json (W3C DTCG, Tokens Studio multi-set layout) from the raw captures.
 
-Sources, read from aloyoga.com on 2026-11-11:
+Sources, read from aloyoga.com on 2026-11-21:
   raw/css-vars.json          every custom property the Shopify + Builder.io stylesheets declare,
                              read from the network responses (tools/capture/vars.mjs) and binned
                              app / vendor / utility / tailwind — the app bin is the shop's own

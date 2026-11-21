@@ -1,5 +1,2 @@
 file	role
-wordmark.svg	Full Peerlist wordmark, light, from the public CDN SVG the nav img loads
-mark.svg	Squircle P mark copied from the inline nav SVG (viewBox 0 0 56 56)
-arrow-right.svg	Submit and link arrow, stroke currentColor, from the landing username control
-external.svg	External-link arrow on the ads pill
+	Not captured. Inline SVGs were seen in the rail and composer. They were not extracted (docs/RIGHTS.md).

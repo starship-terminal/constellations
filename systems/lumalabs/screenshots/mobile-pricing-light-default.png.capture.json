@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T09:30:50.946Z",
+  "capturedAt": "2026-11-20T21:01:28.810Z",
   "screenshot": "mobile-pricing-light-default.png",
-  "sanitizedSourceUrl": "https://lumalabs.ai/pricing",
+  "sanitizedSourceUrl": null,
   "requested": {
     "viewport": {
       "width": 390,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 12488
+      "height": 13088
     },
     "scroll": {
       "x": 0,

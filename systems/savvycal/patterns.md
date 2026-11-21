@@ -1,22 +1,35 @@
-# Patterns
+# SavvyCal patterns
 
-Public pages, signed out. Screenshots are the first viewport, not the full scroll.
+Public pages only, captured 2026-11-21. The signed-in scheduler is behind the login wall.
 
-| Pattern | Screenshot |
-|---|---|
-| Marketing home, desktop | [home-light-default.png](screenshots/home-light-default.png) |
-| Marketing home, phone | [home-light-phone.png](screenshots/home-light-phone.png) |
-| Features | [features-light-default.png](screenshots/features-light-default.png) |
-| Pricing, annual selected | [pricing-light-default.png](screenshots/pricing-light-default.png) |
-| Pricing, phone | [pricing-light-phone.png](screenshots/pricing-light-phone.png) |
-| Login, desktop | [login-light-default.png](screenshots/login-light-default.png) |
-| Login, phone | [login-light-phone.png](screenshots/login-light-phone.png) |
-| Public booking demo | [demo-light-default.png](screenshots/demo-light-default.png) |
-| Integrations | [integrations-light-default.png](screenshots/integrations-light-default.png) |
-| Teams | [teams-light-default.png](screenshots/teams-light-default.png) |
-| Password reset | [reset-light-default.png](screenshots/reset-light-default.png) |
-| 404 | [not-found-light-default.png](screenshots/not-found-light-default.png) |
+## Marketing shell
 
-The home is a sticky 84px header, an oatmeal page, an 88px condensed headline, an orange pill beside a text link, then a green demo calendar. Pricing puts Basic on a white 50% card and Premium on a green gradient, with a Monthly / Annual pill. Login splits the viewport: the form on oatmeal, a green panel on the right at 1440px. At 390px the green panel is gone and the form is full width.
+A fixed header on oatmeal: wordmark, three text links, a quiet Log in, an orange Sign up pill. Phone width replaces the links with an "Open main menu" button that opens a white card: Features, Pricing, What's New, Log in, and an orange Sign up. See [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png).
 
-Signup, checkout, and the signed-in app were not entered.
+## Hero
+
+A large condensed heading, a short paragraph, an orange pill and a quiet pill. The orange pill is the only filled accent on the fold. See [home-light-default.png](screenshots/home-light-default.png).
+
+## Pricing
+
+Two pills switch Monthly and Annual in place. The selected pill is olive ink with white type. Plan cards sit on sand. Their CTAs leave the page for signup. See [pricing-light-default.png](screenshots/pricing-light-default.png) and [pricing-light-monthly.png](screenshots/pricing-light-monthly.png).
+
+## FAQ
+
+A list of `details` summaries. Opening one expands the answer under the question. See [home-light-faq-open.png](screenshots/home-light-faq-open.png).
+
+## Search and filter
+
+The integrations directory has a pill search field and category pills. Selecting a category fills that pill with olive ink. See [integrations-light-search.png](screenshots/integrations-light-search.png) and [integrations-light-category.png](screenshots/integrations-light-category.png).
+
+## Booking demo
+
+`/demo` is a public sample scheduling page: a side panel and a week grid. Month arrows change the month. It is a marketing demo, not the signed-in app. See [demo-light-default.png](screenshots/demo-light-default.png).
+
+## Login wall
+
+Email and password fields, a neon-green Sign In pill, and Google, Microsoft, and Fastmail buttons. Nothing was typed or submitted. See [login-light-default.png](screenshots/login-light-default.png).
+
+## Not on the public surface
+
+No empty, loading, or error screen was reachable. No destructive confirmation. No onboarding. No validation error, because no form was submitted.

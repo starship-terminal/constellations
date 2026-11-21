@@ -1,0 +1,623 @@
+{
+ "readAt": "2026-11-21",
+ "source": "the stylesheet bodies fetched during a live / load on www.sketch.com (response bodies plus the page's inline <style> blocks, re-parsed with CSSStyleSheet) in headless Chromium; resolved in a probe carrying the real sheets, plain (:root) and with a .dark class (unbound on this site), at 1440 x 900",
+ "sheets": [
+  "https://www.sketch.com/css/styles.prism.98ad80df35.css (242188 bytes)",
+  "https://www.sketch.com/css/home.b12ac54a51.css (55538 bytes)",
+  "https://rsms.me/inter/inter.css (11497 bytes)"
+ ],
+ "counts": {
+  "rules": 19,
+  "fonts": 47,
+  "names": {
+   "theme": 0,
+   "app": 11,
+   "skins": 0,
+   "vendor": 0,
+   "utility": 0,
+   "tailwind": 0
+  },
+  "bySelector": {
+   "[app] :root": 3,
+   "[app] .swiper-lazy-preloader-white": 2,
+   "[app] .swiper-lazy-preloader-black": 2,
+   "[app] .button-new": 2,
+   "[app] .button-new--primary": 1,
+   "[app] .button-new--secondary.is-successful, .button-new--tertiary.is-successful": 1,
+   "[app] .button-new--secondary.is-invalid, .button-new--tertiary.is-invalid": 1,
+   "[app] .button-new--secondary": 1,
+   "[app] .button-new--tertiary": 1,
+   "[app] body": 1,
+   "[app] @media screen and (width >= 1024px) body": 1,
+   "[app] .is-refreshed .banner .button-new--secondary": 1,
+   "[app] .entrance": 1,
+   "[app] [data-controller=\"parallax\"]": 2,
+   "[app] .media-player": 2
+  }
+ },
+ "errors": [],
+ "theme": [],
+ "app": [
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--swiper-theme-color": "#007aff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "selector": ".swiper-lazy-preloader-white",
+   "context": [],
+   "properties": {
+    "--swiper-preloader-color": "#fff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "selector": ".swiper-lazy-preloader-black",
+   "context": [],
+   "properties": {
+    "--swiper-preloader-color": "#000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--rotationAmount": "3deg"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "selector": ".button-new",
+   "context": [],
+   "properties": {
+    "--button-new-icon-color": "#000",
+    "--button-new-border-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "selector": ".button-new--primary",
+   "context": [],
+   "properties": {
+    "--button-new-icon-color": "#fff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "selector": ".button-new--secondary.is-successful, .button-new--tertiary.is-successful",
+   "context": [],
+   "properties": {
+    "--button-new-icon-color": "#13bf3e"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "selector": ".button-new--secondary.is-invalid, .button-new--tertiary.is-invalid",
+   "context": [],
+   "properties": {
+    "--button-new-icon-color": "#c00"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "selector": ".button-new--secondary",
+   "context": [],
+   "properties": {
+    "--button-new-border-width": "1.5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "selector": ".button-new--tertiary",
+   "context": [],
+   "properties": {
+    "--button-new-border-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "selector": "body",
+   "context": [],
+   "properties": {
+    "--main-nav-height": "4rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "selector": "body",
+   "context": [
+    "@media screen and (width >= 1024px)"
+   ],
+   "properties": {
+    "--main-nav-height": "5rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "selector": ".is-refreshed .banner .button-new--secondary",
+   "context": [],
+   "properties": {
+    "--button-new-border-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "selector": ".entrance",
+   "context": [],
+   "properties": {
+    "--entrance-animation-delay": "0s"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "selector": "[data-controller=\"parallax\"]",
+   "context": [],
+   "properties": {
+    "--parallax-x": "0",
+    "--parallax-y": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "selector": ".media-player",
+   "context": [],
+   "properties": {
+    "--active-video-offset-x": "0vw",
+    "--progress-bar-transition-duration": ".25s"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sketch.com/css/home.b12ac54a51.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--swiper-theme-color": "#007aff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sketch.com/css/home.b12ac54a51.css",
+   "selector": ".swiper-lazy-preloader-white",
+   "context": [],
+   "properties": {
+    "--swiper-preloader-color": "#fff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.sketch.com/css/home.b12ac54a51.css",
+   "selector": ".swiper-lazy-preloader-black",
+   "context": [],
+   "properties": {
+    "--swiper-preloader-color": "#000"
+   },
+   "bin": "app"
+  }
+ ],
+ "skins": [],
+ "vendor": [],
+ "utility": [],
+ "tailwind": [],
+ "fonts": [
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "font-family": "Marfa",
+   "font-weight": "100 900",
+   "src": "url(\"/webfonts/marfa/ABCMarfa-Variable.woff2\") format(\"woff2-variations\"), url(\"/webfonts/marfa/ABCMarfa-Variable.woff\") format(\"woff-variations\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "font-family": "\"Marfa Mono\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"/webfonts/marfa/ABCMarfaMono-Regular.woff2\") format(\"woff2\"), url(\"/webfonts/marfa/ABCMarfaMono-Regular.woff\") format(\"woff\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "font-family": "Caveat",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"/webfonts/custom/caveat/Caveat-Bold.woff2\") format(\"woff2\"), url(\"/webfonts/custom/caveat/Caveat-Bold.woff\") format(\"woff\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "font-family": "Caveat",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"/webfonts/custom/caveat/Caveat-Regular.woff2\") format(\"woff2\"), url(\"/webfonts/custom/caveat/Caveat-Regular.woff\") format(\"woff\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "font-family": "Reckless",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"/webfonts/reckless/Reckless-Medium.woff2\") format(\"woff2\"), url(\"/webfonts/reckless/Reckless-Medium.woff\") format(\"woff\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "font-family": "Reckless",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"/webfonts/reckless/Reckless-SemiBold.woff2\") format(\"woff2\"), url(\"/webfonts/reckless/Reckless-SemiBold.woff\") format(\"woff\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.sketch.com/css/styles.prism.98ad80df35.css",
+   "font-family": "\"Meshed Display\"",
+   "font-variation-settings": "\"wght\" 400",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "src": "url(\"/webfonts/custom/meshed-display/meshed-display-variable.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterVariable",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterVariable.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterVariable",
+   "font-style": "italic",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterVariable-Italic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "\"Inter var\"",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterVariable.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "\"Inter var\"",
+   "font-style": "italic",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterVariable-Italic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100",
+   "font-display": "swap",
+   "src": "url(\"font-files/Inter-Thin.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "100",
+   "font-display": "swap",
+   "src": "url(\"font-files/Inter-ThinItalic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "200",
+   "font-display": "swap",
+   "src": "url(\"font-files/Inter-ExtraLight.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "200",
+   "font-display": "swap",
+   "src": "url(\"font-files/Inter-ExtraLightItalic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(\"font-files/Inter-Light.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(\"font-files/Inter-LightItalic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"font-files/Inter-Regular.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"font-files/Inter-Italic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"font-files/Inter-Medium.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"font-files/Inter-MediumItalic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(\"font-files/Inter-SemiBold.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(\"font-files/Inter-SemiBoldItalic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"font-files/Inter-Bold.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"font-files/Inter-BoldItalic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "800",
+   "font-display": "swap",
+   "src": "url(\"font-files/Inter-ExtraBold.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "800",
+   "font-display": "swap",
+   "src": "url(\"font-files/Inter-ExtraBoldItalic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "900",
+   "font-display": "swap",
+   "src": "url(\"font-files/Inter-Black.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "Inter",
+   "font-style": "italic",
+   "font-weight": "900",
+   "font-display": "swap",
+   "src": "url(\"font-files/Inter-BlackItalic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "normal",
+   "font-weight": "100",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterDisplay-Thin.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "italic",
+   "font-weight": "100",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterDisplay-ThinItalic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "normal",
+   "font-weight": "200",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterDisplay-ExtraLight.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "italic",
+   "font-weight": "200",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterDisplay-ExtraLightItalic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterDisplay-Light.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "italic",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterDisplay-LightItalic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterDisplay-Regular.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "italic",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterDisplay-Italic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterDisplay-Medium.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "italic",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterDisplay-MediumItalic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterDisplay-SemiBold.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "italic",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterDisplay-SemiBoldItalic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterDisplay-Bold.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "italic",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterDisplay-BoldItalic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "normal",
+   "font-weight": "800",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterDisplay-ExtraBold.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "italic",
+   "font-weight": "800",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterDisplay-ExtraBoldItalic.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "normal",
+   "font-weight": "900",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterDisplay-Black.woff2?v=4.1\") format(\"woff2\")"
+  },
+  {
+   "file": "https://rsms.me/inter/inter.css",
+   "font-family": "InterDisplay",
+   "font-style": "italic",
+   "font-weight": "900",
+   "font-display": "swap",
+   "src": "url(\"font-files/InterDisplay-BlackItalic.woff2?v=4.1\") format(\"woff2\")"
+  }
+ ],
+ "resolved": {
+  "dark": {
+   "--rotationAmount": {
+    "raw": "3deg",
+    "kind": "other"
+   },
+   "--swiper-theme-color": {
+    "raw": "#007aff",
+    "kind": "color",
+    "value": "#007aff"
+   }
+  },
+  "light": {
+   "--rotationAmount": {
+    "raw": "3deg",
+    "kind": "other"
+   },
+   "--swiper-theme-color": {
+    "raw": "#007aff",
+    "kind": "color",
+    "value": "#007aff"
+   }
+  }
+ }
+}

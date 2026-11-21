@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Replo style guide</title>
+<meta name="description" content="Replo public marketing tokens, rendered from tokens.json.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-sans: "archivo", Arial, sans-serif;
+}
+[data-mode="dark"] {
+/*DARK*/
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #f5fad9); background: var(--page, #000); }
+main { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 500 40px/1.1 var(--sg-sans); margin: 0 0 8px; }
+h2 { font: 500 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #f5fad9); margin: 40px 0 12px; }
+.lead { max-width: 62ch; color: var(--muted, rgba(245,250,217,.7)); }
+.row { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 48px; border-radius: 8px; border: 1px solid rgba(245,250,217,.24); }
+.sw b, .sw span { display: block; font: 400 11px/1.4 ui-monospace, monospace; }
+.sw span { opacity: .7; }
+.btn { display: inline-flex; align-items: center; height: 36px; padding: 0 16px; border-radius: 9999px; font-size: 14px; text-decoration: none; }
+.btn.primary { background: var(--accent, #eef5c5); color: var(--accent-text, #121212); }
+.btn.ghost { background: var(--page, #000); color: var(--text, #f5fad9); border: 1px solid var(--border, rgba(245,250,217,.24)); }
+.hero { font: 500 56px/1.06 var(--sg-sans); max-width: 16ch; margin: 24px 0; }
+nav.bar { display: flex; gap: 16px; align-items: center; height: 60px; font-size: 14px; }
+.toggle { margin-top: 24px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Replo</h1>
+  <p class="lead">Public marketing surface, one dark theme. Values come from tokens.json. The light set is the stylesheet's declared :root, which the marketing pages do not paint.</p>
+  <button class="btn ghost toggle" type="button" id="theme">Show declared light tokens</button>
+  <h2>Painted roles</h2>
+  <div class="row" id="roles"></div>
+  <h2>Brand</h2>
+  <div class="row" id="brand"></div>
+  <nav class="bar"><span>Product</span><span>Solutions</span><span>Pricing</span><a class="btn ghost" href="#">Book a demo</a><a class="btn primary" href="#">Start for free</a></nav>
+  <p class="hero">The website builder that learns what sells</p>
+  <h2>Type</h2>
+  <p>Body 16 / 24. Display 56 / 59. Nav and buttons 14.</p>
+</main>
+<script>
+const T = /*TOKENS*/null;
+const roles = document.getElementById("roles");
+const brand = document.getElementById("brand");
+function swatch(parent, name, value) {
+  const d = document.createElement("div");
+  d.className = "sw";
+  d.innerHTML = "<i></i><b></b><span></span>";
+  d.querySelector("i").style.background = value;
+  d.querySelector("b").textContent = name;
+  d.querySelector("span").textContent = value;
+  parent.appendChild(d);
+}
+function paint(mode) {
+  roles.innerHTML = "";
+  const set = T[mode] || {};
+  for (const [k, v] of Object.entries(set)) {
+    if (v && v.t === "color") swatch(roles, k, v.v);
+  }
+}
+brand.innerHTML = "";
+const colors = (T.core && T.core.color && T.core.color.brand) || {};
+for (const [k, v] of Object.entries(colors)) swatch(brand, k, v.v);
+let mode = "dark";
+paint(mode);
+document.getElementById("theme").onclick = () => {
+  mode = mode === "dark" ? "light" : "dark";
+  document.documentElement.dataset.mode = mode;
+  document.getElementById("theme").textContent = mode === "dark" ? "Show declared light tokens" : "Show painted dark tokens";
+  paint(mode);
+};
+</script>
+</body>
+</html>

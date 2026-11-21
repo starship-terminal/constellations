@@ -1,0 +1,12 @@
+{
+  "url": "https://weather.com/sitemap",
+  "titleKind": "Site Map | weather.com",
+  "declared": {},
+  "computed": {},
+  "fonts": [
+    "Arial, Helvetica, sans-serif"
+  ],
+  "colorScheme": "normal",
+  "bg": "rgba(0, 0, 0, 0)",
+  "color": "rgb(0, 0, 0)"
+}

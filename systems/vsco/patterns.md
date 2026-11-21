@@ -1,29 +1,39 @@
-# Patterns
+# VSCO patterns
 
-Signed-out public pages, measured 2026-11-19. No screenshots.
+Public marketing site at [https://www.vsco.co/](https://www.vsco.co/), captured 2026-11-21, signed out. One light theme. Desktop 1440×900 and phone 390×844.
 
-## Home
+## App shell
 
-https://www.vsco.co/ loaded as https://www.vsco.co/ with title "VSCO: Photo Editor + Filters, Community, and Business Tools". The body class was `background-color-black-ish js-logged-out`. The page background is #111111 with white body text. A white nav sits on top, 88px tall. The first heading, Everything a photographer needs, is black on a light band at 87.9287px / 500 / uppercase.
+The shell is a promo bar, a white header, a white hero, then a black band. [screenshots/home-light-default.png](screenshots/home-light-default.png) shows the desktop shell. [screenshots/mobile-home-light-default.png](screenshots/mobile-home-light-default.png) shows the phone shell with a menu button instead of the nav labels.
 
-A pink bar above the nav says Studio Pro Desktop and carries a Learn more control in #ff0877. A cookie preference center was open on first load. Close was clicked. The center nodes were still in the document after that click.
+The promo bar is pink, 50px (`--banner-h`), with a white pill that says Learn more. It links to Studio Pro desktop.
 
-## Pricing
+## Navigation
 
-https://www.vsco.co/subscribe/plans uses body class `background-color-gray js-logged-out` and page background #f2f2f2. Three plan cards were in the text: VSCO One on a black card, Pro on a white card, and Starter. Copy code is a gold pill. Checkout was not entered.
+PRODUCTS, SOLUTIONS, COMMUNITY, and RESOURCES are dropdowns. [screenshots/home-light-products-menu.png](screenshots/home-light-products-menu.png) is the products menu. PRICING and Try for free go to the plans page. Log in goes to `https://vsco.co/user/login` and stops.
 
-## Login
+On the phone, the menu button opens a white drawer. [screenshots/mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png). Sign up and Log in in that drawer are walls.
 
-https://vsco.co/user/login is a 328px form on a white page. The title is Log into VSCO at 24px / 400. Methods on the page: email and password, Log in with Google, Log in with Apple, and a Sign up link. Nothing was submitted. A forgot-password control was visible and was not opened.
+## Tabs
 
-## Coverage
+What's new, Create, Connect, and Work switch a card row on the home page. [screenshots/home-light-tab-create.png](screenshots/home-light-tab-create.png). They do not change the URL.
 
-| Surface | State |
-|---|---|
-| Home | Measured, signed out. No screenshot. |
-| Pricing | Measured, signed out. Checkout not entered. |
-| Login | Measured, signed out. Form not submitted. |
-| Signup | Not opened. Login already showed Google and Apple, so email-only signup was not allowed. |
-| Signed-in app | Not captured. |
-| Phone width 390 | Not captured. The tab viewport stayed 1169px. |
-| Dark theme | Not painted. No theme toggle was used. |
+## Plans
+
+[screenshots/plans-light-default.png](screenshots/plans-light-default.png) and [screenshots/plans-light-full.png](screenshots/plans-light-full.png). Select buttons start a purchase. They were not clicked. FAQ rows expand on the page.
+
+## Content families
+
+Feature, learn, about, downloads, and the photo editor marketing page share the same header. [screenshots/editor-light-default.png](screenshots/editor-light-default.png), [screenshots/learn-light-default.png](screenshots/learn-light-default.png), [screenshots/article-light-default.png](screenshots/article-light-default.png), [screenshots/about-light-default.png](screenshots/about-light-default.png), [screenshots/downloads-light-default.png](screenshots/downloads-light-default.png), [screenshots/features-light-default.png](screenshots/features-light-default.png).
+
+## Login and signup walls
+
+[screenshots/login-light-default.png](screenshots/login-light-default.png) shows email and password, Log in, Log in with Google, and Log in with Apple. Nothing was typed. Google and Apple were not clicked. A later visit to the same URL showed an email-only Continue step instead. [screenshots/signup-light-default.png](screenshots/signup-light-default.png) shows Join VSCO for free with email, password, Sign up and agree, and the same Google and Apple buttons. Not submitted.
+
+## Error
+
+[screenshots/notfound-light-default.png](screenshots/notfound-light-default.png) is the styled 404 inside the same chrome.
+
+## Not captured
+
+Signed-in feed, people search, journal, support, and the Studio, Canvas, and Workspace apps. See [site-tree.md](site-tree.md).

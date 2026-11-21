@@ -1,170 +1,104 @@
 {
-  "captured": "2026-11-19",
-  "theme": "tw-root--theme-dark",
-  "previewViewport": {"innerWidth": 1169, "innerHeight": 731, "devicePixelRatio": 2},
-  "screenshotFrames": "The browser is not producing screenshot frames",
+  "captured": "2026-11-21",
+  "route": "playwright-public",
   "elements": {
-    "body": {
-      "url": "https://www.twitch.tv/",
-      "backgroundColor": "rgb(14, 14, 16)",
-      "color": "rgb(239, 239, 241)",
-      "fontFamily": "Inter, \"Noto Sans Arabic\", Roobert, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
-      "fontSize": "14px"
-    },
-    "topNav": {
-      "selector": "nav.top-nav",
-      "height": 50,
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "color": "rgb(239, 239, 241)",
-      "fontSize": "14px"
-    },
-    "browseLink": {
-      "text": "Browse",
-      "fontFamily": "Roobert, Tajawal, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "19.6px",
-      "color": "rgb(239, 239, 241)",
-      "height": 50
-    },
-    "searchInput": {
-      "placeholder": "Search",
-      "backgroundColor": "rgb(24, 24, 27)",
-      "color": "rgb(239, 239, 241)",
-      "borderRadius": "8px 0px 0px 8px",
-      "height": 36,
-      "padding": "0px 12px",
-      "fontSize": "14px",
-      "border": "0px solid rgba(0, 0, 0, 0)"
-    },
-    "searchButton": {
-      "backgroundColor": "rgba(83, 83, 95, 0.38)",
-      "color": "rgb(239, 239, 241)",
-      "height": 36,
-      "width": 36,
-      "borderRadius": "0px 8px 8px 0px",
-      "fontWeight": "600"
-    },
-    "logIn": {
-      "backgroundColor": "rgba(83, 83, 95, 0.38)",
-      "color": "rgb(239, 239, 241)",
-      "height": 32,
-      "width": 69,
-      "borderRadius": "9000px",
-      "fontSize": "14px",
-      "fontWeight": "600",
-      "lineHeight": "19.6px"
-    },
-    "signUp": {
-      "backgroundColor": "rgb(145, 71, 255)",
-      "color": "rgb(255, 255, 255)",
-      "height": 32,
-      "width": 81,
-      "borderRadius": "9000px",
-      "fontSize": "14px",
-      "fontWeight": "600"
-    },
-    "signUpOverlay": {
-      "note": "Second Sign Up on the purple community banner",
-      "backgroundColor": "rgb(255, 255, 255)",
-      "color": "rgb(0, 0, 0)",
-      "height": 32,
-      "borderRadius": "9000px",
-      "fontWeight": "600"
-    },
-    "sectionTitle": {
-      "text": "Live on Twitch",
-      "fontFamily": "Roobert, Tajawal, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
-      "fontSize": "18px",
-      "fontWeight": "500",
-      "lineHeight": "19.8px",
-      "letterSpacing": "-0.18px",
-      "color": "rgb(239, 239, 241)"
-    },
-    "liveBadge": {
-      "text": "LIVE",
-      "backgroundColor": "rgb(235, 4, 0)",
-      "color": "rgb(255, 255, 255)",
-      "borderRadius": "4px",
-      "padding": "1px 5px",
-      "fontSize": "12px",
-      "fontWeight": "400",
-      "height": 19
-    },
-    "tag": {
-      "text": "IRL",
-      "backgroundColor": "rgba(83, 83, 95, 0.38)",
-      "color": "rgb(239, 239, 241)",
-      "borderRadius": "9000px",
-      "fontSize": "12px",
-      "height": 20
-    },
-    "previewThumb": {
-      "url": "https://www.twitch.tv/directory/category/just-chatting",
-      "width": 350,
-      "height": 197,
-      "borderRadius": "0px",
-      "parentOverflow": "hidden"
-    },
-    "signup": {
-      "url": "https://www.twitch.tv/signup",
-      "h1": {
-        "text": "Join Twitch today",
-        "fontFamily": "Roobert",
-        "fontSize": "24px",
-        "fontWeight": "500",
-        "lineHeight": "26.4px",
-        "letterSpacing": "-0.24px",
-        "color": "rgb(239, 239, 241)"
+    "home": {
+      "body": {
+        "selector": "body",
+        "text": "Skip to... ⌥ P Browse Log In Sign Up Live Channels xQc Grand",
+        "backgroundColor": "rgb(14, 14, 16)",
+        "color": "rgb(239, 239, 241)",
+        "fontFamily": "Inter, \"Noto Sans Arabic\", Roobert, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.6px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "height": 900,
+        "width": 1440,
+        "boxShadow": "none"
       },
-      "email": {
+      "topNav": {
+        "selector": "nav.top-nav",
+        "text": "Skip to... ⌥ P Browse Log In Sign Up",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(239, 239, 241)",
+        "fontFamily": "Inter, \"Noto Sans Arabic\", Roobert, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.6px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "height": 50,
+        "width": 1440,
+        "boxShadow": "none"
+      },
+      "browse": {
+        "selector": "[data-a-target=\"browse-link\"]",
+        "text": "Browse",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(239, 239, 241)",
+        "fontFamily": "Roobert, Tajawal, Inter, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.6px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "height": 50,
+        "width": 60,
+        "boxShadow": "none"
+      },
+      "search": {
+        "selector": "input[aria-label=\"Search Input\"]",
+        "text": "",
         "backgroundColor": "rgb(24, 24, 27)",
         "color": "rgb(239, 239, 241)",
-        "height": 32,
-        "width": 488,
-        "borderRadius": "8px",
-        "padding": "0px 12px",
+        "fontFamily": "Inter, \"Noto Sans Arabic\", Roobert, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
         "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "21px",
+        "letterSpacing": "normal",
+        "borderRadius": "8px 0px 0px 8px",
+        "height": 36,
+        "width": 356,
         "boxShadow": "rgba(222, 222, 227, 0.95) 0px 0px 0px 1px inset"
       },
-      "emailFocus": {
-        "boxShadow": "rgb(169, 112, 255) 0px 0px 0px 2px, rgb(169, 112, 255) 0px 0px 0px 2px inset"
-      },
-      "label": {
-        "color": "rgb(247, 247, 248)",
-        "fontWeight": "700",
-        "fontSize": "14px"
-      },
-      "phoneLink": {
-        "color": "rgb(191, 148, 255)",
-        "textDecoration": "underline",
-        "backgroundColor": "rgba(0, 0, 0, 0)"
-      },
-      "continueDisabled": {
-        "disabled": true,
-        "backgroundColor": "rgba(83, 83, 95, 0.55)",
-        "color": "rgb(239, 239, 241)",
-        "height": 36,
-        "width": 488,
-        "borderRadius": "9000px",
-        "fontWeight": "600"
-      },
-      "oauthButton": {
+      "login": {
+        "selector": "[data-a-target=\"login-button\"]",
+        "text": "Log In",
         "backgroundColor": "rgba(83, 83, 95, 0.38)",
         "color": "rgb(239, 239, 241)",
-        "height": 36,
-        "width": 488,
+        "fontFamily": "Inter, \"Noto Sans Arabic\", Roobert, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "lineHeight": "19.6px",
+        "letterSpacing": "normal",
         "borderRadius": "9000px",
-        "fontWeight": "600"
+        "height": 32,
+        "width": 69,
+        "boxShadow": "none"
       },
-      "form": {"width": 488, "height": 339}
+      "signup": {
+        "selector": "[data-a-target=\"signup-button\"]",
+        "text": "Sign Up",
+        "backgroundColor": "rgb(119, 44, 232)",
+        "color": "rgb(255, 255, 255)",
+        "fontFamily": "Inter, \"Noto Sans Arabic\", Roobert, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "lineHeight": "19.6px",
+        "letterSpacing": "normal",
+        "borderRadius": "9000px",
+        "height": 32,
+        "width": 81,
+        "boxShadow": "rgb(119, 44, 232) 0px 0px 6px 0px"
+      }
     },
-    "directoryTabSelected": {
-      "url": "https://www.twitch.tv/directory",
-      "text": "Categories",
-      "color": "rgb(191, 148, 255)",
-      "fontSize": "14px",
-      "fontWeight": "400"
+    "signupHover": {
+      "backgroundColor": "rgb(119, 44, 232)"
+    },
+    "signupPressed": {
+      "backgroundColor": "rgb(92, 22, 197)"
     }
   }
 }

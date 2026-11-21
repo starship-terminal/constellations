@@ -1,14 +1,14 @@
 # Alo Yoga components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from aloyoga.com on 2026-11-10, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from aloyoga.com on 2026-11-21, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (53 components, 116 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (47 components, 105 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (121 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (110 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -16,16 +16,16 @@ Screenshots are named `{page}-light-{state}.png`: the shop paints one light them
 
 | Surface | URL | Screenshots |
 |---|---|---|
-| Home | `/en-sg` | [consent](screenshots/home-light-consent.png), [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png), [megamenu](screenshots/home-light-megamenu.png) |
-| Shop: women | `/en-sg/collections/womens-shop-all` | [default](screenshots/shop-women-light-default.png), [full](screenshots/shop-women-light-full.png) |
+| Home | `/en-sg` | [consent](screenshots/home-light-consent.png), [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png), [megamenu](screenshots/home-light-megamenu.png), [search](screenshots/home-light-search.png) |
+| Shop: women | `/en-sg/collections/womens-shop-all` | [default](screenshots/shop-women-light-default.png), [filter](screenshots/shop-women-light-filter.png), [full](screenshots/shop-women-light-full.png), [sort](screenshots/shop-women-light-sort.png) |
 | Shop: men | `/en-sg/collections/mens-shop-all` | [default](screenshots/shop-men-light-default.png), [full](screenshots/shop-men-light-full.png) |
 | New arrivals | `/en-sg/collections/new-arrivals` | [default](screenshots/new-arrivals-light-default.png), [full](screenshots/new-arrivals-light-full.png) |
 | Product page | `first product on the shop grid` | [default](screenshots/pdp-light-default.png), [full](screenshots/pdp-light-full.png) |
 | New to Alo | `/en-sg/pages/new-to-alo` | [default](screenshots/new-to-alo-light-default.png), [full](screenshots/new-to-alo-light-full.png) |
 | Cart | `/en-sg/cart` | [default](screenshots/cart-light-default.png), [full](screenshots/cart-light-full.png) |
 | Account login | `/en-sg/account` | [default](screenshots/account-light-default.png), [full](screenshots/account-light-full.png) |
-| Home, phone | `/en-sg` | [default](screenshots/mobile-home-light-default.png), [full](screenshots/mobile-home-light-full.png), [menu](screenshots/mobile-home-light-menu.png) |
-| Shop grid, phone | `/en-sg/collections/womens-shop-all` | [default](screenshots/mobile-shop-women-light-default.png), [full](screenshots/mobile-shop-women-light-full.png) |
+| Home, phone | `/en-sg` | [default](screenshots/mobile-home-light-default.png), [full](screenshots/mobile-home-light-full.png), [menu](screenshots/mobile-home-light-menu.png), [search](screenshots/mobile-home-light-search.png) |
+| Shop grid, phone | `/en-sg/collections/womens-shop-all` | [default](screenshots/mobile-shop-women-light-default.png), [filter](screenshots/mobile-shop-women-light-filter.png), [full](screenshots/mobile-shop-women-light-full.png), [sort](screenshots/mobile-shop-women-light-sort.png) |
 
 ### Overlays and transient states
 
@@ -40,7 +40,7 @@ Screenshots are named `{page}-light-{state}.png`: the shop paints one light them
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 20 components were given a real keyboard focus. 19 draw an outline ring: `nav-item` (5px auto #005fcc `measured.focus-outline`, offset 1px), `account-icon` (5px auto #005fcc `measured.focus-outline`, offset 0px), `bag-icon` (5px auto #005fcc `measured.focus-outline`, offset 1px), `hero-button` (5px auto #005fcc `measured.focus-outline`, offset 0px), `carousel-cta` (5px auto #005fcc `measured.focus-outline`, offset 1px), `sort-button` (5px auto #005fcc `measured.focus-outline`, offset 0px), `swatch` (5px auto #005fcc `measured.focus-outline`, offset 0px), `product-name` (5px auto #005fcc `measured.focus-outline`, offset 1px), `member-link` (5px auto #005fcc `measured.focus-outline`, offset 1px), `pdp-swatch` (5px auto #005fcc `measured.focus-outline`, offset 0px), `size-button` (5px auto #005fcc `measured.focus-outline`, offset 0px), `add-to-bag` (5px auto #005fcc `measured.focus-outline`, offset 0px), `size-guide` (5px auto #005fcc `measured.focus-outline`, offset 0px), `cart-continue` (5px auto #005fcc `measured.focus-outline`, offset 1px), `m-menu-button` (5px auto #e59700, offset 0px), `m-hero-button` (5px auto #e59700, offset 0px), `wishlist-button` (5px auto #005fcc `measured.focus-outline`, offset 0px), `footer-link` (5px auto #005fcc `measured.focus-outline`, offset 1px), `footer-social` (5px auto #005fcc `measured.focus-outline`, offset 1px). 1 change only their border: `more-colors`.
+**Focus.** 19 components were given a real keyboard focus. 18 draw an outline ring: `nav-item` (5px auto #005fcc `measured.focus-outline`, offset 1px), `account-icon` (5px auto #005fcc `measured.focus-outline`, offset 0px), `bag-icon` (5px auto #005fcc `measured.focus-outline`, offset 1px), `hero-button` (5px auto #005fcc `measured.focus-outline`, offset 0px), `carousel-cta` (5px auto #005fcc `measured.focus-outline`, offset 1px), `sort-button` (5px auto #005fcc `measured.focus-outline`, offset 0px), `swatch` (5px auto #005fcc `measured.focus-outline`, offset 0px), `product-name` (5px auto #005fcc `measured.focus-outline`, offset 1px), `pdp-swatch` (5px auto #005fcc `measured.focus-outline`, offset 0px), `size-button` (5px auto #005fcc `measured.focus-outline`, offset 0px), `add-to-bag` (5px auto #005fcc `measured.focus-outline`, offset 0px), `size-guide` (5px auto #005fcc `measured.focus-outline`, offset 0px), `cart-continue` (5px auto #005fcc `measured.focus-outline`, offset 1px), `m-menu-button` (5px auto #e59700, offset 0px), `m-hero-button` (5px auto #e59700, offset 0px), `wishlist-button` (5px auto #005fcc `measured.focus-outline`, offset 0px), `footer-link` (5px auto #005fcc `measured.focus-outline`, offset 1px), `footer-social` (5px auto #005fcc `measured.focus-outline`, offset 1px). 1 change only their border: `more-colors`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): controls deepen their fill or dim rather than scale; the nav flyout and framework icons keep their hover scale. Nothing a real press would submit was ever pressed.
 
@@ -48,17 +48,17 @@ Values that apply across entries, from the measurement files.
 
 | Duration | Easing | Property | Where |
 |---|---|---|---|
-| 0.3s | `ease` | color | bag-icon, carousel-cta, cart-continue, footer-link, footer-social, grid-card, logo, member-link and more |
-| 0.5s | `ease-in-out` | background-color | add-to-bag |
+| 0.3s | `ease` | color | bag-icon, carousel-cta, cart-continue, color-tile, footer-link, footer-social, logo, more-colors and more |
+| 0.5s | `ease-in-out` | background-color, opacity | add-to-bag, to-top |
 
 **Card shapes.** Default-state values; the entries hold the states.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Product tile](#product-tile) | 324 x 637.8 | - | - | transparent | none | 0 |
-| [Category tile](#category-tile) | 313.5 x 449.84 | - | - | transparent | none | 0 |
-| [Mobile product tile](#mobile-product-tile) | 390 x 499.92 | - | - | transparent | none | 0 |
-| [Empty cart](#empty-cart) | 1440 x 651.17 | - | - | transparent | none | 0 |
+| [Product tile](#product-tile) | 324 x 645.8 | - | - | transparent | none | 0 |
+| [Colour-story tile](#colour-story-tile) | 272 x 408 | - | - | transparent | none | 0 |
+| [Mobile product tile](#mobile-product-tile) | 390 x 557.89 | - | - | transparent | none | 0 |
+| [Empty cart](#empty-cart) | 1440 x 639.42 | - | - | transparent | none | 0 |
 
 ## Components
 
@@ -69,14 +69,12 @@ The promo strip, the white header bar and the mega-menu flyout.
 #### Promo strip
 The thin bar above the header linking the current offer. Read as `promo-strip` on the shop home page.
 
-**Values (default).** size 102.86 x 17; background transparent; text proxima-nova 14/19.6 600, #ffffff `color.neutral.white`; transition color 0.3s ease.
-
-![Promo strip default](components/crops/promo-strip-default.png)
+Not on the page when it was captured.
 
 #### Header
 The white bar: wordmark, WOMEN/MEN/SHOES nav, search, account, bag. Read as `header` on the shop home page.
 
-**Values (default).** size 1440 x 84; background transparent; text proxima-nova 18/normal 500, #000000 `measured.button-hover`; icon 71 x 48, #000000 `measured.button-hover`; layers div.desktop-nav.row 1440.0x84.0 B:1px solid rgb(222, 222, 222); div.container-fluid.main-navbar__sub-items 1440.0x15.0 rgb(255, 255, 255); div.row.no-gutters 1350.0x570.2 T:1px solid rgb(222, 222, 222) / B:1px solid rgb(222, 222, 222); div.container-fluid.main-navbar__sub-items 1440.0x15.0 rgb(255, 255, 255); div.row.no-gutters 1350.0x395.1 T:1px solid rgb(222, 222, 222) / B:1px solid rgb(222, 222.
+**Values (default).** size 1440 x 84; background transparent; text proxima-nova 18/normal 500, #000000 `measured.action-bg`; icon 71 x 48, #000000 `measured.action-bg`; layers div.desktop-nav.row 1440.0x84.0 B:1px solid rgb(222, 222, 222); div.container-fluid.main-navbar__sub-items 1440.0x15.0 rgb(255, 255, 255); div.row.no-gutters 1350.0x570.2 T:1px solid rgb(222, 222, 222) / B:1px solid rgb(222, 222, 222); div.container-fluid.main-navbar__sub-items 1440.0x15.0 rgb(255, 255, 255); div.row.no-gutters 1350.0x395.1 T:1px solid rgb(222, 222, 222) / B:1px solid rgb(222, 222.
 
 Child layers that carry the look: div 1440x84 border 1px solid #dedede; div 1440x15 background #ffffff `color.neutral.white`; div 1350x570.2 border 1px solid #dedede.
 
@@ -85,7 +83,7 @@ Child layers that carry the look: div 1440x84 border 1px solid #dedede; div 1440
 #### Logo
 Read as `logo` on the shop home page.
 
-**Values (default).** size 71 x 53; background transparent; text proxima-nova 16/normal 400, #000000 `measured.button-hover`; transition color 0.3s ease; icon 71 x 48, #000000 `measured.button-hover`.
+**Values (default).** size 71 x 53; background transparent; text proxima-nova 16/normal 400, #000000 `measured.action-bg`; transition color 0.3s ease; icon 71 x 48, #000000 `measured.action-bg`.
 
 ![Logo default](components/crops/logo-default.png)
 
@@ -94,7 +92,7 @@ A top-level shop category; hover opens the mega-menu. Read as `nav-item` on the 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 71.95 x 70; padding 24px 0px; background transparent; text proxima-nova 18/normal 500, #000000 `measured.button-hover`; transition color 0.3s ease; layers ::after rgba(0, 0, 0, 0) 0px none 1 |
+| default | size 71.95 x 70; padding 24px 0px; background transparent; text proxima-nova 18/normal 500, #000000 `measured.action-bg`; transition color 0.3s ease; layers ::after rgba(0, 0, 0, 0) 0px none 1 |
 | hover | layers ::after rgb(0, 0, 0) 0px none 1; a::after.main-nav__item.hover-target 71.9531pxx3px rgb(0, 0, 0) |
 | focus-visible | outline 5px auto #005fcc `measured.focus-outline`, offset 1px; layers ::after rgb(0, 0, 0) 0px none 1; a.main-nav__item.hover-target 72.0x70.0; a::after.main-nav__item.hover-target 71.9531pxx3px rgb(0, 0, 0) |
 | pressed | layers ::after rgb(0, 0, 0) 0px none 1; a::after.main-nav__item.hover-target 71.9531pxx3px rgb(0, 0, 0) |
@@ -104,9 +102,9 @@ A top-level shop category; hover opens the mega-menu. Read as `nav-item` on the 
 #### Mega-menu, open
 The nav item while its flyout is open; the panel shows in the crop. Read as `nav-mega` on the shop home page.
 
-**Values (opened).** size 71.95 x 70; padding 24px 0px; background transparent; text proxima-nova 18/normal 500, #000000 `measured.button-hover`; transition color 0.3s ease; layers ::after rgb(0, 0, 0) 0px none 1; a::after.main-nav__item.hover-target 71.9531pxx3px rgb(0, 0, 0).
+**Values (opened).** size 71.95 x 70; padding 24px 0px; background transparent; text proxima-nova 18/normal 500, #000000 `measured.action-bg`; transition color 0.3s ease; layers ::after rgb(0, 0, 0) 0px none 1; a::after.main-nav__item.hover-target 71.9531pxx3px rgb(0, 0, 0).
 
-Child layers that carry the look: a::after 71.9531pxx3px background #000000 `measured.button-hover`.
+Child layers that carry the look: a::after 71.9531pxx3px background #000000 `measured.action-bg`.
 
 ![Mega-menu, open opened](components/crops/nav-mega-opened.png)
 
@@ -115,7 +113,7 @@ Read as `search-icon` on the shop home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 20 x 25; background transparent; text proxima-nova 16/normal 400, #000000 `measured.button-hover`; transition color 0.3s ease; layers span.icon-search-static 20.0x20.0 |
+| default | size 20 x 25; background transparent; text proxima-nova 16/normal 400, #000000 `measured.action-bg`; transition color 0.3s ease; layers span.icon-search-static 20.0x20.0 |
 | hover, pressed | text proxima-nova 16/normal 400, #595959 |
 
 Child layers that carry the look: span 20x20 image url(data:…).
@@ -127,7 +125,7 @@ Read as `account-icon` on the shop home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 18 x 20; background transparent; text proxima-nova 16/normal 400, #000000 `measured.button-hover`; layers span.icon-account-static 18.0x17.0 |
+| default (same: pressed) | size 18 x 20; background transparent; text proxima-nova 16/normal 400, #000000 `measured.action-bg`; layers span.icon-account-static 18.0x17.0 |
 | hover | layers span.icon-account-solid 18.0x17.0 |
 | focus-visible | outline 5px auto #005fcc `measured.focus-outline`, offset 0px; layers button.account-icon 18.0x20.0; span.icon-account-static 18.0x17.0 |
 
@@ -140,7 +138,7 @@ Read as `bag-icon` on the shop home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 18 x 29; background transparent; text proxima-nova 16/normal 400, #000000 `measured.button-hover`; transition color 0.3s ease; layers span.icon-bag-static 18.0x24.0 |
+| default | size 18 x 29; background transparent; text proxima-nova 16/normal 400, #000000 `measured.action-bg`; transition color 0.3s ease; layers span.icon-bag-static 18.0x24.0 |
 | hover | text proxima-nova 16/normal 400, #595959 |
 | focus-visible | outline 5px auto #005fcc `measured.focus-outline`, offset 1px; text proxima-nova 16/normal 400, #595959; layers a.main-navbar__icon.main-navbar__icon--bag 18.0x29.0; span.icon-bag-static 18.0x24.0 |
 | pressed | text proxima-nova 16/normal 400, #595959 |
@@ -154,7 +152,7 @@ The header search input; focused only, nothing typed. Read as `search-input` on 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 175 x 26; padding 1px 2px; border 2px inset #767676; background #ffffff `color.neutral.white`; text proxima-nova 16/normal 400, #000000 `measured.button-hover`; placeholder #000000 `measured.button-hover` |
+| default | size 175 x 26; padding 1px 2px; border 2px inset #767676; background #ffffff `color.neutral.white`; text proxima-nova 16/normal 400, #000000 `measured.action-bg`; placeholder #000000 `measured.action-bg` |
 | focused | outline 1px auto #005fcc `measured.focus-outline`, offset 0px |
 
 ![Search field default](components/crops/search-input-default.png) ![Search field focused](components/crops/search-input-focused.png)
@@ -168,50 +166,55 @@ The filled hero CTA ("JOIN NOW"). Measured, never followed. Read as `hero-button
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 160.25 x 48; padding 15px 30px; background #ffffff `color.neutral.white`; text proxima-nova 18/18 900, #000000 `measured.button-hover` |
-| hover | background #000000 `measured.button-hover`; text proxima-nova 18/18 900, #ffffff `color.neutral.white` |
+| default | size 192.88 x 48; padding 15px 30px; background #000000 `measured.action-bg`; text proxima-nova 18/18 900, #ffffff `color.neutral.white` |
+| hover | background #ffffff `color.neutral.white`; text proxima-nova 18/18 900, #000000 `measured.action-bg` |
 | focus-visible | outline 5px auto #005fcc `measured.focus-outline`, offset 0px |
-| pressed | background #000000 `measured.button-hover`; text proxima-nova 18/18 900, #ffffff `color.neutral.white` |
+| pressed | background #ffffff `color.neutral.white`; text proxima-nova 18/18 900, #000000 `measured.action-bg` |
 
 ![Hero button default](components/crops/hero-button-default.png) ![Hero button hover](components/crops/hero-button-hover.png) ![Hero button focus-visible](components/crops/hero-button-focus-visible.png) ![Hero button pressed](components/crops/hero-button-pressed.png)
 
 #### Category tile
 A shop-category image tile (NEW ARRIVALS, PANTS, ...). Read as `grid-card` on the shop home page.
 
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default (same: hover) | size 313.5 x 449.84; background transparent; text proxima-nova 18/19.8 500, #000000 `measured.button-hover`; transition color 0.3s ease |
-
-![Category tile default](components/crops/grid-card-default.png) ![Category tile hover](components/crops/grid-card-hover.png)
+Not on the page when it was captured.
 
 #### Tile label
 Read as `grid-card-label` on the shop home page.
 
-**Values (default).** size 313.5 x 39.8; background transparent; text proxima-nova 18/19.8 500, #000000 `measured.button-hover`.
-
-![Tile label default](components/crops/grid-card-label-default.png)
+Not on the page when it was captured.
 
 #### Carousel CTA link
 "Shop Now" over a product carousel. Read as `carousel-cta` on the shop home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 75.72 x 22.39; background transparent; text proxima-nova 16/22.4 400, #000000 `measured.button-hover`; transition color 0.3s ease |
-| hover | size 77.5 x 22.39; text proxima-nova 16/22.4 700, #000000 `measured.button-hover` |
-| focus-visible | size 77.5 x 22.39; outline 5px auto #005fcc `measured.focus-outline`, offset 1px; text proxima-nova 16/22.4 700, #000000 `measured.button-hover`; layers a.carousel-header__cta.body-text-link 77.5x22.4 |
-| pressed | size 77.5 x 22.39; text proxima-nova 16/22.4 700, #000000 `measured.button-hover` |
+| default | size 129.31 x 22.39; background transparent; text proxima-nova 16/22.4 400, #000000 `measured.action-bg`; transition color 0.3s ease |
+| hover | size 132.89 x 22.39; text proxima-nova 16/22.4 700, #000000 `measured.action-bg` |
+| focus-visible | size 132.89 x 22.39; outline 5px auto #005fcc `measured.focus-outline`, offset 1px; text proxima-nova 16/22.4 700, #000000 `measured.action-bg`; layers a.carousel-header__cta.body-text-link 132.9x22.4 |
+| pressed | size 132.89 x 22.39; text proxima-nova 16/22.4 700, #000000 `measured.action-bg` |
 
 ![Carousel CTA link default](components/crops/carousel-cta-default.png) ![Carousel CTA link hover](components/crops/carousel-cta-hover.png) ![Carousel CTA link focus-visible](components/crops/carousel-cta-focus-visible.png) ![Carousel CTA link pressed](components/crops/carousel-cta-pressed.png)
 
 #### Colour-story tile
 A Builder.io colourway block. Read as `color-tile` on the shop home page.
 
-Not on the page when it was captured.
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover) | size 272 x 408; background transparent; text proxima-nova 18/19.8 500, #ffffff `color.neutral.white`; transition color 0.3s ease; layers div.builder-block.builder-089145351202458b965b714f683813ac 260.0x110.6 rgb(127, 98, 74) |
+
+Child layers that carry the look: div 260x110.6 background #7f624a.
+
+![Colour-story tile default](components/crops/color-tile-default.png) ![Colour-story tile hover](components/crops/color-tile-hover.png)
 
 #### Back-to-top button
 The floating round return-to-top control. Read as `to-top` on the shop home page.
 
-Not on the page when it was captured.
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 98 x 98; background transparent; image url(…); text proxima-nova 16/normal 400, #000000 `measured.action-bg`; transition opacity 0.5s ease-in-out |
+| hover, pressed | text proxima-nova 16/normal 400, #595959 |
+
+![Back-to-top button default](components/crops/to-top-default.png) ![Back-to-top button hover](components/crops/to-top-hover.png) ![Back-to-top button pressed](components/crops/to-top-pressed.png)
 
 ### Shop grid
 
@@ -220,7 +223,7 @@ The collection grid: tiles, swatches, member-price hooks.
 #### Collection title
 Read as `plp-title` on the women's shop grid page.
 
-**Values (default).** size 1382.41 x 44; background transparent; text proxima-nova 40/44 600, #000000 `measured.button-hover`.
+**Values (default).** size 1382.41 x 44; background transparent; text proxima-nova 40/44 600, #000000 `measured.action-bg`.
 
 ![Collection title default](components/crops/plp-title-default.png)
 
@@ -229,7 +232,7 @@ The grid sort/filter trigger. Measured, never opened. Read as `sort-button` on t
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 167.03 x 34; padding 0px 24px; border 1px solid #cccccc `color.neutral.alto`; radius 360px; background #ffffff `color.neutral.white`; text proxima-nova 14/normal 500, #000000 `measured.button-hover` |
+| default | size 167.03 x 34; padding 0px 24px; border 1px solid #cccccc `color.neutral.alto`; radius 360px; background #ffffff `color.neutral.white`; text proxima-nova 14/normal 500, #000000 `measured.action-bg` |
 | hover | border 1px solid #e1e1e1 `color.neutral.mercury`; background #e1e1e1 `color.neutral.mercury` |
 | focus-visible | outline 5px auto #005fcc `measured.focus-outline`, offset 0px |
 | pressed | border 1px solid #e1e1e1 `color.neutral.mercury`; background #e1e1e1 `color.neutral.mercury` |
@@ -241,10 +244,10 @@ A grid card: image, name, price, colour swatches, member-price link. Read as `pr
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 324 x 637.8; background transparent; text proxima-nova 16/22.4 600, #000000 `measured.button-hover`; layers span.icon-wishlist-static 20.0x20.0; a::after 59.0938pxx0.5px rgb(79, 117, 65); button.SwatchUI.swatch 26.0x26.0 rgb(81, 59, 44) T:1px solid rgb(236, 236, 236) / R:1px solid rgb(236, 236, 236) / B:1px solid rgb(236, 236, 236) / L:1px solid rgb(236, 236, 236) 50%; button::before.SwatchUI.swatch 32pxx32px T:1px solid rgb(127, 127, 127) / R:1px solid rgb(127, 127, 127) / B:1px solid rgb(127, 127, 127 |
+| default | size 324 x 645.8; background transparent; text proxima-nova 12/normal 400, #000000 `measured.action-bg`; layers span.icon-wishlist-static 20.0x20.0; div.product-card-badge 87.5x22.0 rgb(242, 242, 242); button.SwatchUI.swatch 26.0x26.0 rgb(0, 0, 0) T:1px solid rgb(236, 236, 236) / R:1px solid rgb(236, 236, 236) / B:1px solid rgb(236, 236, 236) / L:1px solid rgb(236, 236, 236) 50%; button::before.SwatchUI.swatch 32pxx32px T:1px solid rgb(127, 127, 127) / R:1px solid rgb(127, 127, 127) / B:1px solid rgb(127, 1 |
 | hover | text proxima-nova 16/16 400, #ffffff `color.neutral.white`; layers span.icon-wishlist-static 20.0x20.0; div.quick-add.quick-add-dark-mode 304.0x58.0 rgb(59, 59, 59); button.quick-add-size-btn 42.3x25.0 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0); button.quick-add-size-btn 31.8x25.0 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid r |
 
-Child layers that carry the look: span 20x20 image url(data:…); a::after 59.0938pxx0.5px background #4f7541; button 26x26 background #513b2c border 1px solid #ececec radius 50%.
+Child layers that carry the look: span 20x20 image url(data:…); div 87.5x22 background #f2f2f2 `color.neutral.smoke`; button 26x26 background #000000 `measured.action-bg` border 1px solid #ececec radius 50%.
 
 ![Product tile default](components/crops/product-tile-default.png) ![Product tile hover](components/crops/product-tile-hover.png)
 
@@ -253,7 +256,7 @@ A product colour dot; a local selection toggle. Read as `swatch` on the women's 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 26 x 26; border 1px solid #ececec; radius 50%; background #513b2c; text proxima-nova 16/normal 400, #000000 `measured.button-hover`; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
+| default (same: hover, pressed) | size 26 x 26; border 1px solid #ececec; radius 50%; background #000000 `measured.action-bg`; text proxima-nova 16/normal 400, #000000 `measured.action-bg`; layers ::before rgba(0, 0, 0, 0) 1px none 1 |
 | focus-visible | outline 5px auto #005fcc `measured.focus-outline`, offset 0px |
 
 ![Colour swatch default](components/crops/swatch-default.png) ![Colour swatch hover](components/crops/swatch-hover.png) ![Colour swatch focus-visible](components/crops/swatch-focus-visible.png) ![Colour swatch pressed](components/crops/swatch-pressed.png)
@@ -261,7 +264,7 @@ A product colour dot; a local selection toggle. Read as `swatch` on the women's 
 #### Swatch, selected
 Read as `swatch-selected` on the women's shop grid page.
 
-**Values (default).** size 26 x 26; border 1px solid #ececec; radius 50%; background #513b2c; text proxima-nova 16/normal 400, #000000 `measured.button-hover`; layers ::before rgba(0, 0, 0, 0) 1px none 1.
+**Values (default).** size 26 x 26; border 1px solid #ececec; radius 50%; background #000000 `measured.action-bg`; text proxima-nova 16/normal 400, #000000 `measured.action-bg`; layers ::before rgba(0, 0, 0, 0) 1px none 1.
 
 ![Swatch, selected default](components/crops/swatch-selected-default.png)
 
@@ -270,7 +273,7 @@ Read as `product-name` on the women's shop grid page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 324 x 22.39; background transparent; text proxima-nova 16/22.4 600, #000000 `measured.button-hover`; transition color 0.3s ease |
+| default (same: hover, pressed) | size 324 x 22.39; background transparent; text proxima-nova 16/22.4 600, #000000 `measured.action-bg`; transition color 0.3s ease |
 | focus-visible | outline 5px auto #005fcc `measured.focus-outline`, offset 1px; layers a 324.0x22.4 |
 
 ![Product name link default](components/crops/product-name-default.png) ![Product name link hover](components/crops/product-name-hover.png) ![Product name link focus-visible](components/crops/product-name-focus-visible.png) ![Product name link pressed](components/crops/product-name-pressed.png)
@@ -278,21 +281,14 @@ Read as `product-name` on the women's shop grid page.
 #### Member-price link
 "Join Now" — the membership hook. Measured, never followed. Read as `member-link` on the women's shop grid page.
 
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default (same: hover, pressed) | size 59.09 x 18; background transparent; text proxima-nova 14/18 700, #4f7541; transition color 0.3s ease; layers ::after rgb(79, 117, 65) 0px none 1; a::after 59.0938pxx0.5px rgb(79, 117, 65) |
-| focus-visible | outline 5px auto #005fcc `measured.focus-outline`, offset 1px; layers ::after rgb(79, 117, 65) 0px none 1; a 59.1x18.0; a::after 59.0938pxx0.5px rgb(79, 117, 65) |
-
-Child layers that carry the look: a::after 59.0938pxx0.5px background #4f7541.
-
-![Member-price link default](components/crops/member-link-default.png) ![Member-price link hover](components/crops/member-link-hover.png) ![Member-price link focus-visible](components/crops/member-link-focus-visible.png) ![Member-price link pressed](components/crops/member-link-pressed.png)
+Not on the page when it was captured.
 
 #### More colours chip
 Read as `more-colors` on the women's shop grid page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 33 x 17; padding 0px 0px 0px 5px; background transparent; text proxima-nova 14/normal 400, #000000 `measured.button-hover`; transition color 0.3s ease; layers span.alo-add-thick-icon.icon__increment 9.0x9.0 |
+| default | size 33 x 17; padding 0px 0px 0px 5px; background transparent; text proxima-nova 14/normal 400, #000000 `measured.action-bg`; transition color 0.3s ease; layers span.alo-add-thick-icon.icon__increment 9.0x9.0 |
 | hover, focus-visible, pressed | text proxima-nova 14/normal 400, #595959 |
 
 Child layers that carry the look: span 9x9 image url(data:…)' stroke='%23000' stroke-width='3.333' stroke-miterlimit='50'%3E%3Cpath d='M10 .
@@ -306,16 +302,16 @@ Title, price, colour tiles, size chips and the buy button.
 #### Product title
 Read as `pdp-title` on the product page page.
 
-**Values (default).** size 231.53 x 26.39; background transparent; text proxima-nova 24/26.4 500, #000000 `measured.button-hover`.
+**Values (default).** size 231.53 x 26.39; background transparent; text proxima-nova 24/26.4 500, #000000 `measured.action-bg`.
 
 ![Product title default](components/crops/pdp-title-default.png)
 
 #### Product price
 Read as `pdp-price` on the product page page.
 
-**Values (default).** size 420 x 50; background transparent; text proxima-nova 18/24 400, #000000 `measured.button-hover`; layers a::after 67.5312pxx0.5px rgb(79, 117, 65); div::before.review-star autoxauto.
+**Values (default).** size 336.16 x 25.19; background transparent; text proxima-nova 18/25.2 400, #000000 `measured.action-bg`; layers div::before.review-star autoxauto.
 
-Child layers that carry the look: a::after 67.5312pxx0.5px background #4f7541; div::before autoxauto image linear-gradient(90deg, #ceb18f calc(92.459%), #ffffff `color.neutral.white` calc(92.459%)).
+Child layers that carry the look: div::before autoxauto image linear-gradient(90deg, #ceb18f calc(92.5532%), #ffffff `color.neutral.white` calc(92.5532%.
 
 ![Product price default](components/crops/pdp-price-default.png)
 
@@ -324,19 +320,19 @@ Read as `pdp-swatch` on the product page page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 46 x 46; background transparent; text proxima-nova 14/normal 400, #000000 `measured.button-hover`; layers span.swatch__wrapper 46.0x46.0 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 50%; span.swatch 35.0x35.0 rgb(0, 0, 0) 50%; span.swatch-disabled-ui 0.0x0.0 rgb(255, 255, 255); span.line 0.0x0.0 rgb(151, 151, 151) |
-| focus-visible | outline 5px auto #005fcc `measured.focus-outline`, offset 0px; layers label.UserSelection.square 46.0x46.0; span.swatch__wrapper 46.0x46.0 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 50%; span.swatch 35.0x35.0 rgb(0, 0, 0) 50%; span.swatch-disabled-ui 0.0x0.0 rgb(255, 255, 255); span.line 0.0x0.0 rgb(151, 151, 151) |
+| default (same: hover, pressed) | size 46 x 78; background transparent; text proxima-nova 14/normal 400, #000000 `measured.action-bg`; layers span.swatch__wrapper 46.0x46.0 T:1px solid rgb(151, 151, 151) / R:1px solid rgb(151, 151, 151) / B:1px solid rgb(151, 151, 151) / L:1px solid rgb(151, 151, 151) 50%; span.swatch 35.0x35.0 rgb(0, 0, 0) 50%; span.swatch-disabled-ui 0.0x0.0 rgb(255, 255, 255); span.line 0.0x0.0 rgb(151, 151, 151) |
+| focus-visible | outline 5px auto #005fcc `measured.focus-outline`, offset 0px; layers label.UserSelection.square 46.0x78.0; span.swatch__wrapper 46.0x46.0 T:1px solid rgb(151, 151, 151) / R:1px solid rgb(151, 151, 151) / B:1px solid rgb(151, 151, 151) / L:1px solid rgb(151, 151, 151) 50%; span.swatch 35.0x35.0 rgb(0, 0, 0) 50%; span.swatch-disabled-ui 0.0x0.0 rgb(255, 255, 255); span.line 0.0x0.0 rgb(151, 151, 151) |
 
-Child layers that carry the look: span 46x46 border 1px solid transparent radius 50%; span 35x35 background #000000 `measured.button-hover` radius 50%; span 0x0 background #ffffff `color.neutral.white`.
+Child layers that carry the look: span 46x46 border 1px solid #979797 radius 50%; span 35x35 background #000000 `measured.action-bg` radius 50%; span 0x0 background #ffffff `color.neutral.white`.
 
 ![PDP swatch default](components/crops/pdp-swatch-default.png) ![PDP swatch hover](components/crops/pdp-swatch-hover.png) ![PDP swatch focus-visible](components/crops/pdp-swatch-focus-visible.png) ![PDP swatch pressed](components/crops/pdp-swatch-pressed.png)
 
 #### PDP swatch, picked
 A colour swatch after its own toggle; never an add-to-bag. Read as `pdp-swatch-picked` on the product page page.
 
-**Values (opened).** size 46 x 46; background transparent; text proxima-nova 14/normal 400, #000000 `measured.button-hover`; layers span.swatch__wrapper 46.0x46.0 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 50%; span.swatch 35.0x35.0 rgb(1, 48, 92) 50%; span.swatch-disabled-ui 0.0x0.0 rgb(255, 255, 255); span.line 0.0x0.0 rgb(151, 151, 151).
+**Values (opened).** size 46 x 78; background transparent; text proxima-nova 14/normal 400, #000000 `measured.action-bg`; layers span.swatch__wrapper 46.0x46.0 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 50%; span.swatch 35.0x35.0 rgb(0, 0, 0) 50%; span.swatch-disabled-ui 0.0x0.0 rgb(255, 255, 255); span.line 0.0x0.0 rgb(151, 151, 151).
 
-Child layers that carry the look: span 46x46 border 1px solid transparent radius 50%; span 35x35 background #01305c radius 50%; span 0x0 background #ffffff `color.neutral.white`.
+Child layers that carry the look: span 46x46 border 1px solid transparent radius 50%; span 35x35 background #000000 `measured.action-bg` radius 50%; span 0x0 background #ffffff `color.neutral.white`.
 
 ![PDP swatch, picked opened](components/crops/pdp-swatch-picked-opened.png)
 
@@ -345,9 +341,10 @@ Read as `size-button` on the product page page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 134 x 40; border 1px solid transparent; background #ffffff `color.neutral.white`; outline 1px solid #cccccc `color.neutral.alto`, offset 0px; text proxima-nova 16/normal 500, #000000 `measured.button-hover` |
-| focus-visible | border 1px solid #000000 `measured.button-hover`; outline 5px auto #005fcc `measured.focus-outline`, offset 0px |
-| pressed | border 1px solid #000000 `measured.button-hover`; background #000000 `measured.button-hover`; outline 1px solid #000000 `measured.button-hover`, offset 0px; text proxima-nova 16/normal 500, #ffffff `color.neutral.white` |
+| default | size 134 x 40; border 1px solid transparent; background #ffffff `color.neutral.white`; outline 1px solid #cccccc `color.neutral.alto`, offset 0px; text proxima-nova 16/normal 500, #000000 `measured.action-bg` |
+| hover | border 1px solid #000000 `measured.action-bg`; outline 1px solid #000000 `measured.action-bg`, offset 0px |
+| focus-visible | border 1px solid #000000 `measured.action-bg`; outline 5px auto #005fcc `measured.focus-outline`, offset 0px |
+| pressed | border 1px solid #000000 `measured.action-bg`; background #000000 `measured.action-bg`; outline 1px solid #000000 `measured.action-bg`, offset 0px; text proxima-nova 16/normal 500, #ffffff `color.neutral.white` |
 
 ![Size button default](components/crops/size-button-default.png) ![Size button hover](components/crops/size-button-hover.png) ![Size button focus-visible](components/crops/size-button-focus-visible.png) ![Size button pressed](components/crops/size-button-pressed.png)
 
@@ -356,7 +353,8 @@ The purchase action; measured in every state except a real press. Read as `add-t
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 420 x 52; padding 14px 16px; border 1px solid #000000 `measured.button-hover`; background #000000 `measured.button-hover`; text proxima-nova 18/normal 700, #ffffff `color.neutral.white`; transition background-color 0.5s ease-in-out |
+| default | size 420 x 52; padding 14px 16px; border 1px solid #000000 `measured.action-bg`; background #000000 `measured.action-bg`; text proxima-nova 18/normal 700, #ffffff `color.neutral.white`; transition background-color 0.5s ease-in-out |
+| hover | border 1px solid #242424 `color.neutral.charcoal`; background #232323 `measured.action-bg-hover` |
 | focus-visible | outline 5px auto #005fcc `measured.focus-outline`, offset 0px |
 
 ![Add to bag default](components/crops/add-to-bag-default.png) ![Add to bag hover](components/crops/add-to-bag-hover.png) ![Add to bag focus-visible](components/crops/add-to-bag-focus-visible.png)
@@ -366,9 +364,10 @@ Read as `size-guide` on the product page page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 79.22 x 22.39; background transparent; text proxima-nova 16/22.4 400, #000000 `measured.button-hover` |
-| focus-visible | size 80.84 x 22.39; outline 5px auto #005fcc `measured.focus-outline`, offset 0px; text proxima-nova 16/22.4 700, #000000 `measured.button-hover`; layers span.label-add.size-guide-trigger 80.8x22.4 |
-| pressed | size 80.84 x 22.39; text proxima-nova 16/22.4 700, #000000 `measured.button-hover` |
+| default | size 79.22 x 22.39; background transparent; text proxima-nova 16/22.4 400, #000000 `measured.action-bg` |
+| hover | size 80.84 x 22.39; text proxima-nova 16/22.4 700, #000000 `measured.action-bg` |
+| focus-visible | size 80.84 x 22.39; outline 5px auto #005fcc `measured.focus-outline`, offset 0px; text proxima-nova 16/22.4 700, #000000 `measured.action-bg`; layers span.label-add.size-guide-trigger 80.8x22.4 |
+| pressed | size 80.84 x 22.39; text proxima-nova 16/22.4 700, #000000 `measured.action-bg` |
 
 ![Size-guide link default](components/crops/size-guide-default.png) ![Size-guide link hover](components/crops/size-guide-hover.png) ![Size-guide link focus-visible](components/crops/size-guide-focus-visible.png) ![Size-guide link pressed](components/crops/size-guide-pressed.png)
 
@@ -392,7 +391,8 @@ The ghost sibling of Add to bag. Measured, never pressed. Read as `wishlist-butt
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 420 x 52; padding 14px 32px; border 1px solid #000000 `measured.button-hover`; background #ffffff `color.neutral.white`; text proxima-nova 18/normal 700, #000000 `measured.button-hover` |
+| default | size 420 x 52; padding 14px 32px; border 1px solid #000000 `measured.action-bg`; background #ffffff `color.neutral.white`; text proxima-nova 18/normal 700, #000000 `measured.action-bg` |
+| hover | border 1px solid #e1e1e1 `color.neutral.mercury`; background #e1e1e1 `color.neutral.mercury` |
 | focus-visible | outline 5px auto #005fcc `measured.focus-outline`, offset 0px |
 | pressed | border 1px solid #e1e1e1 `color.neutral.mercury`; background #e1e1e1 `color.neutral.mercury` |
 
@@ -405,9 +405,9 @@ The signed-out bag.
 #### Empty cart
 The signed-out bag with nothing in it. Read as `cart-empty` on the cart page.
 
-**Values (default).** size 1440 x 651.17; background transparent; text proxima-nova 24/26.4 600, #000000 `measured.button-hover`; layers ::before rgba(0, 0, 0, 0.35) 0px none 1; main::before.main 1440pxx651.172px rgba(0, 0, 0, 0.35); div.full-width__line.d-block 0.0x0.0 B:1px solid rgb(223, 223, 223); div.shopping-bag-block.shopping-bag-block__new 770.0x244.4 T:1px solid rgb(207, 207, 207); a.btn.btn-primary 112.7x40.0 rgb(0, 0, 0) T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px so.
+**Values (default).** size 1440 x 639.42; background transparent; text proxima-nova 24/26.4 600, #000000 `measured.action-bg`; layers ::before rgba(0, 0, 0, 0.35) 0px none 1; main::before.main 1440pxx639.422px rgba(0, 0, 0, 0.35); div.builder-block.builder-c01ef5469a8242e5aff26dbecce4d263 1156.0x0.0 rgba(255, 255, 255, 0); div.full-width__line.d-block 0.0x0.0 B:1px solid rgb(223, 223, 223); div.shopping-bag-block.shopping-bag-block__new 770.0x99.0 T:1px solid rgb(207, 207, 207); a.btn.btn-primary 112.7x40.0 rgb(0, 0, 0) T:1px so.
 
-Child layers that carry the look: main::before 1440pxx651.172px background rgba(0, 0, 0, 0.35); div 0x0 border 1px solid #dfdfdf; div 770x244.4 border 1px solid #cfcfcf.
+Child layers that carry the look: main::before 1440pxx639.422px background rgba(0, 0, 0, 0.35); div 1156x0 background rgba(255, 255, 255, 0); div 0x0 border 1px solid #dfdfdf.
 
 ![Empty cart default](components/crops/cart-empty-default.png)
 
@@ -416,62 +416,12 @@ Measured, never followed. Read as `cart-continue` on the cart page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 112.67 x 40; padding 10px 16px; border 1px solid transparent; background #000000 `measured.button-hover`; text proxima-nova 15/18 400, #fefefe; transition color 0.3s ease |
+| default | size 112.67 x 40; padding 10px 16px; border 1px solid transparent; background #000000 `measured.action-bg`; text proxima-nova 15/18 400, #fefefe; transition color 0.3s ease |
 | hover | border 1px solid #404040; background #404040 |
 | focus-visible | border 1px solid #404040; background #404040; outline 5px auto #005fcc `measured.focus-outline`, offset 1px |
-| pressed | border 1px solid #000000 `measured.button-hover` |
+| pressed | border 1px solid #000000 `measured.action-bg` |
 
 ![Continue shopping default](components/crops/cart-continue-default.png) ![Continue shopping hover](components/crops/cart-continue-hover.png) ![Continue shopping focus-visible](components/crops/cart-continue-focus-visible.png) ![Continue shopping pressed](components/crops/cart-continue-pressed.png)
-
-### Account gate
-
-The Shopify login form; nothing was submitted.
-
-#### Login title
-Read as `login-title` on the account login page.
-
-**Values (default).** size 448 x 22.39; background transparent; text proxima-nova 16/22.4 500, #ffffff `color.neutral.white`.
-
-![Login title default](components/crops/login-title-default.png)
-
-#### Email field
-Text was typed and deleted; the form was never submitted. Read as `email-input` on the account login page.
-
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 588 x 35; padding 0px 0px 0px 14px; border 1px solid #a3a3a3 `color.neutral.dawn`; background #ffffff `color.neutral.white`; text proxima-nova 14/normal 400, #000000 `measured.button-hover`; placeholder #636363 `color.neutral.chicago` |
-| focused, filled | border 1px solid #000000 `measured.button-hover` |
-
-![Email field default](components/crops/email-input-default.png) ![Email field focused](components/crops/email-input-focused.png) ![Email field filled](components/crops/email-input-filled.png)
-
-#### Password field
-Focused only; nothing was typed. Read as `password-input` on the account login page.
-
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 588 x 35; padding 0px 0px 0px 14px; border 1px solid #a3a3a3 `color.neutral.dawn`; background #ffffff `color.neutral.white`; text proxima-nova 14/normal 400, #000000 `measured.button-hover`; placeholder #636363 `color.neutral.chicago` |
-| focused | border 1px solid #000000 `measured.button-hover` |
-
-![Password field default](components/crops/password-input-default.png) ![Password field focused](components/crops/password-input-focused.png)
-
-#### Sign in button
-The submit; measured except a real press — the form was never submitted. Read as `signin-button` on the account login page.
-
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default (same: hover) | size 588 x 38; padding 14px 16px; border 1px solid #cccccc `color.neutral.alto`; background #cccccc `color.neutral.alto`; text proxima-nova 16/5.6 900, #636363 `color.neutral.chicago` |
-
-![Sign in button default](components/crops/signin-button-default.png) ![Sign in button hover](components/crops/signin-button-hover.png)
-
-#### Forgot-password link
-Read as `forgot-link` on the account login page.
-
-Not on the page when it was captured.
-
-#### Create-account link
-Measured, never followed. Read as `create-account` on the account login page.
-
-Not on the page when it was captured.
 
 ### Footer
 
@@ -480,7 +430,7 @@ The page footer and newsletter field.
 #### Footer
 Read as `footer` on the shop home page.
 
-**Values (default).** size 1440 x 643.27; padding 28px 0px 64px 0px; background #000000 `measured.button-hover`; text proxima-nova 16/22.4 600, #ffffff `color.neutral.white`.
+**Values (default).** size 1440 x 643.27; padding 28px 0px 64px 0px; background #000000 `measured.action-bg`; text proxima-nova 16/22.4 600, #ffffff `color.neutral.white`.
 
 ![Footer default](components/crops/footer-default.png)
 
@@ -509,8 +459,8 @@ Focused only; never subscribed. Read as `newsletter-input` on the shop home page
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 468 x 35; padding 0px 0px 0px 14px; border 1px solid #a3a3a3 `color.neutral.dawn`; background #ffffff `color.neutral.white`; text proxima-nova 14/normal 400, #000000 `measured.button-hover`; placeholder #636363 `color.neutral.chicago` |
-| focused | border 1px solid #000000 `measured.button-hover` |
+| default | size 293 x 48.39; padding 12px 16px; border 1px solid #a3a3a3 `color.neutral.dawn`; background transparent; text proxima-nova 16/22.4 400, #ffffff `color.neutral.white`; placeholder #636363 `color.neutral.chicago` |
+| focused | border 1px solid #ffffff `color.neutral.white` |
 
 ![Newsletter field default](components/crops/newsletter-input-default.png) ![Newsletter field focused](components/crops/newsletter-input-focused.png)
 
@@ -521,7 +471,7 @@ The same surface at phone width, with the menu drawer open.
 #### Mobile header
 Read as `m-header` on the shop home page at 390 wide.
 
-**Values (default).** size 390 x 57; background transparent; text proxima-nova 16/normal 400, #000000 `measured.button-hover`; layers div.desktop-nav.row 0.0x0.0 B:1px solid rgb(222, 222, 222); div.container-fluid.main-navbar__sub-items 0.0x0.0 rgb(255, 255, 255); div.row.no-gutters 0.0x0.0 T:1px solid rgb(222, 222, 222) / B:1px solid rgb(222, 222, 222); div.container-fluid.main-navbar__sub-items 0.0x0.0 rgb(255, 255, 255); div.row.no-gutters 0.0x0.0 T:1px solid rgb(222, 222, 222) / B:1px solid rgb(222, 222, 222); div.container-.
+**Values (default).** size 390 x 57; background transparent; text proxima-nova 16/normal 400, #000000 `measured.action-bg`; layers div.desktop-nav.row 0.0x0.0 B:1px solid rgb(222, 222, 222); div.container-fluid.main-navbar__sub-items 0.0x0.0 rgb(255, 255, 255); div.row.no-gutters 0.0x0.0 T:1px solid rgb(222, 222, 222) / B:1px solid rgb(222, 222, 222); div.container-fluid.main-navbar__sub-items 0.0x0.0 rgb(255, 255, 255); div.row.no-gutters 0.0x0.0 T:1px solid rgb(222, 222, 222) / B:1px solid rgb(222, 222, 222); div.container-.
 
 Child layers that carry the look: div 0x0 border 1px solid #dedede; div 0x0 background #ffffff `color.neutral.white`; div 0x0 border 1px solid #dedede.
 
@@ -532,7 +482,7 @@ Read as `m-menu-button` on the shop home page at 390 wide.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 30 x 30; padding 4px; border 1px solid transparent; background transparent; text proxima-nova 16/16 400, #000000 `measured.button-hover` |
+| default | size 30 x 30; padding 4px; border 1px solid transparent; background transparent; text proxima-nova 16/16 400, #000000 `measured.action-bg` |
 | hover | opacity 0.7 |
 | focus-visible | outline 5px auto #e59700, offset 0px; opacity 0.7 |
 | pressed | opacity 0.7 |
@@ -542,7 +492,7 @@ Read as `m-menu-button` on the shop home page at 390 wide.
 #### Mobile menu, open
 The button after its own toggle; the open drawer shows in the crop. Read as `m-menu-open` on the shop home page at 390 wide.
 
-**Values (opened).** size 29 x 29; padding 4px; border 1px solid transparent; background transparent; text proxima-nova 16/16 400, #000000 `measured.button-hover`; opacity 0.7.
+**Values (opened).** size 29 x 29; padding 4px; border 1px solid transparent; background transparent; text proxima-nova 16/16 400, #000000 `measured.action-bg`; opacity 0.7.
 
 ![Mobile menu, open opened](components/crops/m-menu-open-opened.png)
 
@@ -556,16 +506,16 @@ Read as `m-hero-button` on the shop home page at 390 wide.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 140.25 x 38; padding 10px 20px; background #ffffff `color.neutral.white`; text proxima-nova 18/18 900, #000000 `measured.button-hover` |
+| default (same: hover) | size 172.88 x 38; padding 10px 20px; background #ffffff `color.neutral.white`; text proxima-nova 18/18 900, #000000 `measured.action-bg` |
 | focus-visible | outline 5px auto #e59700, offset 0px |
-| pressed | background #000000 `measured.button-hover`; text proxima-nova 18/18 900, #ffffff `color.neutral.white` |
+| pressed | background #000000 `measured.action-bg`; text proxima-nova 18/18 900, #ffffff `color.neutral.white` |
 
 ![Mobile hero button default](components/crops/m-hero-button-default.png) ![Mobile hero button hover](components/crops/m-hero-button-hover.png) ![Mobile hero button focus-visible](components/crops/m-hero-button-focus-visible.png) ![Mobile hero button pressed](components/crops/m-hero-button-pressed.png)
 
 #### Mobile product tile
 Read as `m-product-tile` on the shop home page at 390 wide.
 
-**Values (default).** size 390 x 499.92; background transparent; text proxima-nova 24/26.4 600, #000000 `measured.button-hover`; layers span.icon-wishlist-static 20.0x20.0; span 40.0x40.0 rgba(255, 255, 255, 0.5) 50%; span.alo-quick-add-icon 20.0x20.0; a::after 59.0938pxx0.5px rgb(79, 117, 65); button.SwatchUI.swatch 16.0x6.0 rgb(115, 88, 65) T:2px outset rgb(0, 0, 0) / R:2px outset rgb(0, 0, 0) / B:2px outset rgb(0, 0, 0) / L:2px outset rgb(0, 0, 0); button.SwatchUI.swatch 16.0x6.0 rgb(0, 0, 0) T:2px outset rgb(0, 0, 0) / R:2px o.
+**Values (default).** size 390 x 557.89; background transparent; text proxima-nova 24/26.4 600, #000000 `measured.action-bg`; layers span.icon-wishlist-static 20.0x20.0; span 40.0x40.0 rgba(255, 255, 255, 0.5) 50%; span.alo-quick-add-icon 20.0x20.0; div.product-card-badge 87.5x22.0 rgb(242, 242, 242); button.SwatchUI.swatch 28.0x28.0 rgb(81, 59, 44) T:1px solid rgb(236, 236, 236) / R:1px solid rgb(236, 236, 236) / B:1px solid rgb(236, 236, 236) / L:1px solid rgb(236, 236, 236) 50%; button::before.SwatchUI.swatch 32pxx32px T:1px.
 
 Child layers that carry the look: span 20x20 image url(data:…); span 40x40 background rgba(255, 255, 255, 0.5) radius 50%; span 20x20 image url(data:…).
 
@@ -586,9 +536,9 @@ No standalone SVG icon set was lifted on this pass; the icons in the crops and s
 
 ### Pages
 
-- **Checkout, the bag drawer and anything behind sign-in.** No item was added to the bag, so the cart drawer, checkout and account pages were never reached. The `/account` login form itself is public and is measured; it was never submitted.
-- **Anything that buys, sends or joins.** No product was added to the bag, no form was submitted (the login email was typed into and cleared), no search was run, no membership was joined, no consent choice was made.
-- **The mega-menu innards, the search flyout and the size-guide sidebar** were toggled/hovered open but their innards were not measured.
+- **Checkout, the bag drawer and anything behind sign-in.** No item was added to the bag. `https://www.aloyoga.com/en-sg/account/login` is a join and sign-in wall. The branch stops there. Nothing was typed.
+- **Anything that buys, sends or joins.** No product was added to the bag, no form was submitted, no search query was typed, no membership was joined, no consent choice was made.
+- **Login, password, phone, birthday and newsletter fields** were not filled. Search, the women mega-menu, the filter drawer and the sort menu were opened and screenshotted. Their inner controls were not measured as component states.
 
 ### States
 

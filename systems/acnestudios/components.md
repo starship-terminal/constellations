@@ -1,6 +1,6 @@
 # Acne Studios components
 
-The discovery list of every page and state captured, then one entry per component with crops of the real site, the shared values and the Gaps. Captured from acnestudios.com on 2026-11-09 — the Singapore storefront the site serves headless Chromium (`/sg/en/`, prices in S$) — as static pages rendered at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the live DOM. Nothing was submitted, bought or signed into; the only presses were local UI toggles (the SEARCH panel, the WOMAN mega-menu, the FILTER rail, the mobile Menu) and one PDP size cell's own toggle. The OneTrust consent SDK was blocked at the network layer — its banner was never mounted, and no consent button was ever pressed.
+The discovery list of every page and state captured, then one entry per component with crops of the real site, the shared values and the Gaps. Recaptured from acnestudios.com on 2026-11-21 at 1440×900 and 390×844, signed out. The control map is [site-tree.md](site-tree.md). Nothing was submitted, bought or signed into. The OneTrust consent SDK was blocked at the network layer. Contact lines in screenshots and crops are painted out.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (57 components, 145 states).
 
@@ -8,37 +8,36 @@ How to read an entry:
 
 - A colour is its value followed by the token in [tokens.json](tokens.json) whose value is the same, when there is one. Text is written family size/line-height weight, then its colour, for example `Helvetica Now Text 12/20 400, #000000`, and is read from the first text node inside the component.
 - The first state of each entry lists every value; later states list only what changed. A state identical to the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component in [components/crops/](components/crops) (142 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component in [components/crops/](components/crops) (145 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
-Screenshots are named `{page}-light-{state}.png`. Desktop shots are 1440 x 900 at 2x; `-full` shots are whole pages; mobile shots are `mobile-{page}-light-{state}.png`, 390 x 844 at 2x. Only light exists — the storefront has no dark theme.
+Screenshots are named `{page}-light-{state}.png`. Desktop shots are 1440×900 at 1x. Mobile shots are `mobile-{page}-light-{state}.png`, 390×844 at 2x. Only light exists. Whole-page shots are omitted. The full control map is [site-tree.md](site-tree.md).
 
 | Surface | URL | Screenshots |
 |---|---|---|
-| Home. The hero, gift-guide bars, campaign tiles and footer. Captured at rest, with the search panel open, and full-page. | `/sg/en/home` | [default (light)](screenshots/home-light-default.png), [full (light)](screenshots/home-light-full.png), [search (light)](screenshots/home-light-search.png) |
-| WOMEN'S NEW ARRIVALS, the category page. Captured at rest, with the filter rail open, after LOAD MORE, and full-page. | `/sg/en/woman/new-arrivals/` | [default (light)](screenshots/woman-light-default.png), [filter (light)](screenshots/woman-light-filter.png), [full (light)](screenshots/woman-light-full.png), [load-more (light)](screenshots/woman-light-load-more.png) |
-| The BAGS category landing. | `/sg/en/bags/` | [default (light)](screenshots/bags-light-default.png), [full (light)](screenshots/bags-light-full.png) |
-| A product page (Leather Funnel Neck Jacket). Captured at rest, with a size picked, and full-page. | `/sg/en/rw-wn-leat000073/A70237-ADM.html?g=woman` | [default (light)](screenshots/pdp-light-default.png), [full (light)](screenshots/pdp-light-full.png), [size-picked (light)](screenshots/pdp-light-size-picked.png) |
-| The About page. | `/sg/en/about/about.html` | [default (light)](screenshots/about-light-default.png), [full (light)](screenshots/about-light-full.png) |
-| The FAQ. | `/sg/en/help/faq.html` | [default (light)](screenshots/faq-light-default.png), [full (light)](screenshots/faq-light-full.png) |
-| Contact us. | `/sg/en/help/contact-us.html` | [default (light)](screenshots/contact-light-default.png), [full (light)](screenshots/contact-light-full.png) |
-| The store directory. | `/sg/en/stores/stores.html` | [default (light)](screenshots/stores-light-default.png), [full (light)](screenshots/stores-light-full.png) |
-| The shopping-bag route, which renders the bag drawer over the home page when empty. | `/sg/en/cart` | [default (light)](screenshots/cart-light-default.png), [full (light)](screenshots/cart-light-full.png) |
-| The account sign-in gate. | `/sg/en/account` | [default (light)](screenshots/login-light-default.png), [full (light)](screenshots/login-light-full.png) |
-| Home at 390, at rest, the Menu drawer open, and full-page. | `/sg/en/home` | [default (light)](screenshots/mobile-home-light-default.png), [full (light)](screenshots/mobile-home-light-full.png), [menu (light)](screenshots/mobile-home-light-menu.png) |
-| The category page at 390. | `/sg/en/woman/new-arrivals/` | [default (light)](screenshots/mobile-woman-light-default.png), [full (light)](screenshots/mobile-woman-light-full.png) |
-| The product page at 390. | `/sg/en/rw-wn-leat000073/A70237-ADM.html?g=woman` | [default (light)](screenshots/mobile-pdp-light-default.png), [full (light)](screenshots/mobile-pdp-light-full.png) |
+| Home, at rest, with each header panel open. | `/sg/en/home` | [default](screenshots/home-light-default.png), [woman menu](screenshots/home-light-menu-woman.png), [man menu](screenshots/home-light-menu-man.png), [bags menu](screenshots/home-light-menu-bags.png), [search](screenshots/home-light-search.png), [help](screenshots/home-light-help.png), [bag](screenshots/home-light-bag.png) |
+| Women's new arrivals, filter open, after LOAD MORE. | `/sg/en/woman/new-arrivals/` | [default](screenshots/woman-new-light-default.png), [filter](screenshots/woman-new-light-filter.png), [load more](screenshots/woman-new-light-load-more.png) |
+| Men's new arrivals. | `/sg/en/man/new-arrivals/` | [default](screenshots/man-new-light-default.png) |
+| Bags, scarves, gifts, jeans, objects. | category URLs in site-tree.md | [bags](screenshots/bags-light-default.png), [scarves](screenshots/scarves-light-default.png), [gifts](screenshots/gifts-her-light-default.png), [jeans](screenshots/jeans-light-default.png), [objects](screenshots/objects-light-default.png) |
+| Campaign and editorial. | `/sg/en/woman/ss27/`, Hussein Chalayan, Acne Paper | [campaign](screenshots/campaign-light-default.png), [editorial](screenshots/editorial-light-default.png), [paper](screenshots/paper-light-default.png) |
+| About, sustainability, legal, FAQ, size guide, gift card. | company and help URLs | [about](screenshots/about-light-default.png), [sustainability](screenshots/sustainability-light-default.png), [legal](screenshots/legal-light-default.png), [faq](screenshots/faq-light-default.png), [faq open](screenshots/faq-light-open.png), [size guide](screenshots/size-guide-light-default.png), [gift card](screenshots/gift-card-light-default.png) |
+| Product page, size picked, and the four info drawers. | first product from women's new arrivals | [default](screenshots/pdp-light-default.png), [size](screenshots/pdp-light-size.png), [size guide](screenshots/pdp-light-size-guide.png), [delivery](screenshots/pdp-light-delivery.png), [gift wrap](screenshots/pdp-light-giftwrap.png), [pickup](screenshots/pdp-light-pickup.png) |
+| Sign-in wall. Email not filled. | `/sg/en/account` redirects to `/sg/en/lookup` | [desktop](screenshots/login-wall-light-default.png), [phone](screenshots/mobile-login-wall-light-default.png) |
+| Order-status wall. Form not filled. | `/sg/en/shopping-help/get-order-status` | [desktop](screenshots/order-status-wall-light-default.png), [phone](screenshots/mobile-order-status-wall-light-default.png) |
+| The same public pages at 390, plus menu, search, bag and filter. | same URLs | `mobile-*-light-*.png` in [screenshots/](screenshots) |
 
 ### Overlays and transient states
 
 | State | Where | How it was reached | Captured |
 |---|---|---|---|
 | Search panel | home | the SEARCH header button | [home-light-search](screenshots/home-light-search.png), [search-panel](#search-panel) |
-| Filter rail | PLP | the FILTER button | [woman-light-filter](screenshots/woman-light-filter.png), [filter-rail](#filter-rail) |
-| After LOAD MORE | PLP | the LOAD MORE button | [woman-light-load-more](screenshots/woman-light-load-more.png) |
-| Size picked | PDP | a size cell's own toggle (a local pick; nothing added) | [pdp-light-size-picked](screenshots/pdp-light-size-picked.png), [size-cell-selected](#size-cell-selected) |
-| WOMAN mega-menu | home | the WOMAN nav item | [menu-panel](#menu-panel) |
+| Filter rail | PLP | the FILTER button | [woman-new-light-filter](screenshots/woman-new-light-filter.png), [filter-rail](#filter-rail) |
+| After LOAD MORE | PLP | the LOAD MORE button | [woman-new-light-load-more](screenshots/woman-new-light-load-more.png) |
+| Size picked | PDP | a size cell's own toggle (a local pick; nothing added) | [pdp-light-size](screenshots/pdp-light-size.png), [size-cell-selected](#size-cell-selected) |
+| WOMAN mega-menu | home | the WOMAN nav item | [home-light-menu-woman](screenshots/home-light-menu-woman.png), [menu-panel](#menu-panel) |
+| Help drawer | home | the HELP header button | [home-light-help](screenshots/home-light-help.png). Phone and email painted out |
+| Empty bag drawer | home | the bag count button | [home-light-bag](screenshots/home-light-bag.png) |
 | Mobile Menu drawer | home at 390 | the Menu button | [mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [m-menu-drawer](#m-menu-drawer) |
 
 ## Shared values
@@ -49,7 +48,7 @@ Values that apply across entries, tallied from the measurement file.
 
 **Hover.** Acne hovers with colour, never fills or shadows: text #0018a8 `text.link` to #051574 `text.linkHover` (8), text #000000 `text.primary` to #6b6b6b `text.muted` (6), no change on the element (6), #000000 `action.primary` to #0018a8 `action.accent` (3), text #000000 `text.primary` to #051574 `text.linkHover` (2), text #000000 `text.primary` to #5c5c5c `text.secondary` (1), #0018a8 `action.accent` to #051574 `action.accentHover` (1), border #f2f2f2 `border.hairline` to #000000 `border.default` (1). Black fills (LOAD MORE, CONTINUE, SHOW N ITEMS) flip to Acne blue; blue fills (ADD TO BAG) deepen to #051574 `action.accentHover`; blue links deepen the same way; black labels (nav, FILTER, Menu) grey to #6b6b6b `text.muted`.
 
-**Focus.** Of 24 elements given a real keyboard focus: no ring on the element (18), 1px solid #ffffff `text.onDark` offset -3px (3), 1px solid #000000 `border.default` offset -3px (1), 1px solid #051574 `text.linkHover` offset -3px (1), 1px solid #0018a8 `text.link` offset -3px (1). Focus could not be captured on 3 states (not focusable, or focused without matching :focus-visible), left out of the tally: `gift-link`, `geo-selector`, `sort-option`. The ring Acne does draw is a 1px solid keyline 3px inside the control — white on the black/blue buttons, deep blue on the white wishlist button, black on the size cells. Text links show no ring.
+**Focus.** Of 24 elements given a real keyboard focus: no ring on the element (18), focus could not be driven (3), 1px solid #ffffff `text.onDark` offset -3px (3), 1px solid #000000 `border.default` offset -3px (1), 1px solid #051574 `text.linkHover` offset -3px (1), 1px solid #0018a8 `text.link` offset -3px (1). The ring Acne does draw is a 1px solid keyline 3px inside the control — white on the black/blue buttons, deep blue on the white wishlist button, black on the size cells. Text links show no ring.
 
 **Motion.** 0.15s ease (1). The only transitions the stylesheet carries are the drawers' 150ms padding-bottom safe-area slide, the accordions' 200ms max-height reveal and a 500ms fade on campaign layers, none on the controls themselves.
 
@@ -169,20 +168,20 @@ Child layers: div::after 1440pxx810px shadow #000000 `action.primary` 0px 0px 0p
 
 <a id="gift-link"></a>`gift-link`, on home. A hero-foot link bar (WOMEN’S GIFT GUIDE / MEN’S GIFT GUIDE).
 
-<img src="components/crops/gift-link-default.png" alt="Gift guide bar, default" height="30"> <img src="components/crops/gift-link-hover.png" alt="Gift guide bar, hover" height="30"> <img src="components/crops/gift-link-pressed.png" alt="Gift guide bar, pressed" height="30"> 
+<img src="components/crops/gift-link-default.png" alt="Gift guide bar, default" height="30"> <img src="components/crops/gift-link-hover.png" alt="Gift guide bar, hover" height="30"> <img src="components/crops/gift-link-focus-visible.png" alt="Gift guide bar, focus-visible" height="30"> <img src="components/crops/gift-link-pressed.png" alt="Gift guide bar, pressed" height="30"> 
 
 | State | Values |
 |---|---|
-| default (same: pressed) | size 1440 x 30; padding 4px 9px; border 1px solid transparent; background transparent; text Helvetica Now Text 12/20 400, #ffffff `text.onDark` |
+| default (same: focus-visible, pressed) | size 1440 x 30; padding 4px 9px; border 1px solid transparent; background transparent; text Helvetica Now Text 12/20 400, #ffffff `text.onDark` |
 | hover | opacity 0 |
 
 ### Footer
 
-The page foot: NEWSLETTER with its email field, contact methods (Live chat, Call, Email), four link columns in blue caps, two-letter social links (IG FB TW YT PT WB), the SHIPPING TO SINGAPORE (ENGLISH) region selector and the cookie-settings link — all under a 1px hairline rule.
+The page foot: NEWSLETTER with its email field, contact methods, four link columns in blue caps, two-letter social links, the region selector and the cookie-settings link, all under a 1px hairline rule. The region name is painted out of the crop.
 
 #### Footer
 
-<a id="footer"></a>`footer`, on home. The page foot: newsletter signup, contact methods (Live chat / Call / Email), four link columns, social icons, the "SHIPPING TO SINGAPORE (ENGLISH)" region selector and a cookie-settings link.
+<a id="footer"></a>`footer`, on home. The page foot: newsletter signup, contact methods, four link columns, social icons, the region selector and a cookie-settings link. The region name is painted out.
 
 <img src="components/crops/footer-default.png" alt="Footer, default" height="120"> 
 
@@ -245,13 +244,13 @@ The page foot: NEWSLETTER with its email field, contact methods (Live chat, Call
 
 #### Region selector
 
-<a id="geo-selector"></a>`geo-selector`, on home. "SHIPPING TO SINGAPORE (ENGLISH)": the geo prompt serving the SG storefront. Hovered and focused only.
+<a id="geo-selector"></a>`geo-selector`, on home. The shipping-region button in the footer. The place name is painted out of the crop. Hovered and focused only. The selector panel did not mount.
 
-<img src="components/crops/geo-selector-default.png" alt="Region selector, default" height="24"> <img src="components/crops/geo-selector-hover.png" alt="Region selector, hover" height="24"> <img src="components/crops/geo-selector-pressed.png" alt="Region selector, pressed" height="24"> 
+<img src="components/crops/geo-selector-default.png" alt="Region selector, default" height="24"> <img src="components/crops/geo-selector-hover.png" alt="Region selector, hover" height="24"> <img src="components/crops/geo-selector-focus-visible.png" alt="Region selector, focus-visible" height="24"> <img src="components/crops/geo-selector-pressed.png" alt="Region selector, pressed" height="24"> 
 
 | State | Values |
 |---|---|
-| default (same: pressed) | size 227.52 x 20; background transparent; text Helvetica Now Text 12/20 400, #0018a8 `text.link` |
+| default (same: focus-visible, pressed) | size 227.52 x 20; background transparent; text Helvetica Now Text 12/20 400, #0018a8 `text.link` |
 | hover | text Helvetica Now Text 12/20 400, #051574 `text.linkHover` |
 
 ### Category page (PLP)
@@ -557,11 +556,11 @@ The right-side drawers, each 360 wide on opaque white with a 45px head and a bla
 
 <a id="sort-option"></a>`sort-option`, on filter. A radio row in the filter rail; the picked sort gains a hairline box.
 
-<img src="components/crops/sort-option-default.png" alt="Sort option, default" height="24"> <img src="components/crops/sort-option-hover.png" alt="Sort option, hover" height="24"> <img src="components/crops/sort-option-pressed.png" alt="Sort option, pressed" height="24"> 
+<img src="components/crops/sort-option-default.png" alt="Sort option, default" height="24"> <img src="components/crops/sort-option-hover.png" alt="Sort option, hover" height="24"> <img src="components/crops/sort-option-focus-visible.png" alt="Sort option, focus-visible" height="24"> <img src="components/crops/sort-option-pressed.png" alt="Sort option, pressed" height="24"> 
 
 | State | Values |
 |---|---|
-| default (same: hover, pressed) | size 320 x 20; background transparent; text Helvetica Now Text 12/20 400, #000000 `text.primary` |
+| default (same: hover, focus-visible, pressed) | size 320 x 20; background transparent; text Helvetica Now Text 12/20 400, #000000 `text.primary` |
 
 #### Show items button
 
@@ -586,7 +585,7 @@ The right-side drawers, each 360 wide on opaque white with a 45px head and a bla
 
 ### Sign in
 
-The account gate: Sign in or register, the member-benefit list, the grey EMAIL field, the black CONTINUE bar and the bordered GOOGLE row, then the Singapore change-location line. Captured, never submitted.
+The account gate: Sign in or register, the member-benefit list, the grey EMAIL field, the black CONTINUE bar and the bordered GOOGLE row, then a change-location line. The place name is painted out. Captured, never submitted.
 
 #### Sign in title
 
@@ -645,7 +644,7 @@ The account gate: Sign in or register, the member-benefit list, the grey EMAIL f
 
 #### Change location link
 
-<a id="change-location"></a>`change-location`, on login. The "Singapore. Change location" line under the title.
+<a id="change-location"></a>`change-location`, on login. The change-location line under the title. The place name is not recorded.
 
 <img src="components/crops/change-location-default.png" alt="Change location link, default" height="24"> <img src="components/crops/change-location-hover.png" alt="Change location link, hover" height="24"> <img src="components/crops/change-location-focus-visible.png" alt="Change location link, focus-visible" height="24"> <img src="components/crops/change-location-pressed.png" alt="Change location link, pressed" height="24"> 
 

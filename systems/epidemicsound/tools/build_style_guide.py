@@ -3,15 +3,15 @@
 
 Every colour, radius, shadow and type style on the page is a CSS custom property generated from
 tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
-`:root` and the `dark` set on `[data-mode="dark"]`; the guide's theme toggle sets
-data-mode on <html>. Aliases like {text.primary} become var(--text-primary).
+`:root` and the `dark` set on `[data-mode="dark"]`, which is how Claude itself switches: the guide's
+theme toggle sets data-mode on <html>. Aliases like {text.primary} become var(--text-primary).
 
 Placeholders in the template:
   /*CORE*/ /*LIGHT*/ /*DARK*/     CSS custom property blocks
   /*TOKENS*/null                  a compact copy of the token tree for the JS tables
   <!--icon:NAME[:SIZE]-->         an SVG from icons/NAME.svg, inlined
 
-Deterministic: same inputs, byte-identical output. Adapted from the kit's builder.
+Deterministic: same inputs, byte-identical output. Adapted from the Manus kit's builder.
 """
 import json, pathlib, re
 

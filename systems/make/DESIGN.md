@@ -3,7 +3,7 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Make"
-description: "A light automation marketing site: white page, Satoshi display at 60px with -1.2px tracking, brand-600 purple on one filled action, 8px buttons, pill Popular and Save 15% badges, a credit slider pricing page, and a sign-in wall with a magenta gradient submit"
+description: "SaaS marketing: Satoshi on white, one purple primary button, mega-menu nav, plan grid"
 omitted:
   - section: "components"
     reason: "tokens.json has no components tokens under the colour set's `component` group"
@@ -15,58 +15,106 @@ colors:
   on-surface-variant: "#69586c"
   outline: "#dad4da"
   page: "#ffffff"
-  surfaceMuted: "#f3f2f3"
+  raised: "#ffffff"
   text: "#342237"
-  textBody: "#69586c"
-  textMuted: "#867489"
-  textTertiary: "#58475a"
-  textOnAccent: "#ffffff"
+  muted: "#69586c"
+  placeholder: "#867489"
+  onAccent: "#ffffff"
   link: "#803bbf"
   accent: "#8f4bd2"
   accentHover: "#803bbf"
   border: "#dad4da"
-  borderStrong: "#b0a6b1"
-  focus: "#a66ee2"
-  successFill: "#f0fdf4"
-  successText: "#166534"
-  badgeFill: "#faf7fe"
-  badgeText: "#803bbf"
-  signinGradientStart: "#ff00ff"
-  signinGradientEnd: "#724ebf"
+  borderBrand: "#a66ee2"
+  success: "#22c55e"
+  danger: "#ef4444"
+  warning: "#eab308"
+  info: "#18bfff"
 typography:
   display:
     fontFamily: "Satoshi"
+    fontSize: "72px"
+    fontWeight: 500
+    lineHeight: 1.2
+  h1:
+    fontFamily: "Satoshi"
     fontSize: "60px"
     fontWeight: 500
-    lineHeight: "72px"
-    letterSpacing: "-1.2px"
-  heading:
+    lineHeight: 1.2
+  h2:
     fontFamily: "Satoshi"
     fontSize: "48px"
     fontWeight: 500
-    lineHeight: "60px"
+    lineHeight: 1.2
+  h3:
+    fontFamily: "Satoshi"
+    fontSize: "36px"
+    fontWeight: 500
+    lineHeight: 1.25
+  h4:
+    fontFamily: "Satoshi"
+    fontSize: "30px"
+    fontWeight: 500
+    lineHeight: 1.3
+  h5:
+    fontFamily: "Satoshi"
+    fontSize: "24px"
+    fontWeight: 500
+    lineHeight: 1.35
+  h6:
+    fontFamily: "Satoshi"
+    fontSize: "18px"
+    fontWeight: 500
+    lineHeight: 1.4
+  text-xlarge:
+    fontFamily: "Satoshi"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: 1.5
+  text-large:
+    fontFamily: "Satoshi"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: 1.5
   body:
     fontFamily: "Satoshi"
     fontSize: "16px"
     fontWeight: 400
-    lineHeight: "24px"
-  label:
+    lineHeight: 1.5
+  text-small:
     fontFamily: "Satoshi"
     fontSize: "14px"
     fontWeight: 400
-    lineHeight: "20px"
+    lineHeight: 1.5
+  caption:
+    fontFamily: "Satoshi"
+    fontSize: "12px"
+    fontWeight: 400
+    lineHeight: 1.5
 rounded:
   small: "8px"
   medium: "12px"
-  signin: "10px"
-  search: "16px"
   main: "16px"
-  pill: "9999px"
-  chip: "38px"
+  round: "9999px"
 spacing:
-  "2": "8px"
-  "4": "16px"
-  "5": "18px"
+  "4": "4px"
+  "6": "6px"
+  "8": "8px"
+  "12": "12px"
+  "16": "16px"
+  "20": "20px"
+  "24": "24px"
+  "28": "32px"
+  "32": "32px"
+  "36": "36px"
+  "40": "40px"
+  "48": "48px"
+  "64": "64px"
+  "80": "80px"
+  "96": "96px"
+  "112": "112px"
+  "160": "160px"
+  "224": "224px"
+  none: "0px"
 ---
 
 # Make
@@ -77,19 +125,13 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 ## Overview
 
-Good for: A light automation marketing site: white page, Satoshi display at 60px with -1.2px tracking, brand-600 purple on one filled action, 8px buttons, pill Popular and Save 15% badges, a credit slider pricing page, and a sign-in wall with a magenta gradient submit.
+Good for: SaaS marketing: Satoshi on white, one purple primary button, mega-menu nav, plan grid.
 
-Captured 2026-11-18, signed-out public marketing, pricing, templates, integrations, and the make.com/login sign-in wall. Scenarios and the editor sit behind sign-in and were not entered. No form was submitted. No CAPTCHA was passed. No purchase was made.. Themes: light.
+Captured 2026-11-21, signed out; login and signup walls recorded and not entered. Themes: light.
 
-Tokens and component notes for Make (make.com), captured **2026-11-18**. Desktop is 1440×900. Phone is 390×844. One light theme. Public routes: `/`, `/pricing`, `/templates`, `/integrations`, `/product`, `/enterprise`, `/security`, `/privacy-notice`, `/login`, `/register`. Scenarios and the editor sit behind sign-in and were not entered. No form was submitted. No CAPTCHA was passed. No purchase was made.
+A token set and component reference for Make, the visual automation product, captured from the public marketing site at https://www.make.com/ on 2026-11-21. Signed out. Headless Chromium at 1440×900 and 390×844. One light theme. The signed-in product was not entered: https://www.make.com/login asks for email and password, or Google or SSO, and that branch stopped.
 
-Make marketing is Webflow on Satoshi. Colour is a declared swatch set (`--_default---swatch--brand-*`, `--_default---swatch--neutral-*`) with theme roles (`--_theme---button-primary--background` is brand 600, `#8f4bd2`). Templates and integrations also declare a `--palette-*` set. The sign-in submit is a radial gradient, not the marketing button.
-
-<!-- brief:start -->
-<!-- brief:end -->
-
-<!-- health:start -->
-<!-- health:end -->
+The site sets ink #342237 on white, with brand purple #8f4bd2 on the primary button. Satoshi carries the type. Corners are 8, 12 and 16px. The FAQ and the 404 use a dark section, not a second theme.
 
 ## Colors
 
@@ -99,20 +141,20 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 - **neutral (#ffffff):** `light.page`
 - **surface (#ffffff):** `light.surface`
 - **on-surface (#342237):** `light.text`
-- **on-surface-variant (#69586c):** `light.textBody`
+- **on-surface-variant (#69586c):** `light.muted`
 - **outline (#dad4da):** `light.border`
 
 ## Typography
 
-4 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Satoshi.
+12 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Satoshi.
 
 ### Fonts (from README.md)
 
-Satoshi is the declared primary family (`--_typography---font--primary-family`: Satoshi, Arial, sans-serif). Weights 400, 500 and 800 are declared. The files are licensed and are not shipped. The style guide falls back to Arial.
+Satoshi (300 to 900, roman and italic) is the primary family, served as woff2 from Make's Webflow CDN. Geist Mono Latin 300 is the mono face. Both are proprietary. The tokens name Arial as the fallback. The style guide uses that fallback.
 
 ## Layout
 
-Spacing from `core.space`: `2` 8px, `4` 16px, `5` 18px.
+Spacing from `core.space`: `4` 4px, `6` 6px, `8` 8px, `12` 12px, `16` 16px, `20` 20px, `24` 24px, `28` 32px, `32` 32px, `36` 36px, `40` 40px, `48` 48px, `64` 64px, `80` 80px, `96` 96px, `112` 112px, `160` 160px, `224` 224px, `none` 0px.
 
 ## Elevation & Depth
 
@@ -120,11 +162,11 @@ Shadows, resolved to CSS:
 
 | Token | box-shadow |
 |---|---|
-| `core.elevation.search` | `0px 5px 10px 0px rgba(0, 0, 0, 0.12)` |
+| `core.shadow.cardHover` | `0px 20px 40px -12px rgba(52, 34, 55, 0.18)` |
 
 ## Shapes
 
-Corner radii from `core.radius`: `small` 8px, `medium` 12px, `signin` 10px, `search` 16px, `main` 16px, `pill` 9999px, `chip` 38px.
+Corner radii from `core.radius`: `small` 8px, `medium` 12px, `main` 16px, `round` 9999px.
 
 ## Components
 
@@ -142,21 +184,19 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The home hero is a public demo of Maia, not the signed-in scenario editor. Plan prices move with the credit slider; the captured annual view shows $0, $9, $16, $29 and Custom at 10,000 credits/mo. Templates search was typed and cleared, not submitted. Sign-in and register fields were focused and not submitted. Satoshi files are not in this package. Screenshots are 256-colour PNGs. Read colours from the tokens.
-
-The `pressed` reading of Talk to sales (`cta-secondary` in [raw/components-computed.json](raw/components-computed.json)) equals its default. The 2026-11-18 script left the marker of the first pressed control (Try it free) in place, so DevTools forced that element again and the Talk to sales reading is the control at rest. Treat its pressed row in [components.md](components.md) as not captured. The script now clears the marker; the reading needs a recapture.
-
-`tools/build_tokens.py` reads the colour ramps from [raw/css-vars.json](raw/css-vars.json), but types the other values (radii, sizes, the sign-in gradient, the search shadow) by hand from the same readings. They match raw today; after a recapture, check them against the new readings. The two layout widths are the capture viewports, labelled Reconstruction.
+- Spacing and type sizes in tokens.json are the desktop end of Make's fluid `clamp()`. The phone end is in raw/css-vars.json and is not a separate token.
+- Status colours (success, warning, danger, info) are the published ramps. No error, warning or info component was measured on a live control.
+- The annual billing toggle was clicked and the prices on screen did not change. Do not treat that shot as proof of an annual price.
+- The Maia tab click did not move a visible panel. Do not treat that shot as a selected tab.
+- The home hero's product UI is a marketing demo, not the signed-in app.
+- Focus ring was not painted. First Tab landed on the header host.
+- Satoshi and Geist Mono are proprietary and are not in the repo.
 
 ### Do and don't (from README.md)
 
-- **Do paint a white page and purple type.** Neutral 900 (`#342237`) for headlines, brand 600 (`#8f4bd2`) for the filled action. [screenshots/home-light-default.png](screenshots/home-light-default.png)
-- **Do round the primary button at 8px.** Try it free is 47px tall, 18px of inline padding, white label. [components/crops/cta-primary-default.png](components/crops/cta-primary-default.png)
-- **Do use a pill for Popular and Save 15%.** Popular is brand-50 on brand-700. Save 15% is green-50 on green-800. [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png)
-- **Do set display at 60px with -1.2px tracking.** Medium weight, not bold. [screenshots/home-light-default.png](screenshots/home-light-default.png)
-- **Do keep the search shell at 16px radius.** 1px neutral-300 border and a soft shadow. [screenshots/templates-light-default.png](screenshots/templates-light-default.png)
-- **Don't invent a dark theme.** The captured pages paint light only.
-- **Don't style the scenario editor from the home demo.** That frame is a marketing illustration.
-- **Don't follow Sign in, Get started, or Talk to sales into an account or a checkout.** Those routes were recorded as walls.
-- **Don't copy the wordmark or the Satoshi files.**
-- **Don't click the cookie banner.** It was hidden.
+- **Do set ink on white.** Body and headings are #342237 on #ffffff ([home](screenshots/home-light-default.png)).
+- **Do use one purple for the primary action.** #8f4bd2 fills Try it free and Get started. Secondary actions are white buttons with a hairline ([home](screenshots/home-light-default.png)).
+- **Do keep the nav in one row on desktop.** Product, Solutions, Resources and Partners open mega menus. The phone uses a drawer ([menu](screenshots/mobile-home-light-menu.png)).
+- **Do round controls to 8px.** Primary buttons measure 8px. Cards and the menu panel use the larger radius steps ([product menu](screenshots/home-light-product-menu.png)).
+- **Don't treat the hero canvas as the app.** It is a public demo. The real product starts at the login wall ([login](screenshots/login-light-wall.png)).
+- **Don't invent a dark theme.** The FAQ and the 404 are dark sections of the light site ([faq](screenshots/home-light-faq.png), [404](screenshots/not-found-light-default.png)).

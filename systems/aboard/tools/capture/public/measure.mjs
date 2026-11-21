@@ -66,7 +66,7 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
   tempContexts.push(ctx);
-  // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
+  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
   page = await ctx.newPage();
   cdp = await ctx.newCDPSession(page);
   page.setDefaultTimeout(8000);

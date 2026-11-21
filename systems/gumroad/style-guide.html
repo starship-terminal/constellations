@@ -1,562 +1,120 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-mode="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gumroad style guide</title>
-<meta name="description" content="gumroad.com design tokens and the public signed-out surfaces' components, rendered from tokens.json with the declared and measured values.">
 <style>
 :root {
-  --color-brand-pink: #ff90e8;
-  --color-brand-purple: #90a8ed;
-  --color-brand-green: #23a094;
-  --color-brand-orange: #ffc900;
-  --color-brand-red: #dc341e;
-  --color-brand-yellow: #f1f333;
-  --color-brand-info: #90a8ed;
+  --color-pink: #ff90e8;
   --color-black: #000000;
-  --color-scale-black: #000000;
-  --color-scale-blue600: #155dfc;
-  --color-scale-darkGray: #242423;
-  --color-scale-gray: #f4f4f0;
-  --color-scale-gray100: #f3f4f6;
-  --color-scale-gray200: #e5e7eb;
-  --color-scale-gray300: #d1d5dc;
-  --color-scale-gray400: #99a1af;
-  --color-scale-gray500: #6a7282;
-  --color-scale-gray600: #4a5565;
-  --color-scale-gray700: #364153;
-  --color-scale-gray800: #1e2939;
-  --color-scale-pink600: #e60076;
-  --color-scale-pink800: #a3004c;
-  --color-scale-red100: #ffe2e2;
-  --color-scale-red500: #fb2c36;
-  --color-scale-red700: #c10007;
-  --color-scale-white: #ffffff;
-  --color-scale-yellow400: #fdc700;
-  --color-scale-yellow50: #fefce8;
-  --color-scale-yellow800: #894b00;
-  --alpha-gray-1: 0.1;
-  --alpha-gray-2: 0.2;
-  --alpha-gray-3: 0.5;
-  --font-family-product: ABC Favorit,Avenir,Montserrat,Corbel,URW Gothic,source-sans-pro,sans-serif;
-  --font-family-systemSans: ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  --font-family-systemMono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-  --font-family-sans: ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  --font-family-mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-  --font-weight-bold: 700;
-  --font-weight-medium: 500;
-  --font-weight-normal: 400;
-  --font-weight-semibold: 600;
-  --font-size-xs: 12px;
-  --font-size-sm: 14px;
-  --font-size-base: 16px;
-  --font-size-lg: 18px;
-  --font-size-xl: 20px;
-  --font-size-2xl: 24px;
-  --font-size-3xl: 30px;
-  --font-size-4xl: 36px;
-  --font-size-5xl: 48px;
-  --font-size-6xl: 60px;
-  --font-size-7xl: 72px;
-  --font-size-8xl: 96px;
-  --font-size-9xl: 128px;
-  --font-lineHeight-2xl: 1.3333;
-  --font-lineHeight-3xl: 1.2;
-  --font-lineHeight-4xl: 1.1111;
-  --font-lineHeight-5xl: 1;
-  --font-lineHeight-6xl: 1;
-  --font-lineHeight-7xl: 1;
-  --font-lineHeight-8xl: 1;
-  --font-lineHeight-9xl: 1;
-  --font-lineHeight-base: 1.5;
-  --font-lineHeight-lg: 1.5556;
-  --font-lineHeight-sm: 1.4286;
-  --font-lineHeight-xl: 1.4;
-  --font-lineHeight-xs: 1.3333;
-  --font-leading-relaxed: 1.625;
-  --font-leading-snug: 1.375;
-  --font-leading-tight: 1.25;
-  --font-tracking-tight: -.025em;
-  --font-tracking-wide: .025em;
-  --font-tracking-wider: .05em;
-  --font-tracking-widest: .1em;
+  --color-white: #ffffff;
+  --color-paper: #f4f4f0;
+  --color-ink: #242423;
+  --color-danger: #dc341e;
+  --color-success: #23a094;
+  --color-warning: #ffc900;
+  --color-info: #90a8ed;
+  --font-family-sans: ABC Favorit, Avenir, Montserrat, Corbel, URW Gothic, source-sans-pro, sans-serif;
+  --typography-display: 400 96px/96px var(--font-family-sans);
+  --typography-body: 400 18px/28px var(--font-family-sans);
+  --typography-label: 400 16px/24px var(--font-family-sans);
+  --typography-caption: 400 14px/20px var(--font-family-sans);
   --radius-1: 4px;
   --radius-2: 8px;
-  --radius-3: 160px;
-  --radius-tailwind-2xl: 16px;
-  --radius-tailwind-3xl: 24px;
-  --radius-tailwind-lg: 8px;
-  --radius-tailwind-md: 6px;
-  --radius-tailwind-sm: 4px;
-  --radius-tailwind-xl: 12px;
-  --radius-tailwind-xs: 2px;
-  --radius-tailwind-base: 4px;
-  --space-unit: 4px;
-  --space-spacer-1: 4px;
-  --space-spacer-2: 8px;
-  --space-spacer-3: 12px;
-  --space-spacer-4: 16px;
-  --space-spacer-5: 24px;
-  --space-spacer-6: 32px;
-  --space-spacer-7: 48px;
-  --space-spacer-8: 64px;
-  --component-borderWidth: 1px;
-  --component-formElementHeight: 48px;
-  --component-buttonHoverOffset: 4px;
-  --component-bigIconSize: 1.25em;
-  --component-header-height: 217px;
-  --component-header-width: 1440px;
-  --component-searchInput-height: 46px;
-  --component-searchInput-width: 789px;
-  --component-searchInput-radius: 4px;
-  --component-button-cta-height: 48px;
-  --component-button-cta-radius: 4px;
-  --component-button-loadMore-height: 48px;
-  --component-button-oauth-height: 48px;
-  --component-button-submit-height: 48px;
-  --component-button-buy-height: 48px;
-  --component-button-buy-width: 109px;
-  --component-categoryLink-height: 40px;
-  --component-featuredCard-height: 380px;
-  --component-featuredCard-width: 704px;
-  --component-productCard-height: 522.33px;
-  --component-productCard-width: 301.33px;
-  --component-priceFlag-height: 30px;
-  --component-priceFlag-radius: 0px;
-  --component-tab-height: 40px;
-  --component-tab-radius: 9999px;
-  --component-select-height: 48px;
-  --component-select-term-height: 48px;
-  --component-loginCard-width: 736px;
-  --component-input-height: 48px;
-  --component-input-radius: 4px;
-  --component-productHeader-height: 96px;
-  --component-tierCard-height: 100px;
-  --component-tierCard-width: 331.34px;
-  --component-tierCard-radius: 4px;
-  --component-checkoutField-height: 48px;
-  --component-checkoutField-radius: 4px;
-  --component-checkoutSelect-height: 48px;
-  --component-checkoutSummary-width: 832px;
-  --component-heroSearch-height: 64px;
-  --component-mobileHeader-height: 243.86px;
-  --component-mobileCard-height: 498px;
-  --component-card-radius: 4px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-sm: 640px;
-  --container-2xl: 672px;
-  --container-3xl: 768px;
-  --container-4xl: 896px;
-  --container-5xl: 1024px;
-  --container-6xl: 1152px;
-  --container-7xl: 1280px;
-  --container-lg: 512px;
-  --container-md: 448px;
-  --container-sm: 384px;
-  --container-xl: 576px;
-  --container-xs: 320px;
-  --ease-inOut: cubic-bezier(0.4, 0.0, 0.2, 1.0);
-  --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
-  --ease-default: cubic-bezier(0.4, 0.0, 0.2, 1.0);
-  --duration-default: 150ms;
-  --duration-fast: 140ms;
-  --animation-pulse: pulse 2s cubic-bezier(.4,0,.6,1)infinite;
-  --animation-spin: spin 1s linear infinite;
-  --zIndex-aboveOverlay: 2;
-  --zIndex-base: 0;
-  --zIndex-header: 3;
-  --zIndex-menubar: 10;
-  --zIndex-modal: 20;
-  --zIndex-overlay: 1;
-  --zIndex-tooltip: 30;
-  --layout-aspectVideo: 16/9;
-  --layout-mainStackWidth: 448px;
-  --layout-spacingProductPage: 1204px;
-  --layout-dynamicGrid: min(100%,calc((31.25rem - 100%)*1000));
-  --layout-gridColsSidebar: 1fr 3fr;
-  --opacity-disabled: 0.3;
-  --focus-outline: .125rem solid rgb(255 144 232);
-  --asset-logo: url(…);
-  --asset-loadingSpinner: url(…);
-  --asset-productCoverPlaceholder: url(…);
-  --typography-display: 400 96px/96px "ABC Favorit";
-  --typography-wordmark: 400 16px/22px "ABC Favorit", Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
-  --typography-h1: 400 40px/48px "ABC Favorit", "ABC Favorit", sans-serif;
-  --typography-navLink: 400 16px/22px "ABC Favorit", Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
-  --typography-tab: 400 16px/22px "ABC Favorit", Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
-  --typography-button: 400 16px/22px "ABC Favorit", Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
-  --typography-price: 400 16px/22px "ABC Favorit", Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
-  --typography-input: 400 16px/22px "ABC Favorit", Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
-  --typography-buy: 400 16px/22px "ABC Favorit", "ABC Favorit", sans-serif;
-  --motion-duration-30ms: 30ms;
-  --motion-duration-100ms: 100ms;
-  --motion-duration-transition-duration: 140ms;
-  --motion-duration-default-transition-duration: 150ms;
-  --motion-duration-200ms: 200ms;
-  --motion-duration-300ms: 300ms;
-  --motion-duration-1100ms: 1100ms;
-  --motion-duration-20000ms: 20000ms;
-  --motion-duration-60000ms: 60000ms;
-  --motion-duration-80000ms: 80000ms;
-  --motion-easing-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --motion-easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  --motion-easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
-  --role-accent: #ff90e8;
-  --role-accentForeground: #000000;
-  --role-accentWithText: #ff90e8;
-  --role-activeBg: rgba(0, 0, 0, 0.1);
-  --role-backdrop: rgba(0, 0, 0, 0.8);
-  --role-background: #ffffff;
-  --role-body: #f4f4f0;
-  --role-border: #000000;
-  --role-danger: #dc341e;
-  --role-dangerForeground: #ffffff;
-  --role-foreground: #000000;
-  --role-green: #23a094;
-  --role-indicator: #ff90e8;
-  --role-info: #90a8ed;
-  --role-muted: rgba(0, 0, 0, 0.5);
-  --role-orange: #ffc900;
-  --role-pink: #ff90e8;
-  --role-primary: #000000;
-  --role-primaryForeground: #ffffff;
-  --role-purple: #90a8ed;
-  --role-red: #dc341e;
-  --role-success: #23a094;
-  --role-successForeground: #000000;
-  --role-warning: #ffc900;
-  --role-warningForeground: #000000;
-  --role-yellow: #f1f333;
-  --channels-accent: #ff90e8;
-  --channels-accentWithText: #ff90e8;
-  --channels-activeBg: #ffffff;
-  --channels-color: #000000;
-  --channels-contrastAccent: #000000;
-  --channels-contrastBlack: #ffffff;
-  --channels-contrastDanger: #ffffff;
-  --channels-contrastFilled: #000000;
-  --channels-contrastInfo: #000000;
-  --channels-contrastPrimary: #ffffff;
-  --channels-contrastSuccess: #000000;
-  --channels-contrastWarning: #000000;
-  --channels-danger: #dc341e;
-  --channels-filled: #ffffff;
-  --channels-parentColor: #000000;
-  --channels-primary: #000000;
-  --channels-success: #23a094;
-  --channels-warning: #ffc900;
-  --neutral-neutralAccent: #ff90e8;
-  --neutral-neutralBorderAlpha: 1;
-  --neutral-neutralColor: #000000;
-  --neutral-neutralDanger: #dc341e;
-  --neutral-neutralFilled: #ffffff;
-  --ground-bodyBg: #f4f4f0;
-  --border-shorthand: solid .0625rem rgb(0 0 0/1);
-  --border-alpha: 1;
-  --shadow-hard-one: 4px 4px 0px 0px #000000;
-  --shadow-hard-two: 8px 8px 0px 0px #000000;
-  --component-cta-bg: var(--role-primary);
-  --component-tabActive-bg: var(--role-background);
-  --component-priceFlag-bg: var(--role-accent);
-  --component-header-bg: var(--ground-bodyBg);
-  --component-card-bg: var(--role-background);
-  --sg-sans: var(--font-family-product, ui-sans-serif, system-ui, sans-serif);
-  --sg-mono: var(--font-family-mono, ui-monospace, "SF Mono", Menlo, monospace);
+  --radius-pill: 160px;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 24px;
+  --spacing-6: 32px;
+  --border-width: 1px;
+  --motion-hover-offset: 4px;
+  --page: #f4f4f0;
+  --surface: #ffffff;
+  --text: #000000;
+  --muted: rgba(0, 0, 0, 0.5);
+  --accent: var(--color-pink);
+  --border: #000000;
+  --on-accent: #000000;
+  --scrim: rgba(0, 0, 0, 0.8);
+  --danger: var(--color-danger);
+  --success: var(--color-success);
+  --warning: var(--color-warning);
+  --info: var(--color-info);
+  --focus: #0057bc;
+  --component-button-height: 79px;
+  --component-button-font-size: 18px;
+  --component-button-radius: 0px;
+  --component-button-fill: #000000;
+  --component-button-fill-hover: #ff90e8;
+  --component-button-text: #ffffff;
+  --component-field-height: 64px;
+  --component-field-radius: 4px;
+  --component-field-font-size: 20px;
+  color-scheme: light;
+  --sg-sans: ABC Favorit, Avenir, Montserrat, Corbel, "URW Gothic", sans-serif;
 }
-[data-mode="dark"], .dark {
-  --role-accent: #ff90e8;
-  --role-accentForeground: #000000;
-  --role-accentWithText: #ff90e8;
-  --role-activeBg: rgba(221, 221, 221, 0.1);
-  --role-backdrop: rgba(0, 0, 0, 0.8);
-  --role-background: #000000;
-  --role-body: #242423;
-  --role-border: rgba(221, 221, 221, 0.35);
-  --role-danger: #dc341e;
-  --role-dangerForeground: #ffffff;
-  --role-foreground: #dddddd;
-  --role-green: #23a094;
-  --role-indicator: #ff90e8;
-  --role-info: #90a8ed;
-  --role-muted: rgba(221, 221, 221, 0.5);
-  --role-orange: #ffc900;
-  --role-pink: #ff90e8;
-  --role-primary: #dddddd;
-  --role-primaryForeground: #000000;
-  --role-purple: #90a8ed;
-  --role-red: #dc341e;
-  --role-success: #23a094;
-  --role-successForeground: #000000;
-  --role-warning: #ffc900;
-  --role-warningForeground: #000000;
-  --role-yellow: #f1f333;
-  --channels-accent: #ff90e8;
-  --channels-accentWithText: #ff90e8;
-  --channels-activeBg: #000000;
-  --channels-color: #dddddd;
-  --channels-contrastAccent: #000000;
-  --channels-contrastBlack: #dddddd;
-  --channels-contrastDanger: #ffffff;
-  --channels-contrastFilled: #dddddd;
-  --channels-contrastInfo: #000000;
-  --channels-contrastPrimary: #000000;
-  --channels-contrastSuccess: #000000;
-  --channels-contrastWarning: #000000;
-  --channels-danger: #dc341e;
-  --channels-filled: #000000;
-  --channels-parentColor: #dddddd;
-  --channels-primary: #dddddd;
-  --channels-success: #23a094;
-  --channels-warning: #ffc900;
-  --neutral-neutralAccent: #ff90e8;
-  --neutral-neutralBorderAlpha: 0.35;
-  --neutral-neutralColor: #dddddd;
-  --neutral-neutralDanger: #dc341e;
-  --neutral-neutralFilled: #000000;
-  --ground-bodyBg: #242423;
-  --border-shorthand: solid .0625rem rgb(221 221 221/.35);
-  --border-alpha: 0.35;
-  --shadow-hard-one: 4px 4px 0px 0px #dddddd;
-  --shadow-hard-two: 8px 8px 0px 0px #dddddd;
-  --component-cta-bg: var(--role-primary);
-  --component-tabActive-bg: var(--role-background);
-  --component-priceFlag-bg: var(--role-accent);
-  --component-header-bg: var(--ground-bodyBg);
-  --component-card-bg: var(--role-background);
+[data-mode="dark"] {
+  --page: #242423;
+  --surface: #000000;
+  --text: #dddddd;
+  --muted: rgba(221, 221, 221, 0.5);
+  --accent: var(--color-pink);
+  --border: rgba(221, 221, 221, 0.35);
+  --on-accent: #000000;
+  --scrim: rgba(0, 0, 0, 0.8);
+  --danger: var(--color-danger);
+  --success: var(--color-success);
+  --warning: var(--color-warning);
+  --info: var(--color-info);
+  --focus: #93c0f5;
+  --component-button-height: 79px;
+  --component-button-font-size: 18px;
+  --component-button-radius: 0px;
+  --component-button-fill: #000000;
+  --component-button-fill-hover: #ff90e8;
+  --component-button-text: #ffffff;
+  --component-field-height: 64px;
+  --component-field-radius: 4px;
+  --component-field-font-size: 20px;
+  color-scheme: dark;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.6 var(--sg-sans); color: var(--role-primary, #000); background: var(--ground-bodyBg, #f4f4f0); }
-main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 500 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--role-border, #000); }
-.lead { max-width: 62ch; opacity: .8; }
-.note { font-size: 13px; opacity: .65; max-width: 62ch; }
-code { font-family: var(--sg-mono); font-size: .9em; color: var(--role-danger, #dc341e); }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; opacity: .6; margin: 18px 0 6px; }
-.pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.pal.dark { padding: 10px; border-radius: 10px; background: var(--ground-bodyBg, #242423); color: var(--role-primary, #ddd); }
-.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--role-border, #000); display: inline-flex; flex: 0 0 auto; }
-.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
-.sw .nm { font: 500 11px/1.3 var(--sg-mono); color: inherit; }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); opacity: .65; color: inherit; }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
-.kv b { font-weight: 500; }
-.kv span { opacity: .65; }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--role-border, #000); overflow: hidden; background: var(--ground-bodyBg, #f4f4f0); color: var(--role-primary, #000); }
-.topbar { display: flex; align-items: center; gap: 14px; height: var(--component-header-height, 92px); padding: 0 24px; font-size: 14px; border-bottom: 1px solid var(--role-border, #000); background: var(--component-header-bg, var(--ground-bodyBg, #f4f4f0)); }
-.topbar .wm { font-weight: 700; font-size: 19px; letter-spacing: 0; text-transform: none; }
-.topbar .sp { flex: 1; }
-.topbar .pill { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border: 1px solid var(--role-border, #000); border-radius: var(--radius-1, 4px); font-size: 13px; color: var(--role-primary, #000); background: var(--role-background, #fff); min-width: 190px; }
-.topbar .pill .ph { opacity: .55; }
-.topbar .theme { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--role-border, #000); display: inline-flex; align-items: center; justify-content: center; color: var(--role-primary, #000); background: transparent; font: inherit; cursor: pointer; padding: 0; }
-.topbar .theme:hover { background: var(--role-activeBg, rgba(0,0,0,.08)); }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 18px; font-size: 14px; font-weight: 500; border-radius: var(--radius-1, 4px); border: 1px solid var(--role-border, #000); background: var(--role-background, #fff); color: var(--role-primary, #000); }
-.btn.primary { background: var(--component-cta-bg, var(--role-primary, #000)); color: var(--role-primaryForeground, #fff); }
-.btn.accent { background: var(--role-accent, #ff90e8); color: var(--role-accentForeground, #000); }
-.catrow { display: flex; gap: 10px; padding: 12px 24px; border-bottom: 1px solid var(--role-border, #000); font-size: 13px; flex-wrap: wrap; }
-.catrow .ln { padding: 4px 12px; border-radius: var(--radius-3, 999px); opacity: .85; }
-.catrow .ln.on { opacity: 1; font-weight: 600; background: var(--component-tabActive-bg, var(--role-primary, #000)); color: var(--role-primaryForeground, #fff); }
-.hero { padding: 56px 24px 48px; text-align: center; }
-.hero h3 { font: 400 64px/1.05 var(--sg-sans); letter-spacing: -0.02em; margin: 0 0 14px; }
-.hero p { font-size: 17px; opacity: .8; margin: 0 0 22px; }
-.hero .search { display: inline-flex; align-items: stretch; border: 1px solid var(--role-border, #000); border-radius: var(--radius-1, 4px); overflow: hidden; background: var(--role-background, #fff); box-shadow: var(--shadow-hard-one, 4px 4px 0 #000); }
-.hero .search span { padding: 12px 18px; font-size: 14px; opacity: .55; }
-.hero .search b { padding: 12px 22px; font-size: 14px; font-weight: 600; background: var(--role-primary, #000); color: var(--role-primaryForeground, #fff); }
-table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--role-border, #000); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--role-border, #000); }
-.tr .ts { font-family: var(--sg-sans); }
-.tr .tv { font-size: 12px; opacity: .65; font-family: var(--sg-mono); }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
-.tile { border: 1px solid var(--role-border, #000); border-radius: var(--component-card-radius, 8px); padding: 16px; font-size: 13px; background: var(--component-card-bg, var(--role-background, #fff)); color: var(--role-primary, #000); }
-.tile b { display: block; font: 600 15px/1.4 var(--sg-sans); margin-bottom: 4px; }
-.tile .sub { opacity: .65; font-size: 12px; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); background: var(--page); color: var(--text); }
+main { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font-size: 48px; font-weight: 400; letter-spacing: -0.4px; margin: 0 0 8px; }
+h2 { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; margin: 40px 0 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 48px; border: 1px solid var(--border); }
+.sw span { display: block; font-size: 12px; margin-top: 4px; }
+button.toggle { background: var(--accent); color: var(--on-accent); border: 1px solid var(--border); padding: 8px 16px; font: inherit; cursor: pointer; }
+.btn { display: inline-flex; align-items: center; height: var(--component-button-height); padding: 0 24px; background: var(--component-button-fill); color: var(--component-button-text); font-size: var(--component-button-font-size); }
+.field { height: var(--component-field-height); width: 280px; border: 1px solid var(--border); border-radius: var(--component-field-radius); background: var(--page); padding: 0 16px; font: 20px/1 var(--sg-sans); color: var(--text); }
+.note { max-width: 62ch; }
 </style>
 </head>
 <body>
 <main>
-  <h1>Gumroad style guide</h1>
-  <p class="note">gumroad.com — the marketplace for digital products, signed-out public evidence only.</p>
-
-  <h2 class="sh">gumroad.com, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the brand set (<code>--pink #ff90e8</code>, <code>--purple</code>, <code>--green</code>, <code>--orange</code>, <code>--red</code>, <code>--yellow</code>), the semantic roles declared as RGB channel triplets (<code>--accent</code>/<code>--primary</code>/<code>--filled</code>/<code>--success</code>/<code>--warning</code>/<code>--danger</code>/<code>--info</code> plus the <code>--contrast-*</code> partners), the <code>--spacer-1..8</code> spacing scale, <code>--border-radius-1..3</code>, the hard offset shadows <code>--box-shadow-1/2</code>, the <code>--text-xs..9xl</code> type ramp on ABC Favorit, and the measured geometry (<code>component.*</code>) read off the live DOM. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from gumroad.com and one creator subdomain (ichigo.gumroad.com), signed out, in headless Chromium at 1440&times;900 (mobile pass at 390&times;844). The site paints <b>light by default</b> — the <code>light</code> token set is that painted surface — and a real <code>@media (prefers-color-scheme: dark)</code> theme repaints the roles (<code>--body-bg</code> #242423, <code>--border-alpha</code> .35): the <code>dark</code> set is that painted surface, verified through colour-scheme emulation — there is no in-page toggle. The product subdomain pins its own light palette over the shared sheet, so its pages do not repaint; that is recorded as observed behaviour, not a third theme. ABC Favorit is a proprietary face and is not bundled: samples fall back to system fonts.</p>
-
-  <h2 class="sh">The surface</h2>
-  <p class="lead">Every marketing page is a hero header — the GUMROAD wordmark, the marketplace search, "Log in" and the black "Start selling" button — over a pill row of category links and a centred hero. Below sit bordered cards on the <code>#f4f4f0</code> ground, hard 4px offset shadows, and the pink <code>--accent</code>. The theme preview button below is this guide's own control: the product itself follows the OS colour scheme.</p>
-  <div class="mock" id="docs-mock" data-mode="light">
-    <div class="topbar"><span class="wm">Gumroad</span><span class="pill"><span class="ph">Search products</span></span><span class="sp"></span><span class="btn">Log in</span><span class="btn primary">Start selling</span><button type="button" class="theme" id="theme-toggle" aria-pressed="false" title="Preview the dark theme (the site follows your OS)">&#9789;</button></div>
-    <div class="catrow"><span class="ln on">All</span><span class="ln">Drawing &amp; Painting</span><span class="ln">3D</span><span class="ln">Design</span><span class="ln">Music &amp; Sound Design</span><span class="ln">Software Development</span></div>
-    <div class="hero"><h3>Go from 0 to $1</h3><p>Anyone can earn their first dollar online. Just start with what you know.</p><span class="search"><span>Search marketplace &hellip;</span><b>Search</b></span></div>
+  <button class="toggle" type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Toggle theme</button>
+  <h1>Gumroad</h1>
+  <p class="note">Generated from tokens.json. Pink accent is #ff90e8. Page is #f4f4f0 in light and #242423 in dark.</p>
+  <h2>Roles</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--page)"></i><span>page</span></div>
+    <div class="sw"><i style="background:var(--surface)"></i><span>surface</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><span>text</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><span>accent</span></div>
+    <div class="sw"><i style="background:var(--danger)"></i><span>danger</span></div>
+    <div class="sw"><i style="background:var(--success)"></i><span>success</span></div>
+    <div class="sw"><i style="background:var(--warning)"></i><span>warning</span></div>
+    <div class="sw"><i style="background:var(--info)"></i><span>info</span></div>
   </div>
-
-  <h2 class="sh">Palette</h2>
-  <p class="lead"><code>color.brand.*</code> holds the six declared brand colours and the <code>color.scale.*</code> utilities; <code>color.alpha.gray*</code> is the alpha ramp the muted roles mix from. The semantic roles under <code>light.*</code> are the painted default (cream ground, black ink, pink accent); <code>dark.*</code> resolves the same declarations inside <code>@media (prefers-color-scheme: dark)</code> — the accent and status colours hold, the ground, ink and border repaint. <code>channels.*</code> keeps the raw RGB triplets the roles are declared as; <code>role.*</code> is each resolved colour; <code>neutral.*</code> the <code>--neutral-*</code> wrappers.</p>
-  <div id="roles-out"></div>
-
-  <h2 class="sh">Spacing, radius, layout and motion</h2>
-  <p class="lead">Spacing is the product's own <code>--spacer-1..8</code> scale (4px steps, 4&ndash;32px) plus the Tailwind <code>--spacing</code> unit; radii run <code>--border-radius-1..3</code> (the squared-off 4px card corner to the pill); <code>layout.*</code> carries the declared grid and container widths (<code>--main-stack-width</code>, <code>--spacing-product-page</code>, <code>--dynamic-grid</code>, <code>--grid-cols-sidebar</code>). <code>duration.*</code>/<code>ease.*</code> are the declared motion constants and <code>animation.*</code> the <code>--animate-*</code> presets.</p>
-  <div id="spacing-out" class="kv"></div>
-  <div id="motion-out" class="kv"></div>
-
-  <h2 class="sh">Shadows</h2>
-  <div id="elev-out" class="kv"></div>
-
-  <h2 class="sh">Type</h2>
-  <p class="lead">One proprietary face, <code>ABC Favorit</code>, does everything — wordmark, display, body and controls (code falls back to system mono). The <code>--text-*</code> ramp runs xs&ndash;9xl with paired <code>--leading-*</code> line-heights; weights are the named <code>--font-weight-*</code> steps. Below that, the <code>core.typography.*</code> composites — the display, heading, nav, control and price styles measured off the live DOM. Samples fall back to system sans because the face is not bundled.</p>
-  <div id="type-out"></div>
-  <div id="typ-out"></div>
-  <div id="fam-out" class="kv"></div>
-
-  <h2 class="sh">Measured extras</h2>
-  <div id="meas-out" class="kv"></div>
-
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --pink/--accent/--spacer-*/--text-*/--font-family variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused and dark states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+  <h2>Controls</h2>
+  <p><span class="btn">Start selling</span></p>
+  <p><input class="field" placeholder="Search marketplace" readonly></p>
 </main>
-<script>
-const TOK = {"core":{"color":{"brand":{"pink":{"v":"#ff90e8","t":"color","s":"css-var --pink (light)","d":"the signature Gumroad pink — --accent resolves to it on gumroad.com"},"purple":{"v":"#90a8ed","t":"color","s":"css-var --purple (light)","d":"the brand purple; --info resolves to it"},"green":{"v":"#23a094","t":"color","s":"css-var --green (light)","d":"the brand green; --success resolves to it"},"orange":{"v":"#ffc900","t":"color","s":"css-var --orange (light)","d":"the brand orange; --warning resolves to it"},"red":{"v":"#dc341e","t":"color","s":"css-var --red (light)","d":"the brand red; --danger resolves to it"},"yellow":{"v":"#f1f333","t":"color","s":"css-var --yellow (light)","d":"the brand yellow"},"info":{"v":"#90a8ed","t":"color","s":"css-var --info (light)","d":"the info accent — the purple channel triplet"}},"black":{"v":"#000000","t":"color","s":"css-var --black (light)"},"scale":{"black":{"v":"#000000","t":"color","s":"css-var --color-black (light)"},"blue600":{"v":"#155dfc","t":"color","s":"css-var --color-blue-600 (light)"},"darkGray":{"v":"#242423","t":"color","s":"css-var --color-dark-gray (light)"},"gray":{"v":"#f4f4f0","t":"color","s":"css-var --color-gray (light)"},"gray100":{"v":"#f3f4f6","t":"color","s":"css-var --color-gray-100 (light)"},"gray200":{"v":"#e5e7eb","t":"color","s":"css-var --color-gray-200 (light)"},"gray300":{"v":"#d1d5dc","t":"color","s":"css-var --color-gray-300 (light)"},"gray400":{"v":"#99a1af","t":"color","s":"css-var --color-gray-400 (light)"},"gray500":{"v":"#6a7282","t":"color","s":"css-var --color-gray-500 (light)"},"gray600":{"v":"#4a5565","t":"color","s":"css-var --color-gray-600 (light)"},"gray700":{"v":"#364153","t":"color","s":"css-var --color-gray-700 (light)"},"gray800":{"v":"#1e2939","t":"color","s":"css-var --color-gray-800 (light)"},"pink600":{"v":"#e60076","t":"color","s":"css-var --color-pink-600 (light)"},"pink800":{"v":"#a3004c","t":"color","s":"css-var --color-pink-800 (light)"},"red100":{"v":"#ffe2e2","t":"color","s":"css-var --color-red-100 (light)"},"red500":{"v":"#fb2c36","t":"color","s":"css-var --color-red-500 (light)"},"red700":{"v":"#c10007","t":"color","s":"css-var --color-red-700 (light)"},"white":{"v":"#ffffff","t":"color","s":"css-var --color-white (light)"},"yellow400":{"v":"#fdc700","t":"color","s":"css-var --color-yellow-400 (light)"},"yellow50":{"v":"#fefce8","t":"color","s":"css-var --color-yellow-50 (light)"},"yellow800":{"v":"#894b00","t":"color","s":"css-var --color-yellow-800 (light)"}}},"alpha":{"gray":{"1":{"v":0.1,"t":"number","s":"css-var --gray-1 (light)","d":"an alpha fraction the muted greys are mixed at — rgb(var(--color)/var(--gray-N))"},"2":{"v":0.2,"t":"number","s":"css-var --gray-2 (light)","d":"an alpha fraction the muted greys are mixed at — rgb(var(--color)/var(--gray-N))"},"3":{"v":0.5,"t":"number","s":"css-var --gray-3 (light)","d":"an alpha fraction the muted greys are mixed at — rgb(var(--color)/var(--gray-N))"}}},"font":{"family":{"product":{"v":"ABC Favorit,Avenir,Montserrat,Corbel,URW Gothic,source-sans-pro,sans-serif","t":"fontFamily","s":"css-var --font-family (light)","d":"the product face: ABC Favorit, a licensed commercial face (not loaded here — samples fall back to the system sans), then the stack fallbacks"},"systemSans":{"v":"ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"","t":"fontFamily","s":"css-var --font-sans (light)","d":"Tailwind's default font-sans utility face (not the product font)"},"systemMono":{"v":"ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace","t":"fontFamily","s":"css-var --font-mono (light)","d":"Tailwind's default font-mono utility face"},"sans":{"v":"ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"","t":"fontFamily","s":"css-var --default-font-family (light)","d":"the default body chain — the system sans set"},"mono":{"v":"ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace","t":"fontFamily","s":"css-var --default-mono-font-family (light)","d":"the default code chain — the system mono set"}},"weight":{"bold":{"v":700,"t":"fontWeight","s":"css-var --font-weight-bold (light)"},"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium (light)"},"normal":{"v":400,"t":"fontWeight","s":"css-var --font-weight-normal (light)"},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold (light)"}},"size":{"xs":{"v":"12px","t":"dimension","s":"css-var --text-xs (light)"},"sm":{"v":"14px","t":"dimension","s":"css-var --text-sm (light)"},"base":{"v":"16px","t":"dimension","s":"css-var --text-base (light)"},"lg":{"v":"18px","t":"dimension","s":"css-var --text-lg (light)"},"xl":{"v":"20px","t":"dimension","s":"css-var --text-xl (light)"},"2xl":{"v":"24px","t":"dimension","s":"css-var --text-2xl (light)"},"3xl":{"v":"30px","t":"dimension","s":"css-var --text-3xl (light)"},"4xl":{"v":"36px","t":"dimension","s":"css-var --text-4xl (light)"},"5xl":{"v":"48px","t":"dimension","s":"css-var --text-5xl (light)"},"6xl":{"v":"60px","t":"dimension","s":"css-var --text-6xl (light)"},"7xl":{"v":"72px","t":"dimension","s":"css-var --text-7xl (light)"},"8xl":{"v":"96px","t":"dimension","s":"css-var --text-8xl (light)"},"9xl":{"v":"128px","t":"dimension","s":"css-var --text-9xl (light)"}},"lineHeight":{"2xl":{"v":1.3333,"t":"number","s":"css-var --text-2xl--line-height (light)","d":"the ramp's unitless leading, declared as a calc() ratio"},"3xl":{"v":1.2,"t":"number","s":"css-var --text-3xl--line-height (light)","d":"the ramp's unitless leading, declared as a calc() ratio"},"4xl":{"v":1.1111,"t":"number","s":"css-var --text-4xl--line-height (light)","d":"the ramp's unitless leading, declared as a calc() ratio"},"5xl":{"v":1,"t":"number","s":"css-var --text-5xl--line-height (light)","d":"the ramp's unitless leading, declared as a calc() ratio"},"6xl":{"v":1,"t":"number","s":"css-var --text-6xl--line-height (light)","d":"the ramp's unitless leading, declared as a calc() ratio"},"7xl":{"v":1,"t":"number","s":"css-var --text-7xl--line-height (light)","d":"the ramp's unitless leading, declared as a calc() ratio"},"8xl":{"v":1,"t":"number","s":"css-var --text-8xl--line-height (light)","d":"the ramp's unitless leading, declared as a calc() ratio"},"9xl":{"v":1,"t":"number","s":"css-var --text-9xl--line-height (light)","d":"the ramp's unitless leading, declared as a calc() ratio"},"base":{"v":1.5,"t":"number","s":"css-var --text-base--line-height (light)","d":"the ramp's unitless leading, declared as a calc() ratio"},"lg":{"v":1.5556,"t":"number","s":"css-var --text-lg--line-height (light)","d":"the ramp's unitless leading, declared as a calc() ratio"},"sm":{"v":1.4286,"t":"number","s":"css-var --text-sm--line-height (light)","d":"the ramp's unitless leading, declared as a calc() ratio"},"xl":{"v":1.4,"t":"number","s":"css-var --text-xl--line-height (light)","d":"the ramp's unitless leading, declared as a calc() ratio"},"xs":{"v":1.3333,"t":"number","s":"css-var --text-xs--line-height (light)","d":"the ramp's unitless leading, declared as a calc() ratio"}},"leading":{"relaxed":{"v":1.625,"t":"number","s":"css-var --leading-relaxed (light)"},"snug":{"v":1.375,"t":"number","s":"css-var --leading-snug (light)"},"tight":{"v":1.25,"t":"number","s":"css-var --leading-tight (light)"}},"tracking":{"tight":{"v":"-.025em","t":"other","s":"css-var --tracking-tight (light)"},"wide":{"v":".025em","t":"other","s":"css-var --tracking-wide (light)"},"wider":{"v":".05em","t":"other","s":"css-var --tracking-wider (light)"},"widest":{"v":".1em","t":"other","s":"css-var --tracking-widest (light)"}}},"radius":{"1":{"v":"4px","t":"dimension","s":"css-var --border-radius-1 (light)","d":"the product's own radius scale — squared, neo-brutalist corners"},"2":{"v":"8px","t":"dimension","s":"css-var --border-radius-2 (light)","d":"the product's own radius scale — squared, neo-brutalist corners"},"3":{"v":"160px","t":"dimension","s":"css-var --border-radius-3 (light)","d":"the product's own radius scale — squared, neo-brutalist corners"},"tailwind":{"2xl":{"v":"16px","t":"dimension","s":"css-var --radius-2xl (light)"},"3xl":{"v":"24px","t":"dimension","s":"css-var --radius-3xl (light)"},"lg":{"v":"8px","t":"dimension","s":"css-var --radius-lg (light)"},"md":{"v":"6px","t":"dimension","s":"css-var --radius-md (light)"},"sm":{"v":"4px","t":"dimension","s":"css-var --radius-sm (light)"},"xl":{"v":"12px","t":"dimension","s":"css-var --radius-xl (light)"},"xs":{"v":"2px","t":"dimension","s":"css-var --radius-xs (light)"},"base":{"v":"4px","t":"dimension","s":"css-var --radius (light)"}}},"space":{"unit":{"v":"4px","t":"dimension","s":"css-var --spacing (light)","d":"the 4px unit the spacing scale multiplies"},"spacer":{"1":{"v":"4px","t":"dimension","s":"css-var --spacer-1 (light)","d":"the product's own spacing scale"},"2":{"v":"8px","t":"dimension","s":"css-var --spacer-2 (light)","d":"the product's own spacing scale"},"3":{"v":"12px","t":"dimension","s":"css-var --spacer-3 (light)","d":"the product's own spacing scale"},"4":{"v":"16px","t":"dimension","s":"css-var --spacer-4 (light)","d":"the product's own spacing scale"},"5":{"v":"24px","t":"dimension","s":"css-var --spacer-5 (light)","d":"the product's own spacing scale"},"6":{"v":"32px","t":"dimension","s":"css-var --spacer-6 (light)","d":"the product's own spacing scale"},"7":{"v":"48px","t":"dimension","s":"css-var --spacer-7 (light)","d":"the product's own spacing scale"},"8":{"v":"64px","t":"dimension","s":"css-var --spacer-8 (light)","d":"the product's own spacing scale"}}},"component":{"borderWidth":{"v":"1px","t":"dimension","s":"css-var --border-width (light)"},"formElementHeight":{"v":"48px","t":"dimension","s":"css-var --form-element-height (light)"},"buttonHoverOffset":{"v":"4px","t":"dimension","s":"css-var --button-hover-offset (light)"},"bigIconSize":{"v":"1.25em","t":"other","s":"css-var --big-icon-size (light)","d":"an em length — resolves per element"},"header":{"height":{"v":"217px","t":"dimension","s":"measured nav-bar default on /discover (discover header bar)"},"width":{"v":"1440px","t":"dimension","s":"measured nav-bar default on /discover (discover header bar)"}},"searchInput":{"height":{"v":"46px","t":"dimension","s":"measured nav-search default on /discover (header search combobox)"},"width":{"v":"789px","t":"dimension","s":"measured nav-search default on /discover (header search combobox)"},"radius":{"v":"4px","t":"dimension","s":"measured nav-search default on /discover (the header search field)"}},"button":{"cta":{"height":{"v":"48px","t":"dimension","s":"measured nav-start-selling default on /discover (the primary auth button)"},"radius":{"v":"4px","t":"dimension","s":"measured nav-start-selling default on /discover (the primary auth button)"}},"loadMore":{"height":{"v":"48px","t":"dimension","s":"measured discover-load-more default on /discover (the bordered pagination button)"}},"oauth":{"height":{"v":"48px","t":"dimension","s":"measured login-oauth default on /login (an OAuth button)"}},"submit":{"height":{"v":"48px","t":"dimension","s":"measured login-submit default on /login (the auth submit)"}},"buy":{"height":{"v":"48px","t":"dimension","s":"measured product-buy default on https://ichigo.gumroad.com/l/ichigo-reader (the purchase link)"},"width":{"v":"109px","t":"dimension","s":"measured product-buy default on https://ichigo.gumroad.com/l/ichigo-reader (the purchase link)"}}},"categoryLink":{"height":{"v":"40px","t":"dimension","s":"measured nav-category default on /discover (a category nav link)"}},"featuredCard":{"height":{"v":"380px","t":"dimension","s":"measured discover-featured-card default on /discover (a featured carousel card)"},"width":{"v":"704px","t":"dimension","s":"measured discover-featured-card default on /discover (a featured carousel card)"}},"productCard":{"height":{"v":"522.33px","t":"dimension","s":"measured discover-card default on /discover (a market grid card)"},"width":{"v":"301.33px","t":"dimension","s":"measured discover-card default on /discover (a market grid card)"}},"priceFlag":{"height":{"v":"30px","t":"dimension","s":"measured discover-card-price default on /discover (a card price flag)"},"radius":{"v":"0px","t":"dimension","s":"measured discover-card-price default on /discover (a card price flag)"}},"tab":{"height":{"v":"40px","t":"dimension","s":"measured discover-tab default on /discover (a market tab)"},"radius":{"v":"9999px","t":"dimension","s":"measured discover-tab default on /discover (a market tab)","d":"all four corners measure the full-radius clamp — a pill"}},"select":{"height":{"v":"48px","t":"dimension","s":"measured discover-currency-select default on /discover (a select element)"},"term":{"height":{"v":"48px","t":"dimension","s":"measured product-term-select default on https://ichigo.gumroad.com/l/ichigo-reader (the billing-term select)"}}},"loginCard":{"width":{"v":"736px","t":"dimension","s":"measured login-card default on /login (the centred auth card)"}},"input":{"height":{"v":"48px","t":"dimension","s":"measured login-email default on /login (a text field)"},"radius":{"v":"4px","t":"dimension","s":"measured login-email default on /login (a text field)"}},"productHeader":{"height":{"v":"96px","t":"dimension","s":"measured product-header default on https://ichigo.gumroad.com/l/ichigo-reader (the product title block)"}},"tierCard":{"height":{"v":"100px","t":"dimension","s":"measured product-tier default on https://ichigo.gumroad.com/l/ichigo-reader (a priced tier radio card)"},"width":{"v":"331.34px","t":"dimension","s":"measured product-tier default on https://ichigo.gumroad.com/l/ichigo-reader (a priced tier radio card)"},"radius":{"v":"4px","t":"dimension","s":"measured product-tier default on https://ichigo.gumroad.com/l/ichigo-reader (a priced tier card)"}},"checkoutField":{"height":{"v":"48px","t":"dimension","s":"measured checkout-email default on https://gumroad.com/checkout (a checkout field)"},"radius":{"v":"4px","t":"dimension","s":"measured checkout-email default on https://gumroad.com/checkout (a checkout field)"}},"checkoutSelect":{"height":{"v":"48px","t":"dimension","s":"measured checkout-country default on https://gumroad.com/checkout (a checkout select)"}},"checkoutSummary":{"width":{"v":"832px","t":"dimension","s":"measured checkout-summary default on https://gumroad.com/checkout (the order summary card)"}},"heroSearch":{"height":{"v":"64px","t":"dimension","s":"measured home-search default on / (the hero marketplace search)"}},"mobileHeader":{"height":{"v":"243.86px","t":"dimension","s":"measured m-nav-bar default on /discover (mobile header)"}},"mobileCard":{"height":{"v":"498px","t":"dimension","s":"measured m-discover-card default on /discover (a phone market card)"}},"card":{"radius":{"v":"4px","t":"dimension","s":"measured discover-card default on /discover (a market product card)"}}},"breakpoint":{"lg":{"v":"1024px","t":"dimension","s":"css-var --breakpoint-lg (light)"},"sm":{"v":"640px","t":"dimension","s":"css-var --breakpoint-sm (light)"}},"container":{"2xl":{"v":"672px","t":"dimension","s":"css-var --container-2xl (light)"},"3xl":{"v":"768px","t":"dimension","s":"css-var --container-3xl (light)"},"4xl":{"v":"896px","t":"dimension","s":"css-var --container-4xl (light)"},"5xl":{"v":"1024px","t":"dimension","s":"css-var --container-5xl (light)"},"6xl":{"v":"1152px","t":"dimension","s":"css-var --container-6xl (light)"},"7xl":{"v":"1280px","t":"dimension","s":"css-var --container-7xl (light)"},"lg":{"v":"512px","t":"dimension","s":"css-var --container-lg (light)"},"md":{"v":"448px","t":"dimension","s":"css-var --container-md (light)"},"sm":{"v":"384px","t":"dimension","s":"css-var --container-sm (light)"},"xl":{"v":"576px","t":"dimension","s":"css-var --container-xl (light)"},"xs":{"v":"320px","t":"dimension","s":"css-var --container-xs (light)"}},"ease":{"inOut":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-in-out (light)"},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-out (light)"},"default":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --default-transition-timing-function (light)"}},"duration":{"default":{"v":"150ms","t":"duration","s":"css-var --default-transition-duration (light)"},"fast":{"v":"140ms","t":"duration","s":"css-var --transition-duration (light)","d":"the component transition length — hover, menus, toggles"}},"animation":{"pulse":{"v":"pulse 2s cubic-bezier(.4,0,.6,1)infinite","t":"other","s":"css-var --animate-pulse (light)","d":"animation shorthand as declared"},"spin":{"v":"spin 1s linear infinite","t":"other","s":"css-var --animate-spin (light)","d":"animation shorthand as declared"}},"zIndex":{"aboveOverlay":{"v":2,"t":"number","s":"css-var --z-index-above-overlay (light)"},"base":{"v":0,"t":"number","s":"css-var --z-index-base (light)"},"header":{"v":3,"t":"number","s":"css-var --z-index-header (light)"},"menubar":{"v":10,"t":"number","s":"css-var --z-index-menubar (light)"},"modal":{"v":20,"t":"number","s":"css-var --z-index-modal (light)"},"overlay":{"v":1,"t":"number","s":"css-var --z-index-overlay (light)"},"tooltip":{"v":30,"t":"number","s":"css-var --z-index-tooltip (light)"}},"layout":{"aspectVideo":{"v":"16/9","t":"other","s":"css-var --aspect-video (light)","d":"an aspect-ratio fraction"},"mainStackWidth":{"v":"448px","t":"dimension","s":"css-var --main-stack-width (light)"},"spacingProductPage":{"v":"1204px","t":"dimension","s":"css-var --spacing-product-page (light)"},"dynamicGrid":{"v":"min(100%,calc((31.25rem - 100%)*1000))","t":"other","s":"css-var --dynamic-grid (light)"},"gridColsSidebar":{"v":"1fr 3fr","t":"other","s":"css-var --grid-cols-sidebar (light)"}},"opacity":{"disabled":{"v":0.3,"t":"number","s":"css-var --disabled-opacity (light)","d":"the disabled state — a plain opacity dim"}},"focus":{"outline":{"v":".125rem solid rgb(255 144 232)","t":"other","s":"css-var --outline (light)","d":"the focus ring shorthand — 2px solid pink, applied :focus-visible"}},"asset":{"logo":{"v":"url(…)","t":"other","s":"css-var --logo (light)","d":"a url() image value — the reference kept, the asset itself not redistributed"},"loadingSpinner":{"v":"url(…)","t":"other","s":"css-var --loading-spinner (light)","d":"a url() image value — the reference kept, the asset itself not redistributed"},"productCoverPlaceholder":{"v":"url(…)","t":"other","s":"css-var --product-cover-placeholder (light)","d":"a url() image value — the reference kept, the asset itself not redistributed"}},"typography":{"display":{"v":{"fontFamily":"\"ABC Favorit\"","fontSize":"96px","fontWeight":400,"lineHeight":"96px","letterSpacing":"-0.4px"},"t":"typography","s":"measured home-h1 on / (default state)","d":"the landing hero heading — ABC Favorit display"},"wordmark":{"v":{"fontFamily":"\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif","fontSize":"16px","fontWeight":400,"lineHeight":"22px"},"t":"typography","s":"measured nav-logo on /discover (default state)","d":"the GUMROAD wordmark — uppercased display type"},"h1":{"v":{"fontFamily":"\"ABC Favorit\", \"ABC Favorit\", sans-serif","fontSize":"40px","fontWeight":400,"lineHeight":"48px"},"t":"typography","s":"measured product-header on https://ichigo.gumroad.com/l/ichigo-reader (default state)","d":"a product page title block"},"navLink":{"v":{"fontFamily":"\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif","fontSize":"16px","fontWeight":400,"lineHeight":"22px"},"t":"typography","s":"measured nav-category on /discover (default state)","d":"a category nav link"},"tab":{"v":{"fontFamily":"\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif","fontSize":"16px","fontWeight":400,"lineHeight":"22px"},"t":"typography","s":"measured discover-tab on /discover (default state)","d":"a market tab label"},"button":{"v":{"fontFamily":"\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif","fontSize":"16px","fontWeight":400,"lineHeight":"22px"},"t":"typography","s":"measured nav-start-selling on /discover (default state)","d":"the primary button label"},"price":{"v":{"fontFamily":"\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif","fontSize":"16px","fontWeight":400,"lineHeight":"22px"},"t":"typography","s":"measured discover-card-price on /discover (default state)","d":"the price flag label"},"input":{"v":{"fontFamily":"\"ABC Favorit\", Avenir, Montserrat, Corbel, \"URW Gothic\", source-sans-pro, sans-serif","fontSize":"16px","fontWeight":400,"lineHeight":"22px"},"t":"typography","s":"measured login-email on /login (default state)","d":"a form field"},"buy":{"v":{"fontFamily":"\"ABC Favorit\", \"ABC Favorit\", sans-serif","fontSize":"16px","fontWeight":400,"lineHeight":"22px"},"t":"typography","s":"measured product-buy on https://ichigo.gumroad.com/l/ichigo-reader (default state)","d":"the purchase link label"}},"motion":{"duration":{"30ms":{"v":"30ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"100ms":{"v":"100ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"transition-duration":{"v":"140ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--transition-duration"},"d":"Custom property --transition-duration, declared on :root, :host."},"default-transition-duration":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--default-transition-duration"},"d":"Custom property --default-transition-duration, declared on :root, :host."},"200ms":{"v":"200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 120 elements."},"300ms":{"v":"300ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 55 elements."},"1100ms":{"v":"1100ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"20000ms":{"v":"20000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"60000ms":{"v":"60000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"80000ms":{"v":"80000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."}},"easing":{"default-transition-timing-function":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--default-transition-timing-function"},"d":"Custom property --default-transition-timing-function, declared on :root, :host."},"ease-in-out":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-in-out"},"d":"Custom property --ease-in-out, declared on :root, :host."},"ease-out":{"v":[0,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-out"},"d":"Custom property --ease-out, declared on :root, :host."},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `linear`, expanded to its control points."}},"transition":{"all-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 108 elements."},"all-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 24 elements."},"rotate-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 12 elements."},"scale-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 12 elements."},"transform-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 12 elements."},"translate-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 12 elements."},"all-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 11 elements."},"rotate-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 11 elements."},"scale-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 11 elements."},"transform-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 11 elements."},"translate-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 11 elements."},"tw-gradient-from-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"tw-gradient-to-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"tw-gradient-via-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"background-color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"border-color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"fill-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"outline-color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"stroke-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"text-decoration-color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"rotate-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"scale-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"transform-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"translate-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"all-100ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.100ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"transform-100ms-linear":{"v":{"duration":"{motion.duration.100ms}","delay":"0ms","timingFunction":"{motion.easing.linear}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."}},"animation":{"marquee":{"v":{"name":"marquee","duration":"{motion.duration.60000ms}","delay":"0ms","timingFunction":"{motion.easing.linear}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `marquee`."}},"_extensions":{"reducedMotion":{"probe":"page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page","verified":true,"pages":4,"behaviour":"partial","moving":185,"removed":3,"reduced":0,"kept":180,"partial":2,"increased":0,"added":0,"loops":[],"authoredRules":[{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:animate-\\[marquee-scroll_80s_linear_infinite\\]","declarations":{"animation-duration":"80s","animation-timing-function":"linear","animation-delay":"0s","animation-iteration-count":"infinite","animation-direction":"normal","animation-fill-mode":"none","animation-play-state":"running","animation-name":"marquee-scroll","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:animate-\\[marquee_20s_linear_infinite\\]","declarations":{"animation-duration":"20s","animation-timing-function":"linear","animation-delay":"0s","animation-iteration-count":"infinite","animation-direction":"normal","animation-fill-mode":"none","animation-play-state":"running","animation-name":"marquee","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:hover\\:-translate-x-1:hover","declarations":{"--tw-translate-x":"calc(var(--spacing)*-1)","translate":"var(--tw-translate-x)var(--tw-translate-y)"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:hover\\:-translate-y-1:hover","declarations":{"--tw-translate-y":"calc(var(--spacing)*-1)","translate":"var(--tw-translate-x)var(--tw-translate-y)"}},{"media":"@media (prefers-reduced-motion: reduce)","selector":".motion-reduce\\:animate-none","declarations":{"animation-duration":"auto","animation-timing-function":"ease","animation-delay":"0s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"none","animation-play-state":"running","animation-name":"none","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: reduce)","selector":".motion-reduce\\:transition-none","declarations":{"transition-property":"none"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:md\\:animate-\\[marquee_60s_linear_infinite\\]","declarations":{"animation-duration":"60s","animation-timing-function":"linear","animation-delay":"0s","animation-iteration-count":"infinite","animation-direction":"normal","animation-fill-mode":"none","animation-play-state":"running","animation-name":"marquee","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}}]},"propertyUsage":{"all":145,"transform":29,"rotate":27,"scale":27,"translate":27,"--tw-gradient-from":8,"--tw-gradient-to":8,"--tw-gradient-via":8,"background-color":8,"border-color":8,"color":8,"fill":8,"outline-color":8,"stroke":8,"text-decoration-color":8},"smoothScrollElements":0,"unusedKeyframes":["marquee-scroll","parallax-scroll","prosemirror-gapcursor-blink","pulse","spin"],"notTokenised":[{"name":"motion easing steps(2, start)","value":"steps(2, start)","why":"an easing DTCG's cubicBezier cannot carry (steps() or a linear() curve)","uses":0},{"name":"motion easing var(--ease-in-out)","value":"var(--ease-in-out)","why":"an unresolved var() reference: the easing it computes to was not read","uses":0},{"name":"motion easing var(--ease-out)","value":"var(--ease-out)","why":"an unresolved var() reference: the easing it computes to was not read","uses":0},{"name":"motion easing var(--tw-ease, var(--default-transition-timing-function))","value":"var(--tw-ease, var(--default-transition-timing-function))","why":"an unresolved var() reference: the easing it computes to was not read","uses":0}]}}},"light":{"role":{"accent":{"v":"#ff90e8","t":"color","s":"css-var --color-accent (light)"},"accentForeground":{"v":"#000000","t":"color","s":"css-var --color-accent-foreground (light)"},"accentWithText":{"v":"#ff90e8","t":"color","s":"css-var --color-accent-with-text (light)"},"activeBg":{"v":"rgba(0, 0, 0, 0.1)","t":"color","s":"css-var --color-active-bg (light)"},"backdrop":{"v":"rgba(0, 0, 0, 0.8)","t":"color","s":"css-var --color-backdrop (light)"},"background":{"v":"#ffffff","t":"color","s":"css-var --color-background (light)"},"body":{"v":"#f4f4f0","t":"color","s":"css-var --color-body (light)"},"border":{"v":"#000000","t":"color","s":"css-var --color-border (light)"},"danger":{"v":"#dc341e","t":"color","s":"css-var --color-danger (light)"},"dangerForeground":{"v":"#ffffff","t":"color","s":"css-var --color-danger-foreground (light)"},"foreground":{"v":"#000000","t":"color","s":"css-var --color-foreground (light)"},"green":{"v":"#23a094","t":"color","s":"css-var --color-green (light)"},"indicator":{"v":"#ff90e8","t":"color","s":"css-var --color-indicator (light)"},"info":{"v":"#90a8ed","t":"color","s":"css-var --color-info (light)"},"muted":{"v":"rgba(0, 0, 0, 0.5)","t":"color","s":"css-var --color-muted (light)"},"orange":{"v":"#ffc900","t":"color","s":"css-var --color-orange (light)"},"pink":{"v":"#ff90e8","t":"color","s":"css-var --color-pink (light)"},"primary":{"v":"#000000","t":"color","s":"css-var --color-primary (light)"},"primaryForeground":{"v":"#ffffff","t":"color","s":"css-var --color-primary-foreground (light)"},"purple":{"v":"#90a8ed","t":"color","s":"css-var --color-purple (light)"},"red":{"v":"#dc341e","t":"color","s":"css-var --color-red (light)"},"success":{"v":"#23a094","t":"color","s":"css-var --color-success (light)"},"successForeground":{"v":"#000000","t":"color","s":"css-var --color-success-foreground (light)"},"warning":{"v":"#ffc900","t":"color","s":"css-var --color-warning (light)"},"warningForeground":{"v":"#000000","t":"color","s":"css-var --color-warning-foreground (light)"},"yellow":{"v":"#f1f333","t":"color","s":"css-var --color-yellow (light)"}},"channels":{"accent":{"v":"#ff90e8","t":"color","s":"css-var --accent (light)"},"accentWithText":{"v":"#ff90e8","t":"color","s":"css-var --accent-with-text (light)"},"activeBg":{"v":"#ffffff","t":"color","s":"css-var --active-bg (light)"},"color":{"v":"#000000","t":"color","s":"css-var --color (light)"},"contrastAccent":{"v":"#000000","t":"color","s":"css-var --contrast-accent (light)"},"contrastBlack":{"v":"#ffffff","t":"color","s":"css-var --contrast-black (light)"},"contrastDanger":{"v":"#ffffff","t":"color","s":"css-var --contrast-danger (light)"},"contrastFilled":{"v":"#000000","t":"color","s":"css-var --contrast-filled (light)"},"contrastInfo":{"v":"#000000","t":"color","s":"css-var --contrast-info (light)"},"contrastPrimary":{"v":"#ffffff","t":"color","s":"css-var --contrast-primary (light)"},"contrastSuccess":{"v":"#000000","t":"color","s":"css-var --contrast-success (light)"},"contrastWarning":{"v":"#000000","t":"color","s":"css-var --contrast-warning (light)"},"danger":{"v":"#dc341e","t":"color","s":"css-var --danger (light)"},"filled":{"v":"#ffffff","t":"color","s":"css-var --filled (light)"},"parentColor":{"v":"#000000","t":"color","s":"css-var --parent-color (light)"},"primary":{"v":"#000000","t":"color","s":"css-var --primary (light)"},"success":{"v":"#23a094","t":"color","s":"css-var --success (light)"},"warning":{"v":"#ffc900","t":"color","s":"css-var --warning (light)"}},"neutral":{"neutralAccent":{"v":"#ff90e8","t":"color","s":"css-var --neutral-accent (light)"},"neutralBorderAlpha":{"v":1,"t":"number","s":"css-var --neutral-border-alpha (light)"},"neutralColor":{"v":"#000000","t":"color","s":"css-var --neutral-color (light)"},"neutralDanger":{"v":"#dc341e","t":"color","s":"css-var --neutral-danger (light)"},"neutralFilled":{"v":"#ffffff","t":"color","s":"css-var --neutral-filled (light)"}},"ground":{"bodyBg":{"v":"#f4f4f0","t":"color","s":"css-var --body-bg (light)"}},"border":{"shorthand":{"v":"solid .0625rem rgb(0 0 0/1)","t":"other","s":"css-var --border (light)"},"alpha":{"v":1,"t":"number","s":"css-var --border-alpha (light)"}},"shadow":{"hard":{"one":{"v":[{"color":"#000000","offsetX":"4px","offsetY":"4px","blur":"0px","spread":"0px"}],"t":"shadow","s":"css-var --box-shadow-1 (light)"},"two":{"v":[{"color":"#000000","offsetX":"8px","offsetY":"8px","blur":"0px","spread":"0px"}],"t":"shadow","s":"css-var --box-shadow-2 (light)"}}},"component":{"cta":{"bg":{"v":"{role.primary}","t":"color","s":"measured nav-start-selling default on /discover (the primary CTA fill) — the element's class paints the role.primary role, so each theme resolves its own","d":"the primary CTA fill"}},"tabActive":{"bg":{"v":"{role.background}","t":"color","s":"measured discover-tab-active default on /discover (the selected market tab fill) — the element's class paints the role.background role, so each theme resolves its own","d":"the selected market tab fill"}},"priceFlag":{"bg":{"v":"{role.accent}","t":"color","s":"measured discover-card-price default on /discover (the price flag fill) — the element's class paints the role.accent role, so each theme resolves its own","d":"the price flag fill"}},"header":{"bg":{"v":"{ground.bodyBg}","t":"color","s":"measured nav-bar default on /discover (the header bar ground) — the element's class paints the ground.bodyBg role, so each theme resolves its own","d":"the header bar ground"}},"card":{"bg":{"v":"{role.background}","t":"color","s":"measured discover-card default on /discover (the product card surface) — the element's class paints the role.background role, so each theme resolves its own","d":"the product card surface"}}}},"dark":{"role":{"accent":{"v":"#ff90e8","t":"color","s":"css-var --color-accent (dark)"},"accentForeground":{"v":"#000000","t":"color","s":"css-var --color-accent-foreground (dark)"},"accentWithText":{"v":"#ff90e8","t":"color","s":"css-var --color-accent-with-text (dark)"},"activeBg":{"v":"rgba(221, 221, 221, 0.1)","t":"color","s":"css-var --color-active-bg (dark)"},"backdrop":{"v":"rgba(0, 0, 0, 0.8)","t":"color","s":"css-var --color-backdrop (dark)"},"background":{"v":"#000000","t":"color","s":"css-var --color-background (dark)"},"body":{"v":"#242423","t":"color","s":"css-var --color-body (dark)"},"border":{"v":"rgba(221, 221, 221, 0.35)","t":"color","s":"css-var --color-border (dark)"},"danger":{"v":"#dc341e","t":"color","s":"css-var --color-danger (dark)"},"dangerForeground":{"v":"#ffffff","t":"color","s":"css-var --color-danger-foreground (dark)"},"foreground":{"v":"#dddddd","t":"color","s":"css-var --color-foreground (dark)"},"green":{"v":"#23a094","t":"color","s":"css-var --color-green (dark)"},"indicator":{"v":"#ff90e8","t":"color","s":"css-var --color-indicator (dark)"},"info":{"v":"#90a8ed","t":"color","s":"css-var --color-info (dark)"},"muted":{"v":"rgba(221, 221, 221, 0.5)","t":"color","s":"css-var --color-muted (dark)"},"orange":{"v":"#ffc900","t":"color","s":"css-var --color-orange (dark)"},"pink":{"v":"#ff90e8","t":"color","s":"css-var --color-pink (dark)"},"primary":{"v":"#dddddd","t":"color","s":"css-var --color-primary (dark)"},"primaryForeground":{"v":"#000000","t":"color","s":"css-var --color-primary-foreground (dark)"},"purple":{"v":"#90a8ed","t":"color","s":"css-var --color-purple (dark)"},"red":{"v":"#dc341e","t":"color","s":"css-var --color-red (dark)"},"success":{"v":"#23a094","t":"color","s":"css-var --color-success (dark)"},"successForeground":{"v":"#000000","t":"color","s":"css-var --color-success-foreground (dark)"},"warning":{"v":"#ffc900","t":"color","s":"css-var --color-warning (dark)"},"warningForeground":{"v":"#000000","t":"color","s":"css-var --color-warning-foreground (dark)"},"yellow":{"v":"#f1f333","t":"color","s":"css-var --color-yellow (dark)"}},"channels":{"accent":{"v":"#ff90e8","t":"color","s":"css-var --accent (dark)"},"accentWithText":{"v":"#ff90e8","t":"color","s":"css-var --accent-with-text (dark)"},"activeBg":{"v":"#000000","t":"color","s":"css-var --active-bg (dark)"},"color":{"v":"#dddddd","t":"color","s":"css-var --color (dark)"},"contrastAccent":{"v":"#000000","t":"color","s":"css-var --contrast-accent (dark)"},"contrastBlack":{"v":"#dddddd","t":"color","s":"css-var --contrast-black (dark)"},"contrastDanger":{"v":"#ffffff","t":"color","s":"css-var --contrast-danger (dark)"},"contrastFilled":{"v":"#dddddd","t":"color","s":"css-var --contrast-filled (dark)"},"contrastInfo":{"v":"#000000","t":"color","s":"css-var --contrast-info (dark)"},"contrastPrimary":{"v":"#000000","t":"color","s":"css-var --contrast-primary (dark)"},"contrastSuccess":{"v":"#000000","t":"color","s":"css-var --contrast-success (dark)"},"contrastWarning":{"v":"#000000","t":"color","s":"css-var --contrast-warning (dark)"},"danger":{"v":"#dc341e","t":"color","s":"css-var --danger (dark)"},"filled":{"v":"#000000","t":"color","s":"css-var --filled (dark)"},"parentColor":{"v":"#dddddd","t":"color","s":"css-var --parent-color (dark)"},"primary":{"v":"#dddddd","t":"color","s":"css-var --primary (dark)"},"success":{"v":"#23a094","t":"color","s":"css-var --success (dark)"},"warning":{"v":"#ffc900","t":"color","s":"css-var --warning (dark)"}},"neutral":{"neutralAccent":{"v":"#ff90e8","t":"color","s":"css-var --neutral-accent (dark)"},"neutralBorderAlpha":{"v":0.35,"t":"number","s":"css-var --neutral-border-alpha (dark)"},"neutralColor":{"v":"#dddddd","t":"color","s":"css-var --neutral-color (dark)"},"neutralDanger":{"v":"#dc341e","t":"color","s":"css-var --neutral-danger (dark)"},"neutralFilled":{"v":"#000000","t":"color","s":"css-var --neutral-filled (dark)"}},"ground":{"bodyBg":{"v":"#242423","t":"color","s":"css-var --body-bg (dark)"}},"border":{"shorthand":{"v":"solid .0625rem rgb(221 221 221/.35)","t":"other","s":"css-var --border (dark)"},"alpha":{"v":0.35,"t":"number","s":"css-var --border-alpha (dark)"}},"shadow":{"hard":{"one":{"v":[{"color":"#dddddd","offsetX":"4px","offsetY":"4px","blur":"0px","spread":"0px"}],"t":"shadow","s":"css-var --box-shadow-1 (dark)"},"two":{"v":[{"color":"#dddddd","offsetX":"8px","offsetY":"8px","blur":"0px","spread":"0px"}],"t":"shadow","s":"css-var --box-shadow-2 (dark)"}}},"component":{"cta":{"bg":{"v":"{role.primary}","t":"color","s":"measured nav-start-selling default on /discover (the primary CTA fill) — the element's class paints the role.primary role, so each theme resolves its own","d":"the primary CTA fill"}},"tabActive":{"bg":{"v":"{role.background}","t":"color","s":"measured discover-tab-active default on /discover (the selected market tab fill) — the element's class paints the role.background role, so each theme resolves its own","d":"the selected market tab fill"}},"priceFlag":{"bg":{"v":"{role.accent}","t":"color","s":"measured discover-card-price default on /discover (the price flag fill) — the element's class paints the role.accent role, so each theme resolves its own","d":"the price flag fill"}},"header":{"bg":{"v":"{ground.bodyBg}","t":"color","s":"measured nav-bar default on /discover (the header bar ground) — the element's class paints the ground.bodyBg role, so each theme resolves its own","d":"the header bar ground"}},"card":{"bg":{"v":"{role.background}","t":"color","s":"measured discover-card default on /discover (the product card surface) — the element's class paints the role.background role, so each theme resolves its own","d":"the product card surface"}}}}};
-const $ = (s) => document.querySelector(s);
-const esc = (s) => (s !== null && typeof s === 'object' ? JSON.stringify(s) : String(s)).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
-const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
-
-(function palette() {
-  let h = '';
-  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  for (const [setname, label] of [['light', 'light roles — the painted default (every gumroad.com page boots light)'], ['dark', 'dark roles — painted under prefers-color-scheme: dark']]) {
-    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component') && !n.startsWith('channels'));
-    if (!roles.length) continue;
-    // The dark set's custom properties only resolve inside a .dark scope:
-    // swatch dots must live under it or they paint the light values.
-    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
-    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
-    h += '</div>';
-  }
-  $('#roles-out').innerHTML = h;
-})();
-
-(function spacing() {
-  let m = '';
-  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.breakpoint || {}, 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.ease || {}, 'ease.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.animation || {}, 'animation.')) m += `<div><b>${esc(n)}</b> <span>${esc((typeof t.v === 'object' ? JSON.stringify(t.v) : String(t.v)).slice(0, 90))}</span></div>`;
-  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.zIndex || {}, 'zIndex.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.opacity || {}, 'opacity.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.focus || {}, 'focus.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const setname of ['light', 'dark']) {
-    const misc = flat((TOK[setname] || {}).misc || {}, setname + '.misc.');
-    if (!misc.length) continue;
-    m += `<div style="grid-column:1/-1;opacity:.6;margin-top:8px"><b>${setname} misc</b></div>`;
-    for (const [n, t] of misc) m += `<div><b>${esc(n)}</b> <span>${esc((typeof t.v === 'object' ? JSON.stringify(t.v) : String(t.v)).slice(0, 90))}</span></div>`;
-  }
-  $('#spacing-out').innerHTML = m;
-})();
-
-(function elev() {
-  let e = '';
-  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
-  for (const setname of ['light', 'dark']) {
-    const sh = flat((TOK[setname] || {}).shadow || {}, setname + '.shadow.');
-    if (!sh.length) continue;
-    for (const [n, t] of sh) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
-  }
-  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
-})();
-
-(function meas() {
-  let m = '';
-  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const setname of ['light', 'dark']) {
-    const c = flat((TOK[setname] || {}).component || {}, setname + '.component.');
-    for (const [n, t] of c) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  }
-  $('#meas-out').innerHTML = m || '<div><b>none measured</b></div>';
-})();
-
-(function motion() {
-  const g = TOK.core.motion || {};
-  let m = '';
-  for (const [n, t] of flat(g.duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(g.easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
-  const tr = Object.keys(g.transition || {}).length, an = Object.keys(g.animation || {}).length;
-  if (tr || an) m += `<div><b>measured</b> <span>${tr} transition tokens, ${an} animation tokens (tokens.json, core.motion)</span></div>`;
-  const rm = (g._extensions || {}).reducedMotion;
-  if (rm) m += `<div><b>reduced motion</b> <span>${esc(rm.behaviour)} — ${esc(String(rm.removed))} removed, ${esc(String(rm.kept))} kept across ${esc(String(rm.pages))} pages</span></div>`;
-  $('#motion-out').innerHTML = m || '<div><b>no motion probe</b></div>';
-})();
-
-const resolveVal = (v, depth) => {
-  if (depth > 6 || typeof v !== 'string') return v;
-  const m = v.match(/^\{(.+)\}$/);
-  if (!m) return v;
-  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
-    let node = root;
-    for (const k of m[1].split('.')) node = node && node[k];
-    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
-  }
-  return v;
-};
-
-(function type() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(resolveVal(t.v)) * (String(resolveVal(t.v)).endsWith('rem') ? 16 : 1);
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — Gumroad</span><span class="tv">${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).leading || {}, 'font.leading.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Gumroad</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  $('#type-out').innerHTML = h;
-  let f = '';
-  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  $('#fam-out').innerHTML = f;
-})();
-
-// The measured core.typography.* composites — the styles the live DOM paints,
-// not just the declared scales. Samples fall back to system sans (ABC Favorit
-// is not bundled).
-(function typ() {
-  let h = '';
-  for (const [n, t] of flat((TOK.core || {}).typography || {}, 'typography.')) {
-    const v = t.v || {};
-    const fs = parseFloat(v.fontSize) || 14;
-    const mono = /mono/i.test(String(v.fontFamily));
-    const meta = [v.fontSize, v.lineHeight, 'w' + v.fontWeight, v.letterSpacing].filter(Boolean).join(' / ');
-    h += `<div class="tr"><span class="ts" style="font-family:${mono ? 'var(--sg-mono)' : 'var(--sg-sans)'};font-size:${Math.min(fs, 44)}px;font-weight:${esc(String(v.fontWeight || 400))};line-height:${esc(v.lineHeight || 'normal')}">${esc(n)} — Gumroad 0123</span><span class="tv">${esc(meta)}</span></div>`;
-  }
-  $('#typ-out').innerHTML = h;
-})();
-
-// The mock's theme button is the guide's own preview — gumroad.com follows
-// prefers-color-scheme, it carries no in-page toggle. The [data-mode="dark"]
-// block carries the dark token set the emulation paints.
-(function themeToggle() {
-  const btn = $('#theme-toggle'), mock = $('#docs-mock');
-  if (!btn || !mock) return;
-  btn.addEventListener('click', () => {
-    const dark = mock.getAttribute('data-mode') !== 'dark';
-    mock.setAttribute('data-mode', dark ? 'dark' : 'light');
-    btn.setAttribute('aria-pressed', String(dark));
-    btn.title = dark ? 'Back to the light theme' : 'Preview the dark theme (the site follows your OS)';
-  });
-})();
-</script>
 </body>
 </html>

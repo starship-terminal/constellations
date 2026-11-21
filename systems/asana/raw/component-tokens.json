@@ -245,6 +245,10 @@
      "var": "--command-grey-140",
      "type": "color"
     },
+    "1400": {
+     "var": "--command-grey-1400",
+     "type": "color"
+    },
     "1500": {
      "var": "--command-grey-1500",
      "type": "color"
@@ -1088,7 +1092,7 @@
      "fontSize": "14px",
      "lineHeight": "21px",
      "fontWeight": 500,
-     "letterSpacing": "0px"
+     "letterSpacing": "0em"
     },
     "$type": "typography",
     "$extensions": {
@@ -1101,7 +1105,7 @@
      "fontSize": "14px",
      "lineHeight": "21px",
      "fontWeight": 500,
-     "letterSpacing": "0px"
+     "letterSpacing": "0em"
     },
     "$type": "typography",
     "$extensions": {

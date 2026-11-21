@@ -1,21 +1,16 @@
-// Collects every distinct inline <svg> icon on helloivy.co's public pages +
-// app.helloivy.co's public surfaces into icons/ and writes icons/INDEX.tsv.
+// Collects every distinct inline <svg> icon on Gauth's public pages into icons/ and writes icons/INDEX.tsv.
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node icons.mjs
 //
-// The icons carry no name in the DOM, so a file is named from icon-names.tsv (geometry hash -> name)
+// Gauth's icons carry no name in the DOM, so a file is named from icon-names.tsv (geometry hash -> name)
 // when the hash is listed there, else from the aria-label or text of the button or link it sits in, else
-// from its CSS class, else `icon-<hash>`. Files whose geometry matches are one icon, listed once
+// from its CSS-module class, else `icon-<hash>`. Files whose geometry matches are one icon, listed once
 // with every page and place it was seen. Colour is kept as `currentColor` wherever the computed fill or
 // stroke equals the svg's text colour, so each icon recolours from CSS `color` the way it does on the site.
-// Adapted from the hashnode package's icons.mjs (itself the Coursera kit's lineage).
-//
-// The marketing pages scroll the document itself; scrollAll walks the
-// document (and any inner pane, e.g. the share document) so icons lower on
-// the page are seen.
+// Adapted from the Coursera kit's icons.mjs.
 import crypto from 'crypto';
 import fs from 'fs';
-import { M, BASE, APP, SHARE, chromium, UA, UA_MOBILE, closePromo, patch, setTheme } from './public/lib.mjs';
+import { M, BASE, chromium, UA, closePromo, openStory } from './public/lib.mjs'; // the signed-in route: swap in its own page opener
 
 const OUT = new URL('../../icons/', import.meta.url).pathname;
 fs.mkdirSync(OUT, { recursive: true });
@@ -29,7 +24,7 @@ function collect() {
   return [...document.querySelectorAll('svg')].filter((s) => {
     const r = s.getBoundingClientRect();
     if (!(r.width >= 10 && r.width <= 64 && r.height >= 10 && r.height <= 64) || s.closest('svg svg')) return false;
-    if (s.closest('[class*="canvas_board"], [class*="pgc_playerSurface"], hyperframes-player, .katex')) return false;
+    if (s.closest('[class*="canvas_board"], [class*="pgc_playerSurface"], hyperframes-player, .katex')) return false; // lesson content, not UI
     return getComputedStyle(s).visibility !== 'hidden';
   }).map((s) => {
     const r = s.getBoundingClientRect(), col = rgb(getComputedStyle(s).color);
@@ -55,7 +50,7 @@ function collect() {
     if (!c.hasAttribute('viewBox')) c.setAttribute('viewBox', `0 0 ${c.getAttribute('width') || Math.round(r.width)} ${c.getAttribute('height') || Math.round(r.height)}`.replace(/px/g, ''));
     if (!c.hasAttribute('width') || /%|em/.test(c.getAttribute('width'))) c.setAttribute('width', Math.round(r.width));
     if (!c.hasAttribute('height') || /%|em/.test(c.getAttribute('height'))) c.setAttribute('height', Math.round(r.height));
-    const holder = s.closest('button,a,[role=button],[role=tab],[role=switch],label,li');
+    const holder = s.closest('button,a,[role=button],[role=tab],label,li');
     const label = (holder?.getAttribute('aria-label') || s.getAttribute('aria-label') || holder?.innerText || s.parentElement?.innerText || '').trim().replace(/\s+/g, ' ').slice(0, 40);
     const modCls = [s, s.parentElement, holder].filter(Boolean).flatMap((e) => [...e.classList].map(String)).map(strip).find((x) => /_/.test(x) && !/^x[0-9a-z]+$/.test(x)) || '';
     const place = (holder ? holder.tagName.toLowerCase() : s.parentElement.tagName.toLowerCase()) + (modCls ? ' ' + modCls : '');
@@ -77,137 +72,55 @@ async function grab(p, tag) {
   }
   console.log(' ', tag, list.length, 'svgs,', fresh, 'new');
 }
-// The marketing pages scroll the document; an app page's own pane is walked
-// too so icons lower in either are seen.
 async function scrollAll(p, tag) {
-  const scs = await p.evaluate(() => {
-    const out = [];
-    for (const el of document.querySelectorAll('div,main,aside,section,nav')) {
-      const cs = getComputedStyle(el);
-      if ((cs.overflowY === 'auto' || cs.overflowY === 'scroll') && el.scrollHeight > el.clientHeight + 100) out.push(el.scrollHeight);
-    }
-    return out.slice(0, 3);
-  });
-  await grab(p, tag);   // always collect what is already painted
-  if (!scs.length) {
-    const h = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
-    for (let y = 0; y < h; y += 700) {
-      await p.evaluate((y) => scrollTo(0, y), y);
-      await wait(p, 220); await grab(p, tag);
-    }
-  }
-  for (const h of scs) {
-    for (let y = 0; y < h; y += 700) {
-      await p.evaluate((y) => { const els = [...document.querySelectorAll('div,main,aside,section,nav')].filter((el) => { const cs = getComputedStyle(el); return (cs.overflowY === 'auto' || cs.overflowY === 'scroll') && el.scrollHeight > el.clientHeight + 100; }); els.forEach((el) => { el.scrollTop = y; }); }, y);
-      await wait(p, 220); await grab(p, tag);
-    }
-  }
-  await p.evaluate(() => { [...document.querySelectorAll('div,main,aside,section,nav')].forEach((el) => { el.scrollTop = 0; }); scrollTo(0, 0); });
-  await wait(p, 400);
+  const h = await p.evaluate(() => document.documentElement.scrollHeight);
+  for (let y = 0; y < h; y += 700) { await p.evaluate((y) => scrollTo(0, y), y); await wait(p, 250); await grab(p, tag); }
+  await p.evaluate(() => scrollTo(0, 0)); await wait(p, 400);
 }
 async function open(p, path, w = 6500) {
-  await p.goto(/^https?:/.test(path) ? path : BASE + path, { waitUntil: 'domcontentloaded', timeout: 90000 }); await wait(p, w);
+  await p.goto(BASE + path, { waitUntil: 'load', timeout: 90000 }); await wait(p, w);
 }
 // A page that fails is recorded, and a run with any failure leaves the committed icons alone.
 const failed = [];
 async function tryDo(label, fn) { try { await fn(); } catch (e) { failed.push(label); console.log('  skip', label, String(e.message).split('\n')[0]); } }
 
 const b = await chromium.launch();
-const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA, locale: 'en-US' });
-await patch(ctx);
+const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA });
 const p = await ctx.newPage();
 
-await tryDo('home', async () => {
-  for (let i = 0; i < 4; i++) { try { await open(p, '/'); break; } catch (e) { if (i === 3) throw e; await wait(p, 3000); } }
-  await scrollAll(p, 'home');
-});
-for (const [path, tag] of [
-  ['/features', 'features'], ['/features/tasks', 'feature-tasks'], ['/features/annotate', 'feature-annotate'],
-  ['/features/client-portal', 'feature-portal'], ['/pricing', 'pricing'], ['/about', 'about'],
-  ['/blog', 'blog'], ['/blog/announcing-hello-ivy-2-0', 'blog-post'], ['/docs', 'docs'],
-  ['/docs/create-a-project', 'doc-page'], ['/release-notes', 'release-notes'],
-  ['/project-management', 'project-management'], ['/project-collaboration-software', 'project-collab'],
-  ['/notion-alternative', 'alt-notion'], ['/terms', 'terms'],
-  [APP + '/login', 'app-login'], [SHARE, 'app-share'],
-]) {
-  await tryDo(tag, async () => {
-    for (let i = 0; i < 3; i++) { try { await open(p, path); break; } catch (e) { if (i === 2) throw e; await wait(p, 3000); } }
-    await scrollAll(p, tag);
-  });
+await open(p, '/');
+await grab(p, 'home (promo dialog)');
+await closePromo(p);
+await scrollAll(p, 'home');
+for (const [path, tag] of [['/course/science', 'academy'], ['/course/math', 'academy'], ['/course/my', 'academy'], ['/news', 'news']]) {
+  await open(p, path); await closePromo(p); await scrollAll(p, tag);
 }
-// The public overlays — the nav menu overlay, the FAQ accordion and the
-// share page's Settings menu — are UI toggles: nothing is followed or
-// submitted.
-await tryDo('menu overlay', async () => {
-  await open(p, '/');
-  const ok = await p.evaluate(() => {
-    const el = [...document.querySelectorAll('[data-framer-name="Menu"], [data-framer-name="menu"]')].filter((e) => {
-      const r = e.getBoundingClientRect();
-      if (r.width === 0 || r.top > 200) return false;
-      let anc = e;
-      while (anc && anc !== document.documentElement) { const cs = getComputedStyle(anc); if (cs.display === 'none' || cs.visibility === 'hidden') return false; anc = anc.parentElement; }
-      return true;
-    })[0];
-    if (el) { const r = el.getBoundingClientRect(); el.setAttribute('data-xy', `${r.x + r.width / 2},${r.y + r.height / 2}`); }
-    return Boolean(el);
-  });
-  if (ok) {
-    const [x, y] = (await p.evaluate(() => document.querySelector('[data-xy]').getAttribute('data-xy'))).split(',').map(Number);
-    await p.mouse.click(x, y).catch(() => {});
-    await wait(p, 2000); await grab(p, 'nav (menu overlay)');
-    await p.keyboard.press('Escape');
-  }
+await tryDo('create dialog', async () => { await open(p, '/course/my'); await closePromo(p); await p.locator(M('catalog_createButton')).first().click(); await wait(p, 2000); await grab(p, 'academy (create dialog)'); });
+await open(p, '/course/math/algebra-1?unit=real-numbers-and-sets'); await closePromo(p); await grab(p, 'unit');
+await tryDo('science lesson', async () => {
+  await open(p, '/course/science/how-things-work-1/learn?entry_source=start&from=science', 7000);
+  await grab(p, 'lesson-science (audio dialog)');
+  const nn = p.getByRole('button', { name: 'Not now' }); if (await nn.count()) await nn.click();
+  await wait(p, 1500); await grab(p, 'lesson-science');
+  await p.getByRole('button', { name: 'Settings' }).click(); await wait(p, 1000); await grab(p, 'lesson-science (settings)');
+  await p.keyboard.press('Escape');
+  const pz = p.getByRole('button', { name: 'Pause' }); if (await pz.count()) await pz.click();
+  await p.locator('[aria-label="Ask Tutor"]').first().click(); await wait(p, 1200); await grab(p, 'lesson-science (ask tutor)');
 });
-await tryDo('faq open', async () => {
-  await open(p, '/pricing');
-  const q = await p.evaluate(() => {
-    const el = [...document.querySelectorAll('div,p,h1,h2,h3,button,a')].filter((e) => /^Is Hello Ivy only useful for design teams\??$/i.test((e.innerText || '').trim()))[0];
-    if (el) { el.setAttribute('data-xy', '1'); el.scrollIntoView({ block: 'center', behavior: 'instant' }); }
-    return Boolean(el);
-  });
-  if (q) {
-    await wait(p, 600);
-    const pt = await p.evaluate(() => {
-      const el = document.querySelector('[data-xy]');
-      if (!el) return null;
-      const r = el.getBoundingClientRect();   // read after the scroll — pre-scroll coords are stale
-      return { x: r.x + r.width / 2, y: r.y + r.height / 2 };
-    });
-    if (pt) await p.mouse.click(pt.x, pt.y).catch(() => {});
-    await wait(p, 1200); await grab(p, 'pricing (faq open)');
-  }
+await tryDo('math lesson', async () => {
+  await open(p, '/course/math/algebra-1/fundamentals-of-set-theory/learn?entry_source=start&return_to=course_detail', 8000);
+  const c = p.getByRole('button', { name: 'Continue', exact: true }); if (await c.count()) { await c.click(); await wait(p, 3000); }
+  await grab(p, 'lesson-math');
+  await p.getByRole('button', { name: 'Open lesson chapters' }).click(); await wait(p, 1000); await grab(p, 'lesson-math (chapters)');
 });
-await tryDo('share settings', async () => {
-  await open(p, SHARE);
-  const btn = p.locator('button, a, [role="button"]').filter({ hasText: /^settings$/i }).filter({ visible: true }).first();
-  if (await btn.count()) { await btn.click({ timeout: 5000 }).catch(() => {}); await wait(p, 1600); await grab(p, 'share (settings menu)'); await p.keyboard.press('Escape'); }
+await tryDo('history lesson', async () => {
+  await open(p, '/course/history/crossing-the-ocean-wall/learn?entry_source=start&from=history', 8000);
+  await grab(p, 'lesson-history');
+  await p.locator(M('lesson_chapterMenuButton')).first().click(); await wait(p, 1000); await grab(p, 'lesson-history (chapters)');
 });
-await tryDo('mobile nav', async () => {
-  await p.setViewportSize({ width: 390, height: 844 });
-  await open(p, '/');
-  const ok = await p.evaluate(() => {
-    const el = [...document.querySelectorAll('[data-framer-name="Menu"], [data-framer-name="menu"]')].filter((e) => {
-      const r = e.getBoundingClientRect();
-      if (r.width === 0 || r.top > 200) return false;
-      let anc = e;
-      while (anc && anc !== document.documentElement) { const cs = getComputedStyle(anc); if (cs.display === 'none' || cs.visibility === 'hidden') return false; anc = anc.parentElement; }
-      return true;
-    })[0];
-    if (el) { const r = el.getBoundingClientRect(); el.setAttribute('data-xy', `${r.x + r.width / 2},${r.y + r.height / 2}`); }
-    return Boolean(el);
-  });
-  if (ok) {
-    const [x, y] = (await p.evaluate(() => document.querySelector('[data-xy]').getAttribute('data-xy'))).split(',').map(Number);
-    await p.touchscreen.tap(x, y).catch(() => p.mouse.click(x, y));
-    await wait(p, 1600); await grab(p, 'nav (mobile sheet)');
-  }
-  await p.setViewportSize({ width: 1440, height: 900 });
-});
-// Dark-mode icon variants: same geometries, but any svg that hard-codes a
-// light colour would surface as a new hash.
-await tryDo('dark theme', async () => {
-  await open(p, '/');
-  if (await setTheme(p, 'dark')) { await wait(p, 1200); await scrollAll(p, 'dark'); await setTheme(p, 'light'); }
+await tryDo('atlas', async () => {
+  await open(p, '/atlas'); await closePromo(p); await scrollAll(p, 'atlas');
+  await openStory(p); await grab(p, 'atlas story');
 });
 await b.close();
 

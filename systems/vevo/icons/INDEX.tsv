@@ -1,3 +1,2 @@
 file	role	source
-logo.svg	Wordmark in the header	inline SVG, aria-label Vevo Logo, fill #ffffff, https://www.hq.vevo.com/ 2026-11-19
-menu.svg	Phone menu button, three bars	inline SVG inside header button, paths have no fill attribute
+wordmark.svg	logo	Not captured. Vevo's wordmark is artwork. It stays in the screenshots and is not extracted (docs/RIGHTS.md).

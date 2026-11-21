@@ -1,0 +1,810 @@
+{
+  "capturedAt": "2026-11-20T22:39:30.696Z",
+  "origin": "https://www.sketch.com",
+  "homeTitle": "Sketch · Design, prototype, collaborate and handoff",
+  "desktopMenuButton": {
+    "aria": "Toggle menu",
+    "controls": "main-nav-menu",
+    "expanded": "false",
+    "visible": false
+  },
+  "desktopHovers": [
+    {
+      "label": "Product",
+      "open": true,
+      "height": 52,
+      "display": "flex"
+    },
+    {
+      "label": "Explore",
+      "open": true,
+      "height": 52,
+      "display": "flex"
+    },
+    {
+      "label": "Support",
+      "open": true,
+      "height": 52,
+      "display": "flex"
+    }
+  ],
+  "phoneMenu": {
+    "url": "https://www.sketch.com/",
+    "headerClass": "main-nav main-nav--transparent is-safari is-active",
+    "menuExpanded": "false",
+    "panelVisible": true,
+    "links": [
+      {
+        "text": "Sign In",
+        "href": "/signin/",
+        "visible": true,
+        "action": "main-nav#mobileToggleNav"
+      },
+      {
+        "text": "Design",
+        "href": "/design/",
+        "visible": true,
+        "action": "main-nav#mobileToggleNav"
+      },
+      {
+        "text": "Collaboration",
+        "href": "/collaborate/",
+        "visible": true,
+        "action": "main-nav#mobileToggleNav"
+      },
+      {
+        "text": "Prototyping",
+        "href": "/prototype/",
+        "visible": true,
+        "action": "main-nav#mobileToggleNav"
+      },
+      {
+        "text": "Developer Handoff",
+        "href": "/handoff/",
+        "visible": true,
+        "action": "main-nav#mobileToggleNav"
+      },
+      {
+        "text": "AI",
+        "href": "/ai/",
+        "visible": true,
+        "action": "main-nav#mobileToggleNav"
+      },
+      {
+        "text": "All Features",
+        "href": "/features/",
+        "visible": true,
+        "action": "main-nav#mobileToggleNav"
+      },
+      {
+        "text": "Pricing",
+        "href": "/pricing/",
+        "visible": true,
+        "action": "main-nav#mobileToggleNav"
+      },
+      {
+        "text": "Changelog",
+        "href": "/changelog/",
+        "visible": true,
+        "action": "main-nav#mobileToggleNav"
+      },
+      {
+        "text": "Roadmap",
+        "href": "/roadmap/",
+        "visible": true,
+        "action": "main-nav#mobileToggleNav"
+      },
+      {
+        "text": "Blog",
+        "href": "/blog/",
+        "visible": true,
+        "action": "main-nav#mobileToggleNav"
+      },
+      {
+        "text": "Design Resources",
+        "href": "/design-resources/",
+        "visible": true,
+        "action": "main-nav#mobileToggleNav"
+      },
+      {
+        "text": "Plugins & Integrations",
+        "href": "/plugins/",
+        "visible": true,
+        "action": "main-nav#mobileToggleNav"
+      },
+      {
+        "text": "Help Center",
+        "href": "/support/",
+        "visible": true,
+        "action": "main-nav#mobileToggleNav"
+      },
+      {
+        "text": "Documentation",
+        "href": "/docs/",
+        "visible": true,
+        "action": "main-nav#mobileToggleNav"
+      },
+      {
+        "text": "Request a Feature",
+        "href": "/feature-requests/",
+        "visible": true,
+        "action": "main-nav#mobileToggleNav"
+      },
+      {
+        "text": "Contact Us",
+        "href": "/support/contact/",
+        "visible": true,
+        "action": "main-nav#mobileToggleNav"
+      },
+      {
+        "text": "Community Discord",
+        "href": "https://discord.gg/ascPpfDSSV",
+        "visible": true,
+        "action": "main-nav#mobileToggleNav"
+      },
+      {
+        "text": "Layout overlay",
+        "href": "#",
+        "visible": true,
+        "action": "main-nav#toggleGridLayout"
+      }
+    ]
+  },
+  "phoneSections": [
+    {
+      "text": "phone drawer lists Product, Explore and Support links directly (data-action mobileToggleNav is on the links themselves; clicking one navigates)",
+      "kids": [
+        {
+          "text": "Sign In",
+          "href": "/signin/",
+          "visible": true,
+          "action": "main-nav#mobileToggleNav"
+        },
+        {
+          "text": "Design",
+          "href": "/design/",
+          "visible": true,
+          "action": "main-nav#mobileToggleNav"
+        },
+        {
+          "text": "Collaboration",
+          "href": "/collaborate/",
+          "visible": true,
+          "action": "main-nav#mobileToggleNav"
+        },
+        {
+          "text": "Prototyping",
+          "href": "/prototype/",
+          "visible": true,
+          "action": "main-nav#mobileToggleNav"
+        },
+        {
+          "text": "Developer Handoff",
+          "href": "/handoff/",
+          "visible": true,
+          "action": "main-nav#mobileToggleNav"
+        },
+        {
+          "text": "AI",
+          "href": "/ai/",
+          "visible": true,
+          "action": "main-nav#mobileToggleNav"
+        },
+        {
+          "text": "All Features",
+          "href": "/features/",
+          "visible": true,
+          "action": "main-nav#mobileToggleNav"
+        },
+        {
+          "text": "Pricing",
+          "href": "/pricing/",
+          "visible": true,
+          "action": "main-nav#mobileToggleNav"
+        },
+        {
+          "text": "Changelog",
+          "href": "/changelog/",
+          "visible": true,
+          "action": "main-nav#mobileToggleNav"
+        },
+        {
+          "text": "Roadmap",
+          "href": "/roadmap/",
+          "visible": true,
+          "action": "main-nav#mobileToggleNav"
+        },
+        {
+          "text": "Blog",
+          "href": "/blog/",
+          "visible": true,
+          "action": "main-nav#mobileToggleNav"
+        },
+        {
+          "text": "Design Resources",
+          "href": "/design-resources/",
+          "visible": true,
+          "action": "main-nav#mobileToggleNav"
+        },
+        {
+          "text": "Plugins & Integrations",
+          "href": "/plugins/",
+          "visible": true,
+          "action": "main-nav#mobileToggleNav"
+        },
+        {
+          "text": "Help Center",
+          "href": "/support/",
+          "visible": true,
+          "action": "main-nav#mobileToggleNav"
+        },
+        {
+          "text": "Documentation",
+          "href": "/docs/",
+          "visible": true,
+          "action": "main-nav#mobileToggleNav"
+        },
+        {
+          "text": "Request a Feature",
+          "href": "/feature-requests/",
+          "visible": true,
+          "action": "main-nav#mobileToggleNav"
+        },
+        {
+          "text": "Contact Us",
+          "href": "/support/contact/",
+          "visible": true,
+          "action": "main-nav#mobileToggleNav"
+        },
+        {
+          "text": "Community Discord",
+          "href": "https://discord.gg/ascPpfDSSV",
+          "visible": true,
+          "action": "main-nav#mobileToggleNav"
+        },
+        {
+          "text": "Layout overlay",
+          "href": "#",
+          "visible": true,
+          "action": "main-nav#toggleGridLayout"
+        }
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "action": "/.netlify/functions/marketing-communications",
+      "id": "",
+      "cls": "main-footer__nl__form",
+      "fields": [
+        {
+          "tag": "INPUT",
+          "type": "email",
+          "name": "email",
+          "placeholder": "Email address"
+        },
+        {
+          "tag": "INPUT",
+          "type": "text",
+          "name": "website",
+          "placeholder": ""
+        },
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "name": "gdpr",
+          "placeholder": ""
+        }
+      ],
+      "submit": "Sign up"
+    }
+  ],
+  "promo": {
+    "text": "New in Sketch: Component variants, sections, and more Bring every state, theme, and size of a component together with variants, and organize your canvas with sections. Learn more",
+    "href": "/changelog/ghent/"
+  },
+  "pages": [
+    {
+      "url": "https://developer.sketch.com/",
+      "path": "/",
+      "host": "developer.sketch.com",
+      "text": [
+        "Developer Platform"
+      ],
+      "sources": [
+        "footer"
+      ],
+      "kind": "offsite"
+    },
+    {
+      "url": "https://status.sketch.com/",
+      "path": "/",
+      "host": "status.sketch.com",
+      "text": [
+        "Service Status"
+      ],
+      "sources": [
+        "footer"
+      ],
+      "kind": "offsite"
+    },
+    {
+      "url": "https://www.sketch.com/",
+      "path": "/",
+      "host": "www.sketch.com",
+      "text": [
+        "Home"
+      ],
+      "sources": [
+        "footer"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://mastodon.design/@Sketch",
+      "path": "/@Sketch",
+      "host": "mastodon.design",
+      "text": [],
+      "sources": [
+        "footer"
+      ],
+      "kind": "offsite"
+    },
+    {
+      "url": "https://www.sketch.com/about-us/",
+      "path": "/about-us/",
+      "host": "www.sketch.com",
+      "text": [
+        "About Us"
+      ],
+      "sources": [
+        "footer"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/ai/",
+      "path": "/ai/",
+      "host": "www.sketch.com",
+      "text": [
+        "AIConnect your AI client",
+        "AI"
+      ],
+      "sources": [
+        "header-subnav",
+        "footer",
+        "phone-menu"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://apps.apple.com/app/sketch-view-and-mirror/id1609224699",
+      "path": "/app/sketch-view-and-mirror/id1609224699",
+      "host": "apps.apple.com",
+      "text": [
+        "View & Mirror on iOS"
+      ],
+      "sources": [
+        "footer"
+      ],
+      "kind": "offsite"
+    },
+    {
+      "url": "https://discord.gg/ascPpfDSSV",
+      "path": "/ascPpfDSSV",
+      "host": "discord.gg",
+      "text": [
+        "Community Discord"
+      ],
+      "sources": [
+        "header-subnav",
+        "footer",
+        "phone-menu"
+      ],
+      "kind": "offsite"
+    },
+    {
+      "url": "https://www.sketch.com/beta/",
+      "path": "/beta/",
+      "host": "www.sketch.com",
+      "text": [
+        "Beta"
+      ],
+      "sources": [
+        "footer"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/blog/",
+      "path": "/blog/",
+      "host": "www.sketch.com",
+      "text": [
+        "Blog"
+      ],
+      "sources": [
+        "header-subnav",
+        "footer",
+        "phone-menu"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.youtube.com/c/SketchDesign/",
+      "path": "/c/SketchDesign/",
+      "host": "www.youtube.com",
+      "text": [],
+      "sources": [
+        "footer"
+      ],
+      "kind": "offsite"
+    },
+    {
+      "url": "https://www.sketch.com/careers/",
+      "path": "/careers/",
+      "host": "www.sketch.com",
+      "text": [
+        "Careers"
+      ],
+      "sources": [
+        "footer"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/changelog/",
+      "path": "/changelog/",
+      "host": "www.sketch.com",
+      "text": [
+        "Changelog"
+      ],
+      "sources": [
+        "header-subnav",
+        "footer",
+        "phone-menu"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/changelog/ghent/",
+      "path": "/changelog/ghent/",
+      "host": "www.sketch.com",
+      "text": [
+        "New Component variants, sections, and more 17 Nov",
+        "New in Sketch promo"
+      ],
+      "sources": [
+        "header-subnav",
+        "promo-banner"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/collaborate/",
+      "path": "/collaborate/",
+      "host": "www.sketch.com",
+      "text": [
+        "CollaborationWork better, together",
+        "Collaboration"
+      ],
+      "sources": [
+        "header-subnav",
+        "footer",
+        "phone-menu"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/design-resources/",
+      "path": "/design-resources/",
+      "host": "www.sketch.com",
+      "text": [
+        "Design Resources"
+      ],
+      "sources": [
+        "header-subnav",
+        "footer",
+        "phone-menu"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/design/",
+      "path": "/design/",
+      "host": "www.sketch.com",
+      "text": [
+        "DesignCreate with precision",
+        "Design"
+      ],
+      "sources": [
+        "header-subnav",
+        "footer",
+        "phone-menu"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/docs/",
+      "path": "/docs/",
+      "host": "www.sketch.com",
+      "text": [
+        "Documentation"
+      ],
+      "sources": [
+        "header-subnav",
+        "footer",
+        "phone-menu"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/downloads/mac/",
+      "path": "/downloads/mac/",
+      "host": "www.sketch.com",
+      "text": [
+        "Get started"
+      ],
+      "sources": [
+        "header-subnav",
+        "home-page-nav"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/education/",
+      "path": "/education/",
+      "host": "www.sketch.com",
+      "text": [
+        "Free for Education"
+      ],
+      "sources": [
+        "footer"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/feature-requests/",
+      "path": "/feature-requests/",
+      "host": "www.sketch.com",
+      "text": [
+        "Request a Feature"
+      ],
+      "sources": [
+        "header-subnav",
+        "footer",
+        "phone-menu"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/features/",
+      "path": "/features/",
+      "host": "www.sketch.com",
+      "text": [
+        "All FeaturesEverything in one place",
+        "All Features"
+      ],
+      "sources": [
+        "header-subnav",
+        "footer",
+        "phone-menu"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/handoff/",
+      "path": "/handoff/",
+      "host": "www.sketch.com",
+      "text": [
+        "Developer HandoffFrom design to code",
+        "Developer Handoff"
+      ],
+      "sources": [
+        "header-subnav",
+        "footer",
+        "phone-menu"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/legal/",
+      "path": "/legal/",
+      "host": "www.sketch.com",
+      "text": [
+        "Terms & Policies"
+      ],
+      "sources": [
+        "footer"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/license/",
+      "path": "/license/",
+      "host": "www.sketch.com",
+      "text": [
+        "Manage License"
+      ],
+      "sources": [
+        "footer"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.instagram.com/madewithsketch/",
+      "path": "/madewithsketch/",
+      "host": "www.instagram.com",
+      "text": [],
+      "sources": [
+        "footer"
+      ],
+      "kind": "offsite"
+    },
+    {
+      "url": "https://www.sketch.com/partners/",
+      "path": "/partners/",
+      "host": "www.sketch.com",
+      "text": [
+        "Partners"
+      ],
+      "sources": [
+        "footer"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/plugins/",
+      "path": "/plugins/",
+      "host": "www.sketch.com",
+      "text": [
+        "Plugins & Integrations"
+      ],
+      "sources": [
+        "header-subnav",
+        "footer",
+        "phone-menu"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/pricing/",
+      "path": "/pricing/",
+      "host": "www.sketch.com",
+      "text": [
+        "Pricing"
+      ],
+      "sources": [
+        "header",
+        "footer",
+        "phone-menu"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/privacy/",
+      "path": "/privacy/",
+      "host": "www.sketch.com",
+      "text": [
+        "Privacy Policy"
+      ],
+      "sources": [
+        "footer"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://bsky.app/profile/sketch.com",
+      "path": "/profile/sketch.com",
+      "host": "bsky.app",
+      "text": [],
+      "sources": [
+        "footer"
+      ],
+      "kind": "offsite"
+    },
+    {
+      "url": "https://www.sketch.com/prototype/",
+      "path": "/prototype/",
+      "host": "www.sketch.com",
+      "text": [
+        "PrototypingBring ideas to life",
+        "Prototyping"
+      ],
+      "sources": [
+        "header-subnav",
+        "footer",
+        "phone-menu"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/roadmap/",
+      "path": "/roadmap/",
+      "host": "www.sketch.com",
+      "text": [
+        "Roadmap"
+      ],
+      "sources": [
+        "header-subnav",
+        "footer",
+        "phone-menu"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/security/",
+      "path": "/security/",
+      "host": "www.sketch.com",
+      "text": [
+        "Security"
+      ],
+      "sources": [
+        "footer"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/signin/",
+      "path": "/signin/",
+      "host": "www.sketch.com",
+      "text": [
+        "Sign In"
+      ],
+      "sources": [
+        "header",
+        "phone-menu"
+      ],
+      "kind": "auth-wall"
+    },
+    {
+      "url": "https://x.com/sketch",
+      "path": "/sketch",
+      "host": "x.com",
+      "text": [],
+      "sources": [
+        "footer"
+      ],
+      "kind": "offsite"
+    },
+    {
+      "url": "https://www.sketch.com/support/",
+      "path": "/support/",
+      "host": "www.sketch.com",
+      "text": [
+        "Help Center"
+      ],
+      "sources": [
+        "header-subnav",
+        "footer",
+        "phone-menu"
+      ],
+      "kind": "page"
+    },
+    {
+      "url": "https://www.sketch.com/support/contact/",
+      "path": "/support/contact/",
+      "host": "www.sketch.com",
+      "text": [
+        "Contact Us"
+      ],
+      "sources": [
+        "header-subnav",
+        "footer",
+        "phone-menu"
+      ],
+      "kind": "form-page"
+    },
+    {
+      "url": "https://www.sketch.com/vs/figma/",
+      "path": "/vs/figma/",
+      "host": "www.sketch.com",
+      "text": [
+        "Figma to Sketch"
+      ],
+      "sources": [
+        "footer"
+      ],
+      "kind": "page"
+    }
+  ]
+}

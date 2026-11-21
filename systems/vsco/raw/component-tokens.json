@@ -1,0 +1,94 @@
+{
+  "_meta": {
+    "captured": "2026-11-21",
+    "url": "https://www.vsco.co/",
+    "theme": "light marketing page on a #111 body; no dark toggle"
+  },
+  "core": {
+    "color": {
+      "black": { "type": "color", "value": "#000000", "source": "Measured: computed color of nav-menu default and background of button-primary default (raw/components-computed.json); stylesheet --black is the keyword black" },
+      "white": { "type": "color", "value": "#ffffff", "source": "Measured: computed color of button-primary default and background of the marketing page (home-dark-default.png region; computed rgb(255,255,255) on button text)" },
+      "blackish": { "type": "color", "value": "#111111", "source": "Measured: stylesheet custom property --black-ish on https://www.vsco.co/ (raw/css-vars.json) and computed body backgroundColor rgb(17, 17, 17)" },
+      "darkGrey": { "type": "color", "value": "#1e1e1e", "source": "Measured: stylesheet custom property --dark-grey (raw/css-vars.json)" },
+      "grey": { "type": "color", "value": "#737373", "source": "Measured: stylesheet custom property --v1-dark-grey (raw/css-vars.json)" },
+      "lightGrey": { "type": "color", "value": "#f2f2f2", "source": "Measured: stylesheet custom property --light-grey (raw/css-vars.json)" },
+      "lightGreyHover": { "type": "color", "value": "#aaaaaa", "source": "Measured: stylesheet custom property --light-grey-hover (raw/css-vars.json)" },
+      "gold": { "type": "color", "value": "#ffbc3c", "source": "Measured: stylesheet --v1-gold and computed backgroundColor of button-gold default rgb(255, 188, 60)" },
+      "goldHover": { "type": "color", "value": "#ffc24e", "source": "Measured: computed backgroundColor of button-gold hover, CDP forcePseudoState hover (raw/components-computed.json)" },
+      "goldOnWhite": { "type": "color", "value": "#b2994f", "source": "Measured: stylesheet custom property --gold-on-white (raw/css-vars.json). Not observed as a painted control on the captured pages." },
+      "pink": { "type": "color", "value": "#ff0877", "source": "Measured: computed backgroundColor of button-banner default rgb(255, 8, 119). Not a custom property." },
+      "pinkHover": { "type": "color", "value": "#ff81b9", "source": "Measured: computed backgroundColor of button-banner hover, CDP forcePseudoState hover" },
+      "green": { "type": "color", "value": "#4d7d3f", "source": "Measured: stylesheet custom property --surface-green (raw/css-vars.json). Not observed painted on the captured pages." },
+      "red": { "type": "color", "value": "#f73100", "source": "Measured: stylesheet custom property --100-red-l (raw/css-vars.json). Not observed painted on the captured pages." },
+      "disabled": { "type": "color", "value": "#757575", "source": "Measured: computed backgroundColor of the disabled CONTINUE button on https://vsco.co/user/login when that URL served the email step (rgb(117, 117, 117))" }
+    },
+    "font": {
+      "family": { "type": "fontFamily", "value": "\"VSCO Gothic\", sans-serif", "source": "Measured: computed fontFamily of nav-menu, hero-heading, and body on https://www.vsco.co/" }
+    },
+    "typography": {
+      "display": { "type": "typography", "value": { "fontFamily": "{font.family}", "fontSize": "100px", "fontWeight": 500, "lineHeight": "90px" }, "source": "Measured: hero-heading computed fontSize 100px, fontWeight 500, height 180px over two lines so line-height 90px" },
+      "nav": { "type": "typography", "value": { "fontFamily": "{font.family}", "fontSize": "15px", "fontWeight": 500, "lineHeight": "22.5px" }, "source": "Measured: nav-menu default fontSize 15px, fontWeight 500. Line height derived as 1.5 of the size; the element height is 38.5px including 8px padding." },
+      "tab": { "type": "typography", "value": { "fontFamily": "{font.family}", "fontSize": "11px", "fontWeight": 600, "lineHeight": "14px" }, "source": "Measured: tab default fontSize 11px, fontWeight 600" },
+      "button": { "type": "typography", "value": { "fontFamily": "{font.family}", "fontSize": "13px", "fontWeight": 600, "lineHeight": "16px" }, "source": "Measured: button-gold default fontSize 13px, fontWeight 600" },
+      "buttonSmall": { "type": "typography", "value": { "fontFamily": "{font.family}", "fontSize": "13px", "fontWeight": 500, "lineHeight": "16px" }, "source": "Measured: button-primary default fontSize 13px, fontWeight 500" },
+      "body": { "type": "typography", "value": { "fontFamily": "{font.family}", "fontSize": "16px", "fontWeight": 400, "lineHeight": "24px" }, "source": "Measured: menu-link default fontSize 16px, fontWeight 400. Line height not captured as a separate computed lineHeight; 24px is derived as 1.5." }
+    },
+    "radius": {
+      "none": { "type": "dimension", "value": "0px", "source": "Measured: nav-menu and hero-heading borderTopLeftRadius 0px" },
+      "badge": { "type": "dimension", "value": "4px", "source": "Measured: badge default borderTopLeftRadius 4px" },
+      "pill": { "type": "dimension", "value": "999px", "source": "Measured: button-gold, button-primary, button-banner borderTopLeftRadius 999px" }
+    },
+    "space": {
+      "2": { "type": "dimension", "value": "2px", "source": "Measured: button-gold paddingTop 2px" },
+      "8": { "type": "dimension", "value": "8px", "source": "Measured: nav-menu paddingTop 8px" },
+      "16": { "type": "dimension", "value": "16px", "source": "Measured: button-primary paddingRight 16px (is-small)" },
+      "28": { "type": "dimension", "value": "28px", "source": "Measured: button-gold paddingRight 28px" }
+    },
+    "size": {
+      "buttonSmall": { "type": "dimension", "value": "32px", "source": "Measured: button-primary height 32px" },
+      "buttonBanner": { "type": "dimension", "value": "34px", "source": "Measured: button-banner height 34px" },
+      "button": { "type": "dimension", "value": "40px", "source": "Measured: button-gold height 40px and disabled CONTINUE height 40px" },
+      "banner": { "type": "dimension", "value": "50px", "source": "Measured: inline custom property --banner-h 50px on the home page html element" },
+      "iconButton": { "type": "dimension", "value": "24px", "source": "Measured: icon-button (phone menu) height 24px" }
+    },
+    "motion": {
+      "menu": { "type": "duration", "value": "450ms", "source": "Measured: menu-link transitionDuration 0.45s, derived to ms" },
+      "button": { "type": "duration", "value": "850ms", "source": "Measured: plan-cta transitionDuration 0.85s, derived to ms" }
+    },
+    "layout": {
+      "desktop": { "type": "dimension", "value": "1440px", "source": "Measured: capture viewport innerWidth 1440 (screenshots/*.png.capture.json)" },
+      "phone": { "type": "dimension", "value": "390px", "source": "Measured: capture viewport innerWidth 390" }
+    }
+  },
+  "light": {
+    "background": {
+      "page": { "type": "color", "value": "{color.white}", "source": "Measured: marketing sections paint white; home screenshot and button text white on black. Body element background is blackish and shows in the dark band." },
+      "inverse": { "type": "color", "value": "{color.blackish}", "source": "Measured: body backgroundColor rgb(17, 17, 17) and the home 'Your home for photography' band" },
+      "surface": { "type": "color", "value": "{color.white}", "source": "Measured: products menu panel paints white (home-dark-products-menu.png)" },
+      "banner": { "type": "color", "value": "{color.pink}", "source": "Measured: top promo bar shares the banner button pink; the bar fill was not read as its own computed style. The button fill is the evidence." }
+    },
+    "text": {
+      "primary": { "type": "color", "value": "{color.black}", "source": "Measured: nav-menu and hero-heading color rgb(0, 0, 0)" },
+      "onAccent": { "type": "color", "value": "{color.white}", "source": "Measured: button-primary and button-banner color rgb(255, 255, 255)" },
+      "onGold": { "type": "color", "value": "{color.black}", "source": "Measured: button-gold color rgb(0, 0, 0)" },
+      "inverse": { "type": "color", "value": "{color.white}", "source": "Measured: tab default color rgb(255, 255, 255) on the dark band" },
+      "muted": { "type": "color", "value": "{color.grey}", "source": "Measured token --v1-dark-grey. Not confirmed as the computed color of a muted label in this capture." }
+    },
+    "border": {
+      "default": { "type": "color", "value": "{color.black}", "source": "Measured: nav-menu borderTopColor rgb(0, 0, 0) at width 0. Outline buttons paint a hairline; that width was not captured on a visible outline button." }
+    },
+    "accent": {
+      "gold": { "type": "color", "value": "{color.gold}", "source": "Measured: button-gold default" },
+      "goldHover": { "type": "color", "value": "{color.goldHover}", "source": "Measured: button-gold hover" },
+      "pink": { "type": "color", "value": "{color.pink}", "source": "Measured: button-banner default" },
+      "pinkHover": { "type": "color", "value": "{color.pinkHover}", "source": "Measured: button-banner hover" }
+    },
+    "action": {
+      "primary": { "type": "color", "value": "{color.black}", "source": "Measured: button-primary backgroundColor rgb(0, 0, 0)" },
+      "disabled": { "type": "color", "value": "{color.disabled}", "source": "Measured: disabled CONTINUE on the login URL email step" }
+    },
+    "focus": {
+      "ring": { "type": "color", "value": "{color.black}", "source": "Measured: nav-menu focus-visible outline 1px auto. Colour of the auto ring was not a custom colour." }
+    }
+  }
+}

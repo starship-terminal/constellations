@@ -1,123 +1,107 @@
 #!/usr/bin/env python3
-"""Render style-guide.html from tokens.json + tools/style-guide.template.html.
-
-Every colour, radius, shadow and type style on the page is a CSS custom property generated from
-tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
-`:root` and the `dark` set on `[data-mode="dark"]`, which is how Claude itself switches: the guide's
-theme toggle sets data-mode on <html>. Aliases like {text.primary} become var(--text-primary).
-
-Placeholders in the template:
-  /*CORE*/ /*LIGHT*/ /*DARK*/     CSS custom property blocks
-  /*TOKENS*/null                  a compact copy of the token tree for the JS tables
-  <!--icon:NAME[:SIZE]-->         an SVG from icons/NAME.svg, inlined
-
-Deterministic: same inputs, byte-identical output. Adapted from the Manus kit's builder.
-"""
-import json, pathlib, re
+"""Write style-guide.html from tokens.json. Light only. No external fonts."""
+import json
+import pathlib
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 T = json.loads((HERE / "tokens.json").read_text())
 
 
 def flat(node, prefix=""):
+    out = []
     for k, v in node.items():
         if k.startswith("$"):
             continue
         if isinstance(v, dict) and "$value" in v:
-            yield prefix + k, v
+            out.append((prefix + k, v))
         elif isinstance(v, dict):
-            yield from flat(v, prefix + k + "-")
+            out.extend(flat(v, prefix + k + "."))
+    return out
 
 
-def cssname(path):
-    return "--" + re.sub(r"[^a-zA-Z0-9-]", "-", path.replace(".", "-"))
+def css_name(path):
+    return "--" + path.replace(".", "-")
 
 
-def alias(v):
-    return re.sub(r"\{([^{}]+)\}", lambda m: f"var({cssname(m.group(1))})", str(v))
+def css_val(token):
+    v = token["$value"]
+    if isinstance(v, dict):
+        return f'{v.get("fontWeight", "400")} {v.get("fontSize", "16px")}/{v.get("lineHeight", "24px")} norms, sans-serif'
+    return str(v)
 
 
-def css_val(name, t):
-    v, ty = t["$value"], t["$type"]
-    if ty == "cubicBezier":
-        return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
-    if ty == "shadow":
-        if isinstance(v, str):
-            return alias(v)
-        return ", ".join(("inset " if s.get("inset") else "") + f'{s["offsetX"]} {s["offsetY"]} {s["blur"]} {s["spread"]} {alias(s["color"])}' for s in v)
-    if ty == "typography":
-        return f'{alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])}'
-    if ty == "gradient":
-        angle = t["$extensions"].get("angle", "180deg")
-        return f"linear-gradient({angle}, " + ", ".join(f'{alias(s["color"])} {round(s["position"] * 100, 2)}%' for s in v) + ")"
-    return alias(v)
+lines = []
+for set_name in ("core", "light"):
+    for path, token in flat(T[set_name]):
+        lines.append(f"  {css_name(path)}: {css_val(token)};")
 
+swatches = []
+for path, token in flat(T["light"]):
+    if token["$type"] != "color":
+        continue
+    swatches.append(
+        f'<div class="sw"><i style="background:{token["$value"]}"></i><div><code>{path}</code><span>{token["$value"]}</span></div></div>'
+    )
 
-# A light-only product has no dark set; every set that is missing renders as empty.
-SETS = [s for s in ("core", "light", "dark") if s in T]
-THEMES = [s for s in SETS if s != "core"]
-
-
-def block(setname):
-    """A set's custom properties; a set the product lacks renders as nothing."""
-    if setname not in T:
-        return ""
-    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]))
-
-
-# a core name and a themed name must not land on the same custom property
-_core = {cssname(n) for n, _ in flat(T["core"])}
-for _set in THEMES:
-    _clash = _core & {cssname(n) for n, _ in flat(T[_set])}
-    if _clash:
-        raise SystemExit(f"core and {_set} share custom properties: {sorted(_clash)[:5]}")
-
-
-def slim(node):
-    if isinstance(node, dict) and "$value" in node:
-        out = {"v": node["$value"], "t": node["$type"], "s": node["$extensions"]["source"]}
-        for k in ("compact", "darkVariationAxis"):
-            if k in node["$extensions"]:
-                out[k] = node["$extensions"][k]
-        if node.get("$description"):
-            out["d"] = node["$description"]
-        return out
-    return {k: slim(v) for k, v in node.items() if not k.startswith("$")}
-
-
-# Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" or "<!--"
-# from ending the script early. JSON.parse and a JS literal read it back unchanged.
-data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "dark")},
-                  ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
-
-_uid = [0]
-ICON_SRC = {}
-
-
-def clean_svg(svg, size):
-    svg = re.sub(r"<\?xml[^>]*>\s*", "", svg).strip()
-    svg = re.sub(r"\s+", " ", svg).replace("> <", "><")
-    for i in sorted(set(re.findall(r'id="([^"]+)"', svg))):
-        _uid[0] += 1
-        svg = svg.replace(f'id="{i}"', f'id="i{_uid[0]}"').replace(f"url(#{i})", f"url(#i{_uid[0]})")
-    svg = re.sub(r"<svg\b", '<svg aria-hidden="true" focusable="false" class="ic"', svg, count=1)
-    if size:
-        svg = re.sub(r'\swidth="[^"]*"', "", svg, count=1)
-        svg = re.sub(r'\sheight="[^"]*"', "", svg, count=1)
-        svg = svg.replace("<svg ", f'<svg width="{size}" height="{size}" ', 1)
-    return svg
-
-
-def icon(m):
-    name, size = m.group(1), m.group(2)
-    src = ICON_SRC.setdefault(name, (HERE / "icons" / f"{name}.svg").read_text())
-    return clean_svg(src, size)
-
-
-tpl = (HERE / "tools" / "style-guide.template.html").read_text()
-html = (tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*DARK*/", block("dark"))
-        .replace("/*TOKENS*/null", data))
-html = re.sub(r"<!--icon:([a-z0-9-]+)(?::(\d+))?-->", icon, html)
+html = f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClassPass style guide</title>
+<style>
+:root {{
+{chr(10).join(lines)}
+  color-scheme: light;
+}}
+* {{ box-sizing: border-box; }}
+body {{ margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 16px/24px norms, ui-sans-serif, system-ui, sans-serif; }}
+main {{ max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }}
+h1 {{ font: 400 48px/56px norms, sans-serif; margin: 0 0 8px; }}
+h2 {{ font: 500 20px/28px norms, sans-serif; margin: 40px 0 12px; }}
+p {{ color: #333; max-width: 68ch; }}
+.swatches {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }}
+.sw {{ display: grid; grid-template-columns: 48px 1fr; gap: 10px; align-items: center; }}
+.sw i {{ width: 48px; height: 48px; border-radius: 8px; box-shadow: inset 0 0 0 1px #e7e7e7; display: block; }}
+.sw code {{ display: block; font-size: 12px; }}
+.sw span {{ font-size: 12px; color: #555; }}
+.row {{ display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin: 12px 0; }}
+.btn {{ display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-primary-height); padding: 0 20px; border-radius: var(--component-button-primary-radius); background: var(--component-button-primary-background); color: var(--component-button-primary-text); border: 0; font: 500 16px/24px norms, sans-serif; }}
+.sso {{ display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 20px; border-radius: var(--component-button-sso-radius); background: var(--component-button-sso-background); color: var(--component-button-sso-text); border: 1px solid #d6d6d6; font: 500 16px/24px norms, sans-serif; }}
+.field {{ height: var(--component-field-height); border-radius: var(--component-field-radius); border: var(--component-field-border-width) solid var(--border-default); padding: 0 12px; font: 400 18px/24px norms, sans-serif; width: 280px; }}
+.field:focus {{ outline: none; border-color: var(--border-focus); }}
+.chip {{ height: 32px; padding: 0 12px; border-radius: var(--radius-chip); border: 1px solid #d6d6d6; background: #fff; color: var(--component-chip-text); font: 500 14px/20px norms, sans-serif; }}
+.header {{ height: var(--size-header); display: flex; align-items: center; gap: 16px; background: var(--component-header-background); box-shadow: var(--component-header-shadow); padding: 0 16px; margin: 16px -24px; }}
+.nav {{ font: 500 14px/20px norms, sans-serif; }}
+.display {{ font: var(--typography-display); }}
+note {{ display: block; font-size: 13px; color: #555; }}
+</style>
+</head>
+<body>
+<main>
+<h1>ClassPass</h1>
+<p>Public site tokens, light only. TT Norms is not loaded here, so the page falls back to the system sans. Values come from tokens.json.</p>
+<h2>Colour</h2>
+<div class="swatches">
+{''.join(swatches)}
+</div>
+<h2>Type</h2>
+<p class="display">Choose how much to spend</p>
+<p class="nav">Search, Plans, How it works</p>
+<h2>Controls</h2>
+<div class="header"><strong>classpass</strong><span class="nav">Search</span><span class="nav">Plans</span><span class="btn" style="height:36px;margin-left:auto">Get 14 days free</span></div>
+<div class="row">
+  <button class="btn">Log in</button>
+  <button class="sso">Sign in with Apple</button>
+  <button class="chip">Fitness</button>
+</div>
+<div class="row">
+  <input class="field" placeholder="Email address" aria-label="Email address">
+</div>
+<p>Header shadow, pill radius and the blue accent are the measured values. Hover, pressed, disabled and dark are not in this guide because they were not captured.</p>
+</main>
+</body>
+</html>
+"""
 (HERE / "style-guide.html").write_text(html)
-print("style-guide.html:", len(html.encode()), "bytes;",
-      " + ".join(f"{len(list(flat(T[s])))} {s}" for s in SETS), "tokens;", len(ICON_SRC), "icons")
+print("style-guide.html", len(html))

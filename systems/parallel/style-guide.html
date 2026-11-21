@@ -5,161 +5,134 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Parallel style guide</title>
 <style>
-  :root {
-    color-scheme: light;
-    --page: #fbfaf9;
-    --surface: #ffffff;
-    --text: #050505;
-    --muted: #737373;
-    --accent: #1f1f1f;
-    --on-accent: #ffffff;
-    --border: #e6e6e6;
-    --field: #f4f3f1;
-    --orange: #fe8a11;
-    --yellow: #eafa35;
-    --pink: #f54cb2;
-    --purple: #daccff;
-    --green: #1fba4a;
-    --error: #ef0707;
-    --focus: #0f0f0f;
-    --trial: linear-gradient(#ef6e07, #ffb77d);
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--page);
-    color: var(--text);
-    font: 400 16px/24px Inter, system-ui, sans-serif;
-  }
-  .wrap { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
-  header { display: flex; justify-content: space-between; gap: 16px; align-items: end; }
-  h1 { font-size: 40px; line-height: 44px; font-weight: 500; letter-spacing: -0.8px; margin: 0; }
-  h2 { font-size: 24px; line-height: 28px; font-weight: 500; margin: 36px 0 12px; }
-  p { color: var(--muted); max-width: 68ch; }
-  .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-  .swatch { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
-  .swatch i { display: block; height: 64px; }
-  .swatch span { display: block; padding: 8px 10px; font-size: 12px; }
-  .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-  button, .chip, .field {
-    font: 500 14px/17px Inter, system-ui, sans-serif;
-  }
-  .primary {
-    background: var(--accent);
-    color: var(--on-accent);
-    border: 0;
-    border-radius: 12px;
-    height: 43px;
-    padding: 12px 20px;
-  }
-  .trial {
-    background: var(--trial);
-    color: #ffffff;
-    border: 0;
-    border-radius: 12px;
-    height: 48px;
-    padding: 12px 20px;
-  }
-  .ghost {
-    background: #ffffff;
-    color: #292929;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    height: 43px;
-    padding: 12px 20px;
-  }
-  .chip {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 9999px;
-    padding: 10px 16px;
-  }
-  .hero-bar { background: #2a2a2a; border-radius: 16px; padding: 16px; }
-  .field {
-    display: block;
-    width: 280px;
-    height: 41px;
-    border-radius: 12px;
-    border: 1px solid var(--field);
-    background: var(--field);
-    color: #0f0f0f;
-    padding: 10px 12px;
-  }
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 32px;
-    padding: 32px 24px;
-    max-width: 420px;
-  }
-  .err { color: var(--error); font-size: 14px; }
-  table { border-collapse: collapse; width: 100%; }
-  td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); font-size: 14px; }
+:root {
+  --core-color-black: #0f0f0f;
+  --core-color-white: #ffffff;
+  --core-color-off-white: #fffefb;
+  --core-color-light-gray: #fafafa;
+  --core-color-gray: rgba(204, 204, 204, 0.09);
+  --core-color-green: #1fba4a;
+  --core-color-orange: #fe8a11;
+  --core-color-pink: #f54cb2;
+  --core-color-purple: #daccff;
+  --core-color-red: #ff2222;
+  --core-color-red-200: #ff3e3e;
+  --core-color-red-400: #e95656;
+  --core-color-yellow: #eafa35;
+  --core-color-scrollbar-thumb: #d3d3d3;
+  --core-color-app-background: #fbfaf9;
+  --core-color-input-hover-border: #000000;
+  --core-color-input-focus-border: rgba(128, 188, 254, 0.6);
+  --core-font-family-primary: "Work Sans",sans-serif;
+  --core-font-family-secondary: "Termina",sans-serif;
+  --core-font-family-tertiary: "Cousine",sans-serif;
+  --core-font-family-display: "Advercase Demo", __rulesFont_d96771, __rulesFont_Fallback_d96771, system-ui, arial, serif;
+  --core-font-size-display: 100.8px;
+  --core-font-size-body: 14px;
+  --core-font-weight-display: 400;
+  --core-font-line-height-display: 114.912px;
+  --core-font-letter-spacing-display: -3.024px;
+  --core-space-grid-1: 24px;
+  --core-space-grid-2: 48px;
+  --core-space-column-1: 70px;
+  --core-space-column-2: 164px;
+  --core-space-column-3: 258px;
+  --core-space-column-4: 352px;
+  --core-space-column-5: 446px;
+  --core-space-column-6: 540px;
+  --core-space-column-7: 634px;
+  --core-space-column-8: 728px;
+  --core-space-column-9: 822px;
+  --core-space-column-10: 916px;
+  --core-space-column-11: 1010px;
+  --core-space-column-12: 1104px;
+  --core-size-scrollbar: 8px;
+  --core-size-scrollbar-thumb-border: 2px;
+  --core-size-scrollbar-track-margin: 4px;
+  --core-shadow-primary: 8px 8px 0px 0px #0f0f0f;
+  --core-shadow-secondary: 6px 6px 0px 0px #0f0f0f;
+  --surface-page: #fbfaf9;
+  --surface-paper: var(--core-color-off-white);
+  --surface-white: var(--core-color-white);
+  --surface-app: var(--core-color-app-background);
+  --text-primary: #000000;
+  --text-on-hero: #ffffff;
+  --text-ink: var(--core-color-black);
+  --border-strong: var(--core-color-black);
+  --border-input-hover: var(--core-color-input-hover-border);
+  --border-focus: var(--core-color-input-focus-border);
+  --accent-yellow: var(--core-color-yellow);
+  --accent-pink: var(--core-color-pink);
+  --accent-red: var(--core-color-red);
+  --accent-green: var(--core-color-green);
+  color-scheme: light;
+  --sg-sans: var(--core-font-family-primary), ui-sans-serif, system-ui, sans-serif;
+  --sg-display: "Iowan Old Style", Palatino, Georgia, serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--surface-page); color: var(--text-primary); font: 400 15px/1.45 var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font-family: var(--sg-display); font-weight: 400; font-size: 48px; letter-spacing: -0.03em; margin: 0 0 8px; }
+h2 { font-family: var(--sg-display); font-weight: 400; font-size: 28px; margin: 40px 0 12px; }
+p { max-width: 68ch; }
+.pal { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; }
+.dot { width: 44px; height: 44px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.12); }
+code { font-size: 12px; }
+.btn { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 999px; background: var(--text-ink); color: var(--surface-white); text-decoration: none; }
+.chip { display: inline-flex; height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.35); color: white; background: rgba(255,255,255,.1); }
+.card { background: var(--surface-white); border-radius: 16px; padding: 16px; box-shadow: var(--core-shadow-tertiary, 2px 6px 10px rgba(0,0,0,.11)); }
+.hero { background: #111; color: var(--text-on-hero); border-radius: 24px; padding: 48px 32px; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <div>
-      <h1>Parallel</h1>
-      <p>Public signed-out surfaces on useparallel.com, measured 2026-11-19. One theme.</p>
-    </div>
-  </header>
-
-  <h2>Colour</h2>
-  <div class="swatches">
-    <div class="swatch"><i style="background:#fbfaf9"></i><span>page #fbfaf9</span></div>
-    <div class="swatch"><i style="background:#ffffff"></i><span>surface #ffffff</span></div>
-    <div class="swatch"><i style="background:#050505"></i><span>text #050505</span></div>
-    <div class="swatch"><i style="background:#737373"></i><span>muted #737373</span></div>
-    <div class="swatch"><i style="background:#1f1f1f"></i><span>accent #1f1f1f</span></div>
-    <div class="swatch"><i style="background:#e6e6e6"></i><span>border #e6e6e6</span></div>
-    <div class="swatch"><i style="background:#f4f3f1"></i><span>field #f4f3f1</span></div>
-    <div class="swatch"><i style="background:#fe8a11"></i><span>orange #fe8a11</span></div>
-    <div class="swatch"><i style="background:#eafa35"></i><span>yellow #eafa35</span></div>
-    <div class="swatch"><i style="background:#f54cb2"></i><span>pink #f54cb2</span></div>
-    <div class="swatch"><i style="background:#daccff"></i><span>purple #daccff</span></div>
-    <div class="swatch"><i style="background:#ef0707"></i><span>error #ef0707</span></div>
-  </div>
-
-  <h2>Controls</h2>
-  <div class="card">
-    <p style="color:#050505b8;margin-top:0">Sign in to your Parallel account</p>
-    <label style="font-size:12px;color:#737373">Email</label>
-    <input class="field" placeholder="name@example.com" style="margin:6px 0 12px">
-    <div class="row">
-      <button class="primary" type="button">Sign in</button>
-      <button class="ghost" type="button">Sign in with LinkedIn</button>
-    </div>
-    <p class="err">Password must be at least 8 characters long</p>
-  </div>
-  <div class="row" style="margin-top:16px">
-    <button class="trial" type="button">Start free trial</button>
-  </div>
-  <div class="hero-bar" style="margin-top:16px">
-    <div class="row">
-      <span class="chip">Full time</span>
-      <span class="chip">Contract</span>
-      <span class="chip">AI training</span>
-      <span class="chip">Remote</span>
-    </div>
-  </div>
-
-  <h2>Type</h2>
-  <p style="font-family:Georgia,serif;font-size:48px;line-height:52px;letter-spacing:-1.4px;color:#050505;margin:0">Find your life's work</p>
-  <p>Display is Advercase Demo. UI is Inter. The price figure uses the Rules face loaded as a Next font. None of those files are in this package.</p>
-
-  <h2>Radius and size</h2>
-  <table>
-    <tr><th>Role</th><th>Value</th></tr>
-    <tr><td>Control radius</td><td>12px</td></tr>
-    <tr><td>Card radius</td><td>32px</td></tr>
-    <tr><td>Chip radius</td><td>9999px</td></tr>
-    <tr><td>Input height</td><td>41px</td></tr>
-    <tr><td>Primary button height</td><td>43px</td></tr>
-    <tr><td>Colour transition</td><td>150ms, cubic-bezier(0.4, 0, 0.2, 1)</td></tr>
-  </table>
+<h1>Parallel</h1>
+<p>Public tokens read from useparallel.com on 2026-11-21. One light theme. Values come from tokens.json, not from the screenshots.</p>
+<h2>Colour</h2>
+<div class="pal">
+<div class="sw"><i class="dot" style="background:--core-color-black"></i><div><code>black</code><br><code>#0f0f0f</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-white"></i><div><code>white</code><br><code>#ffffff</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-off-white"></i><div><code>off-white</code><br><code>#fffefb</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-light-gray"></i><div><code>light-gray</code><br><code>#fafafa</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-gray"></i><div><code>gray</code><br><code>rgba(204, 204, 204, 0.09)</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-green"></i><div><code>green</code><br><code>#1fba4a</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-orange"></i><div><code>orange</code><br><code>#fe8a11</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-pink"></i><div><code>pink</code><br><code>#f54cb2</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-purple"></i><div><code>purple</code><br><code>#daccff</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-red"></i><div><code>red</code><br><code>#ff2222</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-red-200"></i><div><code>red-200</code><br><code>#ff3e3e</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-red-400"></i><div><code>red-400</code><br><code>#e95656</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-yellow"></i><div><code>yellow</code><br><code>#eafa35</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-scrollbar-thumb"></i><div><code>scrollbar-thumb</code><br><code>#d3d3d3</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-app-background"></i><div><code>app-background</code><br><code>#fbfaf9</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-input-hover-border"></i><div><code>input-hover-border</code><br><code>#000000</code></div></div>
+<div class="sw"><i class="dot" style="background:--core-color-input-focus-border"></i><div><code>input-focus-border</code><br><code>rgba(128, 188, 254, 0.6)</code></div></div>
+</div>
+<h2>Roles</h2>
+<div class="pal">
+<div class="sw"><i class="dot" style="background:--surface-page"></i><div><code>surface.page</code><br><code>#fbfaf9</code></div></div>
+<div class="sw"><i class="dot" style="background:--surface-paper"></i><div><code>surface.paper</code><br><code>{core.color.off-white}</code></div></div>
+<div class="sw"><i class="dot" style="background:--surface-white"></i><div><code>surface.white</code><br><code>{core.color.white}</code></div></div>
+<div class="sw"><i class="dot" style="background:--surface-app"></i><div><code>surface.app</code><br><code>{core.color.app-background}</code></div></div>
+<div class="sw"><i class="dot" style="background:--text-primary"></i><div><code>text.primary</code><br><code>#000000</code></div></div>
+<div class="sw"><i class="dot" style="background:--text-on-hero"></i><div><code>text.on-hero</code><br><code>#ffffff</code></div></div>
+<div class="sw"><i class="dot" style="background:--text-ink"></i><div><code>text.ink</code><br><code>{core.color.black}</code></div></div>
+<div class="sw"><i class="dot" style="background:--border-strong"></i><div><code>border.strong</code><br><code>{core.color.black}</code></div></div>
+<div class="sw"><i class="dot" style="background:--border-input-hover"></i><div><code>border.input-hover</code><br><code>{core.color.input-hover-border}</code></div></div>
+<div class="sw"><i class="dot" style="background:--border-focus"></i><div><code>border.focus</code><br><code>{core.color.input-focus-border}</code></div></div>
+<div class="sw"><i class="dot" style="background:--accent-yellow"></i><div><code>accent.yellow</code><br><code>{core.color.yellow}</code></div></div>
+<div class="sw"><i class="dot" style="background:--accent-pink"></i><div><code>accent.pink</code><br><code>{core.color.pink}</code></div></div>
+<div class="sw"><i class="dot" style="background:--accent-red"></i><div><code>accent.red</code><br><code>{core.color.red}</code></div></div>
+<div class="sw"><i class="dot" style="background:--accent-green"></i><div><code>accent.green</code><br><code>{core.color.green}</code></div></div>
+</div>
+<h2>Type</h2>
+<p class="hero" style="font-family: var(--sg-display); font-size: 64px; line-height: 1.05; letter-spacing: -0.03em;">Find your life's work</p>
+<p>Display on the live site is Advercase Demo at 100.8px. That face is not loaded here. The sample uses a serif fallback.</p>
+<h2>Controls</h2>
+<p><a class="btn" href="#">Sign up</a></p>
+<p><span class="chip">Full time</span></p>
+<div class="card"><strong>Job card</strong><br>A white card on the app background.</div>
 </div>
 </body>
 </html>

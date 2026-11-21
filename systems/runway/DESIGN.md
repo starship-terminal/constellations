@@ -3,280 +3,99 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Runway"
-description: "Creative AI marketing: promo banner, near-black hero card, pill plan buttons, white page"
+description: "AI video and image marketing pages: a white header, a near-black filled action, a full-bleed media hero, and hover mega-menus"
+omitted:
+  - section: "typography"
+    reason: "tokens.json has no typography tokens under `core.typography`"
 colors:
-  primary: "#2b22fa"
+  primary: "#2c22fa"
   neutral: "#ffffff"
-  surface: "#ffffff"
+  surface: "#eef1f5"
   on-surface: "#0c0c0c"
-  on-surface-variant: "#404040"
-  outline: "#0c0c0c"
-  background-page: "#ffffff"
-  background-surface: "#ffffff"
-  background-inverse: "#0c0c0c"
-  background-neutral: "#262626"
-  background-secondary: "#eef1f5"
-  background-inverse-cta: "#f7f7f7"
-  background-accent: "#2b22fa"
-  background-field: "#ffffff"
-  background-auth-action: "#000000"
-  text-primary: "#0c0c0c"
-  text-secondary: "#404040"
-  text-muted: "#7c7c7c"
-  text-footer: "#666e7a"
-  text-on-inverse: "#ffffff"
-  text-on-secondary: "#1a1a1a"
+  on-surface-variant: "#646c78"
+  outline: "rgba(0, 0, 0, 0.1)"
+  page: "#ffffff"
+  text-DEFAULT: "#0c0c0c"
+  text-muted: "#646c78"
   text-on-accent: "#ffffff"
-  text-accent: "#2c22fa"
-  text-auth: "#080809"
-  text-auth-muted: "#3c3c3c"
-  text-auth-faint: "#818a9d"
-  border-stroke: "#0c0c0c"
-  border-field: "#dfdfe4"
-  border-soft: "#666e7a66"
-  border-hairline: "#ffffffbf"
-  component-button-primary-bg: "#262626"
-  component-button-primary-text: "#ffffff"
-  component-button-secondary-bg: "#eef1f5"
-  component-button-secondary-text: "#1a1a1a"
-  component-button-plan-bg: "#0c0c0c"
-  component-button-plan-text: "#ffffff"
-typography:
-  display-xl:
-    fontFamily: "abcNormal"
-    fontSize: "80px"
-    fontWeight: 400
-    lineHeight: "84px"
-    letterSpacing: "-1.6px"
-  display-l:
-    fontFamily: "abcNormal"
-    fontSize: "56px"
-    fontWeight: 400
-    lineHeight: "61.6px"
-    letterSpacing: "-0.84px"
-  display-m:
-    fontFamily: "abcNormal"
-    fontSize: "40px"
-    fontWeight: 400
-    lineHeight: "46px"
-    letterSpacing: "-0.5px"
-  display-s:
-    fontFamily: "abcNormal"
-    fontSize: "30px"
-    fontWeight: 400
-    lineHeight: "36px"
-    letterSpacing: "-0.3px"
-  display-xs:
-    fontFamily: "abcNormal"
-    fontSize: "24px"
-    fontWeight: 400
-    lineHeight: "30px"
-    letterSpacing: "-0.18px"
-  page-title:
-    fontFamily: "abcNormal"
-    fontSize: "56px"
-    fontWeight: 400
-    lineHeight: "53.76px"
-    letterSpacing: "-2.5px"
-  section:
-    fontFamily: "abcNormal"
-    fontSize: "36px"
-    fontWeight: 400
-    lineHeight: "36px"
-    letterSpacing: "-1.44px"
-  enterprise-hero:
-    fontFamily: "abcNormal"
-    fontSize: "48px"
-    fontWeight: 400
-    lineHeight: "52.8px"
-    letterSpacing: "-1.2px"
-  card-title:
-    fontFamily: "abcNormal"
-    fontSize: "24px"
-    fontWeight: 500
-    lineHeight: "27.6px"
-    letterSpacing: "-0.18px"
-  price:
-    fontFamily: "abcNormal"
-    fontSize: "45px"
-    fontWeight: 400
-    lineHeight: "40.5px"
-    letterSpacing: "0px"
-  lede:
-    fontFamily: "abcNormal"
-    fontSize: "16px"
-    fontWeight: 400
-    lineHeight: "25.6px"
-    letterSpacing: "0px"
-  body:
-    fontFamily: "abcNormal"
-    fontSize: "16px"
-    fontWeight: 400
-    lineHeight: "24px"
-    letterSpacing: "0px"
-  body-emphasis:
-    fontFamily: "abcNormal"
-    fontSize: "18px"
-    fontWeight: 400
-    lineHeight: "22.5px"
-    letterSpacing: "-0.36px"
-  nav:
-    fontFamily: "abcNormal"
-    fontSize: "16px"
-    fontWeight: 500
-    lineHeight: "24px"
-    letterSpacing: "0px"
-  detail-nav:
-    fontFamily: "abcNormal"
-    fontSize: "15px"
-    fontWeight: 500
-    lineHeight: "18px"
-    letterSpacing: "-0.04px"
-  button:
-    fontFamily: "abcNormal"
-    fontSize: "14px"
-    fontWeight: 600
-    lineHeight: "20px"
-    letterSpacing: "0px"
-  button-lg:
-    fontFamily: "abcNormal"
-    fontSize: "16px"
-    fontWeight: 600
-    lineHeight: "24px"
-    letterSpacing: "0px"
-  cta:
-    fontFamily: "abcNormal"
-    fontSize: "14px"
-    fontWeight: 600
-    lineHeight: "13.3px"
-    letterSpacing: "-0.14px"
-  small:
-    fontFamily: "abcNormal"
-    fontSize: "14px"
-    fontWeight: 400
-    lineHeight: "21.7px"
-    letterSpacing: "0px"
-  caption:
-    fontFamily: "abcNormal"
-    fontSize: "13px"
-    fontWeight: 400
-    lineHeight: "16.9px"
-    letterSpacing: "-0.26px"
-  meta:
-    fontFamily: "abcNormal"
-    fontSize: "12px"
-    fontWeight: 400
-    lineHeight: "16.8px"
-    letterSpacing: "0px"
-  footer-link:
-    fontFamily: "abcNormal"
-    fontSize: "16px"
-    fontWeight: 400
-    lineHeight: "20.8px"
-    letterSpacing: "-0.16px"
-  auth-title:
-    fontFamily: "Normal"
-    fontSize: "28.8px"
-    fontWeight: 600
-    lineHeight: "28.8px"
-    letterSpacing: "0.288px"
-  auth-field:
-    fontFamily: "Normal"
-    fontSize: "16px"
-    fontWeight: 400
-    lineHeight: "16px"
-    letterSpacing: "0px"
+  border-DEFAULT: "rgba(0, 0, 0, 0.1)"
+  accent: "#2c22fa"
+  danger: "#ff552f"
+  focus-ring: "#2c22fa"
+  component-button-bg: "#262626"
+  component-button-text: "#ffffff"
 rounded:
-  sm: "4px"
-  md: "6px"
-  lg: "8px"
-  xl: "12px"
-  "2xl": "16px"
-  full: "9999px"
+  sm: "6px"
+  md: "8px"
+  lg: "12px"
+  xl: "16px"
+  pill: "999px"
 spacing:
-  "1": "4px"
-  "2": "6px"
-  "3": "8px"
-  "4": "10px"
-  "5": "12px"
-  "6": "16px"
-  "8": "20px"
-  "10": "32px"
-  "14": "56px"
+  button-x: "10px"
+  button-y: "6px"
+  field-x: "14px"
+  field-y: "8px"
+  content: "16px"
 components:
-  button-primary:
-    backgroundColor: "{colors.component-button-primary-bg}"
-    textColor: "{colors.component-button-primary-text}"
+  button:
+    backgroundColor: "{colors.component-button-bg}"
+    textColor: "{colors.component-button-text}"
     rounded: "6px"
     height: "32px"
-  button-secondary:
-    backgroundColor: "{colors.component-button-secondary-bg}"
-    textColor: "{colors.component-button-secondary-text}"
-    rounded: "6px"
-    height: "32px"
-  button-plan:
-    backgroundColor: "{colors.component-button-plan-bg}"
-    textColor: "{colors.component-button-plan-text}"
-    rounded: "9999px"
-    height: "36px"
 ---
 
 # Runway
 
 Generated from [tokens.json](tokens.json) and [README.md](README.md) by the design-systems catalog tool. Do not edit this file: change the tokens through the package's builders, then run `make design-md` at the repository root.
 
-It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 6 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
+It follows the DESIGN.md spec, version alpha. That format has no themes, no per-value provenance and only px, em and rem units, so this file holds the `light` theme alone with every alias resolved. [tokens.json](tokens.json) is the source of truth: it records where each value was read, and keeps the 2 tokens from these groups that DESIGN.md cannot hold (gradients, shadows, percentages, durations and other non-colour or non-px values).
 
 ## Overview
 
-Good for: Creative AI marketing: promo banner, near-black hero card, pill plan buttons, white page.
+Good for: AI video and image marketing pages: a white header, a near-black filled action, a full-bleed media hero, and hover mega-menus.
 
-Captured 2026-11-19, signed out. Themes: light.
+Captured 2026-11-21, public marketing surface only; signed out; login wall recorded and not passed. Themes: light.
 
-Runway is a creative AI product (runway.com, formerly runwayml.com). This package captures the public marketing site and the signed-out login form. No account was used.
-
-Surfaces: home, pricing, product, and enterprise, plus the auth login form. Theme: light only. Widths: 1440 and 390 CSS pixels. Captured 19 November 2026.
+A token set and component reference for Runway's public site. Read from **runway.com** (runwayml.com redirects there) on **2026-11-21**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. The marketing site is light only. The signed-in product at app.runwayml.com was not entered.
 
 ## Colors
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#2b22fa):** `light.background.accent`
-- **neutral (#ffffff):** `light.background.page`
-- **surface (#ffffff):** `light.background.surface`
-- **on-surface (#0c0c0c):** `light.text.primary`
-- **on-surface-variant (#404040):** `light.text.secondary`
-- **outline (#0c0c0c):** `light.border.stroke`
+- **primary (#2c22fa):** `light.accent`
+- **neutral (#ffffff):** `light.page`
+- **surface (#eef1f5):** `light.surface`
+- **on-surface (#0c0c0c):** `light.text.DEFAULT`
+- **on-surface-variant (#646c78):** `light.text.muted`
+- **outline (rgba(0, 0, 0, 0.1)):** `light.border.DEFAULT`
 
 ## Typography
 
-24 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Normal, abcNormal.
+No composite type styles in tokens.json; the README text below names the faces and sizes.
 
 ### Fonts (from README.md)
 
-| Family | Where | Licence |
-|---|---|---|
-| abcNormal | Marketing type, weights 400, 500, and 600 loaded | Commercial. Not committed |
-| Normal | Auth sign-in | Not committed. The page also lists Inter as the next family |
-| Inter | Auth fallback, and this style guide's fallback | SIL Open Font License. Not committed |
-
-The marketing stack's second family is `abcNormal Fallback`. Tokens use `sans-serif` after abcNormal.
+**abcNormal** (declared as ABC Normal) runs the marketing pages and the header. Weights 300, 400, 500 and 600 are served as woff2. **timesNow** is declared and was not on the measured controls. **Akkurat Mono LL** is the first face of `--rw-font-mono`. None of these are in the package. The style guide uses the system sans.
 
 ## Layout
 
-Spacing from `core.space`: `1` 4px, `2` 6px, `3` 8px, `4` 10px, `5` 12px, `6` 16px, `8` 20px, `10` 32px, `14` 56px.
+Spacing from `core.space`: `button-x` 10px, `button-y` 6px, `field-x` 14px, `field-y` 8px, `content` 16px.
 
 ## Elevation & Depth
 
-No shadow tokens were captured; depth comes from surface colours and borders. See [style-guide.html](style-guide.html).
+Shadows, resolved to CSS:
+
+| Token | box-shadow |
+|---|---|
+| `core.elevation.drop-16` | `0px 8px 16px 0px #00000080` |
 
 ## Shapes
 
-Corner radii from `core.radius`: `sm` 4px, `md` 6px, `lg` 8px, `xl` 12px, `2xl` 16px, `full` 9999px.
+Corner radii from `core.radius`: `sm` 6px, `md` 8px, `lg` 12px, `xl` 16px, `pill` 999px.
 
 ## Components
 
-3 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
+1 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
 
 Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
@@ -290,21 +109,18 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The promo banner element's computed `color` inherited body `#404040`. The banner copy on the screenshot is white. `{text.on-accent}` is taken from that screenshot, not from the banner element's computed color.
-
-`focus()` on Try Runway did not apply `:focus-visible`. The ring class is `focus-visible:ring-blue-500`. The computed ring was not captured.
-
-A few sizes came back as sub-pixel floats (`15.0003px`, `79.999px`). Tokens round those to the nearest 0.1px or to the nearest pixel when the float is a rounding error. The source string keeps the raw computed value.
-
-`timesNow` is declared as a custom property and was not used by any painted text on the pages that were read. It is not a token.
-
-The wordmark in [icons/wordmark.png](icons/wordmark.png) is a cropped screenshot, not an SVG from the site.
+- **This is the public site, not the editor.** Projects, the canvas, billing and onboarding sit behind auth.runwayml.com.
+- **Light only.** There is no public theme toggle. The `--rw-*` gray ramp includes dark steps used by docs and the app shell. They are in `core`, not a captured dark theme.
+- **The blue is declared, not the marketing CTA.** The filled button measures `#262626`.
+- **Focus ring colour is not a held reading.** The hero CTA class names `ring-blue-500`. The token says so.
+- **Quantised screenshots.** Read colours from tokens.json.
+- **Pressed states were not held.** A pointerdown dispatch did not change the CTA fill.
 
 ### Do and don't (from README.md)
 
-- **Use near-black for the primary nav action.** Try Runway is `#262626` with a white label, 6px radius, 32px tall. [button-primary-default.png](components/crops/button-primary-default.png)
-- **Keep the page white and the hero near-black.** The page is `#ffffff`. The hero panel is `#0c0c0c` with a 12px radius. [home-light-default.png](screenshots/home-light-default.png)
-- **Reserve promo blue for the banner and the Max plan.** The banner is `#2b22fa`. Get Max computed `rgb(44, 34, 250)`. [button-accent-default.png](components/crops/button-accent-default.png)
-- **Set display type in abcNormal at weight 400, with negative tracking.** The home headline is 56px, line-height 61.6px, tracking -0.84px. [home-light-default.png](screenshots/home-light-default.png)
-- **Do not invent a dark theme.** The captured pages set `bg-white` and do not offer a toggle. [pricing-light-default.png](screenshots/pricing-light-default.png)
-- **Do not draw a login screenshot.** The preview browser stopped producing frames before one could be saved. Read the field from the tokens.
+- **Do keep the page white and the action near-black.** The filled Try Runway button is `#262626` on a white header. [screenshots/home-light-default.png](screenshots/home-light-default.png)
+- **Do open sections from a hover menu.** Creative opens a three-column panel without leaving the page. [screenshots/home-light-menu-creative.png](screenshots/home-light-menu-creative.png)
+- **Do put type on the media.** The hero title is white on the image, not on a solid band. [screenshots/home-light-default.png](screenshots/home-light-default.png)
+- **Don't treat the declared blue as the marketing accent.** `#2c22fa` lives on the developer stylesheets. The marketing CTA is near-black.
+- **Don't style the editor from this package.** [screenshots/login-light-default.png](screenshots/login-light-default.png) is the wall. The canvas was not opened.
+- **Don't submit the sales form to see its error state.** The empty form is the captured state. [screenshots/enterprise-contact-light-default.png](screenshots/enterprise-contact-light-default.png)

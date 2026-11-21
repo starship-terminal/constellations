@@ -60,8 +60,8 @@ test('mobile layout viewport may differ from configured screenshot viewport', as
 
 test('browser probe retains safe theme fields and never reads URL or arbitrary root attributes', async t => {
   const root = { scrollWidth: 884, clientWidth: 884, scrollHeight: 1104, clientHeight: 1104,
-    classList: ['hashed-class', 'dark', 'owner@example.test'],
-    getAttribute: name => ({ 'data-mode': 'dark', 'data-theme': 'owner@example.test',
+    classList: ['hashed-class', 'dark', 'owner-example-test'],
+    getAttribute: name => ({ 'data-mode': 'dark', 'data-theme': 'owner-example-test',
       'data-color-mode': 'system' })[name] ?? null };
   const page = fakePage(1768, 2208);
   page.url = () => { throw new Error('must not read a live URL'); };
@@ -74,7 +74,7 @@ test('browser probe retains safe theme fields and never reads URL or arbitrary r
   assert.deepEqual(JSON.parse(JSON.stringify(report.actual.theme)), {
     classes: ['dark'], attributes: { 'data-mode': 'dark', 'data-color-mode': 'system' }, colorScheme: 'dark',
   });
-  assert.equal(JSON.stringify(report).includes('owner@example.test'), false);
+  assert.equal(JSON.stringify(report).includes('owner-example-test'), false);
 });
 
 test('full-page validation uses measured document size rather than requested height', async t => {

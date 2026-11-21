@@ -1,267 +1,250 @@
 #!/usr/bin/env python3
-"""Build tokens.json (W3C DTCG, Tokens Studio multi-set layout) from the raw captures.
+"""Build tokens.json from raw/css-vars.json and raw/components-computed.json.
 
-Sources, read from curater.org on 2026-11-12:
-  raw/css-vars.json          the custom properties the app's Vite/React sheets
-                             declare on :root, resolved on a probe —
-                             the --Curater-* product namespace (#f2f2f2
-                             background, gray ramp, green/pink/red/yellow
-                             accents, the 9-hue --Curater-selection-* tag
-                             palette), the shadcn semantic set (--background/
-                             --foreground/--muted*/--primary/--ring/--border/
-                             --input/--accent/--destructive/--card/--popover/
-                             --sidebar-*), the Tailwind --color-* subset,
-                             --space-*/--spacing-*, --radius-*, --text-*
-                             (+line-heights), --font-weight-*, --shadow-*,
-                             --transition-*/--ease-out-expo, --z-* layers,
-                             --container-*, --header-height, --sidebar-width
-                             and --centered-content-width
-                             (tools/capture/vars.mjs).
-  raw/component-tokens.json  the token tree (tools/build_component_tokens.py): each leaf either
-                             names a variable ("var") resolved per theme, or carries a measured
-                             value and the measurement it came from ("source")
-Every token carries $extensions.source: "css-var <name>" or "measured <where>".
-
-curater.org paints one light theme: #fff page/cards over the #f2f2f2 app
-field, #09090b ink, #71717b muted, white 9999px pill buttons that fill
-#f2f2f2 and sink 2px on press, ABCDiatype throughout. No dark theme is
-painted (the only dark surface is the TasteScope teaser's WebGL canvas, an
-asset, not a theme), so the export holds core + light only.
-
-Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
+Read from https://curater.org/ on 2026-11-21, signed out, light only.
+Every token carries $extensions.source. Unread values are not invented.
 """
-import json, pathlib, re
+import json
+import pathlib
+import re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
-RAW = HERE / "raw"
-V = json.loads((RAW / "css-vars.json").read_text())
-SPEC = json.loads((RAW / "component-tokens.json").read_text())
-
-# Resolved declarations per theme. vars.mjs resolves each custom property on a
-# probe document once light (:root) and once dark (html.dark), so
-# DECL[theme][name] is what the browser paints in that theme. A name declared
-# only on :root resolves the same in both.
-DECL = {t: {n: v.get("value", v["raw"]) for n, v in V.get("resolved", {}).get(t, {}).items()} for t in ("light", "dark")}
-# curater.org paints one light theme; nothing needs lifting into dark.
-if not DECL["dark"]:
-    DECL["dark"] = {n: v for n, v in DECL["light"].items() if n.startswith("--dark-")}
+RAW = json.loads((HERE / "raw" / "css-vars.json").read_text())
+COMP = json.loads((HERE / "raw" / "components-computed.json").read_text())
+C = RAW["computed"]
 
 
-def oklab_srgb(v):
-    """oklab()/oklch() (L as a number or a percentage, optional / alpha) -> #rrggbb or rgba(); None otherwise.
-    The kit's conversion (OKLab -> linear sRGB -> gamma, clamped)."""
-    import math
-    m = re.fullmatch(r"ok(lab|lch)\(\s*([-\d.e]+)(%?)\s+([-\d.e]+)\s+([-\d.e]+|none)(?:deg)?\s*(?:/\s*([\d.]+)(%?))?\s*\)", v.strip().lower())
-    if not m:
-        return None
-    kind, L, pct, x, y, a, apct = m.groups()
-    L = float(L) / 100 if pct else float(L)
-    if kind == "lch":
-        c, h = float(x), 0.0 if y == "none" else math.radians(float(y))
-        A, B = c * math.cos(h), c * math.sin(h)
-    else:
-        A, B = float(x), float(y)
-    l_ = (L + 0.3963377774 * A + 0.2158037573 * B) ** 3
-    m_ = (L - 0.1055613458 * A - 0.0638541728 * B) ** 3
-    s_ = (L - 0.0894841775 * A - 1.2914855480 * B) ** 3
-    lin = [4.0767416621 * l_ - 3.3077115913 * m_ + 0.2309699292 * s_,
-           -1.2684380046 * l_ + 2.6097574011 * m_ - 0.3413193965 * s_,
-           -0.0041960863 * l_ - 0.7034186147 * m_ + 1.7076147010 * s_]
-    rgb = [round(min(1, max(0, 12.92 * c_ if c_ <= 0.0031308 else 1.055 * c_ ** (1 / 2.4) - 0.055)) * 255) for c_ in lin]
-    alpha = 1 if a is None else (float(a) / 100 if apct else float(a))
-    if alpha >= 1:
-        return "#%02x%02x%02x" % tuple(rgb)
-    return "rgba(%d, %d, %d, %g)" % (rgb[0], rgb[1], rgb[2], round(alpha, 3))
+def src(text):
+    return {"$extensions": {"source": text}}
 
 
-def norm_color(v):
-    """#rgb, #rrggbb, #rrggbbaa, rgb(), rgba(), hsla(), oklab(), oklch(), "R G B" channels -> #rrggbb or rgba(r, g, b, a)."""
-    v = v.strip().lower()
-    ok = oklab_srgb(v)
-    if ok:
-        return ok
-    m = re.fullmatch(r"(\d+)\s+(\d+)\s+(\d+)", v)
-    if m:  # channel triplets ("0 230 6") that rgb(var(--x) / a) composites
-        return "#%02x%02x%02x" % (int(m.group(1)), int(m.group(2)), int(m.group(3)))
-    m = re.fullmatch(r"#([0-9a-f]{3,8})", v)
-    if m:
-        h = m.group(1)
-        if len(h) in (3, 4):
-            h = "".join(c * 2 for c in h)
-        r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
-        if len(h) == 8:
-            a = round(int(h[6:8], 16) / 255, 3)
-            return "#%02x%02x%02x" % (r, g, b) if a == 1 else "rgba(%d, %d, %d, %s)" % (r, g, b, ("%g" % a))
-        return "#%02x%02x%02x" % (r, g, b)
-    m = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+%?))?\s*\)", v)
-    if m:
-        r, g, b, a = m.groups()
-        if a is None:
-            return "#%02x%02x%02x" % (int(r), int(g), int(b))
-        a = float(a[:-1]) / 100 if a.endswith("%") else float(a)
-        return "#%02x%02x%02x" % (int(r), int(g), int(b)) if a == 1 else "rgba(%s, %s, %s, %g)" % (r, g, b, a)
-    m = re.fullmatch(r"hsla?\(\s*0\s*,\s*0%\s*,\s*([\d.]+)%\s*(?:,\s*([\d.]+))?\)", v)
-    if m:
-        lvl = round(float(m.group(1)) * 2.55)
-        a = float(m.group(2) or 1)
-        return "#%02x%02x%02x" % (lvl, lvl, lvl) if a == 1 else "rgba(%d, %d, %d, %g)" % (lvl, lvl, lvl, a)
-    # CSS Color 4 / composited values pass through verbatim (lab, oklch, color-mix, ...)
-    if re.match(r"(ok)?lab\(|(ok)?lch\(|(ok)?color\(|color-mix\(", v.strip()):
-        return v.strip()
-    raise ValueError("not a colour: " + v)
+def color(value, source):
+    return {"$type": "color", "$value": value, **src(source)}
 
 
-DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
+def dim(value, source):
+    return {"$type": "dimension", "$value": value, **src(source)}
 
 
-def check(path, ty, val):
-    """Refuse a value that is not the DTCG type it claims. An alias is checked by the alias pass."""
-    if isinstance(val, str) and val.startswith("{"):
-        return
-    if ty == "dimension" and not DIM.fullmatch(str(val)):
-        raise ValueError(f"{path}: dimension must be one px or rem length, got {val!r}")
-    if ty == "color":
-        norm_color(val) if not str(val).startswith("{") else None
-    if ty == "shadow":
-        for layer in val:
-            for k in ("offsetX", "offsetY", "blur", "spread"):
-                if not DIM.fullmatch(layer[k]):
-                    raise ValueError(f"{path}: shadow {k} {layer[k]!r}")
-    if ty == "number" and not isinstance(val, (int, float)):
-        raise ValueError(f"{path}: number {val!r}")
-    if ty == "fontWeight" and not isinstance(val, int):
-        raise ValueError(f"{path}: fontWeight {val!r}")
-    if ty == "duration" and not re.fullmatch(r"\d+ms", str(val)):
-        raise ValueError(f"{path}: duration {val!r}")
-    if ty == "cubicBezier" and not (isinstance(val, list) and len(val) == 4):
-        raise ValueError(f"{path}: cubicBezier {val!r}")
-    if ty == "gradient":
-        for stop in val:
-            if not str(stop["color"]).startswith("{"):
-                norm_color(stop["color"])
-            if not 0 <= stop["position"] <= 1:
-                raise ValueError(f"{path}: gradient position {stop['position']!r}")
+def font(value, source):
+    return {"$type": "fontFamily", "$value": value, **src(source)}
 
 
-def leaf(path, spec, theme):
-    ty = spec["type"]
-    if "var" in spec:
-        name = spec["var"]
-        if name not in DECL[theme]:
-            raise KeyError(f"{path}: {name} is not a resolved variable in raw/css-vars.json ({theme})")
-        val = DECL[theme][name]
-        src = f"css-var {name} ({theme})"
-        if spec.get("source"):
-            src += "; " + spec["source"]
-    else:
-        val = spec["value"]
-        src = spec["source"]
-    if ty == "color" and not str(val).startswith("{"):
-        val = norm_color(val)
-    if ty == "cubicBezier" and isinstance(val, str):
-        m = re.fullmatch(r"cubic-bezier\(\s*([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)[,\s]+([-\d.e]+)\s*\)", val.strip())
-        if m:
-            val = [float("%g" % float(x)) for x in m.groups()]
-        elif val.strip() in ("ease", "ease-in", "ease-out", "ease-in-out", "linear"):
-            val = {"ease": [.25, .1, .25, 1], "ease-in": [.42, 0, 1, 1], "ease-out": [0, 0, .58, 1],
-                   "ease-in-out": [.42, 0, .58, 1], "linear": [0, 0, 1, 1]}[val.strip()]
-    if ty in ("fontWeight", "number") and isinstance(val, str):
-        m = re.fullmatch(r"calc\((-?\d*\.?\d+)\s*/\s*(-?\d*\.?\d+)\)", val)
-        if m:  # Tailwind v4 emits line-heights as calc(a/b) ratios
-            val = round(float(m.group(1)) / float(m.group(2)), 4)
-        elif re.fullmatch(r"-?\d+(\.\d+)?", val):
-            val = float(val) if "." in val else int(val)
-    if ty == "duration" and isinstance(val, str):
-        m = re.fullmatch(r"([\d.]+)(m?s)", val.strip())
-        if m:
-            val = ("%g" % (float(m.group(1)) * (1 if m.group(2) == "ms" else 1000))) + "ms"
-    if ty == "dimension":
-        if isinstance(val, (int, float)):
-            val = "%gpx" % val
-        elif isinstance(val, str):
-            val = re.sub(r"^(-?)\.(\d)", r"\g<1>0.\2", val.strip())
-            if re.fullmatch(r"-?\d+(\.\d+)?", val):
-                val = val + "px"
-    check(path, ty, val)
-    t = {"$value": val, "$type": ty, "$extensions": {"source": src}}
-    if spec.get("description"):
-        t["$description"] = spec["description"]
-    if spec.get("responsive"):
-        t["$extensions"]["responsive"] = spec["responsive"]
-    if spec.get("angle"):
-        t["$extensions"]["angle"] = spec["angle"]
-    return t
+def number(value, source):
+    return {"$type": "number", "$value": value, **src(source)}
 
 
-def build(node, theme, path=""):
-    if isinstance(node, dict) and "type" in node and ("value" in node or "var" in node):
-        return leaf(path, node, theme)
-    if isinstance(node, dict) and "$value" in node:
-        return node  # already a DTCG leaf (typography composites)
-    return {k: build(v, theme, f"{path}.{k}" if path else k) for k, v in node.items() if not k.startswith("_")}
+def shadow(value, source):
+    return {"$type": "shadow", "$value": value, **src(source)}
 
 
-core = build(SPEC["core"], "light")  # scales are theme-independent
-light = build(SPEC["light"], "light")
-dark = build(SPEC["dark"], "dark")
-# The component tokens live in their own top-level spec tree but belong to the
-# exported themes the components were measured on: light.component.*
-light["component"] = build(SPEC["component"], "light")
+def other(value, source):
+    return {"$type": "other", "$value": value, **src(source)}
 
 
-# every alias must point at a token that exists
-def tokens_of(tree, prefix=""):
-    for k, v in tree.items():
-        if isinstance(v, dict) and "$value" in v:
-            yield prefix + k, v
-        elif isinstance(v, dict):
-            yield from tokens_of(v, prefix + k + ".")
+def alias(path):
+    return "{" + path + "}"
 
 
-NAMES = {n for n, _ in tokens_of(core)}
-NAMES_L = NAMES | {n for n, _ in tokens_of(light)}
-NAMES_D = NAMES | {n for n, _ in tokens_of(dark)}
+# Brand palette declared as --Curater-* on :root. Relative oklch() values
+# that the browser did not resolve to a painted colour stay as declared.
+brand = {}
+for name, value in C.items():
+    if not name.startswith("--Curater-"):
+        continue
+    key = name.removeprefix("--Curater-")
+    brand[key] = color(value, f"css-var {name} on :root, computed")
 
+core = {
+    "color": brand,
+    "fontFamily": {
+        "sans": font(
+            "ABCDiatype, -apple-system, system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
+            "computed font-family on the Sign in button, home, 1440x900",
+        ),
+        "sansDeclared": font(C["--font-sans"], "css-var --font-sans on :root; the painted UI uses ABCDiatype instead"),
+        "mono": font(C["--font-mono"], "css-var --font-mono on :root; no public code sample was measured"),
+    },
+    "fontWeight": {
+        "regular": number(400, "computed font-weight on body text, home"),
+        "medium": number(500, "css-var --font-weight-medium; also the Sign in button"),
+        "semibold": number(600, "css-var --font-weight-semibold; not observed on a public control"),
+        "bold": number(700, "css-var --font-weight-bold"),
+    },
+    "fontSize": {
+        "xs": dim(C["--text-xs"], "css-var --text-xs"),
+        "sm": dim(C["--text-sm"], "css-var --text-sm"),
+        "base": dim(C["--text-base"], "css-var --text-base"),
+        "lg": dim(C["--text-lg"], "css-var --text-lg"),
+        "xl": dim(C["--text-xl"], "css-var --text-xl"),
+        "2xl": dim(C["--text-2xl"], "css-var --text-2xl"),
+        "3xl": dim(C["--text-3xl"], "css-var --text-3xl"),
+        "4xl": dim(C["--text-4xl"], "css-var --text-4xl"),
+        "5xl": dim(C["--text-5xl"], "css-var --text-5xl"),
+    },
+    "lineHeight": {
+        "xs": number(C["--text-xs--line-height"], "css-var --text-xs--line-height"),
+        "sm": number(C["--text-sm--line-height"], "css-var --text-sm--line-height"),
+        "base": number(C["--text-base--line-height"], "css-var --text-base--line-height"),
+        "lg": number(C["--text-lg--line-height"], "css-var --text-lg--line-height"),
+        "xl": number(C["--text-xl--line-height"], "css-var --text-xl--line-height"),
+        "2xl": number(C["--text-2xl--line-height"], "css-var --text-2xl--line-height"),
+        "3xl": number(C["--text-3xl--line-height"], "css-var --text-3xl--line-height"),
+        "4xl": number(C["--text-4xl--line-height"], "css-var --text-4xl--line-height"),
+        "5xl": number(C["--text-5xl--line-height"], "css-var --text-5xl--line-height"),
+    },
+    "spacing": {
+        "1": dim(C["--space-1"], "css-var --space-1"),
+        "2": dim(C["--space-2"], "css-var --space-2"),
+        "3": dim(C["--space-3"], "css-var --space-3"),
+        "4": dim(C["--space-4"], "css-var --space-4"),
+        "5": dim(C["--space-5"], "css-var --space-5"),
+        "6": dim(C["--space-6"], "css-var --space-6"),
+        "8": dim(C["--space-8"], "css-var --space-8"),
+        "10": dim(C["--space-10"], "css-var --space-10"),
+        "12": dim(C["--space-12"], "css-var --space-12"),
+        "unit": dim(C["--spacing"], "css-var --spacing, the 4px base"),
+    },
+    "radius": {
+        "sm": dim(C["--radius-sm"], "css-var --radius-sm"),
+        "md": dim(C["--radius-md"], "css-var --radius-md"),
+        "default": dim(C["--radius"], "css-var --radius"),
+        "lg": dim(C["--radius-lg"], "css-var --radius-lg"),
+        "xl": dim(C["--radius-xl"], "css-var --radius-xl"),
+        "2xl": dim(C["--radius-2xl"], "css-var --radius-2xl"),
+        "full": dim(C["--radius-full"], "css-var --radius-full"),
+        "menu": dim("12px", "computed border-radius on [role=menu], settings menu, home"),
+    },
+    "shadow": {
+        "sm": shadow(C["--shadow-sm"], "css-var --shadow-sm"),
+        "md": shadow(C["--shadow-md"], "css-var --shadow-md"),
+        "lg": shadow(C["--shadow-lg"], "css-var --shadow-lg"),
+        "xl": shadow(C["--shadow-xl"], "css-var --shadow-xl"),
+    },
+    "motion": {
+        "durationFast": other(C["--transition-fast"], "css-var --transition-fast"),
+        "durationNormal": other(C["--transition-normal"], "css-var --transition-normal"),
+        "durationSlow": other(C["--transition-slow"], "css-var --transition-slow"),
+        "durationSlower": other(C["--transition-slower"], "css-var --transition-slower"),
+        "easeOutExpo": other(C["--ease-out-expo"], "css-var --ease-out-expo"),
+        "defaultDuration": other(".15s", "css-var --default-transition-duration on :root"),
+        "defaultEasing": other("cubic-bezier(.4,0,.2,1)", "css-var --default-transition-timing-function on :root"),
+    },
+    "layout": {
+        "sidebarWidth": dim(C["--sidebar-width"], "css-var --sidebar-width"),
+        "headerHeight": dim(C["--header-height"], "css-var --header-height"),
+        "mobileBarHeight": dim(C["--mobile-bar-height"], "css-var --mobile-bar-height"),
+        "contentWidth": dim(C["--centered-content-width"], "css-var --centered-content-width"),
+        "contentWidthMobile": other(C["--centered-content-width-mobile"], "css-var --centered-content-width-mobile"),
+        "containerSm": dim(C["--container-sm"], "css-var --container-sm"),
+        "containerMd": dim(C["--container-md"], "css-var --container-md"),
+        "container2xl": dim(C["--container-2xl"], "css-var --container-2xl"),
+        "container4xl": dim(C["--container-4xl"], "css-var --container-4xl"),
+        "container6xl": dim(C["--container-6xl"], "css-var --container-6xl"),
+    },
+    "z": {
+        "base": number(int(C["--z-base"]), "css-var --z-base"),
+        "dropdown": number(int(C["--z-dropdown"]), "css-var --z-dropdown"),
+        "sticky": number(int(C["--z-sticky"]), "css-var --z-sticky"),
+        "fixed": number(int(C["--z-fixed"]), "css-var --z-fixed"),
+        "sidebar": number(int(C["--z-sidebar"]), "css-var --z-sidebar"),
+        "overlay": number(int(C["--z-overlay"]), "css-var --z-overlay"),
+        "modal": number(int(C["--z-modal"]), "css-var --z-modal"),
+        "popover": number(int(C["--z-popover"]), "css-var --z-popover"),
+        "tooltip": number(int(C["--z-tooltip"]), "css-var --z-tooltip"),
+    },
+}
 
-def aliases(v):
-    if isinstance(v, str):
-        return re.findall(r"\{([^{}]+)\}", v)
-    if isinstance(v, dict):
-        return [a for x in v.values() for a in aliases(x)]
-    if isinstance(v, list):
-        return [a for x in v for a in aliases(x)]
-    return []
-
-
-for n, t in list(tokens_of(core)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES:
-            raise KeyError(f"core.{n}: alias {{{a}}} points at nothing")
-for n, t in list(tokens_of(light)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES_L:
-            raise KeyError(f"light.{n}: alias {{{a}}} points at nothing")
-for n, t in list(tokens_of(dark)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES_D:
-            raise KeyError(f"dark.{n}: alias {{{a}}} points at nothing")
+light = {
+    "page": color(C["--background"], "css-var --background, computed on :root; body paints the same oklch(1 0 0)"),
+    "surface": color(C["--card"], "css-var --card"),
+    "raised": color(C["--popover"], "css-var --popover; settings menu paints oklch(1 0 0)"),
+    "overlay": color("rgba(0, 0, 0, 0.5)", "computed background-color of the sign-in dialog scrim, home"),
+    "scrim": color("rgba(0, 0, 0, 0.5)", "same scrim as overlay; one painted value"),
+    "text": {
+        "primary": color(C["--foreground"], "css-var --foreground"),
+        "secondary": color(C["--muted-foreground"], "css-var --muted-foreground"),
+        "disabled": other("Not captured", "no disabled text colour was isolated from a painted disabled control"),
+        "onAccent": color(C["--primary-foreground"], "css-var --primary-foreground"),
+        "link": other("Not captured", "public links paint as foreground; no separate link colour was measured"),
+    },
+    "border": {
+        "default": color(C["--border"], "css-var --border"),
+        "strong": color(C["--input"], "css-var --input"),
+        "focus": color(C["--ring"], "css-var --ring; a visible focus ring width was not isolated"),
+    },
+    "accent": {
+        "default": color(C["--primary"], "css-var --primary; the filled Search button on phone paints near-black"),
+        "hover": other("Not captured", "hover on the pill button did not change its computed background"),
+        "pressed": other("Not captured", "a held pressed state was not measured"),
+    },
+    "status": {
+        "success": color(C["--Curater-green"], "css-var --Curater-green"),
+        "warning": color(C["--Curater-yellow"], "css-var --Curater-yellow"),
+        "danger": color(C["--destructive"], "css-var --destructive"),
+        "info": other("Not captured", "no info role was painted on a public page"),
+    },
+    "sidebar": {
+        "background": color(C["--sidebar"], "css-var --sidebar"),
+        "foreground": color(C["--sidebar-foreground"], "css-var --sidebar-foreground"),
+        "accent": color(C["--sidebar-accent"], "css-var --sidebar-accent"),
+        "border": color(C["--sidebar-border"], "css-var --sidebar-border"),
+        "width": dim(C["--sidebar-width"], "css-var --sidebar-width"),
+    },
+    "component": {
+        "button": {
+            "background": color("oklch(1 0 0)", "computed background-color, Sign in or create account, home"),
+            "text": color("oklch(0.141 0.005 285.823)", "computed color, Sign in or create account, home"),
+            "border": color("oklch(0.95 0.004 286.32)", "computed border-top-color, Sign in or create account"),
+            "borderWidth": dim("1px", "computed border-top-width, Sign in or create account"),
+            "radius": dim("9999px", "computed border-radius, Sign in or create account"),
+            "height": dim("58px", "computed height, Sign in or create account, 1440x900"),
+            "fontSize": dim("16px", "computed font-size, Sign in or create account"),
+            "fontWeight": number(500, "computed font-weight, Sign in or create account"),
+            "paddingX": dim("24px", "computed padding-left on Continue with Google, /auth/login"),
+            "paddingY": dim("16px", "computed padding-top on Continue with Google, /auth/login"),
+        },
+        "searchButton": {
+            "background": color(C["--primary"], "phone Search submit paints a near-black fill; token is --primary"),
+            "text": color(C["--primary-foreground"], "css-var --primary-foreground"),
+            "radius": dim(C["--radius-full"], "the phone Search button is a full pill; see mobile-home-light-search.png"),
+        },
+        "menu": {
+            "background": color("oklch(1 0 0)", "computed background-color, [role=menu], settings"),
+            "radius": dim("12px", "computed border-radius, [role=menu]"),
+            "border": color("oklch(0.95 0.004 286.32)", "computed border-top-color, [role=menu]"),
+            "padding": dim("4px", "computed padding, [role=menu]"),
+        },
+        "field": {
+            "fontSize": dim("14px", "computed font-size, feed search input"),
+            "placeholder": other("Search curations...", "placeholder attribute, feed search input; phone overlay says Type anything"),
+        },
+        "tab": {
+            "height": dim("40px", "computed height, Featured tab, /feed"),
+            "fontSize": dim("16px", "computed font-size, Featured tab"),
+            "fontWeight": number(500, "computed font-weight, Featured tab"),
+        },
+    },
+}
 
 tokens = {
+    "$schema": "https://design-tokens.org/schema.json",
     "core": core,
     "light": light,
-    "dark": dark,
-    # curater.org paints one light theme; the dark set stays empty.
     "$themes": [
-        {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "The only painted theme: #fff page/cards over the #f2f2f2 app field, #09090b ink, #71717b muted, white 9999px pill CTAs, ABCDiatype. The TasteScope teaser's dark WebGL globe is an asset, not a theme."},
+        {"id": "light", "name": "light", "selectedTokenSets": {"core": "source", "light": "enabled"}}
     ],
-    "$metadata": {"tokenSetOrder": ["core", "light"]},
+    "$extensions": {
+        "capture": {
+            "product": "Curater",
+            "url": "https://curater.org/",
+            "date": "2026-11-21",
+            "theme": "light only; prefers-color-scheme: dark emulation left body at oklch(1 0 0)",
+            "account": "signed-out",
+        }
+    },
 }
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
 
-
-def count(d):
-    return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
-
-
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})
+out = HERE / "tokens.json"
+out.write_text(json.dumps(tokens, indent=2) + "\n")
+print("wrote", out, "tokens")
