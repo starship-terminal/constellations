@@ -1,0 +1,72 @@
+{
+  "offered": {
+    "nav": {
+      "items": [
+        "AI glasses",
+        "Meta Quest",
+        "Meta VR Glasses",
+        "Explore Meta",
+        "Support",
+        "Search Meta Store",
+        "View bag items",
+        "Open Mobile Navigation Menu"
+      ],
+      "reached": [
+        "AI glasses",
+        "Meta Quest",
+        "Meta VR Glasses",
+        "Explore Meta",
+        "Support",
+        "Search Meta Store",
+        "View bag items",
+        "Open Mobile Navigation Menu"
+      ]
+    },
+    "settings": {
+      "items": [
+        "Change delivery country and language"
+      ],
+      "reached": [
+        "Change delivery country and language"
+      ]
+    },
+    "create": {
+      "items": [
+        "Sign up or log in to Meta account"
+      ],
+      "reached": [
+        "Sign up or log in to Meta account"
+      ]
+    }
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-menu-glasses.png",
+    "screenshots/home-light-menu-quest.png",
+    "screenshots/home-light-menu-support.png",
+    "screenshots/home-light-search.png",
+    "screenshots/home-light-region.png",
+    "screenshots/home-light-login-wall.png",
+    "screenshots/bag-light-default.png",
+    "screenshots/shop-light-default.png",
+    "screenshots/shop-light-filter.png",
+    "screenshots/mobile-home-light-menu.png"
+  ],
+  "gaps": [
+    "Signed-in account, orders, and returns were not opened. Log in opens a Meta account dialog and stops at Sign up or log in to Meta account.",
+    "Checkout was not opened. The bag page is empty and has no checkout control.",
+    "Find order was not opened. It asks for an order lookup.",
+    "Newsletter Sign up on the bag page was not submitted.",
+    "Delivery country Confirm was not submitted. Cancel was not needed because the dialog was only photographed.",
+    "Filter Apply was not submitted.",
+    "Facebook, Instagram, Threads, and their help centres were not opened. They are out of scope for this package."
+  ],
+  "not_submitted": [
+    "Sign up or log in to Meta account",
+    "newsletter Sign up",
+    "delivery country Confirm",
+    "filter Apply",
+    "Buy now",
+    "Add to bag"
+  ]
+}
