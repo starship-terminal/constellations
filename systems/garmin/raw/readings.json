@@ -1,0 +1,94 @@
+{
+  "captured": "2026-11-22",
+  "region": "Singapore",
+  "landed": "https://www.garmin.com.sg/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2
+  },
+  "body": {
+    "color": "rgb(34, 34, 34)",
+    "fontFamily": "Roboto, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400"
+  },
+  "header": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "height": "65px",
+    "borderBottom": "1px solid rgb(216, 216, 216)"
+  },
+  "nav": {
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "letterSpacing": "0.64px",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "Superscripts-Roboto, Roboto, \"Noto Sans TC\", \"Noto Sans SC\", \"Noto Sans JP\", \"Noto Sans KR\", Prompt, sans-serif"
+  },
+  "logo": {
+    "width": "111px",
+    "height": "16px",
+    "fill": "rgb(0, 0, 0)"
+  },
+  "hero": {
+    "fontSize": "40px",
+    "fontWeight": "400",
+    "lineHeight": "40px",
+    "letterSpacing": "1.6px",
+    "color": "rgb(255, 255, 255)",
+    "fontFamily": "Oswald, Roboto, sans-serif",
+    "textTransform": "uppercase"
+  },
+  "learn": {
+    "width": "133px",
+    "height": "36px",
+    "color": "rgb(255, 255, 255)",
+    "border": "1px solid rgb(255, 255, 255)",
+    "padding": "8px 32px",
+    "borderRadius": "0px",
+    "fontSize": "13.3333px"
+  },
+  "featured": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "14.4px",
+    "letterSpacing": "1.44px",
+    "height": "46px"
+  },
+  "footer": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "linkFontSize": "12.8px",
+    "linkLetterSpacing": "0.8px"
+  },
+  "price": {
+    "text": "SGD 279",
+    "color": "rgb(19, 126, 193)",
+    "fontSize": "24px",
+    "fontWeight": "600"
+  },
+  "buy": {
+    "text": "BUY ON CONVERGENT",
+    "backgroundColor": "rgb(96, 207, 246)",
+    "color": "rgb(0, 0, 0)",
+    "width": "227px",
+    "height": "54px",
+    "fontSize": "16px",
+    "padding": "16px 32px",
+    "borderRadius": "0px"
+  },
+  "badge": {
+    "text": "NEW",
+    "backgroundColor": "rgb(96, 207, 246)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "13px",
+    "padding": "6.5px 19.5px"
+  },
+  "swatch": {
+    "border": "1px solid rgb(209, 209, 209)",
+    "height": "56px"
+  },
+  "ink": "rgb(34, 34, 34)",
+  "rule": "rgb(216, 216, 216)"
+}
