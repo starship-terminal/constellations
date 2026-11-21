@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Depop style guide</title>
+  <style>
+    :root {
+      --page: #fff;
+      --text: #262626;
+      --on-brand: #fff;
+      --subtle: #747474;
+      --brand: #e20020;
+      --ink: #000;
+      --search: #f3f3f3;
+      --border: #262626;
+      --divider: #e3e3e3;
+      --font: "AktivGroteskExBasic", Helvetica, Arial, sans-serif;
+    }
+    body { margin: 0; background: var(--page); color: var(--text); font-family: var(--font); font-size: 16px; }
+    header { display: flex; align-items: center; gap: 24px; padding: 16px 32px; border-bottom: 1px solid var(--divider); }
+    .mark { color: var(--brand); font-weight: 700; font-size: 24px; letter-spacing: -0.04em; }
+    .search { flex: 1; max-width: 605px; height: 40px; border: 2px solid var(--border); border-radius: 30px; background: var(--search); padding: 0 16px; font: inherit; }
+    .pill { background: var(--ink); color: var(--page); border: 0; border-radius: 10000px; padding: 8px 16px; font: inherit; }
+    .textlink { color: var(--text); text-decoration: none; }
+    main { padding: 32px; }
+    .hero { background: var(--brand); color: var(--on-brand); border-radius: 16px; padding: 48px; }
+    h1 { font-size: 48px; line-height: 1.2; margin: 0 0 16px; }
+    .shop { background: var(--page); color: var(--brand); border: 0; border-radius: 10000px; padding: 12px 24px; font: inherit; font-weight: 700; }
+    .swatches { display: flex; gap: 16px; margin-top: 32px; }
+    .swatch { width: 96px; }
+    .chip { height: 48px; border-radius: 8px; border: 1px solid var(--divider); }
+    p.cap { font-size: 12px; color: var(--subtle); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="mark">depop</div>
+    <input class="search" placeholder="Search for items, brands, or styles…" readonly>
+    <button class="pill" type="button">Sell now</button>
+    <button class="pill" type="button">Sign up</button>
+    <a class="textlink" href="#login">Log in</a>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Buy preloved. Wear it your way</h1>
+      <button class="shop" type="button">Shop now</button>
+    </section>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#e20020"></div><p class="cap">brand #e20020</p></div>
+      <div class="swatch"><div class="chip" style="background:#262626"></div><p class="cap">text #262626</p></div>
+      <div class="swatch"><div class="chip" style="background:#f3f3f3"></div><p class="cap">search #f3f3f3</p></div>
+      <div class="swatch"><div class="chip" style="background:#000"></div><p class="cap">ink #000</p></div>
+      <div class="swatch"><div class="chip" style="background:#fff"></div><p class="cap">page #fff</p></div>
+    </div>
+  </main>
+</body>
+</html>
