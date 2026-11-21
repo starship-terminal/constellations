@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Grafana tokens</title>
+<style>
+  :root {
+    --page: #f4f4f6;
+    --surface: #ffffff;
+    --text: #000000;
+    --muted: #67677e;
+    --accent: #1b55f5;
+    --on-accent: #ffffff;
+    --brand: #f04306;
+    --radius: 8px;
+    --sans: Inter, "Inter Fallback";
+    --heading: Poppins, "Poppins Fallback";
+  }
+  body { margin: 0; background: var(--page); color: var(--text); font: 16px/1.5 var(--sans); }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px; }
+  h1 { font-family: var(--heading); font-weight: 600; letter-spacing: -1px; font-size: 40px; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+  .swatch { background: var(--surface); border-radius: var(--radius); padding: 12px; }
+  .swatch i { display: block; height: 48px; border-radius: 6px; border: 1px solid #e6e6ea; }
+  .swatch span, .swatch code { display: block; font-size: 13px; color: var(--muted); }
+  button { background: var(--accent); color: var(--on-accent); border: 0; border-radius: var(--radius); height: 36px; padding: 0 14px; font: 500 14px/20px var(--sans); }
+  p.note { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Grafana</h1>
+  <p class="note">Public marketing tokens measured on grafana.com, 2026-11-22. Light theme only.</p>
+  <p><button type="button">Sign up</button></p>
+  <div class="swatches">
+    <div class="swatch"><i style="background:#f4f4f6"></i><span>page</span><code>#f4f4f6</code></div>
+<div class="swatch"><i style="background:#ffffff"></i><span>surface</span><code>#ffffff</code></div>
+<div class="swatch"><i style="background:#000000"></i><span>text</span><code>#000000</code></div>
+<div class="swatch"><i style="background:#67677e"></i><span>muted</span><code>#67677e</code></div>
+<div class="swatch"><i style="background:#1b55f5"></i><span>accent</span><code>#1b55f5</code></div>
+<div class="swatch"><i style="background:#1440e1"></i><span>accent hover</span><code>#1440e1</code></div>
+<div class="swatch"><i style="background:#f04306"></i><span>brand</span><code>#f04306</code></div>
+<div class="swatch"><i style="background:#17b26a"></i><span>success</span><code>#17b26a</code></div>
+<div class="swatch"><i style="background:#d92d20"></i><span>danger</span><code>#d92d20</code></div>
+<div class="swatch"><i style="background:#ff8200"></i><span>warning</span><code>#ff8200</code></div>
+  </div>
+</main>
+</body>
+</html>
