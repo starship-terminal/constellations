@@ -14,6 +14,8 @@ Skyscanner is a travel search product. This package covers the public marketing 
 | [raw/](raw/) | Computed custom properties and component readings |
 | [icons/](icons/) | Index only. No SVGs were exported |
 | [tools/](tools/) | Kit copy plus the token builder |
+| [site-tree.md](site-tree.md) | Header and footer controls, and the public pages and walls they open. Dated 2026-11-22. The homepage and about page painted. Their frames were not committed |
+| [login-review.json](login-review.json) | The empty Log in button. The dialog was not opened. `login-extracted` stays not-started |
 
 ## Brief
 
@@ -72,7 +74,9 @@ The cookie banner was dismissed with "Accept essential only". The origin control
 
 ## What to distrust
 
-Screenshots are missing. The preview browser returned "The browser is not producing screenshot frames", so layout claims rest on computed boxes, not images.
+Screenshots are still absent. The 19 November pass got no frames. On 22 November the homepage and the about page painted, then the same hosts returned a PerimeterX captcha ("Are you a person or a robot?"). The captcha was not solved. The two clean frames were not committed: catalog.json still declares `screenshots/` missing, and this pass was told to leave catalog.json alone. Layout claims still rest on the computed boxes from 19 November.
+
+The login dialog was not opened on this pass. The header Log in button was visible and empty.
 
 The body background is transparent. Page white is `Homepage_backgroundContainer`. The hero and footer are `#05203c`.
 
@@ -125,9 +129,10 @@ Skyscanner Relative is the only family on the homepage and on Help. Weights read
 | Empty, loading, error, destructive | Not present. Search was not run |
 | Search and filtering | The search form was captured. Results were not |
 | Onboarding | Not entered |
-| Desktop 1440 | Measured. innerWidth 1440, innerHeight 900, dpr 2 |
-| Phone 390 | Measured. innerWidth 390, innerHeight 844, dpr 2. No screenshot |
-| Signed-in product | Not captured. Login, booking, cards and phone were not entered |
+| Desktop 1440 | Measured. innerWidth 1440, innerHeight 900, dpr 2. No screenshot committed |
+| Phone 390 | Measured on 19 November. innerWidth 390, innerHeight 844, dpr 2. No screenshot |
+| Signed-in product | Not captured. The Log in button was not clicked. Booking, cards and phone were not entered |
+| Site tree | Mapped 2026-11-22 in [site-tree.md](site-tree.md). Further pages stopped at the captcha wall |
 
 ## Do and don't
 
