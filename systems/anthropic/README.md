@@ -1,8 +1,8 @@
 # Anthropic design reference
 
-A token set and component reference for Anthropic's public marketing surface, for building a marketing page, product page or developer-docs page in the style of a real AI lab. It was read on 2026-11-09, signed out, in headless Chromium at 1440 wide and 390 wide, across three hosts: **www.anthropic.com** (home, /news, /research, /engineering), **claude.com** (/product/overview, /platform/api, /pricing, /contact-sales) and **docs.claude.com** (/en/home, /en/docs/get-started, /en/api/messages). The look is quiet and literary: ivory #faf9f5 ground, ink #141413, anthropicSerif display headlines, pill nav chrome, and one clay orange used only for brand moments.
+A token set and component reference for Anthropic's public site, for building a marketing or research page in the style of the real lab site. Refreshed on 2026-11-21, signed out, in headless Chromium at 1440 wide and 390 wide, on **www.anthropic.com** only. The look is quiet and literary: ivory #faf9f5 ground, ink #141413, anthropicSerif display headlines, pill nav chrome, and one clay orange used only for brand moments.
 
-claude.ai and console.anthropic.com are the signed-in products and were never touched. Nothing was submitted, bought or sent: the contact-sales form was photographed and focused, never sent; the nav dropdown opened by hover only; the footer's Privacy choices dialog was never opened (answering it is a consent choice); the only presses were the pricing plan tab and the batch switch, both local UI.
+The control map is [site-tree.md](site-tree.md), written from the homepage before the new screenshots. The login stop is [login-review.json](login-review.json). claude.ai, platform.claude.com, claude.com, and docs.claude.com were not captured in this refresh. Try Claude opens a menu whose two items leave this host, and that branch stops. Nothing was typed. No form was submitted. The footer's Privacy choices dialog was not opened.
 
 | File | What it is |
 |---|---|
@@ -14,7 +14,9 @@ claude.ai and console.anthropic.com are the signed-in products and were never to
 | [patterns.md](patterns.md) | How the components combine: the shared shell, the serif hero page, card indexes, the pricing page, the sales form, the docs three-rail page, and the mobile fold, each with its components, layout and screens |
 | [components/crops/](components/crops) | 122 element screenshots, `{component}-{state}.png`, at 2x |
 | [icons/](icons) | 69 SVGs lifted from the pages (nav/search/social/mark icons), named by role in [icons/INDEX.tsv](icons/INDEX.tsv). Anthropic's property, kept for reference only |
-| [screenshots/](screenshots) | 35 `{page}-{theme}-{state}.png` captures. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages; `mobile-*` shots are 390 wide at 2x. The docs also keep `docs-home-dark`/`docs-api-dark` captures |
+| [site-tree.md](site-tree.md) | Which control on the homepage opens which page, menu, or wall. Mapped 2026-11-21 before the new screenshots. |
+| [login-review.json](login-review.json) | Public nav, settings, and create offers, the files that show the opened screens, and the login walls that were not entered. |
+| [screenshots/](screenshots) | 34 `{page}-light-{state}.png` captures from www.anthropic.com on 2026-11-21. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages; `mobile-*` shots are 390 wide at 2x. Header menus and the phone menu are separate shots. |
 | [raw/](raw) | The unprocessed readings: every custom property the pages declare by owner (`css-vars.json`, 9351 site + 4291 docs decls), per-component computed styles (`components-computed.json`, and `measurements.md` built from it), the token tree the builder reads (`component-tokens.json`), and page geometry (`layout.json`). The unquantised screenshot originals and their `.capture.json` sidecars stay outside the repository in `~/.design-systems/anthropic/raw-shots/` |
 | [tools/](tools) | The three builders and the capture kit. See Rebuild |
 
@@ -121,7 +123,7 @@ All are commercial faces served from Anthropic's hosts; none is committed. The s
 |---|---|---|
 | Page background, surface, text, muted, accent, border roles | captured | `light.page` (.surface/.surface-raised/.surface-sunken), `.text.*`, `.border.*`, `.accent`; docs roles under `light.docs.*` |
 | Accent states | captured | `light.accent` #d97757 and `.accent-interactive` #c6613f (measured on the footer send button) |
-| Theme parity | partly | docs dark captured (docs-home-dark/docs-api-dark, `dark` set); marketing and product pages have no dark theme (`raw/css-vars.json` themeChecks) |
+| Theme parity | partly | Marketing pages on anthropic.com are light only. The 2026-11-09 docs dark readings remain in `raw/` and `tokens.json`. Those docs hosts were not recaptured on 2026-11-21. |
 | Type | captured | `core.font` families/size/leading/weight/tracking plus six `core.typography` composites (display, headline, body, nav-pill, docs-body, code) |
 | Shape | captured | `core.radius` xs..pill; nav chrome fully rounded, cards 19-24px |
 | Sizing | captured | `core.layout` (nav 84, grid 1920/80/16/12, container 1400, reading 720, fields 56, pills 28) |
@@ -132,17 +134,19 @@ All are commercial faces served from Anthropic's hosts; none is committed. The s
 | States | captured | hover, focus-visible (three ring styles), pressed (forced), focused/filled (fields), selected (plan tab, docs nav), opened (nav dropdown, search dialog, mobile sheet); disabled, error and loading never appear on public pages |
 | App shell and navigation, marketing page, catalogue grids, form, mobile fold | captured | [patterns.md](patterns.md) |
 | Signed-in products, checkout, consent choices | not captured | claude.ai and console.anthropic.com are credentials-gated; no form was submitted; the Privacy choices dialog was never opened |
-| Light theme, docs dark, 1440 and 390 | captured | [screenshots/](screenshots): 11 desktop pages (default + full) plus dark docs; mobile home/pricing/docs-home |
+| Light theme, 1440 and 390 | captured | [screenshots/](screenshots): home, news, research, engineering, policy, constitution, company, careers, search, model, legal, plus header menus and the phone menu. Marketing pages have no dark theme. docs.claude.com dark was not recaptured in this refresh. |
+| Site tree | captured | [site-tree.md](site-tree.md) |
+| Login walls | not captured | Try Claude points at claude.ai and platform.claude.com/login. Recorded in [login-review.json](login-review.json). No email, password, or identity provider was used. |
 | Icons and fonts | captured | [icons/INDEX.tsv](icons/INDEX.tsv) (69 SVGs); Fonts above |
 
 ## Do and don't
 
-1. **Do keep the ground warm and quiet.** The page is ivory #faf9f5, fills step down the gray ramp (#f5f4ed, #f0eee6, #e8e6dc) and text is near-black #141413. See [home-light-default](screenshots/home-light-default.png) and [pricing-light-default](screenshots/pricing-light-default.png).
+1. **Do keep the ground warm and quiet.** The page is ivory #faf9f5, fills step down the gray ramp (#f5f4ed, #f0eee6, #e8e6dc) and text is near-black #141413. See [home-light-default](screenshots/home-light-default.png) and [policy-light-default](screenshots/policy-light-default.png).
 2. **Do set headlines in the serif — the home hero is the exception.** Display titles are anthropicSerif at weight 400-500, ~1.1 leading, slightly tight tracking; body and chrome stay in anthropicSans. The home hero's heading mixes the two: the h1 is serif while its lead line inside renders anthropicSans at weight 600 and the same size (the mobile entry reads the same way). See [hero-title](components/crops/hero-title-default.png) and [faq-item](components/crops/faq-item-default.png).
 3. **Don't waste the clay.** Clay #d97757/#c6613f is a brand accent, not a UI colour: primary buttons are ink fills and links are ink or underlined. The clay shows up on the footer send, pictograms and badges. See [footer](components/crops/footer-default.png).
 4. **Do round pills fully, cards moderately.** Nav chrome and radios are 999999px pills; buttons run 8-10px, fields 16, cards 19-24. See [nav-cta](components/crops/nav-cta-default.png) and [plan-card](components/crops/plan-card-default.png).
 5. **Do invert pills on hover.** The signature hover is the ivory pill flipping to ink with a 1px ink ring; pressed steps to #e8e6dc. Keyboard focus is a 2px #154c92 ring offset 4px. See [nav-cta-hover](components/crops/nav-cta-hover.png) and [nav-cta-focus-visible](components/crops/nav-cta-focus-visible.png).
-6. **Don't add shadows or borders the site doesn't draw.** Depth is a rare soft drop (nav panel, docs dialog); everything else separates by fill and a 1px hairline. See [nav-dropdown](screenshots/home-light-nav-dropdown.png) and [docs-search-dialog](components/crops/docs-search-dialog-default.png).
+6. **Don't add shadows or borders the site doesn't draw.** Depth is a rare soft drop on the open nav panel; everything else separates by fill and a 1px hairline. See [nav-research](screenshots/home-light-nav-research.png) and [nav-company](screenshots/home-light-nav-company.png).
 
 ## Rebuild
 

@@ -2,20 +2,15 @@
 //
 //   [RAW=<dir, default ~/.design-systems/anthropic/raw-shots>] PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [page,page,...]
 //
-// Three public surfaces, three hosts:
-//   www.anthropic.com     the marketing site: /, /news, /research, /engineering
-//   claude.com            the product pages: /product/overview, /platform/api, /pricing, /contact-sales
-//   platform.claude.com/docs  the Claude Platform docs: /docs/en/home, /docs/en/docs/get-started,
-//                             /docs/en/api/messages (API reference)
+// This refresh stays on www.anthropic.com. claude.com, docs.claude.com, claude.ai and
+// platform.claude.com are not photographed. The site tree is systems/anthropic/site-tree.md.
 // Names are {page}-light-{state}.png; mobile ones get a `mobile-` prefix. Desktop shots are 1440x900
 // at 1x, mobile shots 390x844 at 2x, `*-full` shots 1x. A page taller than one GPU texture is saved
 // as name.partN.png tiles, which quantize.py stitches back together.
 //
-// Nothing is sent, created or signed into: the nav dropdown is opened by hover only; the pricing
-// plan tabs and the batch-processing toggle are local UI; the /contact-sales form is photographed
-// and focused, never submitted; Log in, Try Claude links that leave for claude.ai, Console and the
-// footer's Privacy choices dialog are never followed or opened. claude.ai and
-// console.anthropic.com are the signed-in products and are never touched.
+// Nothing is sent, created or signed into. Header menus open on click. Try Claude, Claude.ai,
+// Console, Contact Sales, Download app, and the footer's Privacy choices dialog are never
+// followed or opened. No email, password, or identity provider is touched.
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
@@ -73,76 +68,36 @@ class Shooter {
 }
 const step = async (label, fn) => { try { await fn(); } catch (e) { failures++; log('  FAILED', label, String(e.message).split('\n')[0]); } };
 
-// Hovers one top-nav trigger so its dropdown opens (anthropic.com opens them on hover).
-async function navMenu(p, S, item = 'Product') {
-  const link = p.locator('button, a').filter({ hasText: new RegExp('^' + item + '$', 'i') }).filter({ visible: true }).first();
-  await link.hover().catch(() => {});
-  await wait(p, 1500);
-  await S.view('nav-dropdown');
-  await p.mouse.move(720, 500);
-  await wait(p, 600);
+// Clicks one header menu button. anthropic.com opens these on click (aria-haspopup=menu).
+async function navMenu(p, S, item, shot = 'nav-dropdown') {
+  const link = p.locator('header button, nav button').filter({ hasText: new RegExp('^' + item + '$') }).filter({ visible: true }).first();
+  await link.click({ timeout: 8000 });
+  await wait(p, 800);
+  await S.view(shot);
+  await p.keyboard.press('Escape');
+  await wait(p, 400);
 }
 
 const desktop = {
   home: { path: BASE + '/', run: async (p, S) => {
     await S.view('default');
     await S.full();
-    await step('nav-dropdown', () => navMenu(p, S));
-    await step('search', async () => {
-      const s = p.locator('button, [role=button]').filter({ hasText: /^search$/i }).first();
-      if (await s.count()) { await s.click(); await wait(p, 1200); await S.view('search'); await p.keyboard.press('Escape'); await wait(p, 500); }
-    });
+    await step('nav-research', () => navMenu(p, S, 'Research', 'nav-research'));
+    await step('nav-policy', () => navMenu(p, S, 'Policy', 'nav-policy'));
+    await step('nav-commitments', () => navMenu(p, S, 'Commitments', 'nav-commitments'));
+    await step('nav-company', () => navMenu(p, S, 'Company', 'nav-company'));
+    await step('nav-try', () => navMenu(p, S, 'Try Claude', 'nav-try'));
   } },
   news: { path: BASE + '/news', run: async (p, S) => { await S.view('default'); await S.full(); } },
   research: { path: BASE + '/research', run: async (p, S) => { await S.view('default'); await S.full(); } },
   engineering: { path: BASE + '/engineering', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  product: { path: 'https://claude.com/product/overview', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'platform-api': { path: 'https://claude.com/platform/api', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  pricing: { path: 'https://claude.com/pricing', run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-    await step('plan-tab', async () => {
-      const t = p.locator('[role=tab], button').filter({ hasText: /^developer$/i }).filter({ visible: true }).first();
-      if (await t.count()) { await t.click(); await wait(p, 1500); await S.view('plan-tab'); }
-    });
-    await step('batch-toggle', async () => {
-      const t = p.locator('label, button, [role=switch]').filter({ hasText: /batch processing/i }).filter({ visible: true }).first();
-      if (await t.count()) { await t.click(); await wait(p, 1200); await S.view('batch-toggle'); }
-    });
-  } },
-  'contact-sales': { path: 'https://claude.com/contact-sales', run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-    await step('field-focused', async () => {
-      const f = p.locator('input[type=text], input:not([type]), input[type=email]').filter({ visible: true }).first();
-      if (await f.count()) { await f.click(); await wait(p, 600); await S.view('field-focused'); await p.mouse.click(200, 60); }
-    });
-  } },
-  'docs-home': { path: DOCS + '/en/home', wait: 7000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-    await step('search', async () => {
-      const s = p.locator('[class*="fill-field"], button').filter({ hasText: /search/i }).first();
-      if (await s.count()) { await s.click(); await wait(p, 1500); await S.view('search-dialog'); await p.keyboard.press('Escape'); await wait(p, 600); }
-      else { await p.keyboard.press('ControlOrMeta+k'); await wait(p, 1500); await S.view('search-dialog'); await p.keyboard.press('Escape'); await wait(p, 600); }
-    });
-  } },
-  'docs-start': { path: DOCS + '/en/docs/get-started', wait: 7000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'docs-api': { path: DOCS + '/en/api/messages', wait: 7000, run: async (p, S) => { await S.view('default'); await S.full(); } },
-  // The docs ship a dark theme: html carries data-mode="system", so emulating a dark
-  // colour scheme flips it. The marketing and product pages have no dark theme.
-  'docs-home-dark': { path: DOCS + '/en/home', wait: 7000, theme: 'dark', name: 'docs-home', run: async (p, S) => {
-    await p.emulateMedia({ colorScheme: 'dark' });
-    await wait(p, 1500);
-    await S.view('default');
-    await S.full();
-  } },
-  'docs-api-dark': { path: DOCS + '/en/api/messages', wait: 7000, theme: 'dark', name: 'docs-api', run: async (p, S) => {
-    await p.emulateMedia({ colorScheme: 'dark' });
-    await wait(p, 1500);
-    await S.view('default');
-    await S.full();
-  } },
+  policy: { path: BASE + '/policy', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  constitution: { path: BASE + '/constitution', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  company: { path: BASE + '/company', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  careers: { path: BASE + '/careers', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  search: { path: BASE + '/search', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  model: { path: BASE + '/claude/opus', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  legal: { path: BASE + '/legal', run: async (p, S) => { await S.view('default'); await S.full(); } },
 };
 
 const mobile = {
@@ -150,12 +105,12 @@ const mobile = {
     await S.view('default');
     await S.full();
     await step('nav-open', async () => {
-      const t = p.locator('button').filter({ hasText: /menu/i }).first();
-      if (await t.count()) { await t.click(); await wait(p, 1500); await S.view('nav-open'); }
+      const t = p.getByRole('button', { name: 'Open menu' });
+      if (await t.count()) { await t.click(); await wait(p, 1200); await S.view('nav-open'); }
     });
   } },
-  pricing: { path: 'https://claude.com/pricing', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'docs-home': { path: DOCS + '/en/home', wait: 7000, run: async (p, S) => { await S.view('default'); await S.full(); } },
+  news: { path: BASE + '/news', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  research: { path: BASE + '/research', run: async (p, S) => { await S.view('default'); await S.full(); } },
 };
 
 const b = await chromium.launch();

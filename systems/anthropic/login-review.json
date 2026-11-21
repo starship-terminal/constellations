@@ -1,0 +1,85 @@
+{
+  "offered": {
+    "nav": {
+      "items": [
+        "News opens /news",
+        "Research menu: Overview, Alignment, Interpretability, Engineering, Science, The Anthropic Institute, Economics, Frontier Red Team, Societal Impacts",
+        "Policy menu: Overview, Policy on the AI Exponential",
+        "Commitments menu: Claude's Constitution, Beneficial Deployments, Responsible Scaling Policy, Frontier Safety Roadmap, Transparency, Threat Intelligence",
+        "Company menu: About us, Leadership, Public benefit report, Customers, Careers, Events, Claude Corps, Economic Futures",
+        "Search opens /search",
+        "Try Claude menu: Claude AI (claude.ai), Console (platform.claude.com/login)",
+        "Phone Open menu dialog: Home, News, the same four menus, recent articles, footer groups, Try Claude, Contact Sales, Download app",
+        "Footer Log in: Claude.ai and Claude console"
+      ],
+      "reached": [
+        "News opens /news",
+        "Research menu: Overview, Alignment, Interpretability, Engineering, Science, The Anthropic Institute, Economics, Frontier Red Team, Societal Impacts",
+        "Policy menu: Overview, Policy on the AI Exponential",
+        "Commitments menu: Claude's Constitution, Beneficial Deployments, Responsible Scaling Policy, Frontier Safety Roadmap, Transparency, Threat Intelligence",
+        "Company menu: About us, Leadership, Public benefit report, Customers, Careers, Events, Claude Corps, Economic Futures",
+        "Search opens /search",
+        "Phone Open menu dialog: Home, News, the same four menus, recent articles, footer groups, Try Claude, Contact Sales, Download app"
+      ]
+    },
+    "settings": {
+      "items": [
+        "no settings area on the public site",
+        "Privacy choices is a footer consent button and was not opened"
+      ],
+      "reached": [
+        "no settings area on the public site"
+      ]
+    },
+    "create": {
+      "items": [
+        "no create flow on anthropic.com",
+        "Try Claude, Contact Sales, Download app, and Get API access leave this host"
+      ],
+      "reached": [
+        "no create flow on anthropic.com"
+      ]
+    }
+  },
+  "screens": [
+    { "name": "Home", "file": "screenshots/home-light-default.png" },
+    { "name": "Home, full page", "file": "screenshots/home-light-full.png" },
+    { "name": "Research menu", "file": "screenshots/home-light-nav-research.png" },
+    { "name": "Policy menu", "file": "screenshots/home-light-nav-policy.png" },
+    { "name": "Commitments menu", "file": "screenshots/home-light-nav-commitments.png" },
+    { "name": "Company menu", "file": "screenshots/home-light-nav-company.png" },
+    { "name": "Try Claude menu, stop", "file": "screenshots/home-light-nav-try.png" },
+    { "name": "News", "file": "screenshots/news-light-default.png" },
+    { "name": "Research", "file": "screenshots/research-light-default.png" },
+    { "name": "Engineering", "file": "screenshots/engineering-light-default.png" },
+    { "name": "Policy", "file": "screenshots/policy-light-default.png" },
+    { "name": "Constitution", "file": "screenshots/constitution-light-default.png" },
+    { "name": "Company", "file": "screenshots/company-light-default.png" },
+    { "name": "Careers", "file": "screenshots/careers-light-default.png" },
+    { "name": "Search", "file": "screenshots/search-light-default.png" },
+    { "name": "Claude Opus model page", "file": "screenshots/model-light-default.png" },
+    { "name": "Legal center", "file": "screenshots/legal-light-default.png" },
+    { "name": "Home at 390", "file": "screenshots/mobile-home-light-default.png" },
+    { "name": "Phone menu", "file": "screenshots/mobile-home-light-nav-open.png" },
+    { "name": "News at 390", "file": "screenshots/mobile-news-light-default.png" },
+    { "name": "Research at 390", "file": "screenshots/mobile-research-light-default.png" }
+  ],
+  "gaps": [
+    "claude.ai was not opened. Try Claude and footer Log in point there. Login wall.",
+    "platform.claude.com login was not opened. Console is a login wall.",
+    "claude.com product, pricing, customers, contact-sales, and download were not captured. This refresh stays on anthropic.com.",
+    "docs.claude.com was not captured. It is a different host.",
+    "No Google, Apple, or other identity provider was clicked. None is on the anthropic.com homepage.",
+    "Privacy choices was not opened. It is a consent dialog.",
+    "No account settings exist on the public site.",
+    "No create flow exists on anthropic.com. Try Claude and Get API access leave the host.",
+    "Careers job listings and application forms were not opened. Explore open roles was not clicked.",
+    "Search was not submitted. The empty search page was photographed."
+  ],
+  "not_submitted": [
+    "No email, password, phone, or code was typed.",
+    "No identity provider was clicked.",
+    "No form was submitted, including search, careers, and consent.",
+    "No account was created and nothing was bought."
+  ]
+}
