@@ -1,0 +1,69 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "Public Playwright capture, signed out. https://app.base44.com/login was opened directly. The empty wall was photographed. The branch stopped. No email, password, phone, or code was typed. No identity provider was clicked. No form was submitted. No captcha was solved.",
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measured": "innerWidth 1440, innerHeight 900, devicePixelRatio 1, visualViewport 1440x900 scale 1",
+      "file": "screenshots/login-light-empty.png"
+    },
+    "phone": {
+      "requested": "390x844",
+      "measured": "innerWidth 390, innerHeight 844, devicePixelRatio 2, visualViewport 390x844 scale 1",
+      "file": "screenshots/mobile-login-light-empty.png"
+    }
+  },
+  "offered": {
+    "wall": "https://app.base44.com/login",
+    "status": 200,
+    "title": "Welcome to Base44",
+    "themes": ["light"],
+    "dark": "prefers-color-scheme dark was requested. The page stayed the same light paint. No theme control was on the wall. screenshots/login-dark-pref-empty.png",
+    "fields": [
+      {"label": "Email", "placeholder": "Enter your email address", "type": "email", "value": "empty"}
+    ],
+    "actions": [
+      "Log in with Google",
+      "Log in with Apple",
+      "Log in with GitHub",
+      "Continue with email",
+      "Sign up"
+    ],
+    "legal": [
+      "Terms of Service",
+      "Privacy Policy"
+    ],
+    "continue_with_email": "Visible and disabled while the email field is empty. Not pressed.",
+    "signup_wall_seen_not_filed": "https://app.base44.com/register shows Create your account, Sign up with Google, Sign up with GitHub, Sign up with Apple, empty Email, empty Password, Sign up, and a captcha. Not typed. Not solved. Screenshot not committed."
+  },
+  "screens": [
+    {"name": "Log-in wall, empty, light, 1440", "file": "screenshots/login-light-empty.png"},
+    {"name": "Log-in wall, empty, light, 390", "file": "screenshots/mobile-login-light-empty.png"},
+    {"name": "Log-in wall, dark preference requested, still light, 1440", "file": "screenshots/login-dark-pref-empty.png"}
+  ],
+  "gaps": [
+    "The signed-in app was not entered. Nav, settings, and create were not offered on a signed-in shell.",
+    "Continue with email was not pressed. No password step appeared.",
+    "Sign up was visible and not followed as a completed flow. The empty register wall was seen and not filed because it shows a captcha and a password field.",
+    "Google, Apple, and GitHub were visible and not clicked.",
+    "No code was sent. No account was created."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "code",
+    "Continue with email",
+    "Sign up",
+    "Log in with Google",
+    "Log in with Apple",
+    "Log in with GitHub",
+    "captcha",
+    "Contact sales",
+    "Talk to Sales",
+    "Report a Security Issue",
+    "Request SOC Report",
+    "newsletter",
+    "profile, birthday, plan, survey, and onboarding fields"
+  ]
+}
