@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "read": "2026-11-13",
+  "read": "2026-11-21",
   "viewport": "1440 x 900 (mobile group 390 x 844), dark theme",
   "tool": "tools/capture/public/measure.mjs",
   "sheets": {
@@ -384,7 +384,7 @@
       "rowGap": "normal",
       "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "flow-start",
+      "alignItems": "flex-start",
       "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
@@ -407,7 +407,7 @@
       "backgroundImage": "linear-gradient(rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0) 100%)",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -491,12 +491,12 @@
      },
      "crop": "components/crops/header-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Header",
    "group": "Shell and navigation",
@@ -559,7 +559,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -597,12 +597,12 @@
      },
      "crop": "components/crops/logo-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Logo",
    "group": "Shell and navigation",
@@ -665,7 +665,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -705,7 +705,7 @@
      },
      "crop": "components/crops/nav-link-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "a",
@@ -761,7 +761,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -801,7 +801,7 @@
      },
      "crop": "components/crops/nav-link-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "a",
@@ -857,7 +857,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "2px",
@@ -904,7 +904,7 @@
      ],
      "crop": "components/crops/nav-link-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "a",
@@ -960,7 +960,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -1000,12 +1000,12 @@
      },
      "crop": "components/crops/nav-link-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Nav link",
    "group": "Shell and navigation",
@@ -1067,7 +1067,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -1102,7 +1102,7 @@
      },
      "crop": "components/crops/nav-more-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "button",
@@ -1158,7 +1158,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -1193,7 +1193,7 @@
      },
      "crop": "components/crops/nav-more-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "button",
@@ -1249,7 +1249,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "0px",
@@ -1291,7 +1291,7 @@
      },
      "crop": "components/crops/nav-more-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "button",
@@ -1347,7 +1347,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -1382,12 +1382,12 @@
      },
      "crop": "components/crops/nav-more-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "More button",
    "group": "Shell and navigation",
@@ -1450,7 +1450,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(255, 255, 255) 0px 0px 15px 0px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -1500,7 +1500,7 @@
      ],
      "crop": "components/crops/btn-try-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "button",
@@ -1556,7 +1556,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(255, 255, 255) 0px 0px 15px 0px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -1606,7 +1606,7 @@
      ],
      "crop": "components/crops/btn-try-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "button",
@@ -1662,7 +1662,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "0px",
@@ -1712,7 +1712,7 @@
      ],
      "crop": "components/crops/btn-try-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "button",
@@ -1768,7 +1768,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(255, 255, 255) 0px 0px 15px 0px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -1818,12 +1818,12 @@
      ],
      "crop": "components/crops/btn-try-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Try Today button",
    "group": "Shell and navigation",
@@ -1886,7 +1886,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -1935,7 +1935,7 @@
      ],
      "crop": "components/crops/btn-signin-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "button",
@@ -1991,7 +1991,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -2040,7 +2040,7 @@
      ],
      "crop": "components/crops/btn-signin-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "button",
@@ -2096,7 +2096,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "0px",
@@ -2146,7 +2146,7 @@
      ],
      "crop": "components/crops/btn-signin-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "button",
@@ -2202,7 +2202,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -2251,12 +2251,12 @@
      ],
      "crop": "components/crops/btn-signin-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Sign In button",
    "group": "Shell and navigation",
@@ -2319,7 +2319,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -2359,12 +2359,12 @@
      },
      "crop": "components/crops/menu-flyout-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "More flyout",
    "group": "Shell and navigation",
@@ -2427,7 +2427,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -2462,12 +2462,12 @@
      },
      "crop": "components/crops/nav-more-open-opened.png",
      "via": "menu held open by opts.open",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "More button, open",
    "group": "Shell and navigation",
@@ -2530,7 +2530,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -2558,12 +2558,12 @@
      },
      "crop": "components/crops/hero-title-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Hero title",
    "group": "Marketing sections",
@@ -2626,7 +2626,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -2761,12 +2761,12 @@
       "color": "rgb(255, 255, 255)"
      },
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Page ground",
    "group": "Marketing sections",
@@ -2829,7 +2829,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -2857,12 +2857,12 @@
      },
      "crop": "components/crops/section-title-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Section title",
    "group": "Marketing sections",
@@ -2924,7 +2924,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(191, 191, 191)",
       "outlineOffset": "0px",
@@ -2952,12 +2952,12 @@
      },
      "crop": "components/crops/body-text-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Body text",
    "group": "Marketing sections",
@@ -3019,7 +3019,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -3059,7 +3059,7 @@
      },
      "crop": "components/crops/learn-more-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "a",
@@ -3115,7 +3115,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -3155,7 +3155,7 @@
      },
      "crop": "components/crops/learn-more-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "a",
@@ -3211,7 +3211,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "2px",
@@ -3258,7 +3258,7 @@
      ],
      "crop": "components/crops/learn-more-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "a",
@@ -3314,7 +3314,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -3354,12 +3354,12 @@
      },
      "crop": "components/crops/learn-more-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Learn More link",
    "group": "Marketing sections",
@@ -3421,7 +3421,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -3461,7 +3461,7 @@
      },
      "crop": "components/crops/try-now-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "a",
@@ -3517,7 +3517,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -3557,7 +3557,7 @@
      },
      "crop": "components/crops/try-now-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "a",
@@ -3613,7 +3613,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "2px",
@@ -3660,7 +3660,7 @@
      ],
      "crop": "components/crops/try-now-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "a",
@@ -3716,7 +3716,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -3756,12 +3756,12 @@
      },
      "crop": "components/crops/try-now-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Try Now link",
    "group": "Marketing sections",
@@ -3823,7 +3823,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -3867,7 +3867,7 @@
      },
      "crop": "components/crops/play-button-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "button",
@@ -3923,7 +3923,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -3967,7 +3967,7 @@
      },
      "crop": "components/crops/play-button-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "button",
@@ -4023,7 +4023,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "0px",
@@ -4068,7 +4068,7 @@
      },
      "crop": "components/crops/play-button-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "button",
@@ -4124,7 +4124,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -4168,12 +4168,12 @@
      },
      "crop": "components/crops/play-button-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Round media button",
    "group": "Marketing sections",
@@ -4236,7 +4236,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -4285,7 +4285,7 @@
      ],
      "crop": "components/crops/show-more-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "button",
@@ -4341,7 +4341,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -4390,7 +4390,7 @@
      ],
      "crop": "components/crops/show-more-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "button",
@@ -4446,7 +4446,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "0px",
@@ -4496,7 +4496,7 @@
      ],
      "crop": "components/crops/show-more-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "button",
@@ -4552,7 +4552,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -4601,12 +4601,12 @@
      ],
      "crop": "components/crops/show-more-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Show More button",
    "group": "Marketing sections",
@@ -4669,7 +4669,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -4724,7 +4724,7 @@
      },
      "crop": "components/crops/accordion-title-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "button",
@@ -4780,7 +4780,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -4835,7 +4835,7 @@
      },
      "crop": "components/crops/accordion-title-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "button",
@@ -4891,7 +4891,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "0px",
@@ -4947,7 +4947,7 @@
      },
      "crop": "components/crops/accordion-title-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "button",
@@ -5003,7 +5003,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -5058,7 +5058,7 @@
      },
      "crop": "components/crops/accordion-title-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "opened": {
      "tag": "button",
@@ -5114,7 +5114,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "0px",
@@ -5169,12 +5169,12 @@
      },
      "crop": "components/crops/accordion-title-opened.png",
      "via": "own toggle",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "FAQ accordion item",
    "group": "Marketing sections",
@@ -5237,7 +5237,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -5285,12 +5285,12 @@
      ],
      "crop": "components/crops/accordion-content-opened.png",
      "via": "menu held open by opts.open",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "FAQ answer",
    "group": "Marketing sections",
@@ -5301,7 +5301,7 @@
    "states": {},
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Newsletter email field",
    "group": "Marketing sections",
@@ -5313,7 +5313,7 @@
    "states": {},
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Subscribe button",
    "group": "Marketing sections",
@@ -5377,7 +5377,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -5405,7 +5405,7 @@
      },
      "crop": "components/crops/press-logo-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "a",
@@ -5461,7 +5461,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -5489,7 +5489,7 @@
      },
      "crop": "components/crops/press-logo-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "a",
@@ -5545,7 +5545,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(128, 128, 128) 0px 0px 0px 4px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "2px",
@@ -5581,7 +5581,7 @@
      ],
      "crop": "components/crops/press-logo-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "a",
@@ -5637,7 +5637,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -5665,12 +5665,12 @@
      },
      "crop": "components/crops/press-logo-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Press logo",
    "group": "Marketing sections",
@@ -5733,7 +5733,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -5761,12 +5761,12 @@
      },
      "crop": "components/crops/page-title-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "focus",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/focus",
    "title": "Page title",
    "group": "Marketing sections",
@@ -5829,7 +5829,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -5864,7 +5864,7 @@
      ],
      "crop": "components/crops/soundscape-card-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "a",
@@ -5920,7 +5920,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -5955,7 +5955,7 @@
      ],
      "crop": "components/crops/soundscape-card-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "a",
@@ -6011,7 +6011,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "2px",
@@ -6046,7 +6046,7 @@
      ],
      "crop": "components/crops/soundscape-card-focus-visible.png",
      "via": "keydown then focus()",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "a",
@@ -6102,7 +6102,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -6137,12 +6137,12 @@
      ],
      "crop": "components/crops/soundscape-card-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "focus",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/focus",
    "title": "Soundscape card",
    "group": "Marketing sections",
@@ -6205,7 +6205,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -6233,12 +6233,12 @@
      },
      "crop": "components/crops/scenario-card-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "focus",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/focus",
    "title": "Scenario card",
    "group": "Marketing sections",
@@ -6301,7 +6301,7 @@
       "backgroundImage": "linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0))",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -6368,12 +6368,12 @@
      },
      "crop": "components/crops/app-header-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-explore",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/",
    "title": "App header",
    "group": "Web app (signed out)",
@@ -6436,7 +6436,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -6491,7 +6491,7 @@
      },
      "crop": "components/crops/user-button-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "button",
@@ -6547,7 +6547,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -6602,7 +6602,7 @@
      },
      "crop": "components/crops/user-button-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "button",
@@ -6658,7 +6658,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -6713,7 +6713,7 @@
      },
      "crop": "components/crops/user-button-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "button",
@@ -6769,7 +6769,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -6824,12 +6824,12 @@
      },
      "crop": "components/crops/user-button-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-explore",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/",
    "title": "FREEMIUM chip",
    "group": "Web app (signed out)",
@@ -6892,7 +6892,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -6941,7 +6941,7 @@
      ],
      "crop": "components/crops/app-btn-signin-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "button",
@@ -6997,7 +6997,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -7046,7 +7046,7 @@
      ],
      "crop": "components/crops/app-btn-signin-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "button",
@@ -7102,7 +7102,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "0px",
@@ -7152,7 +7152,7 @@
      ],
      "crop": "components/crops/app-btn-signin-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "button",
@@ -7208,7 +7208,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -7257,12 +7257,12 @@
      ],
      "crop": "components/crops/app-btn-signin-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-explore",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/",
    "title": "Sign In button (app)",
    "group": "Web app (signed out)",
@@ -7378,7 +7378,7 @@
      ],
      "crop": "components/crops/banner-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "a",
@@ -7488,7 +7488,7 @@
      ],
      "crop": "components/crops/banner-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "a",
@@ -7544,7 +7544,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "2px",
@@ -7592,7 +7592,7 @@
      ],
      "crop": "components/crops/banner-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "a",
@@ -7702,12 +7702,12 @@
      ],
      "crop": "components/crops/banner-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-explore",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/",
    "title": "Carousel banner",
    "group": "Web app (signed out)",
@@ -7770,7 +7770,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
@@ -7806,12 +7806,12 @@
      ],
      "crop": "components/crops/banner-dot-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-explore",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/",
    "title": "Carousel dot",
    "group": "Web app (signed out)",
@@ -7874,7 +7874,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -7930,7 +7930,7 @@
      },
      "crop": "components/crops/scenario-pill-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "button",
@@ -7986,7 +7986,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -8042,7 +8042,7 @@
      },
      "crop": "components/crops/scenario-pill-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "button",
@@ -8098,7 +8098,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "0px",
@@ -8155,7 +8155,7 @@
      },
      "crop": "components/crops/scenario-pill-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "button",
@@ -8211,7 +8211,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -8267,12 +8267,12 @@
      },
      "crop": "components/crops/scenario-pill-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-explore",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/",
    "title": "Scenario pill",
    "group": "Web app (signed out)",
@@ -8335,7 +8335,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -8382,7 +8382,7 @@
      },
      "crop": "components/crops/soundscape-row-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "button",
@@ -8438,7 +8438,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -8485,7 +8485,7 @@
      },
      "crop": "components/crops/soundscape-row-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "button",
@@ -8541,7 +8541,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -8588,7 +8588,7 @@
      },
      "crop": "components/crops/soundscape-row-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "button",
@@ -8644,7 +8644,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -8691,12 +8691,12 @@
      },
      "crop": "components/crops/soundscape-row-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-explore",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/",
    "title": "Soundscape row",
    "group": "Web app (signed out)",
@@ -8759,7 +8759,7 @@
       "backgroundImage": "linear-gradient(rgba(0, 0, 0, 0.05) 0%, rgb(0, 0, 0) 85%)",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -8826,12 +8826,12 @@
      },
      "crop": "components/crops/mini-player-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-explore",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/",
    "title": "Mini player",
    "group": "Web app (signed out)",
@@ -8843,7 +8843,7 @@
     "default": {
      "tag": "header",
      "classes": "Header-module__LaozEq__header",
-     "text": "Focus Night Energy Dip",
+     "text": "Focus Evening Energy Peak",
      "rect": {
       "x": 0,
       "y": 0,
@@ -8894,7 +8894,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -8954,12 +8954,12 @@
      },
      "crop": "components/crops/player-header-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-player",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/player/focus",
    "title": "Player header",
    "group": "Player",
@@ -9022,7 +9022,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -9050,12 +9050,12 @@
      },
      "crop": "components/crops/player-title-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-player",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/player/focus",
    "title": "Soundscape title",
    "group": "Player",
@@ -9117,7 +9117,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -9168,7 +9168,7 @@
      },
      "crop": "components/crops/btn-close-player-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "button",
@@ -9224,7 +9224,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -9275,7 +9275,7 @@
      },
      "crop": "components/crops/btn-close-player-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "button",
@@ -9331,7 +9331,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "0px",
@@ -9383,7 +9383,7 @@
      },
      "crop": "components/crops/btn-close-player-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "button",
@@ -9439,7 +9439,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -9490,12 +9490,12 @@
      },
      "crop": "components/crops/btn-close-player-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-player",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/player/focus",
    "title": "Close button",
    "group": "Player",
@@ -9558,7 +9558,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -9606,7 +9606,7 @@
      ],
      "crop": "components/crops/btn-set-timer-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "button",
@@ -9662,7 +9662,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -9711,7 +9711,7 @@
      ],
      "crop": "components/crops/btn-set-timer-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "button",
@@ -9767,7 +9767,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "0px",
@@ -9816,7 +9816,7 @@
      ],
      "crop": "components/crops/btn-set-timer-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "button",
@@ -9872,7 +9872,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -9921,12 +9921,12 @@
      ],
      "crop": "components/crops/btn-set-timer-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-player",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/player/focus",
    "title": "Set Timer button",
    "group": "Player",
@@ -9989,7 +9989,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -10024,7 +10024,7 @@
      },
      "crop": "components/crops/button-mode-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "svg",
@@ -10080,7 +10080,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -10115,7 +10115,7 @@
      },
      "crop": "components/crops/button-mode-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "svg",
@@ -10171,7 +10171,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -10206,7 +10206,7 @@
      },
      "crop": "components/crops/button-mode-focus-visible.png",
      "via": "focus failed",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "svg",
@@ -10262,7 +10262,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -10297,12 +10297,12 @@
      },
      "crop": "components/crops/button-mode-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-player",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/player/focus",
    "title": "Mode button",
    "group": "Player",
@@ -10365,7 +10365,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -10400,12 +10400,12 @@
      },
      "crop": "components/crops/button-mode-active-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-player",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/player/focus",
    "title": "Mode button, active",
    "group": "Player",
@@ -10468,7 +10468,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -10512,7 +10512,7 @@
      },
      "crop": "components/crops/player-control-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "button",
@@ -10568,7 +10568,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -10612,7 +10612,7 @@
      },
      "crop": "components/crops/player-control-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "button",
@@ -10668,7 +10668,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "0px",
@@ -10713,7 +10713,7 @@
      },
      "crop": "components/crops/player-control-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "button",
@@ -10769,7 +10769,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -10813,12 +10813,12 @@
      },
      "crop": "components/crops/player-control-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-player",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/player/focus",
    "title": "Transport button",
    "group": "Player",
@@ -10881,7 +10881,7 @@
       "backgroundImage": "linear-gradient(to right, rgb(255, 255, 255) 100%, rgb(128, 128, 128) 100%)",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(16, 16, 16)",
       "outlineOffset": "0px",
@@ -10922,7 +10922,7 @@
      },
      "crop": "components/crops/volume-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focused": {
      "tag": "input",
@@ -10978,7 +10978,7 @@
       "backgroundImage": "linear-gradient(to right, rgb(255, 255, 255) 100%, rgb(128, 128, 128) 100%)",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(16, 16, 16)",
       "outlineOffset": "0px",
@@ -11019,12 +11019,12 @@
      },
      "crop": "components/crops/volume-focused.png",
      "via": "DOM focus (no click: it would set the slider value)",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-player",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/player/focus",
    "title": "Volume slider",
    "group": "Player",
@@ -11087,7 +11087,7 @@
       "backgroundImage": "linear-gradient(rgb(25, 25, 25) 0%, rgb(0, 0, 0) 100%)",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -11123,7 +11123,7 @@
      ],
      "crop": "components/crops/btn-explore-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "button",
@@ -11179,7 +11179,7 @@
       "backgroundImage": "linear-gradient(rgb(25, 25, 25) 0%, rgb(0, 0, 0) 100%)",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -11215,7 +11215,7 @@
      ],
      "crop": "components/crops/btn-explore-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "button",
@@ -11271,7 +11271,7 @@
       "backgroundImage": "linear-gradient(rgb(25, 25, 25) 0%, rgb(0, 0, 0) 100%)",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -11307,7 +11307,7 @@
      ],
      "crop": "components/crops/btn-explore-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "button",
@@ -11363,7 +11363,7 @@
       "backgroundImage": "linear-gradient(rgb(25, 25, 25) 0%, rgb(0, 0, 0) 100%)",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -11399,12 +11399,12 @@
      ],
      "crop": "components/crops/btn-explore-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-player",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/player/focus",
    "title": "Explore button",
    "group": "Player",
@@ -11467,7 +11467,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -11568,12 +11568,12 @@
      },
      "crop": "components/crops/timer-dialog-opened.png",
      "via": "menu held open by opts.open",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-player",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/player/focus",
    "title": "Shut-off timer dialog",
    "group": "Player",
@@ -11636,7 +11636,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -11685,12 +11685,12 @@
      ],
      "crop": "components/crops/btn-unlock-opened.png",
      "via": "menu held open by opts.open",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-player",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://app.endel.io/player/focus",
    "title": "Unlock button",
    "group": "Player",
@@ -11753,7 +11753,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -11807,7 +11807,7 @@
       },
       {
        "node": "div::before.Divider-module__QZkn-a__divider.Divider-module__QZkn-a__with-text",
-       "size": "258.156pxx2px",
+       "size": "258.141pxx2px",
        "bgImage": "linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(38, 38, 38) 100%)",
        "radius": "2px"
       },
@@ -11848,16 +11848,16 @@
      },
      "crop": "components/crops/login-card-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-login",
    "view": "desktop",
-   "run": "2026-11-13",
-   "url": "https://app.endel.io/",
+   "run": "2026-11-21",
+   "url": "https://app.endel.io/login",
    "title": "Sign-in card",
    "group": "Sign-in card",
-   "desc": "The \"Sign In or Register\" panel: email field, Continue and the OAuth buttons. Nothing was submitted.",
+   "desc": "The \"Sign In or Register\" panel: an empty email field, Continue, and three icon-only identity-provider buttons (Google, Apple, Facebook). Nothing was typed or submitted. The provider buttons were not clicked.",
    "selector": "card ancestor of the sign-in heading (marked in-page)"
   },
   "input-email-login": {
@@ -11865,7 +11865,7 @@
     "default": {
      "tag": "input",
      "classes": "Input-module__iEWt7a__input",
-     "text": "hi@endel.io",
+     "text": "",
      "rect": {
       "x": 438,
       "y": 386.5,
@@ -11916,7 +11916,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -11951,18 +11951,18 @@
       }
      ],
      "placeholder": {
-      "color": "rgb(117, 117, 117)",
+      "color": "rgba(0, 0, 0, 0)",
       "opacity": "1",
       "fontSize": "22px"
      },
      "crop": "components/crops/input-email-login-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focused": {
      "tag": "input",
      "classes": "Input-module__iEWt7a__input",
-     "text": "hi@endel.io",
+     "text": "",
      "rect": {
       "x": 438,
       "y": 386.5,
@@ -12013,7 +12013,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -12048,19 +12048,19 @@
       }
      ],
      "placeholder": {
-      "color": "rgb(117, 117, 117)",
+      "color": "rgba(0, 0, 0, 0)",
       "opacity": "1",
       "fontSize": "22px"
      },
      "crop": "components/crops/input-email-login-focused.png",
      "via": "clicked into the field",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-login",
    "view": "desktop",
-   "run": "2026-11-13",
-   "url": "https://app.endel.io/",
+   "run": "2026-11-21",
+   "url": "https://app.endel.io/login",
    "title": "Email field (sign-in)",
    "group": "Sign-in card",
    "desc": "Read default and focused; no address was ever typed on this page.",
@@ -12122,7 +12122,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -12171,7 +12171,7 @@
      ],
      "crop": "components/crops/btn-continue-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "button",
@@ -12227,7 +12227,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -12276,7 +12276,7 @@
      ],
      "crop": "components/crops/btn-continue-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "button",
@@ -12332,7 +12332,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "0px",
@@ -12382,7 +12382,7 @@
      ],
      "crop": "components/crops/btn-continue-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "button",
@@ -12438,7 +12438,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -12487,13 +12487,13 @@
      ],
      "crop": "components/crops/btn-continue-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-login",
    "view": "desktop",
-   "run": "2026-11-13",
-   "url": "https://app.endel.io/",
+   "run": "2026-11-21",
+   "url": "https://app.endel.io/login",
    "title": "Continue button",
    "group": "Sign-in card",
    "desc": "Submits the sign-in form. Measured in all states, never pressed for real.",
@@ -12555,7 +12555,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -12599,7 +12599,7 @@
      },
      "crop": "components/crops/btn-oauth-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "button",
@@ -12655,7 +12655,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -12699,7 +12699,7 @@
      },
      "crop": "components/crops/btn-oauth-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "button",
@@ -12755,7 +12755,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "0px",
@@ -12800,7 +12800,7 @@
      },
      "crop": "components/crops/btn-oauth-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "button",
@@ -12856,7 +12856,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -12900,16 +12900,16 @@
      },
      "crop": "components/crops/btn-oauth-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "app-login",
    "view": "desktop",
-   "run": "2026-11-13",
-   "url": "https://app.endel.io/",
-   "title": "OAuth button",
+   "run": "2026-11-21",
+   "url": "https://app.endel.io/login",
+   "title": "Identity-provider button",
    "group": "Sign-in card",
-   "desc": "One of the icon-only provider buttons (Apple, Facebook). Measured, never pressed.",
+   "desc": "The Google icon button on the sign-in card. Apple and Facebook sit beside it. Measured, never pressed.",
    "selector": "login icon button"
   },
   "footer": {
@@ -12968,7 +12968,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -13036,12 +13036,12 @@
      ],
      "crop": "components/crops/footer-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Footer",
    "group": "Footer",
@@ -13104,7 +13104,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -13144,7 +13144,7 @@
      },
      "crop": "components/crops/footer-link-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "a",
@@ -13200,7 +13200,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -13240,7 +13240,7 @@
      },
      "crop": "components/crops/footer-link-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "a",
@@ -13296,7 +13296,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "2px",
@@ -13343,7 +13343,7 @@
      ],
      "crop": "components/crops/footer-link-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "a",
@@ -13399,7 +13399,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -13439,12 +13439,12 @@
      },
      "crop": "components/crops/footer-link-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Footer link",
    "group": "Footer",
@@ -13506,7 +13506,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -13534,7 +13534,7 @@
      },
      "crop": "components/crops/footer-social-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "a",
@@ -13590,7 +13590,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -13618,7 +13618,7 @@
      },
      "crop": "components/crops/footer-social-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "a",
@@ -13674,7 +13674,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 4px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "2px",
@@ -13709,7 +13709,7 @@
      ],
      "crop": "components/crops/footer-social-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "a",
@@ -13765,7 +13765,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -13793,12 +13793,12 @@
      },
      "crop": "components/crops/footer-social-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Footer social icon",
    "group": "Footer",
@@ -13860,7 +13860,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -13900,7 +13900,7 @@
      },
      "crop": "components/crops/footer-legal-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "a",
@@ -13956,7 +13956,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -13996,7 +13996,7 @@
      },
      "crop": "components/crops/footer-legal-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "a",
@@ -14052,7 +14052,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "2px",
@@ -14099,7 +14099,7 @@
      ],
      "crop": "components/crops/footer-legal-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "a",
@@ -14155,7 +14155,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -14195,12 +14195,12 @@
      },
      "crop": "components/crops/footer-legal-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Legal link",
    "group": "Footer",
@@ -14239,7 +14239,7 @@
       "rowGap": "normal",
       "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "flow-start",
+      "alignItems": "flex-start",
       "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
@@ -14262,7 +14262,7 @@
       "backgroundImage": "linear-gradient(rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0) 100%)",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -14346,12 +14346,12 @@
      },
      "crop": "components/crops/m-header-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "mobile",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Mobile header",
    "group": "Mobile (390 wide)",
@@ -14414,7 +14414,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -14470,7 +14470,7 @@
      },
      "crop": "components/crops/m-menu-button-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "hover": {
      "tag": "button",
@@ -14526,7 +14526,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -14582,7 +14582,7 @@
      },
      "crop": "components/crops/m-menu-button-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "focus-visible": {
      "tag": "button",
@@ -14638,7 +14638,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgb(102, 102, 102) 0px 0px 0px 6px",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "0px",
@@ -14695,7 +14695,7 @@
      },
      "crop": "components/crops/m-menu-button-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "pressed": {
      "tag": "button",
@@ -14751,7 +14751,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -14807,7 +14807,7 @@
      },
      "crop": "components/crops/m-menu-button-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     },
     "opened": {
      "tag": "button",
@@ -14863,7 +14863,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "0px",
@@ -14919,12 +14919,12 @@
      },
      "crop": "components/crops/m-menu-button-opened.png",
      "via": "own toggle",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "mobile",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Menu button",
    "group": "Mobile (390 wide)",
@@ -14987,7 +14987,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -15027,12 +15027,12 @@
      },
      "crop": "components/crops/m-menu-flyout-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "mobile",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Mobile menu, open",
    "group": "Mobile (390 wide)",
@@ -15095,7 +15095,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "3px",
+      "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -15123,12 +15123,12 @@
      },
      "crop": "components/crops/m-hero-title-default.png",
      "via": "at rest",
-     "run": "2026-11-13"
+     "run": "2026-11-21"
     }
    },
    "page": "home",
    "view": "mobile",
-   "run": "2026-11-13",
+   "run": "2026-11-21",
    "url": "https://endel.io/",
    "title": "Hero title (mobile)",
    "group": "Mobile (390 wide)",

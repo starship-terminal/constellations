@@ -1,24 +1,24 @@
 {
- "readAt": "2026-11-13",
+ "readAt": "2026-11-21",
  "source": "endel.io and app.endel.io's linked /_next/static/chunks/*.css bundles (Next.js builds), read through the CSSOM on the live home page and the live explore page, and re-parsed in a probe document per host",
  "sheets": [
   {
    "name": "https://endel.io/_next/static/chunks/1gmk1w5b43367.css",
    "media": "",
    "host": "site",
-   "bytes": 72812
+   "bytes": 71785
   },
   {
    "name": "https://endel.io/_next/static/chunks/2lq5ar8gz5i5i.css",
    "media": "",
    "host": "site",
-   "bytes": 29204
+   "bytes": 28177
   },
   {
    "name": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
    "media": "",
    "host": "site",
-   "bytes": 52540
+   "bytes": 49928
   },
   {
    "name": "https://endel.io/_next/static/chunks/3x4ucrb6__oqk.css",
@@ -30,7 +30,7 @@
    "name": "https://endel.io/_next/static/chunks/2ah6mzokt0dp6.css",
    "media": "",
    "host": "site",
-   "bytes": 39099
+   "bytes": 38601
   },
   {
    "name": "https://cdn.paddle.com/paddle/v2/assets/css/paddle.css",
@@ -42,37 +42,37 @@
    "name": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
    "media": "",
    "host": "app",
-   "bytes": 74144
+   "bytes": 73117
   },
   {
    "name": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
    "media": "",
    "host": "app",
-   "bytes": 160422
+   "bytes": 153624
   },
   {
    "name": "https://app.endel.io/_next/static/chunks/0g4_0nuxa-lzw.css",
    "media": "",
    "host": "app",
-   "bytes": 22632
+   "bytes": 21636
   },
   {
    "name": "https://app.endel.io/_next/static/chunks/38j8wfyvrxndc.css",
    "media": "",
    "host": "app",
-   "bytes": 16315
+   "bytes": 15288
   },
   {
    "name": "inline-4",
    "media": "",
    "host": "app",
-   "bytes": 16763
+   "bytes": 16687
   },
   {
    "name": "inline-5",
    "media": "",
    "host": "app",
-   "bytes": 6509
+   "bytes": 6609
   }
  ],
  "counts": {
@@ -1781,7 +1781,7 @@
    "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
    "host": "site",
    "font-family": "apercuPro",
-   "src": "url(\"../media/ApercuPro_Regular-s.p.0v-mjl_okpoh0.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "font-display": "swap"
   },
   {
@@ -1798,7 +1798,7 @@
    "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
    "host": "app",
    "font-family": "apercuProRegular",
-   "src": "url(\"../media/apercu_regular_pro-s.p.3lkgt8x1-sq_k.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "font-display": "swap",
    "font-weight": "400"
   },
@@ -1816,7 +1816,7 @@
    "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
    "host": "app",
    "font-family": "apercuProMedium",
-   "src": "url(\"../media/apercu_medium_pro-s.p.1zmia-60yuaym.woff2\") format(\"woff2\")",
+   "src": "url(…) format(\"woff2\")",
    "font-display": "swap",
    "font-weight": "500"
   },

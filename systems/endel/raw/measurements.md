@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from endel.io and app.endel.io on 2026-11-13 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) in the site's one dark theme (no consent overlay mounts on these routes), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from endel.io and app.endel.io on 2026-11-21 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) in the site's one dark theme (no consent overlay mounts on these routes), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -1103,7 +1103,7 @@ Crops: `btn-unlock-opened.png`.
 
 #### login-card
 
-Sign-in card. The "Sign In or Register" panel: email field, Continue and the OAuth buttons. Nothing was submitted.
+Sign-in card. The "Sign In or Register" panel: an empty email field, Continue, and three icon-only identity-provider buttons (Google, Apple, Facebook). Nothing was typed or submitted. The provider buttons were not clicked.
 
 Page: app-login. Selector: `card ancestor of the sign-in heading (marked in-page)`. States: default.
 
@@ -1122,7 +1122,7 @@ Page: app-login. Selector: `card ancestor of the sign-in heading (marked in-page
 | Text node | p.Text-module__aznVca__p.Text-module__aznVca__size-h2: apercuProRegular 44px/normal 400, #ffffff |
 | Transition | none |
 | Icon | 24 x 24, colour #ffffff |
-| Painted layers | input.Input-module__iEWt7a__input 564.0x62.0 border T:2px solid #808080 / R:2px solid #808080 / B:2px solid #808080 / L:2px solid #808080 r 12px; button.Button-module__LFCFwa__button.Button-module__LFCFwa__border-radius-basic 564.0x56.0 bg #262626 border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 12px; div::before.Divider-module__QZkn-a__divider.Divider-module__QZkn-a__with-text 258.156pxx2px image linear-gradient(90deg, #000000 @ 0 0%, #262626 100%) r 2px; div::after.Divider-module__QZkn-a__divider.Divider-module__QZkn-a__with-text 258.141pxx2px image linear-gradient(270deg, #000000 @ 0 0%, #262626 100%) r 2px; button.Button-module__LFCFwa__button.Button-module__LFCFwa__border-radius-basic 180.0x56.0 bg #262626 border T:2px solid #262626 / R:2px solid #262626 / B:2px solid #262626 / L:2px solid #262626 r 12px; button.Button-module__LFCFwa__button.Button-module__LFCFwa__border-radius-basic 180.0x56.0 bg #262626 border T:2px solid #262626 / R:2px solid #262626 / B:2px solid #262626 / L:2px solid #262626 r 12px |
+| Painted layers | input.Input-module__iEWt7a__input 564.0x62.0 border T:2px solid #808080 / R:2px solid #808080 / B:2px solid #808080 / L:2px solid #808080 r 12px; button.Button-module__LFCFwa__button.Button-module__LFCFwa__border-radius-basic 564.0x56.0 bg #262626 border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 12px; div::before.Divider-module__QZkn-a__divider.Divider-module__QZkn-a__with-text 258.141pxx2px image linear-gradient(90deg, #000000 @ 0 0%, #262626 100%) r 2px; div::after.Divider-module__QZkn-a__divider.Divider-module__QZkn-a__with-text 258.141pxx2px image linear-gradient(270deg, #000000 @ 0 0%, #262626 100%) r 2px; button.Button-module__LFCFwa__button.Button-module__LFCFwa__border-radius-basic 180.0x56.0 bg #262626 border T:2px solid #262626 / R:2px solid #262626 / B:2px solid #262626 / L:2px solid #262626 r 12px; button.Button-module__LFCFwa__button.Button-module__LFCFwa__border-radius-basic 180.0x56.0 bg #262626 border T:2px solid #262626 / R:2px solid #262626 / B:2px solid #262626 / L:2px solid #262626 r 12px |
 | How | at rest |
 
 Crops: `login-card-default.png`.
@@ -1147,7 +1147,7 @@ Page: app-login. Selector: `login input`. States: default, focused.
 | Colour | #ffffff | = |
 | Transition | none | = |
 | Cursor | default | = |
-| Placeholder | #757575, opacity 1 | = |
+| Placeholder | #000000 @ 0, opacity 1 | = |
 | Painted layers | input.Input-module__iEWt7a__input 564.0x62.0 border T:2px solid #808080 / R:2px solid #808080 / B:2px solid #808080 / L:2px solid #808080 r 12px | input.Input-module__iEWt7a__input 564.0x62.0 border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 12px |
 | How | at rest | clicked into the field |
 
@@ -1182,7 +1182,7 @@ Crops: `btn-continue-default.png`, `btn-continue-hover.png`, `btn-continue-focus
 
 #### btn-oauth
 
-OAuth button. One of the icon-only provider buttons (Apple, Facebook). Measured, never pressed.
+Identity-provider button. The Google icon button on the sign-in card. Apple and Facebook sit beside it. Measured, never pressed.
 
 Page: app-login. Selector: `login icon button`. States: default, hover, focus-visible, pressed.
 

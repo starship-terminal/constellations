@@ -416,10 +416,13 @@ async function appLogin() {
     (card || fit || h.parentElement || h).setAttribute('data-m-card', '1');
     return true;
   });
-  await S('login-card', marked ? q('[data-m-card="1"]') : q('[data-m-card="__none__"]'), ['default'], { group: g, title: 'Sign-in card', desc: 'The "Sign In or Register" panel: email field, Continue and the OAuth buttons. Nothing was submitted.', sel: 'card ancestor of the sign-in heading (marked in-page)' });
+  // The field's placeholder is the product's example address. Hide it so the
+  // crop does not look filled. Nothing is typed.
+  await page.addStyleTag({ content: 'input::placeholder{color:transparent!important}' }).catch(() => {});
+  await S('login-card', marked ? q('[data-m-card="1"]') : q('[data-m-card="__none__"]'), ['default'], { group: g, title: 'Sign-in card', desc: 'The "Sign In or Register" panel: an empty email field, Continue, and three icon-only identity-provider buttons (Google, Apple, Facebook). Nothing was typed or submitted. The provider buttons were not clicked.', sel: 'card ancestor of the sign-in heading (marked in-page)' });
   await S('input-email-login', q('input[type="email"], input[name="email"], input').first(), ['default', 'focused'], { group: g, title: 'Email field (sign-in)', desc: 'Read default and focused; no address was ever typed on this page.', sel: 'login input' });
   await S('btn-continue', q('button').filter({ hasText: /^Continue$/ }).first(), B4, { group: g, title: 'Continue button', desc: 'Submits the sign-in form. Measured in all states, never pressed for real.', sel: 'login button:has-text("Continue")' });
-  await S('btn-oauth', q('button').filter({ has: q('svg') }).filter({ hasText: /^$/ }).first(), B4, { group: g, title: 'OAuth button', desc: 'One of the icon-only provider buttons (Apple, Facebook). Measured, never pressed.', sel: 'login icon button' });
+  await S('btn-oauth', q('button').filter({ has: q('svg') }).filter({ hasText: /^$/ }).first(), B4, { group: g, title: 'Identity-provider button', desc: 'The Google icon button on the sign-in card. Apple and Facebook sit beside it. Measured, never pressed.', sel: 'login icon button' });
   save();
 }
 

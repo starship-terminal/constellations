@@ -314,6 +314,7 @@ SHOTS = [
     ("about", "About", "https://endel.io/about"),
     ("blog", "Blog", "https://endel.io/blog"),
     ("newsroom", "Newsroom", "https://endel.io/newsroom"),
+    ("scenarios", "Scenarios", "https://endel.io/scenarios"),
     ("privacy-policy", "Privacy Policy", "https://endel.io/privacy-policy"),
     ("impressum", "Impressum", "https://endel.io/impressum"),
     ("app-explore", "Web app, explore (signed out)", "https://app.endel.io/"),
@@ -324,6 +325,7 @@ MOBILE = [
     ("mobile-home", "Home, phone", "https://endel.io/"),
     ("mobile-focus", "Focus, phone", "https://endel.io/focus"),
     ("mobile-soundscapes", "Soundscapes, phone", "https://endel.io/soundscapes"),
+    ("mobile-scenarios", "Scenarios, phone", "https://endel.io/scenarios"),
     ("mobile-app-explore", "Web app explore, phone", "https://app.endel.io/"),
     ("mobile-app-login", "Web app sign-in, phone", "https://app.endel.io/ via Sign In"),
 ]

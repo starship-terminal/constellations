@@ -167,7 +167,11 @@ export async function styleOf(locator) {
     const out = {
       tag: el.tagName.toLowerCase(),
       classes: cls(el).slice(0, 4).join(' '),
-      text: (el.innerText || el.getAttribute('aria-label') || el.getAttribute('placeholder') || '').trim().replace(/\s+/g, ' ').slice(0, 80),
+      // An empty field's placeholder is not typed text. Recording it as `text`
+      // made the sign-in card look filled (the site's own example address).
+      text: ((el.tagName === 'INPUT' || el.tagName === 'TEXTAREA')
+        ? (el.value || '')
+        : (el.innerText || el.getAttribute('aria-label') || '')).trim().replace(/\s+/g, ' ').slice(0, 80),
       rect: { x: +r.x.toFixed(1), y: +r.y.toFixed(1), w: +r.width.toFixed(2), h: +r.height.toFixed(2) },
       style: pick(cs),
     };
