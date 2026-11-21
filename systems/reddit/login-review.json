@@ -1,0 +1,24 @@
+{
+  "slug": "reddit",
+  "captured": "2026-11-22",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "session": "Public T3 preview capture, incognito, signed out. https://www.reddit.com/login/ and https://www.reddit.com/register/ both opened empty cards. No email, username, password, phone, or code was typed. Google, Apple, and phone were not clicked. No form was submitted. No captcha was solved. No vote, comment, join, or subscribe was used.",
+  "wall": {
+    "login_url": "https://www.reddit.com/login/",
+    "signup_url": "https://www.reddit.com/register/",
+    "login_title": "Log In",
+    "signup_title": "Sign Up",
+    "login_fields_empty": ["Email or username", "Password"],
+    "signup_fields_empty": ["Email"],
+    "signup_checkbox_unchecked": "I agree to get emails about cool stuff on Reddit",
+    "login_button_disabled": true,
+    "signup_continue_disabled": true,
+    "identity_providers_not_clicked": [
+      "Continue with Phone Number",
+      "Continue with Google",
+      "Continue with Apple",
+      "Email me a one-time link"
+    ]
+  }
+}
