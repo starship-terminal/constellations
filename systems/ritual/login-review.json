@@ -1,0 +1,45 @@
+{
+  "product": "Ritual",
+  "domain": "ritual.com",
+  "reviewedAt": "2026-11-22",
+  "method": "Headless Chromium, signed out. Desktop 1440x900 CSS pixels and phone 390x844 CSS pixels, device pixel ratio 2. Login and register were opened and discarded because the painted URL carried OAuth state.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header account icon and menu Log in",
+      "url": "https://ritual.com/customer_authentication/login",
+      "paintedUrlHost": "shopify.com",
+      "title": "Sign in - Ritual",
+      "painted": true,
+      "headings": ["Sign in"],
+      "asksFor": [
+        {
+          "label": "Email",
+          "type": "email",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": ["Continue with Google"],
+      "otherControls": ["Continue", "Email me with news and offers", "Submit", "Terms of service", "Privacy policy"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Empty sign-in wall. The email field was empty. Continue was not clicked. Google was not clicked. The painted URL is a Shopify authentication URL with oauth, client_id, nonce, and state, so the screenshot was discarded. /account/login and /account/register land on the same wall. There is no separate public signup page."
+    }
+  ],
+  "notOpened": [
+    "Continue and Submit were not clicked.",
+    "Continue with Google was not clicked.",
+    "Add to Cart was not clicked. Checkout was not started.",
+    "The footer Subscribe control was not clicked.",
+    "help.ritual.com returned a Cloudflare block. It was not photographed.",
+    "Social profiles, the app-store-style iHerb link, B Corp, and BBB were not followed.",
+    "Country and region switchers were not used.",
+    "Cookie Accept All and Manage Cookies were not clicked. The banner was hidden with CSS."
+  ]
+}
