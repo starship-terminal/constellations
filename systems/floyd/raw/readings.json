@@ -1,0 +1,120 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://floydhome.com/",
+  "title": "Floyd Home",
+  "productUrl": "https://floydhome.com/products/the-bed-frame",
+  "productTitle": "Platform Bed Frame with Headboard | Twin, Full, Queen & King",
+  "aboutUrl": "https://floydhome.com/pages/design-principles",
+  "aboutTitle": "Design Principles",
+  "loginUrl": "https://floydhome.com/account/login",
+  "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2 },
+  "region": "Signed-out incognito preview. Prices on the product page read USD.",
+  "body": {
+    "backgroundColor": "rgb(248, 246, 237)",
+    "color": "rgb(35, 30, 30)",
+    "fontFamily": "\"Floyd Gothic\", Arial, Helvetica, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "300"
+  },
+  "announcement": {
+    "backgroundColor": "rgb(101, 195, 233)",
+    "height": "65px",
+    "linkFontFamily": "\"Floyd Gothic\", Arial, Helvetica, sans-serif",
+    "linkFontSize": "14px",
+    "linkFontWeight": "400",
+    "linkColor": "rgb(35, 30, 30)"
+  },
+  "header": {
+    "height": "71px",
+    "backgroundColor": "rgb(248, 246, 237)"
+  },
+  "nav": {
+    "fontFamily": "\"Floyd Gothic\", Arial, Helvetica, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "300",
+    "color": "rgb(51, 51, 51)",
+    "lineHeight": "20.02px"
+  },
+  "wordmark": {
+    "fill": "#231E1E"
+  },
+  "shopNow": {
+    "fontFamily": "Regular, \"Floyd Gothic\", sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "color": "rgb(35, 30, 30)",
+    "letterSpacing": "-0.3px",
+    "clicked": false
+  },
+  "product": {
+    "titleText": "The Floyd Bed - Original",
+    "titleFontFamily": "\"Floyd Gothic\", Arial, Helvetica, sans-serif",
+    "titleFontSize": "46px",
+    "titleFontWeight": "300",
+    "titleColor": "rgb(35, 30, 30)",
+    "memberColor": "rgb(51, 51, 51)",
+    "regularColor": "rgb(96, 95, 94)",
+    "priceFontSize": "18px"
+  },
+  "addToCart": {
+    "text": "Add To Cart",
+    "fontFamily": "\"GT America Mono\", Arial, Helvetica, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "700",
+    "color": "rgb(248, 246, 237)",
+    "backgroundColor": "rgb(35, 30, 30)",
+    "height": "51px",
+    "borderRadius": "5px",
+    "letterSpacing": "-0.32px",
+    "clicked": false
+  },
+  "sizeChip": {
+    "selectedText": "Full/Queen + Headboard",
+    "selectedBorder": "2px solid rgb(35, 30, 30)",
+    "unselectedBorder": "2px solid rgb(96, 95, 94)",
+    "backgroundColor": "rgb(248, 246, 237)",
+    "borderRadius": "100%"
+  },
+  "footer": {
+    "headingFontFamily": "Mono, Roboto, monospace",
+    "headingFontSize": "14px",
+    "headingTextTransform": "uppercase",
+    "linkFontFamily": "GTAmericaRegular, sans-serif",
+    "linkFontSize": "14px",
+    "linkColor": "rgb(35, 30, 30)"
+  },
+  "newsletter": {
+    "placeholder": "Email address",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "border": "1px solid rgb(96, 95, 94)",
+    "height": "52px",
+    "fontFamily": "GTAmericaRegular, sans-serif",
+    "fontSize": "14px",
+    "submitted": false
+  },
+  "login": {
+    "host": "account-host",
+    "title": "Sign in - Floyd Home",
+    "heading": "Sign in",
+    "headingColor": "rgb(0, 0, 0)",
+    "headingFontSize": "20px",
+    "headingFontWeight": "600",
+    "pageBackground": "rgb(250, 247, 245)",
+    "emailEmpty": true,
+    "submitted": false,
+    "screenshotDiscarded": true,
+    "reason": "Account left floydhome.com for a sign-in URL that carried OAuth query parameters. Screenshot discarded."
+  },
+  "tokensFromStylesheet": {
+    "--color-floyd-background": "#f8f6ed",
+    "--color-ink": "#231e1e",
+    "--color-brand-black": "#231E1E",
+    "--color-floyd-black": "#333333",
+    "--color-subdued": "#605F5E",
+    "--color-focus": "#1351ee",
+    "--color-secondary": "#ff5436",
+    "--color-membership-green": "#D5FA44",
+    "--floyd-font": "\"Floyd Gothic\", Arial, Helvetica, sans-serif",
+    "--america-mono-font": "\"GT America Mono\", Arial, Helvetica, sans-serif"
+  }
+}
