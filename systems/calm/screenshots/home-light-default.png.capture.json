@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T04:41:45.114Z",
+  "capturedAt": "2026-11-21T09:53:00.931Z",
   "screenshot": "home-light-default.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://www.calm.com/",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -25,7 +25,7 @@
       "colorScheme": "normal"
     },
     "visualViewport": {
-      "width": 1425,
+      "width": 1440,
       "height": 900,
       "scale": 1,
       "offsetLeft": 0,
@@ -34,8 +34,8 @@
       "pageTop": 0
     },
     "documentSize": {
-      "width": 1425,
-      "height": 6351
+      "width": 1440,
+      "height": 6350
     },
     "scroll": {
       "x": 0,

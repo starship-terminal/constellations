@@ -12,6 +12,8 @@ Calm is worth a capture because the "#1 app for sleep and meditation" paints an 
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the scrim header over photography, the hero, the auth surfaces, the dark preview shell, the B2B surface, the footer, mobile |
+| [site-tree.md](site-tree.md) | Public tree from the 2026-11-21 homepage: which header control opens which page, menu, or wall |
+| [login-review.json](login-review.json) | Signed-out walk: public screens that exist, and the login, signup, and identity-provider branches that were not submitted |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages, `mobile-*` phone shots (390 x 844 at 2x, including the opened menu), `home-light-login` the opened login card |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — styled-components compiles the theme into literals on the main surfaces, while /faq/web declares a Zendesk Garden `--zd-*` layer and health.calm.com declares WordPress presets, plus the @font-face inventory), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
@@ -100,6 +102,16 @@ Every value came off the running signed-out site in headed Chromium under Xvfb (
 - **Screenshots.** [tools/capture/public/public.mjs](tools/capture/public/public.mjs) takes viewport and full-page shots per route with `.capture.json` sidecars, including the local UI toggles: the Log In button (opens a card in place, shot and dismissed with Escape, never submitted), the Try Calm for Free button (navigates to /signup-flow; the landing stayed gated, so no shot exists) and the mobile menu. The desktop nav items are buttons that swap the view rather than open a panel, so no nav-hover shot exists either. [tools/capture/quantize.py](tools/capture/quantize.py) posterises them to 256 colours.
 
 Nothing was signed into, bought or submitted: the login card was captured as a surface, never filled or submitted; the Try Calm for Free button was followed to the /signup-flow landing, which stayed gated and was never submitted; every Get-Premium-Family, gift and Get-started action was measured, never followed; the mobile menu was toggled as local UI state. The cookie-consent bottom sheet was measured as a component, then hidden, never answered — no consent choice was ever made. calm.com sits behind PerimeterX: routes that answered with the 403 px-captcha shell (or a dropped connection) were waited out on the same context (the clearance cookie lives there) and then on fresh contexts; a route that never opened is recorded as not captured rather than inferred.
+
+## Refresh, 2026-11-21
+
+A public-only pass from the homepage, signed out, in headed Chrome at 1440×900. Cookie banner hidden, never answered. No form submitted.
+
+[site-tree.md](site-tree.md) records the header. Sleep, Stress & Anxiety, and Mindfulness are buttons. Screening opens [screening.calm.com](https://screening.calm.com/). Calm Health opens a menu: For Individuals (`app.calmhealth.com`) and For Organizations (`health.calm.com`). Log In and Try Calm for Free stay walls.
+
+New shots: [home-light-default](screenshots/home-light-default.png) (viewport, this date), [home-light-health-menu](screenshots/home-light-health-menu.png), [screening-light-default](screenshots/screening-light-default.png). The older full-page and app-shell shots from 2026-11-12 remain. Tokens were not re-measured.
+
+PerimeterX returned "Access to this page has been denied" on the next homepage load. That wall was not solved. Log In, Try Calm for Free, the topic buttons, and the 390 menu were not rephotographed. See [login-review.json](login-review.json).
 
 ## What to distrust
 

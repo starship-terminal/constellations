@@ -1,0 +1,99 @@
+{
+  "capturedAt": "2026-11-21",
+  "signed_in": false,
+  "method": "Headed Chrome via Playwright, signed out, 1440x900. Cookie banner hidden, never clicked. No email, password, name, or code typed. No identity provider opened. No form submitted. A later load of calm.com returned PerimeterX ('Access to this page has been denied') and was not solved.",
+  "offered": {
+    "nav": {
+      "items": [
+        "no signed-in navigation"
+      ],
+      "reached": [
+        "no signed-in navigation"
+      ],
+      "note": "Signed out. The public header showed Sleep, Stress & Anxiety, Mindfulness, Screening, Calm Health, Log In, and Try Calm for Free. Calm Health opened a menu (For Individuals, For Organizations). Screening opened screening.calm.com. Sleep was not reopened after PerimeterX blocked the next load."
+    },
+    "settings": {
+      "items": [
+        "no settings area"
+      ],
+      "reached": [
+        "no settings area"
+      ],
+      "note": "No signed-in settings surface was offered."
+    },
+    "create": {
+      "items": [
+        "no create flow"
+      ],
+      "reached": [
+        "no create flow"
+      ],
+      "note": "Try Calm for Free and the homepage Continue button were not submitted. Get Started on the screening page was not clicked."
+    }
+  },
+  "screens": [
+    {
+      "name": "Homepage, signed out, light, 1440",
+      "file": "screenshots/home-light-default.png"
+    },
+    {
+      "name": "Homepage, Calm Health menu open, light, 1440",
+      "file": "screenshots/home-light-health-menu.png"
+    },
+    {
+      "name": "Screening marketing page, light, 1440",
+      "file": "screenshots/screening-light-default.png"
+    }
+  ],
+  "walls": [
+    {
+      "control": "Log In",
+      "where": "Header button data-testid=desktopnav-login-button on https://www.calm.com/",
+      "stopped": true,
+      "reason": "The click was not repeated after PerimeterX blocked the next homepage load. The prior package shot of the empty login card is screenshots/home-light-login.png. This pass did not open it."
+    },
+    {
+      "control": "Try Calm for Free",
+      "where": "Header button on https://www.calm.com/",
+      "stopped": true,
+      "reason": "Not clicked in the shot pass. Signup was not submitted."
+    },
+    {
+      "control": "For Individuals",
+      "href": "https://app.calmhealth.com/",
+      "stopped": true,
+      "reason": "Visible in the Calm Health menu. Not opened."
+    },
+    {
+      "control": "Get Started",
+      "href": "https://app.calmhealth.com/mental-health-screening",
+      "stopped": true,
+      "reason": "Visible on screening.calm.com. Not clicked. The quiz was not started."
+    }
+  ],
+  "gaps": [
+    "The signed-in app was not entered. Playback, library, profile, check-ins, and settings were not offered.",
+    "Log In was not opened in this pass. PerimeterX blocked the homepage before that click.",
+    "Try Calm for Free, Continue, and Get Started were not submitted.",
+    "For Individuals (app.calmhealth.com) was not opened.",
+    "Sleep, Stress & Anxiety, and Mindfulness were mapped as header buttons and not rephotographed after the gate.",
+    "The 390 menu was not opened. A phone-width load hit the same PerimeterX wall.",
+    "No dark theme toggle was offered on the marketing homepage."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "name",
+    "code",
+    "Log In",
+    "Try Calm for Free",
+    "Already have an account?",
+    "Continue",
+    "Get Started",
+    "Google",
+    "Apple",
+    "cookie banner",
+    "Contact Us",
+    "mental health screening quiz"
+  ]
+}
