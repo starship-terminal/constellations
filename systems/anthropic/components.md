@@ -18,28 +18,27 @@ Screenshots are named `{page}-light-{state}.png` (the docs dark pass is `{page}-
 
 | Surface | URL | Screenshots |
 |---|---|---|
-| www.anthropic.com home. Serif hero, feature card, news cards; also the nav dropdown opened by hover. | `https://www.anthropic.com/` | [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png), [nav-dropdown](screenshots/home-light-nav-dropdown.png) |
+| www.anthropic.com home. Serif hero, feature card, news cards; header menus open on click. | `https://www.anthropic.com/` | [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png), [research menu](screenshots/home-light-nav-research.png) |
 | www.anthropic.com/news. The announcements index. | `https://www.anthropic.com/news` | [default](screenshots/news-light-default.png), [full](screenshots/news-light-full.png) |
 | www.anthropic.com/research. The research index on dark media. | `https://www.anthropic.com/research` | [default](screenshots/research-light-default.png), [full](screenshots/research-light-full.png) |
 | www.anthropic.com/engineering. The engineering index. | `https://www.anthropic.com/engineering` | [default](screenshots/engineering-light-default.png), [full](screenshots/engineering-light-full.png) |
-| claude.com/product/overview. The Claude product page. | `https://claude.com/product/overview` | [default](screenshots/product-light-default.png), [full](screenshots/product-light-full.png) |
-| claude.com/platform/api. The API platform page. | `https://claude.com/platform/api` | [default](screenshots/platform-api-light-default.png), [full](screenshots/platform-api-light-full.png) |
-| claude.com/pricing. Plan tabs, plan cards, batch switch, FAQ; the Developer tab shown selected. | `https://claude.com/pricing` | [default](screenshots/pricing-light-default.png), [full](screenshots/pricing-light-full.png), [plan-tab](screenshots/pricing-light-plan-tab.png) |
-| claude.com/contact-sales. The sales form, never submitted. | `https://claude.com/contact-sales` | [default](screenshots/contact-sales-light-default.png), [full](screenshots/contact-sales-light-full.png) |
-| docs.claude.com/en/home. The docs home; also the search dialog. | `https://docs.claude.com/en/home` | [default](screenshots/docs-home-dark-default.png), [full](screenshots/docs-home-dark-full.png), [default](screenshots/docs-home-light-default.png), [full](screenshots/docs-home-light-full.png), [search-dialog](screenshots/docs-home-light-search-dialog.png) |
-| docs.claude.com/en/docs/get-started. Prose, code block, inline code, copy-page button. | `https://docs.claude.com/en/docs/get-started` | [default](screenshots/docs-start-light-default.png), [full](screenshots/docs-start-light-full.png) |
-| docs.claude.com/en/api/messages. The API reference with method badges. | `https://docs.claude.com/en/api/messages` | [default](screenshots/docs-api-dark-default.png), [full](screenshots/docs-api-dark-full.png), [default](screenshots/docs-api-light-default.png), [full](screenshots/docs-api-light-full.png) |
+| www.anthropic.com/policy. Policy index. | `https://www.anthropic.com/policy` | [default](screenshots/policy-light-default.png), [full](screenshots/policy-light-full.png) |
+| www.anthropic.com/company. About page. | `https://www.anthropic.com/company` | [default](screenshots/company-light-default.png), [full](screenshots/company-light-full.png) |
+| www.anthropic.com/careers. Careers page. Explore open roles was not followed. | `https://www.anthropic.com/careers` | [default](screenshots/careers-light-default.png), [full](screenshots/careers-light-full.png) |
+| www.anthropic.com/search. Empty search. Nothing typed. | `https://www.anthropic.com/search` | [default](screenshots/search-light-default.png), [full](screenshots/search-light-full.png) |
+| www.anthropic.com/claude/opus. Model page. Try Claude and Get API access were not followed. | `https://www.anthropic.com/claude/opus` | [default](screenshots/model-light-default.png), [full](screenshots/model-light-full.png) |
+| www.anthropic.com/legal. Legal center. | `https://www.anthropic.com/legal` | [default](screenshots/legal-light-default.png), [full](screenshots/legal-light-full.png) |
+| www.anthropic.com/constitution. Constitution. | `https://www.anthropic.com/constitution` | [default](screenshots/constitution-light-default.png), [full](screenshots/constitution-light-full.png) |
 | www.anthropic.com home at 390: menu button, hero, the ink nav sheet. | `https://www.anthropic.com/` | [default](screenshots/mobile-home-light-default.png), [full](screenshots/mobile-home-light-full.png) |
-| claude.com/pricing at 390. | `https://claude.com/pricing` | [default](screenshots/mobile-pricing-light-default.png), [full](screenshots/mobile-pricing-light-full.png) |
-| docs.claude.com/en/home at 390. | `https://docs.claude.com/en/home` | [default](screenshots/mobile-docs-home-light-default.png), [full](screenshots/mobile-docs-home-light-full.png) |
+| www.anthropic.com/news at 390. | `https://www.anthropic.com/news` | [default](screenshots/mobile-news-light-default.png), [full](screenshots/mobile-news-light-full.png) |
+| www.anthropic.com/research at 390. | `https://www.anthropic.com/research` | [default](screenshots/mobile-research-light-default.png), [full](screenshots/mobile-research-light-full.png) |
 
 ### Overlays and transient states
 
 | State | Where | How it was reached | Captured |
 |---|---|---|---|
-| Nav dropdown | the marketing nav, on hover over Product | a real hover opened the dropdown; captured open, never clicked through | [home-light-nav-dropdown](screenshots/home-light-nav-dropdown.png), [nav-dropdown](#nav-dropdown) |
-| Docs search dialog | docs.claude.com | opened from the header's search field; measured open, nothing typed | [docs-home-light-search-dialog](screenshots/docs-home-light-search-dialog.png), [docs-search-dialog](#search-dialog) |
-| Pricing plan tabs | claude.com/pricing | the Developer tab was clicked once for the selected state (local UI) | [pricing-light-plan-tab](screenshots/pricing-light-plan-tab.png), [plan-tab-active](#plan-tab-switched) |
+| Header menus | the marketing nav, on click | Research, Policy, Commitments, Company, and Try Claude were opened and closed. Try Claude's links were not followed. | [home-light-nav-research](screenshots/home-light-nav-research.png), [home-light-nav-try](screenshots/home-light-nav-try.png) |
+| Phone menu | Open menu at 390 | the dialog was opened. Contact Sales, Download app, and Try Claude links were not followed. | [mobile-home-light-nav-open](screenshots/mobile-home-light-nav-open.png) |
 | Mobile nav sheet | www.anthropic.com at 390 | the menu button opened the full-screen ink sheet | [m-nav-sheet](#mobile-nav-sheet) |
 
 ## Checklist coverage

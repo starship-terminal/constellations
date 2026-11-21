@@ -159,9 +159,9 @@ Good for: AI-product marketing pages, pricing pages, sales forms and developer d
 
 Captured 2026-11-09, public marketing surface only; signed out; nothing submitted or signed into. Themes: light, dark.
 
-A token set and component reference for Anthropic's public marketing surface, for building a marketing page, product page or developer-docs page in the style of a real AI lab. It was read on 2026-11-09, signed out, in headless Chromium at 1440 wide and 390 wide, across three hosts: **www.anthropic.com** (home, /news, /research, /engineering), **claude.com** (/product/overview, /platform/api, /pricing, /contact-sales) and **docs.claude.com** (/en/home, /en/docs/get-started, /en/api/messages). The look is quiet and literary: ivory #faf9f5 ground, ink #141413, anthropicSerif display headlines, pill nav chrome, and one clay orange used only for brand moments.
+A token set and component reference for Anthropic's public site, for building a marketing or research page in the style of the real lab site. Refreshed on 2026-11-21, signed out, in headless Chromium at 1440 wide and 390 wide, on **www.anthropic.com** only. The look is quiet and literary: ivory #faf9f5 ground, ink #141413, anthropicSerif display headlines, pill nav chrome, and one clay orange used only for brand moments.
 
-claude.ai and console.anthropic.com are the signed-in products and were never touched. Nothing was submitted, bought or sent: the contact-sales form was photographed and focused, never sent; the nav dropdown opened by hover only; the footer's Privacy choices dialog was never opened (answering it is a consent choice); the only presses were the pricing plan tab and the batch switch, both local UI.
+The control map is [site-tree.md](site-tree.md), written from the homepage before the new screenshots. The login stop is [login-review.json](login-review.json). claude.ai, platform.claude.com, claude.com, and docs.claude.com were not captured in this refresh. Try Claude opens a menu whose two items leave this host, and that branch stops. Nothing was typed. No form was submitted. The footer's Privacy choices dialog was not opened.
 
 ## Colors
 
@@ -241,9 +241,9 @@ The home page is the screen to get right. An 84px bar carries the serif wordmark
 
 ### Do and don't (from README.md)
 
-1. **Do keep the ground warm and quiet.** The page is ivory #faf9f5, fills step down the gray ramp (#f5f4ed, #f0eee6, #e8e6dc) and text is near-black #141413. See [home-light-default](screenshots/home-light-default.png) and [pricing-light-default](screenshots/pricing-light-default.png).
+1. **Do keep the ground warm and quiet.** The page is ivory #faf9f5, fills step down the gray ramp (#f5f4ed, #f0eee6, #e8e6dc) and text is near-black #141413. See [home-light-default](screenshots/home-light-default.png) and [policy-light-default](screenshots/policy-light-default.png).
 2. **Do set headlines in the serif — the home hero is the exception.** Display titles are anthropicSerif at weight 400-500, ~1.1 leading, slightly tight tracking; body and chrome stay in anthropicSans. The home hero's heading mixes the two: the h1 is serif while its lead line inside renders anthropicSans at weight 600 and the same size (the mobile entry reads the same way). See [hero-title](components/crops/hero-title-default.png) and [faq-item](components/crops/faq-item-default.png).
 3. **Don't waste the clay.** Clay #d97757/#c6613f is a brand accent, not a UI colour: primary buttons are ink fills and links are ink or underlined. The clay shows up on the footer send, pictograms and badges. See [footer](components/crops/footer-default.png).
 4. **Do round pills fully, cards moderately.** Nav chrome and radios are 999999px pills; buttons run 8-10px, fields 16, cards 19-24. See [nav-cta](components/crops/nav-cta-default.png) and [plan-card](components/crops/plan-card-default.png).
 5. **Do invert pills on hover.** The signature hover is the ivory pill flipping to ink with a 1px ink ring; pressed steps to #e8e6dc. Keyboard focus is a 2px #154c92 ring offset 4px. See [nav-cta-hover](components/crops/nav-cta-hover.png) and [nav-cta-focus-visible](components/crops/nav-cta-focus-visible.png).
-6. **Don't add shadows or borders the site doesn't draw.** Depth is a rare soft drop (nav panel, docs dialog); everything else separates by fill and a 1px hairline. See [nav-dropdown](screenshots/home-light-nav-dropdown.png) and [docs-search-dialog](components/crops/docs-search-dialog-default.png).
+6. **Don't add shadows or borders the site doesn't draw.** Depth is a rare soft drop on the open nav panel; everything else separates by fill and a 1px hairline. See [nav-research](screenshots/home-light-nav-research.png) and [nav-company](screenshots/home-light-nav-company.png).
