@@ -1,0 +1,28 @@
+{
+  "name": "mcp-light-default",
+  "url": "https://wiza.co/mcp",
+  "title": "Wiza MCP — Your next customer. Just a conversation away.",
+  "capturedAt": "2026-11-21T15:52:39.598Z",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "png": {
+    "pixelWidth": 1440,
+    "pixelHeight": 4210,
+    "path": "/tmp/wiza-raw/screenshots/mcp-light-default.png"
+  },
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "colorScheme": "normal",
+    "title": "Wiza MCP — Your next customer. Just a conversation away.",
+    "url": "https://wiza.co/mcp"
+  }
+}

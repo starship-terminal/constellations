@@ -1,0 +1,28 @@
+{
+  "name": "mobile-home-light-menu",
+  "url": "https://wiza.co/",
+  "title": "Wiza | The Most Accurate B2B Prospecting Tool",
+  "capturedAt": "2026-11-21T15:53:17.797Z",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "png": {
+    "pixelWidth": 780,
+    "pixelHeight": 19518,
+    "path": "/tmp/wiza-raw/screenshots/mobile-home-light-menu.png"
+  },
+  "metrics": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    },
+    "colorScheme": "normal",
+    "title": "Wiza | The Most Accurate B2B Prospecting Tool",
+    "url": "https://wiza.co/"
+  }
+}

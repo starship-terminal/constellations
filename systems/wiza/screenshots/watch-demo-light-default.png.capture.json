@@ -1,0 +1,28 @@
+{
+  "name": "watch-demo-light-default",
+  "url": "https://wiza.co/watch-demo",
+  "title": "Watch a Product Demo | Wiza",
+  "capturedAt": "2026-11-21T15:52:57.498Z",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "png": {
+    "pixelWidth": 1440,
+    "pixelHeight": 2182,
+    "path": "/tmp/wiza-raw/screenshots/watch-demo-light-default.png"
+  },
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "colorScheme": "normal",
+    "title": "Watch a Product Demo | Wiza",
+    "url": "https://wiza.co/watch-demo"
+  }
+}

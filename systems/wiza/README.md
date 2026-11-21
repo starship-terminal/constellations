@@ -1,24 +1,26 @@
 # Wiza design reference
 
-A token set for Wiza's public marketing site, read from **wiza.co** on **2026-11-19**, signed out, in the T3 preview browser. Desktop CSS viewport was **1440 x 900** and the phone pass was **390 x 844**, both at devicePixelRatio 2 and visualViewport scale 1. Captured surfaces: the home, `/pricing`, `/enterprise`, `/customers`, `/privacy`, `/blog/`, `/auth/login` (measured, not submitted), and a made-up route that renders the product 404. The marketing site is Webflow and paints **one theme**. There is no theme control.
+A token set and page captures for Wiza's public marketing site. Refreshed **2026-11-21** from **wiza.co**, signed out. Desktop is **1440 by 900** at devicePixelRatio 1. Phone is **390 by 844** at devicePixelRatio 2 (PNG width 780). The site tree is [site-tree.md](site-tree.md). origin/main already had `systems/wiza/`. This pass adds the screenshots the 2026-11-19 reading did not have. `catalog.json` was left alone, so `login-extracted` stays `not-started`.
 
-The marketing stylesheet declares **154 custom properties** on `:root`: a brand and light swatch scale, a radius scale, a fluid type scale, and a fluid spacing scale. Those declarations are the token layer. Painted buttons, cards, and fields were read from computed style and stored beside them. The login app is a separate PrimeVue and Tailwind surface (Inter var, 6px controls, `#7e43ff` submit). Its values are recorded as measured auth components, not as a second marketing theme.
+The marketing site is Webflow and paints **one theme**. There is no theme control. The stylesheet declares **154 custom properties** on `:root`. The login and signup walls are a separate app (Inter var, 6px controls, `#7e43ff` submit). The blog is a separate WordPress surface (Work Sans).
 
-**Boundaries.** Log in was opened and measured. Nothing was typed and the form was not submitted. "Log in via Google" was not clicked. `/auth/signup` returned a Cloudflare "Just a moment..." page and was not driven. Book-a-demo, contact sales, and checkout were not opened. No phone number, card, or company SSO was entered. The home "Work email" field was not filled.
+**Boundary.** Login and signup were photographed empty and the branch stopped. Nothing was typed. Nothing was submitted. Google was not clicked. Password reset was not opened. Book-a-demo and the opt-out form were opened, left empty, and those shots were discarded. Checkout was not entered. Headless Chromium received a Cloudflare check on `/auth/signup` and on `/directory`. Those shots were discarded. The empty signup wall in this package is the T3 preview browser.
 
 | File | What it is |
 |---|---|
 | [README.md](README.md) | This file. |
+| [site-tree.md](site-tree.md) | Which header, menu, drawer, footer and wall controls open which pages, and where this pass stopped. |
+| [login-review.json](login-review.json) | Empty login and signup walls. Probe stopped there. login-extracted is not-started. |
 | [icon.png](icon.png) | The apple-touch icon from the marketing site, scaled to 128px. |
 | [tokens.json](tokens.json) | W3C DTCG tokens. `core` holds the declared swatches, radii, spacing ends, and type. `light` holds the resolved theme roles and the painted components. |
-| [DESIGN.md](DESIGN.md) | Generated from the tokens and this README. |
+| [DESIGN.md](DESIGN.md) | The 2026-11-19 export. Left as generated. `catalog.json` was not rewritten, so this file was not regenerated. |
 | [style-guide.html](style-guide.html) | A page that renders the swatches and a drawn hero, pricing row, and login card from the tokens. |
 | [components.md](components.md) | Component inventory and gaps. |
 | [patterns.md](patterns.md) | How the public pages combine the components. |
-| [components/](components/) | `crops/` is empty. No element screenshot was saved. |
+| [components/](components/) | Element crops of the primary button, secondary button, email field, and the two nav menus. |
 | [icons/](icons/) | `INDEX.tsv` only. UI SVGs were not exported. |
-| [screenshots/](screenshots/) | Empty. The preview browser did not produce screenshot frames. |
-| [raw/](raw/) | `css-vars.json` and `components.json`, the readings the tokens were built from. |
+| [screenshots/](screenshots/) | Quantised page shots, desktop and phone. 29 PNGs. |
+| [raw/](raw/) | The 2026-11-19 readings the tokens were built from, plus the 2026-11-21 stylesheet and login readings. |
 | [tools/](tools/) | `build_tokens.py`, `build_style_guide.py`, the style-guide template, and `test_tokens.py`. |
 
 ## How the values were read
@@ -29,13 +31,15 @@ At 390px the h1 token computed to 49.2727px and `--site--margin` computed to 18.
 
 ## What to distrust
 
-- **No screenshots.** The preview browser returned "The browser is not producing screenshot frames". Coverage is computed style, not a picture of the page.
-- **Hover, focus, and pressed states were not read.** Do not invent them from the 0.45s transition declaration.
+- **Screenshots are 256-colour.** Flat UI colours survive. Gradients and the hero artwork band. Read colours from the tokens and from [raw/css-vars.json](raw/css-vars.json), not from a PNG pixel.
+- **The signup PNG was scaled.** Headless Chromium stopped on a Cloudflare check. The committed frame is the T3 preview browser, 2880 by 1800, scaled to 1440 by 900. The field was empty.
+- **Hover was cropped, not fully measured.** The primary button crop at hover still paints white text. The wrap's computed background on the link itself stayed transparent. Do not invent a hover colour from that crop.
+- **Pressed, disabled, and loading were not read.** Do not invent them from the 0.45s transition declaration.
 - **The h1 computed color is transparent.** The visible purple is on the animation wrap (`#231645` plus a gradient). Use `light.color.ink` for body text and `light.color.heroGround` for that wrap.
 - **`--_theme---button-primary--background` is `#7e43ff`.** The painted home primary button is `#26114a`. Both are recorded. The painted button is `light.component.buttonPrimary`.
 - **The blog is a different theme.** Work Sans and a `#ffacac` chip. It does not use the marketing swatches.
 - **Login is a different system.** Inter var and 6px radius. It is not the marketing button.
-- **Signup was a Cloudflare challenge.** It was not measured.
+- **Signup was measured only as an empty wall.** Google was not clicked. The form was not submitted.
 - **Britti Sans and Inter files are not shipped.** The tokens name the families.
 - **Type line heights are hand entries.** raw/ holds the declared font-size clamps and line-height steps, not each style's computed line height or tracking. Each `core.typography` step's line height applies the declared steps by hand (headings at 1, text at 1.3 or 1.5); `display` is 80px/80px. `textXsmall` is the exception: its 16px line height is the computed value on the pricing tag and price note, not a declared step, and raw/ does not hold that reading either. No step carries a letterSpacing. The `-0.03em` tracking token is under `core.$extensions.notTokenised`. `light.color.heroGround`, `core.layout.contentMax` and `core.font.family.auth` were read but not saved, and are labelled Reconstruction.
 
@@ -68,7 +72,10 @@ At 390px the h1 token computed to 49.2727px and `--site--margin` computed to 18.
 | Pricing pattern | Annual state measured. Monthly state not opened. Checkout not entered. |
 | 404 | Measured. |
 | Themes | Light only. No dark theme on the public site. |
-| Widths | 1440 and 390 measured for type and the menu button. Screenshots of neither were saved. |
+| Widths | Captured. Desktop 1440 and phone 390. Home and pricing at both widths. See [screenshots/](screenshots/). |
+| Nav menus | Captured. Solutions and Resources hover panels, and the phone drawer. |
+| Login and signup walls | Captured empty. Stopped there. `login-extracted` is not-started. |
+| Signed-in app | Not captured. |
 
 ## Do and don't
 

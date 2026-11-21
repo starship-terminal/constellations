@@ -1,0 +1,28 @@
+{
+  "name": "find-email-light-default",
+  "url": "https://wiza.co/find-email-free",
+  "title": "Free Email Finder Tool (97% Accuracy) | Wiza",
+  "capturedAt": "2026-11-21T15:52:59.966Z",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "png": {
+    "pixelWidth": 1440,
+    "pixelHeight": 4024,
+    "path": "/tmp/wiza-raw/screenshots/find-email-light-default.png"
+  },
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "colorScheme": "normal",
+    "title": "Free Email Finder Tool (97% Accuracy) | Wiza",
+    "url": "https://wiza.co/find-email-free"
+  }
+}

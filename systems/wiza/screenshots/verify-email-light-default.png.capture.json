@@ -1,0 +1,28 @@
+{
+  "name": "verify-email-light-default",
+  "url": "https://wiza.co/verify-email-free",
+  "title": "Free Email Verifier & Checker (100% Accuracy) | Wiza",
+  "capturedAt": "2026-11-21T15:53:01.864Z",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "png": {
+    "pixelWidth": 1440,
+    "pixelHeight": 3030,
+    "path": "/tmp/wiza-raw/screenshots/verify-email-light-default.png"
+  },
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "colorScheme": "normal",
+    "title": "Free Email Verifier & Checker (100% Accuracy) | Wiza",
+    "url": "https://wiza.co/verify-email-free"
+  }
+}

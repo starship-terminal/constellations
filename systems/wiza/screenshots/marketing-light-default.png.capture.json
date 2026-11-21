@@ -1,0 +1,28 @@
+{
+  "name": "marketing-light-default",
+  "url": "https://wiza.co/marketing",
+  "title": "B2B Lead Database For Marketers | Wiza",
+  "capturedAt": "2026-11-21T15:52:32.608Z",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "png": {
+    "pixelWidth": 1440,
+    "pixelHeight": 7713,
+    "path": "/tmp/wiza-raw/screenshots/marketing-light-default.png"
+  },
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "colorScheme": "normal",
+    "title": "B2B Lead Database For Marketers | Wiza",
+    "url": "https://wiza.co/marketing"
+  }
+}

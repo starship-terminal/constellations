@@ -1,0 +1,28 @@
+{
+  "name": "enterprise-light-default",
+  "url": "https://wiza.co/enterprise",
+  "title": "Enterprise Sales Prospecting Software | Wiza",
+  "capturedAt": "2026-11-21T15:52:24.641Z",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "png": {
+    "pixelWidth": 1440,
+    "pixelHeight": 5078,
+    "path": "/tmp/wiza-raw/screenshots/enterprise-light-default.png"
+  },
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "colorScheme": "normal",
+    "title": "Enterprise Sales Prospecting Software | Wiza",
+    "url": "https://wiza.co/enterprise"
+  }
+}
