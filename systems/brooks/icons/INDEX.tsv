@@ -1,0 +1,3 @@
+file	what	source
+mark.svg	Header wordmark, viewBox 0 0 120 20, white fill	a.a-logo-link svg#icon-logo on https://www.brooksrunning.com/en_us 2026-11-22
+icon.png	Same wordmark in navy on white, 128 px	rendered from mark.svg for the package icon
