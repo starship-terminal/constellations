@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CALPAK style guide</title>
+<style>
+  :root {
+    --ink: #030303;
+    --page: #FFFDF3;
+    --yellow: #F8F15F;
+    --promo: #F8F05F;
+    --gray: #E5E7DF;
+    --red: #D21A28;
+    --font: "Futura PT", "Futura", "Trebuchet MS", sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font); font-weight: 500; font-size: 18px; line-height: 1.3; }
+  header.promo { background: var(--promo); text-align: center; font-size: 16px; line-height: 38px; }
+  .sheet { margin: 10px; background: var(--page); border-radius: 5px; padding: 16px 22px; display: flex; align-items: center; gap: 28px; }
+  .word { font-size: 16px; letter-spacing: 0.08em; }
+  nav { display: flex; gap: 22px; font-size: 16px; }
+  .search { margin-left: auto; border: 1px solid var(--ink); border-radius: 9999px; padding: 8px 16px; font: inherit; font-size: 16px; background: transparent; width: 160px; }
+  main { padding: 28px; }
+  h1 { font-size: 36px; font-weight: 500; line-height: 40px; margin: 0 0 16px; }
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0; }
+  .swatch { width: 120px; }
+  .chip { height: 64px; border-radius: 8px; border: 1px solid var(--ink); }
+  .label { font-size: 13px; margin-top: 6px; }
+  .cta { display: inline-block; background: var(--yellow); color: var(--ink); border-radius: 9999px; padding: 14px 28px; font-size: 16px; text-decoration: none; }
+  .pill { display: inline-block; border: 1px solid var(--red); color: var(--red); border-radius: 9999px; padding: 4px 10px; font-size: 13px; }
+  p.note { font-size: 14px; max-width: 46rem; }
+</style>
+</head>
+<body>
+  <header class="promo">Free shipping to Singapore on all orders</header>
+  <div class="sheet">
+    <span class="word">CALPAK</span>
+    <nav>
+      <span>Black Friday</span>
+      <span>Shop All</span>
+      <span>Bags</span>
+      <span>Luggage</span>
+    </nav>
+    <input class="search" placeholder="Search" readonly>
+  </div>
+  <main>
+    <h1>20% Off Sitewide</h1>
+    <a class="cta" href="#add">Shop Black Friday</a>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#FFFDF3"></div><div class="label">page #FFFDF3</div></div>
+      <div class="swatch"><div class="chip" style="background:#030303"></div><div class="label">ink #030303</div></div>
+      <div class="swatch"><div class="chip" style="background:#F8F15F"></div><div class="label">accent #F8F15F</div></div>
+      <div class="swatch"><div class="chip" style="background:#F8F05F"></div><div class="label">promo #F8F05F</div></div>
+      <div class="swatch"><div class="chip" style="background:#E5E7DF"></div><div class="label">gray #E5E7DF</div></div>
+      <div class="swatch"><div class="chip" style="background:#D21A28"></div><div class="label">red #D21A28</div></div>
+    </div>
+    <p><span class="pill">18% Off</span></p>
+    <p class="note">Measured from the signed-out shop on 22 November 2026. Futura PT is the live face. This page falls back to Futura, then Trebuchet MS. The shop has no dark theme, so this page has no theme toggle.</p>
+  </main>
+</body>
+</html>
