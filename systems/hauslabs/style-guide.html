@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Haus Labs tokens</title>
+  <style>
+    :root {
+      --ink: #000000;
+      --on-ink: #ffffff;
+      --promo: #000000;
+      --header: #ffffff;
+      --page: #ffffff;
+      --hero: #f1f1f1;
+      --muted: #686868;
+      --bag: #000000;
+      --notify: #424344;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: SuisseIntl, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 200;
+      font-size: 16px;
+      line-height: 18.4px;
+    }
+    button { font-family: inherit; font-weight: inherit; }
+    .promo {
+      background: var(--promo);
+      color: var(--on-ink);
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.13px;
+    }
+    header {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      background: var(--header);
+      border-bottom: 1px solid #eee;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.65px;
+      text-transform: uppercase;
+    }
+    nav { display: flex; gap: 28px; }
+    .wordmark { letter-spacing: 0.04em; font-size: 18px; font-weight: 700; text-transform: uppercase; }
+    .hero {
+      background: var(--hero);
+      color: var(--muted);
+      min-height: 280px;
+      padding: 72px 64px;
+    }
+    .hero h1 {
+      margin: 8px 0;
+      font-size: 48px;
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .eyebrow { font-size: 16px; }
+    main { padding: 40px 60px 80px; }
+    h2 { font-size: 30px; font-weight: 500; }
+    .row { display: flex; gap: 16px; align-items: center; margin: 16px 0; flex-wrap: wrap; }
+    .swatch { width: 72px; height: 48px; border: 1px solid #ddd; }
+    .label { font-size: 13px; letter-spacing: 0.04em; }
+    .bag {
+      width: 299px;
+      height: 40px;
+      background: var(--bag);
+      color: var(--on-ink);
+      border: 1px solid var(--notify);
+      border-radius: 0;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .notify {
+      width: 299px;
+      height: 40px;
+      background: var(--notify);
+      color: var(--on-ink);
+      border: 1px solid var(--notify);
+      border-radius: 0;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="promo">Free Shipping to Singapore on Orders Over S$160.00</div>
+  <header>
+    <nav>
+      <span>Shop</span>
+      <span>Unlock 20% Off</span>
+      <span>About</span>
+    </nav>
+    <div class="wordmark">Haus Labs</div>
+    <nav>
+      <span>Search</span>
+      <span>Account</span>
+      <span>Bag (0)</span>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="eyebrow">Coming soon</div>
+    <h1>Rice Water Glow<br>Priming Elixir</h1>
+    <p>Glowy skin. 12 hour makeup.</p>
+  </section>
+  <main>
+    <h2>Measured tokens</h2>
+    <div class="row">
+      <div class="swatch" style="background: var(--ink)"></div><span class="label">ink #000000</span>
+      <div class="swatch" style="background: var(--promo)"></div><span class="label">promo #000000</span>
+      <div class="swatch" style="background: var(--header)"></div><span class="label">header #ffffff</span>
+      <div class="swatch" style="background: var(--hero)"></div><span class="label">hero #f1f1f1</span>
+      <div class="swatch" style="background: var(--muted)"></div><span class="label">muted #686868</span>
+      <div class="swatch" style="background: var(--notify)"></div><span class="label">notify #424344</span>
+    </div>
+    <div class="row">
+      <button class="bag" type="button">Add to Bag</button>
+      <button class="notify" type="button">Notify Me</button>
+    </div>
+  </main>
+</body>
+</html>
