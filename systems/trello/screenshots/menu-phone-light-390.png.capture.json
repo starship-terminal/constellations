@@ -1,0 +1,29 @@
+{
+  "captured": "2026-11-22",
+  "name": "menu-phone-light-390",
+  "url": "https://trello.com/",
+  "requestedUrl": "https://trello.com/",
+  "title": "Capture, organize, and tackle your to-dos from anywhere",
+  "h1": "Capture, organize, and tackle your to-dos from anywhere.",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "Phone navigation open. Signed out. Cookie banner hidden. Nothing typed.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}

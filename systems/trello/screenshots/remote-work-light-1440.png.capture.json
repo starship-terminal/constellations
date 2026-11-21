@@ -1,0 +1,29 @@
+{
+  "captured": "2026-11-22",
+  "name": "remote-work-light-1440",
+  "url": "https://trello.com/guide/remote-work",
+  "requestedUrl": "https://trello.com/guide/remote-work",
+  "title": "How to Embrace Remote Work",
+  "h1": "How to embrace remote work",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted. No identity provider clicked.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}
