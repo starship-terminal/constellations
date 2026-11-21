@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NET-A-PORTER style guide</title>
+<style>
+  :root {
+    --ink: #111111;
+    --page: #ffffff;
+    --soft: #2b2b2b;
+    --muted: #656565;
+    --line: #cbcbcb;
+    --chip: #e5e5e5;
+    --on-ink: #ffffff;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font-family: Arial, sans-serif; }
+  header { background: var(--ink); color: var(--on-ink); padding: 28px 32px 20px; }
+  header p { margin: 0 0 8px; letter-spacing: 0.14px; font-size: 14px; }
+  h1 { margin: 0; font-family: Georgia, serif; font-weight: 500; font-size: 32px; line-height: 40px; }
+  main { padding: 32px; }
+  h2 { font-family: Georgia, serif; font-weight: 500; font-size: 24px; margin: 28px 0 12px; }
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+  .swatch { width: 120px; }
+  .chip { height: 64px; border: 1px solid var(--line); }
+  .swatch span { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  button, .btn { font-family: Arial, sans-serif; font-size: 14px; letter-spacing: 0.14px; border-radius: 2px; height: 40px; padding: 0 16px; }
+  .shop { background: var(--page); color: var(--ink); border: 1px solid var(--page); height: 42px; width: 240px; }
+  .bag { background: var(--ink); color: var(--on-ink); border: 1px solid var(--ink); width: 240px; }
+  .wish { background: var(--page); color: var(--ink); border: 1px solid var(--ink); width: 240px; }
+  .size { width: 90px; background: transparent; color: var(--ink); border: 1px solid var(--chip); }
+  .panel { background: var(--ink); color: var(--on-ink); padding: 24px; display: inline-block; }
+  .panel .size { color: var(--on-ink); }
+  .note { color: var(--muted); font-size: 12px; max-width: 640px; }
+</style>
+</head>
+<body>
+<header>
+  <p>NET-A-PORTER</p>
+  <h1>Measured tokens</h1>
+</header>
+<main>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#111111"></div><span>ink #111111</span></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><span>page #ffffff</span></div>
+    <div class="swatch"><div class="chip" style="background:#2b2b2b"></div><span>ink-soft #2b2b2b</span></div>
+    <div class="swatch"><div class="chip" style="background:#656565"></div><span>muted #656565</span></div>
+    <div class="swatch"><div class="chip" style="background:#cbcbcb"></div><span>line #cbcbcb</span></div>
+    <div class="swatch"><div class="chip" style="background:#e5e5e5"></div><span>chip-line #e5e5e5</span></div>
+  </div>
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="shop" type="button">Shop now</button>
+    <button class="bag" type="button">Add to Bag</button>
+    <button class="wish" type="button">Add to Wish List</button>
+  </div>
+  <h2>Size chip</h2>
+  <div class="panel">
+    <button class="size" type="button">UK 4</button>
+  </div>
+  <p class="note">Computed chip type is black. On the black product panel the photograph uses white so the label can be read. Add to Bag was not clicked.</p>
+</main>
+</body>
+</html>
