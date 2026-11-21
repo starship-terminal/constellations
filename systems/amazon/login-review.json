@@ -1,0 +1,45 @@
+{
+  "product": "Amazon",
+  "domain": "www.amazon.com",
+  "reviewedAt": "2026-11-22",
+  "method": "public Playwright, signed out",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Hello, sign in and account flyout Sign in",
+      "url": "https://www.amazon.com/ap/signin",
+      "title": "Sign in",
+      "painted": false,
+      "headings": ["Sign in or create account"],
+      "asksFor": [
+        { "label": "Enter mobile number or email", "type": "text", "required": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Continue", "Need help?", "Create a free business account"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-default.png",
+      "note": "The field was empty. Continue was hovered and focused, not clicked. No password field was on this first screen. No identity provider was shown. No form was submitted."
+    },
+    {
+      "control": "account flyout Start here and /ap/register",
+      "url": "https://www.amazon.com/ap/register",
+      "title": "Sign in",
+      "painted": false,
+      "headings": ["Sign in or create account"],
+      "asksFor": [
+        { "label": "Enter mobile number or email", "type": "text", "required": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Continue"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-default.png",
+      "note": "The register URL rendered the same first wall as sign-in. Fields were empty. No form was submitted. No account was created."
+    }
+  ]
+}

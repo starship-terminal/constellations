@@ -1,0 +1,484 @@
+{
+  "url": "https://www.amazon.com/",
+  "title": "Amazon.com. Spend less. Smile more.",
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1,
+    "scrollHeight": 2004
+  },
+  "body": {
+    "id": "",
+    "text": "Skip to Main content Keyboard shortcuts Search opt + / Cart shift + opt + C Home",
+    "color": "rgb(15, 17, 17)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "Arial, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "borderTopWidth": "0px",
+    "borderTopColor": "rgb(15, 17, 17)",
+    "borderTopStyle": "none",
+    "height": 2004,
+    "width": 1440,
+    "padding": "0px",
+    "boxShadow": "none",
+    "outline": "rgb(15, 17, 17) none 0px"
+  },
+  "nav": {
+    "id": "nav-belt",
+    "text": "Deliver to Singapore All All Departments Arts & Crafts Automotive Baby Beauty & ",
+    "color": "rgb(15, 17, 17)",
+    "backgroundColor": "rgb(255, 98, 0)",
+    "fontFamily": "Arial, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "12px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "borderTopWidth": "0px",
+    "borderTopColor": "rgb(15, 17, 17)",
+    "borderTopStyle": "none",
+    "height": 60,
+    "width": 1440,
+    "padding": "0px",
+    "boxShadow": "none",
+    "outline": "rgb(15, 17, 17) none 0px"
+  },
+  "subnav": {
+    "id": "nav-main",
+    "text": "All Prime Video Customer Service Black Friday Registry Gift Cards Sell Disabilit",
+    "color": "rgb(15, 17, 17)",
+    "backgroundColor": "rgb(255, 153, 70)",
+    "fontFamily": "Arial, sans-serif",
+    "fontSize": "12px",
+    "fontWeight": "400",
+    "lineHeight": "12px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "borderTopWidth": "0px",
+    "borderTopColor": "rgb(15, 17, 17)",
+    "borderTopStyle": "none",
+    "height": 39,
+    "width": 1440,
+    "padding": "0px 0px 0px 11px",
+    "boxShadow": "none",
+    "outline": "rgb(15, 17, 17) none 0px"
+  },
+  "search": {
+    "id": "twotabsearchtextbox",
+    "text": "Search Amazon",
+    "color": "rgb(17, 17, 17)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Arial, sans-serif",
+    "fontSize": "15px",
+    "fontWeight": "400",
+    "lineHeight": "15px",
+    "letterSpacing": "normal",
+    "borderRadius": "8px",
+    "borderTopWidth": "0px",
+    "borderTopColor": "rgb(17, 17, 17)",
+    "borderTopStyle": "none",
+    "height": 38,
+    "width": 694,
+    "padding": "7px 10px 10px 0px",
+    "boxShadow": "none",
+    "outline": "rgb(17, 17, 17) none 0px"
+  },
+  "go": {
+    "id": "nav-search-submit-button",
+    "text": "",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Arial, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "1px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "borderTopWidth": "0px",
+    "borderTopColor": "rgb(255, 255, 255)",
+    "borderTopStyle": "none",
+    "height": 40,
+    "width": 45,
+    "padding": "0px",
+    "boxShadow": "none",
+    "outline": "rgb(255, 255, 255) none 0px"
+  },
+  "cart": {
+    "id": "nav-cart",
+    "text": "0 Cart",
+    "color": "rgb(214, 214, 214)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Arial, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "44px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "borderTopWidth": "0px",
+    "borderTopColor": "rgb(214, 214, 214)",
+    "borderTopStyle": "none",
+    "height": 50,
+    "width": 84,
+    "padding": "0px 9px 11px",
+    "boxShadow": "none",
+    "outline": "rgb(214, 214, 214) none 0px"
+  },
+  "signin": {
+    "id": "nav-link-accountList",
+    "text": "Hello, sign in Account & Lists",
+    "color": "rgb(15, 17, 17)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Arial, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "12px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "borderTopWidth": "0px",
+    "borderTopColor": "rgb(15, 17, 17)",
+    "borderTopStyle": "none",
+    "height": 55,
+    "width": 148,
+    "padding": "0px 9px",
+    "boxShadow": "none",
+    "outline": "rgb(15, 17, 17) none 0px"
+  },
+  "footer": {
+    "id": "navFooter",
+    "text": "Customer Service About Amazon Conditions of Use Privacy Notice Consumer Health D",
+    "color": "rgb(15, 17, 17)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "Arial, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "borderTopWidth": "0px",
+    "borderTopColor": "rgb(15, 17, 17)",
+    "borderTopStyle": "none",
+    "height": 120,
+    "width": 1440,
+    "padding": "0px",
+    "boxShadow": "none",
+    "outline": "rgb(15, 17, 17) none 0px"
+  },
+  "productTitle": null,
+  "price": {
+    "id": "",
+    "text": "S$17.19",
+    "color": "rgb(15, 17, 17)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "borderTopWidth": "0px",
+    "borderTopColor": "rgb(15, 17, 17)",
+    "borderTopStyle": "none",
+    "height": 24,
+    "width": 67,
+    "padding": "0px",
+    "boxShadow": "none",
+    "outline": "rgb(15, 17, 17) none 0px"
+  },
+  "addToCart": null,
+  "primaryButton": {
+    "id": "a-autoid-1",
+    "text": "Change Address",
+    "color": "rgb(15, 17, 17)",
+    "backgroundColor": "rgb(255, 216, 20)",
+    "fontFamily": "Arial, sans-serif",
+    "fontSize": "13px",
+    "fontWeight": "400",
+    "lineHeight": "normal",
+    "letterSpacing": "normal",
+    "borderRadius": "100px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgb(255, 216, 20)",
+    "borderTopStyle": "solid",
+    "height": 32,
+    "width": 128,
+    "padding": "0px",
+    "boxShadow": "none",
+    "outline": "rgb(15, 17, 17) none 0px"
+  },
+  "cssVars": [
+    {
+      "name": "--nav-desktop-header-tbg",
+      "value": "#ff6200",
+      "selector": ":root"
+    },
+    {
+      "name": "--nav-desktop-header-bbg",
+      "value": "#ff9946",
+      "selector": ":root"
+    },
+    {
+      "name": "--nav-go-button-bg",
+      "value": "#f3f3f3",
+      "selector": ":root"
+    },
+    {
+      "name": "--nav-go-button-hbg",
+      "value": "#e3e6e6",
+      "selector": ":root"
+    },
+    {
+      "name": "--nav-search-border-shadow",
+      "value": "#873909",
+      "selector": ":root"
+    },
+    {
+      "name": "--nav-search-scope",
+      "value": "#e6e6e6",
+      "selector": ":root"
+    },
+    {
+      "name": "--nav-search-scope-hover",
+      "value": "#d4d4d4",
+      "selector": ":root"
+    },
+    {
+      "name": "--nav-x-shop-links",
+      "value": "#fff",
+      "selector": ":root"
+    },
+    {
+      "name": "--nav-x-shop-links-active",
+      "value": "#ccc",
+      "selector": ":root"
+    },
+    {
+      "name": "--nav-cart-count",
+      "value": "#fff",
+      "selector": ":root"
+    },
+    {
+      "name": "--nav-dropdown-arrows",
+      "value": "#0f1111",
+      "selector": ":root"
+    },
+    {
+      "name": "--nav-search-labels",
+      "value": "#fff",
+      "selector": ":root"
+    },
+    {
+      "name": "--nav-desktop-coords",
+      "value": "(-237px -295px 97px 33px)",
+      "selector": ":root"
+    },
+    {
+      "name": "--nav-desktop-prime-tagline-coords",
+      "value": "(-245px -134px 47px 19px)",
+      "selector": ":root"
+    },
+    {
+      "name": "--nav-desktop-x-shop-links",
+      "value": "#0f1111",
+      "selector": ":root"
+    },
+    {
+      "name": "--nav-desktop-delivery-text",
+      "value": "#fff",
+      "selector": ":root"
+    },
+    {
+      "name": "--nav-desktop-hmenu-icon-filter",
+      "value": "invert(100%)",
+      "selector": ":root"
+    },
+    {
+      "name": "--nav-deals-link-class",
+      "value": "nav-holiday",
+      "selector": ":root"
+    },
+    {
+      "name": "--nav-deals-link",
+      "value": "#fff",
+      "selector": ":root"
+    },
+    {
+      "name": "--wd-rem",
+      "value": "1rem",
+      "selector": "._single-creative-card_style_wdHeader__Edrev"
+    },
+    {
+      "name": "--wd-vw",
+      "value": "1vw",
+      "selector": "._single-creative-card_style_wdHeader__Edrev"
+    },
+    {
+      "name": "--ribbonTextColor",
+      "value": "#fff",
+      "selector": "._single-creative-card_style_haulRibbon__3VZNi"
+    },
+    {
+      "name": "--ribbonBackgroundColor",
+      "value": "#6700ce",
+      "selector": "._single-creative-card_style_haulRibbon__3VZNi"
+    },
+    {
+      "name": "--background-color",
+      "value": "var(--aok-sfs-color-page-primary-normal-bg, #fff)",
+      "selector": ".dcl-container"
+    },
+    {
+      "name": "--primary-text-color",
+      "value": "var(--aok-sfs-color-page-primary-normal-fg, #0f1111)",
+      "selector": ".dcl-container"
+    },
+    {
+      "name": "--secondary-text-color",
+      "value": "var(--aok-sfs-color-page-secondary-normal-fg, #565959)",
+      "selector": ".dcl-container"
+    },
+    {
+      "name": "--page-h-padding",
+      "value": "15px",
+      "selector": ".dcl-container"
+    },
+    {
+      "name": "--dcl-container-inner-padding",
+      "value": "0",
+      "selector": ".dcl-container"
+    },
+    {
+      "name": "--dcl-container-margin",
+      "value": "0",
+      "selector": ".dcl-container"
+    },
+    {
+      "name": "--dcl-container-inner-padding",
+      "value": "var(--page-h-padding)",
+      "selector": ".dcl-container.dcl-container-event"
+    },
+    {
+      "name": "--dcl-container-margin",
+      "value": "20px 0",
+      "selector": ".dcl-container.d-page-type-browse"
+    },
+    {
+      "name": "--dcl-container-margin",
+      "value": "20px auto",
+      "selector": ".dcl-container.d-page-type-browse.dcl-centered"
+    },
+    {
+      "name": "--page-h-padding",
+      "value": "16px",
+      "selector": ".dcl-container.d-page-type-events"
+    },
+    {
+      "name": "--dcl-container-inner-padding",
+      "value": "16px",
+      "selector": ".dcl-container.d-page-type-events"
+    },
+    {
+      "name": "--dcl-container-inner-padding",
+      "value": "20px",
+      "selector": ".dcl-container.d-page-type-gateway"
+    },
+    {
+      "name": "--page-h-padding",
+      "value": "8px",
+      "selector": ".dcl-container.d-page-type-search"
+    },
+    {
+      "name": "--page-h-padding",
+      "value": "12px",
+      "selector": ".dcl-container.d-page-type-gift_finder"
+    },
+    {
+      "name": "--right-arrow-button",
+      "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxMyAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEuOTM1NzYgMjBDMS43Mjg3NyAxOS45OTkyIDEuNTI2NjkgMTkuOTM5NyAxLjM1NTA2IDE5LjgyOTFDMS4xODM0NCAxOS43MTg2IDEuMDQ5OTggMTkuNTYxOSAwLjk3MTU2NyAxOS4zNzg5QzAuODkzMTUxIDE5LjE5NTggMC44NzMyOTcgMTguOTk0NyAwLjkxNDUxOCAxOC44MDA5QzAuOTU1NzM4IDE4LjYwNzEgMS4wNTYxOCAxOC40MjkzIDEuMjAzMTQgMTguMjkwMUw5LjkzMTcgMTAuMDAwNEwxLjIwMzE0IDEuNzEwNzJDMS4xMDUwNSAxLjYxNzc2IDEuMDI3MTkgMS41MDcxNyAwLjk3NDA1NCAxLjM4NTMxQzAuOTIwOTIgMS4yNjM0NiAwLjg5MzU2NCAxLjEzMjc2IDAuODkzNTY0IDEuMDAwNzVDMC44OTM1NjQgMC44Njg3NDYgMC45MjA5MiAwLjczODA0NiAwLjk3NDA1NCAwLjYxNjE5MUMxLjAyNzE5IDAuNDk0MzM3IDEuMTA1MDUgMC4zODM3NCAxLjIwMzE0IDAuMjkwNzgxQzEuMzk5MjQgMC4xMDQ1MzggMS42NjQ1IDAgMS45NDA5OSAwQzIuMjE3NDggMCAyLjQ4Mjc0IDAuMTA0NTM4IDIuNjc4ODQgMC4yOTA3ODFMMTIuODkzNiAxMC4wMDA0TDIuNjc4ODQgMTkuNzFDMi41ODEwNCAxOS44MDI3IDIuNDY1MDYgMTkuODc2IDIuMzM3NTUgMTkuOTI1OEMyLjIxMDA0IDE5Ljk3NTUgMi4wNzM0OSAyMC4wMDA3IDEuOTM1NzYgMjBaIiBmaWxsPSIjMEYxMTExIi8+Cjwvc3ZnPg==)",
+      "selector": ".dcl-carousel"
+    },
+    {
+      "name": "--left-arrow-button",
+      "value": "url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxMyAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTExLjQ5MDYgMjAuMDAwOEMxMS4zNTI4IDIwLjAwMTYgMTEuMjE2MyAxOS45NzYzIDExLjA4ODggMTkuOTI2NkMxMC45NjEzIDE5Ljg3NjggMTAuODQ1MyAxOS44MDM1IDEwLjc0NzUgMTkuNzEwOEwwLjUzMjc3NiAxMC4wMDA4TDEwLjc0NzUgMC4yOTA3OTNDMTAuOTQzNiAwLjEwNDU0MiAxMS4yMDg4IDAgMTEuNDg1MyAwQzExLjc2MTggMCAxMi4wMjcxIDAuMTA0NTQyIDEyLjIyMzIgMC4yOTA3OTNDMTIuMzIxMyAwLjM4Mzc1NiAxMi4zOTkxIDAuNDk0MzU3IDEyLjQ1MjMgMC42MTYyMTZDMTIuNTA1NCAwLjczODA3NSAxMi41MzI4IDAuODY4NzgxIDEyLjUzMjggMS4wMDA3OUMxMi41MzI4IDEuMTMyOCAxMi41MDU0IDEuMjYzNTEgMTIuNDUyMyAxLjM4NTM3QzEyLjM5OTEgMS41MDcyMyAxMi4zMjEzIDEuNjE3ODMgMTIuMjIzMiAxLjcxMDc5TDMuNDk0NjMgMTAuMDAwOEwxMi4yMjMyIDE4LjI5MDhDMTIuMzcwMiAxOC40MzAxIDEyLjQ3MDYgMTguNjA3OCAxMi41MTE4IDE4LjgwMTdDMTIuNTUzIDE4Ljk5NTUgMTIuNTMzMiAxOS4xOTY2IDEyLjQ1NDggMTkuMzc5NkMxMi4zNzYzIDE5LjU2MjcgMTIuMjQyOSAxOS43MTk0IDEyLjA3MTMgMTkuODI5OUMxMS44OTk2IDE5Ljk0MDUgMTEuNjk3NiAyMCAxMS40OTA2IDIwLjAwMDhWMjAuMDAwOFoiIGZpbGw9IiMwRjExMTEiLz4KPC9zdmc+)",
+      "selector": ".dcl-carousel"
+    },
+    {
+      "name": "--spacing",
+      "value": "8px",
+      "selector": ".dcl-carousel"
+    },
+    {
+      "name": "--element-width",
+      "value": "200px",
+      "selector": ".dcl-carousel"
+    },
+    {
+      "name": "--dcl-see-more-pinned-color",
+      "value": "#2162a1",
+      "selector": ".aok-is-mode-dark .dcl-container-content-colors"
+    },
+    {
+      "name": "--dcl-see-more-color",
+      "value": "var(--primary-text-color)",
+      "selector": ".dcl-container-event .dcl-see-more"
+    },
+    {
+      "name": "--dcl-see-more-color",
+      "value": "var(--dcl-see-more-pinned-color, var(--aok-sfs-color-link-normal-fg, #2162a1))",
+      "selector": ".dcl-see-more"
+    },
+    {
+      "name": "--dcl-see-more-color",
+      "value": "var(--secondary-text-color, #565959)",
+      "selector": ".dcl-see-more.compact"
+    },
+    {
+      "name": "--dcl-container-inner-padding",
+      "value": "12px 0",
+      "selector": ".d-showcase.d-responsive-tiles.dcl-container"
+    },
+    {
+      "name": "--line-height",
+      "value": "24px",
+      "selector": ".d-showcase.d-responsive-tiles .d-header-title"
+    },
+    {
+      "name": "--max-rows",
+      "value": "1",
+      "selector": ".d-showcase.d-responsive-tiles .d-header-title"
+    },
+    {
+      "name": "--product-image-height",
+      "value": "calc(var(--element-width) * 1 / 1)",
+      "selector": ".d-showcase.d-responsive-tiles .dcl-carousel"
+    },
+    {
+      "name": "--right-arrow-button",
+      "value": "url('data:image/svg+xml,<svg fill=\"none\" viewBox=\"6 2 12 20\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m7.0422 22c-.20698-.0008-.40907-.0603-.58069-.1709-.17162-.1105-.30508-.2672-.3835-.4502-.07841-.1831-.09827-.3842-.05705-.578s.14167-.3716.28863-.5108l8.72851-8.2897-8.72851-8.28968c-.0981-.09296-.17596-.20355-.22909-.32541-.05313-.12185-.08049-.25255-.08049-.38456 0-.132.02736-.2627.08049-.38456.05313-.12185.13099-.23245.22909-.32541.19609-.18624.46135-.29078.73785-.29078.27649 0 .54175.10454.73784.29078l10.21472 9.70962-10.21472 9.7096c-.09779.0927-.21377.166-.34129.2158-.12751.0497-.26405.0749-.40179.0742z\" fill=\"%230f1111\"/></svg>')",
+      "selector": ".d-showcase.d-responsive-tiles .dcl-carousel"
+    },
+    {
+      "name": "--left-arrow-button",
+      "value": "url('data:image/svg+xml,<svg fill=\"none\" viewBox=\"6 2 12 20\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m16.9578 22.0008c-.1377.0008-.2743-.0245-.4018-.0742-.1275-.0498-.2435-.1231-.3413-.2158l-10.2147-9.71 10.2147-9.71001c.1961-.18625.4614-.29079.7379-.29079s.5417.10454.7378.29079c.0981.09297.176.20357.2291.32543s.0805.25256.0805.38457-.0274.26272-.0805.38458-.131.23246-.2291.32542l-8.72855 8.29001 8.72855 8.29c.147.1393.2474.317.2886.5109.0413.1938.0214.3949-.057.5779-.0784.1831-.2119.3398-.3835.4503-.1716.1106-.3737.1701-.5807.1709z\" fill=\"%230f1111\"/></svg>')",
+      "selector": ".d-showcase.d-responsive-tiles .dcl-carousel"
+    },
+    {
+      "name": "--clip-path-offset",
+      "value": "8px",
+      "selector": ".d-showcase.with-ranked-products .dcl-product-image-container::after, .d-showcas"
+    },
+    {
+      "name": "--max-rows",
+      "value": "2",
+      "selector": ".dcl-truncate"
+    },
+    {
+      "name": "--line-height",
+      "value": "1.3em",
+      "selector": ".dcl-truncate"
+    }
+  ]
+}

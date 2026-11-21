@@ -1,0 +1,111 @@
+{
+  "url": "https://www.amazon.com/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.com%2F&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0",
+  "title": "Sign in",
+  "headings": [
+    "Sign in or create account"
+  ],
+  "labels": [],
+  "inputs": [
+    {
+      "type": "hidden",
+      "name": "appAction",
+      "id": "",
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "subPageType",
+      "id": "",
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "claimCollectionWorkflow",
+      "id": "",
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "metadata1",
+      "id": "",
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "claimType",
+      "id": "",
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "countryCode",
+      "id": "",
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "isServerSideRouting",
+      "id": "",
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "emailOnlyClaim",
+      "id": "",
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "webAuthnGetArbForAutofill",
+      "id": "",
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "webAuthnGetParametersForAutofill",
+      "id": "",
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "webAuthnChallengeIdForAutofill",
+      "id": "",
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "openid.ns",
+      "id": "",
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "openid.mode",
+      "id": "",
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "openid.return_to",
+      "id": "",
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "openid.assoc_handle",
+      "id": "",
+      "autocomplete": ""
+    }
+  ],
+  "buttons": [
+    "Conditions of Use",
+    "Privacy Notice",
+    "Need help?",
+    "Create a free business account",
+    "Conditions of Use",
+    "Privacy Notice",
+    "Help"
+  ],
+  "text": "Sign in or create account Enter mobile number or email Continue By continuing, you agree to Amazon's Conditions of Use and Privacy Notice. Need help? Buying for work? Create a free business account Conditions of Use Privacy Notice Help © 1996-2026, Amazon.com, Inc. or its affiliates Test: amzn-nv-flyout-healthy-choice Test: .nav-sprite-v1 Test: nav-rufus-disc-txt Test: a-truncate-cut Test: sp-cc-wrapper Test: .mo-wp Test: .a-image-container Test: sp-cc Test: .amzn-box-inner Test: .js-order-card Test: pldn-deep-link Test: add-to-cart-btn Test: amzn-nav-app-banner-container Test: .sparkle-container",
+  "captcha": false
+}
