@@ -1,0 +1,60 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://tv.apple.com/",
+  "viewport": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 1 },
+  "phone": { "innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2 },
+  "computed": {
+    "body": {
+      "backgroundColor": "rgb(31, 31, 31)",
+      "color": "rgba(255, 255, 255, 0.92)",
+      "fontFamily": "-apple-system, \"system-ui\", \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "fontSize": "13px"
+    },
+    "header": {
+      "backgroundColor": "rgb(0, 0, 0)",
+      "height": "52px",
+      "position": "sticky"
+    },
+    "signIn": {
+      "backgroundColor": "rgb(10, 132, 255)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "6px",
+      "height": "28px",
+      "fontSize": "13px",
+      "fontWeight": "600",
+      "padding": "0px 12px"
+    },
+    "navLink": {
+      "color": "rgba(255, 255, 255, 0.92)",
+      "muted": "rgba(255, 255, 255, 0.64)",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "borderRadius": "6px"
+    },
+    "searchField": {
+      "border": "1px solid rgba(255, 255, 255, 0.92)",
+      "borderRadius": "4px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "height": "28px"
+    },
+    "posterLink": {
+      "borderRadius": "14px"
+    }
+  },
+  "customProperties": {
+    "--systemBlue": "#007aff",
+    "--systemBlue-pressed": "#005cd7",
+    "--systemBlue-vibrant": "#0070f5",
+    "--systemPrimary-onDark_IC": "#fff",
+    "--systemSecondary-onDark": "#ffffffa3",
+    "--systemGray5-onDark": "#2c2c2e",
+    "--systemRed": "#ff3b30",
+    "--systemGreen": "#28cd41",
+    "--systemOrange": "#ff9500",
+    "--body": "400 13px/1.2307692308 -apple-system,BlinkMacSystemFont,Apple Color Emoji,SF Pro,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif",
+    "--title-2": "400 17px/1.2941176471 -apple-system,BlinkMacSystemFont,Apple Color Emoji,SF Pro,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif",
+    "--headline": "600 48px/1.0834933333 -apple-system,BlinkMacSystemFont,Apple Color Emoji,SF Pro,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif",
+    "--maxContentWidth": "1680px",
+    "--global-transition-duration": ".1s"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "product": "Apple TV",
+  "domain": "tv.apple.com",
+  "reviewedAt": "2026-11-22",
+  "method": "public Playwright, signed out",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Sign In",
+      "url": "https://tv.apple.com/",
+      "frame": "https://tv.apple.com/includes/commerce/authenticate",
+      "title": "Continue with Email",
+      "painted": true,
+      "headings": ["Continue with Email"],
+      "asksFor": [
+        { "label": "Email", "type": "text", "required": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Continue", "Close", "Forgot Password?", "See how your data is managed..."],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-default.png",
+      "note": "The email field was empty. Continue was not clicked. No password was typed. A nested idmsa.apple.com frame was present and was not submitted. No identity provider was clicked."
+    }
+  ]
+}

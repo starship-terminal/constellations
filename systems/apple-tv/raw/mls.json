@@ -1,0 +1,171 @@
+{
+  "url": "https://tv.apple.com/us/channel/mls/tvs.sbd.7000",
+  "title": "\u200eMLS - Apple TV",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "bodyBg": "rgb(31, 31, 31)",
+  "bodyColor": "rgba(255, 255, 255, 0.92)",
+  "bodyFont": "-apple-system, \"system-ui\", \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+  "bodySize": "13px",
+  "headerBg": "rgb(0, 0, 0)",
+  "headerH": 52,
+  "controls": [
+    {
+      "tag": "A",
+      "text": "Open TV",
+      "aria": null,
+      "href": "https://tv.apple.com/",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgba(255, 255, 255, 0.64)",
+      "font": "-apple-system, \"system-ui\", \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "size": "13px",
+      "weight": "400",
+      "radius": "0px",
+      "height": 24
+    },
+    {
+      "tag": "A",
+      "text": "Apple TV",
+      "aria": null,
+      "href": "https://tv.apple.com/",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgba(255, 255, 255, 0.64)",
+      "font": "-apple-system, \"system-ui\", \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "size": "16px",
+      "weight": "600",
+      "radius": "6px",
+      "height": 21
+    },
+    {
+      "tag": "A",
+      "text": "Formula 1",
+      "aria": null,
+      "href": "https://tv.apple.com/us/channel/formula-1/tvs.sbd.241000",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgba(255, 255, 255, 0.64)",
+      "font": "-apple-system, \"system-ui\", \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "size": "16px",
+      "weight": "600",
+      "radius": "6px",
+      "height": 21
+    },
+    {
+      "tag": "A",
+      "text": "MLS",
+      "aria": null,
+      "href": "https://tv.apple.com/us/channel/mls/tvs.sbd.7000",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgba(255, 255, 255, 0.92)",
+      "font": "-apple-system, \"system-ui\", \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "size": "16px",
+      "weight": "600",
+      "radius": "6px",
+      "height": 21
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Sign In",
+      "aria": null,
+      "href": "",
+      "bg": "rgb(10, 132, 255)",
+      "color": "rgb(255, 255, 255)",
+      "font": "-apple-system, \"system-ui\", \"Apple Color Emoji\", \"SF Pro\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "size": "13px",
+      "weight": "600",
+      "radius": "6px",
+      "height": 28
+    }
+  ],
+  "footerText": "United States Espa\u00f1ol (M\u00e9xico) Copyright \u00a9 2026 Apple Inc. All rights reserved. Internet Service Terms Apple TV & Privacy Cookie Policy Support",
+  "footerNonCountry": [
+    {
+      "text": "Espa\u00f1ol (M\u00e9xico)",
+      "href": "https://tv.apple.com/us/channel/mls/tvs.sbd.7000?l=es"
+    },
+    {
+      "text": "Apple Inc.",
+      "href": "https://www.apple.com/"
+    },
+    {
+      "text": "Internet Service Terms",
+      "href": "https://www.apple.com/legal/internet-services/"
+    },
+    {
+      "text": "Apple TV & Privacy",
+      "href": "https://www.apple.com/legal/privacy/data/en/apple-tv-app/"
+    },
+    {
+      "text": "Cookie Policy",
+      "href": "https://www.apple.com/privacy/use-of-cookies/"
+    },
+    {
+      "text": "Support",
+      "href": "https://support.apple.com/tv"
+    }
+  ],
+  "headings": [
+    "MLS on Apple TV",
+    "Live Matches",
+    "MLS Coverage and Insights",
+    "Browse All Clubs",
+    "Stories from Around the League",
+    "MLS Cup Playoffs: Goals",
+    "Watch here and on your TV.",
+    "Questions? Answers."
+  ],
+  "inputs": [
+    {
+      "type": "search",
+      "name": "",
+      "label": "",
+      "required": false
+    }
+  ],
+  "buttons": [
+    "Open TV",
+    "Apple TV",
+    "Formula 1",
+    "MLS",
+    "Sign In",
+    "Limited-time offer. $6.99\u200d/\u200dmo for 6 months.",
+    "New England Revolution vs. Philadelphia Union",
+    "FC Dallas vs. Portland Timbers",
+    "Inter Miami CF vs. Columbus Crew",
+    "MLS Wrap-Up\u2069",
+    "Nashville SC vs. FC Cincinnati",
+    "Chicago Fire FC vs. Charlotte FC",
+    "Vancouver Whitecaps FC vs. Real Salt Lake",
+    "St. Louis CITY SC vs. Los Angeles Football Club",
+    "San Jose Earthquakes vs. Houston Dynamo FC",
+    "Unmute Preview",
+    "Limited-time offer. $6.99\u200d/\u200dmo for 6 months.",
+    "Accept Offer",
+    "New England Revolution vs. Philadelphia Union",
+    "Accept Offer"
+  ],
+  "vars": {
+    "--systemPrimary": "#ffffffeb",
+    "--sk-body-text-color": "#ffffffeb",
+    "--systemBlue": "#0a84ff",
+    "--systemRed": "#ff453a",
+    "--systemGreen": "#32d74b",
+    "--systemOrange": "#ff9f0a",
+    "--systemGray": "#98989d",
+    "--systemGray2": "#636366",
+    "--systemGray3": "#48484a",
+    "--systemGray4": "#3a3a3c",
+    "--systemGray5": "#2c2c2e",
+    "--systemGray6": "#1c1c1e",
+    "--labelSecondary": "#3c3c4399",
+    "--labelDivider": "#ffffff1a",
+    "--maxContentWidth": "1680px",
+    "--body": "400 13px/1.2307692308 -apple-system,BlinkMacSystemFont,Apple Color Emoji,SF Pro,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif",
+    "--title-1": "400 22px/1.1818181818 -apple-system,BlinkMacSystemFont,Apple Color Emoji,SF Pro,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif",
+    "--large-title": "400 26px/1.2307692308 -apple-system,BlinkMacSystemFont,Apple Color Emoji,SF Pro,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif",
+    "--headline": "600 48px/1.0834933333 -apple-system,BlinkMacSystemFont,Apple Color Emoji,SF Pro,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif",
+    "--footnote": "400 10px/1.3 -apple-system,BlinkMacSystemFont,Apple Color Emoji,SF Pro,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif",
+    "--global-transition-duration": ".1s",
+    "--global-transition-timing-function": "ease-in"
+  }
+}

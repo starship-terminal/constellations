@@ -1,0 +1,257 @@
+{
+  "url": "https://www.apple.com/legal/internet-services/",
+  "title": "Legal - Internet Services - Apple",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "bodyBg": "rgb(255, 255, 255)",
+  "bodyColor": "rgb(29, 29, 31)",
+  "bodyFont": "\"SF Pro Text\", \"SF Pro Icons\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+  "bodySize": "17px",
+  "headerBg": null,
+  "headerH": 0,
+  "controls": [],
+  "footerText": "Apple Footer \uf8ff Apple Legal Internet Services Hardware and Software Hardware Warranties Software License Agreements RF Exposure More Resources Overview Government Information Requests Contact Apple Legal Global Trade Compliance Supplier Provisions Filemaker Legal Information Apple Bag Check Class Action Settlement Foreman Class Action Settlement Sales & Support Overview AppleCare Repair Terms and C",
+  "footerNonCountry": [
+    {
+      "text": "\uf8ff Apple",
+      "href": "https://www.apple.com/"
+    },
+    {
+      "text": "Legal",
+      "href": "https://www.apple.com/legal/"
+    },
+    {
+      "text": "Hardware Warranties",
+      "href": "https://www.apple.com/legal/warranty/"
+    },
+    {
+      "text": "Software License Agreements",
+      "href": "https://www.apple.com/legal/sla/"
+    },
+    {
+      "text": "RF Exposure",
+      "href": "https://www.apple.com/legal/rfexposure/"
+    },
+    {
+      "text": "Overview",
+      "href": "https://www.apple.com/legal/more-resources/"
+    },
+    {
+      "text": "Government Information Requests",
+      "href": "https://www.apple.com/privacy/government-information-requests/"
+    },
+    {
+      "text": "Contact Apple Legal",
+      "href": "https://www.apple.com/legal/contact/"
+    },
+    {
+      "text": "Global Trade Compliance",
+      "href": "https://www.apple.com/legal/more-resources/gtc.html"
+    },
+    {
+      "text": "Supplier Provisions",
+      "href": "https://www.apple.com/legal/more-resources/supplier-provisions.html"
+    },
+    {
+      "text": "Filemaker Legal Information",
+      "href": "http://www.filemaker.com/company/legal/trademark_guidelines.html"
+    },
+    {
+      "text": "Apple Bag Check Class Action Settlement",
+      "href": "https://www.apple.com/legal/more-resources/settlement/apple-bag-check-settlement.html"
+    },
+    {
+      "text": "Foreman Class Action Settlement",
+      "href": "https://www.apple.com/legal/more-resources/settlement/foreman.html"
+    },
+    {
+      "text": "Overview",
+      "href": "https://www.apple.com/legal/sales-support/"
+    },
+    {
+      "text": "AppleCare",
+      "href": "https://www.apple.com/legal/sales-support/"
+    },
+    {
+      "text": "Repair Terms and Conditions",
+      "href": "https://www.apple.com/legal/sales-support/terms/repair/"
+    },
+    {
+      "text": "Express Replacement Service",
+      "href": "https://www.apple.com/legal/sales-support/terms/iphonears/"
+    },
+    {
+      "text": "Remote Support Terms and Conditions",
+      "href": "http://images.apple.com/legal/sales-support/applecare/docs/remotesupport_terms.pdf"
+    },
+    {
+      "text": "Sales Policies",
+      "href": "https://www.apple.com/legal/sales-support/"
+    },
+    {
+      "text": "Certification Agreements and Policies",
+      "href": "https://www.apple.com/legal/sales-support/certification/"
+    },
+    {
+      "text": "Apple Gift Card Terms and Conditions",
+      "href": "https://www.apple.com/legal/internet-services/itunes/giftcards/"
+    },
+    {
+      "text": "Training Service Terms and Conditions",
+      "href": "https://www.apple.com/legal/sales-support/terms/training/trainingservice.html"
+    },
+    {
+      "text": "Support Communities Terms of Use",
+      "href": "https://discussions.apple.com/terms"
+    },
+    {
+      "text": "Overview",
+      "href": "https://www.apple.com/legal/internet-services/"
+    },
+    {
+      "text": "Apple Media Services Terms and Conditions",
+      "href": "https://www.apple.com/legal/internet-services/itunes/"
+    },
+    {
+      "text": "Apple Gift Card Terms and Conditions",
+      "href": "https://www.apple.com/legal/internet-services/itunes/giftcards/"
+    },
+    {
+      "text": "iCloud Terms of Service",
+      "href": "https://www.apple.com/legal/internet-services/icloud/"
+    },
+    {
+      "text": "TestFlight Terms and Conditions",
+      "href": "https://www.apple.com/legal/internet-services/testflight/"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.apple.com/legal/privacy/"
+    },
+    {
+      "text": "Website Terms of Use",
+      "href": "https://www.apple.com/legal/internet-services/terms/site.html"
+    },
+    {
+      "text": "Overview",
+      "href": "https://www.apple.com/legal/intellectual-property/"
+    },
+    {
+      "text": "Guidelines for Using Apple Trademarks and Copyrights",
+      "href": "https://www.apple.com/legal/intellectual-property/guidelinesfor3rdparties.html"
+    },
+    {
+      "text": "Trademarks",
+      "href": "https://www.apple.com/legal/intellectual-property/trademark/appletmlist.html"
+    },
+    {
+      "text": "Rights and Permissions",
+      "href": "https://www.apple.com/legal/contact/rights-permissions.html"
+    },
+    {
+      "text": "Piracy Prevention",
+      "href": "https://www.apple.com/legal/intellectual-property/piracy.html"
+    },
+    {
+      "text": "Unsolicited Idea Submission Policy",
+      "href": "https://www.apple.com/legal/intellectual-property/policies/ideas.html"
+    },
+    {
+      "text": "Apple Business Terms of Service",
+      "href": "https://www.apple.com/legal/platform-services/apple-business/"
+    },
+    {
+      "text": "Apple School Manager",
+      "href": "https://www.apple.com/legal/platform-services/apple-school/"
+    },
+    {
+      "text": "Data Transfer Agreements",
+      "href": "https://www.apple.com/legal/platform-services/datatransfer/"
+    },
+    {
+      "text": "Find an Apple Store",
+      "href": "https://www.apple.com/retail/"
+    },
+    {
+      "text": "other retailer",
+      "href": "https://locate.apple.com/"
+    },
+    {
+      "text": "1-800-MY-APPLE",
+      "href": "tel:1-800-692-7753"
+    },
+    {
+      "text": "United States",
+      "href": "https://www.apple.com/choose-country-region/"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://www.apple.com/legal/privacy/"
+    },
+    {
+      "text": "Terms of Use",
+      "href": "https://www.apple.com/legal/internet-services/terms/site.html"
+    },
+    {
+      "text": "Sales and Refunds",
+      "href": "https://www.apple.com/us/shop/goto/help/sales_refunds"
+    },
+    {
+      "text": "Legal",
+      "href": "https://www.apple.com/legal/"
+    },
+    {
+      "text": "Site Map",
+      "href": "https://www.apple.com/sitemap/"
+    },
+    {
+      "text": "United States",
+      "href": "https://www.apple.com/choose-country-region/"
+    }
+  ],
+  "headings": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "inputs": [
+    {
+      "type": "input",
+      "name": "",
+      "label": "Search apple.com",
+      "required": false
+    },
+    {
+      "type": "hidden",
+      "name": "src",
+      "label": "",
+      "required": false
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "label": "",
+      "required": false
+    }
+  ],
+  "buttons": [
+    "Continue",
+    "Close country or region selector",
+    "Main menu",
+    "Apple",
+    "Store",
+    "Store menu",
+    "Mac",
+    "Mac menu",
+    "iMac"
+  ],
+  "vars": {
+    "--sk-body-text-color": "rgb(29, 29, 31)"
+  }
+}
