@@ -1,0 +1,81 @@
+{
+  "captured_at": "2026-11-21",
+  "product": "Aboard HR",
+  "route": "public-web",
+  "entry": "https://www.aboardhr.com/",
+  "stopped_at": {
+    "login": "https://app.aboardhr.com/login",
+    "signup": "https://app.aboardhr.com/signup"
+  },
+  "offered": {
+    "nav": {
+      "desktop": [
+        { "label": "Logo", "opens": "page", "target": "https://www.aboardhr.com/" },
+        { "label": "Product", "opens": "menu", "items": ["Everyday HR", "Team culture", "Growth & feedback"] },
+        { "label": "Price", "opens": "page", "target": "https://www.aboardhr.com/pricing" },
+        { "label": "Resources", "opens": "menu", "items": ["What's new", "Help center"] },
+        { "label": "Sign in", "opens": "login-wall", "target": "https://app.aboardhr.com/login" }
+      ],
+      "phone": [
+        { "label": "Logo", "opens": "page", "target": "https://www.aboardhr.com/" },
+        { "label": "Hamburger (Line.3.horizontal)", "opens": "menu", "items": ["Everyday HR", "Team culture", "Growth & feedback", "What's new", "Help center", "Price", "Book demo", "Sign in"] }
+      ],
+      "login_wall": [
+        { "label": "Continue with Google", "kind": "identity-provider", "clicked": false },
+        { "label": "Continue with Microsoft", "kind": "identity-provider", "clicked": false },
+        { "label": "Sign in with passkey", "kind": "identity", "visible": false, "note": "Present in the DOM with display:none. Not shown on the photographed page. Not clicked." },
+        { "label": "Email", "kind": "field", "typed": false },
+        { "label": "Continue", "kind": "submit", "clicked": false }
+      ]
+    },
+    "settings": {
+      "reached": false,
+      "reason": "Settings sit behind the login wall at app.aboardhr.com. The public site has no settings control. Theme is light only; no theme switch was offered."
+    },
+    "create": {
+      "reached": false,
+      "entry": "Try for free on the homepage opens https://app.aboardhr.com/signup and was photographed, then stopped.",
+      "offered_fields": ["Work email", "First name", "Last name", "Company", "Phone number"],
+      "offered_actions": ["Create account", "Terms and Conditions (public link, not followed from the wall)", "Already have an account?"],
+      "submitted": false
+    }
+  },
+  "screens": [
+    "screenshots/tree/home-light-default.png",
+    "screenshots/tree/home-light-product-menu.png",
+    "screenshots/tree/home-light-resources-menu.png",
+    "screenshots/tree/pricing-light-default.png",
+    "screenshots/tree/everyday-hr-light-default.png",
+    "screenshots/tree/team-culture-light-default.png",
+    "screenshots/tree/growth-feedback-light-default.png",
+    "screenshots/tree/whats-new-light-default.png",
+    "screenshots/tree/release-june-2026-light-default.png",
+    "screenshots/tree/book-demo-light-default.png",
+    "screenshots/tree/terms-light-default.png",
+    "screenshots/tree/dataprotection-light-default.png",
+    "screenshots/tree/subprocessors-light-default.png",
+    "screenshots/tree/help-center-light-default.png",
+    "screenshots/tree/mobile-home-light-default.png",
+    "screenshots/tree/mobile-home-light-menu-open.png",
+    "screenshots/tree/login-wall-light-default.png",
+    "screenshots/tree/signup-wall-light-default.png"
+  ],
+  "gaps": [
+    "Signed-in app shell, settings, and create flows were not entered.",
+    "The login page's passkey button is display:none, so it is not in the screenshot.",
+    "Older release posts (April 2026, March 2026, December 2025) are linked from What's new and were not photographed in this refresh.",
+    "https://www.aboardhr.com/teamtailor-and-aboard still returns 200 but no homepage control opens it, so it is outside the site tree.",
+    "Help center collections beyond the index were not opened.",
+    "No dark theme was offered.",
+    "The T3 preview tab could not paint frames (Preview automation snapshot failed: The browser is not producing screenshot frames). Shots were taken with the package Playwright kit instead."
+  ],
+  "not_submitted": [
+    "Book a demo form (name, company, company email, location, phone, employee count, Let's talk)",
+    "Signup form (Create account)",
+    "Login email Continue",
+    "Continue with Google",
+    "Continue with Microsoft",
+    "Sign in with passkey",
+    "Help center search"
+  ]
+}
