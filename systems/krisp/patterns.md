@@ -1,6 +1,6 @@
 # Krisp patterns
 
-Public marketing patterns from krisp.ai on 2026-11-18, plus the signed-in free-account app on app.krisp.ai the same day.
+Public marketing patterns from krisp.ai on 2026-11-18, plus the signed-in free-account app on app.krisp.ai the same day. The 2026-11-22 public map is [site-tree.md](site-tree.md).
 
 ## Header
 

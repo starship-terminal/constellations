@@ -1,0 +1,39 @@
+{
+  "pass": "signed-out walls only",
+  "date": "2026-11-22",
+  "signed_in": false,
+  "submitted": false,
+  "typed": false,
+  "login_extracted": "not-started",
+  "note": "Empty walls only. https://app.krisp.ai/login shows Sign in to your account with Google, Microsoft, Apple, an empty work-email field, and Sign in with SSO. https://app.krisp.ai/sign-up shows Sign up for free with Google, Microsoft, and Continue with email. No identity provider was clicked. Nothing was typed. Continue was not clicked. No installer was downloaded. No trial was started.",
+  "walls": [
+    {
+      "url": "https://app.krisp.ai/login",
+      "opened_from": "header Sign in",
+      "heading": "Sign in to your account",
+      "desktop": "screenshots/public/login-wall-desktop.png",
+      "phone": "screenshots/public/login-wall-phone.png",
+      "controls_not_used": [
+        "Continue with Google",
+        "Continue with Microsoft",
+        "Continue with Apple",
+        "Continue",
+        "Sign in with SSO"
+      ],
+      "stopped": true
+    },
+    {
+      "url": "https://app.krisp.ai/sign-up",
+      "opened_from": "Get Krisp menu and footer Get Krisp for free",
+      "heading": "Sign up for free",
+      "desktop": "screenshots/public/signup-wall-desktop.png",
+      "phone": "screenshots/public/signup-wall-phone.png",
+      "controls_not_used": [
+        "Continue with Google",
+        "Continue with Microsoft",
+        "Continue with email"
+      ],
+      "stopped": true
+    }
+  ]
+}

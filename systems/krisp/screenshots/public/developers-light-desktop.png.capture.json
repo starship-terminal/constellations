@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T18:24:45.916Z",
+  "source": "playwright-headless-incognito",
+  "url": "https://krisp.ai/developers/",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "available": true
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "note": "Marketing page. Cookie banner hidden, not accepted. Nothing typed. No form submitted."
+}
