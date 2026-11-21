@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build tokens.json (W3C DTCG, Tokens Studio multi-set layout) from the raw captures.
 
-Sources, read from anam.ai on 2026-11-09:
+Sources, read from anam.ai on 2026-11-09, CSS dump refreshed 2026-11-21:
   raw/css-vars.json          every custom property the public pages declare, by stylesheet,
                              selector and media condition, sorted by owner
                              (tools/capture/vars.mjs):
