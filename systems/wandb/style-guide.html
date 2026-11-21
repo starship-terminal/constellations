@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<title>Weights &amp; Biases style guide</title>
+<style>
+:root {
+  --color-ink: #1a1c1f;
+  --color-paper: #ffffff;
+  --color-accent: #00afc2;
+  --color-gold: #ffcc33;
+  --color-amber: #ffad33;
+  --color-muted: #adb0b5;
+  --color-gradientStart: #10bfcc;
+  --color-gradientEnd: #0097ab;
+  --color-field: #45494f;
+  --color-fieldBorder: #666666;
+  --color-cobalt: #0541e9;
+  --color-forgeInk: #1a1d24;
+  --color-forgeText: #2b3038;
+  --color-forgeMuted: #3f464f;
+  --color-forgePage: #f8f8f8;
+  --color-forgeBorder: #dfe0e2;
+  --color-provider: #fdfdfd;
+  --color-focus: #1b67bc;
+  --fontFamily-sans: Source Sans 3, sans-serif;
+  --fontFamily-serif: Source Serif 4, serif;
+  --fontWeight-regular: 400;
+  --fontWeight-medium: 500;
+  --fontWeight-semibold: 600;
+  --fontWeight-bold: 700;
+  --typography-display: var(--fontWeight-semibold) 72px/72px var(--fontFamily-serif);
+  --typography-heading: var(--fontWeight-bold) 44.8px/60.48px var(--fontFamily-sans);
+  --typography-ui: var(--fontWeight-regular) 20px/28px var(--fontFamily-sans);
+  --typography-nav: var(--fontWeight-regular) 20px/30px var(--fontFamily-sans);
+  --typography-label: var(--fontWeight-semibold) 16px/18px var(--fontFamily-sans);
+  --typography-caption: var(--fontWeight-regular) 14px/28px var(--fontFamily-sans);
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --color-bg-page: var(--color-forgePage);
+  --color-bg-surface: var(--color-paper);
+  --color-text-primary: var(--color-forgeText);
+  --color-text-secondary: var(--color-forgeMuted);
+  --color-text-onAccent: var(--color-paper);
+  --color-border-default: var(--color-forgeBorder);
+  --color-action-primary: var(--color-cobalt);
+  --component-button-login-height: 32px;
+  --component-button-login-radius: var(--radius-md);
+  --component-button-provider-height: 46px;
+  --component-button-provider-radius: var(--radius-lg);
+  --component-field-height: 32px;
+  --component-field-radius: var(--radius-md);
+  color-scheme: light;
+  --sg-mono: ui-monospace, Menlo, Consolas, monospace;
+}
+[data-mode="dark"] {
+  --color-bg-page: var(--color-ink);
+  --color-bg-raised: var(--color-field);
+  --color-text-primary: var(--color-paper);
+  --color-text-secondary: var(--color-muted);
+  --color-text-accent: var(--color-accent);
+  --color-text-onAccent: var(--color-ink);
+  --color-text-link: var(--color-accent);
+  --color-border-default: var(--color-muted);
+  --color-border-strong: var(--color-fieldBorder);
+  --color-border-focus: var(--color-focus);
+  --color-action-primary: var(--color-gradientEnd);
+  --component-button-weave-height: 60px;
+  --component-button-weave-radius: var(--radius-lg);
+  --component-button-weave-padding: 21px;
+  --component-button-demo-height: 50px;
+  --component-button-demo-radius: var(--radius-lg);
+  --component-field-height: 42px;
+  --component-field-radius: var(--radius-sm);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-bg-page); color: var(--color-text-primary); font: var(--typography-ui); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+h1 { font: var(--typography-display); font-size: 40px; line-height: 1.1; }
+h2 { font: var(--typography-heading); font-size: 28px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; }
+.sw { width: 140px; }
+.sw i { display: block; height: 48px; border-radius: var(--radius-lg); border: 1px solid var(--color-border-default); }
+button.theme { margin-left: 12px; }
+.cta {
+  display: inline-block;
+  color: var(--color-text-onAccent);
+  background: linear-gradient(270deg, var(--color-gradientStart), var(--color-gradientEnd));
+  border-radius: var(--radius-lg);
+  padding: 16px 28px;
+  font: var(--typography-label);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p>Weights &amp; Biases public capture, 2026-11-21. <button class="theme" type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Toggle theme</button></p>
+  <h1>AI is easy to productionize</h1>
+  <p class="cta">Get started with Weave</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+</div>
+<script>
+const tokens = {"core":{"color":{"ink":{"v":"#1a1c1f","t":"color","s":{"evidence":"Measured","capture":"CSS custom property --e-global-color-586eaa9 (#1A1C1F) and computed body background rgb(26, 28, 31) on https://wandb.ai/site, 2026-11-21"}},"paper":{"v":"#ffffff","t":"color","s":{"evidence":"Measured","capture":"CSS custom property --e-global-color-primary (#FFFFFF) and computed body text rgb(255, 255, 255) on https://wandb.ai/site"}},"accent":{"v":"#00afc2","t":"color","s":{"evidence":"Measured","capture":"CSS custom property --e-global-color-accent (#00AFC2) and computed Docs link rgb(0, 175, 194) on https://wandb.ai/site"}},"gold":{"v":"#ffcc33","t":"color","s":{"evidence":"Measured","capture":"CSS custom property --e-global-color-secondary (#FFCC33) on https://wandb.ai/site"}},"amber":{"v":"#ffad33","t":"color","s":{"evidence":"Measured","capture":"Computed color rgb(255, 173, 51) on the SIGN UP link while hovered, https://wandb.ai/site"}},"muted":{"v":"#adb0b5","t":"color","s":{"evidence":"Measured","capture":"CSS custom property --e-global-color-text (#ADB0B5) on https://wandb.ai/site"}},"gradientStart":{"v":"#10bfcc","t":"color","s":{"evidence":"Measured","capture":"Computed background-image stop rgb(16, 191, 204) on #homepage-weave-cta"}},"gradientEnd":{"v":"#0097ab","t":"color","s":{"evidence":"Measured","capture":"Computed background-image stop rgb(0, 151, 171) on #homepage-weave-cta"}},"field":{"v":"#45494f","t":"color","s":{"evidence":"Measured","capture":"Computed background rgb(69, 73, 79) on the Contact Us First Name field"}},"fieldBorder":{"v":"#666666","t":"color","s":{"evidence":"Measured","capture":"Computed border-top-color rgb(102, 102, 102) on the Contact Us First Name field"}},"cobalt":{"v":"#0541e9","t":"color","s":{"evidence":"Measured","capture":"Computed background rgb(5, 65, 233) on the Log in button at https://id.coreweave.com/login"}},"forgeInk":{"v":"#1a1d24","t":"color","s":{"evidence":"Measured","capture":"Computed color rgb(26, 29, 36) on Continue with Google at https://id.coreweave.com/login"}},"forgeText":{"v":"#2b3038","t":"color","s":{"evidence":"Measured","capture":"Computed color rgb(43, 48, 56) on the Forge login page body"}},"forgeMuted":{"v":"#3f464f","t":"color","s":{"evidence":"Measured","capture":"Computed color rgb(63, 70, 79) on Forgot your password? at https://id.coreweave.com/login"}},"forgePage":{"v":"#f8f8f8","t":"color","s":{"evidence":"Measured","capture":"Computed background rgb(248, 248, 248) on the left panel of https://id.coreweave.com/login"}},"forgeBorder":{"v":"#dfe0e2","t":"color","s":{"evidence":"Measured","capture":"Computed border-top-color rgb(223, 224, 226) on the Email field at https://id.coreweave.com/login"}},"provider":{"v":"#fdfdfd","t":"color","s":{"evidence":"Measured","capture":"Computed background rgb(253, 253, 253) on Continue with Google at https://id.coreweave.com/login"}},"focus":{"v":"#1b67bc","t":"color","s":{"evidence":"Measured","capture":"Computed outline rgb(27, 103, 188) auto 1px on the focused SIGN UP link, https://wandb.ai/site"}}},"fontFamily":{"sans":{"v":"Source Sans 3, sans-serif","t":"fontFamily","s":{"evidence":"Measured","capture":"Computed font-family on body and --e-global-typography-primary-font-family on https://wandb.ai/site"}},"serif":{"v":"Source Serif 4, serif","t":"fontFamily","s":{"evidence":"Measured","capture":"Computed font-family on the home h1, https://wandb.ai/site"}}},"fontWeight":{"regular":{"v":400,"t":"fontWeight","s":{"evidence":"Measured","capture":"--e-global-typography-primary-font-weight 400 on https://wandb.ai/site"}},"medium":{"v":500,"t":"fontWeight","s":{"evidence":"Measured","capture":"Computed font-weight 500 on the Forge Log in button"}},"semibold":{"v":600,"t":"fontWeight","s":{"evidence":"Measured","capture":"Computed font-weight 600 on the home h1 and on #homepage-weave-cta"}},"bold":{"v":700,"t":"fontWeight","s":{"evidence":"Measured","capture":"Computed font-weight 700 on the Forge login h1"}}},"typography":{"display":{"v":{"fontFamily":"{fontFamily.serif}","fontSize":"72px","fontWeight":"{fontWeight.semibold}","lineHeight":"72px"},"t":"typography","s":{"evidence":"Measured","capture":"Computed style of the home h1: Source Serif 4, 72px, weight 600, line-height 72px"}},"heading":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"44.8px","fontWeight":"{fontWeight.bold}","lineHeight":"60.48px"},"t":"typography","s":{"evidence":"Measured","capture":"Computed style of the Forge login h1"}},"ui":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"20px","fontWeight":"{fontWeight.regular}","lineHeight":"28px"},"t":"typography","s":{"evidence":"Measured","capture":"--e-global-typography-primary-font-size 20px, weight 400, line-height 28px"}},"nav":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"20px","fontWeight":"{fontWeight.regular}","lineHeight":"30px"},"t":"typography","s":{"evidence":"Measured","capture":"Computed style of the Docs nav link"}},"label":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"16px","fontWeight":"{fontWeight.semibold}","lineHeight":"18px"},"t":"typography","s":{"evidence":"Measured","capture":"Computed font-size 16px and weight 600 on #homepage-weave-cta. Line height 18px is --e-global-typography-accent-line-height, not the button's own computed line height."}},"caption":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"14px","fontWeight":"{fontWeight.regular}","lineHeight":"28px"},"t":"typography","s":{"evidence":"Measured","capture":"--e-global-typography-text-font-size 14px, weight 400, line-height 28px"}}},"radius":{"sm":{"v":"3px","t":"dimension","s":{"evidence":"Measured","capture":"Computed border-radius 3px on the Contact Us First Name field"}},"md":{"v":"4px","t":"dimension","s":{"evidence":"Measured","capture":"Computed border-radius 4px on the Forge Email field and Log in button"}},"lg":{"v":"8px","t":"dimension","s":{"evidence":"Measured","capture":"Computed border-radius 8px on #homepage-weave-cta and on Continue with Google"}}}},"dark":{"color":{"bg":{"page":{"v":"{color.ink}","t":"color","s":{"evidence":"Measured","capture":"Body background rgb(26, 28, 31) on https://wandb.ai/site"}},"raised":{"v":"{color.field}","t":"color","s":{"evidence":"Measured","capture":"Contact field background rgb(69, 73, 79)"}}},"text":{"primary":{"v":"{color.paper}","t":"color","s":{"evidence":"Measured","capture":"Body color rgb(255, 255, 255) on https://wandb.ai/site"}},"secondary":{"v":"{color.muted}","t":"color","s":{"evidence":"Measured","capture":"--e-global-color-text #ADB0B5"}},"accent":{"v":"{color.accent}","t":"color","s":{"evidence":"Measured","capture":"Docs link rgb(0, 175, 194)"}},"onAccent":{"v":"{color.ink}","t":"color","s":{"evidence":"Measured","capture":"Computed color rgb(26, 28, 31) on #homepage-weave-cta"}},"link":{"v":"{color.accent}","t":"color","s":{"evidence":"Measured","capture":"Docs and Pricing links rgb(0, 175, 194)"}}},"border":{"default":{"v":"{color.muted}","t":"color","s":{"evidence":"Measured","capture":"REQUEST DEMO border rgb(173, 176, 181)"}},"strong":{"v":"{color.fieldBorder}","t":"color","s":{"evidence":"Measured","capture":"Contact field border rgb(102, 102, 102)"}},"focus":{"v":"{color.focus}","t":"color","s":{"evidence":"Measured","capture":"SIGN UP focus outline rgb(27, 103, 188)"}}},"action":{"primary":{"v":"{color.gradientEnd}","t":"color","s":{"evidence":"Measured","capture":"End stop of the Weave CTA gradient. The fill is a gradient, not this flat colour."}}}},"component":{"button":{"weave":{"height":{"v":"60px","t":"dimension","s":{"evidence":"Measured","capture":"#homepage-weave-cta bounding box height 60"}},"radius":{"v":"{radius.lg}","t":"dimension","s":{"evidence":"Measured","capture":"#homepage-weave-cta border-radius 8px"}},"padding":{"v":"21px","t":"dimension","s":{"evidence":"Measured","capture":"#homepage-weave-cta padding 21px 35px. Horizontal 35px is recorded in raw/readings.json."}}},"demo":{"height":{"v":"50px","t":"dimension","s":{"evidence":"Measured","capture":"REQUEST DEMO bounding box height 50"}},"radius":{"v":"{radius.lg}","t":"dimension","s":{"evidence":"Measured","capture":"REQUEST DEMO border-radius 8px"}}}},"field":{"height":{"v":"42px","t":"dimension","s":{"evidence":"Measured","capture":"Contact First Name field height 42"}},"radius":{"v":"{radius.sm}","t":"dimension","s":{"evidence":"Measured","capture":"Contact field border-radius 3px"}}}}},"light":{"color":{"bg":{"page":{"v":"{color.forgePage}","t":"color","s":{"evidence":"Measured","capture":"Left panel rgb(248, 248, 248) on https://id.coreweave.com/login"}},"surface":{"v":"{color.paper}","t":"color","s":{"evidence":"Measured","capture":"Page wrapper rgb(255, 255, 255) on the Forge login"}}},"text":{"primary":{"v":"{color.forgeText}","t":"color","s":{"evidence":"Measured","capture":"Body color rgb(43, 48, 56) on the Forge login"}},"secondary":{"v":"{color.forgeMuted}","t":"color","s":{"evidence":"Measured","capture":"Forgot your password? rgb(63, 70, 79)"}},"onAccent":{"v":"{color.paper}","t":"color","s":{"evidence":"Measured","capture":"Log in button color rgb(255, 255, 255)"}}},"border":{"default":{"v":"{color.forgeBorder}","t":"color","s":{"evidence":"Measured","capture":"Email field border rgb(223, 224, 226)"}}},"action":{"primary":{"v":"{color.cobalt}","t":"color","s":{"evidence":"Measured","capture":"Log in button background rgb(5, 65, 233)"}}}},"component":{"button":{"login":{"height":{"v":"32px","t":"dimension","s":{"evidence":"Measured","capture":"Forge Log in button height 32"}},"radius":{"v":"{radius.md}","t":"dimension","s":{"evidence":"Measured","capture":"Forge Log in button radius 4px"}}},"provider":{"height":{"v":"46px","t":"dimension","s":{"evidence":"Measured","capture":"Continue with Google height 46"}},"radius":{"v":"{radius.lg}","t":"dimension","s":{"evidence":"Measured","capture":"Continue with Google radius 8px"}}}},"field":{"height":{"v":"32px","t":"dimension","s":{"evidence":"Measured","capture":"Forge Email field height 32"}},"radius":{"v":"{radius.md}","t":"dimension","s":{"evidence":"Measured","capture":"Forge Email field radius 4px"}}}}}};
+const box = document.getElementById('swatches');
+function paint() {
+  const mode = document.documentElement.dataset.mode;
+  const set = tokens[mode].color;
+  box.innerHTML = '';
+  for (const [group, roles] of Object.entries(set)) {
+    for (const [role, token] of Object.entries(roles)) {
+      const el = document.createElement('div');
+      el.className = 'sw';
+      const chip = document.createElement('i');
+      chip.style.background = getComputedStyle(document.documentElement).getPropertyValue('--color-' + group + '-' + role);
+      el.append(chip, document.createTextNode(group + '.' + role));
+      box.append(el);
+    }
+  }
+}
+paint();
+document.querySelector('.theme').addEventListener('click', () => setTimeout(paint, 0));
+</script>
+</body>
+</html>

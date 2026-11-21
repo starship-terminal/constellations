@@ -1,0 +1,99 @@
+{
+  "product": "Weights & Biases",
+  "domain": "wandb.ai",
+  "reviewedAt": "2026-11-21",
+  "method": "public Playwright, signed out",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "direct navigation of https://wandb.ai/",
+      "url": "https://id.coreweave.com/",
+      "title": "Forge",
+      "painted": false,
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Redirected to a Forge shell. After 2.5 seconds the body was empty. Not a form yet. Branch stopped."
+    },
+    {
+      "control": "direct navigation of https://wandb.ai/home",
+      "url": "https://id.coreweave.com/",
+      "title": "Forge",
+      "painted": false,
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Same host as wandb.ai/. Body text was W&B. Branch stopped."
+    },
+    {
+      "control": "header LOG IN",
+      "url": "https://id.coreweave.com/login",
+      "title": "Forge",
+      "painted": true,
+      "headings": [
+        "Build, train, and improve with CoreWeave Forge",
+        "Log in to your account"
+      ],
+      "asksFor": [
+        {
+          "label": "Email",
+          "type": "email",
+          "required": false
+        }
+      ],
+      "identityProvidersSeen": [
+        "Continue with Google",
+        "Continue with GitHub",
+        "Continue with Apple",
+        "Continue with Microsoft"
+      ],
+      "otherControls": [
+        "Sign up tab",
+        "Log in tab",
+        "Log in button",
+        "Forgot your password?"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-default.png",
+      "note": "Email field was empty. No password field was on the first screen. No provider was clicked. No form was submitted."
+    },
+    {
+      "control": "header SIGN UP",
+      "url": "https://id.coreweave.com/signup",
+      "title": "Forge",
+      "painted": true,
+      "headings": [
+        "Build, train, and improve with CoreWeave Forge",
+        "Create your account"
+      ],
+      "asksFor": [
+        {
+          "label": "Email",
+          "type": "email",
+          "required": false
+        }
+      ],
+      "identityProvidersSeen": [
+        "Continue with Google",
+        "Continue with GitHub",
+        "Continue with Microsoft"
+      ],
+      "otherControls": [
+        "Sign up tab",
+        "Log in tab",
+        "Sign up button"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-default.png",
+      "note": "Email field was empty. No name or password field was on the first screen. No account was created."
+    }
+  ]
+}
