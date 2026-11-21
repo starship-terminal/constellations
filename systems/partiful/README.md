@@ -10,7 +10,9 @@ Partiful (partiful.com) is an invitations product. This package records the publ
 | [components.md](components.md) | Component inventory and gaps |
 | [patterns.md](patterns.md) | Page patterns from the public surfaces |
 | [raw/](raw/) | Computed readings and resolved custom properties |
-| [screenshots/](screenshots/) | Declared missing. The preview browser did not produce screenshot frames |
+| [screenshots/](screenshots/) | Public page shots from 2026-11-22. Git LFS. The 2026-11-19 pass had none. |
+| [site-tree.md](site-tree.md) | Public site tree mapped 2026-11-22. Nav, footer, photographed pages, and where the walk stopped. |
+| [login-review.json](login-review.json) | Empty phone login wall, the signup 404, and the empty ticketing contact form. `login-extracted` stays not-started. |
 | [components/](components/) | Declared missing. Same screenshot failure |
 | [icons/](icons/) | Declared missing. Inline SVGs were not extracted |
 | [icon.png](icon.png) | Site icon, 128 px, upscaled from the 32 px marketing favicon |
@@ -87,7 +89,9 @@ Viewport at read time: `innerWidth` 1169, `innerHeight` 731, `devicePixelRatio` 
 
 ## What to distrust
 
-The preview browser returned "The browser is not producing screenshot frames." There are no screenshots and no crops. Layout claims in this README come from DOM measurements, not from a reviewed PNG. The catalog cover is [icon.png](icon.png), the site icon, because a cover file is required and no page PNG exists.
+The 2026-11-19 preview browser returned "The browser is not producing screenshot frames." That pass has no crops. Layout claims in the token notes come from DOM measurements. The catalog cover is still [icon.png](icon.png).
+
+A later public walk on 2026-11-22 photographed the marketing pages and the empty walls. Those files are in [screenshots/](screenshots/). The map is [site-tree.md](site-tree.md). `catalog.json` was left alone.
 
 `--background-color` resolved to `#252464` and `--primary-color` to `#ab76f6` on login and Explore. The painted page fill was `rgb(17, 17, 17)`. Those two token colours are recorded as declared values. They were not the painted page or the painted buttons on the screens I opened.
 
