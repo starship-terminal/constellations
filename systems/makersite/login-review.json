@@ -1,0 +1,92 @@
+{
+  "slug": "makersite",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "Public web only. Homepage mapped before screenshots. No email, password, or code was typed. No form was submitted. Google, Apple, and other identity providers were not clicked.",
+  "offered": {
+    "nav": {
+      "what_is_makersite": {
+        "label": "What is Makersite?",
+        "opens": "click menu",
+        "items": ["AI, Data and Apps", "Features and Benefits", "Pricing", "Data Foundation"]
+      },
+      "what_can_i_do": {
+        "label": "What can I do with it?",
+        "opens": "click menu",
+        "items": ["Automated LCA & PCF", "EPD Automation & Scale", "Scope 3 Supply Chain Emissions", "Product Material Compliance", "AI-Enabled Ecodesign", "Chemical Data Enrichment", "Sustainability Data With PTC Windchill", "Teamcenter Sustainability Lifecycle Assessment", "Build Resilient Supply Chains"]
+      },
+      "who": {
+        "label": "Who is it for?",
+        "opens": "click menu",
+        "items": ["For Engineers", "For Procurement", "For Sustainability Experts", "For Experts"]
+      },
+      "customer_stories": {"label": "Customer stories", "href": "https://makersite.io/customer-story/"},
+      "resources": {
+        "label": "Resources",
+        "opens": "click menu",
+        "items": ["Sustainability data playbooks", "How to purchase sustainability software", "What good independent analysis for LCA software looks like", "Insights", "Makersite x Forrester study"]
+      },
+      "company": {
+        "label": "Company",
+        "opens": "click menu",
+        "items": ["We are Makersite", "Our Partners", "Careers", "Press"]
+      },
+      "book_a_demo": {"label": "Book a Demo", "href": "https://makersite.io/book-a-demo/", "submitted": false},
+      "phone_menu": {"label": "open-mobile-menu", "opens": "phone drawer", "width": 390}
+    },
+    "settings": {},
+    "create": {}
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-cookie.png",
+    "screenshots/home-light-cta-hover.png",
+    "screenshots/home-light-cta-focus.png",
+    "screenshots/home-light-mobile-default.png",
+    "screenshots/home-light-mobile-menu.png",
+    "screenshots/pricing-light-default.png",
+    "screenshots/pricing-light-mobile-default.png",
+    "screenshots/features-light-default.png",
+    "screenshots/platform-light-default.png",
+    "screenshots/data-light-default.png",
+    "screenshots/customers-light-default.png",
+    "screenshots/engineers-light-default.png",
+    "screenshots/contact-light-default.png",
+    "screenshots/contact-light-scrolled.png",
+    "screenshots/demo-light-default.png",
+    "screenshots/demo-light-form.png",
+    "screenshots/watch-demo-light-default.png",
+    "screenshots/privacy-light-default.png",
+    "screenshots/site-tree/desktop-cookie-dialog.png",
+    "screenshots/site-tree/desktop-menu-what-is.png",
+    "screenshots/site-tree/desktop-menu-what-can-i-do.png",
+    "screenshots/site-tree/desktop-menu-who.png",
+    "screenshots/site-tree/desktop-menu-resources.png",
+    "screenshots/site-tree/desktop-menu-company.png",
+    "screenshots/site-tree/phone-nav-drawer.png"
+  ],
+  "gaps": [
+    "Public-web capture only. The homepage has no login, signup, or identity-provider control.",
+    "offered.settings and offered.create are empty. No signed-in settings or create control was on the public pages.",
+    "Book a Demo opens https://makersite.io/book-a-demo/. The form panel did not paint fields in this session. Nothing was typed or submitted.",
+    "Watch a demo opens https://makersite.io/makersite-platform-demo/. Stopped. Not submitted.",
+    "Contact opens https://makersite.io/contact/. Get in touch was not submitted.",
+    "Cookie Accept all, Accept only essential cookies, and Individual Privacy Preferences were not pressed.",
+    "The Articulate Unblock content and Accept required service controls were not clicked.",
+    "No public theme switch. Dark was not captured.",
+    "catalog.json and DESIGN.md were not edited. Generating DESIGN.md needs a catalog entry."
+  ],
+  "not_submitted": [
+    "Book a Demo",
+    "Watch a demo",
+    "Get in touch",
+    "Contact form",
+    "Accept all",
+    "Accept only essential cookies",
+    "Individual Privacy Preferences",
+    "Unblock content",
+    "Accept required service and unblock content",
+    "Google",
+    "Apple"
+  ]
+}
