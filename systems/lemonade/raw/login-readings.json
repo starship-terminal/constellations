@@ -1,0 +1,34 @@
+{
+  "url": "https://www.lemonade.com/login",
+  "input": {
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(74, 74, 74)",
+    "border": "1px solid rgb(217, 217, 217)",
+    "radius": "5px",
+    "h": 47,
+    "w": 360,
+    "font": "Lato, \"Helvetica Neue\", Arial, sans-serif",
+    "size": "14px",
+    "weight": "700",
+    "pad": "15px",
+    "placeholder": null
+  },
+  "btn": {
+    "bg": "rgb(231, 231, 231)",
+    "color": "rgb(255, 255, 255)",
+    "border": "1px solid rgba(0, 0, 0, 0)",
+    "radius": "5px",
+    "h": 50,
+    "w": 360,
+    "font": "Lato, \"Helvetica Neue\", Arial, sans-serif",
+    "size": "14px",
+    "weight": "700",
+    "pad": "15px",
+    "placeholder": null
+  },
+  "help": {
+    "text": "Help",
+    "tag": "BUTTON"
+  },
+  "signup": []
+}

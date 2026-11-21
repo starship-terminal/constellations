@@ -1,0 +1,20 @@
+{
+  "panel": {
+    "bg": "rgb(49, 49, 49)",
+    "color": "rgb(74, 74, 74)",
+    "font": "Times",
+    "size": "10px",
+    "weight": "400",
+    "w": 280,
+    "h": 844
+  },
+  "link": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "font": "Lato, \"Helvetica Neue\", Arial, sans-serif",
+    "size": "16px",
+    "weight": "400",
+    "w": 55,
+    "h": 21
+  }
+}
