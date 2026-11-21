@@ -1,0 +1,19 @@
+{
+  "url": "https://www.mrporter.com/en-sg/",
+  "title": "MR PORTER | The home of Luxury Fashion for the Modern Gentleman",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "capturedAt": "2026-11-22"
+}

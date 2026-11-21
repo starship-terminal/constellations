@@ -1,0 +1,1046 @@
+{
+  "menuCount": 22,
+  "menus": [
+    {
+      "title": "What's New",
+      "href": "https://www.mrporter.com/en-sg/mens/whats-new",
+      "n": 6,
+      "links": [
+        {
+          "text": "New This Week",
+          "href": "https://www.mrporter.com/en-sg/mens/whats-new"
+        },
+        {
+          "text": "New This Month",
+          "href": "https://www.mrporter.com/en-sg/mens/whats-new-this-month"
+        },
+        {
+          "text": "New Season",
+          "href": "https://www.mrporter.com/en-sg/mens/edit/new-season"
+        },
+        {
+          "text": "New Designers",
+          "href": "https://www.mrporter.com/en-sg/mens/edit/new-designers"
+        },
+        {
+          "text": "Trending Now",
+          "href": "https://www.mrporter.com/en-sg/mens/edit/trending-now"
+        },
+        {
+          "text": "Exclusives",
+          "href": "https://www.mrporter.com/en-sg/mens/edit/exclusives"
+        }
+      ]
+    },
+    {
+      "title": "Designers",
+      "href": "https://www.mrporter.com/en-sg/mens/azdesigners",
+      "n": 20,
+      "links": [
+        {
+          "text": "ALL 300+ DESIGNERS",
+          "href": "https://www.mrporter.com/en-sg/mens/azdesigners"
+        },
+        {
+          "text": "Aimé Leon Dore",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/aime-leon-dore"
+        },
+        {
+          "text": "Bottega Veneta",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/bottega-veneta"
+        },
+        {
+          "text": "Brunello Cucinelli",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/brunello-cucinelli"
+        },
+        {
+          "text": "CELINE",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/celine"
+        },
+        {
+          "text": "Drake's",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/drakes"
+        },
+        {
+          "text": "Dries Van Noten",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/dries-van-noten"
+        },
+        {
+          "text": "Enfants Riches Déprimés",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/enfants-riches-deprimes"
+        },
+        {
+          "text": "Gucci",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/gucci"
+        },
+        {
+          "text": "Jacques Marie Mage",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/jacques-marie-mage"
+        },
+        {
+          "text": "KAPITAL",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/kapital"
+        },
+        {
+          "text": "LOEWE",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/loewe"
+        },
+        {
+          "text": "Moncler",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/moncler"
+        },
+        {
+          "text": "Mr P.",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/mr-p"
+        },
+        {
+          "text": "Our Legacy",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/our-legacy"
+        },
+        {
+          "text": "Polo Ralph Lauren",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/polo-ralph-lauren"
+        },
+        {
+          "text": "SAINT LAURENT",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/saint-laurent"
+        },
+        {
+          "text": "The Row",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/the-row"
+        },
+        {
+          "text": "TOM FORD",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/tom-ford"
+        },
+        {
+          "text": "Zegna",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/zegna"
+        }
+      ]
+    },
+    {
+      "title": "Winter Shop",
+      "href": "https://www.mrporter.com/en-sg/mens/what-to-wear/for-winter",
+      "n": 10,
+      "links": [
+        {
+          "text": "ALL WINTER SHOP",
+          "href": "https://www.mrporter.com/en-sg/mens/what-to-wear/for-winter"
+        },
+        {
+          "text": "Après-Ski",
+          "href": "https://www.mrporter.com/en-sg/mens/edit/apres-ski"
+        },
+        {
+          "text": "Boots",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes/boots"
+        },
+        {
+          "text": "Cashmere",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/cashmere"
+        },
+        {
+          "text": "Down Jackets",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/coats-and-jackets/down-jackets"
+        },
+        {
+          "text": "Long Sleeved Shirts",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/casual-shirts/long-sleeved-shirts"
+        },
+        {
+          "text": "Shearling Coats",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/coats-and-jackets/shearling-coats"
+        },
+        {
+          "text": "Ski & Snow",
+          "href": "https://www.mrporter.com/en-gb/mens/sport/ski-and-snow"
+        },
+        {
+          "text": "Sweaters",
+          "href": "https://www.mrporter.com/en-gb/mens/clothing/knitwear/sweaters?"
+        },
+        {
+          "text": "Winter Coats",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/coats-and-jackets/winter-coats"
+        }
+      ]
+    },
+    {
+      "title": "Clothing",
+      "href": "https://www.mrporter.com/en-sg/mens/clothing",
+      "n": 20,
+      "links": [
+        {
+          "text": "ALL CLOTHING",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing"
+        },
+        {
+          "text": "New in Clothing",
+          "href": "https://www.mrporter.com/en-sg/mens/whats-new/clothing"
+        },
+        {
+          "text": "Blazers",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/blazers"
+        },
+        {
+          "text": "Bomber Jackets",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/coats-and-jackets/bomber-jackets"
+        },
+        {
+          "text": "Casual Shirts",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/casual-shirts"
+        },
+        {
+          "text": "Coats and Jackets",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/coats-and-jackets"
+        },
+        {
+          "text": "Jeans",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/jeans"
+        },
+        {
+          "text": "Knitwear",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/knitwear"
+        },
+        {
+          "text": "Leather Jackets",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/coats-and-jackets/leather-jackets"
+        },
+        {
+          "text": "Polo Shirts",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/polo-shirts"
+        },
+        {
+          "text": "Pyjamas and Loungewear",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/pyjamas"
+        },
+        {
+          "text": "Shorts",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/shorts"
+        },
+        {
+          "text": "Sport",
+          "href": "https://www.mrporter.com/en-gb/mens/sport"
+        },
+        {
+          "text": "Suits",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/suits"
+        },
+        {
+          "text": "Sweats",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/sweats"
+        },
+        {
+          "text": "Swimwear",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/swimwear"
+        },
+        {
+          "text": "Trousers",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/trousers"
+        },
+        {
+          "text": "T-Shirts",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/t-shirts"
+        },
+        {
+          "text": "Tuxedos",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/tuxedos"
+        },
+        {
+          "text": "Winter Coats",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/coats-and-jackets/winter-coats"
+        }
+      ]
+    },
+    {
+      "title": "Shoes",
+      "href": "https://www.mrporter.com/en-sg/mens/shoes",
+      "n": 20,
+      "links": [
+        {
+          "text": "ALL SHOES",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes"
+        },
+        {
+          "text": "New In Shoes",
+          "href": "https://www.mrporter.com/en-sg/mens/whats-new/shoes"
+        },
+        {
+          "text": "Boat Shoes",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes/boat-shoes"
+        },
+        {
+          "text": "Boots",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes/boots"
+        },
+        {
+          "text": "Chelsea Boots",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes/boots/chelsea-boots"
+        },
+        {
+          "text": "Classic Sneakers",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes/sneakers/classic-sneakers"
+        },
+        {
+          "text": "Derby Shoes",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes/derby-shoes"
+        },
+        {
+          "text": "Driving Shoes",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes/driving-shoes"
+        },
+        {
+          "text": "Espadrilles",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes/espadrilles"
+        },
+        {
+          "text": "Formal Shoes",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes/formal-shoes"
+        },
+        {
+          "text": "Loafers",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes/loafers"
+        },
+        {
+          "text": "Luxury Sneakers",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes/sneakers/luxury-sneakers"
+        },
+        {
+          "text": "Oxford Shoes",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes/oxford-shoes"
+        },
+        {
+          "text": "Sandals",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes/sandals"
+        },
+        {
+          "text": "Slides",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes/slides"
+        },
+        {
+          "text": "Slippers",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes/slippers"
+        },
+        {
+          "text": "Sneakers",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes/sneakers"
+        },
+        {
+          "text": "Sneakers Exclusives & Collaborations",
+          "href": "https://www.mrporter.com/en-sg/mens/edit/sneaker-exclusives-and-collaborations"
+        },
+        {
+          "text": "Sport Shoes",
+          "href": "https://www.mrporter.com/en-sg/mens/sport/shoes"
+        },
+        {
+          "text": "Suede Shoes",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes/suede-shoes"
+        }
+      ]
+    },
+    {
+      "title": "Accessories",
+      "href": "https://www.mrporter.com/en-sg/mens/accessories",
+      "n": 16,
+      "links": [
+        {
+          "text": "ALL ACCESSORIES",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories"
+        },
+        {
+          "text": "New in Accessories",
+          "href": "https://www.mrporter.com/en-sg/mens/whats-new/accessories"
+        },
+        {
+          "text": "Bags",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/bags"
+        },
+        {
+          "text": "Belts",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/belts"
+        },
+        {
+          "text": "Bracelets",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/jewellery/bracelets"
+        },
+        {
+          "text": "Fine Jewellery",
+          "href": "https://www.mrporter.com/en-sg/mens/fine-jewellery"
+        },
+        {
+          "text": "Hats and Caps",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/hats"
+        },
+        {
+          "text": "Jewellery",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/jewellery"
+        },
+        {
+          "text": "Pocket Squares",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/pocket-squares"
+        },
+        {
+          "text": "Scarves",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/scarves"
+        },
+        {
+          "text": "Socks",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/socks"
+        },
+        {
+          "text": "Sunglasses",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/sunglasses"
+        },
+        {
+          "text": "Ties",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/ties"
+        },
+        {
+          "text": "Wallets",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/wallets"
+        },
+        {
+          "text": "Luxury Watches",
+          "href": "https://www.mrporter.com/en-sg/mens/luxury-watches"
+        },
+        {
+          "text": "Watch Accessories",
+          "href": "https://www.mrporter.com/en-sg/mens/luxury-watches/watch-accessories"
+        }
+      ]
+    },
+    {
+      "title": "Bags",
+      "href": "https://www.mrporter.com/en-sg/mens/accessories/bags",
+      "n": 10,
+      "links": [
+        {
+          "text": "ALL BAGS",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/bags"
+        },
+        {
+          "text": "Backpacks",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/bags/backpacks"
+        },
+        {
+          "text": "Belt Bags",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/bags/belt-bags"
+        },
+        {
+          "text": "Briefcases",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/bags/briefcases"
+        },
+        {
+          "text": "Luggage and Travel",
+          "href": "https://www.mrporter.com/en-sg/mens/home-and-tech/luggage-and-travel"
+        },
+        {
+          "text": "Messenger Bags",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/bags/messenger-and-crossbody-bags"
+        },
+        {
+          "text": "Pouches",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/bags/pouches"
+        },
+        {
+          "text": "Suitcases",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/bags/suitcases"
+        },
+        {
+          "text": "Totes",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/bags/totes"
+        },
+        {
+          "text": "Weekend Bags",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/bags/weekend-bags"
+        }
+      ]
+    },
+    {
+      "title": "Gifts",
+      "href": "https://www.mrporter.com/en-sg/mens/gifts",
+      "n": 10,
+      "links": [
+        {
+          "text": "ALL GIFTS",
+          "href": "https://www.mrporter.com/en-sg/mens/gifts"
+        },
+        {
+          "text": "Luxury Gifts",
+          "href": "https://www.mrporter.com/en-sg/mens/gifts/luxury-gifts"
+        },
+        {
+          "text": "Show-Stopping Gifts",
+          "href": "https://www.mrporter.com/en-sg/mens/gifts/showstopping-gifts"
+        },
+        {
+          "text": "Classic Gifts",
+          "href": "https://www.mrporter.com/en-sg/mens/gifts/classic-gifts"
+        },
+        {
+          "text": "Small Gesture Gifts",
+          "href": "https://www.mrporter.com/en-sg/mens/gifts/small-gesture-gifts"
+        },
+        {
+          "text": "Bar and Tableware",
+          "href": "https://www.mrporter.com/en-sg/mens/home-and-tech/home/barware-and-tableware"
+        },
+        {
+          "text": "Homeware",
+          "href": "https://www.mrporter.com/en-sg/mens/home-and-tech"
+        },
+        {
+          "text": "Luxury Watches",
+          "href": "https://www.mrporter.com/en-sg/mens/luxury-watches"
+        },
+        {
+          "text": "Luxury Sneakers",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes/sneakers/luxury-sneakers"
+        },
+        {
+          "text": "Gifts for Her",
+          "href": "https://www.net-a-porter.com/shop/edit/gifts"
+        }
+      ]
+    },
+    {
+      "title": "Watches",
+      "href": "https://www.mrporter.com/en-sg/mens/luxury-watches",
+      "n": 10,
+      "links": [
+        {
+          "text": "ALL LUXURY WATCHES",
+          "href": "https://www.mrporter.com/en-sg/mens/luxury-watches"
+        },
+        {
+          "text": "Bovet",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/bovet"
+        },
+        {
+          "text": "Bremont",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/bremont"
+        },
+        {
+          "text": "Gerald Charles",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/gerald-charles"
+        },
+        {
+          "text": "Hermes Timepieces",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/hermes-timepieces"
+        },
+        {
+          "text": "IWC Schaffhausen",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/iwc-schaffhausen"
+        },
+        {
+          "text": "NOMOS Glashütte",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/nomos-glashutte"
+        },
+        {
+          "text": "Oris",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/oris"
+        },
+        {
+          "text": "Panerai",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/panerai"
+        },
+        {
+          "text": "Ressence",
+          "href": "https://www.mrporter.com/en-sg/mens/designer/ressence"
+        }
+      ]
+    },
+    {
+      "title": "How to Wear It",
+      "href": "https://www.mrporter.com/en-sg/journal",
+      "n": 11,
+      "links": [
+        {
+          "text": "Winter",
+          "href": "https://www.mrporter.com/en-sg/mens/what-to-wear/for-winter"
+        },
+        {
+          "text": "New Season",
+          "href": "https://www.mrporter.com/en-sg/mens/edit/new-season"
+        },
+        {
+          "text": "Japanese Brands",
+          "href": "https://www.mrporter.com/en-sg/mens/edit/japanese-brands"
+        },
+        {
+          "text": "Wardrobe Essentials",
+          "href": "https://www.mrporter.com/en-sg/mens/edit/wardrobe-essentials"
+        },
+        {
+          "text": "Party",
+          "href": "https://www.mrporter.com/en-sg/mens/what-to-wear/for-a-party"
+        },
+        {
+          "text": "Weekend",
+          "href": "https://www.mrporter.com/en-sg/mens/what-to-wear/for-the-weekend"
+        },
+        {
+          "text": "Work",
+          "href": "https://www.mrporter.com/en-sg/mens/what-to-wear/for-work"
+        },
+        {
+          "text": "Wedding Guest",
+          "href": "https://www.mrporter.com/en-sg/mens/what-to-wear/for-a-wedding"
+        },
+        {
+          "text": "Summer",
+          "href": "https://www.mrporter.com/en-sg/mens/what-to-wear/for-summer"
+        },
+        {
+          "text": "Quiet Luxury",
+          "href": "https://www.mrporter.com/en-sg/mens/edit/quiet-luxury"
+        },
+        {
+          "text": "Consciously Crafted",
+          "href": "https://www.mrporter.com/en-sg/mens/consciously-crafted"
+        }
+      ]
+    },
+    {
+      "title": "Sale",
+      "href": "https://www.mrporter.com/en-sg/mens/sale",
+      "n": 0,
+      "links": []
+    },
+    {
+      "title": "What's New",
+      "href": "https://www.mrporter.com/en-sg/mens/whats-new",
+      "n": 1,
+      "links": [
+        {
+          "text": "Designers",
+          "href": "https://www.mrporter.com/en-sg/mens/azdesigners"
+        }
+      ]
+    },
+    {
+      "title": "Designers",
+      "href": "https://www.mrporter.com/en-sg/mens/azdesigners",
+      "n": 1,
+      "links": [
+        {
+          "text": "Winter Shop",
+          "href": "https://www.mrporter.com/en-sg/mens/what-to-wear/for-winter"
+        }
+      ]
+    },
+    {
+      "title": "Winter Shop",
+      "href": "https://www.mrporter.com/en-sg/mens/what-to-wear/for-winter",
+      "n": 30,
+      "links": [
+        {
+          "text": "Clothing",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing"
+        },
+        {
+          "text": "ALL CLOTHING",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing"
+        },
+        {
+          "text": "New in Clothing",
+          "href": "https://www.mrporter.com/en-sg/mens/whats-new/clothing"
+        },
+        {
+          "text": "Blazers",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/blazers"
+        },
+        {
+          "text": "Bomber Jackets",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/coats-and-jackets/bomber-jackets"
+        },
+        {
+          "text": "Casual Shirts",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/casual-shirts"
+        },
+        {
+          "text": "Coats and Jackets",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/coats-and-jackets"
+        },
+        {
+          "text": "Jeans",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/jeans"
+        },
+        {
+          "text": "Knitwear",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/knitwear"
+        },
+        {
+          "text": "Leather Jackets",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/coats-and-jackets/leather-jackets"
+        },
+        {
+          "text": "Polo Shirts",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/polo-shirts"
+        },
+        {
+          "text": "Pyjamas and Loungewear",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/pyjamas"
+        },
+        {
+          "text": "Shorts",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/shorts"
+        },
+        {
+          "text": "Sport",
+          "href": "https://www.mrporter.com/en-gb/mens/sport"
+        },
+        {
+          "text": "Suits",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/suits"
+        },
+        {
+          "text": "Sweats",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/sweats"
+        },
+        {
+          "text": "Swimwear",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/swimwear"
+        },
+        {
+          "text": "Trousers",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/trousers"
+        },
+        {
+          "text": "T-Shirts",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/t-shirts"
+        },
+        {
+          "text": "Tuxedos",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/tuxedos"
+        },
+        {
+          "text": "Winter Coats",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/coats-and-jackets/winter-coats"
+        },
+        {
+          "text": "Heritage Styles",
+          "href": "https://www.mrporter.com/en-sg/mens/trend/heritage-styles"
+        },
+        {
+          "text": "Utility Wear",
+          "href": "https://www.mrporter.com/en-sg/mens/trend/utility-wear"
+        },
+        {
+          "text": "Primary Colours",
+          "href": "https://www.mrporter.com/en-sg/mens/trend/primary-colours"
+        },
+        {
+          "text": "Retro Sportswear",
+          "href": "https://www.mrporter.com/en-sg/mens/trend/retro-sportswear"
+        },
+        {
+          "text": "New Textures",
+          "href": "https://www.mrporter.com/en-sg/mens/trend/new-textures"
+        },
+        {
+          "text": "Cashmere",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/cashmere"
+        },
+        {
+          "text": "Corduroy",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/corduroy"
+        },
+        {
+          "text": "Denim",
+          "href": "https://www.mrporter.com/en-sg/mens/clothing/denim"
+        },
+        {
+          "text": "WHAT TO WEAR THIS WINTER",
+          "href": "https://www.mrporter.com/en-sg/mens/what-to-wear/for-winter?cm_sp=topnav-_-clothing-_--wtw-winter-topnav-all-global-web-_-26-10-26"
+        }
+      ]
+    },
+    {
+      "title": "Clothing",
+      "href": "https://www.mrporter.com/en-sg/mens/clothing",
+      "n": 1,
+      "links": [
+        {
+          "text": "Shoes",
+          "href": "https://www.mrporter.com/en-sg/mens/shoes"
+        }
+      ]
+    },
+    {
+      "title": "Shoes",
+      "href": "https://www.mrporter.com/en-sg/mens/shoes",
+      "n": 1,
+      "links": [
+        {
+          "text": "Accessories",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories"
+        }
+      ]
+    },
+    {
+      "title": "Accessories",
+      "href": "https://www.mrporter.com/en-sg/mens/accessories",
+      "n": 1,
+      "links": [
+        {
+          "text": "Bags",
+          "href": "https://www.mrporter.com/en-sg/mens/accessories/bags"
+        }
+      ]
+    },
+    {
+      "title": "Bags",
+      "href": "https://www.mrporter.com/en-sg/mens/accessories/bags",
+      "n": 1,
+      "links": [
+        {
+          "text": "Gifts",
+          "href": "https://www.mrporter.com/en-sg/mens/gifts"
+        }
+      ]
+    },
+    {
+      "title": "Gifts",
+      "href": "https://www.mrporter.com/en-sg/mens/gifts",
+      "n": 1,
+      "links": [
+        {
+          "text": "Watches",
+          "href": "https://www.mrporter.com/en-sg/mens/luxury-watches"
+        }
+      ]
+    },
+    {
+      "title": "Watches",
+      "href": "https://www.mrporter.com/en-sg/mens/luxury-watches",
+      "n": 1,
+      "links": [
+        {
+          "text": "How to Wear It",
+          "href": "https://www.mrporter.com/en-sg/journal"
+        }
+      ]
+    },
+    {
+      "title": "How to Wear It",
+      "href": "https://www.mrporter.com/en-sg/journal",
+      "n": 0,
+      "links": []
+    },
+    {
+      "title": "Sale",
+      "href": "https://www.mrporter.com/en-sg/mens/sale",
+      "n": 0,
+      "links": []
+    }
+  ],
+  "sale": {
+    "text": "Sale",
+    "href": "https://www.mrporter.com/en-sg/mens/sale"
+  },
+  "icons": [
+    {
+      "tag": "BUTTON",
+      "aria": "Menu",
+      "href": null
+    },
+    {
+      "tag": "A",
+      "aria": "Wish List",
+      "href": "https://www.mrporter.com/en-sg/wishlist"
+    },
+    {
+      "tag": "A",
+      "aria": "Mr Porter Homepage Link",
+      "href": "https://www.mrporter.com/en-sg/"
+    },
+    {
+      "tag": "A",
+      "aria": "My Account",
+      "href": "https://www.mrporter.com/en-sg/account"
+    },
+    {
+      "tag": "A",
+      "aria": "Wish List",
+      "href": "https://www.mrporter.com/en-sg/wishlist"
+    },
+    {
+      "tag": "A",
+      "aria": "Checkout",
+      "href": "https://www.mrporter.com/en-sg/checkout"
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Back to main menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Close menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Back to main menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Close menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Back to main menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Close menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Back to main menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Close menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Back to main menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Close menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Back to main menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Close menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Back to main menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Close menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Back to main menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Close menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Back to main menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Close menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Back to main menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Close menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Open What's New dropdown",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Back to main menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Close menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Open Designers dropdown",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Back to main menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Close menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Open Winter Shop dropdown",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Back to main menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Close menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Close Clothing dropdown",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Back to main menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Close menu",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Open Shoes dropdown",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "aria": "Back to main menu",
+      "href": null
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "h": {
+    "text": "Clothing",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "Georgia",
+    "size": "32px",
+    "weight": "400",
+    "line": "40px",
+    "ls": "normal",
+    "transform": "none",
+    "radius": "0px",
+    "border": "0px none rgb(0, 0, 0)",
+    "h": 40,
+    "w": 121,
+    "cls": "Header6__title Header6__title--large Header6__title--subCategoryLinks Header6__title--withoutDescription"
+  },
+  "filter": {
+    "text": "Filter 13,961 Results",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgb(255, 255, 255)",
+    "font": "Times",
+    "size": "16px",
+    "weight": "400",
+    "line": "18.4px",
+    "ls": "normal",
+    "transform": "none",
+    "radius": "2px",
+    "border": "1px solid rgb(203, 203, 203)",
+    "h": 40,
+    "w": 185,
+    "cls": "ProductListingPage0__filterResults ProductListingPage0__filterResults--fullBleed"
+  },
+  "chip": {
+    "text": "COATS & JACKETS",
+    "color": "rgb(101, 101, 101)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "SackersGothicStd",
+    "size": "10px",
+    "weight": "900",
+    "line": "12.5px",
+    "ls": "0.1px",
+    "transform": "uppercase",
+    "radius": "0px",
+    "border": "0px none rgb(101, 101, 101)",
+    "h": 10,
+    "w": 120,
+    "cls": ""
+  },
+  "vp": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 1
+  }
+}
