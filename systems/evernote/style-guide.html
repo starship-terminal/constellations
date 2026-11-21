@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Evernote public tokens</title>
+  <style>
+    :root {
+      --cream: #f9f6f2;
+      --ink: #141414;
+      --sand: #f4eee5;
+      --lime: #94e130;
+      --white: #ffffff;
+      --green: #00a82d;
+      --stroke: #a1a1a1;
+      --card: #e7e7e7;
+      --display: Figtree, system-ui, sans-serif;
+      --text: Inter, system-ui, sans-serif;
+    }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--text);
+      font-size: 16px;
+      line-height: 24px;
+    }
+    main { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+    h1 {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 72px;
+      line-height: 72px;
+      letter-spacing: -3.6px;
+      margin: 24px 0 8px;
+    }
+    h2 {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 32px;
+      margin: 40px 0 12px;
+    }
+    p { margin: 0 0 16px; color: #262626; }
+    .bar {
+      background: var(--cream);
+      height: 81px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      border-bottom: 1px solid var(--card);
+    }
+    .bar a {
+      color: #000;
+      font-family: var(--display);
+      font-size: 16px;
+      text-decoration: none;
+      margin-right: 16px;
+    }
+    button, .btn {
+      background: var(--ink);
+      color: var(--white);
+      border: 0;
+      border-radius: 5px;
+      padding: 10px 28px;
+      font: 600 16px/24px var(--display);
+      height: 46px;
+    }
+    .outline {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--stroke);
+    }
+    .lime {
+      background: var(--lime);
+      color: var(--ink);
+    }
+    .dark {
+      background: #141414;
+      color: var(--white);
+      padding: 32px 24px;
+      border-radius: 16px;
+    }
+    .dark h2 { color: var(--white); margin-top: 0; }
+    .dark p { color: var(--white); }
+    .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+    .swatch { width: 180px; }
+    .chip { height: 56px; border-radius: 5px; border: 1px solid var(--card); }
+    .label { font-size: 12px; line-height: 16px; margin-top: 6px; }
+    .card {
+      background: var(--sand);
+      border: 1px solid var(--card);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 16px 0 24px;
+    }
+    .chip-pill {
+      display: inline-block;
+      background: var(--lime);
+      color: var(--ink);
+      border-radius: 52px;
+      padding: 4px 12px;
+      font-family: var(--display);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <div><a>AI Features</a><a>Plans</a><a>Enterprise</a></div>
+    <button type="button">Start for free</button>
+  </div>
+  <main>
+    <h1>Your second brain</h1>
+    <p>Public tokens measured on 2026-11-22 from computed styles. Figtree and Inter are not bundled, so this page falls back to the system face.</p>
+    <div class="card">
+      <span class="chip-pill">Capture</span>
+      <p>The sand card is #f4eee5 with a #e7e7e7 hairline and a 16px radius.</p>
+      <button class="lime" type="button">Discover more</button>
+      <button class="outline" type="button">Choose Starter</button>
+    </div>
+    <div class="dark">
+      <h2>Focus on what matters</h2>
+      <p>The AI Features page paints this ink field. Start for free turns lime there.</p>
+      <button class="lime" type="button">Start for free</button>
+    </div>
+    <h2>Colour</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#f9f6f2"></div><div class="label">core.color.cream<br>#f9f6f2</div></div>
+      <div class="swatch"><div class="chip" style="background:#f4eee5"></div><div class="label">core.color.sand<br>#f4eee5</div></div>
+      <div class="swatch"><div class="chip" style="background:#141414"></div><div class="label">core.color.ink<br>#141414</div></div>
+      <div class="swatch"><div class="chip" style="background:#262626"></div><div class="label">core.color.ink-soft<br>#262626</div></div>
+      <div class="swatch"><div class="chip" style="background:#4e4d4c"></div><div class="label">core.color.tertiary<br>#4e4d4c</div></div>
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">core.color.white<br>#ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#00a82d"></div><div class="label">core.color.green<br>#00a82d</div></div>
+      <div class="swatch"><div class="chip" style="background:#94e130"></div><div class="label">core.color.lime<br>#94e130</div></div>
+      <div class="swatch"><div class="chip" style="background:#a1a1a1"></div><div class="label">core.color.stroke-button<br>#a1a1a1</div></div>
+      <div class="swatch"><div class="chip" style="background:#e7e7e7"></div><div class="label">core.color.stroke-card<br>#e7e7e7</div></div>
+      <div class="swatch"><div class="chip" style="background:#cccccc"></div><div class="label">core.color.field-line<br>#cccccc</div></div>
+      <div class="swatch"><div class="chip" style="background:#333333"></div><div class="label">core.color.auth-ink<br>#333333</div></div>
+      <div class="swatch"><div class="chip" style="background:#f9f6f2"></div><div class="label">light.color.page<br>#f9f6f2</div></div>
+      <div class="swatch"><div class="chip" style="background:#f4eee5"></div><div class="label">light.color.surface<br>#f4eee5</div></div>
+      <div class="swatch"><div class="chip" style="background:#262626"></div><div class="label">light.color.band<br>#262626</div></div>
+      <div class="swatch"><div class="chip" style="background:#141414"></div><div class="label">light.color.text<br>#141414</div></div>
+      <div class="swatch"><div class="chip" style="background:#262626"></div><div class="label">light.color.text-secondary<br>#262626</div></div>
+      <div class="swatch"><div class="chip" style="background:#4e4d4c"></div><div class="label">light.color.text-tertiary<br>#4e4d4c</div></div>
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">light.color.on-button<br>#ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#141414"></div><div class="label">light.color.button<br>#141414</div></div>
+      <div class="swatch"><div class="chip" style="background:#94e130"></div><div class="label">light.color.accent<br>#94e130</div></div>
+      <div class="swatch"><div class="chip" style="background:#141414"></div><div class="label">light.color.on-accent<br>#141414</div></div>
+      <div class="swatch"><div class="chip" style="background:#e7e7e7"></div><div class="label">light.color.border<br>#e7e7e7</div></div>
+      <div class="swatch"><div class="chip" style="background:#a1a1a1"></div><div class="label">light.color.border-strong<br>#a1a1a1</div></div>
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">light.color.field<br>#ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#cccccc"></div><div class="label">light.color.field-border<br>#cccccc</div></div>
+      <div class="swatch"><div class="chip" style="background:#cccccc"></div><div class="label">light.color.disabled<br>#cccccc</div></div>
+      <div class="swatch"><div class="chip" style="background:#141414"></div><div class="label">dark.color.page<br>#141414</div></div>
+      <div class="swatch"><div class="chip" style="background:#262626"></div><div class="label">dark.color.surface<br>#262626</div></div>
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">dark.color.text<br>#ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#fdfcfc"></div><div class="label">dark.color.text-secondary<br>#fdfcfc</div></div>
+      <div class="swatch"><div class="chip" style="background:#94e130"></div><div class="label">dark.color.button<br>#94e130</div></div>
+      <div class="swatch"><div class="chip" style="background:#141414"></div><div class="label">dark.color.on-button<br>#141414</div></div>
+      <div class="swatch"><div class="chip" style="background:#ffffff33"></div><div class="label">dark.color.border<br>#ffffff33</div></div>
+      <div class="swatch"><div class="chip" style="background:#ffffff66"></div><div class="label">dark.color.border-strong<br>#ffffff66</div></div>
+    </div>
+    <h2>Green</h2>
+    <p>The elephant mark is #00a82d. That green is the stylesheet hover fill. The buttons on the measured pages were not hovered, so the painted accent in this guide is the lime that was on screen.</p>
+  </main>
+</body>
+</html>
