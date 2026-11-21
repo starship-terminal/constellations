@@ -1,0 +1,30 @@
+{
+  "product": "Vuori",
+  "domain": "vuoriclothing.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Account, then Sign In or Create Account",
+      "url": "https://vuoriclothing.com/account/login",
+      "title": "Login – Vuori",
+      "painted": true,
+      "headings": ["Sign in", "Sign in or create an account to enjoy the benefits"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": false, "value": "" }
+      ],
+      "identityProvidersSeen": ["Continue with Shop", "Continue with Google"],
+      "otherControls": ["Continue", "Terms of Use", "Privacy Policy"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "The email field was empty. Continue was not clicked. Continue with Shop was not clicked. Continue with Google was not clicked. The page names reCAPTCHA. It was not solved. Signup is the same wall. There is no separate empty signup form. screenshots/signup-light-1440.png is the same photograph. The promo Sign Up and the footer email are newsletter walls and were not submitted."
+    }
+  ]
+}
