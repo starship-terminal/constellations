@@ -1,47 +1,79 @@
 {
-  "capturedAt": "2026-11-19",
+  "capturedAt": "2026-11-21",
+  "refreshedFrom": "2026-11-19",
+  "slugOnOriginMain": "zara",
   "harness": "T3 Code preview browser, live DOM via preview_evaluate",
   "viewport": {
-    "requestedDesktop": {
-      "width": 1440,
-      "height": 900
+    "desktop": {
+      "requested": { "width": 1440, "height": 900 },
+      "measured": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "devicePixelRatio": 2,
+        "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+      },
+      "screenshotPixels": { "width": 2880, "height": 1800 },
+      "note": "preview_resize freeform 1440x900 reported viewport 1280x800. window.innerWidth measured 1440."
     },
-    "measured": {
-      "innerWidth": 1169,
-      "innerHeight": 731,
-      "devicePixelRatio": 2,
-      "visualViewport": {
-        "width": 1169,
-        "height": 731,
-        "scale": 1
-      }
-    },
-    "note": "preview_resize freeform 1440x900 reported viewport 1280x800, then window.innerWidth stayed 1169. Not labelled as a 1440 capture."
+    "phone": {
+      "requested": { "width": 390, "height": 844 },
+      "measured": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "devicePixelRatio": 2,
+        "visualViewport": { "width": 390, "height": 844, "scale": 1 }
+      },
+      "screenshotPixels": { "width": 780, "height": 1688 },
+      "userAgent": "desktop Macintosh. preview_resize does not change the user agent. These shots are a 390-wide layout."
+    }
   },
-  "screenshots": "unavailable. preview_snapshot returned: The browser is not producing screenshot frames. No PNG was invented.",
+  "screenshots": {
+    "format": "256-colour PNG",
+    "files": [
+      "screenshots/location-gate-light-default.png",
+      "screenshots/home-light-default.png",
+      "screenshots/home-light-menu.png",
+      "screenshots/category-light-default.png",
+      "screenshots/category-light-grid.png",
+      "screenshots/category-light-filters.png",
+      "screenshots/product-light-default.png",
+      "screenshots/search-light-empty.png",
+      "screenshots/cart-light-empty.png",
+      "screenshots/help-light-default.png",
+      "screenshots/error-light-404.png",
+      "screenshots/login-light-empty.png",
+      "screenshots/mobile-home-light-default.png",
+      "screenshots/mobile-category-light-default.png"
+    ]
+  },
   "stylesheetVersion": "https://static.zara.net/stdstatic/10.21.1/",
-  "accountAppVersion": "10.21.1",
-  "colorScheme": "light (html color-scheme: normal; account.zara.com device payload colorScheme: light). No dark theme control was found on the public storefront.",
+  "colorScheme": "light (html color-scheme: normal). No dark theme control was found on the public storefront.",
   "pages": [
-    "https://www.zara.com/ (location gate)",
+    "https://www.zara.com/ (location gate, United States and English chosen, Remember selection cleared)",
     "https://www.zara.com/us/",
-    "https://www.zara.com/us/en/woman-new-in-l1180.html?v1=2546081",
-    "https://www.zara.com/us/en/faux-shearling-long-coat-p01255730.html",
+    "https://www.zara.com/us/en/woman-dresses-l1066.html",
+    "https://www.zara.com/us/en/animal-print-tulle-dress-p05039846.html",
     "https://www.zara.com/us/en/search/home",
     "https://www.zara.com/us/en/help-center",
     "https://www.zara.com/us/en/shop/cart (empty, nothing added)",
-    "https://account.zara.com/login/two-step (form measured, not submitted)",
+    "https://account.zara.com/login/two-step (empty form photographed, not submitted, query omitted)",
     "https://www.zara.com/us/en/this-page-does-not-exist-capture-9f3a"
   ],
   "notEntered": [
     "add to bag",
     "checkout",
+    "apple pay",
     "card",
     "phone",
     "address",
     "account creation",
     "email submit on logon",
+    "identity providers",
     "newsletter signup",
-    "wishlist"
-  ]
+    "wishlist",
+    "filter view results",
+    "search query"
+  ],
+  "catalogJson": "left alone",
+  "loginExtracted": "not-started"
 }

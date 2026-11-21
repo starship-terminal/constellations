@@ -1,19 +1,20 @@
 # ZARA
 
-ZARA's public storefront (www.zara.com, United States, English), captured signed out on 2026-11-19. Surfaces: the location gate, the US home, the woman new-arrivals grid, one product page, search, help, the empty bag, the email logon form (not submitted), and a made-up route's 404. One theme was on screen: light. The measured viewport was 1169 by 731 CSS pixels at devicePixelRatio 2. A 1440 by 900 resize was requested and did not stick, so this is not a 1440 capture. No account was created. Nothing was added to the bag.
+ZARA's public storefront (www.zara.com, United States, English), refreshed signed out on 2026-11-21. This package already existed on origin/main from the 2026-11-19 capture. Surfaces: the location gate, the US home, the menu drawer, the woman dresses grid, one product page, search, help, the empty bag, the empty logon wall (not submitted), a made-up route's 404, and a 390-wide layout of the home and the dresses page. One theme was on screen: light. Desktop `window.innerWidth` measured 1440 by 900 CSS pixels at devicePixelRatio 2. Phone shots measured 390 by 844 at devicePixelRatio 2 with a desktop user agent. No account was created. Nothing was added to the bag. catalog.json was left alone.
 
 | File | What it holds |
 |---|---|
 | [README.md](README.md) | This file |
 | [icon.png](icon.png) | Site icon, 128 px |
-| [DESIGN.md](DESIGN.md) | Generated from tokens.json |
-| [tokens.json](tokens.json) | DTCG tokens, core plus light |
+| [DESIGN.md](DESIGN.md) | Generated from tokens.json. Not regenerated this pass |
+| [tokens.json](tokens.json) | DTCG tokens, core plus light. Unchanged: the new readings match |
 | [style-guide.html](style-guide.html) | Token specimens |
+| [site-tree.md](site-tree.md) | Which controls open which pages, drawers, and dialogs |
 | [components.md](components.md) | Controls that were measured |
 | [patterns.md](patterns.md) | Page patterns |
-| [components/](components/) | Crop folder. Empty: the preview browser produced no screenshot frames |
+| [components/crops/](components/crops/) | 256-colour crops of measured controls |
 | [icons/](icons/) | Icon folder. The wordmark SVG was read; a full set was not extracted |
-| [screenshots/](screenshots/) | Empty. Screenshot frames were unavailable |
+| [screenshots/](screenshots/) | 256-colour page shots. Read colours from tokens, not the PNGs |
 | [raw/](raw/) | computed.json and capture.json |
 | [tools/](tools/) | build_tokens.py and build_style_guide.py |
 
@@ -73,23 +74,25 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (Crops need 
 
 ## How the values were read
 
-The T3 preview browser opened https://www.zara.com/ and then https://www.zara.com/us/. Custom properties were read from `getComputedStyle(document.documentElement)` after the US storefront loaded stylesheet `static.zara.net/stdstatic/10.21.1`. Cross-origin sheets threw SecurityError on `cssRules`, so declared rules were not parsed. Resolved custom properties and `getComputedStyle` on the controls on screen are the evidence. Those readings are in [raw/computed.json](raw/computed.json). `python3 tools/build_tokens.py` copies them into [tokens.json](tokens.json).
+The T3 preview browser opened https://www.zara.com/ and then https://www.zara.com/us/. Custom properties were read from `getComputedStyle(document.documentElement)` after the US storefront loaded stylesheet `static.zara.net/stdstatic/10.21.1`. Cross-origin sheets threw SecurityError on `cssRules`, so declared rules were not parsed. Resolved custom properties and `getComputedStyle` on the controls on screen are the evidence. Those readings are in [raw/computed.json](raw/computed.json). `python3 tools/build_tokens.py` copies them into [tokens.json](tokens.json). The 2026-11-21 pass remeasured the same custom properties and left tokens.json in place.
 
-A geo dialog ("Yes, stay on United States") was accepted so the US storefront stayed in view. That is a location choice, not an account.
+The location page preselected Singapore. United States and English were chosen, Remember selection was cleared, and Continue opened the US shop. A cookie dialog was closed. Neither step is an account.
 
 ## What to distrust
 
-The preview browser returned "The browser is not producing screenshot frames" on the first snapshot and never produced a PNG. Screenshots and crops are absent. Do not treat the style guide as a picture of the live page.
+The generated Brief and Health blocks above still describe the 2026-11-19 frame failure. They are rewritten by `make brief` and `make grade`, which also rewrite catalog.json. Those commands were not run. Read this section, [site-tree.md](site-tree.md), and [screenshots/](screenshots/) for the current capture.
 
-`preview_resize` to 1440 by 900 reported a 1280 by 800 setting, then `window.innerWidth` stayed 1169. Widths in this package are the measured 1169, not a planned 1440.
+Screenshots are 256-colour PNGs. Photographs band a little. Read colours from [tokens.json](tokens.json).
+
+`preview_resize` reported a 1280 by 800 viewport while `window.innerWidth` measured 1440 and `window.innerHeight` measured 900 at devicePixelRatio 2. Desktop shots are 2880 by 1800 pixels. Phone shots used a freeform 390 by 844 resize. JavaScript measured innerWidth 390, innerHeight 844, devicePixelRatio 2. The user agent stayed desktop Macintosh, so the phone files are a 390-wide layout, not a device-class page. Those shots are 780 by 1688 pixels.
 
 `calc(0.8125rem * 1)` and its siblings are stored as the resolved rem or px. The source string names the custom property.
 
 Status colours (`--color-sales`, `--color-emphasis`, `--color-done`, the semantic ramps) are declared on `:root`. They were not painted on the pages in this pass.
 
-Hover and pressed styles did not change under programmatic focus. A real pointer hover was not available because the preview pane was not painting frames. Focus on the help search input did paint a 1px black bottom border.
+Hover and pressed styles were not captured this pass. Focus on the help search input painted a 1px black bottom border on the 2026-11-19 pass. That state was not re-shot.
 
-The account logon page (account.zara.com) uses a separate `mds-*` class set and declares no `--color-*` properties. Its button and field colours were measured there and are not the storefront token names.
+The account logon page (account.zara.com) uses a separate `mds-*` class set and declares no `--color-*` properties. Its button and field colours were measured there and are not the storefront token names. The login screenshot shows the empty wall only. The query string on that host is omitted from this package.
 
 ## Fonts
 
@@ -108,33 +111,34 @@ Campaign faces are declared and were not on the measured pages: ZaraAthleticz, a
 | Type roles | Captured from `--font-*` custom properties |
 | Spacing, radii, borders | Spacing and line widths from custom properties. Radius 0px on every measured control |
 | Elevation | No box-shadow on the measured dialog, buttons, or inputs. Recorded as none |
-| Motion | One declared pair: `--category-transition-duration` 500ms, `--category-transition-easing` ease-in-out. Reduced-motion was not emulated. The motion probe did not run |
+| Motion | Declared: `--zsr-animation-duration-fast` 150ms, normal 300ms, slow 500ms, easing ease. Also `--category-transition-duration` 500ms and `--category-transition-easing` ease-in-out. Reduced-motion was not emulated. The motion probe did not run |
 | Button | Primary and secondary measured. Hover and pressed not captured |
-| Link | Header links measured (13px, weight 300, uppercase) |
+| Link | Header links measured (13px, weight 300, uppercase). Crop in [components/crops/header-links-default.png](components/crops/header-links-default.png) |
 | Text field | Search input and help search input measured. Account email field measured, not submitted |
-| Text area, select, checkbox, radio, switch | Not present on the measured public pages |
+| Text area, select, checkbox, radio, switch | Filter checkboxes and the price slider were photographed in the filter drawer. Their computed styles were not re-read this pass |
 | Tabs | Search section buttons (Woman selected at weight 500, letter-spacing 0.8px) |
-| Menu | Category menu markup was in the DOM at height 0. Not opened |
+| Menu | Open Menu drawer photographed. See [screenshots/home-light-menu.png](screenshots/home-light-menu.png) and [site-tree.md](site-tree.md) |
 | Tooltip, toast | Not present |
-| Dialog | Geo dialog measured. Size list measured (opened by the size control, no size chosen) |
-| Card | Product grid tile measured as an image link, 905px wide. Name and price were not in that tile's text |
+| Dialog | Location gate photographed. Filter drawer photographed and not submitted. Size list not opened this pass |
+| Card | Dresses grid photographed. Name and price at 11px weight 300 uppercase on the scrolled grid |
 | List row | Help selection cells, 40px row, 12px label |
 | Table | Not present |
 | Avatar, badge | Not present |
-| App shell | Header links measured. No screenshot |
+| App shell | Header links photographed at 1440 and at 390 |
 | Form validation | Not captured. Logon was not submitted |
-| Empty | Empty bag title measured: 12px, weight 300, uppercase, "YOUR BAG IS EMPTY" |
-| Error | 404 title 15px weight 300 uppercase, subtitle 12px weight 300 |
-| Search | Search home measured. No query was submitted |
-| Phone width | Not captured. Viewport stayed at 1169 |
-| Screenshots | Not captured. Preview returned no screenshot frames |
+| Empty | Empty bag photographed: "YOUR BAG IS EMPTY" |
+| Error | 404 photographed: "PAGE NOT FOUND" |
+| Search | Search home photographed with an empty field. No query was submitted |
+| Phone width | Home and dresses category at measured 390 by 844, desktop user agent |
+| Screenshots | 14 page shots in [screenshots/](screenshots/), quantized to 256 colours |
+| Login wall | Empty email field photographed. Stopped. Identity providers not clicked |
 
 ## Do's and don'ts
 
-- **Use black on white, with a 0.5px black rule, and no radius.** The secondary ADD button and the skip link computed white fill, black text, 0.5px solid black border, border-radius 0. The primary geo button computed black fill, white text, radius 0, height 32px, padding 2px 12px. See [components.md](components.md).
-- **Set UI labels in Helvetica Now Text, weight 300, uppercase.** Header SEARCH, LOG IN and HELP computed 13px, weight 300, line-height 22px, uppercase. Product name and highlighted price computed 15px, weight 300, line-height 24px, uppercase. See [components.md](components.md).
-- **Keep the selected search section at weight 500 with 0.8px tracking.** The Woman section button computed weight 500 and letter-spacing 0.8px. Unselected sections stayed at weight 300. See [components.md](components.md).
-- **Do not invent a dark theme.** `color-scheme` was `normal` and no theme control was on the public pages. See [raw/computed.json](raw/computed.json).
+- **Use black on white, with a 0.5px black rule, and no radius.** The secondary ADD button computed white fill, black text, 0.5px solid black border, border-radius 0. See [components/crops/add-button-default.png](components/crops/add-button-default.png). The primary location Continue computed black fill, white text, radius 0, height 32px, padding 2px 12px. See [components/crops/location-continue-default.png](components/crops/location-continue-default.png).
+- **Set UI labels in Helvetica Now Text, weight 300, uppercase.** Header BAG, LOG IN and HELP computed 13px, weight 300, line-height 22px, uppercase. See [components/crops/header-links-default.png](components/crops/header-links-default.png). Product name and price computed 15px, weight 300, line-height 24px, uppercase. See [components/crops/product-title-default.png](components/crops/product-title-default.png).
+- **Keep the selected search section at weight 500 with 0.8px tracking.** The Woman section button computed weight 500 and letter-spacing 0.8px. Unselected sections stayed at weight 300. See [components.md](components.md) and [screenshots/search-light-empty.png](screenshots/search-light-empty.png).
+- **Do not invent a dark theme.** `color-scheme` was `normal` and no theme control was on the public pages. See [raw/computed.json](raw/computed.json) and [screenshots/home-light-default.png](screenshots/home-light-default.png).
 - **Do not ship Helvetica Now Text.** Name it and fall back to Helvetica. See [tokens.json](tokens.json).
 
 ## Rebuild
@@ -144,4 +148,4 @@ python3 tools/build_tokens.py
 python3 tools/build_style_guide.py
 ```
 
-Run both from `systems/zara`, or `python3 systems/zara/tools/build_tokens.py` from the repo root. Then `python3 tools/catalog.py design-md zara` from the repo root.
+Run both from `systems/zara`. The 2026-11-21 refresh did not run them: the new readings matched tokens.json. `python3 tools/catalog.py design-md zara` from the repo root rewrites catalog.json, so it was not run. DESIGN.md was left as generated on 2026-11-19.
