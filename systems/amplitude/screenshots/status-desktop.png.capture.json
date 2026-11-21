@@ -1,0 +1,16 @@
+{
+  "slug": "status",
+  "requested": "https://status.amplitude.com/",
+  "final": "https://status.amplitude.com/",
+  "title": "Amplitude Status",
+  "h1": [],
+  "text": "Subscribe to updates All Systems Operational About This Site Welcome to Amplitude's status page. To report a problem, please visit this page. View the Statsig Statuspage. Current Status Analytics Operational 90 days ago 100.00 % uptime Today Data Operational 90 days ago 100.00 % ",
+  "inputs": [],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:41:03.171Z",
+  "file": "status-desktop.png"
+}

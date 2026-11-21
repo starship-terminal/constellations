@@ -1,0 +1,33 @@
+{
+  "slug": "press",
+  "requested": "https://amplitude.com/press",
+  "final": "https://amplitude.com/press",
+  "title": "Amplitude in the News",
+  "h1": [
+    "Amplitude in the News"
+  ],
+  "text": "___ Platform Solutions Resources Pricing Login Contact sales Get started Platform AI Wave Agents Headless Amplitude Agent Analytics Amplitude MCP AI Feedback Early Access Program Insights Product Analytics Marketing Analytics Session Replay Heatmaps Action Guides and Surveys Feat",
+  "inputs": [
+    {
+      "type": "select",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 3,
+      "autocomplete": ""
+    },
+    {
+      "type": "select",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 3,
+      "autocomplete": ""
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:40:33.627Z",
+  "file": "press-desktop.png"
+}

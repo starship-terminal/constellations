@@ -1,0 +1,104 @@
+{
+  "slug": "get-started",
+  "requested": "https://amplitude.com/get-started",
+  "final": "https://amplitude.com/get-started",
+  "title": "Get Started | Amplitude",
+  "h1": [
+    "Unlock the power of your products today",
+    "Turn data into action without the hassle"
+  ],
+  "text": "___ Create your free account Work Email: I'd like to receive emails with product tips, updates, and offers from Amplitude. I agree to the Terms of Service and Privacy Notice. Let's get started Turn data into action without the hassle Empower your team with the world's #1 AI digit",
+  "inputs": [
+    {
+      "type": "email",
+      "name": "Email",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "checkbox",
+      "name": "subscribeOptin",
+      "placeholder": "",
+      "valueLen": 3,
+      "autocomplete": ""
+    },
+    {
+      "type": "checkbox",
+      "name": "privacyPolicyAgreement",
+      "placeholder": "",
+      "valueLen": 3,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "Country",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "GCLID__c",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "campaignContent",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "campaignMedium",
+      "placeholder": "",
+      "valueLen": 6,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "campaignSource",
+      "placeholder": "",
+      "valueLen": 8,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "campaignTerm",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "campaignID",
+      "placeholder": "",
+      "valueLen": 9,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "Mutiny_Experience__c",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "hidden",
+      "name": "Mutiny_Audience_Segment__c",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:39:54.059Z",
+  "file": "get-started-desktop.png"
+}

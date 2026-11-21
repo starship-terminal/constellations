@@ -1,0 +1,33 @@
+{
+  "slug": "signup",
+  "requested": "https://app.amplitude.com/signup",
+  "final": "https://app.amplitude.com/signup",
+  "title": "Amplitude",
+  "h1": [
+    "Log in or Sign up"
+  ],
+  "text": "Log in or Sign up Work Email Continue or Continue with Google Continue with Slack Continue with GitHub This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply. Have an Org URL? Enter it here",
+  "inputs": [
+    {
+      "type": "email",
+      "name": "email",
+      "placeholder": "jane.doe@company.com",
+      "valueLen": 0,
+      "autocomplete": ""
+    },
+    {
+      "type": "textarea",
+      "name": "g-recaptcha-response",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:40:51.321Z",
+  "file": "signup-desktop.png"
+}

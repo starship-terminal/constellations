@@ -1,0 +1,26 @@
+{
+  "slug": "chart-maker",
+  "requested": "https://amplitude.com/free-chart-maker",
+  "final": "https://amplitude.com/free-chart-maker",
+  "title": "Free Chart Maker: Turn a CSV Into a Chart | Amplitude",
+  "h1": [
+    "Free Chart Maker"
+  ],
+  "text": "___ Platform Solutions Resources Pricing Login Contact sales Get started Platform AI Wave Agents Headless Amplitude Agent Analytics Amplitude MCP AI Feedback Early Access Program Insights Product Analytics Marketing Analytics Session Replay Heatmaps Action Guides and Surveys Feat",
+  "inputs": [
+    {
+      "type": "file",
+      "name": "",
+      "placeholder": "",
+      "valueLen": 0,
+      "autocomplete": ""
+    }
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "capturedAt": "2026-11-21T18:40:22.747Z",
+  "file": "chart-maker-desktop.png"
+}
