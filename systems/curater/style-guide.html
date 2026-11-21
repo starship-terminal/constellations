@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curater style guide</title>
+<style>
+  :root {
+    --page: oklch(1 0 0);
+    --text: oklch(.141 .005 285.823);
+    --muted: oklch(.552 .016 285.938);
+    --border: oklch(.95 .004 286.32);
+    --sans: ABCDiatype, -apple-system, system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/1.5 var(--sans); }
+  main { max-width: 980px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 { font-size: 32px; line-height: 1.2; margin: 0 0 8px; }
+  h2 { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 40px 0 12px; }
+  p { max-width: 68ch; color: var(--muted); }
+  .grid { display: flex; flex-wrap: wrap; gap: 10px; }
+  .sw { display: flex; gap: 8px; align-items: center; min-width: 220px; }
+  .sw i { width: 28px; height: 28px; border-radius: 8px; border: 1px solid var(--border); display: block; }
+  .sw b { display: block; font-size: 12px; font-weight: 500; }
+  .sw span { display: block; font-size: 11px; color: var(--muted); }
+  .pill { display: inline-flex; align-items: center; gap: 8px; height: 58px; padding: 0 24px; border: 1px solid oklch(0.95 0.004 286.32); border-radius: 9999px; background: #fff; color: oklch(0.141 0.005 285.823); font-weight: 500; }
+  .fill { display: inline-flex; align-items: center; justify-content: center; height: 52px; min-width: 240px; padding: 0 24px; border-radius: 9999px; background: oklch(.21 .006 285.885); color: oklch(.985 0 0); font-weight: 500; }
+  .menu { width: 180px; background: #fff; border: 1px solid oklch(.95 .004 286.32); border-radius: 12px; padding: 4px; }
+  .menu div { padding: 10px 12px; font-size: 14px; color: var(--muted); }
+  .note { font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Curater</h1>
+  <p>Public signed-out surface, captured 2026-11-21 from curater.org. One light theme. Values come from tokens.json.</p>
+  <h2>Roles</h2>
+  <div class="grid"><div class="sw"><i style="background:oklch(1 0 0)"></i><div><b>page</b><span>oklch(1 0 0)</span></div></div>
+<div class="sw"><i style="background:oklch(1 0 0)"></i><div><b>surface</b><span>oklch(1 0 0)</span></div></div>
+<div class="sw"><i style="background:oklch(1 0 0)"></i><div><b>raised</b><span>oklch(1 0 0)</span></div></div>
+<div class="sw"><i style="background:rgba(0, 0, 0, 0.5)"></i><div><b>overlay</b><span>rgba(0, 0, 0, 0.5)</span></div></div>
+<div class="sw"><i style="background:rgba(0, 0, 0, 0.5)"></i><div><b>scrim</b><span>rgba(0, 0, 0, 0.5)</span></div></div>
+<div class="sw"><i style="background:oklch(.141 .005 285.823)"></i><div><b>text.primary</b><span>oklch(.141 .005 285.823)</span></div></div>
+<div class="sw"><i style="background:oklch(.552 .016 285.938)"></i><div><b>text.secondary</b><span>oklch(.552 .016 285.938)</span></div></div>
+<div class="sw"><i style="background:oklch(.985 0 0)"></i><div><b>text.onAccent</b><span>oklch(.985 0 0)</span></div></div>
+<div class="sw"><i style="background:oklch(.95 .004 286.32)"></i><div><b>border.default</b><span>oklch(.95 .004 286.32)</span></div></div>
+<div class="sw"><i style="background:oklch(.92 .004 286.32)"></i><div><b>border.strong</b><span>oklch(.92 .004 286.32)</span></div></div>
+<div class="sw"><i style="background:oklch(.871 .006 286.286)"></i><div><b>border.focus</b><span>oklch(.871 .006 286.286)</span></div></div>
+<div class="sw"><i style="background:oklch(.21 .006 285.885)"></i><div><b>accent.default</b><span>oklch(.21 .006 285.885)</span></div></div>
+<div class="sw"><i style="background:#22c55e"></i><div><b>status.success</b><span>#22c55e</span></div></div>
+<div class="sw"><i style="background:#b26200"></i><div><b>status.warning</b><span>#b26200</span></div></div>
+<div class="sw"><i style="background:oklch(.577 .245 27.325)"></i><div><b>status.danger</b><span>oklch(.577 .245 27.325)</span></div></div>
+<div class="sw"><i style="background:oklch(98.5% 0 0)"></i><div><b>sidebar.background</b><span>oklch(98.5% 0 0)</span></div></div>
+<div class="sw"><i style="background:oklch(14.1% .005 285.823)"></i><div><b>sidebar.foreground</b><span>oklch(14.1% .005 285.823)</span></div></div>
+<div class="sw"><i style="background:oklch(96.7% .001 286.375)"></i><div><b>sidebar.accent</b><span>oklch(96.7% .001 286.375)</span></div></div>
+<div class="sw"><i style="background:oklch(92% .004 286.32)"></i><div><b>sidebar.border</b><span>oklch(92% .004 286.32)</span></div></div>
+<div class="sw"><i style="background:oklch(1 0 0)"></i><div><b>component.button.background</b><span>oklch(1 0 0)</span></div></div>
+<div class="sw"><i style="background:oklch(0.141 0.005 285.823)"></i><div><b>component.button.text</b><span>oklch(0.141 0.005 285.823)</span></div></div>
+<div class="sw"><i style="background:oklch(0.95 0.004 286.32)"></i><div><b>component.button.border</b><span>oklch(0.95 0.004 286.32)</span></div></div>
+<div class="sw"><i style="background:oklch(.21 .006 285.885)"></i><div><b>component.searchButton.background</b><span>oklch(.21 .006 285.885)</span></div></div>
+<div class="sw"><i style="background:oklch(.985 0 0)"></i><div><b>component.searchButton.text</b><span>oklch(.985 0 0)</span></div></div>
+<div class="sw"><i style="background:oklch(1 0 0)"></i><div><b>component.menu.background</b><span>oklch(1 0 0)</span></div></div>
+<div class="sw"><i style="background:oklch(0.95 0.004 286.32)"></i><div><b>component.menu.border</b><span>oklch(0.95 0.004 286.32)</span></div></div></div>
+  <h2>Brand</h2>
+  <div class="grid"><div class="sw"><i style="background:#fbfbfb"></i><div><b>gray-100</b><span>#fbfbfb</span></div></div>
+<div class="sw"><i style="background:#f9f6f6"></i><div><b>gray-200</b><span>#f9f6f6</span></div></div>
+<div class="sw"><i style="background:#333333"></i><div><b>gray-dark</b><span>#333333</span></div></div>
+<div class="sw"><i style="background:#7c7c7c"></i><div><b>gray-medium</b><span>#7c7c7c</span></div></div>
+<div class="sw"><i style="background:#afafaf"></i><div><b>gray-light</b><span>#afafaf</span></div></div>
+<div class="sw"><i style="background:#d4d4d4"></i><div><b>gray-muted</b><span>#d4d4d4</span></div></div>
+<div class="sw"><i style="background:#f2f2f2"></i><div><b>background</b><span>#f2f2f2</span></div></div>
+<div class="sw"><i style="background:#fff296"></i><div><b>yellow-light</b><span>#fff296</span></div></div>
+<div class="sw"><i style="background:#b26200"></i><div><b>yellow</b><span>#b26200</span></div></div>
+<div class="sw"><i style="background:#5cf4ff"></i><div><b>cyan-light</b><span>#5cf4ff</span></div></div>
+<div class="sw"><i style="background:#e20000"></i><div><b>red</b><span>#e20000</span></div></div>
+<div class="sw"><i style="background:oklch(from #e20000 l c h / .2)"></i><div><b>red-light</b><span>oklch(from #e20000 l c h / .2)</span></div></div>
+<div class="sw"><i style="background:oklch(from #e20000 calc(l*.8) c h / .8)"></i><div><b>red-dark</b><span>oklch(from #e20000 calc(l*.8) c h / .8)</span></div></div>
+<div class="sw"><i style="background:#d83acb"></i><div><b>pink</b><span>#d83acb</span></div></div>
+<div class="sw"><i style="background:#ffeefd"></i><div><b>pink-light</b><span>#ffeefd</span></div></div>
+<div class="sw"><i style="background:#22c55e"></i><div><b>green</b><span>#22c55e</span></div></div>
+<div class="sw"><i style="background:oklch(from #22c55e calc(l*.8) c h / .8)"></i><div><b>green-dark</b><span>oklch(from #22c55e calc(l*.8) c h / .8)</span></div></div>
+<div class="sw"><i style="background:oklch(from #22c55e l c h / .15)"></i><div><b>green-background</b><span>oklch(from #22c55e l c h / .15)</span></div></div>
+<div class="sw"><i style="background:#85FF6F"></i><div><b>selection-green</b><span>#85FF6F</span></div></div>
+<div class="sw"><i style="background:#86EBFF"></i><div><b>selection-blue</b><span>#86EBFF</span></div></div>
+<div class="sw"><i style="background:#96FFE0"></i><div><b>selection-aqua</b><span>#96FFE0</span></div></div>
+<div class="sw"><i style="background:#AFCFFF"></i><div><b>selection-lightblue</b><span>#AFCFFF</span></div></div>
+<div class="sw"><i style="background:#BEAAFF"></i><div><b>selection-lavender</b><span>#BEAAFF</span></div></div>
+<div class="sw"><i style="background:#FF4144"></i><div><b>selection-red</b><span>#FF4144</span></div></div>
+<div class="sw"><i style="background:#ff8746"></i><div><b>selection-orange</b><span>#ff8746</span></div></div>
+<div class="sw"><i style="background:#FF7CF8"></i><div><b>selection-pink</b><span>#FF7CF8</span></div></div>
+<div class="sw"><i style="background:#FFFD6F"></i><div><b>selection-yellow</b><span>#FFFD6F</span></div></div></div>
+  <h2>Controls</h2>
+  <p class="pill">Sign in or create account</p>
+  <p><span class="fill">Search</span></p>
+  <div class="menu"><div>Settings</div><div>Extension</div><div>Privacy</div><div>Terms</div><div>About</div><div>Sign in</div></div>
+  <p class="note">The pill is the signed-out Google action. The filled pill is the phone search submit. The menu is the settings menu. Hover, pressed, disabled, and dark theme were not captured as separate painted states.</p>
+</main>
+</body>
+</html>
