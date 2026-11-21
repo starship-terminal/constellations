@@ -87,54 +87,110 @@ class Shooter {
 const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
 const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).catch(() => loc.evaluate((el) => el.click())); };
 
+// Public pages the homepage header, Products menu, Solutions menu and footer
+// open. site-tree.md is the map. Auth hosts and external sites are not here.
+const pageOf = (slug, path, extra) => ({ path, wait: 7000, run: async (p, S) => {
+  await S.view('default');
+  if (extra) await extra(p, S);
+  await S.full();
+} });
+
 const desktop = {
   home: { path: '/', wait: 9000, run: async (p, S) => {
     await S.view('default');
     await step('flyout', async () => {
-      const t = p.locator('a[class*="flyout-link"], button').filter({ hasText: /Product|Asana AI|Why Asana/i }).filter({ visible: true }).first();
-      if (await t.count()) { await t.hover(); await wait(p, 1200); await S.view('flyout'); }
+      const t = p.locator('button').filter({ hasText: /^Products$/ }).first();
+      if (await t.count()) { await t.click(); await wait(p, 900); await S.view('flyout'); await p.keyboard.press('Escape').catch(() => {}); }
     });
     await S.full();
   } },
   pricing: { path: '/pricing', wait: 8000, run: async (p, S) => {
     await S.view('default');
     await step('faq', async () => {
-      const t = p.locator('button[aria-expanded="false"], details summary, button').filter({ hasText: /\w{5,}\?/ }).filter({ visible: true }).first();
-      if (await t.count()) { await t.scrollIntoViewIfNeeded(); await clickEl(t); await wait(p, 1200); await S.view('faq'); }
+      const t = p.locator('button[aria-expanded="false"]').filter({ visible: true }).first();
+      if (await t.count()) { await t.scrollIntoViewIfNeeded(); await clickEl(t); await wait(p, 900); await S.view('faq'); }
     });
     await S.full();
   } },
-  'product-ai': { path: '/product/ai', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  features: { path: '/features', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  sales: { path: '/sales', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  'create-account': { path: '/create-account', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  resources: { path: '/resources', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
+  'product-ai': pageOf('product-ai', '/product/ai'),
+  'product-overview': pageOf('product-overview', '/product'),
+  'service-management': pageOf('service-management', '/product/service-management'),
+  'client-management': pageOf('client-management', '/product/client-management'),
+  command: pageOf('command', '/product/command'),
+  'ai-teammates': pageOf('ai-teammates', '/product/ai/ai-teammates'),
+  'ai-studio': pageOf('ai-studio', '/product/ai/ai-studio'),
+  dash: pageOf('dash', '/product/ai/dash'),
+  'admin-security': pageOf('admin-security', '/features/admin-security'),
+  apps: pageOf('apps', '/apps'),
+  developers: pageOf('developers', '/developers'),
+  'whats-new': pageOf('whats-new', '/whats-new'),
+  enterprise: pageOf('enterprise', '/enterprise'),
+  'small-business': pageOf('small-business', '/small-business'),
+  nonprofit: pageOf('nonprofit', '/industry/nonprofit'),
+  agencies: pageOf('agencies', '/agencies'),
+  'team-operations': pageOf('team-operations', '/teams/operations'),
+  'team-marketing': pageOf('team-marketing', '/teams/marketing'),
+  'team-it': pageOf('team-it', '/teams/it'),
+  'team-leaders': pageOf('team-leaders', '/teams/leaders'),
+  government: pageOf('government', '/industry/government-solutions'),
+  healthcare: pageOf('healthcare', '/industry/healthcare'),
+  retail: pageOf('retail', '/industry/retail'),
+  finance: pageOf('finance', '/industry/financial-services'),
+  education: pageOf('education', '/industry/education'),
+  manufacturing: pageOf('manufacturing', '/industry/manufacturing'),
+  media: pageOf('media', '/industry/media-entertainment'),
+  'use-goals': pageOf('use-goals', '/uses/goal-management'),
+  'use-planning': pageOf('use-planning', '/uses/organizational-planning'),
+  'use-intake': pageOf('use-intake', '/uses/project-intake'),
+  'use-resource': pageOf('use-resource', '/uses/resource-planning'),
+  'use-launch': pageOf('use-launch', '/uses/product-launch'),
+  uses: pageOf('uses', '/uses'),
+  features: pageOf('features', '/features'),
+  sales: pageOf('sales', '/sales'),
+  'create-account': pageOf('create-account', '/create-account'),
+  resources: pageOf('resources', '/resources'),
+  templates: pageOf('templates', '/templates'),
+  'plan-starter': pageOf('plan-starter', '/plan/starter'),
+  'plan-advanced': pageOf('plan-advanced', '/plan/advanced'),
+  teams: pageOf('teams', '/teams'),
+  'resource-center': pageOf('resource-center', '/resources/category/all'),
+  events: pageOf('events', '/events'),
+  'customer-success': pageOf('customer-success', '/customer-success'),
+  partners: pageOf('partners', '/partners'),
+  'site-map': pageOf('site-map', '/site-map'),
+  company: pageOf('company', '/company'),
+  leadership: pageOf('leadership', '/leadership'),
+  customers: pageOf('customers', '/customers'),
+  jobs: pageOf('jobs', '/jobs'),
+  blog: pageOf('blog', '/inside-asana'),
+  culture: pageOf('culture', '/culture-and-belonging'),
+  press: pageOf('press', '/press'),
+  trust: pageOf('trust', '/trust'),
+  privacy: pageOf('privacy', '/privacy'),
+  terms: pageOf('terms', '/terms'),
+  accessibility: pageOf('accessibility', '/accessibility'),
+  certifications: pageOf('certifications', '/certifications'),
 };
 
 const mobile = {
   home: { path: '/', wait: 9000, run: async (p, S) => {
     await S.view('default');
     await step('menu', async () => {
-      const m = p.locator('button[aria-label*="menu" i], [class*="hamburger"], [class*="menu-toggle"], button[class*="nav"]').filter({ visible: true }).first();
-      if (await m.count()) { await clickEl(m); await wait(p, 1500); await S.view('menu'); }
+      const m = p.locator('button[aria-label*="menu" i], button[aria-label*="Menu" i], [class*="hamburger"], button').filter({ hasText: /^Menu$/ }).first();
+      const any = p.locator('header button, nav button').filter({ visible: true }).first();
+      const target = (await m.count()) ? m : any;
+      if (await target.count()) { await clickEl(target); await wait(p, 1200); await S.view('menu'); }
     });
     await S.full();
   } },
+  pricing: { path: '/pricing', wait: 7000, run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'product-ai': { path: '/product/ai', wait: 7000, run: async (p, S) => { await S.view('default'); await S.full(); } },
+  sales: { path: '/sales', wait: 7000, run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'create-account': { path: '/create-account', wait: 7000, run: async (p, S) => { await S.view('default'); await S.full(); } },
+  resources: { path: '/resources', wait: 7000, run: async (p, S) => { await S.view('default'); await S.full(); } },
+  templates: { path: '/templates', wait: 7000, run: async (p, S) => { await S.view('default'); await S.full(); } },
+  enterprise: { path: '/enterprise', wait: 7000, run: async (p, S) => { await S.view('default'); await S.full(); } },
+  apps: { path: '/apps', wait: 7000, run: async (p, S) => { await S.view('default'); await S.full(); } },
 };
 
 const b = await chromium.launch(LAUNCH_OPTS);

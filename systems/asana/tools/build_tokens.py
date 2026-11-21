@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build tokens.json (W3C DTCG, Tokens Studio multi-set layout) from the raw captures.
 
-Sources, read from asana.com on 2026-11-11:
+Sources, read from asana.com on 2026-11-21:
   raw/css-vars.json          every custom property the Webflow bundle declares on :root,
                              read from the live stylesheets (tools/capture/vars.mjs), plus
                              `resolved.light` and `resolved.dark`: each name as the browser
