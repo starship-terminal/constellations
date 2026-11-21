@@ -6804,9 +6804,9 @@
         88
       ],
       "description": "The developer-first ‍MLOps platform",
-      "status": "pending",
-      "package": null,
-      "notes": "https://wandb.ai/home redirected to a CoreWeave Forge login wall. Session was not present. Skipped.",
+      "status": "captured",
+      "package": "systems/wandb",
+      "notes": "https://wandb.ai/home redirected to a CoreWeave Forge login wall. Session was not present. Skipped. Public walk 2026-11-21: the public site tree is in systems/wandb/site-tree.md. Login and signup were photographed empty and the walk stopped. Nothing was typed. No identity provider was clicked. No form was submitted. The published support address on the contact shots is painted over. login-review.json is a stop note and does not meet the done checker. login-extracted stays not-started. origin/main already has systems/weights-biases. This refresh wrote systems/wandb. Public package in PR 1711 at abce732c210d. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 20
