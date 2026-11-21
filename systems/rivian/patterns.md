@@ -1,53 +1,41 @@
 # Rivian patterns
 
-Public marketing on rivian.com. Signed out. No vehicle was configured, reserved, or booked. No account was created.
+Public site only, captured 2026-11-21. Screenshots are in [screenshots/](screenshots). The control map is [site-tree.md](site-tree.md).
 
-## Shell
+## App shell
 
-A 56px white header, radius 12px, with a 0.5px stone border and `--shadow-nav` (`0 2px 8px rgba(0,0,0,.15)`). Wordmark at the left. Center links: Vehicles, Charging, Technology, Discover, Gear Shop. Demo drive is the yellow pill at the right, then chat and account icons.
+A white bar, 56px tall, with the wordmark, five text menus (Vehicles, Charging, Technology, Discover, Gear Shop), an amber Demo drive pill, a chat icon and a sign-in icon. On a 390-wide viewport the menus collapse into one Open accordion. See `home-light-default.png` and `mobile-home-light-menu.png`.
 
-![Home](screenshots/home-light-default.png)
+Sign in goes to `https://rivian.com/auth/login`. That branch stops. Password was not submitted.
 
-At 390px the center links collapse to a menu icon. The wordmark and chat stay. The yellow Demo drive pill is not in the phone header.
+## Mega-menu
 
-![Home, 390](screenshots/home-light-mobile.png)
+Each header label opens a panel of model cards plus a text list. Vehicles is the fullest: R1S, R1T, R2 cards, then Compare, Demo drive, Trade-in, offers, inventory, purchasing, financing, insurance, R3, Fleet. See `home-light-vehicles-menu.png`.
 
-## Home
+## Hero
 
-A full-bleed photograph. White type sits on the image. The measured h1 "Find your Rivian" is 72px / 600. The visible hero line in the viewport shot is "R2 is the 2027 MotorTrend SUV of the Year", 56px / 600, white. Two pills sit on the photo: white Design yours and an outlined Book a drive. A yellow chat button sits at the bottom right of every page. It was not opened.
+Full-bleed photograph, white display type, a white pill and an outline pill, carousel dots. See `home-light-default.png`.
 
-## Vehicles menu
+## Model page
 
-Vehicles opens a panel over the hero. Three cards name R1S, R1T, and R2 with a starting price, a black Design yours pill, and an underlined Explore link. A text list to the right covers compare, demo drive, trade-in, offers, inventory, pre-owned, purchasing, financing, insurance, R3, and fleet. None of those links were followed into a builder or a checkout.
+A long marketing page per vehicle (R1S, R1T, R2, R3, Tri). Same header, same Adventure type, amber used sparingly. See `r2-light-default.png`.
 
-![Vehicles](screenshots/home-light-menu.png)
+## Inventory and offers
 
-## R2
+Inventory at `/configurations/list` opens an empty postal-code dialog before the list. The field was left empty and Continue was not clicked. See `inventory-light-default.png`. Offers is a list of current deals. See `offers-light-default.png`.
 
-The R2 page opens on a grey field with a large photograph in a pill mask, black "R" and "2", and three controls: black Reserve, yellow Design yours, and a pause icon. Reserve points at `/configurations/reserve/r2`. Design yours points at `/configurations/builder/r2`. Neither was opened. Further down, Standard, Premium, and Performance are pills. The footer is black.
+## Assistant
 
-![R2](screenshots/r2-light-default.png)
+Have a question? opens a side panel. The greeting is the product's own. The message field was left empty. See `home-light-question.png`.
 
-## Charging
+## Video
 
-The first paint is a loader: a 96px headline, "Charging is easier than you think", and a green bolt on a grey track. Route fields and an email field exist in the DOM below that paint. No address was typed and no email was submitted.
+Watch the video opens a full-screen player. See `home-light-video.png`.
 
-![Charging](screenshots/charging-light-default.png)
+## Cookie banner
 
-## Support
+Ketch dialog, "We respect your privacy", Accept All, Reject All, Manage Preferences. Reject All was clicked. Manage Preferences opens a purposes dialog with switches (Strictly Necessary always on, others opted out) and a Confirm button. Confirm was not clicked. The preferences dialog is a captured state, not a saved choice.
 
-A photograph with a white 88px / 500 headline, "Welcome to Support Center", and a white search field, "How can we help?". No search was run.
+## Forms not submitted
 
-![Support](screenshots/support-light-default.png)
-
-## Legal
-
-General Terms is a grey page, black headline, underlined section links. No form.
-
-![General Terms](screenshots/legal-light-default.png)
-
-## Sign in
-
-A split page: a photograph on the left, a white form on the right. Email, password, a remember checkbox, and a black Sign in pill. The page says it is protected by reCAPTCHA Enterprise. Nothing was typed. Sign in was not clicked. No account was created.
-
-![Sign in](screenshots/login-light-default.png)
+Demo drive booking, trade-in, Get updates, newsletter Subscribe, and the charging trip planner are public forms. They were not filled and not submitted. Coverage rows mark them not captured.

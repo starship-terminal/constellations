@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rivian style guide</title>
+<style>
+:root {
+/*LIGHT*/
+  --sg-sans: Adventure, HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #000); background: var(--page, #fff); }
+main { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 600 44px/1 var(--sg-sans); letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font: 600 14px/1 var(--sg-sans); letter-spacing: 0.04em; margin: 40px 0 12px; }
+.lead { max-width: 62ch; color: #494949; }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 48px; border-radius: 12px; border: 1px solid #cbcbcb; }
+.sw b { display: block; font-size: 12px; margin-top: 4px; }
+.sw span { font-size: 11px; color: #636363; }
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; height: 32px; padding: 0 16px; border-radius: 9999px; background: #ffaa00; color: #000; font: 600 14px/1 var(--sg-sans); text-decoration: none; }
+.btn.inv { height: 40px; border-radius: 40px; background: #fff; color: #000; border: 1px solid #ececec; }
+.nav { display: flex; align-items: center; gap: 16px; height: 56px; padding: 0 16px; background: #fff; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+.card { background: #f2f2f2; border-radius: 20px; padding: 16px; width: 220px; }
+.card h3 { margin: 0 0 8px; font: 600 24px/1 var(--sg-sans); }
+.type-row { margin: 8px 0; }
+code { font-family: "Adventure Mono", ui-monospace, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Rivian</h1>
+  <p class="lead">Public site tokens, read from rivian.com on 2026-11-21. One light theme. Adventure is the product face; this page falls back to Helvetica when Adventure is not installed.</p>
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+  <h2>Controls</h2>
+  <div class="nav"><b>RIVIAN</b><span>Vehicles</span><span>Charging</span><span style="flex:1"></span><a class="btn" href="#demo">Demo drive</a></div>
+  <div class="row" style="margin-top:16px">
+    <a class="btn inv" href="#design">Design yours</a>
+    <a class="btn" href="#demo">Demo drive</a>
+  </div>
+  <h2>Type</h2>
+  <div id="type"></div>
+  <h2>Card</h2>
+  <div class="card"><h3>R2</h3><p style="margin:0;color:#494949">From $44,990</p></div>
+</main>
+<script>
+const SW = [
+  ["page", "#ffffff"], ["surface", "#f2f2f2"], ["text", "#000000"],
+  ["muted", "#494949"], ["accent", "#ffaa00"], ["border", "#cbcbcb"],
+  ["success", "#4a8231"], ["warning", "#d58103"], ["danger", "#dc3127"], ["info", "#005e7d"]
+];
+document.getElementById("swatches").innerHTML = SW.map(([n,c]) =>
+  `<div class="sw"><i style="background:${c}"></i><b>${n}</b><span>${c}</span></div>`).join("");
+const TYPE = [
+  ["display", "96px", "600"], ["headline", "36px", "600"], ["body", "16px", "400"], ["label", "14px", "600"]
+];
+document.getElementById("type").innerHTML = TYPE.map(([n,s,w]) =>
+  `<div class="type-row" style="font-size:${s};font-weight:${w}">${n} <code>${s}</code></div>`).join("");
+</script>
+</body>
+</html>

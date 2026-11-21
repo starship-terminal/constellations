@@ -1,278 +1,370 @@
 #!/usr/bin/env python3
-"""Build tokens.json from Rivian's measured public-site tokens.
+"""Build tokens.json from raw/css-vars.json and raw/components-computed.json.
 
-Source: raw/css-vars.json and raw/components-computed.json, read on
-https://rivian.com/ on 2026-11-19, signed out. One light theme. Colour
-values are the probe-resolved computed colours, not guesses. Component
-sizes that differ from the declared scale stay in the component group.
-
-Deterministic. Edit the raw input, never tokens.json.
+Read from rivian.com on 2026-11-21, public, one light theme. HSL custom
+properties that the browser does not accept as a colour (space-separated
+components, no hsl() wrapper) are converted here and labelled Derived.
+A name that did not resolve is not invented.
 """
+import colorsys
 import json
 import pathlib
+import re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
-RAW = json.loads((HERE / "raw" / "css-vars.json").read_text())
-COMP = json.loads((HERE / "raw" / "components-computed.json").read_text())
-SRC = "declared custom property on rivian.com, resolved to computed sRGB, 2026-11-19"
-COMP_SRC = "computed style on the live DOM, rivian.com, 2026-11-19"
+RAW = HERE / "raw"
+V = json.loads((RAW / "css-vars.json").read_text())
+C = json.loads((RAW / "components-computed.json").read_text())
+RES = V["resolved"]["light"]
 
 
-def color(value, name):
-    return {
-        "$type": "color",
-        "$value": value,
-        "$extensions": {"source": f"{SRC}; {name}"},
-    }
+def src_var(name):
+    return f"css-var {name} resolved on :root, rivian.com home, 1440x900, 2026-11-21"
 
 
-def dim(value, name, source=SRC):
-    return {
-        "$type": "dimension",
-        "$value": value,
-        "$extensions": {"source": f"{source}; {name}"},
-    }
+def tok(value, ty, source, description=None):
+    t = {"$value": value, "$type": ty, "$extensions": {"source": source}}
+    if description:
+        t["$description"] = description
+    return t
 
 
-def duration(value, name):
-    return {
-        "$type": "duration",
-        "$value": value,
-        "$extensions": {"source": f"{SRC}; {name}"},
-    }
+def as_hex(value):
+    m = re.fullmatch(r"rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)(?:\s*,\s*([\d.]+))?\s*\)", str(value))
+    if not m:
+        return value
+    r, g, b = (int(m.group(i)) for i in (1, 2, 3))
+    if m.group(4) is None or float(m.group(4)) == 1:
+        return "#%02x%02x%02x" % (r, g, b)
+    return "rgba(%d, %d, %d, %g)" % (r, g, b, float(m.group(4)))
 
 
-def easing(value, name):
-    nums = [float(x) for x in value.replace("cubic-bezier(", "").rstrip(")").replace(" ", "").split(",")]
-    return {
-        "$type": "cubicBezier",
-        "$value": nums,
-        "$extensions": {"source": f"{SRC}; {name}"},
-    }
+def hsl_to_hex(raw):
+    """'40 100% 50%' or '0 0% 0% /0.5' -> #rrggbb or rgba(...). Derived."""
+    m = re.fullmatch(r"\s*([\d.]+)\s+([\d.]+)%\s+([\d.]+)%\s*(?:/\s*([\d.]+))?\s*", raw)
+    if not m:
+        return None
+    h, s, l = float(m.group(1)) / 360, float(m.group(2)) / 100, float(m.group(3)) / 100
+    a = float(m.group(4)) if m.group(4) else 1
+    r, g, b = colorsys.hls_to_rgb(h, l, s)
+    rgb = tuple(round(x * 255) for x in (r, g, b))
+    if a >= 1:
+        return "#%02x%02x%02x" % rgb
+    return "rgba(%d, %d, %d, %g)" % (*rgb, round(a, 3))
 
 
-def shadow(value, name):
-    return {
-        "$type": "shadow",
-        "$value": value,
-        "$extensions": {"source": f"{SRC}; {name}"},
-    }
+def color_from(name):
+    rec = RES.get(name)
+    if not rec:
+        return None
+    if rec.get("kind") == "color" and rec.get("value"):
+        return rec["value"], src_var(name) + " (Measured)"
+    raw = rec.get("raw") or ""
+    hx = hsl_to_hex(raw)
+    if hx:
+        return hx, src_var(name) + "; HSL components converted to sRGB (Derived)"
+    return None
 
 
-def font(stack, name):
-    return {
-        "$type": "fontFamily",
-        "$value": stack,
-        "$extensions": {"source": f"{COMP_SRC}; {name}"},
-    }
+def dim_from(name):
+    rec = RES.get(name)
+    if rec and rec.get("kind") == "dimension":
+        return rec["value"], src_var(name) + " (Measured)"
+    return None
 
 
-def typography(size, weight, line, family, name, tracking=None):
-    value = {
-        "fontFamily": family,
-        "fontSize": size,
-        "fontWeight": weight,
-        "lineHeight": line,
-    }
-    if tracking:
-        value["letterSpacing"] = tracking
-    return {
+def num_from(name):
+    rec = RES.get(name)
+    if rec and rec.get("kind") == "number":
+        return rec["value"], src_var(name) + " (Measured)"
+    return None
+
+
+def easing_from(name):
+    rec = RES.get(name)
+    if not rec:
+        return None
+    raw = rec.get("value") or rec.get("raw") or ""
+    m = re.fullmatch(r"cubic-bezier\(\s*([-\d.]+)[,\s]+([-\d.]+)[,\s]+([-\d.]+)[,\s]+([-\d.]+)\s*\)", raw)
+    if m:
+        return [float(x) for x in m.groups()], src_var(name) + " (Measured)"
+    return None
+
+
+CORE_COLORS = [
+    "black", "white", "brand", "brand-accent", "brand-foreground", "rivian-green", "rivian-orange",
+    "black-forest", "cloud", "river-bed",
+]
+RAMPS = ["stone", "yellow", "amber", "orange", "red", "green", "blue", "teal", "mint"]
+
+
+def ramp_steps(prefix):
+    steps = []
+    for name in RES:
+        if name.startswith("--" + prefix + "-") and name.count("-") == prefix.count("-") + 2:
+            step = name.split("-")[-1]
+            if step.isdigit():
+                steps.append((int(step), name))
+    return [n for _, n in sorted(steps)]
+
+
+core = {"color": {}, "font": {}, "typography": {}, "radius": {}, "space": {}, "shadow": {}, "motion": {}}
+
+for name in CORE_COLORS:
+    got = color_from("--" + name)
+    if got:
+        core["color"][name.replace("-", "")] = tok(got[0], "color", got[1])
+
+for prefix in RAMPS:
+    group = {}
+    for full in ramp_steps(prefix):
+        step = full.split("-")[-1]
+        got = color_from(full)
+        if got:
+            group[step] = tok(got[0], "color", got[1])
+    if group:
+        core["color"][prefix] = group
+
+core["font"]["sans"] = tok(
+    "Adventure, HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif",
+    "fontFamily",
+    "computed font-family on body, rivian.com home, 1440x900 (Measured)",
+)
+core["font"]["mono"] = tok(
+    "Adventure Mono",
+    "fontFamily",
+    src_var("--font-adventure-mono") + " (Measured)",
+)
+
+TYPE = {
+    "display-xl": ("--text-display-xl", 600, 0.96, "-0.025em"),
+    "display-lg": ("--text-display-lg", 600, 0.96, "-0.025em"),
+    "display": ("--text-display-base", 600, 0.96, "-0.025em"),
+    "display-sm": ("--text-display-sm", 600, 0.96, "-0.025em"),
+    "headline-xl": ("--text-headline-xl", 600, 1, "-0.02em"),
+    "headline-lg": ("--text-headline-lg", 600, 1, "-0.02em"),
+    "headline": ("--text-headline-base", 600, 1, "-0.02em"),
+    "headline-sm": ("--text-headline-sm", 600, 1, "-0.02em"),
+    "headline-xs": ("--text-headline-xs", 600, 1, "-0.02em"),
+    "body-lg": ("--text-body-lg", 400, "24px", "-0.01em"),
+    "body": ("--text-body-base", 400, "24px", "-0.01em"),
+    "body-sm": ("--text-body-sm", 400, "20px", "-0.01em"),
+    "label": ("--text-label-sm", 600, "16px", "-0.01em"),
+    "caption": ("--text-body-xs", 400, "16px", "-0.01em"),
+}
+for role, (size_name, weight, lh, tracking) in TYPE.items():
+    size = dim_from(size_name)
+    if not size:
+        continue
+    core["typography"][role] = {
         "$type": "typography",
-        "$value": value,
-        "$extensions": {"source": f"{SRC}; {name}"},
+        "$value": {
+            "fontFamily": "{font.sans}",
+            "fontSize": size[0],
+            "fontWeight": weight,
+            "lineHeight": lh,
+            "letterSpacing": tracking,
+        },
+        "$extensions": {"source": size[1] + f"; weight and tracking from {size_name}--font-weight / --letter-spacing"},
     }
 
+RADIUS = {
+    "none": ("0px", "fallback in body[data-responsive=true] --radius-none (the attribute was not set on the captured page; the declaration's fallback is the value) (Derived)"),
+    "nano": dim_from("--radius-nano"),
+    "s": ("4px", "fallback in body[data-responsive=true] --radius-s: var(--spacing-4, 4px) (Derived)"),
+    "micro": dim_from("--radius-micro"),
+    "m": ("12px", "fallback in body[data-responsive=true] --radius-m (Derived)"),
+    "macro": dim_from("--radius-macro"),
+    "l": ("20px", "fallback in body[data-responsive=true] --radius-l (Derived)"),
+    "xl": ("32px", "fallback in body[data-responsive=true] --radius-xl (Derived)"),
+    "mega": dim_from("--radius-mega"),
+    "xxl": ("40px", "fallback in body[data-responsive=true] --radius-xxl (Derived)"),
+    "pill": ("9999px", "computed border-radius of the header Demo drive link (Measured)"),
+}
+for key, val in RADIUS.items():
+    if not val:
+        continue
+    value, source = val if isinstance(val, tuple) and not isinstance(val[0], str) or False else val
+    if isinstance(val, tuple):
+        value, source = val
+    core["radius"][key] = tok(value, "dimension", source)
 
-def number(value, name):
-    return {
-        "$type": "number",
-        "$value": value,
-        "$extensions": {"source": f"{SRC}; {name}"},
-    }
-
-
-def main():
-    r = RAW["resolved"]
-    d = RAW["dimensions"]
-    m = RAW["motion"]
-    core = {
-        "font": {
-            "family": {
-                "adventure": font(
-                    ["Adventure", "Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
-                    "computed font-family on body and header at rivian.com/",
-                ),
-                "adventure-font": font(
-                    ["adventureFont", "ui-sans-serif", "system-ui", "sans-serif"],
-                    "computed font-family on h1 and buttons at rivian.com/r2",
-                ),
-                "mono": font(
-                    ["Adventure Mono", "ui-monospace", "monospace"],
-                    "--font-adventure-mono declared Adventure Mono; not computed on a specimen",
-                ),
-            }
-        },
-        "typography": {
-            "body": typography(
-                d["--text-base"], 400, d["--text-base--line-height"],
-                "{core.font.family.adventure}", "--text-base 16px / --text-base--line-height 24px",
-                d["--tracking-body"],
-            ),
-            "body-sm": typography(
-                d["--text-sm"], 400, d["--text-sm--line-height"],
-                "{core.font.family.adventure}", "--text-sm 14px / 20px",
-                d["--tracking-body"],
-            ),
-            "label": typography(
-                d["--text-sm"], 600, "16px",
-                "{core.font.family.adventure}",
-                "computed on Vehicles nav button: 14px / 16px weight 600 letter-spacing -0.14px",
-                "-0.14px",
-            ),
-            "button": typography(
-                d["--text-base"], 600, "18px",
-                "{core.font.family.adventure-font}",
-                "computed on R2 Reserve: 16px / 18px weight 600 letter-spacing -0.16px",
-                "-0.16px",
-            ),
-            "headline": typography(
-                d["--text-4xl"], 600, d["--text-4xl"],
-                "{core.font.family.adventure-font}",
-                "computed on R2 'Explore the lineup': 44px / 44px weight 600",
-                "-0.88px",
-            ),
-            "display": typography(
-                d["--text-6xl"], 600, d["--text-6xl"],
-                "{core.font.family.adventure}",
-                "computed on home h1 'Find your Rivian': 72px / 72px weight 600",
-                "-3px",
-            ),
-        },
-        "radius": {
-            "nano": dim(d["--radius-nano"], "--radius-nano"),
-            "micro": dim(d["--radius-micro"], "--radius-micro"),
-            "macro": dim(d["--radius-macro"], "--radius-macro"),
-            "mega": dim(d["--radius-mega"], "--radius-mega"),
-            "s": dim(d["--radius-s"], "--radius-s"),
-            "m": dim(d["--radius-m"], "--radius-m"),
-            "l": dim(d["--radius-l"], "--radius-l"),
-            "xl": dim(d["--radius-xl"], "--radius-xl"),
-            "xxl": dim(d["--radius-xxl"], "--radius-xxl"),
-            "pill": dim("9999px", "computed border-radius on Demo drive and Vehicles", COMP_SRC),
-        },
-        "space": {
-            "1": dim(d["--spacing"], "--spacing"),
-            "xxs": dim(d["--gap-xxs"], "--gap-xxs"),
-            "xs": dim(d["--gap-xs"], "--gap-xs"),
-            "s": dim(d["--gap-s"], "--gap-s"),
-            "m": dim(d["--gap-m"], "--gap-m"),
-            "l": dim(d["--gap-l"], "--gap-l"),
-            "xl": dim(d["--gap-xl"], "--gap-xl"),
-            "s3": dim(d["--small-s3"], "--small-s3"),
-            "m2": dim(d["--medium-m2"], "--medium-m2"),
-            "l1": dim(d["--large-l1"], "--large-l1"),
-            "l2": dim(d["--large-l2"], "--large-l2"),
-            "l3": dim(d["--large-l3"], "--large-l3"),
-        },
-        "control": {
-            "nav-height": dim("32px", "computed height of Vehicles", COMP_SRC),
-            "header-height": dim(d["--header-height"], "--header-height"),
-            "hero-button-height": dim("56px", "computed height of Design yours and Reserve", COMP_SRC),
-            "field-height": dim("56px", "computed height of login email and password", COMP_SRC),
-            "icon-size": dim(d["--navbar-icon-size"], "--navbar-icon-size"),
-            "target-size": dim(d["--target-size"], "--target-size"),
-            "button-px": dim(d["--button-px"], "--button-px"),
-        },
-        "motion": {
-            "duration": {
-                "nav": duration("150ms", "computed transition-duration on Vehicles; --card-duration"),
-                "card": duration(m["--card-duration"], "--card-duration"),
-                "accordion": duration(m["--accordion-duration"], "--accordion-duration"),
-            },
-            "easing": {
-                "shift-magnetic": easing(m["--ease-shift-magnetic"], "--ease-shift-magnetic"),
-                "attract-standard": easing(m["--ease-attract-standard"], "--ease-attract-standard"),
-                "attract-enter": easing(m["--ease-attract-enter"], "--ease-attract-enter"),
-                "repel-exit": easing(m["--ease-repel-exit"], "--ease-repel-exit"),
-            },
-        },
-        "shadow": {
-            "nav": shadow(RAW["shadows"]["--shadow-nav"], "--shadow-nav"),
-            "base": shadow(RAW["shadows"]["--shadow-base"], "--shadow-base"),
-            "hero": shadow(RAW["shadows"]["--shadow-hero"], "--shadow-hero"),
-        },
-        "leading": {
-            "display": number(0.96, "--leading-display"),
-            "headline": number(1, "--leading-headline"),
-        },
-    }
-    light = {
-        "page": color(r["--background"], "--background"),
-        "surface": color(r["--surface-secondary"], "--surface-secondary"),
-        "surface-alt": color(r["--surface-primaryAlt"], "--surface-primaryAlt"),
-        "text": color(r["--text-primary"], "--text-primary"),
-        "muted": color(r["--text-secondary"], "--text-secondary"),
-        "muted-soft": color(r["--muted-foreground"], "--muted-foreground"),
-        "accent": color(r["--brand"], "--brand"),
-        "accent-hover": color(r["--brand-accent"], "--brand-accent"),
-        "on-accent": color(r["--brand-foreground"], "--brand-foreground"),
-        "primary": color(r["--primary"], "--primary"),
-        "on-primary": color(r["--primary-foreground"], "--primary-foreground"),
-        "primary-accent": color(r["--primary-accent"], "--primary-accent"),
-        "border": color(r["--border"], "--border"),
-        "stroke": color(r["--stroke-tertiary"], "--stroke-tertiary"),
-        "focus": color(r["--ring"], "--ring"),
-        "link": color(r["--text-primary"], "--text-primary; legal links computed as underlined black text"),
-        "destructive": color(r["--destructive"], "--destructive"),
-        "on-destructive": color(r["--destructive-foreground"], "--destructive-foreground"),
-        "info": color(r["--info"], "--info"),
-        "success": color(r["--success"], "--success"),
-        "warning": color(r["--warning"], "--warning"),
-        "error": color(r["--semantic-error"], "--semantic-error"),
-        "disabled": color(r["--semantic-disabled"], "--semantic-disabled"),
-        "scrim": color("#00000080", "--overlay resolved rgba(0,0,0,0.5)"),
-        "nav-open": color("#0000001a", "--accent resolved rgba(0,0,0,0.1); computed on open Vehicles"),
-        "input": color(r["--input"], "--input"),
-        "cloud": color(r["--cloud"], "--cloud"),
-        "inverse": color(r["--surface-invertPrimary"], "--surface-invertPrimary"),
-        "on-inverse": color(r["--text-invertPrimary"], "--text-invertPrimary"),
-        "rivian-green": color(r["--rivian-green"], "--rivian-green"),
-        "rivian-orange": color(r["--rivian-orange"], "--rivian-orange"),
-        "black-forest": color(r["--black-forest"], "--black-forest"),
-        "river-bed": color(r["--river-bed"], "--river-bed"),
-        "component": {
-            "button-brand-bg": color(COMP["demoDrive"]["backgroundColor"].replace("rgb(255, 170, 0)", "#ffaa00"), "computed background on Demo drive"),
-            "button-brand-text": color("#000000", "computed color on Demo drive"),
-            "button-primary-bg": color("#000000", "computed background on Reserve and Sign in"),
-            "button-primary-text": color("#ffffff", "computed color on Reserve and Sign in"),
-            "button-hero-bg": color("#ffffff", "computed background on home Design yours"),
-            "field-bg": color("#f5f5f5", "login email computed oklch(0.961 0 0), the same stone as --input"),
-            "header-bg": color("#ffffff", "computed background on header"),
-            "card-bg": color("#f5f5f5", "navbar vehicle card computed oklch(0.96 0 0)"),
-        },
-    }
-    # Keep the component colours as the hex the probe already resolved, with the
-    # computed reading named in the source. The rgb() rewrite above is only for
-    # the one value that was stored as rgb().
-    light["component"]["button-brand-bg"] = color(
-        "#ffaa00", "computed backgroundColor rgb(255, 170, 0) on the Demo drive link"
+SPACE = {
+    "0": "0px", "1": "4px", "2": "8px", "3": "12px", "4": "16px", "5": "20px",
+    "6": "24px", "8": "32px", "10": "40px", "16": "64px", "20": "80px", "30": "120px",
+}
+for key, px in SPACE.items():
+    core["space"][key] = tok(
+        px, "dimension",
+        f"fallback of var(--spacing-{px[:-2]}, {px}) in the body[data-responsive=true] gap and size rules (Derived)",
     )
-    doc = {
-        "$description": "Rivian public marketing site, rivian.com, signed out, 2026-11-19. One light theme.",
-        "core": core,
-        "light": light,
-        "$themes": [
-            {"name": "light", "selectedTokenSets": {"core": "enabled", "light": "enabled"}},
-        ],
+nav_h = dim_from("--consumer-ui-navbar-toolbar-height")
+if nav_h:
+    core["space"]["navbar"] = tok(nav_h[0], "dimension", nav_h[1])
+
+for key, name in (("nav", "--shadow-nav"), ("base", "--shadow-base"), ("hero", "--shadow-hero")):
+    rec = RES.get(name)
+    if not rec:
+        continue
+    raw = rec.get("raw") or ""
+    # one layer is enough for the token; the raw string is the source
+    m = re.search(r"(-?\d+px)\s+(-?\d+px)\s+(-?\d+px)\s+(-?\d+px)?\s*(rgba?\([^)]+\))", raw)
+    if not m:
+        continue
+    ox, oy, blur, spread, color = m.group(1), m.group(2), m.group(3), m.group(4) or "0px", m.group(5)
+    core["shadow"][key] = {
+        "$type": "shadow",
+        "$value": {"offsetX": ox, "offsetY": oy, "blur": blur, "spread": spread, "color": color},
+        "$extensions": {"source": src_var(name) + " (Measured). First layer only; the full string is in raw/css-vars.json."},
     }
-    return doc
+
+for key, name in (
+    ("standard", "--ease-attract-standard"),
+    ("enter", "--ease-attract-enter"),
+    ("emphasized", "--ease-attract-emphasized"),
+    ("exit", "--ease-repel-exit"),
+):
+    got = easing_from(name)
+    if got:
+        core["motion"][key] = tok(got[0], "cubicBezier", got[1])
+
+# Semantic light set from the product's own role names, plus measured controls.
+light = {"color": {}, "text": {}, "border": {}, "status": {}, "component": {}}
+
+ROLE = {
+    "page": "--surface-primary",
+    "surface": "--surface-secondary",
+    "raised": "--surface-primaryAlt",
+    "sunken": "--surface-tertiary",
+    "inverse": "--surface-invertPrimary",
+    "scrim": "--overlay",
+}
+for key, name in ROLE.items():
+    got = color_from(name)
+    if got:
+        light["color"][key] = tok(got[0], "color", got[1])
+
+TEXT = {
+    "primary": "--text-primary",
+    "secondary": "--text-secondary",
+    "tertiary": "--text-tertiary",
+    "disabled": "--semantic-disabled",
+    "onInverse": "--text-invertPrimary",
+    "onAccent": "--brand-foreground",
+}
+for key, name in TEXT.items():
+    got = color_from(name)
+    if got:
+        light["text"][key] = tok(got[0], "color", got[1])
+
+BORDER = {
+    "default": "--stroke-tertiary",
+    "strong": "--stroke-primary",
+    "subtle": "--stroke-secondary",
+}
+for key, name in BORDER.items():
+    got = color_from(name)
+    if got:
+        light["border"][key] = tok(got[0], "color", got[1])
+
+STATUS = {
+    "success": "--semantic-success",
+    "warning": "--semantic-warning",
+    "danger": "--semantic-error",
+    "info": "--semantic-info",
+}
+for key, name in STATUS.items():
+    got = color_from(name)
+    if got:
+        light["status"][key] = tok(got[0], "color", got[1])
+
+accent = color_from("--brand")
+if accent:
+    light["color"]["accent"] = tok(accent[0], "color", accent[1])
+accent_hover = color_from("--brand-accent")
+if accent_hover:
+    light["color"]["accentHover"] = tok(accent_hover[0], "color", accent_hover[1])
+
+# Measured control colours, from components-computed.json.
+def measured_bg(comp, state):
+    st = C["components"].get(comp, {}).get("states", {}).get(state, {}).get("style", {})
+    return st.get("backgroundColor"), st.get("color"), st.get("borderRadius"), st.get("height"), st.get("fontSize"), st.get("fontWeight")
 
 
-def write():
-    out = HERE / "tokens.json"
-    out.write_text(json.dumps(main(), indent=2) + "\n")
-    print(f"wrote {out}")
+bg, fg, radius, height, size, weight = measured_bg("button-primary", "default")
+light["component"]["button"] = {
+    "background": tok(as_hex(bg), "color", "computed background-color of header Demo drive link, default (Measured)"),
+    "text": tok(as_hex(fg), "color", "computed color of header Demo drive link, default (Measured)"),
+    "radius": tok("9999px", "dimension", "computed border-radius of header Demo drive link (Measured)"),
+    "height": tok(height, "dimension", "computed height of header Demo drive link (Measured)"),
+    "fontSize": tok(size, "dimension", "computed font-size of header Demo drive link (Measured)"),
+    "fontWeight": tok(int(weight), "fontWeight", "computed font-weight of header Demo drive link (Measured)"),
+    "paddingX": tok("16px", "dimension", "computed padding-left of header Demo drive link (Measured)"),
+    "paddingY": tok("8px", "dimension", "computed padding-top of header Demo drive link (Measured)"),
+}
+hover_bg = measured_bg("button-primary", "hover")[0]
+pressed_bg = measured_bg("button-primary", "pressed")[0]
+light["component"]["button"]["hoverBackground"] = tok(as_hex(hover_bg), "color", "computed background-color of header Demo drive link, hover (Measured)")
+light["component"]["button"]["pressedBackground"] = tok(as_hex(pressed_bg), "color", "computed background-color of header Demo drive link, forced :active (Measured)")
+
+inv = measured_bg("button-inverse", "default")
+light["component"]["buttonInverse"] = {
+    "background": tok(as_hex(inv[0]), "color", "computed background-color of hero Design yours link (Measured)"),
+    "text": tok(as_hex(inv[1]), "color", "computed color of hero Design yours link (Measured)"),
+    "radius": tok("40px", "dimension", "computed border-radius of hero Design yours link (Measured)"),
+}
+
+nav = measured_bg("nav-item", "hover")
+light["component"]["navItem"] = {
+    "hoverBackground": tok(as_hex(nav[0]), "color", "computed background-color of header Vehicles button, hover (Measured)"),
+    "radius": tok("9999px", "dimension", "computed border-radius of header Vehicles button (Measured)"),
+    "fontSize": tok("14px", "dimension", "computed font-size of header Vehicles button (Measured)"),
+}
+light["component"]["navbar"] = {
+    "height": tok("56px", "dimension", src_var("--consumer-ui-navbar-toolbar-height") + " (Measured)"),
+    "padding": tok("12px", "dimension", src_var("--consumer-ui-navbar-root-padding") + " (Measured)"),
+}
 
 
-if __name__ == "__main__":
-    write()
+def as_hex(value):
+    m = re.fullmatch(r"rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)(?:\s*,\s*([\d.]+))?\s*\)", str(value))
+    if not m:
+        return value
+    r, g, b = (int(m.group(i)) for i in (1, 2, 3))
+    if m.group(4) is None or float(m.group(4)) == 1:
+        return "#%02x%02x%02x" % (r, g, b)
+    return "rgba(%d, %d, %d, %g)" % (r, g, b, float(m.group(4)))
+
+
+def check(tree, path=""):
+    for k, v in tree.items():
+        if not isinstance(v, dict):
+            continue
+        if "$value" in v:
+            ty, val = v["$type"], v["$value"]
+            if ty == "color" and not (isinstance(val, str) and (val.startswith("#") or val.startswith("rgba("))):
+                raise SystemExit(f"bad color {path}.{k}: {val}")
+            if ty == "dimension" and not re.fullmatch(r"-?\d+(\.\d+)?(px|rem)", str(val)):
+                raise SystemExit(f"bad dimension {path}.{k}: {val}")
+            if "source" not in v.get("$extensions", {}):
+                raise SystemExit(f"no source {path}.{k}")
+        else:
+            check(v, f"{path}.{k}")
+
+
+check(core)
+check(light)
+
+tokens = {
+    "core": core,
+    "light": light,
+    "$themes": [{
+        "id": "light",
+        "name": "Light",
+        "selectedTokenSets": {"core": "source", "light": "enabled"},
+        "$description": "The only theme rivian.com paints on the public pages captured 2026-11-21. color-scheme is normal. No dark theme switch was found.",
+    }],
+    "$metadata": {"tokenSetOrder": ["core", "light"]},
+}
+(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2) + "\n")
+print("wrote tokens.json")
