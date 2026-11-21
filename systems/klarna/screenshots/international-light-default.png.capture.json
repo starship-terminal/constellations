@@ -1,14 +1,15 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:48:42.688Z",
+  "capturedAt": "2026-11-21T14:10:31.028Z",
   "screenshot": "international-light-default.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://www.klarna.com/international/",
   "requested": {
     "viewport": {
       "width": 1440,
       "height": 900
     },
-    "deviceScaleFactor": 1
+    "deviceScaleFactor": 1,
+    "sanitizedSourceUrl": "https://www.klarna.com/international/"
   },
   "configuredViewport": {
     "width": 1440,
@@ -19,27 +20,15 @@
     "innerHeight": 900,
     "devicePixelRatio": 1,
     "theme": {
-      "classes": [],
-      "attributes": {},
-      "colorScheme": "normal"
+      "colorScheme": "normal",
+      "classes": []
     },
     "visualViewport": {
       "width": 1440,
       "height": 900,
-      "scale": 1,
-      "offsetLeft": 0,
-      "offsetTop": 0,
-      "pageLeft": 0,
-      "pageTop": 0
+      "scale": 1
     },
-    "documentSize": {
-      "width": 1440,
-      "height": 4294
-    },
-    "scroll": {
-      "x": 0,
-      "y": 0
-    }
+    "title": "Klarna International | Safe & easy-to-use payment solutions"
   },
   "capture": {
     "mode": "viewport",
@@ -60,10 +49,6 @@
   },
   "visualReview": {
     "status": "pending",
-    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
-  },
-  "cropCoordinates": {
-    "status": "unverified",
-    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+    "note": "Inspect the final image for complete, settled contents."
   }
 }

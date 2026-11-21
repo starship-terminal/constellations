@@ -1,0 +1,78 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "route": "Public headed Chromium, signed out, US English marketing site. No email, password, phone, address, or code was typed. No identity provider was clicked. No form was submitted. No country was chosen on the residence wall.",
+  "offered": {
+    "nav": {
+      "items": [
+        "Discover Klarna opens /us/what-is-klarna/",
+        "Shop opens /us/shopping/",
+        "App opens /us/klarna-app/",
+        "Help opens /us/help/",
+        "Sign up opens app.klarna.com",
+        "Sign in opens app.klarna.com/login",
+        "Phone drawer repeats those links and For business"
+      ],
+      "reached": [
+        "Discover Klarna",
+        "Shop",
+        "App",
+        "Help",
+        "Sign in wall, then stopped",
+        "Sign up wall, then stopped"
+      ],
+      "note": "The signed-in account was not entered, so no account navigation was offered."
+    },
+    "settings": {
+      "items": [],
+      "reached": [],
+      "note": "No settings screen was offered. The account was not entered. Cookies in the footer was not opened."
+    },
+    "create": {
+      "items": [
+        "Sign up",
+        "Sign in",
+        "Continue in app",
+        "Get the app"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-search.png",
+    "screenshots/home-light-language.png",
+    "screenshots/home-light-footer.png",
+    "screenshots/home-light-mobile.png",
+    "screenshots/home-light-mobile-menu.png",
+    "screenshots/shopping-light-default.png",
+    "screenshots/shopping-light-mobile.png",
+    "screenshots/shopping-deals-light-default.png",
+    "screenshots/help-light-default.png",
+    "screenshots/help-topic-light-default.png",
+    "screenshots/payments-light-default.png",
+    "screenshots/cards-light-default.png",
+    "screenshots/signin-boundary-light-default.png"
+  ],
+  "gaps": [
+    "Signed-in payments, purchases, portfolio, savings, and account were not entered.",
+    "Sign in and Sign up both showed an empty country-of-residence wall. No email field was shown. Nothing was typed. The query string is not copied here.",
+    "No Google, Apple, or other identity provider was clicked.",
+    "Confirm on the region dialog was not pressed.",
+    "Search was focused and left empty. It was not submitted.",
+    "Business log in at portal.klarna.com was not opened.",
+    "Validation, error, and post-submit states were not seen because no form was submitted."
+  ],
+  "not_submitted": [
+    "login email",
+    "login password",
+    "sign up",
+    "sign in",
+    "country of residence",
+    "region confirm",
+    "search",
+    "help search",
+    "cookies"
+  ]
+}
