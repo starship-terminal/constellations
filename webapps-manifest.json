@@ -2340,9 +2340,9 @@
       "description": "The #1 Crowdfunding and Fundraising Platform",
       "status": "captured",
       "package": "systems/gofundme",
-      "notes": "https://www.gofundme.com/sign-in rendered an empty page with no email field and no buttons. https://app.gofundme.com/login was a fundraiser-not-found page. No code was sent.",
+      "notes": "https://www.gofundme.com/sign-in rendered an empty page with no email field and no buttons. https://app.gofundme.com/login was a fundraiser-not-found page. No code was sent. Public walk 2026-11-21: the public site tree is in systems/gofundme/site-tree.md. https://www.gofundme.com/sign-in asks for Google, Apple, an empty email, and Continue. Nothing was typed. Google and Apple were not clicked. Continue was not clicked. https://app.gofundme.com/login returned HTTP 403 with no form. Start a GoFundMe opened a public category step. The zip field was left empty. login-review.json has offered.nav, offered.settings, offered.create, screens, gaps, and not_submitted. Screen files were not checked on this branch. login-extracted stays not-started. Public package refresh in PR 1696 at c9be7918005a. catalog.json not in that PR.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 7
     },
     {
