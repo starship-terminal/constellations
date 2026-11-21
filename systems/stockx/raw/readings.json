@@ -1,0 +1,213 @@
+{
+  "captured": "2026-11-22",
+  "href": "https://stockx.com/",
+  "title": "StockX: Sneakers, Streetwear, Trading Cards, Handbags, Watches",
+  "theme": "dark",
+  "dataTheme": "dark",
+  "viewport": { "w": 1440, "h": 900, "dpr": 2 },
+  "method": "getComputedStyle and documentElement custom properties on the live homepage. Product and About computed styles were read on those pages the same day. Nothing was typed or submitted.",
+  "page": {
+    "htmlBackground": "rgb(18, 18, 18)",
+    "bodyColor": "rgb(250, 250, 250)",
+    "bodyFont": "SuisseIntl, sans-serif",
+    "bodySize": "16px"
+  },
+  "computed": {
+    "header": {
+      "background": "rgb(18, 18, 18)",
+      "height": 91,
+      "color": "rgb(250, 250, 250)"
+    },
+    "categoryBar": {
+      "height": 48,
+      "color": "rgb(250, 250, 250)",
+      "fontSize": "16px"
+    },
+    "deals": {
+      "color": "rgb(239, 105, 88)",
+      "fontSize": "18px",
+      "fontWeight": "500"
+    },
+    "search": {
+      "background": "rgb(36, 36, 36)",
+      "border": "1px solid rgb(95, 95, 95)",
+      "color": "rgb(250, 250, 250)",
+      "fontFamily": "SuisseIntl-Regular, sans-serif",
+      "fontSize": "16px",
+      "height": 42,
+      "width": 829,
+      "radius": "8px",
+      "padding": "0px 40px"
+    },
+    "signup": {
+      "background": "rgb(250, 250, 250)",
+      "color": "rgb(15, 15, 15)",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "height": 36,
+      "radius": "100px",
+      "padding": "8px 16px",
+      "clicked": false
+    },
+    "sectionHeading": {
+      "text": "Recommended For You",
+      "fontFamily": "SuisseIntl",
+      "fontSize": "18px",
+      "fontWeight": "500",
+      "lineHeight": "23.994px",
+      "color": "rgb(250, 250, 250)"
+    },
+    "price": {
+      "text": "$487",
+      "fontFamily": "SuisseIntl-Medium",
+      "fontSize": "20px",
+      "fontWeight": "500",
+      "lineHeight": "26px",
+      "color": "rgb(250, 250, 250)"
+    },
+    "themeToggle": {
+      "label": "Switch to Light Mode",
+      "pressed": true,
+      "background": "rgb(57, 57, 57)",
+      "color": "rgb(255, 255, 255)",
+      "size": 56,
+      "radius": "100px",
+      "clicked": false
+    },
+    "footer": {
+      "background": "rgb(57, 57, 57)",
+      "color": "rgb(250, 250, 250)",
+      "padding": "32px 32px 0px",
+      "wordmarkSize": "32px",
+      "headingSize": "14px",
+      "headingWeight": "700",
+      "linkSize": "12px",
+      "photographed": false
+    }
+  },
+  "product": {
+    "href": "https://stockx.com/air-jordan-4-retro-toro-bravo-2026",
+    "title": "Jordan 4 Retro Toro Bravo (2026)",
+    "h1": {
+      "fontFamily": "SuisseIntl-Medium",
+      "fontSize": "24px",
+      "fontWeight": "500",
+      "lineHeight": "30px",
+      "color": "rgb(250, 250, 250)"
+    },
+    "lastSale": {
+      "text": "$159",
+      "fontSize": "24px",
+      "fontWeight": "500",
+      "color": "rgb(250, 250, 250)"
+    },
+    "size": {
+      "text": "Size: All",
+      "background": "rgb(18, 18, 18)",
+      "border": "1px solid rgb(95, 95, 95)",
+      "height": 40,
+      "radius": "8px",
+      "clicked": false
+    },
+    "buyNow": {
+      "background": "rgb(149, 192, 164)",
+      "color": "rgb(15, 15, 15)",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "height": 44,
+      "radius": "100px",
+      "padding": "10px 32px",
+      "clicked": false
+    },
+    "sellNow": {
+      "color": "rgb(149, 192, 164)",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "height": 43,
+      "radius": "100px",
+      "clicked": false
+    }
+  },
+  "about": {
+    "href": "https://stockx.com/about/how-it-works/",
+    "title": "How It Works - StockX",
+    "theme": "marketing light shell, black hero",
+    "h1": {
+      "text": "The Current Culture Marketplace",
+      "fontFamily": "Gestura Reg, sans-serif",
+      "fontSize": "60px",
+      "fontWeight": "400",
+      "lineHeight": "64.98px",
+      "letterSpacing": "-0.64px",
+      "color": "rgb(255, 255, 255)"
+    },
+    "heroBackground": "rgb(0, 0, 0)",
+    "pageBackground": "rgb(255, 255, 255)",
+    "logoFill": "rgb(36, 36, 36)",
+    "signup": {
+      "background": "rgb(36, 36, 36)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "100px",
+      "padding": "10px 20px",
+      "fontWeight": "600",
+      "clicked": false
+    },
+    "login": {
+      "border": "1px solid rgb(15, 15, 15)",
+      "color": "rgb(36, 36, 36)",
+      "radius": "100px",
+      "clicked": false
+    },
+    "processButton": {
+      "note": "green pill on the black hero, read from the photograph, not clicked"
+    }
+  },
+  "tokens": {
+    "--colors-background-primary": "#121212",
+    "--colors-background-secondary": "#242424",
+    "--colors-background-tertiary": "#393939",
+    "--colors-background-product-image": "#FFFFFF",
+    "--colors-text-primary": "#FAFAFA",
+    "--colors-text-secondary": "#CFCFCF",
+    "--colors-text-disabled": "#A1A5A4",
+    "--colors-text-inverse": "#0F0F0F",
+    "--colors-brand-primary": "#95C0A4",
+    "--colors-brand-secondary": "#FFFFFF",
+    "--colors-brand-tertiary": "#0F0F0F",
+    "--colors-border-primary": "#393939",
+    "--colors-border-secondary": "#5F5F5F",
+    "--colors-status-error": "#EF6958",
+    "--colors-status-success": "#4FC58C",
+    "--colors-status-warning": "#F5BA1A",
+    "--colors-success": "#4FC58C",
+    "--colors-error": "#EF6958",
+    "--colors-warning": "#F5BA1A",
+    "--font-body": "SuisseIntl,sans-serif",
+    "--font-heading": "SuisseIntl,sans-serif",
+    "--font-SuisseWorks": "SuisseWorks,sans-serif",
+    "--font-sizes-xs": "0.75rem",
+    "--font-sizes-sm": "0.875rem",
+    "--font-sizes-md": "1rem",
+    "--font-sizes-lg": "1.125rem",
+    "--font-sizes-xl": "1.25rem",
+    "--font-weights-normal": "400",
+    "--font-weights-medium": "500",
+    "--font-weights-bold": "700",
+    "--radii-sm": "0.25rem",
+    "--radii-md": "0.5rem",
+    "--radii-lg": "1rem",
+    "--radii-full": "6.25rem",
+    "--spacing-1": "0.25rem",
+    "--spacing-2": "0.5rem",
+    "--spacing-4": "1rem",
+    "--spacing-6": "1.5rem",
+    "--spacing-8": "2rem",
+    "--durations-fast": "150ms",
+    "--durations-moderate": "200ms",
+    "--durations-slow": "300ms",
+    "--easings-ease-in-out": "cubic-bezier(0.42,0,0.58,1)",
+    "--breakpoints-md": "768px",
+    "--breakpoints-lg": "1024px",
+    "--shadows-sm": "0px 2px 4px color-mix(in oklab,#0F0F0F 64%,transparent),0px 0px 1px inset color-mix(in oklab,#CFCFCF 30%,transparent)"
+  }
+}
