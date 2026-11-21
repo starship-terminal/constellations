@@ -1,0 +1,141 @@
+{
+  "core": {
+    "fontFamily": {
+      "sans": {
+        "$value": "duolingo-sans, sans-serif",
+        "$type": "fontFamily",
+        "$extensions": {
+          "source": "computed h1 font-family on https://www.duolingo.com/, signed out, data-duo-theme light, 2026-11-22"
+        }
+      },
+      "display": {
+        "$value": "feather, sans-serif",
+        "$type": "fontFamily",
+        "$extensions": {
+          "source": "computed h2 font-family for free. fun. effective. on the signed-out homepage, 2026-11-22"
+        }
+      }
+    },
+    "radius": {
+      "button": {
+        "$value": "12px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "computed Get started border-radius on the signed-out homepage, 2026-11-22"
+        }
+      },
+      "login-button": {
+        "$value": "16px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "computed Log in button border-radius on the empty login overlay, 2026-11-22"
+        }
+      },
+      "field": {
+        "$value": "12px",
+        "$type": "dimension",
+        "$extensions": {
+          "source": "computed parent of the empty Email or username input on the login overlay, 2026-11-22"
+        }
+      }
+    }
+  },
+  "light": {
+    "page": {
+      "$value": "#FFFFFF",
+      "$type": "color",
+      "$extensions": {
+        "source": "computed body background-color on https://www.duolingo.com/, signed out, data-duo-theme light, 2026-11-22. Palette name snow."
+      },
+      "$description": "Homepage page."
+    },
+    "text": {
+      "$value": "#4B4B4B",
+      "$type": "color",
+      "$extensions": {
+        "source": "computed h1 color on the signed-out homepage, 2026-11-22. Palette name eel, --color-eel 75, 75, 75."
+      },
+      "$description": "Homepage headline."
+    },
+    "text-secondary": {
+      "$value": "#777777",
+      "$type": "color",
+      "$extensions": {
+        "source": "computed course-strip link color on the signed-out homepage, 2026-11-22. Palette name wolf."
+      },
+      "$description": "Course strip labels."
+    },
+    "text-muted": {
+      "$value": "#AFAFAF",
+      "$type": "color",
+      "$extensions": {
+        "source": "computed Site language button color on the signed-out homepage, 2026-11-22. Palette name hare."
+      },
+      "$description": "Site language label and disabled Next."
+    },
+    "accent": {
+      "$value": "#58CC02",
+      "$type": "color",
+      "$extensions": {
+        "source": "computed ::before background of Get started, signed-out homepage, 2026-11-22. Palette name owl, --color-owl 88, 204, 2."
+      },
+      "$description": "Get started face and footer."
+    },
+    "accent-lip": {
+      "$value": "#58A700",
+      "$type": "color",
+      "$extensions": {
+        "source": "palette --color-tree-frog 88, 167, 0 on html style, signed-out homepage, 2026-11-22. The button face is owl. The lip name is the darker green in the same palette. The 4px lip is the difference between the 50px button and the 46px ::before."
+      },
+      "$description": "Get started lip."
+    },
+    "link": {
+      "$value": "#1CB0F6",
+      "$type": "color",
+      "$extensions": {
+        "source": "computed color of I already have an account, signed-out homepage, 2026-11-22. Palette name macaw."
+      },
+      "$description": "Secondary action and login submit face."
+    },
+    "login-lip": {
+      "$value": "#1899D6",
+      "$type": "color",
+      "$extensions": {
+        "source": "palette --color-whale 24, 153, 214 on html style, signed-out homepage, 2026-11-22. Log in ::before is macaw and 46px inside a 50px button."
+      },
+      "$description": "Log in lip."
+    },
+    "field": {
+      "$value": "#F7F7F7",
+      "$type": "color",
+      "$extensions": {
+        "source": "computed parent background of the empty Email or username input, login overlay, 2026-11-22. Palette name polar."
+      },
+      "$description": "Login field fill."
+    },
+    "border": {
+      "$value": "#E5E5E5",
+      "$type": "color",
+      "$extensions": {
+        "source": "computed 2px border on the login field shell, 2026-11-22. Palette name swan."
+      },
+      "$description": "Field border and disabled Next face."
+    },
+    "on-accent": {
+      "$value": "#FFFFFF",
+      "$type": "color",
+      "$extensions": {
+        "source": "computed color of Get started and Log in, 2026-11-22."
+      },
+      "$description": "Label on green and blue buttons."
+    },
+    "header": {
+      "$value": "#1CB0F6",
+      "$type": "color",
+      "$extensions": {
+        "source": "computed header background on https://www.duolingo.com/courses at 390px, 2026-11-22."
+      },
+      "$description": "Courses header."
+    }
+  }
+}

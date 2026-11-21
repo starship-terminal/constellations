@@ -1,0 +1,90 @@
+{
+  "slug": "duolingo",
+  "product": "Duolingo",
+  "domain": "duolingo.com",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "session": "Signed-out public site. The login overlay and the age step were opened and left empty. No identity provider was clicked. No form was submitted. No email, password, code, phone, age, or address was typed. A captcha was not solved. No course was chosen. No lesson was started.",
+  "wall": {
+    "url": "https://www.duolingo.com/?isLoggingIn=true",
+    "title": "Duolingo - The world’s most popular way to learn",
+    "asks": [
+      "Email or username",
+      "Password",
+      "Forgot",
+      "Log in",
+      "Sign up",
+      "Sign in with Google",
+      "Sign in with Facebook",
+      "Sign in with Apple"
+    ],
+    "email_field": true,
+    "password_field": true,
+    "code_field": false,
+    "inputs": [
+      {"type": "text", "placeholder": "Email or username", "filled": false},
+      {"type": "password", "placeholder": "Password", "filled": false}
+    ],
+    "note": "Login is an overlay on the homepage, not a separate app. Fields were empty. Identity providers were not clicked. Forgot was not clicked. Log in was not clicked. A reCAPTCHA notice is text. It was not solved."
+  },
+  "signup_wall": {
+    "url": "https://www.duolingo.com/?isLoggingIn=true",
+    "asks": [
+      "Age",
+      "Next",
+      "Login"
+    ],
+    "email_field": false,
+    "password_field": false,
+    "continued": false,
+    "note": "Sign up from the login wall opens an empty Age field. Next is disabled. Age was not typed. Next was not clicked. The course picker at /register was photographed and no course was chosen."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2,
+      "visualViewport": {"width": 1440, "height": 900, "scale": 1},
+      "png": "2880x1800"
+    },
+    "phone": {
+      "requested": "390x844",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "visualViewport": {"width": 390, "height": 844, "scale": 1},
+      "png": "780x1688"
+    }
+  },
+  "offered": {
+    "nav": {
+      "items": ["Wordmark", "Site language", "Get started", "I already have an account"],
+      "reached": ["Wordmark", "Get started", "I already have an account"]
+    },
+    "footer": {
+      "items": ["Courses", "Efficacy", "Duolingo for Schools", "Duolingo FAQs", "Super Duolingo", "Chess"],
+      "reached": ["Courses", "Efficacy", "Duolingo for Schools", "Duolingo FAQs", "Chess"]
+    },
+    "walls": {
+      "items": ["Google", "Facebook", "Apple", "Log in", "Sign up", "Forgot", "Next"],
+      "reached": ["Sign up"]
+    }
+  },
+  "screens": [
+    {"name": "Homepage", "file": "screenshots/public-2026-11/home-light-default.png"},
+    {"name": "Footer", "file": "screenshots/public-2026-11/home-light-footer.png"},
+    {"name": "Courses", "file": "screenshots/public-2026-11/courses-light-default.png"},
+    {"name": "Schools", "file": "screenshots/public-2026-11/schools-light-default.png"},
+    {"name": "Efficacy", "file": "screenshots/public-2026-11/efficacy-light-default.png"},
+    {"name": "Help", "file": "screenshots/public-2026-11/help-light-default.png"},
+    {"name": "Chess", "file": "screenshots/public-2026-11/chess-light-default.png"},
+    {"name": "Register course picker", "file": "screenshots/public-2026-11/register-light-empty.png"},
+    {"name": "Login wall, empty", "file": "screenshots/public-2026-11/login-light-empty.png"},
+    {"name": "Signup age step, empty", "file": "screenshots/public-2026-11/signup-light-empty.png"},
+    {"name": "Homepage, phone", "file": "screenshots/public-2026-11/home-light-phone.png"},
+    {"name": "Courses, phone", "file": "screenshots/public-2026-11/courses-light-phone.png"},
+    {"name": "Courses phone menu", "file": "screenshots/public-2026-11/courses-light-phone-menu.png"}
+  ]
+}

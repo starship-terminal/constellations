@@ -1,0 +1,297 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.duolingo.com/",
+  "duoTheme": "light",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vw": 1440,
+    "vh": 900,
+    "scale": 1
+  },
+  "png": {
+    "desktop": "2880x1800",
+    "phone": "780x1688"
+  },
+  "body": {
+    "tag": "BODY",
+    "text": "SITE LANGUAGE: ENGLISH The most fun way to learn languages, chess, and more! GET",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(60, 60, 60)",
+    "font": "sans-serif",
+    "size": "17px",
+    "weight": "400",
+    "lh": "20px",
+    "radius": "0px",
+    "border": "0px none rgb(60, 60, 60)",
+    "shadow": "none",
+    "h": "7803.05px",
+    "pad": "0px",
+    "letter": "normal",
+    "transform": "none",
+    "w": 1440,
+    "top": 0
+  },
+  "h1": {
+    "tag": "H1",
+    "text": "The most fun way to learn languages, chess, and more!",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(75, 75, 75)",
+    "font": "duolingo-sans, sans-serif",
+    "size": "32px",
+    "weight": "700",
+    "lh": "normal",
+    "radius": "0px",
+    "border": "0px none rgb(75, 75, 75)",
+    "shadow": "none",
+    "h": "88px",
+    "pad": "0px",
+    "letter": "normal",
+    "transform": "none",
+    "w": 480,
+    "top": 325
+  },
+  "h2": {
+    "tag": "H2",
+    "text": "free. fun. effective.",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(88, 204, 2)",
+    "font": "feather, sans-serif",
+    "size": "48px",
+    "weight": "700",
+    "lh": "normal",
+    "radius": "0px",
+    "border": "0px none rgb(88, 204, 2)",
+    "shadow": "none",
+    "h": "60px",
+    "pad": "0px",
+    "letter": "normal",
+    "transform": "none",
+    "w": 457,
+    "top": 1183
+  },
+  "cta": {
+    "tag": "A",
+    "text": "GET STARTED",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "font": "duolingo-sans, sans-serif",
+    "size": "15px",
+    "weight": "700",
+    "lh": "normal",
+    "radius": "12px",
+    "border": "",
+    "shadow": "none",
+    "h": "50px",
+    "pad": "0px 16px",
+    "letter": "0.8px",
+    "transform": "uppercase",
+    "w": 330,
+    "top": 453
+  },
+  "loginBtn": {
+    "tag": "BUTTON",
+    "text": "I ALREADY HAVE AN ACCOUNT",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(28, 176, 246)",
+    "font": "duolingo-sans, sans-serif",
+    "size": "15px",
+    "weight": "700",
+    "lh": "normal",
+    "radius": "12px",
+    "border": "",
+    "shadow": "none",
+    "h": "50px",
+    "pad": "0px 16px",
+    "letter": "0.8px",
+    "transform": "uppercase",
+    "w": 330,
+    "top": 515
+  },
+  "footerBg": "rgb(88, 204, 2)",
+  "footerColor": "rgb(60, 60, 60)",
+  "paletteCount": 302,
+  "named": {
+    "owl": "88, 204, 2",
+    "macaw": "28, 176, 246",
+    "eel": "75, 75, 75",
+    "wolf": "119, 119, 119",
+    "hare": "175, 175, 175",
+    "swan": "229, 229, 229",
+    "polar": "247, 247, 247",
+    "snow": "255, 255, 255",
+    "bee": "255, 200, 0",
+    "fox": "255, 150, 0",
+    "cardinal": "255, 75, 75",
+    "whale": "24, 153, 214",
+    "tree-frog": "88, 167, 0",
+    "sea-sponge": "215, 255, 184",
+    "macaw-shadow": "0, 150, 221"
+  },
+  "fieldShell": {
+    "shell": {
+      "bg": "rgb(247, 247, 247)",
+      "radius": "12px",
+      "border": "2px solid rgb(229, 229, 229)",
+      "h": 48,
+      "w": 375
+    },
+    "heading": {
+      "text": "The most fun way to learn languages, chess, and more!",
+      "font": "duolingo-sans, sans-serif",
+      "size": "32px",
+      "weight": "700",
+      "color": "rgb(75, 75, 75)"
+    }
+  },
+  "login": {
+    "url": "https://www.duolingo.com/?isLoggingIn=true",
+    "heading": "Log in",
+    "inputs": [
+      {
+        "type": "text",
+        "name": "",
+        "placeholder": "Email or username",
+        "value": "",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(75, 75, 75)",
+        "radius": "0px",
+        "h": "44px",
+        "border": "0px none rgb(75, 75, 75)",
+        "font": "duolingo-sans, sans-serif",
+        "size": "20px"
+      },
+      {
+        "type": "password",
+        "name": "",
+        "placeholder": "Password",
+        "value": "",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(75, 75, 75)",
+        "radius": "0px",
+        "h": "44px",
+        "border": "0px none rgb(75, 75, 75)",
+        "font": "duolingo-sans, sans-serif",
+        "size": "20px"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "SIGN UP",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(28, 176, 246)",
+        "radius": "16px",
+        "h": "50px",
+        "border": "2px solid rgba(0, 0, 0, 0)",
+        "beforeBg": "rgb(255, 255, 255)",
+        "beforeH": "48px"
+      },
+      {
+        "text": "LOG IN",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "16px",
+        "h": "50px",
+        "border": "0px solid rgba(0, 0, 0, 0)",
+        "beforeBg": "rgb(28, 176, 246)",
+        "beforeH": "46px"
+      },
+      {
+        "text": "SIGN IN WITH GOOGLE",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(66, 133, 244)",
+        "radius": "16px",
+        "h": "50px",
+        "border": "2px solid rgba(0, 0, 0, 0)",
+        "beforeBg": "rgb(255, 255, 255)",
+        "beforeH": "48px"
+      },
+      {
+        "text": "SIGN IN WITH FACEBOOK",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(59, 89, 152)",
+        "radius": "16px",
+        "h": "50px",
+        "border": "2px solid rgba(0, 0, 0, 0)",
+        "beforeBg": "rgb(255, 255, 255)",
+        "beforeH": "48px"
+      },
+      {
+        "text": "SIGN IN WITH APPLE",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(75, 75, 75)",
+        "radius": "16px",
+        "h": "50px",
+        "border": "2px solid rgba(0, 0, 0, 0)",
+        "beforeBg": "rgb(255, 255, 255)",
+        "beforeH": "48px"
+      }
+    ]
+  },
+  "signup": {
+    "url": "https://www.duolingo.com/?isLoggingIn=true",
+    "placeholder": "Age",
+    "value": "",
+    "type": "text",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px",
+    "h": "44px",
+    "border": "0px none rgb(75, 75, 75)",
+    "nextDisabled": true,
+    "nextBg": "rgba(0, 0, 0, 0)",
+    "nextColor": "rgb(175, 175, 175)",
+    "nextBefore": "rgb(229, 229, 229)"
+  },
+  "phoneMenu": {
+    "found": true,
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px",
+    "shadow": "none",
+    "headerBg": "rgb(28, 176, 246)"
+  },
+  "ctaPaint": {
+    "cta": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "12px",
+      "h": "50px",
+      "border": "0px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "font": "duolingo-sans, sans-serif",
+      "size": "15px",
+      "weight": "700",
+      "pad": "0px 16px",
+      "transform": "uppercase",
+      "letter": "0.8px",
+      "filter": "none",
+      "before": {
+        "content": "\"\"",
+        "bg": "rgb(88, 204, 2)",
+        "h": "46px"
+      }
+    },
+    "login": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(28, 176, 246)",
+      "radius": "12px",
+      "h": "50px",
+      "border": "2px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "font": "duolingo-sans, sans-serif",
+      "size": "15px",
+      "weight": "700",
+      "pad": "0px 16px",
+      "transform": "uppercase",
+      "letter": "0.8px",
+      "filter": "none",
+      "before": {
+        "content": "\"\"",
+        "bg": "rgb(255, 255, 255)",
+        "h": "48px"
+      }
+    },
+    "footerBg": "rgb(88, 204, 2)",
+    "footerColor": "rgb(60, 60, 60)"
+  }
+}
