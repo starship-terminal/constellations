@@ -1,0 +1,102 @@
+{
+  "product": "Partiful",
+  "domain": "partiful.com",
+  "reviewedAt": "2026-11-22",
+  "method": "public Playwright, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Log in",
+      "url": "https://partiful.com/login",
+      "title": "Log in to Partiful | Partiful",
+      "painted": true,
+      "headings": [
+        "Sign in or sign up"
+      ],
+      "asksFor": [
+        {
+          "label": "Phone number",
+          "type": "tel",
+          "required": false,
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": [
+        "country flag selector",
+        "Get the app",
+        "Change language"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/login-wall.png",
+      "note": "The phone field was empty. The country selector was not changed. Nothing was typed. Get the app was not clicked. There is no password field and no identity provider on this wall."
+    },
+    {
+      "control": "signup path, not linked from the header",
+      "url": "https://partiful.com/signup",
+      "title": "Not Found | Partiful",
+      "painted": true,
+      "headings": [
+        "PAGE NOT FOUND"
+      ],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": [
+        "Login",
+        "Get the app"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/signup-wall.png",
+      "note": "Signup is the same phone wall as login. /signup returns 404. The header control is Log in, and the wall heading is Sign in or sign up."
+    },
+    {
+      "control": "Sell Tickets, Book a demo",
+      "url": "https://partiful.com/ticketing-contact",
+      "title": "Sell Tickets on Partiful",
+      "painted": true,
+      "headings": [
+        "Grow your organic reach"
+      ],
+      "asksFor": [
+        {
+          "label": "Name",
+          "type": "text",
+          "required": false,
+          "valueLength": 0
+        },
+        {
+          "label": "Email",
+          "type": "email",
+          "required": false,
+          "valueLength": 0
+        },
+        {
+          "label": "Website or Instagram",
+          "type": "text",
+          "required": false,
+          "valueLength": 0
+        },
+        {
+          "label": "Anything else we should know?",
+          "type": "textarea",
+          "required": false,
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": [
+        "expected ticket sales revenue",
+        "Submit"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/ticketing-contact.png",
+      "note": "Every field was empty. The revenue menu was not opened. Submit was not clicked."
+    }
+  ]
+}
