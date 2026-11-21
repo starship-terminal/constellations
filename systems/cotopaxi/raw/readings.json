@@ -1,0 +1,80 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.cotopaxi.com/",
+  "title": "Cotopaxi - Gear For Good | Free shipping on orders $99+",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "png": { "width": 2880, "height": 1800 },
+  "body": {
+    "fontFamily": "Gotham, HelveticaNeue, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "fontSize": "16px",
+    "color": "rgb(37, 40, 42)",
+    "backgroundColor": "rgb(255, 255, 255)"
+  },
+  "announcement": {
+    "class": "main-banner coto_container",
+    "backgroundColor": "rgb(235, 219, 255)",
+    "fontSize": "12px",
+    "height": 34
+  },
+  "search": {
+    "backgroundColor": "rgb(242, 242, 242)",
+    "border": "1px solid rgb(242, 242, 242)",
+    "borderRadius": "99px",
+    "height": 30,
+    "width": 300,
+    "fontFamily": "Mont, Gotham, HelveticaNeue, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "fontSize": "16px",
+    "padding": "9px 10px 7px 35px"
+  },
+  "logo": { "width": 114, "height": 37 },
+  "nav": {
+    "fontFamily": "Mont, Gotham, HelveticaNeue, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "800",
+    "letterSpacing": "0.35px",
+    "lineHeight": "40px",
+    "height": 40,
+    "padding": "0px 15px",
+    "blackFriday": "rgb(138, 0, 16)",
+    "gifts": "rgb(0, 95, 158)",
+    "sale": "rgb(37, 40, 42)"
+  },
+  "heroCta": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(37, 40, 42)",
+    "fontSize": "14px",
+    "fontWeight": "700",
+    "letterSpacing": "1.5px",
+    "padding": "8px 25px",
+    "border": "2px solid rgb(255, 255, 255)",
+    "borderRadius": "0px",
+    "textTransform": "uppercase",
+    "height": 41
+  },
+  "footer": {
+    "backgroundColor": "rgb(37, 40, 42)",
+    "color": "rgb(255, 255, 255)"
+  },
+  "rootTokens": {
+    "--bs-primary": "#e03100",
+    "--bs-secondary": "#f1f0eb",
+    "--bs-body-color": "#25282a",
+    "--bs-body-bg": "#fff",
+    "--bs-link-color": "#25282a",
+    "--bs-border-color": "#bdbdbd",
+    "--bs-border-radius": "0px",
+    "--bs-gray-100": "#eeece9",
+    "--bs-gray-300": "#bdbdbd",
+    "--bs-gray-400": "#828282",
+    "--bs-success": "#d4d771",
+    "--bs-info": "#385cad",
+    "--bs-warning": "#ffb612",
+    "--bs-danger": "#e03100"
+  },
+  "fontsLoaded": ["Mont 600", "Mont 800", "Gotham 400", "Gotham 700"]
+}
