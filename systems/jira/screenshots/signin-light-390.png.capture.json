@@ -1,0 +1,29 @@
+{
+  "captured": "2026-11-22",
+  "name": "signin-light-390",
+  "url": "https://id.atlassian.com/login",
+  "requestedUrl": "https://id.atlassian.com/login",
+  "title": "Log in to continue - Log in with Atlassian account",
+  "h1": "Log in to continue",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}

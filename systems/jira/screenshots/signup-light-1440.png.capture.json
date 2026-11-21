@@ -1,0 +1,25 @@
+{
+  "captured": "2026-11-22",
+  "name": "signup-light-1440",
+  "url": "https://www.atlassian.com/try/cloud/signup",
+  "requestedUrl": "https://www.atlassian.com/try/cloud/signup?bundle=jira-software&edition=free",
+  "title": "Sign up - Jira - Try Atlassian Cloud | Atlassian",
+  "h1": "Get started with Jira",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "Empty signup wall. Email field empty. Sign up not clicked. Identity providers not clicked. Cookie banner hidden with CSS, not accepted.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "emailValueLength": 0
+}

@@ -1,0 +1,29 @@
+{
+  "captured": "2026-11-22",
+  "name": "agents-light-1440",
+  "url": "https://www.atlassian.com/software/jira/agents",
+  "requestedUrl": "https://www.atlassian.com/software/jira/agents",
+  "title": "Jira Agents | Third-Party AI Agent Integrations",
+  "h1": "Your tools, now your teammates",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}
