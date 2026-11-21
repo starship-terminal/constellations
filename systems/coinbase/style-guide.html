@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coinbase style guide</title>
+<meta name="description" content="Coinbase (coinbase.com) design tokens and the public site's components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --color-blue-0: #f5f8ff;
+  --color-blue-5: #d3e1ff;
+  --color-blue-10: #b0caff;
+  --color-blue-15: #92b6ff;
+  --color-blue-20: #73a2ff;
+  --color-blue-30: #4684ff;
+  --color-blue-40: #266eff;
+  --color-blue-50: #105eff;
+  --color-blue-60: #0052ff;
+  --color-blue-70: #004beb;
+  --color-blue-80: #003ec1;
+  --color-blue-90: #002982;
+  --color-blue-100: #00184d;
+  --color-green-0: #f5fffb;
+  --color-green-5: #cbf5e3;
+  --color-green-10: #a3ebcd;
+  --color-green-15: #83e0ba;
+  --color-green-20: #65d6a7;
+  --color-green-30: #3cc28a;
+  --color-green-40: #22ad73;
+  --color-green-50: #129961;
+  --color-green-60: #098551;
+  --color-green-70: #047043;
+  --color-green-80: #025332;
+  --color-green-90: #003923;
+  --color-green-100: #001f12;
+  --color-orange-0: #fffaf5;
+  --color-orange-5: #fee8d2;
+  --color-orange-10: #fdd5b0;
+  --color-orange-15: #fbc293;
+  --color-orange-20: #f9ae76;
+  --color-orange-30: #f48c4c;
+  --color-orange-40: #ed702f;
+  --color-orange-50: #e1591b;
+  --color-orange-60: #cf470e;
+  --color-orange-70: #b53606;
+  --color-orange-80: #912702;
+  --color-orange-90: #641a00;
+  --color-orange-100: #330d00;
+  --color-gray-0: #ffffff;
+  --color-gray-5: #f7f8f9;
+  --color-gray-10: #eef0f3;
+  --color-gray-15: #dee1e7;
+  --color-gray-20: #ced2db;
+  --color-gray-30: #b1b7c3;
+  --color-gray-40: #89909e;
+  --color-gray-50: #717886;
+  --color-gray-60: #5b616e;
+  --color-gray-70: #464b55;
+  --color-gray-80: #32353d;
+  --color-gray-90: #1e2025;
+  --color-gray-100: #0a0b0d;
+  --color-indigo-0: #f6f7ff;
+  --color-indigo-5: #e6e8ff;
+  --color-indigo-10: #d6dafe;
+  --color-indigo-15: #c6ccfd;
+  --color-indigo-20: #b5bdfd;
+  --color-indigo-30: #94a1fb;
+  --color-indigo-40: #7487f7;
+  --color-indigo-50: #596ff2;
+  --color-indigo-60: #425be9;
+  --color-indigo-70: #2f4ad7;
+  --color-indigo-80: #1f36ad;
+  --color-indigo-90: #11206b;
+  --color-indigo-100: #080f33;
+  --color-pink-0: #fff5ff;
+  --color-pink-5: #fde4fd;
+  --color-pink-10: #fbd4fa;
+  --color-pink-15: #f8c3f5;
+  --color-pink-20: #f4b2f0;
+  --color-pink-30: #eb8fe3;
+  --color-pink-40: #dd6ed1;
+  --color-pink-50: #cb51bb;
+  --color-pink-60: #b33aa2;
+  --color-pink-70: #952785;
+  --color-pink-80: #741a66;
+  --color-pink-90: #531148;
+  --color-pink-100: #330a2c;
+  --color-purple-0: #fbf7ff;
+  --color-purple-5: #f4e8ff;
+  --color-purple-10: #edd9ff;
+  --color-purple-15: #e6c9ff;
+  --color-purple-20: #deb8ff;
+  --color-purple-30: #cd99fd;
+  --color-purple-40: #bc7bfb;
+  --color-purple-50: #9d6bf2;
+  --color-purple-60: #8a55e9;
+  --color-purple-70: #7743d7;
+  --color-purple-80: #5a30ad;
+  --color-purple-90: #361b6b;
+  --color-purple-100: #190d33;
+  --color-red-0: #fff5f6;
+  --color-red-5: #fee1e4;
+  --color-red-10: #fdced2;
+  --color-red-15: #fbbabf;
+  --color-red-20: #f9a6ad;
+  --color-red-30: #f47f88;
+  --color-red-40: #ed5966;
+  --color-red-50: #e13947;
+  --color-red-60: #cf202f;
+  --color-red-70: #b50f1d;
+  --color-red-80: #910510;
+  --color-red-90: #640109;
+  --color-red-100: #330004;
+  --color-teal-0: #f0feff;
+  --color-teal-5: #bcf6fd;
+  --color-teal-10: #88edfb;
+  --color-teal-15: #5de2f8;
+  --color-teal-20: #33d5f4;
+  --color-teal-30: #00bceb;
+  --color-teal-40: #00a9dd;
+  --color-teal-50: #0093cb;
+  --color-teal-60: #007bb3;
+  --color-teal-70: #006195;
+  --color-teal-80: #004774;
+  --color-teal-90: #002f53;
+  --color-teal-100: #001b33;
+  --color-yellow-0: #fffcf1;
+  --color-yellow-5: #fff4c0;
+  --color-yellow-10: #fff091;
+  --color-yellow-15: #ffea64;
+  --color-yellow-20: #ffe436;
+  --color-yellow-30: #f7d21a;
+  --color-yellow-40: #ebba00;
+  --color-yellow-50: #cf9700;
+  --color-yellow-60: #ae7100;
+  --color-yellow-70: #884c00;
+  --color-yellow-80: #603000;
+  --color-yellow-90: #3a1400;
+  --color-yellow-100: #1b0600;
+  --color-chartreuse-0: #f5fffa;
+  --color-chartreuse-5: #ddfbe8;
+  --color-chartreuse-10: #c6f7d1;
+  --color-chartreuse-15: #b0f2b6;
+  --color-chartreuse-20: #9fee9b;
+  --color-chartreuse-30: #89df75;
+  --color-chartreuse-40: #7fd057;
+  --color-chartreuse-50: #56b340;
+  --color-chartreuse-60: #359730;
+  --color-chartreuse-70: #237a2b;
+  --color-chartreuse-80: #195d29;
+  --color-chartreuse-90: #114023;
+  --color-chartreuse-100: #071a11;
+  --color-role-fg: #0a0b0d;
+  --color-role-fgMuted: #5b616e;
+  --color-role-fgInverse: #ffffff;
+  --color-role-fgPrimary: #0052ff;
+  --color-role-fgWarning: #cf470e;
+  --color-role-fgPositive: #098551;
+  --color-role-fgNegative: #cf202f;
+  --color-role-bg: #ffffff;
+  --color-role-bgAlternate: #eef0f3;
+  --color-role-bgInverse: #0a0b0d;
+  --color-role-bgOverlay: rgba(50, 53, 61, 0.33);
+  --color-role-bgPrimary: #0052ff;
+  --color-role-bgPrimaryWash: #f5f8ff;
+  --color-role-bgSecondary: #eef0f3;
+  --color-role-bgTertiary: #ced2db;
+  --color-role-bgSecondaryWash: #f7f8f9;
+  --color-role-bgNegative: #cf202f;
+  --color-role-bgNegativeWash: #fff5f6;
+  --color-role-bgPositive: #098551;
+  --color-role-bgPositiveWash: #f5fffb;
+  --color-role-bgWarning: #cf470e;
+  --color-role-bgWarningWash: #fffaf5;
+  --color-role-bgLine: rgba(91, 97, 110, 0.2);
+  --color-role-bgLineHeavy: rgba(91, 97, 110, 0.66);
+  --color-role-bgLineInverse: #ffffff;
+  --color-role-bgLinePrimary: #0052ff;
+  --color-role-bgLinePrimarySubtle: #73a2ff;
+  --color-role-bgElevation1: #ffffff;
+  --color-role-bgElevation2: #ffffff;
+  --color-role-accentSubtleGreen: #f5fffb;
+  --color-role-accentBoldGreen: #098551;
+  --color-role-accentSubtleBlue: #f5f8ff;
+  --color-role-accentBoldBlue: #0052ff;
+  --color-role-accentSubtlePurple: #fbf7ff;
+  --color-role-accentBoldPurple: #5a30ad;
+  --color-role-accentSubtleYellow: #fffcf1;
+  --color-role-accentBoldYellow: #f7d21a;
+  --color-role-accentSubtleRed: #fff5f6;
+  --color-role-accentBoldRed: #cf202f;
+  --color-role-accentSubtleGray: #eef0f3;
+  --color-role-accentBoldGray: #32353d;
+  --color-role-transparent: rgba(255, 255, 255, 0);
+  --color-role-bgBrandHovered: rgba(0, 72, 224, 0.88);
+  --color-role-backgroundAltHovered: rgba(229, 231, 234, 0.88);
+  --color-role-backgroundAltPressed: rgba(225, 226, 229, 0.82);
+  --color-role-bgBrandPressed: rgba(0, 67, 209, 0.82);
+  --color-role-bgPrimaryHovered: rgba(17, 18, 20, 0.88);
+  --color-role-bgPrimaryPressed: rgba(21, 22, 24, 0.82);
+  --color-role-bgSecondaryHovered: rgba(229, 231, 234, 0.88);
+  --color-role-bgSecondaryPressed: rgba(242, 244, 246, 0.82);
+  --color-role-bgTertiaryHovered: rgba(247, 247, 247, 0.88);
+  --color-role-bgTertiaryPressed: rgba(244, 244, 244, 0.82);
+  --color-role-backgroundInverseDisabled: #b1b7c3;
+  --shadow-elevation1: 0px 8px 12px 0px rgba(91, 97, 110, 0.12);
+  --shadow-elevation2: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);
+  --radius-0: 0px;
+  --radius-100: 4px;
+  --radius-1000: 100000px;
+  --radius-200: 8px;
+  --radius-300: 12px;
+  --radius-400: 16px;
+  --radius-500: 24px;
+  --radius-600: 32px;
+  --radius-700: 40px;
+  --radius-800: 48px;
+  --radius-900: 56px;
+  --radius-control: 56px;
+  --radius-card: 0px;
+  --spacing-0: 0px;
+  --spacing-0-25: 2px;
+  --spacing-0-5: 4px;
+  --spacing-0-75: 6px;
+  --spacing-1: 8px;
+  --spacing-10: 80px;
+  --spacing-1-5: 12px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 40px;
+  --spacing-6: 48px;
+  --spacing-7: 56px;
+  --spacing-8: 64px;
+  --spacing-9: 72px;
+  --borderWidth-0: 0px;
+  --borderWidth-100: 1px;
+  --borderWidth-200: 2px;
+  --borderWidth-300: 4px;
+  --borderWidth-400: 6px;
+  --borderWidth-500: 8px;
+  --motion-duration-ui: 200ms;
+  --motion-duration-search: 200ms;
+  --motion-curve-ui: cubic-bezier(0.42, 0, 0.58, 1);
+  --iconSize-l: 32px;
+  --iconSize-m: 24px;
+  --iconSize-s: 16px;
+  --iconSize-xs: 12px;
+  --avatarSize-l: 32px;
+  --avatarSize-m: 24px;
+  --avatarSize-s: 16px;
+  --avatarSize-xl: 40px;
+  --avatarSize-xxl: 48px;
+  --avatarSize-xxxl: 56px;
+  --controlSize-checkboxSize: 20px;
+  --controlSize-radioSize: 20px;
+  --controlSize-switchHeight: 32px;
+  --controlSize-switchThumbSize: 30px;
+  --controlSize-switchWidth: 52px;
+  --controlSize-tileSize: 106px;
+  --z-nav: 5;
+  --layout-maxWidth-content: 656.5px;
+  --fontSize-body: 1rem;
+  --fontSize-caption: 0.8125rem;
+  --fontSize-display1: 4rem;
+  --fontSize-display2: 3rem;
+  --fontSize-display3: 2.5rem;
+  --fontSize-headline: 1rem;
+  --fontSize-label1: 0.875rem;
+  --fontSize-label2: 0.875rem;
+  --fontSize-legal: 0.8125rem;
+  --fontSize-title1: 1.75rem;
+  --fontSize-title2: 1.75rem;
+  --fontSize-title3: 1.25rem;
+  --fontSize-title4: 1.25rem;
+  --fontWeight-body: 400;
+  --fontWeight-caption: 600;
+  --fontWeight-display1: 400;
+  --fontWeight-display2: 400;
+  --fontWeight-display3: 400;
+  --fontWeight-headline: 600;
+  --fontWeight-label1: 600;
+  --fontWeight-label2: 400;
+  --fontWeight-legal: 400;
+  --fontWeight-title1: 600;
+  --fontWeight-title2: 400;
+  --fontWeight-title3: 600;
+  --fontWeight-title4: 400;
+  --lineHeight-body: 1.5rem;
+  --lineHeight-caption: 1rem;
+  --lineHeight-display1: 4.5rem;
+  --lineHeight-display2: 3.5rem;
+  --lineHeight-display3: 3rem;
+  --lineHeight-headline: 1.5rem;
+  --lineHeight-label1: 1.25rem;
+  --lineHeight-label2: 1.25rem;
+  --lineHeight-legal: 1rem;
+  --lineHeight-title1: 2.25rem;
+  --lineHeight-title2: 2.25rem;
+  --lineHeight-title3: 1.75rem;
+  --lineHeight-title4: 1.75rem;
+  --font-family-display: CoinbaseDisplay, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-sans: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-text: CoinbaseText, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-mono: CoinbaseMono, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-condensed: CoinbaseCondensed, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-displayMeasured: CoinbaseDisplay, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-size-hero: 80px;
+  --font-size-h1Explore: 28px;
+  --font-size-h2: 44px;
+  --font-size-mHero: 52px;
+  --font-size-nav: 16px;
+  --font-size-footer: 16px;
+  --font-size-banner: 16px;
+  --font-size-price: 16px;
+  --font-size-cta: 18px;
+  --font-size-signin: 16px;
+  --component-control-heightNavCta: 44px;
+  --component-control-heightNavItem: 44px;
+  --component-control-heightHeroCta: 56px;
+  --component-control-heightMenuButton: 47px;
+  --component-control-heightOAuth: 58px;
+  --component-control-heightChip: 44px;
+  --component-control-radiusCta: 56px;
+  --component-banner-height: 48px;
+  --component-nav-height: 117px;
+  --component-footer-height: 1230px;
+  --component-drawer-width: 390px;
+  --component-heroTitle-width: 656.5px;
+  --component-row-heightPrice: 76px;
+  --component-field-widthSignin: 398px;
+  --surface-page: var(--color-gray-0);
+  --surface-raised: var(--color-gray-10);
+  --surface-dark: var(--color-gray-100);
+  --text-primary: var(--color-gray-100);
+  --text-muted: var(--color-gray-60);
+  --text-nav: var(--color-gray-100);
+  --text-onDark: var(--color-gray-0);
+  --text-onAccent: var(--color-gray-0);
+  --text-banner: var(--color-indigo-90);
+  --accent: var(--color-blue-60);
+  --accentHover: var(--color-role-bgBrandHovered);
+  --border-input: var(--color-role-bgLineHeavy);
+  --border-subtle: rgba(91, 97, 110, 0.2);
+  --focus: #101010;
+  --overlay-scrim: rgba(50, 53, 61, 0.33);
+  --status-fgWarning: #cf470e;
+  --status-fgPositive: #098551;
+  --status-fgNegative: #cf202f;
+  --wash-bgPrimaryWash: #f5f8ff;
+  --wash-bgSecondaryWash: #f7f8f9;
+  --wash-bgNegativeWash: #fff5f6;
+  --wash-bgPositiveWash: #f5fffb;
+  --wash-bgWarningWash: #fffaf5;
+  --other-bgTertiary: #ced2db;
+  --line-bgLineInverse: #ffffff;
+  --line-bgLinePrimary: #0052ff;
+  --line-bgLinePrimarySubtle: #73a2ff;
+  --elevation-bgElevation1: #ffffff;
+  --elevation-bgElevation2: #ffffff;
+  --accentVariants-accentSubtleGreen: #f5fffb;
+  --accentVariants-accentBoldGreen: #098551;
+  --accentVariants-accentSubtleBlue: #f5f8ff;
+  --accentVariants-accentBoldBlue: #0052ff;
+  --accentVariants-accentSubtlePurple: #fbf7ff;
+  --accentVariants-accentBoldPurple: #5a30ad;
+  --accentVariants-accentSubtleYellow: #fffcf1;
+  --accentVariants-accentBoldYellow: #f7d21a;
+  --accentVariants-accentSubtleRed: #fff5f6;
+  --accentVariants-accentBoldRed: #cf202f;
+  --accentVariants-accentSubtleGray: #eef0f3;
+  --accentVariants-accentBoldGray: #32353d;
+  --interactive-backgroundAltHovered: rgba(229, 231, 234, 0.88);
+  --interactive-backgroundAltPressed: rgba(225, 226, 229, 0.82);
+  --interactive-bgBrandPressed: rgba(0, 67, 209, 0.82);
+  --interactive-bgPrimaryHovered: rgba(17, 18, 20, 0.88);
+  --interactive-bgPrimaryPressed: rgba(21, 22, 24, 0.82);
+  --interactive-bgSecondaryHovered: rgba(229, 231, 234, 0.88);
+  --interactive-bgSecondaryPressed: rgba(242, 244, 246, 0.82);
+  --interactive-bgTertiaryHovered: rgba(247, 247, 247, 0.88);
+  --interactive-bgTertiaryPressed: rgba(244, 244, 244, 0.82);
+  --interactive-backgroundInverseDisabled: #b1b7c3;
+  --sg-sans: var(--font-family-sans, "CoinbaseSans"), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sg-display: var(--font-family-display, "CoinbaseDisplay"), var(--sg-sans);
+  --sg-mono: var(--font-family-mono, "CoinbaseMono"), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+/* The dark set redeclares the same role names — scope it to .sg-dark so a dark
+   swatch resolves its own theme instead of leaking light values (or
+   clobbering the light vars on :root). */
+.sg-dark {
+  --text-fg: #ffffff;
+  --text-fgInverse: #0a0b0d;
+  --text-fgMuted: #8a919e;
+  --text-fgPrimary: #578bfa;
+  --text-fgPositive: #27ad75;
+  --text-fgNegative: #f0616d;
+  --text-fgWarning: #f89656;
+  --surface-bg: #0a0b0d;
+  --surface-bgAlternate: #141519;
+  --surface-bgInverse: #ffffff;
+  --surface-bgOverlay: rgba(10, 11, 13, 0.33);
+  --surface-bgPrimary: #578bfa;
+  --surface-bgPrimaryWash: #001033;
+  --surface-bgSecondary: #282b31;
+  --surface-bgTertiary: #32353d;
+  --surface-bgSecondaryWash: #141519;
+  --surface-bgNegative: #f0616d;
+  --surface-bgNegativeWash: #330004;
+  --surface-bgPositive: #27ad75;
+  --surface-bgPositiveWash: #001f12;
+  --surface-bgWarning: #f07836;
+  --surface-bgWarningWash: #330d00;
+  --surface-bgElevation1: #141519;
+  --surface-bgElevation2: #1e2025;
+  --surface-bgBrandHovered: rgba(95, 144, 250, 0.88);
+  --surface-bgBrandPressed: rgba(99, 147, 250, 0.82);
+  --surface-bgPrimaryHovered: rgba(247, 247, 247, 0.88);
+  --surface-bgPrimaryPressed: rgba(244, 244, 244, 0.82);
+  --surface-bgSecondaryHovered: rgba(47, 50, 55, 0.88);
+  --surface-bgSecondaryPressed: rgba(50, 53, 59, 0.82);
+  --surface-bgTertiaryHovered: rgba(17, 18, 20, 0.88);
+  --surface-bgTertiaryPressed: rgba(21, 22, 24, 0.82);
+  --line-bgLine: rgba(138, 145, 158, 0.2);
+  --line-bgLineInverse: #0a0b0d;
+  --line-bgLineHeavy: rgba(138, 145, 158, 0.66);
+  --line-bgLinePrimary: #578bfa;
+  --line-bgLinePrimarySubtle: #053bb1;
+  --accentVariants-accentSubtleGreen: #001f12;
+  --accentVariants-accentBoldGreen: #27ad75;
+  --accentVariants-accentSubtleBlue: #001033;
+  --accentVariants-accentBoldBlue: #3773f5;
+  --accentVariants-accentSubtlePurple: #190d33;
+  --accentVariants-accentBoldPurple: #e6c9ff;
+  --accentVariants-accentSubtleYellow: #1b0600;
+  --accentVariants-accentBoldYellow: #936000;
+  --accentVariants-accentSubtleRed: #330004;
+  --accentVariants-accentBoldRed: #f0616d;
+  --accentVariants-accentSubtleGray: #1e2025;
+  --accentVariants-accentBoldGray: #c1c6cf;
+  --other-backgroundAltHovered: rgba(27, 28, 32, 0.88);
+  --other-backgroundAltPressed: rgba(31, 32, 35, 0.82);
+  --other-backgroundInverseDisabled: #464b55;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #0a0b0d); background: var(--surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.1 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.4px; }
+h2.sh { font: 500 12px/1 var(--sg-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted, #5b616e); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-gray-10, #eef0f3); }
+.lead { max-width: 62ch; color: var(--text-muted, #5b616e); }
+.note { font-size: 13px; color: var(--text-muted, #5b616e); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #5b616e); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-subtle, rgba(91,97,110,.2)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-muted, #5b616e); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-muted, #5b616e); }
+/* ---- site mock: the marketing surface ---- */
+.mock { border: 1px solid var(--border-subtle, rgba(91,97,110,.2)); border-radius: var(--radius-50, 22px); overflow: hidden; }
+.mock.light { background: var(--surface-page, #fff); color: var(--text-primary, #0a0b0d); }
+.banner { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: var(--component-banner-height, 40px); padding: 6px 32px; font-size: 14px; background: var(--surface-raised, #eef0f3); color: var(--text-banner, #11206b); }
+.banner a { color: var(--text-banner, #11206b); }
+.navbar { display: flex; align-items: center; gap: 14px; height: calc(var(--component-nav-height, 117px) - var(--component-banner-height, 48px)); padding: 0 32px; font-size: 14px; color: var(--text-nav, #0a0b0d); border-bottom: 1px solid var(--border-subtle, rgba(91,97,110,.2)); }
+.navbar .lg { width: 24px; height: 24px; border-radius: 50%; background: var(--accent, #0052ff); display: inline-block; }
+.navbar .wm { font-family: var(--sg-display); font-size: 18px; font-weight: 600; color: var(--text-primary, #0a0b0d); }
+.navbar .sp { flex: 1; }
+.navbar .lk { height: var(--component-control-heightNavItem, 44px); display: inline-flex; align-items: center; padding: 0 6px; font-weight: 500; }
+.navbar .ghost { height: var(--component-control-heightNavItem, 44px); display: inline-flex; align-items: center; padding: 0 16px; border-radius: var(--component-control-radiusCta, 9999px); background: var(--surface-raised, #eef0f3); color: var(--text-primary, #0a0b0d); font-weight: 600; }
+.navbar .cta { height: var(--component-control-heightNavCta, 44px); display: inline-flex; align-items: center; padding: 0 16px; border-radius: var(--component-control-radiusCta, 9999px); background: var(--accent, #0052ff); color: var(--text-onAccent, #fff); font-weight: 600; }
+.hero { padding: 80px 40px 72px; text-align: center; }
+.hero h3 { font: 400 var(--font-size-hero, 80px)/1 var(--sg-display); margin: 0 auto 16px; max-width: 16ch; letter-spacing: -.02em; }
+.hero p { margin: 0 auto 36px; color: var(--text-muted, #5b616e); max-width: 46ch; }
+.herorow { display: flex; gap: 10px; align-items: center; justify-content: center; }
+.bigcta { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightHeroCta, 56px); padding: 0 24px; border-radius: var(--component-control-radiusCta, 9999px); background: var(--surface-dark, #0a0b0d); color: var(--text-onDark, #fff); font-size: 15px; font-weight: 600; }
+/* ---- the dark asset panel (.coinbase.dark island) ---- */
+.dband { background: var(--surface-dark, #0a0b0d); color: var(--text-onDark, #fff); padding: 40px 32px; }
+.dchips { display: flex; gap: 8px; margin-bottom: 24px; }
+.dchip { display: inline-flex; align-items: center; height: var(--component-control-heightChip, 44px); padding: 0 18px; border-radius: var(--component-control-radiusCta, 9999px); background: var(--color-gray-85, #282b31); color: var(--text-onDark, #fff); font-size: 14px; font-weight: 600; }
+.dchip.on { background: var(--color-gray-95, #0a0b0d); border: 1px solid rgba(255,255,255,.2); }
+.dcta { display: inline-flex; align-items: center; height: 56px; padding: 0 22px; border-radius: var(--component-control-radiusCta, 9999px); background: var(--surface-dark, #0a0b0d); border: 1px solid rgba(255,255,255,.2); color: var(--text-onDark, #fff); font-size: 15px; font-weight: 600; }
+/* ---- the explore price table ---- */
+.ptable { margin: 16px 24px 24px; border-collapse: collapse; font-size: 14px; width: calc(100% - 48px); }
+.ptable td, .ptable th { border-bottom: 1px solid var(--border-subtle, rgba(91,97,110,.2)); padding: 10px 14px; text-align: left; }
+.ptable .rate { font-family: var(--font-family-sans, "CoinbaseSans"), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: var(--font-size-price, 16px); }
+.ptable .up { color: var(--color-role-fgPositive, #098551); }
+.ptable .dn { color: var(--color-role-fgNegative, #cf202f); }
+/* ---- footer band (light grey, bgAlternate) ---- */
+.fband { background: var(--surface-raised, #eef0f3); color: var(--text-primary, #0a0b0d); padding: 40px 32px; }
+.fband .cols { display: flex; gap: 48px; font-size: 13px; }
+.fband .cols span { display: block; color: var(--text-muted, #5b616e); line-height: 2; }
+.fband .cols b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+/* ---- the sign-in card (app boundary) ---- */
+.signin { max-width: 440px; margin: 28px auto; padding: 28px; background: var(--surface-page, #fff); font-size: 14px; color: var(--text-primary, #0a0b0d); }
+.signin .h { font: 600 28px/1.3 var(--sg-display); margin-bottom: 16px; text-align: center; }
+.signin .field { height: 56px; border: 1px solid var(--border-input, rgba(91,97,110,.66)); border-radius: 8px; margin-bottom: 10px; display: flex; align-items: center; padding: 0 12px; color: var(--text-muted, #5b616e); }
+.signin .cont { display: flex; align-items: center; justify-content: center; height: 56px; border-radius: var(--component-control-radiusCta, 9999px); margin: 10px 0; font-size: 15px; font-weight: 600; background: var(--color-blue-55, #1460ff); color: var(--text-onAccent, #fff); }
+.signin .or { display: flex; align-items: center; gap: 12px; color: var(--text-muted, #5b616e); font-size: 12px; margin: 14px 0; }
+.signin .or::before, .signin .or::after { content: ""; flex: 1; border-top: 1px solid var(--border-subtle, rgba(91,97,110,.2)); }
+.signin .obtn { display: flex; align-items: center; justify-content: center; height: var(--component-control-heightOAuth, 58px); border-radius: var(--component-control-radiusCta, 9999px); margin-bottom: 10px; font-size: 14px; font-weight: 600; color: var(--text-primary, #0a0b0d); border: 1px solid var(--border-subtle, rgba(91,97,110,.2)); }
+.back { display: block; text-align: center; margin-top: 14px; font-size: 13px; color: var(--text-muted, #5b616e); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-gray-10, #eef0f3); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Coinbase style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The mock is a reconstruction from tokens, not captured pixels — the real captures are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+
+  <h2 class="sh">Coinbase, declared and measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. coinbase.com ships the Coinbase Design System (CDS): the whole theme is declared inline on <code>div.coinbase.light</code> (~830 custom properties) and <code>div.coinbase.dark</code> (~210) — eleven primitive ramps (<code>--light-blue*</code>/<code>--light-gray*</code>/<code>--light-green*</code>/…, blue60 #0052ff the brand), the 54-role <code>--color-*</code>/<code>--lightColor-*</code>/<code>--darkColor-*</code> semantic layer (fg, bg, bgAlternate, bgLine, washes, accents), the <code>--space-*</code>/<code>--borderRadius-*</code>/<code>--borderWidth-*</code>/<code>--fontSize-*</code> scales, the <code>--shadow-elevation*</code> ladder and the <code>--cds-font-*</code> faces (CoinbaseDisplay, CoinbaseSans, CoinbaseText, CoinbaseMono, CoinbaseCondensed). Roles are measured on the painted chrome: the blue Sign-up pill, the white nav over its hairline, the dark asset band's chips, the grey footer band and the sign-in card.</p>
+  <p class="note">One light scheme across the marketing routes with a <code>.coinbase.dark</code> asset band as a theme island; login.coinbase.com/signin is a separate app surface measured at rest as the sign-in boundary (Singapore locale, en-SG — the site geolocates). Read from coinbase.com, signed out, in headed Chromium under Xvfb (Cloudflare gates headless). Nothing was signed into, typed into, or submitted.</p>
+
+  <h2 class="sh">The marketing surface</h2>
+  <p class="lead">The light-grey promo row above the sticky white nav (Coinbase logo, the Crypto/Individuals/Businesses/Institutions/Developers/Agents/Company links, the grey Sign-in pill and the blue Sign-up pill), then the CoinbaseDisplay-scale hero with its dark CTA pill.</p>
+  <div class="mock light">
+    <div class="banner"><span><a>Sign up as an Accredited Investor and get S$300 Bitcoin on your first crypto →</a></span></div>
+    <div class="navbar"><span class="lg"></span><span class="lk">Crypto</span><span class="lk">Individuals</span><span class="lk">Businesses</span><span class="lk">Institutions</span><span class="lk">Developers</span><span class="lk">Agents</span><span class="lk">Company</span><span class="sp"></span><span class="ghost">Sign in</span><span class="cta">Sign up</span></div>
+    <div class="hero">
+      <h3>The most trusted crypto exchange</h3>
+      <p>Coinbase is the most trusted platform in Singapore for buying, selling and trading crypto.</p>
+      <div class="herorow"><span class="bigcta">Sign up with Singpass</span></div>
+    </div>
+    <div class="dband">
+      <div class="dchips"><span class="dchip on">Tradable</span><span class="dchip">Top gainers</span><span class="dchip">New on Coinbase</span></div>
+      <span class="dcta">See more assets</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Explore — the price table</h2>
+  <p class="lead">The market table on /explore: hairline-ruled rows with a hover wash, figures in CoinbaseSans 16px/24px and positive/negative change chips in the declared status colours.</p>
+  <div class="mock light">
+    <table class="ptable"><tr><th>Asset</th><th>Price</th><th>24h change</th></tr><tr><td>Bitcoin</td><td class="rate">S$118,432</td><td class="up">+1.84%</td></tr><tr><td>Ethereum</td><td class="rate">S$4,215</td><td class="dn">−0.62%</td></tr></table>
+  </div>
+
+  <h2 class="sh">Footer band</h2>
+  <p class="lead">The footer's bgAlternate ground — muted link columns, social icons and the region selector; hairline rules between its blocks.</p>
+  <div class="mock light"><div class="fband">
+    <div class="cols"><div><b>Products</b><span>Coinbase One</span><span>Advanced Trade</span></div><div><b>Learn</b><span>Prices</span><span>Guides</span></div><div><b>Company</b><span>About</span><span>Careers</span><span>Singapore · English</span></div></div>
+  </div></div>
+
+  <h2 class="sh">The sign-in card</h2>
+  <p class="lead">login.coinbase.com/signin is a separate app surface — a centred column with an email field, a blue Continue pill, an OR divider and OAuth/passkey rows; measured at rest, never typed into or submitted.</p>
+  <div class="mock light"><div class="signin">
+    <div class="h">Sign in to Coinbase</div>
+    <div class="field">Email</div>
+    <div class="cont">Continue</div>
+    <div class="or">OR</div>
+    <div class="obtn">Sign in with Google</div>
+    <div class="obtn">Sign in with Apple</div>
+    <div class="obtn">Sign in with passkey</div>
+    <span class="back">New to Coinbase? Sign up</span>
+  </div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The page ground is <code>light.surface.page</code> (bg #fff); raised bands are <code>light.surface.raised</code> = bgAlternate #eef0f3 (the promo row and footer); the asset panel is <code>light.surface.dark</code> = bgInverse #0a0b0d. Ink is <code>light.text.primary</code> = fg #0a0b0d with <code>light.text.muted</code> = fgMuted #5b616e for secondary copy; the accent is <code>light.accent</code> = bgPrimary = blue60 #0052ff. Status colours come off the declared role layer: fgPositive #098551, fgNegative #cf202f, fgWarning #cf470e.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the 44px nav controls and 56px CTA pills, the chip and OAuth row heights, the promo/nav/footer band heights, the mobile menu overlay and the sign-in field width.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Harvested the CDS theme inline on div.coinbase.light and div.coinbase.dark (the primitive ramps, the 54-role semantic layer, the space/radius/width/type scales and the shadow ladder) and read computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible and CDP-forced pressed states measured per component; the mobile menu read at its toggled open state</td></tr><tr><td>No provenance</td><td>Every token names its declared variable on the theme element or the measurement it came from; values painted by the browser are labelled computed, not declared</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"blue":{"0":{"v":"#f5f8ff","t":"color","s":"declared --light-blue0 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared blue 0 (light scheme)."},"5":{"v":"#d3e1ff","t":"color","s":"declared --light-blue5 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared blue 5 (light scheme)."},"10":{"v":"#b0caff","t":"color","s":"declared --light-blue10 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared blue 10 (light scheme)."},"15":{"v":"#92b6ff","t":"color","s":"declared --light-blue15 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared blue 15 (light scheme)."},"20":{"v":"#73a2ff","t":"color","s":"declared --light-blue20 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared blue 20 (light scheme)."},"30":{"v":"#4684ff","t":"color","s":"declared --light-blue30 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared blue 30 (light scheme)."},"40":{"v":"#266eff","t":"color","s":"declared --light-blue40 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared blue 40 (light scheme)."},"50":{"v":"#105eff","t":"color","s":"declared --light-blue50 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared blue 50 (light scheme)."},"60":{"v":"#0052ff","t":"color","s":"declared --light-blue60 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared blue 60 (light scheme)."},"70":{"v":"#004beb","t":"color","s":"declared --light-blue70 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared blue 70 (light scheme)."},"80":{"v":"#003ec1","t":"color","s":"declared --light-blue80 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared blue 80 (light scheme)."},"90":{"v":"#002982","t":"color","s":"declared --light-blue90 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared blue 90 (light scheme)."},"100":{"v":"#00184d","t":"color","s":"declared --light-blue100 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared blue 100 (light scheme)."}},"green":{"0":{"v":"#f5fffb","t":"color","s":"declared --light-green0 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared green 0 (light scheme)."},"5":{"v":"#cbf5e3","t":"color","s":"declared --light-green5 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared green 5 (light scheme)."},"10":{"v":"#a3ebcd","t":"color","s":"declared --light-green10 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared green 10 (light scheme)."},"15":{"v":"#83e0ba","t":"color","s":"declared --light-green15 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared green 15 (light scheme)."},"20":{"v":"#65d6a7","t":"color","s":"declared --light-green20 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared green 20 (light scheme)."},"30":{"v":"#3cc28a","t":"color","s":"declared --light-green30 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared green 30 (light scheme)."},"40":{"v":"#22ad73","t":"color","s":"declared --light-green40 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared green 40 (light scheme)."},"50":{"v":"#129961","t":"color","s":"declared --light-green50 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared green 50 (light scheme)."},"60":{"v":"#098551","t":"color","s":"declared --light-green60 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared green 60 (light scheme)."},"70":{"v":"#047043","t":"color","s":"declared --light-green70 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared green 70 (light scheme)."},"80":{"v":"#025332","t":"color","s":"declared --light-green80 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared green 80 (light scheme)."},"90":{"v":"#003923","t":"color","s":"declared --light-green90 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared green 90 (light scheme)."},"100":{"v":"#001f12","t":"color","s":"declared --light-green100 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared green 100 (light scheme)."}},"orange":{"0":{"v":"#fffaf5","t":"color","s":"declared --light-orange0 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared orange 0 (light scheme)."},"5":{"v":"#fee8d2","t":"color","s":"declared --light-orange5 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared orange 5 (light scheme)."},"10":{"v":"#fdd5b0","t":"color","s":"declared --light-orange10 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared orange 10 (light scheme)."},"15":{"v":"#fbc293","t":"color","s":"declared --light-orange15 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared orange 15 (light scheme)."},"20":{"v":"#f9ae76","t":"color","s":"declared --light-orange20 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared orange 20 (light scheme)."},"30":{"v":"#f48c4c","t":"color","s":"declared --light-orange30 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared orange 30 (light scheme)."},"40":{"v":"#ed702f","t":"color","s":"declared --light-orange40 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared orange 40 (light scheme)."},"50":{"v":"#e1591b","t":"color","s":"declared --light-orange50 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared orange 50 (light scheme)."},"60":{"v":"#cf470e","t":"color","s":"declared --light-orange60 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared orange 60 (light scheme)."},"70":{"v":"#b53606","t":"color","s":"declared --light-orange70 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared orange 70 (light scheme)."},"80":{"v":"#912702","t":"color","s":"declared --light-orange80 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared orange 80 (light scheme)."},"90":{"v":"#641a00","t":"color","s":"declared --light-orange90 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared orange 90 (light scheme)."},"100":{"v":"#330d00","t":"color","s":"declared --light-orange100 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared orange 100 (light scheme)."}},"gray":{"0":{"v":"#ffffff","t":"color","s":"declared --light-gray0 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared gray 0 (light scheme)."},"5":{"v":"#f7f8f9","t":"color","s":"declared --light-gray5 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared gray 5 (light scheme)."},"10":{"v":"#eef0f3","t":"color","s":"declared --light-gray10 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared gray 10 (light scheme)."},"15":{"v":"#dee1e7","t":"color","s":"declared --light-gray15 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared gray 15 (light scheme)."},"20":{"v":"#ced2db","t":"color","s":"declared --light-gray20 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared gray 20 (light scheme)."},"30":{"v":"#b1b7c3","t":"color","s":"declared --light-gray30 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared gray 30 (light scheme)."},"40":{"v":"#89909e","t":"color","s":"declared --light-gray40 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared gray 40 (light scheme)."},"50":{"v":"#717886","t":"color","s":"declared --light-gray50 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared gray 50 (light scheme)."},"60":{"v":"#5b616e","t":"color","s":"declared --light-gray60 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared gray 60 (light scheme)."},"70":{"v":"#464b55","t":"color","s":"declared --light-gray70 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared gray 70 (light scheme)."},"80":{"v":"#32353d","t":"color","s":"declared --light-gray80 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared gray 80 (light scheme)."},"90":{"v":"#1e2025","t":"color","s":"declared --light-gray90 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared gray 90 (light scheme)."},"100":{"v":"#0a0b0d","t":"color","s":"declared --light-gray100 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared gray 100 (light scheme)."}},"indigo":{"0":{"v":"#f6f7ff","t":"color","s":"declared --light-indigo0 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared indigo 0 (light scheme)."},"5":{"v":"#e6e8ff","t":"color","s":"declared --light-indigo5 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared indigo 5 (light scheme)."},"10":{"v":"#d6dafe","t":"color","s":"declared --light-indigo10 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared indigo 10 (light scheme)."},"15":{"v":"#c6ccfd","t":"color","s":"declared --light-indigo15 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared indigo 15 (light scheme)."},"20":{"v":"#b5bdfd","t":"color","s":"declared --light-indigo20 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared indigo 20 (light scheme)."},"30":{"v":"#94a1fb","t":"color","s":"declared --light-indigo30 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared indigo 30 (light scheme)."},"40":{"v":"#7487f7","t":"color","s":"declared --light-indigo40 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared indigo 40 (light scheme)."},"50":{"v":"#596ff2","t":"color","s":"declared --light-indigo50 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared indigo 50 (light scheme)."},"60":{"v":"#425be9","t":"color","s":"declared --light-indigo60 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared indigo 60 (light scheme)."},"70":{"v":"#2f4ad7","t":"color","s":"declared --light-indigo70 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared indigo 70 (light scheme)."},"80":{"v":"#1f36ad","t":"color","s":"declared --light-indigo80 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared indigo 80 (light scheme)."},"90":{"v":"#11206b","t":"color","s":"declared --light-indigo90 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared indigo 90 (light scheme)."},"100":{"v":"#080f33","t":"color","s":"declared --light-indigo100 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared indigo 100 (light scheme)."}},"pink":{"0":{"v":"#fff5ff","t":"color","s":"declared --light-pink0 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared pink 0 (light scheme)."},"5":{"v":"#fde4fd","t":"color","s":"declared --light-pink5 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared pink 5 (light scheme)."},"10":{"v":"#fbd4fa","t":"color","s":"declared --light-pink10 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared pink 10 (light scheme)."},"15":{"v":"#f8c3f5","t":"color","s":"declared --light-pink15 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared pink 15 (light scheme)."},"20":{"v":"#f4b2f0","t":"color","s":"declared --light-pink20 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared pink 20 (light scheme)."},"30":{"v":"#eb8fe3","t":"color","s":"declared --light-pink30 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared pink 30 (light scheme)."},"40":{"v":"#dd6ed1","t":"color","s":"declared --light-pink40 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared pink 40 (light scheme)."},"50":{"v":"#cb51bb","t":"color","s":"declared --light-pink50 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared pink 50 (light scheme)."},"60":{"v":"#b33aa2","t":"color","s":"declared --light-pink60 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared pink 60 (light scheme)."},"70":{"v":"#952785","t":"color","s":"declared --light-pink70 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared pink 70 (light scheme)."},"80":{"v":"#741a66","t":"color","s":"declared --light-pink80 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared pink 80 (light scheme)."},"90":{"v":"#531148","t":"color","s":"declared --light-pink90 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared pink 90 (light scheme)."},"100":{"v":"#330a2c","t":"color","s":"declared --light-pink100 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared pink 100 (light scheme)."}},"purple":{"0":{"v":"#fbf7ff","t":"color","s":"declared --light-purple0 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared purple 0 (light scheme)."},"5":{"v":"#f4e8ff","t":"color","s":"declared --light-purple5 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared purple 5 (light scheme)."},"10":{"v":"#edd9ff","t":"color","s":"declared --light-purple10 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared purple 10 (light scheme)."},"15":{"v":"#e6c9ff","t":"color","s":"declared --light-purple15 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared purple 15 (light scheme)."},"20":{"v":"#deb8ff","t":"color","s":"declared --light-purple20 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared purple 20 (light scheme)."},"30":{"v":"#cd99fd","t":"color","s":"declared --light-purple30 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared purple 30 (light scheme)."},"40":{"v":"#bc7bfb","t":"color","s":"declared --light-purple40 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared purple 40 (light scheme)."},"50":{"v":"#9d6bf2","t":"color","s":"declared --light-purple50 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared purple 50 (light scheme)."},"60":{"v":"#8a55e9","t":"color","s":"declared --light-purple60 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared purple 60 (light scheme)."},"70":{"v":"#7743d7","t":"color","s":"declared --light-purple70 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared purple 70 (light scheme)."},"80":{"v":"#5a30ad","t":"color","s":"declared --light-purple80 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared purple 80 (light scheme)."},"90":{"v":"#361b6b","t":"color","s":"declared --light-purple90 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared purple 90 (light scheme)."},"100":{"v":"#190d33","t":"color","s":"declared --light-purple100 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared purple 100 (light scheme)."}},"red":{"0":{"v":"#fff5f6","t":"color","s":"declared --light-red0 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared red 0 (light scheme)."},"5":{"v":"#fee1e4","t":"color","s":"declared --light-red5 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared red 5 (light scheme)."},"10":{"v":"#fdced2","t":"color","s":"declared --light-red10 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared red 10 (light scheme)."},"15":{"v":"#fbbabf","t":"color","s":"declared --light-red15 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared red 15 (light scheme)."},"20":{"v":"#f9a6ad","t":"color","s":"declared --light-red20 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared red 20 (light scheme)."},"30":{"v":"#f47f88","t":"color","s":"declared --light-red30 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared red 30 (light scheme)."},"40":{"v":"#ed5966","t":"color","s":"declared --light-red40 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared red 40 (light scheme)."},"50":{"v":"#e13947","t":"color","s":"declared --light-red50 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared red 50 (light scheme)."},"60":{"v":"#cf202f","t":"color","s":"declared --light-red60 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared red 60 (light scheme)."},"70":{"v":"#b50f1d","t":"color","s":"declared --light-red70 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared red 70 (light scheme)."},"80":{"v":"#910510","t":"color","s":"declared --light-red80 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared red 80 (light scheme)."},"90":{"v":"#640109","t":"color","s":"declared --light-red90 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared red 90 (light scheme)."},"100":{"v":"#330004","t":"color","s":"declared --light-red100 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared red 100 (light scheme)."}},"teal":{"0":{"v":"#f0feff","t":"color","s":"declared --light-teal0 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared teal 0 (light scheme)."},"5":{"v":"#bcf6fd","t":"color","s":"declared --light-teal5 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared teal 5 (light scheme)."},"10":{"v":"#88edfb","t":"color","s":"declared --light-teal10 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared teal 10 (light scheme)."},"15":{"v":"#5de2f8","t":"color","s":"declared --light-teal15 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared teal 15 (light scheme)."},"20":{"v":"#33d5f4","t":"color","s":"declared --light-teal20 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared teal 20 (light scheme)."},"30":{"v":"#00bceb","t":"color","s":"declared --light-teal30 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared teal 30 (light scheme)."},"40":{"v":"#00a9dd","t":"color","s":"declared --light-teal40 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared teal 40 (light scheme)."},"50":{"v":"#0093cb","t":"color","s":"declared --light-teal50 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared teal 50 (light scheme)."},"60":{"v":"#007bb3","t":"color","s":"declared --light-teal60 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared teal 60 (light scheme)."},"70":{"v":"#006195","t":"color","s":"declared --light-teal70 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared teal 70 (light scheme)."},"80":{"v":"#004774","t":"color","s":"declared --light-teal80 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared teal 80 (light scheme)."},"90":{"v":"#002f53","t":"color","s":"declared --light-teal90 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared teal 90 (light scheme)."},"100":{"v":"#001b33","t":"color","s":"declared --light-teal100 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared teal 100 (light scheme)."}},"yellow":{"0":{"v":"#fffcf1","t":"color","s":"declared --light-yellow0 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared yellow 0 (light scheme)."},"5":{"v":"#fff4c0","t":"color","s":"declared --light-yellow5 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared yellow 5 (light scheme)."},"10":{"v":"#fff091","t":"color","s":"declared --light-yellow10 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared yellow 10 (light scheme)."},"15":{"v":"#ffea64","t":"color","s":"declared --light-yellow15 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared yellow 15 (light scheme)."},"20":{"v":"#ffe436","t":"color","s":"declared --light-yellow20 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared yellow 20 (light scheme)."},"30":{"v":"#f7d21a","t":"color","s":"declared --light-yellow30 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared yellow 30 (light scheme)."},"40":{"v":"#ebba00","t":"color","s":"declared --light-yellow40 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared yellow 40 (light scheme)."},"50":{"v":"#cf9700","t":"color","s":"declared --light-yellow50 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared yellow 50 (light scheme)."},"60":{"v":"#ae7100","t":"color","s":"declared --light-yellow60 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared yellow 60 (light scheme)."},"70":{"v":"#884c00","t":"color","s":"declared --light-yellow70 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared yellow 70 (light scheme)."},"80":{"v":"#603000","t":"color","s":"declared --light-yellow80 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared yellow 80 (light scheme)."},"90":{"v":"#3a1400","t":"color","s":"declared --light-yellow90 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared yellow 90 (light scheme)."},"100":{"v":"#1b0600","t":"color","s":"declared --light-yellow100 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared yellow 100 (light scheme)."}},"chartreuse":{"0":{"v":"#f5fffa","t":"color","s":"declared --light-chartreuse0 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared chartreuse 0 (light scheme)."},"5":{"v":"#ddfbe8","t":"color","s":"declared --light-chartreuse5 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared chartreuse 5 (light scheme)."},"10":{"v":"#c6f7d1","t":"color","s":"declared --light-chartreuse10 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared chartreuse 10 (light scheme)."},"15":{"v":"#b0f2b6","t":"color","s":"declared --light-chartreuse15 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared chartreuse 15 (light scheme)."},"20":{"v":"#9fee9b","t":"color","s":"declared --light-chartreuse20 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared chartreuse 20 (light scheme)."},"30":{"v":"#89df75","t":"color","s":"declared --light-chartreuse30 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared chartreuse 30 (light scheme)."},"40":{"v":"#7fd057","t":"color","s":"declared --light-chartreuse40 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared chartreuse 40 (light scheme)."},"50":{"v":"#56b340","t":"color","s":"declared --light-chartreuse50 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared chartreuse 50 (light scheme)."},"60":{"v":"#359730","t":"color","s":"declared --light-chartreuse60 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared chartreuse 60 (light scheme)."},"70":{"v":"#237a2b","t":"color","s":"declared --light-chartreuse70 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared chartreuse 70 (light scheme)."},"80":{"v":"#195d29","t":"color","s":"declared --light-chartreuse80 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared chartreuse 80 (light scheme)."},"90":{"v":"#114023","t":"color","s":"declared --light-chartreuse90 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared chartreuse 90 (light scheme)."},"100":{"v":"#071a11","t":"color","s":"declared --light-chartreuse100 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared chartreuse 100 (light scheme)."}},"role":{"fg":{"v":"#0a0b0d","t":"color","s":"declared --color-fg on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role fg."},"fgMuted":{"v":"#5b616e","t":"color","s":"declared --color-fgMuted on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role fgMuted."},"fgInverse":{"v":"#ffffff","t":"color","s":"declared --color-fgInverse on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role fgInverse."},"fgPrimary":{"v":"#0052ff","t":"color","s":"declared --color-fgPrimary on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role fgPrimary."},"fgWarning":{"v":"#cf470e","t":"color","s":"declared --color-fgWarning on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role fgWarning."},"fgPositive":{"v":"#098551","t":"color","s":"declared --color-fgPositive on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role fgPositive."},"fgNegative":{"v":"#cf202f","t":"color","s":"declared --color-fgNegative on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role fgNegative."},"bg":{"v":"#ffffff","t":"color","s":"declared --color-bg on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bg."},"bgAlternate":{"v":"#eef0f3","t":"color","s":"declared --color-bgAlternate on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgAlternate."},"bgInverse":{"v":"#0a0b0d","t":"color","s":"declared --color-bgInverse on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgInverse."},"bgOverlay":{"v":"rgba(50, 53, 61, 0.33)","t":"color","s":"declared --color-bgOverlay on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgOverlay."},"bgPrimary":{"v":"#0052ff","t":"color","s":"declared --color-bgPrimary on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgPrimary."},"bgPrimaryWash":{"v":"#f5f8ff","t":"color","s":"declared --color-bgPrimaryWash on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgPrimaryWash."},"bgSecondary":{"v":"#eef0f3","t":"color","s":"declared --color-bgSecondary on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgSecondary."},"bgTertiary":{"v":"#ced2db","t":"color","s":"declared --color-bgTertiary on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgTertiary."},"bgSecondaryWash":{"v":"#f7f8f9","t":"color","s":"declared --color-bgSecondaryWash on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgSecondaryWash."},"bgNegative":{"v":"#cf202f","t":"color","s":"declared --color-bgNegative on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgNegative."},"bgNegativeWash":{"v":"#fff5f6","t":"color","s":"declared --color-bgNegativeWash on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgNegativeWash."},"bgPositive":{"v":"#098551","t":"color","s":"declared --color-bgPositive on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgPositive."},"bgPositiveWash":{"v":"#f5fffb","t":"color","s":"declared --color-bgPositiveWash on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgPositiveWash."},"bgWarning":{"v":"#cf470e","t":"color","s":"declared --color-bgWarning on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgWarning."},"bgWarningWash":{"v":"#fffaf5","t":"color","s":"declared --color-bgWarningWash on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgWarningWash."},"bgLine":{"v":"rgba(91, 97, 110, 0.2)","t":"color","s":"declared --color-bgLine on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgLine."},"bgLineHeavy":{"v":"rgba(91, 97, 110, 0.66)","t":"color","s":"declared --color-bgLineHeavy on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgLineHeavy."},"bgLineInverse":{"v":"#ffffff","t":"color","s":"declared --color-bgLineInverse on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgLineInverse."},"bgLinePrimary":{"v":"#0052ff","t":"color","s":"declared --color-bgLinePrimary on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgLinePrimary."},"bgLinePrimarySubtle":{"v":"#73a2ff","t":"color","s":"declared --color-bgLinePrimarySubtle on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgLinePrimarySubtle."},"bgElevation1":{"v":"#ffffff","t":"color","s":"declared --color-bgElevation1 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgElevation1."},"bgElevation2":{"v":"#ffffff","t":"color","s":"declared --color-bgElevation2 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgElevation2."},"accentSubtleGreen":{"v":"#f5fffb","t":"color","s":"declared --color-accentSubtleGreen on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role accentSubtleGreen."},"accentBoldGreen":{"v":"#098551","t":"color","s":"declared --color-accentBoldGreen on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role accentBoldGreen."},"accentSubtleBlue":{"v":"#f5f8ff","t":"color","s":"declared --color-accentSubtleBlue on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role accentSubtleBlue."},"accentBoldBlue":{"v":"#0052ff","t":"color","s":"declared --color-accentBoldBlue on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role accentBoldBlue."},"accentSubtlePurple":{"v":"#fbf7ff","t":"color","s":"declared --color-accentSubtlePurple on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role accentSubtlePurple."},"accentBoldPurple":{"v":"#5a30ad","t":"color","s":"declared --color-accentBoldPurple on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role accentBoldPurple."},"accentSubtleYellow":{"v":"#fffcf1","t":"color","s":"declared --color-accentSubtleYellow on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role accentSubtleYellow."},"accentBoldYellow":{"v":"#f7d21a","t":"color","s":"declared --color-accentBoldYellow on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role accentBoldYellow."},"accentSubtleRed":{"v":"#fff5f6","t":"color","s":"declared --color-accentSubtleRed on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role accentSubtleRed."},"accentBoldRed":{"v":"#cf202f","t":"color","s":"declared --color-accentBoldRed on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role accentBoldRed."},"accentSubtleGray":{"v":"#eef0f3","t":"color","s":"declared --color-accentSubtleGray on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role accentSubtleGray."},"accentBoldGray":{"v":"#32353d","t":"color","s":"declared --color-accentBoldGray on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role accentBoldGray."},"transparent":{"v":"rgba(255, 255, 255, 0)","t":"color","s":"declared --color-transparent on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role transparent."},"bgBrandHovered":{"v":"rgba(0, 72, 224, 0.88)","t":"color","s":"declared --color-bgBrandHovered on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgBrandHovered."},"backgroundAltHovered":{"v":"rgba(229, 231, 234, 0.88)","t":"color","s":"declared --color-backgroundAltHovered on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role backgroundAltHovered."},"backgroundAltPressed":{"v":"rgba(225, 226, 229, 0.82)","t":"color","s":"declared --color-backgroundAltPressed on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role backgroundAltPressed."},"bgBrandPressed":{"v":"rgba(0, 67, 209, 0.82)","t":"color","s":"declared --color-bgBrandPressed on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgBrandPressed."},"bgPrimaryHovered":{"v":"rgba(17, 18, 20, 0.88)","t":"color","s":"declared --color-bgPrimaryHovered on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgPrimaryHovered."},"bgPrimaryPressed":{"v":"rgba(21, 22, 24, 0.82)","t":"color","s":"declared --color-bgPrimaryPressed on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgPrimaryPressed."},"bgSecondaryHovered":{"v":"rgba(229, 231, 234, 0.88)","t":"color","s":"declared --color-bgSecondaryHovered on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgSecondaryHovered."},"bgSecondaryPressed":{"v":"rgba(242, 244, 246, 0.82)","t":"color","s":"declared --color-bgSecondaryPressed on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgSecondaryPressed."},"bgTertiaryHovered":{"v":"rgba(247, 247, 247, 0.88)","t":"color","s":"declared --color-bgTertiaryHovered on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgTertiaryHovered."},"bgTertiaryPressed":{"v":"rgba(244, 244, 244, 0.82)","t":"color","s":"declared --color-bgTertiaryPressed on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role bgTertiaryPressed."},"backgroundInverseDisabled":{"v":"#b1b7c3","t":"color","s":"declared --color-backgroundInverseDisabled on div.coinbase.light (raw/css-vars.json themes)","d":"Declared active-scheme colour role backgroundInverseDisabled."}}},"measured":{},"shadow":{"elevation1":{"v":[{"color":"rgba(91, 97, 110, 0.12)","offsetX":"0px","offsetY":"8px","blur":"12px","spread":"0px"}],"t":"shadow","s":"declared --shadow-elevation1 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared shadow elevation 1."},"elevation2":{"v":[{"color":"rgba(0, 0, 0, 0.12)","offsetX":"0px","offsetY":"8px","blur":"24px","spread":"0px"}],"t":"shadow","s":"declared --shadow-elevation2 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared shadow elevation 2."}},"radius":{"0":{"v":"0px","t":"dimension","s":"declared --borderRadius-0 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared borderRadius 0."},"100":{"v":"4px","t":"dimension","s":"declared --borderRadius-100 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared borderRadius 100."},"1000":{"v":"100000px","t":"dimension","s":"declared --borderRadius-1000 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared borderRadius 1000."},"200":{"v":"8px","t":"dimension","s":"declared --borderRadius-200 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared borderRadius 200."},"300":{"v":"12px","t":"dimension","s":"declared --borderRadius-300 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared borderRadius 300."},"400":{"v":"16px","t":"dimension","s":"declared --borderRadius-400 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared borderRadius 400."},"500":{"v":"24px","t":"dimension","s":"declared --borderRadius-500 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared borderRadius 500."},"600":{"v":"32px","t":"dimension","s":"declared --borderRadius-600 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared borderRadius 600."},"700":{"v":"40px","t":"dimension","s":"declared --borderRadius-700 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared borderRadius 700."},"800":{"v":"48px","t":"dimension","s":"declared --borderRadius-800 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared borderRadius 800."},"900":{"v":"56px","t":"dimension","s":"declared --borderRadius-900 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared borderRadius 900."},"control":{"v":"56px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"The measured Sign-up pill corner radius."},"card":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of carousel-card default (raw/components-computed.json)","d":"The measured promo-card corner."}},"spacing":{"0":{"v":"0px","t":"dimension","s":"declared --space-0 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared space 0."},"0.25":{"v":"2px","t":"dimension","s":"declared --space-0_25 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared space 0.25."},"0.5":{"v":"4px","t":"dimension","s":"declared --space-0_5 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared space 0.5."},"0.75":{"v":"6px","t":"dimension","s":"declared --space-0_75 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared space 0.75."},"1":{"v":"8px","t":"dimension","s":"declared --space-1 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared space 1."},"10":{"v":"80px","t":"dimension","s":"declared --space-10 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared space 10."},"1.5":{"v":"12px","t":"dimension","s":"declared --space-1_5 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared space 1.5."},"2":{"v":"16px","t":"dimension","s":"declared --space-2 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared space 2."},"3":{"v":"24px","t":"dimension","s":"declared --space-3 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared space 3."},"4":{"v":"32px","t":"dimension","s":"declared --space-4 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared space 4."},"5":{"v":"40px","t":"dimension","s":"declared --space-5 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared space 5."},"6":{"v":"48px","t":"dimension","s":"declared --space-6 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared space 6."},"7":{"v":"56px","t":"dimension","s":"declared --space-7 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared space 7."},"8":{"v":"64px","t":"dimension","s":"declared --space-8 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared space 8."},"9":{"v":"72px","t":"dimension","s":"declared --space-9 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared space 9."}},"borderWidth":{"0":{"v":"0px","t":"dimension","s":"declared --borderWidth-0 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared borderWidth 0."},"100":{"v":"1px","t":"dimension","s":"declared --borderWidth-100 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared borderWidth 100."},"200":{"v":"2px","t":"dimension","s":"declared --borderWidth-200 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared borderWidth 200."},"300":{"v":"4px","t":"dimension","s":"declared --borderWidth-300 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared borderWidth 300."},"400":{"v":"6px","t":"dimension","s":"declared --borderWidth-400 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared borderWidth 400."},"500":{"v":"8px","t":"dimension","s":"declared --borderWidth-500 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared borderWidth 500."}},"motion":{"duration":{"ui":{"v":"200ms","t":"duration","s":"computed transitionDuration of promo-banner default (raw/components-computed.json)","d":"The measured promo-banner link transition — the real UI motion at 0.2s."},"search":{"v":"200ms","t":"duration","s":"computed transitionDuration of explore-search default (raw/components-computed.json)","d":"The measured explore-search transition (0.2s)."}},"curve":{"ui":{"v":[0.42,0,0.58,1],"t":"cubicBezier","s":"computed transitionTimingFunction of promo-banner default (raw/components-computed.json)","d":"The ease-in-out curve on the animated chrome (promo banner, search, menu links)."}}},"iconSize":{"l":{"v":"32px","t":"dimension","s":"declared --iconSize-l on div.coinbase.light (raw/css-vars.json themes)","d":"Declared iconSize l."},"m":{"v":"24px","t":"dimension","s":"declared --iconSize-m on div.coinbase.light (raw/css-vars.json themes)","d":"Declared iconSize m."},"s":{"v":"16px","t":"dimension","s":"declared --iconSize-s on div.coinbase.light (raw/css-vars.json themes)","d":"Declared iconSize s."},"xs":{"v":"12px","t":"dimension","s":"declared --iconSize-xs on div.coinbase.light (raw/css-vars.json themes)","d":"Declared iconSize xs."}},"avatarSize":{"l":{"v":"32px","t":"dimension","s":"declared --avatarSize-l on div.coinbase.light (raw/css-vars.json themes)","d":"Declared avatarSize l."},"m":{"v":"24px","t":"dimension","s":"declared --avatarSize-m on div.coinbase.light (raw/css-vars.json themes)","d":"Declared avatarSize m."},"s":{"v":"16px","t":"dimension","s":"declared --avatarSize-s on div.coinbase.light (raw/css-vars.json themes)","d":"Declared avatarSize s."},"xl":{"v":"40px","t":"dimension","s":"declared --avatarSize-xl on div.coinbase.light (raw/css-vars.json themes)","d":"Declared avatarSize xl."},"xxl":{"v":"48px","t":"dimension","s":"declared --avatarSize-xxl on div.coinbase.light (raw/css-vars.json themes)","d":"Declared avatarSize xxl."},"xxxl":{"v":"56px","t":"dimension","s":"declared --avatarSize-xxxl on div.coinbase.light (raw/css-vars.json themes)","d":"Declared avatarSize xxxl."}},"controlSize":{"checkboxSize":{"v":"20px","t":"dimension","s":"declared --controlSize-checkboxSize on div.coinbase.light (raw/css-vars.json themes)","d":"Declared controlSize checkboxSize."},"radioSize":{"v":"20px","t":"dimension","s":"declared --controlSize-radioSize on div.coinbase.light (raw/css-vars.json themes)","d":"Declared controlSize radioSize."},"switchHeight":{"v":"32px","t":"dimension","s":"declared --controlSize-switchHeight on div.coinbase.light (raw/css-vars.json themes)","d":"Declared controlSize switchHeight."},"switchThumbSize":{"v":"30px","t":"dimension","s":"declared --controlSize-switchThumbSize on div.coinbase.light (raw/css-vars.json themes)","d":"Declared controlSize switchThumbSize."},"switchWidth":{"v":"52px","t":"dimension","s":"declared --controlSize-switchWidth on div.coinbase.light (raw/css-vars.json themes)","d":"Declared controlSize switchWidth."},"tileSize":{"v":"106px","t":"dimension","s":"declared --controlSize-tileSize on div.coinbase.light (raw/css-vars.json themes)","d":"Declared controlSize tileSize."}},"z":{"nav":{"v":5,"t":"number","s":"computed zIndex of header default (raw/components-computed.json)","d":"The fixed header's stacking order."}},"layout":{"maxWidth":{"content":{"v":"656.5px","t":"dimension","s":"computed width of hero-title default (raw/components-computed.json)","d":"The hero column's measure — the widest content element."}}},"fontSize":{"body":{"v":"1rem","t":"dimension","s":"declared --fontSize-body on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontSize body."},"caption":{"v":"0.8125rem","t":"dimension","s":"declared --fontSize-caption on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontSize caption."},"display1":{"v":"4rem","t":"dimension","s":"declared --fontSize-display1 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontSize display1."},"display2":{"v":"3rem","t":"dimension","s":"declared --fontSize-display2 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontSize display2."},"display3":{"v":"2.5rem","t":"dimension","s":"declared --fontSize-display3 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontSize display3."},"headline":{"v":"1rem","t":"dimension","s":"declared --fontSize-headline on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontSize headline."},"label1":{"v":"0.875rem","t":"dimension","s":"declared --fontSize-label1 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontSize label1."},"label2":{"v":"0.875rem","t":"dimension","s":"declared --fontSize-label2 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontSize label2."},"legal":{"v":"0.8125rem","t":"dimension","s":"declared --fontSize-legal on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontSize legal."},"title1":{"v":"1.75rem","t":"dimension","s":"declared --fontSize-title1 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontSize title1."},"title2":{"v":"1.75rem","t":"dimension","s":"declared --fontSize-title2 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontSize title2."},"title3":{"v":"1.25rem","t":"dimension","s":"declared --fontSize-title3 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontSize title3."},"title4":{"v":"1.25rem","t":"dimension","s":"declared --fontSize-title4 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontSize title4."}},"fontWeight":{"body":{"v":400,"t":"fontWeight","s":"declared --fontWeight-body on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontWeight body."},"caption":{"v":600,"t":"fontWeight","s":"declared --fontWeight-caption on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontWeight caption."},"display1":{"v":400,"t":"fontWeight","s":"declared --fontWeight-display1 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontWeight display1."},"display2":{"v":400,"t":"fontWeight","s":"declared --fontWeight-display2 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontWeight display2."},"display3":{"v":400,"t":"fontWeight","s":"declared --fontWeight-display3 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontWeight display3."},"headline":{"v":600,"t":"fontWeight","s":"declared --fontWeight-headline on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontWeight headline."},"label1":{"v":600,"t":"fontWeight","s":"declared --fontWeight-label1 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontWeight label1."},"label2":{"v":400,"t":"fontWeight","s":"declared --fontWeight-label2 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontWeight label2."},"legal":{"v":400,"t":"fontWeight","s":"declared --fontWeight-legal on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontWeight legal."},"title1":{"v":600,"t":"fontWeight","s":"declared --fontWeight-title1 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontWeight title1."},"title2":{"v":400,"t":"fontWeight","s":"declared --fontWeight-title2 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontWeight title2."},"title3":{"v":600,"t":"fontWeight","s":"declared --fontWeight-title3 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontWeight title3."},"title4":{"v":400,"t":"fontWeight","s":"declared --fontWeight-title4 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared fontWeight title4."}},"lineHeight":{"body":{"v":"1.5rem","t":"dimension","s":"declared --lineHeight-body on div.coinbase.light (raw/css-vars.json themes)","d":"Declared lineHeight body."},"caption":{"v":"1rem","t":"dimension","s":"declared --lineHeight-caption on div.coinbase.light (raw/css-vars.json themes)","d":"Declared lineHeight caption."},"display1":{"v":"4.5rem","t":"dimension","s":"declared --lineHeight-display1 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared lineHeight display1."},"display2":{"v":"3.5rem","t":"dimension","s":"declared --lineHeight-display2 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared lineHeight display2."},"display3":{"v":"3rem","t":"dimension","s":"declared --lineHeight-display3 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared lineHeight display3."},"headline":{"v":"1.5rem","t":"dimension","s":"declared --lineHeight-headline on div.coinbase.light (raw/css-vars.json themes)","d":"Declared lineHeight headline."},"label1":{"v":"1.25rem","t":"dimension","s":"declared --lineHeight-label1 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared lineHeight label1."},"label2":{"v":"1.25rem","t":"dimension","s":"declared --lineHeight-label2 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared lineHeight label2."},"legal":{"v":"1rem","t":"dimension","s":"declared --lineHeight-legal on div.coinbase.light (raw/css-vars.json themes)","d":"Declared lineHeight legal."},"title1":{"v":"2.25rem","t":"dimension","s":"declared --lineHeight-title1 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared lineHeight title1."},"title2":{"v":"2.25rem","t":"dimension","s":"declared --lineHeight-title2 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared lineHeight title2."},"title3":{"v":"1.75rem","t":"dimension","s":"declared --lineHeight-title3 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared lineHeight title3."},"title4":{"v":"1.75rem","t":"dimension","s":"declared --lineHeight-title4 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared lineHeight title4."}},"font":{"family":{"display":{"v":"CoinbaseDisplay, -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Helvetica\", \"Arial\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"","t":"fontFamily","s":"declared --cds-font-display at :root (raw/css-vars.json resolved)","d":"Declared --cds-font-display: CoinbaseDisplay + system fallbacks — the display face."},"sans":{"v":"CoinbaseSans, -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Helvetica\", \"Arial\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"","t":"fontFamily","s":"declared --cds-font-sans at :root (raw/css-vars.json resolved)","d":"Declared --cds-font-sans: CoinbaseSans + system fallbacks — the UI face."},"text":{"v":"CoinbaseText, -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Helvetica\", \"Arial\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"","t":"fontFamily","s":"declared --cds-font-text at :root (raw/css-vars.json resolved)","d":"Declared --cds-font-text: CoinbaseText + system fallbacks — the body face."},"mono":{"v":"CoinbaseMono, -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Helvetica\", \"Arial\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"","t":"fontFamily","s":"declared --cds-font-mono at :root (raw/css-vars.json resolved)","d":"Declared --cds-font-mono: CoinbaseMono + system fallbacks — the code face."},"condensed":{"v":"CoinbaseCondensed, -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Helvetica\", \"Arial\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"","t":"fontFamily","s":"declared --cds-font-condensed at :root (raw/css-vars.json resolved)","d":"Declared --cds-font-condensed: CoinbaseCondensed + system fallbacks — the condensed face."},"displayMeasured":{"v":"CoinbaseDisplay, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"","t":"fontFamily","s":"computed fontFamily of hero-title default (raw/components-computed.json)","d":"The face the hero headline actually paints."}},"size":{"hero":{"v":"80px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The hero display headline at 1440px."},"h1Explore":{"v":"28px","t":"dimension","s":"computed fontSize of explore-title default (raw/components-computed.json)","d":"The explore headline."},"h2":{"v":"44px","t":"dimension","s":"computed fontSize of section-title default (raw/components-computed.json)","d":"Section headings."},"mHero":{"v":"52px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The hero headline at 390px."},"nav":{"v":"16px","t":"dimension","s":"computed fontSize of nav-item default (raw/components-computed.json)","d":"Nav labels."},"footer":{"v":"16px","t":"dimension","s":"computed fontSize of footer-link default (raw/components-computed.json)","d":"Footer links."},"banner":{"v":"16px","t":"dimension","s":"computed fontSize of promo-banner default (raw/components-computed.json)","d":"The promo banner line."},"price":{"v":"16px","t":"dimension","s":"computed fontSize of price-figure default (raw/components-computed.json)","d":"A price-table figure."},"cta":{"v":"18px","t":"dimension","s":"computed fontSize of hero-cta default (raw/components-computed.json)","d":"CTA pill labels."},"signin":{"v":"16px","t":"dimension","s":"computed fontSize of signin-oauth default (raw/components-computed.json)","d":"The sign-in OAuth row label."}}},"component":{"control":{"heightNavCta":{"v":"44px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"The nav Sign-up pill."},"heightNavItem":{"v":"44px","t":"dimension","s":"computed height of nav-item default (raw/components-computed.json)","d":"Nav links."},"heightHeroCta":{"v":"56px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)","d":"The hero CTA pill."},"heightMenuButton":{"v":"47px","t":"dimension","s":"computed height of m-menu-button default (raw/components-computed.json)","d":"The mobile menu toggle."},"heightOAuth":{"v":"58px","t":"dimension","s":"computed height of signin-oauth default (raw/components-computed.json)","d":"The sign-in OAuth row."},"heightChip":{"v":"44px","t":"dimension","s":"computed height of chip default (raw/components-computed.json)","d":"A filter chip."},"radiusCta":{"v":"56px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"CTA-pill corner radius."}},"banner":{"height":{"v":"48px","t":"dimension","s":"computed height of promo-banner default (raw/components-computed.json)","d":"The promo banner row."}},"nav":{"height":{"v":"117px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The fixed header at 1440px."}},"footer":{"height":{"v":"1230px","t":"dimension","s":"computed height of footer default (raw/components-computed.json)","d":"The footer block at 1440px."}},"drawer":{"width":{"v":"390px","t":"dimension","s":"computed width of m-menu-open default (raw/components-computed.json)","d":"The mobile menu overlay at 390px."}},"heroTitle":{"width":{"v":"656.5px","t":"dimension","s":"computed width of hero-title default (raw/components-computed.json)","d":"The hero headline's measure."}},"row":{"heightPrice":{"v":"76px","t":"dimension","s":"computed height of price-row default (raw/components-computed.json)","d":"A price-table row at 1440px."}},"field":{"widthSignin":{"v":"398px","t":"dimension","s":"computed width of signin-field default (raw/components-computed.json)","d":"The sign-in email field."}}}},"light":{"surface":{"page":{"v":"{color.gray.0}","t":"color","s":"computed paint.0.bg of page-ground default (raw/components-computed.json); same value as core.color.gray.0","d":"The page ground — the .coinbase.light wrapper's white fill."},"raised":{"v":"{color.gray.10}","t":"color","s":"computed paint.0.bg of footer default (raw/components-computed.json); same value as core.color.gray.10","d":"The footer's section ground (bgAlternate #eef0f3)."},"dark":{"v":"{color.gray.100}","t":"color","s":"computed paint.0.bg of dark-band default (raw/components-computed.json); same value as core.color.gray.100","d":"The .coinbase.dark band's fill (bgInverse #0a0b0d)."}},"text":{"primary":{"v":"{color.gray.100}","t":"color","s":"computed color of hero-title default (raw/components-computed.json); same value as core.color.gray.100","d":"The primary ink on the page ground (fg #0a0b0d)."},"muted":{"v":"{color.gray.60}","t":"color","s":"computed color of footer-link default (raw/components-computed.json); same value as core.color.gray.60","d":"The secondary text role (fgMuted #5b616e) painted by footer links."},"nav":{"v":"{color.gray.100}","t":"color","s":"computed textStyle.color of nav-item default (raw/components-computed.json); same value as core.color.gray.100","d":"The nav-link ink at rest (the anchors hold the UA link colour; the painted label is fg)."},"onDark":{"v":"{color.gray.0}","t":"color","s":"computed textStyle.color of chip default (raw/components-computed.json); same value as core.color.gray.0","d":"White text inside the dark asset panel's chips (fgInverse)."},"onAccent":{"v":"{color.gray.0}","t":"color","s":"computed color of nav-cta default (raw/components-computed.json); same value as core.color.gray.0","d":"White text on the blue Sign-up pill (fgInverse)."},"banner":{"v":"{color.indigo.90}","t":"color","s":"computed textStyle.color of promo-banner default (raw/components-computed.json); same value as core.color.indigo.90","d":"The promo banner's navy link line."}},"accent":{"v":"{color.blue.60}","t":"color","s":"computed backgroundColor of nav-cta default (raw/components-computed.json); same value as core.color.blue.60","d":"The Sign-up pill fill — Coinbase blue (bgPrimary #0052ff)."},"accentHover":{"v":"{color.role.bgBrandHovered}","t":"color","s":"computed backgroundColor of nav-cta hover (raw/components-computed.json); same value as core.color.role.bgBrandHovered","d":"The Sign-up pill's hover fill (bgBrandHovered, #0048e0 @ .88)."},"border":{"input":{"v":"{color.role.bgLineHeavy}","t":"color","s":"computed paint.0.border of signin-card default (raw/components-computed.json); same value as core.color.role.bgLineHeavy","d":"The sign-in email field's border (bgLineHeavy, fgMuted @ 66%)."},"subtle":{"v":"rgba(91, 97, 110, 0.2)","t":"color","s":"declared --color-bgLine on div.coinbase.light (raw/css-vars.json themes)","d":"The hairline rule painted by the nav bar, footer rules and the sign-in OR divider (bgLine, fgMuted @ 20%)."}},"focus":{"v":"#101010","t":"color","s":"computed outlineColor of nav-item focus-visible (raw/components-computed.json)","d":"The focus outline painted on nav links."},"overlay":{"scrim":{"v":"rgba(50, 53, 61, 0.33)","t":"color","s":"declared --color-bgOverlay on div.coinbase.light (raw/css-vars.json themes)","d":"The modal/menu scrim role (bgOverlay, bgInverse @ 33%) — declared only; no overlay was opened signed out."}},"status":{"fgWarning":{"v":"#cf470e","t":"color","s":"declared --lightColor-fgWarning on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role fgWarning."},"fgPositive":{"v":"#098551","t":"color","s":"declared --lightColor-fgPositive on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role fgPositive."},"fgNegative":{"v":"#cf202f","t":"color","s":"declared --lightColor-fgNegative on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role fgNegative."}},"wash":{"bgPrimaryWash":{"v":"#f5f8ff","t":"color","s":"declared --lightColor-bgPrimaryWash on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role bgPrimaryWash."},"bgSecondaryWash":{"v":"#f7f8f9","t":"color","s":"declared --lightColor-bgSecondaryWash on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role bgSecondaryWash."},"bgNegativeWash":{"v":"#fff5f6","t":"color","s":"declared --lightColor-bgNegativeWash on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role bgNegativeWash."},"bgPositiveWash":{"v":"#f5fffb","t":"color","s":"declared --lightColor-bgPositiveWash on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role bgPositiveWash."},"bgWarningWash":{"v":"#fffaf5","t":"color","s":"declared --lightColor-bgWarningWash on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role bgWarningWash."}},"other":{"bgTertiary":{"v":"#ced2db","t":"color","s":"declared --lightColor-bgTertiary on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role bgTertiary."}},"line":{"bgLineInverse":{"v":"#ffffff","t":"color","s":"declared --lightColor-bgLineInverse on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role bgLineInverse."},"bgLinePrimary":{"v":"#0052ff","t":"color","s":"declared --lightColor-bgLinePrimary on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role bgLinePrimary."},"bgLinePrimarySubtle":{"v":"#73a2ff","t":"color","s":"declared --lightColor-bgLinePrimarySubtle on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role bgLinePrimarySubtle."}},"elevation":{"bgElevation1":{"v":"#ffffff","t":"color","s":"declared --lightColor-bgElevation1 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role bgElevation1."},"bgElevation2":{"v":"#ffffff","t":"color","s":"declared --lightColor-bgElevation2 on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role bgElevation2."}},"accentVariants":{"accentSubtleGreen":{"v":"#f5fffb","t":"color","s":"declared --lightColor-accentSubtleGreen on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role accentSubtleGreen."},"accentBoldGreen":{"v":"#098551","t":"color","s":"declared --lightColor-accentBoldGreen on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role accentBoldGreen."},"accentSubtleBlue":{"v":"#f5f8ff","t":"color","s":"declared --lightColor-accentSubtleBlue on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role accentSubtleBlue."},"accentBoldBlue":{"v":"#0052ff","t":"color","s":"declared --lightColor-accentBoldBlue on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role accentBoldBlue."},"accentSubtlePurple":{"v":"#fbf7ff","t":"color","s":"declared --lightColor-accentSubtlePurple on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role accentSubtlePurple."},"accentBoldPurple":{"v":"#5a30ad","t":"color","s":"declared --lightColor-accentBoldPurple on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role accentBoldPurple."},"accentSubtleYellow":{"v":"#fffcf1","t":"color","s":"declared --lightColor-accentSubtleYellow on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role accentSubtleYellow."},"accentBoldYellow":{"v":"#f7d21a","t":"color","s":"declared --lightColor-accentBoldYellow on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role accentBoldYellow."},"accentSubtleRed":{"v":"#fff5f6","t":"color","s":"declared --lightColor-accentSubtleRed on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role accentSubtleRed."},"accentBoldRed":{"v":"#cf202f","t":"color","s":"declared --lightColor-accentBoldRed on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role accentBoldRed."},"accentSubtleGray":{"v":"#eef0f3","t":"color","s":"declared --lightColor-accentSubtleGray on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role accentSubtleGray."},"accentBoldGray":{"v":"#32353d","t":"color","s":"declared --lightColor-accentBoldGray on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role accentBoldGray."}},"interactive":{"backgroundAltHovered":{"v":"rgba(229, 231, 234, 0.88)","t":"color","s":"declared --lightColor-backgroundAltHovered on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role backgroundAltHovered."},"backgroundAltPressed":{"v":"rgba(225, 226, 229, 0.82)","t":"color","s":"declared --lightColor-backgroundAltPressed on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role backgroundAltPressed."},"bgBrandPressed":{"v":"rgba(0, 67, 209, 0.82)","t":"color","s":"declared --lightColor-bgBrandPressed on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role bgBrandPressed."},"bgPrimaryHovered":{"v":"rgba(17, 18, 20, 0.88)","t":"color","s":"declared --lightColor-bgPrimaryHovered on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role bgPrimaryHovered."},"bgPrimaryPressed":{"v":"rgba(21, 22, 24, 0.82)","t":"color","s":"declared --lightColor-bgPrimaryPressed on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role bgPrimaryPressed."},"bgSecondaryHovered":{"v":"rgba(229, 231, 234, 0.88)","t":"color","s":"declared --lightColor-bgSecondaryHovered on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role bgSecondaryHovered."},"bgSecondaryPressed":{"v":"rgba(242, 244, 246, 0.82)","t":"color","s":"declared --lightColor-bgSecondaryPressed on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role bgSecondaryPressed."},"bgTertiaryHovered":{"v":"rgba(247, 247, 247, 0.88)","t":"color","s":"declared --lightColor-bgTertiaryHovered on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role bgTertiaryHovered."},"bgTertiaryPressed":{"v":"rgba(244, 244, 244, 0.82)","t":"color","s":"declared --lightColor-bgTertiaryPressed on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role bgTertiaryPressed."},"backgroundInverseDisabled":{"v":"#b1b7c3","t":"color","s":"declared --lightColor-backgroundInverseDisabled on div.coinbase.light (raw/css-vars.json themes)","d":"Declared light-scheme role backgroundInverseDisabled."}}},"dark":{"text":{"fg":{"v":"#ffffff","t":"color","s":"declared --color-fg on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role fg (the band's remapped --color-* layer)."},"fgInverse":{"v":"#0a0b0d","t":"color","s":"declared --color-fgInverse on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role fgInverse (the band's remapped --color-* layer)."},"fgMuted":{"v":"#8a919e","t":"color","s":"declared --color-fgMuted on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role fgMuted (the band's remapped --color-* layer)."},"fgPrimary":{"v":"#578bfa","t":"color","s":"declared --color-fgPrimary on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role fgPrimary (the band's remapped --color-* layer)."},"fgPositive":{"v":"#27ad75","t":"color","s":"declared --color-fgPositive on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role fgPositive (the band's remapped --color-* layer)."},"fgNegative":{"v":"#f0616d","t":"color","s":"declared --color-fgNegative on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role fgNegative (the band's remapped --color-* layer)."},"fgWarning":{"v":"#f89656","t":"color","s":"declared --color-fgWarning on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role fgWarning (the band's remapped --color-* layer)."}},"surface":{"bg":{"v":"#0a0b0d","t":"color","s":"declared --color-bg on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bg (the band's remapped --color-* layer)."},"bgAlternate":{"v":"#141519","t":"color","s":"declared --color-bgAlternate on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgAlternate (the band's remapped --color-* layer)."},"bgInverse":{"v":"#ffffff","t":"color","s":"declared --color-bgInverse on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgInverse (the band's remapped --color-* layer)."},"bgOverlay":{"v":"rgba(10, 11, 13, 0.33)","t":"color","s":"declared --color-bgOverlay on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgOverlay (the band's remapped --color-* layer)."},"bgPrimary":{"v":"#578bfa","t":"color","s":"declared --color-bgPrimary on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgPrimary (the band's remapped --color-* layer)."},"bgPrimaryWash":{"v":"#001033","t":"color","s":"declared --color-bgPrimaryWash on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgPrimaryWash (the band's remapped --color-* layer)."},"bgSecondary":{"v":"#282b31","t":"color","s":"declared --color-bgSecondary on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgSecondary (the band's remapped --color-* layer)."},"bgTertiary":{"v":"#32353d","t":"color","s":"declared --color-bgTertiary on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgTertiary (the band's remapped --color-* layer)."},"bgSecondaryWash":{"v":"#141519","t":"color","s":"declared --color-bgSecondaryWash on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgSecondaryWash (the band's remapped --color-* layer)."},"bgNegative":{"v":"#f0616d","t":"color","s":"declared --color-bgNegative on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgNegative (the band's remapped --color-* layer)."},"bgNegativeWash":{"v":"#330004","t":"color","s":"declared --color-bgNegativeWash on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgNegativeWash (the band's remapped --color-* layer)."},"bgPositive":{"v":"#27ad75","t":"color","s":"declared --color-bgPositive on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgPositive (the band's remapped --color-* layer)."},"bgPositiveWash":{"v":"#001f12","t":"color","s":"declared --color-bgPositiveWash on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgPositiveWash (the band's remapped --color-* layer)."},"bgWarning":{"v":"#f07836","t":"color","s":"declared --color-bgWarning on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgWarning (the band's remapped --color-* layer)."},"bgWarningWash":{"v":"#330d00","t":"color","s":"declared --color-bgWarningWash on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgWarningWash (the band's remapped --color-* layer)."},"bgElevation1":{"v":"#141519","t":"color","s":"declared --color-bgElevation1 on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgElevation1 (the band's remapped --color-* layer)."},"bgElevation2":{"v":"#1e2025","t":"color","s":"declared --color-bgElevation2 on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgElevation2 (the band's remapped --color-* layer)."},"bgBrandHovered":{"v":"rgba(95, 144, 250, 0.88)","t":"color","s":"declared --color-bgBrandHovered on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgBrandHovered (the band's remapped --color-* layer)."},"bgBrandPressed":{"v":"rgba(99, 147, 250, 0.82)","t":"color","s":"declared --color-bgBrandPressed on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgBrandPressed (the band's remapped --color-* layer)."},"bgPrimaryHovered":{"v":"rgba(247, 247, 247, 0.88)","t":"color","s":"declared --color-bgPrimaryHovered on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgPrimaryHovered (the band's remapped --color-* layer)."},"bgPrimaryPressed":{"v":"rgba(244, 244, 244, 0.82)","t":"color","s":"declared --color-bgPrimaryPressed on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgPrimaryPressed (the band's remapped --color-* layer)."},"bgSecondaryHovered":{"v":"rgba(47, 50, 55, 0.88)","t":"color","s":"declared --color-bgSecondaryHovered on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgSecondaryHovered (the band's remapped --color-* layer)."},"bgSecondaryPressed":{"v":"rgba(50, 53, 59, 0.82)","t":"color","s":"declared --color-bgSecondaryPressed on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgSecondaryPressed (the band's remapped --color-* layer)."},"bgTertiaryHovered":{"v":"rgba(17, 18, 20, 0.88)","t":"color","s":"declared --color-bgTertiaryHovered on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgTertiaryHovered (the band's remapped --color-* layer)."},"bgTertiaryPressed":{"v":"rgba(21, 22, 24, 0.82)","t":"color","s":"declared --color-bgTertiaryPressed on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgTertiaryPressed (the band's remapped --color-* layer)."}},"line":{"bgLine":{"v":"rgba(138, 145, 158, 0.2)","t":"color","s":"declared --color-bgLine on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgLine (the band's remapped --color-* layer)."},"bgLineInverse":{"v":"#0a0b0d","t":"color","s":"declared --color-bgLineInverse on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgLineInverse (the band's remapped --color-* layer)."},"bgLineHeavy":{"v":"rgba(138, 145, 158, 0.66)","t":"color","s":"declared --color-bgLineHeavy on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgLineHeavy (the band's remapped --color-* layer)."},"bgLinePrimary":{"v":"#578bfa","t":"color","s":"declared --color-bgLinePrimary on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgLinePrimary (the band's remapped --color-* layer)."},"bgLinePrimarySubtle":{"v":"#053bb1","t":"color","s":"declared --color-bgLinePrimarySubtle on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role bgLinePrimarySubtle (the band's remapped --color-* layer)."}},"accentVariants":{"accentSubtleGreen":{"v":"#001f12","t":"color","s":"declared --color-accentSubtleGreen on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role accentSubtleGreen (the band's remapped --color-* layer)."},"accentBoldGreen":{"v":"#27ad75","t":"color","s":"declared --color-accentBoldGreen on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role accentBoldGreen (the band's remapped --color-* layer)."},"accentSubtleBlue":{"v":"#001033","t":"color","s":"declared --color-accentSubtleBlue on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role accentSubtleBlue (the band's remapped --color-* layer)."},"accentBoldBlue":{"v":"#3773f5","t":"color","s":"declared --color-accentBoldBlue on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role accentBoldBlue (the band's remapped --color-* layer)."},"accentSubtlePurple":{"v":"#190d33","t":"color","s":"declared --color-accentSubtlePurple on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role accentSubtlePurple (the band's remapped --color-* layer)."},"accentBoldPurple":{"v":"#e6c9ff","t":"color","s":"declared --color-accentBoldPurple on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role accentBoldPurple (the band's remapped --color-* layer)."},"accentSubtleYellow":{"v":"#1b0600","t":"color","s":"declared --color-accentSubtleYellow on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role accentSubtleYellow (the band's remapped --color-* layer)."},"accentBoldYellow":{"v":"#936000","t":"color","s":"declared --color-accentBoldYellow on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role accentBoldYellow (the band's remapped --color-* layer)."},"accentSubtleRed":{"v":"#330004","t":"color","s":"declared --color-accentSubtleRed on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role accentSubtleRed (the band's remapped --color-* layer)."},"accentBoldRed":{"v":"#f0616d","t":"color","s":"declared --color-accentBoldRed on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role accentBoldRed (the band's remapped --color-* layer)."},"accentSubtleGray":{"v":"#1e2025","t":"color","s":"declared --color-accentSubtleGray on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role accentSubtleGray (the band's remapped --color-* layer)."},"accentBoldGray":{"v":"#c1c6cf","t":"color","s":"declared --color-accentBoldGray on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role accentBoldGray (the band's remapped --color-* layer)."}},"other":{"backgroundAltHovered":{"v":"rgba(27, 28, 32, 0.88)","t":"color","s":"declared --color-backgroundAltHovered on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role backgroundAltHovered (the band's remapped --color-* layer)."},"backgroundAltPressed":{"v":"rgba(31, 32, 35, 0.82)","t":"color","s":"declared --color-backgroundAltPressed on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role backgroundAltPressed (the band's remapped --color-* layer)."},"backgroundInverseDisabled":{"v":"#464b55","t":"color","s":"declared --color-backgroundInverseDisabled on div.coinbase.dark (raw/css-vars.json themes)","d":"Declared dark-scheme role backgroundInverseDisabled (the band's remapped --color-* layer)."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [set, toks] of [['light', TOK.light], ['dark', TOK.dark]]) {
+    const roles = flat(toks || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${set} roles</div>${set === 'dark' ? '<div class="sg-dark">' : ''}<div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += `</div>${set === 'dark' ? '</div>' : ''}`;
+  }
+  const grads = flat(TOK.core && TOK.core.gradient || {}, 'gradient.');
+  if (grads.length) {
+    h += `<div class="pal-h">gradients</div><div class="pal">`;
+    for (const [n, t] of grads) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc((t.v||[]).map(s=>s.color).join(' → '))}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core && TOK.core.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function groups() {
+  // Every remaining token group gets a key/value table — fonts, radii,
+  // spacing, blur, motion, shadows, typography and the light set's
+  // non-colour roles, so the guide covers all of tokens.json.
+  const show = (v) => Array.isArray(v) ? (typeof v[0] === 'object' ? v.map((l) => `${l.color} ${l.offsetX} ${l.offsetY} ${l.blur} ${l.spread}${l.inset ? ' inset' : ''}`).join(', ') : v.join(', ')) : String(v);
+  const skip = new Set(['color', 'component', 'measured', 'gradient']);
+  let h = '';
+  for (const [set, toks] of [['core', TOK.core], ['light', TOK.light], ['dark', TOK.dark]]) {
+    for (const [g, grp] of Object.entries(toks || {})) {
+      if (skip.has(g)) continue;
+      const items = flat(grp, g + '.').filter(([, t]) => t.t !== 'color');
+      if (!items.length) continue;
+      h += `<div class="pal-h">${esc(set)}.${esc(g)}</div><div class="kv">`;
+      for (const [n, t] of items) h += `<div><b>${esc(n)}</b> <span>${esc(show(t.v))}</span></div>`;
+      h += '</div>';
+    }
+  }
+  if (h) {
+    const sec = document.createElement('div');
+    sec.innerHTML = `<h2 class="sh">Scales and roles</h2>` + h;
+    $('#meas-out').appendChild(sec);
+  }
+})();
+</script>
+</body>
+</html>

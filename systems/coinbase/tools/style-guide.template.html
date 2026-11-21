@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coinbase style guide</title>
+<meta name="description" content="Coinbase (coinbase.com) design tokens and the public site's components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: var(--font-family-sans, "CoinbaseSans"), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sg-display: var(--font-family-display, "CoinbaseDisplay"), var(--sg-sans);
+  --sg-mono: var(--font-family-mono, "CoinbaseMono"), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+/* The dark set redeclares the same role names — scope it to .sg-dark so a dark
+   swatch resolves its own theme instead of leaking light values (or
+   clobbering the light vars on :root). */
+.sg-dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #0a0b0d); background: var(--surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.1 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.4px; }
+h2.sh { font: 500 12px/1 var(--sg-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted, #5b616e); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-gray-10, #eef0f3); }
+.lead { max-width: 62ch; color: var(--text-muted, #5b616e); }
+.note { font-size: 13px; color: var(--text-muted, #5b616e); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #5b616e); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-subtle, rgba(91,97,110,.2)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-muted, #5b616e); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-muted, #5b616e); }
+/* ---- site mock: the marketing surface ---- */
+.mock { border: 1px solid var(--border-subtle, rgba(91,97,110,.2)); border-radius: var(--radius-50, 22px); overflow: hidden; }
+.mock.light { background: var(--surface-page, #fff); color: var(--text-primary, #0a0b0d); }
+.banner { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: var(--component-banner-height, 40px); padding: 6px 32px; font-size: 14px; background: var(--surface-raised, #eef0f3); color: var(--text-banner, #11206b); }
+.banner a { color: var(--text-banner, #11206b); }
+.navbar { display: flex; align-items: center; gap: 14px; height: calc(var(--component-nav-height, 117px) - var(--component-banner-height, 48px)); padding: 0 32px; font-size: 14px; color: var(--text-nav, #0a0b0d); border-bottom: 1px solid var(--border-subtle, rgba(91,97,110,.2)); }
+.navbar .lg { width: 24px; height: 24px; border-radius: 50%; background: var(--accent, #0052ff); display: inline-block; }
+.navbar .wm { font-family: var(--sg-display); font-size: 18px; font-weight: 600; color: var(--text-primary, #0a0b0d); }
+.navbar .sp { flex: 1; }
+.navbar .lk { height: var(--component-control-heightNavItem, 44px); display: inline-flex; align-items: center; padding: 0 6px; font-weight: 500; }
+.navbar .ghost { height: var(--component-control-heightNavItem, 44px); display: inline-flex; align-items: center; padding: 0 16px; border-radius: var(--component-control-radiusCta, 9999px); background: var(--surface-raised, #eef0f3); color: var(--text-primary, #0a0b0d); font-weight: 600; }
+.navbar .cta { height: var(--component-control-heightNavCta, 44px); display: inline-flex; align-items: center; padding: 0 16px; border-radius: var(--component-control-radiusCta, 9999px); background: var(--accent, #0052ff); color: var(--text-onAccent, #fff); font-weight: 600; }
+.hero { padding: 80px 40px 72px; text-align: center; }
+.hero h3 { font: 400 var(--font-size-hero, 80px)/1 var(--sg-display); margin: 0 auto 16px; max-width: 16ch; letter-spacing: -.02em; }
+.hero p { margin: 0 auto 36px; color: var(--text-muted, #5b616e); max-width: 46ch; }
+.herorow { display: flex; gap: 10px; align-items: center; justify-content: center; }
+.bigcta { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightHeroCta, 56px); padding: 0 24px; border-radius: var(--component-control-radiusCta, 9999px); background: var(--surface-dark, #0a0b0d); color: var(--text-onDark, #fff); font-size: 15px; font-weight: 600; }
+/* ---- the dark asset panel (.coinbase.dark island) ---- */
+.dband { background: var(--surface-dark, #0a0b0d); color: var(--text-onDark, #fff); padding: 40px 32px; }
+.dchips { display: flex; gap: 8px; margin-bottom: 24px; }
+.dchip { display: inline-flex; align-items: center; height: var(--component-control-heightChip, 44px); padding: 0 18px; border-radius: var(--component-control-radiusCta, 9999px); background: var(--color-gray-85, #282b31); color: var(--text-onDark, #fff); font-size: 14px; font-weight: 600; }
+.dchip.on { background: var(--color-gray-95, #0a0b0d); border: 1px solid rgba(255,255,255,.2); }
+.dcta { display: inline-flex; align-items: center; height: 56px; padding: 0 22px; border-radius: var(--component-control-radiusCta, 9999px); background: var(--surface-dark, #0a0b0d); border: 1px solid rgba(255,255,255,.2); color: var(--text-onDark, #fff); font-size: 15px; font-weight: 600; }
+/* ---- the explore price table ---- */
+.ptable { margin: 16px 24px 24px; border-collapse: collapse; font-size: 14px; width: calc(100% - 48px); }
+.ptable td, .ptable th { border-bottom: 1px solid var(--border-subtle, rgba(91,97,110,.2)); padding: 10px 14px; text-align: left; }
+.ptable .rate { font-family: var(--font-family-sans, "CoinbaseSans"), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: var(--font-size-price, 16px); }
+.ptable .up { color: var(--color-role-fgPositive, #098551); }
+.ptable .dn { color: var(--color-role-fgNegative, #cf202f); }
+/* ---- footer band (light grey, bgAlternate) ---- */
+.fband { background: var(--surface-raised, #eef0f3); color: var(--text-primary, #0a0b0d); padding: 40px 32px; }
+.fband .cols { display: flex; gap: 48px; font-size: 13px; }
+.fband .cols span { display: block; color: var(--text-muted, #5b616e); line-height: 2; }
+.fband .cols b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+/* ---- the sign-in card (app boundary) ---- */
+.signin { max-width: 440px; margin: 28px auto; padding: 28px; background: var(--surface-page, #fff); font-size: 14px; color: var(--text-primary, #0a0b0d); }
+.signin .h { font: 600 28px/1.3 var(--sg-display); margin-bottom: 16px; text-align: center; }
+.signin .field { height: 56px; border: 1px solid var(--border-input, rgba(91,97,110,.66)); border-radius: 8px; margin-bottom: 10px; display: flex; align-items: center; padding: 0 12px; color: var(--text-muted, #5b616e); }
+.signin .cont { display: flex; align-items: center; justify-content: center; height: 56px; border-radius: var(--component-control-radiusCta, 9999px); margin: 10px 0; font-size: 15px; font-weight: 600; background: var(--color-blue-55, #1460ff); color: var(--text-onAccent, #fff); }
+.signin .or { display: flex; align-items: center; gap: 12px; color: var(--text-muted, #5b616e); font-size: 12px; margin: 14px 0; }
+.signin .or::before, .signin .or::after { content: ""; flex: 1; border-top: 1px solid var(--border-subtle, rgba(91,97,110,.2)); }
+.signin .obtn { display: flex; align-items: center; justify-content: center; height: var(--component-control-heightOAuth, 58px); border-radius: var(--component-control-radiusCta, 9999px); margin-bottom: 10px; font-size: 14px; font-weight: 600; color: var(--text-primary, #0a0b0d); border: 1px solid var(--border-subtle, rgba(91,97,110,.2)); }
+.back { display: block; text-align: center; margin-top: 14px; font-size: 13px; color: var(--text-muted, #5b616e); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-gray-10, #eef0f3); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Coinbase style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The mock is a reconstruction from tokens, not captured pixels — the real captures are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+
+  <h2 class="sh">Coinbase, declared and measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. coinbase.com ships the Coinbase Design System (CDS): the whole theme is declared inline on <code>div.coinbase.light</code> (~830 custom properties) and <code>div.coinbase.dark</code> (~210) — eleven primitive ramps (<code>--light-blue*</code>/<code>--light-gray*</code>/<code>--light-green*</code>/…, blue60 #0052ff the brand), the 54-role <code>--color-*</code>/<code>--lightColor-*</code>/<code>--darkColor-*</code> semantic layer (fg, bg, bgAlternate, bgLine, washes, accents), the <code>--space-*</code>/<code>--borderRadius-*</code>/<code>--borderWidth-*</code>/<code>--fontSize-*</code> scales, the <code>--shadow-elevation*</code> ladder and the <code>--cds-font-*</code> faces (CoinbaseDisplay, CoinbaseSans, CoinbaseText, CoinbaseMono, CoinbaseCondensed). Roles are measured on the painted chrome: the blue Sign-up pill, the white nav over its hairline, the dark asset band's chips, the grey footer band and the sign-in card.</p>
+  <p class="note">One light scheme across the marketing routes with a <code>.coinbase.dark</code> asset band as a theme island; login.coinbase.com/signin is a separate app surface measured at rest as the sign-in boundary (Singapore locale, en-SG — the site geolocates). Read from coinbase.com, signed out, in headed Chromium under Xvfb (Cloudflare gates headless). Nothing was signed into, typed into, or submitted.</p>
+
+  <h2 class="sh">The marketing surface</h2>
+  <p class="lead">The light-grey promo row above the sticky white nav (Coinbase logo, the Crypto/Individuals/Businesses/Institutions/Developers/Agents/Company links, the grey Sign-in pill and the blue Sign-up pill), then the CoinbaseDisplay-scale hero with its dark CTA pill.</p>
+  <div class="mock light">
+    <div class="banner"><span><a>Sign up as an Accredited Investor and get S$300 Bitcoin on your first crypto →</a></span></div>
+    <div class="navbar"><span class="lg"></span><span class="lk">Crypto</span><span class="lk">Individuals</span><span class="lk">Businesses</span><span class="lk">Institutions</span><span class="lk">Developers</span><span class="lk">Agents</span><span class="lk">Company</span><span class="sp"></span><span class="ghost">Sign in</span><span class="cta">Sign up</span></div>
+    <div class="hero">
+      <h3>The most trusted crypto exchange</h3>
+      <p>Coinbase is the most trusted platform in Singapore for buying, selling and trading crypto.</p>
+      <div class="herorow"><span class="bigcta">Sign up with Singpass</span></div>
+    </div>
+    <div class="dband">
+      <div class="dchips"><span class="dchip on">Tradable</span><span class="dchip">Top gainers</span><span class="dchip">New on Coinbase</span></div>
+      <span class="dcta">See more assets</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Explore — the price table</h2>
+  <p class="lead">The market table on /explore: hairline-ruled rows with a hover wash, figures in CoinbaseSans 16px/24px and positive/negative change chips in the declared status colours.</p>
+  <div class="mock light">
+    <table class="ptable"><tr><th>Asset</th><th>Price</th><th>24h change</th></tr><tr><td>Bitcoin</td><td class="rate">S$118,432</td><td class="up">+1.84%</td></tr><tr><td>Ethereum</td><td class="rate">S$4,215</td><td class="dn">−0.62%</td></tr></table>
+  </div>
+
+  <h2 class="sh">Footer band</h2>
+  <p class="lead">The footer's bgAlternate ground — muted link columns, social icons and the region selector; hairline rules between its blocks.</p>
+  <div class="mock light"><div class="fband">
+    <div class="cols"><div><b>Products</b><span>Coinbase One</span><span>Advanced Trade</span></div><div><b>Learn</b><span>Prices</span><span>Guides</span></div><div><b>Company</b><span>About</span><span>Careers</span><span>Singapore · English</span></div></div>
+  </div></div>
+
+  <h2 class="sh">The sign-in card</h2>
+  <p class="lead">login.coinbase.com/signin is a separate app surface — a centred column with an email field, a blue Continue pill, an OR divider and OAuth/passkey rows; measured at rest, never typed into or submitted.</p>
+  <div class="mock light"><div class="signin">
+    <div class="h">Sign in to Coinbase</div>
+    <div class="field">Email</div>
+    <div class="cont">Continue</div>
+    <div class="or">OR</div>
+    <div class="obtn">Sign in with Google</div>
+    <div class="obtn">Sign in with Apple</div>
+    <div class="obtn">Sign in with passkey</div>
+    <span class="back">New to Coinbase? Sign up</span>
+  </div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The page ground is <code>light.surface.page</code> (bg #fff); raised bands are <code>light.surface.raised</code> = bgAlternate #eef0f3 (the promo row and footer); the asset panel is <code>light.surface.dark</code> = bgInverse #0a0b0d. Ink is <code>light.text.primary</code> = fg #0a0b0d with <code>light.text.muted</code> = fgMuted #5b616e for secondary copy; the accent is <code>light.accent</code> = bgPrimary = blue60 #0052ff. Status colours come off the declared role layer: fgPositive #098551, fgNegative #cf202f, fgWarning #cf470e.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the 44px nav controls and 56px CTA pills, the chip and OAuth row heights, the promo/nav/footer band heights, the mobile menu overlay and the sign-in field width.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Harvested the CDS theme inline on div.coinbase.light and div.coinbase.dark (the primitive ramps, the 54-role semantic layer, the space/radius/width/type scales and the shadow ladder) and read computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible and CDP-forced pressed states measured per component; the mobile menu read at its toggled open state</td></tr><tr><td>No provenance</td><td>Every token names its declared variable on the theme element or the measurement it came from; values painted by the browser are labelled computed, not declared</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [set, toks] of [['light', TOK.light], ['dark', TOK.dark]]) {
+    const roles = flat(toks || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${set} roles</div>${set === 'dark' ? '<div class="sg-dark">' : ''}<div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += `</div>${set === 'dark' ? '</div>' : ''}`;
+  }
+  const grads = flat(TOK.core && TOK.core.gradient || {}, 'gradient.');
+  if (grads.length) {
+    h += `<div class="pal-h">gradients</div><div class="pal">`;
+    for (const [n, t] of grads) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc((t.v||[]).map(s=>s.color).join(' → '))}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core && TOK.core.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function groups() {
+  // Every remaining token group gets a key/value table — fonts, radii,
+  // spacing, blur, motion, shadows, typography and the light set's
+  // non-colour roles, so the guide covers all of tokens.json.
+  const show = (v) => Array.isArray(v) ? (typeof v[0] === 'object' ? v.map((l) => `${l.color} ${l.offsetX} ${l.offsetY} ${l.blur} ${l.spread}${l.inset ? ' inset' : ''}`).join(', ') : v.join(', ')) : String(v);
+  const skip = new Set(['color', 'component', 'measured', 'gradient']);
+  let h = '';
+  for (const [set, toks] of [['core', TOK.core], ['light', TOK.light], ['dark', TOK.dark]]) {
+    for (const [g, grp] of Object.entries(toks || {})) {
+      if (skip.has(g)) continue;
+      const items = flat(grp, g + '.').filter(([, t]) => t.t !== 'color');
+      if (!items.length) continue;
+      h += `<div class="pal-h">${esc(set)}.${esc(g)}</div><div class="kv">`;
+      for (const [n, t] of items) h += `<div><b>${esc(n)}</b> <span>${esc(show(t.v))}</span></div>`;
+      h += '</div>';
+    }
+  }
+  if (h) {
+    const sec = document.createElement('div');
+    sec.innerHTML = `<h2 class="sh">Scales and roles</h2>` + h;
+    $('#meas-out').appendChild(sec);
+  }
+})();
+</script>
+</body>
+</html>
