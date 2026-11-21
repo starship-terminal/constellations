@@ -2,7 +2,7 @@
 
 Public signed-out surfaces, measured 2026-11-19. Values are token names. The computed reading is in [raw/components.json](raw/components.json).
 
-Crops were not saved. The preview browser returned "The browser is not producing screenshot frames", so no element screenshot exists to crop.
+Crops from the 2026-11-21 refresh are in [components/crops/](components/crops/). Page shots are in [screenshots/](screenshots/).
 
 ## Button
 
@@ -22,15 +22,15 @@ Nav links (`.nav_link1`) are 14px Inter, `light.color.ink`, 18px vertical paddin
 
 The home page has one email input, name `email`, placeholder "Work email". It is not inside a `form`. Background white, text `#3e0079`, radius 10px, height 40px, padding 0 14px, 1px border `rgba(47, 1, 151, 0.08)`. Nothing was typed.
 
-The login field is a different control: 32px tall, 6px radius, black text, purple focus border. Nothing was typed. Signup was a Cloudflare challenge and was not measured.
+The login field is a different control: 32px tall, 6px radius, black text, purple focus border. Nothing was typed. The signup field is the same empty control. Neither form was submitted.
 
 ## Text area, select, checkbox, radio, switch
 
-Not present on the measured marketing pages. The pricing annual/monthly control is a custom pill toggle, not a switch. Track `rgba(56, 5, 116, 0.04)`, white thumb, pill radius, 46px tall. Annual is the selected state. It was not clicked, so the monthly repaint is a gap.
+Not present on the measured marketing pages. The pricing annual/monthly control is a custom pill toggle, not a switch. Annual is the default. Monthly was opened on 2026-11-21 and the prices repainted. Checkout was not entered.
 
 ## Tabs, menu, tooltip, dialog, toast
 
-Not opened. The nav has Solutions and Resources dropdown toggles. They were not opened, so menu panel styles are a gap. No tooltip, dialog, or toast was on screen. The phone nav shows a 40 by 37 menu button (`.nav_hb_wrap`). It was not opened.
+Solutions and Resources are hover menus. Both were opened on 2026-11-21 ([solutions crop](components/crops/menu-solutions-default.png), [resources crop](components/crops/menu-resources-default.png)). The phone menu button opens a full-screen drawer ([shot](screenshots/mobile-home-light-menu.png)). No tooltip, dialog, or toast was on the measured pages. Support in the Resources menu has href `#` and did not open a dialog.
 
 ## Card
 
@@ -52,8 +52,7 @@ No data table and no avatar component on the measured pages. The "Unlimited" pri
 
 ## Gaps
 
-- No crops. Screenshot frames were not produced.
-- Hover, focus-visible, pressed, disabled, loading, and error states were not computed.
-- Dropdown menus, the phone menu, and the pricing monthly state were not opened.
-- Signup, book-a-demo, and contact-sales forms were not entered.
+- Hover, focus-visible, pressed, disabled, loading, and error states were not fully computed. A primary hover crop exists. It does not establish a hover colour.
+- Signup was photographed empty and not submitted. Book-a-demo and the opt-out form were not entered.
+- The signed-in app was not captured. `login-extracted` stays not-started.
 - Checkbox, radio, switch, textarea, select, toast, dialog, tooltip, table, and avatar were not on the measured pages.

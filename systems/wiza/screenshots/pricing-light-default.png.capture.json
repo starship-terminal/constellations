@@ -1,0 +1,28 @@
+{
+  "name": "pricing-light-default",
+  "url": "https://wiza.co/pricing",
+  "title": "Compare Pricing Plans | Wiza",
+  "capturedAt": "2026-11-21T15:52:22.085Z",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "png": {
+    "pixelWidth": 1440,
+    "pixelHeight": 4409,
+    "path": "/tmp/wiza-raw/screenshots/pricing-light-default.png"
+  },
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "colorScheme": "normal",
+    "title": "Compare Pricing Plans | Wiza",
+    "url": "https://wiza.co/pricing"
+  }
+}

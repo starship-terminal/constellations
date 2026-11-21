@@ -1,0 +1,70 @@
+{
+  "slug": "wiza",
+  "product": "Wiza",
+  "domain": "wiza.co",
+  "captured": "2026-11-21",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "email-and-google",
+  "session": "Headless Chromium for the login wall. T3 preview browser for the signup wall, because headless Chromium stopped on a Cloudflare check. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed.",
+  "wall": {
+    "url": "https://wiza.co/auth/login",
+    "title": "Login | Wiza",
+    "asks": [
+      "Email",
+      "Log in",
+      "Reset it here",
+      "Log in via Google",
+      "Get started"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "code_field": false,
+    "inputs": [
+      {"type": "text", "placeholder": "e.g: john@toyota.com", "filled": false}
+    ],
+    "note": "The heading is Welcome back to Wiza. The email field was empty. Log in was not clicked. Log in via Google was not clicked. Reset it here was not clicked."
+  },
+  "signup_wall": {
+    "url": "https://wiza.co/auth/signup",
+    "title": "Signup | Wiza",
+    "asks": [
+      "Work email",
+      "Sign up",
+      "Sign up via Google",
+      "Log in"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "continued": false,
+    "note": "The heading is Get started for free. The work-email field was empty. Sign up was not clicked. Sign up via Google was not clicked. Headless Chromium received a Cloudflare challenge on this URL and that shot was discarded."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "deviceScaleFactor": 1,
+      "login": "screenshots/login-light-default.png",
+      "signup": "screenshots/signup-light-default.png"
+    }
+  },
+  "screens": [
+    {"name": "Login wall, desktop, empty", "file": "screenshots/login-light-default.png"},
+    {"name": "Signup wall, desktop, empty", "file": "screenshots/signup-light-default.png"}
+  ],
+  "gaps": [
+    "login-extracted is not-started.",
+    "Log in via Google and Sign up via Google were not clicked.",
+    "The email fields were left empty. Log in and Sign up were not clicked.",
+    "Password reset was not opened.",
+    "The signed-in prospecting app was not reached."
+  ],
+  "not_submitted": [
+    "Log in",
+    "Sign up",
+    "Log in via Google",
+    "Sign up via Google",
+    "Reset it here",
+    "Book a demo",
+    "Opt out"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "notfound-light-default",
+  "url": "https://wiza.co/this-page-does-not-exist-capture-2026",
+  "title": "Page Not Found",
+  "capturedAt": "2026-11-21T15:53:05.147Z",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "png": {
+    "pixelWidth": 1440,
+    "pixelHeight": 1228,
+    "path": "/tmp/wiza-raw/screenshots/notfound-light-default.png"
+  },
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "colorScheme": "normal",
+    "title": "Page Not Found",
+    "url": "https://wiza.co/this-page-does-not-exist-capture-2026"
+  }
+}

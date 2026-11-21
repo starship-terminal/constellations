@@ -1,0 +1,28 @@
+{
+  "name": "vdp-light-default",
+  "url": "https://wiza.co/vdp",
+  "title": "Vulnerability Disclosure Program",
+  "capturedAt": "2026-11-21T15:52:53.937Z",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "png": {
+    "pixelWidth": 1440,
+    "pixelHeight": 2840,
+    "path": "/tmp/wiza-raw/screenshots/vdp-light-default.png"
+  },
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "colorScheme": "normal",
+    "title": "Vulnerability Disclosure Program",
+    "url": "https://wiza.co/vdp"
+  }
+}

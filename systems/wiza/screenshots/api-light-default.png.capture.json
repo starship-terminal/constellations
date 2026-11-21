@@ -1,0 +1,28 @@
+{
+  "name": "api-light-default",
+  "url": "https://wiza.co/wiza-api",
+  "title": "Contact Enrichment API | Wiza",
+  "capturedAt": "2026-11-21T15:52:37.881Z",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "png": {
+    "pixelWidth": 1440,
+    "pixelHeight": 4130,
+    "path": "/tmp/wiza-raw/screenshots/api-light-default.png"
+  },
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "colorScheme": "normal",
+    "title": "Contact Enrichment API | Wiza",
+    "url": "https://wiza.co/wiza-api"
+  }
+}
