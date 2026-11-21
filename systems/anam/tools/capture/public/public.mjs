@@ -3,8 +3,7 @@
 //   [RAW=<dir, default ~/.design-systems/anam/raw-shots>] PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [page,page,...]
 //
 // Two public surfaces on one host:
-//   anam.ai         the Framer marketing site: /, /api, /pricing, /interactive-avatars, /about,
-//                   /research, /case-studies, /blog, /changelog, /tools, /get-demo
+//   anam.ai         the Framer marketing site plus Next.js app pages. See site-tree.md.
 //   anam.ai/docs    the Mintlify docs: /docs/introduction/overview, /docs/api-reference/overview
 // Names are {page}-light-{state}.png; mobile ones get a `mobile-` prefix, docs-dark runs are
 // {page}-dark-{state}.png. Desktop shots are 1440x900 at 1x, mobile shots 390x844 at 2x,
@@ -76,13 +75,34 @@ class Shooter {
 const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
 
 // Hovers one top-nav item so its ContentSubMenu opens (Framer opens them on hover).
-async function navMenu(p, S, item = 'Developers') {
-  const link = p.locator('a', { hasText: item }).filter({ visible: true }).first();
+async function navMenu(p, S) {
+  // Next.js pages open one dropdown from the Developers or Resources button.
+  // The Framer home has no such button; fall back to hovering the Developers link.
+  const btn = p.getByRole('button', { name: /^developers$/i }).filter({ visible: true }).first();
+  if (await btn.count()) {
+    await btn.click();
+    await wait(p, 900);
+    await S.view('nav-submenu');
+    await p.keyboard.press('Escape');
+    await wait(p, 400);
+    return;
+  }
+  const link = p.locator('a', { hasText: 'Developers' }).filter({ visible: true }).first();
   await link.hover().catch(() => {});
-  await wait(p, 1500);
+  await wait(p, 900);
   await S.view('nav-submenu');
-  await p.mouse.move(720, 500);
-  await wait(p, 600);
+  await p.mouse.move(20, 800);
+  await wait(p, 400);
+}
+
+async function cookieSettings(p, S) {
+  const manage = p.getByRole('button', { name: /manage cookies/i }).filter({ visible: true }).first();
+  if (!(await manage.count())) return;
+  await manage.click();
+  await wait(p, 800);
+  await S.view('cookie-settings');
+  await p.keyboard.press('Escape');
+  await wait(p, 400);
 }
 
 // Presses one persona chip under the hero demo ("sales Liv", "medical-services Talk with Mia",
@@ -99,6 +119,7 @@ async function persona(p, S) {
 const desktop = {
   home: { path: '/', promo: 'keep', run: async (p, S) => {
     await S.view('consent');                    // the cookie card as it first renders
+    await step('cookie-settings', () => cookieSettings(p, S));
     await closePromo(p);                        // display:none, never a consent click
     await S.view('default');
     await S.full();
@@ -109,6 +130,7 @@ const desktop = {
   pricing: { path: '/pricing', run: async (p, S) => {
     await S.view('default');
     await S.full();
+    await step('nav-submenu', () => navMenu(p, S));
     await step('billing-toggle', async () => {
       const t = p.locator('button, [role=switch], [role=tab]').filter({ hasText: /annual|yearly|monthly/i }).first();
       if (await t.count()) { await t.click(); await wait(p, 1500); await S.view('billing-toggle'); }
@@ -121,6 +143,13 @@ const desktop = {
   blog: { path: '/blog', run: async (p, S) => { await S.view('default'); await S.full(); } },
   changelog: { path: '/changelog', run: async (p, S) => { await S.view('default'); await S.full(); } },
   tools: { path: '/tools', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  integrations: { path: '/integrations', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  'cara-4-1': { path: '/cara-4-1', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  glossary: { path: '/resources/glossary', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  compare: { path: '/compare', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  guides: { path: '/resources/guides', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  cookbook: { path: '/cookbook', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  governance: { path: '/ai-governance', run: async (p, S) => { await S.view('default'); await S.full(); } },
   'get-demo': { path: '/get-demo', run: async (p, S) => {
     await S.view('default');
     await S.full();
@@ -136,11 +165,15 @@ const desktop = {
     await S.view('default');
     await S.full();
     await step('search', async () => {
-      await p.keyboard.press('ControlOrMeta+k');
-      await wait(p, 1500);
+      // The cookie dialog covers ⌘K. Hide it with display:none. Never Accept or Decline.
+      await closePromo(p);
+      const search = p.getByRole('button', { name: /open search/i }).first();
+      if (await search.count()) await search.click();
+      else await p.keyboard.press('ControlOrMeta+k');
+      await wait(p, 900);
       await S.view('search-dialog');
       await p.keyboard.press('Escape');
-      await wait(p, 600);
+      await wait(p, 400);
     });
     await step('assistant', async () => {
       await p.keyboard.press('ControlOrMeta+i');
@@ -173,11 +206,24 @@ const mobile = {
     await S.view('default');
     await S.full();
     await step('nav-open', async () => {
-      const t = p.locator('[data-framer-name="NavTrigger"], [data-framer-name="Menu"] button, header button').first();
-      if (await t.count()) { await t.click(); await wait(p, 1500); await S.view('nav-open'); }
+      // Framer paints the hamburger as div[data-framer-name=Icon]. A synthetic
+      // click does not open it; a real Playwright click does. Never click Sign in.
+      const icon = p.locator('[data-framer-name="Icon"]').first();
+      if (await icon.count()) {
+        await icon.click({ force: true });
+        await wait(p, 1000);
+        await S.view('nav-open');
+      }
     });
   } },
-  pricing: { path: '/pricing', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  pricing: { path: '/pricing', run: async (p, S) => {
+    await S.view('default');
+    await S.full();
+    await step('nav-open', async () => {
+      const t = p.getByRole('button', { name: /open menu/i }).or(p.locator('header button').filter({ hasText: /menu/i })).first();
+      if (await t.count()) { await t.click(); await wait(p, 900); await S.view('nav-open'); }
+    });
+  } },
   'docs-overview': { path: '/docs/introduction/overview', wait: 7000, run: async (p, S) => { await S.view('default'); await S.full(); } },
 };
 
