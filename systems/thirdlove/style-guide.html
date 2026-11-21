@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ThirdLove public tokens</title>
+  <style>
+    :root {
+      --page: #ffffff;
+      --ink: #2c272d;
+      --on-ink: #ffffff;
+      --promo: #85002c;
+      --gold: #f1dd99;
+      --black: #000000;
+      --muted: #999999;
+      --chip: #4b4b4b;
+      --field: #cccccc;
+      --ui: "Iowan Old Style", Palatino, Georgia, serif;
+    }
+    body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--ui); }
+    header.promo { background: var(--promo); color: var(--on-ink); height: 40px; display: flex; align-items: center; justify-content: center; font-size: 15px; }
+    main { max-width: 880px; margin: 0 auto; padding: 32px 24px 64px; }
+    h1 { font-weight: 400; font-size: 64px; line-height: 1; margin: 0 0 8px; }
+    p { line-height: 1.5; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0 28px; }
+    .swatch { width: 120px; }
+    .chip { height: 48px; border-radius: 4px; border: 1px solid rgba(44,39,45,0.12); }
+    .name { font-size: 12px; margin-top: 6px; }
+    .hex { font-size: 12px; color: var(--muted); }
+    .fit { height: 52px; padding: 0 18px; border: 0; border-radius: 100px; background: white; color: black; font: 400 14px var(--ui); }
+    .shop { height: 39px; padding: 0 18px; border-radius: 25px; background: white; color: black; border: 1px solid white; font: 500 13px var(--ui); }
+    .select { height: 48px; padding: 0 28px; border: 1px solid black; border-radius: 100px; background: black; color: white; font: 500 16px var(--ui); }
+    .join { height: 33px; padding: 0 14px; border: 0; border-radius: 20px; background: var(--gold); color: black; font: 400 12px var(--ui); }
+    .size { width: 53px; height: 40px; background: white; color: var(--chip); border: 1px solid #dadadb; border-radius: 2px; font: 14px var(--ui); }
+    .email { width: 280px; height: 50px; border: 1px solid black; border-radius: 0; padding: 0 16px; font: 13px Helvetica, sans-serif; }
+    .signin { height: 51px; width: 280px; border-radius: 36px; background: var(--ink); color: white; border: 1px solid black; font: 500 14px var(--ui); }
+    footer { background: white; color: var(--ink); padding: 28px 24px; font-size: 16px; border-top: 1px solid #eee; }
+  </style>
+</head>
+<body>
+  <header class="promo">Up to 60% Off + an extra 25% off orders $135+</header>
+  <main>
+    <h1>Thirdlove</h1>
+    <p>Measured from the public shop on 2026-11-22. Rules and Founders Grotesk Text are not in this package, so the guide falls back.</p>
+    <div class="row">
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="name">page</div><div class="hex">#ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#2c272d"></div><div class="name">ink</div><div class="hex">#2c272d</div></div>
+      <div class="swatch"><div class="chip" style="background:#85002c"></div><div class="name">promo</div><div class="hex">#85002c</div></div>
+      <div class="swatch"><div class="chip" style="background:#f1dd99"></div><div class="name">gold</div><div class="hex">#f1dd99</div></div>
+      <div class="swatch"><div class="chip" style="background:#000000"></div><div class="name">black</div><div class="hex">#000000</div></div>
+      <div class="swatch"><div class="chip" style="background:#999999"></div><div class="name">muted</div><div class="hex">#999999</div></div>
+      <div class="swatch"><div class="chip" style="background:#4b4b4b"></div><div class="name">chip</div><div class="hex">#4b4b4b</div></div>
+    </div>
+    <p><button class="fit">Find My Fit</button> <button class="shop">Shop Sale</button></p>
+    <p><button class="select">Select Size</button> <button class="join">Join Now</button></p>
+    <p><button class="size">SM</button> <button class="size">MD</button> <button class="size">LG</button></p>
+    <p style="color:#999999; font-size:28px; text-decoration:line-through">$68 <span style="color:#2c272d; text-decoration:none">$25</span></p>
+    <p><input class="email" placeholder="Enter your email here..." aria-label="Signup for email alerts"></p>
+    <p><button class="signin">Sign In</button></p>
+  </main>
+  <footer>Join The List. The email was not submitted.</footer>
+</body>
+</html>
