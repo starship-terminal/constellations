@@ -1,0 +1,93 @@
+{
+  "captured": "2026-11-21",
+  "route": "public headless Chromium, signed out",
+  "note": "Fable's marketing CSS does not declare a product token set on :root. Painted roles were read as computed styles. Vendor --osano-* and --hsds-* names belong to the consent banner and the help widget and are not tokenised.",
+  "core": {
+    "color": {
+      "forest": {"type": "color", "value": "#064c37", "source": "computed background of the home hero ancestor, https://fable.co/ 2026-11-21"},
+      "cream": {"type": "color", "value": "#f7f4ee", "source": "computed color of h1 on the home hero, and meta theme-color / mask-icon"},
+      "creamPage": {"type": "color", "value": "#f7f4eb", "source": "computed background behind the book title on /book/fourth-wing-by-rebecca-yarros-9781649374080"},
+      "ink": {"type": "color", "value": "#1b1a1b", "source": "computed color of the clubs h1 and the book title"},
+      "inkSoft": {"type": "color", "value": "#161015", "source": "computed color of the Get the app label and signup field text"},
+      "inkButton": {"type": "color", "value": "#292229", "source": "computed background of Sign up with Email and Login with email"},
+      "paper": {"type": "color", "value": "#ffffff", "source": "computed background of Get the app and dialogs"},
+      "footer": {"type": "color", "value": "#070607", "source": "computed background of footer on https://fable.co/"},
+      "link": {"type": "color", "value": "#116ecd", "source": "computed color of Terms of Use inside the signup dialog"},
+      "focus": {"type": "color", "value": "#116ecd", "source": "computed outline-color of Get the app after keyboard focus"},
+      "chipBorder": {"type": "color", "value": "#b1acaf", "source": "computed border-top-color of the Fantasy genre chip on /clubs"},
+      "badge": {"type": "color", "value": "#526c03", "source": "computed background of May contain spoilers on the book page"},
+      "hoverWash": {"type": "color", "value": "#f9f9f9", "source": "computed background of Get the app on hover"}
+    },
+    "font": {
+      "family": {
+        "display": {"type": "fontFamily", "value": "Heldane Display, serif", "source": "computed font-family of home h1"},
+        "sans": {"type": "fontFamily", "value": "Inter, serif", "source": "computed font-family of header nav links (the page declares Inter, then serif)"}
+      }
+    },
+    "typography": {
+      "display": {"type": "typography", "value": {"fontFamily": "{font.family.display}", "fontSize": "72px", "fontWeight": 500, "lineHeight": "62px"}, "source": "computed style of home h1"},
+      "title": {"type": "typography", "value": {"fontFamily": "{font.family.display}", "fontSize": "46px", "fontWeight": 700, "lineHeight": "48px"}, "source": "computed style of book h1 Fourth Wing"},
+      "clubsTitle": {"type": "typography", "value": {"fontFamily": "{font.family.display}", "fontSize": "58px", "fontWeight": 700, "lineHeight": "60px"}, "source": "computed font-size 58px and height 120px over two lines on clubs h1; line-height derived as 60px"},
+      "dialogTitle": {"type": "typography", "value": {"fontFamily": "{font.family.sans}", "fontSize": "22px", "fontWeight": 500, "lineHeight": "28px"}, "source": "computed font-size of Create your account; weight and line-height not separately stored, line-height derived"},
+      "lede": {"type": "typography", "value": {"fontFamily": "{font.family.sans}", "fontSize": "24px", "fontWeight": 500, "lineHeight": "34px"}, "source": "computed style of the home lede"},
+      "body": {"type": "typography", "value": {"fontFamily": "{font.family.sans}", "fontSize": "16px", "fontWeight": 400, "lineHeight": "24px"}, "source": "computed style of body and nav links"},
+      "label": {"type": "typography", "value": {"fontFamily": "{font.family.sans}", "fontSize": "14px", "fontWeight": 600, "lineHeight": "20px"}, "source": "computed font-size and weight of Get the app; line-height derived"},
+      "caption": {"type": "typography", "value": {"fontFamily": "{font.family.sans}", "fontSize": "12px", "fontWeight": 400, "lineHeight": "15px"}, "source": "computed font-size of Terms of Use in the signup dialog"}
+    },
+    "radius": {
+      "none": {"type": "dimension", "value": "0px", "source": "computed border-radius of home h1 and nav links"},
+      "dialog": {"type": "dimension", "value": "12px", "source": "computed border-radius of the Download the app dialog"},
+      "pill": {"type": "dimension", "value": "60px", "source": "computed border-radius of Get the app and Sign up with Email"},
+      "chip": {"type": "dimension", "value": "9999px", "source": "computed border-radius of the Fantasy chip and Want to read"}
+    },
+    "space": {
+      "chipX": {"type": "dimension", "value": "20px", "source": "computed padding-left of the Fantasy chip"},
+      "chipY": {"type": "dimension", "value": "10px", "source": "computed padding-top of the Fantasy chip"},
+      "footer": {"type": "dimension", "value": "100px", "source": "computed padding-top of the home footer"},
+      "footerX": {"type": "dimension", "value": "52px", "source": "computed padding-left of the home footer"}
+    },
+    "size": {
+      "header": {"type": "dimension", "value": "60px", "source": "computed height of header on https://fable.co/"},
+      "cta": {"type": "dimension", "value": "52px", "source": "computed height of Get the app and Read or listen free today"},
+      "field": {"type": "dimension", "value": "50px", "source": "computed height of Display Name in the signup dialog"},
+      "authButton": {"type": "dimension", "value": "44px", "source": "computed height of Sign up with Email"},
+      "chip": {"type": "dimension", "value": "46px", "source": "computed height of the Fantasy chip"},
+      "content": {"type": "dimension", "value": "1200px", "source": "computed width of the hero text row ancestor on the home page"},
+      "dialog": {"type": "dimension", "value": "384px", "source": "computed width of Sign up with Email"}
+    },
+    "border": {
+      "hairline": {"type": "dimension", "value": "1px", "source": "computed border-top-width of the Fantasy chip"},
+      "control": {"type": "dimension", "value": "2px", "source": "computed border-top-width of Sign up with Email"},
+      "focus": {"type": "dimension", "value": "2px", "source": "computed outline-width of Get the app after keyboard focus"}
+    }
+  },
+  "light": {
+    "background": {
+      "page": {"type": "color", "value": "{color.cream}", "source": "meta name=theme-color and mask-icon color, both #F7F4EE"},
+      "hero": {"type": "color", "value": "{color.forest}", "source": "computed background of the home hero band"},
+      "surface": {"type": "color", "value": "{color.paper}", "source": "computed background of dialogs and the Get the app button"},
+      "book": {"type": "color", "value": "{color.creamPage}", "source": "computed background behind the book title"},
+      "inverse": {"type": "color", "value": "{color.footer}", "source": "computed background of the footer"}
+    },
+    "text": {
+      "primary": {"type": "color", "value": "{color.ink}", "source": "computed color of clubs and book titles"},
+      "onHero": {"type": "color", "value": "{color.cream}", "source": "computed color of the home h1"},
+      "onInverse": {"type": "color", "value": "{color.paper}", "source": "computed color of footer text, rgb(255, 255, 255)"},
+      "link": {"type": "color", "value": "{color.link}", "source": "computed color of dialog legal links"},
+      "muted": {"type": "color", "value": "{color.inkSoft}", "source": "computed color of field text and the Get the app label"}
+    },
+    "border": {
+      "default": {"type": "color", "value": "{color.chipBorder}", "source": "computed border of the Fantasy chip"},
+      "strong": {"type": "color", "value": "{color.ink}", "source": "computed border-top-color of Read or listen free today"}
+    },
+    "action": {
+      "primary": {"type": "color", "value": "{color.inkButton}", "source": "computed background of Login with email and Sign up with Email"},
+      "onPrimary": {"type": "color", "value": "{color.paper}", "source": "computed color of Login with email"},
+      "quiet": {"type": "color", "value": "{color.paper}", "source": "computed background of Get the app on the forest hero"},
+      "onQuiet": {"type": "color", "value": "{color.inkSoft}", "source": "computed color of Get the app"}
+    },
+    "focus": {
+      "ring": {"type": "color", "value": "{color.focus}", "source": "computed outline-color of Get the app:focus"}
+    }
+  }
+}

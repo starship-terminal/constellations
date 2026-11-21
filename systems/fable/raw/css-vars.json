@@ -1,0 +1,5 @@
+{
+  "note": "Fable's own stylesheets declare no product custom properties on :root. The names seen on 2026-11-21 belong to Osano (consent), Tailwind internals, and the Help Scout beacon. They were not tokenised. Painted values are in component-tokens.json.",
+  "resolved": {},
+  "vendorOnly": true
+}

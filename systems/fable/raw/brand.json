@@ -1,0 +1,23 @@
+{
+  "capturedAt": "2026-11-21",
+  "themeColor": "#F7F4EE",
+  "maskIcon": "#F7F4EE",
+  "desktop": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "themeColor": "#F7F4EE",
+    "mask": "#F7F4EE"
+  },
+  "mobile": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2
+  },
+  "consent": "Osano banner hidden with CSS. Accept All, Reject Non-Essential, and Save Preferences were not clicked."
+}
