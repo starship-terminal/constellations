@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GOAT public tokens</title>
+<style>
+  :root {
+    --ink: #000000;
+    --page: #ffffff;
+    --home: #000000;
+    --on-home: #ffffff;
+    --hairline: #515151;
+    --hairline-home: #aeaeae;
+    --field: #bfbfbf;
+    --signup: #000000;
+    --on-signup: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px;
+    background: var(--page);
+    color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11.5px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+  h1 { font-size: 11.5px; font-weight: 700; letter-spacing: 0; text-transform: uppercase; margin: 0 0 24px; }
+  h2 { font-size: 11.5px; font-weight: 600; text-transform: uppercase; margin: 32px 0 12px; }
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+  .swatch { width: 96px; }
+  .chip { height: 48px; border: 1px solid var(--hairline); }
+  .name { margin-top: 6px; font-size: 11px; }
+  .header {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 12px 32px 0;
+    border-bottom: 1px solid var(--hairline);
+    margin-top: 8px;
+  }
+  .header span { font-size: 11.5px; font-weight: 300; }
+  .header .search { width: 37px; }
+  .header nav { margin: 0 auto; display: flex; gap: 0; }
+  .header nav a { color: var(--ink); text-decoration: none; padding: 12px 8px; font-weight: 300; }
+  .header .account { font-size: 12px; font-weight: 300; }
+  .home-header {
+    background: var(--home);
+    color: var(--on-home);
+    border-bottom-color: var(--hairline-home);
+  }
+  .home-header nav a { color: var(--on-home); }
+  .row { display: flex; gap: 24px; align-items: flex-end; margin-top: 16px; }
+  .size { text-align: center; font-size: 12px; font-weight: 300; line-height: 14px; }
+  .size b { display: block; font-weight: 300; margin-top: 4px; }
+  .buy {
+    margin-top: 16px;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    color: var(--ink);
+  }
+  .signup {
+    display: inline-block;
+    height: 32px;
+    padding: 7px 18px;
+    background: var(--signup);
+    color: var(--on-signup);
+    border: 1px solid var(--signup);
+    border-radius: 1px;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 14px;
+  }
+  .field {
+    display: inline-block;
+    width: 240px;
+    height: 49px;
+    border: 1px solid var(--field);
+    border-radius: 1px;
+    padding: 16px 12px;
+    color: var(--hairline);
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  p.note { max-width: 418px; margin-top: 8px; }
+</style>
+</head>
+<body>
+  <h1>GOAT</h1>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="name">page #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#000000"></div><div class="name">ink #000000</div></div>
+    <div class="swatch"><div class="chip" style="background:#000000"></div><div class="name">home #000000</div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="name">on-home #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#515151"></div><div class="name">hairline #515151</div></div>
+    <div class="swatch"><div class="chip" style="background:#aeaeae"></div><div class="name">hairline-home #aeaeae</div></div>
+    <div class="swatch"><div class="chip" style="background:#bfbfbf"></div><div class="name">field #bfbfbf</div></div>
+  </div>
+  <h2>Header, interior</h2>
+  <div class="header">
+    <span class="search">Search</span>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">Editorial</a>
+      <a href="#">Timeline</a>
+    </nav>
+    <span class="account">Account</span>
+  </div>
+  <h2>Header, homepage</h2>
+  <div class="header home-header">
+    <span class="search">Search</span>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">Editorial</a>
+      <a href="#">Timeline</a>
+    </nav>
+    <span class="account">Account</span>
+  </div>
+  <h2>Size row</h2>
+  <div class="row">
+    <div class="size">11.5<b>S$238</b></div>
+    <div class="size">12<b>S$242</b></div>
+    <div class="size">12.5<b>S$258</b></div>
+    <div class="size">13<b>S$237</b></div>
+    <div class="size">13.5<b>Offer</b></div>
+  </div>
+  <div class="buy">Buy New</div>
+  <h2>Newsletter</h2>
+  <div class="field">Email Address</div>
+  <span class="signup">Sign Up</span>
+  <p class="note">Sign Up is 77 by 32, padding 7px 18px, radius 1px. It was not clicked.</p>
+</body>
+</html>
