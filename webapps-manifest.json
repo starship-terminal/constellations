@@ -2901,7 +2901,7 @@
       "description": "Anyone can cook",
       "status": "captured",
       "package": "systems/kitchenstories",
-      "notes": "https://www.kitchenstories.com/profile Login opens a Contentpass account form at my.contentpass.net with email and password. No code was sent. A consent banner was present and was not accepted.",
+      "notes": "https://www.kitchenstories.com/profile Login opens a Contentpass account form at my.contentpass.net with email and password. No code was sent. A consent banner was present and was not accepted. Public walk 2026-11-21 stopped before a package. The homepage loaded behind a consent wall that was not accepted. /profile is a migration notice, not a password form. The worker died on a usage limit before opening a pull request. No package. Session not checked. login-extracted stays not-started.",
       "login-extracted": "not-started",
       "login-probe": "password",
       "batch": 9
@@ -2986,7 +2986,7 @@
       "description": "World's #1 Noise Cancelling App and AI Meeting Assistant",
       "status": "captured",
       "package": "systems/krisp",
-      "notes": "https://krisp.ai/wp-login.php asks for username or email and password. No code was sent.",
+      "notes": "https://krisp.ai/wp-login.php asks for username or email and password. No code was sent. Public walk 2026-11-21 stopped before a package. https://krisp.ai/ loaded and the header menus were mapped. The worker died on a usage limit before a site tree, a login review, or a pull request. No package. Session not checked. login-extracted stays not-started.",
       "login-extracted": "not-started",
       "login-probe": "password",
       "batch": 9
