@@ -1,7 +1,10 @@
-// Shared helpers for the Gauth captures (adapted from the Coursera kit).
+// Shared helpers for the glassnode.com public captures (adapted from the
+// shared capture-kit lineage used across systems/ packages, via the
+// fingerprint package's copy).
 // Run with PLAYWRIGHT pointing at a Playwright install (index.mjs) when this
-// directory has no node_modules of its own.
+// directory has no node_modules.
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 
@@ -16,59 +19,171 @@ export const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
 export const UA_MOBILE =
   'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1';
-export const BASE = 'https://www.gauth.com';
+export const BASE = 'https://glassnode.com';
+export const STUDIO_BASE = 'https://studio.glassnode.com';
+export const RESEARCH_BASE = 'https://research.glassnode.com';
+export const DOCS_BASE = 'https://docs.glassnode.com';
+export const TOKENIZATION_BASE = 'https://tokenization.glassnode.com';
+export const AUTH_BASE = 'https://auth.glassnode.com';
+// The studio's "Log in" nav button navigates to the Auth0 universal-login
+// page under auth.glassnode.com/u/login?state=... — the state parameter is a
+// per-attempt signed value, so the public URL is recorded without it and the
+// shot's sidecar carries the sanitized origin+path only.
+export const LOGIN_URL = AUTH_BASE + '/u/login';
 
 export const HERE = path.dirname(new URL(import.meta.url).pathname);
 export const REF = path.resolve(HERE, '..', '..', '..'); // systems/<slug>, from tools/capture/public
 export const CROPS = path.join(REF, 'components', 'crops');
 export const RAW = path.join(REF, 'raw');
 
-// Gauth styles its pages with CSS modules: a class is `<file>_<name>__<hash>`.
-// M('catalog_card') selects by the stable part, so a rebuild that changes the
-// hash does not break the kit.
-export const M = (name) => `[class*="${name}__"]`;
+// glassnode.com is several public surfaces signed out. The marketing site
+// (glassnode.com/...) is a Next.js app styled with SCSS modules on a declared
+// token layer: --base_grey_*/--base_ultramarine_* palette steps, the
+// --light_bg_*/--light_text_*/--light_border*/--light_util_grey_* semantic
+// roles, --grey_*, --accent_80, --error*, --space-*, --shadow-*,
+// --nav-height-*/--section-py-*/--px-*, --screen_*, --grid-width,
+// --z_index_*, --transition_* and the --vector-* brand assets, painted light
+// with dark in-page sections (--section-bg-dark). studio.glassnode.com is the
+// product shell: a React SPA on a much larger variable layer (data-theme on
+// <html>) whose /pricing, /charts/*, /dashboards/*, /market-compass upgrade
+// gate, /get-listed, /contact and legal pages are public signed out; "Log in"
+// navigates to the Auth0 universal login at auth.glassnode.com/u/login.
+// research.glassnode.com is a Ghost publication with a real "Switch to dark
+// mode" toggle. docs.glassnode.com is a GitBook site with .light/.dark on
+// <html> and a theme control. tokenization.glassnode.com is a public
+// tokenization-registry app, dark by default ([data-theme="dark"], a
+// [data-theme="light"] layer declared). The marketing pages are styled by
+// *-module-scss-module__<hash>__<name> classes, so M('partnersSection')
+// selects by the stable name after the module hash.
+export const M = (name) => `[class*="__${name}"]`;
+
+// The per-context patches every page gets: a record of
+// the real devicePixelRatio before app code runs — a page's scripts can make
+// window.devicePixelRatio read 1 while the renderer still paints at the
+// context's deviceScaleFactor (a 780x1688 PNG from a 390x844 viewport).
+// __captureDPR keeps the launch-time value for the screenshot sidecar.
+export async function patch(context) {
+  await context.addInitScript(() => {
+    // automation flag: left as the browser sets it (navigator.webdriver is not masked).
+    try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
+  });
+}
+
+// Cloudflare fronts glassnode.com, studio.glassnode.com and
+// research.glassnode.com: a headless client is shown the "Just a moment"
+// interstitial roughly half the time and a pass is probabilistic, while a
+// headed Chromium under xvfb (`xvfb-run -a env HEADFUL=1 ...`) clears it on
+// the first load. HEADFUL=1 launches the real window; without it the scripts
+// run headless and the clearChallenge retry loops are the fallback.
+export const HEADFUL = process.env.HEADFUL === '1';
+// The shared ms-playwright cache on this box can hold a different chromium
+// revision than the installed playwright package pins: launch normally, and
+// fall back to the newest chromium-* binary present when the pinned one is
+// absent.
+export async function launchBrowser() {
+  try {
+    return await chromium.launch({ headless: !HEADFUL });
+  } catch (e) {
+    const dir = path.join(os.homedir(), '.cache', 'ms-playwright');
+    const bins = fs.existsSync(dir) ? fs.readdirSync(dir)
+      .filter((d) => /^chromium-\d+$/.test(d))
+      .sort((a, b) => +b.split('-')[1] - +a.split('-')[1])
+      .map((d) => path.join(dir, d, 'chrome-linux', 'chrome'))
+      .filter((f) => fs.existsSync(f)) : [];
+    if (!bins.length) throw e;
+    return chromium.launch({ headless: !HEADFUL, executablePath: bins[0] });
+  }
+}
 
 export async function launch({ width = 1440, height = 900, mobile = false } = {}) {
-  const browser = await chromium.launch();
+  const browser = await launchBrowser();
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion: 'no-preference' });
+  await patch(context);
   return { browser, context };
 }
 
-// Every page opens with a promo dialog ("Introducing Gauth Academy"); its own
-// close button dismisses it. `waitUntil: 'networkidle'` never settles on
-// gauth.com, so a page is `load` plus a fixed wait.
-export async function closePromo(page) {
-  const x = page.locator(M('atlas-intro-modal_aw-atlas-intro-modal-close'));
-  for (let i = 0; i < 3; i++) {
-    if (await x.count() && await x.first().isVisible().catch(() => false)) {
-      await x.first().click().catch(() => {});
-      await page.waitForTimeout(800);
-      return true;
-    }
-    await page.waitForTimeout(700);
+// Waits out any bot interstitial and reports whether the real document
+// arrived.
+export async function clearChallenge(page, { tries = 12, step = 2000 } = {}) {
+  for (let i = 0; i < tries; i++) {
+    const s = await page.evaluate(() => ({
+      title: document.title,
+      body: (document.body && document.body.innerText || '').slice(0, 400),
+    })).catch(() => ({ title: '', body: '' }));
+    const challenging = /just a moment|attention required/i.test(s.title)
+      || /performing security verification|verify you are human|verifying you are human|checking your browser|unusual activity from your computer network|press ?& ?hold|not a robot|you have been blocked|unable to access/i.test(s.body);
+    if (!challenging && s.body.length > 40) return true;
+    await page.waitForTimeout(step);
   }
   return false;
 }
 
-export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
-  await page.goto(url, { waitUntil: 'load', timeout: 90000 });
-  await page.waitForTimeout(wait);
-  if (promo === 'close') await closePromo(page);
+// Hide (never click) any fixed overlay that mounts over the page: a consent or
+// promo layer. REMOVE-ONLY: hiding never accepts or rejects anything.
+export async function closePromo(page) {
+  for (let i = 0; i < 4; i++) {
+    const hit = await page.evaluate(() => {
+      let n = 0;
+      // Any cookie/consent layer (aria-label or class naming cookies).
+      // fingerprint.com mounted none during the probes; the generic find
+      // below is the fallback. Hidden, never answered — Allow/Dismiss are
+      // never clicked.
+      document.querySelectorAll('[aria-label*="cookie consent" i], [aria-label="Consent Manager" i], [id*="cookie-consent" i], [id*="cookie_consent" i], [class*="cookie-banner" i], [class*="cookie_banner" i]').forEach((x) => { x.style.setProperty('display', 'none', 'important'); n++; });
+      // Any other fixed consent/cookie overlay (never body/html): hidden,
+      // never answered.
+      document.querySelectorAll('div[id*="onetrust" i], div[class*="onetrust" i], div[id*="termly" i], iframe[title*="privacy" i]').forEach((x) => { x.style.setProperty('display', 'none', 'important'); n++; });
+      const box = [...document.querySelectorAll('div,section,aside,[role="dialog"],[role="alertdialog"]')].find((x) => {
+        const t = x.innerText || '';
+        const r = x.getBoundingClientRect();
+        const cs = getComputedStyle(x);
+        return (cs.position === 'fixed' || cs.position === 'sticky')
+          && /note about our cookies|we use cookies|uses cookies, pixel tags|cookie settings|cookies settings|we value privacy|personal data \(such as identifiers|allow all cookies/i.test(t)
+          && t.length < 1600 && r.width > 200 && r.width < 1400 && r.height > 60 && +cs.zIndex > 5;
+      });
+      if (box) { box.style.setProperty('display', 'none', 'important'); n++; }
+      if (document.body) document.body.style.removeProperty('overflow');
+      document.documentElement && document.documentElement.style.removeProperty('overflow');
+      return n;
+    }).catch(() => 0);
+    if (!hit) { await page.waitForTimeout(600); continue; }
+    await page.waitForTimeout(600);
+  }
+  return true;
 }
 
-// A story's own URL (/atlas/session/<id>) belongs to the browser that opened it and redirects to /atlas
-// anywhere else, so the story is reached the way a visitor reaches it: its card, then Explore.
-export async function openStory(p, title = 'Apollo 11') {
-  // desktop cards are user-cases_card and open a preview with Explore; phone cards are home_caseItem
-  const card = p.locator(`${M('user-cases_card')}, ${M('home_caseItem')}`).filter({ hasText: title }).first();
-  await card.scrollIntoViewIfNeeded();
-  await card.click();
-  await p.waitForTimeout(3000);
-  const explore = p.locator(M('user-cases_exploreButton'));
-  if (await explore.count()) await explore.first().click();
-  await p.waitForTimeout(10000);
+// Finds a visible element in-page whose trimmed innerText matches reText,
+// tags it with data-m-mark="<tag>" and returns a locator for it. up optionally
+// retargets an ancestor (closest()). Use where getByRole/hasText miss nodes
+// whose text lives in nested spans.
+export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up = null, nth = 0, leaf = true, minW = 0, minH = 0 } = {}) {
+  const ok = await page.evaluate(
+    ([src, flags, s, t, upSel, i, leafOnly, w, h]) => {
+      const re = new RegExp(src, flags);
+      document.querySelectorAll(`[data-m-mark="${t}"]`).forEach((n) => n.removeAttribute('data-m-mark'));
+      const els = [...document.querySelectorAll(s)].filter((n) => {
+        const r = n.getBoundingClientRect();
+        const cs = getComputedStyle(n);
+        return r.width >= w && r.height >= h && r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && cs.opacity !== '0' && re.test((n.innerText || '').trim());
+      });
+      // leaf: a container holding another match is a wrapper, not the target
+      const pool = leafOnly ? els.filter((n) => !els.some((o) => o !== n && n.contains(o))) : els;
+      const el = pool[i] || els[i];
+      if (!el) return false;
+      (upSel ? el.closest(upSel) || el : el).setAttribute('data-m-mark', t);
+      return true;
+    },
+    [reText.source, reText.flags, sel, tag, up, nth, leaf, minW, minH],
+  );
+  return ok ? page.locator(`[data-m-mark="${tag}"]`) : page.locator('[data-m-mark="__none__"]');
+}
+
+export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+  await clearChallenge(page);
+  await page.waitForTimeout(wait);
+  if (promo === 'close') await closePromo(page);
 }
 
 // Computed style properties recorded for every component and state.
@@ -94,11 +209,9 @@ export const PROPS = [
 // Reads the computed style of the element, its ::before/::after if they paint
 // anything, the rect, the painted layers in its subtree, a focus ring or fill
 // painted by an ancestor, the first text node's type, and the first svg icon.
-// Class names are reported without their CSS-module hash.
 export async function styleOf(locator) {
   return locator.evaluate((el, props) => {
-    const strip = (c) => String(c).replace(/__[A-Za-z0-9_-]{5,6}$/, '');
-    const cls = (n) => [...n.classList].map(strip).filter((c) => !/^x[0-9a-z]{5,8}$/.test(c));
+    const cls = (n) => [...n.classList].map((c) => String(c)).filter((c) => c && !/^x[0-9a-z]{5,8}$/.test(c));
     // A url() in a computed value (a background photo, a cursor) can be a signed URL: recorded as
     // url(…), only data: and #fragment references kept.
     const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
@@ -185,36 +298,53 @@ export async function styleOf(locator) {
 // Element screenshot into components/crops/<name>.png, padded so a focus ring
 // or shadow is not clipped, then quantized to 256 colours. Sticky bars that do
 // not hold the element are hidden for the shot.
-const STICKY = [M('pc-header_header'), M('catalog_stickyToolbar'), M('math-course-detail_backBar'), M('header_header')].join(', ');
+const STICKY = ['header', 'nav[class*="sticky" i]', '[class*="sticky" i] header', 'div[class*="sticky" i]:has(> nav)'].join(', ');
 export async function crop(page, locator, name, pad = 8) {
   fs.mkdirSync(CROPS, { recursive: true });
   const file = path.join(CROPS, `${name}.png`);
-  const hidden = await locator.evaluate((el, sel) => {
+  const hidden = await locator.evaluate((el, { sel, pad }) => {
     let n = 0;
+    const er = el.getBoundingClientRect();
     document.querySelectorAll(sel).forEach((s) => {
       if (s.contains(el) || el.contains(s)) return;
+      // A sticky layer painted behind the target supplies its backdrop; hiding
+      // it turns the crop into the page's plain field.
+      const sr = s.getBoundingClientRect();
+      const overlap = !(sr.right < er.left - pad || sr.left > er.right + pad || sr.bottom < er.top - pad || sr.top > er.bottom + pad);
+      if (overlap) return;
       s.setAttribute('data-m-hidden', '1');
       s.style.setProperty('visibility', 'hidden', 'important');
       n++;
     });
     return n;
-  }, STICKY);
+  }, { sel: STICKY, pad });
   try {
     const box = await locator.boundingBox();
     if (!box) throw new Error(`no box for ${name}`);
     const vp = page.viewportSize();
     const inView = box.y - pad >= 0 && box.y + box.height + pad <= vp.height && box.x >= 0 && box.x + box.width <= vp.width + 1;
-    if (inView) {
-      const clip = {
-        x: Math.max(0, box.x - pad),
-        y: Math.max(0, box.y - pad),
-        width: Math.min(vp.width - Math.max(0, box.x - pad), box.width + 2 * pad),
-        height: Math.min(vp.height - Math.max(0, box.y - pad), box.height + 2 * pad),
-      };
-      await page.screenshot({ path: file, clip, animations: 'allow' });
-    } else {
-      await locator.screenshot({ path: file, animations: 'allow' });
+    // A screenshot can stall waiting for document.fonts.ready while a lazy
+    // font request hangs; retry once, then fail without leaving a stale crop
+    // from an earlier run behind.
+    let lastErr;
+    for (let i = 0; i < 2; i++) {
+      try {
+        if (inView) {
+          const clip = {
+            x: Math.max(0, box.x - pad),
+            y: Math.max(0, box.y - pad),
+            width: Math.min(vp.width - Math.max(0, box.x - pad), box.width + 2 * pad),
+            height: Math.min(vp.height - Math.max(0, box.y - pad), box.height + 2 * pad),
+          };
+          await page.screenshot({ path: file, clip, animations: 'allow' });
+        } else {
+          await locator.screenshot({ path: file, animations: 'allow' });
+        }
+        lastErr = null;
+        break;
+      } catch (e) { lastErr = e; await page.waitForTimeout(900); }
     }
+    if (lastErr) { try { fs.unlinkSync(file); } catch { /* none */ } throw lastErr; }
   } finally {
     if (hidden) await page.evaluate(() => document.querySelectorAll('[data-m-hidden]').forEach((n) => { n.style.removeProperty('visibility'); n.removeAttribute('data-m-hidden'); }));
   }
