@@ -191,7 +191,13 @@ export function ChatDrawer() {
       return;
     }
     if (drawer.current?.contains(document.activeElement)) {
-      const back = opener.current && document.contains(opener.current) ? opener.current : fab.current;
+      // Focus goes back to whichever opener is still on screen: the saved
+      // one, the floating button, or the top bar's Chat button. Below 900px
+      // the floating button is hidden, and a window narrowed (or a tablet
+      // turned) while the chat was open can hide the saved opener too.
+      const shown = (el: HTMLElement | null | undefined): el is HTMLElement =>
+        !!el && document.contains(el) && el.getClientRects().length > 0;
+      const back = [opener.current, fab.current, document.querySelector<HTMLElement>("[data-chat-open]")].find(shown);
       back?.focus();
     }
     opener.current = null;

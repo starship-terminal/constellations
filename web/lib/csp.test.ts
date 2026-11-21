@@ -1,0 +1,157 @@
+// Unit tests for the Content-Security-Policy (lib/csp.ts) and for web/proxy.ts
+// attaching it to page responses (proxy.ts is loaded through
+// lib/test/resolve-app.mjs, which resolves "@/" as Next does). Run with
+// `pnpm test`.
+import assert from "node:assert/strict";
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { register } from "node:module";
+import os from "node:os";
+import path from "node:path";
+import { after, before, describe, it } from "node:test";
+import { contentSecurityPolicy, needsCsp, newNonce, REFERO_CDN_ORIGIN } from "./csp.ts";
+
+register("./test/resolve-app.mjs", import.meta.url);
+
+/** directive name -> its source list */
+const parse = (csp: string) =>
+  new Map(
+    csp.split(";").map((d) => {
+      const [name, ...sources] = d.trim().split(/\s+/);
+      return [name, sources] as const;
+    }),
+  );
+
+describe("contentSecurityPolicy in production", () => {
+  const csp = parse(contentSecurityPolicy({ nonce: "abc123", mediaBases: ["https://media.example/bucket", null] }));
+
+  it("runs only scripts that carry the nonce", () => {
+    assert.deepEqual(csp.get("script-src"), ["'self'", "'nonce-abc123'", "'strict-dynamic'"]);
+  });
+
+  it("names no unsafe-eval anywhere and no unsafe-inline for scripts or style elements", () => {
+    for (const [name, sources] of csp) {
+      assert.ok(!sources.includes("'unsafe-eval'"), `${name} allows eval`);
+      if (name !== "style-src-attr") assert.ok(!sources.includes("'unsafe-inline'"), `${name} allows inline`);
+    }
+    assert.deepEqual(csp.get("style-src"), ["'self'", "'nonce-abc123'"]);
+  });
+
+  it("keeps the page out of frames and plugins and pins base and form targets", () => {
+    assert.deepEqual(csp.get("frame-ancestors"), ["'none'"]);
+    assert.deepEqual(csp.get("object-src"), ["'none'"]);
+    assert.deepEqual(csp.get("base-uri"), ["'self'"]);
+    assert.deepEqual(csp.get("form-action"), ["'self'"]);
+    assert.deepEqual(csp.get("connect-src"), ["'self'"]);
+    assert.deepEqual(csp.get("frame-src"), ["'none'"]);
+  });
+
+  it("loads images and video from this origin and the refero media hosts only", () => {
+    const media = ["'self'", "https://media.example", REFERO_CDN_ORIGIN];
+    assert.deepEqual(csp.get("img-src"), media);
+    assert.deepEqual(csp.get("media-src"), media);
+  });
+
+  it("names the CDN tools/catalog.py builds refero URLs from", () => {
+    const py = readFileSync(new URL("../../tools/catalog.py", import.meta.url), "utf8");
+    const cdn = /^REFERO_CDN = "([^"]+)"/m.exec(py)?.[1];
+    assert.ok(cdn, "REFERO_CDN not found in tools/catalog.py");
+    assert.equal(new URL(cdn).origin, REFERO_CDN_ORIGIN);
+  });
+
+  it("lists each media host once, whichever setting named it", () => {
+    const csp = contentSecurityPolicy({ nonce: "n", mediaBases: ["https://a.example", "https://b.example/x", "https://a.example/y", REFERO_CDN_ORIGIN + "/styles/"] });
+    assert.deepEqual(parse(csp).get("img-src"), ["'self'", "https://a.example", "https://b.example", REFERO_CDN_ORIGIN]);
+  });
+
+  it("serves refero media from this origin alone when the media base is empty or not a URL", () => {
+    for (const base of ["", "/media", "javascript:alert(1)"])
+      assert.deepEqual(parse(contentSecurityPolicy({ nonce: "n", mediaBases: [base] })).get("img-src"), ["'self'", REFERO_CDN_ORIGIN]);
+  });
+});
+
+describe("contentSecurityPolicy in development", () => {
+  const csp = parse(contentSecurityPolicy({ nonce: "n", dev: true }));
+  it("adds only what next dev needs", () => {
+    assert.deepEqual(csp.get("script-src"), ["'self'", "'nonce-n'", "'strict-dynamic'", "'unsafe-eval'"]);
+    assert.deepEqual(csp.get("style-src"), ["'self'", "'unsafe-inline'"]);
+    assert.deepEqual(csp.get("frame-ancestors"), ["'none'"]);
+  });
+});
+
+describe("newNonce", () => {
+  it("is fresh base64 each time", () => {
+    const a = newNonce();
+    assert.match(a, /^[A-Za-z0-9+/]{22}==$/);
+    assert.notEqual(a, newNonce());
+  });
+});
+
+describe("needsCsp", () => {
+  it("covers pages and leaves API, media and build assets alone", () => {
+    for (const p of ["/", "/gallery", "/gallery/acme/files/systems/acme/README.md", "/settings", "/docs/CAPTURE", "/nope"])
+      assert.equal(needsCsp(p), true, p);
+    for (const p of ["/api/chat", "/api", "/media/systems/acme/style-guide.html", "/_next/static/chunks/a.js", "/_next/image", "/favicon.ico"])
+      assert.equal(needsCsp(p), false, p);
+    assert.equal(needsCsp("/mediafile"), true);
+  });
+});
+
+describe("proxy", () => {
+  type Proxy = (req: unknown) => Promise<Response>;
+  let proxy: Proxy;
+  let NextRequest: new (url: string, init?: RequestInit) => unknown;
+  // A throwaway checkout whose refero data was built with another media
+  // bucket than the server's setting: the pages use the data's, so the
+  // policy must allow both.
+  const repo = mkdtempSync(path.join(os.tmpdir(), "csp-repo-"));
+  before(async () => {
+    mkdirSync(path.join(repo, "web/data/refero"), { recursive: true });
+    writeFileSync(
+      path.join(repo, "web/data/refero/index.json"),
+      JSON.stringify({ version: 2, cdn: "https://cdn.example/styles/", mediaBase: "https://built.example", styles: [] }),
+    );
+    process.env.DESIGN_SYSTEMS_REPO = repo;
+    process.env.DESIGN_SYSTEMS_MEDIA_BASE = "https://running.example";
+    ({ proxy } = (await import("../proxy.ts")) as { proxy: Proxy });
+    ({ NextRequest } = (await import("next/server")) as unknown as { NextRequest: typeof NextRequest });
+  });
+  after(() => rmSync(repo, { recursive: true, force: true }));
+  const get = (p: string) => proxy(new NextRequest(`http://127.0.0.1:8800${p}`, { headers: { host: "127.0.0.1:8800" } }));
+
+  it("sends the policy on a page response, with a nonce for this response alone", async () => {
+    const a = (await get("/gallery")).headers.get("content-security-policy");
+    const b = (await get("/gallery")).headers.get("content-security-policy");
+    assert.ok(a, "no Content-Security-Policy on a page");
+    const nonce = /'nonce-([^']+)'/.exec(a)?.[1];
+    assert.ok(nonce);
+    assert.ok(!b?.includes(nonce), "two responses shared a nonce");
+    assert.doesNotMatch(a, /unsafe-eval/);
+    assert.doesNotMatch(parse(a).get("script-src")!.join(" "), /unsafe-inline/);
+  });
+
+  it("allows the media hosts of both the server setting and the built refero data", async () => {
+    const csp = parse((await get("/refero")).headers.get("content-security-policy")!);
+    const media = ["'self'", "https://running.example", "https://built.example", "https://cdn.example", REFERO_CDN_ORIGIN];
+    assert.deepEqual(csp.get("img-src"), media);
+    assert.deepEqual(csp.get("media-src"), media);
+  });
+
+  it("forwards the nonce and the policy to the render", async () => {
+    const res = await get("/");
+    const csp = res.headers.get("content-security-policy")!;
+    const nonce = /'nonce-([^']+)'/.exec(csp)![1];
+    // NextResponse.next({ request: { headers } }) passes overridden request
+    // headers to the render as x-middleware-request-<name>.
+    assert.equal(res.headers.get("x-middleware-request-x-nonce"), nonce);
+    assert.equal(res.headers.get("x-middleware-request-content-security-policy"), csp);
+  });
+
+  it("leaves media files with their own sandbox policy", async () => {
+    assert.equal((await get("/media/systems/acme/style-guide.html")).headers.get("content-security-policy"), null);
+  });
+
+  it("still refuses a foreign Host before any policy", async () => {
+    const res = await proxy(new NextRequest("http://evil.test/", { headers: { host: "evil.test" } }));
+    assert.equal(res.status, 403);
+  });
+});

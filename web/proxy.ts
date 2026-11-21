@@ -22,13 +22,34 @@
 // Two rules are this app's alone: POST needs application/json (server/routes.py
 // relies on its Origin check for browsers instead) and an API body needs a
 // Content-Length (411), where routes.py reads a missing one as an empty body.
+//
+// A request that passes and asks for a page also gets the Content-Security-
+// Policy (lib/csp.ts) with a fresh nonce: on the request, where Next reads the
+// nonce for its own scripts and layout.tsx reads x-nonce for the theme script,
+// and on the response, where the browser enforces it.
+import { contentSecurityPolicy, needsCsp, newNonce } from "@/lib/csp";
 import { tooLargeResponse } from "@/lib/mcp-batch";
+import { loadReferoIndex } from "@/lib/refero";
+import { mediaBase } from "@/lib/repo";
 import { refusal } from "@/lib/request-guard";
 import { NextResponse, type NextRequest } from "next/server";
 // Loads the repo-root .env, where DESIGN_SYSTEMS_ALLOWED_HOSTS may live.
 import "@/lib/env";
 
-export function proxy(request: NextRequest) {
+/** Every base URL a page may load refero media from: the server's setting
+    and the one the refero data was built with (the pages use the latter). */
+async function mediaBases(): Promise<string[]> {
+  const bases = [mediaBase()];
+  try {
+    const index = await loadReferoIndex();
+    bases.push(index.mediaBase, index.cdn);
+  } catch {
+    // no refero data built yet: the pages that would use it show nothing
+  }
+  return bases;
+}
+
+export async function proxy(request: NextRequest) {
   const h = request.headers;
   const refused = refusal(
     {
@@ -42,7 +63,17 @@ export function proxy(request: NextRequest) {
     },
     process.env.DESIGN_SYSTEMS_ALLOWED_HOSTS ?? "",
   );
-  if (!refused) return NextResponse.next();
+  if (!refused) {
+    if (!needsCsp(request.nextUrl.pathname)) return NextResponse.next();
+    const nonce = newNonce();
+    const csp = contentSecurityPolicy({ nonce, dev: process.env.NODE_ENV === "development", mediaBases: await mediaBases() });
+    const forward = new Headers(h);
+    forward.set("x-nonce", nonce);
+    forward.set("content-security-policy", csp);
+    const res = NextResponse.next({ request: { headers: forward } });
+    res.headers.set("content-security-policy", csp);
+    return res;
+  }
   // /api/mcp speaks JSON-RPC, so its oversize refusal is a JSON-RPC error.
   if (refused.mcpTooLarge) return tooLargeResponse();
   return NextResponse.json({ error: refused.error }, { status: refused.status });

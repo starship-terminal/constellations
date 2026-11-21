@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { headers } from "next/headers";
 import { Rail } from "@/components/Rail";
 import { ToastProvider } from "@/components/Toast";
 import { LightboxProvider } from "@/components/Lightbox";
@@ -51,11 +52,17 @@ const mono = JetBrains_Mono({
 
 const themeInit = `(function(){try{var d=document.documentElement;var t=localStorage.getItem('ds-theme');d.dataset.theme=t==='light'||t==='dark'?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');if(localStorage.getItem('ds-nav')==='collapsed')d.dataset.nav='collapsed';}catch(e){document.documentElement.dataset.theme='dark'}})();`;
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+// proxy.ts sends a Content-Security-Policy with a per-request nonce
+// (lib/csp.ts), so the inline theme script carries it. Reading the request
+// headers also renders every page per request, which the nonce needs: a page
+// prerendered at build time would hold scripts with no nonce, and the policy
+// would block them.
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   return (
     <html lang="en" className={`${display.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInit }} />
+        <script nonce={nonce} dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
       <body>
         <ThemeBoot />
