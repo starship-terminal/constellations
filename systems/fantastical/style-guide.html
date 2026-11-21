@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Fantastical tokens</title>
+  <style>
+    :root {
+      --page: #ffffff;
+      --text: #1d1e1f;
+      --accent: #408fff;
+      --on-accent: #ffffff;
+      --font: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--text);
+      font-family: var(--font);
+      padding: 48px;
+    }
+    h1 { font-size: 40px; font-weight: 500; line-height: 44px; letter-spacing: -0.64px; }
+    p { font-size: 24px; line-height: 32px; letter-spacing: -0.4px; max-width: 36rem; }
+    .row { display: flex; gap: 16px; align-items: center; }
+    .pill {
+      background: var(--accent);
+      color: var(--on-accent);
+      border-radius: 24px;
+      height: 44px;
+      padding: 0 31px;
+      display: inline-flex;
+      align-items: center;
+      font-size: 17px;
+      font-weight: 500;
+    }
+    .quiet { color: var(--accent); font-size: 15px; font-weight: 500; }
+    .swatches { display: flex; gap: 12px; margin-top: 32px; }
+    .swatch { width: 72px; height: 72px; border-radius: 12px; border: 1px solid #e6e6e6; }
+  </style>
+</head>
+<body>
+  <h1>Give Your Calendar Superpowers</h1>
+  <p>Unify all of your calendars into a single, beautifully organized view.</p>
+  <div class="row">
+    <span class="pill">Start for Free</span>
+    <span class="quiet">Sign In</span>
+  </div>
+  <div class="swatches">
+    <div class="swatch" style="background:#ffffff"></div>
+    <div class="swatch" style="background:#1d1e1f"></div>
+    <div class="swatch" style="background:#408fff"></div>
+  </div>
+</body>
+</html>
