@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-20T20:31:31.422Z",
+  "capturedAt": "2026-11-21T14:21:10.496Z",
   "screenshot": "mobile-home-light-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -21,7 +21,7 @@
     "theme": {
       "classes": [],
       "attributes": {},
-      "colorScheme": "light"
+      "colorScheme": "normal"
     },
     "visualViewport": {
       "width": 390,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 844
+      "height": 6404
     },
     "scroll": {
       "x": 0,
@@ -42,7 +42,7 @@
     }
   },
   "capture": {
-    "mode": "fullPage",
+    "mode": "viewport",
     "scale": "device",
     "clip": null
   },
@@ -56,7 +56,7 @@
       "width": 780,
       "height": 1688
     },
-    "basis": "fullPage"
+    "basis": "configuredViewport"
   },
   "visualReview": {
     "status": "pending",

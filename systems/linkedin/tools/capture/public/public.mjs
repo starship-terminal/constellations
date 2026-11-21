@@ -179,6 +179,7 @@ const desktop = {
   'company-jobs': { path: '/company/linkedin/jobs', run: async (p, S) => { await S.view('default'); } },
   directory: { path: '/directory/people', run: async (p, S) => { await S.view('default'); } },
   apps: { path: 'https://members.linkedin.com/apps', abs: true, run: async (p, S) => { await S.view('default'); } },
+  about: { path: 'https://about.linkedin.com/', abs: true, run: async (p, S) => { await S.view('default'); } },
   login: { path: '/login', wall: true, run: async (p, S) => { await S.view('wall'); } },
   signup: { path: '/signup', wall: true, run: async (p, S) => { await S.view('wall'); } },
 };

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-20T20:30:18.377Z",
+  "capturedAt": "2026-11-21T14:18:16.492Z",
   "screenshot": "home-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -21,7 +21,7 @@
     "theme": {
       "classes": [],
       "attributes": {},
-      "colorScheme": "normal"
+      "colorScheme": "light"
     },
     "visualViewport": {
       "width": 1440,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 5718
+      "height": 900
     },
     "scroll": {
       "x": 0,
