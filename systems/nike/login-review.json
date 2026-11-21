@@ -1,0 +1,85 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "route": "Public Playwright, signed out, Singapore English storefront. No email, password, phone, or code was typed. No identity provider was clicked. No form was submitted.",
+  "offered": {
+    "nav": {
+      "items": [
+        "Find a Store opens /sg/retail",
+        "Help opens /sg/help",
+        "Join Us opens /sg/membership",
+        "Sign In opens /sg/register, which redirects to accounts.nike.com",
+        "Favourites opens /sg/favorites",
+        "Bag opens /sg/cart",
+        "Phone drawer Join Us and Sign In open the same account wall"
+      ],
+      "reached": [
+        "Find a Store",
+        "Help",
+        "Join Us marketing page",
+        "Sign In redirect, then stopped"
+      ],
+      "note": "The signed-in account was not entered, so no account navigation was offered."
+    },
+    "settings": {
+      "items": [],
+      "reached": [],
+      "note": "No settings screen was offered. The account was not entered. Privacy Settings in the footer was not opened."
+    },
+    "create": {
+      "items": [
+        "Join Us",
+        "Sign In",
+        "Become A Member",
+        "Join Now",
+        "Let's go"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-menu.png",
+    "screenshots/home-light-women-menu.png",
+    "screenshots/home-light-search.png",
+    "screenshots/home-light-location.png",
+    "screenshots/home-light-footer.png",
+    "screenshots/home-light-mobile.png",
+    "screenshots/home-light-mobile-menu.png",
+    "screenshots/plp-light-default.png",
+    "screenshots/pdp-light-default.png",
+    "screenshots/pdp-light-buy.png",
+    "screenshots/pdp-light-mobile.png",
+    "screenshots/help-light-default.png",
+    "screenshots/stores-light-default.png",
+    "screenshots/membership-light-default.png",
+    "screenshots/sustainability-light-default.png"
+  ],
+  "gaps": [
+    "Signed-in account, orders, favourites, bag, and settings were not entered.",
+    "https://www.nike.com/sg/register redirects to accounts.nike.com and returns Access Denied in this browser. The query string carries signing parameters and is not copied here. No email field was shown. Nothing was typed.",
+    "No Google, Apple, or other identity provider was shown on that wall. None was clicked.",
+    "Let's go on the Membership page was not pressed.",
+    "Add to Bag and Favourite were photographed and not pressed. Checkout was not opened.",
+    "Search was opened and left empty. It was not submitted.",
+    "The location dialog was opened and closed. No other country was chosen.",
+    "Validation, error, and post-submit states were not seen because no form was submitted."
+  ],
+  "not_submitted": [
+    "login email",
+    "login password",
+    "join us",
+    "sign in",
+    "become a member",
+    "let's go",
+    "search",
+    "help search",
+    "store search",
+    "add to bag",
+    "favourite",
+    "checkout",
+    "privacy settings",
+    "location change"
+  ]
+}
