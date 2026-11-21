@@ -94,7 +94,12 @@ web/                    the Next.js app (App Router, TypeScript, pnpm): one
                         media via /media/ and the chat via /api/chat
                         (ANTHROPIC_API_KEY stays server-side). `make dev`/`make
                         web` dev-runs it on :8800, `make web-build` builds for
-                        production
+                        production. The saved provider key lives in
+                        provider.db under DESIGN_SYSTEMS_CONFIG_DIR, outside
+                        the checkout; that one SQLite file uses the rollback
+                        journal with secure_delete, not WAL, on purpose, so a
+                        replaced or removed key leaves no copy on disk
+                        (web/README.md has the store's rules)
   data/                   generated (gitignored) by `tools/catalog.py build`:
                         data.json, thumbs/, refero/, export/
 app/                    the newer design research app (Next.js, TypeScript,
