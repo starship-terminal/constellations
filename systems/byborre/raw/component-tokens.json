@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "product": "byborre.com",
+    "captured": "2026-11-21",
+    "width": 1440,
+    "theme": "light",
+    "note": "Values are computed styles on the live public pages. The yellow hover and the 2px focus ring were read with the pointer and keyboard. Nothing was typed or submitted."
+  },
+  "color": {
+    "cream": {"type": "color", "value": "#f5f5f0", "source": "computed backgroundColor of body and header on / (raw/components-computed.json, live reading body)"},
+    "creamDeep": {"type": "color", "value": "#ccccc4", "source": "computed borderTopColor of login-email and contact field, and backgroundColor of cart-button hover"},
+    "ink": {"type": "color", "value": "#1b1b1b", "source": "computed color of body and backgroundColor of footer, login-submit and order-sample"},
+    "white": {"type": "color", "value": "#ffffff", "source": "computed backgroundColor of login-email and contact field, and color of footer text"},
+    "yellow": {"type": "color", "value": "#fae210", "source": "computed backgroundColor of the New badge and of hero-cta and order-sample on hover"},
+    "muted": {"type": "color", "value": "#646e69", "source": "computed color of the contact select placeholder"},
+    "focusBlue": {"type": "color", "value": "#005fcc", "source": "computed outlineColor of cart-button focus-visible (browser default on the icon button)"},
+    "primary500": {"type": "color", "value": "#00e606", "source": "declared --color-primary-500 on :root (raw/css-vars.json). Not the fill of any measured public control"}
+  },
+  "font": {
+    "sans": {"type": "fontFamily", "value": "Helvetica Neue", "source": "@font-face family on the live home page, computed fontFamily of body"},
+    "fallback": {"type": "fontFamily", "value": "Arial, ui-sans-serif, system-ui, sans-serif", "source": "computed fontFamily stack after Helvetica Neue on body"}
+  },
+  "typography": {
+    "display": {"type": "typography", "value": {"fontFamily": "{font.sans}", "fontSize": "80px", "fontWeight": 500, "lineHeight": "84px", "letterSpacing": "0px"}, "source": "computed style of h1 Textile Room on /collection"},
+    "hero": {"type": "typography", "value": {"fontFamily": "{font.sans}", "fontSize": "80px", "fontWeight": 500, "lineHeight": "84px", "letterSpacing": "0px"}, "source": "computed style of the home hero headline (two lines, 168px box)"},
+    "error": {"type": "typography", "value": {"fontFamily": "{font.sans}", "fontSize": "128px", "fontWeight": 700, "lineHeight": "128px", "letterSpacing": "0px"}, "source": "computed style of the 404 numeral"},
+    "dialogTitle": {"type": "typography", "value": {"fontFamily": "{font.sans}", "fontSize": "40px", "fontWeight": 400, "lineHeight": "42px", "letterSpacing": "0px"}, "source": "computed style of Log in to continue"},
+    "productTitle": {"type": "typography", "value": {"fontFamily": "{font.sans}", "fontSize": "40px", "fontWeight": 400, "lineHeight": "40px", "letterSpacing": "0px"}, "source": "computed style of the Blink heading"},
+    "body": {"type": "typography", "value": {"fontFamily": "{font.sans}", "fontSize": "13px", "fontWeight": 400, "lineHeight": "19.5px", "letterSpacing": "0px"}, "source": "computed style of body"},
+    "nav": {"type": "typography", "value": {"fontFamily": "{font.sans}", "fontSize": "16px", "fontWeight": 400, "lineHeight": "24px", "letterSpacing": "0px"}, "source": "computed style of the Textile Room header link"},
+    "button": {"type": "typography", "value": {"fontFamily": "{font.sans}", "fontSize": "16px", "fontWeight": 500, "lineHeight": "24px", "letterSpacing": "0px"}, "source": "computed style of Explore samples and Login"},
+    "label": {"type": "typography", "value": {"fontFamily": "{font.sans}", "fontSize": "12px", "fontWeight": 500, "lineHeight": "16px", "letterSpacing": "0px"}, "source": "computed style of the Pattern filter and Get in touch with sales"},
+    "marquee": {"type": "typography", "value": {"fontFamily": "{font.sans}", "fontSize": "11px", "fontWeight": 500, "lineHeight": "12px", "letterSpacing": "0px"}, "source": "computed style of the sample marquee"}
+  },
+  "radius": {
+    "none": {"type": "dimension", "value": "0px", "source": "computed border radius of body and page titles"},
+    "sm": {"type": "dimension", "value": "8px", "source": "computed border radius of the New badge and header links"},
+    "md": {"type": "dimension", "value": "10px", "source": "computed border radius of buttons, fields and the order bar"},
+    "footer": {"type": "dimension", "value": "24px", "source": "computed borderTopLeftRadius of footer"},
+    "pill": {"type": "dimension", "value": "9999px", "source": "computed border radius of the cart icon button"}
+  },
+  "space": {
+    "headerPad": {"type": "dimension", "value": "16px", "source": "computed paddingLeft of header"},
+    "controlX": {"type": "dimension", "value": "16px", "source": "computed paddingLeft of the pop-up store button and login fields"},
+    "badgeX": {"type": "dimension", "value": "8px", "source": "computed paddingLeft of the New badge"},
+    "badgeY": {"type": "dimension", "value": "4px", "source": "computed paddingTop of the New badge"}
+  },
+  "size": {
+    "header": {"type": "dimension", "value": "57px", "source": "computed height of header at 1440"},
+    "control": {"type": "dimension", "value": "48px", "source": "computed height of buttons and text fields"},
+    "controlSm": {"type": "dimension", "value": "32px", "source": "computed height of the Pattern filter, sales link and icon buttons"},
+    "icon": {"type": "dimension", "value": "32px", "source": "computed width and height of the cart and account icon buttons"},
+    "textarea": {"type": "dimension", "value": "104px", "source": "computed height of the contact textarea"},
+    "dialog": {"type": "dimension", "value": "648px", "source": "computed height of the login dialog panel"},
+    "cart": {"type": "dimension", "value": "380px", "source": "computed width of the empty cart drawer"}
+  },
+  "border": {
+    "hairline": {"type": "dimension", "value": "1px", "source": "computed borderTopWidth of fields, buttons and the Pattern filter"},
+    "focus": {"type": "dimension", "value": "2px", "source": "computed outlineWidth of nav-link, hero-cta and login-email on focus-visible"}
+  },
+  "light": {
+    "background": {
+      "page": {"type": "color", "value": "{color.cream}", "source": "computed backgroundColor of body"},
+      "surface": {"type": "color", "value": "{color.white}", "source": "computed backgroundColor of the login dialog and text fields"},
+      "inverse": {"type": "color", "value": "{color.ink}", "source": "computed backgroundColor of footer and the 404 panel"}
+    },
+    "text": {
+      "primary": {"type": "color", "value": "{color.ink}", "source": "computed color of body"},
+      "onInverse": {"type": "color", "value": "{color.white}", "source": "computed color of footer"},
+      "onAccent": {"type": "color", "value": "{color.cream}", "source": "computed color of login-submit (cream on ink)"},
+      "muted": {"type": "color", "value": "{color.muted}", "source": "computed color of the contact select"}
+    },
+    "border": {
+      "default": {"type": "color", "value": "{color.creamDeep}", "source": "computed borderTopColor of login-email"},
+      "strong": {"type": "color", "value": "{color.ink}", "source": "computed borderTopColor of login-submit"}
+    },
+    "action": {
+      "primary": {"type": "color", "value": "{color.ink}", "source": "computed backgroundColor of login-submit and order-sample default"},
+      "primaryText": {"type": "color", "value": "{color.cream}", "source": "computed color of login-submit"},
+      "hover": {"type": "color", "value": "{color.yellow}", "source": "computed backgroundColor of hero-cta and order-sample on hover"},
+      "quiet": {"type": "color", "value": "{color.cream}", "source": "computed backgroundColor of Explore samples at rest"}
+    },
+    "focus": {
+      "width": {"type": "dimension", "value": "2px", "source": "computed outlineWidth of nav-link, hero-cta and login-email on focus-visible. outlineColor computed as transparent on those controls"},
+      "offset": {"type": "dimension", "value": "4px", "source": "computed box-shadow spread of the Material accordion on focus-visible: rgb(245, 245, 240) 0px 0px 0px 4px"}
+    }
+  }
+}

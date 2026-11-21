@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BYBORRE style guide</title>
+<style>
+:root {
+  --color-cream: #f5f5f0;
+  --color-creamDeep: #ccccc4;
+  --color-ink: #1b1b1b;
+  --color-white: #ffffff;
+  --color-yellow: #fae210;
+  --color-muted: #646e69;
+  --color-focusBlue: #005fcc;
+  --color-primary500: #00e606;
+  --font-sans: Helvetica Neue;
+  --font-fallback: Arial, ui-sans-serif, system-ui, sans-serif;
+  --typography-display: 500 80px/84px var(--font-sans);
+  --typography-hero: 500 80px/84px var(--font-sans);
+  --typography-error: 700 128px/128px var(--font-sans);
+  --typography-dialogTitle: 400 40px/42px var(--font-sans);
+  --typography-productTitle: 400 40px/40px var(--font-sans);
+  --typography-body: 400 13px/19.5px var(--font-sans);
+  --typography-nav: 400 16px/24px var(--font-sans);
+  --typography-button: 500 16px/24px var(--font-sans);
+  --typography-label: 500 12px/16px var(--font-sans);
+  --typography-marquee: 500 11px/12px var(--font-sans);
+  --radius-none: 0px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-footer: 24px;
+  --radius-pill: 9999px;
+  --space-headerPad: 16px;
+  --space-controlX: 16px;
+  --space-badgeX: 8px;
+  --space-badgeY: 4px;
+  --size-header: 57px;
+  --size-control: 48px;
+  --size-controlSm: 32px;
+  --size-icon: 32px;
+  --size-textarea: 104px;
+  --size-dialog: 648px;
+  --size-cart: 380px;
+  --border-hairline: 1px;
+  --border-focus: 2px;
+  --background-page: var(--color-cream);
+  --background-surface: var(--color-white);
+  --background-inverse: var(--color-ink);
+  --text-primary: var(--color-ink);
+  --text-onInverse: var(--color-white);
+  --text-onAccent: var(--color-cream);
+  --text-muted: var(--color-muted);
+  --border-default: var(--color-creamDeep);
+  --border-strong: var(--color-ink);
+  --action-primary: var(--color-ink);
+  --action-primaryText: var(--color-cream);
+  --action-hover: var(--color-yellow);
+  --action-quiet: var(--color-cream);
+  --focus-width: 2px;
+  --focus-offset: 4px;
+  color-scheme: light;
+  --sg-sans: "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 14px/21px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 500 40px/44px var(--sg-sans); margin: 0 0 8px; }
+h2 { font: 500 18px/24px var(--sg-sans); margin: 40px 0 12px; }
+p { max-width: 68ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 140px; }
+.swatch i { display: block; height: 64px; border-radius: var(--radius-md); border: 1px solid var(--border-default); }
+.swatch span { display: block; font-size: 12px; margin-top: 6px; }
+.btn { display: inline-flex; align-items: center; height: var(--size-control); padding: 0 16px; border-radius: var(--radius-md); background: var(--action-primary); color: var(--action-primaryText); border: 1px solid var(--border-strong); font: 500 16px/24px var(--sg-sans); }
+.btn.quiet { background: var(--action-quiet); color: var(--text-primary); border-color: var(--background-page); }
+.field { height: var(--size-control); width: 280px; border: 1px solid var(--border-default); border-radius: var(--radius-md); background: var(--background-surface); padding: 0 16px; font: 400 16px/24px var(--sg-sans); }
+.badge { display: inline-block; background: var(--color-yellow); color: var(--text-primary); border-radius: var(--radius-sm); padding: 4px 8px; font-size: 12px; }
+footer.demo { margin-top: 32px; background: var(--background-inverse); color: var(--text-onInverse); border-radius: 24px 24px 0 0; padding: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>BYBORRE</h1>
+  <p>Public site tokens, measured from byborre.com on 2026-11-21. One light theme. Helvetica Neue is the loaded family. Take values from tokens.json.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Type</h2>
+  <p style="font: 500 40px/44px var(--sg-sans); margin: 0">Textile Room</p>
+  <p style="font: 400 16px/24px var(--sg-sans)">Made to match. Crafted to be felt.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="btn" type="button">Login</button>
+    <button class="btn quiet" type="button">Explore samples</button>
+    <span class="badge">New</span>
+  </div>
+  <p><input class="field" placeholder="Email" readonly></p>
+  <footer class="demo">Footer ink, cream type, 24px top radius.</footer>
+</div>
+<script>
+const tokens = {"core":{"color":{"cream":{"v":"#f5f5f0","t":"color"},"creamDeep":{"v":"#ccccc4","t":"color"},"ink":{"v":"#1b1b1b","t":"color"},"white":{"v":"#ffffff","t":"color"},"yellow":{"v":"#fae210","t":"color"},"muted":{"v":"#646e69","t":"color"},"focusBlue":{"v":"#005fcc","t":"color"},"primary500":{"v":"#00e606","t":"color"}},"font":{"sans":{"v":"Helvetica Neue","t":"fontFamily"},"fallback":{"v":"Arial, ui-sans-serif, system-ui, sans-serif","t":"fontFamily"}},"typography":{"display":{"v":{"fontFamily":"{font.sans}","fontSize":"80px","fontWeight":500,"lineHeight":"84px","letterSpacing":"0px"},"t":"typography"},"hero":{"v":{"fontFamily":"{font.sans}","fontSize":"80px","fontWeight":500,"lineHeight":"84px","letterSpacing":"0px"},"t":"typography"},"error":{"v":{"fontFamily":"{font.sans}","fontSize":"128px","fontWeight":700,"lineHeight":"128px","letterSpacing":"0px"},"t":"typography"},"dialogTitle":{"v":{"fontFamily":"{font.sans}","fontSize":"40px","fontWeight":400,"lineHeight":"42px","letterSpacing":"0px"},"t":"typography"},"productTitle":{"v":{"fontFamily":"{font.sans}","fontSize":"40px","fontWeight":400,"lineHeight":"40px","letterSpacing":"0px"},"t":"typography"},"body":{"v":{"fontFamily":"{font.sans}","fontSize":"13px","fontWeight":400,"lineHeight":"19.5px","letterSpacing":"0px"},"t":"typography"},"nav":{"v":{"fontFamily":"{font.sans}","fontSize":"16px","fontWeight":400,"lineHeight":"24px","letterSpacing":"0px"},"t":"typography"},"button":{"v":{"fontFamily":"{font.sans}","fontSize":"16px","fontWeight":500,"lineHeight":"24px","letterSpacing":"0px"},"t":"typography"},"label":{"v":{"fontFamily":"{font.sans}","fontSize":"12px","fontWeight":500,"lineHeight":"16px","letterSpacing":"0px"},"t":"typography"},"marquee":{"v":{"fontFamily":"{font.sans}","fontSize":"11px","fontWeight":500,"lineHeight":"12px","letterSpacing":"0px"},"t":"typography"}},"radius":{"none":{"v":"0px","t":"dimension"},"sm":{"v":"8px","t":"dimension"},"md":{"v":"10px","t":"dimension"},"footer":{"v":"24px","t":"dimension"},"pill":{"v":"9999px","t":"dimension"}},"space":{"headerPad":{"v":"16px","t":"dimension"},"controlX":{"v":"16px","t":"dimension"},"badgeX":{"v":"8px","t":"dimension"},"badgeY":{"v":"4px","t":"dimension"}},"size":{"header":{"v":"57px","t":"dimension"},"control":{"v":"48px","t":"dimension"},"controlSm":{"v":"32px","t":"dimension"},"icon":{"v":"32px","t":"dimension"},"textarea":{"v":"104px","t":"dimension"},"dialog":{"v":"648px","t":"dimension"},"cart":{"v":"380px","t":"dimension"}},"border":{"hairline":{"v":"1px","t":"dimension"},"focus":{"v":"2px","t":"dimension"}}},"light":{"background":{"page":{"v":"{color.cream}","t":"color"},"surface":{"v":"{color.white}","t":"color"},"inverse":{"v":"{color.ink}","t":"color"}},"text":{"primary":{"v":"{color.ink}","t":"color"},"onInverse":{"v":"{color.white}","t":"color"},"onAccent":{"v":"{color.cream}","t":"color"},"muted":{"v":"{color.muted}","t":"color"}},"border":{"default":{"v":"{color.creamDeep}","t":"color"},"strong":{"v":"{color.ink}","t":"color"}},"action":{"primary":{"v":"{color.ink}","t":"color"},"primaryText":{"v":"{color.cream}","t":"color"},"hover":{"v":"{color.yellow}","t":"color"},"quiet":{"v":"{color.cream}","t":"color"}},"focus":{"width":{"v":"2px","t":"dimension"},"offset":{"v":"4px","t":"dimension"}}}};
+const roles = [
+  ['page', '--background-page'],
+  ['surface', '--background-surface'],
+  ['ink', '--background-inverse'],
+  ['yellow', '--color-yellow'],
+  ['muted', '--text-muted'],
+  ['border', '--border-default'],
+];
+const row = document.getElementById('swatches');
+for (const [name, v] of roles) {
+  const d = document.createElement('div');
+  d.className = 'swatch';
+  d.innerHTML = `<i style="background:${v.startsWith('--') ? 'var('+v+')' : v}"></i><span>${name}</span>`;
+  row.appendChild(d);
+}
+</script>
+</body>
+</html>

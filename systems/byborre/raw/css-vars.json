@@ -1,0 +1,43 @@
+{
+ "source": "live CSSOM on https://byborre.com/ 2026-11-21, headless Chromium 1440x900",
+ "themeColorMeta": null,
+ "fontFaces": [
+  {
+   "family": "\"Helvetica Neue\"",
+   "weight": "400",
+   "style": "normal"
+  },
+  {
+   "family": "\"Helvetica Neue\"",
+   "weight": "500",
+   "style": "normal"
+  },
+  {
+   "family": "\"Helvetica Neue\"",
+   "weight": "700",
+   "style": "normal"
+  }
+ ],
+ "rootPrimary": {
+  "--color-primary-50": "231 255 228",
+  "--color-primary-100": "201 255 196",
+  "--color-primary-200": "152 255 144",
+  "--color-primary-300": "148 207 150",
+  "--color-primary-400": "0 255 0",
+  "--color-primary-500": "0 230 6",
+  "--color-primary-600": "0 184 9",
+  "--color-primary-700": "0 139 7",
+  "--color-primary-800": "7 109 13",
+  "--color-primary-900": "11 92 17",
+  "--color-primary-950": "0 52 6",
+  "--color-primary-DEFAULT": "var(--color-primary-500)",
+  "--color-gray-DEFAULT": "124 124 124"
+ },
+ "darkOverride": {
+  "selector": ".dark",
+  "props": {
+   "--color-primary-DEFAULT": "var(--color-primary-400)"
+  }
+ },
+ "note": "Public pages do not set .dark. --color-primary-* is declared on :root and was not the fill of any measured public control. Cream, ink and yellow were read from computed styles (raw/component-tokens.json)."
+}

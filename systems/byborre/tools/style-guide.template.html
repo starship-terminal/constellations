@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BYBORRE style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-sans: "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 14px/21px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 500 40px/44px var(--sg-sans); margin: 0 0 8px; }
+h2 { font: 500 18px/24px var(--sg-sans); margin: 40px 0 12px; }
+p { max-width: 68ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 140px; }
+.swatch i { display: block; height: 64px; border-radius: var(--radius-md); border: 1px solid var(--border-default); }
+.swatch span { display: block; font-size: 12px; margin-top: 6px; }
+.btn { display: inline-flex; align-items: center; height: var(--size-control); padding: 0 16px; border-radius: var(--radius-md); background: var(--action-primary); color: var(--action-primaryText); border: 1px solid var(--border-strong); font: 500 16px/24px var(--sg-sans); }
+.btn.quiet { background: var(--action-quiet); color: var(--text-primary); border-color: var(--background-page); }
+.field { height: var(--size-control); width: 280px; border: 1px solid var(--border-default); border-radius: var(--radius-md); background: var(--background-surface); padding: 0 16px; font: 400 16px/24px var(--sg-sans); }
+.badge { display: inline-block; background: var(--color-yellow); color: var(--text-primary); border-radius: var(--radius-sm); padding: 4px 8px; font-size: 12px; }
+footer.demo { margin-top: 32px; background: var(--background-inverse); color: var(--text-onInverse); border-radius: 24px 24px 0 0; padding: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>BYBORRE</h1>
+  <p>Public site tokens, measured from byborre.com on 2026-11-21. One light theme. Helvetica Neue is the loaded family. Take values from tokens.json.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Type</h2>
+  <p style="font: 500 40px/44px var(--sg-sans); margin: 0">Textile Room</p>
+  <p style="font: 400 16px/24px var(--sg-sans)">Made to match. Crafted to be felt.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="btn" type="button">Login</button>
+    <button class="btn quiet" type="button">Explore samples</button>
+    <span class="badge">New</span>
+  </div>
+  <p><input class="field" placeholder="Email" readonly></p>
+  <footer class="demo">Footer ink, cream type, 24px top radius.</footer>
+</div>
+<script>
+const tokens = /*TOKENS*/null;
+const roles = [
+  ['page', '--background-page'],
+  ['surface', '--background-surface'],
+  ['ink', '--background-inverse'],
+  ['yellow', '--color-yellow'],
+  ['muted', '--text-muted'],
+  ['border', '--border-default'],
+];
+const row = document.getElementById('swatches');
+for (const [name, v] of roles) {
+  const d = document.createElement('div');
+  d.className = 'swatch';
+  d.innerHTML = `<i style="background:${v.startsWith('--') ? 'var('+v+')' : v}"></i><span>${name}</span>`;
+  row.appendChild(d);
+}
+</script>
+</body>
+</html>

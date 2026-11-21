@@ -1,0 +1,70 @@
+{
+  "product": "BYBORRE",
+  "catalogName": "BYBORRE",
+  "reviewed": "2026-11-21",
+  "method": "Playwright headless Chromium, desktop 1440x900. Cookie banner hidden, not accepted or rejected. No email, password, name, or code typed. No form submitted. No identity provider clicked.",
+  "entryUrl": "https://byborre.com/?redirectTo=/dashboard",
+  "alsoOpenedBy": [
+    "Header Design Studio link (https://byborre.com/dashboard, redirects here)",
+    "Header account icon (person, no accessible name)",
+    "Mobile menu Login/Sign-up",
+    "Collaborations and About menus, Go to Design Studio"
+  ],
+  "finalUrl": "https://byborre.com/?redirectTo=/dashboard",
+  "pageTitle": "Home | BYBORRE™",
+  "screenshot": "screenshots/login-light-default.png",
+  "wall": {
+    "kind": "dialog over the home page",
+    "heading": "Log in to continue",
+    "asksFor": ["email", "password"],
+    "fields": [
+      {"label": "Email", "type": "email", "name": "email", "autocomplete": "email", "filled": false},
+      {"label": "Password", "type": "password", "name": "password", "autocomplete": "current-password", "filled": false}
+    ],
+    "controls": [
+      {"label": "Sign up", "role": "button", "opens": "signup dialog on the same URL"},
+      {"label": "Forgot password?", "role": "button", "opens": "reset dialog on the same URL"},
+      {"label": "Login", "role": "submit", "used": false},
+      {"label": "Close", "role": "button", "accessibleName": "empty", "used": false}
+    ],
+    "identityProviders": [],
+    "codeSent": false,
+    "captcha": false,
+    "note": "Footer LinkedIn is a company profile link, not a control on this dialog. It was not used as a sign-in."
+  },
+  "signup": {
+    "opened": true,
+    "how": "Sign up button inside the login dialog. Nothing typed. Continue not clicked.",
+    "url": "https://byborre.com/?redirectTo=/dashboard",
+    "heading": "Sign up to continue",
+    "copy": "Manage orders and discover our textile design tool. Already a user? Log in",
+    "asksFor": ["work email", "full name", "company name", "field of work", "password"],
+    "fields": [
+      {"placeholder": "Work email", "type": "email", "filled": false},
+      {"placeholder": "Full name", "type": "text", "filled": false},
+      {"placeholder": "Company name", "type": "text", "filled": false},
+      {"label": "Field of work", "kind": "select", "optionsSeen": ["Interior Architecture", "Apparel & Fashion", "Art", "Accessories & Footwear", "Transport", "Other"], "filled": false},
+      {"placeholder": "Password (min. 8 characters)", "type": "password", "autocomplete": "new-password", "filled": false}
+    ],
+    "controls": [
+      {"label": "Log in", "role": "button", "returnsTo": "login dialog"},
+      {"label": "T&Cs", "role": "link"},
+      {"label": "Continue", "role": "submit", "used": false}
+    ],
+    "accountCreated": false,
+    "stopped": true
+  },
+  "forgotPassword": {
+    "opened": true,
+    "how": "Forgot password? inside the login dialog. Continue not clicked. No email entered.",
+    "url": "https://byborre.com/?redirectTo=/dashboard",
+    "heading": "Forgot password?",
+    "copy": "Enter your email and we'll send a reset code your way, or go back to Log in",
+    "asksFor": ["email"],
+    "codeSent": false,
+    "stopped": true,
+    "reason": "Submitting would send a reset code. The branch stops at the ask."
+  },
+  "stopped": true,
+  "reason": "The wall asks for email and password. No code was sent. The branch stops here. The signed-in Design Studio was not entered."
+}
