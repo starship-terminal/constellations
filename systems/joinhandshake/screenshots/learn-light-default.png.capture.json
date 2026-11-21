@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T04:04:57.795Z",
+  "capturedAt": "2026-11-21T13:15:55.024Z",
   "screenshot": "learn-light-default.png",
   "sanitizedSourceUrl": "https://joinhandshake.com/learn/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 9767
+      "height": 10008
     },
     "scroll": {
       "x": 0,

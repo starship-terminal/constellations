@@ -1,0 +1,137 @@
+{
+  "product": "Handshake",
+  "captured": "2026-11-21",
+  "route": "public-web",
+  "origin": "https://joinhandshake.com",
+  "landed": "https://joinhandshake.com/",
+  "offered": {
+    "nav": {
+      "header": [
+        "Logo /",
+        "Employers /employers/ (hover menu)",
+        "Job seekers /students/ (hover menu)",
+        "Career centers /career-centers/ (hover menu)",
+        "AI skills /learn/",
+        "Handshake AI /ai/ (hover menu)",
+        "Enterprise AI /ai/enterprise/",
+        "Research /research/ai/ (hover menu)",
+        "Log in https://app.joinhandshake.com/access",
+        "Sign up https://app.joinhandshake.com/access"
+      ],
+      "employersMenu": [
+        "Free demo /employers/request-more-info/",
+        "Small and medium businesses /employers/smb/",
+        "Enterprise /employers/products/enterprise/",
+        "Individuals /employers/products/basic/",
+        "Events /employers/products/premium/events-module/",
+        "Brand /employers/products/premium/brand/",
+        "Insights /employers/products/premium/insights/",
+        "ATS integration /employers/products/premium/ats-integration/",
+        "Post a job for free https://app.joinhandshake.com/employer_registrations/new",
+        "Compare plans /employers/pricing/",
+        "Contact sales /employers/request-more-info/",
+        "How it works /employers/",
+        "Resources /employers/resources/",
+        "Economic research /research/economic-research/"
+      ],
+      "jobSeekersMenu": [
+        "Overview /students/",
+        "Who's hiring /students/whos-hiring/",
+        "AI skills studio /learn/",
+        "AI gigs /ai/",
+        "Salaries /salaries/",
+        "Resume optimizer /tools/resume-optimizer/",
+        "Career tips /blog/students/",
+        "Download the app (App Store)"
+      ],
+      "careerCentersMenu": [
+        "Overview /career-centers/",
+        "Marketing toolkit /career-centers/marketing-toolkit/",
+        "Events /career-centers/events/",
+        "Blog /blog/career-centers/"
+      ],
+      "handshakeAiMenu": [
+        "How it works /ai/",
+        "Stories /ai/fellow-stories/",
+        "Opportunities /ai/opportunities/",
+        "AI labs /ai/labs/",
+        "Data partnerships /ai/data-partnerships/",
+        "Blog /blog/hai/"
+      ],
+      "researchMenu": [
+        "AI Research /research/ai/",
+        "Economic Research /research/economic-research/",
+        "ATLAS Benchmarks /research/benchmarks/"
+      ],
+      "footer": [
+        "Students: Who's hiring, Career tips",
+        "Handshake AI: Fellowship program, Opportunities, Legal, Help center",
+        "Employers: Pricing, Request demo",
+        "Career centers: Marketing toolkit, Security, Request demo",
+        "Company: About, Join us, Press, Blog",
+        "Support: Careers help center, Contact, Legal hub, Your Privacy Choices",
+        "Privacy policy, Accessibility, Terms of service"
+      ],
+      "mobile": [
+        "Sign up",
+        "Log in",
+        "Open menu: Employers, Job seekers, Career centers, AI skills, Handshake AI, Enterprise AI, Research"
+      ]
+    },
+    "settings": {
+      "seen": false,
+      "reason": "No account settings surface is offered signed out. Your Privacy Choices is a consent dialog on the homepage. It was photographed and not accepted, rejected, or customized."
+    },
+    "create": {
+      "seen": false,
+      "reason": "Sign up, Log in, Post a job for free, and Get started all go to app.joinhandshake.com. That wall was not entered. No account was created."
+    }
+  },
+  "screens": [
+    "screenshots/about-light-default.png",
+    "screenshots/about-light-full.png",
+    "screenshots/ai-light-default.png",
+    "screenshots/ai-light-full.png",
+    "screenshots/career-centers-light-default.png",
+    "screenshots/career-centers-light-full.png",
+    "screenshots/employers-light-default.png",
+    "screenshots/employers-light-faq-open.png",
+    "screenshots/employers-light-full.png",
+    "screenshots/employers-light-tab-automate.png",
+    "screenshots/home-light-consent.png",
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-full.png",
+    "screenshots/home-light-nav-open.png",
+    "screenshots/learn-light-default.png",
+    "screenshots/learn-light-full.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-drawer.png",
+    "screenshots/mobile-home-light-full.png",
+    "screenshots/students-light-default.png",
+    "screenshots/students-light-full.png"
+  ],
+  "gaps": [
+    "Log in and Sign up stop at https://app.joinhandshake.com/access. Nothing typed, no identity provider clicked, no form submitted.",
+    "Post a job for free and employer registration were not entered.",
+    "Hero search was not submitted. The rotating placeholder is the product's own copy, not typed text.",
+    "Account, inbox, saved jobs, and settings are behind the access wall.",
+    "Dark theme is not offered. color-scheme is normal.",
+    "The 2026-11-17 token harvest still stands. This refresh photographs the public site tree and does not re-read CSS."
+  ],
+  "not_submitted": [
+    "Log in",
+    "Sign up",
+    "Continue with Google",
+    "Continue with Apple",
+    "any identity provider",
+    "hero search submit",
+    "Full-time, Remote, Internship search chips",
+    "Post a job for free",
+    "Get started",
+    "Request a demo",
+    "Contact us",
+    "students email Sign up",
+    "privacy Accept All, Customize Settings, Reject All",
+    "any form"
+  ]
+}

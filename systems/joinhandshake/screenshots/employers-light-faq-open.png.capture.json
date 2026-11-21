@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T03:55:53.858Z",
+  "capturedAt": "2026-11-21T13:14:47.822Z",
   "screenshot": "employers-light-faq-open.png",
   "sanitizedSourceUrl": "https://joinhandshake.com/employers/",
   "requested": {
@@ -30,15 +30,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 5078
+      "pageTop": 5048
     },
     "documentSize": {
       "width": 1440,
-      "height": 6709
+      "height": 6684
     },
     "scroll": {
       "x": 0,
-      "y": 5078
+      "y": 5048
     }
   },
   "capture": {

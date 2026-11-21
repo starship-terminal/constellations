@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T08:23:03.461Z",
+  "capturedAt": "2026-11-21T13:16:13.774Z",
   "screenshot": "mobile-home-light-default.png",
   "sanitizedSourceUrl": "https://joinhandshake.com/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 5870
+      "height": 5863
     },
     "scroll": {
       "x": 0,
