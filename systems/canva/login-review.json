@@ -1,0 +1,139 @@
+{
+  "slug": "canva",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "Public Playwright capture, signed out, after the T3 preview browser failed to produce screenshot frames. https://www.canva.com/login/ and https://www.canva.com/signup/ both opened the same empty card, Log in or sign up in seconds. The branch stopped there. No email, password, phone, or code was typed. Google, Facebook, and Apple were not clicked. No form was submitted. No captcha appeared.",
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measured": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "devicePixelRatio": 1,
+        "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+      },
+      "png": { "pixelWidth": 1440, "pixelHeight": 900 }
+    },
+    "phone": {
+      "requested": "390x844",
+      "measured": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "devicePixelRatio": 2,
+        "visualViewport": { "width": 390, "height": 844, "scale": 1 }
+      },
+      "png": { "pixelWidth": 780, "pixelHeight": 1688 }
+    }
+  },
+  "offered": {
+    "nav": {
+      "page": "https://www.canva.com/login/",
+      "reached": false,
+      "reason": "The login card is a wall. Header menus stay on the marketing shell. No signed-in nav was offered.",
+      "items": [
+        { "label": "Design", "opens": "marketing flyout", "reached": false },
+        { "label": "Product", "opens": "marketing flyout", "reached": false },
+        { "label": "Plans", "opens": "marketing flyout", "reached": false },
+        { "label": "Business", "opens": "marketing flyout", "reached": false },
+        { "label": "Education", "opens": "marketing flyout", "reached": false },
+        { "label": "Help", "opens": "marketing flyout", "reached": false }
+      ]
+    },
+    "settings": {
+      "page": "https://www.canva.com/login/",
+      "reached": false,
+      "reason": "No settings control is on the login card. Account settings sit behind the wall.",
+      "items": []
+    },
+    "create": {
+      "page": "https://www.canva.com/",
+      "reached": false,
+      "reason": "Start designing and Sign up lead to the same login card. The editor was not opened.",
+      "items": [
+        { "label": "Start designing", "page": "https://www.canva.com/", "reached": false, "reason": "click not followed" },
+        { "label": "Sign up", "page": "https://www.canva.com/signup/", "reached": false, "reason": "same empty login card, not submitted" },
+        { "label": "Continue with email", "page": "https://www.canva.com/login/", "reached": false, "reason": "would open an email step" }
+      ]
+    },
+    "wall": {
+      "url": "https://www.canva.com/login/",
+      "signup_url": "https://www.canva.com/signup/",
+      "title": "Log in or sign up in seconds",
+      "status": 200,
+      "fields": [],
+      "desktop_actions": [
+        "Continue with Google",
+        "Continue with Facebook",
+        "Continue with email",
+        "Continue another way",
+        "Sign up with work email",
+        "Terms of Use",
+        "Privacy Policy"
+      ],
+      "phone_actions_seen_before_hide": [
+        "Continue with Google",
+        "Continue with email",
+        "Continue with Apple",
+        "Continue with Facebook",
+        "Continue another way"
+      ],
+      "legal": ["Terms of Use", "Privacy Policy"]
+    }
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-menu-design.png",
+    "screenshots/home-light-menu-product.png",
+    "screenshots/home-light-menu-plans.png",
+    "screenshots/home-light-tools-presentations.png",
+    "screenshots/home-dark-pref-default.png",
+    "screenshots/pricing-light-default.png",
+    "screenshots/pricing-light-billing.png",
+    "screenshots/templates-light-default.png",
+    "screenshots/presentations-light-default.png",
+    "screenshots/features-light-default.png",
+    "screenshots/pro-light-default.png",
+    "screenshots/login-light-empty.png",
+    "screenshots/signup-light-empty.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-menu.png",
+    "screenshots/mobile-login-light-empty.png"
+  ],
+  "gaps": [
+    "The session was signed out. The editor, Brand Kit, dashboards, settings, and create were not entered.",
+    "https://www.canva.com/login/ and https://www.canva.com/signup/ are the same empty card. Continue with email was not pressed, so no email field appeared.",
+    "Continue with Google, Continue with Facebook, and Continue with Apple were visible and not clicked.",
+    "Continue another way and Sign up with work email were visible and not opened.",
+    "Cookie Accept all cookies and Manage cookies were not clicked. The banner was hidden in the page for the wall shots.",
+    "The phone app-install sheet (Stay on web, Open app) was not answered. It covers the bottom of mobile-home-light-default.png.",
+    "prefers-color-scheme dark was requested on the homepage. The page stayed the same paint. No public theme switch was found.",
+    "Pricing rendered S$ (Free S$0, Pro S$9, Business S$12.50). That is the region this client was served.",
+    "Phone nav chevrons for Design, Product, Plans, Business, Education, and Help were not expanded.",
+    "Business, Education, and Help desktop flyouts were mapped from the homepage and not photographed on this pass."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "phone",
+    "code",
+    "Continue with Google",
+    "Continue with Facebook",
+    "Continue with Apple",
+    "Continue with email",
+    "Continue another way",
+    "Sign up with work email",
+    "Sign up",
+    "Log in",
+    "Start designing",
+    "Get started",
+    "Get 50% off",
+    "Contact Sales",
+    "Book a demo",
+    "Accept all cookies",
+    "Manage cookies",
+    "Stay on web",
+    "Open app",
+    "Search templates",
+    "profile, birthday, plan, survey, and onboarding fields"
+  ]
+}

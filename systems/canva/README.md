@@ -16,6 +16,8 @@ Canva is worth a capture because the world's biggest design tool paints a decept
 | [screenshots/](screenshots) | 31 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages, `mobile-*` phone shots (mobile-home's full page stitched from two chunks), plus toggled states: home menu + tools tab, mobile menu, pricing Yearly billing |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the StyleX harvest — hash-named vars resolved light+dark, cross-origin bodies read off the network), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
+| [site-tree.md](site-tree.md) | Which homepage control opens which page, menu, or dialog. Mapped 2026-11-21 before the refresh screenshots. |
+| [login-review.json](login-review.json) | The empty /login and /signup card. Nothing was typed or submitted. |
 
 ## Brief
 
@@ -103,6 +105,8 @@ Every value came off the running signed-out site in headless Chromium:
 - **Screenshots.** [tools/capture/public/public.mjs](tools/capture/public/public.mjs) takes viewport and full-page shots per route with `.capture.json` sidecars, including the local UI toggles: the Design mega-menu and the Presentations tools tab on home, the Monthly→Yearly billing switch on /pricing, and the mobile menu. Full-page shots are capped at eight chunks; mobile-home's full page overflowed the GPU texture limit and stitched from two chunks (the second came back 10px short on a late layout settle — kept, flagged in its sidecar). [tools/capture/quantize.py](tools/capture/quantize.py) posterises them to 256 colours.
 
 Nothing was signed into, created, submitted or paid for: the auth card was measured as a surface — Continue with email was pressed once to reveal the username field (a local UI step; the field was focused and given sample text that was deleted again, and Continue was never pressed); every Sign up, trial, Contact-Sales and OAuth action was measured or screenshotted, never followed. The cookie banner (Accept all cookies / Manage cookies) was hidden per capture, never answered — no consent was ever posted.
+
+On 2026-11-21 the public homepage was mapped again into [site-tree.md](site-tree.md), then photographed signed out. New shots in [screenshots/](screenshots/) use the `home-light-*`, `pricing-light-*`, `login-light-empty`, `signup-light-empty`, and `mobile-*` names. `/login/` and `/signup/` are the same empty card (Continue with Google, Continue with Facebook, Continue with email). Nothing on that card was clicked. See [login-review.json](login-review.json). Prices on `/pricing/` rendered `S$` again. `prefers-color-scheme: dark` did not change the homepage paint.
 
 ## What to distrust
 

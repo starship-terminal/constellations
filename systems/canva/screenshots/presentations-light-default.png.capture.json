@@ -1,0 +1,28 @@
+{
+  "capturedAt": "2026-11-21T09:55:42.489Z",
+  "screenshot": "presentations-light-default.png",
+  "sanitizedSourceUrl": "https://www.canva.com/presentations/",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "title": "Presentations and slides for any occasion | Canva",
+    "urlPath": "/presentations/"
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  }
+}

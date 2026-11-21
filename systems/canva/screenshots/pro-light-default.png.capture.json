@@ -1,0 +1,28 @@
+{
+  "capturedAt": "2026-11-21T09:55:51.493Z",
+  "screenshot": "pro-light-default.png",
+  "sanitizedSourceUrl": "https://www.canva.com/pro/",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "title": "Canva Pro | Your all-in-one design solution",
+    "urlPath": "/pro/"
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  }
+}

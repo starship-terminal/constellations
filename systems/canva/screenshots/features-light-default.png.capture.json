@@ -1,0 +1,28 @@
+{
+  "capturedAt": "2026-11-21T09:55:47.061Z",
+  "screenshot": "features-light-default.png",
+  "sanitizedSourceUrl": "https://www.canva.com/features/",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "title": "Explore Canva Features to Unlock Your Creativity",
+    "urlPath": "/features/"
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  }
+}
