@@ -1,0 +1,26 @@
+{
+  "captured": "2026-11-22",
+  "name": "integrations-light-1440",
+  "url": "https://launchdarkly.com/integrations/",
+  "requestedUrl": "https://launchdarkly.com/integrations/",
+  "title": "Integrations: CI/CD, Observability & Data | LaunchDarkly",
+  "h1": "Work across your stack\u2014without changing how you build.",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "colorScheme": "normal",
+  "bodyBg": "rgb(25, 25, 25)",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

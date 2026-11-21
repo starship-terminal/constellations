@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>LaunchDarkly public tokens</title>
+  <style>
+    :root {
+      --page: #0e0e0e;
+      --text: #f8f8f8;
+      --text-secondary: #d1d6d9;
+      --on-accent: #191919;
+      --accent: #ddff46;
+      --status: #00da7b;
+      --nav: #ffffff;
+    }
+    body { margin: 0; background: var(--page); color: var(--text); font: 16px/24px ui-sans-serif, system-ui, sans-serif; }
+    main { max-width: 880px; margin: 0 auto; padding: 48px 24px; }
+    h1 { font-size: 40px; line-height: 40px; letter-spacing: -1px; margin: 0 0 8px; }
+    p { color: var(--text-secondary); }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; margin-top: 24px; }
+    .swatch { border-radius: 8px; overflow: hidden; background: #191919; }
+    .chip { height: 72px; }
+    .label { padding: 8px 10px; font-size: 13px; }
+    .btn { display: inline-block; margin-top: 24px; background: var(--accent); color: var(--on-accent); border-radius: 8px; padding: 8px 24px; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>LaunchDarkly</h1>
+    <p>Public homepage, signed out, 2026-11-22. The page paints dark. catalog.json was left alone, so this file is a hand swatch, not a generated guide.</p>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#0e0e0e"></div><div class="label">Page #0e0e0e</div></div>
+      <div class="swatch"><div class="chip" style="background:#f8f8f8"></div><div class="label">Heading #f8f8f8</div></div>
+      <div class="swatch"><div class="chip" style="background:#d1d6d9"></div><div class="label">Lede #d1d6d9</div></div>
+      <div class="swatch"><div class="chip" style="background:#ddff46"></div><div class="label">Accent #ddff46</div></div>
+      <div class="swatch"><div class="chip" style="background:#191919"></div><div class="label">On accent #191919</div></div>
+      <div class="swatch"><div class="chip" style="background:#00da7b"></div><div class="label">Status #00da7b</div></div>
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">Nav #ffffff</div></div>
+    </div>
+    <div class="btn">Book a demo</div>
+  </main>
+</body>
+</html>

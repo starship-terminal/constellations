@@ -1,0 +1,26 @@
+{
+  "captured": "2026-11-22",
+  "name": "menu-phone-light-390",
+  "url": "https://launchdarkly.com/",
+  "requestedUrl": "https://launchdarkly.com/",
+  "title": "Runtime Control for AI-Era Software | Feature Flags & AI Agent Control | LaunchDarkly",
+  "h1": "",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "colorScheme": "normal",
+  "bodyBg": "rgb(25, 25, 25)",
+  "note": "First viewport. Phone menu opened by click on the toggle. Cookie banner hidden with CSS, not accepted. Nothing typed. Sign in was not clicked.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}

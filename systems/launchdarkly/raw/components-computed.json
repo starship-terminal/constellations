@@ -1,0 +1,111 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://launchdarkly.com/",
+  "colorScheme": "normal",
+  "body": {
+    "tag": "BODY",
+    "text": "This website uses cookies. We use cookies to personalise content and ads, to pro",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgb(25, 25, 25)",
+    "font": "bodyFont, \"bodyFont Fallback\", sans-serif",
+    "size": "16px",
+    "weight": "400",
+    "lh": "24px",
+    "ls": "normal",
+    "radius": "0px",
+    "height": "12199.5px",
+    "pad": "0px",
+    "border": "0px none rgb(255, 255, 255)"
+  },
+  "h1": {
+    "tag": "H1",
+    "text": "Move at AI speed. Stay in control.",
+    "color": "rgb(248, 248, 248)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "headingFont3, \"headingFont3 Fallback\", sans-serif",
+    "size": "80px",
+    "weight": "700",
+    "lh": "80px",
+    "ls": "-2px",
+    "radius": "0px",
+    "height": "160px",
+    "pad": "0px",
+    "border": "0px none rgb(248, 248, 248)"
+  },
+  "lede": {
+    "tag": "P",
+    "text": "The runtime control layer for AI development, de-risking releases, and enabling ",
+    "color": "rgb(209, 214, 217)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "bodyFont, \"bodyFont Fallback\", sans-serif",
+    "size": "20px",
+    "weight": "400",
+    "lh": "31px",
+    "ls": "-0.6px",
+    "radius": "0px",
+    "height": "62px",
+    "pad": "0px",
+    "border": "0px none rgb(209, 214, 217)"
+  },
+  "signIn": {
+    "tag": "A",
+    "text": "Sign in",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "bodyFont, \"bodyFont Fallback\", sans-serif",
+    "size": "16px",
+    "weight": "400",
+    "lh": "24px",
+    "ls": "normal",
+    "radius": "8px",
+    "height": "auto",
+    "pad": "8px 12px",
+    "border": "1px solid rgba(0, 0, 0, 0)"
+  },
+  "bookADemo": {
+    "tag": "A",
+    "text": "Book a demo",
+    "color": "rgb(25, 25, 25)",
+    "bg": "rgb(221, 255, 70)",
+    "font": "bodyFont, \"bodyFont Fallback\", sans-serif",
+    "size": "16px",
+    "weight": "500",
+    "lh": "16px",
+    "ls": "-0.16px",
+    "radius": "0px 0px 8px 8px",
+    "height": "45px",
+    "pad": "8px 24px",
+    "border": ""
+  },
+  "pricing": {
+    "tag": "A",
+    "text": "Pricing",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "bodyFont, \"bodyFont Fallback\", sans-serif",
+    "size": "16px",
+    "weight": "400",
+    "lh": "24px",
+    "ls": "normal",
+    "radius": "8px",
+    "height": "auto",
+    "pad": "8px 12px",
+    "border": "1px solid rgba(0, 0, 0, 0)"
+  },
+  "sampled": {
+    "page": {
+      "hex": "#0e0e0e",
+      "source": "raw homepage screenshot pixel at 40,200 before quantising. Computed body background was rgb(25, 25, 25)."
+    },
+    "accent": {
+      "hex": "#ddff46",
+      "rgb": "221,255,70",
+      "source": "raw homepage screenshot, Book a demo fill, before quantising. Matches computed background of the header Book a demo control."
+    },
+    "status": {
+      "hex": "#00da7b",
+      "rgb": "0,218,123",
+      "source": "raw status page screenshot, All Systems Operational bar, before quantising."
+    }
+  }
+}
