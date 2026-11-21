@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:51:19.379Z",
+  "capturedAt": "2026-11-21T14:01:27.074Z",
   "screenshot": "category-light-default.png",
   "sanitizedSourceUrl": "https://www.kitchenstories.com/backen",
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 4259
+      "height": 4207
     },
     "scroll": {
       "x": 0,

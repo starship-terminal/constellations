@@ -493,8 +493,8 @@ Kitchen Stories has account, checkout and shop surfaces that this pass did not e
 
 ### Pages
 
-- **Checkout.** https://www.kitchenstories.com/de/checkout was not opened. The Plus CTA that points there was measured.
-- **Account.** https://www.kitchenstories.com/profile was not signed into. /login and /anmelden return 404.
+- **Checkout.** On 2026-11-21 https://www.kitchenstories.com/de/checkout redirected to /checkout and painted a public 404 ("Oje! Die Seite wurde nicht gefunden."). No payment form. Shot: screenshots/checkout-missing-light-default.png.
+- **Account.** https://www.kitchenstories.com/profile is a public notice: website login has moved to the app. /login redirects there. No email field, no password field, no identity-provider button. Shots: screenshots/profile-light-default.png and screenshots/mobile-profile-light-default.png. The App Store and Google Play badges were not clicked.
 - **English magazine.** https://www.kitchenstories.com/en and /en/recipes return 410. The live public magazine is German.
 - **Native app host.** https://app.kitchenstories.com does not resolve. App marketing is https://pages.kitchenstories.com/de/app.
 - **Recipe shop.** Cart and 'Zum Warenkorb' on the recipe page were not clicked. Rating submit was not clicked.
