@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T19:48:11.533Z",
+  "capturedAt": "2026-11-21T10:45:15.097Z",
   "screenshot": "about-light-full.png",
   "sanitizedSourceUrl": "https://www.esquire.com/about/a26377/about-us/",
   "requested": {
@@ -31,15 +31,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 4279
+      "pageTop": 0
     },
     "documentSize": {
       "width": 1440,
-      "height": 11349
+      "height": 11841
     },
     "scroll": {
       "x": 0,
-      "y": 4279
+      "y": 0
     }
   },
   "capture": {
@@ -49,13 +49,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 11349
+    "height": 11841
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 11349
+      "height": 11841
     },
     "basis": "fullPage"
   },

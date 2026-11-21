@@ -1,0 +1,127 @@
+{
+  "product": "Esquire",
+  "captured": "2026-11-21",
+  "route": "public-web",
+  "signed_in": false,
+  "origin": "https://www.esquire.com",
+  "offered": {
+    "nav": {
+      "utility": [
+        "US location menu",
+        "Newsletter",
+        "Search",
+        "Wordmark /",
+        "Sign In",
+        "Subscribe"
+      ],
+      "megaMenu": [
+        "Entertainment",
+        "What to Buy",
+        "Style",
+        "Lifestyle",
+        "News and Politics",
+        "Video",
+        "Food and Drinks",
+        "More"
+      ],
+      "more": [
+        "Sports",
+        "Member Exclusives",
+        "For You"
+      ],
+      "editions": [
+        "US",
+        "UK",
+        "España",
+        "Italia",
+        "Japan"
+      ],
+      "phone": [
+        "Newsletter",
+        "Subscribe",
+        "Hamburger",
+        "Wordmark",
+        "Search",
+        "Entertainment",
+        "What to Buy",
+        "Style",
+        "Lifestyle",
+        "News and Politics",
+        "Video",
+        "Food and Drinks",
+        "Sports",
+        "Member Exclusives",
+        "For You",
+        "My Bookmarks"
+      ]
+    },
+    "settings": {
+      "seen": false,
+      "reason": "No settings surface is offered signed out. US opens an edition menu, not account settings. COOKIES CHOICES was not answered."
+    },
+    "create": {
+      "seen": true,
+      "items": [
+        "Sign In or Create an Account on the empty Mylo card",
+        "Continue",
+        "User ID + Password",
+        "Subscribe on the newsletter cards, left OFF"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    "screenshots/about-light-default.png",
+    "screenshots/about-light-full.png",
+    "screenshots/article-light-default.png",
+    "screenshots/article-light-full.png",
+    "screenshots/entertainment-light-default.png",
+    "screenshots/entertainment-light-full.png",
+    "screenshots/essay-light-default.png",
+    "screenshots/essay-light-full.png",
+    "screenshots/food-light-default.png",
+    "screenshots/food-light-full.png",
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-full.png",
+    "screenshots/home-light-menu.png",
+    "screenshots/mobile-article-light-default.png",
+    "screenshots/mobile-article-light-full.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-drawer.png",
+    "screenshots/mobile-home-light-full.png",
+    "screenshots/mobile-style-light-default.png",
+    "screenshots/mobile-style-light-full.png",
+    "screenshots/newsletter-light-default.png",
+    "screenshots/offers-light-default.png",
+    "screenshots/offers-light-full.png",
+    "screenshots/politics-light-default.png",
+    "screenshots/politics-light-full.png",
+    "screenshots/premium-light-default.png",
+    "screenshots/premium-light-full.png",
+    "screenshots/search-light-default.png",
+    "screenshots/search-light-full.png",
+    "screenshots/signin-light-default.png",
+    "screenshots/style-light-default.png",
+    "screenshots/style-light-full.png"
+  ],
+  "gaps": [
+    "Sign In stops at the empty Mylo card: Email address, Continue, passkey note, Continue with Google, Continue with Facebook, Continue with Apple, Continue with Microsoft, User ID + Password. Nothing typed. Continue was not clicked. No identity provider was clicked.",
+    "Create an account is the same empty card. It was not continued.",
+    "Newsletter Subscribe toggles were left OFF. No email was typed.",
+    "My Bookmarks, shop checkout, and gift checkout were not entered.",
+    "No signed-out settings page exists. The edition menu and COOKIES CHOICES were not used as settings.",
+    "The signed-in product, bookmarks, and account were not entered."
+  ],
+  "not_submitted": [
+    "Email address",
+    "Continue",
+    "Continue with Google",
+    "Continue with Facebook",
+    "Continue with Apple",
+    "Continue with Microsoft",
+    "User ID + Password",
+    "Newsletter Subscribe toggles",
+    "Search",
+    "COOKIES CHOICES"
+  ]
+}

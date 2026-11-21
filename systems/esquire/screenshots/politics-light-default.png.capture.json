@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T19:42:40.437Z",
+  "capturedAt": "2026-11-21T10:43:30.890Z",
   "screenshot": "politics-light-default.png",
   "sanitizedSourceUrl": "https://www.esquire.com/news-politics/",
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 8641
+      "height": 8569
     },
     "scroll": {
       "x": 0,

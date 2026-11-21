@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T19:48:04.122Z",
+  "capturedAt": "2026-11-21T10:45:07.831Z",
   "screenshot": "about-light-default.png",
   "sanitizedSourceUrl": "https://www.esquire.com/about/a26377/about-us/",
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 11103
+      "height": 11225
     },
     "scroll": {
       "x": 0,

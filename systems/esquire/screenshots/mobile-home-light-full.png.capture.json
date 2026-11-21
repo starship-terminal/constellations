@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "capturedAt": "2026-11-13T19:49:31.315Z",
+ "capturedAt": "2026-11-21T10:45:51.188Z",
  "screenshot": "mobile-home-light-full.png",
  "sanitizedSourceUrl": "https://www.esquire.com/",
  "requested": {
@@ -31,15 +31,15 @@
    "offsetLeft": 0,
    "offsetTop": 0,
    "pageLeft": 0,
-   "pageTop": 18287
+   "pageTop": 0
   },
   "documentSize": {
    "width": 390,
-   "height": 23692
+   "height": 23642
   },
   "scroll": {
    "x": 0,
-   "y": 18287
+   "y": 0
   }
  },
  "capture": {
@@ -49,18 +49,18 @@
    "x": 0,
    "y": 0,
    "width": 390,
-   "height": 23692
+   "height": 23642
   }
  },
  "png": {
   "width": 390,
-  "height": 23692
+  "height": 23642
  },
  "dimensionCheck": {
   "status": "pass",
   "expected": {
    "width": 390,
-   "height": 23692
+   "height": 23642
   },
   "basis": "stitchedParts"
  },
@@ -101,7 +101,8 @@
    "x": 0,
    "y": 21000,
    "width": 390,
-   "height": 2692
+   "height": 2642
   }
- ]
+ ],
+ "intendedHeight": 23642
 }

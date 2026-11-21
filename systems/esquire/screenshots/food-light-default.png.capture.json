@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T19:43:17.227Z",
+  "capturedAt": "2026-11-21T10:43:59.302Z",
   "screenshot": "food-light-default.png",
   "sanitizedSourceUrl": "https://www.esquire.com/food-drink/",
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 9942
+      "height": 10032
     },
     "scroll": {
       "x": 0,

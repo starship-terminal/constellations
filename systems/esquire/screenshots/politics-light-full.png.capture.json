@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T19:42:49.797Z",
+  "capturedAt": "2026-11-21T10:43:37.393Z",
   "screenshot": "politics-light-full.png",
   "sanitizedSourceUrl": "https://www.esquire.com/news-politics/",
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 8641
+      "height": 8569
     },
     "scroll": {
       "x": 0,
@@ -49,13 +49,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 8641
+    "height": 8569
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 8641
+      "height": 8569
     },
     "basis": "fullPage"
   },

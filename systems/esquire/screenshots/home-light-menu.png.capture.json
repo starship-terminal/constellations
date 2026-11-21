@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T19:39:41.167Z",
+  "capturedAt": "2026-11-21T10:28:46.385Z",
   "screenshot": "home-light-menu.png",
   "sanitizedSourceUrl": "https://www.esquire.com/",
   "requested": {
@@ -35,7 +35,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 13103
+      "height": 13209
     },
     "scroll": {
       "x": 0,
