@@ -4,116 +4,167 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Programa style guide</title>
+<meta name="description" content="Programa public site tokens, rendered from tokens.json. One light theme.">
 <style>
-  :root {
-    color-scheme: light;
-    --page: #ffffff;
-    --muted-bg: #fcfbf9;
-    --text: #1a1916;
-    --secondary: #7b736c;
-    --muted: #aaa59c;
-    --cta: #fcfda1;
-    --cta-ink: #7f2e1b;
-    --primary: #fdffa2;
-    --inverse: #1a1916;
-    --on-inverse: #ffffff;
-    --border: #eeece6;
-    --switch: #a7f3d0;
-    --app-title: #18181b;
-    --field: #fcfbf9;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--page);
-    color: var(--text);
-    font: 400 16px/24px Inter, system-ui, sans-serif;
-  }
-  main { max-width: 980px; margin: 0 auto; padding: 40px 24px 80px; }
-  h1 {
-    font: 300 60px/64px Georgia, "Times New Roman", serif;
-    letter-spacing: -1.5px;
-    margin: 0 0 8px;
-  }
-  h2 { font: 300 36px/40px Georgia, serif; letter-spacing: -0.2px; margin: 40px 0 12px; }
-  p { max-width: 68ch; }
-  .note { color: var(--secondary); font-size: 13px; }
-  .swatches, .row { display: flex; flex-wrap: wrap; gap: 12px; }
-  .swatch { width: 140px; }
-  .chip { height: 64px; border-radius: 6px; border: 1px solid var(--border); }
-  .label { font-size: 12px; margin-top: 6px; }
-  .label span { display: block; color: var(--secondary); }
-  button {
-    border: 0;
-    height: 36px;
-    padding: 0 12px;
-    border-radius: 6px;
-    font: 400 16px/24px Inter, system-ui, sans-serif;
-  }
-  button.primary { background: var(--primary); color: #000; height: 31px; font-size: 12px; }
-  button.secondary { background: var(--inverse); color: var(--on-inverse); }
-  button.white { background: #fff; color: var(--text); box-shadow: 0 0 0 1px #00000014, 0 1px 2px #0000001f; }
-  button.cta { background: var(--cta); color: var(--cta-ink); height: 28px; font-size: 14px; padding: 4px 8px; }
-  button.app { background: var(--app-title); color: #fff; height: 40px; border-radius: 8px; font-weight: 500; }
-  .hero { font: 300 60px/64px Georgia, serif; letter-spacing: -1.5px; margin: 12px 0; }
-  .field {
-    width: 280px;
-    height: 32px;
-    border: 0;
-    border-radius: 6px;
-    background: var(--field);
-    box-shadow: 0 1px 2px #0000001f, 0 0 0 1px #00000014;
-    padding: 0 8px;
-    font: 400 13px/20px Inter, sans-serif;
-  }
-  a { color: var(--text); }
-  table { border-collapse: collapse; width: 100%; font-size: 13px; }
-  td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+:root {
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #fcfbf9;
+  --color-neutral-100: #f8f6f3;
+  --color-neutral-200: #eeece6;
+  --color-neutral-300: #aaa59c;
+  --color-neutral-400: #7b736c;
+  --color-neutral-600: #45403a;
+  --color-neutral-700: #2b2926;
+  --color-neutral-800: #1a1916;
+  --color-yellow-light: #fdffa2;
+  --color-yellow-hover: #ccca88;
+  --color-green-pale: #d1fae5;
+  --color-green-light: #a7f3d0;
+  --color-green-dark: #064e3b;
+  --color-green-ultraDark: #022c22;
+  --color-blue-pale: #dbeafe;
+  --color-blue-light: #93c5fd;
+  --color-blue-dark: #1e3a8a;
+  --color-blue-ultraDark: #172554;
+  --color-purple-pale: #ddd6fe;
+  --color-purple-light: #c4b5fd;
+  --color-purple-dark: #5b21b6;
+  --color-purple-ultraDark: #2e1065;
+  --color-red-pale: #ffe4e6;
+  --color-red-light: #fda4af;
+  --color-red-dark: #881337;
+  --color-red-ultraDark: #4c0519;
+  --color-orange-pale: #ffedd5;
+  --color-orange-light: #fed7aa;
+  --color-orange-dark: #9a3412;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-60: 60px;
+  --spacing-68: 68px;
+  --spacing-80: 80px;
+  --spacing-header: 72px;
+  --spacing-container: 16px;
+  --spacing-containerMd: 24px;
+  --radius-2: 2px;
+  --radius-12: 12px;
+  --radius-control: 6px;
+  --fontSize-xxxxl: 80px;
+  --fontSize-xxxl: 60px;
+  --fontSize-xxl: 44px;
+  --fontSize-xl: 36px;
+  --fontSize-l: 24px;
+  --fontSize-s: 16px;
+  --fontSize-xs: 14px;
+  --fontSize-xxs: 12px;
+  --lineHeight-xxxxl: 84px;
+  --lineHeight-xxxl: 64px;
+  --lineHeight-xxl: 50px;
+  --lineHeight-xl: 34px;
+  --lineHeight-l: 30px;
+  --lineHeight-m: 28px;
+  --lineHeight-s: 24px;
+  --lineHeight-xsS: 22px;
+  --lineHeight-xs: 20px;
+  --lineHeight-xxs: 18px;
+  --content-sm: 580px;
+  --content-md: 720px;
+  --content-lg: 960px;
+  --content-xl: 1080px;
+  --content-2xl: 1200px;
+  --content-3xl: 1440px;
+  --fontFamily-display: Rhymes Display, system-ui, sans-serif;
+  --fontFamily-sans: Inter, Inter Fallback, system-ui, sans-serif;
+  --fontFamily-text: Rhymes Text, system-ui, sans-serif;
+  --fontFamily-mono: Roboto Mono, ui-monospace, SFMono-Regular, Menlo, monospace;
+  --fontWeight-display: 300;
+  --fontWeight-regular: 400;
+  --fontWeight-medium: 500;
+  --motion-duration: 150ms;
+  --motion-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --light-page: var(--color-neutral-0);
+  --light-surface: #fcfbf9;
+  --light-raised: #f8f6f3;
+  --light-text: var(--color-neutral-800);
+  --light-muted: #aaa59c;
+  --light-link: #7b736c;
+  --light-border: var(--color-neutral-200);
+  --light-accent: #fdffa2;
+  --light-accentHover: #ccca88;
+  --light-focus: #005fcc;
+  --light-success: var(--color-green-dark);
+  --light-danger: #ff427b;
+  --light-warning: #ffc107;
+  --light-info: #0dcaf0;
+  --light-component-buttonPrimary-background: #d9edf2;
+  --light-component-buttonPrimary-text: #02554d;
+  --light-component-buttonPrimary-radius: 6px;
+  --light-component-buttonPrimary-height: 28px;
+  --light-component-buttonPrimary-fontSize: 14px;
+  --light-component-buttonDark-background: #1a1916;
+  --light-component-buttonDark-text: #ffffff;
+  --light-component-buttonDark-hover: #2b2926;
+  --light-component-buttonDark-radius: 6px;
+  --light-component-buttonDark-height: 36px;
+  --light-component-buttonSecondary-background: #ffffff;
+  --light-component-buttonSecondary-text: #1a1916;
+  --light-component-buttonSecondary-hover: #f8f6f3;
+  --light-component-buttonSecondary-radius: 6px;
+  --light-component-buttonSecondary-height: 36px;
+  --light-component-badge-background: #d1fae5;
+  --light-component-badge-text: #064e3b;
+  --light-component-badge-radius: 6px;
+  --sg-sans: var(--fontFamily-sans), Inter, system-ui, sans-serif;
+  --sg-display: var(--fontFamily-display), Georgia, serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--light-page); color: var(--light-text); font: 400 16px/24px var(--sg-sans); }
+header { padding: 28px 32px 8px; border-bottom: 1px solid var(--light-border); }
+h1 { font: 300 44px/50px var(--sg-display); margin: 0 0 8px; }
+h2 { font: 300 28px/34px var(--sg-display); margin: 40px 0 12px; }
+p.lede { color: var(--light-muted); max-width: 640px; }
+main { max-width: 1080px; margin: 0 auto; padding: 8px 32px 64px; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.swatch { border: 1px solid var(--light-border); border-radius: 12px; overflow: hidden; background: var(--light-surface); }
+.swatch i { display: block; height: 64px; }
+.swatch span, .swatch code { display: block; padding: 6px 10px; font-size: 12px; }
+.swatch code { color: var(--light-muted); }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.btn-primary { display: inline-flex; align-items: center; height: var(--light-component-buttonPrimary-height); padding: 0 8px; border-radius: var(--light-component-buttonPrimary-radius); background: var(--light-component-buttonPrimary-background); color: var(--light-component-buttonPrimary-text); font-size: 14px; font-weight: 500; text-decoration: none; }
+.btn-dark { display: inline-flex; align-items: center; height: var(--light-component-buttonDark-height); padding: 0 12px; border-radius: var(--light-component-buttonDark-radius); background: var(--light-component-buttonDark-background); color: var(--light-component-buttonDark-text); text-decoration: none; }
+.btn-secondary { display: inline-flex; align-items: center; height: var(--light-component-buttonSecondary-height); padding: 0 12px; border-radius: var(--light-component-buttonSecondary-radius); background: var(--light-component-buttonSecondary-background); color: var(--light-component-buttonSecondary-text); text-decoration: none; box-shadow: 0 0 0 1px rgba(0,0,0,.08); }
+.badge { display: inline-flex; align-items: center; height: 20px; padding: 0 6px; border-radius: var(--light-component-badge-radius); background: var(--light-component-badge-background); color: var(--light-component-badge-text); font-size: 12px; }
+.display { font: 300 60px/64px var(--sg-display); margin: 0; }
+.note { color: var(--light-muted); font-size: 14px; }
 </style>
 </head>
 <body>
-<main>
+<header>
   <h1>Programa</h1>
-  <p class="note">Light marketing tokens from programa.design, plus the signed-out app form. Rhymes Display is not loaded here. Headlines fall back to Georgia.</p>
-
-  <h2>Colour</h2>
+  <p class="lede">Public marketing site, one light theme. Values come from tokens.json, read from programa.design on 2026-11-21. Rhymes Display is not loaded here, so the display face falls back to Georgia.</p>
+</header>
+<main>
+  <h2>Colour roles</h2>
   <div class="swatches">
-    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">page <span>#ffffff</span></div></div>
-    <div class="swatch"><div class="chip" style="background:#fcfbf9"></div><div class="label">muted surface <span>#fcfbf9</span></div></div>
-    <div class="swatch"><div class="chip" style="background:#1a1916"></div><div class="label">text <span>#1a1916</span></div></div>
-    <div class="swatch"><div class="chip" style="background:#7b736c"></div><div class="label">secondary <span>#7b736c</span></div></div>
-    <div class="swatch"><div class="chip" style="background:#fdffa2"></div><div class="label">primary <span>#fdffa2</span></div></div>
-    <div class="swatch"><div class="chip" style="background:#fcfda1"></div><div class="label">nav cta <span>#fcfda1</span></div></div>
-    <div class="swatch"><div class="chip" style="background:#eeece6"></div><div class="label">border <span>#eeece6</span></div></div>
-    <div class="swatch"><div class="chip" style="background:#a7f3d0"></div><div class="label">switch on <span>#a7f3d0</span></div></div>
-    <div class="swatch"><div class="chip" style="background:#18181b"></div><div class="label">app title <span>#18181b</span></div></div>
+    <div class="swatch"><i style="background:var(--light-page)"></i><span>page</span><code>var(--light-page)</code></div><div class="swatch"><i style="background:var(--light-surface)"></i><span>surface</span><code>var(--light-surface)</code></div><div class="swatch"><i style="background:var(--light-raised)"></i><span>raised</span><code>var(--light-raised)</code></div><div class="swatch"><i style="background:var(--light-text)"></i><span>text</span><code>var(--light-text)</code></div><div class="swatch"><i style="background:var(--light-muted)"></i><span>muted</span><code>var(--light-muted)</code></div><div class="swatch"><i style="background:var(--light-link)"></i><span>link</span><code>var(--light-link)</code></div><div class="swatch"><i style="background:var(--light-border)"></i><span>border</span><code>var(--light-border)</code></div><div class="swatch"><i style="background:var(--light-accent)"></i><span>accent</span><code>var(--light-accent)</code></div><div class="swatch"><i style="background:var(--light-accentHover)"></i><span>accentHover</span><code>var(--light-accentHover)</code></div><div class="swatch"><i style="background:var(--light-success)"></i><span>success</span><code>var(--light-success)</code></div><div class="swatch"><i style="background:var(--light-danger)"></i><span>danger</span><code>var(--light-danger)</code></div>
   </div>
-
   <h2>Type</h2>
-  <p class="hero">Freedom, by design</p>
-  <p>The better, easier, way to run an interior design studio.</p>
-  <p class="note">Eyebrow uses Roboto Mono at 12px, uppercase on the page.</p>
-
+  <p class="display">Freedom, by design</p>
+  <p>Body is Inter at 16px. Labels are Inter at 14px. Captions are 12px in the muted role.</p>
   <h2>Buttons</h2>
   <div class="row">
-    <button class="primary">Start 7 day trial</button>
-    <button class="secondary">Get started</button>
-    <button class="white">Watch a demo</button>
-    <button class="cta">Start free</button>
-    <button class="app">Log in</button>
+    <a class="btn-primary" href="#buttons">Start free</a>
+    <a class="btn-dark" href="#buttons">Get started</a>
+    <a class="btn-secondary" href="#buttons">Watch a demo</a>
+    <span class="badge">New</span>
   </div>
-
-  <h2>Field</h2>
-  <input class="field" placeholder="Enter Email" aria-label="Email">
-
-  <h2>Radius and space</h2>
-  <table>
-    <tr><th>Token</th><th>Value</th></tr>
-    <tr><td>radius 6</td><td>6px, buttons and fields</td></tr>
-    <tr><td>radius 8</td><td>8px, login submit</td></tr>
-    <tr><td>radius 12</td><td>12px, testimonial cards</td></tr>
-    <tr><td>space 8 to 80</td><td>declared --spacing-spacing-* steps</td></tr>
-  </table>
+  <p class="note">The mint header button is measured, not the yellow accent. Yellow is the declared primary token. The New badge uses the green pale and green dark pair.</p>
 </main>
 </body>
 </html>
