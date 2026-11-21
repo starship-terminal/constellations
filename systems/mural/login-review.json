@@ -1,0 +1,131 @@
+{
+  "product": "Mural",
+  "captured": "2026-11-21",
+  "route": "public-web",
+  "signed_in": false,
+  "origin": "https://www.mural.co",
+  "landed": "https://www.mural.co/",
+  "session": "Public homepage mapped in headless Chromium, then photographed. Login at https://app.mural.co/signin and signup at https://app.mural.co/signup are walls: a work-email field, a submit button, and Log in with Google or Sign up with Google. Google was not clicked. No email, password, or code was typed. No form was submitted. No captcha wall blocked the public pages.",
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measured": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "devicePixelRatio": 2,
+        "visualViewport": {"width": 1440, "height": 900, "scale": 1}
+      }
+    },
+    "phone": {
+      "requested": "390x844",
+      "measured": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "devicePixelRatio": 2,
+        "visualViewport": {"width": 390, "height": 844, "scale": 1}
+      }
+    }
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "Logo /",
+        "Product menu",
+        "Solutions menu",
+        "Services menu",
+        "Enterprise /enterprise",
+        "Resources menu",
+        "Pricing /pricing",
+        "Login https://app.mural.co/signin",
+        "Book a demo /contact-us/sales",
+        "Sign up free https://app.mural.co/signup",
+        "Phone menu"
+      ],
+      "reached": [
+        "Logo /",
+        "Product menu",
+        "Solutions menu",
+        "Services menu",
+        "Enterprise /enterprise",
+        "Resources menu",
+        "Pricing /pricing",
+        "Login https://app.mural.co/signin",
+        "Book a demo /contact-us/sales",
+        "Sign up free https://app.mural.co/signup",
+        "Phone menu"
+      ],
+      "note": "Reached means the control was opened on the public site or the wall was photographed. Login and Sign up free stop at the email wall. Google was not opened."
+    },
+    "settings": {
+      "items": [
+        "No signed-in settings. The public site has no account menu."
+      ],
+      "reached": [
+        "No signed-in settings. The public site has no account menu."
+      ]
+    },
+    "create": {
+      "items": [
+        "Get started free on the homepage (email form, not submitted)",
+        "Sign up free in the header (signup wall, not submitted)",
+        "Sign up on https://app.mural.co/signup (not submitted)",
+        "Create a mural is behind the signup wall"
+      ],
+      "reached": [
+        "Get started free on the homepage (email form, not submitted)",
+        "Sign up free in the header (signup wall, not submitted)",
+        "Sign up on https://app.mural.co/signup (not submitted)",
+        "Create a mural is behind the signup wall"
+      ]
+    }
+  },
+  "screens": [
+    {"name": "Homepage, public, light, 1440", "file": "screenshots/home-light-default.png"},
+    {"name": "Product menu open, public, 1440", "file": "screenshots/home-light-product-menu.png"},
+    {"name": "Solutions menu open, public, 1440", "file": "screenshots/home-light-solutions-menu.png"},
+    {"name": "Services menu open, public, 1440", "file": "screenshots/home-light-services-menu.png"},
+    {"name": "Resources menu open, public, 1440", "file": "screenshots/home-light-resources-menu.png"},
+    {"name": "Homepage email field focused, public, 1440", "file": "screenshots/home-light-field-focus.png"},
+    {"name": "Pricing, public, light, 1440", "file": "screenshots/pricing-light-default.png"},
+    {"name": "Product, public, light, 1440", "file": "screenshots/product-light-default.png"},
+    {"name": "Enterprise, public, light, 1440", "file": "screenshots/enterprise-light-default.png"},
+    {"name": "Templates, public, light, 1440", "file": "screenshots/templates-light-default.png"},
+    {"name": "Integrations, public, light, 1440", "file": "screenshots/integrations-light-default.png"},
+    {"name": "Features, public, light, 1440", "file": "screenshots/features-light-default.png"},
+    {"name": "Contact sales, public, light, 1440", "file": "screenshots/contact-sales-light-default.png"},
+    {"name": "Login wall, signed out, light, 1440", "file": "screenshots/signin-light-default.png"},
+    {"name": "Signup wall, signed out, light, 1440", "file": "screenshots/signup-light-default.png"},
+    {"name": "Homepage, public, light, 390", "file": "screenshots/mobile-home-light-default.png"},
+    {"name": "Phone menu open, public, 390", "file": "screenshots/mobile-home-light-menu.png"},
+    {"name": "Pricing, public, light, 390", "file": "screenshots/mobile-pricing-light-default.png"},
+    {"name": "Product, public, light, 390", "file": "screenshots/mobile-product-light-default.png"},
+    {"name": "Enterprise, public, light, 390", "file": "screenshots/mobile-enterprise-light-default.png"},
+    {"name": "Templates, public, light, 390", "file": "screenshots/mobile-templates-light-default.png"},
+    {"name": "Integrations, public, light, 390", "file": "screenshots/mobile-integrations-light-default.png"},
+    {"name": "Login wall, signed out, light, 390", "file": "screenshots/mobile-signin-light-default.png"},
+    {"name": "Signup wall, signed out, light, 390", "file": "screenshots/mobile-signup-light-default.png"}
+  ],
+  "gaps": [
+    "Signed-in workspace, settings, and create-a-mural were not reached. Login and signup stop at an email wall plus Google.",
+    "Log in with Google and Sign up with Google were not clicked.",
+    "The homepage email form and the sales form were not submitted, so no validation error was captured.",
+    "Design & UX is in the Solutions list and was not visible in the open panel at 1440.",
+    "No cookie banner was mounted. Your privacy choices is a page and was not opened.",
+    "Muriel, the sales-page chat, was already open on /contact-us/sales. It was not used and no message was sent.",
+    "Dark theme was not found on these pages. color-scheme was normal.",
+    "Phone signup was not recaptured on this pass. The existing mobile-signup shot is from 2026-11-19."
+  ],
+  "not_submitted": [
+    "Get started free",
+    "Work email on login",
+    "Log in",
+    "Remember me",
+    "Log in with Google",
+    "Work email on signup",
+    "Sign up",
+    "Sign up with Google",
+    "Book a demo form",
+    "Muriel chat",
+    "Cookie or privacy-choices dialog"
+  ]
+}

@@ -1,6 +1,6 @@
 # Mural
 
-Mural is a visual collaboration workspace. This package covers the public marketing site at https://www.mural.co/ and the signed-out login and signup at https://app.mural.co/, captured on 2026-11-19. No account was created. No form was submitted. The only theme on these pages is light. Desktop shots are 1440 x 900 CSS px. Phone shots were requested at 390 x 844 CSS px and saved at device pixel ratio 2, so the PNGs are 780 x 1688.
+Mural is a visual collaboration workspace. This package covers the public marketing site at https://www.mural.co/ and the signed-out login and signup at https://app.mural.co/, captured on 2026-11-19 and refreshed on 2026-11-21. No account was created. No form was submitted. The only theme on these pages is light. Desktop shots are 1440 x 900 CSS px. Phone shots were requested at 390 x 844 CSS px and saved at device pixel ratio 2, so most PNGs are 780 x 1688. The 2026-11-21 phone login shot is 390 x 844 CSS pixels. The map of controls is [site-tree.md](site-tree.md). The login probe is [login-review.json](login-review.json).
 
 | File | What it holds |
 |---|---|
@@ -14,6 +14,8 @@ Mural is a visual collaboration workspace. This package covers the public market
 | [components/](components/) | Crops of the measured controls. |
 | [icons/](icons/) | Two inline SVGs from the public pages, with [icons/INDEX.tsv](icons/INDEX.tsv). |
 | [screenshots/](screenshots/) | Page captures, desktop and phone. |
+| [site-tree.md](site-tree.md) | Which homepage control opens which page, menu, or wall. |
+| [login-review.json](login-review.json) | What the public site offered for nav, settings, and create, the screens, the gaps, and what was not submitted. |
 | [raw/](raw/) | The stylesheet dump and the computed-style JSON. |
 | [tools/](tools/) | The capture scripts and the builders. |
 
@@ -111,7 +113,7 @@ ABC Social is the UI face, declared as `"ABC Social", Arial, sans-serif`. The au
 | Text field | Captured. Hero email, and the work-email field at rest, clicked, keyboard-focused, and filled then cleared. |
 | Checkbox | Captured at rest only. It was not toggled. |
 | Text area, select, radio, switch, tabs | Not present on the pages that were opened. |
-| Menu | Not captured. The Product disclosure did not open. |
+| Menu | Captured on 2026-11-21. Hover opens Product, Solutions, Services, and Resources. [home-light-product-menu.png](screenshots/home-light-product-menu.png), [home-light-solutions-menu.png](screenshots/home-light-solutions-menu.png), [home-light-services-menu.png](screenshots/home-light-services-menu.png), [home-light-resources-menu.png](screenshots/home-light-resources-menu.png). Phone menu: [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png). |
 | Dialog, toast, tooltip | Not present, except a chat widget that was not opened. |
 | Card | Captured. Pricing card content. |
 | List, table, avatar, badge | Badge text was measured. The others are not on these pages, apart from portrait photos inside the marketing demo. |
