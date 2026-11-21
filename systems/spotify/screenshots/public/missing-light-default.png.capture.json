@@ -1,0 +1,21 @@
+{
+  "capturedAt": "2026-11-21T15:28:27.565Z",
+  "screenshot": "missing-light-default.png",
+  "actual": {
+    "href": "https://www.spotify.com/sg-en/this-page-is-not-real-404/",
+    "title": "Page not found - Spotify",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "colorScheme": "normal",
+    "classes": [],
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "quantize": "(2880, 1800)",
+  "quantizeErr": null,
+  "sanitizedSourceUrl": "https://www.spotify.com/sg-en/this-page-is-not-real-404/"
+}

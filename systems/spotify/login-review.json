@@ -1,0 +1,78 @@
+{
+  "slug": "spotify",
+  "product": "Spotify",
+  "domain": "spotify.com",
+  "captured": "2026-11-21",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "email-then-password-plus-identity-providers",
+  "session": "Headless Chromium, signed out. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed. reCAPTCHA was not solved.",
+  "wall": {
+    "url": "https://accounts.spotify.com/en/login",
+    "title": "Spotify",
+    "asks": [
+      "Email",
+      "Continue",
+      "Continue with Google",
+      "Continue with Facebook",
+      "Continue with Apple"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "password_visible": false,
+    "code_field": false,
+    "inputs": [
+      {"type": "text", "name": "", "placeholder": "", "filled": false}
+    ],
+    "note": "Heading is Welcome back. The email field was empty. Continue was not clicked, so the password step was not shown. Google, Facebook, and Apple were not clicked. The page names reCAPTCHA and was not solved."
+  },
+  "signup_wall": {
+    "url": "https://www.spotify.com/sg-en/signup",
+    "lands_on": "https://www.spotify.com/sg-en/signup",
+    "title": "Sign up - Spotify",
+    "asks": [
+      "Email address",
+      "Next",
+      "Sign up with Google",
+      "Sign up with Apple"
+    ],
+    "email_field": true,
+    "continued": false,
+    "note": "Heading is Sign up to start listening. The email field was empty. Its placeholder is name@domain.com. Next was not clicked. Google and Apple were not clicked."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "deviceScaleFactor": 2,
+      "file": "screenshots/public/login-dark-default.png"
+    }
+  },
+  "offered": {
+    "nav": [
+      {"label": "Log in", "href": "https://accounts.spotify.com/en/login", "reached": "wall only"},
+      {"label": "Sign up", "href": "https://www.spotify.com/sg-en/signup", "reached": "wall only"}
+    ],
+    "identity_providers": ["Google", "Facebook", "Apple"]
+  },
+  "screens": [
+    {"name": "Log-in wall, desktop, empty", "file": "screenshots/public/login-dark-default.png"},
+    {"name": "Signup wall, desktop, empty", "file": "screenshots/public/signup-dark-default.png"}
+  ],
+  "gaps": [
+    "login-extracted is not-started.",
+    "The email field was left empty. Continue and Next were not clicked. No password or code step was reached.",
+    "Google, Facebook, and Apple were offered and not clicked.",
+    "reCAPTCHA was named and not solved.",
+    "The signed-in app was not reached."
+  ],
+  "not_submitted": [
+    "Continue",
+    "Next",
+    "Continue with Google",
+    "Continue with Facebook",
+    "Continue with Apple",
+    "Sign up with Google",
+    "Sign up with Apple",
+    "Try 3 months for $0"
+  ]
+}

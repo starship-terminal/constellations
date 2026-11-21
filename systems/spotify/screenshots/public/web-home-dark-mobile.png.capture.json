@@ -1,0 +1,13 @@
+{
+  "capturedAt": "2026-11-21T15:29:52.602Z",
+  "screenshot": "web-home-dark-mobile.png",
+  "actual": {
+    "href": "https://open.spotify.com/",
+    "title": "Spotify - Web Player: Listen to Music, Podcasts, and Audiobooks Online",
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "colorScheme": "normal"
+  },
+  "sanitizedSourceUrl": "https://open.spotify.com/"
+}

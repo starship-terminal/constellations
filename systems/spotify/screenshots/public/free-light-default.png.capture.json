@@ -1,0 +1,21 @@
+{
+  "capturedAt": "2026-11-21T15:28:18.059Z",
+  "screenshot": "free-light-default.png",
+  "actual": {
+    "href": "https://www.spotify.com/sg-en/free/",
+    "title": "Play free on mobile - Spotify - Spotify (SG)",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "colorScheme": "normal",
+    "classes": [],
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "quantize": "(2880, 1800)",
+  "quantizeErr": null,
+  "sanitizedSourceUrl": "https://www.spotify.com/sg-en/free/"
+}

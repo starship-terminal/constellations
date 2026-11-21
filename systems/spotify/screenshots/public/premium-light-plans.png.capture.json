@@ -1,0 +1,13 @@
+{
+  "capturedAt": "2026-11-21T15:29:48.988Z",
+  "screenshot": "premium-light-plans.png",
+  "actual": {
+    "href": "https://www.spotify.com/sg-en/premium/",
+    "title": "Spotify Premium (Singapore) - Try 3 months for $0",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "colorScheme": "normal"
+  },
+  "sanitizedSourceUrl": "https://www.spotify.com/sg-en/premium/"
+}

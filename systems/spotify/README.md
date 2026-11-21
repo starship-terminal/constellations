@@ -16,8 +16,11 @@ This package contains no Spotify code, and none of its artwork has been redrawn.
 | [patterns.md](patterns.md) | The app shell, Home, Search, Your Library, sheets, settings, the artist page, the profile drawer, feedback, and what was not captured |
 | [components/crops/](components/crops) | 47 element crops, `{component}-{state}.png`, cut from the screenshots by `tools/crops.py` |
 | [screenshots/](screenshots) | `dark/` (22), `02-home.png` to `25-track-context-sheet.png`, quantised to 256 colours with alpha |
-| [raw/](raw) | `readings.json`: every value read from the full-colour captures, with its file, box, method and evidence label. `spotify-measured.md`: the same as tables |
+| [raw/](raw) | `readings.json`: every value read from the full-colour captures, with its file, box, method and evidence label. `spotify-measured.md`: the same as tables. `public-2026-11-21.json`: computed styles and sampled fills from the public web pass |
 | [tools/](tools) | `measure.py` (readings), `build_tokens.py`, `build_style_guide.py`, `build_components_md.py`, `crops.py` with `crops.json`, `test_build_tokens.py`, and `capture/` (`native/shot.sh`, `native/sample.py`, `native/winid.swift`, `quantize.py`) |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, dialog, or wall on the public site |
+| [login-review.json](login-review.json) | Empty login and signup walls. `login_extracted` is `not-started` |
+| [screenshots/public/](screenshots/public) | Public web captures from 2026-11-21. Desktop 1440×900 at 2x. Phone 390×844 at 2x |
 
 ## Brief
 
@@ -129,6 +132,14 @@ Spotify is a native app, so there is no CSS. Each screen was captured as the iPh
 | Unknown (Spotify's own geometric sans) | Everything. The style guide uses the platform sans; nothing is committed or needed |
 
 Type roles, in points: the artist's name over its header photo 47 bold; page titles 24 bold; section titles 20 bold; nav titles 16 bold; row titles, settings rows, the search placeholder and segment labels 16 (17 in two readings); the selected artist tab, browse tile titles and the selected segment 16 bold; sheet items 15; subtitles, chip labels and the mini player 13; tile titles and pill labels 13 bold; the sort sheet's header 12; settings tile labels 11 and the Beta tag 11 bold; tab bar labels 10. Subtitles run on an 18 pt line, tile titles on 17.5 pt, browse tile titles on 22.5 pt.
+
+## Public site, 2026-11-21
+
+A signed-out web pass from [spotify.com](https://spotify.com), which redirects to the web player. This machine landed on the Singapore English marketing locale. Captured: the homepage, the language dialog, search browse with the field focused and empty, a public artist page (The Weeknd), premium and its plan cards, download, free, about, a missing page, and the empty login and signup walls. Phone width covers the homepage, its menu, and the artist page. The control map is [site-tree.md](site-tree.md). `login_extracted` is `not-started` ([login-review.json](login-review.json)).
+
+Nothing was typed. Google, Facebook, and Apple were not clicked. Continue and Next were not clicked. No playback session was started. Catalog.json was left alone. The iOS tokens in [tokens.json](tokens.json) were not rebuilt. Public readings are in [raw/public-2026-11-21.json](raw/public-2026-11-21.json).
+
+The web player paints `#121212` on `html` and a black shell. Library and search rest on `#1F1F1F`. The Log in pill samples `#F0F0F0`. Spotify green on the premium "Try 3 months for $0" button samples `#1ED760`. The Music browse tile samples `#DC148C`. Encore often reports button fills as transparent, so those fills were read from an unquantised screenshot, not from computed style. Type is SpotifyMixUI, with SpotifyMixUITitle on the auth headings (48px, weight 800) and SpotifyMixUITitleVariable on the premium hero (128px, weight 900).
 
 ## Coverage
 

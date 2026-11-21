@@ -1,0 +1,76 @@
+{
+  "captured": "2026-11-21",
+  "route": "public web, headless Chromium, signed out",
+  "locale": "sg-en (this machine's redirect from spotify.com)",
+  "viewport": {
+    "desktop": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2},
+    "phone": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2}
+  },
+  "note": "Computed styles on encore buttons often report a transparent background. Flat fills below were sampled from an unquantised screenshot of the same state. Quantised copies were not sampled.",
+  "computed": {
+    "webPlayer": {
+      "url": "https://open.spotify.com/",
+      "colorScheme": "dark",
+      "htmlClass": "encore-dark-theme",
+      "htmlBackground": "rgb(18, 18, 18)",
+      "bodyColor": "rgb(179, 179, 179)",
+      "bodyFont": "SpotifyMixUI",
+      "bodySize": "16px",
+      "libraryHeading": {"text": "Your Library", "size": "16px", "weight": "700", "color": "rgb(255, 255, 255)"},
+      "search": {"placeholder": "What do you want to play?", "size": "16px", "weight": "400", "color": "rgb(255, 255, 255)", "background": "rgb(31, 31, 31)", "radius": "500px", "height": 48, "padding": "12px 96px 12px 48px"},
+      "searchFocused": {"background": "rgb(42, 42, 42)", "radius": "500px", "valueLength": 0},
+      "login": {"text": "Log in", "size": "16px", "weight": "700", "radius": "9999px", "height": 48},
+      "signup": {"text": "Sign up", "size": "14px", "weight": "700", "radius": "9999px", "height": 32},
+      "link": {"size": "12px", "weight": "400", "color": "rgb(179, 179, 179)"},
+      "categoryTile": {"example": "Music", "height": 130, "width": 231, "labelSize": "16px", "labelWeight": "400", "labelColor": "rgb(255, 255, 255)"}
+    },
+    "premium": {
+      "url": "https://www.spotify.com/sg-en/premium/",
+      "colorScheme": "normal",
+      "headerBackground": "rgb(0, 0, 0)",
+      "h1": {"size": "128px", "weight": "900", "color": "rgb(255, 255, 255)", "font": "SpotifyMixUITitleVariable"}
+    },
+    "login": {
+      "url": "https://accounts.spotify.com/en/login",
+      "colorScheme": "dark",
+      "bodyBackground": "rgb(18, 18, 18)",
+      "h1": {"text": "Welcome back", "size": "48px", "weight": "800", "color": "rgb(255, 255, 255)", "font": "SpotifyMixUITitle"},
+      "email": {"type": "text", "valueLength": 0, "background": "rgb(18, 18, 18)", "radius": "4px", "height": 48, "padding": "12px", "size": "16px"},
+      "continue": {"height": 48, "radius": "9999px", "weight": "700", "size": "16px", "computedBackground": "transparent"},
+      "google": {"border": "1px solid rgb(124, 124, 124)", "radius": "9999px", "height": 48}
+    },
+    "signup": {
+      "url": "https://www.spotify.com/sg-en/signup",
+      "h1": {"text": "Sign up to start listening", "size": "48px", "weight": "800"},
+      "email": {"type": "email", "name": "username", "placeholder": "name@domain.com", "valueLength": 0}
+    },
+    "missing": {
+      "url": "https://www.spotify.com/sg-en/this-page-is-not-real-404/",
+      "bodyBackground": "rgb(89, 37, 255)",
+      "h1": {"text": "This page is out of tune", "size": "64px", "weight": "300", "color": "rgb(255, 255, 255)", "font": "SpotifyMixUITitleVariable"}
+    },
+    "about": {
+      "url": "https://www.spotify.com/sg-en/about-us/contact/",
+      "bodyBackground": "rgb(255, 255, 255)",
+      "bodyColor": "rgb(40, 40, 40)",
+      "h1": {"text": "About Us", "size": "48px", "weight": "700", "color": "rgb(40, 40, 40)", "font": "SpotifyMixUITitle"}
+    }
+  },
+  "sampled": {
+    "source": "unquantised Playwright PNG, deviceScaleFactor 1, same session as the computed read",
+    "premiumGreenButton": {"rgb": [30, 215, 96], "hex": "#1ED760", "share": "36 of 56 interior samples"},
+    "loginPill": {"rgb": [240, 240, 240], "hex": "#F0F0F0"},
+    "webPlayerPage": {"rgb": [0, 0, 0], "hex": "#000000", "note": "html computed rgb(18, 18, 18); the visible shell edge sampled #000000"},
+    "libraryPanel": {"rgb": [31, 31, 31], "hex": "#1F1F1F"},
+    "searchField": {"rgb": [31, 31, 31], "hex": "#1F1F1F"},
+    "premiumPage": {"rgb": [18, 18, 18], "hex": "#121212"},
+    "loginPage": {"rgb": [18, 18, 18], "hex": "#121212"},
+    "musicTile": {"rgb": [220, 20, 140], "hex": "#DC148C"},
+    "previewBanner": {
+      "left": [171, 43, 153],
+      "mid": [131, 92, 193],
+      "right": [93, 139, 231],
+      "note": "sampled from the quantised homepage, so these are the posterised stops, not exact gradient stops"
+    }
+  }
+}

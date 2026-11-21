@@ -1,0 +1,21 @@
+{
+  "capturedAt": "2026-11-21T15:28:42.841Z",
+  "screenshot": "premium-light-mobile.png",
+  "actual": {
+    "href": "https://www.spotify.com/sg-en/premium/",
+    "title": "Spotify Premium (Singapore) - Try 3 months for $0",
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "colorScheme": "normal",
+    "classes": [],
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "quantize": "(780, 1688)",
+  "quantizeErr": null,
+  "sanitizedSourceUrl": "https://www.spotify.com/sg-en/premium/"
+}

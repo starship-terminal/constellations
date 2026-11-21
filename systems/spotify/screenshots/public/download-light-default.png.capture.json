@@ -1,0 +1,24 @@
+{
+  "capturedAt": "2026-11-21T15:28:13.385Z",
+  "screenshot": "download-light-default.png",
+  "actual": {
+    "href": "https://www.spotify.com/sg-en/download/windows/",
+    "title": "Windows download - Spotify",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "colorScheme": "dark",
+    "classes": [
+      "encore-dark-theme",
+      "encore-layout-themes"
+    ],
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "quantize": "(2880, 1800)",
+  "quantizeErr": null,
+  "sanitizedSourceUrl": "https://www.spotify.com/sg-en/download/windows/"
+}

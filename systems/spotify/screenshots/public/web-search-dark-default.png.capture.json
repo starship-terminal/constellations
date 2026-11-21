@@ -1,0 +1,13 @@
+{
+  "capturedAt": "2026-11-21T15:29:40.231Z",
+  "screenshot": "web-search-dark-default.png",
+  "actual": {
+    "href": "https://open.spotify.com/search",
+    "title": "Search for Songs, Artists, Podcasts, Audiobooks | Spotify",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "colorScheme": "dark"
+  },
+  "sanitizedSourceUrl": "https://open.spotify.com/search"
+}
