@@ -99,3 +99,20 @@ two-line bold headline (`typography.display`), a subtitle, a large dark button a
 
 Not captured. The capture took no action that raises a toast (like, subscribe, save), submitted no search, and
 caught no loading or error state; cutting the network also ends iPhone Mirroring.
+
+
+## Public web shell, 2026-11-21
+
+Signed out, the desktop shell is a 56px masthead and a 72px mini guide. Guide opens a 240px drawer. The home feed is an empty card, not a video grid, until a search or an Explore destination. See [home-dark-empty](screenshots/public/home-dark-empty.png) and [home-dark-guide](screenshots/public/home-dark-guide.png).
+
+Search results are a chip row (All selected by inversion) over video rows, with a Filters dialog. See [search-dark-results](screenshots/public/search-dark-results.png) and [search-dark-filters](screenshots/public/search-dark-filters.png).
+
+A public watch page keeps the player, title, Subscribe pill, like and share, and a related column. Save opens a sign-in prompt and stops. See [watch-dark-default](screenshots/public/watch-dark-default.png) and [watch-dark-save-signin](screenshots/public/watch-dark-save-signin.png).
+
+Subscriptions, Library and History are empty states with a Sign in pill. See [subscriptions-dark-empty](screenshots/public/subscriptions-dark-empty.png), [library-dark-empty](screenshots/public/library-dark-empty.png) and [history-dark-empty](screenshots/public/history-dark-empty.png).
+
+Premium is a marketing page. The trial button leaves for accounts.google.com and was not followed into checkout. See [premium-dark-default](screenshots/public/premium-dark-default.png). About lives on about.youtube and is a light marketing page. See [about-dark-default](screenshots/public/about-dark-default.png).
+
+Phone width collapses the shell to a bottom bar (Home, Shorts, You) and a search field. See [mobile-home-dark-empty](screenshots/public/mobile-home-dark-empty.png) and [mobile-watch-dark-default](screenshots/public/mobile-watch-dark-default.png).
+
+Login and signup are Google account walls, photographed empty. See [login-light-empty](screenshots/public/login-light-empty.png) and [signup-light-empty](screenshots/public/signup-light-empty.png).

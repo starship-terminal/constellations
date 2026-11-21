@@ -1,0 +1,199 @@
+{
+  "homeDark": {
+    "dark": true,
+    "found": {
+      "--ytd-searchbox-background": "hsl(0,0%,7%)",
+      "--ytd-searchbox-text-color": "hsla(0,100%,100%,0.88)"
+    },
+    "appBg": "rgb(15, 15, 15)",
+    "appColor": "rgb(0, 0, 0)",
+    "htmlBg": "rgb(15, 15, 15)"
+  },
+  "guide": {
+    "panel": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "w": 240,
+      "h": 844,
+      "x": -240,
+      "y": 56,
+      "radius": "0px",
+      "shadow": "none",
+      "font": "Roboto, Arial, sans-serif",
+      "size": "10px"
+    },
+    "entry": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(241, 241, 241)",
+      "w": 204,
+      "h": 40,
+      "x": -228,
+      "y": 124,
+      "radius": "0px",
+      "shadow": "none",
+      "font": "Roboto, Arial, sans-serif",
+      "size": "10px"
+    },
+    "drawer": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "w": 240,
+      "h": 964,
+      "x": 0,
+      "y": 56,
+      "radius": "0px",
+      "shadow": "none",
+      "font": "Roboto, Arial, sans-serif",
+      "size": "10px"
+    },
+    "text": ""
+  },
+  "searchBox": {
+    "searchForm": null,
+    "searchBtn": null,
+    "nudge": {
+      "tag": "YTD-FEED-NUDGE-RENDERER",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "w": 1320,
+      "h": 102,
+      "radius": "12px",
+      "bw": "0px",
+      "bc": "rgb(0, 0, 0)",
+      "font": "Roboto, Arial, sans-serif",
+      "size": "10px",
+      "weight": "400",
+      "pad": "0px",
+      "shadow": "none"
+    },
+    "mini": {
+      "tag": "YTD-MINI-GUIDE-RENDERER",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "w": 72,
+      "h": 844,
+      "radius": "0px",
+      "bw": "0px",
+      "bc": "rgb(0, 0, 0)",
+      "font": "Roboto, Arial, sans-serif",
+      "size": "10px",
+      "weight": "400",
+      "pad": "0px 4px",
+      "shadow": "none"
+    },
+    "miniEntry": {
+      "tag": "YTD-MINI-GUIDE-ENTRY-RENDERER",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "w": 64,
+      "h": 76,
+      "radius": "10px",
+      "bw": "0px",
+      "bc": "rgb(0, 0, 0)",
+      "font": "Roboto, Arial, sans-serif",
+      "size": "10px",
+      "weight": "400",
+      "pad": "0px",
+      "shadow": "none"
+    }
+  },
+  "chip": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "radius": "0px",
+    "h": 32,
+    "w": 40,
+    "size": "13.3333px",
+    "weight": "400",
+    "pad": "0px",
+    "font": "Arial"
+  },
+  "subscribe": {
+    "bg": "rgb(241, 241, 241)",
+    "color": "rgb(15, 15, 15)",
+    "radius": "20px",
+    "h": 40,
+    "w": 95,
+    "size": "14px",
+    "weight": "500",
+    "pad": "0px 16px",
+    "font": "Roboto, Arial, sans-serif",
+    "text": "Subscribe"
+  },
+  "homeLight": {
+    "dark": false,
+    "found": {
+      "--ytd-searchbox-background": "hsl(0,0%,100%)",
+      "--ytd-searchbox-text-color": "hsl(0,0%,6.7%)"
+    },
+    "appBg": "rgb(255, 255, 255)",
+    "appColor": "rgb(0, 0, 0)",
+    "htmlBg": "rgb(255, 255, 255)"
+  },
+  "watchLight": {
+    "dark": false,
+    "found": {
+      "--ytd-searchbox-background": "hsl(0,0%,100%)",
+      "--ytd-searchbox-text-color": "hsl(0,0%,6.7%)"
+    },
+    "appBg": "rgb(255, 255, 255)",
+    "appColor": "rgb(0, 0, 0)",
+    "htmlBg": "rgb(255, 255, 255)"
+  },
+  "loginLight": {
+    "body": {
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(31, 31, 31)",
+      "radius": "0px",
+      "h": 900,
+      "w": 1440,
+      "size": "14px",
+      "weight": "400",
+      "font": "\"Google Sans\", roboto, \"Noto Sans Myanmar UI\", \"Noto Sans Khmer\", arial, sans-serif",
+      "bw": "0px",
+      "bc": "rgb(31, 31, 31)",
+      "pad": "0px"
+    },
+    "h1": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(31, 31, 31)",
+      "radius": "0px",
+      "h": 44,
+      "w": 460,
+      "size": "36px",
+      "weight": "400",
+      "font": "\"Google Sans\", roboto, \"Noto Sans Myanmar UI\", \"Noto Sans Khmer\", arial, sans-serif",
+      "bw": "0px",
+      "bc": "rgb(31, 31, 31)",
+      "pad": "0px"
+    },
+    "field": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(31, 31, 31)",
+      "radius": "4px",
+      "h": 54,
+      "w": 458,
+      "size": "16px",
+      "weight": "400",
+      "font": "\"Google Sans\", roboto, \"Noto Sans Myanmar UI\", \"Noto Sans Khmer\", arial, sans-serif",
+      "bw": "0px",
+      "bc": "rgb(31, 31, 31)",
+      "pad": "13px 15px"
+    },
+    "next": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(11, 87, 208)",
+      "radius": "4px",
+      "h": 18,
+      "w": 92,
+      "size": "14px",
+      "weight": "500",
+      "font": "\"Google Sans\", roboto, \"Noto Sans Myanmar UI\", \"Noto Sans Khmer\", arial, sans-serif",
+      "bw": "0px",
+      "bc": "rgb(11, 87, 208)",
+      "pad": "0px"
+    },
+    "title": "YouTube",
+    "text": "Loading\nSign in\nto continue to YouTube\nEmail or phone\nForgot email?\nNot your computer? Use Guest mode to sign in privately. Learn more about using Guest mode\nNext\nCreate account\nEnglish (United States"
+  }
+}
