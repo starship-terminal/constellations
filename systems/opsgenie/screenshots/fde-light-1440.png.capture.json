@@ -1,0 +1,30 @@
+{
+  "captured": "2026-11-22",
+  "name": "fde-light-1440",
+  "url": "https://www.atlassian.com/enterprise/success/fde",
+  "requestedUrl": "https://www.atlassian.com/enterprise/success/fde",
+  "title": "Forward Deployed Engineering for Enterprise AI | Atlassian",
+  "h1": "You have AI. We help you put it to production.",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "status": 200
+}

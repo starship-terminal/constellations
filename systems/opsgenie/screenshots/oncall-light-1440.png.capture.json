@@ -1,0 +1,30 @@
+{
+  "captured": "2026-11-22",
+  "name": "oncall-light-1440",
+  "url": "https://www.atlassian.com/software/opsgenie/on-call-management-and-escalations",
+  "requestedUrl": "https://www.atlassian.com/software/opsgenie/on-call-management-and-escalations",
+  "title": "Opsgenie - On call management and escalations | Atlassian",
+  "h1": "On-call management and escalations",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "status": 200,
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS. No form submitted.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

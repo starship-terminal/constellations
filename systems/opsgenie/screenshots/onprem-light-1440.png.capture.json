@@ -1,0 +1,30 @@
+{
+  "captured": "2026-11-22",
+  "name": "onprem-light-1440",
+  "url": "https://www.atlassian.com/software/opsgenie/it-alerting-for-onprem",
+  "requestedUrl": "https://www.atlassian.com/software/opsgenie/it-alerting-for-onprem",
+  "title": "Secure Alerting Solutions for On-Prem | Atlassian",
+  "h1": "Opsgenie solutions for secure, on-prem environments",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "status": 200,
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS. No form submitted.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

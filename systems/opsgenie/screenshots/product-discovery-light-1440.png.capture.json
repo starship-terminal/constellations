@@ -1,0 +1,30 @@
+{
+  "captured": "2026-11-22",
+  "name": "product-discovery-light-1440",
+  "url": "https://www.atlassian.com/software/jira/product-discovery",
+  "requestedUrl": "https://www.atlassian.com/software/jira/product-discovery",
+  "title": "Jira Product Discovery | Prioritization & Roadmapping | Atlassian",
+  "h1": "From ideas to impact, build with confidence",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "status": 200
+}
