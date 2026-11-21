@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T19:58:23.056Z",
+  "capturedAt": "2026-11-21T03:48:41.954Z",
   "screenshot": "fundraiser-light-default.png",
-  "sanitizedSourceUrl": "https://www.gofundme.com/f/<slug> (/f/help-our-dad-recover-after-a-hate-crime-attack)",
+  "sanitizedSourceUrl": "https://www.gofundme.com/f/amanda-somerville",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 2880,
-      "height": 3484
+      "height": 3882
     },
     "scroll": {
       "x": 0,

@@ -2,7 +2,8 @@
 
 How the measured components combine on gofundme.com's signed-out surface,
 read from the screenshots and the component entries in
-[components.md](components.md). The consumer site paints one light theme;
+[components.md](components.md). The control map is [site-tree.md](site-tree.md).
+The consumer site paints one light theme;
 all values are from the light set unless noted.
 
 ## The chrome suite

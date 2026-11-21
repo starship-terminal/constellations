@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T19:59:47.639Z",
+  "capturedAt": "2026-11-21T03:48:02.279Z",
   "screenshot": "pricing-light-default.png",
   "sanitizedSourceUrl": "https://www.gofundme.com/c/pricing",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 3923
+      "height": 3899
     },
     "scroll": {
       "x": 0,

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T19:59:20.104Z",
+  "capturedAt": "2026-11-21T03:48:14.864Z",
   "screenshot": "how-it-works-light-default.png",
   "sanitizedSourceUrl": "https://www.gofundme.com/c/how-it-works",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 4409
+      "height": 4385
     },
     "scroll": {
       "x": 0,
