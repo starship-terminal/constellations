@@ -1,0 +1,19 @@
+{
+  "slug": "tidycal",
+  "captured": "2026-11-22",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "session": "Public headless Playwright capture, signed out. https://tidycal.com/login opened an empty card titled Login. Email and password were empty. Remember me was unchecked. https://tidycal.com/register opened an empty card titled Create an account. Name, email, and password were empty. No email, password, phone, code, or address was typed. No identity provider was clicked. No form was submitted. No captcha was solved. No meeting was booked.",
+  "wall": {
+    "login_url": "https://tidycal.com/login",
+    "signup_url": "https://tidycal.com/register",
+    "login_title": "Login",
+    "signup_title": "Create an account",
+    "login_fields_empty": ["Email", "Password"],
+    "signup_fields_empty": ["Your name", "Email", "Password"],
+    "remember_me_unchecked": true,
+    "continue_not_clicked": true,
+    "create_account_not_clicked": true,
+    "identity_providers_not_clicked": ["Google", "LinkedIn", "passkey"]
+  }
+}
