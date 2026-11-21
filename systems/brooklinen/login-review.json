@@ -1,0 +1,87 @@
+{
+  "product": "Brooklinen",
+  "domain": "brooklinen.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "region": "Public shop at https://www.brooklinen.com/. Product prices in USD. Account host opened as locale en-SG.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header account menu Sign In",
+      "url": "https://account.brooklinen.com/authentication/login",
+      "title": "Sign in - Brooklinen",
+      "painted": true,
+      "headings": ["Sign in"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": true }
+      ],
+      "identityProvidersSeen": ["Continue with Shop"],
+      "otherControls": ["Email me with news and offers", "Terms of service", "Privacy policy"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Email was empty. Continue was not clicked. Continue with Shop was not clicked. The marketing checkbox was already checked and was not changed. No form was submitted."
+    },
+    {
+      "control": "header account menu Create Account",
+      "url": "https://account.brooklinen.com/",
+      "title": "Sign in - Brooklinen",
+      "painted": true,
+      "headings": ["Sign in"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": true }
+      ],
+      "identityProvidersSeen": ["Continue with Shop"],
+      "otherControls": ["Sign in or create an account"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Create Account opens the same empty Sign in wall. The copy says Sign in or create an account. There is no separate signup form before an email is submitted. Nothing was typed."
+    },
+    {
+      "control": "footer Get on the List",
+      "url": "https://www.brooklinen.com/",
+      "title": "Luxury Bedding, Sheets & Comforters Online | Brooklinen",
+      "painted": true,
+      "headings": ["Get on the List"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["submit email"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "The newsletter email was not typed and submit email was not clicked."
+    },
+    {
+      "control": "footer Sign Up for Texts",
+      "url": "https://www.brooklinen.com/pages/sms-signup",
+      "title": null,
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["Sign Up for Texts"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "SMS signup is a subscribe wall. It was not opened."
+    },
+    {
+      "control": "header cart",
+      "url": "https://www.brooklinen.com/",
+      "title": "Luxury Bedding, Sheets & Comforters Online | Brooklinen",
+      "painted": false,
+      "headings": ["Your cart is empty"],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["cart modal trigger", "Checkout"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Cart is a checkout wall. The cart button was not clicked. Add to Cart was not clicked."
+    }
+  ]
+}
