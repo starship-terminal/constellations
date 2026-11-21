@@ -1,0 +1,47 @@
+{
+  "product": "Etsy",
+  "domain": "etsy.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Sign in",
+      "url": "https://www.etsy.com/signin",
+      "title": "Sign in | Etsy",
+      "painted": true,
+      "headings": ["Special starts on Etsy"],
+      "asksFor": [
+        { "label": "Email address", "type": "text", "required": false }
+      ],
+      "identityProvidersSeen": ["Google", "Facebook", "Apple"],
+      "otherControls": ["Create an account", "Stay signed in", "Sign in", "Register"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Email field was empty. Sign in was disabled. Stay signed in was already checked and was not toggled. No provider was clicked. No form was submitted. The same wall also opened as an overlay on the listing page and was closed without typing."
+    },
+    {
+      "control": "header Register, and Create an account",
+      "url": "https://www.etsy.com/join",
+      "title": "Join | Etsy",
+      "painted": true,
+      "headings": ["Create your account"],
+      "asksFor": [
+        { "label": "Email address", "type": "text", "required": true },
+        { "label": "First name", "type": "text", "required": true },
+        { "label": "Password", "type": "password", "required": true }
+      ],
+      "identityProvidersSeen": ["Google", "Facebook", "Apple"],
+      "otherControls": ["Continue", "Sign in", "Toggle password visibility"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-1440.png",
+      "note": "Fields were empty. Continue was visible and was not clicked. Password visibility was not toggled. No provider was clicked. No form was submitted."
+    }
+  ]
+}
