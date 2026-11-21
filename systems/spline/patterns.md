@@ -22,6 +22,8 @@ The enterprise page uses the same shell and type. The lower half is a public dem
 
 ## Sign-in
 
-`https://app.spline.design/signin` is a centered 300px column on `#1e1e1e`. The title is Spline Sans 24/28. The email field and Continue button are 40px with an 8px radius. Google is a separate button. reCAPTCHA is disclosed. Submitting the email goes to a six-digit code step. A display name is the next step. The company step was left unsubmitted.
+`https://app.spline.design/signin` is a centered card on `#1e1e1e`. The title is "Welcome to Spline". The subtitle is "Log in or register with your email." The email field and Continue button are 40px with an 8px radius. Google is a separate button and was not clicked. reCAPTCHA is disclosed and was not solved. `/signup` and `/register` redirect to this same empty card.
 
-No screenshot. The preview browser did not produce frames, and headless Playwright was not pointed at the login page.
+Photographed empty on 2026-11-22. Nothing was typed. Continue was not clicked. The earlier note that an email code was submitted is the 19 November capture. This public pass did not repeat that.
+
+[screenshots/login-dark-empty.png](screenshots/login-dark-empty.png)
