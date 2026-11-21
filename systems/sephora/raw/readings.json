@@ -1,0 +1,96 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.sephora.com/",
+  "region": "USA and Canada storefront. A geo modal said the browser was outside that shipping region. The walk stayed on www.sephora.com after closing the modal. Prices read USD.",
+  "viewport": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewportScale": 1 },
+  "screenshots": "2880 by 1800 PNG",
+  "title": "Makeup, Skincare, Fragrance, Hair & Beauty Products | Sephora",
+  "body": {
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "\"helvetica neue\", helvetica, arial, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "400"
+  },
+  "promo": {
+    "text": "App Exclusive! Save 30% on top brands through 11/22. DOWNLOAD NOW",
+    "backgroundColor": "rgb(81, 2, 130)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "14px",
+    "height": 60,
+    "href": "/beauty/cyber-week-deals"
+  },
+  "nav": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "height": 44
+  },
+  "search": {
+    "placeholder": "Search",
+    "backgroundColor": "rgb(246, 246, 248)",
+    "border": "1px solid rgb(0, 0, 0)",
+    "borderRadius": "9999px",
+    "width": 318,
+    "height": 34
+  },
+  "logo": {
+    "fill": "rgb(0, 0, 0)",
+    "viewBox": "0 0 125 17",
+    "renderedWidth": 147
+  },
+  "heroes": [
+    { "title": "Holiday Hits", "backgroundColor": "rgb(65, 71, 245)", "color": "rgb(255, 255, 255)", "fontSize": "20px", "fontWeight": "700" },
+    { "title": "Just-Dropped Lip Balms", "backgroundColor": "rgb(191, 41, 45)", "color": "rgb(255, 255, 255)", "fontSize": "20px", "fontWeight": "700" },
+    { "title": "High-Tech Hair Tools", "backgroundColor": "rgb(81, 2, 131)", "color": "rgb(255, 255, 255)", "fontSize": "20px", "fontWeight": "700" },
+    { "title": "Just In from Kérastase", "backgroundColor": "rgb(231, 211, 155)", "color": "rgb(0, 0, 0)", "fontSize": "20px", "fontWeight": "700" }
+  ],
+  "product": {
+    "url": "https://www.sephora.com/product/pocket-blush-P517483",
+    "brand": "rhode",
+    "title": "Pocket Blush Buildable Hydrating Cream Blush",
+    "titleFontSize": "16px",
+    "titleFontWeight": "400",
+    "brandFontWeight": "700",
+    "price": "$25.00",
+    "priceColor": "rgb(0, 0, 0)",
+    "priceFontSize": "16px",
+    "priceFontWeight": "700",
+    "bag": {
+      "label": "Add to Basket",
+      "sublabel": "Get It Shipped",
+      "backgroundColor": "rgb(207, 17, 44)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "borderRadius": "99999px",
+      "width": 282,
+      "height": 48
+    }
+  },
+  "category": {
+    "url": "https://www.sephora.com/shop/makeup-cosmetics",
+    "title": "Makeup",
+    "results": "2674 Results"
+  },
+  "about": {
+    "url": "https://www.sephora.com/beauty/about-us",
+    "title": "About Us | Sephora",
+    "h1": "About Sephora",
+    "lead": "A leader in prestige omni-retail, our mission at Sephora is to create a welcoming beauty shopping experience for all and inspire fearlessness in our community."
+  },
+  "cssVars": {
+    "--color-black": "#000",
+    "--color-white": "#fff",
+    "--color-red": "#cf112c",
+    "--color-error": "#cf112c",
+    "--color-link": "#136BEA",
+    "--color-nearWhite": "#f6f6f8",
+    "--color-gray": "#666",
+    "--font-family-base": "\"helvetica neue\",helvetica,arial,sans-serif",
+    "--font-size-base": "14px",
+    "--font-weight-bold": "700",
+    "--rounded-full": "9999px"
+  }
+}
