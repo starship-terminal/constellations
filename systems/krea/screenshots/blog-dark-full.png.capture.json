@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "capturedAt": "2026-11-17T19:52:45.404Z",
+ "capturedAt": "2026-11-21T14:15:25.741Z",
  "screenshot": "blog-dark-full.png",
  "sanitizedSourceUrl": "https://www.krea.ai/blog",
  "requested": {
@@ -30,15 +30,15 @@
    "offsetLeft": 0,
    "offsetTop": 0,
    "pageLeft": 0,
-   "pageTop": 131
+   "pageTop": 15918
   },
   "documentSize": {
    "width": 1440,
-   "height": 35644
+   "height": 16818
   },
   "scroll": {
    "x": 0,
-   "y": 131
+   "y": 15918
   }
  },
  "capture": {
@@ -48,18 +48,18 @@
    "x": 0,
    "y": 0,
    "width": 1440,
-   "height": 35644
+   "height": 16818
   }
  },
  "png": {
   "width": 1440,
-  "height": 35644
+  "height": 16818
  },
  "dimensionCheck": {
   "status": "pass",
   "expected": {
    "width": 1440,
-   "height": 35644
+   "height": 16818
   },
   "basis": "stitchedParts"
  },
@@ -73,8 +73,7 @@
  },
  "stitchedFrom": [
   "blog-dark-full.part0.png",
-  "blog-dark-full.part1.png",
-  "blog-dark-full.part2.png"
+  "blog-dark-full.part1.png"
  ],
  "partClip": [
   {
@@ -87,13 +86,7 @@
    "x": 0,
    "y": 14000,
    "width": 1440,
-   "height": 14000
-  },
-  {
-   "x": 0,
-   "y": 28000,
-   "width": 1440,
-   "height": 7644
+   "height": 2818
   }
  ]
 }

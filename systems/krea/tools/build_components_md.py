@@ -313,7 +313,7 @@ W()
 W("| State | Where | How it was reached | Captured |")
 W("|---|---|---|---|")
 OVER = [
-    ("Tools menu", "the app sidebar", "the Tools button clicked locally", "[home-dark-tools-menu](screenshots/home-dark-tools-menu.png)"),
+    ("MCP menu", "the app sidebar", "the MCP button clicked locally", "[home-dark-mcp-menu](screenshots/home-dark-mcp-menu.png)"),
     ("Sidebar folded", "the app shell", "Toggle Sidebar clicked locally", "[home-dark-sidebar-folded](screenshots/home-dark-sidebar-folded.png)"),
     ("Phone nav", "home at 390", "the menu control clicked locally", "[mobile-home-dark-nav](screenshots/mobile-home-dark-nav.png)"),
     ("Offer strip", "home", "measured, Claim offer never followed", "[promo-banner](#promo-banner)"),
@@ -479,7 +479,7 @@ W("## Gaps")
 W()
 W("### Account, generation and checkout")
 W()
-W("A signed-in walk on 2026-11-20 reached https://www.krea.ai/app and the account menu. Settings, create tools, billing and generation were not opened: the preview stopped painting frames after Settings was clicked. The public pass still stands. Sign in, Sign up for free, Log in, Continue with Google, Continue with Apple and SSO were measured and never followed. Continue with Email was submitted once on 2026-11-18; GET /api/auth/email-flow returned 400 captcha_failed (Cloudflare Turnstile, no visible widget) and that pass stopped. No account was created and no OAuth flow was opened. The signed-in screens are [app-dark-default](screenshots/app-dark-default.png) and [app-dark-account-menu](screenshots/app-dark-account-menu.png).")
+W("The 2026-11-21 refresh stopped at the empty login wall. Google, Apple, SSO and Continue with Email were not clicked. Nothing was typed. No account was created. Files redirects to login and was not followed. The empty wall is [login-dark-default](screenshots/login-dark-default.png).")
 W()
 W("### Pages")
 W()

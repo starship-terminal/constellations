@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T20:08:06.820Z",
+  "capturedAt": "2026-11-21T14:15:42.610Z",
   "screenshot": "plugins-dark-full.png",
   "sanitizedSourceUrl": "https://www.krea.ai/plugins",
   "requested": {
@@ -32,15 +32,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 34
+      "pageTop": 32
     },
     "documentSize": {
       "width": 1440,
-      "height": 1990
+      "height": 2024
     },
     "scroll": {
       "x": 0,
-      "y": 34
+      "y": 32
     }
   },
   "capture": {
@@ -50,13 +50,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 1990
+    "height": 2024
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 1990
+      "height": 2024
     },
     "basis": "fullPage"
   },

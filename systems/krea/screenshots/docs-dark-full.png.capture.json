@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:54:00.777Z",
+  "capturedAt": "2026-11-21T14:18:48.772Z",
   "screenshot": "docs-dark-full.png",
   "sanitizedSourceUrl": "https://www.krea.ai/docs",
   "requested": {
@@ -32,7 +32,7 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 0
+      "pageTop": 2322
     },
     "documentSize": {
       "width": 1440,
@@ -40,7 +40,7 @@
     },
     "scroll": {
       "x": 0,
-      "y": 0
+      "y": 2322
     }
   },
   "capture": {

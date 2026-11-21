@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:49:41.871Z",
+  "capturedAt": "2026-11-21T14:34:16.912Z",
   "screenshot": "home-dark-full.png",
   "sanitizedSourceUrl": "https://www.krea.ai/",
   "requested": {
@@ -36,7 +36,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 12307
+      "height": 900
     },
     "scroll": {
       "x": 0,
@@ -50,13 +50,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 12307
+    "height": 900
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 12307
+      "height": 900
     },
     "basis": "fullPage"
   },

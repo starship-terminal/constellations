@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T20:08:22.227Z",
+  "capturedAt": "2026-11-21T14:15:57.913Z",
   "screenshot": "mcp-dark-full.png",
   "sanitizedSourceUrl": "https://www.krea.ai/mcp",
   "requested": {
@@ -32,15 +32,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 22
+      "pageTop": 29
     },
     "documentSize": {
       "width": 1440,
-      "height": 12398
+      "height": 12432
     },
     "scroll": {
       "x": 0,
-      "y": 22
+      "y": 29
     }
   },
   "capture": {
@@ -50,13 +50,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 12398
+    "height": 12432
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 12398
+      "height": 12432
     },
     "basis": "fullPage"
   },

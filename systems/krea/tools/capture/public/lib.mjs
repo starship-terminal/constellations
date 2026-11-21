@@ -115,6 +115,22 @@ export async function closePromo(page) {
           && t.length < 1600 && r.width > 200 && r.height > 60 && (+cs.zIndex > 5 || cs.zIndex === 'auto');
       });
       if (box) { box.style.setProperty('display', 'none', 'important'); n++; }
+      // Krea mounts a bits-ui offer dialog whose veil is
+      // [data-dialog-overlay] (id bits-c*, z-overlay, inset-0). Hide the
+      // dialog and the veil. Never click Close, Claim offer, or See plans.
+      // Leave an auth dialog (Google, Apple, SSO, email) in place.
+      document.querySelectorAll('[data-dialog-overlay], [data-slot="dialog-overlay"]').forEach((x) => {
+        x.style.setProperty('display', 'none', 'important');
+        n++;
+      });
+      document.querySelectorAll('[role="dialog"][data-state="open"], [role="dialog"][id^="bits-"]').forEach((x) => {
+        const t = (x.innerText || '').replace(/\s+/g, ' ');
+        if (/continue with google|continue with apple|enter your email|single sign-on/i.test(t)) return;
+        if (!/limited time offer|seedance|claim offer|75% off/i.test(t)) return;
+        x.style.setProperty('display', 'none', 'important');
+        n++;
+      });
+
       document.body && document.body.style.removeProperty('overflow');
       document.documentElement && document.documentElement.style.removeProperty('overflow');
       return n;
