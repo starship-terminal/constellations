@@ -90,10 +90,11 @@ A Rails storefront with a Vue island layer, painted under `data-theme="legacy"` 
 | [DESIGN.md](DESIGN.md) | the generated one-theme export |
 | [icon.png](icon.png) | the Creative Market app icon, 128px (Git LFS) |
 | [components/](components) | `crops/` — quantized state crops at 2x |
-| [screenshots/](screenshots) | 17 public quantized captures, plus 3 signed-in desktop shots (account menu, purchases, profile) |
+| [screenshots/](screenshots) | public quantized captures, plus 3 earlier signed-in desktop shots (account menu, purchases, profile) |
 | [raw/](raw) | `css-vars.json` (the cross-origin var harvest), `components-computed.json`, `component-tokens.json`, `measurements.md` |
 | [tools/](tools) | the builders and capture scripts that produced this package |
-| [login-review.json](login-review.json) | the signed-in walk: account menu, purchases, profile, and the gaps |
+| [site-tree.md](site-tree.md) | which public homepage control opens which page, menu, or wall |
+| [login-review.json](login-review.json) | the 2026-11-21 signed-out walk: public nav, and the gaps |
 
 ## Boundaries
 
@@ -101,8 +102,9 @@ A Rails storefront with a Vue island layer, painted under `data-theme="legacy"` 
 - A later signed-in pass (2026-11-20, T3 preview, already signed in) opened the account menu, My purchases (empty) and My profile. Settings redirects to /account/unauthorized-device. The shop menu, messages, notifications, collections, likes and a 390-wide pass were not screenshotted: the preview stopped producing frames. Nothing was purchased, published or submitted. The public /sign-in card is unchanged: Log In was never pressed in that earlier capture.
 - Add to cart, Buy now, the license radios, the bundle checkboxes, every membership CTA and Save 25% were measured, never followed; nothing entered the cart.
 - The CookieYes consent banner and the "Licensing Questions? Let's Chat!" launcher were hidden via the overlay hider, never answered.
-- The nav dropdowns (FONTS, TEMPLATES, MORE, All Categories facet) were never opened.
-- Cloudflare Turnstile greets some routes headless; fresh contexts and patient waits cleared it this run — a still-blocked route is a boundary, not a bypass target.
+- A public refresh on 2026-11-21 mapped the signed-out homepage in [site-tree.md](site-tree.md) and rephotographed it, the Fonts mega menu, the overflow menu, the Fonts listing, and the phone drawer. The T3 preview stopped producing frames, so the shots are from headless Playwright. `/sign-in` stayed on a Cloudflare "Just a moment..." check and was not solved. Join was not opened. Nothing was typed or submitted. Phone shots measured CSS 394×853 (requested 390×844).
+- The All Categories facet was not opened in that refresh. FONTS and the overflow menu were.
+- Cloudflare still greets some routes headless. A still-blocked route is a boundary, not a bypass target.
 - The product page's "More from this shop" / "Similar Fonts" rails rendered empty; related-card is recorded as a miss.
 - No standalone icon set was lifted; the wordmark, glyphs and product artwork are the product's.
 - Euclid-free: Averta is licensed and served from CloudFront, not shipped; style-guide.html falls back to system sans.
