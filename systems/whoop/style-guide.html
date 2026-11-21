@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WHOOP public tokens</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --ink: #000000;
+    --on-ink: #ffffff;
+    --steel: #3b526c;
+    --steel-end: #5c7fa8;
+    --compare: #808080;
+    --card: #f3f5f9;
+    --font: proxima-nova, "Readex Pro", Arial, Helvetica, sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font); }
+  header { background: var(--ink); color: var(--on-ink); }
+  .promo { height: 50px; display: flex; align-items: center; justify-content: center; background: linear-gradient(90deg, var(--steel), var(--steel-end)); font-size: 16px; }
+  .bar { height: 72px; display: flex; align-items: center; gap: 28px; padding: 0 25px; }
+  .nav { font-size: 16px; font-weight: 600; letter-spacing: -0.48px; text-transform: uppercase; }
+  .gift { margin-left: auto; height: 40px; padding: 0 40px; border-radius: 16px; display: inline-flex; align-items: center; background: linear-gradient(90deg, var(--steel), var(--steel-end)); color: var(--on-ink); font-size: 14px; font-weight: 700; letter-spacing: 1.4px; }
+  main { padding: 48px 25px; }
+  h1 { font-size: 96px; font-weight: 400; line-height: 106.56px; letter-spacing: -3.6px; margin: 16px 0; }
+  .badge { display: inline-block; border-radius: 8px; padding: 4px 8px; background: linear-gradient(90deg, var(--steel), var(--steel-end)); color: var(--on-ink); font-size: 12px; font-weight: 700; letter-spacing: 1.2px; }
+  .join { display: inline-flex; align-items: center; justify-content: center; width: 171px; height: 61px; border-radius: 16px; background: var(--on-ink); color: var(--ink); font-weight: 700; border: 1px solid var(--ink); }
+  .stage { background: var(--ink); color: var(--on-ink); padding: 48px 25px; }
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+  .swatch { width: 120px; }
+  .chip { height: 48px; border-radius: 8px; border: 1px solid #ddd; }
+  .card { background: var(--card); border-radius: 30px; padding: 24px; margin-top: 24px; }
+  .compare { color: var(--compare); font-size: 12px; font-weight: 500; text-decoration: line-through; }
+  p { max-width: 640px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="promo">Limited Time: Save up to S$90 on WHOOP memberships</div>
+  <div class="bar">
+    <strong>WHOOP</strong>
+    <span class="nav">Memberships</span>
+    <span class="nav">How it works</span>
+    <span class="gift">GIFT WHOOP</span>
+  </div>
+</header>
+<section class="stage">
+  <span class="badge">CYBER SALE</span>
+  <h1>WHOOP</h1>
+  <p>Hero headline is 96px, weight 400, letter-spacing -3.6px.</p>
+  <div class="join">JOIN NOW</div>
+</section>
+<main>
+  <p>Tokens measured on 2026-11-22 from the public Singapore shop. Font files are not in this package, so Proxima Nova falls back to Arial here.</p>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div>page #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#000000"></div><div>ink #000000</div></div>
+    <div class="swatch"><div class="chip" style="background:#3b526c"></div><div>steel #3b526c</div></div>
+    <div class="swatch"><div class="chip" style="background:#5c7fa8"></div><div>steel end #5c7fa8</div></div>
+    <div class="swatch"><div class="chip" style="background:#808080"></div><div>compare #808080</div></div>
+    <div class="swatch"><div class="chip" style="background:#f3f5f9"></div><div>card #f3f5f9</div></div>
+  </div>
+  <div class="card">Carousel card, radius 30px, fill #f3f5f9. Struck price <span class="compare">S$349</span>.</div>
+</main>
+</body>
+</html>
