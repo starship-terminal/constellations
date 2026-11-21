@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-21",
+  "scope": "public signed-out pass only",
+  "submitted": false,
+  "nothing_submitted": [
+    "no password typed",
+    "no email typed",
+    "no one-time code typed",
+    "no captcha solved",
+    "no Google, Apple, Facebook, Microsoft, GitHub, or SSO control clicked",
+    "no account created",
+    "no profile, birthday, plan, survey, onboarding, or newsletter form filled or submitted",
+    "no checkout started",
+    "no cookie consent button pressed"
+  ],
+  "probe_note": "An earlier probe of https://my.elementor.com/login/ showed Sign in and never rendered an email field or a button. This pass loaded the same URL and the wall had rendered further: an email field, Continue, Continue with Google, Continue with passkey, Continue with SSO, and More options. Nothing was typed and none of those controls were clicked.",
+  "walls": [
+    {
+      "url": "https://my.elementor.com/login/",
+      "reached_by": "direct load for the wall record; the marketing Log in link points here and was not followed as a session",
+      "title": "Sign in - My Account",
+      "email_field_rendered": true,
+      "password_field_rendered": false,
+      "controls_visible": [
+        "Create an Account",
+        "Continue with Google",
+        "Continue with passkey",
+        "More options",
+        "Email",
+        "Continue",
+        "Continue with SSO"
+      ],
+      "identity_providers_clicked": false,
+      "submitted": false,
+      "branch": "stopped",
+      "shots": [
+        "screenshots/tree/login-wall-light-default.png",
+        "screenshots/tree/mobile-login-wall-light-default.png"
+      ]
+    },
+    {
+      "url": "https://my.elementor.com/signup/",
+      "reached_by": "Get started and Create an Account links",
+      "opened": false,
+      "submitted": false,
+      "branch": "stopped"
+    },
+    {
+      "url": "https://my.elementor.com/store/checkout",
+      "reached_by": "Buy now, Try it for free, and Start free on pricing and product pages",
+      "opened": false,
+      "submitted": false,
+      "branch": "stopped"
+    },
+    {
+      "url": "https://elementor.com/affiliates/signup/",
+      "reached_by": "Join program on the affiliates page",
+      "opened": false,
+      "submitted": false,
+      "branch": "stopped"
+    }
+  ],
+  "cookie_dialog": {
+    "present": false,
+    "note": "Cookiebot script is on the page. No visible consent dialog painted on these loads. No allow or deny button was pressed."
+  },
+  "signed_in_app": "not in scope"
+}
