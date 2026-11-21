@@ -7,9 +7,8 @@
 // is no user theme switch, so every shot is labelled light. Desktop 1440x900 at 1x,
 // mobile 390x844 at 2x. Cookie banner (#ch2-dialog) is hidden, never answered.
 // Nothing is submitted, purchased, downloaded or signed into. Menu and search are
-// local UI toggles. account.jetbrains.com/login is shot at rest. Continue with
-// email is opened on /signup so the email field can be measured; Continue after
-// the email is never pressed here (that submit hit reCAPTCHA).
+// local UI toggles. account.jetbrains.com/login is shot at rest only: identity
+// providers and Continue with email are not clicked, and no email is typed.
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
@@ -59,7 +58,7 @@ class Shooter {
 const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
 
 async function openMenu(p) {
-  const b = p.getByRole('button', { name: 'Products' }).first();
+  const b = p.getByRole('button', { name: 'Products: Open submenu' }).first();
   if (await b.count()) { await b.click(); await wait(p, 900); }
 }
 async function openSearch(p) {
@@ -84,13 +83,13 @@ const desktop = {
   help: { path: '/help/', run: async (p, S) => { await S.view('default'); await S.full(); } },
   company: { path: '/company/', run: async (p, S) => { await S.view('default'); await S.full(); } },
   education: { path: '/education/', run: async (p, S) => { await S.view('default'); } },
-  legal: { path: '/legal/docs/privacy/privacy/', run: async (p, S) => { await S.view('default'); } },
+  // Privacy notice is public but its first screen publishes a contact email and a street address.
+  // Do not photograph it. The URL is recorded in site-tree.md.
+  air: { path: '/air/', run: async (p, S) => { await S.view('default'); } },
+  business: { path: '/business/', run: async (p, S) => { await S.view('default'); } },
+  academy: { path: '/academy/', run: async (p, S) => { await S.view('default'); } },
+  sales: { path: '/support/sales/', run: async (p, S) => { await S.view('default'); } },
   login: { url: ACCOUNT + '/login', run: async (p, S) => { await S.view('default'); } },
-  'signup-email': { url: ACCOUNT + '/signup', run: async (p, S) => {
-    await p.getByRole('button', { name: 'Continue with email', exact: true }).click();
-    await wait(p, 1500);
-    await S.view('default');
-  } },
 };
 
 const mobile = {
@@ -103,11 +102,6 @@ const mobile = {
   store: { path: '/store/?section=personal&billing=yearly', run: async (p, S) => { await S.view('default'); } },
   products: { path: '/products/', run: async (p, S) => { await S.view('default'); } },
   login: { url: ACCOUNT + '/login', run: async (p, S) => { await S.view('default'); } },
-  'signup-email': { url: ACCOUNT + '/signup', run: async (p, S) => {
-    await p.getByRole('button', { name: 'Continue with email', exact: true }).click();
-    await wait(p, 1500);
-    await S.view('default');
-  } },
 };
 
 const b = await chromium.launch();
@@ -127,6 +121,8 @@ for (const { k, mob } of runs) {
   try {
     await p.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
     await wait(p, spec.wait || 4000);
+    await closePromo(p);
+    await wait(p, 600);
     await closePromo(p);
     await spec.run(p, S);
   } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }

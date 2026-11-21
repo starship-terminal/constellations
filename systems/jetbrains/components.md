@@ -1,6 +1,6 @@
 # JetBrains components
 
-Public components measured on jetbrains.com and account.jetbrains.com on 2026-11-18, signed out plus the empty signup email field. Values are computed styles. Colours that match a declared `--rs-*` token name that token.
+Public components measured on jetbrains.com and account.jetbrains.com on 2026-11-21, signed out. The login wall was measured at rest. Values are computed styles. Colours that match a declared `--rs-*` token name that token.
 
 Crops live in [components/crops/](components/crops).
 
@@ -39,13 +39,11 @@ The hero's "Read the story" is white text with an arrow. The login card's "Creat
 
 ## Text field
 
-Search opens as a dark field labelled "⌘K for advanced search". Continue with email on /signup opens a labelled Email field. The field was measured empty; Continue after the email was not pressed in the rebuild (that submit hit reCAPTCHA).
+Search opens as a dark field labelled "⌘K for advanced search". Nothing was typed. Continue with email on the login wall was not clicked, so no email field was opened.
 
 | State | Crop |
 |---|---|
 | search open | [search-field-opened](components/crops/search-field-opened.png) |
-| email | [email-field-default](components/crops/email-field-default.png) |
-| email focus | [email-field-focus](components/crops/email-field-focus.png) |
 
 ## Tabs
 
@@ -92,6 +90,9 @@ Login rows are outline pills, 312 by 40, grey stroke, JetBrains Sans 16.
 | hover | [oauth-button-hover](components/crops/oauth-button-hover.png) |
 | focus | [oauth-button-focus](components/crops/oauth-button-focus.png) |
 | email | [oauth-button-email-default](components/crops/oauth-button-email-default.png) |
+| icon row | [oauth-icon-row-default](components/crops/oauth-icon-row-default.png) |
+
+GitLab, WeChat and Bitbucket are three 96 by 40 icon buttons on one row. Their accessible names are Continue with Gitlab, Continue with WeChat and Continue with Bitbucket. They were not clicked.
 
 ## Navigation
 
@@ -121,4 +122,4 @@ These checklist components are not on the public signed-out surface, so they wer
 - Avatar: the header account control is an icon button, not a user avatar.
 - List row: the mega menu is link columns, recorded as menu.
 - Disabled, loading and error states: none appear signed out.
-- Signup after the email field, checkout and the signed-in account: Continue after the email hit reCAPTCHA. See the catalog `capture.gaps`.
+- Email field, validation, checkout and the signed-in account: Continue with email was not clicked, and no identity provider was followed. See [login-review.json](login-review.json).

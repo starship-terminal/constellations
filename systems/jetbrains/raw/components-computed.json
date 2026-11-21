@@ -2,7 +2,7 @@
  "_meta": {
   "product": "JetBrains",
   "readAt": "2026-11-18",
-  "source": "live public pages on www.jetbrains.com and account.jetbrains.com; signup email field opened empty",
+  "source": "live public pages on www.jetbrains.com and account.jetbrains.com/login at rest; Continue with email and identity providers were not clicked",
   "viewport": "1440x900 desktop, 390x844 phone"
  },
  "components": {
@@ -10,7 +10,7 @@
    "states": {
     "default": {
      "tag": "a",
-     "classes": "_main_xhkdfz_62 _modeRock_xhkdfz_36 _sizeM_xhkdfz_26 _alignIconLeft_xhkdfz_49",
+     "classes": "_main_l33nyt_62 _modeRock_l33nyt_36 _sizeM_l33nyt_26 _alignIconLeft_l33nyt_49",
      "text": "Explore Air",
      "rect": {
       "x": 574.8,
@@ -106,20 +106,20 @@
      },
      "paint": [
       {
-       "node": "a._main_xhkdfz_62._modeRock_xhkdfz_36",
+       "node": "a._main_l33nyt_62._modeRock_l33nyt_36",
        "size": "130.3x40.0",
        "bg": "rgb(25, 25, 28)",
        "radius": "20px"
       },
       {
-       "node": "a::before._main_xhkdfz_62._modeRock_xhkdfz_36",
+       "node": "a::before._main_l33nyt_62._modeRock_l33nyt_36",
        "size": "autoxauto",
        "border": "T:1px solid rgba(25, 25, 28, 0.3) | R:1px solid rgba(25, 25, 28, 0.3) | B:1px solid rgba(25, 25, 28, 0.3) | L:1px solid rgba(25, 25, 28, 0.3)",
        "radius": "20px"
       }
      ],
      "textStyle": {
-      "node": "span._content_xhkdfz_207",
+      "node": "span._content_l33nyt_209",
       "text": "Explore Air",
       "fontFamily": "\"JetBrains Sans\", Inter, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\", \"Helvetica Neue\", Arial, sans-serif",
       "fontSize": "16px",
@@ -133,7 +133,7 @@
     },
     "hover": {
      "tag": "a",
-     "classes": "_main_xhkdfz_62 _modeRock_xhkdfz_36 _sizeM_xhkdfz_26 _alignIconLeft_xhkdfz_49",
+     "classes": "_main_l33nyt_62 _modeRock_l33nyt_36 _sizeM_l33nyt_26 _alignIconLeft_l33nyt_49",
      "text": "Explore Air",
      "rect": {
       "x": 574.8,
@@ -229,20 +229,20 @@
      },
      "paint": [
       {
-       "node": "a._main_xhkdfz_62._modeRock_xhkdfz_36",
+       "node": "a._main_l33nyt_62._modeRock_l33nyt_36",
        "size": "130.3x40.0",
        "bg": "rgba(25, 25, 28, 0.8)",
        "radius": "20px"
       },
       {
-       "node": "a::before._main_xhkdfz_62._modeRock_xhkdfz_36",
+       "node": "a::before._main_l33nyt_62._modeRock_l33nyt_36",
        "size": "autoxauto",
        "border": "T:1px solid rgba(25, 25, 28, 0.3) | R:1px solid rgba(25, 25, 28, 0.3) | B:1px solid rgba(25, 25, 28, 0.3) | L:1px solid rgba(25, 25, 28, 0.3)",
        "radius": "20px"
       }
      ],
      "textStyle": {
-      "node": "span._content_xhkdfz_207",
+      "node": "span._content_l33nyt_209",
       "text": "Explore Air",
       "fontFamily": "\"JetBrains Sans\", Inter, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\", \"Helvetica Neue\", Arial, sans-serif",
       "fontSize": "16px",
@@ -256,7 +256,7 @@
     },
     "focus": {
      "tag": "a",
-     "classes": "_main_xhkdfz_62 _modeRock_xhkdfz_36 _sizeM_xhkdfz_26 _alignIconLeft_xhkdfz_49",
+     "classes": "_main_l33nyt_62 _modeRock_l33nyt_36 _sizeM_l33nyt_26 _alignIconLeft_l33nyt_49",
      "text": "Explore Air",
      "rect": {
       "x": 574.8,
@@ -306,7 +306,7 @@
       "borderBottomLeftRadius": "20px",
       "backgroundColor": "rgba(25, 25, 28, 0.8)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "color(srgb 0.419608 0.341177 1 / 0.8) 0px 0px 0px 4px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
@@ -352,20 +352,21 @@
      },
      "paint": [
       {
-       "node": "a._main_xhkdfz_62._modeRock_xhkdfz_36",
+       "node": "a._main_l33nyt_62._modeRock_l33nyt_36",
        "size": "130.3x40.0",
        "bg": "rgba(25, 25, 28, 0.8)",
+       "shadow": "color(srgb 0.419608 0.341177 1 / 0.8) 0px 0px 0px 4px",
        "radius": "20px"
       },
       {
-       "node": "a::before._main_xhkdfz_62._modeRock_xhkdfz_36",
+       "node": "a::before._main_l33nyt_62._modeRock_l33nyt_36",
        "size": "autoxauto",
        "border": "T:1px solid rgba(25, 25, 28, 0.3) | R:1px solid rgba(25, 25, 28, 0.3) | B:1px solid rgba(25, 25, 28, 0.3) | L:1px solid rgba(25, 25, 28, 0.3)",
        "radius": "20px"
       }
      ],
      "textStyle": {
-      "node": "span._content_xhkdfz_207",
+      "node": "span._content_l33nyt_209",
       "text": "Explore Air",
       "fontFamily": "\"JetBrains Sans\", Inter, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\", \"Helvetica Neue\", Arial, sans-serif",
       "fontSize": "16px",
@@ -384,7 +385,7 @@
    "states": {
     "default": {
      "tag": "a",
-     "classes": "_rs-link_dz36gk_1 _rs-link_mode_standalone_dz36gk_1",
+     "classes": "_rs-link_1kskczr_1 _rs-link_mode_standalone_1kskczr_1",
      "text": "Read the story",
      "rect": {
       "x": 737.1,
@@ -463,7 +464,7 @@
       "top": "auto"
      },
      "::after": {
-      "content": "\"\u2192\"",
+      "content": "\"→\"",
       "width": "auto",
       "height": "auto",
       "position": "static",
@@ -480,7 +481,7 @@
      },
      "paint": [
       {
-       "node": "a._rs-link_dz36gk_1._rs-link_mode_standalone_dz36gk_1",
+       "node": "a._rs-link_1kskczr_1._rs-link_mode_standalone_1kskczr_1",
        "size": "128.1x21.0",
        "border": "B:1px solid rgba(0, 0, 0, 0)"
       }
@@ -488,7 +489,7 @@
     },
     "hover": {
      "tag": "a",
-     "classes": "_rs-link_dz36gk_1 _rs-link_mode_standalone_dz36gk_1",
+     "classes": "_rs-link_1kskczr_1 _rs-link_mode_standalone_1kskczr_1",
      "text": "Read the story",
      "rect": {
       "x": 737.1,
@@ -567,7 +568,7 @@
       "top": "auto"
      },
      "::after": {
-      "content": "\"\u2192\"",
+      "content": "\"→\"",
       "width": "auto",
       "height": "auto",
       "position": "static",
@@ -584,7 +585,7 @@
      },
      "paint": [
       {
-       "node": "a._rs-link_dz36gk_1._rs-link_mode_standalone_dz36gk_1",
+       "node": "a._rs-link_1kskczr_1._rs-link_mode_standalone_1kskczr_1",
        "size": "128.1x21.0",
        "border": "B:1px solid rgb(255, 255, 255)"
       }
@@ -682,7 +683,7 @@
        "bg": "rgb(25, 25, 28)"
       },
       {
-       "node": "button::before._main_xhkdfz_62._modeClear_xhkdfz_45",
+       "node": "button::before._main_l33nyt_62._modeClear_l33nyt_45",
        "size": "autoxauto",
        "border": "T:1px solid rgba(255, 255, 255, 0.3) | R:1px solid rgba(255, 255, 255, 0.3) | B:1px solid rgba(255, 255, 255, 0.3) | L:1px solid rgba(255, 255, 255, 0.3)",
        "radius": "16px"
@@ -713,13 +714,13 @@
        "bg": "rgb(244, 244, 244)"
       },
       {
-       "node": "a._main_xhkdfz_62._modeRock_xhkdfz_36",
+       "node": "a._main_l33nyt_62._modeRock_l33nyt_36",
        "size": "0.0x0.0",
        "bg": "rgb(25, 25, 28)",
        "radius": "16px"
       },
       {
-       "node": "a::before._main_xhkdfz_62._modeRock_xhkdfz_36",
+       "node": "a::before._main_l33nyt_62._modeRock_l33nyt_36",
        "size": "autoxauto",
        "border": "T:1px solid rgba(25, 25, 28, 0.3) | R:1px solid rgba(25, 25, 28, 0.3) | B:1px solid rgba(25, 25, 28, 0.3) | L:1px solid rgba(25, 25, 28, 0.3)",
        "radius": "16px"
@@ -740,7 +741,7 @@
        "bg": "rgb(172, 152, 148)"
       },
       {
-       "node": "a::before._main_xhkdfz_62._modeOutline_xhkdfz_42",
+       "node": "a::before._main_l33nyt_62._modeOutline_l33nyt_42",
        "size": "autoxauto",
        "border": "T:1px solid rgba(255, 255, 255, 0.3) | R:1px solid rgba(255, 255, 255, 0.3) | B:1px solid rgba(255, 255, 255, 0.3) | L:1px solid rgba(255, 255, 255, 0.3)",
        "radius": "16px"
@@ -991,7 +992,7 @@
    "states": {
     "default": {
      "tag": "button",
-     "classes": "_main_xhkdfz_62 _modeClear_xhkdfz_45 _sizeS_xhkdfz_23 _alignIconLeft_xhkdfz_49",
+     "classes": "_main_l33nyt_62 _modeClear_l33nyt_45 _sizeS_l33nyt_23 _alignIconLeft_l33nyt_49",
      "text": "Open search",
      "rect": {
       "x": 1176,
@@ -1087,7 +1088,7 @@
      },
      "paint": [
       {
-       "node": "button::before._main_xhkdfz_62._modeClear_xhkdfz_45",
+       "node": "button::before._main_l33nyt_62._modeClear_l33nyt_45",
        "size": "autoxauto",
        "border": "T:1px solid rgba(255, 255, 255, 0.3) | R:1px solid rgba(255, 255, 255, 0.3) | B:1px solid rgba(255, 255, 255, 0.3) | L:1px solid rgba(255, 255, 255, 0.3)",
        "radius": "16px"
@@ -1103,7 +1104,7 @@
     },
     "hover": {
      "tag": "button",
-     "classes": "_main_xhkdfz_62 _modeClear_xhkdfz_45 _sizeS_xhkdfz_23 _alignIconLeft_xhkdfz_49",
+     "classes": "_main_l33nyt_62 _modeClear_l33nyt_45 _sizeS_l33nyt_23 _alignIconLeft_l33nyt_49",
      "text": "Open search",
      "rect": {
       "x": 1176,
@@ -1199,13 +1200,13 @@
      },
      "paint": [
       {
-       "node": "button._main_xhkdfz_62._modeClear_xhkdfz_45",
+       "node": "button._main_l33nyt_62._modeClear_l33nyt_45",
        "size": "32.0x32.0",
        "bg": "rgba(255, 255, 255, 0.1)",
        "radius": "16px"
       },
       {
-       "node": "button::before._main_xhkdfz_62._modeClear_xhkdfz_45",
+       "node": "button::before._main_l33nyt_62._modeClear_l33nyt_45",
        "size": "autoxauto",
        "border": "T:1px solid rgba(255, 255, 255, 0.4) | R:1px solid rgba(255, 255, 255, 0.4) | B:1px solid rgba(255, 255, 255, 0.4) | L:1px solid rgba(255, 255, 255, 0.4)",
        "radius": "16px"
@@ -1221,7 +1222,7 @@
     },
     "focus": {
      "tag": "button",
-     "classes": "_main_xhkdfz_62 _modeClear_xhkdfz_45 _sizeS_xhkdfz_23 _alignIconLeft_xhkdfz_49",
+     "classes": "_main_l33nyt_62 _modeClear_l33nyt_45 _sizeS_l33nyt_23 _alignIconLeft_l33nyt_49",
      "text": "Open search",
      "rect": {
       "x": 1176,
@@ -1271,7 +1272,7 @@
       "borderBottomLeftRadius": "16px",
       "backgroundColor": "rgba(255, 255, 255, 0.1)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "color(srgb 0.419608 0.341177 1 / 0.8) 0px 0px 0px 4px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
@@ -1317,13 +1318,14 @@
      },
      "paint": [
       {
-       "node": "button._main_xhkdfz_62._modeClear_xhkdfz_45",
+       "node": "button._main_l33nyt_62._modeClear_l33nyt_45",
        "size": "32.0x32.0",
        "bg": "rgba(255, 255, 255, 0.1)",
+       "shadow": "color(srgb 0.419608 0.341177 1 / 0.8) 0px 0px 0px 4px",
        "radius": "16px"
       },
       {
-       "node": "button::before._main_xhkdfz_62._modeClear_xhkdfz_45",
+       "node": "button::before._main_l33nyt_62._modeClear_l33nyt_45",
        "size": "autoxauto",
        "border": "T:1px solid rgba(255, 255, 255, 0.4) | R:1px solid rgba(255, 255, 255, 0.4) | B:1px solid rgba(255, 255, 255, 0.4) | L:1px solid rgba(255, 255, 255, 0.4)",
        "radius": "16px"
@@ -1431,7 +1433,7 @@
       }
      ],
      "textStyle": {
-      "node": "span._rs-h4_dz36gk_1._rs-text_hardness_auto_dz36gk_1",
+      "node": "span._rs-h4_1kskczr_1._rs-text_hardness_auto_1kskczr_1",
       "text": "For teams",
       "fontFamily": "\"JetBrains Sans\", Inter, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\", \"Helvetica Neue\", Arial, sans-serif",
       "fontSize": "16px",
@@ -1533,7 +1535,7 @@
       }
      ],
      "textStyle": {
-      "node": "span._rs-h4_dz36gk_1._rs-text_hardness_auto_dz36gk_1",
+      "node": "span._rs-h4_1kskczr_1._rs-text_hardness_auto_1kskczr_1",
       "text": "For teams",
       "fontFamily": "\"JetBrains Sans\", Inter, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\", \"Helvetica Neue\", Arial, sans-serif",
       "fontSize": "16px",
@@ -1552,7 +1554,7 @@
    "states": {
     "default": {
      "tag": "a",
-     "classes": "_rs-link_dz36gk_1 _rs-link_mode_clear_dz36gk_1 _rs-link_hardness_hard_dz36gk_1 _rs-h4_dz36gk_1",
+     "classes": "_rs-link_1kskczr_1 _rs-link_mode_clear_1kskczr_1 _rs-link_hardness_hard_1kskczr_1 _rs-h4_1kskczr_1",
      "text": "Introducing Air in IDEs: The new home for your coding agents.",
      "rect": {
       "x": 484.7,
@@ -1631,7 +1633,7 @@
       "top": "auto"
      },
      "::after": {
-      "content": "\"\u2192\"",
+      "content": "\"→\"",
       "width": "auto",
       "height": "auto",
       "position": "static",
@@ -1648,7 +1650,7 @@
      },
      "paint": [
       {
-       "node": "a._rs-link_dz36gk_1._rs-link_mode_clear_dz36gk_1",
+       "node": "a._rs-link_1kskczr_1._rs-link_mode_clear_1kskczr_1",
        "size": "470.6x21.0",
        "border": "B:2px solid rgba(0, 0, 0, 0)"
       }
@@ -1661,7 +1663,7 @@
    "states": {
     "opened": {
      "tag": "nav",
-     "classes": "_menu_1vp7jxa_1 _wt-col_mag83e_1 _wt-col-inline_mag83e_1",
+     "classes": "_menu_1vp7jxa_1 _wt-col_1ihbewa_1 _wt-col-inline_1ihbewa_1",
      "text": "Products JETBRAINS IDEs All IDEs CLion DataGrip GoLand IntelliJ IDEA PhpStorm Py",
      "rect": {
       "x": 271.6,
@@ -1766,13 +1768,13 @@
        "bg": "rgb(244, 244, 244)"
       },
       {
-       "node": "a._main_xhkdfz_62._modeRock_xhkdfz_36",
+       "node": "a._main_l33nyt_62._modeRock_l33nyt_36",
        "size": "117.8x32.0",
        "bg": "rgb(25, 25, 28)",
        "radius": "16px"
       },
       {
-       "node": "a::before._main_xhkdfz_62._modeRock_xhkdfz_36",
+       "node": "a::before._main_l33nyt_62._modeRock_l33nyt_36",
        "size": "autoxauto",
        "border": "T:1px solid rgba(25, 25, 28, 0.3) | R:1px solid rgba(25, 25, 28, 0.3) | B:1px solid rgba(25, 25, 28, 0.3) | L:1px solid rgba(25, 25, 28, 0.3)",
        "radius": "16px"
@@ -1793,7 +1795,7 @@
        "bg": "rgb(172, 152, 148)"
       },
       {
-       "node": "a::before._main_xhkdfz_62._modeOutline_xhkdfz_42",
+       "node": "a::before._main_l33nyt_62._modeOutline_l33nyt_42",
        "size": "30pxx30px",
        "border": "T:1px solid rgba(255, 255, 255, 0.3) | R:1px solid rgba(255, 255, 255, 0.3) | B:1px solid rgba(255, 255, 255, 0.3) | L:1px solid rgba(255, 255, 255, 0.3)",
        "radius": "16px"
@@ -1841,8 +1843,8 @@
    "states": {
     "opened": {
      "tag": "input",
-     "classes": "_inner_1jz38yw_101",
-     "text": "\u2318K for advanced search",
+     "classes": "_inner_1d6qyqz_101",
+     "text": "⌘K for advanced search",
      "rect": {
       "x": 934,
       "y": 24,
@@ -1922,7 +1924,7 @@
      "ancestors": [
       {
        "up": 2,
-       "node": "div._wrapper_1jz38yw_39",
+       "node": "div._wrapper_1d6qyqz_39",
        "shadow": "rgb(255, 255, 255) 0px 0px 0px 2px inset",
        "radius": "0px",
        "bg": "rgb(25, 25, 28)"
@@ -1941,7 +1943,7 @@
    "states": {
     "default": {
      "tag": "span",
-     "classes": "_main_z00z3x_31 _sizeXs_z00z3x_18 _alignIconLeft_z00z3x_7 _tag_ircdwp_37",
+     "classes": "_main_mh6av7_31 _sizeXs_mh6av7_18 _alignIconLeft_mh6av7_7 _tag_11z76on_37",
      "text": "",
      "rect": {
       "x": 391.8,
@@ -2021,7 +2023,7 @@
      },
      "paint": [
       {
-       "node": "span._main_z00z3x_31._sizeXs_z00z3x_18",
+       "node": "span._main_mh6av7_31._sizeXs_mh6av7_18",
        "size": "77.5x24.0",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "bg": "rgb(250, 92, 74)",
@@ -2036,7 +2038,7 @@
    "states": {
     "default": {
      "tag": "a",
-     "classes": "_main_xhkdfz_62 _modeClassic_xhkdfz_33 _sizeM_xhkdfz_26 _alignIconLeft_xhkdfz_49",
+     "classes": "_main_l33nyt_62 _modeClassic_l33nyt_33 _sizeM_l33nyt_26 _alignIconLeft_l33nyt_49",
      "text": "Buy",
      "rect": {
       "x": 128,
@@ -2132,20 +2134,20 @@
      },
      "paint": [
       {
-       "node": "a._main_xhkdfz_62._modeClassic_xhkdfz_33",
+       "node": "a._main_l33nyt_62._modeClassic_l33nyt_33",
        "size": "76.2x40.0",
        "bg": "color(srgb 0.419608 0.341176 1)",
        "radius": "20px"
       },
       {
-       "node": "a::before._main_xhkdfz_62._modeClassic_xhkdfz_33",
+       "node": "a::before._main_l33nyt_62._modeClassic_l33nyt_33",
        "size": "autoxauto",
        "border": "T:1px solid rgba(25, 25, 28, 0.3) | R:1px solid rgba(25, 25, 28, 0.3) | B:1px solid rgba(25, 25, 28, 0.3) | L:1px solid rgba(25, 25, 28, 0.3)",
        "radius": "20px"
       }
      ],
      "textStyle": {
-      "node": "span._content_xhkdfz_207",
+      "node": "span._content_l33nyt_209",
       "text": "Buy",
       "fontFamily": "\"JetBrains Sans\", Inter, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\", \"Helvetica Neue\", Arial, sans-serif",
       "fontSize": "16px",
@@ -2159,7 +2161,7 @@
     },
     "hover": {
      "tag": "a",
-     "classes": "_main_xhkdfz_62 _modeClassic_xhkdfz_33 _sizeM_xhkdfz_26 _alignIconLeft_xhkdfz_49",
+     "classes": "_main_l33nyt_62 _modeClassic_l33nyt_33 _sizeM_l33nyt_26 _alignIconLeft_l33nyt_49",
      "text": "Buy",
      "rect": {
       "x": 128,
@@ -2255,20 +2257,20 @@
      },
      "paint": [
       {
-       "node": "a._main_xhkdfz_62._modeClassic_xhkdfz_33",
+       "node": "a._main_l33nyt_62._modeClassic_l33nyt_33",
        "size": "76.2x40.0",
        "bg": "color(srgb 0.419608 0.341177 1 / 0.8)",
        "radius": "20px"
       },
       {
-       "node": "a::before._main_xhkdfz_62._modeClassic_xhkdfz_33",
+       "node": "a::before._main_l33nyt_62._modeClassic_l33nyt_33",
        "size": "autoxauto",
        "border": "T:1px solid rgba(25, 25, 28, 0.3) | R:1px solid rgba(25, 25, 28, 0.3) | B:1px solid rgba(25, 25, 28, 0.3) | L:1px solid rgba(25, 25, 28, 0.3)",
        "radius": "20px"
       }
      ],
      "textStyle": {
-      "node": "span._content_xhkdfz_207",
+      "node": "span._content_l33nyt_209",
       "text": "Buy",
       "fontFamily": "\"JetBrains Sans\", Inter, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\", \"Helvetica Neue\", Arial, sans-serif",
       "fontSize": "16px",
@@ -3007,188 +3009,11 @@
    },
    "page": "https://account.jetbrains.com/login"
   },
-  "email-field": {
-   "states": {
-    "default": {
-     "tag": "input",
-     "classes": "_inner_1xc6iin_171",
-     "text": "Email",
-     "rect": {
-      "x": 142,
-      "y": 377.6,
-      "w": 296,
-      "h": 24
-     },
-     "style": {
-      "display": "block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "296px",
-      "height": "24px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(25, 25, 28)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(25, 25, 28)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(25, 25, 28)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(25, 25, 28)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(25, 25, 28)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"JetBrains Sans\", Inter, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\", \"Helvetica Neue\", Arial, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "24px",
-      "letterSpacing": "0.024px",
-      "textTransform": "none",
-      "color": "rgb(25, 25, 28)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(25, 25, 28)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "text",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "clip",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "placeholder": {
-      "color": "rgba(25, 25, 28, 0.5)",
-      "opacity": "1",
-      "fontSize": "16px"
-     }
-    },
-    "focus": {
-     "tag": "input",
-     "classes": "_inner_1xc6iin_171",
-     "text": "Email",
-     "rect": {
-      "x": 142,
-      "y": 377.6,
-      "w": 296,
-      "h": 24
-     },
-     "style": {
-      "display": "block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "296px",
-      "height": "24px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(25, 25, 28)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(25, 25, 28)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(25, 25, 28)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(25, 25, 28)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(25, 25, 28)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"JetBrains Sans\", Inter, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\", \"Helvetica Neue\", Arial, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "24px",
-      "letterSpacing": "0.024px",
-      "textTransform": "none",
-      "color": "rgb(25, 25, 28)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(25, 25, 28)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "text",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "clip",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "placeholder": {
-      "color": "rgba(25, 25, 28, 0.5)",
-      "opacity": "1",
-      "fontSize": "16px"
-     }
-    }
-   },
-   "page": "https://account.jetbrains.com/signup"
-  },
   "icon-button-menu": {
    "states": {
     "default": {
      "tag": "button",
-     "classes": "_main_xhkdfz_62 _modeClear_xhkdfz_45 _sizeS_xhkdfz_23 _alignIconLeft_xhkdfz_49",
+     "classes": "_main_l33nyt_62 _modeClear_l33nyt_45 _sizeS_l33nyt_23 _alignIconLeft_l33nyt_49",
      "text": "Open main menu",
      "rect": {
       "x": 342,
@@ -3284,7 +3109,7 @@
      },
      "paint": [
       {
-       "node": "button::before._main_xhkdfz_62._modeClear_xhkdfz_45",
+       "node": "button::before._main_l33nyt_62._modeClear_l33nyt_45",
        "size": "autoxauto",
        "border": "T:1px solid rgba(255, 255, 255, 0.3) | R:1px solid rgba(255, 255, 255, 0.3) | B:1px solid rgba(255, 255, 255, 0.3) | L:1px solid rgba(255, 255, 255, 0.3)",
        "radius": "16px"

@@ -1,6 +1,6 @@
 # JetBrains patterns
 
-How the public pages combine the components. Captured 2026-11-18, signed out, at 1440 and 390.
+How the public pages combine the components. Captured 2026-11-21, signed out, at 1440 and 390. Which control opens which page is in [site-tree.md](site-tree.md).
 
 ## Site header
 
@@ -42,13 +42,13 @@ Shown in [company-light-default](screenshots/company-light-default.png).
 
 `/education/` redirects to `/academy/`. The page is light grey with a purple "Explore catalog" pill, a Students/Courses switch, and a purple announcement strip.
 
-Shown in [education-light-default](screenshots/education-light-default.png).
+Shown in [education-light-default](screenshots/education-light-default.png) and [academy-light-default](screenshots/academy-light-default.png).
 
 ## Login boundary
 
-account.jetbrains.com/login is a white card on a purple-to-yellow gradient. It offers OAuth rows (Google, GitHub, Apple, GitLab, WeChat, Bitbucket), "Continue with email", and "Create an account". Continue with email on /signup opens an empty Email field and a Continue pill. Submitting that email showed reCAPTCHA ("I'm not a robot"); capture stopped there. Profile and licenses were not reached. No OAuth flow was completed.
+account.jetbrains.com/login is a white card on a purple-to-yellow gradient. It offers Google, GitHub and Apple as labelled rows, then GitLab, WeChat and Bitbucket as icon buttons, then "Continue with email" and "Create an account". None of those were clicked. No email field was opened. Profile and licenses were not reached.
 
-Shown in [login-light-default](screenshots/login-light-default.png), [signup-email-light-default](screenshots/signup-email-light-default.png), and [signup-email-light-captcha](screenshots/signup-email-light-captcha.png).
+Shown in [login-light-default](screenshots/login-light-default.png) and [oauth-icon-row-default](components/crops/oauth-icon-row-default.png).
 
 ## Search
 
