@@ -1,0 +1,56 @@
+{
+  "slug": "wikipedia",
+  "product": "Wikipedia",
+  "domain": "en.wikipedia.org",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "empty-walls",
+  "session": "Signed out. Nothing was typed. No identity provider was clicked. No form was submitted. No captcha was solved. No page was edited.",
+  "walls": [
+    {
+      "control": "header Log in",
+      "openedFrom": "https://en.wikipedia.org/w/index.php?title=Special:UserLogin",
+      "host": "auth.wikimedia.org",
+      "path": "/enwiki/wiki/Special:UserLogin",
+      "title": "Log in - Wikipedia",
+      "painted": true,
+      "asksFor": ["Username", "Password"],
+      "valueLength": 0,
+      "identityProvidersSeen": [],
+      "captchaWidget": false,
+      "otherControlsNotClicked": [
+        "Keep me logged in (for up to one year)",
+        "Log in",
+        "Help with logging in",
+        "Forgot your password?",
+        "Join Wikipedia"
+      ],
+      "screenshot": "screenshots/login-wall-light-desktop.png",
+      "note": "Fields were empty. A URL that added returnto=Main+Page returned invalid returnUrlToken and was abandoned. Central-auth query tokens are omitted."
+    },
+    {
+      "control": "header Create account",
+      "openedFrom": "https://en.wikipedia.org/w/index.php?title=Special:CreateAccount",
+      "host": "auth.wikimedia.org",
+      "path": "/enwiki/wiki/Special:CreateAccount",
+      "title": "Create account - Wikipedia",
+      "painted": true,
+      "asksFor": ["Username", "Password", "Confirm password", "Email address (optional)"],
+      "valueLength": 0,
+      "identityProvidersSeen": [],
+      "captchaWidget": false,
+      "captchaNotice": "This site is protected by hCaptcha and its Privacy Policy and Terms of Service apply.",
+      "otherControlsNotClicked": [
+        "Create your account",
+        "username policy help",
+        "hCaptcha Privacy Policy",
+        "hCaptcha Terms of Service"
+      ],
+      "screenshot": "screenshots/signup-wall-light-desktop.png",
+      "note": "Fields were empty. The hCaptcha sentence is a notice. No challenge was painted and none was solved."
+    }
+  ],
+  "stopped": "Empty login and signup walls photographed. No typing, no submit, no identity provider, no edit, no captcha.",
+  "leftAlone": ["catalog.json", "webapps-manifest.json"]
+}
