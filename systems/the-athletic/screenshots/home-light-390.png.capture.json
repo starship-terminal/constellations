@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "home-phone",
+  "url": "https://www.nytimes.com/athletic/",
+  "title": "The Athletic - Sports news, stories, scores, schedules, podcasts, and more",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2,
+    "vv": {
+      "w": 390,
+      "h": 844,
+      "s": 1
+    }
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "quantized": false,
+  "note": "First viewport from the T3 incognito preview tab on 2026-11-22. Signed-out US homepage at phone width. First viewport. theathletic.com redirected here. Read colours from tokens.json, not from this PNG. No form was submitted."
+}

@@ -15,7 +15,9 @@ The Athletic is worth a capture because the signed-out site still ships a named 
 | [components.md](components.md) | The inventory, with measured values and reconstruction crops |
 | [patterns.md](patterns.md) | How the home, article, offer page, league page and 404 are built |
 | [components/crops/](components/crops) | Element crops. Reconstructions from computed boxes, not live pixels |
-| [screenshots/](screenshots) | `{page}-{theme}-{state}.png` reconstructions. See [screenshots/README.md](screenshots/README.md) |
+| [screenshots/](screenshots) | `{page}-{theme}-{state}.png` reconstructions, plus live first-viewport shots from the 2026-11-22 walk. See [screenshots/README.md](screenshots/README.md) |
+| [site-tree.md](site-tree.md) | Public site tree mapped 2026-11-22. Header, footer, photographed pages, and where the walk stopped. |
+| [login-review.json](login-review.json) | Empty login and create-account wall, and the subscribe wall. `loginExtracted` is not-started. |
 | [icons/](icons) | The wordmark SVG and [INDEX.tsv](icons/INDEX.tsv) |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json) and [components-computed.json](raw/components-computed.json) |
 | [tools/](tools) | The capture kit and [test_tokens.py](tools/test_tokens.py) |
