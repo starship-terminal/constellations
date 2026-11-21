@@ -1,0 +1,180 @@
+{
+  "capturedAt": "2026-11-20T19:10:00Z",
+  "harness": "T3 preview, profile default, tab opened with reuseExistingTab false",
+  "viewport": {
+    "requested": {"width": "1440px", "height": "900px"},
+    "measured": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewport": {"width": 1440, "height": 900, "scale": 1}},
+    "png": {"width": 2880, "height": 1800, "file": "screenshots/home-dark-default.raw.png"}
+  },
+  "note": "A second snapshot failed with 'The browser is not producing screenshot frames'. preview_open was called once and snapshot once more, then capture stopped. Token values in tokens.json come from the 2026-11-19 readings in computed.json. This file records the 2026-11-20 viewport and the controls re-read before the frame failure. It does not replace computed.json.",
+  "pages": {
+    "home": {
+      "url": "https://www.twelvelabs.io/",
+      "title": "TwelveLabs: Video Intelligence Platform & API",
+      "themeSwitch": "none found on the public site",
+      "colorScheme": "normal",
+      "bodyBackground": "rgb(244, 243, 243)",
+      "heroCanvasUnderText": "rgb(29, 28, 27) on the div behind the hero canvas",
+      "h1": {
+        "text": "See the unseen. Know the unknowable.",
+        "fontFamily": "\"Milling Duplex 1mm\", \"Milling Duplex 1mm Placeholder\", sans-serif",
+        "fontSize": "56px",
+        "fontWeight": "400",
+        "lineHeight": "62.72px",
+        "letterSpacing": "-1.12px",
+        "color": "rgb(244, 243, 243)"
+      },
+      "sub": {
+        "fontFamily": "\"Milling Duplex 1mm\", \"Milling Duplex 1mm Placeholder\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "0.16px",
+        "color": "rgb(244, 243, 243)"
+      },
+      "h2": {
+        "text": "Results in minutes.",
+        "fontFamily": "\"Milling Duplex 1mm\", \"Milling Duplex 1mm Placeholder\", sans-serif",
+        "fontSize": "48px",
+        "fontWeight": "400",
+        "lineHeight": "54.72px",
+        "letterSpacing": "-0.96px",
+        "color": "rgb(244, 243, 243)"
+      },
+      "primaryButton": {
+        "text": "Try Free",
+        "height": "60px",
+        "padding": "18px 24px",
+        "borderRadius": "18px",
+        "backgroundToken": "--token-ae2d7438-9721-4d31-b3bc-5713cd847e7a",
+        "backgroundResolved": "rgb(244, 243, 243)",
+        "labelColor": "rgb(29, 28, 27)",
+        "labelFont": "\"Milling Duplex 1mm\"",
+        "labelSize": "16px",
+        "labelLineHeight": "24px",
+        "labelLetterSpacing": "0.16px",
+        "labelWeight": "400",
+        "hover": "computed background stayed rgb(244, 243, 243); no hover rule found for .framer-DpwKu"
+      },
+      "secondaryButton": {
+        "text": "Talk to Sales",
+        "height": "60px",
+        "padding": "18px 24px",
+        "borderRadius": "18px",
+        "fill": "transparent",
+        "afterBorder": "1px solid rgb(244, 243, 243)",
+        "afterRadius": "18px",
+        "labelColor": "rgb(244, 243, 243)"
+      }
+    },
+    "login": {
+      "url": "https://auth.twelvelabs.io/u/login/identifier",
+      "title": "Log in | Platform",
+      "reachedBy": "https://playground.twelvelabs.io/ redirect, and Try Free on the marketing site",
+      "signedIn": false,
+      "bodyFont": "Geist, -apple-system, system-ui, Roboto, Helvetica, sans-serif",
+      "bodyColor": "rgb(29, 28, 27)",
+      "headline": {
+        "text": "Search, analyze, and act on every video",
+        "fontFamily": "Milling",
+        "fontSize": "40px",
+        "fontWeight": "400",
+        "lineHeight": "48px",
+        "color": "rgb(29, 28, 27)"
+      },
+      "h1": {
+        "text": "Welcome to TwelveLabs",
+        "fontFamily": "Milling",
+        "fontSize": "24px",
+        "lineHeight": "32px",
+        "fontWeight": "400",
+        "color": "rgb(29, 28, 27)"
+      },
+      "label": {
+        "text": "Email address",
+        "fontFamily": "Geist",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "lineHeight": "20px",
+        "color": "rgb(23, 23, 23)"
+      },
+      "emailField": {
+        "name": "username",
+        "height": "34px",
+        "width": "340px",
+        "fontFamily": "Geist",
+        "fontSize": "14px",
+        "border": "1px solid rgb(29, 28, 27)",
+        "borderRadius": "6px",
+        "boxShadowFocused": "rgb(29, 28, 27) 0px 0px 0px 1px"
+      },
+      "continue": {
+        "height": "40px",
+        "width": "340px",
+        "background": "rgb(23, 23, 23)",
+        "color": "rgb(244, 244, 244)",
+        "fontFamily": "Geist",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "padding": "8px 12px",
+        "borderRadius": "6px"
+      },
+      "google": {
+        "text": "Continue with Google",
+        "notClicked": true,
+        "height": "40px",
+        "border": "1px solid rgba(0, 0, 0, 0.24)",
+        "borderRadius": "6px",
+        "color": "rgb(23, 23, 23)",
+        "fontFamily": "Geist",
+        "fontSize": "16px"
+      },
+      "signupLink": {
+        "color": "rgb(29, 28, 27)",
+        "fontSize": "14px",
+        "notFollowed": true
+      }
+    }
+  },
+  "tokensResolvedOnHome": {
+    "--token-ae2d7438-9721-4d31-b3bc-5713cd847e7a": "rgb(244, 243, 243)",
+    "--token-1cc467b7-2835-4c83-a059-2a3b2b6b5c3f": "rgb(29, 28, 27)",
+    "--token-1bf288a8-77de-4115-8dc9-fdbbbfb2638a": "rgb(0, 0, 0)",
+    "--token-8106e880-b5b3-4753-b87e-27cdba08dd0d": "rgb(255, 255, 255)",
+    "--token-450b638f-2704-446b-9b60-2da9214bb251": "rgb(142, 141, 141)",
+    "--token-481d9466-4bed-4db8-9712-beec310f6f5a": "rgb(51, 50, 49)",
+    "--token-a1029a49-beca-4669-8049-d43ee7128def": "rgb(35, 34, 33)",
+    "--token-e0dff776-dbd9-4ad5-8941-0c3dce3862b8": "rgb(72, 71, 70)",
+    "--token-2f49bb4b-4b32-4974-8708-3d374df02904": "rgb(236, 236, 236)",
+    "--token-add8f50a-d3dd-4b90-9f38-f9e0b9832181": "rgb(194, 27, 27)",
+    "--token-d73769c8-a2f9-4f30-8d68-a77c289af97f": "rgb(96, 226, 28)",
+    "--token-f28f5850-150c-4310-af2a-1276070941a6": "rgb(250, 186, 24)",
+    "--token-6bfc055d-848e-457e-874e-bbd079a21826": "rgb(108, 213, 253)",
+    "--token-a291d994-9d4e-4395-9c78-66ef79b2573c": "rgb(99, 92, 173)",
+    "--token-8fbb1b0f-dede-4d92-b5da-585fbf605439": "rgba(234, 244, 250, 0.1)"
+  },
+  "tokenRole": "Framer publishes hashed --token-* names. Roles below are assigned only where a computed style on a real element used that variable, or where the declared stylesheet value was read and then resolved. Unused declared colours stay in this file and are not tokenised.",
+  "fontsDeclared": [
+    {"family": "Milling Duplex 1mm", "weight": "400", "src": "https://framerusercontent.com/assets/8I5HWpItJbV4MCFgD7QkryfFGqE.woff2", "usedOn": "home h1, sub, h2, button labels"},
+    {"family": "Milling", "weight": "400", "usedOn": "login headline and h1"},
+    {"family": "Geist", "weight": "400 and 500", "src": "fonts.gstatic.com", "usedOn": "login body, label, buttons, email field"},
+    {"family": "Milling Triplex 1,5mm", "weight": "701", "usedOn": "declared @font-face only; no element measured"},
+    {"family": "Inter", "weight": "700", "usedOn": "declared @font-face only; no element measured"},
+    {"family": "Fragment Mono", "usedOn": "declared @font-face only; no element measured"},
+    {"family": "IBM Plex Mono", "usedOn": "declared @font-face only; no element measured"}
+  ],
+  "breakpointsDeclared": [
+    "(min-width: 768px)",
+    "(min-width: 376px)",
+    "(max-width: 809.98px)",
+    "(min-width: 810px) and (max-width: 1199.98px)",
+    "(max-width: 1199px) and (min-width: 810px)"
+  ],
+  "brandMeta": {
+    "themeColor": null,
+    "maskIcon": null,
+    "webManifest": null
+  },
+  "radiiCountedOnHomeViewport": {"12px": 9, "14px": 2, "18px": 3, "20px": 2, "50%": 2}
+}

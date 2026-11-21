@@ -33,7 +33,7 @@
       "url": "https://auth.twelvelabs.io/u/login/identifier",
       "title": "Log in | Platform",
       "htmlBackground": "rgb(244, 243, 243)",
-      "emailEntered": "kaichen@agentmail.to",
+      "emailEntered": false,
       "passwordStep": "https://auth.twelvelabs.io/u/login/password asked for a password. The password field was not filled and Continue was not clicked."
     }
   },
