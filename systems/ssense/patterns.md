@@ -2,6 +2,18 @@
 
 Signed-out public pages on ssense.com/en-sg, measured 2026-11-19 at 1169 by 731. Screenshots were not produced.
 
+## Shots
+
+The 2026-11-22 pass photographed the pages the header opens, after the values in this file were already read.
+
+| Page | File |
+|---|---|
+| Homepage, 1440 | [screenshots/home-light-desktop.png](screenshots/home-light-desktop.png) |
+| Homepage, 390 | [screenshots/home-light-phone.png](screenshots/home-light-phone.png) |
+| Menswear | [screenshots/category-men-light-desktop.png](screenshots/category-men-light-desktop.png) |
+| Editorial | [screenshots/editorial-light-desktop.png](screenshots/editorial-light-desktop.png) |
+| Empty login wall | [screenshots/login-light-empty.png](screenshots/login-light-empty.png) |
+
 ## Home
 
 A 55px fixed header sits over a white page. Left links are Menswear, Womenswear, Everything else, and Search. The wordmark is centred. Right links are language, Login, Wishlist, and Bag (0). Below the header, editorial tiles use a 68px label column and Favorit SSENSE Inter1 headlines at 19px, with JHA Times Now decks at 20px. Shop menswear and Shop womenswear are the only rounded controls on the page (10px). The footer repeats the 11px uppercase chrome: customer care, location, editorial archive, careers, country, email signup, social links, and legal links.

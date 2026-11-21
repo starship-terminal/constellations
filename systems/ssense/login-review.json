@@ -1,0 +1,17 @@
+{
+  "slug": "ssense",
+  "captured": "2026-11-22",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "session": "Public T3 preview capture, incognito, signed out. https://www.ssense.com/en-sg/account/login opened an empty card titled Login or Create account. The email field was empty. Continue was not clicked. No email, password, phone, or code was typed. No identity provider was clicked. No form was submitted. No captcha was solved. Nothing was added to the bag.",
+  "wall": {
+    "login_url": "https://www.ssense.com/en-sg/account/login",
+    "signup_url": "https://www.ssense.com/en-sg/account/login",
+    "signup_note": "There is no separate public signup URL. Login and create account share this empty email step.",
+    "login_title": "Login or Create account",
+    "login_fields_empty": ["Email address"],
+    "continue_not_clicked": true,
+    "wishlist_redirect": "https://www.ssense.com/en-sg/account/wishlist redirects to the same login URL when signed out",
+    "identity_providers_not_clicked": []
+  }
+}
