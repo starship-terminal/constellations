@@ -1,0 +1,206 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.mercari.com/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "cssVariables": {
+    "--color-primary": "#5356ee",
+    "--color-white": "#fff",
+    "--main-header-height": "76px"
+  },
+  "readings": [
+    {
+      "role": "body",
+      "page": "https://www.mercari.com/",
+      "color": "rgb(34, 34, 34)",
+      "background": "rgb(255, 255, 255)",
+      "fontFamily": "Averta, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "18.4px"
+    },
+    {
+      "role": "header-home",
+      "page": "https://www.mercari.com/",
+      "background": "rgb(37, 43, 96)",
+      "height": "77px",
+      "padding": "0px 40px",
+      "borderBottom": "1px solid rgb(37, 43, 96)"
+    },
+    {
+      "role": "header-interior",
+      "page": "https://www.mercari.com/us/category/electronics-7/",
+      "background": "rgb(255, 255, 255)",
+      "height": "77px"
+    },
+    {
+      "role": "logo",
+      "page": "https://www.mercari.com/",
+      "width": "122px",
+      "height": "28px",
+      "fill": "rgb(255, 255, 255)",
+      "viewBox": "0 0 105 24"
+    },
+    {
+      "role": "search",
+      "page": "https://www.mercari.com/",
+      "background": "rgb(245, 245, 246)",
+      "border": "1px solid rgb(236, 237, 241)",
+      "borderRadius": "44px",
+      "height": "44px",
+      "width": "729.65px",
+      "placeholder": "Search for anything",
+      "color": "rgb(34, 34, 34)",
+      "fontSize": "16px"
+    },
+    {
+      "role": "login",
+      "page": "https://www.mercari.com/",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "lineHeight": "22px",
+      "letterSpacing": "-0.24px",
+      "background": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "role": "sell",
+      "page": "https://www.mercari.com/",
+      "background": "rgb(255, 255, 255)",
+      "color": "rgb(34, 34, 34)",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "lineHeight": "32px",
+      "borderRadius": "4px",
+      "padding": "0px 16px",
+      "height": "32px",
+      "width": "64px"
+    },
+    {
+      "role": "list-an-item",
+      "page": "https://www.mercari.com/about/",
+      "background": "rgb(83, 86, 238)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "borderRadius": "4px",
+      "padding": "0px 16px",
+      "height": "32px"
+    },
+    {
+      "role": "category-label",
+      "page": "https://www.mercari.com/",
+      "color": "rgb(83, 86, 238)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "letterSpacing": "-0.16px",
+      "lineHeight": "16.1px"
+    },
+    {
+      "role": "section-title",
+      "page": "https://www.mercari.com/",
+      "text": "Top brands",
+      "color": "rgb(34, 34, 34)",
+      "fontSize": "20px",
+      "fontWeight": "600",
+      "letterSpacing": "-0.64px"
+    },
+    {
+      "role": "price",
+      "page": "https://www.mercari.com/",
+      "color": "rgb(107, 107, 107)",
+      "fontSize": "16px",
+      "fontWeight": "400"
+    },
+    {
+      "role": "category-title",
+      "page": "https://www.mercari.com/us/category/electronics-7/",
+      "text": "Electronics",
+      "color": "rgb(34, 34, 34)",
+      "fontSize": "26px",
+      "fontWeight": "600",
+      "letterSpacing": "-1px",
+      "fontFamily": "Averta, sans-serif"
+    },
+    {
+      "role": "about-hero",
+      "page": "https://www.mercari.com/about/",
+      "background": "rgb(83, 86, 238)",
+      "color": "rgb(255, 255, 255)",
+      "height": "322px"
+    },
+    {
+      "role": "about-title",
+      "page": "https://www.mercari.com/about/",
+      "text": "Mercari is your marketplace.",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "65px",
+      "fontWeight": "600",
+      "lineHeight": "65px",
+      "letterSpacing": "-1.24px"
+    },
+    {
+      "role": "brands-title",
+      "page": "https://www.mercari.com/us/brand/",
+      "text": "All brands available on Mercari",
+      "color": "rgb(37, 43, 96)",
+      "fontSize": "26px",
+      "fontWeight": "600",
+      "letterSpacing": "-1px"
+    },
+    {
+      "role": "brand-link",
+      "page": "https://www.mercari.com/us/brand/",
+      "color": "rgb(83, 86, 238)",
+      "fontSize": "14px",
+      "fontWeight": "400"
+    },
+    {
+      "role": "footer-navy",
+      "page": "https://www.mercari.com/",
+      "background": "rgb(37, 43, 96)"
+    },
+    {
+      "role": "footer-label",
+      "page": "https://www.mercari.com/",
+      "text": "SHOP",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "letterSpacing": "-0.24px",
+      "lineHeight": "22px"
+    },
+    {
+      "role": "footer-link",
+      "page": "https://www.mercari.com/",
+      "text": "About Us",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "letterSpacing": "-0.16px"
+    },
+    {
+      "role": "legal-bar",
+      "page": "https://www.mercari.com/",
+      "background": "rgb(245, 245, 246)",
+      "height": "69px"
+    },
+    {
+      "role": "legal-link",
+      "page": "https://www.mercari.com/",
+      "text": "Privacy Policy",
+      "color": "rgb(107, 107, 107)",
+      "fontSize": "10px",
+      "fontWeight": "400"
+    },
+    {
+      "role": "favicon",
+      "page": "https://u-web-assets.mercdn.net/assets/icons/favicon/apple-touch-icons/apple-touch-icon-180x180.png",
+      "fill": "rgb(104, 119, 245)"
+    }
+  ]
+}
