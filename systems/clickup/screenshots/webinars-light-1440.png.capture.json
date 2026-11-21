@@ -1,0 +1,75 @@
+{
+  "name": "webinars-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://clickup.com/webinars",
+  "rawUrlHost": "clickup.com",
+  "title": "ClickUp Webinars: Live Sessions and On-Demand Replays",
+  "h1": [
+    "Watch us build it, then go build yours."
+  ],
+  "inputs": [
+    {
+      "type": "email",
+      "name": "Email",
+      "placeholder": "you@company.com",
+      "valueLength": 0
+    },
+    {
+      "type": "hidden",
+      "name": "cuuserid__c",
+      "placeholder": "",
+      "valueLength": 0
+    },
+    {
+      "type": "hidden",
+      "name": "utm_Medium__c",
+      "placeholder": "",
+      "valueLength": 8
+    },
+    {
+      "type": "hidden",
+      "name": "utm_Source__c",
+      "placeholder": "",
+      "valueLength": 6
+    },
+    {
+      "type": "hidden",
+      "name": "utm_Campaign__c",
+      "placeholder": "",
+      "valueLength": 0
+    },
+    {
+      "type": "hidden",
+      "name": "UTM_Keywords__c",
+      "placeholder": "",
+      "valueLength": 0
+    },
+    {
+      "type": "hidden",
+      "name": "UTM_Ad_Content__c",
+      "placeholder": "",
+      "valueLength": 0
+    },
+    {
+      "type": "hidden",
+      "name": "Form_Type__c",
+      "placeholder": "",
+      "valueLength": 12
+    }
+  ],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:41:50.646Z"
+}

@@ -1,0 +1,75 @@
+{
+  "name": "brain-studio-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://clickup.com/brain/creative-studio",
+  "rawUrlHost": "clickup.com",
+  "title": "Creative Studio: create and edit videos in ClickUp | ClickUp",
+  "h1": [
+    "Create and edit videos right in ClickUp."
+  ],
+  "inputs": [
+    {
+      "type": "checkbox",
+      "name": "ot-group-id-C0002",
+      "placeholder": "",
+      "valueLength": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "ot-group-id-C0003",
+      "placeholder": "",
+      "valueLength": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "ot-group-id-C0004",
+      "placeholder": "",
+      "valueLength": 2
+    },
+    {
+      "type": "text",
+      "name": "vendor-search-handler",
+      "placeholder": "Search…",
+      "valueLength": 0
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 2
+    }
+  ],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:39:53.158Z"
+}

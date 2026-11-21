@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<title>ClickUp style guide</title>
+<style>
+:root {
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-nav: Inter, ui-sans-serif, system-ui, sans-serif;
+  --page: #ffffff;
+  --surface: #f8f9fa;
+  --text: #202020;
+  --muted: #646464;
+  --accent: #6647f0;
+  --border: #e8e8e8;
+  --button: #202020;
+  --button-secondary: #f0f0f0;
+  --on-button: #ffffff;
+  --ink: #292d34;
+  --success: #078d3b;
+  --danger: #f0382d;
+  --info: #0091ff;
+  font-family: var(--font-body);
+  background: var(--page);
+  color: var(--text);
+}
+body { margin: 32px; max-width: 880px; }
+h1 { font-family: var(--font-display); font-size: 60px; line-height: 66px; letter-spacing: -2.1px; font-weight: 700; margin: 0 0 8px; }
+p { color: var(--ink); font-size: 16px; line-height: 24px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0 32px; }
+.swatch { width: 108px; }
+.chip { height: 56px; border-radius: 8px; border: 1px solid var(--border); }
+label { display: block; font-size: 12px; color: var(--muted); margin-top: 6px; }
+button.primary, button.secondary, a.login {
+  display: inline-block; border: 0; cursor: default; text-decoration: none;
+  font-family: var(--font-nav); font-size: 14px; font-weight: 600; border-radius: 8px; padding: 8px 12px;
+}
+button.primary { background: var(--button); color: var(--on-button); }
+button.secondary { background: var(--button-secondary); color: #000; }
+button.hero {
+  font-family: var(--font-display); font-size: 16px; font-weight: 500;
+  background: var(--button); color: var(--on-button); border: 0; border-radius: 12px; padding: 12px 24px;
+}
+</style>
+</head>
+<body>
+<p>ClickUp public marketing, light only. Values from computed styles and :root custom properties on clickup.com, 2026-11-22.</p>
+<h1>One workspace</h1>
+<p>Body ink is #292d34. The hero is #202020 at 60px.</p>
+<div class="row">
+  <div class="swatch"><div class="chip" style="background:var(--page)"></div><label>page #ffffff</label></div>
+  <div class="swatch"><div class="chip" style="background:var(--surface)"></div><label>surface #f8f9fa</label></div>
+  <div class="swatch"><div class="chip" style="background:var(--text)"></div><label>text #202020</label></div>
+  <div class="swatch"><div class="chip" style="background:var(--muted)"></div><label>muted #646464</label></div>
+  <div class="swatch"><div class="chip" style="background:var(--accent)"></div><label>accent #6647f0</label></div>
+  <div class="swatch"><div class="chip" style="background:var(--button)"></div><label>button #202020</label></div>
+  <div class="swatch"><div class="chip" style="background:var(--success)"></div><label>success #078d3b</label></div>
+  <div class="swatch"><div class="chip" style="background:var(--danger)"></div><label>danger #f0382d</label></div>
+  <div class="swatch"><div class="chip" style="background:var(--info)"></div><label>info #0091ff</label></div>
+</div>
+<p>
+  <button class="hero">Get Started. It's FREE</button>
+  <a class="login" href="#login">Login</a>
+  <button class="primary">Sign Up</button>
+</p>
+</body>
+</html>

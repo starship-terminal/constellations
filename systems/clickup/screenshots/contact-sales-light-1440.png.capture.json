@@ -1,0 +1,75 @@
+{
+  "name": "contact-sales-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://clickup.com/contact/contact-sales",
+  "rawUrlHost": "clickup.com",
+  "title": "Contact our sales team | ClickUp™",
+  "h1": [
+    "All of your work in one place:\nTasks, Docs, Chat, Goals, & more."
+  ],
+  "inputs": [
+    {
+      "type": "email",
+      "name": "Email",
+      "placeholder": "",
+      "valueLength": 0
+    },
+    {
+      "type": "text",
+      "name": "FirstName",
+      "placeholder": "",
+      "valueLength": 0
+    },
+    {
+      "type": "text",
+      "name": "LastName",
+      "placeholder": "",
+      "valueLength": 0
+    },
+    {
+      "type": "tel",
+      "name": "Phone",
+      "placeholder": "",
+      "valueLength": 0
+    },
+    {
+      "type": "text",
+      "name": "Company",
+      "placeholder": "",
+      "valueLength": 0
+    },
+    {
+      "type": "hidden",
+      "name": "cuuserid__c",
+      "placeholder": "",
+      "valueLength": 0
+    },
+    {
+      "type": "hidden",
+      "name": "utm_Medium__c",
+      "placeholder": "",
+      "valueLength": 8
+    },
+    {
+      "type": "hidden",
+      "name": "utm_Source__c",
+      "placeholder": "",
+      "valueLength": 6
+    }
+  ],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:42:51.527Z"
+}
