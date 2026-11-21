@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Urban Outfitters public tokens</title>
+  <style>
+    :root {
+      --page: #ffffff;
+      --ink: #222222;
+      --muted: #707070;
+      --line: #dddddd;
+      --wash: #f5f5f5;
+      --sale: #d83604;
+      --promo: #3a8700;
+      --buy: #222222;
+      --ui: Helvetica, Arial, sans-serif;
+    }
+    body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--ui); }
+    .bar { background: var(--buy); color: white; height: 45px; display: flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.2px; }
+    main { max-width: 880px; margin: 0 auto; padding: 32px 24px 64px; }
+    h1 { font-weight: 400; font-size: 30px; letter-spacing: 0.5px; margin: 0 0 8px; }
+    p { line-height: 1.5; font-size: 14px; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0 28px; }
+    .swatch { width: 120px; }
+    .chip { height: 48px; border: 1px solid var(--line); }
+    .name { font-size: 12px; margin-top: 6px; letter-spacing: 0.5px; }
+    .hex { font-size: 12px; color: var(--muted); }
+    nav { display: flex; gap: 18px; font-size: 12px; letter-spacing: 0.5px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    nav .sale { color: var(--sale); }
+    .search { display: flex; width: 280px; height: 45px; border: 1px solid var(--muted); align-items: center; padding: 0 12px; color: var(--muted); font-size: 12px; margin: 16px 0; }
+    .buy { height: 48px; padding: 0 24px; border: 0; background: var(--buy); color: white; font: 14px var(--ui); }
+    .offer { color: var(--promo); font-size: 14px; }
+    .sizes { display: flex; gap: 8px; margin: 12px 0 20px; }
+    .sizes span { width: 44px; height: 36px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; font-size: 12px; }
+    footer { background: var(--wash); color: var(--ink); padding: 28px 24px; font-size: 12px; letter-spacing: 0.5px; }
+  </style>
+</head>
+<body>
+  <div class="bar">Extra 40% off all sale items</div>
+  <main>
+    <h1>Urban Outfitters</h1>
+    <p>Public signed-out tokens, measured 2026-11-22. One light theme. Controls are square.</p>
+    <nav>
+      <span>New</span>
+      <span>Women's</span>
+      <span>Men's</span>
+      <span>Home</span>
+      <span class="sale">Extra 40% Off Sale</span>
+    </nav>
+    <div class="search">What are you looking for?</div>
+    <div class="row">
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="name">page</div><div class="hex">#ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#222222"></div><div class="name">ink</div><div class="hex">#222222</div></div>
+      <div class="swatch"><div class="chip" style="background:#707070"></div><div class="name">muted</div><div class="hex">#707070</div></div>
+      <div class="swatch"><div class="chip" style="background:#dddddd"></div><div class="name">line</div><div class="hex">#dddddd</div></div>
+      <div class="swatch"><div class="chip" style="background:#f5f5f5"></div><div class="name">wash</div><div class="hex">#f5f5f5</div></div>
+      <div class="swatch"><div class="chip" style="background:#d83604"></div><div class="name">sale</div><div class="hex">#d83604</div></div>
+      <div class="swatch"><div class="chip" style="background:#3a8700"></div><div class="name">promo</div><div class="hex">#3a8700</div></div>
+    </div>
+    <p>$59.00</p>
+    <p class="offer">$50 off $150+ | $30 off $100+ | $15 off $75+</p>
+    <div class="sizes"><span>XXS</span><span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span></div>
+    <button class="buy" type="button">Get it before it's gone</button>
+  </main>
+  <footer>Help · Gift cards · Privacy policy · Terms of use</footer>
+</body>
+</html>
