@@ -1,0 +1,72 @@
+{
+  "slug": "raster",
+  "product": "Raster",
+  "domain": "raster.app",
+  "captured": "2026-11-21",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "email-link-and-google",
+  "session": "Playwright headless Chromium, signed out. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed. The email-link button was not clicked, so the email field was never revealed.",
+  "wall": {
+    "url": "https://raster.app/sign-in",
+    "title": "Sign In | Raster",
+    "asks": [
+      "Continue with Google",
+      "Email link to sign in"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "code_field": false,
+    "inputs": [
+      {"type": "email", "name": "email", "aria": "Email address", "placeholder": "Email", "filled": false, "visible_before_click": false}
+    ],
+    "note": "The heading is Sign in to Raster. The email field exists in the DOM and was empty. Email link to sign in was not clicked, so the field stayed hidden. Continue with Google was not clicked. A hidden cf-turnstile-response input was present and was not touched. The captcha was not solved."
+  },
+  "signup_wall": {
+    "url": "https://raster.app/sign-up",
+    "lands_on": "https://raster.app/sign-in",
+    "asks": ["Continue with Google", "Email link to sign in"],
+    "email_field": true,
+    "continued": false,
+    "note": "/sign-up, /signup, /login and /register redirect to /sign-in. There is no separate signup form. The same empty wall was photographed as signup-dark-default.png."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "deviceScaleFactor": 1,
+      "file": "screenshots/auth-dark-default.png"
+    },
+    "phone": {
+      "requested": "390x844",
+      "deviceScaleFactor": 2,
+      "file": "screenshots/mobile-auth-dark-default.png"
+    }
+  },
+  "offered": {
+    "nav": [
+      {"label": "Sign in", "opens": "/sign-in", "reached": "wall only"},
+      {"label": "Start for free", "opens": "/sign-in", "reached": "wall only"},
+      {"label": "Get started", "opens": "/sign-in", "reached": "wall only"},
+      {"label": "Sign in", "where": "phone drawer", "reached": "wall only"}
+    ]
+  },
+  "screens": [
+    {"name": "Sign-in wall, desktop, empty", "file": "screenshots/auth-dark-default.png"},
+    {"name": "Signup redirect, desktop, empty", "file": "screenshots/signup-dark-default.png"},
+    {"name": "Sign-in wall, phone, empty", "file": "screenshots/mobile-auth-dark-default.png"}
+  ],
+  "gaps": [
+    "login-extracted is not-started.",
+    "Continue with Google was not clicked.",
+    "Email link to sign in was not clicked. The email field was left empty and hidden.",
+    "The captcha was not solved.",
+    "The signed-in library, checkout, and billing were not reached.",
+    "Unknown paths redirect to /sign-in. There is no public 404 page."
+  ],
+  "not_submitted": [
+    "Continue with Google",
+    "Email link to sign in",
+    "Contact Sales",
+    "Book demo"
+  ]
+}
