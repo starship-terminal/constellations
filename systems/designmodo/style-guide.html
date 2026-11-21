@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Designmodo style guide</title>
+<style>
+  :root {
+    --ink: #313942;
+    --white: #ffffff;
+    --muted: #656a75;
+    --muted-hero: #c3cecb;
+    --green: #27ae60;
+    --green-hover: #1e8449;
+    --orange: #f49a40;
+    --blue: #2f80ed;
+    --field-border: #e0e5eb;
+    --field-text: #242424;
+    --page: #ffffff;
+    --sans: InterVariable, -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--ink); font: 400 16px/24px var(--sans); }
+  header { padding: 28px 32px 8px; }
+  h1 { font-size: 32px; line-height: 1.2; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 8px; }
+  h2 { font-size: 20px; margin: 32px 0 12px; }
+  p.note { color: var(--muted); max-width: 68ch; }
+  .wrap { padding: 8px 32px 64px; max-width: 980px; }
+  .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border-radius: 5px; border: 1px solid #e0e5eb; }
+  .swatch span { display: block; font-size: 13px; margin-top: 6px; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+  button, .btn { border: 0; color: var(--white); font: 600 15px/22.5px var(--sans); cursor: default; }
+  .pill { border-radius: 999px; }
+  .sq { border-radius: 5px; }
+  .signup { background: var(--orange); padding: 8px 18px; height: 38.5px; }
+  .open { background: var(--green); padding: 13px 28px; height: 53px; font-weight: 500; font-size: 18px; box-shadow: 0 4px 9px rgba(39, 174, 96, 0.15); }
+  .login { background: var(--blue); padding: 8px 17px; height: 38.5px; font-weight: 500; box-shadow: 0 4px 9px rgba(47, 128, 237, 0.15); }
+  input.demo { height: 50px; width: 280px; border: 1px solid var(--field-border); border-radius: 5px; padding: 14px 18px; font: 400 17px/normal var(--sans); color: var(--field-text); }
+  .hero { background: #0e231c; color: var(--white); padding: 28px; border-radius: 12px; }
+  .hero h3 { margin: 0 0 8px; font-size: 40px; line-height: 1.1; font-weight: 600; letter-spacing: -0.028em; }
+  .hero p { color: var(--muted-hero); font-size: 20px; line-height: 34px; margin: 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid #e0e5eb; vertical-align: top; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Designmodo</h1>
+  <p class="note">Public signed-out surface, measured 2026-11-21. One light theme. Values are computed styles from tokens.json. Roles marked not captured were not read.</p>
+</header>
+<div class="wrap">
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><span>page #ffffff</span></div>
+    <div class="swatch"><div class="chip" style="background:#313942"></div><span>ink #313942</span></div>
+    <div class="swatch"><div class="chip" style="background:#656a75"></div><span>muted #656a75</span></div>
+    <div class="swatch"><div class="chip" style="background:#27ae60"></div><span>green #27ae60</span></div>
+    <div class="swatch"><div class="chip" style="background:#1e8449"></div><span>green hover #1e8449</span></div>
+    <div class="swatch"><div class="chip" style="background:#f49a40"></div><span>orange #f49a40</span></div>
+    <div class="swatch"><div class="chip" style="background:#2f80ed"></div><span>blue #2f80ed</span></div>
+    <div class="swatch"><div class="chip" style="background:#0e231c"></div><span>hero ground not tokenised</span></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font-size:56px;line-height:61.6px;font-weight:600;letter-spacing:-1.568px;margin:0">Display 56 / 600</p>
+  <p style="font-size:24px;line-height:32.4px;font-weight:700;letter-spacing:-0.48px">Heading 24 / 700</p>
+  <p style="font-size:20px;line-height:34px">Lede 20 / 400</p>
+  <p>Body 16 / 400</p>
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="pill signup">Sign Up</button>
+    <button class="pill open">Open App</button>
+    <button class="sq login">Login</button>
+  </div>
+  <h2>Field</h2>
+  <input class="demo" placeholder="Your Email" readonly>
+  <h2>Hero sample</h2>
+  <div class="hero">
+    <h3>Level up email &amp; web designs faster</h3>
+    <p>An AI email builder for beautiful, responsive newsletters.</p>
+  </div>
+  <h2>Not captured</h2>
+  <table>
+    <tr><th>Role</th><th>Why</th></tr>
+    <tr><td>Dark theme</td><td>colorScheme was normal. No theme toggle on the public pages.</td></tr>
+    <tr><td>Focus ring</td><td>Sign Up focus-visible did not paint a ring (outline width 0).</td></tr>
+    <tr><td>Pressed, disabled, loading, error</td><td>Not reached without submitting a form.</td></tr>
+    <tr><td>Hero page background</td><td>Visible in screenshots. Not read as a computed background on a named element, so it is not a token.</td></tr>
+  </table>
+</div>
+</body>
+</html>

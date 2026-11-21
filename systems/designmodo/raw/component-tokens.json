@@ -1,0 +1,115 @@
+{
+  "_note": "Leaves are measured computed styles from raw/components-computed.json, captured 2026-11-21 from public signed-out designmodo.com. A role that was not read is omitted. Not captured roles stay out of this file.",
+  "color": {
+    "ink": { "type": "color", "value": "rgb(49, 57, 66)", "source": "Measured: getComputedStyle(body).color on https://designmodo.com/ 2026-11-21, raw/components-computed.json pages.home.body" },
+    "white": { "type": "color", "value": "rgb(255, 255, 255)", "source": "Measured: getComputedStyle(h1).color on home hero, pages.home.h1" },
+    "mutedHero": { "type": "color", "value": "rgb(195, 206, 203)", "source": "Measured: getComputedStyle of the hero paragraph, pages.home.p" },
+    "muted": { "type": "color", "value": "rgb(101, 106, 117)", "source": "Measured: colour-use count on home, 61 elements, raw/components-computed.json counts.home.colors" },
+    "green": { "type": "color", "value": "rgb(39, 174, 96)", "source": "Measured: Open App button backgroundColor, states.openAppDefault" },
+    "greenHover": { "type": "color", "value": "rgb(30, 132, 73)", "source": "Measured: Open App button backgroundColor on hover, states.openAppHover" },
+    "orange": { "type": "color", "value": "rgb(244, 154, 64)", "source": "Measured: Sign Up button backgroundColor, states.signupDefault and pages.sign-in.signUp" },
+    "blue": { "type": "color", "value": "rgb(47, 128, 237)", "source": "Measured: Login submit button backgroundColor, pages.sign-in.primaryButton" },
+    "fieldBorder": { "type": "color", "value": "rgb(224, 229, 235)", "source": "Measured: email input borderTopColor, pages.sign-in.field" },
+    "fieldText": { "type": "color", "value": "rgb(36, 36, 36)", "source": "Measured: email input color, pages.sign-in.field" },
+    "page": { "type": "color", "value": "rgb(255, 255, 255)", "source": "Measured: colour-use count, most common painted background on home (46 elements), counts.home.colors bg rgb(255, 255, 255). body backgroundColor itself is transparent." }
+  },
+  "font": {
+    "sans": { "type": "fontFamily", "value": "InterVariable, -apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif", "source": "Measured: getComputedStyle(body).fontFamily on home" }
+  },
+  "typography": {
+    "display": {
+      "type": "typography",
+      "value": {
+        "fontFamily": "InterVariable, -apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif",
+        "fontSize": "56px",
+        "fontWeight": 600,
+        "lineHeight": "61.6px",
+        "letterSpacing": "-1.568px"
+      },
+      "source": "Measured: home h1, pages.home.h1"
+    },
+    "heading": {
+      "type": "typography",
+      "value": {
+        "fontFamily": "InterVariable, -apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif",
+        "fontSize": "24px",
+        "fontWeight": 700,
+        "lineHeight": "32.4px",
+        "letterSpacing": "-0.48px"
+      },
+      "source": "Measured: sign-in h1.h4, pages.sign-in.h1"
+    },
+    "body": {
+      "type": "typography",
+      "value": {
+        "fontFamily": "InterVariable, -apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": 400,
+        "lineHeight": "24px",
+        "letterSpacing": "0px"
+      },
+      "source": "Measured: body on home, pages.home.body. letterSpacing was the keyword normal, recorded as 0px."
+    },
+    "lede": {
+      "type": "typography",
+      "value": {
+        "fontFamily": "InterVariable, -apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif",
+        "fontSize": "20px",
+        "fontWeight": 400,
+        "lineHeight": "34px",
+        "letterSpacing": "-0.2px"
+      },
+      "source": "Measured: home hero paragraph, pages.home.p"
+    },
+    "label": {
+      "type": "typography",
+      "value": {
+        "fontFamily": "InterVariable, -apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": 600,
+        "lineHeight": "22.5px",
+        "letterSpacing": "0px"
+      },
+      "source": "Measured: Sign Up button, states.signupDefault"
+    },
+    "button": {
+      "type": "typography",
+      "value": {
+        "fontFamily": "InterVariable, -apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif",
+        "fontSize": "18px",
+        "fontWeight": 500,
+        "lineHeight": "27px",
+        "letterSpacing": "0px"
+      },
+      "source": "Measured: Open App button, states.openAppDefault"
+    }
+  },
+  "radius": {
+    "field": { "type": "dimension", "value": "5px", "source": "Measured: sign-in email input and Login button borderRadius, pages.sign-in.field and pages.sign-in.primaryButton. Also the most common radius on home (25 elements)." },
+    "pill": { "type": "dimension", "value": "999px", "source": "Measured: Sign Up and Open App borderRadius, states.signupDefault and states.openAppDefault" }
+  },
+  "space": {
+    "navX": { "type": "dimension", "value": "15px", "source": "Measured: Apps nav link paddingLeft, pages.home.navLink" },
+    "buttonY": { "type": "dimension", "value": "8px", "source": "Measured: Sign Up paddingTop, states.signupDefault" },
+    "buttonX": { "type": "dimension", "value": "18px", "source": "Measured: Sign Up paddingLeft, states.signupDefault" },
+    "openAppY": { "type": "dimension", "value": "13px", "source": "Measured: Open App paddingTop, states.openAppDefault" },
+    "openAppX": { "type": "dimension", "value": "28px", "source": "Measured: Open App paddingLeft, states.openAppDefault" },
+    "fieldY": { "type": "dimension", "value": "14px", "source": "Measured: email input paddingTop, pages.sign-in.field" },
+    "fieldX": { "type": "dimension", "value": "18px", "source": "Measured: email input paddingLeft, pages.sign-in.field" }
+  },
+  "size": {
+    "navItem": { "type": "dimension", "value": "70px", "source": "Measured: Apps link height, pages.home.navLink" },
+    "signUp": { "type": "dimension", "value": "38.5px", "source": "Measured: Sign Up height, states.signupDefault" },
+    "openApp": { "type": "dimension", "value": "53px", "source": "Measured: Open App height, states.openAppDefault" },
+    "field": { "type": "dimension", "value": "50px", "source": "Measured: email input height, pages.sign-in.field" },
+    "login": { "type": "dimension", "value": "38.5px", "source": "Measured: Login submit height, pages.sign-in.primaryButton" }
+  },
+  "border": {
+    "field": { "type": "dimension", "value": "1px", "source": "Measured: email input borderTopWidth, pages.sign-in.field" }
+  },
+  "shadow": {
+    "green": { "type": "shadow", "value": "0px 4px 9px 0px rgba(39, 174, 96, 0.15)", "source": "Measured: Open App boxShadow, states.openAppDefault" },
+    "greenHover": { "type": "shadow", "value": "0px 6px 12px 0px rgba(39, 174, 96, 0.2)", "source": "Measured: Open App boxShadow on hover, states.openAppHover" },
+    "blue": { "type": "shadow", "value": "0px 4px 9px 0px rgba(47, 128, 237, 0.15)", "source": "Measured: Login submit boxShadow, pages.sign-in.primaryButton" }
+  }
+}
