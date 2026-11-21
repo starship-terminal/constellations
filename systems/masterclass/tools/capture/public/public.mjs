@@ -75,6 +75,12 @@ const desktop = {
       await p.getByRole('button', { name: 'Browse', exact: true }).click();
       await wait(p, 700);
       await S.view('browse');
+      const food = p.getByRole('button', { name: 'Food & Drink', exact: true }).first();
+      if (await food.count()) {
+        await food.click();
+        await wait(p, 600);
+        await S.view('browse-food');
+      }
       await p.keyboard.press('Escape');
       await wait(p, 300);
     });
@@ -142,6 +148,11 @@ const desktop = {
   terms: { path: '/terms', run: async (p, S) => { await hidePromo(p); await S.view('default'); } },
   sitemap: { path: '/sitemap', run: async (p, S) => { await hidePromo(p); await S.view('default'); } },
   notfound: { path: '/this-page-is-not-a-real-masterclass-route', run: async (p, S) => { await S.view('default'); } },
+  login: { path: '/auth/login', run: async (p, S) => {
+    // Wall only. Do not click Google, Apple, or any identity provider. Do not type.
+    await S.view('wall');
+    log('  login url', p.url());
+  } },
 };
 
 const mobile = {
@@ -153,7 +164,21 @@ const mobile = {
       await p.getByRole('button', { name: 'Browse', exact: true }).click();
       await wait(p, 700);
       await S.view('browse');
+      await p.keyboard.press('Escape');
     });
+    await step('menu', async () => {
+      const menu = p.getByRole('button', { name: 'Menu', exact: true }).first();
+      if (await menu.count()) {
+        await menu.click();
+        await wait(p, 700);
+        await S.view('menu');
+        await p.keyboard.press('Escape');
+      }
+    });
+  } },
+  login: { path: '/auth/login', run: async (p, S) => {
+    await S.view('wall');
+    log('  login url', p.url());
   } },
   categories: { path: '/categories', run: async (p, S) => { await hidePromo(p); await S.view('default'); } },
   class: { path: '/classes/gordon-ramsay-teaches-cooking', run: async (p, S) => { await hidePromo(p); await S.view('default'); await S.full(); } },
