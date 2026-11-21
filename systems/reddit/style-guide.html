@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Reddit public tokens</title>
+  <style>
+    :root {
+      --page: #FFFFFF;
+      --surface: #F6F8F9;
+      --text: #181C1F;
+      --text-secondary: #333D42;
+      --text-weak: #5C6C74;
+      --border: #00000033;
+      --accent: #D93900;
+      --orangered: #FF4500;
+      --link: #115BCA;
+      --secondary: #E5EBEE;
+      --upvote: #D93900;
+      --downvote: #6A5CFF;
+      --danger: #EB001F;
+      --success: #008A10;
+      --warning: #B78800;
+      --on-accent: #FFFFFF;
+    }
+    body { margin: 0; background: var(--page); color: var(--text); font: 14px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+    h1 { font-size: 32px; line-height: 36px; font-weight: 700; margin: 0 0 8px; }
+    p { color: var(--text-secondary); }
+    a { color: var(--link); }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+    .swatch { width: 140px; }
+    .chip { height: 56px; border-radius: 8px; border: 1px solid var(--border); }
+    .name { font-size: 12px; color: var(--text-weak); margin-top: 4px; }
+    button { height: 40px; padding: 0 12px; border-radius: 999px; border: 0; font-weight: 600; }
+    .primary { background: var(--accent); color: var(--on-accent); }
+    .quiet { background: var(--secondary); color: var(--text); }
+    .card { background: var(--surface); border-radius: 20px; padding: 16px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Reddit</h1>
+    <p>Light tokens from the public homepage. <a href="tokens.json">tokens.json</a></p>
+    <div class="row">
+      <button class="primary">Log In</button>
+      <button class="quiet">Sign Up</button>
+    </div>
+    <div class="card">Page #FFFFFF, surface #F6F8F9, accent #D93900, wordmark #FF4500.</div>
+    <div class="row">
+      <div class="swatch"><div class="chip" style="background:#FFFFFF"></div><div class="name">page</div></div>
+      <div class="swatch"><div class="chip" style="background:#F6F8F9"></div><div class="name">surface</div></div>
+      <div class="swatch"><div class="chip" style="background:#D93900"></div><div class="name">accent</div></div>
+      <div class="swatch"><div class="chip" style="background:#FF4500"></div><div class="name">orangered</div></div>
+      <div class="swatch"><div class="chip" style="background:#115BCA"></div><div class="name">link</div></div>
+      <div class="swatch"><div class="chip" style="background:#181C1F"></div><div class="name">text</div></div>
+    </div>
+  </main>
+</body>
+</html>
