@@ -1,8 +1,8 @@
 # GlossGenius component measurements
 
-Computed styles read from glossgenius.com, app.glossgenius.com and honeyhivesalon.glossgenius.com on 2026-11-16 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the public surfaces — the light-only Webflow marketing pages, the signed-out /login, /signup and /forgot-password forms of the app, and a real published booking website (every business gets a public <name>.glossgenius.com site; the service list, professional select and /book date-picker step) — with any consent layer hidden (never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from glossgenius.com, app.glossgenius.com and bookings.glossgenius.com on 2026-11-21 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the public surfaces — the light-only Webflow marketing pages, the signed-out /login, /signup and /forgot-password forms of the app, and a real published booking website (bookings.glossgenius.com; the service list and the empty /booking-flow date-picker, both selects closed) — with any consent layer hidden (never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
-States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
+States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into and left empty; nothing was typed; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
 ## Components
 
@@ -68,20 +68,20 @@ Page: home. Selector: `header Pricing link`. States: default, hover, focus-visib
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 75 x 72 | = | = | = |
+| Size (w x h) | 73.2 x 72 | = | = | = |
 | Padding | 24px 12px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #101010 offset 1px | = |
+| Outline | none | = | 1px auto #005fcc offset 1px | = |
 | Font | Basel Grotesk Book 16px/24px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
 | Transition | color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.nav-link.u-z-index-1 75.0x72.0 outline 1px auto #101010 offset 1px | = |
+| Painted layers | - | = | a.nav-link.u-z-index-1 73.2x72.0 outline 1px auto #005fcc offset 1px | = |
 
 Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-focus-visible.png`, `nav-link-pressed.png`.
 
@@ -93,7 +93,7 @@ Page: home. Selector: `nav How it works trigger`. States: default, hover, focus-
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 139 x 72 | = | = | = | = |
+| Size (w x h) | 135.81 x 72 | = | = | = | = |
 | Padding | 24px 12px | = | = | = | = |
 | Border | none | = | = | = | = |
 | Radius | 0px | = | = | = | = |
@@ -118,7 +118,7 @@ Page: home. Selector: `.nav-list--dropdown a`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 104 x 41.59 |
+| Size (w x h) | 103.42 x 41.59 |
 | Padding | 8px |
 | Gap | 0px |
 | Border | none |
@@ -144,7 +144,7 @@ Page: home. Selector: `header Log in`. States: default, hover, focus-visible, pr
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 94 x 48.41 | = | = | = |
+| Size (w x h) | 92.94 x 48.41 | = | = | = |
 | Padding | 0px | = | = | = |
 | Gap | 8px | = | = | = |
 | Border | 1px solid #000000 @ 0 | = | = | = |
@@ -158,7 +158,7 @@ Page: home. Selector: `header Log in`. States: default, hover, focus-visible, pr
 | Text node | div: Basel Grotesk Book 16px/22.4px 400, #ffffff | = | = | = |
 | Transition | color, background-color, box-shadow, border-color 0.5s, 0.5s, 0.5s, 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1) delay 0s, 0s, 0s, 0s | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.btn_new.w-variant-325a472b-1f0c-1e9e-2bfc-28654d2d9a2a 94.0x48.4 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | = | a.btn_new.w-variant-325a472b-1f0c-1e9e-2bfc-28654d2d9a2a 94.0x48.4 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset outline 1px solid #17150e offset 1.5px | = |
+| Painted layers | a.btn_new.w-variant-325a472b-1f0c-1e9e-2bfc-28654d2d9a2a 92.9x48.4 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | = | a.btn_new.w-variant-325a472b-1f0c-1e9e-2bfc-28654d2d9a2a 92.9x48.4 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset outline 1px solid #17150e offset 1.5px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `nav-login-default.png`, `nav-login-hover.png`, `nav-login-focus-visible.png`, `nav-login-pressed.png`.
@@ -171,12 +171,12 @@ Page: home. Selector: `header Book a demo`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 143 x 48.41 | = | = | = |
+| Size (w x h) | 142.72 x 48.41 | = | = | = |
 | Padding | 0px | = | = | = |
 | Gap | 8px | = | = | = |
 | Border | 1px solid #f0f7f6 | = | = | = |
 | Radius | 1440px | = | = | = |
-| Background | transparent | = | = | #17150e @ 0.0282147 |
+| Background | transparent | #17150e @ 0.0998077 | = | #17150e @ 0.0987439 |
 | Box shadow | #000000 @ 0 0px 0px 0px 0px inset | = | = | = |
 | Outline | none | = | 1px solid #17150e offset 1.5px | = |
 | Font | Basel Grotesk Book 16px/22.4px 400 | = | = | = |
@@ -185,7 +185,7 @@ Page: home. Selector: `header Book a demo`. States: default, hover, focus-visibl
 | Text node | div: Basel Grotesk Book 16px/22.4px 400, #ffffff | = | = | = |
 | Transition | color, background-color, box-shadow, border-color 0.5s, 0.5s, 0.5s, 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1) delay 0s, 0s, 0s, 0s | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 143.0x48.4 border T:1px #f0f7f6 / R:1px #f0f7f6 / B:1px #f0f7f6 / L:1px #f0f7f6 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 143.0x48.4 bg #000000 @ 0 border T:1px #f0f7f6 / R:1px #f0f7f6 / B:1px #f0f7f6 / L:1px #f0f7f6 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 143.0x48.4 border T:1px #f0f7f6 / R:1px #f0f7f6 / B:1px #f0f7f6 / L:1px #f0f7f6 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset outline 1px solid #17150e offset 1.5px | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 143.0x48.4 bg #17150e @ 0.0282147 border T:1px #f0f7f6 / R:1px #f0f7f6 / B:1px #f0f7f6 / L:1px #f0f7f6 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset |
+| Painted layers | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 142.7x48.4 border T:1px #f0f7f6 / R:1px #f0f7f6 / B:1px #f0f7f6 / L:1px #f0f7f6 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 142.7x48.4 bg #17150e @ 0.0998077 border T:1px #f0f7f6 / R:1px #f0f7f6 / B:1px #f0f7f6 / L:1px #f0f7f6 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 142.7x48.4 border T:1px #f0f7f6 / R:1px #f0f7f6 / B:1px #f0f7f6 / L:1px #f0f7f6 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset outline 1px solid #17150e offset 1.5px | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 142.7x48.4 bg #17150e @ 0.0987439 border T:1px #f0f7f6 / R:1px #f0f7f6 / B:1px #f0f7f6 / L:1px #f0f7f6 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `nav-demo-default.png`, `nav-demo-hover.png`, `nav-demo-focus-visible.png`, `nav-demo-pressed.png`.
@@ -204,14 +204,14 @@ Page: home. Selector: `.gg-support-btn`. States: default, hover, focus-visible, 
 | Radius | 1440px | = | = | = |
 | Background | #17150e | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #101010 offset 0px | = |
+| Outline | none | = | 1px auto #005fcc offset 0px | = |
 | Font | Basel Grotesk Book 16px/22.4px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #f0f7f6 | = | = | = |
 | Text node | span.icon_new.w-variant-677e82ce-51de-5fa2-88f1-c453538ba1c5: remixicon 20px/20px 400, #f0f7f6 | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | button.gg-support-btn 56.0x56.0 bg #17150e r 1440px | = | button.gg-support-btn 56.0x56.0 bg #17150e r 1440px outline 1px auto #101010 offset 0px | = |
+| Painted layers | button.gg-support-btn 56.0x56.0 bg #17150e r 1440px | = | button.gg-support-btn 56.0x56.0 bg #17150e r 1440px outline 1px auto #005fcc offset 0px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `gg-support-default.png`, `gg-support-hover.png`, `gg-support-focus-visible.png`, `gg-support-pressed.png`.
@@ -226,7 +226,7 @@ Page: home. Selector: `.eyebrow_new`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 96 x 22.39 |
+| Size (w x h) | 94.39 x 22.39 |
 | Padding | 0px |
 | Gap | 8px |
 | Border | none |
@@ -275,12 +275,12 @@ Page: home. Selector: `hero Start free trial`. States: default, hover, focus-vis
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 154.39 x 48.41 | = | = | = |
+| Size (w x h) | 153.64 x 48.41 | = | = | = |
 | Padding | 0px | = | = | = |
 | Gap | 8px | = | = | = |
 | Border | 1px solid #000000 @ 0 | = | = | = |
 | Radius | 1440px | = | = | = |
-| Background | #ffffff | #e1e0e0 | = | #e1e1e0 |
+| Background | #ffffff | #e1e1e0 | = | #e1e1e0 |
 | Box shadow | #000000 @ 0 0px 0px 0px 0px inset | = | = | = |
 | Outline | none | = | 1px solid #17150e offset 1.5px | = |
 | Font | Basel Grotesk Book 16px/22.4px 400 | = | = | = |
@@ -289,7 +289,7 @@ Page: home. Selector: `hero Start free trial`. States: default, hover, focus-vis
 | Text node | span.icon_new.w-variant-7af529f9-3bfd-fc24-81c8-b7eb88c81c1a: remixicon 16px/16px 400, #17150e | = | = | = |
 | Transition | color, background-color, box-shadow, border-color 0.5s, 0.5s, 0.5s, 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1) delay 0s, 0s, 0s, 0s | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.btn_new.w-variant-325a472b-1f0c-1e9e-2bfc-28654d2d9a2a 154.4x48.4 bg #ffffff border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | a.btn_new.w-variant-325a472b-1f0c-1e9e-2bfc-28654d2d9a2a 154.4x48.4 bg #e1e0e0 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | a.btn_new.w-variant-325a472b-1f0c-1e9e-2bfc-28654d2d9a2a 154.4x48.4 bg #ffffff border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset outline 1px solid #17150e offset 1.5px | a.btn_new.w-variant-325a472b-1f0c-1e9e-2bfc-28654d2d9a2a 154.4x48.4 bg #e1e1e0 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset |
+| Painted layers | a.btn_new.w-variant-325a472b-1f0c-1e9e-2bfc-28654d2d9a2a 153.6x48.4 bg #ffffff border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | a.btn_new.w-variant-325a472b-1f0c-1e9e-2bfc-28654d2d9a2a 153.6x48.4 bg #e1e1e0 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | a.btn_new.w-variant-325a472b-1f0c-1e9e-2bfc-28654d2d9a2a 153.6x48.4 bg #ffffff border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset outline 1px solid #17150e offset 1.5px | a.btn_new.w-variant-325a472b-1f0c-1e9e-2bfc-28654d2d9a2a 153.6x48.4 bg #e1e1e0 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`, `hero-cta-pressed.png`.
@@ -302,23 +302,24 @@ Page: home. Selector: `hero Get a demo`. States: default, hover, focus-visible, 
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 99 x 33.59 | = | - | = |
-| Padding | 8px | = | - | = |
-| Gap | 8px | = | - | = |
-| Border | none | = | - | = |
-| Radius | 0px | = | - | = |
-| Background | transparent | = | - | = |
-| Box shadow | none | = | - | = |
-| Outline | none | = | - | = |
-| Font | Basel Grotesk Book 16px/17.6px 400 | = | - | = |
-| Letter spacing | normal | = | - | = |
-| Colour | #17150e | = | - | = |
-| Transition | opacity 0.75s cubic-bezier(0.165, 0.84, 0.44, 1) | = | - | = |
-| Cursor | pointer | = | - | = |
-| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
-| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
+| Size (w x h) | 142.72 x 48.41 | = | = | = |
+| Padding | 0px | = | = | = |
+| Gap | 8px | = | = | = |
+| Border | 1px solid #17150e | 1px solid #17150e @ 0.700579 | = | 1px solid #17150e @ 0.703768 |
+| Radius | 1440px | = | = | = |
+| Background | transparent | #17150e @ 0.0998069 | = | #17150e @ 0.0987439 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px inset | = | = | = |
+| Outline | none | = | 1px solid #17150e offset 1.5px | = |
+| Font | Basel Grotesk Book 16px/22.4px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #17150e | = | = | = |
+| Text node | div: Basel Grotesk Book 16px/22.4px 400, #17150e | = | = | = |
+| Transition | color, background-color, box-shadow, border-color 0.5s, 0.5s, 0.5s, 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1) delay 0s, 0s, 0s, 0s | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 142.7x48.4 border T:1px #17150e / R:1px #17150e / B:1px #17150e / L:1px #17150e r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 142.7x48.4 bg #17150e @ 0.0998069 border T:1px #17150e @ 0.700579 / R:1px #17150e @ 0.700579 / B:1px #17150e @ 0.700579 / L:1px #17150e @ 0.700579 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 142.7x48.4 border T:1px #17150e / R:1px #17150e / B:1px #17150e / L:1px #17150e r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset outline 1px solid #17150e offset 1.5px | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 142.7x48.4 bg #17150e @ 0.0987439 border T:1px #17150e @ 0.703768 / R:1px #17150e @ 0.703768 / B:1px #17150e @ 0.703768 / L:1px #17150e @ 0.703768 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: `hero-demo-default.png`, `hero-demo-hover.png`, `hero-demo-pressed.png`.
+Crops: `hero-demo-default.png`, `hero-demo-hover.png`, `hero-demo-focus-visible.png`, `hero-demo-pressed.png`.
 
 #### home-h2
 
@@ -328,7 +329,7 @@ Page: home. Selector: `home h2`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 96 x 22.39 |
+| Size (w x h) | 94.39 x 22.39 |
 | Padding | 0px |
 | Gap | 8px |
 | Border | none |
@@ -432,7 +433,7 @@ Page: pricing. Selector: `.toggle_new`. States: default, hover, focus-visible, p
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 307 x 32 | = | = | = | = |
+| Size (w x h) | 305.3 x 32 | = | = | = | = |
 | Padding | 0px | = | = | = | = |
 | Border | none | = | = | = | = |
 | Radius | 0px | = | = | = | = |
@@ -444,7 +445,7 @@ Page: pricing. Selector: `.toggle_new`. States: default, hover, focus-visible, p
 | Colour | #17150e | = | = | = | = |
 | Text node | span: Basel Grotesk Book 16px/19.2px 500, #778280 | = | = | = | span: Basel Grotesk Book 16px/19.2px 500, #17150e |
 | Transition | none | = | = | = | = |
-| Painted layers | input.toggle_new__checkbox 64.0x32.0 bg #17150e r 1440px; input::before.toggle_new__checkbox 24pxx24px bg #f0f7f6 r 50% | = | input.toggle_new__checkbox 64.0x32.0 bg #17150e r 1440px outline 1px auto #101010 offset 2px; input::before.toggle_new__checkbox 24pxx24px bg #f0f7f6 r 50% | = | input.toggle_new__checkbox 64.0x32.0 bg #778280 r 1440px; input::before.toggle_new__checkbox 24pxx24px bg #f0f7f6 r 50% |
+| Painted layers | input.toggle_new__checkbox 64.0x32.0 bg #17150e r 1440px; input::before.toggle_new__checkbox 24pxx24px bg #f0f7f6 r 50% | = | input.toggle_new__checkbox 64.0x32.0 bg #17150e r 1440px outline 1px auto #005fcc offset 2px; input::before.toggle_new__checkbox 24pxx24px bg #f0f7f6 r 50% | = | input.toggle_new__checkbox 64.0x32.0 bg #778280 r 1440px; input::before.toggle_new__checkbox 24pxx24px bg #f0f7f6 r 50% |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | clicked the Monthly/Annual switch input to show monthly prices (annual is the default) |
 
 Crops: `ptoggle-default.png`, `ptoggle-hover.png`, `ptoggle-focus-visible.png`, `ptoggle-pressed.png`, `ptoggle-opened.png`.
@@ -548,7 +549,7 @@ Page: pricing. Selector: `.card_new popular`. States: default, hover.
 | Colour | #17150e | = |
 | Text node | h3.h3_new: Basel Grotesk Book 40px/40px 500, #17150e, ls -1.2px | = |
 | Transition | background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) | = |
-| Painted layers | div.card_new.card_new--pricing-small 389.3x629.2 bg #ffffff r 16px; div.tag.w-variant-7e9897a3-00c5-24cf-4cb3-2bdd969fa01a 128.0x37.2 bg #e89c2a border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px; div.pricing-table-row 357.3x52.6 border T:1px #a0afb0 @ 0.7; div.pricing-table-row 357.3x52.6 border T:1px #a0afb0 @ 0.7; a.btn_new.w-inline-block 357.3x48.4 bg #17150e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | = |
+| Painted layers | div.card_new.card_new--pricing-small 389.3x629.2 bg #ffffff r 16px; div.tag.w-variant-7e9897a3-00c5-24cf-4cb3-2bdd969fa01a 128.2x37.2 bg #e89c2a border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px; div.pricing-table-row 357.3x52.6 border T:1px #a0afb0 @ 0.7; div.pricing-table-row 357.3x52.6 border T:1px #a0afb0 @ 0.7; a.btn_new.w-inline-block 357.3x48.4 bg #17150e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | = |
 | How | at rest | mouse hover |
 
 Crops: `plan-card-popular-default.png`, `plan-card-popular-hover.png`.
@@ -591,8 +592,8 @@ Page: pricing. Selector: `.card-main action`. States: default, hover, focus-visi
 | Gap | 8px | = | = | = |
 | Border | 1px solid #000000 @ 0 | = | = | = |
 | Radius | 1440px | = | = | = |
-| Background | #17150e | #17150e @ 0.800164 | = | #17150e @ 0.8 |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px inset | = | = | none |
+| Background | #17150e | #17150e @ 0.800386 | = | #17150e @ 0.801763 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px inset | = | = | = |
 | Outline | none | = | 1px solid #17150e offset 1.5px | = |
 | Font | Basel Grotesk Book 16px/22.4px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
@@ -600,7 +601,7 @@ Page: pricing. Selector: `.card-main action`. States: default, hover, focus-visi
 | Text node | div: Basel Grotesk Book 16px/22.4px 400, #f0f7f6 | = | = | = |
 | Transition | color, background-color, box-shadow, border-color 0.5s, 0.5s, 0.5s, 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1) delay 0s, 0s, 0s, 0s | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.btn_new.w-inline-block 357.3x48.4 bg #17150e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | a.btn_new.w-inline-block 357.3x48.4 bg #17150e @ 0.800164 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | a.btn_new.w-inline-block 357.3x48.4 bg #17150e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset outline 1px solid #17150e offset 1.5px | a.btn_new.w-inline-block 357.3x48.4 bg #17150e @ 0.8 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px |
+| Painted layers | a.btn_new.w-inline-block 357.3x48.4 bg #17150e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | a.btn_new.w-inline-block 357.3x48.4 bg #17150e @ 0.800386 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | a.btn_new.w-inline-block 357.3x48.4 bg #17150e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset outline 1px solid #17150e offset 1.5px | a.btn_new.w-inline-block 357.3x48.4 bg #17150e @ 0.801763 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-focus-visible.png`, `plan-cta-pressed.png`.
@@ -654,7 +655,7 @@ Page: pricing. Selector: `.pricing-table-nav__plan`. States: default, hover, foc
 | Painted layers | div.label_new.u-bg-gloss-white 323.0x42.4 bg #f0f7f6 r 8px; a.btn_new.w-inline-block 323.0x48.4 bg #17150e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | = | div.label_new.u-bg-gloss-white 323.0x42.4 bg #f0f7f6 r 8px; a.btn_new.w-inline-block 323.0x48.4 bg #17150e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset outline 1px solid #17150e offset 1.5px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: `ptab-nav-default.png`, `ptab-nav-hover.png`, `ptab-nav-pressed.png`.
+Crops: `ptab-nav-default.png`, `ptab-nav-hover.png`, `ptab-nav-focus-visible.png`, `ptab-nav-pressed.png`.
 
 #### faq-item
 
@@ -833,58 +834,6 @@ Page: demo. Selector: `demo h1`. States: default.
 
 Crops: `demo-h1-default.png`.
 
-#### demo-field
-
-Demo text field. A step-2 text input (firstname/lastname); measured with the step-2 wrapper unhidden — focused and typed into then cleared, never submitted.
-
-Page: demo. Selector: `form.form-new input.input_new`. States: default, focused, filled.
-
-| Property | default | focused | filled |
-|---|---|---|---|
-| Size (w x h) | 244 x 56 | = | = |
-| Padding | 19.2px 16px 0px 16px | = | = |
-| Border | 1px solid #000000 @ 0 | 1px solid #17150e | 1px solid #17150e |
-| Radius | 12px | = | = |
-| Background | #ffffff | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | Basel Grotesk Book 16px/16px 500 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #17150e | = | = |
-| Transition | background-color, border-color 0.3s, 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1) delay 0s, 0s | = | = |
-| Cursor | text | = | = |
-| Placeholder | #000000 @ 0, opacity 1 | = | = |
-| Painted layers | input.input_new.u-w-100 244.0x56.0 bg #ffffff border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 12px | input.input_new.u-w-100 244.0x56.0 bg #ffffff border T:1px #17150e / R:1px #17150e / B:1px #17150e / L:1px #17150e r 12px | input.input_new.u-w-100 244.0x56.0 bg #ffffff border T:1px #17150e / R:1px #17150e / B:1px #17150e / L:1px #17150e r 12px |
-| How | at rest | clicked into the field | typed "Example name", then deleted; nothing sent |
-
-Crops: `demo-field-default.png`, `demo-field-focused.png`, `demo-field-filled.png`.
-
-#### demo-email
-
-Demo email field. The step-2 e-mail input; measured with the step-2 wrapper unhidden — focused and typed into then cleared, never submitted.
-
-Page: demo. Selector: `form.form-new email input`. States: default, focused, filled.
-
-| Property | default | focused | filled |
-|---|---|---|---|
-| Size (w x h) | 244 x 56 | = | = |
-| Padding | 19.2px 16px 0px 16px | = | = |
-| Border | 1px solid #000000 @ 0 | 1px solid #17150e | 1px solid #17150e |
-| Radius | 12px | = | = |
-| Background | #ffffff | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | Basel Grotesk Book 16px/16px 500 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #17150e | = | = |
-| Transition | background-color, border-color 0.3s, 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1) delay 0s, 0s | = | = |
-| Cursor | text | = | = |
-| Placeholder | #000000 @ 0, opacity 1 | = | = |
-| Painted layers | input.input_new.u-w-100 244.0x56.0 bg #ffffff border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 12px | input.input_new.u-w-100 244.0x56.0 bg #ffffff border T:1px #17150e / R:1px #17150e / B:1px #17150e / L:1px #17150e r 12px | input.input_new.u-w-100 244.0x56.0 bg #ffffff border T:1px #17150e / R:1px #17150e / B:1px #17150e / L:1px #17150e r 12px |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
-
-Crops: `demo-email-default.png`, `demo-email-focused.png`, `demo-email-filled.png`.
-
 #### demo-select
 
 Demo select. A step-2 native <select> (professional type / team size / booking system); measured with the step-2 wrapper unhidden — focused, never changed or submitted.
@@ -940,32 +889,6 @@ Page: demo. Selector: `#email-form label.radio_new`. States: default, hover.
 
 Crops: `demo-radio-default.png`, `demo-radio-hover.png`.
 
-#### demo-submit
-
-Demo submit. The step-2 "Submit" button; measured with the step-2 wrapper unhidden but never clicked — nothing was sent.
-
-Page: demo. Selector: `form.form-new submit`. States: default, hover, focus-visible, pressed.
-
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 504 x 48.41 | = | = | = |
-| Padding | 12px 48px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | 1px solid #000000 @ 0 | = | = | = |
-| Radius | 1440px | = | = | = |
-| Background | #17150e | #17150e @ 0.800386 | = | #17150e @ 0.800718 |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px inset | = | = | = |
-| Outline | none | = | 1px solid #17150e offset 1.5px | = |
-| Font | Basel Grotesk Book 16px/22.4px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #f0f7f6 | = | = | = |
-| Transition | color, background-color, box-shadow, border-color 0.5s, 0.5s, 0.5s, 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1) delay 0s, 0s, 0s, 0s | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | button.btn_new.btn_new--submit 504.0x48.4 bg #17150e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | button.btn_new.btn_new--submit 504.0x48.4 bg #17150e @ 0.800386 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | button.btn_new.btn_new--submit 504.0x48.4 bg #17150e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset outline 1px solid #17150e offset 1.5px | button.btn_new.btn_new--submit 504.0x48.4 bg #17150e @ 0.800718 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-
-Crops: `demo-submit-default.png`, `demo-submit-hover.png`, `demo-submit-focus-visible.png`, `demo-submit-pressed.png`.
-
 #### demo-card
 
 Demo form card. The .card-main card holding the two-step demo form on the right of the heading.
@@ -974,7 +897,7 @@ Page: demo. Selector: `demo .card-main`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 504 x 1366.94 |
+| Size (w x h) | 504 x 637 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -1002,10 +925,10 @@ Page: demo. Selector: `demo Get a demo`. States: default, hover, focus-visible, 
 | Size (w x h) | 504 x 48.41 | = | = | = |
 | Padding | 0px | = | = | = |
 | Gap | 8px | = | = | = |
-| Border | 1px solid #17150e | 1px solid #17150e @ 0.7 | = | 1px solid #17150e @ 0.700579 |
+| Border | 1px solid #17150e | 1px solid #17150e @ 0.700582 | = | 1px solid #17150e @ 0.702644 |
 | Radius | 1440px | = | = | = |
-| Background | transparent | #17150e @ 0.1 | = | #17150e @ 0.0998069 |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px inset | none | = | = |
+| Background | transparent | #17150e @ 0.0998061 | = | #17150e @ 0.0991186 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px inset | = | = | = |
 | Outline | none | = | 1px solid #17150e offset 1.5px | = |
 | Font | Basel Grotesk Book 16px/22.4px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
@@ -1013,7 +936,7 @@ Page: demo. Selector: `demo Get a demo`. States: default, hover, focus-visible, 
 | Text node | div: Basel Grotesk Book 16px/22.4px 400, #17150e | = | = | = |
 | Transition | color, background-color, box-shadow, border-color 0.5s, 0.5s, 0.5s, 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1) delay 0s, 0s, 0s, 0s | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 504.0x48.4 border T:1px #17150e / R:1px #17150e / B:1px #17150e / L:1px #17150e r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 504.0x48.4 bg #17150e @ 0.1 border T:1px #17150e @ 0.7 / R:1px #17150e @ 0.7 / B:1px #17150e @ 0.7 / L:1px #17150e @ 0.7 r 1440px | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 504.0x48.4 border T:1px #17150e / R:1px #17150e / B:1px #17150e / L:1px #17150e r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset outline 1px solid #17150e offset 1.5px | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 504.0x48.4 bg #17150e @ 0.0998069 border T:1px #17150e @ 0.700579 / R:1px #17150e @ 0.700579 / B:1px #17150e @ 0.700579 / L:1px #17150e @ 0.700579 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset |
+| Painted layers | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 504.0x48.4 border T:1px #17150e / R:1px #17150e / B:1px #17150e / L:1px #17150e r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 504.0x48.4 bg #17150e @ 0.0998061 border T:1px #17150e @ 0.700582 / R:1px #17150e @ 0.700582 / B:1px #17150e @ 0.700582 / L:1px #17150e @ 0.700582 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 504.0x48.4 border T:1px #17150e / R:1px #17150e / B:1px #17150e / L:1px #17150e r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset outline 1px solid #17150e offset 1.5px | a.btn_new.w-variant-8c031957-40f4-c354-ca0e-e5ce4a4bf4d7 504.0x48.4 bg #17150e @ 0.0991186 border T:1px #17150e @ 0.702644 / R:1px #17150e @ 0.702644 / B:1px #17150e @ 0.702644 / L:1px #17150e @ 0.702644 r 1440px shadow #000000 @ 0 0px 0px 0px 0px inset |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `demo-step-cta-default.png`, `demo-step-cta-hover.png`, `demo-step-cta-focus-visible.png`, `demo-step-cta-pressed.png`.
@@ -1045,107 +968,107 @@ Crops: `signup-h1-default.png`.
 
 #### signup-name
 
-Name field (sign-up). The sign-up first-name input; focused and typed into then cleared — never submitted.
+Name field (sign-up). The empty sign-up first-name input. Focused, never typed into, never submitted.
 
-Page: signup. Selector: `signup first_name input`. States: default, focused, filled.
+Page: signup. Selector: `signup first_name input`. States: default, focused.
 
-| Property | default | focused | filled |
-|---|---|---|---|
-| Size (w x h) | 191 x 21 | = | = |
-| Padding | 0px | = | = |
-| Border | none | = | = |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | baselGrotesk 17px/21px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #2a2f2e | = | = |
-| Transition | box-shadow, opacity 0.2s, 0.2s ease-in-out, ease delay 0s, 0s | = | = |
-| Opacity | 0 | - | - |
-| Cursor | text | = | = |
-| Placeholder | #757575, opacity 1 | = | = |
-| How | at rest | clicked into the field | typed "Example", then deleted; nothing sent |
+| Property | default | focused |
+|---|---|---|
+| Size (w x h) | 191 x 21 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | baselGrotesk 17px/21px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #2a2f2e | = |
+| Transition | box-shadow, opacity 0.2s, 0.2s ease-in-out, ease delay 0s, 0s | = |
+| Opacity | 0 | - |
+| Cursor | text | = |
+| Placeholder | #757575, opacity 1 | = |
+| How | at rest | clicked into the field |
 
-Crops: `signup-name-default.png`, `signup-name-focused.png`, `signup-name-filled.png`.
+Crops: `signup-name-default.png`, `signup-name-focused.png`.
 
 #### signup-email
 
-Email field (sign-up). The sign-up e-mail input; focused and typed into then cleared — never submitted.
+Email field (sign-up). The empty sign-up e-mail input. Focused, never typed into, never submitted.
 
-Page: signup. Selector: `signup email input`. States: default, focused, filled.
+Page: signup. Selector: `signup email input`. States: default, focused.
 
-| Property | default | focused | filled |
-|---|---|---|---|
-| Size (w x h) | 424 x 21 | = | = |
-| Padding | 0px | = | = |
-| Border | none | = | = |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | baselGrotesk 17px/21px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #2a2f2e | = | = |
-| Transition | box-shadow, opacity 0.2s, 0.2s ease-in-out, ease delay 0s, 0s | = | = |
-| Opacity | 0 | - | - |
-| Cursor | text | = | = |
-| Placeholder | #757575, opacity 1 | = | = |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
+| Property | default | focused |
+|---|---|---|
+| Size (w x h) | 424 x 21 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | baselGrotesk 17px/21px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #2a2f2e | = |
+| Transition | box-shadow, opacity 0.2s, 0.2s ease-in-out, ease delay 0s, 0s | = |
+| Opacity | 0 | - |
+| Cursor | text | = |
+| Placeholder | #757575, opacity 1 | = |
+| How | at rest | clicked into the field |
 
-Crops: `signup-email-default.png`, `signup-email-focused.png`, `signup-email-filled.png`.
+Crops: `signup-email-default.png`, `signup-email-focused.png`.
 
 #### signup-pass
 
-Password field (sign-up). The sign-up password input; focused and typed into then cleared — never submitted.
+Password field (sign-up). The empty sign-up password input. Focused, never typed into, never submitted.
 
-Page: signup. Selector: `signup password input`. States: default, focused, filled.
+Page: signup. Selector: `signup password input`. States: default, focused.
 
-| Property | default | focused | filled |
-|---|---|---|---|
-| Size (w x h) | 384 x 21 | = | = |
-| Padding | 0px | = | = |
-| Border | none | = | = |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | baselGrotesk 17px/21px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #2a2f2e | = | = |
-| Transition | box-shadow, opacity 0.2s, 0.2s ease-in-out, ease delay 0s, 0s | = | = |
-| Opacity | 0 | - | - |
-| Cursor | text | = | = |
-| Placeholder | #757575, opacity 1 | = | = |
-| How | at rest | clicked into the field | typed "sample-pass-123", then deleted; nothing sent |
+| Property | default | focused |
+|---|---|---|
+| Size (w x h) | 384 x 21 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | baselGrotesk 17px/21px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #2a2f2e | = |
+| Transition | box-shadow, opacity 0.2s, 0.2s ease-in-out, ease delay 0s, 0s | = |
+| Opacity | 0 | - |
+| Cursor | text | = |
+| Placeholder | #757575, opacity 1 | = |
+| How | at rest | clicked into the field |
 
-Crops: `signup-pass-default.png`, `signup-pass-focused.png`, `signup-pass-filled.png`.
+Crops: `signup-pass-default.png`, `signup-pass-focused.png`.
 
 #### signup-phone
 
-Phone field (sign-up). The sign-up phone-number input; focused and typed into then cleared — never submitted.
+Phone field (sign-up). The empty sign-up phone input. Focused, never typed into, never submitted.
 
-Page: signup. Selector: `signup phone input`. States: default, focused, filled.
+Page: signup. Selector: `signup phone input`. States: default, focused.
 
-| Property | default | focused | filled |
-|---|---|---|---|
-| Size (w x h) | 424 x 21 | = | = |
-| Padding | 0px | = | = |
-| Border | none | = | = |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | baselGrotesk 17px/21px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #2a2f2e | = | = |
-| Transition | box-shadow, opacity 0.2s, 0.2s ease-in-out, ease delay 0s, 0s | = | = |
-| Opacity | 0 | - | - |
-| Cursor | text | = | = |
-| Placeholder | #757575, opacity 1 | = | = |
-| How | at rest | clicked into the field | typed "555 010 0100", then deleted; nothing sent |
+| Property | default | focused |
+|---|---|---|
+| Size (w x h) | 424 x 21 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | baselGrotesk 17px/21px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #2a2f2e | = |
+| Transition | box-shadow, opacity 0.2s, 0.2s ease-in-out, ease delay 0s, 0s | = |
+| Opacity | 0 | - |
+| Cursor | text | = |
+| Placeholder | #757575, opacity 1 | = |
+| How | at rest | clicked into the field |
 
-Crops: `signup-phone-default.png`, `signup-phone-focused.png`, `signup-phone-filled.png`.
+Crops: `signup-phone-default.png`, `signup-phone-focused.png`.
 
 #### signup-checkbox
 
@@ -1169,7 +1092,7 @@ Page: signup. Selector: `signup checkbox`. States: default, focused.
 | Text node | span.Text_root__XjK0i.Text_size-base__5hTlv: baselGrotesk 17px/21px 500, #2a2f2e | = |
 | Transition | none | = |
 | Cursor | default | = |
-| Painted layers | div.Checkbox_iconContainer__w3ypg 24.0x24.0 border T:1px #8e9695 / R:1px #8e9695 / B:1px #8e9695 / L:1px #8e9695 r 8px | input.Checkbox_input__iVUsy 24.0x24.0 outline 1px auto #101010 offset 2px; div.Checkbox_iconContainer__w3ypg 24.0x24.0 border T:1px #8e9695 / R:1px #8e9695 / B:1px #8e9695 / L:1px #8e9695 r 8px outline 1px solid #0d80a2 offset 0px |
+| Painted layers | div.Checkbox_iconContainer__w3ypg 24.0x24.0 border T:1px #8e9695 / R:1px #8e9695 / B:1px #8e9695 / L:1px #8e9695 r 8px | = |
 | How | at rest | focused the inner input via .focus() — never clicked (a label click would check the box) |
 
 Crops: `signup-checkbox-default.png`, `signup-checkbox-focused.png`.
@@ -1182,21 +1105,21 @@ Page: signup. Selector: `signup promo button`. States: default, hover, focus-vis
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 159 x 36 | = | = | = |
+| Size (w x h) | 157.44 x 36 | = | = | = |
 | Padding | 0px 12px 0px 8px | = | = | = |
 | Gap | 4px | = | = | = |
 | Border | 1px solid #c9cdcc | = | = | = |
 | Radius | 1000px | = | = | = |
 | Background | #ffffff | #f7f9f9 | = | #eef0f0 |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #101010 offset 0px | = |
+| Outline | none | = | 1px auto #005fcc offset 0px | = |
 | Font | baselGrotesk 17px/21px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #2a2f2e | = | = | = |
 | Text node | span.Button_content__g_F_4: baselGrotesk 15px/21px 535, #2a2f2e | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | button.Button_root__UrOfw.Button_secondary__rHE23 159.0x36.0 bg #ffffff border T:1px #c9cdcc / R:1px #c9cdcc / B:1px #c9cdcc / L:1px #c9cdcc r 1000px | button.Button_root__UrOfw.Button_secondary__rHE23 159.0x36.0 bg #f7f9f9 border T:1px #c9cdcc / R:1px #c9cdcc / B:1px #c9cdcc / L:1px #c9cdcc r 1000px | button.Button_root__UrOfw.Button_secondary__rHE23 159.0x36.0 bg #ffffff border T:1px #c9cdcc / R:1px #c9cdcc / B:1px #c9cdcc / L:1px #c9cdcc r 1000px outline 1px auto #101010 offset 0px | button.Button_root__UrOfw.Button_secondary__rHE23 159.0x36.0 bg #eef0f0 border T:1px #c9cdcc / R:1px #c9cdcc / B:1px #c9cdcc / L:1px #c9cdcc r 1000px |
+| Painted layers | button.Button_root__UrOfw.Button_secondary__rHE23 157.4x36.0 bg #ffffff border T:1px #c9cdcc / R:1px #c9cdcc / B:1px #c9cdcc / L:1px #c9cdcc r 1000px | button.Button_root__UrOfw.Button_secondary__rHE23 157.4x36.0 bg #f7f9f9 border T:1px #c9cdcc / R:1px #c9cdcc / B:1px #c9cdcc / L:1px #c9cdcc r 1000px | button.Button_root__UrOfw.Button_secondary__rHE23 157.4x36.0 bg #ffffff border T:1px #c9cdcc / R:1px #c9cdcc / B:1px #c9cdcc / L:1px #c9cdcc r 1000px outline 1px auto #005fcc offset 0px | button.Button_root__UrOfw.Button_secondary__rHE23 157.4x36.0 bg #eef0f0 border T:1px #c9cdcc / R:1px #c9cdcc / B:1px #c9cdcc / L:1px #c9cdcc r 1000px |
 | Ancestor paint | 1 up div.SignupFormFields_addPromo__48B9Q bg #ffffff | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
@@ -1217,14 +1140,14 @@ Page: signup. Selector: `signup submit button`. States: default, hover, focus-vi
 | Radius | 1000px | = | = | = |
 | Background | #2a2f2e | #444a49 | = | #585f5e |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #101010 offset 0px | = |
+| Outline | none | = | 1px auto #005fcc offset 0px | = |
 | Font | baselGrotesk 17px/21px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
 | Text node | span.Button_content__g_F_4: baselGrotesk 17px/21px 535, #ffffff | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | button.Button_root__UrOfw.Button_primary___mSSD 450.0x48.0 bg #2a2f2e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px | button.Button_root__UrOfw.Button_primary___mSSD 450.0x48.0 bg #444a49 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px | button.Button_root__UrOfw.Button_primary___mSSD 450.0x48.0 bg #2a2f2e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px outline 1px auto #101010 offset 0px | button.Button_root__UrOfw.Button_primary___mSSD 450.0x48.0 bg #585f5e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px |
+| Painted layers | button.Button_root__UrOfw.Button_primary___mSSD 450.0x48.0 bg #2a2f2e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px | button.Button_root__UrOfw.Button_primary___mSSD 450.0x48.0 bg #444a49 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px | button.Button_root__UrOfw.Button_primary___mSSD 450.0x48.0 bg #2a2f2e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px outline 1px auto #005fcc offset 0px | button.Button_root__UrOfw.Button_primary___mSSD 450.0x48.0 bg #585f5e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `signup-submit-default.png`, `signup-submit-hover.png`, `signup-submit-focus-visible.png`, `signup-submit-pressed.png`.
@@ -1256,29 +1179,29 @@ Crops: `forgot-h1-default.png`.
 
 #### forgot-field
 
-Email field (restore). The restore e-mail input; focused and typed into then cleared — never submitted.
+Email field (restore). The empty restore e-mail input. Focused, never typed into, never submitted.
 
-Page: forgot. Selector: `forgot email input`. States: default, focused, filled.
+Page: forgot. Selector: `forgot email input`. States: default, focused.
 
-| Property | default | focused | filled |
-|---|---|---|---|
-| Size (w x h) | 424 x 21 | = | = |
-| Padding | 0px | = | = |
-| Border | none | = | = |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | baselGrotesk 17px/21px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #2a2f2e | = | = |
-| Transition | box-shadow, opacity 0.2s, 0.2s ease-in-out, ease delay 0s, 0s | = | = |
-| Opacity | 0 | - | - |
-| Cursor | text | = | = |
-| Placeholder | #757575, opacity 1 | = | = |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
+| Property | default | focused |
+|---|---|---|
+| Size (w x h) | 424 x 21 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | baselGrotesk 17px/21px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #2a2f2e | = |
+| Transition | box-shadow, opacity 0.2s, 0.2s ease-in-out, ease delay 0s, 0s | = |
+| Opacity | 0 | - |
+| Cursor | text | = |
+| Placeholder | #757575, opacity 1 | = |
+| How | at rest | clicked into the field |
 
-Crops: `forgot-field-default.png`, `forgot-field-focused.png`, `forgot-field-filled.png`.
+Crops: `forgot-field-default.png`, `forgot-field-focused.png`.
 
 #### forgot-send
 
@@ -1295,14 +1218,14 @@ Page: forgot. Selector: `forgot submit button`. States: default, hover, focus-vi
 | Radius | 1000px | = | = | = |
 | Background | #2a2f2e | #444a49 | = | #585f5e |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #101010 offset 0px | = |
+| Outline | none | = | 1px auto #005fcc offset 0px | = |
 | Font | baselGrotesk 17px/21px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
 | Text node | span.Button_content__g_F_4: baselGrotesk 17px/21px 535, #ffffff | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | button.Button_root__UrOfw.Button_primary-brand__yEKsA 450.0x48.0 bg #2a2f2e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px | button.Button_root__UrOfw.Button_primary-brand__yEKsA 450.0x48.0 bg #444a49 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px | button.Button_root__UrOfw.Button_primary-brand__yEKsA 450.0x48.0 bg #2a2f2e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px outline 1px auto #101010 offset 0px | button.Button_root__UrOfw.Button_primary-brand__yEKsA 450.0x48.0 bg #585f5e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px |
+| Painted layers | button.Button_root__UrOfw.Button_primary-brand__yEKsA 450.0x48.0 bg #2a2f2e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px | button.Button_root__UrOfw.Button_primary-brand__yEKsA 450.0x48.0 bg #444a49 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px | button.Button_root__UrOfw.Button_primary-brand__yEKsA 450.0x48.0 bg #2a2f2e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px outline 1px auto #005fcc offset 0px | button.Button_root__UrOfw.Button_primary-brand__yEKsA 450.0x48.0 bg #585f5e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `forgot-send-default.png`, `forgot-send-hover.png`, `forgot-send-focus-visible.png`, `forgot-send-pressed.png`.
@@ -1322,14 +1245,14 @@ Page: forgot. Selector: `forgot back link`. States: default, hover, focus-visibl
 | Radius | 1000px | = | = | = |
 | Background | transparent | #f7f9f9 | = | #eef0f0 |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #101010 offset 1px | = |
+| Outline | none | = | 1px auto #005fcc offset 1px | = |
 | Font | baselGrotesk 17px/21px 100 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #2a2f2e | = | = | = |
 | Text node | span.Button_content__g_F_4: baselGrotesk 17px/21px 535, #2a2f2e | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.Button_root__UrOfw.Button_transparent__GJaZO 450.0x48.0 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px | a.Button_root__UrOfw.Button_transparent__GJaZO 450.0x48.0 bg #f7f9f9 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px | a.Button_root__UrOfw.Button_transparent__GJaZO 450.0x48.0 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px outline 1px auto #101010 offset 1px | a.Button_root__UrOfw.Button_transparent__GJaZO 450.0x48.0 bg #eef0f0 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px |
+| Painted layers | a.Button_root__UrOfw.Button_transparent__GJaZO 450.0x48.0 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px | a.Button_root__UrOfw.Button_transparent__GJaZO 450.0x48.0 bg #f7f9f9 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px | a.Button_root__UrOfw.Button_transparent__GJaZO 450.0x48.0 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px outline 1px auto #005fcc offset 1px | a.Button_root__UrOfw.Button_transparent__GJaZO 450.0x48.0 bg #eef0f0 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `forgot-back-default.png`, `forgot-back-hover.png`, `forgot-back-focus-visible.png`, `forgot-back-pressed.png`.
@@ -1344,20 +1267,19 @@ Page: bookhome. Selector: `booking nav`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1312 x 199.06 |
-| Padding | 0px |
+| Size (w x h) | 115.41 x 80 |
+| Padding | 0px 16px |
 | Border | none |
-| Radius | 0px |
+| Radius | 30px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | basefont 16.96px/23.32px 100 |
+| Font | headingfont 20px/27.5px 400 |
 | Letter spacing | normal |
 | Colour | #ffffff |
-| Text node | a: headingfont 15.264px/25.9488px 100, #ffffff, ls 6.1056px |
+| Text node | a: headingfont 20px/34px 400, #ffffff |
 | Transition | none |
-| Icon | 16 x 16, colour #ffffff |
-| Painted layers | div.Navigation_overlay__f8_Ln.Navigation_overlayClosed__VFdWR 1440.0x900.0 bg #1b1d21 @ 0.5; ul.Navigation_subNav__9hoL3 208.0x48.2 bg #ffffff shadow #ffffff @ 0.1 0px 2px 4px 0px; div.Navigation_menuContainer__Hohhy.Navigation_menuContainerClosed__L_Xk3 0.0x0.0 bg #151619; button.Button_root__kEMCx.Button_transparent__cfDRh 0.0x0.0 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 |
+| Ancestor paint | 1 up ul.BillboardNavigation_desktopNav__I__me.BillboardNavigation_menu__5NKWJ bg #000000 |
 | How | at rest |
 
 Crops: `bk-nav-default.png`.
@@ -1370,20 +1292,21 @@ Page: bookhome. Selector: `booking nav link`. States: default, hover, focus-visi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 117.86 x 19.19 | = | = | = |
+| Size (w x h) | 83.41 x 34 | = | = | = |
 | Padding | 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #101010 offset 1px | = |
-| Font | headingfont 15.264px/25.9488px 100 | = | = | = |
-| Letter spacing | 6.1056px | = | = | = |
+| Outline | none | = | 1px auto #005fcc offset 1px | = |
+| Font | headingfont 20px/34px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a 117.9x19.2 outline 1px auto #101010 offset 1px | = |
+| Opacity | - | 0.5 | = | 0.5 |
+| Painted layers | - | = | a 83.4x34.0 outline 1px auto #005fcc offset 1px | = |
 
 Crops: `bk-nav-item-default.png`, `bk-nav-item-hover.png`, `bk-nav-item-focus-visible.png`, `bk-nav-item-pressed.png`.
 
@@ -1395,46 +1318,45 @@ Page: bookhome. Selector: `booking BOOK NOW`. States: default, hover, focus-visi
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 131.86 x 19.19 | = | = | = |
-| Padding | 0px | = | = | = |
+| Size (w x h) | 177.03 x 54 | = | = | = |
+| Padding | 10px 40px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #101010 offset 1px | = |
-| Font | headingfont 15.264px/25.9488px 100 | = | = | = |
-| Letter spacing | 6.1056px | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Text node | span.Navigation_fullText__X1A8G: headingfont 15.264px/25.9488px 100, #ffffff, ls 6.1056px | = | = | = |
-| Transition | none | = | = | = |
+| Outline | none | = | 1px auto #005fcc offset 1px | = |
+| Font | headingfont 20px/34px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #000000 | #fefefe | = | = |
+| Text node | span.BillboardNavigation_fullText__lgDxS: headingfont 20px/34px 400, #000000 | span.BillboardNavigation_fullText__lgDxS: headingfont 20px/34px 400, #fefefe | = | = |
+| Transition | color 0.5s ease | = | = | = |
 | Cursor | pointer | = | = | = |
+| Ancestor paint | 1 up li.BillboardNavigation_navItem__TEhpa.BillboardNavigation_bookNowCTA__DlSvK bg #ffffff | 1 up li.BillboardNavigation_navItem__TEhpa.BillboardNavigation_bookNowCTA__DlSvK bg #010101 | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a 131.9x19.2 outline 1px auto #101010 offset 1px | = |
+| Painted layers | - | = | a 177.0x54.0 outline 1px auto #005fcc offset 1px | = |
+| Opacity | - | = | = | 0.5 |
 
 Crops: `bk-book-cta-default.png`, `bk-book-cta-hover.png`, `bk-book-cta-focus-visible.png`, `bk-book-cta-pressed.png`.
 
 #### bk-title
 
-Booking title. The business-name display heading ("HONEY HIVE SALON", SalonHeading) on the published booking site; the nav also carries a hidden h2 business name.
+Booking title. The business-name display heading on the published booking site.
 
 Page: bookhome. Selector: `booking h1`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 352.86 x 76.34 |
-| Padding | 0px 0px 17.6px 0px |
+| Size (w x h) | 1230.5 x 167.13 |
+| Padding | 0px 0px 44.5714px 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | headingfont 30.528px/41.976px 300 |
-| Letter spacing | 3.0528px |
+| Font | headingfont 89.1429px/122.571px 500 |
+| Letter spacing | normal |
 | Colour | #ffffff |
-| Text node | a: headingfont 30.528px/41.976px 300, #ffffff, ls 3.0528px |
 | Transition | none |
-| Transform | matrix(1, 0, 0, 1, -176.43, 0) |
-| Cursor | pointer |
 | How | at rest |
 
 Crops: `bk-title-default.png`.
@@ -1447,16 +1369,16 @@ Page: bookhome. Selector: `booking powered-by`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 82.69 x 16.06 |
+| Size (w x h) | 122.59 x 21.45 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | basefont 11.68px/16.06px 100 |
-| Letter spacing | 1.168px |
-| Colour | #aaaaaa |
+| Font | headingfont 15.6032px/21.4544px 100 |
+| Letter spacing | 1.56032px |
+| Colour | #ffffff |
 | Transition | none |
 | How | at rest |
 
@@ -1470,11 +1392,11 @@ Page: bookservices. Selector: `booking professional select`. States: default, ho
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 496 x 56 | = | = | = | = |
+| Size (w x h) | 320.53 x 56 | = | = | = | = |
 | Padding | 0px | = | = | = | = |
 | Border | 1px solid #9295a5 @ 0.5 | = | = | = | = |
 | Radius | 10px | = | = | = | = |
-| Background | #2c2e32 @ 0.25 | = | = | = | = |
+| Background | #000000 @ 0.25 | = | = | = | = |
 | Box shadow | none | = | #727587 0px 0px 0px 1px | = | #727587 0px 0px 0px 1px |
 | Outline | none | = | = | = | = |
 | Font | basefont 16.96px/23.32px 100 | = | = | = | = |
@@ -1482,8 +1404,8 @@ Page: bookservices. Selector: `booking professional select`. States: default, ho
 | Colour | #ffffff | = | = | = | = |
 | Text node | div.gg-dropdown__single-value.css-99cyyk-singleValue: basefont 16px/22px 100, #ffffff | = | span: basefont 16.96px/23.32px 100, #ffffff | = | span: basefont 16.96px/23.32px 100, #ffffff |
 | Transition | box-shadow, -webkit-box-shadow 0.2s, 0.2s ease, ease delay 0s, 0s | = | = | = | = |
-| Icon | 20 x 20, colour #cccccc | = | 20 x 20, colour #666666 | = | 20 x 20, colour #666666 |
-| Painted layers | div.Select_selectOuterContainer__T42GH 496.0x56.0 bg #2c2e32 @ 0.25 border T:1px #9295a5 @ 0.5 / R:1px #9295a5 @ 0.5 / B:1px #9295a5 @ 0.5 / L:1px #9295a5 @ 0.5 r 10px; div.Select_selectErrorContainer__xe9Ll 494.0x0.0 bg #21242a r 0px 0px 10px 10px | = | div.Select_selectOuterContainer__T42GH 496.0x56.0 bg #2c2e32 @ 0.25 border T:1px #9295a5 @ 0.5 / R:1px #9295a5 @ 0.5 / B:1px #9295a5 @ 0.5 / L:1px #9295a5 @ 0.5 r 10px shadow #727587 0px 0px 0px 1px; div.Select_selectErrorContainer__xe9Ll 494.0x0.0 bg #21242a r 0px 0px 10px 10px | = | div.Select_selectOuterContainer__T42GH 496.0x56.0 bg #2c2e32 @ 0.25 border T:1px #9295a5 @ 0.5 / R:1px #9295a5 @ 0.5 / B:1px #9295a5 @ 0.5 / L:1px #9295a5 @ 0.5 r 10px shadow #727587 0px 0px 0px 1px; div.gg-dropdown__menu.css-1y5o33s-menu 462.0x122.0 bg #ffffff r 4px shadow #000000 @ 0.1 0px 0px 0px 1px, #000000 @ 0.1 0px 4px 11px 0px; div.gg-dropdown__menu-list.css-66c50f 462.0x122.0 bg #2c2e32; div.gg-dropdown__option.gg-dropdown__option--is-focused 462.0x38.0 bg #21242a @ 0.5; div.gg-dropdown__option.css-xw4ttq-option 462.0x38.0 bg #2c2e32; div.gg-dropdown__option.css-xw4ttq-option 462.0x38.0 bg #2c2e32 |
+| Icon | 20 x 20, colour #ffffff | = | = | = | = |
+| Painted layers | div.Select_selectOuterContainer__T42GH 320.5x56.0 bg #000000 @ 0.25 border T:1px #9295a5 @ 0.5 / R:1px #9295a5 @ 0.5 / B:1px #9295a5 @ 0.5 / L:1px #9295a5 @ 0.5 r 10px; div.Select_selectErrorContainer__xe9Ll 318.5x0.0 bg #21242a r 0px 0px 10px 10px | = | div.Select_selectOuterContainer__T42GH 320.5x56.0 bg #000000 @ 0.25 border T:1px #9295a5 @ 0.5 / R:1px #9295a5 @ 0.5 / B:1px #9295a5 @ 0.5 / L:1px #9295a5 @ 0.5 r 10px shadow #727587 0px 0px 0px 1px; div.Select_selectErrorContainer__xe9Ll 318.5x0.0 bg #21242a r 0px 0px 10px 10px | = | div.Select_selectOuterContainer__T42GH 320.5x56.0 bg #000000 @ 0.25 border T:1px #9295a5 @ 0.5 / R:1px #9295a5 @ 0.5 / B:1px #9295a5 @ 0.5 / L:1px #9295a5 @ 0.5 r 10px shadow #727587 0px 0px 0px 1px; div.gg-dropdown__menu.css-1y5o33s-menu 286.5x124.0 bg #ffffff border T:1px #9295a5 @ 0.5 / R:1px #9295a5 @ 0.5 / B:1px #9295a5 @ 0.5 / L:1px #9295a5 @ 0.5 r 3px shadow #000000 @ 0.1 0px 0px 0px 1px, #000000 @ 0.1 0px 4px 11px 0px; div.gg-dropdown__menu-list.css-66c50f 284.5x122.0 bg #000000; div.gg-dropdown__option.gg-dropdown__option--is-focused 284.5x38.0 bg #d6d6d6 @ 0.5; div.gg-dropdown__option.css-xw4ttq-option 284.5x38.0 bg #000000; div.gg-dropdown__option.css-xw4ttq-option 284.5x38.0 bg #000000 |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | clicked "Any Professional" to open the react-select menu |
 
 Crops: `bk-pro-select-default.png`, `bk-pro-select-hover.png`, `bk-pro-select-focus-visible.png`, `bk-pro-select-pressed.png`, `bk-pro-select-opened.png`.
@@ -1496,11 +1418,11 @@ Page: bookservices. Selector: `.gg-dropdown__option`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 462 x 38 |
+| Size (w x h) | 284.53 x 38 |
 | Padding | 8px 12px |
 | Border | none |
 | Radius | 0px |
-| Background | #21242a @ 0.5 |
+| Background | #d6d6d6 @ 0.5 |
 | Box shadow | none |
 | Outline | none |
 | Font | basefont 16px/22px 100 |
@@ -1508,8 +1430,8 @@ Page: bookservices. Selector: `.gg-dropdown__option`. States: default.
 | Colour | #ffffff |
 | Transition | none |
 | Cursor | pointer |
-| Painted layers | div.gg-dropdown__option.gg-dropdown__option--is-focused 462.0x38.0 bg #21242a @ 0.5 |
-| Ancestor paint | 1 up div.gg-dropdown__menu-list.css-66c50f bg #2c2e32; 2 up div.gg-dropdown__menu.css-1y5o33s-menu bg #ffffff shadow #000000 @ 0.1 0px 0px 0px 1px, #000000 @ 0.1 0px 4px 11px 0px |
+| Painted layers | div.gg-dropdown__option.gg-dropdown__option--is-focused 284.5x38.0 bg #d6d6d6 @ 0.5 |
+| Ancestor paint | 1 up div.gg-dropdown__menu-list.css-66c50f bg #000000; 2 up div.gg-dropdown__menu.css-1y5o33s-menu bg #ffffff shadow #000000 @ 0.1 0px 0px 0px 1px, #000000 @ 0.1 0px 4px 11px 0px |
 | How | at rest |
 
 Crops: `bk-pro-option-default.png`.
@@ -1522,143 +1444,9 @@ Page: bookservices. Selector: `booking service card`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 1154.56 x 287 | = |
+| Size (w x h) | 1364 x 11241.14 | 1364 x 11245.14 |
 | Padding | 0px | = |
-| Border | none | = |
-| Radius | 0px | = |
-| Background | transparent | = |
-| Box shadow | #1b1d21 @ 0.5 0px 0px 46px 0px | = |
-| Outline | none | = |
-| Font | basefont 16.96px/25.44px 100 | = |
-| Letter spacing | normal | = |
-| Colour | #ffffff | = |
-| Text node | h2.ClassicService_title__NL0l6: headingfont 16px/19.2px 500, #0f0f11, ls 0.32px | = |
-| Transition | none | = |
-| Painted layers | article.ClassicService_root__Mgwgs.ClassicService_card__1cK2m 1154.6x287.0 shadow #1b1d21 @ 0.5 0px 0px 46px 0px; div.ClassicService_main__r92Ya 750.5x287.0 bg #ffffff shadow #1b1d21 @ 0.5 0px 0px 46px 0px; div::before.ClassicService_main__r92Ya 750.469pxx64px image linear-gradient(#ffffff @ 0, #ffffff 12px); button.ClassicService_button__8gVD_ 94.0x36.0 image linear-gradient(to right, #505718 0%, #807443 100%); span::after.ClassicService_option__PIV5l 0pxx18px border R:1px #747c80 | = |
-| How | at rest | mouse hover |
-
-Crops: `bk-service-card-hover.png`.
-
-#### bk-service-select
-
-Service Select button. A service row's "Select" button marking it for booking; opened was measured on the same pinned node after clicking it — the button flips to its selected state and the header becomes "BOOK 1 SERVICE". A local selection toggle, not a submission.
-
-Page: bookservices. Selector: `booking Select button`. States: default, hover, focus-visible, pressed, opened.
-
-| Property | default | hover | focus-visible | pressed | opened |
-|---|---|---|---|---|---|
-| Size (w x h) | 94 x 36 | = | = | = | = |
-| Padding | 0px 12px | = | = | = | = |
-| Border | none | = | = | = | = |
-| Radius | 0px | = | = | = | = |
-| Background | transparent | = | = | = | #1b1d21 |
-| Background image | linear-gradient(to right, #505718 0%, #807443 100%) | = | = | = | - |
-| Box shadow | none | = | = | = | = |
-| Outline | none | = | 1px auto #101010 offset 0px | = | = |
-| Font | basefont 12px/18px 400 | = | = | = | = |
-| Letter spacing | normal | = | = | = | = |
-| Colour | #ffffff | = | = | = | #ffffff @ 0.5 |
-| Transition | background 0.3s ease | = | = | = | = |
-| Cursor | pointer | = | = | = | = |
-| ::after | 750.469px x 287px, absolute, bg #000000 @ 0, radius 0px | = | = | = | 743.969px x 287px, absolute, bg #000000 @ 0, radius 0px |
-| Painted layers | button.ClassicService_button__8gVD_ 94.0x36.0 image linear-gradient(to right, #505718 0%, #807443 100%) | = | button.ClassicService_button__8gVD_ 94.0x36.0 image linear-gradient(to right, #505718 0%, #807443 100%) outline 1px auto #101010 offset 0px | = | button.ClassicService_button__8gVD_.ClassicService_buttonSelected__zlrdO 94.0x36.0 bg #1b1d21 |
-| Ancestor paint | 3 up div.ClassicService_main__r92Ya bg #ffffff shadow #1b1d21 @ 0.5 0px 0px 46px 0px | = | = | = | = |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | clicked "Select" on a service — the row is marked for booking, nothing sent |
-| Opacity | - | 0.8 | = | 0.8 | 0.8 |
-
-Crops: `bk-service-select-default.png`, `bk-service-select-hover.png`, `bk-service-select-focus-visible.png`, `bk-service-select-pressed.png`, `bk-service-select-opened.png`.
-
-#### bk-book-btn
-
-BOOK bar button. The "BOOK n SERVICE" header bar; measured after a service was selected (the header's "Clear All" is a different control, never measured as this button). In the screenshot pass it was clicked to reach /book — a public navigation, never a submission.
-
-Page: bookservices. Selector: `booking BOOK button`. States: default, hover, focus-visible, pressed.
-
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 211 x 40 | = | = | = |
-| Padding | 12px 18px 11px 18px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 20px | = | = | = |
-| Background | transparent | = | = | = |
-| Background image | linear-gradient(to right, #505718 0%, #807443 100%) | = | = | = |
-| Box shadow | none | = | #727587 0px 0px 0px 3px | = |
-| Outline | none | = | = | = |
-| Font | headingfont 14px/normal 300 | = | = | = |
-| Letter spacing | 3px | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Text node | span: headingfont 14px/normal 300, #ffffff, ls 3px | = | = | = |
-| Transition | box-shadow, opacity, -webkit-box-shadow 0.2s ease-in-out | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 16 x 9.84, colour #ffffff | = | = | = |
-| Painted layers | button.Button_root__8nq_L.BookingHeader_btnBook__lrjRh 211.0x40.0 image linear-gradient(to right, #505718 0%, #807443 100%) r 20px | = | button.Button_root__8nq_L.BookingHeader_btnBook__lrjRh 211.0x40.0 image linear-gradient(to right, #505718 0%, #807443 100%) r 20px shadow #727587 0px 0px 0px 3px | = |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Opacity | - | 0.9 | = | 0.9 |
-
-Crops: `bk-book-btn-default.png`, `bk-book-btn-hover.png`, `bk-book-btn-focus-visible.png`, `bk-book-btn-pressed.png`.
-
-#### bk-steps
-
-Booking stepper. The SELECT SERVICE / DATE & TIME / YOUR DETAILS step header on /book.
-
-Page: bookflow. Selector: `booking stepper`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 173.97 x 128.73 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | basefont 16.96px/23.32px 100 |
-| Letter spacing | normal |
-| Colour | #ffffff |
-| Text node | p.Progress_buttonText__32Le9: headingfont 16px/22px 100, #ffffff, ls 0.64px |
-| Transition | none |
-| Icon | 26.17 x 26.17, colour #ffffff |
-| Painted layers | button.Progress_icon__pRrDR.Progress_cursor__a8LOv 69.4x69.4 border T:2px #ffffff / R:2px #ffffff / B:2px #ffffff / L:2px #ffffff r 100%; button::before.Progress_icon__pRrDR.Progress_cursor__a8LOv 122.92pxx1px bg #ffffff; button::after.Progress_icon__pRrDR.Progress_cursor__a8LOv 122.906pxx1px bg #ffffff |
-| How | at rest |
-
-Crops: `bk-steps-default.png`.
-
-#### bk-cal
-
-Booking calendar. The month calendar on the date-picker step.
-
-Page: bookflow. Selector: `booking calendar`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 350 x 355.5 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | basefont 16.96px/23.32px 100 |
-| Letter spacing | normal |
-| Colour | #ffffff |
-| Text node | div.style_caption_label__nLxVF.Calendar_calendarCaption__1umkm: basefont 18px/24.75px 400, #ffffff |
-| Transition | none |
-| Icon | 16 x 16, colour #ffffff, fill #000000 |
-| Painted layers | button.style_button_reset__4kj87.style_button__0VMxM 50.0x50.0 border T:2px #000000 @ 0 / R:2px #000000 @ 0 / B:2px #000000 @ 0 / L:2px #000000 @ 0 r 100%; div.style_caption_label__nLxVF.Calendar_calendarCaption__1umkm 149.0x28.8 border T:2px #000000 @ 0 / R:2px #000000 @ 0 / B:2px #000000 @ 0 / L:2px #000000 @ 0; button.style_button_reset__4kj87.style_button__0VMxM 50.0x50.0 border T:2px #000000 @ 0 / R:2px #000000 @ 0 / B:2px #000000 @ 0 / L:2px #000000 @ 0 r 100%; tr.Calendar_calendarHeadRow__3q8Fy 350.0x50.0 border B:1px #ffffff @ 0.4; tr.style_row__LSKg5.Calendar_calendarRow__EEFXi 350.0x51.0 border B:1px #ffffff @ 0.2; button.style_button_reset__4kj87.style_button__0VMxM 50.0x50.0 bg #21242a border T:2px #000000 @ 0 / R:2px #000000 @ 0 / B:2px #000000 @ 0 / L:2px #000000 @ 0 |
-| How | at rest |
-
-Crops: `bk-cal-default.png`.
-
-#### bk-day
-
-Day cell. A day cell in the booking calendar.
-
-Page: bookflow. Selector: `booking day cell`. States: default, hover.
-
-| Property | default | hover |
-|---|---|---|
-| Size (w x h) | 50 x 51 | = |
-| Padding | 0px | = |
+| Gap | 16.96px | = |
 | Border | none | = |
 | Radius | 0px | = |
 | Background | transparent | = |
@@ -1667,39 +1455,69 @@ Page: bookflow. Selector: `booking day cell`. States: default, hover.
 | Font | basefont 16.96px/23.32px 100 | = |
 | Letter spacing | normal | = |
 | Colour | #ffffff | = |
-| Text node | button.style_button_reset__4kj87.style_button__0VMxM: basefont 16.96px/23.32px 100, #ffffff | = |
+| Text node | h2.Item_title__3iAIm: headingfont 25.44px/38.16px 500, #ffffff, ls 1.0176px | = |
 | Transition | none | = |
-| Painted layers | button.style_button_reset__4kj87.style_button__0VMxM 50.0x50.0 bg #21242a border T:2px #000000 @ 0 / R:2px #000000 @ 0 / B:2px #000000 @ 0 / L:2px #000000 @ 0 | = |
+| Painted layers | button.Item_button__ndUTu 186.0x52.9 border T:1px #ffffff / R:1px #ffffff / B:1px #ffffff / L:1px #ffffff r 30px; span::after.CanvasService_option__lEb8L 0pxx25.4219px border R:1px #747c80; button.Item_button__ndUTu 186.0x52.9 border T:1px #ffffff / R:1px #ffffff / B:1px #ffffff / L:1px #ffffff r 30px; span::after.CanvasService_option__lEb8L 0pxx25.4219px border R:1px #747c80; button.Item_button__ndUTu 186.0x52.9 border T:1px #ffffff / R:1px #ffffff / B:1px #ffffff / L:1px #ffffff r 30px; span::after.CanvasService_option__lEb8L 0pxx25.4219px border R:1px #747c80 | = |
 | How | at rest | mouse hover |
 
-Crops: `bk-day-default.png`, `bk-day-hover.png`.
+Crops: `bk-service-card-default.png`, `bk-service-card-hover.png`.
 
-#### bk-next
+#### bk-book-btn
 
-Next button. The date-step "Next" button; its states were measured but it was never clicked — no details form was reached.
+BOOK bar button. The "BOOK n SERVICE" header bar at rest (BOOK 0 SERVICE). Never pressed.
 
-Page: bookflow. Selector: `booking Next button`. States: default, hover, focus-visible, pressed.
+Page: bookservices. Selector: `booking BOOK button`. States: default, focus-visible, pressed.
+
+| Property | default | focus-visible | pressed |
+|---|---|---|---|
+| Size (w x h) | 208 x 40 | = | = |
+| Padding | 12px 18px 11px 18px | = | = |
+| Border | 1px solid #ffffff | = | = |
+| Radius | 20px | = | = |
+| Background | #000000 | = | = |
+| Box shadow | none | #727587 0px 0px 0px 3px | = |
+| Outline | none | = | = |
+| Font | headingfont 14px/normal 300 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #ffffff | = | = |
+| Text node | span: headingfont 14px/normal 300, #ffffff | = | = |
+| Transition | box-shadow, opacity, -webkit-box-shadow 0.2s ease-in-out | = | = |
+| Cursor | pointer | = | = |
+| Icon | 16 x 9.84, colour #ffffff, fill #000000 | = | = |
+| Painted layers | button.Button_root__8nq_L.BookingHeader_btnBook__lrjRh 208.0x40.0 bg #000000 border T:1px #ffffff / R:1px #ffffff / B:1px #ffffff / L:1px #ffffff r 20px | button.Button_root__8nq_L.BookingHeader_btnBook__lrjRh 208.0x40.0 bg #000000 border T:1px #ffffff / R:1px #ffffff / B:1px #ffffff / L:1px #ffffff r 20px shadow #727587 0px 0px 0px 3px | = |
+| How | at rest | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Opacity | - | = | 0.9 |
+
+Crops: `bk-book-btn-default.png`, `bk-book-btn-focus-visible.png`, `bk-book-btn-pressed.png`.
+
+#### bk-service-select
+
+Service Select button. A service row's "Select" button. Measured at rest, hover, focus-visible and forced pressed. Never clicked: selecting a service starts a booking.
+
+Page: bookservices. Selector: `booking Select button`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 208 x 55 | = | = | = |
-| Padding | 0px 48px | = | = | = |
+| Size (w x h) | 94 x 36 | = | = | = |
+| Padding | 0px 12px | = | = | = |
 | Border | none | = | = | = |
-| Radius | 27px | = | = | = |
+| Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Background image | linear-gradient(to right, #505718 0%, #807443 100%) | = | = | = |
-| Box shadow | none | = | #727587 0px 0px 0px 3px | = |
-| Outline | none | = | = | = |
-| Font | basefont 16px/55px 300 | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 1px auto #101010 offset 0px | = |
+| Font | basefont 12px/18px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
-| Text node | span: basefont 16px/55px 300, #ffffff | = | = | = |
-| Transition | box-shadow, opacity, -webkit-box-shadow 0.2s ease-in-out | = | = | = |
+| Transition | background 0.3s ease | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | button.Button_root__8nq_L 208.0x55.0 image linear-gradient(to right, #505718 0%, #807443 100%) r 27px | = | button.Button_root__8nq_L 208.0x55.0 image linear-gradient(to right, #505718 0%, #807443 100%) r 27px shadow #727587 0px 0px 0px 3px | = |
+| ::after | 750.469px x 287px, absolute, bg #000000 @ 0, radius 0px | = | = | = |
+| Painted layers | button.ClassicService_button__8gVD_ 94.0x36.0 image linear-gradient(to right, #505718 0%, #807443 100%) | = | button.ClassicService_button__8gVD_ 94.0x36.0 image linear-gradient(to right, #505718 0%, #807443 100%) outline 1px auto #101010 offset 0px | = |
+| Ancestor paint | 3 up div.ClassicService_main__r92Ya bg #ffffff shadow #1b1d21 @ 0.5 0px 0px 46px 0px | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Opacity | - | 0.8 | = | 0.8 |
 
-Crops: `bk-next-default.png`, `bk-next-hover.png`, `bk-next-focus-visible.png`, `bk-next-pressed.png`.
+Crops: `bk-service-select-default.png`, `bk-service-select-hover.png`, `bk-service-select-focus-visible.png`, `bk-service-select-pressed.png`.
 
 ### Mobile (390 wide)
 
@@ -1885,55 +1703,55 @@ Crops: `login-card-default.png`.
 
 #### login-field
 
-Email field (sign-in). The sign-in e-mail input; focused and typed into then cleared — never submitted.
+Email field (sign-in). The empty sign-in e-mail input. Focused with the keyboard, never typed into, never submitted.
 
-Page: login. Selector: `login email input`. States: default, focused, filled.
+Page: login. Selector: `login email input`. States: default, focused.
 
-| Property | default | focused | filled |
-|---|---|---|---|
-| Size (w x h) | 364 x 21 | = | = |
-| Padding | 0px | = | = |
-| Border | none | = | = |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | baselGrotesk 17px/21px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #2a2f2e | = | = |
-| Transition | box-shadow, opacity 0.2s, 0.2s ease-in-out, ease delay 0s, 0s | = | = |
-| Opacity | 0 | - | - |
-| Cursor | text | = | = |
-| Placeholder | #757575, opacity 1 | = | = |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
+| Property | default | focused |
+|---|---|---|
+| Size (w x h) | 364 x 21 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | baselGrotesk 17px/21px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #2a2f2e | = |
+| Transition | box-shadow, opacity 0.2s, 0.2s ease-in-out, ease delay 0s, 0s | = |
+| Opacity | 0 | - |
+| Cursor | text | = |
+| Placeholder | #757575, opacity 1 | = |
+| How | at rest | clicked into the field |
 
-Crops: `login-field-default.png`, `login-field-focused.png`, `login-field-filled.png`.
+Crops: `login-field-default.png`, `login-field-focused.png`.
 
 #### login-pass
 
-Password field (sign-in). The sign-in password input; focused and typed into then cleared — never submitted.
+Password field (sign-in). The empty sign-in password input. Focused with the keyboard, never typed into, never submitted.
 
-Page: login. Selector: `login password input`. States: default, focused, filled.
+Page: login. Selector: `login password input`. States: default, focused.
 
-| Property | default | focused | filled |
-|---|---|---|---|
-| Size (w x h) | 324 x 21 | = | = |
-| Padding | 0px | = | = |
-| Border | none | = | = |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | baselGrotesk 17px/21px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #2a2f2e | = | = |
-| Transition | box-shadow, opacity 0.2s, 0.2s ease-in-out, ease delay 0s, 0s | = | = |
-| Opacity | 0 | - | - |
-| Cursor | text | = | = |
-| Placeholder | #757575, opacity 1 | = | = |
-| How | at rest | clicked into the field | typed "sample-pass-123", then deleted; nothing sent |
+| Property | default | focused |
+|---|---|---|
+| Size (w x h) | 324 x 21 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | baselGrotesk 17px/21px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #2a2f2e | = |
+| Transition | box-shadow, opacity 0.2s, 0.2s ease-in-out, ease delay 0s, 0s | = |
+| Opacity | 0 | - |
+| Cursor | text | = |
+| Placeholder | #757575, opacity 1 | = |
+| How | at rest | clicked into the field |
 
-Crops: `login-pass-default.png`, `login-pass-focused.png`, `login-pass-filled.png`.
+Crops: `login-pass-default.png`, `login-pass-focused.png`.
 
 #### login-submit
 
@@ -1950,14 +1768,14 @@ Page: login. Selector: `login submit button`. States: default, hover, focus-visi
 | Radius | 1000px | = | = | = |
 | Background | #2a2f2e | #444a49 | = | #585f5e |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #101010 offset 0px | = |
+| Outline | none | = | 1px auto #005fcc offset 0px | = |
 | Font | baselGrotesk 17px/21px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
 | Text node | span.Button_content__g_F_4: baselGrotesk 17px/21px 535, #ffffff | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | button.Button_root__UrOfw.Button_primary-brand__yEKsA 390.0x48.0 bg #2a2f2e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px | button.Button_root__UrOfw.Button_primary-brand__yEKsA 390.0x48.0 bg #444a49 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px | button.Button_root__UrOfw.Button_primary-brand__yEKsA 390.0x48.0 bg #2a2f2e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px outline 1px auto #101010 offset 0px | button.Button_root__UrOfw.Button_primary-brand__yEKsA 390.0x48.0 bg #585f5e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px |
+| Painted layers | button.Button_root__UrOfw.Button_primary-brand__yEKsA 390.0x48.0 bg #2a2f2e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px | button.Button_root__UrOfw.Button_primary-brand__yEKsA 390.0x48.0 bg #444a49 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px | button.Button_root__UrOfw.Button_primary-brand__yEKsA 390.0x48.0 bg #2a2f2e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px outline 1px auto #005fcc offset 0px | button.Button_root__UrOfw.Button_primary-brand__yEKsA 390.0x48.0 bg #585f5e border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 1000px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `login-submit-default.png`, `login-submit-hover.png`, `login-submit-focus-visible.png`, `login-submit-pressed.png`.
@@ -1970,13 +1788,13 @@ Page: login. Selector: `login forgot link`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 117 x 20 | = | = | = |
+| Size (w x h) | 119.92 x 20 | = | = | = |
 | Padding | 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #101010 offset 1px | = |
+| Outline | none | = | 1px auto #005fcc offset 1px | = |
 | Font | interLatin 14px/19.25px 100 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
@@ -1984,7 +1802,7 @@ Page: login. Selector: `login forgot link`. States: default, hover, focus-visibl
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.Login_forgotPasswordLink__06EN7 117.0x20.0 outline 1px auto #101010 offset 1px | = |
+| Painted layers | - | = | a.Login_forgotPasswordLink__06EN7 119.9x20.0 outline 1px auto #005fcc offset 1px | = |
 
 Crops: `login-forgot-default.png`, `login-forgot-hover.png`, `login-forgot-focus-visible.png`, `login-forgot-pressed.png`.
 
@@ -1996,20 +1814,20 @@ Page: login. Selector: `login signup link`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 129 x 18 | = | = | = |
+| Size (w x h) | 130.27 x 18 | = | = | = |
 | Padding | 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #101010 offset 1px | = |
+| Outline | none | = | 1px auto #005fcc offset 1px | = |
 | Font | baselGrotesk 15px/19px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #2a2f2e | #444a49 | #585f5e | #444a49 |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.TextAction_root__0Cr5x.TextAction_secondary__EEy5G 129.0x18.0 outline 1px auto #101010 offset 1px | = |
+| Painted layers | - | = | a.TextAction_root__0Cr5x.TextAction_secondary__EEy5G 130.3x18.0 outline 1px auto #005fcc offset 1px | = |
 
 Crops: `login-signup-default.png`, `login-signup-hover.png`, `login-signup-focus-visible.png`, `login-signup-pressed.png`.
 

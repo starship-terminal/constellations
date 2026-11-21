@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T18:33:51.659Z",
+  "capturedAt": "2026-11-21T02:22:58.785Z",
   "screenshot": "pricing-light-monthly.png",
   "sanitizedSourceUrl": "https://glossgenius.com/pricing",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 11447
+      "height": 11504
     },
     "scroll": {
       "x": 0,

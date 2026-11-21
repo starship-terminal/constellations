@@ -14,17 +14,16 @@
 // UI toggles — the "How it works" nav dropdown, the pricing Monthly/Annual
 // toggle, the Beauty-&-Wellness/Medspa tier dropdown, a pricing FAQ details,
 // the mobile burger menu, and on the published booking site the professional
-// select, a service "Select" toggle and the "BOOK 1 SERVICE" navigation to the
-// date-picker step (read-only; no day or time is ever chosen past the shot,
-// and the details form is never submitted). The sign-in, sign-up,
-// forgot-password and demo forms are shot at rest, never submitted; every
-// link is measured, never followed.
+// select (opened, never chosen). The public /booking-flow date-picker is
+// photographed empty. No service is selected and "BOOK n SERVICE" is never
+// pressed. The sign-in, sign-up, forgot-password and demo forms are shot
+// empty, never typed into, never submitted.
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE, APP, LOGIN_URL, SIGNUP_URL, FORGOT_URL, BOOK_HOME, BOOK_SERVICES } from './lib.mjs';
+import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE, APP, LOGIN_URL, SIGNUP_URL, FORGOT_URL, BOOK_HOME, BOOK_SERVICES, BOOK_BOOK } from './lib.mjs';
 
 // Full-colour shots are working files, never committed: by default they go outside the repository,
 // to ~/.design-systems/<slug>/raw-shots for a package's copy at systems/<slug>/tools/capture/public/.
@@ -172,33 +171,14 @@ async function proMenu(p, S, shotName) {
   await wait(p, 500);
 }
 
-// On the booking site: a service row's "Select" button marks it for booking
-// (BOOK 0 SERVICE -> BOOK 1 SERVICE) — a local selection toggle, not a
-// submission.
-async function selectService(p, S, shotName) {
-  const t = p.locator('button').filter({ hasText: /^Select$/ }).filter({ visible: true }).first();
-  if (!(await t.count())) return;
-  await t.scrollIntoViewIfNeeded();
-  await clickEl(t);
-  await wait(p, 1200);
-  await S.view(shotName);
-}
-
-// From the booking services page: clicking "BOOK 1 SERVICE" navigates to the
-// read-only date-picker step (/book). A public navigation — the calendar and
-// time slots that follow are captured, never submitted.
-async function bookStep(p, S) {
-  // Booking flow: a boundary, not a step. Pressing "BOOK n SERVICE" on a real business's booking site
-  // starts a booking for it, and a day cell opens its live time slots; the capture stops at the bar.
-  // The committed book-calendar and book-slots shots were taken past that step (README, What to distrust).
-  log('  book-step: boundary, not entered');
-}
+// Selecting a service starts a booking. The capture does not click Select.
 
 const desktop = {
   home: { url: BASE + '/', wait: 9000, theme: 'light', run: async (p, S) => {
     await S.view('default');
     await step('hiw-menu', () => navMenu(p, S, /how it works/i, 'hiw-menu'));
     await step('biz-menu', () => navMenu(p, S, /businesses/i, 'biz-menu'));
+    await step('resources-menu', () => navMenu(p, S, /resources/i, 'resources-menu'));
     await S.full();
   } },
   pricing: { url: BASE + '/pricing', wait: 10000, theme: 'light', run: async (p, S) => {
@@ -272,8 +252,11 @@ const desktop = {
   'book-services': { url: BOOK_SERVICES, wait: 10000, theme: 'light', run: async (p, S) => {
     await S.view('default');
     await step('pro-menu', () => proMenu(p, S, 'pro-menu'));
-    await step('selected', () => selectService(p, S, 'selected'));
-    await step('book-step', () => bookStep(p, S));
+    await S.full();
+  } },
+  'book-flow': { url: BOOK_BOOK, wait: 10000, theme: 'light', run: async (p, S) => {
+    // Empty public date-picker. Do not choose a professional, a service, or a day.
+    await S.view('default');
   } },
 };
 

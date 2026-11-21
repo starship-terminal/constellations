@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T18:15:39.393Z",
-  "screenshot": "book-services-light-selected.png",
-  "sanitizedSourceUrl": "https://honeyhivesalon.glossgenius.com/services",
+  "capturedAt": "2026-11-21T02:25:37.559Z",
+  "screenshot": "book-flow-light-default.png",
+  "sanitizedSourceUrl": "https://bookings.glossgenius.com/booking-flow",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 6067
+      "height": 1307
     },
     "scroll": {
       "x": 0,
@@ -44,23 +44,28 @@
   "capture": {
     "mode": "viewport",
     "scale": "device",
-    "clip": null
+    "clip": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 658
+    }
   },
   "png": {
     "width": 1440,
-    "height": 900
+    "height": 658
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 900
+      "height": 658
     },
-    "basis": "configuredViewport"
+    "basis": "redacted crop above booking footer"
   },
   "visualReview": {
-    "status": "pending",
-    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+    "status": "redacted",
+    "note": "Cropped above the published booking footer so a street address is not in the committed PNG."
   },
   "cropCoordinates": {
     "status": "unverified",

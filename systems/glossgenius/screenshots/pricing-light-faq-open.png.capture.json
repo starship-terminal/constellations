@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T18:34:04.119Z",
+  "capturedAt": "2026-11-21T02:23:06.423Z",
   "screenshot": "pricing-light-faq-open.png",
   "sanitizedSourceUrl": "https://glossgenius.com/pricing",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 11333
+      "height": 11390
     },
     "scroll": {
       "x": 0,

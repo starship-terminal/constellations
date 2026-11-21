@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T17:53:39.723Z",
+  "capturedAt": "2026-11-21T02:24:55.870Z",
   "screenshot": "book-home-light-full.png",
-  "sanitizedSourceUrl": "https://honeyhivesalon.glossgenius.com/",
+  "sanitizedSourceUrl": "https://bookings.glossgenius.com/",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 900
+      "height": 4569
     },
     "scroll": {
       "x": 0,
@@ -48,16 +48,17 @@
   },
   "png": {
     "width": 1440,
-    "height": 900
+    "height": 4569
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 900
+      "height": 4569
     },
     "basis": "fullPage"
   },
+  "redaction": "The published booking footer's street line and the city name in the about prose were painted out before commit. Values were not sampled from this image.",
   "visualReview": {
     "status": "pending",
     "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."

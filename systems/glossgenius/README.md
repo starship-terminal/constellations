@@ -1,8 +1,8 @@
 # GlossGenius design reference
 
-A token set and component reference for GlossGenius's public surfaces — for building marketing pages, pricing tables, signed-out auth surfaces and client-facing booking sites in the style of the real thing. It was read from **glossgenius.com**, **app.glossgenius.com** and **honeyhivesalon.glossgenius.com** on the capture date, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: the home page, /pricing, three feature pages (/online-booking, /payment-processing, /ai-business-tools), an audience page, a customer page, /about, /blog plus one article, /contact-us, /get-demo, /free-trial, /legal/privacy, the signed-out /login, /signup and /forgot-password forms, a real published booking website's home, /services and /book date-picker step, and 390px passes on home, pricing, signup and booking services.
+A token set and component reference for GlossGenius's public surfaces — for building marketing pages, pricing tables, signed-out auth surfaces and client-facing booking sites in the style of the real thing. It was read from **glossgenius.com**, **app.glossgenius.com** and **bookings.glossgenius.com** on 2026-11-21, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: the home page, /pricing, feature and audience pages already in the package, /about, /blog, /contact-us, /get-demo step 1, /free-trial, legal pages linked from the footer, the signed-out /login, /signup and /forgot-password walls photographed empty, a published booking site's home, /services, and the empty /booking-flow date-picker, plus 390px passes on home, signup and booking services.
 
-GlossGenius is worth a capture because its three public hosts declare **separate** vocabularies, which the token sets keep apart: the Webflow marketing site ships a `--_x---*` variable layer (`--_color---primary--gloss-black` #17150e, `--_color---primary--gloss-white` #f0f7f6, a gray ramp and the 16-hue `--_color---super--*` accent family — amber through violet — plus `--_size---*px`, `--_typography---*`, `--_layout---*` and `--_components---*` collections); the Next.js app ships the **glossDS** layer (`--content-*`, `--surface-*`, `--brand-*` ramps, `--space-*x`, `--radius-*`, `--font-*`, 1000px `--button-*-radius` pills) on `:root` and scoped `.light`/`.dark` classes; and every business's public booking website (`<name>.glossgenius.com`) ships its own `.tokens_glossDS__*` family (`--button-*`, `--text-*`, `--space-*`, `--chip-*`, `--input-*`) re-skinned per layout variant. Basel Grotesk/Classic, Inter, Fraunces and Beau Rivage are the declared faces. The signature look: serif-ish display mastheads on gloss-white, near-black ink, fully-round pill buttons, and a 16-hue accent family that re-tints per section. **Boundary:** everything post-login — the calendar, clients, payments, marketing tools (app.glossgenius.com/ redirects to /calendar behind sign-in) — was never reached; the auth and demo forms were measured and typed into then cleared, never submitted; the booking flow was browsed read-only to its public date-picker step, never booked; no consent banner was observed on any host.
+GlossGenius is worth a capture because its three public hosts declare **separate** vocabularies, which the token sets keep apart: the Webflow marketing site ships a `--_x---*` variable layer (`--_color---primary--gloss-black` #17150e, `--_color---primary--gloss-white` #f0f7f6, a gray ramp and the 16-hue `--_color---super--*` accent family — amber through violet — plus `--_size---*px`, `--_typography---*`, `--_layout---*` and `--_components---*` collections); the Next.js app ships the **glossDS** layer (`--content-*`, `--surface-*`, `--brand-*` ramps, `--space-*x`, `--radius-*`, `--font-*`, 1000px `--button-*-radius` pills) on `:root` and scoped `.light`/`.dark` classes; and a published booking website ships its own `.tokens_glossDS__*` family (`--button-*`, `--text-*`, `--space-*`, `--chip-*`, `--input-*`) re-skinned per layout variant. Basel Grotesk/Classic, Inter, Fraunces and Beau Rivage are the declared faces. The signature look: serif-ish display mastheads on gloss-white, near-black ink, fully-round pill buttons, and a 16-hue accent family that re-tints per section. **Boundary:** everything post-login (the calendar, clients, payments, marketing tools) was never reached. The auth and demo forms were photographed empty. Nothing was typed into them and nothing was submitted. The published booking site was read only to the empty /booking-flow date-picker. Both selects stayed closed. No service was selected and no appointment was booked. Cookie and privacy layers were hidden, never accepted. The public tree is [site-tree.md](site-tree.md). The empty walls are [login-review.json](login-review.json).
 
 | File | What it is |
 |---|---|
@@ -14,9 +14,11 @@ GlossGenius is worth a capture because its three public hosts declare **separate
 | [components.md](components.md) | The discovery list of every page and view, one entry per component with crops and values, and the Gaps. |
 | [patterns.md](patterns.md) | How the components combine: the chrome, the hero, the pricing table, the mega-menu, the demo form, the auth forms, the booking flow, mobile, motion and focus. |
 | [components/crops/](components/crops) | Element crops at 2x, named `{component}-{state}.png`. |
-| [screenshots/](screenshots) | Quantised `{page}-light-{state}.png` captures with `.capture.json` sidecars. Desktop 1440 x 900 at 1x; `-full` whole pages (tiled past one GPU texture, bounded at 8 chunks); `mobile-*` shots at 390 x 844 @2x; `*-hiw-menu`, `*-biz-menu`, `*-monthly`, `*-tiers-menu`, `*-faq-open`, `*-pro-menu`, `*-selected`, `*-book-calendar`, `*-book-slots` the local interaction states. |
+| [screenshots/](screenshots) | Quantised `{page}-light-{state}.png` captures with `.capture.json` sidecars. Desktop 1440 x 900 at 1x; `-full` whole pages (tiled past one GPU texture, bounded at 8 chunks); `mobile-*` shots at 390 x 844 @2x; `*-hiw-menu`, `*-biz-menu`, `*-resources-menu`, `*-monthly`, `*-tiers-menu`, `*-faq-open`, `*-pro-menu` the local interaction states. The empty date-picker is `book-flow-light-default`. |
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the stylesheet harvest — resolved custom properties in the marketing, app and booking probes plus @font-face), `component-tokens.json` (the token-tree spec). |
 | [tools/](tools) | The builders and the capture kit (see Rebuild). |
+| [site-tree.md](site-tree.md) | The public tree: which control opens which page or interaction. |
+| [login-review.json](login-review.json) | The empty signed-out walls only. Signed-in nav, settings and create were not entered. |
 | [capture.pr](capture.pr) | The pull request that shipped this capture |
 
 ## Brief
@@ -90,6 +92,33 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 
 <!-- health:end -->
 
+## Coverage
+
+| Item | Status |
+|---|---|
+| Colour, light | Captured. Marketing gloss-white and gloss-black, app glossDS, booking tokens in [tokens.json](tokens.json) |
+| Colour, dark | Not present on signed-out pages. No theme toggle. App `.dark` and Decagon `[data-theme=dark]` are declarations nothing applies |
+| Type | Captured. Basel Classic Book and Basel Grotesk Book from computed styles. Faces are not bundled |
+| Space, radius, controls | Captured from nav, pills, fields, plan cards and the booking selects |
+| Elevation | Card and menu shadows on measured components. Not named elevation levels in the sheets |
+| Motion | Component transitions in [raw/measurements.md](raw/measurements.md). Reduced-motion was checked on the home header when the home page finished |
+| Button | Start free trial, Book a demo, plan CTA, Log in, Sign up, BOOK 0 SERVICE. Not submitted |
+| Link | Header, footer, auth footer, booking nav. Map in [site-tree.md](site-tree.md) |
+| Text field | Empty login, signup and forgot-password fields. Focused, not typed into |
+| Select | Pricing tier menu opened, no option chosen. Booking professional menu opened, no option chosen. Booking-flow selects left closed |
+| Checkbox, radio | Signup professional checkbox and demo team-size radios, at rest. Not chosen |
+| Menu | How it works, Businesses, Resources, phone burger, booking Shop |
+| Card | Home cards, plan cards, service cards |
+| Dialog | Support bubble opens a Decagon iframe. Not submitted. No other dialog was opened |
+| Desktop 1440 and phone 390 | [screenshots/home-light-default.png](screenshots/home-light-default.png), [screenshots/mobile-home-light-default.png](screenshots/mobile-home-light-default.png) |
+| Text area, switch, tabs, tooltip, toast, table, avatar | Not present on the pages that were opened, or not measured this pass |
+| Form error, loading | Not captured. No form was submitted |
+| Login, signup, forgot password | Empty walls only. [login-review.json](login-review.json) |
+| Signed-in calendar, clients, payments, settings, create | Not entered |
+| Booking calendar, slots, details, payment | Not captured. Choosing a professional or a category on /booking-flow starts a booking |
+| Search | Not present in the marketing header. Blog uses topic filters. No query was submitted |
+| Locale switch | Not present |
+
 ## Do and don't
 
 1. **Do paint the marketing field gloss-white, not white.** Pages sit on `#f0f7f6`; pure `#ffffff` is reserved for cards and fields. See [home-light-default](screenshots/home-light-default.png).
@@ -98,10 +127,10 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 4. **Do run the two Basel voices apart.** Basel Classic Book carries display headlines, Basel Grotesk Book carries body and UI; neither substitutes for the other. See [feat-h1](components/crops/feat-h1-default.png) and [home-prose](components/crops/home-prose-default.png).
 5. **Do respect the three vocabularies.** Marketing `--_x---*`, app `--content-*`/`--surface-*` and booking `.tokens_glossDS__*` names share words but not values — never port an `app` token onto the marketing surface. See [login-card](components/crops/login-card-default.png) versus [bk-service-card](components/crops/bk-service-card-default.png).
 6. **Do read pricing annual-first.** The billing toggle loads annual-checked with struck monthly figures; monthly was reached by the local switch. See [pricing-light-default](screenshots/pricing-light-default.png) and [pricing-light-monthly](screenshots/pricing-light-monthly.png).
-7. **Don't book past the date-picker.** The booking flow was captured read-only to the calendar; slot confirmation, details and payment are recorded gaps, not design sources. See [book-services-light-book-calendar](screenshots/book-services-light-book-calendar.png).
+7. **Don't book past the empty date-picker.** /booking-flow was photographed with both selects closed. Choosing a professional or a category starts a booking. Slot confirmation, details and payment are recorded gaps. See [book-flow-light-default](screenshots/book-flow-light-default.png).
 8. **Don't style the signed-in product from this package.** Only /login, /signup and /forgot-password were captured on the app host; nothing behind them is evidenced. See [login-light-default](screenshots/login-light-default.png).
 9. **Don't ship the muted gray for body copy.** `#778280` sits at 3.65:1 on the page — it is a hint/caption colour only. See [login-footer](components/crops/login-footer-default.png).
-10. **Don't treat the booking skin as universal.** honeyhivesalon's palette is one business's published skin over shared `.tokens_glossDS__*` chrome. See [book-home-light-default](screenshots/book-home-light-default.png).
+10. **Don't treat the booking skin as universal.** The published site at bookings.glossgenius.com is one business's skin over shared `.tokens_glossDS__*` chrome. See [book-home-light-default](screenshots/book-home-light-default.png).
 
 ## How the values were read
 
@@ -118,11 +147,11 @@ The marketing names are emitted under `core` at their natural paths (`color.prim
 - **Nothing dark paints.** Every signed-out surface is light-only (no toggle; the app's `.dark` class is declared but never applied, and the `[data-theme="dark"]` rules come from the third-party Decagon chat-widget sheet — an `external` provenance bin, not first-party evidence). Do not present those declarations as a captured dark theme.
 - **Three vocabularies, one name-space.** `--surface-primary`, `--black`, `--space-2x` and friends mean different values on the marketing site, the app and a booking site — the sets are deliberately separate; never read an `app` token onto the marketing surface or vice versa.
 - **Presses are forced.** `pressed` states were read with `CSS.forcePseudoState` — any script-driven mousedown look is uncaptured.
-- **The booking site is one business's skin.** honeyhivesalon.glossgenius.com paints the Organic-style layout; other businesses' sites re-skin the same chrome through other `.tokens_glossDS__*` layout classes and palette picks — treat `booking` tokens as this surface's resolution, not a universal brand set.
-- **The booking flow stops at the date-picker.** Slot confirmation, the YOUR DETAILS form and payment were never reached — they sit past a "Next" that was never pressed.
-- **The booking-flow readings were taken past a booking step.** `bk-steps`, `bk-cal`, `bk-day`, `bk-next` and the `book-calendar` / `book-slots` shots were reached by selecting a service and pressing "BOOK 1 SERVICE" on a real business's live booking site, and a day cell was opened to show its time slots. They stay as evidence; the capture scripts now stop at the BOOK bar (edited 2026-11, not rerun).
+- **The booking site is one business's skin.** bookings.glossgenius.com paints one published layout; other businesses re-skin the same chrome through other `.tokens_glossDS__*` layout classes and palette picks. Treat `booking` tokens as this surface's resolution, not a universal brand set.
+- **The booking flow stops at the empty date-picker.** /booking-flow was photographed with Select a Professional and Select a Service Category closed. Calendar, slots, details and payment were not reached. An earlier pass that selected a service and opened a day was removed from this package.
 - **Weight tokens are named for what they measure.** `font.weight.regular` is 400 (the nav links) and `font.weight.medium` is 500 (plan rows, the eyebrow, the hero heading); no semibold or bold weight was measured on these components.
 - **Prices are photographed, not promised.** The plan cards load annual-checked (showing struck monthly and billed-annual figures); the monthly state was reached by the local toggle.
+- **DESIGN.md still quotes the catalog row.** `make design-md` copies `goodFor` and `access` from catalog.json. That row still names honeyhivesalon.glossgenius.com and an older pass that typed into fields. This refresh did not edit catalog.json. Read [README.md](README.md), [site-tree.md](site-tree.md) and [login-review.json](login-review.json) for the 2026-11-21 boundary.
 
 ## Rebuild
 

@@ -1,12 +1,12 @@
 {
- "_note": "Rules for systems/glossgenius. A fully public signed-out capture: every route is public marketing, signed-out auth, or a real published business booking website (honeyhivesalon.glossgenius.com) read only to its public /book date-picker. The auth and demo fields were typed into with throwaway values then cleared, never submitted; no appointment was booked, no payment reached. Names, prices and addresses in screenshots are product-published page content. The OCR email net is kept, with the product's own published addresses and example placeholders allowed.",
- "ocr": {
-  "emails": true,
-  "email_allow": [
-   "@glossgenius\\.com$",
-   "@example\\.com$",
-   "@example\\.org$"
-  ]
- },
- "families": []
+  "_note": "Rules for systems/glossgenius. A public signed-out capture on 2026-11-21: marketing pages, empty auth walls, and bookings.glossgenius.com read only to the empty /booking-flow date-picker. Nothing was typed. No appointment was booked. The published booking footer street line is cropped out of the committed date-picker shot. Staff names on the public booking site are published catalog content.",
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@glossgenius\\.com$",
+      "@example\\.com$",
+      "@example\\.org$"
+    ]
+  },
+  "families": []
 }

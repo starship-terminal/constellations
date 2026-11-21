@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T18:09:06.487Z",
+  "capturedAt": "2026-11-21T02:28:16.691Z",
   "screenshot": "home-light-hiw-menu.png",
   "sanitizedSourceUrl": "https://glossgenius.com/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 12046
+      "height": 12024
     },
     "scroll": {
       "x": 0,
