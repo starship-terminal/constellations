@@ -1,0 +1,161 @@
+{
+  "capturedAt": "2026-11-22",
+  "product": "Everlane",
+  "url": "https://www.everlane.com/",
+  "title": "Everlane",
+  "signedOut": true,
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "png": { "width": 2880, "height": 1800 },
+  "note": "Computed styles from getComputedStyle. The announcement bar fill is a parent section, not the inner .announcement-bar node, which was transparent. The visible slide changed between the homepage shot and the product shot.",
+  "homepage": {
+    "body": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "\"Maison Neue Book\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "28.8px",
+      "letterSpacing": "0.6px"
+    },
+    "announcementSection": {
+      "selector": ".announcement-bar-section",
+      "backgroundColor": "rgb(200, 192, 184)",
+      "height": "32px",
+      "note": "Product-page shot. Homepage shot sampled #12344b at the top of the PNG while the cashmere slide was visible."
+    },
+    "announcementText": {
+      "color": "rgb(18, 18, 18)",
+      "fontSize": "12px",
+      "fontFamily": "\"Maison Neue Book\", sans-serif",
+      "letterSpacing": "0.6px"
+    },
+    "header": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "height": "40px",
+      "padding": "0px 16px",
+      "cssVarHeaderHeight": "73px"
+    },
+    "departmentLink": {
+      "text": "WOMEN",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "12px",
+      "lineHeight": "15.6px",
+      "letterSpacing": "0.24px",
+      "fontWeight": "400"
+    },
+    "megaLink": {
+      "text": "PRICED BETTER",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "12px",
+      "letterSpacing": "0.24px"
+    },
+    "saleLink": {
+      "text": "SALE",
+      "color": "rgb(208, 2, 27)"
+    },
+    "heroEyebrow": {
+      "text": "BLACK FRIDAY",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Maison Neue\", sans-serif",
+      "fontSize": "20px",
+      "lineHeight": "24px"
+    },
+    "logo": {
+      "width": "130",
+      "height": "14",
+      "viewBox": "0 0 337.6 38.82",
+      "fill": "black"
+    }
+  },
+  "product": {
+    "url": "https://www.everlane.com/products/womens-organic-cotton-box-cut-tee-peyote",
+    "title": "The Box-Cut Tee in Essential Cotton | Peyote | No Pocket – Everlane",
+    "h1": {
+      "text": "THE BOX-CUT TEE IN ESSENTIAL COTTON",
+      "color": "rgb(22, 25, 18)",
+      "fontSize": "16px",
+      "letterSpacing": "0.32px",
+      "fontFamily": "\"Maison Neue Book\", sans-serif"
+    },
+    "crumb": {
+      "text": "WOMENS",
+      "color": "rgb(115, 115, 115)",
+      "fontSize": "12px"
+    },
+    "styleSelected": {
+      "text": "NO POCKET",
+      "backgroundColor": "rgb(38, 38, 38)",
+      "color": "rgb(255, 255, 255)",
+      "height": "40px",
+      "border": "1px solid rgb(224, 223, 223)",
+      "borderRadius": "0px"
+    },
+    "styleIdle": {
+      "text": "POCKET",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "height": "40px",
+      "border": "1px solid rgb(224, 223, 223)"
+    },
+    "soldOut": {
+      "text": "SOLD OUT",
+      "backgroundColor": "rgb(38, 38, 38)",
+      "color": "rgb(255, 255, 255)",
+      "height": "47px",
+      "fontSize": "15px",
+      "letterSpacing": "1px",
+      "borderRadius": "0px",
+      "clicked": false
+    }
+  },
+  "loginWall": {
+    "host": "account.everlane.com",
+    "path": "/authentication/login",
+    "title": "Sign in - Everlane",
+    "h1": {
+      "text": "Sign in",
+      "fontSize": "20px",
+      "fontFamily": "Howu5pMg, sans-serif",
+      "color": "rgb(0, 0, 0)"
+    },
+    "sub": {
+      "text": "Sign in or create an account",
+      "color": "rgba(0, 0, 0, 0.56)",
+      "fontSize": "14px"
+    },
+    "shopButton": {
+      "text": "Continue with Shop",
+      "backgroundColor": "rgb(84, 51, 235)",
+      "labelColor": "rgb(255, 255, 255)",
+      "height": "50px",
+      "borderRadius": "0px",
+      "fontFamily": "GTStandard-M, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "clicked": false,
+      "note": "Identity provider. Not clicked. Fill read from the shop-login shadow root."
+    },
+    "emailField": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(222, 222, 222)",
+      "height": "49px",
+      "borderRadius": "0px",
+      "empty": true
+    },
+    "cssVars": {
+      "--color-background": "255,255,255",
+      "--color-foreground": "18,18,18",
+      "--color-button": "18,18,18",
+      "--color-button-text": "255,255,255",
+      "--buttons-radius": "0px",
+      "--inputs-radius": "0px",
+      "--font-body-family": "Assistant, sans-serif",
+      "note": "Shopify theme variables on the storefront. Visible chrome used Maison Neue Book, not Assistant."
+    }
+  }
+}

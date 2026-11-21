@@ -1,0 +1,30 @@
+{
+  "product": "Everlane",
+  "domain": "everlane.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Account, and footer Manage Account and Sign up",
+      "url": "https://account.everlane.com/authentication/login",
+      "title": "Sign in - Everlane",
+      "painted": true,
+      "headings": ["Sign in"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": false }
+      ],
+      "identityProvidersSeen": ["Continue with Shop"],
+      "otherControls": ["Continue", "Terms of service", "Privacy policy"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "The email field was empty. Continue was not clicked. Continue with Shop was not clicked. The query string on this URL carries OAuth state, a nonce, and a client id, and is not copied here. Signup is the same wall: the subheading is Sign in or create an account. There is no separate empty signup form. screenshots/signup-light-1440.png is the same photograph."
+    }
+  ]
+}
