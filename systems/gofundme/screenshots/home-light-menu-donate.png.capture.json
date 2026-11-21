@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T19:56:19.902Z",
+  "capturedAt": "2026-11-21T03:47:09.819Z",
   "screenshot": "home-light-menu-donate.png",
   "sanitizedSourceUrl": "https://www.gofundme.com/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 7732
+      "height": 7696
     },
     "scroll": {
       "x": 0,

@@ -1,0 +1,58 @@
+{
+  "slug": "gofundme",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "probe": "no-form",
+  "session": "Headless Chromium via Playwright. Public site tree only. The sign-in wall was opened far enough to see what it asks for, then the branch stopped. No email, name, password, or code was typed. Google, Apple, and Continue were not clicked. No form was submitted.",
+  "known_probe": {
+    "https://www.gofundme.com/sign-in": "On 2026-11-21 the page returned HTTP 200 and, after the card mounted, showed Welcome, Sign in with Google, Continue with Apple, an Email Address field, and Continue. An earlier look in the same pass saw an empty body before the card painted. The wall was photographed and not entered.",
+    "https://app.gofundme.com/login": "HTTP 403 from CloudFront. Title ERROR: The request could not be satisfied. No email field and no buttons. Not a fundraiser-not-found page on this pass."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "deviceScaleFactor": 1
+    },
+    "phone": {
+      "requested": "390x844",
+      "deviceScaleFactor": 2
+    }
+  },
+  "offered": {
+    "nav": [
+      {"label": "Sign in", "href": "/sign-in", "reached": true, "note": "Auth wall photographed. Not entered."},
+      {"label": "Manage your activity", "href": "/sign-in?referrer=manage_activity", "reached": false, "note": "Recorded from the phone drawer. Not opened."},
+      {"label": "Start a GoFundMe", "href": "/create/fundraiser", "reached": true, "note": "Public category step. Continue not clicked."}
+    ],
+    "settings": [],
+    "create": {
+      "items": [
+        {"label": "Where will the funds go?", "href": "/create/fundraiser/category", "reached": true},
+        {"label": "Continue", "href": "/create/fundraiser/category", "reached": false}
+      ],
+      "reached": "Opened the public category step. Country was already United States. The zip field was empty and was not filled. Continue was not clicked."
+    }
+  },
+  "screens": [
+    {"name": "sign-in-light-default", "file": "screenshots/sign-in-light-default.png", "note": "Welcome card with Google, Apple, Email Address, and Continue. The Transcend Privacy Information card is in the lower frame. Okay was not clicked. A later load of this URL returned an empty body, then a 502."},
+    {"name": "mobile-sign-in-light-default", "file": "screenshots/mobile-sign-in-light-default.png", "note": "Same wall at 390 wide, consent card hidden, form fully in frame. Not entered."},
+    {"name": "create-light-default", "file": "screenshots/create-light-default.png", "note": "Public wizard step, not an account."}
+  ],
+  "gaps": [
+    "No signed-in session. login-extracted stays not-started.",
+    "Google and Apple were on the wall and were not clicked.",
+    "The email field was not filled. Continue was not clicked.",
+    "app.gofundme.com/login returned HTTP 403 from CloudFront and showed no form.",
+    "Account, donations, and sign-out hrefs in the phone drawer markup were not opened.",
+    "Donate now and Share on a public fundraiser were not pressed."
+  ],
+  "not_submitted": [
+    "Sign in with Google",
+    "Continue with Apple",
+    "Email Address",
+    "Continue on the sign-in card",
+    "Zip code on the create step",
+    "Continue on the create step",
+    "Google One Tap Continue"
+  ]
+}

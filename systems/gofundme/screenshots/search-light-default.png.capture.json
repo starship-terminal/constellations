@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T19:57:40.251Z",
+  "capturedAt": "2026-11-21T03:47:25.221Z",
   "screenshot": "search-light-default.png",
-  "sanitizedSourceUrl": "https://www.gofundme.com/s?q=medical",
+  "sanitizedSourceUrl": "https://www.gofundme.com/s",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 2446
+      "height": 3276
     },
     "scroll": {
       "x": 0,

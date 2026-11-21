@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T20:05:46.473Z",
+  "capturedAt": "2026-11-21T03:47:34.734Z",
   "screenshot": "sign-in-light-default.png",
   "sanitizedSourceUrl": "https://www.gofundme.com/sign-in",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 906
+      "height": 5170
     },
     "scroll": {
       "x": 0,
@@ -60,7 +60,7 @@
   },
   "visualReview": {
     "status": "pending",
-    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+    "note": "Welcome card with Google, Apple, Email Address, and Continue. The Transcend Privacy Information card is in the lower frame and was not clicked. A later retry of this URL returned an empty body, then a 502."
   },
   "cropCoordinates": {
     "status": "unverified",
