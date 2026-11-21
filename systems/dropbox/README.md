@@ -13,7 +13,9 @@ Dropbox is worth a capture because the public site ships two complete token laye
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (53, 139 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the header and mega-menu, the hero, plans/pricing, the auth cards, the footer, mobile |
 | [components/crops/](components/crops) | 137 element screenshots, `{component}-{state}.png` |
-| [screenshots/](screenshots) | 27 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages (mobile pages are part-stitched), `mobile-*` phone shots, `home-light-menu`/`mobile-home-light-menu` the opened menus, `plans-light-monthly` the toggled billing radio (the page defaults to yearly) |
+| [screenshots/](screenshots) | `{page}-{theme}-{state}.png` captures. The 2026-11-13 set is desktop 1440 x 900 at 1x, `-full` whole pages, `mobile-*` phone shots, `home-light-menu`/`mobile-home-light-menu` the opened menus, `plans-light-monthly` the toggled billing radio. The 2026-11-21 set adds the opened header menus, language dialog, cookie dialog, phone drawer, feature tabs, plan help dialog, and the empty login, register, and checkout walls. |
+| [site-tree.md](site-tree.md) | Which public control opens which page, menu, or dialog, mapped 2026-11-21 |
+| [login-review.json](login-review.json) | The auth walls this pass stopped at. Nothing was typed or submitted. |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — both token layers resolved on five probe scopes; vendor vars binned), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
 
@@ -99,6 +101,8 @@ Every value came off the running signed-out site in headless Chromium:
 - **Screenshots.** [tools/capture/public/public.mjs](tools/capture/public/public.mjs) takes viewport and full-page shots per route with `.capture.json` sidecars, including the local UI toggles: the Products mega-menu (it opens on pointer **hover** — a click closes it, measured behaviour), the mobile hamburger menu, and the Billed-monthly billing radio on /plans (the page defaults to yearly). dropbox.com mounts Lenis smooth-scroll and an intermittent CCPA consent iframe that scroll-locks the document; the kit aborts the consent iframe's requests (nothing answered) and releases scroll hijackers before tiling, bounding every full-page capture at 8 chunks. [tools/capture/quantize.py](tools/capture/quantize.py) posterises them to 256 colours.
 
 Nothing was signed into, created, submitted or paid for: the login and register cards were captured as surfaces, their email fields focused and given sample text that was deleted again; every Try-for-free, Buy-now, Get-started and Continue action was measured, never followed; the billing radio, mega-menu and mobile menu were toggled as local UI state. The privacy consent banner, the CCPA iframe and Google One Tap were hidden or never loaded — no consent button was ever clicked and no consent POST was sent.
+
+A 2026-11-21 refresh mapped the public control tree into [site-tree.md](site-tree.md) and photographed the opened menus, language dialog, cookie dialog, phone drawer, feature tabs, plan help dialog, and the empty login, register, and checkout walls. That pass did not type into any field and did not submit anything. The walls are listed in [login-review.json](login-review.json). Token values were not re-read.
 
 ## What to distrust
 
