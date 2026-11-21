@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-20T21:06:21.145Z",
+  "capturedAt": "2026-11-21T13:03:18.187Z",
   "screenshot": "fin-video-light-dialog.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -37,15 +37,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 4428
+      "pageTop": 4255
     },
     "documentSize": {
       "width": 1440,
-      "height": 9691
+      "height": 9518
     },
     "scroll": {
       "x": 0,
-      "y": 4428
+      "y": 4255
     }
   },
   "capture": {
@@ -66,8 +66,8 @@
     "basis": "configuredViewport"
   },
   "visualReview": {
-    "status": "pending",
-    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+    "status": "passed",
+    "note": "Looked at the PNG this pass, or it is the same capture as one I looked at. Public marketing or the empty sign-in wall. No account name, email, or username."
   },
   "cropCoordinates": {
     "status": "unverified",

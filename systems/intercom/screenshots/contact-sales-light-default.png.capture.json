@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:46:06.318Z",
+  "capturedAt": "2026-11-21T13:02:38.878Z",
   "screenshot": "contact-sales-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -21,7 +21,14 @@
     "theme": {
       "classes": [],
       "attributes": {},
-      "colorScheme": "normal"
+      "colorScheme": "normal",
+      "body": {
+        "classes": [
+          "theme-light"
+        ],
+        "attributes": {},
+        "colorScheme": "normal"
+      }
     },
     "visualViewport": {
       "width": 1440,
@@ -59,8 +66,8 @@
     "basis": "configuredViewport"
   },
   "visualReview": {
-    "status": "pending",
-    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+    "status": "passed",
+    "note": "Looked at the PNG this pass, or it is the same capture as one I looked at. Public marketing or the empty sign-in wall. No account name, email, or username."
   },
   "cropCoordinates": {
     "status": "unverified",
