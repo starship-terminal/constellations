@@ -1,0 +1,21 @@
+{
+  "captured": "2026-11-22",
+  "name": "pricing-light-390",
+  "url": "https://www.datadoghq.com/pricing/",
+  "requestedUrl": "https://www.datadoghq.com/pricing/",
+  "title": "Pricing | Datadog",
+  "h1": "PRICING",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "status": 200
+}

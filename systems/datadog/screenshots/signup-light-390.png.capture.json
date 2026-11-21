@@ -1,0 +1,21 @@
+{
+  "captured": "2026-11-22",
+  "name": "signup-light-390",
+  "url": "https://www.datadoghq.com/",
+  "requestedUrl": "https://www.datadoghq.com/",
+  "title": "Cloud Monitoring as a Service | Datadog",
+  "h1": "Start Your Free Datadog Trial Now",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "Empty signup modal opened from the phone menu Get started control. Nothing typed. The form was not submitted. No identity provider was clicked.",
+  "status": 200
+}

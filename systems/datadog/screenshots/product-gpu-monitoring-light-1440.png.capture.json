@@ -1,0 +1,21 @@
+{
+  "captured": "2026-11-22",
+  "name": "product-gpu-monitoring-light-1440",
+  "url": "https://www.datadoghq.com/product/gpu-monitoring/",
+  "requestedUrl": "https://www.datadoghq.com/product/gpu-monitoring/",
+  "title": "GPU Monitoring for AI Workloads | Datadog",
+  "h1": "GPU Monitoring",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "status": 200
+}

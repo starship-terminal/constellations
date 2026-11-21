@@ -1,0 +1,21 @@
+{
+  "captured": "2026-11-22",
+  "name": "integrations-light-1440",
+  "url": "https://www.datadoghq.com/product/platform/integrations/",
+  "requestedUrl": "https://www.datadoghq.com/product/platform/integrations/",
+  "title": "Datadog Integrations: 1,000+ Observability Tools | Datadog",
+  "h1": "End-to-end observability with Datadog's 1,000+ built-in integrations",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "status": 200
+}

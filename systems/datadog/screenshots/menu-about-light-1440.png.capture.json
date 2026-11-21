@@ -1,0 +1,21 @@
+{
+  "captured": "2026-11-22",
+  "name": "menu-about-light-1440",
+  "url": "https://www.datadoghq.com/",
+  "requestedUrl": "https://www.datadoghq.com/",
+  "title": "Cloud Monitoring as a Service | Datadog",
+  "h1": "AI-Powered Observability and Security",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "ABOUT menu forced open with the show class and display block. Nothing was clicked that navigates. Cookie banner hidden with CSS.",
+  "status": 200
+}

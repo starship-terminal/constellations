@@ -1,0 +1,21 @@
+{
+  "captured": "2026-11-22",
+  "name": "product-internal-developer-portal-light-1440",
+  "url": "https://www.datadoghq.com/product/internal-developer-portal/",
+  "requestedUrl": "https://www.datadoghq.com/product/internal-developer-portal/",
+  "title": "Internal Developer Portal | Datadog",
+  "h1": "Internal Developer Portal",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "status": 200
+}

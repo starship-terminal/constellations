@@ -1,0 +1,21 @@
+{
+  "captured": "2026-11-22",
+  "name": "product-sast-light-1440",
+  "url": "https://www.datadoghq.com/product/static-code-analysis/",
+  "requestedUrl": "https://www.datadoghq.com/product/sast/",
+  "title": "Static Code Analysis | Datadog",
+  "h1": "Static Code Analysis (SAST)",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "status": 200
+}

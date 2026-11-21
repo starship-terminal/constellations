@@ -1,0 +1,21 @@
+{
+  "captured": "2026-11-22",
+  "name": "solutions-cnapp-light-1440",
+  "url": "https://www.datadoghq.com/solutions/cnapp/",
+  "requestedUrl": "https://www.datadoghq.com/solutions/cnapp/",
+  "title": "Cloud Native Application Protection Platform (CNAPP) | Datadog",
+  "h1": "CNAPP",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. lang_pref=en so the page stays on the English URL. Cookie banner hidden with CSS. No form submitted.",
+  "status": 200
+}

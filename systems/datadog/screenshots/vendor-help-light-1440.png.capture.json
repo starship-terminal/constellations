@@ -1,0 +1,21 @@
+{
+  "captured": "2026-11-22",
+  "name": "vendor-help-light-1440",
+  "url": "https://www.datadoghq.com/vendor-help/",
+  "requestedUrl": "https://www.datadoghq.com/vendor-help/",
+  "title": "Datadog Supplier | Datadog",
+  "h1": "Doing Business with Datadog",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "status": 200
+}
