@@ -69,8 +69,8 @@ export async function closePromo(page) {
   return page.evaluate(() => {
     let hid = 0;
     const vis = (e) => { const r = e.getBoundingClientRect(); return r.width > 8 && r.height > 8 && e.isConnected; };
-    const kill = (e) => { if (vis(e) && e.style.display !== 'none') { e.setAttribute('data-m-swept', '1'); e.style.setProperty('display', 'none', 'important'); hid++; } };
-    for (const e of document.querySelectorAll('iframe[src*="qualified.com"], iframe[src*="accounts.google.com"], #q-messenger-frame, [id*="q-messenger" i], [id*="qualified" i], [class*="qlfd"], [class*="qualified" i], [class*="q-messenger" i], #credential_picker_container, [id^="g_id_"], [class*="g_id_signin" i], [data-testid*="qualified" i]')) {
+    const kill = (e) => { if (e && e.style && e.style.display !== 'none') { e.setAttribute('data-m-swept', '1'); e.style.setProperty('display', 'none', 'important'); e.style.setProperty('pointer-events', 'none', 'important'); hid++; } };
+    for (const e of document.querySelectorAll('iframe[src*="qualified.com"], iframe[src*="accounts.google.com"], iframe[src*="transcend"], #q-messenger-frame, [id*="q-messenger" i], [id*="qualified" i], [id*="transcend" i], [class*="qlfd"], [class*="qualified" i], [class*="q-messenger" i], [class*="transcend" i], #credential_picker_container, [id^="g_id_"], [class*="g_id_signin" i], [data-testid*="qualified" i]')) {
       kill(e);
       const host = e.closest('div:not(body):not(main)') || e;
       if (host !== e) kill(host);
@@ -88,12 +88,12 @@ export async function closePromo(page) {
         kill(n);
       }
     }
-    // any positioned overlay that asks for consent (a third-party banner)
-    for (const e of document.querySelectorAll('body > *')) {
-      const cs = getComputedStyle(e);
-      if (cs.position !== 'fixed') continue;
-      if (/cookie|consent/i.test(e.innerText || '') && /accept|reject|manage|settings/i.test(e.innerText || '')) kill(e);
-    }
+    // Transcend's consent UI lives in an open shadow root. The host itself
+    // reports 0 height, so a visibility check misses it, and clicking Agree
+    // or Reject would POST. Hide the host by id. Never click those buttons.
+    const transcend = document.getElementById('transcend-shadow-root');
+    if (transcend) kill(transcend);
+    for (const e of document.querySelectorAll('[id*="transcend" i], [class*="transcend" i]')) kill(e);
     return hid;
   }).catch(() => 0);
 }

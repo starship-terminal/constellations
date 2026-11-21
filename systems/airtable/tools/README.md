@@ -1,7 +1,8 @@
 # Airtable tools
 
 The builders that produce this package and the capture kit that read it from
-www.airtable.com's public marketing pages on 2026-11-10/12. Everything is
+www.airtable.com's public marketing pages. The public screenshots and
+css-vars were refreshed on 2026-11-21. Everything is
 deterministic: edit the raw inputs or the scripts, never the generated files.
 
 Builders (run from `systems/airtable/`):
