@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lemon Squeezy style guide</title>
+<style>
+:root {
+  --palette-black: #000000;
+  --palette-black-2: #121217;
+  --palette-blue: #5423e7;
+  --palette-blue-50: #f0faff;
+  --palette-blue-100: #dbf3ff;
+  --palette-blue-200: #ade4ff;
+  --palette-blue-300: #70d1ff;
+  --palette-blue-400: #38beff;
+  --palette-blue-500: #00acff;
+  --palette-blue-600: #0090d6;
+  --palette-blue-700: #0075ad;
+  --palette-blue-violet: #7047eb;
+  --palette-border: #d1d1db;
+  --palette-gray-300: #a9a9bc;
+  --palette-gray-500: #6c6c89;
+  --palette-green-50: #eefbf4;
+  --palette-green-100: #dff8ea;
+  --palette-green-200: #b2eecc;
+  --palette-green-300: #84e4ae;
+  --palette-green-400: #56d990;
+  --palette-green-500: #2dca72;
+  --palette-green-600: #26a95f;
+  --palette-green-700: #1e874c;
+  --palette-grey-50: #f7f7f8;
+  --palette-grey-100: #e8e8ed;
+  --palette-grey-200: #d1d1db;
+  --palette-grey-700: #3f3f50;
+  --palette-ink: #191919;
+  --palette-yellow: #ffc233;
+  --palette-yellow-lighter: #ffd266;
+  --palette-yellow-50: #fff9eb;
+  --palette-yellow-100: #fff3d6;
+  --palette-yellow-200: #ffe7ad;
+  --palette-yellow-300: #ffda85;
+  --palette-yellow-400: #ffce5c;
+  --palette-yellow-500: #ffc233;
+  --palette-yellow-700: #c28800;
+  --palette-orange-50: #fff2ee;
+  --palette-orange-100: #ffe8e1;
+  --palette-orange-200: #ffcdbd;
+  --palette-orange-300: #ffb399;
+  --palette-orange-400: #ff9876;
+  --palette-orange-500: #ff7d52;
+  --palette-orange-600: #ff571f;
+  --palette-orange-700: #eb3a00;
+  --palette-pink-50: #feecfb;
+  --palette-pink-100: #fdddf8;
+  --palette-pink-200: #fcc5f3;
+  --palette-pink-300: #fa99ea;
+  --palette-pink-400: #f87ce4;
+  --palette-pink-500: #f75fde;
+  --palette-pink-600: #f42ad3;
+  --palette-pink-700: #db0bb9;
+  --palette-pink-800: #a5088c;
+  --palette-purple-50: #f4f1fd;
+  --palette-purple-100: #e2dafb;
+  --palette-purple-200: #c6b6f7;
+  --palette-purple-300: #a991f3;
+  --palette-purple-400: #8d6cef;
+  --palette-purple-500: #7047eb;
+  --palette-purple-600: #5423e7;
+  --palette-purple-700: #4316ca;
+  --palette-purple-900: #2b0e81;
+  --palette-red-50: #fef0f4;
+  --palette-red-100: #fdd8e1;
+  --palette-red-200: #fbb1c4;
+  --palette-red-400: #f76489;
+  --palette-red-500: #f53d6b;
+  --palette-red-700: #d50b3e;
+  --palette-white: #ffffff;
+  --palette-white-10: #ffffff1a;
+  --font-family-display: Circularpro book, sans-serif;
+  --font-family-body: Inter, sans-serif;
+  --font-family-auth: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-family-mono: Jetbrainsmono, ui-monospace, monospace;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-size-display: 80px;
+  --font-size-title: 56px;
+  --font-size-auth-title: 24px;
+  --font-size-body: 18px;
+  --font-size-nav: 15px;
+  --font-size-caption: 14px;
+  --font-size-auth-button: 16px;
+  --radius-control: 8px;
+  --radius-pill: 40px;
+  --radius-none: 0px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-20: 20px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --size-nav-height: 88px;
+  --size-banner-height: 70px;
+  --size-button-height: 40px;
+  --size-auth-button-height: 48px;
+  --size-field-height: 40px;
+  --size-oauth-height: 50px;
+  --size-logo: 40px;
+  --typography-display: var(--font-weight-regular) var(--font-size-display)/80px var(--font-family-display);
+  --typography-title: var(--font-weight-regular) var(--font-size-title)/63.84px var(--font-family-display);
+  --typography-body: var(--font-weight-regular) var(--font-size-body)/28.8px var(--font-family-body);
+  --typography-nav: var(--font-weight-medium) var(--font-size-nav)/24px var(--font-family-body);
+  --typography-caption: var(--font-weight-regular) var(--font-size-caption)/22.4px var(--font-family-body);
+  --typography-auth-title: var(--font-weight-medium) var(--font-size-auth-title)/32px var(--font-family-auth);
+  --motion-duration-fast: 100ms;
+  --motion-duration-nav: 400ms;
+  --motion-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --shadow-card: rgba(17, 17, 46, 0.06) 0px 2px 4px, rgba(17, 17, 46, 0.09) 0px 8px 13px;
+  --page: #5423e7;
+  --surface: #ffffff;
+  --surface-muted: #f7f7f8;
+  --text: #121217;
+  --text-on-accent: #ffffff;
+  --muted: #ffffff99;
+  --muted-ink: #6c6c89;
+  --accent: #5423e7;
+  --accent-auth: #7047eb;
+  --banner: #ffc233;
+  --link: #7047eb;
+  --border: #d1d1db;
+  --focus: #3889ec;
+  --success: #2dca72;
+  --warning: #ffc233;
+  --danger: #f53d6b;
+  --info: #00acff;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--light-surface); color: var(--light-text); font: 400 16px/24px Inter, ui-sans-serif, system-ui, sans-serif; }
+header { background: var(--light-page); color: var(--light-text-on-accent); padding: 28px 32px; }
+header p { color: var(--light-muted); max-width: 62ch; }
+.banner { background: var(--light-banner); color: var(--light-text); padding: 12px 32px; font-size: 15px; }
+main { padding: 32px; max-width: 1100px; }
+h2 { font-size: 28px; font-weight: 500; margin: 36px 0 12px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; }
+.sw i { width: 44px; height: 44px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--light-border); display: block; }
+.nm { font: 600 12px/1.3 ui-monospace, monospace; }
+.vl { font-size: 12px; color: var(--light-muted-ink); }
+.typerow { display: grid; grid-template-columns: 160px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--light-border); align-items: baseline; }
+.k { font: 600 12px/1.4 ui-monospace, monospace; }
+.row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin: 16px 0; }
+.btn { display: inline-flex; align-items: center; height: var(--size-button-height); padding: 8px 20px; border-radius: var(--radius-pill); background: var(--light-surface); color: var(--light-text); font-weight: 500; font-size: 15px; text-decoration: none; }
+.btn-auth { display: inline-flex; align-items: center; height: var(--size-auth-button-height); padding: 10px 16px; border-radius: var(--radius-control); background: var(--light-accent-auth); color: white; font-weight: 500; }
+.field { height: var(--size-field-height); border: 1px solid var(--light-border); border-radius: var(--radius-control); padding: 8px 16px; width: 280px; }
+.card { background: var(--core-palette-pink-100); border-radius: var(--radius-control); padding: 24px; max-width: 420px; }
+</style>
+</head>
+<body>
+<div class="banner">Lemon Squeezy is no longer accepting new sign-ups and will shut down on March 31, 2027</div>
+<header>
+  <h1>Lemon Squeezy</h1>
+  <p>Public marketing and account-entry tokens, read on 2026-11-21. One theme. The signed-in app was not entered.</p>
+</header>
+<main>
+  <h2>Roles</h2>
+  <div class="grid"><div class="sw"><i style="background:#5423e7"></i><div><div class="nm">light.page</div><div class="vl">#5423e7</div></div></div><div class="sw"><i style="background:#ffffff"></i><div><div class="nm">light.surface</div><div class="vl">#ffffff</div></div></div><div class="sw"><i style="background:#f7f7f8"></i><div><div class="nm">light.surface-muted</div><div class="vl">#f7f7f8</div></div></div><div class="sw"><i style="background:#121217"></i><div><div class="nm">light.text</div><div class="vl">#121217</div></div></div><div class="sw"><i style="background:#ffffff"></i><div><div class="nm">light.text-on-accent</div><div class="vl">#ffffff</div></div></div><div class="sw"><i style="background:#ffffff99"></i><div><div class="nm">light.muted</div><div class="vl">#ffffff99</div></div></div><div class="sw"><i style="background:#6c6c89"></i><div><div class="nm">light.muted-ink</div><div class="vl">#6c6c89</div></div></div><div class="sw"><i style="background:#5423e7"></i><div><div class="nm">light.accent</div><div class="vl">#5423e7</div></div></div><div class="sw"><i style="background:#7047eb"></i><div><div class="nm">light.accent-auth</div><div class="vl">#7047eb</div></div></div><div class="sw"><i style="background:#ffc233"></i><div><div class="nm">light.banner</div><div class="vl">#ffc233</div></div></div><div class="sw"><i style="background:#7047eb"></i><div><div class="nm">light.link</div><div class="vl">#7047eb</div></div></div><div class="sw"><i style="background:#d1d1db"></i><div><div class="nm">light.border</div><div class="vl">#d1d1db</div></div></div><div class="sw"><i style="background:#3889ec"></i><div><div class="nm">light.focus</div><div class="vl">#3889ec</div></div></div><div class="sw"><i style="background:#2dca72"></i><div><div class="nm">light.success</div><div class="vl">#2dca72</div></div></div><div class="sw"><i style="background:#ffc233"></i><div><div class="nm">light.warning</div><div class="vl">#ffc233</div></div></div><div class="sw"><i style="background:#f53d6b"></i><div><div class="nm">light.danger</div><div class="vl">#f53d6b</div></div></div><div class="sw"><i style="background:#00acff"></i><div><div class="nm">light.info</div><div class="vl">#00acff</div></div></div></div>
+  <h2>Palette</h2>
+  <div class="grid"><div class="sw"><i style="background:#000000"></i><div><div class="nm">black</div><div class="vl">#000000</div></div></div><div class="sw"><i style="background:#121217"></i><div><div class="nm">black-2</div><div class="vl">#121217</div></div></div><div class="sw"><i style="background:#5423e7"></i><div><div class="nm">blue</div><div class="vl">#5423e7</div></div></div><div class="sw"><i style="background:#f0faff"></i><div><div class="nm">blue-50</div><div class="vl">#f0faff</div></div></div><div class="sw"><i style="background:#dbf3ff"></i><div><div class="nm">blue-100</div><div class="vl">#dbf3ff</div></div></div><div class="sw"><i style="background:#ade4ff"></i><div><div class="nm">blue-200</div><div class="vl">#ade4ff</div></div></div><div class="sw"><i style="background:#70d1ff"></i><div><div class="nm">blue-300</div><div class="vl">#70d1ff</div></div></div><div class="sw"><i style="background:#38beff"></i><div><div class="nm">blue-400</div><div class="vl">#38beff</div></div></div><div class="sw"><i style="background:#00acff"></i><div><div class="nm">blue-500</div><div class="vl">#00acff</div></div></div><div class="sw"><i style="background:#0090d6"></i><div><div class="nm">blue-600</div><div class="vl">#0090d6</div></div></div><div class="sw"><i style="background:#0075ad"></i><div><div class="nm">blue-700</div><div class="vl">#0075ad</div></div></div><div class="sw"><i style="background:#7047eb"></i><div><div class="nm">blue-violet</div><div class="vl">#7047eb</div></div></div><div class="sw"><i style="background:#d1d1db"></i><div><div class="nm">border</div><div class="vl">#d1d1db</div></div></div><div class="sw"><i style="background:#a9a9bc"></i><div><div class="nm">gray-300</div><div class="vl">#a9a9bc</div></div></div><div class="sw"><i style="background:#6c6c89"></i><div><div class="nm">gray-500</div><div class="vl">#6c6c89</div></div></div><div class="sw"><i style="background:#eefbf4"></i><div><div class="nm">green-50</div><div class="vl">#eefbf4</div></div></div><div class="sw"><i style="background:#dff8ea"></i><div><div class="nm">green-100</div><div class="vl">#dff8ea</div></div></div><div class="sw"><i style="background:#b2eecc"></i><div><div class="nm">green-200</div><div class="vl">#b2eecc</div></div></div><div class="sw"><i style="background:#84e4ae"></i><div><div class="nm">green-300</div><div class="vl">#84e4ae</div></div></div><div class="sw"><i style="background:#56d990"></i><div><div class="nm">green-400</div><div class="vl">#56d990</div></div></div><div class="sw"><i style="background:#2dca72"></i><div><div class="nm">green-500</div><div class="vl">#2dca72</div></div></div><div class="sw"><i style="background:#26a95f"></i><div><div class="nm">green-600</div><div class="vl">#26a95f</div></div></div><div class="sw"><i style="background:#1e874c"></i><div><div class="nm">green-700</div><div class="vl">#1e874c</div></div></div><div class="sw"><i style="background:#f7f7f8"></i><div><div class="nm">grey-50</div><div class="vl">#f7f7f8</div></div></div><div class="sw"><i style="background:#e8e8ed"></i><div><div class="nm">grey-100</div><div class="vl">#e8e8ed</div></div></div><div class="sw"><i style="background:#d1d1db"></i><div><div class="nm">grey-200</div><div class="vl">#d1d1db</div></div></div><div class="sw"><i style="background:#3f3f50"></i><div><div class="nm">grey-700</div><div class="vl">#3f3f50</div></div></div><div class="sw"><i style="background:#191919"></i><div><div class="nm">ink</div><div class="vl">#191919</div></div></div><div class="sw"><i style="background:#ffc233"></i><div><div class="nm">yellow</div><div class="vl">#ffc233</div></div></div><div class="sw"><i style="background:#ffd266"></i><div><div class="nm">yellow-lighter</div><div class="vl">#ffd266</div></div></div><div class="sw"><i style="background:#fff9eb"></i><div><div class="nm">yellow-50</div><div class="vl">#fff9eb</div></div></div><div class="sw"><i style="background:#fff3d6"></i><div><div class="nm">yellow-100</div><div class="vl">#fff3d6</div></div></div><div class="sw"><i style="background:#ffe7ad"></i><div><div class="nm">yellow-200</div><div class="vl">#ffe7ad</div></div></div><div class="sw"><i style="background:#ffda85"></i><div><div class="nm">yellow-300</div><div class="vl">#ffda85</div></div></div><div class="sw"><i style="background:#ffce5c"></i><div><div class="nm">yellow-400</div><div class="vl">#ffce5c</div></div></div><div class="sw"><i style="background:#ffc233"></i><div><div class="nm">yellow-500</div><div class="vl">#ffc233</div></div></div><div class="sw"><i style="background:#c28800"></i><div><div class="nm">yellow-700</div><div class="vl">#c28800</div></div></div><div class="sw"><i style="background:#fff2ee"></i><div><div class="nm">orange-50</div><div class="vl">#fff2ee</div></div></div><div class="sw"><i style="background:#ffe8e1"></i><div><div class="nm">orange-100</div><div class="vl">#ffe8e1</div></div></div><div class="sw"><i style="background:#ffcdbd"></i><div><div class="nm">orange-200</div><div class="vl">#ffcdbd</div></div></div><div class="sw"><i style="background:#ffb399"></i><div><div class="nm">orange-300</div><div class="vl">#ffb399</div></div></div><div class="sw"><i style="background:#ff9876"></i><div><div class="nm">orange-400</div><div class="vl">#ff9876</div></div></div><div class="sw"><i style="background:#ff7d52"></i><div><div class="nm">orange-500</div><div class="vl">#ff7d52</div></div></div><div class="sw"><i style="background:#ff571f"></i><div><div class="nm">orange-600</div><div class="vl">#ff571f</div></div></div><div class="sw"><i style="background:#eb3a00"></i><div><div class="nm">orange-700</div><div class="vl">#eb3a00</div></div></div><div class="sw"><i style="background:#feecfb"></i><div><div class="nm">pink-50</div><div class="vl">#feecfb</div></div></div><div class="sw"><i style="background:#fdddf8"></i><div><div class="nm">pink-100</div><div class="vl">#fdddf8</div></div></div><div class="sw"><i style="background:#fcc5f3"></i><div><div class="nm">pink-200</div><div class="vl">#fcc5f3</div></div></div><div class="sw"><i style="background:#fa99ea"></i><div><div class="nm">pink-300</div><div class="vl">#fa99ea</div></div></div><div class="sw"><i style="background:#f87ce4"></i><div><div class="nm">pink-400</div><div class="vl">#f87ce4</div></div></div><div class="sw"><i style="background:#f75fde"></i><div><div class="nm">pink-500</div><div class="vl">#f75fde</div></div></div><div class="sw"><i style="background:#f42ad3"></i><div><div class="nm">pink-600</div><div class="vl">#f42ad3</div></div></div><div class="sw"><i style="background:#db0bb9"></i><div><div class="nm">pink-700</div><div class="vl">#db0bb9</div></div></div><div class="sw"><i style="background:#a5088c"></i><div><div class="nm">pink-800</div><div class="vl">#a5088c</div></div></div><div class="sw"><i style="background:#f4f1fd"></i><div><div class="nm">purple-50</div><div class="vl">#f4f1fd</div></div></div><div class="sw"><i style="background:#e2dafb"></i><div><div class="nm">purple-100</div><div class="vl">#e2dafb</div></div></div><div class="sw"><i style="background:#c6b6f7"></i><div><div class="nm">purple-200</div><div class="vl">#c6b6f7</div></div></div><div class="sw"><i style="background:#a991f3"></i><div><div class="nm">purple-300</div><div class="vl">#a991f3</div></div></div><div class="sw"><i style="background:#8d6cef"></i><div><div class="nm">purple-400</div><div class="vl">#8d6cef</div></div></div><div class="sw"><i style="background:#7047eb"></i><div><div class="nm">purple-500</div><div class="vl">#7047eb</div></div></div><div class="sw"><i style="background:#5423e7"></i><div><div class="nm">purple-600</div><div class="vl">#5423e7</div></div></div><div class="sw"><i style="background:#4316ca"></i><div><div class="nm">purple-700</div><div class="vl">#4316ca</div></div></div><div class="sw"><i style="background:#2b0e81"></i><div><div class="nm">purple-900</div><div class="vl">#2b0e81</div></div></div><div class="sw"><i style="background:#fef0f4"></i><div><div class="nm">red-50</div><div class="vl">#fef0f4</div></div></div><div class="sw"><i style="background:#fdd8e1"></i><div><div class="nm">red-100</div><div class="vl">#fdd8e1</div></div></div><div class="sw"><i style="background:#fbb1c4"></i><div><div class="nm">red-200</div><div class="vl">#fbb1c4</div></div></div><div class="sw"><i style="background:#f76489"></i><div><div class="nm">red-400</div><div class="vl">#f76489</div></div></div><div class="sw"><i style="background:#f53d6b"></i><div><div class="nm">red-500</div><div class="vl">#f53d6b</div></div></div><div class="sw"><i style="background:#d50b3e"></i><div><div class="nm">red-700</div><div class="vl">#d50b3e</div></div></div><div class="sw"><i style="background:#ffffff"></i><div><div class="nm">white</div><div class="vl">#ffffff</div></div></div><div class="sw"><i style="background:#ffffff1a"></i><div><div class="nm">white-10</div><div class="vl">#ffffff1a</div></div></div></div>
+  <h2>Type</h2>
+  <div class="typerow"><div class="k">display</div><div class="sample" style="font:var(--font-weight-regular) var(--font-size-display)/80px var(--font-family-display)">Sell digital products globally</div></div><div class="typerow"><div class="k">title</div><div class="sample" style="font:var(--font-weight-regular) var(--font-size-title)/63.84px var(--font-family-display)">Sell digital products globally</div></div><div class="typerow"><div class="k">body</div><div class="sample" style="font:var(--font-weight-regular) var(--font-size-body)/28.8px var(--font-family-body)">Sell digital products globally</div></div><div class="typerow"><div class="k">nav</div><div class="sample" style="font:var(--font-weight-medium) var(--font-size-nav)/24px var(--font-family-body)">Sell digital products globally</div></div><div class="typerow"><div class="k">caption</div><div class="sample" style="font:var(--font-weight-regular) var(--font-size-caption)/22.4px var(--font-family-body)">Sell digital products globally</div></div><div class="typerow"><div class="k">auth-title</div><div class="sample" style="font:var(--font-weight-medium) var(--font-size-auth-title)/32px var(--font-family-auth)">Sell digital products globally</div></div>
+  <h2>Controls</h2>
+  <div class="row"><a class="btn">Start with Managed Payments</a><span class="btn-auth">Sign in</span></div>
+  <div class="row"><input class="field" placeholder="Email address" readonly></div>
+  <div class="card"><strong>5% + 50¢</strong><p>Pricing comparison column uses the pink-100 fill.</p></div>
+</main>
+</body>
+</html>
