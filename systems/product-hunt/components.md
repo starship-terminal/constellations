@@ -1,6 +1,6 @@
 # Components
 
-Computed styles from the public signed-out pages. No crops. `preview_snapshot` did not produce frames.
+Computed styles from the public signed-out pages, plus crops from the 2026-11-21 screenshots. Crops are 256-colour and 2× nearest-neighbour from the 1× captures. Read colours from the tokens, not from the crops.
 
 ## Button
 
@@ -50,6 +50,20 @@ Phone. A button labelled "Open menu", 24px wide, opened a white header band. Lin
 
 Heading "Sign up on Product Hunt", 24px weight 600 `#21293c`. Six OAuth buttons. No email field.
 
+## Crops
+
+| Crop | What it shows |
+|---|---|
+| [components/crops/button-signin-default.png](components/crops/button-signin-default.png) | Coral Sign in pill |
+| [components/crops/field-search-default.png](components/crops/field-search-default.png) | Header search |
+| [components/crops/button-vote-default.png](components/crops/button-vote-default.png) | Unpressed comment and vote squares |
+| [components/crops/button-upvote-default.png](components/crops/button-upvote-default.png) | Product page upvote pill, not clicked |
+| [components/crops/button-visit-default.png](components/crops/button-visit-default.png) | Outline Visit website |
+| [components/crops/tabs-product-default.png](components/crops/tabs-product-default.png) | Overview selected |
+| [components/crops/badge-new-default.png](components/crops/badge-new-default.png) | NEW badge |
+| [components/crops/card-login-default.png](components/crops/card-login-default.png) | Empty OAuth wall |
+| [components/crops/logo-default.png](components/crops/logo-default.png) | Header mark |
+
 ## Gaps
 
-Checkbox, radio, switch, select, textarea, table, toast component, empty state, loading state, and destructive confirmation were not on the pages visited. Hover and pressed were not forced. Dark theme was not painted. Screenshots and crops are missing because the preview browser produced no frames.
+Checkbox, radio, switch, select, textarea, table, toast, loading, and destructive confirmation were not on the pages visited. Hover and pressed were not forced. Dark theme was not painted. The login wall was photographed empty and not entered.

@@ -1,0 +1,20 @@
+{
+  "capturedAt": "2026-11-21T15:01:10.059Z",
+  "screenshot": "leaderboard-light-default.png",
+  "sanitizedSourceUrl": "https://www.producthunt.com/leaderboard/daily/2026/11/21",
+  "actual": {
+    "href": "https://www.producthunt.com/leaderboard/daily/2026/11/21",
+    "title": "Best of Product Hunt: November 21, 2026 | Product Hunt",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "colorScheme": "normal",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollHeight": 3496
+  },
+  "note": null
+}

@@ -1,0 +1,20 @@
+{
+  "capturedAt": "2026-11-21T15:01:27.999Z",
+  "screenshot": "error-light-default.png",
+  "sanitizedSourceUrl": "https://www.producthunt.com/products/this-product-does-not-exist-constellations",
+  "actual": {
+    "href": "https://www.producthunt.com/products/this-product-does-not-exist-constellations",
+    "title": "Page not found | Product Hunt",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "colorScheme": "normal",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollHeight": 1795
+  },
+  "note": null
+}

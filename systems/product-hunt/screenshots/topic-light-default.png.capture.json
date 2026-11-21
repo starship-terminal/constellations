@@ -1,0 +1,20 @@
+{
+  "capturedAt": "2026-11-21T15:01:07.602Z",
+  "screenshot": "topic-light-default.png",
+  "sanitizedSourceUrl": "https://www.producthunt.com/topics/artificial-intelligence",
+  "actual": {
+    "href": "https://www.producthunt.com/topics/artificial-intelligence",
+    "title": "Artificial Intelligence | Product Hunt",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "colorScheme": "normal",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollHeight": 5355
+  },
+  "note": null
+}

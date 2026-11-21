@@ -1,0 +1,20 @@
+{
+  "capturedAt": "2026-11-21T15:01:19.070Z",
+  "screenshot": "about-light-default.png",
+  "sanitizedSourceUrl": "https://www.producthunt.com/about",
+  "actual": {
+    "href": "https://www.producthunt.com/about",
+    "title": "About",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "colorScheme": "normal",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollHeight": 3674
+  },
+  "note": null
+}

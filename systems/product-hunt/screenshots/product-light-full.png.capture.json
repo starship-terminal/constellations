@@ -1,0 +1,20 @@
+{
+  "capturedAt": "2026-11-21T15:01:00.872Z",
+  "screenshot": "product-light-full.png",
+  "sanitizedSourceUrl": "https://www.producthunt.com/products/alter-contacts-ai-client-relationships",
+  "actual": {
+    "href": "https://www.producthunt.com/products/alter-contacts-ai-client-relationships",
+    "title": "AlterContacts: AI client relationship assistant that thinks and does ahead | Product Hunt",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "colorScheme": "normal",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollHeight": 5654
+  },
+  "note": null
+}

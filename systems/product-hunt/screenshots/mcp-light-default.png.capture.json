@@ -1,0 +1,20 @@
+{
+  "capturedAt": "2026-11-21T15:01:23.487Z",
+  "screenshot": "mcp-light-default.png",
+  "sanitizedSourceUrl": "https://www.producthunt.com/mcp/install",
+  "actual": {
+    "href": "https://www.producthunt.com/mcp/install",
+    "title": "Official Product Hunt MCP Server",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "colorScheme": "normal",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollHeight": 4136
+  },
+  "note": null
+}

@@ -137,7 +137,7 @@ Good for: a public product leaderboard: coral pill actions on a white page, a sy
 
 Captured 2026-11-18, signed out (public pages only; OAuth login was not entered; the newsletter email form was submitted and the confirmation link did not complete; votes and follows were not clicked). Themes: light.
 
-Public signed-out surfaces of [producthunt.com](https://www.producthunt.com/), captured on 2026-11-18 from computed styles in the T3 preview browser. No account was created. The daily newsletter form accepted `kaichen@agentmail.to` and asked for a confirmation click. Themes observed: light. Widths measured: 1440 and 390 CSS pixels, both at devicePixelRatio 2.
+Public signed-out surfaces of [producthunt.com](https://www.producthunt.com/), refreshed on 2026-11-21. The first capture (2026-11-18) read computed styles and saved no frames. This refresh adds screenshots from headed Chromium at 1440×900 and 390×844, both at devicePixelRatio 1. No account was created. Nothing was typed. No identity provider was clicked. No form was submitted. Themes observed: light. The site tree is [site-tree.md](site-tree.md).
 
 ## Colors
 
@@ -174,7 +174,7 @@ Corner radii from `core.radius`: `small` 4px, `medium` 8px, `large` 12px, `full`
 
 3 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
 
-Measured states, crops and the full inventory: [components.md](components.md), [style-guide.html](style-guide.html).
+Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
 ## Do's and Don'ts
 
@@ -190,7 +190,7 @@ Dark tokens are declared on `:is(.dark, :has(.dark:not(.theme-isolate)) .theme-m
 
 ### Do and don't (from README.md)
 
-- **Use the coral only for the action.** Sign in, the filled Subscribe, View all, and the logo disc are `#ff6154`. Navigation text stays `#344054`.
-- **Keep buttons fully round.** The primary button, the outline Subscribe, search, product tabs, and the newsletter field all computed `border-radius: 9999px`.
-- **Leave the vote button unpressed in a signed-out mock.** The 52px vote control shows a count. Clicking it was not done, because a vote needs an account.
-- **Do not invent a dark theme from the light page.** Dark custom properties exist. They were not on screen.
+- **Use the coral only for the action.** Sign in, the filled Subscribe, and the logo disc are `#ff6154`. Navigation text stays `#344054`. [screenshots/home-light-default.png](screenshots/home-light-default.png)
+- **Keep buttons fully round.** The primary button, the outline Subscribe, search, product tabs, and the newsletter field use a full pill radius. [components/crops/button-signin-default.png](components/crops/button-signin-default.png)
+- **Leave the vote button unpressed in a signed-out mock.** The square vote control shows a count. Clicking it was not done, because a vote needs an account. [components/crops/button-vote-default.png](components/crops/button-vote-default.png)
+- **Do not invent a dark theme from the light page.** Dark custom properties exist. They were not on screen. The footer is the dark band. [screenshots/footer-light-default.png](screenshots/footer-light-default.png)

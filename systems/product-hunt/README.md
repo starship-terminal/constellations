@@ -1,6 +1,6 @@
 # Product Hunt
 
-Public signed-out surfaces of [producthunt.com](https://www.producthunt.com/), captured on 2026-11-18 from computed styles in the T3 preview browser. No account was created. The daily newsletter form accepted `kaichen@agentmail.to` and asked for a confirmation click. Themes observed: light. Widths measured: 1440 and 390 CSS pixels, both at devicePixelRatio 2.
+Public signed-out surfaces of [producthunt.com](https://www.producthunt.com/), refreshed on 2026-11-21. The first capture (2026-11-18) read computed styles and saved no frames. This refresh adds screenshots from headed Chromium at 1440×900 and 390×844, both at devicePixelRatio 1. No account was created. Nothing was typed. No identity provider was clicked. No form was submitted. Themes observed: light. The site tree is [site-tree.md](site-tree.md).
 
 | Path | What it holds |
 |---|---|
@@ -10,10 +10,11 @@ Public signed-out surfaces of [producthunt.com](https://www.producthunt.com/), c
 | [style-guide.html](style-guide.html) | Specimens drawn from the tokens. |
 | [components.md](components.md) | Component inventory and the gaps. |
 | [patterns.md](patterns.md) | How the public pages are put together. |
-| [raw/](raw/) | The readings: custom properties, computed components, motion. |
+| [site-tree.md](site-tree.md) | Which public controls open which pages, and where capture stopped. |
+| [raw/](raw/) | The readings: custom properties, computed components, motion, and the 2026-11-21 capture note. |
 | [icons/](icons/) | The header mark, copied from the live SVG. |
-| [screenshots/](screenshots/) | Empty. The preview browser did not produce frames. |
-| [components/](components/) | Empty crops, for the same reason. |
+| [screenshots/](screenshots/) | Public signed-out pages, menus, the empty search dialog, the login wall, and phone width. 24 PNGs. |
+| [components/](components/) | Crops of the sign-in pill, search, vote, upvote, visit, tabs, badge, and login card. |
 | [icon.png](icon.png) | Site icon, fetched by `tools/fetch_icon.py`. |
 | [tools/](tools/) | The capture kit, copied in and not adapted to a headless run. The unadapted kit builders and capture routes for other products were removed in the 2026-11 audit; the generic capture helpers remain. |
 
@@ -71,7 +72,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (The preview
 
 ## How the values were read
 
-The T3 preview tab opened `https://www.producthunt.com/` with `reuseExistingTab` false. Cloudflare showed "Just a moment..." and then the live homepage. `preview_evaluate` read `getComputedStyle` and stylesheet rules. `preview_snapshot` failed twice with "The browser is not producing screenshot frames", so no PNG was saved.
+The 2026-11-18 pass read `getComputedStyle` and stylesheet rules in the T3 preview browser. That pass saved no PNGs. The 2026-11-21 refresh re-read the sign-in pill, search field, nav link, and home h1 in headed Chromium and saved those readings in [raw/capture-2026-11-21.json](raw/capture-2026-11-21.json). They match the earlier tokens: coral `#ff6154`, page `#ffffff`, text `#101828`, muted `#344054`, search fill `#f2f4f7`. Screenshots are 256-colour PNGs from that Chromium session. Headless Playwright still stops on the Cloudflare check, so it was not used for the shots.
 
 Pages read at 1440x900: `/`, `/products/s-space`, `/categories/productivity`, `/login`, `/newsletters`, `/leaderboard/daily/2026/11/18`, `/about`, `/stories`, `/apps`. The same homepage and `/apps` were read again at 390x844. A phone menu open was clicked. Search was not submitted. Votes were not clicked. OAuth buttons were not clicked.
 
@@ -98,27 +99,29 @@ The computed family is `-apple-system, system-ui, Segoe UI, Helvetica, Arial, sa
 | Button, link, text field, badge, card, tabs | Captured as computed styles. |
 | Icon button | The 40px logo and the 24px menu button were measured. |
 | Checkbox, radio, switch, select, textarea | Not present on the pages visited. |
-| Dialog, menu | Phone menu opened. No dialog role was mounted. Desktop mega-menu items were in the DOM at 0 height. |
-| Toast | Newsletter confirmation banner text was read. |
-| Avatar | Product thumbnail 64px, radius 8px. |
+| Dialog, menu | Desktop hover menus and the search dialog are in [screenshots/](screenshots/). Phone menu: [screenshots/mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png). |
+| Toast | Not shown on this pass. The newsletter form was not submitted. |
+| Avatar | Product thumbnail on the home row. Public maker avatars on the product page. |
 | Table | Not present. |
-| App shell | Header and footer measured. |
-| Form error | Newsletter first click showed "does not appear to be a valid email address" after the field cleared. |
-| Empty, loading | Not shown. |
+| App shell | Header and footer. [screenshots/home-light-default.png](screenshots/home-light-default.png), [screenshots/footer-light-default.png](screenshots/footer-light-default.png). |
+| Form error | Not captured. The newsletter field was left empty. |
+| Empty | Missing product and missing topic both paint the 404 card. [screenshots/error-light-default.png](screenshots/error-light-default.png). A true empty list was not shown. |
+| Loading | Not shown. |
 | Destructive confirmation | Not present on public pages. |
-| Search | Field measured. Overlay not opened. |
-| List | Home ranking and leaderboard measured. |
+| Search | Empty dialog. [screenshots/search-light-empty.png](screenshots/search-light-empty.png). No query typed. |
+| List | Home ranking and leaderboard. |
 | Onboarding | Not present. |
-| Desktop 1440 | Measured. |
-| Phone 390 | Measured. |
-| Screenshots | Not captured. Preview frames failed. |
+| Desktop 1440 | Captured. innerWidth 1440, devicePixelRatio 1. |
+| Phone 390 | Captured. innerWidth 390, innerHeight 844. |
+| Screenshots | Captured 2026-11-21. See [site-tree.md](site-tree.md). |
+| Login wall | Photographed empty. [screenshots/login-light-default.png](screenshots/login-light-default.png). Stopped there. |
 
 ## Do and don't
 
-- **Use the coral only for the action.** Sign in, the filled Subscribe, View all, and the logo disc are `#ff6154`. Navigation text stays `#344054`.
-- **Keep buttons fully round.** The primary button, the outline Subscribe, search, product tabs, and the newsletter field all computed `border-radius: 9999px`.
-- **Leave the vote button unpressed in a signed-out mock.** The 52px vote control shows a count. Clicking it was not done, because a vote needs an account.
-- **Do not invent a dark theme from the light page.** Dark custom properties exist. They were not on screen.
+- **Use the coral only for the action.** Sign in, the filled Subscribe, and the logo disc are `#ff6154`. Navigation text stays `#344054`. [screenshots/home-light-default.png](screenshots/home-light-default.png)
+- **Keep buttons fully round.** The primary button, the outline Subscribe, search, product tabs, and the newsletter field use a full pill radius. [components/crops/button-signin-default.png](components/crops/button-signin-default.png)
+- **Leave the vote button unpressed in a signed-out mock.** The square vote control shows a count. Clicking it was not done, because a vote needs an account. [components/crops/button-vote-default.png](components/crops/button-vote-default.png)
+- **Do not invent a dark theme from the light page.** Dark custom properties exist. They were not on screen. The footer is the dark band. [screenshots/footer-light-default.png](screenshots/footer-light-default.png)
 
 ## Rebuild
 
@@ -131,4 +134,4 @@ There is no product-specific builder. Tokens were written from [raw/css-vars.jso
 
 ## What was not entered
 
-Login is OAuth only: LinkedIn, GitHub, X, Google, Facebook, and Apple. None of those were clicked. No password, phone, card, or company SSO was entered. Votes, follows, and comments were not activated. The newsletter confirmation URL dropped its token in the preview tab and did not show a confirmed state. Settings, the maker dashboard, and checkout were not opened.
+Login is OAuth only: LinkedIn, GitHub, X, Google, Facebook, and Apple. None of those were clicked. No password, phone, card, or company SSO was entered. Votes, follows, comments, and the newsletter form were not activated on this pass. `/signup` is a 404. Settings, the maker dashboard, and checkout were not opened. `login-extracted` stays not-started. [catalog.json](../../catalog.json) was not edited.

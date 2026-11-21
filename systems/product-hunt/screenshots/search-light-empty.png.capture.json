@@ -1,0 +1,20 @@
+{
+  "capturedAt": "2026-11-21T15:00:56.300Z",
+  "screenshot": "search-light-empty.png",
+  "sanitizedSourceUrl": "https://www.producthunt.com/",
+  "actual": {
+    "href": "https://www.producthunt.com/",
+    "title": "Product Hunt – The best new products in tech.",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "colorScheme": "normal",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollHeight": 7180
+  },
+  "note": null
+}
