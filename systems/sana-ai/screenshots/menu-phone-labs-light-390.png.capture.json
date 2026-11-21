@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "menu-phone-labs-light-390",
+  "url": "https://sanalabs.com/products/sana/",
+  "title": "Sana product",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2,
+    "vv": {
+      "w": 390,
+      "h": 844,
+      "s": 1
+    }
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "quantized": false,
+  "note": "First viewport, headless Chromium, 2026-11-22, after the homepage had already loaded in an incognito preview tab with no challenge. Cookie notice dismissed with Only necessary where it blocked the page. Nothing was typed. No form was submitted. Read colours from tokens.json, not from this PNG."
+}

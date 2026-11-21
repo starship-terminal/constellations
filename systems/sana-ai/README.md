@@ -2,6 +2,8 @@
 
 Sana is an AI work product from Sana Labs. This package records the public marketing page at sana.ai and the signed-out sign-in at sana.ai/sign-in-to-sana, measured on 19 November 2026. The home page was read at innerWidth 1169 and at 390. The sign-in page was read at 1169, including the email field, the code step and one FAQ item. An AgentMail address was typed into the email field. The one-time code was not entered. Google was not clicked. No company SSO was offered.
 
+A public site-tree walk on 22 November 2026 mapped the header, footer, and the marketing pages those controls open. It did not remeasure tokens. Nothing was typed. The site tree is [site-tree.md](site-tree.md).
+
 The home page paints a light token set. The sign-in page sets `html.dark` and paints the dark set.
 
 | File | What it holds |
@@ -15,7 +17,9 @@ The home page paints a light token set. The sign-in page sets `html.dark` and pa
 | [patterns.md](patterns.md) | How the marketing page and the sign-in form are put together |
 | [components/](components/) | Crops of Sign in, Explore, the product card and the wordmark |
 | [icons/](icons/) | The home wordmark SVG, the phone menu icon, and an index |
-| [screenshots/](screenshots/) | Home at 1440 and home at 390. The sign-in page has no screenshot. |
+| [screenshots/](screenshots/) | Home at 1440 and home at 390, plus the 2026-11-22 public tree |
+| [site-tree.md](site-tree.md) | Header, footer, and the public pages those controls open. Mapped 2026-11-22 |
+| [login-review.json](login-review.json) | Empty sign-in wall. `login-extracted` is not-started |
 | [raw/](raw/) | The stylesheet token dump and the computed-style readings |
 | [tools/](tools/) | The kit copy, plus a token test. This capture was measured live, not rebuilt by the kit scripts. |
 
@@ -131,9 +135,10 @@ Sana Sans is a variable woff2 at `https://sana.ai/public-static/fonts/SanaSans-V
 | Search | Not present. |
 | Desktop 1440 | Home screenshot is 1440 by 900, devicePixelRatio 2. The live reading was innerWidth 1169. |
 | Phone 390 | Home screenshot and reading. innerWidth 390, innerHeight 844, devicePixelRatio 2. |
-| Signed-in product | Not captured. The code step was reached and the code was not entered. |
+| Signed-in product | Not captured. The code step was reached on 19 November and the code was not entered. The 22 November walk stopped at the empty wall. |
 | Google | Present as an iframe. Not clicked. |
 | Company SSO | Not offered on the sign-in page. |
+| Public site tree | Captured 2026-11-22. [site-tree.md](site-tree.md). Header, footer, product menus, marketing pages, empty sign-in wall, empty book-intro forms. |
 
 ## Do and don't
 
@@ -155,3 +160,4 @@ The tokens were written from the readings in [raw/](raw/), not from a builder. `
 | Home, phone | https://sana.ai/ at 390 | Collapsed nav, 44px headline, stacked cards, menu overlay |
 | Sign in | https://sana.ai/sign-in-to-sana | Dark page, email field, disabled submit, nav pill, FAQ |
 | Code step | same URL, after the email form | Digit field, Back, disabled Continue. Code not entered. |
+| Public site tree, 2026-11-22 | [site-tree.md](site-tree.md) | Header, footer, and the marketing pages those controls open. Sign-in wall photographed empty. Book an intro not submitted. |
