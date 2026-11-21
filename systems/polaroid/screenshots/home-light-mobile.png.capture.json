@@ -1,21 +1,69 @@
 {
-  "capturedAt": "2026-11-18T17:52:37.475Z",
-  "name": "home-light-mobile",
-  "url": "https://www.polaroid.com/en_sg",
-  "title": "Polaroid EU | Official Online Store",
-  "vw": 390,
-  "vh": 844,
-  "dpr": 2,
-  "vv": {
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T14:57:40.306Z",
+  "screenshot": "home-light-mobile.png",
+  "sanitizedSourceUrl": "https://www.polaroid.com/en_sg",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "configuredViewport": {
     "width": 390,
-    "height": 844,
-    "scale": 1,
-    "offsetLeft": 0,
-    "offsetTop": 0
+    "height": 844
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "documentSize": {
+      "width": 390,
+      "height": 6371
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device",
+    "clip": null
   },
   "png": {
-    "w": 780,
-    "h": 1688
+    "width": 780,
+    "height": 1688
   },
-  "note": "viewport screenshot, headless Chromium, public page, no Cloudflare challenge"
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 780,
+      "height": 1688
+    },
+    "basis": "configuredViewport"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+  }
 }

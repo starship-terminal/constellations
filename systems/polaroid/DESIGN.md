@@ -97,9 +97,11 @@ Good for: Public instant-camera store: white page, black square commit button, r
 
 Captured 2026-11-19, signed out (public marketing and the public log-in page; Continue and Add to Bag were measured and not submitted; no account, card, or phone). Themes: light.
 
-A token set and component reference for Polaroid's public signed-out store. Read from www.polaroid.com on 2026-11-19, signed out. polaroid.com redirects to www.polaroid.com/en_sg. That Singapore English storefront is what this package captures. Currency on the home page is €. Some product prices computed as $.
+A token set and component reference for Polaroid's public signed-out store. Refreshed from www.polaroid.com on 2026-11-21, signed out. polaroid.com redirects to www.polaroid.com/en_sg. That Singapore English storefront is what this package captures. Currency on the announcement bar is €. The MoMA Now product page shows a dollar price.
 
-Surfaces: home, cameras, film, the Now camera hub, the MoMA Now product page, contact, and the public log-in page. Desktop 1440 x 900. Phone 390 x 844. One light theme on the page.
+Surfaces: home, cameras, film, the MoMA Now product page, contact, the empty bag, the 404 page, search, the region dialog, and the public log-in wall. Desktop 1440 x 900. Phone 390 x 844 for the homepage, the cameras page, and the log-in wall. One light theme on the page. The control map is [site-tree.md](site-tree.md).
+
+Login and signup are the same empty wall. `/en_sg/account/register` lands on `/en_sg/account/login`. The email field was photographed empty. Continue was not clicked. `login-extracted` is `not-started` ([login-review.json](login-review.json)).
 
 The page is white (`#ffffff`). Text and the buy button are `#151515`. The announcement bar is the same black. The current nav section is `#d60026`. Type is Real Head for titles and nav, Commit Mono for buttons. Corners are square, except Product Finder, which is a pill.
 
