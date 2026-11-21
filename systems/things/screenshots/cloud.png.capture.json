@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T17:20:00Z",
+  "screenshot": "cloud.png",
+  "sanitizedSourceUrl": "https://culturedcode.com/things/cloud/",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "configuredViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device",
+    "clip": null
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 2880,
+      "height": 1800
+    },
+    "basis": "configuredViewport"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+  },
+  "note": "Captured in the T3 incognito preview tab on 2026-11-22. Sidecar written from measured innerWidth, innerHeight and devicePixelRatio."
+}

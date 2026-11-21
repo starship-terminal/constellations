@@ -1,0 +1,112 @@
+{
+  "capturedAt": "2026-11-21T17:12:35.706Z",
+  "url": "https://culturedcode.com/things/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "colorScheme": "normal"
+  },
+  "note": "Computed styles from the incognito preview tab. The visible word Things is a PNG, not live type. The h1 is visually hidden at 1px.",
+  "body": {
+    "backgroundColor": "rgb(242, 245, 247)",
+    "color": "rgb(48, 51, 54)",
+    "fontFamily": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "25.2px"
+  },
+  "h2": {
+    "text": "Simply Powerful",
+    "color": "rgb(44, 49, 56)",
+    "fontFamily": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+    "fontSize": "36px",
+    "fontWeight": "700",
+    "lineHeight": "36px"
+  },
+  "h3": {
+    "color": "rgb(48, 51, 54)",
+    "fontSize": "20.25px",
+    "fontWeight": "700",
+    "lineHeight": "24.3px",
+    "fontFamily": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif"
+  },
+  "heroLede": {
+    "color": "rgb(68, 71, 75)",
+    "fontSize": "23.994px",
+    "fontWeight": "400",
+    "lineHeight": "29.9925px",
+    "fontFamily": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif"
+  },
+  "sectionLede": {
+    "color": "rgb(68, 71, 75)",
+    "fontSize": "20.25px",
+    "fontWeight": "400",
+    "lineHeight": "26.325px"
+  },
+  "nav": {
+    "color": "rgba(38, 52, 74, 0.5)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontSize": "15px",
+    "fontWeight": "600",
+    "lineHeight": "24px",
+    "borderRadius": "6px",
+    "padding": "2px 5px",
+    "fontFamily": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+    "focusOutline": "rgb(229, 151, 0) auto 1px",
+    "focusOutlineOffset": "1px"
+  },
+  "watch": {
+    "text": "Watch Introduction Video",
+    "color": "rgb(92, 156, 245)",
+    "fontSize": "23.994px",
+    "fontWeight": "600",
+    "lineHeight": "23.994px",
+    "borderRadius": "9.5976px",
+    "padding": "5.9985px 8.3979px"
+  },
+  "seeFeatures": {
+    "color": "rgb(92, 156, 245)",
+    "fontSize": "20.25px",
+    "fontWeight": "600",
+    "lineHeight": "26.325px",
+    "borderRadius": "6px",
+    "padding": "4.05px 10.125px",
+    "backgroundColor": "rgba(0, 0, 0, 0)"
+  },
+  "subscribe": {
+    "text": "Subscribe",
+    "backgroundColor": "rgb(79, 145, 251)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "16.96px",
+    "fontWeight": "700",
+    "borderRadius": "7.632px",
+    "padding": "7.1232px 16.96px",
+    "border": "1px solid rgba(0, 0, 0, 0)"
+  },
+  "email": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "border": "1px solid rgb(223, 227, 232)",
+    "borderRadius": "6.4px",
+    "fontSize": "16px",
+    "padding": "8px",
+    "placeholder": "me@example.com",
+    "valueLength": 0
+  },
+  "footerLink": {
+    "color": "rgba(0, 15, 36, 0.46)",
+    "fontSize": "15.3px",
+    "lineHeight": "18.36px"
+  },
+  "productCard": {
+    "backgroundColor": "rgb(242, 245, 247)",
+    "borderRadius": "18px"
+  },
+  "slices": {
+    "hero": "rgb(242, 245, 247)",
+    "features": "rgb(251, 252, 254)",
+    "get": "rgb(255, 255, 255)"
+  },
+  "wordmark": "The painted word Things is the image /things/2024-01-20/images/hero-logo-things-io90.png, not a computed font size."
+}

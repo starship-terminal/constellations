@@ -1,0 +1,57 @@
+{
+  "slug": "things",
+  "product": "Things",
+  "domain": "culturedcode.com",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "no-public-wall",
+  "session": "Incognito preview tab. Nothing was typed. No identity provider was clicked. No form was submitted. No captcha was solved. No checkout was entered.",
+  "walls": [],
+  "probes": [
+    {
+      "url": "https://culturedcode.com/login/",
+      "result": "404",
+      "title": "404 - Things",
+      "heading": "Oops! Page Not Found"
+    },
+    {
+      "url": "https://culturedcode.com/signin/",
+      "result": "404",
+      "title": "404 - Things"
+    },
+    {
+      "url": "https://culturedcode.com/signup/",
+      "result": "404",
+      "title": "404 - Things"
+    },
+    {
+      "url": "https://culturedcode.com/account/",
+      "result": "404",
+      "title": "404 - Things"
+    },
+    {
+      "url": "https://culturedcode.com/things/support/login/",
+      "result": "404",
+      "title": "404 - Things"
+    },
+    {
+      "url": "https://cloud.culturedcode.com/",
+      "result": "200",
+      "contentLength": 0,
+      "note": "Empty document. No form, no identity provider, no captcha."
+    },
+    {
+      "url": "https://cloud.culturedcode.com/login",
+      "result": "200",
+      "contentLength": 0
+    },
+    {
+      "url": "https://cloud.culturedcode.com/signup",
+      "result": "200",
+      "contentLength": 0
+    }
+  ],
+  "stopped": "No public login or signup wall exists on the marketing site. The cloud host returned an empty body. Account creation lives in the native apps and was not opened.",
+  "leftAlone": ["catalog.json", "webapps-manifest.json", "systems/things-ios"]
+}
