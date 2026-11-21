@@ -283,9 +283,9 @@
       "description": "Meet the all-in-one calendar. Schedule time for todos, events, and contacts with joy",
       "status": "captured",
       "package": "systems/amie",
-      "notes": "https://calendar.amie.so/login offers Login with browser and no email field. https://app.amie.so/login is a 404.",
+      "notes": "https://calendar.amie.so/login offers Login with browser and no email field. https://app.amie.so/login is a 404. Public walk 2026-11-21: the home header opens a Features popover (Meeting Notes, Chat, Integrations, Pages, AI Scheduling, MCP Server), Pricing, and Login. Login and desktop Get started go to calendar.amie.so/login and stop. Footer and sitemap add blog, stories, calendar, changelog, tools, templates, alternatives, best, MCP, recording API, routines, docs, legal, affiliate, reviews, art, subscribe, and recap. Watch demo opens a dialog. Billing, FAQ, and the response-generator Style menu open in place. Phone header has no hamburger. Google, Outlook, and the app were not clicked. No email was typed. No form was submitted. No download was started. No public dark-theme control. Signed-in calendar was not captured. Public package refresh in PR 1620 at 384a759f21d9. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "no-form",
+      "login-probe": "closed",
       "batch": 1
     },
     {
@@ -300,9 +300,9 @@
       "description": "Real-Time Interactive AI Avatars API",
       "status": "captured",
       "package": "systems/anam",
-      "notes": "https://lab.anam.ai/login asks for email and password, or Google, GitHub, or SSO. No code was sent.",
+      "notes": "https://lab.anam.ai/login asks for email and password, or Google, GitHub, or SSO. No code was sent. Public walk 2026-11-21: the Framer home links to Developers, Pricing, Resources, and Sign in. Next.js pages open one dropdown from Developers or Resources. Docs are Mintlify: search, assistant, and a System, Light, and Dark menu. Phone home opens a hamburger sheet. Sign in goes to lab.anam.ai/login and stops. Google, GitHub, and SSO were not clicked. The demo form, newsletter, and cookie Save, Accept, and Reject were not submitted. The live call button was not pressed. No email was typed. No form was submitted. Signed-in lab was not captured. Public package refresh in PR 1621 at d63034fc45d8. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 1
     },
     {
