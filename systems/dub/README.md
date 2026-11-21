@@ -13,7 +13,9 @@ Dub is worth a capture because the public surface is three different stacks that
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (63, 165 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the marketing header, the hero, pricing, the auth cards, the docs sidebar and its dark theme, the footer, mobile |
 | [components/crops/](components/crops) | 160 element screenshots, `{component}-{state}.png` |
-| [screenshots/](screenshots) | 37 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages (mobile-home is part-stitched), `mobile-*` phone shots, `home-light-menu`/`mobile-home-light-menu` the opened menus, `pricing-light-yearly` the toggled billing period, `docs-dark-dark-*` the docs page under its own Dark preference |
+| [screenshots/](screenshots) | `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900, phone 390 x 844. The 2026-11-21 refresh adds the opened header menus, footer Tools and Legal lists, docs search, theme menu, More actions, and the empty login and register walls. |
+| [site-tree.md](site-tree.md) | Which header, menu, footer, docs, and phone control opens which page or in-page interaction. Mapped 2026-11-21. Login, signup, other hosts, and identity providers are recorded stops. |
+| [login-review.json](login-review.json) | The login and register walls this pass stopped at. Nothing was typed or submitted. |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — marketing/app/docs sheets, resolved on the `.light` and `.dark` scopes; consent/Intercom/fontshare vars binned vendor), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
 
@@ -101,7 +103,7 @@ Every value came off the running signed-out site in headless Chromium:
 - **Components.** [tools/capture/public/measure.mjs](tools/capture/public/measure.mjs) opens each route in a fresh context and reads `getComputedStyle`, painted layers and boxes per element in default, hover, focus-visible and a CDP-forced pressed state (fields also `focused`/`filled` — sample text typed and deleted), across the marketing pages, the auth cards, the contact-sales form, the docs surface in both themes and mobile. Results in [raw/components-computed.json](raw/components-computed.json) and [raw/measurements.md](raw/measurements.md).
 - **Screenshots.** [tools/capture/public/public.mjs](tools/capture/public/public.mjs) takes viewport and full-page shots per route with `.capture.json` sidecars, including the local UI toggles: the Product mega-menu on hover, the mobile menu, the Monthly/Yearly billing toggle on /pricing, and the docs theme dropdown for the dark shots (`docs-dark-dark-*`). [tools/capture/quantize.py](tools/capture/quantize.py) posterises them to 256 colours.
 
-Nothing was signed into, sent or submitted: the login and register cards were captured as surfaces, never filled past a deleted sample and never submitted; every Sign-up, Start-for-free, Start-trial, Send-message and SSO action was measured, never followed or pressed; the mega-menu, mobile menu, billing toggle and docs theme dropdown were toggled as local UI state; the docs search palette and Mintlify AI assistant were never opened. Promo and consent overlays were hidden, never answered.
+Nothing was signed into, sent or submitted. On 2026-11-21 the public tree was walked again and written to [site-tree.md](site-tree.md). Login and register were loaded and stopped, recorded in [login-review.json](login-review.json). Google, GitHub, and SAML SSO were not clicked. The email field on those walls was covered before the shot. Docs search, the theme menu, and More actions were opened and not followed off-site. Promo and consent overlays are hidden, never answered. No cookie dialog was on screen during this pass.
 
 ## What to distrust
 
@@ -141,7 +143,10 @@ Five stacks do everything. **Satoshi** (Fontshare variable) runs every marketing
 | States: disabled, error, loading | not present | the contact-sales submit at rest is the only disabled-painted control |
 | Form with a validation error | not captured | no form was ever submitted |
 | Signed-in workspace | not captured | behind app.dub.co/login — the boundary of this capture |
-| Docs search palette, AI assistant | not captured | the trigger was measured; the palette was never opened |
+| Docs search palette | captured | [docs-light-search.png](screenshots/docs-light-search.png) and [help-light-search.png](screenshots/help-light-search.png). No query was typed. |
+| Docs More actions | captured | [docs-light-more.png](screenshots/docs-light-more.png). ChatGPT, Claude, Cursor, and VS Code were not clicked. |
+| Site tree | captured | [site-tree.md](site-tree.md). Header, footer, docs, phone drawer, and the login and register stops. |
+| AI assistant | not captured | the Mintlify assistant was not opened |
 | Themes: light, docs dark | captured | light on every surface; dark on docs/help through the page's own toggle |
 | Widths: 1440, 390 | captured | desktop and mobile passes (mobile: home, pricing, docs) |
 

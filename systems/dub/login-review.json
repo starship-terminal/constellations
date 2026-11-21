@@ -1,0 +1,55 @@
+{
+  "slug": "dub",
+  "signed_in": false,
+  "when": "2026-11-21",
+  "host": "Playwright headless Chromium",
+  "scope": "Public signed-out pass. The signed-in workspace was not entered.",
+  "walls": [
+    {
+      "url": "https://app.dub.co/login",
+      "reached_from": "https://dub.co/login and the header Log in control",
+      "title": "Sign in to Dub",
+      "asked_for": "Work email, then Log in with email. Also offered Continue with Google, Continue with GitHub, and Continue with SAML SSO.",
+      "action": "Stopped. The email field was covered before the shot. Nothing was typed. Nothing was submitted. Identity providers were not clicked.",
+      "file": "screenshots/login-light-wall.png"
+    },
+    {
+      "url": "https://app.dub.co/register",
+      "reached_from": "https://dub.co/register and the header Sign up control",
+      "title": "Create your Dub account",
+      "asked_for": "Work email, then Sign Up. Also offered Continue with Google and Continue with GitHub. No password field was on the first screen.",
+      "action": "Stopped. The email field was covered before the shot. Nothing was typed. Nothing was submitted. Identity providers were not clicked. No account was created.",
+      "file": "screenshots/register-light-wall.png"
+    },
+    {
+      "url": "https://partners.dub.co/login",
+      "reached_from": "Login wall link 'Log in at partners.dub.co'",
+      "action": "Other host. Not opened."
+    },
+    {
+      "url": "https://partners.dub.co/register",
+      "reached_from": "Register wall link 'Sign up at partners.dub.co'",
+      "action": "Other host. Not opened."
+    }
+  ],
+  "submitted": false,
+  "not_submitted": [
+    "Log in with email",
+    "Sign Up",
+    "Continue with Google",
+    "Continue with GitHub",
+    "Continue with SAML SSO",
+    "Contact sales Send message",
+    "Startup apply form",
+    "Careers application",
+    "UTM Builder Shorten URL",
+    "QR Code Save changes",
+    "Help Send message",
+    "Newsletter or cookie accept"
+  ],
+  "gaps": [
+    "The signed-in workspace (links, analytics, domains, settings, billing) was not entered.",
+    "No password was typed. No code was sent. No profile, plan, survey, or onboarding was filled.",
+    "A cookie dialog was not on screen. None was accepted."
+  ]
+}
