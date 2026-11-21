@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Kith style guide</title>
+  <style>
+    :root {
+      --ink: #333333;
+      --page: #ffffff;
+      --footer: #f2f2f2;
+      --buy: #000000;
+      --image: #ebebeb;
+      --muted: #828282;
+      --on-muted: #ffffff;
+      --chip: #d9d9d9;
+      --hero-on: #ffffff;
+      --ui: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --display: Georgia, serif;
+    }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: var(--ui);
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0.6px;
+      line-height: 15px;
+    }
+    header.bar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      height: 66px;
+      padding: 0 24px;
+      background: var(--page);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    header.bar nav { display: flex; gap: 28px; }
+    header.bar .mark {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      background: #333;
+      color: #fff;
+      padding: 2px 6px;
+    }
+    header.bar .tools { justify-self: end; letter-spacing: 0.2em; }
+    main { padding: 32px 24px 48px; }
+    h1 {
+      font-family: var(--display);
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: 1.4px;
+      line-height: 37px;
+      font-style: normal;
+    }
+    h2 {
+      font-family: var(--display);
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 0.9px;
+      margin-top: 32px;
+    }
+    .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+    .swatch { width: 96px; }
+    .chip {
+      height: 48px;
+      border: 1px solid var(--chip);
+    }
+    .label { margin-top: 6px; font-size: 10px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 700; }
+    .hero {
+      margin-top: 24px;
+      height: 180px;
+      background: #1c1c1c;
+      color: var(--hero-on);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 24px;
+    }
+    .hero h2 { color: var(--hero-on); margin: 0 0 8px; font-size: 28px; line-height: 37px; letter-spacing: 1.4px; }
+    .btn {
+      display: inline-block;
+      border: 1px solid var(--hero-on);
+      color: var(--hero-on);
+      padding: 12px 24px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      line-height: 15px;
+      background: transparent;
+    }
+    .buy {
+      margin-top: 24px;
+      background: var(--buy);
+      color: #e8e8e8;
+      padding: 24px;
+      max-width: 420px;
+    }
+    .buy h2 { color: #e8e8e8; margin: 8px 0; }
+    .sizes { display: flex; gap: 12px; margin: 16px 0; }
+    .size {
+      width: 79px;
+      height: 41px;
+      box-sizing: border-box;
+      border: 1px solid var(--chip);
+      color: #e8e8e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+    }
+    .select {
+      display: block;
+      width: 100%;
+      height: 41px;
+      box-sizing: border-box;
+      background: var(--muted);
+      color: var(--on-muted);
+      border: 1px solid var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+    footer.note {
+      background: var(--footer);
+      padding: 24px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <nav><span>New</span><span>Mens</span><span>Womens</span><span>Kids</span></nav>
+    <span class="mark">KITH</span>
+    <span class="tools">Hospitality</span>
+  </header>
+  <main>
+    <h1>Kith</h1>
+    <p>Measured from the public shop on 22 November 2026. Proxima Nova is the UI face. Georgia is the display face. Neither file is in this package.</p>
+    <h2>Color</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">Page #ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#333333"></div><div class="label">Ink #333333</div></div>
+      <div class="swatch"><div class="chip" style="background:#f2f2f2"></div><div class="label">Footer #f2f2f2</div></div>
+      <div class="swatch"><div class="chip" style="background:#000000"></div><div class="label">Buy #000000</div></div>
+      <div class="swatch"><div class="chip" style="background:#ebebeb"></div><div class="label">Image #ebebeb</div></div>
+      <div class="swatch"><div class="chip" style="background:#828282"></div><div class="label">Muted #828282</div></div>
+      <div class="swatch"><div class="chip" style="background:#d9d9d9"></div><div class="label">Chip #d9d9d9</div></div>
+    </div>
+    <div class="hero">
+      <div>
+        <h2>Kith Winter 2026</h2>
+        <p>Hero title, 28px Georgia, white on the photograph.</p>
+      </div>
+      <span class="btn">Shop now</span>
+    </div>
+    <div class="buy">
+      <div>Kith Winter 2026</div>
+      <h2>Product title</h2>
+      <div>$265.00 SGD</div>
+      <div class="sizes"><span class="size">M</span><span class="size">L</span><span class="size">XL</span></div>
+      <span class="select">Select a size</span>
+    </div>
+  </main>
+  <footer class="note">Join our list is in the live footer. It was not submitted.</footer>
+</body>
+</html>
