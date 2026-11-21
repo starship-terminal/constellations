@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "home-light-390",
+  "url": "https://bitbucket.org/",
+  "requestedUrl": "https://bitbucket.org/",
+  "title": "Bitbucket Home Page",
+  "h1": "Code and CI/CD, powered by AI and the Atlassian platform",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport at 390. Signed out. Cookie banner hidden.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}

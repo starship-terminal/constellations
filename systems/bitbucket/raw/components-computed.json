@@ -1,0 +1,47 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://bitbucket.org/",
+  "viewport": { "width": 1440, "height": 900 },
+  "colorScheme": "light",
+  "body": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(41, 42, 46)",
+    "fontFamily": "\"Charlie Text\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400"
+  },
+  "h1": {
+    "text": "Code and CI/CD, powered by AI and the Atlassian platform",
+    "color": "rgb(16, 18, 20)",
+    "fontFamily": "\"Charlie Display\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+    "fontSize": "64px",
+    "fontWeight": "500",
+    "lineHeight": "66.56px",
+    "letterSpacing": "-1.28px"
+  },
+  "getItFree": {
+    "backgroundColor": "rgb(24, 104, 219)",
+    "color": "rgb(255, 255, 255)",
+    "borderRadius": "10000px",
+    "fontSize": "16px",
+    "fontWeight": "500",
+    "padding": "8px 22px",
+    "height": "40px"
+  },
+  "watchDemo": {
+    "color": "rgb(24, 104, 219)",
+    "fontSize": "16px",
+    "fontWeight": "400"
+  },
+  "signIn": {
+    "color": "rgb(16, 18, 20)",
+    "fontSize": "16px",
+    "fontWeight": "500"
+  },
+  "pricingLink": {
+    "color": "rgb(41, 42, 46)",
+    "fontSize": "16px",
+    "fontWeight": "400"
+  },
+  "note": "Page background is transparent on the homepage. The painted page is white, sampled from the screenshot. Screenshots were not used for the button, text, or link colours above."
+}

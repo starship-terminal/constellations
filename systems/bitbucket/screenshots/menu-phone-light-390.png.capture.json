@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "menu-phone-light-390",
+  "url": "https://bitbucket.org/",
+  "requestedUrl": "https://bitbucket.org/",
+  "title": null,
+  "h1": null,
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "Phone drawer opened by click. Nested Why Bitbucket row was not expanded in this shot.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}

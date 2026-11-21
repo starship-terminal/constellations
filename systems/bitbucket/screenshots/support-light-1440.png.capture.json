@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "support-light-1440",
+  "url": "https://support.atlassian.com/#/bitbucket",
+  "requestedUrl": "https://support.atlassian.com/help/#/bitbucket",
+  "title": "Atlassian Support",
+  "h1": "Support",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted. No identity provider clicked.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "pricing-light-390",
+  "url": "https://www.atlassian.com/software/bitbucket/pricing",
+  "requestedUrl": "https://www.atlassian.com/software/bitbucket/pricing",
+  "title": "Bitbucket Pricing: Find the Right Plan for You | Atlassian",
+  "h1": "Plans & pricing",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "First viewport of pricing at 390. Team size left at the default. Get it now and Start free trial were not clicked.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}
