@@ -1,25 +1,31 @@
-# Patterns
+# Clay patterns
 
-Public signed-out pages only. clay.earth returns 301 to https://me.sh/. The app interior was not entered.
+How the public pages combine the controls. Screenshots are in [screenshots/](screenshots/).
+
+## App shell
+
+A white pill nav sits over the page. Logo, four hover menus, Pricing, command-K, Log in, Get a demo, Start free trial. See [home-light-default.png](screenshots/home-light-default.png) and [nav-default.png](components/crops/nav-default.png).
+
+On a 390 width the pill keeps the logo, Get a demo, and a menu toggle. The drawer is [mobile-home-light-menu.png](screenshots/mobile-home-light-menu.png).
 
 ## Marketing home
 
-[home-dark-default.png](screenshots/home-dark-default.png) at 1440x900. The page ground is black on `html`. A floating nav sits over a VerlagCondensed headline ("Every relationship, remembered.") and a white "Get Mesh Free" pill with a cyan-violet-amber ring. Feature bands switch to a light ground with `#1d1d1f` type. The footer is `#0f0f10`.
-
-The Releases menu is a local toggle. [home-dark-menu.png](screenshots/home-dark-menu.png) shows the opened panel. It was closed with Escape. No menu link was followed from that state beyond the pages listed below, which were opened by URL.
+A claymation illustration over a green band. The h1 is 88px Roobertvf 575, ivory, tracking -0.04em. The primary action is a white pill. The secondary action is chartreuse. See [heading-hero-default.png](components/crops/heading-hero-default.png).
 
 ## Pricing
 
-[pricing-light-default.png](screenshots/pricing-light-default.png). A cream `#f9f8f6` route, four plan columns, a monthly/annual toggle left at rest, and outline CTAs that fill orange on hover. Plan CTAs were not followed.
+Four plan cards in a row. Free, Launch, Growth, Enterprise. Annual is the default, with a save-10% chip. Checkout was not entered. See [pricing-light-default.png](screenshots/pricing-light-default.png) and [pricing-light-full.png](screenshots/pricing-light-full.png). Phone: [mobile-pricing-light-default.png](screenshots/mobile-pricing-light-default.png).
 
-## Other public routes
+## Empty states
 
-Integrations and teams paint the cream ground. About and contact paint the black ground. Shots: [integrations-light-default.png](screenshots/integrations-light-default.png), [teams-light-default.png](screenshots/teams-light-default.png), [about-dark-default.png](screenshots/about-dark-default.png), [contact-dark-default.png](screenshots/contact-dark-default.png). Contact had no phone or card fields in the DOM.
+The 404 is an illustrated empty page: "Uh-oh! We dropped this one on the wheel." See [notfound-light-default.png](screenshots/notfound-light-default.png).
 
-## Phone
+The phone search overlay is an empty result: "All (0)". See [mobile-home-light-search.png](screenshots/mobile-home-light-search.png).
 
-[home-dark-mobile.png](screenshots/home-dark-mobile.png) at 390x844, devicePixelRatio 2. The hamburger opened a menu: [home-dark-mobile-menu.png](screenshots/home-dark-mobile-menu.png).
+## Auth walls
 
-## Sign-in boundary
+Login and signup are a split screen: a form on the left, demo art on the right. Fields were empty. See [login-light-default.png](screenshots/login-light-default.png) and [signup-light-default.png](screenshots/signup-light-default.png).
 
-[signin-light-default.png](screenshots/signin-light-default.png) is the public card at app.me.sh/login. It offers Apple, Google, an email field, "Sign in with email", "Create account", and "Sign in with SSO". The email field was focused for the focus style only. No button was clicked. No email was typed. AgentMail was not used.
+## Contact
+
+A short page with a heading and an unopened select. See [contact-light-default.png](screenshots/contact-light-default.png).

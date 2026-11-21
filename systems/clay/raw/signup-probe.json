@@ -1,0 +1,27 @@
+{
+  "url": "https://app.clay.com/signup",
+  "title": "Clay | Signup",
+  "status": 200,
+  "wall": false,
+  "inputs": [
+    {
+      "type": "text",
+      "name": "",
+      "placeholder": "Full name",
+      "valueLen": 0
+    },
+    {
+      "type": "text",
+      "name": "",
+      "placeholder": "Email address",
+      "valueLen": 0
+    },
+    {
+      "type": "hidden",
+      "name": "cf-turnstile-response",
+      "placeholder": "",
+      "valueLen": 0
+    }
+  ],
+  "body": "Welcome to Clay!\n\nSign up to turn any growth idea into reality — in minutes.\n\nSign up with Google\n\nOR\n\nContinue\n\nAlready have an account? Log in\n\nBy signing up for a Clay account, "
+}

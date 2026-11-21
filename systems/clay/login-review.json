@@ -1,0 +1,48 @@
+{
+  "slug": "clay",
+  "product": "Clay",
+  "domain": "www.clay.com",
+  "app": "app.clay.com",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "empty-walls",
+  "session": "Headless Chromium photographed the login and signup walls empty. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed. The hidden Cloudflare turnstile field was present and left empty.",
+  "wall": {
+    "url": "https://app.clay.com/",
+    "title": "Clay",
+    "asks": [
+      "Welcome back!",
+      "Sign in with Google",
+      "Email address",
+      "Continue",
+      "Sign up"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "code_field": false,
+    "inputs": [],
+    "note": "The email field was empty. Continue was not clicked. Sign in with Google was not clicked. The right-hand panel is product demo art (Prospect intent tracker) with fictional names, not an account."
+  },
+  "signup_wall": {
+    "url": "https://app.clay.com/signup",
+    "title": "Clay | Signup",
+    "asks": [
+      "Welcome to Clay!",
+      "Sign up with Google",
+      "Full name",
+      "Email address",
+      "Continue",
+      "Log in"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "continued": false,
+    "inputs": [
+      { "type": "text", "placeholder": "Full name", "filled": false },
+      { "type": "text", "placeholder": "Email address", "filled": false }
+    ],
+    "note": "Both fields were empty. Continue was not clicked. Sign up with Google was not clicked."
+  },
+  "stopped": "Photographed the empty walls and stopped. Did not open Google. Did not submit. Did not enter the signed-in app."
+}
