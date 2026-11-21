@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "product": "Clearful",
+    "captured": "2026-11-21",
+    "route": "public signed-out",
+    "viewport": "1440x900, devicePixelRatio 1, visualViewport scale 1"
+  },
+  "core": {
+    "color": {
+      "neutral": {
+        "black": {"type": "color", "var": "--base-color-neutral--black"},
+        "white": {"type": "color", "var": "--base-color-neutral--white"},
+        "grey-000": {"type": "color", "var": "--base-color-neutral--grey-000"},
+        "grey-100": {"type": "color", "var": "--base-color-neutral--grey-100"},
+        "grey-200": {"type": "color", "var": "--base-color-neutral--grey-200"},
+        "grey-300": {"type": "color", "var": "--base-color-neutral--grey-300"},
+        "grey-400": {"type": "color", "var": "--base-color-neutral--grey-400"},
+        "grey-500": {"type": "color", "var": "--base-color-neutral--grey-500"},
+        "grey-600": {"type": "color", "var": "--base-color-neutral--grey-600"},
+        "grey-700": {"type": "color", "var": "--base-color-neutral--grey-700"},
+        "grey-800": {"type": "color", "var": "--base-color-neutral--grey-800"},
+        "grey-900": {"type": "color", "var": "--base-color-neutral--grey-900"}
+      },
+      "brand": {
+        "blue-50": {"type": "color", "var": "--base-color-brand--blue-50"},
+        "blue-100": {"type": "color", "var": "--base-color-brand--blue-100"},
+        "blue-200": {"type": "color", "var": "--base-color-brand--blue-200"},
+        "blue-300": {"type": "color", "var": "--base-color-brand--blue-300"},
+        "blue-400": {"type": "color", "var": "--base-color-brand--blue-400"},
+        "blue-500": {"type": "color", "var": "--base-color-brand--blue-500"},
+        "blue-600": {"type": "color", "var": "--base-color-brand--blue-600"},
+        "blue-700": {"type": "color", "var": "--base-color-brand--blue-700"},
+        "blue-800": {"type": "color", "var": "--base-color-brand--blue-800"},
+        "blue-900": {"type": "color", "var": "--base-color-brand--blue-900"},
+        "blue-950": {"type": "color", "var": "--base-color-brand--blue-950"}
+      }
+    },
+    "font": {
+      "family": {
+        "primary": {"type": "fontFamily", "var": "--primary-font-family", "description": "UI face. Manrope, loaded from Google Fonts."},
+        "display": {"type": "fontFamily", "var": "--secondary-font-family", "description": "Display face. Literatatt is self-hosted; the style guide falls back to a serif."}
+      }
+    },
+    "radius": {
+      "small": {"type": "dimension", "var": "--border-radius--border-radius-small"},
+      "medium": {"type": "dimension", "var": "--border-radius--border-radius-medium"},
+      "large": {"type": "dimension", "var": "--border-radius--border-radius-large"},
+      "xlarge": {"type": "dimension", "var": "--border-radius--border-radius-xlarge"},
+      "pill": {"type": "dimension", "value": "999px", "source": "measured a.button.is-small.w-button border-radius on https://clearful.com/ at 1440"}
+    },
+    "typography": {
+      "display": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.display}",
+          "fontSize": "72px",
+          "fontWeight": 700,
+          "lineHeight": "86.4px"
+        },
+        "$extensions": {"source": "measured h1 on https://clearful.com/ at 1440x900"}
+      },
+      "body": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.primary}",
+          "fontSize": "16px",
+          "fontWeight": 400,
+          "lineHeight": "24px"
+        },
+        "$extensions": {"source": "measured body on https://clearful.com/ at 1440x900"}
+      },
+      "nav": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.primary}",
+          "fontSize": "16px",
+          "fontWeight": 600,
+          "lineHeight": "24px"
+        },
+        "$extensions": {"source": "measured a.navbar1_link on https://clearful.com/ at 1440x900"}
+      },
+      "button": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.primary}",
+          "fontSize": "16px",
+          "fontWeight": 600,
+          "lineHeight": "24px"
+        },
+        "$extensions": {"source": "measured a.button.is-small.w-button on https://clearful.com/ at 1440x900"}
+      }
+    }
+  },
+  "light": {
+    "page": {"type": "color", "var": "--background-color--background-primary"},
+    "surface": {"type": "color", "var": "--background-color--background-secondary"},
+    "surface-strong": {"type": "color", "var": "--background-color--background-tertiary"},
+    "text": {"type": "color", "var": "--text-color--text-primary"},
+    "muted": {"type": "color", "var": "--text-color--text-secondary"},
+    "tertiary": {"type": "color", "var": "--text-color--text-tertiary"},
+    "accent": {"type": "color", "var": "--base-color-brand--blue-500"},
+    "accent-hover": {"type": "color", "value": "#1b1bbc", "source": "measured getComputedStyle on a.button.is-small.w-button:hover at https://clearful.com/. The stylesheet names a deleted Webflow variable, --base-color-brand--blue-600<deleted|variable-78f99fb0>, which resolves to this hex. Not a declared token."},
+    "on-accent": {"type": "color", "var": "--base-color-neutral--white"},
+    "border": {"type": "color", "var": "--border-color--border-primary"},
+    "link": {"type": "color", "var": "--link-color--color"},
+    "brand-dark": {"type": "color", "var": "--background-color--background-brand-dark"},
+    "scrim": {"type": "color", "value": "rgba(0, 0, 0, 0.25)", "source": "measured .modal_get-app_background-overlay background-color on https://clearful.com/ after opening the get-app modal"}
+  },
+  "component": {
+    "nav": {
+      "height": {"type": "dimension", "value": "72px", "source": "measured .navbar1_component height on https://clearful.com/ at 1440"},
+      "pad-inline": {"type": "dimension", "value": "72px", "source": "measured .navbar1_component padding-inline on https://clearful.com/ at 1440"}
+    },
+    "button": {
+      "height": {"type": "dimension", "value": "50px", "source": "measured a.button.is-small.w-button height on https://clearful.com/"},
+      "pad-block": {"type": "dimension", "value": "12px", "source": "measured a.button.is-small.w-button padding-block"},
+      "pad-inline": {"type": "dimension", "value": "20px", "source": "measured a.button.is-small.w-button padding-inline"},
+      "radius": {"type": "dimension", "value": "999px", "source": "measured a.button.is-small.w-button border-radius"},
+      "border-width": {"type": "dimension", "value": "1px", "source": "measured a.button.is-small.w-button border-top-width"}
+    },
+    "button-large": {
+      "height": {"type": "dimension", "value": "82px", "source": "measured a.button.is-large height on https://clearful.com/"},
+      "font-size": {"type": "dimension", "value": "20px", "source": "measured a.button.is-large font-size"},
+      "border-width": {"type": "dimension", "value": "6px", "source": "measured a.button.is-large border-top-width (the halo is a 6px #adc2ff border)"}
+    },
+    "field": {
+      "height": {"type": "dimension", "value": "60px", "source": "measured input[name=Contact-Us-Name] height on https://clearful.com/contact-us. The form was not submitted."},
+      "radius": {"type": "dimension", "value": "8px", "source": "measured input[name=Contact-Us-Name] border-radius"},
+      "border-width": {"type": "dimension", "value": "1px", "source": "measured input[name=Contact-Us-Name] border width"}
+    },
+    "textarea": {
+      "height": {"type": "dimension", "value": "180px", "source": "measured textarea[name=Contact-Us-Message] height on https://clearful.com/contact-us. Not submitted."}
+    }
+  }
+}
