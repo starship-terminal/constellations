@@ -1,0 +1,80 @@
+{
+  "captured": "2026-11-22",
+  "region": "United States, English",
+  "url": "https://www.hoka.com/en/us/",
+  "viewport": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2 },
+  "body": {
+    "backgroundColor": "#ffffff",
+    "color": "#000000",
+    "fontFamily": "the-future, sans-serif",
+    "fontSize": "14px"
+  },
+  "utility": {
+    "backgroundColor": "#000000",
+    "color": "#ffffff",
+    "height": "48px"
+  },
+  "header": {
+    "backgroundColor": "#ffffff",
+    "height": "136px"
+  },
+  "logo": {
+    "fill": "#009dff",
+    "viewBox": "0 0 94.5 26.9",
+    "rendered": "85x23"
+  },
+  "nav": {
+    "color": "#000000",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "padding": "26px 18px",
+    "sample": "Black Friday Sale"
+  },
+  "search": {
+    "backgroundColor": "#ffffff",
+    "border": "1px solid #000000",
+    "borderRadius": "52px",
+    "width": 178,
+    "height": 36,
+    "fontSize": "16px",
+    "placeholder": "Search…"
+  },
+  "ask": {
+    "backgroundColor": "#efefef",
+    "color": "#000000",
+    "borderRadius": "52px",
+    "width": 187,
+    "height": 40,
+    "fontSize": "16px",
+    "fontWeight": "500"
+  },
+  "shopNow": {
+    "backgroundColor": "#ffffff",
+    "color": "#000000",
+    "borderRadius": "52px",
+    "width": 125,
+    "height": 48,
+    "fontSize": "16px",
+    "fontWeight": "500",
+    "fontFamily": "the-future, futura-pt, sans-serif",
+    "padding": "12px 24px"
+  },
+  "category": {
+    "url": "https://www.hoka.com/en/us/womens-view-all/",
+    "title": "View All Women's Shoes",
+    "titleSize": "32px",
+    "titleWeight": "900",
+    "count": "227",
+    "sale": { "color": "#000000", "fontSize": "16px", "fontWeight": "500", "sample": "$140" },
+    "was": { "color": "#4d4d4d", "fontSize": "16px", "fontWeight": "400", "decoration": "line-through", "sample": "$175" },
+    "off": { "color": "#e10f00", "fontSize": "16px", "fontWeight": "500", "sample": "(20% Off)" },
+    "badge": { "color": "#e10f00", "fontSize": "14px", "fontWeight": "500", "sample": "Holiday Exclusive" },
+    "sort": { "backgroundColor": "#f7f7f9", "height": "42px", "width": 322, "border": "1px solid #000000" }
+  },
+  "cssVars": {
+    "--primary": "#000",
+    "--secondary": "#4d4d4d",
+    "--white": "#fff",
+    "--font-family-sans-serif": "\"the-future\",sans-serif"
+  }
+}
