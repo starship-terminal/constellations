@@ -1,0 +1,676 @@
+{
+ "_meta": {
+  "source": "column.com signed-out, 1440x900, 2026-11-21",
+  "note": "No field was typed into. No form was submitted. Login wall was not measured as a form."
+ },
+ "components": {
+  "nav-signin": {
+   "states": {
+    "default": {
+     "box": {
+      "x": 1039.15625,
+      "y": 56,
+      "w": 76.390625,
+      "h": 38
+     },
+     "style": {
+      "color": "rgb(18, 22, 30)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "21px",
+      "letterSpacing": "normal",
+      "padding": "8px 16px",
+      "height": "38px",
+      "boxShadow": "none",
+      "outline": "rgb(18, 22, 30) none 0px",
+      "outlineOffset": "0px",
+      "textDecoration": "rgb(18, 22, 30)"
+     },
+     "crop": "components/crops/nav-signin-default.png"
+    },
+    "hover": {
+     "box": {
+      "x": 1039.15625,
+      "y": 56,
+      "w": 76.390625,
+      "h": 38
+     },
+     "style": {
+      "color": "rgb(18, 22, 30)",
+      "backgroundColor": "rgba(0, 0, 0, 0.02)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "21px",
+      "letterSpacing": "normal",
+      "padding": "8px 16px",
+      "height": "38px",
+      "boxShadow": "rgba(0, 0, 0, 0.25) 0px 0px 1px 0px",
+      "outline": "rgb(18, 22, 30) none 0px",
+      "outlineOffset": "0px",
+      "textDecoration": "rgb(18, 22, 30)"
+     },
+     "crop": "components/crops/nav-signin-hover.png"
+    },
+    "focus-visible": {
+     "box": {
+      "x": 1039.15625,
+      "y": 56,
+      "w": 76.390625,
+      "h": 38
+     },
+     "style": {
+      "color": "rgb(18, 22, 30)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "21px",
+      "letterSpacing": "normal",
+      "padding": "8px 16px",
+      "height": "38px",
+      "boxShadow": "rgb(162, 193, 237) 0px 0px 0px 2px",
+      "outline": "rgb(18, 22, 30) none 0px",
+      "outlineOffset": "1px",
+      "textDecoration": "rgb(18, 22, 30)"
+     },
+     "crop": "components/crops/nav-signin-focus-visible.png"
+    },
+    "pressed": {
+     "box": {
+      "x": 1039.15625,
+      "y": 56,
+      "w": 76.390625,
+      "h": 38
+     },
+     "style": {
+      "color": "rgb(18, 22, 30)",
+      "backgroundColor": "rgba(0, 0, 0, 0.02)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "21px",
+      "letterSpacing": "normal",
+      "padding": "8px 16px",
+      "height": "38px",
+      "boxShadow": "rgb(162, 193, 237) 0px 0px 0px 2px",
+      "outline": "rgb(18, 22, 30) none 0px",
+      "outlineOffset": "1px",
+      "textDecoration": "rgb(18, 22, 30)"
+     },
+     "how": "CDP forcePseudoState hover+active; nothing was clicked",
+     "crop": "components/crops/nav-signin-pressed.png"
+    }
+   }
+  },
+  "nav-blog": {
+   "states": {
+    "default": {
+     "box": {
+      "x": 759.890625,
+      "y": 56.5,
+      "w": 61.78125,
+      "h": 37
+     },
+     "style": {
+      "color": "rgb(18, 22, 30)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "21px",
+      "letterSpacing": "normal",
+      "padding": "8px 16px",
+      "height": "37px",
+      "boxShadow": "none",
+      "outline": "rgb(18, 22, 30) none 0px",
+      "outlineOffset": "0px",
+      "textDecoration": "rgb(18, 22, 30)"
+     },
+     "crop": "components/crops/nav-blog-default.png"
+    },
+    "hover": {
+     "box": {
+      "x": 759.890625,
+      "y": 56.5,
+      "w": 61.78125,
+      "h": 37
+     },
+     "style": {
+      "color": "rgb(18, 22, 30)",
+      "backgroundColor": "rgba(0, 0, 0, 0.02)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "21px",
+      "letterSpacing": "normal",
+      "padding": "8px 16px",
+      "height": "37px",
+      "boxShadow": "rgba(0, 0, 0, 0.25) 0px 0px 1px 0px",
+      "outline": "rgb(18, 22, 30) none 0px",
+      "outlineOffset": "0px",
+      "textDecoration": "rgb(18, 22, 30)"
+     },
+     "crop": "components/crops/nav-blog-hover.png"
+    },
+    "focus-visible": {
+     "box": {
+      "x": 759.890625,
+      "y": 56.5,
+      "w": 61.78125,
+      "h": 37
+     },
+     "style": {
+      "color": "rgb(18, 22, 30)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "21px",
+      "letterSpacing": "normal",
+      "padding": "8px 16px",
+      "height": "37px",
+      "boxShadow": "rgb(162, 193, 237) 0px 0px 0px 2px",
+      "outline": "rgb(18, 22, 30) none 0px",
+      "outlineOffset": "1px",
+      "textDecoration": "rgb(18, 22, 30)"
+     },
+     "crop": "components/crops/nav-blog-focus-visible.png"
+    },
+    "pressed": {
+     "box": {
+      "x": 759.890625,
+      "y": 56.5,
+      "w": 61.78125,
+      "h": 37
+     },
+     "style": {
+      "color": "rgb(18, 22, 30)",
+      "backgroundColor": "rgba(0, 0, 0, 0.02)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "21px",
+      "letterSpacing": "normal",
+      "padding": "8px 16px",
+      "height": "37px",
+      "boxShadow": "rgb(162, 193, 237) 0px 0px 0px 2px",
+      "outline": "rgb(18, 22, 30) none 0px",
+      "outlineOffset": "1px",
+      "textDecoration": "rgb(18, 22, 30)"
+     },
+     "how": "CDP forcePseudoState hover+active; nothing was clicked",
+     "crop": "components/crops/nav-blog-pressed.png"
+    }
+   }
+  },
+  "nav-products": {
+   "states": {
+    "default": {
+     "box": {
+      "x": 522.796875,
+      "y": 56.5,
+      "w": 110.765625,
+      "h": 37
+     },
+     "style": {
+      "color": "rgb(18, 22, 30)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "21px",
+      "letterSpacing": "normal",
+      "padding": "8px 16px",
+      "height": "37px",
+      "boxShadow": "none",
+      "outline": "rgb(18, 22, 30) none 0px",
+      "outlineOffset": "0px",
+      "textDecoration": "rgb(18, 22, 30)"
+     },
+     "crop": "components/crops/nav-products-default.png"
+    },
+    "hover": {
+     "box": {
+      "x": 522.796875,
+      "y": 56.5,
+      "w": 110.765625,
+      "h": 37
+     },
+     "style": {
+      "color": "rgb(18, 22, 30)",
+      "backgroundColor": "rgba(0, 0, 0, 0.02)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "21px",
+      "letterSpacing": "normal",
+      "padding": "8px 16px",
+      "height": "37px",
+      "boxShadow": "rgba(0, 0, 0, 0.25) 0px 0px 1px 0px",
+      "outline": "rgb(18, 22, 30) none 0px",
+      "outlineOffset": "0px",
+      "textDecoration": "rgb(18, 22, 30)"
+     },
+     "crop": "components/crops/nav-products-hover.png"
+    },
+    "focus-visible": {
+     "box": {
+      "x": 522.796875,
+      "y": 56.5,
+      "w": 110.765625,
+      "h": 37
+     },
+     "style": {
+      "color": "rgb(18, 22, 30)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "21px",
+      "letterSpacing": "normal",
+      "padding": "8px 16px",
+      "height": "37px",
+      "boxShadow": "rgb(162, 193, 237) 0px 0px 0px 2px",
+      "outline": "rgb(18, 22, 30) none 0px",
+      "outlineOffset": "0px",
+      "textDecoration": "rgb(18, 22, 30)"
+     },
+     "crop": "components/crops/nav-products-focus-visible.png"
+    },
+    "pressed": {
+     "box": {
+      "x": 522.796875,
+      "y": 56.5,
+      "w": 110.765625,
+      "h": 37
+     },
+     "style": {
+      "color": "rgb(18, 22, 30)",
+      "backgroundColor": "rgba(0, 0, 0, 0.02)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "21px",
+      "letterSpacing": "normal",
+      "padding": "8px 16px",
+      "height": "37px",
+      "boxShadow": "rgb(162, 193, 237) 0px 0px 0px 2px",
+      "outline": "rgb(18, 22, 30) none 0px",
+      "outlineOffset": "0px",
+      "textDecoration": "rgb(18, 22, 30)"
+     },
+     "how": "CDP forcePseudoState hover+active; nothing was clicked",
+     "crop": "components/crops/nav-products-pressed.png"
+    }
+   }
+  },
+  "nav-products-item": {
+   "states": {
+    "opened": {
+     "box": {
+      "x": 220,
+      "y": 151,
+      "w": 211.546875,
+      "h": 34
+     },
+     "style": {
+      "color": "rgb(18, 22, 30)",
+      "backgroundColor": "rgb(246, 246, 248)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "padding": "7px 8px",
+      "height": "34px",
+      "boxShadow": "none",
+      "outline": "rgb(18, 22, 30) none 0px",
+      "outlineOffset": "0px",
+      "textDecoration": "rgb(18, 22, 30)"
+     },
+     "menu": "Products opened; item is the ACH link",
+     "crop": "components/crops/nav-products-item-opened.png"
+    }
+   }
+  },
+  "cta-signup": {
+   "states": {
+    "default": {
+     "box": {
+      "x": 185,
+      "y": 545.78125,
+      "w": 97.296875,
+      "h": 36
+     },
+     "style": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(17, 26, 74)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "16px",
+      "letterSpacing": "normal",
+      "padding": "0px 16px",
+      "height": "36px",
+      "boxShadow": "rgb(17, 26, 74) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 2px 4px 0px, rgba(0, 0, 0, 0.25) 0px 1px 2px 0px",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "outlineOffset": "0px",
+      "textDecoration": "rgb(255, 255, 255)"
+     },
+     "crop": "components/crops/cta-signup-default.png"
+    },
+    "hover": {
+     "box": {
+      "x": 185,
+      "y": 545.78125,
+      "w": 97.296875,
+      "h": 36
+     },
+     "style": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(17, 26, 74)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "16px",
+      "letterSpacing": "normal",
+      "padding": "0px 16px",
+      "height": "36px",
+      "boxShadow": "rgb(17, 26, 74) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 2px 4px 0px",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "outlineOffset": "0px",
+      "textDecoration": "rgb(255, 255, 255)"
+     },
+     "crop": "components/crops/cta-signup-hover.png"
+    },
+    "focus-visible": {
+     "box": {
+      "x": 185,
+      "y": 545.78125,
+      "w": 97.296875,
+      "h": 36
+     },
+     "style": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(17, 26, 74)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "16px",
+      "letterSpacing": "normal",
+      "padding": "0px 16px",
+      "height": "36px",
+      "boxShadow": "rgb(17, 26, 74) 0px 0px 0px 1px, rgba(0, 0, 0, 0.15) 0px 1px 3px 0px, rgb(212, 227, 247) 0px 0px 0px 4px",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "outlineOffset": "1px",
+      "textDecoration": "rgb(255, 255, 255)"
+     },
+     "crop": "components/crops/cta-signup-focus-visible.png"
+    },
+    "pressed": {
+     "box": {
+      "x": 185,
+      "y": 545.78125,
+      "w": 97.296875,
+      "h": 36
+     },
+     "style": {
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(17, 26, 74)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "16px",
+      "letterSpacing": "normal",
+      "padding": "0px 16px",
+      "height": "36px",
+      "boxShadow": "rgb(17, 26, 74) 0px 0px 0px 1px, rgba(0, 0, 0, 0.15) 0px 1px 3px 0px, rgb(212, 227, 247) 0px 0px 0px 0px",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "outlineOffset": "1px",
+      "textDecoration": "rgb(255, 255, 255)"
+     },
+     "how": "CDP forcePseudoState hover+active; nothing was clicked",
+     "crop": "components/crops/cta-signup-pressed.png"
+    }
+   }
+  },
+  "hero-title": {
+   "states": {
+    "default": {
+     "box": {
+      "x": 184,
+      "y": 350.40625,
+      "w": 486,
+      "h": 114.375
+     },
+     "style": {
+      "color": "rgb(17, 26, 74)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "0px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "52px",
+      "fontWeight": "600",
+      "lineHeight": "57.2px",
+      "letterSpacing": "-1.56px",
+      "padding": "0px",
+      "height": "114.375px",
+      "boxShadow": "none",
+      "outline": "rgb(17, 26, 74) none 0px",
+      "outlineOffset": "0px",
+      "textDecoration": "rgb(17, 26, 74)"
+     },
+     "crop": "components/crops/hero-title-default.png"
+    }
+   }
+  },
+  "contact-field": {
+   "states": {
+    "default": {
+     "box": {
+      "x": 400,
+      "y": 310,
+      "w": 308,
+      "h": 40
+     },
+     "style": {
+      "color": "rgb(87, 90, 100)",
+      "backgroundColor": "rgb(245, 245, 246)",
+      "borderTopColor": "rgb(87, 90, 100)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "16px",
+      "letterSpacing": "normal",
+      "padding": "12px 16px",
+      "height": "40px",
+      "boxShadow": "rgba(43, 49, 67, 0.075) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.075) 0px 1px 1px 0px inset, rgba(0, 0, 0, 0.024) 0px 2px 4px 0px inset",
+      "outline": "rgb(87, 90, 100) none 0px",
+      "outlineOffset": "0px",
+      "textDecoration": "rgb(87, 90, 100)"
+     },
+     "crop": "components/crops/contact-field-default.png"
+    },
+    "focused": {
+     "box": {
+      "x": 400,
+      "y": 310,
+      "w": 308,
+      "h": 40
+     },
+     "style": {
+      "color": "rgb(87, 90, 100)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderTopColor": "rgb(87, 90, 100)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "16px",
+      "letterSpacing": "normal",
+      "padding": "12px 16px",
+      "height": "40px",
+      "boxShadow": "rgb(69, 117, 205) 0px 0px 0px 1px inset, rgba(69, 117, 205, 0.15) 0px 0px 0px 3px, rgba(0, 0, 0, 0.075) 0px 1px 1px 0px inset, rgba(0, 0, 0, 0.024) 0px 2px 4px 0px inset",
+      "outline": "rgb(87, 90, 100) none 0px",
+      "outlineOffset": "0px",
+      "textDecoration": "rgb(87, 90, 100)"
+     },
+     "note": "focused empty; nothing typed",
+     "crop": "components/crops/contact-field-focused.png"
+    }
+   }
+  },
+  "contact-message": {
+   "states": {
+    "default": {
+     "box": {
+      "x": 400,
+      "y": 390,
+      "w": 640,
+      "h": 120
+     },
+     "style": {
+      "color": "rgb(87, 90, 100)",
+      "backgroundColor": "rgb(245, 245, 246)",
+      "borderTopColor": "rgb(87, 90, 100)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "padding": "12px 16px",
+      "height": "120px",
+      "boxShadow": "rgba(43, 49, 67, 0.075) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.075) 0px 1px 1px 0px inset, rgba(0, 0, 0, 0.024) 0px 2px 4px 0px inset",
+      "outline": "rgb(87, 90, 100) none 0px",
+      "outlineOffset": "0px",
+      "textDecoration": "rgb(87, 90, 100)"
+     },
+     "crop": "components/crops/contact-message-default.png"
+    }
+   }
+  },
+  "contact-submit": {
+   "states": {
+    "default": {
+     "box": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0
+     },
+     "style": {
+      "color": "rgb(35, 39, 48)",
+      "backgroundColor": "rgba(255, 255, 255, 0.5)",
+      "borderTopColor": "rgb(227, 228, 232)",
+      "borderTopWidth": "0px",
+      "borderRadius": "8px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "16px",
+      "letterSpacing": "normal",
+      "padding": "0px 16px",
+      "height": "36px",
+      "boxShadow": "rgba(255, 255, 255, 0) 0px 1px 1px 0px, rgba(87, 90, 100, 0.12) 0px 0px 0px 1px",
+      "outline": "rgb(35, 39, 48) none 0px",
+      "outlineOffset": "0px",
+      "textDecoration": "rgb(35, 39, 48)"
+     },
+     "note": "not clicked",
+     "crop": "components/crops/contact-submit-default.png"
+    }
+   }
+  },
+  "docs-theme-toggle": {
+   "states": {
+    "default": {
+     "box": {
+      "x": 1391.984375,
+      "y": 10,
+      "w": 36,
+      "h": 36
+     },
+     "style": {
+      "color": "lab(26.2398 0.351101 -5.97695)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopColor": "lab(26.2398 0.351101 -5.97695)",
+      "borderTopWidth": "0px",
+      "borderRadius": "6px",
+      "fontFamily": "SuisseIntl, ui-sans-serif, system-ui, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "padding": "0px",
+      "height": "36px",
+      "boxShadow": "none",
+      "outline": "lab(26.2398 0.351101 -5.97695) none 0px",
+      "outlineOffset": "0px",
+      "textDecoration": "lab(26.2398 0.351101 -5.97695)"
+     },
+     "crop": "components/crops/docs-theme-toggle-default.png"
+    }
+   }
+  }
+ }
+}
