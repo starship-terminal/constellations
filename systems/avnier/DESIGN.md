@@ -49,7 +49,7 @@ Good for: Fashion e-commerce storefront: achromatic black-on-white Shopify chrom
 
 Captured 2026-11-11, signed out (every captured surface is public; checkout and account behind sign-in were never reached). Themes: light.
 
-A token set and component reference for Avnier's public shop — for building fashion-e-commerce surfaces in the style of the real thing. It was read from **avnier.com** on **2026-11-11**, signed out, in **headless Chrome** at 1440 x 900 and 390 x 844, covering the home page, the all-products shop grid, a product page discovered at run time, the side-cart drawer (`/cart` itself is a 404), the public `/account/login` gate, and the same surfaces at phone width. The site serves French copy (fr-FR) and EUR prices.
+A token set and component reference for Avnier's public shop — for building fashion-e-commerce surfaces in the style of the real thing. It was refreshed from **avnier.com** on **2026-11-21**, signed out, in **headless Chrome** at 1440 x 900 and 390 x 844. The refresh covers the home page, the SHOP mega-menu, the all-products grid and its colour filter, `/products/doudoune-symphony` (size, colour, size-guide dialog), the side-cart drawer (`/cart` itself is a 404), the public `/account/login` gate (not submitted), contact and histoire, and the same shell at phone width. The site serves French copy (fr-FR) and EUR prices. The control map is [site-tree.md](site-tree.md).
 
 Avnier is worth a capture because it is the reference for *monospace French streetwear*: an achromatic black-and-white storefront where Space Mono does all the work (body, nav, fields, buttons, prices — tracked uppercase on actions), a licensed display face (`avnier-font`) only for titles, square controls everywhere (0px corners, shadowless but for a 1px field ring), black buys on white paper, and a palette the Shopify theme declares as scheme custom properties (`--color-base-*` channel triplets, `--font-*` settings) — a real-world case of a storefront design layer on a Dawn-family theme.
 
@@ -105,12 +105,14 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **The palette is channel triplets.** `--color-base-text` and friends declare `"0, 0, 0"`-style rgb() channels composed as `rgb(var(--x))` / `rgba(var(--x), α)`. `tokens.json` records the composed colour with the var named as its source.
 - **Roles are verified, not declared.** Every `light` role pairs a var (or a measured colour) with the component that was measured wearing it; the theme declares only scheme colours, no semantic roles. The palette carries exactly two hues: the `#faf6b5` predictive-search highlight (`--PredictiveSearchHover`, `badge.promo`) and the `#f4ff7a` action yellow a press paints on the buy button's `::after` and the home CTA's underline (`core.measured.action-pressed`).
 - **`component.*` tokens are measured**, not site variables. The shop declares no spacing or radius scale — corners are simply 0px.
-- **The mega-menu dropdown was not measured.** The SHOP item's hover did not open a visible dropdown inside the capture window; `nav-dropdown` is recorded missing (the item itself is measured on `nav-mega`), not evidence of an absent menu — the desktop full shots show the collapsed nav.
+- **The SHOP mega-menu is captured.** Hover on the first `.mega-menu__item` opens the dropdown on the same URL. See [home-light-megamenu](screenshots/home-light-megamenu.png). MARQUE uses the same panel and was not given its own shot this pass.
+- **Search is an overlay.** The header Recherche control opens a dialog that stays on the page. See [home-light-search](screenshots/home-light-search.png). Nothing was typed into it.
 - **Quantity and PDP accordions are absent on this product**, not missing measurements — the captured product (`pdp_url`) ships no `quantity-input` or disclosure rows.
 - **The mobile-menu crop is the toggle region.** `m-menu-open` measures the menu button in its open state; the drawer's own box did not resolve for a crop — its rows are `m-nav-link` and the open panel is [mobile-home-light-menu](screenshots/mobile-home-light-menu.png).
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or `raw/full/`.
-- **The PDP is a sample**, not a fixed product — see `pdp_url`. Prices are EUR.
-- **The login email's `filled` state is an error record.** The fill click did not land inside its timeout on this pass; `default` and `focused` are the evidence.
+- **The PDP this pass is `/products/doudoune-symphony`.** Size S was selected for the variant shot. The size-guide dialog is [pdp-light-size-guide](screenshots/pdp-light-size-guide.png). Prices are EUR.
+- **The first-order promo is a Klaviyo dialog.** It is recorded as it arrives in [home-light-promo](screenshots/home-light-promo.png), then hidden for the other shots. No name or email was typed. No code was requested.
+- **The login form was not filled.** Email and password fields are on `/account/login`. Nothing was typed. Nothing was submitted. Create-account (`/account/register`) is a login wall and was not filled.
 - **Focus styles were not systematically captured** beyond focus-visible states on the measured components.
 
 ### Do and don't (from README.md)

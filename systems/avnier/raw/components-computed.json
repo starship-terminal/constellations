@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "read": "2026-11-11",
+  "read": "2026-11-21",
   "viewport": "1440 x 900 (mobile group 390 x 844), light theme",
   "tool": "tools/capture/public/measure.mjs",
   "sheets": {
@@ -281,46 +281,6 @@
      "animation": ""
     },
     {
-     "selector": ".loloyal-core-popup-overlay",
-     "transition": "opacity 0.3s, visibility 0.3s",
-     "animation": ""
-    },
-    {
-     "selector": ".loloyal-core-popup-overlay.closing .loloyal-core-popup-container",
-     "transition": "transform 0.25s ease-in, opacity 0.25s ease-in",
-     "animation": ""
-    },
-    {
-     "selector": ".loloyal-core-popup-container",
-     "transition": "transform 0.3s, opacity 0.3s",
-     "animation": ""
-    },
-    {
-     "selector": ".loloyal-core-popup-close-btn",
-     "transition": "color 0.15s",
-     "animation": ""
-    },
-    {
-     "selector": ".loloyal-popup-input-wrapper",
-     "transition": "color 0.1s",
-     "animation": ""
-    },
-    {
-     "selector": ".loloyal-popup-action-button",
-     "transition": "background-color 0.2s",
-     "animation": ""
-    },
-    {
-     "selector": ".loloyal-popup-input",
-     "transition": "0.3s",
-     "animation": ""
-    },
-    {
-     "selector": ".loloyal-popup-spinner",
-     "transition": "",
-     "animation": "1s linear 0s infinite normal none running loloyal-popup-spinner-animation"
-    },
-    {
      "selector": ".dodwuC.dodwuC.dodwuC.dodwuC.dodwuC.dodwuC button",
      "transition": "0.1s ease-out",
      "animation": ""
@@ -359,6 +319,46 @@
      "selector": ".hRBKdK .sc-idOiZg",
      "transition": "",
      "animation": "0.4s ease-out 0s 1 normal both running gDwJJv"
+    },
+    {
+     "selector": ".loloyal-core-popup-overlay",
+     "transition": "opacity 0.3s, visibility 0.3s",
+     "animation": ""
+    },
+    {
+     "selector": ".loloyal-core-popup-overlay.closing .loloyal-core-popup-container",
+     "transition": "transform 0.25s ease-in, opacity 0.25s ease-in",
+     "animation": ""
+    },
+    {
+     "selector": ".loloyal-core-popup-container",
+     "transition": "transform 0.3s, opacity 0.3s",
+     "animation": ""
+    },
+    {
+     "selector": ".loloyal-core-popup-close-btn",
+     "transition": "color 0.15s",
+     "animation": ""
+    },
+    {
+     "selector": ".loloyal-popup-input-wrapper",
+     "transition": "color 0.1s",
+     "animation": ""
+    },
+    {
+     "selector": ".loloyal-popup-action-button",
+     "transition": "background-color 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": ".loloyal-popup-input",
+     "transition": "0.3s",
+     "animation": ""
+    },
+    {
+     "selector": ".loloyal-popup-spinner",
+     "transition": "",
+     "animation": "1s linear 0s infinite normal none running loloyal-popup-spinner-animation"
     },
     {
      "selector": ".shipping-popup",
@@ -759,10 +759,10 @@
    },
    "title": "Skip link",
    "group": "Shell and navigation",
-   "desc": "\"IGNORER ET PASSER AU CONTENU\" — off-screen until focused.",
+   "desc": "\"IGNORER ET PASSER AU CONTENU\" \u2014 off-screen until focused.",
    "selector": "a:has-text(\"IGNORER\")",
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/"
   },
   "header": {
@@ -948,7 +948,7 @@
    "desc": "The white bar: wordmark, SHOP/MARQUE/SECONDE MAIN/ARCHIVE SALE nav, search, CONNEXION and PANIER.",
    "selector": "header",
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/"
   },
   "logo": {
@@ -1042,7 +1042,7 @@
    "selector": "a.header__heading-link",
    "desc": "The wordmark link (a hidden drawer copy is filtered out).",
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/"
   },
   "nav-item": {
@@ -1385,7 +1385,7 @@
    "desc": "A top-level nav link (SECONDE MAIN). Measured, never followed.",
    "selector": ".mega-menu__item-link:has-text(\"SECONDE MAIN\")",
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/"
   },
   "nav-mega": {
@@ -1479,7 +1479,7 @@
    "desc": "The SHOP item while its mega-menu dropdown is open.",
    "selector": "mega-menu__item \"SHOP\"",
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/"
   },
   "nav-dropdown": {
@@ -1489,7 +1489,7 @@
    "desc": "The open SHOP dropdown panel.",
    "selector": ".mega-menu__dropdown",
    "missing": true,
-   "recaptureMissed": "2026-11-11"
+   "recaptureMissed": "2026-11-21"
   },
   "search-toggle": {
    "states": {
@@ -1859,7 +1859,7 @@
    "desc": "The magnifier that opens the search modal. Measured, never submitted.",
    "selector": "header search icon",
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/"
   },
   "account-link": {
@@ -2230,7 +2230,7 @@
    "desc": "CONNEXION in the header. Measured, never followed.",
    "selector": "header a:has-text(\"CONNEXION\")",
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/"
   },
   "cart-link": {
@@ -2601,7 +2601,7 @@
    "desc": "PANIER in the header. Measured, never followed.",
    "selector": "header a:has-text(\"PANIER\")",
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/"
   },
   "hero": {
@@ -2702,7 +2702,7 @@
    "desc": "The collection announcement block under the header.",
    "selector": "[class*=\"banner\"]",
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/"
   },
   "hero-cta": {
@@ -2710,7 +2710,7 @@
     "default": {
      "tag": "a",
      "classes": "text-body--bold main-slideshow__video-button button--text",
-     "text": "DÉCOUVRIR LA COLLABORATION",
+     "text": "D\u00c9COUVRIR LA COLLABORATION",
      "rect": {
       "x": 879.2,
       "y": 435.1,
@@ -2796,7 +2796,7 @@
      ],
      "textStyle": {
       "node": "span",
-      "text": "DÉCOUVRIR LA COLLABORATION",
+      "text": "D\u00c9COUVRIR LA COLLABORATION",
       "fontFamily": "\"Space Mono\", monospace",
       "fontSize": "13px",
       "lineHeight": "normal",
@@ -2819,7 +2819,7 @@
     "hover": {
      "tag": "a",
      "classes": "text-body--bold main-slideshow__video-button button--text",
-     "text": "DÉCOUVRIR LA COLLABORATION",
+     "text": "D\u00c9COUVRIR LA COLLABORATION",
      "rect": {
       "x": 879.2,
       "y": 0.1,
@@ -2905,7 +2905,7 @@
      ],
      "textStyle": {
       "node": "span",
-      "text": "DÉCOUVRIR LA COLLABORATION",
+      "text": "D\u00c9COUVRIR LA COLLABORATION",
       "fontFamily": "\"Space Mono\", monospace",
       "fontSize": "13px",
       "lineHeight": "normal",
@@ -2928,7 +2928,7 @@
     "focus-visible": {
      "tag": "a",
      "classes": "text-body--bold main-slideshow__video-button button--text",
-     "text": "DÉCOUVRIR LA COLLABORATION",
+     "text": "D\u00c9COUVRIR LA COLLABORATION",
      "rect": {
       "x": 879.2,
       "y": 435.1,
@@ -3014,7 +3014,7 @@
      ],
      "textStyle": {
       "node": "span",
-      "text": "DÉCOUVRIR LA COLLABORATION",
+      "text": "D\u00c9COUVRIR LA COLLABORATION",
       "fontFamily": "\"Space Mono\", monospace",
       "fontSize": "13px",
       "lineHeight": "normal",
@@ -3037,7 +3037,7 @@
     "pressed": {
      "tag": "a",
      "classes": "text-body--bold main-slideshow__video-button button--text",
-     "text": "DÉCOUVRIR LA COLLABORATION",
+     "text": "D\u00c9COUVRIR LA COLLABORATION",
      "rect": {
       "x": 879.2,
       "y": 435.1,
@@ -3123,7 +3123,7 @@
      ],
      "textStyle": {
       "node": "span",
-      "text": "DÉCOUVRIR LA COLLABORATION",
+      "text": "D\u00c9COUVRIR LA COLLABORATION",
       "fontFamily": "\"Space Mono\", monospace",
       "fontSize": "13px",
       "lineHeight": "normal",
@@ -3147,9 +3147,9 @@
    "title": "Hero CTA",
    "group": "Home",
    "desc": "The first call-to-action on the home page. Measured, never followed.",
-   "selector": ":has-text(\"DÉCOUVRIR\")",
+   "selector": ":has-text(\"D\u00c9COUVRIR\")",
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/"
   },
   "plp-title": {
@@ -3243,7 +3243,7 @@
    "selector": ".product-count, .facets__heading",
    "desc": "The \"100 PRODUITS\" count / collection heading.",
    "page": "shop",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/collections/tous-les-produits"
   },
   "facet": {
@@ -3544,7 +3544,7 @@
    "desc": "A PRIX/COULEUR/TAILLE filter disclosure; opened by its own summary.",
    "selector": "details.facets__disclosure",
    "page": "shop",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/collections/tous-les-produits"
   },
   "facet-checkbox": {
@@ -3643,7 +3643,7 @@
    "desc": "A checkbox row inside the open COULEUR facet.",
    "selector": "details[open].facets__disclosure input[type=checkbox]",
    "page": "shop",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/collections/tous-les-produits"
   },
   "sort-select": {
@@ -3651,9 +3651,9 @@
     "default": {
      "tag": "select",
      "classes": "facet-filters__sort select__select caption-large",
-     "text": "Recommandés Le plus pertinent Meilleures ventes Moins chers Plus chers",
+     "text": "Recommand\u00e9s Le plus pertinent Meilleures ventes Moins chers Plus chers",
      "rect": {
-      "x": 1070.9,
+      "x": 1080.1,
       "y": 145,
       "w": 166,
       "h": 21
@@ -3734,9 +3734,9 @@
     "focused": {
      "tag": "select",
      "classes": "facet-filters__sort select__select caption-large",
-     "text": "Recommandés Le plus pertinent Meilleures ventes Moins chers Plus chers",
+     "text": "Recommand\u00e9s Le plus pertinent Meilleures ventes Moins chers Plus chers",
      "rect": {
-      "x": 1070.9,
+      "x": 1080.1,
       "y": 145,
       "w": 166,
       "h": 21
@@ -3817,10 +3817,10 @@
    },
    "title": "Sort select",
    "group": "Shop grid",
-   "desc": "The \"Recommandés\" sort dropdown.",
+   "desc": "The \"Recommand\u00e9s\" sort dropdown.",
    "selector": "select[name=\"sort_by\"]",
    "page": "shop",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/collections/tous-les-produits"
   },
   "product-card": {
@@ -4097,7 +4097,7 @@
    "desc": "A grid card: image, name, price.",
    "selector": "card ancestor of a[href*=\"/products/\"]",
    "page": "shop",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/collections/tous-les-produits"
   },
   "card-name": {
@@ -4440,7 +4440,7 @@
    "desc": "The product name/link inside a card.",
    "selector": "a[href*=\"/products/\"]",
    "page": "shop",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/collections/tous-les-produits"
   },
   "card-price": {
@@ -4448,7 +4448,7 @@
     "default": {
      "tag": "div",
      "classes": "price",
-     "text": "PRIX HABITUEL €240.83",
+     "text": "PRIX HABITUEL \u20ac240.83",
      "rect": {
       "x": 416.6,
       "y": 440.5,
@@ -4527,7 +4527,7 @@
      },
      "textStyle": {
       "node": "span.price-item.price-item--regular",
-      "text": "€240.83",
+      "text": "\u20ac240.83",
       "fontFamily": "\"Space Mono\", monospace",
       "fontSize": "12px",
       "lineHeight": "18px",
@@ -4545,7 +4545,7 @@
    "group": "Shop grid",
    "selector": ".price",
    "page": "shop",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/collections/tous-les-produits"
   },
   "pdp_url": {
@@ -4553,8 +4553,8 @@
    "title": "PDP URL",
    "states": {
     "default": {
-     "text": "/products/pull-tokyeux-avnier-x-saint-james?variant=54600387690843&data-color=Jean",
-     "via": "first product link on /collections/tous-les-produits"
+     "text": "/products/doudoune-symphony",
+     "via": "fixed public sample /products/doudoune-symphony"
     }
    }
   },
@@ -4563,10 +4563,10 @@
     "default": {
      "tag": "h1",
      "classes": "product__title h4",
-     "text": "PULL TOKYEUX",
+     "text": "DOUDOUNE SYMPHONY",
      "rect": {
       "x": 942,
-      "y": 60,
+      "y": 88.6,
       "w": 440,
       "h": 18
      },
@@ -4648,18 +4648,18 @@
    "group": "Product page",
    "selector": ".product__title, product h1",
    "page": "pdp",
-   "run": "2026-11-11",
-   "url": "https://avnier.com/collections/tous-les-produits"
+   "run": "2026-11-21",
+   "url": "https://avnier.com/products/doudoune-symphony"
   },
   "pdp-price": {
    "states": {
     "default": {
      "tag": "div",
      "classes": "price price--large",
-     "text": "Prix habituel €240.83",
+     "text": "Prix habituel \u20ac375.00",
      "rect": {
       "x": 942,
-      "y": 78,
+      "y": 106.6,
       "w": 440,
       "h": 27.5
      },
@@ -4735,7 +4735,7 @@
      },
      "textStyle": {
       "node": "span.price-item.price-item--regular",
-      "text": "€240.83",
+      "text": "\u20ac375.00",
       "fontFamily": "avnier-font",
       "fontSize": "15px",
       "lineHeight": "22.5px",
@@ -4753,8 +4753,8 @@
    "group": "Product page",
    "selector": ".price",
    "page": "pdp",
-   "run": "2026-11-11",
-   "url": "https://avnier.com/collections/tous-les-produits"
+   "run": "2026-11-21",
+   "url": "https://avnier.com/products/doudoune-symphony"
   },
   "variant-radio": {
    "states": {
@@ -4764,7 +4764,7 @@
      "text": "XS",
      "rect": {
       "x": 942,
-      "y": 429.5,
+      "y": 430.1,
       "w": 73.2,
       "h": 40
      },
@@ -4874,7 +4874,7 @@
      "text": "XS",
      "rect": {
       "x": 942,
-      "y": 429.5,
+      "y": 0.1,
       "w": 73.2,
       "h": 40
      },
@@ -4920,7 +4920,7 @@
       "borderBottomLeftRadius": "0px",
       "backgroundColor": "rgb(0, 0, 0)",
       "backgroundImage": "none",
-      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 1px inset",
+      "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "3px",
       "outlineStyle": "none",
@@ -4928,7 +4928,7 @@
       "outlineOffset": "0px",
       "fontFamily": "\"Space Mono\", monospace",
       "fontSize": "14px",
-      "fontWeight": "700",
+      "fontWeight": "400",
       "lineHeight": "14px",
       "letterSpacing": "1px",
       "textTransform": "none",
@@ -4953,8 +4953,7 @@
        "node": "label",
        "size": "73.2x40.0",
        "border": "T:1px solid rgb(0, 0, 0) | B:1px solid rgb(0, 0, 0) | L:1px solid rgb(0, 0, 0)",
-       "bg": "rgb(0, 0, 0)",
-       "shadow": "rgb(0, 0, 0) 0px 0px 0px 1px inset"
+       "bg": "rgb(0, 0, 0)"
       }
      ],
      "textStyle": {
@@ -4963,7 +4962,7 @@
       "fontFamily": "\"Space Mono\", monospace",
       "fontSize": "14px",
       "lineHeight": "14px",
-      "fontWeight": "700",
+      "fontWeight": "400",
       "letterSpacing": "1px",
       "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
@@ -4982,11 +4981,11 @@
    },
    "title": "Variant option",
    "group": "Product page",
-   "desc": "A TAILLE size chip — the visible label of a visually hidden radio input.",
+   "desc": "A TAILLE size chip \u2014 the visible label of a visually hidden radio input.",
    "selector": "input[type=radio] + label",
    "page": "pdp",
-   "run": "2026-11-11",
-   "url": "https://avnier.com/collections/tous-les-produits"
+   "run": "2026-11-21",
+   "url": "https://avnier.com/products/doudoune-symphony"
   },
   "qty-input": {
    "states": {},
@@ -4994,7 +4993,7 @@
    "group": "Product page",
    "selector": "input[name=\"quantity\"]",
    "missing": true,
-   "recaptureMissed": "2026-11-11"
+   "recaptureMissed": "2026-11-21"
   },
   "add-to-cart": {
    "states": {
@@ -5004,7 +5003,7 @@
      "text": "AJOUTER AU PANIER",
      "rect": {
       "x": 942,
-      "y": 425.5,
+      "y": 426.1,
       "w": 440,
       "h": 48
      },
@@ -5135,7 +5134,7 @@
      "text": "AJOUTER AU PANIER",
      "rect": {
       "x": 942,
-      "y": 425.5,
+      "y": 0.1,
       "w": 440,
       "h": 48
      },
@@ -5211,7 +5210,7 @@
      },
      "::after": {
       "content": "\" \"",
-      "width": "46.6094px",
+      "width": "0px",
       "height": "46px",
       "position": "absolute",
       "backgroundColor": "rgb(244, 255, 122)",
@@ -5221,7 +5220,7 @@
       "borderTopStyle": "none",
       "borderTopColor": "rgb(246, 246, 246)",
       "borderRadius": "0px",
-      "inset": "0px 391.391px 0px 0px",
+      "inset": "0px 438px 0px 0px",
       "opacity": "1",
       "transition": "0.35s"
      },
@@ -5234,7 +5233,7 @@
       },
       {
        "node": "button::after.product-form__submit.button",
-       "size": "46.6094pxx46px",
+       "size": "0pxx46px",
        "bg": "rgb(244, 255, 122)"
       }
      ],
@@ -5246,7 +5245,7 @@
       "lineHeight": "18px",
       "fontWeight": "400",
       "letterSpacing": "1px",
-      "color": "rgb(220, 220, 220)",
+      "color": "rgb(246, 246, 246)",
       "textDecorationLine": "none",
       "textTransform": "uppercase"
      },
@@ -5266,7 +5265,7 @@
      "text": "AJOUTER AU PANIER",
      "rect": {
       "x": 942,
-      "y": 425.5,
+      "y": 426.1,
       "w": 440,
       "h": 48
      },
@@ -5397,7 +5396,7 @@
      "text": "AJOUTER AU PANIER",
      "rect": {
       "x": 942,
-      "y": 425.5,
+      "y": 426.1,
       "w": 440,
       "h": 48
      },
@@ -5528,20 +5527,20 @@
    "desc": "The AJOUTER AU PANIER buy button; measured in every state except a real press.",
    "selector": ".product-form__submit",
    "page": "pdp",
-   "run": "2026-11-11",
-   "url": "https://avnier.com/collections/tous-les-produits"
+   "run": "2026-11-21",
+   "url": "https://avnier.com/products/doudoune-symphony"
   },
   "accordion": {
    "states": {},
    "title": "PDP accordion",
    "group": "Product page",
-   "desc": "A disclosure row (Description / Livraison…) — none on the captured product.",
+   "desc": "A disclosure row (Description / Livraison\u2026) \u2014 none on the captured product.",
    "selector": "main details summary",
    "page": "pdp",
    "run": "2026-11-11",
    "url": "https://avnier.com/collections/tous-les-produits",
    "missing": true,
-   "recaptureMissed": "2026-11-11"
+   "recaptureMissed": "2026-11-21"
   },
   "cart-title": {
    "states": {
@@ -5633,9 +5632,9 @@
    "group": "Cart",
    "selector": "h1",
    "page": "cart",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/cart",
-   "desc": "The 404 page /cart serves — the cart is the drawer, measured next."
+   "desc": "The 404 page /cart serves \u2014 the cart is the drawer, measured next."
   },
   "cart-empty": {
    "states": {
@@ -5740,7 +5739,7 @@
    "desc": "LE PANIER EST VIDE in the drawer.",
    "selector": ".side-cart__cart-empty",
    "page": "cart",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/cart"
   },
   "cart-cta": {
@@ -6211,7 +6210,7 @@
    "group": "Login gate",
    "selector": "main h1",
    "page": "login",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/account/login"
   },
   "email-input": {
@@ -6331,10 +6330,10 @@
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
-      "paddingTop": "15px",
-      "paddingRight": "15px",
-      "paddingBottom": "15px",
-      "paddingLeft": "15px",
+      "paddingTop": "16px",
+      "paddingRight": "16px",
+      "paddingBottom": "16px",
+      "paddingLeft": "16px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -6364,11 +6363,11 @@
       "borderBottomLeftRadius": "0px",
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0.55) 0px 0px 0px 1px",
+      "boxShadow": "rgba(0, 0, 0, 0.75) 0px 0px 0px 2px",
       "backdropFilter": "none",
       "outlineWidth": "3px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
+      "outlineColor": "rgba(0, 0, 0, 0)",
       "outlineOffset": "0px",
       "fontFamily": "\"Space Mono\", monospace",
       "fontSize": "16px",
@@ -6397,7 +6396,7 @@
        "node": "input",
        "size": "448.0x45.0",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
-       "shadow": "rgba(0, 0, 0, 0.55) 0px 0px 0px 1px"
+       "shadow": "rgba(0, 0, 0, 0.75) 0px 0px 0px 2px"
       }
      ],
      "placeholder": {
@@ -6407,17 +6406,14 @@
      },
      "crop": "components/crops/email-input-focused.png",
      "via": "clicked into the field"
-    },
-    "filled": {
-     "error": "locator.click: Timeout 4000ms exceeded.\nCall log:\n  - waiting for locator('input[type=\"email\"], input[name*=\"email\" i], #CustomerEmail').filter({ visible: true }).first().filter({ visible: true }).fir"
     }
    },
    "title": "Email field",
    "group": "Login gate",
-   "desc": "Text was typed and deleted; the form was never submitted.",
+   "desc": "The login email field. Nothing was typed. Nothing was submitted.",
    "selector": "input[type=email]",
    "page": "login",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/account/login"
   },
   "password-input": {
@@ -6620,7 +6616,7 @@
    "desc": "Focused only; nothing typed.",
    "selector": "input[type=\"password\"]",
    "page": "login",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/account/login"
   },
   "login-button": {
@@ -7000,10 +6996,10 @@
    },
    "title": "Login button",
    "group": "Login gate",
-   "desc": "The submit; measured except a real press — the form was never submitted.",
+   "desc": "The submit; measured except a real press \u2014 the form was never submitted.",
    "selector": "button[type=\"submit\"]",
    "page": "login",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/account/login"
   },
   "m-header": {
@@ -7188,7 +7184,7 @@
    "group": "Mobile (390 wide)",
    "selector": "header",
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/"
   },
   "m-menu-button": {
@@ -7606,7 +7602,7 @@
    "group": "Mobile (390 wide)",
    "selector": "header details summary",
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/"
   },
   "m-menu-open": {
@@ -7719,7 +7715,7 @@
    "desc": "The menu summary after its own toggle; the crop is the open drawer.",
    "selector": "header details summary",
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/"
   },
   "m-nav-link": {
@@ -7839,7 +7835,7 @@
    "desc": "A row inside the opened drawer.",
    "selector": ".toggle-item__header",
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/"
   },
   "m-feature-tile": {
@@ -7940,7 +7936,7 @@
    "desc": "A content tile under the hero.",
    "selector": ".card a",
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/"
   },
   "footer": {
@@ -8060,7 +8056,7 @@
    "group": "Footer",
    "selector": ".footer-bottom",
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/"
   },
   "footer-link": {
@@ -8402,7 +8398,7 @@
    "group": "Footer",
    "selector": ".footer a",
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/"
   },
   "newsletter-input": {
@@ -8605,7 +8601,7 @@
    "desc": "Focused only; never subscribed.",
    "selector": "footer input[type=\"email\"]",
    "page": "home",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/"
   },
   "cart-page": {
@@ -8613,7 +8609,7 @@
    "title": "/cart is a 404",
    "states": {
     "default": {
-     "text": "404 Page introuvable – AVNIER — /cart answers 404 \"Page non trouvée\" for everyone; the cart opens as the side-cart drawer (PANIER intercepts the link).",
+     "text": "404 Page introuvable \u2013 AVNIER \u2014 /cart answers 404 \"Page non trouv\u00e9e\" for everyone; the cart opens as the side-cart drawer (PANIER intercepts the link).",
      "via": "direct GET /cart"
     }
    }
@@ -8748,10 +8744,10 @@
    },
    "title": "Cart drawer",
    "group": "Cart",
-   "desc": "The side-cart opened by PANIER — \"MON PANIER - 0 ARTICLE\" empty.",
+   "desc": "The side-cart opened by PANIER \u2014 \"MON PANIER - 0 ARTICLE\" empty.",
    "selector": ".side-cart__wrapper",
    "page": "cart",
-   "run": "2026-11-11",
+   "run": "2026-11-21",
    "url": "https://avnier.com/cart"
   }
  }

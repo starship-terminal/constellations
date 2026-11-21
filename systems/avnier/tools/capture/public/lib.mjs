@@ -77,13 +77,34 @@ export async function closePromo(page) {
       // The Axeptio consent SDK, the shipping-country popup and any fixed
       // promo/newsletter overlay are hidden, never answered. Hiding never
       // accepts or rejects anything.
-      document.querySelectorAll('[id^="axeptio"], [class*="axeptio" i], #section-v2-shipping-country-popup, [id*="country-popup" i], iframe[src*="axeptio"]').forEach((x) => { x.style.setProperty('display', 'none', 'important'); n++; });
+      document.querySelectorAll('[id^="axeptio"], [class*="axeptio" i], #section-v2-shipping-country-popup, [id*="country-popup" i], iframe[src*="axeptio"], form.klaviyo-form, .klaviyo-form').forEach((x) => { x.style.setProperty('display', 'none', 'important'); n++; });
+      // The first-order code dialog is a cross-origin frame the page cannot
+      // reach. Hide its host only. Never fill it and never click its button.
+      document.querySelectorAll('iframe').forEach((frame) => {
+        let cross = false;
+        try { void frame.contentDocument; } catch { cross = true; }
+        if (!cross && frame.contentDocument) return;
+        const r = frame.getBoundingClientRect();
+        if (r.width < 200 || r.height < 150) return;
+        let host = frame.parentElement;
+        for (let i = 0; host && i < 5 && host !== document.body; i++, host = host.parentElement) {
+          const hr = host.getBoundingClientRect();
+          const cs = getComputedStyle(host);
+          if ((cs.position === 'fixed' || +cs.zIndex > 100) && hr.width < 900 && hr.height < 800) {
+            host.style.setProperty('display', 'none', 'important');
+            n++;
+            return;
+          }
+        }
+        frame.style.setProperty('display', 'none', 'important');
+        n++;
+      });
       const box = [...document.querySelectorAll('div,section,aside,[role="dialog"],[role="alertdialog"]')].find((x) => {
         const t = x.innerText || '';
         const r = x.getBoundingClientRect();
         const cs = getComputedStyle(x);
         return (cs.position === 'fixed' || cs.position === 'sticky')
-          && /cookie|we value privacy|newsletter|subscribe to|sign up for|join to shop|off sitewide|first order|privacy preference/i.test(t)
+          && /cookie|we value privacy|newsletter|subscribe to|sign up for|join to shop|off sitewide|first order|privacy preference|première commande|recevoir le code/i.test(t)
           && t.length < 1600 && r.width > 200 && r.width < 1400 && r.height > 60 && +cs.zIndex > 5;
       });
       if (box) { box.style.setProperty('display', 'none', 'important'); n++; }

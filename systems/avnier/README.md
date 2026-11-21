@@ -1,6 +1,6 @@
 # Avnier design reference
 
-A token set and component reference for Avnier's public shop — for building fashion-e-commerce surfaces in the style of the real thing. It was read from **avnier.com** on **2026-11-11**, signed out, in **headless Chrome** at 1440 x 900 and 390 x 844, covering the home page, the all-products shop grid, a product page discovered at run time, the side-cart drawer (`/cart` itself is a 404), the public `/account/login` gate, and the same surfaces at phone width. The site serves French copy (fr-FR) and EUR prices.
+A token set and component reference for Avnier's public shop — for building fashion-e-commerce surfaces in the style of the real thing. It was refreshed from **avnier.com** on **2026-11-21**, signed out, in **headless Chrome** at 1440 x 900 and 390 x 844. The refresh covers the home page, the SHOP mega-menu, the all-products grid and its colour filter, `/products/doudoune-symphony` (size, colour, size-guide dialog), the side-cart drawer (`/cart` itself is a 404), the public `/account/login` gate (not submitted), contact and histoire, and the same shell at phone width. The site serves French copy (fr-FR) and EUR prices. The control map is [site-tree.md](site-tree.md).
 
 Avnier is worth a capture because it is the reference for *monospace French streetwear*: an achromatic black-and-white storefront where Space Mono does all the work (body, nav, fields, buttons, prices — tracked uppercase on actions), a licensed display face (`avnier-font`) only for titles, square controls everywhere (0px corners, shadowless but for a 1px field ring), black buys on white paper, and a palette the Shopify theme declares as scheme custom properties (`--color-base-*` channel triplets, `--font-*` settings) — a real-world case of a storefront design layer on a Dawn-family theme.
 
@@ -13,7 +13,8 @@ Avnier is worth a capture because it is the reference for *monospace French stre
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (40, ~100 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: shop chrome, buttons, product surfaces, PDP, forms, the mobile drawer, consent |
 | [components/crops/](components/crops) | ~75 element screenshots, `{component}-{state}.png` |
-| [screenshots/](screenshots) | 17 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `home-light-consent` the country popup as it arrives |
+| [screenshots/](screenshots) | `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages. Refresh adds the SHOP mega-menu, the colour filter, search, the size-guide dialog, the first-order promo, contact, and histoire |
+| [site-tree.md](site-tree.md) | Public control map: each header, menu, footer, filter, and product control, and whether it opens a page, a menu, an overlay, a dialog, or a login wall |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property, binned generated/app/vendor/utility/tailwind, resolved light+dark, plus @font-face declarations), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [Rebuild](#rebuild) |
 
@@ -103,9 +104,9 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 Every value came off the running signed-out shop in headless Chrome:
 
 - **Tokens.** [tools/capture/vars.mjs](tools/capture/vars.mjs) captured every stylesheet body from the network responses plus inline `<style>` blocks, re-parsed them with `CSSStyleSheet`, and wrote every custom property to [raw/css-vars.json](raw/css-vars.json) binned `generated`/`app`/`vendor`/`utility`/`tailwind` — the theme's scheme palette (`--color-base-*`, `--font-*`, `--page-width`, `--duration-*`) lands in `app`; Swiper's `--swiper-*`, Loloyal's `--ll-*` and Axeptio declarations in `vendor`. Each name is resolved in a probe carrying the real sheets (light; a `dark` probe lands identical values — nothing binds it). [tools/build_component_tokens.py](tools/build_component_tokens.py) writes the spec, [tools/build_tokens.py](tools/build_tokens.py) the sets.
-- **Components.** [tools/capture/public/measure.mjs](tools/capture/public/measure.mjs) opens each route in a fresh context, hides the Axeptio consent layer and the shipping-country popup (never answered), and reads `getComputedStyle`, painted layers and boxes per element in default, hover, focus-visible and a CDP-forced pressed state, plus `focused`/`filled` on the login email (typed and deleted, never sent), `opened` on the PRIX facet and the mobile drawer, and `default`/`hover` on the visible TAILLE chips. Selectors are the theme's stable classes (`mega-menu__item`, `facets__disclosure`, `product-form__submit`). Results in [raw/components-computed.json](raw/components-computed.json) and [raw/measurements.md](raw/measurements.md).
+- **Components.** [tools/capture/public/measure.mjs](tools/capture/public/measure.mjs) opens each route in a fresh context, hides the Axeptio consent layer, the shipping-country popup, and the Klaviyo first-order dialog (never answered, never filled), and reads `getComputedStyle`, painted layers and boxes per element in default, hover, focus-visible and a CDP-forced pressed state, plus `focused` on the login email (the field was not filled and nothing was sent), `opened` on the PRIX facet and the mobile drawer, and `default`/`hover` on the visible TAILLE chips. Selectors are the theme's stable classes (`mega-menu__item`, `facets__disclosure`, `product-form__submit`). Results in [raw/components-computed.json](raw/components-computed.json) and [raw/measurements.md](raw/measurements.md).
 - **Screenshots.** [tools/capture/public/public.mjs](tools/capture/public/public.mjs) takes viewport and full-page shots per route — the country popup is captured as it arrives first, then hidden — with `.capture.json` sidecars recording measured viewport/dpr; [tools/capture/quantize.py](tools/capture/quantize.py) posterises them to 256 colours.
-- **The PDP is discovered.** `/collections/tous-les-produits`'s first product link is followed at run time and its URL recorded (`pdp_url`); a different run may land on a different product.
+- **The PDP is a fixed public sample.** `measure.mjs` and `public.mjs` open `/products/doudoune-symphony` and record that path as `pdp_url`. Size S was selected for the variant screenshot. Nothing was added to the cart.
 
 Nothing was bought, added to cart, joined, subscribed, searched or signed into. The public storefront, the cart drawer and the login gate was enough.
 
@@ -116,12 +117,14 @@ Nothing was bought, added to cart, joined, subscribed, searched or signed into. 
 - **The palette is channel triplets.** `--color-base-text` and friends declare `"0, 0, 0"`-style rgb() channels composed as `rgb(var(--x))` / `rgba(var(--x), α)`. `tokens.json` records the composed colour with the var named as its source.
 - **Roles are verified, not declared.** Every `light` role pairs a var (or a measured colour) with the component that was measured wearing it; the theme declares only scheme colours, no semantic roles. The palette carries exactly two hues: the `#faf6b5` predictive-search highlight (`--PredictiveSearchHover`, `badge.promo`) and the `#f4ff7a` action yellow a press paints on the buy button's `::after` and the home CTA's underline (`core.measured.action-pressed`).
 - **`component.*` tokens are measured**, not site variables. The shop declares no spacing or radius scale — corners are simply 0px.
-- **The mega-menu dropdown was not measured.** The SHOP item's hover did not open a visible dropdown inside the capture window; `nav-dropdown` is recorded missing (the item itself is measured on `nav-mega`), not evidence of an absent menu — the desktop full shots show the collapsed nav.
+- **The SHOP mega-menu is captured.** Hover on the first `.mega-menu__item` opens the dropdown on the same URL. See [home-light-megamenu](screenshots/home-light-megamenu.png). MARQUE uses the same panel and was not given its own shot this pass.
+- **Search is an overlay.** The header Recherche control opens a dialog that stays on the page. See [home-light-search](screenshots/home-light-search.png). Nothing was typed into it.
 - **Quantity and PDP accordions are absent on this product**, not missing measurements — the captured product (`pdp_url`) ships no `quantity-input` or disclosure rows.
 - **The mobile-menu crop is the toggle region.** `m-menu-open` measures the menu button in its open state; the drawer's own box did not resolve for a crop — its rows are `m-nav-link` and the open panel is [mobile-home-light-menu](screenshots/mobile-home-light-menu.png).
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or `raw/full/`.
-- **The PDP is a sample**, not a fixed product — see `pdp_url`. Prices are EUR.
-- **The login email's `filled` state is an error record.** The fill click did not land inside its timeout on this pass; `default` and `focused` are the evidence.
+- **The PDP this pass is `/products/doudoune-symphony`.** Size S was selected for the variant shot. The size-guide dialog is [pdp-light-size-guide](screenshots/pdp-light-size-guide.png). Prices are EUR.
+- **The first-order promo is a Klaviyo dialog.** It is recorded as it arrives in [home-light-promo](screenshots/home-light-promo.png), then hidden for the other shots. No name or email was typed. No code was requested.
+- **The login form was not filled.** Email and password fields are on `/account/login`. Nothing was typed. Nothing was submitted. Create-account (`/account/register`) is a login wall and was not filled.
 - **Focus styles were not systematically captured** beyond focus-visible states on the measured components.
 
 ## Fonts
@@ -142,13 +145,14 @@ Nothing was bought, added to cart, joined, subscribed, searched or signed into. 
 | Text field | captured | `email-input`, `password-input`, `newsletter-input` — never submitted |
 | Select | captured | `sort-select` default/focused |
 | Checkbox, radio | captured | `facet-checkbox`; `variant-radio` (the visible chip of a hidden input) |
-| Menu | captured | `nav-mega` + `m-menu-open` + `m-nav-link`; the desktop dropdown is a documented miss |
-| Dialog | captured | the country popup, [home-light-consent](screenshots/home-light-consent.png) — hidden, never answered |
+| Menu | captured | [home-light-megamenu](screenshots/home-light-megamenu.png), [mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [site-tree.md](site-tree.md) |
+| Dialog | captured | country/consent [home-light-consent](screenshots/home-light-consent.png); first-order promo [home-light-promo](screenshots/home-light-promo.png), never filled; size guide [pdp-light-size-guide](screenshots/pdp-light-size-guide.png) |
 | Card | captured | `product-card`, `m-feature-tile` |
 | States: default, hover, focus-visible, pressed | captured | every interactive entry; pressed via CDP |
 | App shell and navigation | captured | [home-light-default](screenshots/home-light-default.png), [patterns.md](patterns.md) |
 | Form with a validation error | not captured | the login form was never submitted |
 | Empty state | captured | `cart-empty` — LE PANIER EST VIDE in the side-cart drawer |
+| Search and filtering | captured | [home-light-search](screenshots/home-light-search.png), [shop-light-filter](screenshots/shop-light-filter.png). Filters were opened, not applied. Search was not submitted |
 | Checkout, account, order flow | not captured | nothing was added to the cart; behind sign-in |
 | Themes: light, dark | partly | light is the only painted theme |
 | Widths: 1440, 390 | captured | desktop + `mobile-*` shots and the Mobile group |

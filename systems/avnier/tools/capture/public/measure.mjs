@@ -26,7 +26,7 @@ out._meta ??= {};
 out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
-const URLS = { home: '/', shop: '/collections/tous-les-produits', pdp: '/collections/tous-les-produits', cart: '/cart', login: '/account/login' };
+const URLS = { home: '/', shop: '/collections/tous-les-produits', pdp: '/products/doudoune-symphony', cart: '/cart', login: '/account/login' };
 let page, cdp, current, context, run;
 let activeCtx; // the context of the current page; closed when the next route opens
 const touched = new Set();
@@ -281,21 +281,12 @@ async function shop() {
 async function pdp() {
   if (!(await newPage('pdp', { wait: 8000 }))) return;
   ranPages.add('pdp');
-  const href = await page.evaluate(() => {
-    const a = [...document.querySelectorAll('a[href*="/products/"]')].find((x) => x.offsetParent && (x.innerText || '').trim().length > 3);
-    return a ? a.getAttribute('href') : null;
-  });
-  if (href) {
-    await page.goto(/^https?:/.test(href) ? href : BASE + href, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-    await page.waitForTimeout(7000);
-    await closePromo(page);
-    await page.waitForSelector('product-form, .product-form__submit, button[name="add"]', { timeout: 15000 }).catch(() => {});
-    await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
-  }
-  if (href) URLS.pdp = /^https?:/.test(href) ? href : BASE + href;  // component sources name the product, not the grid
+  const href = URLS.pdp;
+  await closePromo(page);
+  await page.waitForSelector('product-form, .product-form__submit, button[name="add"]', { timeout: 15000 }).catch(() => {});
   const g = G.pdp;
   out.components.pdp_url ??= { page: 'pdp', title: 'PDP URL', states: {} };
-  out.components.pdp_url.states.default = { text: href || 'none found', via: 'first product link on /collections/tous-les-produits' };
+  out.components.pdp_url.states.default = { text: href, via: 'fixed public sample /products/doudoune-symphony' };
   touched.add('pdp_url');
   await S('pdp-title', q('[class*="product" i] h1, .product__title, h1').filter({ hasText: /\S/ }), ['default'], { group: g, title: 'Product title', sel: '.product__title, product h1' }, { noScroll: true });
   await S('pdp-price', q('[class*="price" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Product price', sel: '.price' }, { noScroll: true });
@@ -339,7 +330,7 @@ async function login() {
   ranPages.add('login');
   const g = G.login;
   await S('login-title', q('main h1, main h2, #customer_login h1').filter({ hasText: /\S/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Login title', sel: 'main h1' }, { noScroll: true });
-  await S('email-input', q('input[type="email"], input[name*="email" i], #CustomerEmail').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Email field', desc: 'Text was typed and deleted; the form was never submitted.', sel: 'input[type=email]' });
+  await S('email-input', q('input[type="email"], input[name*="email" i], #CustomerEmail').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Email field', desc: 'The login email field. Nothing was typed. Nothing was submitted.', sel: 'input[type=email]' });
   await S('password-input', q('input[type="password"]').first(), ['default', 'focused'], { group: g, title: 'Password field', desc: 'Focused only; nothing typed.', sel: 'input[type="password"]' });
   await S('login-button', q('button[type="submit"], input[type="submit"], button').filter({ hasText: /connexion|connecter|login|sign in/i }).filter({ visible: true }).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Login button', desc: 'The submit; measured except a real press — the form was never submitted.', sel: 'button[type="submit"]' });
   save();

@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from avnier.com on 2026-11-11 by `tools/capture/public/measure.mjs`, signed out, in headless Chrome at 1440 x 900 (the Mobile group at 390 x 844) in the site's one light theme, across `avnier.com/`, `avnier.com/account/login`, `avnier.com/cart`, `avnier.com/collections/tous-les-produits`, `avnier.com/products/pull-tokyeux-avnier-x-saint-james`, with the Axeptio consent layer and the shipping-country popup hidden (never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from avnier.com on 2026-11-21 by `tools/capture/public/measure.mjs`, signed out, in headless Chrome at 1440 x 900 (the Mobile group at 390 x 844) in the site's one light theme, across `avnier.com/`, `avnier.com/account/login`, `avnier.com/cart`, `avnier.com/collections/tous-les-produits`, `avnier.com/products/doudoune-symphony`, with the Axeptio consent layer and the shipping-country popup hidden (never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -451,7 +451,7 @@ Page: pdp. Selector: ``. States: default.
 
 | Property | default |
 |---|---|
-| Note | /products/pull-tokyeux-avnier-x-saint-james?variant=54600387690843&data-color=Jean |
+| Note | /products/doudoune-symphony |
 
 Crops: none.
 
@@ -529,16 +529,16 @@ Page: pdp. Selector: `input[type=radio] + label`. States: default, hover.
 | Border | T: 1px solid #000000; R: none; B: 1px solid #000000; L: 1px solid #000000 | = |
 | Radius | 0px | = |
 | Background | #000000 | = |
-| Box shadow | none | #000000 0px 0px 0px 1px inset |
+| Box shadow | none | = |
 | Outline | none | = |
-| Font | Space Mono 14px/14px 400 | Space Mono 14px/14px 700 |
+| Font | Space Mono 14px/14px 400 | = |
 | Letter spacing | 1px | = |
 | Colour | #ffffff | = |
-| Text node | span: Space Mono 14px/14px 400, #ffffff, ls 1px | span: Space Mono 14px/14px 700, #ffffff, ls 1px |
+| Text node | span: Space Mono 14px/14px 400, #ffffff, ls 1px | = |
 | Transition | all 0.2s ease | = |
 | Cursor | pointer | = |
 | Icon | 13 x 9.75, colour #ffffff | = |
-| Painted layers | label 73.2x40.0 bg #000000 border T:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000 | label 73.2x40.0 bg #000000 border T:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000 shadow #000000 0px 0px 0px 1px inset |
+| Painted layers | label 73.2x40.0 bg #000000 border T:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000 | = |
 | How | at rest | mouse hover |
 
 Crops: `variant-radio-default.png`, `variant-radio-hover.png`.
@@ -569,12 +569,12 @@ Page: pdp. Selector: `.product-form__submit`. States: default, hover, focus-visi
 | Font | Space Mono 15px/18px 400 | = | = | = |
 | Letter spacing | 1px | = | = | = |
 | Colour | #f6f6f6 | = | = | = |
-| Text node | span: Space Mono 15px/18px 400, #f6f6f6, ls 1px | span: Space Mono 15px/18px 400, #dcdcdc, ls 1px | = | span: Space Mono 15px/18px 400, #000000, ls 1px |
+| Text node | span: Space Mono 15px/18px 400, #f6f6f6, ls 1px | = | = | span: Space Mono 15px/18px 400, #000000, ls 1px |
 | Transition | box-shadow 0.1s ease | = | = | = |
 | Cursor | pointer | = | = | = |
 | Icon | 0 x 0, colour #f6f6f6, fill #000000 | = | = | = |
-| ::after | 0px x 46px, absolute, bg #f4ff7a, radius 0px | 46.6094px x 46px, absolute, bg #f4ff7a, radius 0px | = | 438px x 46px, absolute, bg #f4ff7a, radius 0px |
-| Painted layers | button.product-form__submit.button 440.0x48.0 bg #000000 border T:1px solid #000000 / R:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000; button::after.product-form__submit.button 0pxx46px bg #f4ff7a | button.product-form__submit.button 440.0x48.0 bg #000000 border T:1px solid #000000 / R:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000; button::after.product-form__submit.button 46.6094pxx46px bg #f4ff7a | = | button.product-form__submit.button 440.0x48.0 bg #000000 border T:1px solid #000000 / R:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000; button::after.product-form__submit.button 438pxx46px bg #f4ff7a |
+| ::after | 0px x 46px, absolute, bg #f4ff7a, radius 0px | = | = | 438px x 46px, absolute, bg #f4ff7a, radius 0px |
+| Painted layers | button.product-form__submit.button 440.0x48.0 bg #000000 border T:1px solid #000000 / R:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000; button::after.product-form__submit.button 0pxx46px bg #f4ff7a | = | = | button.product-form__submit.button 440.0x48.0 bg #000000 border T:1px solid #000000 / R:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000; button::after.product-form__submit.button 438pxx46px bg #f4ff7a |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `add-to-cart-default.png`, `add-to-cart-hover.png`, `add-to-cart-focus-visible.png`, `add-to-cart-pressed.png`.
@@ -716,28 +716,27 @@ Crops: `login-title-default.png`.
 
 #### email-input
 
-Email field. Text was typed and deleted; the form was never submitted.
+Email field. The login email field. Nothing was typed. Nothing was submitted.
 
-Page: login. Selector: `input[type=email]`. States: default, focused, filled.
+Page: login. Selector: `input[type=email]`. States: default, focused.
 
-| Property | default | focused | filled |
-|---|---|---|---|
-| Size (w x h) | 448 x 45 | = | - |
-| Padding | 15px | = | - |
-| Border | 1px solid #000000 @ 0 | = | - |
-| Radius | 0px | = | - |
-| Background | transparent | = | - |
-| Box shadow | #000000 @ 0.55 0px 0px 0px 1px | = | - |
-| Outline | none | = | - |
-| Font | Space Mono 16px/24px 400 | = | - |
-| Letter spacing | normal | = | - |
-| Colour | #000000 | = | - |
-| Transition | box-shadow 0.1s ease | = | - |
-| Cursor | text | = | - |
-| Placeholder | #757575, opacity 0 | = | - |
-| Painted layers | input 448.0x45.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 shadow #000000 @ 0.55 0px 0px 0px 1px | = | - |
-| How | at rest | clicked into the field | - |
-| Error | - | = | locator.click: Timeout 4000ms exceeded. Call log:   - waiting for locator('input[type="email"], input[name*="email" i], #CustomerEmail').filter({ visible: true }).first().filter({ visible: true }).fir |
+| Property | default | focused |
+|---|---|---|
+| Size (w x h) | 448 x 45 | = |
+| Padding | 15px | 16px |
+| Border | 1px solid #000000 @ 0 | = |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | #000000 @ 0.55 0px 0px 0px 1px | #000000 @ 0.75 0px 0px 0px 2px |
+| Outline | none | = |
+| Font | Space Mono 16px/24px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #000000 | = |
+| Transition | box-shadow 0.1s ease | = |
+| Cursor | text | = |
+| Placeholder | #757575, opacity 0 | = |
+| Painted layers | input 448.0x45.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 shadow #000000 @ 0.55 0px 0px 0px 1px | input 448.0x45.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 shadow #000000 @ 0.75 0px 0px 0px 2px |
+| How | at rest | clicked into the field |
 
 Crops: `email-input-default.png`, `email-input-focused.png`.
 
