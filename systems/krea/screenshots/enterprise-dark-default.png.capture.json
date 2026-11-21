@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:50:21.818Z",
+  "capturedAt": "2026-11-21T14:15:05.430Z",
   "screenshot": "enterprise-dark-default.png",
   "sanitizedSourceUrl": "https://www.krea.ai/enterprise",
   "requested": {
@@ -36,7 +36,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 13265
+      "height": 15311
     },
     "scroll": {
       "x": 0,

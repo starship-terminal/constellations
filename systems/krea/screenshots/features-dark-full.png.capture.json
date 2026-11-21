@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "capturedAt": "2026-11-17T20:08:38.287Z",
+ "capturedAt": "2026-11-21T14:16:13.875Z",
  "screenshot": "features-dark-full.png",
  "sanitizedSourceUrl": "https://www.krea.ai/features/ai-image-generator",
  "requested": {
@@ -32,15 +32,15 @@
    "offsetLeft": 0,
    "offsetTop": 0,
    "pageLeft": 0,
-   "pageTop": 18
+   "pageTop": 22
   },
   "documentSize": {
-   "width": 1472,
-   "height": 15834
+   "width": 1469,
+   "height": 15942
   },
   "scroll": {
    "x": 0,
-   "y": 18
+   "y": 22
   }
  },
  "capture": {
@@ -50,18 +50,18 @@
    "x": 0,
    "y": 0,
    "width": 1440,
-   "height": 15834
+   "height": 15942
   }
  },
  "png": {
   "width": 1440,
-  "height": 15834
+  "height": 15942
  },
  "dimensionCheck": {
   "status": "pass",
   "expected": {
    "width": 1440,
-   "height": 15834
+   "height": 15942
   },
   "basis": "stitchedParts"
  },
@@ -88,7 +88,7 @@
    "x": 0,
    "y": 14000,
    "width": 1440,
-   "height": 1834
+   "height": 1942
   }
  ]
 }

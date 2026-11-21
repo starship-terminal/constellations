@@ -11,9 +11,12 @@
 //
 // Nothing is signed into, submitted or purchased. Sign in, Sign up, Log in,
 // Continue with Google/Apple/SSO/Email, Book a call and checkout CTAs are
-// never clicked. Consent overlays are hidden, never answered. The only
-// presses are local UI toggles: sidebar, Tools menu, pricing interval, FAQ,
-// mobile nav.
+// never clicked. Identity providers are never clicked. No email, password,
+// code, phone or address is typed. Consent overlays are hidden, never
+// answered. The only presses are local UI toggles: sidebar, More menu, MCP
+// menu, search dialog (opened empty, then closed), pricing interval, and
+// the phone sidebar. Login and signup are photographed empty and the branch
+// stops.
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
@@ -68,7 +71,6 @@ class Shooter {
     this.count = 0;
   }
   async view(name) {
-    await closePromo(this.p);
     await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested);
     this.count++; log('  shot', name);
   }
@@ -104,19 +106,37 @@ const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILE
 const desktop = {
   home: { path: '/', wait: 5000, run: async (p, S) => {
     await S.view('default');
-    await step('tools-menu', async () => {
-      const b = p.getByRole('button', { name: 'Tools', exact: true }).first();
+    await step('more-menu', async () => {
+      const b = p.locator('button[aria-haspopup="menu"]').filter({ hasText: /^More$/ }).last();
       if (!(await b.count())) return;
-      await b.click();
+      await b.click({ force: true, timeout: 8000 });
       await wait(p, 800);
-      await S.view('tools-menu');
+      await S.view('more-menu');
       await p.keyboard.press('Escape');
       await wait(p, 400);
+    });
+    await step('mcp-menu', async () => {
+      const b = p.getByRole('button', { name: 'MCP', exact: true }).first();
+      if (!(await b.count())) return;
+      await b.click({ force: true, timeout: 8000 });
+      await wait(p, 800);
+      await S.view('mcp-menu');
+      await p.keyboard.press('Escape');
+      await wait(p, 400);
+    });
+    await step('search', async () => {
+      const b = p.getByRole('button', { name: 'Search' }).first();
+      if (!(await b.count())) return;
+      await b.click({ force: true, timeout: 8000 });
+      await wait(p, 700);
+      await S.view('search');
+      await p.keyboard.press('Escape');
+      await wait(p, 300);
     });
     await step('sidebar', async () => {
       const b = p.getByRole('button', { name: 'Toggle Sidebar' }).first();
       if (!(await b.count())) return;
-      await b.click();
+      await b.click({ force: true, timeout: 8000 });
       await wait(p, 700);
       await S.view('sidebar-folded');
       await b.click();
@@ -138,19 +158,48 @@ const desktop = {
   mcp: { path: '/mcp', wait: 4000, run: async (p, S) => { await S.view('default'); await S.full(); } },
   features: { path: '/features/ai-image-generator', wait: 4000, run: async (p, S) => { await S.view('default'); await S.full(); } },
   login: { path: '/login', wait: 3000, run: async (p, S) => { await S.view('default'); } },
+  signup: { path: '/', wait: 4000, run: async (p, S) => {
+    // Sign up is a sidebar button. After the offer veil is hidden it opens
+    // the empty auth dialog. Photograph it and stop. Do not type. Do not
+    // click Google, Apple, SSO or Continue.
+    const b = p.locator('[data-sidebar="menu-button"]').filter({ hasText: /^Sign up$/ }).first();
+    if (!(await b.count())) return;
+    await b.click({ timeout: 8000 });
+    await wait(p, 900);
+    await S.view('dialog');
+    await p.keyboard.press('Escape');
+  } },
   image: { path: '/image', wait: 4500, run: async (p, S) => { await S.view('default'); } },
+  video: { path: '/video', wait: 4500, run: async (p, S) => { await S.view('default'); } },
+  gallery: { path: '/feed', wait: 4000, run: async (p, S) => { await S.view('default'); await S.full(); } },
+  featuresvideo: { path: '/features/ai-video-generator', wait: 4000, run: async (p, S) => { await S.view('default'); await S.full(); } },
+  models: { path: '/models', wait: 4000, run: async (p, S) => { await S.view('default'); await S.full(); } },
+  apps: { path: '/apps', wait: 4000, run: async (p, S) => { await S.view('default'); await S.full(); } },
   notfound: { path: '/about', wait: 2500, run: async (p, S) => { await S.view('default'); } },
   docs: { path: '/docs', wait: 4000, run: async (p, S) => { await S.view('default'); await S.full(); } },
   terms: { path: '/terms', wait: 3000, run: async (p, S) => { await S.view('default'); } },
+  privacy: { path: '/privacy', wait: 3000, run: async (p, S) => { await S.view('default'); } },
 };
 
 const mobile = {
   home: { path: '/', wait: 5000, run: async (p, S) => {
     await S.view('default');
+    await step('feed', async () => {
+      await p.evaluate(() => {
+        const el = document.getElementById('root-scroll-container') || document.scrollingElement;
+        el.scrollTop = 900;
+      });
+      await wait(p, 600);
+      await S.view('feed');
+      await p.evaluate(() => {
+        const el = document.getElementById('root-scroll-container') || document.scrollingElement;
+        el.scrollTop = 0;
+      });
+    });
     await step('nav', async () => {
       const b = p.getByRole('button', { name: /menu|sidebar|navigation/i }).first();
       if (!(await b.count())) return;
-      await b.click();
+      await b.click({ force: true, timeout: 8000 });
       await wait(p, 700);
       await S.view('nav');
       await p.keyboard.press('Escape');
@@ -159,6 +208,7 @@ const mobile = {
   } },
   pricing: { path: '/pricing', wait: 4500, run: async (p, S) => { await S.view('default'); await S.full(); } },
   login: { path: '/login', wait: 3000, run: async (p, S) => { await S.view('default'); } },
+  gallery: { path: '/feed', wait: 4000, run: async (p, S) => { await S.view('default'); } },
 };
 
 const b = await chromium.launch();
@@ -185,6 +235,9 @@ for (const { k, mob } of runs) {
     await p.goto(target, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
     if (!(await clearChallenge(p))) { log('  BLOCKED', target); await ctx.close(); continue; }
     await wait(p, spec.wait || 4000);
+    // The offer dialog often mounts a few seconds after first paint.
+    await closePromo(p);
+    await wait(p, 1500);
     await closePromo(p);
     await spec.run(p, S);
   } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }

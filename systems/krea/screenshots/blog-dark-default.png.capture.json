@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:52:32.464Z",
+  "capturedAt": "2026-11-21T14:15:21.323Z",
   "screenshot": "blog-dark-default.png",
   "sanitizedSourceUrl": "https://www.krea.ai/blog",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 35644
+      "height": 16818
     },
     "scroll": {
       "x": 0,

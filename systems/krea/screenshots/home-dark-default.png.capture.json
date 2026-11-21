@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:49:26.444Z",
+  "capturedAt": "2026-11-21T14:34:08.535Z",
   "screenshot": "home-dark-default.png",
   "sanitizedSourceUrl": "https://www.krea.ai/",
   "requested": {
@@ -36,7 +36,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 12275
+      "height": 900
     },
     "scroll": {
       "x": 0,

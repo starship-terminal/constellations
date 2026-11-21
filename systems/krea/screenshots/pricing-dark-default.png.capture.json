@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:52:14.194Z",
+  "capturedAt": "2026-11-21T14:14:46.979Z",
   "screenshot": "pricing-dark-default.png",
   "sanitizedSourceUrl": "https://www.krea.ai/pricing",
   "requested": {
@@ -36,7 +36,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 16761
+      "height": 16618
     },
     "scroll": {
       "x": 0,

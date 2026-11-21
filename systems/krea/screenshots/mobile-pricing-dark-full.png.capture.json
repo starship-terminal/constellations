@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:55:28.897Z",
+  "capturedAt": "2026-11-21T14:20:10.670Z",
   "screenshot": "mobile-pricing-dark-full.png",
   "sanitizedSourceUrl": "https://www.krea.ai/pricing",
   "requested": {
@@ -32,15 +32,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 0
+      "pageTop": 12817
     },
     "documentSize": {
       "width": 390,
-      "height": 12557
+      "height": 13661
     },
     "scroll": {
       "x": 0,
-      "y": 0
+      "y": 12817
     }
   },
   "capture": {
@@ -50,13 +50,13 @@
   },
   "png": {
     "width": 390,
-    "height": 12557
+    "height": 13661
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 390,
-      "height": 12557
+      "height": 13661
     },
     "basis": "fullPage"
   },
