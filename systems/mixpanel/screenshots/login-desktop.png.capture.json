@@ -1,0 +1,15 @@
+{
+  "slug": "login-desktop",
+  "requested": "https://mixpanel.com/login/",
+  "final": "https://mixpanel.com/login/",
+  "title": "Login - Mixpanel",
+  "h1": [
+    "Log in to your account"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "login-desktop.png"
+}

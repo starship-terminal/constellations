@@ -1,0 +1,15 @@
+{
+  "slug": "blog-desktop",
+  "requested": "https://mixpanel.com/blog/",
+  "final": "https://mixpanel.com/blog/",
+  "title": "Signals & Stories | The Mixpanel Blog",
+  "h1": [
+    "Signals & Stories - The Mixpanel Blog"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "blog-desktop.png"
+}

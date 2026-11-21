@@ -1,0 +1,452 @@
+[
+  {
+    "file": "home-desktop.png",
+    "final": "https://mixpanel.com/home/",
+    "title": "Product Intelligence Platform for the AI Era | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "pricing-desktop.png",
+    "final": "https://mixpanel.com/pricing/",
+    "title": "Mixpanel Pricing: Find Your Plan & Get Started | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "product-analytics-desktop.png",
+    "final": "https://mixpanel.com/platform/product-analytics/",
+    "title": "Product Analytics for Mobile, Web, & More | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "web-analytics-desktop.png",
+    "final": "https://mixpanel.com/platform/web-analytics/",
+    "title": "Web Analytics for Scalable Growth | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "mobile-analytics-desktop.png",
+    "final": "https://mixpanel.com/platform/mobile-analytics/",
+    "title": "Mobile App Analytics Software | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "experiments-desktop.png",
+    "final": "https://mixpanel.com/platform/experiments/",
+    "title": "A/B Testing & Experimentation Platform | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "metric-trees-desktop.png",
+    "final": "https://mixpanel.com/platform/metric-trees/",
+    "title": "Metric Trees for Product Analytics | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "session-replay-desktop.png",
+    "final": "https://mixpanel.com/platform/session-replay/",
+    "title": "Session Replay and Heatmaps for Web and Mobile Apps | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "security-privacy-desktop.png",
+    "final": "https://mixpanel.com/security-privacy/",
+    "title": "Security & Privacy for Product Analytics | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "ai-desktop.png",
+    "final": "https://mixpanel.com/ai",
+    "title": "Mixpanel AI: Always-on product intelligence",
+    "status": 200
+  },
+  {
+    "file": "ai-agents-desktop.png",
+    "final": "https://mixpanel.com/ai/agents",
+    "title": "Mixpanel AI Agents for Product Analytics",
+    "status": 200
+  },
+  {
+    "file": "ai-headless-desktop.png",
+    "final": "https://mixpanel.com/ai/headless",
+    "title": "Headless Analytics API & SDK | Mixpanel\u00a0",
+    "status": 200
+  },
+  {
+    "file": "agent-intelligence-desktop.png",
+    "final": "https://mixpanel.com/ai/agent-intelligence",
+    "title": "Agent Intelligence: AI Agent Analytics | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "mcp-desktop.png",
+    "final": "https://mixpanel.com/ai/mcp",
+    "title": "Mixpanel MCP Server | AI-Powered Product Analytics",
+    "status": 200
+  },
+  {
+    "file": "ai-governance-desktop.png",
+    "final": "https://mixpanel.com/ai/governance",
+    "title": "Mixpanel Context Engine | Trusted AI Analytics",
+    "status": 200
+  },
+  {
+    "file": "warehouse-connectors-desktop.png",
+    "final": "https://mixpanel.com/platform/data-warehouse-connectors/",
+    "title": "Data Warehouse Connectors | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": null,
+    "slug": "integrations",
+    "final": "https://mixpanel.com/partners/integrations",
+    "title": "",
+    "status": 403,
+    "discarded": true,
+    "reason": "403"
+  },
+  {
+    "file": "product-teams-desktop.png",
+    "final": "https://mixpanel.com/teams/product-teams/",
+    "title": "Product Analytics for Product Teams | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "data-teams-desktop.png",
+    "final": "https://mixpanel.com/teams/data-teams/",
+    "title": "Self-Serve Analytics for Data Teams | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "marketing-teams-desktop.png",
+    "final": "https://mixpanel.com/teams/marketing-teams/",
+    "title": "Marketing Analytics & Campaign ROI | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "engineering-teams-desktop.png",
+    "final": "https://mixpanel.com/teams/engineering-teams/",
+    "title": "Product Analytics for Engineering Teams | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "finance-desktop.png",
+    "final": "https://mixpanel.com/industries/finance-analytics/",
+    "title": "Mixpanel: Financial Services Product & Digital Analytics Platform",
+    "status": 200
+  },
+  {
+    "file": "media-desktop.png",
+    "final": "https://mixpanel.com/industries/media-and-entertainment-analytics/",
+    "title": "Mixpanel: Media & Entertainment Digital Analytics Platform",
+    "status": 200
+  },
+  {
+    "file": "b2b-desktop.png",
+    "final": "https://mixpanel.com/industries/b2b-saas-analytics/",
+    "title": "Mixpanel: B2B SaaS Product & Digital Analytics Platform",
+    "status": 200
+  },
+  {
+    "file": "ecommerce-desktop.png",
+    "final": "https://mixpanel.com/industries/ecommerce-analytics/",
+    "title": "Ecommerce Product & Digital Analytics Platform",
+    "status": 200
+  },
+  {
+    "file": "healthcare-desktop.png",
+    "final": "https://mixpanel.com/industries/healthcare-analytics/",
+    "title": "Mixpanel: Healthcare Product & Digital Analytics Platform",
+    "status": 200
+  },
+  {
+    "file": "enterprise-desktop.png",
+    "final": "https://mixpanel.com/enterprise/",
+    "title": "Enterprise Product Analytics & Event Tracking | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "smb-desktop.png",
+    "final": "https://mixpanel.com/smb",
+    "title": "Product Analytics for Small Business | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "startups-desktop.png",
+    "final": "https://mixpanel.com/startups",
+    "title": "Mixpanel for Startups | Free Analytics",
+    "status": 200
+  },
+  {
+    "file": "benchmarks-desktop.png",
+    "final": "https://mixpanel.com/content/benchmarks-2026",
+    "title": "Mixpanel | State of Digital Analytics 2026",
+    "status": 200
+  },
+  {
+    "file": "docs-desktop.png",
+    "final": "https://docs.mixpanel.com/docs/what-is-mixpanel",
+    "title": "What is Mixpanel? - Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "support-desktop.png",
+    "final": "https://mixpanel.com/contact-us/support/",
+    "title": "Contact Support | Mobile & Web User Analytics",
+    "status": 200
+  },
+  {
+    "file": "changelog-desktop.png",
+    "final": "https://docs.mixpanel.com/changelogs",
+    "title": "Changelogs - Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "templates-desktop.png",
+    "final": "https://mixpanel.com/template-gallery",
+    "title": "Template Gallery - Mixpanel: Product Analytics for Mobile, Web & More",
+    "status": 200
+  },
+  {
+    "file": "university-desktop.png",
+    "final": "https://university.mixpanel.com/student/catalog",
+    "title": "Mixpanel University : Mixpanel University",
+    "status": 200
+  },
+  {
+    "file": "blog-desktop.png",
+    "final": "https://mixpanel.com/blog/",
+    "title": "Signals & Stories | The Mixpanel Blog",
+    "status": 200
+  },
+  {
+    "file": null,
+    "slug": "events",
+    "final": "https://events.mixpanel.com/",
+    "title": "",
+    "status": 200,
+    "discarded": true,
+    "reason": "venue names"
+  },
+  {
+    "file": null,
+    "slug": "community",
+    "final": "https://community.mixpanel.com/",
+    "title": "Mixpanel Community",
+    "status": 200,
+    "discarded": true,
+    "reason": "member names"
+  },
+  {
+    "file": "customers-desktop.png",
+    "final": "https://mixpanel.com/customers/",
+    "title": "Customers | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "partners-desktop.png",
+    "final": "https://mixpanel.com/partners/",
+    "title": "Mixpanel Partners: Agencies, Resellers & Integrations",
+    "status": 200
+  },
+  {
+    "file": null,
+    "slug": "partner-directory",
+    "final": "https://mixpanel.com/partners/experts",
+    "title": "",
+    "status": 403,
+    "discarded": true,
+    "reason": "403"
+  },
+  {
+    "file": "warehouse-ai-costs-desktop.png",
+    "final": "https://mixpanel.com/blog/warehouse-ai-product-analytics-costs/",
+    "title": "The real costs of pointing AI at your data warehouse | Signals & Stories",
+    "status": 200
+  },
+  {
+    "file": "hidden-cost-desktop.png",
+    "final": "https://mixpanel.com/blog/hidden-cost-of-analytics/",
+    "title": "The hidden costs of your current analytics setup | Signals & Stories",
+    "status": 200
+  },
+  {
+    "file": "demo-desktop.png",
+    "final": "https://mixpanel.com/contact-us/demo/",
+    "title": "Get a Mixpanel Demo",
+    "status": 200
+  },
+  {
+    "file": "contact-sales-desktop.png",
+    "final": "https://mixpanel.com/contact-us/sales/",
+    "title": "Contact Mixpanel Sales",
+    "status": 200
+  },
+  {
+    "file": "login-desktop.png",
+    "final": "https://mixpanel.com/login/",
+    "title": "Login - Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "signup-desktop.png",
+    "final": "https://mixpanel.com/register/",
+    "title": "Sign up - Mixpanel: Product Analytics for Mobile, Web, & More",
+    "status": 200
+  },
+  {
+    "file": "ai-info-desktop.png",
+    "final": "https://mixpanel.com/ai/info-page",
+    "title": "Mixpanel Facts: Platform, AI Features & Security | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "template-company-kpis-desktop.png",
+    "final": "https://mixpanel.com/template-gallery/company-kpis",
+    "title": "Company KPIs Template - Mixpanel: Product Analytics for Mobile, Web & More",
+    "status": 200
+  },
+  {
+    "file": "template-feature-launch-desktop.png",
+    "final": "https://mixpanel.com/template-gallery/feature-launch",
+    "title": "Feature Launch Analytics Template - Mixpanel: Product Analytics for Mobile, Web & More",
+    "status": 200
+  },
+  {
+    "file": "template-lifecycle-desktop.png",
+    "final": "https://mixpanel.com/template-gallery/lifecycle-analysis",
+    "title": "Lifecycle Analysis Template - Mixpanel: Product Analytics for Mobile, Web & More",
+    "status": 200
+  },
+  {
+    "file": "template-ecommerce-desktop.png",
+    "final": "https://mixpanel.com/template-gallery/ecommerce",
+    "title": "Ecommerce Analytics Template - Mixpanel: Product Analytics for Mobile, Web & More",
+    "status": 200
+  },
+  {
+    "file": "template-marketing-kpis-desktop.png",
+    "final": "https://mixpanel.com/template-gallery/marketing-kpis",
+    "title": "Marketing KPIs Template - Mixpanel: Product Analytics for Mobile, Web & More",
+    "status": 200
+  },
+  {
+    "file": "template-web-analytics-desktop.png",
+    "final": "https://mixpanel.com/template-gallery/web-analytics",
+    "title": "Web Analytics Template - Mixpanel: Product Analytics for Mobile, Web & More",
+    "status": 200
+  },
+  {
+    "file": "template-ai-kpis-desktop.png",
+    "final": "https://mixpanel.com/template-gallery/ai-company-kpis",
+    "title": "AI Company KPIs Template - Mixpanel: Product Analytics for Mobile, Web & More",
+    "status": 200
+  },
+  {
+    "file": "compare-amplitude-desktop.png",
+    "final": "https://mixpanel.com/compare/amplitude/",
+    "title": "Mixpanel vs Amplitude: Feature Comparison",
+    "status": 200
+  },
+  {
+    "file": "compare-heap-desktop.png",
+    "final": "https://mixpanel.com/compare/heap/",
+    "title": "Heap: Mixpanel vs Heap: Fast, Precise Insights, Not Limited Depth",
+    "status": 200
+  },
+  {
+    "file": "compare-pendo-desktop.png",
+    "final": "https://mixpanel.com/compare/pendo/",
+    "title": "Mixpanel vs. Pendo: See Why Deep Insights Beat Limited Views",
+    "status": 200
+  },
+  {
+    "file": "compare-ga-desktop.png",
+    "final": "https://mixpanel.com/compare/google-analytics/",
+    "title": "GA4: Mixpanel vs GA4: Actionable Insights, Not Basic Metrics",
+    "status": 200
+  },
+  {
+    "file": "compare-posthog-desktop.png",
+    "final": "https://mixpanel.com/compare/posthog/",
+    "title": "Mixpanel vs PostHog: See Which Tool Scales",
+    "status": 200
+  },
+  {
+    "file": "compare-fullstory-desktop.png",
+    "final": "https://mixpanel.com/compare/fullstory/",
+    "title": "Mixpanel vs Fullstory: Get More Than Just Replays With Us.",
+    "status": 200
+  },
+  {
+    "file": "compare-adobe-desktop.png",
+    "final": "https://mixpanel.com/compare/adobe/",
+    "title": "Mixpanel vs Adobe: Fast, Self-Serve Data, Not Slow Reports",
+    "status": 200
+  },
+  {
+    "file": "compare-statsig-desktop.png",
+    "final": "https://mixpanel.com/compare/statsig/",
+    "title": "Mixpanel vs Statsig (2026) | Compare & Switch Easily",
+    "status": 200
+  },
+  {
+    "file": "about-desktop.png",
+    "final": "https://mixpanel.com/about",
+    "title": "About Mixpanel | Company Overview",
+    "status": 200
+  },
+  {
+    "file": "careers-desktop.png",
+    "final": "https://mixpanel.com/jobs/",
+    "title": "Mixpanel | Careers",
+    "status": 200
+  },
+  {
+    "file": "privacy-contact-desktop.png",
+    "final": "https://mixpanel.com/legal/contact-us/",
+    "title": "Contact us | Legal | Mobile & Web User Analytics | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "privacy-desktop.png",
+    "final": "https://mixpanel.com/legal/privacy-policy/",
+    "title": "Privacy Policy | Mobile & Web User Analytics | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "security-overview-desktop.png",
+    "final": "https://mixpanel.com/legal/security-overview/",
+    "title": "Security Overview | Mobile & Web User Analytics | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "faqs-desktop.png",
+    "final": "https://docs.mixpanel.com/troubleshooting/faqs",
+    "title": "Frequently Asked Questions - Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "home-phone.png",
+    "final": "https://mixpanel.com/home/",
+    "title": "Product Intelligence Platform for the AI Era | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "pricing-phone.png",
+    "final": "https://mixpanel.com/pricing/",
+    "title": "Mixpanel Pricing: Find Your Plan & Get Started | Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "login-phone.png",
+    "final": "https://mixpanel.com/login/",
+    "title": "Login - Mixpanel",
+    "status": 200
+  },
+  {
+    "file": "signup-phone.png",
+    "final": "https://mixpanel.com/register/",
+    "title": "Sign up - Mixpanel: Product Analytics for Mobile, Web, & More",
+    "status": 200
+  }
+]

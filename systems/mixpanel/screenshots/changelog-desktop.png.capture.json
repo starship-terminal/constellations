@@ -1,0 +1,15 @@
+{
+  "slug": "changelog-desktop",
+  "requested": "https://docs.mixpanel.com/changelogs",
+  "final": "https://docs.mixpanel.com/changelogs",
+  "title": "Changelogs - Mixpanel",
+  "h1": [
+    "Changelogs"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "changelog-desktop.png"
+}

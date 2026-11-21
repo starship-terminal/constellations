@@ -1,0 +1,15 @@
+{
+  "slug": "compare-ga-desktop",
+  "requested": "https://mixpanel.com/compare/google-analytics/",
+  "final": "https://mixpanel.com/compare/google-analytics/",
+  "title": "GA4: Mixpanel vs GA4: Actionable Insights, Not Basic Metrics",
+  "h1": [
+    "Mixpanel vs. Google Analytics"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "compare-ga-desktop.png"
+}

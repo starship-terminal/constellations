@@ -1,0 +1,15 @@
+{
+  "slug": "pricing-phone",
+  "requested": "https://mixpanel.com/pricing/",
+  "final": "https://mixpanel.com/pricing/",
+  "title": "Mixpanel Pricing: Find Your Plan & Get Started | Mixpanel",
+  "h1": [
+    "Plans that grow with you"
+  ],
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "capturedAt": "2026-11-22",
+  "file": "pricing-phone.png"
+}

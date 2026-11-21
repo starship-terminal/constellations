@@ -1,0 +1,13 @@
+{
+  "slug": "demo-desktop",
+  "requested": "https://mixpanel.com/contact-us/demo/",
+  "final": "https://mixpanel.com/contact-us/demo/",
+  "title": "Get a Mixpanel Demo",
+  "h1": [],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "demo-desktop.png"
+}

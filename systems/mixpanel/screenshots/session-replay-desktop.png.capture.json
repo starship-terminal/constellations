@@ -1,0 +1,15 @@
+{
+  "slug": "session-replay-desktop",
+  "requested": "https://mixpanel.com/platform/session-replay/",
+  "final": "https://mixpanel.com/platform/session-replay/",
+  "title": "Session Replay and Heatmaps for Web and Mobile Apps | Mixpanel",
+  "h1": [
+    "Session replay, connected to your analytics"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "session-replay-desktop.png"
+}

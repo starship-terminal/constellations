@@ -1,0 +1,15 @@
+{
+  "slug": "partners-desktop",
+  "requested": "https://mixpanel.com/partners/",
+  "final": "https://mixpanel.com/partners/",
+  "title": "Mixpanel Partners: Agencies, Resellers & Integrations",
+  "h1": [
+    "Partner with Mixpanel"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "partners-desktop.png"
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "b2b-desktop",
+  "requested": "https://mixpanel.com/industries/b2b-saas-analytics/",
+  "final": "https://mixpanel.com/industries/b2b-saas-analytics/",
+  "title": "Mixpanel: B2B SaaS Product & Digital Analytics Platform",
+  "h1": [
+    "Build your taste with data"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "b2b-desktop.png"
+}

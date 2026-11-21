@@ -1,0 +1,15 @@
+{
+  "slug": "security-privacy-desktop",
+  "requested": "https://mixpanel.com/security-privacy/",
+  "final": "https://mixpanel.com/security-privacy/",
+  "title": "Security & Privacy for Product Analytics | Mixpanel",
+  "h1": [
+    "Keep customer data safe"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "security-privacy-desktop.png"
+}

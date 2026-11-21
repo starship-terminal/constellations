@@ -1,0 +1,15 @@
+{
+  "slug": "engineering-teams-desktop",
+  "requested": "https://mixpanel.com/teams/engineering-teams/",
+  "final": "https://mixpanel.com/teams/engineering-teams/",
+  "title": "Product Analytics for Engineering Teams | Mixpanel",
+  "h1": [
+    "Build smarter with integrated analytics"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "engineering-teams-desktop.png"
+}

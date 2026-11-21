@@ -1,0 +1,15 @@
+{
+  "slug": "mobile-analytics-desktop",
+  "requested": "https://mixpanel.com/platform/mobile-analytics/",
+  "final": "https://mixpanel.com/platform/mobile-analytics/",
+  "title": "Mobile App Analytics Software | Mixpanel",
+  "h1": [
+    "Perfect your mobile experience, from install to loyal user"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "mobile-analytics-desktop.png"
+}

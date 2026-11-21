@@ -1,0 +1,15 @@
+{
+  "slug": "enterprise-desktop",
+  "requested": "https://mixpanel.com/enterprise/",
+  "final": "https://mixpanel.com/enterprise/",
+  "title": "Enterprise Product Analytics & Event Tracking | Mixpanel",
+  "h1": [
+    "Decide smarter. Move faster."
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "enterprise-desktop.png"
+}

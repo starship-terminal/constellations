@@ -1,0 +1,15 @@
+{
+  "slug": "experiments-desktop",
+  "requested": "https://mixpanel.com/platform/experiments/",
+  "final": "https://mixpanel.com/platform/experiments/",
+  "title": "A/B Testing & Experimentation Platform | Mixpanel",
+  "h1": [
+    "Maximize impact & minimize risk with A/B testing"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "experiments-desktop.png"
+}

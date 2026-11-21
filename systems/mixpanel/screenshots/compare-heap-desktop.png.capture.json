@@ -1,0 +1,15 @@
+{
+  "slug": "compare-heap-desktop",
+  "requested": "https://mixpanel.com/compare/heap/",
+  "final": "https://mixpanel.com/compare/heap/",
+  "title": "Heap: Mixpanel vs Heap: Fast, Precise Insights, Not Limited Depth",
+  "h1": [
+    "Mixpanel vs. Heap"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "compare-heap-desktop.png"
+}

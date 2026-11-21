@@ -1,0 +1,15 @@
+{
+  "slug": "compare-posthog-desktop",
+  "requested": "https://mixpanel.com/compare/posthog/",
+  "final": "https://mixpanel.com/compare/posthog/",
+  "title": "Mixpanel vs PostHog: See Which Tool Scales",
+  "h1": [
+    "Mixpanel vs. PostHog"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "compare-posthog-desktop.png"
+}

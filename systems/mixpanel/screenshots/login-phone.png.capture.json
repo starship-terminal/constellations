@@ -1,0 +1,15 @@
+{
+  "slug": "login-phone",
+  "requested": "https://mixpanel.com/login/",
+  "final": "https://mixpanel.com/login/",
+  "title": "Login - Mixpanel",
+  "h1": [
+    "Log in to your account"
+  ],
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "capturedAt": "2026-11-22",
+  "file": "login-phone.png"
+}

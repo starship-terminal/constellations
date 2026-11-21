@@ -1,0 +1,15 @@
+{
+  "slug": "compare-pendo-desktop",
+  "requested": "https://mixpanel.com/compare/pendo/",
+  "final": "https://mixpanel.com/compare/pendo/",
+  "title": "Mixpanel vs. Pendo: See Why Deep Insights Beat Limited Views",
+  "h1": [
+    "Mixpanel vs. Pendo"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "compare-pendo-desktop.png"
+}

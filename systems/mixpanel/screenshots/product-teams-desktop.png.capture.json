@@ -1,0 +1,15 @@
+{
+  "slug": "product-teams-desktop",
+  "requested": "https://mixpanel.com/teams/product-teams/",
+  "final": "https://mixpanel.com/teams/product-teams/",
+  "title": "Product Analytics for Product Teams | Mixpanel",
+  "h1": [
+    "Identify winning features with data"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "product-teams-desktop.png"
+}

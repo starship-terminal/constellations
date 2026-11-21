@@ -1,0 +1,16 @@
+{
+  "slug": "home-phone",
+  "requested": "https://mixpanel.com/home/",
+  "final": "https://mixpanel.com/home/",
+  "title": "Product Intelligence Platform for the AI Era | Mixpanel",
+  "h1": [
+    "Build faster, with direction"
+  ],
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "capturedAt": "2026-11-22",
+  "file": "home-phone.png",
+  "note": "390 CSS px paints a different homepage hero than 1440. A chat bubble was hidden before the shot. Nothing was typed."
+}

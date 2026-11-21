@@ -1,0 +1,15 @@
+{
+  "slug": "media-desktop",
+  "requested": "https://mixpanel.com/industries/media-and-entertainment-analytics/",
+  "final": "https://mixpanel.com/industries/media-and-entertainment-analytics/",
+  "title": "Mixpanel: Media & Entertainment Digital Analytics Platform",
+  "h1": [
+    "Win the attention economy"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "media-desktop.png"
+}

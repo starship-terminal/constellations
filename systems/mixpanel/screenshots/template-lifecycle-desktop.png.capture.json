@@ -1,0 +1,15 @@
+{
+  "slug": "template-lifecycle-desktop",
+  "requested": "https://mixpanel.com/template-gallery/lifecycle-analysis",
+  "final": "https://mixpanel.com/template-gallery/lifecycle-analysis",
+  "title": "Lifecycle Analysis Template - Mixpanel: Product Analytics for Mobile, Web & More",
+  "h1": [
+    "Lifecycle Analysis Template"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "template-lifecycle-desktop.png"
+}

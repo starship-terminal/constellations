@@ -1,0 +1,15 @@
+{
+  "slug": "ecommerce-desktop",
+  "requested": "https://mixpanel.com/industries/ecommerce-analytics/",
+  "final": "https://mixpanel.com/industries/ecommerce-analytics/",
+  "title": "Ecommerce Product & Digital Analytics Platform",
+  "h1": [
+    "See the entire path to purchase and beyond"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "ecommerce-desktop.png"
+}

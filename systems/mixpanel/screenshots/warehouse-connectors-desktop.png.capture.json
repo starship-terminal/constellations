@@ -1,0 +1,15 @@
+{
+  "slug": "warehouse-connectors-desktop",
+  "requested": "https://mixpanel.com/platform/data-warehouse-connectors/",
+  "final": "https://mixpanel.com/platform/data-warehouse-connectors/",
+  "title": "Data Warehouse Connectors | Mixpanel",
+  "h1": [
+    "The interface you love on the data you trust"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "warehouse-connectors-desktop.png"
+}

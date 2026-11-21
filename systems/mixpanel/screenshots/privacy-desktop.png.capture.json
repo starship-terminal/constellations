@@ -1,0 +1,15 @@
+{
+  "slug": "privacy-desktop",
+  "requested": "https://mixpanel.com/legal/privacy-policy/",
+  "final": "https://mixpanel.com/legal/privacy-policy/",
+  "title": "Privacy Policy | Mobile & Web User Analytics | Mixpanel",
+  "h1": [
+    "Privacy Program"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "privacy-desktop.png"
+}

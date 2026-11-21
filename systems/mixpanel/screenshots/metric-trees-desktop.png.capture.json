@@ -1,0 +1,15 @@
+{
+  "slug": "metric-trees-desktop",
+  "requested": "https://mixpanel.com/platform/metric-trees/",
+  "final": "https://mixpanel.com/platform/metric-trees/",
+  "title": "Metric Trees for Product Analytics | Mixpanel",
+  "h1": [
+    "Turn strategy into action"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "metric-trees-desktop.png"
+}

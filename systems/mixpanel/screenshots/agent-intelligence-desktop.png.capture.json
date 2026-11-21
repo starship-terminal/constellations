@@ -1,0 +1,15 @@
+{
+  "slug": "agent-intelligence-desktop",
+  "requested": "https://mixpanel.com/ai/agent-intelligence",
+  "final": "https://mixpanel.com/ai/agent-intelligence",
+  "title": "Agent Intelligence: AI Agent Analytics | Mixpanel",
+  "h1": [
+    "Build agents your customers love"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "agent-intelligence-desktop.png"
+}

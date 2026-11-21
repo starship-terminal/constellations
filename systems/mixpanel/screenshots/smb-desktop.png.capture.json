@@ -1,0 +1,15 @@
+{
+  "slug": "smb-desktop",
+  "requested": "https://mixpanel.com/smb/",
+  "final": "https://mixpanel.com/smb",
+  "title": "Product Analytics for Small Business | Mixpanel",
+  "h1": [
+    "Find your fastest path to growth"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "smb-desktop.png"
+}

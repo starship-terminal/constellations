@@ -1,0 +1,15 @@
+{
+  "slug": "product-analytics-desktop",
+  "requested": "https://mixpanel.com/platform/product-analytics/",
+  "final": "https://mixpanel.com/platform/product-analytics/",
+  "title": "Product Analytics for Mobile, Web, & More | Mixpanel",
+  "h1": [
+    "Drive product success with actionable user insights"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "product-analytics-desktop.png"
+}

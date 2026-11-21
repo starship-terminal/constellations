@@ -1,0 +1,15 @@
+{
+  "slug": "web-analytics-desktop",
+  "requested": "https://mixpanel.com/platform/web-analytics/",
+  "final": "https://mixpanel.com/platform/web-analytics/",
+  "title": "Web Analytics for Scalable Growth | Mixpanel",
+  "h1": [
+    "Master your website's performance, from first click to purchase"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "web-analytics-desktop.png"
+}

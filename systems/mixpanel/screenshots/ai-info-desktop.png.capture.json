@@ -1,0 +1,15 @@
+{
+  "slug": "ai-info-desktop",
+  "requested": "https://mixpanel.com/ai/info-page",
+  "final": "https://mixpanel.com/ai/info-page",
+  "title": "Mixpanel Facts: Platform, AI Features & Security | Mixpanel",
+  "h1": [
+    "Mixpanel + AI: Behavioral analytics with AI-powered insights"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "ai-info-desktop.png"
+}

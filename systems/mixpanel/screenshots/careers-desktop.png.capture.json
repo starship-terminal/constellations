@@ -1,0 +1,16 @@
+{
+  "slug": "careers-desktop",
+  "requested": "https://mixpanel.com/jobs/",
+  "final": "https://mixpanel.com/jobs/",
+  "title": "Mixpanel | Careers",
+  "h1": [
+    "Shape bold ideas. Grow with us. Make it matter.",
+    "Life at Mixpanel"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-22",
+  "file": "careers-desktop.png"
+}
