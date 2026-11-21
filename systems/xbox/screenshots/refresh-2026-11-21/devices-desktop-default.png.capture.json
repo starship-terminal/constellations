@@ -1,0 +1,26 @@
+{
+  "capturedAt": "2026-11-21T04:08:15.781Z",
+  "screenshot": "devices-desktop-default.png",
+  "sanitizedSourceUrl": "https://www.xbox.com/en-US/devices",
+  "requested": {
+    "viewport": "1440x900",
+    "deviceScaleFactor": 1
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0
+    }
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "title": "Play with XBOX across devices | XBOX"
+}

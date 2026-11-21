@@ -1,0 +1,26 @@
+{
+  "capturedAt": "2026-11-21T04:08:35.995Z",
+  "screenshot": "deals-desktop-default.png",
+  "sanitizedSourceUrl": "https://www.xbox.com/en-US/promotions/sales/sales-and-specials",
+  "requested": {
+    "viewport": "1440x900",
+    "deviceScaleFactor": 1
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0
+    }
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "title": "XBOX Sales and Specials | XBOX"
+}

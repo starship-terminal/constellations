@@ -131,7 +131,7 @@ Good for: Game-console marketing and store: dark 54px header, square lime CTA on
 
 Captured 2026-11-19, signed out (home, games, consoles, Game Pass, search, and one product page are public; Sign in, cart, BUY, and JOIN GAME PASS were not followed). Themes: light, dark.
 
-Public signed-out surfaces of Xbox (xbox.com), captured 2026-11-19. `https://www.xbox.com/` redirected to `https://www.xbox.com/en-SG/`. No Microsoft sign-in, no cart, no card, no purchase.
+Public signed-out surfaces of Xbox (xbox.com), captured 2026-11-19 on `en-SG`, refreshed 2026-11-21 on `en-US`. `https://www.xbox.com/` redirected to `https://www.xbox.com/en-US/` on the refresh. No email, phone, name, password, or code was typed. Create an account was not opened. No identity provider was clicked. No purchase.
 
 The marketing site (home, games, consoles, Game Pass) is Microsoft Web Framework: dark 54px header `#1b1d1b`, square corners, lime CTA `#9bf00b` with green ink `#054b16`, Xbox green `#107c10`, yellow badges `#ffd800`, Segoe UI body and Segoe Pro Black on CTAs. Search and the store are a second module: 4px radius, Segoe UI, and on the product page a sampled green `#008746` GET GAME PASS and grey `#484e58` BUY. Computed styles came from the live T3 preview at 1169×731. Screenshots are headless Playwright at 1440×900 and 390×844 after the preview browser stopped producing frames.
 

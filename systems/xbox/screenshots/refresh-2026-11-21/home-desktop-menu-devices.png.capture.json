@@ -1,0 +1,26 @@
+{
+  "capturedAt": "2026-11-21T04:08:50.253Z",
+  "screenshot": "home-desktop-menu-devices.png",
+  "sanitizedSourceUrl": "https://www.xbox.com/en-US/",
+  "requested": {
+    "viewport": "1440x900",
+    "deviceScaleFactor": 1
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0
+    }
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "title": "XBOX Official Site: Play Games Anywhere | XBOX"
+}

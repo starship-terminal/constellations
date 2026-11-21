@@ -1,0 +1,26 @@
+{
+  "capturedAt": "2026-11-21T04:09:25.386Z",
+  "screenshot": "signin-phone-wall.png",
+  "sanitizedSourceUrl": "https://login.live.com/oauth20_authorize.srf",
+  "requested": {
+    "viewport": "390x844",
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0
+    }
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "title": "Try again later"
+}
