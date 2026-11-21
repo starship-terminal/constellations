@@ -1,0 +1,4 @@
+{
+  "login-extracted": "not-started",
+  "reason": "Account opens https://obsidian.md/auth?returnto=%2Faccount%2F. The heading is Sign in to your account. Email and Password were empty. Sign in was not clicked. Forgot password was not followed. Create an account switches the same page to a heading Create an account, with empty Full name, Email, and Password fields. Sign up was not clicked. No identity provider was shown. Nothing was typed. No form was submitted. The signed-in account was not entered."
+}
