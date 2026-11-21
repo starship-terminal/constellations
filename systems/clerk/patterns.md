@@ -20,7 +20,10 @@ settings. The original dark theme was restored and verified afterward.
 | Light table and workspace settings | Table toolbar and rows; grouped workspace form fields | [Users](screenshots/users-light-desktop.png), [workspace settings](screenshots/workspace-settings-light-desktop.png) |
 | Destructive confirmation | Consequence text and a distinct primary destructive action beside Cancel | [Disable native applications](screenshots/disable-native-confirmation-dark-desktop.png) |
 | Search/filter menu | Input and selectable suggestions attached to a toolbar control | [Log filter](screenshots/logs-event-filter-dark-desktop.png) |
-| Public product landing | Centered display heading, feature sections, animated demos and dark footer | [Landing page](screenshots/authentication-desktop.png) |
+| Public product landing | Centered display heading, feature sections, animated demos and a light page field | [Home](screenshots/public-home-desktop.png) |
+| Public pricing | Dark field, four plan cards, purple primary on Hobby | [Pricing](screenshots/public-pricing-desktop.png) |
+| Public docs | White field, left rail, empty search dialog | [Docs](screenshots/public-docs-desktop.png), [search](screenshots/public-docs-search-desktop.png) |
+| Empty auth wall | Centered card, provider buttons, empty email, purple Continue. Not submitted | [Sign in](screenshots/login-wall-desktop.png), [Sign up](screenshots/signup-wall-desktop.png) |
 
 ## Gaps
 

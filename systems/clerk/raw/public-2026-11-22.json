@@ -1,0 +1,4714 @@
+{
+  "date": "2026-11-22",
+  "menus": {
+    "Products": [
+      {
+        "t": "User Authentication For effortless sign-up, sign-in, and user profiles",
+        "h": "/user-authentication"
+      },
+      {
+        "t": "Enterprise Authentication For enterprise SSO and directory sync",
+        "h": "/enterprise-authentication"
+      },
+      {
+        "t": "Multi-tenancy For managing teams and roles",
+        "h": "/multi-tenancy"
+      },
+      {
+        "t": "Protect New For stopping abuse inside your authentication flows",
+        "h": "/protect"
+      },
+      {
+        "t": "Billing For handling subscriptions plans and payments",
+        "h": "/billing"
+      },
+      {
+        "t": "Platform For white-labeling Clerk APIs and infrastructure",
+        "h": "/platform"
+      }
+    ],
+    "Docs": [
+      {
+        "t": "Next.js",
+        "h": "/docs/nextjs/getting-started/quickstart"
+      },
+      {
+        "t": "React",
+        "h": "/docs/react/getting-started/quickstart"
+      },
+      {
+        "t": "Expo",
+        "h": "/docs/expo/getting-started/quickstart"
+      },
+      {
+        "t": "TanStack",
+        "h": "/docs/tanstack-react-start/getting-started/quickstart"
+      },
+      {
+        "t": "React Router",
+        "h": "/docs/react-router/getting-started/quickstart"
+      },
+      {
+        "t": "Express",
+        "h": "/docs/expressjs/getting-started/quickstart"
+      },
+      {
+        "t": "Astro",
+        "h": "/docs/astro/getting-started/quickstart"
+      },
+      {
+        "t": "Chrome",
+        "h": "/docs/chrome-extension/getting-started/quickstart"
+      },
+      {
+        "t": "Go to Clerk Docs",
+        "h": "/docs"
+      },
+      {
+        "t": "Quickstarts & Tutorials",
+        "h": "/docs"
+      },
+      {
+        "t": "Authentication",
+        "h": "/docs/guides/configure/auth-strategies/sign-up-sign-in-options"
+      },
+      {
+        "t": "Multi-tenancy",
+        "h": "/docs/guides/organizations/overview"
+      },
+      {
+        "t": "Billing",
+        "h": "/docs/guides/billing/overview"
+      },
+      {
+        "t": "Component customization",
+        "h": "/docs/guides/customizing-clerk/overview"
+      }
+    ],
+    "Changelog": [
+      {
+        "t": "Nov 20, 2026 Protect your MCP server with Clerk",
+        "h": "/changelog/2026-11-20-mcp-tools-1-0"
+      },
+      {
+        "t": "Nov 12, 2026 View organizations and update users with the Clerk MCP server",
+        "h": "/changelog/2026-11-12-mcp-organization-and-user-tools"
+      },
+      {
+        "t": "Nov 6, 2026 Browser sessions for agents",
+        "h": "/changelog/2026-11-06-agent-browser-sessions"
+      },
+      {
+        "t": "Nov 6, 2026 Set custom session limits per user or device",
+        "h": "/changelog/2026-11-06-custom-session-limits"
+      },
+      {
+        "t": "Go to Changelog",
+        "h": "/changelog"
+      }
+    ],
+    "Company": [
+      {
+        "t": "About",
+        "h": "/company"
+      },
+      {
+        "t": "Blog",
+        "h": "/blog"
+      },
+      {
+        "t": "Careers",
+        "h": "/careers"
+      },
+      {
+        "t": "Contact",
+        "h": "/contact"
+      }
+    ],
+    "AI": [
+      {
+        "t": "MCP server Manage Clerk from your agent",
+        "h": "/mcp"
+      },
+      {
+        "t": "CLI Manage Clerk from your terminal",
+        "h": "/cli"
+      },
+      {
+        "t": "Agents Set up Clerk with your agent",
+        "h": "/agents"
+      }
+    ]
+  },
+  "shots": [
+    {
+      "name": "public-home-desktop",
+      "url": "https://clerk.com/",
+      "title": "Clerk | Authentication and User Management",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "h1": "Everything you need for authentication"
+    },
+    {
+      "name": "public-nav-products-desktop",
+      "url": "https://clerk.com/",
+      "title": "Clerk | Authentication and User Management",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "h1": "Everything you need for authentication"
+    },
+    {
+      "name": "public-nav-docs-desktop",
+      "url": "https://clerk.com/",
+      "title": "Clerk | Authentication and User Management",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "h1": "Everything you need for authentication"
+    },
+    {
+      "name": "public-nav-changelog-desktop",
+      "url": "https://clerk.com/",
+      "title": "Clerk | Authentication and User Management",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "h1": "Everything you need for authentication"
+    },
+    {
+      "name": "public-nav-company-desktop",
+      "url": "https://clerk.com/",
+      "title": "Clerk | Authentication and User Management",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "h1": "Everything you need for authentication"
+    },
+    {
+      "name": "public-nav-ai-desktop",
+      "url": "https://clerk.com/",
+      "title": "Clerk | Authentication and User Management",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "h1": "Everything you need for authentication"
+    },
+    {
+      "name": "public-pricing-desktop",
+      "url": "https://clerk.com/pricing",
+      "title": "Pricing \u2014 Free Up to 50K Users | Plans from $0/mo",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "h1": "Plans for every stage"
+    },
+    {
+      "name": "public-docs-desktop",
+      "url": "https://clerk.com/docs",
+      "title": "Welcome to Clerk Docs | Clerk Docs",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "h1": "Welcome to Clerk Docs"
+    },
+    {
+      "name": "public-auth-desktop",
+      "url": "https://clerk.com/user-authentication",
+      "title": "User Authentication",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "h1": "The easiest way to build user authentication"
+    },
+    {
+      "name": "public-company-desktop",
+      "url": "https://clerk.com/company",
+      "title": "Company",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "h1": "It all starts with the user"
+    },
+    {
+      "name": "public-changelog-desktop",
+      "url": "https://clerk.com/changelog",
+      "title": "Clerk Changelog",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "h1": "Clerk Changelog"
+    },
+    {
+      "name": "public-blog-desktop",
+      "url": "https://clerk.com/blog",
+      "title": "Clerk Blog",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "h1": "Blog"
+    },
+    {
+      "name": "public-security-desktop",
+      "url": "https://clerk.com/security",
+      "title": "Security & Compliance at a Glance",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "h1": "Security & compliance at a glance"
+    },
+    {
+      "name": "public-contact-desktop",
+      "url": "https://clerk.com/contact",
+      "title": "Contact",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "h1": "Contact"
+    },
+    {
+      "name": "login-wall-desktop",
+      "url": "https://dashboard.clerk.com/sign-in",
+      "title": "Sign in | Clerk.com",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "h1": "Sign in to Clerk"
+    },
+    {
+      "name": "signup-wall-desktop",
+      "url": "https://dashboard.clerk.com/sign-up",
+      "title": "Sign up | Clerk.com",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 1,
+      "h1": "Create your account"
+    },
+    {
+      "name": "public-home-mobile",
+      "url": "https://clerk.com/",
+      "title": "Clerk | Authentication and User Management",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 1,
+      "h1": "Everything you need for authentication"
+    },
+    {
+      "name": "public-menu-mobile",
+      "url": "https://clerk.com/",
+      "title": "Clerk | Authentication and User Management",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 1,
+      "h1": "Everything you need for authentication"
+    },
+    {
+      "name": "public-pricing-mobile",
+      "url": "https://clerk.com/pricing",
+      "title": "Pricing \u2014 Free Up to 50K Users | Plans from $0/mo",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 1,
+      "h1": "Plans for every stage"
+    }
+  ],
+  "readings": {
+    "home": {
+      "url": "https://clerk.com/",
+      "title": "Clerk | Authentication and User Management",
+      "h1": "Everything you need for authentication",
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 1
+      },
+      "body": {
+        "text": "Skip to main content Products Docs Changelog Company AI Pricing Sign in Sign up ",
+        "backgroundColor": "rgb(247, 247, 248)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 7695,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "h1Style": {
+        "text": "Everything you need for authentication",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "56px",
+        "fontWeight": "700",
+        "lineHeight": "64px",
+        "letterSpacing": "-1.96px",
+        "height": 128,
+        "width": 598,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "nav": {
+        "text": "Products Docs Changelog Company AI Pricing Sign in Sign up",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 42,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "primary": {
+        "text": "Sign up",
+        "backgroundColor": "rgba(19, 19, 22, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgba(19, 19, 22, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 68,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "signIn": {
+        "text": "Sign in",
+        "backgroundColor": "rgba(19, 19, 22, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgba(19, 19, 22, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 63,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "field": {
+        "text": "",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(0, 0, 0)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 1,
+        "width": 1,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "text": "Configure Clerk with your agent Install the MCP",
+        "backgroundColor": "rgb(19, 19, 22)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 40,
+        "width": 1440,
+        "padding": "8px 0px",
+        "boxShadow": "none"
+      },
+      "linkCount": 85,
+      "varCount": 14,
+      "links": [
+        {
+          "t": "Skip to main content",
+          "h": "#main"
+        },
+        {
+          "t": "Clerk Home Page",
+          "h": "/"
+        },
+        {
+          "t": "Pricing",
+          "h": "/pricing"
+        },
+        {
+          "t": "Sign up",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Configure Clerk with your agent Install the MCP",
+          "h": "/mcp"
+        },
+        {
+          "t": "Explore user authentication",
+          "h": "/user-authentication"
+        },
+        {
+          "t": "Explore Multi-tenancy",
+          "h": "/multi-tenancy"
+        },
+        {
+          "t": "Explore the MCP server",
+          "h": "/mcp"
+        },
+        {
+          "t": "Explore the CLI",
+          "h": "/cli"
+        },
+        {
+          "t": "Explore Clerk for agents",
+          "h": "/agents"
+        },
+        {
+          "t": "All frameworks",
+          "h": "/docs#frontend-frameworks"
+        },
+        {
+          "t": "Next.js",
+          "h": "/docs/nextjs/getting-started/quickstart"
+        },
+        {
+          "t": "React",
+          "h": "/docs/react/getting-started/quickstart"
+        },
+        {
+          "t": "Expo",
+          "h": "/docs/expo/getting-started/quickstart"
+        },
+        {
+          "t": "React Router",
+          "h": "/docs/react-router/getting-started/quickstart"
+        },
+        {
+          "t": "TanStack React Start",
+          "h": "/docs/tanstack-react-start/getting-started/quickstart"
+        },
+        {
+          "t": "Astro",
+          "h": "/docs/astro/getting-started/quickstart"
+        },
+        {
+          "t": "All integrations",
+          "h": "/docs/guides/development/integrations/overview"
+        },
+        {
+          "t": "Supabase",
+          "h": "/docs/guides/development/integrations/databases/supabase"
+        },
+        {
+          "t": "Convex",
+          "h": "/docs/guides/development/integrations/databases/convex"
+        },
+        {
+          "t": "Vercel",
+          "h": "/docs/guides/development/integrations/platforms/vercel-marketplace"
+        },
+        {
+          "t": "",
+          "h": "/docs"
+        },
+        {
+          "t": "",
+          "h": "/user-authentication"
+        },
+        {
+          "t": "",
+          "h": "/multi-tenancy"
+        },
+        {
+          "t": "",
+          "h": "/enterprise-authentication"
+        },
+        {
+          "t": "",
+          "h": "/billing"
+        },
+        {
+          "t": "",
+          "h": "/cli"
+        },
+        {
+          "t": "",
+          "h": "/mcp"
+        },
+        {
+          "t": "",
+          "h": "/docs/guides/development/custom-flows/overview"
+        },
+        {
+          "t": "",
+          "h": "/mcp"
+        },
+        {
+          "t": "",
+          "h": "/docs/cli"
+        },
+        {
+          "t": "",
+          "h": "/docs/nextjs/getting-started/quickstart"
+        },
+        {
+          "t": "",
+          "h": "/docs/guides/customizing-clerk/overview"
+        },
+        {
+          "t": "",
+          "h": "/docs/guides/development/custom-flows/overview"
+        },
+        {
+          "t": "",
+          "h": "/pricing"
+        },
+        {
+          "t": "",
+          "h": "/pricing"
+        },
+        {
+          "t": "",
+          "h": "/multi-tenancy"
+        },
+        {
+          "t": "",
+          "h": "/docs/guides/account-portal/overview"
+        },
+        {
+          "t": "",
+          "h": "/enterprise-authentication"
+        },
+        {
+          "t": "",
+          "h": "/pricing"
+        }
+      ],
+      "vars": {
+        "--font-geist-numbers": "\"geistNumbers\"",
+        "--font-suisse": "\"suisse\", \"suisse Fallback\"",
+        "--font-soehne-mono": "\"soehneMono\"",
+        "--color-cui-gray-300": "#b9b9bd",
+        "--color-cui-gray-400": "#95959a",
+        "--color-cui-gray-500": "#77777c",
+        "--color-cui-gray-600": "#606066",
+        "--color-cui-gray-700": "#43434a",
+        "--color-cui-gray-750": "#38383d",
+        "--color-cui-gray-800": "#303035",
+        "--color-cui-gray-850": "#27272b",
+        "--color-cui-gray-900": "#212125",
+        "--color-cui-gray-950": "#131316",
+        "--header-mt": "3rem"
+      }
+    },
+    "pricing": {
+      "url": "https://clerk.com/pricing",
+      "title": "Pricing \u2014 Free Up to 50K Users | Plans from $0/mo",
+      "h1": "Plans for every stage",
+      "colorScheme": "dark",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 1
+      },
+      "body": {
+        "text": "Skip to main content Products Docs Changelog Company AI Pricing Sign in Sign up ",
+        "backgroundColor": "rgb(19, 19, 22)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 13661,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "h1Style": {
+        "text": "Plans for every stage",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "64px",
+        "fontWeight": "700",
+        "lineHeight": "71.68px",
+        "letterSpacing": "-2.24px",
+        "height": 72,
+        "width": 1200,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "nav": {
+        "text": "Products Docs Changelog Company AI Pricing Sign in Sign up",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 42,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "primary": {
+        "text": "Sign up",
+        "backgroundColor": "rgba(255, 255, 255, 0)",
+        "color": "rgb(247, 247, 248)",
+        "borderTopColor": "rgba(255, 255, 255, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 68,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "signIn": {
+        "text": "Sign in",
+        "backgroundColor": "rgba(255, 255, 255, 0)",
+        "color": "rgb(247, 247, 248)",
+        "borderTopColor": "rgba(255, 255, 255, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 63,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "field": {
+        "text": "",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 1,
+        "width": 1,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "text": "Start building for free",
+        "backgroundColor": "rgb(108, 71, 255)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 30,
+        "width": 238,
+        "padding": "0px 12px",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(108, 71, 255) 0px 0px 0px 0.5px, oklab(0.999994 0.0000455678 0.0000200868 "
+      },
+      "linkCount": 81,
+      "status": 200,
+      "varCount": 13,
+      "links": [
+        {
+          "t": "Skip to main content",
+          "h": "#main"
+        },
+        {
+          "t": "Clerk Home Page",
+          "h": "/"
+        },
+        {
+          "t": "Pricing",
+          "h": "/pricing"
+        },
+        {
+          "t": "Sign up",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Start building for free",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Upgrade to Pro plan",
+          "h": "https://dashboard.clerk.com/settings/billing"
+        },
+        {
+          "t": "Upgrade to Business plan",
+          "h": "https://dashboard.clerk.com/settings/billing"
+        },
+        {
+          "t": "Talk to sales",
+          "h": "/contact/sales"
+        },
+        {
+          "t": "Start now",
+          "h": "https://dashboard.clerk.com/settings/billing"
+        },
+        {
+          "t": "Start now",
+          "h": "https://dashboard.clerk.com/settings/billing"
+        },
+        {
+          "t": "Start now",
+          "h": "https://dashboard.clerk.com/settings/billing"
+        },
+        {
+          "t": "Start now",
+          "h": "https://dashboard.clerk.com/settings/billing"
+        },
+        {
+          "t": "Apply to Clerk for Startups",
+          "h": "/startups"
+        },
+        {
+          "t": "Start building",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Start building",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Get started",
+          "h": "https://dashboard.clerk.com/~/plan-billing"
+        },
+        {
+          "t": "Get started",
+          "h": "https://dashboard.clerk.com/~/plan-billing"
+        },
+        {
+          "t": "Social connections",
+          "h": "/docs/guides/configure/auth-strategies/social-connections/overview"
+        },
+        {
+          "t": "User metadata",
+          "h": "/docs/guides/users/extending#user-metadata"
+        },
+        {
+          "t": "Webhooks for data sync",
+          "h": "/docs/guides/development/webhooks/overview#webhooks-overview"
+        },
+        {
+          "t": "Passkeys",
+          "h": "/docs/guides/configure/auth-strategies/sign-up-sign-in-options#passkeys"
+        },
+        {
+          "t": "Biometric sign-in",
+          "h": "/docs/guides/development/custom-flows/authentication/biometric-sign-in"
+        },
+        {
+          "t": "Minimum app version",
+          "h": "/docs/guides/development/minimum-app-version"
+        },
+        {
+          "t": "SSO connections",
+          "h": "/docs/guides/configure/auth-strategies/enterprise-connections/overview"
+        },
+        {
+          "t": "Directory Sync connections",
+          "h": "/docs/guides/configure/auth-strategies/enterprise-connections/directory-sync"
+        },
+        {
+          "t": "Waitlist mode",
+          "h": "/docs/guides/secure/restricting-access#waitlist"
+        },
+        {
+          "t": "Secret Key IP restrictions",
+          "h": "/docs/guides/secure/secret-key-ip-allowlist"
+        },
+        {
+          "t": "API Keys",
+          "h": "/docs/guides/development/machine-auth/api-keys"
+        },
+        {
+          "t": "M2M Tokens",
+          "h": "/docs/guides/development/machine-auth/m2m-tokens"
+        },
+        {
+          "t": "Brute force prevention",
+          "h": "/docs/guides/protect/user-lockout"
+        },
+        {
+          "t": "Basic protections",
+          "h": "/docs/guides/protect/protections/overview#included-on-every-plan"
+        },
+        {
+          "t": "User bans",
+          "h": "/docs/reference/backend-api/tag/users/POST/users/%7Buser_id%7D/ban"
+        },
+        {
+          "t": "Blocklist",
+          "h": "/docs/guides/secure/restricting-access#blocklist"
+        },
+        {
+          "t": "Advanced protections",
+          "h": "/docs/guides/protect/protections/overview#included-in-the-business-plan"
+        },
+        {
+          "t": "Custom session tokens",
+          "h": "/docs/guides/sessions/customize-session-tokens"
+        },
+        {
+          "t": "Custom JWT templates",
+          "h": "/docs/guides/sessions/jwt-templates"
+        },
+        {
+          "t": "Satellite domains",
+          "h": "/docs/guides/dashboard/dns-domains/satellite-domains"
+        },
+        {
+          "t": "Start building",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Start building",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Upgrade",
+          "h": "https://dashboard.clerk.com/~/plan-billing"
+        }
+      ],
+      "vars": {
+        "--font-geist-numbers": "\"geistNumbers\"",
+        "--font-suisse": "\"suisse\", \"suisse Fallback\"",
+        "--font-soehne-mono": "\"soehneMono\"",
+        "--color-cui-gray-300": "#b8b8bb",
+        "--color-cui-gray-400": "#9a9a9e",
+        "--color-cui-gray-500": "#727277",
+        "--color-cui-gray-600": "#54545a",
+        "--color-cui-gray-700": "#323237",
+        "--color-cui-gray-750": "#29292e",
+        "--color-cui-gray-800": "#212125",
+        "--color-cui-gray-850": "#1b1b1e",
+        "--color-cui-gray-900": "#161619",
+        "--color-cui-gray-950": "#0d0d10"
+      }
+    },
+    "docs": {
+      "url": "https://clerk.com/docs",
+      "title": "Welcome to Clerk Docs | Clerk Docs",
+      "h1": "Welcome to Clerk Docs",
+      "colorScheme": "light",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 1
+      },
+      "body": {
+        "text": "Skip to main content Docs Core 3 Core 3 Core 2 Core 1 Search documentation \u2318 K A",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 4929,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "h1Style": {
+        "text": "Welcome to Clerk Docs",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "32px",
+        "fontWeight": "600",
+        "lineHeight": "40px",
+        "letterSpacing": "-0.48px",
+        "height": 40,
+        "width": 696,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "nav": {
+        "text": "Docs Core 3 Core 3 Core 2 Core 1 Search documentation \u2318 K Ask AI Sign Up",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(238, 238, 240)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 64,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "primary": {
+        "text": "Sign Up",
+        "backgroundColor": "rgb(33, 33, 38)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 0,
+        "width": 0,
+        "padding": "0px 12px",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(33, 33, 38) 0px 0px 0px 0.5px, oklab(0.999994 0.0000455678 0.0000200868 / "
+      },
+      "signIn": null,
+      "field": {
+        "text": "",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "450",
+        "lineHeight": "20px",
+        "letterSpacing": "normal",
+        "height": 32,
+        "width": 172,
+        "padding": "8px 4px 8px 8px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "text": "CLI",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "lineHeight": "28px",
+        "letterSpacing": "normal",
+        "height": 17,
+        "width": 24,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "linkCount": 94,
+      "status": 200,
+      "varCount": 14,
+      "links": [
+        {
+          "t": "Skip to main content",
+          "h": "#main"
+        },
+        {
+          "t": "Docs",
+          "h": "/docs"
+        },
+        {
+          "t": "Sign Up",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Sign Up",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Guides",
+          "h": "/docs/nextjs/getting-started/quickstart"
+        },
+        {
+          "t": "CLI",
+          "h": "/docs/cli"
+        },
+        {
+          "t": "CLI",
+          "h": "/docs/cli"
+        },
+        {
+          "t": "Skills",
+          "h": "/docs/guides/ai/skills"
+        },
+        {
+          "t": "Quickstarts & Tutorials",
+          "h": "/docs/getting-started/quickstart/overview"
+        },
+        {
+          "t": "UI Components",
+          "h": "/docs/reference/components/overview"
+        },
+        {
+          "t": "SDK Reference",
+          "h": "/docs/reference/overview"
+        },
+        {
+          "t": "Customizing Clerk",
+          "h": "/docs/guides/customizing-clerk/appearance-prop/overview"
+        },
+        {
+          "t": "Explore by feature",
+          "h": "#explore-by-feature"
+        },
+        {
+          "t": "Authentication",
+          "h": "/docs/guides/configure/auth-strategies/sign-up-sign-in-options"
+        },
+        {
+          "t": "User management",
+          "h": "/docs/guides/users/managing"
+        },
+        {
+          "t": "Organizations",
+          "h": "/docs/guides/organizations/overview"
+        },
+        {
+          "t": "Billing",
+          "h": "/docs/guides/billing/overview"
+        },
+        {
+          "t": "Waitlist",
+          "h": "/docs/guides/secure/waitlist"
+        },
+        {
+          "t": "Explore by frontend framework",
+          "h": "#explore-by-frontend-framework"
+        },
+        {
+          "t": "Next.js",
+          "h": "/docs/nextjs/getting-started/quickstart"
+        },
+        {
+          "t": "React",
+          "h": "/docs/react/getting-started/quickstart"
+        },
+        {
+          "t": "Expo",
+          "h": "/docs/expo/getting-started/quickstart"
+        },
+        {
+          "t": "TanStack React Start",
+          "h": "/docs/tanstack-react-start/getting-started/quickstart"
+        },
+        {
+          "t": "React Router",
+          "h": "/docs/react-router/getting-started/quickstart"
+        },
+        {
+          "t": "Android",
+          "h": "/docs/android/getting-started/quickstart"
+        },
+        {
+          "t": "Astro",
+          "h": "/docs/astro/getting-started/quickstart"
+        },
+        {
+          "t": "Chrome Extension",
+          "h": "/docs/chrome-extension/getting-started/quickstart"
+        },
+        {
+          "t": "Electron",
+          "h": "/docs/electron/getting-started/quickstart"
+        },
+        {
+          "t": "iOS",
+          "h": "/docs/ios/getting-started/quickstart"
+        },
+        {
+          "t": "JavaScript",
+          "h": "/docs/js-frontend/getting-started/quickstart"
+        },
+        {
+          "t": "Nuxt",
+          "h": "/docs/nuxt/getting-started/quickstart"
+        },
+        {
+          "t": "Vue",
+          "h": "/docs/vue/getting-started/quickstart"
+        },
+        {
+          "t": "Explore by backend framework",
+          "h": "#explore-by-backend-framework"
+        },
+        {
+          "t": "Express",
+          "h": "/docs/expressjs/getting-started/quickstart"
+        },
+        {
+          "t": "C#",
+          "h": "https://github.com/clerk/clerk-sdk-csharp/blob/main/README.md"
+        },
+        {
+          "t": "Fastify",
+          "h": "/docs/fastify/getting-started/quickstart"
+        },
+        {
+          "t": "Go",
+          "h": "/docs/go/getting-started/quickstart"
+        },
+        {
+          "t": "Java",
+          "h": "https://github.com/clerk/clerk-sdk-java"
+        },
+        {
+          "t": "PHP",
+          "h": "https://github.com/clerk/clerk-sdk-php"
+        },
+        {
+          "t": "Python",
+          "h": "https://github.com/clerk/clerk-sdk-python/blob/main/README.md"
+        }
+      ],
+      "vars": {
+        "--font-geist-numbers": "\"geistNumbers\"",
+        "--font-suisse": "\"suisse\", \"suisse Fallback\"",
+        "--font-soehne-mono": "\"soehneMono\"",
+        "--color-cui-gray-300": "#b9b9bd",
+        "--color-cui-gray-400": "#95959a",
+        "--color-cui-gray-500": "#77777c",
+        "--color-cui-gray-600": "#606066",
+        "--color-cui-gray-700": "#43434a",
+        "--color-cui-gray-750": "#38383d",
+        "--color-cui-gray-800": "#303035",
+        "--color-cui-gray-850": "#27272b",
+        "--color-cui-gray-900": "#212125",
+        "--color-cui-gray-950": "#131316",
+        "--root-bg": "#fff"
+      }
+    },
+    "auth": {
+      "url": "https://clerk.com/user-authentication",
+      "title": "User Authentication",
+      "h1": "The easiest way to build user authentication",
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 1
+      },
+      "body": {
+        "text": "Skip to main content Products Docs Changelog Company AI Pricing Sign in Sign up ",
+        "backgroundColor": "rgb(247, 247, 248)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 5375,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "h1Style": {
+        "text": "The easiest way to build user authentication",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "64px",
+        "fontWeight": "700",
+        "lineHeight": "72px",
+        "letterSpacing": "-1.6px",
+        "height": 144,
+        "width": 896,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "nav": {
+        "text": "Products Docs Changelog Company AI Pricing Sign in Sign up User Authentication E",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 72,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "primary": {
+        "text": "Sign up",
+        "backgroundColor": "rgba(19, 19, 22, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgba(19, 19, 22, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 68,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "signIn": {
+        "text": "Sign in",
+        "backgroundColor": "rgba(19, 19, 22, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgba(19, 19, 22, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 63,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "field": null,
+      "link": {
+        "text": "Learn more",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 24,
+        "width": 88,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "linkCount": 62,
+      "status": 200,
+      "varCount": 13,
+      "links": [
+        {
+          "t": "Skip to main content",
+          "h": "#main"
+        },
+        {
+          "t": "Clerk Home Page",
+          "h": "/"
+        },
+        {
+          "t": "Pricing",
+          "h": "/pricing"
+        },
+        {
+          "t": "Sign up",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "User Authentication",
+          "h": "/user-authentication"
+        },
+        {
+          "t": "Enterprise Authentication",
+          "h": "/enterprise-authentication"
+        },
+        {
+          "t": "Multi-tenancy",
+          "h": "/multi-tenancy"
+        },
+        {
+          "t": "Protect",
+          "h": "/protect"
+        },
+        {
+          "t": "Billing",
+          "h": "/billing"
+        },
+        {
+          "t": "Waitlist",
+          "h": "/waitlist"
+        },
+        {
+          "t": "Learn more",
+          "h": "/components/sign-up"
+        },
+        {
+          "t": "Learn more about Sign In component",
+          "h": "/components/sign-in"
+        },
+        {
+          "t": "Learn more about Waitlist component",
+          "h": "/components/waitlist"
+        },
+        {
+          "t": "Learn more about User Button component",
+          "h": "/components/user-button"
+        },
+        {
+          "t": "Learn more about User Profile component",
+          "h": "/docs/reference/components/user/user-profile"
+        },
+        {
+          "t": "magic links",
+          "h": "/blog/magic-links"
+        },
+        {
+          "t": "ask here",
+          "h": "https://feedback.clerk.com"
+        },
+        {
+          "t": "Authentication",
+          "h": "/user-authentication"
+        },
+        {
+          "t": "Multi-tenancy",
+          "h": "/multi-tenancy"
+        },
+        {
+          "t": "Billing",
+          "h": "/billing"
+        },
+        {
+          "t": "MCP server",
+          "h": "/mcp"
+        },
+        {
+          "t": "CLI",
+          "h": "/cli"
+        },
+        {
+          "t": "Agents",
+          "h": "/agents"
+        },
+        {
+          "t": "React",
+          "h": "/react-authentication"
+        },
+        {
+          "t": "Next.js",
+          "h": "/nextjs-authentication"
+        },
+        {
+          "t": "Expo",
+          "h": "/expo-authentication"
+        },
+        {
+          "t": "View all",
+          "h": "/docs#explore-by-frontend-framework"
+        },
+        {
+          "t": "Documentation",
+          "h": "/docs"
+        }
+      ],
+      "vars": {
+        "--font-geist-numbers": "\"geistNumbers\"",
+        "--font-suisse": "\"suisse\", \"suisse Fallback\"",
+        "--font-soehne-mono": "\"soehneMono\"",
+        "--color-cui-gray-300": "#b9b9bd",
+        "--color-cui-gray-400": "#95959a",
+        "--color-cui-gray-500": "#77777c",
+        "--color-cui-gray-600": "#606066",
+        "--color-cui-gray-700": "#43434a",
+        "--color-cui-gray-750": "#38383d",
+        "--color-cui-gray-800": "#303035",
+        "--color-cui-gray-850": "#27272b",
+        "--color-cui-gray-900": "#212125",
+        "--color-cui-gray-950": "#131316"
+      }
+    },
+    "company": {
+      "url": "https://clerk.com/company",
+      "title": "Company",
+      "h1": "It all starts with the user",
+      "colorScheme": "dark",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 1
+      },
+      "body": {
+        "text": "Skip to main content Products Docs Changelog Company AI Pricing Sign in Sign up ",
+        "backgroundColor": "rgb(19, 19, 22)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 3255,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "h1Style": {
+        "text": "It all starts with the user",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "64px",
+        "fontWeight": "700",
+        "lineHeight": "72px",
+        "letterSpacing": "-2.24px",
+        "height": 72,
+        "width": 800,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "nav": {
+        "text": "Products Docs Changelog Company AI Pricing Sign in Sign up",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 42,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "primary": {
+        "text": "Sign up",
+        "backgroundColor": "rgba(255, 255, 255, 0)",
+        "color": "rgb(247, 247, 248)",
+        "borderTopColor": "rgba(255, 255, 255, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 68,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "signIn": {
+        "text": "Sign in",
+        "backgroundColor": "rgba(255, 255, 255, 0)",
+        "color": "rgb(247, 247, 248)",
+        "borderTopColor": "rgba(255, 255, 255, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 63,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "field": null,
+      "link": {
+        "text": "Start building",
+        "backgroundColor": "rgb(108, 71, 255)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 0,
+        "width": 0,
+        "padding": "0px 12px",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.999994 0.0000455678 0.0000200868 / 0"
+      },
+      "linkCount": 40,
+      "status": 200,
+      "varCount": 13,
+      "links": [
+        {
+          "t": "Skip to main content",
+          "h": "#main"
+        },
+        {
+          "t": "Clerk Home Page",
+          "h": "/"
+        },
+        {
+          "t": "Pricing",
+          "h": "/pricing"
+        },
+        {
+          "t": "Sign up",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Start building",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Start building",
+          "h": "/docs/quickstart"
+        },
+        {
+          "t": "Apply today",
+          "h": "/careers"
+        },
+        {
+          "t": "Authentication",
+          "h": "/user-authentication"
+        },
+        {
+          "t": "Multi-tenancy",
+          "h": "/multi-tenancy"
+        },
+        {
+          "t": "Billing",
+          "h": "/billing"
+        },
+        {
+          "t": "MCP server",
+          "h": "/mcp"
+        },
+        {
+          "t": "CLI",
+          "h": "/cli"
+        },
+        {
+          "t": "Agents",
+          "h": "/agents"
+        },
+        {
+          "t": "React",
+          "h": "/react-authentication"
+        },
+        {
+          "t": "Next.js",
+          "h": "/nextjs-authentication"
+        },
+        {
+          "t": "Expo",
+          "h": "/expo-authentication"
+        },
+        {
+          "t": "View all",
+          "h": "/docs#explore-by-frontend-framework"
+        },
+        {
+          "t": "Documentation",
+          "h": "/docs"
+        },
+        {
+          "t": "Changelog",
+          "h": "/changelog"
+        },
+        {
+          "t": "Glossary",
+          "h": "/glossary"
+        },
+        {
+          "t": "Feature requests",
+          "h": "https://feedback.clerk.com/roadmap"
+        },
+        {
+          "t": "Startups",
+          "h": "/startups"
+        },
+        {
+          "t": "Students",
+          "h": "/github-student-developer-pack"
+        },
+        {
+          "t": "LLM Leaderboard",
+          "h": "/llm-leaderboard"
+        },
+        {
+          "t": "About",
+          "h": "/company"
+        },
+        {
+          "t": "Careers",
+          "h": "/careers"
+        },
+        {
+          "t": "Blog",
+          "h": "/blog"
+        },
+        {
+          "t": "Contact",
+          "h": "/contact"
+        },
+        {
+          "t": "Brand assets",
+          "h": "/brand-assets"
+        },
+        {
+          "t": "Articles",
+          "h": "/articles"
+        },
+        {
+          "t": "Terms and conditions",
+          "h": "/legal/standard-terms"
+        },
+        {
+          "t": "Privacy policy",
+          "h": "/legal/privacy"
+        },
+        {
+          "t": "Website terms of use",
+          "h": "/legal/website-terms"
+        },
+        {
+          "t": "Security",
+          "h": "/security"
+        },
+        {
+          "t": "Legal Resources",
+          "h": "/legal"
+        },
+        {
+          "t": "X",
+          "h": "https://x.com/clerk"
+        },
+        {
+          "t": "LinkedIn",
+          "h": "https://www.linkedin.com/company/clerkinc"
+        },
+        {
+          "t": "Discord",
+          "h": "/discord"
+        },
+        {
+          "t": "GitHub",
+          "h": "https://github.com/clerk"
+        },
+        {
+          "t": "YouTube",
+          "h": "https://www.youtube.com/@clerkdev"
+        }
+      ],
+      "vars": {
+        "--font-geist-numbers": "\"geistNumbers\"",
+        "--font-suisse": "\"suisse\", \"suisse Fallback\"",
+        "--font-soehne-mono": "\"soehneMono\"",
+        "--color-cui-gray-300": "#b8b8bb",
+        "--color-cui-gray-400": "#9a9a9e",
+        "--color-cui-gray-500": "#727277",
+        "--color-cui-gray-600": "#54545a",
+        "--color-cui-gray-700": "#323237",
+        "--color-cui-gray-750": "#29292e",
+        "--color-cui-gray-800": "#212125",
+        "--color-cui-gray-850": "#1b1b1e",
+        "--color-cui-gray-900": "#161619",
+        "--color-cui-gray-950": "#0d0d10"
+      }
+    },
+    "changelog": {
+      "url": "https://clerk.com/changelog",
+      "title": "Clerk Changelog",
+      "h1": "Clerk Changelog",
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 1
+      },
+      "body": {
+        "text": "Skip to main content Products Docs Changelog Company AI Pricing Sign in Sign up ",
+        "backgroundColor": "rgb(247, 247, 248)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 8269,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "h1Style": {
+        "text": "Clerk Changelog",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 1,
+        "width": 1,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "nav": {
+        "text": "Products Docs Changelog Company AI Pricing Sign in Sign up",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 42,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "primary": {
+        "text": "Sign up",
+        "backgroundColor": "rgba(19, 19, 22, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgba(19, 19, 22, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 68,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "signIn": {
+        "text": "Sign in",
+        "backgroundColor": "rgba(19, 19, 22, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgba(19, 19, 22, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 63,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "field": null,
+      "link": {
+        "text": "Subscribe to RSS",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 24,
+        "width": 138,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "linkCount": 85,
+      "status": 200,
+      "varCount": 13,
+      "links": [
+        {
+          "t": "Skip to main content",
+          "h": "#main"
+        },
+        {
+          "t": "Clerk Home Page",
+          "h": "/"
+        },
+        {
+          "t": "Pricing",
+          "h": "/pricing"
+        },
+        {
+          "t": "Sign up",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Subscribe to RSS",
+          "h": "/changelog/atom.xml"
+        },
+        {
+          "t": "Protect your MCP server with Clerk",
+          "h": "/changelog/2026-11-20-mcp-tools-1-0"
+        },
+        {
+          "t": "Publish a Server Card and an AI Catalog",
+          "h": "/docs/guides/ai/mcp/discovery"
+        },
+        {
+          "t": "Upgrade to @clerk/mcp-tools 1.0",
+          "h": "/docs/guides/development/upgrading/upgrade-guides/mcp-tools-v1"
+        },
+        {
+          "t": "Build an MCP server",
+          "h": "/docs/guides/ai/mcp/build-mcp-server"
+        },
+        {
+          "t": "Allow public access to your MCP server before sign-in",
+          "h": "/docs/guides/ai/mcp/public-access"
+        },
+        {
+          "t": "@clerk/mcp-tools/hono README\u2060",
+          "h": "https://github.com/clerk/mcp-tools/tree/main/hono"
+        },
+        {
+          "t": "View organizations and update users with the Clerk MCP server",
+          "h": "/changelog/2026-11-12-mcp-organization-and-user-tools"
+        },
+        {
+          "t": "Clerk MCP server",
+          "h": "/mcp"
+        },
+        {
+          "t": "Device Trust",
+          "h": "/docs/guides/protect/device-trust"
+        },
+        {
+          "t": "Clerk MCP server guide",
+          "h": "/docs/guides/ai/mcp/clerk-mcp-server"
+        },
+        {
+          "t": "Browser sessions for agents",
+          "h": "/changelog/2026-11-06-agent-browser-sessions"
+        },
+        {
+          "t": "Sign agents in to your app with a one-time link",
+          "h": "/docs/guides/ai/mcp/browser-sessions"
+        },
+        {
+          "t": "Set custom session limits per user or device",
+          "h": "/changelog/2026-11-06-custom-session-limits"
+        },
+        {
+          "t": "paid plan",
+          "h": "/pricing"
+        },
+        {
+          "t": "custom session lifetime",
+          "h": "/docs/guides/secure/session-options"
+        },
+        {
+          "t": "native app lifetime",
+          "h": "/changelog/2026-11-04-native-session-lifetimes"
+        },
+        {
+          "t": "session.created_at and session.expire_at shortcodes",
+          "h": "/docs/guides/sessions/jwt-templates#available-shortcodes"
+        },
+        {
+          "t": "custom session claims",
+          "h": "/docs/guides/sessions/customize-session-tokens"
+        },
+        {
+          "t": "revoke the session",
+          "h": "/docs/reference/backend/sessions/revoke-session"
+        },
+        {
+          "t": "update a session\u2060",
+          "h": "/docs/reference/backend-api/tag/sessions/PATCH/sessions/%7Bsession_id%7D"
+        },
+        {
+          "t": "Admin Logs",
+          "h": "/docs/guides/dashboard/logs/admin-logs"
+        },
+        {
+          "t": "Application Logs",
+          "h": "/docs/guides/dashboard/logs/application-logs"
+        },
+        {
+          "t": "contact support",
+          "h": "/contact/support"
+        },
+        {
+          "t": "Email events in Application Logs and the Backend API",
+          "h": "/changelog/2026-11-06-email-events-in-application-logs"
+        },
+        {
+          "t": "Application Logs",
+          "h": "/docs/guides/dashboard/logs/application-logs"
+        },
+        {
+          "t": "Backend API\u2060",
+          "h": "/docs/reference/backend-api/tag/logs"
+        },
+        {
+          "t": "Email Logs",
+          "h": "/docs/guides/dashboard/logs/email-logs"
+        },
+        {
+          "t": "retention period",
+          "h": "/docs/guides/dashboard/logs/overview#plans-and-retention"
+        },
+        {
+          "t": "list of supported events",
+          "h": "/docs/guides/dashboard/logs/application-logs#supported-events"
+        },
+        {
+          "t": "Application Logs now group sign-ins and sign-ups",
+          "h": "/changelog/2026-11-06-log-groups"
+        },
+        {
+          "t": "Application Logs\u2060",
+          "h": "https://dashboard.clerk.com/~/application-logs"
+        },
+        {
+          "t": "GET /v1/logs\u2060",
+          "h": "/docs/reference/backend-api/tag/logs"
+        },
+        {
+          "t": "documentation",
+          "h": "/docs/guides/dashboard/logs/application-logs#log-groups"
+        },
+        {
+          "t": "1",
+          "h": "/changelog"
+        },
+        {
+          "t": "2",
+          "h": "/changelog/2"
+        }
+      ],
+      "vars": {
+        "--font-geist-numbers": "\"geistNumbers\"",
+        "--font-suisse": "\"suisse\", \"suisse Fallback\"",
+        "--font-soehne-mono": "\"soehneMono\"",
+        "--color-cui-gray-300": "#b9b9bd",
+        "--color-cui-gray-400": "#95959a",
+        "--color-cui-gray-500": "#77777c",
+        "--color-cui-gray-600": "#606066",
+        "--color-cui-gray-700": "#43434a",
+        "--color-cui-gray-750": "#38383d",
+        "--color-cui-gray-800": "#303035",
+        "--color-cui-gray-850": "#27272b",
+        "--color-cui-gray-900": "#212125",
+        "--color-cui-gray-950": "#131316"
+      }
+    },
+    "blog": {
+      "url": "https://clerk.com/blog",
+      "title": "Clerk Blog",
+      "h1": "Blog",
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 1
+      },
+      "body": {
+        "text": "Skip to main content Products Docs Changelog Company AI Pricing Sign in Sign up ",
+        "backgroundColor": "rgb(247, 247, 248)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 2353,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "h1Style": {
+        "text": "Blog",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(108, 71, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 24,
+        "width": 1200,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "nav": {
+        "text": "Products Docs Changelog Company AI Pricing Sign in Sign up",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 42,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "primary": {
+        "text": "Sign up",
+        "backgroundColor": "rgba(19, 19, 22, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgba(19, 19, 22, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 68,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "signIn": {
+        "text": "Sign in",
+        "backgroundColor": "rgba(19, 19, 22, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgba(19, 19, 22, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 63,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "field": null,
+      "link": {
+        "text": "Subscribe to RSS",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 24,
+        "width": 138,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "linkCount": 74,
+      "status": 200,
+      "varCount": 13,
+      "links": [
+        {
+          "t": "Skip to main content",
+          "h": "#main"
+        },
+        {
+          "t": "Clerk Home Page",
+          "h": "/"
+        },
+        {
+          "t": "Pricing",
+          "h": "/pricing"
+        },
+        {
+          "t": "Sign up",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Subscribe to RSS",
+          "h": "/blog/atom.xml"
+        },
+        {
+          "t": "All categories",
+          "h": "/blog"
+        },
+        {
+          "t": "Company",
+          "h": "/blog/company"
+        },
+        {
+          "t": "Engineering",
+          "h": "/blog/engineering"
+        },
+        {
+          "t": "Testimonial",
+          "h": "/blog/testimonial"
+        },
+        {
+          "t": "Guides",
+          "h": "/blog/guides"
+        },
+        {
+          "t": "Insights",
+          "h": "/blog/insights"
+        },
+        {
+          "t": "Customizing <UserButton /> for the Clerk Dashboard",
+          "h": "/blog/2026-10-27-customizing-userbutton-with-css"
+        },
+        {
+          "t": "Clerk's MCP server now manages your apps",
+          "h": "/blog/clerk-mcp-server-account-tools"
+        },
+        {
+          "t": "Accountless setup for Clerk in Next.js",
+          "h": "/blog/accountless-setup-clerk-init-nextjs"
+        },
+        {
+          "t": "Customizing <UserButton /> for the Clerk Dashboard",
+          "h": "/blog/2026-10-27-customizing-userbutton-with-css"
+        },
+        {
+          "t": "Clerk's MCP server now manages your apps",
+          "h": "/blog/clerk-mcp-server-account-tools"
+        },
+        {
+          "t": "Accountless setup for Clerk in Next.js",
+          "h": "/blog/accountless-setup-clerk-init-nextjs"
+        },
+        {
+          "t": "Giving customers a free subscription period",
+          "h": "/blog/giving-customers-a-free-subscription-period"
+        },
+        {
+          "t": "Adding Clerk auth to your CLI",
+          "h": "/blog/adding-clerk-auth-to-your-cli"
+        },
+        {
+          "t": "Build a blog with tRPC, Drizzle, Next.js and Clerk",
+          "h": "/blog/build-a-blog-with-trpc-drizzle-nextjs-clerk"
+        },
+        {
+          "t": "Going to production with Clerk Deploy",
+          "h": "/blog/clerk-deploy"
+        },
+        {
+          "t": "Clerk Init: The fastest way to start a new project",
+          "h": "/blog/clerk-init"
+        },
+        {
+          "t": "Introducing Clerk CLI",
+          "h": "/blog/introducing-clerk-cli"
+        },
+        {
+          "t": "Middleware-based route protection bypass",
+          "h": "/blog/middleware-based-route-protection-bypass"
+        },
+        {
+          "t": "Postmortem: Clerk System Outage (March 10, 2026)",
+          "h": "/blog/2026-03-10-service-outage-postmortem"
+        },
+        {
+          "t": "Clerk for the AI era",
+          "h": "/blog/2026-03-03-clerk-for-the-ai-era"
+        },
+        {
+          "t": "Add API Key support to your SaaS in minutes",
+          "h": "/blog/add-api-key-support-to-your-saas-with-clerk"
+        },
+        {
+          "t": "1",
+          "h": "/blog"
+        },
+        {
+          "t": "2",
+          "h": "/blog/2"
+        },
+        {
+          "t": "3",
+          "h": "/blog/3"
+        },
+        {
+          "t": "4",
+          "h": "/blog/4"
+        },
+        {
+          "t": "5",
+          "h": "/blog/5"
+        },
+        {
+          "t": "15",
+          "h": "/blog/15"
+        },
+        {
+          "t": "1",
+          "h": "/blog"
+        },
+        {
+          "t": "2",
+          "h": "/blog/2"
+        },
+        {
+          "t": "3",
+          "h": "/blog/3"
+        },
+        {
+          "t": "4",
+          "h": "/blog/4"
+        },
+        {
+          "t": "5",
+          "h": "/blog/5"
+        },
+        {
+          "t": "6",
+          "h": "/blog/6"
+        },
+        {
+          "t": "7",
+          "h": "/blog/7"
+        }
+      ],
+      "vars": {
+        "--font-geist-numbers": "\"geistNumbers\"",
+        "--font-suisse": "\"suisse\", \"suisse Fallback\"",
+        "--font-soehne-mono": "\"soehneMono\"",
+        "--color-cui-gray-300": "#b9b9bd",
+        "--color-cui-gray-400": "#95959a",
+        "--color-cui-gray-500": "#77777c",
+        "--color-cui-gray-600": "#606066",
+        "--color-cui-gray-700": "#43434a",
+        "--color-cui-gray-750": "#38383d",
+        "--color-cui-gray-800": "#303035",
+        "--color-cui-gray-850": "#27272b",
+        "--color-cui-gray-900": "#212125",
+        "--color-cui-gray-950": "#131316"
+      }
+    },
+    "security": {
+      "url": "https://clerk.com/security",
+      "title": "Security & Compliance at a Glance",
+      "h1": "Security & compliance at a glance",
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 1
+      },
+      "body": {
+        "text": "Skip to main content Products Docs Changelog Company AI Pricing Sign in Sign up ",
+        "backgroundColor": "rgb(247, 247, 248)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 4291,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "h1Style": {
+        "text": "Security & compliance at a glance",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "64px",
+        "fontWeight": "700",
+        "lineHeight": "72px",
+        "letterSpacing": "-1.6px",
+        "height": 144,
+        "width": 896,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "nav": {
+        "text": "Products Docs Changelog Company AI Pricing Sign in Sign up",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 42,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "primary": {
+        "text": "Sign up",
+        "backgroundColor": "rgba(19, 19, 22, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgba(19, 19, 22, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 68,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "signIn": {
+        "text": "Sign in",
+        "backgroundColor": "rgba(19, 19, 22, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgba(19, 19, 22, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 63,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "field": null,
+      "link": {
+        "text": "Visit the trust portal",
+        "backgroundColor": "rgb(108, 71, 255)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 30,
+        "width": 160,
+        "padding": "0px 12px",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.999994 0.0000455678 0.0000200868 / 0"
+      },
+      "linkCount": 66,
+      "status": 200,
+      "varCount": 13,
+      "links": [
+        {
+          "t": "Skip to main content",
+          "h": "#main"
+        },
+        {
+          "t": "Clerk Home Page",
+          "h": "/"
+        },
+        {
+          "t": "Pricing",
+          "h": "/pricing"
+        },
+        {
+          "t": "Sign up",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Visit the trust portal",
+          "h": "https://trust.clerk.com"
+        },
+        {
+          "t": "Read the security article",
+          "h": "/articles/clerk-security-how-we-protect-your-users"
+        },
+        {
+          "t": "Announcement",
+          "h": "/changelog/2022-05-06"
+        },
+        {
+          "t": "Pricing",
+          "h": "/pricing"
+        },
+        {
+          "t": "Trust portal",
+          "h": "https://trust.clerk.com"
+        },
+        {
+          "t": "Announcement",
+          "h": "/changelog/2022-05-06"
+        },
+        {
+          "t": "Pricing",
+          "h": "/pricing"
+        },
+        {
+          "t": "DPF Notice",
+          "h": "/legal/dpf"
+        },
+        {
+          "t": "DPA",
+          "h": "/legal/dpa"
+        },
+        {
+          "t": "GDPR notice",
+          "h": "/legal/gdpr"
+        },
+        {
+          "t": "CCPA notice",
+          "h": "/legal/ccpa"
+        },
+        {
+          "t": "Trust portal",
+          "h": "https://trust.clerk.com"
+        },
+        {
+          "t": "Trust portal",
+          "h": "https://trust.clerk.com"
+        },
+        {
+          "t": "Subprocessor list",
+          "h": "https://trust.clerk.com"
+        },
+        {
+          "t": "DPF Notice",
+          "h": "/legal/dpf"
+        },
+        {
+          "t": "trust.clerk.com",
+          "h": "https://trust.clerk.com"
+        },
+        {
+          "t": "Enterprise plan",
+          "h": "/pricing"
+        },
+        {
+          "t": "DPA",
+          "h": "/legal/dpa"
+        },
+        {
+          "t": "DPF Notice",
+          "h": "/legal/dpf"
+        },
+        {
+          "t": "CCPA notice",
+          "h": "/legal/ccpa"
+        },
+        {
+          "t": "trust.clerk.com",
+          "h": "https://trust.clerk.com"
+        },
+        {
+          "t": "security@clerk.dev",
+          "h": "mailto:security@clerk.dev"
+        },
+        {
+          "t": "Vulnerability Disclosure Policy",
+          "h": "/docs/guides/how-clerk-works/security/vulnerability-disclosure-policy"
+        },
+        {
+          "t": "",
+          "h": "https://trust.clerk.com"
+        },
+        {
+          "t": "",
+          "h": "/pricing"
+        },
+        {
+          "t": "",
+          "h": "https://trust.clerk.com"
+        },
+        {
+          "t": "",
+          "h": "/legal/dpf"
+        },
+        {
+          "t": "",
+          "h": "/docs/guides/how-clerk-works/security/vulnerability-disclosure-policy"
+        },
+        {
+          "t": "",
+          "h": "/articles/clerk-security-how-we-protect-your-users"
+        },
+        {
+          "t": "Authentication",
+          "h": "/user-authentication"
+        },
+        {
+          "t": "Multi-tenancy",
+          "h": "/multi-tenancy"
+        },
+        {
+          "t": "Billing",
+          "h": "/billing"
+        },
+        {
+          "t": "MCP server",
+          "h": "/mcp"
+        },
+        {
+          "t": "CLI",
+          "h": "/cli"
+        },
+        {
+          "t": "Agents",
+          "h": "/agents"
+        },
+        {
+          "t": "React",
+          "h": "/react-authentication"
+        }
+      ],
+      "vars": {
+        "--font-geist-numbers": "\"geistNumbers\"",
+        "--font-suisse": "\"suisse\", \"suisse Fallback\"",
+        "--font-soehne-mono": "\"soehneMono\"",
+        "--color-cui-gray-300": "#b9b9bd",
+        "--color-cui-gray-400": "#95959a",
+        "--color-cui-gray-500": "#77777c",
+        "--color-cui-gray-600": "#606066",
+        "--color-cui-gray-700": "#43434a",
+        "--color-cui-gray-750": "#38383d",
+        "--color-cui-gray-800": "#303035",
+        "--color-cui-gray-850": "#27272b",
+        "--color-cui-gray-900": "#212125",
+        "--color-cui-gray-950": "#131316"
+      }
+    },
+    "contact": {
+      "url": "https://clerk.com/contact",
+      "title": "Contact",
+      "h1": "Contact",
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 1
+      },
+      "body": {
+        "text": "Skip to main content Products Docs Changelog Company AI Pricing Sign in Sign up ",
+        "backgroundColor": "rgb(247, 247, 248)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 1374,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "h1Style": {
+        "text": "Contact",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(108, 71, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 24,
+        "width": 1200,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "nav": {
+        "text": "Products Docs Changelog Company AI Pricing Sign in Sign up",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 42,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "primary": {
+        "text": "Sign up",
+        "backgroundColor": "rgba(19, 19, 22, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgba(19, 19, 22, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 68,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "signIn": {
+        "text": "Sign in",
+        "backgroundColor": "rgba(19, 19, 22, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgba(19, 19, 22, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 63,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "field": null,
+      "link": {
+        "text": "Talk to sales",
+        "backgroundColor": "rgb(33, 33, 38)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 30,
+        "width": 116,
+        "padding": "0px 12px",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(33, 33, 38) 0px 0px 0px 0.5px, oklab(0.999994 0.0000455678 0.0000200868 / "
+      },
+      "linkCount": 42,
+      "status": 200,
+      "varCount": 13,
+      "links": [
+        {
+          "t": "Skip to main content",
+          "h": "#main"
+        },
+        {
+          "t": "Clerk Home Page",
+          "h": "/"
+        },
+        {
+          "t": "Pricing",
+          "h": "/pricing"
+        },
+        {
+          "t": "Sign up",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Talk to sales",
+          "h": "/contact/sales"
+        },
+        {
+          "t": "Submit a ticket",
+          "h": "https://clerk.com/contact/support"
+        },
+        {
+          "t": "Join Discord",
+          "h": "https://clerk.com/discord"
+        },
+        {
+          "t": "Clerk Docs",
+          "h": "/docs"
+        },
+        {
+          "t": "Follow on X",
+          "h": "https://x.com/clerk"
+        },
+        {
+          "t": "Authentication",
+          "h": "/user-authentication"
+        },
+        {
+          "t": "Multi-tenancy",
+          "h": "/multi-tenancy"
+        },
+        {
+          "t": "Billing",
+          "h": "/billing"
+        },
+        {
+          "t": "MCP server",
+          "h": "/mcp"
+        },
+        {
+          "t": "CLI",
+          "h": "/cli"
+        },
+        {
+          "t": "Agents",
+          "h": "/agents"
+        },
+        {
+          "t": "React",
+          "h": "/react-authentication"
+        },
+        {
+          "t": "Next.js",
+          "h": "/nextjs-authentication"
+        },
+        {
+          "t": "Expo",
+          "h": "/expo-authentication"
+        },
+        {
+          "t": "View all",
+          "h": "/docs#explore-by-frontend-framework"
+        },
+        {
+          "t": "Documentation",
+          "h": "/docs"
+        },
+        {
+          "t": "Changelog",
+          "h": "/changelog"
+        },
+        {
+          "t": "Glossary",
+          "h": "/glossary"
+        },
+        {
+          "t": "Feature requests",
+          "h": "https://feedback.clerk.com/roadmap"
+        },
+        {
+          "t": "Startups",
+          "h": "/startups"
+        },
+        {
+          "t": "Students",
+          "h": "/github-student-developer-pack"
+        },
+        {
+          "t": "LLM Leaderboard",
+          "h": "/llm-leaderboard"
+        },
+        {
+          "t": "About",
+          "h": "/company"
+        },
+        {
+          "t": "Careers",
+          "h": "/careers"
+        },
+        {
+          "t": "Blog",
+          "h": "/blog"
+        },
+        {
+          "t": "Contact",
+          "h": "/contact"
+        },
+        {
+          "t": "Brand assets",
+          "h": "/brand-assets"
+        },
+        {
+          "t": "Articles",
+          "h": "/articles"
+        },
+        {
+          "t": "Terms and conditions",
+          "h": "/legal/standard-terms"
+        },
+        {
+          "t": "Privacy policy",
+          "h": "/legal/privacy"
+        },
+        {
+          "t": "Website terms of use",
+          "h": "/legal/website-terms"
+        },
+        {
+          "t": "Security",
+          "h": "/security"
+        },
+        {
+          "t": "Legal Resources",
+          "h": "/legal"
+        },
+        {
+          "t": "X",
+          "h": "https://x.com/clerk"
+        },
+        {
+          "t": "LinkedIn",
+          "h": "https://www.linkedin.com/company/clerkinc"
+        },
+        {
+          "t": "Discord",
+          "h": "/discord"
+        }
+      ],
+      "vars": {
+        "--font-geist-numbers": "\"geistNumbers\"",
+        "--font-suisse": "\"suisse\", \"suisse Fallback\"",
+        "--font-soehne-mono": "\"soehneMono\"",
+        "--color-cui-gray-300": "#b9b9bd",
+        "--color-cui-gray-400": "#95959a",
+        "--color-cui-gray-500": "#77777c",
+        "--color-cui-gray-600": "#606066",
+        "--color-cui-gray-700": "#43434a",
+        "--color-cui-gray-750": "#38383d",
+        "--color-cui-gray-800": "#303035",
+        "--color-cui-gray-850": "#27272b",
+        "--color-cui-gray-900": "#212125",
+        "--color-cui-gray-950": "#131316"
+      }
+    },
+    "login": {
+      "url": "https://dashboard.clerk.com/sign-in",
+      "title": "Sign in | Clerk.com",
+      "h1": "Sign in to Clerk",
+      "colorScheme": "light",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 1
+      },
+      "body": {
+        "text": "Sign in to Clerk Welcome back! Please sign in to continue or Email address Passw",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(43, 43, 52)",
+        "borderTopColor": "rgb(236, 236, 238)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "letterSpacing": "normal",
+        "height": 900,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "h1Style": {
+        "text": "Sign in to Clerk",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(43, 43, 52)",
+        "borderTopColor": "rgb(236, 236, 238)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "lineHeight": "22.5882px",
+        "letterSpacing": "normal",
+        "height": 23,
+        "width": 322,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "nav": null,
+      "primary": {
+        "text": "Sign up",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(108, 71, 255)",
+        "borderTopColor": "rgb(236, 236, 238)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "suisse, \"suisse Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "lineHeight": "19.3846px",
+        "letterSpacing": "normal",
+        "height": 19,
+        "width": 49,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "signIn": null,
+      "field": {
+        "text": "",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(43, 43, 52)",
+        "borderTopColor": "color(srgb 0 0 0 / 0.11)",
+        "borderTopWidth": "0px",
+        "borderRadius": "6px",
+        "fontFamily": "suisse, \"suisse Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.3846px",
+        "letterSpacing": "normal",
+        "height": 33,
+        "width": 322,
+        "padding": "7px 12px",
+        "boxShadow": "color(srgb 0 0 0 / 0.11) 0px 0px 0px 1px, color(srgb 0 0 0 / 0.07) 0px 0px 1px 0px"
+      },
+      "link": {
+        "text": "",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(108, 71, 255)",
+        "borderTopColor": "rgb(236, 236, 238)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "suisse, \"suisse Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.3846px",
+        "letterSpacing": "normal",
+        "height": 24,
+        "width": 83,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "linkCount": 6,
+      "status": 200,
+      "finalUrl": "https://dashboard.clerk.com/sign-in",
+      "varCount": 3,
+      "links": [
+        {
+          "t": "",
+          "h": "https://dashboard.clerk.com/"
+        },
+        {
+          "t": "Sign up",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Clerk logo",
+          "h": "https://go.clerk.com/components"
+        },
+        {
+          "t": "Support",
+          "h": "https://clerk.com/contact/support"
+        },
+        {
+          "t": "Privacy",
+          "h": "https://www.clerk.com/privacy"
+        },
+        {
+          "t": "Terms",
+          "h": "https://www.clerk.com/terms"
+        }
+      ],
+      "vars": {
+        "--font-geist-numbers": "\"geistNumbers\"",
+        "--font-suisse": "\"suisse\", \"suisse Fallback\"",
+        "--font-soehne-mono": "\"soehneMono\""
+      }
+    },
+    "signup": {
+      "url": "https://dashboard.clerk.com/sign-up",
+      "title": "Sign up | Clerk.com",
+      "h1": "Create your account",
+      "colorScheme": "light",
+      "viewport": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "dpr": 1
+      },
+      "body": {
+        "text": "Create your account No credit card required. or Email address Password Continue ",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(43, 43, 52)",
+        "borderTopColor": "rgb(236, 236, 238)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "letterSpacing": "normal",
+        "height": 900,
+        "width": 1440,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "h1Style": {
+        "text": "Create your account",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(43, 43, 52)",
+        "borderTopColor": "rgb(236, 236, 238)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "500",
+        "lineHeight": "22.5882px",
+        "letterSpacing": "normal",
+        "height": 23,
+        "width": 322,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "nav": null,
+      "primary": null,
+      "signIn": {
+        "text": "Sign in",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(108, 71, 255)",
+        "borderTopColor": "rgb(236, 236, 238)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "suisse, \"suisse Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "lineHeight": "19.3846px",
+        "letterSpacing": "normal",
+        "height": 19,
+        "width": 44,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "field": {
+        "text": "",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(43, 43, 52)",
+        "borderTopColor": "color(srgb 0 0 0 / 0.11)",
+        "borderTopWidth": "0px",
+        "borderRadius": "6px",
+        "fontFamily": "suisse, \"suisse Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.3846px",
+        "letterSpacing": "normal",
+        "height": 33,
+        "width": 322,
+        "padding": "7px 12px",
+        "boxShadow": "color(srgb 0 0 0 / 0.11) 0px 0px 0px 1px, color(srgb 0 0 0 / 0.07) 0px 0px 1px 0px"
+      },
+      "link": {
+        "text": "",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(108, 71, 255)",
+        "borderTopColor": "rgb(236, 236, 238)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "suisse, \"suisse Fallback\"",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.3846px",
+        "letterSpacing": "normal",
+        "height": 24,
+        "width": 83,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "linkCount": 6,
+      "status": 200,
+      "finalUrl": "https://dashboard.clerk.com/sign-up",
+      "varCount": 3,
+      "links": [
+        {
+          "t": "",
+          "h": "https://dashboard.clerk.com/"
+        },
+        {
+          "t": "Sign in",
+          "h": "https://dashboard.clerk.com/sign-in"
+        },
+        {
+          "t": "Clerk logo",
+          "h": "https://go.clerk.com/components"
+        },
+        {
+          "t": "Terms of Service",
+          "h": "https://www.clerk.com/terms"
+        },
+        {
+          "t": "Privacy Policy",
+          "h": "https://www.clerk.com/privacy"
+        },
+        {
+          "t": "Support",
+          "h": "https://clerk.com/contact/support"
+        }
+      ],
+      "vars": {
+        "--font-geist-numbers": "\"geistNumbers\"",
+        "--font-suisse": "\"suisse\", \"suisse Fallback\"",
+        "--font-soehne-mono": "\"soehneMono\""
+      }
+    },
+    "homePhone": {
+      "url": "https://clerk.com/",
+      "title": "Clerk | Authentication and User Management",
+      "h1": "Everything you need for authentication",
+      "colorScheme": "normal",
+      "viewport": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "dpr": 1
+      },
+      "body": {
+        "text": "Skip to main content Sign in Sign up Configure Clerk with your agent Install the",
+        "backgroundColor": "rgb(247, 247, 248)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 13796,
+        "width": 390,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "h1Style": {
+        "text": "Everything you need for authentication",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "32px",
+        "fontWeight": "600",
+        "lineHeight": "35.84px",
+        "letterSpacing": "-0.48px",
+        "height": 72,
+        "width": 342,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "nav": {
+        "text": "Sign in Sign up",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 42,
+        "width": 390,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "primary": {
+        "text": "Sign up",
+        "backgroundColor": "rgba(19, 19, 22, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgba(19, 19, 22, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 68,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "signIn": {
+        "text": "Sign in",
+        "backgroundColor": "rgba(19, 19, 22, 0)",
+        "color": "rgb(19, 19, 22)",
+        "borderTopColor": "rgba(19, 19, 22, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 63,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "field": {
+        "text": "",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "borderTopColor": "rgb(0, 0, 0)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 1,
+        "width": 1,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "text": "Configure Clerk with your agent Install the MCP",
+        "backgroundColor": "rgb(19, 19, 22)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 40,
+        "width": 390,
+        "padding": "8px 0px",
+        "boxShadow": "none"
+      },
+      "linkCount": 85,
+      "varCount": 14,
+      "links": [
+        {
+          "t": "Skip to main content",
+          "h": "#main"
+        },
+        {
+          "t": "Clerk Home Page",
+          "h": "/"
+        },
+        {
+          "t": "Pricing",
+          "h": "/pricing"
+        },
+        {
+          "t": "Sign up",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Configure Clerk with your agent Install the MCP",
+          "h": "/mcp"
+        },
+        {
+          "t": "Explore user authentication",
+          "h": "/user-authentication"
+        },
+        {
+          "t": "Explore Multi-tenancy",
+          "h": "/multi-tenancy"
+        },
+        {
+          "t": "Explore the MCP server",
+          "h": "/mcp"
+        },
+        {
+          "t": "Explore the CLI",
+          "h": "/cli"
+        },
+        {
+          "t": "Explore Clerk for agents",
+          "h": "/agents"
+        },
+        {
+          "t": "All frameworks",
+          "h": "/docs#frontend-frameworks"
+        },
+        {
+          "t": "Next.js",
+          "h": "/docs/nextjs/getting-started/quickstart"
+        },
+        {
+          "t": "React",
+          "h": "/docs/react/getting-started/quickstart"
+        },
+        {
+          "t": "Expo",
+          "h": "/docs/expo/getting-started/quickstart"
+        },
+        {
+          "t": "React Router",
+          "h": "/docs/react-router/getting-started/quickstart"
+        },
+        {
+          "t": "TanStack React Start",
+          "h": "/docs/tanstack-react-start/getting-started/quickstart"
+        },
+        {
+          "t": "Astro",
+          "h": "/docs/astro/getting-started/quickstart"
+        },
+        {
+          "t": "All integrations",
+          "h": "/docs/guides/development/integrations/overview"
+        },
+        {
+          "t": "Supabase",
+          "h": "/docs/guides/development/integrations/databases/supabase"
+        },
+        {
+          "t": "Convex",
+          "h": "/docs/guides/development/integrations/databases/convex"
+        },
+        {
+          "t": "Vercel",
+          "h": "/docs/guides/development/integrations/platforms/vercel-marketplace"
+        },
+        {
+          "t": "",
+          "h": "/docs"
+        },
+        {
+          "t": "",
+          "h": "/user-authentication"
+        },
+        {
+          "t": "",
+          "h": "/multi-tenancy"
+        },
+        {
+          "t": "",
+          "h": "/enterprise-authentication"
+        },
+        {
+          "t": "",
+          "h": "/billing"
+        },
+        {
+          "t": "",
+          "h": "/cli"
+        },
+        {
+          "t": "",
+          "h": "/mcp"
+        },
+        {
+          "t": "",
+          "h": "/docs/guides/development/custom-flows/overview"
+        },
+        {
+          "t": "",
+          "h": "/mcp"
+        },
+        {
+          "t": "",
+          "h": "/docs/cli"
+        },
+        {
+          "t": "",
+          "h": "/docs/nextjs/getting-started/quickstart"
+        },
+        {
+          "t": "",
+          "h": "/docs/guides/customizing-clerk/overview"
+        },
+        {
+          "t": "",
+          "h": "/docs/guides/development/custom-flows/overview"
+        },
+        {
+          "t": "",
+          "h": "/pricing"
+        },
+        {
+          "t": "",
+          "h": "/pricing"
+        },
+        {
+          "t": "",
+          "h": "/multi-tenancy"
+        },
+        {
+          "t": "",
+          "h": "/docs/guides/account-portal/overview"
+        },
+        {
+          "t": "",
+          "h": "/enterprise-authentication"
+        },
+        {
+          "t": "",
+          "h": "/pricing"
+        }
+      ],
+      "vars": {
+        "--font-geist-numbers": "\"geistNumbers\"",
+        "--font-suisse": "\"suisse\", \"suisse Fallback\"",
+        "--font-soehne-mono": "\"soehneMono\"",
+        "--color-cui-gray-300": "#b9b9bd",
+        "--color-cui-gray-400": "#95959a",
+        "--color-cui-gray-500": "#77777c",
+        "--color-cui-gray-600": "#606066",
+        "--color-cui-gray-700": "#43434a",
+        "--color-cui-gray-750": "#38383d",
+        "--color-cui-gray-800": "#303035",
+        "--color-cui-gray-850": "#27272b",
+        "--color-cui-gray-900": "#212125",
+        "--color-cui-gray-950": "#131316",
+        "--header-mt": "3rem"
+      }
+    },
+    "mobileDrawer": {
+      "0": {
+        "tag": "BUTTON",
+        "t": "Products",
+        "h": null
+      },
+      "1": {
+        "tag": "A",
+        "t": "User AuthenticationFor effortless sign-up, sign-in, and user profiles",
+        "h": "/user-authentication"
+      },
+      "2": {
+        "tag": "A",
+        "t": "Enterprise AuthenticationFor enterprise SSO and directory sync",
+        "h": "/enterprise-authentication"
+      },
+      "3": {
+        "tag": "A",
+        "t": "Multi-tenancyFor managing teams and roles",
+        "h": "/multi-tenancy"
+      },
+      "4": {
+        "tag": "A",
+        "t": "ProtectNewFor stopping abuse inside your authentication flows",
+        "h": "/protect"
+      },
+      "5": {
+        "tag": "A",
+        "t": "BillingFor handling subscriptions plans and payments",
+        "h": "/billing"
+      },
+      "6": {
+        "tag": "A",
+        "t": "PlatformFor white-labeling Clerk APIs and infrastructure",
+        "h": "/platform"
+      },
+      "7": {
+        "tag": "A",
+        "t": "WaitlistFor early user sign-up",
+        "h": "/waitlist"
+      },
+      "8": {
+        "tag": "A",
+        "t": "<SignUp />",
+        "h": "/components/sign-up"
+      },
+      "9": {
+        "tag": "A",
+        "t": "<SignIn />",
+        "h": "/components/sign-in"
+      },
+      "10": {
+        "tag": "A",
+        "t": "<UserButton />",
+        "h": "/components/user-button"
+      },
+      "11": {
+        "tag": "A",
+        "t": "<UserProfile />",
+        "h": "/components/user-profile"
+      },
+      "12": {
+        "tag": "A",
+        "t": "<Waitlist />",
+        "h": "/components/waitlist"
+      },
+      "13": {
+        "tag": "A",
+        "t": "<SignIn />",
+        "h": "/components/sign-in"
+      },
+      "14": {
+        "tag": "A",
+        "t": "<OrganizationProfile />",
+        "h": "/components/organization-profile"
+      },
+      "15": {
+        "tag": "A",
+        "t": "<OrganizationSwitcher />",
+        "h": "/components/organization-switcher"
+      },
+      "16": {
+        "tag": "A",
+        "t": "<OrganizationProfile />",
+        "h": "/components/organization-profile"
+      },
+      "17": {
+        "tag": "A",
+        "t": "<CreateOrganization />",
+        "h": "/components/create-organization"
+      },
+      "18": {
+        "tag": "A",
+        "t": "<OrganizationList />",
+        "h": "/components/organization-list"
+      },
+      "19": {
+        "tag": "A",
+        "t": "<PricingTable />",
+        "h": "/components/pricing-table"
+      },
+      "20": {
+        "tag": "A",
+        "t": "<CheckoutButton />",
+        "h": "/components/checkout-button"
+      },
+      "21": {
+        "tag": "A",
+        "t": "<UserProfile />",
+        "h": "/components/user-profile#billing"
+      },
+      "22": {
+        "tag": "A",
+        "t": "<OrganizationProfile />",
+        "h": "/components/organization-profile#billing"
+      },
+      "23": {
+        "tag": "BUTTON",
+        "t": "Docs",
+        "h": null
+      },
+      "24": {
+        "tag": "A",
+        "t": "Next.js",
+        "h": "/docs/nextjs/getting-started/quickstart"
+      },
+      "25": {
+        "tag": "A",
+        "t": "React",
+        "h": "/docs/react/getting-started/quickstart"
+      },
+      "26": {
+        "tag": "A",
+        "t": "Expo",
+        "h": "/docs/expo/getting-started/quickstart"
+      },
+      "27": {
+        "tag": "A",
+        "t": "TanStack",
+        "h": "/docs/tanstack-react-start/getting-started/quickstart"
+      },
+      "28": {
+        "tag": "A",
+        "t": "React Router",
+        "h": "/docs/react-router/getting-started/quickstart"
+      },
+      "29": {
+        "tag": "A",
+        "t": "Express",
+        "h": "/docs/expressjs/getting-started/quickstart"
+      },
+      "30": {
+        "tag": "A",
+        "t": "Astro",
+        "h": "/docs/astro/getting-started/quickstart"
+      },
+      "31": {
+        "tag": "A",
+        "t": "Chrome",
+        "h": "/docs/chrome-extension/getting-started/quickstart"
+      },
+      "32": {
+        "tag": "A",
+        "t": "Go to Clerk Docs",
+        "h": "/docs"
+      },
+      "33": {
+        "tag": "A",
+        "t": "Quickstarts & Tutorials",
+        "h": "/docs"
+      },
+      "34": {
+        "tag": "A",
+        "t": "Authentication",
+        "h": "/docs/guides/configure/auth-strategies/sign-up-sign-in-options"
+      },
+      "35": {
+        "tag": "A",
+        "t": "Multi-tenancy",
+        "h": "/docs/guides/organizations/overview"
+      },
+      "36": {
+        "tag": "A",
+        "t": "Billing",
+        "h": "/docs/guides/billing/overview"
+      },
+      "37": {
+        "tag": "A",
+        "t": "Component customization",
+        "h": "/docs/guides/customizing-clerk/overview"
+      },
+      "38": {
+        "tag": "BUTTON",
+        "t": "Changelog",
+        "h": null
+      },
+      "39": {
+        "tag": "A",
+        "t": "Nov 20, 2026Protect your MCP server with Clerk",
+        "h": "/changelog/2026-11-20-mcp-tools-1-0"
+      },
+      "40": {
+        "tag": "A",
+        "t": "Nov 12, 2026View organizations and update users with the Clerk MCP server",
+        "h": "/changelog/2026-11-12-mcp-organization-and-user-tools"
+      },
+      "41": {
+        "tag": "A",
+        "t": "Nov 6, 2026Browser sessions for agents",
+        "h": "/changelog/2026-11-06-agent-browser-sessions"
+      },
+      "42": {
+        "tag": "A",
+        "t": "Nov 6, 2026Set custom session limits per user or device",
+        "h": "/changelog/2026-11-06-custom-session-limits"
+      },
+      "43": {
+        "tag": "A",
+        "t": "Go to Changelog",
+        "h": "/changelog"
+      },
+      "44": {
+        "tag": "BUTTON",
+        "t": "Company",
+        "h": null
+      },
+      "45": {
+        "tag": "A",
+        "t": "About",
+        "h": "/company"
+      },
+      "46": {
+        "tag": "A",
+        "t": "Blog",
+        "h": "/blog"
+      },
+      "47": {
+        "tag": "A",
+        "t": "Careers",
+        "h": "/careers"
+      },
+      "48": {
+        "tag": "A",
+        "t": "Contact",
+        "h": "/contact"
+      },
+      "49": {
+        "tag": "BUTTON",
+        "t": "AI",
+        "h": null
+      },
+      "50": {
+        "tag": "A",
+        "t": "MCP serverManage Clerk from your agent",
+        "h": "/mcp"
+      },
+      "51": {
+        "tag": "A",
+        "t": "CLIManage Clerk from your terminal",
+        "h": "/cli"
+      },
+      "52": {
+        "tag": "A",
+        "t": "AgentsSet up Clerk with your agent",
+        "h": "/agents"
+      },
+      "53": {
+        "tag": "A",
+        "t": "Pricing",
+        "h": "/pricing"
+      },
+      "54": {
+        "tag": "BUTTON",
+        "t": "Sign inSign in",
+        "h": null
+      },
+      "55": {
+        "tag": "A",
+        "t": "Sign up",
+        "h": "https://dashboard.clerk.com/sign-up"
+      },
+      "varCount": 0,
+      "links": [],
+      "vars": {}
+    },
+    "pricingPhone": {
+      "url": "https://clerk.com/pricing",
+      "title": "Pricing \u2014 Free Up to 50K Users | Plans from $0/mo",
+      "h1": "Plans for every stage",
+      "colorScheme": "dark",
+      "viewport": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "dpr": 1
+      },
+      "body": {
+        "text": "Skip to main content Sign in Sign up Plans for every stage Clear pricing that sc",
+        "backgroundColor": "rgb(19, 19, 22)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 19414,
+        "width": 390,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "h1Style": {
+        "text": "Plans for every stage",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "48px",
+        "fontWeight": "600",
+        "lineHeight": "55.68px",
+        "letterSpacing": "-1.68px",
+        "height": 111,
+        "width": 342,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "nav": {
+        "text": "Sign in Sign up",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 42,
+        "width": 390,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "primary": {
+        "text": "Sign up",
+        "backgroundColor": "rgba(255, 255, 255, 0)",
+        "color": "rgb(247, 247, 248)",
+        "borderTopColor": "rgba(255, 255, 255, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 68,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "signIn": {
+        "text": "Sign in",
+        "backgroundColor": "rgba(255, 255, 255, 0)",
+        "color": "rgb(247, 247, 248)",
+        "borderTopColor": "rgba(255, 255, 255, 0)",
+        "borderTopWidth": "1px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "19.89px",
+        "letterSpacing": "normal",
+        "height": 26,
+        "width": 63,
+        "padding": "0px 10px",
+        "boxShadow": "none"
+      },
+      "field": {
+        "text": "",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "0px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 1,
+        "width": 1,
+        "padding": "0px",
+        "boxShadow": "none"
+      },
+      "link": {
+        "text": "Start building for free",
+        "backgroundColor": "rgb(108, 71, 255)",
+        "color": "rgb(255, 255, 255)",
+        "borderTopColor": "rgb(217, 217, 222)",
+        "borderTopWidth": "0px",
+        "borderRadius": "6px",
+        "fontFamily": "geistNumbers, suisse, \"suisse Fallback\"",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "height": 30,
+        "width": 292,
+        "padding": "0px 12px",
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(108, 71, 255) 0px 0px 0px 0.5px, oklab(0.999994 0.0000455678 0.0000200868 "
+      },
+      "linkCount": 81,
+      "varCount": 13,
+      "links": [
+        {
+          "t": "Skip to main content",
+          "h": "#main"
+        },
+        {
+          "t": "Clerk Home Page",
+          "h": "/"
+        },
+        {
+          "t": "Pricing",
+          "h": "/pricing"
+        },
+        {
+          "t": "Sign up",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Start building for free",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Upgrade to Pro plan",
+          "h": "https://dashboard.clerk.com/settings/billing"
+        },
+        {
+          "t": "Upgrade to Business plan",
+          "h": "https://dashboard.clerk.com/settings/billing"
+        },
+        {
+          "t": "Talk to sales",
+          "h": "/contact/sales"
+        },
+        {
+          "t": "Start now",
+          "h": "https://dashboard.clerk.com/settings/billing"
+        },
+        {
+          "t": "Start now",
+          "h": "https://dashboard.clerk.com/settings/billing"
+        },
+        {
+          "t": "Start now",
+          "h": "https://dashboard.clerk.com/settings/billing"
+        },
+        {
+          "t": "Start now",
+          "h": "https://dashboard.clerk.com/settings/billing"
+        },
+        {
+          "t": "Apply to Clerk for Startups",
+          "h": "/startups"
+        },
+        {
+          "t": "Start building",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Start building",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Get started",
+          "h": "https://dashboard.clerk.com/~/plan-billing"
+        },
+        {
+          "t": "Get started",
+          "h": "https://dashboard.clerk.com/~/plan-billing"
+        },
+        {
+          "t": "Social connections",
+          "h": "/docs/guides/configure/auth-strategies/social-connections/overview"
+        },
+        {
+          "t": "User metadata",
+          "h": "/docs/guides/users/extending#user-metadata"
+        },
+        {
+          "t": "Webhooks for data sync",
+          "h": "/docs/guides/development/webhooks/overview#webhooks-overview"
+        },
+        {
+          "t": "Passkeys",
+          "h": "/docs/guides/configure/auth-strategies/sign-up-sign-in-options#passkeys"
+        },
+        {
+          "t": "Biometric sign-in",
+          "h": "/docs/guides/development/custom-flows/authentication/biometric-sign-in"
+        },
+        {
+          "t": "Minimum app version",
+          "h": "/docs/guides/development/minimum-app-version"
+        },
+        {
+          "t": "SSO connections",
+          "h": "/docs/guides/configure/auth-strategies/enterprise-connections/overview"
+        },
+        {
+          "t": "Directory Sync connections",
+          "h": "/docs/guides/configure/auth-strategies/enterprise-connections/directory-sync"
+        },
+        {
+          "t": "Waitlist mode",
+          "h": "/docs/guides/secure/restricting-access#waitlist"
+        },
+        {
+          "t": "Secret Key IP restrictions",
+          "h": "/docs/guides/secure/secret-key-ip-allowlist"
+        },
+        {
+          "t": "API Keys",
+          "h": "/docs/guides/development/machine-auth/api-keys"
+        },
+        {
+          "t": "M2M Tokens",
+          "h": "/docs/guides/development/machine-auth/m2m-tokens"
+        },
+        {
+          "t": "Brute force prevention",
+          "h": "/docs/guides/protect/user-lockout"
+        },
+        {
+          "t": "Basic protections",
+          "h": "/docs/guides/protect/protections/overview#included-on-every-plan"
+        },
+        {
+          "t": "User bans",
+          "h": "/docs/reference/backend-api/tag/users/POST/users/%7Buser_id%7D/ban"
+        },
+        {
+          "t": "Blocklist",
+          "h": "/docs/guides/secure/restricting-access#blocklist"
+        },
+        {
+          "t": "Advanced protections",
+          "h": "/docs/guides/protect/protections/overview#included-in-the-business-plan"
+        },
+        {
+          "t": "Custom session tokens",
+          "h": "/docs/guides/sessions/customize-session-tokens"
+        },
+        {
+          "t": "Custom JWT templates",
+          "h": "/docs/guides/sessions/jwt-templates"
+        },
+        {
+          "t": "Satellite domains",
+          "h": "/docs/guides/dashboard/dns-domains/satellite-domains"
+        },
+        {
+          "t": "Start building",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Start building",
+          "h": "https://dashboard.clerk.com/sign-up"
+        },
+        {
+          "t": "Upgrade",
+          "h": "https://dashboard.clerk.com/~/plan-billing"
+        }
+      ],
+      "vars": {
+        "--font-geist-numbers": "\"geistNumbers\"",
+        "--font-suisse": "\"suisse\", \"suisse Fallback\"",
+        "--font-soehne-mono": "\"soehneMono\"",
+        "--color-cui-gray-300": "#b8b8bb",
+        "--color-cui-gray-400": "#9a9a9e",
+        "--color-cui-gray-500": "#727277",
+        "--color-cui-gray-600": "#54545a",
+        "--color-cui-gray-700": "#323237",
+        "--color-cui-gray-750": "#29292e",
+        "--color-cui-gray-800": "#212125",
+        "--color-cui-gray-850": "#1b1b1e",
+        "--color-cui-gray-900": "#161619",
+        "--color-cui-gray-950": "#0d0d10"
+      }
+    }
+  },
+  "footer": [
+    {
+      "t": "Authentication",
+      "h": "/user-authentication"
+    },
+    {
+      "t": "Multi-tenancy",
+      "h": "/multi-tenancy"
+    },
+    {
+      "t": "Billing",
+      "h": "/billing"
+    },
+    {
+      "t": "MCP server",
+      "h": "/mcp"
+    },
+    {
+      "t": "CLI",
+      "h": "/cli"
+    },
+    {
+      "t": "Agents",
+      "h": "/agents"
+    },
+    {
+      "t": "React",
+      "h": "/react-authentication"
+    },
+    {
+      "t": "Next.js",
+      "h": "/nextjs-authentication"
+    },
+    {
+      "t": "Expo",
+      "h": "/expo-authentication"
+    },
+    {
+      "t": "View all",
+      "h": "/docs#explore-by-frontend-framework"
+    },
+    {
+      "t": "Documentation",
+      "h": "/docs"
+    },
+    {
+      "t": "Changelog",
+      "h": "/changelog"
+    },
+    {
+      "t": "Glossary",
+      "h": "/glossary"
+    },
+    {
+      "t": "Feature requests",
+      "h": "https://feedback.clerk.com/roadmap"
+    },
+    {
+      "t": "Startups",
+      "h": "/startups"
+    },
+    {
+      "t": "Students",
+      "h": "/github-student-developer-pack"
+    },
+    {
+      "t": "LLM Leaderboard",
+      "h": "/llm-leaderboard"
+    },
+    {
+      "t": "About",
+      "h": "/company"
+    },
+    {
+      "t": "Careers",
+      "h": "/careers"
+    },
+    {
+      "t": "Blog",
+      "h": "/blog"
+    },
+    {
+      "t": "Contact",
+      "h": "/contact"
+    },
+    {
+      "t": "Brand assets",
+      "h": "/brand-assets"
+    },
+    {
+      "t": "Articles",
+      "h": "/articles"
+    },
+    {
+      "t": "Terms and conditions",
+      "h": "/legal/standard-terms"
+    },
+    {
+      "t": "Privacy policy",
+      "h": "/legal/privacy"
+    },
+    {
+      "t": "Website terms of use",
+      "h": "/legal/website-terms"
+    },
+    {
+      "t": "Security",
+      "h": "/security"
+    },
+    {
+      "t": "Legal Resources",
+      "h": "/legal"
+    },
+    {
+      "t": "X",
+      "h": "https://x.com/clerk"
+    },
+    {
+      "t": "LinkedIn",
+      "h": "https://www.linkedin.com/company/clerkinc"
+    },
+    {
+      "t": "Discord",
+      "h": "/discord"
+    },
+    {
+      "t": "GitHub",
+      "h": "https://github.com/clerk"
+    },
+    {
+      "t": "YouTube",
+      "h": "https://www.youtube.com/@clerkdev"
+    }
+  ],
+  "loginButtons": [
+    {
+      "t": "",
+      "h": "https://dashboard.clerk.com/"
+    },
+    {
+      "t": "Continue with ChatGPT",
+      "h": null
+    },
+    {
+      "t": "Continue with GitHub",
+      "h": null
+    },
+    {
+      "t": "Continue with Google",
+      "h": null
+    },
+    {
+      "t": "Show password",
+      "h": null
+    },
+    {
+      "t": "Continue",
+      "h": null
+    },
+    {
+      "t": "Sign up",
+      "h": "https://dashboard.clerk.com/sign-up"
+    },
+    {
+      "t": "Clerk logo",
+      "h": "https://go.clerk.com/components"
+    },
+    {
+      "t": "Support",
+      "h": "https://clerk.com/contact/support"
+    },
+    {
+      "t": "Privacy",
+      "h": "https://www.clerk.com/privacy"
+    },
+    {
+      "t": "Terms",
+      "h": "https://www.clerk.com/terms"
+    }
+  ],
+  "signupButtons": [
+    {
+      "t": "",
+      "h": "https://dashboard.clerk.com/"
+    },
+    {
+      "t": "Continue with ChatGPT",
+      "h": null
+    },
+    {
+      "t": "Continue with GitHub",
+      "h": null
+    },
+    {
+      "t": "Continue with Google",
+      "h": null
+    },
+    {
+      "t": "Show password",
+      "h": null
+    },
+    {
+      "t": "Continue",
+      "h": null
+    },
+    {
+      "t": "Sign in",
+      "h": "https://dashboard.clerk.com/sign-in"
+    },
+    {
+      "t": "Clerk logo",
+      "h": "https://go.clerk.com/components"
+    },
+    {
+      "t": "Terms of Service",
+      "h": "https://www.clerk.com/terms"
+    },
+    {
+      "t": "Privacy Policy",
+      "h": "https://www.clerk.com/privacy"
+    },
+    {
+      "t": "Support",
+      "h": "https://clerk.com/contact/support"
+    }
+  ],
+  "component": {
+    "home": {
+      "url": "https://clerk.com/",
+      "scheme": "normal",
+      "body": {
+        "text": "Skip to main content Products Docs Changelog Company AI Pric",
+        "bg": "rgb(247, 247, 248)",
+        "color": "rgb(0, 0, 0)",
+        "radius": "0px",
+        "font": "geistNumbers, suisse, \"suisse Fallback\"",
+        "size": "16px",
+        "weight": "400",
+        "lh": "24px",
+        "h": 7695,
+        "w": 1440,
+        "pad": "0px",
+        "shadow": "none",
+        "border": "0px solid rgb(217, 217, 222)"
+      },
+      "h1": {
+        "text": "Everything you need for authentication",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(19, 19, 22)",
+        "radius": "0px",
+        "font": "geistNumbers, suisse, \"suisse Fallback\"",
+        "size": "56px",
+        "weight": "700",
+        "lh": "64px",
+        "h": 128,
+        "w": 598,
+        "pad": "0px",
+        "shadow": "none",
+        "border": "0px solid rgb(217, 217, 222)"
+      },
+      "header": {
+        "text": "Products Docs Changelog Company AI Pricing Sign in Sign up",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "radius": "0px",
+        "font": "geistNumbers, suisse, \"suisse Fallback\"",
+        "size": "16px",
+        "weight": "400",
+        "lh": "24px",
+        "h": 42,
+        "w": 1440,
+        "pad": "0px",
+        "shadow": "none",
+        "border": "0px solid rgb(217, 217, 222)"
+      },
+      "signUp": {
+        "text": "Sign up",
+        "bg": "rgba(19, 19, 22, 0)",
+        "color": "rgb(19, 19, 22)",
+        "radius": "6px",
+        "font": "geistNumbers, suisse, \"suisse Fallback\"",
+        "size": "13px",
+        "weight": "500",
+        "lh": "19.89px",
+        "h": 26,
+        "w": 68,
+        "pad": "0px 10px",
+        "shadow": "none",
+        "border": "1px solid rgba(19, 19, 22, 0)"
+      },
+      "signIn": {
+        "text": "Sign in",
+        "bg": "rgba(19, 19, 22, 0)",
+        "color": "rgb(19, 19, 22)",
+        "radius": "6px",
+        "font": "geistNumbers, suisse, \"suisse Fallback\"",
+        "size": "13px",
+        "weight": "500",
+        "lh": "19.89px",
+        "h": 26,
+        "w": 63,
+        "pad": "0px 10px",
+        "shadow": "none",
+        "border": "1px solid rgba(19, 19, 22, 0)"
+      },
+      "cta": {
+        "text": "Add Clerk auth to my app: clerk.com/SKILL.md Copy prompt",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "radius": "22px",
+        "font": "geistNumbers, suisse, \"suisse Fallback\"",
+        "size": "16px",
+        "weight": "400",
+        "lh": "24px",
+        "h": 44,
+        "w": 239,
+        "pad": "0px",
+        "shadow": "none",
+        "border": "0px solid rgb(217, 217, 222)"
+      },
+      "card": null,
+      "field": {
+        "text": "",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "radius": "0px",
+        "font": "geistNumbers, suisse, \"suisse Fallback\"",
+        "size": "16px",
+        "weight": "400",
+        "lh": "24px",
+        "h": 1,
+        "w": 1,
+        "pad": "0px",
+        "shadow": "none",
+        "border": "0px none rgb(0, 0, 0)"
+      },
+      "continue": null
+    },
+    "pricing": {
+      "body": {
+        "text": "Skip to main content Products Docs Changelog Company AI Pric",
+        "bg": "rgb(19, 19, 22)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "0px",
+        "font": "geistNumbers, suisse, \"suisse Fallback\"",
+        "size": "16px",
+        "weight": "400",
+        "lh": "24px",
+        "h": 13661,
+        "w": 1440,
+        "pad": "0px",
+        "shadow": "none",
+        "border": "0px solid rgb(217, 217, 222)"
+      },
+      "h1": {
+        "text": "Plans for every stage",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "0px",
+        "font": "geistNumbers, suisse, \"suisse Fallback\"",
+        "size": "64px",
+        "weight": "700",
+        "lh": "71.68px",
+        "h": 72,
+        "w": 1200,
+        "pad": "0px",
+        "shadow": "none",
+        "border": "0px solid rgb(217, 217, 222)"
+      },
+      "cta": {
+        "text": "Start building for free",
+        "bg": "rgb(108, 71, 255)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "6px",
+        "font": "geistNumbers, suisse, \"suisse Fallback\"",
+        "size": "13px",
+        "weight": "500",
+        "lh": "24px",
+        "h": 30,
+        "w": 238,
+        "pad": "0px 12px",
+        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(108, 71, 255) 0px 0px 0px 0.5px, oklab(0.999994 0.0000",
+        "border": "0px solid rgb(217, 217, 222)"
+      },
+      "card": {
+        "text": "Hobby Free No credit card required Everything you need to st",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "12px",
+        "font": "geistNumbers, suisse, \"suisse Fallback\"",
+        "size": "16px",
+        "weight": "400",
+        "lh": "24px",
+        "h": 917,
+        "w": 288,
+        "pad": "4px",
+        "shadow": "none",
+        "border": "1px solid oklab(0.999994 0.0000455678 0.0000200868 / 0.12)"
+      },
+      "signIn": {
+        "text": "Sign in",
+        "bg": "rgba(255, 255, 255, 0)",
+        "color": "rgb(247, 247, 248)",
+        "radius": "6px",
+        "font": "geistNumbers, suisse, \"suisse Fallback\"",
+        "size": "13px",
+        "weight": "500",
+        "lh": "19.89px",
+        "h": 26,
+        "w": 63,
+        "pad": "0px 10px",
+        "shadow": "none",
+        "border": "1px solid rgba(255, 255, 255, 0)"
+      },
+      "signUp": {
+        "text": "Sign up",
+        "bg": "rgba(255, 255, 255, 0)",
+        "color": "rgb(247, 247, 248)",
+        "radius": "6px",
+        "font": "geistNumbers, suisse, \"suisse Fallback\"",
+        "size": "13px",
+        "weight": "500",
+        "lh": "19.89px",
+        "h": 26,
+        "w": 68,
+        "pad": "0px 10px",
+        "shadow": "none",
+        "border": "1px solid rgba(255, 255, 255, 0)"
+      }
+    },
+    "login": {
+      "scheme": "light",
+      "body": {
+        "text": "Sign in to Clerk Welcome back! Please sign in to continue or",
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(43, 43, 52)",
+        "radius": "0px",
+        "font": "geistNumbers, suisse, \"suisse Fallback\"",
+        "size": "14px",
+        "weight": "400",
+        "lh": "20px",
+        "h": 900,
+        "w": 1440,
+        "pad": "0px",
+        "shadow": "none",
+        "border": "0px solid rgb(236, 236, 238)"
+      },
+      "h1": {
+        "text": "Sign in to Clerk",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(43, 43, 52)",
+        "radius": "0px",
+        "font": "suisse, \"suisse Fallback\"",
+        "size": "16px",
+        "weight": "500",
+        "lh": "22.5882px",
+        "h": 23,
+        "w": 322,
+        "pad": "0px",
+        "shadow": "none",
+        "border": "0px solid rgb(236, 236, 238)"
+      },
+      "header": null,
+      "signUp": {
+        "text": "Sign up",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(108, 71, 255)",
+        "radius": "0px",
+        "font": "suisse, \"suisse Fallback\"",
+        "size": "14px",
+        "weight": "500",
+        "lh": "19.3846px",
+        "h": 19,
+        "w": 49,
+        "pad": "0px",
+        "shadow": "none",
+        "border": "0px solid rgb(236, 236, 238)"
+      },
+      "signIn": null,
+      "cta": null,
+      "card": null,
+      "field": {
+        "text": "",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(43, 43, 52)",
+        "radius": "6px",
+        "font": "suisse, \"suisse Fallback\"",
+        "size": "14px",
+        "weight": "400",
+        "lh": "19.3846px",
+        "h": 33,
+        "w": 322,
+        "pad": "7px 12px",
+        "shadow": "color(srgb 0 0 0 / 0.11) 0px 0px 0px 1px, color(srgb 0 0 0 / 0.07) 0px 0px 1px 0px",
+        "border": "0px solid color(srgb 0 0 0 / 0.11)"
+      },
+      "continue": {
+        "text": "Continue with ChatGPT",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "color(srgb 0 0 0 / 0.62)",
+        "radius": "6px",
+        "font": "suisse, \"suisse Fallback\"",
+        "size": "14px",
+        "weight": "500",
+        "lh": "19.3846px",
+        "h": 33,
+        "w": 102,
+        "pad": "7px 12px",
+        "shadow": "color(srgb 0 0 0 / 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.08) 0px 2px 3px -1px, rgba(0, 0, 0, 0.02) 0px 1px 0px 0px",
+        "border": "0px solid color(srgb 0 0 0 / 0.11)"
+      }
+    },
+    "signup": {
+      "scheme": "light",
+      "body": {
+        "text": "Create your account No credit card required. or Email addres",
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(43, 43, 52)",
+        "radius": "0px",
+        "font": "geistNumbers, suisse, \"suisse Fallback\"",
+        "size": "14px",
+        "weight": "400",
+        "lh": "20px",
+        "h": 900,
+        "w": 1440,
+        "pad": "0px",
+        "shadow": "none",
+        "border": "0px solid rgb(236, 236, 238)"
+      },
+      "h1": {
+        "text": "Create your account",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(43, 43, 52)",
+        "radius": "0px",
+        "font": "suisse, \"suisse Fallback\"",
+        "size": "16px",
+        "weight": "500",
+        "lh": "22.5882px",
+        "h": 23,
+        "w": 322,
+        "pad": "0px",
+        "shadow": "none",
+        "border": "0px solid rgb(236, 236, 238)"
+      },
+      "header": null,
+      "signUp": null,
+      "signIn": {
+        "text": "Sign in",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(108, 71, 255)",
+        "radius": "0px",
+        "font": "suisse, \"suisse Fallback\"",
+        "size": "14px",
+        "weight": "500",
+        "lh": "19.3846px",
+        "h": 19,
+        "w": 44,
+        "pad": "0px",
+        "shadow": "none",
+        "border": "0px solid rgb(236, 236, 238)"
+      },
+      "cta": null,
+      "card": null,
+      "field": {
+        "text": "",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(43, 43, 52)",
+        "radius": "6px",
+        "font": "suisse, \"suisse Fallback\"",
+        "size": "14px",
+        "weight": "400",
+        "lh": "19.3846px",
+        "h": 33,
+        "w": 322,
+        "pad": "7px 12px",
+        "shadow": "color(srgb 0 0 0 / 0.11) 0px 0px 0px 1px, color(srgb 0 0 0 / 0.07) 0px 0px 1px 0px",
+        "border": "0px solid color(srgb 0 0 0 / 0.11)"
+      },
+      "continue": {
+        "text": "Continue with ChatGPT",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "color(srgb 0 0 0 / 0.62)",
+        "radius": "6px",
+        "font": "suisse, \"suisse Fallback\"",
+        "size": "14px",
+        "weight": "500",
+        "lh": "19.3846px",
+        "h": 33,
+        "w": 102,
+        "pad": "7px 12px",
+        "shadow": "color(srgb 0 0 0 / 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.08) 0px 2px 3px -1px, rgba(0, 0, 0, 0.02) 0px 1px 0px 0px",
+        "border": "0px solid color(srgb 0 0 0 / 0.11)"
+      }
+    }
+  }
+}
