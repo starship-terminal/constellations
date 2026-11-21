@@ -1,0 +1,35 @@
+{
+  "product": "Skyscanner",
+  "domain": "skyscanner.com",
+  "reviewedAt": "2026-11-22",
+  "method": "public T3 preview, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Log in",
+      "url": "https://www.skyscanner.com.sg/",
+      "title": "Compare Cheap Flights & Book Air Tickets to Everywhere | Skyscanner",
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": [
+        "Log in"
+      ],
+      "stopped": true,
+      "screenshot": null,
+      "note": "The header Log in button was visible and empty on the public homepage. It was not clicked, so the login dialog was not opened and no fields were seen. A separate signup control was not on the page. /profile and /profile/saved were not opened. The clean frame was not committed because catalog.json still declares screenshots/ missing, and this pass left catalog.json alone."
+    }
+  ],
+  "notOpened": [
+    "The login dialog was not opened.",
+    "Checkout, flight search, hotel search, car hire search, and subscribe were not started.",
+    "After the homepage and one about page, www.skyscanner.com.sg and www.skyscanner.net returned a PerimeterX captcha. It was not solved."
+  ]
+}
