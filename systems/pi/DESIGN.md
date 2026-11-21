@@ -142,10 +142,10 @@ colors:
 typography:
   greeting:
     fontFamily: "Grenette"
-    fontSize: "22px"
+    fontSize: "18px"
     fontWeight: 400
-    lineHeight: "31.9px"
-    letterSpacing: "-0.22px"
+    lineHeight: "25.2px"
+    letterSpacing: "-0.36px"
   heading-m:
     fontFamily: "Grenette Condensed"
     fontSize: "32px"
@@ -226,9 +226,9 @@ Good for: Personal AI chat chrome: cream page and forest pill in light, near-bla
 
 Captured 2026-11-19, signed out. The greeting chat and the login page were measured. No account was created. OAuth and phone were not entered.. Themes: light, dark.
 
-Pi is Inflection's personal AI. This package measures the public marketing site at [hey.pi.ai](https://hey.pi.ai/) and the signed-out chat chrome at [pi.ai](https://pi.ai/), captured on 19 November 2026 with no account. The chat was read in light and dark. The marketing site ships one cream theme. Widths on screen were 1440×900, 390×844, and the preview fill size 1169×731.
+Pi is Inflection's personal AI. This package measures the public marketing site at [hey.pi.ai](https://hey.pi.ai/) and the signed-out chat at [pi.ai](https://pi.ai/), captured on 21 November 2026 with no account. The chat was read in light and dark. The marketing site ships one cream theme. Desktop captures are 1440×900 CSS (PNG 2880×1800 at devicePixelRatio 2). Phone captures are 390×844 CSS (PNG 780×1688).
 
-The preview browser attached to the live pages and returned computed styles. It did not produce screenshot frames, so this package has no page images.
+The homepage is a signed-out chat, not a marketing page. `https://pi.ai` redirects to `/talk/<id>`. That id is an anonymous session. Login and signup stop at an empty wall. Nothing was typed. No identity provider was clicked. No form was submitted. No chat message was sent.
 
 <!-- brief:start -->
 <!-- brief:end -->
@@ -253,11 +253,11 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ### Fonts (from README.md)
 
-DM Sans is the UI face. The app ships it as `DM_SANS` from `/_next/static/media/`, weights 400, 500 and 600, plus an italic at 500. hey.pi.ai loads DM Sans from Google Fonts. The tokens name the family DM Sans and fall back to the system sans.
+DM Sans is the UI face. The app ships it as `DM_SANS` from `/_next/static/media/`. hey.pi.ai loads DM Sans from Google Fonts. The tokens name the family DM Sans and fall back to the system sans.
 
-Grenette is the display and greeting face. It is proprietary. The style guide uses Source Serif 4 as a stand-in and says so. Condensed headings on the login page use `GRENETTE_CONDENSED`.
+Grenette is the display face. It is proprietary. The style guide uses Source Serif 4 as a stand-in and says so. The login title uses `GRENETTE_CONDENSED` at 32px.
 
-Fragment Mono is the marketing mono, loaded on hey.pi.ai at weight 400. The app names its mono role `MONO` and serves a ttf from `/_next/static/media/`. The family in the tokens is Fragment Mono, with a system mono fallback.
+Fragment Mono is the marketing mono, loaded on hey.pi.ai at weight 400. The app names its mono role `MONO`. The family in the tokens is Fragment Mono, with a system mono fallback.
 
 Twemoji Country Flags is prepended to every app font stack for emoji. It is not a text face.
 
@@ -299,24 +299,28 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-There are no screenshots. `preview_snapshot` returned "The browser is not producing screenshot frames" three times. Do not treat a missing image as a blank page. The layout numbers are computed boxes from the live DOM.
+Screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json), not from the images.
 
-The focus ring on Log in is Tailwind's default blue, `rgb(59 130 246 / 0.5)`, plus a 1px white offset. It is not a Pi token. It is described in [components.md](components.md) and left out of [tokens.json](tokens.json).
+The focus ring on the name field is Tailwind's default blue, `rgb(59 130 246 / 0.5)`. It is not a Pi token. It is left out of [tokens.json](tokens.json).
 
 `--color-feed-feature-intro-graphic` stays `#FAF3EA` in the dark block. That is what the stylesheet declares. It was not seen painted.
 
 Grenette on hey.pi.ai is "Grenette Pro Regular". Grenette in the app is the family `GRENETTE`. They are recorded as one family. The files are different: the marketing face is served by Framer, the app face by `/_next/static/media/`.
 
-The login page was measured in both themes by the class toggle, not by an account setting. The marketing site has no dark theme.
+The login wall was measured in both themes by the class toggle. The painted header Log in fill in the second headed session was `rgb(26, 73, 51)`, one step from the declared `--color-primary-default` `#1A4631`. The token keeps the declared value. The first session's computed button fill matched `#1A4631`.
+
+A status banner ("Pi is responding more slowly than usual") was on every app page during this capture. It is incident chrome, not a token.
+
+A wrapping container around the greeting computes as DM Sans 16px. The paragraph itself, `p.text-body-alt-m-desktop`, is Grenette 18px on 25.2px, tracking -0.36px, colour `#1A4631`, in a 576px column. The token records that paragraph, not the wrapper.
 
 ### Do and don't (from README.md)
 
-**Use the cream page and the forest pill.** The light page is `#FAF3EA` and the filled Log in pill is `#1A4631` with `#FCFAF7` text. The marketing home uses the same cream, and its Try Pi pill is near-black (`#131212` in the nav, `#000000` on the hero) with white Grenette type.
+**Use the cream page and the forest pill.** The light page is `#FAF3EA` and the filled Log in pill is `#1A4631` with `#FCFAF7` text. See [screenshots/home-light-default.png](screenshots/home-light-default.png).
 
-**Keep the sidebar at 280px.** The side menu is 280px in both measured desktop widths, and the page sets `--sidebar-width: 280px`. The greeting column is 576px.
+**Keep the open sidebar at 280px.** The side menu is 280px on desktop, and the page sets `--sidebar-width: 280px`. Collapsed it is 64px. See [screenshots/home-light-sidebar-collapsed.png](screenshots/home-light-sidebar-collapsed.png).
 
-**Set greeting type in Grenette and UI type in DM Sans.** The greeting is 22px on 31.9px with -0.22px tracking. Buttons and the name field are DM Sans 16px. The login title is Grenette Condensed 32px.
+**Set display type in Grenette and UI type in DM Sans.** The greeting is Grenette 18px in a 576px column. The login title is Grenette Condensed 32px. Buttons and the name field are DM Sans 16px. The marketing hero is Grenette 64px. See [screenshots/home-light-default.png](screenshots/home-light-default.png) and [screenshots/marketing-light-default.png](screenshots/marketing-light-default.png).
 
 **Use 48px pills for the chat actions and 40px pills for the marketing CTA.** Chat Log in and Sign up for free are radius 48px. hey.pi.ai Try Pi is radius 40px. The send button is a 40px circle.
 
-**Leave the phone and OAuth paths alone.** The login page offers Google, Apple, Facebook, email and phone. This capture measured the buttons and did not open them.
+**Stop at the login wall.** The wall offers Google, Apple, Facebook, email and phone. This capture measured the buttons and did not open them. See [screenshots/signup-dark-empty.png](screenshots/signup-dark-empty.png).
