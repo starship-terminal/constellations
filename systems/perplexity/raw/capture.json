@@ -1,5 +1,6 @@
 {
   "captured": "2026-11-19",
+  "refreshed": "2026-11-21",
   "harness": "Grok Build",
   "model": "grok-4.7",
   "route": "public-web",
@@ -27,5 +28,47 @@
     "Get started, Get Pro, Get Max, Select, and See a demo were not followed",
     "No query was typed into the composer"
   ],
-  "screenshotNote": "The T3 preview tab loaded the product and the hub and returned computed styles, then failed with: The browser is not producing screenshot frames. Screenshots are from headless Playwright on public pages that returned 200 with no Cloudflare challenge."
+  "screenshotNote": "The T3 preview tab loaded the product and the hub and returned computed styles, then failed with: The browser is not producing screenshot frames. Screenshots are from headless Playwright on public pages that returned 200 with no Cloudflare challenge.",
+  "refresh2026-11-21": {
+    "route": "public-web",
+    "loginExtracted": "not-started",
+    "stoppedAt": "empty Sign In dialog, which is also the signup wall",
+    "viewport": {
+      "desktop": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2 },
+      "phone": { "innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2 }
+    },
+    "pages": [
+      "https://www.perplexity.ai/",
+      "https://www.perplexity.ai/discover",
+      "https://www.perplexity.ai/finance",
+      "https://www.perplexity.ai/academic",
+      "https://www.perplexity.ai/patents",
+      "https://www.perplexity.ai/automations",
+      "https://www.perplexity.ai/computer/plugins",
+      "https://www.perplexity.ai/hub",
+      "https://www.perplexity.ai/hub/pricing",
+      "https://www.perplexity.ai/enterprise",
+      "https://www.perplexity.ai/hub/customers",
+      "https://www.perplexity.ai/hub/blog",
+      "https://www.perplexity.ai/hub/legal/terms-of-service",
+      "https://www.perplexity.ai/hub/legal/privacy-notice",
+      "https://www.perplexity.ai/hub/this-page-does-not-exist-capture"
+    ],
+    "wallsPhotographedEmpty": [
+      "https://www.perplexity.ai/ sign-in dialog",
+      "https://www.perplexity.ai/health",
+      "https://www.perplexity.ai/projects",
+      "https://www.perplexity.ai/artifacts"
+    ],
+    "notEntered": [
+      "Continue with Google",
+      "Continue with Apple",
+      "Continue with email",
+      "Single sign-on (SSO)",
+      "No email, password, code, phone, or address typed",
+      "No query submitted",
+      "Get Pro and Get Max not followed",
+      "Cookie Got it and Decline optional not clicked"
+    ]
+  }
 }

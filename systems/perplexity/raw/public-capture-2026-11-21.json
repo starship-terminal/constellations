@@ -1,0 +1,102 @@
+{
+  "capturedAt": "2026-11-21T14:39:09.028Z",
+  "pages": [
+    {
+      "url": "https://www.perplexity.ai/",
+      "theme": "light",
+      "status": 200,
+      "varCount": 615
+    },
+    {
+      "url": "https://www.perplexity.ai/",
+      "theme": "dark",
+      "status": 200,
+      "scheme": "dark",
+      "body": "color(srgb 0.0823529 0.0901961 0.105882)"
+    },
+    {
+      "url": "https://www.perplexity.ai/discover",
+      "theme": "light",
+      "status": 200,
+      "shot": "discover-light-default"
+    },
+    {
+      "url": "https://www.perplexity.ai/finance",
+      "theme": "light",
+      "status": 200,
+      "shot": "finance-light-default"
+    },
+    {
+      "url": "https://www.perplexity.ai/academic",
+      "theme": "light",
+      "status": 200,
+      "shot": "academic-light-default"
+    },
+    {
+      "url": "https://www.perplexity.ai/patents",
+      "theme": "light",
+      "status": 200,
+      "shot": "patents-light-default"
+    },
+    {
+      "url": "https://www.perplexity.ai/automations",
+      "theme": "light",
+      "status": 200,
+      "shot": "automations-light-default"
+    },
+    {
+      "url": "https://www.perplexity.ai/computer/plugins",
+      "theme": "light",
+      "status": 200,
+      "shot": "plugins-light-default"
+    },
+    {
+      "url": "https://www.perplexity.ai/hub",
+      "theme": "light",
+      "status": 200,
+      "shot": "hub-light-default"
+    },
+    {
+      "url": "https://www.perplexity.ai/hub/pricing",
+      "theme": "light",
+      "status": 200,
+      "shot": "pricing-light-default"
+    },
+    {
+      "url": "https://www.perplexity.ai/enterprise",
+      "theme": "light",
+      "status": 200,
+      "shot": "enterprise-light-default"
+    },
+    {
+      "url": "https://www.perplexity.ai/hub/customers",
+      "theme": "light",
+      "status": 200,
+      "shot": "customers-light-default"
+    },
+    {
+      "url": "https://www.perplexity.ai/hub/legal/terms-of-service",
+      "theme": "light",
+      "status": 200,
+      "shot": "terms-light-default"
+    },
+    {
+      "url": "https://www.perplexity.ai/hub/legal/privacy-notice",
+      "theme": "light",
+      "status": 200,
+      "shot": "privacy-light-default"
+    },
+    {
+      "url": "https://www.perplexity.ai/hub/this-page-does-not-exist-capture",
+      "theme": "light",
+      "status": 404,
+      "shot": "missing-light-default"
+    },
+    {
+      "url": "https://www.perplexity.ai/hub/blog",
+      "theme": "light",
+      "status": 200,
+      "shot": "blog-light-default"
+    }
+  ]
+}

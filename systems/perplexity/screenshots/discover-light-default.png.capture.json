@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-11-21T14:39:23.959Z",
+  "screenshot": "discover-light-default.png",
+  "sanitizedSourceUrl": "https://www.perplexity.ai/discover",
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "colorScheme": "normal",
+    "dataColorScheme": "light",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollHeight": 900
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device"
+  }
+}

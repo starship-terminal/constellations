@@ -36,6 +36,22 @@ https://www.perplexity.ai/hub/pricing shows Free, Pro, and Max. Prices on the pa
 
 ![Pricing, phone](screenshots/pricing-light-phone.png)
 
+## Public refresh, 2026-11-21
+
+The control map is [site-tree.md](site-tree.md). New viewport shots use the `home-`, `discover-`, `hub-`, and wall names. The November 19 `app-*` shots remain.
+
+![Product home, light, 2026-11-21](screenshots/home-light-default.png)
+
+![Apps menu](screenshots/home-light-apps-menu.png)
+
+![Discover](screenshots/discover-light-default.png)
+
+![Sign-in and signup wall, empty](screenshots/signin-light-dialog.png)
+
+![Phone sidebar, Sign Up and Log in](screenshots/home-light-phone-sidebar.png)
+
+![Hub phone menu](screenshots/hub-light-phone-menu.png)
+
 ## Sign-in
 
 Sign In opens a dialog. The form asks for an email and also offers Google, Apple, and SSO. Continue with email was not submitted, because the form is not email-only.

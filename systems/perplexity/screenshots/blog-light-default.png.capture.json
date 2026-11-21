@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-11-21T14:40:02.598Z",
+  "screenshot": "blog-light-default.png",
+  "sanitizedSourceUrl": "https://www.perplexity.ai/hub/blog",
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "colorScheme": "normal",
+    "dataColorScheme": "light",
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollHeight": 4377
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device"
+  }
+}
