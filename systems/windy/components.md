@@ -1,6 +1,6 @@
 # Components
 
-Values are token names. The number after each name is the resolved value from the signed-out desktop map on 2026-11-19, product `51.4.4`. Crops are in [components/crops/](components/crops/).
+Values are token names. The number after each name is the resolved value from the signed-out desktop map, product `51.4.4`. Crops are in [components/crops/](components/crops/). The 2026-11-21 pass remeasured the search field (372 by 33, white, radius 18px) and the Login chip (75 by 21, `#4d4d4d`, cream text, radius 24px).
 
 ## Button
 
@@ -34,7 +34,7 @@ Model chips and overlay chips are `.switch__item`. Unselected: transparent, crea
 
 ## Dialog
 
-Login is `#plugin-login.plugin-popup`, 450px by 658px, radius 8px, shadow `0 0 4px #000`, content padding 25px 25px 20px, background `#3c3c3c`. Title 28px weight 300, colour `#fff3e1`. It fades in over `opacity .5s ease-out`. It asks for email and password and offers Google, Apple, and Facebook. Nothing was entered.
+Login is `#plugin-login.plugin-popup`, radius 8px, shadow `0 0 4px #000`, background `#3c3c3c`. Title 28px weight 300, colour `#fff3e1`. It fades in over `opacity .5s ease-out`. It asks for email and password and offers Google, Apple, and Facebook. Register uses the same popup and adds username, confirm password, a newsletter checkbox, and a captcha. Nothing was entered.
 
 ## Card
 
@@ -58,7 +58,7 @@ The place detail table (`.main-table`) is `#f8f8f8` with `#000000` text at 12px,
 - Checkbox, select, tooltip: in the stylesheet, not opened.
 - Button hover, pressed, disabled, loading: not opened.
 - Form error: not submitted.
-- Phone computed styles: a 390px screenshot exists; the values above are from the 1169px page.
+- Phone computed styles: a 390px screenshot exists; the values above are from the desktop page.
 - Signed-in settings, favourites, alerts: behind a password login. Not entered.
 - Canvas map colours: not CSS.
 - Icon font glyphs: not extracted. See [icons/](../icons) absence and the catalog `layoutGaps`.

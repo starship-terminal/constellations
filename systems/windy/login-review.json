@@ -1,0 +1,93 @@
+{
+  "slug": "windy",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "absent",
+  "login_extracted": "not-started",
+  "route": "public Playwright, headless Chromium. No T3 preview. No credentials typed.",
+  "product_version": "51.4.4.ind.c444",
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measured": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2}
+    },
+    "phone": {
+      "requested": "390x844",
+      "measured": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2}
+    }
+  },
+  "offered": {
+    "nav": [
+      {"label": "Menu", "opens": "menu pane", "reached": true},
+      {"label": "My Favorites", "opens": "empty favorites pane", "reached": true},
+      {"label": "My Alerts", "opens": "empty alerts pane", "reached": true},
+      {"label": "Settings", "reached": false, "reason": "signed out, the row does not open a pane or a login wall"},
+      {"label": "Install Windy Plugin", "opens": "/plugins", "reached": true},
+      {"label": "Route planner", "opens": "/route-planner", "reached": false, "reason": "URL changes, no pane painted, no route drawn"},
+      {"label": "Display KML, GPX, ...", "opens": "/uploader", "reached": true},
+      {"label": "Search", "opens": "result list, then a place detail strip", "reached": true},
+      {"label": "Login", "opens": "/login", "reached": true, "stopped": true},
+      {"label": "Register Now", "opens": "/register", "reached": true, "stopped": true},
+      {"label": "Go Premium", "reached": false, "reason": "checkout not entered"}
+    ],
+    "identity_providers": [
+      {"label": "Log in with Google", "href": "https://account.windy.com/auth/google", "clicked": false},
+      {"label": "Log in with Apple", "href": "https://account.windy.com/auth/apple", "clicked": false},
+      {"label": "Log in with Facebook", "href": "https://account.windy.com/auth/facebook", "clicked": false},
+      {"label": "Sign up with Google", "href": "https://account.windy.com/auth/google", "clicked": false},
+      {"label": "Sign up with Apple", "href": "https://account.windy.com/auth/apple", "clicked": false},
+      {"label": "Sign up with Facebook", "href": "https://account.windy.com/auth/facebook", "clicked": false}
+    ]
+  },
+  "login_wall": {
+    "url": "https://www.windy.com/login",
+    "asks_for": ["email address", "password"],
+    "also_shows": ["Login", "Register Now", "Forgot Password?", "Log in with Google", "Log in with Apple", "Log in with Facebook"],
+    "typed": false,
+    "submitted": false
+  },
+  "register_wall": {
+    "url": "https://www.windy.com/register",
+    "asks_for": ["email address", "username", "password", "confirm password", "newsletter checkbox"],
+    "also_shows": ["captcha", "Register", "Login here", "Sign up with Google", "Sign up with Apple", "Sign up with Facebook"],
+    "typed": false,
+    "submitted": false,
+    "captcha_solved": false
+  },
+  "screens": [
+    {"name": "Map, signed out, desktop", "file": "screenshots/map-dark-default.png"},
+    {"name": "Map, phone width", "file": "screenshots/map-dark-phone.png"},
+    {"name": "Menu open", "file": "screenshots/menu-dark-open.png"},
+    {"name": "Search results", "file": "screenshots/search-dark-results.png"},
+    {"name": "Place detail strip", "file": "screenshots/detail-dark-place.png"},
+    {"name": "Favorites empty", "file": "screenshots/favorites-dark-empty.png"},
+    {"name": "Alerts empty", "file": "screenshots/alerts-dark-empty.png"},
+    {"name": "Plugins list", "file": "screenshots/plugins-dark-list.png"},
+    {"name": "Uploader empty", "file": "screenshots/uploader-dark-empty.png"},
+    {"name": "Login wall, empty", "file": "screenshots/login-dark-empty.png"},
+    {"name": "Register wall, empty", "file": "screenshots/register-dark-empty.png"}
+  ],
+  "gaps": [
+    "No session. login-extracted stays not-started.",
+    "Settings does not open while signed out.",
+    "Identity providers were not clicked.",
+    "Forgot password was recorded as https://account.windy.com/reset and not opened.",
+    "Go Premium was not entered.",
+    "No form was submitted. The empty-login validation error was not opened.",
+    "The captcha on Register was not solved."
+  ],
+  "not_submitted": [
+    "Login",
+    "Register",
+    "Forgot Password",
+    "Log in with Google",
+    "Log in with Apple",
+    "Log in with Facebook",
+    "Sign up with Google",
+    "Sign up with Apple",
+    "Sign up with Facebook",
+    "Go Premium",
+    "Choose a file",
+    "newsletter checkbox"
+  ]
+}
