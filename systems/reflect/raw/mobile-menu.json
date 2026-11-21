@@ -1,0 +1,12 @@
+{
+  "text": "Product\nPricing\nCompany\nBlog\nChangelog\nGitHub\nLog in to Classic",
+  "display": "block",
+  "position": "fixed",
+  "rect": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 844
+  },
+  "bg": "rgba(3, 0, 20, 0.9)"
+}

@@ -1,0 +1,189 @@
+{
+  "mobileSize": {
+    "w": 390,
+    "h": 844,
+    "dpr": 2
+  },
+  "buttons": [
+    {
+      "tag": "A",
+      "text": "Reflect",
+      "aria": null,
+      "href": "/home/"
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "aria": "Product",
+      "href": "#connected"
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "aria": "Pricing",
+      "href": "#pricing"
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "aria": "Company",
+      "href": "#about"
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "aria": "Blog",
+      "href": "https://reflect.app/blog"
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "aria": "Changelog",
+      "href": "https://github.com/team-reflect/reflect-open/releases"
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "aria": "GitHub",
+      "href": "https://github.com/team-reflect/reflect-open"
+    },
+    {
+      "tag": "A",
+      "text": "",
+      "aria": "Log in to Classic",
+      "href": "/auth"
+    },
+    {
+      "tag": "A",
+      "text": "Log in to Classic",
+      "aria": null,
+      "href": "/auth"
+    },
+    {
+      "tag": "A",
+      "text": "Download",
+      "aria": null,
+      "href": "/download"
+    },
+    {
+      "tag": "A",
+      "text": "Meet Reflect Open",
+      "aria": null,
+      "href": "https://github.com/team-reflect/reflect-open/releases"
+    },
+    {
+      "tag": "A",
+      "text": "Download for Mac",
+      "aria": null,
+      "href": "/download"
+    },
+    {
+      "tag": "A",
+      "text": "Get the iPhone & iPad app",
+      "aria": null,
+      "href": "https://apps.apple.com/us/app/reflect-open/id6787385615"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "aria": "Play the Reflect launch film",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "aria": "Click to see AI magic",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Re-run R",
+      "aria": null,
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Insert I",
+      "aria": null,
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "CopyC",
+      "aria": null,
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Replace ⌘↩",
+      "aria": null,
+      "href": null
+    },
+    {
+      "tag": "A",
+      "text": "How privacy works",
+      "aria": null,
+      "href": "https://github.com/team-reflect/reflect-open/blob/master/docs/privacy.md"
+    },
+    {
+      "tag": "A",
+      "text": "Download for Mac",
+      "aria": null,
+      "href": "/download"
+    },
+    {
+      "tag": "A",
+      "text": "View on the App Store",
+      "aria": null,
+      "href": "https://apps.apple.com/us/app/reflect-open/id6787385615"
+    },
+    {
+      "tag": "A",
+      "text": "Log in to Classic",
+      "aria": null,
+      "href": "/auth"
+    },
+    {
+      "tag": "A",
+      "text": "Claim your code",
+      "aria": null,
+      "href": "/claim-reflect-open"
+    },
+    {
+      "tag": "A",
+      "text": "@reflectnotes",
+      "aria": null,
+      "href": "https://reflect.app/"
+    },
+    {
+      "tag": "A",
+      "text": "@reflectnotes",
+      "aria": null,
+      "href": "https://reflect.app/"
+    },
+    {
+      "tag": "A",
+      "text": "@reflectnotes",
+      "aria": null,
+      "href": "https://reflect.app/"
+    },
+    {
+      "tag": "A",
+      "text": "@maccaw",
+      "aria": null,
+      "href": "https://x.com/maccaw"
+    },
+    {
+      "tag": "A",
+      "text": "@reflectnotes",
+      "aria": null,
+      "href": "https://reflect.app/"
+    },
+    {
+      "tag": "A",
+      "text": "@reflectnotes",
+      "aria": null,
+      "href": "https://reflect.app/"
+    }
+  ]
+}

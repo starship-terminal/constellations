@@ -1,0 +1,382 @@
+{
+  "url": "https://reflect.app/",
+  "title": "Reflect",
+  "viewport": {
+    "w": 1440,
+    "h": 900,
+    "dpr": 2
+  },
+  "colorScheme": "normal",
+  "body": {
+    "backgroundColor": "rgb(3, 0, 20)",
+    "color": "rgb(255, 255, 255)",
+    "fontFamily": "\"Inter V\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+    "fontSize": "16px",
+    "lineHeight": "normal"
+  },
+  "h1": {
+    "text": "Think better with Reflect",
+    "tag": "H1",
+    "rect": {
+      "x": 0,
+      "y": 221,
+      "w": 1440,
+      "h": 80
+    },
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "AeonikPro, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+    "fontSize": "72px",
+    "fontWeight": "500",
+    "lineHeight": "80px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "borderTopWidth": "0px",
+    "borderTopStyle": "none",
+    "borderTopColor": "rgb(255, 255, 255)",
+    "padding": "0px",
+    "height": "80px",
+    "boxShadow": "none",
+    "textDecoration": "none",
+    "outline": "rgb(255, 255, 255) none 0px",
+    "outlineOffset": "0px"
+  },
+  "h2": {
+    "text": "Notes with an AI assistant",
+    "tag": "H2",
+    "rect": {
+      "x": 0,
+      "y": 1937,
+      "w": 1440,
+      "h": 64
+    },
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "AeonikPro, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+    "fontSize": "56px",
+    "fontWeight": "500",
+    "lineHeight": "64px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "borderTopWidth": "0px",
+    "borderTopStyle": "none",
+    "borderTopColor": "rgb(255, 255, 255)",
+    "padding": "0px",
+    "height": "64px",
+    "boxShadow": "none",
+    "textDecoration": "none",
+    "outline": "rgb(255, 255, 255) none 0px",
+    "outlineOffset": "0px"
+  },
+  "navLinks": [
+    {
+      "text": "Reflect",
+      "href": "/home/"
+    },
+    {
+      "text": "Product",
+      "href": "#connected"
+    },
+    {
+      "text": "Pricing",
+      "href": "#pricing"
+    },
+    {
+      "text": "Company",
+      "href": "#about"
+    },
+    {
+      "text": "Blog",
+      "href": "https://reflect.app/blog"
+    },
+    {
+      "text": "Log in to Classic",
+      "href": "/auth"
+    },
+    {
+      "text": "Download",
+      "href": "/download"
+    },
+    {
+      "text": "Download for Mac",
+      "href": "/download"
+    },
+    {
+      "text": "Claim your code",
+      "href": "/claim-reflect-open"
+    },
+    {
+      "text": "@reflectnotes",
+      "href": "https://reflect.app/"
+    },
+    {
+      "text": "Download Reflect Open",
+      "href": "/download"
+    },
+    {
+      "text": "Our discord server",
+      "href": "https://reflect.app/discord"
+    },
+    {
+      "text": "Features",
+      "href": "#features"
+    },
+    {
+      "text": "Downloads",
+      "href": "https://reflect.app/download"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://reflect.app/privacy"
+    },
+    {
+      "text": "Terms and Conditions",
+      "href": "https://reflect.app/terms"
+    }
+  ],
+  "allUnique": [
+    {
+      "text": "Reflect",
+      "href": "/home/"
+    },
+    {
+      "text": "Product",
+      "href": "#connected"
+    },
+    {
+      "text": "Pricing",
+      "href": "#pricing"
+    },
+    {
+      "text": "Company",
+      "href": "#about"
+    },
+    {
+      "text": "Blog",
+      "href": "https://reflect.app/blog"
+    },
+    {
+      "text": "Changelog",
+      "href": "https://github.com/team-reflect/reflect-open/releases"
+    },
+    {
+      "text": "GitHub",
+      "href": "https://github.com/team-reflect/reflect-open"
+    },
+    {
+      "text": "Log in to Classic",
+      "href": "/auth"
+    },
+    {
+      "text": "Download",
+      "href": "/download"
+    },
+    {
+      "text": "Meet Reflect Open",
+      "href": "https://github.com/team-reflect/reflect-open/releases"
+    },
+    {
+      "text": "Download for Mac",
+      "href": "/download"
+    },
+    {
+      "text": "Get the iPhone & iPad app",
+      "href": "https://apps.apple.com/us/app/reflect-open/id6787385615"
+    },
+    {
+      "text": "How privacy works",
+      "href": "https://github.com/team-reflect/reflect-open/blob/master/docs/privacy.md"
+    },
+    {
+      "text": "View on the App Store",
+      "href": "https://apps.apple.com/us/app/reflect-open/id6787385615"
+    },
+    {
+      "text": "Claim your code",
+      "href": "/claim-reflect-open"
+    },
+    {
+      "text": "@reflectnotes",
+      "href": "https://reflect.app/"
+    },
+    {
+      "text": "@maccaw",
+      "href": "https://x.com/maccaw"
+    },
+    {
+      "text": "See our values",
+      "href": "https://reflect.academy/our-values"
+    },
+    {
+      "text": "Take the course",
+      "href": "https://reflect.academy/"
+    },
+    {
+      "text": "Download Reflect Open",
+      "href": "/download"
+    },
+    {
+      "text": "Our discord server",
+      "href": "https://reflect.app/discord"
+    },
+    {
+      "text": "Our X account",
+      "href": "https://x.com/reflectnotes"
+    },
+    {
+      "text": "Features",
+      "href": "#features"
+    },
+    {
+      "text": "Our team",
+      "href": "https://reflect.academy/our-team"
+    },
+    {
+      "text": "Our values",
+      "href": "https://reflect.academy/our-values"
+    },
+    {
+      "text": "Downloads",
+      "href": "https://reflect.app/download"
+    },
+    {
+      "text": "Documentation",
+      "href": "https://reflect.academy"
+    },
+    {
+      "text": "Privacy",
+      "href": "https://github.com/team-reflect/reflect-open/blob/master/docs/privacy.md"
+    },
+    {
+      "text": "Contact",
+      "href": "https://reflect.academy/contact-us"
+    },
+    {
+      "text": "Privacy Policy",
+      "href": "https://reflect.app/privacy"
+    },
+    {
+      "text": "Terms and Conditions",
+      "href": "https://reflect.app/terms"
+    }
+  ],
+  "buttons": [
+    "Play the Reflect launch film",
+    "Click to see magic",
+    "Re-run R",
+    "Insert I",
+    "Copy C",
+    "Replace ⌘↩",
+    "Close video",
+    "Subscribe"
+  ],
+  "download": {
+    "text": "Download for Mac",
+    "tag": "A",
+    "rect": {
+      "x": 534,
+      "y": 393,
+      "w": 153,
+      "h": 36
+    },
+    "color": "rgb(244, 240, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Inter V\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "lineHeight": "20px",
+    "letterSpacing": "normal",
+    "borderRadius": "8px",
+    "borderTopWidth": "0px",
+    "borderTopStyle": "none",
+    "borderTopColor": "rgb(244, 240, 255)",
+    "padding": "8px 16px",
+    "height": "36px",
+    "boxShadow": "none",
+    "textDecoration": "none",
+    "outline": "rgb(244, 240, 255) none 0px",
+    "outlineOffset": "0px"
+  },
+  "login": {
+    "text": "Log in to Classic",
+    "tag": "A",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0
+    },
+    "color": "rgba(255, 255, 255, 0.9)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Inter V\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "borderTopWidth": "0px",
+    "borderTopStyle": "none",
+    "borderTopColor": "rgba(255, 255, 255, 0.9)",
+    "padding": "0px",
+    "height": "auto",
+    "boxShadow": "none",
+    "textDecoration": "none",
+    "outline": "rgba(255, 255, 255, 0.9) none 0px",
+    "outlineOffset": "0px"
+  },
+  "email": {
+    "text": "",
+    "tag": "INPUT",
+    "rect": {
+      "x": 881,
+      "y": 11631,
+      "w": 295,
+      "h": 36
+    },
+    "color": "rgb(244, 240, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Inter V\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "borderTopWidth": "0px",
+    "borderTopStyle": "none",
+    "borderTopColor": "rgb(244, 240, 255)",
+    "padding": "8px 12px",
+    "height": "36px",
+    "boxShadow": "none",
+    "textDecoration": "none",
+    "outline": "rgb(244, 240, 255) none 0px",
+    "outlineOffset": "0px"
+  },
+  "subscribe": {
+    "text": "Subscribe",
+    "tag": "BUTTON",
+    "rect": {
+      "x": 1185,
+      "y": 11630,
+      "w": 99,
+      "h": 38
+    },
+    "color": "rgb(244, 240, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Inter V\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "lineHeight": "20px",
+    "letterSpacing": "normal",
+    "borderRadius": "8px",
+    "borderTopWidth": "0px",
+    "borderTopStyle": "none",
+    "borderTopColor": "rgb(244, 240, 255)",
+    "padding": "8px 16px",
+    "height": "38px",
+    "boxShadow": "none",
+    "textDecoration": "none",
+    "outline": "rgb(244, 240, 255) none 0px",
+    "outlineOffset": "0px"
+  },
+  "bodyText": "Reflect\nProduct\nPricing\nCompany\nBlog\nChangelog\nGitHub\nLog in to Classic\nDownload\nMeet Reflect Open\nThink better with Reflect\n\nAn open-source note-taking app with daily notes, backlinks, and local Markdown files.\n\nDownload for Mac\nGet the iPhone & iPad app\n\nFree on Mac. Paid subscription on iPhone and iPad.\n\nYour choice of sync\nUse iCloud Drive or Git.\nNetworked notes\nForm a graph of ideas with backlinked notes\niOS app\nCapture ideas on the go, online or offline\nLocal files\nKeep your notes in a folder you choose.\nDaily notes\nStart with today's note.\nOpen source\nExplore the code on GitHub.\nInstant capture\nSave web clips and record audio memos.\nFrictionless search\nEasily recall and index past notes and ideas\nOptional AI\nNotes with an AI assistant\n\nFind answers with links to your notes, summarize text, and improve your writing.\nConnect your own API key to get started. Requests go directly to your provider.\nAI usage is billed separately by your provider.\n\nHow to use AI to take better notes\nWhat can AI do, specifically for note-taking?\nClick to see magic\nAsk anything to AI...\nCustom\nAnswer the question I’m asking\nAnswer the question I’m asking\nRe-run\nR\nInsert\nI\nCopy\nC\nReplace\n⌘↩\nWhat can you do with Reflect AI?\nTranscribe voice notes\nwith your transcription provider\nAsk your notes\nAnswers linked to source notes.\nList key takeaways and action\nitems from your meeting notes\nFix grammar, spelling,\nand improve your writing\nSave your own\ncustom prompts\nAll your notes, connected\nGive your brain superpowers\n\nMirror the way your mind works by associating notes through backlinks.\nReflect builds you a second brain that you can reference anytime.\n\nYour thoughts connected. Backlink your notes to make everything easily searchable.\nFrictionless thought capture. Record your ideas and to-do’s "
+}

@@ -1,0 +1,16 @@
+{
+  "color": "rgb(244, 240, 255)",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "boxShadow": "none",
+  "borderRadius": "8px",
+  "fontSize": "14px",
+  "fontWeight": "500",
+  "fontFamily": "\"Inter V\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif",
+  "padding": "8px 16px",
+  "height": "36px",
+  "border": "0px none rgb(244, 240, 255)",
+  "rect": {
+    "w": 153,
+    "h": 36
+  }
+}

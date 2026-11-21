@@ -1,0 +1,163 @@
+{
+  "nav": null,
+  "product": {
+    "text": "Product",
+    "rect": {
+      "x": 506,
+      "y": 34,
+      "w": 52,
+      "h": 20
+    },
+    "color": "rgba(255, 255, 255, 0.9)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Inter V\"",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "border": "0px none rgba(255, 255, 255, 0.9)",
+    "padding": "0px",
+    "boxShadow": "none"
+  },
+  "login": {
+    "text": "Log in to Classic",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0
+    },
+    "color": "rgba(255, 255, 255, 0.9)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Inter V\"",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "border": "0px none rgba(255, 255, 255, 0.9)",
+    "padding": "0px",
+    "boxShadow": "none"
+  },
+  "downloadNav": {
+    "text": "Download",
+    "rect": {
+      "x": 1269,
+      "y": 26,
+      "w": 99,
+      "h": 36
+    },
+    "color": "rgb(244, 240, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Inter V\"",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "lineHeight": "20px",
+    "letterSpacing": "normal",
+    "borderRadius": "8px",
+    "border": "0px none rgb(244, 240, 255)",
+    "padding": "8px 16px",
+    "boxShadow": "none"
+  },
+  "downloadMac": {
+    "text": "Download for Mac",
+    "rect": {
+      "x": 534,
+      "y": 393,
+      "w": 153,
+      "h": 36
+    },
+    "color": "rgb(244, 240, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Inter V\"",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "lineHeight": "20px",
+    "letterSpacing": "normal",
+    "borderRadius": "8px",
+    "border": "0px none rgb(244, 240, 255)",
+    "padding": "8px 16px",
+    "boxShadow": "none"
+  },
+  "iphone": {
+    "text": "Get the iPhone & iPad app",
+    "rect": {
+      "x": 700,
+      "y": 393,
+      "w": 206,
+      "h": 36
+    },
+    "color": "rgb(244, 240, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Inter V\"",
+    "fontSize": "14px",
+    "fontWeight": "500",
+    "lineHeight": "20px",
+    "letterSpacing": "normal",
+    "borderRadius": "8px",
+    "border": "0px none rgb(244, 240, 255)",
+    "padding": "8px 16px",
+    "boxShadow": "none"
+  },
+  "h1": {
+    "text": "Think better with Reflect",
+    "rect": {
+      "x": 0,
+      "y": 221,
+      "w": 1440,
+      "h": 80
+    },
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "AeonikPro",
+    "fontSize": "72px",
+    "fontWeight": "500",
+    "lineHeight": "80px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "border": "0px none rgb(255, 255, 255)",
+    "padding": "0px",
+    "boxShadow": "none"
+  },
+  "sub": {
+    "text": "An open-source note-taking app with daily notes, backlinks, and local ",
+    "rect": {
+      "x": 440,
+      "y": 313,
+      "w": 560,
+      "h": 48
+    },
+    "color": "rgba(239, 237, 253, 0.6)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Inter V\"",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "letterSpacing": "normal",
+    "borderRadius": "0px",
+    "border": "0px none rgba(239, 237, 253, 0.6)",
+    "padding": "0px",
+    "boxShadow": "none"
+  },
+  "pill": {
+    "text": "Meet Reflect Open",
+    "rect": {
+      "x": 633,
+      "y": 173,
+      "w": 175,
+      "h": 32
+    },
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Inter V\"",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "letterSpacing": "normal",
+    "borderRadius": "32px",
+    "border": "0px none rgb(255, 255, 255)",
+    "padding": "4px 13px 4px 8px",
+    "boxShadow": "rgba(164, 143, 255, 0.12) 0px -7px 11px 0px inset"
+  }
+}

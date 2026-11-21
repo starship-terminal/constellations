@@ -1,0 +1,22 @@
+[
+  {
+    "tag": "A",
+    "aria": "Product",
+    "text": "",
+    "x": 390,
+    "y": 78,
+    "w": 390,
+    "h": 72,
+    "cls": "header-nav-link"
+  },
+  {
+    "tag": "BUTTON",
+    "aria": "Close video",
+    "text": "",
+    "x": 342,
+    "y": 95,
+    "w": 30,
+    "h": 30,
+    "cls": "hero-video-modal-toggle"
+  }
+]
