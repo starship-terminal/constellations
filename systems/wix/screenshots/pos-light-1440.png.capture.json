@@ -1,0 +1,26 @@
+{
+  "name": "pos-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/pos",
+  "rawUrlHost": "www.wix.com",
+  "title": "Point of Sale | Complete POS solution for business | Wix POS",
+  "h1": [
+    "One omnichannel point of sale solution"
+  ],
+  "inputs": [],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:49:54.992Z"
+}

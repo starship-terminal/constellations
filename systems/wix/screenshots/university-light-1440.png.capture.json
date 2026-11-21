@@ -1,0 +1,26 @@
+{
+  "name": "university-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/university",
+  "rawUrlHost": "www.wix.com",
+  "title": "Wix University | Empowering Students & Faculty",
+  "h1": [
+    "Empower through Education & Community"
+  ],
+  "inputs": [],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:50:04.477Z"
+}

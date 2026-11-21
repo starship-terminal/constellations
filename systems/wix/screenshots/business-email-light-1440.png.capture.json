@@ -1,0 +1,39 @@
+{
+  "name": "business-email-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/domains/business-email",
+  "rawUrlHost": "www.wix.com",
+  "title": "Professional Business Email Address | Custom Email Domain",
+  "h1": [
+    "Create a professional business email address"
+  ],
+  "inputs": [
+    {
+      "type": "search",
+      "name": "type-the domain you want",
+      "placeholder": "Type the domain you want",
+      "valueLength": 0
+    },
+    {
+      "type": "search",
+      "name": "type-the domain you want",
+      "placeholder": "Type the domain you want",
+      "valueLength": 0
+    }
+  ],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:49:49.479Z"
+}

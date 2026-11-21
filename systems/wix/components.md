@@ -1,5 +1,24 @@
 # Components
 
+Public marketing controls. The November 2026 walk is [site-tree.md](site-tree.md). Crops were not cut. The screenshots that show each control are linked.
+
+| Component | State | Where |
+|---|---|---|
+| Wordmark | default | [home-light-1440](screenshots/home-light-1440.png) |
+| Nav menu | closed | Same shot. Product, Solutions, and Resources are buttons |
+| Pricing link | default | Same shot. Madefor-Display 16px, black |
+| Log In | default | Same shot. 1px black border, radius 42px |
+| Start for free | default | Same shot. Fill `#166aea`, white type, radius 42px, height 40px |
+| Hero heading | default | Same shot. wix-madefor-display-v2 82.5px, weight 400, black |
+| Get Started | default | Same shot. Black pill, radius 50px, white 20px label |
+| Email field | empty, focused | [login-empty-light-1440](screenshots/login-empty-light-1440.png). Value length 0. Wrapper radius 6px |
+| Continue with Email | default | Same shot. Fill `#2f5dff`. Not clicked |
+| Continue with Google | default | Same shot. White fill, 1px black border. Not clicked |
+| Signup email | empty | [signup-empty-light-1440](screenshots/signup-empty-light-1440.png). Value length 0 |
+| Phone header | default | [home-light-390](screenshots/home-light-390.png) |
+
+Hover, pressed, loading, and error were not forced. No form was submitted.
+
 Measured on signed-out pages on 2026-11-18. No component crop exists: the preview browser returned "The browser is not producing screenshot frames" on both snapshot attempts.
 
 | Component | Where | What was read |

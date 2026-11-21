@@ -1,0 +1,26 @@
+{
+  "name": "app-builder-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/app-builder",
+  "rawUrlHost": "www.wix.com",
+  "title": "App Builder | Create an App for Android & iOS | Wix.com",
+  "h1": [
+    "Grow your business with an app builder. No code needed."
+  ],
+  "inputs": [],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:49:32.228Z"
+}

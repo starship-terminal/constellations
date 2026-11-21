@@ -1,0 +1,74 @@
+{
+  "loginExtracted": "not-started",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "captchaSolved": false,
+  "editorStarted": false,
+  "siteCreated": false,
+  "catalogJson": "left alone",
+  "webappsManifest": "left alone",
+  "capturedAt": "2026-11-22",
+  "walls": [
+    {
+      "control": "header Log In",
+      "url": "https://users.wix.com/signin",
+      "title": "Log In to Your Wix Account - Wix.com",
+      "painted": true,
+      "headings": ["Log in"],
+      "asksFor": [
+        {
+          "label": "Email",
+          "type": "text",
+          "accessibleName": "Signup or login with email",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": [
+        "Continue with Google",
+        "Continue with Facebook",
+        "Continue with Apple"
+      ],
+      "otherControls": [
+        "Sign Up",
+        "Forgot Email?",
+        "Continue with Email",
+        "More Login Options",
+        "Terms of Use",
+        "Privacy Policy"
+      ],
+      "stopped": true,
+      "screenshot": "screenshots/login-empty-light-1440.png",
+      "note": "Empty login wall. The email field was empty. Continue with Email was not clicked. Google, Facebook, and Apple were not clicked. Forgot Email was not opened. reCAPTCHA Enterprise and hCaptcha loaded and were not solved."
+    },
+    {
+      "control": "header Start for free",
+      "url": "https://users.wix.com/signin/signup/password",
+      "title": "Log In to Your Wix Account - Wix.com",
+      "painted": true,
+      "headings": ["Sign up"],
+      "asksFor": [
+        {
+          "label": "Email",
+          "type": "email",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": [
+        "Continue with Google",
+        "Continue with Facebook",
+        "Continue with Apple"
+      ],
+      "otherControls": ["Log In", "Continue with Email", "Terms of Use", "Privacy Policy"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-empty-light-1440.png",
+      "note": "Empty signup wall. The email field was empty. Continue with Email was not clicked. Google, Facebook, and Apple were not clicked. No site was created."
+    }
+  ],
+  "notOpened": [
+    "Google, Facebook, Apple, Continue with Email, More Login Options, and Forgot Email were not clicked.",
+    "Contact Us, Report Abuse, WHOIS, and domain search were not submitted.",
+    "Help Center, System Status, Investor Relations, and Careers were not opened.",
+    "The editor was not started."
+  ]
+}

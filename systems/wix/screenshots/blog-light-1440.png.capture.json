@@ -1,0 +1,26 @@
+{
+  "name": "blog-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/blog",
+  "rawUrlHost": "www.wix.com",
+  "title": "Wix Blog | Web Design & Small Business Tips to Promote Your Site",
+  "h1": [
+    "How to create a website from scratch in 10 steps (for beginners)"
+  ],
+  "inputs": [],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:50:06.788Z"
+}

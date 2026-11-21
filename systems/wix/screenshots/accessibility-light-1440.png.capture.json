@@ -1,0 +1,26 @@
+{
+  "name": "accessibility-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/accessibility",
+  "rawUrlHost": "www.wix.com",
+  "title": "Web Accessibility - Make Your Wix Website Accessible - Wix.com",
+  "h1": [
+    "Make Your Website a Place for Everyone"
+  ],
+  "inputs": [],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:50:23.809Z"
+}

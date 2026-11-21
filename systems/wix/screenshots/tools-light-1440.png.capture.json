@@ -1,0 +1,26 @@
+{
+  "name": "tools-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/tools",
+  "rawUrlHost": "www.wix.com",
+  "title": "Free tools | Discover online business tools | Wix.com",
+  "h1": [
+    "Grow your brand with free business tools"
+  ],
+  "inputs": [],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:49:52.655Z"
+}

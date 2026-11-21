@@ -1,0 +1,39 @@
+{
+  "name": "name-generator-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/tools/business-name-generator",
+  "rawUrlHost": "www.wix.com",
+  "title": "Free Business Name Generator | AI-Powered Brand Name Ideas",
+  "h1": [
+    "Business Name Generator"
+  ],
+  "inputs": [
+    {
+      "type": "textarea",
+      "name": "textarea_comp-mmj4r8oh6",
+      "placeholder": "e.g. I own a small catering company… ",
+      "valueLength": 0
+    },
+    {
+      "type": "text",
+      "name": "type-the domain you want",
+      "placeholder": "Type the domain you want",
+      "valueLength": 0
+    }
+  ],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:51:09.947Z"
+}

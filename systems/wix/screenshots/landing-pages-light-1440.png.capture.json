@@ -1,0 +1,33 @@
+{
+  "name": "landing-pages-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/landing-page-builder",
+  "rawUrlHost": "www.wix.com",
+  "title": "Free Landing Page Builder | Create a Landing Page | Wix.com",
+  "h1": [
+    "Go live fast on a free landing page builder"
+  ],
+  "inputs": [
+    {
+      "type": "text",
+      "name": "type-the domain you want",
+      "placeholder": "Type the domain you want",
+      "valueLength": 0
+    }
+  ],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:49:18.275Z"
+}

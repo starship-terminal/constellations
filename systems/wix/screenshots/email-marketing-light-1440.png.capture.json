@@ -1,0 +1,26 @@
+{
+  "name": "email-marketing-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/features/email-marketing",
+  "rawUrlHost": "www.wix.com",
+  "title": "Free Email Marketing Tool | Wix.com",
+  "h1": [
+    "Create professional email marketing campaigns"
+  ],
+  "inputs": [],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:51:02.358Z"
+}

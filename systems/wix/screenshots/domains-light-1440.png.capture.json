@@ -1,0 +1,45 @@
+{
+  "name": "domains-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/domains",
+  "rawUrlHost": "www.wix.com",
+  "title": "Buy a Domain Name - Easy Domain Registration | Wix.com",
+  "h1": [
+    "Domain registration done right. Buy the perfect domain name."
+  ],
+  "inputs": [
+    {
+      "type": "search",
+      "name": "type-the domain you want",
+      "placeholder": "Type the domain you want",
+      "valueLength": 0
+    },
+    {
+      "type": "search",
+      "name": "type-the domain you want",
+      "placeholder": "Type the domain you want",
+      "valueLength": 0
+    },
+    {
+      "type": "search",
+      "name": "type-the domain you want",
+      "placeholder": "Type the domain you want",
+      "valueLength": 0
+    }
+  ],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:49:20.849Z"
+}

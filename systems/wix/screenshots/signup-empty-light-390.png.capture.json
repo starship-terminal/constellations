@@ -1,0 +1,39 @@
+{
+  "name": "signup-empty-light-390",
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "url": "https://users.wix.com/signin/signup/password",
+  "rawUrlHost": "users.wix.com",
+  "title": "Log In to Your Wix Account - Wix.com",
+  "h1": [
+    "Sign up"
+  ],
+  "inputs": [
+    {
+      "type": "email",
+      "name": "labelled-element-a8204b0d-1c54-918a-9c7f",
+      "placeholder": "",
+      "valueLength": 0
+    },
+    {
+      "type": "textarea",
+      "name": "g-recaptcha-response",
+      "placeholder": "",
+      "valueLength": 0
+    }
+  ],
+  "metrics": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "vv": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:51:35.740Z"
+}

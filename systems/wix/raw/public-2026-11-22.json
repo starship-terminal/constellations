@@ -1,0 +1,130 @@
+{
+  "page": "https://www.wix.com/",
+  "capturedAt": "2026-11-22",
+  "method": "getComputedStyle in an incognito preview tab at 1440 by 900. Menus were opened with a click and closed. Nothing was typed.",
+  "colorScheme": "normal",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 2,
+  "pageFillToken": {
+    "name": "--wst-color-fill-background-primary",
+    "value": "rgb(255,255,255)"
+  },
+  "body": {
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Arial, Helvetica, sans-serif",
+    "fontSize": "10px"
+  },
+  "header": {
+    "height": 72,
+    "backgroundColor": "rgba(0, 0, 0, 0)"
+  },
+  "hero": {
+    "text": "Create your future on the leading website builder",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "wix-madefor-display-v2, sans-serif",
+    "fontSize": "82.5px",
+    "fontWeight": "400",
+    "lineHeight": "99.0001px",
+    "letterSpacing": "-1.65px"
+  },
+  "navLink": {
+    "sample": "Pricing",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "Madefor-Display",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "padding": "0px 12px",
+    "height": 71
+  },
+  "login": {
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Madefor-Text",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "border": "1px solid rgb(0, 0, 0)",
+    "borderRadius": "42px",
+    "height": 20,
+    "note": "The visible Log In link in the 72px bar. A second Log In node in the closed menu computed height 0."
+  },
+  "startForFree": {
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(22, 106, 234)",
+    "fontFamily": "Madefor-Display",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "padding": "8px 30px",
+    "borderRadius": "42px",
+    "height": 40
+  },
+  "getStarted": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "borderRadius": "50px",
+    "height": 54,
+    "labelColor": "rgb(255, 255, 255)",
+    "labelFontFamily": "madefor-text-mediumbold, helveticaneuew01-45ligh, helveticaneuew02-45ligh, helveticaneuew10-45ligh, sans-serif",
+    "labelFontSize": "20px",
+    "labelFontWeight": "400",
+    "note": "The anchor's own computed color is black and its font-size is 10px. The visible label is the child span."
+  },
+  "namedRoles": {
+    "--wst-color-text-primary": "rgb(0,0,0)",
+    "--wst-color-text-secondary": "rgb(110,110,110)",
+    "--wst-color-title": "rgb(0,0,0)",
+    "--wst-color-subtitle": "rgb(110,110,110)",
+    "--wst-color-action": "rgb(26,106,255)",
+    "--wst-color-disabled": "rgb(194,194,194)",
+    "--wst-color-fill-background-primary": "rgb(255,255,255)",
+    "--wst-color-fill-background-secondary": "rgb(240,240,240)",
+    "--wst-color-fill-base-1": "rgb(255,255,255)",
+    "--wst-color-fill-base-2": "rgb(0,0,0)",
+    "--wst-color-fill-base-shade-1": "rgb(240,240,240)",
+    "--wst-color-fill-base-shade-2": "rgb(194,194,194)",
+    "--wst-color-fill-base-shade-3": "rgb(110,110,110)",
+    "--wst-button-color-fill-primary": "rgb(26,106,255)",
+    "--wst-button-color-text-primary": "rgb(255,255,255)",
+    "--wst-button-color-fill-secondary": "rgb(255,255,255)",
+    "--wst-button-color-text-secondary": "rgb(26,106,255)"
+  },
+  "loginWall": {
+    "url": "https://users.wix.com/signin",
+    "title": "Log In to Your Wix Account - Wix.com",
+    "heading": "Log in",
+    "headingColor": "rgb(0, 6, 36)",
+    "headingFont": "Madefor Display",
+    "headingSize": "36px",
+    "headingWeight": "500",
+    "email": {
+      "accessibleName": "Signup or login with email",
+      "valueLength": 0,
+      "color": "rgb(0, 6, 36)",
+      "fontSize": "18px",
+      "wrapperBorder": "2px solid rgb(15, 98, 230)",
+      "wrapperRadius": "6px",
+      "wrapperHeight": 52,
+      "note": "The 2px border is the focused state. The field was not filled."
+    },
+    "continueWithEmail": {
+      "backgroundColor": "rgb(47, 93, 255)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "14px",
+      "fontWeight": "530",
+      "padding": "9px 30px",
+      "borderRadius": "6px",
+      "height": 43,
+      "clicked": false
+    },
+    "google": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(0, 0, 0)",
+      "labelColor": "rgb(0, 6, 36)",
+      "labelFontSize": "14px",
+      "labelFontWeight": "500",
+      "clicked": false
+    }
+  }
+}

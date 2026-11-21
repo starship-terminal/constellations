@@ -1,0 +1,26 @@
+{
+  "name": "marketplace-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://www.wix.com/marketplace",
+  "rawUrlHost": "www.wix.com",
+  "title": "Find Expert Services and Digital Assets | Wix Marketplace",
+  "h1": [
+    "Find expert skills in a global Marketplace"
+  ],
+  "inputs": [],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:50:26.215Z"
+}
