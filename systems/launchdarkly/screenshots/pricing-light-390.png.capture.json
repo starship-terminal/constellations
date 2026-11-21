@@ -1,0 +1,26 @@
+{
+  "captured": "2026-11-22",
+  "name": "pricing-light-390",
+  "url": "https://launchdarkly.com/pricing/",
+  "requestedUrl": "https://launchdarkly.com/pricing/",
+  "title": "LaunchDarkly Pricing | Compare Plans & Features",
+  "h1": "Pricing for every stage.",
+  "viewport": {
+    "iw": 390,
+    "ih": 844,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "colorScheme": "normal",
+  "bodyBg": "rgb(25, 25, 25)",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}

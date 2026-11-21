@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-22",
+  "name": "signup-light-1440",
+  "url": "https://app.launchdarkly.com/signup",
+  "requestedUrl": "https://app.launchdarkly.com/signup",
+  "title": "Create Your Free Account | LaunchDarkly",
+  "h1": "Create your free account",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "note": "Empty signup wall. Nothing typed. Form not submitted. Google and GitHub not clicked. Captcha not solved.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

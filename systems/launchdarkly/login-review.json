@@ -1,0 +1,109 @@
+{
+  "product": "LaunchDarkly",
+  "domain": "launchdarkly.com",
+  "reviewedAt": "2026-11-22",
+  "method": "Headless Chromium, signed out. Desktop 1440x900 CSS pixels and phone 390x844 CSS pixels, device pixel ratio 2. Login was opened and discarded because the painted URL carried a redirect query. Signup was opened empty and kept.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Sign in and https://app.launchdarkly.com/",
+      "url": "https://app.launchdarkly.com/",
+      "paintedUrlHost": "app.launchdarkly.com",
+      "paintedUrlPath": "/login",
+      "paintedUrlQuery": "redirect=%2F",
+      "title": "Sign in",
+      "painted": true,
+      "headings": ["Sign in"],
+      "asksFor": [
+        {
+          "label": "Email",
+          "type": "text",
+          "name": "username",
+          "valueLength": 0
+        },
+        {
+          "label": "Password",
+          "type": "password",
+          "name": "password",
+          "valueLength": 0
+        },
+        {
+          "label": "Remember me",
+          "type": "checkbox",
+          "name": "rememberMe",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": ["GitHub"],
+      "otherControls": ["Continue", "Forgot your password?", "Sign up"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Empty login wall. Continue was not clicked. GitHub was not clicked. The painted URL carries a redirect query, so the screenshot was discarded."
+    },
+    {
+      "control": "https://app.launchdarkly.com/signup",
+      "url": "https://app.launchdarkly.com/signup",
+      "paintedUrlHost": "app.launchdarkly.com",
+      "paintedUrlPath": "/signup",
+      "title": "Create Your Free Account | LaunchDarkly",
+      "painted": true,
+      "headings": [
+        "Create your free account",
+        "Try the whole platform. Keep what's free forever."
+      ],
+      "asksFor": [
+        {
+          "label": "First name",
+          "type": "text",
+          "name": "firstName",
+          "valueLength": 0
+        },
+        {
+          "label": "Last name",
+          "type": "text",
+          "name": "lastName",
+          "valueLength": 0
+        },
+        {
+          "label": "Email",
+          "type": "email",
+          "name": "username",
+          "valueLength": 0
+        },
+        {
+          "label": "Password",
+          "type": "password",
+          "name": "password",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": ["Google", "GitHub"],
+      "otherControls": ["Start 14-Day Trial", "Enterprise Demo", "Start my 14-day trial now", "Sign in"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-1440.png",
+      "note": "Empty signup wall. Nothing was typed. The form was not submitted. Google and GitHub were not clicked. A captcha field was present and was not solved."
+    }
+  ],
+  "notOpened": [
+    "Continue on the login wall was not clicked.",
+    "Google and GitHub were not clicked.",
+    "Start my 14-day trial now was not clicked.",
+    "Enterprise Demo was not clicked.",
+    "Get started free, Pay as you go, and Get Enterprise trial on pricing were not clicked.",
+    "Book a demo was not submitted.",
+    "Contact Us was not submitted.",
+    "Subscribe to Updates on the status page was not clicked.",
+    "The homepage email field was left empty.",
+    "Support stayed on a Cloudflare verification page. The captcha was not solved.",
+    "Academy returned an error page and was not kept.",
+    "Trust Center did not paint and was not kept.",
+    "Social profiles and YouTube were not followed.",
+    "Cookie OK and Deny all were not clicked. The banner was hidden with CSS."
+  ]
+}
