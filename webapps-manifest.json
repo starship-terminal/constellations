@@ -538,9 +538,9 @@
       "description": "Product research so simple, you'll never skip it again",
       "status": "captured",
       "package": "systems/ballpark",
-      "notes": "https://ballparkhq.com/sign-in asks for email and password, or Google or SSO. No code was sent.",
+      "notes": "https://ballparkhq.com/sign-in asks for email and password, or Google or SSO. No code was sent. Public walk 2026-11-21: Platform hover opens a feature mega menu and also links to /features. Solutions hover opens a teams and roles flyout and does not navigate. Templates, Pricing, and Book a demo are public pages. The phone menu button opens a full sheet. Sign in, SSO, and forgot password are walls and were not submitted. Sign up redirects to the sales page. Intercom, careers, help, trust, status, and social links were not followed. Google and SSO were not clicked. No email was typed. No form was submitted. No dark theme. Signed-in app was not captured. Public package refresh in PR 1622 at bcc67c1962af. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 2
     },
     {
