@@ -1,0 +1,75 @@
+{
+  "name": "brain-search-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://clickup.com/brain/enterprise-search",
+  "rawUrlHost": "clickup.com",
+  "title": "Enterprise AI Search Software: All Your Work, One Search Away",
+  "h1": [
+    "Your entire company, one search away."
+  ],
+  "inputs": [
+    {
+      "type": "checkbox",
+      "name": "ot-group-id-C0002",
+      "placeholder": "",
+      "valueLength": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "ot-group-id-C0003",
+      "placeholder": "",
+      "valueLength": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "ot-group-id-C0004",
+      "placeholder": "",
+      "valueLength": 2
+    },
+    {
+      "type": "text",
+      "name": "vendor-search-handler",
+      "placeholder": "Search…",
+      "valueLength": 0
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 2
+    },
+    {
+      "type": "checkbox",
+      "name": "",
+      "placeholder": "",
+      "valueLength": 2
+    }
+  ],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:39:46.815Z"
+}

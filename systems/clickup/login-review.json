@@ -1,0 +1,80 @@
+{
+  "product": "ClickUp",
+  "domain": "clickup.com",
+  "reviewedAt": "2026-11-22",
+  "method": "Incognito preview tab, then headless Chromium. Desktop 1440x900 CSS pixels and phone 390x844 CSS pixels, device pixel ratio 2. Query strings were not recorded.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Login",
+      "url": "https://app.clickup.com/login",
+      "title": "Login",
+      "painted": true,
+      "headings": ["Welcome back!"],
+      "asksFor": [
+        {
+          "label": "Work email",
+          "type": "email",
+          "placeholder": "Work email",
+          "valueLength": 0
+        },
+        {
+          "label": "Password",
+          "type": "password",
+          "placeholder": "Password",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": ["Continue with Google", "Continue with SSO"],
+      "otherControls": ["Sign up", "Show", "Log In", "Forgot Password?", "Need help?"],
+      "stopped": true,
+      "screenshot": "screenshots/login-empty-light-1440.png",
+      "note": "Empty login wall. Both fields were empty. Log In was disabled. Google and SSO were not clicked. Forgot Password was not opened."
+    },
+    {
+      "control": "header Sign Up",
+      "url": "https://app.clickup.com/signup",
+      "title": "Signup",
+      "painted": true,
+      "headings": ["Seconds to sign up!"],
+      "asksFor": [
+        {
+          "label": "Full name",
+          "type": "username",
+          "placeholder": "Full name",
+          "valueLength": 0
+        },
+        {
+          "label": "Work email",
+          "type": "email",
+          "placeholder": "Work email",
+          "valueLength": 0
+        },
+        {
+          "label": "Password",
+          "type": "password",
+          "placeholder": "Password",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": ["Continue with Google"],
+      "otherControls": ["Sign in", "Show", "Sign up with Email", "Terms of Service", "Privacy Policy", "Need help"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-empty-light-1440.png",
+      "note": "Empty signup wall. All three fields were empty. Sign up with Email was disabled. Google was not clicked. A recaptcha script loaded and was not solved."
+    }
+  ],
+  "notOpened": [
+    "Google, SSO, Log In, Sign up with Email, Show, and Forgot Password were not clicked.",
+    "Get a Demo and Contact Sales were not submitted.",
+    "Cookie Preferences was not opened.",
+    "Help Center, University, Developer API, Status, and app stores were not opened.",
+    "No workspace was created."
+  ]
+}

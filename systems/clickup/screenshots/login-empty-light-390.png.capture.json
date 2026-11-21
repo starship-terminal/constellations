@@ -1,0 +1,37 @@
+{
+  "name": "login-empty-light-390",
+  "requested": {
+    "width": 390,
+    "height": 844
+  },
+  "url": "https://app.clickup.com/login",
+  "rawUrlHost": "app.clickup.com",
+  "title": "Login",
+  "h1": [],
+  "inputs": [
+    {
+      "type": "email",
+      "name": "",
+      "placeholder": "Work email",
+      "valueLength": 0
+    },
+    {
+      "type": "password",
+      "name": "",
+      "placeholder": "Password",
+      "valueLength": 0
+    }
+  ],
+  "metrics": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "vv": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:43:02.144Z"
+}

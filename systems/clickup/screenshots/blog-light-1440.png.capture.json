@@ -1,0 +1,75 @@
+{
+  "name": "blog-light-1440",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "url": "https://clickup.com/blog/",
+  "rawUrlHost": "clickup.com",
+  "title": "ClickUp",
+  "h1": [
+    "Project management tips & trends, delivered."
+  ],
+  "inputs": [
+    {
+      "type": "text",
+      "name": "s",
+      "placeholder": "Search",
+      "valueLength": 0
+    },
+    {
+      "type": "text",
+      "name": "s",
+      "placeholder": "Search",
+      "valueLength": 0
+    },
+    {
+      "type": "text",
+      "name": "s",
+      "placeholder": "Search",
+      "valueLength": 0
+    },
+    {
+      "type": "email",
+      "name": "newsletter-signup-email",
+      "placeholder": "Enter email",
+      "valueLength": 0
+    },
+    {
+      "type": "email",
+      "name": "newsletter-signup-email",
+      "placeholder": "Enter your email address",
+      "valueLength": 0
+    },
+    {
+      "type": "email",
+      "name": "newsletter-signup-email",
+      "placeholder": "Enter your email address",
+      "valueLength": 0
+    },
+    {
+      "type": "email",
+      "name": "newsletter-signup-email",
+      "placeholder": "Enter your email address",
+      "valueLength": 0
+    },
+    {
+      "type": "checkbox",
+      "name": "ot-group-id-C0002",
+      "placeholder": "",
+      "valueLength": 2
+    }
+  ],
+  "metrics": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "discarded": null,
+  "capturedAt": "2026-11-21T18:41:42.474Z"
+}
