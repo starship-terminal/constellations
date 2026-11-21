@@ -15,7 +15,9 @@ Surfaces: home, pricing, login, register, and password reset. Theme: light. Widt
 | [patterns.md](patterns.md) | The captured pages |
 | [components/](components/) | Control crops |
 | [icons/](icons/) | Header wordmark SVG |
-| [screenshots/](screenshots/) | Page screenshots at 1440 and 390 |
+| [screenshots/](screenshots/) | Page screenshots at 1440 and 390, including the 2026-11-22 public tree |
+| [site-tree.md](site-tree.md) | Header, footer, and the public pages those controls open. Mapped 2026-11-22 |
+| [login-review.json](login-review.json) | Empty login and signup walls. `login-extracted` is not-started |
 | [raw/](raw/) | Capture notes |
 | [tools/](tools/) | The kit copy and a token checker |
 
@@ -115,7 +117,8 @@ Body is Inter 18pt, then Roboto and a system stack. Headings are Poppins. Both a
 | Login and register | Captured as surfaces. Not submitted |
 | Password reset | Screenshotted. Not submitted |
 | Pricing | Captured. Buy and Get the deal were not followed |
-| Directory | Loaded, not kept. Other people's names and photos |
+| Directory | Captured 2026-11-22 as a public page. [public-directory-desktop.png](screenshots/public-directory-desktop.png). Provider cards were not opened |
+| Public site tree | Captured 2026-11-22. [site-tree.md](site-tree.md) |
 | Signed-in app | Not captured. Calendar OAuth was not connected |
 | Checkout | Not captured. No card was entered |
 | Motion | Buttons transition colour, background, border, and shadow over 0.15s ease-in-out. Fields transition border and shadow over 0.15s. The sheet removes those field transitions under `prefers-reduced-motion: reduce`. A full motion probe was not run |

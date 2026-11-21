@@ -10,6 +10,6 @@ Public pages, light theme. Desktop shots are 1440 by 900 CSS pixels at device pi
 | Register | [register-light-default.png](screenshots/register-light-default.png). Same card. Name, email, password, reCAPTCHA note. Not filled. [mobile-register-light-default.png](screenshots/mobile-register-light-default.png) |
 | Password reset | [forgot-light-default.png](screenshots/forgot-light-default.png). AppSumo family chrome, email field, blue submit. Not submitted. [mobile-forgot-light-default.png](screenshots/mobile-forgot-light-default.png) |
 
-The directory at `/directory` loaded and was not kept. It lists other people's names and profile pictures.
+The 2026-11-22 pass mapped the header and footer and photographed the public pages they open. The map is [site-tree.md](site-tree.md). Shots from that pass use the `public-` prefix, plus [login-wall-desktop.png](screenshots/login-wall-desktop.png) and [signup-wall-desktop.png](screenshots/signup-wall-desktop.png). The directory lists public provider names and photos. Those are the public directory, not an account chrome. Individual booking URLs were not opened.
 
-The signed-in scheduler, calendar connection, and checkout were not opened.
+The signed-in scheduler, calendar connection, checkout, and subscribe were not opened.
