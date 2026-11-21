@@ -38,7 +38,8 @@ CTA, followed by hairline-separated 60px FAQ accordions
 ## Docs
 
 The docs chrome swaps the marketing header for a search bar
-("Search documentation ⌘K" — a button, never opened), a 195px sidebar of 32px
+("Search documentation ⌘K"). Opening it mounts a dialog; a query was typed and cleared, never submitted
+([docs-dark-search](screenshots/docs-dark-search.png)). A 195px sidebar of 32px
 nav rows with the current item muted-filled ([docs-nav-active](components/crops/docs-nav-active-default.png)),
 and prose with `--code-*` syntax colours on a darker `--editor-bg` block
 ([code-block](components/crops/code-block-default.png),
@@ -57,6 +58,6 @@ The public `/sign-in` card ([signin-card](components/crops/signin-card-default.p
 [sign-in-dark-default](screenshots/sign-in-dark-default.png)) is the densest
 form on the site: OAuth provider rows (wide GitHub + square GitLab/Bitbucket
 icon buttons), Google and passkey buttons, then labelled 36px fields
-(email typed into and cleared; password only focused) with an inline
+(fields focused with `element.focus()`, never typed into) with an inline
 show-password toggle, a forgot-password link and the full-width Login.
-It is a real form — measured in every state except submitted.
+It is a real form. Nothing was typed, clicked through, or submitted.

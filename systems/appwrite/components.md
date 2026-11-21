@@ -1,8 +1,8 @@
 # Appwrite components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from appwrite.io on 2026-11-10, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from appwrite.io on 2026-11-21, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (60 components, 162 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (60 components, 161 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
@@ -45,7 +45,7 @@ Screenshots are named `{page}-dark-{state}.png`: the marketing site pins the dar
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 34 components were given a real keyboard focus. 16 draw an outline ring: `banner-dismiss` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `nav-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `nav-menu-button` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `nav-github` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `framework-icon` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `compare-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `docs-search` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `docs-prose-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `author-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `blog-search` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `category-chip` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `forgot-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `tos-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `m-menu-button` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `footer-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `footer-social` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px). 17 draw a focus ring as a shadow instead: `signin-button`, `signup-button`, `announcement-pill`, `cta-primary`, `cta-secondary`, `product-card`, `plan-cta`, `plan-cta-contact`, `faq-question`, `docs-nav-link`, `oauth-button`, `oauth-icon-button`, `google-button`, `passkey-button`, `show-password`, `login-button`, `m-cta-primary`. The other 1 show no measured change: `skip-link`.
+**Focus.** 34 components were given a real keyboard focus. 17 draw an outline ring: `banner-dismiss` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `nav-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `nav-menu-button` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `nav-github` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `framework-icon` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `faq-question` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `compare-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `docs-search` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `docs-prose-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `author-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `blog-search` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `category-chip` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `forgot-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `tos-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `m-menu-button` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `footer-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `footer-social` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px). 16 draw a focus ring as a shadow instead: `signin-button`, `signup-button`, `announcement-pill`, `cta-primary`, `cta-secondary`, `product-card`, `plan-cta`, `plan-cta-contact`, `docs-nav-link`, `oauth-button`, `oauth-icon-button`, `google-button`, `passkey-button`, `show-password`, `login-button`, `m-cta-primary`. The other 1 show no measured change: `skip-link`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): controls deepen their fill or dim rather than scale; the nav flyout and framework icons keep their hover scale. Nothing a real press would submit was ever pressed.
 
@@ -77,21 +77,12 @@ The fixed dark bar over every marketing page and the strip above it.
 #### Announcement banner
 The strip above the header carrying the current announcement and a dismiss button. Read as `banner` on the marketing home page.
 
-**Values (default).** size 1440 x 57; border B: 1px solid #2d2d31; background transparent; image linear-gradient(90deg, #0d0d10 0%, #1c191e 34%, #2b252b 100%); text -apple-system 10/15 500, #ffb3d9; icon 20 x 20, lab(98.26 0 0).
-
-![Announcement banner default](components/crops/banner-default.png)
+Not on the page when it was captured.
 
 #### Banner dismiss button
 Read as `banner-dismiss` on the marketing home page.
 
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 32 x 32; radius 8px; background transparent; text -apple-system 16/24 400, #a8a8b3; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #a8a8b3 |
-| hover | background oklab(0.999994 0.0000455678 0.0000200868 / 0.05); text -apple-system 16/24 400, #fafafa `color.neutral.50`; icon 16 x 16, #fafafa `color.neutral.50` |
-| focus-visible | outline 1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px |
-| pressed | background oklab(0.999994 0.0000455678 0.0000200868 / 0.05); text -apple-system 16/24 400, #fafafa `color.neutral.50`; icon 16 x 16, #fafafa `color.neutral.50` |
-
-![Banner dismiss button default](components/crops/banner-dismiss-default.png) ![Banner dismiss button hover](components/crops/banner-dismiss-hover.png) ![Banner dismiss button focus-visible](components/crops/banner-dismiss-focus-visible.png) ![Banner dismiss button pressed](components/crops/banner-dismiss-pressed.png)
+Not on the page when it was captured.
 
 #### Top bar
 The fixed glass bar over every marketing page: logo, Products/Solutions flyout buttons, section links, GitHub stars, Sign in/up. Read as `header` on the marketing home page.
@@ -143,7 +134,7 @@ The star-count link to the repo. Read as `nav-github` on the marketing home page
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 76.83 x 36; padding 0px 10px; radius 8px; background transparent; text -apple-system 13/19.5 500, lab(65.6464 1.53497 -5.42429); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(65.6464 1.53497 -5.42429) |
+| default | size 79.05 x 36; padding 0px 10px; radius 8px; background transparent; text -apple-system 13/19.5 500, lab(65.6464 1.53497 -5.42429); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(65.6464 1.53497 -5.42429) |
 | hover | background #2d2d31; text -apple-system 13/19.5 500, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
 | focus-visible | background #2d2d31; outline 1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px; text -apple-system 13/19.5 500, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
 | pressed | background #2d2d31; text -apple-system 13/19.5 500, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
@@ -311,15 +302,19 @@ Read as `faq-question` on the pricing page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 720.69 x 60; padding 20px 0px; radius 8px; background transparent; text -apple-system 14/20 500, lab(98.26 0 0); transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(65.6464 1.53497 -5.42429) |
-| focus-visible | shadow oklab(0.447998 0.00407566 -0.0144229 / 0.5) 0px 0px 0px 3px |
+| default | size 32 x 32; radius 8px; background transparent; text -apple-system 16/24 400, lab(65.6464 1.53497 -5.42429); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | background #2d2d31; text -apple-system 16/24 400, lab(98.26 0 0) |
+| focus-visible | outline 1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px |
+| pressed | background #2d2d31; text -apple-system 16/24 400, lab(98.26 0 0) |
+
+Child layers that carry the look: span 16x16 background lab(65.6464 1.53497 -5.42429).
 
 ![FAQ accordion button default](components/crops/faq-question-default.png) ![FAQ accordion button hover](components/crops/faq-question-hover.png) ![FAQ accordion button focus-visible](components/crops/faq-question-focus-visible.png) ![FAQ accordion button pressed](components/crops/faq-question-pressed.png)
 
 #### FAQ accordion, open
 The same item after its own toggle; the answer region shows in the crop. Read as `faq-open` on the pricing page.
 
-**Values (opened).** size 720.69 x 60; padding 20px 0px; radius 8px; background transparent; text -apple-system 14/20 500, lab(98.26 0 0); transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(65.6464 1.53497 -5.42429).
+**Values (opened).** size 32 x 32; radius 8px; background #2d2d31; text -apple-system 16/24 400, lab(98.26 0 0); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1).
 
 ![FAQ accordion, open opened](components/crops/faq-open-opened.png)
 
@@ -513,7 +508,7 @@ The square GitLab/Bitbucket identity buttons. Measured, never pressed. Read as `
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 36 x 36; padding 8px 0px; border 1px solid #2d2d31; radius 8px; background transparent; text -apple-system 14/20 500, lab(65.6464 1.53497 -5.42429); transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(65.6464 1.53497 -5.42429) |
-| hover | size 278.98 x 36; background #2d2d31; text -apple-system 14/20 500, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
+| hover | size 278.97 x 36; background #2d2d31; text -apple-system 14/20 500, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
 | focus-visible | size 279 x 36; shadow oklab(0.447998 0.00407566 -0.0144229 / 0.5) 0px 0px 0px 3px |
 | pressed | size 279 x 36; background #2d2d31; text -apple-system 14/20 500, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
 
@@ -544,14 +539,14 @@ Measured, never pressed. Read as `passkey-button` on the sign-in gate page.
 ![Passkey button default](components/crops/passkey-button-default.png) ![Passkey button hover](components/crops/passkey-button-hover.png) ![Passkey button focus-visible](components/crops/passkey-button-focus-visible.png) ![Passkey button pressed](components/crops/passkey-button-pressed.png)
 
 #### Email field
-Text was typed and deleted; the form was never submitted. Read as `email-input` on the sign-in gate page.
+Focused with element.focus(). Nothing was typed and the form was never submitted. Read as `email-input` on the sign-in gate page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 367 x 36; padding 4px 12px; border 1px solid #2d2d31; radius 8px; background oklab(0.298707 0.00198022 -0.00687116 / 0.3); text -apple-system 14/20 400, lab(98.26 0 0); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1); placeholder lab(65.6464 1.53497 -5.42429) |
-| focused, filled | border 1px solid lab(35.8321 1.55474 -5.40724); shadow oklab(0.447998 0.00407566 -0.0144229 / 0.5) 0px 0px 0px 3px |
+| focused | border 1px solid lab(35.8321 1.55474 -5.40724); shadow oklab(0.447998 0.00407566 -0.0144229 / 0.5) 0px 0px 0px 3px |
 
-![Email field default](components/crops/email-input-default.png) ![Email field focused](components/crops/email-input-focused.png) ![Email field filled](components/crops/email-input-filled.png)
+![Email field default](components/crops/email-input-default.png) ![Email field focused](components/crops/email-input-focused.png)
 
 #### Password field
 Focused only; nothing was typed. Read as `password-input` on the sign-in gate page.

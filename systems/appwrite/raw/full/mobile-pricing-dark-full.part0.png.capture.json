@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-10T16:23:58.775Z",
+  "capturedAt": "2026-11-21T00:32:03.001Z",
   "screenshot": "mobile-pricing-dark-full.part0.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -37,7 +37,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 13462
+      "height": 13405
     },
     "scroll": {
       "x": 0,

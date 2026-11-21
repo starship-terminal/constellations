@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-10T16:23:43.751Z",
+  "capturedAt": "2026-11-21T00:31:49.084Z",
   "screenshot": "mobile-home-dark-full.part1.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -37,7 +37,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 12976
+      "height": 12924
     },
     "scroll": {
       "x": 0,
@@ -51,18 +51,18 @@
       "x": 0,
       "y": 7000,
       "width": 390,
-      "height": 5976
+      "height": 5924
     }
   },
   "png": {
     "width": 780,
-    "height": 11952
+    "height": 11848
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 780,
-      "height": 11952
+      "height": 11848
     },
     "basis": "clip"
   },

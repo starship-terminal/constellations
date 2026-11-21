@@ -116,7 +116,7 @@ Good for: Developer-platform marketing: pinned-dark SvelteKit + Tailwind v4 site
 
 Captured 2026-11-10, signed out (every captured surface is public; the console behind sign-in was never reached). Themes: dark, light.
 
-A token set and component reference for Appwrite's public site — for building developer-platform marketing and docs surfaces in the style of the real thing. It was read from **appwrite.io** on **2026-11-10**, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the marketing home, pricing, a product page, the docs home and a quick-start, blog, changelog, integrations, company, brand assets, enterprise, startups, and the public sign-in card.
+A token set and component reference for Appwrite's public site — for building developer-platform marketing and docs surfaces in the style of the real thing. It was read from **appwrite.io** on **2026-11-21**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. The site tree is [site-tree.md](site-tree.md). Surfaces: marketing home (nav dialogs and the YouTube menu), pricing, every product page, docs home with the search dialog, a quick start, blog and one category, changelog and one entry, integrations and one detail, company, brand assets, enterprise, startups, agencies, innovation teams, community, education, partners, affiliates, threads and one thread, Init, domains, one comparison, terms, privacy, cookies, and the public sign-in, sign-up, recovery, and education-join walls.
 
 Appwrite is worth a capture because it is a current reference for a dark-pinned developer surface: one `#19191c` ground under everything, a single brand pink (`--brand-cta` #fd366e) reserved for the actions that end a flow, hairline-bordered cards on a translucent muted tint instead of shadows, a Tailwind v4 theme layer with a shadcn-style semantic layer on top, Aeonik Pro marketing type with paired `--text-*` steps, and a docs chrome that is a product in itself.
 
@@ -173,6 +173,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Skins are evidence, not themes.** The `.crazy`/`.stealth`/`.premium`/`.high-contrast`/`.barbie`/`.nineties`/`.legacy` blocks are console easter eggs in the shared bundle; binned `skins` in css-vars.json, never tokenised.
 - **No icons.** No standalone SVG set was lifted (declared `layoutGaps`); the icon glyphs visible in crops are Appwrite's artwork.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or `raw/full/`.
+- **Recovery placeholder.** The password-reset field ships with a sample address in its placeholder. That string is painted out of the four recovery screenshots and their raw copies. The field fill is the measured input colour. Nothing was typed into the field.
 
 ### Do and don't (from README.md)
 

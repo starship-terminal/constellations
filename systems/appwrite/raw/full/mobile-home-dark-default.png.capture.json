@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-10T16:23:34.875Z",
+  "capturedAt": "2026-11-21T00:31:41.048Z",
   "screenshot": "mobile-home-dark-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -37,7 +37,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 12835
+      "height": 12783
     },
     "scroll": {
       "x": 0,

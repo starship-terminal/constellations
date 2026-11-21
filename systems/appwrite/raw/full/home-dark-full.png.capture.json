@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-10T16:17:00.355Z",
+  "capturedAt": "2026-11-21T00:23:01.783Z",
   "screenshot": "home-dark-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -18,6 +18,7 @@
     "innerWidth": 1440,
     "innerHeight": 900,
     "devicePixelRatio": 1,
+    "reportedDevicePixelRatio": 1,
     "theme": {
       "classes": [
         "dark"
@@ -36,7 +37,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 9931
+      "height": 9882
     },
     "scroll": {
       "x": 0,
@@ -50,13 +51,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 9931
+    "height": 9882
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 9931
+      "height": 9882
     },
     "basis": "fullPage"
   },

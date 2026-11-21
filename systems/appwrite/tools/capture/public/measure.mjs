@@ -12,8 +12,8 @@
 // every captured route; components are found by role, aria-label or stable
 // text, never by the utility class soup. Nothing is sent, created or signed
 // into: the only presses are local UI toggles — the mobile menu, the Products
-// nav flyout, a pricing FAQ accordion. Text typed into the email field is
-// deleted again; the sign-in form is never submitted.
+// nav flyout, a pricing FAQ accordion. The sign-in form is never typed into,
+// never clicked, and never submitted. Field focus uses element.focus() only.
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
@@ -134,9 +134,8 @@ async function measure(key, state, target, opts = {}) {
   }
 }
 
-const FILL = 'dev@example.com';
-
 // Records the listed states of one component. meta: title, group, desc, sel.
+// Nothing is typed into a field. A "filled" state is not captured.
 async function S(key, target, list, meta = {}, opts = {}) {
   const c = comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   if (!listed.has(key)) listed.set(key, new Set());
@@ -168,16 +167,12 @@ async function S(key, target, list, meta = {}, opts = {}) {
         undo = await forcePseudo((opts.pressLoc || loc).filter({ visible: true }).first(), ['active', 'hover']);
         via = 'CDP forcePseudoState :active:hover';
       } else if (st === 'focused') {
-        await (opts.fieldLoc || loc).filter({ visible: true }).first().click({ timeout: 4000 });
+        // Focus only. Never click or type into an auth field.
+        await (opts.fieldLoc || loc).filter({ visible: true }).first().evaluate((el) => el.focus());
         await page.waitForTimeout(400);
-        via = 'clicked into the field';
+        via = 'element.focus(), nothing typed';
       } else if (st === 'filled') {
-        const f = (opts.fieldLoc || loc).filter({ visible: true }).first();
-        await f.click({ timeout: 4000 });
-        await page.keyboard.type(opts.fillText || FILL, { delay: 10 });
-        await page.waitForTimeout(500);
-        undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
-        via = `typed "${opts.fillText || FILL}", then deleted; nothing sent`;
+        throw new Error('filled state is not captured: typing into a field is refused');
       } else if (st === 'opened') {
         await toggle(loc);
         await page.waitForTimeout(900);
@@ -328,7 +323,7 @@ async function signin() {
   await S('google-button', q('button').filter({ hasText: /Sign in with Google/i }), B4, { group: g, title: 'Google button', desc: 'Measured, never pressed.', sel: 'button:has-text("Sign in with Google")' });
   await S('passkey-button', q('button').filter({ hasText: /passkey/i }), B4, { group: g, title: 'Passkey button', desc: 'Measured, never pressed.', sel: 'button:has-text("passkey")' });
   const email = q('input[type="email"], input[placeholder*="email" i], input').first();
-  await S('email-input', email, ['default', 'focused', 'filled'], { group: g, title: 'Email field', desc: 'Text was typed and deleted; the form was never submitted.', sel: 'input[placeholder="Your email"]' });
+  await S('email-input', email, ['default', 'focused'], { group: g, title: 'Email field', desc: 'Focused with element.focus(). Nothing was typed and the form was never submitted.', sel: 'input[placeholder="Your email"]' });
   await S('password-input', q('input[type="password"]'), ['default', 'focused'], { group: g, title: 'Password field', desc: 'Focused only; nothing was typed.', sel: 'input[type="password"]' });
   await S('show-password', q('button[aria-label*="password" i], button[aria-label*="Show" i]'), B4, { group: g, title: 'Show-password toggle', desc: 'The eye inside the password field.', sel: 'button[aria-label*="password" i]' });
   await S('forgot-link', q('a').filter({ hasText: /Forgot your password/i }), B4, { group: g, title: 'Forgot-password link', sel: 'a:has-text("Forgot")' });
@@ -385,7 +380,7 @@ const plan = { home, pricing, docs, blog, signin, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
 try {
   for (const k of order) { if (k !== 'mobile') await plan[k](); }
-  if (!pages.length || pages.includes('home')) await footer();
+  if (!pages.length || pages.includes('footer')) await footer();
   if (!pages.length || pages.includes('mobile')) await plan.mobile();
 } finally {
   // Components whose specs now list a state a run did not touch keep their old

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-10T16:17:09.921Z",
+  "capturedAt": "2026-11-21T00:23:10.330Z",
   "screenshot": "pricing-dark-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -18,6 +18,7 @@
     "innerWidth": 1440,
     "innerHeight": 900,
     "devicePixelRatio": 1,
+    "reportedDevicePixelRatio": 1,
     "theme": {
       "classes": [
         "dark"
@@ -36,7 +37,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 11347
+      "height": 11290
     },
     "scroll": {
       "x": 0,

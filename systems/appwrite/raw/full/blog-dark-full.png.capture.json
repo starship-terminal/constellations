@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-10T16:18:08.207Z",
+  "capturedAt": "2026-11-21T00:26:01.071Z",
   "screenshot": "blog-dark-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -18,6 +18,7 @@
     "innerWidth": 1440,
     "innerHeight": 900,
     "devicePixelRatio": 1,
+    "reportedDevicePixelRatio": 1,
     "theme": {
       "classes": [
         "dark"
@@ -36,7 +37,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 5953
+      "height": 5896
     },
     "scroll": {
       "x": 0,
@@ -50,13 +51,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 5953
+    "height": 5896
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 5953
+      "height": 5896
     },
     "basis": "fullPage"
   },

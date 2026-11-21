@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-10T16:24:11.777Z",
+  "capturedAt": "2026-11-21T00:32:45.436Z",
   "screenshot": "mobile-docs-react-dark-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -37,7 +37,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 5973
+      "height": 5916
     },
     "scroll": {
       "x": 0,
@@ -51,13 +51,13 @@
   },
   "png": {
     "width": 780,
-    "height": 11946
+    "height": 11832
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 780,
-      "height": 11946
+      "height": 11832
     },
     "basis": "fullPage"
   },
