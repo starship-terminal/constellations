@@ -1,0 +1,130 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.aritzia.com/intl/en",
+  "title": "Women's Fashion Boutique | Aritzia INTL",
+  "viewport": { "css": "1440x900", "devicePixelRatio": 2 },
+  "region": "Singapore (S$)",
+  "body": {
+    "fontFamily": "\"Non-Seasonal Geo\", sans-serif",
+    "fontSize": "12px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)"
+  },
+  "page": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "source": "Ancestor of main on the homepage."
+  },
+  "header": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(216, 159, 113)",
+    "height": 132,
+    "paddingLeft": "48px"
+  },
+  "promo": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "height": 28,
+    "fontSize": "12px",
+    "text": "Free shipping to Singapore on all orders above S$160. Duties & taxes included."
+  },
+  "promoAccent": {
+    "backgroundColor": "rgb(216, 159, 113)",
+    "height": 28,
+    "text": "Enjoy winter in The Super Puff"
+  },
+  "navLink": {
+    "fontFamily": "\"Non-Seasonal Geo\"",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "color": "rgb(216, 159, 113)",
+    "lineHeight": "20px"
+  },
+  "signIn": {
+    "fontSize": "12px",
+    "textTransform": "uppercase",
+    "color": "rgb(216, 159, 113)"
+  },
+  "search": {
+    "borderBottom": "1px solid rgb(216, 159, 113)",
+    "fontSize": "12px",
+    "height": 36,
+    "color": "rgb(216, 159, 113)"
+  },
+  "hero": {
+    "fontSize": "48px",
+    "lineHeight": "56px",
+    "letterSpacing": "-1px",
+    "fontWeight": "400",
+    "color": "rgb(255, 255, 255)",
+    "text": "The Super Puff"
+  },
+  "shopNow": {
+    "fontSize": "16px",
+    "color": "rgb(255, 255, 255)",
+    "textDecorationLine": "underline"
+  },
+  "product": {
+    "url": "https://www.aritzia.com/intl/en/product/the-super-puff™/126464.html",
+    "title": {
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "24px",
+      "color": "rgb(0, 0, 0)",
+      "text": "The Super Puff™ - cliMATTE™"
+    },
+    "price": {
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "color": "rgb(0, 0, 0)",
+      "text": "SGD 388"
+    },
+    "addToBag": {
+      "backgroundColor": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "height": 40,
+      "width": 308,
+      "fontSize": "12px",
+      "fontWeight": "500",
+      "borderRadius": "0px",
+      "clicked": false
+    }
+  },
+  "login": {
+    "url": "https://www.aritzia.com/intl/en/login",
+    "signInButton": {
+      "backgroundColor": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "height": 48,
+      "width": 386,
+      "fontSize": "12px",
+      "fontWeight": "500",
+      "borderRadius": "0px"
+    },
+    "codeButton": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "height": 48,
+      "fontSize": "12px",
+      "fontWeight": "500"
+    },
+    "email": {
+      "height": 46,
+      "fontSize": "12px",
+      "borderRadius": "0px"
+    }
+  },
+  "footer": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(216, 159, 113)",
+    "linkFontSize": "12px",
+    "linkFontWeight": "500"
+  },
+  "wordmark": {
+    "viewBox": "0 0 750 149",
+    "fill": "currentColor",
+    "homepageColor": "rgb(216, 159, 113)",
+    "productColor": "rgb(0, 0, 0)"
+  }
+}
