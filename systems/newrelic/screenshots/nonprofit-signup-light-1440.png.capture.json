@@ -1,0 +1,26 @@
+{
+  "captured": "2026-11-22",
+  "name": "nonprofit-signup-light-1440",
+  "url": "https://newrelic.com/social-impact/signup",
+  "requestedUrl": "https://newrelic.com/social-impact/signup",
+  "title": "New Relic for Nonprofits | New Relic",
+  "h1": "Observability for Good",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "colorScheme": "normal",
+  "bodyBg": "rgb(229, 228, 216)",
+  "note": "Empty wall. Nothing typed. Form not submitted. Identity providers not clicked.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

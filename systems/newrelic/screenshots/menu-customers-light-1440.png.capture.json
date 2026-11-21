@@ -1,0 +1,26 @@
+{
+  "captured": "2026-11-22",
+  "name": "menu-customers-light-1440",
+  "url": "https://newrelic.com/",
+  "requestedUrl": "https://newrelic.com/",
+  "title": "AI-powered Observability",
+  "h1": "",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "colorScheme": "normal",
+  "bodyBg": "rgb(229, 228, 216)",
+  "note": "Header Customers menu opened by click. Nothing followed from the panel.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

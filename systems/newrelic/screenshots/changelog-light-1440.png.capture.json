@@ -1,0 +1,26 @@
+{
+  "captured": "2026-11-22",
+  "name": "changelog-light-1440",
+  "url": "https://docs.newrelic.com/docs/release-notes/logs-release-notes/",
+  "requestedUrl": "https://docs.newrelic.com/docs/release-notes/logs-release-notes/",
+  "title": "Logs release notes | New Relic Documentation",
+  "h1": "Logs release notes RSS",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "colorScheme": "normal",
+  "bodyBg": "rgb(249, 250, 250)",
+  "note": "First viewport. Signed out. Cookie banner hidden with CSS, not accepted. No form submitted.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

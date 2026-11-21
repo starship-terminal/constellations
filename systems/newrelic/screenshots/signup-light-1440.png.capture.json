@@ -1,0 +1,26 @@
+{
+  "captured": "2026-11-22",
+  "name": "signup-light-1440",
+  "url": "https://newrelic.com/signup",
+  "requestedUrl": "https://newrelic.com/signup",
+  "title": "Sign up for New Relic",
+  "h1": "Create your free account.",
+  "viewport": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2
+  },
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "mode": "viewport",
+  "colorScheme": "normal",
+  "bodyBg": "rgb(241, 240, 228)",
+  "note": "Empty wall. Nothing typed. Form not submitted. Identity providers not clicked.",
+  "png": {
+    "width": 2880,
+    "height": 1800
+  }
+}

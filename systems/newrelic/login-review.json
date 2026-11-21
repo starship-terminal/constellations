@@ -1,0 +1,81 @@
+{
+  "product": "New Relic",
+  "domain": "newrelic.com",
+  "reviewedAt": "2026-11-22",
+  "method": "Headless Chromium, signed out. Desktop 1440x900 CSS pixels and phone 390x844 CSS pixels, device pixel ratio 2. Login was opened and discarded because the painted URL carried a redirect query. Signup was opened empty and kept.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Log in and https://one.newrelic.com/",
+      "url": "https://one.newrelic.com/",
+      "paintedUrlHost": "login.newrelic.com",
+      "paintedUrlPath": "/",
+      "paintedUrlQuery": "redirect",
+      "title": "Log in to New Relic",
+      "painted": true,
+      "headings": ["Log in to see your data"],
+      "asksFor": [
+        {
+          "label": "Email",
+          "type": "email",
+          "name": "login[email]",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": ["Google", "GitHub", "GitLab", "Bitbucket"],
+      "otherControls": ["Next", "Forgot your password?", "Trouble logging in?", "Create a free account"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Empty login wall. Next was not clicked. Identity providers were not clicked. The painted URL carries a redirect query, so the screenshot was discarded."
+    },
+    {
+      "control": "https://newrelic.com/signup",
+      "url": "https://newrelic.com/signup",
+      "paintedUrlHost": "newrelic.com",
+      "paintedUrlPath": "/signup",
+      "title": "Sign up for New Relic",
+      "painted": true,
+      "headings": ["Create your free account."],
+      "asksFor": [
+        {
+          "label": "Company Email",
+          "type": "email",
+          "name": "email",
+          "valueLength": 0
+        },
+        {
+          "label": "Name",
+          "type": "text",
+          "name": "name",
+          "valueLength": 0
+        }
+      ],
+      "identityProvidersSeen": ["Google", "GitHub", "GitLab", "Bitbucket"],
+      "otherControls": ["Get Started Free", "Log in"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-1440.png",
+      "note": "Empty signup wall. Nothing was typed. The form was not submitted. Google, GitHub, GitLab, and Bitbucket were not clicked. A captcha field was present and was not solved."
+    }
+  ],
+  "notOpened": [
+    "Next on the login wall was not clicked.",
+    "Google, GitHub, GitLab, and Bitbucket were not clicked.",
+    "Get Started Free on the signup wall was not clicked.",
+    "Request a demo was not submitted. The screenshot was not kept because the form asks for a phone number.",
+    "Get Standard, Get Pro, and Get Enterprise pricing requests were not submitted. Those screenshots were not kept.",
+    "Contact Us was not submitted. The page prints a phone number, so the screenshot was not kept.",
+    "Nonprofit signup Create Account was not clicked.",
+    "New Relic Advance and New Relic Now registration forms were not submitted. Those screenshots were not kept.",
+    "AI Advisor prints a phone number, so the screenshot was not kept.",
+    "DMCA Policy prints a street address, so the screenshot was not kept.",
+    "Code of Conduct is a PDF download. It was not saved.",
+    "Social profiles and YouTube were not followed.",
+    "Cookie accept and deny were not clicked. The banner was hidden with CSS."
+  ]
+}

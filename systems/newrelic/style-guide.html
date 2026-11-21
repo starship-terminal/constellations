@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>New Relic public tokens</title>
+  <style>
+    :root {
+      --page: #f1f0e4;
+      --ink: #080f11;
+      --cream: #f1f0e4;
+      --accent: #1ce783;
+      --banner: #000000;
+      --demo: #151b20;
+    }
+    body { margin: 0; background: var(--page); color: var(--ink); font: 18px/24px ui-sans-serif, system-ui, sans-serif; }
+    main { max-width: 880px; margin: 0 auto; padding: 48px 24px; }
+    h1 { font-size: 40px; line-height: 40px; letter-spacing: -1px; margin: 0 0 8px; font-weight: 800; }
+    p { color: var(--ink); }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; margin-top: 24px; }
+    .swatch { border-radius: 16px; overflow: hidden; background: #fff; }
+    .chip { height: 72px; }
+    .label { padding: 8px 10px; font-size: 13px; }
+    .btn { display: inline-block; margin-top: 24px; margin-right: 8px; background: var(--accent); color: var(--ink); border-radius: 36px; padding: 16px 32px; font-weight: 500; }
+    .btn-dark { background: var(--ink); color: var(--cream); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>New Relic</h1>
+    <p>Public homepage, signed out, 2026-11-22. The page paints cream with near-black type. catalog.json was left alone, so this file is a hand swatch, not a generated guide.</p>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#f1f0e4"></div><div class="label">Page #f1f0e4</div></div>
+      <div class="swatch"><div class="chip" style="background:#080f11"></div><div class="label">Ink #080f11</div></div>
+      <div class="swatch"><div class="chip" style="background:#1ce783"></div><div class="label">Accent #1ce783</div></div>
+      <div class="swatch"><div class="chip" style="background:#000000"></div><div class="label">Banner #000000</div></div>
+      <div class="swatch"><div class="chip" style="background:#151b20"></div><div class="label">Demo #151b20</div></div>
+      <div class="swatch"><div class="chip" style="background:#003ecc"></div><div class="label">Link token #003ecc</div></div>
+      <div class="swatch"><div class="chip" style="background:#26a769"></div><div class="label">Focus token #26a769</div></div>
+    </div>
+    <div class="btn">Get Started Free</div>
+    <div class="btn btn-dark">Get Demo</div>
+  </main>
+</body>
+</html>
