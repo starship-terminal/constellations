@@ -1,0 +1,248 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://ouraring.com/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "s": 1
+    }
+  },
+  "screenshotPx": {
+    "width": 2880,
+    "height": 1800
+  },
+  "home": {
+    "title": "Oura Ring. Smart Ring for Fitness, Stress, Sleep & Health.",
+    "hero": {
+      "bg": "rgb(247, 241, 232)",
+      "color": "rgb(74, 71, 65)"
+    },
+    "h1": {
+      "text": "$100 off Oura Ring 5",
+      "color": "rgb(74, 71, 65)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "\"Editorial New\", serif",
+      "size": "80px",
+      "weight": "300",
+      "lh": "88px",
+      "ls": "-4px",
+      "radius": "0px",
+      "pad": "0px",
+      "border": "0px solid rgb(236, 236, 236)",
+      "w": 569,
+      "h": 88
+    },
+    "shop": {
+      "text": "Shop",
+      "color": "rgb(0, 0, 0)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "AkkuratLL, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lh": "24px",
+      "ls": "normal",
+      "radius": "3.35544e+07px",
+      "pad": "12px 24px",
+      "border": "0px none rgb(0, 0, 0)",
+      "w": 111,
+      "h": 48
+    },
+    "shopSale": {
+      "text": "Shop Sale",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(42, 114, 222)",
+      "font": "AkkuratLL, sans-serif",
+      "size": "16px",
+      "weight": "700",
+      "lh": "24px",
+      "ls": "normal",
+      "radius": "3.35544e+07px",
+      "pad": "12px 24px",
+      "border": "0px solid rgb(236, 236, 236)",
+      "w": 122,
+      "h": 48
+    },
+    "logo": {
+      "w": 80,
+      "h": 25
+    },
+    "header": {
+      "text": "Shop Your Health Why Oura For Organizations cart",
+      "color": "rgb(0, 0, 0)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "AkkuratLL, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lh": "24px",
+      "ls": "normal",
+      "radius": "0px",
+      "pad": "8px 0px",
+      "border": "0px solid rgb(236, 236, 236)",
+      "w": 1440,
+      "h": 90
+    },
+    "body": {
+      "color": "rgb(0, 0, 0)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "AkkuratLL, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lh": "24px",
+      "ls": "normal",
+      "radius": "0px",
+      "pad": "0px",
+      "border": "0px solid rgb(236, 236, 236)",
+      "w": 1440,
+      "h": 5754
+    }
+  },
+  "extra": {
+    "promo": {
+      "text": "Free trial offer at checkout: Natural Cycles non-hormonal birth control",
+      "color": "rgb(74, 71, 65)",
+      "bg": "rgb(247, 241, 232)",
+      "font": "AkkuratLL, sans-serif",
+      "size": "14px",
+      "weight": "700",
+      "radius": "0px",
+      "w": 1432,
+      "h": 21,
+      "ls": "normal"
+    },
+    "promoParent": {
+      "text": "Free trial offer at checkout: Natural Cycles non-hormonal birth control",
+      "color": "rgb(74, 71, 65)",
+      "bg": "rgb(247, 241, 232)",
+      "font": "AkkuratLL, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "radius": "0px",
+      "w": 1440,
+      "h": 49,
+      "ls": "normal"
+    },
+    "badge": {
+      "text": "BLACK FRIDAY",
+      "color": "rgb(247, 241, 232)",
+      "bg": "rgb(28, 27, 26)",
+      "font": "AkkuratLL, sans-serif",
+      "size": "12px",
+      "weight": "700",
+      "radius": "8px",
+      "w": 113,
+      "h": 34,
+      "ls": "0.6px"
+    },
+    "cart": {
+      "w": 48,
+      "h": 48,
+      "border": "1px solid oklab(0.398839 0.00101914 0.0106162 / 0.25)",
+      "radius": "3.35544e+07px",
+      "color": "rgb(74, 71, 65)"
+    },
+    "footerHeads": [
+      {
+        "text": "Receive articles, tips, and offers from Oura",
+        "color": "rgb(168, 165, 160)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "\"Editorial New\", serif",
+        "size": "40px",
+        "weight": "300",
+        "radius": "0px",
+        "w": 384,
+        "h": 100,
+        "ls": "-1px"
+      },
+      {
+        "text": "Our Company",
+        "color": "rgb(168, 165, 160)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "AkkuratLL, sans-serif",
+        "size": "16px",
+        "weight": "700",
+        "radius": "0px",
+        "w": 202,
+        "h": 24,
+        "ls": "normal"
+      },
+      {
+        "text": "Support",
+        "color": "rgb(168, 165, 160)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "AkkuratLL, sans-serif",
+        "size": "16px",
+        "weight": "700",
+        "radius": "0px",
+        "w": 202,
+        "h": 24,
+        "ls": "normal"
+      },
+      {
+        "text": "Partner With Us",
+        "color": "rgb(168, 165, 160)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "AkkuratLL, sans-serif",
+        "size": "16px",
+        "weight": "700",
+        "radius": "0px",
+        "w": 202,
+        "h": 24,
+        "ls": "normal"
+      },
+      {
+        "text": "Connect",
+        "color": "rgb(168, 165, 160)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "AkkuratLL, sans-serif",
+        "size": "16px",
+        "weight": "700",
+        "radius": "0px",
+        "w": 202,
+        "h": 24,
+        "ls": "normal"
+      }
+    ]
+  },
+  "about": {
+    "url": "https://ouraring.com/about-us",
+    "title": "Oura Ring About Us",
+    "h1": {
+      "text": "Our mission is to empower people to live healthier, longer.",
+      "color": "rgb(74, 71, 65)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "font": "AkkuratLL, sans-serif",
+      "size": "80px",
+      "weight": "300",
+      "lh": "100px",
+      "ls": "-2px",
+      "radius": "0px",
+      "pad": "0px",
+      "border": "0px solid rgb(236, 236, 236)",
+      "w": 954,
+      "h": 206
+    },
+    "pageBg": "rgb(239, 230, 219)",
+    "italic": {
+      "text": "healthier, longer.",
+      "font": "Editorial New",
+      "style": "italic",
+      "size": "80px",
+      "weight": "300",
+      "color": "rgb(74, 71, 65)"
+    }
+  },
+  "productPageNotPhotographed": {
+    "url": "https://ouraring.com/store/rings/oura-ring-5",
+    "title": "Meet Oura Ring 5: Smart Ring for Sleep, Fitness, Health & Recovery | Oura",
+    "h1": "Built to blend in",
+    "note": "Opened to confirm the shop URL. Not photographed. Add to cart was not present as a clicked control."
+  },
+  "sampledPixels": {
+    "pageCorner": "rgb(247, 241, 232)",
+    "shopSaleFill": "rgb(42, 114, 222)"
+  }
+}
