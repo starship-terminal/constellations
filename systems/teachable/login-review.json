@@ -1,0 +1,80 @@
+{
+  "slug": "teachable",
+  "product": "Teachable",
+  "domain": "teachable.com",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "empty-walls",
+  "session": "The preview browser photographed the login and signup walls empty. No identity provider was present. No form was submitted. No email, password, name, code, phone, or address was typed. The reCAPTCHA badge on signup was not solved.",
+  "wall": {
+    "url": "https://sso.teachable.com/secure/teachable_accounts/sign_in",
+    "title": "Teachable Accounts",
+    "asks": [
+      "Log in to Teachable",
+      "Email",
+      "Password",
+      "Log In",
+      "Forgot Password?",
+      "Don't have an account? Sign Up"
+    ],
+    "email_field": true,
+    "password_field": true,
+    "code_field": false,
+    "inputs": [
+      {
+        "type": "email",
+        "name": "teachable_account[email]",
+        "placeholder": "name@example.com",
+        "filled": false
+      },
+      {
+        "type": "password",
+        "name": "teachable_account[password]",
+        "placeholder": "Enter your password",
+        "filled": false
+      }
+    ],
+    "note": "Email and password value lengths were 0. Log In was not clicked. Forgot Password was not clicked. No identity provider was on the page."
+  },
+  "signup_wall": {
+    "url": "https://sso.teachable.com/secure/teachable_accounts/sign_up",
+    "title": "Teachable Accounts",
+    "same_as_login": false,
+    "asks": [
+      "Create an account",
+      "Start your trial",
+      "Start creating",
+      "Build a better business through education.",
+      "Name",
+      "Email",
+      "Set password",
+      "Create an account"
+    ],
+    "email_field": true,
+    "password_field": true,
+    "continued": false,
+    "inputs": [
+      {
+        "type": "text",
+        "name": "teachable_account[name]",
+        "placeholder": "Your Name",
+        "filled": false
+      },
+      {
+        "type": "email",
+        "name": "teachable_account[email]",
+        "placeholder": "name@example.com",
+        "filled": false
+      },
+      {
+        "type": "password",
+        "name": "teachable_account[password]",
+        "placeholder": "Minimum of 6 characters",
+        "filled": false
+      }
+    ],
+    "note": "Name, email, and password were empty. The terms checkbox was not checked. Create an account was not clicked. A reCAPTCHA badge was visible and was not solved. Step 2, Start your trial, was not reached."
+  },
+  "stopped": "Photographed the empty login wall and the empty signup wall. Did not submit. Did not solve a captcha. Did not create a school. Did not enroll in a course."
+}
