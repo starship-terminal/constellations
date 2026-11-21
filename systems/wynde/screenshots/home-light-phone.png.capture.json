@@ -1,29 +1,21 @@
 {
-  "capturedAt": "2026-11-18T20:54:19.498Z",
-  "name": "home-light-phone",
-  "sanitizedSourceUrl": "https://wynde.io/",
-  "requested": {
-    "width": 390,
-    "height": 844,
-    "deviceScaleFactor": 2
-  },
-  "actual": {
+  "url": "https://wynde.io/",
+  "capturedAt": "2026-11-21T16:05:00Z",
+  "viewport": {
     "innerWidth": 390,
     "innerHeight": 844,
-    "dpr": 2,
-    "vv": {
-      "w": 390,
-      "h": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
       "scale": 1
-    },
-    "scrollH": 12836,
-    "bodyBg": "rgb(255, 255, 255)"
+    }
   },
-  "png": "/tmp/ds-sparse/wynde-shots/home-light-phone.png",
-  "note": "public home phone fold",
-  "theme": "light",
-  "screenshotFramesFromPreview": "unavailable: The browser is not producing screenshot frames",
-  "status": 200,
-  "title": "Wynde",
-  "truncated": false
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "fullPage": false,
+  "scrollHeight": null,
+  "note": null
 }
