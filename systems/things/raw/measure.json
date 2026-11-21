@@ -1,0 +1,136 @@
+{
+  "capturedAt": "2026-11-21T17:14:59.394Z",
+  "home": {
+    "word": null,
+    "watch": null,
+    "nav": {
+      "text": "Features",
+      "cls": "navigation-button",
+      "font": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+      "size": "15px",
+      "weight": "600",
+      "lh": "24px",
+      "color": "rgba(38, 52, 74, 0.5)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "6px",
+      "pad": "2px 5px",
+      "x": 954,
+      "y": 27,
+      "w": 73,
+      "h": 28,
+      "href": "https://culturedcode.com/things/features/"
+    },
+    "logo": {
+      "text": "Things",
+      "cls": "navigation-logobutton",
+      "font": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+      "size": "15px",
+      "weight": "600",
+      "lh": "18px",
+      "color": "rgb(48, 51, 54)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "6px",
+      "pad": "0px",
+      "x": 264,
+      "y": 25,
+      "w": 100,
+      "h": 32,
+      "href": "https://culturedcode.com/things/"
+    },
+    "body": {
+      "bg": "rgb(242, 245, 247)",
+      "color": "rgb(48, 51, 54)",
+      "font": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+      "size": "18px",
+      "weight": "400",
+      "lh": "25.2px"
+    },
+    "inner": {
+      "w": 1440,
+      "h": 900,
+      "dpr": 1
+    }
+  },
+  "missing": {
+    "back": {
+      "text": "Back Home",
+      "cls": "button is-strong for-blackhole",
+      "font": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+      "size": "16.56px",
+      "weight": "700",
+      "lh": "normal",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(79, 145, 251)",
+      "radius": "7.452px",
+      "pad": "6.9552px 16.56px",
+      "border": "1px solid rgba(0, 0, 0, 0)",
+      "x": 450,
+      "y": 382,
+      "w": 126,
+      "h": 35,
+      "href": "https://culturedcode.com/things/"
+    },
+    "h1": {
+      "text": "Oops! Page Not Found",
+      "cls": "status-title",
+      "font": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+      "size": "29.124px",
+      "weight": "700",
+      "lh": "32.0364px",
+      "color": "rgb(48, 51, 54)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "pad": "0px",
+      "border": "0px none rgb(48, 51, 54)",
+      "x": 450,
+      "y": 267,
+      "w": 540,
+      "h": 32,
+      "href": null
+    },
+    "badge": {
+      "text": "404",
+      "cls": "status-code",
+      "font": "ui-monospace, ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+      "size": "13.5px",
+      "weight": "700",
+      "lh": "14.85px",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(182, 185, 190)",
+      "radius": "5.4px",
+      "pad": "2.025px 4.05px",
+      "border": "0px none rgb(255, 255, 255)",
+      "x": 450,
+      "y": 241,
+      "w": 36,
+      "h": 19,
+      "href": null
+    },
+    "cardBg": "rgba(0, 0, 0, 0)",
+    "cardRadius": "0px"
+  },
+  "support": {
+    "search": {
+      "ph": "Type…",
+      "font": "ui-sans-serif, -apple-system, \"system-ui\", Roboto, sans-serif",
+      "size": "23.9062px",
+      "color": "rgba(0, 3, 5, 0.81)",
+      "bg": "rgba(0, 29, 71, 0.08)",
+      "radius": "9.5625px",
+      "pad": "11.9531px 46px 11.9531px 42px",
+      "x": 380,
+      "y": 177,
+      "w": 680,
+      "h": 54
+    },
+    "card": {
+      "text": "Getting the Apps Here’s how to get Things for each of your d",
+      "bg": "rgba(0, 52, 126, 0.04)",
+      "radius": "12px",
+      "pad": "68px 30px 18px 18px",
+      "border": "1px rgba(0, 28, 70, 0.06)",
+      "w": 336,
+      "h": 180
+    }
+  }
+}
