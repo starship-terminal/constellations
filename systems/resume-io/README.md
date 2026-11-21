@@ -17,7 +17,8 @@ The marketing CSS declares colour ramps (`--neutral-*`, `--blue-*`, `--indigo-*`
 | [patterns.md](patterns.md) | How the marketing shell, pricing, templates, and sign-in boundary fit together. |
 | [components/](components/) | `crops/` is empty. The preview browser could not produce screenshot frames, so no element crops were taken. |
 | [icons/](icons/) | `INDEX.tsv` only. Wordmark and UI icons were left in the screenshots (docs/RIGHTS.md). |
-| [screenshots/](screenshots/) | Headless viewport captures after "Essential only", named `{page}-light-{state}.png`, plus a `.capture.json` sidecar each. |
+| [site-tree.md](site-tree.md) | Public header, footer, and where this pass stopped. Mapped 2026-11-22. |
+| [screenshots/](screenshots/) | Earlier headless captures, plus the 2026-11-22 public site tree. See [screenshots/README.md](screenshots/README.md). |
 | [raw/](raw/) | `measured.json`, the readings the builder turns into tokens. |
 | [tools/](tools/) | The kit copy and the builders. See Rebuild. |
 
@@ -122,7 +123,7 @@ Custom properties were read with `getComputedStyle(document.documentElement)` on
 | Icon button, select, radio, tooltip, toast, menu, table, avatar, badge, list row | Not on the measured pages. |
 | App shell behind sign-in | Not captured. Continue was not pressed. |
 | Checkout and download | Not entered. |
-| Screenshots | Headless, after cookie dismiss. Preview frames failed. |
+| Screenshots | 2026-11-18 headless pass, plus the 2026-11-22 public site tree. See [site-tree.md](site-tree.md). |
 | Crops | Not captured. Preview frames failed. |
 
 ## Do and don't

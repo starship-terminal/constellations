@@ -1,22 +1,22 @@
 {
-  "capturedAt": "2026-11-18T18:08:31.593Z",
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T18:18:32Z",
+  "source": "t3-preview-incognito",
+  "url": "https://resume.io/blog",
   "requested": {
     "width": 1440,
     "height": 900,
-    "deviceScaleFactor": 1
+    "deviceScaleFactor": 2
   },
-  "status": 200,
-  "sanitizedSourceUrl": "https://resume.io/blog",
-  "url": "https://resume.io/blog",
-  "title": "Resume.io blog - the best tips, insights and career advice · Resume.io",
-  "innerWidth": 1440,
-  "innerHeight": 900,
-  "devicePixelRatio": 1,
-  "visualViewport": {
-    "width": 1440,
-    "height": 900,
-    "scale": 1
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "available": true
   },
-  "cookieOpen": false,
-  "screenshotFrames": "headless Playwright PNG. T3 preview returned: The browser is not producing screenshot frames."
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "note": "Resources blog index. Cookie panel hidden, not accepted or rejected. Nothing typed. No form submitted."
 }
