@@ -1,0 +1,125 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://skims.com/en-sg",
+  "title": "SKIMS | Solutions For Every Body",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 },
+    "png": { "width": 2880, "height": 1800 }
+  },
+  "region": "Singapore storefront. Prices in SGD. https://skims.com/ and https://skims.com/en-us redirected to /en-sg.",
+  "body": {
+    "fontFamily": "Inter, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)"
+  },
+  "tokens": {
+    "primary": "rgb(45, 42, 38)",
+    "onPrimary": "rgb(255, 255, 255)",
+    "surface": "rgb(255, 255, 255)",
+    "onSurface": "rgb(45, 42, 38)",
+    "accent": "rgb(152, 107, 88)",
+    "tertiary": "rgb(120, 117, 114)",
+    "grayLighter": "rgb(250, 248, 245)",
+    "fieldBorder": "rgb(232, 229, 223)",
+    "hero": "rgb(246, 246, 246)",
+    "sale": "rgb(182, 38, 61)",
+    "wordmark": "#c4d0d9"
+  },
+  "promoBar": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(45, 42, 38)",
+    "fontSize": "12px",
+    "height": "48px",
+    "copy": "Securely Checkout with GrabPay"
+  },
+  "header": {
+    "navFontSize": "16px",
+    "navFontFamily": "Inter, sans-serif",
+    "navFontWeight": "400",
+    "navColorOverHero": "rgb(255, 255, 255)",
+    "navRowHeight": "64px",
+    "logoWidth": "108",
+    "logoHeight": "24",
+    "logoFill": "rgb(196, 208, 217)"
+  },
+  "hero": {
+    "fontFamily": "T-Star, sans-serif",
+    "fontSize": "48px",
+    "fontWeight": "900",
+    "lineHeight": "56px",
+    "letterSpacing": "1.2px",
+    "color": "rgb(246, 246, 246)",
+    "textTransform": "uppercase"
+  },
+  "shopNow": {
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "14px",
+    "fontWeight": "700",
+    "textDecorationLine": "underline",
+    "clicked": false
+  },
+  "search": {
+    "height": "40px",
+    "borderRadius": "24px",
+    "submitted": false
+  },
+  "collection": {
+    "titleFontSize": "30px",
+    "titleFontFamily": "T-Star, sans-serif",
+    "titleFontWeight": "900",
+    "titleColor": "rgb(45, 42, 38)"
+  },
+  "product": {
+    "titleFontFamily": "T-Star, sans-serif",
+    "titleFontWeight": "900",
+    "titleFontSize": "16px",
+    "compareColor": "rgb(45, 42, 38)",
+    "saleColor": "rgb(182, 38, 61)",
+    "addToCart": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(120, 117, 114)",
+      "border": "1px solid rgb(120, 117, 114)",
+      "height": "52px",
+      "borderRadius": "2px",
+      "disabled": true,
+      "clicked": false
+    }
+  },
+  "email": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(45, 42, 38)",
+    "border": "1px solid rgb(232, 229, 223)",
+    "borderRadius": "2px",
+    "height": "52px",
+    "fontSize": "16px",
+    "filled": false,
+    "submitted": false
+  },
+  "submitEmail": {
+    "backgroundColor": "rgb(45, 42, 38)",
+    "color": "rgb(255, 255, 255)",
+    "height": "52px",
+    "borderRadius": "2px",
+    "clicked": false
+  },
+  "footer": {
+    "headingFamily": "T-Star, sans-serif",
+    "headingWeight": "900",
+    "stayFontSize": "24px",
+    "linkFontSize": "12px",
+    "linkColor": "rgb(45, 42, 38)"
+  },
+  "login": {
+    "host": "account.skims.com",
+    "path": "/authentication/login",
+    "emailEmpty": true,
+    "submitted": false,
+    "screenshotKept": false
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "product": "SKIMS",
+  "domain": "skims.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "region": "Public shop at https://skims.com/ redirected to /en-sg. Prices in SGD. The country picker was opened. The storefront stayed on Singapore.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Account",
+      "host": "account.skims.com",
+      "path": "/authentication/login",
+      "title": "Sign in - SKIMS",
+      "painted": true,
+      "headings": ["SIGN IN"],
+      "copy": "Sign in",
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": true, "filled": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Continue", "Terms of service", "Privacy policy"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Email was empty. Continue was not clicked. No identity provider was shown. The URL carried OAuth query state, so no screenshot was saved."
+    }
+  ],
+  "alsoStopped": [
+    "Cart was not opened",
+    "Add to cart was not clicked",
+    "Footer email subscribe was not submitted",
+    "Search was not submitted",
+    "Wishlist was not opened",
+    "A Singapore shopping welcome was closed, not submitted",
+    "A cookie notice was closed, not submitted"
+  ]
+}
