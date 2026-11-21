@@ -351,9 +351,9 @@
       "description": "Build like a team of hundreds",
       "status": "captured",
       "package": "systems/appwrite",
-      "notes": "https://appwrite.io/sign-in asks for email and password, or GitHub, GitLab, Bitbucket, Google, or a passkey. No code was sent.",
+      "notes": "https://appwrite.io/sign-in asks for email and password, or GitHub, GitLab, Bitbucket, Google, or a passkey. No code was sent. Public walk 2026-11-21: the header Products and Solutions buttons open dialogs. Pricing, Docs, Customers, Blog, and Changelog are pages. Sign in and Sign up are walls and were not submitted. On a phone, Open website navigation opens a left drawer. The footer YouTube button opens a channel menu. Docs search opens a dialog. Integrations search filters in place. GitHub, GitLab, Bitbucket, Google, and the passkey were not clicked. The partners form was not submitted. No email was typed. No form was submitted. The light theme is declared and never painted. Signed-in console was not captured. Public package refresh in PR 1623 at eadbe81c92da. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 1
     },
     {
