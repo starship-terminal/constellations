@@ -1,0 +1,41 @@
+{
+  "product": "Parachute Home",
+  "domain": "parachutehome.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "region": "Public shop at https://parachutehome.com/. Product prices in USD. Account host opened as locale en-US, region_country US.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Log in",
+      "host": "account.parachutehome.com",
+      "path": "/authentication/login",
+      "title": "Sign in - Parachute Home",
+      "painted": true,
+      "headings": ["Sign in"],
+      "copy": "Sign in or create an account",
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": true, "filled": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Continue", "Email me with news and offers", "Terms of service", "Privacy policy"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Email was empty. Continue was not clicked. No identity provider was shown. The URL carried OAuth query state, so no screenshot was saved."
+    }
+  ],
+  "alsoStopped": [
+    "Cart link was not opened",
+    "Add to bag was not clicked",
+    "Footer email subscribe was not submitted",
+    "Alia 20% Off Sitewide overlay was hidden, not submitted. Its fine print named a street address, so it was not photographed",
+    "Search was not opened",
+    "Store locator was not opened"
+  ]
+}
