@@ -1,0 +1,144 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://girlfriend.com/",
+  "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2 },
+  "title": "Girlfriend Collective — Ethically Made Activewear",
+  "page": {
+    "background": "rgb(255, 255, 255)",
+    "token": "--COLOR-BG: #ffffff"
+  },
+  "ink": {
+    "body": "rgb(0, 0, 0)",
+    "token": "--COLOR-TEXT: #000000",
+    "footer": "rgb(11, 11, 11)",
+    "wordmarkFill": "#0d0d29"
+  },
+  "promo": {
+    "backgroundToken": "--bg: #0b0b0b",
+    "color": "rgb(255, 255, 255)",
+    "font": "Space Mono, monospace",
+    "size": "13.2px",
+    "weight": "400",
+    "letterSpacing": "1.32px",
+    "textTransform": "uppercase",
+    "barHeight": "42px",
+    "text": "FREE SHIPPING ON ORDERS $100+"
+  },
+  "header": {
+    "background": "rgb(255, 255, 255)",
+    "height": "60px"
+  },
+  "nav": {
+    "font": "Neue Haas Grotesk Text Roman, sans-serif",
+    "size": "11.2px",
+    "weight": "400",
+    "letterSpacing": "0.56px",
+    "textTransform": "uppercase",
+    "color": "rgb(0, 0, 0)"
+  },
+  "bodyType": {
+    "font": "Neue Haas Grotesk Text Roman, sans-serif",
+    "size": "16px",
+    "weight": "400",
+    "lineHeight": "25px",
+    "token": "--FONT-STACK-BODY"
+  },
+  "hero": {
+    "font": "Canela Thin, sans-serif",
+    "size": "68.64px",
+    "weight": "500",
+    "lineHeight": "82.368px",
+    "color": "rgb(255, 255, 255)",
+    "text": "The legging that started it all"
+  },
+  "productTitle": {
+    "font": "Canela Thin, sans-serif",
+    "size": "44px",
+    "weight": "500",
+    "lineHeight": "55px",
+    "color": "rgb(0, 0, 0)",
+    "text": "Black Compressive High-Rise Legging",
+    "token": "--FONT-STACK-HEADING"
+  },
+  "price": {
+    "text": "$108.00",
+    "font": "Neue Haas Grotesk Text Roman, sans-serif",
+    "size": "14.784px",
+    "weight": "500",
+    "color": "rgb(0, 0, 0)"
+  },
+  "primaryButton": {
+    "text": "ADD TO CART",
+    "background": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "font": "Neue Haas Grotesk Text Medium, sans-serif",
+    "size": "12.8px",
+    "weight": "400",
+    "letterSpacing": "0.64px",
+    "textTransform": "uppercase",
+    "radius": "30px",
+    "height": "41px",
+    "padding": "10.6px 17px",
+    "tokenBg": "--PRIMARY-BUTTONS-COLOR-BG: #000000",
+    "tokenText": "--PRIMARY-BUTTONS-COLOR-TEXT: #ffffff"
+  },
+  "secondaryButton": {
+    "text": "SHOP COMPRESSIVE",
+    "background": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "font": "Neue Haas Grotesk Text Medium, sans-serif",
+    "size": "12.8px",
+    "letterSpacing": "0.64px",
+    "textTransform": "uppercase",
+    "radius": "30px",
+    "height": "41px",
+    "width": "180px",
+    "padding": "10.6px 17px",
+    "tokenBg": "--SECONDARY-BUTTONS-COLOR-BG: #ffffff",
+    "tokenText": "--SECONDARY-BUTTONS-COLOR-TEXT: #000000"
+  },
+  "footerEmail": {
+    "placeholder": "Your email",
+    "background": "rgba(0, 0, 0, 0)",
+    "color": "rgb(11, 11, 11)",
+    "font": "Neue Haas Grotesk Text Roman, sans-serif",
+    "size": "16px",
+    "height": "54px",
+    "padding": "12px 0px 12px 20px",
+    "radius": "30px 0px 0px 30px",
+    "inputBgToken": "--COLOR-INPUT-BG: #ffffff"
+  },
+  "footerSubscribe": {
+    "text": "Subscribe to Our Newsletter",
+    "height": "54px",
+    "radius": "0px 30px 30px 0px",
+    "color": "rgb(11, 11, 11)",
+    "size": "12.8px",
+    "clicked": false
+  },
+  "footerLink": {
+    "color": "rgb(11, 11, 11)",
+    "size": "12.8px",
+    "decoration": "none"
+  },
+  "sale": {
+    "tokenBg": "--COLOR-SALE-BG: #ff2a00",
+    "tokenText": "--COLOR-SALE-TEXT: #ffffff",
+    "painted": false
+  },
+  "error": {
+    "token": "--COLOR-ERROR: #D02E2E",
+    "tokenBg": "--COLOR-ERROR-BG: #f3cbcb",
+    "painted": false
+  },
+  "success": {
+    "token": "--COLOR-SUCCESS: #56AD6A",
+    "tokenBg": "--COLOR-SUCCESS-BG: #ECFEF0",
+    "painted": false
+  },
+  "muted": {
+    "token": "--COLOR-TEXT-LIGHTEN: #333333"
+  },
+  "favicon": "https://girlfriend.com/cdn/shop/files/GLogomark_RGB_Black_32x32.png?v=1755655812",
+  "wordmark": "https://girlfriend.com/cdn/shop/files/Logo.svg?v=1707856067"
+}

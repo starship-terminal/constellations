@@ -1,0 +1,11 @@
+{
+  "login-extracted": "not-started",
+  "date": "2026-11-22",
+  "stopped": "https://girlfriend.com/account redirects to account.girlfriend.com/authentication/login with an OAuth query. That page was not photographed and nothing was typed.",
+  "signup": "The drawer lists Create account on account.girlfriend.com. That host was not opened.",
+  "checkout": "Open cart links to /cart. It was not opened. Add to Cart was not clicked.",
+  "subscribe": "A 15% off dialog was closed with its close control. Yes, Please was not clicked. The footer email was left empty. Subscribe to Our Newsletter was not clicked.",
+  "typed": false,
+  "formsSubmitted": false,
+  "identityProvidersClicked": false
+}
