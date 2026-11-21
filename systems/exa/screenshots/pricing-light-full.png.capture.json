@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T21:32:02.857Z",
+  "capturedAt": "2026-11-21T10:43:41.762Z",
   "screenshot": "pricing-light-full.png",
   "sanitizedSourceUrl": "https://exa.ai/pricing",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 6585
+      "height": 7161
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 6585
+    "height": 7161
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 6585
+      "height": 7161
     },
     "basis": "fullPage"
   },

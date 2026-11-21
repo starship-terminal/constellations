@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T21:33:45.913Z",
+  "capturedAt": "2026-11-21T10:45:23.321Z",
   "screenshot": "brand-light-default.png",
   "sanitizedSourceUrl": "https://exa.ai/brand",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 8957
+      "height": 8086
     },
     "scroll": {
       "x": 0,

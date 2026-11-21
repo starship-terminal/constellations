@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "capturedAt": "2026-11-13T21:36:08.734Z",
+ "capturedAt": "2026-11-21T10:47:44.326Z",
  "screenshot": "mobile-home-light-full.png",
  "sanitizedSourceUrl": "https://exa.ai/",
  "requested": {
@@ -34,7 +34,7 @@
   },
   "documentSize": {
    "width": 390,
-   "height": 10817
+   "height": 11382
   },
   "scroll": {
    "x": 0,
@@ -48,18 +48,18 @@
    "x": 0,
    "y": 0,
    "width": 390,
-   "height": 10817
+   "height": 11382
   }
  },
  "png": {
   "width": 390,
-  "height": 10817
+  "height": 11382
  },
  "dimensionCheck": {
   "status": "pass",
   "expected": {
    "width": 390,
-   "height": 10817
+   "height": 11382
   },
   "basis": "stitchedParts"
  },
@@ -86,7 +86,8 @@
    "x": 0,
    "y": 7000,
    "width": 390,
-   "height": 3817
+   "height": 4382
   }
- ]
+ ],
+ "intendedHeight": 11382
 }

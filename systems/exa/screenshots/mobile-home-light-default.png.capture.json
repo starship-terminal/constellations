@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T21:35:56.740Z",
+  "capturedAt": "2026-11-21T10:47:32.749Z",
   "screenshot": "mobile-home-light-default.png",
   "sanitizedSourceUrl": "https://exa.ai/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 10881
+      "height": 11446
     },
     "scroll": {
       "x": 0,

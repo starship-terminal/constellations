@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T21:36:00.695Z",
+  "capturedAt": "2026-11-21T10:47:36.538Z",
   "screenshot": "mobile-home-light-drawer.png",
   "sanitizedSourceUrl": "https://exa.ai/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 10817
+      "height": 11382
     },
     "scroll": {
       "x": 0,

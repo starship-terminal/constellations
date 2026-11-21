@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T21:36:21.078Z",
+  "capturedAt": "2026-11-21T10:47:56.428Z",
   "screenshot": "mobile-pricing-light-default.png",
   "sanitizedSourceUrl": "https://exa.ai/pricing",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 10216
+      "height": 11137
     },
     "scroll": {
       "x": 0,
