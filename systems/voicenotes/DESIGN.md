@@ -148,7 +148,7 @@ Good for: Warm-paper meeting-notes marketing: cream page, ink filled pills, Mack
 
 Captured 2026-11-19, signed out. Login modal opened. Email and password fields were not submitted.. Themes: light.
 
-Voicenotes is an AI meeting-notes product. This package records the public marketing site and the signed-out login modal on voicenotes.com, measured on 19 November 2026. No account was created. Themes seen live: light only. Viewport read: 1169 by 731, devicePixelRatio 2.
+Voicenotes is an AI meeting-notes product. This package records the public marketing site and the signed-out login and signup walls on voicenotes.com. Styles were first read on 19 November 2026. On 21 November 2026 a headless Playwright pass photographed the public pages at a measured 1440 by 900 (devicePixelRatio 1) and 390 by 844 (devicePixelRatio 2), and re-read the home heading at that desktop width. No account was created. Themes seen live: light only.
 
 ## Colors
 
@@ -199,7 +199,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-The home h1 class asks for 60px. At 1169px the computed size is 48px / 56px / -1.4px. Use the computed size for this width.
+The home h1 class asks for 60px. At 1169px the computed size was 48px / 56px / -1.4px. At the 1440 capture it computes to 60px / 68px / -1.8px. The token still records the 1169px reading. Use the width you are designing for.
 
 Inter on the marketing site is a set of separate families (`Inter Regular`, `Inter Medium`, `Inter SemiBold`), each with computed `font-weight: 400`. The blog uses a single `Inter` family and a real weight of 500 on post titles. The tokens keep both.
 
@@ -209,14 +209,11 @@ A demo-card box-shadow was truncated in the reading and is not a token.
 
 The login Continue button computed to `rgba(13, 13, 13, 0.85)` while the rule `.tw-dark-btn-rounded-2xl` sets `#0D0D0D` and the hover rule sets the 85% value. The token uses the declared default.
 
-There are no screenshots. Layout claims that need a picture are gaps.
+Screenshots are 256-colour PNGs. Read colours from the tokens and the raw JSON, not from the images. The hero illustration is a public marketing demo, not the signed-in app.
 
 ### Do and don't (from README.md)
 
-**Ink on warm paper.** The page is `#FAF9F5` and the text and the filled button are the same `#0D0D0D`. See the home readings in [raw/computed.json](raw/computed.json).
-
-**Serif for the promise, Inter for the control.** Headings use P22 Mackinac or Instrument Serif. Buttons, fields and nav use Inter. See [components.md](components.md).
-
-**Pills for actions, 16px for the login card, 4px for a price card.** Do not give the pricing cards the login radius. See [patterns.md](patterns.md).
-
-**Stop at the password field.** The email step asks for a password. Do not submit it, and do not continue into Google, Apple, Microsoft, Twitter or SSO.
+- **Ink on warm paper.** The page is `#FAF9F5` and the text and the filled button are the same `#0D0D0D`. See [home-light-default](screenshots/home-light-default.png).
+- **Serif for the promise, Inter for the control.** Headings use P22 Mackinac or Instrument Serif. Buttons, fields and nav use Inter. See [home-light-default](screenshots/home-light-default.png).
+- **Pills for actions, 4px for a price card.** Do not give the pricing cards the login-card radius. See [pricing-light-default](screenshots/pricing-light-default.png).
+- **Stop at the wall.** Log in and Start for free ask for Google, Microsoft, Apple, Twitter, SSO or email. Do not click a provider, and do not type into the field. See [login-light-default](screenshots/login-light-default.png).
