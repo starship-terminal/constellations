@@ -1,0 +1,64 @@
+{
+  "capturedAt": "2026-11-21",
+  "scope": "public signed-out surface only",
+  "signedInApp": "not in scope",
+  "submitted": false,
+  "typed": false,
+  "idpClicked": false,
+  "accountCreated": false,
+  "passwordEntered": false,
+  "codeEntered": false,
+  "captchaSolved": false,
+  "newsletterSubmitted": false,
+  "cookieAccepted": false,
+  "knownEmailRetyped": false,
+  "walls": [
+    {
+      "control": "https://www.editorx.com/login",
+      "requested": "https://www.editorx.com/login",
+      "finalUrl": "https://www.wix.com/studio",
+      "status": 301,
+      "whatHappened": "The path 301s to the Wix Studio marketing home. It does not open a login form. Branch stopped there.",
+      "submitted": false
+    },
+    {
+      "control": "Header Log In",
+      "opens": "https://users.wix.com/signin?studio=true&loginDialogContext=login",
+      "finalUrl": "https://users.wix.com/signin",
+      "title": "Log In to Your Wix Account - Wix.com",
+      "whatHappened": "Empty login wall. Email field was blank. Continue with Email was not clicked. Google, Facebook, Apple and More Login Options were not clicked. Sign Up link was not followed from this page.",
+      "fieldsSeen": ["email, empty"],
+      "identityProvidersSeenNotClicked": ["Continue with Google", "Continue with Facebook", "Continue with Apple", "More Login Options"],
+      "submitted": false,
+      "typed": false,
+      "screenshots": [
+        "screenshots/interactions/login-wall-desktop.png",
+        "screenshots/interactions/login-wall-phone.png"
+      ]
+    },
+    {
+      "control": "Header Start Creating, and in-page Start creating links",
+      "opens": "https://users.wix.com/signin?studio=true&loginDialogContext=signup",
+      "finalUrl": "https://users.wix.com/signin/signup/password",
+      "title": "Log In to Your Wix Account - Wix.com",
+      "whatHappened": "Navigation alone, with no click and no typing, landed on a signup page whose path contains password. The visible form was an empty email field plus Continue with Email. No password field was shown. Nothing was typed. Nothing was submitted. Google, Facebook and Apple were not clicked.",
+      "fieldsSeen": ["email, empty, value length 0"],
+      "identityProvidersSeenNotClicked": ["Continue with Google", "Continue with Facebook", "Continue with Apple"],
+      "submitted": false,
+      "typed": false,
+      "clicked": false,
+      "screenshot": "screenshots/interactions/signup-wall-desktop.png"
+    }
+  ],
+  "stoppedBranches": [
+    "Any link whose host is users.wix.com and whose path is /signin or /signin/signup.",
+    "Identity provider buttons on the login and signup walls.",
+    "Contact sales, book a demo, leader apply, inspiration submit, and newsletter forms. Those pages were opened when they were public marketing URLs. Their forms were not filled and not submitted.",
+    "Language links that POST through users.wix.com/wix-users/auth/setLanguage were recorded and not followed."
+  ],
+  "cookieDialog": {
+    "found": false,
+    "accepted": false,
+    "controlUsed": "None. A fixed cookie or consent dialog did not mount on https://www.wix.com/studio in this pass. The hide pass looked for OneTrust, iubenda, and a fixed overlay whose text named cookies. It matched nothing and clicked nothing."
+  }
+}
