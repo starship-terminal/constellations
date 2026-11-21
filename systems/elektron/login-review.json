@@ -1,0 +1,72 @@
+{
+  "product": "Elektron",
+  "domain": "elektron.se",
+  "reviewed": "2026-11-21",
+  "scope": "public signed-out site only",
+  "signedInApp": "not in scope",
+  "submitted": false,
+  "typedEmail": false,
+  "typedPassword": false,
+  "typedCode": false,
+  "createdAccount": false,
+  "filledProfile": false,
+  "clickedIdentityProvider": false,
+  "acceptedCookies": false,
+  "walls": [
+    {
+      "url": "https://www.elektron.se/login",
+      "finalUrl": "https://www.elektron.se/login",
+      "status": 200,
+      "stopped": true,
+      "whatItAsks": "An empty Email field, a SEND ME A CODE button, and a CREATE NEW ACCOUNT button. No identity-provider buttons.",
+      "codePath": "Offered as SEND ME A CODE. Not used. No code was sent.",
+      "domFieldsNotFilled": ["username (email)", "password", "remember[]", "first_name", "last_name", "email"],
+      "submitted": false
+    },
+    {
+      "url": "https://www.elektron.se/my-account",
+      "finalUrl": "https://www.elektron.se/login?redirect_to=https://www.elektron.se/my-account",
+      "status": 200,
+      "stopped": true,
+      "whatItAsks": "Same empty login wall as /login, with a redirect_to back to /my-account.",
+      "submitted": false
+    },
+    {
+      "url": "https://www.elektron.se/lost-password",
+      "finalUrl": "https://www.elektron.se/login",
+      "status": 200,
+      "stopped": true,
+      "whatItAsks": "Redirects to the same empty /login wall. The Account drawer also links Forgot your password? to https://elektron.se/lost-password. Not followed past the wall.",
+      "submitted": false
+    },
+    {
+      "url": "https://www.elektron.se/my-account/contact-support",
+      "reachedBy": "Contact Support on /support-downloads and CONTACT SUPPORT on /contact-us",
+      "stopped": true,
+      "whatItAsks": "A login wall. The branch was not entered.",
+      "submitted": false
+    },
+    {
+      "url": "https://www.elektron.se/",
+      "control": "Header Account drawer, Log in row",
+      "finalUrl": "https://www.elektron.se/",
+      "stopped": true,
+      "whatItAsks": "Empty Email field and SEND ME A CODE, inside the drawer. Password fields are in the DOM and were not shown in this open. Nothing typed.",
+      "codePath": "Offered. Not used.",
+      "submitted": false
+    },
+    {
+      "url": "https://www.elektron.se/",
+      "control": "Phone menu Account",
+      "stopped": true,
+      "whatItAsks": "Empty Email, empty Password, Remember Me, LOGIN, Forgot your password?, CREATE NEW ACCOUNT. Nothing typed. LOGIN not clicked.",
+      "submitted": false
+    }
+  ],
+  "cookieDialog": {
+    "id": "thedock-cookie-banner",
+    "buttons": ["Accept All", "Reject All", "Cookie settings", "Privacy policy"],
+    "action": "Hidden with display:none before readings. Photographed first. Never accepted or rejected.",
+    "settingsPanel": "Opened from Cookie settings inside the banner. Necessary, Preferences, Statistics, Marketing. Save Settings, Reject All and Accept All were not clicked."
+  }
+}
