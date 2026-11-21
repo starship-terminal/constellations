@@ -18,6 +18,12 @@ Figma is worth a capture because it ships a complete token layer to the browser:
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the stylesheet harvest — resolved custom properties in light and dark probes plus @font-face), `component-tokens.json` (the token-tree spec). |
 | [tools/](tools) | The builders and the capture kit (see Rebuild). |
 | [capture.pr](capture.pr) | The pull request that shipped this capture |
+| [site-tree.md](site-tree.md) | Public site tree mapped 2026-11-22, signed out |
+| [login-review.json](login-review.json) | Empty login and signup walls from that pass. `login-extracted` stays not-started |
+| [screenshots/public-2026-11-22/](screenshots/public-2026-11-22) | Public refresh shots beside the 2026-11-14 set. Git LFS |
+| [raw/public-2026-11-22.json](raw/public-2026-11-22.json) | Homepage computed styles from that pass. Not merged into tokens.json |
+
+A public refresh on 2026-11-22 mapped the signed-out tree in [site-tree.md](site-tree.md) and added viewport shots under [screenshots/public-2026-11-22/](screenshots/public-2026-11-22). Desktop shots are 1440 by 900 CSS at 2x (2880 by 1800 PNG). Phone shots are 390 by 844 CSS at 2x (780 by 1688 PNG). Log in and Get started for free open empty walls. Fields were left empty. Continue with Google, Use single sign-on, Log in, and Continue with email were not clicked. Cookie Allow all and Do not allow were not clicked. The editor and file browser were not opened. `login-extracted` stays not-started. [catalog.json](../../catalog.json) and [webapps-manifest.json](../../webapps-manifest.json) were left alone. DESIGN.md was not regenerated. The 2026-11-14 screenshots, crops, tokens, and style guide were left in place. There was no signed-in file-browser capture to preserve.
 
 ## Brief
 

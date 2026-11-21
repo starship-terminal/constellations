@@ -1,0 +1,41 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.figma.com/",
+  "signedIn": false,
+  "dataTheme": null,
+  "colorScheme": "normal",
+  "note": "Read from computed styles on the signed-out homepage. Not merged into tokens.json. DESIGN.md was not regenerated.",
+  "body": {
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "figmaSans, \"figmaSans Fallback\", \"SF Pro Display\", system-ui, helvetica, sans-serif",
+    "fontSize": "16px"
+  },
+  "h1": {
+    "text": "Build with the full-stack creative canvas",
+    "fontSize": "72px",
+    "fontWeight": "400",
+    "lineHeight": "72px",
+    "letterSpacing": "-1.44px",
+    "color": "rgb(0, 0, 0)"
+  },
+  "ctaGetStarted": {
+    "href": "https://www.figma.com/signup",
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "borderRadius": "8px",
+    "fontSize": "18px"
+  },
+  "cssVars": {
+    "--fig-theme-bg": "#FFFFFF",
+    "--fig-theme-fg": "#000000",
+    "--fig-theme-btn-primary-bg": "#000000",
+    "--fig-theme-btn-primary-fg": "#FFFFFF"
+  },
+  "pricingUsdAnnualDefault": {
+    "url": "https://www.figma.com/pricing/",
+    "starter": "Free",
+    "professional": {"full": "$16/mo", "dev": "$12/mo", "collab": "$3/mo"},
+    "organization": {"full": "$55/mo", "dev": "$25/mo", "collab": "$5/mo"},
+    "enterprise": {"full": "$90/mo", "dev": "$35/mo", "collab": "$5/mo"}
+  }
+}
