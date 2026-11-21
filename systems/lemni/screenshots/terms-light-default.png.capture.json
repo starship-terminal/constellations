@@ -1,31 +1,31 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T03:42:39.544Z",
-  "screenshot": "mobile-app-agents-light-full.png",
-  "sanitizedSourceUrl": "https://lemni.com/s/XXXXX/agents",
+  "capturedAt": "2026-11-21T14:41:03.175Z",
+  "screenshot": "terms-light-default.png",
+  "sanitizedSourceUrl": null,
   "requested": {
     "viewport": {
-      "width": 390,
-      "height": 844
+      "width": 1440,
+      "height": 900
     },
-    "deviceScaleFactor": 2
+    "deviceScaleFactor": 1
   },
   "configuredViewport": {
-    "width": 390,
-    "height": 844
+    "width": 1440,
+    "height": 900
   },
   "actual": {
-    "innerWidth": 390,
-    "innerHeight": 844,
-    "devicePixelRatio": 2,
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
     "theme": {
       "classes": [],
       "attributes": {},
       "colorScheme": "normal"
     },
     "visualViewport": {
-      "width": 390,
-      "height": 844,
+      "width": 1440,
+      "height": 900,
       "scale": 1,
       "offsetLeft": 0,
       "offsetTop": 0,
@@ -33,8 +33,8 @@
       "pageTop": 0
     },
     "documentSize": {
-      "width": 390,
-      "height": 844
+      "width": 1440,
+      "height": 4385
     },
     "scroll": {
       "x": 0,
@@ -42,21 +42,21 @@
     }
   },
   "capture": {
-    "mode": "fullPage",
+    "mode": "viewport",
     "scale": "device",
     "clip": null
   },
   "png": {
-    "width": 780,
-    "height": 1688
+    "width": 1440,
+    "height": 900
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
-      "width": 780,
-      "height": 1688
+      "width": 1440,
+      "height": 900
     },
-    "basis": "fullPage"
+    "basis": "configuredViewport"
   },
   "visualReview": {
     "status": "pending",

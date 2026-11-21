@@ -1,8 +1,8 @@
 {
  "_meta": {
-  "read": "2026-11-18",
+  "read": "2026-11-21",
   "product": "Lemni",
-  "route": "headless",
+  "route": "public-web",
   "sheets": {
    "home": [
     {
@@ -58,11 +58,6 @@
      "selector": ".__framer-editorbar-spinner",
      "transition": "",
      "animation": "600ms linear 0s infinite normal none running __framer-editorbar-spinner-spin"
-    },
-    {
-     "selector": ".sp-c-bxeRRt",
-     "transition": "color var(--sp-transitions-default), background var(--sp-transitions-default)",
-     "animation": ""
     }
    ],
    "signin": [
@@ -112,18 +107,37 @@
      "animation": ""
     }
    ]
-  }
+  },
+  "lastAttempt": "2026-11-21",
+  "publicOnly": "2026-11-21 refresh dropped signed-in app-* readings. They were not remeasured.",
+  "dropped": [
+   "app-nav-inbox",
+   "app-upgrade",
+   "app-empty",
+   "app-toast",
+   "app-dialog",
+   "app-invite-field",
+   "app-member-row",
+   "app-role-badge",
+   "app-profile-dialog",
+   "app-name-field",
+   "app-disabled-badge",
+   "app-enable",
+   "app-add-webpage",
+   "app-plan-upgrade"
+  ]
  },
  "components": {
   "nav-dark": {
    "page": "home",
    "url": "https://www.lemni.com/",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "nav",
      "classes": "",
      "framerName": "Translucent",
-     "text": "Docs Blog Company Community ↗ Pricing Continue",
+     "text": "Docs Blog Company Community \u2197 Pricing Continue",
      "rect": {
       "x": 0,
       "y": 0,
@@ -230,12 +244,12 @@
       {
        "node": "div[Logo]",
        "size": "32.0x21.0",
-       "bgImage": "url(data:…)%22></path><path d=%22M 18.465 19.378 L 10.01 10.459 L 14.884 16.892 C 15.121 17.205 15.095 17.645 14.823 17.929 L 13.384 19.431 C 11.497 21.399 8.427 21.399 6.541 19.431 L 1.415 13.954 C -"
+       "bgImage": "url(data:\u2026)%22></path><path d=%22M 18.465 19.378 L 10.01 10.459 L 14.884 16.892 C 15.121 17.205 15.095 17.645 14.823 17.929 L 13.384 19.431 C 11.497 21.399 8.427 21.399 6.541 19.431 L 1.415 13.954 C -"
       },
       {
        "node": "div[Logotype]",
        "size": "46.0x14.0",
-       "bgImage": "url(data:…)%22></path></svg>\")"
+       "bgImage": "url(data:\u2026)%22></path></svg>\")"
       },
       {
        "node": "div",
@@ -246,7 +260,7 @@
       {
        "node": "div[Graphic]",
        "size": "14.0x14.0",
-       "bgImage": "url(data:…)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(13, 13, 18)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dasharr"
+       "bgImage": "url(data:\u2026)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(13, 13, 18)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dasharr"
       }
      ],
      "textStyle": {
@@ -262,7 +276,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-dark-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     }
    },
    "group": "Shell",
@@ -273,6 +288,7 @@
   "nav-link": {
    "page": "home",
    "url": "https://www.lemni.com/",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "a",
@@ -368,7 +384,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-link-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     },
     "hover": {
      "tag": "a",
@@ -463,7 +480,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-link-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "read": "2026-11-21"
     },
     "focus-visible": {
      "tag": "a",
@@ -566,7 +584,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-link-focus-visible.png",
-     "via": "keyboard focus"
+     "via": "keyboard focus",
+     "read": "2026-11-21"
     },
     "pressed": {
      "tag": "a",
@@ -662,7 +681,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-link-pressed.png",
-     "via": "CDP forcePseudoState :active:hover; not clicked"
+     "via": "CDP forcePseudoState :active:hover; not clicked",
+     "read": "2026-11-21"
     }
    },
    "group": "Shell",
@@ -673,6 +693,7 @@
   "nav-continue": {
    "page": "home",
    "url": "https://www.lemni.com/",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "a",
@@ -764,7 +785,7 @@
       {
        "node": "div[Graphic]",
        "size": "14.0x14.0",
-       "bgImage": "url(data:…)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(13, 13, 18)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dasharr"
+       "bgImage": "url(data:\u2026)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(13, 13, 18)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dasharr"
       }
      ],
      "textStyle": {
@@ -780,7 +801,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-continue-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     },
     "hover": {
      "tag": "a",
@@ -856,7 +878,7 @@
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
       "cursor": "pointer",
-      "opacity": "0.499891",
+      "opacity": "0.499889",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
@@ -872,7 +894,7 @@
       {
        "node": "div[Graphic]",
        "size": "14.0x14.0",
-       "bgImage": "url(data:…)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(13, 13, 18)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dasharr"
+       "bgImage": "url(data:\u2026)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(13, 13, 18)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dasharr"
       }
      ],
      "textStyle": {
@@ -888,7 +910,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-continue-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "read": "2026-11-21"
     },
     "focus-visible": {
      "tag": "a",
@@ -985,7 +1008,7 @@
       {
        "node": "div[Graphic]",
        "size": "14.0x14.0",
-       "bgImage": "url(data:…)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(13, 13, 18)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dasharr"
+       "bgImage": "url(data:\u2026)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(13, 13, 18)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dasharr"
       }
      ],
      "textStyle": {
@@ -1001,7 +1024,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-continue-focus-visible.png",
-     "via": "keyboard focus"
+     "via": "keyboard focus",
+     "read": "2026-11-21"
     },
     "pressed": {
      "tag": "a",
@@ -1093,7 +1117,7 @@
       {
        "node": "div[Graphic]",
        "size": "14.0x14.0",
-       "bgImage": "url(data:…)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(13, 13, 18)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dasharr"
+       "bgImage": "url(data:\u2026)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(13, 13, 18)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dasharr"
       }
      ],
      "textStyle": {
@@ -1109,7 +1133,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-continue-pressed.png",
-     "via": "CDP forcePseudoState :active:hover; not clicked"
+     "via": "CDP forcePseudoState :active:hover; not clicked",
+     "read": "2026-11-21"
     }
    },
    "group": "Shell",
@@ -1117,19 +1142,10 @@
    "desc": "The glass pill at the right of the bar: rgba(0, 0, 0, 0.8) fill, 140px radius, white TWK Lausanne 500 15px label, an inset white hairline. It links to lemni.com/signup. Measured, never followed.",
    "selector": "nav a (Continue)"
   },
-  "logo": {
-   "page": "home",
-   "url": "https://www.lemni.com/",
-   "states": {},
-   "group": "Shell",
-   "title": "Wordmark",
-   "desc": "The Lemni wordmark in the top bar.",
-   "selector": "nav a (logo)",
-   "missing": true
-  },
   "hero-title": {
    "page": "home",
    "url": "https://www.lemni.com/",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "h1",
@@ -1224,7 +1240,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/hero-title-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     }
    },
    "group": "Home",
@@ -1235,6 +1252,7 @@
   "hero-continue": {
    "page": "home",
    "url": "https://www.lemni.com/",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "a",
@@ -1328,7 +1346,7 @@
       {
        "node": "div[Graphic]",
        "size": "14.0x14.0",
-       "bgImage": "url(data:…)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(255, 255, 255)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dash"
+       "bgImage": "url(data:\u2026)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(255, 255, 255)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dash"
       }
      ],
      "textStyle": {
@@ -1344,7 +1362,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/hero-continue-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     },
     "hover": {
      "tag": "a",
@@ -1397,7 +1416,7 @@
       "borderTopRightRadius": "140px",
       "borderBottomRightRadius": "140px",
       "borderBottomLeftRadius": "140px",
-      "backgroundColor": "rgba(0, 0, 0, 0.5)",
+      "backgroundColor": "rgba(0, 0, 0, 0.498)",
       "backgroundImage": "none",
       "boxShadow": "rgba(255, 255, 255, 0.25) 1.5px 1.5px 1px 0px inset, rgba(0, 0, 0, 0.5) 0px 3px 5px 0px",
       "backdropFilter": "none",
@@ -1431,14 +1450,14 @@
       {
        "node": "a[bg]",
        "size": "138.0x40.0",
-       "bg": "rgba(0, 0, 0, 0.5)",
+       "bg": "rgba(0, 0, 0, 0.498)",
        "shadow": "rgba(255, 255, 255, 0.25) 1.5px 1.5px 1px 0px inset, rgba(0, 0, 0, 0.5) 0px 3px 5px 0px",
        "radius": "140px"
       },
       {
        "node": "div[Graphic]",
        "size": "14.0x14.0",
-       "bgImage": "url(data:…)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(255, 255, 255)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dash"
+       "bgImage": "url(data:\u2026)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(255, 255, 255)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dash"
       }
      ],
      "textStyle": {
@@ -1454,7 +1473,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/hero-continue-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "read": "2026-11-21"
     },
     "focus-visible": {
      "tag": "a",
@@ -1549,7 +1569,7 @@
       {
        "node": "div[Graphic]",
        "size": "14.0x14.0",
-       "bgImage": "url(data:…)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(255, 255, 255)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dash"
+       "bgImage": "url(data:\u2026)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(255, 255, 255)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dash"
       }
      ],
      "textStyle": {
@@ -1565,7 +1585,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/hero-continue-focus-visible.png",
-     "via": "keyboard focus"
+     "via": "keyboard focus",
+     "read": "2026-11-21"
     },
     "pressed": {
      "tag": "a",
@@ -1659,7 +1680,7 @@
       {
        "node": "div[Graphic]",
        "size": "14.0x14.0",
-       "bgImage": "url(data:…)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(255, 255, 255)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dash"
+       "bgImage": "url(data:\u2026)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(255, 255, 255)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dash"
       }
      ],
      "textStyle": {
@@ -1675,7 +1696,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/hero-continue-pressed.png",
-     "via": "CDP forcePseudoState :active:hover; not clicked"
+     "via": "CDP forcePseudoState :active:hover; not clicked",
+     "read": "2026-11-21"
     }
    },
    "group": "Home",
@@ -1686,6 +1708,7 @@
   "watch-video": {
    "page": "home",
    "url": "https://www.lemni.com/",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "a",
@@ -1801,7 +1824,7 @@
       {
        "node": "div[Graphic]",
        "size": "14.0x14.0",
-       "bgImage": "url(data:…)%22></path></svg>\")"
+       "bgImage": "url(data:\u2026)%22></path></svg>\")"
       }
      ],
      "textStyle": {
@@ -1817,7 +1840,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/watch-video-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     },
     "hover": {
      "tag": "a",
@@ -1932,7 +1956,7 @@
       {
        "node": "div[Graphic]",
        "size": "14.0x14.0",
-       "bgImage": "url(data:…)%22></path></svg>\")"
+       "bgImage": "url(data:\u2026)%22></path></svg>\")"
       }
      ],
      "textStyle": {
@@ -1948,7 +1972,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/watch-video-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "read": "2026-11-21"
     },
     "focus-visible": {
      "tag": "a",
@@ -2065,7 +2090,7 @@
       {
        "node": "div[Graphic]",
        "size": "14.0x14.0",
-       "bgImage": "url(data:…)%22></path></svg>\")"
+       "bgImage": "url(data:\u2026)%22></path></svg>\")"
       }
      ],
      "textStyle": {
@@ -2081,7 +2106,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/watch-video-focus-visible.png",
-     "via": "keyboard focus"
+     "via": "keyboard focus",
+     "read": "2026-11-21"
     },
     "pressed": {
      "tag": "a",
@@ -2197,7 +2223,7 @@
       {
        "node": "div[Graphic]",
        "size": "14.0x14.0",
-       "bgImage": "url(data:…)%22></path></svg>\")"
+       "bgImage": "url(data:\u2026)%22></path></svg>\")"
       }
      ],
      "textStyle": {
@@ -2213,7 +2239,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/watch-video-pressed.png",
-     "via": "CDP forcePseudoState :active:hover; not clicked"
+     "via": "CDP forcePseudoState :active:hover; not clicked",
+     "read": "2026-11-21"
     }
    },
    "group": "Home",
@@ -2224,6 +2251,7 @@
   "feature-card": {
    "page": "home",
    "url": "https://www.lemni.com/",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "div",
@@ -2232,9 +2260,9 @@
      "text": "Tech Support Create Github Issue",
      "rect": {
       "x": -55.9,
-      "y": -217.2,
-      "w": 1859.34,
-      "h": 1121.79
+      "y": -217,
+      "w": 1860.17,
+      "h": 1122.35
      },
      "style": {
       "display": "flex",
@@ -2300,8 +2328,8 @@
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
       "cursor": "auto",
-      "opacity": "0.0818809",
-      "transform": "matrix3d(1.08932, -0.174538, -0.387059, 7.74117e-05, 0.395743, 0.979499, 0.469472, -9.38943e-05, 0.297183, -0.664581, 0.793588, -0.000158718, 0, -2.05722, 0, 1)",
+      "opacity": "0.081596",
+      "transform": "matrix3d(1.08981, -0.174616, -0.387059, 7.74117e-05, 0.39592, 0.979936, 0.469472, -9.38943e-05, 0.297315, -0.664877, 0.793588, -0.000158718, 0, -1.74561, 0, 1)",
       "overflow": "visible",
       "zIndex": "auto",
       "top": "240px"
@@ -2309,19 +2337,19 @@
      "paint": [
       {
        "node": "div",
-       "size": "304.2x83.6",
+       "size": "304.4x83.6",
        "bg": "rgb(0, 15, 77)",
        "radius": "8px"
       },
       {
        "node": "div[Graphic]",
-       "size": "21.3x15.9",
-       "bgImage": "url(data:…)%22></path></svg>\")"
+       "size": "21.4x15.9",
+       "bgImage": "url(data:\u2026)%22></path></svg>\")"
       },
       {
        "node": "div[graphic]",
        "size": "23.4x18.7",
-       "bgImage": "url(data:…)%22 result=%22a1560z%22></feFlood><feComposite in=%22a1560z%22 in2=%22a1559z%22 operator=%22in%22 result=%22a1553z%22></feComposite></filter><filter id=%22a1555z%22 x=%22-9.8%%22 y=%22-28.9"
+       "bgImage": "url(data:\u2026)%22 result=%22a1560z%22></feFlood><feComposite in=%22a1560z%22 in2=%22a1559z%22 operator=%22in%22 result=%22a1553z%22></feComposite></filter><filter id=%22a1555z%22 x=%22-9.8%%22 y=%22-28.9"
       }
      ],
      "textStyle": {
@@ -2337,14 +2365,15 @@
       "textTransform": "none"
      },
      "icon": {
-      "w": 20.65,
-      "h": 16.14,
+      "w": 20.66,
+      "h": 16.15,
       "fill": "rgb(0, 0, 0)",
       "stroke": "none",
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/feature-card-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     }
    },
    "group": "Home",
@@ -2368,12 +2397,13 @@
   "nav-light": {
    "page": "pricing",
    "url": "https://www.lemni.com/pricing",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "nav",
      "classes": "",
      "framerName": "Light",
-     "text": "Docs Blog Company Community ↗ Pricing Continue",
+     "text": "Docs Blog Company Community \u2197 Pricing Continue",
      "rect": {
       "x": 0,
       "y": 0,
@@ -2480,12 +2510,12 @@
       {
        "node": "div[Logo]",
        "size": "32.0x21.0",
-       "bgImage": "url(data:…)%22></path><path d=%22M 18.465 19.378 L 10.01 10.459 L 14.884 16.892 C 15.121 17.205 15.095 17.645 14.823 17.929 L 13.384 19.431 C 11.497 21.399 8.427 21.399 6.541 19.431 L 1.415 13.954 C -"
+       "bgImage": "url(data:\u2026)%22></path><path d=%22M 18.465 19.378 L 10.01 10.459 L 14.884 16.892 C 15.121 17.205 15.095 17.645 14.823 17.929 L 13.384 19.431 C 11.497 21.399 8.427 21.399 6.541 19.431 L 1.415 13.954 C -"
       },
       {
        "node": "div[Logotype]",
        "size": "46.0x14.0",
-       "bgImage": "url(data:…)%22></path></svg>\")"
+       "bgImage": "url(data:\u2026)%22></path></svg>\")"
       },
       {
        "node": "div",
@@ -2496,7 +2526,7 @@
       {
        "node": "div[Graphic]",
        "size": "14.0x14.0",
-       "bgImage": "url(data:…)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(255, 255, 255)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dash"
+       "bgImage": "url(data:\u2026)%22></path><path d=%22M 7 12 L 12 7 L 7 2%22 fill=%22transparent%22 stroke-width=%221.5%22 stroke=%22rgb(255, 255, 255)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dash"
       }
      ],
      "textStyle": {
@@ -2512,7 +2542,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-light-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     }
    },
    "group": "Shell",
@@ -2523,6 +2554,7 @@
   "pricing-title": {
    "page": "pricing",
    "url": "https://www.lemni.com/pricing",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "h2",
@@ -2617,7 +2649,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/pricing-title-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     }
    },
    "group": "Pricing",
@@ -2628,6 +2661,7 @@
   "price": {
    "page": "pricing",
    "url": "https://www.lemni.com/pricing",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "div",
@@ -2722,7 +2756,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/price-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     }
    },
    "group": "Pricing",
@@ -2733,6 +2768,7 @@
   "plan-cta": {
    "page": "pricing",
    "url": "https://www.lemni.com/pricing",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "a",
@@ -2859,7 +2895,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/plan-cta-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     },
     "hover": {
      "tag": "a",
@@ -2985,7 +3022,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/plan-cta-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "read": "2026-11-21"
     },
     "focus-visible": {
      "tag": "a",
@@ -3113,7 +3151,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/plan-cta-focus-visible.png",
-     "via": "keyboard focus"
+     "via": "keyboard focus",
+     "read": "2026-11-21"
     },
     "pressed": {
      "tag": "a",
@@ -3240,7 +3279,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/plan-cta-pressed.png",
-     "via": "CDP forcePseudoState :active:hover; not clicked"
+     "via": "CDP forcePseudoState :active:hover; not clicked",
+     "read": "2026-11-21"
     }
    },
    "group": "Pricing",
@@ -3368,16 +3408,225 @@
   "docs-link": {
    "page": "docs",
    "url": "https://www.lemni.com/docs",
-   "states": {},
+   "read": "2026-11-21",
+   "states": {
+    "default": {
+     "tag": "a",
+     "classes": "",
+     "framerName": "basic",
+     "text": "Agents Instruct Ai",
+     "rect": {
+      "x": 636,
+      "y": 409.4,
+      "w": 168,
+      "h": 81
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "168px",
+      "height": "81px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "20px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "20px",
+      "rowGap": "20px",
+      "columnGap": "20px",
+      "flexDirection": "column",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(0, 0, 238)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(0, 0, 238)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(0, 0, 238)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(0, 0, 238)",
+      "borderTopLeftRadius": "14px",
+      "borderTopRightRadius": "14px",
+      "borderBottomRightRadius": "14px",
+      "borderBottomLeftRadius": "14px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 238)",
+      "outlineOffset": "0px",
+      "fontFamily": "sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "lineHeight": "normal",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(0, 0, 238)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(0, 0, 238)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "div",
+       "size": "1.0x1.0",
+       "bg": "rgba(0, 0, 0, 0.2)"
+      }
+     ],
+     "textStyle": {
+      "node": "h3",
+      "text": "Agents",
+      "fontFamily": "\"TWK Lausanne 400\", \"TWK Lausanne 400 Placeholder\", sans-serif",
+      "fontSize": "15px",
+      "lineHeight": "18px",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "color": "rgb(155, 155, 156)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "crop": "components/crops/docs-link-default.png",
+     "via": "at rest",
+     "read": "2026-11-21"
+    },
+    "hover": {
+     "tag": "a",
+     "classes": "hover",
+     "text": "Agents Instruct Ai",
+     "rect": {
+      "x": 636,
+      "y": 409.4,
+      "w": 168,
+      "h": 81
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "168px",
+      "height": "81px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "20px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "20px",
+      "rowGap": "20px",
+      "columnGap": "20px",
+      "flexDirection": "column",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(0, 0, 238)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(0, 0, 238)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(0, 0, 238)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(0, 0, 238)",
+      "borderTopLeftRadius": "14px",
+      "borderTopRightRadius": "14px",
+      "borderBottomRightRadius": "14px",
+      "borderBottomLeftRadius": "14px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 238)",
+      "outlineOffset": "0px",
+      "fontFamily": "sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "lineHeight": "normal",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(0, 0, 238)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(0, 0, 238)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "div",
+       "size": "1.0x1.0",
+       "bg": "rgba(0, 0, 0, 0.2)"
+      }
+     ],
+     "textStyle": {
+      "node": "h3",
+      "text": "Agents",
+      "fontFamily": "\"TWK Lausanne 400\", \"TWK Lausanne 400 Placeholder\", sans-serif",
+      "fontSize": "15px",
+      "lineHeight": "18px",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "color": "rgb(100, 100, 101)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "crop": "components/crops/docs-link-hover.png",
+     "via": "mouse hover",
+     "read": "2026-11-21"
+    }
+   },
    "group": "Docs",
    "title": "Docs section link",
    "desc": "A public docs section. Measured at rest and hover. The agents page is also captured as docs-light-agents.png.",
-   "selector": "a (Agents)",
-   "missing": true
+   "selector": "a (Agents)"
   },
   "auth-title": {
    "page": "signin",
    "url": "https://lemni.com/signin",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "h2",
@@ -3472,7 +3721,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/auth-title-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     }
    },
    "group": "Auth shell",
@@ -3483,6 +3733,7 @@
   "google-button": {
    "page": "signin",
    "url": "https://lemni.com/signin",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "div",
@@ -3593,7 +3844,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/google-button-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     },
     "hover": {
      "tag": "div",
@@ -3704,7 +3956,8 @@
       "color": "rgba(0, 0, 0, 0.6)"
      },
      "crop": "components/crops/google-button-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "read": "2026-11-21"
     },
     "focus-visible": {
      "tag": "div",
@@ -3815,7 +4068,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/google-button-focus-visible.png",
-     "via": "keyboard focus"
+     "via": "keyboard focus",
+     "read": "2026-11-21"
     },
     "pressed": {
      "tag": "div",
@@ -3926,7 +4180,8 @@
       "color": "rgba(0, 0, 0, 0.6)"
      },
      "crop": "components/crops/google-button-pressed.png",
-     "via": "CDP forcePseudoState :active:hover; not clicked"
+     "via": "CDP forcePseudoState :active:hover; not clicked",
+     "read": "2026-11-21"
     }
    },
    "group": "Auth shell",
@@ -3937,11 +4192,12 @@
   "email-field": {
    "page": "signin",
    "url": "https://lemni.com/signin",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "input",
      "classes": "sc-eeDRCY kTkBJV",
-     "text": "Email…",
+     "text": "Email\u2026",
      "rect": {
       "x": 540,
       "y": 518,
@@ -4033,12 +4289,13 @@
       "fontSize": "15px"
      },
      "crop": "components/crops/email-field-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     },
     "hover": {
      "tag": "input",
      "classes": "sc-eeDRCY kTkBJV",
-     "text": "Email…",
+     "text": "Email\u2026",
      "rect": {
       "x": 540,
       "y": 518,
@@ -4130,12 +4387,13 @@
       "fontSize": "15px"
      },
      "crop": "components/crops/email-field-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "read": "2026-11-21"
     },
     "focus-visible": {
      "tag": "input",
      "classes": "sc-eeDRCY kTkBJV",
-     "text": "Email…",
+     "text": "Email\u2026",
      "rect": {
       "x": 540,
       "y": 518,
@@ -4227,12 +4485,13 @@
       "fontSize": "15px"
      },
      "crop": "components/crops/email-field-focus-visible.png",
-     "via": "keyboard focus"
+     "via": "keyboard focus",
+     "read": "2026-11-21"
     },
     "focused": {
      "tag": "input",
      "classes": "sc-eeDRCY kTkBJV",
-     "text": "Email…",
+     "text": "Email\u2026",
      "rect": {
       "x": 540,
       "y": 518,
@@ -4324,114 +4583,19 @@
       "fontSize": "15px"
      },
      "crop": "components/crops/email-field-focused.png",
-     "via": "clicked into the field; nothing submitted"
-    },
-    "filled": {
-     "tag": "input",
-     "classes": "sc-eeDRCY kTkBJV",
-     "text": "Email…",
-     "rect": {
-      "x": 540,
-      "y": 518,
-      "w": 360,
-      "h": 44
-     },
-     "style": {
-      "display": "flex",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "360px",
-      "height": "44px",
-      "minWidth": "auto",
-      "maxWidth": "360px",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "10px",
-      "paddingBottom": "0px",
-      "paddingLeft": "20px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "10px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "12px",
-      "borderTopRightRadius": "12px",
-      "borderBottomRightRadius": "12px",
-      "borderBottomLeftRadius": "12px",
-      "backgroundColor": "rgba(255, 255, 255, 0.5)",
-      "backgroundImage": "none",
-      "boxShadow": "rgba(95, 122, 143, 0.23) 0px 2px 3px 0px, rgba(0, 0, 0, 0.03) -1px -1px 1px 0px inset, rgb(255, 255, 255) 1px 1px 1px 0px inset",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "15px",
-      "fontWeight": "400",
-      "lineHeight": "44px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "box-shadow",
-      "transitionDuration": "0.1s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "text",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "clip",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "input",
-       "size": "360.0x44.0",
-       "bg": "rgba(255, 255, 255, 0.5)",
-       "shadow": "rgba(95, 122, 143, 0.23) 0px 2px 3px 0px, rgba(0, 0, 0, 0.03) -1px -1px 1px 0px inset, rgb(255, 255, 255) 1px 1px 1px 0px inset",
-       "radius": "12px"
-      }
-     ],
-     "placeholder": {
-      "color": "rgba(0, 0, 0, 0.14)",
-      "opacity": "1",
-      "fontSize": "15px"
-     },
-     "crop": "components/crops/email-field-filled.png",
-     "via": "typed a placeholder address, then deleted; nothing submitted"
+     "via": "clicked into the field; nothing submitted",
+     "read": "2026-11-21"
     }
    },
    "group": "Auth shell",
    "title": "Email field",
-   "desc": "360 by 44, 12px radius, white at 50% opacity, placeholder \"Email…\". A placeholder address was typed and deleted. Nothing was submitted.",
+   "desc": "360 by 44, 12px radius, white at 50% opacity, placeholder \"Email\u2026\". Photographed empty. Nothing was typed. Nothing was submitted.",
    "selector": "input"
   },
   "auth-continue": {
    "page": "signin",
    "url": "https://lemni.com/signin",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "div",
@@ -4535,7 +4699,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/auth-continue-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     },
     "hover": {
      "tag": "div",
@@ -4639,7 +4804,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/auth-continue-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "read": "2026-11-21"
     },
     "focus-visible": {
      "tag": "div",
@@ -4743,7 +4909,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/auth-continue-focus-visible.png",
-     "via": "keyboard focus"
+     "via": "keyboard focus",
+     "read": "2026-11-21"
     },
     "pressed": {
      "tag": "div",
@@ -4847,7 +5014,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/auth-continue-pressed.png",
-     "via": "CDP forcePseudoState :active:hover; not clicked"
+     "via": "CDP forcePseudoState :active:hover; not clicked",
+     "read": "2026-11-21"
     }
    },
    "group": "Auth shell",
@@ -4858,6 +5026,7 @@
   "nav-mobile": {
    "page": "mobile-home",
    "url": "https://www.lemni.com/",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "nav",
@@ -4970,12 +5139,12 @@
       {
        "node": "div[Logo]",
        "size": "32.0x21.0",
-       "bgImage": "url(data:…)%22></path><path d=%22M 18.465 19.378 L 10.01 10.459 L 14.884 16.892 C 15.121 17.205 15.095 17.645 14.823 17.929 L 13.384 19.431 C 11.497 21.399 8.427 21.399 6.541 19.431 L 1.415 13.954 C -"
+       "bgImage": "url(data:\u2026)%22></path><path d=%22M 18.465 19.378 L 10.01 10.459 L 14.884 16.892 C 15.121 17.205 15.095 17.645 14.823 17.929 L 13.384 19.431 C 11.497 21.399 8.427 21.399 6.541 19.431 L 1.415 13.954 C -"
       },
       {
        "node": "div[Logotype]",
        "size": "46.0x14.0",
-       "bgImage": "url(data:…)%22></path></svg>\")"
+       "bgImage": "url(data:\u2026)%22></path></svg>\")"
       },
       {
        "node": "div[Bottom]",
@@ -4991,7 +5160,8 @@
       }
      ],
      "crop": "components/crops/nav-mobile-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     }
    },
    "group": "Mobile",
@@ -5002,6 +5172,7 @@
   "menu-button": {
    "page": "mobile-home",
    "url": "https://www.lemni.com/",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "div",
@@ -5099,7 +5270,8 @@
       }
      ],
      "crop": "components/crops/menu-button-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     }
    },
    "group": "Mobile",
@@ -5110,6 +5282,7 @@
   "footer-link": {
    "page": "home",
    "url": "https://www.lemni.com/",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "a",
@@ -5204,7 +5377,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/footer-link-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     },
     "hover": {
      "tag": "a",
@@ -5299,7 +5473,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/footer-link-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "read": "2026-11-21"
     }
    },
    "group": "Home",
@@ -5310,6 +5485,7 @@
   "docs-tabs": {
    "page": "docs",
    "url": "https://www.lemni.com/docs",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "div",
@@ -5404,7 +5580,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/docs-tabs-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     }
    },
    "group": "Docs",
@@ -5415,6 +5592,7 @@
   "docs-side-link": {
    "page": "docs",
    "url": "https://www.lemni.com/docs",
+   "read": "2026-11-21",
    "states": {
     "default": {
      "tag": "a",
@@ -5509,7 +5687,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/docs-side-link-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "read": "2026-11-21"
     },
     "hover": {
      "tag": "a",
@@ -5604,2972 +5783,14 @@
       "textTransform": "none"
      },
      "crop": "components/crops/docs-side-link-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "read": "2026-11-21"
     }
    },
    "group": "Docs",
    "title": "Docs page link",
    "desc": "A link in the left page list (Overview, Workplace, Members). Measured, never used to submit anything.",
    "selector": "a (Overview)"
-  },
-  "app-nav-inbox": {
-   "page": "inbox",
-   "url": "https://lemni.com/s/XXXXX/inbox",
-   "states": {
-    "default": {
-     "tag": "div",
-     "classes": "sc-tagGq nBuVi",
-     "text": "Inbox",
-     "rect": {
-      "x": 10,
-      "y": 66,
-      "w": 239,
-      "h": 34
-     },
-     "style": {
-      "display": "block",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "239px",
-      "height": "34px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "1px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "239.0x34.0",
-       "bg": "rgba(0, 0, 0, 0.05)",
-       "radius": "8px"
-      }
-     ],
-     "textStyle": {
-      "node": "h5",
-      "text": "Inbox",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "lineHeight": "16.9px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 14,
-      "h": 14,
-      "fill": "rgb(0, 0, 0)",
-      "stroke": "none",
-      "color": "rgb(0, 0, 0)"
-     },
-     "crop": "components/crops/app-nav-inbox-default.png",
-     "via": "at rest"
-    },
-    "hover": {
-     "tag": "div",
-     "classes": "sc-tagGq nBuVi",
-     "text": "Inbox",
-     "rect": {
-      "x": 10,
-      "y": 66,
-      "w": 239,
-      "h": 34
-     },
-     "style": {
-      "display": "block",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "239px",
-      "height": "34px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "1px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "239.0x34.0",
-       "bg": "rgba(0, 0, 0, 0.05)",
-       "radius": "8px"
-      }
-     ],
-     "textStyle": {
-      "node": "h5",
-      "text": "Inbox",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "lineHeight": "16.9px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 14,
-      "h": 14,
-      "fill": "rgb(0, 0, 0)",
-      "stroke": "none",
-      "color": "rgb(0, 0, 0)"
-     },
-     "crop": "components/crops/app-nav-inbox-hover.png",
-     "via": "mouse hover"
-    }
-   },
-   "group": "App shell",
-   "title": "Inbox nav row",
-   "desc": "Selected row in the workplace sidebar.",
-   "selector": "text Inbox"
-  },
-  "app-upgrade": {
-   "page": "inbox",
-   "url": "https://lemni.com/s/XXXXX/inbox",
-   "states": {
-    "default": {
-     "tag": "div",
-     "classes": "sc-dcJsrY dqquAs secondary",
-     "text": "Upgrade",
-     "rect": {
-      "x": 20,
-      "y": 717,
-      "w": 219,
-      "h": 28
-     },
-     "style": {
-      "display": "flex",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "219px",
-      "height": "28px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "10px",
-      "paddingBottom": "0px",
-      "paddingLeft": "10px",
-      "marginTop": "-1px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "center",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(255, 255, 255)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgb(0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0.4) 0px 2px 5px 0px",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(255, 255, 255)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "fontWeight": "500",
-      "lineHeight": "28px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(255, 255, 255)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all, color, width",
-      "transitionDuration": "0.1s, 0.2s, 0.2s",
-      "transitionTimingFunction": "ease, ease, ease",
-      "transitionDelay": "0s, 0s, 0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "hidden",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "219.0x28.0",
-       "bg": "rgb(0, 0, 0)",
-       "shadow": "rgba(0, 0, 0, 0.4) 0px 2px 5px 0px",
-       "radius": "8px"
-      }
-     ],
-     "textStyle": {
-      "node": "div",
-      "text": "Upgrade",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "lineHeight": "28px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/app-upgrade-default.png",
-     "via": "at rest"
-    },
-    "hover": {
-     "tag": "div",
-     "classes": "sc-dcJsrY dqquAs secondary",
-     "text": "Upgrade",
-     "rect": {
-      "x": 20,
-      "y": 717,
-      "w": 219,
-      "h": 28
-     },
-     "style": {
-      "display": "flex",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "219px",
-      "height": "28px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "10px",
-      "paddingBottom": "0px",
-      "paddingLeft": "10px",
-      "marginTop": "-1px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "center",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(255, 255, 255)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgb(32, 35, 46)",
-      "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0.4) 0px 3px 5px 0px",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(255, 255, 255)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "fontWeight": "500",
-      "lineHeight": "28px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(255, 255, 255)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all, color, width",
-      "transitionDuration": "0.1s, 0.2s, 0.2s",
-      "transitionTimingFunction": "ease, ease, ease",
-      "transitionDelay": "0s, 0s, 0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "hidden",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "219.0x28.0",
-       "bg": "rgb(32, 35, 46)",
-       "shadow": "rgba(0, 0, 0, 0.4) 0px 3px 5px 0px",
-       "radius": "8px"
-      }
-     ],
-     "textStyle": {
-      "node": "div",
-      "text": "Upgrade",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "lineHeight": "28px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/app-upgrade-hover.png",
-     "via": "mouse hover"
-    },
-    "focus-visible": {
-     "tag": "div",
-     "classes": "sc-dcJsrY dqquAs secondary",
-     "text": "Upgrade",
-     "rect": {
-      "x": 20,
-      "y": 717,
-      "w": 219,
-      "h": 28
-     },
-     "style": {
-      "display": "flex",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "219px",
-      "height": "28px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "10px",
-      "paddingBottom": "0px",
-      "paddingLeft": "10px",
-      "marginTop": "-1px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "center",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(255, 255, 255)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgb(0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0.4) 0px 2px 5px 0px",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(255, 255, 255)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "fontWeight": "500",
-      "lineHeight": "28px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(255, 255, 255)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all, color, width",
-      "transitionDuration": "0.1s, 0.2s, 0.2s",
-      "transitionTimingFunction": "ease, ease, ease",
-      "transitionDelay": "0s, 0s, 0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "hidden",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "219.0x28.0",
-       "bg": "rgb(0, 0, 0)",
-       "shadow": "rgba(0, 0, 0, 0.4) 0px 2px 5px 0px",
-       "radius": "8px"
-      }
-     ],
-     "textStyle": {
-      "node": "div",
-      "text": "Upgrade",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "lineHeight": "28px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/app-upgrade-focus-visible.png",
-     "via": "keyboard focus"
-    },
-    "pressed": {
-     "tag": "div",
-     "classes": "sc-dcJsrY dqquAs secondary",
-     "text": "Upgrade",
-     "rect": {
-      "x": 21.1,
-      "y": 717.1,
-      "w": 216.81,
-      "h": 27.72
-     },
-     "style": {
-      "display": "flex",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "219px",
-      "height": "28px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "10px",
-      "paddingBottom": "0px",
-      "paddingLeft": "10px",
-      "marginTop": "-1px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "center",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(246, 246, 248)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(246, 246, 248)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(246, 246, 248)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(246, 246, 248)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgb(32, 35, 46)",
-      "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0.2) 0px 1px 3px 0px",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(246, 246, 248)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "fontWeight": "500",
-      "lineHeight": "28px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(246, 246, 248)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(246, 246, 248)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all, color, width",
-      "transitionDuration": "0.1s, 0.2s, 0.2s",
-      "transitionTimingFunction": "ease, ease, ease",
-      "transitionDelay": "0s, 0s, 0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "matrix(0.99, 0, 0, 0.99, 0, 0)",
-      "overflow": "hidden",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "216.8x27.7",
-       "bg": "rgb(32, 35, 46)",
-       "shadow": "rgba(0, 0, 0, 0.2) 0px 1px 3px 0px",
-       "radius": "8px"
-      }
-     ],
-     "textStyle": {
-      "node": "div",
-      "text": "Upgrade",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "lineHeight": "28px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(246, 246, 248)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/app-upgrade-pressed.png",
-     "via": "CDP forcePseudoState :active:hover; not clicked through"
-    }
-   },
-   "group": "App shell",
-   "title": "Sidebar Upgrade",
-   "desc": "Free-trial upgrade pill in the sidebar. Measured, never followed.",
-   "selector": "Upgrade"
-  },
-  "app-empty": {
-   "page": "inbox",
-   "url": "https://lemni.com/s/XXXXX/inbox",
-   "states": {
-    "default": {
-     "tag": "div",
-     "classes": "sc-jsJBEP CfKJK",
-     "text": "No threads todo",
-     "rect": {
-      "x": 260,
-      "y": 105,
-      "w": 299,
-      "h": 795
-     },
-     "style": {
-      "display": "flex",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "299px",
-      "height": "795px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "20px",
-      "paddingBottom": "56px",
-      "paddingLeft": "20px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "column",
-      "alignItems": "center",
-      "justifyContent": "center",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(100, 100, 101)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(100, 100, 101)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(100, 100, 101)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(100, 100, 101)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(100, 100, 101)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(100, 100, 101)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(100, 100, 101)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "opacity",
-      "transitionDuration": "0.2s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "matrix(1, 0, 0, 1, 0, 0)",
-      "overflow": "visible",
-      "zIndex": "4",
-      "top": "0px"
-     },
-     "textStyle": {
-      "node": "h5",
-      "text": "No threads todo",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "lineHeight": "18.2px",
-      "fontWeight": "400",
-      "letterSpacing": "normal",
-      "color": "rgb(155, 155, 156)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 40,
-      "h": 40,
-      "fill": "rgb(0, 0, 0)",
-      "stroke": "none",
-      "color": "rgb(202, 202, 205)"
-     },
-     "crop": "components/crops/app-empty-default.png",
-     "via": "at rest"
-    }
-   },
-   "group": "Inbox",
-   "title": "Empty inbox",
-   "desc": "Empty state copy in the thread list.",
-   "selector": "No threads todo"
-  },
-  "app-toast": {
-   "page": "inbox",
-   "url": "https://lemni.com/s/XXXXX/inbox",
-   "states": {
-    "default": {
-     "tag": "div",
-     "classes": "",
-     "text": "M My Workspace Inbox K Assigned Manage Agents Knowledge Behavior Actions Setting",
-     "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 900
-     },
-     "style": {
-      "display": "block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "900px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "260.0x900.0",
-       "border": "R:1px solid rgba(0, 0, 0, 0.05)",
-       "bg": "rgb(241, 243, 244)"
-      },
-      {
-       "node": "div",
-       "size": "249.0x56.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.05)"
-      },
-      {
-       "node": "div",
-       "size": "26.0x26.0",
-       "bg": "rgb(155, 155, 156)",
-       "radius": "50%"
-      },
-      {
-       "node": "div",
-       "size": "239.0x34.0",
-       "bg": "rgba(0, 0, 0, 0.05)",
-       "radius": "8px"
-      },
-      {
-       "node": "div",
-       "size": "16.0x16.0",
-       "bg": "rgb(155, 155, 156)",
-       "radius": "50%"
-      },
-      {
-       "node": "div",
-       "size": "249.0x253.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.05)"
-      },
-      {
-       "node": "div",
-       "size": "219.0x28.0",
-       "bg": "rgb(0, 0, 0)",
-       "shadow": "rgba(0, 0, 0, 0.4) 0px 2px 5px 0px",
-       "radius": "8px"
-      },
-      {
-       "node": "div",
-       "size": "239.0x60.0",
-       "shadow": "rgba(95, 122, 143, 0.25) 0px 1px 3px 0px, rgb(255, 255, 255) 1px 1px 1px 0px inset",
-       "radius": "10px"
-      },
-      {
-       "node": "div",
-       "size": "239.0x60.0",
-       "shadow": "rgba(95, 122, 143, 0.25) 0px 1px 3px 0px, rgb(255, 255, 255) 1px 1px 1px 0px inset",
-       "radius": "10px"
-      },
-      {
-       "node": "div",
-       "size": "0.0x0.0",
-       "bg": "rgb(0, 0, 0)",
-       "shadow": "rgba(0, 0, 0, 0.4) 0px 4px 5px 0px",
-       "radius": "8px"
-      },
-      {
-       "node": "div::before",
-       "size": "1pxx900px",
-       "bg": "rgba(0, 0, 0, 0.12)"
-      },
-      {
-       "node": "div",
-       "size": "300.0x900.0",
-       "border": "R:1px solid rgba(0, 0, 0, 0.05)"
-      },
-      {
-       "node": "div",
-       "size": "289.0x56.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.05)",
-       "bg": "rgba(246, 246, 248, 0.75)"
-      },
-      {
-       "node": "div",
-       "size": "289.0x49.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.05)"
-      }
-     ],
-     "textStyle": {
-      "node": "div",
-      "text": "M",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "16.25px",
-      "lineHeight": "422.5px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(246, 246, 248)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 10,
-      "h": 10,
-      "fill": "rgb(0, 0, 0)",
-      "stroke": "none",
-      "color": "rgb(155, 155, 156)"
-     },
-     "crop": "components/crops/app-toast-default.png",
-     "via": "at rest"
-    }
-   },
-   "group": "Inbox",
-   "title": "Reconnecting toast",
-   "desc": "Black pill toast the headless client shows while the socket retries.",
-   "selector": "Reconnecting"
-  },
-  "app-dialog": {
-   "page": "settings",
-   "url": "https://lemni.com/s/XXXXX/inbox?workspaceSettings=members",
-   "states": {
-    "default": {
-     "tag": "div",
-     "classes": "",
-     "text": "M My Workspace Inbox K Assigned Manage Agents Knowledge Behavior Actions Setting",
-     "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 900
-     },
-     "style": {
-      "display": "block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "900px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "260.0x900.0",
-       "border": "R:1px solid rgba(0, 0, 0, 0.05)",
-       "bg": "rgb(241, 243, 244)"
-      },
-      {
-       "node": "div",
-       "size": "249.0x56.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.05)"
-      },
-      {
-       "node": "div",
-       "size": "26.0x26.0",
-       "bg": "rgb(155, 155, 156)",
-       "radius": "50%"
-      },
-      {
-       "node": "div",
-       "size": "239.0x34.0",
-       "bg": "rgba(0, 0, 0, 0.05)",
-       "radius": "8px"
-      },
-      {
-       "node": "div",
-       "size": "16.0x16.0",
-       "bg": "rgb(155, 155, 156)",
-       "radius": "50%"
-      },
-      {
-       "node": "div",
-       "size": "249.0x253.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.05)"
-      },
-      {
-       "node": "div",
-       "size": "219.0x28.0",
-       "bg": "rgb(0, 0, 0)",
-       "shadow": "rgba(0, 0, 0, 0.4) 0px 2px 5px 0px",
-       "radius": "8px"
-      },
-      {
-       "node": "div",
-       "size": "239.0x60.0",
-       "shadow": "rgba(95, 122, 143, 0.25) 0px 1px 3px 0px, rgb(255, 255, 255) 1px 1px 1px 0px inset",
-       "radius": "10px"
-      },
-      {
-       "node": "div",
-       "size": "239.0x60.0",
-       "shadow": "rgba(95, 122, 143, 0.25) 0px 1px 3px 0px, rgb(255, 255, 255) 1px 1px 1px 0px inset",
-       "radius": "10px"
-      },
-      {
-       "node": "div",
-       "size": "0.0x0.0",
-       "bg": "rgb(0, 0, 0)",
-       "shadow": "rgba(0, 0, 0, 0.4) 0px 4px 5px 0px",
-       "radius": "8px"
-      },
-      {
-       "node": "div::before",
-       "size": "1pxx900px",
-       "bg": "rgba(0, 0, 0, 0.12)"
-      },
-      {
-       "node": "div",
-       "size": "300.0x900.0",
-       "border": "R:1px solid rgba(0, 0, 0, 0.05)"
-      },
-      {
-       "node": "div",
-       "size": "289.0x56.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.05)",
-       "bg": "rgba(246, 246, 248, 0.75)"
-      },
-      {
-       "node": "div",
-       "size": "289.0x49.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.05)"
-      }
-     ],
-     "textStyle": {
-      "node": "div",
-      "text": "M",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "16.25px",
-      "lineHeight": "422.5px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(246, 246, 248)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 10,
-      "h": 10,
-      "fill": "rgb(0, 0, 0)",
-      "stroke": "none",
-      "color": "rgb(155, 155, 156)"
-     },
-     "crop": "components/crops/app-dialog-default.png",
-     "via": "at rest"
-    }
-   },
-   "group": "Workplace",
-   "title": "Workplace settings dialog",
-   "desc": "Members dialog over a dimmed inbox.",
-   "selector": "dialog heading"
-  },
-  "app-invite-field": {
-   "page": "settings",
-   "url": "https://lemni.com/s/XXXXX/inbox?workspaceSettings=members",
-   "states": {
-    "default": {
-     "tag": "input",
-     "classes": "sc-eeDRCY kTkBJV",
-     "text": "name@myworkspace.com",
-     "rect": {
-      "x": 447.9,
-      "y": 259.5,
-      "w": 461.19,
-      "h": 28
-     },
-     "style": {
-      "display": "flex",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "461.188px",
-      "height": "28px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "10px",
-      "paddingBottom": "0px",
-      "paddingLeft": "12px",
-      "marginTop": "0px",
-      "marginRight": "10px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgba(255, 255, 255, 0.5)",
-      "backgroundImage": "none",
-      "boxShadow": "rgba(95, 122, 143, 0.25) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) -1px -1px 1px 0px inset, rgb(255, 255, 255) 1px 1px 1px 0px inset",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "fontWeight": "400",
-      "lineHeight": "28px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "box-shadow",
-      "transitionDuration": "0.1s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "text",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "clip",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "input",
-       "size": "461.2x28.0",
-       "bg": "rgba(255, 255, 255, 0.5)",
-       "shadow": "rgba(95, 122, 143, 0.25) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) -1px -1px 1px 0px inset, rgb(255, 255, 255) 1px 1px 1px 0px inset",
-       "radius": "8px"
-      }
-     ],
-     "placeholder": {
-      "color": "rgba(0, 0, 0, 0.25)",
-      "opacity": "1",
-      "fontSize": "13px"
-     },
-     "crop": "components/crops/app-invite-field-default.png",
-     "via": "at rest"
-    },
-    "focus-visible": {
-     "tag": "input",
-     "classes": "sc-eeDRCY kTkBJV",
-     "text": "name@myworkspace.com",
-     "rect": {
-      "x": 447.9,
-      "y": 259.5,
-      "w": 461.19,
-      "h": 28
-     },
-     "style": {
-      "display": "flex",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "461.188px",
-      "height": "28px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "10px",
-      "paddingBottom": "0px",
-      "paddingLeft": "12px",
-      "marginTop": "0px",
-      "marginRight": "10px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgba(255, 255, 255, 0.5)",
-      "backgroundImage": "none",
-      "boxShadow": "rgba(95, 122, 143, 0.23) 0px 2px 3px 0px, rgba(0, 0, 0, 0.03) -1px -1px 1px 0px inset, rgb(255, 255, 255) 1px 1px 1px 0px inset",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "fontWeight": "400",
-      "lineHeight": "28px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "box-shadow",
-      "transitionDuration": "0.1s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "text",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "clip",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "input",
-       "size": "461.2x28.0",
-       "bg": "rgba(255, 255, 255, 0.5)",
-       "shadow": "rgba(95, 122, 143, 0.23) 0px 2px 3px 0px, rgba(0, 0, 0, 0.03) -1px -1px 1px 0px inset, rgb(255, 255, 255) 1px 1px 1px 0px inset",
-       "radius": "8px"
-      }
-     ],
-     "placeholder": {
-      "color": "rgba(0, 0, 0, 0.14)",
-      "opacity": "1",
-      "fontSize": "13px"
-     },
-     "crop": "components/crops/app-invite-field-focus-visible.png",
-     "via": "keyboard focus"
-    }
-   },
-   "group": "Workplace",
-   "title": "Invite email field",
-   "desc": "Invite field. Typed nothing; Invite was not pressed.",
-   "selector": "input[placeholder=name@myworkspace.com]"
-  },
-  "app-member-row": {
-   "page": "settings",
-   "url": "https://lemni.com/s/XXXXX/inbox?workspaceSettings=members",
-   "states": {
-    "default": {
-     "tag": "div",
-     "classes": "",
-     "text": "M My Workspace Inbox K Assigned Manage Agents Knowledge Behavior Actions Setting",
-     "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 900
-     },
-     "style": {
-      "display": "block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "900px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "260.0x900.0",
-       "border": "R:1px solid rgba(0, 0, 0, 0.05)",
-       "bg": "rgb(241, 243, 244)"
-      },
-      {
-       "node": "div",
-       "size": "249.0x56.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.05)"
-      },
-      {
-       "node": "div",
-       "size": "26.0x26.0",
-       "bg": "rgb(155, 155, 156)",
-       "radius": "50%"
-      },
-      {
-       "node": "div",
-       "size": "239.0x34.0",
-       "bg": "rgba(0, 0, 0, 0.05)",
-       "radius": "8px"
-      },
-      {
-       "node": "div",
-       "size": "16.0x16.0",
-       "bg": "rgb(155, 155, 156)",
-       "radius": "50%"
-      },
-      {
-       "node": "div",
-       "size": "249.0x253.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.05)"
-      },
-      {
-       "node": "div",
-       "size": "219.0x28.0",
-       "bg": "rgb(0, 0, 0)",
-       "shadow": "rgba(0, 0, 0, 0.4) 0px 2px 5px 0px",
-       "radius": "8px"
-      },
-      {
-       "node": "div",
-       "size": "239.0x60.0",
-       "shadow": "rgba(95, 122, 143, 0.25) 0px 1px 3px 0px, rgb(255, 255, 255) 1px 1px 1px 0px inset",
-       "radius": "10px"
-      },
-      {
-       "node": "div",
-       "size": "239.0x60.0",
-       "shadow": "rgba(95, 122, 143, 0.25) 0px 1px 3px 0px, rgb(255, 255, 255) 1px 1px 1px 0px inset",
-       "radius": "10px"
-      },
-      {
-       "node": "div",
-       "size": "0.0x0.0",
-       "bg": "rgb(0, 0, 0)",
-       "shadow": "rgba(0, 0, 0, 0.4) 0px 4px 5px 0px",
-       "radius": "8px"
-      },
-      {
-       "node": "div::before",
-       "size": "1pxx900px",
-       "bg": "rgba(0, 0, 0, 0.12)"
-      },
-      {
-       "node": "div",
-       "size": "300.0x900.0",
-       "border": "R:1px solid rgba(0, 0, 0, 0.05)"
-      },
-      {
-       "node": "div",
-       "size": "289.0x56.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.05)",
-       "bg": "rgba(246, 246, 248, 0.75)"
-      },
-      {
-       "node": "div",
-       "size": "289.0x49.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.05)"
-      }
-     ],
-     "textStyle": {
-      "node": "div",
-      "text": "M",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "16.25px",
-      "lineHeight": "422.5px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(246, 246, 248)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 10,
-      "h": 10,
-      "fill": "rgb(0, 0, 0)",
-      "stroke": "none",
-      "color": "rgb(155, 155, 156)"
-     },
-     "crop": "components/crops/app-member-row-default.png",
-     "via": "at rest"
-    }
-   },
-   "group": "Workplace",
-   "title": "Member row",
-   "desc": "Owner row in the members list.",
-   "selector": "Owner"
-  },
-  "app-role-badge": {
-   "page": "settings",
-   "url": "https://lemni.com/s/XXXXX/inbox?workspaceSettings=members",
-   "states": {},
-   "group": "Workplace",
-   "title": "Owner badge",
-   "desc": "Role label on the member row.",
-   "selector": "Owner",
-   "missing": true
-  },
-  "app-profile-dialog": {
-   "page": "profile",
-   "url": "https://lemni.com/s/XXXXX/inbox?settings=profile",
-   "states": {
-    "default": {
-     "tag": "div",
-     "classes": "",
-     "text": "M My Workspace Inbox K Assigned Manage Agents Knowledge Behavior Actions Setting",
-     "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 900
-     },
-     "style": {
-      "display": "block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "900px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "260.0x900.0",
-       "border": "R:1px solid rgba(0, 0, 0, 0.05)",
-       "bg": "rgb(241, 243, 244)"
-      },
-      {
-       "node": "div",
-       "size": "249.0x56.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.05)"
-      },
-      {
-       "node": "div",
-       "size": "26.0x26.0",
-       "bg": "rgb(155, 155, 156)",
-       "radius": "50%"
-      },
-      {
-       "node": "div",
-       "size": "239.0x34.0",
-       "bg": "rgba(0, 0, 0, 0.05)",
-       "radius": "8px"
-      },
-      {
-       "node": "div",
-       "size": "16.0x16.0",
-       "bg": "rgb(155, 155, 156)",
-       "radius": "50%"
-      },
-      {
-       "node": "div",
-       "size": "249.0x253.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.05)"
-      },
-      {
-       "node": "div",
-       "size": "219.0x28.0",
-       "bg": "rgb(0, 0, 0)",
-       "shadow": "rgba(0, 0, 0, 0.4) 0px 2px 5px 0px",
-       "radius": "8px"
-      },
-      {
-       "node": "div",
-       "size": "239.0x60.0",
-       "shadow": "rgba(95, 122, 143, 0.25) 0px 1px 3px 0px, rgb(255, 255, 255) 1px 1px 1px 0px inset",
-       "radius": "10px"
-      },
-      {
-       "node": "div",
-       "size": "239.0x60.0",
-       "shadow": "rgba(95, 122, 143, 0.25) 0px 1px 3px 0px, rgb(255, 255, 255) 1px 1px 1px 0px inset",
-       "radius": "10px"
-      },
-      {
-       "node": "div",
-       "size": "0.0x0.0",
-       "bg": "rgb(0, 0, 0)",
-       "shadow": "rgba(0, 0, 0, 0.4) 0px 4px 5px 0px",
-       "radius": "8px"
-      },
-      {
-       "node": "div::before",
-       "size": "1pxx900px",
-       "bg": "rgba(0, 0, 0, 0.12)"
-      },
-      {
-       "node": "div",
-       "size": "300.0x900.0",
-       "border": "R:1px solid rgba(0, 0, 0, 0.05)"
-      },
-      {
-       "node": "div",
-       "size": "289.0x56.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.05)",
-       "bg": "rgba(246, 246, 248, 0.75)"
-      },
-      {
-       "node": "div",
-       "size": "289.0x49.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.05)"
-      }
-     ],
-     "textStyle": {
-      "node": "div",
-      "text": "M",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "16.25px",
-      "lineHeight": "422.5px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(246, 246, 248)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 10,
-      "h": 10,
-      "fill": "rgb(0, 0, 0)",
-      "stroke": "none",
-      "color": "rgb(155, 155, 156)"
-     },
-     "crop": "components/crops/app-profile-dialog-default.png",
-     "via": "at rest"
-    }
-   },
-   "group": "Account",
-   "title": "Account dialog",
-   "desc": "Profile dialog with name and email fields.",
-   "selector": "Account"
-  },
-  "app-name-field": {
-   "page": "profile",
-   "url": "https://lemni.com/s/XXXXX/inbox?settings=profile",
-   "states": {
-    "default": {
-     "tag": "input",
-     "classes": "sc-eeDRCY kTkBJV",
-     "text": "First name",
-     "rect": {
-      "x": 480,
-      "y": 438.1,
-      "w": 232.5,
-      "h": 28
-     },
-     "style": {
-      "display": "flex",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "232.5px",
-      "height": "28px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "10px",
-      "paddingBottom": "0px",
-      "paddingLeft": "12px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgba(255, 255, 255, 0.5)",
-      "backgroundImage": "none",
-      "boxShadow": "rgba(95, 122, 143, 0.25) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) -1px -1px 1px 0px inset, rgb(255, 255, 255) 1px 1px 1px 0px inset",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "fontWeight": "400",
-      "lineHeight": "28px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "box-shadow",
-      "transitionDuration": "0.1s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "text",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "clip",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "input",
-       "size": "232.5x28.0",
-       "bg": "rgba(255, 255, 255, 0.5)",
-       "shadow": "rgba(95, 122, 143, 0.25) 0px 1px 2px 0px, rgba(0, 0, 0, 0.03) -1px -1px 1px 0px inset, rgb(255, 255, 255) 1px 1px 1px 0px inset",
-       "radius": "8px"
-      }
-     ],
-     "placeholder": {
-      "color": "rgba(0, 0, 0, 0.25)",
-      "opacity": "1",
-      "fontSize": "13px"
-     },
-     "crop": "components/crops/app-name-field-default.png",
-     "via": "at rest"
-    }
-   },
-   "group": "Account",
-   "title": "First name field",
-   "desc": "First name field at rest. Not edited.",
-   "selector": "input[value=Kai]"
-  },
-  "app-disabled-badge": {
-   "page": "agents",
-   "url": "https://lemni.com/s/XXXXX/agents",
-   "states": {},
-   "group": "Agents",
-   "title": "Disabled badge",
-   "desc": "Status on a stock agent that is off.",
-   "selector": "Disabled",
-   "missing": true
-  },
-  "app-enable": {
-   "page": "agents",
-   "url": "https://lemni.com/s/XXXXX/agents",
-   "states": {
-    "default": {
-     "tag": "div",
-     "classes": "sc-dcJsrY dqquAs secondary",
-     "text": "Enable Agent",
-     "rect": {
-      "x": 1121,
-      "y": 852,
-      "w": 299,
-      "h": 28
-     },
-     "style": {
-      "display": "flex",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "299px",
-      "height": "28px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "10px",
-      "paddingBottom": "0px",
-      "paddingLeft": "10px",
-      "marginTop": "-1px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "center",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(255, 255, 255)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgb(0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0.4) 0px 2px 5px 0px",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(255, 255, 255)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "fontWeight": "500",
-      "lineHeight": "28px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(255, 255, 255)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all, color, width",
-      "transitionDuration": "0.1s, 0.2s, 0.2s",
-      "transitionTimingFunction": "ease, ease, ease",
-      "transitionDelay": "0s, 0s, 0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "hidden",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "299.0x28.0",
-       "bg": "rgb(0, 0, 0)",
-       "shadow": "rgba(0, 0, 0, 0.4) 0px 2px 5px 0px",
-       "radius": "8px"
-      }
-     ],
-     "textStyle": {
-      "node": "div",
-      "text": "Enable Agent",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "lineHeight": "28px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/app-enable-default.png",
-     "via": "at rest"
-    },
-    "hover": {
-     "tag": "div",
-     "classes": "sc-dcJsrY dqquAs secondary",
-     "text": "Enable Agent",
-     "rect": {
-      "x": 1121,
-      "y": 852,
-      "w": 299,
-      "h": 28
-     },
-     "style": {
-      "display": "flex",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "299px",
-      "height": "28px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "10px",
-      "paddingBottom": "0px",
-      "paddingLeft": "10px",
-      "marginTop": "-1px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "center",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(255, 255, 255)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgb(32, 35, 46)",
-      "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0.4) 0px 3px 5px 0px",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(255, 255, 255)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "fontWeight": "500",
-      "lineHeight": "28px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(255, 255, 255)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all, color, width",
-      "transitionDuration": "0.1s, 0.2s, 0.2s",
-      "transitionTimingFunction": "ease, ease, ease",
-      "transitionDelay": "0s, 0s, 0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "hidden",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "299.0x28.0",
-       "bg": "rgb(32, 35, 46)",
-       "shadow": "rgba(0, 0, 0, 0.4) 0px 3px 5px 0px",
-       "radius": "8px"
-      }
-     ],
-     "textStyle": {
-      "node": "div",
-      "text": "Enable Agent",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "lineHeight": "28px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/app-enable-hover.png",
-     "via": "mouse hover"
-    },
-    "focus-visible": {
-     "tag": "div",
-     "classes": "sc-dcJsrY dqquAs secondary",
-     "text": "Enable Agent",
-     "rect": {
-      "x": 1121,
-      "y": 852,
-      "w": 299,
-      "h": 28
-     },
-     "style": {
-      "display": "flex",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "299px",
-      "height": "28px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "10px",
-      "paddingBottom": "0px",
-      "paddingLeft": "10px",
-      "marginTop": "-1px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "center",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(255, 255, 255)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgb(0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0.4) 0px 2px 5px 0px",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(255, 255, 255)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "fontWeight": "500",
-      "lineHeight": "28px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(255, 255, 255)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all, color, width",
-      "transitionDuration": "0.1s, 0.2s, 0.2s",
-      "transitionTimingFunction": "ease, ease, ease",
-      "transitionDelay": "0s, 0s, 0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "hidden",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "299.0x28.0",
-       "bg": "rgb(0, 0, 0)",
-       "shadow": "rgba(0, 0, 0, 0.4) 0px 2px 5px 0px",
-       "radius": "8px"
-      }
-     ],
-     "textStyle": {
-      "node": "div",
-      "text": "Enable Agent",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "lineHeight": "28px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/app-enable-focus-visible.png",
-     "via": "keyboard focus"
-    },
-    "pressed": {
-     "tag": "div",
-     "classes": "sc-dcJsrY dqquAs secondary",
-     "text": "Enable Agent",
-     "rect": {
-      "x": 1122.5,
-      "y": 852.1,
-      "w": 296.01,
-      "h": 27.72
-     },
-     "style": {
-      "display": "flex",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "299px",
-      "height": "28px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "10px",
-      "paddingBottom": "0px",
-      "paddingLeft": "10px",
-      "marginTop": "-1px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "center",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(246, 246, 248)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(246, 246, 248)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(246, 246, 248)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(246, 246, 248)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgb(32, 35, 46)",
-      "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0.2) 0px 1px 3px 0px",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(246, 246, 248)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "fontWeight": "500",
-      "lineHeight": "28px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(246, 246, 248)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(246, 246, 248)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all, color, width",
-      "transitionDuration": "0.1s, 0.2s, 0.2s",
-      "transitionTimingFunction": "ease, ease, ease",
-      "transitionDelay": "0s, 0s, 0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "matrix(0.99, 0, 0, 0.99, 0, 0)",
-      "overflow": "hidden",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "296.0x27.7",
-       "bg": "rgb(32, 35, 46)",
-       "shadow": "rgba(0, 0, 0, 0.2) 0px 1px 3px 0px",
-       "radius": "8px"
-      }
-     ],
-     "textStyle": {
-      "node": "div",
-      "text": "Enable Agent",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "lineHeight": "28px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(246, 246, 248)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/app-enable-pressed.png",
-     "via": "CDP forcePseudoState :active:hover; not clicked through"
-    }
-   },
-   "group": "Agents",
-   "title": "Enable Agent",
-   "desc": "Primary control in the interact column. Measured, never pressed.",
-   "selector": "Enable Agent"
-  },
-  "app-add-webpage": {
-   "page": "knowledge",
-   "url": "https://lemni.com/s/XXXXX/knowledge",
-   "states": {
-    "default": {
-     "tag": "div",
-     "classes": "sc-cGqLCR eFKYMF",
-     "text": "Add Webpage",
-     "rect": {
-      "x": 580,
-      "y": 66,
-      "w": 718.78,
-      "h": 28
-     },
-     "style": {
-      "display": "flex",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "718.781px",
-      "height": "28px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "10px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "10px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
-      "borderRightWidth": "1px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "rgba(0, 0, 0, 0.05)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "718.8x28.0",
-       "border": "R:1px solid rgba(0, 0, 0, 0.05)"
-      },
-      {
-       "node": "div",
-       "size": "108.5x28.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.03) | R:1px solid rgba(0, 0, 0, 0.03) | B:1px solid rgba(0, 0, 0, 0.03) | L:1px solid rgba(0, 0, 0, 0.03)",
-       "shadow": "rgba(95, 122, 143, 0.25) 0px 1px 2px 0px, rgb(255, 255, 255) 1px 1px 1px 0px inset",
-       "radius": "8px"
-      }
-     ],
-     "textStyle": {
-      "node": "div",
-      "text": "Add Webpage",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "lineHeight": "28px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgba(0, 0, 0, 0.3)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/app-add-webpage-default.png",
-     "via": "at rest"
-    },
-    "hover": {
-     "tag": "div",
-     "classes": "sc-cGqLCR eFKYMF",
-     "text": "Add Webpage",
-     "rect": {
-      "x": 580,
-      "y": 66,
-      "w": 718.78,
-      "h": 28
-     },
-     "style": {
-      "display": "flex",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "718.781px",
-      "height": "28px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "10px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "10px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
-      "borderRightWidth": "1px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "rgba(0, 0, 0, 0.05)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "718.8x28.0",
-       "border": "R:1px solid rgba(0, 0, 0, 0.05)"
-      },
-      {
-       "node": "div",
-       "size": "108.5x28.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.03) | R:1px solid rgba(0, 0, 0, 0.03) | B:1px solid rgba(0, 0, 0, 0.03) | L:1px solid rgba(0, 0, 0, 0.03)",
-       "shadow": "rgba(95, 122, 143, 0.25) 0px 1px 2px 0px, rgb(255, 255, 255) 1px 1px 1px 0px inset",
-       "radius": "8px"
-      }
-     ],
-     "textStyle": {
-      "node": "div",
-      "text": "Add Webpage",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "13px",
-      "lineHeight": "28px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgba(0, 0, 0, 0.3)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/app-add-webpage-hover.png",
-     "via": "mouse hover"
-    }
-   },
-   "group": "Knowledge",
-   "title": "Add Webpage",
-   "desc": "Empty-dataset control. Not pressed.",
-   "selector": "Add Webpage"
-  },
-  "app-plan-upgrade": {
-   "page": "subscribe",
-   "url": "https://lemni.com/welcome/subscribe",
-   "states": {
-    "default": {
-     "tag": "div",
-     "classes": "sc-krNlru frFsmf",
-     "text": "Upgrade",
-     "rect": {
-      "x": 545,
-      "y": 615.5,
-      "w": 350,
-      "h": 35
-     },
-     "style": {
-      "display": "flex",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "350px",
-      "height": "35px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "column",
-      "alignItems": "normal",
-      "justifyContent": "flex-end",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "350.0x36.0",
-       "bg": "rgb(0, 0, 0)",
-       "shadow": "rgba(0, 0, 0, 0.4) 0px 2px 5px 0px",
-       "radius": "10px"
-      }
-     ],
-     "textStyle": {
-      "node": "div",
-      "text": "Upgrade",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "15px",
-      "lineHeight": "36px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/app-plan-upgrade-default.png",
-     "via": "at rest"
-    },
-    "hover": {
-     "tag": "div",
-     "classes": "sc-krNlru frFsmf",
-     "text": "Upgrade",
-     "rect": {
-      "x": 545,
-      "y": 615.5,
-      "w": 350,
-      "h": 35
-     },
-     "style": {
-      "display": "flex",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "350px",
-      "height": "35px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "column",
-      "alignItems": "normal",
-      "justifyContent": "flex-end",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "350.0x36.0",
-       "bg": "rgb(32, 35, 46)",
-       "shadow": "rgba(0, 0, 0, 0.4) 0px 3px 5px 0px",
-       "radius": "10px"
-      }
-     ],
-     "textStyle": {
-      "node": "div",
-      "text": "Upgrade",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "15px",
-      "lineHeight": "36px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/app-plan-upgrade-hover.png",
-     "via": "mouse hover"
-    },
-    "focus-visible": {
-     "tag": "div",
-     "classes": "sc-krNlru frFsmf",
-     "text": "Upgrade",
-     "rect": {
-      "x": 545,
-      "y": 615.5,
-      "w": 350,
-      "h": 35
-     },
-     "style": {
-      "display": "flex",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "350px",
-      "height": "35px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "column",
-      "alignItems": "normal",
-      "justifyContent": "flex-end",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "350.0x36.0",
-       "bg": "rgb(0, 0, 0)",
-       "shadow": "rgba(0, 0, 0, 0.4) 0px 2px 5px 0px",
-       "radius": "10px"
-      }
-     ],
-     "textStyle": {
-      "node": "div",
-      "text": "Upgrade",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "15px",
-      "lineHeight": "36px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/app-plan-upgrade-focus-visible.png",
-     "via": "keyboard focus"
-    },
-    "pressed": {
-     "tag": "div",
-     "classes": "sc-krNlru frFsmf",
-     "text": "Upgrade",
-     "rect": {
-      "x": 545,
-      "y": 615.5,
-      "w": 350,
-      "h": 35
-     },
-     "style": {
-      "display": "flex",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "350px",
-      "height": "35px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "column",
-      "alignItems": "normal",
-      "justifyContent": "flex-end",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div",
-       "size": "350.0x36.0",
-       "bg": "rgb(0, 0, 0)",
-       "shadow": "rgba(0, 0, 0, 0.4) 0px 2px 5px 0px",
-       "radius": "10px"
-      }
-     ],
-     "textStyle": {
-      "node": "div",
-      "text": "Upgrade",
-      "fontFamily": "\"system-ui\", -apple-system, \"system-ui\", \"Helvetica Neue\", \"Apple Color Emoji\", \"System Default\", Inter, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", sans-serif, serif",
-      "fontSize": "15px",
-      "lineHeight": "36px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/app-plan-upgrade-pressed.png",
-     "via": "CDP forcePseudoState :active:hover; not clicked through"
-    }
-   },
-   "group": "Plan",
-   "title": "Onboarding Upgrade",
-   "desc": "Paid plan CTA. Measured, never pressed.",
-   "selector": "Upgrade"
   }
  }
 }

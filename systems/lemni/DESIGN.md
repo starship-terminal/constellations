@@ -17,14 +17,11 @@ colors:
   background-action: "#000000"
   background-action-secondary: "#f6f6f8"
   background-field: "rgba(255, 255, 255, 0.5)"
-  background-sidebar: "#f1f3f4"
-  background-overlay: "rgba(255, 255, 255, 0.8)"
   text-primary: "#000000"
   text-secondary: "#646465"
   text-muted: "#9b9b9c"
   text-on-action: "#ffffff"
   text-link: "#000000"
-  text-disabled: "rgba(0, 0, 0, 0.3)"
   border-stroke: "rgba(0, 0, 0, 0.05)"
   border-focus: "#000000"
   accent-default: "#000000"
@@ -72,7 +69,6 @@ typography:
     lineHeight: "13px"
 rounded:
   none: "0px"
-  sm: "8px"
   md: "12px"
   pill: "40px"
   full: "140px"
@@ -102,7 +98,7 @@ Good for: Quiet AI-agent marketing: a dark home and light inner pages, TWK Lausa
 
 Captured 2026-11-18, signed-in free account (email magic link at lemni.com/signin; Google unused). Public marketing plus the workplace app as the free trial shows it. Upgrade and payment were not followed.. Themes: light, dark.
 
-A token set and component reference for Lemni, the product that sets up custom AI agents for customer interactions. Captured on 2026-11-18 from the public web and from a free signed-in account, desktop 1440 and phone 390. Two painted themes, by page, not by a user toggle: the home page is dark (`#0d0d12`) and every other captured page, including the workplace app, is light (`#f6f6f8`). The marketing site is Framer. The sign-in shell and the product at `https://lemni.com` are a separate React app (styled-components, system-ui). Sign-in is a magic link. Google was not used. Upgrade and payment were not followed.
+A token set and component reference for Lemni, the product that sets up custom AI agents for customer interactions. Refreshed on 2026-11-21 from the public site only, desktop 1440 and phone 390. Home and changelog paint dark (`#0d0d12`). Pricing, docs, blog, company, brand, support, privacy, terms and the sign-in shell paint light (`#f6f6f8`). The marketing site is Framer. The sign-in shell at `https://lemni.com/signin` is a separate React page (styled-components, system-ui). The workplace app was not entered. `login-extracted` stays not-started.
 
 ## Colors
 
@@ -142,7 +138,7 @@ Shadows, resolved to CSS:
 
 ## Shapes
 
-Corner radii from `core.radius`: `none` 0px, `sm` 8px, `md` 12px, `pill` 40px, `full` 140px.
+Corner radii from `core.radius`: `none` 0px, `md` 12px, `pill` 40px, `full` 140px.
 
 ## Components
 
@@ -160,7 +156,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- **No published palette.** Framer does not declare a `--token-*` set. The signed-in app declares no custom properties. Semantic colours are computed styles of real elements, plus two declared hairlines (`--border-color`). The sheets reference `--framer-link-text-color` but never declare it, so the link blue `#0099ff` was entered by hand.
+- **No published palette.** Framer does not declare a `--token-*` set. The sign-in shell declares no custom properties. Semantic colours are computed styles of real elements, plus two declared hairlines (`--border-color`). The sheets reference `--framer-link-text-color` but never declare it, so the link blue `#0099ff` was entered by hand.
 - **TWK Lausanne weight is the family name.** The hero reports `font-weight: 400` and `font-family: "TWK Lausanne 250"`. The 250 is the face, not a computed weight.
 - **Auth Continue label.** The black button's computed label colour is `rgb(100, 100, 101)`, not white. The crop is the evidence. Do not recolour it to white.
 - **`feature-card` is not a card.** The locator matched a large decorative region. Ignore that crop as a component spec.
@@ -175,9 +171,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### Do and don't (from README.md)
 
-- **Do paint the home page dark and every other page light.** Home is `#0d0d12` with display ink `#e3e8ff`. Pricing, docs and the rest are `#f6f6f8` with black ink. There is no theme switch. [screenshots/home-dark-default.png](screenshots/home-dark-default.png) [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png)
+- **Do paint the home page dark and the product pages light.** Home and changelog are `#0d0d12` with display ink `#e3e8ff`. Pricing, docs and the rest are `#f6f6f8` with black ink. There is no theme switch. [screenshots/home-dark-default.png](screenshots/home-dark-default.png) [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png) [screenshots/changelog-dark-default.png](screenshots/changelog-dark-default.png)
 - **Do make the primary control a black pill, not the violet chip.** Light pages use a 40 px radius black button. Home uses a glass black pill at 140 px radius. The violet `#5500ff` is decoration. [components/crops/plan-cta-default.png](components/crops/plan-cta-default.png) [components/crops/hero-continue-default.png](components/crops/hero-continue-default.png)
 - **Do set display type in TWK Lausanne 250 with tight tracking.** The home hero is 94 px, line-height 81.78 px, tracking -4.7 px. The computed weight stays 400 because the weight is the family name. [components/crops/hero-title-default.png](components/crops/hero-title-default.png)
 - **Do keep the sign-in shell on system-ui.** The auth card is 12 px radius, not the marketing pill. The Continue label computes grey on the black bar. [screenshots/signin-light-default.png](screenshots/signin-light-default.png) [components/crops/auth-continue-default.png](components/crops/auth-continue-default.png)
 - **Don't treat reduced motion as honoured.** The home `dots` loop and the sign-in transitions keep running under `prefers-reduced-motion: reduce`. [screenshots/home-dark-default.png](screenshots/home-dark-default.png)
-- **Don't invent a component library the public site does not have.** Docs navigation is a section row plus a side list. The workplace app is a 260 px sidebar, 8 px controls, system-ui. [screenshots/docs-light-default.png](screenshots/docs-light-default.png) [screenshots/app-inbox-light-default.png](screenshots/app-inbox-light-default.png)
+- **Don't invent a workplace sidebar the public site does not show.** Docs navigation is a section row plus a side list. The signed-in app was not entered on this pass. [screenshots/docs-light-default.png](screenshots/docs-light-default.png)

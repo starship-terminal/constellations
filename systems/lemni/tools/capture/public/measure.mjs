@@ -132,15 +132,7 @@ async function S(key, getLoc, list, meta, opts = {}) {
         await page.waitForTimeout(300);
         via = 'clicked into the field; nothing submitted';
       } else if (st === 'filled') {
-        await loc.click({ timeout: 4000 });
-        await page.keyboard.type('visitor@example.com', { delay: 8 });
-        await page.waitForTimeout(250);
-        undo = async () => {
-          await loc.focus();
-          await page.keyboard.press('Meta+a');
-          await page.keyboard.press('Backspace');
-        };
-        via = 'typed a placeholder address, then deleted; nothing submitted';
+        throw new Error('filled is not captured: the public pass does not type into fields');
       }
       const loc2 = (await getLoc()) || loc;
       await measure(key, st, loc2, { ...opts, via });
@@ -198,10 +190,11 @@ async function home() {
     const ok = await page.evaluate(() => {
       const nav = document.querySelector('nav');
       if (!nav) return false;
-      const el = [...nav.querySelectorAll('a, [data-framer-name="Logo"], [data-framer-name="Logotype"]')].find((n) => {
-        const r = n.getBoundingClientRect();
-        return r.x < 80 && r.width > 16 && r.width < 160 && r.height > 12 && r.height < 48;
-      });
+      const el = nav.querySelector('[data-framer-name="Logo and Name"], [data-framer-name="Logo"], [data-framer-name="Logotype"]')
+        || [...nav.querySelectorAll('a')].find((n) => {
+          const r = n.getBoundingClientRect();
+          return r.x < 280 && r.width > 16 && r.width < 160 && r.height > 12 && r.height < 48 && !(n.innerText || '').trim();
+        });
       if (!el) return false;
       el.setAttribute('data-m-mark', '1');
       return true;
@@ -311,7 +304,7 @@ async function docs() {
     desc: 'The horizontal section row under the Documentation title: Basics, Knowledge, Agents, Actions, Inbox. Basics is the current section, marked with a black underline.',
     selector: 'docs section row',
   });
-  await S('docs-link', async () => mark(page, { text: 'Agents', tags: 'a', exact: true }), ['default', 'hover'], {
+  await S('docs-link', async () => mark(page, { text: 'Agents', tags: 'a', exact: false }), ['default', 'hover'], {
     group: 'Docs', title: 'Docs section link', url,
     desc: 'A public docs section. Measured at rest and hover. The agents page is also captured as docs-light-agents.png.',
     selector: 'a (Agents)',
@@ -346,9 +339,9 @@ async function signin() {
     desc: 'The OAuth entry. Measured at rest, hover, focus and a forced press. Never clicked.',
     selector: 'Continue with Google',
   }, { noScroll: true });
-  await S('email-field', async () => page.locator('input[type="email"], input').first(), ['default', 'hover', 'focus-visible', 'focused', 'filled'], {
+  await S('email-field', async () => page.locator('input[type="email"], input').first(), ['default', 'hover', 'focus-visible', 'focused'], {
     group: 'Auth shell', title: 'Email field', url,
-    desc: '360 by 44, 12px radius, white at 50% opacity, placeholder "Email…". A placeholder address was typed and deleted. Nothing was submitted.',
+    desc: '360 by 44, 12px radius, white at 50% opacity, placeholder "Email…". Photographed empty. Nothing was typed. Nothing was submitted.',
     selector: 'input',
   }, { noScroll: true });
   await S('auth-continue', async () => {

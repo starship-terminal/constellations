@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "readAt": "2026-11-18",
+  "readAt": "2026-11-21",
   "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
   "source": "public pages, headless Chromium, read at rest",
   "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
@@ -454,7 +454,7 @@
    "customProperties": []
   },
   "page-4": {
-   "url": "https://lemni.com/signup",
+   "url": "https://lemni.com/signin",
    "matchMedia": {
     "normal": false,
     "reduce": true

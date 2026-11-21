@@ -1,5 +1,5 @@
 {
- "readAt": "2026-11-18",
+ "readAt": "2026-11-21",
  "source": "inline <style> blocks and any linked stylesheets from a signed-out load of www.lemni.com /, /pricing, /docs and lemni.com/signup (which redirects to /signin), re-parsed with CSSStyleSheet and resolved on a probe carrying those sheets. Framer publishes no --token-* palette on these pages; painted colours are measured from elements.",
  "sheets": [
   "https://lemni.com/assets/index-BO418128.css (23151 bytes)",
@@ -19,7 +19,7 @@
   "https://www.lemni.com/docs#inline-1 (149350 bytes)",
   "https://www.lemni.com/docs#inline-2 (2175 bytes)",
   "https://www.lemni.com/docs#inline-3 (703 bytes)",
-  "https://www.lemni.com/docs#inline-5 (45 bytes)"
+  "https://www.lemni.com/docs#inline-4 (45 bytes)"
  ],
  "counts": {
   "rules": 259,

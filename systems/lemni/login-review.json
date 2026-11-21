@@ -1,0 +1,70 @@
+{
+  "slug": "lemni",
+  "product": "Lemni",
+  "domain": "lemni.com",
+  "captured": "2026-11-21",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "email-and-google",
+  "session": "Playwright headless Chromium, signed out. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed.",
+  "wall": {
+    "url": "https://lemni.com/signin",
+    "title": "Lemni",
+    "asks": [
+      "Continue with Google",
+      "Email",
+      "Continue"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "code_field": false,
+    "inputs": [
+      {"type": "email", "placeholder": "Email…", "filled": false}
+    ],
+    "note": "The heading is Welcome to Lemni. The email field was empty. Continue was not clicked. Continue with Google was not clicked."
+  },
+  "signup_wall": {
+    "url": "https://lemni.com/signup",
+    "lands_on": "https://lemni.com/signin",
+    "asks": ["Continue with Google", "Email", "Continue"],
+    "email_field": true,
+    "continued": false,
+    "note": "/signup redirects to /signin. There is no separate signup form. The same empty wall was photographed as signup-light-default.png."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "deviceScaleFactor": 1,
+      "file": "screenshots/signin-light-default.png"
+    },
+    "phone": {
+      "requested": "390x844",
+      "deviceScaleFactor": 2,
+      "file": "screenshots/mobile-signin-light-default.png"
+    }
+  },
+  "offered": {
+    "nav": [
+      {"label": "Continue", "href": "https://lemni.com/signup", "reached": "wall only"},
+      {"label": "Try For Free", "href": "https://lemni.com/signup", "reached": "wall only"}
+    ]
+  },
+  "screens": [
+    {"name": "Sign-in wall, desktop, empty", "file": "screenshots/signin-light-default.png"},
+    {"name": "Sign-in wall, phone, empty", "file": "screenshots/mobile-signin-light-default.png"},
+    {"name": "Signup redirect, desktop, empty", "file": "screenshots/signup-light-default.png"}
+  ],
+  "gaps": [
+    "login-extracted is not-started.",
+    "Continue with Google was not clicked.",
+    "The email field was left empty. Continue was not clicked. No magic link was requested.",
+    "The workplace app, onboarding, upgrade and checkout were not reached.",
+    "/login did not load a form. /register redirected toward /login and did not show a form."
+  ],
+  "not_submitted": [
+    "Continue with Google",
+    "Continue",
+    "changelog email follow form",
+    "company apply form"
+  ]
+}
