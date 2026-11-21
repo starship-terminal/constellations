@@ -2,6 +2,8 @@
 
 A token set and component reference for Literal.club's public signed-out site. Read from literal.club on 2026-11-18, signed out, in a real Chrome window (CDP) at 1440 x 900 and 390 x 844. Surfaces: home, Explore, one public book (`/book/the-midnight-library-mrpx0`), one public profile (`/kikimeower`), the sign-in and register cards, and the public pages for press, legal, privacy, terms, supporter, guides, developers, contact, the iPhone app, changelog, the tracker pitch, the club pitch, about, and the Goodreads import pitch.
 
+A 2026-11-22 pass mapped the public site from the homepage into [site-tree.md](site-tree.md) and photographed the marketing pages plus the empty login and signup walls. Nothing was typed. Sign in with Apple and Sign up with Apple were not clicked. `login-extracted` stays not-started. catalog.json was left alone.
+
 Literal ships a custom-property layer: `--text*`, `--ui*`, `--accent*`, and a 4px `--size-1` through `--size-40` scale. Light is `:root, :root.light`. Dark is `:root.dark` and `:root:not(.light)`, and it resolves when `prefers-color-scheme` is dark. No public theme toggle was found. Body type is Inter. Display type is Libre Baskerville. Header controls are square; buttons round their corners only slightly (2px and 5px).
 
 | File | What it is |
@@ -12,9 +14,11 @@ Literal ships a custom-property layer: `--text*`, `--ui*`, `--accent*`, and a 4p
 | [style-guide.html](style-guide.html) | Renders the tokens and the main controls, with a light and dark toggle |
 | [components.md](components.md) | Component inventory with crops and token names |
 | [patterns.md](patterns.md) | How the header, home, a book, a profile, and the sign-in card fit together |
+| [site-tree.md](site-tree.md) | Which header and footer controls open which public page or wall, mapped 2026-11-22 |
+| [login-review.json](login-review.json) | Empty login and signup walls. `login-extracted` is not-started |
 | [components/](components/) | Element screenshots in [components/crops/](components/crops), `{component}-{state}.png` |
 | [icons/](icons/) | 13 inline SVGs from the public pages, named in [icons/INDEX.tsv](icons/INDEX.tsv) |
-| [screenshots/](screenshots/) | `{page}-{theme}-{state}.png`. Desktop 1440 x 900 at 1x. `mobile-*` at 390 wide, 2x. `-full` pages are capped at eight chunks |
+| [screenshots/](screenshots/) | `{page}-{theme}-{state}.png`. Desktop 1440 x 900 at 1x. `mobile-*` at 390 wide, 2x. `-full` pages are capped at eight chunks. `public/` holds the 2026-11-22 marketing pages and empty walls |
 | [raw/](raw/) | [css-vars.json](raw/css-vars.json), [components-computed.json](raw/components-computed.json), [motion.json](raw/motion.json) |
 | [tools/](tools/) | Builders and the adapted public-web capture scripts |
 

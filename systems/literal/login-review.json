@@ -1,0 +1,38 @@
+{
+  "pass": "signed-out walls only",
+  "date": "2026-11-22",
+  "signed_in": false,
+  "submitted": false,
+  "typed": false,
+  "login_extracted": "not-started",
+  "note": "Login and signup are empty walls. Sign in with Apple and Sign up with Apple were not clicked. No password, code, phone number, email, or address was typed. No form was submitted. catalog.json was left alone.",
+  "walls": [
+    {
+      "url": "https://literal.club/signin",
+      "opened_from": "header Sign in",
+      "title": "Sign in | Literal",
+      "heading": "Sign in",
+      "desktop": "screenshots/public/login-wall-desktop.png",
+      "phone": "screenshots/public/login-wall-phone.png",
+      "controls_not_used": [
+        "Sign in",
+        "Sign in with Apple",
+        "Forgot password?"
+      ],
+      "stopped": true
+    },
+    {
+      "url": "https://literal.club/register",
+      "opened_from": "header Join, Join for free, and Sign up now",
+      "title": "Sign up | Literal",
+      "heading": "Sign up",
+      "desktop": "screenshots/public/signup-wall-desktop.png",
+      "phone": "screenshots/public/signup-wall-phone.png",
+      "controls_not_used": [
+        "Continue",
+        "Sign up with Apple"
+      ],
+      "stopped": true
+    }
+  ]
+}

@@ -38,6 +38,10 @@ Press, legal, privacy, terms, supporter, guides, developers, contact, the iPhone
 
 The same pages resolve `:root.dark` when the browser prefers dark. Text becomes `#f9f9f9`, the page becomes near-black, and the green becomes `#33bb7a` with black label text. Hover, active, and disabled greens are not redeclared in the dark block, so they stay the light values. See [home-dark-default](screenshots/home-dark-default.png) and [signin-dark-default](screenshots/signin-dark-default.png).
 
+## Public site tree, 2026-11-22
+
+[site-tree.md](site-tree.md) maps the header and footer from the homepage. The header is still wordmark, search, Explore, Sign in, and Join, with no hamburger at 390px. The footer adds Press, Legal, Privacy, Terms, social profiles, Become a supporter, Guides, API, Contact, the iPhone app, and Changelog. Guides is an index of import, comparison, and tool pages. Sign in and Join are empty walls. Plus and Supporter checkout was not opened.
+
 ## Not on this surface
 
 The library, writing a review, clubs, goals, messages, and the account after sign-in need an account. Checkout on the supporter page was not followed. Search results were not loaded, because that would submit the search form.
