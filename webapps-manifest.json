@@ -1473,7 +1473,7 @@
       "description": "Just Refill",
       "status": "captured",
       "package": "systems/dopper",
-      "notes": "https://dopper.com/account/login is a not-found page. The shop has no account sign-in form.",
+      "notes": "https://dopper.com/account/login is a not-found page. The shop has no account sign-in form. Public walk 2026-11-21: the map starts at dopper.com and records which header, footer, and in-page control opens which page, panel, or shop state. Marketing pages, shop pages, filters, and the empty basket were photographed at desktop and phone. Cookie banner was hidden, never accepted. The public header and footer do not link a sign-in form. The Magento customer login URL was recorded and not entered. Nothing was typed. No form was submitted. Checkout was not started. Signed-in app was not captured. Public package refresh in PR 1648 at 8e10f636efb7. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
       "login-probe": "no-form",
       "batch": 5
