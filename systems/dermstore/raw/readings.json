@@ -1,0 +1,148 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.dermstore.com/",
+  "region": "USD storefront. Prices read USD. A cookie banner was accepted. No geo modal was followed.",
+  "viewport": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewportScale": 1 },
+  "screenshots": "2880 by 1800 PNG",
+  "title": "Dermstore: Skin Care, Sunscreen, Hair, & Beauty Products",
+  "body": {
+    "color": "rgb(18, 18, 18)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "Manrope",
+    "fontSize": "16px",
+    "fontWeight": "400"
+  },
+  "promo": {
+    "text": "Up to 30% off with code JOY + FREE gifts with ANY $250+ purchase. SHOP NOW.",
+    "backgroundColor": "rgb(204, 204, 204)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "letterSpacing": "0.8px",
+    "height": 44,
+    "width": 1440,
+    "href": "/c/shop/black-friday/"
+  },
+  "nav": {
+    "backgroundColor": "rgb(34, 34, 34)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "letterSpacing": "0.2px",
+    "textTransform": "uppercase",
+    "height": 44
+  },
+  "trust": {
+    "backgroundColor": "rgb(242, 242, 242)",
+    "color": "rgb(18, 18, 18)",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "height": 49
+  },
+  "search": {
+    "placeholder": "SEARCH",
+    "aria": "Start your search",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(18, 18, 18)",
+    "fontSize": "18px",
+    "border": "0px solid rgb(229, 231, 235)",
+    "borderRadius": "0px",
+    "width": 480,
+    "height": 44,
+    "wrapBorder": "1px solid rgb(140, 140, 140)",
+    "wrapWidth": 482,
+    "wrapHeight": 46
+  },
+  "ask": {
+    "label": "Ask Derm AI",
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "14px",
+    "fontWeight": "600",
+    "borderRadius": "0px",
+    "width": 127,
+    "height": 40
+  },
+  "logo": {
+    "fill": "#222222",
+    "viewBox": "0 0 259 64",
+    "renderedWidth": 230,
+    "renderedHeight": 56
+  },
+  "hero": {
+    "note": "The holiday banner is a photograph. Burgundy sampled from the PNG at CSS 200,300.",
+    "sampled": "#8c040c",
+    "sampledRgb": "rgb(140, 4, 12)"
+  },
+  "cssVars": {
+    "--brand-ink": "#000000",
+    "--brand-accent": "#222b31",
+    "--brand-tint": "#fbf8f0",
+    "--brand-tint-soft": "#f1eee4",
+    "--brand-on-accent": "#ffffff"
+  },
+  "product": {
+    "url": "https://www.dermstore.com/p/skinceuticals-c-e-ferulic-with-15-l-ascorbic-acid-vitamin-c-serum-30ml/11289609/",
+    "brand": "SkinCeuticals",
+    "brandHref": "/c/brands/skinceuticals/",
+    "brandColor": "rgb(107, 114, 128)",
+    "brandFontSize": "14px",
+    "brandFontWeight": "500",
+    "title": "SkinCeuticals C E Ferulic (1 fl. oz.) - New Patent-Pending Formula",
+    "titleColor": "rgb(17, 24, 39)",
+    "titleFontFamily": "Libre Bodoni",
+    "titleFontSize": "37px",
+    "titleFontWeight": "400",
+    "titleLetterSpacing": "-1px",
+    "price": "$185.00",
+    "priceColor": "rgb(18, 18, 18)",
+    "priceFontFamily": "Libre Bodoni",
+    "priceFontSize": "30px",
+    "priceFontWeight": "400",
+    "priceLetterSpacing": "-0.7px",
+    "bag": {
+      "label": "ADD TO CART",
+      "backgroundColor": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "letterSpacing": "0.2px",
+      "textTransform": "uppercase",
+      "borderRadius": "0px",
+      "border": "2px solid rgb(0, 0, 0)",
+      "width": 300,
+      "height": 60
+    }
+  },
+  "category": {
+    "url": "https://www.dermstore.com/c/skin-care/",
+    "title": "Shop All Skin Care Products",
+    "titleColor": "rgb(31, 41, 55)",
+    "titleFontFamily": "Libre Bodoni",
+    "titleFontSize": "30px",
+    "titleFontWeight": "400",
+    "titleLetterSpacing": "-1px",
+    "results": "4283 results",
+    "quickBuy": {
+      "label": "QUICK BUY",
+      "backgroundColor": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "borderRadius": "0px",
+      "width": 310,
+      "height": 48
+    }
+  },
+  "about": {
+    "url": "https://www.dermstore.com/c/info/about-us/",
+    "title": "About Dermstore",
+    "heading": "Honor Your Skin",
+    "headingTag": "h2",
+    "headingColor": "rgb(0, 0, 0)",
+    "headingFontFamily": "Libre Bodoni",
+    "headingFontSize": "45px",
+    "headingFontWeight": "400",
+    "headingLetterSpacing": "-1px"
+  }
+}
