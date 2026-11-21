@@ -7042,9 +7042,9 @@
         728
       ],
       "description": "Xbox Official Site: Consoles, Games, and Community",
-      "status": "pending",
-      "package": null,
-      "notes": "Email probe: https://www.xbox.com/en-US/auth/msa?action=logIn asked for a Microsoft account. The capture inbox is not a Microsoft account. Create account not opened. No Google button.",
+      "status": "captured",
+      "package": "systems/xbox",
+      "notes": "Email probe: https://www.xbox.com/en-US/auth/msa?action=logIn asked for a Microsoft account. The capture inbox is not a Microsoft account. Create account not opened. No Google button. Public walk 2026-11-21: the public site tree is in systems/xbox/site-tree.md. Sign in stops at a Microsoft account wall that asks for an empty email or phone number, then Next. Nothing was typed. Create an account was not opened. No Google or Apple button was on that first paint. The phone load of the same URL showed Try again later and stopped. login-review.json is a stop note and does not meet the done checker. login-extracted stays not-started. Public package refresh in PR 1709 at 25515257202c. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 21
