@@ -1,6 +1,10 @@
 # Playbook
 
-Playbook is file infrastructure for creative teams. This package records the public marketing site at playbook.com and the signed-out sign-in page, measured on 19 November 2026. No account was created. The home and pricing pages were read signed out, at 1440 CSS pixels and at 390. `/login/` redirects to `/sign-in`. The email field was already focused. Nothing was typed into it and nothing was submitted.
+Playbook is file infrastructure for creative teams. This package records the public marketing site at playbook.com and the signed-out sign-in page. It was first measured on 19 November 2026 and refreshed on 21 November 2026. No account was created. Nothing was typed. Nothing was submitted. Google and Apple were not clicked. `login-extracted` stays `not-started`.
+
+The control map is [site-tree.md](site-tree.md). `/login/`, `/sign-in`, `/sign-up` and `/signup` all show the same empty wall, "Log in or sign up". The email field was empty. Continue with email stayed disabled.
+
+Desktop shots are 1440×900. Phone shots are 390×844. Both were taken in headless Chromium after the T3 preview tab loaded the homepage and could not produce screenshot frames.
 
 The marketing pages set their type in Stabil Grotesk. The sign-in page sets its type in Akkurat and publishes a large custom-property layer (`--primaryColor`, `--textColor`, `--borderRadiusXl`). The marketing page also sets `--primary-color` to `#599ffe`, a different blue from the auth coral.
 
@@ -12,10 +16,11 @@ The marketing pages set their type in Stabil Grotesk. The sign-in page sets its 
 | [tokens.json](tokens.json) | Measured colour, type, radius, spacing, shadow and motion tokens |
 | [style-guide.html](style-guide.html) | The tokens rendered as a page |
 | [components.md](components.md) | Controls that were on the public pages, with crops |
+| [site-tree.md](site-tree.md) | Which control opens which page, menu, drawer, or wall. Mapped 2026-11-21 |
 | [patterns.md](patterns.md) | How the home, pricing and sign-in pages are put together |
 | [components/](components/) | Crops of the nav buttons, the plan card, the email field, the billing toggle |
 | [icons/](icons/) | An index. The wordmark is a CDN image, not an SVG in this folder |
-| [screenshots/](screenshots/) | Home, pricing, sign-in, and two phone shots |
+| [screenshots/](screenshots/) | Public marketing pages, menus, the phone drawer, and empty login and signup walls |
 | [raw/](raw/) | A short record of where the readings came from |
 | [tools/](tools/) | The kit copy. This capture was measured live, not rebuilt by the kit scripts. The unadapted kit builders and capture routes for other products were removed in the 2026-11 audit; the generic capture helpers remain. |
 
@@ -75,13 +80,13 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 ## How the values were read
 
-The T3 preview tab opened https://www.playbook.com/, https://www.playbook.com/pricing/ and https://www.playbook.com/login/. The login URL redirected to https://www.playbook.com/sign-in. Computed styles, custom properties and font faces were read from those live pages. The preview viewport was 1169 by 731 CSS pixels, device pixel ratio 2, visual viewport scale 1. The preview tab could not produce screenshot frames (`The browser is not producing screenshot frames`), so the screenshots and the 1440 and 390 shots were taken in headless Playwright against pages that had already loaded with no Cloudflare challenge.
+The 19 November pass read computed styles in the T3 preview tab at 1169 by 731. The 21 November refresh read the same controls again in headless Chromium at 1440 by 900. Home body `#0d0e10`, pricing body `#ffffff`, Schedule a demo `#1a1a1a` with a `#fafafa` label, Get started `#fafafa` with a `#434140` label, and the sign-in heading `#0d1a26` in Akkurat all matched. The preview tab still could not produce screenshot frames, so the 1440 and 390 shots are headless Chromium.
 
 Marketing colours are the computed `background-color`, `color`, `border` and `box-shadow` of the body, the header, the CTAs, the prompt, the plan cards and the billing toggle. Auth colours are the computed style of the heading, the social buttons, the email wrapper and the disabled continue button, checked against the custom properties on the same page. A custom property that was not painted on a measured control is labelled declared.
 
 ## What to distrust
 
-The home headline is in the DOM at 56px, and the type crop shows it, but the first viewport of the home screenshot is the pinned canvas. Scrolling the window did not bring the headline into that first screen.
+The 2026-11-21 home screenshot includes the headline in the first viewport. The earlier note that the headline sat below a pinned canvas described the 19 November shot.
 
 The preview measurements were taken at 1169px, not 1440. The 1440 and 390 labels on the screenshots are the Playwright viewport, recorded in each `.png.capture.json`. A control size measured in the preview (the prompt box at 760px) is that viewport's size.
 
@@ -119,7 +124,9 @@ The font files are proprietary and are not in this package.
 | Text area | The hero prompt only. |
 | Checkbox, radio, switch, select, menu, tooltip, dialog, toast, table, avatar, list row | Not on these pages. Toast colours are declared and were not shown. |
 | Form error, empty, loading, destructive confirm | Not shown. Nothing was submitted. |
-| Signed-in app | Not entered. |
+| Site tree | Captured as [site-tree.md](site-tree.md) on 2026-11-21. |
+| Login and signup walls | Captured empty. See [screenshots/login-light-default.png](screenshots/login-light-default.png) and [screenshots/signup-light-default.png](screenshots/signup-light-default.png). Phone: [screenshots/mobile-login-light-default.png](screenshots/mobile-login-light-default.png). Google and Apple were not clicked. Nothing was typed. |
+| Signed-in app | Not entered. `login-extracted` stays `not-started`. |
 | Google, Apple, SSO, payment | Not entered. |
 
 ## Do and don't
