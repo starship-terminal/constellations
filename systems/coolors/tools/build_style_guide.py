@@ -127,7 +127,7 @@ p.note {{ color: var(--light-muted); max-width: 70ch; }}
   <button type="button" id="theme">Dark tokens</button>
 </header>
 <main>
-  <p class="note">Rendered from tokens.json. Light values were computed on the signed-in page. Dark values are the stylesheet's smart-alias flip, not a live theme switch.</p>
+  <p class="note">Rendered from tokens.json. Light values were computed on the public homepage. Dark values are the stylesheet's smart-alias flip, not a live theme switch.</p>
   <h2>Roles</h2>
   <div class="swatches">
     {''.join(swatches)}
@@ -141,13 +141,13 @@ p.note {{ color: var(--light-muted); max-width: 70ch; }}
   </div>
   <h2>Generator columns</h2>
   <div class="cols">
-    <span style="background:#264653;color:#fff">264653</span>
-    <span style="background:#2A9D8F;color:#fff">2A9D8F</span>
-    <span style="background:#E9C46A;color:#000">E9C46A</span>
-    <span style="background:#F4A261;color:#000">F4A261</span>
-    <span style="background:#E76F51;color:#fff">E76F51</span>
+    <span style="background:#4F7CAC;color:#fff">4F7CAC</span>
+    <span style="background:#C0E0DE;color:#000">C0E0DE</span>
+    <span style="background:#162521;color:#fff">162521</span>
+    <span style="background:#3C474B;color:#fff">3C474B</span>
+    <span style="background:#9EEFE5;color:#000">9EEFE5</span>
   </div>
-  <p class="note">Sample palette from the signed-in generator at /264653-2a9d8f-e9c46a-f4a261-e76f51. Column colors are palette data, not tokens.</p>
+  <p class="note">Sample palette from the signed-out generator at /4f7cac-c0e0de-162521-3c474b-9eefe5. Column colors are palette data, not tokens.</p>
   <h2>Ramps</h2>
   {''.join(ramps)}
 </main>

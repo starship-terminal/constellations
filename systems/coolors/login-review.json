@@ -1,80 +1,135 @@
 {
-  "slug": "coolors",
-  "signed_in": true,
-  "evidence": "body class includes is-logged. Sign in and Sign up are display:none. The header avatar is visible.",
-  "theme_on_screen": "light",
-  "viewport": {
-    "desktop": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewportScale": 1},
-    "phone": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2, "visualViewportScale": 1}
-  },
+  "capturedAt": "2026-11-21",
+  "signed_in": false,
+  "method": "Public Coolors in the T3 preview tab, signed out, light theme, 1440x900 CSS at devicePixelRatio 2. The preview compositor would not emit frames, and Playwright hit a Cloudflare interstitial that was not solved. Screenshots are renders of the live DOM plus the live stylesheet (style.min.css?v=64), with scripts stripped and ads hidden. No email, password, name, or code typed. No identity provider opened. No form submitted.",
   "offered": {
-    "nav": [
-      {"label": "Tools", "reached": true},
-      {"label": "Palette Generator", "href": "/generate", "reached": true},
-      {"label": "Explore Palettes", "href": "/palettes", "reached": false},
-      {"label": "Image Picker", "href": "/image-picker", "reached": false},
-      {"label": "Contrast Checker", "href": "/contrast-checker", "reached": false},
-      {"label": "Palette Visualizer", "href": "/visualizer", "reached": false},
-      {"label": "Color Picker", "href": "/color-picker", "reached": false},
-      {"label": "Tailwind Colors", "href": "/tailwind", "reached": false},
-      {"label": "Color Bot", "href": "/color-bot", "reached": false},
-      {"label": "Dashboard", "href": "/dashboard", "reached": true},
-      {"label": "Palettes", "href": "/user/palettes", "reached": true},
-      {"label": "Colors", "reached": false},
-      {"label": "Gradients", "reached": false},
-      {"label": "Fonts", "reached": false},
-      {"label": "Images", "reached": false},
-      {"label": "Projects", "reached": false},
-      {"label": "Collections", "reached": false},
-      {"label": "Favorites", "reached": false},
-      {"label": "Profile", "reached": false},
-      {"label": "Account", "href": "/account/general", "reached": true},
-      {"label": "Settings", "href": "/account/settings", "reached": true}
-    ],
-    "settings": [
-      {"label": "General", "reached": true},
-      {"label": "Profile", "reached": false},
-      {"label": "Subscription", "reached": false},
-      {"label": "Affiliation", "reached": false},
-      {"label": "Settings", "reached": true},
-      {"label": "Delete account", "reached": false},
-      {"label": "Theme", "reached": false},
-      {"label": "Quick actions", "reached": false}
-    ],
+    "nav": {
+      "items": [
+        "Tools",
+        "Palette Generator",
+        "Explore Palettes",
+        "Image Picker",
+        "Contrast Checker",
+        "Palette Visualizer",
+        "Color Picker",
+        "Tailwind Colors",
+        "Color Bot",
+        "Go Pro",
+        "Sign in",
+        "Sign up"
+      ],
+      "reached": [
+        "Tools",
+        "Palette Generator",
+        "Explore Palettes",
+        "Contrast Checker",
+        "Sign in"
+      ],
+      "note": "Signed out. The header is Tools, Go Pro, Sign in, Sign up. No dashboard, library rail, or account nav was offered. Sign in opened an overlay and was closed. Sign up was not opened."
+    },
+    "settings": {
+      "items": [
+        "no settings area"
+      ],
+      "reached": [
+        "no settings area"
+      ],
+      "note": "No signed-in settings surface was offered. The footer language list (English, Italiano) was opened and not selected. Dark theme was not switched."
+    },
     "create": {
       "items": [
-        {"label": "Palette Generator", "href": "/generate"},
-        {"label": "Gradient Maker", "href": "/gradient-maker"},
-        {"label": "Image Picker", "href": "/image-picker"},
-        {"label": "Collage Maker", "href": "/collage-maker"}
+        "Start the Generator",
+        "Palette Generator",
+        "Gradient Maker",
+        "Image Picker",
+        "Collage Maker"
       ],
-      "reached": ["Palette Generator"]
+      "reached": [
+        "Start the Generator",
+        "Palette Generator"
+      ],
+      "note": "Start the Generator opened /generate and a palette URL. The tutorial Let's go button was not clicked. Save, Export, and publish were not used. Gradient Maker, Image Picker, and Collage Maker were listed and not opened."
     }
   },
   "screens": [
-    {"name": "Library palettes, empty", "file": "screenshots/dashboard-palettes-light.png"},
-    {"name": "Tools menu", "file": "screenshots/tools-menu-light.png"},
-    {"name": "Account settings", "file": "screenshots/account-settings-light.png"},
-    {"name": "Palette generator", "file": "screenshots/generator-light.png"},
-    {"name": "Palette generator, catalog cover name", "file": "screenshots/generate-light-desktop.png"}
+    {
+      "name": "Homepage, signed out, light, 1440",
+      "file": "screenshots/home-light-default.png"
+    },
+    {
+      "name": "Homepage, Tools menu open, light, 1440",
+      "file": "screenshots/home-light-tools-menu.png"
+    },
+    {
+      "name": "Sign-in overlay, not submitted, light, 1440",
+      "file": "screenshots/home-light-signin-wall.png"
+    },
+    {
+      "name": "Homepage, signed out, light, 390",
+      "file": "screenshots/home-light-mobile.png"
+    },
+    {
+      "name": "Palette generator, signed out, light, 1440",
+      "file": "screenshots/generate-light-desktop.png"
+    },
+    {
+      "name": "Trending palettes, light, 1440",
+      "file": "screenshots/palettes-light-default.png"
+    },
+    {
+      "name": "Contrast checker, light, 1440",
+      "file": "screenshots/contrast-light-default.png"
+    }
+  ],
+  "walls": [
+    {
+      "control": "Sign in",
+      "where": "header .header_signin-btn on https://coolors.co/",
+      "stopped": true,
+      "reason": "Opened #fullscreen-access. Continue with Google, Continue with Apple, and Continue with email were not clicked. The overlay was closed."
+    },
+    {
+      "control": "Sign up",
+      "where": ".header_signup-btn on https://coolors.co/",
+      "stopped": true,
+      "reason": "Not opened. The signup panel (name, email, password, Create your free account) was not submitted."
+    },
+    {
+      "control": "Affiliate",
+      "href": "/account/affiliation",
+      "stopped": true,
+      "reason": "Listed in the Tools menu and the footer. Not followed."
+    }
   ],
   "gaps": [
-    "Phone 390x844 was measured (stacked 390x146 columns, Generate bar at y=788) but the preview compositor returned a white frame, so no phone PNG is committed.",
-    "Dark theme was not switched. The control is in the account menu and writes a preference. Dark tokens are the stylesheet smart-alias flip.",
-    "Explore, contrast checker, image picker, profile, subscription, and the library's other rails were not opened.",
-    "Save, Export, publish, Go Pro, affiliation, newsletter, and delete account were not used.",
-    "The generator screenshot had the header ad, a Shutterstock card, a Color Bot promo, and a footer ad painted out after the live hide did not stick in the captured frame. Column geometry and hex labels are from the live page."
+    "Signed-in dashboard, library, profile, and account settings were not offered on this public pass. Earlier signed-in frames were removed from screenshots/.",
+    "Image picker, visualizer, color picker, Tailwind, Color Bot, gradients, fonts, collage maker, and photo editor were listed and not opened.",
+    "Go Pro modal was not opened. /pricing was opened and showed a local currency, so that frame is not committed.",
+    "Dark theme was not switched. Dark tokens remain the stylesheet smart-alias flip.",
+    "The 390 homepage was photographed. The mobile menu was not opened. The 390 frame is the CSS cascade without the site's JS reflow, so the headline is cropped and the hamburger glyph is missing.",
+    "Preview compositor frames were unavailable. These PNGs are offline renders of the live DOM and stylesheet. Remote images and the Nucleo icon font are missing. The generator frame still shows a Nucleo card. Contrast inputs render as #FFFFFF because swatch images did not load; the live URL was /contrast-checker/112a46-acc8e5.",
+    "The footer language list was opened (English, Italiano) and not selected."
   ],
   "not_submitted": [
-    "account general form",
-    "change password",
-    "newsletter checkbox",
-    "landing page select",
-    "white label image",
-    "save palette",
-    "export",
-    "go pro checkout",
-    "delete account",
-    "sign out"
+    "email",
+    "password",
+    "name",
+    "code",
+    "Continue with Google",
+    "Continue with Apple",
+    "Continue with email",
+    "Sign in submit",
+    "Sign up submit",
+    "Create your free account",
+    "cookie banner",
+    "Manage cookies",
+    "contact form",
+    "Go Pro checkout",
+    "affiliate",
+    "generator tutorial Let's go",
+    "language switch",
+    "Save",
+    "Export",
+    "ads"
   ]
 }

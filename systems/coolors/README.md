@@ -1,22 +1,25 @@
 # Coolors
 
-Coolors is the palette generator at [coolors.co](https://coolors.co). This package is a signed-in capture from the T3 preview browser on 2026-11-20. The session was already signed in: `body` had class `is-logged`, Sign in and Sign up were hidden, and the header showed an avatar.
+Coolors is the palette generator at [coolors.co](https://coolors.co). This package is a public refresh from 2026-11-21, signed out. `body` class was `route-homepage has-header-ad`, not `is-logged`. The header showed Tools, Go Pro, Sign in, and Sign up.
 
-Headless curl of the stylesheet still gets a Cloudflare 403. The CSS was fetched from the signed-in page (`style.min.css?v=64`, HTTP 200, 1,196,416 bytes) and stored in [raw/css-vars.json](raw/css-vars.json). Desktop CSS viewport was 1440x900 at devicePixelRatio 2. Phone CSS viewport was 390x844 at devicePixelRatio 2. The phone compositor returned a white frame, so no phone PNG is committed. Only the light theme was on screen. Dark tokens are the stylesheet's smart-alias flip, not a live switch.
+The T3 preview compositor would not emit frames, and a separate Playwright load hit a Cloudflare interstitial that was not solved. Screenshots are renders of the live DOM plus the live stylesheet (`style.min.css?v=64`), with scripts stripped and ads hidden. Desktop CSS viewport was 1440x900 at devicePixelRatio 2. Phone CSS viewport was 390. Only the light theme was on screen. Dark tokens are the stylesheet's smart-alias flip, not a live switch.
+
+Which control opens which page, menu, or dialog is in [site-tree.md](site-tree.md).
 
 | File | What it holds |
 |---|---|
 | [README.md](README.md) | This file. |
-| [icon.png](icon.png) | Site icon, 128 px. |
-| [DESIGN.md](DESIGN.md) | Generated companion. The catalog PR regenerates this with `make design-md`. |
+| [site-tree.md](site-tree.md) | Homepage control map, written before the public screenshots. |
+| [icon.png](icon.png) | Site icon, 128 px, from the public favicon. |
+| [DESIGN.md](DESIGN.md) | Companion. Leave the catalog access string alone; this file stays email-free. |
 | [tokens.json](tokens.json) | W3C DTCG tokens. `core` holds the 23 ramps plus type, radius, space, and the header shadow. `light` is computed. `dark` is the stylesheet flip. Every token has `$extensions.source`. |
 | [style-guide.html](style-guide.html) | Renders the roles, the button variants, a sample generator row, and the ramps. |
-| [components.md](components.md) | Button, header, generator column, text input, and display type, with the measured values. |
-| [patterns.md](patterns.md) | Header, generator, library, and account, plus what was not opened. |
-| [login-review.json](login-review.json) | Signed-in review: offered nav, settings, and create, the screens, the gaps, and what was not submitted. |
-| [screenshots/](screenshots/) | Signed-in light frames at 1440x900 CSS (2880x1800 PNG): [dashboard-palettes-light.png](screenshots/dashboard-palettes-light.png), [tools-menu-light.png](screenshots/tools-menu-light.png), [account-settings-light.png](screenshots/account-settings-light.png), [generator-light.png](screenshots/generator-light.png). [generate-light-desktop.png](screenshots/generate-light-desktop.png) is the same generator frame, under the name the current catalog cover uses. |
-| [raw/](raw/) | [css-vars.json](raw/css-vars.json) and [components-computed.json](raw/components-computed.json). Full-colour PNGs sit in `raw/full/` and are not the committed evidence. |
-| [tools/](tools/) | [build_tokens.py](tools/build_tokens.py), [build_style_guide.py](tools/build_style_guide.py), [build_components_md.py](tools/build_components_md.py), and the capture kit under [tools/capture/](tools/capture/). |
+| [components.md](components.md) | Button, header, tools menu, display type, tool card, and the sign-in overlay. |
+| [patterns.md](patterns.md) | Header, homepage, generator, explore, and contrast checker. |
+| [login-review.json](login-review.json) | Public review: offered nav, settings, and create as objects, the screens, the gaps, and what was not submitted. |
+| [screenshots/](screenshots/) | Public light frames. Desktop PNGs are 2880x1800. [home-light-mobile.png](screenshots/home-light-mobile.png) is 780x1688. [generate-light-desktop.png](screenshots/generate-light-desktop.png) is the catalog cover name. |
+| [raw/](raw/) | [css-vars.json](raw/css-vars.json) and [components-computed.json](raw/components-computed.json). |
+| [tools/](tools/) | [build_tokens.py](tools/build_tokens.py), [build_style_guide.py](tools/build_style_guide.py), and the capture kit under [tools/capture/](tools/capture/). |
 
 ## Brief
 
@@ -65,46 +68,44 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (page screen
 
 <!-- health:end -->
 
-## Health
-
-Not graded in this PR. `make grade` and the catalog entry are deferred to the batch catalog PR. Layout: no `components/crops` were cut. No `icons/` set was extracted. `icon.png` is the site icon.
-
 ## How the values were read
 
-The T3 preview tab loaded coolors.co already signed in, light theme, freeform 1440x900. `getComputedStyle` on body, header, `a.btn`, `.generator_color_hex`, `.generator_color_background`, and the account h1 produced [raw/components-computed.json](raw/components-computed.json). The page `fetch` of `style.min.css?v=64` produced the 562 resolved custom properties and 297 dark overrides in [raw/css-vars.json](raw/css-vars.json).
+`getComputedStyle` on the public homepage produced body, header, the homepage h1, Sign up, Explore, Go Pro, and a tool card in [raw/components-computed.json](raw/components-computed.json). The page `fetch` of `style.min.css?v=64` is the same stylesheet as the earlier dump: 562 resolved custom properties and the `[data-theme=dark]` flip in [raw/css-vars.json](raw/css-vars.json).
 
-Page roles (`--bg-color`, `--text-color`, and the rest) alias `--color-smart-*`. In light those aliases point at the ramp as declared. Under `[data-theme=dark]` the smart map flips each ramp (50 becomes 950, and so on) except the 500 stop. The dark set in tokens.json is that flip, resolved to paint values. The account theme control was not clicked, because it writes a preference.
+Page roles (`--bg-color`, `--text-color`) alias `--color-smart-*`. Under `[data-theme=dark]` the smart map flips each ramp except the 500 stop. The account theme control was not clicked.
 
-No consent POST was clicked. Ads were hidden with `display: none` where that stuck. The generator and tools-menu frames still contained ad cards in the captured PNG, so those rectangles were painted over with the column or header color. The hex labels and column colors in the generator frame are the live page.
+No consent control was clicked. Ads were hidden in the renders. The generator frame still shows a Nucleo card. Remote images and the Nucleo icon font did not paint, so toolbar glyphs and the homepage illustration are missing.
 
 ## What to distrust
 
+- Screenshots are offline renders of the live DOM and stylesheet, not compositor frames.
 - Dark tokens are stylesheet evidence. No dark screenshot exists.
-- Phone layout was measured, not photographed. The preview compositor returned white at 390x844.
-- The generator frame has a painted-over ad region across the top of the yellow and orange columns. The hex row and the column colors below that band are the live capture.
-- Palette column colors (`#264653` and the rest) are one sample palette, not brand tokens.
+- The 390 homepage frame has no JS reflow, so the 110px headline is cropped and the menu glyph is missing. The mobile menu was not opened.
+- Contrast inputs in the screenshot read `#FFFFFF` because swatch images failed to load. The live URL was `/contrast-checker/112a46-acc8e5`.
+- Palette column colors (`#4F7CAC` and the rest) are one sample palette, not brand tokens.
+- `/pricing` was opened and showed a local currency. That frame is not in the package. Do not treat a price in this package as a fixed public price.
 - Weight 450 on body is the computed weight, not a rounding of 400.
+- Generator column width, hex chip size, and account input size were not remeasured this pass.
 
 ## Fonts
 
-Inter is the computed family on body, buttons, hex labels, and the account h1. It loads from Google Fonts (`Inter:ital,opsz,wght@0,14..32,100..900`). IBM Plex Mono, Space Mono, and Google Sans Code are also linked. Only Inter was measured on a control. Nucleo is the icon font (`icons.css?v=22`).
+Inter is the computed family on body, the homepage h1, and the header buttons. It loads from Google Fonts. IBM Plex Mono, Space Mono, and Google Sans Code are also linked. Only Inter was measured on a control. Nucleo is the icon font (`icons.css?v=22`).
 
 ## Coverage
 
-Walked: homepage tools menu, `/generate` (palette `/264653-2a9d8f-e9c46a-f4a261-e76f51`), `/dashboard` (redirects to `/user/palettes`, empty), `/account/general` (not screenshotted, because the form shows the account email), `/account/settings`.
+Walked, signed out: homepage, Tools menu, Sign in overlay (closed, not submitted), `/generate` (`/4f7cac-c0e0de-162521-3c474b-9eefe5`), `/palettes/trending`, `/contrast-checker/112a46-acc8e5`, and the homepage at 390px. Footer language list opened (English, Italiano) and not selected.
 
-Not walked: explore, contrast checker, image picker, visualizer, color picker, gradient maker, profile, subscription, affiliation, delete account, the other library rails, and phone screenshots. Save, Export, publish, Go Pro, newsletter, and sign out were not used.
+Not walked: image picker, visualizer, color picker, Tailwind, Color Bot, gradients, fonts, collage maker, photo editor, Go Pro modal, Sign up, mobile menu, and dark theme. Save, Export, checkout, contact, and affiliate were not used.
 
 ## Do and don't
 
-Do use Inter, the 8px button radius, the 60px header, and the blue primary fill. Do put the hex at the bottom of a generator column and flip its ink for contrast. Don't add a second accent besides the pink Go Pro label. Don't ship the marketing gray band or the logo strip as app chrome. Don't copy an ad card into a layout.
+Do use Inter, the 8px primary radius, the 60px header, and the blue primary fill. Do keep Go Pro as the only pink label. Don't add a second accent. Don't ship the logo strip or a Nucleo card as app chrome. Don't copy an ad into a layout. Don't treat a generator palette as the brand ramp.
 
 ## Rebuild
 
 ```sh
 python3 systems/coolors/tools/build_tokens.py
 python3 systems/coolors/tools/build_style_guide.py
-python3 systems/coolors/tools/build_components_md.py
 ```
 
-`make design-md` and `make check` need the catalog entry. That entry is deferred to the batch catalog PR, so `make check` fails with `systems/coolors has no catalog.json entry` until then. Do not add the catalog entry in this PR.
+Do not edit [catalog.json](../../catalog.json) or [webapps-manifest.json](../../webapps-manifest.json) in this PR. `make design-md` would copy the catalog access string, which contains an account email, so it was not run.

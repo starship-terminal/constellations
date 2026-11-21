@@ -1,8 +1,8 @@
 # Coolors
 
-A light palette tool: Inter, a blue primary button, a pink Go Pro label, and full-height color columns with the hex at the bottom.
+A light palette tool: Inter, a blue primary button, a pink Go Pro label, and a 110px homepage headline.
 
-This file is hand-written for this capture PR. `make design-md` would copy the catalog `access` string into the provenance line, and that string contains the account email. The catalog entry is deferred, so this file stays email-free. The catalog PR should regenerate it after the access string is rewritten.
+This file is hand-written so it stays email-free. `make design-md` would copy the catalog access string, which contains an account email. Do not edit catalog.json in this PR.
 
 ## Themes
 
@@ -19,12 +19,12 @@ Light is the theme that was on screen. Dark is the stylesheet's smart-alias flip
 
 ## Type
 
-Inter. Body 15px weight 450. Buttons 15px weight 500. Generator hex 30px weight 600, tracking 0.9px. Account display 70px weight 800, tracking -2.45px.
+Inter. Body 15px weight 450. Primary button 15px weight 500. Homepage h1 110px weight 800, tracking -3.85px, line-height 99px. Explore button 16px weight 600.
 
 ## Geometry
 
-Header 60px. Button height 36px, radius 8px, padding 0 12px. Text input height 46px, radius 10px. Desktop generator column 288px wide. Header shadow is a 1px hairline, rgba(0, 0, 0, 0.07).
+Header 60px. Primary button height 36px, radius 8px, padding 0 12px. Explore button height 46px, radius 10px. Tool card radius 14px, padding 40px. Header shadow is a 1px hairline, rgba(0, 0, 0, 0.07).
 
 ## Provenance
 
-Captured 2026-11-20 from the signed-in Coolors web app in the T3 preview browser. Desktop 1440x900, phone measured at 390x844. Pro checkout was not opened.
+Captured 2026-11-21 from the public Coolors site, signed out, in the T3 preview browser. Desktop 1440x900. Phone homepage photographed at 390. Sign-in overlay opened and closed. Pro checkout was not opened.
