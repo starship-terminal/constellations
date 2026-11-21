@@ -1,0 +1,37 @@
+{
+  "cards": [
+    "Solutions",
+    "Products",
+    "Products",
+    "AI Debugging",
+    "AI Debugging",
+    "Integrations",
+    "Integrations",
+    "Learn",
+    "Learn",
+    "Support",
+    "Support",
+    "Hang out with us"
+  ],
+  "toggles": [
+    "PLATFORM",
+    "SOLUTIONS",
+    "RESOURCES",
+    "Toggle billing frequency, currently Annual",
+    "Paid Plan Tier: Team selected",
+    "Payment Frequency: Annual selected",
+    "Errors",
+    "Logs",
+    "Application Metrics",
+    "Replays",
+    "Spans",
+    "Cron monitors",
+    "Uptime monitors",
+    "Attachments",
+    "Continuous profile hours",
+    "UI profile hours",
+    "Seer",
+    "← Previous",
+    "Logs →"
+  ]
+}

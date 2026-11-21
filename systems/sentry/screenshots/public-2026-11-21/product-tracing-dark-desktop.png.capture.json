@@ -1,0 +1,24 @@
+{
+  "file": "screenshots/public-2026-11-21/product-tracing-dark-desktop.png",
+  "captured": "2026-11-21",
+  "href": "https://sentry.io/product/tracing/",
+  "title": "Distributed Tracing | Monitor Performance Across Services | Sentry",
+  "h1": "Distributed tracing: full context from click to database and back",
+  "htmlClass": "dark",
+  "colorScheme": "normal",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "scrollHeight": 8695,
+  "png": {
+    "width": 1440,
+    "height": 900,
+    "bytes": 212370
+  },
+  "fullPage": false
+}

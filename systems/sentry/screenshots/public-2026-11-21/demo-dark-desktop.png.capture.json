@@ -1,0 +1,16 @@
+{
+  "file": "screenshots/public-2026-11-21/demo-dark-desktop.png",
+  "captured": "2026-11-21",
+  "href": "https://sentry.io/demo/",
+  "title": "Request a Demo | Sentry",
+  "h1": "Let's help you fix your code faster",
+  "htmlClass": "dark",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "png": {
+    "width": 1440,
+    "height": 900,
+    "bytes": 148781
+  }
+}

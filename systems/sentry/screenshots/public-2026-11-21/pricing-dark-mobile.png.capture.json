@@ -1,0 +1,24 @@
+{
+  "file": "screenshots/public-2026-11-21/pricing-dark-mobile.png",
+  "captured": "2026-11-21",
+  "href": "https://sentry.io/pricing/",
+  "title": "Pricing: Free Developer Plan, Pay as You Grow | Sentry",
+  "h1": "Pricing plans for dev teams of all sizes",
+  "htmlClass": "",
+  "colorScheme": "normal",
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "dpr": 2,
+  "visualViewport": {
+    "width": 390,
+    "height": 844,
+    "scale": 1
+  },
+  "scrollHeight": 9662,
+  "png": {
+    "width": 780,
+    "height": 1688,
+    "bytes": 118406
+  },
+  "fullPage": false
+}

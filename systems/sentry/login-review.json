@@ -1,0 +1,109 @@
+{
+  "slug": "sentry",
+  "product": "Sentry",
+  "domain": "sentry.io",
+  "captured": "2026-11-21",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "email-password-and-identity-providers",
+  "session": "Headless Chromium, signed out, after T3 preview screenshots failed twice. No identity provider was clicked. No form was submitted. No email, password, code, phone, name or address was typed.",
+  "wall": {
+    "url": "https://sentry.io/auth/login/",
+    "title": "Sentry",
+    "h1": "Sign in to Sentry",
+    "asks": [
+      "Google",
+      "GitHub",
+      "Azure",
+      "Organization SSO",
+      "Email",
+      "Password",
+      "Forgot password?",
+      "Log in to Sentry"
+    ],
+    "email_field": true,
+    "password_field": true,
+    "code_field": false,
+    "inputs": [
+      {"type": "email", "name": "email", "placeholder": "Email", "filled": false},
+      {"type": "password", "name": "password", "placeholder": "Password", "filled": false}
+    ],
+    "note": "Both fields were empty. Google, GitHub and Azure were not clicked. Organization SSO was not clicked. Forgot password was not clicked. Log in to Sentry was not submitted."
+  },
+  "signup_wall": {
+    "url": "https://sentry.io/signup/",
+    "lands_on": "https://sentry.io/signup/",
+    "h1": "Start fixing",
+    "asks": [
+      "Name",
+      "Organization",
+      "Email",
+      "Password",
+      "Data Storage Location",
+      "Get set up",
+      "Google",
+      "GitHub",
+      "Azure DevOps"
+    ],
+    "email_field": true,
+    "password_field": true,
+    "continued": false,
+    "note": "Fields were empty. The location select was not opened. Get set up was not submitted. Google, GitHub and Azure DevOps were not clicked. Promo code Redeem was not clicked. The form says it is protected by reCAPTCHA. The captcha was not solved."
+  },
+  "demo_wall": {
+    "url": "https://sentry.io/demo/",
+    "h1": "Let's help you fix your code faster",
+    "file": "screenshots/public-2026-11-21/demo-dark-desktop.png",
+    "note": "Request a demo is a form, not a signed-in org. Every field was left empty. Submit was not clicked."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measuredInnerWidth": 1440,
+      "deviceScaleFactor": 1,
+      "file": "screenshots/public-2026-11-21/login-light-desktop.png"
+    },
+    "phone": {
+      "requested": "390x844",
+      "measuredInnerWidth": 390,
+      "deviceScaleFactor": 2,
+      "pngWidth": 780,
+      "file": "screenshots/public-2026-11-21/login-light-mobile.png"
+    }
+  },
+  "offered": {
+    "nav": [
+      {"label": "Sign in", "opens": "https://sentry.io/auth/login/", "reached": "wall only"},
+      {"label": "Get started", "opens": "https://sentry.io/signup/", "reached": "wall only"},
+      {"label": "Get demo", "opens": "https://sentry.io/demo/", "reached": "empty form only"}
+    ]
+  },
+  "screens": [
+    {"name": "Sign-in wall, desktop, empty", "file": "screenshots/public-2026-11-21/login-light-desktop.png"},
+    {"name": "Sign-in wall, phone, empty", "file": "screenshots/public-2026-11-21/login-light-mobile.png"},
+    {"name": "Signup wall, desktop, empty", "file": "screenshots/public-2026-11-21/signup-light-desktop.png"},
+    {"name": "Signup wall, phone, empty", "file": "screenshots/public-2026-11-21/signup-light-mobile.png"},
+    {"name": "Demo request, desktop, empty", "file": "screenshots/public-2026-11-21/demo-dark-desktop.png"}
+  ],
+  "gaps": [
+    "login-extracted is not-started.",
+    "Google, GitHub, Azure and Azure DevOps were not clicked.",
+    "Organization SSO was not opened.",
+    "No email, password, name, organization or address was typed.",
+    "The signed-in organization, project and issue views were not reached.",
+    "Sentry is not a row in webapps-manifest.json, so that file was not edited."
+  ],
+  "not_submitted": [
+    "Log in to Sentry",
+    "Get set up",
+    "Google",
+    "GitHub",
+    "Azure",
+    "Azure DevOps",
+    "Organization SSO",
+    "Forgot password",
+    "Request a demo",
+    "Start trial",
+    "Contact sales"
+  ]
+}

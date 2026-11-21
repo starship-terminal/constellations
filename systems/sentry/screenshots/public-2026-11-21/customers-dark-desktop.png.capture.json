@@ -1,0 +1,24 @@
+{
+  "file": "screenshots/public-2026-11-21/customers-dark-desktop.png",
+  "captured": "2026-11-21",
+  "href": "https://sentry.io/customers/",
+  "title": "Customer Stories - Sentry | Sentry",
+  "h1": "These folks get it",
+  "htmlClass": "",
+  "colorScheme": "normal",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "scrollHeight": 5681,
+  "png": {
+    "width": 1440,
+    "height": 900,
+    "bytes": 85774
+  },
+  "fullPage": false
+}

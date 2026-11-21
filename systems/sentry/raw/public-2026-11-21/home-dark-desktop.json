@@ -1,0 +1,86 @@
+{
+  "captured": "2026-11-21",
+  "file": "screenshots/public-2026-11-21/home-dark-desktop.png",
+  "href": "https://sentry.io/welcome/",
+  "title": "Application Performance Monitoring & Error Tracking Software | Sentry",
+  "h1": "Code breaks, fix it faster",
+  "htmlClass": "dark",
+  "colorScheme": "normal",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "scrollHeight": 8809,
+  "png": {
+    "width": 1440,
+    "height": 900,
+    "bytes": 788133
+  },
+  "fullPage": false,
+  "status": 200,
+  "tokens": {
+    "varCount": 10,
+    "vars": {
+      "--breakpoint-xs": "0px",
+      "--breakpoint-sm": "576px",
+      "--breakpoint-md": "768px",
+      "--breakpoint-lg": "992px",
+      "--breakpoint-xl": "1152px",
+      "--bg-primary": "#fff",
+      "--bg-secondary": "#f6f6f8",
+      "--text-primary": "#362d59",
+      "--text-secondary": "#9093c1",
+      "--border-color": "#ececf1"
+    },
+    "body": {
+      "backgroundColor": "rgb(31, 22, 51)",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "Rubik, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+      "fontSize": "16px",
+      "lineHeight": "32px"
+    },
+    "h1": {
+      "sel": "h1",
+      "text": "Code breaks, fix it faster",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "\"Dammit Sans\", sans-serif",
+      "fontSize": "88px",
+      "fontWeight": "700",
+      "lineHeight": "105.6px",
+      "letterSpacing": "normal",
+      "borderRadius": "0px",
+      "borderColor": "rgb(255, 255, 255)",
+      "borderWidth": "0px",
+      "padding": "0px",
+      "height": "105.594px",
+      "boxShadow": "none",
+      "rect": {
+        "w": 1004,
+        "h": 106
+      }
+    },
+    "primary": {
+      "text": "Get Started",
+      "color": "rgb(31, 22, 51)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontFamily": "Rubik, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "borderRadius": "8px",
+      "height": 0,
+      "padding": "12px 16px"
+    },
+    "navLink": {
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "Rubik, -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "letterSpacing": "0.2px"
+    }
+  }
+}

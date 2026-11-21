@@ -1,0 +1,381 @@
+{
+  "login": {
+    "requested": "https://sentry.io/auth/login/",
+    "status": 200,
+    "href": "https://sentry.io/auth/login/",
+    "title": "Sentry",
+    "h1": "Sign in to Sentry",
+    "htmlClass": "",
+    "bodyText": "Sign in to Sentry\nGoogle\nGitHub\nAzure\nOrganization SSO\nOR\nForgot password?\nLog in to Sentry\nSentry MCP: fix production issues right from your LLM. Learn More.",
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "type": "email",
+        "name": "email",
+        "id": "",
+        "placeholder": "Email",
+        "aria": "Email",
+        "autocomplete": "email",
+        "valueLength": 0
+      },
+      {
+        "tag": "INPUT",
+        "type": "password",
+        "name": "password",
+        "id": "",
+        "placeholder": "Password",
+        "aria": "Password",
+        "autocomplete": "current-password",
+        "valueLength": 0
+      }
+    ],
+    "buttons": [
+      {
+        "tag": "A",
+        "text": "Google",
+        "href": "/identity/login/google/?referrer=login&href=http%3A%2F%2Fsentry.io%2Fapi%2F0%2Fauth%2Fconfig%2F",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "GitHub",
+        "href": "/identity/login/github/?referrer=login&href=http%3A%2F%2Fsentry.io%2Fapi%2F0%2Fauth%2Fconfig%2F",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "Azure",
+        "href": "/identity/login/vsts/?referrer=login&href=http%3A%2F%2Fsentry.io%2Fapi%2F0%2Fauth%2Fconfig%2F",
+        "type": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Organization SSO",
+        "href": null,
+        "type": "button"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Forgot password?",
+        "href": null,
+        "type": "button"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Log in to Sentry",
+        "href": null,
+        "type": "submit"
+      },
+      {
+        "tag": "A",
+        "text": "Learn More",
+        "href": "https://mcp.sentry.dev/?utm_source=website",
+        "type": null
+      }
+    ],
+    "captcha": false,
+    "forms": [
+      {
+        "action": null,
+        "method": null,
+        "id": ""
+      }
+    ]
+  },
+  "signup": {
+    "requested": "https://sentry.io/signup/",
+    "status": 200,
+    "href": "https://sentry.io/signup/",
+    "title": "Start your free trial | Unlimited events 14 days | Sentry",
+    "h1": "Start fixing",
+    "htmlClass": "dark",
+    "bodyText": "Skip to main content\nPLATFORM\nSOLUTIONS\nRESOURCES\nDOCS\nPRICING\nSIGN IN\nGET DEMO\nGET STARTED\nStart fixing\n\nSentry gives you all the context you (and your agent) need to fix code faster.\n\nTHESE FOLKS GET IT:\nCreate your free account\n\nUnlimited volume for 14 days. Free plan after that. Upgrade whenever you want.\n\nName\nOrganization\nEmail\nPassword\nData Storage Location\n\nChoose where to store your organization's data. Please note, you won't be able to change locations once your organization has been created. Learn More\nSentry docs for data storage location\n\nSelect a location\n🇺🇸 United States (US)\n🇪🇺 European Union (EU)\nI would like to receive updates via email.\nI agree to the Terms of Service and Privacy Policy.\nThis form is protected by reCAPTCHA. Google's Privacy Policy and Google's Terms ",
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "name": "name",
+        "id": "",
+        "placeholder": "Your Name",
+        "aria": "Name",
+        "autocomplete": null,
+        "valueLength": 0
+      },
+      {
+        "tag": "INPUT",
+        "type": "text",
+        "name": "organizationName",
+        "id": "",
+        "placeholder": "Organization Name",
+        "aria": "Organization",
+        "autocomplete": null,
+        "valueLength": 0
+      },
+      {
+        "tag": "INPUT",
+        "type": "email",
+        "name": "email",
+        "id": "",
+        "placeholder": "you@company.com",
+        "aria": "Email",
+        "autocomplete": null,
+        "valueLength": 0
+      },
+      {
+        "tag": "INPUT",
+        "type": "password",
+        "name": "password",
+        "id": "",
+        "placeholder": "Password (8+ characters)",
+        "aria": "Password",
+        "autocomplete": null,
+        "valueLength": 0
+      },
+      {
+        "tag": "SELECT",
+        "type": null,
+        "name": "dataStorageLocation",
+        "id": "",
+        "placeholder": null,
+        "aria": "Data Storage Location",
+        "autocomplete": null,
+        "valueLength": 0
+      }
+    ],
+    "buttons": [
+      {
+        "tag": "A",
+        "text": "Welcome Page",
+        "href": "https://sentry.io/welcome/",
+        "type": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "PLATFORM",
+        "href": null,
+        "type": "button"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "SOLUTIONS",
+        "href": null,
+        "type": "button"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "RESOURCES",
+        "href": null,
+        "type": "button"
+      },
+      {
+        "tag": "A",
+        "text": "DOCS",
+        "href": "https://docs.sentry.io/",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "PRICING",
+        "href": "https://sentry.io/pricing/",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "SIGN IN",
+        "href": "https://sentry.io/auth/login/",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "GET DEMO",
+        "href": "https://sentry.io/demo/",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "GET STARTED",
+        "href": "https://sentry.io/signup/",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "Learn More Sentry docs for data storage location",
+        "href": "https://docs.sentry.io/organization/data-storage-location/",
+        "type": null
+      },
+      {
+        "tag": "LABEL",
+        "text": "I would like to receive updates via email.",
+        "href": null,
+        "type": null
+      },
+      {
+        "tag": "LABEL",
+        "text": "I agree to the Terms of Service and Privacy Policy.",
+        "href": null,
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "Terms of Service",
+        "href": "/terms/",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "Privacy Policy",
+        "href": "/privacy/",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "Google's Privacy Policy",
+        "href": "https://policies.google.com/privacy",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "Google's Terms of Service",
+        "href": "https://policies.google.com/terms",
+        "type": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "GET SET UP",
+        "href": null,
+        "type": "submit"
+      },
+      {
+        "tag": "A",
+        "text": "Got a promo code? Redeem",
+        "href": null,
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "GOOGLE",
+        "href": "https://sentry.io/identity/login/google/?href=https%3A%2F%2Fsentry.io%2Fsignup%2F&referrer=web-signup",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "GITHUB",
+        "href": "https://sentry.io/identity/login/github/?href=https%3A%2F%2Fsentry.io%2Fsignup%2F&referrer=web-signup",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "AZURE DEVOPS",
+        "href": "https://sentry.io/identity/login/vsts/?href=https%3A%2F%2Fsentry.io%2Fsignup%2F&referrer=web-signup",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "TRY SENTRY FOR FREE",
+        "href": "#signup_form",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "GET DEMO",
+        "href": "/demo/",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "Welcome Page",
+        "href": "/welcome/",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "Terms",
+        "href": "https://sentry.io/terms/",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "Privacy",
+        "href": "https://sentry.io/privacy/",
+        "type": null
+      }
+    ],
+    "captcha": false,
+    "forms": [
+      {
+        "action": null,
+        "method": "post",
+        "id": "signup_form"
+      }
+    ]
+  },
+  "pricing": {
+    "href": "https://sentry.io/pricing/",
+    "title": "Pricing: Free Developer Plan, Pay as You Grow | Sentry",
+    "h1": "Pricing plans for dev teams of all sizes",
+    "status": 200,
+    "captcha": false,
+    "buttons": [
+      {
+        "tag": "A",
+        "text": "SIGN IN",
+        "href": "https://sentry.io/auth/login/",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "GET DEMO",
+        "href": "https://sentry.io/demo/",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "GET STARTED",
+        "href": "https://sentry.io/signup/",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "START TRIAL",
+        "href": "/signup/?plan=am3_f&period=annual",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "START TRIAL",
+        "href": "/signup/?trial&plan=am1_team_auf&period=annual",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "START TRIAL",
+        "href": "/signup/?trial&plan=am1_business_auf&period=annual",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "CONTACT SALES",
+        "href": "/demo",
+        "type": null
+      },
+      {
+        "tag": "A",
+        "text": "5,000 Session Replays on us New users only: Get 5,000 free replays per month for your first 3 months",
+        "href": "https://sentry.io/signup/",
+        "type": null
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "type": "range",
+        "name": null,
+        "id": "errors",
+        "placeholder": null,
+        "aria": "Errors",
+        "autocomplete": null,
+        "valueLength": 1
+      }
+    ]
+  }
+}
