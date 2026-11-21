@@ -1,8 +1,8 @@
 # Kinhive design reference
 
-A token set and component reference for Kinhive's public site, for building marketing pages, pricing cards, auth edges, and directory indexes in this style. It was read from **kinhive.com** on **2026-11-18**, in headless Chromium at 1440 x 900 and 390 x 844. Captured: home, pricing, about, blog and one article, two feature pages, templates, funding, resources, shop (with the cart drawer open), contact, join, sign-in, privacy, terms, accessibility, plus 390px passes on home, pricing, join, and sign-in. A signed-in pass then submitted join and sign-in with a 6-digit email code: the code step, a wrong-code error, a disabled Continue, and a rate-limit error.
+A token set and component reference for Kinhive's public site, for building marketing pages, pricing cards, auth edges, and directory indexes in this style. It was read from **kinhive.com** on **2026-11-18**, in headless Chromium at 1440 x 900 and 390 x 844. Captured: home, pricing, about, blog and one article, two feature pages, templates, funding, resources, shop (with the cart drawer open), contact, join, sign-in, privacy, terms, accessibility, plus 390px passes on home, pricing, join, and sign-in. A **2026-11-21** public walk added [site-tree.md](site-tree.md) and re-photographed the empty `/sign-in` and `/join` walls at 1440 and 390. That walk typed nothing and submitted nothing. LinkedIn was visible and not clicked. The map of which control opens which page is [site-tree.md](site-tree.md). The empty walls are [login-review.json](login-review.json).
 
-Kinhive is a free AI introduction app for women founders. The public site is a Next.js and Tailwind v4 marketing surface. The declared layer is a real palette: ink #111111, body #4b4b50, canvas #f6f6f4, line #e6e6e3, cobalt #2448e3, chartreuse #d4e31f, tomato #f0532c, butter #f8f2cf, chocolate #33190d. Type is Figtree for UI and Affairs for headlines. Controls are 8px-radius ink fills. A second palette is declared under `prefers-color-scheme: dark` on `html[data-app-theme=system]`. The live document does not set that attribute, so the painted theme is light. **Boundary:** `/api/auth/join` returned `ok: true` and `/api/auth/sign-in` returned `status: sent`, but no Kinhive mail arrived at the capture inbox, so `/home`, `/matches`, `/chat`, `/profile`, `/settings`, and the other robots.txt disallows were not opened. LinkedIn and the store badges were not followed. Checkout was not started. No CAPTCHA, phone, or payment screen appeared.
+Kinhive is a free AI introduction app for women founders. The public site is a Next.js and Tailwind v4 marketing surface. The declared layer is a real palette: ink #111111, body #4b4b50, canvas #f6f6f4, line #e6e6e3, cobalt #2448e3, chartreuse #d4e31f, tomato #f0532c, butter #f8f2cf, chocolate #33190d. Type is Figtree for UI and Affairs for headlines. Controls are 8px-radius ink fills. A second palette is declared under `prefers-color-scheme: dark` on `html[data-app-theme=system]`. The live document does not set that attribute, so the painted theme is light. **Boundary:** the 2026-11-21 walk stopped at the empty `/sign-in` and `/join` walls. No email, name, or code was typed. LinkedIn was not clicked. `/home`, `/matches`, `/chat`, `/profile`, and `/settings` were not opened. Store badges were not followed. Checkout was not started. No CAPTCHA, phone, or payment screen appeared.
 
 | File | What it is |
 |---|---|
@@ -17,6 +17,8 @@ Kinhive is a free AI introduction app for women founders. The public site is a N
 | [screenshots/](screenshots) | Quantised page captures, desktop 1440 and phone 390, plus the menu, cart, drawer, and declared-dark home |
 | [raw/](raw) | [css-vars.json](raw/css-vars.json), the stylesheet harvest |
 | [tools/](tools) | The capture scripts and the builders |
+| [site-tree.md](site-tree.md) | Public tree from the 2026-11-21 walk: which control opens which page, menu, or dialog, and which branches stopped at a wall. |
+| [login-review.json](login-review.json) | Empty sign-in and join walls only. The signed-in app was not entered. |
 
 ## Brief
 
@@ -32,7 +34,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 4. Do use 8px radius on controls.
 5. Do keep the butter card on the photograph.
 6. Don't style the signed-in app from this package.
-7. Don't invent success for the code step.
+7. Don't invent a submitted join.
 8. Don't treat the dark screenshot as the live theme.
 9. Don't copy the wordmark.
 
@@ -103,7 +105,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 | Step | What ran |
 |---|---|
-| Screenshots | `tools/capture/public/public.mjs` at 1440 x 900 and 390 x 844, then `tools/capture/public/code.mjs` for the join and sign-in code step. Consent overlays are hidden, never answered. Public presses are the Features and Use Cases menus, the mobile Open menu button, and the shop cart. Join and sign-in Continue were pressed on 2026-11-18 (the script no longer presses them); LinkedIn was not |
+| Screenshots | `tools/capture/public/public.mjs` at 1440 x 900 and 390 x 844. The 2026-11-21 walk re-shot home, both menus, the phone drawer, pricing, about, blog, shop and the empty cart, contact, child safety, founder fund, and the empty `/sign-in` and `/join` walls at 1440 and 390. Nothing was typed. Continue, Email me a sign-in code, and LinkedIn were not clicked |
 | CSS harvest | `tools/capture/vars.mjs` reads the `_next/static` stylesheets and resolves every custom property. The dark pass sets `data-app-theme="system"` and emulates `prefers-color-scheme: dark` |
 | Tokens | `tools/build_tokens.py` writes tokens.json from those resolved values, plus a handful of measured control sizes from the homepage probe |
 | Guide | `tools/build_style_guide.py` writes style-guide.html |
@@ -112,9 +114,9 @@ Every token leaf names its source in `$extensions.source`. A `css-var` source wa
 
 ## What to distrust
 
-- **The signed-in product.** `/home`, `/matches`, `/chat`, `/profile`, and `/settings` were not opened. Join and sign-in APIs accepted the capture email and showed the code step; the 6-digit message never arrived, so the app shell was not reached. Marketing photographs of the app are published images, not the product.
+- **The signed-in product.** `/home`, `/matches`, `/chat`, `/profile`, and `/settings` were not opened. The 2026-11-21 walk stopped at the empty walls. Marketing photographs of the app are published images, not the product.
 - **The dark screenshot.** [home-dark-default](screenshots/home-dark-default.png) paints only after the capture sets `data-app-theme="system"`. A visitor does not get that page from a toggle. The dark token values are still the declared ones.
-- **The forms.** Contact, subscribe, and the hero email were not submitted. Join and sign-in were submitted through the code step on 2026-11-18, a live state change the capture scripts no longer make: the join-code and signin-code screenshots (default and wrong-code error, desktop and 390) and the disabled-Continue and rate-limit crops were taken past that step. `tools/capture/public/code.mjs` now stops at the form. Wrong-code and rate-limit errors paint `--color-destructive` #d93a1f as body text. Loading and success were not observed. `--color-alert` is still unused.
+- **The forms.** Contact, subscribe, the hero email, join, and sign-in were not submitted on 2026-11-21. The empty walls are [signin-light-empty](screenshots/signin-light-empty.png) and [join-light-empty](screenshots/join-light-empty.png). Older crops from 2026-11-18 still show a code step, a wrong-code line, and a rate-limit line. Those states were not re-created. Loading and success were not observed. `--color-alert` is still unused.
 - **Hover.** `light.action.fill-hover` is the authored `hover:bg-[#2a2a2c]` literal, typed in by hand and labelled Reconstruction, not a forced-state measurement.
 - **Control geometry.** `core.component.nav-height`, `nav-link-size`, `cta-height`, `cta-radius`, `field-height` and `hero-size` were typed in from the homepage probe, whose readings were never committed. They are labelled Reconstruction.
 - **Quantised screenshots.** `screenshots/` and crops are 256-colour PNGs. Read colours from tokens.json.
@@ -143,14 +145,14 @@ Every token leaf names its source in `$extensions.source`. A `css-var` source wa
 | Button | captured | [nav-join-default](components/crops/nav-join-default.png), [join-continue-default](components/crops/join-continue-default.png) |
 | Icon button | captured | [hero-submit-default](components/crops/hero-submit-default.png), [m-menu-btn-default](components/crops/m-menu-btn-default.png) |
 | Link | captured | [nav-login-default](components/crops/nav-login-default.png) |
-| Text field | captured | [hero-email-default](components/crops/hero-email-default.png), [join-field-default](components/crops/join-field-default.png), [join-code-field-default](components/crops/join-code-field-default.png). Focus-visible was not isolated |
+| Text field | captured | [hero-email-default](components/crops/hero-email-default.png), [join-field-default](components/crops/join-field-default.png). The 2026-11-21 walk focused the empty hero field in [home-light-email-focus](screenshots/home-light-email-focus.png) and did not type. The code field is from the 2026-11-18 pass, [join-code-field-default](components/crops/join-code-field-default.png). Focus-visible was not isolated |
 | Text area | captured | [contact-textarea-default](components/crops/contact-textarea-default.png) |
 | Select | captured | [contact-select-default](components/crops/contact-select-default.png). Opened state not captured: opening it does not submit, but the list was left closed |
 | Checkbox | not present | No checkbox on the public pages |
 | Radio | not present | No radio on the public pages |
 | Switch | not present | No switch on the public pages |
 | Tabs | captured | Blog category chips, [blog-tab-selected](components/crops/blog-tab-selected.png). Other chips not selected |
-| Menu | captured | [home-light-menu-features](screenshots/home-light-menu-features.png), [mobile-home-light-drawer](screenshots/mobile-home-light-drawer.png) |
+| Menu | captured | [home-light-menu-features](screenshots/home-light-menu-features.png), [home-light-menu-usecases](screenshots/home-light-menu-usecases.png), [mobile-home-light-drawer](screenshots/mobile-home-light-drawer.png). The 2026-11-21 walk re-photographed both menus and the phone drawer |
 | Tooltip | not present | No tooltip on the public pages |
 | Dialog | captured | Cart drawer, [shop-light-cart](screenshots/shop-light-cart.png). No modal dialog |
 | Toast | not present | Join and sign-in were submitted; no toast appeared |
@@ -163,7 +165,7 @@ Every token leaf names its source in `$extensions.source`. A `css-var` source wa
 | Disabled | captured | Continue stays grey until six digits are entered, [join-continue-disabled](components/crops/join-continue-disabled.png) |
 | Loading | not present | No loading control painted |
 | Error | captured | Wrong-code and rate-limit copy in `--color-destructive` #d93a1f, [join-code-error](components/crops/join-code-error.png), [join-rate-limit-error](components/crops/join-rate-limit-error.png) |
-| App shell | not captured | Join and sign-in accepted the email and showed the code step; the 6-digit message never arrived, so /home, /matches, /chat, /profile, /settings were not opened |
+| App shell | not captured | The 2026-11-21 walk stopped at the empty /sign-in and /join walls. /home, /matches, /chat, /profile, /settings were not opened |
 | Form validation | captured | [join-code-light-error](screenshots/join-code-light-error.png), [join-light-rate-limit](screenshots/join-light-rate-limit.png), [signin-light-rate-limit](screenshots/signin-light-rate-limit.png) |
 | Empty state | captured | Cart empty state in [shop-light-cart](screenshots/shop-light-cart.png) |
 | Loading and error states | captured | Form errors only: wrong code and rate limit. No page-level loading or error screen |
@@ -171,7 +173,7 @@ Every token leaf names its source in `$extensions.source`. A `css-var` source wa
 | Search and filtering | captured | Blog category chips. No search field |
 | Product page | captured | [product-light-default](screenshots/product-light-default.png). Add to cart was not pressed. Quantity stepper is visible, not changed |
 | Template document | captured | [template-nda-light-default](screenshots/template-nda-light-default.png). Fill in online, Google Docs, and Word download were not followed |
-| Onboarding | not captured | Join reached the 6-digit code step. The in-app onboarding sits behind a code that never arrived |
+| Onboarding | not captured | Join was photographed empty. Continue was not clicked, so in-app onboarding was not opened |
 | Themes | captured | Light is what the site paints. Dark is the declared palette, reached by setting `data-app-theme` |
 | Widths | captured | 1440 and 390 |
 
@@ -182,8 +184,8 @@ Every token leaf names its source in `$extensions.source`. A `css-var` source wa
 3. **Do set headlines in Affairs and UI in Figtree.** The 44px hero and the $0 are Affairs. Nav, fields, and buttons are Figtree. See [hero-h1-default](components/crops/hero-h1-default.png).
 4. **Do use 8px radius on controls.** `rounded-lg` is 8px on nav links, CTAs, fields, and chips. Cards go wider. See [join-field-default](components/crops/join-field-default.png).
 5. **Do keep the butter card on the photograph.** The hero card is #f8f2cf over the photo, not a white panel. See [home-light-default](screenshots/home-light-default.png).
-6. **Don't style the signed-in app from this package.** Matches, chat, cowork, and profile sit behind the code step and were not captured. Add to cart was not pressed. See [product-light-default](screenshots/product-light-default.png).
-7. **Don't invent success for the code step.** Wrong-code and rate-limit errors were captured. The 6-digit mail never arrived, so the app was not opened. See [join-code-error](components/crops/join-code-error.png).
+6. **Don't style the signed-in app from this package.** Matches, chat, cowork, and profile sit behind `/sign-in` and `/join` and were not captured. Add to cart was not pressed. See [signin-light-empty](screenshots/signin-light-empty.png).
+7. **Don't invent a submitted join.** The 2026-11-21 walls are empty. Continue was not clicked. See [join-light-empty](screenshots/join-light-empty.png).
 8. **Don't treat the dark screenshot as the live theme.** The site does not set `data-app-theme`, so visitors see light. The dark tokens are the declared palette. See [home-dark-default](screenshots/home-dark-default.png).
 9. **Don't copy the wordmark.** The Kinhive mark, the photographs, and the chartreuse are the product's. Borrow the structure.
 

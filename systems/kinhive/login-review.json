@@ -1,0 +1,65 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "session": "Public Playwright capture, signed out. https://kinhive.com/sign-in and https://kinhive.com/join were opened from the header. The empty walls were photographed at 1440 and 390. The branch stopped. No email, name, phone, or code was typed. Continue with LinkedIn and Join with LinkedIn were not clicked. No form was submitted.",
+  "viewport": {
+    "desktop": "1440",
+    "phone": "390"
+  },
+  "offered": {
+    "nav": {
+      "items": [],
+      "reached": [],
+      "note": "The signed-in app was not entered. Marketing nav is recorded in site-tree.md."
+    },
+    "settings": {
+      "items": [],
+      "reached": [],
+      "note": "No account settings were offered before the wall."
+    },
+    "create": {
+      "items": [],
+      "reached": [],
+      "note": "No create flow was offered before the wall. Join free and Join the community point at the same empty join wall."
+    }
+  },
+  "screens": [
+    "screenshots/signin-light-empty.png",
+    "screenshots/mobile-signin-light-empty.png",
+    "screenshots/join-light-empty.png",
+    "screenshots/mobile-join-light-empty.png",
+    "screenshots/home-light-menu-features.png",
+    "screenshots/home-light-menu-usecases.png",
+    "screenshots/mobile-home-light-drawer.png",
+    "screenshots/shop-light-cart.png",
+    "screenshots/contact-light-default.png"
+  ],
+  "gaps": [
+    "The signed-in app was not entered. Matches, chat, profile, and settings were not offered on a signed-in shell.",
+    "offered.nav, offered.settings, and offered.create are empty because the wall stopped the branch.",
+    "No dark theme switch was offered. The live document does not set data-app-theme.",
+    "Continue with LinkedIn was visible on /sign-in and not clicked.",
+    "Join with LinkedIn was visible on /join and not clicked. No Google or Apple button was on either wall.",
+    "The code step was not reached. Continue and Email me a sign-in code were not clicked.",
+    "The contact form at /contact was photographed empty and not submitted.",
+    "The hero email, the lower capture email, and the footer subscribe email were left empty. Subscribe was not clicked.",
+    "Cookie settings was visible in the footer and not opened.",
+    "Checkout was not started. The cart drawer was opened empty."
+  ],
+  "not_submitted": [
+    "email",
+    "first name",
+    "last name",
+    "code",
+    "Email me a sign-in code",
+    "Continue",
+    "Continue with LinkedIn",
+    "Join with LinkedIn",
+    "Join free",
+    "hero email",
+    "footer subscribe",
+    "contact form",
+    "Send message",
+    "checkout"
+  ]
+}
