@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Summer Fridays tokens</title>
+  <style>
+    :root {
+      --ink: #000418;
+      --on-ink: #ffffff;
+      --promo: #481f18;
+      --header: #ffffff;
+      --card: #eeedec;
+      --bag: #5c7899;
+      --page: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: futura-pt, "Futura PT", Futura, "Trebuchet MS", sans-serif;
+      font-weight: 450;
+      font-size: 16px;
+    }
+    .promo {
+      background: var(--promo);
+      color: var(--on-ink);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+    header {
+      height: 57px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      background: var(--header);
+      border-bottom: 1px solid #eee;
+    }
+    nav { display: flex; gap: 24px; font-size: 16px; }
+    .wordmark { letter-spacing: 0.12em; font-size: 18px; }
+    main { padding: 40px 60px 80px; }
+    h1 { font-size: 30px; font-weight: 450; letter-spacing: -0.75px; }
+    .row { display: flex; gap: 16px; align-items: center; margin: 16px 0; flex-wrap: wrap; }
+    .swatch { width: 72px; height: 48px; border: 1px solid #ddd; }
+    .label { font-size: 13px; letter-spacing: 0.04em; }
+    .shop {
+      width: 150px;
+      height: 30px;
+      background: var(--on-ink);
+      color: var(--ink);
+      border: 1px solid var(--on-ink);
+      border-radius: 3px;
+      font-size: 13px;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      font-weight: 450;
+    }
+    .shop-on-dark { background: #1a1a1a; padding: 16px; }
+    .card-add {
+      width: 207px;
+      height: 31px;
+      background: var(--card);
+      color: var(--ink);
+      border: 1px solid transparent;
+      border-radius: 3px;
+      font-size: 13px;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 12px;
+    }
+    .bag {
+      width: 394px;
+      height: 40px;
+      background: var(--bag);
+      color: var(--on-ink);
+      border: 1px solid transparent;
+      border-radius: 3px;
+      font-size: 13px;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+    }
+    .pill {
+      width: 213px;
+      height: 40px;
+      background: var(--bag);
+      color: var(--on-ink);
+      border: 0;
+      border-radius: 100px;
+      font-size: 16px;
+    }
+    .filter {
+      height: 19px;
+      padding: 0 10px;
+      background: var(--ink);
+      color: var(--on-ink);
+      border: 0;
+      border-radius: 5px;
+      font-size: 13px;
+    }
+    footer {
+      background: var(--bag);
+      color: var(--on-ink);
+      padding: 24px 60px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="promo">20% OFF + FREE TRAVEL CASE ON ORDERS $75+</div>
+  <header>
+    <nav><span>Shop</span><span>Gifts</span><span>About</span><span>Blog</span></nav>
+    <div class="wordmark">SUMMER FRIDAYS</div>
+    <nav><span>Rewards</span><span>Account</span></nav>
+  </header>
+  <main>
+    <h1>Shop All</h1>
+    <p>Measured on 2026-11-22. Futura PT is the live family. This page falls back when that file is not installed.</p>
+    <div class="row">
+      <div class="swatch" style="background:#000418"></div><span class="label">ink #000418</span>
+      <div class="swatch" style="background:#481f18"></div><span class="label">promo #481f18</span>
+      <div class="swatch" style="background:#eeedec"></div><span class="label">card #eeedec</span>
+      <div class="swatch" style="background:#5c7899"></div><span class="label">bag #5c7899</span>
+    </div>
+    <div class="row shop-on-dark"><button class="shop" type="button">Shop now</button></div>
+    <div class="row"><button class="filter" type="button">Filter your search</button></div>
+    <div class="row"><button class="card-add" type="button"><span>Add to Bag</span><span>$92</span></button></div>
+    <div class="row"><button class="pill" type="button">Buy Once $24</button></div>
+    <div class="row"><button class="bag" type="button"><span>Add to Bag</span><span>$24</span></button></div>
+  </main>
+  <footer>Footer uses the same #5c7899 as Add to Bag.</footer>
+</body>
+</html>

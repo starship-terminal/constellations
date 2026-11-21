@@ -1,0 +1,169 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://summerfridays.com/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "body": {
+    "color": "rgb(0, 4, 24)",
+    "font": "futura-pt, futura-pt-fallback-arial, futura-pt-fallback-roboto, -apple-system, system-ui, Segoe UI, system-ui, sans-serif",
+    "size": "16px",
+    "weight": "450",
+    "lineHeight": "20px",
+    "letterSpacing": "0.13px"
+  },
+  "inkToken": "--ink",
+  "inkTokenValue": "#000418",
+  "promo": {
+    "bg": "rgb(72, 31, 24)",
+    "color": "rgb(255, 255, 255)",
+    "height": "64px",
+    "size": "16px",
+    "weight": "450",
+    "pngSample": "#481f18"
+  },
+  "header": {
+    "height": "57px",
+    "home": "transparent over the hero, wordmark and nav paint white",
+    "interiorParentBg": "rgb(255, 255, 255)",
+    "interiorNavColor": "rgb(0, 4, 24)"
+  },
+  "hero": {
+    "eyebrow": {
+      "text": "CYBER WEEK",
+      "size": "25px",
+      "weight": "450",
+      "color": "rgb(255, 255, 255)"
+    },
+    "h1": {
+      "text": "20% OFF",
+      "size": "75px",
+      "weight": "450",
+      "lineHeight": "75px",
+      "letterSpacing": "-0.898px",
+      "color": "rgb(255, 255, 255)"
+    },
+    "shopNow": {
+      "text": "SHOP NOW",
+      "w": 150,
+      "h": 30,
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(0, 4, 24)",
+      "size": "13px",
+      "weight": "450",
+      "letterSpacing": "1.1px",
+      "radius": "3px",
+      "border": "1px solid rgb(255, 255, 255)",
+      "textTransform": "uppercase"
+    }
+  },
+  "favoritesTitle": {
+    "text": "Discover Our Community Favorites",
+    "size": "26px",
+    "weight": "450",
+    "letterSpacing": "-0.52px",
+    "color": "rgb(0, 4, 24)"
+  },
+  "cardAdd": {
+    "text": "ADD TO BAG $92",
+    "w": 207,
+    "h": 31,
+    "bg": "rgb(238, 237, 236)",
+    "color": "rgb(0, 4, 24)",
+    "size": "13px",
+    "weight": "450",
+    "letterSpacing": "1.1px",
+    "radius": "3px",
+    "textTransform": "uppercase"
+  },
+  "category": {
+    "url": "https://summerfridays.com/collections/shop-all",
+    "title": "Shop All",
+    "h1": {
+      "size": "30px",
+      "weight": "450",
+      "letterSpacing": "-0.75px",
+      "color": "rgb(0, 4, 24)"
+    },
+    "filter": {
+      "text": "Filter your search",
+      "w": 120,
+      "h": 19,
+      "bg": "rgb(0, 4, 24)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "5px",
+      "size": "13px"
+    },
+    "cardTitle": {
+      "size": "18px",
+      "weight": "450",
+      "color": "rgb(0, 4, 24)"
+    },
+    "cardAdd": {
+      "bg": "rgb(238, 237, 236)",
+      "example": "ADD TO BAG $36"
+    }
+  },
+  "product": {
+    "url": "https://summerfridays.com/products/lip-butter-balm",
+    "title": "Lip Butter Balm Vanilla",
+    "h1": {
+      "size": "26px",
+      "weight": "450",
+      "letterSpacing": "-0.52px",
+      "color": "rgb(0, 4, 24)",
+      "w": 470,
+      "h": 30
+    },
+    "addToBag": {
+      "text": "ADD TO BAG $24",
+      "w": 394,
+      "h": 40,
+      "bg": "rgb(92, 120, 153)",
+      "color": "rgb(255, 255, 255)",
+      "size": "13px",
+      "weight": "450",
+      "letterSpacing": "1.1px",
+      "radius": "3px",
+      "textTransform": "uppercase"
+    },
+    "buyOnce": {
+      "text": "Buy Once $24",
+      "w": 213,
+      "h": 40,
+      "bg": "rgb(92, 120, 153)",
+      "color": "rgb(255, 255, 255)",
+      "size": "16px",
+      "radius": "100px"
+    },
+    "subscribePrice": {
+      "text": "$20.40",
+      "color": "rgb(0, 4, 24)",
+      "size": "12px"
+    }
+  },
+  "footer": {
+    "bg": "rgb(92, 120, 153)",
+    "color": "rgb(255, 255, 255)"
+  },
+  "saleBadge": {
+    "text": "30% OFF",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 4, 24)",
+    "w": 85,
+    "h": 24,
+    "size": "16px"
+  },
+  "logo": {
+    "symbol": "logo-desktop",
+    "viewBox": "0 0 862.7 65.6",
+    "rendered": "264 by 19"
+  }
+}
