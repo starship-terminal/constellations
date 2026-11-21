@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T18:40:39.120Z",
+  "source": "playwright-headless-incognito",
+  "url": "https://evernote.com/ai-transcribe",
+  "finalUrl": "https://evernote.com/ai-transcribe",
+  "title": "AI Transcribe by Evernote",
+  "httpStatus": 200,
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 2
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "note": "Public tool page. Cookie banner hidden, not accepted. Nothing typed. No file uploaded. No form submitted."
+}

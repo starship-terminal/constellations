@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T18:39:39.302Z",
+  "source": "playwright-headless-incognito",
+  "url": "https://www.evernote.com/Login.action",
+  "finalUrl": "https://accounts.evernote.com/login",
+  "title": "Login to your Evernote account",
+  "httpStatus": 200,
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "measured": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "note": "Public page. Cookie banner hidden, not accepted. Nothing typed. No form submitted. No identity provider clicked."
+}
