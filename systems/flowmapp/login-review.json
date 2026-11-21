@@ -1,0 +1,84 @@
+{
+  "product": "FlowMapp",
+  "catalog_name": "FlowMapp",
+  "signed_in": false,
+  "captured_at": "2026-11-21",
+  "method": "Playwright headless Chromium. No email, password, code, or SSO was entered. No form was submitted. Google was not clicked.",
+  "wall": {
+    "requested_probe": "https://flowmapp.com/login",
+    "probe_result": "https://www.flowmapp.com/login returns HTTP 404, title Not Found, heading Oops, looks like there's nobody here. It is a missing marketing page, not a sign-in form.",
+    "sign_in_url": "https://app.flowmapp.com/signin",
+    "sign_in_status": 200,
+    "sign_in_title": "Sign In - FlowMapp",
+    "sign_up_url": "https://app.flowmapp.com/signup",
+    "sign_up_status": 200,
+    "sign_up_title": "Sign Up - FlowMapp",
+    "what_the_wall_shows": "Sign in offers Sign In with Google, or Sign In with email (Email and Password fields), I forgot my password, and a disabled Sign In submit until fields are filled. Sign up offers Sign Up with Google, or Username, Email, and Password. Neither form was filled or submitted. Google was not clicked.",
+    "screenshots": [
+      "screenshots/desktop-signin-with-chrome.png",
+      "screenshots/desktop-signup-with-chrome.png",
+      "screenshots/phone-signin.png",
+      "screenshots/desktop-login-missing-with-chrome.png"
+    ]
+  },
+  "stopped_branches": [
+    {
+      "control": "Header Log in",
+      "from": "https://www.flowmapp.com/",
+      "opens": "https://app.flowmapp.com/signin",
+      "stopped": true
+    },
+    {
+      "control": "Header Try for free",
+      "from": "https://www.flowmapp.com/",
+      "opens": "https://app.flowmapp.com/signup",
+      "stopped": true
+    },
+    {
+      "control": "Hero Start planning",
+      "from": "https://www.flowmapp.com/",
+      "opens": "https://app.flowmapp.com/signup",
+      "stopped": true
+    },
+    {
+      "control": "Pricing Sign up Free",
+      "from": "https://www.flowmapp.com/pricing",
+      "opens": "https://app.flowmapp.com/signup",
+      "stopped": true
+    },
+    {
+      "control": "Pricing Start Free Trial",
+      "from": "https://www.flowmapp.com/pricing",
+      "opens": "https://app.flowmapp.com/signup?plan=professional or team or agency, monthly or yearly plan query",
+      "stopped": true
+    },
+    {
+      "control": "Help Center Sign in",
+      "from": "https://help.flowmapp.com/",
+      "opens": "A header control whose nearby form posts to //app.flowmapp.com/login. The form was not filled or submitted.",
+      "stopped": true
+    },
+    {
+      "control": "Help Center Sign up free",
+      "from": "https://help.flowmapp.com/",
+      "opens": "https://app.flowmapp.com/signup",
+      "stopped": true
+    },
+    {
+      "control": "Try Demo Project",
+      "from": "https://www.flowmapp.com/",
+      "opens": "https://app.flowmapp.com/share/projects/215285",
+      "note": "This URL loaded a public Demo Project card grid without a sign-in form. Opening a card was not followed, because the next step is the signed-in editor."
+    }
+  ],
+  "gaps": [
+    "signed-in app was not captured",
+    "unread token values are Not captured",
+    "onboarding was not filled",
+    "no email, password, or code was entered",
+    "Google and every other SSO button was not clicked",
+    "profile, plan, survey, newsletter, and contact fields were not filled",
+    "no form was submitted"
+  ],
+  "token_values_unread": "Not captured"
+}

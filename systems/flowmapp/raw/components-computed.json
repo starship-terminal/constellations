@@ -1,0 +1,177 @@
+{
+  "_meta": {
+    "captured": "2026-11-21",
+    "url": "https://www.flowmapp.com/",
+    "viewport": "1440x900"
+  },
+  "components": {
+    "nav": {
+      "text": "Try Demo Project Features Use cases Pricing Help Blog Log in",
+      "cls": "nav w-nav",
+      "rect": {
+        "w": 1416,
+        "h": 82.1
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "font": "Inter, sans-serif",
+      "size": "14px",
+      "weight": "400",
+      "lh": "20px",
+      "radius": "0px",
+      "pad": "12px 0px 0px 0px",
+      "border": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "transition": "all 0s ease"
+    },
+    "logo": {
+      "text": "",
+      "cls": "nav__logo w-nav-brand w--current",
+      "rect": {
+        "w": 137,
+        "h": 33
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(51, 51, 51)",
+      "font": "Inter, sans-serif",
+      "size": "14px",
+      "weight": "400",
+      "lh": "20px",
+      "radius": "0px",
+      "pad": "0px 0px 0px 0px",
+      "border": "0px none rgb(51, 51, 51)",
+      "shadow": "none",
+      "transition": "all 0s ease"
+    },
+    "navLink": {
+      "text": "Try Demo Project",
+      "cls": "nav__link is-br-8 w-inline-block",
+      "rect": {
+        "w": 179.5,
+        "h": 46.1
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "font": "Inter, sans-serif",
+      "size": "16px",
+      "weight": "600",
+      "lh": "22.4px",
+      "radius": "8px",
+      "pad": "11.04px 14.08px 11.04px 14.08px",
+      "border": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "transition": "background-color 0.3s ease"
+    },
+    "login": {
+      "text": "Log in",
+      "cls": "nav__btn is-bc-gray__is-br-12--is-mob-hide w-inline-block",
+      "rect": {
+        "w": 76.9,
+        "h": 38.5
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "font": "Inter, sans-serif",
+      "size": "16px",
+      "weight": "600",
+      "lh": "22.4px",
+      "radius": "12px",
+      "pad": "7.04px 16px 7.04px 16px",
+      "border": "1px solid rgba(0, 0, 0, 0.1)",
+      "shadow": "none",
+      "transition": "color, background-color 0.3s, 0.3s ease, ease"
+    },
+    "cta": {
+      "text": "Try for free",
+      "cls": "nav__btn is-bg-black--is-br-12--is-t-wh w-inline-block",
+      "rect": {
+        "w": 128.5,
+        "h": 38.5
+      },
+      "bg": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "font": "Inter, sans-serif",
+      "size": "16px",
+      "weight": "600",
+      "lh": "22.4px",
+      "radius": "12px",
+      "pad": "7.04px 10.08px 7.04px 16px",
+      "border": "1px solid rgb(0, 0, 0)",
+      "shadow": "none",
+      "transition": "border-color, color, background-color 0.3s, 0.3s, 0.3s ease, ease, ease"
+    },
+    "hero": {
+      "text": "Visual platform for planning UX and pitching web design",
+      "cls": "main-heading-pivot",
+      "rect": {
+        "w": 1280,
+        "h": 216
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "font": "Inter, sans-serif",
+      "size": "72px",
+      "weight": "700",
+      "lh": "72px",
+      "radius": "0px",
+      "pad": "0px 240px 0px 240px",
+      "border": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "transition": "all 0s ease"
+    },
+    "start": {
+      "text": "Start planning",
+      "cls": "btn w-inline-block",
+      "rect": {
+        "w": 479.9,
+        "h": 120.1
+      },
+      "bg": "rgba(0, 128, 255, 0.2)",
+      "color": "rgb(255, 255, 255)",
+      "font": "Inter, sans-serif",
+      "size": "30px",
+      "weight": "600",
+      "lh": "42px",
+      "radius": "1600px",
+      "pad": "12px 12px 12px 12px",
+      "border": "0px none rgb(255, 255, 255)",
+      "shadow": "none",
+      "transition": "all 0s ease"
+    },
+    "body": {
+      "text": "Try Demo Project Features Use cases Pricing Help Blog Log in",
+      "cls": "",
+      "rect": {
+        "w": 1440,
+        "h": 11842.7
+      },
+      "bg": "rgb(246, 248, 250)",
+      "color": "rgb(0, 0, 0)",
+      "font": "Inter, sans-serif",
+      "size": "14px",
+      "weight": "400",
+      "lh": "20px",
+      "radius": "0px",
+      "pad": "0px 0px 0px 0px",
+      "border": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "transition": "all 0s ease"
+    }
+  },
+  "states": {
+    "cta": {
+      "before": "rgba(0, 128, 255, 0.2)",
+      "hover": {
+        "bg": "rgba(0, 128, 255, 0.2)",
+        "color": "rgb(255, 255, 255)",
+        "shadow": "none",
+        "transform": "none"
+      },
+      "focus": {
+        "outline": "rgb(255, 255, 255) none 0px",
+        "shadow": "none",
+        "outlineColor": "rgb(255, 255, 255)"
+      }
+    }
+  }
+}

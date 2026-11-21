@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowMapp style guide</title>
+<style>
+:root {
+  --color-bg: #f6f8fa;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-dodger-blue: #0080ff;
+  --color-dodger-blue-20: rgba(0, 128, 255, 0.2);
+  --color-primary-blue: #0050ff;
+  --color-basic-blue: #0050ff;
+  --color-service-grey: #8c9baa;
+  --color-dark-grey: #5f6a75;
+  --color-light-steel-blue: #cbd8e5;
+  --color-alice-blue: #e8edf2;
+  --color-gainsboro: #e6e6e6;
+  --color-yellow-green: #99dd2c;
+  --color-pale-violet-red: #ff759b;
+  --apps-color-background: #f6f8fa;
+  --apps-color-foreground: #000000;
+  --apps-color-card: #ffffff;
+  --apps-color-card-foreground: #060606;
+  --apps-color-popover: #ebeaea;
+  --apps-color-popover-foreground: #060606;
+  --apps-color-primary: #0050ff;
+  --apps-color-primary-foreground: #f5f9ff;
+  --apps-color-secondary: #d5efff;
+  --apps-color-secondary-foreground: #0a0d13;
+  --apps-color-muted: #f1f1f1;
+  --apps-color-muted-foreground: #777374;
+  --apps-color-accent: #dddddd;
+  --apps-color-accent-foreground: #0d0d0d;
+  --apps-color-destructive: #e8262e;
+  --apps-color-border: #0050ff;
+  --apps-color-input: #0454ff;
+  --apps-color-ring: #275fda;
+  --apps-color-background-dark: #060606;
+  --apps-color-foreground-dark: #f8f8f8;
+  --apps-color-card-dark: #181818;
+  --apps-color-card-foreground-dark: #f8f8f8;
+  --apps-color-popover-dark: #181818;
+  --apps-color-popover-foreground-dark: #f8f8f8;
+  --apps-color-primary-dark: #2572ff;
+  --apps-color-primary-foreground-dark: #090d16;
+  --apps-color-secondary-dark: #021448;
+  --apps-color-secondary-foreground-dark: #f5f9ff;
+  --apps-color-muted-dark: #020202;
+  --apps-color-muted-foreground-dark: #8c8c8c;
+  --apps-color-accent-dark: #2e2e2e;
+  --apps-color-accent-foreground-dark: #f8f8f8;
+  --apps-color-destructive-dark: #ef2f34;
+  --apps-color-border-dark: rgba(0, 80, 255, 0.102);
+  --apps-color-input-dark: rgba(255, 255, 255, 0.149);
+  --apps-color-ring-dark: #5491ff;
+  --apps-chart-chart-1: #0050ff;
+  --apps-chart-chart-2: #4981f6;
+  --apps-chart-chart-3: #003af0;
+  --apps-chart-chart-4: #0037c6;
+  --apps-chart-chart-5: #0000ab;
+  --apps-chart-chart-1-dark: #2572ff;
+  --apps-chart-chart-2-dark: #74afff;
+  --apps-chart-chart-3-dark: #004dff;
+  --apps-chart-chart-4-dark: #5a9cff;
+  --apps-chart-chart-5-dark: #0044dd;
+  --apps-sidebar-sidebar: #f1f1f1;
+  --apps-sidebar-sidebar-foreground: #060606;
+  --apps-sidebar-sidebar-primary: #0050ff;
+  --apps-sidebar-sidebar-primary-foreground: #f5f9ff;
+  --apps-sidebar-sidebar-accent: #dddddd;
+  --apps-sidebar-sidebar-accent-foreground: #0d0d0d;
+  --apps-sidebar-sidebar-border: #0050ff;
+  --apps-sidebar-sidebar-ring: #275fda;
+  --apps-sidebar-sidebar-dark: #0b0b0b;
+  --apps-sidebar-sidebar-foreground-dark: #f8f8f8;
+  --apps-sidebar-sidebar-primary-dark: #2572ff;
+  --apps-sidebar-sidebar-primary-foreground-dark: #090d16;
+  --apps-sidebar-sidebar-accent-dark: #2e2e2e;
+  --apps-sidebar-sidebar-accent-foreground-dark: #f8f8f8;
+  --apps-sidebar-sidebar-border-dark: rgba(255, 255, 255, 0.102);
+  --apps-sidebar-sidebar-ring-dark: #5491ff;
+  --font-heading: Inter,sans-serif;
+  --font-body: Inter,sans-serif;
+  --font-button: Inter,sans-serif;
+  --radius-apps: 20px;
+  --radius-nav-link: 8px;
+  --radius-nav-button: 12px;
+  --radius-hero-cta: 1600px;
+  --typography-body: 400 14px/20px var(--font-body);
+  --typography-nav: 600 16px/22.4px var(--font-body);
+  --typography-hero: 700 72px/72px var(--font-heading);
+  --page: var(--color-bg);
+  --surface: var(--apps-color-card);
+  --text: var(--apps-color-foreground);
+  --muted: var(--color-service-grey);
+  --accent: var(--color-dodger-blue);
+  --border: var(--color-gainsboro);
+  --destructive: var(--apps-color-destructive);
+  --focus: var(--apps-color-ring);
+  --component-nav-height: 82.1px;
+  --component-login-height: 38.5px;
+  --component-cta-height: 38.5px;
+  --component-nav-link-radius: var(--radius-nav-link);
+  --component-button-radius: var(--radius-nav-button);
+  --component-hero-cta-fill: #0080ff;
+  --component-hero-cta-shadow: 0px 8px 10px 0px rgba(0, 128, 255, 0.34);
+  --sg-sans: Inter, sans-serif;
+}
+[data-mode="dark"] {
+  --page: #060606;
+  --surface: #181818;
+  --text: #f8f8f8;
+  --muted: #8c8c8c;
+  --accent: #2572ff;
+  --border: rgba(0, 80, 255, 0.102);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text); background: var(--page); }
+main { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 700 40px/1.1 var(--sg-sans); letter-spacing: -0.03em; margin: 0 0 8px; }
+.note { color: var(--muted); max-width: 68ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0 28px; }
+.sw { width: 148px; }
+.dot { height: 48px; border-radius: 12px; border: 1px solid rgba(0,0,0,.08); }
+.nm { font: 600 12px/1.3 var(--sg-sans); margin-top: 6px; }
+.vl { font: 400 11px/1.3 ui-monospace, Menlo, monospace; color: var(--muted); }
+.nav { display: flex; align-items: center; gap: 16px; height: 64px; padding: 0 16px; background: white; border-radius: 16px; }
+.sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; height: 38.5px; padding: 0 16px; border-radius: 12px; font-weight: 600; text-decoration: none; }
+.btn.ghost { border: 1px solid rgba(0,0,0,.1); color: black; }
+.btn.black { background: black; color: white; }
+.hero { margin-top: 28px; text-align: center; }
+.pill { display: inline-flex; align-items: center; justify-content: center; min-width: 280px; height: 72px; padding: 0 28px; border-radius: 999px; background: #0080ff; color: white; font-weight: 600; font-size: 22px; box-shadow: 0 8px 10px rgba(0,128,255,.34); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid #e6e6e6; }
+</style>
+</head>
+<body>
+<main>
+<h1>FlowMapp</h1>
+<p class="note">Public marketing tokens read from flowmapp.com on 2026-11-21. The painted site is light. The dark slots below are declared on :root and were not bound on a captured public page. The toggle only swaps those declared slots.</p>
+<p><button type="button" id="theme">Show declared dark slots</button></p>
+<h2>Painted roles</h2>
+<div class="row" id="roles"></div>
+<h2>Nav</h2>
+<div class="nav"><b>Flowmapp</b><span>Features</span><span>Use cases</span><span>Pricing</span><span class="sp"></span><a class="btn ghost">Log in</a><a class="btn black">Try for free</a></div>
+<div class="hero"><a class="pill">Start planning</a></div>
+<h2>Token paths</h2>
+<table id="tokens"></table>
+</main>
+<script>
+const tokens = {"light": {"page": {"$type": "color", "$value": "{color.bg}", "$extensions": {"source": "alias of --bg, painted body background rgb(246, 248, 250)"}}, "surface": {"$type": "color", "$value": "{apps.color.card}", "$extensions": {"source": "alias of --_apps---colors--card; nav chrome is white on the painted page"}}, "text": {"$type": "color", "$value": "{apps.color.foreground}", "$extensions": {"source": "alias of --_apps---colors--foreground; body color black"}}, "muted": {"$type": "color", "$value": "{color.service-grey}", "$extensions": {"source": "alias of --service-grey, the painted secondary grey"}}, "accent": {"$type": "color", "$value": "{color.dodger-blue}", "$extensions": {"source": "alias of --dodger-blue. The painted hero fill is .btn__wrapper rgb(0, 128, 255). --primary-blue #0050ff is the apps primary slot and the pricing CTA family, recorded as color.primary-blue."}}, "border": {"$type": "color", "$value": "{color.gainsboro}", "$extensions": {"source": "alias of --gainsboro; Log in button border is rgba(0,0,0,0.1), recorded on the component"}}, "destructive": {"$type": "color", "$value": "{apps.color.destructive}", "$extensions": {"source": "alias of --_apps---colors--destructive; not seen as a painted control on the public home page"}}, "focus": {"$type": "color", "$value": "{apps.color.ring}", "$extensions": {"source": "alias of --_apps---colors--ring. Keyboard focus on a.btn returned outline rgb(255, 255, 255) none 0px, so this is the declared slot, not a painted focus ring."}}, "component": {"nav-height": {"$type": "dimension", "$value": "82.1px", "$extensions": {"source": "measured .nav.w-nav height, home 1440, raw/css-vars.json components.nav.rect.h"}}, "login-height": {"$type": "dimension", "$value": "38.5px", "$extensions": {"source": "measured Log in a.nav__btn height, home 1440"}}, "cta-height": {"$type": "dimension", "$value": "38.5px", "$extensions": {"source": "measured Try for free a.nav__btn height, home 1440"}}, "nav-link-radius": {"$type": "dimension", "$value": "{radius.nav-link}", "$extensions": {"source": "alias"}}, "button-radius": {"$type": "dimension", "$value": "{radius.nav-button}", "$extensions": {"source": "alias"}}, "hero-cta-fill": {"$type": "color", "$value": "#0080ff", "$extensions": {"source": "measured .btn__wrapper background rgb(0, 128, 255), home 1440. The a.btn itself is rgba(0, 128, 255, 0.2). Matches --dodger-blue."}}, "hero-cta-shadow": {"$type": "shadow", "$value": [{"color": "rgba(0, 128, 255, 0.34)", "offsetX": "0px", "offsetY": "8px", "blur": "10px", "spread": "0px"}], "$extensions": {"source": "measured .btn__wrapper box-shadow, home 1440"}}}}, "dark": {"page": {"$type": "color", "$value": "#060606", "$extensions": {"source": "css-var --_apps---colors--background-dark declared on :root; no captured public page binds this dark slot. measured css-var on :root, https://www.flowmapp.com/ 2026-11-21, raw/css-vars.json"}}, "surface": {"$type": "color", "$value": "#181818", "$extensions": {"source": "css-var --_apps---colors--card-dark declared, not painted on captured public pages. measured css-var on :root, https://www.flowmapp.com/ 2026-11-21, raw/css-vars.json"}}, "text": {"$type": "color", "$value": "#f8f8f8", "$extensions": {"source": "css-var --_apps---colors--foreground-dark declared, not painted. measured css-var on :root, https://www.flowmapp.com/ 2026-11-21, raw/css-vars.json"}}, "muted": {"$type": "color", "$value": "#8c8c8c", "$extensions": {"source": "css-var --_apps---colors--muted-foreground-dark declared, not painted. measured css-var on :root, https://www.flowmapp.com/ 2026-11-21, raw/css-vars.json"}}, "accent": {"$type": "color", "$value": "#2572ff", "$extensions": {"source": "css-var --_apps---colors--primary-dark declared, not painted. measured css-var on :root, https://www.flowmapp.com/ 2026-11-21, raw/css-vars.json"}}, "border": {"$type": "color", "$value": "rgba(0, 80, 255, 0.102)", "$extensions": {"source": "css-var --_apps---colors--border-dark declared, not painted. measured css-var on :root, https://www.flowmapp.com/ 2026-11-21, raw/css-vars.json"}}}};
+const roles = ["page","surface","text","muted","accent","border","destructive","focus"];
+const box = document.getElementById("roles");
+for (const role of roles) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = '<div class="dot" style="background:var(--'+role+')"></div><div class="nm">'+role+'</div>';
+  box.appendChild(el);
+}
+const table = document.getElementById("tokens");
+function rows(node, prefix) {
+  for (const [k,v] of Object.entries(node)) {
+    if (k.startsWith("$")) continue;
+    if (v && v.$value !== undefined) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = "<td><code>"+prefix+k+"</code></td><td>"+JSON.stringify(v.$value)+"</td>";
+      table.appendChild(tr);
+    } else if (v && typeof v === "object") rows(v, prefix+k+".");
+  }
+}
+rows(tokens.light, "light.");
+document.getElementById("theme").onclick = () => {
+  const on = document.documentElement.getAttribute("data-mode") === "dark";
+  document.documentElement.setAttribute("data-mode", on ? "light" : "dark");
+};
+</script>
+</body>
+</html>

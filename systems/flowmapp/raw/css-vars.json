@@ -1,0 +1,883 @@
+{
+  "captured": "2026-11-21",
+  "url": "https://www.flowmapp.com/",
+  "sheets": [
+    {
+      "href": null,
+      "rules": 1
+    },
+    {
+      "href": "https://cdn.prod.website-files.com/649ae86ac1a4be707b656519/css/flowmapp-a1ea9c.webflow.shared.a6e488aae.min.css",
+      "rules": 1787
+    },
+    {
+      "href": "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css",
+      "error": "unreadable"
+    },
+    {
+      "href": null,
+      "rules": 37
+    },
+    {
+      "href": null,
+      "rules": 14
+    }
+  ],
+  "varCount": 80,
+  "vars": {
+    "--bg": [
+      {
+        "value": "#f6f8fa",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--black": [
+      {
+        "value": "black",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--dodger-blue": [
+      {
+        "value": "#0080ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--service-grey": [
+      {
+        "value": "#8c9baa",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--white": [
+      {
+        "value": "white",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--light-steel-blue": [
+      {
+        "value": "#cbd8e5",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--dodger-blue-20": [
+      {
+        "value": "#0080ff33",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--primary-blue": [
+      {
+        "value": "#0050ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--alice-blue": [
+      {
+        "value": "#e8edf2",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--gainsboro": [
+      {
+        "value": "#e6e6e6",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--yellow-green": [
+      {
+        "value": "#99dd2c",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--pale-violet-red": [
+      {
+        "value": "#ff759b",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--dark-grey": [
+      {
+        "value": "#5f6a75",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--basic-blue": [
+      {
+        "value": "var(--primary-blue)",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---typography--heading-font": [
+      {
+        "value": "Inter,sans-serif",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---typography--body-font": [
+      {
+        "value": "Inter,sans-serif",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---typography--button-font": [
+      {
+        "value": "Inter,sans-serif",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sizes--radius": [
+      {
+        "value": "20px",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--background": [
+      {
+        "value": "var(--bg)",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--foreground": [
+      {
+        "value": "var(--black)",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--card": [
+      {
+        "value": "var(--white)",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--card-foreground": [
+      {
+        "value": "#060606",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--popover": [
+      {
+        "value": "#ebeaea",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--popover-foreground": [
+      {
+        "value": "#060606",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--primary": [
+      {
+        "value": "var(--primary-blue)",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--primary-foreground": [
+      {
+        "value": "#f5f9ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--secondary": [
+      {
+        "value": "#d5efff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--secondary-foreground": [
+      {
+        "value": "#0a0d13",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--muted": [
+      {
+        "value": "#f1f1f1",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--muted-foreground": [
+      {
+        "value": "#777374",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--accent": [
+      {
+        "value": "#ddd",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--accent-foreground": [
+      {
+        "value": "#0d0d0d",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--destructive": [
+      {
+        "value": "#e8262e",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--border": [
+      {
+        "value": "var(--primary-blue)",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--input": [
+      {
+        "value": "#0454ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--ring": [
+      {
+        "value": "#275fda",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-1": [
+      {
+        "value": "var(--primary-blue)",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-2": [
+      {
+        "value": "#4981f6",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-3": [
+      {
+        "value": "#003af0",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-4": [
+      {
+        "value": "#0037c6",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-5": [
+      {
+        "value": "#0000ab",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar": [
+      {
+        "value": "#f1f1f1",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-foreground": [
+      {
+        "value": "#060606",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-primary": [
+      {
+        "value": "var(--primary-blue)",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-primary-foreground": [
+      {
+        "value": "#f5f9ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-accent": [
+      {
+        "value": "#ddd",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-accent-foreground": [
+      {
+        "value": "#0d0d0d",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-border": [
+      {
+        "value": "var(--primary-blue)",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-ring": [
+      {
+        "value": "#275fda",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--background-dark": [
+      {
+        "value": "#060606",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--foreground-dark": [
+      {
+        "value": "#f8f8f8",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--card-dark": [
+      {
+        "value": "#181818",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--card-foreground-dark": [
+      {
+        "value": "#f8f8f8",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--popover-dark": [
+      {
+        "value": "#181818",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--popover-foreground-dark": [
+      {
+        "value": "#f8f8f8",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--primary-dark": [
+      {
+        "value": "#2572ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--primary-foreground-dark": [
+      {
+        "value": "#090d16",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--secondary-dark": [
+      {
+        "value": "#021448",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--secondary-foreground-dark": [
+      {
+        "value": "#f5f9ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--muted-dark": [
+      {
+        "value": "#020202",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--muted-foreground-dark": [
+      {
+        "value": "#8c8c8c",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--accent-dark": [
+      {
+        "value": "#2e2e2e",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--accent-foreground-dark": [
+      {
+        "value": "#f8f8f8",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--destructive-dark": [
+      {
+        "value": "#ef2f34",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--border-dark": [
+      {
+        "value": "#0050ff1a",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--input-dark": [
+      {
+        "value": "#ffffff26",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---colors--ring-dark": [
+      {
+        "value": "#5491ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-1-dark": [
+      {
+        "value": "#2572ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-2-dark": [
+      {
+        "value": "#74afff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-3-dark": [
+      {
+        "value": "#004dff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-4-dark": [
+      {
+        "value": "#5a9cff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---charts--chart-5-dark": [
+      {
+        "value": "#04d",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-dark": [
+      {
+        "value": "#0b0b0b",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-foreground-dark": [
+      {
+        "value": "#f8f8f8",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-primary-dark": [
+      {
+        "value": "#2572ff",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-primary-foreground-dark": [
+      {
+        "value": "#090d16",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-accent-dark": [
+      {
+        "value": "#2e2e2e",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-accent-foreground-dark": [
+      {
+        "value": "#f8f8f8",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-border-dark": [
+      {
+        "value": "#ffffff1a",
+        "selector": ":root",
+        "context": []
+      }
+    ],
+    "--_apps---sidebar--sidebar-ring-dark": [
+      {
+        "value": "#5491ff",
+        "selector": ":root",
+        "context": []
+      }
+    ]
+  },
+  "resolved": {
+    "--bg": "#f6f8fa",
+    "--black": "black",
+    "--dodger-blue": "#0080ff",
+    "--service-grey": "#8c9baa",
+    "--white": "white",
+    "--light-steel-blue": "#cbd8e5",
+    "--dodger-blue-20": "#0080ff33",
+    "--primary-blue": "#0050ff",
+    "--alice-blue": "#e8edf2",
+    "--gainsboro": "#e6e6e6",
+    "--yellow-green": "#99dd2c",
+    "--pale-violet-red": "#ff759b",
+    "--dark-grey": "#5f6a75",
+    "--basic-blue": "#0050ff",
+    "--_apps---typography--heading-font": "Inter,sans-serif",
+    "--_apps---typography--body-font": "Inter,sans-serif",
+    "--_apps---typography--button-font": "Inter,sans-serif",
+    "--_apps---sizes--radius": "20px",
+    "--_apps---colors--background": "#f6f8fa",
+    "--_apps---colors--foreground": "black",
+    "--_apps---colors--card": "white",
+    "--_apps---colors--card-foreground": "#060606",
+    "--_apps---colors--popover": "#ebeaea",
+    "--_apps---colors--popover-foreground": "#060606",
+    "--_apps---colors--primary": "#0050ff",
+    "--_apps---colors--primary-foreground": "#f5f9ff",
+    "--_apps---colors--secondary": "#d5efff",
+    "--_apps---colors--secondary-foreground": "#0a0d13",
+    "--_apps---colors--muted": "#f1f1f1",
+    "--_apps---colors--muted-foreground": "#777374",
+    "--_apps---colors--accent": "#ddd",
+    "--_apps---colors--accent-foreground": "#0d0d0d",
+    "--_apps---colors--destructive": "#e8262e",
+    "--_apps---colors--border": "#0050ff",
+    "--_apps---colors--input": "#0454ff",
+    "--_apps---colors--ring": "#275fda",
+    "--_apps---charts--chart-1": "#0050ff",
+    "--_apps---charts--chart-2": "#4981f6",
+    "--_apps---charts--chart-3": "#003af0",
+    "--_apps---charts--chart-4": "#0037c6",
+    "--_apps---charts--chart-5": "#0000ab",
+    "--_apps---sidebar--sidebar": "#f1f1f1",
+    "--_apps---sidebar--sidebar-foreground": "#060606",
+    "--_apps---sidebar--sidebar-primary": "#0050ff",
+    "--_apps---sidebar--sidebar-primary-foreground": "#f5f9ff",
+    "--_apps---sidebar--sidebar-accent": "#ddd",
+    "--_apps---sidebar--sidebar-accent-foreground": "#0d0d0d",
+    "--_apps---sidebar--sidebar-border": "#0050ff",
+    "--_apps---sidebar--sidebar-ring": "#275fda",
+    "--_apps---colors--background-dark": "#060606",
+    "--_apps---colors--foreground-dark": "#f8f8f8",
+    "--_apps---colors--card-dark": "#181818",
+    "--_apps---colors--card-foreground-dark": "#f8f8f8",
+    "--_apps---colors--popover-dark": "#181818",
+    "--_apps---colors--popover-foreground-dark": "#f8f8f8",
+    "--_apps---colors--primary-dark": "#2572ff",
+    "--_apps---colors--primary-foreground-dark": "#090d16",
+    "--_apps---colors--secondary-dark": "#021448",
+    "--_apps---colors--secondary-foreground-dark": "#f5f9ff",
+    "--_apps---colors--muted-dark": "#020202",
+    "--_apps---colors--muted-foreground-dark": "#8c8c8c",
+    "--_apps---colors--accent-dark": "#2e2e2e",
+    "--_apps---colors--accent-foreground-dark": "#f8f8f8",
+    "--_apps---colors--destructive-dark": "#ef2f34",
+    "--_apps---colors--border-dark": "#0050ff1a",
+    "--_apps---colors--input-dark": "#ffffff26",
+    "--_apps---colors--ring-dark": "#5491ff",
+    "--_apps---charts--chart-1-dark": "#2572ff",
+    "--_apps---charts--chart-2-dark": "#74afff",
+    "--_apps---charts--chart-3-dark": "#004dff",
+    "--_apps---charts--chart-4-dark": "#5a9cff",
+    "--_apps---charts--chart-5-dark": "#04d",
+    "--_apps---sidebar--sidebar-dark": "#0b0b0b",
+    "--_apps---sidebar--sidebar-foreground-dark": "#f8f8f8",
+    "--_apps---sidebar--sidebar-primary-dark": "#2572ff",
+    "--_apps---sidebar--sidebar-primary-foreground-dark": "#090d16",
+    "--_apps---sidebar--sidebar-accent-dark": "#2e2e2e",
+    "--_apps---sidebar--sidebar-accent-foreground-dark": "#f8f8f8",
+    "--_apps---sidebar--sidebar-border-dark": "#ffffff1a",
+    "--_apps---sidebar--sidebar-ring-dark": "#5491ff"
+  },
+  "fonts": [
+    {
+      "family": "webflow-icons",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(\"data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBiUAAAC8AAAAYGNtYXDpP+a4AAABHAAAAFxnYXNwAAAAEAAAAXgAAAAIZ2x5ZmhS2XEAAAGAAAADHGhlYWQTFw3HAAAEnAAAADZoaG"
+    },
+    {
+      "family": "Inter",
+      "weight": "700",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")"
+    },
+    {
+      "family": "Inter",
+      "weight": "600",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")"
+    },
+    {
+      "family": "Inter",
+      "weight": "500",
+      "style": "normal",
+      "src": "url(…) format(\"woff2\")"
+    }
+  ],
+  "fontCount": 5,
+  "meta": {
+    "themeColor": null,
+    "mask": null,
+    "colorScheme": "normal",
+    "bodyBg": "rgb(246, 248, 250)",
+    "bodyColor": "rgb(0, 0, 0)",
+    "bodyFont": "Inter, sans-serif",
+    "bodySize": "14px"
+  },
+  "components": {
+    "nav": {
+      "text": "Try Demo Project Features Use cases Pricing Help Blog Log in",
+      "cls": "nav w-nav",
+      "rect": {
+        "w": 1416,
+        "h": 82.1
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "font": "Inter, sans-serif",
+      "size": "14px",
+      "weight": "400",
+      "lh": "20px",
+      "radius": "0px",
+      "pad": "12px 0px 0px 0px",
+      "border": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "transition": "all 0s ease"
+    },
+    "logo": {
+      "text": "",
+      "cls": "nav__logo w-nav-brand w--current",
+      "rect": {
+        "w": 137,
+        "h": 33
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(51, 51, 51)",
+      "font": "Inter, sans-serif",
+      "size": "14px",
+      "weight": "400",
+      "lh": "20px",
+      "radius": "0px",
+      "pad": "0px 0px 0px 0px",
+      "border": "0px none rgb(51, 51, 51)",
+      "shadow": "none",
+      "transition": "all 0s ease"
+    },
+    "navLink": {
+      "text": "Try Demo Project",
+      "cls": "nav__link is-br-8 w-inline-block",
+      "rect": {
+        "w": 179.5,
+        "h": 46.1
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "font": "Inter, sans-serif",
+      "size": "16px",
+      "weight": "600",
+      "lh": "22.4px",
+      "radius": "8px",
+      "pad": "11.04px 14.08px 11.04px 14.08px",
+      "border": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "transition": "background-color 0.3s ease"
+    },
+    "login": {
+      "text": "Log in",
+      "cls": "nav__btn is-bc-gray__is-br-12--is-mob-hide w-inline-block",
+      "rect": {
+        "w": 76.9,
+        "h": 38.5
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "font": "Inter, sans-serif",
+      "size": "16px",
+      "weight": "600",
+      "lh": "22.4px",
+      "radius": "12px",
+      "pad": "7.04px 16px 7.04px 16px",
+      "border": "1px solid rgba(0, 0, 0, 0.1)",
+      "shadow": "none",
+      "transition": "color, background-color 0.3s, 0.3s ease, ease"
+    },
+    "cta": {
+      "text": "Try for free",
+      "cls": "nav__btn is-bg-black--is-br-12--is-t-wh w-inline-block",
+      "rect": {
+        "w": 128.5,
+        "h": 38.5
+      },
+      "bg": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "font": "Inter, sans-serif",
+      "size": "16px",
+      "weight": "600",
+      "lh": "22.4px",
+      "radius": "12px",
+      "pad": "7.04px 10.08px 7.04px 16px",
+      "border": "1px solid rgb(0, 0, 0)",
+      "shadow": "none",
+      "transition": "border-color, color, background-color 0.3s, 0.3s, 0.3s ease, ease, ease"
+    },
+    "hero": {
+      "text": "Visual platform for planning UX and pitching web design",
+      "cls": "main-heading-pivot",
+      "rect": {
+        "w": 1280,
+        "h": 216
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "font": "Inter, sans-serif",
+      "size": "72px",
+      "weight": "700",
+      "lh": "72px",
+      "radius": "0px",
+      "pad": "0px 240px 0px 240px",
+      "border": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "transition": "all 0s ease"
+    },
+    "start": {
+      "text": "Start planning",
+      "cls": "btn w-inline-block",
+      "rect": {
+        "w": 479.9,
+        "h": 120.1
+      },
+      "bg": "rgba(0, 128, 255, 0.2)",
+      "color": "rgb(255, 255, 255)",
+      "font": "Inter, sans-serif",
+      "size": "30px",
+      "weight": "600",
+      "lh": "42px",
+      "radius": "1600px",
+      "pad": "12px 12px 12px 12px",
+      "border": "0px none rgb(255, 255, 255)",
+      "shadow": "none",
+      "transition": "all 0s ease"
+    },
+    "body": {
+      "text": "Try Demo Project Features Use cases Pricing Help Blog Log in",
+      "cls": "",
+      "rect": {
+        "w": 1440,
+        "h": 11842.7
+      },
+      "bg": "rgb(246, 248, 250)",
+      "color": "rgb(0, 0, 0)",
+      "font": "Inter, sans-serif",
+      "size": "14px",
+      "weight": "400",
+      "lh": "20px",
+      "radius": "0px",
+      "pad": "0px 0px 0px 0px",
+      "border": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "transition": "all 0s ease"
+    }
+  },
+  "states": {
+    "cta": {
+      "before": "rgba(0, 128, 255, 0.2)",
+      "hover": {
+        "bg": "rgba(0, 128, 255, 0.2)",
+        "color": "rgb(255, 255, 255)",
+        "shadow": "none",
+        "transform": "none"
+      },
+      "focus": {
+        "outline": "rgb(255, 255, 255) none 0px",
+        "shadow": "none",
+        "outlineColor": "rgb(255, 255, 255)"
+      }
+    }
+  }
+}
