@@ -1,6 +1,6 @@
 # Acuity Scheduling patterns
 
-How Acuity Scheduling's components combine to do the recurring jobs on its public marketing pages, written from the captures of 2026-11-09/10 (signed out, 1440 and 390 wide). Each pattern says when the site uses it, the components it is built from (entries in [components.md](components.md), values in [tokens.json](tokens.json)), the layout, and the screens that show it. These are observations of what the site does, not Squarespace's own guidance.
+How Acuity Scheduling's components combine on its public marketing pages, written from the 2026-11-21 captures (signed out, 1440×900 and 390×844). Each pattern says when the site uses it, the components it is built from (entries in [components.md](components.md), values in [tokens.json](tokens.json)), the layout, and the screens that show it. The control map is [site-tree.md](site-tree.md). These are observations of what the site does, not Squarespace's own guidance.
 
 | Pattern | Captured | Example screen |
 |---|---|---|
@@ -8,7 +8,8 @@ How Acuity Scheduling's components combine to do the recurring jobs on its publi
 | [Pastel hero](#pastel-hero) | yes | [home-light-default](screenshots/home-light-default.png) |
 | [Card sections](#card-sections) | yes | [home-light-full](screenshots/home-light-full.png) |
 | [Pricing page](#pricing-page) | yes | [pricing-light-default](screenshots/pricing-light-default.png) |
-| [Auth gate](#auth-gate) | yes, at rest and state-forced only | [login-light-default](screenshots/login-light-default.png) |
+| [Login wall](#auth-gate) | photographed, not filled | [login-light-default](screenshots/login-light-default.png) |
+| [Enterprise lead](#enterprise-lead) | empty form only | [enterprise-light-default](screenshots/enterprise-light-default.png) |
 | [Mobile fold](#mobile-fold) | yes | [mobile-home-light-menu](screenshots/mobile-home-light-menu.png) |
 
 ## Shell and navigation
@@ -51,15 +52,25 @@ How Acuity Scheduling's components combine to do the recurring jobs on its publi
 
 **Screens.** [pricing-light-default](screenshots/pricing-light-default.png), [pricing-light-faq-open](screenshots/pricing-light-faq-open.png), [pricing-light-full](screenshots/pricing-light-full.png), [mobile-pricing-light-default](screenshots/mobile-pricing-light-default.png).
 
-## Auth gate
+## Login wall
 
-**When.** Get started and Log in hand off to Squarespace's shared account surface: the create-account dialog at /get-started and the sign-in card at secure.acuityscheduling.com — the package's only forms.
+**When.** `/login.php` is the public email wall. Nav Log in and Get started redirect to login.squarespace.com. Those branches stop. See [site-tree.md](site-tree.md).
 
-**Components.** [Create-account card](components.md#gate-card), [Continue with Google](components.md#gate-google), [Continue with Apple](components.md#gate-apple), [Continue with Email](components.md#gate-email), [MORE OPTIONS](components.md#more-options) and [open](components.md#more-options-open), [Email field](components.md#login-email), [Password field](components.md#login-password), [Log in submit](components.md#login-submit), [OAuth row](components.md#oauth-google), [Can't log in](components.md#cant-login), [Create account link](components.md#create-account-link).
+**What was captured.** The login wall shows a wordmark, CREATE ACCOUNT (not followed), the heading "Log in to Acuity Scheduling", an EMAIL ADDRESS label, an empty username field, and a disabled NEXT button. The field was focused empty. Nothing was typed. Squarespace was not clicked. The password step was not reached.
 
-**Layout.** A 540px white dialog at 6px radius on `shadow.modal`. Its controls are not the marketing buttons: square 55px rows on 1px black rules (`component.button-gate-border`) in 14/22 medium, underlined text fields with `#949494` placeholders (`muted`), and caps labels (12/22 medium, uppercase, 0.5px tracking, `typography.caps`). The submit stays on the disabled `#f2f2f2`/`#b7b7b7` pair (`component.field-disabled-bg`, `disabled-text`) until the form validates. Focus is a double box-shadow ring (`shadow.focus-ring`). Everything was measured and state-forced, never submitted: the fields were typed with a throwaway address and cleared.
+**Measured on 2026-11-21.** The email field is Clarkson 16px, 310×52, white, 1px border. NEXT is 12px medium, `#cccccc` on `#ebebeb`, 310×55, disabled. Those readings are in [raw/components-computed.json](raw/components-computed.json).
 
-**Screens.** [get-started-light-default](screenshots/get-started-light-default.png), [get-started-light-more-options](screenshots/get-started-light-more-options.png), [login-light-default](screenshots/login-light-default.png), [login-light-full](screenshots/login-light-full.png).
+**Not captured.** The Squarespace signup dialog (Google, Apple, email, MORE OPTIONS) and the Squarespace login card (Google, Apple, Facebook). Earlier crops of those surfaces were removed from this package because this capture did not open them.
+
+**Screens.** [login-light-default](screenshots/login-light-default.png), [login-light-full](screenshots/login-light-full.png), [mobile-login-wall-light-default](screenshots/mobile-login-wall-light-default.png).
+
+## Enterprise lead
+
+**When.** `/enterprise` ends in a Salesforce web-to-lead form. The form is part of the page, so the empty fields are in the full-page shot.
+
+**What was captured.** An empty text field (Clarkson 16px, 8px radius, 1px `#c1ccca` border, 670×46) and an ink submit (14px, `#283849`, 12px radius, 95×43). Not typed. Not submitted. Validation, error, and success are Not captured.
+
+**Screens.** [enterprise-light-default](screenshots/enterprise-light-default.png), [enterprise-light-benefit](screenshots/enterprise-light-benefit.png).
 
 ## Mobile fold
 
@@ -69,4 +80,4 @@ How Acuity Scheduling's components combine to do the recurring jobs on its publi
 
 **Layout.** The 55px bar (`layout.nav-height-mobile`) keeps the wordmark and a hamburger; the sheet is a full-height white panel over a 50% scrim (`overlay`): 28/37.52 Clarkson links (`typography.menu`, `#2d2d2d`) on `#f2f2f2` hairline rows, an ink Get-started bar and a Log in under it. Focus inside the sheet is the amber `#e59700` ring (`focus-alt`). The mega-menu's two columns collapse into disclosure rows; heroes stack single-column.
 
-**Screens.** [mobile-home-light-default](screenshots/mobile-home-light-default.png), [mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [mobile-home-light-full](screenshots/mobile-home-light-full.png), [mobile-pricing-light-default](screenshots/mobile-pricing-light-default.png).
+**Screens.** [mobile-home-light-default](screenshots/mobile-home-light-default.png), [mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [mobile-home-light-menu-solutions](screenshots/mobile-home-light-menu-solutions.png), [mobile-pricing-light-default](screenshots/mobile-pricing-light-default.png).

@@ -1,5 +1,5 @@
 {
- "readAt": "2026-11-10",
+ "readAt": "2026-11-21",
  "source": "the live CSSOM on acuityscheduling.com; the cdn-marketing stylesheet denies CSSOM reads but serves CORS *, so its rules were refetched and parsed in a detached CSSStyleSheet; one theme, resolved at 1440 x 900",
  "sheetsSkippedCrossOrigin": [],
  "counts": {

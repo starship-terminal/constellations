@@ -103,7 +103,7 @@ async function forcePseudo(loc, classes) {
 
 const q = (sel) => page.locator(sel);
 const B4 = ['default', 'hover', 'focus-visible', 'pressed'];
-const FILL = 'name@example.com';
+const FILL = ""; // never type into login or signup
 
 async function sheetsFor(key) {
   const res = await page.evaluate(() => {

@@ -129,9 +129,9 @@ Good for: Booking-software marketing pages: pastel hero gradients, Clarkson Seri
 
 Captured 2026-11-10, signed out (every captured surface is public); the Squarespace account gate was measured and state-forced, never submitted. Themes: light.
 
-A token set and component reference for Acuity Scheduling's public marketing site, for building a booking-software marketing page or account-entry screen in the style of Squarespace's scheduling product. It was read from acuityscheduling.com on 2026-11-09 and 2026-11-10, signed out, in headless Chromium at 1440 wide and 390 wide: the home page, pricing, how-it-works, features, solutions, an industry page (Beauty), about and learn, plus the two public auth surfaces the site hands off to — Squarespace's "Create your account" gate at /get-started and the sign-in card at secure.acuityscheduling.com. The look is warm and soft: a pastel hero gradient, Clarkson Serif headlines in navy `#283849`, 12px-radius ink buttons, and pastel card fills on white.
+A token set and component reference for Acuity Scheduling's public marketing site, for building a booking-software marketing page in the style of Squarespace's scheduling product. It was read from acuityscheduling.com on 2026-11-21, signed out, in headless Chromium at 1440×900 and 390×844. The look is warm and soft: a pastel hero gradient, Clarkson Serif headlines in navy `#283849`, 12px-radius ink buttons, and pastel card fills on white.
 
-The scheduling product itself sits behind the Squarespace account and was never entered; this package is the marketing and account-entry surface only. Nothing was signed into, bought, downloaded or submitted, and the consent SDKs were aborted at request level before any banner could mount.
+The site tree is [site-tree.md](site-tree.md): which control opens which page, menu, or wall. The scheduling product sits behind a Squarespace account and was never entered. Login (`/login.php`) and signup (`/get-started`, which redirects to login.squarespace.com) were recorded as walls and not filled. Nothing was signed into, bought, or submitted. Consent SDK requests were aborted before a banner could mount.
 
 ## Colors
 
@@ -207,6 +207,7 @@ The home page is the screen to get right. An 80px white bar carries the acuity:s
 - **`plan-card` itself paints transparent**: the white hairline-bordered card is its `.plan-wrapper` sibling (see its Child layers).
 - **The gate dialog's `Times` font reading** is the browser default on a container that sets no family; its children all measure Clarkson.
 - **The testimonial carousel auto-plays**, so two captures of the same section can differ in the slide shown; `testimonial-card` is measured on its first slide.
+- **The Squarespace signup gate was not opened on 2026-11-21.** Tokens that cite `gate-*` or `oauth-*` crops come from the 2026-11-09 readings in [raw/component-tokens.json](raw/component-tokens.json). Those crops are not in this package. The 2026-11-21 readings that were re-checked (ink, 12px radius, Clarkson, nav and plan hovers) match.
 
 ### Do and don't (from README.md)
 
@@ -215,4 +216,4 @@ The home page is the screen to get right. An 80px white bar carries the acuity:s
 3. **Do pair Clarkson Serif headlines with Clarkson UI.** Serif at 500 sets hero, plan and card headlines; the sans sets everything else at 14/22 or 16/22, mostly regular. The only caps are the gate's 12px uppercase labels tracked 0.5px. See [hero-title-default](components/crops/hero-title-default.png) and [plan-name-default](components/crops/plan-name-default.png).
 4. **Don't give links a link colour.** Marketing links are plain text that fades to 50% on hover (nav) or underlines (footer); the only "blue" anywhere is Chromium's own `#005fcc` focus ring. See [nav-link-hover](components/crops/nav-link-hover.png) and [footer-link-hover](components/crops/footer-link-hover.png).
 5. **Don't invent fills for hover.** Hovers are opacity fades, the two measured ink steps, or a light `#f2f2f2` row wash — never a new colour. See [dropdown-item-hover](components/crops/dropdown-item-hover.png) and [nav-cta-hover](components/crops/nav-cta-hover.png).
-6. **Do keep the three focus rings.** Links and accordions take the browser's 1px `#005fcc` auto ring, the mobile menu draws `#e59700` amber, and the gate's buttons paint a 2px-white/4px-black double box-shadow ring — keep all three rather than unifying them. See [plan-cta-focus-visible](components/crops/plan-cta-focus-visible.png), [m-menu-link-focus-visible](components/crops/m-menu-link-focus-visible.png) and [oauth-google-focus-visible](components/crops/oauth-google-focus-visible.png).
+6. **Do keep the three focus rings.** Links and accordions take the browser's 1px `#005fcc` auto ring, the mobile menu draws `#e59700` amber, and the gate's buttons paint a 2px-white/4px-black double box-shadow ring — keep all three rather than unifying them. See [plan-cta-focus-visible](components/crops/plan-cta-focus-visible.png), [m-menu-link-focus-visible](components/crops/m-menu-link-focus-visible.png) and [login-light-default](screenshots/login-light-default.png).
