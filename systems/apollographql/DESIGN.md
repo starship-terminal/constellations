@@ -150,3 +150,15 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Do alternate dark and light sections.** Pages move freely between space-dark bands and `offwhite`/`satellite`/`faq-gray` light islands — the same token names re-bound by `[data-theme="dark"]`. Don't force a whole page into one theme. ([pricing full](screenshots/pricing-dark-full.png), [why-apollo full](screenshots/why-apollo-dark-full.png))
 - **Do pair Aeonik display with Inter UI.** The hero and blog titles (60/63) and section heads (42) take Aeonik at 400–500, while the 50/55 page titles and everything else — nav, buttons, forms, body, the 24px FAQ questions — take Inter 14–50. Don't set buttons in the display face or page titles in Aeonik. ([hero-title](components/crops/hero-title-default.png), [nav-trigger](components/crops/nav-trigger-default.png))
 - **Don't ship the marketing style as Studio.** Nothing here was measured inside the console; a screen claiming Apollo Studio's app UI from these tokens would be invented. The honest gap is recorded in components.md.
+
+### Gaps (from README.md)
+
+- Signed-in Studio, signup, GitHub and SSO: not captured. The login wall is a boundary screenshot only.
+- Cookie preference center: mounted, not opened. Accept, decline and manage were not clicked.
+- Contact, agents-contact, blog and customers forms: not typed, not submitted. Field error, loading and success states are Not captured.
+- Nested docs and tutorial articles beyond the nav-linked pages: not walked. The docs index and the linked articles stand for that tree.
+- Support portal, community, summit, YouTube, GitHub and social profiles: external. Not followed.
+- PDF terms: not a UI state.
+- Blog pagination past page 2, resources "load more", and customer "see more": not exhausted. Page 2 of the blog was not saved (the pagination click did not produce a shot). Resources Watch filter was captured.
+- Hover, focus-visible and pressed crops are from 2026-11-10. They were not re-shot against the 2026-11-21 pages.
+- Phone tutorial-liftoff was clipped to 390 CSS pixels because the live document width was 686.

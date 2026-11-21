@@ -16,8 +16,9 @@ This package contains no Apollo code, and none of its artwork has been redrawn. 
 | [patterns.md](patterns.md) | The space-dark shell, display hero, orange CTAs, pill segments, cards on both grounds, the navy form band, the footer and the mobile fold |
 | [components/crops/](components/crops) | 143 element crops, `{component}-{state}.png`, cut from the live page by `tools/capture/public/measure.mjs` |
 | [icons/](icons) | 36 SVGs lifted from the pages (search, arrows, social marks, product glyphs), named by role in [icons/INDEX.tsv](icons/INDEX.tsv). Apollo's property, kept for reference only |
-| [screenshots/](screenshots) | 31 captures, `{page}-{theme}-{state}.png` at 1440 x 900 (`-full` whole pages) and `mobile-*` at 780 wide, quantised to 256 colours. Dark marketing pages plus the light blog/contact and Studio auth pages |
-| [raw/](raw) | `components-computed.json` (every measured value per state), `measurements.md` (the same as tables), `css-vars.json` (the site's real token layer, resolved live), `component-tokens.json` (the token spec), `layout.json` (page geometry at four widths), `full/` (the unquantised captures with `.capture.json` sidecars) |
+| [screenshots/](screenshots) | 31 captures from 2026-11-10, `{page}-{theme}-{state}.png` at 1440 x 900 and `mobile-*` at 780 wide, plus [screenshots/2026-11-21/](screenshots/2026-11-21) (46 desktop pages, 46 phone pages, 17 interaction states), quantised to 256 colours |
+| [site-tree.md](site-tree.md) | The public control map from the homepage: which button opens which menu, page, dialog, or stopped branch |
+| [raw/](raw) | `components-computed.json` (every measured value per state), `measurements.md` (the same as tables), `css-vars.json` (the site's real token layer, re-read 2026-11-21), `component-tokens.json` (the token spec), `layout.json` (page geometry at four widths), `full/` (the unquantised 2026-11-10 captures), `capture-2026-11-21/` (viewport sidecars for the later pass) |
 | [tools/](tools) | `capture/` (`public/`: lib, public tour, measure, layout, build-measurements; `vars.mjs`, `icons.mjs`, `screenshot.mjs`, `quantize.py`) and the builders (`build_tokens.py`, `build_style_guide.py`, `build_components_md.py`, `style-guide.template.html`) |
 
 ## Brief
@@ -138,7 +139,8 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 | Signed-in product | not captured | studio.apollographql.com login/signup captured at rest only; console and onboarding are a recorded boundary |
 | Consent | captured | the OneTrust card measured and screenshotted; never answered |
 | Forms, checkout, downloads | not captured | the contact form was never submitted; nothing was bought or downloaded |
-| Dark theme, 1440 and 390 | captured | [screenshots/](screenshots): 8 dark routes (default + full), light blog/contact/auth, 3 mobile routes |
+| Dark theme, 1440 and 390 | captured | [screenshots/](screenshots) (2026-11-10 component pass) and [screenshots/2026-11-21/](screenshots/2026-11-21): every first-party page in [site-tree.md](site-tree.md) at 1440 x 900 and 390 x 844 |
+| Site tree | captured | [site-tree.md](site-tree.md), mapped 2026-11-21 before the second screenshot pass |
 | Icons | captured | [icons/](icons): 36 SVGs with [icons/INDEX.tsv](icons/INDEX.tsv) |
 | Fonts | captured | `core.font.family.display` (Aeonik), `.ui` (Inter), `.mono` (Fira Code), read from computed styles and the @font-face dump |
 
@@ -151,6 +153,26 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 - **Do alternate dark and light sections.** Pages move freely between space-dark bands and `offwhite`/`satellite`/`faq-gray` light islands — the same token names re-bound by `[data-theme="dark"]`. Don't force a whole page into one theme. ([pricing full](screenshots/pricing-dark-full.png), [why-apollo full](screenshots/why-apollo-dark-full.png))
 - **Do pair Aeonik display with Inter UI.** The hero and blog titles (60/63) and section heads (42) take Aeonik at 400–500, while the 50/55 page titles and everything else — nav, buttons, forms, body, the 24px FAQ questions — take Inter 14–50. Don't set buttons in the display face or page titles in Aeonik. ([hero-title](components/crops/hero-title-default.png), [nav-trigger](components/crops/nav-trigger-default.png))
 - **Don't ship the marketing style as Studio.** Nothing here was measured inside the console; a screen claiming Apollo Studio's app UI from these tokens would be invented. The honest gap is recorded in components.md.
+
+## 2026-11-21 public tree
+
+A second pass mapped the homepage and walked every first-party page the nav and footer open. Desktop shots are 1440 CSS pixels wide at 1x. Phone shots are 390 CSS pixels wide at 2x (780 px PNGs), except the Lift-off tutorial, whose document expanded past the viewport and was clipped back to 390 before the shot. Interaction shots (menus, search, pricing segments, FAQ, resources filter, docs search, phone menu, login wall) are viewport captures, not full pages.
+
+The Studio login wall at https://studio.apollographql.com/login was recorded and not typed into. GitHub and SSO were not clicked. Cookie buttons were not clicked. External hosts (YouTube, GitHub, Twitter, LinkedIn, community, summit, skills.sh, support portal) were recorded in the site tree and not walked.
+
+`tokens.json` was rebuilt from a fresh `raw/css-vars.json`. The live stylesheet now declares navy, orange, teal, neutral and horizon ramps that the 2026-11-10 spec did not tokenise as stepped scales. Those ramps are in `css-vars.json`. The semantic sets still follow `component-tokens.json`. Component crops were not re-measured on this pass.
+
+## Gaps
+
+- Signed-in Studio, signup, GitHub and SSO: not captured. The login wall is a boundary screenshot only.
+- Cookie preference center: mounted, not opened. Accept, decline and manage were not clicked.
+- Contact, agents-contact, blog and customers forms: not typed, not submitted. Field error, loading and success states are Not captured.
+- Nested docs and tutorial articles beyond the nav-linked pages: not walked. The docs index and the linked articles stand for that tree.
+- Support portal, community, summit, YouTube, GitHub and social profiles: external. Not followed.
+- PDF terms: not a UI state.
+- Blog pagination past page 2, resources "load more", and customer "see more": not exhausted. Page 2 of the blog was not saved (the pagination click did not produce a shot). Resources Watch filter was captured.
+- Hover, focus-visible and pressed crops are from 2026-11-10. They were not re-shot against the 2026-11-21 pages.
+- Phone tutorial-liftoff was clipped to 390 CSS pixels because the live document width was 686.
 
 ## Rebuild
 
