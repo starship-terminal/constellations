@@ -2833,9 +2833,9 @@
       "description": "Save and Organize Your Favorite Recipes",
       "status": "captured",
       "package": "systems/julienne",
-      "notes": "https://withjulienne.com/login redirects home. The Log in dialog asks for email and password. No code was sent.",
+      "notes": "https://withjulienne.com/login redirects home. The Log in dialog asks for email and password. No code was sent. Public walk 2026-11-21: the home header opens Discover, Cookbook, search, the theme toggle, and a Log in dialog. /login redirects home. Save and Create an account hit the same dialog and stop. Nothing was typed. Team, roadmap, and shop are separate marketing pages. Recipe cards open public recipe pages. One card landed on a missing-recipe page. Phone captures the same public pages. Signed-in cookbook, cook mode, and checkout were not captured. Public package refresh in PR 1609 at 2c7b743500e8. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 9
     },
     {
@@ -6432,9 +6432,9 @@
       "description": "Twitter thread maker & analytics",
       "status": "pending",
       "package": null,
-      "notes": "Email probe: https://typefully.com/ Log in offers Google, X, LinkedIn, and email. Continue with Google did not open an account chooser. Email form not submitted.",
+      "notes": "Email probe: https://typefully.com/ Log in offers Google, X, LinkedIn, and email. Continue with Google did not open an account chooser. Email form not submitted. Public walk 2026-11-21: the homepage is a marketing dialog over a shell that does not receive clicks. Header links open Pricing, Blog, Changelog, Jobs, and Help. Login opens an auth wall and stops. Login offers Google, X, LinkedIn, and email. Those providers were not clicked. The email field was not submitted. Phone captures the same public pages. Signed-in app was not captured. Public package refresh in PR 1608 at 558c880449a9. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "oauth-only",
+      "login-probe": "closed",
       "batch": 19
     },
     {
