@@ -778,6 +778,29 @@
         "source": "computed color of waitlist-btn default (raw/components-computed.json); matches declared --foreground",
         "description": "The #2c2c26 ink label on the cream CTA (matches --foreground)."
       }
+    },
+    "elevation": {
+      "dialog": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "10px",
+            "blur": "15px",
+            "spread": "-3px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "4px",
+            "blur": "6px",
+            "spread": "-4px"
+          }
+        ],
+        "type": "shadow",
+        "source": "computed boxShadow of wl-dialog default (raw/components-computed.json)",
+        "description": "The two painted layers of the waitlist dialog shadow. Public pages stay flat. Dark was not painted, so the same measured shadow is recorded on both sets."
+      }
     }
   },
   "dark": {
@@ -988,6 +1011,29 @@
         "var": "--secondary-hover",
         "type": "color"
       }
+    },
+    "elevation": {
+      "dialog": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "10px",
+            "blur": "15px",
+            "spread": "-3px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "4px",
+            "blur": "6px",
+            "spread": "-4px"
+          }
+        ],
+        "type": "shadow",
+        "source": "computed boxShadow of wl-dialog default (raw/components-computed.json)",
+        "description": "The two painted layers of the waitlist dialog shadow. Public pages stay flat. Dark was not painted, so the same measured shadow is recorded on both sets."
+      }
     }
   },
   "component": {
@@ -1044,6 +1090,18 @@
       "type": "dimension",
       "source": "measured h of m-nav default (raw/components-computed.json)",
       "description": "The 40px phone top bar."
+    },
+    "dialog-width": {
+      "value": "720px",
+      "type": "dimension",
+      "source": "measured w of wl-dialog default (raw/components-computed.json)",
+      "description": "The 720px waitlist dialog."
+    },
+    "field-height": {
+      "value": "40px",
+      "type": "dimension",
+      "source": "measured h of wl-field default (raw/components-computed.json)",
+      "description": "The 40px waitlist text field."
     }
   }
 }

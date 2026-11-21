@@ -1,0 +1,52 @@
+{
+  "slug": "designstripe",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "session": "Headless Chromium via Playwright. Signed out. The waitlist dialog was opened and not submitted. No email, name, password, or code was typed. No identity provider was clicked.",
+  "product_version": "Not captured. The public pages do not print a version.",
+  "viewport": {
+    "requested": "1440x900",
+    "phone": "390x844 at deviceScaleFactor 2"
+  },
+  "wall": {
+    "url": "https://visual.app/",
+    "opened_by": ["WAITLIST", "JOIN WAITLIST", "Join waitlist"],
+    "asks_for": ["First name", "Work email", "Company name", "Company size"],
+    "identity_providers": [],
+    "submitted": false,
+    "file": "screenshots/waitlist-light-dialog.png"
+  },
+  "offered": {
+    "nav": {
+      "items": ["no signed-in navigation; the public nav is WHY VISUAL?, ASSETS, TOOLS, BLOG"],
+      "reached": ["no signed-in navigation; the public nav is WHY VISUAL?, ASSETS, TOOLS, BLOG"]
+    },
+    "settings": {
+      "items": ["no settings area signed out"],
+      "reached": ["no settings area signed out"]
+    },
+    "create": {
+      "items": ["no create flow signed out; WAITLIST opens a dialog and was not submitted"],
+      "reached": ["no create flow signed out; WAITLIST opens a dialog and was not submitted"]
+    }
+  },
+  "screens": [
+    {
+      "name": "Waitlist dialog, empty, desktop",
+      "file": "screenshots/waitlist-light-dialog.png"
+    }
+  ],
+  "gaps": [
+    "Signed-in pass is not-started. The dialog asks for a work email and was not filled.",
+    "Design agents and every post-waitlist surface were not entered.",
+    "/login, /signin, /signup, /sign-in, /dashboard, /waitlist and /agents return the site 404. /app redirects to the public /designstripe page.",
+    "Company size menu was not opened. Join waitlist was not pressed."
+  ],
+  "not_submitted": [
+    "Join waitlist",
+    "WAITLIST",
+    "Export on the color wheel",
+    "any identity provider"
+  ]
+}

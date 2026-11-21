@@ -86,7 +86,9 @@ class Shooter {
     const MAXH = 8 * chunk;
     const hCap = Math.min(H, MAXH);
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
-    const opts = (extra) => ({ path: extra, scale: 'css' });
+    // scale css keeps a 2x phone capture at 1x and the stitch no longer
+    // matches the viewport shot. Device scale keeps both at the same pixels.
+    const opts = (extra) => ({ path: extra });
     if (hCap <= chunk) await screenshotWithMetadata(p, { ...opts(f + '.png'), fullPage: true }, this.requested);
     else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { ...opts(`${f}.part${i}.png`), fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
     this.count++; log('  shot', name, 'H=' + H);
@@ -129,6 +131,25 @@ const desktop = {
     await S.view('default');
     await S.full();
   } },
+  blog: { url: BASE + '/blog', wait: 8000, theme: 'light', run: async (p, S) => {
+    await S.view('default');
+    await S.full();
+  } },
+  tool: { url: BASE + '/colors/color-wheel', wait: 8000, theme: 'light', run: async (p, S) => {
+    await S.view('default');
+    await S.full();
+  } },
+  // /privacy is a footer link that returns the site 404 chrome. Recorded in
+  // site-tree.md. Not a design surface, so it is not photographed.
+  // The waitlist dialog is the only signup wall on the public site. Open it,
+  // photograph what it asks for, and stop. Nothing is typed or submitted.
+  waitlist: { url: BASE + '/', wait: 5000, theme: 'light', run: async (p, S) => {
+    const btn = p.getByRole('button', { name: /^waitlist$/i }).first();
+    await btn.click({ timeout: 8000 });
+    await p.getByRole('dialog').waitFor({ timeout: 8000 });
+    await wait(p, 600);
+    await S.view('dialog');
+  } },
 };
 
 const mobile = {
@@ -139,6 +160,12 @@ const mobile = {
   assets: { url: BASE + '/assets', wait: 9000, theme: 'light', run: async (p, S) => {
     await S.view('default');
     await S.full();
+  } },
+  nav: { url: BASE + '/', wait: 5000, theme: 'light', run: async (p, S) => {
+    const toggle = p.locator('header button, nav button').first();
+    await toggle.click({ timeout: 6000 });
+    await wait(p, 500);
+    await S.view('open');
   } },
 };
 

@@ -1,6 +1,6 @@
 # Visual (designstripe) component measurements
 
-Computed styles read from visual.app on 2026-11-14 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — home, /assets, /assets/avatars/replicants, /tools, /contact and /blog/branding-consistency — and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from visual.app on 2026-11-21 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — home, /assets, /assets/avatars/replicants, /tools, /contact and /blog/branding-consistency — and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -874,6 +874,204 @@ Page: mobile. Selector: `mobile footer`. States: default.
 
 Crops: `m-footer-default.png`.
 
+### Waitlist dialog
+
+#### wl-dialog
+
+Waitlist dialog. The signup wall opened by WAITLIST. Photographed empty. Nothing was typed or submitted.
+
+Page: waitlist. Selector: `[role=dialog]`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 720 x 450 |
+| Padding | 0px |
+| Gap | 0px |
+| Border | 1px solid #d0d0c8 |
+| Radius | 6px |
+| Background | #ffffff |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px |
+| Outline | none |
+| Font | fontMono 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #000000 |
+| Text node | h2.text-lg.leading-none: fontMono 18px/18px 500, #000000, ls -0.45px |
+| Transition | all 0.2s ease |
+| Icon | 20 x 20, colour #000000 |
+| Painted layers | div.ui:bg-background.ui:data-[state=open]:animate-in 720.0x450.0 bg #ffffff border T:1px solid #d0d0c8 / R:1px solid #d0d0c8 / B:1px solid #d0d0c8 / L:1px solid #d0d0c8 r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px; input.ui:flex.ui:justify-center 239.0x40.0 bg #ffffff border T:1px solid #d0d0c8 / R:1px solid #d0d0c8 / B:1px solid #d0d0c8 / L:1px solid #d0d0c8 r 6px; input.ui:flex.ui:justify-center 311.0x40.0 bg #ffffff border T:1px solid #d0d0c8 / R:1px solid #d0d0c8 / B:1px solid #d0d0c8 / L:1px solid #d0d0c8 r 6px; input.ui:flex.ui:justify-center 311.0x40.0 bg #ffffff border T:1px solid #d0d0c8 / R:1px solid #d0d0c8 / B:1px solid #d0d0c8 / L:1px solid #d0d0c8 r 6px; input.ui:flex.ui:justify-center 311.0x40.0 bg #ffffff border T:1px solid #d0d0c8 / R:1px solid #d0d0c8 / B:1px solid #d0d0c8 / L:1px solid #d0d0c8 r 6px; button.ui:flex.ui:items-center 311.0x40.0 bg #ffffff border T:1px solid #d0d0c8 / R:1px solid #d0d0c8 / B:1px solid #d0d0c8 / L:1px solid #d0d0c8 r 6px |
+| Ancestor paint | 1 up body.__variable_776c64.__variable_8888f9 bg #ffffff |
+| How | at rest |
+
+Crops: `wl-dialog-default.png`.
+
+#### wl-field
+
+Waitlist text field. The First name field. Empty. Focus-visible only; nothing was typed.
+
+Page: waitlist. Selector: `input[name=firstName]`. States: default, focus-visible.
+
+| Property | default | focus-visible |
+|---|---|---|
+| Size (w x h) | 311 x 40 | = |
+| Padding | 0px 16px | = |
+| Border | 1px solid #d0d0c8 | 1px solid #ff0000 |
+| Radius | 6px | = |
+| Background | #ffffff | = |
+| Box shadow | none | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ff0000 @ 0.2 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | 1px solid #5a47d7 offset -1px |
+| Font | fontMono 16px/16px 500 | = |
+| Letter spacing | normal | = |
+| Colour | #2c2c26 | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.05s cubic-bezier(0.4, 0, 0.2, 1) | = |
+| Cursor | text | = |
+| Placeholder | #aaab9c, opacity 1 | = |
+| Painted layers | input.ui:flex.ui:justify-center 311.0x40.0 bg #ffffff border T:1px solid #d0d0c8 / R:1px solid #d0d0c8 / B:1px solid #d0d0c8 / L:1px solid #d0d0c8 r 6px | input.ui:flex.ui:justify-center 311.0x40.0 bg #ffffff border T:1px solid #ff0000 / R:1px solid #ff0000 / B:1px solid #ff0000 / L:1px solid #ff0000 r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ff0000 @ 0.2 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px outline 1px solid #5a47d7 offset -1px |
+| How | at rest | Shift+Tab, Tab |
+
+Crops: `wl-field-default.png`, `wl-field-focus-visible.png`.
+
+#### wl-email
+
+Waitlist email field. The Work email field. Empty. Not filled.
+
+Page: waitlist. Selector: `input[name=email]`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 311 x 40 |
+| Padding | 0px 16px |
+| Border | 1px solid #d0d0c8 |
+| Radius | 6px |
+| Background | #ffffff |
+| Box shadow | none |
+| Outline | none |
+| Font | fontMono 16px/16px 500 |
+| Letter spacing | normal |
+| Colour | #2c2c26 |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.05s cubic-bezier(0.4, 0, 0.2, 1) |
+| Cursor | text |
+| Placeholder | #aaab9c, opacity 1 |
+| Painted layers | input.ui:flex.ui:justify-center 311.0x40.0 bg #ffffff border T:1px solid #d0d0c8 / R:1px solid #d0d0c8 / B:1px solid #d0d0c8 / L:1px solid #d0d0c8 r 6px |
+| How | at rest |
+
+Crops: `wl-email-default.png`.
+
+#### wl-select
+
+Company size select. The Company size control. Not opened, so its menu is not captured.
+
+Page: waitlist. Selector: `company size`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 311 x 40 |
+| Padding | 0px 16px |
+| Gap | 8px |
+| Border | 1px solid #d0d0c8 |
+| Radius | 6px |
+| Background | #ffffff |
+| Box shadow | none |
+| Outline | none |
+| Font | fontMono 16px/16px 500 |
+| Letter spacing | normal |
+| Colour | #aaab9c |
+| Text node | span: fontMono 16px/16px 500, #aaab9c |
+| Transition | none |
+| Cursor | pointer |
+| Icon | 16 x 16, colour #979886 |
+| Painted layers | button.ui:flex.ui:items-center 311.0x40.0 bg #ffffff border T:1px solid #d0d0c8 / R:1px solid #d0d0c8 / B:1px solid #d0d0c8 / L:1px solid #d0d0c8 r 6px |
+| How | at rest |
+
+Crops: `wl-select-default.png`.
+
+#### wl-submit
+
+Join waitlist submit. The dialog submit button. Not pressed.
+
+Page: waitlist. Selector: `dialog Join waitlist`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 311 x 40 |
+| Padding | 0px 16px |
+| Gap | 8px |
+| Border | none |
+| Radius | 3.35544e+07px |
+| Background | #2c2c26 |
+| Box shadow | none |
+| Outline | none |
+| Font | fontMono 16px/16px 500 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Text node | span.flex.items-center: fontMono 16px/16px 500, #ffffff |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| Cursor | pointer |
+| Painted layers | button.ui:inline-flex.ui:items-center 311.0x40.0 bg #2c2c26 r 3.35544e+07px |
+| Ancestor paint | 3 up div.ui:bg-background.ui:data-[state=open]:animate-in bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.1 0px 10px 15px -3px, #000000 @ 0.1 0px 4px 6px -4px |
+| How | at rest |
+
+Crops: `wl-submit-default.png`.
+
+### Color wheel
+
+#### wheel-h1
+
+Tool heading. "Color Wheel" on the public tool page.
+
+Page: wheel. Selector: `h1`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 684 x 96 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | fontSerif 96px/96px 400 |
+| Letter spacing | -4.8px |
+| Colour | #2c2c26 |
+| Transition | none |
+| How | at rest |
+
+Crops: `wheel-h1-default.png`.
+
+#### wheel-hex
+
+Format select. The Hex format control beside the colour field. Not opened.
+
+Page: wheel. Selector: `Hex button`. States: .
+
+Not found on the page at capture time.
+
+#### wheel-export
+
+Export button. The public Export control. Not pressed, so no file was downloaded.
+
+Page: wheel. Selector: `Export`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 345.66 x 40 | = | = |
+| Padding | 0px 16px | = | = |
+| Gap | 8px | = | = |
+| Border | none | = | = |
+| Radius | 3.35544e+07px | = | = |
+| Background | #2c2c26 | #414238 | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | 1px solid #ffffff offset -1px |
+| Font | fontMono 16px/16px 500 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #ffffff | = | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
+| Cursor | pointer | = | = |
+| Icon | 24 x 24, colour #ffffff | = | = |
+| Painted layers | button.ui:inline-flex.ui:items-center 345.7x40.0 bg #2c2c26 r 3.35544e+07px | button.ui:inline-flex.ui:items-center 345.7x40.0 bg #414238 r 3.35544e+07px | button.ui:inline-flex.ui:items-center 345.7x40.0 bg #2c2c26 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px outline 1px solid #ffffff offset -1px |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+
+Crops: `wheel-export-default.png`, `wheel-export-hover.png`, `wheel-export-focus-visible.png`.
+
 ## Transitions declared in the readable stylesheets
 
 visual.app serves its CSS bundles same-origin, so this list holds the transitions the readable sheets declare on each page; the per-state Transition rows above are computed values and cover every rule the page paints.
@@ -889,3 +1087,7 @@ visual.app serves its CSS bundles same-origin, so this list holds the transition
 - post: `background-color 1ms,outline-color 1ms,color var(--transition-duration-10) ease-in-out,dir 1ms`, `opacity var(--transition-duration-50) ease-out`, `background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out`, `opacity var(--transition-duration-10) ease-out`, `background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out,box-shadow var(--transition-duration-10) ease-out`, `border-radius 1ms`, `background-color var(--transition-duration-10),color var(--transition-duration-10)`, `background-color var(--transition-duration-10)`, `background-color var(--transition-duration-10) ease-in-out,color var(--transition-duration-10) ease-in-out,border-color var(--transition-duration-10) ease-in-out`, `filter var(--transition-duration-10) ease-out`, `stroke-dashoffset 0.5s linear, stroke-dasharray 0.5s linear`, `opacity 0.15s 0.25s`
 
 - tools: `background-color 1ms,outline-color 1ms,color var(--transition-duration-10) ease-in-out,dir 1ms`, `opacity var(--transition-duration-50) ease-out`, `background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out`, `opacity var(--transition-duration-10) ease-out`, `background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out,box-shadow var(--transition-duration-10) ease-out`, `border-radius 1ms`, `background-color var(--transition-duration-10),color var(--transition-duration-10)`, `background-color var(--transition-duration-10)`, `background-color var(--transition-duration-10) ease-in-out,color var(--transition-duration-10) ease-in-out,border-color var(--transition-duration-10) ease-in-out`, `filter var(--transition-duration-10) ease-out`, `stroke-dashoffset 0.5s linear, stroke-dasharray 0.5s linear`, `opacity 0.15s 0.25s`
+
+- waitlist: `background-color 1ms,outline-color 1ms,color var(--transition-duration-10) ease-in-out,dir 1ms`, `opacity var(--transition-duration-50) ease-out`, `background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out`, `opacity var(--transition-duration-10) ease-out`, `background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out,box-shadow var(--transition-duration-10) ease-out`, `border-radius 1ms`, `background-color var(--transition-duration-10),color var(--transition-duration-10)`, `background-color var(--transition-duration-10)`, `background-color var(--transition-duration-10) ease-in-out,color var(--transition-duration-10) ease-in-out,border-color var(--transition-duration-10) ease-in-out`, `filter var(--transition-duration-10) ease-out`, `stroke-dashoffset 0.5s linear, stroke-dasharray 0.5s linear`, `opacity 0.15s 0.25s`
+
+- wheel: `background-color 1ms,outline-color 1ms,color var(--transition-duration-10) ease-in-out,dir 1ms`, `opacity var(--transition-duration-50) ease-out`, `background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out`, `opacity var(--transition-duration-10) ease-out`, `background-color var(--transition-duration-10) ease-out,color var(--transition-duration-10) ease-out,box-shadow var(--transition-duration-10) ease-out`, `border-radius 1ms`, `background-color var(--transition-duration-10),color var(--transition-duration-10)`, `background-color var(--transition-duration-10)`, `background-color var(--transition-duration-10) ease-in-out,color var(--transition-duration-10) ease-in-out,border-color var(--transition-duration-10) ease-in-out`, `filter var(--transition-duration-10) ease-out`, `stroke-dashoffset 0.5s linear, stroke-dasharray 0.5s linear`, `opacity 0.15s 0.25s`
