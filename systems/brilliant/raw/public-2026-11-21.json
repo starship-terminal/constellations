@@ -1,0 +1,138 @@
+{
+  "captured": "2026-11-21",
+  "url": "https://brilliant.org/",
+  "signedOut": true,
+  "dataTheme": "light",
+  "colorScheme": "light",
+  "bodyBackground": "rgb(255, 255, 255)",
+  "bodyFont": "\"CoFo Brilliant\", sans-serif",
+  "heroSurface": "rgb(245, 243, 241)",
+  "heroSurfaceToken": "--panda-colors-bg-oat",
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2,
+      "visualViewport": {"width": 1440, "height": 900, "scale": 1},
+      "png": "2880x1800"
+    },
+    "phone": {
+      "requested": "390x844",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "visualViewport": {"width": 390, "height": 844, "scale": 1},
+      "png": "780x1688"
+    }
+  },
+  "customPropertyCount": 705,
+  "note": "Computed custom properties on documentElement, light theme, signed out. The full set is in css-vars.json. Dark overrides exist in the stylesheet under [data-theme=dark] and were not re-applied on the marketing page.",
+  "components": {
+    "h1Desktop": {
+      "text": "Your personal tutor for math and coding",
+      "font": "\"CoFo Robert\", sans-serif",
+      "size": "54px",
+      "weight": "500",
+      "lineHeight": "59.4px",
+      "letterSpacing": "-1px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "h1Phone": {
+      "font": "\"CoFo Robert\", sans-serif",
+      "size": "36px",
+      "weight": "500",
+      "lineHeight": "39.6px",
+      "letterSpacing": "-0.36px"
+    },
+    "heroParagraph": {
+      "font": "\"CoFo Brilliant\", sans-serif",
+      "size": "18px",
+      "weight": "400",
+      "lineHeight": "27px",
+      "color": "rgba(0, 0, 0, 0.4)"
+    },
+    "learnerButtonFace": {
+      "background": "rgb(41, 204, 87)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "60px",
+      "shadow": "rgb(21, 180, 65) 0px 4px 0px 0px",
+      "height": 47,
+      "widthDesktop": 218,
+      "widthPhone": 350,
+      "labelSize": "16px",
+      "labelWeight": "400"
+    },
+    "parentButtonFace": {
+      "background": "rgb(255, 255, 255)",
+      "color": "rgba(0, 0, 0, 0.4)",
+      "radius": "60px",
+      "shadow": "rgb(220, 218, 216) 0px 4px 0px 0px",
+      "height": 47
+    },
+    "signInButton": {
+      "border": "1px solid rgb(228, 228, 228)",
+      "radius": "54px",
+      "padding": "8px 14px",
+      "height": 36,
+      "width": 74,
+      "fontSize": "14px",
+      "letterSpacing": "-0.14px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "loginHeading": {
+      "text": "Login",
+      "font": "\"CoFo Brilliant\", sans-serif",
+      "size": "30px",
+      "weight": "700"
+    },
+    "loginField": {
+      "height": 52,
+      "width": 448,
+      "radius": "8px",
+      "fontSize": "16px",
+      "emailBorder": "2px solid rgb(229, 229, 229)",
+      "passwordBorder": "2px solid rgba(255, 255, 255, 0.2)",
+      "color": "rgb(255, 255, 255)",
+      "pageBackground": "rgb(20, 20, 20)"
+    },
+    "loginSignInFace": {
+      "background": "rgb(229, 229, 229)",
+      "radius": "56px",
+      "height": 48,
+      "width": 448
+    },
+    "welcomeCopy": {
+      "font": "\"CoFo Brilliant\", sans-serif",
+      "size": "24px",
+      "weight": "500",
+      "lineHeight": "30px"
+    },
+    "welcomeContinue": {
+      "height": 48,
+      "width": 480,
+      "radius": "56px",
+      "fontSize": "16px"
+    },
+    "assessmentsH1": {
+      "font": "\"CoFo Robert\", sans-serif",
+      "size": "60px",
+      "weight": "500",
+      "lineHeight": "66px",
+      "color": "rgb(0, 0, 0)"
+    }
+  },
+  "matchedTokens": {
+    "page": "--panda-colors-bg-primary #fff",
+    "oat": "--panda-colors-bg-oat #f5f3f1",
+    "text": "--panda-colors-text-primary #000",
+    "muted": "--panda-colors-text-tertiary #0006",
+    "learnerFace": "--panda-colors-bg-green-primary #29cc57",
+    "learnerLip": "--panda-colors-bg-success-hover #15b441",
+    "signInBorder": "--panda-colors-border-oat #e4e4e4",
+    "loginPage": "--panda-colors-gray-950 #141414",
+    "loginButtonFace": "--panda-colors-gray-200 #e5e5e5",
+    "link": "--panda-colors-text-link #456dff",
+    "iridescent": "--panda-gradients-hue-shift-upgrade-iridescent-primary"
+  }
+}

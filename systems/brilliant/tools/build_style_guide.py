@@ -1,84 +1,47 @@
 #!/usr/bin/env python3
-"""Render style-guide.html from tokens.json + tools/style-guide.template.html.
-
-Every colour, size, radius, shadow and type style in the page is a CSS custom property generated
-from tokens.json, so the guide cannot drift from the token file. Re-run after editing tokens.
-Aliases like {palette.gray.950} become var(--palette-gray-950), so the theme switch works by
-redefining only the light/dark sets.
-"""
-import json, pathlib, re
+"""Write a small public style guide from tokens.json. Does not touch catalog.json."""
+import json
+import pathlib
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
-T = json.loads((HERE / "tokens.json").read_text())
-FONT_STACK = {
-    "brilliant": '"CoFo Brilliant", "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif',
-    "robert": '"CoFo Robert", Georgia, "Times New Roman", serif',
-    "semiMono": '"CoFo Semi Mono", "Source Code Pro", ui-monospace, monospace',
-    "code": '"Source Code Pro", ui-monospace, "SF Mono", Menlo, monospace',
-    "math": 'KaTeX_Main, "Times New Roman", serif',
-    "legacy": 'Soleil, "Figtree", system-ui, sans-serif',
-}
+TOKENS = json.loads((HERE / "tokens.json").read_text())
 
 
-def flat(node, prefix=""):
-    for k, v in node.items():
-        if k.startswith("$"):
-            continue
-        if isinstance(v, dict) and "$value" in v:
-            yield prefix + k, v
-        elif isinstance(v, dict):
-            yield from flat(v, prefix + k + "-")
+def main():
+    light = TOKENS["light"]
+    rows = []
+    for name, token in light.items():
+        value = token["$value"]
+        rows.append(
+            "<tr><td>%s</td><td><span class=\"swatch\" style=\"background:%s\"></span>%s</td></tr>"
+            % (name, value, value)
+        )
+    html = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Brilliant public tokens</title>
+<style>
+  body { margin: 32px; background: #fff; color: #000; font: 16px/1.5 "CoFo Brilliant", Figtree, sans-serif; }
+  h1 { font-family: "CoFo Robert", Georgia, serif; font-weight: 500; font-size: 40px; letter-spacing: -0.5px; }
+  table { border-collapse: collapse; }
+  td { padding: 8px 16px 8px 0; }
+  .swatch { display: inline-block; width: 28px; height: 28px; border-radius: 8px; border: 1px solid #e4e4e4; vertical-align: middle; margin-right: 8px; }
+  .note { color: rgba(0,0,0,.6); max-width: 42rem; }
+</style>
+</head>
+<body>
+<h1>Brilliant, public light</h1>
+<p class="note">Read from brilliant.org on 2026-11-21, signed out. CoFo Brilliant and CoFo Robert are not in this package, so the page falls back to Figtree and Georgia.</p>
+<table>
+%s
+</table>
+</body>
+</html>
+""" % "\n".join(rows)
+    (HERE / "style-guide.html").write_text(html)
+    print("wrote style-guide.html")
 
 
-def cssname(path):
-    return "--" + re.sub(r"[^a-zA-Z0-9-]", "-", path.replace(".", "-"))
-
-
-def alias(v):
-    return re.sub(r"\{([^{}]+)\}", lambda m: f"var({cssname(m.group(1))})", str(v))
-
-
-def css_val(name, t):
-    v, ty = t["$value"], t["$type"]
-    if ty == "cubicBezier":
-        return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
-    if ty == "shadow":
-        return ", ".join(("inset " if s.get("type") == "innerShadow" else "") + f'{s["offsetX"]} {s["offsetY"]} {s["blur"]} {s["spread"]} {alias(s["color"])}' for s in v)
-    if ty == "typography":
-        fam = v["fontFamily"].strip("{}").split(".")[1]
-        return f'{v["fontWeight"]} {v["fontSize"]}/{v["lineHeight"]} var(--ff-{fam})'
-    if ty == "fontFamily":
-        return FONT_STACK.get(name.split("-", 1)[1], f'"{v}"')
-    return alias(v)
-
-
-def block(setname):
-    lines = []
-    for n, t in flat(T[setname]):
-        lines.append(f"  {cssname(n)}: {css_val(n, t)};")
-        if t["$type"] == "typography":
-            v = t["$value"]
-            lines.append(f"  {cssname(n)}-ls: {v['letterSpacing']};")
-            if v.get("textCase"):
-                lines.append(f"  {cssname(n)}-tt: {v['textCase']};")
-    return "\n".join(lines)
-
-
-core_css = block("core") + "\n" + "\n".join(f"  --ff-{k}: {v};" for k, v in FONT_STACK.items())
-light_css, dark_css = block("light"), block("dark")
-
-# a compact copy of the token tree for the tables the page draws with JS
-def slim(node):
-    if isinstance(node, dict) and "$value" in node:
-        return {"v": node["$value"], "t": node["$type"], "s": node["$extensions"]["source"], "d": node.get("$description", "")}
-    return {k: slim(v) for k, v in node.items() if not k.startswith("$")}
-
-
-data = json.dumps({k: slim(T[k]) for k in ("core", "light", "dark")}, ensure_ascii=False, separators=(",", ":"))
-# Inside a <script>, so a "</" in any value (a source quoting </style>, say) must not end it.
-data = data.replace("</", "<\\/")
-tpl = (HERE / "tools" / "style-guide.template.html").read_text()
-html = (tpl.replace("/*CORE*/", core_css).replace("/*LIGHT*/", light_css).replace("/*DARK*/", dark_css)
-        .replace("/*TOKENS*/null", data))
-(HERE / "style-guide.html").write_text(html)
-print("style-guide.html:", len(html), "bytes;", len(list(flat(T["core"]))), "core +", len(list(flat(T["light"]))), "per theme")
+if __name__ == "__main__":
+    main()

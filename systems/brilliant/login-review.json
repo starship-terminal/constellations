@@ -1,0 +1,114 @@
+{
+  "slug": "brilliant",
+  "product": "Brilliant",
+  "domain": "brilliant.org",
+  "captured": "2026-11-21",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "session": "Signed-out public site. Login and signup pages were opened and left empty. No identity provider was clicked. No form was submitted. No email, password, code, phone, or address was typed. A captcha was not solved. Continue on the welcome screen was not clicked.",
+  "wall": {
+    "url": "https://brilliant.org/login/",
+    "title": "Brilliant | Learn by doing",
+    "asks": [
+      "Google",
+      "Facebook",
+      "Apple",
+      "Email or username",
+      "Password",
+      "Sign in",
+      "Sign up",
+      "Reset password"
+    ],
+    "email_field": true,
+    "password_field": true,
+    "code_field": false,
+    "inputs": [
+      {"type": "text", "name": "login", "placeholder": "Email or username", "filled": false},
+      {"type": "password", "name": "password", "placeholder": "Password", "filled": false}
+    ],
+    "note": "Login is a page. Fields were empty. Identity providers were not clicked. Reset password was not clicked. A Cloudflare widget painted Success on its own. It was not solved by hand."
+  },
+  "signup_wall": {
+    "url": "https://brilliant.org/signup/?signup=true&skip_nux=true",
+    "asks": [
+      "Google",
+      "Email",
+      "Sign up"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "continued": false,
+    "note": "The visible field was an empty Email box. Password, first name, last name, and age exist in the DOM and stay hidden. Sign up was not clicked. Identity providers were not clicked. /signup/ redirected here."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2,
+      "visualViewport": {"width": 1440, "height": 900, "scale": 1},
+      "png": "2880x1800"
+    },
+    "phone": {
+      "requested": "390x844",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "visualViewport": {"width": 390, "height": 844, "scale": 1},
+      "png": "780x1688"
+    }
+  },
+  "offered": {
+    "nav": {
+      "items": ["Brilliant home", "Sign in", "Get started", "I'm a learner", "I'm a parent or teacher"],
+      "reached": ["Brilliant home", "Sign in", "I'm a learner"]
+    },
+    "footer": {
+      "items": ["Topics", "Assessments", "Pricing", "Gift Brilliant", "Resources", "Help", "Educators", "Homeschools", "K-5 Math Practice", "About Us", "Careers"],
+      "reached": ["Topics", "Assessments", "Pricing", "Resources", "Help", "About Us"]
+    },
+    "walls": {
+      "items": ["Google", "Facebook", "Apple", "Sign in", "Sign up", "Reset password", "Continue"],
+      "reached": ["Sign in", "Sign up"]
+    }
+  },
+  "screens": [
+    {"name": "Homepage", "file": "screenshots/public-2026-11/home-light-default.png"},
+    {"name": "Footer", "file": "screenshots/public-2026-11/home-dark-footer.png"},
+    {"name": "Welcome, first screen", "file": "screenshots/public-2026-11/welcome-light-empty.png"},
+    {"name": "Login wall, empty", "file": "screenshots/public-2026-11/login-dark-empty.png"},
+    {"name": "Signup wall, empty", "file": "screenshots/public-2026-11/signup-light-empty.png"},
+    {"name": "Topics catalog", "file": "screenshots/public-2026-11/courses-dark-default.png"},
+    {"name": "Pricing", "file": "screenshots/public-2026-11/pricing-dark-default.png"},
+    {"name": "Help Center", "file": "screenshots/public-2026-11/help-light-default.png"},
+    {"name": "About", "file": "screenshots/public-2026-11/about-light-default.png"},
+    {"name": "Resources", "file": "screenshots/public-2026-11/resources-light-default.png"},
+    {"name": "Assessments", "file": "screenshots/public-2026-11/assessments-light-default.png"},
+    {"name": "Homepage, phone", "file": "screenshots/public-2026-11/home-light-phone.png"},
+    {"name": "Topics, phone", "file": "screenshots/public-2026-11/courses-dark-phone.png"}
+  ],
+  "gaps": [
+    "login_extracted stays not-started. The signed-in app was not opened.",
+    "Continue on the welcome screen was not clicked. No lesson was started.",
+    "Identity providers were not clicked. Forms were not submitted. Reset password was not clicked.",
+    "Subscribe now and checkout were not opened.",
+    "Gift, Educators, Homeschools, Careers, and practice were not opened.",
+    "The homepage has no hamburger, so there is no phone drawer.",
+    "Pressed, disabled, and error states were not captured.",
+    "catalog.json was left alone. This package does not rewrite it."
+  ],
+  "not_submitted": [
+    "Sign in",
+    "Sign up",
+    "Google",
+    "Facebook",
+    "Apple",
+    "Reset password",
+    "Continue",
+    "Get started",
+    "Subscribe now",
+    "Help search",
+    "Cookie Got It",
+    "Do not sell my personal information"
+  ]
+}
