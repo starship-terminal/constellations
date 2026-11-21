@@ -1,0 +1,99 @@
+{
+  "product": "MeUndies",
+  "domain": "meundies.com",
+  "reviewedAt": "2026-11-22",
+  "method": "Shared preview browser, signed out, incognito, 1440x900, devicePixelRatio 2.",
+  "region": "Public shop at https://www.meundies.com/. Product prices in USD. Locale en-US.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Account",
+      "url": "https://www.meundies.com/",
+      "title": "Login",
+      "painted": true,
+      "headings": ["Login"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": false },
+        { "label": "Password", "type": "password", "required": false }
+      ],
+      "identityProvidersSeen": ["GOOGLE", "FACEBOOK"],
+      "otherControls": ["Register", "Remember me", "Show password", "LOGIN", "Forgot password?"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Email and password were empty. LOGIN was not clicked. Register was not clicked. Forgot password was not clicked. GOOGLE and FACEBOOK were not clicked. The page URL stayed https://www.meundies.com/ with no OAuth query."
+    },
+    {
+      "control": "footer email signup",
+      "url": "https://www.meundies.com/",
+      "title": "MeUndies",
+      "painted": true,
+      "headings": [],
+      "asksFor": [
+        { "label": "Enter email to get updates", "type": "email", "required": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["SIGN UP"],
+      "stopped": true,
+      "screenshot": "screenshots/footer-light-1440.png",
+      "note": "The footer email was empty. SIGN UP was not clicked."
+    },
+    {
+      "control": "membership GET STARTED",
+      "url": "https://www.meundies.com/membership",
+      "title": "Membership | MeUndies",
+      "painted": true,
+      "headings": ["Monthly Membership"],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["GET STARTED", "LOGIN"],
+      "stopped": true,
+      "screenshot": "screenshots/membership-light-1440.png",
+      "note": "Public marketing page. GET STARTED was not clicked. The membership LOGIN button was not clicked."
+    },
+    {
+      "control": "header Cart",
+      "url": "https://www.meundies.com/",
+      "title": null,
+      "painted": false,
+      "headings": ["Your Bag"],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["Cart"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Cart was not opened. SELECT A SIZE was not clicked."
+    },
+    {
+      "control": "MatchMe",
+      "url": "https://www.meundies.com/matching-pairs?modal=matchme",
+      "title": null,
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["MatchMe"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "The MatchMe modal link was not opened."
+    },
+    {
+      "control": "account routes",
+      "url": "https://www.meundies.com/account/login",
+      "title": "MeUndies",
+      "painted": false,
+      "headings": ["Oops! It seems like you're on a scavenger hunt in our socks drawer,"],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["Return To Comfy Page"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Direct /account/login is a public 404, not a login wall. /account and /account/account-info were not opened."
+    }
+  ]
+}
