@@ -1,6 +1,6 @@
 # Components
 
-Public signed-out Polar, measured on 2026-11-19 at a 1169 by 731 CSS viewport. Screenshots were not saved: the preview browser returned "The browser is not producing screenshot frames." Values below are computed styles.
+Public signed-out Polar. Values below are computed styles from 2026-11-19, checked again on 2026-11-21 at 1440 by 900. Screenshots of the same controls are in [screenshots/](screenshots/).
 
 ## Button
 
@@ -43,8 +43,8 @@ Not measured as components. A "Beta" span in the docs sidebar is 14px `#9e9e9e`.
 
 ## Gaps
 
-- Signup was not completed. https://polar.sh/signup redirects to https://polar.sh/auth. The wall is the signup wall: Google, Apple, GitHub, and email, plus a Cloudflare Turnstile. Nothing was submitted.
+- Signup was not completed. https://polar.sh/signup redirects to https://polar.sh/auth. The wall is the signup wall: Google, Apple, GitHub, and an empty email field. Nothing was submitted. [screenshots/auth-light-default.png](screenshots/auth-light-default.png).
 - No card, bank, or KYC step was entered.
 - OAuth buttons were not followed.
 - Hover, focus, pressed, disabled, error and loading states were not captured.
-- No screenshots.
+- Element crops were not cut. The page screenshots are the evidence.

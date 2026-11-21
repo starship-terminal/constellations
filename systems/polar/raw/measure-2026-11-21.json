@@ -1,0 +1,202 @@
+{
+  "captured": "2026-11-21",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1
+  },
+  "phone": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "harness": "Playwright headless Chromium. T3 preview_snapshot failed twice: The browser is not producing screenshot frames.",
+  "home": {
+    "url": "https://polar.sh/",
+    "htmlClass": "antialiased dark",
+    "h1": {
+      "size": "36px",
+      "weight": "400",
+      "lh": "45px",
+      "color": "rgb(255, 255, 255)",
+      "font": "\"PP Neue Montreal\", Inter, sans-serif",
+      "ls": "normal"
+    },
+    "buttons": [
+      {
+        "tag": "BUTTON",
+        "text": "Sign in",
+        "href": null,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "font": "\"PP Neue Montreal\", InterDisplay, sans-serif",
+        "size": "14px",
+        "weight": "550",
+        "radius": "3.35544e+07px",
+        "pad": "12px 20px",
+        "h": 40,
+        "border": "0px solid rgb(33, 33, 33)"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Get Started",
+        "href": null,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "font": "\"PP Neue Montreal\", InterDisplay, sans-serif",
+        "size": "14px",
+        "weight": "550",
+        "radius": "3.35544e+07px",
+        "pad": "12px 16px",
+        "h": 40,
+        "border": "0px solid rgb(33, 33, 33)"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Get Started",
+        "href": null,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "font": "\"PP Neue Montreal\", InterDisplay, sans-serif",
+        "size": "14px",
+        "weight": "550",
+        "radius": "3.35544e+07px",
+        "pad": "16px 20px",
+        "h": 48,
+        "border": "0px solid rgb(33, 33, 33)"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Get Started",
+        "href": null,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "font": "\"PP Neue Montreal\", InterDisplay, sans-serif",
+        "size": "14px",
+        "weight": "550",
+        "radius": "3.35544e+07px",
+        "pad": "12px 20px",
+        "h": 40,
+        "border": "0px solid rgb(33, 33, 33)"
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Get Started",
+        "href": null,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "font": "\"PP Neue Montreal\", InterDisplay, sans-serif",
+        "size": "14px",
+        "weight": "550",
+        "radius": "3.35544e+07px",
+        "pad": "16px 20px",
+        "h": 48,
+        "border": "0px solid rgb(33, 33, 33)"
+      },
+      {
+        "tag": "A",
+        "text": "Get Started",
+        "href": "/signup",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "font": "\"PP Neue Montreal\", Inter, sans-serif",
+        "size": "16px",
+        "weight": "450",
+        "radius": "0px",
+        "pad": "0px 0px 2px",
+        "h": 27,
+        "border": "0px solid rgb(255, 255, 255)"
+      }
+    ]
+  },
+  "docs": {
+    "url": "https://polar.sh/docs/introduction",
+    "htmlClass": "light",
+    "htmlBg": "rgb(255, 255, 255)",
+    "themeButton": "Switch to system theme"
+  },
+  "auth": {
+    "pageBg": "rgba(0, 0, 0, 0)",
+    "htmlClass": "antialiased light",
+    "heading": {
+      "text": "Welcome to Polar",
+      "size": "24px",
+      "weight": "450",
+      "font": "\"PP Neue Montreal\", Inter, sans-serif",
+      "color": "rgb(0, 0, 0)"
+    },
+    "inputs": [
+      {
+        "type": "email",
+        "placeholder": "Email",
+        "bg": "rgb(255, 255, 255)",
+        "color": "lab(1.90334 0.278696 -5.48866)",
+        "radius": "12px",
+        "border": "1px solid lab(91.6229 -0.159115 -2.26791)",
+        "h": 40,
+        "valueLen": 0
+      },
+      {
+        "type": "hidden",
+        "placeholder": "",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "lab(8.11897 0.811279 -12.254)",
+        "radius": "0px",
+        "border": "0px solid lab(91.6229 -0.159115 -2.26791)",
+        "h": 0,
+        "valueLen": 0
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Sign in with Google",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "lab(8.11897 0.811279 -12.254)",
+        "radius": "0px",
+        "h": 19,
+        "border": "0px solid lab(91.6229 -0.159115 -2.26791)"
+      },
+      {
+        "text": "Sign in with Google",
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "radius": "3.35544e+07px",
+        "h": 40,
+        "border": "0px solid lab(91.6229 -0.159115 -2.26791)"
+      },
+      {
+        "text": "Sign in with Apple",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "lab(8.11897 0.811279 -12.254)",
+        "radius": "0px",
+        "h": 19,
+        "border": "0px solid lab(91.6229 -0.159115 -2.26791)"
+      },
+      {
+        "text": "Sign in with Apple",
+        "bg": "lab(96.1596 -0.0823438 -1.13575)",
+        "color": "rgb(0, 0, 0)",
+        "radius": "3.35544e+07px",
+        "h": 40,
+        "border": "1px solid oklab(0 0 0 / 0.04)"
+      },
+      {
+        "text": "Sign in with GitHub",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "lab(8.11897 0.811279 -12.254)",
+        "radius": "0px",
+        "h": 19,
+        "border": "0px solid lab(91.6229 -0.159115 -2.26791)"
+      },
+      {
+        "text": "Sign in with GitHub",
+        "bg": "lab(96.1596 -0.0823438 -1.13575)",
+        "color": "rgb(0, 0, 0)",
+        "radius": "3.35544e+07px",
+        "h": 40,
+        "border": "1px solid oklab(0 0 0 / 0.04)"
+      }
+    ],
+    "captcha": false
+  }
+}

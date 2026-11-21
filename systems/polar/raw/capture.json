@@ -1,32 +1,32 @@
 {
-  "captured": "2026-11-19",
-  "harness": "T3 preview browser, preview_evaluate on the live page",
-  "screenshotFrames": "The browser is not producing screenshot frames. No PNG screenshots were invented.",
+  "captured": "2026-11-21",
+  "refreshedFrom": "2026-11-19 token readings, which had no screenshots",
+  "harness": "Playwright headless Chromium after T3 preview_snapshot failed twice",
+  "previewError": "The browser is not producing screenshot frames. For a desktop tab, show or restore the T3 Code window and try again.",
   "viewport": {
-    "innerWidth": 1169,
-    "innerHeight": 731,
-    "devicePixelRatio": 2,
-    "visualViewport": {
-      "width": 1169,
-      "height": 731,
-      "scale": 1
-    }
+    "desktop": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 1},
+    "phone": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2}
   },
-  "note": "Requested 1440 and 390 were not applied. preview_resize was not used after snapshot frames failed. Widths below are the live CSS viewport, 1169.",
+  "note": "No email, password, code, phone or address was typed. No identity provider was clicked. No form was submitted. No checkout was started. login-extracted stays not-started.",
   "pages": {
     "home": {
       "url": "https://polar.sh/",
-      "title": "Polar \u2014 A billing platform for the intelligence era | Polar",
+      "title": "Polar — A billing platform for the intelligence era | Polar",
       "htmlClass": "antialiased dark",
       "colorScheme": "dark"
     },
     "auth": {
       "url": "https://polar.sh/auth",
       "title": "Log in to Polar | Polar",
-      "note": "Reached by navigating /signup, which 307s. Form was not submitted. OAuth buttons were not followed. Cloudflare Turnstile was present and not solved."
+      "htmlClass": "antialiased light",
+      "note": "/signup redirects here. Form was not submitted. OAuth buttons were not followed."
     },
     "login404": {
       "url": "https://polar.sh/login",
+      "h1": "We can't find the page you're looking for."
+    },
+    "pricing404": {
+      "url": "https://polar.sh/pricing",
       "h1": "We can't find the page you're looking for."
     },
     "pricing": {
@@ -36,24 +36,12 @@
     "docs": {
       "url": "https://polar.sh/docs/introduction",
       "title": "Polar: Turn Your Software into a Business - Polar",
-      "htmlClassDark": "dark",
-      "htmlClassLight": "light"
+      "htmlClassLight": "light",
+      "htmlClassDark": "dark"
     },
-    "company": {
-      "url": "https://polar.sh/company",
-      "title": "Company | Polar"
-    },
-    "blog": {
-      "url": "https://polar.sh/blog",
-      "title": "Polar"
-    },
-    "blogPost": {
-      "url": "https://polar.sh/blog/polar-for-claude-and-chatgpt",
-      "title": "Polar is now in ChatGPT and Claude | Polar"
-    },
-    "feature": {
-      "url": "https://polar.sh/features/usage-billing",
-      "title": "Usage-Based Billing | Polar"
-    }
+    "company": {"url": "https://polar.sh/company"},
+    "blog": {"url": "https://polar.sh/blog"},
+    "integrate": {"url": "https://polar.sh/integrate"},
+    "feature": {"url": "https://polar.sh/features/usage-billing"}
   }
 }

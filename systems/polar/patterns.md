@@ -1,31 +1,35 @@
 # Patterns
 
-Public signed-out Polar. Viewport measured at 1169 by 731, devicePixelRatio 2. No screenshots: the preview browser was not producing screenshot frames.
+Public signed-out Polar, refreshed 2026-11-21. Desktop shots are 1440 by 900. Phone shots are 390 by 844. Marketing pages paint dark. Docs paint light.
 
 ## Marketing shell
 
-https://polar.sh/ uses a 72px nav, background `#090909`, padding 16px 48px, text `#ffffff`. Links: Features, Docs, Blog, Company. Actions: Sign in (ghost pill) and Get Started (white pill). `html` class is `antialiased dark`. Body text is `#757575` at 16px / 450. Headings are white.
+https://polar.sh/ uses a dark bar. Links: Features, Docs, Blog, Company. Actions: Sign in and Get Started (white pill). `html` class is `antialiased dark`. [screenshots/home-dark-default.png](screenshots/home-dark-default.png) shows the shell. Features and Docs open hover panels on the same page: [screenshots/home-dark-features-menu.png](screenshots/home-dark-features-menu.png) and [screenshots/home-dark-docs-menu.png](screenshots/home-dark-docs-menu.png).
+
+On a 390-wide viewport the labels collapse. "Toggle Sidebar" opens a drawer: Overview, Integrate, Documentation, Pricing, Blog, Company, Open Source, Polar on X, Login. [screenshots/mobile-home-dark-menu-open.png](screenshots/mobile-home-dark-menu-open.png) shows it.
+
+The hero dashboard is a painted demo. Acme Inc, joe@acme.com and the Visa line are the site's own copy.
 
 ## Auth wall
 
-https://polar.sh/signup redirects to https://polar.sh/auth ("Log in to Polar | Polar"). The card is 352px wide. Title "Welcome to Polar" at 24px / 450. Buttons: Sign in with Google (white pill), Sign in with Apple, Sign in with GitHub, an "or" divider, an email field, and Sign in with email. Legal line links to Terms of Service and Privacy Policy at 12px `#9e9e9e`. This is the signup wall. It was not submitted.
+https://polar.sh/signup redirects to https://polar.sh/auth. The card says "Welcome to Polar". Buttons: Sign in with Google, Sign in with Apple, Sign in with GitHub, an "or" divider, an empty email field, and Sign in with email. The header Sign in button opens the same wall as a dialog on the marketing page. Nothing was typed. Identity providers were not clicked. [screenshots/auth-light-default.png](screenshots/auth-light-default.png), [screenshots/signup-light-default.png](screenshots/signup-light-default.png), [screenshots/home-dark-signin-dialog.png](screenshots/home-dark-signin-dialog.png), [screenshots/mobile-auth-light-default.png](screenshots/mobile-auth-light-default.png).
 
 ## Pricing
 
-https://polar.sh/resources/pricing is a long document with an h1 at 60px / 75px line-height and a four-column table (Starter, Pro, Growth, Scale). No checkout was opened.
+https://polar.sh/resources/pricing is a long public document. `/pricing` is a 404. [screenshots/pricing-dark-default.png](screenshots/pricing-dark-default.png) and [screenshots/mobile-pricing-dark-default.png](screenshots/mobile-pricing-dark-default.png). No checkout was opened.
 
 ## Docs
 
-https://polar.sh/docs/introduction is a separate docs shell. Page background `#131316` in dark and `#ffffff` in light. Sidebar nav is 304px. Search is a button. The active item "Introduction" has a 1px left border in the text colour. Theme buttons: Switch to system theme, Switch to light theme, Switch to dark theme. Light was opened, measured, then dark was restored.
+https://polar.sh/docs/introduction is a Mintlify shell. Page background is white in light and near-black in dark. The sidebar lists Products & Pricing, Checkout and the rest. Theme controls sit in the top bar. Dark was opened, then light was restored. [screenshots/docs-light-default.png](screenshots/docs-light-default.png) and [screenshots/docs-light-dark.png](screenshots/docs-light-dark.png).
 
-## Blog and feature
+## Blog, company, integrate, feature
 
-https://polar.sh/blog lists post cards. https://polar.sh/blog/polar-for-claude-and-chatgpt has a 72px display title and a code block. https://polar.sh/features/usage-billing repeats the marketing shell and a 36px title.
+https://polar.sh/blog lists post cards. https://polar.sh/company is the team page. https://polar.sh/integrate and https://polar.sh/features/usage-billing repeat the marketing shell. [screenshots/blog-dark-default.png](screenshots/blog-dark-default.png), [screenshots/company-dark-default.png](screenshots/company-dark-default.png), [screenshots/integrate-dark-default.png](screenshots/integrate-dark-default.png), [screenshots/feature-dark-default.png](screenshots/feature-dark-default.png).
 
 ## 404
 
-https://polar.sh/login and a missing blog slug render the marketing shell with "We can't find the page you're looking for."
+https://polar.sh/login and https://polar.sh/pricing render "We can't find the page you're looking for." with a Go to homepage pill. [screenshots/notfound-light-default.png](screenshots/notfound-light-default.png).
 
 ## Not captured
 
-Signed-in dashboard, checkout, payout, bank, and KYC. Phone width 390 was not applied. Desktop 1440 was not applied. The live viewport was 1169.
+Signed-in dashboard, checkout, payout, bank, and KYC. Button hover, focus, pressed and disabled. Element crops. `login-extracted` is not-started.
