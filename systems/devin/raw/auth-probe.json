@@ -1,0 +1,94 @@
+{
+  "login": {
+    "href": "https://app.devin.ai/auth/login",
+    "title": "Log in - Devin",
+    "inputs": [
+      {
+        "type": "email",
+        "placeholder": "Email address",
+        "name": null,
+        "aria": null,
+        "valueLen": 0
+      },
+      {
+        "type": "text",
+        "placeholder": "Type a command or search\u2026",
+        "name": null,
+        "aria": null,
+        "valueLen": 0
+      }
+    ],
+    "buttons": [
+      "Sign up",
+      "Continue with GitHub",
+      "Continue with ChatGPT",
+      "Continue with Google",
+      "Log in",
+      "Onboarding flow",
+      "Settings"
+    ],
+    "h1": {
+      "text": "Log in",
+      "font": "Inter, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "size": "16px",
+      "weight": "400",
+      "color": "rgb(25, 25, 25)",
+      "lh": "24px",
+      "ls": "normal"
+    },
+    "body": {
+      "bg": "rgb(252, 252, 252)",
+      "color": "rgb(25, 25, 25)",
+      "font": "Inter, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "size": "16px"
+    },
+    "colorScheme": "light"
+  },
+  "signup": {
+    "href": "https://app.devin.ai/auth/signup",
+    "title": "Sign up - Devin",
+    "inputs": [
+      {
+        "type": "email",
+        "placeholder": "Email address",
+        "name": null,
+        "aria": null,
+        "valueLen": 0
+      },
+      {
+        "type": "text",
+        "placeholder": "Type a command or search\u2026",
+        "name": null,
+        "aria": null,
+        "valueLen": 0
+      }
+    ],
+    "buttons": [
+      "Log in",
+      "Continue with GitHub",
+      "Continue with ChatGPT",
+      "Continue with Google",
+      "Sign up",
+      "Terms of Service",
+      "Privacy Policy",
+      "Onboarding flow",
+      "Settings"
+    ],
+    "h1": {
+      "text": "Sign up",
+      "font": "Inter, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "size": "16px",
+      "weight": "400",
+      "color": "rgb(25, 25, 25)",
+      "lh": "24px",
+      "ls": "normal"
+    },
+    "body": {
+      "bg": "rgb(252, 252, 252)",
+      "color": "rgb(25, 25, 25)",
+      "font": "Inter, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "size": "16px"
+    },
+    "colorScheme": "light"
+  }
+}
