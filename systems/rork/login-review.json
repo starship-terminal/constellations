@@ -1,0 +1,18 @@
+{
+  "slug": "rork",
+  "captured": "2026-11-22",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "session": "Public capture, signed out. https://rork.com/auth opened an empty wall titled Build the next greatest app. The email field was empty. Google, GitHub, and Apple were not clicked. Continue was not used to send an email. /signup, /sign-in, and /register redirect to the same wall. https://affilates.rork.com/ opened a separate empty email wall. That field was left empty and Continue was not clicked. No email, password, code, phone, or address was typed. No form was submitted. No captcha was solved. No app was built.",
+  "wall": {
+    "login_url": "https://rork.com/auth",
+    "signup_url": "https://rork.com/auth",
+    "signup_note": "Signup, sign-in, and register redirect to the same auth page. There is no separate signup form.",
+    "login_title": "Build the next greatest app",
+    "login_fields_empty": ["Email address"],
+    "identity_providers_not_clicked": ["Google", "GitHub", "Apple"],
+    "continue_not_clicked": true,
+    "affiliate_wall": "https://affilates.rork.com/login",
+    "affiliate_continue_not_clicked": true
+  }
+}

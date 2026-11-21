@@ -2,6 +2,8 @@
 
 Public pages on rork.com, 19 November 2026. Desktop shots are 1440 by 900 CSS pixels, saved at 2x. The phone shot is 390 by 844 CSS pixels, saved at 2x.
 
+The 2026-11-22 public tree is [site-tree.md](site-tree.md). Those shots use the `public-`, `nav-`, and `login-wall-` names in [screenshots/](screenshots/). The shots below are the 19 November set.
+
 ## Home
 
 A centered wordmark, a short nav (Products, Resources, Pricing, App), and a white Sign in pill. The hero is "Be the next app founder" at 60px. Under it sits a 768px composer and a row of platform chips. A phone mock sits at the bottom of the first viewport.
