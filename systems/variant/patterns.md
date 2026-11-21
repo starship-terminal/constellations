@@ -1,6 +1,8 @@
 # Variant patterns
 
-Signed-out only. Layout numbers are from `getComputedStyle` and `getBoundingClientRect` on 2026-11-19. There is no screenshot to check them against.
+Public pages photographed 2026-11-22 are in [screenshots/](screenshots/). The map of which control opens which page is [site-tree.md](site-tree.md). Login and signup are one empty wall. `login-extracted` is not-started.
+
+Signed-out only. Layout numbers are from `getComputedStyle` and `getBoundingClientRect` on 2026-11-19. The 2026-11-22 shots are in [screenshots/](screenshots/).
 
 ## Homepage
 

@@ -1,0 +1,23 @@
+{
+  "login-extracted": "not-started",
+  "captured": "2026-11-22",
+  "product": "Variant",
+  "url": "https://variant.com/authentication",
+  "wall": "One card. Title: Sign in or sign up. Login and signup are not separate pages.",
+  "empty": true,
+  "typed": false,
+  "submitted": false,
+  "identityProvidersClicked": [],
+  "controls": [
+    "Continue with Google (not clicked)",
+    "Email address (empty, not typed)",
+    "Continue with Email (disabled, not clicked)",
+    "Terms of Service (opens /terms-and-privacy)",
+    "Privacy Policy (opens /terms-and-privacy)"
+  ],
+  "stopped": "Photographed the empty wall at 1440 and 390. Did not type. Did not click Google. Did not submit. Did not open the signed-in app.",
+  "shots": [
+    "screenshots/auth-dark-1440.png",
+    "screenshots/auth-dark-390.png"
+  ]
+}

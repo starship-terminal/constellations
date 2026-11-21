@@ -1,0 +1,16 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://variant.com/authentication",
+  "cssViewport": {
+    "width": 390,
+    "height": 844
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "devicePixelRatio": 2,
+  "quantized": 256,
+  "note": "Same empty wall. The 400px card overflows the 390 frame. Not restyled.",
+  "login-extracted": "not-started"
+}

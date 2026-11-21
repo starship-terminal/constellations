@@ -1,0 +1,16 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://variant.com/authentication",
+  "cssViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "devicePixelRatio": 2,
+  "quantized": 256,
+  "note": "Empty login and signup wall. Email empty. Google not clicked. Continue with Email disabled.",
+  "login-extracted": "not-started"
+}

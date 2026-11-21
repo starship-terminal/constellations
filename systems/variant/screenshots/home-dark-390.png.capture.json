@@ -1,0 +1,16 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://variant.com/",
+  "cssViewport": {
+    "width": 390,
+    "height": 844
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "devicePixelRatio": 2,
+  "quantized": 256,
+  "note": "Same homepage at phone width. The grid card overlaps the copy. No menu button.",
+  "login-extracted": "not-started"
+}

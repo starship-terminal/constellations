@@ -1,0 +1,16 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://variant.com/terms-and-privacy",
+  "cssViewport": {
+    "width": 1440,
+    "height": 220
+  },
+  "png": {
+    "width": 2880,
+    "height": 440
+  },
+  "devicePixelRatio": 2,
+  "quantized": 256,
+  "note": "Crop of the public legal tabs and heading. The rest of the page holds a public email, a street address and a phone line, so it was not committed.",
+  "login-extracted": "not-started"
+}
