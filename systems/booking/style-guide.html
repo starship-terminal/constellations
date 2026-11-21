@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Booking.com tokens</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --muted: #868686;
+    --header: #003b95;
+    --accent: #006ce4;
+    --on-accent: #ffffff;
+    --yellow: #ffb700;
+    --radius: 4px;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, system-ui, sans-serif;
+    --heading: "Avenir Next", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, system-ui, sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--text); font: 14px/20px var(--sans); }
+  header { background: var(--header); color: white; padding: 16px 24px; font-weight: 700; font-size: 20px; }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px; }
+  h1 { font-family: var(--heading); font-weight: 700; font-size: 24px; line-height: 32px; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+  .swatch { background: var(--surface); border-radius: var(--radius); padding: 12px; border: 1px solid #e7e7e7; }
+  .swatch i { display: block; height: 48px; border-radius: 6px; border: 1px solid #e7e7e7; }
+  .swatch span, .swatch code { display: block; font-size: 13px; color: var(--muted); }
+  button { background: var(--accent); color: var(--on-accent); border: 0; border-radius: var(--radius); height: 48px; padding: 0 24px; font: 500 16px/24px var(--sans); }
+  .frame { display: inline-block; background: var(--yellow); border-radius: 8px; padding: 4px; }
+  p.note { color: var(--muted); }
+</style>
+</head>
+<body>
+<header>Booking.com</header>
+<main>
+  <h1>Booking.com</h1>
+  <p class="note">Public marketing tokens measured on booking.com, 2026-11-22. Light theme only. Font stacks fall back to system-ui.</p>
+  <p class="frame"><button type="button">Search</button></p>
+  <div class="swatches">
+    <div class="swatch"><i style="background:#ffffff"></i><span>page</span><code>#ffffff</code></div>
+<div class="swatch"><i style="background:#ffffff"></i><span>surface</span><code>#ffffff</code></div>
+<div class="swatch"><i style="background:#f5f5f5"></i><span>footer</span><code>#f5f5f5</code></div>
+<div class="swatch"><i style="background:#1a1a1a"></i><span>text</span><code>#1a1a1a</code></div>
+<div class="swatch"><i style="background:#868686"></i><span>muted</span><code>#868686</code></div>
+<div class="swatch"><i style="background:#003b95"></i><span>header</span><code>#003b95</code></div>
+<div class="swatch"><i style="background:#006ce4"></i><span>accent</span><code>#006ce4</code></div>
+<div class="swatch"><i style="background:#ffffff"></i><span>on accent</span><code>#ffffff</code></div>
+<div class="swatch"><i style="background:#ffb700"></i><span>yellow</span><code>#ffb700</code></div>
+<div class="swatch"><i style="background:#006ce4"></i><span>link</span><code>#006ce4</code></div>
+  </div>
+</main>
+</body>
+</html>
