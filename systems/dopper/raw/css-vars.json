@@ -1,0 +1,12 @@
+{
+  "captured": "2026-11-21",
+  "pages": ["https://www.dopper.com/", "https://shop.dopper.com/", "https://shop.dopper.com/dopper-original-pacific-blue"],
+  "note": "Neither surface declares a design-token custom-property layer. shop.dopper.com styles-l.min.css (Magento theme Dopper/dopper_b2c) has zero --* declarations. www.dopper.com shadow nav declares only --line-height: 1px and 2px on decorative rules. theme-color meta is #fcfaf2.",
+  "themeColor": "#fcfaf2",
+  "resolved": {
+    "light": {},
+    "dark": {}
+  },
+  "app": [],
+  "fonts": ["Dopper", "Gilroy", "Dopper-Icons"]
+}

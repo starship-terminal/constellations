@@ -1,0 +1,54 @@
+{
+  "color": {
+    "blue": { "type": "color", "value": "#0067e5", "source": "measured button.tocart backgroundColor on shop.dopper.com/dopper-original-pacific-blue, 2026-11-21" },
+    "ink": { "type": "color", "value": "#000f2e", "source": "measured body color on shop.dopper.com, 2026-11-21" },
+    "paper": { "type": "color", "value": "#fcfaf2", "source": "measured body backgroundColor on www.dopper.com and shop.dopper.com; meta theme-color #fcfaf2" },
+    "cream": { "type": "color", "value": "#f6ecc8", "source": "measured h1 color on www.dopper.com hero, 2026-11-21" },
+    "cream-deep": { "type": "color", "value": "#f9f3df", "source": "measured dopper-navigation button.nav-link color (cream on blue hero) and button.tocart text color" },
+    "black": { "type": "color", "value": "#000000", "source": "measured body color on www.dopper.com, 2026-11-21" },
+    "green": { "type": "color", "value": "#0abeaa", "source": "sampled Filters pill fill (10, 190, 170) from shop-bottles-light-filters.png before quantize; no CSS custom property" },
+    "focus-ring": { "type": "color", "value": "#000f2e", "source": "measured button.tocart :focus-visible outline color, 2026-11-21" },
+    "focus-gap": { "type": "color", "value": "#fcfaf2", "source": "measured button.tocart :focus-visible box-shadow color, 2026-11-21" }
+  },
+  "font": {
+    "display": { "type": "fontFamily", "value": "Dopper, Georgia, serif", "source": "document.fonts family Dopper on www.dopper.com h1" },
+    "sans": { "type": "fontFamily", "value": "Gilroy, sans-serif", "source": "computed fontFamily on shop body and dopper-navigation button.nav-link" }
+  },
+  "fontSize": {
+    "hero": { "type": "dimension", "value": "72px", "source": "measured h1 fontSize on www.dopper.com" },
+    "story": { "type": "dimension", "value": "58px", "source": "measured h1 fontSize on www.dopper.com/en/mission/story" },
+    "shop-body": { "type": "dimension", "value": "20px", "source": "measured body fontSize on shop.dopper.com" },
+    "nav": { "type": "dimension", "value": "16px", "source": "measured dopper-navigation button.nav-link fontSize" },
+    "price": { "type": "dimension", "value": "16px", "source": "measured .price fontSize on product page" }
+  },
+  "fontWeight": {
+    "regular": { "type": "fontWeight", "value": 400, "source": "measured body and h1 fontWeight" },
+    "semibold": { "type": "fontWeight", "value": 600, "source": "measured a.level-top and button.tocart fontWeight" },
+    "bold": { "type": "fontWeight", "value": 700, "source": "measured dopper-navigation button.nav-link fontWeight" }
+  },
+  "lineHeight": {
+    "hero": { "type": "dimension", "value": "72px", "source": "measured h1 lineHeight on www.dopper.com" },
+    "shop-body": { "type": "dimension", "value": "26px", "source": "measured body lineHeight on shop.dopper.com" },
+    "nav": { "type": "dimension", "value": "25px", "source": "measured a.level-top lineHeight" }
+  },
+  "radius": {
+    "button": { "type": "dimension", "value": "20px", "source": "measured button.tocart borderTopLeftRadius" },
+    "pill": { "type": "dimension", "value": "999px", "source": "observed shop Filters control and cart icon; exact radius not read from CSS" }
+  },
+  "size": {
+    "button-height": { "type": "dimension", "value": "54px", "source": "measured button.tocart height" },
+    "header": { "type": "dimension", "value": "110px", "source": "measured .page-header height on shop.dopper.com and dopper-nav height in shadow CSS" },
+    "nav-link": { "type": "dimension", "value": "25px", "source": "measured a.level-top height" }
+  },
+  "space": {
+    "button-x": { "type": "dimension", "value": "25px", "source": "measured button.tocart paddingLeft" },
+    "button-y": { "type": "dimension", "value": "13px", "source": "measured button.tocart paddingTop" }
+  },
+  "border": {
+    "hairline": { "type": "dimension", "value": "1px", "source": "measured button.tocart borderTopWidth" },
+    "focus": { "type": "dimension", "value": "2px", "source": "measured button.tocart :focus-visible outline 2px" }
+  },
+  "focus": {
+    "offset": { "type": "dimension", "value": "4px", "source": "measured button.tocart :focus-visible box-shadow 0 0 0 4px" }
+  }
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dopper style guide</title>
+<style>
+body { margin: 0; font: 400 16px/1.4 Gilroy, system-ui, sans-serif; background: #fcfaf2; color: #000f2e; }
+main { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 400 48px/1 Georgia, serif; margin: 0 0 8px; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { display: flex; gap: 8px; align-items: center; min-width: 220px; }
+.sw i { width: 36px; height: 36px; border-radius: 50%; border: 1px solid #000f2e22; display: block; }
+.btn { display: inline-block; background: #0067e5; color: #f9f3df; border-radius: 20px; padding: 13px 25px; font-weight: 600; }
+.ink { display: inline-block; background: #000; color: #f6ecc8; border-radius: 999px; padding: 12px 20px; }
+.ghost { display: inline-block; color: #f6ecc8; border: 1px solid #f6ecc8; border-radius: 999px; padding: 12px 20px; }
+.hero { background: #0067e5; color: #f6ecc8; padding: 32px; border-radius: 16px; margin: 24px 0; }
+</style>
+</head>
+<body>
+<main>
+<h1>Dopper</h1>
+<p>Measured from dopper.com and shop.dopper.com on 2026-11-21. Light only. Take values from tokens.json.</p>
+<div class="hero">
+  <p style="font:400 48px/1 Georgia,serif;margin:0 0 16px">Whatever the season</p>
+  <span class="ink">Shop our collection</span>
+  <span class="ghost">Watch now</span>
+</div>
+<p><span class="btn">Add to cart</span></p>
+<h2>Colours</h2>
+<div class="swatches">
+<div class="sw"><i style="background:#0067e5"></i><span>color.blue<br><code>#0067e5</code></span></div><div class="sw"><i style="background:#000f2e"></i><span>color.ink<br><code>#000f2e</code></span></div><div class="sw"><i style="background:#fcfaf2"></i><span>color.paper<br><code>#fcfaf2</code></span></div><div class="sw"><i style="background:#f6ecc8"></i><span>color.cream<br><code>#f6ecc8</code></span></div><div class="sw"><i style="background:#f9f3df"></i><span>color.cream-deep<br><code>#f9f3df</code></span></div><div class="sw"><i style="background:#000000"></i><span>color.black<br><code>#000000</code></span></div><div class="sw"><i style="background:#0abeaa"></i><span>color.green<br><code>#0abeaa</code></span></div><div class="sw"><i style="background:#000f2e"></i><span>color.focus-ring<br><code>#000f2e</code></span></div><div class="sw"><i style="background:#fcfaf2"></i><span>color.focus-gap<br><code>#fcfaf2</code></span></div>
+</div>
+</main>
+</body>
+</html>
