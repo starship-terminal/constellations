@@ -1,6 +1,6 @@
 # Preply patterns
 
-Signed-out marketing and login chrome, 2026-11-19.
+Signed-out marketing and login chrome. First read 2026-11-19. Site tree and extra screens refreshed 2026-11-21. The control map is [site-tree.md](site-tree.md).
 
 ## Home
 
@@ -16,9 +16,9 @@ Centered column on white. "Log in", underlined signup links, three outlined soci
 
 ## Find tutors
 
-Public search and tutor list. Search wrap is a 48px field with a 2px #dcdce5 border. Tutor rows carry a pink "Book trial lesson" button. That button was not followed.
+Public search and tutor list. The hero is a subject field and a pink "Find your tutor" button. Below that, filter chips (goal, focus, price, language, country, category, availability, sort) sit over tutor cards. Goal opens a dialog. Price opens a range. The search icon expands "Search by name or keyword". Book trial lesson was not followed.
 
-[tutors](screenshots/tutors-light-default.png)
+[tutors](screenshots/tutors-light-default.png), [list](screenshots/tutors-light-list.png), [goal](screenshots/tutors-light-filter.png)
 
 ## Other public pages
 
@@ -26,9 +26,9 @@ Teach, business, proven progress, stand-with-Ukraine, and a 404. Same header. Bu
 
 ## Mobile
 
-390x844 at 2x. The hero headline drops to 40px / 36.8px. The first visible control in that pass was a 40px icon button.
+390x844 at 2x. The hero headline wraps to four lines. A hamburger opens a right-hand drawer (Log In, Home, Find tutors, For business, Proven Progress, Become a tutor, Messages, Help, then language and currency).
 
-[mobile home](screenshots/home-light-mobile.png)
+[mobile home](screenshots/mobile-home-light-default.png), [drawer](screenshots/mobile-home-light-menu.png), [mobile tutors](screenshots/mobile-tutors-light-list.png)
 
 ## Theme
 

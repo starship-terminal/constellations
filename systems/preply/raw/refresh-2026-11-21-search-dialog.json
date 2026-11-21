@@ -1,0 +1,20 @@
+{
+  "dialog": "",
+  "fields": [
+    {
+      "placeholder": "English",
+      "aria": "English",
+      "type": "search"
+    },
+    {
+      "placeholder": "English",
+      "aria": "English",
+      "type": "search"
+    },
+    {
+      "placeholder": "Search by name or keyword",
+      "aria": null,
+      "type": "text"
+    }
+  ]
+}

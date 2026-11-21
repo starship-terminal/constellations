@@ -1,8 +1,8 @@
 # Preply design reference
 
-Tokens and component notes for Preply's signed-out site. Read on **2026-11-19** from preply.com, signed out, in headless Chromium at 1440 x 900 and 390 x 844 (2x). The T3 preview tab loaded the homepage and returned computed styles, then failed screenshots with "The browser is not producing screenshot frames". Screenshots are from headless Chromium on public pages that had already loaded without a Cloudflare challenge.
+Tokens and component notes for Preply's signed-out site. First read on **2026-11-19**, refreshed on **2026-11-21** from preply.com, signed out, in headless Chromium at 1440 x 900 and 390 x 844 (2x). The T3 preview tab loaded the homepage and returned computed styles, then failed screenshots with "The browser is not producing screenshot frames". Screenshots are from headless Chromium on public pages that loaded without a Cloudflare challenge.
 
-Captured: the marketing home, /en/online/english-tutors, /en/teach, /en/business-language-training, /en/proven-progress-platform, /en/stand-with-ukraine, a made-up 404, and /en/login chrome. Login was measured and screenshotted. It was not submitted. Signup asks for a student or tutor path plus Google, Facebook, Apple, or corporate SSO, so no account was created.
+Captured: the marketing home, the nav language dropdown, the footer, /en/online/english-tutors with its goal dialog and price slider, /en/how-it-works, /en/subscription, /en/teach, /en/business-language-training, /en/proven-progress-platform, /en/stand-with-ukraine, a made-up 404, the empty /en/login wall, and the empty /en/signup wall. Phone shots cover the homepage, its menu drawer, and the tutor listing. Login and signup were not submitted. Identity providers were not clicked. No booking, message, or demo was started. The control map is [site-tree.md](site-tree.md).
 
 Preply paints one theme, `tokyo-ui` / `ds-scheme--base`. Forcing `prefers-color-scheme: dark` left the pink and the ink unchanged. Custom properties on `.ds-tokyo-ui__PkpFv` are content-hashed, so roles here are computed styles of the controls that use them.
 
@@ -15,10 +15,11 @@ Preply paints one theme, `tokyo-ui` / `ds-scheme--base`. Forcing `prefers-color-
 | [style-guide.html](style-guide.html) | Specimens rendered from the tokens. Figtree and Platform are not loaded. |
 | [components.md](components.md) | Controls that were on the page, with measured values and crops. |
 | [patterns.md](patterns.md) | How the home, login, and tutor list are put together. |
+| [site-tree.md](site-tree.md) | Which homepage controls open which pages, menus, and dialogs. Mapped 2026-11-21. |
 | [components/crops/](components/crops/) | Eight crops: hero type, buttons, header, step card. |
 | [icons/](icons/) | Not extracted. Declared under layoutGaps. The wordmark stays in the screenshots. |
-| [screenshots/](screenshots/) | Viewport shots of the public pages plus login, a full home, and a 390px home. Quantised to 256 colours. |
-| [raw/](raw/) | Computed-style dumps, the hashed token maps, focus and dark-scheme probes. |
+| [screenshots/](screenshots/) | Viewport shots of the public pages, nav dropdown, footer, tutor filters, empty login and signup, a full home, and 390px home and listing. Quantised to 256 colours. |
+| [raw/](raw/) | Computed-style dumps, the hashed token maps, focus and dark-scheme probes, and the 2026-11-21 page readings. |
 | [tools/](tools/) | Builders and the copied capture kit. |
 | [capture.pr](capture.pr) | The pull request for this capture. |
 
@@ -101,19 +102,25 @@ Computed styles on the live DOM: button variants, text roles, headings, the fiel
 
 | Item | Status |
 |---|---|
-| Colour roles | Captured for page, pink, ink, muted, borders, primary, on-color, focus. Status colours declared only. |
+| Colour roles | Captured for page, pink, ink, muted, borders, primary, on-color, focus. Status colours declared only. Re-read 2026-11-21: header still `#ff7aac`, ink still `#121117`. |
 | Type | Captured at 1440 and the hero at 390. |
 | Spacing, radius, borders | Captured from the controls that showed them. No published scale. |
 | Elevation | One shadow on the home DOM: 0 0 8px rgba(9, 15, 25, 0.1). |
 | Motion | Button transition 220ms, cubic-bezier(0.22, 1, 0.36, 1). Reduced-motion pass not run. |
 | Button, link, field, checkbox, card | Captured. |
 | Icon button | Measured. No separate crop. |
-| Select, radio, switch, tabs, tooltip, dialog, toast, avatar, badge, table | Not present on these pages, or not opened. |
-| Login chrome | Captured. Not submitted. |
-| Signup | Not entered. The form is not email-only. |
-| Booking, payment, phone | Not entered. |
-| Dark theme | Not present. |
-| Desktop 1440 and phone 390 | Captured. |
+| Select | Language and currency dropdowns captured. See [site-tree.md](site-tree.md). |
+| Dialog | Goal filter on the tutor listing. See [tutors-light-filter](screenshots/tutors-light-filter.png). |
+| Menu | Desktop language list and the phone drawer. |
+| Radio, switch, tabs, tooltip, toast, avatar, badge, table | Not present on these pages, or not opened. Avatar crops of public tutor photos stay in the listing screenshots. |
+| Login chrome | Captured empty. Not submitted. |
+| Signup | Empty student wall photographed. Not submitted. Tutor profile creation was not entered. |
+| Search and filters | Tutor listing filters opened. A zero-result search was not submitted. |
+| Empty state | 404 page. No public empty tutor list without submitting a search. |
+| Booking, payment, phone, messages | Not entered. Messages redirects to login. |
+| Dark theme | Not present. Confirmed again on 2026-11-21. |
+| Desktop 1440 and phone 390 | Captured, including one inner page (the English tutor listing) at 390. |
+| Site tree | [site-tree.md](site-tree.md), 2026-11-21. |
 
 ## Do and don't
 

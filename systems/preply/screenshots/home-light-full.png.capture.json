@@ -1,23 +1,69 @@
 {
-  "href": "https://preply.com/",
-  "title": "Preply: Learn with the best online language tutors on app & web",
-  "innerWidth": 1440,
-  "innerHeight": 900,
-  "dpr": 1,
-  "vv": {
-    "width": 1440,
-    "height": 900,
-    "scale": 1
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T14:57:01.860Z",
+  "screenshot": "home-light-full.png",
+  "sanitizedSourceUrl": "https://preply.com/",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
   },
-  "scrollH": 7146,
-  "theme": "tokyo-ui",
-  "colorScheme": "normal",
-  "dark": false,
+  "configuredViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "documentSize": {
+      "width": 1440,
+      "height": 7008
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "capture": {
+    "mode": "fullPage",
+    "scale": "device",
+    "clip": null
+  },
   "png": {
-    "width": 1440,
-    "height": 7146
+    "width": 2880,
+    "height": 14016
   },
-  "capturedAt": "2026-11-18T17:52:22.887Z",
-  "fullPage": true,
-  "screenshotFrames": "headless-playwright (T3 preview returned: The browser is not producing screenshot frames)"
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 2880,
+      "height": 14016
+    },
+    "basis": "fullPage"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+  }
 }
