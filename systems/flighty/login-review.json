@@ -1,0 +1,99 @@
+{
+  "slug": "flighty",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "wall": "none",
+  "session": "Public Playwright capture, signed out, of https://flighty.com/. No email, password, name, or code was typed. No identity provider was on the homepage. No form was submitted. Cookie Reject and Accept were not clicked. The App Store link inside the Get the app dialog was not followed.",
+  "viewport": {
+    "desktop": "1440x900 CSS, devicePixelRatio 2, PNG 2880x1800",
+    "phone": "390x844 CSS, devicePixelRatio 2, PNG 780x1688"
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "Pricing",
+        "Gift Cards",
+        "Passport",
+        "Airports",
+        "Help Center",
+        "Get the app",
+        "About",
+        "Press",
+        "Support",
+        "Businesses"
+      ],
+      "reached": [
+        "Pricing",
+        "Gift Cards",
+        "Passport",
+        "Help Center",
+        "Get the app",
+        "About",
+        "Press",
+        "Businesses"
+      ],
+      "note": "Signed out. Header links are plain anchors. The collapsed navbar grid also lists About, Press, Support, and Businesses. Support points at the marketing home and was not opened as its own page. Airports was opened and its screenshot was not committed."
+    },
+    "settings": {
+      "items": [
+        "no settings area"
+      ],
+      "reached": [
+        "no settings area"
+      ],
+      "note": "No account settings were offered. Cookie Settings was visible and not opened. No theme switch was on the page."
+    },
+    "create": {
+      "items": [
+        "Get the app",
+        "Give Flighty a try",
+        "no account create"
+      ],
+      "reached": [
+        "Get the app"
+      ],
+      "note": "Get the app opens a QR dialog on the same URL. It is an App Store download, not an account form. Give Flighty a try uses the same dialog and was not clicked separately. No signup form was offered."
+    }
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-get-app.png",
+    "screenshots/home-light-mobile.png",
+    "screenshots/pricing-light-default.png",
+    "screenshots/gift-cards-light-default.png",
+    "screenshots/passport-light-default.png",
+    "screenshots/help-light-default.png",
+    "screenshots/about-light-default.png",
+    "screenshots/press-light-default.png",
+    "screenshots/business-light-default.png",
+    "screenshots/login-404-light-default.png"
+  ],
+  "gaps": [
+    "No signed-in web app was offered. /login, /signin, /sign-in, /account, and /app return the marketing 404.",
+    "offered.settings has no account surface. Cookie Settings was not opened.",
+    "Airports was opened. The live disruption table and map were not committed.",
+    "The phone hamburger was not opened. A click on the navbar trigger left the homepage.",
+    "Pricing plan tabs other than the painted Annual selection were not clicked. Try it for free was not clicked.",
+    "Gift card radios were not changed and the purchase flow was not started.",
+    "Help search was not typed and not submitted.",
+    "No dark theme switch exists. Dark colors are the pricing page and the 404 page, not a second theme.",
+    "Hover, focus-visible, pressed, disabled, and loading were not held.",
+    "The T3 preview compositor did not emit frames. Screenshots are Playwright."
+  ],
+  "not_submitted": [
+    "email",
+    "password",
+    "name",
+    "code",
+    "cookie Reject",
+    "cookie Accept",
+    "Cookie Settings",
+    "App Store link",
+    "Try it for free",
+    "gift card purchase",
+    "help search",
+    "business mailto",
+    "press mailto",
+    "Give Flighty a try"
+  ]
+}

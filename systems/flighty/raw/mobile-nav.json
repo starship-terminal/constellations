@@ -1,0 +1,86 @@
+{
+  "w": 390,
+  "h": 844,
+  "buttons": [
+    {
+      "tag": "A",
+      "name": "Light",
+      "label": "Pricing",
+      "aria": null,
+      "w": 74,
+      "h": 30,
+      "x": 24
+    },
+    {
+      "tag": "A",
+      "name": "Light",
+      "label": "About",
+      "aria": null,
+      "w": 68,
+      "h": 30,
+      "x": 203
+    }
+  ],
+  "names": [
+    {
+      "name": "Navbar Mobile",
+      "display": "block",
+      "w": 390
+    },
+    {
+      "name": "Light Mobile",
+      "display": "flex",
+      "w": 390
+    },
+    {
+      "name": "Nav",
+      "display": "flex",
+      "w": 390
+    },
+    {
+      "name": "Mobile Light - Filled",
+      "display": "flex",
+      "w": 99
+    },
+    {
+      "name": "Trigger - Navbar ",
+      "display": "block",
+      "w": 390
+    },
+    {
+      "name": "Mobile Mockup",
+      "display": "block",
+      "w": 477
+    },
+    {
+      "name": "Mobile - Before fly",
+      "display": "flex",
+      "w": 282
+    },
+    {
+      "name": "White - Mobile",
+      "display": "flex",
+      "w": 184
+    },
+    {
+      "name": "Mobile - Black",
+      "display": "block",
+      "w": 18
+    },
+    {
+      "name": "Mobile - Collapsed",
+      "display": "flex",
+      "w": 317
+    },
+    {
+      "name": "Black - Mobile",
+      "display": "flex",
+      "w": 182
+    },
+    {
+      "name": "Mobile - White",
+      "display": "block",
+      "w": 18
+    }
+  ]
+}
