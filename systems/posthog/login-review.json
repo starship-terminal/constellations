@@ -1,0 +1,80 @@
+{
+  "product": "PostHog",
+  "domain": "posthog.com",
+  "reviewedAt": "2026-11-22",
+  "method": "Headless Chromium, signed out. Desktop 1440x900 CSS pixels and phone 390x844 CSS pixels, device pixel ratio 2. Signup and login were opened empty. Nothing was typed.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "orgCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Get started – free",
+      "url": "https://app.posthog.com/signup",
+      "paintedUrl": "https://us.posthog.com/signup",
+      "title": "Sign up • PostHog",
+      "heading": "Get started",
+      "painted": true,
+      "asksFor": [
+        { "label": "Email", "type": "email", "placeholder": "you@yourcompany.com", "valueLength": 0 }
+      ],
+      "identityProvidersSeen": ["Google", "GitHub", "GitLab", "Passkey"],
+      "otherControls": ["Data region", "Continue"],
+      "stopped": true,
+      "desktop": "screenshots/signup-light-1440.png",
+      "phone": "screenshots/signup-light-390.png",
+      "note": "Empty signup wall. app.posthog.com/signup painted us.posthog.com/signup with no query string. Continue was not clicked. No identity provider was clicked. No org was created."
+    },
+    {
+      "control": "app login",
+      "url": "https://app.posthog.com/login",
+      "paintedUrl": "https://us.posthog.com/login",
+      "title": "Log in • PostHog",
+      "heading": "Log in or sign up to @PostHog",
+      "painted": true,
+      "asksFor": [
+        { "label": "Email", "type": "email", "placeholder": "you@yourcompany.com", "valueLength": 0 }
+      ],
+      "identityProvidersSeen": ["Google", "GitHub", "GitLab", "Passkey"],
+      "otherControls": ["Data region", "Continue"],
+      "stopped": true,
+      "desktop": "screenshots/login-light-1440.png",
+      "phone": null,
+      "note": "Empty login wall. The painted URL is https://us.posthog.com/login with no OAuth query and no session state. Continue was not clicked. No identity provider was clicked."
+    },
+    {
+      "control": "Talk to a human",
+      "url": "https://posthog.com/talk-to-a-human",
+      "paintedUrl": "https://posthog.com/talk-to-a-human",
+      "title": "Talk to a human – Book a PostHog demo",
+      "heading": "Talk to a human",
+      "painted": true,
+      "asksFor": [
+        { "label": "Your email", "type": "email", "valueLength": 0 },
+        { "label": "Company", "type": "text", "valueLength": 0 }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Send"],
+      "stopped": true,
+      "desktop": "screenshots/talk-to-a-human-light-1440.png",
+      "phone": null,
+      "note": "Empty sales form. Send was not clicked. The published sales address is on the form. Nothing was typed."
+    }
+  ],
+  "notOpened": [
+    "Continue and Send were not clicked.",
+    "Google, GitHub, GitLab, and Passkey were not clicked.",
+    "The account menu Sign in to the community was not followed.",
+    "The forum screenshot was discarded. The first viewport lists other people's names and posts.",
+    "Search was not typed. The AI chat was not typed.",
+    "Newsletter subscribe was not clicked.",
+    "Merch checkout was not started.",
+    "DPA and BAA generators were not submitted.",
+    "Discord, X, LinkedIn, Substack, YouTube, Instagram, GitHub, Claude, ChatGPT, and twig.com were not entered.",
+    "The cookie banner was not accepted and not closed."
+  ]
+}

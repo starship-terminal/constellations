@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="PostHog stand-in">
+  <rect width="32" height="32" rx="6" fill="#eeefe9"/>
+  <path fill="#cd8407" d="M6 20 L12 8 L16 16 L20 8 L26 20 H20 L16 14 L12 20 Z"/>
+</svg>

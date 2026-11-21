@@ -1,0 +1,17 @@
+{
+  "url": "https://posthog.com/docs",
+  "title": "PostHog Docs",
+  "h1": "PostHog Docs",
+  "capturedAt": "2026-11-21T19:44:17.610Z",
+  "viewport": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "vv": {
+      "w": 390,
+      "h": 844,
+      "scale": 1
+    }
+  },
+  "requestedWidth": "390"
+}

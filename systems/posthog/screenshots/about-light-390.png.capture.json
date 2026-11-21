@@ -1,0 +1,17 @@
+{
+  "url": "https://posthog.com/about",
+  "title": "About PostHog",
+  "h1": "We're here to help make your product self-driving",
+  "capturedAt": "2026-11-21T19:44:19.074Z",
+  "viewport": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "vv": {
+      "w": 390,
+      "h": 844,
+      "scale": 1
+    }
+  },
+  "requestedWidth": "390"
+}

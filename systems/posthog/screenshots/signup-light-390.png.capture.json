@@ -1,0 +1,17 @@
+{
+  "url": "https://us.posthog.com/signup",
+  "title": "Sign up \u2022 PostHog",
+  "h1": "Get started",
+  "capturedAt": "2026-11-21T19:44:14.544Z",
+  "viewport": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "vv": {
+      "w": 390,
+      "h": 844,
+      "scale": 1
+    }
+  },
+  "requestedWidth": "390"
+}

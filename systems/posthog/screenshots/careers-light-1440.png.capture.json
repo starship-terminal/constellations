@@ -1,0 +1,17 @@
+{
+  "url": "https://posthog.com/careers",
+  "title": "Careers - PostHog",
+  "h1": "Who's hiring?",
+  "capturedAt": "2026-11-21T19:42:02.498Z",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  },
+  "requestedWidth": "1440"
+}
