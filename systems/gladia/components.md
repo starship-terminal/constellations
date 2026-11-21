@@ -42,10 +42,10 @@ Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the mode the
 | Meeting-assistant market map | `/meeting-assistant-market-map` | [default](screenshots/market-map-light-default.png), [full](screenshots/market-map-light-full.png) |
 | Benchmark reliability checker | `/benchmark-reliability-checker` | [default](screenshots/benchmark-checker-dark-default.png), [full](screenshots/benchmark-checker-dark-full.png) |
 | Competitor benchmarks | `/competitors/benchmarks` | [default](screenshots/competitors-benchmarks-dark-default.png), [full](screenshots/competitors-benchmarks-dark-full.png) |
-| Docs: introduction (Mintlify) | `docs.gladia.io/chapters/introduction` | [default](screenshots/docs-home-light-default.png), [full](screenshots/docs-home-light-full.png), [theme-dark](screenshots/docs-home-light-theme-dark.png) |
+| Docs: introduction (Mintlify) | `docs.gladia.io/chapters/introduction` | [default](screenshots/docs-home-light-default.png), [full](screenshots/docs-home-light-full.png), [theme-dark](screenshots/docs-home-light-theme-dark.png), [dark 2026-11-21](screenshots/docs-home-dark-theme.png) |
 | Docs: quickstart | `docs.gladia.io/chapters/pre-recorded-stt/quickstart` | [default](screenshots/docs-quickstart-light-default.png), [full](screenshots/docs-quickstart-light-full.png), [theme-dark](screenshots/docs-quickstart-light-theme-dark.png) |
 | Docs: API reference | `docs.gladia.io/api-reference` | [default](screenshots/docs-api-light-default.png), [full](screenshots/docs-api-light-full.png) |
-| Sign in (app shell) | `app.gladia.io/` | [default](screenshots/login-dark-default.png), [full](screenshots/login-dark-full.png) |
+| Sign in (app shell) | `app.gladia.io/signin` | [default](screenshots/login-dark-default.png) (empty, 2026-11-21), [forgot](screenshots/login-dark-forgot.png), [phone](screenshots/mobile-login-dark-default.png), [full](screenshots/login-dark-full.png) |
 | Sign up (app shell) | `app.gladia.io/signup` | [default](screenshots/signup-dark-default.png), [full](screenshots/signup-dark-full.png) |
 | Home, phone | `/` | [default](screenshots/mobile-home-dark-default.png), [drawer](screenshots/mobile-home-dark-drawer.png), [full](screenshots/mobile-home-dark-full.png) |
 | Pricing, phone | `/pricing` | [default](screenshots/mobile-pricing-dark-default.png), [full](screenshots/mobile-pricing-dark-full.png) |

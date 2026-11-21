@@ -1,0 +1,60 @@
+{
+  "slug": "gladia",
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "wall": "empty",
+  "session": "Headless Chromium. https://app.gladia.io/signin returned 200 with an empty email and password form, plus Sign in with Google. No code was sent. Google was not clicked. Nothing was typed.",
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measured": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "devicePixelRatio": 1,
+        "visualViewport": {"width": 1440, "height": 900, "scale": 1, "offsetLeft": 0, "offsetTop": 0}
+      },
+      "png": {"pixelWidth": 1440, "pixelHeight": 900}
+    },
+    "phone": {
+      "requested": "390x844",
+      "measured": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "devicePixelRatio": 2,
+        "visualViewport": {"width": 390, "height": 844, "scale": 1, "offsetLeft": 0, "offsetTop": 0}
+      },
+      "png": {"pixelWidth": 780, "pixelHeight": 1688}
+    }
+  },
+  "offered": {
+    "wall": [
+      "Email field, empty, placeholder Enter your email",
+      "Password field, empty, placeholder dots",
+      "Forgot password, which opens https://app.gladia.io/passwordReset with an empty email field and Send reset link",
+      "Sign in, not clicked",
+      "Sign in with Google, not clicked",
+      "Sign up, which is the same class of wall at https://app.gladia.io/signup"
+    ]
+  },
+  "screens": [
+    {"name": "Sign-in wall, empty, desktop 1440", "file": "screenshots/login-dark-default.png", "url": "https://app.gladia.io/signin"},
+    {"name": "Forgot-password wall, empty, desktop 1440", "file": "screenshots/login-dark-forgot.png", "url": "https://app.gladia.io/passwordReset"},
+    {"name": "Sign-up wall, empty, desktop 1440", "file": "screenshots/signup-dark-default.png", "url": "https://app.gladia.io/signup"},
+    {"name": "Sign-in wall, empty, phone 390", "file": "screenshots/mobile-login-dark-default.png", "url": "https://app.gladia.io/signin"}
+  ],
+  "gaps": [
+    "Signed-in navigation was not entered, so offered.nav is not claimed.",
+    "Settings were not entered, so offered.settings is not claimed.",
+    "Create and empty-state flows inside the app were not entered, so offered.create is not claimed.",
+    "The console, API keys, transcription playground, usage, and billing stay behind the wall."
+  ],
+  "not_submitted": [
+    "Sign in",
+    "Sign up",
+    "Sign in with Google",
+    "Sign up with Google",
+    "Send reset link",
+    "email, password, first name, last name, phone, and code fields",
+    "profile, birthday, plan, survey, onboarding, and newsletter fields"
+  ]
+}
