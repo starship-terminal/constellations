@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 18" width="26" height="18" role="img" aria-label="Vuori mark">
+  <defs>
+    <linearGradient id="vuori-mark" x1="13" y1="17.431" x2="13" y2="0.544" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A4DEF9"/>
+      <stop offset="0.229167" stop-color="#29A8E0"/>
+      <stop offset="0.671875" stop-color="#FAAF43"/>
+      <stop offset="1" stop-color="#F8EB30"/>
+    </linearGradient>
+  </defs>
+  <rect width="26" height="18" fill="url(#vuori-mark)"/>
+</svg>

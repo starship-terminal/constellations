@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Vuori style guide</title>
+  <style>
+    :root {
+      --page: #ffffff;
+      --ink: #333333;
+      --muted: #727272;
+      --promo: #f8f8f8;
+      --gifting: #811b28;
+      --button: #333333;
+      --button-text: #ffffff;
+      --shop: #5533eb;
+      --filter: #c6c6c6;
+      --google: #747775;
+    }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: Arial, sans-serif;
+    }
+    .promo {
+      background: var(--promo);
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+      line-height: 34px;
+    }
+    .wordmark {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 24px 32px 0;
+      font-size: 22px;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+    .mark {
+      width: 36px;
+      height: 24px;
+      background: linear-gradient(#F8EB30, #FAAF43, #29A8E0, #A4DEF9);
+    }
+    main { padding: 8px 32px 48px; max-width: 880px; }
+    h1 { font-weight: 500; font-size: 50px; letter-spacing: -2.5px; line-height: 60px; }
+    h2 { font-weight: 400; font-size: 28px; letter-spacing: -0.84px; }
+    p { font-size: 14px; line-height: 24px; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0; align-items: center; }
+    .swatch { width: 72px; height: 48px; border: 1px solid var(--filter); }
+    .label { font-size: 12px; color: var(--muted); }
+    .hero {
+      background: var(--page);
+      color: var(--ink);
+      border: 0;
+      height: 60px;
+      padding: 8px 22px;
+      font-size: 15px;
+    }
+    .ink {
+      background: var(--button);
+      color: var(--button-text);
+      border: 0;
+      height: 44px;
+      padding: 0 22px;
+      border-radius: 2px;
+      font-size: 14px;
+    }
+    .pill {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--ink);
+      height: 36px;
+      padding: 0 16px;
+      border-radius: 3996px;
+      font-size: 14px;
+    }
+    .field {
+      height: 40px;
+      width: 280px;
+      border: 0.5px solid var(--ink);
+      border-radius: 2px;
+      padding: 0 12px;
+      font-size: 15px;
+    }
+    .gifting { color: var(--gifting); }
+    nav a { color: var(--ink); margin-right: 16px; font-size: 14px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="promo">Free Standard Shipping With Orders Over $75</div>
+  <div class="wordmark"><span class="mark"></span> VUORI</div>
+  <main>
+    <nav>
+      <a href="#new">New</a>
+      <a href="#women">Women</a>
+      <a href="#men">Men</a>
+      <a href="#accessories">Accessories</a>
+      <a class="gifting" href="#gifting">Gifting</a>
+      <a href="#explore">Explore</a>
+    </nav>
+    <h1>All-New Outerwear</h1>
+    <p>Give winter a warm welcome in outerwear built for range.</p>
+    <div class="row">
+      <button class="hero" type="button">Shop Men's</button>
+      <button class="hero" type="button">Shop Women's</button>
+      <button class="ink" type="button">Select Size</button>
+      <button class="pill" type="button">Ask AI</button>
+    </div>
+    <h2>Women's Collection</h2>
+    <div class="row">
+      <label>Email <input class="field" type="email" value="" readonly></label>
+    </div>
+    <div class="row">
+      <div><div class="swatch" style="background:#ffffff"></div><div class="label">Page #ffffff</div></div>
+      <div><div class="swatch" style="background:#333333"></div><div class="label">Ink #333333</div></div>
+      <div><div class="swatch" style="background:#727272"></div><div class="label">Muted #727272</div></div>
+      <div><div class="swatch" style="background:#f8f8f8"></div><div class="label">Promo #f8f8f8</div></div>
+      <div><div class="swatch" style="background:#811b28"></div><div class="label">Gifting #811b28</div></div>
+      <div><div class="swatch" style="background:#5533eb"></div><div class="label">Shop #5533eb</div></div>
+    </div>
+  </main>
+</body>
+</html>

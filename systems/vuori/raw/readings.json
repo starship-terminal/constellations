@@ -1,0 +1,188 @@
+{
+  "date": "2026-11-22",
+  "url": "https://vuoriclothing.com/",
+  "title": "Athletic Clothing & Activewear Apparel for Performance – Vuori",
+  "viewport": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2 },
+  "theme": "light",
+  "typed": false,
+  "submitted": false,
+  "body": {
+    "fontFamily": "aktiv-grotesk, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "300",
+    "lineHeight": "23.94px",
+    "letterSpacing": "-0.14px",
+    "color": "rgba(0, 0, 0, 0.87)",
+    "backgroundColor": "rgb(255, 255, 255)"
+  },
+  "promoBar": {
+    "height": "34px",
+    "backgroundSampled": "#f8f8f8",
+    "text": "Free Standard Shipping With Orders Over $75",
+    "textColor": "#727272",
+    "textSize": "12px",
+    "textWeight": "400",
+    "letterSpacing": "-0.12px",
+    "lineHeight": "18px"
+  },
+  "header": {
+    "height": "80px",
+    "offsetTop": "34px",
+    "background": "#ffffff",
+    "boxShadow": "none",
+    "navLink": {
+      "fontFamily": "aktiv-grotesk, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "letterSpacing": "-0.14px",
+      "lineHeight": "23.94px",
+      "color": "#333333",
+      "padding": "28px 0px"
+    },
+    "gifting": { "color": "#811b28", "computed": "rgb(129, 27, 40)" },
+    "logo": { "width": 112, "height": 18, "x": 16, "y": 65, "wordmarkFill": "#333333" },
+    "markStops": ["#A4DEF9", "#29A8E0", "#FAAF43", "#F8EB30"],
+    "search": {
+      "placeholder": "Search Vuori",
+      "height": "36px",
+      "width": "420px",
+      "border": "1px solid rgb(51, 51, 51)",
+      "radius": "3996px",
+      "inputSize": "14px",
+      "inputWeight": "400"
+    },
+    "askAi": {
+      "height": "36px",
+      "border": "1px solid rgb(51, 51, 51)",
+      "radius": "3996px",
+      "color": "#333333",
+      "fontFamily": "Arial",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "note": "The button box reports Arial 18px. The visible label reports Arial 14px."
+    }
+  },
+  "hero": {
+    "display": {
+      "text": "All-New Outerwear",
+      "fontFamily": "aktiv-grotesk, sans-serif",
+      "fontSize": "50px",
+      "fontWeight": "500",
+      "lineHeight": "60px",
+      "letterSpacing": "-2.5px",
+      "color": "#ffffff"
+    },
+    "shopButton": {
+      "text": "Shop Men's",
+      "height": "60px",
+      "width": "223px",
+      "background": "#ffffff",
+      "color": "#333333",
+      "fontSize": "15px",
+      "fontWeight": "400",
+      "letterSpacing": "-0.14px",
+      "lineHeight": "21px",
+      "radius": "0px",
+      "padding": "8px 22px",
+      "clicked": false
+    }
+  },
+  "categoryPage": {
+    "url": "https://vuoriclothing.com/collections/womens",
+    "h1": {
+      "text": "Women's Collection",
+      "fontSize": "28px",
+      "fontWeight": "400",
+      "lineHeight": "37.24px",
+      "letterSpacing": "-0.84px",
+      "color": "#333333"
+    },
+    "filter": {
+      "height": "32px",
+      "fontSize": "13px",
+      "border": "1px solid rgb(198, 198, 198)",
+      "radius": "0px",
+      "color": "#333333",
+      "opened": false
+    }
+  },
+  "productPage": {
+    "url": "https://vuoriclothing.com/products/womens-taika-snow-bib-french-roast",
+    "h1": {
+      "text": "Women's Taika Snow Bib",
+      "fontSize": "21.008px",
+      "fontWeight": "400",
+      "letterSpacing": "-0.63024px",
+      "lineHeight": "27.5205px",
+      "color": "#333333"
+    },
+    "price": { "text": "$358", "fontSize": "21.008px", "fontWeight": "400", "color": "#333333" },
+    "selectSize": {
+      "height": "44px",
+      "width": "333px",
+      "background": "#333333",
+      "color": "#ffffff",
+      "radius": "2px",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "clicked": false
+    },
+    "sizeChip": { "height": "44px", "radius": "2px", "fontSize": "14px", "clicked": false }
+  },
+  "aboutPage": {
+    "url": "https://vuoriclothing.com/pages/our-story",
+    "h2": {
+      "text": "A New Perspective On Performance Apparel",
+      "fontSize": "21px",
+      "fontWeight": "700",
+      "letterSpacing": "-0.14px",
+      "color": "#000000"
+    }
+  },
+  "loginWall": {
+    "url": "https://vuoriclothing.com/account/login",
+    "title": "Login – Vuori",
+    "heading": {
+      "text": "Sign in",
+      "fontSize": "21.008px",
+      "fontWeight": "400",
+      "letterSpacing": "-0.63024px",
+      "color": "#333333"
+    },
+    "email": {
+      "value": "",
+      "wrapHeight": "40px",
+      "wrapWidth": "375px",
+      "wrapBorder": "0.5px solid rgb(51, 51, 51)",
+      "wrapRadius": "2px",
+      "inputSize": "15px",
+      "submitted": false
+    },
+    "shopButton": {
+      "backgroundSampled": "#5533eb",
+      "computedMissing": true,
+      "clicked": false
+    },
+    "googleButton": {
+      "height": "40px",
+      "background": "#ffffff",
+      "color": "#1f1f1f",
+      "border": "1px solid rgb(116, 119, 117)",
+      "radius": "4px",
+      "clicked": false
+    },
+    "signupSameWall": true
+  },
+  "footer": {
+    "heading": {
+      "text": "The Rise. The Shine.",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "letterSpacing": "-0.36px"
+    },
+    "copy": { "fontSize": "14px", "fontWeight": "300", "color": "#727272" },
+    "email": { "height": "40px", "submitted": false }
+  },
+  "cardTitle": { "fontSize": "14px", "fontWeight": "300", "color": "#333333" },
+  "tilePrice": { "text": "$358", "fontSize": "12px", "fontWeight": "400", "color": "#333333" }
+}
