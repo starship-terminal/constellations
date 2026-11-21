@@ -85,3 +85,19 @@ How NotebookLM's components combine for its recurring jobs, written from the 202
 **Layout.** A 1000px dialog (`radius.dialog`) with the product mark, a one-line headline, a divider and three illustrated columns (picture, title in `typography.title-medium`, two lines of `text.secondary`), closed only by the X. Smaller news stays in place: a dismissible banner at the top of Studio ("New: You can now create Interactive Reports!" with a Try it tonal button) and a "New!" badge on the Reports tile.
 
 **Example.** [notebook-dark-announcement](screenshots/notebook-dark-announcement.png), [notebook-light-announcement](screenshots/notebook-light-announcement.png), [notebook-dark](screenshots/notebook-dark.png) (banner and badge).
+
+## Public marketing page
+
+**When.** Signed out. `https://notebooklm.google.com` and `https://notebook.google.com/` both land on `/trynow`.
+
+**Layout.** A wordmark header, one headline, a feature illustration, and a two-link footer. At 1440 the header shows Sign in. At 390 that control leaves the header and Get the app appears above Sign in to Gemini Notebook. Feature labels (Slide decks, Mind Maps, Audio Overviews, Video Overviews) are captions on the illustration, not links.
+
+**Example.** [home-public-light-desktop](screenshots/home-public-light-desktop.png), [home-public-light-phone](screenshots/home-public-light-phone.png).
+
+## Empty login wall
+
+**When.** Sign in, from the header or the hero, before any account is chosen.
+
+**Layout.** Google Accounts identifier step: Email or phone, Forgot email?, Create account, Next. The field was empty. Next was not clicked. Create account was not opened.
+
+**Example.** [login-empty-light-desktop](screenshots/login-empty-light-desktop.png), [login-empty-light-phone](screenshots/login-empty-light-phone.png).
