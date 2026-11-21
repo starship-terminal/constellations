@@ -147,7 +147,11 @@ Good for: Signed-out video chrome: black page, razzmatazz login button, cyan-and
 
 Captured 2026-11-19, signed out. Public marketing and login chrome only. No account, no phone, no email.. Themes: dark.
 
-Public signed-out chrome for TikTok, captured 2026-11-19 from https://www.tiktok.com/. No account. English. One dark theme. Desktop readings are at innerWidth 1169, innerHeight 731, devicePixelRatio 2. Phone readings are the same URL at innerWidth 390, innerHeight 844, devicePixelRatio 2. A 1440 CSS-pixel width was not reached. The login dialog said the account location is Singapore.
+Public signed-out chrome for TikTok, refreshed 2026-11-21 with headless Playwright. https://www.tiktok.com/ redirected to https://www.tiktok.com/explore. No account. English. The page loaded with `data-tux-color-scheme="light"`. Desktop shots are innerWidth 1440, innerHeight 900, devicePixelRatio 2. Phone shots are innerWidth 390, innerHeight 844, devicePixelRatio 2.
+
+A 2026-11-19 pass measured a dark shell at innerWidth 1169. Those readings stay in [raw/computed.json](raw/computed.json) and the `dark` token set. This pass did not reproduce that dark shell. The More panel has a Dark mode control. Clicking it did not change the scheme.
+
+Log in opens a dialog on Explore. Upload redirects to https://www.tiktok.com/login. Both were photographed and not submitted. Facebook, Google, LINE, KakaoTalk, and Apple were not clicked. The map of controls is [site-tree.md](site-tree.md).
 
 ## Colors
 
@@ -207,20 +211,22 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- Hover, pressed, disabled, error, and toast colours are declared custom properties or were not painted.
-- The focus ring is a stylesheet rule for `:focus-visible`. No control was focused.
+- The `dark` set is the 2026-11-19 page. This Playwright pass loaded light. Do not treat a dark screenshot as missing. There is no dark page shot from 2026-11-21.
+- Light hover is `#ea284e` and light pressed is `#e0274b` on the filled Log in button only. Other controls were not hovered.
+- The focus ring is a stylesheet rule for `:focus-visible`. No control was focused on this pass.
 - Shadows in `core.shadow` are declared `--tux-v2-shadow-*` values. The measured controls had `box-shadow: none`.
 - The ease token expands the CSS keyword. The 250ms duration was measured. The control points are the keyword's standard expansion, marked Derived.
-- [screenshots/home-dark-unavailable.png](screenshots/home-dark-unavailable.png) is a black label, not a capture of the page. Do not sample colours from it.
-- The hidden search form (radius 92px, fill white at 12%) had a painted size of 0. The visible search control is the capsule button.
+- The search input had a painted size of 0. The visible search control is the sidebar field in the screenshots.
 - Feed captions, creator names, and counts are page content, not tokens.
-- `--tux-colorPrimary` (`#ff3b5c`) and `--brand-tiktok-razzmatazz` (`#fe2c55`) are both on the page. The filled Log in button uses razzmatazz. The selected nav and the Sign up link use primary.
+- On the 2026-11-19 dark page, `--tux-colorPrimary` was `#ff3b5c` and the filled button was `#fe2c55`. On the 2026-11-21 light page, `--tux-colorPrimary` computed `#fe2c55`, and the selected Explore nav used that same red.
+- The login legal line names a region. That string is not stored here.
+- For You in this browser showed "We're having trouble playing this video." That is the headless player, not a designed empty state. LIVE's "No LIVE streams for you yet" is the page's own empty copy.
 
 ### Do and don't (from README.md)
 
-- **Use razzmatazz for the filled Log in button.** `#fe2c55`, white type, 6px radius, 40px tall.
-- **Use primary for the selected nav item and Sign up.** `#ff3b5c` on a transparent button.
-- **Keep the page black and the sheet `#1e1e1e`.** Body type is white at 90%. Sidebar headings are white at 50%.
-- **Put login channels on the white 13% pill.** 300 by 48, radius 24px, on the 24px sheet.
-- **Do not invent a light theme.** These pages do not switch.
+- **Use razzmatazz for the filled Log in button.** `#fe2c55`, white type, 6px radius, 40px tall. See [screenshots/explore-light-default.png](screenshots/explore-light-default.png).
+- **Use the same red for the selected nav item and Sign up on the light page.** Explore and Sign up computed `#fe2c55`. See [screenshots/login-light-dialog.png](screenshots/login-light-dialog.png).
+- **Keep the light page white and the type `#161823`.** The 2026-11-21 shell is light. The 2026-11-19 dark readings stay in the `dark` set.
+- **Put login channels on a 300 by 48 pill, radius 24px.** Light fill is black at 5%. See [screenshots/login-light-dialog.png](screenshots/login-light-dialog.png).
+- **Stop at the login wall.** QR, phone, email, and identity providers are the wall, not a next screen.
 - **Do not draw a drop shadow on these controls.** None was measured. Declared shadows stay in the token file as declared.

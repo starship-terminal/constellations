@@ -3,7 +3,7 @@
   "url": "https://www.tiktok.com/",
   "title": "TikTok - Make Your Day",
   "signedOut": true,
-  "localeNote": "The login dialog said the account location is Singapore. English chrome.",
+  "localeNote": "English chrome. The login dialog named an account region. That string is not stored.",
   "theme": {
     "data-theme": "dark",
     "data-tux-color-scheme": "dark",

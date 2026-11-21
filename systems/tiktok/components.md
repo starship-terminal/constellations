@@ -1,6 +1,6 @@
 # Components
 
-Public signed-out chrome on https://www.tiktok.com/, read on 2026-11-19. Values are token names. Crops were not saved: `preview_snapshot` returned no frames.
+Public signed-out chrome. Dark values are the 2026-11-19 readings. Light values are the 2026-11-21 Playwright readings. Crops were not cut. The page shots are in [screenshots/](screenshots/).
 
 ## Button
 
@@ -9,8 +9,8 @@ The desktop Log in control in the sidebar.
 | State | What was read |
 |---|---|
 | Default | `component.button.bg` `#fe2c55`, `component.button.text` white, `component.button.radius` 6px, `component.button.height` 40px, padding 1px 16px, type `typography.button` 16px weight 500. Width 200px at innerWidth 1169. |
-| Hover | Not painted. No hover rule was read for this TUX primary button. |
-| Pressed | Not painted. `--tux-v2-pressed-state-strong-scale` is 0.9 and the opacity token is 0.4. Those were not applied to a pressed control. |
+| Hover | Light pass: background `#ea284e` while the pointer was over the desktop Log in button. Transform none. |
+| Pressed | Light pass: background `#e0274b` while the pointer was down. Transform none. Opacity 1. |
 | Focus | Declared `button:focus-visible` outline is 2px solid `#ff4c3a`. `:focus` sets outline none. Not painted. |
 | Disabled | Not shown. |
 | Phone | The visible Log in control is a 40 by 40 icon button, transparent, white, radius 6px, 14px weight 400. The filled primary is not painted at innerWidth 390. |
