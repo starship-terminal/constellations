@@ -1,0 +1,135 @@
+{
+  "captured": "2026-11-22",
+  "startUrl": "https://www.cos.com",
+  "landedUrl": "https://www.cos.com/en-sg/",
+  "region": "Singapore (English)",
+  "currency": "SGD",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewportScale": 1,
+    "screenshot": "2880x1800"
+  },
+  "notice": {
+    "background": "rgb(8, 8, 8)",
+    "color": "rgb(255, 255, 255)",
+    "font": "SIM_Regular",
+    "size": "12px",
+    "weight": "400",
+    "tracking": "0.48px",
+    "height": 32
+  },
+  "header": {
+    "background": "rgb(255, 255, 255)",
+    "height": 50,
+    "totalWithNotice": 82
+  },
+  "navLink": {
+    "color": "rgb(8, 8, 8)",
+    "font": "SIM_Regular",
+    "size": "13px",
+    "weight": "400",
+    "tracking": "0.5px"
+  },
+  "logo": {
+    "fill": "rgb(8, 8, 8)",
+    "width": 66,
+    "height": 22,
+    "sprite": "assets/iconSprite.svg#logo"
+  },
+  "heroTitle": {
+    "color": "rgb(255, 255, 255)",
+    "font": "SuisseIntl",
+    "size": "35px",
+    "weight": "700",
+    "tracking": "0.48px"
+  },
+  "categoryTitle": {
+    "color": "rgb(8, 8, 8)",
+    "font": "SuisseIntl",
+    "size": "16px",
+    "weight": "600",
+    "tracking": "0.16px"
+  },
+  "productTitle": {
+    "color": "rgb(8, 8, 8)",
+    "font": "SIM_Regular",
+    "size": "16px",
+    "weight": "600",
+    "tracking": "0.64px"
+  },
+  "price": {
+    "color": "rgb(8, 8, 8)",
+    "font": "SIM_Regular",
+    "size": "12px",
+    "weight": "400",
+    "sample": "S$ 275.00"
+  },
+  "addToBag": {
+    "background": "rgb(8, 8, 8)",
+    "color": "rgb(255, 255, 255)",
+    "font": "SIM_Regular",
+    "size": "13px",
+    "weight": "400",
+    "tracking": "0.48px",
+    "width": 372,
+    "height": 56,
+    "radius": "0px",
+    "clicked": false
+  },
+  "sizeChip": {
+    "background": "rgb(255, 255, 255)",
+    "color": "rgb(8, 8, 8)",
+    "border": "1px solid rgb(133, 133, 133)",
+    "font": "SIM_Regular",
+    "size": "13px",
+    "weight": "700",
+    "radius": "0px",
+    "selected": false
+  },
+  "cookieButton": {
+    "background": "rgb(255, 255, 255)",
+    "color": "rgb(8, 8, 8)",
+    "border": "1px solid rgb(8, 8, 8)",
+    "font": "SuisseIntl, sans-serif",
+    "size": "13.008px",
+    "weight": "600",
+    "tracking": "0.39024px",
+    "width": 450,
+    "height": 49,
+    "radius": "0px",
+    "clicked": false
+  },
+  "cookieCard": {
+    "background": "rgb(255, 255, 255)",
+    "width": 480,
+    "height": 396,
+    "radius": "0px"
+  },
+  "aboutTitle": {
+    "color": "rgb(8, 8, 8)",
+    "font": "SuisseIntl, sans-serif",
+    "size": "35px",
+    "weight": "700",
+    "tracking": "0.35px"
+  },
+  "footer": {
+    "background": "rgb(8, 8, 8)",
+    "color": "rgb(255, 255, 255)",
+    "headingFont": "SuisseIntl, sans-serif",
+    "headingSize": "13px",
+    "headingWeight": "600",
+    "headingTracking": "0.39px",
+    "linkSize": "13px",
+    "linkWeight": "400"
+  },
+  "body": {
+    "background": "rgb(255, 255, 255)",
+    "color": "rgb(8, 8, 8)",
+    "font": "SIM_Regular",
+    "size": "12px",
+    "weight": "400",
+    "tracking": "0.48px"
+  }
+}

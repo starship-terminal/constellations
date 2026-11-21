@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>COS public tokens</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --ink: #080808;
+    --on-ink: #ffffff;
+    --chip: #858585;
+    --ui: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--ui);
+    font-size: 12px;
+    letter-spacing: 0.48px;
+  }
+  .notice {
+    background: var(--ink);
+    color: var(--on-ink);
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    font-size: 12px;
+  }
+  .notice a { color: var(--on-ink); }
+  .nav {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    background: var(--page);
+  }
+  .dept { font-size: 13px; letter-spacing: 0.5px; margin-right: 28px; }
+  .word {
+    margin: 0 auto;
+    font-size: 22px;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+  }
+  .icons { display: flex; gap: 24px; font-size: 14px; }
+  main { padding: 40px 20px 64px; }
+  h1 { font-size: 35px; font-weight: 700; letter-spacing: 0.35px; margin: 0 0 24px; }
+  .swatches { display: flex; gap: 16px; margin-bottom: 32px; }
+  .swatch { width: 96px; }
+  .chip { height: 48px; border: 1px solid var(--chip); }
+  .ink { background: var(--ink); }
+  .page { background: var(--page); border: 1px solid var(--chip); }
+  .bag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 372px;
+    height: 56px;
+    background: var(--ink);
+    color: var(--on-ink);
+    font-size: 13px;
+    letter-spacing: 0.48px;
+    border-radius: 0;
+  }
+  .sizes { display: flex; margin: 24px 0; }
+  .size {
+    width: 72px;
+    height: 48px;
+    border: 1px solid var(--chip);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    margin-left: -1px;
+  }
+  footer {
+    background: var(--ink);
+    color: var(--on-ink);
+    padding: 32px 20px;
+    display: flex;
+    gap: 48px;
+    font-size: 13px;
+  }
+  footer strong { display: block; font-weight: 600; letter-spacing: 0.39px; margin-bottom: 12px; }
+</style>
+</head>
+<body>
+  <div class="notice">NEW ARRIVALS | <a>SHOP WOMEN</a> <a>SHOP MEN</a></div>
+  <div class="nav">
+    <span class="dept">WOMEN</span>
+    <span class="dept">MEN</span>
+    <span class="word">COS</span>
+    <span class="icons"><span>search</span><span>account</span><span>bag</span></span>
+  </div>
+  <main>
+    <h1>ABOUT US</h1>
+    <div class="swatches">
+      <div class="swatch"><div class="chip page"></div><div>page #ffffff</div></div>
+      <div class="swatch"><div class="chip ink"></div><div>ink #080808</div></div>
+    </div>
+    <div class="sizes"><div class="size">XS</div><div class="size">S</div><div class="size">M</div><div class="size">L</div></div>
+    <div class="bag">ADD TO BAG</div>
+  </main>
+  <footer>
+    <div><strong>The company</strong>About<br>Careers<br>Press</div>
+    <div><strong>Assistance</strong>Contact us<br>Delivery information</div>
+    <div><strong>Legal</strong>Privacy policy<br>Terms and conditions</div>
+  </footer>
+</body>
+</html>
