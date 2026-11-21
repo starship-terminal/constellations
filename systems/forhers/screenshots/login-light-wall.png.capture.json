@@ -1,0 +1,16 @@
+{
+  "capturedAt": "2026-11-21",
+  "sourceUrl": "https://www.forhers.com/",
+  "note": "Login wall opened from the header Log in control, then /account/login. Empty email and password. Not submitted. Google and Apple not clicked. The left pane is the site 404 chrome that the login route paints beside the form. Viewport 1440x900 at 1x.",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "devicePixelRatio": 1
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "theme": "light",
+  "signedIn": false
+}

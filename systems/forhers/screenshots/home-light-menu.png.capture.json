@@ -1,0 +1,16 @@
+{
+  "capturedAt": "2026-11-21",
+  "sourceUrl": "https://www.forhers.com/",
+  "note": "Slide menu open on the More panel. The closed-menu click did not hydrate a fresh drawer in this session, so this frame is the drawer that was already open. Viewport 1440x900 at 1x.",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "devicePixelRatio": 1
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "theme": "light",
+  "signedIn": false
+}

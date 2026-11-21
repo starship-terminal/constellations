@@ -1,0 +1,68 @@
+{
+  "capturedAt": "2026-11-21",
+  "signed_in": false,
+  "method": "Public Hers in the T3 preview tab, signed out, light theme. The preview compositor would not emit frames, and Playwright hit a Cloudflare interstitial that was not solved. Screenshots are renders of the live DOM plus the live stylesheet, with scripts stripped. No email, password, phone, or code was typed. No identity provider was clicked. No form was submitted.",
+  "offered": {
+    "nav": {
+      "items": [
+        "Home",
+        "Log in",
+        "Slide Menu Toggle",
+        "Weight Loss",
+        "Peptides+",
+        "Hair Regrowth",
+        "Menopause",
+        "Perimenopause",
+        "Labs",
+        "More"
+      ],
+      "reached": [
+        "Home",
+        "Log in",
+        "Slide Menu Toggle",
+        "More"
+      ],
+      "note": "Signed out. The header is the wordmark, Log in, and Slide Menu Toggle. The photographed drawer was the More panel. The other category panels were read from the homepage navigation payload and not photographed one by one."
+    },
+    "settings": {
+      "items": [],
+      "reached": [],
+      "note": "No settings screen was offered. The account was not entered. There is no theme switch."
+    },
+    "create": {
+      "items": [
+        "Create an account",
+        "Continue with Google",
+        "Continue with Apple"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-menu.png",
+    "screenshots/home-light-menu-more.png",
+    "screenshots/login-light-wall.png",
+    "screenshots/home-light-mobile.png"
+  ],
+  "gaps": [
+    "Signed-in account, orders, subscriptions, and settings were not entered.",
+    "The login wall offers empty Email and Password fields, Forgot your password?, Log in, Create an account, Continue with Google, and Continue with Apple. None was used.",
+    "Quiz, consultation, and intake paths (/quiz, /g/i/..., /c/..., /lp/...) were not followed.",
+    "Checkout was not opened. Nothing was added to a cart.",
+    "Validation, error, and post-submit states were not seen because no form was submitted.",
+    "Weight Loss, Peptides+, Hair Regrowth, Menopause, Perimenopause, and Labs drawer panels were not photographed on this pass.",
+    "Playwright could not load the live origin past Cloudflare, so these frames are DOM renders, not compositor screenshots."
+  ],
+  "not_submitted": [
+    "login email",
+    "login password",
+    "forgot password",
+    "create an account",
+    "continue with google",
+    "continue with apple",
+    "consultation",
+    "quiz",
+    "checkout"
+  ]
+}
