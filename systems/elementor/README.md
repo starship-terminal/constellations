@@ -1,6 +1,6 @@
 # Elementor design reference
 
-A token set and component reference for Elementor's public signed-out surface — for building marketing pages in the style of the real thing. It was read from **elementor.com** on **2026-11-13**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: home, the website-builder product page, pricing, the enterprise solutions page, about, contact (with its popup form opened) and FAQ (with an accordion item opened), plus 390px passes on home and pricing.
+A token set and component reference for Elementor's public signed-out surface — for building marketing pages in the style of the real thing. Values were read from **elementor.com** on **2026-11-13**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: home, the website-builder product page, pricing, the enterprise solutions page, about, contact (with its popup form opened) and FAQ (with an accordion item opened), plus 390px passes on home and pricing. A **2026-11-21** refresh mapped the public tree (header, footer, menus, language, help, docs, pricing toggles) and wrote [site-tree.md](site-tree.md). Token values were re-read the same day and matched the 2026-11-13 set, so the token files were left as measured then.
 
 Elementor is worth a capture because the world's biggest WordPress site builder eats its own cooking: elementor.com is itself an Elementor site, so the styles read off it are the company's shipped marketing system — Roobert at an 88px display down to 14px lists, a strict Kernel-Black / Blank-Canvas-White axis where nothing coloured rests (every action is black until hover, when it rebounds to Neon-Loop `#ed01ee`), a Syntax-Glow `#fae4fa` tint behind hovered rows, a floating 24px-radius pill header under one soft shadow, and a radius ladder of 4px fields, 8px controls and cards, 16px tiles, 24px chrome. The page paints light but carries `.dark-mode` islands — the photo hero, dark sections and the footer — under which the same named vars re-bind to their opposites, so "dark" here is a surface treatment, not a theme. **Boundary:** the Elementor editor itself is a WordPress admin plugin and lives behind auth at my.elementor.com; nothing signed-in, submitted or purchased was ever reached.
 
@@ -13,7 +13,9 @@ Elementor is worth a capture because the world's biggest WordPress site builder 
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (45, 100 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the floating pill chrome and mega-menu, the dark hero island, pricing, the contact popup form, FAQ, footer, mobile, the state signature |
 | [components/crops/](components/crops) | Element screenshots, `{component}-{state}.png` |
-| [screenshots/](screenshots) | 23 `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages, `mobile-*` phone shots at 390, plus toggled states: the Products mega-menu, the contact form popup, an open FAQ row, the mobile menu |
+| [screenshots/](screenshots) | 23 `{page}-{theme}-{state}.png` captures from 2026-11-13, plus [screenshots/tree/](screenshots/tree/) (32 opened-state shots from the 2026-11-21 tree pass). Desktop 1440 x 900 at 1x, phone shots at a 390 CSS viewport |
+| [site-tree.md](site-tree.md) | Which control opens which page, dialog, drawer, or in-page state, with the shot for each opened state |
+| [login-review.json](login-review.json) | Walls this pass stopped at, and the statement that nothing was submitted |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — every custom property resolved plain and inside `.dark-mode`), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
 
@@ -123,7 +125,7 @@ One family does everything the styled surface paints: **Roobert**, self-hosted u
 
 - **Pages:** `/`, `/products/website-builder/`, `/pricing/`, `/solutions/enterprise/`, `/about/`, `/contact/`, `/faq/` at 1440 x 900; `/` and `/pricing/` at 390 x 844.
 - **States:** default, hover, focus-visible and pressed on every interactive component (100 states over 45 components); opened states on the mega-menu, the contact popup, an FAQ row and the mobile menu; focused/filled on the name field; selected on the checkbox.
-- **Not captured:** everything behind my.elementor.com (the editor, hosting dashboard, account, billing), checkout (Buy now never pressed), every signup/Login target, the Cookiebot consent response (hidden, never answered), the Angie chat widget and promo popups (closed or hidden), disabled/error/loading states (none exist on the public surface).
+- **Not captured:** everything behind my.elementor.com (the editor, hosting dashboard, account, billing), checkout (Buy now never pressed), every signup target, the Cookiebot consent response (no dialog painted on the 2026-11-21 loads, and none was answered), the Angie chat widget (hidden for page shots), disabled/error/loading states (none exist on the public surface). The 2026-11-21 login wall is photographed and then stopped; see [login-review.json](login-review.json).
 
 ## Do and don't
 
