@@ -1,0 +1,88 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://www2.hm.com/en_sg/index.html",
+  "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2 },
+  "body": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(242, 242, 242)",
+    "fontFamily": "\"HM Slussen\", \"ヒラギノ角ゴ Pro W3\", \"Hiragino Kaku Gothic Pro\", Osaka, メイリオ, Meiryo, \"ＭＳ Ｐゴシック\", \"MS PGothic\", sans-serif",
+    "fontSize": "13px",
+    "fontWeight": "400",
+    "lineHeight": "16.9px"
+  },
+  "promo": {
+    "color": "rgb(235, 0, 16)",
+    "backgroundColor": "rgb(0, 0, 0)",
+    "fontSize": "14px",
+    "fontWeight": "100",
+    "textTransform": "uppercase",
+    "barHeight": "49px"
+  },
+  "nav": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "height": "56px",
+    "linkColor": "rgb(242, 242, 242)",
+    "linkSize": "14px",
+    "linkWeight": "100",
+    "inactiveLinkColor": "rgb(160, 160, 160)"
+  },
+  "logoFill": "#E50010",
+  "logoFillComputed": "rgb(229, 0, 16)",
+  "shippingNotice": {
+    "backgroundColor": "rgb(102, 102, 102)",
+    "color": "rgb(242, 242, 242)",
+    "height": "56px"
+  },
+  "heading": {
+    "color": "rgb(242, 242, 242)",
+    "fontSize": "16px",
+    "fontWeight": "100",
+    "lineHeight": "20px",
+    "textTransform": "uppercase"
+  },
+  "price": {
+    "color": "rgb(242, 242, 242)",
+    "fontSize": "16px",
+    "fontWeight": "100",
+    "text": "S$ 79.90"
+  },
+  "addToBag": {
+    "backgroundColor": "rgb(242, 242, 242)",
+    "color": "rgb(0, 0, 0)",
+    "height": "56px",
+    "width": "458px",
+    "borderRadius": "0px",
+    "fontSize": "14px",
+    "fontWeight": "100",
+    "textTransform": "uppercase"
+  },
+  "login": {
+    "url": "https://www2.hm.com/en_sg/login",
+    "headingSize": "44px",
+    "headingWeight": "100",
+    "headingColor": "rgb(242, 242, 242)",
+    "fieldBorder": "1px solid rgb(128, 128, 128)",
+    "fieldHeight": "56px",
+    "continueBackground": "rgb(242, 242, 242)",
+    "continueColor": "rgb(0, 0, 0)",
+    "continueHeight": "56px",
+    "continueWidth": "454px",
+    "continueRadius": "0px"
+  },
+  "signup": {
+    "url": "https://www2.hm.com/en_us/register",
+    "heading": "BECOME A MEMBER",
+    "headingSize": "44px",
+    "signUpBackground": "rgb(242, 242, 242)",
+    "signUpColor": "rgb(0, 0, 0)",
+    "signUpHeight": "56px",
+    "signUpWidth": "454px",
+    "fieldBorder": "1px solid rgb(128, 128, 128)"
+  },
+  "newsletter": {
+    "url": "https://www2.hm.com/en_sg/newsletter.html",
+    "subscribeBackground": "rgb(38, 38, 38)",
+    "subscribeColor": "rgb(115, 115, 115)",
+    "note": "Disabled while empty. Not clicked. Not photographed."
+  }
+}
