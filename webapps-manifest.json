@@ -1303,7 +1303,7 @@
       "description": "Generate branded designs and endless post ideas",
       "status": "captured",
       "package": "systems/designstripe",
-      "notes": "public signed-out pass only (designstripe.com redirects to visual.app): marketing, /assets library and set galleries, /tools, /about, /contact, /blog; the design agents and every post-waitlist surface stay account-only https://designstripe.com/login redirects to https://visual.app/login, a 404. The product is now Visual and its login is a waitlist. No sign-in form.",
+      "notes": "public signed-out pass only (designstripe.com redirects to visual.app): marketing, /assets library and set galleries, /tools, /about, /contact, /blog; the design agents and every post-waitlist surface stay account-only https://designstripe.com/login redirects to https://visual.app/login, a 404. The product is now Visual and its login is a waitlist. No sign-in form. Public walk 2026-11-21: the public site tree is in systems/designstripe/site-tree.md. designstripe.com still redirects to visual.app. WAITLIST opens one dialog that asks for a first name, a work email, a company name, and a company size. The dialog was photographed empty. Nothing was typed. No identity provider was clicked. No form was submitted. login-review.json has offered.nav, offered.settings, offered.create, screens, gaps, and not_submitted. Screen files were not checked on this branch. login-extracted stays not-started. Public package refresh in PR 1713 at ef12123aa602. catalog.json not in that PR.",
       "login-extracted": "not-started",
       "login-probe": "closed",
       "batch": 4
