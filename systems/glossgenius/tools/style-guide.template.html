@@ -103,7 +103,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-primary-gray-200, #e4
 
   <h2 class="sh">GlossGenius, measured</h2>
   <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the marketing site's Webflow variable layer (<code>--_color---primary--gloss-black</code> #17150e, <code>--_color---primary--gloss-white</code> #f0f7f6, the gray ramp and the 16-hue <code>--_color---super--*</code> accent family — amber, cerulean, coral, fuchsia, gold, jade, mauve, midnight, opal, orchid, pine, sage, sienna, smoke, sunset, violet — plus the <code>--_size---*px</code>, <code>--_typography---*</code>, <code>--_layout---*</code> and <code>--_components---*</code> collections), the app's glossDS layer (<code>--content-*</code>, <code>--surface-*</code>, <code>--brand-*</code>, <code>--space-*x</code>, <code>--radius-*</code>, <code>--font-*</code>, <code>--button-*</code>) and the published booking site's own <code>.tokens_glossDS__*</code> family, plus the measured type ramp, radius ladder and component sizes. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from glossgenius.com, app.glossgenius.com and honeyhivesalon.glossgenius.com (a real published booking website), signed out, in headless Chromium. Everything post-login is a documented boundary; the sign-in, sign-up, restore and demo forms were measured and typed into then cleared, never submitted; the booking flow was browsed to its public date-picker step, never booked. The Basel Grotesk/Classic faces are served faces and are not loaded here: samples fall back to system sans. No dark theme exists signed out — the app's <code>.dark</code> class and the marketing sheet's <code>[data-theme="dark"]</code> block are declared evidence nothing switches to.</p>
+  <p class="note">Read from glossgenius.com, app.glossgenius.com and bookings.glossgenius.com (a real published booking website), signed out, in headless Chromium. Everything post-login is a documented boundary. The sign-in, sign-up, restore and demo forms were photographed empty. Nothing was typed. The public booking date-picker was photographed with both selects closed. No appointment was booked. The Basel Grotesk/Classic faces are served faces and are not loaded here: samples fall back to system sans. No dark theme exists signed out — the app's <code>.dark</code> class and the marketing sheet's <code>[data-theme="dark"]</code> block are declared evidence nothing switches to.</p>
 
   <h2 class="sh">The chrome</h2>
   <p class="lead">The header pairs the serif wordmark with the 'How it works' mega-menu, Businesses, Pricing, Resources, a plain 'Log in', an outlined 'Book a demo' pill and the white 'Start free trial' pill — all over the dark photographic masthead the mock paints as gloss-black. The hero runs a display masthead over the 'Scheduling, payments, and admin. Handled.' line; the CTAs are fully-round pills.</p>
@@ -140,7 +140,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-primary-gray-200, #e4
       <span class="svc"><b>Signature Facial</b><span style="opacity:.65">60 min · $120</span><br><br><span class="btn select" style="height:36px;padding:0 16px">Select</span></span>
       <span class="svc"><b>Gel Manicure</b><span style="opacity:.65">45 min · $55</span><br><br><span class="btn select" style="height:36px;padding:0 16px">Select</span></span>
     </div>
-    <span class="btn primary" style="height:var(--component-booking-book-bar-height,48px);padding:0 24px">BOOK 1 SERVICE</span>
+    <span class="btn primary" style="height:var(--component-booking-book-bar-height,48px);padding:0 24px">BOOK 0 SERVICE</span>
   </div>
 
   <h2 class="sh">Palette</h2>
@@ -162,7 +162,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-primary-gray-200, #e4
   <h2 class="sh">Measured extras</h2>
   <div id="meas-out" class="kv"></div>
 
-  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared palette variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, focused, filled and selected states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared palette variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open and focused states measured. Fields stayed empty. Nothing was typed</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
 </main>
 <script>
 const TOK = /*TOKENS*/null;

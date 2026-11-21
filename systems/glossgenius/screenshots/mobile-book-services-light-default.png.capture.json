@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T18:18:46.096Z",
+  "capturedAt": "2026-11-21T02:26:31.678Z",
   "screenshot": "mobile-book-services-light-default.png",
-  "sanitizedSourceUrl": "https://honeyhivesalon.glossgenius.com/services",
+  "sanitizedSourceUrl": "https://bookings.glossgenius.com/services",
   "requested": {
     "viewport": {
       "width": 390,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 8394
+      "height": 14606
     },
     "scroll": {
       "x": 0,

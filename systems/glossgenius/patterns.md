@@ -4,7 +4,7 @@ How the measured components combine into the real pages. Values are the measured
 
 ## Site chrome
 
-Every marketing page carries the `.header_new` top bar: the serif GlossGenius wordmark left, then the **How it works** trigger which opens the feature mega-menu — a Webflow `w-dropdown` holding a category tab rail (Agents, Booking & Scheduling, Marketing & CRM, Payments & POS, Staff & Business, EMR) with icon+link rows — then **Businesses** (a second dropdown: Beauty, Wellness, Medspa, Health, Fitness), **Pricing** and **Resources**, then a plain "Log in" (to app.glossgenius.com — measured, never followed), the dark "Book a demo" pill and "Start free trial". A fixed `.gg-support-btn` chat bubble pins to the corner of every page — measured, never opened. At 390px the links collapse behind a burger that opens the mobile menu (`mobile-home-light-menu`).
+Every marketing page carries the `.header_new` top bar: the serif GlossGenius wordmark left, then the **How it works** trigger which opens the feature mega-menu — a Webflow `w-dropdown` holding a category tab rail (Agents, Booking & Scheduling, Marketing & CRM, Payments & POS, Staff & Business, EMR) with icon+link rows — then **Businesses** (a second dropdown: Beauty, Wellness, Medspa, Health, Fitness), **Pricing** and **Resources** (About, Get a demo, Blog, Learning Center, Contact Support, Careers, Free Data Transfer), then a plain "Log in" (to app.glossgenius.com/login, photographed empty, never submitted), the dark "Book a demo" pill and "Start free trial". A fixed `.gg-support-btn` chat bubble pins to the corner of every page. At 390px the links collapse behind a burger that opens the mobile menu (`mobile-home-light-menu`). The control map is [site-tree.md](site-tree.md).
 
 ## The hero
 
@@ -20,19 +20,19 @@ A centered masthead pattern on `home-light-default`: an eyebrow line, the displa
 
 ## The demo form
 
-`/get-demo` is a two-step Webflow form inside a `.card-main` card: step 1 (`#email-form`) is the "How big is your team?" `label.radio_new` pills (Just me / 2-4 / 5-9 / 10+) plus a "Get a demo" link that reveals step 2 (`form.form-new` inside `.get-demo-form-step-2`, display:none until the link runs) — `.input_new` text, e-mail and telephone fields, native `.input_new--select` dropdowns and a "Submit". The step link was measured, never activated; step 2's fields were read with the wrapper unhidden — focused and typed into then cleared; the submit was measured in every state, never pressed.
+`/get-demo` is a two-step Webflow form inside a `.card-main` card: step 1 (`#email-form`) is the "How big is your team?" `label.radio_new` pills (Just me / 2-4 / 5-9 / 10+) plus a "Get a demo" link that reveals step 2. Step 1 was photographed. No radio was chosen. Step 2 was not opened and was not typed into. Submit was not pressed.
 
 ## Signed-out app forms
 
-`app.glossgenius.com` paints the glossDS layer (`--content-primary` ink, `--surface-*` fields, 1000px `--button-*-radius` pills). `/login`, `/signup` and `/forgot-password` share one anatomy: the GlossGenius mark, a heading ("Welcome back!" / "Let's get started" / "Password recovery"), BaseInput fields (e-mail, password, name, phone), a professional-confirmation checkbox and "Add Promo Code" on signup, then a full-width primary submit. The submits were measured at rest and on hover/focus/forced-press — never clicked. The app root redirects to `/calendar` behind sign-in and was excluded as a boundary.
+`app.glossgenius.com` paints the glossDS layer (`--content-primary` ink, `--surface-*` fields, 1000px `--button-*-radius` pills). `/login`, `/signup` and `/forgot-password` share one anatomy: the GlossGenius mark, a heading ("Welcome back!" / "Let's get started" / "Password recovery"), empty fields, then a full-width primary submit. The fields were photographed empty. Nothing was typed. The submits were measured at rest and on hover, focus and forced press, and were never clicked. There is no identity-provider button on these walls. The signed-in app was not entered. The empty-wall record is [login-review.json](login-review.json).
 
 ## The published booking site
 
-Every GlossGenius business gets a public booking website at `<name>.glossgenius.com`; honeyhivesalon.glossgenius.com stands in for the surface. Its own token family (`--button-*`, `--text-*`, `--space-*`, `--chip-*`, `--input-*` under `.tokens_glossDS__*` classes, re-skinned per layout variant) paints: a business nav (About, Our Team, Services, Portfolio, Shop, Contact, BOOK NOW), the service list with a **"Select a Professional"** react-select (captured open on `book-services-light-pro-menu` — the `.gg-dropdown__menu` lists the business's pros, never chosen), service cards each with a **Select** button that marks it (the header becomes "BOOK 1 SERVICE" — `book-services-light-selected`), and the BOOK bar leading to `/book`. The date-picker step runs a SELECT SERVICE / DATE & TIME / YOUR DETAILS stepper over a month calendar with time slots and a "Next" button — browsed read-only (`book-services-light-book-calendar`, `-book-slots`); no slot was confirmed, Next never pressed, the details form never reached.
+The published booking site captured here is bookings.glossgenius.com. Its own token family (`--button-*`, `--text-*`, `--space-*`, `--chip-*`, `--input-*` under `.tokens_glossDS__*` classes) paints a business nav (Services, About, Team, Shop, Contact, Book Now) and a service list with a **Select a Professional** menu (opened on `book-services-light-pro-menu`, no option chosen). Select on a service row was not clicked. The BOOK bar stayed at BOOK 0 SERVICE and was not pressed. `/booking-flow` was photographed with both selects closed (`book-flow-light-default`). Choosing a professional or a category starts a booking, so the calendar, time slots, details and payment were not reached.
 
 ## Mobile
 
-At 390px the nav collapses to a burger (the menu captured on `mobile-home-light-menu`), the masthead drops a step, plan cards stack single-column, and the booking site's service list and signup form hold their single-column flow. Mobile passes covered home, pricing, signup and the booking services list.
+At 390px the nav collapses to a burger (the menu captured on `mobile-home-light-menu`), the masthead drops a step, and the booking site's service list and the empty signup wall hold their single-column flow. Mobile passes covered home, signup and the booking services list. A phone pricing pass was not recaptured on 2026-11-21.
 
 ## Motion and focus
 

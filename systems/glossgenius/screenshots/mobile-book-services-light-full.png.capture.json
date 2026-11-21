@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "capturedAt": "2026-11-16T18:18:56.928Z",
+ "capturedAt": "2026-11-21T02:26:40.146Z",
  "screenshot": "mobile-book-services-light-full.png",
- "sanitizedSourceUrl": "https://honeyhivesalon.glossgenius.com/services",
+ "sanitizedSourceUrl": "https://bookings.glossgenius.com/services",
  "requested": {
   "viewport": {
    "width": 390,
@@ -34,7 +34,7 @@
   },
   "documentSize": {
    "width": 390,
-   "height": 8394
+   "height": 14564
   },
   "scroll": {
    "x": 0,
@@ -48,22 +48,23 @@
    "x": 0,
    "y": 0,
    "width": 390,
-   "height": 8394
+   "height": 14564
   }
  },
  "png": {
   "width": 390,
-  "height": 8394
+  "height": 14564
  },
  "dimensionCheck": {
   "status": "pass",
   "expected": {
    "width": 390,
-   "height": 8394
+   "height": 14564
   },
   "basis": "stitchedParts"
  },
- "visualReview": {
+ "redaction": "The published booking footer's street line and the city name in the about prose were painted out before commit. Values were not sampled from this image.",
+  "visualReview": {
   "status": "pending",
   "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
  },
@@ -73,7 +74,8 @@
  },
  "stitchedFrom": [
   "mobile-book-services-light-full.part0.png",
-  "mobile-book-services-light-full.part1.png"
+  "mobile-book-services-light-full.part1.png",
+  "mobile-book-services-light-full.part2.png"
  ],
  "partClip": [
   {
@@ -86,8 +88,14 @@
    "x": 0,
    "y": 7000,
    "width": 390,
-   "height": 1394
+   "height": 7000
+  },
+  {
+   "x": 0,
+   "y": 14000,
+   "width": 390,
+   "height": 564
   }
  ],
- "intendedHeight": 8394
+ "intendedHeight": 14564
 }

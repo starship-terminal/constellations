@@ -2,7 +2,7 @@
 """Build tokens.json (W3C DTCG, Tokens Studio multi-set layout) from the raw captures.
 
 Sources, read from glossgenius.com, app.glossgenius.com and a published
-booking site (honeyhivesalon.glossgenius.com):
+booking site (bookings.glossgenius.com):
   raw/css-vars.json          the custom properties the three public hosts'
                              stylesheets declare — the marketing site's
                              Webflow variable layer (--_color---primary--*,
@@ -236,7 +236,7 @@ tokens = {
         {"id": "app", "name": "App", "selectedTokenSets": {"core": "source", "app": "enabled"},
          "$description": "The app surface: app.glossgenius.com declares its glossDS layer (--content-*/--surface-*/--brand-*/--space-*/--font-*) on :root and scoped .light/.dark classes; the signed-out /login, /signup and /forgot-password forms paint the light set. The .dark class is declared but nothing signed out applies it."},
         {"id": "booking", "name": "Booking", "selectedTokenSets": {"core": "source", "booking": "enabled"},
-         "$description": "A published booking website's surface: every business gets a public <name>.glossgenius.com site with its own .tokens_glossDS__* token family (service cards, the professional select, the BOOK bar); captured on honeyhivesalon.glossgenius.com, which paints light."},
+         "$description": "A published booking website's surface: every business gets a public <name>.glossgenius.com site with its own .tokens_glossDS__* token family (service cards, the professional select, the BOOK bar); captured on bookings.glossgenius.com, which paints light."},
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "app", "booking"]},
 }

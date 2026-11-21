@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T18:15:53.689Z",
-  "screenshot": "book-services-light-book-slots.png",
-  "sanitizedSourceUrl": "https://honeyhivesalon.glossgenius.com/book",
+  "capturedAt": "2026-11-21T02:25:22.549Z",
+  "screenshot": "book-services-light-full.png",
+  "sanitizedSourceUrl": "https://bookings.glossgenius.com/services",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 1091
+      "height": 12734
     },
     "scroll": {
       "x": 0,
@@ -42,22 +42,23 @@
     }
   },
   "capture": {
-    "mode": "viewport",
-    "scale": "device",
+    "mode": "fullPage",
+    "scale": "css",
     "clip": null
   },
   "png": {
     "width": 1440,
-    "height": 900
+    "height": 12734
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 900
+      "height": 12734
     },
-    "basis": "configuredViewport"
+    "basis": "fullPage"
   },
+  "redaction": "The published booking footer's street line and the city name in the about prose were painted out before commit. Values were not sampled from this image.",
   "visualReview": {
     "status": "pending",
     "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."

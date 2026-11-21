@@ -2084,12 +2084,6 @@
         "source": "computed borderTopLeftRadius of nav-demo default (raw/components-computed.json)",
         "description": "The radius on the header pill buttons."
       },
-      "field": {
-        "value": "12px",
-        "type": "dimension",
-        "source": "computed borderTopLeftRadius of demo-field default (raw/components-computed.json)",
-        "description": "The radius on the demo-form fields."
-      },
       "app-field": {
         "value": "0px",
         "type": "dimension",
@@ -2190,12 +2184,6 @@
         "source": "computed backgroundColor of plan-card-popular default (raw/components-computed.json); matches declared light.color",
         "description": "The 'Most popular' Gold card surface — the same white card carrying the amber tag."
       },
-      "field": {
-        "value": "{light.color}",
-        "type": "color",
-        "source": "computed backgroundColor of demo-field default (raw/components-computed.json); matches declared light.color",
-        "description": "The demo-form field surface — a white tile."
-      },
       "accordion": {
         "value": "{color.neutral.transparent}",
         "type": "color",
@@ -2204,14 +2192,8 @@
       }
     },
     "border": {
-      "field-border": {
-        "value": "{color.neutral.transparent}",
-        "type": "color",
-        "source": "computed borderTopColor of demo-field default (raw/components-computed.json); matches declared color.neutral.transparent",
-        "description": "The demo-form field border — the fields are borderless white tiles; the border reads transparent."
-      },
       "focus-ring": {
-        "value": "#101010",
+        "value": "#005fcc",
         "type": "color",
         "source": "computed outlineColor of nav-link focus-visible (raw/components-computed.json)",
         "description": "The keyboard focus outline on controls — a 1px near-black auto outline."
@@ -6825,9 +6807,9 @@
         "description": "The booking site's heading ink — this business's site paints a dark field with white type."
       },
       "muted": {
-        "value": "#aaaaaa",
+        "value": "{gray.white}",
         "type": "color",
-        "source": "computed color of bk-badge default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+        "source": "computed color of bk-badge default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared gray.white",
         "description": "The 'powered by GlossGenius' badge gray — the muted ink on the dark field."
       }
     },
@@ -6885,9 +6867,9 @@
     },
     "action": {
       "select-fill": {
-        "value": "{accent.primary.default}",
+        "value": "linear-gradient(to right, #505718 0%, #807443 100%)",
         "type": "other",
-        "source": "the painted bgImage layer of bk-service-select default (raw/components-computed.json paint list); matches declared accent.primary.default",
+        "source": "the painted bgImage layer of bk-service-select default (raw/components-computed.json paint list)",
         "description": "A service row's 'Select' pill fill — the accent gradient the button paints as bgImage (its own backgroundColor stays transparent)."
       },
       "select-ink": {
@@ -6895,12 +6877,6 @@
         "type": "color",
         "source": "computed color of bk-service-select default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared gray.white",
         "description": "The white 'Select' button ink on the accent gradient."
-      },
-      "book-fill": {
-        "value": "{accent.primary.default}",
-        "type": "other",
-        "source": "the painted bgImage layer of bk-book-btn default (raw/components-computed.json paint list); matches declared accent.primary.default",
-        "description": "The header 'BOOK n SERVICE' bar fill — the same accent gradient, painted as bgImage."
       },
       "book-ink": {
         "value": "{gray.white}",
@@ -6936,7 +6912,7 @@
       "description": "The hero pill height."
     },
     "hero-cta-width": {
-      "value": "154.39px",
+      "value": "153.64px",
       "type": "dimension",
       "source": "measured w of hero-cta default (raw/components-computed.json)",
       "description": "The hero pill width."
@@ -6970,12 +6946,6 @@
       "type": "dimension",
       "source": "measured h of faq-item default (raw/components-computed.json)",
       "description": "The closed FAQ row height."
-    },
-    "demo-field-width": {
-      "value": "244px",
-      "type": "dimension",
-      "source": "measured w of demo-field default (raw/components-computed.json)",
-      "description": "The demo-form field width."
     },
     "mobile-topbar-height": {
       "value": "72px",
@@ -7023,7 +6993,7 @@
     },
     "booking": {
       "nav-height": {
-        "value": "199.06px",
+        "value": "80px",
         "type": "dimension",
         "source": "measured h of bk-nav default on the published booking site (raw/components-computed.json)",
         "description": "The booking-site nav bar height."
@@ -7035,19 +7005,19 @@
         "description": "The 'Select a Professional' control height."
       },
       "select-width": {
-        "value": "496px",
+        "value": "320.53px",
         "type": "dimension",
         "source": "measured w of bk-pro-select default on the published booking site (raw/components-computed.json)",
         "description": "The 'Select a Professional' control width."
       },
       "service-card-height": {
-        "value": "287px",
+        "value": "11241.1px",
         "type": "dimension",
         "source": "measured h of bk-service-card default on the published booking site (raw/components-computed.json)",
         "description": "A service card's height."
       },
       "service-card-width": {
-        "value": "1154.56px",
+        "value": "1364px",
         "type": "dimension",
         "source": "measured w of bk-service-card default on the published booking site (raw/components-computed.json)",
         "description": "A service card's width."
@@ -7057,18 +7027,6 @@
         "type": "dimension",
         "source": "measured h of bk-book-btn default on the published booking site (raw/components-computed.json)",
         "description": "The 'BOOK n SERVICE' button height."
-      },
-      "calendar-width": {
-        "value": "350px",
-        "type": "dimension",
-        "source": "measured w of bk-cal default on the published booking site (raw/components-computed.json)",
-        "description": "The date-picker calendar width."
-      },
-      "day-cell": {
-        "value": "51px",
-        "type": "dimension",
-        "source": "measured h of bk-day default on the published booking site (raw/components-computed.json)",
-        "description": "A calendar day cell's size."
       }
     }
   }

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-16T18:15:48.396Z",
-  "screenshot": "book-services-light-book-calendar.png",
-  "sanitizedSourceUrl": "https://honeyhivesalon.glossgenius.com/book",
+  "capturedAt": "2026-11-21T02:28:27.057Z",
+  "screenshot": "home-light-resources-menu.png",
+  "sanitizedSourceUrl": "https://glossgenius.com/",
   "requested": {
     "viewport": {
       "width": 1440,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 1091
+      "height": 12024
     },
     "scroll": {
       "x": 0,

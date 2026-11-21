@@ -14,18 +14,18 @@
 // app.glossgenius.com is a Next.js SPA under CSS modules (BaseInput_input__*,
 // Button_root__*, Checkbox_input__*, TextAction_root__*): /login, /signup and
 // /forgot-password paint the signed-out auth forms.
-// honeyhivesalon.glossgenius.com is a real published booking website (every
-// business gets a public <name>.glossgenius.com site): the service list, the
-// "Select a Professional" react-select, a service's Select toggle and the
-// /book date-picker step are all reachable without an account.
+// bookings.glossgenius.com is a published booking website (every
+// business gets a public booking site): the service list and the empty
+// date-picker are reachable without an account. Select and BOOK are never
+// pressed.
 //
-// Nothing is sent, bought, booked or signed into: the only activations are
-// local UI toggles — the "How it works" nav mega-menu, the pricing
+// Nothing is sent, bought, booked or signed into. The only activations are
+// local UI toggles: the "How it works" nav mega-menu, the pricing
 // Monthly/Annual switch, the pricing tier dropdown, a FAQ details row, the
-// mobile burger, and on the booking site the professional select, a service
-// "Select" toggle and the "BOOK 1 SERVICE" navigation to /book. The auth
-// fields are typed into and cleared, never submitted; "Log in", "Sign up",
-// "Send reset link", "Book a demo" and "Next" are measured, never activated.
+// mobile burger, and the booking site's professional select (opened, never
+// chosen). Auth and demo fields are photographed empty. Focus uses the
+// keyboard. Nothing is typed. "Log in", "Sign up", "Send reset link",
+// "Book a demo", "Select" and "BOOK n SERVICE" are measured, never activated.
 // No consent overlay was observed; any that appears is hidden, never
 // answered.
 import fs from 'node:fs';
@@ -224,12 +224,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
           via = 'clicked into the field';
         }
       } else if (st === 'filled') {
-        const f = (opts.fieldLoc || loc).filter({ visible: true }).first();
-        await f.click({ timeout: 4000 }).catch(() => f.evaluate((el) => el.focus()));
-        await page.keyboard.type(opts.fillText || 'name@example.com', { delay: 10 });
-        await page.waitForTimeout(500);
-        undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
-        via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
+        throw new Error('filled refused: do not type into a field');
       } else if (st === 'opened') {
         // A before.opened callback already toggled the control open — a second
         // generic click would close it again before the reading.
@@ -392,7 +387,9 @@ async function openPro() {
   return 'clicked the professional select; the menu did not report open';
 }
 
-const FIELD = ['default', 'focused', 'filled'];
+// Empty-wall rule: never type an email, phone, name, password or code.
+// Empty-wall rule: never type an email, phone, name, password or code.
+const FIELD = ['default', 'focused'];
 
 async function home() {
   if (!(await newPage('home'))) return;
@@ -462,15 +459,12 @@ async function demo() {
   // runs). To measure step 2's declared styles the wrapper's display:none is
   // cleared inline — the "Get a demo" link itself is never activated, no
   // step transition is run and nothing is ever submitted.
-  await page.evaluate(() => { const s = document.querySelector('.get-demo-form-step-2'); if (s) s.style.display = 'block'; }).catch(() => {});
+  // Step 2 asks for a name, email and phone. Leave it hidden. Do not unhide it and do not type.
   await S('demo-h1', q('h1, h2').filter({ visible: true }).first(), ['default'], { group: g, title: 'Demo headline', desc: 'The /get-demo page heading ("See how GlossGenius works").', sel: 'demo h1' }, { noScroll: true });
   await S('demo-card', q('.card-main').filter({ visible: true }).first(), ['default'], { group: g, title: 'Demo form card', desc: 'The .card-main card holding the two-step demo form on the right of the heading.', sel: 'demo .card-main' });
   await S('demo-radio', q('#email-form label.radio_new').filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Team-size radio pill', desc: 'A step-1 "How big is your team?" pill (Just me / 2-4 / 5-9 / 10+) — a label.radio_new tab; measured at rest and hovered, never chosen.', sel: '#email-form label.radio_new' });
   await S('demo-step-cta', q('#email-form a.btn_new, #email-form a').filter({ hasText: /get a demo/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Step-1 continue', desc: 'The "Get a demo" link that reveals step 2; its states were measured but it was never activated — step 2 was read with its wrapper unhidden instead.', sel: 'demo Get a demo' });
-  await S('demo-field', q('form.form-new input.input_new[type="text"], form.form-new input.input_new').filter({ visible: true }).first(), FIELD, { group: g, title: 'Demo text field', desc: 'A step-2 text input (firstname/lastname); measured with the step-2 wrapper unhidden — focused and typed into then cleared, never submitted.', sel: 'form.form-new input.input_new' }, { fillText: 'Example name' });
-  await S('demo-email', q('form.form-new input[type="email"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Demo email field', desc: 'The step-2 e-mail input; measured with the step-2 wrapper unhidden — focused and typed into then cleared, never submitted.', sel: 'form.form-new email input' }, { fillText: 'name@example.com' });
-  await S('demo-select', q('form.form-new select.input_new--select, form.form-new select').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Demo select', desc: 'A step-2 native <select> (professional type / team size / booking system); measured with the step-2 wrapper unhidden — focused, never changed or submitted.', sel: 'form.form-new select' });
-  await S('demo-submit', q('form.form-new .btn_new--submit, form.form-new button[type="submit"], form.form-new button').filter({ visible: true }).first(), B4, { group: g, title: 'Demo submit', desc: 'The step-2 "Submit" button; measured with the step-2 wrapper unhidden but never clicked — nothing was sent.', sel: 'form.form-new submit' });
+  // Step 2 (name, email, phone, selects, submit) stays hidden. Those controls are a form, not a local toggle.
   save();
 }
 
@@ -481,8 +475,8 @@ async function login() {
   const g = G.login;
   await S('login-h1', await domFind(page, /welcome|log ?in|sign ?in/i, { sel: 'h1, h2, [class*="title"], [class*="Title"]', tag: 'lh', minW: 60, minH: 14 }), ['default'], { group: g, title: 'Sign-in headline', desc: 'The "Welcome back!" sign-in heading on app.glossgenius.com/login; pinned by size because a 1px hidden heading also matches.', sel: 'login heading' }, { noScroll: true });
   await S('login-card', q('form, [class*="card"], [class*="Card"], [class*="form"], [class*="Form"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Sign-in card', desc: 'The sign-in form card — e-mail and password fields, the primary "Log in" submit and the forgot-password link.', sel: 'login form/card' }, { noScroll: true });
-  await S('login-field', q('input[type="email"], input[name*="mail" i]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Email field (sign-in)', desc: 'The sign-in e-mail input; focused and typed into then cleared — never submitted.', sel: 'login email input' }, { noScroll: true, fillText: 'name@example.com' });
-  await S('login-pass', q('input[type="password"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Password field (sign-in)', desc: 'The sign-in password input; focused and typed into then cleared — never submitted.', sel: 'login password input' }, { noScroll: true, fillText: 'sample-pass-123' });
+  await S('login-field', q('input[type="email"], input[name*="mail" i]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Email field (sign-in)', desc: 'The empty sign-in e-mail input. Focused with the keyboard, never typed into, never submitted.', sel: 'login email input' }, { noScroll: true });
+  await S('login-pass', q('input[type="password"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Password field (sign-in)', desc: 'The empty sign-in password input. Focused with the keyboard, never typed into, never submitted.', sel: 'login password input' }, { noScroll: true });
   await S('login-submit', q('button').filter({ hasText: /^Log ?in$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Sign-in submit', desc: 'The primary "Log in" submit; its states were measured but the button was never clicked — nothing was submitted.', sel: 'login submit button' }, { noScroll: true });
   await S('login-forgot', q('a, button').filter({ hasText: /forgot/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Forgot-password link', desc: 'The "Forgot Password?" link to /forgot-password; measured, never followed.', sel: 'login forgot link' }, { noScroll: true });
   await S('login-signup', q('a, button').filter({ hasText: /sign up|free trial/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Sign-up link', desc: 'The "Sign up for free trial" link beside the sign-in form; measured, never followed.', sel: 'login signup link' }, { noScroll: true });
@@ -494,10 +488,10 @@ async function signup() {
   if (!(await newPage('signup', { wait: 10000 }))) return;
   const g = G.signup;
   await S('signup-h1', q('h1, h2, [class*="title"], [class*="Title"]').filter({ hasText: /get started|sign ?up|control/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Sign-up headline', desc: 'The "Let\'s get started" sign-up heading on app.glossgenius.com/signup.', sel: 'signup heading' }, { noScroll: true });
-  await S('signup-name', q('input[name="first_name"], input[id*="name" i]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Name field (sign-up)', desc: 'The sign-up first-name input; focused and typed into then cleared — never submitted.', sel: 'signup first_name input' }, { noScroll: true, fillText: 'Example' });
-  await S('signup-email', q('input[type="email"], input[name*="mail" i]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Email field (sign-up)', desc: 'The sign-up e-mail input; focused and typed into then cleared — never submitted.', sel: 'signup email input' }, { noScroll: true, fillText: 'name@example.com' });
-  await S('signup-pass', q('input[type="password"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Password field (sign-up)', desc: 'The sign-up password input; focused and typed into then cleared — never submitted.', sel: 'signup password input' }, { noScroll: true, fillText: 'sample-pass-123' });
-  await S('signup-phone', q('input[type="tel"], input[name*="phone" i]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Phone field (sign-up)', desc: 'The sign-up phone-number input; focused and typed into then cleared — never submitted.', sel: 'signup phone input' }, { noScroll: true, fillText: '555 010 0100' });
+  await S('signup-name', q('input[name="first_name"], input[id*="name" i]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Name field (sign-up)', desc: 'The empty sign-up first-name input. Focused, never typed into, never submitted.', sel: 'signup first_name input' }, { noScroll: true });
+  await S('signup-email', q('input[type="email"], input[name*="mail" i]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Email field (sign-up)', desc: 'The empty sign-up e-mail input. Focused, never typed into, never submitted.', sel: 'signup email input' }, { noScroll: true });
+  await S('signup-pass', q('input[type="password"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Password field (sign-up)', desc: 'The empty sign-up password input. Focused, never typed into, never submitted.', sel: 'signup password input' }, { noScroll: true });
+  await S('signup-phone', q('input[type="tel"], input[name*="phone" i]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Phone field (sign-up)', desc: 'The empty sign-up phone input. Focused, never typed into, never submitted.', sel: 'signup phone input' }, { noScroll: true });
   await S('signup-checkbox', q('input[type="checkbox"], [class*="Checkbox"]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Professional checkbox', desc: 'The "I confirm that I\'m a professional or business owner" checkbox; focused via .focus() on its inner input — never clicked, never checked.', sel: 'signup checkbox' }, { noScroll: true, focusInner: true });
   await S('signup-promo', q('button, a').filter({ hasText: /promo/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Promo-code button', desc: 'The "Add Promo Code" secondary button; measured, never activated.', sel: 'signup promo button' }, { noScroll: true });
   await S('signup-submit', q('button').filter({ hasText: /sign ?up|get started|create|continue/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Sign-up submit', desc: 'The primary sign-up submit; its states were measured but the button was never clicked — no account was created.', sel: 'signup submit button' }, { noScroll: true });
@@ -508,7 +502,7 @@ async function forgot() {
   if (!(await newPage('forgot', { wait: 10000 }))) return;
   const g = G.forgot;
   await S('forgot-h1', q('h1, h2, [class*="title"], [class*="Title"]').filter({ hasText: /recover|forgot|password/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Restore headline', desc: 'The "Password recovery" heading on app.glossgenius.com/forgot-password.', sel: 'forgot heading' }, { noScroll: true });
-  await S('forgot-field', q('input[type="email"], input').filter({ visible: true }).first(), FIELD, { group: g, title: 'Email field (restore)', desc: 'The restore e-mail input; focused and typed into then cleared — never submitted.', sel: 'forgot email input' }, { noScroll: true, fillText: 'name@example.com' });
+  await S('forgot-field', q('input[type="email"], input').filter({ visible: true }).first(), FIELD, { group: g, title: 'Email field (restore)', desc: 'The empty restore e-mail input. Focused, never typed into, never submitted.', sel: 'forgot email input' }, { noScroll: true });
   await S('forgot-send', q('button').filter({ hasText: /send|reset|continue/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Restore submit', desc: 'The "Send reset link" submit; its states were measured but the button was never clicked — no reset e-mail was sent.', sel: 'forgot submit button' }, { noScroll: true });
   await S('forgot-back', q('a, button').filter({ hasText: /back|log ?in|sign ?in/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Back-to-login link', desc: 'The "Back to login" link; measured, never followed.', sel: 'forgot back link' }, { noScroll: true });
   save();
@@ -522,7 +516,7 @@ async function bookhome() {
   await S('bk-nav', q('nav, [class*="Navigation_nav"], header').filter({ visible: true }).first(), ['default'], { group: g, title: 'Booking-site nav', desc: 'The published booking website\'s top nav (About, Our Team, Services, Portfolio, Shop, Contact, BOOK NOW).', sel: 'booking nav' }, { noScroll: true });
   await S('bk-nav-item', q('nav a, [class*="Navigation"] a').filter({ hasText: /services/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Booking nav link', desc: 'A nav link on the booking site; measured, never followed.', sel: 'booking nav link' }, { noScroll: true });
   await S('bk-book-cta', q('a, button').filter({ hasText: /book now/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Book Now button', desc: 'The booking site\'s "BOOK NOW" nav button to the service list; measured, never followed.', sel: 'booking BOOK NOW' }, { noScroll: true });
-  await S('bk-title', await domFind(page, /\S/, { sel: 'h1', tag: 'bt', minW: 80, minH: 20 }), ['default'], { group: g, title: 'Booking title', desc: 'The business-name display heading ("HONEY HIVE SALON", SalonHeading) on the published booking site; the nav also carries a hidden h2 business name.', sel: 'booking h1' }, { noScroll: true });
+  await S('bk-title', await domFind(page, /\S/, { sel: 'h1', tag: 'bt', minW: 80, minH: 20 }), ['default'], { group: g, title: 'Booking title', desc: 'The business-name display heading on the published booking site.', sel: 'booking h1' }, { noScroll: true });
   await S('bk-badge', q('a, div, span').filter({ hasText: /powered by/i }).filter({ visible: true }).last(), ['default'], { group: g, title: 'Powered-by badge', desc: 'The "powered by GLOSSGENIUS" badge on the published site.', sel: 'booking powered-by' });
   save();
 }
@@ -534,8 +528,8 @@ async function bookservices() {
   await S('bk-pro-select', q('[class*="selectOuterContainer"], [class*="Select_select"], .gg-dropdown__control').filter({ visible: true }).first(), [...B4, 'opened'], { group: g, title: 'Professional select', desc: 'The "Select a Professional" react-select on the service list (Any Professional, the business\'s pros); opened was measured with its .gg-dropdown__menu held open — an option was never chosen.', sel: 'booking professional select' }, { before: { opened: openPro } });
   await S('bk-pro-option', q('.gg-dropdown__option, [class*="option"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Professional option', desc: 'An option row inside the opened professional menu; measured while the menu was held open, never chosen.', sel: '.gg-dropdown__option' }, { open: openPro, noReset: true });
   await S('bk-service-card', q('[class*="ClassicService_root"], [class*="ClassicService_card"], [class*="service"]').filter({ hasText: /\$|min/i }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Service card', desc: 'A service card on the published list (category, name, description, price, duration, Select).', sel: 'booking service card' }, { pin: true });
-  await S('bk-service-select', q('button').filter({ hasText: /^Select$/ }).filter({ visible: true }).first(), [...B4, 'opened'], { group: g, title: 'Service Select button', desc: 'A service row\'s "Select" button marking it for booking; opened was measured on the same pinned node after clicking it — the button flips to its selected state and the header becomes "BOOK 1 SERVICE". A local selection toggle, not a submission.', sel: 'booking Select button' }, { pin: true, before: { opened: async (loc) => { await loc.click({ timeout: 4000 }).catch(() => loc.evaluate((el) => el.click())); await page.waitForTimeout(1200); return 'clicked "Select" on a service — the row is marked for booking, nothing sent'; } } });
-  await S('bk-book-btn', q('button, a').filter({ hasText: /book \d+ service/i }).filter({ visible: true }).first(), B4, { group: g, title: 'BOOK bar button', desc: 'The "BOOK n SERVICE" header bar; measured after a service was selected (the header\'s "Clear All" is a different control, never measured as this button). In the screenshot pass it was clicked to reach /book — a public navigation, never a submission.', sel: 'booking BOOK button' });
+  await S('bk-service-select', q('button').filter({ hasText: /^Select$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Service Select button', desc: 'A service row\'s "Select" button. Measured at rest, hover, focus-visible and forced pressed. Never clicked: selecting a service starts a booking.', sel: 'booking Select button' });
+  await S('bk-book-btn', q('button, a').filter({ hasText: /book \d+ service/i }).filter({ visible: true }).first(), B4, { group: g, title: 'BOOK bar button', desc: 'The "BOOK n SERVICE" header bar at rest (BOOK 0 SERVICE). Never pressed.', sel: 'booking BOOK button' });
   save();
 }
 
@@ -556,16 +550,14 @@ async function mobile() {
 
 run = new Date().toISOString().slice(0, 10);
 out._meta.read = run;
-out._meta.viewport = '1440 x 900 (mobile group 390 x 844); glossgenius.com, app.glossgenius.com and honeyhivesalon.glossgenius.com paint light only — no theme toggle or dark media query observed on any signed-out route';
+out._meta.viewport = '1440 x 900 (mobile group 390 x 844); glossgenius.com, app.glossgenius.com and bookings.glossgenius.com paint light only — no theme toggle or dark media query observed on any signed-out route';
 out._meta.tool = 'tools/capture/public/measure.mjs';
 const { browser, context: ctx0 } = await launch();
 context = ctx0;
 const pages = process.argv.slice(2);
-// Booking flow (/book): a boundary, not a page. Reaching it means selecting a service and pressing
-// "BOOK n SERVICE" on a real business's live booking site, which starts a booking for that business;
-// the capture stops at the bar and measures it at rest (bk-book-btn). It is not in the plan, so it never
-// counts as a finished page and the committed bk-steps, bk-cal, bk-day and bk-next readings (taken past
-// that step, README What to distrust) are kept as evidence, never pruned.
+// The public date-picker at /booking-flow is photographed empty. Choosing a
+// professional or a service category starts a booking, so those selects are
+// not opened here.
 const plan = { home, pricing, feature, demo, login, signup, forgot, bookhome, bookservices, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
 const finishedPages = new Set();

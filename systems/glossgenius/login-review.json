@@ -1,0 +1,48 @@
+{
+  "offered": {
+    "note": "Signed-out walls only. The signed-in app was not entered, so offered.nav, offered.settings and offered.create are absent on purpose."
+  },
+  "screens": [
+    {
+      "name": "Login wall, empty",
+      "url": "https://app.glossgenius.com/login",
+      "file": "screenshots/login-light-default.png"
+    },
+    {
+      "name": "Sign-up wall, empty",
+      "url": "https://app.glossgenius.com/signup",
+      "file": "screenshots/signup-light-default.png"
+    },
+    {
+      "name": "Sign-up wall, phone width, empty",
+      "url": "https://app.glossgenius.com/signup",
+      "file": "screenshots/mobile-signup-light-default.png"
+    },
+    {
+      "name": "Forgot-password wall, empty",
+      "url": "https://app.glossgenius.com/forgot-password",
+      "file": "screenshots/forgot-light-default.png"
+    }
+  ],
+  "gaps": [
+    "The signed-in app was not entered. No navigation, settings, or create flow was offered.",
+    "https://app.glossgenius.com/login asks for email and password. Both fields were empty. Nothing was typed. Log in was not pressed.",
+    "https://app.glossgenius.com/signup asks for first name, last name, email, password, phone, confirm phone, an optional promo code, and a professional confirmation. Every field was empty. Sign up was not pressed.",
+    "https://app.glossgenius.com/forgot-password asks for an email. The field was empty. Send reset link was not pressed.",
+    "No identity-provider button (Google, Apple, Facebook, Microsoft, GitHub, SSO) is on these three walls. None was clicked.",
+    "Validation, error, loading, and post-submit states were not seen because no form was submitted."
+  ],
+  "not_submitted": [
+    "login email",
+    "login password",
+    "sign-up name",
+    "sign-up email",
+    "sign-up password",
+    "sign-up phone",
+    "forgot-password email",
+    "demo request",
+    "newsletter",
+    "booking appointment",
+    "account creation"
+  ]
+}
