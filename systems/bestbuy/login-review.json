@@ -1,0 +1,50 @@
+{
+  "product": "Best Buy",
+  "domain": "bestbuy.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Account, then Sign In",
+      "url": "https://www.bestbuy.com/identity/global/signin",
+      "title": "Sign in or create your account",
+      "painted": true,
+      "headings": ["Sign in or create your account"],
+      "asksFor": [
+        { "label": "Phone number or email address", "type": "email", "required": false }
+      ],
+      "identityProvidersSeen": ["Passkey", "Apple", "Google"],
+      "otherControls": ["Continue", "Create an account", "Return to previous page"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "The field was empty. Continue was not clicked. Passkey, Apple, and Google were visible and were not clicked. The address bar carried a token query after the redirect. The screenshot shows no token and no typed value. The token is not recorded."
+    },
+    {
+      "control": "Create Account",
+      "url": "https://www.bestbuy.com/identity/global/createAccount",
+      "title": "Best Buy: Create an Account",
+      "painted": true,
+      "headings": ["Create an Account"],
+      "asksFor": [
+        { "label": "First Name", "type": "text", "required": false },
+        { "label": "Last Name", "type": "text", "required": false },
+        { "label": "Email Address", "type": "email", "required": false },
+        { "label": "Password", "type": "password", "required": false },
+        { "label": "Confirm Password", "type": "password", "required": false },
+        { "label": "Mobile Phone Number", "type": "tel", "required": false }
+      ],
+      "identityProvidersSeen": ["Google"],
+      "otherControls": ["Create an Account", "Use for Account Recovery", "Sign in", "Create a business account"],
+      "stopped": true,
+      "screenshot": "screenshots/signup-light-1440.png",
+      "note": "Every field was empty. Create an Account was not clicked. Password visibility was not toggled. Google was not clicked. The address bar carried a token query after the redirect. The screenshot shows no token and no typed value. The token is not recorded. A direct visit to /identity/newAccount without that redirect returned an error page and was not photographed."
+    }
+  ]
+}

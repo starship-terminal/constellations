@@ -1,0 +1,76 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://www.bestbuy.com/?intl=nosplash",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "body": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(4, 12, 19)",
+    "fontFamily": "\"Human BBY Digital\", \"Human Fallback\", Arial, Helvetica, sans-serif",
+    "fontSize": "13px",
+    "lineHeight": "15.6px"
+  },
+  "headerBar": {
+    "backgroundColor": "rgb(0, 70, 190)",
+    "height": "73px"
+  },
+  "utilityBar": {
+    "backgroundColor": "rgb(0, 70, 190)",
+    "height": "60px"
+  },
+  "pageSubdued": {
+    "backgroundColor": "rgb(243, 244, 246)"
+  },
+  "heading": {
+    "text": "Black Friday Deals are here",
+    "color": "rgb(255, 242, 0)",
+    "fontSize": "68px",
+    "fontWeight": "700",
+    "fontFamily": "\"Human BBY Digital\", \"Human Fallback\", Arial, Helvetica, sans-serif"
+  },
+  "search": {
+    "placeholder": "Search Best Buy",
+    "height": "40px",
+    "borderRadius": "8px",
+    "backgroundColor": "rgb(255, 255, 255)"
+  },
+  "askBlue": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(4, 12, 19)",
+    "borderRadius": "9999px",
+    "height": "34px",
+    "fontSize": "13px"
+  },
+  "logoFills": ["#fff200", "#1d252c", "#fff"],
+  "loginContinue": {
+    "backgroundColor": "rgb(0, 70, 190)",
+    "color": "rgb(255, 255, 255)",
+    "borderRadius": "4px",
+    "height": "45px"
+  },
+  "loginField": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderColor": "rgb(144, 149, 158)",
+    "borderRadius": "4px",
+    "height": "45px"
+  },
+  "loginPage": {
+    "backgroundColor": "rgb(241, 242, 244)"
+  },
+  "addToCart": {
+    "backgroundColor": "rgb(255, 226, 0)",
+    "color": "rgb(4, 12, 19)",
+    "borderRadius": "8px",
+    "height": "48px",
+    "fontSize": "13px"
+  },
+  "accountSignInButton": {
+    "backgroundColor": "rgb(1, 79, 211)",
+    "borderRadius": "8px",
+    "height": "32px"
+  }
+}
