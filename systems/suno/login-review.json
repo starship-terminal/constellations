@@ -1,0 +1,58 @@
+{
+  "signedIn": false,
+  "capturedAt": "2026-11-20",
+  "offered": {
+    "nav": [
+      "marketing: Products menu, Resources menu, Pricing, Careers, Log in, Join",
+      "app shell signed out: Home /discover, Explore /explore, Create /create, Studio /studio-welcome, Library /me, Earn credits, Labs, More"
+    ],
+    "settings": [],
+    "create": [
+      "marketing composer (typed, not submitted)",
+      "Advanced dialog (auth wall, closed)",
+      "Create control (auth wall, not submitted)"
+    ]
+  },
+  "screens": [
+    "screenshots/home-desktop-hero.png",
+    "screenshots/home-desktop-signup-dialog.png",
+    "screenshots/home-desktop-products-menu.png",
+    "screenshots/home-desktop-resources-menu.png",
+    "screenshots/home-desktop-songs.png",
+    "screenshots/home-desktop-features.png",
+    "screenshots/home-desktop-pricing.png",
+    "screenshots/home-desktop-button-focus.png",
+    "screenshots/home-desktop-button-hover.png",
+    "screenshots/home-desktop-field-typed.png",
+    "screenshots/home-desktop-signin-dialog-compact.png",
+    "screenshots/signin-desktop.png",
+    "screenshots/v6-desktop.png",
+    "screenshots/studio-desktop.png",
+    "screenshots/pricing-desktop-shell.png",
+    "screenshots/discover-desktop.png",
+    "screenshots/discover-desktop-more-menu.png",
+    "screenshots/explore-desktop.png",
+    "screenshots/labs-desktop.png",
+    "screenshots/careers-desktop.png",
+    "screenshots/about-desktop.png",
+    "screenshots/voices-desktop.png",
+    "screenshots/blog-desktop.png",
+    "screenshots/home-phone.png",
+    "screenshots/home-phone-menu.png",
+    "screenshots/discover-phone.png"
+  ],
+  "gaps": [
+    "session was signed out; no birthday screen was shown",
+    "settings, library, studio app and generate were login walls",
+    "light theme declared in CSS and not observed live",
+    "hover, pressed, disabled, loading and error not held except Join hover and focus",
+    "product pages not screenshotted: visuals, mcp, bridge, stem-separation, remix-welcome, custom-models, music-library, tools, suno-credentials, release-notes, legal pages"
+  ],
+  "not_submitted": [
+    "no song generated",
+    "no purchase",
+    "no sign-in provider clicked",
+    "no birthday entered",
+    "no publish, invite or delete"
+  ]
+}

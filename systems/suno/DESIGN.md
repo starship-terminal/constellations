@@ -192,7 +192,9 @@ Captured 2026-11-19, signed out. Public home, careers and about were measured. L
 
 Suno is an AI music generator. This package records the public marketing site and the signed-out sign-in dialog, measured on 2026-11-19 from `https://suno.com/`, `https://suno.com/careers` and `https://suno.com/about`. The account was signed out. The only theme the pages showed was dark. The CSS viewport was 1169 by 731, device pixel ratio 2. No phone width was measured.
 
-The preview browser did not produce screenshot frames. Values come from computed styles and from the custom properties on `:root`. Screenshots and crops are absent on purpose.
+The 2026-11-19 pass read computed styles after the preview browser failed to produce frames. On 2026-11-20 the same default profile produced frames. Desktop measured 1440 by 900 at devicePixelRatio 2. Phone measured 390 by 844 at devicePixelRatio 2. The session was still signed out. No birthday screen appeared. Create, Library and Earn credits redirected to sign-in. No provider was clicked and no song was generated.
+
+Values still come from computed styles and from the custom properties on `:root`. The 2026-11-20 dump is [raw/css-vars.json](raw/css-vars.json). It matches the 2026-11-19 roles. Screenshots are layout evidence. Do not sample colours from them.
 
 ## Colors
 
@@ -241,7 +243,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-There are no screenshots. Do not treat a missing image as a blank capture of the page.
+The 2026-11-20 screenshots are 256-colour PNGs. Read colours from [tokens.json](tokens.json) and [raw/root-vars.json](raw/root-vars.json), not from the PNGs.
 
 The light set was not shown on screen. Use it as the product's own token names, not as a measured light theme.
 
@@ -253,7 +255,7 @@ Tailwind's `lab()` ramps (`--color-amber-*`, `--color-blue-*`, `--color-neutral-
 
 Hover, focus-visible, pressed and reduced-motion were not measured. Nav links declare `motion-reduce:transition-none`. That is a class name, not a reduce verdict.
 
-The viewport was 1169px, not 1440px and not 390px. Width-specific type (the hero's `text-[3rem]` below the `md` breakpoint) was not measured.
+The 2026-11-19 readings were at 1169px. The 2026-11-20 screenshots measured 1440 by 900 and 390 by 844. Width-specific type below the `md` breakpoint was still not re-read as computed styles.
 
 ### Do and don't (from README.md)
 

@@ -1,0 +1,101 @@
+{
+  "capturedAt": "2026-11-20",
+  "viewport": {
+    "desktop": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 2
+    },
+    "phone": {
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 2
+    }
+  },
+  "signedIn": false,
+  "elements": [
+    {
+      "name": "body",
+      "page": "/",
+      "backgroundColor": "rgb(16, 16, 18)",
+      "color": "rgb(247, 244, 239)",
+      "evidence": "Measured"
+    },
+    {
+      "name": "marketing-h1",
+      "page": "/",
+      "fontFamily": "Neue Montreal",
+      "fontWeight": "500",
+      "fontSize": "72px",
+      "lineHeight": "72px",
+      "color": "white",
+      "evidence": "Measured"
+    },
+    {
+      "name": "signin-h1",
+      "page": "/sign-in",
+      "fontFamily": "Editorial New",
+      "fontWeight": "300",
+      "fontSize": "48px",
+      "lineHeight": "48px",
+      "color": "rgb(247, 244, 239)",
+      "evidence": "Measured"
+    },
+    {
+      "name": "join-button-focus",
+      "page": "/",
+      "backgroundColor": "rgb(247, 244, 239)",
+      "color": "rgb(16, 16, 18)",
+      "width": "146px",
+      "height": "40px",
+      "borderRadius": "9999px",
+      "outline": "solid 2px rgb(247, 244, 239)",
+      "evidence": "Measured"
+    },
+    {
+      "name": "google-button",
+      "page": "/sign-in",
+      "backgroundColor": "rgba(255, 255, 255, 0.04)",
+      "color": "rgb(247, 244, 239)",
+      "width": "480px",
+      "height": "56px",
+      "borderRadius": "9999px",
+      "fontFamily": "Neue Montreal",
+      "fontWeight": "500",
+      "fontSize": "17px",
+      "evidence": "Measured"
+    },
+    {
+      "name": "continue-button",
+      "page": "/sign-in",
+      "backgroundColorComputed": "rgb(0, 0, 0)",
+      "color": "white",
+      "width": "480px",
+      "height": "56px",
+      "borderRadius": "9999px",
+      "fontSize": "17px",
+      "fontWeight": "500",
+      "note": "Computed backgroundColor is black. The screenshot paints an orange-pink gradient. Gradient stops were not read.",
+      "evidence": "Measured",
+      "gradient": "Not captured"
+    },
+    {
+      "name": "phone-field",
+      "page": "/sign-in",
+      "border": "1px solid rgba(255, 255, 255, 0.3)",
+      "borderRadius": "10px",
+      "height": "52px",
+      "value": "empty",
+      "evidence": "Measured"
+    },
+    {
+      "name": "composer",
+      "page": "/",
+      "fontFamily": "Neue Montreal Book",
+      "fontSize": "18px",
+      "lineHeight": "32px",
+      "placeholder": "Chat to make music",
+      "evidence": "Measured"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Patterns
 
-Signed-out marketing pages only. Color-scheme dark. CSS viewport 1169 by 731 on 2026-11-19. No full-page screenshots: the preview browser did not produce frames. See [screenshots/README.md](screenshots/README.md).
+Signed-out pages. Color-scheme dark. The 2026-11-19 readings used a 1169 by 731 viewport and had no frames. The 2026-11-20 frames measured 1440 by 900 and 390 by 844. See [screenshots/README.md](screenshots/README.md) and [site-tree.md](site-tree.md).
 
 ## Marketing home
 
@@ -33,3 +33,12 @@ Opened from "Log in" on the home page, still at `https://suno.com/`. A 400px dia
 - No signed-in app shell, empty library, generation progress, or error toast.
 - No checkout, no payment form, no destructive confirmation.
 - No screenshot of any of these patterns.
+
+
+## Logged-out app shell, 2026-11-20
+
+`/discover`, `/explore`, `/labs` and `/pricing` share a left sidebar: Home, Explore, Create, Studio, Library, Log in, Earn credits, Labs, More. Create, Library and Earn credits redirected to sign-in. Studio redirected to the public studio welcome page. See [discover-desktop.png](screenshots/discover-desktop.png).
+
+## Phone, 2026-11-20
+
+The marketing header collapses to Open menu, Log in and Open App. The menu lists V6, Studio, Visuals, MCP, Bridge, Voices, Stem Separation, Remix, Custom Models, Pricing and Careers. See [home-phone-menu.png](screenshots/home-phone-menu.png).
