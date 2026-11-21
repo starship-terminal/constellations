@@ -2,7 +2,7 @@
 """Build tokens.json from raw/css-vars.json.
 
 Values are the browser's computed custom properties on a probe element, read
-from discord.com stylesheets on 2026-11-21 by tools/capture/vars.mjs.
+from discord.com stylesheets on 2026-11-22 by tools/capture/vars.mjs.
 
 Two layers:
   core     marketing :root names that do not change with .theme-light / .theme-dark
@@ -261,7 +261,7 @@ doc = {
         {"id": "dark", "name": "dark", "selectedTokenSets": {"core": "source", "dark": "enabled"}},
     ],
     "$extensions": {
-        "capture": "2026-11-21, https://discord.com/, signed out",
+        "capture": "2026-11-22, https://discord.com/, signed out",
         "darkNote": "dark set is resolved on a .theme-dark probe. Marketing pages paint light. The login wall paints a dark app shell and was photographed, not measured into these role tokens.",
     },
 }

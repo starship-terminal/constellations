@@ -4,7 +4,7 @@ This file is a short export of [tokens.json](tokens.json). It was not generated 
 
 ## Overview
 
-Public signed-out Discord, captured 2026-11-21. Marketing pages paint light type on a blurple field. The `dark` set in tokens.json is a `.theme-dark` probe, not a painted marketing theme.
+Public signed-out Discord, refreshed 2026-11-22. Marketing pages paint light type on a blurple field. The `dark` set in tokens.json is a `.theme-dark` probe, not a painted marketing theme.
 
 ## Colors
 

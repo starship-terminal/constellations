@@ -1,6 +1,6 @@
 # Patterns
 
-Public signed-out Discord, 2026-11-21. See [site-tree.md](site-tree.md) for which control opens which page.
+Public signed-out Discord, refreshed 2026-11-22. See [site-tree.md](site-tree.md) for which control opens which page.
 
 | Pattern | Where |
 |---|---|
@@ -12,5 +12,6 @@ Public signed-out Discord, 2026-11-21. See [site-tree.md](site-tree.md) for whic
 | Server directory | Search field, not submitted. [screenshots/servers-light-search-typed.png](screenshots/servers-light-search-typed.png) |
 | Login wall | Email or phone, password, QR, passkey. Not filled. The desktop shot paints the QR tile out with the card colour. [screenshots/login-dark-wall.png](screenshots/login-dark-wall.png) |
 | Register wall | Create an account. Not filled. [screenshots/register-dark-wall.png](screenshots/register-dark-wall.png) |
+| Missing page | Unknown path. [screenshots/missing-light-default.png](screenshots/missing-light-default.png) |
 
 App shell, validation errors, empty and error states, destructive confirmation, and onboarding sit behind login or register and were not captured.
