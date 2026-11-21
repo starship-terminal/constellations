@@ -1,0 +1,124 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://www.gymshark.com/",
+  "title": "Gymshark Official Store - Gym & Workout Clothes - Black Friday Sale",
+  "region": "US",
+  "currency": "USD",
+  "viewport": { "width": 1440, "height": 900, "devicePixelRatio": 2, "visualViewportScale": 1 },
+  "rootFontSize": "10px",
+  "body": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "\"SN Skandia\"",
+    "fontSize": "14px",
+    "fontWeight": "400"
+  },
+  "usp": {
+    "backgroundColor": "rgb(0, 74, 162)",
+    "height": "48px",
+    "linkColor": "rgb(255, 255, 255)",
+    "linkSize": "12px",
+    "linkWeight": "400",
+    "textDecoration": "underline",
+    "fontFamily": "\"SN Skandia\"",
+    "token": "--usp-revolving-height 4.8rem"
+  },
+  "header": {
+    "height": "76px",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "linkColorOnHero": "rgb(255, 255, 255)",
+    "linkColorOnLight": "rgb(13, 16, 18)",
+    "linkSize": "14px",
+    "linkWeight": "400",
+    "fontFamily": "\"SN Skandia\"",
+    "logoWidth": "100px",
+    "logoHeight": "18px",
+    "iconTarget": "44px"
+  },
+  "hero": {
+    "color": "rgb(255, 255, 255)",
+    "fontFamily": "\"Plaak Gymshark\"",
+    "fontSize": "48px",
+    "fontWeight": "800",
+    "lineHeight": "43.2px",
+    "letterSpacing": "-0.01px",
+    "text": "BLACK FRIDAY SALE"
+  },
+  "heroButton": {
+    "text": "Men's",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(13, 16, 18)",
+    "height": "52px",
+    "padding": "16px 24px",
+    "borderRadius": "0px",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "fontFamily": "\"SN Skandia\""
+  },
+  "product": {
+    "url": "https://www.gymshark.com/products/gymshark-whitney-leggings-leggings-black-aw26",
+    "title": "WHITNEY HIGH-RISE REGULAR LEGGINGS",
+    "titleSize": "32px",
+    "titleWeight": "800",
+    "titleFont": "\"Plaak Gymshark\"",
+    "titleColor": "rgb(13, 16, 18)",
+    "salePrice": "$32.40",
+    "salePriceColor": "rgb(13, 16, 18)",
+    "struckPrice": "$54",
+    "struckPriceColor": "rgb(220, 4, 40)",
+    "struckDecoration": "line-through"
+  },
+  "addToBag": {
+    "text": "Add to bag",
+    "backgroundColor": "rgb(13, 16, 18)",
+    "color": "rgb(255, 255, 255)",
+    "height": "54px",
+    "width": "344px",
+    "borderRadius": "0px",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "clicked": false
+  },
+  "sizeChip": {
+    "text": "XXS (0-2)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(13, 16, 18)",
+    "border": "1px solid rgb(222, 224, 227)",
+    "height": "52px",
+    "borderRadius": "0px",
+    "fontSize": "12px",
+    "selected": false
+  },
+  "search": {
+    "backgroundColor": "rgb(244, 245, 246)",
+    "height": "44px",
+    "borderRadius": "0px",
+    "placeholder": "What are you looking for?"
+  },
+  "about": {
+    "url": "https://www.gymshark.com/pages/about-us",
+    "heading": "ABOUT US",
+    "headingFont": "\"Plaak Gymshark\"",
+    "headingSize": "20px",
+    "headingWeight": "500",
+    "headingColor": "rgb(13, 16, 18)",
+    "bodyColor": "rgb(118, 122, 127)",
+    "bodySize": "14px"
+  },
+  "footerLink": {
+    "color": "rgb(118, 122, 127)",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "textDecoration": "none"
+  },
+  "tokens": {
+    "page": "#ffffff",
+    "ink": "#0d1012",
+    "muted": "#767a7f",
+    "sale": "#dc0428",
+    "ocean": "#004aa2",
+    "quiet": "#f4f5f6",
+    "border": "#dee0e3",
+    "label": "#d8380c"
+  }
+}
