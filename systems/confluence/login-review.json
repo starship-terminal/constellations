@@ -1,0 +1,44 @@
+{
+  "slug": "confluence",
+  "product": "Confluence",
+  "domain": "www.atlassian.com",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "empty-walls",
+  "session": "Headless Chromium opened https://id.atlassian.com/login. The email field placeholder was Enter your email and its value length was 0. Continue was not clicked. Passkey, Google, Microsoft, Apple, and Slack were not clicked. Create an account was not clicked. Nothing was typed.",
+  "wall": {
+    "url": "https://id.atlassian.com/login",
+    "title": "Log in to continue - Log in with Atlassian account",
+    "heading": "Log in to continue",
+    "email_field": true,
+    "password_field": false,
+    "identity_providers_not_clicked": ["Passkey", "Google", "Microsoft", "Apple", "Slack"],
+    "continue_not_clicked": true,
+    "inputs": [
+      {
+        "type": "email",
+        "placeholder": "Enter your email",
+        "filled": false
+      }
+    ],
+    "note": "The first screen asks for an email. The password step was not opened. The painted URL was https://id.atlassian.com/login with no OAuth query."
+  },
+  "signup_wall": {
+    "url": "https://www.atlassian.com/try/cloud/signup?bundle=confluence&edition=free",
+    "title": "Sign up - Confluence - Try Atlassian Cloud | Atlassian",
+    "heading": "Get started with Confluence",
+    "same_as_login": false,
+    "continued": false,
+    "identity_providers_not_clicked": ["Google", "Microsoft", "Apple", "Slack"],
+    "inputs": [
+      {
+        "type": "email",
+        "placeholder": "you@company.com",
+        "filled": false
+      }
+    ],
+    "note": "Empty signup wall. Sign up was not clicked. No site was created. Get it free and Start free trial were not followed past this wall."
+  },
+  "stopped": "Photographed the empty login and signup walls. Did not click Passkey, Google, Microsoft, Apple, or Slack. Did not type. Did not submit. Did not create a site. Did not start a plan."
+}

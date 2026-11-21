@@ -1,0 +1,12 @@
+{
+  "url": "https://www.atlassian.com/university",
+  "requested": "https://www.atlassian.com/university",
+  "finalUrl": "https://community.atlassian.com/learning",
+  "title": "Learning - Atlassian Community",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "captured": "2026-11-22",
+  "file": "university-light-1440.png"
+}

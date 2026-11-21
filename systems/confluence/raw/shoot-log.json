@@ -1,0 +1,514 @@
+[
+  {
+    "name": "home",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Confluence | AI Workspace for Knowledge & Collaboration",
+    "finalUrl": "https://www.atlassian.com/software/confluence",
+    "h1": "Skip to content Features Resources Guides Templates Enterprise Pricing Search Sign in Get it free Atlassian named a Leader in the 2026 Gartn"
+  },
+  {
+    "name": "home",
+    "width": 390,
+    "status": "ok",
+    "reason": "",
+    "title": "Confluence | AI Workspace for Knowledge & Collaboration",
+    "finalUrl": "https://www.atlassian.com/software/confluence",
+    "h1": "Skip to content Atlassian named a Leader in the 2026 Gartner\u00ae Magic Quadrant\u2122 for Collaborative Work Management. Find out why in the report "
+  },
+  {
+    "name": "features",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Features for knowledge management and project collaboration",
+    "finalUrl": "https://www.atlassian.com/software/confluence/features",
+    "h1": "Skip to content Features Resources Guides Templates Enterprise Pricing Search Sign in Get it free Features for knowledge management and proj"
+  },
+  {
+    "name": "ai",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Rovo in Confluence: AI features | Atlassian",
+    "finalUrl": "https://www.atlassian.com/software/confluence/ai",
+    "h1": "Features Resources Guides Templates Enterprise Pricing Get it free Sign in Smarter search, faster creation From surfacing the right context "
+  },
+  {
+    "name": "resources",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Confluence Resource Center",
+    "finalUrl": "https://www.atlassian.com/software/confluence/resources",
+    "h1": "Skip to content Features Resources Guides Templates Enterprise Pricing Search Sign in Get it free Confluence Resource Center Your single des"
+  },
+  {
+    "name": "guides",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Why Choose Confluence | Atlassian",
+    "finalUrl": "https://www.atlassian.com/software/confluence/resources/guides/choosing-confluence/team-on-same-page",
+    "h1": "Features Resources Guides Templates Enterprise Pricing Get it free Sign in Back to resources Guide 1: Choosing Confluence for your team Get "
+  },
+  {
+    "name": "templates",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Confluence Templates | Atlassian",
+    "finalUrl": "https://www.atlassian.com/software/confluence/templates",
+    "h1": "Skip to content Features Resources Guides Templates Enterprise Pricing Search Sign in Get it free Templates for Confluence Use Confluence to"
+  },
+  {
+    "name": "templates-design",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Free Design templates | Confluence",
+    "finalUrl": "https://www.atlassian.com/software/confluence/templates/categories/design",
+    "h1": "Skip to content Features Resources Guides Templates Enterprise Pricing Search Sign in Get it free Design Templates for Confluence Use Conflu"
+  },
+  {
+    "name": "templates-finance",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Free Finance & Ops templates | Confluence",
+    "finalUrl": "https://www.atlassian.com/software/confluence/templates/categories/finance-and-operations",
+    "h1": "Skip to content Features Resources Guides Templates Enterprise Pricing Search Sign in Get it free Finance & Ops Templates for Confluence Use"
+  },
+  {
+    "name": "templates-hr",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Free Human Resources templates | Confluence",
+    "finalUrl": "https://www.atlassian.com/software/confluence/templates/categories/human-resources",
+    "h1": "Skip to content Features Resources Guides Templates Enterprise Pricing Search Sign in Get it free Templates for Confluence Find a ready-made"
+  },
+  {
+    "name": "templates-marketing",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Free Marketing & Sales templates | Confluence",
+    "finalUrl": "https://www.atlassian.com/software/confluence/templates/categories/marketing-and-sales",
+    "h1": "Skip to content Features Resources Guides Templates Enterprise Pricing Search Sign in Get it free Templates for Confluence Find a ready-made"
+  },
+  {
+    "name": "templates-product",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Free Product Management templates | Confluence",
+    "finalUrl": "https://www.atlassian.com/software/confluence/templates/categories/product-management",
+    "h1": "Skip to content Features Resources Guides Templates Enterprise Pricing Search Sign in Get it free Product Management Templates for Confluenc"
+  },
+  {
+    "name": "templates-project",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Free Project Management templates | Confluence",
+    "finalUrl": "https://www.atlassian.com/software/confluence/templates/categories/project-management",
+    "h1": "Skip to content Features Resources Guides Templates Enterprise Pricing Search Sign in Get it free Project Management Templates for Confluenc"
+  },
+  {
+    "name": "templates-recommended",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Free Recommended templates | Confluence",
+    "finalUrl": "https://www.atlassian.com/software/confluence/templates/categories/recommended",
+    "h1": "Skip to content Features Resources Guides Templates Enterprise Pricing Search Sign in Get it free Templates for Confluence Use Confluence to"
+  },
+  {
+    "name": "templates-software",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Free Software & IT templates | Confluence",
+    "finalUrl": "https://www.atlassian.com/software/confluence/templates/categories/software-development-and-it",
+    "h1": "Skip to content Features Resources Guides Templates Enterprise Pricing Search Sign in Get it free Templates for Confluence Find a ready-made"
+  },
+  {
+    "name": "enterprise",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Confluence for Enterprise | Atlassian",
+    "finalUrl": "https://www.atlassian.com/software/confluence/enterprise",
+    "h1": "Skip to content Features Resources Guides Templates Enterprise Pricing Search Sign in Get it free Take Confluence to the next level Confluen"
+  },
+  {
+    "name": "pricing",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Confluence Pricing: Free and Paid Plans | Atlassian",
+    "finalUrl": "https://www.atlassian.com/software/confluence/pricing",
+    "h1": "Skip to content Features Resources Guides Templates Enterprise Pricing Search Sign in Get it free Usage-based billing starts December 3, 202"
+  },
+  {
+    "name": "pricing",
+    "width": 390,
+    "status": "ok",
+    "reason": "",
+    "title": "Confluence Pricing: Free and Paid Plans | Atlassian",
+    "finalUrl": "https://www.atlassian.com/software/confluence/pricing",
+    "h1": "Skip to content Usage-based billing starts December 3, 2026. To prepare, review your included allowance, current usage, and forecast in Atla"
+  },
+  {
+    "name": "whiteboards",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Confluence whiteboards",
+    "finalUrl": "https://www.atlassian.com/software/confluence/whiteboards",
+    "h1": "Skip to content Features Resources Guides Templates Enterprise Pricing Search Sign in Get it free Turn ideas into action Bring the flexibili"
+  },
+  {
+    "name": "databases",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Confluence Databases | Atlassian",
+    "finalUrl": "https://www.atlassian.com/software/confluence/databases",
+    "h1": "Skip to content Features Resources Guides Templates Enterprise Pricing Search Sign in Get it free CONFLUENCE DATABASES A new way to organize"
+  },
+  {
+    "name": "slides",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Go from doc to deck in seconds with Confluence Slides",
+    "finalUrl": "https://www.atlassian.com/software/confluence/slides",
+    "h1": "Skip to content Products FEATURED APPS Jira Flexible project management Confluence Knowledge, all in one place Jira Service Management Deliv"
+  },
+  {
+    "name": "sandbox",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Confluence Editor Sandbox | Atlassian",
+    "finalUrl": "https://www.atlassian.com/confluence-sandbox-editor",
+    "h1": "Welcome to the Confluence editor. To save and share pages, sign up for Confluence. Get started free Normal text Confluence / Demo / Editor T"
+  },
+  {
+    "name": "loom-confluence",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Confluence and Loom work better together",
+    "finalUrl": "https://www.atlassian.com/software/loom/loom-confluence",
+    "h1": "Skip to content Features Solutions Resources Guides Pricing Search Sign in Get it free Confluence and Loom work better together TASK USE CAS"
+  },
+  {
+    "name": "gartner",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Gartner\u00ae Magic Quadrant\u2122 for Collaborative Work Management Platforms",
+    "finalUrl": "https://www.atlassian.com/gartner/magic-quadrant-collaborative-work-management",
+    "h1": "Skip to content Products FEATURED APPS Jira Flexible project management Confluence Knowledge, all in one place Jira Service Management Deliv"
+  },
+  {
+    "name": "customers",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Atlassian Customers | Achieving Together What's Impossible Alone",
+    "finalUrl": "https://www.atlassian.com/customers",
+    "h1": "April 20-22 \u2022 San Francisco Maximize savings on your in-person pass & build the future of teamwork Register now Skip to content Products FEA"
+  },
+  {
+    "name": "customer-reddit",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "How Reddit saved over $300k/yr using Jira and Confluence",
+    "finalUrl": "https://www.atlassian.com/customers/reddit",
+    "h1": "Skip to content Products FEATURED APPS Jira Flexible project management Confluence Knowledge, all in one place Jira Service Management Deliv"
+  },
+  {
+    "name": "company",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "About Us | Atlassian",
+    "finalUrl": "https://www.atlassian.com/company",
+    "h1": "Skip to content Products FEATURED APPS Jira Flexible project management Confluence Knowledge, all in one place Jira Service Management Deliv"
+  },
+  {
+    "name": "careers",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Atlassian Careers: Join the Team | Atlassian",
+    "finalUrl": "https://www.atlassian.com/company/careers",
+    "h1": "Skip to content Products FEATURED APPS Jira Flexible project management Confluence Knowledge, all in one place Jira Service Management Deliv"
+  },
+  {
+    "name": "events",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Atlassian Worldwide Events & Conferences | Atlassian",
+    "finalUrl": "https://www.atlassian.com/company/events",
+    "h1": "Skip to content Products FEATURED APPS Jira Flexible project management Confluence Knowledge, all in one place Jira Service Management Deliv"
+  },
+  {
+    "name": "blog",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Home - Inside Atlassian",
+    "finalUrl": "https://www.atlassian.com/blog",
+    "h1": "Skip to content AI that knows your business Connect people, knowledge, and work to move faster together Learn more Dismiss Inside Atlassian "
+  },
+  {
+    "name": "press-kit",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Atlassian Press Kit | Atlassian",
+    "finalUrl": "https://www.atlassian.com/company/news/press-kit",
+    "h1": "Skip to content Products FEATURED APPS Jira Flexible project management Confluence Knowledge, all in one place Jira Service Management Deliv"
+  },
+  {
+    "name": "contact",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Contact",
+    "finalUrl": "https://www.atlassian.com/company/contact",
+    "h1": "Skip to content Products FEATURED APPS Jira Flexible project management Confluence Knowledge, all in one place Jira Service Management Deliv"
+  },
+  {
+    "name": "rovo",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Rovo: Unlock organizational knowledge with GenAI | Atlassian",
+    "finalUrl": "https://www.atlassian.com/software/rovo",
+    "h1": "Skip to content Features Connectors Use cases Guides Licensing Search Sign in Try Rovo Usage-based billing starts December 3, 2026. To prepa"
+  },
+  {
+    "name": "jira",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Jira | Project Management for the AI Era | Atlassian",
+    "finalUrl": "https://www.atlassian.com/software/jira",
+    "h1": "Skip to content Features Solutions Guides Templates Pricing Search Sign in Get it free Atlassian named a Leader in the 2026 Gartner\u00ae Magic Q"
+  },
+  {
+    "name": "jira-align",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Jira Align - Connect enterprise strategy to team-level delivery",
+    "finalUrl": "https://www.atlassian.com/software/jira-align",
+    "h1": "Skip to content Strategy Collection Apps Resources Pricing Search Sign in Contact sales Connect enterprise strategy to team-level delivery P"
+  },
+  {
+    "name": "jsm",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Revolutionize IT Support with Jira Service Management | Atlassian",
+    "finalUrl": "https://www.atlassian.com/software/jira/service-management",
+    "h1": "Skip to content Features Solutions Resources Pricing Search Sign in The State of AI in Service Management: Join our digital event. Register "
+  },
+  {
+    "name": "loom",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Loom | Video Messaging for Work | Atlassian",
+    "finalUrl": "https://www.atlassian.com/software/loom",
+    "h1": "Skip to content Features Solutions Resources Guides Pricing Search Sign in Get it free Loom's Record for Agent is live on Product Hunt \ud83d\ude80 Hi"
+  },
+  {
+    "name": "bitbucket",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Bitbucket Home Page",
+    "finalUrl": "https://www.atlassian.com/software/bitbucket",
+    "h1": "Skip to content Why Bitbucket Self-Hosted Pricing Search Sign in Get it Free Usage-based billing for Bitbucket annual plans starts December "
+  },
+  {
+    "name": "products",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Products | Atlassian",
+    "finalUrl": "https://www.atlassian.com/software",
+    "h1": "Skip to content Products FEATURED APPS Jira Flexible project management Confluence Knowledge, all in one place Jira Service Management Deliv"
+  },
+  {
+    "name": "licensing",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Atlassian Purchasing and Licensing FAQ | Atlassian",
+    "finalUrl": "https://www.atlassian.com/licensing/purchase-licensing#pricing-discounts",
+    "h1": "Products AI Solutions Why Atlassian Resources Enterprise More + Get it free Sign in Licensing Purchasing & Licensing Trials Pricing and Disc"
+  },
+  {
+    "name": "all-templates",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Customizable AI-Powered Project Templates | Atlassian",
+    "finalUrl": "https://www.atlassian.com/templates",
+    "h1": "Skip to content Products FEATURED APPS Jira Flexible project management Confluence Knowledge, all in one place Jira Service Management Deliv"
+  },
+  {
+    "name": "partners",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Atlassian Partners: Receive Product Support | Atlassian",
+    "finalUrl": "https://www.atlassian.com/partners",
+    "h1": "Skip to content Products FEATURED APPS Jira Flexible project management Confluence Knowledge, all in one place Jira Service Management Deliv"
+  },
+  {
+    "name": "university",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Learning - Atlassian Community",
+    "finalUrl": "https://community.atlassian.com/learning",
+    "h1": "Community Forums Learning Events Champions Release Notes Log in Sign up Learning On-demand learning Get started Learn the basics to get star"
+  },
+  {
+    "name": "developers",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Atlassian Developers Build Apps and Integrations | Atlassian",
+    "finalUrl": "https://www.atlassian.com/developers",
+    "h1": "Products AI Solutions Why Atlassian Resources Enterprise More + Get it free Sign in Atlassian Developer Developer blog Developer community G"
+  },
+  {
+    "name": "enterprise-services",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Atlassian Enterprise | Services | Atlassian",
+    "finalUrl": "https://www.atlassian.com/enterprise/success",
+    "h1": "Skip to content Enterprise Overview Success Resources Search Sign in Contact sales Transform teamwork with expert insight Achieve your busin"
+  },
+  {
+    "name": "all-resources",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Support & Training Resources",
+    "finalUrl": "https://www.atlassian.com/resources",
+    "h1": "Skip to content Products FEATURED APPS Jira Flexible project management Confluence Knowledge, all in one place Jira Service Management Deliv"
+  },
+  {
+    "name": "privacy",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Privacy Policy | Atlassian",
+    "finalUrl": "https://www.atlassian.com/legal/privacy-policy",
+    "h1": "Skip to content Products FEATURED APPS Jira Flexible project management Confluence Knowledge, all in one place Jira Service Management Deliv"
+  },
+  {
+    "name": "terms",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Atlassian Customer Agreement | Atlassian",
+    "finalUrl": "https://www.atlassian.com/legal/atlassian-customer-agreement",
+    "h1": "Skip to content Products FEATURED APPS Jira Flexible project management Confluence Knowledge, all in one place Jira Service Management Deliv"
+  },
+  {
+    "name": "trust",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Trust Center",
+    "finalUrl": "https://www.atlassian.com/trust",
+    "h1": "Skip to content Products FEATURED APPS Jira Flexible project management Confluence Knowledge, all in one place Jira Service Management Deliv"
+  },
+  {
+    "name": "cookies",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Cookies and Tracking Notice | Atlassian",
+    "finalUrl": "https://www.atlassian.com/legal/cookies",
+    "h1": "Skip to content Products FEATURED APPS Jira Flexible project management Confluence Knowledge, all in one place Jira Service Management Deliv"
+  },
+  {
+    "name": "atlassian-home",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Collaboration software for software, IT and business teams | Atlassian",
+    "finalUrl": "https://www.atlassian.com/",
+    "h1": "Skip to content Products FEATURED APPS Jira Flexible project management Confluence Knowledge, all in one place Jira Service Management Deliv"
+  },
+  {
+    "name": "login",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Log in to continue - Log in with Atlassian account",
+    "finalUrl": "https://id.atlassian.com/login",
+    "h1": "Log in to continue Email* Remember me Continue Passkey Google Microsoft Apple Slack Can't log in? \u2022 Create an account One account , (opens n"
+  },
+  {
+    "name": "login",
+    "width": 390,
+    "status": "ok",
+    "reason": "",
+    "title": "Log in to continue - Log in with Atlassian account",
+    "finalUrl": "https://id.atlassian.com/login",
+    "h1": "Log in to continue Email* Remember me Continue Passkey Google Microsoft Apple Slack Can't log in? \u2022 Create an account One account , (opens n"
+  },
+  {
+    "name": "signup",
+    "width": 1440,
+    "status": "ok",
+    "reason": "",
+    "title": "Sign up - Confluence - Try Atlassian Cloud | Atlassian",
+    "finalUrl": "https://www.atlassian.com/try/cloud/signup?bundle=confluence&edition=free",
+    "h1": "Get started with Confluence It\u2019s free for up to 10 users - no credit card needed. Work email Sign up Using a work email helps find teammates"
+  },
+  {
+    "name": "signup",
+    "width": 390,
+    "status": "ok",
+    "reason": "",
+    "title": "Sign up - Confluence - Try Atlassian Cloud | Atlassian",
+    "finalUrl": "https://www.atlassian.com/try/cloud/signup?bundle=confluence&edition=free",
+    "h1": "Get started with Confluence It\u2019s free for up to 10 users - no credit card needed. Work email Sign up Using a work email helps find teammates"
+  },
+  {
+    "name": "menu",
+    "width": 390,
+    "status": "ok",
+    "reason": "",
+    "title": "Confluence phone menu",
+    "finalUrl": "https://www.atlassian.com/software/confluence",
+    "note": "drawer opened by click. Search field left empty. Nothing typed."
+  },
+  {
+    "name": "impressum",
+    "width": 1440,
+    "status": "discarded",
+    "reason": "printed street address and phone number",
+    "title": "Impressum | Atlassian",
+    "finalUrl": "https://www.atlassian.com/legal/impressum"
+  }
+]
