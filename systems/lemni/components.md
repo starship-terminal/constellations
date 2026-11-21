@@ -1,6 +1,6 @@
 # Lemni components
 
-Public and signed-in free controls measured on 2026-11-18. Values are token names from [tokens.json](tokens.json). Crops sit in [components/crops/](components/crops). A control the product does not ship is listed under Gaps, not invented.
+Public controls measured on 2026-11-21. Values are token names from [tokens.json](tokens.json). Crops sit in [components/crops/](components/crops). A control the public site does not ship is listed under Gaps, not invented. The workplace app was not entered.
 
 ## Checklist
 
@@ -9,24 +9,24 @@ Public and signed-in free controls measured on 2026-11-18. Values are token name
 | Button | captured | `hero-continue`, `plan-cta`, `auth-continue`, `watch-video` |
 | Icon button | captured | `menu-button` (44 px square, phone bar) |
 | Link | captured | `nav-link`, `footer-link`, `docs-side-link` |
-| Text field | captured | `email-field` on the sign-in shell. App invite and name fields |
-| Text area | not present | No textarea on the captured pages |
-| Select | captured | Editor role select on the workplace invite row. Screenshot only, not cropped |
-| Checkbox | not present | No checkbox on the captured pages |
-| Radio | not present | No radio on the captured pages |
-| Switch | captured | Plan feature toggles on `/welcome/subscribe`, resting off. Screenshot only, not cropped |
-| Tabs | captured | `docs-tabs` (Basics, Knowledge, Agents, Actions, Inbox). Workplace settings uses a vertical tab list (Members, Details, Connections, Usage, Plan, About) |
-| Menu | captured | Phone menu overlay in [screenshots/mobile-home-dark-menu-open.png](screenshots/mobile-home-dark-menu-open.png). Workplace nav on phone in [screenshots/mobile-app-inbox-light-nav-open.png](screenshots/mobile-app-inbox-light-nav-open.png) |
-| Tooltip | not present | None on the captured pages |
-| Dialog | captured | Workplace members and Account dialogs. Overlay `light.background.overlay` |
-| Toast | captured | Reconnecting pill on the inbox. Crop missed the pill; the screenshot is the evidence |
-| Card | captured | Pricing plan card on [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png). Action store cards on [screenshots/app-actions-light-default.png](screenshots/app-actions-light-default.png) |
-| List row | captured | Docs side list (`docs-side-link`). Agent rows and knowledge datasets in the app |
-| Table | not present | No data table on the captured pages |
-| Avatar | captured | Sidebar initial M, member avatar in the workplace dialog |
-| Badge | captured | Disabled on stock agents. Owner on the member row |
+| Text field | captured | `email-field` on the sign-in shell, empty |
+| Text area | not present | No textarea on the captured public pages |
+| Select | not captured | The role select sits on `/company/apply`. The form was left empty and the select was not opened |
+| Checkbox | not present | No checkbox on the captured public pages |
+| Radio | not present | No radio on the captured public pages |
+| Switch | not present | No switch on the captured public pages |
+| Tabs | captured | `docs-tabs` (Basics, Knowledge, Agents, Actions, Inbox). The labels are links |
+| Menu | captured | Phone menu overlay in [screenshots/mobile-home-dark-menu-open.png](screenshots/mobile-home-dark-menu-open.png) |
+| Tooltip | not present | None on the captured public pages |
+| Dialog | partly | Watch Video opens a YouTube embed on the home page. Opened and closed. Not cropped |
+| Toast | not present | None on the captured public pages |
+| Card | captured | Pricing plan card on [screenshots/pricing-light-default.png](screenshots/pricing-light-default.png) |
+| List row | captured | Docs side list (`docs-side-link`) |
+| Table | not present | No data table on the captured public pages |
+| Avatar | not present | None on the captured public pages |
+| Badge | not present | None on the captured public pages |
 
-Captured: 14 of 19. Text area, checkbox, radio, tooltip and table were not on the free product.
+Captured on the public site: button, icon button, link, text field, tabs, menu, card, list row. Dialog is the video overlay only. Text area, checkbox, radio, switch, tooltip, toast, table, avatar and badge are not on these pages.
 
 ## Shell
 
@@ -130,7 +130,7 @@ Overview and the other page names in the left list. 13 px, TWK Lausanne 300, res
 
 ## Sign-in shell
 
-Resting page only. Continue and Continue with Google were not clicked. The email field was filled with `visitor@example.com` and then cleared.
+Resting page only. Continue and Continue with Google were not clicked. The email field was photographed empty. Nothing was typed.
 
 ### Title
 
@@ -150,8 +150,6 @@ Resting page only. Continue and Continue with Google were not clicked. The email
 
 ![Email field](components/crops/email-field-default.png)
 
-![Email filled](components/crops/email-field-filled.png)
-
 ### Continue
 
 360 × 44, black fill, radius `core.radius.md`. The label's computed colour is `color.ink.500`, not white. The crop is the source for that reading. Not clicked.
@@ -160,47 +158,7 @@ Resting page only. Continue and Continue with Google were not clicked. The email
 
 ## Workplace app
 
-The signed-in product is a separate React app on `lemni.com`, system-ui, light ground `#f6f6f8`, a 260 px sidebar `#f1f3f4`. App buttons are 28 px tall, 8 px radius (`core.radius.sm`), black fill. Fields are 28 px, fill `light.background.field`. Upgrade was measured and never pressed.
-
-![Inbox](screenshots/app-inbox-light-default.png)
-
-![Agents](screenshots/app-agents-light-default.png)
-
-![Knowledge](screenshots/app-knowledge-light-default.png)
-
-![Actions](screenshots/app-actions-light-default.png)
-
-### Sidebar Upgrade
-
-219 × 28, black, radius `core.radius.sm`, white 13 px system-ui. Not followed.
-
-![Upgrade](components/crops/app-upgrade-default.png)
-
-### Enable Agent
-
-299 × 28, same recipe. Not pressed.
-
-![Enable Agent](components/crops/app-enable-default.png)
-
-### Invite field
-
-461 × 28, fill `light.background.field`, radius `core.radius.sm`. Invite was not pressed.
-
-![Invite field](components/crops/app-invite-field-default.png)
-
-### Workplace dialog
-
-Members dialog over `light.background.overlay` (`rgba(255, 255, 255, 0.8)`).
-
-![Workplace settings](screenshots/app-workspace-settings-light-default.png)
-
-![Account](screenshots/app-profile-light-default.png)
-
-### Empty inbox
-
-"No threads todo" in `color.ink.300`.
-
-![Empty](components/crops/app-empty-default.png)
+Not captured. The sign-in wall was photographed empty and not submitted. `login-extracted` stays not-started.
 
 ## Shared
 
@@ -210,12 +168,11 @@ Motion lives in `core.motion`. The home `dots` loop (1 s, infinite, transform) k
 
 ## Gaps
 
-- Wordmark: the logo crop missed. The mark is in [screenshots/home-dark-default.png](screenshots/home-dark-default.png) and [icon.png](icon.png).
+- Wordmark: the logo locator matched two nodes and the crop was dropped. The mark is in [screenshots/home-dark-default.png](screenshots/home-dark-default.png) and [icon.png](icon.png).
 - `footer` as an element: the site has no `<footer>`. Use `footer-link`.
-- `docs-link` for the word Agents: the section row is `docs-tabs`. Agents as its own page was not screenshotted.
+- `docs-link` is the Agents section link. The agents page itself was mapped and not screenshotted.
 - `feature-card` matched a large decorative region. Do not treat that crop as a card spec.
-- Text area, checkbox, radio, tooltip, table: not on the captured pages.
-- Select (Editor) and switch (plan feature toggles) appear in screenshots and were not cropped.
-- Error and destructive confirm: not shown on the free product.
-- Billing checkout: `/welcome/subscribe` Upgrade was not pressed.
-- Toast, dialog and member-row crops matched the page root. Use the full screenshots.
+- Text area, checkbox, radio, switch, tooltip, toast, table, avatar and badge: not on the captured public pages.
+- Select sits on the apply form and was not opened.
+- Error and destructive confirm: not shown.
+- Billing checkout and the workplace app: behind the sign-in wall. Not entered.

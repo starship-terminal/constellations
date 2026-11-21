@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-18T03:41:54.081Z",
-  "screenshot": "app-workspace-settings-light-default.png",
-  "sanitizedSourceUrl": "https://lemni.com/s/XXXXX/inbox?workspaceSettings=members",
+  "capturedAt": "2026-11-21T14:41:06.403Z",
+  "screenshot": "terms-light-full.png",
+  "sanitizedSourceUrl": null,
   "requested": {
     "viewport": {
       "width": 1440,
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 900
+      "height": 4385
     },
     "scroll": {
       "x": 0,
@@ -42,21 +42,21 @@
     }
   },
   "capture": {
-    "mode": "viewport",
+    "mode": "fullPage",
     "scale": "device",
     "clip": null
   },
   "png": {
     "width": 1440,
-    "height": 900
+    "height": 4385
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 900
+      "height": 4385
     },
-    "basis": "configuredViewport"
+    "basis": "fullPage"
   },
   "visualReview": {
     "status": "pending",

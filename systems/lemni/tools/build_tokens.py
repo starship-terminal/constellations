@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
-"""Build tokens.json for Lemni from the public and signed-in captures.
+"""Build tokens.json for Lemni from the public capture.
 
-www.lemni.com is a Framer site with no --token-* palette. The signed-in
-app on lemni.com is styled-components and also declares no custom
-properties. Every colour, size and radius here is a computed style of a
-real element, read on 2026-11-18 by tools/capture/public/measure.mjs and
-tools/capture/signed-in/measure-app.mjs and stored in
-raw/components-computed.json. The home page paints dark (rgb(13, 13, 18));
-pricing, docs, the sign-in shell and the free product paint light
+www.lemni.com is a Framer site with no --token-* palette. The sign-in
+shell at lemni.com/signin is a separate React page and also declares no
+custom properties. Every colour, size and radius here is a computed style
+of a real public element, read on 2026-11-21 by
+tools/capture/public/measure.mjs and stored in
+raw/components-computed.json. The home page and changelog paint dark
+(rgb(13, 13, 18)); pricing, docs and the sign-in shell paint light
 (rgb(246, 246, 248)). Both semantic sets are emitted. core.motion comes
 from raw/motion.json.
+
+The workplace app was not entered on this pass. Tokens that previously
+came from signed-in readings are omitted.
 
 Deterministic: same inputs, byte-identical output. Edit the readings, never
 tokens.json.
@@ -84,7 +87,8 @@ def px(v):
 
 def measured(key, state, what):
     page = C[key].get("page", "")
-    return f"measured {what} on {key}.{state} ({page}, 2026-11-18)"
+    when = (C[key].get("states") or {}).get(state, {}).get("read") or C[key].get("read") or "2026-11-21"
+    return f"measured {what} on {key}.{state} ({page}, {when})"
 
 
 # ---------------------------------------------------------------- core
@@ -220,7 +224,6 @@ def dim(name, key, prop, note=""):
 
 
 dim(["radius", "none"], "nav-dark", "borderTopLeftRadius")
-dim(["radius", "sm"], "app-upgrade", "borderTopLeftRadius", "; signed-in app controls")
 dim(["radius", "md"], "email-field", "borderTopLeftRadius", "; auth card controls")
 dim(["radius", "pill"], "plan-cta", "borderTopLeftRadius", "; light-page buttons")
 dim(["radius", "full"], "hero-continue", "borderTopLeftRadius", "; dark-page glass pills")
@@ -296,11 +299,7 @@ for path, ((lv, ls), (dv, ds)) in pairs.items():
     put(light, parts, tok(lv if lv.startswith(("rgba", "#", "{")) else norm_color(lv), "color", ls))
     put(dark, parts, tok(dv if dv.startswith(("rgba", "#", "{")) else norm_color(dv), "color", ds))
 
-put(light, ["background", "sidebar"], tok(norm_color(layout_page("app-inbox-1440")["sidebar"]["bg"]), "color", "measured workplace sidebar backgroundColor in raw/layout.json pages.app-inbox-1440 (/s/XXXXX/inbox)"))
-put(light, ["background", "overlay"], tok(norm_color(layout_page("app-settings-1440")["overlay"]["bg"]), "color", "measured workplace settings overlay in raw/layout.json pages.app-settings-1440 (/s/XXXXX/inbox?workspaceSettings=members)"))
-_v, _s = color_of("app-add-webpage", "default", "text.color")
-put(light, ["text", "disabled"], tok(_v, "color", _s))
-light["$description"] = "The light theme pricing, docs, blog, company, brand, changelog, support, privacy, the sign-in shell and the signed-in free product paint. Ground #f6f6f8, ink black, CTA a black pill. App controls use 8px radius."
+light["$description"] = "The light theme pricing, docs, blog, company, brand, support, privacy, terms and the sign-in shell paint. Ground #f6f6f8, ink black, CTA a black pill. Changelog paints the dark ground, not this set."
 dark["$description"] = "The dark theme the home page paints. Ground #0d0d12, display ink #e3e8ff, CTA a glass black pill."
 
 # Component slots the style guide renders.
@@ -312,7 +311,7 @@ put(dark, ["component", "button", "text"], tok("{text.on-action}", "color", "ali
 put(dark, ["component", "button", "radius"], tok("{radius.full}", "dimension", "alias"))
 
 doc = {
-    "$description": "Lemni public and signed-in free surfaces, measured on 2026-11-18. The marketing site is Framer and declares no colour-token palette; the app is styled-components with no custom properties. Values are computed styles. Home is dark; every other captured page, including the workplace app, is light.",
+    "$description": "Lemni public surfaces, measured on 2026-11-21. The marketing site is Framer and declares no colour-token palette; the sign-in shell is styled-components with no custom properties. Values are computed styles. Home and changelog are dark; the other captured public pages are light. The workplace app was not entered.",
     "core": core,
     "light": light,
     "dark": dark,

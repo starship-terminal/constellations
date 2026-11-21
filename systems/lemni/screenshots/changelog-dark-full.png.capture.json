@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:54:10.518Z",
-  "screenshot": "changelog-light-default.png",
+  "capturedAt": "2026-11-21T14:40:55.466Z",
+  "screenshot": "changelog-dark-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
     "viewport": {
@@ -42,21 +42,21 @@
     }
   },
   "capture": {
-    "mode": "viewport",
+    "mode": "fullPage",
     "scale": "device",
     "clip": null
   },
   "png": {
     "width": 1440,
-    "height": 900
+    "height": 2327
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 900
+      "height": 2327
     },
-    "basis": "configuredViewport"
+    "basis": "fullPage"
   },
   "visualReview": {
     "status": "pending",

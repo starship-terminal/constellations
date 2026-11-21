@@ -94,11 +94,13 @@ const desktop = {
   } },
   blog: { url: BASE + '/blog', theme: 'light', run: async (p, S) => { await S.view('default'); await S.full(); } },
   company: { url: BASE + '/company', theme: 'light', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  changelog: { url: BASE + '/changelog', theme: 'light', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  changelog: { url: BASE + '/changelog', theme: 'dark', run: async (p, S) => { await S.view('default'); await S.full(); } },
   brand: { url: BASE + '/brand', theme: 'light', run: async (p, S) => { await S.view('default'); await S.full(); } },
   support: { url: BASE + '/support', theme: 'light', run: async (p, S) => { await S.view('default'); await S.full(); } },
   privacy: { url: BASE + '/privacy', theme: 'light', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  signin: { url: APP + '/signup', theme: 'light', wait: 4000, run: async (p, S) => { await S.view('default'); } },
+  terms: { url: BASE + '/terms', theme: 'light', run: async (p, S) => { await S.view('default'); await S.full(); } },
+  signin: { url: APP + '/signin', theme: 'light', wait: 4000, run: async (p, S) => { await S.view('default'); } },
+  signup: { url: APP + '/signup', theme: 'light', wait: 4000, run: async (p, S) => { await S.view('default'); } },
 };
 
 const mobile = {
@@ -111,7 +113,7 @@ const mobile = {
   } },
   pricing: { url: BASE + '/pricing', theme: 'light', run: async (p, S) => { await S.view('default'); await S.full(); } },
   docs: { url: BASE + '/docs', theme: 'light', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  signin: { url: APP + '/signup', theme: 'light', wait: 4000, run: async (p, S) => { await S.view('default'); } },
+  signin: { url: APP + '/signin', theme: 'light', wait: 4000, run: async (p, S) => { await S.view('default'); } },
 };
 
 const b = await chromium.launch();
