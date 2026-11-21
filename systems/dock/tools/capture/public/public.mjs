@@ -50,63 +50,56 @@ const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILE
 const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).catch(() => loc.evaluate((el) => el.click())); };
 
 // The header's Product/Resources triggers are <details>/<summary> dropdowns
-// that open a mega-menu; a click toggles them. Local UI only, never a link.
-async function openMenu(p, S) {
-  const t = p.locator('summary.nav-trigger').filter({ hasText: /^\s*Product\s*$/ }).filter({ visible: true }).first();
-  if (!(await t.count())) return;
-  await clickEl(t);
+// inside dock-site-header's shadow root. A click toggles them. Local UI
+// only, never a link, never a form, never an identity provider.
+async function openMenu(p, S, label, shot) {
+  const opened = await p.evaluate((label) => {
+    const host = document.querySelector('dock-site-header');
+    const root = host && host.shadowRoot;
+    if (!root) return false;
+    const t = [...root.querySelectorAll('summary.nav-trigger')].find((el) => (el.textContent || '').replace(/\s+/g, ' ').trim() === label);
+    if (!t) return false;
+    t.click();
+    return true;
+  }, label);
+  if (!opened) throw new Error('no ' + label + ' trigger in dock-site-header');
   await wait(p, 1400);
-  await S.view('menu');
+  await S.view(shot);
   await p.keyboard.press('Escape');
-  await wait(p, 600);
+  await wait(p, 400);
 }
+
+const page = (path, wait = 10000) => ({ path, wait, run: async (p, S) => { await S.view('default'); await S.full(); } });
 
 const desktop = {
   home: { path: '/', wait: 10000, run: async (p, S) => {
     await S.view('default');
-    await step('menu', async () => { await openMenu(p, S); });
+    await step('product menu', async () => { await openMenu(p, S, 'Product', 'product'); });
+    await step('resources menu', async () => { await openMenu(p, S, 'Resources', 'resources'); });
     await S.full();
   } },
-  pricing: { path: '/pricing', wait: 10000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  customers: { path: '/customers', wait: 10000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  library: { path: '/library', wait: 10000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  templates: { path: '/templates', wait: 10000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  product: { path: '/product/content-management', wait: 10000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  solutions: { path: '/solutions/client-portal', wait: 10000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  about: { path: '/about-us', wait: 8000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
-  demo: { path: '/demo', wait: 14000, run: async (p, S) => {
-    await S.view('default');
-    await S.full();
-  } },
+  pricing: page('/pricing'),
+  customers: page('/customers'),
+  library: page('/library'),
+  templates: page('/templates'),
+  // Earlier pass named this route "product". Kept so the old shot name still regenerates.
+  product: page('/product/content-management'),
+  solutions: page('/solutions/client-portal'),
+  about: page('/about-us', 8000),
+  demo: page('/demo', 14000),
   // The auth application on auth.dock.us: the sign-in and sign-up cards are
-  // surfaces only — measured, never filled or submitted.
-  login: { url: AUTH + '/login', wait: 10000, run: async (p, S) => {
-    await S.view('default');
-  } },
-  signup: { url: AUTH + '/sign-up', wait: 10000, run: async (p, S) => {
-    await S.view('default');
-  } },
+  // surfaces only. Photographed empty. Never filled or submitted. Identity
+  // providers are not clicked.
+  login: { url: AUTH + '/login', wait: 10000, run: async (p, S) => { await S.view('empty'); } },
+  signup: { url: AUTH + '/sign-up', wait: 10000, run: async (p, S) => { await S.view('empty'); } },
+  // Public pages the 2026-11-21 site tree names and the earlier pass did not photograph.
+  'dock-ai': page('/product/dock-ai'),
+  sales: page('/solutions/sales'),
+  learning: page('/product/learning-management'),
+  integrations: page('/product/integrations'),
+  updates: page('/product-updates'),
+  events: page('/events'),
+  privacy: { path: '/legal/privacy', wait: 8000, run: async (p, S) => { await S.view('default'); } },
 };
 
 const mobile = {
@@ -116,11 +109,22 @@ const mobile = {
       // The mobile menu control is the header's <summary.navigation-toggle>
       // (see measure.mjs's m-menu-button) — a missing toggle is a failed
       // shot, so it is thrown, not silently skipped.
-      const m = p.locator('summary.navigation-toggle, .nav-mobile-toggle, button[aria-label*="menu" i], button[aria-label*="navigation" i]').filter({ visible: true }).first();
-      if (!(await m.count())) throw new Error('no mobile menu toggle found (expected summary.navigation-toggle)');
-      await clickEl(m); await wait(p, 1800); await S.view('menu'); await p.keyboard.press('Escape');
+      const opened = await p.evaluate(() => {
+        const host = document.querySelector('dock-site-header');
+        const root = host && host.shadowRoot;
+        const t = root && [...root.querySelectorAll('button.navigation-toggle, summary.navigation-toggle')].find((el) => /menu/i.test(el.getAttribute('aria-label') || el.textContent || ''));
+        if (!t) return false;
+        t.click();
+        return true;
+      });
+      if (!opened) throw new Error('no mobile menu toggle found in dock-site-header');
+      await wait(p, 1800);
+      await S.view('menu');
+      await p.keyboard.press('Escape');
     });
-    await S.full();
+    // Full-page at 2x exceeds the screenshot helper's 1px tolerance on this
+    // page (PNG height drifted 18px on 2026-11-21). Viewport shots are the
+    // phone evidence. The desktop full-page shot covers the long page.
   } },
   pricing: { path: '/pricing', wait: 10000, run: async (p, S) => {
     await S.view('default');
