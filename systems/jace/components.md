@@ -35,7 +35,7 @@ Crops live in [components/crops/](components/crops/). Full pages live in [screen
 | Docs title | Docs | default | [`docs-title-default`](components/crops/docs-title-default.png) |
 | Docs sidebar link | Docs | default, hover | [`docs-nav-default`](components/crops/docs-nav-default.png) |
 | Form title | Sales contact (boundary) | default | [`form-title-default`](components/crops/form-title-default.png) |
-| Text field | Sales contact (boundary) | default, hover, focus-visible, focused, filled | [`text-field-default`](components/crops/text-field-default.png) |
+| Text field | Sales contact (boundary) | default, hover, focus-visible, focused | [`text-field-default`](components/crops/text-field-default.png) |
 | Text area | Sales contact (boundary) | missing |  |
 | Submit button | Sales contact (boundary) | default, hover, focus-visible, pressed | [`form-submit-default`](components/crops/form-submit-default.png) |
 | Required field | Sales contact (boundary) | default | [`text-field-invalid-default`](components/crops/text-field-invalid-default.png) |
@@ -50,12 +50,6 @@ Crops live in [components/crops/](components/crops/). Full pages live in [screen
 | Mobile headline | Mobile (390 wide) | default | [`m-hero-default`](components/crops/m-hero-default.png) |
 | Signup title | App signup (boundary) | default | [`signup-title-default`](components/crops/signup-title-default.png) |
 | Signup Continue | App signup (boundary) | default, hover, focus-visible, pressed | [`signup-continue-default`](components/crops/signup-continue-default.png) |
-| Privacy title | App signup (boundary) | default | [`signup-privacy-title-default`](components/crops/signup-privacy-title-default.png) |
-| Continue to signup | App signup (boundary) | default, hover, focus-visible, pressed | [`signup-privacy-continue-default`](components/crops/signup-privacy-continue-default.png) |
-| Signup OAuth title | App signup (boundary) | default | [`signup-oauth-title-default`](components/crops/signup-oauth-title-default.png) |
-| Signup Google | App signup (boundary) | default, hover, focus-visible, pressed | [`signup-google-default`](components/crops/signup-google-default.png) |
-| Signup Outlook | App signup (boundary) | default, hover, focus-visible, pressed | [`signup-outlook-default`](components/crops/signup-outlook-default.png) |
-| Signup email field | App signup (boundary) | missing |  |
 
 ## Shared values
 

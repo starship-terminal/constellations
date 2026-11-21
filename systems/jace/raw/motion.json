@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "readAt": "2026-11-18",
+  "readAt": "2026-11-21",
   "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
   "source": "public pages, headless Chromium, read at rest",
   "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
@@ -725,6 +725,8 @@
      "selector": ":root",
      "declarations": {
       "--motion-attention-duration": "0s",
+      "--motion-calm-enter-duration": "0s",
+      "--motion-calm-settle-duration": "0s",
       "--motion-celebrate-duration": "0s",
       "--motion-enter-duration": "0s",
       "--motion-settle-duration": "0s"
@@ -2021,6 +2023,30 @@
      "declared": "cubic-bezier(0,0,.2,1)",
      "selector": ":root",
      "resolved": "cubic-bezier(0,0,.2,1)"
+    },
+    {
+     "name": "--motion-calm-enter-duration",
+     "declared": ".22s",
+     "selector": ":root",
+     "resolved": ".22s"
+    },
+    {
+     "name": "--motion-calm-enter-easing",
+     "declared": "cubic-bezier(.25,.1,.25,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(.25,.1,.25,1)"
+    },
+    {
+     "name": "--motion-calm-settle-duration",
+     "declared": ".24s",
+     "selector": ":root",
+     "resolved": ".24s"
+    },
+    {
+     "name": "--motion-calm-settle-easing",
+     "declared": "cubic-bezier(.25,.1,.25,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(.25,.1,.25,1)"
     },
     {
      "name": "--motion-celebrate-duration",
@@ -2654,6 +2680,8 @@
      "selector": ":root",
      "declarations": {
       "--motion-attention-duration": "0s",
+      "--motion-calm-enter-duration": "0s",
+      "--motion-calm-settle-duration": "0s",
       "--motion-celebrate-duration": "0s",
       "--motion-enter-duration": "0s",
       "--motion-settle-duration": "0s"
@@ -3952,6 +3980,30 @@
      "resolved": "cubic-bezier(0,0,.2,1)"
     },
     {
+     "name": "--motion-calm-enter-duration",
+     "declared": ".22s",
+     "selector": ":root",
+     "resolved": ".22s"
+    },
+    {
+     "name": "--motion-calm-enter-easing",
+     "declared": "cubic-bezier(.25,.1,.25,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(.25,.1,.25,1)"
+    },
+    {
+     "name": "--motion-calm-settle-duration",
+     "declared": ".24s",
+     "selector": ":root",
+     "resolved": ".24s"
+    },
+    {
+     "name": "--motion-calm-settle-easing",
+     "declared": "cubic-bezier(.25,.1,.25,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(.25,.1,.25,1)"
+    },
+    {
      "name": "--motion-celebrate-duration",
      "declared": ".36s",
      "selector": ":root",
@@ -4007,7 +4059,7 @@
     "normal": false,
     "reduce": true
    },
-   "scanned": 413,
+   "scanned": 412,
    "capped": false,
    "unreadableSheets": 0,
    "sheetsTruncated": {
@@ -4618,6 +4670,8 @@
      "selector": ":root",
      "declarations": {
       "--motion-attention-duration": "0s",
+      "--motion-calm-enter-duration": "0s",
+      "--motion-calm-settle-duration": "0s",
       "--motion-celebrate-duration": "0s",
       "--motion-enter-duration": "0s",
       "--motion-settle-duration": "0s"
@@ -6680,6 +6734,30 @@
      "declared": "cubic-bezier(0,0,.2,1)",
      "selector": ":root",
      "resolved": "cubic-bezier(0,0,.2,1)"
+    },
+    {
+     "name": "--motion-calm-enter-duration",
+     "declared": ".22s",
+     "selector": ":root",
+     "resolved": ".22s"
+    },
+    {
+     "name": "--motion-calm-enter-easing",
+     "declared": "cubic-bezier(.25,.1,.25,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(.25,.1,.25,1)"
+    },
+    {
+     "name": "--motion-calm-settle-duration",
+     "declared": ".24s",
+     "selector": ":root",
+     "resolved": ".24s"
+    },
+    {
+     "name": "--motion-calm-settle-easing",
+     "declared": "cubic-bezier(.25,.1,.25,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(.25,.1,.25,1)"
     },
     {
      "name": "--motion-celebrate-duration",

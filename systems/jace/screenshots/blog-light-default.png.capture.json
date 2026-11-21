@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T19:52:44.662Z",
+  "capturedAt": "2026-11-21T03:46:23.855Z",
   "screenshot": "blog-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -36,7 +36,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 15915
+      "height": 16417
     },
     "scroll": {
       "x": 0,

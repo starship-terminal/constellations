@@ -1,0 +1,85 @@
+{
+  "slug": "jace",
+  "product": "Jace AI",
+  "domain": "jace.ai",
+  "captured": "2026-11-21",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "oauth-only",
+  "session": "Playwright headless Chromium, signed out. No T3 preview. No identity provider was clicked. No form was submitted. No email, name, password or code was typed.",
+  "wall": {
+    "url": "https://app.jace.ai/signin",
+    "title": "Jace",
+    "asks": [
+      "Continue with Google",
+      "Continue with Outlook",
+      "Launch the SSO portal"
+    ],
+    "email_field": false,
+    "password_field": false,
+    "code_field": false,
+    "inputs": [],
+    "note": "The heading says Sign in with your work email. That line is a heading, not a field. The body says Log in with your Google or Microsoft account."
+  },
+  "signup_wall": {
+    "url": "https://app.jace.ai/signup",
+    "asks": ["Continue", "Support", "Sign in"],
+    "email_field": false,
+    "continued": false,
+    "note": "Continue was not clicked. The privacy notice and any later OAuth card were not opened on this refresh."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "deviceScaleFactor": 1,
+      "file": "screenshots/signin-light-default.png"
+    },
+    "phone": {
+      "requested": "390x844",
+      "deviceScaleFactor": 2,
+      "file": "screenshots/mobile-signin-light-default.png"
+    }
+  },
+  "offered": {
+    "nav": [
+      {"label": "Log In", "href": "https://app.jace.ai/signin", "reached": "wall only"},
+      {"label": "Get started", "href": "https://app.jace.ai/signup", "reached": "wall only"},
+      {"label": "Get started for free", "href": "https://app.jace.ai/signup", "reached": "wall only"},
+      {"label": "Draft e-mails", "href": "https://app.jace.ai/signup", "reached": "wall only"},
+      {"label": "Find an important file", "href": "https://app.jace.ai/signup", "reached": "wall only"},
+      {"label": "Organize inbox", "href": "https://app.jace.ai/signup", "reached": "wall only"},
+      {"label": "Sort by priority", "href": "https://app.jace.ai/signup", "reached": "wall only"}
+    ],
+    "settings": [
+      {"label": "Settings, My account", "href": "https://app.jace.ai/inbox#settings-account", "reached": false, "reason": "docs link into the signed-in inbox"},
+      {"label": "Settings, Rules", "href": "https://app.jace.ai/inbox#settings-rules", "reached": false},
+      {"label": "Settings, Integrations", "href": "https://app.jace.ai/inbox#settings-integrations", "reached": false}
+    ],
+    "create": {
+      "items": ["Send a request"],
+      "reached": false,
+      "reason": "sales form left empty and not submitted"
+    }
+  },
+  "screens": [
+    {"name": "Sign-in wall, desktop", "file": "screenshots/signin-light-default.png"},
+    {"name": "Sign-in wall, phone", "file": "screenshots/mobile-signin-light-default.png"},
+    {"name": "Signup landing, desktop, Continue not clicked", "file": "screenshots/signup-light-default.png"},
+    {"name": "Signup landing, phone", "file": "screenshots/mobile-signup-light-default.png"}
+  ],
+  "gaps": [
+    "login-extracted is not-started. The probe is oauth-only.",
+    "Google, Outlook and the SSO portal were not clicked.",
+    "Signup Continue was not clicked, so the privacy notice and the signup OAuth card were not reached on this refresh.",
+    "Inbox, drafts, labels, Flows, settings and billing were not reached.",
+    "No email was sent and no code was entered."
+  ],
+  "not_submitted": [
+    "Continue with Google",
+    "Continue with Outlook",
+    "Launch the SSO portal",
+    "Signup Continue",
+    "Send a request",
+    "any email, name, password or code"
+  ]
+}

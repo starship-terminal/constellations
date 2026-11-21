@@ -701,29 +701,29 @@ Crops: `form-title-default.png`.
 
 #### text-field
 
-Text field. The first sales-form field. Sample text is typed and deleted. Nothing is submitted.
+Text field. The first sales-form field, empty. Nothing is typed and nothing is submitted. A filled state was not captured.
 
-Page: contact. Selector: `input first`. States: default, hover, focus-visible, focused, filled.
+Page: contact. Selector: `input first`. States: default, hover, focus-visible, focused.
 
-| Property | default | hover | focus-visible | focused | filled |
-|---|---|---|---|---|---|
-| Size (w x h) | 478 x 50 | = | = | = | = |
-| Padding | 12px 16px | = | = | = | = |
-| Border | 1px solid #d1d5dc | = | 1px solid #000000 @ 0 | 1px solid #000000 @ 0 | 1px solid #000000 @ 0 |
-| Radius | 8px | = | = | = | = |
-| Background | #ffffff | = | = | = | = |
-| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fafafa 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fafafa 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fafafa 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px |
-| Outline | none | = | = | = | = |
-| Font | GeistSans 16px/24px 400 | = | = | = | = |
-| Letter spacing | normal | = | = | = | = |
-| Colour | #2d2d2d | = | = | = | = |
-| Transition | all 0.075s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = | = |
-| Cursor | text | = | = | = | = |
-| Placeholder | #99a1af, opacity 1 | = | = | = | = |
-| Painted layers | input.w-full.px-4 478.0x50.0 bg #ffffff border T:1px solid #d1d5dc / R:1px solid #d1d5dc / B:1px solid #d1d5dc / L:1px solid #d1d5dc r 8px | = | input.w-full.px-4 478.0x50.0 bg #ffffff border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fafafa 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px | input.w-full.px-4 478.0x50.0 bg #ffffff border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fafafa 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px | input.w-full.px-4 478.0x50.0 bg #ffffff border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fafafa 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px |
-| How | at rest | mouse hover | Shift+Tab, Tab | clicked into the field; nothing submitted | typed a sample address, then deleted; nothing submitted |
+| Property | default | hover | focus-visible | focused |
+|---|---|---|---|---|
+| Size (w x h) | 478 x 50 | = | = | = |
+| Padding | 12px 16px | = | = | = |
+| Border | 1px solid #d1d5dc | = | 1px solid #000000 @ 0 | 1px solid #000000 @ 0 |
+| Radius | 8px | = | = | = |
+| Background | #ffffff | = | = | = |
+| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fafafa 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fafafa 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | = | = |
+| Font | GeistSans 16px/24px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #2d2d2d | = | = | = |
+| Transition | all 0.075s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | text | = | = | = |
+| Placeholder | #99a1af, opacity 1 | = | = | = |
+| Painted layers | input.w-full.px-4 478.0x50.0 bg #ffffff border T:1px solid #d1d5dc / R:1px solid #d1d5dc / B:1px solid #d1d5dc / L:1px solid #d1d5dc r 8px | = | input.w-full.px-4 478.0x50.0 bg #ffffff border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fafafa 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px | input.w-full.px-4 478.0x50.0 bg #ffffff border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #fafafa 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px |
+| How | at rest | mouse hover | Shift+Tab, Tab | clicked into the field; nothing submitted |
 
-Crops: `text-field-default.png`, `text-field-hover.png`, `text-field-focus-visible.png`, `text-field-focused.png`, `text-field-filled.png`.
+Crops: `text-field-default.png`, `text-field-hover.png`, `text-field-focus-visible.png`, `text-field-focused.png`.
 
 #### text-area
 
@@ -1009,7 +1009,7 @@ Crops: `signup-title-default.png`.
 
 #### signup-continue
 
-Signup Continue. The landing Continue control. Clicked once later to open the privacy card; states here are measured first.
+Signup Continue. The landing Continue control; measured, never clicked (it opens a privacy notice).
 
 Page: signup. Selector: `button Continue`. States: default, hover, focus-visible, pressed.
 
@@ -1034,143 +1034,6 @@ Page: signup. Selector: `button Continue`. States: default, hover, focus-visible
 | Painted layers | - | = | button.inline-flex.items-center 92.5x40.0 r 6px outline 2px solid #c4b5fd offset 2px | = |
 
 Crops: `signup-continue-default.png`, `signup-continue-hover.png`, `signup-continue-focus-visible.png`, `signup-continue-pressed.png`.
-
-#### signup-privacy-title
-
-Privacy title. The privacy notice after Continue. Not a cookie banner.
-
-Page: signup. Selector: `privacy heading`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 290.91 x 32 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Gelica 30px/32px 400 |
-| Letter spacing | normal |
-| Colour | #fafafa |
-| Transition | none |
-| How | at rest |
-
-Crops: `signup-privacy-title-default.png`.
-
-#### signup-privacy-continue
-
-Continue to signup. Advances to the OAuth card. Google and Outlook are not pressed.
-
-Page: signup. Selector: `button Continue to signup`. States: default, hover, focus-visible, pressed.
-
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 182.3 x 40 | = | = | 176.83 x 38.8 |
-| Padding | 8px 16px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 6px | = | = | = |
-| Background | transparent | = | = | = |
-| Background image | linear-gradient(135deg, #d1c2f4, #edc2e7, #ffdc61) | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 2px solid #c4b5fd offset 2px | = |
-| Font | Inter Variable 14px/20px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Transition | background-color, border-color, color, scale 0.1s, 0.1s, 0.1s, 0.2s ease-out, ease-out, ease-out, ease-out delay 0s, 0s, 0s, 0s | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 16 x 16, colour #000000 | = | = | 15.52 x 15.52, colour #000000 |
-| ::before | 182.297px x 40px, absolute, bg #000000 @ 0, radius 6px | 182.297px x 40px, absolute, bg #000000 @ 0.1, radius 6px | = | 182.297px x 40px, absolute, bg #000000 @ 0.1, radius 6px |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | button.inline-flex.items-center 182.3x40.0 r 6px outline 2px solid #c4b5fd offset 2px | = |
-
-Crops: `signup-privacy-continue-default.png`, `signup-privacy-continue-hover.png`, `signup-privacy-continue-focus-visible.png`, `signup-privacy-continue-pressed.png`.
-
-#### signup-oauth-title
-
-Signup OAuth title. Sign up with your work email. There is no email field: Google and Outlook only.
-
-Page: signup. Selector: `h1`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 400 x 80 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Gelica 40px/40px 400 |
-| Letter spacing | -0.8px |
-| Colour | #fafafa |
-| Transition | none |
-| How | at rest |
-
-Crops: `signup-oauth-title-default.png`.
-
-#### signup-google
-
-Signup Google. Continue with Google on signup. Measured, never pressed.
-
-Page: signup. Selector: `button Continue with Google`. States: default, hover, focus-visible, pressed.
-
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 400 x 40 | = | = | 388 x 38.8 |
-| Padding | 8px 16px 8px 12px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | 1px solid #27272a | = | = | = |
-| Radius | 6px | = | = | = |
-| Background | #222225 | #222225 @ 0.5 | = | #222225 @ 0.5 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 2px solid #c4b5fd offset 2px | = |
-| Font | Inter Variable 14px/20px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #f4f4f5 | = | = | = |
-| Transition | background-color, border-color, color, scale 0.1s, 0.1s, 0.1s, 0.2s ease-out, ease-out, ease-out, ease-out delay 0s, 0s, 0s, 0s | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 20 x 20, colour #f4f4f5 | = | = | 19.4 x 19.4, colour #f4f4f5 |
-| Painted layers | button.inline-flex.items-center 400.0x40.0 bg #222225 border T:1px solid #27272a / R:1px solid #27272a / B:1px solid #27272a / L:1px solid #27272a r 6px | button.inline-flex.items-center 400.0x40.0 bg #222225 @ 0.5 border T:1px solid #27272a / R:1px solid #27272a / B:1px solid #27272a / L:1px solid #27272a r 6px | button.inline-flex.items-center 400.0x40.0 bg #222225 border T:1px solid #27272a / R:1px solid #27272a / B:1px solid #27272a / L:1px solid #27272a r 6px outline 2px solid #c4b5fd offset 2px | button.inline-flex.items-center 388.0x38.8 bg #222225 @ 0.5 border T:1px solid #27272a / R:1px solid #27272a / B:1px solid #27272a / L:1px solid #27272a r 6px |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-
-Crops: `signup-google-default.png`, `signup-google-hover.png`, `signup-google-focus-visible.png`, `signup-google-pressed.png`.
-
-#### signup-outlook
-
-Signup Outlook. Continue with Outlook on signup. Measured, never pressed.
-
-Page: signup. Selector: `button Continue with Outlook`. States: default, hover, focus-visible, pressed.
-
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 400 x 40 | = | = | 388 x 38.8 |
-| Padding | 8px 16px 8px 12px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | 1px solid #27272a | = | = | = |
-| Radius | 6px | = | = | = |
-| Background | #222225 | #222225 @ 0.5 | = | #222225 @ 0.5 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 2px solid #c4b5fd offset 2px | = |
-| Font | Inter Variable 14px/20px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #f4f4f5 | = | = | = |
-| Transition | background-color, border-color, color, scale 0.1s, 0.1s, 0.1s, 0.2s ease-out, ease-out, ease-out, ease-out delay 0s, 0s, 0s, 0s | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 20 x 20, colour #f4f4f5 | = | = | 19.4 x 19.4, colour #f4f4f5 |
-| Painted layers | button.inline-flex.items-center 400.0x40.0 bg #222225 border T:1px solid #27272a / R:1px solid #27272a / B:1px solid #27272a / L:1px solid #27272a r 6px | button.inline-flex.items-center 400.0x40.0 bg #222225 @ 0.5 border T:1px solid #27272a / R:1px solid #27272a / B:1px solid #27272a / L:1px solid #27272a r 6px | button.inline-flex.items-center 400.0x40.0 bg #222225 border T:1px solid #27272a / R:1px solid #27272a / B:1px solid #27272a / L:1px solid #27272a r 6px outline 2px solid #c4b5fd offset 2px | button.inline-flex.items-center 388.0x38.8 bg #222225 @ 0.5 border T:1px solid #27272a / R:1px solid #27272a / B:1px solid #27272a / L:1px solid #27272a r 6px |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-
-Crops: `signup-outlook-default.png`, `signup-outlook-hover.png`, `signup-outlook-focus-visible.png`, `signup-outlook-pressed.png`.
-
-#### signup-email
-
-Signup email field. Expected email field. Missing on this product: OAuth only.
-
-Page: signup. Selector: `input email`. States: .
-
-Not found on the page at capture time.
 
 ## Transitions declared in the readable stylesheets
 
