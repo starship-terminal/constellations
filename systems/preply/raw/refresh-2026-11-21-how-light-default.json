@@ -1,0 +1,540 @@
+{
+  "status": 200,
+  "challenge": false,
+  "url": "https://preply.com/en/how-it-works",
+  "mapped": {
+    "path": "/en/how-it-works",
+    "title": "How Preply works: Personalized tutoring for real progress",
+    "h1": "How Preply works: Make real progress with your ideal tutor.",
+    "headings": [
+      "How Preply works: Make real progress with your ideal tutor.",
+      "How does Preply work?",
+      "Why do learners choose Preply?",
+      "Tools that help you keep making progress.",
+      "What our users say.",
+      "Find the right tutor for you.",
+      "FAQs on how Preply works."
+    ],
+    "headerItems": [
+      {
+        "tag": "A",
+        "text": "",
+        "href": "/",
+        "aria": null
+      },
+      {
+        "tag": "A",
+        "text": "Find tutors",
+        "href": "https://preply.com/en/online/english-tutors",
+        "aria": null
+      },
+      {
+        "tag": "A",
+        "text": "For business",
+        "href": "/en/business-language-training",
+        "aria": null
+      },
+      {
+        "tag": "A",
+        "text": "Become a tutor",
+        "href": "https://preply.com/en/teach",
+        "aria": null
+      },
+      {
+        "tag": "A",
+        "text": "Proven Progress",
+        "href": "https://preply.com/en/proven-progress-platform",
+        "aria": null
+      },
+      {
+        "tag": "BUTTON",
+        "text": "English, SGD",
+        "href": "",
+        "aria": "Select language and currency"
+      },
+      {
+        "tag": "A",
+        "text": "Help",
+        "href": "https://help.preply.com/en/",
+        "aria": "Help"
+      },
+      {
+        "tag": "A",
+        "text": "Log In",
+        "href": "/en/login",
+        "aria": null
+      }
+    ],
+    "footerCount": 75,
+    "footerHeads": [
+      "Who we are",
+      "How it works",
+      "Preply reviews",
+      "Preply app",
+      "Proven progress platform",
+      "Preply community guidelines",
+      "Work at Preply!",
+      "Status",
+      "Preply's Learning Research",
+      "We stand with Ukraine",
+      "Media kit",
+      "Affiliate program"
+    ],
+    "footerLinks": [
+      {
+        "text": "Who we are",
+        "href": "https://preply.com/en/about-us"
+      },
+      {
+        "text": "How it works",
+        "href": "https://preply.com/en/how-it-works"
+      },
+      {
+        "text": "Preply reviews",
+        "href": "https://preply.com/en/reviews"
+      },
+      {
+        "text": "Preply app",
+        "href": "https://preply.com/en/app"
+      },
+      {
+        "text": "Proven progress platform",
+        "href": "https://preply.com/en/proven-progress-platform"
+      },
+      {
+        "text": "Preply community guidelines",
+        "href": "https://preply.com/en/community-guidelines"
+      },
+      {
+        "text": "Work at Preply!",
+        "href": "https://preply.com/en/careers"
+      },
+      {
+        "text": "Preply's Learning Research",
+        "href": "https://preply.com/en/learning-research"
+      },
+      {
+        "text": "Media kit",
+        "href": "https://preply.com/en/about-us/media-kit"
+      },
+      {
+        "text": "Preply Blog",
+        "href": "https://preply.com/en/blog/"
+      },
+      {
+        "text": "Questions and Answers",
+        "href": "https://preply.com/en/questions"
+      },
+      {
+        "text": "Student discount",
+        "href": "https://preply.com/en/student-discount"
+      },
+      {
+        "text": "Refer a friend",
+        "href": "https://preply.com/en/referral"
+      },
+      {
+        "text": "Test your English for free",
+        "href": "https://preply.com/en/language-tests/english"
+      },
+      {
+        "text": "Test your vocab",
+        "href": "https://preply.com/en/learn/english/test-your-vocab"
+      },
+      {
+        "text": "Preply discounts",
+        "href": "https://preply.com/en/learn/discounts"
+      },
+      {
+        "text": "Preply Subscription",
+        "href": "https://preply.com/en/subscription"
+      },
+      {
+        "text": "Become an online tutor",
+        "href": "https://preply.com/en/teach"
+      },
+      {
+        "text": "Teach English online",
+        "href": "https://preply.com/en/online/english-tutoring-jobs"
+      },
+      {
+        "text": "Teach French online",
+        "href": "https://preply.com/en/online/french-tutoring-jobs"
+      },
+      {
+        "text": "Teach Spanish online",
+        "href": "https://preply.com/en/online/spanish-tutoring-jobs"
+      },
+      {
+        "text": "Teach German online",
+        "href": "https://preply.com/en/online/german-tutoring-jobs"
+      },
+      {
+        "text": "See all online tutoring jobs",
+        "href": "https://preply.com/en/online/tutoring-jobs"
+      },
+      {
+        "text": "Corporate language training",
+        "href": "https://preply.com/en/business-language-training"
+      },
+      {
+        "text": "Corporate English training",
+        "href": "https://preply.com/en/corporate-english-training"
+      },
+      {
+        "text": "Corporate Spanish training",
+        "href": "https://preply.com/en/corporate-spanish-training"
+      },
+      {
+        "text": "Corporate training blog",
+        "href": "https://preply.com/en/blog/for-businesses/"
+      },
+      {
+        "text": "Resource center",
+        "href": "https://preply.com/en/blog/resource-center/"
+      },
+      {
+        "text": "English level test for companies",
+        "href": "https://preply.com/en/english-level-test-for-companies"
+      },
+      {
+        "text": "Francization for businesses program",
+        "href": "https://preply.com/en/business/francization-course-for-businesses"
+      },
+      {
+        "text": "Language training for employee relocation",
+        "href": "https://preply.com/en/business/language-training-for-employee-relocation"
+      },
+      {
+        "text": "Facebook",
+        "href": "https://www.facebook.com/preply"
+      },
+      {
+        "text": "Instagram",
+        "href": "https://www.instagram.com/preply/"
+      },
+      {
+        "text": "Youtube",
+        "href": "https://www.youtube.com/user/preplysite"
+      },
+      {
+        "text": "LinkedIn",
+        "href": "https://www.linkedin.com/company/preply/"
+      },
+      {
+        "text": "TikTok",
+        "href": "https://www.tiktok.com/@preplyglobal"
+      },
+      {
+        "text": "Learn English online",
+        "href": "https://preply.com/en/blog/learn-english-online/"
+      },
+      {
+        "text": "Learn Spanish online",
+        "href": "https://preply.com/en/blog/learn-spanish-online/"
+      },
+      {
+        "text": "Learn French online",
+        "href": "https://preply.com/en/blog/learn-french-online/"
+      },
+      {
+        "text": "Learn German online",
+        "href": "https://preply.com/en/blog/learn-german-online/"
+      },
+      {
+        "text": "Learn Japanese online",
+        "href": "https://preply.com/en/blog/learn-japanese-online/"
+      },
+      {
+        "text": "Learn Italian online",
+        "href": "https://preply.com/en/blog/learn-italian-online/"
+      },
+      {
+        "text": "Learn another language",
+        "href": "https://preply.com/en/learn"
+      },
+      {
+        "text": "Online English Classes",
+        "href": "https://preply.com/en/classes/english"
+      },
+      {
+        "text": "Business English courses",
+        "href": "https://preply.com/en/classes/english/business"
+      },
+      {
+        "text": "Online Spanish classes",
+        "href": "https://preply.com/en/classes/spanish"
+      },
+      {
+        "text": "Online French classes",
+        "href": "https://preply.com/en/classes/french"
+      },
+      {
+        "text": "Online German classes",
+        "href": "https://preply.com/en/classes/german"
+      },
+      {
+        "text": "Online Chinese classes",
+        "href": "https://preply.com/en/classes/chinese"
+      },
+      {
+        "text": "Online Japanese classes",
+        "href": "https://preply.com/en/classes/japanese"
+      },
+      {
+        "text": "Online Turkish classes",
+        "href": "https://preply.com/en/classes/turkish"
+      },
+      {
+        "text": "Online Portuguese classes",
+        "href": "https://preply.com/en/classes/portuguese"
+      },
+      {
+        "text": "English Tutors",
+        "href": "https://preply.com/en/online/english-tutors"
+      },
+      {
+        "text": "Spanish Tutors",
+        "href": "https://preply.com/en/online/spanish-tutors"
+      },
+      {
+        "text": "French Tutors",
+        "href": "https://preply.com/en/online/french-tutors"
+      },
+      {
+        "text": "German Tutors",
+        "href": "https://preply.com/en/online/german-tutors"
+      },
+      {
+        "text": "Arabic Tutors",
+        "href": "https://preply.com/en/online/arabic-tutors"
+      },
+      {
+        "text": "Japanese tutors",
+        "href": "https://preply.com/en/online/japanese-tutors"
+      },
+      {
+        "text": "Chinese tutors",
+        "href": "https://preply.com/en/online/chinese-tutors"
+      },
+      {
+        "text": "Portuguese tutors",
+        "href": "https://preply.com/en/online/portuguese-tutors"
+      },
+      {
+        "text": "Math Tutors",
+        "href": "https://preply.com/en/online/math-tutors"
+      },
+      {
+        "text": "Tutors in NYC",
+        "href": "https://preply.com/en/New-York-City-NY/all-tutors"
+      },
+      {
+        "text": "Tutors in Los Angeles",
+        "href": "https://preply.com/en/Los-Angeles-CA/all-tutors"
+      },
+      {
+        "text": "Tutors in Toronto",
+        "href": "https://preply.com/en/Toronto-Canada/all-tutors"
+      },
+      {
+        "text": "Tutors in London",
+        "href": "https://preply.com/en/London-UK/all-tutors"
+      },
+      {
+        "text": "Tutors in Singapore",
+        "href": "https://preply.com/en/Singapore/all-tutors"
+      },
+      {
+        "text": "Tutors abroad",
+        "href": "https://preply.com/en/tutors-abroad"
+      },
+      {
+        "text": "Tutors by city",
+        "href": "https://preply.com/en/tutors-by-city"
+      },
+      {
+        "text": "Spanish tutors near me in the USA",
+        "href": "https://preply.com/en/c/USA/spanish-tutors"
+      },
+      {
+        "text": "Spanish tutors near me in the United Kingdom",
+        "href": "https://preply.com/en/c/United-Kingdom/spanish-tutors"
+      },
+      {
+        "text": "French tutors near me in Canada",
+        "href": "https://preply.com/en/c/Canada/french-tutors"
+      },
+      {
+        "text": "Legal Center",
+        "href": "/en/legal"
+      },
+      {
+        "text": "Privacy Policy",
+        "href": "https://termsofuse.preply.com/terms_of_use/en_PrivacyPolicy.pdf"
+      },
+      {
+        "text": "Cookie Policy",
+        "href": "https://termsofuse.preply.com/terms_of_use/en_CookiePolicy.pdf"
+      },
+      {
+        "text": "Legal Notice",
+        "href": "https://termsofuse.preply.com/terms_of_use/en_Impressum.pdf"
+      }
+    ],
+    "mainLinks": [],
+    "fields": [],
+    "buttons": [
+      "English, SGD",
+      "Log In",
+      "Find my tutor",
+      "Get started",
+      "Find my tutor",
+      "",
+      "",
+      "Book trial lesson",
+      "Book trial lesson",
+      "Book trial lesson",
+      "Book trial lesson",
+      "Book trial lesson",
+      "Book trial lesson",
+      "Explore more tutors",
+      "Status",
+      "We stand with Ukraine",
+      "Affiliate program",
+      "Need any help?",
+      "Scroll to the top"
+    ],
+    "emptyHint": false,
+    "scrollHeight": 9785
+  },
+  "measured": {
+    "viewport": {
+      "w": 1440,
+      "h": 900,
+      "dpr": 2
+    },
+    "colorScheme": "normal",
+    "body": {
+      "text": "Find tutors For business Become a tutor Proven Progress English, SGD Log In Prep",
+      "fontFamily": "PreplyInterV, PreplyInter, PreplyInter-Fallback, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "normal",
+      "color": "rgb(18, 17, 23)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(18, 17, 23)",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "height": 9785,
+      "boxShadow": "none",
+      "letterSpacing": "normal"
+    },
+    "header": {
+      "text": "Find tutors For business Become a tutor Proven Progress English, SGD Log In",
+      "fontFamily": "Figtree, Figtree-fallback, Figtree-fallback-android, \"Noto Sans\", NotoSans-fallback, NotoSans-fallback-android, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "normal",
+      "color": "rgb(18, 17, 23)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(18, 17, 23)",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "height": 72,
+      "boxShadow": "none",
+      "letterSpacing": "normal"
+    },
+    "h1": {
+      "text": "How Preply works: Make real progress with your ideal tutor.",
+      "fontFamily": "Platform, Platform-fallback, Platform-fallback-android, \"Noto Sans\", NotoSans-fallback, NotoSans-fallback-android, sans-serif",
+      "fontSize": "64px",
+      "fontWeight": "700",
+      "lineHeight": "68px",
+      "color": "rgb(18, 17, 23)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(18, 17, 23)",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "height": 204,
+      "boxShadow": "none",
+      "letterSpacing": "-0.32px"
+    },
+    "h2": {
+      "text": "How does Preply work?",
+      "fontFamily": "Platform, Platform-fallback, Platform-fallback-android, \"Noto Sans\", NotoSans-fallback, NotoSans-fallback-android, sans-serif",
+      "fontSize": "64px",
+      "fontWeight": "700",
+      "lineHeight": "68px",
+      "color": "rgb(18, 17, 23)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(18, 17, 23)",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "height": 68,
+      "boxShadow": "none",
+      "letterSpacing": "-0.32px"
+    },
+    "find": {
+      "text": "Get started",
+      "fontFamily": "Figtree, Figtree-fallback, Figtree-fallback-android, \"Noto Sans\", NotoSans-fallback, NotoSans-fallback-android, sans-serif",
+      "fontSize": "18px",
+      "fontWeight": "600",
+      "lineHeight": "24px",
+      "color": "rgb(18, 17, 23)",
+      "backgroundColor": "rgb(255, 122, 172)",
+      "border": "2px solid rgb(18, 17, 23)",
+      "borderRadius": "8px",
+      "padding": "6px 28px",
+      "height": 56,
+      "boxShadow": "none",
+      "letterSpacing": "0.09px"
+    },
+    "login": {
+      "text": "Log In",
+      "fontFamily": "Figtree, Figtree-fallback, Figtree-fallback-android, \"Noto Sans\", NotoSans-fallback, NotoSans-fallback-android, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "lineHeight": "16px",
+      "color": "rgb(18, 17, 23)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "border": "2px solid rgb(18, 17, 23)",
+      "borderRadius": "8px",
+      "padding": "6px 16px",
+      "height": 40,
+      "boxShadow": "none",
+      "letterSpacing": "0.175px"
+    },
+    "field": null,
+    "card": {
+      "text": "Galla L. 5 Jan 4, 2026 This app is helping me connect with people all around the",
+      "fontFamily": "Figtree, Figtree-fallback, Figtree-fallback-android, \"Noto Sans\", NotoSans-fallback, NotoSans-fallback-android, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "normal",
+      "color": "rgb(18, 17, 23)",
+      "backgroundColor": "rgb(244, 244, 248)",
+      "border": "2px solid rgb(220, 220, 229)",
+      "borderRadius": "8px",
+      "padding": "16px",
+      "height": 569,
+      "boxShadow": "none",
+      "letterSpacing": "normal"
+    },
+    "link": {
+      "text": "",
+      "fontFamily": "Figtree, Figtree-fallback, Figtree-fallback-android, \"Noto Sans\", NotoSans-fallback, NotoSans-fallback-android, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "normal",
+      "color": "rgb(0, 0, 238)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "border": "0px none rgb(0, 0, 238)",
+      "borderRadius": "0px",
+      "padding": "0px",
+      "height": 30,
+      "boxShadow": "none",
+      "letterSpacing": "normal"
+    }
+  }
+}
