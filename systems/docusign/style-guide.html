@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DocuSign style guide</title>
+<style>
+:root {
+  --font-family-ui: DSIndigo, Helvetica, Arial, sans-serif;
+  --font-family-fallback: Helvetica, Arial, sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --color-ink: #130032;
+  --color-inkMuted: rgba(19, 0, 50, 0.75);
+  --color-paper: #ffffff;
+  --color-accent: #4c00ff;
+  --color-onAccent: #ffffff;
+  --color-inkStrong: #130032;
+  --color-heroBand: #26065d;
+  --color-sand: #f8f3f0;
+  --color-sandDeep: #ede9e4;
+  --color-fieldBorder: rgba(19, 0, 50, 0.15);
+  --color-focus: #005fcc;
+  --radius-control: 8px;
+  --space-controlX: 16px;
+  --space-controlY: 12px;
+  --size-control: 45px;
+  --size-field: 61px;
+  --motion-control: 100ms;
+  --motion-ease: cubic-bezier(0.33, 0, 0.67, 1);
+  --typography-display: var(--font-weight-light) 80px/86.4px var(--font-family-ui);
+  --typography-heading: var(--font-weight-light) 58px/62.64px var(--font-family-ui);
+  --typography-title: var(--font-weight-medium) 24px/29.76px var(--font-family-ui);
+  --typography-body: var(--font-weight-regular) 16px/24px var(--font-family-ui);
+  --typography-label: var(--font-weight-semibold) 14px/21px var(--font-family-ui);
+  --typography-caption: var(--font-weight-regular) 14px/21px var(--font-family-ui);
+  --page: var(--color-paper);
+  --surface: var(--color-sand);
+  --text: var(--color-ink);
+  --muted: var(--color-inkMuted);
+  --accent: var(--color-accent);
+  --onAccent: var(--color-onAccent);
+  --border: var(--color-fieldBorder);
+  --focus: var(--color-focus);
+  --sg-sans: var(--font-family-ui), Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text); background: var(--page); }
+main { max-width: 980px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: var(--typography-display); letter-spacing: -1.5px; margin: 0 0 8px; }
+h2 { font: 500 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 40px 0 12px; }
+.note { color: var(--muted); max-width: 66ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 56px; border-radius: var(--radius-control); border: 1px solid var(--border); }
+.sw b, .sw span { display: block; font: 12px/1.4 ui-monospace, Menlo, monospace; }
+.sw span { color: var(--muted); }
+.mock { border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+.nav { display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: var(--page); }
+.nav .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; height: var(--size-control); padding: 0 16px; border-radius: var(--radius-control); font: 600 14px/21px var(--sg-sans); letter-spacing: .2px; text-decoration: none; }
+.btn.primary { background: var(--accent); color: var(--onAccent); }
+.btn.ghost { color: var(--accent); background: transparent; }
+.hero { background: #26065d; color: #fff; padding: 48px 32px; }
+.hero h3 { margin: 0; font: var(--typography-heading); color: #fff; letter-spacing: -1.25px; }
+.hero p { color: rgba(255,255,255,.8); max-width: 46ch; }
+.band { background: var(--surface); padding: 24px; }
+.field { display: flex; max-width: 420px; }
+.field input { flex: 1; height: var(--size-field); border: 1px solid var(--border); border-radius: 8px 0 0 8px; padding: 0 12px; font: 16px var(--sg-sans); }
+.field button { height: var(--size-field); border: 0; border-radius: 0 8px 8px 0; background: var(--text); color: var(--onAccent); padding: 0 16px; font: 500 16px var(--sg-sans); }
+</style>
+</head>
+<body>
+<main>
+  <h1 style="font: 300 40px/1.1 var(--sg-sans); letter-spacing: -1px; color: var(--text)">DocuSign style guide</h1>
+  <p class="note">Generated from tokens.json. Public marketing site, signed out, light only. DS Indigo is not bundled, so this page falls back to Helvetica.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background: var(--page)"></i><b>page</b><span>var(--page)</span></div>
+    <div class="sw"><i style="background: var(--surface)"></i><b>surface</b><span>var(--surface)</span></div>
+    <div class="sw"><i style="background: var(--text)"></i><b>text</b><span>var(--text)</span></div>
+    <div class="sw"><i style="background: var(--muted)"></i><b>muted</b><span>var(--muted)</span></div>
+    <div class="sw"><i style="background: var(--accent)"></i><b>accent</b><span>var(--accent)</span></div>
+    <div class="sw"><i style="background: var(--border)"></i><b>border</b><span>var(--border)</span></div>
+    <div class="sw"><i style="background: var(--focus)"></i><b>focus</b><span>var(--focus)</span></div>
+  </div>
+  <h2>Chrome</h2>
+  <div class="mock">
+    <div class="nav"><b>DocuSign</b><span>Products</span><span>Solutions</span><span class="sp"></span><a class="btn ghost">Contact sales</a><a class="btn primary">Try for free</a></div>
+    <div class="hero"><h3>Everything you need to agree</h3><p>Send, sign and manage agreements. Display type is light weight at a large size.</p><a class="btn primary">Try for free</a></div>
+    <div class="band">
+      <p>Work email field, measured at 61px with an 8px radius on the left.</p>
+      <div class="field"><input placeholder="Work email" readonly><button type="button">Get started</button></div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
