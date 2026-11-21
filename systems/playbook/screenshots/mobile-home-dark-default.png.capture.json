@@ -1,21 +1,69 @@
 {
-  "capturedAt": "2026-11-18T17:51:30.018Z",
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T14:50:45.796Z",
+  "screenshot": "mobile-home-dark-default.png",
+  "sanitizedSourceUrl": "https://www.playbook.com/",
   "requested": {
-    "width": 390,
-    "height": 844,
-    "deviceScaleFactor": 2
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 1
   },
-  "viewport": {
+  "configuredViewport": {
+    "width": 390,
+    "height": 844
+  },
+  "actual": {
     "innerWidth": 390,
     "innerHeight": 844,
-    "devicePixelRatio": 2,
+    "devicePixelRatio": 1,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
     "visualViewport": {
       "width": 390,
       "height": 844,
-      "scale": 1
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "documentSize": {
+      "width": 390,
+      "height": 19361
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
     }
   },
-  "url": "https://www.playbook.com/",
-  "scrollY": 0,
-  "note": "Headless Playwright at scroll 0. The hero copy is pinned inside a canvas and is not in the first viewport. T3 preview loaded this URL with no Cloudflare challenge and could not produce screenshot frames."
+  "capture": {
+    "mode": "viewport",
+    "scale": "css",
+    "clip": null
+  },
+  "png": {
+    "width": 390,
+    "height": 844
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 390,
+      "height": 844
+    },
+    "basis": "configuredViewport"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+  }
 }
