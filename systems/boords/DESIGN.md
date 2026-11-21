@@ -47,9 +47,9 @@ Good for: Pre-production tooling marketing: a floating white pill header, ink #1
 
 Captured 2026-11-11, signed out (every captured surface is public; the product on app.boords.com sits behind login and was never reached). Themes: light.
 
-A token set and component reference for Boords' public surface — for building marketing, pricing and product pages in the style of the real thing. It was read from **boords.com** on **2026-11-11**, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the home page, pricing (monthly + yearly), the AI storyboard generator, storyboard software, collaborate, customers, a customer story, docs, the free script timer, login, signup and the demo page.
+A token set and component reference for Boords' public surface, for building marketing, pricing and product pages in the style of the real thing. It was read from **boords.com** on **2026-11-21**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. The site tree, including which control opens which page, menu or overlay, is [site-tree.md](site-tree.md).
 
-Boords is worth a capture because its pre-production tooling marketing is a tight study in restraint: ink `#121212` on white, one cream `#f3f3e9` card field, an amber `#e8aa42` border on the hero CTA, everything pill-shaped (9999px) with a few 24px cards, and one typeface — matter — running from a 64px display headline down to 10.4px legal. **Boundary:** the product itself lives on app.boords.com behind login; /signup 404s on www and now points visitors at the app host. Everything behind the login is a recorded gap, never inferred.
+Boords is worth a capture because its pre-production tooling marketing is a tight study in restraint: ink `#121212` on white, one cream `#f3f3e9` card field, an amber `#e8aa42` border on the hero CTA, everything pill-shaped (9999px) with a few 24px cards, and one typeface, matter, running from a 64px display headline down to 10.4px legal. The product itself lives on app.boords.com behind login. www `/login` and `/signup` are the public 404. The app login page asks for email and password, or Google. No email was typed. No password was typed. No form was submitted. Everything behind that wall is a recorded gap.
 
 ## Colors
 
@@ -103,10 +103,11 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- **This is the marketing shell, not the app.** Storyboards, animatics, shot lists, the script editor and all project surfaces live on app.boords.com behind login and are uncaptured. Treat the app's own design system as unknown.
-- **One theme only.** The site paints light everywhere; the dark footer is a section style. `tokens.json` ships no dark set.
-- **The tokens are measured, not declared.** boords.com compiles Tailwind to classes; only a few component-scoped vars exist. Every token cites the measurement it came from — that is the honest provenance.
-- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
+- **This is the public site, not the app.** Storyboards, scripts and project surfaces on app.boords.com sit behind the login wall. The login page was photographed and not used. Treat the app's own design system as unknown.
+- **Two themes, one of them docs-only.** Marketing paints light. The footer is a dark section, not a theme. Docs has a Light/Dark radio that sets `html.dark`. `docs-dark` is that theme, not a marketing dark theme.
+- **Docs channel triples are Derived.** `--color-type-primary: 18 18 18` is a declared channel list. The `#121212` in `docs-light` is that list written as hex. It was not a `getComputedStyle` colour read.
+- **Quantised screenshots.** `screenshots/` are 256-colour PNGs. Read exact colours from tokens or the raw files.
+- **Sitemap children of the same template** (most `/blog/*`, `/how-to-storyboard/*`, `/docs/*`, printable PDF links) are mapped in [site-tree.md](site-tree.md) and not each photographed. One sample of each template is in `screenshots/`.
 
 ### Do and don't (from README.md)
 
@@ -117,4 +118,4 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 5. **Don't invent a second accent.** The only chromatic chrome is the amber `#e8aa42` CTA border; everything else is ink, white or cream.
 6. **Don't add card chrome.** Cards have no visible border; a hairline `rgba(18,18,18,.15)` marks toggles and fields, not containers.
 7. **Don't style the app from this package.** Every value is the marketing surface's; app.boords.com is uncaptured.
-8. **Don't ship a dark theme.** None is offered; the footer is a section style, not a theme.
+8. **Don't ship a marketing dark theme.** Marketing offers none. The footer is a section. Docs dark is a docs-only theme, photographed at [docs-dark-default](screenshots/docs-dark-default.png).

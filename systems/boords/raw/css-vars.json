@@ -1,14 +1,14 @@
 {
- "readAt": "2026-11-11",
+ "readAt": "2026-11-21",
  "source": "the stylesheet bodies read during a live home load on boords.com (Next.js CSS chunks from network responses plus inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class, at 1440 x 900",
  "sheets": [
-  "https://boords.com/_next/static/chunks/2djw0cadhqes4.css (203105 bytes)",
   "https://boords.com/_next/static/chunks/3x7rr3wq18q9t.css (794 bytes)",
+  "https://boords.com/_next/static/chunks/0thtvzwveb98t.css (203242 bytes)",
   "inline-0 (240 bytes)",
   "inline-1 (16644 bytes)"
  ],
  "counts": {
-  "rules": 639,
+  "rules": 640,
   "fonts": 3,
   "names": {
    "theme": 0,
@@ -99,6 +99,7 @@
    "[tailwind] .border-\\[\\#BFBFBF\\]": 1,
    "[tailwind] .border-\\[\\#DDDDDD\\]": 1,
    "[tailwind] .border-\\[\\#E2E3E3\\]": 1,
+   "[tailwind] .border-\\[\\#E9E9E7\\]": 1,
    "[tailwind] .border-\\[\\#F4BD64\\]": 1,
    "[tailwind] .border-black": 1,
    "[tailwind] .border-black-light": 1,
@@ -663,7 +664,7 @@
  "theme": [],
  "app": [
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ":root",
    "context": [],
    "properties": {
@@ -676,7 +677,7 @@
    "bin": "app"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".section-panel",
    "context": [],
    "properties": {
@@ -686,7 +687,7 @@
    "bin": "app"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ":root",
    "context": [],
    "properties": {
@@ -714,7 +715,7 @@
    "bin": "app"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": "html.dark",
    "context": [],
    "properties": {
@@ -968,7 +969,7 @@
  ],
  "utility": [
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\[--ar\\:16\\/10\\]",
    "context": [],
    "properties": {
@@ -977,7 +978,7 @@
    "bin": "utility"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\[--pillar-stage\\:4\\/5\\]",
    "context": [],
    "properties": {
@@ -986,7 +987,7 @@
    "bin": "utility"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\[--wrap-mask\\:linear-gradient\\(to_right\\,black_75\\%\\,transparent_100\\%\\)\\]",
    "context": [],
    "properties": {
@@ -995,7 +996,7 @@
    "bin": "utility"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:\\[--ar\\:4\\/3\\]",
    "context": [
     "@media (min-width: 768px)"
@@ -1006,7 +1007,7 @@
    "bin": "utility"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:\\[--ar\\:auto\\]",
    "context": [
     "@media (min-width: 768px)"
@@ -1017,7 +1018,7 @@
    "bin": "utility"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:\\[--pillar-stage\\:8\\/5\\]",
    "context": [
     "@media (min-width: 768px)"
@@ -1030,7 +1031,7 @@
  ],
  "tailwind": [
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": "*, ::before, ::after, ::backdrop",
    "context": [],
    "properties": {
@@ -1089,7 +1090,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": "::before, ::after",
    "context": [],
    "properties": {
@@ -1098,7 +1099,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": "*, ::before, ::after",
    "context": [],
    "properties": {
@@ -1118,7 +1119,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".aspect-h-1",
    "context": [],
    "properties": {
@@ -1127,7 +1128,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".aspect-h-10",
    "context": [],
    "properties": {
@@ -1136,7 +1137,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".aspect-h-12",
    "context": [],
    "properties": {
@@ -1145,7 +1146,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".aspect-h-2",
    "context": [],
    "properties": {
@@ -1154,7 +1155,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".aspect-h-3",
    "context": [],
    "properties": {
@@ -1163,7 +1164,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".aspect-h-4",
    "context": [],
    "properties": {
@@ -1172,7 +1173,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".aspect-h-7",
    "context": [],
    "properties": {
@@ -1181,7 +1182,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".aspect-h-9",
    "context": [],
    "properties": {
@@ -1190,7 +1191,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".aspect-h-\\[0\\.9\\]",
    "context": [],
    "properties": {
@@ -1199,7 +1200,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".aspect-w-1",
    "context": [],
    "properties": {
@@ -1208,7 +1209,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".aspect-w-16",
    "context": [],
    "properties": {
@@ -1217,7 +1218,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".aspect-w-3",
    "context": [],
    "properties": {
@@ -1226,7 +1227,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".aspect-w-4",
    "context": [],
    "properties": {
@@ -1235,7 +1236,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".aspect-w-9",
    "context": [],
    "properties": {
@@ -1244,7 +1245,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-spacing-0",
    "context": [],
    "properties": {
@@ -1254,7 +1255,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".-translate-x-1",
    "context": [],
    "properties": {
@@ -1263,7 +1264,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".-translate-x-1\\/2",
    "context": [],
    "properties": {
@@ -1272,7 +1273,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".-translate-x-px",
    "context": [],
    "properties": {
@@ -1281,7 +1282,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".-translate-y-1\\/2",
    "context": [],
    "properties": {
@@ -1290,7 +1291,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".-translate-y-px",
    "context": [],
    "properties": {
@@ -1299,7 +1300,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".translate-x-\\[2px\\]",
    "context": [],
    "properties": {
@@ -1308,7 +1309,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".translate-y-\\[-3px\\]",
    "context": [],
    "properties": {
@@ -1317,7 +1318,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".translate-y-\\[0\\.15em\\]",
    "context": [],
    "properties": {
@@ -1326,7 +1327,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".translate-y-\\[0\\.2em\\]",
    "context": [],
    "properties": {
@@ -1335,7 +1336,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".translate-y-\\[3px\\]",
    "context": [],
    "properties": {
@@ -1344,7 +1345,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".translate-y-\\[6\\%\\]",
    "context": [],
    "properties": {
@@ -1353,7 +1354,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".-rotate-6",
    "context": [],
    "properties": {
@@ -1362,7 +1363,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".-rotate-90",
    "context": [],
    "properties": {
@@ -1371,7 +1372,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".rotate-12",
    "context": [],
    "properties": {
@@ -1380,7 +1381,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".rotate-180",
    "context": [],
    "properties": {
@@ -1389,7 +1390,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".rotate-45",
    "context": [],
    "properties": {
@@ -1398,7 +1399,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".rotate-6",
    "context": [],
    "properties": {
@@ -1407,7 +1408,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".rotate-\\[-2deg\\]",
    "context": [],
    "properties": {
@@ -1416,7 +1417,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".rotate-\\[3deg\\]",
    "context": [],
    "properties": {
@@ -1425,7 +1426,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\!scale-\\[1\\]",
    "context": [],
    "properties": {
@@ -1435,7 +1436,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".scale-100",
    "context": [],
    "properties": {
@@ -1445,7 +1446,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".scale-110",
    "context": [],
    "properties": {
@@ -1455,7 +1456,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".scale-125",
    "context": [],
    "properties": {
@@ -1465,7 +1466,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".scale-95",
    "context": [],
    "properties": {
@@ -1475,7 +1476,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".scale-\\[0\\.72\\]",
    "context": [],
    "properties": {
@@ -1485,7 +1486,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".scale-\\[0\\.8\\]",
    "context": [],
    "properties": {
@@ -1495,7 +1496,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".scale-\\[1\\.2\\]",
    "context": [],
    "properties": {
@@ -1505,7 +1506,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".scale-\\[1\\.4\\]",
    "context": [],
    "properties": {
@@ -1515,7 +1516,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".-space-x-1\\.5 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1524,7 +1525,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".-space-x-2 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1533,7 +1534,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-x-0\\.5 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1542,7 +1543,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-x-1 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1551,7 +1552,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-x-2 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1560,7 +1561,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-x-3 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1569,7 +1570,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-x-4 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1578,7 +1579,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-y-0\\.5 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1587,7 +1588,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-y-1 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1596,7 +1597,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-y-1\\.5 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1605,7 +1606,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-y-10 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1614,7 +1615,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-y-12 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1623,7 +1624,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-y-2 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1632,7 +1633,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-y-2\\.5 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1641,7 +1642,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-y-20 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1650,7 +1651,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-y-3 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1659,7 +1660,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-y-3\\.5 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1668,7 +1669,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-y-4 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1677,7 +1678,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-y-5 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1686,7 +1687,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-y-6 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1695,7 +1696,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".space-y-8 > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1704,7 +1705,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".divide-x > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1713,7 +1714,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".divide-y > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1722,7 +1723,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".divide-border > :not([hidden]) ~ :not([hidden])",
    "context": [],
    "properties": {
@@ -1731,7 +1732,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\!border-border-mid",
    "context": [],
    "properties": {
@@ -1740,7 +1741,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-\\[\\#107C41\\]",
    "context": [],
    "properties": {
@@ -1749,7 +1750,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-\\[\\#185ABD\\]",
    "context": [],
    "properties": {
@@ -1758,7 +1759,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-\\[\\#5F6368\\]",
    "context": [],
    "properties": {
@@ -1767,7 +1768,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-\\[\\#8FC1FF\\]",
    "context": [],
    "properties": {
@@ -1776,7 +1777,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-\\[\\#BFBFBF\\]",
    "context": [],
    "properties": {
@@ -1785,7 +1786,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-\\[\\#DDDDDD\\]",
    "context": [],
    "properties": {
@@ -1794,7 +1795,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-\\[\\#E2E3E3\\]",
    "context": [],
    "properties": {
@@ -1803,7 +1804,16 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
+   "selector": ".border-\\[\\#E9E9E7\\]",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-\\[\\#F4BD64\\]",
    "context": [],
    "properties": {
@@ -1812,7 +1822,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-black",
    "context": [],
    "properties": {
@@ -1821,7 +1831,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-black-light",
    "context": [],
    "properties": {
@@ -1830,7 +1840,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-blue",
    "context": [],
    "properties": {
@@ -1839,7 +1849,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-blue-decorative",
    "context": [],
    "properties": {
@@ -1848,7 +1858,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-blue-screenshot-stroke",
    "context": [],
    "properties": {
@@ -1857,7 +1867,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-border",
    "context": [],
    "properties": {
@@ -1866,7 +1876,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-border-mid",
    "context": [],
    "properties": {
@@ -1875,7 +1885,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-green",
    "context": [],
    "properties": {
@@ -1884,7 +1894,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-grey",
    "context": [],
    "properties": {
@@ -1893,7 +1903,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-orange",
    "context": [],
    "properties": {
@@ -1902,7 +1912,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-pink",
    "context": [],
    "properties": {
@@ -1911,7 +1921,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-pink-decorative",
    "context": [],
    "properties": {
@@ -1920,7 +1930,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-pink-light",
    "context": [],
    "properties": {
@@ -1929,7 +1939,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-pink-medium",
    "context": [],
    "properties": {
@@ -1938,7 +1948,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-surface",
    "context": [],
    "properties": {
@@ -1947,7 +1957,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-surface-dark",
    "context": [],
    "properties": {
@@ -1956,7 +1966,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-white",
    "context": [],
    "properties": {
@@ -1965,7 +1975,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-yellow",
    "context": [],
    "properties": {
@@ -1974,7 +1984,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-yellow-25",
    "context": [],
    "properties": {
@@ -1983,7 +1993,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".border-yellow-vivid",
    "context": [],
    "properties": {
@@ -1992,7 +2002,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\!bg-border-mid",
    "context": [],
    "properties": {
@@ -2001,7 +2011,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#120e0b\\]",
    "context": [],
    "properties": {
@@ -2010,7 +2020,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#121212\\]",
    "context": [],
    "properties": {
@@ -2019,7 +2029,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#185ABD\\]",
    "context": [],
    "properties": {
@@ -2028,7 +2038,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#1A73E8\\]",
    "context": [],
    "properties": {
@@ -2037,7 +2047,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#1a1a1a\\]",
    "context": [],
    "properties": {
@@ -2046,7 +2056,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#1c1c1c\\]",
    "context": [],
    "properties": {
@@ -2055,7 +2065,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#1c1c20\\]",
    "context": [],
    "properties": {
@@ -2064,7 +2074,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#1d1a17\\]",
    "context": [],
    "properties": {
@@ -2073,7 +2083,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#1e1e1e\\]",
    "context": [],
    "properties": {
@@ -2082,7 +2092,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#232120\\]",
    "context": [],
    "properties": {
@@ -2091,7 +2101,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#232323\\]",
    "context": [],
    "properties": {
@@ -2100,7 +2110,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#262321\\]",
    "context": [],
    "properties": {
@@ -2109,7 +2119,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#262626\\]",
    "context": [],
    "properties": {
@@ -2118,7 +2128,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#26262b\\]",
    "context": [],
    "properties": {
@@ -2127,7 +2137,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#28C840\\]",
    "context": [],
    "properties": {
@@ -2136,7 +2146,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#2F7D4F\\]",
    "context": [],
    "properties": {
@@ -2145,7 +2155,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#2b2725\\]",
    "context": [],
    "properties": {
@@ -2154,7 +2164,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#2f6553\\]",
    "context": [],
    "properties": {
@@ -2163,7 +2173,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#3F0E40\\]",
    "context": [],
    "properties": {
@@ -2172,7 +2182,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#3d5a87\\]",
    "context": [],
    "properties": {
@@ -2181,7 +2191,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#3d6b33\\]",
    "context": [],
    "properties": {
@@ -2190,7 +2200,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#3d8ef0\\]",
    "context": [],
    "properties": {
@@ -2199,7 +2209,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#3d9b5f\\]",
    "context": [],
    "properties": {
@@ -2208,7 +2218,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#3f5a7c\\]",
    "context": [],
    "properties": {
@@ -2217,7 +2227,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#4a9cf0\\]",
    "context": [],
    "properties": {
@@ -2226,7 +2236,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#5d3f87\\]",
    "context": [],
    "properties": {
@@ -2235,7 +2245,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#5d7fa8\\]",
    "context": [],
    "properties": {
@@ -2244,7 +2254,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#5ea3f5\\]",
    "context": [],
    "properties": {
@@ -2253,7 +2263,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#7fd3b3\\]",
    "context": [],
    "properties": {
@@ -2262,7 +2272,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#8cbf5a\\]",
    "context": [],
    "properties": {
@@ -2271,7 +2281,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#8d63c9\\]",
    "context": [],
    "properties": {
@@ -2280,7 +2290,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#9fd37f\\]",
    "context": [],
    "properties": {
@@ -2289,7 +2299,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#C2E7FF\\]",
    "context": [],
    "properties": {
@@ -2298,7 +2308,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#C6613F\\]",
    "context": [],
    "properties": {
@@ -2307,7 +2317,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#D4E8FB\\]",
    "context": [],
    "properties": {
@@ -2316,7 +2326,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#DDDDDD\\]",
    "context": [],
    "properties": {
@@ -2325,7 +2335,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#E1E9F7\\]",
    "context": [],
    "properties": {
@@ -2334,7 +2344,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#E8D7F7\\]",
    "context": [],
    "properties": {
@@ -2343,7 +2353,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#E8E8E8\\]",
    "context": [],
    "properties": {
@@ -2352,7 +2362,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#E9E9E9\\]",
    "context": [],
    "properties": {
@@ -2361,7 +2371,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#E9F2FF\\]",
    "context": [],
    "properties": {
@@ -2370,7 +2380,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#EEECE9\\]",
    "context": [],
    "properties": {
@@ -2379,7 +2389,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#F2F2F2\\]",
    "context": [],
    "properties": {
@@ -2388,7 +2398,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#F3F3F3\\]",
    "context": [],
    "properties": {
@@ -2397,7 +2407,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#F4B400\\]",
    "context": [],
    "properties": {
@@ -2406,7 +2416,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#F4ECDC\\]",
    "context": [],
    "properties": {
@@ -2415,7 +2425,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#F4F2EF\\]",
    "context": [],
    "properties": {
@@ -2424,7 +2434,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#F4F4F4\\]",
    "context": [],
    "properties": {
@@ -2433,7 +2443,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#F6F6F0\\]",
    "context": [],
    "properties": {
@@ -2442,7 +2452,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#F7F7F5\\]",
    "context": [],
    "properties": {
@@ -2451,7 +2461,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#F8F9FA\\]",
    "context": [],
    "properties": {
@@ -2460,7 +2470,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#FAF9F5\\]",
    "context": [],
    "properties": {
@@ -2469,7 +2479,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#FEBC2E\\]",
    "context": [],
    "properties": {
@@ -2478,7 +2488,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#FF2D8D\\]",
    "context": [],
    "properties": {
@@ -2487,7 +2497,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#FF5F57\\]",
    "context": [],
    "properties": {
@@ -2496,7 +2506,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#FFF4CE\\]",
    "context": [],
    "properties": {
@@ -2505,7 +2515,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#a9a9ca\\]",
    "context": [],
    "properties": {
@@ -2514,7 +2524,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#b3c7b3\\]",
    "context": [],
    "properties": {
@@ -2523,7 +2533,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#b53838\\]",
    "context": [],
    "properties": {
@@ -2532,7 +2542,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#e37d9b\\]",
    "context": [],
    "properties": {
@@ -2541,7 +2551,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#e4d84c\\]",
    "context": [],
    "properties": {
@@ -2550,7 +2560,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-\\[\\#e8463a\\]",
    "context": [],
    "properties": {
@@ -2559,7 +2569,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-black",
    "context": [],
    "properties": {
@@ -2568,7 +2578,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-black-light",
    "context": [],
    "properties": {
@@ -2577,7 +2587,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-blue",
    "context": [],
    "properties": {
@@ -2586,7 +2596,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-blue-light",
    "context": [],
    "properties": {
@@ -2595,7 +2605,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-border",
    "context": [],
    "properties": {
@@ -2604,7 +2614,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-border-mid",
    "context": [],
    "properties": {
@@ -2613,7 +2623,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-docx-background",
    "context": [],
    "properties": {
@@ -2622,7 +2632,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-green",
    "context": [],
    "properties": {
@@ -2631,7 +2641,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-green-dark",
    "context": [],
    "properties": {
@@ -2640,7 +2650,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-green-light",
    "context": [],
    "properties": {
@@ -2649,7 +2659,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-green-vivid",
    "context": [],
    "properties": {
@@ -2658,7 +2668,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-grey",
    "context": [],
    "properties": {
@@ -2667,7 +2677,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-indigo-light",
    "context": [],
    "properties": {
@@ -2676,7 +2686,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-orange",
    "context": [],
    "properties": {
@@ -2685,7 +2695,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-pdf-background",
    "context": [],
    "properties": {
@@ -2694,7 +2704,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-pink",
    "context": [],
    "properties": {
@@ -2703,7 +2713,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-pink-decorative",
    "context": [],
    "properties": {
@@ -2712,7 +2722,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-pink-light",
    "context": [],
    "properties": {
@@ -2721,7 +2731,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-pink-medium",
    "context": [],
    "properties": {
@@ -2730,7 +2740,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-ppt-background",
    "context": [],
    "properties": {
@@ -2739,7 +2749,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-premium-700",
    "context": [],
    "properties": {
@@ -2748,7 +2758,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-psd-background",
    "context": [],
    "properties": {
@@ -2757,7 +2767,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-surface",
    "context": [],
    "properties": {
@@ -2766,7 +2776,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-surface-add_frame",
    "context": [],
    "properties": {
@@ -2775,7 +2785,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-surface-critical",
    "context": [],
    "properties": {
@@ -2784,7 +2794,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-surface-dark",
    "context": [],
    "properties": {
@@ -2793,7 +2803,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-surface-darker",
    "context": [],
    "properties": {
@@ -2802,7 +2812,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-surface-frame",
    "context": [],
    "properties": {
@@ -2811,7 +2821,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-surface-light",
    "context": [],
    "properties": {
@@ -2820,7 +2830,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-surface-spotlight-tab-active",
    "context": [],
    "properties": {
@@ -2829,7 +2839,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-surface-success",
    "context": [],
    "properties": {
@@ -2838,7 +2848,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-surface-warning",
    "context": [],
    "properties": {
@@ -2847,7 +2857,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-type-disabled",
    "context": [],
    "properties": {
@@ -2856,7 +2866,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-type-primary",
    "context": [],
    "properties": {
@@ -2865,7 +2875,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-white",
    "context": [],
    "properties": {
@@ -2874,7 +2884,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-yellow",
    "context": [],
    "properties": {
@@ -2883,7 +2893,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-yellow-25",
    "context": [],
    "properties": {
@@ -2892,7 +2902,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-yellow-dark",
    "context": [],
    "properties": {
@@ -2901,7 +2911,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-yellow-light",
    "context": [],
    "properties": {
@@ -2910,7 +2920,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".bg-yellow-vivid",
    "context": [],
    "properties": {
@@ -2919,7 +2929,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-\\[\\#2d2824\\]",
    "context": [],
    "properties": {
@@ -2930,7 +2940,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-\\[\\#3a332e\\]",
    "context": [],
    "properties": {
@@ -2941,7 +2951,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-\\[\\#453d37\\]",
    "context": [],
    "properties": {
@@ -2952,7 +2962,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-black\\/30",
    "context": [],
    "properties": {
@@ -2963,7 +2973,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-black\\/80",
    "context": [],
    "properties": {
@@ -2974,7 +2984,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-blue",
    "context": [],
    "properties": {
@@ -2985,7 +2995,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-blue-light",
    "context": [],
    "properties": {
@@ -2996,7 +3006,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-blue-vivid\\/30",
    "context": [],
    "properties": {
@@ -3007,7 +3017,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-pink",
    "context": [],
    "properties": {
@@ -3018,7 +3028,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-pink-light",
    "context": [],
    "properties": {
@@ -3029,7 +3039,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-surface",
    "context": [],
    "properties": {
@@ -3040,7 +3050,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-surface-dark",
    "context": [],
    "properties": {
@@ -3051,7 +3061,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-surface-darker",
    "context": [],
    "properties": {
@@ -3062,7 +3072,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-transparent",
    "context": [],
    "properties": {
@@ -3073,7 +3083,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-white",
    "context": [],
    "properties": {
@@ -3084,7 +3094,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-yellow",
    "context": [],
    "properties": {
@@ -3095,7 +3105,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-yellow-light",
    "context": [],
    "properties": {
@@ -3106,7 +3116,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-yellow-vivid\\/80",
    "context": [],
    "properties": {
@@ -3117,7 +3127,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-yellow\\/20",
    "context": [],
    "properties": {
@@ -3128,7 +3138,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-yellow\\/50",
    "context": [],
    "properties": {
@@ -3139,7 +3149,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".from-yellow\\/80",
    "context": [],
    "properties": {
@@ -3150,7 +3160,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".via-\\[\\#211c19\\]",
    "context": [],
    "properties": {
@@ -3160,7 +3170,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".via-\\[\\#2a2420\\]",
    "context": [],
    "properties": {
@@ -3170,7 +3180,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".via-black\\/10",
    "context": [],
    "properties": {
@@ -3180,7 +3190,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".via-black\\/40",
    "context": [],
    "properties": {
@@ -3190,7 +3200,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".via-transparent",
    "context": [],
    "properties": {
@@ -3200,7 +3210,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".via-white\\/90",
    "context": [],
    "properties": {
@@ -3210,7 +3220,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-\\[\\#120e0b\\]",
    "context": [],
    "properties": {
@@ -3219,7 +3229,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-\\[\\#1a1512\\]",
    "context": [],
    "properties": {
@@ -3228,7 +3238,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-black",
    "context": [],
    "properties": {
@@ -3237,7 +3247,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-black\\/25",
    "context": [],
    "properties": {
@@ -3246,7 +3256,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-blue",
    "context": [],
    "properties": {
@@ -3255,7 +3265,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-blue-light",
    "context": [],
    "properties": {
@@ -3264,7 +3274,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-blue-vivid\\/70",
    "context": [],
    "properties": {
@@ -3273,7 +3283,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-blue\\/50",
    "context": [],
    "properties": {
@@ -3282,7 +3292,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-pink",
    "context": [],
    "properties": {
@@ -3291,7 +3301,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-pink\\/50",
    "context": [],
    "properties": {
@@ -3300,7 +3310,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-surface",
    "context": [],
    "properties": {
@@ -3309,7 +3319,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-surface-dark",
    "context": [],
    "properties": {
@@ -3318,7 +3328,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-surface-darker",
    "context": [],
    "properties": {
@@ -3327,7 +3337,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-surface-light",
    "context": [],
    "properties": {
@@ -3336,7 +3346,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-transparent",
    "context": [],
    "properties": {
@@ -3345,7 +3355,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-white\\/0",
    "context": [],
    "properties": {
@@ -3354,7 +3364,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-white\\/90",
    "context": [],
    "properties": {
@@ -3363,7 +3373,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-yellow",
    "context": [],
    "properties": {
@@ -3372,7 +3382,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-yellow-25",
    "context": [],
    "properties": {
@@ -3381,7 +3391,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-yellow-25\\/70",
    "context": [],
    "properties": {
@@ -3390,7 +3400,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-yellow-dark",
    "context": [],
    "properties": {
@@ -3399,7 +3409,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-yellow-vivid",
    "context": [],
    "properties": {
@@ -3408,7 +3418,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".to-65\\%",
    "context": [],
    "properties": {
@@ -3417,7 +3427,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".tabular-nums",
    "context": [],
    "properties": {
@@ -3426,7 +3436,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\!text-black",
    "context": [],
    "properties": {
@@ -3435,7 +3445,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\!text-type-primary",
    "context": [],
    "properties": {
@@ -3444,7 +3454,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\!text-type-subdued",
    "context": [],
    "properties": {
@@ -3453,7 +3463,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#001D35\\]",
    "context": [],
    "properties": {
@@ -3462,7 +3472,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#0B57D0\\]",
    "context": [],
    "properties": {
@@ -3471,7 +3481,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#107C41\\]",
    "context": [],
    "properties": {
@@ -3480,7 +3490,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#111\\]",
    "context": [],
    "properties": {
@@ -3489,7 +3499,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#1264A3\\]",
    "context": [],
    "properties": {
@@ -3498,7 +3508,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#185ABD\\]",
    "context": [],
    "properties": {
@@ -3507,7 +3517,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#1D1C1D\\]",
    "context": [],
    "properties": {
@@ -3516,7 +3526,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#1D4F80\\]",
    "context": [],
    "properties": {
@@ -3525,7 +3535,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#1F5A36\\]",
    "context": [],
    "properties": {
@@ -3534,7 +3544,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#202124\\]",
    "context": [],
    "properties": {
@@ -3543,7 +3553,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#242424\\]",
    "context": [],
    "properties": {
@@ -3552,7 +3562,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#2F6FE0\\]",
    "context": [],
    "properties": {
@@ -3561,7 +3571,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#3d8ef0\\]",
    "context": [],
    "properties": {
@@ -3570,7 +3580,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#424242\\]",
    "context": [],
    "properties": {
@@ -3579,7 +3589,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#444\\]",
    "context": [],
    "properties": {
@@ -3588,7 +3598,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#5B2E86\\]",
    "context": [],
    "properties": {
@@ -3597,7 +3607,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#5F6368\\]",
    "context": [],
    "properties": {
@@ -3606,7 +3616,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#5ea3f5\\]",
    "context": [],
    "properties": {
@@ -3615,7 +3625,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#616061\\]",
    "context": [],
    "properties": {
@@ -3624,7 +3634,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#666\\]",
    "context": [],
    "properties": {
@@ -3633,7 +3643,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#6e6e6e\\]",
    "context": [],
    "properties": {
@@ -3642,7 +3652,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#7B7B7B\\]",
    "context": [],
    "properties": {
@@ -3651,7 +3661,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#999\\]",
    "context": [],
    "properties": {
@@ -3660,7 +3670,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#a9a9ca\\]",
    "context": [],
    "properties": {
@@ -3669,7 +3679,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#b3c7b3\\]",
    "context": [],
    "properties": {
@@ -3678,7 +3688,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#e4d84c\\]",
    "context": [],
    "properties": {
@@ -3687,7 +3697,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-\\[\\#e5bcc9\\]",
    "context": [],
    "properties": {
@@ -3696,7 +3706,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-black",
    "context": [],
    "properties": {
@@ -3705,7 +3715,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-blue",
    "context": [],
    "properties": {
@@ -3714,7 +3724,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-blue-dark",
    "context": [],
    "properties": {
@@ -3723,7 +3733,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-blue-vivid",
    "context": [],
    "properties": {
@@ -3732,7 +3742,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-docx",
    "context": [],
    "properties": {
@@ -3741,7 +3751,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-green",
    "context": [],
    "properties": {
@@ -3750,7 +3760,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-green-dark",
    "context": [],
    "properties": {
@@ -3759,7 +3769,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-green-vivid",
    "context": [],
    "properties": {
@@ -3768,7 +3778,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-grey-disabled",
    "context": [],
    "properties": {
@@ -3777,7 +3787,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-grey-subdued",
    "context": [],
    "properties": {
@@ -3786,7 +3796,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-orange",
    "context": [],
    "properties": {
@@ -3795,7 +3805,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-pdf",
    "context": [],
    "properties": {
@@ -3804,7 +3814,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-pink",
    "context": [],
    "properties": {
@@ -3813,7 +3823,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-ppt",
    "context": [],
    "properties": {
@@ -3822,7 +3832,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-psd",
    "context": [],
    "properties": {
@@ -3831,7 +3841,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-surface",
    "context": [],
    "properties": {
@@ -3840,7 +3850,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-type-disabled",
    "context": [],
    "properties": {
@@ -3849,7 +3859,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-type-primary",
    "context": [],
    "properties": {
@@ -3858,7 +3868,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-type-secondary",
    "context": [],
    "properties": {
@@ -3867,7 +3877,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-type-spotlight-tab",
    "context": [],
    "properties": {
@@ -3876,7 +3886,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-type-subdued",
    "context": [],
    "properties": {
@@ -3885,7 +3895,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-white",
    "context": [],
    "properties": {
@@ -3894,7 +3904,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-yellow",
    "context": [],
    "properties": {
@@ -3903,7 +3913,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-yellow-dark",
    "context": [],
    "properties": {
@@ -3912,7 +3922,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-yellow-darker",
    "context": [],
    "properties": {
@@ -3921,7 +3931,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-yellow-mid",
    "context": [],
    "properties": {
@@ -3930,7 +3940,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".text-yellow-vivid",
    "context": [],
    "properties": {
@@ -3939,7 +3949,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\!shadow-\\[0_0_0_3px_rgba\\(255\\,255\\,255\\,0\\.12\\)\\]",
    "context": [],
    "properties": {
@@ -3949,7 +3959,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\!shadow-\\[0_12px_28px_rgba\\(0\\,0\\,0\\,0\\.35\\)\\]",
    "context": [],
    "properties": {
@@ -3959,7 +3969,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\!shadow-lg",
    "context": [],
    "properties": {
@@ -3969,7 +3979,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow",
    "context": [],
    "properties": {
@@ -3979,7 +3989,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-2xl",
    "context": [],
    "properties": {
@@ -3989,7 +3999,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[-10px_-10px_30px_4px_rgba\\(0\\,0\\,0\\,0\\.1\\)\\,_10px_10px_30px_4px_rgba\\(45\\,78\\,255\\,0\\.15\\)\\]",
    "context": [],
    "properties": {
@@ -3999,7 +4009,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_0_0_1px_rgba\\(18\\,18\\,18\\,0\\.04\\)\\,0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.04\\)\\,0_18px_44px_-18px_rgba\\(18\\,18\\,18\\,0\\.22\\)\\]",
    "context": [],
    "properties": {
@@ -4009,7 +4019,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_0_0_1px_rgba\\(18\\,18\\,18\\,0\\.12\\)\\]",
    "context": [],
    "properties": {
@@ -4019,7 +4029,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_0_0_2px_rgba\\(143\\,193\\,255\\,0\\.45\\)\\]",
    "context": [],
    "properties": {
@@ -4029,7 +4039,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_0_0_2px_rgba\\(244\\,189\\,100\\,0\\.22\\)\\,0_10px_30px_-18px_rgba\\(0\\,0\\,0\\,0\\.6\\)\\]",
    "context": [],
    "properties": {
@@ -4039,7 +4049,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_0_0_6px_rgba\\(255\\,255\\,255\\,0\\.04\\)\\,0_24px_60px_rgba\\(0\\,0\\,0\\,0\\.45\\)\\]",
    "context": [],
    "properties": {
@@ -4049,7 +4059,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_10px_30px_-10px_rgba\\(18\\,18\\,18\\,0\\.6\\)\\]",
    "context": [],
    "properties": {
@@ -4059,7 +4069,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_10px_30px_-18px_rgba\\(0\\,0\\,0\\,0\\.6\\)\\]",
    "context": [],
    "properties": {
@@ -4069,7 +4079,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_10px_30px_-18px_rgba\\(0\\,0\\,0\\,0\\.7\\)\\]",
    "context": [],
    "properties": {
@@ -4079,7 +4089,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_12px_32px_rgba\\(18\\,18\\,18\\,0\\.18\\)\\]",
    "context": [],
    "properties": {
@@ -4089,7 +4099,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_12px_32px_rgba\\(18\\,18\\,18\\,0\\.22\\)\\]",
    "context": [],
    "properties": {
@@ -4099,7 +4109,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_14px_34px_rgba\\(18\\,18\\,18\\,0\\.18\\)\\]",
    "context": [],
    "properties": {
@@ -4109,7 +4119,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_18px_36px_-24px_rgba\\(0\\,0\\,0\\,0\\.45\\)\\]",
    "context": [],
    "properties": {
@@ -4119,7 +4129,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(0\\,0\\,0\\,0\\.04\\)\\,0_12px_32px_-12px_rgba\\(0\\,0\\,0\\,0\\.18\\)\\]",
    "context": [],
    "properties": {
@@ -4129,7 +4139,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(0\\,0\\,0\\,0\\.04\\)\\,0_24px_48px_-12px_rgba\\(0\\,0\\,0\\,0\\.18\\)\\]",
    "context": [],
    "properties": {
@@ -4139,7 +4149,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(0\\,0\\,0\\,0\\.04\\)\\]",
    "context": [],
    "properties": {
@@ -4149,7 +4159,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(0\\,0\\,0\\,0\\.24\\)\\]",
    "context": [],
    "properties": {
@@ -4159,7 +4169,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.04\\)\\,0_10px_24px_rgba\\(18\\,18\\,18\\,0\\.06\\)\\]",
    "context": [],
    "properties": {
@@ -4169,7 +4179,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.04\\)\\,0_10px_24px_rgba\\(18\\,18\\,18\\,0\\.08\\)\\]",
    "context": [],
    "properties": {
@@ -4179,7 +4189,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.04\\)\\,0_10px_28px_rgba\\(18\\,18\\,18\\,0\\.06\\)\\]",
    "context": [],
    "properties": {
@@ -4189,7 +4199,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.04\\)\\,0_14px_34px_rgba\\(18\\,18\\,18\\,0\\.08\\)\\]",
    "context": [],
    "properties": {
@@ -4199,7 +4209,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.04\\)\\,0_18px_44px_rgba\\(18\\,18\\,18\\,0\\.08\\)\\]",
    "context": [],
    "properties": {
@@ -4209,7 +4219,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.04\\)\\,0_18px_44px_rgba\\(18\\,18\\,18\\,0\\.12\\)\\]",
    "context": [],
    "properties": {
@@ -4219,7 +4229,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.04\\)\\,0_24px_60px_rgba\\(18\\,18\\,18\\,0\\.10\\)\\]",
    "context": [],
    "properties": {
@@ -4229,7 +4239,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.04\\)\\,0_8px_24px_rgba\\(18\\,18\\,18\\,0\\.06\\)\\]",
    "context": [],
    "properties": {
@@ -4239,7 +4249,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.04\\)\\]",
    "context": [],
    "properties": {
@@ -4249,7 +4259,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.05\\)\\,0_12px_30px_-14px_rgba\\(18\\,18\\,18\\,0\\.25\\)\\]",
    "context": [],
    "properties": {
@@ -4259,7 +4269,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.05\\)\\]",
    "context": [],
    "properties": {
@@ -4269,7 +4279,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.06\\)\\,0_10px_28px_rgba\\(18\\,18\\,18\\,0\\.08\\)\\]",
    "context": [],
    "properties": {
@@ -4279,7 +4289,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.06\\)\\,0_12px_32px_rgba\\(18\\,18\\,18\\,0\\.10\\)\\]",
    "context": [],
    "properties": {
@@ -4289,7 +4299,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.06\\)\\,0_14px_30px_-12px_rgba\\(18\\,18\\,18\\,0\\.18\\)\\]",
    "context": [],
    "properties": {
@@ -4299,7 +4309,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.06\\)\\,0_6px_16px_-6px_rgba\\(18\\,18\\,18\\,0\\.12\\)\\]",
    "context": [],
    "properties": {
@@ -4309,7 +4319,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.06\\)\\,0_8px_20px_rgba\\(18\\,18\\,18\\,0\\.06\\)\\]",
    "context": [],
    "properties": {
@@ -4319,7 +4329,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.06\\)\\]",
    "context": [],
    "properties": {
@@ -4329,7 +4339,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.08\\)\\,0_14px_34px_rgba\\(18\\,18\\,18\\,0\\.16\\)\\]",
    "context": [],
    "properties": {
@@ -4339,7 +4349,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.08\\)\\]",
    "context": [],
    "properties": {
@@ -4349,7 +4359,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_3px_rgba\\(0\\,0\\,0\\,0\\.12\\)\\]",
    "context": [],
    "properties": {
@@ -4359,7 +4369,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_3px_rgba\\(0\\,0\\,0\\,0\\.14\\)\\]",
    "context": [],
    "properties": {
@@ -4369,7 +4379,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_3px_rgba\\(18\\,18\\,18\\,0\\.12\\)\\]",
    "context": [],
    "properties": {
@@ -4379,7 +4389,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_1px_3px_rgba\\(18\\,18\\,18\\,0\\.2\\)\\]",
    "context": [],
    "properties": {
@@ -4389,7 +4399,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_20px_45px_-25px_rgba\\(0\\,0\\,0\\,0\\.45\\)\\]",
    "context": [],
    "properties": {
@@ -4399,7 +4409,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_20px_70px_rgba\\(0\\,0\\,0\\,0\\.18\\)\\]",
    "context": [],
    "properties": {
@@ -4409,7 +4419,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_20px_70px_rgba\\(0\\,0\\,0\\,0\\.35\\)\\]",
    "context": [],
    "properties": {
@@ -4419,7 +4429,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_24px_60px_-20px_rgba\\(0\\,0\\,0\\,0\\.6\\)\\]",
    "context": [],
    "properties": {
@@ -4429,7 +4439,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_2px_10px_rgba\\(0\\,0\\,0\\,0\\.3\\)\\]",
    "context": [],
    "properties": {
@@ -4439,7 +4449,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_2px_8px_rgba\\(0\\,0\\,0\\,0\\.1\\)\\]",
    "context": [],
    "properties": {
@@ -4449,7 +4459,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_8px_24px_rgba\\(0\\,0\\,0\\,0\\.25\\)\\]",
    "context": [],
    "properties": {
@@ -4459,7 +4469,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0_8px_24px_rgba\\(0\\,0\\,0\\,0\\.45\\)\\]",
    "context": [],
    "properties": {
@@ -4469,7 +4479,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[0px_1px_2px_rgba\\(0\\,0\\,0\\,0\\.24\\)\\]",
    "context": [],
    "properties": {
@@ -4479,7 +4489,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-\\[inset_0_1px_0_rgba\\(255\\,255\\,255\\,0\\.12\\)\\,0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.12\\)\\,0_6px_16px_-6px_rgba\\(18\\,18\\,18\\,0\\.3\\)\\]",
    "context": [],
    "properties": {
@@ -4489,7 +4499,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-lg",
    "context": [],
    "properties": {
@@ -4499,7 +4509,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-md",
    "context": [],
    "properties": {
@@ -4509,7 +4519,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-none",
    "context": [],
    "properties": {
@@ -4519,7 +4529,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-sm",
    "context": [],
    "properties": {
@@ -4529,7 +4539,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-xl",
    "context": [],
    "properties": {
@@ -4539,7 +4549,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-black\\/5",
    "context": [],
    "properties": {
@@ -4549,7 +4559,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-blue\\/20",
    "context": [],
    "properties": {
@@ -4559,7 +4569,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".shadow-yellow\\/70",
    "context": [],
    "properties": {
@@ -4569,7 +4579,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring",
    "context": [],
    "properties": {
@@ -4579,7 +4589,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-1",
    "context": [],
    "properties": {
@@ -4589,7 +4599,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-2",
    "context": [],
    "properties": {
@@ -4599,7 +4609,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-4",
    "context": [],
    "properties": {
@@ -4609,7 +4619,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-\\[1\\.5px\\]",
    "context": [],
    "properties": {
@@ -4619,7 +4629,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-inset",
    "context": [],
    "properties": {
@@ -4628,7 +4638,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-\\[\\#251f1b\\]",
    "context": [],
    "properties": {
@@ -4638,7 +4648,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-\\[\\#8fa3ec\\]\\/60",
    "context": [],
    "properties": {
@@ -4647,7 +4657,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-\\[\\#9999FF\\]\\/60",
    "context": [],
    "properties": {
@@ -4656,7 +4666,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-\\[\\#9999FF\\]\\/70",
    "context": [],
    "properties": {
@@ -4665,7 +4675,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-\\[\\#C43E1C\\]",
    "context": [],
    "properties": {
@@ -4675,7 +4685,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-\\[\\#F4B400\\]",
    "context": [],
    "properties": {
@@ -4685,7 +4695,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-black",
    "context": [],
    "properties": {
@@ -4695,7 +4705,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-black\\/10",
    "context": [],
    "properties": {
@@ -4704,7 +4714,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-black\\/40",
    "context": [],
    "properties": {
@@ -4713,7 +4723,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-black\\/5",
    "context": [],
    "properties": {
@@ -4722,7 +4732,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-black\\/70",
    "context": [],
    "properties": {
@@ -4731,7 +4741,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-black\\/\\[0\\.04\\]",
    "context": [],
    "properties": {
@@ -4740,7 +4750,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-black\\/\\[0\\.06\\]",
    "context": [],
    "properties": {
@@ -4749,7 +4759,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-black\\/\\[0\\.08\\]",
    "context": [],
    "properties": {
@@ -4758,7 +4768,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-blue-vivid\\/50",
    "context": [],
    "properties": {
@@ -4767,7 +4777,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-blue\\/60",
    "context": [],
    "properties": {
@@ -4776,7 +4786,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-border-mid",
    "context": [],
    "properties": {
@@ -4786,7 +4796,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-green\\/45",
    "context": [],
    "properties": {
@@ -4795,7 +4805,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-green\\/50",
    "context": [],
    "properties": {
@@ -4804,7 +4814,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-inputBorder",
    "context": [],
    "properties": {
@@ -4814,7 +4824,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-surface-dark",
    "context": [],
    "properties": {
@@ -4824,7 +4834,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-transparent",
    "context": [],
    "properties": {
@@ -4833,7 +4843,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-white",
    "context": [],
    "properties": {
@@ -4843,7 +4853,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-white\\/10",
    "context": [],
    "properties": {
@@ -4852,7 +4862,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-white\\/15",
    "context": [],
    "properties": {
@@ -4861,7 +4871,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-white\\/\\[0\\.12\\]",
    "context": [],
    "properties": {
@@ -4870,7 +4880,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-yellow",
    "context": [],
    "properties": {
@@ -4880,7 +4890,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-yellow-mid\\/25",
    "context": [],
    "properties": {
@@ -4889,7 +4899,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-yellow-mid\\/30",
    "context": [],
    "properties": {
@@ -4898,7 +4908,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-yellow-vivid\\/50",
    "context": [],
    "properties": {
@@ -4907,7 +4917,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-yellow\\/40",
    "context": [],
    "properties": {
@@ -4916,7 +4926,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-yellow\\/60",
    "context": [],
    "properties": {
@@ -4925,7 +4935,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-opacity-5",
    "context": [],
    "properties": {
@@ -4934,7 +4944,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".ring-offset-1",
    "context": [],
    "properties": {
@@ -4943,7 +4953,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".blur",
    "context": [],
    "properties": {
@@ -4952,7 +4962,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".drop-shadow-md",
    "context": [],
    "properties": {
@@ -4961,7 +4971,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".grayscale",
    "context": [],
    "properties": {
@@ -4970,7 +4980,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".saturate-\\[\\.85\\]",
    "context": [],
    "properties": {
@@ -4979,7 +4989,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".saturate-\\[70\\%\\]",
    "context": [],
    "properties": {
@@ -4988,7 +4998,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".backdrop-blur",
    "context": [],
    "properties": {
@@ -4997,7 +5007,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".backdrop-blur-md",
    "context": [],
    "properties": {
@@ -5006,7 +5016,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".backdrop-blur-sm",
    "context": [],
    "properties": {
@@ -5015,7 +5025,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".backdrop-blur-xl",
    "context": [],
    "properties": {
@@ -5024,7 +5034,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".translate-x-1",
    "context": [],
    "properties": {
@@ -5033,7 +5043,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".translate-x-px",
    "context": [],
    "properties": {
@@ -5042,7 +5052,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".translate-x-1\\/2",
    "context": [],
    "properties": {
@@ -5051,7 +5061,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".translate-y-px",
    "context": [],
    "properties": {
@@ -5060,7 +5070,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".translate-y-1\\/2",
    "context": [],
    "properties": {
@@ -5069,7 +5079,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:aspect-h-1",
    "context": [
     "@media (min-width: 768px)"
@@ -5080,7 +5090,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:aspect-w-3",
    "context": [
     "@media (min-width: 768px)"
@@ -5091,7 +5101,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:aspect-w-4",
    "context": [
     "@media (min-width: 768px)"
@@ -5102,7 +5112,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".placeholder\\:text-\\[\\#6e6e6e\\]::placeholder",
    "context": [],
    "properties": {
@@ -5111,7 +5121,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".placeholder\\:text-type-disabled::placeholder",
    "context": [],
    "properties": {
@@ -5120,7 +5130,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".placeholder\\:text-type-subdued::placeholder",
    "context": [],
    "properties": {
@@ -5129,7 +5139,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".after\\:content-\\[\\\"\\\"\\]::after",
    "context": [],
    "properties": {
@@ -5138,7 +5148,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".read-only\\:bg-surface-light:read-only",
    "context": [],
    "properties": {
@@ -5147,7 +5157,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:-translate-y-0\\.5:hover",
    "context": [],
    "properties": {
@@ -5156,7 +5166,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:scale-\\[1\\.02\\]:hover",
    "context": [],
    "properties": {
@@ -5166,7 +5176,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:border-black:hover",
    "context": [],
    "properties": {
@@ -5175,7 +5185,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:border-blue:hover",
    "context": [],
    "properties": {
@@ -5184,7 +5194,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:border-border:hover",
    "context": [],
    "properties": {
@@ -5193,7 +5203,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:border-border-mid:hover",
    "context": [],
    "properties": {
@@ -5202,7 +5212,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:border-pink-decorative:hover",
    "context": [],
    "properties": {
@@ -5211,7 +5221,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:border-pink-medium:hover",
    "context": [],
    "properties": {
@@ -5220,7 +5230,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:border-yellow-mid:hover",
    "context": [],
    "properties": {
@@ -5229,7 +5239,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:bg-\\[\\#B5562F\\]:hover",
    "context": [],
    "properties": {
@@ -5238,7 +5248,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:bg-black:hover",
    "context": [],
    "properties": {
@@ -5247,7 +5257,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:bg-blue:hover",
    "context": [],
    "properties": {
@@ -5256,7 +5266,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:bg-blue-light:hover",
    "context": [],
    "properties": {
@@ -5265,7 +5275,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:bg-grey:hover",
    "context": [],
    "properties": {
@@ -5274,7 +5284,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:bg-pink-decorative:hover",
    "context": [],
    "properties": {
@@ -5283,7 +5293,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:bg-pink-medium:hover",
    "context": [],
    "properties": {
@@ -5292,7 +5302,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:bg-surface:hover",
    "context": [],
    "properties": {
@@ -5301,7 +5311,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:bg-surface-add_frame:hover",
    "context": [],
    "properties": {
@@ -5310,7 +5320,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:bg-surface-dark:hover",
    "context": [],
    "properties": {
@@ -5319,7 +5329,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:bg-surface-darker:hover",
    "context": [],
    "properties": {
@@ -5328,7 +5338,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:bg-surface-light:hover",
    "context": [],
    "properties": {
@@ -5337,7 +5347,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:bg-white:hover",
    "context": [],
    "properties": {
@@ -5346,7 +5356,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:bg-yellow-light:hover",
    "context": [],
    "properties": {
@@ -5355,7 +5365,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:from-yellow:hover",
    "context": [],
    "properties": {
@@ -5366,7 +5376,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:to-yellow:hover",
    "context": [],
    "properties": {
@@ -5375,7 +5385,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:\\!text-type-primary:hover",
    "context": [],
    "properties": {
@@ -5384,7 +5394,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:text-black:hover",
    "context": [],
    "properties": {
@@ -5393,7 +5403,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:text-type-primary:hover",
    "context": [],
    "properties": {
@@ -5402,7 +5412,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:text-type-spotlight-tab:hover",
    "context": [],
    "properties": {
@@ -5411,7 +5421,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:text-white:hover",
    "context": [],
    "properties": {
@@ -5420,7 +5430,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:text-yellow-light:hover",
    "context": [],
    "properties": {
@@ -5429,7 +5439,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:shadow-\\[0_12px_32px_-16px_rgba\\(0\\,0\\,0\\,0\\.18\\)\\]:hover",
    "context": [],
    "properties": {
@@ -5439,7 +5449,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:shadow-\\[0_12px_32px_rgba\\(18\\,18\\,18\\,0\\.08\\)\\]:hover",
    "context": [],
    "properties": {
@@ -5449,7 +5459,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:shadow-\\[0_1px_2px_rgba\\(18\\,18\\,18\\,0\\.06\\)\\,0_8px_20px_-12px_rgba\\(18\\,18\\,18\\,0\\.25\\)\\]:hover",
    "context": [],
    "properties": {
@@ -5459,7 +5469,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:shadow-\\[0_4px_12px_-4px_rgba\\(18\\,18\\,18\\,0\\.12\\)\\]:hover",
    "context": [],
    "properties": {
@@ -5469,7 +5479,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:shadow-\\[0_8px_24px_rgba\\(18\\,18\\,18\\,0\\.08\\)\\]:hover",
    "context": [],
    "properties": {
@@ -5479,7 +5489,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:shadow-md:hover",
    "context": [],
    "properties": {
@@ -5489,7 +5499,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:shadow-blue\\/20:hover",
    "context": [],
    "properties": {
@@ -5499,7 +5509,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:ring-black\\/15:hover",
    "context": [],
    "properties": {
@@ -5508,7 +5518,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".hover\\:ring-black\\/20:hover",
    "context": [],
    "properties": {
@@ -5517,7 +5527,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus\\:border-border:focus",
    "context": [],
    "properties": {
@@ -5526,7 +5536,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus\\:border-border-dark:focus",
    "context": [],
    "properties": {
@@ -5535,7 +5545,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus\\:border-yellow:focus",
    "context": [],
    "properties": {
@@ -5544,7 +5554,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus\\:bg-surface:focus",
    "context": [],
    "properties": {
@@ -5553,7 +5563,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus\\:ring-0:focus",
    "context": [],
    "properties": {
@@ -5563,7 +5573,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus\\:ring-2:focus",
    "context": [],
    "properties": {
@@ -5573,7 +5583,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus\\:ring-border-dark\\/20:focus",
    "context": [],
    "properties": {
@@ -5582,7 +5592,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus\\:ring-pink:focus",
    "context": [],
    "properties": {
@@ -5592,7 +5602,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus\\:ring-yellow-dark\\/30:focus",
    "context": [],
    "properties": {
@@ -5601,7 +5611,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus\\:placeholder\\:text-type-secondary:focus::placeholder",
    "context": [],
    "properties": {
@@ -5610,7 +5620,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus-visible\\:text-black:focus-visible",
    "context": [],
    "properties": {
@@ -5619,7 +5629,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus-visible\\:ring-2:focus-visible",
    "context": [],
    "properties": {
@@ -5629,7 +5639,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus-visible\\:ring-inset:focus-visible",
    "context": [],
    "properties": {
@@ -5638,7 +5648,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus-visible\\:ring-black:focus-visible",
    "context": [],
    "properties": {
@@ -5648,7 +5658,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus-visible\\:ring-black\\/40:focus-visible",
    "context": [],
    "properties": {
@@ -5657,7 +5667,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus-visible\\:ring-blue-vivid\\/40:focus-visible",
    "context": [],
    "properties": {
@@ -5666,7 +5676,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus-visible\\:ring-border-dark:focus-visible",
    "context": [],
    "properties": {
@@ -5676,7 +5686,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus-visible\\:ring-white:focus-visible",
    "context": [],
    "properties": {
@@ -5686,7 +5696,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus-visible\\:ring-yellow:focus-visible",
    "context": [],
    "properties": {
@@ -5696,7 +5706,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus-visible\\:ring-yellow-dark\\/50:focus-visible",
    "context": [],
    "properties": {
@@ -5705,7 +5715,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus-visible\\:ring-yellow-light:focus-visible",
    "context": [],
    "properties": {
@@ -5715,7 +5725,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus-visible\\:ring-offset-2:focus-visible",
    "context": [],
    "properties": {
@@ -5724,7 +5734,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus-visible\\:ring-offset-\\[\\#1d1a17\\]:focus-visible",
    "context": [],
    "properties": {
@@ -5733,7 +5743,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus-visible\\:ring-offset-\\[\\#211c19\\]:focus-visible",
    "context": [],
    "properties": {
@@ -5742,7 +5752,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus-visible\\:ring-offset-black:focus-visible",
    "context": [],
    "properties": {
@@ -5751,7 +5761,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus-visible\\:ring-offset-surface:focus-visible",
    "context": [],
    "properties": {
@@ -5760,7 +5770,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus-visible\\:ring-offset-surface-dark:focus-visible",
    "context": [],
    "properties": {
@@ -5769,7 +5779,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".focus-visible\\:ring-offset-white:focus-visible",
    "context": [],
    "properties": {
@@ -5778,7 +5788,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".active\\:scale-95:active",
    "context": [],
    "properties": {
@@ -5788,7 +5798,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".active\\:scale-\\[0\\.97\\]:active",
    "context": [],
    "properties": {
@@ -5798,7 +5808,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".active\\:scale-\\[0\\.98\\]:active",
    "context": [],
    "properties": {
@@ -5808,7 +5818,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".disabled\\:active\\:scale-100:active:disabled",
    "context": [],
    "properties": {
@@ -5818,7 +5828,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group[open] .group-open\\:rotate-180",
    "context": [],
    "properties": {
@@ -5827,7 +5837,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group\\/back:hover .group-hover\\/back\\:-translate-x-0\\.5",
    "context": [],
    "properties": {
@@ -5836,7 +5846,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group\\/feature:hover .group-hover\\/feature\\:-translate-y-1",
    "context": [],
    "properties": {
@@ -5845,7 +5855,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:hover .group-hover\\:-translate-y-0\\.5",
    "context": [],
    "properties": {
@@ -5854,7 +5864,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:hover .group-hover\\:-translate-y-1",
    "context": [],
    "properties": {
@@ -5863,7 +5873,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:hover .group-hover\\:-translate-y-1\\.5",
    "context": [],
    "properties": {
@@ -5872,7 +5882,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:hover .group-hover\\:translate-x-0\\.5",
    "context": [],
    "properties": {
@@ -5881,7 +5891,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:hover .group-hover\\:translate-x-\\[3px\\]",
    "context": [],
    "properties": {
@@ -5890,7 +5900,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group\\/video:hover .group-hover\\/video\\:scale-\\[105\\%\\]",
    "context": [],
    "properties": {
@@ -5900,7 +5910,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group\\/video:hover .group-hover\\/video\\:scale-\\[115\\%\\]",
    "context": [],
    "properties": {
@@ -5910,7 +5920,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:hover .group-hover\\:scale-105",
    "context": [],
    "properties": {
@@ -5920,7 +5930,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:hover .group-hover\\:scale-\\[1\\.03\\]",
    "context": [],
    "properties": {
@@ -5930,7 +5940,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:hover .group-hover\\:scale-\\[1\\.04\\]",
    "context": [],
    "properties": {
@@ -5940,7 +5950,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group\\/select-button:hover .group-hover\\/select-button\\:border-border-mid",
    "context": [],
    "properties": {
@@ -5949,7 +5959,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group\\/head:hover .group-hover\\/head\\:bg-white",
    "context": [],
    "properties": {
@@ -5958,7 +5968,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group\\/section-title:hover .group-hover\\/section-title\\:bg-surface-dark",
    "context": [],
    "properties": {
@@ -5967,7 +5977,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:hover .group-hover\\:bg-black",
    "context": [],
    "properties": {
@@ -5976,7 +5986,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:hover .group-hover\\:bg-white",
    "context": [],
    "properties": {
@@ -5985,7 +5995,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:hover .group-hover\\:to-blue\\/40",
    "context": [],
    "properties": {
@@ -5994,7 +6004,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group\\/feedback:hover .group-hover\\/feedback\\:text-type-primary",
    "context": [],
    "properties": {
@@ -6003,7 +6013,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group\\/feedback:hover .group-hover\\/feedback\\:text-type-secondary",
    "context": [],
    "properties": {
@@ -6012,7 +6022,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group\\/help:hover .group-hover\\/help\\:text-type-primary",
    "context": [],
    "properties": {
@@ -6021,7 +6031,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group\\/select-button:hover .group-hover\\/select-button\\:text-type-subdued",
    "context": [],
    "properties": {
@@ -6030,7 +6040,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group\\/stars:hover .group-hover\\/stars\\:\\!text-black",
    "context": [],
    "properties": {
@@ -6039,7 +6049,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group\\/stars:hover .group-hover\\/stars\\:\\!text-yellow-vivid",
    "context": [],
    "properties": {
@@ -6048,7 +6058,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:hover .group-hover\\:text-black",
    "context": [],
    "properties": {
@@ -6057,7 +6067,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:hover .group-hover\\:text-pink",
    "context": [],
    "properties": {
@@ -6066,7 +6076,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:hover .group-hover\\:text-type-primary",
    "context": [],
    "properties": {
@@ -6075,7 +6085,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:hover .group-hover\\:text-white",
    "context": [],
    "properties": {
@@ -6084,7 +6094,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:hover .group-hover\\:text-yellow-light",
    "context": [],
    "properties": {
@@ -6093,7 +6103,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:hover .group-hover\\:translate-x-1",
    "context": [],
    "properties": {
@@ -6102,7 +6112,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group\\/lesson:hover .group-hover\\/lesson\\:translate-x-0\\.5, .group:hover .group-hover\\:translate-x-0\\.5",
    "context": [],
    "properties": {
@@ -6111,7 +6121,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:focus-visible .group-focus-visible\\:-translate-y-1",
    "context": [],
    "properties": {
@@ -6120,7 +6130,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:focus-visible .group-focus-visible\\:translate-x-\\[3px\\]",
    "context": [],
    "properties": {
@@ -6129,7 +6139,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:focus-visible .group-focus-visible\\:ring-2",
    "context": [],
    "properties": {
@@ -6139,7 +6149,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:focus-visible .group-focus-visible\\:ring-4",
    "context": [],
    "properties": {
@@ -6149,7 +6159,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:focus-visible .group-focus-visible\\:ring-black",
    "context": [],
    "properties": {
@@ -6159,7 +6169,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:focus-visible .group-focus-visible\\:ring-yellow",
    "context": [],
    "properties": {
@@ -6169,7 +6179,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:focus-visible .group-focus-visible\\:ring-offset-2",
    "context": [],
    "properties": {
@@ -6178,7 +6188,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:focus-visible .group-focus-visible\\:ring-offset-surface",
    "context": [],
    "properties": {
@@ -6187,7 +6197,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:active .group-active\\:scale-95",
    "context": [],
    "properties": {
@@ -6197,7 +6207,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".peer:checked ~ .peer-checked\\:bg-black",
    "context": [],
    "properties": {
@@ -6206,7 +6216,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".peer:checked ~ .peer-checked\\:text-white",
    "context": [],
    "properties": {
@@ -6215,7 +6225,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".peer:focus-visible ~ .peer-focus-visible\\:ring-2",
    "context": [],
    "properties": {
@@ -6225,7 +6235,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".peer:focus-visible ~ .peer-focus-visible\\:ring-border-dark",
    "context": [],
    "properties": {
@@ -6235,7 +6245,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".peer:focus-visible ~ .peer-focus-visible\\:ring-offset-2",
    "context": [],
    "properties": {
@@ -6244,7 +6254,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".data-\\[closed\\]\\:scale-95[data-closed]",
    "context": [],
    "properties": {
@@ -6254,7 +6264,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".data-\\[highlighted\\]\\:bg-surface-dark[data-highlighted]",
    "context": [],
    "properties": {
@@ -6263,7 +6273,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".data-\\[selected\\]\\:bg-white[data-selected]",
    "context": [],
    "properties": {
@@ -6272,7 +6282,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".data-\\[state\\=open\\]\\:bg-surface-darker[data-state=\"open\"]",
    "context": [],
    "properties": {
@@ -6281,7 +6291,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".data-\\[selected\\]\\:text-type-primary[data-selected]",
    "context": [],
    "properties": {
@@ -6290,7 +6300,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".data-\\[state\\=open\\]\\:text-black[data-state=\"open\"]",
    "context": [],
    "properties": {
@@ -6299,7 +6309,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".data-\\[selected\\]\\:shadow-sm[data-selected]",
    "context": [],
    "properties": {
@@ -6309,7 +6319,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".data-\\[closed\\]\\:translate-y-3[data-closed]",
    "context": [],
    "properties": {
@@ -6318,7 +6328,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group[data-open] .group-data-\\[open\\]\\:rotate-180",
    "context": [],
    "properties": {
@@ -6327,7 +6337,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".motion-reduce\\:hover\\:translate-y-0:hover",
    "context": [
     "@media (prefers-reduced-motion: reduce)"
@@ -6338,7 +6348,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".group:hover .motion-reduce\\:group-hover\\:translate-y-0",
    "context": [
     "@media (prefers-reduced-motion: reduce)"
@@ -6349,7 +6359,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".dark\\:\\!border-type-primary:is(.dark *)",
    "context": [],
    "properties": {
@@ -6358,7 +6368,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".dark\\:\\!bg-type-primary:is(.dark *)",
    "context": [],
    "properties": {
@@ -6367,7 +6377,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".dark\\:bg-surface:is(.dark *)",
    "context": [],
    "properties": {
@@ -6376,7 +6386,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".dark\\:\\!text-surface:is(.dark *)",
    "context": [],
    "properties": {
@@ -6385,7 +6395,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".dark\\:text-type-primary:is(.dark *)",
    "context": [],
    "properties": {
@@ -6394,7 +6404,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".dark\\:ring-border:is(.dark *)",
    "context": [],
    "properties": {
@@ -6404,7 +6414,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".dark\\:invert:is(.dark *)",
    "context": [],
    "properties": {
@@ -6413,7 +6423,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".sm\\:scale-100",
    "context": [
     "@media (min-width: 640px)"
@@ -6425,7 +6435,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".sm\\:space-x-6 > :not([hidden]) ~ :not([hidden])",
    "context": [
     "@media (min-width: 640px)"
@@ -6436,7 +6446,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".sm\\:space-x-8 > :not([hidden]) ~ :not([hidden])",
    "context": [
     "@media (min-width: 640px)"
@@ -6447,7 +6457,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".sm\\:space-y-0 > :not([hidden]) ~ :not([hidden])",
    "context": [
     "@media (min-width: 640px)"
@@ -6458,7 +6468,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".sm\\:space-y-24 > :not([hidden]) ~ :not([hidden])",
    "context": [
     "@media (min-width: 640px)"
@@ -6469,7 +6479,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:scale-\\[1\\.28\\]",
    "context": [
     "@media (min-width: 768px)"
@@ -6481,7 +6491,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:space-x-12 > :not([hidden]) ~ :not([hidden])",
    "context": [
     "@media (min-width: 768px)"
@@ -6492,7 +6502,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:space-x-2 > :not([hidden]) ~ :not([hidden])",
    "context": [
     "@media (min-width: 768px)"
@@ -6503,7 +6513,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:space-x-8 > :not([hidden]) ~ :not([hidden])",
    "context": [
     "@media (min-width: 768px)"
@@ -6514,7 +6524,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:space-y-0 > :not([hidden]) ~ :not([hidden])",
    "context": [
     "@media (min-width: 768px)"
@@ -6525,7 +6535,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:space-y-16 > :not([hidden]) ~ :not([hidden])",
    "context": [
     "@media (min-width: 768px)"
@@ -6536,7 +6546,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:space-y-3 > :not([hidden]) ~ :not([hidden])",
    "context": [
     "@media (min-width: 768px)"
@@ -6547,7 +6557,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:space-y-4 > :not([hidden]) ~ :not([hidden])",
    "context": [
     "@media (min-width: 768px)"
@@ -6558,7 +6568,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:border-border",
    "context": [
     "@media (min-width: 768px)"
@@ -6569,7 +6579,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:shadow-\\[0_4px_6px_-1px_rgba\\(0\\,0\\,0\\,0\\.1\\)\\]",
    "context": [
     "@media (min-width: 768px)"
@@ -6581,7 +6591,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:shadow-\\[0_8px_24px_-12px_rgba\\(0\\,0\\,0\\,0\\.25\\)\\]",
    "context": [
     "@media (min-width: 768px)"
@@ -6593,7 +6603,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:data-\\[closed\\]\\:scale-95[data-closed]",
    "context": [
     "@media (min-width: 768px)"
@@ -6605,7 +6615,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".md\\:data-\\[closed\\]\\:translate-y-0[data-closed]",
    "context": [
     "@media (min-width: 768px)"
@@ -6616,7 +6626,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".lg\\:scale-\\[1\\.42\\]",
    "context": [
     "@media (min-width: 1024px)"
@@ -6628,7 +6638,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".lg\\:space-y-20 > :not([hidden]) ~ :not([hidden])",
    "context": [
     "@media (min-width: 1024px)"
@@ -6639,7 +6649,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".lg\\:bg-white",
    "context": [
     "@media (min-width: 1024px)"
@@ -6650,7 +6660,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".lg\\:shadow-\\[0_8px_24px_-8px_rgba\\(0\\,0\\,0\\,0\\.18\\)\\]",
    "context": [
     "@media (min-width: 1024px)"
@@ -6662,7 +6672,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".xl\\:scale-\\[1\\.52\\]",
    "context": [
     "@media (min-width: 1280px)"
@@ -6674,7 +6684,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".xl\\:space-x-2 > :not([hidden]) ~ :not([hidden])",
    "context": [
     "@media (min-width: 1280px)"
@@ -6685,7 +6695,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".xl\\:space-y-0 > :not([hidden]) ~ :not([hidden])",
    "context": [
     "@media (min-width: 1280px)"
@@ -6696,7 +6706,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\[\\&\\>li\\:not\\(\\:first-child\\)\\]\\:before\\:content-\\[\\\"\\\"\\] > li:not(:first-child)::before",
    "context": [],
    "properties": {
@@ -6705,7 +6715,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\[\\&_\\.changelog-video\\]\\:bg-surface-dark .changelog-video",
    "context": [],
    "properties": {
@@ -6714,7 +6724,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\[\\&_a\\]\\:text-type-primary a",
    "context": [],
    "properties": {
@@ -6723,7 +6733,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\[\\&_blockquote\\]\\:border-border-mid blockquote",
    "context": [],
    "properties": {
@@ -6732,7 +6742,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\[\\&_code\\]\\:border-border code",
    "context": [],
    "properties": {
@@ -6741,7 +6751,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\[\\&_code\\]\\:bg-surface-dark code",
    "context": [],
    "properties": {
@@ -6750,7 +6760,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\[\\&_code\\]\\:text-type-secondary code",
    "context": [],
    "properties": {
@@ -6759,7 +6769,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\[\\&_h2\\]\\:text-type-primary h2",
    "context": [],
    "properties": {
@@ -6768,7 +6778,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\[\\&_h3\\]\\:text-type-primary h3",
    "context": [],
    "properties": {
@@ -6777,7 +6787,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\[\\&_h4\\]\\:text-type-primary h4",
    "context": [],
    "properties": {
@@ -6786,7 +6796,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\[\\&_hr\\]\\:border-border hr",
    "context": [],
    "properties": {
@@ -6795,7 +6805,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\[\\&_pre\\]\\:bg-surface-dark pre",
    "context": [],
    "properties": {
@@ -6804,7 +6814,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\[\\&_td\\]\\:border-border td",
    "context": [],
    "properties": {
@@ -6813,7 +6823,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\[\\&_th\\]\\:border-border th",
    "context": [],
    "properties": {
@@ -6822,7 +6832,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".\\[\\&_th\\]\\:text-type-primary th",
    "context": [],
    "properties": {
@@ -6831,7 +6841,7 @@
    "bin": "tailwind"
   },
   {
-   "file": "https://boords.com/_next/static/chunks/2djw0cadhqes4.css",
+   "file": "https://boords.com/_next/static/chunks/0thtvzwveb98t.css",
    "selector": ".section-panel .\\[\\.section-panel_\\&\\]\\:bg-white",
    "context": [],
    "properties": {

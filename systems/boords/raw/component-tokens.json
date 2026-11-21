@@ -287,6 +287,48 @@
   }
  },
  "dark": {},
+ "docs-light": {
+  "text": {
+   "primary": { "type": "color", "value": "#121212", "source": "css-var --color-type-primary on :root, declared as channel triple 18 18 18 (raw/css-vars.json, 2026-11-21)", "description": "Docs primary text." },
+   "secondary": { "type": "color", "value": "#444444", "source": "css-var --color-type-secondary on :root, channel triple 68 68 68 (raw/css-vars.json, 2026-11-21)", "description": "Docs secondary text." },
+   "subdued": { "type": "color", "value": "#7b7b7b", "source": "css-var --color-type-subdued on :root, channel triple 123 123 123 (raw/css-vars.json, 2026-11-21)", "description": "Docs subdued text." },
+   "disabled": { "type": "color", "value": "#b8b8b8", "source": "css-var --color-type-disabled on :root, channel triple 184 184 184 (raw/css-vars.json, 2026-11-21)", "description": "Docs disabled text." }
+  },
+  "border": {
+   "default": { "type": "color", "value": "#e9e9e7", "source": "css-var --color-border on :root, channel triple 233 233 231 (raw/css-vars.json, 2026-11-21)", "description": "Docs default border." },
+   "mid": { "type": "color", "value": "#cecdca", "source": "css-var --color-border-mid on :root, channel triple 206 205 202 (raw/css-vars.json, 2026-11-21)", "description": "Docs mid border." },
+   "strong": { "type": "color", "value": "#121212", "source": "css-var --color-border-dark on :root, channel triple 18 18 18 (raw/css-vars.json, 2026-11-21)", "description": "Docs strong border." }
+  },
+  "surface": {
+   "page": { "type": "color", "value": "#fafaf5", "source": "css-var --color-surface on :root, channel triple 250 250 245 (raw/css-vars.json, 2026-11-21)", "description": "Docs page surface." },
+   "raised": { "type": "color", "value": "#f3f3e9", "source": "css-var --color-surface-dark on :root, channel triple 243 243 233 (raw/css-vars.json, 2026-11-21)", "description": "Docs raised surface." },
+   "sunken": { "type": "color", "value": "#eaeadf", "source": "css-var --color-surface-darker on :root, channel triple 234 234 223 (raw/css-vars.json, 2026-11-21)", "description": "Docs sunken surface." },
+   "success": { "type": "color", "value": "#bae8cf", "source": "css-var --color-surface-success on :root, channel triple 186 232 207 (raw/css-vars.json, 2026-11-21)", "description": "Docs success fill." },
+   "warning": { "type": "color", "value": "#fae6c8", "source": "css-var --color-surface-warning on :root, channel triple 250 230 200 (raw/css-vars.json, 2026-11-21)", "description": "Docs warning fill." },
+   "critical": { "type": "color", "value": "#f7c7c6", "source": "css-var --color-surface-critical on :root, channel triple 247 199 198 (raw/css-vars.json, 2026-11-21)", "description": "Docs critical fill." }
+  }
+ },
+ "docs-dark": {
+  "text": {
+   "primary": { "type": "color", "value": "#e5e2df", "source": "css-var --color-type-primary on html.dark, channel triple 229 226 223 (raw/css-vars.json, 2026-11-21)", "description": "Docs dark primary text." },
+   "secondary": { "type": "color", "value": "#c4c1bd", "source": "css-var --color-type-secondary on html.dark, channel triple 196 193 189 (raw/css-vars.json, 2026-11-21)", "description": "Docs dark secondary text." },
+   "subdued": { "type": "color", "value": "#92908c", "source": "css-var --color-type-subdued on html.dark, channel triple 146 144 140 (raw/css-vars.json, 2026-11-21)", "description": "Docs dark subdued text." },
+   "disabled": { "type": "color", "value": "#6d6b69", "source": "css-var --color-type-disabled on html.dark, channel triple 109 107 105 (raw/css-vars.json, 2026-11-21)", "description": "Docs dark disabled text." }
+  },
+  "border": {
+   "default": { "type": "color", "value": "#2c2b29", "source": "css-var --color-border on html.dark, channel triple 44 43 41 (raw/css-vars.json, 2026-11-21)", "description": "Docs dark border." },
+   "mid": { "type": "color", "value": "#3c3b39", "source": "css-var --color-border-mid on html.dark, channel triple 60 59 57 (raw/css-vars.json, 2026-11-21)", "description": "Docs dark mid border." },
+   "strong": { "type": "color", "value": "#84827f", "source": "css-var --color-border-dark on html.dark, channel triple 132 130 127 (raw/css-vars.json, 2026-11-21)", "description": "Docs dark strong border." }
+  },
+  "surface": {
+   "page": { "type": "color", "value": "#171614", "source": "css-var --color-surface on html.dark, channel triple 23 22 20, matches computed body background rgb(23, 22, 20) on /docs with html.dark (2026-11-21)", "description": "Docs dark page." },
+   "raised": { "type": "color", "value": "#242321", "source": "css-var --color-surface-dark on html.dark, channel triple 36 35 33 (raw/css-vars.json, 2026-11-21)", "description": "Docs dark raised surface." },
+   "sunken": { "type": "color", "value": "#2c2b29", "source": "css-var --color-surface-darker on html.dark, channel triple 44 43 41 (raw/css-vars.json, 2026-11-21)", "description": "Docs dark sunken surface." },
+   "success": { "type": "color", "value": "#173526", "source": "css-var --color-surface-success on html.dark, channel triple 23 53 38 (raw/css-vars.json, 2026-11-21)", "description": "Docs dark success fill." },
+   "warning": { "type": "color", "value": "#3e2d15", "source": "css-var --color-surface-warning on html.dark, channel triple 62 45 21 (raw/css-vars.json, 2026-11-21)", "description": "Docs dark warning fill." },
+   "critical": { "type": "color", "value": "#431f1f", "source": "css-var --color-surface-critical on html.dark, channel triple 67 31 31 (raw/css-vars.json, 2026-11-21)", "description": "Docs dark critical fill." }
+  }
+ },
  "component": {
   "control": {
    "height": {
