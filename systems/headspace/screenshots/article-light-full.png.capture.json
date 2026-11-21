@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T08:04:57.278Z",
+  "capturedAt": "2026-11-21T12:40:35.466Z",
   "screenshot": "article-light-full.png",
   "sanitizedSourceUrl": "https://www.headspace.com/articles/can-you-use-hsa-or-fsa-for-mental-health",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1802,
-      "height": 8079
+      "height": 8107
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1802,
-    "height": 8079
+    "height": 8107
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1802,
-      "height": 8079
+      "height": 8107
     },
     "basis": "fullPage"
   },

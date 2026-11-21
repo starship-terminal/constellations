@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T08:08:23.737Z",
+  "capturedAt": "2026-11-21T12:41:31.920Z",
   "screenshot": "family-light-full.png",
   "sanitizedSourceUrl": "https://www.headspace.com/family-plan",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 2526
+      "height": 2553
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 2526
+    "height": 2553
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 2526
+      "height": 2553
     },
     "basis": "fullPage"
   },

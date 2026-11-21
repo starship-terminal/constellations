@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-17T08:13:16.498Z",
+  "capturedAt": "2026-11-21T12:42:00.472Z",
   "screenshot": "org-home-light-default.png",
   "sanitizedSourceUrl": "https://organizations.headspace.com/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 8699
+      "height": 8678
     },
     "scroll": {
       "x": 0,
