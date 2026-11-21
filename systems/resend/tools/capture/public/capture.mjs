@@ -21,6 +21,7 @@ const SKIP = new Set((process.env.SKIP || '').split(',').filter(Boolean));
 const ONLY = new Set((process.env.ONLY || '').split(',').filter(Boolean));
 const PAGES = [
   ['home', '/'],
+  ['signup', '/signup'],
   ['pricing', '/pricing'],
   ['enterprise', '/enterprise'],
   ['features-email-api', '/features/email-api'],
@@ -65,7 +66,7 @@ const PAGES = [
   ['login', '/login'],
 ];
 
-const PHONE_PAGES = ['home', 'pricing', 'docs', 'enterprise', 'blog', 'login'];
+const PHONE_PAGES = ['home', 'pricing', 'docs', 'enterprise', 'blog', 'login', 'signup'];
 
 const walls = [];
 const shots = [];
@@ -199,13 +200,13 @@ for (const [name, pathn] of PAGES) {
     walls.push({ name, path: pathn, error: e.message.split('\n')[0] });
     continue;
   }
-  if (landed.authWall && name !== 'login') {
+  if (landed.authWall && name !== 'login' && name !== 'signup') {
     walls.push({ name, path: pathn, url: landed.url, action: 'stopped, auth wall' });
     log('  AUTH', landed.url);
     continue;
   }
-  if (name === 'login') {
-    walls.push({ name, path: pathn, url: landed.url, action: 'observed only; did not type; did not click Google or GitHub' });
+  if (name === 'login' || name === 'signup') {
+    walls.push({ name, path: pathn, url: landed.url, action: 'photographed empty; did not type; did not click identity providers; did not submit' });
   }
   const theme = await page.evaluate(() => document.documentElement.classList.contains('dark') ? 'dark' : 'light');
   await shoot(page, `${name}-${theme}-default`, 1440, 900, 1);
@@ -292,7 +293,7 @@ for (const name of PHONE_PAGES) {
   let landed;
   try { landed = await open(mp, BASE + pathn, { wait: 1400 }); }
   catch (e) { log('  FAIL', e.message.split('\n')[0]); continue; }
-  if (landed.authWall && name !== 'login') {
+  if (landed.authWall && name !== 'login' && name !== 'signup') {
     walls.push({ name: 'mobile-' + name, path: pathn, url: landed.url, action: 'stopped, auth wall' });
     continue;
   }

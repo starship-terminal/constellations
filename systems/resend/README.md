@@ -1,8 +1,8 @@
 # Resend design reference
 
-A token set and component reference for Resend's public site, for building a dark marketing page or a docs page in this style. It was read from **resend.com** on **2026-11-21**, signed out, in headless Playwright at 1440 x 900 and 390 x 844. The marketing site paints dark. The docs paint light by default and dark after "Switch to dark theme".
+A token set and component reference for Resend's public site, for building a dark marketing page or a docs page in this style. It was read from **resend.com** on **2026-11-21**, then refreshed the same day from current origin/main, signed out, in headless Playwright at 1440 x 900 and 390 x 844. The marketing site paints dark. The docs paint light by default and dark after "Switch to dark theme".
 
-Login and signup were recorded and not entered. Nothing was typed. Google and GitHub were not clicked. No form was submitted.
+Login and signup were photographed empty and not entered. Nothing was typed. Google and GitHub were not clicked. No form was submitted. The email field's placeholder is a sample address painted by the product. It was left as the empty-state placeholder.
 
 | File | What it is |
 |---|---|
@@ -14,7 +14,7 @@ Login and signup were recorded and not entered. Nothing was typed. Google and Gi
 | [patterns.md](patterns.md) | Shell, marketing page, pricing, docs, login wall |
 | [site-tree.md](site-tree.md) | Which control opens which page, menu, or auth wall |
 | [components/crops/](components/crops) | 17 element screenshots |
-| [screenshots/](screenshots) | Page captures, `{page}-{theme}-{state}.png`. Desktop 1440 x 900 at 1x. Phone 390 x 844 at 2x |
+| [screenshots/](screenshots) | Page captures, `{page}-{theme}-{state}.png`. Desktop 1440 x 900 at 1x. Phone 390 x 844 at 1x |
 | [raw/](raw) | CSS custom properties, computed component styles, capture manifest |
 | [tools/](tools) | Builders and the capture kit |
 
@@ -134,7 +134,7 @@ Licences were not read. Do not redistribute the font files.
 | Search and filtering | Captured, partial | Docs search dialog only |
 | Onboarding | Not captured | Signup is an auth wall |
 | Themes | Captured, partial | Marketing dark. Docs light and dark. No marketing light theme. |
-| Widths | Captured | Desktop 1440 x 900 at 1x. Phone 390 x 844 at 2x. |
+| Widths | Captured | Desktop 1440 x 900 at 1x. Phone 390 x 844 at 1x. Homepage and pricing. |
 | Principles and voice | Not captured | No public design-system voice page was found. |
 | Per-component behaviour | Not captured | No published component guide. |
 
