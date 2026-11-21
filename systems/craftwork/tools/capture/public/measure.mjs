@@ -187,12 +187,8 @@ async function S(key, target, list, meta = {}, opts = {}) {
         await page.waitForTimeout(400);
         via = 'clicked into the field';
       } else if (st === 'filled') {
-        const f = (opts.fieldLoc || loc).filter({ visible: true }).first();
-        await f.click({ timeout: 4000 });
-        await page.keyboard.type(opts.fillText || 'name@example.com', { delay: 10 });
-        await page.waitForTimeout(500);
-        undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
-        via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
+        // Do not type an email, a name, or a search query. Record the gap.
+        throw new Error('filled state skipped: this pass does not type into a field');
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'held open by an earlier toggle';
         else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }

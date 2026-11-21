@@ -300,7 +300,7 @@ W("|---|---|---|---|")
 OVER = [
     ("Mobile menu overlay", "home, phone width", "the menu button's own toggle", "[mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [m-menu-open](#mobile-menu-open), [m-nav-item](#mobile-menu-row)"),
     ("Dark theme", "home", "the nav theme toggle (aria-label Dark theme) — flipped for the shot, flipped back", "[home-dark-default](screenshots/home-dark-default.png), [theme-toggle](#theme-toggle)"),
-    ("OTP form, filled", "/login", "the email field filled with a placeholder and cleared — Send code never pressed", "[login-light-filled](screenshots/login-light-filled.png), [login-field](#email-field)"),
+    ("OTP form, empty", "/login", "the email field was left empty. Send code was not pressed", "[login-light-default](screenshots/login-light-default.png), [login-field](#email-field)"),
     ("Cookie notice", "every page", "hidden via the generic overlay hider, never answered", "not captured"),
     ("The signed-in library", "accounts, purchases", "Sign in leads to the OTP card; Pro purchase and every download were never used", "boundary; see Gaps"),
 ]

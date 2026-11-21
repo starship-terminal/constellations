@@ -9,7 +9,7 @@
 // name.partN.png tiles, which quantize.py stitches back together; an unbounded page truncates at
 // 8 chunks and the log records the boundary. Nothing is sent, bought or signed into: the only
 // presses are local UI toggles — the theme switch and the mobile nav button. The OTP login card
-// at /login is captured but its Send code is never pressed. A fixed cookie notice is hidden
+// at /login is photographed empty. Send code is never pressed, and the email field is never filled. A fixed cookie notice is hidden
 // (never answered) by closePromo. Checkout, Pro purchase and every download action are never used.
 import fs from 'fs';
 import path from 'node:path';
@@ -114,11 +114,8 @@ const desktop = {
     await S.full();
   } },
   login: { path: '/login', wait: 7000, run: async (p, S) => {
+    // Empty wall only. Do not type an email, press Send code, or click Google.
     await S.view('default');
-    await step('filled', async () => {
-      const e = p.locator('input[type="email"]').first();
-      if (await e.count()) { await e.fill('name@example.com'); await wait(p, 800); await S.view('filled'); await e.fill(''); }
-    });
   } },
 };
 

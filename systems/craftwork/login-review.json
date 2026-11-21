@@ -1,0 +1,148 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "route": "public Playwright. No session was present. The email field was left empty.",
+  "probe": {
+    "url": "https://craftwork.design/login",
+    "result": "A prior probe offered a one-time code, then said the email domain is not allowed. No code was sent. Probe is closed. This pass did not type an email."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measuredInnerWidth": 1440,
+      "measuredInnerHeight": 900,
+      "deviceScaleFactor": 2
+    },
+    "phone": {
+      "requested": "390x844",
+      "measuredInnerWidth": 390,
+      "measuredInnerHeight": 844,
+      "deviceScaleFactor": 2
+    }
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "Assets",
+        "Templates",
+        "Inspiration",
+        "Search",
+        "Pricing",
+        "Toggle theme",
+        "Sign in",
+        "Connect agent",
+        "See the deal"
+      ],
+      "reached": [
+        "Assets",
+        "Templates",
+        "Inspiration",
+        "Search",
+        "Pricing",
+        "Toggle theme",
+        "Sign in",
+        "Connect agent",
+        "See the deal",
+        "Catalog",
+        "Components",
+        "FAQ",
+        "About",
+        "Blog",
+        "Authors",
+        "Design skill",
+        "License",
+        "Product page",
+        "Phone menu"
+      ]
+    },
+    "settings": {
+      "items": [
+        "Dark theme",
+        "Light theme",
+        "System theme"
+      ],
+      "reached": [
+        "Dark theme clicked on the homepage. data-theme became dark. Flipped back to light. Not an account setting."
+      ]
+    },
+    "create": {
+      "items": [
+        "Continue with Google",
+        "Continue with email",
+        "Send code",
+        "Log in with Google",
+        "Create your free account"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    {"name": "Home, light, 1440", "file": "screenshots/home-light-default.png"},
+    {"name": "Home, dark, 1440", "file": "screenshots/home-dark-default.png"},
+    {"name": "Assets menu", "file": "screenshots/home-light-menu-assets.png"},
+    {"name": "Templates menu", "file": "screenshots/home-light-menu-templates.png"},
+    {"name": "Inspiration menu", "file": "screenshots/home-light-menu-inspiration.png"},
+    {"name": "Search dialog, empty", "file": "screenshots/home-light-search.png"},
+    {"name": "Sign in dialog", "file": "screenshots/login-light-dialog.png"},
+    {"name": "Login page, empty", "file": "screenshots/login-light-default.png"},
+    {"name": "Pricing", "file": "screenshots/pricing-light-default.png"},
+    {"name": "Catalog", "file": "screenshots/catalog-light-default.png"},
+    {"name": "Components", "file": "screenshots/components-light-default.png"},
+    {"name": "Black Friday deal", "file": "screenshots/deal-light-default.png"},
+    {"name": "Connect agent", "file": "screenshots/mcp-light-default.png"},
+    {"name": "FAQ", "file": "screenshots/faq-light-default.png"},
+    {"name": "FAQ row open", "file": "screenshots/faq-light-open.png"},
+    {"name": "About", "file": "screenshots/about-light-default.png"},
+    {"name": "Blog", "file": "screenshots/blog-light-default.png"},
+    {"name": "Inspiration", "file": "screenshots/inspiration-light-default.png"},
+    {"name": "Templates", "file": "screenshots/templates-light-default.png"},
+    {"name": "Authors", "file": "screenshots/authors-light-default.png"},
+    {"name": "Design skill", "file": "screenshots/skill-light-default.png"},
+    {"name": "License", "file": "screenshots/license-light-default.png"},
+    {"name": "Product page", "file": "screenshots/product-light-default.png"},
+    {"name": "Home, phone, 390", "file": "screenshots/mobile-home-light-default.png"},
+    {"name": "Phone menu", "file": "screenshots/mobile-home-light-menu.png"},
+    {"name": "Pricing, phone", "file": "screenshots/mobile-pricing-light-default.png"}
+  ],
+  "walls": [
+    {
+      "control": "Sign in",
+      "url": "https://craftwork.design/",
+      "asks": "Continue with Google, an email field, Continue with email",
+      "stopped": true
+    },
+    {
+      "control": "Save",
+      "url": "https://craftwork.design/catalog",
+      "asks": "Same account dialog as Sign in",
+      "stopped": true
+    },
+    {
+      "control": "Open /login",
+      "url": "https://craftwork.design/login",
+      "asks": "Email field, Send code, Log in with Google",
+      "stopped": true
+    }
+  ],
+  "gaps": [
+    "Signed-in library, cart, downloads, and the author dashboard were not opened. No session was present.",
+    "Google was not clicked.",
+    "The email field was not filled. Send code and Continue with email were not pressed.",
+    "https://craftwork.design/signup is a 404. Signup is the same login card.",
+    "Contact, newsletter, student, affiliate, and become-an-author were not opened. They ask for a name or an email.",
+    "Buy now, Get Pro, and Get Lifetime were not clicked. Checkout was not opened.",
+    "Search was not submitted.",
+    "System theme was visible in an earlier probe and was not selected.",
+    "Off-site hosts (Figma plugin, social, sister sites) were not opened.",
+    "Unread CSS values stay Not captured. This pass did not re-read tokens."
+  ],
+  "not_submitted": [
+    "No email, name, phone, password, or code typed",
+    "No identity provider clicked",
+    "No form submitted",
+    "No account created",
+    "No captcha solved",
+    "No onboarding filled"
+  ]
+}

@@ -32,7 +32,7 @@ Captured signed out on 2026-11-12. Heights are the painted `scrollHeight` of eac
 
 ## Login (`/login`, H=900)
 
-- A split auth screen: the OTP card (390 wide) on the left — "Log in or sign up to craftwork", the 46px "Your Email" field (338px inner), the #efefef "Send code" button, an "or" divider, the #1e1e1e "Log in with Google" button — and a product showcase image on the right. Send code was never pressed.
+- A split auth screen: the OTP card (390 wide) on the left, the empty "Your Email" field, the "Send code" button, an "or" divider, and "Log in with Google", with a product image on the right. Photographed empty on 2026-11-21. Send code was not pressed. Google was not clicked.
 
 ## Footer
 

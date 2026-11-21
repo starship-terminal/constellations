@@ -513,9 +513,9 @@ Page: components. Selector: `catalog input`. States: default, focus-visible, fil
 | Placeholder | #999999, opacity 1 | #000000 @ 0, opacity 1 | #000000 @ 0, opacity 1 |
 | Painted layers | input.h-full.w-full 157.0x30.0 outline 2px solid #000000 @ 0 offset 2px | = | input.h-full.w-full 135.0x30.0 outline 2px solid #000000 @ 0 offset 2px |
 | Ancestor paint | 1 up div.cursor-default.cursor-pointer bg #000000 @ 0.04 | 1 up div.cursor-default.cursor-pointer bg #000000 @ 0.07 | 1 up div.cursor-default.cursor-pointer bg #000000 @ 0.07 |
-| How | at rest | Shift+Tab, Tab | typed "name@example.com", then deleted; nothing sent |
+| How | at rest | Shift+Tab, Tab | filled state not recaptured; the typed crop was removed |
 
-Crops: `components-filter-default.png`, `components-filter-focus-visible.png`, `components-filter-filled.png`.
+Crops: `components-filter-default.png`, `components-filter-focus-visible.png`. The filled crop was removed.
 
 #### components-card
 
@@ -576,9 +576,9 @@ Page: catalog. Selector: `catalog input`. States: default, focus-visible, filled
 | Placeholder | #999999, opacity 1 | #000000 @ 0, opacity 1 | #000000 @ 0, opacity 1 |
 | Painted layers | input.h-full.w-full 193.0x30.0 outline 2px solid #000000 @ 0 offset 2px | = | input.h-full.w-full 171.0x30.0 outline 2px solid #000000 @ 0 offset 2px |
 | Ancestor paint | 1 up div.cursor-default.cursor-pointer bg #000000 @ 0.04 | 1 up div.cursor-default.cursor-pointer bg #000000 @ 0.07 | 1 up div.cursor-default.cursor-pointer bg #000000 @ 0.07 |
-| How | at rest | Shift+Tab, Tab | typed "name@example.com", then deleted; nothing sent |
+| How | at rest | Shift+Tab, Tab | filled state not recaptured; the typed crop was removed |
 
-Crops: `catalog-filter-default.png`, `catalog-filter-focus-visible.png`, `catalog-filter-filled.png`.
+Crops: `catalog-filter-default.png`, `catalog-filter-focus-visible.png`. The filled crop was removed.
 
 #### catalog-card
 
@@ -682,9 +682,9 @@ Page: login. Selector: `input[type=email]`. States: default, focus-visible, fill
 | Placeholder | #999999, opacity 1 | = | = |
 | Painted layers | input.px-3.h-[46px] 338.0x46.0 outline 2px solid #000000 @ 0 offset 2px | = | = |
 | Ancestor paint | 1 up div.px-3.h-[46px] bg #fafafa shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.02 0px 4px 4px 0px inset | 1 up div.px-3.h-[46px] bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.02 0px 4px 4px 0px inset | 1 up div.px-3.h-[46px] bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.02 0px 4px 4px 0px inset |
-| How | at rest | Shift+Tab, Tab | typed "name@example.com", then deleted; nothing sent |
+| How | at rest | Shift+Tab, Tab | filled state not recaptured; the typed crop was removed |
 
-Crops: `login-field-default.png`, `login-field-focus-visible.png`, `login-field-filled.png`.
+Crops: `login-field-default.png`, `login-field-focus-visible.png`. The filled crop was removed.
 
 #### send-code
 
