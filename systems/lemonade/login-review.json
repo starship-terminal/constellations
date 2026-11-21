@@ -1,0 +1,74 @@
+{
+  "login_extracted": "not-started",
+  "probed_at": "2026-11-21",
+  "probe": "email-wall",
+  "offered": {
+    "nav": {
+      "items": [
+        "Renters",
+        "Homeowners",
+        "Car",
+        "Pet",
+        "Life",
+        "Giveback",
+        "My Account",
+        "Check our prices",
+        "Open the menu"
+      ],
+      "reached": [
+        "Renters",
+        "Homeowners",
+        "Car",
+        "Pet",
+        "Life",
+        "Giveback",
+        "My Account",
+        "Check our prices",
+        "Open the menu"
+      ]
+    },
+    "settings": {
+      "items": [
+        "Select your language"
+      ],
+      "reached": [
+        "Select your language"
+      ]
+    },
+    "create": {
+      "items": []
+    }
+  },
+  "screens": [
+    "screenshots/home-light-default.png",
+    "screenshots/home-light-prices.png",
+    "screenshots/home-light-cta-hover.png",
+    "screenshots/renters-light-default.png",
+    "screenshots/homeowners-light-default.png",
+    "screenshots/car-light-default.png",
+    "screenshots/pet-light-default.png",
+    "screenshots/life-light-default.png",
+    "screenshots/giveback-light-default.png",
+    "screenshots/faq-light-default.png",
+    "screenshots/claims-light-default.png",
+    "screenshots/quote-start-light-default.png",
+    "screenshots/login-light-empty.png",
+    "screenshots/mobile-home-light-default.png",
+    "screenshots/mobile-home-light-menu.png",
+    "screenshots/mobile-renters-light-default.png"
+  ],
+  "gaps": [
+    "Signed-in account was not entered. /login shows an empty email field. Nothing was typed. Log in was not pressed.",
+    "No separate signup page. /signup and /register returned 404. login-extracted stays not-started.",
+    "Quote chat at chat.lemonade.com/initial/flow was photographed as it started. Yes and No were not pressed. No quote answer was typed.",
+    "Language menu was opened and not confirmed. Its screenshot was discarded because the footer behind it shows a public phone number and a street address.",
+    "Cookie Accept was not clicked. The banner was hidden with CSS."
+  ],
+  "not_submitted": [
+    "Log in",
+    "quote chat Yes",
+    "quote chat No",
+    "language selection",
+    "cookie Accept"
+  ]
+}
