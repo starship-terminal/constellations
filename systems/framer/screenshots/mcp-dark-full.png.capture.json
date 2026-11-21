@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T21:20:00.870Z",
+  "capturedAt": "2026-11-21T11:07:05.566Z",
   "screenshot": "mcp-dark-full.png",
   "sanitizedSourceUrl": "https://www.framer.com/mcp/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 5878
+      "height": 5902
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 5878
+    "height": 5902
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 5878
+      "height": 5902
     },
     "basis": "fullPage"
   },

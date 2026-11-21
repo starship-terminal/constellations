@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T21:22:14.681Z",
+  "capturedAt": "2026-11-21T11:08:00.987Z",
   "screenshot": "about-dark-default.png",
   "sanitizedSourceUrl": "https://www.framer.com/about",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 6441
+      "height": 6492
     },
     "scroll": {
       "x": 0,

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T21:19:53.082Z",
+  "capturedAt": "2026-11-21T11:07:00.144Z",
   "screenshot": "mcp-dark-default.png",
   "sanitizedSourceUrl": "https://www.framer.com/mcp/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 5878
+      "height": 5902
     },
     "scroll": {
       "x": 0,

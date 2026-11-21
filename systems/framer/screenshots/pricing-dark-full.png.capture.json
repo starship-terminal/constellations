@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T21:20:47.508Z",
+  "capturedAt": "2026-11-21T11:07:26.232Z",
   "screenshot": "pricing-dark-full.png",
   "sanitizedSourceUrl": "https://www.framer.com/pricing",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 8091
+      "height": 8115
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 8091
+    "height": 8115
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 8091
+      "height": 8115
     },
     "basis": "fullPage"
   },

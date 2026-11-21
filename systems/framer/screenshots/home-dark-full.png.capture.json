@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T21:16:27.478Z",
+  "capturedAt": "2026-11-21T11:05:28.144Z",
   "screenshot": "home-dark-full.png",
   "sanitizedSourceUrl": "https://www.framer.com/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 12318
+      "height": 12441
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 12318
+    "height": 12441
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 12318
+      "height": 12441
     },
     "basis": "fullPage"
   },

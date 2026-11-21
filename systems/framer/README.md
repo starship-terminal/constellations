@@ -13,6 +13,8 @@ Framer is worth a capture because the marketing site is itself a Framer site: it
 | [style-guide.html](style-guide.html) | One page that renders every token and drawn mocks of the chrome, the hero, the pricing grid, the gallery and the login card, dark. |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component with crops and values, and the Gaps. |
 | [patterns.md](patterns.md) | How the components combine: the marketing chrome and mega-dropdowns, the hero and demo canvas, the pricing grid, the gallery index, the auth card, mobile, motion and focus. |
+| [site-tree.md](site-tree.md) | Which homepage control opens which page, menu, or dialog. Written 2026-11-21 before the refresh shots. |
+| [login-review.json](login-review.json) | What the signed-out login wall offered, and what was not submitted. |
 | [components/crops/](components/crops) | Element crops at 2x, named `{component}-{state}.png`. |
 | [screenshots/](screenshots) | Quantised `{page}-dark-{state}.png` captures (`light` for /login). Desktop 1440 x 900 at 1x; `-full` whole pages bounded at eight chunks — the gallery grid grows without bound and truncates with the boundary in its sidecar; `mobile-*` shots at 390 x 844 @2x; `home-dark-menu-*` the mega-dropdowns; `mobile-home-dark-drawer` the phone nav layer. |
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the stylesheet harvest — 576 `--token-<uuid>` declarations on `body` plus 102 component-scoped vars and 378 `@font-face` rules), `component-tokens.json` (the token-tree spec), `motion.json` (the motion probe). |
