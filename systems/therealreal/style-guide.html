@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The RealReal style guide</title>
+  <style>
+    :root {
+      --page: #ffffff;
+      --ink: #333333;
+      --announce: #000000;
+      --sell: #e6f0a5;
+      --link: #4a7d76;
+      --footer: #000000;
+      --border: #666666;
+      --banner: #e8d7e6;
+    }
+    body { margin: 0; background: var(--page); color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+    .bar { background: var(--announce); color: #fff; text-align: center; font-size: 16px; line-height: 40px; font-family: Helvetica, Arial, sans-serif; }
+    header { display: flex; align-items: center; gap: 24px; padding: 24px 48px 16px; }
+    .wordmark { font-family: Georgia, "Times New Roman", serif; font-size: 32px; color: #111; letter-spacing: -0.5px; }
+    .search { flex: 1; max-width: 416px; height: 40px; border: 1px solid var(--border); border-radius: 0; padding: 8px; font-size: 14px; letter-spacing: 0.48px; color: #000; }
+    .sell { background: var(--sell); color: #000; text-decoration: none; text-transform: uppercase; font-family: Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3.3px; height: 32px; line-height: 32px; padding: 0 12px; border-radius: 0; }
+    .account { font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; text-decoration: underline; color: var(--ink); }
+    nav { display: flex; gap: 28px; padding: 8px 48px 20px; font-family: Helvetica, Arial, sans-serif; font-size: 16px; }
+    .hero { background: var(--banner); min-height: 120px; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
+    .hero h1 { font-size: 32px; font-weight: 400; margin: 0; }
+    .hero p { margin: 4px 0 0; }
+    .shop { background: #000; color: #fff; text-decoration: none; text-transform: uppercase; font-family: Helvetica, Arial, sans-serif; font-size: 12px; letter-spacing: 2px; padding: 16px 48px; }
+    .swatches { display: flex; flex-wrap: wrap; gap: 12px; padding: 24px 48px; }
+    .swatch { width: 140px; font-family: Helvetica, Arial, sans-serif; font-size: 12px; }
+    .chip { height: 48px; border: 1px solid #ccc; }
+    footer { background: var(--footer); color: #fff; padding: 24px 48px; font-family: Helvetica, Arial, sans-serif; font-size: 14px; letter-spacing: 1px; }
+    footer strong { display: block; font-size: 18px; letter-spacing: 5.4px; text-transform: uppercase; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <div class="bar">3 DAYS LEFT: Order by 11/24 at 11:59 PM ET to get it by Hanukkah</div>
+  <header>
+    <div class="wordmark">TheRealReal</div>
+    <input class="search" placeholder="Search by Designer or Items" readonly>
+    <a class="sell" href="#sell">Sell</a>
+    <span class="account">Sign In</span>
+    <span class="account">Create Account</span>
+  </header>
+  <nav>
+    <span>New Arrivals</span>
+    <span>Designers</span>
+    <span>Women</span>
+    <span>Bags</span>
+    <span>Men</span>
+    <span>Sale</span>
+  </nav>
+  <div class="hero">
+    <div>
+      <h1>$25 Off Your First Order</h1>
+      <p>See code in checkout</p>
+    </div>
+    <a class="shop" href="#shop">Shop now</a>
+  </div>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div>page #ffffff</div>
+    <div class="swatch"><div class="chip" style="background:#333333"></div>ink #333333</div>
+    <div class="swatch"><div class="chip" style="background:#000000"></div>announcement #000000</div>
+    <div class="swatch"><div class="chip" style="background:#e6f0a5"></div>sell #e6f0a5</div>
+    <div class="swatch"><div class="chip" style="background:#4a7d76"></div>link #4a7d76</div>
+    <div class="swatch"><div class="chip" style="background:#666666"></div>search border #666666</div>
+    <div class="swatch"><div class="chip" style="background:#e8d7e6"></div>hero sample #e8d7e6</div>
+  </div>
+  <footer>
+    <strong>Account</strong>
+    Account Info was not opened. Sell With Us was not opened.
+  </footer>
+</body>
+</html>
