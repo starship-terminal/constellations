@@ -1,6 +1,6 @@
 # Editor X / Wix Studio design reference
 
-A token set and component reference for the public signed-out surface editorx.com now serves — for building marketing pages and galleries in the style of the real thing. It was read from **editorx.com** on **2026-11-13**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. editorx.com is now a redirect shell for **Wix Studio**: every path 301s to `wix.com/studio` (deep paths keep their tail) except `/pricing`, which still serves a Wix plans page on the domain itself — it answered with the *Couldn't load Premium plans* error pane at capture time, recorded as a boundary. Captured: home, features, design, plans, pricing, inspiration, templates, academy and enterprise, plus a 390px pass on home and plans.
+A token set and component reference for the public signed-out surface editorx.com now serves — for building marketing pages and galleries in the style of the real thing. It was read from **editorx.com** on **2026-11-13**, and the public control map was refreshed on **2026-11-21**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. editorx.com is now a redirect shell for **Wix Studio**: `https://www.editorx.com/` 301s to `https://www.wix.com/studio`, and `https://www.editorx.com/login` 301s to that same marketing home. `/pricing` still answers on editorx.com and still paints the *Couldn't load Premium plans* error pane. The 2026-11-21 map is [site-tree.md](site-tree.md). Walls stopped at are [login-review.json](login-review.json). Captured: home, features, design, plans, pricing, inspiration, templates, academy and enterprise, plus a 390px pass on home and plans.
 
 The surface is worth a capture because Wix's pro builder paints a deliberately stark public system: **Madefor** at mostly one weight over pure `#000` ink and white surfaces, sharp 0px corners as the default with stadium pills where a control is meant to be pushed, a single `#3910ed` purple reserved for the Start Creating actions, a `#deff00` lime reserved for the closing band, and a `#0e0e0e` near-black chrome (the footer) whose `#f6f6f6` links dim to `#828282`. Underneath the marketing chrome the page is a thunderbolt build that declares its theme in custom properties — the `--color_0..65` palette, `--font_0..10` site fonts and the `--wst-*` semantic layer (action `#1a6aff`, text/fill/disabled roles) — harvested here from the inline styles and linked parastorage bundles. Display type is **spx-scaled**: font sizes track the viewport (`--theme-spx-ratio`), so the measured px values are the 1440 and 390 readings, not fixed sizes. **Boundary:** the Studio editor and everything behind Log In / Start Creating were never reached and are never inferred.
 
@@ -16,6 +16,8 @@ The surface is worth a capture because Wix's pro builder paints a deliberately s
 | [screenshots/](screenshots) | 26 `{page}-{theme}-{state}.png` captures, each with its `.capture.json` record. Desktop 1440 x 900 at 1x, `-full` whole pages at the context's scale (1x desktop, 2x mobile; home, design and mobile-home stitched from chunks), `mobile-*` phone shots (390 at 2x), plus toggled states: the Product mega-menu and the mobile menu |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the thunderbolt theme harvest — --color_*/--font_*/--wst-* resolved light, plus the linked parastorage bundles and 243 @font-face blocks), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
+| [site-tree.md](site-tree.md) | The public control map: which header, footer, menu, search, language, and in-page control opens which page, dialog, or wall. Refreshed 2026-11-21 |
+| [login-review.json](login-review.json) | The login and signup walls this pass stopped at. Nothing was typed or submitted |
 
 ## Brief
 
@@ -109,7 +111,7 @@ Nothing was signed into, created, submitted or paid for: the Log In / Start Crea
 ## What to distrust
 
 - **This is the marketing surface, not the editor.** The Studio editor, workspaces, dashboards and checkout sit behind Log In / Start Creating and are uncaptured. Marketing pages describe the product; nothing here verifies how it behaves.
-- **This is Wix Studio, not 2021-era Editor X.** editorx.com 301s to wix.com/studio; the package documents the surface it serves today, not the defunct Editor X brand it once served. Only /pricing still answers on the editorx.com domain — and it served its error pane at capture time.
+- **This is Wix Studio, not 2021-era Editor X.** editorx.com 301s to wix.com/studio; the package documents the surface it serves today, not the defunct Editor X brand it once served. Only /pricing still answers on the editorx.com domain — and it served its error pane at capture time. Rechecked 2026-11-21: `/` and `/login` still 301 to `https://www.wix.com/studio`, and `/pricing` still paints the same error pane.
 - **"Dark" is a painted surface, not a toggle.** The `#0e0e0e` footer is a dark section of a light page — nothing toggles it (the mobile header stays white). The `dark` token set is its painted role set, not a user-selectable mode.
 - **Display sizes are spx-scaled, not fixed.** font-size tracks the viewport through `--theme-spx-ratio`: 80.25px hero and 157.5px design display are the 1440px readings (34.5px hero at 390). Treat the numbers as proportional.
 - **The hero pill's anchor reads unstyled-link colours.** Its own `color` computes rgb(0,0,238) default / rgb(255,0,0) pressed — browser link-state quirks of the anchor; the label inside paints white, and the purple fill lives on a child layer whose hover reading caught mid-transition at alpha 0.
@@ -147,7 +149,9 @@ One family does everything the styled surface paints: **Madefor**, served from s
 | Themes: light | captured | the painted light surface, tokenised as `light` |
 | Themes: dark | partly | the #0e0e0e chrome's roles are tokenised as `dark`; nothing on the surface toggles themes |
 | Widths: 1440, 390 | captured | desktop and mobile passes (home, plans at 390) |
-| Regions | captured | one region was served (US English); geo variants not captured |
+| Regions | captured | one region was served (US English); geo variants not captured. Language links to de/es/fr/ja/pt Studio hosts were recorded in [site-tree.md](site-tree.md) and not followed |
+| Public control map | captured | [site-tree.md](site-tree.md), refreshed 2026-11-21. Phone drawer menus photographed. Desktop Product/Resources/Enterprise panels did not paint on click |
+| Login and signup walls | captured, stopped | [login-review.json](login-review.json). Nothing typed or submitted |
 
 ## Do and don't
 
