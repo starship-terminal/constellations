@@ -1,21 +1,22 @@
 # Coolors
 
-Coolors is the color palette generator at [coolors.co](https://coolors.co). This package records a signed-in capture from an attached browser on 2026-11-18.
+Coolors is the palette generator at [coolors.co](https://coolors.co). This package is a signed-in capture from the T3 preview browser on 2026-11-20. The session was already signed in: `body` had class `is-logged`, Sign in and Sign up were hidden, and the header showed an avatar.
 
-The account is `kaichen@agentmail.to`, created in the T3 preview tab and confirmed with the color code Coolors emailed. The headless public route still gets a Cloudflare challenge (HTTP 403, `cf-mitigated: challenge`). Those probes are in [raw/block.json](raw/block.json). The values in [tokens.json](tokens.json) come from the attached tab, recorded in [raw/measured.json](raw/measured.json). Desktop CSS viewport was 1169x731 at devicePixelRatio 2. Mobile type was computed at 390x844. Only the light theme was on screen. Pro checkout was not opened.
+Headless curl of the stylesheet still gets a Cloudflare 403. The CSS was fetched from the signed-in page (`style.min.css?v=64`, HTTP 200, 1,196,416 bytes) and stored in [raw/css-vars.json](raw/css-vars.json). Desktop CSS viewport was 1440x900 at devicePixelRatio 2. Phone CSS viewport was 390x844 at devicePixelRatio 2. The phone compositor returned a white frame, so no phone PNG is committed. Only the light theme was on screen. Dark tokens are the stylesheet's smart-alias flip, not a live switch.
 
 | File | What it holds |
 |---|---|
 | [README.md](README.md) | This file. |
-| [icon.png](icon.png) | The Coolors wordmark, cropped from the desktop generator screenshot and padded to 128 px. Not an apple-touch icon. |
-| [DESIGN.md](DESIGN.md) | Generated from the tokens. |
-| [tokens.json](tokens.json) | Measured color, type, radius and spacing. Each token names the element it was read from. |
-| [style-guide.html](style-guide.html) | Renders those tokens. |
-| [components.md](components.md) | Buttons, generator columns, explore cards and the confirm dialog, with the measured values. |
-| [patterns.md](patterns.md) | Homepage, generator and explore. |
-| [screenshots/](screenshots/) | [generate-light-desktop.png](screenshots/generate-light-desktop.png) is the signed-in generator. [generate-light-terms.png](screenshots/generate-light-terms.png) is the terms modal over the same generator. [home-blocked-challenge.png](screenshots/home-blocked-challenge.png) is the headless Cloudflare interstitial, kept so the block record stays honest. |
-| [raw/](raw/) | [measured.json](raw/measured.json) and [block.json](raw/block.json). |
-| [tools/](tools/) | [build_style_guide.py](tools/build_style_guide.py) and the tests: [test_measured.py](tools/test_measured.py) checks the measured record. The unadapted kit copy was deleted in the 2026-11 audit |
+| [icon.png](icon.png) | Site icon, 128 px. |
+| [DESIGN.md](DESIGN.md) | Generated companion. The catalog PR regenerates this with `make design-md`. |
+| [tokens.json](tokens.json) | W3C DTCG tokens. `core` holds the 23 ramps plus type, radius, space, and the header shadow. `light` is computed. `dark` is the stylesheet flip. Every token has `$extensions.source`. |
+| [style-guide.html](style-guide.html) | Renders the roles, the button variants, a sample generator row, and the ramps. |
+| [components.md](components.md) | Button, header, generator column, text input, and display type, with the measured values. |
+| [patterns.md](patterns.md) | Header, generator, library, and account, plus what was not opened. |
+| [login-review.json](login-review.json) | Signed-in review: offered nav, settings, and create, the screens, the gaps, and what was not submitted. |
+| [screenshots/](screenshots/) | Signed-in light frames at 1440x900 CSS (2880x1800 PNG): [dashboard-palettes-light.png](screenshots/dashboard-palettes-light.png), [tools-menu-light.png](screenshots/tools-menu-light.png), [account-settings-light.png](screenshots/account-settings-light.png), [generator-light.png](screenshots/generator-light.png). [generate-light-desktop.png](screenshots/generate-light-desktop.png) is the same generator frame, under the name the current catalog cover uses. |
+| [raw/](raw/) | [css-vars.json](raw/css-vars.json) and [components-computed.json](raw/components-computed.json). Full-colour PNGs sit in `raw/full/` and are not the committed evidence. |
+| [tools/](tools/) | [build_tokens.py](tools/build_tokens.py), [build_style_guide.py](tools/build_style_guide.py), [build_components_md.py](tools/build_components_md.py), and the capture kit under [tools/capture/](tools/capture/). |
 
 ## Brief
 
@@ -25,26 +26,20 @@ Read this before designing in this style. Take every value from [tokens.json](to
 
 ### Principles
 
-1. Do use Inter for UI text.
-2. Do use the blue primary button for the main action.
-3. Do keep the generator as full-height color columns with the hex at the bottom.
-4. Do not treat the Cloudflare interstitial as the product.
-5. Do not invent a dark theme.
-
-Each rule links the screenshot or crop that shows it, under [Do and don't](#do-and-dont).
+The README's [Do and don't](#do-and-dont) section lists no rules.
 
 ### Using tokens
 
 | Role | light |
 |---|---|
 | page | #ffffff `light.page` |
-| surface | #ffffff `light.surface` |
+| surface | #f5f5f5 `light.surface` |
 | text | #0a0a0a `light.text` |
 | muted | #525252 `light.muted` |
 | accent | #2563eb `light.accent` |
-| border | #00000012 `light.border` |
+| border | rgba(0, 0, 0, 0.07) `light.border` |
 
-Fonts: `core.font.family.ui` is Inter, then 1 fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 8 type styles (`core.typography`), 3 radius steps (`core.radius`), 4 spacing steps (`core.spacing`).
+Fonts: `core.font.family.ui` is Inter, then 1 fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 4 type styles (`core.typography`), 4 radius steps (`core.radius`), 5 spacing steps (`core.space`).
 
 ### Using components
 
@@ -54,9 +49,9 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 
 | Theme | text on page | text on surface | muted on page | muted on surface |
 |---|---|---|---|---|
-| light | 19.79:1 pass | 19.79:1 pass | 7.81:1 pass | 7.81:1 pass |
+| light | 19.79:1 pass | 18.15:1 pass | 7.81:1 pass | 7.16:1 pass |
 
-4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus: no focus tokens (no token path contains "focus").
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.input-focus` #3b82f6; `light.input-focus` #3b82f6.
 
 <!-- brief:end -->
 
@@ -70,56 +65,46 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (page screen
 
 <!-- health:end -->
 
+## Health
+
+Not graded in this PR. `make grade` and the catalog entry are deferred to the batch catalog PR. Layout: no `components/crops` were cut. No `icons/` set was extracted. `icon.png` is the site icon.
+
 ## How the values were read
 
-The attached T3 preview browser loaded `https://coolors.co/` after a headless launch had been stopped by Cloudflare. Signup is a modal on the homepage (`#modal-signup_name`, `#modal-signup_email`, `#modal-signup_password`). Confirmation is a second modal (`#passcode_code`) that asks for the color code from the Coolors mail. After confirmation the header shows an avatar instead of Sign in.
+The T3 preview tab loaded coolors.co already signed in, light theme, freeform 1440x900. `getComputedStyle` on body, header, `a.btn`, `.generator_color_hex`, `.generator_color_background`, and the account h1 produced [raw/components-computed.json](raw/components-computed.json). The page `fetch` of `style.min.css?v=64` produced the 562 resolved custom properties and 297 dark overrides in [raw/css-vars.json](raw/css-vars.json).
 
-Computed styles were read with `getComputedStyle` on the homepage, `/generate` and `/palettes/popular`. The homepage primary button is `a.btn.btn--primary` with text Start the Generator. A hidden duplicate link with `href="/generate"` also exists; the visible button is the one in [raw/measured.json](raw/measured.json). Generator columns are `.generator_color` with a `.generator_color_background`, a `.generator_color_hex` and a `.generator_color_color-info`. Hex ink flips between white and black against the column. The screenshot of the generator is 2x the 1169x731 CSS viewport (2337x1461).
+Page roles (`--bg-color`, `--text-color`, and the rest) alias `--color-smart-*`. In light those aliases point at the ramp as declared. Under `[data-theme=dark]` the smart map flips each ramp (50 becomes 950, and so on) except the 500 stop. The dark set in tokens.json is that flip, resolved to paint values. The account theme control was not clicked, because it writes a preference.
 
-No consent POST was clicked. The terms modal ("We updated our Terms and Privacy") was accepted with its I accept button so the generator could be read. The first-run Hello modal was dismissed with Let's go!.
+No consent POST was clicked. Ads were hidden with `display: none` where that stuck. The generator and tools-menu frames still contained ad cards in the captured PNG, so those rectangles were painted over with the column or header color. The hex labels and column colors in the generator frame are the live page.
 
 ## What to distrust
 
-The homepage h1 size (93.52px, letter-spacing -3.2732px) is the value at 1169px. It will differ at other widths. The explore h1 is 70px at that desktop width and 50px at 390px.
-
-`:root` declares a Tailwind-like `--color-primary-50` through `--color-primary-950` ramp. The painted primary button is `#2563eb` (`--color-primary-600`), not `--color-primary-500`. The ramp stops were not used as product colors except that match.
-
-Generator palette colors (Black Forest, Malachite, and the rest) are content. They change when the spacebar is pressed. They are not brand tokens. One measured palette is in [raw/measured.json](raw/measured.json) as evidence of the column treatment.
-
-[screenshots/home-blocked-challenge.png](screenshots/home-blocked-challenge.png) is Cloudflare, not Coolors. [screenshots/generate-light-terms.png](screenshots/generate-light-terms.png) has the terms modal covering the columns. Use [screenshots/generate-light-desktop.png](screenshots/generate-light-desktop.png) for the generator chrome. A hover tooltip ("View color info") sits on the middle column in that shot.
-
-No dark theme was measured. Google Sans Code, IBM Plex Mono and Space Mono are requested by the Google Fonts link and were not the resolved family on the roles in this package.
+- Dark tokens are stylesheet evidence. No dark screenshot exists.
+- Phone layout was measured, not photographed. The preview compositor returned white at 390x844.
+- The generator frame has a painted-over ad region across the top of the yellow and orange columns. The hex row and the column colors below that band are the live capture.
+- Palette column colors (`#264653` and the rest) are one sample palette, not brand tokens.
+- Weight 450 on body is the computed weight, not a rounding of 400.
 
 ## Fonts
 
-Inter is the resolved family on body, headings, buttons, hex labels and color names. It is loaded from Google Fonts (`Inter:ital,opsz,wght@0,14..32,100..900`). The token fallback is `sans-serif`, which is what the computed style reported after Inter. Weight 450 is a real computed weight on body and the generator hint, not a rounding of 400.
+Inter is the computed family on body, buttons, hex labels, and the account h1. It loads from Google Fonts (`Inter:ital,opsz,wght@0,14..32,100..900`). IBM Plex Mono, Space Mono, and Google Sans Code are also linked. Only Inter was measured on a control. Nucleo is the icon font (`icons.css?v=22`).
 
 ## Coverage
 
-| Surface | State |
-|---|---|
-| Homepage, signed in, 1169x731 | Measured. Screenshot of the signed-in homepage was not saved; the generator shot shows the same header. |
-| Generator `/generate`, signed in | Measured and screenshotted. |
-| Explore `/palettes/popular`, desktop type | Measured. |
-| Explore at 390x844 | Type and card layout measured. A clean mobile screenshot was not saved: a founder welcome modal covered the list, then the preview browser stopped painting frames. |
-| Confirm-email modal | Used to finish signup. Not screenshotted as a component. |
-| Pro, checkout, saved palettes, account settings | Not entered. |
-| Dark theme | Not found on the pages that loaded. |
+Walked: homepage tools menu, `/generate` (palette `/264653-2a9d8f-e9c46a-f4a261-e76f51`), `/dashboard` (redirects to `/user/palettes`, empty), `/account/general` (not screenshotted, because the form shows the account email), `/account/settings`.
+
+Not walked: explore, contrast checker, image picker, visualizer, color picker, gradient maker, profile, subscription, affiliation, delete account, the other library rails, and phone screenshots. Save, Export, publish, Go Pro, newsletter, and sign out were not used.
 
 ## Do and don't
 
-- **Do use Inter for UI text.** Body is 15px at weight 450, headings are weight 800 with negative letter-spacing, and the generator hex is 30px at weight 600 with 0.9px letter-spacing. See [screenshots/generate-light-desktop.png](screenshots/generate-light-desktop.png).
-- **Do use the blue primary button for the main action.** Fill `#2563eb`, white label, 16px weight 600, 46px tall, 10px radius. Go Pro is a separate pink label (`#ec4899`), not the primary button.
-- **Do keep the generator as full-height color columns with the hex at the bottom.** Five columns at 1169px, each 234px wide, hex and color name near the bottom, toolbar (View, Export, Save) under the header. The hint is "Press the spacebar to generate color palettes!" in `#525252`.
-- **Do not treat the Cloudflare interstitial as the product.** [screenshots/home-blocked-challenge.png](screenshots/home-blocked-challenge.png) is the headless block. The attached browser loaded the product.
-- **Do not invent a dark theme.** Only light was on screen.
+Do use Inter, the 8px button radius, the 60px header, and the blue primary fill. Do put the hex at the bottom of a generator column and flip its ink for contrast. Don't add a second accent besides the pink Go Pro label. Don't ship the marketing gray band or the logo strip as app chrome. Don't copy an ad card into a layout.
 
 ## Rebuild
 
 ```sh
-python3 tools/catalog.py design-md coolors
-python3 tools/brief.py coolors
-python3 -m unittest systems/coolors/tools/test_measured.py
+python3 systems/coolors/tools/build_tokens.py
+python3 systems/coolors/tools/build_style_guide.py
+python3 systems/coolors/tools/build_components_md.py
 ```
 
-`python3 tools/catalog.py check` in a sparse checkout also reports every other `systems/` folder as missing. That failure is the checkout, not this package. A slug-scoped read of the coolors row is the check that applies here.
+`make design-md` and `make check` need the catalog entry. That entry is deferred to the batch catalog PR, so `make check` fails with `systems/coolors has no catalog.json entry` until then. Do not add the catalog entry in this PR.

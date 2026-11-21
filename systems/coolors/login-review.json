@@ -1,0 +1,80 @@
+{
+  "slug": "coolors",
+  "signed_in": true,
+  "evidence": "body class includes is-logged. Sign in and Sign up are display:none. The header avatar is visible.",
+  "theme_on_screen": "light",
+  "viewport": {
+    "desktop": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewportScale": 1},
+    "phone": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2, "visualViewportScale": 1}
+  },
+  "offered": {
+    "nav": [
+      {"label": "Tools", "reached": true},
+      {"label": "Palette Generator", "href": "/generate", "reached": true},
+      {"label": "Explore Palettes", "href": "/palettes", "reached": false},
+      {"label": "Image Picker", "href": "/image-picker", "reached": false},
+      {"label": "Contrast Checker", "href": "/contrast-checker", "reached": false},
+      {"label": "Palette Visualizer", "href": "/visualizer", "reached": false},
+      {"label": "Color Picker", "href": "/color-picker", "reached": false},
+      {"label": "Tailwind Colors", "href": "/tailwind", "reached": false},
+      {"label": "Color Bot", "href": "/color-bot", "reached": false},
+      {"label": "Dashboard", "href": "/dashboard", "reached": true},
+      {"label": "Palettes", "href": "/user/palettes", "reached": true},
+      {"label": "Colors", "reached": false},
+      {"label": "Gradients", "reached": false},
+      {"label": "Fonts", "reached": false},
+      {"label": "Images", "reached": false},
+      {"label": "Projects", "reached": false},
+      {"label": "Collections", "reached": false},
+      {"label": "Favorites", "reached": false},
+      {"label": "Profile", "reached": false},
+      {"label": "Account", "href": "/account/general", "reached": true},
+      {"label": "Settings", "href": "/account/settings", "reached": true}
+    ],
+    "settings": [
+      {"label": "General", "reached": true},
+      {"label": "Profile", "reached": false},
+      {"label": "Subscription", "reached": false},
+      {"label": "Affiliation", "reached": false},
+      {"label": "Settings", "reached": true},
+      {"label": "Delete account", "reached": false},
+      {"label": "Theme", "reached": false},
+      {"label": "Quick actions", "reached": false}
+    ],
+    "create": {
+      "items": [
+        {"label": "Palette Generator", "href": "/generate"},
+        {"label": "Gradient Maker", "href": "/gradient-maker"},
+        {"label": "Image Picker", "href": "/image-picker"},
+        {"label": "Collage Maker", "href": "/collage-maker"}
+      ],
+      "reached": ["Palette Generator"]
+    }
+  },
+  "screens": [
+    {"name": "Library palettes, empty", "file": "screenshots/dashboard-palettes-light.png"},
+    {"name": "Tools menu", "file": "screenshots/tools-menu-light.png"},
+    {"name": "Account settings", "file": "screenshots/account-settings-light.png"},
+    {"name": "Palette generator", "file": "screenshots/generator-light.png"},
+    {"name": "Palette generator, catalog cover name", "file": "screenshots/generate-light-desktop.png"}
+  ],
+  "gaps": [
+    "Phone 390x844 was measured (stacked 390x146 columns, Generate bar at y=788) but the preview compositor returned a white frame, so no phone PNG is committed.",
+    "Dark theme was not switched. The control is in the account menu and writes a preference. Dark tokens are the stylesheet smart-alias flip.",
+    "Explore, contrast checker, image picker, profile, subscription, and the library's other rails were not opened.",
+    "Save, Export, publish, Go Pro, affiliation, newsletter, and delete account were not used.",
+    "The generator screenshot had the header ad, a Shutterstock card, a Color Bot promo, and a footer ad painted out after the live hide did not stick in the captured frame. Column geometry and hex labels are from the live page."
+  ],
+  "not_submitted": [
+    "account general form",
+    "change password",
+    "newsletter checkbox",
+    "landing page select",
+    "white label image",
+    "save palette",
+    "export",
+    "go pro checkout",
+    "delete account",
+    "sign out"
+  ]
+}

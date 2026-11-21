@@ -1,67 +1,393 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-mode="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Coolors style guide</title>
 <style>
 :root {
-  --core-color-ink: #0a0a0a;
-  --core-color-page: #ffffff;
-  --core-color-muted: #525252;
-  --core-color-primary: #2563eb;
-  --core-color-on-primary: #ffffff;
-  --core-color-pro: #ec4899;
-  --core-color-gray-fill: #0000000f;
-  --core-color-hairline: #00000012;
+  --core-color-primary-50: #eff6ff;
+  --core-color-primary-100: #dbeafe;
+  --core-color-primary-200: #bfdbfe;
+  --core-color-primary-300: #93c5fd;
+  --core-color-primary-400: #60a5fa;
+  --core-color-primary-500: #3b82f6;
+  --core-color-primary-600: #2563eb;
+  --core-color-primary-700: #1d4ed8;
+  --core-color-primary-800: #1e40af;
+  --core-color-primary-900: #1e3a8a;
+  --core-color-primary-950: #172554;
+  --core-color-slate-50: #f8fafc;
+  --core-color-slate-100: #f1f5f9;
+  --core-color-slate-200: #e2e8f0;
+  --core-color-slate-300: #cbd5e1;
+  --core-color-slate-400: #94a3b8;
+  --core-color-slate-500: #64748b;
+  --core-color-slate-600: #475569;
+  --core-color-slate-700: #334155;
+  --core-color-slate-800: #1e293b;
+  --core-color-slate-900: #0f172a;
+  --core-color-slate-950: #020617;
+  --core-color-gray-50: #f9fafb;
+  --core-color-gray-100: #f3f4f6;
+  --core-color-gray-200: #e5e7eb;
+  --core-color-gray-300: #d1d5db;
+  --core-color-gray-400: #9ca3af;
+  --core-color-gray-500: #6b7280;
+  --core-color-gray-600: #4b5563;
+  --core-color-gray-700: #374151;
+  --core-color-gray-800: #1f2937;
+  --core-color-gray-900: #111827;
+  --core-color-gray-950: #030712;
+  --core-color-zinc-50: #fafafa;
+  --core-color-zinc-100: #f4f4f5;
+  --core-color-zinc-200: #e4e4e7;
+  --core-color-zinc-300: #d4d4d8;
+  --core-color-zinc-400: #a1a1aa;
+  --core-color-zinc-500: #71717a;
+  --core-color-zinc-600: #52525b;
+  --core-color-zinc-700: #3f3f46;
+  --core-color-zinc-800: #27272a;
+  --core-color-zinc-900: #18181b;
+  --core-color-zinc-950: #09090b;
+  --core-color-neutral-50: #fafafa;
+  --core-color-neutral-100: #f5f5f5;
+  --core-color-neutral-200: #e5e5e5;
+  --core-color-neutral-300: #d4d4d4;
+  --core-color-neutral-400: #a3a3a3;
+  --core-color-neutral-500: #737373;
+  --core-color-neutral-600: #525252;
+  --core-color-neutral-700: #404040;
+  --core-color-neutral-800: #262626;
+  --core-color-neutral-900: #171717;
+  --core-color-neutral-950: #0a0a0a;
+  --core-color-stone-50: #fafaf9;
+  --core-color-stone-100: #f5f5f4;
+  --core-color-stone-200: #e7e5e4;
+  --core-color-stone-300: #d6d3d1;
+  --core-color-stone-400: #a8a29e;
+  --core-color-stone-500: #78716c;
+  --core-color-stone-600: #57534e;
+  --core-color-stone-700: #44403c;
+  --core-color-stone-800: #292524;
+  --core-color-stone-900: #1c1917;
+  --core-color-stone-950: #0c0a09;
+  --core-color-red-50: #fef2f2;
+  --core-color-red-100: #fee2e2;
+  --core-color-red-200: #fecaca;
+  --core-color-red-300: #fca5a5;
+  --core-color-red-400: #f87171;
+  --core-color-red-500: #ef4444;
+  --core-color-red-600: #dc2626;
+  --core-color-red-700: #b91c1c;
+  --core-color-red-800: #991b1b;
+  --core-color-red-900: #7f1d1d;
+  --core-color-red-950: #450a0a;
+  --core-color-orange-50: #fff7ed;
+  --core-color-orange-100: #ffedd5;
+  --core-color-orange-200: #fed7aa;
+  --core-color-orange-300: #fdba74;
+  --core-color-orange-400: #fb923c;
+  --core-color-orange-500: #f97316;
+  --core-color-orange-600: #ea580c;
+  --core-color-orange-700: #c2410c;
+  --core-color-orange-800: #9a3412;
+  --core-color-orange-900: #7c2d12;
+  --core-color-orange-950: #431407;
+  --core-color-amber-50: #fffbeb;
+  --core-color-amber-100: #fef3c7;
+  --core-color-amber-200: #fde68a;
+  --core-color-amber-300: #fcd34d;
+  --core-color-amber-400: #fbbf24;
+  --core-color-amber-500: #f59e0b;
+  --core-color-amber-600: #d97706;
+  --core-color-amber-700: #b45309;
+  --core-color-amber-800: #92400e;
+  --core-color-amber-900: #78350f;
+  --core-color-amber-950: #451a03;
+  --core-color-yellow-50: #fefce8;
+  --core-color-yellow-100: #fef9c3;
+  --core-color-yellow-200: #fef08a;
+  --core-color-yellow-300: #fde047;
+  --core-color-yellow-400: #facc15;
+  --core-color-yellow-500: #eab308;
+  --core-color-yellow-600: #ca8a04;
+  --core-color-yellow-700: #a16207;
+  --core-color-yellow-800: #854d0e;
+  --core-color-yellow-900: #713f12;
+  --core-color-yellow-950: #422006;
+  --core-color-lime-50: #f7fee7;
+  --core-color-lime-100: #ecfccb;
+  --core-color-lime-200: #d9f99d;
+  --core-color-lime-300: #bef264;
+  --core-color-lime-400: #a3e635;
+  --core-color-lime-500: #84cc16;
+  --core-color-lime-600: #65a30d;
+  --core-color-lime-700: #4d7c0f;
+  --core-color-lime-800: #3f6212;
+  --core-color-lime-900: #365314;
+  --core-color-lime-950: #1a2e05;
+  --core-color-green-50: #f0fdf4;
+  --core-color-green-100: #dcfce7;
+  --core-color-green-200: #bbf7d0;
+  --core-color-green-300: #86efac;
+  --core-color-green-400: #4ade80;
+  --core-color-green-500: #22c55e;
+  --core-color-green-600: #16a34a;
+  --core-color-green-700: #15803d;
+  --core-color-green-800: #166534;
+  --core-color-green-900: #14532d;
+  --core-color-green-950: #052e16;
+  --core-color-emerald-50: #ecfdf5;
+  --core-color-emerald-100: #d1fae5;
+  --core-color-emerald-200: #a7f3d0;
+  --core-color-emerald-300: #6ee7b7;
+  --core-color-emerald-400: #34d399;
+  --core-color-emerald-500: #10b981;
+  --core-color-emerald-600: #059669;
+  --core-color-emerald-700: #047857;
+  --core-color-emerald-800: #065f46;
+  --core-color-emerald-900: #064e3b;
+  --core-color-emerald-950: #022c22;
+  --core-color-teal-50: #f0fdfa;
+  --core-color-teal-100: #ccfbf1;
+  --core-color-teal-200: #99f6e4;
+  --core-color-teal-300: #5eead4;
+  --core-color-teal-400: #2dd4bf;
+  --core-color-teal-500: #14b8a6;
+  --core-color-teal-600: #0d9488;
+  --core-color-teal-700: #0f766e;
+  --core-color-teal-800: #115e59;
+  --core-color-teal-900: #134e4a;
+  --core-color-teal-950: #042f2e;
+  --core-color-cyan-50: #ecfeff;
+  --core-color-cyan-100: #cffafe;
+  --core-color-cyan-200: #a5f3fc;
+  --core-color-cyan-300: #67e8f9;
+  --core-color-cyan-400: #22d3ee;
+  --core-color-cyan-500: #06b6d4;
+  --core-color-cyan-600: #0891b2;
+  --core-color-cyan-700: #0e7490;
+  --core-color-cyan-800: #155e75;
+  --core-color-cyan-900: #164e63;
+  --core-color-cyan-950: #083344;
+  --core-color-sky-50: #f0f9ff;
+  --core-color-sky-100: #e0f2fe;
+  --core-color-sky-200: #bae6fd;
+  --core-color-sky-300: #7dd3fc;
+  --core-color-sky-400: #38bdf8;
+  --core-color-sky-500: #0ea5e9;
+  --core-color-sky-600: #0284c7;
+  --core-color-sky-700: #0369a1;
+  --core-color-sky-800: #075985;
+  --core-color-sky-900: #0c4a6e;
+  --core-color-sky-950: #082f49;
+  --core-color-blue-50: #eff6ff;
+  --core-color-blue-100: #dbeafe;
+  --core-color-blue-200: #bfdbfe;
+  --core-color-blue-300: #93c5fd;
+  --core-color-blue-400: #60a5fa;
+  --core-color-blue-500: #3b82f6;
+  --core-color-blue-600: #2563eb;
+  --core-color-blue-700: #1d4ed8;
+  --core-color-blue-800: #1e40af;
+  --core-color-blue-900: #1e3a8a;
+  --core-color-blue-950: #172554;
+  --core-color-indigo-50: #eef2ff;
+  --core-color-indigo-100: #e0e7ff;
+  --core-color-indigo-200: #c7d2fe;
+  --core-color-indigo-300: #a5b4fc;
+  --core-color-indigo-400: #818cf8;
+  --core-color-indigo-500: #6366f1;
+  --core-color-indigo-600: #4f46e5;
+  --core-color-indigo-700: #4338ca;
+  --core-color-indigo-800: #3730a3;
+  --core-color-indigo-900: #312e81;
+  --core-color-indigo-950: #1e1b4b;
+  --core-color-violet-50: #f5f3ff;
+  --core-color-violet-100: #ede9fe;
+  --core-color-violet-200: #ddd6fe;
+  --core-color-violet-300: #c4b5fd;
+  --core-color-violet-400: #a78bfa;
+  --core-color-violet-500: #8b5cf6;
+  --core-color-violet-600: #7c3aed;
+  --core-color-violet-700: #6d28d9;
+  --core-color-violet-800: #5b21b6;
+  --core-color-violet-900: #4c1d95;
+  --core-color-violet-950: #2e1065;
+  --core-color-purple-50: #faf5ff;
+  --core-color-purple-100: #f3e8ff;
+  --core-color-purple-200: #e9d5ff;
+  --core-color-purple-300: #d8b4fe;
+  --core-color-purple-400: #c084fc;
+  --core-color-purple-500: #a855f7;
+  --core-color-purple-600: #9333ea;
+  --core-color-purple-700: #7e22ce;
+  --core-color-purple-800: #6b21a8;
+  --core-color-purple-900: #581c87;
+  --core-color-purple-950: #3b0764;
+  --core-color-fuchsia-50: #fdf4ff;
+  --core-color-fuchsia-100: #fae8ff;
+  --core-color-fuchsia-200: #f5d0fe;
+  --core-color-fuchsia-300: #f0abfc;
+  --core-color-fuchsia-400: #e879f9;
+  --core-color-fuchsia-500: #d946ef;
+  --core-color-fuchsia-600: #c026d3;
+  --core-color-fuchsia-700: #a21caf;
+  --core-color-fuchsia-800: #86198f;
+  --core-color-fuchsia-900: #701a75;
+  --core-color-fuchsia-950: #4a044e;
+  --core-color-pink-50: #fdf2f8;
+  --core-color-pink-100: #fce7f3;
+  --core-color-pink-200: #fbcfe8;
+  --core-color-pink-300: #f9a8d4;
+  --core-color-pink-400: #f472b6;
+  --core-color-pink-500: #ec4899;
+  --core-color-pink-600: #db2777;
+  --core-color-pink-700: #be185d;
+  --core-color-pink-800: #9d174d;
+  --core-color-pink-900: #831843;
+  --core-color-pink-950: #500724;
+  --core-color-rose-50: #fff1f2;
+  --core-color-rose-100: #ffe4e6;
+  --core-color-rose-200: #fecdd3;
+  --core-color-rose-300: #fda4af;
+  --core-color-rose-400: #fb7185;
+  --core-color-rose-500: #f43f5e;
+  --core-color-rose-600: #e11d48;
+  --core-color-rose-700: #be123c;
+  --core-color-rose-800: #9f1239;
+  --core-color-rose-900: #881337;
+  --core-color-rose-950: #4c0519;
+  --core-color-black: #0a0a0a;
+  --core-color-white: #ffffff;
+  --core-font-family-ui: Inter, sans-serif;
+  --core-font-family-mono: IBM Plex Mono, ui-monospace, monospace;
+  --core-font-weight-body: 450;
+  --core-font-weight-medium: 500;
+  --core-font-weight-semibold: 600;
+  --core-font-weight-extrabold: 800;
+  --core-radius-button: 8px;
+  --core-radius-input: 10px;
+  --core-radius-hex: 10px;
+  --core-radius-avatar: 999px;
+  --core-space-header: 60px;
+  --core-space-button-x: 12px;
+  --core-space-button-h: 36px;
+  --core-space-input-h: 46px;
+  --core-space-column: 288px;
+  --core-typography-body: var(--core-font-weight-body) 15px/15px var(--core-font-family-ui);
+  --core-typography-button: var(--core-font-weight-medium) 15px/36px var(--core-font-family-ui);
+  --core-typography-hex: var(--core-font-weight-semibold) 30px/50px var(--core-font-family-ui);
+  --core-typography-display: var(--core-font-weight-extrabold) 70px/77px var(--core-font-family-ui);
+  --core-shadow-header: 0px 1px 0px 0px rgba(0, 0, 0, 0.07);
   --light-page: #ffffff;
-  --light-surface: #ffffff;
+  --light-surface: #f5f5f5;
   --light-text: #0a0a0a;
   --light-muted: #525252;
-  --light-accent: #2563eb;
-  --light-border: #00000012;
-  --light-on-accent: #ffffff;
+  --light-accent: var(--core-color-primary-600);
+  --light-border: rgba(0, 0, 0, 0.07);
+  --light-popover: #ffffff;
+  --light-overlay: rgba(10,10,10, 0.25);
+  --light-input: rgba(0, 0, 0, 0);
+  --light-input-border: rgba(0, 0, 0, 0.2);
+  --light-input-focus: #3b82f6;
+  --light-input-error: #ef4444;
+  --light-button-gray: rgba(0, 0, 0, 0.06);
+  --light-button-gray-text: rgba(0, 0, 0, 1);
   --light-pro: #ec4899;
   color-scheme: light;
-  --ink: var(--light-text);
-  --page: var(--light-page);
-  --line: var(--light-border);
+}
+[data-mode="dark"] {
+  --dark-page: #0a0a0a;
+  --dark-surface: #171717;
+  --dark-text: #fafafa;
+  --dark-muted: #a3a3a3;
+  --dark-accent: var(--core-color-primary-500);
+  --dark-border: rgba(255, 255, 255, 0.07);
+  --dark-popover: #171717;
+  --dark-overlay: rgba(10, 10, 10, 0.8);
+  --dark-input: rgba(255, 255, 255, 0.02);
+  --dark-input-border: rgba(255, 255, 255, 0.2);
+  --dark-input-focus: #3b82f6;
+  --dark-input-error: #ef4444;
+  --dark-button-gray: rgba(255, 255, 255, 0.08);
+  --dark-button-gray-text: rgba(255, 255, 255, 1);
+  --dark-pro: #f472b6;
+  color-scheme: dark;
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.45 system-ui, sans-serif; }
-main { max-width: 880px; margin: 0 auto; padding: 32px 20px 64px; }
-h1 { font-size: 28px; margin: 0 0 8px; }
-p { max-width: 68ch; }
-.note { border: 1px solid var(--line); padding: 12px 16px; }
-.swatches { display: grid; gap: 16px; margin-top: 24px; }
-.sw { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: start; }
-.sw i { display: block; width: 56px; height: 56px; border: 1px solid var(--line); }
-code { font-family: ui-monospace, monospace; font-size: 13px; }
-small, .sw p { display: block; color: var(--light-muted); font-size: 13px; margin: 4px 0 0; }
+body { margin: 0; background: var(--light-page); color: var(--light-text); font: 450 15px/22px Inter, sans-serif; }
+header { display: flex; align-items: center; gap: 16px; height: 60px; padding: 0 24px; box-shadow: var(--core-shadow-header); background: var(--light-page); position: sticky; top: 0; }
+header h1 { font-size: 18px; margin: 0; letter-spacing: -0.4px; }
+header button { margin-left: auto; height: 36px; padding: 0 12px; border-radius: 8px; border: 0; background: var(--light-accent); color: #fff; font: 500 15px/36px Inter, sans-serif; }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
+h2 { font-size: 28px; letter-spacing: -0.8px; margin: 36px 0 12px; }
+.swatches, .roles { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.sw, .role { display: flex; gap: 10px; align-items: center; }
+.sw i, .role i { width: 36px; height: 36px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.12); display: block; }
+code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; color: var(--light-muted); }
+.ramp { display: grid; grid-template-columns: 88px repeat(11, 1fr); gap: 3px; align-items: center; margin: 4px 0; }
+.ramp i { height: 22px; border-radius: 3px; display: block; }
+.demo { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; padding: 16px; background: var(--light-surface); border-radius: 10px; }
+.btn { height: 36px; padding: 0 12px; border-radius: 8px; border: 0; font: 500 15px/36px Inter, sans-serif; }
+.btn.primary { background: var(--light-accent); color: #fff; }
+.btn.ghost { background: transparent; color: var(--light-text); }
+.btn.pro { background: transparent; color: var(--light-pro); }
+.btn.gray { background: var(--light-button-gray); color: var(--light-button-gray-text); }
+.cols { display: flex; height: 160px; border-radius: 8px; overflow: hidden; }
+.cols span { flex: 1; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 12px; font-weight: 600; letter-spacing: 0.9px; }
+p.note { color: var(--light-muted); max-width: 70ch; }
 </style>
 </head>
 <body>
-<main>
+<header>
   <h1>Coolors</h1>
-  <p class="note">This page renders tokens.json: colours read with getComputedStyle on coolors.co in the signed-in preview tab (each token's source names the element and page). The headless Playwright probe got a Cloudflare managed challenge (HTTP 403, title Just a moment...) and measured nothing, so no value here comes from it.</p>
+  <button type="button" id="theme">Dark tokens</button>
+</header>
+<main>
+  <p class="note">Rendered from tokens.json. Light values were computed on the signed-in page. Dark values are the stylesheet's smart-alias flip, not a live theme switch.</p>
+  <h2>Roles</h2>
   <div class="swatches">
-    <div class="sw"><i style="background:var(--core-color-ink)"></i><div><code>core.color.ink</code><small>#0a0a0a</small><p>getComputedStyle(document.body).color and h1 color on https://coolors.co/ at 1169x731, attached preview browser, 2026-11-18. rgb(10, 10, 10).</p></div></div>
-<div class="sw"><i style="background:var(--core-color-page)"></i><div><code>core.color.page</code><small>#ffffff</small><p>getComputedStyle(document.body).backgroundColor and header background on https://coolors.co/, 2026-11-18. rgb(255, 255, 255).</p></div></div>
-<div class="sw"><i style="background:var(--core-color-muted)"></i><div><code>core.color.muted</code><small>#525252</small><p>Hint 'Press the spacebar to generate color palettes!' color on /generate, and the explore lede at 390px. rgb(82, 82, 82).</p></div></div>
-<div class="sw"><i style="background:var(--core-color-primary)"></i><div><code>core.color.primary</code><small>#2563eb</small><p>a.btn.btn--primary 'Start the Generator' backgroundColor rgb(37, 99, 235) on https://coolors.co/. The same fill paints 'I accept' and 'Let's go!'. :root --color-primary-600 is #2563eb.</p></div></div>
-<div class="sw"><i style="background:var(--core-color-on-primary)"></i><div><code>core.color.on-primary</code><small>#ffffff</small><p>Start the Generator color rgb(255, 255, 255).</p></div></div>
-<div class="sw"><i style="background:var(--core-color-pro)"></i><div><code>core.color.pro</code><small>#ec4899</small><p>Header 'Go Pro' (.btn--accent-transparent) color rgb(236, 72, 153) on the signed-in homepage.</p></div></div>
-<div class="sw"><i style="background:var(--core-color-gray-fill)"></i><div><code>core.color.gray-fill</code><small>#0000000f</small><p>Explore 10M+ Palettes backgroundColor rgba(0, 0, 0, 0.06).</p></div></div>
-<div class="sw"><i style="background:var(--core-color-hairline)"></i><div><code>core.color.hairline</code><small>#00000012</small><p>header boxShadow rgba(0, 0, 0, 0.07) 0px 1px 0px 0px. Modal .modal_element boxShadow rgba(0, 0, 0, 0.07) 0px 0px 0px 1px.</p></div></div>
-<div class="sw"><i style="background:var(--light-page)"></i><div><code>light.page</code><small>{color.page}</small><p>Alias of core.color.page, measured on the signed-in homepage.</p></div></div>
-<div class="sw"><i style="background:var(--light-surface)"></i><div><code>light.surface</code><small>{color.page}</small><p>header and .modal_element backgroundColor rgb(255, 255, 255).</p></div></div>
-<div class="sw"><i style="background:var(--light-text)"></i><div><code>light.text</code><small>{color.ink}</small><p>Alias of core.color.ink.</p></div></div>
-<div class="sw"><i style="background:var(--light-muted)"></i><div><code>light.muted</code><small>{color.muted}</small><p>Alias of core.color.muted.</p></div></div>
-<div class="sw"><i style="background:var(--light-accent)"></i><div><code>light.accent</code><small>{color.primary}</small><p>Alias of core.color.primary.</p></div></div>
-<div class="sw"><i style="background:var(--light-border)"></i><div><code>light.border</code><small>{color.hairline}</small><p>Alias of core.color.hairline.</p></div></div>
-<div class="sw"><i style="background:var(--light-on-accent)"></i><div><code>light.on-accent</code><small>{color.on-primary}</small><p>Alias of core.color.on-primary.</p></div></div>
-<div class="sw"><i style="background:var(--light-pro)"></i><div><code>light.pro</code><small>{color.pro}</small><p>Alias of core.color.pro.</p></div></div>
+    <div class="sw" data-role="page"><i style="background:#ffffff"></i><div><b>light.page</b><code>#ffffff</code></div></div><div class="sw" data-role="surface"><i style="background:#f5f5f5"></i><div><b>light.surface</b><code>#f5f5f5</code></div></div><div class="sw" data-role="text"><i style="background:#0a0a0a"></i><div><b>light.text</b><code>#0a0a0a</code></div></div><div class="sw" data-role="muted"><i style="background:#525252"></i><div><b>light.muted</b><code>#525252</code></div></div><div class="sw" data-role="accent"><i style="background:var(--core-color-primary-600)"></i><div><b>light.accent</b><code>{core.color.primary.600}</code></div></div><div class="sw" data-role="border"><i style="background:rgba(0, 0, 0, 0.07)"></i><div><b>light.border</b><code>rgba(0, 0, 0, 0.07)</code></div></div><div class="sw" data-role="popover"><i style="background:#ffffff"></i><div><b>light.popover</b><code>#ffffff</code></div></div><div class="sw" data-role="overlay"><i style="background:rgba(10,10,10, 0.25)"></i><div><b>light.overlay</b><code>rgba(10,10,10, 0.25)</code></div></div><div class="sw" data-role="input"><i style="background:rgba(0, 0, 0, 0)"></i><div><b>light.input</b><code>rgba(0, 0, 0, 0)</code></div></div><div class="sw" data-role="input-border"><i style="background:rgba(0, 0, 0, 0.2)"></i><div><b>light.input-border</b><code>rgba(0, 0, 0, 0.2)</code></div></div><div class="sw" data-role="input-focus"><i style="background:#3b82f6"></i><div><b>light.input-focus</b><code>#3b82f6</code></div></div><div class="sw" data-role="input-error"><i style="background:#ef4444"></i><div><b>light.input-error</b><code>#ef4444</code></div></div><div class="sw" data-role="button-gray"><i style="background:rgba(0, 0, 0, 0.06)"></i><div><b>light.button-gray</b><code>rgba(0, 0, 0, 0.06)</code></div></div><div class="sw" data-role="button-gray-text"><i style="background:rgba(0, 0, 0, 1)"></i><div><b>light.button-gray-text</b><code>rgba(0, 0, 0, 1)</code></div></div><div class="sw" data-role="pro"><i style="background:#ec4899"></i><div><b>light.pro</b><code>#ec4899</code></div></div>
   </div>
+  <h2>Controls</h2>
+  <div class="demo">
+    <button class="btn primary" type="button">Start the generator</button>
+    <button class="btn ghost" type="button">Tools</button>
+    <button class="btn gray" type="button">Gray</button>
+    <button class="btn pro" type="button">Go Pro</button>
+  </div>
+  <h2>Generator columns</h2>
+  <div class="cols">
+    <span style="background:#264653;color:#fff">264653</span>
+    <span style="background:#2A9D8F;color:#fff">2A9D8F</span>
+    <span style="background:#E9C46A;color:#000">E9C46A</span>
+    <span style="background:#F4A261;color:#000">F4A261</span>
+    <span style="background:#E76F51;color:#fff">E76F51</span>
+  </div>
+  <p class="note">Sample palette from the signed-in generator at /264653-2a9d8f-e9c46a-f4a261-e76f51. Column colors are palette data, not tokens.</p>
+  <h2>Ramps</h2>
+  <div class="ramp"><span>primary</span><i title="primary-50" style="background:#eff6ff"></i><i title="primary-100" style="background:#dbeafe"></i><i title="primary-200" style="background:#bfdbfe"></i><i title="primary-300" style="background:#93c5fd"></i><i title="primary-400" style="background:#60a5fa"></i><i title="primary-500" style="background:#3b82f6"></i><i title="primary-600" style="background:#2563eb"></i><i title="primary-700" style="background:#1d4ed8"></i><i title="primary-800" style="background:#1e40af"></i><i title="primary-900" style="background:#1e3a8a"></i><i title="primary-950" style="background:#172554"></i></div><div class="ramp"><span>slate</span><i title="slate-50" style="background:#f8fafc"></i><i title="slate-100" style="background:#f1f5f9"></i><i title="slate-200" style="background:#e2e8f0"></i><i title="slate-300" style="background:#cbd5e1"></i><i title="slate-400" style="background:#94a3b8"></i><i title="slate-500" style="background:#64748b"></i><i title="slate-600" style="background:#475569"></i><i title="slate-700" style="background:#334155"></i><i title="slate-800" style="background:#1e293b"></i><i title="slate-900" style="background:#0f172a"></i><i title="slate-950" style="background:#020617"></i></div><div class="ramp"><span>gray</span><i title="gray-50" style="background:#f9fafb"></i><i title="gray-100" style="background:#f3f4f6"></i><i title="gray-200" style="background:#e5e7eb"></i><i title="gray-300" style="background:#d1d5db"></i><i title="gray-400" style="background:#9ca3af"></i><i title="gray-500" style="background:#6b7280"></i><i title="gray-600" style="background:#4b5563"></i><i title="gray-700" style="background:#374151"></i><i title="gray-800" style="background:#1f2937"></i><i title="gray-900" style="background:#111827"></i><i title="gray-950" style="background:#030712"></i></div><div class="ramp"><span>zinc</span><i title="zinc-50" style="background:#fafafa"></i><i title="zinc-100" style="background:#f4f4f5"></i><i title="zinc-200" style="background:#e4e4e7"></i><i title="zinc-300" style="background:#d4d4d8"></i><i title="zinc-400" style="background:#a1a1aa"></i><i title="zinc-500" style="background:#71717a"></i><i title="zinc-600" style="background:#52525b"></i><i title="zinc-700" style="background:#3f3f46"></i><i title="zinc-800" style="background:#27272a"></i><i title="zinc-900" style="background:#18181b"></i><i title="zinc-950" style="background:#09090b"></i></div><div class="ramp"><span>neutral</span><i title="neutral-50" style="background:#fafafa"></i><i title="neutral-100" style="background:#f5f5f5"></i><i title="neutral-200" style="background:#e5e5e5"></i><i title="neutral-300" style="background:#d4d4d4"></i><i title="neutral-400" style="background:#a3a3a3"></i><i title="neutral-500" style="background:#737373"></i><i title="neutral-600" style="background:#525252"></i><i title="neutral-700" style="background:#404040"></i><i title="neutral-800" style="background:#262626"></i><i title="neutral-900" style="background:#171717"></i><i title="neutral-950" style="background:#0a0a0a"></i></div><div class="ramp"><span>stone</span><i title="stone-50" style="background:#fafaf9"></i><i title="stone-100" style="background:#f5f5f4"></i><i title="stone-200" style="background:#e7e5e4"></i><i title="stone-300" style="background:#d6d3d1"></i><i title="stone-400" style="background:#a8a29e"></i><i title="stone-500" style="background:#78716c"></i><i title="stone-600" style="background:#57534e"></i><i title="stone-700" style="background:#44403c"></i><i title="stone-800" style="background:#292524"></i><i title="stone-900" style="background:#1c1917"></i><i title="stone-950" style="background:#0c0a09"></i></div><div class="ramp"><span>red</span><i title="red-50" style="background:#fef2f2"></i><i title="red-100" style="background:#fee2e2"></i><i title="red-200" style="background:#fecaca"></i><i title="red-300" style="background:#fca5a5"></i><i title="red-400" style="background:#f87171"></i><i title="red-500" style="background:#ef4444"></i><i title="red-600" style="background:#dc2626"></i><i title="red-700" style="background:#b91c1c"></i><i title="red-800" style="background:#991b1b"></i><i title="red-900" style="background:#7f1d1d"></i><i title="red-950" style="background:#450a0a"></i></div><div class="ramp"><span>orange</span><i title="orange-50" style="background:#fff7ed"></i><i title="orange-100" style="background:#ffedd5"></i><i title="orange-200" style="background:#fed7aa"></i><i title="orange-300" style="background:#fdba74"></i><i title="orange-400" style="background:#fb923c"></i><i title="orange-500" style="background:#f97316"></i><i title="orange-600" style="background:#ea580c"></i><i title="orange-700" style="background:#c2410c"></i><i title="orange-800" style="background:#9a3412"></i><i title="orange-900" style="background:#7c2d12"></i><i title="orange-950" style="background:#431407"></i></div><div class="ramp"><span>amber</span><i title="amber-50" style="background:#fffbeb"></i><i title="amber-100" style="background:#fef3c7"></i><i title="amber-200" style="background:#fde68a"></i><i title="amber-300" style="background:#fcd34d"></i><i title="amber-400" style="background:#fbbf24"></i><i title="amber-500" style="background:#f59e0b"></i><i title="amber-600" style="background:#d97706"></i><i title="amber-700" style="background:#b45309"></i><i title="amber-800" style="background:#92400e"></i><i title="amber-900" style="background:#78350f"></i><i title="amber-950" style="background:#451a03"></i></div><div class="ramp"><span>yellow</span><i title="yellow-50" style="background:#fefce8"></i><i title="yellow-100" style="background:#fef9c3"></i><i title="yellow-200" style="background:#fef08a"></i><i title="yellow-300" style="background:#fde047"></i><i title="yellow-400" style="background:#facc15"></i><i title="yellow-500" style="background:#eab308"></i><i title="yellow-600" style="background:#ca8a04"></i><i title="yellow-700" style="background:#a16207"></i><i title="yellow-800" style="background:#854d0e"></i><i title="yellow-900" style="background:#713f12"></i><i title="yellow-950" style="background:#422006"></i></div><div class="ramp"><span>lime</span><i title="lime-50" style="background:#f7fee7"></i><i title="lime-100" style="background:#ecfccb"></i><i title="lime-200" style="background:#d9f99d"></i><i title="lime-300" style="background:#bef264"></i><i title="lime-400" style="background:#a3e635"></i><i title="lime-500" style="background:#84cc16"></i><i title="lime-600" style="background:#65a30d"></i><i title="lime-700" style="background:#4d7c0f"></i><i title="lime-800" style="background:#3f6212"></i><i title="lime-900" style="background:#365314"></i><i title="lime-950" style="background:#1a2e05"></i></div><div class="ramp"><span>green</span><i title="green-50" style="background:#f0fdf4"></i><i title="green-100" style="background:#dcfce7"></i><i title="green-200" style="background:#bbf7d0"></i><i title="green-300" style="background:#86efac"></i><i title="green-400" style="background:#4ade80"></i><i title="green-500" style="background:#22c55e"></i><i title="green-600" style="background:#16a34a"></i><i title="green-700" style="background:#15803d"></i><i title="green-800" style="background:#166534"></i><i title="green-900" style="background:#14532d"></i><i title="green-950" style="background:#052e16"></i></div><div class="ramp"><span>emerald</span><i title="emerald-50" style="background:#ecfdf5"></i><i title="emerald-100" style="background:#d1fae5"></i><i title="emerald-200" style="background:#a7f3d0"></i><i title="emerald-300" style="background:#6ee7b7"></i><i title="emerald-400" style="background:#34d399"></i><i title="emerald-500" style="background:#10b981"></i><i title="emerald-600" style="background:#059669"></i><i title="emerald-700" style="background:#047857"></i><i title="emerald-800" style="background:#065f46"></i><i title="emerald-900" style="background:#064e3b"></i><i title="emerald-950" style="background:#022c22"></i></div><div class="ramp"><span>teal</span><i title="teal-50" style="background:#f0fdfa"></i><i title="teal-100" style="background:#ccfbf1"></i><i title="teal-200" style="background:#99f6e4"></i><i title="teal-300" style="background:#5eead4"></i><i title="teal-400" style="background:#2dd4bf"></i><i title="teal-500" style="background:#14b8a6"></i><i title="teal-600" style="background:#0d9488"></i><i title="teal-700" style="background:#0f766e"></i><i title="teal-800" style="background:#115e59"></i><i title="teal-900" style="background:#134e4a"></i><i title="teal-950" style="background:#042f2e"></i></div><div class="ramp"><span>cyan</span><i title="cyan-50" style="background:#ecfeff"></i><i title="cyan-100" style="background:#cffafe"></i><i title="cyan-200" style="background:#a5f3fc"></i><i title="cyan-300" style="background:#67e8f9"></i><i title="cyan-400" style="background:#22d3ee"></i><i title="cyan-500" style="background:#06b6d4"></i><i title="cyan-600" style="background:#0891b2"></i><i title="cyan-700" style="background:#0e7490"></i><i title="cyan-800" style="background:#155e75"></i><i title="cyan-900" style="background:#164e63"></i><i title="cyan-950" style="background:#083344"></i></div><div class="ramp"><span>sky</span><i title="sky-50" style="background:#f0f9ff"></i><i title="sky-100" style="background:#e0f2fe"></i><i title="sky-200" style="background:#bae6fd"></i><i title="sky-300" style="background:#7dd3fc"></i><i title="sky-400" style="background:#38bdf8"></i><i title="sky-500" style="background:#0ea5e9"></i><i title="sky-600" style="background:#0284c7"></i><i title="sky-700" style="background:#0369a1"></i><i title="sky-800" style="background:#075985"></i><i title="sky-900" style="background:#0c4a6e"></i><i title="sky-950" style="background:#082f49"></i></div><div class="ramp"><span>blue</span><i title="blue-50" style="background:#eff6ff"></i><i title="blue-100" style="background:#dbeafe"></i><i title="blue-200" style="background:#bfdbfe"></i><i title="blue-300" style="background:#93c5fd"></i><i title="blue-400" style="background:#60a5fa"></i><i title="blue-500" style="background:#3b82f6"></i><i title="blue-600" style="background:#2563eb"></i><i title="blue-700" style="background:#1d4ed8"></i><i title="blue-800" style="background:#1e40af"></i><i title="blue-900" style="background:#1e3a8a"></i><i title="blue-950" style="background:#172554"></i></div><div class="ramp"><span>indigo</span><i title="indigo-50" style="background:#eef2ff"></i><i title="indigo-100" style="background:#e0e7ff"></i><i title="indigo-200" style="background:#c7d2fe"></i><i title="indigo-300" style="background:#a5b4fc"></i><i title="indigo-400" style="background:#818cf8"></i><i title="indigo-500" style="background:#6366f1"></i><i title="indigo-600" style="background:#4f46e5"></i><i title="indigo-700" style="background:#4338ca"></i><i title="indigo-800" style="background:#3730a3"></i><i title="indigo-900" style="background:#312e81"></i><i title="indigo-950" style="background:#1e1b4b"></i></div><div class="ramp"><span>violet</span><i title="violet-50" style="background:#f5f3ff"></i><i title="violet-100" style="background:#ede9fe"></i><i title="violet-200" style="background:#ddd6fe"></i><i title="violet-300" style="background:#c4b5fd"></i><i title="violet-400" style="background:#a78bfa"></i><i title="violet-500" style="background:#8b5cf6"></i><i title="violet-600" style="background:#7c3aed"></i><i title="violet-700" style="background:#6d28d9"></i><i title="violet-800" style="background:#5b21b6"></i><i title="violet-900" style="background:#4c1d95"></i><i title="violet-950" style="background:#2e1065"></i></div><div class="ramp"><span>purple</span><i title="purple-50" style="background:#faf5ff"></i><i title="purple-100" style="background:#f3e8ff"></i><i title="purple-200" style="background:#e9d5ff"></i><i title="purple-300" style="background:#d8b4fe"></i><i title="purple-400" style="background:#c084fc"></i><i title="purple-500" style="background:#a855f7"></i><i title="purple-600" style="background:#9333ea"></i><i title="purple-700" style="background:#7e22ce"></i><i title="purple-800" style="background:#6b21a8"></i><i title="purple-900" style="background:#581c87"></i><i title="purple-950" style="background:#3b0764"></i></div><div class="ramp"><span>fuchsia</span><i title="fuchsia-50" style="background:#fdf4ff"></i><i title="fuchsia-100" style="background:#fae8ff"></i><i title="fuchsia-200" style="background:#f5d0fe"></i><i title="fuchsia-300" style="background:#f0abfc"></i><i title="fuchsia-400" style="background:#e879f9"></i><i title="fuchsia-500" style="background:#d946ef"></i><i title="fuchsia-600" style="background:#c026d3"></i><i title="fuchsia-700" style="background:#a21caf"></i><i title="fuchsia-800" style="background:#86198f"></i><i title="fuchsia-900" style="background:#701a75"></i><i title="fuchsia-950" style="background:#4a044e"></i></div><div class="ramp"><span>pink</span><i title="pink-50" style="background:#fdf2f8"></i><i title="pink-100" style="background:#fce7f3"></i><i title="pink-200" style="background:#fbcfe8"></i><i title="pink-300" style="background:#f9a8d4"></i><i title="pink-400" style="background:#f472b6"></i><i title="pink-500" style="background:#ec4899"></i><i title="pink-600" style="background:#db2777"></i><i title="pink-700" style="background:#be185d"></i><i title="pink-800" style="background:#9d174d"></i><i title="pink-900" style="background:#831843"></i><i title="pink-950" style="background:#500724"></i></div><div class="ramp"><span>rose</span><i title="rose-50" style="background:#fff1f2"></i><i title="rose-100" style="background:#ffe4e6"></i><i title="rose-200" style="background:#fecdd3"></i><i title="rose-300" style="background:#fda4af"></i><i title="rose-400" style="background:#fb7185"></i><i title="rose-500" style="background:#f43f5e"></i><i title="rose-600" style="background:#e11d48"></i><i title="rose-700" style="background:#be123c"></i><i title="rose-800" style="background:#9f1239"></i><i title="rose-900" style="background:#881337"></i><i title="rose-950" style="background:#4c0519"></i></div>
 </main>
+<script>
+const darkRoles = {"page": {"label": "dark.page", "value": "#0a0a0a", "paint": "#0a0a0a"}, "surface": {"label": "dark.surface", "value": "#171717", "paint": "#171717"}, "text": {"label": "dark.text", "value": "#fafafa", "paint": "#fafafa"}, "muted": {"label": "dark.muted", "value": "#a3a3a3", "paint": "#a3a3a3"}, "accent": {"label": "dark.accent", "value": "{core.color.primary.500}", "paint": "var(--core-color-primary-500)"}, "border": {"label": "dark.border", "value": "rgba(255, 255, 255, 0.07)", "paint": "rgba(255, 255, 255, 0.07)"}, "popover": {"label": "dark.popover", "value": "#171717", "paint": "#171717"}, "overlay": {"label": "dark.overlay", "value": "rgba(10, 10, 10, 0.8)", "paint": "rgba(10, 10, 10, 0.8)"}, "input": {"label": "dark.input", "value": "rgba(255, 255, 255, 0.02)", "paint": "rgba(255, 255, 255, 0.02)"}, "input-border": {"label": "dark.input-border", "value": "rgba(255, 255, 255, 0.2)", "paint": "rgba(255, 255, 255, 0.2)"}, "input-focus": {"label": "dark.input-focus", "value": "#3b82f6", "paint": "#3b82f6"}, "input-error": {"label": "dark.input-error", "value": "#ef4444", "paint": "#ef4444"}, "button-gray": {"label": "dark.button-gray", "value": "rgba(255, 255, 255, 0.08)", "paint": "rgba(255, 255, 255, 0.08)"}, "button-gray-text": {"label": "dark.button-gray-text", "value": "rgba(255, 255, 255, 1)", "paint": "rgba(255, 255, 255, 1)"}, "pro": {"label": "dark.pro", "value": "#f472b6", "paint": "#f472b6"}};
+const lightRoles = {"page": {"label": "light.page", "value": "#ffffff", "paint": "#ffffff"}, "surface": {"label": "light.surface", "value": "#f5f5f5", "paint": "#f5f5f5"}, "text": {"label": "light.text", "value": "#0a0a0a", "paint": "#0a0a0a"}, "muted": {"label": "light.muted", "value": "#525252", "paint": "#525252"}, "accent": {"label": "light.accent", "value": "{core.color.primary.600}", "paint": "var(--core-color-primary-600)"}, "border": {"label": "light.border", "value": "rgba(0, 0, 0, 0.07)", "paint": "rgba(0, 0, 0, 0.07)"}, "popover": {"label": "light.popover", "value": "#ffffff", "paint": "#ffffff"}, "overlay": {"label": "light.overlay", "value": "rgba(10,10,10, 0.25)", "paint": "rgba(10,10,10, 0.25)"}, "input": {"label": "light.input", "value": "rgba(0, 0, 0, 0)", "paint": "rgba(0, 0, 0, 0)"}, "input-border": {"label": "light.input-border", "value": "rgba(0, 0, 0, 0.2)", "paint": "rgba(0, 0, 0, 0.2)"}, "input-focus": {"label": "light.input-focus", "value": "#3b82f6", "paint": "#3b82f6"}, "input-error": {"label": "light.input-error", "value": "#ef4444", "paint": "#ef4444"}, "button-gray": {"label": "light.button-gray", "value": "rgba(0, 0, 0, 0.06)", "paint": "rgba(0, 0, 0, 0.06)"}, "button-gray-text": {"label": "light.button-gray-text", "value": "rgba(0, 0, 0, 1)", "paint": "rgba(0, 0, 0, 1)"}, "pro": {"label": "light.pro", "value": "#ec4899", "paint": "#ec4899"}};
+document.getElementById("theme").addEventListener("click", () => {
+  const html = document.documentElement;
+  const next = html.getAttribute("data-mode") === "dark" ? "light" : "dark";
+  html.setAttribute("data-mode", next);
+  document.body.style.background = "";
+  document.body.style.color = "";
+  const roles = next === "dark" ? darkRoles : lightRoles;
+  document.querySelectorAll("[data-role]").forEach((row) => {
+    const role = roles[row.dataset.role];
+    if (!role) return;
+    row.querySelector("i").style.background = role.paint;
+    row.querySelector("b").textContent = role.label;
+    row.querySelector("code").textContent = role.value;
+  });
+});
+</script>
 </body>
 </html>

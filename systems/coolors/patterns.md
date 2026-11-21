@@ -1,17 +1,25 @@
-# Patterns
+# Coolors patterns
 
-## Homepage
+How the signed-in screens combine the components in [components.md](components.md).
 
-Signed-in `https://coolors.co/` at 1169x731. A 60px white header holds the wordmark, a Tools menu, a pink Go Pro label, and an avatar. The h1 is Inter 800, about 94px, letter-spacing about -3.3px, ink `#0a0a0a`, wrapping to three lines: "The super fast / color palettes / generator!". A 20px lede sits under it. Two buttons follow: blue "Start the Generator" and gray "Explore 10M+ Palettes". The right side is a stack of palette thumbnails. Ads sit in the header and as a card; they are not part of the product chrome.
+## App header
 
-## Generator
+A 60px white bar. The wordmark sits left. Tools opens a mega-menu of generators and discover links. Go Pro is a pink text button. The avatar replaces Sign in once `body` has `is-logged`.
 
-`/generate` redirects to a five-color URL such as `/293f14-386c0b-38a700-31d843-3eff8b`. Under the same header, a 56px toolbar says "Press the spacebar to generate color palettes!" on the left (`#525252`, 15px weight 450) and puts View, Export and Save on the right. Five full-height columns fill the rest of the viewport. Each column is the color itself. The hex and the color name sit near the bottom. Hovering a column reveals a vertical stack of icon buttons. Spacebar replaces the palette. A first visit shows a terms dialog, then a Hello dialog, before the columns are usable.
+## Palette generator
 
-See [screenshots/generate-light-desktop.png](screenshots/generate-light-desktop.png).
+The create surface is `/generate`, which redirects to a palette URL such as `/264653-2a9d8f-e9c46a-f4a261-e76f51`. Five full-height columns fill the page under a thin toolbar (View, Export, Save, and icon tools). The hint is "Press the spacebar to generate color palettes!" Spacebar changes the palette in the page. Save, Export, and publish were not used.
 
-## Explore
+At 390px the same palette stacks into five 146px rows, with Generate and an icon nav on a bottom bar.
 
-`/palettes/popular`. Desktop h1 is 70px weight 800, letter-spacing -2.45px. At 390px the header collapses to a menu button and a centered wordmark, the h1 drops to 50px, and palette cards stack with a 30px side inset. A search field accepts colors, topics, styles or hex values. Cards show a row of swatches, a title and a like count.
+## Library
 
-A clean mobile screenshot was not saved. The 390px numbers are computed styles.
+`/dashboard` redirects to `/user/palettes`. A left rail lists Palettes, Colors, Gradients, Fonts, Images, Projects, Collections, and Favorites. The palettes view was empty: "You don't have any palette yet." Search and Filters sit above the empty state.
+
+## Account
+
+`/account` redirects to `/account/general`. The nav is General, Profile, Subscription, Affiliation, Settings, and Delete account. General holds username, email, and change password. Those fields were not edited and not submitted. Settings holds a newsletter checkbox, a private-profile Pro control, a landing-page select, and a white-label image control. None of those were changed.
+
+## What was not opened
+
+Delete account, Sign out, Go Pro checkout, Save, Export, affiliation, and the account theme submenu. Opening the theme submenu can write a preference, so dark remains a stylesheet reading.
