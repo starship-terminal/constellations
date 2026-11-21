@@ -1,0 +1,20 @@
+{
+  "url": "https://www.atlassian.com/teams/nonprofits",
+  "title": "Work management and collaboration tools for nonprofits | Atlassian",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "date": "2026-11-22",
+  "status": 200
+}

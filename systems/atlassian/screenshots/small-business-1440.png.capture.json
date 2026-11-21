@@ -1,0 +1,20 @@
+{
+  "url": "https://www.atlassian.com/software/small-business",
+  "title": "Atlassian for small business: tools to build big solutions",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "date": "2026-11-22",
+  "status": 200
+}
