@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Quince public tokens</title>
+  <style>
+    :root {
+      --page: #ffffff;
+      --ink: #21201f;
+      --on-ink: #ffffff;
+      --cantaloupe: #ffa273;
+      --holiday: #bc5a28;
+      --search: #eeeeec;
+      --muted: #717171;
+      --footer: #2d313f;
+      --ui: Grosa, ui-sans-serif, system-ui, sans-serif;
+      --display: "Ivy Mode", "Iowan Old Style", Palatino, serif;
+    }
+    body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--ui); }
+    header { background: var(--ink); color: var(--on-ink); height: 40px; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+    main { max-width: 880px; margin: 0 auto; padding: 32px 24px 64px; }
+    h1 { font-family: var(--display); font-weight: 300; font-size: 40px; margin: 0 0 8px; }
+    p { line-height: 1.5; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0 28px; }
+    .swatch { width: 120px; }
+    .chip { height: 48px; border-radius: 4px; border: 1px solid rgba(33,32,31,0.12); }
+    .name { font-size: 12px; margin-top: 6px; }
+    .hex { font-size: 12px; color: var(--muted); }
+    .search { display: flex; width: 320px; height: 36px; }
+    .search input { flex: 1; border: 0; background: var(--search); border-radius: 4px 0 0 4px; padding: 0 12px; font: 14px var(--ui); }
+    .search button { width: 40px; border: 0; background: var(--cantaloupe); color: var(--ink); }
+    .pill { height: 52px; padding: 0 28px; border: 0; border-radius: 9999px; background: var(--cantaloupe); color: var(--ink); font: 500 14px var(--ui); }
+    .continue { height: 58px; padding: 0 28px; border-radius: 100px; background: var(--ink); color: var(--on-ink); border: 1px solid var(--ink); font: 500 14px var(--ui); letter-spacing: 0.7px; }
+    .size { width: 56px; height: 40px; background: white; border: 1px solid rgba(33,32,31,0.2); font: 14px var(--ui); }
+    footer { background: var(--footer); color: white; padding: 28px 24px; font-size: 14px; }
+    a { color: var(--holiday); }
+  </style>
+</head>
+<body>
+  <header>Free shipping &amp; easy returns for 365 days.</header>
+  <main>
+    <h1>Quince</h1>
+    <p>Measured from the public shop on 2026-11-22. Grosa and ivy-headline are not in this package, so the guide falls back.</p>
+    <div class="row">
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="name">page</div><div class="hex">#ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#21201f"></div><div class="name">ink</div><div class="hex">#21201f</div></div>
+      <div class="swatch"><div class="chip" style="background:#ffa273"></div><div class="name">cantaloupe</div><div class="hex">#ffa273</div></div>
+      <div class="swatch"><div class="chip" style="background:#bc5a28"></div><div class="name">holiday</div><div class="hex">#bc5a28</div></div>
+      <div class="swatch"><div class="chip" style="background:#eeeeec"></div><div class="name">search</div><div class="hex">#eeeeec</div></div>
+      <div class="swatch"><div class="chip" style="background:#717171"></div><div class="name">muted</div><div class="hex">#717171</div></div>
+      <div class="swatch"><div class="chip" style="background:#2d313f"></div><div class="name">footer</div><div class="hex">#2d313f</div></div>
+    </div>
+    <div class="search"><input placeholder="Search" aria-label="Search"><button aria-label="search">&#9906;</button></div>
+    <p style="margin-top:24px"><button class="pill">Add to Bag</button></p>
+    <p><button class="size">XS</button> <button class="size">S</button> <button class="size">M</button></p>
+    <p><button class="continue">CONTINUE</button></p>
+    <p style="color:#717171; font-size:18px; text-decoration:line-through">$148.00 <span style="font-size:16px; color:#21201f; text-decoration:none">$50.00</span></p>
+  </main>
+  <footer>Offers, new arrivals, restocks and more.</footer>
+</body>
+</html>

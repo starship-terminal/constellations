@@ -1,0 +1,87 @@
+{
+  "product": "Quince",
+  "domain": "quince.com",
+  "reviewedAt": "2026-11-22",
+  "method": "Playwright Chromium, signed out, 1440x900, devicePixelRatio 2. Shared preview tools were not connected.",
+  "region": "Public shop at https://www.quince.com/. Product prices in USD. Locale en-US.",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Sign In",
+      "url": "https://www.quince.com/log-in",
+      "title": "Log In",
+      "painted": true,
+      "headings": ["SIGN IN / REGISTER"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": true }
+      ],
+      "identityProvidersSeen": ["Continue with Google"],
+      "otherControls": ["Continue", "Terms of Service", "Privacy Policy"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "Email was empty. Continue was not clicked. Continue with Google was not clicked. No form was submitted."
+    },
+    {
+      "control": "same wall is also Register",
+      "url": "https://www.quince.com/log-in",
+      "title": "Log In",
+      "painted": true,
+      "headings": ["SIGN IN / REGISTER"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": true }
+      ],
+      "identityProvidersSeen": ["Continue with Google"],
+      "otherControls": ["By creating an account, you agree to our Terms of Service"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "There is no separate signup form before an email is submitted. Nothing was typed."
+    },
+    {
+      "control": "footer email",
+      "url": "https://www.quince.com/",
+      "title": "Quince | High Quality Essentials, Radically Low Prices",
+      "painted": true,
+      "headings": ["Offers, new arrivals, restocks and more."],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Submit Email"],
+      "stopped": true,
+      "screenshot": "screenshots/footer-light-1440.png",
+      "note": "The newsletter email was not typed and Submit Email was not clicked."
+    },
+    {
+      "control": "header cart",
+      "url": "https://www.quince.com/cart",
+      "title": null,
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["open cart"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Cart is a checkout wall. The cart link was not opened. Add to Bag was not clicked."
+    },
+    {
+      "control": "footer My Account, My Orders, Start a Return",
+      "url": "https://www.quince.com/account/my-orders-returns",
+      "title": null,
+      "painted": false,
+      "headings": [],
+      "asksFor": [],
+      "identityProvidersSeen": [],
+      "otherControls": ["My Account", "My Orders", "Start a Return"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Account links were not opened."
+    }
+  ]
+}
