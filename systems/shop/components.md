@@ -1,6 +1,6 @@
 # Shop components
 
-Public signed-out chrome measured on 2026-11-19 from a T3 preview tab at 1169 by 731 CSS pixels, devicePixelRatio 2. No crops: the preview browser produced no screenshot frames.
+Public signed-out chrome measured on 2026-11-19 from a T3 preview tab at 1169 by 731 CSS pixels, devicePixelRatio 2. Page frames from 2026-11-22 are in [screenshots/](screenshots/). No new crops were cut this pass.
 
 ## Button
 

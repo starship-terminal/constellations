@@ -1,0 +1,34 @@
+{
+  "pass": "signed-out walls only",
+  "date": "2026-11-22",
+  "signed_in": false,
+  "submitted": false,
+  "typed": false,
+  "login_extracted": "not-started",
+  "note": "Login and signup are one empty form. The email field was left empty. Continue and Use a passkey were not clicked. Orders and saved items redirect to an OAuth login URL and were not photographed. No password, code, phone, address, identity provider, or wallet was used. No account was created. No cart, follow, or checkout was submitted.",
+  "walls": [
+    {
+      "url": "https://shop.app/accounts/login",
+      "opened_from": "header Sign in",
+      "heading": "Sign in to Shop",
+      "subheading": "Or create an account",
+      "desktop": "screenshots/login-wall-desktop.png",
+      "phone": "screenshots/login-wall-phone.png",
+      "email_value_length": 0,
+      "controls_not_used": [
+        "Continue",
+        "Use a passkey",
+        "email field (left empty)",
+        "English language menu"
+      ],
+      "stopped": true
+    },
+    {
+      "url": "https://shop.com/orders",
+      "opened_from": "header Orders",
+      "heading": null,
+      "note": "Redirected to an OAuth login URL on shop.app with auth_state and next=OAuthContinue. Not photographed.",
+      "stopped": true
+    }
+  ]
+}
