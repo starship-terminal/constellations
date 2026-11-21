@@ -1,6 +1,6 @@
 # Perplexity
 
-Public signed-out surfaces of Perplexity (perplexity.ai), captured on 19 November 2026. The product home at https://www.perplexity.ai/ was read signed out, in light and dark, at 1440 and at 390. The marketing hub, pricing, enterprise, terms, and a missing hub route were read in light. No account was created. No email was submitted. No card or phone was entered.
+Public signed-out surfaces of Perplexity (perplexity.ai), refreshed on 21 November 2026 from the live site. The first capture was 19 November 2026. The control map is [site-tree.md](site-tree.md). The product home at https://www.perplexity.ai/ was read signed out, in light and dark, at 1440 and at 390. Discover, Finance, Academic, Patents, Automations, Plugins, the marketing hub, pricing, enterprise, customers, blog, terms, privacy, and a missing hub route were read in light. Sign In opens one empty dialog that is also the signup wall. Google, Apple, email, and SSO were not used. No account was created. No query was submitted. `login-extracted` stays not-started.
 
 | Path | What it holds |
 |---|---|
@@ -13,8 +13,10 @@ Public signed-out surfaces of Perplexity (perplexity.ai), captured on 19 Novembe
 | [patterns.md](patterns.md) | Page patterns and screenshots |
 | [components/](components/) | Crops of the real product |
 | [icons/](icons/) | Index of the site mark |
-| [screenshots/](screenshots/) | Viewport captures, 13 files |
-| [raw/](raw/) | Computed custom properties and component readings |
+| [site-tree.md](site-tree.md) | Which homepage control opens which page, menu, drawer, or wall. Mapped 2026-11-21. |
+| [login-review.json](login-review.json) | Empty login and signup walls. login-extracted stays not-started. |
+| [screenshots/](screenshots/) | Viewport captures. 2026-11-21 refresh adds the public tree; November 19 product shots remain. |
+| [raw/](raw/) | Computed custom properties and component readings, including the 2026-11-21 home vars |
 | [tools/](tools/) | test_tokens.py and the generic capture helpers copied from the kit (the unadapted kit builders and route folders were removed in the 2026-11 audit) |
 
 <!-- brief:start -->
@@ -101,17 +103,22 @@ pplxSans, pplxSerif, GT Canon VF, and PPLX Mono are proprietary. They are named 
 
 | Item | Status |
 |---|---|
-| Colour, both themes | Captured on the product home. Hub stayed light. |
+| Site tree | Captured in [site-tree.md](site-tree.md) on 2026-11-21. |
+| Colour, both themes | Captured again on the product home, 2026-11-21. Hub stayed light under a dark preference. |
 | Type roles | Authored `--ui-*` roles captured. The home heading is a separate 26px style. |
 | Spacing, radii, borders, elevation | Captured from custom properties. Shadows differ by theme. |
 | Motion | Two durations from class names (150ms, 300ms) and five easings. Reduced motion was not re-read. |
 | Button | Default captured. Hover, focus, pressed, disabled, loading not captured. |
 | Link, text field, dialog, card, badge, list row | Captured as they appear signed out. |
+| Menu | Apps menu, model menu, project filter, hub Products, Business, and Resources. |
+| Empty state | Projects "No projects" and Sessions "No recent sessions" on the signed-out home. |
 | Icon button, table, avatar | Visible in screenshots. Own measurements not taken. |
-| Select, checkbox, radio, switch, tabs, menu, tooltip, toast, text area | Not present, or the panel was not opened. |
-| Pricing | Captured. Checkout not entered. |
+| Select, checkbox, radio, switch, tabs, tooltip, toast, text area | Not present on the public pages, or the panel was not opened. |
+| Discover, Finance, Academic, Patents | Public hubs captured. Story threads and `/search/new` queries were not opened. |
+| Pricing | Captured on the hub and in the View plans dialog. Checkout not entered. |
 | 404 | Captured at /hub/this-page-does-not-exist-capture. |
-| Signed-in product, Pro, SSO, phone | Not entered. |
+| Login and signup | Empty dialogs photographed. Google, Apple, email, and SSO not used. login-extracted not-started. |
+| Signed-in product, Pro checkout, phone | Not entered. |
 
 ## Do and don't
 

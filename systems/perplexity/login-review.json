@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-21",
+  "loginExtracted": "not-started",
+  "stoppedAt": "empty sign-in and sign-up dialogs",
+  "notClicked": [
+    "Continue with Google",
+    "Continue with Apple",
+    "Continue with email",
+    "Single sign-on (SSO)"
+  ],
+  "notTyped": [
+    "email",
+    "password",
+    "code",
+    "phone",
+    "address"
+  ],
+  "walls": [
+    {
+      "file": "screenshots/signin-light-dialog.png",
+      "title": "Sign up below to unlock the full potential of Perplexity",
+      "note": "Sign In opens this dialog. Email field empty. Same dialog is the signup wall. No separate signup URL."
+    },
+    {
+      "file": "screenshots/health-light-wall.png",
+      "title": "Sign in to get customized Health insights"
+    },
+    {
+      "file": "screenshots/artifacts-light-wall.png",
+      "title": "Sign in to create Artifacts"
+    },
+    {
+      "file": "screenshots/projects-light-wall.png",
+      "title": "projects route, same empty sign-in dialog"
+    }
+  ],
+  "phone": {
+    "file": "screenshots/home-light-phone-sidebar.png",
+    "note": "Phone sidebar shows Sign Up and Log in. Neither was followed past the empty dialog already photographed on desktop."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-11-21T14:40:11.959Z",
+  "screenshot": "hub-light-phone.png",
+  "sanitizedSourceUrl": "https://www.perplexity.ai/hub",
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "colorScheme": "normal",
+    "dataColorScheme": "light",
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    },
+    "scrollHeight": 9664
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device"
+  }
+}
