@@ -1,0 +1,60 @@
+{
+  "color": {
+    "dusk": { "type": "color", "value": "#301816", "source": "declared --color-dusk on :root (raw/root-vars.json); matches computed color rgb(48, 24, 22) of body, nav and add-to-cart background (raw/measurements.json)" },
+    "sable": { "type": "color", "value": "#f6f2e9", "source": "declared --color-sable and --secondary-background 246, 242, 233 on :root (raw/root-vars.json); matches computed footer background" },
+    "paper": { "type": "color", "value": "#ffffff", "source": "declared --background 255, 255, 255 and computed html background rgb(255, 255, 255) (raw/root-vars.json)" },
+    "onAccent": { "type": "color", "value": "#ffffff", "source": "declared --primary-button-text-color 255, 255, 255; computed color of .button and .product-form__add-button (raw/measurements.json)" },
+    "border": { "type": "color", "value": "#321a18", "source": "declared --border-color 50, 26, 24 on :root (raw/root-vars.json)" },
+    "borderStrong": { "type": "color", "value": "#aca3a2", "source": "declared --border-color-darker 172, 163, 162 on :root (raw/root-vars.json)" },
+    "soldOut": { "type": "color", "value": "#5b5b5b", "source": "declared --product-sold-out-accent 91, 91, 91 on :root (raw/root-vars.json)" },
+    "sage": { "type": "color", "value": "#c7ddc2", "source": "declared --success-color and --product-custom-label-2-background 199, 221, 194 on :root (raw/root-vars.json)" },
+    "sageWash": { "type": "color", "value": "#f4f8f3", "source": "declared --success-background 244, 248, 243 on :root (raw/root-vars.json)" },
+    "errorWash": { "type": "color", "value": "#fbfdfb", "source": "declared --error-background 251, 253, 251 on :root (raw/root-vars.json). --error-color is the same triplet as --success-color; recorded as not a distinct danger role" },
+    "lowStock": { "type": "color", "value": "#df6464", "source": "declared --product-low-stock-text-color 223, 100, 100 on :root (raw/root-vars.json)" },
+    "inStock": { "type": "color", "value": "#2e9e7b", "source": "declared --product-in-stock-text-color 46, 158, 123 on :root (raw/root-vars.json)" },
+    "flavorApricot": { "type": "color", "value": "#f4a765", "source": "declared --color-flavor-abricot-zaatar on :root (raw/root-vars.json)" },
+    "flavorPear": { "type": "color", "value": "#f3eea7", "source": "declared --color-flavor-poire-anis on :root (raw/root-vars.json)" },
+    "flavorOrange": { "type": "color", "value": "#f26554", "source": "declared --color-flavor-orange-piment on :root (raw/root-vars.json)" },
+    "heroInk": { "type": "color", "value": "#f6f2e9", "source": "computed color of .image-hero__heading on the home hero (raw/measurements.json)" }
+  },
+  "font": {
+    "display": { "type": "fontFamily", "value": "Boogy, sans-serif", "source": "declared --heading-font-family on :root; computed font of .heading.h1 (raw/measurements.json)" },
+    "displayItalic": { "type": "fontFamily", "value": "\"Boogy Italic\", sans-serif", "source": "declared --heading-font-family-italic on :root (raw/root-vars.json). @font-face Boogy and Boogy Italic, font-display swap (raw/css-vars.json)" },
+    "body": { "type": "fontFamily", "value": "\"Robin Regular\", sans-serif", "source": "declared --text-font-family on :root; computed font of body (raw/measurements.json)" },
+    "label": { "type": "fontFamily", "value": "\"Robin Semibold\", sans-serif", "source": "declared --text-font-family-semibold on :root; computed font of .header__linklist-link and .button (raw/measurements.json)" }
+  },
+  "typography": {
+    "display": { "type": "typography", "value": { "fontFamily": "{font.display}", "fontSize": "72px", "fontWeight": 300, "lineHeight": "64.8px", "letterSpacing": "-0.72px" }, "source": "declared --heading-h1-font-size 72px and --heading-font-weight 300; computed size/weight/line-height/letter-spacing of .heading.h1 Our spritzes (raw/measurements.json)" },
+    "heading2": { "type": "typography", "value": { "fontFamily": "{font.display}", "fontSize": "52px", "fontWeight": 300, "lineHeight": "52px", "letterSpacing": "-0.52px" }, "source": "declared --heading-h2-font-size 52px; computed .heading.h2 (raw/measurements.json)" },
+    "heading4": { "type": "typography", "value": { "fontFamily": "{font.display}", "fontSize": "35px", "fontWeight": 300, "lineHeight": "39.2px", "letterSpacing": "0.35px" }, "source": "declared --heading-h4-font-size 35px; computed .heading.h4 (raw/measurements.json)" },
+    "body": { "type": "typography", "value": { "fontFamily": "{font.body}", "fontSize": "16px", "fontWeight": 500, "lineHeight": "19.2px", "letterSpacing": "0px" }, "source": "declared --base-font-size 16px and --text-font-weight 500; computed body (raw/measurements.json)" },
+    "nav": { "type": "typography", "value": { "fontFamily": "{font.label}", "fontSize": "12px", "fontWeight": 500, "lineHeight": "13.2px", "letterSpacing": "1.2px" }, "source": "computed .header__linklist-link, text-transform uppercase (raw/measurements.json)" },
+    "button": { "type": "typography", "value": { "fontFamily": "{font.label}", "fontSize": "12px", "fontWeight": 500, "lineHeight": "14.4px", "letterSpacing": "0.96px" }, "source": "computed .button and .product-form__add-button, text-transform uppercase (raw/measurements.json)" }
+  },
+  "radius": {
+    "none": { "type": "dimension", "value": "0px", "source": "declared --button-border-radius 0px (raw/root-vars.json); computed border-radius of .button" },
+    "pill": { "type": "dimension", "value": "999px", "source": "computed border-radius of .tabs-nav__item (raw/measurements.json)" },
+    "block": { "type": "dimension", "value": "45px", "source": "declared --block-border-radius and --section-border-radius 45px; computed footer border-radius (raw/measurements.json)" },
+    "blockReduced": { "type": "dimension", "value": "16px", "source": "declared --block-border-radius-reduced 16px (raw/root-vars.json)" }
+  },
+  "space": {
+    "gutter": { "type": "dimension", "value": "73px", "source": "declared --container-gutter 73px on :root at 1440 (raw/root-vars.json)" },
+    "buttonX": { "type": "dimension", "value": "15px", "source": "computed padding of .button 0px 15px (raw/measurements.json)" },
+    "buttonXWide": { "type": "dimension", "value": "20px", "source": "computed padding of .product-form__add-button 0px 20px (raw/measurements.json)" }
+  },
+  "size": {
+    "button": { "type": "dimension", "value": "52px", "source": "declared --button-height 52px (raw/root-vars.json)" },
+    "buttonSmall": { "type": "dimension", "value": "44px", "source": "declared --button-small-height 44px; computed height of .tabs-nav__item (raw/measurements.json)" },
+    "header": { "type": "dimension", "value": "57px", "source": "computed height of store-header at 1440 (raw/measurements.json)" },
+    "announcement": { "type": "dimension", "value": "36px", "source": "computed height of the announcement bar at 1440 (raw/measurements.json)" },
+    "logo": { "type": "dimension", "value": "70px", "source": "computed width of .header__logo-link (raw/measurements.json). Height was 23px" },
+    "navLink": { "type": "dimension", "value": "13px", "source": "computed height of .header__linklist-link (raw/measurements.json)" }
+  },
+  "layout": {
+    "desktop": { "type": "dimension", "value": "1440px", "source": "measured window.innerWidth on desktop captures (screenshots/*.png.capture.json, kept beside the raw shots)" },
+    "phone": { "type": "dimension", "value": "390px", "source": "measured window.innerWidth on mobile-* captures" }
+  },
+  "focus": {
+    "ring": { "type": "dimension", "value": "0px", "source": "computed outline of .product-form__add-button after focus was rgb(255, 255, 255) none 0px (raw/measurements.json). Not captured as a painted ring" }
+  }
+}

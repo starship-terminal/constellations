@@ -1,0 +1,479 @@
+{
+  "propRules": 203,
+  "fonts": [
+    {
+      "family": "Jost",
+      "weight": "300",
+      "style": "normal",
+      "display": "swap"
+    },
+    {
+      "family": "Jost",
+      "weight": "300",
+      "style": "italic",
+      "display": "swap"
+    },
+    {
+      "family": "Barlow",
+      "weight": "500",
+      "style": "normal",
+      "display": "swap"
+    },
+    {
+      "family": "Barlow",
+      "weight": "500",
+      "style": "italic",
+      "display": "swap"
+    },
+    {
+      "family": "Barlow",
+      "weight": "600",
+      "style": "normal",
+      "display": "swap"
+    },
+    {
+      "family": "Barlow",
+      "weight": "600",
+      "style": "italic",
+      "display": "swap"
+    },
+    {
+      "family": "\"Robin Regular\"",
+      "weight": "normal",
+      "style": "normal",
+      "display": "swap"
+    },
+    {
+      "family": "\"Robin Semibold\"",
+      "weight": "normal",
+      "style": "normal",
+      "display": "swap"
+    },
+    {
+      "family": "Boogy",
+      "weight": "normal",
+      "style": "normal",
+      "display": "swap"
+    },
+    {
+      "family": "\"Boogy Italic\"",
+      "weight": "normal",
+      "style": "normal",
+      "display": "swap"
+    },
+    {
+      "family": "oke-widget-icons",
+      "weight": "400",
+      "style": "normal",
+      "display": "block"
+    },
+    {
+      "family": "BoogyBrut",
+      "weight": "400",
+      "style": "normal",
+      "display": "swap"
+    },
+    {
+      "family": "BoogyBrut",
+      "weight": "300",
+      "style": "italic",
+      "display": "swap"
+    },
+    {
+      "family": "Nunito-Sans-Klaviyo-Hosted",
+      "weight": "400",
+      "style": "italic",
+      "display": "swap"
+    },
+    {
+      "family": "Nunito-Sans-Klaviyo-Hosted",
+      "weight": "700",
+      "style": "italic",
+      "display": "swap"
+    },
+    {
+      "family": "Nunito-Sans-Klaviyo-Hosted",
+      "weight": "400",
+      "style": "normal",
+      "display": "swap"
+    },
+    {
+      "family": "Nunito-Sans-Klaviyo-Hosted",
+      "weight": "700",
+      "style": "normal",
+      "display": "swap"
+    },
+    {
+      "family": "Poppins-Klaviyo-Hosted",
+      "weight": "400",
+      "style": "italic",
+      "display": "swap"
+    },
+    {
+      "family": "Poppins-Klaviyo-Hosted",
+      "weight": "700",
+      "style": "italic",
+      "display": "swap"
+    },
+    {
+      "family": "Poppins-Klaviyo-Hosted",
+      "weight": "400",
+      "style": "normal",
+      "display": "swap"
+    },
+    {
+      "family": "Poppins-Klaviyo-Hosted",
+      "weight": "700",
+      "style": "normal",
+      "display": "swap"
+    },
+    {
+      "family": "RobinPro",
+      "weight": "400",
+      "style": "normal",
+      "display": "swap"
+    },
+    {
+      "family": "RobinPro",
+      "weight": "600",
+      "style": "normal",
+      "display": "swap"
+    }
+  ],
+  "resolvedCount": 0,
+  "resolved": {},
+  "sampleRules": [
+    {
+      "selector": ":root",
+      "context": [],
+      "props": {
+        "--heading-color": "48, 24, 22",
+        "--text-color": "48, 24, 22",
+        "--background": "255, 255, 255",
+        "--secondary-background": "246, 242, 233",
+        "--border-color": "50, 26, 24",
+        "--border-color-darker": "172, 163, 162",
+        "--success-color": "199, 221, 194",
+        "--success-background": "244, 248, 243",
+        "--error-color": "199, 221, 194",
+        "--error-background": "251, 253, 251",
+        "--primary-button-background": "48, 24, 22",
+        "--primary-button-text-color": "255, 255, 255",
+        "--secondary-button-background": "48, 24, 22",
+        "--secondary-button-text-color": "255, 255, 255",
+        "--product-star-rating": "48, 24, 22",
+        "--product-on-sale-accent": "48, 24, 22",
+        "--product-sold-out-accent": "91, 91, 91",
+        "--product-custom-label-background": "48, 24, 22",
+        "--product-custom-label-text-color": "255, 255, 255",
+        "--product-custom-label-2-background": "199, 221, 194",
+        "--product-custom-label-2-text-color": "0, 0, 0",
+        "--product-low-stock-text-color": "223, 100, 100",
+        "--product-in-stock-text-color": "46, 158, 123",
+        "--loading-bar-background": "48, 24, 22",
+        "--root-heading-color": "48, 24, 22",
+        "--root-text-color": "48, 24, 22",
+        "--root-background": "255, 255, 255",
+        "--root-border-color": "50, 26, 24",
+        "--root-primary-button-background": "48, 24, 22",
+        "--root-primary-button-text-color": "255, 255, 255",
+        "--color-flavor-abricot-zaatar": "#F4A765",
+        "--color-flavor-poire-anis": "#F3EEA7",
+        "--color-flavor-orange-piment": "#F26554",
+        "--base-font-size": "16px",
+        "--heading-font-family": "'Boogy', sans-serif",
+        "--heading-font-family-italic": "'Boogy Italic', sans-serif",
+        "--heading-font-weight": "300",
+        "--heading-font-style": "normal",
+        "--heading-text-transform": "normal",
+        "--text-font-family": "'Robin Regular', sans-serif",
+        "--text-font-family-semibold": "'Robin Semibold', sans-serif",
+        "--text-font-weight": "500",
+        "--text-font-style": "normal",
+        "--text-font-bold-weight": "600",
+        "--heading-xxsmall-font-size": "11px",
+        "--heading-xsmall-font-size": "11px",
+        "--heading-small-font-size": "12px",
+        "--heading-large-font-size": "13vw",
+        "--heading-h1-font-size": "52px",
+        "--heading-h2-font-size": "40px",
+        "--heading-h3-font-size": "26px",
+        "--heading-h4-font-size": "30px",
+        "--heading-h5-font-size": "12px",
+        "--heading-h6-font-size": "16px",
+        "--button-border-radius": "0px",
+        "--block-border-radius": "45px",
+        "--block-border-radius-reduced": "16px",
+        "--color-swatch-border-radius": "0px",
+        "--section-border-radius": "45px",
+        "--button-height": "48px",
+        "--button-small-height": "40px",
+        "--form-input-field-height": "48px",
+        "--form-input-gap": "16px",
+        "--form-submit-margin": "24px",
+        "--product-list-block-spacing": "32px",
+        "--play-button-background": "255, 255, 255",
+        "--play-button-arrow": "48, 24, 22",
+        "--transform-logical-flip": "1",
+        "--transform-origin-start": "left",
+        "--transform-origin-end": "right",
+        "--zoom-cursor-svg-url": "url(//drinkdouze.com/cdn/shop/t/5/assets/zoom-cursor.svg?v=140271287098238283801758738276)",
+        "--arrow-right-svg-url": "url(//drinkdouze.com/cdn/shop/t/5/assets/arrow-right.svg?v=23058948527669737801757421314)",
+        "--arrow-left-svg-url": "url(//drinkdouze.com/cdn/shop/t/5/assets/arrow-left.svg?v=180822754008632344711757421314)",
+        "--container-max-width": "1600px",
+        "--container-gutter": "24px",
+        "--container-max-width-minus-gutters": "calc(var(--container-max-width) - (var(--container-gutter)) * 2)",
+        "--container-outer-width": "max(calc((100vw - var(--container-max-width-minus-gutters)) / 2), var(--container-gutter))",
+        "--container-outer-margin": "var(--container-outer-width)",
+        "--container-inner-width": "calc(100vw - var(--container-outer-width) * 2)",
+        "--grid-column-count": "10",
+        "--grid-gap": "24px",
+        "--grid-column-width": "calc((100vw - var(--container-outer-width) * 2 - var(--grid-gap) * (var(--grid-column-count) - 1)) / var(--grid-column-count))",
+        "--vertical-breather": "36px",
+        "--vertical-breather-tight": "36px",
+        "--boxed-sections-enabled": "1",
+        "--boxed-sections-margin": "25px",
+        "--boxed-sections-background": "246, 242, 233",
+        "--payment-terms-background-color": "#ffffff"
+      }
+    },
+    {
+      "selector": ":root",
+      "context": [
+        "@media screen and (min-width: 741px)"
+      ],
+      "props": {
+        "--container-gutter": "73px",
+        "--grid-column-count": "20",
+        "--vertical-breather": "48px",
+        "--vertical-breather-tight": "48px",
+        "--heading-xsmall-font-size": "12px",
+        "--heading-small-font-size": "12px",
+        "--heading-large-font-size": "10vw",
+        "--heading-h1-font-size": "55px",
+        "--heading-h2-font-size": "45px",
+        "--heading-h3-font-size": "38px",
+        "--heading-h4-font-size": "35px",
+        "--heading-h5-font-size": "12px",
+        "--heading-h6-font-size": "18px",
+        "--form-input-field-height": "52px",
+        "--form-submit-margin": "32px",
+        "--button-height": "52px",
+        "--button-small-height": "44px"
+      }
+    },
+    {
+      "selector": ":root",
+      "context": [
+        "@media screen and (min-width: 1200px)"
+      ],
+      "props": {
+        "--vertical-breather": "64px",
+        "--vertical-breather-tight": "48px",
+        "--product-list-block-spacing": "48px",
+        "--heading-large-font-size": "8vw",
+        "--heading-h1-font-size": "72px",
+        "--heading-h2-font-size": "52px",
+        "--heading-h3-font-size": "38px",
+        "--heading-h4-font-size": "35px",
+        "--heading-h5-font-size": "12px",
+        "--heading-h6-font-size": "18px"
+      }
+    },
+    {
+      "selector": ":root",
+      "context": [
+        "@media screen and (min-width: 1600px)"
+      ],
+      "props": {
+        "--vertical-breather": "64px",
+        "--vertical-breather-tight": "48px"
+      }
+    },
+    {
+      "selector": ".button--primary, .shopify-challenge__button, #shopify-product-reviews .spr-summary-actions-newreview, #shopify-product-reviews .spr-button",
+      "context": [],
+      "props": {
+        "--button-background": "var(--primary-button-background)",
+        "--button-text-color": "var(--primary-button-text-color)"
+      }
+    },
+    {
+      "selector": ".button--secondary",
+      "context": [],
+      "props": {
+        "--button-background": "var(--secondary-button-background)",
+        "--button-text-color": "var(--secondary-button-text-color)"
+      }
+    },
+    {
+      "selector": ".button--ternary",
+      "context": [],
+      "props": {
+        "--button-background": "var(--secondary-background)",
+        "--button-text-color": "var(--root-text-color)"
+      }
+    },
+    {
+      "selector": ".button--outline",
+      "context": [],
+      "props": {
+        "--button-background": "var(--background)",
+        "--button-text-color": "var(--root-text-color)"
+      }
+    },
+    {
+      "selector": ".button, .shopify-challenge__button, #shopify-product-reviews .spr-summary-actions-newreview, #shopify-product-reviews .spr-button, .shopify-payment-button__button",
+      "context": [
+        "@media screen and (pointer: fine)",
+        "@supports (color: color-contrast(wheat vs black, white)) and (color: rgb(from wheat r g b / 0.07))"
+      ],
+      "props": {
+        "--button-overlay-color": "rgb(\n        from color-contrast(rgb(var(--button-background)) vs white, black) r g b /\n          7%\n      )"
+      }
+    },
+    {
+      "selector": ":root",
+      "context": [],
+      "props": {
+        "--color-dusk": "#301816",
+        "--color-sable": "#f6f2e9"
+      }
+    },
+    {
+      "selector": ":root",
+      "context": [],
+      "props": {
+        "--font-boogy": "var(--heading-font-family)",
+        "--font-boogy-italic": "var(--heading-font-family-italic)",
+        "--font-base": "var(--text-font-family)",
+        "--font-robin-regular": "var(--text-font-family)",
+        "--font-robin-semibold": "var(--text-font-family-semibold)"
+      }
+    },
+    {
+      "selector": ":root",
+      "context": [],
+      "props": {
+        "--text-xxs": "10px",
+        "--text-xs": "12px",
+        "--text-sm": "14px",
+        "--text-base": "16px",
+        "--text-lg": "18px",
+        "--text-xl": "20px",
+        "--text-2xl": "24px",
+        "--text-3xl": "30px",
+        "--text-4xl": "36px",
+        "--text-5xl": "48px",
+        "--text-6xl": "60px",
+        "--text-7xl": "72px",
+        "--text-8xl": "96px",
+        "--text-9xl": "128px"
+      }
+    },
+    {
+      "selector": ":root",
+      "context": [
+        "@media not (min-width: 500px)"
+      ],
+      "props": {
+        "--boxed-sections-margin": "15px"
+      }
+    },
+    {
+      "selector": ".button--secondary",
+      "context": [],
+      "props": {
+        "--button-background": "transparent",
+        "--button-text-color": "var(--text-color)"
+      }
+    },
+    {
+      "selector": ":root",
+      "context": [],
+      "props": {
+        "--oke-widget-spaceAbove": "20px",
+        "--oke-widget-spaceBelow": "20px",
+        "--oke-starRating-spaceAbove": "0",
+        "--oke-starRating-spaceBelow": "10px",
+        "--oke-button-backgroundColor": "#c7ddc2",
+        "--oke-button-backgroundColorHover": "#c7ddc2",
+        "--oke-button-backgroundColorActive": "#c7ddc2",
+        "--oke-button-textColor": "#301816",
+        "--oke-button-textColorHover": "#301816",
+        "--oke-button-textColorActive": "#301816",
+        "--oke-button-borderColor": "#c7ddc2",
+        "--oke-button-borderColorHover": "#c7ddc2",
+        "--oke-button-borderColorActive": "#c7ddc2",
+        "--oke-button-borderRadius": "0",
+        "--oke-button-borderWidth": "1px",
+        "--oke-button-fontWeight": "700",
+        "--oke-button-fontSize": "var(--oke-text-regular,14px)",
+        "--oke-button-fontFamily": "inherit",
+        "--oke-border-color": "#301816",
+        "--oke-border-width": "1px",
+        "--oke-text-primaryColor": "#301816",
+        "--oke-text-secondaryColor": "#301816",
+        "--oke-text-small": "12px",
+        "--oke-text-regular": "14px",
+        "--oke-text-large": "20px",
+        "--oke-text-fontFamily": "inherit",
+        "--oke-avatar-size": "undefined",
+        "--oke-avatar-backgroundColor": "undefined",
+        "--oke-avatar-placeholderTextColor": "undefined",
+        "--oke-highlightColor": "#301816",
+        "--oke-shadingColor": "#f6f2e9",
+        "--oke-productImageSize": "48px",
+        "--oke-attributeBar-shadingColor": "#9a9db1",
+        "--oke-attributeBar-borderColor": "undefined",
+        "--oke-attributeBar-backgroundColor": "#d3d4dd",
+        "--oke-attributeBar-markerColor": "#00caaa",
+        "--oke-filter-backgroundColor": "#f6f2e9",
+        "--oke-filter-backgroundColorActive": "#301816",
+        "--oke-filter-borderColor": "#301816",
+        "--oke-filter-borderColorActive": "#301816",
+        "--oke-filter-textColor": "#301816",
+        "--oke-filter-textColorActive": "#301816",
+        "--oke-filter-borderRadius": "100px",
+        "--oke-filter-searchHighlightColor": "#b2f9e9",
+        "--oke-mediaGrid-chevronColor": "#676986",
+        "--oke-stars-foregroundColor": "#301816",
+        "--oke-stars-backgroundColor": "#f6f2e9",
+        "--oke-stars-borderWidth": "1",
+        "--oke-stars-borderColor": "#301816"
+      }
+    },
+    {
+      "selector": ":root",
+      "context": [],
+      "props": {
+        "--kl-reviews-color-light-gray": "#e9e9eb"
+      }
+    },
+    {
+      "selector": ":root",
+      "context": [],
+      "props": {
+        "--enable-sticky-announcement-bar": "0"
+      }
+    },
+    {
+      "selector": ":root",
+      "context": [
+        "@media screen and (min-width: 741px)"
+      ],
+      "props": {
+        "--enable-sticky-announcement-bar": "0"
+      }
+    },
+    {
+      "selector": ":root",
+      "context": [],
+      "props": {
+        "--enable-sticky-header": "1",
+        "--enable-transparent-header": "1",
+        "--loading-bar-background": "48, 24, 22"
+      }
+    }
+  ]
+}
