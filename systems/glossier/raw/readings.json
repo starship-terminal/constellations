@@ -1,0 +1,139 @@
+{
+  "capturedAt": "2026-11-22",
+  "url": "https://www.glossier.com/en-sg",
+  "productUrl": "https://www.glossier.com/en-sg/products/glossier-you",
+  "loginUrl": "https://www.glossier.com/en-sg/account/login",
+  "signupUrl": "https://www.glossier.com/en-sg/account/register",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "body": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "Apercu, \"Gill Sans\", sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "18.4px"
+  },
+  "shippingBar": {
+    "backgroundColor": "rgb(51, 51, 51)",
+    "color": "rgb(255, 255, 255)",
+    "fontFamily": "arial",
+    "fontSize": "14px",
+    "height": "24px"
+  },
+  "header": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "Apercu, \"Gill Sans\", sans-serif",
+    "height": "40px"
+  },
+  "wordmark": {
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "Apercu, \"Gill Sans\", sans-serif",
+    "fontSize": "32px",
+    "fontStyle": "italic",
+    "fontWeight": "500"
+  },
+  "navLink": {
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "12px",
+    "fontWeight": "400",
+    "height": "20px"
+  },
+  "heroCard": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "width": "304px",
+    "height": "211px"
+  },
+  "heroBlue": {
+    "sampledFromScreenshot": "#0500f5",
+    "note": "Homepage hero fill is a photograph. A pixel sample of screenshots/home-light-1440.png is rgb(5, 0, 245). CSS variables set --promo-badge-background-color to #0600ff."
+  },
+  "heroHeading": {
+    "text": "Biggest sale of the year!",
+    "fontSize": "20px",
+    "fontWeight": "400",
+    "color": "rgb(0, 0, 0)"
+  },
+  "shopNow": {
+    "backgroundColor": "rgb(232, 232, 232)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "14px",
+    "height": "40px",
+    "borderRadius": "0px"
+  },
+  "addToBag": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "14px",
+    "height": "40px",
+    "borderRadius": "0px",
+    "note": "Homepage card. Product page Add to bag is rgb(232, 232, 232), 40px. Not clicked."
+  },
+  "productAddToBag": {
+    "backgroundColor": "rgb(232, 232, 232)",
+    "color": "rgb(0, 0, 0)",
+    "height": "40px",
+    "borderRadius": "0px"
+  },
+  "productTitle": {
+    "text": "Glossier You",
+    "fontSize": "32px",
+    "fontWeight": "500",
+    "color": "rgb(0, 0, 0)"
+  },
+  "price": {
+    "text": "$185 SGD",
+    "color": "rgb(0, 0, 0)",
+    "fontSize": "14px",
+    "fontWeight": "400"
+  },
+  "sizeChip": {
+    "backgroundColor": "rgb(232, 232, 232)",
+    "color": "rgb(0, 0, 0)",
+    "height": "34px",
+    "borderRadius": "0px"
+  },
+  "badge": {
+    "backgroundColor": "rgb(6, 0, 255)",
+    "cssVar": "--promo-badge-background-color"
+  },
+  "loginTitle": {
+    "text": "Login",
+    "fontSize": "32px",
+    "fontWeight": "400"
+  },
+  "loginField": {
+    "height": "50px",
+    "border": "1px solid rgb(232, 232, 232)",
+    "labelColor": "rgb(102, 102, 102)",
+    "labelFontSize": "14px"
+  },
+  "signIn": {
+    "backgroundColor": "rgb(247, 247, 247)",
+    "color": "rgb(0, 0, 0)",
+    "height": "40px",
+    "borderRadius": "0px",
+    "disabled": false
+  },
+  "createAccount": {
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "height": "40px"
+  },
+  "signupTitle": {
+    "text": "Create an account",
+    "fontSize": "32px",
+    "fontWeight": "400"
+  },
+  "signupSubmit": {
+    "backgroundColor": "rgb(247, 247, 247)",
+    "color": "rgb(0, 0, 0)",
+    "height": "40px",
+    "borderRadius": "0px"
+  }
+}
