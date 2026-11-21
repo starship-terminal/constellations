@@ -1,8 +1,9 @@
 {
-  "captured": "2026-11-20",
-  "signedIn": true,
-  "evidence": "document.body class includes is-logged. Sign in and Sign up are display:none. Avatar button is visible.",
+  "captured": "2026-11-21",
+  "signedIn": false,
+  "evidence": "Public homepage. document.body class is route-homepage has-header-ad, not is-logged. Sign in and Sign up are visible in the header. No avatar.",
   "themeOnScreen": "light",
+  "method": "getComputedStyle on the live public page, confirmed on the offline render of the same DOM and stylesheet. Generator column size, hex chip, selected toolbar state, and phone column stack were not remeasured this pass.",
   "desktop": {
     "viewport": {
       "innerWidth": 1440,
@@ -15,7 +16,8 @@
       "fontWeight": "450",
       "lineHeight": "15px",
       "color": "rgb(10, 10, 10)",
-      "backgroundColor": "rgb(255, 255, 255)"
+      "backgroundColor": "rgb(255, 255, 255)",
+      "padding": "60px 0px 0px"
     },
     "header": {
       "height": "60px",
@@ -23,24 +25,36 @@
       "boxShadow": "rgba(0, 0, 0, 0.07) 0px 1px 0px 0px",
       "padding": "0px"
     },
-    "h1Account": {
+    "h1Homepage": {
       "fontFamily": "Inter, sans-serif",
-      "fontSize": "70px",
+      "fontSize": "110px",
       "fontWeight": "800",
-      "letterSpacing": "-2.45px",
-      "lineHeight": "77px",
-      "color": "rgb(10, 10, 10)"
+      "letterSpacing": "-3.85px",
+      "lineHeight": "99px",
+      "color": "rgb(10, 10, 10)",
+      "selector": "#homepage_title"
     },
-    "buttonTransparent": {
+    "buttonPrimary": {
       "height": "36px",
       "padding": "0px 12px",
       "borderRadius": "8px",
+      "fontFamily": "Inter, sans-serif",
       "fontSize": "15px",
       "fontWeight": "500",
-      "lineHeight": "36px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(37, 99, 235)",
+      "color": "rgb(255, 255, 255)",
+      "selector": "header Sign up, and Start the Generator (.btn.btn--primary)"
+    },
+    "buttonGray": {
+      "height": "46px",
+      "padding": "0px 21px",
+      "borderRadius": "10px",
+      "fontFamily": "Inter, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "backgroundColor": "rgba(0, 0, 0, 0.06)",
       "color": "rgb(0, 0, 0)",
-      "selector": "a.btn.btn--s.btn--transparent"
+      "selector": "Explore 10M+ Palettes (.btn.btn--gray.btn--m)"
     },
     "buttonGoPro": {
       "height": "36px",
@@ -50,71 +64,36 @@
       "fontWeight": "500",
       "color": "rgb(236, 72, 153)",
       "backgroundColor": "rgba(0, 0, 0, 0)",
-      "selector": "a.btn.btn--accent-transparent.header_go-pro-btn"
+      "selector": ".header_go-pro-btn"
     },
-    "buttonIcon": {
-      "width": "36px",
-      "height": "36px",
-      "borderRadius": "8px",
-      "selector": "a.btn.btn--s.btn--icon.btn--transparent"
+    "toolCard": {
+      "backgroundColor": "rgb(207, 250, 254)",
+      "color": "rgb(8, 145, 178)",
+      "borderRadius": "14px",
+      "padding": "40px",
+      "selector": ".homepage_tool"
     },
-    "buttonSelected": {
-      "backgroundColor": "rgba(23, 89, 232, 0.1)",
-      "color": "rgb(18, 71, 186)",
-      "selector": "a.btn.btn--transparent.is-popover-active"
+    "colorOfTheDay": {
+      "backgroundColor": "rgb(245, 245, 245)",
+      "borderRadius": "14px",
+      "padding": "40px",
+      "selector": "#homepage_color-of-the-day"
     },
-    "hex": {
-      "fontSize": "30px",
-      "fontWeight": "600",
-      "letterSpacing": "0.9px",
-      "lineHeight": "50px",
-      "fontFamily": "Inter, sans-serif",
-      "selector": ".generator_color_hex"
-    },
-    "colorColumn": {
-      "width": "288px",
-      "height": "784px",
-      "selector": ".generator_color_background",
-      "sample": [
-        "rgb(38, 70, 83)",
-        "rgb(42, 157, 143)",
-        "rgb(233, 196, 106)",
-        "rgb(244, 162, 97)",
-        "rgb(231, 111, 81)"
-      ]
-    },
-    "textInputAccount": {
-      "height": "46px",
-      "borderRadius": "10px",
-      "padding": "0px 14px",
-      "fontSize": "15px"
-    },
-    "primaryButtonAccount": {
-      "backgroundColor": "rgb(37, 99, 235)",
-      "color": "rgb(255, 255, 255)",
-      "borderRadius": "8px",
-      "height": "36px",
-      "padding": "0px 12px",
-      "fontSize": "15px",
-      "fontWeight": "500"
+    "cssVars": {
+      "--bg-color": "#ffffff",
+      "--text-color": "#0a0a0a"
     }
   },
   "phone": {
     "viewport": {
       "innerWidth": 390,
-      "innerHeight": 844,
-      "devicePixelRatio": 2
-    },
-    "note": "Columns stack. Each .generator_color_background is 390x146. Hex labels are 16px/600 with 10px radius chips. A Generate control and an icon nav sit on a bottom bar at y=788, height 56. The preview compositor returned a white frame for this viewport, so no phone PNG is committed.",
-    "hex": {
-      "fontSize": "16px",
-      "fontWeight": "600",
-      "height": "36px",
-      "borderRadius": "10px"
-    },
-    "column": {
-      "width": "390px",
-      "height": "146px"
+      "devicePixelRatio": 2,
+      "note": "Homepage photographed. Menu not opened. JS reflow did not run in the offline render, so the 110px headline does not wrap."
     }
+  },
+  "generatorSample": {
+    "url": "/4f7cac-c0e0de-162521-3c474b-9eefe5",
+    "note": "One signed-out palette, not brand tokens. Column size and hex chip were not remeasured this pass.",
+    "colors": ["#4F7CAC", "#C0E0DE", "#162521", "#3C474B", "#9EEFE5"]
   }
 }

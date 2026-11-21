@@ -1,25 +1,27 @@
 # Coolors patterns
 
-How the signed-in screens combine the components in [components.md](components.md).
+How the public screens combine the components in [components.md](components.md). Signed out. The map of which control opens which page is [site-tree.md](site-tree.md).
 
 ## App header
 
-A 60px white bar. The wordmark sits left. Tools opens a mega-menu of generators and discover links. Go Pro is a pink text button. The avatar replaces Sign in once `body` has `is-logged`.
+A 60px white bar. The wordmark sits left and links home. Tools opens the mega-menu. Go Pro is a pink text button (the modal was not opened). Sign in opens the access overlay. Sign up was not opened.
+
+## Homepage
+
+A 110px Inter headline, a short subtitle, then Start the Generator (primary) and Explore 10M+ Palettes (gray). Palette art sits to the right. Tool cards and a color-of-the-day card follow. A logo strip sits under the hero.
 
 ## Palette generator
 
-The create surface is `/generate`, which redirects to a palette URL such as `/264653-2a9d8f-e9c46a-f4a261-e76f51`. Five full-height columns fill the page under a thin toolbar (View, Export, Save, and icon tools). The hint is "Press the spacebar to generate color palettes!" Spacebar changes the palette in the page. Save, Export, and publish were not used.
+Start the Generator opens `/generate`, which redirects to a palette URL. This pass landed on `/4f7cac-c0e0de-162521-3c474b-9eefe5`. Five columns fill the page under a toolbar (View, Export, Save, and icon tools). The hint is "Press the spacebar to generate color palettes!" A tutorial modal ("Let's go!") was closed, not continued. Save and Export were not used.
 
-At 390px the same palette stacks into five 146px rows, with Generate and an icon nav on a bottom bar.
+## Explore
 
-## Library
+Explore 10M+ Palettes opens `/palettes`, which redirects to `/palettes/trending` ("Trending Color Palettes"). A search field is on the page. Nothing was typed or submitted.
 
-`/dashboard` redirects to `/user/palettes`. A left rail lists Palettes, Colors, Gradients, Fonts, Images, Projects, Collections, and Favorites. The palettes view was empty: "You don't have any palette yet." Search and Filters sit above the empty state.
+## Contrast checker
 
-## Account
-
-`/account` redirects to `/account/general`. The nav is General, Profile, Subscription, Affiliation, Settings, and Delete account. General holds username, email, and change password. Those fields were not edited and not submitted. Settings holds a newsletter checkbox, a private-profile Pro control, a landing-page select, and a white-label image control. None of those were changed.
+`/contrast-checker` redirects to a pair URL. This pass was `/contrast-checker/112a46-acc8e5`. The offline render shows `#FFFFFF` in the inputs because the swatch images did not load. That pair is not the live pair.
 
 ## What was not opened
 
-Delete account, Sign out, Go Pro checkout, Save, Export, affiliation, and the account theme submenu. Opening the theme submenu can write a preference, so dark remains a stylesheet reading.
+Sign up, Continue with Google, Continue with Apple, Continue with email, Go Pro checkout, Save, Export, the mobile menu, dark theme, and the account wall at `/account/affiliation`.

@@ -862,7 +862,7 @@
     "--subtext-color": "#525252",
     "--text-color": "#0a0a0a"
   },
-  "source": "https://coolors.co/assets/css/dist/style.min.css?v=64 fetched from the signed-in page (HTTP 200, 1196416 bytes). Shell curl of the same URL returns Cloudflare 403.",
+  "source": "https://coolors.co/assets/css/dist/style.min.css?v=64 fetched from the public page (HTTP 200, 1196416 bytes). Shell curl of the same URL returns Cloudflare 403. Same file as the 2026-11-20 dump.",
   "viewport": {
     "desktop": {
       "devicePixelRatio": 2,

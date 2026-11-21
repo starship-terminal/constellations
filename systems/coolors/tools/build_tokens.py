@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Build tokens.json from the signed-in Coolors CSSOM dump.
+"""Build tokens.json from the public Coolors CSSOM dump.
 
 Reads raw/css-vars.json (resolved :root custom properties plus the
 [data-theme=dark] overrides) and raw/components-computed.json (measured
-controls). Every token carries $extensions.source. Edit the raw files,
-never tokens.json.
+public controls). Every token carries $extensions.source. Edit the raw
+files, never tokens.json.
 """
 import json
 import pathlib
@@ -84,7 +84,7 @@ def core_ramps():
             stops[stop] = color(
                 stop,
                 RESOLVED[key],
-                f"css-var {key} from style.min.css?v=64 :root, signed-in page",
+                f"css-var {key} from style.min.css?v=64 :root, public page",
             )
         out[ramp] = stops
     out["black"] = color("black", RESOLVED["--color-black"], "css-var --color-black")
@@ -119,7 +119,7 @@ def semantic(source_map, label):
         "pro": color(
             "pro",
             "#ec4899" if label == "light" else "#f472b6",
-            "measured Go Pro label rgb(236, 72, 153) on the signed-in header"
+            "measured Go Pro label rgb(236, 72, 153) on the public header"
             if label == "light"
             else "css-var --color-pink-400, the light pink used for accent labels when the ramp flips",
         ),
@@ -210,49 +210,49 @@ def build():
             "family": {
                 "ui": font_family(
                     ["Inter", "sans-serif"],
-                    "getComputedStyle(document.body).fontFamily on the signed-in generator, 1440x900",
+                    "getComputedStyle(document.body).fontFamily on the public homepage, 1440x900",
                 ),
                 "mono": font_family(
                     ["IBM Plex Mono", "ui-monospace", "monospace"],
-                    "Google font link on the signed-in page: IBM Plex Mono. Not measured on a control.",
+                    "Google font link on the public page: IBM Plex Mono. Not measured on a control.",
                 ),
             },
             "weight": {
-                "body": font_weight(450, "body font-weight 450 on the signed-in generator"),
-                "medium": font_weight(500, "a.btn font-weight 500"),
-                "semibold": font_weight(600, ".generator_color_hex font-weight 600"),
-                "extrabold": font_weight(800, "account h1 font-weight 800"),
+                "body": font_weight(450, "body font-weight 450 on the public homepage"),
+                "medium": font_weight(500, "header Sign up font-weight 500"),
+                "semibold": font_weight(600, "Explore button font-weight 600. Generator hex weight was not remeasured this pass."),
+                "extrabold": font_weight(800, "homepage h1 font-weight 800"),
             },
         },
         "radius": {
-            "button": dim("button", "8px", "a.btn.btn--s border-radius 8px, generator toolbar and header"),
-            "input": dim("input", "10px", "account text input border-radius 10px"),
-            "hex": dim("hex", "10px", "phone .generator_color_hex border-radius 10px"),
-            "avatar": dim("avatar", "999px", "header avatar is a circle (50% on the 36px control)"),
+            "button": dim("button", "8px", "header Sign up border-radius 8px"),
+            "input": dim("input", "10px", "Explore button border-radius 10px. Account text inputs were not offered this pass."),
+            "hex": dim("hex", "10px", "not remeasured this pass; prior phone hex chip radius"),
+            "card": dim("card", "14px", ".homepage_tool and color-of-the-day border-radius 14px"),
         },
         "space": {
-            "header": dim("header", "60px", "header getBoundingClientRect height 60 at 1440x900"),
-            "button-x": dim("button-x", "12px", "a.btn.btn--s padding 0 12px"),
-            "button-h": dim("button-h", "36px", "a.btn.btn--s height 36px"),
-            "input-h": dim("input-h", "46px", "account text input height 46px"),
-            "column": dim("column", "288px", ".generator_color_background width 288px at 1440x900"),
+            "header": dim("header", "60px", "header height 60 at 1440x900 on the public homepage"),
+            "button-x": dim("button-x", "12px", "header Sign up padding 0 12px"),
+            "button-h": dim("button-h", "36px", "header Sign up height 36px"),
+            "hero-button-h": dim("hero-button-h", "46px", "Explore 10M+ Palettes height 46px"),
+            "card": dim("card", "40px", ".homepage_tool padding 40px"),
         },
         "typography": {
             "body": typography(
                 {"fontFamily": "{core.font.family.ui}", "fontSize": "15px", "fontWeight": "{core.font.weight.body}", "lineHeight": "15px"},
-                "body computed style on the signed-in generator",
+                "body computed style on the public homepage",
             ),
             "button": typography(
                 {"fontFamily": "{core.font.family.ui}", "fontSize": "15px", "fontWeight": "{core.font.weight.medium}", "lineHeight": "36px"},
-                "header Tools button computed style",
+                "header Sign up computed style",
             ),
-            "hex": typography(
-                {"fontFamily": "{core.font.family.ui}", "fontSize": "30px", "fontWeight": "{core.font.weight.semibold}", "letterSpacing": "0.9px", "lineHeight": "50px"},
-                ".generator_color_hex at 1440x900",
+            "hero-button": typography(
+                {"fontFamily": "{core.font.family.ui}", "fontSize": "16px", "fontWeight": "{core.font.weight.semibold}", "lineHeight": "46px"},
+                "Explore 10M+ Palettes computed style",
             ),
             "display": typography(
-                {"fontFamily": "{core.font.family.ui}", "fontSize": "70px", "fontWeight": "{core.font.weight.extrabold}", "letterSpacing": "-2.45px", "lineHeight": "77px"},
-                "account page h1 at 1440x900",
+                {"fontFamily": "{core.font.family.ui}", "fontSize": "110px", "fontWeight": "{core.font.weight.extrabold}", "letterSpacing": "-3.85px", "lineHeight": "99px"},
+                "homepage h1 #homepage_title at 1440x900",
             ),
         },
         "shadow": {
@@ -290,7 +290,7 @@ def build():
     # measured primary button must match the light accent alias target
     if RESOLVED["--color-primary-600"] != "#2563eb":
         raise SystemExit("primary-600 drifted")
-    if desk["primaryButtonAccount"]["backgroundColor"] != "rgb(37, 99, 235)":
+    if desk["buttonPrimary"]["backgroundColor"] != "rgb(37, 99, 235)":
         raise SystemExit("measured primary drifted")
     out = HERE / "tokens.json"
     out.write_text(json.dumps(doc, indent=2) + "\n")
