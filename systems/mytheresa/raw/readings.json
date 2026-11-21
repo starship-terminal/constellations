@@ -1,0 +1,251 @@
+{
+  "captured": "2026-11-22",
+  "startUrl": "https://www.mytheresa.com",
+  "landed": "https://www.mytheresa.com/sg/en/women",
+  "title": "Women’s Luxury Fashion & Designer Shopping | Mytheresa",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1440, "height": 900, "scale": 1 }
+  },
+  "fontsLoaded": [
+    "AvenirNextLTPro-Medium",
+    "OptimaLTPro-Roman",
+    "DINNextLTArabic-Regular",
+    "Icons"
+  ],
+  "customProperties": "The public sheets do not declare a colour or type token layer. Eight custom properties were found, none of them brand colours.",
+  "homepage": {
+    "url": "https://www.mytheresa.com/sg/en/women",
+    "headerHeight": 158,
+    "promo": {
+      "text": "For a short time only – Flash Sale",
+      "href": "/sg/en/women/sale",
+      "background": "rgb(237, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "font": "AvenirNextLTPro-Medium",
+      "size": "14px",
+      "lineHeight": "18.2px",
+      "letterSpacing": "0.5px",
+      "height": 32
+    },
+    "department": {
+      "font": "AvenirNextLTPro-Medium",
+      "size": "12px",
+      "lineHeight": "16.8px",
+      "letterSpacing": "0.5px",
+      "textTransform": "uppercase",
+      "color": "rgb(0, 0, 0)",
+      "height": 17
+    },
+    "navItem": {
+      "class": "nav__item__link",
+      "font": "AvenirNextLTPro-Medium",
+      "size": "12px",
+      "lineHeight": "16.8px",
+      "letterSpacing": "0.5px",
+      "textTransform": "uppercase",
+      "color": "rgb(0, 0, 0)",
+      "height": 73
+    },
+    "heroKicker": {
+      "class": "bigbanner__copy__description",
+      "text": "THE EXCLUSIVE HOLIDAY CAPSULE COLLECTION",
+      "font": "AvenirNextLTPro-Medium",
+      "size": "16px",
+      "lineHeight": "20.8px",
+      "letterSpacing": "0.5px",
+      "color": "rgb(255, 255, 255)"
+    },
+    "heroTitle": {
+      "class": "bigbanner__copy__title",
+      "text": "Alaïa x Mytheresa",
+      "font": "OptimaLTPro-Roman",
+      "size": "48px",
+      "lineHeight": "57.6px",
+      "letterSpacing": "0.5px",
+      "weight": "400",
+      "color": "rgb(255, 255, 255)"
+    },
+    "discover": {
+      "class": "bigbanner__copy__cta",
+      "font": "AvenirNextLTPro-Medium",
+      "size": "16px",
+      "color": "rgb(255, 255, 255)",
+      "textDecoration": "underline"
+    },
+    "sectionTitle": {
+      "class": "productcarousel__title",
+      "text": "The New",
+      "font": "OptimaLTPro-Roman",
+      "size": "28px",
+      "lineHeight": "33.6px",
+      "letterSpacing": "0.5px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "cardDesigner": {
+      "class": "item__info__header__designer",
+      "font": "AvenirNextLTPro-Medium",
+      "size": "12px",
+      "lineHeight": "16.8px",
+      "letterSpacing": "0.5px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "cardPrice": {
+      "class": "pricing__prices__price",
+      "font": "AvenirNextLTPro-Medium",
+      "size": "12px",
+      "letterSpacing": "0.5px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "badge": {
+      "class": "labels__label",
+      "text": "new",
+      "font": "AvenirNextLTPro-Medium",
+      "size": "12px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "wordmark": "https://www.mytheresa.com/bucket/logo.ec349465.svg",
+    "pageBackground": "rgb(255, 255, 255)"
+  },
+  "product": {
+    "url": "https://www.mytheresa.com/sg/en/women/brunello-cucinelli-cashmere-jacquard-cardigan-beige-p01232510",
+    "designer": {
+      "class": "product__area__branding__designer",
+      "font": "OptimaLTPro-Roman",
+      "size": "24px",
+      "lineHeight": "28.8px",
+      "letterSpacing": "0.5px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "name": {
+      "class": "product__area__branding__name",
+      "font": "AvenirNextLTPro-Medium",
+      "size": "12px",
+      "lineHeight": "16.8px",
+      "letterSpacing": "0.5px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "price": {
+      "class": "pricing__prices__price",
+      "font": "OptimaLTPro-Roman",
+      "size": "20px",
+      "lineHeight": "26px",
+      "letterSpacing": "0.5px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "breadcrumb": {
+      "class": "breadcrumb__item__link",
+      "font": "AvenirNextLTPro-Medium",
+      "size": "12px",
+      "letterSpacing": "0.5px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "sizePlaceholder": {
+      "class": "dropdown__select__content__text__placeholder",
+      "text": "Choose your size",
+      "font": "AvenirNextLTPro-Medium",
+      "size": "12px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "sizeControlHeight": 46,
+    "addToBag": {
+      "class": "button__text",
+      "font": "AvenirNextLTPro-Medium",
+      "size": "14px",
+      "lineHeight": "18.2px",
+      "letterSpacing": "0.5px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(0, 0, 0)",
+      "height": 44,
+      "width": 402,
+      "radius": "0px",
+      "clicked": false
+    },
+    "unavailableSize": {
+      "class": "sizeitem--notavailable",
+      "color": "rgb(117, 117, 117)",
+      "font": "AvenirNextLTPro-Medium",
+      "size": "12px"
+    }
+  },
+  "category": {
+    "url": "https://www.mytheresa.com/sg/en/women/clothing",
+    "h1": {
+      "text": "Clothing",
+      "font": "OptimaLTPro-Roman",
+      "size": "28px",
+      "lineHeight": "33.6px",
+      "letterSpacing": "0.5px",
+      "weight": "400",
+      "color": "rgb(0, 0, 0)"
+    }
+  },
+  "about": {
+    "url": "https://www.mytheresa.com/sg/en/about-us",
+    "promo": {
+      "text": "Prices include duties and taxes",
+      "laterText": "Free returns within 30 days",
+      "background": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "font": "AvenirNextLTPro-Medium",
+      "size": "14px",
+      "height": 32
+    },
+    "pageTitle": {
+      "class": "service__header__title",
+      "text": "About us",
+      "font": "OptimaLTPro-Roman",
+      "size": "70px",
+      "lineHeight": "77px",
+      "letterSpacing": "0.5px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "sectionTitle": {
+      "text": "The finest edit in luxury",
+      "font": "OptimaLTPro-Roman",
+      "size": "44px",
+      "lineHeight": "52.8px",
+      "letterSpacing": "0.5px"
+    },
+    "tabSelected": {
+      "background": "rgb(242, 242, 242)",
+      "color": "rgb(0, 0, 0)",
+      "font": "AvenirNextLTPro-Medium",
+      "size": "12px"
+    }
+  },
+  "footer": {
+    "class": "footer",
+    "height": 890,
+    "newsletterTitle": {
+      "class": "newsletterform__form__title",
+      "text": "Mytheresa News",
+      "font": "OptimaLTPro-Roman",
+      "size": "20px",
+      "lineHeight": "26px",
+      "letterSpacing": "0.5px"
+    },
+    "link": {
+      "font": "AvenirNextLTPro-Medium",
+      "size": "12px",
+      "letterSpacing": "0.5px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "emailField": {
+      "name": "newsletter",
+      "height": 48,
+      "background": "rgb(255, 255, 255)",
+      "font": "AvenirNextLTPro-Medium",
+      "size": "12px",
+      "submitted": false
+    }
+  },
+  "favicon": {
+    "url": "https://www.mytheresa.com/bucket/favicon.ico",
+    "size": "32x32",
+    "yellow": "rgb(229, 206, 24)",
+    "ink": "rgb(0, 0, 0)"
+  }
+}

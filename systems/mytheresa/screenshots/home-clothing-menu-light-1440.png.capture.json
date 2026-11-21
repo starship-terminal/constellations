@@ -1,0 +1,21 @@
+{
+  "url": "https://www.mytheresa.com/sg/en/women",
+  "state": "Clothing flyout open",
+  "captured": "2026-11-22",
+  "cssViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "devicePixelRatio": 2,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800,
+    "mode": "RGB"
+  },
+  "note": "PNG is 2x the CSS viewport. The page was live. No form was submitted."
+}
