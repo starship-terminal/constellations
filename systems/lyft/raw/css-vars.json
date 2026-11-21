@@ -1,0 +1,2213 @@
+{
+  "capturedAt": "2026-11-21",
+  "page": "https://www.lyft.com/",
+  "note": "Light declarations of --core-ui-* from stylesheets on the public homepage. Dark values were not resolved because the public site has no theme switch.",
+  "colorScheme": "normal",
+  "light": {
+    "--core-ui-elevation-level1-light": {
+      "value": "0 0 1px 0 #0000001f,0 1px 1px 1px #00000014",
+      "selector": ":root",
+      "resolved": "0 0 1px 0 #0000001f,0 1px 1px 1px #00000014"
+    },
+    "--core-ui-elevation-level1-overlay-light": {
+      "value": "#ffffff0d",
+      "selector": ":root",
+      "resolved": "#ffffff0d"
+    },
+    "--core-ui-elevation-level2-light": {
+      "value": "0 0 1px 0 #0000001f,0 2px 3px 0 #00000029",
+      "selector": ":root",
+      "resolved": "0 0 1px 0 #0000001f,0 2px 3px 0 #00000029"
+    },
+    "--core-ui-elevation-level2-overlay-light": {
+      "value": "#ffffff12",
+      "selector": ":root",
+      "resolved": "#ffffff12"
+    },
+    "--core-ui-elevation-level3-light": {
+      "value": "0 0 1px 0 #0000001f,0 2px 4px 0 #00000029",
+      "selector": ":root",
+      "resolved": "0 0 1px 0 #0000001f,0 2px 4px 0 #00000029"
+    },
+    "--core-ui-elevation-level3-overlay-light": {
+      "value": "#ffffff14",
+      "selector": ":root",
+      "resolved": "#ffffff14"
+    },
+    "--core-ui-elevation-level4-light": {
+      "value": "0 0 1px 0 #0000001f,0 3px 6px 0 #00000029",
+      "selector": ":root",
+      "resolved": "0 0 1px 0 #0000001f,0 3px 6px 0 #00000029"
+    },
+    "--core-ui-elevation-level4-overlay-light": {
+      "value": "#ffffff17",
+      "selector": ":root",
+      "resolved": "#ffffff17"
+    },
+    "--core-ui-elevation-level5-light": {
+      "value": "0 0 1px 0 #0000001f,0 4px 8px 0 #00000029",
+      "selector": ":root",
+      "resolved": "0 0 1px 0 #0000001f,0 4px 8px 0 #00000029"
+    },
+    "--core-ui-elevation-level5-overlay-light": {
+      "value": "#ffffff1c",
+      "selector": ":root",
+      "resolved": "#ffffff1c"
+    },
+    "--core-ui-elevation-level6-light": {
+      "value": "0 0 1px 0 #0000001f,0 6px 10px 0 #00000029",
+      "selector": ":root",
+      "resolved": "0 0 1px 0 #0000001f,0 6px 10px 0 #00000029"
+    },
+    "--core-ui-elevation-level6-overlay-light": {
+      "value": "#ffffff1f",
+      "selector": ":root",
+      "resolved": "#ffffff1f"
+    },
+    "--core-ui-elevation-level7-light": {
+      "value": "0 0 1px 0 #0000001f,0 12px 14px 0 #00000029",
+      "selector": ":root",
+      "resolved": "0 0 1px 0 #0000001f,0 12px 14px 0 #00000029"
+    },
+    "--core-ui-elevation-level7-overlay-light": {
+      "value": "#ffffff24",
+      "selector": ":root",
+      "resolved": "#ffffff24"
+    },
+    "--core-ui-elevation-level8-light": {
+      "value": "0 6px 18px 0 #0000001f,0 14px 20px 0 #00000029",
+      "selector": ":root",
+      "resolved": "0 6px 18px 0 #0000001f,0 14px 20px 0 #00000029"
+    },
+    "--core-ui-elevation-level8-overlay-light": {
+      "value": "#ffffff26",
+      "selector": ":root",
+      "resolved": "#ffffff26"
+    },
+    "--core-ui-elevation-panel-light": {
+      "value": "0 0 1px 0 #0000001f,0 0 14px 0 #00000029",
+      "selector": ":root",
+      "resolved": "0 0 1px 0 #0000001f,0 0 14px 0 #00000029"
+    },
+    "--core-ui-elevation-panel-overlay-light": {
+      "value": "#ffffff26",
+      "selector": ":root",
+      "resolved": "#ffffff26"
+    },
+    "--core-ui-color-lyft-pink-gradient-start-light": {
+      "value": "#d7f8f3",
+      "selector": ":root",
+      "resolved": "#d7f8f3"
+    },
+    "--core-ui-color-lyft-pink-gradient-end-light": {
+      "value": "#f2efff",
+      "selector": ":root",
+      "resolved": "#f2efff"
+    },
+    "--core-ui-color-brand-interactive-light": {
+      "value": "#820076",
+      "selector": ":root",
+      "resolved": "#820076"
+    },
+    "--core-ui-color-brand-vibrant-purple-light": {
+      "value": "#a092fd",
+      "selector": ":root",
+      "resolved": "#a092fd"
+    },
+    "--core-ui-color-brand-vibrant-blue-light": {
+      "value": "#6c9ffa",
+      "selector": ":root",
+      "resolved": "#6c9ffa"
+    },
+    "--core-ui-color-brand-vibrant-green-light": {
+      "value": "#6ec590",
+      "selector": ":root",
+      "resolved": "#6ec590"
+    },
+    "--core-ui-color-brand-vibrant-yellow-light": {
+      "value": "#f7b201",
+      "selector": ":root",
+      "resolved": "#f7b201"
+    },
+    "--core-ui-color-brand-vibrant-orange-light": {
+      "value": "#fb8c0e",
+      "selector": ":root",
+      "resolved": "#fb8c0e"
+    },
+    "--core-ui-color-brand-vibrant-red-light": {
+      "value": "#ff5d66",
+      "selector": ":root",
+      "resolved": "#ff5d66"
+    },
+    "--core-ui-color-brand-vibrant-gray-light": {
+      "value": "#746a6e",
+      "selector": ":root",
+      "resolved": "#746a6e"
+    },
+    "--core-ui-color-brand-vibrant-indigo-light": {
+      "value": "#5725cf",
+      "selector": ":root",
+      "resolved": "#5725cf"
+    },
+    "--core-ui-color-brand-orange-light": {
+      "value": "#ff5312",
+      "selector": ":root",
+      "resolved": "#ff5312"
+    },
+    "--core-ui-color-brand-lime-light": {
+      "value": "#c1d58b",
+      "selector": ":root",
+      "resolved": "#c1d58b"
+    },
+    "--core-ui-color-brand-midnight-light": {
+      "value": "#1d0c17",
+      "selector": ":root",
+      "resolved": "#1d0c17"
+    },
+    "--core-ui-color-brand-pastel-purple-light": {
+      "value": "#f6ddfe",
+      "selector": ":root",
+      "resolved": "#f6ddfe"
+    },
+    "--core-ui-color-brand-pastel-blue-light": {
+      "value": "#d9e6ff",
+      "selector": ":root",
+      "resolved": "#d9e6ff"
+    },
+    "--core-ui-color-brand-pastel-green-light": {
+      "value": "#c5eed2",
+      "selector": ":root",
+      "resolved": "#c5eed2"
+    },
+    "--core-ui-color-brand-pastel-yellow-light": {
+      "value": "#ffe1b0",
+      "selector": ":root",
+      "resolved": "#ffe1b0"
+    },
+    "--core-ui-color-brand-pastel-orange-light": {
+      "value": "#ffdfc4",
+      "selector": ":root",
+      "resolved": "#ffdfc4"
+    },
+    "--core-ui-color-brand-pastel-red-light": {
+      "value": "#ffdde2",
+      "selector": ":root",
+      "resolved": "#ffdde2"
+    },
+    "--core-ui-color-brand-pastel-gray-light": {
+      "value": "#e7e5e5",
+      "selector": ":root",
+      "resolved": "#e7e5e5"
+    },
+    "--core-ui-color-brand-pastel-indigo-light": {
+      "value": "#e7e2ff",
+      "selector": ":root",
+      "resolved": "#e7e2ff"
+    },
+    "--core-ui-color-brand-pastel-pink-light": {
+      "value": "#ffdbf0",
+      "selector": ":root",
+      "resolved": "#ffdbf0"
+    },
+    "--core-ui-color-brand-background-orange-light": {
+      "value": "#ffded5",
+      "selector": ":root",
+      "resolved": "#ffded5"
+    },
+    "--core-ui-color-brand-background-lime-light": {
+      "value": "#daedab",
+      "selector": ":root",
+      "resolved": "#daedab"
+    },
+    "--core-ui-color-brand-off-white-light": {
+      "value": "#f1f0ec",
+      "selector": ":root",
+      "resolved": "#f1f0ec"
+    },
+    "--core-ui-color-brand-gray100-light": {
+      "value": "#e7e5e5",
+      "selector": ":root",
+      "resolved": "#e7e5e5"
+    },
+    "--core-ui-color-brand-gray200-light": {
+      "value": "#cfcbcc",
+      "selector": ":root",
+      "resolved": "#cfcbcc"
+    },
+    "--core-ui-color-brand-gray300-light": {
+      "value": "#b9b2b4",
+      "selector": ":root",
+      "resolved": "#b9b2b4"
+    },
+    "--core-ui-color-brand-gray400-light": {
+      "value": "#91888b",
+      "selector": ":root",
+      "resolved": "#91888b"
+    },
+    "--core-ui-color-brand-gray500-light": {
+      "value": "#746a6e",
+      "selector": ":root",
+      "resolved": "#746a6e"
+    },
+    "--core-ui-color-brand-gray600-light": {
+      "value": "#594e53",
+      "selector": ":root",
+      "resolved": "#594e53"
+    },
+    "--core-ui-color-brand-gray700-light": {
+      "value": "#31222a",
+      "selector": ":root",
+      "resolved": "#31222a"
+    },
+    "--core-ui-color-brand-black-cherry-light": {
+      "value": "#1d0c17",
+      "selector": ":root",
+      "resolved": "#1d0c17"
+    },
+    "--core-ui-color-text-primary-light": {
+      "value": "#1d0c17",
+      "selector": ":root",
+      "resolved": "#1d0c17"
+    },
+    "--core-ui-color-text-secondary-light": {
+      "value": "#1d0c17b3",
+      "selector": ":root",
+      "resolved": "#1d0c17b3"
+    },
+    "--core-ui-color-text-tertiary-light": {
+      "value": "#1d0c1799",
+      "selector": ":root",
+      "resolved": "#1d0c1799"
+    },
+    "--core-ui-color-text-placeholder-light": {
+      "value": "#1d0c1799",
+      "selector": ":root",
+      "resolved": "#1d0c1799"
+    },
+    "--core-ui-color-text-positive-light": {
+      "value": "#197849",
+      "selector": ":root",
+      "resolved": "#197849"
+    },
+    "--core-ui-color-text-negative-light": {
+      "value": "#c81534",
+      "selector": ":root",
+      "resolved": "#c81534"
+    },
+    "--core-ui-color-text-highlight-light": {
+      "value": "#cf0090",
+      "selector": ":root",
+      "resolved": "#cf0090"
+    },
+    "--core-ui-color-text-interactive-light": {
+      "value": "#ac2a9e",
+      "selector": ":root",
+      "resolved": "#ac2a9e"
+    },
+    "--core-ui-color-text-interactive-legal-light": {
+      "value": "#ac2a9e",
+      "selector": ":root",
+      "resolved": "#ac2a9e"
+    },
+    "--core-ui-color-text-primary-inverse-light": {
+      "value": "#fff",
+      "selector": ":root",
+      "resolved": "#fff"
+    },
+    "--core-ui-color-icon-primary-light": {
+      "value": "#1d0c17",
+      "selector": ":root",
+      "resolved": "#1d0c17"
+    },
+    "--core-ui-color-icon-secondary-light": {
+      "value": "#1d0c17b3",
+      "selector": ":root",
+      "resolved": "#1d0c17b3"
+    },
+    "--core-ui-color-icon-tertiary-light": {
+      "value": "#1d0c1799",
+      "selector": ":root",
+      "resolved": "#1d0c1799"
+    },
+    "--core-ui-color-icon-positive-light": {
+      "value": "#197849",
+      "selector": ":root",
+      "resolved": "#197849"
+    },
+    "--core-ui-color-icon-negative-light": {
+      "value": "#c81534",
+      "selector": ":root",
+      "resolved": "#c81534"
+    },
+    "--core-ui-color-icon-highlight-light": {
+      "value": "#cf0090",
+      "selector": ":root",
+      "resolved": "#cf0090"
+    },
+    "--core-ui-color-icon-interactive-light": {
+      "value": "#ac2a9e",
+      "selector": ":root",
+      "resolved": "#ac2a9e"
+    },
+    "--core-ui-color-icon-primary-inverse-light": {
+      "value": "#fff",
+      "selector": ":root",
+      "resolved": "#fff"
+    },
+    "--core-ui-color-background-primary-light": {
+      "value": "#fff",
+      "selector": ":root",
+      "resolved": "#fff"
+    },
+    "--core-ui-color-background-secondary-light": {
+      "value": "#f1f0ec",
+      "selector": ":root",
+      "resolved": "#f1f0ec"
+    },
+    "--core-ui-color-background-scrim-light": {
+      "value": "#1d0c174d",
+      "selector": ":root",
+      "resolved": "#1d0c174d"
+    },
+    "--core-ui-color-background-neutral-light": {
+      "value": "#f1f0f0",
+      "selector": ":root",
+      "resolved": "#f1f0f0"
+    },
+    "--core-ui-color-surface-primary-light": {
+      "value": "#fff",
+      "selector": ":root",
+      "resolved": "#fff"
+    },
+    "--core-ui-color-surface-secondary-light": {
+      "value": "#36220112",
+      "selector": ":root",
+      "resolved": "#36220112"
+    },
+    "--core-ui-color-surface-tertiary-light": {
+      "value": "#36220129",
+      "selector": ":root",
+      "resolved": "#36220129"
+    },
+    "--core-ui-color-surface-primary-inverse-light": {
+      "value": "#473a40",
+      "selector": ":root",
+      "resolved": "#473a40"
+    },
+    "--core-ui-color-surface-interactive-light": {
+      "value": "#820076",
+      "selector": ":root",
+      "resolved": "#820076"
+    },
+    "--core-ui-color-surface-positive-light": {
+      "value": "#197849",
+      "selector": ":root",
+      "resolved": "#197849"
+    },
+    "--core-ui-color-surface-negative-light": {
+      "value": "#c81534",
+      "selector": ":root",
+      "resolved": "#c81534"
+    },
+    "--core-ui-color-surface-selected-light": {
+      "value": "#820076",
+      "selector": ":root",
+      "resolved": "#820076"
+    },
+    "--core-ui-color-surface-selected-inverse-light": {
+      "value": "#fff",
+      "selector": ":root",
+      "resolved": "#fff"
+    },
+    "--core-ui-color-surface-neutral-light": {
+      "value": "#31222a12",
+      "selector": ":root",
+      "resolved": "#31222a12"
+    },
+    "--core-ui-color-elevation-overlay-light": {
+      "value": "#fff0",
+      "selector": ":root",
+      "resolved": "#fff0"
+    },
+    "--core-ui-color-stroke-primary-light": {
+      "value": "#1d0c17",
+      "selector": ":root",
+      "resolved": "#1d0c17"
+    },
+    "--core-ui-color-stroke-secondary-light": {
+      "value": "#1d0c1773",
+      "selector": ":root",
+      "resolved": "#1d0c1773"
+    },
+    "--core-ui-color-stroke-tertiary-light": {
+      "value": "#36220129",
+      "selector": ":root",
+      "resolved": "#36220129"
+    },
+    "--core-ui-color-stroke-primary-inverse-light": {
+      "value": "#fff",
+      "selector": ":root",
+      "resolved": "#fff"
+    },
+    "--core-ui-color-stroke-interactive-light": {
+      "value": "#820076",
+      "selector": ":root",
+      "resolved": "#820076"
+    },
+    "--core-ui-color-stroke-negative-light": {
+      "value": "#c81534",
+      "selector": ":root",
+      "resolved": "#c81534"
+    },
+    "--core-ui-color-stroke-highlight-light": {
+      "value": "#cf0090",
+      "selector": ":root",
+      "resolved": "#cf0090"
+    },
+    "--core-ui-color-lyftPink-light": {
+      "value": "#ff00bf",
+      "selector": ":root",
+      "resolved": "#ff00bf"
+    },
+    "--core-ui-color-alwaysWhite-light": {
+      "value": "#fff",
+      "selector": ":root",
+      "resolved": "#fff"
+    },
+    "--core-ui-color-alwaysBlack-light": {
+      "value": "#000",
+      "selector": ":root",
+      "resolved": "#000"
+    },
+    "--core-ui-color-amber0-light": {
+      "value": "#fff4eb",
+      "selector": ":root",
+      "resolved": "#fff4eb"
+    },
+    "--core-ui-color-amber5-light": {
+      "value": "#ffeee0",
+      "selector": ":root",
+      "resolved": "#ffeee0"
+    },
+    "--core-ui-color-amber10-light": {
+      "value": "#ffdfc4",
+      "selector": ":root",
+      "resolved": "#ffdfc4"
+    },
+    "--core-ui-color-amber15-light": {
+      "value": "#ffc999",
+      "selector": ":root",
+      "resolved": "#ffc999"
+    },
+    "--core-ui-color-amber20-light": {
+      "value": "#ffa957",
+      "selector": ":root",
+      "resolved": "#ffa957"
+    },
+    "--core-ui-color-amber30-light": {
+      "value": "#fb8c0e",
+      "selector": ":root",
+      "resolved": "#fb8c0e"
+    },
+    "--core-ui-color-amber40-light": {
+      "value": "#eb7f00",
+      "selector": ":root",
+      "resolved": "#eb7f00"
+    },
+    "--core-ui-color-amber50-light": {
+      "value": "#ce6d00",
+      "selector": ":root",
+      "resolved": "#ce6d00"
+    },
+    "--core-ui-color-amber60-light": {
+      "value": "#aa5801",
+      "selector": ":root",
+      "resolved": "#aa5801"
+    },
+    "--core-ui-color-amber70-light": {
+      "value": "#803f00",
+      "selector": ":root",
+      "resolved": "#803f00"
+    },
+    "--core-ui-color-amber80-light": {
+      "value": "#803f00",
+      "selector": ":root",
+      "resolved": "#803f00"
+    },
+    "--core-ui-color-amber90-light": {
+      "value": "#622e00",
+      "selector": ":root",
+      "resolved": "#622e00"
+    },
+    "--core-ui-color-amber100-light": {
+      "value": "#3f1a00",
+      "selector": ":root",
+      "resolved": "#3f1a00"
+    },
+    "--core-ui-color-blue0-light": {
+      "value": "#f1f6ff",
+      "selector": ":root",
+      "resolved": "#f1f6ff"
+    },
+    "--core-ui-color-blue5-light": {
+      "value": "#eaf1ff",
+      "selector": ":root",
+      "resolved": "#eaf1ff"
+    },
+    "--core-ui-color-blue10-light": {
+      "value": "#d9e6ff",
+      "selector": ":root",
+      "resolved": "#d9e6ff"
+    },
+    "--core-ui-color-blue15-light": {
+      "value": "#c5d9ff",
+      "selector": ":root",
+      "resolved": "#c5d9ff"
+    },
+    "--core-ui-color-blue20-light": {
+      "value": "#b0ccfe",
+      "selector": ":root",
+      "resolved": "#b0ccfe"
+    },
+    "--core-ui-color-blue30-light": {
+      "value": "#8ab4fc",
+      "selector": ":root",
+      "resolved": "#8ab4fc"
+    },
+    "--core-ui-color-blue40-light": {
+      "value": "#6c9ffa",
+      "selector": ":root",
+      "resolved": "#6c9ffa"
+    },
+    "--core-ui-color-blue50-light": {
+      "value": "#4585f3",
+      "selector": ":root",
+      "resolved": "#4585f3"
+    },
+    "--core-ui-color-blue60-light": {
+      "value": "#276ad0",
+      "selector": ":root",
+      "resolved": "#276ad0"
+    },
+    "--core-ui-color-blue70-light": {
+      "value": "#184da4",
+      "selector": ":root",
+      "resolved": "#184da4"
+    },
+    "--core-ui-color-blue80-light": {
+      "value": "#184da4",
+      "selector": ":root",
+      "resolved": "#184da4"
+    },
+    "--core-ui-color-blue90-light": {
+      "value": "#0a3880",
+      "selector": ":root",
+      "resolved": "#0a3880"
+    },
+    "--core-ui-color-blue100-light": {
+      "value": "#032057",
+      "selector": ":root",
+      "resolved": "#032057"
+    },
+    "--core-ui-color-brown0-light": {
+      "value": "#f7f6f3",
+      "selector": ":root",
+      "resolved": "#f7f6f3"
+    },
+    "--core-ui-color-brown5-light": {
+      "value": "#f1f0ec",
+      "selector": ":root",
+      "resolved": "#f1f0ec"
+    },
+    "--core-ui-color-brown10-light": {
+      "value": "#e9e5da",
+      "selector": ":root",
+      "resolved": "#e9e5da"
+    },
+    "--core-ui-color-brown15-light": {
+      "value": "#e3d8c6",
+      "selector": ":root",
+      "resolved": "#e3d8c6"
+    },
+    "--core-ui-color-brown20-light": {
+      "value": "#dcc9b4",
+      "selector": ":root",
+      "resolved": "#dcc9b4"
+    },
+    "--core-ui-color-brown30-light": {
+      "value": "#d5b79d",
+      "selector": ":root",
+      "resolved": "#d5b79d"
+    },
+    "--core-ui-color-brown40-light": {
+      "value": "#b9987b",
+      "selector": ":root",
+      "resolved": "#b9987b"
+    },
+    "--core-ui-color-brown50-light": {
+      "value": "#a38366",
+      "selector": ":root",
+      "resolved": "#a38366"
+    },
+    "--core-ui-color-brown60-light": {
+      "value": "#84674c",
+      "selector": ":root",
+      "resolved": "#84674c"
+    },
+    "--core-ui-color-brown70-light": {
+      "value": "#654b34",
+      "selector": ":root",
+      "resolved": "#654b34"
+    },
+    "--core-ui-color-brown80-light": {
+      "value": "#654b34",
+      "selector": ":root",
+      "resolved": "#654b34"
+    },
+    "--core-ui-color-brown90-light": {
+      "value": "#4e3924",
+      "selector": ":root",
+      "resolved": "#4e3924"
+    },
+    "--core-ui-color-brown100-light": {
+      "value": "#362201",
+      "selector": ":root",
+      "resolved": "#362201"
+    },
+    "--core-ui-color-citron0-light": {
+      "value": "#fbf6e0",
+      "selector": ":root",
+      "resolved": "#fbf6e0"
+    },
+    "--core-ui-color-citron5-light": {
+      "value": "#f8f1d0",
+      "selector": ":root",
+      "resolved": "#f8f1d0"
+    },
+    "--core-ui-color-citron10-light": {
+      "value": "#f3e6a0",
+      "selector": ":root",
+      "resolved": "#f3e6a0"
+    },
+    "--core-ui-color-citron15-light": {
+      "value": "#eada82",
+      "selector": ":root",
+      "resolved": "#eada82"
+    },
+    "--core-ui-color-citron20-light": {
+      "value": "#dfce73",
+      "selector": ":root",
+      "resolved": "#dfce73"
+    },
+    "--core-ui-color-citron30-light": {
+      "value": "#c8b85e",
+      "selector": ":root",
+      "resolved": "#c8b85e"
+    },
+    "--core-ui-color-citron40-light": {
+      "value": "#ae9f4a",
+      "selector": ":root",
+      "resolved": "#ae9f4a"
+    },
+    "--core-ui-color-citron50-light": {
+      "value": "#988936",
+      "selector": ":root",
+      "resolved": "#988936"
+    },
+    "--core-ui-color-citron60-light": {
+      "value": "#7a6e24",
+      "selector": ":root",
+      "resolved": "#7a6e24"
+    },
+    "--core-ui-color-citron70-light": {
+      "value": "#5d5212",
+      "selector": ":root",
+      "resolved": "#5d5212"
+    },
+    "--core-ui-color-citron80-light": {
+      "value": "#5d5212",
+      "selector": ":root",
+      "resolved": "#5d5212"
+    },
+    "--core-ui-color-citron90-light": {
+      "value": "#453d06",
+      "selector": ":root",
+      "resolved": "#453d06"
+    },
+    "--core-ui-color-citron100-light": {
+      "value": "#2c2601",
+      "selector": ":root",
+      "resolved": "#2c2601"
+    },
+    "--core-ui-color-cyan0-light": {
+      "value": "#edf7ff",
+      "selector": ":root",
+      "resolved": "#edf7ff"
+    },
+    "--core-ui-color-cyan5-light": {
+      "value": "#e3f3ff",
+      "selector": ":root",
+      "resolved": "#e3f3ff"
+    },
+    "--core-ui-color-cyan10-light": {
+      "value": "#cce9ff",
+      "selector": ":root",
+      "resolved": "#cce9ff"
+    },
+    "--core-ui-color-cyan15-light": {
+      "value": "#b1deff",
+      "selector": ":root",
+      "resolved": "#b1deff"
+    },
+    "--core-ui-color-cyan20-light": {
+      "value": "#94d2fd",
+      "selector": ":root",
+      "resolved": "#94d2fd"
+    },
+    "--core-ui-color-cyan30-light": {
+      "value": "#64bcf5",
+      "selector": ":root",
+      "resolved": "#64bcf5"
+    },
+    "--core-ui-color-cyan40-light": {
+      "value": "#4ca7dd",
+      "selector": ":root",
+      "resolved": "#4ca7dd"
+    },
+    "--core-ui-color-cyan50-light": {
+      "value": "#308dc2",
+      "selector": ":root",
+      "resolved": "#308dc2"
+    },
+    "--core-ui-color-cyan60-light": {
+      "value": "#1572a1",
+      "selector": ":root",
+      "resolved": "#1572a1"
+    },
+    "--core-ui-color-cyan70-light": {
+      "value": "#00567d",
+      "selector": ":root",
+      "resolved": "#00567d"
+    },
+    "--core-ui-color-cyan80-light": {
+      "value": "#00567d",
+      "selector": ":root",
+      "resolved": "#00567d"
+    },
+    "--core-ui-color-cyan90-light": {
+      "value": "#00405e",
+      "selector": ":root",
+      "resolved": "#00405e"
+    },
+    "--core-ui-color-cyan100-light": {
+      "value": "#00263a",
+      "selector": ":root",
+      "resolved": "#00263a"
+    },
+    "--core-ui-color-gray0-light": {
+      "value": "#fff",
+      "selector": ":root",
+      "resolved": "#fff"
+    },
+    "--core-ui-color-gray5-light": {
+      "value": "#f6f5f5",
+      "selector": ":root",
+      "resolved": "#f6f5f5"
+    },
+    "--core-ui-color-gray8-light": {
+      "value": "#f1f0f0",
+      "selector": ":root",
+      "resolved": "#f1f0f0"
+    },
+    "--core-ui-color-gray10-light": {
+      "value": "#e7e5e5",
+      "selector": ":root",
+      "resolved": "#e7e5e5"
+    },
+    "--core-ui-color-gray15-light": {
+      "value": "#dad8d8",
+      "selector": ":root",
+      "resolved": "#dad8d8"
+    },
+    "--core-ui-color-gray20-light": {
+      "value": "#cfcbcc",
+      "selector": ":root",
+      "resolved": "#cfcbcc"
+    },
+    "--core-ui-color-gray30-light": {
+      "value": "#b9b2b4",
+      "selector": ":root",
+      "resolved": "#b9b2b4"
+    },
+    "--core-ui-color-gray40-light": {
+      "value": "#a1989b",
+      "selector": ":root",
+      "resolved": "#a1989b"
+    },
+    "--core-ui-color-gray50-light": {
+      "value": "#91888b",
+      "selector": ":root",
+      "resolved": "#91888b"
+    },
+    "--core-ui-color-gray60-light": {
+      "value": "#746a6e",
+      "selector": ":root",
+      "resolved": "#746a6e"
+    },
+    "--core-ui-color-gray70-light": {
+      "value": "#594e53",
+      "selector": ":root",
+      "resolved": "#594e53"
+    },
+    "--core-ui-color-gray80-light": {
+      "value": "#473a40",
+      "selector": ":root",
+      "resolved": "#473a40"
+    },
+    "--core-ui-color-gray90-light": {
+      "value": "#31222a",
+      "selector": ":root",
+      "resolved": "#31222a"
+    },
+    "--core-ui-color-gray100-light": {
+      "value": "#1d0c17",
+      "selector": ":root",
+      "resolved": "#1d0c17"
+    },
+    "--core-ui-color-green0-light": {
+      "value": "#ebfaea",
+      "selector": ":root",
+      "resolved": "#ebfaea"
+    },
+    "--core-ui-color-green5-light": {
+      "value": "#e0f7df",
+      "selector": ":root",
+      "resolved": "#e0f7df"
+    },
+    "--core-ui-color-green10-light": {
+      "value": "#c8efc7",
+      "selector": ":root",
+      "resolved": "#c8efc7"
+    },
+    "--core-ui-color-green15-light": {
+      "value": "#a8e9a6",
+      "selector": ":root",
+      "resolved": "#a8e9a6"
+    },
+    "--core-ui-color-green20-light": {
+      "value": "#8edd8d",
+      "selector": ":root",
+      "resolved": "#8edd8d"
+    },
+    "--core-ui-color-green30-light": {
+      "value": "#70c670",
+      "selector": ":root",
+      "resolved": "#70c670"
+    },
+    "--core-ui-color-green40-light": {
+      "value": "#58ae5a",
+      "selector": ":root",
+      "resolved": "#58ae5a"
+    },
+    "--core-ui-color-green50-light": {
+      "value": "#419743",
+      "selector": ":root",
+      "resolved": "#419743"
+    },
+    "--core-ui-color-green60-light": {
+      "value": "#2c7b30",
+      "selector": ":root",
+      "resolved": "#2c7b30"
+    },
+    "--core-ui-color-green70-light": {
+      "value": "#155e1f",
+      "selector": ":root",
+      "resolved": "#155e1f"
+    },
+    "--core-ui-color-green80-light": {
+      "value": "#155e1f",
+      "selector": ":root",
+      "resolved": "#155e1f"
+    },
+    "--core-ui-color-green90-light": {
+      "value": "#01470f",
+      "selector": ":root",
+      "resolved": "#01470f"
+    },
+    "--core-ui-color-green100-light": {
+      "value": "#002c08",
+      "selector": ":root",
+      "resolved": "#002c08"
+    },
+    "--core-ui-color-indigo0-light": {
+      "value": "#f7f5ff",
+      "selector": ":root",
+      "resolved": "#f7f5ff"
+    },
+    "--core-ui-color-indigo5-light": {
+      "value": "#f2efff",
+      "selector": ":root",
+      "resolved": "#f2efff"
+    },
+    "--core-ui-color-indigo10-light": {
+      "value": "#e7e2ff",
+      "selector": ":root",
+      "resolved": "#e7e2ff"
+    },
+    "--core-ui-color-indigo15-light": {
+      "value": "#dad5ff",
+      "selector": ":root",
+      "resolved": "#dad5ff"
+    },
+    "--core-ui-color-indigo20-light": {
+      "value": "#ccc4ff",
+      "selector": ":root",
+      "resolved": "#ccc4ff"
+    },
+    "--core-ui-color-indigo30-light": {
+      "value": "#b3a9fe",
+      "selector": ":root",
+      "resolved": "#b3a9fe"
+    },
+    "--core-ui-color-indigo40-light": {
+      "value": "#a092fd",
+      "selector": ":root",
+      "resolved": "#a092fd"
+    },
+    "--core-ui-color-indigo50-light": {
+      "value": "#8a73f8",
+      "selector": ":root",
+      "resolved": "#8a73f8"
+    },
+    "--core-ui-color-indigo60-light": {
+      "value": "#734af7",
+      "selector": ":root",
+      "resolved": "#734af7"
+    },
+    "--core-ui-color-indigo70-light": {
+      "value": "#5725cf",
+      "selector": ":root",
+      "resolved": "#5725cf"
+    },
+    "--core-ui-color-indigo80-light": {
+      "value": "#5725cf",
+      "selector": ":root",
+      "resolved": "#5725cf"
+    },
+    "--core-ui-color-indigo90-light": {
+      "value": "#3e1a9e",
+      "selector": ":root",
+      "resolved": "#3e1a9e"
+    },
+    "--core-ui-color-indigo100-light": {
+      "value": "#250668",
+      "selector": ":root",
+      "resolved": "#250668"
+    },
+    "--core-ui-color-lime0-light": {
+      "value": "#f1f9e3",
+      "selector": ":root",
+      "resolved": "#f1f9e3"
+    },
+    "--core-ui-color-lime5-light": {
+      "value": "#e9f6d0",
+      "selector": ":root",
+      "resolved": "#e9f6d0"
+    },
+    "--core-ui-color-lime10-light": {
+      "value": "#daedab",
+      "selector": ":root",
+      "resolved": "#daedab"
+    },
+    "--core-ui-color-lime15-light": {
+      "value": "#cde197",
+      "selector": ":root",
+      "resolved": "#cde197"
+    },
+    "--core-ui-color-lime20-light": {
+      "value": "#c1d58b",
+      "selector": ":root",
+      "resolved": "#c1d58b"
+    },
+    "--core-ui-color-lime30-light": {
+      "value": "#a8bb74",
+      "selector": ":root",
+      "resolved": "#a8bb74"
+    },
+    "--core-ui-color-lime40-light": {
+      "value": "#90a35e",
+      "selector": ":root",
+      "resolved": "#90a35e"
+    },
+    "--core-ui-color-lime50-light": {
+      "value": "#7e904e",
+      "selector": ":root",
+      "resolved": "#7e904e"
+    },
+    "--core-ui-color-lime60-light": {
+      "value": "#627435",
+      "selector": ":root",
+      "resolved": "#627435"
+    },
+    "--core-ui-color-lime70-light": {
+      "value": "#49581f",
+      "selector": ":root",
+      "resolved": "#49581f"
+    },
+    "--core-ui-color-lime80-light": {
+      "value": "#49581f",
+      "selector": ":root",
+      "resolved": "#49581f"
+    },
+    "--core-ui-color-lime90-light": {
+      "value": "#34420b",
+      "selector": ":root",
+      "resolved": "#34420b"
+    },
+    "--core-ui-color-lime100-light": {
+      "value": "#1f2a02",
+      "selector": ":root",
+      "resolved": "#1f2a02"
+    },
+    "--core-ui-color-mint0-light": {
+      "value": "#e9faee",
+      "selector": ":root",
+      "resolved": "#e9faee"
+    },
+    "--core-ui-color-mint5-light": {
+      "value": "#d9f9e2",
+      "selector": ":root",
+      "resolved": "#d9f9e2"
+    },
+    "--core-ui-color-mint10-light": {
+      "value": "#c5eed2",
+      "selector": ":root",
+      "resolved": "#c5eed2"
+    },
+    "--core-ui-color-mint15-light": {
+      "value": "#a8e7bd",
+      "selector": ":root",
+      "resolved": "#a8e7bd"
+    },
+    "--core-ui-color-mint20-light": {
+      "value": "#8fdbaa",
+      "selector": ":root",
+      "resolved": "#8fdbaa"
+    },
+    "--core-ui-color-mint30-light": {
+      "value": "#6ec590",
+      "selector": ":root",
+      "resolved": "#6ec590"
+    },
+    "--core-ui-color-mint40-light": {
+      "value": "#54ad78",
+      "selector": ":root",
+      "resolved": "#54ad78"
+    },
+    "--core-ui-color-mint50-light": {
+      "value": "#3f9363",
+      "selector": ":root",
+      "resolved": "#3f9363"
+    },
+    "--core-ui-color-mint60-light": {
+      "value": "#197849",
+      "selector": ":root",
+      "resolved": "#197849"
+    },
+    "--core-ui-color-mint70-light": {
+      "value": "#015e36",
+      "selector": ":root",
+      "resolved": "#015e36"
+    },
+    "--core-ui-color-mint80-light": {
+      "value": "#015e36",
+      "selector": ":root",
+      "resolved": "#015e36"
+    },
+    "--core-ui-color-mint90-light": {
+      "value": "#004627",
+      "selector": ":root",
+      "resolved": "#004627"
+    },
+    "--core-ui-color-mint100-light": {
+      "value": "#002c16",
+      "selector": ":root",
+      "resolved": "#002c16"
+    },
+    "--core-ui-color-orange0-light": {
+      "value": "#fff4f1",
+      "selector": ":root",
+      "resolved": "#fff4f1"
+    },
+    "--core-ui-color-orange5-light": {
+      "value": "#ffede8",
+      "selector": ":root",
+      "resolved": "#ffede8"
+    },
+    "--core-ui-color-orange10-light": {
+      "value": "#ffded5",
+      "selector": ":root",
+      "resolved": "#ffded5"
+    },
+    "--core-ui-color-orange15-light": {
+      "value": "#ffc5b5",
+      "selector": ":root",
+      "resolved": "#ffc5b5"
+    },
+    "--core-ui-color-orange20-light": {
+      "value": "#ffa489",
+      "selector": ":root",
+      "resolved": "#ffa489"
+    },
+    "--core-ui-color-orange30-light": {
+      "value": "#ff784d",
+      "selector": ":root",
+      "resolved": "#ff784d"
+    },
+    "--core-ui-color-orange40-light": {
+      "value": "#ff5312",
+      "selector": ":root",
+      "resolved": "#ff5312"
+    },
+    "--core-ui-color-orange50-light": {
+      "value": "#e7480b",
+      "selector": ":root",
+      "resolved": "#e7480b"
+    },
+    "--core-ui-color-orange60-light": {
+      "value": "#c13800",
+      "selector": ":root",
+      "resolved": "#c13800"
+    },
+    "--core-ui-color-orange70-light": {
+      "value": "#922800",
+      "selector": ":root",
+      "resolved": "#922800"
+    },
+    "--core-ui-color-orange80-light": {
+      "value": "#922800",
+      "selector": ":root",
+      "resolved": "#922800"
+    },
+    "--core-ui-color-orange90-light": {
+      "value": "#701c00",
+      "selector": ":root",
+      "resolved": "#701c00"
+    },
+    "--core-ui-color-orange100-light": {
+      "value": "#470f00",
+      "selector": ":root",
+      "resolved": "#470f00"
+    },
+    "--core-ui-color-pink0-light": {
+      "value": "#fff2fa",
+      "selector": ":root",
+      "resolved": "#fff2fa"
+    },
+    "--core-ui-color-pink5-light": {
+      "value": "#ffebf7",
+      "selector": ":root",
+      "resolved": "#ffebf7"
+    },
+    "--core-ui-color-pink10-light": {
+      "value": "#ffdbf0",
+      "selector": ":root",
+      "resolved": "#ffdbf0"
+    },
+    "--core-ui-color-pink15-light": {
+      "value": "#ffcaea",
+      "selector": ":root",
+      "resolved": "#ffcaea"
+    },
+    "--core-ui-color-pink20-light": {
+      "value": "#ffabde",
+      "selector": ":root",
+      "resolved": "#ffabde"
+    },
+    "--core-ui-color-pink30-light": {
+      "value": "#ff7fcf",
+      "selector": ":root",
+      "resolved": "#ff7fcf"
+    },
+    "--core-ui-color-pink40-light": {
+      "value": "#f759bd",
+      "selector": ":root",
+      "resolved": "#f759bd"
+    },
+    "--core-ui-color-pink50-light": {
+      "value": "#eb2cab",
+      "selector": ":root",
+      "resolved": "#eb2cab"
+    },
+    "--core-ui-color-pink60-light": {
+      "value": "#cf0090",
+      "selector": ":root",
+      "resolved": "#cf0090"
+    },
+    "--core-ui-color-pink70-light": {
+      "value": "#9e006d",
+      "selector": ":root",
+      "resolved": "#9e006d"
+    },
+    "--core-ui-color-pink80-light": {
+      "value": "#9e006d",
+      "selector": ":root",
+      "resolved": "#9e006d"
+    },
+    "--core-ui-color-pink90-light": {
+      "value": "#6f004a",
+      "selector": ":root",
+      "resolved": "#6f004a"
+    },
+    "--core-ui-color-pink100-light": {
+      "value": "#46002b",
+      "selector": ":root",
+      "resolved": "#46002b"
+    },
+    "--core-ui-color-purple0-light": {
+      "value": "#fbf3ff",
+      "selector": ":root",
+      "resolved": "#fbf3ff"
+    },
+    "--core-ui-color-purple5-light": {
+      "value": "#faecfe",
+      "selector": ":root",
+      "resolved": "#faecfe"
+    },
+    "--core-ui-color-purple10-light": {
+      "value": "#f6ddfe",
+      "selector": ":root",
+      "resolved": "#f6ddfe"
+    },
+    "--core-ui-color-purple15-light": {
+      "value": "#f1cdfb",
+      "selector": ":root",
+      "resolved": "#f1cdfb"
+    },
+    "--core-ui-color-purple20-light": {
+      "value": "#ecb1f7",
+      "selector": ":root",
+      "resolved": "#ecb1f7"
+    },
+    "--core-ui-color-purple30-light": {
+      "value": "#e589f0",
+      "selector": ":root",
+      "resolved": "#e589f0"
+    },
+    "--core-ui-color-purple40-light": {
+      "value": "#e264e7",
+      "selector": ":root",
+      "resolved": "#e264e7"
+    },
+    "--core-ui-color-purple50-light": {
+      "value": "#d145cd",
+      "selector": ":root",
+      "resolved": "#d145cd"
+    },
+    "--core-ui-color-purple60-light": {
+      "value": "#ac2a9e",
+      "selector": ":root",
+      "resolved": "#ac2a9e"
+    },
+    "--core-ui-color-purple70-light": {
+      "value": "#820076",
+      "selector": ":root",
+      "resolved": "#820076"
+    },
+    "--core-ui-color-purple80-light": {
+      "value": "#820076",
+      "selector": ":root",
+      "resolved": "#820076"
+    },
+    "--core-ui-color-purple90-light": {
+      "value": "#6a0061",
+      "selector": ":root",
+      "resolved": "#6a0061"
+    },
+    "--core-ui-color-purple100-light": {
+      "value": "#42003b",
+      "selector": ":root",
+      "resolved": "#42003b"
+    },
+    "--core-ui-color-red0-light": {
+      "value": "#fff2f1",
+      "selector": ":root",
+      "resolved": "#fff2f1"
+    },
+    "--core-ui-color-red5-light": {
+      "value": "#ffedec",
+      "selector": ":root",
+      "resolved": "#ffedec"
+    },
+    "--core-ui-color-red10-light": {
+      "value": "#ffdedd",
+      "selector": ":root",
+      "resolved": "#ffdedd"
+    },
+    "--core-ui-color-red15-light": {
+      "value": "#ffcdcc",
+      "selector": ":root",
+      "resolved": "#ffcdcc"
+    },
+    "--core-ui-color-red20-light": {
+      "value": "#ffafae",
+      "selector": ":root",
+      "resolved": "#ffafae"
+    },
+    "--core-ui-color-red30-light": {
+      "value": "#ff8588",
+      "selector": ":root",
+      "resolved": "#ff8588"
+    },
+    "--core-ui-color-red40-light": {
+      "value": "#ff5d66",
+      "selector": ":root",
+      "resolved": "#ff5d66"
+    },
+    "--core-ui-color-red50-light": {
+      "value": "#f0384d",
+      "selector": ":root",
+      "resolved": "#f0384d"
+    },
+    "--core-ui-color-red60-light": {
+      "value": "#c81534",
+      "selector": ":root",
+      "resolved": "#c81534"
+    },
+    "--core-ui-color-red70-light": {
+      "value": "#9b0023",
+      "selector": ":root",
+      "resolved": "#9b0023"
+    },
+    "--core-ui-color-red80-light": {
+      "value": "#9b0023",
+      "selector": ":root",
+      "resolved": "#9b0023"
+    },
+    "--core-ui-color-red90-light": {
+      "value": "#750018",
+      "selector": ":root",
+      "resolved": "#750018"
+    },
+    "--core-ui-color-red100-light": {
+      "value": "#4c000c",
+      "selector": ":root",
+      "resolved": "#4c000c"
+    },
+    "--core-ui-color-rose0-light": {
+      "value": "#fff3f4",
+      "selector": ":root",
+      "resolved": "#fff3f4"
+    },
+    "--core-ui-color-rose5-light": {
+      "value": "#ffecef",
+      "selector": ":root",
+      "resolved": "#ffecef"
+    },
+    "--core-ui-color-rose10-light": {
+      "value": "#ffdde2",
+      "selector": ":root",
+      "resolved": "#ffdde2"
+    },
+    "--core-ui-color-rose15-light": {
+      "value": "#ffccd5",
+      "selector": ":root",
+      "resolved": "#ffccd5"
+    },
+    "--core-ui-color-rose20-light": {
+      "value": "#ffb0bf",
+      "selector": ":root",
+      "resolved": "#ffb0bf"
+    },
+    "--core-ui-color-rose30-light": {
+      "value": "#ff84a3",
+      "selector": ":root",
+      "resolved": "#ff84a3"
+    },
+    "--core-ui-color-rose40-light": {
+      "value": "#ff5b8c",
+      "selector": ":root",
+      "resolved": "#ff5b8c"
+    },
+    "--core-ui-color-rose50-light": {
+      "value": "#f03677",
+      "selector": ":root",
+      "resolved": "#f03677"
+    },
+    "--core-ui-color-rose60-light": {
+      "value": "#c60b5a",
+      "selector": ":root",
+      "resolved": "#c60b5a"
+    },
+    "--core-ui-color-rose70-light": {
+      "value": "#9f0045",
+      "selector": ":root",
+      "resolved": "#9f0045"
+    },
+    "--core-ui-color-rose80-light": {
+      "value": "#9f0045",
+      "selector": ":root",
+      "resolved": "#9f0045"
+    },
+    "--core-ui-color-rose90-light": {
+      "value": "#730031",
+      "selector": ":root",
+      "resolved": "#730031"
+    },
+    "--core-ui-color-rose100-light": {
+      "value": "#48001c",
+      "selector": ":root",
+      "resolved": "#48001c"
+    },
+    "--core-ui-color-sunset0-light": {
+      "value": "#fff3f1",
+      "selector": ":root",
+      "resolved": "#fff3f1"
+    },
+    "--core-ui-color-sunset5-light": {
+      "value": "#ffedea",
+      "selector": ":root",
+      "resolved": "#ffedea"
+    },
+    "--core-ui-color-sunset10-light": {
+      "value": "#ffded9",
+      "selector": ":root",
+      "resolved": "#ffded9"
+    },
+    "--core-ui-color-sunset15-light": {
+      "value": "#ffc8c1",
+      "selector": ":root",
+      "resolved": "#ffc8c1"
+    },
+    "--core-ui-color-sunset20-light": {
+      "value": "#ffab9e",
+      "selector": ":root",
+      "resolved": "#ffab9e"
+    },
+    "--core-ui-color-sunset30-light": {
+      "value": "#ff8071",
+      "selector": ":root",
+      "resolved": "#ff8071"
+    },
+    "--core-ui-color-sunset40-light": {
+      "value": "#fc5c4c",
+      "selector": ":root",
+      "resolved": "#fc5c4c"
+    },
+    "--core-ui-color-sunset50-light": {
+      "value": "#ed3e30",
+      "selector": ":root",
+      "resolved": "#ed3e30"
+    },
+    "--core-ui-color-sunset60-light": {
+      "value": "#c5261d",
+      "selector": ":root",
+      "resolved": "#c5261d"
+    },
+    "--core-ui-color-sunset70-light": {
+      "value": "#9c0205",
+      "selector": ":root",
+      "resolved": "#9c0205"
+    },
+    "--core-ui-color-sunset80-light": {
+      "value": "#9c0205",
+      "selector": ":root",
+      "resolved": "#9c0205"
+    },
+    "--core-ui-color-sunset90-light": {
+      "value": "#750002",
+      "selector": ":root",
+      "resolved": "#750002"
+    },
+    "--core-ui-color-sunset100-light": {
+      "value": "#4c0003",
+      "selector": ":root",
+      "resolved": "#4c0003"
+    },
+    "--core-ui-color-teal0-light": {
+      "value": "#e6faf6",
+      "selector": ":root",
+      "resolved": "#e6faf6"
+    },
+    "--core-ui-color-teal5-light": {
+      "value": "#d7f8f3",
+      "selector": ":root",
+      "resolved": "#d7f8f3"
+    },
+    "--core-ui-color-teal10-light": {
+      "value": "#bff0e9",
+      "selector": ":root",
+      "resolved": "#bff0e9"
+    },
+    "--core-ui-color-teal15-light": {
+      "value": "#9ee3d9",
+      "selector": ":root",
+      "resolved": "#9ee3d9"
+    },
+    "--core-ui-color-teal20-light": {
+      "value": "#89d9ce",
+      "selector": ":root",
+      "resolved": "#89d9ce"
+    },
+    "--core-ui-color-teal30-light": {
+      "value": "#62c3b7",
+      "selector": ":root",
+      "resolved": "#62c3b7"
+    },
+    "--core-ui-color-teal40-light": {
+      "value": "#4aab9f",
+      "selector": ":root",
+      "resolved": "#4aab9f"
+    },
+    "--core-ui-color-teal50-light": {
+      "value": "#359187",
+      "selector": ":root",
+      "resolved": "#359187"
+    },
+    "--core-ui-color-teal60-light": {
+      "value": "#13766c",
+      "selector": ":root",
+      "resolved": "#13766c"
+    },
+    "--core-ui-color-teal70-light": {
+      "value": "#005b53",
+      "selector": ":root",
+      "resolved": "#005b53"
+    },
+    "--core-ui-color-teal80-light": {
+      "value": "#005b53",
+      "selector": ":root",
+      "resolved": "#005b53"
+    },
+    "--core-ui-color-teal90-light": {
+      "value": "#00453f",
+      "selector": ":root",
+      "resolved": "#00453f"
+    },
+    "--core-ui-color-teal100-light": {
+      "value": "#002824",
+      "selector": ":root",
+      "resolved": "#002824"
+    },
+    "--core-ui-color-yellow0-light": {
+      "value": "#fff5e6",
+      "selector": ":root",
+      "resolved": "#fff5e6"
+    },
+    "--core-ui-color-yellow5-light": {
+      "value": "#ffefd8",
+      "selector": ":root",
+      "resolved": "#ffefd8"
+    },
+    "--core-ui-color-yellow10-light": {
+      "value": "#ffe1b0",
+      "selector": ":root",
+      "resolved": "#ffe1b0"
+    },
+    "--core-ui-color-yellow15-light": {
+      "value": "#ffd387",
+      "selector": ":root",
+      "resolved": "#ffd387"
+    },
+    "--core-ui-color-yellow20-light": {
+      "value": "#ffc249",
+      "selector": ":root",
+      "resolved": "#ffc249"
+    },
+    "--core-ui-color-yellow30-light": {
+      "value": "#f7b201",
+      "selector": ":root",
+      "resolved": "#f7b201"
+    },
+    "--core-ui-color-yellow40-light": {
+      "value": "#db9600",
+      "selector": ":root",
+      "resolved": "#db9600"
+    },
+    "--core-ui-color-yellow50-light": {
+      "value": "#bb7d01",
+      "selector": ":root",
+      "resolved": "#bb7d01"
+    },
+    "--core-ui-color-yellow60-light": {
+      "value": "#976300",
+      "selector": ":root",
+      "resolved": "#976300"
+    },
+    "--core-ui-color-yellow70-light": {
+      "value": "#734900",
+      "selector": ":root",
+      "resolved": "#734900"
+    },
+    "--core-ui-color-yellow80-light": {
+      "value": "#734900",
+      "selector": ":root",
+      "resolved": "#734900"
+    },
+    "--core-ui-color-yellow90-light": {
+      "value": "#573600",
+      "selector": ":root",
+      "resolved": "#573600"
+    },
+    "--core-ui-color-yellow100-light": {
+      "value": "#382000",
+      "selector": ":root",
+      "resolved": "#382000"
+    },
+    "--core-ui-color-pressed0-light": {
+      "value": "#1d0c171a",
+      "selector": ":root",
+      "resolved": "#1d0c171a"
+    },
+    "--core-ui-color-pressed5-light": {
+      "value": "#1d0c171a",
+      "selector": ":root",
+      "resolved": "#1d0c171a"
+    },
+    "--core-ui-color-pressed10-light": {
+      "value": "#1d0c171a",
+      "selector": ":root",
+      "resolved": "#1d0c171a"
+    },
+    "--core-ui-color-pressed15-light": {
+      "value": "#1d0c171a",
+      "selector": ":root",
+      "resolved": "#1d0c171a"
+    },
+    "--core-ui-color-pressed20-light": {
+      "value": "#ffffff38",
+      "selector": ":root",
+      "resolved": "#ffffff38"
+    },
+    "--core-ui-color-pressed30-light": {
+      "value": "#ffffff38",
+      "selector": ":root",
+      "resolved": "#ffffff38"
+    },
+    "--core-ui-color-pressed40-light": {
+      "value": "#ffffff38",
+      "selector": ":root",
+      "resolved": "#ffffff38"
+    },
+    "--core-ui-color-pressed50-light": {
+      "value": "#ffffff38",
+      "selector": ":root",
+      "resolved": "#ffffff38"
+    },
+    "--core-ui-color-pressed60-light": {
+      "value": "#1d0c1747",
+      "selector": ":root",
+      "resolved": "#1d0c1747"
+    },
+    "--core-ui-color-pressed70-light": {
+      "value": "#1d0c1747",
+      "selector": ":root",
+      "resolved": "#1d0c1747"
+    },
+    "--core-ui-color-pressed80-light": {
+      "value": "#ffffff24",
+      "selector": ":root",
+      "resolved": "#ffffff24"
+    },
+    "--core-ui-color-pressed90-light": {
+      "value": "#ffffff24",
+      "selector": ":root",
+      "resolved": "#ffffff24"
+    },
+    "--core-ui-color-pressed100-light": {
+      "value": "#ffffff24",
+      "selector": ":root",
+      "resolved": "#ffffff24"
+    },
+    "--core-ui-color-disabled0-light": {
+      "value": "#ffffff9e",
+      "selector": ":root",
+      "resolved": "#ffffff9e"
+    },
+    "--core-ui-color-disabled5-light": {
+      "value": "#ffffff9e",
+      "selector": ":root",
+      "resolved": "#ffffff9e"
+    },
+    "--core-ui-color-disabled10-light": {
+      "value": "#ffffff9e",
+      "selector": ":root",
+      "resolved": "#ffffff9e"
+    },
+    "--core-ui-color-disabled20-light": {
+      "value": "#ffffff9e",
+      "selector": ":root",
+      "resolved": "#ffffff9e"
+    },
+    "--core-ui-color-disabled30-light": {
+      "value": "#ffffff9e",
+      "selector": ":root",
+      "resolved": "#ffffff9e"
+    },
+    "--core-ui-color-disabled40-light": {
+      "value": "#ffffff9e",
+      "selector": ":root",
+      "resolved": "#ffffff9e"
+    },
+    "--core-ui-color-disabled50-light": {
+      "value": "#ffffff9e",
+      "selector": ":root",
+      "resolved": "#ffffff9e"
+    },
+    "--core-ui-color-disabled60-light": {
+      "value": "#ffffff9e",
+      "selector": ":root",
+      "resolved": "#ffffff9e"
+    },
+    "--core-ui-color-disabled70-light": {
+      "value": "#ffffff9e",
+      "selector": ":root",
+      "resolved": "#ffffff9e"
+    },
+    "--core-ui-color-disabled80-light": {
+      "value": "#ffffff9e",
+      "selector": ":root",
+      "resolved": "#ffffff9e"
+    },
+    "--core-ui-color-disabled90-light": {
+      "value": "#ffffff9e",
+      "selector": ":root",
+      "resolved": "#ffffff9e"
+    },
+    "--core-ui-color-disabled100-light": {
+      "value": "#ffffff9e",
+      "selector": ":root",
+      "resolved": "#ffffff9e"
+    },
+    "--core-ui-color-hover0-light": {
+      "value": "#1d0c170f",
+      "selector": ":root",
+      "resolved": "#1d0c170f"
+    },
+    "--core-ui-color-hover5-light": {
+      "value": "#1d0c170f",
+      "selector": ":root",
+      "resolved": "#1d0c170f"
+    },
+    "--core-ui-color-hover10-light": {
+      "value": "#1d0c170f",
+      "selector": ":root",
+      "resolved": "#1d0c170f"
+    },
+    "--core-ui-color-hover15-light": {
+      "value": "#1d0c170f",
+      "selector": ":root",
+      "resolved": "#1d0c170f"
+    },
+    "--core-ui-color-hover20-light": {
+      "value": "#ffffff24",
+      "selector": ":root",
+      "resolved": "#ffffff24"
+    },
+    "--core-ui-color-hover30-light": {
+      "value": "#ffffff24",
+      "selector": ":root",
+      "resolved": "#ffffff24"
+    },
+    "--core-ui-color-hover40-light": {
+      "value": "#ffffff24",
+      "selector": ":root",
+      "resolved": "#ffffff24"
+    },
+    "--core-ui-color-hover50-light": {
+      "value": "#ffffff24",
+      "selector": ":root",
+      "resolved": "#ffffff24"
+    },
+    "--core-ui-color-hover60-light": {
+      "value": "#1d0c172e",
+      "selector": ":root",
+      "resolved": "#1d0c172e"
+    },
+    "--core-ui-color-hover70-light": {
+      "value": "#1d0c172e",
+      "selector": ":root",
+      "resolved": "#1d0c172e"
+    },
+    "--core-ui-color-hover80-light": {
+      "value": "#ffffff1a",
+      "selector": ":root",
+      "resolved": "#ffffff1a"
+    },
+    "--core-ui-color-hover90-light": {
+      "value": "#ffffff1a",
+      "selector": ":root",
+      "resolved": "#ffffff1a"
+    },
+    "--core-ui-color-hover100-light": {
+      "value": "#ffffff1a",
+      "selector": ":root",
+      "resolved": "#ffffff1a"
+    },
+    "--core-ui-color-data-category1-light": {
+      "value": "#734af7",
+      "selector": ":root",
+      "resolved": "#734af7"
+    },
+    "--core-ui-color-data-category2-light": {
+      "value": "#ff5b8c",
+      "selector": ":root",
+      "resolved": "#ff5b8c"
+    },
+    "--core-ui-color-data-category3-light": {
+      "value": "#419743",
+      "selector": ":root",
+      "resolved": "#419743"
+    },
+    "--core-ui-color-data-category4-light": {
+      "value": "#308dc2",
+      "selector": ":root",
+      "resolved": "#308dc2"
+    },
+    "--core-ui-color-data-category5-light": {
+      "value": "#9f0045",
+      "selector": ":root",
+      "resolved": "#9f0045"
+    },
+    "--core-ui-color-data-category6-light": {
+      "value": "#00405e",
+      "selector": ":root",
+      "resolved": "#00405e"
+    },
+    "--core-ui-color-data-category-extended1-light": {
+      "value": "#5725cf",
+      "selector": ":root",
+      "resolved": "#5725cf"
+    },
+    "--core-ui-color-data-category-extended2-light": {
+      "value": "#ff5b8c",
+      "selector": ":root",
+      "resolved": "#ff5b8c"
+    },
+    "--core-ui-color-data-category-extended3-light": {
+      "value": "#2c7b30",
+      "selector": ":root",
+      "resolved": "#2c7b30"
+    },
+    "--core-ui-color-data-category-extended4-light": {
+      "value": "#64bcf5",
+      "selector": ":root",
+      "resolved": "#64bcf5"
+    },
+    "--core-ui-color-data-category-extended5-light": {
+      "value": "#701c00",
+      "selector": ":root",
+      "resolved": "#701c00"
+    },
+    "--core-ui-color-data-category-extended6-light": {
+      "value": "#a092fd",
+      "selector": ":root",
+      "resolved": "#a092fd"
+    },
+    "--core-ui-color-data-category-extended7-light": {
+      "value": "#c60b5a",
+      "selector": ":root",
+      "resolved": "#c60b5a"
+    },
+    "--core-ui-color-data-category-extended8-light": {
+      "value": "#8edd8d",
+      "selector": ":root",
+      "resolved": "#8edd8d"
+    },
+    "--core-ui-color-data-category-extended9-light": {
+      "value": "#00405e",
+      "selector": ":root",
+      "resolved": "#00405e"
+    },
+    "--core-ui-color-data-category-extended10-light": {
+      "value": "#ff784d",
+      "selector": ":root",
+      "resolved": "#ff784d"
+    },
+    "--core-ui-color-data-category-extended11-light": {
+      "value": "#734af7",
+      "selector": ":root",
+      "resolved": "#734af7"
+    },
+    "--core-ui-color-data-category-extended12-light": {
+      "value": "#ffb0bf",
+      "selector": ":root",
+      "resolved": "#ffb0bf"
+    },
+    "--core-ui-color-data-category-extended13-light": {
+      "value": "#155e1f",
+      "selector": ":root",
+      "resolved": "#155e1f"
+    },
+    "--core-ui-color-data-category-extended14-light": {
+      "value": "#308dc2",
+      "selector": ":root",
+      "resolved": "#308dc2"
+    },
+    "--core-ui-color-data-category-extended15-light": {
+      "value": "#c13800",
+      "selector": ":root",
+      "resolved": "#c13800"
+    },
+    "--core-ui-color-data-category-extended16-light": {
+      "value": "#ccc4ff",
+      "selector": ":root",
+      "resolved": "#ccc4ff"
+    },
+    "--core-ui-color-data-category-extended17-light": {
+      "value": "#9f0045",
+      "selector": ":root",
+      "resolved": "#9f0045"
+    },
+    "--core-ui-color-data-category-extended18-light": {
+      "value": "#58ae5a",
+      "selector": ":root",
+      "resolved": "#58ae5a"
+    },
+    "--core-ui-color-data-category-extended19-light": {
+      "value": "#1572a1",
+      "selector": ":root",
+      "resolved": "#1572a1"
+    },
+    "--core-ui-color-data-category-extended20-light": {
+      "value": "#ffa489",
+      "selector": ":root",
+      "resolved": "#ffa489"
+    },
+    "--core-ui-color-data-intensity-a1-light": {
+      "value": "#5725cf",
+      "selector": ":root",
+      "resolved": "#5725cf"
+    },
+    "--core-ui-color-data-intensity-a2-light": {
+      "value": "#5725cf99",
+      "selector": ":root",
+      "resolved": "#5725cf99"
+    },
+    "--core-ui-color-data-intensity-a3-light": {
+      "value": "#5725cf4d",
+      "selector": ":root",
+      "resolved": "#5725cf4d"
+    },
+    "--core-ui-color-data-intensity-a4-light": {
+      "value": "#5725cf26",
+      "selector": ":root",
+      "resolved": "#5725cf26"
+    },
+    "--core-ui-color-data-intensity-a5-light": {
+      "value": "#5725cf1a",
+      "selector": ":root",
+      "resolved": "#5725cf1a"
+    },
+    "--core-ui-color-data-intensity-a6-light": {
+      "value": "#5725cf0d",
+      "selector": ":root",
+      "resolved": "#5725cf0d"
+    },
+    "--core-ui-color-data-intensity-b1-light": {
+      "value": "#9f0045",
+      "selector": ":root",
+      "resolved": "#9f0045"
+    },
+    "--core-ui-color-data-intensity-b2-light": {
+      "value": "#9f004599",
+      "selector": ":root",
+      "resolved": "#9f004599"
+    },
+    "--core-ui-color-data-intensity-b3-light": {
+      "value": "#9f00454d",
+      "selector": ":root",
+      "resolved": "#9f00454d"
+    },
+    "--core-ui-color-data-intensity-b4-light": {
+      "value": "#9f004526",
+      "selector": ":root",
+      "resolved": "#9f004526"
+    },
+    "--core-ui-color-data-intensity-b5-light": {
+      "value": "#9f00451a",
+      "selector": ":root",
+      "resolved": "#9f00451a"
+    },
+    "--core-ui-color-data-intensity-b6-light": {
+      "value": "#9f00450d",
+      "selector": ":root",
+      "resolved": "#9f00450d"
+    },
+    "--core-ui-color-data-intensity-c1-light": {
+      "value": "#155e1f",
+      "selector": ":root",
+      "resolved": "#155e1f"
+    },
+    "--core-ui-color-data-intensity-c2-light": {
+      "value": "#155e1f99",
+      "selector": ":root",
+      "resolved": "#155e1f99"
+    },
+    "--core-ui-color-data-intensity-c3-light": {
+      "value": "#155e1f4d",
+      "selector": ":root",
+      "resolved": "#155e1f4d"
+    },
+    "--core-ui-color-data-intensity-c4-light": {
+      "value": "#155e1f26",
+      "selector": ":root",
+      "resolved": "#155e1f26"
+    },
+    "--core-ui-color-data-intensity-c5-light": {
+      "value": "#155e1f1a",
+      "selector": ":root",
+      "resolved": "#155e1f1a"
+    },
+    "--core-ui-color-data-intensity-c6-light": {
+      "value": "#155e1f0d",
+      "selector": ":root",
+      "resolved": "#155e1f0d"
+    },
+    "--core-ui-color-data-intensity-d1-light": {
+      "value": "#00567d",
+      "selector": ":root",
+      "resolved": "#00567d"
+    },
+    "--core-ui-color-data-intensity-d2-light": {
+      "value": "#00567d99",
+      "selector": ":root",
+      "resolved": "#00567d99"
+    },
+    "--core-ui-color-data-intensity-d3-light": {
+      "value": "#00567d4d",
+      "selector": ":root",
+      "resolved": "#00567d4d"
+    },
+    "--core-ui-color-data-intensity-d4-light": {
+      "value": "#00567d26",
+      "selector": ":root",
+      "resolved": "#00567d26"
+    },
+    "--core-ui-color-data-intensity-d5-light": {
+      "value": "#00567d1a",
+      "selector": ":root",
+      "resolved": "#00567d1a"
+    },
+    "--core-ui-color-data-intensity-d6-light": {
+      "value": "#00567d0d",
+      "selector": ":root",
+      "resolved": "#00567d0d"
+    },
+    "--core-ui-color-data-intensity-e1-light": {
+      "value": "#922800",
+      "selector": ":root",
+      "resolved": "#922800"
+    },
+    "--core-ui-color-data-intensity-e2-light": {
+      "value": "#92280099",
+      "selector": ":root",
+      "resolved": "#92280099"
+    },
+    "--core-ui-color-data-intensity-e3-light": {
+      "value": "#9228004d",
+      "selector": ":root",
+      "resolved": "#9228004d"
+    },
+    "--core-ui-color-data-intensity-e4-light": {
+      "value": "#92280026",
+      "selector": ":root",
+      "resolved": "#92280026"
+    },
+    "--core-ui-color-data-intensity-e5-light": {
+      "value": "#9228001a",
+      "selector": ":root",
+      "resolved": "#9228001a"
+    },
+    "--core-ui-color-data-intensity-e6-light": {
+      "value": "#9228000d",
+      "selector": ":root",
+      "resolved": "#9228000d"
+    },
+    "--core-ui-color-data-severity-negative-light": {
+      "value": "#c5261d",
+      "selector": ":root",
+      "resolved": "#c5261d"
+    },
+    "--core-ui-color-data-severity-warning-high-light": {
+      "value": "#ff5312",
+      "selector": ":root",
+      "resolved": "#ff5312"
+    },
+    "--core-ui-color-data-severity-warning-light": {
+      "value": "#fb8c0e",
+      "selector": ":root",
+      "resolved": "#fb8c0e"
+    },
+    "--core-ui-color-data-severity-positive-light": {
+      "value": "#197849",
+      "selector": ":root",
+      "resolved": "#197849"
+    },
+    "--core-ui-color-data-severity-soft-negative-light": {
+      "value": "#ffab9e",
+      "selector": ":root",
+      "resolved": "#ffab9e"
+    },
+    "--core-ui-color-data-severity-soft-warning-light": {
+      "value": "#ffc999",
+      "selector": ":root",
+      "resolved": "#ffc999"
+    },
+    "--core-ui-color-data-severity-soft-positive-light": {
+      "value": "#8fdbaa",
+      "selector": ":root",
+      "resolved": "#8fdbaa"
+    },
+    "--core-ui-color-data-severity-divergent-negative-light": {
+      "value": "#c5261d",
+      "selector": ":root",
+      "resolved": "#c5261d"
+    },
+    "--core-ui-color-data-severity-divergent-negative-mid-light": {
+      "value": "#fc5c4c",
+      "selector": ":root",
+      "resolved": "#fc5c4c"
+    },
+    "--core-ui-color-data-severity-divergent-negative-low-light": {
+      "value": "#ffab9e",
+      "selector": ":root",
+      "resolved": "#ffab9e"
+    },
+    "--core-ui-color-data-severity-divergent-neutral-light": {
+      "value": "#cfcbcc",
+      "selector": ":root",
+      "resolved": "#cfcbcc"
+    },
+    "--core-ui-color-data-severity-divergent-positive-low-light": {
+      "value": "#8fdbaa",
+      "selector": ":root",
+      "resolved": "#8fdbaa"
+    },
+    "--core-ui-color-data-severity-divergent-positive-mid-light": {
+      "value": "#54ad78",
+      "selector": ":root",
+      "resolved": "#54ad78"
+    },
+    "--core-ui-color-data-severity-divergent-positive-light": {
+      "value": "#197849",
+      "selector": ":root",
+      "resolved": "#197849"
+    },
+    "--core-ui-color-data-severity-divergent-soft-negative-light": {
+      "value": "#ffab9e",
+      "selector": ":root",
+      "resolved": "#ffab9e"
+    },
+    "--core-ui-color-data-severity-divergent-soft-neutral-light": {
+      "value": "#cfcbcc",
+      "selector": ":root",
+      "resolved": "#cfcbcc"
+    },
+    "--core-ui-color-data-severity-divergent-soft-positive-light": {
+      "value": "#8fdbaa",
+      "selector": ":root",
+      "resolved": "#8fdbaa"
+    }
+  }
+}

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lyft style guide</title>
+<style>
+:root {
+  --color-pink-0: #fff2fa;
+  --color-pink-5: #ffebf7;
+  --color-pink-10: #ffdbf0;
+  --color-pink-15: #ffcaea;
+  --color-pink-20: #ffabde;
+  --color-pink-30: #ff7fcf;
+  --color-pink-40: #f759bd;
+  --color-pink-50: #eb2cab;
+  --color-pink-60: #cf0090;
+  --color-pink-70: #9e006d;
+  --color-pink-80: #9e006d;
+  --color-pink-90: #6f004a;
+  --color-pink-100: #46002b;
+  --color-sunset-0: #fff3f1;
+  --color-sunset-5: #ffedea;
+  --color-sunset-10: #ffded9;
+  --color-sunset-15: #ffc8c1;
+  --color-sunset-20: #ffab9e;
+  --color-sunset-30: #ff8071;
+  --color-sunset-40: #fc5c4c;
+  --color-sunset-50: #ed3e30;
+  --color-sunset-60: #c5261d;
+  --color-sunset-70: #9c0205;
+  --color-sunset-80: #9c0205;
+  --color-sunset-90: #750002;
+  --color-sunset-100: #4c0003;
+  --color-teal-0: #e6faf6;
+  --color-teal-5: #d7f8f3;
+  --color-teal-10: #bff0e9;
+  --color-teal-15: #9ee3d9;
+  --color-teal-20: #89d9ce;
+  --color-teal-30: #62c3b7;
+  --color-teal-40: #4aab9f;
+  --color-teal-50: #359187;
+  --color-teal-60: #13766c;
+  --color-teal-70: #005b53;
+  --color-teal-80: #005b53;
+  --color-teal-90: #00453f;
+  --color-teal-100: #002824;
+  --color-brand-interactive: #820076;
+  --color-brand-vibrant-purple: #a092fd;
+  --color-brand-vibrant-blue: #6c9ffa;
+  --color-brand-vibrant-green: #6ec590;
+  --color-brand-vibrant-yellow: #f7b201;
+  --color-brand-vibrant-orange: #fb8c0e;
+  --color-brand-vibrant-red: #ff5d66;
+  --color-brand-vibrant-gray: #746a6e;
+  --color-brand-vibrant-indigo: #5725cf;
+  --color-brand-orange: #ff5312;
+  --color-brand-lime: #c1d58b;
+  --color-brand-midnight: #1d0c17;
+  --color-brand-pastel-purple: #f6ddfe;
+  --color-brand-pastel-blue: #d9e6ff;
+  --color-brand-pastel-green: #c5eed2;
+  --color-brand-pastel-yellow: #ffe1b0;
+  --color-brand-pastel-orange: #ffdfc4;
+  --color-brand-pastel-red: #ffdde2;
+  --color-brand-pastel-gray: #e7e5e5;
+  --color-brand-pastel-indigo: #e7e2ff;
+  --color-brand-pastel-pink: #ffdbf0;
+  --color-brand-background-orange: #ffded5;
+  --color-brand-background-lime: #daedab;
+  --color-brand-off-white: #f1f0ec;
+  --color-brand-gray100: #e7e5e5;
+  --color-brand-gray200: #cfcbcc;
+  --color-brand-gray300: #b9b2b4;
+  --color-brand-gray400: #91888b;
+  --color-brand-gray500: #746a6e;
+  --color-brand-gray600: #594e53;
+  --color-brand-gray700: #31222a;
+  --color-brand-black-cherry: #1d0c17;
+  --color-brand-lyftPink: #ff00bf;
+  --color-brand-alwaysWhite: #fff;
+  --color-brand-alwaysBlack: #000;
+  --elevation-level1: 0 0 1px 0 #0000001f,0 1px 1px 1px #00000014;
+  --elevation-level2: 0 0 1px 0 #0000001f,0 2px 3px 0 #00000029;
+  --elevation-level3: 0 0 1px 0 #0000001f,0 2px 4px 0 #00000029;
+  --elevation-level4: 0 0 1px 0 #0000001f,0 3px 6px 0 #00000029;
+  --elevation-level5: 0 0 1px 0 #0000001f,0 4px 8px 0 #00000029;
+  --elevation-level6: 0 0 1px 0 #0000001f,0 6px 10px 0 #00000029;
+  --elevation-level7: 0 0 1px 0 #0000001f,0 12px 14px 0 #00000029;
+  --elevation-level8: 0 6px 18px 0 #0000001f,0 14px 20px 0 #00000029;
+  --elevation-panel: 0 0 1px 0 #0000001f,0 0 14px 0 #00000029;
+  --radius-pill: 48px;
+  --radius-card: 16px;
+  --space-button-x: 24px;
+  --space-card-y: 24px;
+  --space-card-x: 16px;
+  --sizing-button-height: 48px;
+  --text-primary: #1d0c17;
+  --text-secondary: #1d0c17b3;
+  --text-tertiary: #1d0c1799;
+  --text-placeholder: #1d0c1799;
+  --text-positive: #197849;
+  --text-negative: #c81534;
+  --text-highlight: #cf0090;
+  --text-interactive: #ac2a9e;
+  --icon-primary: #1d0c17;
+  --icon-secondary: #1d0c17b3;
+  --icon-tertiary: #1d0c1799;
+  --icon-positive: #197849;
+  --icon-negative: #c81534;
+  --icon-highlight: #cf0090;
+  --icon-interactive: #ac2a9e;
+  --background-primary: #fff;
+  --background-secondary: #f1f0ec;
+  --background-scrim: #1d0c174d;
+  --background-neutral: #f1f0f0;
+  --surface-primary: #fff;
+  --surface-secondary: #36220112;
+  --surface-tertiary: #36220129;
+  --surface-interactive: #820076;
+  --surface-positive: #197849;
+  --surface-negative: #c81534;
+  --surface-selected: #820076;
+  --surface-neutral: #31222a12;
+  --stroke-primary: #1d0c17;
+  --stroke-secondary: #1d0c1773;
+  --stroke-tertiary: #36220129;
+  --stroke-interactive: #820076;
+  --stroke-negative: #c81534;
+  --stroke-highlight: #cf0090;
+  --sg-sans: "RebelSansText", ui-sans-serif, system-ui, sans-serif;
+  --sg-display: "RebelSansDisplay", ui-sans-serif, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background-primary); color: var(--text-primary); font: 400 16px/22px var(--sg-sans); }
+header { padding: 24px 32px; border-bottom: 1px solid var(--stroke-tertiary); display: flex; align-items: center; gap: 16px; }
+header strong { font-family: var(--sg-display); font-size: 28px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px; }
+h2 { font-family: var(--sg-display); font-weight: 600; font-size: 32px; line-height: 1.1; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.sw { border: 1px solid var(--stroke-tertiary); border-radius: 12px; overflow: hidden; background: var(--surface-primary); }
+.sw i { display: block; height: 64px; }
+.sw b, .sw code { display: block; padding: 4px 10px; font-size: 12px; }
+.btn { display: inline-flex; align-items: center; height: var(--button-height); padding: 0 var(--button-x); border-radius: var(--pill); background: var(--surface-interactive); color: var(--text-primary-inverse); text-decoration: none; }
+.card { width: 280px; padding: var(--card-y) var(--card-x); border-radius: var(--card); background: var(--surface-primary); box-shadow: var(--level2); }
+.note { color: var(--text-secondary); max-width: 62ch; }
+</style>
+</head>
+<body>
+<header><strong>Lyft</strong><span>Public marketing tokens, light only</span></header>
+<div class="wrap">
+<h2>Controls</h2>
+<p class="note">The primary control uses surface.interactive and a 48px pill. Rebel Sans is not shipped here, so the page falls back to the system sans.</p>
+<p><a class="btn" href="#roles">Get a ride</a></p>
+<div class="card"><b>Wait &amp; Save</b><p class="note">Ride-type cards are 16px radius on a white surface.</p></div>
+<h2 id="roles">Colour roles</h2>
+<div class="grid">
+<div class="sw"><i style="background:#1d0c17"></i><b>text-primary</b><code>#1d0c17</code></div><div class="sw"><i style="background:#1d0c17b3"></i><b>text-secondary</b><code>#1d0c17b3</code></div><div class="sw"><i style="background:#1d0c1799"></i><b>text-tertiary</b><code>#1d0c1799</code></div><div class="sw"><i style="background:#1d0c1799"></i><b>text-placeholder</b><code>#1d0c1799</code></div><div class="sw"><i style="background:#197849"></i><b>text-positive</b><code>#197849</code></div><div class="sw"><i style="background:#c81534"></i><b>text-negative</b><code>#c81534</code></div><div class="sw"><i style="background:#cf0090"></i><b>text-highlight</b><code>#cf0090</code></div><div class="sw"><i style="background:#ac2a9e"></i><b>text-interactive</b><code>#ac2a9e</code></div><div class="sw"><i style="background:#1d0c17"></i><b>icon-primary</b><code>#1d0c17</code></div><div class="sw"><i style="background:#1d0c17b3"></i><b>icon-secondary</b><code>#1d0c17b3</code></div><div class="sw"><i style="background:#1d0c1799"></i><b>icon-tertiary</b><code>#1d0c1799</code></div><div class="sw"><i style="background:#197849"></i><b>icon-positive</b><code>#197849</code></div><div class="sw"><i style="background:#c81534"></i><b>icon-negative</b><code>#c81534</code></div><div class="sw"><i style="background:#cf0090"></i><b>icon-highlight</b><code>#cf0090</code></div><div class="sw"><i style="background:#ac2a9e"></i><b>icon-interactive</b><code>#ac2a9e</code></div><div class="sw"><i style="background:#fff"></i><b>background-primary</b><code>#fff</code></div><div class="sw"><i style="background:#f1f0ec"></i><b>background-secondary</b><code>#f1f0ec</code></div><div class="sw"><i style="background:#1d0c174d"></i><b>background-scrim</b><code>#1d0c174d</code></div><div class="sw"><i style="background:#f1f0f0"></i><b>background-neutral</b><code>#f1f0f0</code></div><div class="sw"><i style="background:#fff"></i><b>surface-primary</b><code>#fff</code></div><div class="sw"><i style="background:#36220112"></i><b>surface-secondary</b><code>#36220112</code></div><div class="sw"><i style="background:#36220129"></i><b>surface-tertiary</b><code>#36220129</code></div><div class="sw"><i style="background:#820076"></i><b>surface-interactive</b><code>#820076</code></div><div class="sw"><i style="background:#197849"></i><b>surface-positive</b><code>#197849</code></div><div class="sw"><i style="background:#c81534"></i><b>surface-negative</b><code>#c81534</code></div><div class="sw"><i style="background:#820076"></i><b>surface-selected</b><code>#820076</code></div><div class="sw"><i style="background:#31222a12"></i><b>surface-neutral</b><code>#31222a12</code></div><div class="sw"><i style="background:#1d0c17"></i><b>stroke-primary</b><code>#1d0c17</code></div><div class="sw"><i style="background:#1d0c1773"></i><b>stroke-secondary</b><code>#1d0c1773</code></div><div class="sw"><i style="background:#36220129"></i><b>stroke-tertiary</b><code>#36220129</code></div><div class="sw"><i style="background:#820076"></i><b>stroke-interactive</b><code>#820076</code></div><div class="sw"><i style="background:#c81534"></i><b>stroke-negative</b><code>#c81534</code></div><div class="sw"><i style="background:#cf0090"></i><b>stroke-highlight</b><code>#cf0090</code></div>
+</div>
+<h2>Brand</h2>
+<div class="grid">
+<div class="sw"><i style="background:#820076"></i><b>brand.interactive</b><code>#820076</code></div><div class="sw"><i style="background:#a092fd"></i><b>brand.vibrant-purple</b><code>#a092fd</code></div><div class="sw"><i style="background:#6c9ffa"></i><b>brand.vibrant-blue</b><code>#6c9ffa</code></div><div class="sw"><i style="background:#6ec590"></i><b>brand.vibrant-green</b><code>#6ec590</code></div><div class="sw"><i style="background:#f7b201"></i><b>brand.vibrant-yellow</b><code>#f7b201</code></div><div class="sw"><i style="background:#fb8c0e"></i><b>brand.vibrant-orange</b><code>#fb8c0e</code></div><div class="sw"><i style="background:#ff5d66"></i><b>brand.vibrant-red</b><code>#ff5d66</code></div><div class="sw"><i style="background:#746a6e"></i><b>brand.vibrant-gray</b><code>#746a6e</code></div><div class="sw"><i style="background:#5725cf"></i><b>brand.vibrant-indigo</b><code>#5725cf</code></div><div class="sw"><i style="background:#ff5312"></i><b>brand.orange</b><code>#ff5312</code></div><div class="sw"><i style="background:#c1d58b"></i><b>brand.lime</b><code>#c1d58b</code></div><div class="sw"><i style="background:#1d0c17"></i><b>brand.midnight</b><code>#1d0c17</code></div><div class="sw"><i style="background:#f6ddfe"></i><b>brand.pastel-purple</b><code>#f6ddfe</code></div><div class="sw"><i style="background:#d9e6ff"></i><b>brand.pastel-blue</b><code>#d9e6ff</code></div><div class="sw"><i style="background:#c5eed2"></i><b>brand.pastel-green</b><code>#c5eed2</code></div><div class="sw"><i style="background:#ffe1b0"></i><b>brand.pastel-yellow</b><code>#ffe1b0</code></div><div class="sw"><i style="background:#ffdfc4"></i><b>brand.pastel-orange</b><code>#ffdfc4</code></div><div class="sw"><i style="background:#ffdde2"></i><b>brand.pastel-red</b><code>#ffdde2</code></div><div class="sw"><i style="background:#e7e5e5"></i><b>brand.pastel-gray</b><code>#e7e5e5</code></div><div class="sw"><i style="background:#e7e2ff"></i><b>brand.pastel-indigo</b><code>#e7e2ff</code></div><div class="sw"><i style="background:#ffdbf0"></i><b>brand.pastel-pink</b><code>#ffdbf0</code></div><div class="sw"><i style="background:#ffded5"></i><b>brand.background-orange</b><code>#ffded5</code></div><div class="sw"><i style="background:#daedab"></i><b>brand.background-lime</b><code>#daedab</code></div><div class="sw"><i style="background:#f1f0ec"></i><b>brand.off-white</b><code>#f1f0ec</code></div><div class="sw"><i style="background:#e7e5e5"></i><b>brand.gray100</b><code>#e7e5e5</code></div><div class="sw"><i style="background:#cfcbcc"></i><b>brand.gray200</b><code>#cfcbcc</code></div><div class="sw"><i style="background:#b9b2b4"></i><b>brand.gray300</b><code>#b9b2b4</code></div><div class="sw"><i style="background:#91888b"></i><b>brand.gray400</b><code>#91888b</code></div><div class="sw"><i style="background:#746a6e"></i><b>brand.gray500</b><code>#746a6e</code></div><div class="sw"><i style="background:#594e53"></i><b>brand.gray600</b><code>#594e53</code></div><div class="sw"><i style="background:#31222a"></i><b>brand.gray700</b><code>#31222a</code></div><div class="sw"><i style="background:#1d0c17"></i><b>brand.black-cherry</b><code>#1d0c17</code></div><div class="sw"><i style="background:#ff00bf"></i><b>brand.lyftPink</b><code>#ff00bf</code></div><div class="sw"><i style="background:#fff"></i><b>brand.alwaysWhite</b><code>#fff</code></div><div class="sw"><i style="background:#000"></i><b>brand.alwaysBlack</b><code>#000</code></div>
+</div>
+</div>
+</body>
+</html>
