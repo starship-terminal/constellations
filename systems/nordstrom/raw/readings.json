@@ -1,0 +1,461 @@
+{
+  "home": {
+    "href": "https://www.nordstrom.com/",
+    "title": "Nordstrom Online & in Store: Shoes, Jewelry, Clothing, Makeup, Dresses",
+    "w": 1440,
+    "h": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    },
+    "text": "Skip navigation\n\nShipping outside of the U.S.? Learn About International Shopping\n\nSingapore\nSearch\nClear\nClear Search Text\nShop with AI\nBETA\nSign In\n0\nBlack Friday & Sale\nHoliday Gifts\nNew & Now\nWomen\nMen\nBeauty\nShoes\nAccessories\nKids\nDesigner\nHome\nServices\nMain content\nEven More Deals Added—Ends 12/1\nAll Sale\nBlack Friday Deals\nWomen's Sale\nMen's Sale\nSee Restrictions\nSponsored\nJust Landed: Nike",
+    "file": "/Users/kaichen/.t3/worktrees/constellations/t3-64d84177-8ba04299e4a76273/systems/nordstrom/screenshots/home-light-1440.png",
+    "dim": {
+      "scrollH": 9641
+    }
+  },
+  "readings": {
+    "body": {
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "size": "16px",
+      "color": "rgb(25, 26, 27)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "weight": "400"
+    },
+    "logo": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(25, 26, 27)",
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "letter": "normal",
+      "line": "normal",
+      "radius": "0px",
+      "border": "0px none rgb(25, 26, 27)",
+      "pad": "0px",
+      "h": 25,
+      "w": 198,
+      "text": "Nordstrom Logo"
+    },
+    "signIn": null,
+    "search": {
+      "bg": "rgb(240, 243, 245)",
+      "color": "rgb(0, 0, 0)",
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "letter": "normal",
+      "line": "24px",
+      "radius": "0px",
+      "border": "0px none rgb(0, 0, 0)",
+      "pad": "1px 2px",
+      "h": 42,
+      "w": 728,
+      "text": ""
+    },
+    "searchPlaceholder": "Search for products or brands",
+    "navBtn": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(25, 26, 27)",
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "letter": "normal",
+      "line": "16px",
+      "radius": "0px",
+      "border": "",
+      "pad": "1px 0px",
+      "h": 20,
+      "w": 53,
+      "text": "Women"
+    },
+    "saleBtn": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(184, 0, 9)",
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "letter": "normal",
+      "line": "16px",
+      "radius": "0px",
+      "border": "",
+      "pad": "1px 0px",
+      "h": 20,
+      "w": 129,
+      "text": "Black Friday & Sale"
+    },
+    "util": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "letter": "normal",
+      "line": "normal",
+      "radius": "0px",
+      "border": "0px none rgb(255, 255, 255)",
+      "pad": "0px",
+      "h": 22,
+      "w": 246,
+      "text": "Learn About International Shopping"
+    },
+    "banner": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "letter": "normal",
+      "line": "normal",
+      "radius": "0px",
+      "border": "0px none rgb(255, 255, 255)",
+      "pad": "0px",
+      "h": 22,
+      "w": 1400,
+      "text": "Shipping outside of the U.S.? Learn About International Shop"
+    },
+    "setVars": [
+      [
+        "--ndls-border-radius-20",
+        "2px"
+      ],
+      [
+        "--ndls-border-radius-40",
+        "4px"
+      ],
+      [
+        "--ndls-border-radius-80",
+        "8px"
+      ],
+      [
+        "--ndls-border-radius-160",
+        "16px"
+      ],
+      [
+        "--ndls-border-radius-320",
+        "32px"
+      ],
+      [
+        "--ndls-border-radius-00",
+        "0px"
+      ],
+      [
+        "--ndls-border-radius-circle",
+        "50%"
+      ],
+      [
+        "--ndls-border-radius-pill",
+        "500px"
+      ],
+      [
+        "--ndls-border-radius-button",
+        "4px"
+      ],
+      [
+        "--ndls-border-radius-input",
+        "4px"
+      ],
+      [
+        "--ndls-border-radius-image",
+        "4px"
+      ],
+      [
+        "--ndls-border-radius-container-small",
+        "8px"
+      ],
+      [
+        "--ndls-border-radius-container-large",
+        "16px"
+      ],
+      [
+        "--ndls-border-width-10",
+        "1px"
+      ],
+      [
+        "--ndls-border-width-20",
+        "2px"
+      ],
+      [
+        "--ndls-border-width-40",
+        "4px"
+      ],
+      [
+        "--ndls-border-width-80",
+        "8px"
+      ],
+      [
+        "--ndls-border-width-00",
+        "0px"
+      ],
+      [
+        "--ndls-color-brand-anniversary",
+        "#fff200"
+      ],
+      [
+        "--ndls-color-brand-holiday-blue",
+        "#002456"
+      ],
+      [
+        "--ndls-color-brand-holiday-green",
+        "#024124"
+      ],
+      [
+        "--ndls-color-brand-holiday-red",
+        "#b80009"
+      ],
+      [
+        "--ndls-color-brand-nordstrom-primary",
+        "#000"
+      ],
+      [
+        "--ndls-color-brand-nordstrom-secondary",
+        "#fff"
+      ],
+      [
+        "--ndls-color-brand-nordyclub",
+        "#ceb892"
+      ],
+      [
+        "--ndls-color-brand-rack-flash",
+        "#186adc"
+      ],
+      [
+        "--ndls-color-brand-rack-primary",
+        "#186adc"
+      ],
+      [
+        "--ndls-color-brand-rack-secondary",
+        "#fff"
+      ],
+      [
+        "--ndls-color-brand-primary",
+        "#000"
+      ],
+      [
+        "--ndls-color-scale-blue-10",
+        "#ecf5fd"
+      ],
+      [
+        "--ndls-color-scale-blue-20",
+        "#cde5fe"
+      ],
+      [
+        "--ndls-color-scale-blue-30",
+        "#9bccfd"
+      ],
+      [
+        "--ndls-color-scale-blue-40",
+        "#6daefe"
+      ],
+      [
+        "--ndls-color-scale-blue-50",
+        "#3d8cff"
+      ],
+      [
+        "--ndls-color-scale-blue-60",
+        "#186adc"
+      ],
+      [
+        "--ndls-color-scale-blue-70",
+        "#094ebe"
+      ],
+      [
+        "--ndls-color-scale-blue-80",
+        "#073a8d"
+      ],
+      [
+        "--ndls-color-scale-blue-90",
+        "#01296b"
+      ],
+      [
+        "--ndls-color-scale-blue-100",
+        "#01173d"
+      ],
+      [
+        "--ndls-color-scale-cyan-10",
+        "#e0f4ff"
+      ]
+    ]
+  },
+  "capturedAt": "2026-11-21T21:52:09.859Z",
+  "product": {
+    "href": "https://www.nordstrom.com/s/nordstrom-cashmere-crew-nk-sweater/8688977",
+    "title": "Nordstrom Cashmere Crewneck Sweater (Women) | Nordstrom",
+    "h1": "Cashmere Crewneck Sweater",
+    "bag": {
+      "bg": "rgb(25, 26, 27)",
+      "color": "rgb(255, 255, 255)",
+      "size": "16px",
+      "weight": "700",
+      "radius": "4px",
+      "h": 48,
+      "w": 570,
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "text": "Add to Bag"
+    },
+    "text": "Skip navigation |  | Shipping outside of the U.S.? Learn About International Shopping |  | Singapore | Search | Clear | Clear Search Text | Shop with AI | BETA | Sign In | 0 | Black Friday & Sale | Holiday Gifts | New & Now | Women | Men | Beauty | Shoes | Accessories | Kids | Designer | Home | Serv"
+  },
+  "chrome": {
+    "sign": null,
+    "bag": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 238)",
+      "size": "16px",
+      "weight": "400",
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "radius": "0px",
+      "h": 24,
+      "w": 24,
+      "top": 83,
+      "text": "0",
+      "letter": "normal",
+      "transform": "none"
+    },
+    "ai": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(25, 26, 27)",
+      "size": "16px",
+      "weight": "400",
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "radius": "0px",
+      "h": 42,
+      "w": 110,
+      "top": 74,
+      "text": "Shop with AI BETA",
+      "letter": "normal",
+      "transform": "none"
+    },
+    "sg": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "size": "18px",
+      "weight": "400",
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "radius": "0px",
+      "h": 28,
+      "w": 142,
+      "top": 9,
+      "text": "Singapore",
+      "letter": "normal",
+      "transform": "none"
+    },
+    "promo": {
+      "bg": "rgb(25, 26, 27)",
+      "color": "rgb(255, 255, 255)",
+      "size": "16px",
+      "weight": "400",
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "radius": "0px",
+      "h": 41,
+      "w": 1440,
+      "top": 0,
+      "text": "Shipping outside of the U.S.? Learn About Internat",
+      "letter": "normal",
+      "transform": "none"
+    },
+    "header": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(25, 26, 27)",
+      "size": "15px",
+      "weight": "400",
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "radius": "0px",
+      "h": 32,
+      "w": 304,
+      "top": 975,
+      "text": "Black Friday Deals You'll Love",
+      "letter": "normal",
+      "transform": "none"
+    },
+    "logoHtml": "<figure arialabel=\"Nordstrom Logo\" aria-label=\"Nordstrom Logo\" class=\"rq8ns\"></figure>"
+  },
+  "productExtra": {
+    "sale": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(216, 37, 8)",
+      "size": "16px",
+      "weight": "700",
+      "radius": "0px",
+      "border": "0px none rgb(216, 37, 8)",
+      "h": 22,
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "text": "SGD 132.64",
+      "deco": "none"
+    },
+    "was": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(25, 26, 27)",
+      "size": "16px",
+      "weight": "400",
+      "radius": "0px",
+      "border": "0px none rgb(25, 26, 27)",
+      "h": 7198,
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "text": "HomeWomenClothingSweatersCashmere Try on",
+      "deco": "none"
+    },
+    "badge": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(25, 26, 27)",
+      "size": "16px",
+      "weight": "700",
+      "radius": "0px",
+      "border": "0px none rgb(25, 26, 27)",
+      "h": 20,
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "text": "Top Gift",
+      "deco": "none"
+    },
+    "size": null,
+    "h1": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(25, 26, 27)",
+      "size": "24px",
+      "weight": "700",
+      "radius": "0px",
+      "border": "0px none rgb(25, 26, 27)",
+      "h": 32,
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "text": "Cashmere Crewneck Sweater",
+      "deco": "none"
+    },
+    "brand": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(25, 26, 27)",
+      "size": "16px",
+      "weight": "400",
+      "radius": "0px",
+      "border": "0px none rgb(25, 26, 27)",
+      "h": 22,
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "text": "Nordstrom",
+      "deco": "none"
+    },
+    "footerBg": "rgba(0, 0, 0, 0)"
+  },
+  "collectionExtra": {
+    "h1": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(25, 26, 27)",
+      "size": "28px",
+      "weight": "700",
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "text": "Women's Clothing"
+    },
+    "count": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(25, 26, 27)",
+      "size": "16px",
+      "weight": "400",
+      "font": "\"Brandon Text\", Arial, sans-serif",
+      "text": "170598 items"
+    },
+    "sale": null
+  },
+  "logo": {
+    "img": null,
+    "bg": "url(\"https://n.nordstrommedia.com/alias/nordstrom-logo.svg\")"
+  }
+}
