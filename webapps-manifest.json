@@ -1439,9 +1439,9 @@
       "description": "A more humane to-do list",
       "status": "captured",
       "package": "systems/dona",
-      "notes": "https://app.dona.ai/login asks for email and password. No code was sent.",
+      "notes": "https://app.dona.ai/login asks for email and password. No code was sent. Public walk 2026-11-21: the map starts at dona.ai and records which header, footer, and in-page control opens which page, modal, or login wall. Marketing pages and the video modal were photographed at desktop and phone. Cookie bar was hidden, never accepted. Login and Try for free stop at app.dona.ai/login. Nothing was typed. Newsletter was not submitted. Signed-in app was not captured. Public package refresh in PR 1645 at 7f8e518bb0be. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 5
     },
     {
@@ -1490,9 +1490,9 @@
       "description": "Redefines how engineering teams handle secrets",
       "status": "captured",
       "package": "systems/doppler",
-      "notes": "https://dashboard.doppler.com/login asks for email and password, or Google or GitHub. No code was sent.",
+      "notes": "https://dashboard.doppler.com/login asks for email and password, or Google or GitHub. No code was sent. Public walk 2026-11-21: the map starts at doppler.com and records which header, footer, docs, and in-page control opens which page or login wall. Marketing pages and docs were photographed at desktop and phone. Sign In stops at dashboard.doppler.com/login. Nothing was typed. Google and GitHub were not clicked. Register, share, and billing walls were recorded and not entered. Signed-in app was not captured. Public package refresh in PR 1646 at 08360b987df0. catalog.json not in that PR. login-extracted stays not-started.",
       "login-extracted": "not-started",
-      "login-probe": "password",
+      "login-probe": "closed",
       "batch": 5
     },
     {
