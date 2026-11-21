@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T20:02:48.532Z",
+  "capturedAt": "2026-11-21T04:19:50.328Z",
   "screenshot": "mobile-pricing-light-default.png",
   "sanitizedSourceUrl": "https://equals.com/pricing/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 390,
-      "height": 10844
+      "height": 10792
     },
     "scroll": {
       "x": 0,

@@ -34,7 +34,7 @@ The app serves one signed-out card centred on the `#fcfcfc` canvas (`light.signi
 |   Sign in to Equals        <- 300px card         |
 |   subheading copy                                 |
 |   +------------------------------------------+   |
-|   | you@company.com        <- 30px #f5f5f5   |   |
+|   | (empty field)          <- 30px #f5f5f5   |   |
 |   +------------------------------------------+   |
 |   +------------------------------------------+   |
 |   | Continue               <- 27px #7c3aed   |   |

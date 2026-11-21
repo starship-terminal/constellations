@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T19:59:03.472Z",
+  "capturedAt": "2026-11-21T04:19:42.203Z",
   "screenshot": "docs-light-default.png",
-  "sanitizedSourceUrl": "https://docs.equals.com/docs/getting-started",
+  "sanitizedSourceUrl": "https://docs.equals.com/",
   "requested": {
     "viewport": {
       "width": 1440,
       "height": 900
     },
-    "deviceScaleFactor": 1
+    "deviceScaleFactor": 2
   },
   "configuredViewport": {
     "width": 1440,
@@ -17,7 +17,7 @@
   "actual": {
     "innerWidth": 1440,
     "innerHeight": 900,
-    "devicePixelRatio": 1,
+    "devicePixelRatio": 2,
     "theme": {
       "classes": [
         "light"
@@ -36,7 +36,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 9999
+      "height": 3583
     },
     "scroll": {
       "x": 0,
@@ -49,14 +49,14 @@
     "clip": null
   },
   "png": {
-    "width": 1440,
-    "height": 900
+    "width": 2880,
+    "height": 1800
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
-      "width": 1440,
-      "height": 900
+      "width": 2880,
+      "height": 1800
     },
     "basis": "configuredViewport"
   },

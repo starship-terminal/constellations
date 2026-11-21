@@ -1,0 +1,79 @@
+{
+  "product": "Equals",
+  "slug": "equals",
+  "domain": "equals.app",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "captured": "2026-11-21",
+  "typed": false,
+  "submitted": false,
+  "identity_providers_clicked": [],
+  "probe": {
+    "equals_app_login": {
+      "requested": "https://equals.app/login",
+      "final": "https://equals.com/login",
+      "status": 404,
+      "title": "Page not found",
+      "note": "Netlify 404. No form. Screenshot screenshots/login-404-light-default.png."
+    },
+    "equals_app_home": {
+      "requested": "https://equals.app/",
+      "final": "https://equals.com/",
+      "status": 200,
+      "title": "Trusted AI analytics | Equals"
+    }
+  },
+  "walls": [
+    {
+      "url": "https://go.equals.com/",
+      "final_url": "https://go.equals.com/auth/new",
+      "status": 200,
+      "kind": "email sign-in",
+      "title": "Equals",
+      "asks": [
+        "Sign in to Equals",
+        "Enter your email below to login to your account",
+        "Email",
+        "Continue",
+        "Don't have an account? Request a demo"
+      ],
+      "fields": [
+        {
+          "tag": "input",
+          "type": "email",
+          "name": "email",
+          "placeholder": "Enter your email"
+        },
+        {
+          "tag": "input",
+          "type": "submit",
+          "name": "commit",
+          "label": "Continue"
+        }
+      ],
+      "request_a_demo_href": "https://equals.com",
+      "identity_providers": [],
+      "clicked": [],
+      "typed": false,
+      "screenshot": "screenshots/signin-wall-light-default.png",
+      "phone_screenshot": "screenshots/mobile-signin-wall-light-default.png",
+      "note": "Empty wall only. No email, name, password, or code was typed. Continue was not pressed. Request a demo was not clicked. No Google, Apple, or other identity provider is on the page."
+    }
+  ],
+  "marketing_forms_not_submitted": [
+    "Header Enter email and Get a demo",
+    "Home hero Enter your work email and Get a demo",
+    "Pricing plan email fields and Get a demo",
+    "Use-case page email field and Get a demo",
+    "Phone drawer Enter your work email and Get a demo"
+  ],
+  "gaps": [
+    "Signed-in app was not captured.",
+    "login-extracted is not-started. A prior probe entered an address and was told it could not find an account. This pass did not repeat that.",
+    "No account was created.",
+    "No form was submitted.",
+    "Onboarding was not reached.",
+    "Unread token values are Not captured."
+  ],
+  "privateStringsWritten": false
+}

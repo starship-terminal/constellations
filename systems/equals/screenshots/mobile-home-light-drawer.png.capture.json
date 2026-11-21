@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T20:02:21.915Z",
+  "capturedAt": "2026-11-21T04:19:46.761Z",
   "screenshot": "mobile-home-light-drawer.png",
   "sanitizedSourceUrl": "https://equals.com/",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1012,
-      "height": 11111
+      "height": 11075
     },
     "scroll": {
       "x": 0,

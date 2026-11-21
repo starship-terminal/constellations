@@ -4013,7 +4013,7 @@
       "fontSize": "16px"
      },
      "crop": "components/crops/hero-email-filled.png",
-     "via": "typed \"name@example.com\", then deleted; nothing sent"
+     "via": "filled state not captured: this pass does not type into fields"
     }
    },
    "page": "home",
@@ -8577,7 +8577,7 @@
       "fontSize": "12px"
      },
      "crop": "components/crops/signin-email-filled.png",
-     "via": "typed \"name@example.com\", then deleted; nothing sent"
+     "via": "filled state not captured: this pass does not type into fields"
     }
    },
    "page": "signin",
@@ -15819,7 +15819,7 @@
       "fontSize": "16px"
      },
      "crop": "components/crops/m-email-filled.png",
-     "via": "typed \"name@example.com\", then deleted; nothing sent"
+     "via": "filled state not captured: this pass does not type into fields"
     }
    },
    "page": "mobile",
@@ -16309,7 +16309,7 @@
       "fontSize": "16px"
      },
      "crop": "components/crops/uc-email-filled.png",
-     "via": "typed \"name@example.com\", then deleted; nothing sent"
+     "via": "filled state not captured: this pass does not type into fields"
     }
    },
    "page": "usecase",
