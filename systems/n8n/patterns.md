@@ -1,6 +1,6 @@
 # Patterns
 
-The preview browser did not produce screenshot frames, so these patterns are the pages that were measured, not images.
+The 2026-11-19 readings below were taken without screenshot frames. Public pages were photographed on 2026-11-22. See [site-tree.md](site-tree.md). Those shots do not replace the measurements.
 
 ## App shell and navigation
 

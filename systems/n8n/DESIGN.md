@@ -223,6 +223,6 @@ Phone width was not measured. Nav links at 1169px were `display: none`. That is 
 - **Use the pink pill for the main marketing action.** `GET STARTED` and `START FREE TRIAL` are rgb(255, 188, 202) with rgb(33, 33, 33) type in n8n Baumer Mono, uppercase. The secondary action is the grey pill.
 - **Keep marketing type on n8n Baumer Uniwidth and actions on n8n Baumer Mono.** Body is 16px. The homepage h1 at this width is 64px, weight 500, with negative tracking.
 - **Use Geist and the dark page for the signed-out console.** Login and register are oklch(0.2046 0 89.88), with a pink pill button and a 4px field.
-- **Do not invent a screenshot.** The preview browser did not paint frames. The readings are computed styles.
+- **Do not invent a screenshot.** The 2026-11-19 preview pass did not paint frames. The 2026-11-22 frames are in [screenshots/](screenshots/). Token values still come from the readings.
 - **Do not enter a workflow from this package.** Login wants an instance name. Register wants an email. Neither was submitted, and the editor was not opened.
 - **Do not copy the cookie banner into the product.** CookieScript uses Inter and a blue switch. n8n's own pages do not.
