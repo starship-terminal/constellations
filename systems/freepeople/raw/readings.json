@@ -1,0 +1,105 @@
+{
+  "captured": "2026-11-22",
+  "url": "https://www.freepeople.com/",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2
+  },
+  "computed": {
+    "bodyBackground": "rgb(254, 251, 250)",
+    "bodyColor": "rgb(0, 0, 0)",
+    "promoBarBackground": "rgb(237, 230, 224)",
+    "promoBarHeight": 44,
+    "promoText": {
+      "fontFamily": "Karla, Helvetica, sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "700",
+      "letterSpacing": "0.3px",
+      "lineHeight": "20.4px",
+      "color": "rgb(26, 26, 26)"
+    },
+    "navLink": {
+      "fontFamily": "Karla, Helvetica, sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "letterSpacing": "0.3px",
+      "lineHeight": "14px",
+      "textTransform": "uppercase",
+      "color": "rgb(37, 36, 35)",
+      "height": 60
+    },
+    "giftsAndSale": {
+      "color": "rgb(213, 41, 117)"
+    },
+    "search": {
+      "width": 150,
+      "height": 26,
+      "fontSize": "12px",
+      "placeholder": "SEARCH"
+    },
+    "logo": {
+      "width": 200,
+      "height": 20
+    },
+    "productTitle": {
+      "fontFamily": "Karla, Georgia, serif",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "letterSpacing": "0.3px",
+      "color": "rgb(37, 36, 35)"
+    },
+    "productPrice": {
+      "fontFamily": "Karla, Helvetica, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "color": "rgb(37, 36, 35)",
+      "text": "$58.00"
+    },
+    "addToBag": {
+      "background": "rgb(213, 41, 117)",
+      "color": "rgb(255, 255, 255)",
+      "height": 45,
+      "width": 465,
+      "fontSize": "12px",
+      "letterSpacing": "1.2px",
+      "textTransform": "uppercase",
+      "borderRadius": "0px",
+      "clicked": false
+    },
+    "categoryTitle": {
+      "fontFamily": "Karla, Georgia, serif",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "color": "rgb(37, 36, 35)"
+    },
+    "heroTileHeading": {
+      "fontFamily": "Karla, Georgia, serif",
+      "fontSize": "32px",
+      "fontWeight": "400",
+      "color": "rgb(255, 255, 255)"
+    }
+  },
+  "customProperties": {
+    "--creme-light": "254, 251, 250",
+    "--creme": "250, 242, 237",
+    "--creme-dark": "237, 230, 224",
+    "--stone-dark": "37, 36, 35",
+    "--stone": "153, 143, 138",
+    "--stone-medium": "124, 112, 110",
+    "--stone-light": "214, 208, 203",
+    "--pink-dark": "213, 41, 117",
+    "--pink": "255, 175, 175",
+    "--green": "5, 117, 85",
+    "--red": "208, 19, 2",
+    "--white": "255, 255, 255",
+    "--black": "0, 0, 0",
+    "--off-white": "244, 245, 240",
+    "--ivory-light": "252, 247, 242",
+    "--font-body": "'Karla', Helvetica, sans-serif",
+    "--font-heading": "'Karla', Georgia, serif",
+    "--font-body-bold": "700",
+    "--site-background": "rgb(var(--creme-light))",
+    "--popover-shadow": "5px 5px 10px rgba(var(--black), .2)"
+  }
+}

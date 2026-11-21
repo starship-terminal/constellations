@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Free People style guide</title>
+<style>
+  :root {
+    --page: #FEFBFA;
+    --promo: #EDE6E0;
+    --ink: #252423;
+    --pink: #D52975;
+    --white: #FFFFFF;
+    --stone: #998F8A;
+  }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: Karla, Helvetica, Arial, sans-serif;
+  }
+  header {
+    background: var(--promo);
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  nav {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 0 24px;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+  .word {
+    font-size: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #2D2D2D;
+    margin-right: 16px;
+  }
+  .sale { color: var(--pink); }
+  main { padding: 32px 24px 48px; }
+  h1 { font-size: 18px; font-weight: 400; letter-spacing: 0.3px; }
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0; }
+  .swatch { width: 96px; }
+  .chip { height: 48px; border: 1px solid #EDE6E0; }
+  .label { font-size: 12px; margin-top: 6px; }
+  .bag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 45px;
+    background: var(--pink);
+    color: var(--white);
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    border-radius: 0;
+  }
+  .note { color: var(--stone); font-size: 12px; margin-top: 24px; }
+</style>
+</head>
+<body>
+<header>FREE EXPRESS SHIPPING ON ALL US ORDERS</header>
+<nav>
+  <span class="word">Free People</span>
+  <span>New</span>
+  <span>Clothes</span>
+  <span class="sale">Sale</span>
+</nav>
+<main>
+  <h1>We The Free Atlas Boat Neck Top</h1>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#FEFBFA"></div><div class="label">#FEFBFA page</div></div>
+    <div class="swatch"><div class="chip" style="background:#EDE6E0"></div><div class="label">#EDE6E0 promo</div></div>
+    <div class="swatch"><div class="chip" style="background:#252423"></div><div class="label">#252423 ink</div></div>
+    <div class="swatch"><div class="chip" style="background:#D52975"></div><div class="label">#D52975 pink</div></div>
+    <div class="swatch"><div class="chip" style="background:#998F8A"></div><div class="label">#998F8A stone</div></div>
+  </div>
+  <div class="bag">Add to Bag</div>
+  <p class="note">Measured 2026-11-22. Karla is not in this package. Add to Bag was not clicked on the live shop.</p>
+</main>
+</body>
+</html>
