@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Milk Makeup public style guide</title>
+  <style>
+    :root {
+      --ink: #000000;
+      --page: #ffffff;
+      --pink: #f44b8b;
+      --white: #ffffff;
+      --muted: #747474;
+      --soft: #1a1b18;
+      --card-border: #a5a5a5;
+      --font: Arial, sans-serif;
+    }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 14px;
+      line-height: 16px;
+    }
+    header, main { padding: 32px 40px; }
+    header { background: var(--ink); color: var(--white); }
+    header p { margin: 0; font-size: 12px; font-weight: 600; line-height: 14px; }
+    h1 { font-size: 38px; font-weight: 600; letter-spacing: -1px; line-height: 36px; margin: 0 0 8px; }
+    h2 { font-size: 12px; font-weight: 600; margin: 32px 0 12px; }
+    p { max-width: 62ch; }
+    .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+    .swatch { width: 140px; }
+    .chip { height: 64px; border: 1px solid var(--ink); }
+    .label { font-size: 12px; margin-top: 6px; }
+    .btn-fill, .btn-line, .btn-hero {
+      display: inline-block;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+    .btn-fill {
+      background: var(--ink);
+      color: var(--white);
+      border: 0;
+      border-radius: 4px;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 50px;
+      height: 50px;
+      padding: 0 28px;
+    }
+    .btn-line {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--ink);
+      border-radius: 4px;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 48px;
+      height: 50px;
+      padding: 0 18px;
+    }
+    .btn-hero {
+      background: var(--ink);
+      color: var(--white);
+      border: 1px solid var(--white);
+      border-radius: 0;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 1.28px;
+      text-transform: uppercase;
+      padding: 12px 28px;
+    }
+    .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .hero-sample { background: var(--ink); color: var(--white); padding: 24px; }
+    .hero-sample h3 { margin: 0 0 16px; font-size: 50px; font-weight: 500; line-height: 50px; text-transform: uppercase; }
+    .nav-sample { font-size: 12px; font-weight: 600; }
+    .nav-sample span { margin-right: 16px; }
+    .pink { color: var(--pink); }
+    footer { padding: 24px 40px 48px; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <p>Milk Makeup announcement bar. Black #000000, white #ffffff, 40px, 12px weight 600.</p>
+  </header>
+  <main>
+    <h1>Milk Makeup</h1>
+    <p>Public shop tokens measured on 22 November 2026 from milkmakeup.com. Review is the live family. This page falls back to Arial because the webfont is not bundled.</p>
+
+    <h2>Color</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#000000"></div><div class="label">Ink #000000</div></div>
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">Page #ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#f44b8b"></div><div class="label">Pink #f44b8b</div></div>
+      <div class="swatch"><div class="chip" style="background:#747474"></div><div class="label">Muted #747474</div></div>
+      <div class="swatch"><div class="chip" style="background:#1a1b18"></div><div class="label">Ink soft #1a1b18</div></div>
+      <div class="swatch"><div class="chip" style="background:#a5a5a5"></div><div class="label">Card border #a5a5a5</div></div>
+    </div>
+
+    <h2>Nav</h2>
+    <p class="nav-sample"><span class="pink">Milk Sticks</span><span>Best Sellers</span><span>Face</span><span>Lip</span><span>Eye</span><span>Sets</span><span>Shop All</span></p>
+
+    <h2>Type</h2>
+    <p style="font-size:26px;font-weight:600;letter-spacing:-1px;line-height:32px">Line + Fill</p>
+    <p style="font-size:14px;color:#747474">lip liner + lip color</p>
+    <p style="font-size:18px;font-weight:600;line-height:20px">$22</p>
+    <p style="font-size:14px">Body 14px, weight 400, line-height 16px.</p>
+
+    <h2>Buttons</h2>
+    <div class="hero-sample">
+      <h3>Holiday sets</h3>
+      <span class="btn-hero">Shop now</span>
+    </div>
+    <div class="row" style="margin-top:16px">
+      <span class="btn-fill">Add to Bag</span>
+      <span class="btn-line">Buy It Now</span>
+    </div>
+  </main>
+  <footer>Measured 22 November 2026. Homepage, Lip collection, Line + Fill. Login, signup, cart, and checkout were not entered.</footer>
+</body>
+</html>

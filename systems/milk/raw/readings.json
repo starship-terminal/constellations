@@ -1,0 +1,1027 @@
+{
+  "measured": {
+    "home": {
+      "title": "Milk Makeup Cosmetics - Clean Beauty + Vegan Makeup",
+      "href": "https://milkmakeup.com/",
+      "dpr": 2,
+      "vw": 1440,
+      "vh": 900,
+      "body": {
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "size": "14px",
+        "weight": "400",
+        "lh": "16px"
+      },
+      "bar": {
+        "text": "Love it or return it | Free returns for 30 days Limited edition: Holiday Makeup Sets | Explore Now A",
+        "w": 1440,
+        "h": 40,
+        "top": 0,
+        "left": 0,
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "size": "14px",
+        "weight": "400",
+        "lh": "16px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "radius": "0px",
+        "border": "0px none rgb(255, 255, 255)",
+        "pad": "7px 0px 8px"
+      },
+      "barLink": {
+        "text": "Explore Now",
+        "href": "/collections/sets",
+        "color": "rgb(255, 255, 255)",
+        "weight": "600",
+        "deco": "underline",
+        "size": "12px"
+      },
+      "header": {
+        "text": "Milk Sticks Best Sellers Face Lip Eye Sets Shop All Get your VIP rewards. Sign Up Cart, open minicar",
+        "w": 1440,
+        "h": 64,
+        "top": 40,
+        "left": 0,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "size": "14px",
+        "weight": "400",
+        "lh": "16px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "radius": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "pad": "2px 62px 0px 69px"
+      },
+      "wrap": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "borderBottom": "1px solid rgb(255, 255, 255)",
+        "h": 65
+      },
+      "nav": [
+        {
+          "text": "Milk Sticks",
+          "href": "/collections/next-gen-sticks",
+          "color": "rgb(244, 75, 139)",
+          "size": "12px",
+          "weight": "600"
+        },
+        {
+          "text": "Best Sellers",
+          "href": "/collections/best-sellers",
+          "color": "rgb(255, 255, 255)",
+          "size": "12px",
+          "weight": "600"
+        },
+        {
+          "text": "Face",
+          "href": "/collections/face",
+          "color": "rgb(255, 255, 255)",
+          "size": "12px",
+          "weight": "600"
+        },
+        {
+          "text": "Lip",
+          "href": "/collections/lip",
+          "color": "rgb(255, 255, 255)",
+          "size": "12px",
+          "weight": "600"
+        },
+        {
+          "text": "Eye",
+          "href": "/collections/eye",
+          "color": "rgb(255, 255, 255)",
+          "size": "12px",
+          "weight": "600"
+        },
+        {
+          "text": "Sets",
+          "href": "/collections/sets",
+          "color": "rgb(255, 255, 255)",
+          "size": "12px",
+          "weight": "600"
+        },
+        {
+          "text": "Shop All",
+          "href": "/collections/makeup",
+          "color": "rgb(255, 255, 255)",
+          "size": "12px",
+          "weight": "600"
+        }
+      ],
+      "logo": {
+        "w": 127,
+        "h": 47,
+        "color": "rgb(26, 27, 24)",
+        "svgW": "106",
+        "svgH": "26"
+      },
+      "h1": {
+        "text": "",
+        "w": 117,
+        "h": 47,
+        "top": 50,
+        "left": 69,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "size": "53.2px",
+        "weight": "400",
+        "lh": "0px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "radius": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "pad": "0px"
+      },
+      "h2hero": {
+        "text": "HOLIDAY SETS",
+        "w": 525,
+        "h": 50,
+        "top": 639,
+        "left": 72,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "size": "50px",
+        "weight": "500",
+        "lh": "50px",
+        "ls": "normal",
+        "tt": "uppercase",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "radius": "0px",
+        "border": "0px none rgb(255, 255, 255)",
+        "pad": "0px"
+      },
+      "cta": {
+        "text": "SHOP NOW",
+        "w": 154,
+        "h": 48,
+        "top": 709,
+        "left": 72,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "size": "16px",
+        "weight": "400",
+        "lh": "16px",
+        "ls": "1.28px",
+        "tt": "uppercase",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "radius": "0px",
+        "border": "1px solid rgb(255, 255, 255)",
+        "pad": "12px 28px",
+        "href": "/collections/sets"
+      },
+      "add": null,
+      "addLabel": null,
+      "price": null,
+      "cardTitle": {
+        "text": "Lip + Cheek Blur",
+        "w": 0,
+        "h": 0,
+        "top": 0,
+        "left": 0,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "size": "16px",
+        "weight": "600",
+        "lh": "20px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "radius": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "pad": "0px 0px 0px 1px"
+      },
+      "fonts": [
+        "Review 400",
+        "Review 500",
+        "Review 600",
+        "Review 700",
+        "swiper-icons 400",
+        "GTStandard-M 450"
+      ],
+      "favicon": [
+        "https://milkmakeup.com/cdn/shop/files/Artboard_4_32x32.png?v=1773987276"
+      ]
+    },
+    "lip": {
+      "title": "Lip Makeup: Lipstick, Plumper, Lip Gloss & More | Milk Makeup",
+      "href": "https://milkmakeup.com/collections/lip",
+      "dpr": 2,
+      "vw": 1440,
+      "vh": 900,
+      "body": {
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "size": "14px",
+        "weight": "400",
+        "lh": "16px"
+      },
+      "bar": {
+        "text": "Love it or return it | Free returns for 30 days Limited edition: Holiday Makeup Sets | Explore Now A",
+        "w": 1440,
+        "h": 40,
+        "top": 0,
+        "left": 0,
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "size": "14px",
+        "weight": "400",
+        "lh": "16px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "radius": "0px",
+        "border": "0px none rgb(255, 255, 255)",
+        "pad": "7px 0px 8px"
+      },
+      "barLink": {
+        "text": "Explore Now",
+        "href": "/collections/sets",
+        "color": "rgb(255, 255, 255)",
+        "weight": "600",
+        "deco": "underline",
+        "size": "12px"
+      },
+      "header": {
+        "text": "Milk Sticks Best Sellers Face Lip Eye Sets Shop All Get your VIP rewards. Sign Up Cart, open minicar",
+        "w": 1440,
+        "h": 64,
+        "top": 40,
+        "left": 0,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "size": "14px",
+        "weight": "400",
+        "lh": "16px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "radius": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "pad": "2px 62px 0px 69px"
+      },
+      "wrap": {
+        "bg": "rgb(255, 255, 255)",
+        "borderBottom": "1px solid rgb(0, 0, 0)",
+        "h": 65
+      },
+      "nav": [
+        {
+          "text": "Milk Sticks",
+          "href": "/collections/next-gen-sticks",
+          "color": "rgb(244, 75, 139)",
+          "size": "12px",
+          "weight": "600"
+        },
+        {
+          "text": "Best Sellers",
+          "href": "/collections/best-sellers",
+          "color": "rgb(0, 0, 0)",
+          "size": "12px",
+          "weight": "600"
+        },
+        {
+          "text": "Face",
+          "href": "/collections/face",
+          "color": "rgb(0, 0, 0)",
+          "size": "12px",
+          "weight": "600"
+        },
+        {
+          "text": "Lip",
+          "href": "/collections/lip",
+          "color": "rgb(0, 0, 0)",
+          "size": "12px",
+          "weight": "600"
+        },
+        {
+          "text": "Eye",
+          "href": "/collections/eye",
+          "color": "rgb(0, 0, 0)",
+          "size": "12px",
+          "weight": "600"
+        },
+        {
+          "text": "Sets",
+          "href": "/collections/sets",
+          "color": "rgb(0, 0, 0)",
+          "size": "12px",
+          "weight": "600"
+        },
+        {
+          "text": "Shop All",
+          "href": "/collections/makeup",
+          "color": "rgb(0, 0, 0)",
+          "size": "12px",
+          "weight": "600"
+        }
+      ],
+      "logo": {
+        "w": 127,
+        "h": 47,
+        "color": "rgb(26, 27, 24)",
+        "svgW": "106",
+        "svgH": "26"
+      },
+      "h1": {
+        "text": "Lips",
+        "w": 70,
+        "h": 36,
+        "top": 165,
+        "left": 685,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "size": "38px",
+        "weight": "600",
+        "lh": "36px",
+        "ls": "-1px",
+        "tt": "none",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "radius": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "pad": "0px"
+      },
+      "h2hero": {
+        "text": "",
+        "w": 270,
+        "h": 40,
+        "top": 446,
+        "left": 259,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "size": "16px",
+        "weight": "600",
+        "lh": "20px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "radius": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "pad": "0px 16.8px 0px 1px"
+      },
+      "cta": null,
+      "add": {
+        "text": "Add to Bag $22",
+        "w": 315,
+        "h": 50,
+        "top": 851,
+        "left": 398,
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(26, 27, 24)",
+        "size": "13.3333px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "radius": "4px",
+        "border": "1px solid rgb(165, 165, 165)",
+        "pad": "0px 18px"
+      },
+      "addLabel": {
+        "color": "rgb(255, 255, 255)",
+        "size": "16px",
+        "weight": "600",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+      },
+      "price": null,
+      "cardTitle": {
+        "text": "Lip + Cheek Blur",
+        "w": 0,
+        "h": 0,
+        "top": 0,
+        "left": 0,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "size": "16px",
+        "weight": "600",
+        "lh": "20px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "radius": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "pad": "0px 16.8px 0px 1px"
+      },
+      "fonts": [
+        "Review 400",
+        "Review 600",
+        "Review 700",
+        "GTStandard-M 450"
+      ],
+      "favicon": [
+        "https://milkmakeup.com/cdn/shop/files/Artboard_4_32x32.png?v=1773987276"
+      ]
+    },
+    "product": {
+      "title": "Line + Fill Lip Color and Lip Liner | Milk Makeup",
+      "href": "https://milkmakeup.com/products/line-fill",
+      "dpr": 2,
+      "vw": 1440,
+      "vh": 900,
+      "body": {
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "size": "14px",
+        "weight": "400",
+        "lh": "16px"
+      },
+      "bar": {
+        "text": "Love it or return it | Free returns for 30 days Limited edition: Holiday Makeup Sets | Explore Now A",
+        "w": 1440,
+        "h": 40,
+        "top": 0,
+        "left": 0,
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "size": "14px",
+        "weight": "400",
+        "lh": "16px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "radius": "0px",
+        "border": "0px none rgb(255, 255, 255)",
+        "pad": "7px 0px 8px"
+      },
+      "barLink": {
+        "text": "Explore Now",
+        "href": "/collections/sets",
+        "color": "rgb(255, 255, 255)",
+        "weight": "600",
+        "deco": "underline",
+        "size": "12px"
+      },
+      "header": {
+        "text": "Milk Sticks Best Sellers Face Lip Eye Sets Shop All Get your VIP rewards. Sign Up Cart, open minicar",
+        "w": 1440,
+        "h": 64,
+        "top": 40,
+        "left": 0,
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)",
+        "size": "14px",
+        "weight": "400",
+        "lh": "16px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "radius": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "pad": "2px 62px 0px 69px"
+      },
+      "wrap": {
+        "bg": "rgb(255, 255, 255)",
+        "borderBottom": "1px solid rgb(0, 0, 0)",
+        "h": 65
+      },
+      "nav": [
+        {
+          "text": "Milk Sticks",
+          "href": "/collections/next-gen-sticks",
+          "color": "rgb(244, 75, 139)",
+          "size": "12px",
+          "weight": "600"
+        },
+        {
+          "text": "Best Sellers",
+          "href": "/collections/best-sellers",
+          "color": "rgb(0, 0, 0)",
+          "size": "12px",
+          "weight": "600"
+        },
+        {
+          "text": "Face",
+          "href": "/collections/face",
+          "color": "rgb(0, 0, 0)",
+          "size": "12px",
+          "weight": "600"
+        },
+        {
+          "text": "Lip",
+          "href": "/collections/lip",
+          "color": "rgb(0, 0, 0)",
+          "size": "12px",
+          "weight": "600"
+        },
+        {
+          "text": "Eye",
+          "href": "/collections/eye",
+          "color": "rgb(0, 0, 0)",
+          "size": "12px",
+          "weight": "600"
+        },
+        {
+          "text": "Sets",
+          "href": "/collections/sets",
+          "color": "rgb(0, 0, 0)",
+          "size": "12px",
+          "weight": "600"
+        },
+        {
+          "text": "Shop All",
+          "href": "/collections/makeup",
+          "color": "rgb(0, 0, 0)",
+          "size": "12px",
+          "weight": "600"
+        }
+      ],
+      "logo": {
+        "w": 127,
+        "h": 47,
+        "color": "rgb(26, 27, 24)",
+        "svgW": "106",
+        "svgH": "26"
+      },
+      "h1": {
+        "text": "Line + Fill",
+        "w": 425,
+        "h": 32,
+        "top": 165,
+        "left": 910,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "size": "26px",
+        "weight": "600",
+        "lh": "32px",
+        "ls": "-1px",
+        "tt": "none",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "radius": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "pad": "0px 40px 0px 0px"
+      },
+      "h2hero": null,
+      "cta": null,
+      "add": {
+        "text": "Add to Bag",
+        "w": 334,
+        "h": 50,
+        "top": 456,
+        "left": 1001,
+        "bg": "rgb(0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "size": "13.3333px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Arial",
+        "radius": "0px 4px 4px 0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "pad": "1px 6px"
+      },
+      "addLabel": {
+        "color": "rgb(255, 255, 255)",
+        "size": "17px",
+        "weight": "600",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+      },
+      "price": {
+        "text": "$22",
+        "w": 35,
+        "h": 18,
+        "top": 229,
+        "left": 910,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "size": "18px",
+        "weight": "600",
+        "lh": "20px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "radius": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "pad": "0px"
+      },
+      "cardTitle": {
+        "text": "Lip + Cheek Blur",
+        "w": 0,
+        "h": 0,
+        "top": 0,
+        "left": 0,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "size": "16px",
+        "weight": "600",
+        "lh": "20px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "radius": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "pad": "0px 0px 0px 1px"
+      },
+      "fonts": [
+        "Review 400",
+        "Review 600",
+        "Review 700",
+        "swiper-icons 400",
+        "oke-widget-icons 400",
+        "GTStandard-M 450",
+        "Roboto 700",
+        "tolstoy-custom-font-family 400",
+        "tolstoy-custom-font-family 700",
+        "tolstoy-custom-font-family 600",
+        "tolstoy-custom-heading-font-family 500",
+        "tolstoy-custom-heading-font-family 600",
+        "tolstoy-custom-heading-font-family 700",
+        "tolstoy-custom-heading-font-family 400"
+      ],
+      "favicon": [
+        "https://milkmakeup.com/cdn/shop/files/Artboard_4_32x32.png?v=1773987276"
+      ]
+    },
+    "footer": {
+      "text": "Shop All",
+      "links": [
+        {
+          "text": "Shop All",
+          "href": "https://milkmakeup.com/collections/next-gen-sticks"
+        }
+      ],
+      "headings": [],
+      "footerH": 0
+    }
+  },
+  "extra": {
+    "product": {
+      "href": "https://milkmakeup.com/products/line-fill",
+      "buttons": [
+        {
+          "text": "Add to Bag",
+          "w": 334,
+          "h": 50,
+          "top": 456,
+          "left": 1001,
+          "bg": "rgb(0, 0, 0)",
+          "color": "rgb(0, 0, 0)",
+          "size": "13.3333px",
+          "weight": "400",
+          "lh": "normal",
+          "ls": "normal",
+          "tt": "none",
+          "font": "Arial",
+          "radius": "0px 4px 4px 0px",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "1px 6px",
+          "label": {
+            "color": "rgb(255, 255, 255)",
+            "size": "17px",
+            "weight": "600",
+            "font": "Review"
+          }
+        }
+      ],
+      "qty": [
+        {
+          "text": "",
+          "w": 25,
+          "h": 25,
+          "top": 365,
+          "left": 925,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(0, 0, 0)",
+          "size": "13.3333px",
+          "weight": "400",
+          "lh": "normal",
+          "ls": "normal",
+          "tt": "none",
+          "font": "Arial",
+          "radius": "50%",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px"
+        },
+        {
+          "text": "",
+          "w": 25,
+          "h": 25,
+          "top": 365,
+          "left": 957,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(0, 0, 0)",
+          "size": "13.3333px",
+          "weight": "400",
+          "lh": "normal",
+          "ls": "normal",
+          "tt": "none",
+          "font": "Arial",
+          "radius": "50%",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px"
+        },
+        {
+          "text": "",
+          "w": 25,
+          "h": 25,
+          "top": 365,
+          "left": 989,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(0, 0, 0)",
+          "size": "13.3333px",
+          "weight": "400",
+          "lh": "normal",
+          "ls": "normal",
+          "tt": "none",
+          "font": "Arial",
+          "radius": "50%",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px"
+        },
+        {
+          "text": "",
+          "w": 25,
+          "h": 25,
+          "top": 365,
+          "left": 1021,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(0, 0, 0)",
+          "size": "13.3333px",
+          "weight": "400",
+          "lh": "normal",
+          "ls": "normal",
+          "tt": "none",
+          "font": "Arial",
+          "radius": "50%",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px"
+        },
+        {
+          "text": "",
+          "w": 25,
+          "h": 25,
+          "top": 365,
+          "left": 1053,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(0, 0, 0)",
+          "size": "13.3333px",
+          "weight": "400",
+          "lh": "normal",
+          "ls": "normal",
+          "tt": "none",
+          "font": "Arial",
+          "radius": "50%",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px"
+        },
+        {
+          "text": "",
+          "w": 25,
+          "h": 25,
+          "top": 365,
+          "left": 1085,
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(0, 0, 0)",
+          "size": "13.3333px",
+          "weight": "400",
+          "lh": "normal",
+          "ls": "normal",
+          "tt": "none",
+          "font": "Arial",
+          "radius": "50%",
+          "border": "0px none rgb(0, 0, 0)",
+          "pad": "0px"
+        }
+      ],
+      "h1": {
+        "text": "Line + Fill",
+        "w": 425,
+        "h": 32,
+        "top": 165,
+        "left": 910,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "size": "26px",
+        "weight": "600",
+        "lh": "32px",
+        "ls": "-1px",
+        "tt": "none",
+        "font": "Review",
+        "radius": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "pad": "0px 40px 0px 0px"
+      },
+      "sub": {
+        "text": "lip liner + lip color",
+        "w": 0,
+        "h": 0,
+        "top": 0,
+        "left": 0,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(116, 116, 116)",
+        "size": "14px",
+        "weight": "400",
+        "lh": "16px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review",
+        "radius": "0px",
+        "border": "0px none rgb(116, 116, 116)",
+        "pad": "0px 0px 0px 1px"
+      },
+      "price": {
+        "text": "$22",
+        "w": 35,
+        "h": 18,
+        "top": 229,
+        "left": 910,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "size": "18px",
+        "weight": "600",
+        "lh": "20px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review",
+        "radius": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "pad": "0px"
+      },
+      "badge": {
+        "text": "New!",
+        "w": 425,
+        "h": 16,
+        "top": 145,
+        "left": 910,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "size": "14px",
+        "weight": "400",
+        "lh": "16px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review",
+        "radius": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "pad": "0px"
+      },
+      "colorLabel": {
+        "text": "Color:",
+        "w": 425,
+        "h": 16,
+        "top": 308,
+        "left": 910,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "size": "14px",
+        "weight": "600",
+        "lh": "16px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review",
+        "radius": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "pad": "0px"
+      },
+      "shade": {
+        "text": "Bet - Cool pink taupe",
+        "w": 380,
+        "h": 58,
+        "top": -947,
+        "left": 762,
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "size": "14px",
+        "weight": "400",
+        "lh": "16px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review",
+        "radius": "0px",
+        "border": "0px none rgb(0, 0, 0)",
+        "pad": "0px"
+      },
+      "rootVars": {
+        "--color-base-text": "26, 27, 24",
+        "--color-base-background-1": "255, 255, 255",
+        "--color-base-background-2": "250, 241, 233",
+        "--color-base-solid-button-labels": "255, 255, 255",
+        "--color-base-accent-1": "68, 89, 88",
+        "--font-body-family": "\"Review\", -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+        "--font-heading-family": "\"Review\", -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+        "--font-body-weight": "400",
+        "--font-heading-weight": "400"
+      }
+    },
+    "lip": {
+      "h1": {
+        "text": "Lips",
+        "w": 70,
+        "h": 36,
+        "size": "38px",
+        "weight": "600",
+        "color": "rgb(0, 0, 0)",
+        "lh": "36px",
+        "ls": "-1px",
+        "tt": "none",
+        "font": "Review"
+      },
+      "sub": {
+        "text": "Glossy, matte, got your back.",
+        "w": 400,
+        "h": 20,
+        "size": "15px",
+        "weight": "400",
+        "color": "rgb(0, 0, 0)",
+        "lh": "20px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review"
+      },
+      "crumb": {
+        "text": "Shop All",
+        "w": 55,
+        "h": 15,
+        "size": "12px",
+        "weight": "400",
+        "color": "rgb(0, 0, 0)",
+        "lh": "normal",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review",
+        "href": "/collections/makeup"
+      },
+      "cardTitle": {
+        "text": "Line + Fill",
+        "w": 86,
+        "h": 20,
+        "size": "16px",
+        "weight": "600",
+        "color": "rgb(0, 0, 0)",
+        "lh": "20px",
+        "ls": "normal",
+        "tt": "none",
+        "font": "Review"
+      },
+      "add": {
+        "bg": "rgb(0, 0, 0)",
+        "radius": "4px",
+        "h": 50,
+        "w": 315,
+        "border": "1px solid rgb(165, 165, 165)"
+      },
+      "addSpan": {
+        "color": "rgb(255, 255, 255)",
+        "size": "16px",
+        "weight": "600"
+      },
+      "priceSpan": {
+        "color": "rgb(255, 255, 255)",
+        "size": "16px",
+        "weight": "600"
+      },
+      "badge": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)",
+        "size": "14px",
+        "weight": "400",
+        "radius": "0px",
+        "pad": "0px"
+      },
+      "nav": [
+        {
+          "text": "Milk Sticks",
+          "color": "rgb(244, 75, 139)"
+        },
+        {
+          "text": "Best Sellers",
+          "color": "rgb(0, 0, 0)"
+        },
+        {
+          "text": "Face",
+          "color": "rgb(0, 0, 0)"
+        },
+        {
+          "text": "Lip",
+          "color": "rgb(0, 0, 0)"
+        },
+        {
+          "text": "Eye",
+          "color": "rgb(0, 0, 0)"
+        },
+        {
+          "text": "Sets",
+          "color": "rgb(0, 0, 0)"
+        },
+        {
+          "text": "Shop All",
+          "color": "rgb(0, 0, 0)"
+        }
+      ],
+      "headerBorder": "1px solid rgb(0, 0, 0)",
+      "headerBg": "rgb(255, 255, 255)"
+    }
+  },
+  "captured": "22 November 2026",
+  "viewport": "1440x900",
+  "dpr": 2
+}
