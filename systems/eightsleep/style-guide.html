@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Eight Sleep public tokens</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --ink: #000000;
+    --on-ink: #ffffff;
+    --gold: #e6be8c;
+    --gold-start: #fac78e;
+    --hero: #1f1712;
+    --compare: #696765;
+    --badge: #e0cfbb;
+    --font: NeueMontreal, "NeueMontreal Fallback", Arial, Helvetica, sans-serif;
+    --display: "Bethany Elingston", "Times New Roman", serif;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font); }
+  .promo { height: 42px; display: flex; align-items: center; justify-content: center; background: var(--ink); color: var(--gold); font-size: 12px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; }
+  .promo span { color: var(--on-ink); }
+  .bar { height: 69px; margin: 16px 32px; border-radius: 10px; display: flex; align-items: center; gap: 24px; padding: 0 32px; background: rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.4); }
+  .nav { font-size: 12px; font-weight: 500; letter-spacing: 1.6px; text-transform: uppercase; }
+  .shop { margin-left: auto; height: 41px; padding: 0 24px; border-radius: 8px; display: inline-flex; align-items: center; background: var(--ink); color: var(--on-ink); font-size: 14px; font-weight: 500; }
+  .stage { background: var(--hero); color: var(--on-ink); padding: 48px 32px 64px; }
+  .eyebrow { font-family: var(--mono); font-size: 14px; font-weight: 500; letter-spacing: 0; text-transform: uppercase; background: linear-gradient(90deg, var(--gold-start), var(--gold)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  h1 { font-family: var(--display); font-size: 120px; font-weight: 400; line-height: 1.05; margin: 8px 0 16px; text-transform: uppercase; }
+  .sub { font-size: 28px; font-weight: 500; line-height: 32px; letter-spacing: 0.28px; }
+  .get { display: inline-flex; align-items: center; justify-content: center; height: 57px; padding: 0 32px; border-radius: 8px; background: var(--on-ink); color: var(--ink); font-size: 18px; font-weight: 500; margin-top: 24px; }
+  main { padding: 48px 32px; }
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+  .swatch { width: 120px; font-size: 13px; }
+  .chip { height: 48px; border-radius: 8px; border: 1px solid #ddd; }
+  .price { font-size: 18px; }
+  .compare { color: var(--compare); text-decoration: line-through; margin-left: 8px; }
+  .badge { display: inline-block; margin-left: 8px; background: var(--badge); color: var(--ink); font-size: 12px; font-weight: 500; letter-spacing: 0.12px; border-radius: 4px; padding: 2px 6px; }
+  p { max-width: 640px; }
+</style>
+</head>
+<body>
+<div class="promo">Black Friday: up to <span>$1,400 off</span> the Pod + base *</div>
+<div class="bar">
+  <span class="nav">How the Pod works</span>
+  <span class="nav">Reviews</span>
+  <strong>Eight Sleep</strong>
+  <span class="shop">Shop the sale</span>
+</div>
+<section class="stage">
+  <div class="eyebrow">Limited time</div>
+  <h1>Black Friday</h1>
+  <p class="sub">Don't miss our biggest sale of the year.</p>
+  <div class="get">Get up to $1,400 off</div>
+</section>
+<main>
+  <p>Tokens measured on 2026-11-22 from the public Singapore shop. Font files are not in this package, so Neue Montreal falls back to Arial and Bethany Elingston falls back to Times New Roman.</p>
+  <p class="price">$2,899 <span class="compare">$3,699</span> <span class="badge">BLACK FRIDAY: $800 OFF</span></p>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div>page #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#000000"></div><div>ink #000000</div></div>
+    <div class="swatch"><div class="chip" style="background:#e6be8c"></div><div>gold #e6be8c</div></div>
+    <div class="swatch"><div class="chip" style="background:#fac78e"></div><div>gold start #fac78e</div></div>
+    <div class="swatch"><div class="chip" style="background:#1f1712"></div><div>hero #1f1712</div></div>
+    <div class="swatch"><div class="chip" style="background:#696765"></div><div>compare #696765</div></div>
+    <div class="swatch"><div class="chip" style="background:#e0cfbb"></div><div>badge #e0cfbb</div></div>
+  </div>
+</main>
+</body>
+</html>
