@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-22T00:41:00+08:00",
+  "screenshot": "mobile-home-light-menu.png",
+  "sanitizedSourceUrl": "https://github.com/",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "theme": {
+      "colorScheme": "light"
+    }
+  },
+  "capture": {
+    "mode": "viewport",
+    "note": "Phone navigation drawer open. No row followed. Search field empty. Sign up not clicked."
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "privacy": {
+    "signedIn": false,
+    "fieldsTyped": false,
+    "identityProvidersClicked": false,
+    "formsSubmitted": false
+  }
+}

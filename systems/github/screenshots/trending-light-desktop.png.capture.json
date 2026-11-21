@@ -1,0 +1,13 @@
+{
+  "name": "trending",
+  "url": "https://github.com/trending",
+  "finalUrl": "https://github.com/trending",
+  "status": 200,
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 2,
+  "scrollHeight": 2573,
+  "title": "Trending repositories on GitHub today · GitHub",
+  "captured": "2026-11-21T16:38:41.839Z",
+  "truncated": false
+}
