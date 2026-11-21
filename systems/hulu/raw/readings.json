@@ -1,0 +1,91 @@
+{
+  "capturedAt": "2026-11-22",
+  "method": "Playwright Chromium, signed out, viewport 1440 by 900, deviceScaleFactor 1, locale en-US",
+  "plans": {
+    "url": "https://secure.hulu.com/commerce/plans?hitsFlowName=suf_web_default",
+    "title": "Hulu",
+    "body": {
+      "backgroundColor": "rgb(247, 247, 249)",
+      "color": "rgb(13, 14, 17)",
+      "fontFamily": "\"Graphik Web\", Helvetica",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px"
+    },
+    "h1": {
+      "text": "Choose Your Plan",
+      "color": "rgb(13, 14, 17)",
+      "fontFamily": "\"Graphik Web\", Helvetica",
+      "fontSize": "32px",
+      "fontWeight": "600",
+      "lineHeight": "40px"
+    },
+    "login": {
+      "text": "LOG IN",
+      "color": "rgb(4, 4, 5)",
+      "fontFamily": "\"Graphik Web\", Helvetica",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "lineHeight": "21px",
+      "textTransform": "uppercase",
+      "height": "48px",
+      "focusOutline": "rgb(4, 4, 5) none 0px"
+    },
+    "select": {
+      "text": "SELECT",
+      "backgroundColor": "rgb(4, 4, 5)",
+      "hoverBackgroundColor": "rgba(4, 4, 5, 0.8)",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Graphik Web\", Helvetica",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "borderRadius": "1000px",
+      "height": "48px"
+    }
+  },
+  "login": {
+    "url": "https://auth.hulu.com/web/login/enter-email",
+    "title": "Hulu Login | Hulu",
+    "emailValueLength": 0,
+    "h1": {
+      "text": "Enter your email to continue",
+      "color": "rgb(37, 37, 38)",
+      "fontFamily": "Inspire, sans-serif",
+      "fontSize": "28px",
+      "fontWeight": "600",
+      "lineHeight": "40px"
+    },
+    "field": {
+      "backgroundColor": "rgb(233, 235, 240)",
+      "borderRadius": "4px",
+      "color": "rgb(37, 37, 38)",
+      "fontFamily": "Arial",
+      "height": "60px"
+    },
+    "continue": {
+      "backgroundColor": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "26px",
+      "height": "52px",
+      "fontFamily": "Arial"
+    },
+    "link": {
+      "text": "and more",
+      "color": "rgb(0, 0, 238)"
+    }
+  },
+  "helpSearch": {
+    "url": "https://help.hulu.com/",
+    "placeholder": "Enter a question or topic",
+    "valueLength": 0,
+    "backgroundColor": "rgb(255, 255, 255)",
+    "border": "2px solid rgb(21, 188, 116)",
+    "borderRadius": "4px",
+    "color": "rgb(26, 27, 30)"
+  },
+  "sampledPixels": {
+    "note": "The wordmark is an image. Opaque green pixels in the published favicon and the login wordmark read rgb(28, 231, 131). Anti-aliased pixels on the light plan header read rgb(11, 142, 79). Those are samples, not computed styles.",
+    "favicon": "rgb(28, 231, 131)",
+    "planHeaderLogo": "rgb(11, 142, 79)"
+  }
+}
