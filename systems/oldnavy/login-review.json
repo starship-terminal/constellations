@@ -1,0 +1,30 @@
+{
+  "product": "Old Navy",
+  "domain": "oldnavy.gap.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Sign In or Join Now",
+      "url": "https://secure-oldnavy.gap.com/my-account/sign-in",
+      "title": "Sign in | Old Navy",
+      "painted": true,
+      "headings": ["Enter Your Email Address"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Back", "Continue", "Feedback", "Chat with us"],
+      "stopped": true,
+      "screenshot": "screenshots/login-light-1440.png",
+      "note": "The email field was empty. Continue was not clicked. Sign in and join share this email step. No identity provider was shown. The walk stopped here."
+    }
+  ]
+}
