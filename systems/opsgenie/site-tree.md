@@ -14,7 +14,7 @@ The bar is the shared Atlassian bar, not an Opsgenie-only bar. Photographed: [ho
 
 Desktop, left to right: the Atlassian mark, Products, AI, Solutions, Why Atlassian, Resources, Enterprise, search, Sign in, Get it free.
 
-At 390 the row collapses. A menu button sits in the bar. The drawer did not stay open for a clean shot in this pass, so the phone menu is not a separate file. Search was not typed.
+At 390 the row collapses to a menu button. Tapping it did not leave a drawer open long enough to photograph, so there is no phone-menu shot. Search was not typed.
 
 | Control | Kind | Destination | This pass |
 |---|---|---|---|
