@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rare Beauty public tokens</title>
+<style>
+  :root {
+    --page: #fdfbf8;
+    --ink: #000914;
+    --promo: #fdf6f0;
+    --burgundy: #6f0936;
+    --on-burgundy: #ffffff;
+    --chat: #802549;
+    --display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --ui: "Avenir Next", Avenir, "Helvetica Neue", sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--ui); font-size: 16px; }
+  .promo { height: 47px; display: flex; align-items: center; justify-content: center; background: var(--promo); color: var(--ink); font-size: 12px; letter-spacing: 1px; }
+  .promo a { color: var(--burgundy); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-left: 8px; }
+  .hairline { height: 1px; background: var(--burgundy); }
+  .bar { height: 62px; display: flex; align-items: center; padding: 0 48px; gap: 28px; }
+  .nav { color: var(--burgundy); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; }
+  .wordmark { margin: 0 auto; color: var(--burgundy); font-family: var(--display); font-size: 28px; font-weight: 400; }
+  main { padding: 48px; }
+  h1 { font-family: var(--display); font-size: 56px; font-weight: 400; line-height: 53px; margin: 0 0 16px; }
+  h2 { font-family: var(--display); font-size: 40px; font-weight: 400; line-height: 50px; margin: 32px 0 12px; }
+  .hero { background: #c48a86; color: var(--on-burgundy); padding: 48px; }
+  .sneak { display: inline-flex; align-items: center; height: 36px; padding: 0 34px; border: 1px solid var(--on-burgundy); color: var(--on-burgundy); font-size: 10px; letter-spacing: 5px; text-transform: uppercase; }
+  .add { display: inline-flex; align-items: center; justify-content: center; height: 36px; padding: 0 24px; background: var(--burgundy); color: var(--on-burgundy); font-size: 12px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }
+  .outline { display: inline-flex; align-items: center; justify-content: center; height: 36px; padding: 0 24px; border: 1px solid var(--burgundy); color: var(--burgundy); background: transparent; font-size: 12px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 16px; }
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+  .swatch { width: 120px; font-size: 13px; }
+  .chip { height: 48px; border: 1px solid #e6dfd8; }
+  p { max-width: 640px; }
+  footer { background: var(--promo); padding: 24px 48px; margin-top: 32px; }
+</style>
+</head>
+<body>
+  <div class="promo">Free standard shipping w/ $50 order. <a>Shop now</a></div>
+  <div class="hairline"></div>
+  <div class="bar">
+    <span class="nav">Shop</span>
+    <span class="nav">Shade Finder</span>
+    <span class="nav">Rare Impact</span>
+    <span class="wordmark">Rare Beauty</span>
+  </div>
+  <div class="hero">
+    <div style="font-size:14px;letter-spacing:5.74px;font-weight:700;">CYBER WEEK EVENT | 11.26–12.1</div>
+    <h1>Coming Soon</h1>
+    <span class="sneak">Sneak peek</span>
+  </div>
+  <main>
+    <h2>Brow Harmony Tinted Flexible Lifting Gel</h2>
+    <p>Tokens measured on 2026-11-22 from the public shop. Ogg Regular and Neue Hass Unica Regular are not in this package, so the display face falls back to Palatino and the UI face falls back to Avenir.</p>
+    <div class="row">
+      <span class="add">Add to bag · $21</span>
+      <span class="outline">Add to bag · $21</span>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#fdfbf8"></div><div>page #fdfbf8</div></div>
+      <div class="swatch"><div class="chip" style="background:#000914"></div><div>ink #000914</div></div>
+      <div class="swatch"><div class="chip" style="background:#fdf6f0"></div><div>promo #fdf6f0</div></div>
+      <div class="swatch"><div class="chip" style="background:#6f0936"></div><div>burgundy #6f0936</div></div>
+      <div class="swatch"><div class="chip" style="background:#ffffff"></div><div>on burgundy #ffffff</div></div>
+      <div class="swatch"><div class="chip" style="background:#802549"></div><div>chat #802549</div></div>
+    </div>
+  </main>
+  <footer>Footer uses the promo cream. The email field was left empty.</footer>
+</body>
+</html>
