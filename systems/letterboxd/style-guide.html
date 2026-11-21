@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Letterboxd style guide</title>
+<meta name="description" content="Letterboxd public site tokens, rendered from tokens.json. One dark field.">
+<style>
+:root {
+  --font-family-sans: GraphikWeb, -apple-system, system-ui, Segoe UI, Hiragino Sans, Meiryo, sans-serif;
+  --font-family-display: TiemposHeadlineWeb, Georgia, serif;
+  --font-family-serif: TiemposTextWeb, Georgia, serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-weight-black: 800;
+  --font-size-heading-1: 32px;
+  --font-size-heading-2: 27px;
+  --font-size-heading-3: 22px;
+  --font-size-heading-4: 18px;
+  --font-size-heading-5: 16px;
+  --font-size-heading-6: 15px;
+  --font-size-body-large: 17px;
+  --font-size-body-medium: 15px;
+  --font-size-body-small: 13px;
+  --font-size-body-meta: 12px;
+  --font-size-body-tiny: 11px;
+  --font-size-label: 13px;
+  --space-xsmall: 10px;
+  --space-small: 12px;
+  --space-medium: 16px;
+  --space-large: 20px;
+  --space-xlarge: 24px;
+  --space-dense-small: 4px;
+  --space-dense-medium: 6px;
+  --space-dense-large: 8px;
+  --space-sparse-small: 32px;
+  --space-sparse-medium: 48px;
+  --space-sparse-large: 64px;
+  --space-adjacent-listing: 16px;
+  --space-adjacent-component: 24px;
+  --space-grid-gutter: 5px;
+  --radius-radius-xxsmall: 1px;
+  --radius-radius-xsmall: 2px;
+  --radius-radius-small: 4px;
+  --radius-radius-medium: 6px;
+  --radius-radius-large: 8px;
+  --radius-poster-border-radius: 3px;
+  --radius-control-medium-border-radius: 4px;
+  --radius-panel-radius-default: 8px;
+  --duration-xshort: 150ms;
+  --duration-short: 333ms;
+  --duration-medium: 500ms;
+  --duration-long: 1000ms;
+  --duration-xlong: 2000ms;
+  --duration---dropdown-fade-in-duration: 150ms;
+  --duration-dropdown: 150ms;
+  --easing-out-expo: cubic-bezier(0.19, 1.0, 0.22, 1.0);
+  --easing-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --easing-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  --layout-content-gutter: 20px;
+  --layout-page-gutter: 24px;
+  --size-search-height: 30px;
+  --size-nav-link-height: 23px;
+  --size-logo-height: 25px;
+  --borderWidth-focus: 2px;
+  --page: #14181c;
+  --page-hover: #1e242a;
+  --surface: #283038;
+  --surface-hover: #384450;
+  --text: #99aabb;
+  --text-high: #aabbcc;
+  --muted: #8899aa;
+  --heading: #ffffff;
+  --link: #ddeeff;
+  --link-hover: #40bcf4;
+  --link-active: #209ce4;
+  --border: #445566;
+  --border-secondary: #283038;
+  --accent: #00e054;
+  --accent-surface: #00ac1c;
+  --accent-hover: #00c030;
+  --accent-pressed: #009926;
+  --blue: #40bcf4;
+  --blue-surface: #209ce4;
+  --orange: #ff8000;
+  --orange-surface: #ee7000;
+  --danger: #c40f00;
+  --danger-hover: #ec1200;
+  --focus: rgba(32, 156, 228, 0.902);
+  --button: #556677;
+  --button-hover: #667788;
+  --button-text: #c8d4e0;
+  --primary-button: #00ac1c;
+  --primary-button-text: #f4fcf0;
+  --poster: #12161a;
+  --rating: #00c030;
+  --like: #ff9933;
+  --metadata: #667788;
+  --fill: #445566;
+  --on-accent: #ffffff;
+  color-scheme: dark;
+  --sg-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sg-serif: Georgia, "Times New Roman", serif;
+}
+[data-mode="dark"] {
+
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--page); color: var(--text); font: 400 15px/22px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 700 32px/40px var(--sg-serif); color: var(--heading); margin: 0 0 8px; }
+h2 { font: 700 22px/28px var(--sg-serif); color: var(--heading); margin: 40px 0 8px; }
+p { max-width: 72ch; color: var(--text); }
+code { font-family: ui-monospace, Menlo, monospace; font-size: 12px; }
+.pal { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { display: flex; gap: 10px; align-items: center; background: var(--surface); border-radius: 8px; padding: 8px 10px; }
+.sw i { width: 36px; height: 36px; border-radius: 6px; display: block; box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
+.nm { color: var(--heading); font-size: 13px; }
+.vl { color: var(--muted); font-size: 12px; }
+.row { display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--border); padding: 8px 0; }
+.btn { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 6px; background: var(--primary-button); color: var(--primary-button-text); font-weight: 700; }
+.btn.quiet { background: var(--button); color: var(--button-text); }
+a.sample { color: var(--link); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Letterboxd</h1>
+  <p>Public site tokens read from letterboxd.com on 2026-11-21, signed out. The product paints one dark field. This page names that set <code>light</code> because the catalog expects one. Graphik and Tiempos are not loaded here.</p>
+  <p><span class="btn">Get started</span> <span class="btn quiet">Sign in</span> <a class="sample" href="#colour">A film link</a></p>
+  <h2 id="colour">Colour</h2>
+  <div class="pal" id="roles"></div>
+  <h2>Type sizes</h2>
+  <div id="type"></div>
+  <h2>Space</h2>
+  <div id="space"></div>
+  <h2>Radius</h2>
+  <div id="radius"></div>
+  <h2>Motion</h2>
+  <div id="motion"></div>
+</div>
+<script>
+const TOK = {"core":{"font":{"family":{"sans":{"v":"GraphikWeb, -apple-system, system-ui, Segoe UI, Hiragino Sans, Meiryo, sans-serif","t":"fontFamily","s":"css-var --font-stack-graphik; computed on body at letterboxd.com"},"display":{"v":"TiemposHeadlineWeb, Georgia, serif","t":"fontFamily","s":"css-var --font-stack-tiempos-headline"},"serif":{"v":"TiemposTextWeb, Georgia, serif","t":"fontFamily","s":"css-var --font-stack-tiempos-text"}},"weight":{"light":{"v":300,"t":"fontWeight","s":"@font-face GraphikWeb 300"},"regular":{"v":400,"t":"fontWeight","s":"@font-face GraphikWeb 400"},"bold":{"v":700,"t":"fontWeight","s":"@font-face GraphikWeb 700; nav links compute 700"},"black":{"v":800,"t":"fontWeight","s":"@font-face GraphikWeb 800"}},"size":{"heading-1":{"v":"32px","t":"dimension","s":"css-var --heading-1-font-size = 2rem, converted at 16px root"},"heading-2":{"v":"27px","t":"dimension","s":"css-var --heading-2-font-size = 1.6875rem, converted at 16px root"},"heading-3":{"v":"22px","t":"dimension","s":"css-var --heading-3-font-size = 1.375rem, converted at 16px root"},"heading-4":{"v":"18px","t":"dimension","s":"css-var --heading-4-font-size = 1.125rem, converted at 16px root"},"heading-5":{"v":"16px","t":"dimension","s":"css-var --heading-5-font-size = 1rem, converted at 16px root"},"heading-6":{"v":"15px","t":"dimension","s":"css-var --heading-6-font-size = .9375rem, converted at 16px root"},"body-large":{"v":"17px","t":"dimension","s":"css-var --body-large-font-size = 1.0625rem, converted at 16px root"},"body-medium":{"v":"15px","t":"dimension","s":"css-var --body-medium-font-size = .9375rem, converted at 16px root"},"body-small":{"v":"13px","t":"dimension","s":"css-var --body-small-font-size = .8125rem, converted at 16px root"},"body-meta":{"v":"12px","t":"dimension","s":"css-var --body-meta-font-size = .75rem, converted at 16px root"},"body-tiny":{"v":"11px","t":"dimension","s":"css-var --body-tiny-font-size = .6875rem, converted at 16px root"},"label":{"v":"13px","t":"dimension","s":"css-var --title-all-caps-font-size = .8125rem, converted at 16px root"}},"lineHeight":{}},"space":{"xsmall":{"v":"10px","t":"dimension","s":"css-var --spacing-xsmall = .625rem, converted at 16px root"},"small":{"v":"12px","t":"dimension","s":"css-var --spacing-small = .75rem, converted at 16px root"},"medium":{"v":"16px","t":"dimension","s":"css-var --spacing-medium = 1rem, converted at 16px root"},"large":{"v":"20px","t":"dimension","s":"css-var --spacing-large = 1.25rem, converted at 16px root"},"xlarge":{"v":"24px","t":"dimension","s":"css-var --spacing-xlarge = 1.5rem, converted at 16px root"},"dense-small":{"v":"4px","t":"dimension","s":"css-var --spacing-dense-small = .25rem, converted at 16px root"},"dense-medium":{"v":"6px","t":"dimension","s":"css-var --spacing-dense-medium = .375rem, converted at 16px root"},"dense-large":{"v":"8px","t":"dimension","s":"css-var --spacing-dense-large = .5rem, converted at 16px root"},"sparse-small":{"v":"32px","t":"dimension","s":"css-var --spacing-sparse-small = 2rem, converted at 16px root"},"sparse-medium":{"v":"48px","t":"dimension","s":"css-var --spacing-sparse-medium = 3rem, converted at 16px root"},"sparse-large":{"v":"64px","t":"dimension","s":"css-var --spacing-sparse-large = 4rem, converted at 16px root"},"adjacent-listing":{"v":"16px","t":"dimension","s":"css-var --spacing-adjacent-listing = 1rem, converted at 16px root"},"adjacent-component":{"v":"24px","t":"dimension","s":"css-var --spacing-adjacent-component = 1.5rem, converted at 16px root"},"grid-gutter":{"v":"5px","t":"dimension","s":"css-var --spacing-grid-gutter"}},"radius":{"radius-xxsmall":{"v":"1px","t":"dimension","s":"css-var --border-radius-xxsmall = .0625rem, converted at 16px root"},"radius-xsmall":{"v":"2px","t":"dimension","s":"css-var --border-radius-xsmall = .125rem, converted at 16px root"},"radius-small":{"v":"4px","t":"dimension","s":"css-var --border-radius-small = .25rem, converted at 16px root"},"radius-medium":{"v":"6px","t":"dimension","s":"css-var --border-radius-medium = .375rem, converted at 16px root"},"radius-large":{"v":"8px","t":"dimension","s":"css-var --border-radius-large = .5rem, converted at 16px root"},"poster-border-radius":{"v":"3px","t":"dimension","s":"css-var --poster-border-radius"},"control-medium-border-radius":{"v":"4px","t":"dimension","s":"css-var --control-medium-border-radius = .25rem, converted at 16px root"},"panel-radius-default":{"v":"8px","t":"dimension","s":"css-var --panel-border-radius-default = .5rem, converted at 16px root"}},"duration":{"xshort":{"v":"150ms","t":"duration","s":"css-var --duration-xshort = .15s"},"short":{"v":"333ms","t":"duration","s":"css-var --duration-short = calc(1s * 1 / 3), resolved as one third of a second"},"medium":{"v":"500ms","t":"duration","s":"css-var --duration-medium = .5s"},"long":{"v":"1000ms","t":"duration","s":"css-var --duration-long = 1s"},"xlong":{"v":"2000ms","t":"duration","s":"css-var --duration-xlong = 2s"},"--dropdown-fade-in-duration":{"v":"150ms","t":"duration","s":"css-var --dropdown-fade-in-duration = .15s"},"dropdown":{"v":"150ms","t":"duration","s":"css-var --dropdown-fade-in-duration = .15s"}},"easing":{"out-expo":{"v":[0.19,1.0,0.22,1.0],"t":"cubicBezier","s":"css-var --timing-function-ease-out-expo"},"out-back":{"v":[0.175,0.885,0.32,1.275],"t":"cubicBezier","s":"css-var --timing-function-ease-out-back"},"in-back":{"v":[0.6,-0.28,0.735,0.045],"t":"cubicBezier","s":"css-var --timing-function-ease-in-back"}},"layout":{"content-gutter":{"v":"20px","t":"dimension","s":"css-var --layout-content-gutter"},"page-gutter":{"v":"24px","t":"dimension","s":"css-var --page-gutter-width-fixed = 1.5rem, converted at 16px root"}},"size":{"search-height":{"v":"30px","t":"dimension","s":"measured #search-q height on the homepage header"},"nav-link-height":{"v":"23px","t":"dimension","s":"measured a.navlink height on the homepage header"},"logo-height":{"v":"25px","t":"dimension","s":"measured a.logo height on the homepage header"}},"borderWidth":{"focus":{"v":"2px","t":"dimension","s":"measured focus ring width is not a published token; recorded as the common control outline. Not captured as a live focus ring."}}},"light":{"page":{"v":"#14181c","t":"color","s":"css-var --theme-background-color (light)"},"page-hover":{"v":"#1e242a","t":"color","s":"css-var --theme-background-hover-color (light)"},"surface":{"v":"#283038","t":"color","s":"css-var --theme-surface-color (light)"},"surface-hover":{"v":"#384450","t":"color","s":"css-var --theme-surface-hover-color (light)"},"text":{"v":"#99aabb","t":"color","s":"css-var --theme-body-content-color (light)"},"text-high":{"v":"#aabbcc","t":"color","s":"css-var --theme-body-high-contrast-content-color (light)"},"muted":{"v":"#8899aa","t":"color","s":"css-var --theme-body-low-contrast-content-color (light)"},"heading":{"v":"#ffffff","t":"color","s":"css-var --theme-heading-content-color (light)"},"link":{"v":"#ddeeff","t":"color","s":"css-var --theme-body-link-content-color (light)"},"link-hover":{"v":"#40bcf4","t":"color","s":"css-var --theme-body-link-hover-content-color (light)"},"link-active":{"v":"#209ce4","t":"color","s":"css-var --theme-body-link-active-content-color (light)"},"border":{"v":"#445566","t":"color","s":"css-var --theme-separator-color (light)"},"border-secondary":{"v":"#283038","t":"color","s":"css-var --theme-separator-secondary-color (light)"},"accent":{"v":"#00e054","t":"color","s":"css-var --theme-brand-green-content-color (light)"},"accent-surface":{"v":"#00ac1c","t":"color","s":"css-var --theme-brand-green-surface-color (light)"},"accent-hover":{"v":"#00c030","t":"color","s":"css-var --theme-brand-green-hover-surface-color (light)"},"accent-pressed":{"v":"#009926","t":"color","s":"css-var --theme-brand-green-active-surface-color (light)"},"blue":{"v":"#40bcf4","t":"color","s":"css-var --theme-brand-blue-content-color (light)"},"blue-surface":{"v":"#209ce4","t":"color","s":"css-var --theme-brand-blue-surface-color (light)"},"orange":{"v":"#ff8000","t":"color","s":"css-var --theme-brand-orange-content-color (light)"},"orange-surface":{"v":"#ee7000","t":"color","s":"css-var --theme-brand-orange-surface-color (light)"},"danger":{"v":"#c40f00","t":"color","s":"css-var --theme-button-destructive-active-surface-color (light)"},"danger-hover":{"v":"#ec1200","t":"color","s":"css-var --theme-button-destructive-hover-surface-color (light)"},"focus":{"v":"rgba(32, 156, 228, 0.902)","t":"color","s":"css-var --theme-focus-color (light)"},"button":{"v":"#556677","t":"color","s":"css-var --theme-button-default-surface-color (light)"},"button-hover":{"v":"#667788","t":"color","s":"css-var --theme-button-default-hover-surface-color (light)"},"button-text":{"v":"#c8d4e0","t":"color","s":"css-var --theme-button-default-content-color (light)"},"primary-button":{"v":"#00ac1c","t":"color","s":"css-var --theme-button-primary-surface-color (light)"},"primary-button-text":{"v":"#f4fcf0","t":"color","s":"css-var --theme-button-primary-content-color (light)"},"poster":{"v":"#12161a","t":"color","s":"css-var --poster-background-color (light)"},"rating":{"v":"#00c030","t":"color","s":"css-var --theme-rating-icon-color (light)"},"like":{"v":"#ff9933","t":"color","s":"css-var --theme-like-icon-color (light)"},"metadata":{"v":"#667788","t":"color","s":"css-var --theme-metadata-content-color (light)"},"fill":{"v":"#445566","t":"color","s":"css-var --theme-fill-color (light)"},"on-accent":{"v":"#ffffff","t":"color","s":"css-var --theme-brand-mono-primary-color (light)"}},"dark":{}};
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.v !== undefined ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+const roles = document.getElementById('roles');
+for (const [n, t] of flat(TOK.light)) {
+  if (t.t !== 'color') continue;
+  roles.insertAdjacentHTML('beforeend', `<div class="sw"><i style="background:var(${cssname(n)})"></i><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`);
+}
+function list(id, node) {
+  const el = document.getElementById(id);
+  for (const [n, t] of flat(node)) {
+    el.insertAdjacentHTML('beforeend', `<div class="row"><span>${esc(n)}</span><code>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</code></div>`);
+  }
+}
+list('type', TOK.core.font.size);
+list('space', TOK.core.space);
+list('radius', TOK.core.radius);
+list('motion', { ...TOK.core.duration, ...TOK.core.easing });
+</script>
+</body>
+</html>

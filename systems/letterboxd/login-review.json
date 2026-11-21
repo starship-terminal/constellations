@@ -1,0 +1,50 @@
+{
+  "captured": "2026-11-21",
+  "signed_in": false,
+  "login_extracted": "not-started",
+  "route": "public Playwright and one preview tab. No session was present. Username, email, and password fields were left empty.",
+  "probe": {
+    "url": "https://letterboxd.com/sign-in/",
+    "result": "Empty username and password form. No identity provider. Nothing typed. Nothing submitted. Create account is an overlay with empty email, username, and password fields. Nothing typed."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "measuredInnerWidth": 1440,
+      "measuredInnerHeight": 900,
+      "deviceScaleFactor": 1
+    },
+    "phone": {
+      "requested": "390x844",
+      "measuredInnerWidth": 390,
+      "measuredInnerHeight": 844,
+      "deviceScaleFactor": 2
+    }
+  },
+  "offered": {
+    "nav": {
+      "items": ["Sign in", "Create account", "Films", "Lists", "Members", "Journal", "Search"],
+      "reached": ["Films", "Lists", "Members", "Journal", "Search field focused empty", "Phone menu"]
+    },
+    "settings": {
+      "items": [],
+      "reached": []
+    },
+    "create": {
+      "items": ["Create account", "Sign up", "Get started"],
+      "reached": ["Create account overlay photographed empty"]
+    }
+  },
+  "screens": [
+    "screenshots/signin-light-default.png",
+    "screenshots/signup-light-default.png"
+  ],
+  "stopped": [
+    "Did not type a username, email, password, or code.",
+    "Did not click an identity provider. None was on the sign-in form.",
+    "Did not submit a form.",
+    "Did not solve a Turnstile challenge that appeared once in headless Chromium.",
+    "Did not enter a signed-in app.",
+    "login_extracted stays not-started. catalog.json was left alone."
+  ]
+}
