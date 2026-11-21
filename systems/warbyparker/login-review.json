@@ -1,0 +1,75 @@
+{
+  "product": "Warby Parker",
+  "domain": "www.warbyparker.com",
+  "reviewedAt": "2026-11-22",
+  "method": "incognito preview, signed out, 1440x900",
+  "typed": false,
+  "submitted": false,
+  "identityProviderClicked": false,
+  "accountCreated": false,
+  "captchaSolved": false,
+  "loginExtracted": "not-started",
+  "session": "absent",
+  "walls": [
+    {
+      "control": "header Sign in",
+      "entry": "https://www.warbyparker.com/my-account",
+      "url": "https://auth.warbyparker.com/u/login/identifier",
+      "queryCarriesState": true,
+      "title": "",
+      "painted": true,
+      "photographed": false,
+      "headings": ["Sign in"],
+      "asksFor": [
+        { "label": "Email", "type": "email", "required": true, "value": "" }
+      ],
+      "identityProvidersSeen": ["Sign in with Google", "Sign in with Apple"],
+      "otherControls": ["Continue", "Sign up", "Terms of Use", "Privacy Policy"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "The wall painted empty. Continue was not clicked. Google and Apple were not clicked. The address bar carried an Auth0 state parameter, so the screenshot was discarded."
+    },
+    {
+      "control": "Sign up on the login wall",
+      "url": "https://auth.warbyparker.com/u/signup/identifier",
+      "queryCarriesState": true,
+      "title": "",
+      "painted": true,
+      "photographed": false,
+      "headings": ["Create an account"],
+      "asksFor": [
+        { "label": "First Name", "type": "text", "value": "" },
+        { "label": "Last Name", "type": "text", "value": "" },
+        { "label": "Email address", "type": "email", "value": "" }
+      ],
+      "identityProvidersSeen": ["Sign up with Google", "Sign up with Apple"],
+      "otherControls": ["Sign up", "Sign in"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "Fields were empty. Sign up was not clicked. Identity providers were not clicked. The address bar carried an Auth0 state parameter, so the screenshot was discarded."
+    },
+    {
+      "control": "homepage newsletter",
+      "url": "https://www.warbyparker.com/",
+      "title": "Eyewear Online | Glasses, Sunglasses & Contacts | Warby Parker",
+      "painted": true,
+      "headings": ["Get the inside scoop on new frames, events, and more"],
+      "asksFor": [
+        { "label": "Email address", "type": "email", "required": false }
+      ],
+      "identityProvidersSeen": [],
+      "otherControls": ["Submit form"],
+      "stopped": true,
+      "screenshot": null,
+      "note": "The field sits in the footer of the homepage. Nothing was typed. Submit form was not clicked."
+    },
+    {
+      "control": "header Cart",
+      "url": "https://www.warbyparker.com/cart",
+      "painted": false,
+      "stopped": true,
+      "screenshot": null,
+      "note": "Checkout wall. Not opened. Select lenses and buy was not clicked."
+    }
+  ]
+}
