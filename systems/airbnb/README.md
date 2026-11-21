@@ -1,6 +1,6 @@
 # Airbnb design reference
 
-A token set and component reference for Airbnb's public site — for building travel-gallery, listing and marketing surfaces in the style of the real thing. It was read from **www.airbnb.com**, which geo-redirected to **www.airbnb.com.sg** from this network (the same design system on a regional mirror), on **2026-11-09 and 2026-11-10**, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the home page with its search pill open, the Experiences and Services landings, a Tokyo search-results page, a public listing page the results linked, the Help Centre and the Host landing page, plus the mobile home and results.
+A token set and component reference for Airbnb's public site — for building travel-gallery, listing and marketing surfaces in the style of the real thing. It was read from **www.airbnb.com**, which geo-redirected to **www.airbnb.com.sg** from this network (the same design system on a regional mirror), refreshed **2026-11-21** (first capture 2026-11-09), signed out, in headless Chromium at 1440 x 900 and 390 x 844: the home page with its search pill open, the Experiences and Services landings, a Tokyo search-results page, a public listing page the results linked, the Help Centre and the Host landing page, plus the mobile home and results. The control map is [site-tree.md](site-tree.md). The login review is [login-review.json](login-review.json).
 
 The reason Airbnb is worth a capture at all: it is the marketplace reference almost every travel, rental or gallery product is compared against — one brand pink (Rausch, #FF385C) doing all the work over an otherwise black-white-grey surface, the 66px capsule search bar that splits into Where/When/Who, photo-first listing cards with the semi-transparent wishlist heart, hairline-separated surfaces instead of shadows, and a complete set of declared dark values that the site never applies.
 
@@ -13,7 +13,7 @@ The reason Airbnb is worth a capture at all: it is the marketplace reference alm
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (44, 105 states) written in tokens with crops of the real product, the shared values (focus, motion, card shapes), and the Gaps. |
 | [patterns.md](patterns.md) | How the components combine on each surface: the header shell and category tabs, the capsule search flow, the gallery rails and cards, filters and the results grid, a room page's layout and reserve card, the help and host pages, feedback, and the empty/loading picture. |
 | [components/crops/](components/crops) | 103 element screenshots, `{component}-{state}.png`. Most are at 2x; a crop over about 1.2 megapixels is saved at 1x, and each state's `cropScale` in `raw/components-computed.json` records the scale it was actually saved at. |
-| [screenshots/](screenshots) | 24 `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 1x and `mobile-*` shots 390 x 844 at 2x; `-full` shots are whole pages at the same width and scale; `-modal` shots keep the load-time coachmark. |
+| [screenshots/](screenshots) | 22 `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 1x and `mobile-*` shots 390 x 844 at 2x. `-full` shots of home, experiences, services and mobile home are scrolled-and-stitched pages (the app shell is `position: fixed`, so Playwright `fullPage` paints only the header). Search and room full pages are not in the tree: those shells lock window scroll. `-modal` shots keep the load-time coachmark. |
 | [raw/](raw) | The unprocessed readings: every custom property the stylesheets declare, sorted by owner, with font faces and the dark-theme declarations (`css-vars.json`); per-component computed styles (`components-computed.json`, and `measurements.md` built from it); the token tree the builders read (`component-tokens.json`). |
 | [tools/](tools) | The builders and the capture kit. See [Rebuild](#rebuild). |
 
@@ -152,6 +152,7 @@ Nothing was signed into, searched, booked, messaged, created or uploaded. The pu
 | Widths: 1440, 390 | captured | desktop shots at 1440 x 900; `mobile-*` shots and the Mobile group at 390 x 844 |
 | Signed-in pages, booking, payment, messaging, the wishlist sheet | not captured | behind the account boundary; the kit never signs in or submits |
 | Map interactions, non-SG markets | not captured | the Google map was not driven; every market but the SG mirror geo-redirect serves |
+| Search and room full pages | not captured | `/s/` and `/rooms/` lock `window` scroll (`scrollHeight` stays at the viewport, `scrollTo` does not move). Viewport shots cover the first screen. |
 
 ## Do and don't
 
