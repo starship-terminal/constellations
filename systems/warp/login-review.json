@@ -1,0 +1,32 @@
+{
+  "slug": "warp",
+  "product": "Warp",
+  "domain": "www.warp.dev",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "empty-walls",
+  "session": "Incognito preview tab. Nothing was typed. No identity provider was clicked. No form was submitted. No captcha was solved.",
+  "walls": [
+    {
+      "name": "login",
+      "url": "https://app.warp.dev/login",
+      "title": "Log in to Warp",
+      "heading": "Sign in to Warp",
+      "fields": ["email"],
+      "fieldValueLengths": [0],
+      "notClicked": ["Continue with email", "Continue with GitHub", "Continue with Google", "Continue with ChatGPT", "Continue with SSO"]
+    },
+    {
+      "name": "signup",
+      "url": "https://app.warp.dev/signup",
+      "title": "Sign up for Warp",
+      "heading": "Sign up for Warp",
+      "fields": ["email"],
+      "fieldValueLengths": [0],
+      "notClicked": ["Continue with email", "Continue with GitHub", "Continue with Google", "Continue with ChatGPT", "Continue with SSO"]
+    }
+  ],
+  "stopped": "Photographed the empty login and signup walls and stopped. The signed-in terminal and the factories platform were not opened.",
+  "leftAlone": ["catalog.json", "webapps-manifest.json", "systems/warp-desktop"]
+}
