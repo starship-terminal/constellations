@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cotopaxi style guide</title>
+  <style>
+    :root {
+      --page: #ffffff;
+      --ink: #25282a;
+      --announce: #ebdbff;
+      --search: #f2f2f2;
+      --primary: #e03100;
+      --sale: #8a0010;
+      --gifts: #005f9e;
+      --footer: #25282a;
+      --secondary: #f1f0eb;
+      --border: #bdbdbd;
+      --muted: #828282;
+    }
+    body { margin: 0; background: var(--page); color: var(--ink); font-family: Helvetica, Arial, sans-serif; }
+    .bar { background: var(--announce); text-align: center; font-size: 12px; line-height: 34px; }
+    header { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 12px 16px 0; }
+    .search { background: var(--search); border-radius: 99px; height: 30px; width: 220px; padding: 0 16px; line-height: 30px; font-size: 14px; color: var(--muted); }
+    .wordmark { font-weight: 700; letter-spacing: 0.5px; }
+    nav { display: flex; justify-content: center; gap: 8px; padding: 8px 0 16px; font-size: 14px; font-weight: 800; }
+    nav span { padding: 0 12px; line-height: 40px; }
+    .sale { color: var(--sale); }
+    .gifts { color: var(--gifts); }
+    .hero { margin: 0 20px; background: #8a1c1c; color: #fff; padding: 48px 24px; }
+    .cta { display: inline-block; background: #fff; color: var(--ink); text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; font-size: 14px; font-weight: 700; padding: 8px 25px; border: 2px solid #fff; margin-right: 8px; }
+    .swatches { display: flex; flex-wrap: wrap; gap: 12px; padding: 24px; }
+    .swatch { width: 140px; }
+    .chip { height: 48px; border: 1px solid var(--border); }
+    .label { font-size: 12px; margin-top: 6px; }
+    footer { background: var(--footer); color: #fff; padding: 24px; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="bar">Easy U.S. Returns &amp; Exchanges</div>
+  <header>
+    <div class="search">Search</div>
+    <div class="wordmark">cotopaxi</div>
+    <div></div>
+  </header>
+  <nav>
+    <span class="sale">Black Friday</span>
+    <span>Packs + Gear</span>
+    <span>Women</span>
+    <span>Men</span>
+    <span>Sale</span>
+    <span class="gifts">Gifts</span>
+  </nav>
+  <section class="hero">
+    <a class="cta" href="#shop">Shop Packs</a>
+    <a class="cta" href="#women">Shop Women's</a>
+  </section>
+  <section class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">page #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#25282a"></div><div class="label">ink #25282a</div></div>
+    <div class="swatch"><div class="chip" style="background:#ebdbff"></div><div class="label">announcement #ebdbff</div></div>
+    <div class="swatch"><div class="chip" style="background:#f2f2f2"></div><div class="label">search #f2f2f2</div></div>
+    <div class="swatch"><div class="chip" style="background:#e03100"></div><div class="label">primary #e03100</div></div>
+    <div class="swatch"><div class="chip" style="background:#8a0010"></div><div class="label">Black Friday #8a0010</div></div>
+    <div class="swatch"><div class="chip" style="background:#005f9e"></div><div class="label">Gifts #005f9e</div></div>
+    <div class="swatch"><div class="chip" style="background:#f1f0eb"></div><div class="label">secondary #f1f0eb</div></div>
+    <div class="swatch"><div class="chip" style="background:#bdbdbd"></div><div class="label">border #bdbdbd</div></div>
+    <div class="swatch"><div class="chip" style="background:#828282"></div><div class="label">muted #828282</div></div>
+    <div class="swatch"><div class="chip" style="background:#385cad"></div><div class="label">info #385cad</div></div>
+    <div class="swatch"><div class="chip" style="background:#ffb612"></div><div class="label">warning #ffb612</div></div>
+    <div class="swatch"><div class="chip" style="background:#d4d771"></div><div class="label">success #d4d771</div></div>
+  </section>
+  <footer>Footer #25282a, type #ffffff. Gotham on the body. Mont on the nav.</footer>
+</body>
+</html>
