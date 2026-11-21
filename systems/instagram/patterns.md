@@ -16,7 +16,7 @@ Locations, a country page, and Popular share one header: wordmark, a blue "Log I
 
 ## Public profile
 
-`https://www.instagram.com/instagram/` shows the avatar, counts, bio, highlight row, icon tabs, and a post grid. Followers and following open a signup dialog. That dialog was closed with Escape on desktop. On the phone the page opens under an "Open Instagram" sheet.
+`https://www.instagram.com/instagram/` shows the avatar, counts, bio, highlight row, icon tabs, and a post grid. Followers and following open a signup dialog. That dialog was closed with Escape on desktop. On the phone the page opens under a "See full profile in the app" sheet.
 
 [profile-light-default.png](screenshots/profile-light-default.png), [mobile-profile-light-default.png](screenshots/mobile-profile-light-default.png)
 
@@ -32,6 +32,12 @@ Instagram Lite is a centred mark, one sentence, a "Download APK" button, and a G
 
 [missing-light-default.png](screenshots/missing-light-default.png)
 
+## Empty walls
+
+Signup and password reset load without an account and stop there. Both were photographed with empty fields. "Submit", "Next", and "Continue" were not clicked.
+
+[signup-light-default.png](screenshots/signup-light-default.png), [password-reset-light-default.png](screenshots/password-reset-light-default.png), [mobile-signup-light-default.png](screenshots/mobile-signup-light-default.png)
+
 ## Not captured
 
-The signed-in shell (home, search, reels, messages, create, profile menu) sits behind the login wall. Signup, password reset, Facebook login, and Meta Verified stop at a credential form. No form was submitted.
+The signed-in shell (home, search, reels, messages, create, profile menu) sits behind the login wall. Facebook login and Meta Verified were not entered. No form was submitted.

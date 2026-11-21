@@ -4,7 +4,8 @@
 //
 // Writes full-colour PNGs to ~/.design-systems/instagram/raw-shots and CSS
 // readings to systems/instagram/raw/. Login, signup, Facebook, Google, Apple,
-// password reset, and Meta Verified are recorded as walls and not entered.
+// password reset, and Meta Verified are photographed empty and not submitted.
+// Refreshed 2026-11-22. No form is filled.
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -45,7 +46,7 @@ async function dismissSignup(page) {
     let n = 0;
     for (const d of document.querySelectorAll('[role="dialog"]')) {
       const t = d.innerText || '';
-      if (/Sign up|Log in|never miss a post|See photos|See their followers/i.test(t)) {
+      if (/Sign up|Log in|never miss a post|See photos|See their followers|full experience/i.test(t)) {
         let node = d;
         while (node.parentElement && node.parentElement !== document.body) node = node.parentElement;
         node.style.setProperty('display', 'none', 'important');
@@ -55,6 +56,19 @@ async function dismissSignup(page) {
     return n;
   });
   return left;
+}
+
+async function dismissCookie(page) {
+  await page.evaluate(() => {
+    for (const b of document.querySelectorAll('button, [role="button"]')) {
+      const label = (b.getAttribute('aria-label') || b.innerText || '').trim();
+      if (label === 'Close' || label === '×') {
+        const box = b.closest('div');
+        if (box && /Terms of Use and Privacy Policy/i.test(box.innerText || '')) b.click();
+      }
+    }
+  }).catch(() => {});
+  await wait(page, 250);
 }
 
 async function lazyScroll(page) {
@@ -111,6 +125,8 @@ async function open(page, url) {
 const pages = [
   { id: 'login', url: BASE + '/' },
   { id: 'login-named', url: BASE + '/accounts/login/' },
+  { id: 'signup', url: BASE + '/accounts/emailsignup/' },
+  { id: 'password-reset', url: BASE + '/accounts/password/reset/' },
   { id: 'locations', url: BASE + '/explore/locations/' },
   { id: 'locations-country', url: BASE + '/explore/locations/US/united-states/' },
   { id: 'popular', url: BASE + '/popular/' },
@@ -212,7 +228,12 @@ for (const theme of themes) {
       log('open', key, spec.url);
       try {
         const landed = await open(page, spec.url);
-        if (spec.id === 'profile' || spec.id === 'popular') await dismissSignup(page);
+        if (width.mobile) await dismissCookie(page);
+        // On a phone the profile install sheet covers the page. Hiding it
+        // leaves a blank document, so the sheet is the phone profile state.
+        if ((spec.id === 'profile' && !width.mobile) || spec.id === 'popular' || (width.mobile && spec.id === 'locations')) {
+          await dismissSignup(page);
+        }
         const shooter = new Shooter(page, `${width.id}${spec.id}-${theme}`, width.width, width.height, width.dpr);
         await shooter.view('default');
         if (['locations', 'locations-country', 'popular', 'profile', 'lite', 'login'].includes(spec.id)) {
@@ -249,12 +270,7 @@ for (const theme of themes) {
             await dismissSignup(page);
             await shooter.view('reels-tab');
           }
-          const more = page.getByRole('button', { name: /and \d+ more/ });
-          if (await more.count()) {
-            await more.first().click({ force: true }).catch(() => {});
-            await wait(page, 600);
-            await shooter.view('bio-expanded');
-          }
+          // Bio "more" opens a dialog that has held private handles. Not clicked.
         }
         if (spec.id === 'popular' && !width.mobile) {
           const next = page.getByRole('button', { name: 'Next' });

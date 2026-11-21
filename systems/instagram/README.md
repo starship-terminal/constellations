@@ -1,8 +1,8 @@
 # Instagram design reference
 
-A token set and component reference for Instagram on the web, captured signed out from `https://www.instagram.com/` on 2026-11-21. Headless Chromium, desktop 1440x900 at 1x and phone 390x844 at 2x, light and dark. Dark is `color-scheme: dark`, which sets `html.__fb-dark-mode`. Light sets `html.__fb-light-mode`. There is no public theme switch.
+A token set and component reference for Instagram on the web, refreshed signed out from `https://www.instagram.com/` on 2026-11-22. Headless Chromium, desktop 1440x900 at 1x and phone 390x844 at 2x, light and dark. Dark is `color-scheme: dark`, which sets `html.__fb-dark-mode`. Light sets `html.__fb-light-mode`. There is no public theme switch.
 
-The homepage is a login wall. Public pages that loaded are the locations directory, one country page, Popular, Instagram Lite, the official profile `instagram`, and the 404 page. Login, signup, password reset, Facebook, and Meta Verified were recorded and not entered. No form was submitted.
+The homepage is a login wall. Public pages that loaded are the locations directory, one country page, Popular, Instagram Lite, the official profile `instagram`, and the 404 page. Login, signup, and password reset were photographed empty and not submitted. Facebook and Meta Verified were recorded and not entered. `login-extracted` stays `not-started`.
 
 | File | What it is |
 |---|---|
@@ -14,7 +14,7 @@ The homepage is a login wall. Public pages that loaded are the locations directo
 | [components.md](components.md) | Buttons, fields, the forgot-password link, profile tabs, and gaps |
 | [patterns.md](patterns.md) | Login wall, directory shell, public profile, Lite download, missing page |
 | [components/crops/](components/crops) | 16 element crops from the desktop captures |
-| [screenshots/](screenshots) | 31 viewport captures, `{page}-{theme}-default.png`, phone files prefixed `mobile-`, quantised to 256 colours |
+| [screenshots/](screenshots) | 45 viewport captures, `{page}-{theme}-default.png`, phone files prefixed `mobile-`, quantised to 256 colours |
 | [raw/](raw) | `capture.json`: resolved `--ig-*` values in both themes, page list, login field measurements |
 | [tools/](tools) | `capture/public/capture.mjs`, `build_tokens.py`, `build_style_guide.py` |
 
@@ -77,8 +77,11 @@ Login field type (size, weight, family) was read from computed style on the live
 
 - The login "Log in" button in the screenshots is the disabled wash. Both fields were empty. The enabled blue is the token `light.color.button.primary.background` (`#4a5df9`), not the pixels of that crop.
 - Screenshots are 256-colour PNGs. Read colours from tokens.json.
-- The phone profile capture is the app-install sheet over a dimmed profile. Hiding that sheet left a blank page, so the sheet is the phone state.
-- A bio links dialog was opened and then left out of the package. It contained private handles. It is not in `screenshots/`.
+- The phone homepage is an app interstitial ("Open Instagram"), not the desktop split form. The empty login fields are on the desktop homepage and on `/accounts/login/`.
+- The phone profile capture is the app-install sheet over a dimmed public profile. Hiding that sheet left a blank page, so the sheet is the phone state.
+- The bio "more" control was not clicked. A previous pass opened a dialog that held private handles. It is not in `screenshots/`.
+- The language select was focused and did not open a visible menu. That shot was dropped.
+- The Reels tab click drew a focus ring on the icon. The grid underneath did not change.
 - Hover and pressed button fills are tokenised from CSS and were not photographed.
 
 ## Fonts
@@ -108,7 +111,7 @@ Login field type (size, weight, family) was read from computed style on the live
 | Error page | Captured. [missing-light-default.png](screenshots/missing-light-default.png) |
 | Search and filtering | Not captured. Explore tags redirect to the login wall |
 | List | Observed. Country list in [locations-light-default.png](screenshots/locations-light-default.png) |
-| Onboarding, signup | Not captured. Signup asks for a mobile number or email and a password |
+| Onboarding, signup | Wall only. [signup-light-default.png](screenshots/signup-light-default.png) is the empty Meta Account form. Not submitted |
 | Desktop 1440 and phone 390 | Captured, both themes |
 | Dark theme | Captured via `color-scheme`, not an account setting |
 
@@ -131,4 +134,4 @@ python3 tools/build_style_guide.py
 python3 tools/capture/quantize.py ~/.design-systems/instagram/raw-shots
 ```
 
-`quantize.py` writes every PNG in the scratch folder into `screenshots/`. The committed set is the 2026-11-21 viewport captures listed above, not older files that may still sit in that scratch folder.
+`quantize.py` writes every PNG in the scratch folder into `screenshots/`. The committed set is the 2026-11-22 viewport captures listed above, not older files that may still sit in that scratch folder.
