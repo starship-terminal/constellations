@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T16:20:43+00:00",
+  "screenshot": "mobile-docs-dark-default.png",
+  "sanitizedSourceUrl": "https://learn.chatgpt.com/docs",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "note": "T3 preview screenshot. Cookie banner hidden, never accepted. No form filled.",
+  "dimensionCheck": {
+    "status": "measured-from-preview",
+    "basis": "preview viewport at capture"
+  },
+  "visualReview": {
+    "status": "seen",
+    "note": "Public page or empty wall. No account chrome."
+  }
+}

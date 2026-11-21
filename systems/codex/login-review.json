@@ -1,0 +1,87 @@
+{
+  "slug": "codex",
+  "product": "Codex",
+  "domain": "openai.com",
+  "captured": "2026-11-22",
+  "login_extracted": "not-started",
+  "signed_in": false,
+  "probe": "oauth-and-email",
+  "session": "T3 preview, incognito, signed out. No identity provider was clicked. No form was submitted. No email, password, code, phone or address was typed.",
+  "wall": {
+    "url": "https://chatgpt.com/auth/login",
+    "title": "ChatGPT",
+    "asks": [
+      "Continue with Google",
+      "Continue with Apple",
+      "Continue with phone",
+      "Email address",
+      "Continue"
+    ],
+    "email_field": true,
+    "password_field": false,
+    "code_field": false,
+    "inputs": ["email username, placeholder Email address, left empty"],
+    "note": "Reached from the Log in menu on https://openai.com/codex/. The menu item is ChatGPT. The field was not filled. Continue was not clicked."
+  },
+  "signup_wall": {
+    "url": "https://chatgpt.com/auth/login",
+    "asks": ["Log in or sign up"],
+    "email_field": true,
+    "continued": false,
+    "note": "Signup is the same wall. There is no separate public signup route on the Codex page."
+  },
+  "api_wall": {
+    "url": "https://platform.openai.com/login",
+    "title": "OpenAI Platform",
+    "asks": [
+      "Email address",
+      "Continue",
+      "Continue with Google",
+      "Continue with Apple",
+      "Continue with Microsoft",
+      "Continue with phone"
+    ],
+    "email_field": true,
+    "continued": false,
+    "note": "Reached from the Log in menu item API Platform. The field was left empty. No provider was clicked."
+  },
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "deviceScaleFactor": 2,
+      "file": "screenshots/login-dark-empty.png"
+    }
+  },
+  "offered": {
+    "nav": [
+      {"label": "Log in", "href": "menu on https://openai.com/codex/", "reached": "menu only"},
+      {"label": "ChatGPT", "href": "https://chatgpt.com/auth/login", "reached": "wall only"},
+      {"label": "API Platform", "href": "https://platform.openai.com/login", "reached": "wall only"}
+    ],
+    "settings": [],
+    "create": {
+      "items": ["Try on web", "Get Plus", "Get Pro", "Try ChatGPT Business"],
+      "reached": false,
+      "reason": "those links leave the public marketing page for the signed-in app or a checkout"
+    }
+  },
+  "screens": [
+    {"name": "Log in menu, empty", "file": "screenshots/login-menu-dark-empty.png"},
+    {"name": "ChatGPT log in or sign up, empty", "file": "screenshots/login-dark-empty.png"},
+    {"name": "API platform login, empty", "file": "screenshots/login-api-dark-empty.png"}
+  ],
+  "gaps": [
+    "login-extracted is not-started.",
+    "Google, Apple, Microsoft, phone and Continue were not clicked.",
+    "No password or code screen was reached.",
+    "The signed-in Codex app was not opened."
+  ],
+  "not_submitted": [
+    "Continue with Google",
+    "Continue with Apple",
+    "Continue with Microsoft",
+    "Continue with phone",
+    "Continue",
+    "Email address"
+  ]
+}

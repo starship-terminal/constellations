@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-21T16:20:43+00:00",
+  "screenshot": "home-dark-default.png",
+  "sanitizedSourceUrl": "https://openai.com/codex/",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "note": "T3 preview screenshot. Cookie banner hidden, never accepted. No form filled.",
+  "dimensionCheck": {
+    "status": "measured-from-preview",
+    "basis": "preview viewport at capture"
+  },
+  "visualReview": {
+    "status": "seen",
+    "note": "Public page or empty wall. No account chrome."
+  }
+}
